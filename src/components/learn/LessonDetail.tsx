@@ -225,7 +225,7 @@ export function LessonDetail({ lessonInstanceId, variant, childId }: { lessonIns
           <div>
             <h1 className="font-serif text-h2 font-semibold text-ink">{title}</h1>
             <p className="mt-1 text-sm text-ink/65">
-              {lesson.date} · {slot ? `${timeLabel(slot.start_time)}–${timeLabel(slot.end_time)}` : ""}
+              {/^\d{4}-\d{2}-\d{2}$/.test(lesson.date) ? new Date(`${lesson.date}T12:00:00Z`).toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }) : lesson.date} · {slot ? `${timeLabel(slot.start_time)}–${timeLabel(slot.end_time)}` : ""}
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-2">

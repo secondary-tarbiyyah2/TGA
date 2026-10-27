@@ -5,7 +5,7 @@ import Link from "next/link";
 import { LessonsFrame, LessonsHeader } from "@/components/learn/timetable/LessonsFrame";
 import { btn, callFunction, chipCls, fieldCls } from "@/components/learn/timetable/api";
 import { useTimetableData } from "@/components/learn/timetable/useTimetableData";
-import { hhmm } from "@/components/learn/timetable/types";
+import { addIsoDays, hhmm, ukIsoDate } from "@/components/learn/timetable/types";
 import { edgeErrorMessage } from "@/lib/learn/edge";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
@@ -17,27 +17,28 @@ type Row = {
   timetable_slots: { start_time: string; end_time: string; teacher_user_id: string; classes: { name: string; meeting_url: string | null } | null; subjects: { name: string } | null } | null;
 };
 
-const iso = (d: Date) => d.toISOString().slice(0, 10);
-const addDays = (n: number) => iso(new Date(Date.now() + n * 86400000));
+// Dates are UK dates: toISOString() is UTC and gives yesterday between midnight and 1am in summer.
+const addDays = (n: number) => addIsoDays(n);
 
-function GenerateInstances({ runId, onDone }: { runId: string; onDone: () => void }) {
+function GenerateInstances({ runId, onDone, defaultOpen }: { runId: string; onDone: () => void; defaultOpen?: boolean }) {
   const [from, setFrom] = useState(() => addDays(0));
   const [to, setTo] = useState(() => addDays(13));
   const [message, setMessage] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const run = async () => {
+    if (!from || !to || to < from) return setMessage("The \"To\" date must be on or after the \"From\" date.");
     setBusy(true);
     setMessage(null);
     try {
       const result = await callFunction("lesson-instances-generate", { run_id: runId, from, to });
-      setMessage(result.ok ? `Generated ${result.created ?? 0} lesson(s).` : `Could not generate: ${edgeErrorMessage(result)}`);
+      setMessage(result.ok ? (result.created ? `Created ${result.created} lesson${result.created === 1 ? "" : "s"}.` : "Nothing new to create: every lesson in that range already exists.") : `Could not create lessons: ${edgeErrorMessage(result)}`);
       if (result.ok) onDone();
     } finally {
       setBusy(false);
     }
   };
   return (
-    <details className="rounded-2xl border border-gold-light/50 bg-white p-4">
+    <details className="rounded-2xl border border-gold-light/50 bg-white p-4" open={defaultOpen}>
       <summary className="cursor-pointer text-sm font-semibold text-ink">Create dated lessons from the published timetable</summary>
       <p className="mt-2 text-sm text-ink/65">Creates one lesson (join link, objectives, resources, register, recording) for each occurrence of every published timetable slot in the range. Safe to re-run: existing dates are never duplicated.</p>
       <div className="mt-3 flex flex-wrap items-end gap-2">
@@ -57,6 +58,7 @@ function ListContent() {
   const [rows, setRows] = useState<Row[] | null>(null);
   const [refresh, setRefresh] = useState(0);
   const published = data.runs.find((r) => r.status === "published") || null;
+  const upcoming = range !== "past";
   const publishedId = published?.id || null;
 
   useEffect(() => {
@@ -64,11 +66,10 @@ function ListContent() {
     let cancelled = false;
     (async () => {
       if (!publishedId) return setRows([]);
-      const { data: slots } = await supabase.from("timetable_slots").select("id").eq("run_id", publishedId);
-      const ids = (slots || []).map((s) => s.id);
-      if (ids.length === 0) return setRows([]);
-      let q = supabase.from("lesson_instances").select("id, date, bbb_status, timetable_slots(start_time, end_time, teacher_user_id, classes(name, meeting_url), subjects(name))").in("timetable_slot_id", ids);
-      q = range === "past" ? q.lt("date", iso(new Date())).order("date", { ascending: false }) : q.gte("date", iso(new Date())).lte("date", addDays(range === "week" ? 6 : 13)).order("date", { ascending: true });
+      // Filter through the embedded slot rather than an .in() list of every slot id, which can outgrow the URL limit.
+      let q = supabase.from("lesson_instances").select("id, date, bbb_status, timetable_slots!inner(run_id, start_time, end_time, teacher_user_id, classes(name, meeting_url), subjects(name))").eq("timetable_slots.run_id", publishedId);
+      const today = ukIsoDate();
+      q = range === "past" ? q.lt("date", today).order("date", { ascending: false }) : q.gte("date", today).lte("date", addDays(range === "week" ? 6 : 13)).order("date", { ascending: true });
       const { data: res } = await q.limit(200);
       if (!cancelled) setRows((res as unknown as Row[]) || []);
     })();
@@ -92,7 +93,7 @@ function ListContent() {
         </p>
       ) : (
         <div className="space-y-4">
-          <GenerateInstances runId={published.id} onDone={() => setRefresh((k) => k + 1)} />
+          <GenerateInstances key={rows !== null && rows.length === 0 && upcoming ? "empty" : "some"} runId={published.id} onDone={() => setRefresh((k) => k + 1)} defaultOpen={rows !== null && rows.length === 0 && upcoming} />
           <div className="rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6">
             <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Date range">
               {([["week", "Next 7 days"], ["fortnight", "Next 14 days"], ["past", "Past"]] as const).map(([id, label]) => (
@@ -102,12 +103,12 @@ function ListContent() {
             {rows === null ? (
               <p className="mt-4 text-sm text-ink/65">Loading…</p>
             ) : rows.length === 0 ? (
-              <p className="mt-4 text-sm text-ink/65">No lessons in this range. Use &quot;Create dated lessons&quot; above to make them.</p>
+              <p className="mt-4 text-sm text-ink/65">{upcoming ? "No lessons in this range yet. Create them from the published timetable above." : "No past lessons yet."}</p>
             ) : (
               <div className="mt-4 space-y-4">
                 {[...byDate.entries()].map(([date, list]) => (
                   <div key={date}>
-                    <h3 className="text-sm font-semibold text-ink">{new Date(`${date}T12:00:00`).toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" })}</h3>
+                    <h3 className="text-sm font-semibold text-ink">{new Date(`${date}T12:00:00Z`).toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", ...(range === "past" ? { year: "numeric" } : {}), timeZone: "UTC" })}{date === ukIsoDate() ? " (today)" : ""}</h3>
                     <ul className="mt-1 divide-y divide-gold-light/30">
                       {list.sort((a, b) => (a.timetable_slots?.start_time || "").localeCompare(b.timetable_slots?.start_time || "")).map((r) => {
                         const s = r.timetable_slots;
@@ -127,6 +128,7 @@ function ListContent() {
                 ))}
               </div>
             )}
+            {rows !== null && rows.length >= 200 && <p className="mt-4 text-xs text-amber-800">Showing the first 200 lessons only.</p>}
             <p className="mt-4 text-xs text-ink/65">To move a weekly lesson, edit it in the <Link href="/admin/lessons/timetable" className="underline">timetable</Link>. For a one-off absence, arrange cover there.</p>
           </div>
         </div>

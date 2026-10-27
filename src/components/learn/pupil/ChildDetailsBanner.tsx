@@ -48,13 +48,16 @@ export function ChildDetailsBanner() {
     <section role="alert" aria-label="Child details required" data-onboarding className="print:hidden rounded-2xl border-2 border-red-300 bg-red-50 p-5">
       <h2 className="text-base font-semibold text-red-900">Please complete your child&apos;s details</h2>
       <p className="mt-1 text-sm text-red-900/80">
-        The school needs these for every pupil (home address, GP, health, two emergency contacts and your consents). This notice stays here until each record is complete.
+        The school needs a home address, GP, health details, two emergency contacts and your consents for every pupil.
       </p>
       <ul className="mt-3 space-y-2">
         {rows.map((r) => (
           <li key={r.id} className="rounded-xl bg-white/70 px-3 py-2 text-sm text-ink">
             <span className="font-semibold">{r.name}</span> <span className="text-ink/65">({r.percent}% complete)</span>
-            <span className="block text-xs text-red-800">Still required: {r.missing.join(", ")}</span>
+            <span className="block text-xs text-red-800">
+              Still required: {r.missing.slice(0, 3).join(", ")}
+              {r.missing.length > 3 ? ` and ${r.missing.length - 3} more` : ""}
+            </span>
           </li>
         ))}
       </ul>

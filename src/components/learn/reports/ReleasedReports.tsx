@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { Tabs } from "@/components/learn/Tabs";
@@ -34,6 +34,19 @@ export function ReleasedReports() {
   const [child, setChild] = useState<string>("");
   const [openId, setOpenId] = useState<string | null>(null);
   const [printing, setPrinting] = useState(false);
+  // Opening a report swaps the list for the report: start it at the top, and
+  // put the reader back where they were in the list when they return.
+  const listScroll = useRef(0);
+  const topRef = useRef<HTMLDivElement | null>(null);
+  const openReport = (id: string) => {
+    listScroll.current = window.scrollY;
+    setOpenId(id);
+    requestAnimationFrame(() => topRef.current?.scrollIntoView({ block: "start" }));
+  };
+  const closeReport = () => {
+    setOpenId(null);
+    requestAnimationFrame(() => window.scrollTo({ top: listScroll.current }));
+  };
 
   useEffect(() => {
     const supabase = getSupabaseClient();
@@ -73,7 +86,7 @@ export function ReleasedReports() {
   };
 
   return (
-    <div className="space-y-4">
+    <div ref={topRef} className="scroll-mt-24 space-y-4">
       <PrintStyles />
       <div className="print:hidden">
         <PageHeader title="Progress reports" subtitle="End-of-term reports from the school: attendance, homework, merits, Qur'an and grades, with your teachers' comments." />
@@ -88,7 +101,7 @@ export function ReleasedReports() {
       ) : open ? (
         <div className="space-y-3">
           <div className="flex flex-wrap items-center justify-between gap-2 print:hidden">
-            <button type="button" onClick={() => setOpenId(null)} className={`${ui.btnSecondary} ${ui.sm}`}>
+            <button type="button" onClick={closeReport} className={`${ui.btnSecondary} ${ui.sm}`}>
               ‹ All reports
             </button>
             <button type="button" onClick={print} className={`${ui.btnSecondary} ${ui.sm}`}>
@@ -114,7 +127,7 @@ export function ReleasedReports() {
               const o = n ? overallOf(Object.values(n.classes)) : null;
               return (
                 <li key={r.id}>
-                  <button type="button" onClick={() => setOpenId(r.id)} className="block h-full w-full rounded-2xl border border-gold-light bg-white p-4 text-left transition hover:border-teal-500/40 hover:shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-teal-700">
+                  <button type="button" onClick={() => openReport(r.id)} className="block h-full w-full rounded-2xl border border-gold-light bg-white p-4 text-left transition hover:border-teal-500/40 hover:shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-teal-700">
                     <div className="flex items-start justify-between gap-2">
                       <div className="min-w-0">
                         <p className="font-semibold text-ink">{r.terms?.name || "All time"}</p>

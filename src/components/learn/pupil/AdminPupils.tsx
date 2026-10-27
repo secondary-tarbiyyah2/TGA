@@ -8,8 +8,13 @@ import { Icon } from "@/components/learn/Icon";
 import { Notice, ui } from "@/components/learn/ui";
 import { MISSING_CHIP, completeness } from "./data";
 import { usePupils, type PupilRow } from "./usePupils";
+import { useLearnPermission } from "@/lib/learn/session";
 
 type Show = "all" | "missing" | "alerts";
+
+/** One rule for "complete", used by the count, the filter, the cell and the CSV
+ * (the count used to include records the table showed as Complete). */
+const isComplete = (p: PupilRow): boolean => Boolean(p.details?.completed_at) || p.missing.length === 0;
 
 /** What is still missing from a pupil's record, in plain words (for the list's tooltip and the CSV). */
 function missingItems(p: PupilRow): string[] {
@@ -27,12 +32,14 @@ export function AdminPupils() {
   const { pupils, yearGroups, error } = usePupils();
   const [show, setShow] = useState<Show>("all");
   const [year, setYear] = useState("");
+  // Same gate as every other export in the portal.
+  const canExport = useLearnPermission("can_export_data");
 
   const summary = useMemo(() => {
     const list = pupils || [];
     return {
       all: list.length,
-      missing: list.filter((p) => !p.details?.completed_at).length,
+      missing: list.filter((p) => !isComplete(p)).length,
       alerts: list.filter((p) => p.alerts.length > 0).length,
     };
   }, [pupils]);
@@ -41,7 +48,7 @@ export function AdminPupils() {
     () =>
       (pupils || []).filter((p) => {
         if (year && p.yearGroupId !== year) return false;
-        if (show === "missing") return !p.details?.completed_at;
+        if (show === "missing") return !isComplete(p);
         if (show === "alerts") return p.alerts.length > 0;
         return true;
       }),
@@ -73,9 +80,9 @@ export function AdminPupils() {
       key: "record",
       header: "Details",
       sort: (p) => p.percent,
-      csv: (p) => (p.details?.completed_at ? "Complete" : `Missing: ${missingItems(p).join("; ")}`),
+      csv: (p) => (isComplete(p) ? "Complete" : `Missing: ${missingItems(p).join("; ")}`),
       cell: (p) => {
-        if (p.details?.completed_at || p.missing.length === 0)
+        if (isComplete(p))
           return (
             <span className="inline-flex items-center gap-1 text-sm text-green-800">
               <Icon name="circleCheck" className="h-4 w-4" />
@@ -169,7 +176,7 @@ export function AdminPupils() {
             </>
           }
           initialSort={{ key: "pupil", dir: "asc" }}
-          csvName="pupils"
+          csvName={canExport ? "pupils" : undefined}
           empty="No pupils yet."
           emptyFiltered="No pupils match."
         />

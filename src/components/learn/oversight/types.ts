@@ -37,7 +37,8 @@ export function threadTitle(t: OversightThread): string {
 export function shortTime(iso: string | null): string {
   if (!iso) return "";
   const d = new Date(iso);
-  const now = new Date();
-  if (d.toDateString() === now.toDateString()) return d.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" });
-  return d.toLocaleDateString("en-GB", { day: "numeric", month: "short" });
+  // UK time, whatever zone the viewer's browser is in.
+  const day = (x: Date) => x.toLocaleDateString("en-GB", { timeZone: "Europe/London" });
+  if (day(d) === day(new Date())) return d.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/London" });
+  return d.toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "Europe/London" });
 }

@@ -18,7 +18,8 @@ function Oversight() {
     if (!supabase) return;
     supabase.rpc("oversight_list_threads").then(({ data, error: err }) => {
       if (err) setError(err.message);
-      else setThreads((data as OversightThread[]) || []);
+      // Most recent conversation first.
+      else setThreads(((data as OversightThread[]) || []).slice().sort((a, b) => (b.last_at || b.created_at).localeCompare(a.last_at || a.created_at)));
     });
   }, []);
 
@@ -36,13 +37,22 @@ function Oversight() {
       {error && <p className="text-sm text-red-700">Could not load conversations: {error}</p>}
       {!error && threads === null && <p className="text-ink/65">Loading…</p>}
       {threads && (
+        // On phones the list and the open conversation take turns (with a
+        // Back button) instead of the conversation opening far below the list.
         <div className="grid gap-4 md:h-[70vh] md:grid-cols-[minmax(0,22rem)_1fr]">
-          <div className="min-h-0 max-h-[60vh] md:max-h-none">
+          <div className={`min-h-0 max-h-[70vh] md:block md:max-h-none ${active ? "hidden" : ""}`}>
             <ThreadList threads={threads} activeId={activeId} onSelect={setActiveId} />
           </div>
-          <div className="min-h-[20rem] md:min-h-0">
+          <div className={`min-h-[24rem] md:block md:min-h-0 ${active ? "" : "hidden"}`}>
             {active ? (
-              <ThreadViewer key={active.thread_id} thread={active} />
+              <div className="flex h-full min-h-[24rem] flex-col gap-2 md:min-h-0">
+                <button type="button" onClick={() => setActiveId(null)} className="self-start rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream md:hidden">
+                  ‹ All conversations
+                </button>
+                <div className="min-h-0 flex-1">
+                  <ThreadViewer key={active.thread_id} thread={active} />
+                </div>
+              </div>
             ) : (
               <div className="flex h-full items-center justify-center rounded-lg border border-dashed border-ink/20 p-6 text-sm text-ink/65">
                 Select a conversation to read it.

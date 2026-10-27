@@ -92,7 +92,7 @@ export function QuranPupilView({ childId, name }: { childId: string; name?: stri
 
       {tab === "progress" &&
         (stats.count === 0 ? (
-          <EmptyState title="No marks yet.">After your teacher listens to a recitation, the mark out of 10 and the surah appear here.</EmptyState>
+          <EmptyState title="No marks yet.">When a teacher hears a recitation, the mark out of 10 and the surah appear here.</EmptyState>
         ) : (
           <>
             <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">

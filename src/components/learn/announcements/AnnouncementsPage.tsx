@@ -28,6 +28,8 @@ export function AnnouncementsPage({ mode }: { mode: AnnouncementsMode }) {
   const [items, setItems] = useState<AnnouncementRow[] | null>(null);
   const [userId, setUserId] = useState<string | null>(null);
   const [query, setQuery] = useState("");
+  const [view, setView] = useState<"current" | "recalled" | "expired" | "all">("current");
+  const [expanded, setExpanded] = useState<Set<string>>(new Set());
   const [composing, setComposing] = useState(false);
   const [editing, setEditing] = useState<AnnouncementRow | null>(null);
   const [busyId, setBusyId] = useState<string | null>(null);
@@ -57,17 +59,35 @@ export function AnnouncementsPage({ mode }: { mode: AnnouncementsMode }) {
     load();
   }, [supabase, load]);
 
+  // Staff see live notices by default, with recalled and expired ones a click
+  // away, rather than everything they have ever posted in one long list.
+  const counts = useMemo(() => {
+    const all = items || [];
+    return {
+      current: all.filter((a) => !a.recalled_at && !isExpired(a)).length,
+      recalled: all.filter((a) => !!a.recalled_at).length,
+      expired: all.filter((a) => !a.recalled_at && isExpired(a)).length,
+      all: all.length,
+    };
+  }, [items]);
   const visible = useMemo(() => {
     const q = query.trim().toLowerCase();
     return (items || [])
-      .filter((a) => canManage || (!a.recalled_at && !isExpired(a)))
+      .filter((a) => {
+        if (!canManage) return !a.recalled_at && !isExpired(a);
+        if (view === "current") return !a.recalled_at && !isExpired(a);
+        if (view === "recalled") return !!a.recalled_at;
+        if (view === "expired") return !a.recalled_at && isExpired(a);
+        return true;
+      })
       .filter((a) => !q || a.title.toLowerCase().includes(q) || a.body.toLowerCase().includes(q) || (a.classes?.name ?? "").toLowerCase().includes(q));
-  }, [items, query, canManage]);
+  }, [items, query, canManage, view]);
 
   const canEdit = (a: AnnouncementRow): boolean => isHead || (mode === "teach" && a.author_id === userId);
 
   const setRecalled = async (a: AnnouncementRow, recalled: boolean) => {
     if (!supabase) return;
+    if (recalled && !window.confirm(`Recall "${a.title}"? It disappears for everyone it was posted to. You can restore it later.`)) return;
     setBusyId(a.id);
     setError(null);
     const { error: err } = await supabase
@@ -113,14 +133,38 @@ export function AnnouncementsPage({ mode }: { mode: AnnouncementsMode }) {
         }
       />
 
-      <input
-        type="search"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        placeholder="Search notices"
-        aria-label="Search notices"
-        className="mb-5 w-full rounded-lg border border-gold-light bg-white px-3 py-2.5 text-sm sm:max-w-sm"
-      />
+      <div className="mb-5 flex flex-wrap items-center gap-2">
+        <input
+          type="search"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search notices"
+          aria-label="Search notices"
+          className="w-full rounded-lg border border-gold-light bg-white px-3 py-2.5 text-sm sm:max-w-sm"
+        />
+        {canManage && items && (
+          <div role="group" aria-label="Which notices" className="flex flex-wrap gap-1.5">
+            {(
+              [
+                ["current", "Live"],
+                ["recalled", "Recalled"],
+                ["expired", "Expired"],
+                ["all", "All"],
+              ] as const
+            ).map(([k, label]) => (
+              <button
+                key={k}
+                type="button"
+                aria-pressed={view === k}
+                onClick={() => setView(k)}
+                className={`rounded-full border px-3 py-1.5 text-xs font-medium ${view === k ? "border-teal-700 bg-teal-700 text-white" : "border-gold-light bg-white text-ink/70 hover:bg-cream"}`}
+              >
+                {label} ({counts[k]})
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
 
       {error && <p className="mb-4 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">{error}</p>}
 
@@ -128,7 +172,7 @@ export function AnnouncementsPage({ mode }: { mode: AnnouncementsMode }) {
         <p className="text-sm text-ink/65">Loading…</p>
       ) : visible.length === 0 ? (
         <div className="rounded-2xl border border-dashed border-gold-light bg-white px-6 py-12 text-center">
-          <p className="font-medium text-ink">{query ? "No notices match your search." : "No announcements yet."}</p>
+          <p className="font-medium text-ink">{query ? "No notices match your search." : canManage && view !== "all" && counts.all > 0 ? "Nothing in this view." : "No announcements yet."}</p>
           <p className="mx-auto mt-1 max-w-sm text-sm text-ink/65">
             {query
               ? "Try a different word, or clear the search."
@@ -164,7 +208,33 @@ export function AnnouncementsPage({ mode }: { mode: AnnouncementsMode }) {
                   </div>
                   <span className="rounded-full bg-teal-700/10 px-2.5 py-1 text-xs font-medium text-teal-700">{audience}</span>
                 </div>
-                <p className="mt-3 whitespace-pre-line break-words text-sm text-ink/80">{a.body}</p>
+                {(() => {
+                  // Long notices are folded to a few lines and open in place.
+                  const long = a.body.length > 420 || a.body.split("\n").length > 6;
+                  const open = expanded.has(a.id);
+                  return (
+                    <>
+                      <p className={`mt-3 whitespace-pre-line break-words text-sm text-ink/80 ${long && !open ? "line-clamp-5" : ""}`}>{a.body}</p>
+                      {long && (
+                        <button
+                          type="button"
+                          aria-expanded={open}
+                          onClick={() =>
+                            setExpanded((prev) => {
+                              const n = new Set(prev);
+                              if (n.has(a.id)) n.delete(a.id);
+                              else n.add(a.id);
+                              return n;
+                            })
+                          }
+                          className="mt-1 text-sm font-medium text-teal-700 hover:underline"
+                        >
+                          {open ? "Show less" : "Read more"}
+                        </button>
+                      )}
+                    </>
+                  );
+                })()}
                 {canManage && canEdit(a) && (
                   <div className="mt-4 flex flex-wrap gap-2 border-t border-gold-light/40 pt-3">
                     <button type="button" disabled={busy} onClick={() => setEditing(a)} className="inline-flex items-center gap-1.5 rounded-lg border border-gold-light px-3 py-1.5 text-sm font-medium text-ink/75 hover:bg-cream disabled:opacity-50">

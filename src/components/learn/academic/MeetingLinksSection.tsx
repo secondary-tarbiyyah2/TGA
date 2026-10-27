@@ -27,11 +27,11 @@ function Row({ c, reload }: { c: ClassRow; reload: () => Promise<void> }) {
 
   return (
     <li className="py-3">
-      <div className="flex flex-wrap items-center gap-2">
+      <form onSubmit={(e) => { e.preventDefault(); if (dirty && !busy) void save(); }} className="flex flex-wrap items-center gap-2">
         <span className="w-48 shrink-0 truncate text-sm font-medium text-ink">{c.name}</span>
         <input type="url" inputMode="url" aria-label={`Meeting link for ${c.name}`} className={`${inputCls} min-w-0 flex-1 basis-64`} placeholder="https://teams.microsoft.com/l/meetup-join/…" value={value} onChange={(e) => setValue(e.target.value)} />
-        <button type="button" className={dirty ? primaryBtn : ghostBtn} disabled={busy || !dirty} onClick={save}>{busy ? "Saving…" : "Save"}</button>
-      </div>
+        <button type="submit" className={dirty ? primaryBtn : ghostBtn} disabled={busy || !dirty}>{busy ? "Saving…" : "Save"}</button>
+      </form>
       {msg && <div className="mt-2"><Notice tone={msg.tone}>{msg.text}</Notice></div>}
     </li>
   );

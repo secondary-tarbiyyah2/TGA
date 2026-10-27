@@ -2,9 +2,9 @@
 
 import { useMemo } from "react";
 import { useLearnPermission } from "@/lib/learn/session";
+import { saveCsv, toCsv } from "@/lib/learn/csv";
+import { ukToday } from "@/lib/learn/ukTime";
 import { REASONS, reasonLabel, type Absence } from "./data";
-
-const csvCell = (v: string) => `"${v.replace(/"/g, '""')}"`;
 
 /** Reasons breakdown, plus a CSV export for those with can_export_data (RLS stays the real gate). */
 export function AbsenceReports({ absences, periodLabel }: { absences: Absence[] | null; periodLabel: string }) {
@@ -29,14 +29,13 @@ export function AbsenceReports({ absences, periodLabel }: { absences: Absence[] 
   const exportCsv = () => {
     const header = ["Date", "Student", "Class", "Status", "Reason"];
     const kind = { authorised: "Authorised", unauthorised: "Not authorised", unexplained: "Unexplained" } as const;
-    const lines = rows.map((a) => [a.date, a.childName, a.className, kind[a.kind], reasonLabel(a.reasonCode) || "Not recorded"].map(csvCell).join(","));
-    const blob = new Blob([[header.join(","), ...lines].join("\n")], { type: "text/csv" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `absences-with-reasons-${new Date().toISOString().slice(0, 10)}.csv`;
-    a.click();
-    URL.revokeObjectURL(url);
+    saveCsv(
+      `absences-with-reasons-${ukToday()}.csv`,
+      toCsv(
+        header,
+        rows.map((a) => [a.date, a.childName, a.className, kind[a.kind], reasonLabel(a.reasonCode) || "Not recorded"]),
+      ),
+    );
   };
 
   return (

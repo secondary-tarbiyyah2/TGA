@@ -93,6 +93,7 @@ function OpenEveningContent() {
     if (!Number.isInteger(draft.minutes) || draft.minutes < 5 || draft.minutes > 480) return setMessage({ text: "The length must be between 5 and 480 minutes.", error: true });
     if (!Number.isInteger(draft.capacity) || draft.capacity < 1 || draft.capacity > 1000) return setMessage({ text: "The number of places must be between 1 and 1,000.", error: true });
     if (draft.joinUrl.trim() && !/^https:\/\//i.test(draft.joinUrl.trim())) return setMessage({ text: "The joining link must start with https://", error: true });
+    if (editingId === "new" && new Date(ukLocalToIso(draft.start)).getTime() < Date.now()) return setMessage({ text: "That start time has already passed. Check the date (UK time).", error: true });
     const existingTaken = editingId && editingId !== "new" ? taken.get(editingId) || 0 : 0;
     if (draft.capacity < existingTaken) return setMessage({ text: `${existingTaken} places are already booked, so the capacity cannot be lower than that.`, error: true });
 
@@ -114,7 +115,7 @@ function OpenEveningContent() {
     setBusy(false);
     if (error) return setMessage({ text: `Couldn't save: ${error.message}`, error: true });
     setEditingId(null);
-    setMessage({ text: "Saved. It is on the website straight away." });
+    setMessage({ text: draft.published ? "Saved. It is on the website straight away." : "Saved as hidden. Tick \"Show on the website\" when you want parents to book it." });
     await load();
   }
 
@@ -136,11 +137,23 @@ function OpenEveningContent() {
     const { error } = await supabase.from("open_evening_bookings").update({ status: "cancelled", cancelled_at: new Date().toISOString() }).eq("id", b.id);
     setBusy(false);
     if (error) return setMessage({ text: `Couldn't cancel it: ${error.message}`, error: true });
+    setMessage({ text: `Booking for ${b.parent_name} cancelled. Remember to let them know.` });
     await load();
   }
 
+  const emailsFor = (s: OpenEveningSession) => [...new Set(bookings.filter((b) => b.session_id === s.id && b.status === "confirmed").map((b) => b.email))];
+  const copyEmails = async (s: OpenEveningSession) => {
+    const list = emailsFor(s);
+    try {
+      await navigator.clipboard.writeText(list.join(", "));
+      setMessage({ text: `Copied ${list.length} email address${list.length === 1 ? "" : "es"}. Paste them into the Bcc line.` });
+    } catch {
+      setMessage({ text: "Couldn't copy. Use the CSV export instead.", error: true });
+    }
+  };
+
   const mailtoAll = (s: OpenEveningSession) => {
-    const emails = [...new Set(bookings.filter((b) => b.session_id === s.id && b.status === "confirmed").map((b) => b.email))];
+    const emails = emailsFor(s);
     return `mailto:?bcc=${encodeURIComponent(emails.join(","))}&subject=${encodeURIComponent(`${s.title}: ${ukDateTime(s.starts_at)}`)}`;
   };
 
@@ -184,6 +197,102 @@ function OpenEveningContent() {
     </div>
   );
 
+  // Upcoming first (soonest at the top); finished ones tucked away below.
+  const isPast = (s: OpenEveningSession) => new Date(s.ends_at).getTime() < now;
+  const upcoming = (sessions || []).filter((s) => !isPast(s)).sort((a, b) => a.starts_at.localeCompare(b.starts_at));
+  const earlier = (sessions || []).filter(isPast);
+
+  const renderSession = (s: OpenEveningSession) => {
+    const list = bookings.filter((b) => b.session_id === s.id);
+    const confirmed = list.filter((b) => b.status === "confirmed");
+    const people = taken.get(s.id) || 0;
+    const past = new Date(s.ends_at).getTime() < now;
+    const state = s.cancelled_at ? "Cancelled" : !s.published ? "Hidden" : past ? "Past" : "On the website";
+    const open = openId === s.id;
+    return (
+      <li key={s.id} className="rounded-2xl border border-gold-light bg-white p-4">
+        {editingId === s.id ? (
+          form
+        ) : (
+          <>
+            <div className="flex flex-wrap items-start justify-between gap-3">
+              <div className="min-w-0">
+                <p className="font-semibold text-ink">{s.title}</p>
+                <p className="text-sm text-ink/75">{ukDateTime(s.starts_at)} to {new Date(s.ends_at).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/London" })} (UK time)</p>
+                <p className="mt-1 text-xs text-ink/65">
+                  <span className={`mr-2 rounded-full px-2 py-0.5 font-semibold ${state === "On the website" ? "bg-green-100 text-green-900" : "bg-ink/5 text-ink/70"}`}>{state}</span>
+                  {people} of {s.capacity} places booked · {confirmed.length} {confirmed.length === 1 ? "booking" : "bookings"}
+                  {s.join_url ? "" : " · no joining link yet"}
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <button type="button" onClick={() => setOpenId(open ? null : s.id)} aria-expanded={open} className="rounded-lg border border-gold-light px-3 py-1.5 text-xs font-medium text-ink/80 hover:bg-cream">
+                  {open ? "Hide bookings" : `Bookings (${list.length})`}
+                </button>
+                <button type="button" onClick={() => startEdit(s)} className="rounded-lg border border-gold-500 px-3 py-1.5 text-xs font-medium text-gold-700 hover:bg-cream">Edit</button>
+                {s.cancelled_at ? (
+                  <button type="button" disabled={busy} onClick={() => setCancelled(s, false)} className="rounded-lg border border-gold-light px-3 py-1.5 text-xs font-medium text-ink/80 hover:bg-cream disabled:opacity-50">Reopen</button>
+                ) : (
+                  <button type="button" disabled={busy} onClick={() => setCancelled(s, true)} className="rounded-lg border border-red-300 px-3 py-1.5 text-xs font-medium text-red-700 hover:bg-red-50 disabled:opacity-50">Cancel evening</button>
+                )}
+              </div>
+            </div>
+
+            {open && (
+              <div className="mt-4 border-t border-gold-light/60 pt-3">
+                {list.length === 0 ? (
+                  <p className="text-sm text-ink/65">Nobody has booked this evening yet.</p>
+                ) : (
+                  <>
+                    <div className="mb-2 flex flex-wrap gap-3 text-xs">
+                      <button type="button" onClick={() => exportCsv([s], `open-evening-${s.starts_at.slice(0, 10)}.csv`)} className="font-medium text-teal-700 underline">Export this evening (CSV)</button>
+                      {confirmed.length > 0 && <a href={mailtoAll(s)} className="font-medium text-teal-700 underline">Email everyone booked</a>}
+                      {confirmed.length > 0 && (
+                        <button type="button" onClick={() => copyEmails(s)} className="font-medium text-teal-700 underline">
+                          Copy email addresses
+                        </button>
+                      )}
+                    </div>
+                    <div className="overflow-x-auto">
+                      <table className="w-full min-w-[640px] text-left text-sm">
+                        <thead>
+                          <tr className="border-b border-gold-light/60 text-xs uppercase tracking-wide text-ink/65">
+                            <th className="py-2 pr-3 font-medium">Name</th>
+                            <th className="py-2 pr-3 font-medium">Contact</th>
+                            <th className="py-2 pr-3 font-medium">People</th>
+                            <th className="py-2 pr-3 font-medium">Year groups</th>
+                            <th className="py-2 pr-3 font-medium">Questions</th>
+                            <th className="py-2 font-medium"><span className="sr-only">Actions</span></th>
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-gold-light/40">
+                          {list.map((b) => (
+                            <tr key={b.id} className={b.status === "cancelled" ? "text-ink/65 line-through" : "text-ink/85"}>
+                              <td className="py-2 pr-3 align-top">{b.parent_name}</td>
+                              <td className="py-2 pr-3 align-top"><a href={`mailto:${b.email}`} className="hover:underline">{b.email}</a>{b.phone && <span className="block text-xs">{b.phone}</span>}</td>
+                              <td className="py-2 pr-3 align-top">{b.attendees}</td>
+                              <td className="py-2 pr-3 align-top">{b.year_groups}</td>
+                              <td className="max-w-xs whitespace-pre-wrap py-2 pr-3 align-top text-xs">{b.questions || ""}</td>
+                              <td className="py-2 text-right align-top">
+                                {b.status === "confirmed" && (
+                                  <button type="button" disabled={busy} onClick={() => cancelBooking(b)} className="text-xs font-medium text-red-700 underline disabled:opacity-50">Cancel booking</button>
+                                )}
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </>
+                )}
+              </div>
+            )}
+          </>
+        )}
+      </li>
+    );
+  };
+
   return (
     <>
       <PageHeader
@@ -212,93 +321,16 @@ function OpenEveningContent() {
       ) : sessions.length === 0 ? (
         <EmptyState title="No open evenings yet" icon="calendarDays" tile="tile-gold">Add one and it appears on the Open evening page of the website straight away, with its own booking form.</EmptyState>
       ) : (
-        <ul className="space-y-3">
-          {sessions.map((s) => {
-            const list = bookings.filter((b) => b.session_id === s.id);
-            const confirmed = list.filter((b) => b.status === "confirmed");
-            const people = taken.get(s.id) || 0;
-            const past = new Date(s.ends_at).getTime() < now;
-            const state = s.cancelled_at ? "Cancelled" : !s.published ? "Hidden" : past ? "Past" : "On the website";
-            const open = openId === s.id;
-            return (
-              <li key={s.id} className="rounded-2xl border border-gold-light bg-white p-4">
-                {editingId === s.id ? (
-                  form
-                ) : (
-                  <>
-                    <div className="flex flex-wrap items-start justify-between gap-3">
-                      <div className="min-w-0">
-                        <p className="font-semibold text-ink">{s.title}</p>
-                        <p className="text-sm text-ink/75">{ukDateTime(s.starts_at)} to {new Date(s.ends_at).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/London" })} (UK time)</p>
-                        <p className="mt-1 text-xs text-ink/65">
-                          <span className={`mr-2 rounded-full px-2 py-0.5 font-semibold ${state === "On the website" ? "bg-green-100 text-green-900" : "bg-ink/5 text-ink/70"}`}>{state}</span>
-                          {people} of {s.capacity} places booked · {confirmed.length} {confirmed.length === 1 ? "booking" : "bookings"}
-                          {s.join_url ? "" : " · no joining link yet"}
-                        </p>
-                      </div>
-                      <div className="flex flex-wrap gap-2">
-                        <button type="button" onClick={() => setOpenId(open ? null : s.id)} aria-expanded={open} className="rounded-lg border border-gold-light px-3 py-1.5 text-xs font-medium text-ink/80 hover:bg-cream">
-                          {open ? "Hide bookings" : `Bookings (${list.length})`}
-                        </button>
-                        <button type="button" onClick={() => startEdit(s)} className="rounded-lg border border-gold-500 px-3 py-1.5 text-xs font-medium text-gold-700 hover:bg-cream">Edit</button>
-                        {s.cancelled_at ? (
-                          <button type="button" disabled={busy} onClick={() => setCancelled(s, false)} className="rounded-lg border border-gold-light px-3 py-1.5 text-xs font-medium text-ink/80 hover:bg-cream disabled:opacity-50">Reopen</button>
-                        ) : (
-                          <button type="button" disabled={busy} onClick={() => setCancelled(s, true)} className="rounded-lg border border-red-300 px-3 py-1.5 text-xs font-medium text-red-700 hover:bg-red-50 disabled:opacity-50">Cancel evening</button>
-                        )}
-                      </div>
-                    </div>
-
-                    {open && (
-                      <div className="mt-4 border-t border-gold-light/60 pt-3">
-                        {list.length === 0 ? (
-                          <p className="text-sm text-ink/65">Nobody has booked this evening yet.</p>
-                        ) : (
-                          <>
-                            <div className="mb-2 flex flex-wrap gap-3 text-xs">
-                              <button type="button" onClick={() => exportCsv([s], `open-evening-${s.starts_at.slice(0, 10)}.csv`)} className="font-medium text-teal-700 underline">Export this evening (CSV)</button>
-                              {confirmed.length > 0 && <a href={mailtoAll(s)} className="font-medium text-teal-700 underline">Email everyone booked</a>}
-                            </div>
-                            <div className="overflow-x-auto">
-                              <table className="w-full min-w-[640px] text-left text-sm">
-                                <thead>
-                                  <tr className="border-b border-gold-light/60 text-xs uppercase tracking-wide text-ink/65">
-                                    <th className="py-2 pr-3 font-medium">Name</th>
-                                    <th className="py-2 pr-3 font-medium">Contact</th>
-                                    <th className="py-2 pr-3 font-medium">People</th>
-                                    <th className="py-2 pr-3 font-medium">Year groups</th>
-                                    <th className="py-2 pr-3 font-medium">Questions</th>
-                                    <th className="py-2 font-medium"><span className="sr-only">Actions</span></th>
-                                  </tr>
-                                </thead>
-                                <tbody className="divide-y divide-gold-light/40">
-                                  {list.map((b) => (
-                                    <tr key={b.id} className={b.status === "cancelled" ? "text-ink/65 line-through" : "text-ink/85"}>
-                                      <td className="py-2 pr-3 align-top">{b.parent_name}</td>
-                                      <td className="py-2 pr-3 align-top"><a href={`mailto:${b.email}`} className="hover:underline">{b.email}</a>{b.phone && <span className="block text-xs">{b.phone}</span>}</td>
-                                      <td className="py-2 pr-3 align-top">{b.attendees}</td>
-                                      <td className="py-2 pr-3 align-top">{b.year_groups}</td>
-                                      <td className="max-w-xs whitespace-pre-wrap py-2 pr-3 align-top text-xs">{b.questions || ""}</td>
-                                      <td className="py-2 text-right align-top">
-                                        {b.status === "confirmed" && (
-                                          <button type="button" disabled={busy} onClick={() => cancelBooking(b)} className="text-xs font-medium text-red-700 underline disabled:opacity-50">Cancel booking</button>
-                                        )}
-                                      </td>
-                                    </tr>
-                                  ))}
-                                </tbody>
-                              </table>
-                            </div>
-                          </>
-                        )}
-                      </div>
-                    )}
-                  </>
-                )}
-              </li>
-            );
-          })}
-        </ul>
+        <>
+          {upcoming.length === 0 && !editingId && <p className="mb-4 rounded-2xl border border-gold-light bg-white p-5 text-sm text-ink/65">No upcoming open evenings. Use &ldquo;+ New open evening&rdquo; to add the next one.</p>}
+          {upcoming.length > 0 && <ul className="space-y-3">{upcoming.map(renderSession)}</ul>}
+          {earlier.length > 0 && (
+            <details className="mt-6">
+              <summary className="cursor-pointer text-sm font-medium text-ink/70">Past open evenings ({earlier.length})</summary>
+              <ul className="mt-3 space-y-3">{earlier.map(renderSession)}</ul>
+            </details>
+          )}
+        </>
       )}
       <p className="mt-6 text-xs text-ink/65">
         Parents get a confirmation email with a calendar invitation and the joining link, the admissions inbox is told about each booking, and a reminder goes out the day before. The booking list contains parents&apos; contact details: please download it only when you need it.

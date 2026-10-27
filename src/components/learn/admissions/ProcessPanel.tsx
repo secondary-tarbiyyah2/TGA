@@ -13,8 +13,9 @@ import type { MoveOptions, StaffOption } from "@/components/learn/admissions/App
 import type { AdmissionsContext } from "@/components/learn/admissions/useAdmissionsContext";
 import { Group, Pill, fieldCls, primaryBtn } from "@/components/learn/admissions/ui";
 import { Tabs } from "@/components/learn/Tabs";
+import { ukToday } from "@/lib/learn/ukTime";
 
-const today = () => new Date().toISOString().slice(0, 10);
+const today = () => ukToday();
 const numOrNull = (v: string): number | null => (v.trim() === "" || Number.isNaN(Number(v)) ? null : Number(v));
 const nz = (s: string) => (s.trim() === "" ? null : s);
 

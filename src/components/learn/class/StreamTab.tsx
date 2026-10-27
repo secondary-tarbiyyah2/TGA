@@ -10,6 +10,7 @@ import { AttachmentList, cleanAttachments, type Attachment } from "@/components/
 import { AnnouncementComposer } from "@/components/learn/class/AnnouncementComposer";
 import { RecordingChip, useRecordingLinks } from "@/components/learn/class/LessonRecordingLinks";
 import { useNow } from "@/lib/learn/useNow";
+import { ukToday } from "@/lib/learn/ukTime";
 
 type AnnRow = {
   id: string;
@@ -80,7 +81,7 @@ function CommentThread({
 
   const remove = async (id: string) => {
     const supabase = getSupabaseClient();
-    if (!supabase) return;
+    if (!supabase || !window.confirm("Delete this comment?")) return;
     await supabase.from("class_post_comments").update({ deleted_at: new Date().toISOString() }).eq("id", id);
     onChanged();
   };
@@ -184,7 +185,7 @@ export function StreamTab({ classId, viewer, area, classHref }: { classId: strin
     const { data: slots } = await supabase.from("timetable_slots").select("id").eq("class_id", classId);
     const slotIds = ((slots as unknown as { id: string }[]) || []).map((x) => x.id);
     if (slotIds.length) {
-      const today = new Date().toISOString().slice(0, 10);
+      const today = ukToday();
       const { data: ls } = await supabase.from("lesson_instances").select("id, date, objectives, timetable_slots(start_time)").in("timetable_slot_id", slotIds).gte("date", today).order("date").limit(3);
       for (const l of (ls as unknown as { id: string; date: string; objectives: string | null; timetable_slots: { start_time: string } | null }[]) || []) {
         out.push({
@@ -208,7 +209,7 @@ export function StreamTab({ classId, viewer, area, classHref }: { classId: strin
 
   const recall = async (id: string) => {
     const supabase = getSupabaseClient();
-    if (!supabase) return;
+    if (!supabase || !window.confirm("Recall this announcement? Families and pupils will no longer see it.")) return;
     await supabase.from("announcements").update({ recalled_at: new Date().toISOString() }).eq("id", id);
     load();
   };

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import type { AnnouncementRow } from "./types";
 
@@ -35,8 +35,23 @@ export function ComposeModal({
   const [expires, setExpires] = useState(toDateInput(existing?.expires_at ?? null));
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  // New notices get a "check before posting" step: what people will see and
+  // exactly who will see it, so a whole-school notice is never one click away.
+  const [previewing, setPreviewing] = useState(false);
 
-  const valid = title.trim().length > 0 && body.trim().length > 0 && audience !== "";
+  const today = toDateInput(new Date().toISOString());
+  const expiryPast = !!expires && expires < today && expires !== toDateInput(existing?.expires_at ?? null);
+  const valid = title.trim().length > 0 && body.trim().length > 0 && audience !== "" && !expiryPast;
+  const audienceName = audience === "school" ? "Whole school" : classes.find((c) => c.id === audience)?.name || "Class";
+  const audienceWho = audience === "school" ? "every family, pupil and member of staff" : `the pupils, families and teachers of ${audienceName}`;
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && !busy) onClose();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [busy, onClose]);
 
   const save = async () => {
     if (!supabase || !valid) return;
@@ -75,7 +90,7 @@ export function ComposeModal({
     }
   };
 
-  const label = existing ? "Edit notice" : "Post notice";
+  const label = existing ? "Edit notice" : previewing ? "Check your notice" : "Post notice";
 
   return (
     <div className="fixed inset-0 z-[100] flex items-end justify-center bg-black/40 sm:items-center sm:p-4" role="dialog" aria-modal="true" aria-label={label}>
@@ -86,6 +101,19 @@ export function ComposeModal({
             ×
           </button>
         </div>
+        {previewing ? (
+          <div className="space-y-4 px-5 py-5">
+            <p className="rounded-lg bg-amber-50 px-3 py-2 text-sm text-amber-900">
+              This will be posted to <strong>{audienceName}</strong>: {audienceWho} will see it{pinned ? ", pinned at the top" : ""}
+              {expires ? `, until ${new Date(`${expires}T12:00:00`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}` : ""}.
+            </p>
+            <div className="rounded-2xl border border-gold-light bg-white p-4">
+              <p className="text-base font-semibold text-ink">{title.trim()}</p>
+              <p className="mt-2 whitespace-pre-line break-words text-sm text-ink/80">{body.trim()}</p>
+            </div>
+            {error && <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">{error}</p>}
+          </div>
+        ) : (
         <div className="space-y-4 px-5 py-5">
           <label className="block text-sm">
             <span className="font-medium text-ink">Title</span>
@@ -117,18 +145,26 @@ export function ComposeModal({
             </label>
             <label className="block text-sm">
               <span className="font-medium text-ink">Expires on (optional)</span>
-              <input type="date" value={expires} onChange={(e) => setExpires(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light px-3 py-2 text-sm" />
+              <input type="date" value={expires} min={today} onChange={(e) => setExpires(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light px-3 py-2 text-sm" />
+              {expiryPast && <span className="mt-1 block text-xs text-red-700">That date has passed, so nobody would see the notice.</span>}
             </label>
           </div>
           {error && <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">{error}</p>}
         </div>
+        )}
         <div className="flex justify-end gap-2 border-t border-gold-light px-5 py-4">
-          <button type="button" onClick={onClose} className="rounded-lg border border-gold-light px-4 py-2 text-sm font-medium text-ink/70 hover:bg-cream">
-            Cancel
+          <button type="button" onClick={previewing ? () => setPreviewing(false) : onClose} className="rounded-lg border border-gold-light px-4 py-2 text-sm font-medium text-ink/70 hover:bg-cream">
+            {previewing ? "Back to edit" : "Cancel"}
           </button>
-          <button type="button" disabled={!valid || busy} onClick={save} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
-            {busy ? "Saving…" : existing ? "Save changes" : "Post notice"}
-          </button>
+          {existing || previewing ? (
+            <button type="button" disabled={!valid || busy} onClick={save} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
+              {busy ? "Saving…" : existing ? "Save changes" : `Post to ${audienceName}`}
+            </button>
+          ) : (
+            <button type="button" disabled={!valid} onClick={() => { setError(null); setPreviewing(true); }} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
+              Preview
+            </button>
+          )}
         </div>
       </div>
     </div>

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { formatDateKey } from "@/lib/learn/ukTime";
 
 type Row = { id: string; week_of: string; note: string };
 
@@ -36,7 +37,7 @@ export function WeeklyTarbiyahNoteWidget({ childId, limit = 3 }: { childId: stri
       <ul className="mt-2 space-y-2">
         {rows.map((r) => (
           <li key={r.id} className="rounded-lg border border-gold-light/40 p-3 text-sm">
-            <p className="text-xs font-medium text-ink/65">Week of {new Date(r.week_of).toLocaleDateString("en-GB")}</p>
+            <p className="text-xs font-medium text-ink/65">Week of {formatDateKey(r.week_of.slice(0, 10), { day: "numeric", month: "short", year: "numeric" })}</p>
             <p className="mt-1 text-ink/80">{r.note}</p>
           </li>
         ))}

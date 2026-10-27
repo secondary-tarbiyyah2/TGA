@@ -1,10 +1,10 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { formatGBP } from "@/lib/format";
 import { matchFeeBand } from "@/lib/learn/fees";
-import { round2, todayIso } from "./shared";
+import { parsePounds, round2, todayIso } from "./shared";
 import type { FeeBand } from "@/content/seed";
 
 export type FamilyOpt = { id: string; name: string };
@@ -68,8 +68,17 @@ export function NewChargeDialog({
   const groupYearName =
     target === "year_group" ? yearGroups.find((y) => y.id === yearGroupId)?.name : target === "family" && childId ? pupils.find((c) => c.id === childId)?.yearGroup : null;
   const band = matchFeeBand(groupYearName, feeBands);
-  const value = round2(Number(amount));
+  const value = round2(parsePounds(amount));
   const valid = targets.length > 0 && description.trim().length > 0 && value > 0 && !!dueDate;
+  const pupilName = (id: string | null) => (id ? pupils.find((c) => c.id === id)?.name : undefined) || "";
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && !busy) onClose();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [busy, onClose]);
 
   const save = async () => {
     if (!supabase || !valid) return;
@@ -98,9 +107,9 @@ export function NewChargeDialog({
   const field = "mt-1 w-full rounded-lg border border-gold-light bg-white px-3 py-2";
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/40 p-0 sm:items-center sm:p-4" role="dialog" aria-modal="true">
+    <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/40 p-0 sm:items-center sm:p-4" role="dialog" aria-modal="true" aria-labelledby="new-charge-title">
       <div className="max-h-[92vh] w-full max-w-lg overflow-y-auto rounded-t-2xl border border-gold-light bg-white p-5 sm:rounded-2xl">
-        <h2 className="text-lg font-semibold text-ink">New charge</h2>
+        <h2 id="new-charge-title" className="text-lg font-semibold text-ink">New charge</h2>
         <div className="mt-4 space-y-3 text-sm">
           <div className="flex flex-wrap gap-2">
             {(
@@ -169,10 +178,19 @@ export function NewChargeDialog({
             </label>
           )}
 
-          {target !== "family" && (
-            <p className="rounded-lg bg-cream px-3 py-2 text-ink/70">
-              {targets.length === 0 ? "No children found for this selection." : `One charge per child: ${targets.length} charge${targets.length === 1 ? "" : "s"} across ${familyCount} famil${familyCount === 1 ? "y" : "ies"}.`}
-            </p>
+          {target !== "family" && (yearGroupId || classId) && (
+            <div className="rounded-lg bg-cream px-3 py-2 text-ink/70">
+              {targets.length === 0 ? (
+                "No children found for this selection."
+              ) : (
+                <details>
+                  <summary className="cursor-pointer">
+                    One charge per child: {targets.length} charge{targets.length === 1 ? "" : "s"} across {familyCount} famil{familyCount === 1 ? "y" : "ies"}. <span className="font-medium text-teal-700 underline">See who</span>
+                  </summary>
+                  <p className="mt-1 text-xs">{targets.map((t) => pupilName(t.childId)).filter(Boolean).sort().join(", ")}</p>
+                </details>
+              )}
+            </div>
           )}
 
           <label className="block">
@@ -182,7 +200,7 @@ export function NewChargeDialog({
           <div className="grid grid-cols-2 gap-3">
             <label className="block">
               <span className="text-ink/70">Amount (£)</span>
-              <input type="text" min="0" step="0.01" inputMode="decimal" value={amount} onChange={(e) => setAmount(e.target.value)} className={field} />
+              <input type="text" inputMode="decimal" value={amount} onChange={(e) => setAmount(e.target.value)} className={field} placeholder="e.g. 304.29" />
             </label>
             <label className="block">
               <span className="text-ink/70">Due date</span>
@@ -204,6 +222,11 @@ export function NewChargeDialog({
                 </button>
               ))}
             </div>
+          )}
+          {valid && targets.length > 1 && (
+            <p className="text-xs text-ink/65">
+              Total raised: {formatGBP(round2(value * targets.length))} ({targets.length} x {formatGBP(value)}).
+            </p>
           )}
           {error && <p className="text-red-700">{error}</p>}
         </div>

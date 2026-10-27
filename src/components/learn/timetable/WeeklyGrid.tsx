@@ -1,14 +1,15 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { WEEKDAYS, FALLBACK_PERIODS, AUDIENCES, type PeriodKind, type TimetablePeriod, type TimetableSlot } from "@/lib/learn/timetable";
+import { WEEKDAYS, FALLBACK_PERIODS, AUDIENCES, lessonPeriods, type PeriodKind, type TimetablePeriod, type TimetableSlot } from "@/lib/learn/timetable";
 import { classColour, hhmm, moveProblem, type Colour, type LockableSlot, type Teacher } from "./types";
 
 const PX_PER_MIN = 1.15; // vertical scale: 60 min = 69px
 const SNAP = 5; // minutes
 const MIN_LESSON = 10; // shortest lesson, minutes
-const DEFAULT_LESSON = 45; // length of a lesson added by clicking an empty spot
+const DEFAULT_LESSON = 45; // length of a lesson added by clicking outside any lesson period
 const GUTTER = 56; // px, time labels
+const MIN_LANE_PX = 72; // narrowest a lesson block gets before the grid scrolls sideways
 
 const toMin = (t: string) => {
   const [h, m] = hhmm(t).split(":").map(Number);
@@ -16,6 +17,39 @@ const toMin = (t: string) => {
 };
 const fmt = (m: number) => `${String(Math.floor(m / 60)).padStart(2, "0")}:${String(m % 60).padStart(2, "0")}`;
 const snap = (m: number) => Math.round(m / SNAP) * SNAP;
+
+/**
+ * Side-by-side lanes for lessons that overlap on one day (e.g. every class's
+ * Lesson 1 in the "Everyone" view), so no block hides another. Returns each
+ * slot's lane and the lane count of its overlapping group.
+ */
+function laneLayout(daySlots: TimetableSlot[]): Map<string, { lane: number; lanes: number }> {
+  const out = new Map<string, { lane: number; lanes: number }>();
+  const sorted = [...daySlots].sort((a, b) => toMin(a.start_time) - toMin(b.start_time) || toMin(a.end_time) - toMin(b.end_time));
+  let group: { id: string; lane: number }[] = [];
+  let laneEnds: number[] = [];
+  let groupEnd = -1;
+  const flush = () => {
+    for (const g of group) out.set(g.id, { lane: g.lane, lanes: Math.max(1, laneEnds.length) });
+    group = [];
+    laneEnds = [];
+  };
+  for (const s of sorted) {
+    const st = toMin(s.start_time);
+    const en = toMin(s.end_time);
+    const fresh = st >= groupEnd;
+    if (fresh) flush();
+    let lane = laneEnds.findIndex((end) => end <= st);
+    if (lane === -1) {
+      lane = laneEnds.length;
+      laneEnds.push(en);
+    } else laneEnds[lane] = en;
+    group.push({ id: s.id, lane });
+    groupEnd = fresh ? en : Math.max(groupEnd, en);
+  }
+  flush();
+  return out;
+}
 
 export type GridBreak = { weekday: number; start: string; end: string; name: string };
 
@@ -102,9 +136,14 @@ export function WeeklyGrid({
     timer.current = window.setTimeout(() => setMoveError(null), 5000);
   };
 
-  // Visible time range: at least 08:00-19:00, widened to fit any lesson.
-  let lo = 8 * 60;
-  let hi = 19 * 60;
+  // Visible time range: the school day (09:00-15:00), widened to fit any
+  // stored period or lesson outside it.
+  let lo = 9 * 60;
+  let hi = 15 * 60;
+  for (const p of (periods ?? []).filter((x) => x.active)) {
+    lo = Math.min(lo, Math.floor(toMin(p.start_time) / 60) * 60);
+    hi = Math.max(hi, Math.ceil(toMin(p.end_time) / 60) * 60);
+  }
   for (const s of slots) {
     lo = Math.min(lo, Math.floor(toMin(s.start_time) / 60) * 60);
     hi = Math.max(hi, Math.ceil(toMin(s.end_time) / 60) * 60);
@@ -130,6 +169,18 @@ export function WeeklyGrid({
   for (const p of breaks ?? []) bands.push({ weekday: p.weekday, start: toMin(p.start), end: toMin(p.end), label: p.name, className: "bg-orange-100/80 text-orange-900/80" });
 
   const nameOf = (id: string) => teachers.find((t) => t.id === id)?.full_name || "Teacher";
+
+  // Clicking an empty spot inside a lesson period adds a lesson for exactly that period.
+  const lessonBlocks = lessonPeriods(periods).map((p) => ({ start: toMin(p.start), end: toMin(p.end), weekdays: p.weekdays }));
+  const addRange = (weekday: number, minute: number): { start: number; end: number } => {
+    const hit = lessonBlocks.find((p) => p.weekdays.includes(weekday) && minute >= p.start && minute < p.end);
+    if (hit) return { start: hit.start, end: hit.end };
+    const start = Math.max(lo, Math.min(hi - MIN_LESSON, snap(minute)));
+    return { start, end: Math.min(hi, start + DEFAULT_LESSON) };
+  };
+  const lanesByDay = new Map(WEEKDAYS.map((wd) => [wd.value, laneLayout(slots.filter((s) => s.weekday === wd.value))]));
+  const maxLanes = Math.max(1, ...[...lanesByDay.values()].flatMap((m) => [...m.values()].map((v) => v.lanes)));
+  const minGridWidth = Math.max(720, GUTTER + WEEKDAYS.length * Math.max(132, maxLanes * MIN_LANE_PX));
 
   const geometry = () => {
     const el = bodyRef.current;
@@ -225,9 +276,14 @@ export function WeeklyGrid({
       {moveNote && !moveError && <p role="status" className="mb-2 rounded-lg bg-amber-50 px-3 py-2 text-xs text-amber-900">{moveNote}</p>}
       {moveError && <p role="alert" className="mb-2 rounded-lg bg-red-50 px-3 py-2 text-xs text-red-800">{moveError}</p>}
       {!editable && slots.length > 0 && <p className="mb-2 text-xs text-ink/65">Locked: only draft timetables can be changed or dragged.</p>}
-      {canDrag && <p className="mb-2 text-xs text-ink/65">Tip: drag a lesson to any day or minute (snaps to 5 min), drag its bottom edge to change the length, click an empty spot to add a lesson. Shaded bands are breaks (grey), lunch and prayer (amber), enrichment (green) and protected times (orange).</p>}
+      {canDrag && (
+        <details className="mb-2 text-xs text-ink/65">
+          <summary className="cursor-pointer font-medium">How to edit the grid</summary>
+          <p className="mt-1">Drag a lesson to any day or time (snaps to 5 minutes), drag its bottom edge to change the length, or click an empty spot to add a lesson for that period. Shaded bands are breaks (grey), lunch and prayer (amber), enrichment (green) and protected times (orange).</p>
+        </details>
+      )}
       <div className="overflow-x-auto rounded-xl border border-gold-light/50">
-        <div className="min-w-[720px]">
+        <div style={{ minWidth: minGridWidth }}>
           <div className="flex bg-cream/70 text-xs font-semibold text-ink/70">
             <div style={{ width: GUTTER }} className="border-b border-gold-light/50 p-2 text-ink/65">Time</div>
             {WEEKDAYS.map((wd) => (
@@ -245,6 +301,7 @@ export function WeeklyGrid({
               const left = `calc(${GUTTER}px + (100% - ${GUTTER}px) * ${i} / ${WEEKDAYS.length})`;
               const width = `calc((100% - ${GUTTER}px) / ${WEEKDAYS.length})`;
               const daySlots = slots.filter((s) => s.weekday === wd.value);
+              const lanes = lanesByDay.get(wd.value);
               return (
                 <div
                   key={wd.value}
@@ -264,8 +321,8 @@ export function WeeklyGrid({
                     editable
                       ? (e) => {
                           if (e.target !== e.currentTarget && !(e.target as HTMLElement).dataset.bg) return;
-                          const start = Math.max(lo, Math.min(hi - MIN_LESSON, snap(minuteAt(e.clientY))));
-                          onAdd(wd.value, fmt(start), fmt(Math.min(hi, start + DEFAULT_LESSON)));
+                          const r = addRange(wd.value, minuteAt(e.clientY));
+                          onAdd(wd.value, fmt(r.start), fmt(r.end));
                         }
                       : undefined
                   }
@@ -292,7 +349,10 @@ export function WeeklyGrid({
                     const c = colourOf ? colourOf(s) : classColour(s.class_id);
                     const st = toMin(s.start_time);
                     const en = toMin(s.end_time);
+                    const lane = lanes?.get(s.id) || { lane: 0, lanes: 1 };
                     const style = {
+                      left: `calc(${lane.lane} * (100% - 8px) / ${lane.lanes} + 4px)`,
+                      width: `calc((100% - 8px) / ${lane.lanes} - ${lane.lanes > 1 ? 2 : 0}px)`,
                       backgroundColor: c.bg,
                       borderColor: c.border,
                       color: c.text,
@@ -312,7 +372,7 @@ export function WeeklyGrid({
                     );
                     if (!editable) {
                       return (
-                        <div key={s.id} style={style} className={`absolute left-1 right-1 overflow-hidden rounded-lg border-l-4 px-2 py-0.5${ring}`} title="Locked: make an editable draft to change this lesson">
+                        <div key={s.id} style={style} className={`absolute overflow-hidden rounded-lg border-l-4 px-2 py-0.5${ring}`} title="Locked: make an editable draft to change this lesson">
                           {inner}
                         </div>
                       );
@@ -324,7 +384,7 @@ export function WeeklyGrid({
                         tabIndex={0}
                         aria-label={`Edit ${s.classes?.name} ${WEEKDAYS.find((w) => w.value === s.weekday)?.label} ${hhmm(s.start_time)}`}
                         style={style}
-                        className={`absolute left-1 right-1 overflow-hidden rounded-lg border-l-4 px-2 py-0.5 text-left shadow-sm transition-shadow hover:shadow-md focus-visible:outline focus-visible:outline-2 ${canDrag ? "cursor-grab active:cursor-grabbing" : "cursor-pointer"} ${dragging ? "opacity-30" : ""}${ring}`}
+                        className={`absolute overflow-hidden rounded-lg border-l-4 px-2 py-0.5 text-left shadow-sm transition-shadow hover:shadow-md focus-visible:outline focus-visible:outline-2 ${canDrag ? "cursor-grab active:cursor-grabbing" : "cursor-pointer"} ${dragging ? "opacity-30" : ""}${ring}`}
                         onPointerDown={(e) => begin(e, s, "move")}
                         onPointerUp={(e) => void finish(e, s, false)}
                         onPointerCancel={(e) => void finish(e, s, true)}

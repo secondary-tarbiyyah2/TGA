@@ -11,12 +11,13 @@ import {
   formatTime,
   formatWindow,
   generateSlots,
-  toLocalInput,
   windowProblem,
   type EveningStatus,
   type ParentEvening,
 } from "@/lib/learn/parentEvenings";
 import { ui } from "@/components/learn/ui";
+import { isoToUkLocal, ukLocalToIso } from "@/lib/learn/openEvening";
+import { useNow } from "@/lib/learn/useNow";
 
 type Teacher = { id: string; name: string; cover: boolean };
 type TeacherOption = { user_id: string; full_name: string; role: string };
@@ -32,8 +33,10 @@ function EveningAdminCard({ ev, teachers, onChanged }: { ev: EveningRow; teacher
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const [editing, setEditing] = useState(false);
-  const [editStart, setEditStart] = useState(() => toLocalInput(ev.starts_at));
-  const [editEnd, setEditEnd] = useState(() => toLocalInput(ev.ends_at));
+  // Times are typed and shown as UK time whatever the browser's zone (they
+  // used to be read in the browser's own zone but displayed in UK time).
+  const [editStart, setEditStart] = useState(() => isoToUkLocal(ev.starts_at));
+  const [editEnd, setEditEnd] = useState(() => isoToUkLocal(ev.ends_at));
 
   const chosen = useMemo(() => new Set(ev.parent_evening_teachers.map((t) => t.teacher_id)), [ev.parent_evening_teachers]);
   const total = generateSlots(ev).length * chosen.size;
@@ -53,6 +56,8 @@ function EveningAdminCard({ ev, teachers, onChanged }: { ev: EveningRow; teacher
 
   const setStatus = async (status: EveningStatus) => {
     if (!supabase) return;
+    if (status === "open" && chosen.size === 0) return setError("Choose at least one teacher (Teachers & bookings) before opening it for booking.");
+    if (status === "open" && !window.confirm(`Open "${ev.title}" for booking? Parents will see it in the family area straight away.`)) return;
     setBusy(true);
     setError(null);
     const { error: err } = await supabase.from("parent_evenings").update({ status }).eq("id", ev.id);
@@ -69,7 +74,7 @@ function EveningAdminCard({ ev, teachers, onChanged }: { ev: EveningRow; teacher
     setError(null);
     const { error: err } = await supabase
       .from("parent_evenings")
-      .update({ starts_at: new Date(editStart).toISOString(), ends_at: new Date(editEnd).toISOString() })
+      .update({ starts_at: ukLocalToIso(editStart), ends_at: ukLocalToIso(editEnd) })
       .eq("id", ev.id);
     if (err) setError(err.message.includes("evening_has_bookings") ? "This evening already has bookings, so its times can't be changed. Cancel the bookings first." : err.message);
     else setEditing(false);
@@ -129,7 +134,7 @@ function EveningAdminCard({ ev, teachers, onChanged }: { ev: EveningRow; teacher
             onClick={() => setStatus(s)}
             className={`rounded-full border px-3 py-1 text-sm ${ev.status === s ? "border-gold-700 bg-gold-700 text-white" : "border-gold-light bg-white text-ink/80 hover:bg-cream"} disabled:opacity-60`}
           >
-            {s === "draft" ? "Draft" : s === "open" ? "Open for booking" : "Close"}
+            {s === "draft" ? "Draft" : s === "open" ? "Open for booking" : ev.status === "closed" ? "Closed" : "Close bookings"}
           </button>
         ))}
         <button type="button" onClick={() => setOpen((o) => !o)} className="text-sm text-gold-700 underline">
@@ -145,11 +150,11 @@ function EveningAdminCard({ ev, teachers, onChanged }: { ev: EveningRow; teacher
       {editing && (
         <div className="mt-3 flex flex-wrap items-end gap-3 rounded-lg border border-gold-light/50 bg-cream/40 p-3">
           <div>
-            <label className="block text-xs font-medium text-ink/70" htmlFor={`pe-es-${ev.id}`}>Starts</label>
+            <label className="block text-xs font-medium text-ink/70" htmlFor={`pe-es-${ev.id}`}>Starts (UK time)</label>
             <input id={`pe-es-${ev.id}`} type="datetime-local" value={editStart} onChange={(e) => setEditStart(e.target.value)} className={inputCls} />
           </div>
           <div>
-            <label className="block text-xs font-medium text-ink/70" htmlFor={`pe-ee-${ev.id}`}>Ends</label>
+            <label className="block text-xs font-medium text-ink/70" htmlFor={`pe-ee-${ev.id}`}>Ends (UK time)</label>
             <input id={`pe-ee-${ev.id}`} type="datetime-local" value={editEnd} onChange={(e) => setEditEnd(e.target.value)} className={inputCls} />
           </div>
           <button type="button" disabled={busy} onClick={saveWindow} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-medium text-white hover:bg-gold-900 disabled:opacity-50">
@@ -220,6 +225,9 @@ export function AdminParentEvenings() {
   const [picked, setPicked] = useState<Set<string>>(new Set());
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [creating, setCreating] = useState(false);
+  const [notice, setNotice] = useState<string | null>(null);
+  const now = useNow();
 
   const load = useCallback(async () => {
     if (!supabase) return;
@@ -263,8 +271,6 @@ export function AdminParentEvenings() {
   const create = async () => {
     if (!supabase) return;
     setError(null);
-    const start = new Date(startsAt);
-    const end = new Date(endsAt);
     if (!title.trim()) {
       setError("Give the evening a title.");
       return;
@@ -288,8 +294,8 @@ export function AdminParentEvenings() {
         .from("parent_evenings")
         .insert({
           title: title.trim(),
-          starts_at: start.toISOString(),
-          ends_at: end.toISOString(),
+          starts_at: ukLocalToIso(startsAt),
+          ends_at: ukLocalToIso(endsAt),
           slot_minutes: slotMinutes,
           location: location.trim() || null,
           join_url: joinUrl.trim() || null,
@@ -316,6 +322,8 @@ export function AdminParentEvenings() {
       setJoinUrl("");
       setNotes("");
       setPicked(new Set());
+      setCreating(false);
+      setNotice(`"${title.trim()}" created as a draft. Open it for booking when you are ready.`);
       await load();
     } finally {
       setBusy(false);
@@ -324,6 +332,15 @@ export function AdminParentEvenings() {
 
   return (
     <div className="space-y-6">
+      <div className="flex flex-wrap items-center gap-3">
+        {!creating && (
+          <button type="button" onClick={() => { setCreating(true); setNotice(null); }} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900">
+            + New parent evening
+          </button>
+        )}
+        {notice && <p role="status" className="text-sm text-green-800">{notice}</p>}
+      </div>
+      {creating && (
       <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
         <h2 className="font-serif text-h3 font-semibold text-ink">New parent evening</h2>
         <p className="mt-1 text-sm text-ink/65">It starts as a draft, hidden from parents. Open it for booking when the teachers are chosen.</p>
@@ -331,13 +348,13 @@ export function AdminParentEvenings() {
           <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Title, e.g. Autumn parent evening" maxLength={120} aria-label="Title" className={`${inputCls} sm:col-span-2`} />
           <div>
             <label className="block text-xs font-medium text-ink/70" htmlFor="pe-start">
-              Starts
+              Starts (UK time)
             </label>
             <input id="pe-start" type="datetime-local" value={startsAt} onChange={(e) => setStartsAt(e.target.value)} className={inputCls} />
           </div>
           <div>
             <label className="block text-xs font-medium text-ink/70" htmlFor="pe-end">
-              Ends
+              Ends (UK time)
             </label>
             <input id="pe-end" type="datetime-local" value={endsAt} onChange={(e) => setEndsAt(e.target.value)} className={inputCls} />
           </div>
@@ -384,17 +401,46 @@ export function AdminParentEvenings() {
           )}
         </div>
         {error && <p className="mt-3 text-sm text-red-700">{error}</p>}
-        <button type="button" disabled={busy} onClick={create} className="mt-4 rounded-lg bg-gold-700 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-gold-900 disabled:opacity-50">
-          Create parent evening
-        </button>
+        <div className="mt-4 flex flex-wrap gap-2">
+          <button type="button" disabled={busy} onClick={create} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-gold-900 disabled:opacity-50">
+            {busy ? "Creating…" : "Create as draft"}
+          </button>
+          <button type="button" onClick={() => { setCreating(false); setError(null); }} className="rounded-lg border border-gold-light px-4 py-2 text-sm font-medium text-ink/75 hover:bg-cream">
+            Cancel
+          </button>
+        </div>
       </div>
+      )}
+      {!creating && loadProblems.length > 0 && (
+        <p role="alert" className="break-words text-xs text-amber-900">
+          Couldn&apos;t load everything: {loadProblems.join(" · ")}
+        </p>
+      )}
 
       {evenings === null ? (
         <p className="text-sm text-ink/65">Loading…</p>
       ) : evenings.length === 0 ? (
-        <p className="text-sm text-ink/65">No parent evenings yet.</p>
+        <p className="rounded-2xl border border-gold-light/50 bg-white p-6 text-sm text-ink/65">No parent evenings yet. Use &ldquo;+ New parent evening&rdquo; to set one up.</p>
       ) : (
-        evenings.map((ev) => <EveningAdminCard key={ev.id} ev={ev} teachers={teachers} onChanged={load} />)
+        (() => {
+          // Upcoming first (soonest at the top); past evenings folded away.
+          const upcoming = evenings.filter((ev) => new Date(ev.ends_at).getTime() >= now).sort((a, b) => a.starts_at.localeCompare(b.starts_at));
+          const past = evenings.filter((ev) => new Date(ev.ends_at).getTime() < now);
+          return (
+            <>
+              {upcoming.length === 0 && <p className="text-sm text-ink/65">No upcoming parent evenings.</p>}
+              {upcoming.map((ev) => <EveningAdminCard key={ev.id} ev={ev} teachers={teachers} onChanged={load} />)}
+              {past.length > 0 && (
+                <details>
+                  <summary className="cursor-pointer text-sm font-medium text-ink/70">Past parent evenings ({past.length})</summary>
+                  <div className="mt-3 space-y-4">
+                    {past.map((ev) => <EveningAdminCard key={ev.id} ev={ev} teachers={teachers} onChanged={load} />)}
+                  </div>
+                </details>
+              )}
+            </>
+          );
+        })()
       )}
     </div>
   );

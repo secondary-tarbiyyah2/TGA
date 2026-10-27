@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { formatGBP } from "@/lib/format";
-import { METHOD_LABEL, round2, todayIso, type PaymentMethod } from "./shared";
+import { METHOD_LABEL, parsePounds, round2, todayIso, type PaymentMethod } from "./shared";
 
 export function PaymentDialog({
   chargeId,
@@ -28,8 +28,18 @@ export function PaymentDialog({
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const value = round2(Number(amount));
-  const valid = value > 0 && value <= balance && !!paidOn;
+  const today = todayIso();
+  const value = round2(parsePounds(amount));
+  const future = !!paidOn && paidOn > today;
+  const valid = value > 0 && value <= balance && !!paidOn && !future;
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && !busy) onClose();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [busy, onClose]);
 
   const save = async () => {
     if (!supabase || !valid) return;
@@ -55,17 +65,18 @@ export function PaymentDialog({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/40 p-0 sm:items-center sm:p-4" role="dialog" aria-modal="true">
+    <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/40 p-0 sm:items-center sm:p-4" role="dialog" aria-modal="true" aria-labelledby="payment-dialog-title">
       <div className="max-h-[92vh] w-full max-w-md overflow-y-auto rounded-t-2xl border border-gold-light bg-white p-5 sm:rounded-2xl">
-        <h2 className="text-lg font-semibold text-ink">{fullPayment ? "Mark as paid" : "Record payment"}</h2>
+        <h2 id="payment-dialog-title" className="text-lg font-semibold text-ink">{fullPayment ? "Mark as paid" : "Record payment"}</h2>
         <p className="mt-0.5 text-sm text-ink/65">
           {title} · balance {formatGBP(balance)}
         </p>
         <div className="mt-4 space-y-3 text-sm">
           <label className="block">
             <span className="text-ink/70">Amount (£)</span>
-            <input type="text" min="0" step="0.01" inputMode="decimal" value={amount} onChange={(e) => setAmount(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light px-3 py-2" />
+            <input type="text" inputMode="decimal" autoFocus={!fullPayment} value={amount} onChange={(e) => setAmount(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light px-3 py-2" placeholder="e.g. 304.29" />
             {value > balance && <span className="mt-1 block text-xs text-red-700">More than the {formatGBP(balance)} outstanding.</span>}
+            {amount.trim() !== "" && !(value > 0) && <span className="mt-1 block text-xs text-red-700">Enter an amount in pounds, for example 304.29.</span>}
           </label>
           <div>
             <span className="text-ink/70">Method</span>
@@ -85,7 +96,8 @@ export function PaymentDialog({
           </div>
           <label className="block">
             <span className="text-ink/70">Date received</span>
-            <input type="date" value={paidOn} onChange={(e) => setPaidOn(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light px-3 py-2" />
+            <input type="date" value={paidOn} max={today} onChange={(e) => setPaidOn(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light px-3 py-2" />
+            {future && <span className="mt-1 block text-xs text-red-700">The date received can&apos;t be in the future.</span>}
           </label>
           <label className="block">
             <span className="text-ink/70">Reference (optional)</span>

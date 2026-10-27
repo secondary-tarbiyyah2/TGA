@@ -5,6 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import type { ClassViewer } from "@/lib/learn/classes";
 import { RecordingChip, useRecordingLinks } from "@/components/learn/class/LessonRecordingLinks";
+import { ukToday } from "@/lib/learn/ukTime";
 
 // Moodle's "weekly format" course page: the class laid out week by week,
 // each week a section of activities (lessons, assignments, graded work),
@@ -92,7 +93,7 @@ function useActivities(classId: string, viewer: ClassViewer, routes: Routes): Ac
     let cancelled = false;
     (async () => {
       const out: Activity[] = [];
-      const today = new Date().toISOString().slice(0, 10);
+      const today = ukToday();
 
       // Lessons
       const { data: slots } = await supabase.from("timetable_slots").select("id").eq("class_id", classId);

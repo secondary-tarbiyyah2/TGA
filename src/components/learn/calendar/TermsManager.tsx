@@ -51,9 +51,28 @@ function plusDays(d: Date, n: number): Date {
 }
 
 type Draft = { name: string; starts_on: string; ends_on: string; ht_start: string; ht_end: string };
+type ClosureDraft = { id: string | null; kind: ClosureKind; name: string; starts_on: string; ends_on: string; notes: string };
+
+/** Change the closure type; a name still at the old type's default follows the new type (it used to stay "INSET day"). */
+function withKind(cf: ClosureDraft, kind: ClosureKind): ClosureDraft {
+  const name = !cf.name.trim() || cf.name === CLOSURE_LABEL[cf.kind] ? CLOSURE_LABEL[kind] : cf.name;
+  return { ...cf, kind, name };
+}
+
+/** The founding year: the Academy opens on Mon 4 Jan 2027 (induction week),
+ * so 2026/27 has no autumn term. These match the published term dates
+ * (src/content/seed.ts): the Ramadan and Eid break and the Eid al-Adha half
+ * term sit inside the two terms; the spring half term (26 to 30 March) falls
+ * between them. */
+const FOUNDING_YEAR = 2026;
+const FOUNDING_TERMS: Draft[] = [
+  { name: "Spring Term", starts_on: "2027-01-04", ends_on: "2027-03-25", ht_start: "2027-02-15", ht_end: "2027-03-12" },
+  { name: "Summer Term", starts_on: "2027-03-31", ends_on: "2027-07-09", ht_start: "2027-05-10", ht_end: "2027-05-21" },
+];
 
 /** Sensible UK-style defaults for an academic year starting in September of `y`. All editable. */
 function defaultTerms(y: number): Draft[] {
+  if (y === FOUNDING_YEAR) return FOUNDING_TERMS.map((t) => ({ ...t }));
   const ht = (s: Date) => ({ ht_start: key(s), ht_end: key(plusDays(s, 4)) });
   return [
     { name: "Autumn Term", starts_on: key(nextWeekday(y, 8, 2)), ends_on: key(prevFriday(y, 11, 20)), ...ht(nextMonday(y, 9, 26)) },
@@ -142,7 +161,7 @@ export function TermsManager({
   // single term editor ("new" or a term id)
   const [editing, setEditing] = useState<{ id: string | null; yearId: string; draft: Draft } | null>(null);
   // closure form
-  const [cf, setCf] = useState<{ id: string | null; kind: ClosureKind; name: string; starts_on: string; ends_on: string; notes: string } | null>(null);
+  const [cf, setCf] = useState<ClosureDraft | null>(null);
 
   const yearById = useMemo(() => new Map(years.map((y) => [y.id, y])), [years]);
   const grouped = useMemo(() => {
@@ -354,7 +373,11 @@ export function TermsManager({
                   ))}
                 </select>
               </Lbl>
-              <p className="pb-2 text-xs text-ink/65">Prefilled with typical UK dates (Sept–Dec, Jan–Mar, Apr–Jul). Change anything before saving.</p>
+              <p className="pb-2 text-xs text-ink/65">
+                {wizard.year === FOUNDING_YEAR
+                  ? "Prefilled from the published 2026/27 term dates: the Academy opens on Monday 4 January 2027, so there is no autumn term. Change anything before saving."
+                  : "Prefilled with typical UK dates (Sept to Dec, Jan to Mar, Apr to Jul). Change anything before saving."}
+              </p>
             </div>
             {wizard.terms.map((d, i) => (
               <div key={i} className="rounded-xl border border-gold-light bg-white p-3">
@@ -372,7 +395,7 @@ export function TermsManager({
           </div>
         )}
 
-        {editing && (
+        {editing && !editing.id && (
           <div className="space-y-3 border-b border-gold-light bg-cream/40 px-4 py-4">
             <h4 className="text-sm font-semibold text-ink">{editing.id ? "Edit term" : "New term"}</h4>
             <Lbl text="Academic year">
@@ -406,7 +429,32 @@ export function TermsManager({
             <div key={yid}>
               <p className="bg-cream/50 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-ink/65">{yearById.get(yid)?.label || "No academic year"}</p>
               <ul className="divide-y divide-gold-light/60">
-                {list.map((t) => (
+                {list.map((t) =>
+                  editing && editing.id === t.id ? (
+                    // Edit opens in place, where you clicked, not at the top of the list.
+                    <li key={t.id} className="space-y-3 bg-cream/40 px-4 py-4">
+                      <h4 className="text-sm font-semibold text-ink">Edit {t.name}</h4>
+                      <Lbl text="Academic year">
+                        <select className={`${field} sm:w-64`} value={editing.yearId} onChange={(e) => setEditing({ ...editing, yearId: e.target.value })}>
+                          <option value="">Choose…</option>
+                          {years.map((y) => (
+                            <option key={y.id} value={y.id}>
+                              {y.label}
+                            </option>
+                          ))}
+                        </select>
+                      </Lbl>
+                      <TermFields d={editing.draft} onChange={(draft) => setEditing({ ...editing, draft })} />
+                      <div className="flex gap-2">
+                        <button type="button" className={btnPrimary} disabled={busy} onClick={saveTerm}>
+                          {busy ? "Saving…" : "Save term"}
+                        </button>
+                        <button type="button" className={btn} onClick={() => setEditing(null)}>
+                          Cancel
+                        </button>
+                      </div>
+                    </li>
+                  ) : (
                   <li key={t.id} className="flex flex-wrap items-start gap-2 px-4 py-3 text-sm">
                     <div className="min-w-0 flex-1">
                       <span className="flex flex-wrap items-center gap-2 font-medium text-ink">
@@ -429,7 +477,8 @@ export function TermsManager({
                     )}
                     {canManage && t.source === "sanity" && <span className="text-[11px] text-ink/65">Edit in the website CMS</span>}
                   </li>
-                ))}
+                  ),
+                )}
               </ul>
             </div>
           ))
@@ -445,11 +494,11 @@ export function TermsManager({
             </button>
           )}
         </div>
-        {cf && (
+        {cf && !cf.id && (
           <div className="space-y-3 border-b border-gold-light bg-cream/40 px-4 py-4">
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               <Lbl text="Type">
-                <select className={field} value={cf.kind} onChange={(e) => setCf({ ...cf, kind: e.target.value as ClosureKind, name: cf.name || CLOSURE_LABEL[e.target.value as ClosureKind] })}>
+                <select className={field} value={cf.kind} onChange={(e) => setCf(withKind(cf, e.target.value as ClosureKind))}>
                   {(Object.keys(CLOSURE_LABEL) as ClosureKind[]).map((k) => (
                     <option key={k} value={k}>
                       {CLOSURE_LABEL[k]}
@@ -484,7 +533,42 @@ export function TermsManager({
           <p className="px-4 py-3 text-sm text-ink/65">None recorded.</p>
         ) : (
           <ul className="divide-y divide-gold-light/60">
-            {closures.map((c) => (
+            {closures.map((c) =>
+              cf && cf.id === c.id ? (
+                <li key={c.id} className="space-y-3 bg-cream/40 px-4 py-4">
+                  <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                    <Lbl text="Type">
+                      <select className={field} value={cf.kind} onChange={(e) => setCf(withKind(cf, e.target.value as ClosureKind))}>
+                        {(Object.keys(CLOSURE_LABEL) as ClosureKind[]).map((k) => (
+                          <option key={k} value={k}>
+                            {CLOSURE_LABEL[k]}
+                          </option>
+                        ))}
+                      </select>
+                    </Lbl>
+                    <Lbl text="Name">
+                      <input className={field} value={cf.name} onChange={(e) => setCf({ ...cf, name: e.target.value })} />
+                    </Lbl>
+                    <Lbl text="From">
+                      <input type="date" className={field} value={cf.starts_on} onChange={(e) => setCf({ ...cf, starts_on: e.target.value })} />
+                    </Lbl>
+                    <Lbl text="To (blank = one day)">
+                      <input type="date" className={field} value={cf.ends_on} onChange={(e) => setCf({ ...cf, ends_on: e.target.value })} />
+                    </Lbl>
+                  </div>
+                  <Lbl text="Notes (optional)">
+                    <input className={field} value={cf.notes} onChange={(e) => setCf({ ...cf, notes: e.target.value })} />
+                  </Lbl>
+                  <div className="flex gap-2">
+                    <button type="button" className={btnPrimary} disabled={busy} onClick={saveClosure}>
+                      {busy ? "Saving…" : "Save"}
+                    </button>
+                    <button type="button" className={btn} onClick={() => setCf(null)}>
+                      Cancel
+                    </button>
+                  </div>
+                </li>
+              ) : (
               <li key={c.id} className="flex flex-wrap items-start gap-2 px-4 py-3 text-sm">
                 <div className="min-w-0 flex-1">
                   <span className="block font-medium text-ink">
@@ -504,7 +588,8 @@ export function TermsManager({
                   </div>
                 )}
               </li>
-            ))}
+              ),
+            )}
           </ul>
         )}
       </section>

@@ -24,13 +24,27 @@ export function AnalyticsPanel() {
 
   useEffect(() => {
     if (!supabase) return;
+    let cancelled = false;
     (async () => {
-      const [{ count: started }, { count: completed }, { count: leads }, { data: events }] = await Promise.all([
+      // The API returns at most 1000 rows per request, so page through the events instead of silently undercounting.
+      const allEvents = async () => {
+        const out: { event_type: string; step_index: number | null }[] = [];
+        const PAGE = 1000;
+        for (let from = 0; from < 200000; from += PAGE) {
+          const { data, error } = await supabase.from("quiz_events").select("event_type, step_index").in("event_type", ["step_viewed", "pdf_email_sent", "call_booked"]).order("id").range(from, from + PAGE - 1);
+          if (error || !data) break;
+          out.push(...(data as { event_type: string; step_index: number | null }[]));
+          if (data.length < PAGE) break;
+        }
+        return out;
+      };
+      const [{ count: started }, { count: completed }, { count: leads }, events] = await Promise.all([
         supabase.from("quiz_sessions").select("id", { count: "exact", head: true }),
         supabase.from("quiz_sessions").select("id", { count: "exact", head: true }).not("completed_at", "is", null),
         supabase.from("quiz_leads").select("id", { count: "exact", head: true }),
-        supabase.from("quiz_events").select("event_type, step_index"),
+        allEvents(),
       ]);
+      if (cancelled) return;
 
       const stepViews: Record<number, number> = {};
       let pdfSent = 0;
@@ -45,6 +59,9 @@ export function AnalyticsPanel() {
 
       setCounts({ started: started ?? 0, completed: completed ?? 0, leads: leads ?? 0, pdfSent, callsBooked, stepViews });
     })();
+    return () => {
+      cancelled = true;
+    };
   }, [supabase]);
 
   if (!supabase) return <p className="text-sm text-ink/65">The /learn area isn&apos;t connected yet.</p>;
@@ -58,7 +75,7 @@ export function AnalyticsPanel() {
       <div className="grid gap-4 sm:grid-cols-4">
         <Stat label="Quiz starts" value={counts.started} />
         <Stat label="Completed" value={counts.completed} note={`${completionRate}% completion`} />
-        <Stat label="Plans emailed / leads" value={counts.leads} />
+        <Stat label="Leads" value={counts.leads} note={`${counts.pdfSent} plan${counts.pdfSent === 1 ? "" : "s"} emailed`} />
         <Stat label="Calls booked" value={counts.callsBooked} />
       </div>
 
@@ -69,7 +86,10 @@ export function AnalyticsPanel() {
             {dropOff.map(([step, count]) => (
               <li key={step} className="flex items-center justify-between border-b border-gold-light/20 py-1">
                 <span>Question {Number(step) + 1}</span>
-                <span className="font-medium text-ink">{count} views</span>
+                <span className="font-medium text-ink">
+                  {count} view{count === 1 ? "" : "s"}
+                  {counts.started > 0 && <span className="ml-2 font-normal text-ink/65">{Math.round((count / counts.started) * 100)}% of starts</span>}
+                </span>
               </li>
             ))}
           </ul>
@@ -77,8 +97,7 @@ export function AnalyticsPanel() {
       )}
 
       <p className="text-xs text-ink/65">
-        Session data is fully anonymous until a family submits their email with consent (a quiz_leads row) · figures
-        here can never be traced back to an identity before that point.
+        Session data is anonymous until a family submits their email with consent. Figures here can never be traced back to a person before that point.
       </p>
     </div>
   );

@@ -121,6 +121,7 @@ export function LessonRecordingPanel({ lessonInstanceId, canManage }: { lessonIn
   const remove = async (id: string) => {
     const supabase = getSupabaseClient();
     if (!supabase) return;
+    if (!window.confirm("Remove this recording link? Pupils will no longer see it.")) return;
     await supabase.from("lesson_recording_links").delete().eq("id", id);
     await load();
   };

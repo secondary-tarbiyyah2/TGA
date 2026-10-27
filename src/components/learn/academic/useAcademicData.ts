@@ -34,7 +34,7 @@ export function useAcademicData(): { data: AcademicData; reload: () => Promise<v
       supabase.from("year_groups").select("id, name, sort_order, capacity").order("sort_order"),
       supabase.from("subjects").select("id, name, code, is_core").order("name"),
       supabase.from("classes").select("id, name, year_group_id, subject_id, weekly_lessons, lesson_length_minutes, academic_year_id, meeting_url").order("name"),
-      supabase.from("children").select("id, name").order("name"),
+      supabase.from("children").select("id, name, year_group_id").order("name"),
       supabase.from("enrolments").select("id, class_id, child_id"),
       supabase.from("profiles").select("id, full_name, user_roles!inner(role)").in("user_roles.role", ["teacher", "teaching_assistant_cover"]),
       supabase.from("user_roles").select("id, user_id, scope_id").in("role", ["teacher", "teaching_assistant_cover"]).eq("scope_type", "class"),

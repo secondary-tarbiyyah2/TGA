@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { MARK_BANDS } from "@/lib/learn/quranClassroom";
 import { ui } from "@/components/learn/ui";
 
@@ -61,7 +62,13 @@ export function StaffHandbook() {
         <p>Record it in the register, then follow it up with the family from Absences: call or message, note what happened, and close it once it is explained. Open follow-ups appear in your Action centre.</p>
       </Section>
       <Section title="Worried about a child">
-        <p>Report it straight away through the Report a concern link. Do not wait, and do not investigate yourself. It is always available, even before you clock in.</p>
+        <p>
+          Report it straight away through{" "}
+          <Link href="/report-concern" className="font-semibold text-teal-700 underline">
+            Report a concern
+          </Link>
+          . Do not wait, and do not investigate yourself. It is always available, even before you clock in.
+        </p>
       </Section>
     </div>
   );

@@ -32,6 +32,7 @@ export function AnnouncementsFeed({
   limit = 10,
   includeSchool = true,
   viewAllHref,
+  hideWhenEmpty = false,
 }: {
   classIds?: string[];
   canPost?: boolean;
@@ -42,6 +43,8 @@ export function AnnouncementsFeed({
   includeSchool?: boolean;
   /** Link to the full Announcements page. Defaults to the current portal area's page when shown on a dashboard. */
   viewAllHref?: string;
+  /** Render nothing (rather than an empty box) when there are no announcements and nothing to post. */
+  hideWhenEmpty?: boolean;
 }) {
   const supabase = getSupabaseClient();
   const pathname = usePathname() || "";
@@ -105,6 +108,8 @@ export function AnnouncementsFeed({
       setBusy(false);
     }
   };
+
+  if (hideWhenEmpty && !canPost && items !== null && items.length === 0) return null;
 
   return (
     <div className="rounded-2xl border border-gold-light/50 bg-white p-6">

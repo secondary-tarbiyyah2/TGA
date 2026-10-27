@@ -17,7 +17,7 @@ export type ClassRow = {
   academic_year_id: string | null;
   meeting_url: string | null;
 };
-export type Child = { id: string; name: string };
+export type Child = { id: string; name: string; year_group_id?: string | null };
 export type Enrolment = { id: string; class_id: string; child_id: string };
 export type Teacher = { id: string; full_name: string };
 export type ClassTeacher = { id: number; user_id: string; scope_id: string };

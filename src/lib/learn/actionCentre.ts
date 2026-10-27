@@ -8,7 +8,7 @@ import { myTeachingClasses } from "@/lib/learn/classes";
 import { MARK_COLUMNS, nextSession, pupilStats, revisionRows, todayISO, type QuranMark, type Session } from "@/lib/learn/quranClassroom";
 
 export type Urgency = "now" | "soon" | "info";
-export type ActionArea = "Homework" | "Qur'an" | "Absence";
+export type ActionArea = "Homework" | "Qur'an" | "Absence" | "Signatures" | "Child details";
 export type ActionItem = { id: string; area: ActionArea; urgency: Urgency; title: string; detail: string; href: string; cta: string; who?: string; people?: { id: string; name: string }[] };
 export type Role = "teach" | "admin" | "student" | "family";
 
@@ -136,8 +136,8 @@ export async function loadPupilItems(children: { id: string; name: string }[], r
   const items: ActionItem[] = [];
   for (const c of children) {
     const who = role === "family" ? `${c.name.split(" ")[0]}: ` : "";
-    const hw = await supabase.from("homework_status").select("homework_id, due_at, child_id, status, homework:homework_id(title, archived_at)").eq("child_id", c.id).gte("due_at", new Date(Date.now() - 30 * DAY).toISOString());
-    for (const r of ((hw.data as unknown as Status[]) || []).filter((x) => x.homework && !x.homework.archived_at)) {
+    const hw = await supabase.from("homework_status").select("homework_id, due_at, child_id, status, homework:homework_id(title)").eq("child_id", c.id).gte("due_at", new Date(Date.now() - 30 * DAY).toISOString());
+    for (const r of ((hw.data as unknown as Status[]) || []).filter((x) => x.homework)) {
       const title = r.homework?.title || "Homework";
       if (r.status === "missing") {
         const over = daysAgo(r.due_at);

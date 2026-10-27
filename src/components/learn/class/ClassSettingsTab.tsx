@@ -134,7 +134,9 @@ export function ClassSettingsTab({ classId, className, subject, canRename }: { c
   const removeCat = async (c: GradeCategory) => {
     const supabase = getSupabaseClient();
     if (!supabase) return;
-    await supabase.from("class_grade_categories").delete().eq("id", c.id);
+    if (!window.confirm(`Delete the grade category "${c.name}"?`)) return;
+    const { error } = await supabase.from("class_grade_categories").delete().eq("id", c.id);
+    if (error) setMsg({ tone: "err", text: "Could not delete the category." });
     load();
   };
 

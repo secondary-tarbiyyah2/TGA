@@ -7,17 +7,17 @@ import { formatDay, reasonLabel, type Absence } from "./data";
 /** Recent absences, one line per child and day, with a way to record why. */
 export function RecentAbsences({ absences, onChanged }: { absences: Absence[] | null; onChanged: () => void }) {
   const [target, setTarget] = useState<Absence | null>(null);
-  const rows = useMemo(() => {
+  const [limit, setLimit] = useState(40);
+  const all = useMemo(() => {
     const seen = new Set<string>();
-    return (absences || [])
-      .filter((a) => {
-        const k = `${a.childId}|${a.date}`;
-        if (seen.has(k)) return false;
-        seen.add(k);
-        return true;
-      })
-      .slice(0, 40);
+    return (absences || []).filter((a) => {
+      const k = `${a.childId}|${a.date}`;
+      if (seen.has(k)) return false;
+      seen.add(k);
+      return true;
+    });
   }, [absences]);
+  const rows = all.slice(0, limit);
 
   return (
     <section className="rounded-2xl border border-gold-light bg-white">
@@ -45,6 +45,14 @@ export function RecentAbsences({ absences, onChanged }: { absences: Absence[] | 
             </li>
           ))}
         </ul>
+      )}
+      {all.length > rows.length && (
+        <div className="border-t border-gold-light/40 px-4 py-3 text-sm text-ink/65">
+          Showing the {rows.length} most recent of {all.length}.{" "}
+          <button type="button" onClick={() => setLimit((n) => n + 40)} className="font-medium text-teal-700 hover:underline">
+            Show more
+          </button>
+        </div>
       )}
       {target && <ReasonModal childId={target.childId} childName={target.childName} date={target.date} dateLabel={formatDay(target.date)} initialCode={target.reasonCode} onClose={() => setTarget(null)} onSaved={onChanged} />}
     </section>

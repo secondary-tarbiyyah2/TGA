@@ -91,10 +91,10 @@ export function Tabs<K extends string>({
         const selected = t.key === value;
         const tabCls =
           variant === "line"
-            ? `-mb-px shrink-0 whitespace-nowrap border-b-2 px-3 py-2.5 text-sm font-medium transition-colors ${
-                selected ? "border-teal-700 text-ink" : "border-transparent text-ink/65 hover:border-gold-light hover:text-ink"
+            ? `-mb-px inline-flex min-h-11 shrink-0 items-center whitespace-nowrap border-b-2 px-3 text-sm font-medium transition-colors ${
+                selected ? "border-teal-700 text-ink" : "border-transparent text-ink/65 hover:border-ink/20 hover:text-ink"
               }`
-            : `${fill ? "flex-1" : "shrink-0"} whitespace-nowrap rounded-lg px-3 py-1.5 text-sm font-medium transition-colors ${
+            : `${fill ? "flex-1" : "shrink-0"} inline-flex min-h-10 items-center justify-center whitespace-nowrap rounded-lg px-3 text-sm font-medium transition-colors sm:min-h-8 ${
                 selected ? "bg-white text-ink shadow-sm" : "text-ink/65 hover:text-ink"
               }`;
         return (

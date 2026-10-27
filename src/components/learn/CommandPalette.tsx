@@ -6,9 +6,9 @@ import { useRouter } from "next/navigation";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { fetchAllClasses, fetchChildClasses, fetchTeacherClasses, readRecentPages, type ClassSummary } from "@/lib/learn/classes";
 import { visiblePages, type PortalArea } from "@/lib/learn/nav";
-import { Icon } from "@/components/learn/Icon";
+import { Icon, type IconName } from "@/components/learn/Icon";
 
-type Item = { id: string; group: "Recent" | "Pages" | "Classes" | "People"; label: string; hint?: string; href: string; keywords?: string };
+type Item = { id: string; group: "Recent" | "Pages" | "Classes" | "People"; label: string; hint?: string; href: string; keywords?: string; icon: IconName };
 type PersonHit = { id: string; full_name: string | null; email: string | null };
 
 const GROUPS: Item["group"][] = ["Recent", "Pages", "Classes", "People"];
@@ -96,7 +96,7 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
     inputRef.current?.focus();
     // eslint-disable-next-line react-hooks/set-state-in-effect -- read recent pages from this browser when the palette opens
     setRecent(
-      readRecentPages(`/${area}/`).map((p) => ({ id: `recent:${p.href}`, group: "Recent", label: p.title, hint: p.subtitle, href: p.href }))
+      readRecentPages(`/${area}/`).map((p) => ({ id: `recent:${p.href}`, group: "Recent", label: p.title, hint: p.subtitle, href: p.href, icon: "clock" }))
     );
     if (classes !== null) return;
     let cancelled = false;
@@ -142,17 +142,18 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
   const items = useMemo((): Item[] => {
     const q = query.trim().toLowerCase();
     // Every page, hub tabs included: "Absences" shows as "Absences · Attendance".
-    const pages: Item[] = visiblePages(area, roles).map((p) => ({ id: `page:${p.href}`, group: "Pages", label: p.label, hint: p.parent, href: p.href, keywords: p.hint }));
+    const pages: Item[] = visiblePages(area, roles).map((p) => ({ id: `page:${p.href}`, group: "Pages", label: p.label, hint: p.parent, href: p.href, keywords: p.hint, icon: p.icon }));
     const cls: Item[] = (classes || []).map((c) => ({
       id: `class:${c.id}`,
       group: "Classes",
       label: c.name,
       hint: [c.subject, c.yearGroup].filter(Boolean).join(" · ") || undefined,
       href: `/${area}/class?id=${c.id}`,
+      icon: "presentation",
     }));
     const ppl: Item[] = people.map((p) => {
       const name = p.full_name || p.email || "Unnamed";
-      return { id: `person:${p.id}`, group: "People", label: name, hint: p.full_name ? p.email || undefined : undefined, href: `/admin/people?q=${encodeURIComponent(name)}` };
+      return { id: `person:${p.id}`, group: "People", label: name, hint: p.full_name ? p.email || undefined : undefined, href: `/admin/people?q=${encodeURIComponent(name)}`, icon: "userRound" };
     });
     if (!q) return [...recent.slice(0, 5), ...pages.slice(0, 8)];
     const match = (i: Item) => `${i.label} ${i.hint || ""} ${i.keywords || ""}`.toLowerCase().includes(q);
@@ -205,7 +206,7 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
         onClick={openPalette}
         aria-label="Search"
         title="Search (Ctrl K)"
-        className="flex h-10 w-10 items-center justify-center rounded-full text-ink/65 hover:bg-cream hover:text-ink md:hidden"
+        className="flex h-11 w-11 items-center justify-center rounded-full text-ink/65 hover:bg-cream hover:text-ink md:hidden"
       >
         <SearchIcon className="h-5 w-5" />
       </button>
@@ -213,7 +214,7 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
         type="button"
         onClick={openPalette}
         aria-label="Search"
-        className="mr-1 hidden h-9 w-56 items-center gap-2 rounded-full border border-gold-light bg-cream/50 px-3 text-sm text-ink/65 hover:bg-cream md:flex"
+        className="mr-1 hidden h-10 w-60 items-center gap-2 rounded-lg border border-gold-light bg-white px-3 text-sm text-ink/60 transition-colors hover:border-ink/25 hover:text-ink md:flex"
       >
         <SearchIcon className="h-4 w-4" />
         <span>Search…</span>
@@ -243,7 +244,7 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
                   placeholder={canSearchPeople ? "Search pages, classes and people…" : "Search pages and classes…"}
                   className="h-14 min-w-0 flex-1 bg-transparent text-base text-ink placeholder:text-ink/65 focus:outline-none"
                 />
-                <button type="button" onClick={closePalette} className="rounded-md border border-gold-light px-2 py-1 text-xs font-medium text-ink/65 hover:bg-cream">
+                <button type="button" onClick={closePalette} aria-label="Close search" className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-md px-2 text-xs font-medium text-ink/65 hover:bg-cream sm:min-h-8 sm:min-w-0 sm:border sm:border-gold-light">
                   Esc
                 </button>
               </div>
@@ -269,10 +270,11 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
                             aria-selected={idx === active}
                             onMouseMove={() => setActive(idx)}
                             onClick={() => go(it)}
-                            className={`flex cursor-pointer items-center justify-between gap-3 rounded-lg px-3 py-2.5 text-sm ${idx === active ? "bg-cream text-ink" : "text-ink/80"}`}
+                            className={`flex min-h-11 cursor-pointer items-center gap-3 rounded-lg px-3 py-2 text-sm ${idx === active ? "bg-cream text-ink" : "text-ink/80"}`}
                           >
-                            <span className="truncate font-medium">{it.label}</span>
-                            {it.hint && <span className="truncate text-xs text-ink/65">{it.hint}</span>}
+                            <Icon name={it.icon} size="sm" className={`h-4 w-4 ${idx === active ? "text-teal-700" : "text-ink/45"}`} />
+                            <span className="min-w-0 flex-1 truncate font-medium">{it.label}</span>
+                            {it.hint && <span className="max-w-[45%] truncate text-xs text-ink/65">{it.hint}</span>}
                           </div>
                         ))}
                       </div>

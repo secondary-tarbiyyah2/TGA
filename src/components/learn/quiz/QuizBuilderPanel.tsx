@@ -1,6 +1,7 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { Tabs, tabPanelProps } from "@/components/learn/Tabs";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { DEFAULT_QUIZ_CONFIG } from "@/lib/quiz/defaultConfig";
 import type { LineIcon, QuizConfig, QuizQuestion, QuizRule, RuleCondition, RuleOperator, ResultSectionKey } from "@/lib/quiz/schema";
@@ -38,7 +39,17 @@ export function QuizBuilderPanel({ onPreview }: { onPreview: (config: QuizConfig
   const [draftId, setDraftId] = useState<string | null>(null);
   const [config, setConfig] = useState<QuizConfig>(DEFAULT_QUIZ_CONFIG);
   const [status, setStatus] = useState<"loading" | "ready">("loading");
-  const [saveState, setSaveState] = useState<"idle" | "saving" | "saved">("idle");
+  const [saveState, setSaveState] = useState<"idle" | "pending" | "saving" | "saved" | "error">("idle");
+  const [notice, setNotice] = useState<{ ok: boolean; text: string } | null>(null);
+  const [publishing, setPublishing] = useState(false);
+  // Edits are saved after a short pause in typing, not on every keystroke, so
+  // writes can't arrive out of order and leave older text in the draft.
+  const pendingRef = useRef<QuizConfig | null>(null);
+  const timerRef = useRef<number | null>(null);
+  const draftIdRef = useRef<string | null>(null);
+  useEffect(() => {
+    draftIdRef.current = draftId;
+  }, [draftId]);
   const [tab, setTab] = useState<"questions" | "rules" | "sections">("questions");
 
   const load = useCallback(async () => {
@@ -59,12 +70,15 @@ export function QuizBuilderPanel({ onPreview }: { onPreview: (config: QuizConfig
       const base = published ? published.content : DEFAULT_QUIZ_CONFIG;
       const { data: inserted } = await supabase
         .from("quiz_config_versions")
-        .insert({ status: "draft", label: `Draft ${new Date().toLocaleDateString("en-GB")}`, content: base })
+        .insert({ status: "draft", label: `Draft ${new Date().toLocaleDateString("en-GB", { timeZone: "Europe/London" })}`, content: base })
         .select("id")
         .single();
       if (inserted) {
         setDraftId(inserted.id as string);
         setConfig(clone(base));
+      } else {
+        setConfig(clone(base));
+        setNotice({ ok: false, text: "Couldn't create a draft to edit, so changes here won't be saved. Refresh to try again." });
       }
     }
     setStatus("ready");
@@ -75,31 +89,78 @@ export function QuizBuilderPanel({ onPreview }: { onPreview: (config: QuizConfig
     load();
   }, [load]);
 
-  async function saveDraft(next: QuizConfig) {
-    setConfig(next);
-    if (!supabase || !draftId) return;
+  /** Writes any pending edit now. Resolves false if the save failed. */
+  const flush = useCallback(async (): Promise<boolean> => {
+    if (timerRef.current !== null) {
+      window.clearTimeout(timerRef.current);
+      timerRef.current = null;
+    }
+    const next = pendingRef.current;
+    const id = draftIdRef.current;
+    if (!next || !supabase || !id) return true;
+    pendingRef.current = null;
     setSaveState("saving");
-    await supabase.from("quiz_config_versions").update({ content: next }).eq("id", draftId);
-    setSaveState("saved");
-    setTimeout(() => setSaveState("idle"), 1500);
+    const { error } = await supabase.from("quiz_config_versions").update({ content: next }).eq("id", id);
+    if (error) {
+      // Keep it pending so the next edit or Publish retries it.
+      pendingRef.current = pendingRef.current ?? next;
+      setSaveState("error");
+      return false;
+    }
+    setSaveState(pendingRef.current ? "pending" : "saved");
+    return true;
+  }, [supabase]);
+
+  // Save anything still pending when the builder closes (tab switch, preview).
+  useEffect(
+    () => () => {
+      void flush();
+    },
+    [flush],
+  );
+
+  function saveDraft(next: QuizConfig) {
+    setConfig(next);
+    if (!draftIdRef.current) return;
+    pendingRef.current = next;
+    setSaveState("pending");
+    if (timerRef.current !== null) window.clearTimeout(timerRef.current);
+    timerRef.current = window.setTimeout(() => void flush(), 700);
   }
 
   async function publish() {
     if (!supabase || !draftId) return;
-    const currentlyPublished = versions.find((v) => v.status === "published");
-    if (currentlyPublished) {
-      await supabase.from("quiz_config_versions").update({ status: "archived" }).eq("id", currentlyPublished.id);
+    if (!window.confirm("Publish this draft? Families taking the quiz will see these questions and rules straight away.")) return;
+    setPublishing(true);
+    setNotice(null);
+    try {
+      if (!(await flush())) return setNotice({ ok: false, text: "Your latest edits couldn't be saved, so nothing was published. Try again." });
+      // Only one version may be live (unique index), so archive the current one first and put it back if publishing fails.
+      const currentlyPublished = versions.find((v) => v.status === "published");
+      if (currentlyPublished) {
+        const { error } = await supabase.from("quiz_config_versions").update({ status: "archived" }).eq("id", currentlyPublished.id);
+        if (error) return setNotice({ ok: false, text: `Couldn't publish: ${error.message}` });
+      }
+      const { error } = await supabase
+        .from("quiz_config_versions")
+        .update({ status: "published", published_at: new Date().toISOString(), label: `Published ${new Date().toLocaleDateString("en-GB", { timeZone: "Europe/London" })}` })
+        .eq("id", draftId);
+      if (error) {
+        if (currentlyPublished) await supabase.from("quiz_config_versions").update({ status: "published" }).eq("id", currentlyPublished.id);
+        return setNotice({ ok: false, text: `Couldn't publish, so the previous version is still live: ${error.message}` });
+      }
+      setNotice({ ok: true, text: "Published. A fresh draft has been started for your next changes." });
+      await load();
+    } finally {
+      setPublishing(false);
     }
-    await supabase
-      .from("quiz_config_versions")
-      .update({ status: "published", published_at: new Date().toISOString(), label: `Published ${new Date().toLocaleDateString("en-GB")}` })
-      .eq("id", draftId);
-    await load();
   }
 
-  async function revertTo(version: VersionRow) {
-    if (!supabase || !draftId) return;
-    await saveDraft(clone(version.content));
+  function revertTo(version: VersionRow) {
+    if (!draftId) return;
+    if (!window.confirm(`Replace the current draft with "${version.label}"? Unpublished changes in the draft will be lost.`)) return;
+    saveDraft(clone(version.content));
+    setNotice({ ok: true, text: `Loaded "${version.label}" into the draft.` });
   }
 
   if (!supabase) return <p className="text-sm text-ink/65">The /learn area isn&apos;t connected yet.</p>;
@@ -113,22 +174,34 @@ export function QuizBuilderPanel({ onPreview }: { onPreview: (config: QuizConfig
       <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-gold-light/50 bg-white p-4">
         <div className="text-sm text-ink/70">
           {published ? (
-            <>Live version published {published.published_at ? new Date(published.published_at).toLocaleString("en-GB") : ""}</>
+            <>Live version published {published.published_at ? new Date(published.published_at).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short", timeZone: "Europe/London" }) : ""}</>
           ) : (
             <>Nothing published yet, the public quiz is showing the bundled fallback copy.</>
           )}
-          {saveState === "saving" && <span className="ml-2 text-xs text-ink/65">Saving…</span>}
-          {saveState === "saved" && <span className="ml-2 text-xs text-gold-700">Saved</span>}
+          {(saveState === "saving" || saveState === "pending") && <span className="ml-2 text-xs text-ink/65">Saving…</span>}
+          {saveState === "saved" && <span className="ml-2 text-xs text-green-800">Draft saved</span>}
+          {saveState === "error" && <span role="alert" className="ml-2 text-xs text-red-700">Couldn&apos;t save your last change. It will retry with your next edit.</span>}
         </div>
         <div className="flex gap-2">
-          <button type="button" onClick={() => onPreview(config)} className="rounded-lg border border-gold-light px-4 py-2 text-sm font-semibold hover:bg-cream bg-white text-ink/80 transition-colors">
+          <button
+            type="button"
+            onClick={() => {
+              void flush();
+              onPreview(config);
+            }}
+            className="rounded-lg border border-gold-light px-4 py-2 text-sm font-semibold hover:bg-cream bg-white text-ink/80 transition-colors">
             Preview as a parent
           </button>
-          <button type="button" onClick={publish} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 transition-colors">
-            Publish draft
+          <button type="button" onClick={publish} disabled={publishing || !draftId} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 transition-colors disabled:opacity-50">
+            {publishing ? "Publishing…" : "Publish draft"}
           </button>
         </div>
       </div>
+      {notice && (
+        <p role={notice.ok ? "status" : "alert"} className={`-mt-3 rounded-lg px-3 py-2 text-sm ${notice.ok ? "bg-green-50 text-green-800" : "bg-red-50 text-red-800"}`}>
+          {notice.text}
+        </p>
+      )}
 
       {history.length > 0 && (
         <details className="rounded-2xl border border-gold-light/50 bg-white p-4">
@@ -136,7 +209,7 @@ export function QuizBuilderPanel({ onPreview }: { onPreview: (config: QuizConfig
           <ul className="mt-3 space-y-1 text-xs text-ink/65">
             {history.map((v) => (
               <li key={v.id} className="flex items-center justify-between gap-2 border-b border-gold-light/20 py-1">
-                <span>{v.label} · {v.status} · {new Date(v.created_at).toLocaleString("en-GB")}</span>
+                <span>{v.label} · {v.status} · {new Date(v.created_at).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short", timeZone: "Europe/London" })}</span>
                 <button type="button" onClick={() => revertTo(v)} className="shrink-0 rounded-lg border border-gold-light px-2 py-0.5 text-[11px] font-medium hover:bg-cream bg-white text-ink/80 transition-colors">
                   Load into draft
                 </button>
@@ -146,22 +219,24 @@ export function QuizBuilderPanel({ onPreview }: { onPreview: (config: QuizConfig
         </details>
       )}
 
-      <div className="flex gap-2 border-b border-gold-light/30">
-        {(["questions", "rules", "sections"] as const).map((t) => (
-          <button
-            key={t}
-            type="button"
-            onClick={() => setTab(t)}
-            className={`px-3 py-2 text-sm font-medium ${tab === t ? "border-b-2 border-gold-500 text-ink" : "text-ink/65"}`}
-          >
-            {t === "questions" ? "Questions" : t === "rules" ? "Rules" : "Result sections"}
-          </button>
-        ))}
-      </div>
+      <Tabs
+        variant="switch"
+        items={[
+          { key: "questions", label: `Questions (${config.questions.length})` },
+          { key: "rules", label: `Rules (${config.rules.length})` },
+          { key: "sections", label: "Result sections" },
+        ]}
+        value={tab}
+        onChange={setTab}
+        label="Quiz builder sections"
+        idBase="quiz-builder"
+      />
 
-      {tab === "questions" && <QuestionsEditor config={config} onChange={saveDraft} />}
-      {tab === "rules" && <RulesEditor config={config} onChange={saveDraft} />}
-      {tab === "sections" && <SectionsEditor config={config} onChange={saveDraft} />}
+      <div {...tabPanelProps("quiz-builder", tab)}>
+        {tab === "questions" && <QuestionsEditor config={config} onChange={saveDraft} />}
+        {tab === "rules" && <RulesEditor config={config} onChange={saveDraft} />}
+        {tab === "sections" && <SectionsEditor config={config} onChange={saveDraft} />}
+      </div>
     </div>
   );
 }
@@ -180,8 +255,7 @@ function QuestionsEditor({ config, onChange }: { config: QuizConfig; onChange: (
     if (target < 0 || target >= questions.length) return;
     [questions[index], questions[target]] = [questions[target], questions[index]];
     // Renumber `order` within each step to match the new sequence.
-    questions.forEach((q, i) => (q.order = i));
-    onChange({ ...config, questions });
+    onChange({ ...config, questions: questions.map((q, i) => ({ ...q, order: i })) });
   }
 
   function addOption(qIndex: number) {
@@ -199,6 +273,12 @@ function QuestionsEditor({ config, onChange }: { config: QuizConfig; onChange: (
   }
 
   function removeOption(qIndex: number, oIndex: number) {
+    const q = config.questions[qIndex];
+    const opt = q.options[oIndex];
+    // Rules and "show when" conditions that point at this answer stop matching once it's gone.
+    const conds = [...config.rules.flatMap((r) => r.conditions), ...config.questions.flatMap((x) => x.showWhen || [])];
+    const used = conds.some((c) => c.questionKey === q.key && (Array.isArray(c.value) ? c.value.includes(opt.value) : c.value === opt.value));
+    if (!window.confirm(`Remove the answer "${opt.label}"?${used ? " Some rules or conditions use it and will stop matching." : ""}`)) return;
     const questions = [...config.questions];
     questions[qIndex] = { ...questions[qIndex], options: questions[qIndex].options.filter((_, i) => i !== oIndex) };
     onChange({ ...config, questions });
@@ -385,6 +465,8 @@ function RulesEditor({ config, onChange }: { config: QuizConfig; onChange: (next
   }
 
   function removeRule(id: string) {
+    const rule = config.rules.find((r) => r.id === id);
+    if (!window.confirm(`Delete the rule "${rule?.name || "Untitled"}"?`)) return;
     onChange({ ...config, rules: config.rules.filter((r) => r.id !== id) });
   }
 

@@ -237,6 +237,27 @@ export function AddPersonModal({
     return !!name.trim() && emailOk(email);
   })();
 
+  // Says why "Add" is greyed out, instead of leaving the admin to guess.
+  const missing = (() => {
+    if (!type) return [];
+    const m: string[] = [];
+    if (type === "student") {
+      if (!name.trim()) m.push("the pupil's name");
+      if (!dob) m.push("date of birth");
+      if (parentMode === "existing" ? !parentId : !newParentName.trim()) m.push("a parent");
+      if (parentMode !== "existing" && !emailOk(newParentEmail)) m.push("the parent's email");
+      if (loginMode === "email" && !emailOk(studentEmail)) m.push("the pupil's email");
+    } else {
+      if (!name.trim()) m.push("name");
+      if (!emailOk(email)) m.push("a valid email");
+      if (type === "parent" && withChild) {
+        if (!childName.trim()) m.push("the child's name");
+        if (!dob) m.push("the child's date of birth");
+      }
+    }
+    return m;
+  })();
+
   const title = done ? "All done" : !type ? "Add a person" : `Add ${TILES.find((t) => t.type === type)?.title.toLowerCase()}`;
 
   return (
@@ -510,9 +531,12 @@ export function AddPersonModal({
                     ← Back
                   </button>
                 )}
-                <button type="button" disabled={busy || !valid} onClick={submit} className={GOLD_BUTTON}>
-                  {busy ? "Saving…" : type === "student" ? "Add student" : "Send invite"}
-                </button>
+                <span className="flex flex-wrap items-center justify-end gap-2">
+                  {!valid && !busy && missing.length > 0 && <span className="text-xs text-ink/65">Still needed: {missing.join(", ")}.</span>}
+                  <button type="button" disabled={busy || !valid} onClick={submit} className={GOLD_BUTTON}>
+                    {busy ? "Saving…" : type === "student" ? "Add student" : "Send invite"}
+                  </button>
+                </span>
               </div>
             </>
           )}

@@ -13,8 +13,9 @@ export default function AdminAssessmentsPage() {
     <section className="app-pad">
       <LearnGate allowedRoles={["head_teacher", "admin", "admissions"]}>
         <PageHeader
+          crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "Entry assessments" }]}
           title="Entry assessments"
-          subtitle="Our own entry assessment: every child gets a paper made for their year group, marked automatically. Writing is first-marked by AI and checked by a teacher; Qur'an and Arabic are marked by a teacher. Results go on the pupil's record."
+          subtitle="Each child gets a paper for their year group, marked automatically. Writing is first-marked by AI and checked by a teacher; Qur'an and Arabic are marked by a teacher on the call."
         />
         <Tabs
           label="Assessment type"

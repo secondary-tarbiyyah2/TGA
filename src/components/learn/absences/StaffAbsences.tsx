@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { PageHeader, type Crumb } from "@/components/learn/PageHeader";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { localDateKey } from "@/lib/learn/calendar";
+import { ukToday } from "@/lib/learn/ukTime";
 import { AbsenceReports } from "./AbsenceReports";
 import { CoverSuggestions } from "./CoverSuggestions";
 import { FollowUpTab } from "./FollowUpTab";
@@ -44,7 +44,7 @@ export function StaffAbsences({ crumbs, subtitle, showCover = false }: { crumbs:
     })();
   }, []);
 
-  const today = localDateKey(new Date());
+  const today = ukToday();
   const term = useMemo(() => {
     const current = terms.find((t) => t.starts_on <= today && today <= t.ends_on);
     if (current) return current;
@@ -64,33 +64,44 @@ export function StaffAbsences({ crumbs, subtitle, showCover = false }: { crumbs:
     });
     return seen.size;
   }, [absences]);
-  const label = period === "term" && term ? `${term.name}, from ${formatDay(from)}` : `Last ${period === "term" ? 90 : period} days`;
-  const title = period === "term" ? "Absence this term" : `Absence over the last ${period} days`;
+  // Before the first term starts there is no "this term": say plainly that
+  // the last 90 days are shown instead of titling it "this term".
+  const termShown = period === "term" && term;
+  const label = termShown ? `${term.name}, from ${formatDay(from)}` : period === "term" ? "No term has started yet, so showing the last 90 days" : `Last ${period} days`;
+  const title = termShown ? "Absence this term" : `Absence over the last ${period === "term" ? 90 : period} days`;
+  const periodMatters = tab === "overview" || tab === "followup" || tab === "reports";
 
   return (
     <>
       <PageHeader crumbs={crumbs} title="Absences" subtitle={subtitle || "What families have told us, and who has not been heard from."} />
       <div className="space-y-5">
-        <div className="flex flex-wrap gap-2" role="group" aria-label="Period">
-          {PERIODS.map((p) => (
-            <button
-              key={p.key}
-              type="button"
-              aria-pressed={period === p.key}
-              onClick={() => setPeriod(p.key)}
-              className={`rounded-full border px-3 py-1.5 text-sm font-medium ${period === p.key ? "border-teal-600 bg-teal-600 text-white" : "border-gold-light bg-white text-ink/70 hover:bg-cream"}`}
-            >
-              {p.label}
-            </button>
-          ))}
-        </div>
-        {error && <p className="rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-800">Some of this couldn&apos;t load: {error}</p>}
         <Tabs
-          items={TABS.filter((t) => t.key !== "cover" || showCover).map((t) => ({ ...t, count: t.key === "followup" && followCount > 0 ? followCount : undefined, countAlert: true }))}
+          items={TABS.filter((t) => t.key !== "cover" || showCover).map((t) => ({
+            ...t,
+            count: t.key === "followup" && followCount > 0 ? followCount : undefined,
+            countAlert: true,
+          }))}
           value={tab}
           onChange={setTab}
           label="Absences sections"
         />
+        {periodMatters && (
+          <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Period">
+            {PERIODS.map((p) => (
+              <button
+                key={p.key}
+                type="button"
+                aria-pressed={period === p.key}
+                onClick={() => setPeriod(p.key)}
+                className={`rounded-full border px-3 py-1.5 text-sm font-medium ${period === p.key ? "border-teal-600 bg-teal-600 text-white" : "border-gold-light bg-white text-ink/70 hover:bg-cream"}`}
+              >
+                {p.label}
+              </button>
+            ))}
+            <span className="text-xs text-ink/65">{label}</span>
+          </div>
+        )}
+        {error && <p className="rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-800">Some of this couldn&apos;t load: {error}</p>}
         {tab === "overview" && (
           <>
             <SummaryCard title={title} absences={absences} periodLabel={label} />

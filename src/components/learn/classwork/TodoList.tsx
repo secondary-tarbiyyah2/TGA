@@ -56,7 +56,7 @@ function useTodo(childId: string | null) {
   return { items, classes };
 }
 
-function TodoBody({ childId, hwHref, heading }: { childId: string; hwHref: string; heading: string }) {
+function TodoBody({ childId, hwHref, heading }: { childId: string; hwHref: string | ((homeworkId: string) => string); heading: string }) {
   const { items, classes } = useTodo(childId);
   const [tab, setTab] = useState<TabKey>("assigned");
   const [classId, setClassId] = useState("");
@@ -102,14 +102,12 @@ function TodoBody({ childId, hwHref, heading }: { childId: string; hwHref: strin
         <ul role="tabpanel" className="divide-y divide-gold-light/60 p-2">
           {list.map((i) => (
             <li key={i.homework_id}>
-              <Link href={hwHref} className="flex flex-wrap items-center gap-3 rounded-lg px-3 py-3 hover:bg-cream">
+              <Link href={typeof hwHref === "function" ? hwHref(i.homework_id) : hwHref} className="flex flex-wrap items-center gap-3 rounded-lg px-3 py-3 hover:bg-cream">
                 <span className="min-w-0 flex-1">
                   <span className="block truncate text-sm font-medium text-ink">{i.title}</span>
                   <span className="block truncate text-xs text-ink/65">{i.className}</span>
                 </span>
-                <span className="text-xs text-ink/65">
-                  {tab === "done" && i.submitted_at ? `Handed in ${fmt(i.submitted_at)}` : `Due ${fmt(i.due_at)}`}
-                </span>
+                <span className="text-xs text-ink/65">{tab === "done" && i.submitted_at ? `Handed in ${fmt(i.submitted_at)}` : `Due ${fmt(i.due_at)}`}</span>
                 {i.status === "late" && <span className="rounded-full bg-amber-50 px-2.5 py-1 text-xs font-medium text-amber-800 ring-1 ring-inset ring-amber-600/20">Handed in late</span>}
               </Link>
             </li>
@@ -132,21 +130,39 @@ export function StudentTodo() {
 export function FamilyTodo({ initialChild }: { initialChild?: string }) {
   const kids = useFamilyChildren();
   const [selected, setSelected] = useState(initialChild || "");
-  const childId = selected || kids?.[0]?.id || "";
+  // A stale ?child= (not one of this parent's children) falls back to the first child.
+  const childId = (kids?.some((k) => k.id === selected) ? selected : "") || kids?.[0]?.id || "";
   if (kids === null) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
-  if (kids.length === 0) return <p className="text-sm text-ink/65">No children are linked to this account yet.</p>;
+  if (kids.length === 0)
+    return (
+      <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/65">
+        No children are linked to this account yet. Add your child from the{" "}
+        <Link href="/family/dashboard" className="text-teal-700 underline">
+          dashboard
+        </Link>
+        .
+      </p>
+    );
+  const first = kids.find((k) => k.id === childId)?.name.split(" ")[0];
   return (
     <div className="space-y-3">
       {kids.length > 1 && (
-        <select value={childId} onChange={(e) => setSelected(e.target.value)} aria-label="Child" className="rounded-lg border border-gold-light/70 px-3 py-2 text-sm">
+        <div role="group" aria-label="Child" className="flex flex-wrap gap-2">
           {kids.map((k) => (
-            <option key={k.id} value={k.id}>
+            <button
+              key={k.id}
+              type="button"
+              aria-pressed={childId === k.id}
+              onClick={() => setSelected(k.id)}
+              className={`min-h-10 rounded-full border px-3 py-1.5 text-sm font-medium ${childId === k.id ? "border-teal-700 bg-teal-700 text-white" : "border-gold-light bg-white text-ink/75 hover:bg-cream"}`}
+            >
               {k.name}
-            </option>
+            </button>
           ))}
-        </select>
+        </div>
       )}
-      <TodoBody key={childId} childId={childId} hwHref={`/family/homework?child=${childId}`} heading="To do" />
+      {/* Each row opens that exact piece of homework, expanded, on the Homework page. */}
+      <TodoBody key={childId} childId={childId} hwHref={(hw) => `/family/homework?child=${childId}&hw=${hw}`} heading={kids.length > 1 && first ? `To do for ${first}` : "To do"} />
     </div>
   );
 }

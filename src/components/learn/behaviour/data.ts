@@ -1,4 +1,5 @@
 import type { getSupabaseClient } from "@/lib/supabase/client";
+import { ukToday } from "@/lib/learn/ukTime";
 
 export type Sb = NonNullable<ReturnType<typeof getSupabaseClient>>;
 
@@ -85,8 +86,9 @@ export function isoDate(d: Date): string {
   return `${d.getFullYear()}-${m}-${day}`;
 }
 
+/** Today in the UK: the school's day, whatever zone the browser is in. */
 export function todayIso(): string {
-  return isoDate(new Date());
+  return ukToday();
 }
 
 export function addDaysIso(iso: string, days: number): string {

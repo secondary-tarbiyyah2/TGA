@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { ClassGrid } from "@/components/learn/class/ClassGrid";
@@ -16,12 +17,12 @@ function AdminClassesContent() {
         title="Classes"
         subtitle="Every class in the school. Open one to see its week-by-week course page."
         actions={
-          <a href="/admin/academic" className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-medium text-white hover:bg-gold-900">
+          <Link href="/admin/academic/classes" className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-medium text-white hover:bg-gold-900">
             + Add a class
-          </a>
+          </Link>
         }
       />
-      <ClassGrid viewer={VIEWER} classes={classes} hrefFor={(c) => `/admin/class?id=${c.id}`} emptyLabel="No classes yet. Add one from Academic." />
+      <ClassGrid viewer={VIEWER} classes={classes} hrefFor={(c) => `/admin/class?id=${c.id}`} emptyLabel="No classes yet. Use + Add a class to create one." />
     </>
   );
 }

@@ -44,8 +44,9 @@ async function load(area: PortalArea): Promise<NavBadges> {
     } else {
       // A pupil's (or family's) own homework: RLS already limits rows to their children.
       const since = new Date(Date.now() - 30 * DAY).toISOString();
-      const { data } = await supabase.from("homework_status").select("status, due_at").gte("due_at", since).limit(400);
-      const rows = (data as { status: string; due_at: string }[]) || [];
+      // Archived homework is hidden from families/pupils by RLS, so its embed comes back null: skip it.
+      const { data } = await supabase.from("homework_status").select("status, due_at, homework:homework_id(title)").gte("due_at", since).limit(400);
+      const rows = ((data as unknown as { status: string; due_at: string; homework: { title: string } | null }[]) || []).filter((r) => r.homework);
       const missing = rows.filter((r) => r.status === "missing").length;
       const dueSoon = rows.filter((r) => r.status === "not_yet_due" && new Date(r.due_at).getTime() - Date.now() < 3 * DAY).length;
       out.actions = missing;

@@ -108,18 +108,19 @@ function TeacherRow({
   option,
   bookings,
   onChanged,
-  setNotice,
 }: {
   evening: ParentEvening;
   option: Option;
   bookings: MyBooking[];
   onChanged: () => Promise<void>;
-  setNotice: (msg: string) => void;
 }) {
   const supabase = getSupabaseClient();
   const [picking, setPicking] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [confirming, setConfirming] = useState(false);
+  // Confirmation shows here, next to the row the parent just used, not at the top of the page.
+  const [done, setDone] = useState<string | null>(null);
 
   const booking = bookings.find((b) => b.evening_id === evening.id && b.child_id === option.child_id && b.teacher_id === option.teacher_id) || null;
 
@@ -150,7 +151,7 @@ function TeacherRow({
       if (newId) emailed = await announce(newId, "booked");
       if (booking) await announce(booking.booking_id, "cancelled");
       setPicking(false);
-      setNotice(`Booked ${option.teacher_name} for ${formatSlot(slot.toISOString())}.${emailed ? " A confirmation email is on its way." : ""}`);
+      setDone(`Booked for ${formatSlot(slot.toISOString())} (UK time).${emailed ? " A confirmation email is on its way." : ""}`);
       await onChanged();
     } finally {
       setBusy(false);
@@ -159,7 +160,7 @@ function TeacherRow({
 
   const cancel = async () => {
     if (!supabase || !booking) return;
-    if (!window.confirm(`Cancel your meeting with ${booking.teacher_name} on ${formatSlot(booking.slot_start)}?`)) return;
+    setConfirming(false);
     setBusy(true);
     setError(null);
     try {
@@ -169,7 +170,7 @@ function TeacherRow({
         return;
       }
       await announce(booking.booking_id, "cancelled");
-      setNotice("Your booking was cancelled.");
+      setDone("Your booking was cancelled. You can choose another time below.");
       await onChanged();
     } finally {
       setBusy(false);
@@ -186,23 +187,61 @@ function TeacherRow({
         {booking ? (
           <div className="flex flex-wrap items-center gap-2 text-sm">
             <span className="rounded-full bg-green-100 px-2 py-0.5 text-xs text-green-700">{formatSlot(booking.slot_start, booking.slot_end)}</span>
-            <button type="button" disabled={busy} onClick={() => setPicking((p) => !p)} className="text-gold-700 underline disabled:opacity-50">
+            <button
+              type="button"
+              disabled={busy}
+              onClick={() => {
+                setPicking((p) => !p);
+                setConfirming(false);
+                setDone(null);
+              }}
+              className="min-h-9 px-1 text-gold-700 underline disabled:opacity-50"
+            >
               {picking ? "Keep this time" : "Change"}
             </button>
-            <button type="button" disabled={busy} onClick={cancel} className="text-red-700 underline disabled:opacity-50">
+            <button
+              type="button"
+              disabled={busy}
+              onClick={() => {
+                setConfirming(true);
+                setPicking(false);
+                setDone(null);
+              }}
+              className="min-h-9 px-1 text-red-700 underline disabled:opacity-50"
+            >
               Cancel
             </button>
           </div>
         ) : (
           <button
             type="button"
-            onClick={() => setPicking((p) => !p)}
-            className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream"
+            onClick={() => {
+              setPicking((p) => !p);
+              setDone(null);
+            }}
+            aria-expanded={picking}
+            className="min-h-9 rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream"
           >
             {picking ? "Hide times" : "Choose a time"}
           </button>
         )}
       </div>
+      {confirming && booking && (
+        <div className="mt-2 flex flex-wrap items-center gap-2 rounded-lg bg-red-50 p-2 text-sm text-red-900">
+          <span>Cancel your meeting on {formatSlot(booking.slot_start)}?</span>
+          <button type="button" disabled={busy} onClick={cancel} className="rounded-lg bg-red-700 px-3 py-1.5 text-xs font-semibold text-white hover:bg-red-800 disabled:opacity-50">
+            Yes, cancel it
+          </button>
+          <button type="button" onClick={() => setConfirming(false)} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-xs font-medium text-ink">
+            Keep it
+          </button>
+        </div>
+      )}
+      {done && (
+        <p role="status" className="mt-2 rounded-lg bg-green-50 px-3 py-2 text-sm text-green-800">
+          {done}
+        </p>
+      )}
       {error && <p className="mt-2 text-sm text-red-700">{error}</p>}
       {picking && <SlotPicker evening={evening} teacherId={option.teacher_id} bookings={bookings} movingId={booking?.booking_id || null} onPick={pick} busy={busy} />}
     </li>
@@ -215,7 +254,7 @@ export function FamilyParentEvenings() {
   const [evenings, setEvenings] = useState<ParentEvening[] | null>(null);
   const [options, setOptions] = useState<Option[]>([]);
   const [bookings, setBookings] = useState<MyBooking[]>([]);
-  const [notice, setNotice] = useState<string | null>(null);
+  const now = useNow();
 
   const load = useCallback(async () => {
     if (!supabase) return;
@@ -234,24 +273,20 @@ export function FamilyParentEvenings() {
     load();
   }, [load]);
 
-  if (evenings === null) return <p className="text-sm text-ink/65">Loading…</p>;
+  if (evenings === null) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
+  // Meetings already over drop off "Your bookings" (and their join links).
+  const upcoming = bookings.filter((b) => new Date(b.slot_end).getTime() > now).sort((a, b) => a.slot_start.localeCompare(b.slot_start));
 
   return (
     <div className="space-y-6">
-      {notice && (
-        <p role="status" className="rounded-lg border border-green-200 bg-green-50 p-3 text-sm text-green-800">
-          {notice}
-        </p>
-      )}
-
-      {bookings.length > 0 && (
-        <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
+      {upcoming.length > 0 && (
+        <div className="rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6">
           <h2 className="font-serif text-h3 font-semibold text-ink">Your bookings</h2>
           <ul className="mt-3 space-y-2">
-            {bookings.map((b) => (
+            {upcoming.map((b) => (
               <li key={b.booking_id} className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-gold-light/40 p-3 text-sm">
                 <span>
-                  <span className="font-medium text-ink">{formatSlot(b.slot_start, b.slot_end)}</span>
+                  <span className="font-medium text-ink">{formatSlot(b.slot_start, b.slot_end)} (UK time)</span>
                   <span className="text-ink/70"> · {b.teacher_name} about {b.child_name}</span>
                   {b.location && <span className="block text-xs text-ink/65">{b.location}</span>}
                 </span>
@@ -275,10 +310,10 @@ export function FamilyParentEvenings() {
           const mine = options.filter((o) => o.evening_id === ev.id);
           const children = [...new Map<string, string>(mine.map((o): [string, string] => [o.child_id, o.child_name])).entries()];
           return (
-            <div key={ev.id} className="rounded-2xl border border-gold-light/50 bg-white p-6">
+            <div key={ev.id} className="rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6">
               <h2 className="font-serif text-h3 font-semibold text-ink">{ev.title}</h2>
               <p className="mt-1 text-sm text-ink/70">
-                {formatDay(ev.starts_at)}, {formatTime(ev.starts_at)}–{formatTime(ev.ends_at)} · {ev.slot_minutes}-minute meetings
+                {formatDay(ev.starts_at)}, {formatTime(ev.starts_at)} to {formatTime(ev.ends_at)} (UK time) · {ev.slot_minutes}-minute meetings
                 {ev.location ? ` · ${ev.location}` : ""}
               </p>
               {ev.notes && <p className="mt-1 text-sm text-ink/65">{ev.notes}</p>}
@@ -292,7 +327,7 @@ export function FamilyParentEvenings() {
                       {mine
                         .filter((o) => o.child_id === childId)
                         .map((o) => (
-                          <TeacherRow key={`${o.child_id}-${o.teacher_id}`} evening={ev} option={o} bookings={bookings} onChanged={load} setNotice={setNotice} />
+                          <TeacherRow key={`${o.child_id}-${o.teacher_id}`} evening={ev} option={o} bookings={bookings} onChanged={load} />
                         ))}
                     </ul>
                   </div>

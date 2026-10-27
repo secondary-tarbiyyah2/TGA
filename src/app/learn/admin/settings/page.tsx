@@ -8,6 +8,7 @@ import { learnRoleLabel, STAFF_ROLES } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { ui } from "@/components/learn/ui";
 import { Microsoft365Connection } from "@/components/learn/settings/Microsoft365Connection";
+import { triggerPublish } from "@/lib/learn/publishSiteContent";
 
 type LmsSettings = {
   recording_retention_days: number;
@@ -29,24 +30,36 @@ type SchoolSettings = {
 
 const SCHOOL_COLUMNS = "headteacher_name, admissions_email, contact_phone, contact_address, opening_hours, safeguarding_lead_name, safeguarding_lead_contact, portal_url";
 
-function Section({ title, hint, children, onSave, busy, message }: { title: string; hint: string; children: React.ReactNode; onSave?: () => void; busy?: boolean; message?: string | null }) {
+/** One settings group. Each opens in place (only School details starts
+ * open), so the page is a short list of headings rather than one long form. */
+function Section({ title, hint, children, onSave, busy, message, defaultOpen = false }: { title: string; hint: string; children: React.ReactNode; onSave?: () => void; busy?: boolean; message?: string | null; defaultOpen?: boolean }) {
+  const bad = !!message && message !== "Saved." && !message.startsWith("Saved");
   return (
-    <section className="rounded-2xl border border-gold-light bg-white">
-      <div className="border-b border-gold-light px-5 py-4">
-        <h2 className="text-base font-semibold text-ink">{title}</h2>
-        <p className="mt-0.5 text-sm text-ink/65">{hint}</p>
-      </div>
-      <div className="px-5 py-5">{children}</div>
+    <details open={defaultOpen} className="group rounded-2xl border border-gold-light bg-white">
+      <summary className="flex cursor-pointer list-none items-start justify-between gap-3 px-5 py-4">
+        <span>
+          <span className="block text-base font-semibold text-ink">{title}</span>
+          <span className="mt-0.5 block text-sm text-ink/65">{hint}</span>
+        </span>
+        <span aria-hidden="true" className="mt-1 text-lg leading-none text-ink/50 transition-transform group-open:rotate-90">›</span>
+      </summary>
+      <div className="border-t border-gold-light px-5 py-5">{children}</div>
       {onSave && (
-        <div className="flex items-center gap-3 border-t border-gold-light px-5 py-3">
+        <div className="flex flex-wrap items-center gap-3 border-t border-gold-light px-5 py-3">
           <button type="button" disabled={busy} onClick={onSave} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
             {busy ? "Saving…" : "Save changes"}
           </button>
-          {message && <p className="text-sm text-ink/70">{message}</p>}
+          {message && <p role={bad ? "alert" : "status"} className={`text-sm ${bad ? "text-red-700" : "text-ink/70"}`}>{message}</p>}
         </div>
       )}
-    </section>
+    </details>
   );
+}
+
+/** A whole number from a text box, or null when it isn't one in range. */
+function wholeNumber(v: string | number, min: number, max: number): number | null {
+  const n = typeof v === "number" ? v : Number(String(v).trim());
+  return Number.isInteger(n) && n >= min && n <= max ? n : null;
 }
 
 function Field({ label, help, children }: { label: string; help?: string; children: React.ReactNode }) {
@@ -63,6 +76,7 @@ const inputCls = ui.input;
 
 function SchoolDetails() {
   const [s, setS] = useState<SchoolSettings | null>(null);
+  const [loadFailed, setLoadFailed] = useState(false);
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
 
@@ -74,7 +88,11 @@ function SchoolDetails() {
       .select(SCHOOL_COLUMNS)
       .eq("id", true)
       .maybeSingle()
-      .then(({ data }) => setS((data as SchoolSettings | null) || null));
+      .then(({ data }) => {
+        // No row (or no access) used to leave a grey placeholder for ever.
+        if (!data) setLoadFailed(true);
+        else setS(data as SchoolSettings);
+      });
   }, []);
 
   const save = async () => {
@@ -86,14 +104,21 @@ function SchoolDetails() {
       .from("site_settings")
       .update({ ...s, updated_at: new Date().toISOString() })
       .eq("id", true);
+    if (error) {
+      setBusy(false);
+      return setMsg("Couldn't save. Only a full Admin can change the school details.");
+    }
+    // These details are printed on the public website, which is a static
+    // build: without a rebuild the change never reached the site.
+    setMsg(await triggerPublish());
     setBusy(false);
-    setMsg(error ? "Couldn't save. Only a full Admin can change the school details." : "Saved.");
   };
 
+  if (loadFailed) return <Section title="School details" hint="Couldn't load these. Only a Headteacher or Admin can see them.">{null}</Section>;
   if (!s) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
   const set = (k: keyof SchoolSettings) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setS({ ...s, [k]: e.target.value || null });
   return (
-    <Section title="School details" hint="Shown on the website and in emails to families." onSave={save} busy={busy} message={msg}>
+    <Section title="School details" hint="Shown on the website and in emails to families. Also editable under Website content, Site settings." onSave={save} busy={busy} message={msg} defaultOpen>
       <div className="grid gap-4 sm:grid-cols-2">
         <Field label="Headteacher name">
           <input className={inputCls} value={s.headteacher_name || ""} onChange={set("headteacher_name")} />
@@ -125,7 +150,7 @@ function SchoolDetails() {
 }
 
 function LessonSettings() {
-  const [s, setS] = useState<LmsSettings | null>(null);
+  const [s, setS] = useState<Record<keyof LmsSettings, string> | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
@@ -139,7 +164,15 @@ function LessonSettings() {
       .eq("id", true)
       .maybeSingle()
       .then(({ data, error }) => {
-        if (data) setS(data as LmsSettings);
+        if (data) {
+          const d = data as LmsSettings;
+          setS({
+            recording_retention_days: String(d.recording_retention_days),
+            absence_alert_delay_minutes: String(d.absence_alert_delay_minutes),
+            unexplained_absence_threshold: String(d.unexplained_absence_threshold),
+            unexplained_absence_period_days: String(d.unexplained_absence_period_days),
+          });
+        }
         else setLoadError(error?.message || "You don't have access to these settings.");
       });
   }, []);
@@ -147,33 +180,45 @@ function LessonSettings() {
   const save = async () => {
     const supabase = getSupabaseClient();
     if (!supabase || !s) return;
+    // Text boxes used to be saved as Number(...), so a cleared box became 0
+    // (delete recordings after 0 days) and letters became NaN.
+    const values = {
+      recording_retention_days: wholeNumber(s.recording_retention_days, 1, 3650),
+      absence_alert_delay_minutes: wholeNumber(s.absence_alert_delay_minutes, 0, 1440),
+      unexplained_absence_threshold: wholeNumber(s.unexplained_absence_threshold, 1, 100),
+      unexplained_absence_period_days: wholeNumber(s.unexplained_absence_period_days, 1, 365),
+    };
+    if (values.recording_retention_days === null) return setMsg("Recording retention must be a whole number of days, at least 1.");
+    if (values.absence_alert_delay_minutes === null) return setMsg("Absence alert delay must be a whole number of minutes, 0 to 1440.");
+    if (values.unexplained_absence_threshold === null) return setMsg("The number of unexplained absences must be a whole number, at least 1.");
+    if (values.unexplained_absence_period_days === null) return setMsg("The number of days must be a whole number, 1 to 365.");
     setBusy(true);
     setMsg(null);
     const {
       data: { user },
     } = await supabase.auth.getUser();
-    const { error } = await supabase.from("lms_settings").update({ ...s, updated_by: user?.id, updated_at: new Date().toISOString() }).eq("id", true);
+    const { error } = await supabase.from("lms_settings").update({ ...values, updated_by: user?.id, updated_at: new Date().toISOString() }).eq("id", true);
     setBusy(false);
     setMsg(error ? `Couldn't save: ${error.message}` : "Saved.");
   };
 
   if (loadError) return <Section title="Lessons & attendance" hint={loadError}>{null}</Section>;
   if (!s) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
-  const num = (k: keyof LmsSettings) => (e: React.ChangeEvent<HTMLInputElement>) => setS({ ...s, [k]: Number(e.target.value) });
+  const num = (k: keyof LmsSettings) => (e: React.ChangeEvent<HTMLInputElement>) => setS({ ...s, [k]: e.target.value });
   return (
     <Section title="Lessons & attendance" hint="When parents are told about absences, and how long recordings are kept." onSave={save} busy={busy} message={msg}>
       <div className="grid gap-4 sm:grid-cols-2">
         <Field label="Recording retention (days)" help="Older recordings are deleted automatically each night.">
-          <input type="text" inputMode="decimal" min={1} className={inputCls} value={s.recording_retention_days} onChange={num("recording_retention_days")} />
+          <input type="text" inputMode="numeric" className={inputCls} value={s.recording_retention_days} onChange={num("recording_retention_days")} />
         </Field>
         <Field label="Absence alert delay (minutes)" help="After a lesson ends with no register, parents are emailed.">
-          <input type="text" inputMode="decimal" min={0} className={inputCls} value={s.absence_alert_delay_minutes} onChange={num("absence_alert_delay_minutes")} />
+          <input type="text" inputMode="numeric" className={inputCls} value={s.absence_alert_delay_minutes} onChange={num("absence_alert_delay_minutes")} />
         </Field>
         <Field label="Unexplained absences before an alert" help="The Safeguarding Lead is alerted at this number…">
-          <input type="text" inputMode="decimal" min={1} className={inputCls} value={s.unexplained_absence_threshold} onChange={num("unexplained_absence_threshold")} />
+          <input type="text" inputMode="numeric" className={inputCls} value={s.unexplained_absence_threshold} onChange={num("unexplained_absence_threshold")} />
         </Field>
         <Field label="…within this many days">
-          <input type="text" inputMode="decimal" min={1} className={inputCls} value={s.unexplained_absence_period_days} onChange={num("unexplained_absence_period_days")} />
+          <input type="text" inputMode="numeric" className={inputCls} value={s.unexplained_absence_period_days} onChange={num("unexplained_absence_period_days")} />
         </Field>
       </div>
     </Section>
@@ -181,7 +226,7 @@ function LessonSettings() {
 }
 
 function MessagingSettings() {
-  const [days, setDays] = useState<number | null>(null);
+  const [days, setDays] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
 
@@ -193,15 +238,20 @@ function MessagingSettings() {
       .select("message_retention_days")
       .eq("id", true)
       .maybeSingle()
-      .then(({ data }) => setDays((data as { message_retention_days: number } | null)?.message_retention_days ?? null));
+      .then(({ data }) => {
+        const d = (data as { message_retention_days: number } | null)?.message_retention_days;
+        setDays(d == null ? null : String(d));
+      });
   }, []);
 
   const save = async () => {
     const supabase = getSupabaseClient();
     if (!supabase || days === null) return;
+    const n = wholeNumber(days, 30, 3650);
+    if (n === null) return setMsg("Keep messages for at least 30 days (whole days, up to 3650).");
     setBusy(true);
     setMsg(null);
-    const { error } = await supabase.from("messaging_settings").update({ message_retention_days: days }).eq("id", true);
+    const { error } = await supabase.from("messaging_settings").update({ message_retention_days: n }).eq("id", true);
     setBusy(false);
     setMsg(error ? "Couldn't save." : "Saved.");
   };
@@ -210,13 +260,13 @@ function MessagingSettings() {
   return (
     <Section title="Messages" hint="Staff and parents can message each other. Students have no private messaging." onSave={save} busy={busy} message={msg}>
       <Field label="Keep messages for (days)" help="Conversations with no new messages for this long are deleted automatically. 730 days is about two school years.">
-        <input type="text" inputMode="decimal" min={30} className={`${inputCls} max-w-xs`} value={days} onChange={(e) => setDays(Number(e.target.value))} />
+        <input type="text" inputMode="numeric" className={`${inputCls} max-w-xs`} value={days} onChange={(e) => setDays(e.target.value)} />
       </Field>
     </Section>
   );
 }
 
-type ClockInSettings = { require_clock_in: boolean; clock_in_roles: string[]; auto_clock_out_hours: number };
+type ClockInSettings = { require_clock_in: boolean; clock_in_roles: string[]; auto_clock_out_hours: number | string };
 
 function ClockInSettingsSection() {
   const [s, setS] = useState<ClockInSettings | null>(null);
@@ -237,10 +287,12 @@ function ClockInSettingsSection() {
   const save = async () => {
     const supabase = getSupabaseClient();
     if (!supabase || !s) return;
-    if (!Number.isInteger(s.auto_clock_out_hours) || s.auto_clock_out_hours < 1 || s.auto_clock_out_hours > 48) return setMsg("Auto clock-out must be 1 to 48 hours.");
+    const hours = wholeNumber(s.auto_clock_out_hours, 1, 48);
+    if (hours === null) return setMsg("Auto clock-out must be a whole number of hours, 1 to 48.");
+    if (s.require_clock_in && s.clock_in_roles.length === 0) return setMsg("Choose at least one role that must clock in, or switch clock-in off.");
     setBusy(true);
     setMsg(null);
-    const { error } = await supabase.from("lms_settings").update({ ...s, updated_at: new Date().toISOString() }).eq("id", true);
+    const { error } = await supabase.from("lms_settings").update({ ...s, auto_clock_out_hours: hours, updated_at: new Date().toISOString() }).eq("id", true);
     setBusy(false);
     setMsg(error ? "Couldn't save. Only a Headteacher or Admin can change this." : "Saved.");
   };
@@ -269,7 +321,7 @@ function ClockInSettingsSection() {
           </div>
         </fieldset>
         <Field label="Auto clock-out after (hours)" help="A shift left open this long is closed automatically at that length, so a forgotten clock-out doesn't run on.">
-          <input type="text" inputMode="decimal" min={1} max={48} className={`${inputCls} max-w-xs`} value={s.auto_clock_out_hours} onChange={(e) => setS({ ...s, auto_clock_out_hours: Number(e.target.value) })} />
+          <input type="text" inputMode="numeric" className={`${inputCls} max-w-xs`} value={s.auto_clock_out_hours} onChange={(e) => setS({ ...s, auto_clock_out_hours: e.target.value })} />
         </Field>
       </div>
     </Section>
@@ -280,12 +332,14 @@ function Shortcuts() {
   const links = [
     { href: "/admin/people", title: "People & accounts", text: "Add students, parents, teachers and admins." },
     { href: "/admin/academic", title: "Academic setup", text: "Years, terms, year groups, subjects and classes. Add a Teams link per class here." },
+    { href: "/admin/content", title: "Website content", text: "Public website text, fees, FAQs, policies and term dates." },
+    { href: "/admin/calendar", title: "Calendar and terms", text: "Term dates, half terms, INSET days and closures used by the portal." },
     { href: "/admin/documents", title: "Documents & signatures", text: "Policies and who needs to sign them." },
     { href: "/admin/compliance", title: "Safeguarding & compliance", text: "Keyword alerts, records and audit log." },
     { href: "/account", title: "Your account", text: "Change your password and sign-in details." },
   ];
   return (
-    <Section title="Quick links" hint="Other places school-wide things are managed.">
+    <Section title="Quick links" hint="Other places school-wide things are managed." defaultOpen>
       <ul className="grid gap-3 sm:grid-cols-2">
         {links.map((l) => (
           <li key={l.href}>
@@ -304,7 +358,7 @@ export default function AdminSettingsPage() {
   return (
     <section className="app-pad">
       <LearnGate allowedRoles={["head_teacher", "admin", "admissions"]}>
-        <PageHeader title="Settings" subtitle="School details, alerts, retention and shortcuts." />
+        <PageHeader title="Settings" subtitle="School details, alerts, retention and shortcuts. Open a section to change it." />
         <div className="space-y-5">
           <SchoolDetails />
           <LessonSettings />

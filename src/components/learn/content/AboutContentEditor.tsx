@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { LoadProblem, SaveBar } from "./SaveBar";
 import { Card } from "@/components/learn/Card";
 import { triggerPublish } from "@/lib/learn/publishSiteContent";
 import { aboutDefaults as D, withDefault, toStored, listWithDefault, listToStored } from "@/content/defaults";
@@ -40,12 +41,17 @@ export function AboutContentEditor() {
   const [row, setRow] = useState<Row | null>(null);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
+  const [savedJson, setSavedJson] = useState("");
+  const [loadFailed, setLoadFailed] = useState(false);
 
   useEffect(() => {
     if (!supabase) return;
     supabase.from("about_content").select("*").eq("id", true).maybeSingle().then(({ data }) => {
       const r = (data as Row) || null;
-      setRow(r ? fill(r) : null);
+      if (!r) return setLoadFailed(true);
+      const filled = fill(r);
+      setRow(filled);
+      setSavedJson(JSON.stringify(filled));
     });
   }, [supabase]);
 
@@ -59,12 +65,15 @@ export function AboutContentEditor() {
       setMessage(`Could not save: ${error.message}`);
       return;
     }
+    setSavedJson(JSON.stringify(row));
     const publishMessage = await triggerPublish();
     setSaving(false);
     setMessage(publishMessage);
   }
 
+  if (loadFailed) return <LoadProblem what="About page content" />;
   if (!row) return <p className="text-sm text-ink/65">Loading…</p>;
+  const dirty = JSON.stringify(row) !== savedJson;
   const items = row.recipe_items || [];
   const setItems = (recipe_items: RecipeItem[]) => setRow({ ...row, recipe_items });
 
@@ -107,10 +116,7 @@ export function AboutContentEditor() {
         <div />
         <DefaultTextField label="Tarbiyyah family body" value={row.family_body} def={D.family_body} multiline rows={3} onChange={(v) => setRow({ ...row, family_body: v })} />
       </div>
-      <button type="button" onClick={save} disabled={saving} className="mt-6 rounded-full bg-gold-700 px-5 py-2.5 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-60">
-        {saving ? "Saving…" : "Save"}
-      </button>
-      {message && <p className="mt-2 text-sm text-ink/70">{message}</p>}
+      <SaveBar onSave={save} saving={saving} dirty={dirty} message={message} error={!!message?.startsWith("Could not")} />
     </Card>
   );
 }

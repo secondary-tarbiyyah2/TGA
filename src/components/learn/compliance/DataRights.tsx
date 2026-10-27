@@ -16,6 +16,9 @@ type Request = {
   extended_deadline: string | null;
 };
 
+const TYPE_LABEL: Record<string, string> = { subject_access: "Subject access", rectification: "Rectification", erasure: "Erasure", export: "Export", objection: "Objection" };
+const STATUS_LABEL: Record<string, string> = { received: "Received", in_progress: "In progress", completed: "Completed", rejected: "Rejected" };
+
 function daysUntil(iso: string) {
   return Math.ceil((new Date(iso).getTime() - Date.now()) / 86400000);
 }
@@ -32,6 +35,8 @@ export function DataRights() {
   const [requests, setRequests] = useState<Request[] | null>(null);
   const [form, setForm] = useState({ request_type: "subject_access", requester_name: "", requester_email: "", subject_description: "" });
   const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [showClosed, setShowClosed] = useState(false);
 
   const load = async () => {
     if (!supabase) return;
@@ -51,17 +56,26 @@ export function DataRights() {
     e.preventDefault();
     if (!supabase || !form.requester_name.trim() || !form.requester_email.trim() || !form.subject_description.trim()) return;
     setBusy(true);
-    await supabase.from("data_rights_requests").insert(form);
-    setForm({ request_type: "subject_access", requester_name: "", requester_email: "", subject_description: "" });
+    setError(null);
+    const { error: err } = await supabase.from("data_rights_requests").insert(form);
     setBusy(false);
+    // Keep what was typed if it didn't save (it used to clear the form either way).
+    if (err) return setError("Couldn't log the request. Only the Headteacher or an Admin can.");
+    setForm({ request_type: "subject_access", requester_name: "", requester_email: "", subject_description: "" });
     await load();
   };
 
-  const setStatus = async (id: string, status: string) => {
+  const setStatus = async (r: Request, status: string) => {
     if (!supabase) return;
-    await supabase.from("data_rights_requests").update({ status, completed_at: status === "completed" ? new Date().toISOString() : null }).eq("id", id);
+    if (status === "rejected" && !window.confirm(`Reject the ${TYPE_LABEL[r.request_type] || r.request_type} request from ${r.requester_name}? Record your reason with the requester in writing.`)) return;
+    setError(null);
+    const { error: err } = await supabase.from("data_rights_requests").update({ status, completed_at: status === "completed" ? new Date().toISOString() : null }).eq("id", r.id);
+    if (err) setError("Couldn't update the request. Only the Headteacher or an Admin can.");
     await load();
   };
+  const openRequests = (requests || []).filter((r) => r.status !== "completed" && r.status !== "rejected");
+  const closedRequests = (requests || []).filter((r) => r.status === "completed" || r.status === "rejected");
+  const listed = showClosed ? [...openRequests, ...closedRequests] : openRequests;
 
   return (
     <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
@@ -70,27 +84,34 @@ export function DataRights() {
 
       <ul className="mt-3 space-y-2">
         {requests === null && <p className="text-sm text-ink/65">Loading…</p>}
-        {(requests || []).map((r) => {
+        {error && <p role="alert" className="text-sm text-red-700">{error}</p>}
+        {listed.map((r) => {
           const deadline = r.extended_deadline || r.statutory_deadline;
           const days = daysUntil(deadline);
           return (
             <li key={r.id} className="rounded-lg border border-gold-light/40 p-3 text-sm">
-              <p className="font-semibold">{r.request_type.replace("_", " ")} · {r.requester_name} ({r.requester_email})</p>
+              <p className="font-semibold">{TYPE_LABEL[r.request_type] || r.request_type} · {r.requester_name} ({r.requester_email})</p>
               <p className="mt-0.5 text-ink/70">Subject: {r.subject_description}</p>
-              <p className={`mt-1 text-xs ${days < 7 ? "font-semibold text-red-700" : "text-ink/65"}`}>
-                Status: {r.status} · deadline {new Date(deadline).toLocaleDateString("en-GB")} ({days < 0 ? "overdue" : `${days} day(s) left`})
-              </p>
+              {(() => {
+                const closed = r.status === "completed" || r.status === "rejected";
+                return (
+                  <p className={`mt-1 text-xs ${!closed && days < 7 ? "font-semibold text-red-700" : "text-ink/65"}`}>
+                    Status: {STATUS_LABEL[r.status] || r.status} · deadline {new Date(deadline).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "Europe/London" })}
+                    {!closed && ` (${days < 0 ? "overdue" : `${days} day${days === 1 ? "" : "s"} left`})`}
+                  </p>
+                );
+              })()}
               {canAction && r.status !== "completed" && r.status !== "rejected" && (
                 <div className="mt-2 flex gap-2">
                   {r.status === "received" && (
-                    <button type="button" onClick={() => setStatus(r.id, "in_progress")} className="rounded-lg border border-gold-light px-3 py-1.5 text-xs hover:bg-cream bg-white text-ink/80 font-medium transition-colors">
+                    <button type="button" onClick={() => setStatus(r, "in_progress")} className="rounded-lg border border-gold-light px-3 py-1.5 text-xs hover:bg-cream bg-white text-ink/80 font-medium transition-colors">
                       Mark in progress
                     </button>
                   )}
-                  <button type="button" onClick={() => setStatus(r.id, "completed")} className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs font-semibold text-white hover:bg-gold-900 transition-colors">
+                  <button type="button" onClick={() => setStatus(r, "completed")} className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs font-semibold text-white hover:bg-gold-900 transition-colors">
                     Mark completed
                   </button>
-                  <button type="button" onClick={() => setStatus(r.id, "rejected")} className="rounded-lg border border-red-300 px-3 py-1.5 text-xs text-red-700 hover:bg-red-50 font-medium transition-colors">
+                  <button type="button" onClick={() => setStatus(r, "rejected")} className="rounded-lg border border-red-300 px-3 py-1.5 text-xs text-red-700 hover:bg-red-50 font-medium transition-colors">
                     Reject
                   </button>
                 </div>
@@ -99,7 +120,13 @@ export function DataRights() {
           );
         })}
         {requests?.length === 0 && <p className="text-sm text-ink/65">No data rights requests logged.</p>}
+        {requests && requests.length > 0 && openRequests.length === 0 && !showClosed && <p className="text-sm text-ink/65">No open requests.</p>}
       </ul>
+      {closedRequests.length > 0 && (
+        <button type="button" onClick={() => setShowClosed((v) => !v)} className="mt-2 text-xs font-medium text-teal-700 underline">
+          {showClosed ? "Hide finished requests" : `Show ${closedRequests.length} finished request${closedRequests.length === 1 ? "" : "s"}`}
+        </button>
+      )}
 
       <form onSubmit={submit} className="mt-4 space-y-2 border-t border-gold-light/30 pt-4">
         <p className="text-xs font-semibold uppercase tracking-wide text-ink/65">Log a new request</p>

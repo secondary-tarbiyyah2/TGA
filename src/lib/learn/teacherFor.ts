@@ -1,3 +1,4 @@
+import { ukToday } from "@/lib/learn/ukTime";
 // TypeScript mirror of public.teacher_for(class_id, subject_id, on_date)
 // (migration 0050). Keep the two in step.
 //
@@ -47,10 +48,8 @@ export function teacherFor(rows: CstRow[], classId: string, subjectId: string, o
   return rowFor(rows, classId, subjectId, on)?.teacher_id ?? null;
 }
 
-export const todayIso = (): string => {
-  const d = new Date();
-  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
-};
+/** Today in the UK (the school's day), whatever zone the browser is in. */
+export const todayIso = (): string => ukToday();
 
 /** "Mr X (Arabic), Ms Y (Maths)" for a class on a date. */
 export function classTeacherNames(

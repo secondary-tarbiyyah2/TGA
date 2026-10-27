@@ -23,7 +23,8 @@ const STATUS: Record<string, { label: string; tone: Tone }> = {
   complete: { label: "Complete", tone: "good" },
   void: { label: "Cancelled", tone: "bad" },
 };
-const when = (d: string | null) => (d ? new Date(d).toLocaleDateString("en-GB", { day: "numeric", month: "short" }) : "–");
+const when = (d: string | null) => (d ? new Date(d).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "Europe/London" }) : "–");
+type ActResult = { tone: "good" | "bad" | "info"; text: string; link?: string };
 
 export function EntryAssessmentsAdmin() {
   const supabase = getSupabaseClient();
@@ -31,7 +32,9 @@ export function EntryAssessmentsAdmin() {
   const [filter, setFilter] = useState<"active" | "marking" | "complete" | "all">("active");
   const [creating, setCreating] = useState(false);
   const [openId, setOpenId] = useState<string | null>(null);
-  const [notice, setNotice] = useState<{ tone: "good" | "bad" | "info"; text: string; link?: string } | null>(null);
+  const [notice, setNotice] = useState<ActResult | null>(null);
+  // Result of an action taken on one row, shown under that row rather than at the top of the page.
+  const [rowNotice, setRowNotice] = useState<(ActResult & { id: string }) | null>(null);
 
   const load = useCallback(async () => {
     if (!supabase) return;
@@ -50,14 +53,22 @@ export function EntryAssessmentsAdmin() {
   const shown = useMemo(() => (rows || []).filter((r) => (filter === "all" ? true : filter === "active" ? ["issued", "in_progress"].includes(r.status) : filter === "marking" ? r.status === "submitted" : r.status === "complete")), [rows, filter]);
   const count = (s: string[]) => (rows || []).filter((r) => s.includes(r.status)).length;
 
-  const act = async (id: string, action: "reissue" | "email" | "void", extra: Record<string, unknown> = {}) => {
-    if (action === "void" && !confirm("Cancel this assessment? The link stops working. You can issue a new paper later.")) return;
+  /** Runs a row action and returns what happened (null if the user backed out of a confirm). */
+  const act = async (id: string, action: "reissue" | "email" | "void", extra: Record<string, unknown> = {}): Promise<ActResult | null> => {
+    if (action === "void" && !confirm("Cancel this assessment? The link stops working. You can issue a new paper later.")) return null;
+    if (action === "reissue" && !confirm(extra.newPaper ? "Start again with a new paper? The old link and any answers so far stop counting." : "Make a new link? The old link stops working.")) return null;
     const res = await callEdgeFunction("entry-assessment", { action, id, ...extra });
-    if (!res.ok) return setNotice({ tone: "bad", text: edgeErrorMessage(res) });
-    if (action === "email") setNotice({ tone: "good", text: "Link emailed to the parent.", link: res.link as string });
-    else if (action === "reissue") setNotice({ tone: "good", text: extra.newPaper ? "A new paper has been made with a new link. The old link no longer works." : "New link made. The old link no longer works.", link: res.link as string });
-    else setNotice({ tone: "info", text: "Assessment cancelled." });
-    load();
+    let out: ActResult;
+    if (!res.ok) out = { tone: "bad", text: edgeErrorMessage(res) };
+    else if (action === "email") out = { tone: "good", text: "Link emailed to the parent.", link: res.link as string };
+    else if (action === "reissue") out = { tone: "good", text: extra.newPaper ? "A new paper has been made with a new link. The old link no longer works." : "New link made. The old link no longer works.", link: res.link as string };
+    else out = { tone: "info", text: "Assessment cancelled." };
+    if (res.ok) load();
+    return out;
+  };
+  const actOnRow = async (id: string, action: "reissue" | "email") => {
+    const out = await act(id, action);
+    if (out) setRowNotice({ ...out, id });
   };
 
   const open = rows?.find((r) => r.id === openId) || null;
@@ -135,11 +146,17 @@ export function EntryAssessmentsAdmin() {
                   <button type="button" onClick={() => setOpenId(r.id)} className={`${ui.btnSecondary} ${ui.sm}`}>{r.status === "submitted" ? "Mark" : r.status === "complete" ? "Report" : "Open"}</button>
                   {["issued", "in_progress"].includes(r.status) && (
                     <>
-                      <button type="button" onClick={() => act(r.id, "email")} className={`${ui.btnSecondary} ${ui.sm}`}>Email link</button>
-                      <button type="button" onClick={() => act(r.id, "reissue")} className={`${ui.btnSecondary} ${ui.sm}`}>New link</button>
+                      <button type="button" onClick={() => actOnRow(r.id, "email")} className={`${ui.btnSecondary} ${ui.sm}`}>Email link</button>
+                      <button type="button" onClick={() => actOnRow(r.id, "reissue")} className={`${ui.btnSecondary} ${ui.sm}`}>New link</button>
                     </>
                   )}
                 </span>
+                {rowNotice?.id === r.id && (
+                  <div className="basis-full space-y-2">
+                    <Notice tone={rowNotice.tone}>{rowNotice.text}</Notice>
+                    {rowNotice.link && <CopyLink link={rowNotice.link} />}
+                  </div>
+                )}
               </li>
             );
           })}
@@ -323,12 +340,19 @@ export type WritingMarkRow = {
   error: string | null; decision: string | null; override_reason: string | null; notes: string | null; created_by_email: string | null; created_at: string; based_on: string | null;
 };
 
-function Detail({ row, onClose, onChanged, onAct }: { row: Row; onClose: () => void; onChanged: () => void; onAct: (id: string, a: "reissue" | "email" | "void", extra?: Record<string, unknown>) => void }) {
+function Detail({ row, onClose, onChanged, onAct }: { row: Row; onClose: () => void; onChanged: () => void; onAct: (id: string, a: "reissue" | "email" | "void", extra?: Record<string, unknown>) => Promise<ActResult | null> }) {
   const supabase = getSupabaseClient();
   const [full, setFull] = useState<Full | null>(null);
   const [wmarks, setWmarks] = useState<WritingMarkRow[]>([]);
   const [report, setReport] = useState<ReportData | null>(row.report);
   const [status, setStatus] = useState(row.status);
+  const [actNotice, setActNotice] = useState<ActResult | null>(null);
+  const runAct = async (a: "reissue" | "void", extra?: Record<string, unknown>) => {
+    const out = await onAct(row.id, a, extra);
+    if (!out) return;
+    setActNotice(out);
+    if (out.tone !== "bad") setStatus(a === "void" ? "void" : "issued");
+  };
 
   const loadMarks = useCallback(async () => {
     if (!supabase) return;
@@ -377,7 +401,7 @@ function Detail({ row, onClose, onChanged, onAct }: { row: Row; onClose: () => v
         <div className="sticky top-0 z-10 flex items-start justify-between gap-3 border-b border-gold-light bg-white px-5 py-4 print:static print:border-0 print:px-0">
           <div>
             <h2 id="ea-title" className="text-xl font-semibold text-ink">{row.candidate_name}</h2>
-            <p className="text-sm text-ink/65">Year {row.year}{row.dob ? ` · born ${new Date(row.dob).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}` : ""}{row.eal ? " · EAL" : ""}{row.invigilator ? ` · supervised by ${row.invigilator}` : ""}</p>
+            <p className="text-sm text-ink/65">Year {row.year}{row.dob ? ` · born ${new Date(`${row.dob.slice(0, 10)}T12:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" })}` : ""}{row.eal ? " · EAL" : ""}{row.invigilator ? ` · supervised by ${row.invigilator}` : ""}</p>
           </div>
           <div className="flex items-center gap-2 print:hidden">
             <StatusChip tone={(STATUS[status] || STATUS.issued).tone}>{(STATUS[status] || STATUS.issued).label}</StatusChip>
@@ -405,9 +429,15 @@ function Detail({ row, onClose, onChanged, onAct }: { row: Row; onClose: () => v
           {full && <AnswerReview full={full} />}
 
           <div className="flex flex-wrap gap-2 border-t border-gold-light pt-4 print:hidden">
-            {status !== "void" && <button type="button" onClick={() => onAct(row.id, "reissue", { newPaper: true })} className={ui.btnSecondary}>Start again with a new paper</button>}
-            {status !== "void" && status !== "complete" && <button type="button" onClick={() => onAct(row.id, "void")} className={ui.btnLinkDanger}>Cancel this assessment</button>}
+            {status !== "void" && <button type="button" onClick={() => runAct("reissue", { newPaper: true })} className={ui.btnSecondary}>Start again with a new paper</button>}
+            {status !== "void" && status !== "complete" && <button type="button" onClick={() => runAct("void")} className={ui.btnLinkDanger}>Cancel this assessment</button>}
           </div>
+          {actNotice && (
+            <div className="space-y-2 print:hidden">
+              <Notice tone={actNotice.tone}>{actNotice.text}</Notice>
+              {actNotice.link && <CopyLink link={actNotice.link} />}
+            </div>
+          )}
         </div>
       </div>
     </div>

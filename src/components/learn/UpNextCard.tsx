@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useId, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { localDateKey } from "@/lib/learn/calendar";
+import { formatDateKey, shiftDateKey, ukNowHm, ukTimeOf, ukToday } from "@/lib/learn/ukTime";
 import { Icon } from "@/components/learn/Icon";
 
 /**
@@ -31,7 +31,15 @@ const minutes = (t: string) => Number(t.slice(0, 2)) * 60 + Number(t.slice(3, 5)
 function dayLabel(dateKey: string, today: string, tomorrow: string): string {
   if (dateKey === today) return "Today";
   if (dateKey === tomorrow) return "Tomorrow";
-  return new Date(`${dateKey}T12:00:00`).toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "short" });
+  return formatDateKey(dateKey, { weekday: "long", day: "numeric", month: "short" });
+}
+
+function isUkZone(): boolean {
+  try {
+    return Intl.DateTimeFormat().resolvedOptions().timeZone === "Europe/London";
+  } catch {
+    return true;
+  }
 }
 
 function untilLabel(mins: number): string {
@@ -55,20 +63,19 @@ function useNextLesson(classIds: string[] | null): NextLesson | null | undefined
         if (alive) setNext(null);
         return;
       }
+      // Lesson dates and times are UK time, whatever zone the browser is in.
       const now = new Date();
-      const today = localDateKey(now);
-      const to = new Date(now);
-      to.setDate(to.getDate() + 14);
+      const today = ukToday(now);
       const { data } = await supabase
         .from("lesson_instances")
         .select("id, date, timetable_slots!inner(class_id, start_time, end_time, classes(name), subjects(name))")
         .in("timetable_slots.class_id", ids)
         .gte("date", today)
-        .lte("date", localDateKey(to))
+        .lte("date", shiftDateKey(today, 14))
         .order("date", { ascending: true })
         .limit(60);
       if (!alive) return;
-      const nowMins = now.getHours() * 60 + now.getMinutes();
+      const nowMins = minutes(ukNowHm(now));
       const upcoming = ((data as unknown as LessonRaw[] | null) || [])
         .filter((r) => r.timetable_slots)
         .map((r) => ({
@@ -99,13 +106,13 @@ function useUrgentHomework(childId: string | undefined): HwItem[] | null {
     let alive = true;
     supabase
       .from("homework_status")
-      .select("homework_id, due_at, status, homework:homework_id(title, archived_at)")
+      .select("homework_id, due_at, status, homework:homework_id(title)")
       .eq("child_id", childId)
       .in("status", ["missing", "not_yet_due"])
       .order("due_at", { ascending: true })
       .then(({ data }) => {
         if (!alive) return;
-        const rows = ((data as unknown as HwRaw[] | null) || []).filter((r) => r.homework && !r.homework.archived_at);
+        const rows = ((data as unknown as HwRaw[] | null) || []).filter((r) => r.homework);
         // Overdue first (oldest first), then what's due soonest.
         const overdue = rows.filter((r) => r.status === "missing");
         const due = rows.filter((r) => r.status === "not_yet_due");
@@ -143,29 +150,29 @@ export function UpNextCard({
     return () => clearInterval(t);
   }, []);
 
-  const today = localDateKey(now);
-  const tmr = new Date(now);
-  tmr.setDate(tmr.getDate() + 1);
-  const tomorrow = localDateKey(tmr);
-  const nowMins = now.getHours() * 60 + now.getMinutes();
+  // The school runs on UK time; say so when the viewer's clock differs.
+  const today = ukToday(now);
+  const tomorrow = shiftDateKey(today, 1);
+  const nowMins = minutes(ukNowHm(now));
+  const ukSuffix = isUkZone() ? "" : " (UK time)";
 
   let when = "";
   let live = false;
   if (lesson) {
     if (lesson.date === today && minutes(lesson.start) <= nowMins) {
       live = true;
-      when = `Happening now, until ${lesson.end}`;
+      when = `Happening now, until ${lesson.end}${ukSuffix}`;
     } else if (lesson.date === today) {
-      when = `Today at ${lesson.start}, ${untilLabel(minutes(lesson.start) - nowMins)}`;
+      when = `Today at ${lesson.start}${ukSuffix}, ${untilLabel(minutes(lesson.start) - nowMins)}`;
     } else {
-      when = `${dayLabel(lesson.date, today, tomorrow)} at ${lesson.start}`;
+      when = `${dayLabel(lesson.date, today, tomorrow)} at ${lesson.start}${ukSuffix}`;
     }
   }
 
   const first = homework?.[0];
   const dueText = (h: HwItem) => {
-    const key = localDateKey(new Date(h.dueAt));
-    const time = new Date(h.dueAt).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" });
+    const key = ukToday(new Date(h.dueAt));
+    const time = `${ukTimeOf(h.dueAt)}${ukSuffix}`;
     if (h.overdue) return `Was due ${dayLabel(key, today, tomorrow).replace(/^Today$/, "today").replace(/^Tomorrow$/, "tomorrow")}`;
     if (key === today) return `Due today at ${time}`;
     if (key === tomorrow) return `Due tomorrow at ${time}`;

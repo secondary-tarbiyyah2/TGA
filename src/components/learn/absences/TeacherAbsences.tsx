@@ -4,7 +4,7 @@ import { useMemo } from "react";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { EmptyState, StatusChip } from "@/components/learn/ui";
 import { dateKeyDaysAgo, formatDay, reasonLabel, useAbsenceData, type AbsenceNote } from "./data";
-import { localDateKey } from "@/lib/learn/calendar";
+import { ukToday } from "@/lib/learn/ukTime";
 
 /**
  * The teacher's view of pupil absence: who was away from their lessons in
@@ -13,7 +13,7 @@ import { localDateKey } from "@/lib/learn/calendar";
  * job (see 0098), so there are no buttons here.
  */
 export function TeacherAbsences() {
-  const today = localDateKey(new Date());
+  const today = ukToday();
   const { notes, absences, error } = useAbsenceData(dateKeyDaysAgo(29), today);
 
   const rows = useMemo(() => {

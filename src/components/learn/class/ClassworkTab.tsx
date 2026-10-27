@@ -242,7 +242,10 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
   const [collapsed, setCollapsed] = useState<Record<string, boolean>>({});
   const [expanded, setExpanded] = useState<string | null>(null);
   const [creating, setCreating] = useState<"material" | "question" | null>(null);
-  const [setting, setSetting] = useState<{ kind: HomeworkKind; editing: Hw | null; topicId: string } | null>(null);
+  // `at` says where the editor opens: at the top (Create menu), under a
+  // topic's heading (its "+ Assignment"), or in place of the item being edited,
+  // so nobody is thrown to the top of a long list.
+  const [setting, setSetting] = useState<{ kind: HomeworkKind; editing: Hw | null; topicId: string; at: string } | null>(null);
   const [newTopic, setNewTopic] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [note, setNote] = useState<string | null>(null);
@@ -295,12 +298,15 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
     load();
   }, [load]);
 
-  const startSetting = (kind: HomeworkKind, editing: Hw | null = null, topicId = "") => {
+  const startSetting = (kind: HomeworkKind, editing: Hw | null = null, topicId = "", fromTopic = false) => {
     setCreating(null);
     setNote(null);
-    setSetting({ kind, editing, topicId });
+    const at = editing ? `item:${editing.id}` : fromTopic && topicId ? `topic:${topicId}` : "top";
+    setSetting({ kind, editing, topicId, at });
+    if (at.startsWith("topic:")) setCollapsed((c) => ({ ...c, [topicId]: false }));
     setView("all");
-    requestAnimationFrame(() => editorRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }));
+    // Only nudge it into view if it isn't already: no jumping around the page.
+    requestAnimationFrame(() => editorRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" }));
   };
 
   const openReview = (homeworkId?: string) => {
@@ -344,6 +350,33 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
   };
 
   if (topics === null) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
+
+  const editor = setting ? (
+        <section ref={editorRef} aria-label={setting.editing ? `Edit ${setting.editing.title}` : setting.kind === "quiz" ? "New quiz assignment" : "New assignment"} className="scroll-mt-24 rounded-2xl border border-gold-light bg-white p-5">
+          <div className="mb-4 flex items-center justify-between gap-3">
+            <h3 className="text-base font-semibold text-ink">{setting.editing ? `Edit “${setting.editing.title}”` : setting.kind === "quiz" ? "New quiz assignment" : "New assignment"}</h3>
+            <button type="button" onClick={() => setSetting(null)} className="text-sm text-ink/65 hover:text-ink">
+              Close
+            </button>
+          </div>
+          <HomeworkEditor
+            key={setting.editing?.id || `new-${setting.kind}`}
+            classes={[{ id: classId, name: classTitle }]}
+            initialClassId={classId}
+            lockClass
+            topics={topics}
+            initialTopicId={setting.editing?.topic_id || setting.topicId}
+            kind={setting.kind}
+            editing={setting.editing}
+            onCancel={() => setSetting(null)}
+            onSaved={(n) => {
+              setNote(n ?? null);
+              setSetting(null);
+              load();
+            }}
+          />
+        </section>
+  ) : null;
 
   const groups: { key: string; topic: Topic | null; items: Row[] }[] = [
     { key: "none", topic: null, items: rows.filter((r) => !r.topicId || !topics.some((t) => t.id === r.topicId)) },
@@ -399,32 +432,7 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
           {note}
         </p>
       )}
-      {setting && (
-        <section ref={editorRef} aria-label={setting.editing ? `Edit ${setting.editing.title}` : setting.kind === "quiz" ? "New quiz assignment" : "New assignment"} className="scroll-mt-24 rounded-2xl border border-gold-light bg-white p-5">
-          <div className="mb-4 flex items-center justify-between gap-3">
-            <h3 className="text-base font-semibold text-ink">{setting.editing ? `Edit “${setting.editing.title}”` : setting.kind === "quiz" ? "New quiz assignment" : "New assignment"}</h3>
-            <button type="button" onClick={() => setSetting(null)} className="text-sm text-ink/65 hover:text-ink">
-              Close
-            </button>
-          </div>
-          <HomeworkEditor
-            key={setting.editing?.id || `new-${setting.kind}`}
-            classes={[{ id: classId, name: classTitle }]}
-            initialClassId={classId}
-            lockClass
-            topics={topics}
-            initialTopicId={setting.editing?.topic_id || setting.topicId}
-            kind={setting.kind}
-            editing={setting.editing}
-            onCancel={() => setSetting(null)}
-            onSaved={(n) => {
-              setNote(n ?? null);
-              setSetting(null);
-              load();
-            }}
-          />
-        </section>
-      )}
+      {setting?.at === "top" && editor}
 
       {newTopic !== null && (
         <div className="flex flex-wrap gap-2 rounded-2xl border border-gold-light bg-white p-4">
@@ -475,7 +483,7 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
                 </button>
                 {canEdit && (
                   <>
-                    <button type="button" onClick={() => startSetting("assignment", null, (g.topic as Topic).id)} className="text-xs font-medium text-teal-800 hover:underline">
+                    <button type="button" onClick={() => startSetting("assignment", null, (g.topic as Topic).id, true)} className="text-xs font-medium text-teal-800 hover:underline">
                       + Assignment
                     </button>
                     <button type="button" onClick={() => removeTopic(g.topic as Topic)} className="text-xs text-ink/65 hover:text-red-700 hover:underline">
@@ -487,6 +495,7 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
             ) : (
               <h2 className="px-4 pt-3 text-sm font-semibold text-ink/65">{topics.length > 0 ? "No topic" : "Classwork"}</h2>
             )}
+            {g.topic && setting?.at === `topic:${g.key}` && <div className="px-3 pb-3">{editor}</div>}
             {!closed && (
               <ul className="divide-y divide-gold-light/60 px-2 pb-2">
                 {g.items.length === 0 && <li className="px-3 py-3 text-sm text-ink/65">Nothing in this topic yet.</li>}
@@ -538,7 +547,8 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
                           </button>
                         )}
                       </div>
-                      {open && hw && isStaff && (
+                      {hw && setting?.at === `item:${hw.id}` && <div className="mt-2">{editor}</div>}
+                      {open && hw && isStaff && setting?.at !== `item:${hw.id}` && (
                         <div className="mt-2">
                           <HomeworkCard
                             hw={hw}

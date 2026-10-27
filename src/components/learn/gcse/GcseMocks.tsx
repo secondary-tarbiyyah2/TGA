@@ -8,7 +8,8 @@ import { GradeChip } from "@/components/learn/gcse/GcseParts";
 type MockRow = GcseHistoryRow & { children: { name: string } | null; subjects: { name: string } | null; classes: { name: string } | null };
 
 const SELECT = "rounded-lg border border-gold-light/60 bg-white px-3 py-1.5 text-sm";
-const fmtDate = (iso: string) => new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+const fmtDate = (iso: string) => new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "Europe/London" });
+const ukIso = (iso: string) => new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date(iso));
 
 /**
  * Every mock exam result in one table (newest first): filter by subject, paper
@@ -21,6 +22,7 @@ export function GcseMocks() {
   const [subjectId, setSubjectId] = useState("");
   const [paper, setPaper] = useState("");
   const [search, setSearch] = useState("");
+  const [loadError, setLoadError] = useState(false);
 
   useEffect(() => {
     if (!supabase) return;
@@ -32,7 +34,9 @@ export function GcseMocks() {
       .order("recorded_at", { ascending: false })
       .limit(2000)
       .then(({ data, error }) => {
-        if (!cancelled) setRows(error ? [] : ((data as unknown as MockRow[] | null) || []));
+        if (cancelled) return;
+        setLoadError(Boolean(error));
+        setRows(error ? [] : ((data as unknown as MockRow[] | null) || []));
       });
     return () => {
       cancelled = true;
@@ -52,12 +56,16 @@ export function GcseMocks() {
   }, [rows, subjectId, paper, search]);
 
   const summary = useMemo(() => {
-    const m = new Map<string, { subject: string; paper: string; n: number; pct: number; grade: number; graded: number }>();
+    // pct is summed over `marked` rows only, so a result without a mark doesn't drag the average down.
+    const m = new Map<string, { subject: string; paper: string; n: number; pct: number; marked: number; grade: number; graded: number }>();
     for (const r of shown) {
       const k = `${r.subject_id}|${r.label || "Mock exam"}`;
-      const e = m.get(k) || { subject: r.subjects?.name || "Subject", paper: r.label || "Mock exam", n: 0, pct: 0, grade: 0, graded: 0 };
+      const e = m.get(k) || { subject: r.subjects?.name || "Subject", paper: r.label || "Mock exam", n: 0, pct: 0, marked: 0, grade: 0, graded: 0 };
       e.n += 1;
-      if (r.mark !== null && r.out_of) e.pct += (r.mark / r.out_of) * 100;
+      if (r.mark !== null && r.out_of) {
+        e.pct += (r.mark / r.out_of) * 100;
+        e.marked += 1;
+      }
       if (r.actual_grade !== null) {
         e.grade += r.actual_grade;
         e.graded += 1;
@@ -72,11 +80,12 @@ export function GcseMocks() {
       "gcse-mock-results.csv",
       toCsv(
         ["Pupil", "Class", "Subject", "Paper", "Date", "Mark", "Out of", "Percent", "Grade"],
-        shown.map((r) => [r.children?.name, r.classes?.name, r.subjects?.name, r.label || "Mock exam", r.recorded_at.slice(0, 10), r.mark, r.out_of, r.mark !== null && r.out_of ? Math.round((r.mark / r.out_of) * 1000) / 10 : null, r.actual_grade])
+        shown.map((r) => [r.children?.name, r.classes?.name, r.subjects?.name, r.label || "Mock exam", ukIso(r.recorded_at), r.mark, r.out_of, r.mark !== null && r.out_of ? Math.round((r.mark / r.out_of) * 1000) / 10 : null, r.actual_grade])
       )
     );
 
   if (rows === null) return <p className="text-sm text-ink/65">Loading…</p>;
+  if (loadError) return <p role="alert" className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-800">Mock exam results couldn&apos;t be loaded. Refresh the page to try again.</p>;
 
   return (
     <section className="rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6" aria-labelledby="gcse-mocks-h">
@@ -132,7 +141,7 @@ export function GcseMocks() {
                   </span>
                   <span className="ml-2 text-ink/65">
                     {s.n} {s.n === 1 ? "pupil" : "pupils"}
-                    {s.pct > 0 ? ` · avg ${(s.pct / s.n).toFixed(0)}%` : ""}
+                    {s.marked > 0 ? ` · avg ${(s.pct / s.marked).toFixed(0)}%` : ""}
                     {s.graded > 0 ? ` · avg grade ${(s.grade / s.graded).toFixed(1)}` : ""}
                   </span>
                 </li>

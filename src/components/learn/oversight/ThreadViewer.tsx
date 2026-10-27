@@ -3,14 +3,20 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { learnRoleLabel, type LearnRole } from "@/lib/learn/session";
 import { threadTitle, type OversightMessage, type OversightThread } from "./types";
 
 function dayLabel(iso: string): string {
-  return new Date(iso).toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+  return new Date(iso).toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric", timeZone: "Europe/London" });
 }
 
 function time(iso: string): string {
-  return new Date(iso).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" });
+  return new Date(iso).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/London" });
+}
+
+/** "head_teacher" -> "Headteacher"; anything unknown is shown as it came. */
+function roleName(role: string): string {
+  return learnRoleLabel(role as LearnRole) || role;
 }
 
 /** Read-only conversation. Opening it calls oversight_open_thread(), which
@@ -43,7 +49,7 @@ export function ThreadViewer({ thread }: { thread: OversightThread }) {
         <div className="min-w-0">
           <p className="truncate text-sm font-semibold text-ink">{threadTitle(thread)}</p>
           <p className="truncate text-xs text-ink/65">
-            {thread.role_a} ↔ {thread.role_b}
+            {roleName(thread.role_a)} ↔ {roleName(thread.role_b)}
             {thread.child_name ? ` · about ${thread.child_name}` : ""}
           </p>
         </div>
@@ -59,7 +65,7 @@ export function ThreadViewer({ thread }: { thread: OversightThread }) {
         {!error && messages === null && <p className="text-sm text-ink/65">Opening…</p>}
         {messages?.length === 0 && <p className="text-sm text-ink/65">No messages in this conversation.</p>}
         {messages?.map((m) => {
-          const day = new Date(m.created_at).toDateString();
+          const day = dayLabel(m.created_at);
           const showDay = day !== lastDay;
           lastDay = day;
           const isA = m.sender_name !== null && m.sender_name === thread.name_a;

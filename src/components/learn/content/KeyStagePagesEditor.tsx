@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { MAIN_SITE_ORIGIN } from "@/lib/learn/origin";
 import { Card } from "@/components/learn/Card";
 import { triggerPublish } from "@/lib/learn/publishSiteContent";
 import { ui } from "@/components/learn/ui";
@@ -97,7 +98,7 @@ export function KeyStagePagesEditor() {
                   {!r.visible && <span className="ml-2 rounded-full bg-ink/5 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-ink/70">Hidden from website</span>}
                 </p>
                 <p className="text-xs text-ink/65">
-                  {r.subjects.length} subjects · {lessonsTotal(r)} live lessons a week listed · <a href={`/curriculum/${r.slug}/`} target="_blank" rel="noreferrer" className="text-teal-700 hover:underline">view page</a>
+                  {r.subjects.length} subjects · {lessonsTotal(r)} live lessons a week listed · <a href={`${MAIN_SITE_ORIGIN}/curriculum/${r.slug}/`} target="_blank" rel="noreferrer" className="text-teal-700 hover:underline">view page</a>
                 </p>
               </div>
               <button type="button" onClick={() => setOpen(open === r.slug ? null : r.slug)} aria-expanded={open === r.slug} className="rounded-full border border-gold-500 px-3 py-1 text-xs text-gold-700 hover:bg-cream">

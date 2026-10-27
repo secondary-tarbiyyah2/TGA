@@ -59,10 +59,14 @@ export function ApprovalQueue({ me, onChanged }: { me: { id: string; name: strin
     return (items || []).filter((x) => !needle || (x.children?.name || "").toLowerCase().includes(needle));
   }, [items, q]);
 
+  // Only act on ticked reports that are still visible: a search can hide earlier ticks.
+  const selectedShown = selected.filter((id) => shown.some((x) => x.id === id));
+
   const issue = async (ids: string[]) => {
     const supabase = getSupabaseClient();
     if (!supabase || !me || ids.length === 0) return;
-    if (ids.length > 1 && !window.confirm(`Approve and issue ${ids.length} reports to families now?`)) return;
+    const one = ids.length === 1 ? items?.find((x) => x.id === ids[0])?.children?.name : null;
+    if (!window.confirm(ids.length > 1 ? `Approve and issue ${ids.length} reports to families now?` : `Approve and issue ${one ? `${one}'s` : "this"} report to the family now?`)) return;
     setBusy(true);
     setMsg(null);
     const { error } = await supabase.from("term_reports").update({ status: "released" }).in("id", ids);
@@ -106,7 +110,7 @@ export function ApprovalQueue({ me, onChanged }: { me: { id: string; name: strin
             <label className="flex items-center gap-2 text-sm text-ink/75">
               <input
                 type="checkbox"
-                checked={selected.length > 0 && selected.length === shown.length}
+                checked={selectedShown.length > 0 && selectedShown.length === shown.length}
                 onChange={(e) => setSelected(e.target.checked ? shown.map((x) => x.id) : [])}
                 aria-label="Select all shown"
               />
@@ -114,8 +118,8 @@ export function ApprovalQueue({ me, onChanged }: { me: { id: string; name: strin
             </label>
             <div className="flex flex-wrap items-center gap-2">
               <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search pupils" aria-label="Search pupils" className={`${ui.input} !w-44 !py-1.5`} />
-              <button type="button" disabled={busy || selected.length === 0} onClick={() => issue(selected)} className={`${ui.btnPrimary} ${ui.sm}`}>
-                Approve and issue selected ({selected.length})
+              <button type="button" disabled={busy || selectedShown.length === 0} onClick={() => issue(selectedShown)} className={`${ui.btnPrimary} ${ui.sm}`}>
+                Approve and issue selected ({selectedShown.length})
               </button>
             </div>
           </div>

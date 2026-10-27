@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { WEEKDAYS, type TimetableSlot } from "@/lib/learn/timetable";
+import { WEEKDAYS, lessonMinutesFor, type TimetableSlot } from "@/lib/learn/timetable";
 import { teacherFor, todayIso, type CstRow } from "@/lib/learn/teacherFor";
 import { hhmm, moveProblem } from "./types";
 import { insertSlotLocked, updateSlotLocked } from "./api";
@@ -58,11 +58,21 @@ export function SlotEditor({
 
   const effClassId = slot ? slot.class_id : classId;
 
+  // Escape closes the dialog, as with every other dialog in the portal.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && !busy) onClose();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [busy, onClose]);
+
   const warnings: string[] = [];
   if (teacherId && end > start) {
     const mine = availability.filter((a) => a.teacher_user_id === teacherId && a.academic_year_id === academicYearId && a.weekday === weekday);
     if (!mine.some((a) => hhmm(a.start_time) <= start && hhmm(a.end_time) >= end)) warnings.push("This teacher hasn't marked themselves available at this time.");
   }
+  if (weekday === 5 && end > "12:00") warnings.push("Friday afternoon is off (Jumu'ah): only Lessons 1 to 3 run on a Friday.");
   for (const p of protectedTimes) {
     if (p.academic_year_id === academicYearId && p.weekday === weekday && hhmm(p.start_time) < end && start < hhmm(p.end_time)) warnings.push(`This overlaps a protected time (${p.name}).`);
   }
@@ -129,7 +139,7 @@ export function SlotEditor({
   const sortedTeachers = [...teachers].sort((a, b) => Number(assigned.has(b.id)) - Number(assigned.has(a.id)) || a.full_name.localeCompare(b.full_name));
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/40 p-0 sm:items-center sm:p-4" role="dialog" aria-modal="true" aria-label={slot ? "Edit lesson" : "Add lesson"}>
+    <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/40 p-0 sm:items-center sm:p-4" role="dialog" aria-modal="true" aria-label={slot ? "Edit lesson" : "Add lesson"} onClick={(e) => e.target === e.currentTarget && !busy && onClose()}>
       <div className="max-h-[92vh] w-full overflow-y-auto rounded-t-2xl bg-white p-5 shadow-xl sm:max-w-md sm:rounded-2xl">
         <h3 className="font-serif text-h3 font-semibold text-ink">{slot ? "Edit lesson" : "Add a lesson"}</h3>
         {slot && <p className="mt-0.5 text-sm text-ink/65">{slot.classes?.name} · {slot.subjects?.name}</p>}
@@ -142,6 +152,13 @@ export function SlotEditor({
                 const sid = classes.find((c) => c.id === e.target.value)?.subject_id;
                 const t = sid ? teacherFor(subjectTeachers, e.target.value, sid, todayIso()) : null;
                 if (t) setTeacherId(t);
+                // Lesson length follows the year group: Years 1-2 30 min, Years 3-6 45 min, Years 7-11 50 min.
+                const yg = classes.find((c) => c.id === e.target.value)?.year_group;
+                if (yg && start) {
+                  const [h, m] = start.split(":").map(Number);
+                  const endMin = h * 60 + m + lessonMinutesFor(yg);
+                  setEnd(`${String(Math.floor(endMin / 60)).padStart(2, "0")}:${String(endMin % 60).padStart(2, "0")}`);
+                }
               }}>
                 <option value="">Choose…</option>
                 {classes.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}

@@ -41,6 +41,18 @@ export function WithdrawalNoticesAdmin({ compact = false }: { compact?: boolean 
   if (rows.length === 0 || (compact && open.length === 0)) return null;
   const list = showAll ? rows : open;
 
+  // Nothing open: one quiet line instead of a whole card on a busy page.
+  if (!compact && open.length === 0 && !showAll) {
+    return (
+      <p className="mb-6 text-sm text-ink/65">
+        No open withdrawal notices.{" "}
+        <button type="button" className="font-medium text-teal-700 underline" onClick={() => setShowAll(true)}>
+          Show the {rows.length} finished
+        </button>
+      </p>
+    );
+  }
+
   const startEdit = (r: Row) => {
     setEditing(r.id);
     setEdit({
@@ -53,6 +65,7 @@ export function WithdrawalNoticesAdmin({ compact = false }: { compact?: boolean 
 
   const save = async (r: Row, status?: "acknowledged" | "completed") => {
     if (!supabase) return;
+    if (status === "completed" && !window.confirm(`Mark ${r.children?.name || "this pupil"} as having left? The notice is closed and moves to the finished list.`)) return;
     const fees = edit.fees.trim() === "" ? null : Number(edit.fees.replace(/[£,\s]/g, ""));
     if (fees !== null && Number.isNaN(fees)) return setMsg({ tone: "bad", text: "Fees outstanding must be a number." });
     const { error } = await supabase

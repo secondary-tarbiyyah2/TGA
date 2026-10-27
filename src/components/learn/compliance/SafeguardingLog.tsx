@@ -29,6 +29,8 @@ function ConcernDetail({ concern, onChanged }: { concern: Concern; onChanged: ()
   const [outcome, setOutcome] = useState(concern.outcome || "");
   const [referral, setReferral] = useState(concern.referral_details || "");
   const [busy, setBusy] = useState(false);
+  // Safeguarding records must never fail silently: show the error and keep what was typed.
+  const [err, setErr] = useState<string | null>(null);
 
   const load = async () => {
     if (!supabase) return;
@@ -50,9 +52,11 @@ function ConcernDetail({ concern, onChanged }: { concern: Concern; onChanged: ()
     const { data: { user } } = await supabase.auth.getUser();
     if (!user) return;
     setBusy(true);
-    await supabase.from("safeguarding_chronology").insert({ concern_id: concern.id, entry: entry.trim(), entered_by: user.id });
-    setEntry("");
+    setErr(null);
+    const { error } = await supabase.from("safeguarding_chronology").insert({ concern_id: concern.id, entry: entry.trim(), entered_by: user.id });
     setBusy(false);
+    if (error) return setErr("That entry was not saved. Your text is still in the box; please try again.");
+    setEntry("");
     await load();
   };
 
@@ -63,27 +67,30 @@ function ConcernDetail({ concern, onChanged }: { concern: Concern; onChanged: ()
     setBusy(true);
     const path = `${concern.id}/${Date.now()}-${file.name}`;
     const { error: uploadErr } = await supabase.storage.from("safeguarding-attachments").upload(path, file);
-    if (!uploadErr) {
-      await supabase.from("safeguarding_attachments").insert({ concern_id: concern.id, storage_path: path, filename: file.name, uploaded_by: user.id });
-    }
-    setFile(null);
+    setErr(null);
+    const ins = uploadErr ? null : await supabase.from("safeguarding_attachments").insert({ concern_id: concern.id, storage_path: path, filename: file.name, uploaded_by: user.id });
     setBusy(false);
+    if (uploadErr || ins?.error) return setErr("The file was not attached. Please try again.");
+    setFile(null);
     await load();
   };
 
   const saveCase = async () => {
     if (!supabase) return;
     setBusy(true);
-    await supabase
+    setErr(null);
+    const { error } = await supabase
       .from("safeguarding_concerns")
       .update({ status, actions_taken: actionsTaken || null, outcome: outcome || null, referral_details: referral || null, closed_at: status === "closed" ? new Date().toISOString() : null })
       .eq("id", concern.id);
     setBusy(false);
+    if (error) return setErr("The case was not saved. Your changes are still here; please try again.");
     onChanged();
   };
 
   return (
     <div className="mt-4 rounded-xl border border-red-200 bg-red-50/50 p-4">
+      {err && <p role="alert" className="mb-3 rounded-lg bg-red-100 px-3 py-2 text-sm font-medium text-red-900">{err}</p>}
       <p className="text-sm font-semibold text-ink">{concern.subject_description}</p>
       <p className="mt-1 text-sm text-ink/70">{concern.summary}</p>
       <p className="mt-1 text-xs text-ink/65">

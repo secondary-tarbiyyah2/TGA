@@ -9,6 +9,11 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { formatGBP } from "@/lib/format";
 import { FamilyWithdrawal } from "@/components/learn/fees/FamilyWithdrawal";
 import { EmptyState, ui } from "@/components/learn/ui";
+import { FamilyFees } from "@/components/learn/FamilyFees";
+
+type Kid = { id: string; name: string; year_groups?: { name: string } | null };
+// Things to pay first (overdue, then due), then what is settled.
+const STATUS_ORDER: Record<ChargeStatus, number> = { overdue: 0, outstanding: 1, paid: 2, void: 3 };
 
 type Row = { charge: FeeCharge; childName: string; payments: FeePayment[]; paid: number; balance: number; status: ChargeStatus };
 
@@ -16,6 +21,7 @@ function FamilyFeesContent() {
   const supabase = getSupabaseClient();
   const [rows, setRows] = useState<Row[] | null>(null);
   const [error, setError] = useState(false);
+  const [kidList, setKidList] = useState<Kid[]>([]);
 
   useEffect(() => {
     if (!supabase) return;
@@ -23,7 +29,7 @@ function FamilyFeesContent() {
       const [chargesRes, paymentsRes, kidsRes] = await Promise.all([
         supabase.from("fee_charges").select("id, parent_user_id, child_id, description, amount, due_date, voided_at, created_at").order("due_date", { ascending: false }),
         supabase.from("fee_payments").select("id, charge_id, amount, method, paid_on, reference, created_at").order("paid_on", { ascending: false }),
-        supabase.from("children").select("id, name"),
+        supabase.from("children").select("id, name, year_groups(name)").order("name"),
       ]);
       if (chargesRes.error || paymentsRes.error) {
         setError(true);
@@ -32,20 +38,27 @@ function FamilyFeesContent() {
       }
       const charges = ((chargesRes.data as unknown as FeeCharge[]) || []).map((c) => ({ ...c, amount: Number(c.amount) })).filter((c) => !c.voided_at);
       const payments = ((paymentsRes.data as unknown as FeePayment[]) || []).map((p) => ({ ...p, amount: Number(p.amount) }));
-      const kids = new Map(((kidsRes.data as unknown as { id: string; name: string }[]) || []).map((k) => [k.id, k.name]));
+      const kidRows = (kidsRes.data as unknown as Kid[]) || [];
+      setKidList(kidRows);
+      const kids = new Map(kidRows.map((k) => [k.id, k.name]));
       setRows(
-        charges.map((c) => {
-          const pays = payments.filter((p) => p.charge_id === c.id);
-          const paid = round2(pays.reduce((s, p) => s + p.amount, 0));
-          return {
-            charge: c,
-            childName: c.child_id ? kids.get(c.child_id) || "" : "",
-            payments: pays,
-            paid,
-            balance: Math.max(0, round2(c.amount - paid)),
-            status: chargeStatus(c, paid),
-          };
-        })
+        charges
+          .map((c) => {
+            const pays = payments.filter((p) => p.charge_id === c.id);
+            const paid = round2(pays.reduce((s, p) => s + p.amount, 0));
+            return {
+              charge: c,
+              childName: c.child_id ? kids.get(c.child_id) || "" : "",
+              payments: pays,
+              paid,
+              balance: Math.max(0, round2(c.amount - paid)),
+              status: chargeStatus(c, paid),
+            };
+          })
+          .sort(
+            (a, b) =>
+              STATUS_ORDER[a.status] - STATUS_ORDER[b.status] || (a.status === "paid" ? b.charge.due_date.localeCompare(a.charge.due_date) : a.charge.due_date.localeCompare(b.charge.due_date)),
+          ),
       );
     })();
   }, [supabase]);
@@ -66,7 +79,18 @@ function FamilyFeesContent() {
       {error && <p className="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-800">Could not load your fees. Please try again later.</p>}
       {rows === null && <p className="text-sm text-ink/65">Loading…</p>}
       {rows && rows.length === 0 && !error && (
-        <EmptyState title="Nothing to pay" icon="wallet" tile="tile-green" action={<a href="https://globalacademy.tarbiyyah.co.uk/fees/" className={ui.btnSecondary}>See published fees</a>}>No fees have been charged to your family yet. Invoices and payment plans appear here once your child&apos;s place is confirmed.</EmptyState>
+        <EmptyState
+          title="Nothing to pay"
+          icon="wallet"
+          tile="tile-green"
+          action={
+            <a href="https://globalacademy.tarbiyyah.co.uk/fees/" className={ui.btnSecondary}>
+              See published fees
+            </a>
+          }
+        >
+          No fees have been charged to your family yet. Invoices and payment plans appear here once your child&apos;s place is confirmed.
+        </EmptyState>
       )}
       {rows && rows.length > 0 && (
         <>
@@ -94,17 +118,22 @@ function FamilyFeesContent() {
                   </div>
                 </div>
                 {r.payments.length > 0 && (
-                  <ul className="mt-3 divide-y divide-gold-light/60 rounded-lg bg-cream px-3 text-sm">
-                    {r.payments.map((p) => (
-                      <li key={p.id} className="flex flex-wrap justify-between gap-2 py-2">
-                        <span className="text-ink/75">
-                          {formatDate(p.paid_on)} · {METHOD_LABEL[p.method]}
-                          {p.reference && ` · ${p.reference}`}
-                        </span>
-                        <span className="font-medium tabular-nums text-ink">{formatGBP(p.amount)}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <details className="mt-3 rounded-lg bg-cream text-sm">
+                    <summary className="min-h-10 cursor-pointer px-3 py-2 font-medium text-ink/75">
+                      {r.payments.length} payment{r.payments.length === 1 ? "" : "s"} recorded
+                    </summary>
+                    <ul className="divide-y divide-gold-light/60 border-t border-gold-light/60 px-3">
+                      {r.payments.map((p) => (
+                        <li key={p.id} className="flex flex-wrap justify-between gap-2 py-2">
+                          <span className="text-ink/75">
+                            {formatDate(p.paid_on)} · {METHOD_LABEL[p.method]}
+                            {p.reference && ` · ${p.reference}`}
+                          </span>
+                          <span className="font-medium tabular-nums text-ink">{formatGBP(p.amount)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </details>
                 )}
               </li>
             ))}
@@ -112,6 +141,7 @@ function FamilyFeesContent() {
           <p className="mt-4 text-xs text-ink/65">Paid by bank transfer, cash or card? It appears here once the school office has recorded it. Contact the office with any billing query.</p>
         </>
       )}
+      {kidList.length > 0 && <FamilyFees familyChildren={kidList} />}
       <FamilyWithdrawal />
     </>
   );

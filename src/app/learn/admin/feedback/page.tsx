@@ -33,7 +33,7 @@ const ago = (iso: string) => {
   const h = Math.round(mins / 60);
   if (h < 24) return `${h} h ago`;
   const d = Math.round(h / 24);
-  return d < 14 ? `${d} day${d === 1 ? "" : "s"} ago` : new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short" });
+  return d < 14 ? `${d} day${d === 1 ? "" : "s"} ago` : new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "Europe/London" });
 };
 const rolesText = (roles: string[]) => roles.map((r) => learnRoleLabel(r as LearnRole) || r).join(", ") || "No role";
 const problemCount = (t: FeedbackTicket) => (t.activity || []).filter((e) => e.type === "error" || e.type === "request").length;
@@ -54,7 +54,7 @@ function FeedbackAdmin() {
       .select("*, profiles:submitted_by(full_name)")
       .order("created_at", { ascending: false })
       .limit(500);
-    if (err) setError("Feedback couldn't be loaded. Refresh to try again.");
+    setError(err ? "Feedback couldn't be loaded. Refresh to try again." : null);
     setTickets((data as unknown as FeedbackTicket[]) || []);
   }, []);
 
@@ -120,8 +120,15 @@ function FeedbackAdmin() {
 
         {tickets === null ? (
           <div className="h-40 animate-pulse rounded-2xl bg-white" />
-        ) : shown.length === 0 ? (
-          <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">{view === "new" ? "Nothing new. You're all caught up." : "No feedback matches."}</p>
+        ) : error ? null : shown.length === 0 ? (
+          <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">
+            {q.trim() || kind ? "No feedback matches your search." : view === "new" ? "Nothing new. You're all caught up." : "Nothing here yet."}
+            {(q.trim() || kind) && (
+              <button type="button" onClick={() => { setQ(""); setKind(""); }} className="ml-2 font-semibold text-teal-700 underline">
+                Clear search
+              </button>
+            )}
+          </p>
         ) : (
           <ul className="divide-y divide-gold-light overflow-hidden rounded-2xl border border-gold-light bg-white">
             {shown.map((t) => {
@@ -162,6 +169,7 @@ function FeedbackAdmin() {
             })}
           </ul>
         )}
+        {tickets !== null && tickets.length >= 500 && <p className="mt-2 text-xs text-ink/65">Showing the newest 500 only.</p>}
       </div>
 
       {current &&
@@ -184,9 +192,14 @@ function TicketDrawer({ ticket, onClose, onSaved }: { ticket: FeedbackTicket; on
   const [busy, setBusy] = useState(false);
   const [note, setNote] = useState<{ ok: boolean; text: string } | null>(null);
   const dirty = status !== ticket.status || priority !== ticket.priority || response.trim() !== (ticket.response || "");
+  // Don't throw away a half-written reply by pressing Escape or clicking outside.
+  const requestClose = useCallback(() => {
+    if (dirty && !window.confirm("Close without saving your changes?")) return;
+    onClose();
+  }, [dirty, onClose]);
 
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && requestClose();
     document.addEventListener("keydown", onKey);
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -194,7 +207,7 @@ function TicketDrawer({ ticket, onClose, onSaved }: { ticket: FeedbackTicket; on
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = prev;
     };
-  }, [onClose]);
+  }, [requestClose]);
 
   const save = async () => {
     const supabase = getSupabaseClient();
@@ -223,12 +236,12 @@ function TicketDrawer({ ticket, onClose, onSaved }: { ticket: FeedbackTicket; on
 
   return (
     <div className="portal fixed inset-0 z-[100] flex justify-end" data-activity-ignore>
-      <button type="button" aria-label="Close" tabIndex={-1} className="absolute inset-0 bg-ink/40" onClick={onClose} />
+      <button type="button" aria-label="Close" tabIndex={-1} className="absolute inset-0 bg-ink/40" onClick={requestClose} />
       <aside role="dialog" aria-modal="true" aria-labelledby="fb-drawer-title" className="relative flex h-full w-full max-w-xl flex-col bg-white shadow-xl">
         <div className="flex items-start justify-between gap-3 border-b border-gold-light px-5 py-4">
           <div className="min-w-0">
             <p className="text-xs text-ink/65">
-              {ticketRef(ticket.number)} · {KIND_LABEL[ticket.kind]} · {new Date(ticket.created_at).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" })}
+              {ticketRef(ticket.number)} · {KIND_LABEL[ticket.kind]} · {new Date(ticket.created_at).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short", timeZone: "Europe/London" })}
             </p>
             <h2 id="fb-drawer-title" className="mt-0.5 text-lg font-semibold text-ink">
               {ticket.title}
@@ -237,7 +250,7 @@ function TicketDrawer({ ticket, onClose, onSaved }: { ticket: FeedbackTicket; on
               From {ticket.profiles?.full_name || "Unknown"} ({rolesText(ticket.submitter_roles)})
             </p>
           </div>
-          <button type="button" onClick={onClose} aria-label="Close" className="portal-icon-btn -mr-2 shrink-0" autoFocus>
+          <button type="button" onClick={requestClose} aria-label="Close" className="portal-icon-btn -mr-2 shrink-0" autoFocus>
             <Icon name="x" className="h-5 w-5" />
           </button>
         </div>
@@ -246,47 +259,6 @@ function TicketDrawer({ ticket, onClose, onSaved }: { ticket: FeedbackTicket; on
           <section>
             <h3 className="text-xs font-semibold uppercase tracking-wide text-ink/65">What they wrote</h3>
             <p className="mt-1 whitespace-pre-wrap text-ink">{ticket.details}</p>
-          </section>
-
-          {ticket.attachments.length > 0 && (
-            <section>
-              <h3 className="text-xs font-semibold uppercase tracking-wide text-ink/65">Attachments</h3>
-              <ul className="mt-2 space-y-1.5">
-                {ticket.attachments.map((a) => (
-                  <li key={a.path}>
-                    <button type="button" onClick={() => open(a.path)} className="flex w-full items-center gap-2 rounded-lg bg-cream px-3 py-2 text-left hover:bg-gold-100">
-                      <Icon name={a.mime.startsWith("image/") ? "image" : "file"} className="h-4 w-4 shrink-0 text-ink/65" />
-                      <span className="min-w-0 flex-1 truncate text-ink">{a.name}</span>
-                      <span className="shrink-0 text-xs text-ink/65">{formatBytes(a.size)}</span>
-                      <Icon name="download" className="h-4 w-4 shrink-0 text-teal-700" />
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )}
-
-          <section>
-            <h3 className="text-xs font-semibold uppercase tracking-wide text-ink/65">Context</h3>
-            <dl className="mt-2 grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-xs">
-              <dt className="text-ink/65">Page</dt>
-              <dd className="break-all text-ink">{ticket.page_path || "Not recorded"}</dd>
-              {env.userAgent !== undefined && (
-                <>
-                  <dt className="text-ink/65">Browser</dt>
-                  <dd className="break-words text-ink">{String(env.userAgent)}</dd>
-                  <dt className="text-ink/65">Window</dt>
-                  <dd className="text-ink">
-                    {String(env.viewport)} (screen {String(env.screen)}) · {String(env.language)} · {String(env.timeZone)}
-                    {env.online === false ? " · offline" : ""}
-                  </dd>
-                </>
-              )}
-            </dl>
-            <h4 className="mt-3 text-xs font-semibold text-ink">Recent activity before sending</h4>
-            <div className="mt-1.5">
-              <ActivityList events={ticket.activity} empty={ticket.resolved_at ? "Cleared under the retention policy, or nothing was recorded." : "Nothing was recorded."} />
-            </div>
           </section>
 
           <section className="space-y-3 rounded-xl border border-gold-light p-4">
@@ -319,6 +291,50 @@ function TicketDrawer({ ticket, onClose, onSaved }: { ticket: FeedbackTicket; on
               <span className="mt-1 block font-normal text-ink/65">They see this on their Your feedback page.</span>
             </label>
           </section>
+
+          {ticket.attachments.length > 0 && (
+            <section>
+              <h3 className="text-xs font-semibold uppercase tracking-wide text-ink/65">Attachments</h3>
+              <ul className="mt-2 space-y-1.5">
+                {ticket.attachments.map((a) => (
+                  <li key={a.path}>
+                    <button type="button" onClick={() => open(a.path)} className="flex w-full items-center gap-2 rounded-lg bg-cream px-3 py-2 text-left hover:bg-gold-100">
+                      <Icon name={a.mime.startsWith("image/") ? "image" : "file"} className="h-4 w-4 shrink-0 text-ink/65" />
+                      <span className="min-w-0 flex-1 truncate text-ink">{a.name}</span>
+                      <span className="shrink-0 text-xs text-ink/65">{formatBytes(a.size)}</span>
+                      <Icon name="download" className="h-4 w-4 shrink-0 text-teal-700" />
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          <details open={problemCount(ticket) > 0}>
+            <summary className="cursor-pointer text-xs font-semibold uppercase tracking-wide text-ink/65">
+              Context and recent activity{problemCount(ticket) > 0 ? ` (${problemCount(ticket)} error${problemCount(ticket) === 1 ? "" : "s"})` : ""}
+            </summary>
+            <dl className="mt-2 grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-xs">
+              <dt className="text-ink/65">Page</dt>
+              <dd className="break-all text-ink">{ticket.page_path || "Not recorded"}</dd>
+              {env.userAgent !== undefined && (
+                <>
+                  <dt className="text-ink/65">Browser</dt>
+                  <dd className="break-words text-ink">{String(env.userAgent)}</dd>
+                  <dt className="text-ink/65">Window</dt>
+                  <dd className="text-ink">
+                    {String(env.viewport)} (screen {String(env.screen)}) · {String(env.language)} · {String(env.timeZone)}
+                    {env.online === false ? " · offline" : ""}
+                  </dd>
+                </>
+              )}
+            </dl>
+            <h4 className="mt-3 text-xs font-semibold text-ink">Recent activity before sending</h4>
+            <div className="mt-1.5">
+              <ActivityList events={ticket.activity} empty={ticket.resolved_at ? "Cleared under the retention policy, or nothing was recorded." : "Nothing was recorded."} />
+            </div>
+          </details>
+
         </div>
 
         <div className="flex items-center justify-end gap-3 border-t border-gold-light px-5 py-3">
@@ -327,7 +343,7 @@ function TicketDrawer({ ticket, onClose, onSaved }: { ticket: FeedbackTicket; on
               {note.text}
             </p>
           )}
-          <button type="button" onClick={onClose} className="rounded-lg border border-gold-light px-4 py-2 text-sm font-medium text-ink hover:bg-cream">
+          <button type="button" onClick={requestClose} className="rounded-lg border border-gold-light px-4 py-2 text-sm font-medium text-ink hover:bg-cream">
             Close
           </button>
           <button type="button" onClick={save} disabled={busy || !dirty} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">

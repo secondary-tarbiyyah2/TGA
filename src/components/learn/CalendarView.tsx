@@ -1,5 +1,6 @@
 "use client";
 
+import { ukToday } from "@/lib/learn/ukTime";
 import Link from "next/link";
 import { useEffect, useId, useMemo, useRef, useState, type KeyboardEvent as ReactKeyEvent } from "react";
 import { classColour } from "@/lib/learn/classes";
@@ -101,7 +102,7 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
     const t = todayHijri();
     return { year: t.year, month: t.month };
   });
-  const [selected, setSelected] = useState(() => localDateKey(new Date()));
+  const [selected, setSelected] = useState(() => ukToday());
   const [sheetOpen, setSheetOpen] = useState(false);
   const [view, setView] = useState<CalView>({ kind: "all" });
   const [toast, setToast] = useState<string | null>(null);
@@ -112,7 +113,8 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
   const { terms, years, closures, reload } = useCalendarTerms();
 
   const today = new Date();
-  const todayKey = localDateKey(today);
+  // "Today" as the school sees it (UK), whatever zone the viewer is in.
+  const todayKey = ukToday(today);
   // eslint-disable-next-line react-hooks/exhaustive-deps -- ver forces a recompute
   const grid = useMemo(() => hijriGrid(hm), [hm, ver]);
   // A week either side so the week list and day arrows work across month edges.
@@ -487,7 +489,8 @@ export function MiniCalendar({ scope, href }: { scope: CalendarScope | null; hre
   const grid = useMemo(() => hijriGrid({ year: th.year, month: th.month }), [th.year, th.month]);
   const events = useCalendarEvents(scope, localDateKey(grid.first), localDateKey(grid.last));
   const byDay = useMemo(() => groupByDate2(events), [events]);
-  const todayKey = localDateKey(today);
+  // "Today" as the school sees it (UK), whatever zone the viewer is in.
+  const todayKey = ukToday(today);
 
   return (
     <div>

@@ -10,7 +10,7 @@ import { btn, callFunction, chipCls, ghost, updateSlotLocked } from "@/component
 import { ReconciliationPanel } from "@/components/learn/timetable/ReconciliationPanel";
 import { coverageGaps, publishBlocker, slotIssues } from "@/components/learn/timetable/checks";
 import { downloadCsv, printTimetable } from "@/components/learn/timetable/export";
-import { moveWarnings, subjectColours, type Conflict, type LockableSlot } from "@/components/learn/timetable/types";
+import { moveWarnings, subjectColours, ukShortDate, type Conflict, type LockableSlot } from "@/components/learn/timetable/types";
 import { useTimetableData } from "@/components/learn/timetable/useTimetableData";
 import { edgeErrorMessage } from "@/lib/learn/edge";
 import { getSupabaseClient } from "@/lib/supabase/client";
@@ -87,8 +87,10 @@ function TimetableContent() {
   const issues = useMemo(() => slotIssues(slots, data.teachers, data.availability, data.protectedTimes, runYearId, data.periods), [slots, data.teachers, data.availability, data.protectedTimes, runYearId, data.periods]);
   const flagged = useMemo(() => new Set(issues.map((i) => i.slotId)), [issues]);
   const gaps = useMemo(() => coverageGaps(slots, runClasses.filter((c) => c.academic_year_id === runYearId)), [slots, runClasses, runYearId]);
-  const hardConflicts = conflicts.filter((c) => c.severity === "hard" && !c.resolved);
-  const warningCount = issues.length + conflicts.length + gaps.length;
+  // Resolved solver conflicts are history, not warnings.
+  const openConflicts = conflicts.filter((c) => !c.resolved);
+  const hardConflicts = openConflicts.filter((c) => c.severity === "hard");
+  const warningCount = issues.length + openConflicts.length + gaps.length;
 
   const legendSubjects = data.subjects.filter((s) => slots.some((x) => x.subject_id === s.id));
 
@@ -144,8 +146,11 @@ function TimetableContent() {
   };
 
   const publish = async () => {
-    if (!runId) return;
+    if (!runId || !run) return;
     if (blocker) return setMessage(blocker);
+    const live = runs.find((r) => r.status === "published" && r.academic_year_id === run.academic_year_id);
+    const warn = warningCount > 0 ? ` It still has ${warningCount} warning${warningCount === 1 ? "" : "s"}.` : "";
+    if (!window.confirm(`Publish "${run.label}"?${live ? ` It replaces "${live.label}" as the live timetable` : " It becomes the live timetable"} for every teacher, pupil and family.${warn}`)) return;
     const result = await callFunction("timetable-publish", { action: "publish", run_id: runId });
     setMessage(result.ok ? "Published." : `Could not publish: ${edgeErrorMessage(result)}`);
     if (result.ok) await reload();
@@ -185,14 +190,14 @@ function TimetableContent() {
             <div className="flex flex-wrap items-center gap-2">
               <span className="text-xs font-semibold uppercase tracking-wider text-ink/65">Version</span>
               {runs.slice(0, 4).map((r) => (
-                <button key={r.id} type="button" aria-pressed={r.id === runId} onClick={() => setSelectedRun(r.id)} className={chipCls(r.id === runId)}>
+                <button key={r.id} type="button" aria-pressed={r.id === runId} onClick={() => setSelectedRun(r.id)} className={chipCls(r.id === runId)} title={`${data.years.find((y) => y.id === r.academic_year_id)?.label || ""} · created ${ukShortDate(r.created_at)}`}>
                   {r.label} <span className="text-xs opacity-70">{r.status}</span>
                 </button>
               ))}
               {runs.length > 4 && (
                 <select aria-label="Older versions" value={runs.slice(4).some((r) => r.id === runId) ? runId || "" : ""} onChange={(e) => e.target.value && setSelectedRun(e.target.value)} className="rounded-full border border-gold-light bg-white px-3 py-1 text-sm text-ink/70">
                   <option value="">Older…</option>
-                  {runs.slice(4).map((r) => <option key={r.id} value={r.id}>{r.label} · {r.status} · {r.created_at.slice(0, 10)}</option>)}
+                  {runs.slice(4).map((r) => <option key={r.id} value={r.id}>{r.label} · {r.status} · {ukShortDate(r.created_at)}</option>)}
                 </select>
               )}
             </div>
@@ -259,17 +264,21 @@ function TimetableContent() {
               Warnings <span className={`ml-1 rounded-full px-2 py-0.5 text-xs ${warningCount ? "bg-amber-100 text-amber-900" : "bg-green-100 text-green-900"}`}>{warningCount || "none"}</span>
             </summary>
             <div className="mt-3 space-y-1">
-              {conflicts.map((c) => <p key={c.id} className={`rounded-lg px-3 py-2 text-xs ${c.severity === "hard" ? "bg-red-50 text-red-800" : "bg-amber-50 text-amber-800"}`}>[{c.severity}] {c.message}</p>)}
+              {openConflicts.map((c) => <p key={c.id} className={`rounded-lg px-3 py-2 text-xs ${c.severity === "hard" ? "bg-red-50 text-red-800" : "bg-amber-50 text-amber-800"}`}>[{c.severity}] {c.message}</p>)}
               {issues.map((i, n) => <p key={`${i.slotId}-${n}`} className={`rounded-lg px-3 py-2 text-xs ${i.level === "hard" ? "bg-red-50 text-red-800" : "bg-amber-50 text-amber-800"}`}>{i.text}</p>)}
               {gaps.map((g) => <p key={g.cls.id} className="rounded-lg bg-amber-50 px-3 py-2 text-xs text-amber-800">{g.cls.name}: {g.placed} of {g.cls.weekly_lessons} weekly lessons placed.</p>)}
               {warningCount === 0 && <p className="text-xs text-ink/65">No clashes, availability problems or missing lessons found. Lessons with a warning are outlined in red in the grid.</p>}
             </div>
           </details>
 
-          <details className="rounded-2xl border border-gold-light/50 bg-white p-4">
-            <summary className="cursor-pointer text-sm font-semibold text-ink">Arrange cover for one lesson</summary>
-            <div className="mt-3"><CoverForm slots={slots} teachers={data.teachers} onDone={() => runId && loadDetail(runId)} /></div>
-          </details>
+          {run?.status === "published" ? (
+            <details className="rounded-2xl border border-gold-light/50 bg-white p-4">
+              <summary className="cursor-pointer text-sm font-semibold text-ink">Arrange cover for one lesson</summary>
+              <div className="mt-3"><CoverForm slots={slots} teachers={data.teachers} onDone={() => runId && loadDetail(runId)} /></div>
+            </details>
+          ) : (
+            <p className="text-xs text-ink/65">Cover is arranged on the live (published) timetable. Switch to it under Version to arrange cover.</p>
+          )}
         </div>
       )}
 

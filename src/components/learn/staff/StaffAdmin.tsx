@@ -6,6 +6,7 @@ import { learnRoleLabel, useLearnSession, type LearnRole } from "@/lib/learn/ses
 import { dueState, trainingDue, type DueState, type Vetting } from "@/lib/learn/staffProfiles";
 import { StaffProfileForm } from "@/components/learn/staff/StaffProfileForm";
 import { Tabs } from "@/components/learn/Tabs";
+import { ukToday } from "@/lib/learn/ukTime";
 
 type StaffRow = {
   user_id: string;
@@ -95,10 +96,10 @@ function ComplianceForm({ person, record, onSaved }: { person: StaffRow; record:
       if (form.right_to_work_verified !== (record?.right_to_work_verified || false)) {
         payload.right_to_work_verified = form.right_to_work_verified;
         payload.right_to_work_verified_by = form.right_to_work_verified ? user?.id ?? null : null;
-        payload.right_to_work_verified_date = form.right_to_work_verified ? new Date().toISOString().slice(0, 10) : null;
+        payload.right_to_work_verified_date = form.right_to_work_verified ? ukToday() : null;
       }
       const { error } = await supabase.from("staff_vetting_records").upsert(payload, { onConflict: "user_id" });
-      if (error) setMsg({ kind: "err", text: "Couldn't save. Only a Headteacher or Admin can edit compliance records." });
+      if (error) setMsg({ kind: "err", text: `Couldn't save the compliance dates: ${errText(error)}` });
       else {
         setMsg({ kind: "ok", text: "Compliance dates saved." });
         onSaved();
@@ -216,6 +217,7 @@ function DetailsForm({ person, canEditRoles, canSetDsl, isSelf, onSaved }: { per
   const setDsl = async (on: boolean) => {
     const supabase = getSupabaseClient();
     if (!supabase) return;
+    if (!on && !window.confirm(`Remove ${person.full_name} as a Designated Safeguarding Lead? The school must always have at least one.`)) return;
     setDslBusy(true);
     setDslMsg(null);
     const { error } = await supabase.rpc("set_safeguarding_lead", { p_user: person.user_id, p_on: on });
@@ -312,6 +314,17 @@ export function StaffAdmin({ initialUserId }: { initialUserId?: string }) {
   // Each query reports its own failure, with the real message, so one bad query never blanks the page.
   const [problems, setProblems] = useState<string[]>([]);
   const [now] = useState(() => Date.now());
+  const [query, setQuery] = useState("");
+  // Wide screens show the editor beside the list; on phones it opens right
+  // under the person tapped, instead of below the whole list.
+  const [wide, setWide] = useState(true);
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const on = () => setWide(mq.matches);
+    on();
+    mq.addEventListener("change", on);
+    return () => mq.removeEventListener("change", on);
+  }, []);
 
   const load = useCallback(async () => {
     const supabase = getSupabaseClient();
@@ -381,6 +394,46 @@ export function StaffAdmin({ initialUserId }: { initialUserId?: string }) {
 
   const person = (staff || []).find((s) => s.user_id === selected) || null;
   const flagged = (staff || []).filter((s) => warnings[s.user_id]?.length).length;
+  const q = query.trim().toLowerCase();
+  const shownStaff = (staff || []).filter((s) => !q || `${s.full_name} ${s.email || ""} ${s.roles.map((r) => learnRoleLabel(r)).join(" ")}`.toLowerCase().includes(q));
+
+  const details = person ? (
+    <div>
+      <h2 className="font-serif text-h3 font-semibold text-ink">{person.full_name}</h2>
+      <p className="text-sm text-ink/65">{[person.roles.map((r) => learnRoleLabel(r)).join(", "), person.email].filter(Boolean).join(" · ")}</p>
+      {(warnings[person.user_id] || []).length > 0 && (
+        <ul className="mt-3 flex flex-wrap gap-2" aria-label="Compliance warnings">
+          {warnings[person.user_id].map((w) => (
+            <li key={w.text} className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${STATE_STYLE[w.state]}`}>
+              {w.text}
+            </li>
+          ))}
+        </ul>
+      )}
+      <Tabs
+        variant="switch"
+        fill
+        items={[
+          { key: "details", label: "Edit details" },
+          { key: "profile", label: "Public profile" },
+          { key: "compliance", label: "Compliance" },
+        ]}
+        value={tab}
+        onChange={setTab}
+        label="Staff sections"
+        className="mt-4"
+      />
+      <div className="mt-5">
+        {tab === "details" ? (
+          <DetailsForm key={person.user_id} person={person} canEditRoles={isHead} canSetDsl={isHead} isSelf={person.user_id === myId} onSaved={load} />
+        ) : tab === "profile" ? (
+          <StaffProfileForm key={person.user_id} userId={person.user_id} fullName={person.full_name} />
+        ) : (
+          <ComplianceForm key={person.user_id} person={person} record={records[person.user_id]} onSaved={load} />
+        )}
+      </div>
+    </div>
+  ) : null;
 
   return (
     <div className="grid gap-6 lg:grid-cols-[22rem_1fr]">
@@ -408,21 +461,28 @@ export function StaffAdmin({ initialUserId }: { initialUserId?: string }) {
             </button>
           </div>
         )}
+        {staff && staff.length > 8 && (
+          <div className="border-b border-gold-light/60 px-4 py-2">
+            <input type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search staff" aria-label="Search staff" className={INPUT.replace("mt-1 ", "")} />
+          </div>
+        )}
         {staff === null ? (
           <p className="p-4 text-sm text-ink/65">Loading…</p>
         ) : staff.length === 0 ? (
           <p className="p-4 text-sm text-amber-900">{problems.length > 0 ? "Couldn't load staff." : "No staff found."}</p>
         ) : (
           <ul className="divide-y divide-gold-light/50">
-            {staff.map((s) => {
+            {q && shownStaff.length === 0 && <li className="px-4 py-3 text-sm text-ink/65">Nobody matches &quot;{query}&quot;.</li>}
+            {shownStaff.map((s) => {
               const w = warnings[s.user_id] || [];
               const worst: DueState = w.some((x) => x.state === "overdue") ? "overdue" : w.length ? "soon" : "ok";
               return (
                 <li key={s.user_id}>
                   <button
                     type="button"
-                    onClick={() => setSelected(s.user_id)}
+                    onClick={() => setSelected(!wide && selected === s.user_id ? null : s.user_id)}
                     aria-current={selected === s.user_id ? "true" : undefined}
+                    aria-expanded={wide ? undefined : selected === s.user_id}
                     className={`block w-full px-4 py-3 text-left hover:bg-cream ${selected === s.user_id ? "bg-cream" : ""}`}
                   >
                     <span className="flex items-center justify-between gap-2">
@@ -435,6 +495,7 @@ export function StaffAdmin({ initialUserId }: { initialUserId?: string }) {
                       {!s.active ? " · Inactive" : ""}
                     </span>
                   </button>
+                  {!wide && selected === s.user_id && <div className="border-t border-gold-light/60 bg-white p-4">{details}</div>}
                 </li>
               );
             })}
@@ -442,47 +503,11 @@ export function StaffAdmin({ initialUserId }: { initialUserId?: string }) {
         )}
       </section>
 
-      <section aria-label="Staff details" className="rounded-2xl border border-gold-light bg-white p-6">
-        {!person ? (
-          <p className="text-sm text-ink/65">Choose a member of staff to edit their details, public profile and compliance dates.</p>
-        ) : (
-          <div>
-            <h2 className="font-serif text-h3 font-semibold text-ink">{person.full_name}</h2>
-            <p className="text-sm text-ink/65">{[person.roles.map((r) => learnRoleLabel(r)).join(", "), person.email].filter(Boolean).join(" · ")}</p>
-            {(warnings[person.user_id] || []).length > 0 && (
-              <ul className="mt-3 flex flex-wrap gap-2" aria-label="Compliance warnings">
-                {warnings[person.user_id].map((w) => (
-                  <li key={w.text} className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${STATE_STYLE[w.state]}`}>
-                    {w.text}
-                  </li>
-                ))}
-              </ul>
-            )}
-            <Tabs
-              variant="switch"
-              fill
-              items={[
-                { key: "details", label: "Edit details" },
-                { key: "profile", label: "Public profile" },
-                { key: "compliance", label: "Compliance" },
-              ]}
-              value={tab}
-              onChange={setTab}
-              label="Staff sections"
-              className="mt-4"
-            />
-            <div className="mt-5">
-              {tab === "details" ? (
-                <DetailsForm key={person.user_id} person={person} canEditRoles={isHead} canSetDsl={isHead} isSelf={person.user_id === myId} onSaved={load} />
-              ) : tab === "profile" ? (
-                <StaffProfileForm key={person.user_id} userId={person.user_id} fullName={person.full_name} />
-              ) : (
-                <ComplianceForm key={person.user_id} person={person} record={records[person.user_id]} onSaved={load} />
-              )}
-            </div>
-          </div>
-        )}
-      </section>
+      {wide && (
+        <section aria-label="Staff details" className="rounded-2xl border border-gold-light bg-white p-6">
+          {details || <p className="text-sm text-ink/65">Choose a member of staff to edit their details, public profile and compliance dates.</p>}
+        </section>
+      )}
     </div>
   );
 }

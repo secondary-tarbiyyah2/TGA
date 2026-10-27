@@ -72,6 +72,7 @@ export function PolicyEditor() {
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState<{ text: string; error?: boolean } | null>(null);
   const [showRemoved, setShowRemoved] = useState(false);
+  const [query, setQuery] = useState("");
 
   const load = useCallback(async () => {
     if (!supabase) return;
@@ -86,6 +87,8 @@ export function PolicyEditor() {
   }, [load]);
 
   const live = (rows || []).filter((r) => !r.deleted_at);
+  const q = query.trim().toLowerCase();
+  const shownLive = live.filter((r) => !q || `${r.number} ${r.title} ${r.summary || ""}`.toLowerCase().includes(q));
   const removed = (rows || []).filter((r) => r.deleted_at);
 
   // Policies are read live by the website (no rebuild), so a save is final.
@@ -349,19 +352,36 @@ export function PolicyEditor() {
   );
 
   return (
-    <Card title="Policy documents" description="Everything on the website's Policies page is controlled here: which policies are listed (Show / Hide from website), their order, which appear in the Key documents box, their group heading, and the PDF each one opens. Staff-only policies stay here for signing and the compliance tracker without being listed publicly. Changes are live immediately, no rebuild. To choose which policies need a signature, use Documents & signatures.">
+    <Card title="Policy documents" description="Everything on the website's Policies page is controlled here: which policies are listed (Show / Hide from website), their order, which appear in the Key documents box, their group heading, and the PDF each one opens. Staff-only policies stay here for signing and the compliance tracker without being listed publicly. Changes are live immediately, no rebuild.">
+      <div className="mb-3 flex flex-wrap items-center gap-2">
+        {editingId !== "new" && (
+          <button type="button" onClick={startNew} className="rounded-full bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900">
+            + Add policy
+          </button>
+        )}
+        {live.length > 5 && (
+          <input type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Find a policy" aria-label="Find a policy" className="min-w-[180px] flex-1 rounded-lg border border-gold-light/60 px-3 py-2 text-sm sm:max-w-xs" />
+        )}
+        {rows && <span className="text-xs text-ink/65">{q ? `${shownLive.length} of ${live.length}` : `${live.length} on the list`}</span>}
+      </div>
+      {message && (
+        <p role={message.error ? "alert" : "status"} className={`mb-3 rounded-lg px-3 py-2 text-sm ${message.error ? "bg-red-50 text-red-800" : "bg-green-50 text-green-900"}`}>
+          {message.text}
+        </p>
+      )}
+      {editingId === "new" && <div className="mb-3 rounded-2xl border border-gold-light/50 bg-cream/40 p-3">{form}</div>}
       {rows === null ? (
         <p className="text-sm text-ink/65">Loading…</p>
       ) : (
         <ul className="divide-y divide-gold-light/40 rounded-2xl border border-gold-light/50 bg-white">
-          {live.map((r) => (
+          {shownLive.map((r) => (
             <li key={r.id} className="p-3">
               {editingId === r.id ? (
                 form
               ) : (
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <div className="min-w-0">
-                    <p className="text-sm text-ink">{r.number} &mdash; {r.title}</p>
+                    <p className="text-sm text-ink">{r.number}. {r.title}</p>
                     <p className="text-xs text-ink/65">
                       {r.visibility === "staff" ? <span className="rounded-full bg-ink/5 px-2 py-0.5 font-semibold uppercase tracking-wide text-ink/70">Staff only</span> : <span className="rounded-full bg-gold-100 px-2 py-0.5 font-semibold uppercase tracking-wide text-gold-900">On website</span>}
                       {r.featured && <span className="ml-1 rounded-full bg-teal-700/10 px-2 py-0.5 font-semibold uppercase tracking-wide text-teal-700">Key document</span>}
@@ -385,6 +405,7 @@ export function PolicyEditor() {
               )}
             </li>
           ))}
+          {live.length > 0 && shownLive.length === 0 && <li className="p-3 text-sm text-ink/65">No policy matches &ldquo;{query}&rdquo;.</li>}
           {live.length === 0 && (
             <li className="p-3 text-sm text-ink/65">
               No policies in the database yet.{" "}
@@ -392,12 +413,6 @@ export function PolicyEditor() {
             </li>
           )}
         </ul>
-      )}
-
-      {editingId === "new" ? (
-        <div className="mt-3 rounded-2xl border border-gold-light/50 bg-cream/40 p-3">{form}</div>
-      ) : (
-        <button type="button" onClick={startNew} className="mt-3 rounded-full bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900">Add new</button>
       )}
 
       {removed.length > 0 && (
@@ -409,7 +424,7 @@ export function PolicyEditor() {
             <ul className="mt-2 divide-y divide-gold-light/40 rounded-2xl border border-gold-light/50 bg-white">
               {removed.map((r) => (
                 <li key={r.id} className="flex items-center justify-between gap-3 p-3 text-sm text-ink/65">
-                  <span>{r.number} &mdash; {r.title}</span>
+                  <span>{r.number}. {r.title}</span>
                   <button type="button" onClick={() => restore(r)} disabled={busy} className="rounded-full border border-gold-light px-3 py-1 text-xs text-ink/75 hover:bg-cream disabled:opacity-50">Restore</button>
                 </li>
               ))}
@@ -417,7 +432,6 @@ export function PolicyEditor() {
           )}
         </div>
       )}
-      {message && <p className={`mt-2 text-sm ${message.error ? "text-red-700" : "text-ink/70"}`}>{message.text}</p>}
     </Card>
   );
 }

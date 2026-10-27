@@ -49,7 +49,7 @@ function useWesternDigits() {
  * Header/Footer, see src/app/(marketing)/layout.tsx).
  *
  * Signed in: an app shell. A fixed sidebar down the left holds every
- * destination for the area, in sections that open and close in place, with
+ * destination for the area (admin: under headings that fold away), with
  * your name and sign-out at the bottom; a slim top bar has search, clock-in,
  * display options, report-a-concern and notifications. On phones the sidebar
  * becomes a drawer. On a hub's pages (nav.ts) the hub's tabs sit at the top
@@ -121,7 +121,7 @@ export function LearnLayoutShell({ children }: { children: React.ReactNode }) {
       <InstallAppSetup />
       <PortalSidebar area={area} session={activeSession} roles={roles} collapsed={collapsed} onToggle={toggleSidebar} />
 
-      <div className={`flex min-h-screen flex-col transition-[padding] duration-200 ease-out ${collapsed ? "lg:pl-[76px]" : "lg:pl-[272px]"}`}>
+      <div className={`flex min-h-screen flex-col transition-[padding] duration-200 ease-out ${collapsed ? "lg:pl-[76px]" : "lg:pl-[264px]"}`}>
         <header className="portal-topbar sticky top-0 z-20">
           <div className="flex h-[60px] items-center gap-2 px-4 sm:px-6 lg:px-8">
             <PortalSidebarDrawer area={area} session={activeSession} roles={roles} />
@@ -148,8 +148,8 @@ export function LearnLayoutShell({ children }: { children: React.ReactNode }) {
           </div>
         </header>
 
-        <main id="main" className="flex-1 overflow-x-clip pb-20 lg:pb-0">
-          <div className="mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-10">
+        <main id="main" className="flex-1 overflow-x-clip pb-24 lg:pb-0">
+          <div className="mx-auto w-full max-w-[1280px] px-4 sm:px-6 lg:px-10">
             <SignatureBanner />
             <HubTabs roles={roles.map((r) => r.role)} />
             <ClockInGate userId={activeSession.user.id} roles={roles}>

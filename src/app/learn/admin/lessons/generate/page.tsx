@@ -7,20 +7,20 @@ import { btn, callFunction, chipCls, fieldCls, ghost } from "@/components/learn/
 import { useTimetableData } from "@/components/learn/timetable/useTimetableData";
 import { ReconciliationPanel } from "@/components/learn/timetable/ReconciliationPanel";
 import { DEFAULT_MAX_LESSONS_PER_DAY, teacherLoadTable } from "@/components/learn/timetable/checks";
-import type { Conflict } from "@/components/learn/timetable/types";
+import { defaultYearId, ukShortDate, type Conflict } from "@/components/learn/timetable/types";
 import { edgeErrorMessage } from "@/lib/learn/edge";
 import { lessonPeriods } from "@/lib/learn/timetable";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
 const STEPS = ["Choose year", "Check setup", "Generate", "Review & publish"];
 
-function Step({ n, title, help, active, children }: { n: number; title: string; help: string; active?: boolean; children: React.ReactNode }) {
+function Step({ n, title, help, active, done, children }: { n: number; title: string; help: string; active?: boolean; done?: boolean; children: React.ReactNode }) {
   return (
-    <section id={`step-${n}`} className={`scroll-mt-20 rounded-2xl border bg-white p-4 sm:p-6 ${active ? "border-teal-500/60" : "border-gold-light/50"}`}>
+    <section aria-labelledby={`step-${n}-title`} className={`rounded-2xl border bg-white p-4 sm:p-6 ${active ? "border-teal-500/60" : "border-gold-light/50"}`}>
       <div className="flex items-start gap-3">
-        <span aria-hidden="true" className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gold-100 text-sm font-semibold text-gold-900">{n}</span>
+        <span aria-hidden="true" className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-sm font-semibold ${done ? "bg-green-100 text-green-900" : "bg-gold-100 text-gold-900"}`}>{done ? "✓" : n}</span>
         <div className="min-w-0">
-          <h2 className="font-serif text-h3 font-semibold text-ink">{title}</h2>
+          <h2 id={`step-${n}-title`} className="font-serif text-h3 font-semibold text-ink">{title}</h2>
           <p className="mt-0.5 text-sm text-ink/65">{help}</p>
         </div>
       </div>
@@ -47,7 +47,7 @@ function GenerateContent() {
   const [busy, setBusy] = useState(false);
   const [waitingFrom, setWaitingFrom] = useState<number | null>(null);
 
-  const effYearId = yearId || data.years[0]?.id || "";
+  const effYearId = yearId || defaultYearId(data.years);
   const year = data.years.find((y) => y.id === effYearId) || null;
   const yearClasses = data.classes.filter((c) => c.academic_year_id === effYearId);
   // Every class subject needs a teacher: the class's own subject plus any extra subject mapped to it.
@@ -67,7 +67,8 @@ function GenerateContent() {
   const overloaded = load.rows.filter((r) => r.status === "over" || r.status === "no_availability").map((r) => `${r.name} (${r.lessons} needed, ${r.capacity} possible)`);
   const teachersWithAvail = new Set(data.availability.filter((a) => a.academic_year_id === effYearId).map((a) => a.teacher_user_id));
   const needsSetup = !year || yearClasses.length === 0 || data.teachers.length === 0;
-  const latest = data.runs[0] || null;
+  // The newest version for the chosen year (runs are newest first).
+  const latest = data.runs.find((r) => r.academic_year_id === effYearId) || null;
   const [latestConflicts, setLatestConflicts] = useState<Conflict[]>([]);
   const latestId = latest?.id || null;
   useEffect(() => {
@@ -82,6 +83,7 @@ function GenerateContent() {
       cancelled = true;
     };
   }, [supabase, latestId, data.runs.length]);
+  const shownConflicts = latestId ? latestConflicts : [];
 
   // After "Generate", the solver runs in GitHub Actions; poll for the new draft.
   useEffect(() => {
@@ -101,8 +103,7 @@ function GenerateContent() {
     if (waitingFrom !== null && data.runs.length > waitingFrom) {
       // eslint-disable-next-line react-hooks/set-state-in-effect -- reacting to the new draft arriving
       setWaitingFrom(null);
-      setMessage("Your new draft is ready. Review it in step 4.");
-      document.getElementById("step-4")?.scrollIntoView({ behavior: "smooth" });
+      setMessage("Your new draft is ready.");
     }
   }, [data.runs.length, waitingFrom]);
 
@@ -133,30 +134,31 @@ function GenerateContent() {
       const { error } = await supabase.from("timetable_runs").insert({ academic_year_id: year.id, label, status: "draft", generated_by: "manual", created_by: u.user?.id ?? null });
       if (error) return setMessage(`Could not create a blank draft: ${error.message}`);
       await reload();
-      setMessage("Blank draft created. Open it in the timetable and use the + buttons to add lessons.");
-      document.getElementById("step-4")?.scrollIntoView({ behavior: "smooth" });
+      setMessage("Blank draft created. Open it and click an empty spot in the grid to add lessons.");
     } finally {
       setBusy(false);
     }
   };
 
+  const setupClean = !needsSetup && gaps.length === 0 && overloaded.length === 0 && data.teachers.every((t) => teachersWithAvail.has(t.id));
+  const stepDone = [Boolean(year), Boolean(year) && setupClean, Boolean(latest), latest?.status === "published"];
+  const loadProblems = load.rows.some((r) => r.status !== "ok");
+
   return (
     <div>
       <LessonsHeader title="Generate" subtitle="Build a new draft timetable in four steps. A draft never changes the live timetable." />
-      <ol className="mb-5 grid grid-cols-2 gap-2 sm:grid-cols-4">
+      <ol aria-label="Progress" className="mb-5 grid grid-cols-2 gap-2 sm:grid-cols-4">
         {STEPS.map((s, i) => (
-          <li key={s}>
-            <a href={`#step-${i + 1}`} className="flex items-center gap-2 rounded-xl border border-gold-light/50 bg-white px-3 py-2 text-xs font-medium text-ink/75 hover:bg-cream">
-              <span aria-hidden="true" className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold-100 text-[11px] font-semibold text-gold-900">{i + 1}</span>
-              {s}
-            </a>
+          <li key={s} aria-current={stepDone.findIndex((d) => !d) === i ? "step" : undefined} className="flex items-center gap-2 rounded-xl border border-gold-light/50 bg-white px-3 py-2 text-xs font-medium text-ink/75">
+            <span aria-hidden="true" className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px] font-semibold ${stepDone[i] ? "bg-green-100 text-green-900" : "bg-gold-100 text-gold-900"}`}>{stepDone[i] ? "✓" : i + 1}</span>
+            {s}
+            <span className="sr-only">{stepDone[i] ? "(done)" : "(to do)"}</span>
           </li>
         ))}
       </ol>
-      {message && <p role="status" className="mb-4 rounded-xl border border-teal-500/30 bg-teal-100/60 px-4 py-3 text-sm text-teal-900">{message}</p>}
 
       <div className="space-y-5">
-        <Step n={1} title="Choose the academic year" help="Which school year is this timetable for?" active={!year}>
+        <Step n={1} title="Choose the academic year" help="Which school year is this timetable for?" active={!year} done={stepDone[0]}>
           {!data.loaded && <p className="text-sm text-ink/65">Loading…</p>}
           {data.loaded && data.years.length === 0 && (
             <p className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
@@ -177,7 +179,7 @@ function GenerateContent() {
           )}
         </Step>
 
-        <Step n={2} title="Check classes, teachers and availability" help="The generator can only place what is set up. Fix anything marked ! first." active={Boolean(year) && needsSetup}>
+        <Step n={2} title="Check classes, teachers and availability" help="The generator can only place what is set up. Fix anything marked ! first." active={Boolean(year) && needsSetup} done={stepDone[1]}>
           {!year ? (
             <p className="text-sm text-ink/65">Choose an academic year in step 1.</p>
           ) : (
@@ -214,9 +216,12 @@ function GenerateContent() {
             </ul>
           )}
           {year && load.rows.length > 0 && (
-            <div className="mt-4">
-              <h3 className="text-sm font-semibold text-ink">Teacher load vs availability</h3>
-              <p className="text-xs text-ink/65">Lessons a week each teacher needs across every class, against the periods they can work (at most {DEFAULT_MAX_LESSONS_PER_DAY} lessons a day). Fix red rows first or the generator will leave lessons out.</p>
+            <details className="mt-4" open={loadProblems}>
+              <summary className="cursor-pointer text-sm font-semibold text-ink">
+                Teacher load vs availability{" "}
+                <span className={`ml-1 rounded-full px-2 py-0.5 text-xs font-medium ${loadProblems ? "bg-amber-100 text-amber-900" : "bg-green-100 text-green-900"}`}>{loadProblems ? `${load.rows.filter((r) => r.status !== "ok").length} to check` : "all OK"}</span>
+              </summary>
+              <p className="mt-1 text-xs text-ink/65">Lessons a week each teacher needs across every class, against the periods they can work (at most {DEFAULT_MAX_LESSONS_PER_DAY} lessons a day). Fix red rows first or the generator will leave lessons out.</p>
               <div className="mt-2 overflow-x-auto rounded-xl border border-gold-light/50">
                 <table className="w-full min-w-[560px] border-collapse text-left text-sm">
                   <thead>
@@ -249,34 +254,50 @@ function GenerateContent() {
                   </tbody>
                 </table>
               </div>
-            </div>
+            </details>
           )}
         </Step>
 
-        <Step n={3} title="Generate" help="Creates a new DRAFT for you to review. It never touches a published timetable, so it is safe to run again." active={Boolean(year) && !needsSetup}>
+        <Step n={3} title="Generate" help="Creates a new DRAFT for you to review. It never touches a published timetable, so it is safe to run again." active={Boolean(year) && !needsSetup} done={stepDone[2]}>
           <div className="flex flex-wrap items-center gap-2">
             <button type="button" className={btn} disabled={busy || !year || waitingFrom !== null || yearClasses.length === 0} onClick={generate}>
               {waitingFrom !== null ? "Generating…" : busy ? "Starting…" : "Generate timetable"}
             </button>
             <button type="button" className={ghost} disabled={!year || busy} onClick={startBlank}>Start a blank draft instead</button>
-            <button type="button" className={ghost} onClick={async () => { await reload(); setMessage("Checked for new drafts."); }}>Check for a new draft</button>
+            <button
+              type="button"
+              className={ghost}
+              onClick={async () => {
+                const before = data.runs.length;
+                const fresh = await reload();
+                setMessage(fresh && fresh.runs.length > before ? "Your new draft is ready." : "No new draft yet. The solver usually takes a couple of minutes.");
+              }}
+            >
+              Check for a new draft
+            </button>
           </div>
           {waitingFrom !== null && <p className="mt-3 text-sm text-ink/70">Working… this page shows the draft by itself when it is ready.</p>}
+          {message && (
+            <div role="status" className="mt-3 flex flex-wrap items-center justify-between gap-2 rounded-xl border border-teal-500/30 bg-teal-100/60 px-4 py-3 text-sm text-teal-900">
+              <span>{message}</span>
+              {latest && waitingFrom === null && /ready|created/i.test(message) && <Link href="/admin/lessons/timetable" className={btn}>Open the draft &rarr;</Link>}
+            </div>
+          )}
           {yearClasses.length === 0 && year && <p className="mt-3 text-xs text-ink/65">Add classes for {year.label} first (step 2).</p>}
         </Step>
 
-        <Step n={4} title="Review, fix and publish" help="Open the draft in the timetable to move lessons, resolve warnings and publish." active={Boolean(latest)}>
+        <Step n={4} title="Review, fix and publish" help="Open the draft in the timetable to move lessons, resolve warnings and publish." active={Boolean(latest)} done={stepDone[3]}>
           {!latest ? (
-            <p className="rounded-xl border border-dashed border-gold-light bg-cream/60 px-4 py-4 text-sm text-ink/70">No timetable yet. Complete steps 1 to 3, then your draft appears here.</p>
+            <p className="rounded-xl border border-dashed border-gold-light bg-cream/60 px-4 py-4 text-sm text-ink/70">No timetable for {year?.label || "this year"} yet. Complete steps 1 to 3, then your draft appears here.</p>
           ) : (
             <div className="flex flex-wrap items-center justify-between gap-3">
-              <p className="text-sm text-ink/80">Latest version: <strong>{latest.label}</strong> <span className="text-ink/65">({latest.status}, {latest.created_at.slice(0, 10)})</span></p>
+              <p className="text-sm text-ink/80">Latest version for {year?.label}: <strong>{latest.label}</strong> <span className="text-ink/65">({latest.status}, {ukShortDate(latest.created_at)})</span></p>
               <Link href="/admin/lessons/timetable" className={btn}>Open in timetable &rarr;</Link>
             </div>
           )}
-          {latest && latestConflicts.some((c) => !c.resolved) && (
+          {latest && shownConflicts.some((c) => !c.resolved) && (
             <div className="mt-4">
-              <ReconciliationPanel conflicts={latestConflicts} canRerun={false} onRerun={() => undefined} busy={false} lockedCount={0} />
+              <ReconciliationPanel conflicts={shownConflicts} canRerun={false} onRerun={() => undefined} busy={false} lockedCount={0} />
               <p className="mt-2 text-xs text-ink/65">To keep lessons you place by hand and re-generate the rest, open the draft in the timetable and use &ldquo;Re-run keeping locked lessons&rdquo;.</p>
             </div>
           )}

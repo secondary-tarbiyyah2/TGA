@@ -46,7 +46,7 @@ export function DashboardHero({ subtitle, chips = [] }: { subtitle?: string; chi
   const today = new Date().toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" });
 
   return (
-    <section className="relative overflow-hidden rounded-2xl portal-hero px-6 py-7 text-white sm:px-8">
+    <section className="relative overflow-hidden rounded-2xl portal-hero px-5 py-6 text-white sm:px-8 sm:py-7">
       <svg aria-hidden="true" className="pointer-events-none absolute -right-6 -top-10 h-[130%] w-[46%] text-gold-500/[0.16]" viewBox="0 0 240 240" preserveAspectRatio="xMaxYMid slice">
         <defs>
           <pattern id="hero-star" width="60" height="60" patternUnits="userSpaceOnUse">
@@ -63,9 +63,9 @@ export function DashboardHero({ subtitle, chips = [] }: { subtitle?: string; chi
         </h1>
         {subtitle && <p className="mt-1 text-sm text-white/85">{subtitle}</p>}
         {chips.length > 0 && (
-          <dl className="mt-5 flex flex-wrap gap-3">
+          <dl className="mt-5 grid grid-cols-2 gap-2.5 sm:flex sm:flex-wrap sm:gap-3">
             {chips.map((c) => (
-              <div key={c.label} className="flex min-w-[9rem] flex-col-reverse rounded-xl bg-white/10 px-4 py-2.5 ring-1 ring-inset ring-gold-500/40">
+              <div key={c.label} className="flex min-w-0 flex-col-reverse rounded-xl sm:min-w-[9rem] bg-white/10 px-4 py-2.5 ring-1 ring-inset ring-gold-500/40">
                 <dt className="text-xs font-medium text-white/85">{c.label}</dt>
                 <dd className="flex items-center gap-2 text-2xl font-semibold tabular-nums leading-tight">
                   {formatChipValue(c.value)}

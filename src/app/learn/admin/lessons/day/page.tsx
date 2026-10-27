@@ -4,7 +4,7 @@ import { useState } from "react";
 import { LessonsFrame, LessonsHeader } from "@/components/learn/timetable/LessonsFrame";
 import { btn, chipCls, fieldCls } from "@/components/learn/timetable/api";
 import { useTimetableData } from "@/components/learn/timetable/useTimetableData";
-import { hhmm } from "@/components/learn/timetable/types";
+import { defaultYearId, hhmm } from "@/components/learn/timetable/types";
 import { PeriodsEditor } from "@/components/learn/timetable/PeriodsEditor";
 import { WEEKDAYS } from "@/lib/learn/timetable";
 import { getSupabaseClient } from "@/lib/supabase/client";
@@ -13,7 +13,7 @@ function DayContent() {
   const supabase = getSupabaseClient();
   const { data, reload } = useTimetableData();
   const [yearId, setYearId] = useState("");
-  const effYearId = yearId || data.years[0]?.id || "";
+  const effYearId = yearId || defaultYearId(data.years);
   const [name, setName] = useState("");
   const [weekday, setWeekday] = useState(5);
   const [start, setStart] = useState("12:30");
@@ -28,6 +28,7 @@ function DayContent() {
     if (!supabase || !effYearId) return;
     if (!name.trim()) return setError("Give the break a name, e.g. Jumu'ah.");
     if (end <= start) return setError("The end time must be after the start time.");
+    if (protectedHere.some((p) => p.weekday === weekday && hhmm(p.start_time) < end && start < hhmm(p.end_time))) return setError("That overlaps a protected time already set for this day.");
     setError(null);
     const { error: err } = await supabase.from("protected_times").insert({ name: name.trim(), academic_year_id: effYearId, weekday, start_time: start, end_time: end });
     if (err) return setError(err.message);
@@ -35,7 +36,8 @@ function DayContent() {
     await reload();
   };
   const remove = async (id: string) => {
-    if (!supabase) return;
+    const p = data.protectedTimes.find((x) => x.id === id);
+    if (!supabase || !window.confirm(`Remove the protected time${p ? ` "${p.name}"` : ""}? Lessons will no longer be flagged for overlapping it.`)) return;
     const { error: err } = await supabase.from("protected_times").delete().eq("id", id);
     if (err) return setError(err.message);
     await reload();
@@ -44,6 +46,7 @@ function DayContent() {
   const addSession = async () => {
     if (!supabase) return;
     if (!sessName.trim()) return setSessError("Give the session a name, e.g. Session A.");
+    if (sessUrl.trim() && !/^https?:\/\//i.test(sessUrl.trim())) return setSessError("The meeting link should start with https://");
     setSessError(null);
     const { error: err } = await supabase.from("virtual_sessions").insert({ name: sessName.trim(), meeting_url: sessUrl.trim() || null });
     if (err) return setSessError(err.message);
@@ -52,7 +55,8 @@ function DayContent() {
     await reload();
   };
   const removeSession = async (id: string) => {
-    if (!supabase) return;
+    const v = data.sessions.find((x) => x.id === id);
+    if (!supabase || !window.confirm(`Remove the session${v ? ` "${v.name}"` : ""}?`)) return;
     setSessError(null);
     const { error: err } = await supabase.from("virtual_sessions").delete().eq("id", id);
     if (err) return setSessError(/foreign key|violates/i.test(err.message) ? "That session is used by timetabled lessons, so it can't be removed." : err.message);

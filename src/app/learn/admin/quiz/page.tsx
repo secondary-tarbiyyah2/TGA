@@ -9,6 +9,7 @@ import { AnalyticsPanel } from "@/components/learn/quiz/AnalyticsPanel";
 import { YourChildsWeekQuiz } from "@/components/eligibility/YourChildsWeekQuiz";
 import type { QuizConfig } from "@/lib/quiz/schema";
 import { PageHeader } from "@/components/learn/PageHeader";
+import { Tabs, tabPanelProps } from "@/components/learn/Tabs";
 
 type Tab = "builder" | "sample-weeks" | "analytics";
 
@@ -40,24 +41,20 @@ function AdminQuizContent() {
         subtitle={"Edit \"Your Child's Week\": questions, the rules editor, result sections, sample weeks for each year group, and quiz analytics."}
       />
 
-      <div className="mt-6 flex gap-2 border-b border-gold-light/30">
-        {([
-          ["builder", "Questions, rules & copy"],
-          ["sample-weeks", "Sample weeks"],
-          ["analytics", "Analytics"],
-        ] as [Tab, string][]).map(([key, label]) => (
-          <button
-            key={key}
-            type="button"
-            onClick={() => setTab(key)}
-            className={`px-3 py-2 text-sm font-medium ${tab === key ? "border-b-2 border-gold-500 text-ink" : "text-ink/65"}`}
-          >
-            {label}
-          </button>
-        ))}
-      </div>
+      <Tabs
+        items={[
+          { key: "builder", label: "Questions, rules & copy" },
+          { key: "sample-weeks", label: "Sample weeks" },
+          { key: "analytics", label: "Analytics" },
+        ]}
+        value={tab}
+        onChange={setTab}
+        label="Quiz sections"
+        idBase="quiz"
+        className="mb-6"
+      />
 
-      <div className="mt-6">
+      <div {...tabPanelProps("quiz", tab)}>
         {tab === "builder" && <QuizBuilderPanel onPreview={setPreviewConfig} />}
         {tab === "sample-weeks" && <SampleWeeksPanel />}
         {tab === "analytics" && <AnalyticsPanel />}

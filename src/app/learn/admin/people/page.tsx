@@ -23,7 +23,7 @@ function PeopleContent() {
     <div>
       <PageHeader
         title="People"
-        subtitle="Staff (including teachers) and families. Everyone gets an email to set their own password."
+        subtitle="Staff (including teachers) and families. Adults get an email to set their own password; pupils can have a username login instead."
         actions={
           <button type="button" onClick={() => openModal()} className={GOLD_BUTTON}>
             + Add person

@@ -123,7 +123,7 @@ export function TeacherMatrix({ classes, yearGroups, subjects, teachers, classTe
 
       {shownClasses.length === 0 || columns.length === 0 ? (
         <p className="mt-4 rounded-xl border border-dashed border-gold-light bg-cream/60 px-4 py-4 text-sm text-ink/70">
-          {classes.length === 0 ? "Add classes below first, then choose their teachers here." : "No classes or subjects match this filter."}
+          {classes.length === 0 ? "Add classes above first, then choose their teachers here." : "No classes or subjects match this filter."}
         </p>
       ) : (
         <div className="mt-4 overflow-x-auto rounded-xl border border-gold-light/50">

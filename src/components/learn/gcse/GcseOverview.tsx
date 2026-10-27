@@ -49,13 +49,15 @@ export function GcseOverview() {
   const [view, setView] = useState<"grid" | "subjects">("grid");
   const [showAllAttention, setShowAllAttention] = useState(false);
   const [drawerChild, setDrawerChild] = useState<string | null>(null);
+  const [loadError, setLoadError] = useState(false);
 
   const load = useCallback(async () => {
     if (!supabase) return;
-    const [{ data: g }, { data: h }] = await Promise.all([
+    const [{ data: g, error: gErr }, { data: h }] = await Promise.all([
       supabase.from("gcse_grades").select(`${GCSE_COLUMNS}, children(name), subjects(name), classes(name, year_group)`).limit(3000),
       supabase.from("gcse_grade_history").select(GCSE_HISTORY_COLUMNS).order("recorded_at", { ascending: true }).limit(8000),
     ]);
+    setLoadError(Boolean(gErr));
     setRows((g as unknown as Row[]) || []);
     setHistory((h as GcseHistoryRow[] | null) || []);
   }, [supabase]);
@@ -170,6 +172,15 @@ export function GcseOverview() {
   const filtered = !!(year || classId || subjectId || search || status !== "all");
 
   if (rows === null) return <p className="text-sm text-ink/65">Loading…</p>;
+  if (loadError)
+    return (
+      <p role="alert" className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-800">
+        GCSE grades couldn&apos;t be loaded.{" "}
+        <button type="button" onClick={() => void load()} className="font-semibold underline">
+          Try again
+        </button>
+      </p>
+    );
 
   const visibleAttention = showAllAttention ? attention : attention.slice(0, 6);
 
@@ -373,7 +384,15 @@ export function GcseOverview() {
                   return (
                     <tr key={id}>
                       <td className="py-2 pr-3 font-medium text-ink">
-                        <button type="button" onClick={() => setSubjectId(id)} className="underline-offset-2 hover:underline">
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setSubjectId(id);
+                            setView("grid");
+                          }}
+                          title="Show every pupil in this subject"
+                          className="underline-offset-2 hover:underline"
+                        >
                           {s.name}
                         </button>
                       </td>

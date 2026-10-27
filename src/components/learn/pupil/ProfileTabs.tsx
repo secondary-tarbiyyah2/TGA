@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { localDateKey } from "@/lib/learn/calendar";
+import { ukDaysAgo } from "@/lib/learn/ukTime";
 import { EmptyState, StatusChip, ui } from "@/components/learn/ui";
 import { reasonLabel } from "@/components/learn/absences/data";
 import { ReportDocument, PrintStyles, StatusBadge } from "@/components/learn/reports/ReportDocument";
@@ -13,7 +13,6 @@ import { asNarrative } from "@/components/learn/reports/summary";
 // (registers, behaviour, stars, reports). Each reads the same RLS-scoped
 // tables those pages use, so the numbers always agree with them.
 
-const DAY = 86_400_000;
 const fmt = (key: string) => new Date(`${key}T12:00:00`).toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" });
 const fmtLong = (iso: string) => new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
 
@@ -47,7 +46,7 @@ export function PupilAttendanceTab({ childId }: { childId: string }) {
     if (!supabase) return;
     let alive = true;
     (async () => {
-      const from = localDateKey(new Date(Date.now() - days * DAY));
+      const from = ukDaysAgo(days);
       const [a, r, n, f] = await Promise.all([
         supabase.from("attendance_records").select("status, lesson_instances!inner(date, timetable_slots(classes(name)))").eq("child_id", childId).gte("lesson_instances.date", from).limit(3000),
         supabase.from("absence_reasons").select("absence_date, reason_code").eq("child_id", childId).gte("absence_date", from),
@@ -145,7 +144,7 @@ export function PupilBehaviourTab({ childId, extra }: { childId: string; extra?:
     if (!supabase) return;
     let alive = true;
     (async () => {
-      const from = localDateKey(new Date(Date.now() - 120 * DAY));
+      const from = ukDaysAgo(120);
       const [b, s, h] = await Promise.all([
         supabase.from("behaviour_records").select("id, kind, points, category, occurred_on, classes(name)").eq("child_id", childId).is("voided_at", null).gte("occurred_on", from).order("occurred_on", { ascending: false }).limit(300),
         supabase.from("star_of_the_week").select("id, week_start, reason, status, classes(name)").eq("child_id", childId).order("week_start", { ascending: false }).limit(20),

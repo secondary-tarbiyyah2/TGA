@@ -199,13 +199,29 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
     });
   }, [classId, area, childQuery]);
 
-  if (!classId) return <p className="text-sm text-ink/65">No class selected. Open one from the classes page.</p>;
+  if (!classId)
+    return (
+      <p className="text-sm text-ink/65">
+        No class selected.{" "}
+        <Link href={`${area}/classes${viewer.kind === "parent" ? `?child=${viewer.childId}` : ""}`} className="font-medium text-teal-700 underline">
+          Choose a class
+        </Link>
+      </p>
+    );
   if (cls === undefined) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
-  if (cls === null) return <p className="text-sm text-ink/65">That class couldn&apos;t be found, or you don&apos;t have access to it.</p>;
+  if (cls === null)
+    return (
+      <p className="text-sm text-ink/65">
+        That class couldn&apos;t be found, or you don&apos;t have access to it.{" "}
+        <Link href={`${area}/classes${viewer.kind === "parent" ? `?child=${viewer.childId}` : ""}`} className="font-medium text-teal-700 underline">
+          Back to classes
+        </Link>
+      </p>
+    );
 
   const crumbs: Crumb[] = [
     { label: "Home", href: `${area}/dashboard` },
-    { label: viewer.kind === "staff" ? "Classes" : "My classes", href: `${area}/classes${viewer.kind === "parent" ? `?child=${viewer.childId}` : ""}` },
+    { label: viewer.kind === "student" ? "My classes" : "Classes", href: `${area}/classes${viewer.kind === "parent" ? `?child=${viewer.childId}` : ""}` },
     { label: cls.name },
   ];
   const meta = [cls.subject, cls.yearGroup].filter(Boolean).join(" · ");

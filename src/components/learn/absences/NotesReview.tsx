@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { ukToday } from "@/lib/learn/ukTime";
 import { STATUS_LABEL, formatDay, formatRange, type AbsenceNote, type NoteStatus } from "./data";
 
 type Filter = NoteStatus | "all";
@@ -38,7 +39,7 @@ function NoteRow({ note, onDone }: { note: AbsenceNote; onDone: () => void }) {
             {note.childName} <span className="font-normal text-ink/65">· {formatRange(note.from_date, note.to_date)}</span>
           </p>
           <p className="mt-1 whitespace-pre-wrap text-sm text-ink/80">{note.reason}</p>
-          <p className="mt-1 text-xs text-ink/65">Sent {formatDay(note.created_at.slice(0, 10))}</p>
+          <p className="mt-1 text-xs text-ink/65">Sent {formatDay(ukToday(new Date(note.created_at)))}</p>
         </div>
         <span className={`rounded-full px-2.5 py-1 text-xs font-medium ${CHIP[note.status]}`}>{STATUS_LABEL[note.status]}</span>
       </div>

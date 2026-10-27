@@ -7,6 +7,7 @@ import { LearnShell } from "@/components/learn/LearnShell";
 import { HomeworkForChild } from "@/components/learn/HomeworkForChild";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { PageHeader } from "@/components/learn/PageHeader";
+import { EmptyState, ui } from "@/components/learn/ui";
 
 type Child = { id: string; name: string };
 
@@ -15,6 +16,7 @@ function FamilyHomeworkContent() {
   const searchParams = useSearchParams();
   const [children, setChildren] = useState<Child[] | null>(null);
   const [selected, setSelected] = useState<string>(searchParams.get("child") || "");
+  const openId = searchParams.get("hw") || undefined;
 
   useEffect(() => {
     if (!supabase) return;
@@ -25,24 +27,35 @@ function FamilyHomeworkContent() {
       .then(({ data }) => {
         const rows = (data as Child[]) || [];
         setChildren(rows);
-        if (!selected && rows[0]) setSelected(rows[0].id);
+        // No ?child=, or one that is not this parent's child: start on the first child.
+        setSelected((cur) => (rows.some((r) => r.id === cur) ? cur : rows[0]?.id || ""));
       });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [supabase]);
 
+  const name = children?.find((c) => c.id === selected)?.name?.split(" ")[0];
   return (
     <div>
-      <PageHeader crumbs={[{ label: "Home", href: "/family/dashboard" }, { label: "To do", href: "/family/todo" }, { label: "Homework" }]} title="Homework" subtitle="See what's been set, hand in work and read feedback." />
+      <PageHeader
+        crumbs={[{ label: "Home", href: "/family/dashboard" }, { label: "To do", href: selected ? `/family/todo?child=${selected}` : "/family/todo" }, { label: "Homework" }]}
+        title="Homework"
+        subtitle={`See what's been set${name ? ` for ${name}` : ""}, hand in work and read feedback. Tap a piece of homework to open it.`}
+      />
       {children && children.length > 1 && (
-        <select value={selected} onChange={(e) => setSelected(e.target.value)} aria-label="Child" className="rounded-lg border border-gold-light px-3 py-2 text-sm">
+        <div className="mb-4 flex flex-wrap gap-2" role="group" aria-label="Child">
           {children.map((c) => (
-            <option key={c.id} value={c.id}>
+            <button key={c.id} type="button" aria-pressed={selected === c.id} onClick={() => setSelected(c.id)} className={`${selected === c.id ? ui.chipOn : ui.chip} min-h-10`}>
               {c.name}
-            </option>
+            </button>
           ))}
-        </select>
+        </div>
       )}
-      <div className="mt-6">{selected ? <HomeworkForChild childId={selected} canSubmit canResubmit /> : <p className="text-sm text-ink/65">Loading…</p>}</div>
+      {children !== null && children.length === 0 ? (
+        <EmptyState title="No children on your account yet." />
+      ) : selected ? (
+        <HomeworkForChild key={selected} childId={selected} canSubmit canResubmit groupByStatus openId={openId} />
+      ) : (
+        <p className="text-sm text-ink/65">Loading…</p>
+      )}
     </div>
   );
 }

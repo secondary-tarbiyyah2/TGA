@@ -7,6 +7,8 @@ import { DataTable } from "@/components/learn/DataTable";
 import { formatDuration, formatHours, CLOCK_EVENT } from "@/components/learn/ClockInGate";
 import { learnRoleLabel, STAFF_ROLES, useLearnPermission, useLearnSession, type LearnRole } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { saveCsv, toCsv } from "@/lib/learn/csv";
+import { fromUkDateTimeInput, shiftDateKey, ukDateTimeInput, ukDaysAgo, ukMinutesOfDay, ukToday, ukWallToDate } from "@/lib/learn/ukTime";
 
 type Shift = {
   id: string;
@@ -22,32 +24,25 @@ type Person = { id: string; name: string; roles: LearnRole[] };
 const SHIFT_COLUMNS = "id, user_id, clocked_in_at, clocked_out_at, note, clocked_out_by, auto_closed";
 const START_KEY = "tga:expected-start";
 
-function dateInput(d: Date): string {
-  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
-}
-function dtInput(iso: string | null): string {
-  if (!iso) return "";
-  const d = new Date(iso);
-  return `${dateInput(d)}T${String(d.getHours()).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}`;
-}
+// Everything here is UK time (staff hours are worked to the school day),
+// whatever zone the admin's browser is in.
+const UK = "Europe/London";
+const dayKeyOf = (iso: string): string => ukToday(new Date(iso));
+const dtInput = ukDateTimeInput;
 function timeOf(iso: string): string {
-  return new Date(iso).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" });
+  return new Date(iso).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: UK });
 }
 function dayOf(iso: string): string {
-  return new Date(iso).toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" });
+  return new Date(iso).toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short", timeZone: UK });
 }
-function minutesOfDay(iso: string): number {
-  const d = new Date(iso);
-  return d.getHours() * 60 + d.getMinutes();
-}
+const minutesOfDay = ukMinutesOfDay;
 function hhmm(mins: number): string {
-  return `${String(Math.floor(mins / 60)).padStart(2, "0")}:${String(Math.round(mins % 60)).padStart(2, "0")}`;
+  const r = Math.round(mins);
+  return `${String(Math.floor(r / 60)).padStart(2, "0")}:${String(r % 60).padStart(2, "0")}`;
 }
+/** UK midnight at the start of a YYYY-MM-DD day. */
 function startOfDay(s: string): Date {
-  return new Date(`${s}T00:00:00`);
-}
-function csvCell(v: string): string {
-  return `"${v.replace(/"/g, '""')}"`;
+  return ukWallToDate(s);
 }
 
 function EditShift({ shift, name, adminId, onClose, onDone }: { shift: Shift; name: string; adminId: string; onClose: () => void; onDone: () => void }) {
@@ -60,9 +55,9 @@ function EditShift({ shift, name, adminId, onClose, onDone }: { shift: Shift; na
   const save = async () => {
     const supabase = getSupabaseClient();
     if (!supabase) return;
-    if (!inAt) return setError("Choose a clock-in time.");
-    const i = new Date(inAt);
-    const o = outAt ? new Date(outAt) : null;
+    const i = inAt ? fromUkDateTimeInput(inAt) : null;
+    if (!i) return setError("Choose a clock-in time.");
+    const o = outAt ? fromUkDateTimeInput(outAt) : null;
     if (o && o < i) return setError("Clock-out can't be before clock-in.");
     setBusy(true);
     setError(null);
@@ -92,6 +87,7 @@ function EditShift({ shift, name, adminId, onClose, onDone }: { shift: Shift; na
           </button>
         </div>
         <div className="space-y-4 px-5 py-5 text-sm">
+          <p className="text-xs text-ink/65">Times are UK time.</p>
           <label className="block">
             <span className="font-medium text-ink">Clocked in</span>
             <input type="datetime-local" value={inAt} onChange={(e) => setInAt(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light px-3 py-2" />
@@ -128,8 +124,8 @@ function StaffAttendanceContent() {
   const [open, setOpen] = useState<Shift[]>([]);
   const [today, setToday] = useState<Shift[]>([]);
   const [history, setHistory] = useState<Shift[]>([]);
-  const [from, setFrom] = useState(() => dateInput(new Date(Date.now() - 6 * 86400000)));
-  const [to, setTo] = useState(() => dateInput(new Date()));
+  const [from, setFrom] = useState(() => ukDaysAgo(6));
+  const [to, setTo] = useState(() => ukToday());
   const [expected, setExpected] = useState("09:00");
   const [now, setNow] = useState(() => new Date());
   const [editing, setEditing] = useState<Shift | null>(null);
@@ -169,9 +165,9 @@ function StaffAttendanceContent() {
     );
 
     const openRes = await supabase.from("staff_shifts").select(SHIFT_COLUMNS).is("clocked_out_at", null).order("clocked_in_at");
-    const todayRes = await supabase.from("staff_shifts").select(SHIFT_COLUMNS).gte("clocked_in_at", startOfDay(dateInput(new Date())).toISOString());
+    const todayRes = await supabase.from("staff_shifts").select(SHIFT_COLUMNS).gte("clocked_in_at", startOfDay(ukToday()).toISOString());
     const fromD = startOfDay(from);
-    const toD = new Date(startOfDay(to).getTime() + 86400000);
+    const toD = startOfDay(shiftDateKey(to, 1));
     const histRes = await supabase
       .from("staff_shifts")
       .select(SHIFT_COLUMNS)
@@ -229,7 +225,7 @@ function StaffAttendanceContent() {
         const ms = list.reduce((sum, s) => sum + (new Date(s.clocked_out_at || now.toISOString()).getTime() - new Date(s.clocked_in_at).getTime()), 0);
         const firstByDay = new Map<string, number>();
         for (const s of list) {
-          const key = dateInput(new Date(s.clocked_in_at));
+          const key = dayKeyOf(s.clocked_in_at);
           const m = minutesOfDay(s.clocked_in_at);
           const prev = firstByDay.get(key);
           if (prev === undefined || m < prev) firstByDay.set(key, m);
@@ -243,23 +239,21 @@ function StaffAttendanceContent() {
   }, [history, expected, now, nameOf]);
 
   const exportCsv = () => {
-    const rows = history.map((s) =>
-      [
-        csvCell(nameOf(s.user_id)),
-        dateInput(new Date(s.clocked_in_at)),
-        timeOf(s.clocked_in_at),
-        s.clocked_out_at ? timeOf(s.clocked_out_at) : "",
-        s.clocked_out_at ? ((new Date(s.clocked_out_at).getTime() - new Date(s.clocked_in_at).getTime()) / 3600000).toFixed(2) : "",
-        s.auto_closed ? "auto" : s.clocked_out_by ? "admin" : "",
-        csvCell(s.note || ""),
-      ].join(","),
+    saveCsv(
+      `staff-attendance-${from}-to-${to}.csv`,
+      toCsv(
+        ["staff", "date", "clock_in", "clock_out", "hours", "closed_by", "note"],
+        history.map((s) => [
+          nameOf(s.user_id),
+          dayKeyOf(s.clocked_in_at),
+          timeOf(s.clocked_in_at),
+          s.clocked_out_at ? timeOf(s.clocked_out_at) : "",
+          s.clocked_out_at ? ((new Date(s.clocked_out_at).getTime() - new Date(s.clocked_in_at).getTime()) / 3600000).toFixed(2) : "",
+          s.auto_closed ? "auto" : s.clocked_out_by ? "admin" : "",
+          s.note || "",
+        ]),
+      ),
     );
-    const csv = ["staff,date,clock_in,clock_out,hours,closed_by,note", ...rows].join("\n");
-    const a = document.createElement("a");
-    a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" }));
-    a.download = `staff-attendance-${from}-to-${to}.csv`;
-    a.click();
-    URL.revokeObjectURL(a.href);
   };
 
   const card = "rounded-2xl border border-gold-light bg-white";
@@ -288,8 +282,11 @@ function StaffAttendanceContent() {
                     {s.note ? ` · ${s.note}` : ""}
                   </p>
                 </div>
+                <button type="button" onClick={() => setEditing(s)} className="text-sm font-medium text-teal-700 hover:underline">
+                  Edit
+                </button>
                 <button type="button" disabled={busyId === s.id} onClick={() => closeShift(s)} className="rounded-lg border border-gold-light px-3 py-1.5 text-sm font-medium text-ink/75 hover:bg-cream disabled:opacity-50">
-                  Clock out
+                  {busyId === s.id ? "Clocking out…" : "Clock out now"}
                 </button>
               </li>
             ))}
@@ -319,7 +316,10 @@ function StaffAttendanceContent() {
 
       <section className={card}>
         <div className="flex flex-wrap items-end gap-3 border-b border-gold-light px-5 py-4">
-          <h2 className="mr-auto text-base font-semibold text-ink">History</h2>
+          <div className="mr-auto">
+            <h2 className="text-base font-semibold text-ink">History</h2>
+            <p className="text-xs text-ink/65">UK time. &quot;Late&quot; counts days whose first clock-in was after the expected start.</p>
+          </div>
           <label className="text-xs text-ink/65">
             From
             <input type="date" value={from} max={to} onChange={(e) => e.target.value && setFrom(e.target.value)} className="mt-1 block rounded-lg border border-gold-light px-2 py-1.5 text-sm text-ink" />

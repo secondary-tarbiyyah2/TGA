@@ -29,7 +29,7 @@ type OutstandingDoc = {
  * Renders nothing when there is nothing to sign; pass onLoaded to show an
  * empty state, and onSigned to refresh a history list.
  */
-export function SignaturePrompts({ onLoaded, onSigned }: { onLoaded?: (outstanding: number) => void; onSigned?: () => void }) {
+export function SignaturePrompts({ onLoaded, onSigned, limit }: { onLoaded?: (outstanding: number) => void; onSigned?: () => void; /** Show only the first few, with "Show all" to expand in place (dashboards). */ limit?: number }) {
   const supabase = getSupabaseClient();
   const [docs, setDocs] = useState<OutstandingDoc[] | null>(null);
   const [signing, setSigning] = useState<string | null>(null);
@@ -42,6 +42,7 @@ export function SignaturePrompts({ onLoaded, onSigned }: { onLoaded?: (outstandi
   const deepLinkHandled = useRef(false);
   const capture = useRef<SignatureCaptureHandle>(null);
   const [sigReady, setSigReady] = useState(false);
+  const [showAll, setShowAll] = useState(false);
 
   const load = useCallback(async () => {
     if (!supabase) return;
@@ -155,6 +156,9 @@ export function SignaturePrompts({ onLoaded, onSigned }: { onLoaded?: (outstandi
 
   const hasDocs = docs !== null && docs.length > 0;
   if (!hasDocs && !success) return null;
+  const capped = !!limit && !showAll && !!docs && docs.length > limit;
+  // Keep the one being signed visible even when it sits past the cut-off.
+  const shown = !docs ? [] : capped ? docs.filter((d, i) => i < limit || d.document_id === signing) : docs;
 
   return (
     <div className="space-y-3">
@@ -173,9 +177,12 @@ export function SignaturePrompts({ onLoaded, onSigned }: { onLoaded?: (outstandi
       {hasDocs && (
         <div data-onboarding className="rounded-2xl border border-gold-light bg-white p-5">
           <h2 className="text-lg font-semibold text-ink">Pending your signature</h2>
-          <p className="mt-0.5 text-sm text-ink/65">Please read each document, then sign it by typing your full name and drawing your signature.</p>
+          <p className="mt-0.5 text-sm text-ink/65">
+            {docs.length > 1 ? `${docs.length} documents to read and sign. ` : ""}Open each one, then sign by typing your full name and drawing your signature.
+          </p>
+          {error && !signing && <p className="mt-3 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{error}</p>}
           <ul className="mt-4 space-y-3">
-            {docs.map((d) => {
+            {shown.map((d) => {
               const isOpen = signing === d.document_id;
               return (
                 <li key={d.document_id} id={`sign-${d.document_id}`} className="rounded-2xl border border-gold-light bg-cream/40 p-4">
@@ -253,6 +260,16 @@ export function SignaturePrompts({ onLoaded, onSigned }: { onLoaded?: (outstandi
               );
             })}
           </ul>
+          {capped && (
+            <button type="button" onClick={() => setShowAll(true)} className="mt-3 w-full rounded-lg border border-gold-light bg-white px-4 py-2.5 text-sm font-medium text-teal-700 hover:bg-cream">
+              Show all {docs.length} documents
+            </button>
+          )}
+          {!!limit && showAll && docs.length > limit && (
+            <button type="button" onClick={() => setShowAll(false)} className="mt-3 text-sm font-medium text-ink/65 underline hover:text-ink">
+              Show fewer
+            </button>
+          )}
         </div>
       )}
     </div>

@@ -39,6 +39,10 @@ const TABS: { id: Tab; label: string; roles: LearnRole[]; chips: Chip[] }[] = [
   },
 ];
 
+const PAGE = 50;
+
+const matchesQuery = (p: Person, q: string) => !q || [p.name, p.email, p.username, p.yearGroup, p.parentName, ...p.childNames, ...p.classNames].some((v) => (v || "").toLowerCase().includes(q));
+
 type RowMsg = { kind: "ok" | "err"; text: string; link?: string; code?: string };
 
 function PersonRow({ person, onAddChild, onChanged }: { person: Person; onAddChild: (parentId: string) => void; onChanged: () => void }) {
@@ -234,6 +238,7 @@ export function PeopleList({
   const [tab, setTab] = useState<Tab>("staff");
   const [chip, setChip] = useState("all");
   const [search, setSearch] = useState(initialSearch);
+  const [limit, setLimit] = useState(PAGE);
   const tabDef = TABS.find((t) => t.id === tab) as (typeof TABS)[number];
 
   const inTab = useMemo(() => {
@@ -250,12 +255,21 @@ export function PeopleList({
   const shown = useMemo(() => {
     const roles = tabDef.chips.find((c) => c.id === chip)?.roles || [];
     const q = search.trim().toLowerCase();
-    return inTab[tab].filter((p) => {
-      if (roles.length && !p.roles.some((r) => roles.includes(r))) return false;
-      if (!q) return true;
-      return [p.name, p.email, p.username, p.yearGroup, p.parentName, ...p.childNames, ...p.classNames].some((v) => (v || "").toLowerCase().includes(q));
-    });
+    return inTab[tab].filter((p) => (!roles.length || p.roles.some((r) => roles.includes(r))) && matchesQuery(p, q));
   }, [tabDef, chip, search, inTab, tab]);
+
+  // A search that only matches people in the other tab says so, instead of
+  // a bare "No matches" (e.g. arriving with ?q=<a parent's name> on Staff).
+  const other: Tab = tab === "staff" ? "families" : "staff";
+  const otherMatches = useMemo(() => {
+    const q = search.trim().toLowerCase();
+    return q ? inTab[other].filter((p) => matchesQuery(p, q)).length : 0;
+  }, [search, inTab, other]);
+  const switchTab = (k: Tab) => {
+    setTab(k);
+    setChip("all");
+    setLimit(PAGE);
+  };
 
   return (
     <div className="rounded-2xl border border-gold-light/50 bg-white">
@@ -263,7 +277,10 @@ export function PeopleList({
         <input
           type="search"
           value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e) => {
+            setSearch(e.target.value);
+            setLimit(PAGE);
+          }}
           placeholder="Search by name, email, year group or class…"
           aria-label="Search people"
           className={INPUT_CLASS}
@@ -273,10 +290,7 @@ export function PeopleList({
           fill
           items={TABS.map((t) => ({ key: t.id, label: t.label, count: inTab[t.id].length }))}
           value={tab}
-          onChange={(k) => {
-            setTab(k);
-            setChip("all");
-          }}
+          onChange={switchTab}
           label="People"
         />
         <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by role">
@@ -285,7 +299,10 @@ export function PeopleList({
               key={f.id}
               type="button"
               aria-pressed={chip === f.id}
-              onClick={() => setChip(f.id)}
+              onClick={() => {
+                setChip(f.id);
+                setLimit(PAGE);
+              }}
               className={`rounded-full border px-3 py-1 text-sm font-medium ${chip === f.id ? "border-gold-500 bg-gold-500 text-ink" : "border-gold-light bg-white text-ink/70 hover:bg-cream"}`}
             >
               {f.label} <span className="text-xs opacity-70">{chipCounts[f.id]}</span>
@@ -310,15 +327,39 @@ export function PeopleList({
         <div className="p-10 text-center">
           <p className="text-base font-semibold text-ink">No matches</p>
           <p className="mt-1 text-sm text-ink/65">
-            {search.trim() ? `Nothing matches "${search.trim()}"` : "No one in this group yet"}. Try a different search or filter.
+            {search.trim() ? `Nothing in ${tabDef.label.toLowerCase()} matches "${search.trim()}"` : "No one in this group yet"}. Try a different search or filter.
           </p>
+          {otherMatches > 0 && (
+            <button type="button" onClick={() => switchTab(other)} className={`${GOLD_BUTTON} mt-4`}>
+              Show {otherMatches} match{otherMatches === 1 ? "" : "es"} in {TABS.find((t) => t.id === other)?.label}
+            </button>
+          )}
         </div>
       ) : (
-        <ul className="divide-y divide-gold-light/30">
-          {shown.map((p) => (
-            <PersonRow key={p.key} person={p} onAddChild={onAddChild} onChanged={onChanged} />
-          ))}
-        </ul>
+        <>
+          <ul className="divide-y divide-gold-light/30">
+            {shown.slice(0, limit).map((p) => (
+              <PersonRow key={p.key} person={p} onAddChild={onAddChild} onChanged={onChanged} />
+            ))}
+          </ul>
+          {(shown.length > limit || otherMatches > 0) && (
+            <div className="flex flex-wrap items-center gap-3 border-t border-gold-light/40 px-4 py-3 text-sm text-ink/65">
+              {shown.length > limit && (
+                <>
+                  Showing {limit} of {shown.length}.
+                  <button type="button" onClick={() => setLimit((n) => n + PAGE)} className="font-medium text-teal-700 hover:underline">
+                    Show more
+                  </button>
+                </>
+              )}
+              {otherMatches > 0 && (
+                <button type="button" onClick={() => switchTab(other)} className="font-medium text-teal-700 hover:underline sm:ml-auto">
+                  {otherMatches} more in {TABS.find((t) => t.id === other)?.label}
+                </button>
+              )}
+            </div>
+          )}
+        </>
       )}
     </div>
   );

@@ -9,15 +9,6 @@ export default function Page() {
     <AcademicPage title="Classes & teachers" subtitle="Create classes, enrol pupils and choose the teacher for each class subject.">
       {(data, reload) => (
         <>
-        <TeacherMatrix
-          classes={data.classes}
-          yearGroups={data.yearGroups}
-          subjects={data.subjects}
-          teachers={data.teachers}
-          classTeachers={data.classTeachers}
-          subjectTeachers={data.subjectTeachers}
-          reload={reload}
-        />
         <ClassesSection
           classes={data.classes}
           yearGroups={data.yearGroups}
@@ -30,6 +21,15 @@ export default function Page() {
           subjectTeachers={data.subjectTeachers}
           reload={reload}
           ready={data.years.length > 0 && data.yearGroups.length > 0 && data.subjects.length > 0}
+        />
+        <TeacherMatrix
+          classes={data.classes}
+          yearGroups={data.yearGroups}
+          subjects={data.subjects}
+          teachers={data.teachers}
+          classTeachers={data.classTeachers}
+          subjectTeachers={data.subjectTeachers}
+          reload={reload}
         />
         </>
       )}

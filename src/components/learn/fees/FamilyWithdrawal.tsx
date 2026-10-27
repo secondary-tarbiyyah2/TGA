@@ -3,20 +3,10 @@
 import { useCallback, useEffect, useState, type FormEvent } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { useFamilyChildren } from "@/lib/learn/classes";
-import { localDateKey } from "@/lib/learn/calendar";
+import { ukToday } from "@/lib/learn/ukTime";
 import { formatDate } from "@/components/learn/fees/shared";
 import { Notice, StatusChip, ui } from "@/components/learn/ui";
-import {
-  DESTINATIONS,
-  NEEDS_SCHOOL,
-  NOTICE_COLUMNS,
-  NOTICE_DAYS,
-  NOTICE_STATUS_LABEL,
-  addDays,
-  destinationLabel,
-  type Destination,
-  type WithdrawalNotice,
-} from "@/components/learn/fees/withdrawal";
+import { DESTINATIONS, NEEDS_SCHOOL, NOTICE_COLUMNS, NOTICE_DAYS, NOTICE_STATUS_LABEL, addDays, destinationLabel, type Destination, type WithdrawalNotice } from "@/components/learn/fees/withdrawal";
 
 type Form = {
   childId: string;
@@ -55,13 +45,15 @@ const empty = (childId: string, lastDay: string): Form => ({
 export function FamilyWithdrawal() {
   const supabase = getSupabaseClient();
   const kids = useFamilyChildren();
-  const today = localDateKey(new Date());
+  const today = ukToday();
   const noticeEnds = addDays(today, NOTICE_DAYS);
   const [notices, setNotices] = useState<WithdrawalNotice[] | null>(null);
   const [open, setOpen] = useState(false);
   const [f, setF] = useState<Form>(() => empty("", noticeEnds));
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<{ tone: "good" | "bad"; text: string } | null>(null);
+  // Cancelling a notice asks once, in place, before it happens.
+  const [confirming, setConfirming] = useState<string | null>(null);
 
   const [tick, setTick] = useState(0);
   const load = useCallback(() => setTick((t) => t + 1), []);
@@ -71,7 +63,7 @@ export function FamilyWithdrawal() {
     let live = true;
     (async () => {
       const { data, error } = await supabase.from("withdrawal_notices").select(NOTICE_COLUMNS).order("created_at", { ascending: false });
-      if (live) setNotices(error ? [] : ((data as unknown as WithdrawalNotice[]) || []));
+      if (live) setNotices(error ? [] : (data as unknown as WithdrawalNotice[]) || []);
     })();
     return () => {
       live = false;
@@ -119,8 +111,9 @@ export function FamilyWithdrawal() {
 
   const cancel = async (n: WithdrawalNotice) => {
     if (!supabase) return;
+    setConfirming(null);
     const { error } = await supabase.rpc("cancel_my_withdrawal_notice", { p_id: n.id });
-    setMsg(error ? { tone: "bad", text: error.message } : { tone: "good", text: "Notice cancelled." });
+    setMsg(error ? { tone: "bad", text: "We couldn't cancel that notice just now. Please try again, or contact the office." } : { tone: "good", text: `Notice for ${nameOf(n.child_id)} cancelled.` });
     load();
   };
 
@@ -138,7 +131,14 @@ export function FamilyWithdrawal() {
           </p>
         </div>
         {!open && (
-          <button type="button" className={ui.btnSecondary} onClick={() => setOpen(true)}>
+          <button
+            type="button"
+            className={ui.btnSecondary}
+            onClick={() => {
+              setOpen(true);
+              setMsg(null);
+            }}
+          >
             Give notice
           </button>
         )}
@@ -157,18 +157,27 @@ export function FamilyWithdrawal() {
               <span className="min-w-0 text-ink/80">
                 <span className="font-medium text-ink">{nameOf(n.child_id)}</span> · last day {formatDate(n.last_day)} · {destinationLabel(n.destination)}
                 {n.eligible_to_leave_on && <span className="block text-xs text-ink/65">Office: notice period ends {formatDate(n.eligible_to_leave_on)}</span>}
-                {n.fees_outstanding != null && Number(n.fees_outstanding) > 0 && (
-                  <span className="block text-xs text-ink/65">Fees still due: £{Number(n.fees_outstanding).toFixed(2)}</span>
-                )}
+                {n.fees_outstanding != null && Number(n.fees_outstanding) > 0 && <span className="block text-xs text-ink/65">Fees still due: £{Number(n.fees_outstanding).toFixed(2)}</span>}
                 {n.office_notes && <span className="block text-xs text-ink/65">{n.office_notes}</span>}
               </span>
               <span className="flex items-center gap-3">
                 <StatusChip tone={n.status === "cancelled" ? "neutral" : n.status === "completed" ? "good" : "info"}>{NOTICE_STATUS_LABEL[n.status]}</StatusChip>
-                {n.status === "submitted" && (
-                  <button type="button" className={ui.btnLink} onClick={() => cancel(n)}>
-                    Cancel notice
-                  </button>
-                )}
+                {n.status === "submitted" &&
+                  (confirming === n.id ? (
+                    <span className="flex flex-wrap items-center gap-2">
+                      <span className="text-xs text-ink/75">Cancel this notice?</span>
+                      <button type="button" className={`${ui.btnPrimary} ${ui.sm}`} onClick={() => cancel(n)}>
+                        Yes, cancel it
+                      </button>
+                      <button type="button" className={`${ui.btnSecondary} ${ui.sm}`} onClick={() => setConfirming(null)}>
+                        Keep it
+                      </button>
+                    </span>
+                  ) : (
+                    <button type="button" className={ui.btnLink} onClick={() => setConfirming(n.id)}>
+                      Cancel notice
+                    </button>
+                  ))}
               </span>
             </li>
           ))}

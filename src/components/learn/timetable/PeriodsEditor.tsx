@@ -32,7 +32,7 @@ const audienceLabel = (applies: string[]): string => (applies.includes("all") ? 
 const sharesAudience = (a: string[], b: string[]): boolean => a.includes("all") || b.includes("all") || a.some((x) => b.includes(x));
 
 /** Add, edit and remove the blocks of the school day: lessons, breaks, lunch, prayer and supervised enrichment. */
-export function PeriodsEditor({ periods, reload, staff = [] }: { periods: TimetablePeriod[]; reload: () => Promise<void>; staff?: Teacher[] }) {
+export function PeriodsEditor({ periods, reload, staff = [] }: { periods: TimetablePeriod[]; reload: () => Promise<unknown>; staff?: Teacher[] }) {
   const supabase = getSupabaseClient();
   const [draft, setDraft] = useState<Draft | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -142,6 +142,82 @@ export function PeriodsEditor({ periods, reload, staff = [] }: { periods: Timeta
     return without.includes(v) ? without.filter((x) => x !== v) : [...without, v];
   };
 
+  // The form opens where the user clicked: under the row being edited, or at the top for a new period.
+  const form = draft ? (
+    <div className="my-2 space-y-3 rounded-xl border border-teal-500/40 bg-cream/50 p-3 sm:p-4">
+      <p className="text-sm font-semibold text-ink">{draft.id ? "Edit period" : "New period"}</p>
+      {error && <p role="alert" className="text-xs text-red-800">{error}</p>}
+      <div className="flex flex-wrap items-end gap-2">
+        <label className="text-xs font-medium text-ink/70">
+          Kind
+          <select value={draft.kind} onChange={(e) => set({ kind: e.target.value as PeriodKind })} className={fieldCls}>
+            {PERIOD_KINDS.map((k) => <option key={k.value} value={k.value}>{k.label}</option>)}
+          </select>
+        </label>
+        <label className="text-xs font-medium text-ink/70">
+          Name
+          <input value={draft.name} onChange={(e) => set({ name: e.target.value })} placeholder={draft.kind === "enrichment" ? "Enrichment" : draft.kind === "lesson" ? "Period 7" : "Break"} className={fieldCls} />
+        </label>
+        <label className="text-xs font-medium text-ink/70">
+          From
+          <input type="time" value={draft.start} onChange={(e) => set({ start: e.target.value })} className={fieldCls} />
+        </label>
+        <label className="text-xs font-medium text-ink/70">
+          To
+          <input type="time" value={draft.end} onChange={(e) => set({ end: e.target.value })} className={fieldCls} />
+        </label>
+      </div>
+      {draft.kind === "enrichment" && (
+        <label className="block text-xs font-medium text-ink/70">
+          What happens (pick a suggestion or type your own)
+          <input list="enrichment-activities" value={draft.activity} onChange={(e) => set({ activity: e.target.value })} placeholder="Games & play" className={fieldCls} />
+          <datalist id="enrichment-activities">
+            {ENRICHMENT_ACTIVITIES.map((a) => <option key={a} value={a} />)}
+          </datalist>
+        </label>
+      )}
+      {draft.kind === "enrichment" && (
+        <div>
+          <label className="block text-xs font-medium text-ink/70">
+            Supervised by
+            <select value={draft.supervisor} onChange={(e) => set({ supervisor: e.target.value })} className={fieldCls}>
+              <option value="">No supervisor yet</option>
+              {staff.map((t) => <option key={t.id} value={t.id}>{t.full_name}</option>)}
+            </select>
+          </label>
+          <p className="mt-1 text-xs text-ink/65">The supervisor is shown on timetables and calendars, and ticks who joined from Teaching, Enrichment.</p>
+          {draftClashes.length > 0 && (
+            <ul role="status" className="mt-2 space-y-1 rounded-lg border border-amber-300 bg-amber-50 px-3 py-2 text-xs text-amber-900">
+              {draftClashes.slice(0, 4).map((c) => <li key={c.slotId}>{c.text}</li>)}
+              {draftClashes.length > 4 && <li>…and {draftClashes.length - 4} more.</li>}
+            </ul>
+          )}
+        </div>
+      )}
+      <div>
+        <p className="text-xs font-medium text-ink/70">Days</p>
+        <div className="mt-1 flex flex-wrap gap-1.5" role="group" aria-label="Days">
+          {WEEKDAYS.map((w) => <button key={w.value} type="button" aria-pressed={draft.weekdays.includes(w.value)} onClick={() => set({ weekdays: toggleIn(draft.weekdays, w.value) })} className={chipCls(draft.weekdays.includes(w.value))}>{w.short}</button>)}
+        </div>
+      </div>
+      <div>
+        <p className="text-xs font-medium text-ink/70">For</p>
+        <div className="mt-1 flex flex-wrap gap-1.5" role="group" aria-label="Who this is for">
+          {AUDIENCES.map((a) => <button key={a.value} type="button" aria-pressed={draft.applies.includes(a.value)} onClick={() => set({ applies: toggleAudience(draft.applies, a.value) })} className={chipCls(draft.applies.includes(a.value))}>{a.label}</button>)}
+        </div>
+      </div>
+      <label className="flex items-center gap-2 text-sm text-ink/80">
+        <input type="checkbox" checked={draft.active} onChange={(e) => set({ active: e.target.checked })} />
+        Switched on
+      </label>
+      <div className="flex flex-wrap gap-2">
+        <button type="button" className={btn} onClick={save} disabled={busy}>{draft.id ? "Save changes" : "Add period"}</button>
+        <button type="button" className={ghost} onClick={() => { setDraft(null); setError(null); }}>Cancel</button>
+      </div>
+      {draft.kind === "lesson" && <p className="text-xs text-ink/65">Changes to lesson periods apply the next time you generate a timetable. Lessons already in a draft or published timetable are not moved.</p>}
+    </div>
+  ) : null;
+
   return (
     <section className="rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6">
       <div className="flex flex-wrap items-start justify-between gap-2">
@@ -158,6 +234,8 @@ export function PeriodsEditor({ periods, reload, staff = [] }: { periods: Timeta
         )}
       </div>
 
+      {draft && !draft.id && <div className="mt-3">{form}</div>}
+
       {periods.length === 0 ? (
         <div className="mt-3 rounded-xl border border-dashed border-gold-light bg-cream/60 px-4 py-3 text-sm text-ink/70">
           <p>No periods are stored yet, so the built-in school day is used (form time 09:00, five 50-minute lessons Monday to Thursday with lunch and Dhuhr 12:00-13:00, three lessons on Friday before Jumu&apos;ah; no lessons after 15:00).</p>
@@ -168,7 +246,8 @@ export function PeriodsEditor({ periods, reload, staff = [] }: { periods: Timeta
       ) : (
         <ul className="mt-3 divide-y divide-gold-light/30">
           {sorted.map((p) => (
-            <li key={p.id} className={`flex flex-wrap items-center justify-between gap-2 py-2 text-sm ${p.active ? "" : "opacity-50"}`}>
+            <li key={p.id} className="py-2 text-sm">
+              <div className={`flex flex-wrap items-center justify-between gap-2 ${p.active ? "" : "opacity-50"}`}>
               <span className="flex flex-wrap items-center gap-2">
                 <span className={`rounded-full px-2 py-0.5 text-xs font-semibold ${KIND_STYLE[p.kind].chip}`}>{KIND_STYLE[p.kind].label}</span>
                 <strong className="tabular-nums">{p.start_time}-{p.end_time}</strong>
@@ -180,89 +259,18 @@ export function PeriodsEditor({ periods, reload, staff = [] }: { periods: Timeta
               </span>
               <span className="flex gap-1">
                 <button type="button" onClick={() => toggleActive(p)} className="rounded-lg px-2 py-1 text-xs font-medium text-ink/70 hover:bg-cream">{p.active ? "Turn off" : "Turn on"}</button>
-                <button type="button" onClick={() => edit(p)} className="rounded-lg px-2 py-1 text-xs font-medium text-teal-700 hover:bg-cream">Edit</button>
+                <button type="button" onClick={() => (draft?.id === p.id ? setDraft(null) : edit(p))} aria-expanded={draft?.id === p.id} className="rounded-lg px-2 py-1 text-xs font-medium text-teal-700 hover:bg-cream">{draft?.id === p.id ? "Close" : "Edit"}</button>
                 <button type="button" onClick={() => remove(p)} className="rounded-lg px-2 py-1 text-xs font-medium text-red-700 hover:bg-red-50">Remove</button>
               </span>
+              </div>
+              {draft?.id === p.id && form}
             </li>
           ))}
         </ul>
       )}
       {periods.length > 0 && lessonCount === 0 && <p className="mt-2 text-xs text-amber-800">No lesson periods are switched on, so the built-in lesson periods are used.</p>}
 
-      {draft && (
-        <div className="mt-4 space-y-3 border-t border-gold-light/40 pt-4">
-          <p className="text-sm font-semibold text-ink">{draft.id ? "Edit period" : "New period"}</p>
-          <div className="flex flex-wrap items-end gap-2">
-            <label className="text-xs font-medium text-ink/70">
-              Kind
-              <select value={draft.kind} onChange={(e) => set({ kind: e.target.value as PeriodKind })} className={fieldCls}>
-                {PERIOD_KINDS.map((k) => <option key={k.value} value={k.value}>{k.label}</option>)}
-              </select>
-            </label>
-            <label className="text-xs font-medium text-ink/70">
-              Name
-              <input value={draft.name} onChange={(e) => set({ name: e.target.value })} placeholder={draft.kind === "enrichment" ? "Enrichment" : draft.kind === "lesson" ? "Period 7" : "Break"} className={fieldCls} />
-            </label>
-            <label className="text-xs font-medium text-ink/70">
-              From
-              <input type="time" value={draft.start} onChange={(e) => set({ start: e.target.value })} className={fieldCls} />
-            </label>
-            <label className="text-xs font-medium text-ink/70">
-              To
-              <input type="time" value={draft.end} onChange={(e) => set({ end: e.target.value })} className={fieldCls} />
-            </label>
-          </div>
-          {draft.kind === "enrichment" && (
-            <label className="block text-xs font-medium text-ink/70">
-              What happens (pick a suggestion or type your own)
-              <input list="enrichment-activities" value={draft.activity} onChange={(e) => set({ activity: e.target.value })} placeholder="Games & play" className={fieldCls} />
-              <datalist id="enrichment-activities">
-                {ENRICHMENT_ACTIVITIES.map((a) => <option key={a} value={a} />)}
-              </datalist>
-            </label>
-          )}
-          {draft.kind === "enrichment" && (
-            <div>
-              <label className="block text-xs font-medium text-ink/70">
-                Supervised by
-                <select value={draft.supervisor} onChange={(e) => set({ supervisor: e.target.value })} className={fieldCls}>
-                  <option value="">No supervisor yet</option>
-                  {staff.map((t) => <option key={t.id} value={t.id}>{t.full_name}</option>)}
-                </select>
-              </label>
-              <p className="mt-1 text-xs text-ink/65">The supervisor is shown on timetables and calendars, and ticks who joined from Teaching, Enrichment.</p>
-              {draftClashes.length > 0 && (
-                <ul role="status" className="mt-2 space-y-1 rounded-lg border border-amber-300 bg-amber-50 px-3 py-2 text-xs text-amber-900">
-                  {draftClashes.slice(0, 4).map((c) => <li key={c.slotId}>{c.text}</li>)}
-                  {draftClashes.length > 4 && <li>…and {draftClashes.length - 4} more.</li>}
-                </ul>
-              )}
-            </div>
-          )}
-          <div>
-            <p className="text-xs font-medium text-ink/70">Days</p>
-            <div className="mt-1 flex flex-wrap gap-1.5" role="group" aria-label="Days">
-              {WEEKDAYS.map((w) => <button key={w.value} type="button" aria-pressed={draft.weekdays.includes(w.value)} onClick={() => set({ weekdays: toggleIn(draft.weekdays, w.value) })} className={chipCls(draft.weekdays.includes(w.value))}>{w.short}</button>)}
-            </div>
-          </div>
-          <div>
-            <p className="text-xs font-medium text-ink/70">For</p>
-            <div className="mt-1 flex flex-wrap gap-1.5" role="group" aria-label="Who this is for">
-              {AUDIENCES.map((a) => <button key={a.value} type="button" aria-pressed={draft.applies.includes(a.value)} onClick={() => set({ applies: toggleAudience(draft.applies, a.value) })} className={chipCls(draft.applies.includes(a.value))}>{a.label}</button>)}
-            </div>
-          </div>
-          <label className="flex items-center gap-2 text-sm text-ink/80">
-            <input type="checkbox" checked={draft.active} onChange={(e) => set({ active: e.target.checked })} />
-            Switched on
-          </label>
-          <div className="flex flex-wrap gap-2">
-            <button type="button" className={btn} onClick={save} disabled={busy}>{draft.id ? "Save changes" : "Add period"}</button>
-            <button type="button" className={ghost} onClick={() => { setDraft(null); setError(null); }}>Cancel</button>
-          </div>
-          {draft.kind === "lesson" && <p className="text-xs text-ink/65">Changes to lesson periods apply the next time you generate a timetable. Lessons already in a draft or published timetable are not moved.</p>}
-        </div>
-      )}
-      {error && <p role="alert" className="mt-2 text-xs text-red-800">{error}</p>}
+      {error && !draft && <p role="alert" className="mt-2 text-xs text-red-800">{error}</p>}
     </section>
   );
 }

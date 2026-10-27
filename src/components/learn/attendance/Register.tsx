@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { REASONS, saveReason } from "@/components/learn/absences/data";
 import { useLearnSession } from "@/lib/learn/session";
+import { ukTimeOf } from "@/lib/learn/ukTime";
 
 export type Status = "present" | "late" | "absent" | "excused" | "not_engaged" | "technical";
 /** The four marks used every lesson, as one-tap buttons. */
@@ -45,6 +46,10 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
   const [marks, setMarks] = useState<Record<string, Status>>({});
   const marksRef = useRef<Record<string, Status>>({});
   const totalRef = useRef(0);
+  // Enrolled pupils only: a mark left over for a pupil who has since left
+  // the class must not push "taken" above the class size.
+  const enrolledRef = useRef<Set<string>>(new Set());
+  const [reasonError, setReasonError] = useState<string | null>(null);
   const [lessonDate, setLessonDate] = useState<string | null>(null);
   const [reasons, setReasons] = useState<Record<string, string>>({});
   const [saving, setSaving] = useState<Record<string, "saving" | "saved" | "error">>({});
@@ -97,6 +102,7 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
         supabase.from("attendance_records").select("child_id, status").eq("lesson_instance_id", lessonId),
       ]);
       totalRef.current = ((enr as unknown as { children: unknown }[]) || []).filter((r) => r.children).length;
+      enrolledRef.current = new Set(((enr as unknown as { children: { id: string } | null }[]) || []).flatMap((r) => (r.children ? [r.children.id] : [])));
       setChildren(
         (((enr as unknown as { children: { id: string; name: string } | null }[]) || []).map((r) => r.children).filter(Boolean) as { id: string; name: string }[]).sort((a, b) =>
           a.name.localeCompare(b.name),
@@ -130,10 +136,22 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
         { onConflict: "lesson_instance_id,child_id" },
       );
       setSaving((s) => ({ ...s, ...Object.fromEntries(entries.map((e) => [e.childId, error ? ("error" as const) : ("saved" as const)])) }));
-      if (!error) {
+      if (error) {
+        // Put back what is really saved, so the row shows as unmarked (and
+        // "Mark everyone else present" picks it up again) instead of looking
+        // marked when it isn't.
+        setMarks((m) => {
+          const back = { ...m };
+          for (const e of entries) {
+            if (marksRef.current[e.childId]) back[e.childId] = marksRef.current[e.childId];
+            else delete back[e.childId];
+          }
+          return back;
+        });
+      } else {
         const next = { ...marksRef.current, ...Object.fromEntries(entries.map((e) => [e.childId, e.status])) };
         marksRef.current = next;
-        onProgress?.(Object.keys(next).length, totalRef.current);
+        onProgress?.(Object.keys(next).filter((id) => enrolledRef.current.has(id)).length, totalRef.current);
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -150,8 +168,19 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
 
   const setReason = async (childId: string, code: string) => {
     if (!lessonDate || !code) return;
+    const before = reasons[childId];
     setReasons((r) => ({ ...r, [childId]: code }));
-    await saveReason(childId, lessonDate, code, "");
+    setReasonError(null);
+    const err = await saveReason(childId, lessonDate, code, "");
+    if (err) {
+      setReasons((r) => {
+        const back = { ...r };
+        if (before) back[childId] = before;
+        else delete back[childId];
+        return back;
+      });
+      setReasonError(`Could not save the absence reason: ${err}`);
+    }
   };
 
   if (children === null) return <p className="px-5 py-4 text-sm text-ink/65">Loading register…</p>;
@@ -159,7 +188,7 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
   const unmarked = children.filter((c) => !marks[c.id]);
   const taken = children.length - unmarked.length;
   const anyJoins = Object.keys(joined).length > 0;
-  const timeOf = (iso: string): string => new Date(iso).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" });
+  const timeOf = ukTimeOf;
 
   return (
     <div>
@@ -183,6 +212,11 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
           </button>
         )}
       </div>
+      {reasonError && (
+        <p role="alert" className="border-b border-gold-light/70 bg-red-50 px-5 py-2 text-xs text-red-800">
+          {reasonError}
+        </p>
+      )}
       {Object.keys(teams).length > 0 && (
         <p className="border-b border-gold-light/70 bg-indigo-50/50 px-5 py-2 text-xs text-indigo-900">
           &ldquo;Teams says&rdquo; tags come from the Microsoft Teams attendance report. They are suggestions only and are never saved as marks; pupils Teams couldn&apos;t match by email show no tag.

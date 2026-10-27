@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { localDateKey } from "@/lib/learn/calendar";
+import { ukToday } from "@/lib/learn/ukTime";
 import { callEdgeFunction, edgeErrorMessage } from "@/lib/learn/edge";
 import { EmptyState, Notice, StatusChip, ui, type Tone } from "@/components/learn/ui";
 import { Tabs } from "@/components/learn/Tabs";
@@ -59,7 +59,7 @@ export function calendarAge(dateKey: string, today: string): number {
   return Math.round((new Date(`${today}T12:00:00`).getTime() - new Date(`${dateKey}T12:00:00`).getTime()) / 86400000);
 }
 
-const stamp = (iso: string) => new Date(iso).toLocaleString("en-GB", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
+const stamp = (iso: string) => new Date(iso).toLocaleString("en-GB", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit", timeZone: "Europe/London" });
 
 type Row = { key: string; abs: Absence; fu: Followup | null };
 type Filter = "all" | "first" | "progress" | "escalated";
@@ -73,7 +73,7 @@ function overdueReason(r: Row, today: string): string | null {
 }
 
 export function FollowUpTab({ absences, onChanged }: { absences: Absence[] | null; onChanged: () => void }) {
-  const today = localDateKey(new Date());
+  const today = ukToday();
   const [followups, setFollowups] = useState<Followup[]>([]);
   const [events, setEvents] = useState<Record<string, FEvent[]>>({});
   const [error, setError] = useState<string | null>(null);
@@ -536,12 +536,17 @@ function ContactModal({ row, ensure, onClose, onSaved }: { row: Row; ensure: (r:
         </label>
         <label className="block text-sm font-medium text-ink">
           Next action due (optional)
-          <input type="date" value={next} onChange={(e) => setNext(e.target.value)} className={modalFieldCls} />
+          <input type="date" value={next} min={ukToday()} onChange={(e) => setNext(e.target.value)} className={modalFieldCls} />
         </label>
         {error && <Notice tone="bad">{error}</Notice>}
-        <button type="submit" disabled={busy} className={ui.btnPrimary}>
-          {busy ? "Saving…" : "Save contact"}
-        </button>
+        <div className="flex flex-wrap items-center gap-2">
+          <button type="submit" disabled={busy} className={ui.btnPrimary}>
+            {busy ? "Saving…" : "Save contact"}
+          </button>
+          <button type="button" onClick={onClose} className={ui.btnSecondary}>
+            Cancel
+          </button>
+        </div>
       </form>
     </Modal>
   );

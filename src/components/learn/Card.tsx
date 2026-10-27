@@ -30,7 +30,7 @@ export function Card({
 }) {
   const statusStyle = status ? STATUS_STYLES[status] : null;
   return (
-    <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
+    <div className="rounded-2xl border border-gold-light bg-white p-4 sm:p-6">
       <div className="flex items-start justify-between gap-3">
         <h2 className="font-serif text-h3 font-semibold text-ink">{title}</h2>
         {statusStyle && (
@@ -40,8 +40,8 @@ export function Card({
           </span>
         )}
       </div>
-      {description && <p className="mt-1 text-xs text-ink/65">{description}</p>}
-      <div className="mt-3">{children}</div>
+      {description && <p className="mt-1 max-w-prose text-sm text-ink/65">{description}</p>}
+      <div className="mt-4">{children}</div>
     </div>
   );
 }
@@ -77,7 +77,8 @@ export function StatTile({ label, value, status, href }: { label: string; value:
         )}
         {href && (
           <span aria-hidden="true" className="text-xs font-medium text-teal-700 opacity-0 transition group-hover:opacity-100 group-focus-visible:opacity-100">
-            View &rarr;
+            View
+            <span aria-hidden="true"> &rsaquo;</span>
           </span>
         )}
       </div>

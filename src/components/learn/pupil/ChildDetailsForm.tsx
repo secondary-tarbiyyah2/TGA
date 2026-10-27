@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import {
@@ -164,6 +164,18 @@ export function ChildDetailsForm() {
   const [saved, setSaved] = useState<string | null>(null);
   // Sections the parent has tried to save: only then do empty required fields turn red.
   const [tried, setTried] = useState<Partial<Record<StepKey, boolean>>>({});
+  const [confirmRemove, setConfirmRemove] = useState<string | null>(null);
+  // "Save and continue" sits at the foot of a long section: bring the next
+  // section's start (and the "Saved" note) back into view instead of leaving
+  // the parent at the bottom of an unfamiliar form.
+  const tabsRef = useRef<HTMLDivElement | null>(null);
+  const goTo = (k: StepKey) => {
+    setStep(k);
+    requestAnimationFrame(() => {
+      const el = tabsRef.current;
+      if (el && el.getBoundingClientRect().top < 0) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  };
 
   useEffect(() => {
     const supabase = getSupabaseClient();
@@ -231,7 +243,7 @@ export function ChildDetailsForm() {
     const row = data as unknown as PupilDetails;
     setDetails(row);
     setSaved(row.completed_at ? "Saved. Everything we need is now in. Thank you." : "Saved.");
-    if (next) setStep(next);
+    if (next) goTo(next);
     return true;
   };
 
@@ -313,8 +325,22 @@ export function ChildDetailsForm() {
     setBusy(false);
     if (res.error) return patchDraftError(d.key, "We couldn't save this contact. Please try again.");
     setSaved("Contact saved.");
-    await load(childId);
-    setStep("contacts");
+    await refreshContacts(d.key);
+  };
+
+  // Reload saved contacts but keep any other contact the parent is still
+  // typing (previously a full reload wiped every unsaved draft on the page).
+  const refreshContacts = async (doneKey: string) => {
+    const supabase = getSupabaseClient();
+    if (!supabase || !childId) return;
+    const { data, error: e } = await supabase.from("pupil_emergency_contacts").select(CONTACT_SELECT).eq("child_id", childId).order("priority");
+    if (e) return setError("Some details couldn't load. Please refresh in a moment.");
+    const fresh = ((data as unknown as EmergencyContact[]) || []).map(toDraft);
+    setDrafts((cur) => {
+      const pending = cur.filter((x) => x.key !== doneKey && x.dirty);
+      const merged = fresh.map((f) => pending.find((p) => p.id && p.id === f.id) || f);
+      return [...merged, ...pending.filter((p) => !p.id)];
+    });
   };
 
   const patchDraftError = (key: string, message: string) => setDrafts((ds) => ds.map((x) => (x.key === key ? { ...x, error: message } : x)));
@@ -326,9 +352,10 @@ export function ChildDetailsForm() {
       setBusy(true);
       const { error: e } = await supabase.from("pupil_emergency_contacts").delete().eq("id", d.id);
       setBusy(false);
+      setConfirmRemove(null);
       if (e) return setError("We couldn't remove that contact. Please try again.");
-      await load(childId);
-      setStep("contacts");
+      setSaved("Contact removed.");
+      await refreshContacts(d.key);
     } else {
       setDrafts((ds) => ds.filter((x) => x.key !== d.key));
     }
@@ -350,7 +377,7 @@ export function ChildDetailsForm() {
       <PageHeader
         crumbs={[{ label: "Home", href: "/family/dashboard" }, { label: "Child details" }]}
         title="Child details"
-        subtitle="The information every school needs: home, health, who to call in an emergency, and your consents. Each section saves as you go."
+        subtitle="Home, health, emergency contacts and consents. Each section saves as you go."
       />
 
       {children !== null && children.length === 0 && (
@@ -385,22 +412,28 @@ export function ChildDetailsForm() {
             </div>
             {progress.percent < 100 ? (
               <>
-                <p className="mt-2 text-xs font-medium text-red-700">Everything below is required. The bar reaches 100% only when all of it is done.</p>
-                <ul className="mt-2 grid gap-x-4 gap-y-1 text-xs sm:grid-cols-2" aria-label="Required items">
-                  {progress.items.map((i) => (
-                    <li key={i.label} className={i.ok ? "text-green-700" : "text-red-700"}>
-                      <span aria-hidden="true">{i.ok ? "✓" : "○"}</span> {i.label}
-                      <span className="sr-only">{i.ok ? " done" : " still required"}</span>
-                    </li>
-                  ))}
-                </ul>
+                <details className="group mt-2">
+                  <summary className="flex min-h-9 cursor-pointer list-none items-center gap-2 text-xs font-medium text-red-700">
+                    {progress.items.filter((i) => !i.ok).length} required item{progress.items.filter((i) => !i.ok).length === 1 ? "" : "s"} still to do
+                    <span className="font-normal text-teal-700 underline group-open:hidden">Show</span>
+                    <span className="hidden font-normal text-teal-700 underline group-open:inline">Hide</span>
+                  </summary>
+                  <ul className="mt-2 grid gap-x-4 gap-y-1 text-xs sm:grid-cols-2" aria-label="Required items">
+                    {progress.items.map((i) => (
+                      <li key={i.label} className={i.ok ? "text-green-700" : "text-red-700"}>
+                        <span aria-hidden="true">{i.ok ? "✓" : "○"}</span> {i.label}
+                        <span className="sr-only">{i.ok ? " done" : " still required"}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
               </>
             ) : (
               <p className="mt-2 text-xs text-green-700">All done. You can change anything at any time and we&apos;ll keep it up to date.</p>
             )}
           </section>
 
-          <div className="flex flex-wrap gap-2" role="tablist" aria-label="Sections">
+          <div ref={tabsRef} className="flex scroll-mt-20 flex-wrap gap-2" role="tablist" aria-label="Sections">
             {STEPS.map((s, i) => (
               <button
                 key={s.key}
@@ -517,9 +550,26 @@ export function ChildDetailsForm() {
                           <button type="button" disabled={busy || (!d.dirty && !!d.id)} onClick={() => saveDraft(d, i)} className="rounded-lg bg-gold-700 px-3 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
                             {d.id ? "Save changes" : "Save contact"}
                           </button>
-                          <button type="button" disabled={busy} onClick={() => removeDraft(d)} className="rounded-lg border border-gold-light px-3 py-2 text-sm font-medium text-ink/70 hover:bg-cream disabled:opacity-50">
-                            Remove
-                          </button>
+                          {d.id && confirmRemove === d.key ? (
+                            <span className="flex flex-wrap items-center gap-2">
+                              <span className="text-sm text-ink/75">Remove {d.name || "this contact"}?</span>
+                              <button type="button" disabled={busy} onClick={() => removeDraft(d)} className="rounded-lg bg-red-700 px-3 py-2 text-sm font-semibold text-white hover:bg-red-800 disabled:opacity-50">
+                                Yes, remove
+                              </button>
+                              <button type="button" onClick={() => setConfirmRemove(null)} className="rounded-lg border border-gold-light px-3 py-2 text-sm font-medium text-ink/70 hover:bg-cream">
+                                Keep
+                              </button>
+                            </span>
+                          ) : (
+                            <button
+                              type="button"
+                              disabled={busy}
+                              onClick={() => (d.id ? setConfirmRemove(d.key) : removeDraft(d))}
+                              className="rounded-lg border border-gold-light px-3 py-2 text-sm font-medium text-ink/70 hover:bg-cream disabled:opacity-50"
+                            >
+                              {d.id ? "Remove" : "Discard"}
+                            </button>
+                          )}
                         </div>
                       </li>
                     ))}
@@ -529,7 +579,7 @@ export function ChildDetailsForm() {
                   </button>
                   {savedContacts < 2 && <p role="alert" className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">You have {savedContacts} saved contact{savedContacts === 1 ? "" : "s"}. At least 2 are required.</p>}
                   <div>
-                    <button type="button" onClick={() => setStep("consents")} className="text-sm font-medium text-teal-800 underline">
+                    <button type="button" onClick={() => goTo("consents")} className="text-sm font-medium text-teal-800 underline">
                       Continue to consents
                     </button>
                   </div>

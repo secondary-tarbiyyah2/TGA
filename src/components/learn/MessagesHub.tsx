@@ -49,7 +49,7 @@ function ago(iso: string): string {
  * thread on the right. Students have no 1:1 messaging at all (that is
  * enforced in the database, not just here).
  */
-export function MessagesHub({ canAddPeople = false }: { canAddPeople?: boolean }) {
+export function MessagesHub({ canAddPeople = false, subtitle }: { canAddPeople?: boolean; /** Overrides the staff-worded subtitle (e.g. for parents). */ subtitle?: string }) {
   const [me, setMe] = useState<string | null>(null);
   const [people, setPeople] = useState<Person[] | null>(null);
   const [threads, setThreads] = useState<ThreadRow[] | null>(null);
@@ -178,7 +178,7 @@ export function MessagesHub({ canAddPeople = false }: { canAddPeople?: boolean }
     <>
       <PageHeader
         title="Messages"
-        subtitle="Message the teachers, office and families you work with. Staff review messages for safeguarding as part of normal practice."
+        subtitle={subtitle ?? "Message the teachers, office and families you work with. Staff review messages for safeguarding as part of normal practice."}
         actions={
           <button
             type="button"

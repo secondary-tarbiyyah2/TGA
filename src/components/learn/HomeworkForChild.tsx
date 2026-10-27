@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { FEEDBACK_COLUMNS, type HomeworkFeedback } from "@/lib/learn/homeworkFeedback";
 import { FILE_CATEGORY_LABEL, SUBMISSION_TYPE_LABEL, submissionFiles } from "@/lib/learn/homeworkFiles";
@@ -10,10 +10,7 @@ import { FileLinks } from "@/components/learn/homework/FileViewer";
 import { SubmitWork, type ExistingSubmission } from "@/components/learn/homework/SubmitWork";
 import { useNow } from "@/lib/learn/useNow";
 
-type HomeworkInfo = Pick<
-  Homework,
-  "title" | "instructions" | "max_points" | "allowed_submission_types" | "allowed_file_types" | "late_policy" | "attachments" | "edited_at"
->;
+type HomeworkInfo = Pick<Homework, "title" | "instructions" | "max_points" | "allowed_submission_types" | "allowed_file_types" | "late_policy" | "attachments" | "edited_at">;
 type Row = {
   homework_id: string;
   due_at: string;
@@ -46,6 +43,7 @@ function HomeworkItem({
   canResubmit,
   feedback,
   onChanged,
+  initiallyOpen = false,
 }: {
   row: Row;
   childId: string;
@@ -53,22 +51,24 @@ function HomeworkItem({
   canResubmit: boolean;
   feedback: HomeworkFeedback | null;
   onChanged: () => void;
+  initiallyOpen?: boolean;
 }) {
   const supabase = getSupabaseClient();
   const now = useNow();
   const [submission, setSubmission] = useState<Submission | null>(null);
   const [mark, setMark] = useState<Mark | null>(null);
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(initiallyOpen);
   const [replacing, setReplacing] = useState(false);
+  const itemRef = useRef<HTMLLIElement | null>(null);
+  // Arriving from a link to this piece of homework: open it and bring it into view.
+  useEffect(() => {
+    if (initiallyOpen) itemRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [initiallyOpen]);
 
   const hw = row.homework;
   const loadDetail = async () => {
     if (!supabase || !row.submission_id) return;
-    const { data: sub } = await supabase
-      .from("homework_submissions")
-      .select("id, kind, response_text, link_url, file_path, files, submitted_at")
-      .eq("id", row.submission_id)
-      .maybeSingle();
+    const { data: sub } = await supabase.from("homework_submissions").select("id, kind, response_text, link_url, file_path, files, submitted_at").eq("id", row.submission_id).maybeSingle();
     setSubmission((sub as Submission) || null);
     const { data: markRow } = await supabase.from("homework_marks").select("grade, feedback, released").eq("submission_id", row.submission_id).maybeSingle();
     setMark((markRow as Mark) || null);
@@ -90,17 +90,15 @@ function HomeworkItem({
   const statusMeta = STATUS_LABEL[row.status] || STATUS_LABEL.not_yet_due;
   const closed = hw?.late_policy === "block" && new Date(row.due_at).getTime() < now;
   const attachments = hw ? attachmentsOf(hw) : [];
-  const existing: ExistingSubmission | null = submission
-    ? { id: submission.id, response_text: submission.response_text, link_url: submission.link_url, files: submissionFiles(submission) }
-    : null;
+  const existing: ExistingSubmission | null = submission ? { id: submission.id, response_text: submission.response_text, link_url: submission.link_url, files: submissionFiles(submission) } : null;
   // Students may replace their work until it has feedback. A parent's update is only allowed by the
   // database while a resubmission is requested, so for them (canResubmit) only that case is offered.
   const mayReplaceFreely = canSubmit && !canResubmit && !feedback;
   const mayHandIn = canSubmit || canResubmit;
 
   return (
-    <li className="rounded-lg border border-gold-light/40 p-3">
-      <button type="button" onClick={() => setExpanded((e) => !e)} className="flex w-full items-center justify-between gap-2 text-left" aria-expanded={expanded}>
+    <li ref={itemRef} className={`scroll-mt-24 rounded-lg border p-3 ${initiallyOpen ? "border-teal-700/40" : "border-gold-light/40"}`}>
+      <button type="button" onClick={() => setExpanded((e) => !e)} className="flex min-h-10 w-full flex-wrap items-center justify-between gap-2 text-left" aria-expanded={expanded}>
         <span className="text-sm font-medium text-ink">{hw?.title || "Homework"}</span>
         <span className="flex shrink-0 items-center gap-2 text-xs">
           <span className="text-ink/65">{new Date(row.due_at).toLocaleDateString("en-GB")}</span>
@@ -145,10 +143,13 @@ function HomeworkItem({
               <p className="rounded-lg bg-amber-50 p-3 text-amber-900">This homework is closed. It no longer accepts work after the due time.</p>
             ) : (
               <div>
-                <p className="mb-2 text-xs text-ink/65">
-                  You can hand in: {describeAllowed(hw as Homework, { types: SUBMISSION_TYPE_LABEL, files: FILE_CATEGORY_LABEL }).toLowerCase()}
-                </p>
-                <SubmitWork homework={{ id: row.homework_id, allowed_submission_types: hw.allowed_submission_types, allowed_file_types: hw.allowed_file_types }} childId={childId} actionLabel="Hand in" onDone={done} />
+                <p className="mb-2 text-xs text-ink/65">You can hand in: {describeAllowed(hw as Homework, { types: SUBMISSION_TYPE_LABEL, files: FILE_CATEGORY_LABEL }).toLowerCase()}</p>
+                <SubmitWork
+                  homework={{ id: row.homework_id, allowed_submission_types: hw.allowed_submission_types, allowed_file_types: hw.allowed_file_types }}
+                  childId={childId}
+                  actionLabel="Hand in"
+                  onDone={done}
+                />
               </div>
             )
           ) : (
@@ -197,7 +198,23 @@ function HomeworkItem({
  * work (students, and parents on their child's behalf). canResubmit marks the
  * viewer as a parent, who may only update work while a resubmission is requested.
  */
-export function HomeworkForChild({ childId, canSubmit, classId, canResubmit = false }: { childId: string; canSubmit: boolean; classId?: string; canResubmit?: boolean }) {
+export function HomeworkForChild({
+  childId,
+  canSubmit,
+  classId,
+  canResubmit = false,
+  openId,
+  groupByStatus = false,
+}: {
+  childId: string;
+  canSubmit: boolean;
+  classId?: string;
+  canResubmit?: boolean;
+  /** Open (and scroll to) this homework on arrival, e.g. from a To do link. */
+  openId?: string;
+  /** Split into "Still to hand in" (first) and handed-in work (folded away). */
+  groupByStatus?: boolean;
+}) {
   const supabase = getSupabaseClient();
   const [rows, setRows] = useState<Row[] | null>(null);
   const [feedbackBySubmission, setFeedbackBySubmission] = useState<Record<string, HomeworkFeedback>>({});
@@ -213,10 +230,7 @@ export function HomeworkForChild({ childId, canSubmit, classId, canResubmit = fa
     // Archived homework is hidden from families by RLS, so its embedded homework comes back null.
     setRows(((data as unknown as Row[]) || []).filter((r) => r.homework));
     // Teacher feedback for this child's submissions (RLS limits it to what the viewer may see).
-    const { data: fb } = await supabase
-      .from("homework_feedback")
-      .select(`${FEEDBACK_COLUMNS}, submission:submission_id!inner(child_id)`)
-      .eq("submission.child_id", childId);
+    const { data: fb } = await supabase.from("homework_feedback").select(`${FEEDBACK_COLUMNS}, submission:submission_id!inner(child_id)`).eq("submission.child_id", childId);
     const map: Record<string, HomeworkFeedback> = {};
     for (const f of (fb as unknown as HomeworkFeedback[]) || []) map[f.submission_id] = f;
     setFeedbackBySubmission(map);
@@ -231,19 +245,50 @@ export function HomeworkForChild({ childId, canSubmit, classId, canResubmit = fa
   if (rows === null) return <p className="text-sm text-ink/65">Loading homework…</p>;
   if (rows.length === 0) return <p className="text-sm text-ink/65">No homework set yet.</p>;
 
+  const item = (r: Row) => (
+    <HomeworkItem
+      key={r.homework_id}
+      row={r}
+      childId={childId}
+      canSubmit={canSubmit}
+      canResubmit={canResubmit}
+      feedback={r.submission_id ? feedbackBySubmission[r.submission_id] || null : null}
+      onChanged={load}
+      initiallyOpen={r.homework_id === openId}
+    />
+  );
+
+  if (!groupByStatus) return <ul className="space-y-2">{rows.map(item)}</ul>;
+
+  // Outstanding work first: missing (oldest first), then what is due soonest.
+  // Anything sent back for a resubmission also counts as still to do.
+  const needsResubmit = (r: Row) => !!r.submission_id && feedbackBySubmission[r.submission_id]?.status === "resubmission_requested";
+  const todo = rows
+    .filter((r) => r.status === "missing" || r.status === "not_yet_due" || needsResubmit(r))
+    .sort((a, b) => ((a.status === "missing") === (b.status === "missing") ? a.due_at.localeCompare(b.due_at) : a.status === "missing" ? -1 : 1));
+  const done = rows.filter((r) => !todo.includes(r));
+  const openInDone = !!openId && done.some((r) => r.homework_id === openId);
   return (
-    <ul className="space-y-2">
-      {rows.map((r) => (
-        <HomeworkItem
-          key={r.homework_id}
-          row={r}
-          childId={childId}
-          canSubmit={canSubmit}
-          canResubmit={canResubmit}
-          feedback={r.submission_id ? feedbackBySubmission[r.submission_id] || null : null}
-          onChanged={load}
-        />
-      ))}
-    </ul>
+    <div className="space-y-5">
+      <section aria-labelledby="hw-todo">
+        <h2 id="hw-todo" className="mb-2 text-sm font-semibold text-ink">
+          Still to hand in <span className="font-normal text-ink/60">· {todo.length}</span>
+        </h2>
+        {todo.length ? (
+          <ul className="space-y-2">{todo.map(item)}</ul>
+        ) : (
+          <p className="rounded-lg border border-dashed border-gold-light bg-white p-4 text-sm text-ink/65">All caught up. Nothing to hand in.</p>
+        )}
+      </section>
+      {done.length > 0 && (
+        <details className="group" open={openInDone || undefined}>
+          <summary className="flex min-h-11 cursor-pointer list-none items-center gap-2 text-sm font-semibold text-ink">
+            Handed in <span className="font-normal text-ink/60">· {done.length}</span>
+            <span className="text-xs font-normal text-teal-700 group-open:hidden">Show</span>
+          </summary>
+          <ul className="mt-2 space-y-2">{done.map(item)}</ul>
+        </details>
+      )}
+    </div>
   );
 }

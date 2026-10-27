@@ -19,7 +19,7 @@ const CANON: Record<string, string> = { "computer science": "Computing", computi
 const canon = (n: string) => CANON[niceSubject(n).toLowerCase()] || niceSubject(n);
 const SUBJECT_ICON: Record<string, IconName> = {
   Arabic: "languages", "Art and Design": "palette", Business: "briefcase", Computing: "monitor", English: "notebookPen", Geography: "globe", History: "hourglass",
-  "Islamic Studies": "moon", Mathematics: "calculator", "Physical Education": "activity", PSHE: "heartHandshake", "PSHE RSHE and Citizenship": "heartHandshake", "PSHE RSE and Citizenship": "heartHandshake", "Quran and Tajweed": "bookMarked", Science: "flask",
+  "Islamic Studies": "moon", Mathematics: "calculator", PSHE: "heartHandshake", "PSHE and Citizenship": "heartHandshake", "Quran and Tajweed": "bookMarked", Science: "flask",
 };
 const iconFor = (n: string): IconName => SUBJECT_ICON[n] || "bookOpen";
 const fileKind = (name: string) => (name.split(".").pop() || "").toUpperCase();
@@ -38,8 +38,8 @@ export function SyllabusPack() {
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState<string | null>(null);
   const [attempt, setAttempt] = useState(0);
-  const [subject, setSubject] = useState<string>("");
-  const [level, setLevel] = useState<string>("all");
+  const [savedSubject, setSubject] = useState<string>("");
+  const [savedLevel, setLevel] = useState<string>("all");
 
   useEffect(() => {
     try {
@@ -53,11 +53,11 @@ export function SyllabusPack() {
   }, []);
   useEffect(() => {
     try {
-      window.localStorage.setItem(FILTER_KEY, JSON.stringify({ subject, level }));
+      window.localStorage.setItem(FILTER_KEY, JSON.stringify({ subject: savedSubject, level: savedLevel }));
     } catch {
       /* ignore */
     }
-  }, [subject, level]);
+  }, [savedSubject, savedLevel]);
 
   useEffect(() => {
     let live = true;
@@ -113,8 +113,11 @@ export function SyllabusPack() {
   };
 
   const subjects = useMemo(() => [...new Set((groups || []).flatMap((g) => g.subjects.map((s) => s.subject)).filter(Boolean).map(canon))].sort((a, b) => a.localeCompare(b)), [groups]);
-  const countFor = (sb: string) => (groups || []).reduce((n, g) => n + g.subjects.filter((x) => x.subject && canon(x.subject) === sb).reduce((m, x) => m + x.files.filter((f) => f.name.endsWith(".pdf")).length, 0), 0);
   const levels = useMemo(() => (groups || []).filter((g) => g.subjects.some((s) => s.subject)).map((g) => g.folder), [groups]);
+  // A remembered choice that no longer exists in the pack would otherwise leave the page blank.
+  const subject = groups && subjects.includes(savedSubject) ? savedSubject : "";
+  const level = groups && (savedLevel === "all" || levels.includes(savedLevel)) ? savedLevel : "all";
+  const countFor = (sb: string) => (groups || []).reduce((n, g) => n + g.subjects.filter((x) => x.subject && canon(x.subject) === sb).reduce((m, x) => m + x.files.filter((f) => f.name.endsWith(".pdf")).length, 0), 0);
   const intro = (groups || []).filter((g) => g.subjects.some((s) => !s.subject));
   const btn = `${ui.btnSecondary} ${ui.sm}`;
   const chip = (on: boolean) => `rounded-full border px-3 py-1.5 text-sm transition ${on ? "border-teal-700 bg-teal-700 font-semibold text-white" : "border-gold-light bg-white text-ink hover:border-teal-700"}`;
@@ -214,6 +217,15 @@ export function SyllabusPack() {
 
       {groups && subjects.length > 0 && !subject && (
         <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">Pick a subject above to see its specification and syllabus documents.</p>
+      )}
+
+      {subject && level !== "all" && !(groups || []).some((g) => g.folder === level && g.subjects.some((s) => s.subject && canon(s.subject) === subject)) && (
+        <p className="rounded-2xl border border-dashed border-gold-light bg-white p-6 text-center text-sm text-ink/70">
+          No {subject} documents for {niceFolder(level)}.{" "}
+          <button type="button" onClick={() => setLevel("all")} className="font-semibold text-teal-700 underline">
+            Show all levels
+          </button>
+        </p>
       )}
 
       {subject &&

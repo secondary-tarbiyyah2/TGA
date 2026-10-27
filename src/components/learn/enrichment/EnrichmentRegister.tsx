@@ -1,5 +1,6 @@
 "use client";
 
+import { ukToday } from "@/lib/learn/ukTime";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { localDateKey } from "@/lib/learn/calendar";
 import { getSupabaseClient } from "@/lib/supabase/client";
@@ -22,7 +23,7 @@ const dayLabel = (n: number): string => WEEKDAYS.find((w) => w.value === n)?.lab
  */
 export function EnrichmentRegister({ mode }: { mode: "supervisor" | "admin" }) {
   const [periods, setPeriods] = useState<TimetablePeriod[] | null>(null);
-  const [date, setDate] = useState<string>(() => localDateKey(new Date()));
+  const [date, setDate] = useState<string>(() => ukToday());
   const [periodId, setPeriodId] = useState("");
   const [rosters, setRosters] = useState<Record<string, RosterRow[]>>({});
   const [ticks, setTicks] = useState<TickRow[]>([]);
@@ -148,6 +149,7 @@ export function EnrichmentRegister({ mode }: { mode: "supervisor" | "admin" }) {
         const roster = rosters[p.id] || [];
         const joined = roster.filter((r) => presentFor(p.id, r.child_id) === true).length;
         const unticked = roster.filter((r) => presentFor(p.id, r.child_id) === undefined);
+        const missed = roster.filter((r) => presentFor(p.id, r.child_id) === false).length;
         return (
           <section key={p.id} className="rounded-2xl border border-gold-light/50 bg-white">
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-gold-light/50 px-5 py-3">
@@ -166,6 +168,12 @@ export function EnrichmentRegister({ mode }: { mode: "supervisor" | "admin" }) {
                   {joined}/{roster.length}
                 </span>{" "}
                 joined
+                {mode === "admin" && roster.length > 0 && (
+                  <span className="ml-2 text-xs">
+                    {missed > 0 ? `${missed} did not join · ` : ""}
+                    {unticked.length > 0 ? <span className="font-medium text-amber-800">{unticked.length} not ticked</span> : "all ticked"}
+                  </span>
+                )}
               </p>
             </div>
             {roster.length === 0 ? (
@@ -179,6 +187,13 @@ export function EnrichmentRegister({ mode }: { mode: "supervisor" | "admin" }) {
                     </button>
                   </div>
                 )}
+                {/* The head's view is read-only: keep each block to one line until it is opened. */}
+                {mode === "admin" ? (
+                  <details>
+                    <summary className="cursor-pointer px-5 py-2.5 text-sm font-medium text-teal-700">Show the {roster.length} names</summary>
+                    <RosterList roster={roster} state={(id) => presentFor(p.id, id)} />
+                  </details>
+                ) : (
                 <ul className="divide-y divide-gold-light/40">
                   {roster.map((r) => {
                     const state = presentFor(p.id, r.child_id);
@@ -202,11 +217,31 @@ export function EnrichmentRegister({ mode }: { mode: "supervisor" | "admin" }) {
                     );
                   })}
                 </ul>
+                )}
               </>
             )}
           </section>
         );
       })}
     </div>
+  );
+}
+
+function RosterList({ roster, state }: { roster: RosterRow[]; state: (childId: string) => boolean | undefined }) {
+  return (
+    <ul className="divide-y divide-gold-light/40 border-t border-gold-light/40">
+      {roster.map((r) => {
+        const st = state(r.child_id);
+        return (
+          <li key={r.child_id} className="flex items-center justify-between gap-3 px-5 py-2.5 text-sm">
+            <span className="min-w-0 flex-1 truncate font-medium text-ink">
+              {r.child_name}
+              {r.year_group ? <span className="ml-2 font-normal text-ink/65">{r.year_group}</span> : null}
+            </span>
+            <span className={st === true ? "font-medium text-green-800" : st === false ? "font-medium text-red-800" : "text-ink/65"}>{st === true ? "Joined" : st === false ? "Did not join" : "Not ticked"}</span>
+          </li>
+        );
+      })}
+    </ul>
   );
 }

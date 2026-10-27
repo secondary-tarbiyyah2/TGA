@@ -10,6 +10,8 @@ export type FieldDef = {
   label: string;
   type?: "text" | "textarea" | "number" | "boolean" | "select" | "date";
   options?: string[];
+  /** Display text for an option whose stored value should not be shown as-is. */
+  optionLabels?: Record<string, string>;
   required?: boolean;
 };
 
@@ -28,6 +30,7 @@ export function SimpleListEditor({
   orderKey = "order_index",
   defaultOrderAscending = true,
   rowLabel,
+  searchable = false,
 }: {
   table: string;
   title: string;
@@ -36,17 +39,21 @@ export function SimpleListEditor({
   orderKey?: string;
   defaultOrderAscending?: boolean;
   rowLabel: (row: Row) => string;
+  /** Show a filter box above the list (for long lists such as FAQs). */
+  searchable?: boolean;
 }) {
   const supabase = getSupabaseClient();
   const [rows, setRows] = useState<Row[] | null>(null);
   const [editingId, setEditingId] = useState<string | "new" | null>(null);
   const [draft, setDraft] = useState<Row>({});
   const [busy, setBusy] = useState(false);
-  const [message, setMessage] = useState<string | null>(null);
+  const [message, setMessage] = useState<{ text: string; error?: boolean } | null>(null);
+  const [query, setQuery] = useState("");
 
   const load = async () => {
     if (!supabase) return;
-    const { data } = await supabase.from(table).select("*").order(orderKey, { ascending: defaultOrderAscending });
+    const { data, error } = await supabase.from(table).select("*").order(orderKey, { ascending: defaultOrderAscending });
+    if (error) setMessage({ text: `Could not load this list: ${error.message}`, error: true });
     setRows((data as Row[]) || []);
   };
 
@@ -72,6 +79,9 @@ export function SimpleListEditor({
 
   async function save() {
     if (!supabase) return;
+    // Required fields were marked but never checked, so blank rows could be saved.
+    const missing = fields.filter((f) => f.required && f.type !== "boolean" && (draft[f.key] === null || draft[f.key] === undefined || String(draft[f.key]).trim() === "")).map((f) => f.label);
+    if (missing.length) return setMessage({ text: `Fill in: ${missing.join(", ")}.`, error: true });
     setBusy(true);
     setMessage(null);
     const payload = { ...draft };
@@ -80,31 +90,56 @@ export function SimpleListEditor({
     const { error } = editingId === "new" ? await supabase.from(table).insert(payload) : await supabase.from(table).update(payload).eq("id", editingId);
     if (error) {
       setBusy(false);
-      setMessage(`Could not save: ${error.message}`);
+      setMessage({ text: `Could not save: ${error.message}`, error: true });
       return;
     }
     setEditingId(null);
     await load();
-    setMessage(await triggerPublish());
+    setMessage({ text: await triggerPublish() });
     setBusy(false);
   }
 
-  async function remove(id: string) {
-    if (!supabase || !confirm("Delete this entry? This can't be undone.")) return;
+  async function remove(row: Row) {
+    if (!supabase || !confirm(`Delete "${rowLabel(row)}"? This can't be undone.`)) return;
     setBusy(true);
-    await supabase.from(table).delete().eq("id", id);
+    const { error } = await supabase.from(table).delete().eq("id", row.id as string);
+    if (error) {
+      setBusy(false);
+      return setMessage({ text: `Could not delete: ${error.message}`, error: true });
+    }
     await load();
-    setMessage(await triggerPublish());
+    setMessage({ text: await triggerPublish() });
     setBusy(false);
   }
+
+  const q = query.trim().toLowerCase();
+  const shown = (rows || []).filter((r) => !q || fields.some((f) => String(r[f.key] ?? "").toLowerCase().includes(q)));
 
   return (
     <Card title={title} description={description}>
+      {/* Add sits above the list, so a new entry opens where you clicked rather than below a long list. */}
+      <div className="mb-3 flex flex-wrap items-center gap-2">
+        {editingId !== "new" && (
+          <button type="button" onClick={startNew} className="rounded-full bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900">
+            + Add new
+          </button>
+        )}
+        {searchable && rows && rows.length > 5 && (
+          <input type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Filter this list" aria-label={`Filter ${title}`} className="min-w-[180px] flex-1 rounded-lg border border-gold-light/60 px-3 py-2 text-sm sm:max-w-xs" />
+        )}
+        {rows && <span className="text-xs text-ink/65">{q ? `${shown.length} of ${rows.length}` : `${rows.length} entr${rows.length === 1 ? "y" : "ies"}`}</span>}
+      </div>
+      {message && <p role={message.error ? "alert" : "status"} className={`mb-3 text-sm ${message.error ? "text-red-700" : "text-ink/70"}`}>{message.text}</p>}
+      {editingId === "new" && (
+        <div className="mb-3 rounded-2xl border border-gold-light/50 bg-cream/40 p-3">
+          <RowForm fields={fields} draft={draft} setDraft={setDraft} onSave={save} onCancel={() => setEditingId(null)} busy={busy} />
+        </div>
+      )}
       {rows === null ? (
         <p className="text-sm text-ink/65">Loading…</p>
       ) : (
         <ul className="divide-y divide-gold-light/40 rounded-2xl border border-gold-light/50 bg-white">
-          {rows.map((r) => (
+          {shown.map((r) => (
             <li key={r.id as string} className="p-3">
               {editingId === r.id ? (
                 <RowForm fields={fields} draft={draft} setDraft={setDraft} onSave={save} onCancel={() => setEditingId(null)} busy={busy} />
@@ -115,7 +150,7 @@ export function SimpleListEditor({
                     <button type="button" onClick={() => startEdit(r)} className="rounded-full border border-gold-500 px-3 py-1 text-xs text-gold-700 hover:bg-cream">
                       Edit
                     </button>
-                    <button type="button" onClick={() => remove(r.id as string)} className="rounded-full border border-red-300 px-3 py-1 text-xs text-red-700 hover:bg-red-50">
+                    <button type="button" onClick={() => remove(r)} disabled={busy} className="rounded-full border border-red-300 px-3 py-1 text-xs text-red-700 hover:bg-red-50">
                       Delete
                     </button>
                   </div>
@@ -123,20 +158,10 @@ export function SimpleListEditor({
               )}
             </li>
           ))}
-          {rows.length === 0 && <li className="p-3 text-sm text-ink/65">Nothing here yet.</li>}
+          {rows.length === 0 && <li className="p-3 text-sm text-ink/65">Nothing here yet. Use Add new to create the first entry.</li>}
+          {rows.length > 0 && shown.length === 0 && <li className="p-3 text-sm text-ink/65">Nothing matches &ldquo;{query}&rdquo;.</li>}
         </ul>
       )}
-
-      {editingId === "new" ? (
-        <div className="mt-3 rounded-2xl border border-gold-light/50 bg-cream/40 p-3">
-          <RowForm fields={fields} draft={draft} setDraft={setDraft} onSave={save} onCancel={() => setEditingId(null)} busy={busy} />
-        </div>
-      ) : (
-        <button type="button" onClick={startNew} className="mt-3 rounded-full bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900">
-          Add new
-        </button>
-      )}
-      {message && <p className={`mt-2 text-sm ${message.startsWith("Could not save") ? "text-red-700" : "text-ink/70"}`}>{message}</p>}
     </Card>
   );
 }
@@ -148,6 +173,7 @@ function RowForm({ fields, draft, setDraft, onSave, onCancel, busy }: { fields: 
         {fields.map((f) => (
           <label key={f.key} className={`text-sm text-ink ${f.type === "textarea" ? "sm:col-span-2" : ""}`}>
             {f.label}
+            {f.required && f.type !== "boolean" && <span className="text-red-700" aria-hidden="true"> *</span>}
             {f.type === "textarea" ? (
               <textarea value={(draft[f.key] as string) || ""} onChange={(e) => setDraft({ ...draft, [f.key]: e.target.value })} rows={3} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
             ) : f.type === "boolean" ? (
@@ -156,7 +182,7 @@ function RowForm({ fields, draft, setDraft, onSave, onCancel, busy }: { fields: 
               <select value={(draft[f.key] as string) || ""} onChange={(e) => setDraft({ ...draft, [f.key]: e.target.value || null })} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm">
                 <option value="">–</option>
                 {(f.options || []).map((o) => (
-                  <option key={o} value={o}>{o}</option>
+                  <option key={o} value={o}>{f.optionLabels?.[o] ?? o}</option>
                 ))}
               </select>
             ) : (

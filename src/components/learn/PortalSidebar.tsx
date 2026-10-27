@@ -8,7 +8,7 @@ import { createPortal } from "react-dom";
 import type { Session } from "@supabase/supabase-js";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { dashboardPathForRole, learnRoleLabel, useLearnSignOut, type RoleGrant } from "@/lib/learn/session";
-import { AREA_SUBTITLE, MOBILE_TABS, isSidebarItemActive, sidebarLayout, tileFor, withoutPages, type PortalArea, type SidebarGroup, type SidebarItem } from "@/lib/learn/nav";
+import { ADMIN_INDEX_HREF, AREA_SUBTITLE, isSidebarItemActive, mobileTabsFor, normalisePortalPath, sidebarLayout, tileFor, withoutPages, type PortalArea, type SidebarGroup, type SidebarItem } from "@/lib/learn/nav";
 import { Icon } from "@/components/learn/Icon";
 import { InstallAppLink } from "@/components/learn/InstallApp";
 import { NavBadge, useNavBadges, type NavBadges } from "@/lib/learn/navBadges";
@@ -30,49 +30,41 @@ function initialsOf(name: string): string {
 /** Unread messages and work to mark are blue counts; things overdue are red. */
 const isAlertBadge = (i: SidebarItem) => i.badge !== "messages" && i.badge !== "review";
 
-const OPEN_KEY = (area: PortalArea) => `tga-nav-open:${area}`;
+const CLOSED_KEY = (area: PortalArea) => `tga-nav-closed:${area}`;
 
-/** Which sections are open. Remembered per browser and per area; the
- * section holding the current page always opens when you arrive on it. */
-function useOpenSections(area: PortalArea, sections: SidebarGroup[], pathname: string) {
-  const [open, setOpen] = useState<Set<string>>(() => new Set());
+/** Which groups are folded away. Every group starts open (a dozen links fit
+ * on any laptop); folding one is remembered per browser and per area, and the
+ * group holding the current page is always shown open. */
+function useClosedSections(area: PortalArea, sections: SidebarGroup[], pathname: string) {
+  const [closed, setClosed] = useState<Set<string>>(() => new Set());
   const activeLabel = sections.find((s) => s.items.some((i) => isSidebarItemActive(pathname, i)))?.label;
 
   useEffect(() => {
     let saved: string[] = [];
     try {
-      saved = JSON.parse(window.localStorage.getItem(OPEN_KEY(area)) || "[]");
+      saved = JSON.parse(window.localStorage.getItem(CLOSED_KEY(area)) || "[]");
     } catch {
-      /* storage unavailable or corrupt: start closed */
+      /* storage unavailable or corrupt: everything open */
     }
     // eslint-disable-next-line react-hooks/set-state-in-effect -- restore saved preference after mount
-    setOpen(new Set(Array.isArray(saved) ? saved : []));
+    setClosed(new Set(Array.isArray(saved) ? saved : []));
   }, [area]);
 
-  useEffect(() => {
-    if (!activeLabel) return;
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- open the current page's section on navigation
-    setOpen((prev) => (prev.has(activeLabel) ? prev : new Set(prev).add(activeLabel)));
-  }, [activeLabel]);
-
-  const persist = (next: Set<string>) => {
-    try {
-      window.localStorage.setItem(OPEN_KEY(area), JSON.stringify([...next]));
-    } catch {
-      /* ignore */
-    }
-    return next;
-  };
   const toggle = (label: string) =>
-    setOpen((prev) => {
+    setClosed((prev) => {
       const next = new Set(prev);
       if (next.has(label)) next.delete(label);
       else next.add(label);
-      return persist(next);
+      try {
+        window.localStorage.setItem(CLOSED_KEY(area), JSON.stringify([...next]));
+      } catch {
+        /* ignore */
+      }
+      return next;
     });
-  const ensureOpen = (label: string) => setOpen((prev) => (prev.has(label) ? prev : persist(new Set(prev).add(label))));
 
-  return { open, toggle, ensureOpen, activeLabel };
+  const isOpen = (label: string) => label === activeLabel || !closed.has(label);
+  return { isOpen, toggle, activeLabel };
 }
 
 function NavLink({ item, active, collapsed, onNavigate, count }: { item: SidebarItem; active: boolean; collapsed: boolean; onNavigate?: () => void; count?: number }) {
@@ -83,88 +75,37 @@ function NavLink({ item, active, collapsed, onNavigate, count }: { item: Sidebar
       aria-current={active ? "page" : undefined}
       title={collapsed ? item.label : undefined}
       aria-label={collapsed ? (count ? `${item.label} (${count} waiting)` : item.label) : undefined}
-      className={`portal-nav-row relative ${collapsed ? "justify-center" : ""} ${active ? "portal-nav-row--active" : ""}`}
+      className={`portal-nav-row relative ${collapsed ? "justify-center !px-0" : ""} ${active ? "portal-nav-row--active" : ""}`}
     >
       <span className={`portal-tile ${tileFor(item.icon)}`} aria-hidden="true">
         <Icon name={item.icon} />
       </span>
       {!collapsed && <span className="min-w-0 flex-1 truncate">{item.label}</span>}
       {!collapsed && <NavBadge count={count} alert={isAlertBadge(item)} />}
-      {collapsed && !!count && <span aria-hidden="true" className="absolute right-1.5 top-1.5 h-2 w-2 rounded-full bg-red-700" />}
+      {collapsed && !!count && <span aria-hidden="true" className="absolute right-2 top-1.5 h-2 w-2 rounded-full bg-red-700 ring-2 ring-white" />}
     </Link>
   );
 }
 
-function NavSection({
-  section,
-  isOpen,
-  hasActive,
-  collapsed,
-  pathname,
-  onToggle,
-  onExpandTo,
-  onNavigate,
-  badges,
-}: {
-  section: SidebarGroup;
-  isOpen: boolean;
-  hasActive: boolean;
-  collapsed: boolean;
-  pathname: string;
-  onToggle: () => void;
-  onExpandTo?: () => void;
-  onNavigate?: () => void;
-  badges: NavBadges;
-}) {
+/** A headed group of links. The heading folds the group away; a folded group
+ * still shows a dot when something inside it is waiting. */
+function NavSection({ section, isOpen, onToggle, pathname, onNavigate, badges }: { section: SidebarGroup; isOpen: boolean; onToggle: () => void; pathname: string; onNavigate?: () => void; badges: NavBadges }) {
   const panelId = useId();
-  // A closed section still says something inside it is waiting.
   const waiting = section.items.reduce((n, i) => n + ((i.badge && badges[i.badge]) || 0), 0);
-  if (collapsed) {
-    // Icon rail: the section's icon opens the full sidebar with this section open.
-    return (
-      <button
-        type="button"
-        onClick={onExpandTo}
-        title={section.label}
-        aria-label={`${section.label} (open sidebar)${waiting ? `, ${waiting} waiting` : ""}`}
-        className={`portal-nav-row relative justify-center ${hasActive ? "portal-nav-row--active" : ""}`}
-      >
-        <span className={`portal-tile ${tileFor(section.icon)}`} aria-hidden="true">
-          <Icon name={section.icon} />
-        </span>
-        {!!waiting && <span aria-hidden="true" className="absolute right-1.5 top-1.5 h-2 w-2 rounded-full bg-red-700" />}
-      </button>
-    );
-  }
   return (
     <div>
-      <button
-        type="button"
-        onClick={onToggle}
-        aria-expanded={isOpen}
-        aria-controls={panelId}
-        className={`portal-nav-row w-full ${hasActive && !isOpen ? "portal-nav-row--active" : ""} ${hasActive ? "text-teal-900" : ""}`}
-      >
-        <span className={`portal-tile ${tileFor(section.icon)}`} aria-hidden="true">
-          <Icon name={section.icon} />
-        </span>
+      <button type="button" onClick={onToggle} aria-expanded={isOpen} aria-controls={panelId} className="portal-nav-group">
         <span className="min-w-0 flex-1 truncate text-left">{section.label}</span>
         {!isOpen && !!waiting && <span aria-label={`${waiting} waiting`} className="h-2 w-2 shrink-0 rounded-full bg-red-700" />}
-        <Icon name="chevronDown" className={`h-4 w-4 shrink-0 text-ink/65 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
+        <Icon name="chevronDown" className={`h-3.5 w-3.5 transition-transform duration-200 ${isOpen ? "" : "-rotate-90"}`} />
       </button>
       <div id={panelId} className="portal-nav-panel" data-open={isOpen || undefined} inert={!isOpen || undefined}>
-        <ul className="min-h-0 overflow-hidden">
-          {section.items.map((i) => {
-            const active = isSidebarItemActive(pathname, i);
-            return (
-              <li key={i.href}>
-                <Link href={i.href} onClick={onNavigate} aria-current={active ? "page" : undefined} className={`portal-nav-sub flex items-center gap-2 ${active ? "portal-nav-sub--active" : ""}`}>
-                  <span className="min-w-0 flex-1 truncate">{i.label}</span>
-                  <NavBadge count={i.badge ? badges[i.badge] : undefined} alert={isAlertBadge(i)} />
-                </Link>
-              </li>
-            );
-          })}
+        <ul className="min-h-0 space-y-0.5 overflow-hidden">
+          {section.items.map((i) => (
+            <li key={i.id || i.href}>
+              <NavLink item={i} active={isSidebarItemActive(pathname, i)} collapsed={false} onNavigate={onNavigate} count={i.badge ? badges[i.badge] : undefined} />
+            </li>
+          ))}
         </ul>
       </div>
     </div>
@@ -180,6 +121,7 @@ function SidebarBody({
   onNavigate,
   collapsed = false,
   onToggle,
+  onClose,
   hidePages = [],
 }: {
   area: PortalArea;
@@ -188,6 +130,8 @@ function SidebarBody({
   onNavigate?: () => void;
   collapsed?: boolean;
   onToggle?: () => void;
+  /** The phone drawer's close button. */
+  onClose?: () => void;
   /** Pages to leave out: the phone menu hides the ones already in the tab bar. */
   hidePages?: string[];
 }) {
@@ -201,13 +145,13 @@ function SidebarBody({
     ),
     hidePages,
   );
-  const firstSection = entries.findIndex((e) => e.kind === "section" || !!e.item.group);
   const sections = entries.flatMap((e) => (e.kind === "section" ? [e.section] : []));
-  const { open, toggle, ensureOpen, activeLabel } = useOpenSections(area, sections, pathname);
+  const { isOpen, toggle } = useClosedSections(area, sections, pathname);
   const badges = useNavBadges(area);
   const areas = [...new Set(roles.map((r) => dashboardPathForRole(r.role)))];
-  const roleLabel = [...new Set(roles.map((r) => learnRoleLabel(r.role)))].join(" · ");
+  const roleLabel = [...new Set(roles.map((r) => learnRoleLabel(r.role)))].join(", ");
   const displayName = fullName || session.user.email || "Your account";
+  const homeHref = areas.find((a) => a.startsWith(`/${area}/`)) || areas[0] || "/";
 
   useEffect(() => {
     const supabase = getSupabaseClient();
@@ -226,111 +170,128 @@ function SidebarBody({
     };
   }, [session.user.id]);
 
+  // Collapsed rail: every destination as an icon, with a hairline between groups.
+  const railItems = entries.flatMap((e, idx) => (e.kind === "link" ? [{ item: e.item, divider: false }] : e.section.items.map((item, j) => ({ item, divider: j === 0 && idx > 0 }))));
+
   return (
     <div className="flex h-full flex-col">
-      <div className={`portal-sidebar-head flex h-[68px] shrink-0 items-center ${collapsed ? "justify-center px-2" : "justify-between gap-2 pl-5 pr-3"}`}>
+      <div className={`portal-sidebar-head flex h-[64px] shrink-0 items-center ${collapsed ? "justify-center px-2" : "justify-between gap-2 pl-5 pr-3"}`}>
         {collapsed ? (
-          <Link href={areas.find((a) => a.startsWith(`/${area}/`)) || areas[0] || "/"} className="flex shrink-0 items-center rounded-lg" aria-label="Tarbiyyah Global Academy: home" title="Home">
+          <Link href={homeHref} className="flex shrink-0 items-center rounded-lg" aria-label="Tarbiyyah Global Academy: home" title="Home">
             <Image src="/brand/ga-logo-square.png" alt="" width={36} height={36} priority className="h-9 w-9 max-w-none rounded-lg" />
           </Link>
         ) : (
           <>
-            <Link href={areas.find((a) => a.startsWith(`/${area}/`)) || areas[0] || "/"} onClick={onNavigate} className="flex shrink-0 items-center rounded-lg" aria-label="Tarbiyyah Global Academy: home">
+            <Link href={homeHref} onClick={onNavigate} className="flex shrink-0 items-center rounded-lg" aria-label="Tarbiyyah Global Academy: home">
               <Image src="/brand/ga-wordmark.png" alt="" width={128} height={39} priority className="h-[38px] w-[128px] max-w-none object-contain" />
             </Link>
             {onToggle && (
               <button type="button" onClick={onToggle} title="Collapse sidebar" aria-label="Collapse sidebar" className="portal-icon-btn">
-                <Icon name="panelLeftClose" className="h-5 w-5" />
+                <Icon name="panelLeftClose" />
+              </button>
+            )}
+            {onClose && (
+              <button type="button" onClick={onClose} aria-label="Close menu" className="portal-icon-btn">
+                <Icon name="x" />
               </button>
             )}
           </>
         )}
       </div>
 
-      <div className={collapsed ? "space-y-0.5 px-2 pb-1" : "px-3 pb-1"}>
-        {collapsed && (
-          <button type="button" onClick={onToggle} title="Open sidebar" aria-label="Open sidebar" className="portal-nav-row w-full justify-center">
-            <Icon name="panelLeftOpen" className="h-5 w-5" />
-          </button>
-        )}
-        <button
-          type="button"
-          onClick={() => window.dispatchEvent(new Event("tga:open-search"))}
-          title="Search pupils, pages and classes (Ctrl K)"
-          aria-label="Search pupils, pages and classes"
-          className={collapsed ? "portal-nav-row w-full justify-center" : "flex w-full items-center gap-2 rounded-lg border border-gold-light bg-white px-3 py-2 text-sm text-ink/60 hover:border-teal-700 hover:text-ink"}
-        >
-          <Icon name="search" className="h-4 w-4 shrink-0" />
-          {!collapsed && <span className="min-w-0 flex-1 truncate text-left">Search…</span>}
-          {!collapsed && <kbd className="rounded border border-gold-light bg-cream px-1.5 py-0.5 text-[10px] font-medium text-ink/60">Ctrl K</kbd>}
-        </button>
-      </div>
-      <nav aria-label={AREA_SUBTITLE[area]} className={`min-h-0 flex-1 overflow-y-auto overscroll-contain pb-4 ${collapsed ? "px-2" : "px-3"}`}>
-        {!collapsed && <p className="portal-nav-label">{AREA_SUBTITLE[area]}</p>}
-        <ul className="space-y-0.5">
-          {entries.map((e, idx) => (
-            <li key={e.kind === "link" ? e.item.href : e.section.label}>
-              {idx === firstSection && idx > 0 && <div role="presentation" className={`my-2 border-t border-gold-light ${collapsed ? "mx-1" : "mx-2"}`} />}
-              {e.kind === "link" ? (
-                <NavLink item={e.item} active={isSidebarItemActive(pathname, e.item)} collapsed={collapsed} onNavigate={onNavigate} count={e.item.badge ? badges[e.item.badge] : undefined} />
-              ) : (
-                <NavSection
-                  badges={badges}
-                  section={e.section}
-                  isOpen={open.has(e.section.label)}
-                  hasActive={e.section.label === activeLabel}
-                  collapsed={collapsed}
-                  pathname={pathname}
-                  onToggle={() => toggle(e.section.label)}
-                  onExpandTo={() => {
-                    ensureOpen(e.section.label);
-                    onToggle?.();
-                  }}
-                  onNavigate={onNavigate}
-                />
-              )}
+      <nav aria-label={AREA_SUBTITLE[area]} className={`min-h-0 flex-1 overflow-y-auto overscroll-contain pb-4 pt-2 ${collapsed ? "px-2" : "px-3"}`}>
+        {collapsed ? (
+          <ul className="space-y-0.5">
+            <li>
+              <button type="button" onClick={onToggle} title="Expand sidebar" aria-label="Expand sidebar" className="portal-nav-row w-full justify-center !px-0 text-ink/65">
+                <Icon name="panelLeftOpen" />
+              </button>
             </li>
-          ))}
-        </ul>
+            {railItems.map(({ item, divider }) => (
+              <li key={item.id || item.href}>
+                {divider && <div role="presentation" className="mx-2 my-2 border-t border-gold-light" />}
+                <NavLink item={item} active={isSidebarItemActive(pathname, item)} collapsed onNavigate={onNavigate} count={item.badge ? badges[item.badge] : undefined} />
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <ul className="space-y-0.5">
+            {entries.map((e) => (
+              <li key={e.kind === "link" ? e.item.id || e.item.href : e.section.label} className={e.kind === "section" ? "pt-3" : undefined}>
+                {e.kind === "link" ? (
+                  <NavLink item={e.item} active={isSidebarItemActive(pathname, e.item)} collapsed={false} onNavigate={onNavigate} count={e.item.badge ? badges[e.item.badge] : undefined} />
+                ) : (
+                  <NavSection section={e.section} isOpen={isOpen(e.section.label)} onToggle={() => toggle(e.section.label)} pathname={pathname} onNavigate={onNavigate} badges={badges} />
+                )}
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {!collapsed && (
+          <div className="mt-4 space-y-0.5 border-t border-gold-light pt-3">
+            {area === "admin" && (
+              <Link href={ADMIN_INDEX_HREF} onClick={onNavigate} aria-current={pathname && normalisePortalPath(pathname) === ADMIN_INDEX_HREF ? "page" : undefined} className={`portal-nav-row ${pathname && normalisePortalPath(pathname) === ADMIN_INDEX_HREF ? "portal-nav-row--active" : ""}`}>
+                <span className="portal-tile tile-slate" aria-hidden="true">
+                  <Icon name="layoutGrid" />
+                </span>
+                <span className="min-w-0 flex-1 truncate">All admin pages</span>
+              </Link>
+            )}
+            <InstallAppLink onNavigate={onNavigate} />
+          </div>
+        )}
+        {collapsed && (
+          <div className="mt-4 flex flex-col items-center gap-0.5 border-t border-gold-light pt-3">
+            {area === "admin" && (
+              <Link href={ADMIN_INDEX_HREF} title="All admin pages" aria-label="All admin pages" className="portal-nav-row w-full justify-center !px-0">
+                <span className="portal-tile tile-slate" aria-hidden="true">
+                  <Icon name="layoutGrid" />
+                </span>
+              </Link>
+            )}
+            <InstallAppLink onNavigate={onNavigate} compact />
+          </div>
+        )}
 
         {areas.length > 1 && !collapsed && (
           <div className="mt-4 border-t border-gold-light pt-3">
             <p className="portal-nav-label">Switch portal</p>
-            {areas.map((href) => (
-              <Link key={href} href={href} onClick={onNavigate} aria-current={href.startsWith(`/${area}/`) ? "true" : undefined} className={`portal-nav-sub !ml-0 ${href.startsWith(`/${area}/`) ? "portal-nav-sub--active" : ""}`}>
-                {AREA_NAMES[href] || href}
-              </Link>
-            ))}
+            {areas.map((href) => {
+              const here = href.startsWith(`/${area}/`);
+              return (
+                <Link key={href} href={href} onClick={onNavigate} aria-current={here ? "true" : undefined} className={`portal-nav-sub !ml-0 ${here ? "portal-nav-sub--active" : ""}`}>
+                  {AREA_NAMES[href] || href}
+                </Link>
+              );
+            })}
           </div>
         )}
-        <div className={`mt-4 border-t border-gold-light pt-3 ${collapsed ? "flex justify-center" : ""}`}>
-          <InstallAppLink onNavigate={onNavigate} compact={collapsed} />
-        </div>
       </nav>
 
       <div className={`shrink-0 border-t border-gold-light ${collapsed ? "flex flex-col items-center gap-1.5 px-2 py-3" : "p-3"}`}>
         {collapsed ? (
           <>
-            <Link href="/account" onClick={onNavigate} title={`${displayName} · ${roleLabel}`} aria-label="Your account" className="flex h-10 w-10 items-center justify-center rounded-full bg-teal-100 text-sm font-semibold text-teal-900 hover:bg-teal-500 hover:text-white">
+            <Link href="/account" onClick={onNavigate} title={`${displayName}, ${roleLabel}`} aria-label="Your account" className="flex h-10 w-10 items-center justify-center rounded-full bg-teal-100 text-sm font-semibold text-teal-900 hover:bg-teal-700 hover:text-white">
               {initialsOf(displayName)}
             </Link>
             <button type="button" onClick={signOut} title="Sign out" aria-label="Sign out" className="portal-icon-btn hover:!bg-red-50 hover:!text-red-700">
-              <Icon name="logOut" className="h-5 w-5" />
+              <Icon name="logOut" />
             </button>
           </>
         ) : (
-          <div className="flex items-center gap-2.5">
-            <Link href="/account" onClick={onNavigate} className="flex min-w-0 flex-1 items-center gap-2.5 rounded-xl p-1.5 hover:bg-cream">
+          <div className="flex items-center gap-2">
+            <Link href="/account" onClick={onNavigate} className="flex min-h-11 min-w-0 flex-1 items-center gap-2.5 rounded-xl p-1.5 hover:bg-cream">
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-teal-700 text-xs font-semibold text-white" aria-hidden="true">
                 {initialsOf(displayName)}
               </span>
               <span className="min-w-0">
-                <span className="block truncate text-sm font-semibold text-ink">{fullName || session.user.email || "Your account"}</span>
+                <span className="block truncate text-sm font-semibold text-ink">{displayName}</span>
                 <span className="block truncate text-xs text-ink/65">{roleLabel}</span>
               </span>
             </Link>
             <button type="button" onClick={signOut} title="Sign out" aria-label="Sign out" className="portal-icon-btn shrink-0 hover:!bg-red-50 hover:!text-red-700">
-              <Icon name="logOut" className="h-5 w-5" />
+              <Icon name="logOut" />
             </button>
           </div>
         )}
@@ -342,7 +303,7 @@ function SidebarBody({
 /** Desktop: a fixed rail down the left. */
 export function PortalSidebar(props: { area: PortalArea; session: Session; roles: RoleGrant[]; collapsed: boolean; onToggle: () => void }) {
   return (
-    <aside className={`portal-sidebar fixed inset-y-0 left-0 z-30 hidden bg-white transition-[width] duration-200 ease-out lg:block ${props.collapsed ? "w-[76px]" : "w-[272px]"}`}>
+    <aside className={`portal-sidebar fixed inset-y-0 left-0 z-30 hidden bg-white transition-[width] duration-200 ease-out lg:block ${props.collapsed ? "w-[76px]" : "w-[264px]"}`}>
       <SidebarBody {...props} />
     </aside>
   );
@@ -384,10 +345,10 @@ export function PortalSidebarDrawer(props: { area: PortalArea; session: Session;
     <div className="lg:hidden">
       {open &&
         createPortal(
-          <div className="portal fixed inset-0 z-[100] lg:hidden" role="dialog" aria-modal="true" aria-label="More">
+          <div className="portal fixed inset-0 z-[100] lg:hidden" role="dialog" aria-modal="true" aria-label="Menu">
             <button type="button" aria-label="Close" className="absolute inset-0 bg-ink/40" onClick={() => setOpen(false)} />
-            <div className="absolute inset-y-0 left-0 w-[85%] max-w-[300px] bg-white shadow-xl">
-              <SidebarBody {...props} hidePages={MOBILE_TABS[props.area]} onNavigate={() => setOpen(false)} />
+            <div className="portal-drawer absolute inset-y-0 left-0 w-[86%] max-w-[320px] bg-white shadow-xl">
+              <SidebarBody {...props} hidePages={mobileTabsFor(props.area, props.roles.map((r) => r.role)).map((i) => i.href)} onNavigate={() => setOpen(false)} onClose={() => setOpen(false)} />
             </div>
           </div>,
           document.body,

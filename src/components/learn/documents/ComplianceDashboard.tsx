@@ -67,6 +67,7 @@ export function ComplianceDashboard({ isHeadTeacher, alertsExtra, topExtra, reco
   const [staffNoDbs, setStaffNoDbs] = useState<string[] | null>(null);
   const [dbsDue, setDbsDue] = useState<string[]>([]);
   const [filter, setFilter] = useState<"active" | Status | "all">("active");
+  const [kindFilter, setKindFilter] = useState<Kind | "all">("all");
   const [resolving, setResolving] = useState<string | null>(null);
   const [note, setNote] = useState("");
   const [busy, setBusy] = useState<string | null>(null);
@@ -187,7 +188,10 @@ export function ComplianceDashboard({ isHeadTeacher, alertsExtra, topExtra, reco
     return now - new Date(since).getTime() > limitDays * DAY * (s === "acknowledged" ? 3 : 1);
   };
 
-  const shown = useMemo(() => (alerts || []).filter((a) => (filter === "all" ? true : filter === "active" ? stateOf(a) !== "resolved" : stateOf(a) === filter)), [alerts, filter]);
+  const shown = useMemo(
+    () => (alerts || []).filter((a) => (kindFilter === "all" || a.kind === kindFilter) && (filter === "all" ? true : filter === "active" ? stateOf(a) !== "resolved" : stateOf(a) === filter)),
+    [alerts, filter, kindFilter],
+  );
   const openCount = (alerts || []).filter((a) => stateOf(a) === "open").length;
   const activeCount = (alerts || []).filter((a) => stateOf(a) !== "resolved").length;
   const openFlagged = (alerts || []).filter((a) => a.kind === "flagged_message" && stateOf(a) !== "resolved").length;
@@ -261,8 +265,8 @@ export function ComplianceDashboard({ isHeadTeacher, alertsExtra, topExtra, reco
     <div className="space-y-5">
       {topExtra}
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4" aria-label="Safeguarding summary">
-        {tile("Open alerts", loading ? "…" : activeCount, activeCount === 0 ? "ok" : openCount > 0 ? "bad" : "warn", () => { setTab("alerts"); setFilter("active"); }, loading ? undefined : `${openCount} not yet acknowledged`)}
-        {tile("Flagged messages", loading ? "…" : openFlagged, openFlagged === 0 ? "ok" : "bad", () => { setTab("alerts"); setFilter("active"); })}
+        {tile("Open alerts", loading ? "…" : activeCount, activeCount === 0 ? "ok" : openCount > 0 ? "bad" : "warn", () => { setTab("alerts"); setFilter("active"); setKindFilter("all"); }, loading ? undefined : `${openCount} not yet acknowledged`)}
+        {tile("Flagged messages", loading ? "…" : openFlagged, openFlagged === 0 ? "ok" : "bad", () => { setTab("alerts"); setFilter("active"); setKindFilter("flagged_message"); })}
         {tile("Unsigned critical policies", loading ? "…" : criticalUnsigned, criticalUnsigned === 0 ? "ok" : "bad", () => setTab("signatures"), "people yet to sign child protection / safeguarding")}
         {tile("Staff without DBS on file", staffNoDbs === null ? "…" : staffNoDbs.length, staffNoDbs && staffNoDbs.length === 0 ? "ok" : "warn", () => setTab("records"), `${dbsDue.length} renewal${dbsDue.length === 1 ? "" : "s"} due within 60 days. Training isn't tracked yet.`)}
       </div>
@@ -289,6 +293,12 @@ export function ComplianceDashboard({ isHeadTeacher, alertsExtra, topExtra, reco
                   {f === "active" ? "Needs action" : f[0].toUpperCase() + f.slice(1)}
                 </button>
               ))}
+              <select value={kindFilter} onChange={(e) => setKindFilter(e.target.value as Kind | "all")} aria-label="Type of alert" className="rounded-full border border-gold-light bg-white px-3 py-1 text-xs font-medium text-ink/70">
+                <option value="all">All types</option>
+                <option value="flagged_message">Flagged messages</option>
+                <option value="escalation">Safeguarding escalations</option>
+                <option value="absence">Unexplained absences</option>
+              </select>
             </div>
             {isHeadTeacher && (
               <button

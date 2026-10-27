@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState, type DragEvent } from "react";
-import { Card } from "@/components/learn/Card";
 import { ApplicationDrawer, type MoveOptions, type StaffOption } from "@/components/learn/admissions/ApplicationDrawer";
 import { autoToast, fetchAdmissionsData, sendTemplateEmail } from "@/components/learn/admissions/admissionsData";
 import { createAccountsFor, type AccountsResult } from "@/components/learn/admissions/accountsApi";
@@ -23,6 +22,8 @@ import {
   type ApplicationStatus,
 } from "@/components/admissions/applicationShared";
 import { useNow } from "@/lib/learn/useNow";
+import { ukToday } from "@/lib/learn/ukTime";
+import { saveCsv } from "@/lib/learn/csv";
 
 const FORM_URL = `${MAIN_SITE_ORIGIN}/admissions/apply`;
 
@@ -219,6 +220,7 @@ export function ApplicationsTab() {
   async function toggleAccepting(next: boolean) {
     const supabase = getSupabaseClient();
     if (!supabase) return;
+    if (!next && !window.confirm("Close the application form? Families will see an \u201capplications are closed\u201d message until you open it again.")) return;
     setToggling(true);
     setActionError(null);
     const { error } = await supabase.from("site_settings").update({ accepting_applications: next }).eq("id", true);
@@ -321,7 +323,7 @@ export function ApplicationsTab() {
               const text = autoToast(send.label, current.parent_email, out);
               if (text) setNotice({ ok: out.emailSent, text });
               if (send.key === "offer" && out.emailSent && !current.offer_made_at) {
-                const day = new Date().toISOString().slice(0, 10);
+                const day = ukToday();
                 const { error: e2 } = await supabase.from("admissions_applications").update({ offer_made_at: day }).eq("id", id);
                 if (!e2) setRows((list) => list.map((r) => (r.id === id ? { ...r, offer_made_at: day } : r)));
               }
@@ -396,12 +398,7 @@ export function ApplicationsTab() {
       "offer_made_at", "offer_deadline", "admin_fee_amount", "admin_fee_received", "deposit_amount", "deposit_received",
     ] as const;
     const lines = [cols.join(",")].concat(filtered.map((r) => cols.map((c) => csvCell(r[c])).join(",")));
-    const blob = new Blob([lines.join("\n")], { type: "text/csv" });
-    const a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = "applications.csv";
-    a.click();
-    URL.revokeObjectURL(a.href);
+    saveCsv(`applications-${ukToday()}.csv`, lines.join("\r\n"));
   }
 
   const cardProps = { onOpen: setSelectedId, onMove: moveTo, onDragStart: handleDragStart, onDragEnd: () => { setDragId(null); setDragOver(null); } };
@@ -409,35 +406,25 @@ export function ApplicationsTab() {
 
   return (
     <div className="space-y-6">
-      <Card title="Online application form" description="The public form families use at the link below.">
-        <div className="flex flex-wrap items-center justify-between gap-4">
-          <label className="flex items-start gap-3 text-sm text-ink">
-            <input
-              type="checkbox"
-              role="switch"
-              checked={accepting === true}
-              disabled={accepting === null || toggling}
-              onChange={(e) => toggleAccepting(e.target.checked)}
-              className="mt-1"
-            />
-            <span>
-              <span className="font-medium">Accepting applications</span>
-              <span className="block text-xs text-ink/65">
-                {accepting === null ? "Checking…" : accepting ? "The form is open to families." : "Families see an “applications are closed” message instead of the form."}
-              </span>
-            </span>
-          </label>
-          <div className="flex flex-wrap items-center gap-2">
-            <code className="max-w-full break-all rounded-lg bg-cream px-3 py-1.5 text-xs text-ink/80">{FORM_URL}</code>
-            <button type="button" onClick={copyLink} className="rounded-lg border border-gold-light px-3 py-1.5 text-xs font-medium text-ink/80 hover:bg-cream">
-              {copied ? "Copied" : "Copy link"}
-            </button>
-            <a href={FORM_URL} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs font-semibold text-white hover:bg-gold-900">
-              Preview
-            </a>
-          </div>
-        </div>
-      </Card>
+      {/* The public form's on/off switch and link, kept to one slim bar so the board is the first thing seen. */}
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 rounded-2xl border border-gold-light/60 bg-white px-4 py-3">
+        <label className="flex items-center gap-2 text-sm text-ink">
+          <input type="checkbox" role="switch" checked={accepting === true} disabled={accepting === null || toggling} onChange={(e) => toggleAccepting(e.target.checked)} />
+          <span className="font-medium">Accepting applications</span>
+        </label>
+        <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${accepting === null ? "bg-cream text-ink/65" : accepting ? "bg-green-50 text-green-800" : "bg-amber-50 text-amber-900"}`}>
+          {accepting === null ? "Checking…" : accepting ? "Form open" : "Form closed to families"}
+        </span>
+        <span className="flex flex-wrap items-center gap-2 sm:ml-auto">
+          <code className="max-w-full break-all rounded-lg bg-cream px-2 py-1 text-xs text-ink/80">{FORM_URL}</code>
+          <button type="button" onClick={copyLink} className="rounded-lg border border-gold-light px-3 py-1.5 text-xs font-medium text-ink/80 hover:bg-cream">
+            {copied ? "Copied" : "Copy link"}
+          </button>
+          <a href={FORM_URL} target="_blank" rel="noopener noreferrer" className="rounded-lg border border-gold-light px-3 py-1.5 text-xs font-medium text-ink/80 hover:bg-cream">
+            Preview
+          </a>
+        </span>
+      </div>
 
       <div className="flex flex-wrap items-end gap-3">
         <label className="text-xs font-medium text-ink">
@@ -469,11 +456,20 @@ export function ApplicationsTab() {
         )}
       </div>
 
-      {actionError && <p role="alert" className="text-sm text-red-700">{actionError}</p>}
-      {notice && (
-        <p role={notice.ok ? "status" : "alert"} className={`text-sm ${notice.ok ? "text-teal-700" : "text-red-700"}`}>
-          {notice.text} <button type="button" onClick={() => setNotice(null)} className="underline">Dismiss</button>
-        </p>
+      {/* Sticky, so moving a card far down the board still shows what happened. */}
+      {(actionError || notice) && (
+        <div className="sticky top-2 z-10 space-y-2">
+          {actionError && (
+            <p role="alert" className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-800 shadow-sm">
+              {actionError} <button type="button" onClick={() => setActionError(null)} className="underline">Dismiss</button>
+            </p>
+          )}
+          {notice && (
+            <p role={notice.ok ? "status" : "alert"} className={`rounded-lg border px-3 py-2 text-sm shadow-sm ${notice.ok ? "border-teal-200 bg-teal-50 text-teal-900" : "border-red-200 bg-red-50 text-red-800"}`}>
+              {notice.text} <button type="button" onClick={() => setNotice(null)} className="underline">Dismiss</button>
+            </p>
+          )}
+        </div>
       )}
 
       {load === "loading" && <p role="status" className="text-sm text-ink/65">Loading applications…</p>}

@@ -1,3 +1,5 @@
+import { ukToday } from "@/lib/learn/ukTime";
+
 export type FeeCharge = {
   id: string;
   parent_user_id: string;
@@ -32,7 +34,15 @@ export const STATUS_STYLE: Record<ChargeStatus, string> = {
 };
 
 export const round2 = (n: number): number => Math.round(n * 100) / 100;
-export const todayIso = (): string => new Date().toISOString().slice(0, 10);
+
+/** "£1,596.00", "1596", " 50 " -> pounds as a number (NaN when it isn't one). */
+export function parsePounds(text: string): number {
+  const cleaned = text.replace(/[£,\s]/g, "");
+  return cleaned === "" ? NaN : Number(cleaned);
+}
+// UK date (the school's calendar), not UTC: between midnight and 1am BST the
+// UTC date is still yesterday, which made due-today charges flip early/late.
+export const todayIso = (): string => ukToday();
 
 export function chargeStatus(charge: FeeCharge, paid: number): ChargeStatus {
   if (charge.voided_at) return "void";
@@ -45,6 +55,9 @@ export function formatDate(iso: string): string {
   return d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
 }
 
+/** One CSV cell. A leading = + @ (or - before a non-digit) is defused so a spreadsheet never runs a name as a formula. */
 export function csvEscape(v: string | number): string {
-  return `"${String(v).replace(/"/g, '""')}"`;
+  let s = String(v);
+  if (/^[=+@\t\r]/.test(s) || /^-(?![\d.])/.test(s)) s = `'${s}`;
+  return `"${s.replace(/"/g, '""')}"`;
 }

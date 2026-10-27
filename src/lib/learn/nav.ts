@@ -4,8 +4,7 @@ import type { IconName } from "@/components/learn/Icon";
 //
 // The rule: the sidebar lists DESTINATIONS, and a destination is either a
 // single page or a HUB. A hub is one sidebar entry that groups closely
-// related pages (Curriculum = Lesson library · Syllabus and specs · Revision
-// results). The sidebar shows only the hub; it stays highlighted on any of
+// related pages (Curriculum = Lesson library, Syllabus, Revision results). The sidebar shows only the hub; it stays highlighted on any of
 // its pages, and the shell draws a compact tab strip of the hub's pages at
 // the top of each of them (HubTabs in PageHeader.tsx, rendered by
 // LearnLayoutShell), so no page needs to know it belongs to a hub. Nothing is
@@ -57,8 +56,8 @@ export type SidebarIcon = IconName;
 /** One page inside a hub, shown as a tab at the top of the hub's pages. */
 export type HubTab = { href: string; label: string; hint?: string; icon?: SidebarIcon; headOnly?: boolean; matchPrefixes?: string[] };
 
-/** `group` is the section the item sits under; items with no group are the
- * always-visible links at the top. `matchPrefixes` keeps an item highlighted
+/** `group` is the section the item sits under in grouped areas (admin); the
+ * first group's items are the always-visible links at the top. `matchPrefixes` keeps an item highlighted
  * across related routes (e.g. a single class page keeps "My classes" lit).
  * `tabs` makes the item a hub: its href is the first tab the user can open. */
 export type SidebarItem = {
@@ -79,8 +78,9 @@ export type SidebarGroup = { label: string; icon: SidebarIcon; items: SidebarIte
 
 
 export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
-  // One flat list: each entry is a page or a hub whose pages show as tabs.
-  // `group` is only used to group pages on the Site administration index.
+  // Each entry is a page or a hub whose pages show as tabs. Grouped (see GROUPED_AREAS): the first group's entries are always-visible
+  // links at the top; the rest sit under headings that open and close. The
+  // groups also lay out the Site administration index (/admin/site).
   admin: [
     {
       href: "/admin/dashboard",
@@ -95,38 +95,38 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       ],
     },
     {
-      href: "/admin/classes",
-      label: "Classes",
-      icon: "presentation",
-      group: "Teaching",
-      matchPrefixes: ["/admin/class"],
+      href: "/admin/messages",
+      label: "Messages",
+      icon: "messageSquare",
+      badge: "messages",
+      group: "Overview",
       tabs: [
-        { href: "/admin/classes", label: "Classes", hint: "Every class: stream, classwork, people and grades", headOnly: true, matchPrefixes: ["/admin/class"] },
-        { href: "/admin/homework", label: "All classwork", hint: "Work set across every class, late and missing work", icon: "notebookPen", headOnly: true },
-        { href: "/admin/lessons", label: "Timetable and lessons", hint: "Timetable, live lessons and recordings", icon: "layoutDashboard", headOnly: true },
+        { href: "/admin/messages", label: "Inbox", hint: "Conversations with families and staff", headOnly: true },
+        { href: "/admin/announcements", label: "Announcements", hint: "School-wide notices", icon: "megaphone", headOnly: true },
+        { href: "/admin/digest", label: "Weekly digest", hint: "Friday parent email", icon: "mail", headOnly: true },
+        { href: "/admin/message-oversight", label: "Oversight", hint: "Safeguarding view of staff-family messages", icon: "shieldAlert", headOnly: true },
+        { href: "/admin/feedback", label: "Feedback", hint: "Suggestions and bug reports from portal users", icon: "messageSquarePlus", headOnly: true },
       ],
     },
     {
-      href: "/admin/curriculum",
-      label: "Curriculum",
-      icon: "library",
-      group: "Teaching",
+      href: "/admin/calendar",
+      label: "Calendar",
+      icon: "calendarDays",
+      group: "Overview",
       tabs: [
-        { href: "/admin/curriculum", label: "Lesson library", hint: "Lesson plans, resources and revision packs", headOnly: true },
-        { href: "/admin/syllabus", label: "Syllabus and specs", hint: "Schemes of work and exam specifications", icon: "scrollText", headOnly: true },
-        { href: "/admin/revision", label: "Revision results", hint: "How pupils did on each unit's revision", icon: "chartLine", headOnly: true },
+        { href: "/admin/calendar", label: "Calendar", hint: "Term dates and school events" },
+        { href: "/admin/parent-evenings", label: "Parent evenings", hint: "Create evenings, open booking, see bookings", icon: "calendarClock", headOnly: true },
       ],
     },
     {
       href: "/admin/pupils",
       label: "Pupils",
-      icon: "contact",
+      icon: "backpack",
       group: "Pupils",
       tabs: [
-        { href: "/admin/pupils", label: "Pupil records", hint: "Every pupil's record in one place" },
+        { href: "/admin/pupils", label: "All pupils", hint: "Every pupil's record in one place" },
         { href: "/admin/behaviour", label: "Behaviour", hint: "Incidents and praise", icon: "heartHandshake", headOnly: true },
-        { href: "/admin/rewards", label: "Houses and stars", hint: "House points and Star of the Week", icon: "trophy", headOnly: true },
-        { href: "/admin/assessments", label: "Entry assessments", hint: "Baseline and entry assessments", icon: "clipboardCheck" },
+        { href: "/admin/rewards", label: "House points", hint: "House points and Star of the Week", icon: "trophy", headOnly: true },
       ],
     },
     {
@@ -147,44 +147,52 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       group: "Pupils",
       tabs: [
         { href: "/admin/reports", label: "Term reports", hint: "Write, approve and issue reports", headOnly: true },
-        { href: "/admin/gcse", label: "GCSE progress", hint: "Predicted and actual grades, Years 10-11", icon: "graduationCap", headOnly: true },
+        { href: "/admin/gcse", label: "GCSE", hint: "Predicted and actual grades, Years 10 and 11", icon: "graduationCap", headOnly: true },
       ],
     },
     {
-      href: "/admin/messages",
-      label: "Messages",
-      icon: "messageSquare",
-      badge: "messages",
-      group: "Communication",
+      href: "/admin/classes",
+      label: "Classes",
+      icon: "presentation",
+      group: "Teaching",
+      matchPrefixes: ["/admin/class"],
       tabs: [
-        { href: "/admin/messages", label: "Inbox", hint: "Conversations with families and staff", headOnly: true },
-        { href: "/admin/announcements", label: "Announcements", hint: "School-wide notices", icon: "megaphone", headOnly: true },
-        { href: "/admin/digest", label: "Weekly digest", hint: "Friday parent email", icon: "inbox", headOnly: true },
-        { href: "/admin/message-oversight", label: "Oversight", hint: "Safeguarding view of staff-family messages", icon: "shieldAlert", headOnly: true },
-        { href: "/admin/feedback", label: "Feedback", hint: "Suggestions and bug reports from portal users", icon: "messageSquarePlus", headOnly: true },
+        { href: "/admin/classes", label: "Classes", hint: "Every class: stream, classwork, people and grades", headOnly: true, matchPrefixes: ["/admin/class"] },
+        { href: "/admin/homework", label: "Classwork", hint: "Work set across every class, late and missing work", icon: "notebookPen", headOnly: true },
+        { href: "/admin/lessons", label: "Timetable", hint: "Timetable, live lessons and recordings", icon: "layoutDashboard", headOnly: true },
       ],
     },
     {
-      href: "/admin/calendar",
-      label: "Calendar",
-      icon: "calendarDays",
-      group: "Communication",
+      href: "/admin/curriculum",
+      label: "Curriculum",
+      icon: "library",
+      group: "Teaching",
       tabs: [
-        { href: "/admin/calendar", label: "Calendar", hint: "Term dates and school events" },
-        { href: "/admin/parent-evenings", label: "Parent evenings", hint: "Create evenings, open booking, see bookings", icon: "users", headOnly: true },
-        { href: "/admin/open-evening", label: "Open evenings", hint: "Sessions, bookings and attendee lists", icon: "school" },
+        { href: "/admin/curriculum", label: "Lesson library", hint: "Lesson plans, resources and revision packs", headOnly: true },
+        { href: "/admin/syllabus", label: "Syllabus", hint: "Schemes of work and exam specifications", icon: "scrollText", headOnly: true },
+        { href: "/admin/revision", label: "Revision results", hint: "How pupils did on each unit's revision", icon: "chartLine", headOnly: true },
       ],
     },
     {
       href: "/admin/admissions",
+      label: "Admissions",
+      icon: "userRoundPlus",
+      group: "School office",
+      tabs: [
+        { href: "/admin/admissions", label: "Applications", hint: "Applications, calls and availability" },
+        { href: "/admin/assessments", label: "Entry assessments", hint: "Baseline and entry assessments", icon: "clipboardCheck" },
+        { href: "/admin/open-evening", label: "Open evenings", hint: "Sessions, bookings and attendee lists", icon: "school" },
+      ],
+    },
+    {
+      href: "/admin/people",
       label: "People",
       icon: "idCard",
-      group: "People",
+      group: "School office",
       tabs: [
-        { href: "/admin/admissions", label: "Admissions", hint: "Applications, calls and availability", icon: "userRoundPlus" },
         { href: "/admin/people", label: "Accounts", hint: "Families, students and staff accounts and roles" },
         { href: "/admin/staff", label: "Staff", hint: "Teacher profiles and compliance dates", icon: "userRound", headOnly: true },
-        { href: "/admin/staff-attendance", label: "Staff hours", hint: "Clock-ins, hours and late arrivals", icon: "userCheck", headOnly: true },
+        { href: "/admin/staff-attendance", label: "Staff hours", hint: "Clock-ins, hours and late arrivals", icon: "clock", headOnly: true },
         { href: "/admin/handbook", label: "Handbook", hint: "Policies and how-tos for staff", icon: "bookOpen" },
       ],
     },
@@ -195,7 +203,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       group: "School office",
       tabs: [
         { href: "/admin/fees", label: "Fees", hint: "Invoices and payment status", headOnly: true },
-        { href: "/admin/documents", label: "Policies and signatures", hint: "Policies families and staff sign", icon: "fileCheck", headOnly: true },
+        { href: "/admin/documents", label: "Policies", hint: "Policies families and staff sign", icon: "fileCheck", headOnly: true },
       ],
     },
     {
@@ -215,7 +223,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       icon: "settings",
       group: "School office",
       tabs: [
-        { href: "/admin/settings", label: "School settings", hint: "Bursary seats, Microsoft 365 and site options" },
+        { href: "/admin/settings", label: "General", hint: "Bursary seats, Microsoft 365 and site options" },
         { href: "/admin/academic", label: "Academic setup", hint: "Years, terms, year groups, classes and subjects", icon: "layers" },
         { href: "/admin/content", label: "Website", hint: "Pages on the public site", icon: "globe" },
         { href: "/admin/quiz", label: "Quiz and sample weeks", hint: "Eligibility quiz and timetables", icon: "bookOpenCheck", headOnly: true },
@@ -260,7 +268,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
     {
       href: "/teach/pupils",
       label: "Pupils",
-      icon: "contact",
+      icon: "backpack",
       tabs: [
         { href: "/teach/pupils", label: "Pupils", hint: "Records for the pupils you teach" },
         { href: "/teach/quran", label: "Qur'an and Qaidah", hint: "Recitation and memorisation progress", icon: "bookMarked" },
@@ -276,7 +284,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       icon: "library",
       tabs: [
         { href: "/teach/curriculum", label: "Lesson library", hint: "Lesson plans, resources and revision packs" },
-        { href: "/teach/syllabus", label: "Syllabus and specs", hint: "Schemes of work and exam specifications", icon: "scrollText" },
+        { href: "/teach/syllabus", label: "Syllabus", hint: "Schemes of work and exam specifications", icon: "scrollText" },
         { href: "/teach/revision", label: "Revision results", hint: "How your pupils did on each unit's revision", icon: "chartLine" },
       ],
     },
@@ -286,7 +294,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       icon: "calendarDays",
       tabs: [
         { href: "/teach/calendar", label: "Calendar", hint: "Term dates and school events" },
-        { href: "/teach/parent-evenings", label: "Parent evenings", hint: "Your parent evening slots and bookings", icon: "users" },
+        { href: "/teach/parent-evenings", label: "Parent evenings", hint: "Your parent evening slots and bookings", icon: "calendarClock" },
       ],
     },
     {
@@ -313,7 +321,6 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       ],
     },
     { href: "/family/todo", label: "To do", icon: "listChecks", badge: "todo", matchPrefixes: ["/family/homework"], hint: "Homework due and missing" },
-    { href: "/family/classes", label: "Classes", icon: "presentation", matchPrefixes: ["/family/class", "/family/lessons"], hint: "Your child's classes, lessons and classwork" },
     {
       href: "/family/messages",
       label: "Messages",
@@ -325,12 +332,22 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       ],
     },
     {
+      href: "/family/classes",
+      label: "Classes",
+      icon: "presentation",
+      matchPrefixes: ["/family/class", "/family/lessons"],
+      tabs: [
+        { href: "/family/classes", label: "Classes", hint: "Your child's classes, lessons and classwork", matchPrefixes: ["/family/class", "/family/lessons"] },
+        { href: "/family/teachers", label: "Teachers", hint: "Who teaches your child", icon: "users" },
+      ],
+    },
+    {
       href: "/family/reports",
       label: "Progress",
       icon: "chartLine",
       tabs: [
         { href: "/family/reports", label: "Reports", hint: "Term reports", icon: "fileText" },
-        { href: "/family/quran", label: "Qur'an and Qaidah", hint: "Recitation and memorisation progress", icon: "bookMarked" },
+        { href: "/family/quran", label: "Qur'an", hint: "Qur'an and Qaidah: recitation and memorisation progress", icon: "bookMarked" },
         { href: "/family/behaviour", label: "Behaviour", hint: "Praise and incidents", icon: "heartHandshake" },
         { href: "/family/revision", label: "Revision", hint: "Unit revision results", icon: "target" },
       ],
@@ -341,8 +358,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       icon: "calendarDays",
       tabs: [
         { href: "/family/calendar", label: "Calendar", hint: "Term dates and school events" },
-        { href: "/family/parent-evenings", label: "Parent evenings", hint: "Book a slot with your child's teachers", icon: "users" },
-        { href: "/family/teachers", label: "Meet the teachers", hint: "Who teaches your child", icon: "users" },
+        { href: "/family/parent-evenings", label: "Parent evenings", hint: "Book a slot with your child's teachers", icon: "calendarClock" },
       ],
     },
     {
@@ -413,13 +429,13 @@ export const HUBS: Record<PortalArea, SidebarItem[]> = {
  * colour in every area (classes teal, messages blue, safeguarding red, rewards gold...). */
 const TILE_HUE: Partial<Record<SidebarIcon, string>> = {
   house: "tile-gold", houseHeart: "tile-gold", school: "tile-gold", star: "tile-gold", trophy: "tile-gold", award: "tile-gold",
-  sun: "tile-amber", calendarDays: "tile-amber", scrollText: "tile-amber", megaphone: "tile-amber", hourglass: "tile-amber",
+  sun: "tile-amber", calendarDays: "tile-amber", calendarClock: "tile-amber", scrollText: "tile-amber", megaphone: "tile-amber", hourglass: "tile-amber",
   flag: "tile-rose", heartHandshake: "tile-rose", shieldCheck: "tile-rose", shieldAlert: "tile-rose", calendarX: "tile-rose", palette: "tile-rose",
-  presentation: "tile-teal", library: "tile-teal", layers: "tile-teal", layoutDashboard: "tile-teal", calculator: "tile-teal",
-  messageSquare: "tile-blue", messageSquarePlus: "tile-blue", users: "tile-blue", contact: "tile-blue", idCard: "tile-blue", userRoundPlus: "tile-blue", globe: "tile-blue", monitor: "tile-blue", languages: "tile-blue",
+  presentation: "tile-teal", backpack: "tile-teal", library: "tile-teal", layers: "tile-teal", layoutDashboard: "tile-teal", calculator: "tile-teal",
+  messageSquare: "tile-blue", messageSquarePlus: "tile-blue", users: "tile-blue", contact: "tile-blue", idCard: "tile-blue", userRoundPlus: "tile-blue", globe: "tile-blue", monitor: "tile-blue", languages: "tile-blue", mail: "tile-blue",
   clipboardCheck: "tile-violet", listChecks: "tile-violet", notebookPen: "tile-violet", graduationCap: "tile-violet", fileText: "tile-violet", fileCheck: "tile-violet",
   bookMarked: "tile-emerald", bookOpen: "tile-emerald", moon: "tile-emerald", bookOpenCheck: "tile-emerald",
-  target: "tile-green", chartLine: "tile-green", chartColumnIncreasing: "tile-green", wallet: "tile-green", flask: "tile-green", activity: "tile-green", userCheck: "tile-green", calendarCheck: "tile-green",
+  target: "tile-green", chartLine: "tile-green", chartColumnIncreasing: "tile-green", wallet: "tile-green", flask: "tile-green", activity: "tile-green", userCheck: "tile-green", calendarCheck: "tile-green", clock: "tile-green",
 };
 export const tileFor = (icon: SidebarIcon): string => TILE_HUE[icon] || "tile-slate";
 
@@ -495,8 +511,10 @@ export function visibleSidebar(area: PortalArea, roles: string[]): SidebarItem[]
     }
     const tabs = i.tabs.filter((t) => isHead || !t.headOnly);
     if (tabs.length === 0) continue;
-    // A hub with one page left for this user is just that page.
-    if (tabs.length === 1) out.push({ ...i, id: i.href, href: tabs[0].href, label: tabs[0].label, icon: tabs[0].icon || i.icon, hint: tabs[0].hint, tabs });
+    // A hub with one page left for this user is just that page. If that page
+    // is the hub's own first page, it keeps the hub's name ("Home", not "Overview").
+    const own = tabs.length === 1 && tabs[0].href === i.href;
+    if (tabs.length === 1) out.push({ ...i, id: i.href, href: tabs[0].href, label: own ? i.label : tabs[0].label, icon: own ? i.icon : tabs[0].icon || i.icon, hint: tabs[0].hint, tabs });
     else out.push({ ...i, id: i.href, href: tabs[0].href, tabs });
   }
   return out;
@@ -505,12 +523,18 @@ export function visibleSidebar(area: PortalArea, roles: string[]): SidebarItem[]
 /** Every page this user can open in an area, one row per page (hub tabs
  * included, with the hub as `parent`) · the command palette lists these. */
 export function visiblePages(area: PortalArea, roles: string[]): { href: string; label: string; hint?: string; parent?: string; icon: SidebarIcon }[] {
-  return visibleSidebar(area, roles).flatMap((i) =>
+  const pages: { href: string; label: string; hint?: string; parent?: string; icon: SidebarIcon }[] = visibleSidebar(area, roles).flatMap((i) =>
     i.tabs && i.tabs.length > 1
       ? i.tabs.map((t) => ({ href: t.href, label: t.label, hint: t.hint, parent: i.label === t.label ? undefined : i.label, icon: t.icon || i.icon }))
       : [{ href: i.href, label: i.label, hint: i.hint || i.tabs?.[0]?.hint, icon: i.icon }],
   );
+  // The index of every admin page is not in the sidebar itself (its footer links to it).
+  if (area === "admin") pages.push({ href: ADMIN_INDEX_HREF, label: "Site administration", hint: "Every admin page in one searchable list", icon: "layoutGrid" });
+  return pages;
 }
+
+/** Site administration: every admin page in one searchable list. */
+export const ADMIN_INDEX_HREF = "/admin/site";
 
 /** The hub the current page is in, when it has two or more tabs this user can
  * open: the shell draws these as a tab strip at the top of the page. */
@@ -545,12 +569,28 @@ export function visibleAdminSections(roles: string[]): PortalNavGroup[] {
 /** One row of the sidebar: a plain link, or a section that opens in place. */
 export type SidebarEntry = { kind: "link"; item: SidebarItem } | { kind: "section"; section: SidebarGroup };
 
-/** The sidebar layout: always-visible links first, then the sections in
- * order. A section left with a single entry (after role filtering) is shown
- * in its place as a plain link rather than a one-item section. */
+/** Areas whose sidebar is long enough to need headed, collapsible groups.
+ * The others are short flat lists (seven or eight entries). */
+const GROUPED_AREAS: PortalArea[] = ["admin"];
+
+/** The sidebar layout. Flat areas: one link per entry, in the order written
+ * above. Grouped areas: the first group's entries are plain links at the top
+ * (the everyday destinations), then one section per remaining group, in order. */
 export function sidebarLayout(area: PortalArea, roles: string[]): SidebarEntry[] {
-  // One flat list in the order written above: no sections to open and close.
-  return visibleSidebar(area, roles).map((item) => ({ kind: "link", item }));
+  const items = visibleSidebar(area, roles);
+  if (!GROUPED_AREAS.includes(area)) return items.map((item) => ({ kind: "link", item }));
+  const firstGroup = SIDEBAR_NAV[area][0]?.group;
+  const out: SidebarEntry[] = [];
+  for (const item of items) {
+    if (!item.group || item.group === firstGroup) {
+      out.push({ kind: "link", item });
+      continue;
+    }
+    const last = out[out.length - 1];
+    if (last?.kind === "section" && last.section.label === item.group) last.section.items.push(item);
+    else out.push({ kind: "section", section: { label: item.group, icon: item.icon, items: [item] } });
+  }
+  return out;
 }
 
 export const AREA_SUBTITLE: Record<PortalArea, string> = {
@@ -560,15 +600,29 @@ export const AREA_SUBTITLE: Record<PortalArea, string> = {
   student: "Student portal",
 };
 
-/** The four places each kind of user goes most: the phone tab bar shows
- * these, and the phone "More" menu leaves them out so nothing appears twice.
- * Each is a sidebar entry's href (for a hub, any of its tabs). */
+/** The places each kind of user goes most, in priority order: the phone tab
+ * bar shows the first four this user can open (see mobileTabsFor), and the
+ * phone "More" menu leaves those out so nothing appears twice. Each is a
+ * sidebar entry's href (for a hub, any of its tabs). Extra entries are
+ * fallbacks for roles that can't open the earlier ones. */
 export const MOBILE_TABS: Record<PortalArea, string[]> = {
   student: ["/student/dashboard", "/student/todo", "/student/classes", "/student/revision"],
-  family: ["/family/dashboard", "/family/todo", "/family/classes", "/family/messages"],
+  family: ["/family/dashboard", "/family/todo", "/family/messages", "/family/classes"],
   teach: ["/teach/today", "/teach/classes", "/teach/review", "/teach/messages"],
-  admin: ["/admin/dashboard", "/admin/attendance", "/admin/messages", "/admin/calendar"],
+  admin: ["/admin/dashboard", "/admin/messages", "/admin/pupils", "/admin/attendance", "/admin/admissions", "/admin/calendar"],
 };
+
+/** The (at most four) sidebar entries in this user's phone tab bar. */
+export function mobileTabsFor(area: PortalArea, roles: string[]): SidebarItem[] {
+  const visible = visibleSidebar(area, roles);
+  const out: SidebarItem[] = [];
+  for (const href of MOBILE_TABS[area]) {
+    const item = visible.find((i) => itemHasHref(i, href));
+    if (item && !out.includes(item)) out.push(item);
+    if (out.length === 4) break;
+  }
+  return out;
+}
 
 /** Does this sidebar entry stand for the given href (its own, or one of its tabs)? */
 export function itemHasHref(item: SidebarItem, href: string): boolean {
@@ -576,7 +630,8 @@ export function itemHasHref(item: SidebarItem, href: string): boolean {
 }
 
 /** The sidebar layout without the given pages. A section left empty is
- * dropped, and one left with a single page becomes a plain link. */
+ * dropped; one left with a single page keeps its heading, so the groups stay
+ * where people expect them. */
 export function withoutPages(entries: SidebarEntry[], hrefs: string[]): SidebarEntry[] {
   if (!hrefs.length) return entries;
   const hidden = (i: SidebarItem) => hrefs.some((h) => itemHasHref(i, h));
@@ -587,8 +642,7 @@ export function withoutPages(entries: SidebarEntry[], hrefs: string[]): SidebarE
       continue;
     }
     const items = e.section.items.filter((i) => !hidden(i));
-    if (items.length === 1) out.push({ kind: "link", item: items[0] });
-    else if (items.length > 1) out.push({ kind: "section", section: { ...e.section, items } });
+    if (items.length > 0) out.push({ kind: "section", section: { ...e.section, items } });
   }
   return out;
 }

@@ -33,27 +33,41 @@ export function ThreadList({
       return (
         (t.name_a || "").toLowerCase().includes(needle) ||
         (t.name_b || "").toLowerCase().includes(needle) ||
-        (t.child_name || "").toLowerCase().includes(needle)
+        (t.child_name || "").toLowerCase().includes(needle) ||
+        (t.last_preview || "").toLowerCase().includes(needle)
       );
     });
   }, [threads, tab, q]);
 
   return (
     <div className="flex h-full min-h-0 flex-col">
-      <Tabs variant="switch" items={TABS.map((t) => ({ key: t.id, label: t.label }))} value={tab} onChange={setTab} label="Conversation type" />
+      <Tabs
+        variant="switch"
+        items={TABS.map((t) => ({
+          key: t.id,
+          label: t.label,
+          count: t.id === "all" ? threads.length : t.id === "flagged" ? threads.filter((x) => x.flagged_count > 0).length : threads.filter((x) => x.category === t.id).length,
+          countAlert: t.id === "flagged",
+        }))}
+        value={tab}
+        onChange={setTab}
+        label="Conversation type"
+      />
       <input
         type="search"
         value={q}
         onChange={(e) => setQ(e.target.value)}
-        placeholder="Search by participant name"
+        placeholder="Search names or latest message"
         aria-label="Search conversations"
         className="mt-3 w-full rounded-lg border border-ink/15 bg-white px-3 py-2 text-sm"
       />
       <ul className="mt-3 min-h-0 flex-1 divide-y divide-ink/10 overflow-y-auto rounded-lg border border-ink/10 bg-white">
-        {shown.length === 0 && <li className="p-4 text-sm text-ink/65">No conversations match.</li>}
+        {shown.length === 0 && <li className="p-4 text-sm text-ink/65">{threads.length === 0 ? "No conversations yet." : "No conversations match."}</li>}
         {shown.map((t) => (
           <li key={t.thread_id}>
             <button
+              type="button"
+              aria-current={activeId === t.thread_id ? "true" : undefined}
               onClick={() => onSelect(t.thread_id)}
               className={`block w-full px-3 py-2.5 text-left hover:bg-teal-50 ${activeId === t.thread_id ? "bg-teal-50" : ""}`}
             >

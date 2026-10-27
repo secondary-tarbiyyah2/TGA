@@ -96,7 +96,7 @@ export function YearsSection({ years, terms, reload }: Common & { years: Academi
                 {yTerms.length === 0 && (
                   <li className="text-ink/65">
                     No terms for this year yet. Reports and attendance summaries need them:{" "}
-                    <a href="/admin/calendar?tab=terms" className="font-medium text-teal-700 underline">
+                    <a href="/admin/calendar" className="font-medium text-teal-700 underline">
                       add this year&apos;s terms in Calendar
                     </a>
                     .
@@ -107,12 +107,12 @@ export function YearsSection({ years, terms, reload }: Common & { years: Academi
           );
         })}
       </div>
-      <div className="mt-4 grid gap-2 sm:grid-cols-4 sm:items-end">
+      <form onSubmit={(e) => { e.preventDefault(); void add(); }} className="mt-4 grid gap-2 sm:grid-cols-4 sm:items-end">
         <Field label="New year name"><input className={inputCls} placeholder="2026/27" value={form.label} onChange={(e) => setForm((s) => ({ ...s, label: e.target.value }))} /></Field>
         <Field label="Starts"><input type="date" className={inputCls} value={form.starts_on} onChange={(e) => setForm((s) => ({ ...s, starts_on: e.target.value }))} /></Field>
         <Field label="Ends"><input type="date" className={inputCls} value={form.ends_on} onChange={(e) => setForm((s) => ({ ...s, ends_on: e.target.value }))} /></Field>
-        <div><button type="button" className={`${primaryBtn} w-full sm:w-auto`} disabled={busy} onClick={add}>Add year</button></div>
-      </div>
+        <div><button type="submit" className={`${primaryBtn} w-full sm:w-auto`} disabled={busy}>Add year</button></div>
+      </form>
       {error && <div className="mt-3"><Notice tone="error">{error}</Notice></div>}
     </StepCard>
   );
@@ -191,11 +191,11 @@ export function YearGroupsSection({ yearGroups, classes, enrolments, reload }: C
           </li>
         ))}
       </ul>
-      <div className="mt-4 grid gap-2 sm:grid-cols-3 sm:items-end">
+      <form onSubmit={(e) => { e.preventDefault(); void add(); }} className="mt-4 grid gap-2 sm:grid-cols-3 sm:items-end">
         <Field label="New year group"><input className={inputCls} placeholder="Year 7" value={name} onChange={(e) => setName(e.target.value)} /></Field>
         <Field label="Capacity (optional)"><input type="text" min={1} inputMode="numeric" className={inputCls} value={capacity} onChange={(e) => setCapacity(e.target.value)} /></Field>
-        <div><button type="button" className={`${primaryBtn} w-full sm:w-auto`} disabled={busy} onClick={add}>Add year group</button></div>
-      </div>
+        <div><button type="submit" className={`${primaryBtn} w-full sm:w-auto`} disabled={busy}>Add year group</button></div>
+      </form>
       {error && <div className="mt-3"><Notice tone="error">{error}</Notice></div>}
     </StepCard>
   );
@@ -252,11 +252,11 @@ export function SubjectsSection({ subjects, reload }: Common & { subjects: Subje
           </li>
         ))}
       </ul>
-      <div className="mt-4 grid gap-2 sm:grid-cols-3 sm:items-end">
+      <form onSubmit={(e) => { e.preventDefault(); void add(); }} className="mt-4 grid gap-2 sm:grid-cols-3 sm:items-end">
         <Field label="New subject"><input className={inputCls} placeholder="Arabic" value={form.name} onChange={(e) => setForm((s) => ({ ...s, name: e.target.value }))} /></Field>
         <label className="flex items-center gap-2 pb-2 text-sm text-ink/70"><input type="checkbox" checked={form.is_core} onChange={(e) => setForm((s) => ({ ...s, is_core: e.target.checked }))} /> Core subject</label>
-        <div><button type="button" className={`${primaryBtn} w-full sm:w-auto`} disabled={busy} onClick={add}>Add subject</button></div>
-      </div>
+        <div><button type="submit" className={`${primaryBtn} w-full sm:w-auto`} disabled={busy}>Add subject</button></div>
+      </form>
       {error && <div className="mt-3"><Notice tone="error">{error}</Notice></div>}
     </StepCard>
   );

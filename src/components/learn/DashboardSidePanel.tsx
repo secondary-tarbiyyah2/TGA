@@ -46,7 +46,7 @@ function Timeline({ items }: { items: TimelineItem[] | null }) {
           <ul className="space-y-1">
             {list.map((i) => (
               <li key={i.key}>
-                <Link href={i.href} className="flex gap-2.5 rounded-lg px-2 py-1.5 hover:bg-cream">
+                <Link href={i.href} className="flex min-h-11 gap-2.5 rounded-lg px-2 py-1.5 hover:bg-cream">
                   <span aria-hidden="true" className="mt-1.5 h-2 w-2 shrink-0 rounded-full" style={{ backgroundColor: classColour(i.classId) }} />
                   <span className="min-w-0">
                     <span className="block truncate text-sm font-medium text-ink">{i.title}</span>
@@ -197,7 +197,7 @@ export function DashboardWithPanel({ viewer, children }: { viewer: Viewer; child
       <div className="min-w-0">
         {hidden && (
           <div className="mb-3 hidden justify-end xl:flex">
-            <button type="button" onClick={toggle} className="rounded-lg px-2.5 py-1.5 text-xs font-medium text-ink/65 hover:bg-white hover:text-ink">
+            <button type="button" onClick={toggle} className="inline-flex min-h-9 items-center rounded-lg px-2.5 text-xs font-medium text-ink/65 hover:bg-white hover:text-ink">
               Show side panel
             </button>
           </div>
@@ -222,7 +222,7 @@ export function DashboardWithPanel({ viewer, children }: { viewer: Viewer; child
             </Block>
           )}
           <div className="hidden justify-end xl:flex">
-            <button type="button" onClick={toggle} className="rounded-lg px-2.5 py-1.5 text-xs font-medium text-ink/65 hover:bg-white hover:text-ink">
+            <button type="button" onClick={toggle} className="inline-flex min-h-9 items-center rounded-lg px-2.5 text-xs font-medium text-ink/65 hover:bg-white hover:text-ink">
               Hide side panel
             </button>
           </div>

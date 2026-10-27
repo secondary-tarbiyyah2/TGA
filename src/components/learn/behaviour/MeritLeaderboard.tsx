@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { ukToday } from "@/lib/learn/ukTime";
 
 // Celebratory but tasteful: positive merits only, first names + surname
 // initial, top few. All data comes from merit_leaderboard() (0068), which
@@ -34,7 +35,7 @@ async function termDays(): Promise<number | null> {
   const supabase = getSupabaseClient();
   if (!supabase) return null;
   const today = new Date();
-  const key = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
+  const key = ukToday(today);
   const { data } = await supabase.from("terms").select("starts_on").lte("starts_on", key).gte("ends_on", key).order("starts_on", { ascending: false }).limit(1).maybeSingle();
   const start = (data as { starts_on?: string } | null)?.starts_on;
   if (!start) return null;

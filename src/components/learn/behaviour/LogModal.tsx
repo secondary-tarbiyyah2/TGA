@@ -76,7 +76,10 @@ export function LogModal({
 
   const toggle = (s: StudentOption) => {
     const k = keyOf(s);
-    setPicked((p) => (p.includes(k) ? p.filter((x) => x !== k) : [...p, k]));
+    // A pupil in two classes is listed twice; picking them again swaps the class
+    // rather than logging the same record twice.
+    const child = k.split(":")[0];
+    setPicked((p) => (p.includes(k) ? p.filter((x) => x !== k) : [...p.filter((x) => x.split(":")[0] !== child), k]));
   };
 
   const save = async () => {
@@ -101,7 +104,9 @@ export function LogModal({
     const { data, error: err } = await supabase.from("behaviour_records").insert(rows).select("id, child_id");
     if (err) {
       setBusy(false);
-      return setError("Couldn't save. You can only log for students you teach.");
+      // Teachers can only log for pupils they teach (RLS); admins can log for anyone,
+      // so don't blame permissions when the cause may be something else.
+      return setError(`Couldn't save: ${err.message}. Teachers can only log for pupils they teach.`);
     }
     if (kind === "demerit" && detention) {
       const saved = (data as { id: string; child_id: string }[] | null) || [];
@@ -115,8 +120,10 @@ export function LogModal({
       const { error: dErr } = await supabase.from("detentions").insert(dets);
       if (dErr) {
         setBusy(false);
+        // onSaved usually closes this dialog, so say it before it goes.
+        window.alert("The record was saved, but the follow-up session could not be created, so it is not on the register yet.");
         onSaved();
-        return setError("The record was saved but the follow-up session could not be created.");
+        return;
       }
     }
     setBusy(false);

@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { learnRoleLabel, type LearnRole } from "@/lib/learn/session";
+import { formatDateKey, ukToday } from "@/lib/learn/ukTime";
 
 type StaffRow = { user_id: string; full_name: string; role: string };
 type Vetting = {
@@ -13,7 +15,13 @@ type Vetting = {
   right_to_work_verified: boolean;
   right_to_work_document_type: string | null;
   qualification_check_done: boolean;
+  right_to_work_verified_by?: string | null;
+  right_to_work_verified_date?: string | null;
+  references_received_date?: string | null;
+  qualification_check_date?: string | null;
 };
+
+const day = (k: string | null | undefined) => (k ? formatDateKey(k, { day: "numeric", month: "short", year: "numeric" }) : "–");
 
 const EMPTY_FORM = {
   dbs_check_date: "", dbs_certificate_reference: "", dbs_renewal_due: "",
@@ -33,6 +41,7 @@ export function SingleCentralRecord() {
   const [editing, setEditing] = useState<string | null>(null);
   const [form, setForm] = useState(EMPTY_FORM);
   const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   // Date.now() is impure and can't be called during render, captured once
   // via effect, same pattern as IncidentBreachLog.
   const [now, setNow] = useState<number | null>(null);
@@ -68,18 +77,36 @@ export function SingleCentralRecord() {
       right_to_work_verified: existing.right_to_work_verified, right_to_work_document_type: existing.right_to_work_document_type || "",
       qualification_check_done: existing.qualification_check_done,
     } : EMPTY_FORM);
+    setError(null);
     setEditing(userId);
   };
 
   const save = async (userId: string) => {
     if (!supabase) return;
     setBusy(true);
+    setError(null);
     const { data: { user } } = await supabase.auth.getUser();
-    await supabase.from("staff_vetting_records").upsert(
-      { user_id: userId, ...form, dbs_check_date: form.dbs_check_date || null, dbs_renewal_due: form.dbs_renewal_due || null, right_to_work_verified_by: form.right_to_work_verified ? user?.id : null, right_to_work_verified_date: form.right_to_work_verified ? new Date().toISOString().slice(0, 10) : null, references_received_date: form.references_received ? new Date().toISOString().slice(0, 10) : null, qualification_check_date: form.qualification_check_done ? new Date().toISOString().slice(0, 10) : null },
+    // Keep the original check dates and verifier when a box was already
+    // ticked: every save used to re-stamp them with today's date and the
+    // current editor, so the record no longer showed when a check was done.
+    const prev = records[userId];
+    const today = ukToday();
+    const keep = (wasDone: boolean | undefined, nowDone: boolean, date: string | null | undefined) => (nowDone ? (wasDone && date ? date : today) : null);
+    const { error: err } = await supabase.from("staff_vetting_records").upsert(
+      {
+        user_id: userId,
+        ...form,
+        dbs_check_date: form.dbs_check_date || null,
+        dbs_renewal_due: form.dbs_renewal_due || null,
+        right_to_work_verified_by: form.right_to_work_verified ? (prev?.right_to_work_verified && prev.right_to_work_verified_by ? prev.right_to_work_verified_by : user?.id) : null,
+        right_to_work_verified_date: keep(prev?.right_to_work_verified, form.right_to_work_verified, prev?.right_to_work_verified_date),
+        references_received_date: keep(prev?.references_received, form.references_received, prev?.references_received_date),
+        qualification_check_date: keep(prev?.qualification_check_done, form.qualification_check_done, prev?.qualification_check_date),
+      },
       { onConflict: "user_id" }
     );
     setBusy(false);
+    if (err) return setError("Couldn't save this record. Only the Headteacher or an Admin can.");
     setEditing(null);
     await load();
   };
@@ -97,17 +124,17 @@ export function SingleCentralRecord() {
           return (
             <div key={s.user_id} className={`rounded-lg border p-3 text-sm ${v && isExpiring(v.dbs_renewal_due) ? "border-red-300 bg-red-50" : "border-gold-light/40"}`}>
               <div className="flex items-center justify-between">
-                <p className="font-semibold">{s.full_name} <span className="font-normal text-ink/65">({s.role.replace("_", " ")})</span></p>
+                <p className="font-semibold">{s.full_name} <span className="font-normal text-ink/65">({learnRoleLabel(s.role as LearnRole) || s.role})</span></p>
                 <button type="button" onClick={() => startEdit(s.user_id)} className="rounded-lg border border-gold-light px-3 py-1.5 text-xs hover:bg-cream bg-white text-ink/80 font-medium transition-colors">
                   {v ? "Edit" : "Add record"}
                 </button>
               </div>
               {v ? (
                 <p className="mt-1 text-xs text-ink/65">
-                  DBS: {v.dbs_check_date || "–"} (ref {v.dbs_certificate_reference || "–"}), renewal due {v.dbs_renewal_due || "–"}
-                  {isExpiring(v.dbs_renewal_due) && <span className="font-semibold text-red-700">– due soon/overdue</span>}
-                  {" · "}References: {v.references_received ? "received" : "not received"} · Right to work: {v.right_to_work_verified ? `verified (${v.right_to_work_document_type || "type not set"})` : "not verified"}
-                  {" · "}Qualifications: {v.qualification_check_done ? "checked" : "not checked"}
+                  DBS: {day(v.dbs_check_date)} (ref {v.dbs_certificate_reference || "–"}), renewal due {day(v.dbs_renewal_due)}
+                  {isExpiring(v.dbs_renewal_due) && <span className="ml-1 font-semibold text-red-700">(due soon or overdue)</span>}
+                  {" · "}References: {v.references_received ? `received${v.references_received_date ? ` ${day(v.references_received_date)}` : ""}` : "not received"} · Right to work: {v.right_to_work_verified ? `verified${v.right_to_work_verified_date ? ` ${day(v.right_to_work_verified_date)}` : ""} (${v.right_to_work_document_type || "type not set"})` : "not verified"}
+                  {" · "}Qualifications: {v.qualification_check_done ? `checked${v.qualification_check_date ? ` ${day(v.qualification_check_date)}` : ""}` : "not checked"}
                 </p>
               ) : (
                 <p className="mt-1 text-xs text-red-700">No vetting record on file.</p>
@@ -136,6 +163,7 @@ export function SingleCentralRecord() {
                   <label className="flex items-center gap-2 text-xs text-ink/70">
                     <input type="checkbox" checked={form.qualification_check_done} onChange={(e) => setForm({ ...form, qualification_check_done: e.target.checked })} /> Qualifications checked
                   </label>
+                  {error && <p role="alert" className="text-xs text-red-700 sm:col-span-2">{error}</p>}
                   <div className="sm:col-span-2 flex gap-2">
                     <button type="button" onClick={() => save(s.user_id)} disabled={busy} className="rounded-lg bg-gold-700 px-4 py-1.5 text-sm font-semibold disabled:opacity-60 text-white hover:bg-gold-900 transition-colors">Save</button>
                     <button type="button" onClick={() => setEditing(null)} className="rounded-lg border border-gold-light px-4 py-1.5 text-sm bg-white text-ink/80 hover:bg-cream font-medium transition-colors">Cancel</button>

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { Card } from "@/components/learn/Card";
+import { SaveBar } from "./SaveBar";
 import { triggerPublish } from "@/lib/learn/publishSiteContent";
 import { formatGBP } from "@/lib/format";
 import type { Discount } from "@/content/seed";
@@ -28,10 +29,17 @@ type SettingsDraft = {
 type DiscountDraft = { key: string; label: string; type: "percent" | "fixedAmount"; value: string; note: string; eligibility: string; auto: boolean };
 
 const input = "mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm";
+/** What the form holds, for spotting unsaved changes (row keys are left out as they are only for React). */
+const withoutKey = <T extends { key: string }>(x: T) => JSON.stringify({ ...x, key: undefined });
+const snap = (b: BandDraft[], s: SettingsDraft, d: DiscountDraft[], removed: string[]) => JSON.stringify({ b: b.map(withoutKey), s, d: d.map(withoutKey), removed });
 let keyCounter = 0;
 const newKey = () => `new-${++keyCounter}`;
 
-const numOrNull = (v: string): number | null => (v.trim() === "" || !Number.isFinite(Number(v)) ? null : Number(v));
+/** "£2,130.00" or "2130" -> 2130; blank or not a number -> null. */
+const numOrNull = (v: string): number | null => {
+  const t = v.replace(/[£,\s%]/g, "");
+  return t === "" || !Number.isFinite(Number(t)) ? null : Number(t);
+};
 
 /**
  * Fees editor (/learn/admin/content -> Fees). The ANNUAL fee is the only fee
@@ -48,6 +56,7 @@ export function FeesEditor() {
   const [discountDrafts, setDiscountDrafts] = useState<DiscountDraft[]>([]);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
+  const [savedJson, setSavedJson] = useState("");
 
   useEffect(() => {
     if (!supabase) return;
@@ -59,10 +68,11 @@ export function FeesEditor() {
       ]);
       if (cancelled) return;
       const rows = (bandRes.data as { id: string; year_group_range: string; annual_fee: number; notes: string | null }[]) || [];
-      setBands(rows.map((r) => ({ key: r.id, id: r.id, year_group_range: r.year_group_range, annual_fee: String(r.annual_fee), notes: r.notes || "" })));
+      const loadedBands = rows.map((r) => ({ key: r.id, id: r.id, year_group_range: r.year_group_range, annual_fee: String(r.annual_fee), notes: r.notes || "" }));
+      setBands(loadedBands);
       const s = (setRes.data as Record<string, unknown> | null) || {};
       const fs = sanitiseFeeSettings({ terms: s.fee_terms, instalments: s.fee_instalments });
-      setSettings({
+      const loadedSettings: SettingsDraft = {
         fee_terms: String(fs.terms),
         fee_instalments: String(fs.instalments),
         application_fee: s.application_fee != null ? String(s.application_fee) : String(FEE_POLICY_DEFAULTS.applicationFee),
@@ -73,9 +83,10 @@ export function FeesEditor() {
         admissions_deposit_amount: s.admissions_deposit_amount != null ? String(s.admissions_deposit_amount) : "",
         sibling_discount_percent: s.sibling_discount_percent != null ? String(s.sibling_discount_percent) : "",
         sibling_discount_note: typeof s.sibling_discount_note === "string" ? s.sibling_discount_note : "",
-      });
+      };
+      setSettings(loadedSettings);
       const cat = Array.isArray(s.discounts) ? (s.discounts as Discount[]) : [];
-      setDiscountDrafts(cat.map((d) => ({
+      const loadedDiscounts: DiscountDraft[] = cat.map((d) => ({
         key: newKey(),
         label: d.label ?? "",
         type: d.type === "fixedAmount" ? "fixedAmount" : "percent",
@@ -83,7 +94,9 @@ export function FeesEditor() {
         note: d.note ?? "",
         eligibility: d.eligibilityDescription ?? "",
         auto: !!d.appliesAutomatically,
-      })));
+      }));
+      setDiscountDrafts(loadedDiscounts);
+      setSavedJson(snap(loadedBands, loadedSettings, loadedDiscounts, []));
     })();
     return () => {
       cancelled = true;
@@ -91,6 +104,7 @@ export function FeesEditor() {
   }, [supabase]);
 
   if (!bands || !settings) return <p className="text-sm text-ink/65">Loading…</p>;
+  const dirty = savedJson !== "" && snap(bands, settings, discountDrafts, removedIds) !== savedJson;
 
   const terms = Number(settings.fee_terms);
   const instalments = Number(settings.fee_instalments);
@@ -194,7 +208,9 @@ export function FeesEditor() {
     // Reload so new rows pick up their ids (avoids duplicate inserts on a second save).
     const { data } = await supabase.from("fee_bands").select("id, year_group_range, annual_fee, notes").order("order_index");
     const rows = (data as { id: string; year_group_range: string; annual_fee: number; notes: string | null }[]) || [];
-    setBands(rows.map((r) => ({ key: r.id, id: r.id, year_group_range: r.year_group_range, annual_fee: String(r.annual_fee), notes: r.notes || "" })));
+    const reloaded = rows.map((r) => ({ key: r.id, id: r.id, year_group_range: r.year_group_range, annual_fee: String(r.annual_fee), notes: r.notes || "" }));
+    setBands(reloaded);
+    setSavedJson(snap(reloaded, settings, discountDrafts, []));
 
     const publishMessage = await triggerPublish();
     setSaving(false);
@@ -206,7 +222,7 @@ export function FeesEditor() {
       <Card title="Fee schedule settings" description="Applies to every band. The two-payment and monthly amounts are worked out from the annual fee, you never type them.">
         <div className="grid gap-4 sm:grid-cols-2">
           <label className="text-sm text-ink">
-            Number of terms
+            Number of payments (instalment plan)
             <input type="text" inputMode="decimal" min={1} max={MAX_TERMS} step={1} value={settings.fee_terms} onChange={(e) => setSettings({ ...settings, fee_terms: e.target.value })} className={input} />
             <span className="mt-0.5 block text-xs text-ink/65">Default {FEE_DEFAULTS.terms} (Fees Policy: 8 Jan 2027 and 28 Mar 2027). Each payment = annual fee ÷ number of payments.</span>
           </label>
@@ -315,7 +331,7 @@ export function FeesEditor() {
         >
           Add a discount
         </button>
-        <p className="mt-2 text-xs text-ink/65">Save with the &quot;Save fees&quot; button below.</p>
+
       </Card>
 
       <Card title="Fee bands" description="Name, order, annual fee and an optional note. Published on the Fees page and used by the fee estimator.">
@@ -397,16 +413,21 @@ export function FeesEditor() {
         <p className="mt-3 rounded-lg bg-gold-100 px-3 py-2 text-sm text-ink/80">
           <strong>Reminder:</strong> {FEES_POLICY_REMINDER} The policy document is a separate PDF and is not updated by this page.
         </p>
-        {problems.length > 0 && (
-          <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-red-700" role="alert">
-            {problems.map((p) => <li key={p}>{p}</li>)}
-          </ul>
-        )}
-        <button type="button" onClick={save} disabled={saving || problems.length > 0} className="mt-5 rounded-full bg-gold-700 px-5 py-2.5 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-60">
-          {saving ? "Saving…" : "Save fees"}
-        </button>
-        {message && <p className="mt-2 text-sm text-ink/70">{message}</p>}
       </Card>
+      {problems.length > 0 && (
+        <ul className="list-disc space-y-1 rounded-xl border border-red-200 bg-red-50 py-3 pl-8 pr-4 text-sm text-red-800" role="alert">
+          {problems.map((p) => <li key={p}>{p}</li>)}
+        </ul>
+      )}
+      <SaveBar
+        onSave={save}
+        saving={saving}
+        dirty={dirty}
+        disabled={problems.length > 0}
+        label="Save fees"
+        message={problems.length > 0 ? `Fix ${problems.length} problem${problems.length === 1 ? "" : "s"} above before saving.` : message}
+        error={problems.length > 0 || !!message?.startsWith("Could not")}
+      />
     </div>
   );
 }

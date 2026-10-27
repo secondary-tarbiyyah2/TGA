@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { localDateKey } from "@/lib/learn/calendar";
+import { ukDaysAgo } from "@/lib/learn/ukTime";
 
 export type NoteStatus = "undecided" | "authorised" | "unauthorised";
 export type AbsenceKind = "authorised" | "unauthorised" | "unexplained";
@@ -36,10 +36,9 @@ export const STATUS_LABEL: Record<NoteStatus, string> = {
   unauthorised: "Not authorised",
 };
 
+/** The UK date `n` days ago: the school runs on UK time whatever the browser's zone. */
 export function dateKeyDaysAgo(n: number): string {
-  const d = new Date();
-  d.setDate(d.getDate() - n);
-  return localDateKey(d);
+  return ukDaysAgo(n);
 }
 
 export function formatDay(key: string): string {
@@ -175,6 +174,8 @@ export function useAbsenceData(from: string, to: string) {
   const [tick, setTick] = useState(0);
 
   useEffect(() => {
+    // No range means "not wanted" (e.g. the dashboard for a role that can't read absences).
+    if (!from || !to) return;
     let cancelled = false;
     (async () => {
       setError(null);

@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { callEdgeFunction, edgeErrorMessage } from "@/lib/learn/edge";
-import { localDateKey } from "@/lib/learn/calendar";
+import { shiftDateKey, ukToday } from "@/lib/learn/ukTime";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { fetchTimetablePeriods, getPublishedRunId, timeLabel, type TimetablePeriod, type TimetableSlot } from "@/lib/learn/timetable";
 import { ui } from "@/components/learn/ui";
@@ -22,11 +22,7 @@ const MAX_DAYS = 31;
 const hm = (t: string): string => t.slice(0, 5);
 const overlaps = (aStart: string, aEnd: string, bStart: string, bEnd: string): boolean => hm(aStart) < hm(bEnd) && hm(bStart) < hm(aEnd);
 const weekdayOf = (dateKey: string): number => new Date(`${dateKey}T12:00:00`).getDay();
-const nextDay = (dateKey: string): string => {
-  const d = new Date(`${dateKey}T12:00:00`);
-  d.setDate(d.getDate() + 1);
-  return localDateKey(d);
-};
+const nextDay = (dateKey: string): string => shiftDateKey(dateKey, 1);
 const dateLabel = (dateKey: string): string => new Date(`${dateKey}T12:00:00`).toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" });
 
 /**
@@ -102,11 +98,11 @@ export function CoverSuggestions() {
   const [message, setMessage] = useState<string | null>(null);
   const [busy, setBusy] = useState<string | null>(null);
   const [teacherId, setTeacherId] = useState("");
-  const [fromDate, setFromDate] = useState(() => localDateKey(new Date()));
-  const [toDate, setToDate] = useState(() => localDateKey(new Date()));
+  const [fromDate, setFromDate] = useState(() => ukToday());
+  const [toDate, setToDate] = useState(() => ukToday());
   const [reason, setReason] = useState("");
 
-  const today = localDateKey(new Date());
+  const today = ukToday();
 
   const load = useCallback(async () => {
     const supabase = getSupabaseClient();
@@ -120,8 +116,8 @@ export function CoverSuggestions() {
             .select("id, run_id, class_id, subject_id, teacher_user_id, virtual_session_id, weekday, start_time, end_time, classes(name, year_group), subjects(name)")
             .eq("run_id", runId)
         : Promise.resolve({ data: [] as unknown[], error: null }),
-      supabase.from("teacher_absences").select("id, teacher_user_id, starts_on, ends_on, reason").gte("ends_on", localDateKey(new Date())).order("starts_on"),
-      supabase.from("cover_assignments").select("id, slot_id, cover_date, covering_teacher_user_id").gte("cover_date", localDateKey(new Date())),
+      supabase.from("teacher_absences").select("id, teacher_user_id, starts_on, ends_on, reason").gte("ends_on", ukToday()).order("starts_on"),
+      supabase.from("cover_assignments").select("id, slot_id, cover_date, covering_teacher_user_id").gte("cover_date", ukToday()),
       supabase.from("class_subject_teachers").select("teacher_id, subject_id"),
       fetchTimetablePeriods(),
     ]);
@@ -166,6 +162,7 @@ export function CoverSuggestions() {
   const removeAbsence = async (id: string) => {
     const supabase = getSupabaseClient();
     if (!supabase) return;
+    if (!window.confirm("Remove this teacher absence? Cover already assigned stays in place.")) return;
     setBusy(id);
     const { error: err } = await supabase.from("teacher_absences").delete().eq("id", id);
     setBusy(null);
@@ -224,11 +221,19 @@ export function CoverSuggestions() {
           </label>
           <label className="block text-xs font-medium text-ink/70">
             First day
-            <input type="date" value={fromDate} onChange={(e) => setFromDate(e.target.value)} className={fieldCls} />
+            <input
+              type="date"
+              value={fromDate}
+              onChange={(e) => {
+                setFromDate(e.target.value);
+                if (toDate < e.target.value) setToDate(e.target.value);
+              }}
+              className={fieldCls}
+            />
           </label>
           <label className="block text-xs font-medium text-ink/70">
             Last day
-            <input type="date" value={toDate} onChange={(e) => setToDate(e.target.value)} className={fieldCls} />
+            <input type="date" value={toDate} min={fromDate} onChange={(e) => setToDate(e.target.value)} className={fieldCls} />
           </label>
           <label className="block text-xs font-medium text-ink/70">
             Reason (optional)
@@ -242,7 +247,8 @@ export function CoverSuggestions() {
 
       {error && <p className="rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-800">{error}</p>}
       {message && (
-        <p role="status" className="rounded-lg border border-gold-light bg-cream px-4 py-2 text-sm text-ink/80">
+        // Sticky, so the result of "Assign cover" far down the list is still seen.
+        <p role="status" className="sticky top-2 z-10 rounded-lg border border-gold-light bg-cream px-4 py-2 text-sm text-ink/80 shadow-sm">
           {message}
         </p>
       )}

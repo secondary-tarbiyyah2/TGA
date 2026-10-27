@@ -60,6 +60,7 @@ function ReviewCard({ review, onChanged }: { review: ReviewRow; onChanged: () =>
 
   async function save(complete: boolean) {
     if (!supabase) return;
+    if (complete && !window.confirm("Complete this review? It is locked once completed and your name is recorded as the reviewer.")) return;
     setBusy(true);
     setError(null);
     const { error: err } = await supabase
@@ -189,6 +190,17 @@ export function SafeguardingReviews() {
 
   // Nothing to show and nothing ever opened: stay out of the way.
   if (rows !== null && rows.length === 0) return null;
+  // All done: one line rather than a full card above the dashboard.
+  if (rows !== null && open.length === 0 && !showDone) {
+    return (
+      <p className="rounded-xl border border-green-200 bg-green-50 px-4 py-2 text-sm text-green-900">
+        Safeguarding reviews: all complete.{" "}
+        <button type="button" onClick={() => setShowDone(true)} className="font-medium underline">
+          Show {closed.length} completed
+        </button>
+      </p>
+    );
+  }
 
   return (
     <div className="rounded-2xl border border-gold-light/50 bg-white p-6" aria-label="Safeguarding reviews">

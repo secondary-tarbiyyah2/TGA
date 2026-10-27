@@ -5,7 +5,7 @@ export type Conflict = { id: string; severity: "hard" | "soft"; message: string;
 export type Teacher = { id: string; full_name: string };
 export type YearOpt = { id: string; label: string; starts_on: string; ends_on: string };
 export type TermOpt = { id: string; name: string; academic_year_id: string };
-export type ClassOpt = { id: string; name: string; subject_id: string | null; academic_year_id: string | null; weekly_lessons: number };
+export type ClassOpt = { id: string; name: string; subject_id: string | null; academic_year_id: string | null; weekly_lessons: number; year_group?: string | null };
 export type ClassTeacherLink = { user_id: string; scope_id: string };
 export type Availability = { teacher_user_id: string; academic_year_id: string; weekday: number; start_time: string; end_time: string };
 export type Protected = { name: string; academic_year_id: string; weekday: number; start_time: string; end_time: string };
@@ -80,4 +80,32 @@ export function subjectColours(subjects: SubjectOpt[]): (subjectId: string | nul
     const h = Math.round((i * 137.508) % 360);
     return { bg: `hsl(${h} 70% 91%)`, border: `hsl(${h} 50% 48%)`, text: `hsl(${h} 60% 20%)` };
   };
+}
+
+/** Today's date in UK time as YYYY-MM-DD (toISOString is UTC, a day behind just after midnight in BST). */
+export function ukIsoDate(d: Date = new Date()): string {
+  return new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit" }).format(d);
+}
+
+/** A YYYY-MM-DD date `n` days after `from` (default: today in UK time). */
+export function addIsoDays(n: number, from: string = ukIsoDate()): string {
+  const d = new Date(`${from}T12:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + n);
+  return d.toISOString().slice(0, 10);
+}
+
+/** Short UK date for a timestamp or YYYY-MM-DD, e.g. "27 Oct 2026". */
+export function ukShortDate(value: string): string {
+  const d = /^\d{4}-\d{2}-\d{2}$/.test(value) ? new Date(`${value}T12:00:00Z`) : new Date(value);
+  if (Number.isNaN(d.getTime())) return value.slice(0, 10);
+  return d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "Europe/London" });
+}
+
+/** The academic year running today, else the next one to start, else the newest. */
+export function defaultYearId(years: YearOpt[]): string {
+  const today = ukIsoDate();
+  const current = years.find((y) => y.starts_on <= today && today <= y.ends_on);
+  if (current) return current.id;
+  const upcoming = [...years].filter((y) => y.starts_on > today).sort((a, b) => a.starts_on.localeCompare(b.starts_on))[0];
+  return upcoming?.id || years[0]?.id || "";
 }

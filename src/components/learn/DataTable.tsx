@@ -2,6 +2,7 @@
 
 import { useMemo, useState, type ReactNode } from "react";
 import { Icon } from "@/components/learn/Icon";
+import { btn, ui } from "@/components/learn/ui";
 import { saveCsv, toCsv, type CsvCell } from "@/lib/learn/csv";
 
 /**
@@ -110,12 +111,11 @@ export function DataTable<T>({
 
   const alignCls = (a?: Column<T>["align"]) => (a === "right" ? "text-right" : a === "center" ? "text-center" : "text-left");
   const hasToolbar = !!search || !!filters || !!csvName;
-  const control = "rounded-lg border border-gold-light bg-white px-3 py-2 text-sm text-ink";
 
   return (
     <div className="space-y-3">
       {hasToolbar && (
-        <div className="flex flex-wrap items-center gap-2">
+        <div className={ui.toolbar}>
           {search && (
             <input
               type="search"
@@ -126,13 +126,13 @@ export function DataTable<T>({
               }}
               placeholder={search.placeholder || "Search"}
               aria-label={search.placeholder || "Search"}
-              className={`${control} min-w-[12rem] flex-1`}
+              className={`${ui.input} !w-auto min-w-[12rem] flex-1`}
             />
           )}
           {filters}
           {csvName && (
-            <button type="button" onClick={downloadCsv} disabled={!shown.length} className={`${control} ml-auto inline-flex items-center gap-1.5 font-medium hover:bg-cream disabled:opacity-50`}>
-              <Icon name="download" className="h-4 w-4" />
+            <button type="button" onClick={downloadCsv} disabled={!shown.length} className={`${btn("secondary")} ml-auto`}>
+              <Icon name="download" size="sm" />
               Download CSV
             </button>
           )}
@@ -165,11 +165,9 @@ export function DataTable<T>({
                         className={`px-4 py-2.5 text-xs font-semibold uppercase tracking-wide text-ink/70 ${alignCls(c.align)}`}
                       >
                         {c.sort ? (
-                          <button type="button" onClick={() => toggleSort(c.key)} className={`inline-flex items-center gap-1 uppercase tracking-wide hover:text-teal-800 ${active ? "text-teal-800" : ""}`}>
+                          <button type="button" onClick={() => toggleSort(c.key)} className={`-mx-1 inline-flex items-center gap-1 rounded px-1 uppercase tracking-wide hover:text-teal-700 ${active ? "text-teal-700" : ""}`}>
                             {c.header}
-                            <span aria-hidden="true" className="text-[0.75rem]">
-                              {active ? (sort!.dir === "asc" ? "▲" : "▼") : "↕"}
-                            </span>
+                            <Icon name={active ? (sort!.dir === "asc" ? "chevronUp" : "chevronDown") : "chevronDown"} className={`h-3.5 w-3.5 ${active ? "" : "opacity-35"}`} strokeWidth={2.25} />
                           </button>
                         ) : (
                           c.header
@@ -198,7 +196,7 @@ export function DataTable<T>({
             {pageRows.map((r) => {
               const [first, ...rest] = columns.filter((c) => !c.hideOnPhone);
               return (
-                <li key={rowKey(r)} className={`rounded-2xl border border-gold-light bg-white p-3 ${rowClassName?.(r) || ""}`}>
+                <li key={rowKey(r)} className={`rounded-2xl border border-gold-light bg-white p-4 ${rowClassName?.(r) || ""}`}>
                   <div className="font-medium text-ink">{first.cell(r)}</div>
                   <dl className="mt-2 grid grid-cols-[auto_minmax(0,1fr)] gap-x-3 gap-y-1 text-sm">
                     {rest.map((c) => (
@@ -227,7 +225,7 @@ export function DataTable<T>({
                     setSize(Number(e.target.value));
                     setPage(0);
                   }}
-                  className="rounded-lg border border-gold-light bg-white px-2 py-1 text-sm"
+                  className={`${ui.select} !w-auto !py-1 pl-2.5 sm:!min-h-8`}
                 >
                   {PAGE_SIZES.map((n) => (
                     <option key={n} value={n}>
@@ -238,14 +236,16 @@ export function DataTable<T>({
               </label>
               {pages > 1 && (
                 <nav aria-label="Pages" className="flex items-center gap-1">
-                  <button type="button" onClick={() => setPage(current - 1)} disabled={current === 0} className="rounded-lg border border-gold-light bg-white px-2.5 py-1 hover:bg-cream disabled:opacity-40">
-                    ‹ Previous
+                  <button type="button" onClick={() => setPage(current - 1)} disabled={current === 0} className={btn("secondary", "sm")}>
+                    <Icon name="chevronLeft" size="sm" />
+                    Previous
                   </button>
                   <span className="px-1 tabular-nums">
                     {current + 1} / {pages}
                   </span>
-                  <button type="button" onClick={() => setPage(current + 1)} disabled={current >= pages - 1} className="rounded-lg border border-gold-light bg-white px-2.5 py-1 hover:bg-cream disabled:opacity-40">
-                    Next ›
+                  <button type="button" onClick={() => setPage(current + 1)} disabled={current >= pages - 1} className={btn("secondary", "sm")}>
+                    Next
+                    <Icon name="chevronRight" size="sm" />
                   </button>
                 </nav>
               )}

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { localDateKey } from "@/lib/learn/calendar";
+import { ukDaysAgo, ukToday } from "@/lib/learn/ukTime";
 import { Register, type Status } from "@/components/learn/attendance/Register";
 import { useClassRoster } from "@/components/learn/class/PupilPicker";
 
@@ -26,9 +26,7 @@ export function rateOf(marks: Mark[]): number | null {
 export async function loadClassAttendance(classId: string): Promise<{ lessons: Lesson[]; marks: Mark[] } | null> {
   const supabase = getSupabaseClient();
   if (!supabase) return null;
-  const today = localDateKey(new Date());
-  const from = new Date();
-  from.setDate(from.getDate() - LOOKBACK_DAYS);
+  const today = ukToday();
   const { data: slots } = await supabase.from("timetable_slots").select("id").eq("class_id", classId);
   const slotIds = ((slots as { id: string }[] | null) || []).map((s) => s.id);
   if (!slotIds.length) return { lessons: [], marks: [] };
@@ -36,7 +34,7 @@ export async function loadClassAttendance(classId: string): Promise<{ lessons: L
     .from("lesson_instances")
     .select("id, date, timetable_slots(start_time)")
     .in("timetable_slot_id", slotIds)
-    .gte("date", localDateKey(from))
+    .gte("date", ukDaysAgo(LOOKBACK_DAYS))
     .lte("date", today)
     .order("date", { ascending: false })
     .limit(80);

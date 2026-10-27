@@ -57,6 +57,8 @@ function FeesContent() {
   const [statusFilter, setStatusFilter] = useState<"all" | ChargeStatus>("all");
   const [yearFilter, setYearFilter] = useState("all");
   const [search, setSearch] = useState("");
+  const [familyFilter, setFamilyFilter] = useState<{ id: string; name: string } | null>(null);
+  const [sort, setSort] = useState<"due_desc" | "due_asc" | "balance">("due_desc");
   const [creating, setCreating] = useState(false);
   const [paying, setPaying] = useState<{ row: Row; full: boolean } | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
@@ -129,39 +131,59 @@ function FeesContent() {
     load();
   }, [load]);
 
+  // Confirmations fade after a few seconds so they don't pile up above the list.
+  useEffect(() => {
+    if (!notice) return;
+    const t = window.setTimeout(() => setNotice(null), 6000);
+    return () => window.clearTimeout(t);
+  }, [notice]);
+
   const live = useMemo(() => (rows || []).filter((r) => r.status !== "void"), [rows]);
+  // Summed in whole pence so long lists never drift by a penny.
   const stats = useMemo(() => {
-    const billed = live.reduce((s, r) => s + r.charge.amount, 0);
-    const collected = live.reduce((s, r) => s + Math.min(r.paid, r.charge.amount), 0);
-    const overdue = live.filter((r) => r.status === "overdue").reduce((s, r) => s + r.balance, 0);
-    return { billed, collected, outstanding: Math.max(0, billed - collected), overdue };
+    const p = (n: number) => Math.round(n * 100);
+    const billed = live.reduce((s, r) => s + p(r.charge.amount), 0);
+    const collected = live.reduce((s, r) => s + Math.min(p(r.paid), p(r.charge.amount)), 0);
+    const overdue = live.filter((r) => r.status === "overdue").reduce((s, r) => s + p(r.balance), 0);
+    return { billed: billed / 100, collected: collected / 100, outstanding: Math.max(0, billed - collected) / 100, overdue: overdue / 100 };
   }, [live]);
 
   const yearOptions = useMemo(() => Array.from(new Set((rows || []).map((r) => r.yearGroup).filter(Boolean))).sort(), [rows]);
 
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
-    return (rows || []).filter((r) => {
+    const list = (rows || []).filter((r) => {
       if (statusFilter !== "all" && r.status !== statusFilter) return false;
       if (yearFilter !== "all" && r.yearGroup !== yearFilter) return false;
+      if (familyFilter && r.charge.parent_user_id !== familyFilter.id) return false;
       if (q && !`${r.familyName} ${r.email} ${r.childName} ${r.charge.description}`.toLowerCase().includes(q)) return false;
       return true;
     });
-  }, [rows, statusFilter, yearFilter, search]);
+    if (sort === "due_asc") return [...list].sort((a, b) => a.charge.due_date.localeCompare(b.charge.due_date));
+    if (sort === "balance") return [...list].sort((a, b) => b.balance - a.balance || a.charge.due_date.localeCompare(b.charge.due_date));
+    return list;
+  }, [rows, statusFilter, yearFilter, familyFilter, search, sort]);
+  const filtersOn = statusFilter !== "all" || yearFilter !== "all" || !!familyFilter || search.trim() !== "";
+  const clearFilters = () => {
+    setStatusFilter("all");
+    setYearFilter("all");
+    setFamilyFilter(null);
+    setSearch("");
+  };
 
   const familyBalances = useMemo(() => {
     const m = new Map<string, { name: string; email: string; billed: number; paid: number; overdue: number; count: number }>();
     for (const r of filtered) {
       if (r.status === "void") continue;
       const cur = m.get(r.charge.parent_user_id) || { name: r.familyName, email: r.email, billed: 0, paid: 0, overdue: 0, count: 0 };
-      cur.billed += r.charge.amount;
-      cur.paid += Math.min(r.paid, r.charge.amount);
-      if (r.status === "overdue") cur.overdue += r.balance;
+      cur.billed = round2(cur.billed + r.charge.amount);
+      cur.paid = round2(cur.paid + Math.min(r.paid, r.charge.amount));
+      if (r.status === "overdue") cur.overdue = round2(cur.overdue + r.balance);
       cur.count += 1;
       m.set(r.charge.parent_user_id, cur);
     }
     return Array.from(m.entries())
-      .map(([id, v]) => ({ id, ...v, balance: Math.max(0, v.billed - v.paid) }))
+      .map(([id, v]) => ({ id, ...v, balance: Math.max(0, round2(v.billed - v.paid)) }))
       .sort((a, b) => b.balance - a.balance);
   }, [filtered]);
 
@@ -206,7 +228,7 @@ function FeesContent() {
         }
       />
       <WithdrawalNoticesAdmin />
-      {!canExport && <p className="-mt-3 mb-4 text-xs text-ink/65">Exporting requires the &quot;Can export data&quot; permission, ask a Headteacher to grant it.</p>}
+      {!canExport && rows && rows.length > 0 && <p className="-mt-3 mb-4 text-xs text-ink/65">Exporting needs the &quot;Can export data&quot; permission. Ask a Headteacher to grant it.</p>}
       {notice && (
         <p role="status" className="mb-4 rounded-lg border border-green-200 bg-green-50 px-4 py-2 text-sm text-green-800">
           {notice}
@@ -220,6 +242,21 @@ function FeesContent() {
         <StatTile label="Outstanding" value={formatGBP(stats.outstanding)} />
         <StatTile label="Overdue" value={formatGBP(stats.overdue)} status={stats.overdue > 0 ? "warning" : stats.billed > 0 ? "ok" : undefined} />
       </div>
+      {stats.overdue > 0 && statusFilter !== "overdue" && (
+        <p className="-mt-3 mb-4 text-sm">
+          <button
+            type="button"
+            onClick={() => {
+              setStatusFilter("overdue");
+              setSort("balance");
+              setView("charges");
+            }}
+            className="font-medium text-teal-700 underline"
+          >
+            Show only overdue charges, largest first
+          </button>
+        </p>
+      )}
 
       <div className="mb-4 flex flex-wrap items-center gap-2">
         <input type="search" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search family, child, description" className={`${inputCls} min-w-0 flex-1 sm:max-w-xs`} />
@@ -236,6 +273,13 @@ function FeesContent() {
             <option key={y} value={y}>{y}</option>
           ))}
         </select>
+        {view === "charges" && (
+          <select value={sort} onChange={(e) => setSort(e.target.value as typeof sort)} className={inputCls} aria-label="Sort charges">
+            <option value="due_desc">Newest due date first</option>
+            <option value="due_asc">Oldest due date first</option>
+            <option value="balance">Largest balance first</option>
+          </select>
+        )}
         <Tabs
           variant="switch"
           items={[
@@ -249,6 +293,24 @@ function FeesContent() {
         />
       </div>
 
+      {(familyFilter || filtersOn) && (
+        <div className="mb-4 flex flex-wrap items-center gap-2 text-sm text-ink/70">
+          {familyFilter && (
+            <span className="inline-flex items-center gap-1 rounded-full border border-teal-700 bg-teal-50 px-3 py-1 text-teal-900">
+              Family: {familyFilter.name}
+              <button type="button" onClick={() => setFamilyFilter(null)} aria-label={`Stop filtering by ${familyFilter.name}`} className="ml-1 font-semibold">
+                ×
+              </button>
+            </span>
+          )}
+          <span>
+            Showing {filtered.length} of {rows?.length ?? 0} charges.
+          </span>
+          <button type="button" onClick={clearFilters} className="font-medium text-teal-700 underline">
+            Clear filters
+          </button>
+        </div>
+      )}
       {rows === null && <p className="text-sm text-ink/65">Loading…</p>}
       {rows && rows.length === 0 && !loadError && (
         <div className="rounded-2xl border border-gold-light bg-white p-8 text-center">
@@ -259,7 +321,14 @@ function FeesContent() {
           </button>
         </div>
       )}
-      {rows && rows.length > 0 && filtered.length === 0 && <p className="rounded-2xl border border-gold-light bg-white p-6 text-sm text-ink/65">Nothing matches those filters.</p>}
+      {rows && rows.length > 0 && filtered.length === 0 && (
+        <p className="rounded-2xl border border-gold-light bg-white p-6 text-sm text-ink/65">
+          Nothing matches those filters.{" "}
+          <button type="button" onClick={clearFilters} className="font-medium text-teal-700 underline">
+            Clear filters
+          </button>
+        </p>
+      )}
 
       {rows && filtered.length > 0 && view === "charges" && (
         <ul className="space-y-3">
@@ -331,6 +400,7 @@ function FeesContent() {
                 {["Family", "Charges", "Billed", "Paid", "Balance", "Overdue"].map((h, i) => (
                   <th key={h} className={`border-b border-gold-light p-3 font-semibold ${i > 1 ? "text-right" : ""}`}>{h}</th>
                 ))}
+                <th className="border-b border-gold-light p-3"><span className="sr-only">Actions</span></th>
               </tr>
             </thead>
             <tbody>
@@ -345,6 +415,18 @@ function FeesContent() {
                   <td className="border-b border-gold-light/40 p-3 text-right tabular-nums">{formatGBP(f.paid)}</td>
                   <td className="border-b border-gold-light/40 p-3 text-right font-semibold tabular-nums">{formatGBP(f.balance)}</td>
                   <td className={`border-b border-gold-light/40 p-3 text-right tabular-nums ${f.overdue > 0 ? "font-semibold text-red-700" : "text-ink/65"}`}>{f.overdue > 0 ? formatGBP(f.overdue) : "–"}</td>
+                  <td className="border-b border-gold-light/40 p-3 text-right">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setFamilyFilter({ id: f.id, name: f.name });
+                        setView("charges");
+                      }}
+                      className="whitespace-nowrap text-sm font-medium text-teal-700 hover:underline"
+                    >
+                      View charges
+                    </button>
+                  </td>
                 </tr>
               ))}
             </tbody>

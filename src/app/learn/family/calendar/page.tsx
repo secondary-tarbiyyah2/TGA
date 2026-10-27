@@ -13,7 +13,7 @@ function FamilyCalendarContent() {
   const scope = useMemo<CalendarScope | null>(() => (children ? { kind: "parent", children: children.map((c) => ({ id: c.id, name: c.name })) } : null), [children]);
   return (
     <>
-      <PageHeader title="Calendar" subtitle="Your children's lessons and homework deadlines." />
+      <PageHeader crumbs={[{ label: "Home", href: "/family/dashboard" }, { label: "Calendar" }]} title="Calendar" subtitle="Term dates, lessons and homework deadlines for your children. Tap a day to see what is on." />
       <CalendarView scope={scope} />
       <IcsFeedLink />
     </>

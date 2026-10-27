@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { Fragment, useMemo, useState } from "react";
 import { formatDay, type Absence } from "./data";
 
 type Tally = { total: number; authorised: number; unauthorised: number; unexplained: number };
@@ -63,8 +63,6 @@ export function SummaryCard({ title, absences, periodLabel }: { title: string; a
     return t;
   }, [classes]);
 
-  const openName = classes.find((c) => c.id === openClass)?.name;
-
   return (
     <section className="rounded-2xl border border-gold-light bg-white">
       <div className="border-b border-gold-light/60 px-4 py-3">
@@ -84,7 +82,9 @@ export function SummaryCard({ title, absences, periodLabel }: { title: string; a
             <thead>
               <tr className="text-left">
                 <th className={th}>Class</th>
-                <th className={`${th} text-right`}>Absences</th>
+                <th className={`${th} text-right`} title="One per lesson missed">
+                  Lessons missed
+                </th>
                 <th className={`${th} text-right`}>Authorised</th>
                 <th className={`${th} text-right`}>Not authorised</th>
                 <th className={`${th} text-right`}>Unexplained</th>
@@ -92,19 +92,52 @@ export function SummaryCard({ title, absences, periodLabel }: { title: string; a
             </thead>
             <tbody>
               {classes.map((c) => (
-                <tr key={c.id} className={openClass === c.id ? "bg-cream/60" : "hover:bg-cream/40"}>
-                  <td className="border-b border-gold-light/20 px-3 py-2">
-                    <button type="button" aria-expanded={openClass === c.id} onClick={() => setOpenClass(openClass === c.id ? null : c.id)} className="text-left font-medium text-teal-800 hover:underline">
-                      {c.name}
-                    </button>
-                  </td>
-                  <td className={`${td} text-right`}>{c.tally.total}</td>
-                  <td className={`${td} text-right`}>{c.tally.authorised}</td>
-                  <td className={`${td} text-right`}>{c.tally.unauthorised}</td>
-                  <td className={`${td} text-right`}>
-                    <span className={c.tally.unexplained > 0 ? "rounded bg-amber-100 px-2 py-0.5 font-semibold text-amber-900" : "text-ink/65"}>{c.tally.unexplained}</span>
-                  </td>
-                </tr>
+                <Fragment key={c.id}>
+                  <tr className={openClass === c.id ? "bg-cream/60" : "hover:bg-cream/40"}>
+                    <td className="border-b border-gold-light/20 px-3 py-2">
+                      <button
+                        type="button"
+                        aria-expanded={openClass === c.id}
+                        onClick={() => setOpenClass(openClass === c.id ? null : c.id)}
+                        className="text-left font-medium text-teal-800 hover:underline"
+                      >
+                        {c.name}
+                      </button>
+                    </td>
+                    <td className={`${td} text-right`}>{c.tally.total}</td>
+                    <td className={`${td} text-right`}>{c.tally.authorised}</td>
+                    <td className={`${td} text-right`}>{c.tally.unauthorised}</td>
+                    <td className={`${td} text-right`}>
+                      <span className={c.tally.unexplained > 0 ? "rounded bg-amber-100 px-2 py-0.5 font-semibold text-amber-900" : "text-ink/65"}>{c.tally.unexplained}</span>
+                    </td>
+                  </tr>
+                  {openClass === c.id && (
+                    // Opens right under the class that was clicked, not below the whole table.
+                    <tr className="bg-cream/30">
+                      <td colSpan={5} className="border-b border-gold-light/40 px-3 py-3">
+                        <ul className="space-y-2">
+                          {students.map((st) => (
+                            <li key={st.id} className="rounded-xl border border-gold-light/60 bg-white p-3">
+                              <p className="text-sm font-medium text-ink">
+                                {st.name}{" "}
+                                <span className="font-normal text-ink/65">
+                                  · {st.tally.total} lesson{st.tally.total === 1 ? "" : "s"} missed
+                                </span>
+                              </p>
+                              <ul className="mt-2 flex flex-wrap gap-1.5">
+                                {st.dates.map((d) => (
+                                  <li key={d.id} className={`rounded-full px-2.5 py-1 text-xs font-medium ${KIND_CHIP[d.kind]}`}>
+                                    {formatDay(d.date)} · {KIND_LABEL[d.kind]}
+                                  </li>
+                                ))}
+                              </ul>
+                            </li>
+                          ))}
+                        </ul>
+                      </td>
+                    </tr>
+                  )}
+                </Fragment>
               ))}
               <tr className="font-semibold">
                 <td className="px-3 py-2">All classes</td>
@@ -120,33 +153,6 @@ export function SummaryCard({ title, absences, periodLabel }: { title: string; a
       <p className="border-t border-gold-light/40 px-4 py-3 text-xs text-ink/65">
         Unexplained is its own column on purpose: an absence nobody has told us about is a question still open, not one that was decided against.
       </p>
-
-      {openClass && (
-        <div className="border-t border-gold-light px-4 py-4">
-          <div className="mb-3 flex items-center justify-between gap-2">
-            <h3 className="text-sm font-semibold text-ink">{openName}: who was away</h3>
-            <button type="button" onClick={() => setOpenClass(null)} className="rounded-lg px-2 py-1 text-xs font-medium text-ink/65 hover:bg-cream">
-              Close
-            </button>
-          </div>
-          <ul className="space-y-3">
-            {students.map((s) => (
-              <li key={s.id} className="rounded-xl border border-gold-light/60 p-3">
-                <p className="text-sm font-medium text-ink">
-                  {s.name} <span className="font-normal text-ink/65">· {s.tally.total} absence{s.tally.total === 1 ? "" : "s"}</span>
-                </p>
-                <ul className="mt-2 flex flex-wrap gap-1.5">
-                  {s.dates.map((d) => (
-                    <li key={d.id} className={`rounded-full px-2.5 py-1 text-xs font-medium ${KIND_CHIP[d.kind]}`}>
-                      {formatDay(d.date)} · {KIND_LABEL[d.kind]}
-                    </li>
-                  ))}
-                </ul>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
     </section>
   );
 }

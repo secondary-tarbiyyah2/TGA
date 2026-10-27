@@ -127,14 +127,15 @@ export function StarManager({ isHead, housesAdmin }: { isHead: boolean; housesAd
         <StarApprovals me={me} onChanged={changed} />
       ) : view === "houses" ? (
         <div className="space-y-4">
-          {/* HousesAdmin carries its own house table. */}
-          {housesAdmin || <HouseTable title="House points leaderboard" />}
+          {/* Awarding points is the everyday job, so it comes first; setting
+              up houses (HousesAdmin, with its own house table) sits below. */}
           {cls && (
             <>
               {pickers(false)}
               <BatchAward key={classId} classId={classId} roster={roster} onAwarded={changed} />
             </>
           )}
+          {housesAdmin || <HouseTable title="House points leaderboard" />}
         </div>
       ) : classes.length === 0 || !cls ? (
         <EmptyState title={isHead ? "There are no classes yet" : "You haven't been given any classes yet"} icon="star" tile="tile-gold">

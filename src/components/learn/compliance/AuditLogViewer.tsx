@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { shiftDateKey, ukDateTime, ukToday, ukWallToDate } from "@/lib/learn/ukTime";
 
 type AuditRow = {
   id: number;
@@ -23,17 +24,14 @@ const EXPORT_CHUNK = 500;
 const EXPORT_MAX = 20000;
 const EMPTY: Filters = { actor: "", table: "", action: "", from: "", to: "" };
 
+// Filter days are UK days, whatever zone the browser is in.
 function startOfDayIso(date: string): string | null {
-  if (!date) return null;
-  const d = new Date(`${date}T00:00:00`);
-  return Number.isNaN(d.getTime()) ? null : d.toISOString();
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return null;
+  return ukWallToDate(date).toISOString();
 }
 function dayAfterIso(date: string): string | null {
-  if (!date) return null;
-  const d = new Date(`${date}T00:00:00`);
-  if (Number.isNaN(d.getTime())) return null;
-  d.setDate(d.getDate() + 1);
-  return d.toISOString();
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return null;
+  return ukWallToDate(shiftDateKey(date, 1)).toISOString();
 }
 function csvCell(v: unknown): string {
   let s = v == null ? "" : String(v);
@@ -136,7 +134,7 @@ export function AuditLogViewer() {
       .join("\n");
     const a = document.createElement("a");
     a.href = URL.createObjectURL(new Blob([lines], { type: "text/csv" }));
-    a.download = `audit-log-${new Date().toISOString().slice(0, 10)}.csv`;
+    a.download = `audit-log-${ukToday()}.csv`;
     a.click();
     URL.revokeObjectURL(a.href);
     await supabase.rpc("audit_log_record_export", { p_rows: all.length, p_filters: applied });
@@ -222,7 +220,7 @@ export function AuditLogViewer() {
             )}
             {(rows || []).map((r) => (
               <tr key={r.id} className="border-t border-gold-light/30 align-top">
-                <td className="whitespace-nowrap py-1.5 pr-3">{new Date(r.created_at).toLocaleString("en-GB")}</td>
+                <td className="whitespace-nowrap py-1.5 pr-3">{ukDateTime(r.created_at)}</td>
                 <td className="py-1.5 pr-3">{r.actor_email || "System"}</td>
                 <td className="py-1.5 pr-3">
                   <span className="mr-2 rounded bg-cream px-1.5 py-0.5 text-[11px] font-semibold text-ink/70">{r.action}</span>

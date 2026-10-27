@@ -29,20 +29,20 @@ function FamilyClassesContent() {
   return (
     <>
       <PageHeader
-        crumbs={[{ label: "Home", href: "/family/dashboard" }, { label: "My classes" }]}
+        crumbs={[{ label: "Home", href: "/family/dashboard" }, { label: "Classes" }]}
         title="Classes"
         subtitle="Each of your children's classes: lessons, homework, grades and announcements."
       />
       {children && children.length > 1 && (
         <div className="mb-6 flex flex-wrap gap-2">
-          <Link href="/family/classes" className={`rounded-lg px-3 py-1.5 text-sm font-medium ${!only ? "bg-teal-700 text-white" : "border border-gold-light bg-white text-ink/80 hover:bg-cream"}`}>
+          <Link href="/family/classes" className={`inline-flex min-h-10 items-center rounded-lg px-3 py-1.5 text-sm font-medium ${!only ? "bg-teal-700 text-white" : "border border-gold-light bg-white text-ink/80 hover:bg-cream"}`}>
             All children
           </Link>
           {children.map((c) => (
             <Link
               key={c.id}
               href={`/family/classes?child=${c.id}`}
-              className={`rounded-lg px-3 py-1.5 text-sm font-medium ${only === c.id ? "bg-teal-700 text-white" : "border border-gold-light bg-white text-ink/80 hover:bg-cream"}`}
+              className={`inline-flex min-h-10 items-center rounded-lg px-3 py-1.5 text-sm font-medium ${only === c.id ? "bg-teal-700 text-white" : "border border-gold-light bg-white text-ink/80 hover:bg-cream"}`}
             >
               {c.name}
             </Link>

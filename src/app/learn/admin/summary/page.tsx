@@ -9,12 +9,14 @@ import { PrintHeader, PrintSheet } from "@/components/learn/print";
 import { useLearnPermission, useLearnSession } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { formatGBP } from "@/lib/format";
+import { saveCsv } from "@/lib/learn/csv";
+import { shiftDateKey, ukDaysAgo, ukToday, ukWallToDate } from "@/lib/learn/ukTime";
 
 type Term = { id: string; name: string; starts_on: string; ends_on: string };
 type ClassRow = { id: string; name: string; year_group_id: string | null; year_groups: { name: string } | null };
 type ChildRow = { id: string; year_group_id: string | null };
 type EnrolRow = { class_id: string; child_id: string };
-type LessonRow = { id: string; date: string; timetable_slots: { class_id: string } | null };
+type LessonRow = { id: string; date: string; timetable_slots: { class_id: string; timetable_runs: { status: string } | null } | null };
 type AttRow = { status: string; lesson_instances: { date: string; timetable_slots: { class_id: string } | null } | null };
 type HwRow = { id: string; class_id: string; due_at: string };
 type SubRow = { homework_id: string; submitted_at: string | null };
@@ -66,16 +68,11 @@ async function fetchAll<T>(build: (from: number, to: number) => PromiseLike<Page
   return out;
 }
 
-function isoDay(d: Date): string {
-  const p = (n: number) => String(n).padStart(2, "0");
-  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
-}
-
-function daysAgo(n: number): string {
-  const d = new Date();
-  d.setDate(d.getDate() - n);
-  return isoDay(d);
-}
+// UK school days, whatever zone the browser is in.
+const isoDay = (d: Date): string => ukToday(d);
+const daysAgo = ukDaysAgo;
+/** The UK-midnight instant that starts a day, for timestamp columns. */
+const dayStartIso = (key: string): string => ukWallToDate(key).toISOString();
 
 function pct(num: number, den: number): number | null {
   return den > 0 ? Math.round((num / den) * 1000) / 10 : null;
@@ -132,8 +129,9 @@ function SummaryContent() {
   }, []);
 
   const range = useMemo((): { from: string | null; to: string | null } => {
-    if (period === "30") return { from: daysAgo(30), to: isoDay(new Date()) };
-    if (period === "90") return { from: daysAgo(90), to: isoDay(new Date()) };
+    // "Last 30 days" is today and the 29 days before it (was 31 days).
+    if (period === "30") return { from: daysAgo(29), to: isoDay(new Date()) };
+    if (period === "90") return { from: daysAgo(89), to: isoDay(new Date()) };
     if (period === "term" && base) {
       const t = base.terms.find((x) => x.id === termId);
       if (t) return { from: t.starts_on, to: t.ends_on };
@@ -149,7 +147,7 @@ function SummaryContent() {
     setError(null);
     try {
       const lessons = await fetchAll<LessonRow>((a, b) => {
-        let q = supabase.from("lesson_instances").select("id, date, timetable_slots(class_id)");
+        let q = supabase.from("lesson_instances").select("id, date, timetable_slots(class_id, timetable_runs(status))");
         if (from) q = q.gte("date", from);
         if (to) q = q.lte("date", to);
         return q.order("id").range(a, b);
@@ -163,14 +161,14 @@ function SummaryContent() {
       const nowIso = new Date().toISOString();
       const homework = await fetchAll<HwRow>((a, b) => {
         let q = supabase.from("homework").select("id, class_id, due_at").lte("due_at", nowIso);
-        if (from) q = q.gte("due_at", `${from}T00:00:00`);
-        if (to) q = q.lte("due_at", `${to}T23:59:59`);
+        if (from) q = q.gte("due_at", dayStartIso(from));
+        if (to) q = q.lt("due_at", dayStartIso(shiftDateKey(to, 1)));
         return q.order("id").range(a, b);
       });
       const submissions = await fetchAll<SubRow>((a, b) => {
         let q = supabase.from("homework_submissions").select("homework_id, submitted_at, homework!inner(due_at)").not("submitted_at", "is", null).lte("homework.due_at", nowIso);
-        if (from) q = q.gte("homework.due_at", `${from}T00:00:00`);
-        if (to) q = q.lte("homework.due_at", `${to}T23:59:59`);
+        if (from) q = q.gte("homework.due_at", dayStartIso(from));
+        if (to) q = q.lt("homework.due_at", dayStartIso(shiftDateKey(to, 1)));
         return q.order("id").range(a, b);
       });
       const charges = await fetchAll<ChargeRow>((a, b) => {
@@ -235,13 +233,18 @@ function SummaryContent() {
       const a = classAgg.get(h.class_id);
       if (a) a.hwExpected += n;
     });
+    // Count submissions per piece of homework, capped at the class size, so
+    // work handed in by a pupil who has since left can't push past 100%.
+    const subsByHw = new Map<string, number>();
+    raw.submissions.forEach((s) => subsByHw.set(s.homework_id, (subsByHw.get(s.homework_id) || 0) + 1));
     let hwDone = 0;
-    raw.submissions.forEach((s) => {
-      const cid = hwClass.get(s.homework_id);
+    subsByHw.forEach((n, hid) => {
+      const cid = hwClass.get(hid);
       if (!cid) return;
-      hwDone += 1;
+      const done = Math.min(n, enrolledByClass.get(cid)?.size || 0);
+      hwDone += done;
       const a = classAgg.get(cid);
-      if (a) a.hwDone += 1;
+      if (a) a.hwDone += done;
     });
 
     // Fees belong to a child. Classes use enrolments (a child in several
@@ -292,7 +295,8 @@ function SummaryContent() {
 
     return {
       students: raw.children.length,
-      lessons: raw.lessons.filter((l) => l.date <= isoDay(new Date())).length,
+      // Held = on the published timetable and not in the future.
+      lessons: raw.lessons.filter((l) => l.date <= isoDay(new Date()) && l.timetable_slots?.timetable_runs?.status === "published").length,
       attendance: pct(attended, marked),
       collected: round2(collected),
       outstanding: round2(Math.max(0, billed - collected)),
@@ -377,13 +381,7 @@ function SummaryContent() {
           .join(",")
       );
     });
-    const blob = new Blob([lines.join("\n")], { type: "text/csv" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `summary-${isoDay(new Date())}.csv`;
-    a.click();
-    URL.revokeObjectURL(url);
+    saveCsv(`summary-${isoDay(new Date())}.csv`, lines.join("\r\n"));
   };
 
   const field = "rounded-lg border border-gold-light bg-white px-3 py-2 text-sm text-ink focus:border-gold-700 focus:outline-none focus:ring-2 focus:ring-gold-300/60";
@@ -406,7 +404,7 @@ function SummaryContent() {
       <PrintSheet />
       <div className="print:hidden">
       <PageHeader
-        crumbs={[{ label: "Site administration", href: "/admin/site" }, { label: "Summary" }]}
+        crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "School summary" }]}
         title="Summary"
         subtitle="School-wide attendance, fees, homework and lessons, with a per-class breakdown."
         actions={
@@ -522,7 +520,7 @@ function SummaryContent() {
             </div>
           )}
           <p className="mt-3 text-xs text-ink/65">
-            Attendance counts present and late marks; excused absences are left out. Homework completion is submissions against pupils enrolled, for homework already due.
+            Attendance counts present, late and present-but-not-engaged marks against absences; excused and couldn&apos;t-connect marks are left out. Homework completion is submissions against pupils enrolled, for homework already due.
             {groupBy === "class" && " Class fees follow enrolments, so a child in several classes appears in each; the totals above count every charge once."}
             {" "}Fees cover charges falling due in the period.
           </p>

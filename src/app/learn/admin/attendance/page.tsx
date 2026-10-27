@@ -1,14 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { Register } from "@/components/learn/attendance/Register";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { DataTable } from "@/components/learn/DataTable";
 import { useLearnPermission } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { localDateKey } from "@/lib/learn/calendar";
+import { formatDateKey, shiftDateKey, ukDaysAgo, ukToday } from "@/lib/learn/ukTime";
+import { saveCsv, toCsv as buildCsv } from "@/lib/learn/csv";
 import { classBannerStyle } from "@/lib/learn/classes";
 import { Tabs, tabPanelProps } from "@/components/learn/Tabs";
 import { ui } from "@/components/learn/ui";
@@ -38,6 +39,7 @@ type RawRow = {
   status: Status;
   marked_at: string;
   child_id: string;
+  lesson_instance_id: string;
   children?: { name: string } | null;
   lesson_instances?: {
     date: string;
@@ -51,6 +53,7 @@ type Row = {
   markedAt: string;
   childId: string;
   child: string;
+  lessonId: string;
   date: string;
   classId: string;
   className: string;
@@ -60,11 +63,8 @@ type Row = {
 type YearGroup = { id: string; name: string; sort_order: number };
 type ClassOpt = { id: string; name: string; year_group_id: string | null };
 
-function dateKeyDaysAgo(n: number): string {
-  const d = new Date();
-  d.setDate(d.getDate() - n);
-  return localDateKey(d);
-}
+// Date ranges are UK school days, whatever zone the browser is in.
+const dateKeyDaysAgo = ukDaysAgo;
 
 function pct(part: number, whole: number): string {
   return whole === 0 ? "–" : `${Math.round((part / whole) * 100)}%`;
@@ -78,15 +78,21 @@ function rate(c: Counts): string {
   return pct(attended, attended + c.absent);
 }
 
+/** The same rate as a number for sorting (-1 when there is nothing to rate),
+ * so "100%" sorts above "95%" instead of being compared as text. */
+function rateValue(c: Counts): number {
+  const attended = c.present + c.late + c.not_engaged;
+  return attended + c.absent === 0 ? -1 : attended / (attended + c.absent);
+}
+
 type Counts = Record<Status, number>;
 const zero = (): Counts => ({ present: 0, late: 0, absent: 0, excused: 0, not_engaged: 0, technical: 0 });
 
 function toCsv(rows: Row[]): string {
-  const header = ["Date", "Class", "Student", "Status", "Marked at"];
-  const lines = rows.map((r) =>
-    [r.date, r.className, r.child, r.status, new Date(r.markedAt).toISOString()].map((v) => `"${String(v).replace(/"/g, '""')}"`).join(","),
+  return buildCsv(
+    ["Date", "Class", "Student", "Status", "Marked at"],
+    rows.map((r) => [r.date, r.className, r.child, STATUSES.find((s) => s.value === r.status)?.label || r.status, new Date(r.markedAt).toISOString()]),
   );
-  return [header.join(","), ...lines].join("\n");
 }
 
 const fieldCls = ui.input;
@@ -160,7 +166,7 @@ function ReportsContent() {
       for (let offset = 0; offset < MAX_ROWS; offset += PAGE_SIZE) {
         const { data, error: err } = await supabase
           .from("attendance_records")
-          .select("id, status, marked_at, child_id, children(name), lesson_instances!inner(date, timetable_slots(class_id, classes(name, year_group_id)))")
+          .select("id, status, marked_at, child_id, lesson_instance_id, children(name), lesson_instances!inner(date, timetable_slots(class_id, classes(name, year_group_id)))")
           .gte("lesson_instances.date", from)
           .lte("lesson_instances.date", to)
           .order("id")
@@ -182,6 +188,7 @@ function ReportsContent() {
         markedAt: r.marked_at,
         childId: r.child_id,
         child: r.children?.name || "Unknown student",
+        lessonId: r.lesson_instance_id,
         date: r.lesson_instances?.date || "",
         classId: r.lesson_instances?.timetable_slots?.class_id || "",
         className: r.lesson_instances?.timetable_slots?.classes?.name || "Unknown class",
@@ -221,7 +228,8 @@ function ReportsContent() {
       const key = r.classId || r.className;
       const e = m.get(key) || { name: r.className, counts: zero(), lessons: new Set<string>() };
       e.counts[r.status] += 1;
-      e.lessons.add(`${r.date}`);
+      // Count lessons, not days: a class can have two lessons on one day.
+      e.lessons.add(r.lessonId);
       m.set(key, e);
     });
     return [...m.entries()].map(([id, e]) => ({ id, name: e.name, counts: e.counts, lessons: e.lessons.size })).sort((a, b) => a.name.localeCompare(b.name));
@@ -255,13 +263,7 @@ function ReportsContent() {
   };
 
   const exportCsv = () => {
-    const blob = new Blob([toCsv(filtered)], { type: "text/csv" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `attendance-${from}-to-${to}.csv`;
-    a.click();
-    URL.revokeObjectURL(url);
+    saveCsv(`attendance-${from}-to-${to}.csv`, toCsv(filtered));
   };
 
   const badRange = Boolean(from && to && from > to);
@@ -269,19 +271,18 @@ function ReportsContent() {
 
   return (
     <>
-      <PageHeader
-        crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "Attendance" }]}
-        title="Attendance"
-        subtitle="Whole-school register, filtered by lesson date."
-        actions={
-          canExport && filtered.length > 0 ? (
+      <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
+        <p className="text-sm text-ink/65">Whole-school register, filtered by lesson date (UK).</p>
+        {canExport ? (
+          filtered.length > 0 && (
             <button type="button" onClick={exportCsv} className="rounded-lg border border-gold-light bg-white px-4 py-2 text-sm font-semibold text-ink/80 transition-colors hover:bg-cream">
               Export CSV ({filtered.length})
             </button>
-          ) : undefined
-        }
-      />
-      {!canExport && <p className="-mt-3 mb-4 text-xs text-ink/65">Exporting requires the &quot;Can export data&quot; permission. Ask a Headteacher to grant it.</p>}
+          )
+        ) : (
+          <p className="text-xs text-ink/65">Exporting needs the &quot;Can export data&quot; permission.</p>
+        )}
+      </div>
 
       <div className="space-y-5">
         <div className="space-y-3 rounded-2xl border border-gold-light bg-white p-4">
@@ -298,7 +299,7 @@ function ReportsContent() {
               </button>
             ))}
             <span className="ml-auto text-xs text-ink/65">
-              {from} to {to}
+              {from && to ? `${formatDateKey(from)} to ${formatDateKey(to)}` : ""}
             </span>
           </div>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
@@ -411,10 +412,10 @@ function ReportsContent() {
             ) : (
               <>
                 <div className="grid gap-5 lg:grid-cols-2">
-                  <Section title="By class" hint="Lessons = days with a marked register. Click a class to filter.">
+                  <Section title="By class" hint="Lessons with at least one mark. Click a class to filter.">
                     <div className="max-h-96 overflow-auto">
                       <table className="w-full min-w-[320px] border-collapse text-left text-sm">
-                        <thead>
+                        <thead className="sticky top-0 bg-white">
                           <tr>
                             <th className={th}>Class</th>
                             <th className={`${th} text-right`}>Lessons</th>
@@ -470,7 +471,7 @@ function ReportsContent() {
                           { key: "excused", header: "E", align: "right", sort: (st) => st.counts.excused, className: "tabular-nums text-ink/70", cell: (st) => st.counts.excused },
                           { key: "not_engaged", header: "NE", align: "right", sort: (st) => st.counts.not_engaged, className: "tabular-nums text-ink/70", cell: (st) => st.counts.not_engaged },
                           { key: "technical", header: "T", align: "right", sort: (st) => st.counts.technical, className: "tabular-nums text-ink/70", cell: (st) => st.counts.technical },
-                          { key: "rate", header: "Rate", align: "right", sort: (st) => rate(st.counts), className: "font-semibold tabular-nums", cell: (st) => rate(st.counts) },
+                          { key: "rate", header: "Rate", align: "right", sort: (st) => rateValue(st.counts), className: "font-semibold tabular-nums", cell: (st) => rate(st.counts) },
                         ]}
                       />
                     </div>
@@ -486,7 +487,7 @@ function ReportsContent() {
                       rowKey={(r) => r.id}
                       initialSort={{ key: "date", dir: "desc" }}
                       columns={[
-                        { key: "date", header: "Date", sort: (r) => r.date, className: "whitespace-nowrap text-ink/70", cell: (r) => r.date },
+                        { key: "date", header: "Date", sort: (r) => r.date, className: "whitespace-nowrap text-ink/70", cell: (r) => formatDateKey(r.date) },
                         { key: "class", header: "Class", sort: (r) => r.className, className: "text-ink/70", cell: (r) => r.className },
                         { key: "student", header: "Student", sort: (r) => r.child, cell: (r) => <span className="font-medium">{r.child}</span> },
                         {
@@ -521,63 +522,72 @@ type RawDayLesson = {
   id: string;
   timetable_slots?: { class_id: string; start_time: string; end_time: string; classes?: { name: string } | null; timetable_runs?: { status: string } | null } | null;
 };
+type Progress = { taken: number; total: number };
 
-function shiftDate(key: string, days: number): string {
-  const d = new Date(`${key}T12:00:00`);
-  d.setDate(d.getDate() + days);
-  return localDateKey(d);
-}
+const isDone = (p: Progress | undefined) => Boolean(p && p.total > 0 && p.taken >= p.total);
 
-function DayLessonCard({ lesson }: { lesson: DayLesson }) {
-  const [progress, setProgress] = useState<{ taken: number; total: number } | null>(null);
-  const [open, setOpen] = useState(true);
-  const onProgress = useCallback((taken: number, total: number) => setProgress({ taken, total }), []);
-  const done = progress !== null && progress.total > 0 && progress.taken >= progress.total;
-  const partial = progress !== null && progress.taken > 0 && !done;
+function DayLessonCard({ lesson, open, onToggle, progress, onProgress }: { lesson: DayLesson; open: boolean; onToggle: () => void; progress: Progress | undefined; onProgress: (id: string, taken: number, total: number) => void }) {
+  const report = useCallback((taken: number, total: number) => onProgress(lesson.id, taken, total), [onProgress, lesson.id]);
+  const done = isDone(progress);
+  const empty = progress !== undefined && progress.total === 0;
+  const partial = progress !== undefined && progress.taken > 0 && !done;
+  const panelId = `register-${lesson.id}`;
   return (
     <section className="overflow-hidden rounded-2xl border border-gold-light bg-white">
       <div className="flex flex-wrap items-center gap-3 px-4 py-3 sm:px-5">
         <span className="h-10 w-10 shrink-0 rounded-xl" style={classBannerStyle(lesson.classId)} aria-hidden="true" />
         <div className="min-w-0 flex-1">
           <p className="text-sm font-semibold text-ink/65">
-            {lesson.start}–{lesson.end}
+            {lesson.start} to {lesson.end}
           </p>
           <Link href={`/admin/class?id=${lesson.classId}`} className="block truncate text-base font-semibold text-ink hover:text-teal-700">
             {lesson.className}
           </Link>
         </div>
         <span
-          className={`rounded-full px-2.5 py-1 text-xs font-semibold ${done ? "bg-green-100 text-green-800" : partial ? "bg-amber-100 text-amber-800" : "bg-red-50 text-red-700"}`}
+          className={`rounded-full px-2.5 py-1 text-xs font-semibold ${progress === undefined || empty ? "bg-cream text-ink/65" : done ? "bg-green-100 text-green-800" : partial ? "bg-amber-100 text-amber-800" : "bg-red-50 text-red-700"}`}
         >
-          {done ? "Register taken" : partial ? `Register part taken (${progress?.taken}/${progress?.total})` : "Register not taken"}
+          {progress === undefined ? "Checking…" : empty ? "No pupils enrolled" : done ? "Register taken" : partial ? `Part taken (${progress.taken}/${progress.total})` : "Register not taken"}
         </span>
-        <button type="button" onClick={() => setOpen((o) => !o)} aria-expanded={open} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm font-medium text-ink/70 hover:bg-cream">
-          {open ? "Hide" : "Show"}
+        <button type="button" onClick={onToggle} aria-expanded={open} aria-controls={panelId} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm font-medium text-ink/70 hover:bg-cream">
+          {open ? "Hide register" : done ? "Review" : "Take register"}
         </button>
       </div>
-      {open && (
-        <div className="border-t border-gold-light">
-          <Register lessonId={lesson.id} classId={lesson.classId} onProgress={onProgress} />
-        </div>
-      )}
+      {/* Kept mounted while hidden so the status badge stays live. */}
+      <div id={panelId} hidden={!open} className="border-t border-gold-light">
+        <Register lessonId={lesson.id} classId={lesson.classId} onProgress={report} />
+      </div>
     </section>
   );
 }
 
+const navBtn = "rounded-lg border border-gold-light px-3 py-2 text-sm font-medium text-ink/80 hover:bg-cream";
+
 function TakeRegister() {
-  const [date, setDate] = useState(localDateKey(new Date()));
+  const [date, setDate] = useState(ukToday());
   const [lessons, setLessons] = useState<DayLesson[] | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [progress, setProgress] = useState<Record<string, Progress>>({});
+  // Open/closed per lesson. Until a register reports in it follows the
+  // default; then it opens only if the register still needs taking.
+  const [toggled, setToggled] = useState<Record<string, boolean>>({});
+  const [onlyOutstanding, setOnlyOutstanding] = useState(false);
 
   useEffect(() => {
     const supabase = getSupabaseClient();
     if (!supabase) return;
     let cancelled = false;
     (async () => {
-      const { data } = await supabase
+      const { data, error: err } = await supabase
         .from("lesson_instances")
         .select("id, timetable_slots(class_id, start_time, end_time, classes(name), timetable_runs(status))")
         .eq("date", date);
       if (cancelled) return;
+      if (err) {
+        setError(err.message);
+        setLessons([]);
+        return;
+      }
       const rows = ((data as unknown as RawDayLesson[]) || [])
         .filter((l) => l.timetable_slots && l.timetable_slots.timetable_runs?.status === "published")
         .map((l) => {
@@ -592,52 +602,116 @@ function TakeRegister() {
     };
   }, [date]);
 
+  const lessonCount = useRef(0);
+  useEffect(() => {
+    lessonCount.current = lessons?.length ?? 0;
+  }, [lessons]);
+  const onProgress = useCallback((id: string, taken: number, total: number) => {
+    setProgress((p) => (p[id]?.taken === taken && p[id]?.total === total ? p : { ...p, [id]: { taken, total } }));
+    // Decide open/closed once, when the register first loads, so a card
+    // doesn't snap shut under the admin's cursor as they finish it.
+    setToggled((t) => (id in t ? t : { ...t, [id]: lessonCount.current <= 2 || (total > 0 && taken < total) }));
+  }, []);
+
   const go = (d: string) => {
     if (!d) return;
     setLessons(null);
+    setError(null);
+    setProgress({});
+    setToggled({});
     setDate(d);
   };
-  const label = new Date(`${date}T12:00:00`).toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+  const today = ukToday();
+  const label = formatDateKey(date, { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+
+  const list = lessons || [];
+  // With only a couple of lessons, open them all; otherwise open only the
+  // ones still to take, so a busy day isn't one very long page.
+  const isOpen = (l: DayLesson) => toggled[l.id] ?? list.length <= 2;
+  const doneCount = list.filter((l) => isDone(progress[l.id])).length;
+  const known = list.filter((l) => progress[l.id] !== undefined).length;
+  const shown = onlyOutstanding ? list.filter((l) => !isDone(progress[l.id])) : list;
+  const setAll = (open: boolean) => setToggled(Object.fromEntries(list.map((l) => [l.id, open])));
 
   return (
     <>
-      <PageHeader crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "Attendance" }]} title="Take register" subtitle="Take or correct the register for any lesson in the school." />
-      <div className="mb-5 flex flex-wrap items-center gap-2 rounded-2xl border border-gold-light bg-white p-3">
-        <button type="button" onClick={() => go(shiftDate(date, -1))} className="rounded-lg border border-gold-light px-3 py-2 text-sm font-medium text-ink/80 hover:bg-cream" aria-label="Previous day">
+      <div className="mb-4 flex flex-wrap items-center gap-2 rounded-2xl border border-gold-light bg-white p-3">
+        <button type="button" onClick={() => go(shiftDateKey(date, -1))} className={navBtn} aria-label="Previous day">
           ‹ Prev
         </button>
         <input type="date" value={date} onChange={(e) => go(e.target.value)} className={`${fieldCls} !w-auto`} aria-label="Register date" />
-        <button type="button" onClick={() => go(shiftDate(date, 1))} className="rounded-lg border border-gold-light px-3 py-2 text-sm font-medium text-ink/80 hover:bg-cream" aria-label="Next day">
+        <button type="button" onClick={() => go(shiftDateKey(date, 1))} className={navBtn} aria-label="Next day">
           Next ›
         </button>
-        <button type="button" onClick={() => go(localDateKey(new Date()))} className="rounded-lg border border-gold-light px-3 py-2 text-sm font-medium text-teal-700 hover:bg-cream">
-          Today
-        </button>
-        <span className="w-full text-sm text-ink/65 sm:ml-auto sm:w-auto">{label}</span>
+        {date !== today && (
+          <button type="button" onClick={() => go(today)} className={`${navBtn} text-teal-700`}>
+            Today
+          </button>
+        )}
+        <span className="w-full text-sm text-ink/65 sm:ml-auto sm:w-auto">
+          {label}
+          {date === today ? " (today)" : ""}
+        </span>
       </div>
+      {error && <p className="mb-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">Could not load lessons: {error}</p>}
       {lessons === null ? (
         <div className="h-40 animate-pulse rounded-2xl bg-white" />
       ) : lessons.length === 0 ? (
-        <div className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/65">No lessons on this day.</div>
+        !error && (
+          <div className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/65">
+            No published lessons on this day.{" "}
+            <Link href="/admin/lessons" className="font-medium text-teal-700 underline">
+              Check the timetable
+            </Link>
+          </div>
+        )
       ) : (
-        <div className="space-y-4">
-          {lessons.map((l) => (
-            <DayLessonCard key={l.id} lesson={l} />
-          ))}
-        </div>
+        <>
+          <div className="mb-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+            <p className="font-medium text-ink" aria-live="polite">
+              {known < list.length ? "Checking registers…" : `${doneCount} of ${list.length} register${list.length === 1 ? "" : "s"} taken`}
+            </p>
+            <label className="flex items-center gap-2 text-ink/70">
+              <input type="checkbox" checked={onlyOutstanding} onChange={(e) => setOnlyOutstanding(e.target.checked)} />
+              Only show registers still to take
+            </label>
+            {list.length > 2 && (
+              <span className="flex gap-3 sm:ml-auto">
+                <button type="button" onClick={() => setAll(true)} className="font-medium text-teal-700 hover:underline">
+                  Open all
+                </button>
+                <button type="button" onClick={() => setAll(false)} className="font-medium text-teal-700 hover:underline">
+                  Close all
+                </button>
+              </span>
+            )}
+          </div>
+          {onlyOutstanding && shown.length === 0 && <div className="mb-4 rounded-2xl border border-dashed border-green-300 bg-green-50 p-6 text-center text-sm text-green-900">Every register for this day is taken.</div>}
+          <div className="space-y-4">
+            {list.map((l) => (
+              // Hidden rather than unmounted when filtered out, so progress stays known.
+              <div key={l.id} hidden={!shown.includes(l)}>
+                <DayLessonCard lesson={l} open={isOpen(l)} onToggle={() => setToggled((t) => ({ ...t, [l.id]: !isOpen(l) }))} progress={progress[l.id]} onProgress={onProgress} />
+              </div>
+            ))}
+          </div>
+        </>
       )}
     </>
   );
 }
 
+type AttendanceTab = "register" | "reports";
+
 function AttendanceContent() {
-  const [tab, setTab] = useState<"register" | "reports">("register");
-  const tabs: { key: "register" | "reports"; label: string }[] = [
+  const [tab, setTab] = useState<AttendanceTab>("register");
+  const tabs: { key: AttendanceTab; label: string }[] = [
     { key: "register", label: "Take register" },
-    { key: "reports", label: "Reports and filters" },
+    { key: "reports", label: "Reports" },
   ];
   return (
     <>
+      <PageHeader crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "Attendance" }]} title="Attendance" subtitle="Take or correct any lesson's register, or report across a date range." />
       <Tabs items={tabs} value={tab} onChange={setTab} label="Attendance sections" idBase="attendance" className="mb-5" />
       <div {...tabPanelProps("attendance", tab)}>{tab === "register" ? <TakeRegister /> : <ReportsContent />}</div>
     </>

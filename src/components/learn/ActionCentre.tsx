@@ -7,6 +7,56 @@ import { useFamilyChildren, useStudentChildId } from "@/lib/learn/classes";
 import { EmptyState, StatusChip, ui } from "@/components/learn/ui";
 import { ParentSetup } from "@/components/learn/ParentSetup";
 import { loadPupilItems, loadStaffItems, sortItems, type ActionItem, type Role, type Urgency } from "@/lib/learn/actionCentre";
+import { fetchAbsences, fetchNotes } from "@/components/learn/absences/data";
+import { completeness, DETAILS_SELECT, type PupilDetails } from "@/components/learn/pupil/data";
+import { shiftDateKey, ukToday } from "@/lib/learn/ukTime";
+
+/**
+ * The parent-only things the homework and Qur'an lists don't cover, so the
+ * Action centre agrees with the dashboard: documents waiting for a signature,
+ * child details still incomplete, and recent absences with no reason given.
+ * Each piece fails quietly on its own (no item is better than a wrong one).
+ */
+async function loadFamilyExtras(): Promise<ActionItem[]> {
+  const supabase = getSupabaseClient();
+  if (!supabase) return [];
+  const out: ActionItem[] = [];
+  const plural = (n: number, one: string, many = `${one}s`) => `${n} ${n === 1 ? one : many}`;
+  const [sigs, kids, det, cons, notes] = await Promise.all([
+    supabase.from("my_outstanding_signatures").select("document_id", { count: "exact", head: true }),
+    supabase.from("children").select("id, name, dob").order("name"),
+    supabase.from("pupil_details").select(DETAILS_SELECT),
+    supabase.from("pupil_emergency_contacts").select("child_id"),
+    fetchNotes(),
+  ]);
+  if (!sigs.error && (sigs.count || 0) > 0) {
+    const n = sigs.count || 0;
+    out.push({ id: "fam-sign", area: "Signatures", urgency: "now", title: `${plural(n, "document")} to read and sign`, detail: "School policies and agreements that need your signature.", href: "/documents", cta: "Review and sign" });
+  }
+  if (!kids.error) {
+    const list = (kids.data as unknown as { id: string; name: string; dob: string | null }[]) || [];
+    const detailsBy = new Map(((det.data as unknown as PupilDetails[]) || []).map((d) => [d.child_id, d]));
+    const countBy = new Map<string, number>();
+    for (const c of (cons.data as unknown as { child_id: string }[]) || []) countBy.set(c.child_id, (countBy.get(c.child_id) || 0) + 1);
+    const incomplete = list.filter((k) => completeness(detailsBy.get(k.id) || null, countBy.get(k.id) || 0, k.dob).percent < 100);
+    if (incomplete.length) {
+      out.push({ id: "fam-details", area: "Child details", urgency: "now", title: `Complete ${incomplete.map((k) => k.name.split(" ")[0]).join(" and ")}'s details`, detail: "Address, GP, health, emergency contacts and consents are required for every pupil.", href: "/family/child-details", cta: "Complete details" });
+    }
+  }
+  if (!notes.error) {
+    const today = ukToday();
+    const abs = await fetchAbsences(shiftDateKey(today, -30), today, notes.notes);
+    if (!abs.error) {
+      const days = new Set(
+        abs.absences
+          .filter((a) => a.kind === "unexplained" && !notes.notes.some((n) => n.child_id === a.childId && a.date >= n.from_date && a.date <= n.to_date))
+          .map((a) => `${a.childId}|${a.date}`),
+      );
+      if (days.size) out.push({ id: "fam-abs", area: "Absence", urgency: "soon", title: `${plural(days.size, "absence")} we haven't heard about`, detail: "Tell us why your child was away. It takes a few seconds.", href: "/family/absences", cta: "Tell us why" });
+    }
+  }
+  return out;
+}
 
 const GROUPS: { key: Urgency; title: string; hint: string }[] = [
   { key: "now", title: "Do now", hint: "Overdue or needs a decision today" },
@@ -34,9 +84,12 @@ export function ActionCentre({ role }: { role: Role }) {
     let alive = true;
     (async () => {
       try {
-        const list = staff ? await loadStaffItems(role as "teach" | "admin") : await loadPupilItems(pupils || [], role as "student" | "family");
+        const [list, extras] = await Promise.all([
+          staff ? loadStaffItems(role as "teach" | "admin") : loadPupilItems(pupils || [], role as "student" | "family"),
+          role === "family" ? loadFamilyExtras().catch(() => [] as ActionItem[]) : Promise.resolve([] as ActionItem[]),
+        ]);
         if (alive) {
-          setItems(sortItems(list));
+          setItems(sortItems([...list, ...extras]));
           setFailed(false);
         }
       } catch {

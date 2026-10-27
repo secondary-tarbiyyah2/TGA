@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { LoadProblem, SaveBar } from "./SaveBar";
 import { Card } from "@/components/learn/Card";
 import { triggerPublish } from "@/lib/learn/publishSiteContent";
 import { homepageDefaults as D, withDefault, toStored, listWithDefault, listToStored } from "@/content/defaults";
@@ -89,12 +90,17 @@ export function HomepageContentEditor() {
   const [row, setRow] = useState<Row | null>(null);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
+  const [savedJson, setSavedJson] = useState("");
+  const [loadFailed, setLoadFailed] = useState(false);
 
   useEffect(() => {
     if (!supabase) return;
     supabase.from("homepage_content").select("*").eq("id", true).maybeSingle().then(({ data }) => {
       const r = (data as Row) || null;
-      setRow(r ? fill(r) : null);
+      if (!r) return setLoadFailed(true);
+      const filled = fill(r);
+      setRow(filled);
+      setSavedJson(JSON.stringify(filled));
     });
   }, [supabase]);
 
@@ -108,12 +114,15 @@ export function HomepageContentEditor() {
       setMessage(`Could not save: ${error.message}`);
       return;
     }
+    setSavedJson(JSON.stringify(row));
     const publishMessage = await triggerPublish();
     setSaving(false);
     setMessage(publishMessage);
   }
 
+  if (loadFailed) return <LoadProblem what="homepage content" />;
   if (!row) return <p className="text-sm text-ink/65">Loading…</p>;
+  const dirty = JSON.stringify(row) !== savedJson;
 
   return (
     <Card title="Homepage content" description="Showing the current website text. Edit it and Save to change the site.">
@@ -131,10 +140,7 @@ export function HomepageContentEditor() {
         <DefaultTextField label="“Safe & known” heading" value={row.safe_heading} def={D.safe_heading} onChange={(v) => setRow({ ...row, safe_heading: v })} />
         <DefaultTextField label="“Safe & known” body" value={row.safe_body} def={D.safe_body} multiline onChange={(v) => setRow({ ...row, safe_body: v })} />
       </div>
-      <button type="button" onClick={save} disabled={saving} className="mt-6 rounded-full bg-gold-700 px-5 py-2.5 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-60">
-        {saving ? "Saving…" : "Save"}
-      </button>
-      {message && <p className="mt-2 text-sm text-ink/70">{message}</p>}
+      <SaveBar onSave={save} saving={saving} dirty={dirty} message={message} error={!!message?.startsWith("Could not")} />
     </Card>
   );
 }

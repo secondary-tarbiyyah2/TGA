@@ -18,7 +18,8 @@ import { BoundaryEditor, GcseStatusChip, GradeChip, TrendLine, gradeOptions, use
 
 export type PupilSubjectRow = GcseRow & { subject_name: string };
 
-const fmtDate = (iso: string) => new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+const fmtDate = (iso: string) => new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "Europe/London" });
+const ukToday = () => new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
 
 /**
  * Slide-over with one pupil's GCSE picture: per subject the three grades, the
@@ -50,9 +51,10 @@ export function GcsePupilDrawer({ childId, childName, rows, canEdit, onClose, on
   // ── mock entry ──
   const [boundaries, setBoundaries, resetBoundaries] = useBoundaries();
   const [showBounds, setShowBounds] = useState(false);
-  const [subjectRowId, setSubjectRowId] = useState(rows[0]?.id || "");
+  // The subject whose "Add a mock result" form is open (the form opens inside that subject's card).
+  const [subjectRowId, setSubjectRowId] = useState<string | null>(null);
   const [label, setLabel] = useState("Mock exam");
-  const [sat, setSat] = useState(() => new Date().toISOString().slice(0, 10));
+  const [sat, setSat] = useState(ukToday);
   const [mark, setMark] = useState("");
   const [outOf, setOutOf] = useState("100");
   const [gradeOverride, setGradeOverride] = useState("");
@@ -102,6 +104,7 @@ export function GcsePupilDrawer({ childId, childName, rows, canEdit, onClose, on
       }
       setMark("");
       setGradeOverride("");
+      setSubjectRowId(null);
       await load();
       onChanged?.();
     } finally {
@@ -113,7 +116,9 @@ export function GcsePupilDrawer({ childId, childName, rows, canEdit, onClose, on
     if (!supabase || !window.confirm("Remove this mock exam result from the history?")) return;
     const { error } = await supabase.from("gcse_grade_history").delete().eq("id", h.id);
     if (error) return setMsg({ ok: false, text: "Couldn't remove that result." });
+    setMsg({ ok: true, text: "Mock result removed. The pupil's actual grade is unchanged; edit it in Enter grades if needed." });
     await load();
+    onChanged?.();
   }
 
   const bySubject = useMemo(() => {
@@ -121,6 +126,63 @@ export function GcsePupilDrawer({ childId, childName, rows, canEdit, onClose, on
     for (const h of history || []) m2.set(h.subject_id, [...(m2.get(h.subject_id) || []), h]);
     return m2;
   }, [history]);
+
+  const mockForm = (
+    <div className="mt-4 rounded-xl border border-teal-500/40 bg-cream/40 p-4">
+      <h4 className="text-sm font-semibold text-ink">Add a mock exam result</h4>
+      <div className="mt-3 grid grid-cols-2 gap-3 text-xs font-medium text-ink/70">
+        <label>
+          Paper
+          <input value={label} maxLength={80} placeholder="e.g. Paper 1, Dec mock" onChange={(e) => setLabel(e.target.value)} className="mt-1 block w-full rounded-md border border-gold-light/60 bg-white px-2 py-1.5 text-sm" />
+        </label>
+        <label>
+          Date sat
+          <input type="date" value={sat} max={ukToday()} onChange={(e) => setSat(e.target.value)} className="mt-1 block w-full rounded-md border border-gold-light/60 bg-white px-2 py-1.5 text-sm" />
+        </label>
+        <label>
+          Mark
+          <input type="text" inputMode="decimal" min={0} step="0.5" value={mark} onChange={(e) => setMark(e.target.value)} className="mt-1 block w-full rounded-md border border-gold-light/60 bg-white px-2 py-1.5 text-sm" />
+        </label>
+        <label>
+          Out of
+          <input type="text" inputMode="decimal" min={1} step="0.5" value={outOf} onChange={(e) => setOutOf(e.target.value)} className="mt-1 block w-full rounded-md border border-gold-light/60 bg-white px-2 py-1.5 text-sm" />
+        </label>
+      </div>
+      <div className="mt-3 flex flex-wrap items-center gap-3 text-sm text-ink">
+        <span role="status">
+          {markOk ? `${((m / o) * 100).toFixed(1)}% suggests grade ${suggested ?? "below 1"}.` : "Enter the mark to see a suggested grade."}
+          {toNext && toNext.marks > 0 && <span className="ml-1 text-xs text-ink/65">{toNext.marks} more for grade {toNext.grade}.</span>}
+        </span>
+        <label className="flex items-center gap-1 text-xs text-ink/70">
+          Grade
+          <select value={gradeOverride} onChange={(e) => setGradeOverride(e.target.value)} className="rounded-md border border-gold-light/60 bg-white px-2 py-1 text-sm">
+            <option value="">{suggested ? `Suggested (${suggested})` : "Choose…"}</option>
+            {gradeOptions()}
+          </select>
+        </label>
+      </div>
+      <label className="mt-3 flex items-center gap-2 text-xs text-ink/75">
+        <input type="checkbox" checked={setActual} onChange={(e) => setSetActual(e.target.checked)} />
+        Also make this the pupil&apos;s actual grade
+      </label>
+      <div className="mt-3 flex flex-wrap items-center gap-3">
+        <button type="button" disabled={saving || !markOk} onClick={saveMock} className="rounded-lg bg-gold-700 px-4 py-1.5 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
+          {saving ? "Saving…" : "Save mock result"}
+        </button>
+        <button type="button" onClick={() => setSubjectRowId(null)} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream">
+          Cancel
+        </button>
+        <button type="button" onClick={() => setShowBounds((v) => !v)} aria-expanded={showBounds} className="text-xs font-medium text-ink/70 underline">
+          {showBounds ? "Hide grade boundaries" : "Grade boundaries"}
+        </button>
+      </div>
+      {showBounds && (
+        <div className="mt-3">
+          <BoundaryEditor boundaries={boundaries} onChange={setBoundaries} onReset={resetBoundaries} />
+        </div>
+      )}
+    </div>
+  );
 
   return (
     <div className="fixed inset-0 z-[100] flex justify-end bg-black/40" role="dialog" aria-modal="true" aria-label={`GCSE grades for ${childName}`} onClick={(e) => e.target === e.currentTarget && onClose()}>
@@ -136,6 +198,11 @@ export function GcsePupilDrawer({ childId, childName, rows, canEdit, onClose, on
         </div>
 
         <div className="space-y-5 p-5">
+          {msg && (
+            <p role={msg.ok ? "status" : "alert"} className={`rounded-lg px-3 py-2 text-xs ${msg.ok ? "bg-teal-50 text-teal-800" : "bg-red-50 text-red-700"}`}>
+              {msg.text}
+            </p>
+          )}
           {rows.length === 0 && <p className="text-sm text-ink/65">No GCSE grades recorded for this pupil yet.</p>}
           {rows.map((r) => {
             const hist = bySubject.get(r.subject_id) || [];
@@ -159,16 +226,33 @@ export function GcsePupilDrawer({ childId, childName, rows, canEdit, onClose, on
                     {dir.symbol} {dir.label}
                   </span>
                 </div>
-                <p className="mt-3 text-sm font-medium text-ink">{ex.headline}</p>
+                <details className="mt-3">
+                  <summary className="cursor-pointer text-sm font-medium text-ink">{ex.headline}</summary>
                 <p className="mt-1 text-xs leading-relaxed text-ink/70">{ex.detail}</p>
                 <ul className="mt-2 list-disc space-y-0.5 pl-5 text-xs text-ink/70">
                   {ex.nextSteps.map((s) => (
                     <li key={s}>{s}</li>
                   ))}
                 </ul>
+                </details>
                 {r.comment && <p className="mt-3 rounded-lg bg-cream/60 px-3 py-2 text-xs text-ink/75">Teacher comment: {r.comment}</p>}
 
-                <h4 className="mt-4 text-xs font-semibold uppercase tracking-wide text-ink/65">History</h4>
+                <div className="mt-4 flex flex-wrap items-center justify-between gap-2">
+                  <h4 className="text-xs font-semibold uppercase tracking-wide text-ink/65">History</h4>
+                  {canEdit && subjectRowId !== r.id && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setMsg(null);
+                        setSubjectRowId(r.id);
+                      }}
+                      className="text-xs font-semibold text-teal-700 hover:underline"
+                    >
+                      + Add a mock result
+                    </button>
+                  )}
+                </div>
+                {subjectRowId === r.id && mockForm}
                 {history === null ? (
                   <p className="mt-1 text-xs text-ink/65">Loading…</p>
                 ) : hist.length === 0 ? (
@@ -215,74 +299,6 @@ export function GcsePupilDrawer({ childId, childName, rows, canEdit, onClose, on
             );
           })}
 
-          {canEdit && rows.length > 0 && (
-            <section className="rounded-xl border border-gold-light/50 bg-cream/40 p-4">
-              <h3 className="text-sm font-semibold text-ink">Add a mock exam result</h3>
-              <div className="mt-3 grid grid-cols-2 gap-3 text-xs font-medium text-ink/70">
-                <label>
-                  Subject
-                  <select value={subjectRowId} onChange={(e) => setSubjectRowId(e.target.value)} className="mt-1 block w-full rounded-md border border-gold-light/60 bg-white px-2 py-1.5 text-sm">
-                    {rows.map((r) => (
-                      <option key={r.id} value={r.id}>
-                        {r.subject_name}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-                <label>
-                  Paper
-                  <input value={label} maxLength={80} placeholder="e.g. Paper 1, Dec mock" onChange={(e) => setLabel(e.target.value)} className="mt-1 block w-full rounded-md border border-gold-light/60 bg-white px-2 py-1.5 text-sm" />
-                </label>
-                <label>
-                  Date sat
-                  <input type="date" value={sat} max={new Date().toISOString().slice(0, 10)} onChange={(e) => setSat(e.target.value)} className="mt-1 block w-full rounded-md border border-gold-light/60 bg-white px-2 py-1.5 text-sm" />
-                </label>
-                <label>
-                  Mark
-                  <input type="text" inputMode="decimal" min={0} step="0.5" value={mark} onChange={(e) => setMark(e.target.value)} className="mt-1 block w-full rounded-md border border-gold-light/60 bg-white px-2 py-1.5 text-sm" />
-                </label>
-                <label>
-                  Out of
-                  <input type="text" inputMode="decimal" min={1} step="0.5" value={outOf} onChange={(e) => setOutOf(e.target.value)} className="mt-1 block w-full rounded-md border border-gold-light/60 bg-white px-2 py-1.5 text-sm" />
-                </label>
-              </div>
-              <div className="mt-3 flex flex-wrap items-center gap-3 text-sm text-ink">
-                <span role="status">
-                  {markOk ? `${((m / o) * 100).toFixed(1)}% suggests grade ${suggested ?? "below 1"}.` : "Enter the mark to see a suggested grade."}
-                  {toNext && toNext.marks > 0 && <span className="ml-1 text-xs text-ink/65">{toNext.marks} more for grade {toNext.grade}.</span>}
-                </span>
-                <label className="flex items-center gap-1 text-xs text-ink/70">
-                  Grade
-                  <select value={gradeOverride} onChange={(e) => setGradeOverride(e.target.value)} className="rounded-md border border-gold-light/60 bg-white px-2 py-1 text-sm">
-                    <option value="">{suggested ? `Suggested (${suggested})` : "Choose…"}</option>
-                    {gradeOptions()}
-                  </select>
-                </label>
-              </div>
-              <label className="mt-3 flex items-center gap-2 text-xs text-ink/75">
-                <input type="checkbox" checked={setActual} onChange={(e) => setSetActual(e.target.checked)} />
-                Also make this the pupil&apos;s actual grade
-              </label>
-              <div className="mt-3 flex flex-wrap items-center gap-3">
-                <button type="button" disabled={saving || !markOk} onClick={saveMock} className="rounded-lg bg-gold-700 px-4 py-1.5 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
-                  {saving ? "Saving…" : "Save mock result"}
-                </button>
-                <button type="button" onClick={() => setShowBounds((v) => !v)} aria-expanded={showBounds} className="text-xs font-medium text-ink/70 underline">
-                  {showBounds ? "Hide grade boundaries" : "Grade boundaries"}
-                </button>
-              </div>
-              {showBounds && (
-                <div className="mt-3">
-                  <BoundaryEditor boundaries={boundaries} onChange={setBoundaries} onReset={resetBoundaries} />
-                </div>
-              )}
-            </section>
-          )}
-          {msg && (
-            <p role={msg.ok ? "status" : "alert"} className={`text-xs ${msg.ok ? "text-teal-700" : "text-red-700"}`}>
-              {msg.text}
-            </p>
-          )}
         </div>
       </div>
     </div>

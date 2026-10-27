@@ -12,6 +12,7 @@ import { RecordSignatureModal, type SignTarget } from "@/components/learn/docume
 import { SignatureHistory } from "@/components/learn/documents/SignatureHistory";
 import { AUDIENCE_LABEL, audienceText, audienceToRoles, requestSignatures, rolesToAudience, type Audience } from "@/components/learn/documents/audience";
 import { Tabs } from "@/components/learn/Tabs";
+import { csvEscape } from "@/components/learn/fees/shared";
 
 type PolicyRow = { id: string; number: string; title: string; category: string; fileUrl: string; lastReviewed?: string; nextReview?: string };
 type SignableDoc = {
@@ -109,17 +110,26 @@ function Bar({ signed, required }: { signed: number; required: number }) {
   );
 }
 
-function NewDocument({ onClose, onDone }: { onClose: () => void; onDone: () => void }) {
+function NewDocument({ onClose, onDone }: { onClose: () => void; onDone: (message: string) => void }) {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [fileUrl, setFileUrl] = useState("");
   const [file, setFile] = useState<File | null>(null);
   const [reading, setReading] = useState(false);
   const [roles, setRoles] = useState<string[]>(DEFAULT_ROLES);
+  const [emailNow, setEmailNow] = useState(true);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const kind = file ? uploadKind(file) : null;
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && !busy) onClose();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [busy, onClose]);
 
   const choose = async (f: File | undefined) => {
     setError(null);
@@ -168,7 +178,7 @@ function NewDocument({ onClose, onDone }: { onClose: () => void; onDone: () => v
         return setError("Couldn't upload the file. Only a Headteacher or Admin can.");
       }
     }
-    const { error: err } = await supabase.from("signable_documents").insert({
+    const { data: created, error: err } = await supabase.from("signable_documents").insert({
       sanity_document_id: `portal:${crypto.randomUUID()}`,
       source: "portal",
       title: title.trim(),
@@ -181,14 +191,21 @@ function NewDocument({ onClose, onDone }: { onClose: () => void; onDone: () => v
       target_roles: roles,
       requires_signature: true,
       current_asset_id: "pending",
-    });
-    if (err) {
+    }).select("id").single();
+    if (err || !created) {
       if (uploadedPath) await supabase.storage.from("signable-documents").remove([uploadedPath]);
       setBusy(false);
       return setError("Couldn't create it. Only a Headteacher or Admin can.");
     }
+    // The button used to promise "ask for signatures" but nothing was ever
+    // emailed: people only found out when they next signed in.
+    let message = `Created "${title.trim()}". It now shows in the portal for everyone who has to sign it.`;
+    if (emailNow) {
+      const r = await requestSignatures((created as { id: string }).id, { kind: "request" });
+      message = r.ok ? `Created "${title.trim()}". ${r.message}` : `Created "${title.trim()}", but the emails didn't go: ${r.message} People can still sign in the portal.`;
+    }
     setBusy(false);
-    onDone();
+    onDone(message);
   };
 
   return (
@@ -240,6 +257,13 @@ function NewDocument({ onClose, onDone }: { onClose: () => void; onDone: () => v
             <p className="mb-2 font-medium text-ink">Who has to sign</p>
             <RolePicker value={roles} onChange={setRoles} />
           </div>
+          <label className="flex items-start gap-2 text-sm">
+            <input type="checkbox" checked={emailNow} onChange={(e) => setEmailNow(e.target.checked)} className="mt-0.5" />
+            <span>
+              <span className="font-medium text-ink">Email everyone who has to sign now</span>
+              <span className="block text-xs text-ink/65">Untick to add it quietly. It still appears in their portal, and the weekly reminder still goes out.</span>
+            </span>
+          </label>
           {error && <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{error}</p>}
         </div>
         <div className="flex justify-end gap-2 border-t border-gold-light px-5 py-3">
@@ -247,7 +271,7 @@ function NewDocument({ onClose, onDone }: { onClose: () => void; onDone: () => v
             Cancel
           </button>
           <button type="button" disabled={busy || reading} onClick={save} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
-            {busy ? "Creating…" : "Create and ask for signatures"}
+            {busy ? "Creating…" : emailNow ? "Create and email signers" : "Create"}
           </button>
         </div>
       </div>
@@ -266,8 +290,12 @@ function DocumentsContent() {
   const [busyId, setBusyId] = useState<string | null>(null);
   const [creating, setCreating] = useState(false);
   const [q, setQ] = useState("");
+  const [policyQ, setPolicyQ] = useState("");
   const [docFilter, setDocFilter] = useState("all");
-  const [note, setNote] = useState<string | null>(null);
+  const [note, setNoteState] = useState<{ text: string; tone: "good" | "bad" } | null>(null);
+  // Success and failure used to share one red box: only text starting with
+  // "Recorded" showed green, so "Reminder sent" looked like an error.
+  const setNote = (text: string | null, tone: "good" | "bad" = "bad") => setNoteState(text ? { text, tone } : null);
   const [record, setRecord] = useState<{ documentId: string; title: string; targets: SignTarget[] } | null>(null);
   const [picked, setPicked] = useState<Set<string>>(new Set()); // `${documentId}:${userId}`
   const [historyKey, setHistoryKey] = useState(0);
@@ -302,13 +330,16 @@ function DocumentsContent() {
   const docForPolicy = (id: string) => (docs || []).find((d) => d.sanity_document_id === `policy:${id}`);
   const signing = (docs || []).filter((d) => d.requires_signature);
 
-  const savePolicy = async (p: PolicyRow, on: boolean, audiences: Audience[], auto = false) => {
+  const savePolicy = async (p: PolicyRow, on: boolean, audiences: Audience[], auto = false, bulk = false): Promise<boolean> => {
     const supabase = getSupabaseClient();
-    if (!supabase) return;
-    setNote(null);
+    if (!supabase) return false;
+    if (!bulk) setNote(null);
     const roles = audienceToRoles(audiences);
-    if (on && roles.length === 0) return setNote("Choose who has to sign (Staff, Parents or Students).");
-    setBusyId(p.id);
+    if (on && roles.length === 0) {
+      setNote("Choose who has to sign (Staff, Parents or Students).");
+      return false;
+    }
+    if (!bulk) setBusyId(p.id);
     const existing = docForPolicy(p.id);
     const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-/i.test(p.id);
     const fields = {
@@ -322,9 +353,13 @@ function DocumentsContent() {
     const { error } = existing
       ? await supabase.from("signable_documents").update(fields).eq("id", existing.id)
       : await supabase.from("signable_documents").insert({ ...fields, sanity_document_id: `policy:${p.id}`, policy_link_id: isUuid ? p.id : null, current_asset_id: "pending" });
-    setBusyId(null);
-    if (error) return setNote("Couldn't save. Only a Headteacher or Admin can change this.");
-    await load();
+    if (!bulk) setBusyId(null);
+    if (error) {
+      setNote("Couldn't save. Only a Headteacher or Admin can change this.");
+      return false;
+    }
+    if (!bulk) await load();
+    return true;
   };
 
   /** The automatic audience for a policy (policy_signing_audience in the database): who it
@@ -344,24 +379,29 @@ function DocumentsContent() {
   const autoAssignAll = async () => {
     if (!policies) return;
     if (!confirm("Set every website policy to its automatic audience? Audiences you have customised by hand are kept.")) return;
+    // One reload at the end (not one per policy), and the button stays busy throughout.
     setBusyId("all");
+    setNote(null);
+    let failed = 0;
     for (const p of policies) {
       const d = docForPolicy(p.id);
       if (d && d.auto_audience === false) continue;
       const a = await recommended(p);
-      await savePolicy(p, a.length > 0, a, true);
+      if (!(await savePolicy(p, a.length > 0, a, true, true))) failed += 1;
     }
     setBusyId(null);
-    setNote("Recorded: every policy now has its automatic audience (hand-set ones kept).");
     await load();
+    if (failed) setNote(`${failed} polic${failed === 1 ? "y" : "ies"} couldn't be updated. Only a Headteacher or Admin can change this.`);
+    else setNote("Done: every policy now has its automatic audience (hand-set ones kept).", "good");
   };
 
-  const remind = async (documentId: string, userIds?: string[]) => {
+  const remind = async (documentId: string, waiting: number, title: string) => {
+    if (!window.confirm(`Email a reminder to the ${waiting} ${waiting === 1 ? "person" : "people"} who still have to sign "${title}"? Anyone emailed in the last 6 hours is skipped.`)) return;
     setNote(null);
-    setBusyId(documentId + (userIds?.join(",") || ""));
-    const r = await requestSignatures(documentId, { userIds, kind: "reminder" });
+    setBusyId(documentId);
+    const r = await requestSignatures(documentId, { kind: "reminder" });
     setBusyId(null);
-    setNote(r.message);
+    setNote(r.message, r.ok ? "good" : "bad");
     await load();
   };
 
@@ -377,7 +417,12 @@ function DocumentsContent() {
   const stopSigning = async (d: SignableDoc) => {
     const supabase = getSupabaseClient();
     if (!supabase) return;
-    await supabase.from("signable_documents").update({ requires_signature: false }).eq("id", d.id);
+    if (!window.confirm(`Stop asking people to sign "${d.title}"? Signatures already given are kept, and you can switch it back on later.`)) return;
+    setBusyId(d.id);
+    const { error } = await supabase.from("signable_documents").update({ requires_signature: false }).eq("id", d.id);
+    setBusyId(null);
+    if (error) return setNote("Couldn't stop it. Only a Headteacher or Admin can.");
+    setNote(`No longer asking for signatures on "${d.title}".`, "good");
     await load();
   };
 
@@ -386,7 +431,8 @@ function DocumentsContent() {
     if (!supabase) return;
     const { data } = await supabase.from("document_signatures").select("typed_full_name, signed_at, signable_documents(title)");
     const rows = (data as unknown as { typed_full_name: string; signed_at: string; signable_documents: { title: string } | null }[]) || [];
-    const csv = ["document,signer_name,signed_at", ...rows.map((r) => `"${r.signable_documents?.title || ""}","${r.typed_full_name}","${r.signed_at}"`)].join("\n");
+    // Quotes in a title or name used to break the row; csvEscape also defuses formulas.
+    const csv = ["document,signer_name,signed_at", ...rows.map((r) => [r.signable_documents?.title || "", r.typed_full_name, r.signed_at].map(csvEscape).join(","))].join("\n");
     const a = document.createElement("a");
     a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" }));
     a.download = "document-signatures.csv";
@@ -454,7 +500,14 @@ function DocumentsContent() {
         className="mb-4"
       />
 
-      {note && <p className={`mb-4 rounded-lg px-4 py-2 text-sm ${note.startsWith("Recorded") ? "bg-green-50 text-green-900" : "bg-red-50 text-red-800"}`}>{note}</p>}
+      {note && (
+        <p role={note.tone === "bad" ? "alert" : "status"} className={`mb-4 flex items-start justify-between gap-3 rounded-lg px-4 py-2 text-sm ${note.tone === "good" ? "bg-green-50 text-green-900" : "bg-red-50 text-red-800"}`}>
+          <span>{note.text}</span>
+          <button type="button" onClick={() => setNote(null)} aria-label="Dismiss" className="font-semibold opacity-70 hover:opacity-100">
+            ×
+          </button>
+        </p>
+      )}
 
       {tab === "policies" && (
         <div className="overflow-hidden rounded-2xl border border-gold-light bg-white">
@@ -462,6 +515,14 @@ function DocumentsContent() {
             <p className="text-xs text-ink/70">
               Each policy is routed automatically to the people it is written for (staff, parents, pupils) from its title, and a new policy is routed the moment it is added. You can still change any audience by hand; hand-set ones show no <span className="font-semibold">Auto</span> badge.
             </p>
+            <input
+              type="search"
+              value={policyQ}
+              onChange={(e) => setPolicyQ(e.target.value)}
+              placeholder="Find a policy"
+              aria-label="Find a policy"
+              className="min-w-[160px] flex-1 rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm sm:max-w-xs"
+            />
             <button type="button" onClick={autoAssignAll} disabled={busyId === "all"} className="rounded-full border border-teal-700 px-3 py-1 text-xs font-medium text-teal-700 hover:bg-teal-700/5 disabled:opacity-50">
               {busyId === "all" ? "Working…" : "Re-apply automatic audiences"}
             </button>
@@ -472,7 +533,7 @@ function DocumentsContent() {
             <p className="px-5 py-10 text-center text-sm text-ink/65">No policies are published on the website yet.</p>
           ) : (
             <ul className="divide-y divide-gold-light/70">
-              {policies.map((p) => {
+              {policies.filter((p) => !policyQ.trim() || `${p.number} ${p.title}`.toLowerCase().includes(policyQ.trim().toLowerCase())).map((p) => {
                 const d = docForPolicy(p.id);
                 const on = !!d?.requires_signature;
                 const audiences = rolesToAudience(d?.target_roles || []);
@@ -556,7 +617,7 @@ function DocumentsContent() {
                       <button
                         type="button"
                         disabled={busyId === d.id}
-                        onClick={() => remind(d.id)}
+                        onClick={() => remind(d.id, waiting, d.title)}
                         className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream disabled:opacity-50"
                       >
                         {busyId === d.id ? "Sending…" : `Email ${waiting} to sign`}
@@ -582,8 +643,8 @@ function DocumentsContent() {
                       </button>
                     )}
                     {d.source !== "sanity" && (
-                      <button type="button" onClick={() => stopSigning(d)} className="text-sm font-medium text-ink/65 hover:text-red-700">
-                        Stop
+                      <button type="button" disabled={busyId === d.id} onClick={() => stopSigning(d)} className="text-sm font-medium text-ink/65 hover:text-red-700 disabled:opacity-50">
+                        Stop asking
                       </button>
                     )}
                   </li>
@@ -650,7 +711,7 @@ function DocumentsContent() {
                             sent += r.sent;
                           }
                           setBusyId(null);
-                          setNote(sent > 0 ? `Reminder sent to ${person.name}.` : `No email sent to ${person.name} (they were reminded recently, or email isn't available).`);
+                          setNote(sent > 0 ? `Reminder sent to ${person.name}.` : `No email sent to ${person.name} (they were reminded recently, or email isn't available).`, sent > 0 ? "good" : "bad");
                           await load();
                         }}
                         className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-xs font-medium text-ink/80 hover:bg-cream disabled:opacity-50"
@@ -705,7 +766,7 @@ function DocumentsContent() {
           onDone={(msg) => {
             setRecord(null);
             setPicked(new Set());
-            setNote(msg);
+            setNote(msg, "good");
             setHistoryKey((k) => k + 1);
             load();
           }}
@@ -715,9 +776,10 @@ function DocumentsContent() {
       {creating && (
         <NewDocument
           onClose={() => setCreating(false)}
-          onDone={() => {
+          onDone={(msg) => {
             setCreating(false);
             setTab("signing");
+            setNote(msg, /didn't go/.test(msg) ? "bad" : "good");
             load();
           }}
         />

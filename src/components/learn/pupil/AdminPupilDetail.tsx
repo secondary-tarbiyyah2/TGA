@@ -9,6 +9,7 @@ import { PrintScope, findPrintScope, printElement } from "@/components/learn/pri
 import { Tabs } from "@/components/learn/Tabs";
 import { Notice, StatusChip, ui } from "@/components/learn/ui";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { ukDaysAgo } from "@/lib/learn/ukTime";
 import { LeaderboardPrivacy } from "@/components/learn/behaviour/LeaderboardPrivacy";
 import { ProgressBar, ageFromDob, completeness, formatDob, formatStamp, medicalAlerts } from "./data";
 import { PupilOverview } from "./PupilOverview";
@@ -43,7 +44,8 @@ export function AdminPupilDetail({ id }: { id: string }) {
     if (!supabase) return;
     let cancelled = false;
     (async () => {
-      const since = new Date(Date.now() - 30 * 86_400_000).toISOString().slice(0, 10);
+      // The last 30 UK days, today included.
+      const since = ukDaysAgo(29);
       const [c, e, a] = await Promise.all([
         supabase.from("children").select("id, name, dob, parent_user_id, year_groups(name)").eq("id", id).maybeSingle(),
         supabase.from("enrolments").select("classes(name)").eq("child_id", id),
@@ -89,7 +91,12 @@ export function AdminPupilDetail({ id }: { id: string }) {
     return (
       <>
         <PageHeader crumbs={crumbs} title="Pupil not found" />
-        <p className="text-sm text-ink/65">We couldn&apos;t find that pupil.</p>
+        <p className="text-sm text-ink/65">
+          We couldn&apos;t find that pupil.{" "}
+          <Link href="/admin/pupils" className="font-medium text-teal-700 underline">
+            Back to all pupils
+          </Link>
+        </p>
       </>
     );
   }

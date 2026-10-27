@@ -4,28 +4,37 @@ import { useState } from "react";
 import { LessonsFrame, LessonsHeader } from "@/components/learn/timetable/LessonsFrame";
 import { btn, chipCls, fieldCls } from "@/components/learn/timetable/api";
 import { useTimetableData, type AvailabilityRow } from "@/components/learn/timetable/useTimetableData";
-import { hhmm, type Teacher } from "@/components/learn/timetable/types";
+import { defaultYearId, hhmm, type Teacher } from "@/components/learn/timetable/types";
 import { WEEKDAYS } from "@/lib/learn/timetable";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
-function TeacherRow({ teacher, rows, yearId, reload }: { teacher: Teacher; rows: AvailabilityRow[]; yearId: string; reload: () => Promise<void> }) {
+function TeacherRow({ teacher, rows, yearId, reload }: { teacher: Teacher; rows: AvailabilityRow[]; yearId: string; reload: () => Promise<unknown> }) {
   const supabase = getSupabaseClient();
   const [open, setOpen] = useState(false);
-  const [weekday, setWeekday] = useState(1);
+  // Several days at once: most teachers keep the same hours every day.
+  const [days, setDays] = useState<number[]>([1, 2, 3, 4]);
   const [start, setStart] = useState("09:00");
   const [end, setEnd] = useState("15:00");
   const [error, setError] = useState<string | null>(null);
+  const [busy, setBusy] = useState(false);
+  const toggleDay = (d: number) => setDays((cur) => (cur.includes(d) ? cur.filter((x) => x !== d) : [...cur, d].sort((a, b) => a - b)));
 
   const add = async () => {
     if (!supabase) return;
+    if (days.length === 0) return setError("Choose at least one day.");
     if (end <= start) return setError("The end time must be after the start time.");
+    const clash = days.find((d) => rows.some((r) => r.weekday === d && hhmm(r.start_time) < end && start < hhmm(r.end_time)));
+    if (clash) return setError(`That overlaps a window already set on ${WEEKDAYS.find((w) => w.value === clash)?.label}. Remove it first or pick other days.`);
     setError(null);
-    const { error: err } = await supabase.from("teacher_availability").insert({ teacher_user_id: teacher.id, academic_year_id: yearId, weekday, start_time: start, end_time: end });
+    setBusy(true);
+    const { error: err } = await supabase.from("teacher_availability").insert(days.map((weekday) => ({ teacher_user_id: teacher.id, academic_year_id: yearId, weekday, start_time: start, end_time: end })));
+    setBusy(false);
     if (err) return setError(err.message);
     await reload();
   };
   const remove = async (id: string) => {
     if (!supabase) return;
+    setError(null);
     const { error: err } = await supabase.from("teacher_availability").delete().eq("id", id);
     if (err) return setError(err.message);
     await reload();
@@ -59,13 +68,15 @@ function TeacherRow({ teacher, rows, yearId, reload }: { teacher: Teacher; rows:
               ))}
             </ul>
           )}
-          <div className="flex flex-wrap gap-1.5" role="group" aria-label="Day">
-            {WEEKDAYS.map((w) => <button key={w.value} type="button" aria-pressed={weekday === w.value} onClick={() => setWeekday(w.value)} className={chipCls(weekday === w.value)}>{w.short}</button>)}
+          <div className="flex flex-wrap items-center gap-1.5" role="group" aria-label="Days">
+            <span className="mr-1 text-xs font-medium text-ink/70">Add for</span>
+            {WEEKDAYS.map((w) => <button key={w.value} type="button" aria-pressed={days.includes(w.value)} onClick={() => toggleDay(w.value)} className={chipCls(days.includes(w.value))}>{w.short}</button>)}
           </div>
+          {days.includes(5) && end > "12:00" && <p className="text-xs text-ink/65">Friday afternoon is off: only Lessons 1 to 3 (to 12:00) run on a Friday.</p>}
           <div className="flex flex-wrap items-end gap-2">
             <label className="text-xs font-medium text-ink/70">From<input type="time" value={start} onChange={(e) => setStart(e.target.value)} className={fieldCls} /></label>
             <label className="text-xs font-medium text-ink/70">To<input type="time" value={end} onChange={(e) => setEnd(e.target.value)} className={fieldCls} /></label>
-            <button type="button" onClick={add} className={btn}>Add window</button>
+            <button type="button" onClick={add} disabled={busy} className={btn}>{busy ? "Adding…" : days.length > 1 ? `Add to ${days.length} days` : "Add window"}</button>
           </div>
           {error && <p role="alert" className="text-xs text-red-800">{error}</p>}
         </div>
@@ -77,7 +88,7 @@ function TeacherRow({ teacher, rows, yearId, reload }: { teacher: Teacher; rows:
 function AvailabilityContent() {
   const { data, reload } = useTimetableData();
   const [yearId, setYearId] = useState("");
-  const effYearId = yearId || data.years[0]?.id || "";
+  const effYearId = yearId || defaultYearId(data.years);
   const [show, setShow] = useState<"all" | "missing">("all");
   const rowsFor = (id: string) => data.availability.filter((a) => a.teacher_user_id === id && a.academic_year_id === effYearId);
   const missing = data.teachers.filter((t) => rowsFor(t.id).length === 0).length;

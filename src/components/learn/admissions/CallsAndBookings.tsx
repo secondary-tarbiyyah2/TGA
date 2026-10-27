@@ -98,7 +98,10 @@ function StaffAvailabilityEditor({ staff, onStaffUpdated }: { staff: StaffRow; o
 
   async function removeRule(id: string) {
     if (!supabase) return;
-    await supabase.from("availability_rules").delete().eq("id", id);
+    if (!window.confirm("Remove this availability slot? Families can no longer book it.")) return;
+    const { error } = await supabase.from("availability_rules").delete().eq("id", id);
+    // Keep the row on screen if the delete failed, rather than pretending it worked.
+    if (error) return window.alert(`Couldn't remove that slot: ${error.message}`);
     setRules((r) => (r || []).filter((x) => x.id !== id));
   }
 
@@ -171,6 +174,8 @@ function StaffAvailabilityEditor({ staff, onStaffUpdated }: { staff: StaffRow; o
   );
 }
 
+const BOOKING_STATUS_LABEL: Record<string, string> = { confirmed: "Outcome not marked", completed: "Completed", no_show: "No-show", cancelled: "Cancelled" };
+
 function StaffBookingsPanel({ staffId }: { staffId: string }) {
   const supabase = getSupabaseClient();
   const [bookings, setBookings] = useState<BookingRow[] | null>(null);
@@ -214,9 +219,16 @@ function StaffBookingsPanel({ staffId }: { staffId: string }) {
       .then(({ data }) => setBookings((data as BookingRow[]) || []));
   }, [supabase, staffId]);
 
+  const [outcomeError, setOutcomeError] = useState<string | null>(null);
+  const [showAllPast, setShowAllPast] = useState(false);
+
   async function setOutcome(bookingId: string, status: string) {
     if (!supabase) return;
-    await supabase.from("bookings").update({ status }).eq("id", bookingId);
+    if (status === "no_show" && !window.confirm("Mark this booking as a no-show?")) return;
+    setOutcomeError(null);
+    const { error } = await supabase.from("bookings").update({ status }).eq("id", bookingId);
+    // Only move it to "past" once the change is really saved.
+    if (error) return setOutcomeError(`Couldn't update that booking: ${error.message}`);
     setBookings((b) => (b || []).map((x) => (x.id === bookingId ? { ...x, status } : x)));
   }
 
@@ -236,7 +248,9 @@ function StaffBookingsPanel({ staffId }: { staffId: string }) {
 
   const now = new Date();
   const upcoming = bookings.filter((b) => new Date(b.starts_at) >= now && b.status === "confirmed");
-  const past = bookings.filter((b) => new Date(b.starts_at) < now || b.status !== "confirmed");
+  // Newest first, so the latest outcomes are at the top.
+  const past = bookings.filter((b) => new Date(b.starts_at) < now || b.status !== "confirmed").reverse();
+  const pastShown = showAllPast ? past : past.slice(0, 10);
 
   return (
     <div className="space-y-4">
@@ -246,6 +260,11 @@ function StaffBookingsPanel({ staffId }: { staffId: string }) {
           Export CSV
         </button>
       </div>
+      {outcomeError && (
+        <p role="alert" className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">
+          {outcomeError}
+        </p>
+      )}
       <ul className="divide-y divide-gold-light/40 rounded-2xl border border-gold-light/50 bg-white">
         {upcoming.length === 0 && <li className="p-3 text-sm text-ink/65">No upcoming bookings.</li>}
         {upcoming.map((b) => (
@@ -280,15 +299,20 @@ function StaffBookingsPanel({ staffId }: { staffId: string }) {
       <p className="text-sm font-medium text-ink">Past &amp; other bookings</p>
       <ul className="divide-y divide-gold-light/40 rounded-2xl border border-gold-light/50 bg-white">
         {past.length === 0 && <li className="p-3 text-sm text-ink/65">Nothing here yet.</li>}
-        {past.map((b) => (
+        {pastShown.map((b) => (
           <li key={b.id} className="flex items-center justify-between p-3 text-sm">
             <span>
-              {new Date(b.starts_at).toLocaleDateString("en-GB")} · {b.contact_name}
+              {new Date(b.starts_at).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "Europe/London" })} · {b.contact_name}
             </span>
-            <span className="text-ink/65">{b.status}</span>
+            <span className="text-ink/65">{BOOKING_STATUS_LABEL[b.status] || b.status.replace(/_/g, " ")}</span>
           </li>
         ))}
       </ul>
+      {past.length > pastShown.length && (
+        <button type="button" onClick={() => setShowAllPast(true)} className="text-sm font-medium text-teal-700 hover:underline">
+          Show all {past.length}
+        </button>
+      )}
     </div>
   );
 }
@@ -396,16 +420,14 @@ export function CallsAndBookings() {
 
   return (
     <div className="space-y-6">
-      <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-        <h2 className="font-serif text-h2 font-semibold text-ink">Calls &amp; bookings</h2>
-        <p className="mt-1 text-sm text-ink/65">Manage admissions-call availability, bookable status, and bookings. These are short intro calls booked from the website. The GL assessment is a separate stage, scheduled on each application under Process.</p>
-      </div>
+      <p className="text-sm text-ink/65">Short intro calls families book from the website: your availability, whether you can be booked, and the bookings themselves. The GL assessment is separate, scheduled on each application under Process.</p>
 
       {canManageOthers && (
         <div className="flex gap-2 text-sm">
           <button
             type="button"
             onClick={() => setTab("mine")}
+            aria-pressed={tab === "mine"}
             className={`rounded-full px-4 py-1.5 font-medium ${tab === "mine" ? "bg-gold-500 text-ink-900" : "border border-gold-light/60 text-ink/70 hover:bg-cream"}`}
           >
             My availability
@@ -413,6 +435,7 @@ export function CallsAndBookings() {
           <button
             type="button"
             onClick={() => setTab("all")}
+            aria-pressed={tab === "all"}
             className={`rounded-full px-4 py-1.5 font-medium ${tab === "all" ? "bg-gold-500 text-ink-900" : "border border-gold-light/60 text-ink/70 hover:bg-cream"}`}
           >
             All staff

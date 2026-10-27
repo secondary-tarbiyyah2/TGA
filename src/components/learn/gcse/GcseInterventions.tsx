@@ -35,8 +35,54 @@ const STATUS_LABEL: Record<Status, string> = { open: "Open", in_progress: "In pr
 const STATUS_CLASS: Record<Status, string> = { open: "bg-amber-100 text-amber-900", in_progress: "bg-teal-100 text-teal-900", resolved: "bg-green-100 text-green-800" };
 const REASONS = ["Below predicted grade", "Grade has dropped", "Missing homework / coursework", "Low attendance", "Needs exam technique support", "Confidence / wellbeing concern", "Other"];
 
-const today = () => new Date().toISOString().slice(0, 10);
-const fmtDate = (d: string) => new Date(`${d.slice(0, 10)}T12:00:00`).toLocaleDateString("en-GB", { day: "numeric", month: "short" });
+// UK date: toISOString() is UTC, which is still yesterday just after midnight in summer.
+const today = () => new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
+const fmtDate = (d: string) => new Date(`${d.slice(0, 10)}T12:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
+
+/** Edit an existing flag's next step, due date and owner in place. */
+function NextStepEditor({ item, staff, onSave, onCancel }: { item: Intervention; staff: Staff[]; onSave: (c: { next_step: string; next_step_due: string | null; owner_id: string | null; owner_name: string | null }) => void; onCancel: () => void }) {
+  const [step, setStep] = useState(item.next_step || "");
+  const [due, setDue] = useState(item.next_step_due || "");
+  const [owner, setOwner] = useState(item.owner_id || "");
+  return (
+    <div className="mt-2 grid gap-2 rounded-lg border border-gold-light/50 bg-cream/40 p-3 text-xs font-medium text-ink/70 sm:grid-cols-[1fr_auto_auto]">
+      <label>
+        Next step
+        <input value={step} maxLength={300} onChange={(e) => setStep(e.target.value)} className={`${FIELD} mt-1 block w-full`} />
+      </label>
+      <label>
+        Due
+        <input type="date" value={due} onChange={(e) => setDue(e.target.value)} className={`${FIELD} mt-1 block`} />
+      </label>
+      {staff.length > 0 && (
+        <label>
+          Owner
+          <select value={owner} onChange={(e) => setOwner(e.target.value)} className={`${FIELD} mt-1 block`}>
+            <option value="">Nobody</option>
+            {staff.map((s) => (
+              <option key={s.id} value={s.id}>
+                {s.name}
+              </option>
+            ))}
+          </select>
+        </label>
+      )}
+      <div className="flex gap-2 sm:col-span-3">
+        <button
+          type="button"
+          disabled={!step.trim()}
+          onClick={() => onSave({ next_step: step.trim().slice(0, 300), next_step_due: due || null, owner_id: owner || null, owner_name: owner ? staff.find((s) => s.id === owner)?.name || item.owner_name : null })}
+          className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs font-semibold text-white hover:bg-gold-900 disabled:opacity-50"
+        >
+          Save
+        </button>
+        <button type="button" onClick={onCancel} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-xs font-medium text-ink/80 hover:bg-cream">
+          Cancel
+        </button>
+      </div>
+    </div>
+  );
+}
 
 /**
  * Intervention flags for GCSE pupils: why, who owns it, the next step and when
@@ -53,6 +99,7 @@ export function GcseInterventions() {
   const [filter, setFilter] = useState<"active" | "mine" | "overdue" | "resolved" | "all">("active");
   const [msg, setMsg] = useState<{ ok: boolean; text: string } | null>(null);
   const [showForm, setShowForm] = useState(false);
+  const [editingId, setEditingId] = useState<string | null>(null);
 
   // new flag
   const [pick, setPick] = useState("");
@@ -69,10 +116,12 @@ export function GcseInterventions() {
     if (!supabase) return;
     const { data, error } = await supabase.from("gcse_interventions").select(SELECT_COLS).order("created_at", { ascending: false }).limit(1000);
     if (error) {
+      // A missing table (migration 0090) and a network blip look the same here, so the message names both.
       setTableMissing(true);
       setItems([]);
       return;
     }
+    setTableMissing(false);
     setItems((data as unknown as Intervention[] | null) || []);
   }, [supabase]);
 
@@ -197,7 +246,7 @@ export function GcseInterventions() {
       "gcse-interventions.csv",
       toCsv(
         ["Pupil", "Subject", "Class", "Status", "Reason", "Owner", "Next step", "Due", "Notes", "Raised"],
-        shown.map((i) => [i.children?.name, i.subjects?.name, i.classes?.name, STATUS_LABEL[i.status], i.reason, i.owner_name, i.next_step, i.next_step_due, i.note, i.created_at.slice(0, 10)])
+        shown.map((i) => [i.children?.name, i.subjects?.name, i.classes?.name, STATUS_LABEL[i.status], i.reason, i.owner_name, i.next_step, i.next_step_due, i.note, new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/London" }).format(new Date(i.created_at))])
       )
     );
 
@@ -222,7 +271,15 @@ export function GcseInterventions() {
         </div>
       </div>
       <p className="mt-1 text-sm text-ink/65">Staff-only. Each flag has an owner and a next step; families never see these notes.</p>
-      {tableMissing && <p role="alert" className="mt-2 text-xs text-amber-800">The interventions table isn&apos;t there yet (migration 0090), so nothing can be saved until it is applied.</p>}
+      {tableMissing && (
+        <p role="alert" className="mt-2 text-xs text-amber-800">
+          Interventions couldn&apos;t be loaded. Check your connection and{" "}
+          <button type="button" onClick={() => void load()} className="font-semibold underline">
+            try again
+          </button>
+          . If it keeps happening, the interventions table (migration 0090) may not be set up yet.
+        </p>
+      )}
 
       {showForm && (
         <div className="mt-4 grid gap-3 rounded-xl border border-gold-light/50 bg-cream/40 p-4 text-xs font-medium text-ink/70 sm:grid-cols-2">
@@ -340,8 +397,24 @@ export function GcseInterventions() {
                   <dd className="text-ink/80">
                     {i.next_step || "None set"}
                     {i.next_step_due && <span className={`ml-2 rounded px-1.5 py-0.5 ${overdue ? "bg-red-100 text-red-800" : "bg-cream text-ink/70"}`}>{overdue ? "Overdue, was due " : "Due "}{fmtDate(i.next_step_due)}</span>}
+                    {editingId !== i.id && (
+                      <button type="button" onClick={() => setEditingId(i.id)} className="ml-2 font-medium text-teal-700 hover:underline">
+                        Change
+                      </button>
+                    )}
                   </dd>
                 </dl>
+                {editingId === i.id && (
+                  <NextStepEditor
+                    item={i}
+                    staff={staffOptions}
+                    onCancel={() => setEditingId(null)}
+                    onSave={(c) => {
+                      setEditingId(null);
+                      void patch(i, c);
+                    }}
+                  />
+                )}
                 <label className="mt-2 block text-xs text-ink/65">
                   Notes
                   <textarea
