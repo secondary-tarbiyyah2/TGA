@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import { ukToday } from "@/lib/learn/ukTime";
 import { useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { PageHeader, type Crumb } from "@/components/learn/PageHeader";
 import { Tabs } from "@/components/learn/Tabs";
 import { Notice, ui } from "@/components/learn/ui";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { localDateKey } from "@/lib/learn/calendar";
 import { PrintStyles } from "./ReportDocument";
 import { ALL_TIME, defaultTerm, reportsHref, useReportsBase, type Mode, type ReportView } from "./data";
 import { ReportsOverview } from "./ReportsOverview";
@@ -39,7 +39,7 @@ export function ReportsWorkspace({ mode }: { mode: Mode }) {
   const classId = params.get("class") || "";
   const childId = params.get("child") || "";
 
-  const today = localDateKey(new Date());
+  const today = ukToday();
   // Term: from the URL, else the current one. "all" (or no terms at all) = all time.
   const term = useMemo(() => {
     if (!terms) return undefined;

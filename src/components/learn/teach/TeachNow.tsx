@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import { ukToday } from "@/lib/learn/ukTime";
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { callEdgeFunction, edgeErrorMessage } from "@/lib/learn/edge";
-import { localDateKey } from "@/lib/learn/calendar";
 import type { TimetableSlot } from "@/lib/learn/timetable";
 import { ackState, usePupils } from "@/components/learn/pupil/usePupils";
 import { Icon, type IconName } from "@/components/learn/Icon";
@@ -33,7 +33,7 @@ export function TeachNow({ slots }: { slots: (TimetableSlot & { classes?: { name
     let cancelled = false;
     (async () => {
       const bySlot = new Map(slots.map((s) => [s.id, s]));
-      const today = localDateKey(new Date());
+      const today = ukToday();
       const {
         data: { user },
       } = await supabase.auth.getUser();

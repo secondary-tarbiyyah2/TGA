@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { ukToday } from "@/lib/learn/ukTime";
 import { useEffect, useState } from "react";
 import { DashboardWithPanel } from "@/components/learn/DashboardSidePanel";
 import { DashboardHero } from "@/components/learn/DashboardHero";
@@ -13,7 +14,6 @@ import { EnrichmentSupervisorLink } from "@/components/learn/enrichment/Supervis
 import { AnnouncementsFeed } from "@/components/learn/AnnouncementsFeed";
 import { SignaturePrompts } from "@/components/learn/SignaturePrompts";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { localDateKey } from "@/lib/learn/calendar";
 import type { TimetableSlot } from "@/lib/learn/timetable";
 
 type Cover = {
@@ -53,7 +53,7 @@ function TeachContent() {
           .from("cover_assignments")
           .select("id, cover_date, reason, original_teacher_user_id, covering_teacher_user_id, timetable_slots(classes(name), subjects(name))")
           .or(`original_teacher_user_id.eq.${user.id},covering_teacher_user_id.eq.${user.id}`)
-          .gte("cover_date", localDateKey(new Date()))
+          .gte("cover_date", ukToday())
           .order("cover_date", { ascending: true })
           .limit(20),
         myTeachingClasses(),

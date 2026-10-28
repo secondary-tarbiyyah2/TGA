@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { localTimeNote, ukNowHm, ukToday } from "@/lib/learn/ukTime";
 import { callEdgeFunction, edgeErrorMessage } from "@/lib/learn/edge";
-import { localDateKey } from "@/lib/learn/calendar";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
 /** Who is looking: a teacher, a student (own account) or a parent (one or all of their children). */
@@ -178,7 +178,7 @@ export function JoinLessonCard({ who, classId, className = "" }: { who: JoinWho;
       let query = supabase
         .from("lesson_instances")
         .select("id, date, timetable_slots!inner(class_id, start_time, end_time, virtual_sessions(meeting_url), classes(name), subjects(name))")
-        .eq("date", localDateKey(new Date()));
+        .eq("date", ukToday());
       if (whoKind === "teacher") query = query.eq("teacher_user_id", user.id);
       else query = query.in("timetable_slots.class_id", Array.from(kidsByClass.keys()));
       if (classId) query = query.eq("timetable_slots.class_id", classId);
@@ -209,7 +209,8 @@ export function JoinLessonCard({ who, classId, className = "" }: { who: JoinWho;
     };
   }, [whoKind, whoChildId, classId]);
 
-  const nowMinutes = now.getHours() * 60 + now.getMinutes();
+  // UK clock, not the browser's: lesson times are UK time and families may be abroad.
+  const nowMinutes = minutesOf(ukNowHm(now));
   const open = lessons.filter((l) => joinWindowOpen(nowMinutes, l.start, l.end));
   if (open.length === 0 && !message) return null;
 
@@ -250,13 +251,13 @@ export function JoinLessonCard({ who, classId, className = "" }: { who: JoinWho;
           <div key={l.id} className="rounded-2xl border-2 border-teal-600 bg-teal-50 p-5 sm:p-6">
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div className="min-w-0">
-                <p className="text-xs font-semibold uppercase tracking-wider text-teal-800">{started ? "Lesson in progress" : `Starts at ${l.start}`}</p>
+                <p className="text-xs font-semibold uppercase tracking-wider text-teal-800">{started ? "Lesson in progress" : `Starts at ${l.start} UK time`}</p>
                 <h2 className="mt-1 font-serif text-h2 font-semibold text-ink">
                   {l.subject}
                   {l.className ? ` · ${l.className}` : ""}
                 </h2>
                 <p className="mt-0.5 text-sm text-ink/70">
-                  {l.start}–{l.end}
+                  {l.start}–{l.end} UK time{localTimeNote(ukToday(now), l.start) ? ` · ${localTimeNote(ukToday(now), l.start)}` : ""}
                 </p>
               </div>
               <div className="flex flex-wrap gap-2">
