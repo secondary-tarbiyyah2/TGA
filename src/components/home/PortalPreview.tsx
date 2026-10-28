@@ -55,7 +55,7 @@ export function PortalPreview() {
             screens, a desktop browser on large ones. */}
         <figure className="mx-auto w-full max-w-xs lg:hidden">
           <div className="aspect-[390/844] overflow-hidden rounded-[2.25rem] border-[6px] border-ink-900 bg-ink-900 shadow-2xl">
-            <Image src="/portal/family-dashboard-phone.png" alt="The family dashboard in the Parent Portal on a phone" width={1170} height={4500} className="h-auto w-full rounded-[1.8rem]" sizes="20rem" />
+            <Image src="/images/portal-preview/family-dashboard-phone.png" alt="The family dashboard in the Parent Portal on a phone" width={1170} height={4500} className="h-auto w-full rounded-[1.8rem]" sizes="20rem" />
           </div>
           <figcaption className="mt-3 text-center text-xs text-cream/70">The Parent Portal on a phone (sample family).</figcaption>
         </figure>
@@ -69,7 +69,7 @@ export function PortalPreview() {
               <span className="h-3 w-3 rounded-full bg-[#28c840]" />
               <span className="ml-4 rounded-md bg-white px-3 py-1 text-xs text-ink/60">learn.tarbiyyah.co.uk/family/dashboard</span>
             </div>
-            <Image src="/portal/family-dashboard-desktop.png" alt="The family dashboard in the Parent Portal on a computer" width={2880} height={1920} className="h-auto w-full" sizes="(min-width: 1280px) 72rem, 100vw" />
+            <Image src="/images/portal-preview/family-dashboard-desktop.png" alt="The family dashboard in the Parent Portal on a computer" width={2880} height={1920} className="h-auto w-full" sizes="(min-width: 1280px) 72rem, 100vw" />
           </div>
           <figcaption className="mt-3 text-center text-xs text-cream/70">The Parent Portal on a computer (sample family).</figcaption>
         </figure>

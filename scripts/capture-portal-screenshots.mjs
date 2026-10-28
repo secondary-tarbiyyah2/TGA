@@ -21,7 +21,7 @@ for (const [k, v] of Object.entries({ SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, S
     process.exit(1);
   }
 }
-const OUT = "public/portal";
+const OUT = "public/images/portal-preview";
 mkdirSync(OUT, { recursive: true });
 
 const admin = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, { auth: { persistSession: false } });
@@ -76,15 +76,19 @@ if (child) {
 }
 
 // Sign in with a one-off token (no password involved).
-const { data: link, error: linkErr } = await admin.auth.admin.generateLink({ type: "magiclink", email: EMAIL });
-if (linkErr) throw linkErr;
-const anon = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, { auth: { persistSession: false } });
-const { data: verified, error: vErr } = await anon.auth.verifyOtp({ token_hash: link.properties.hashed_token, type: "magiclink" });
-if (vErr) throw vErr;
-const session = verified.session;
+async function sessionFor(email) {
+  const { data: link, error: linkErr } = await admin.auth.admin.generateLink({ type: "magiclink", email });
+  if (linkErr) throw linkErr;
+  const anon = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, { auth: { persistSession: false } });
+  const { data: verified, error: vErr } = await anon.auth.verifyOtp({ token_hash: link.properties.hashed_token, type: "magiclink" });
+  if (vErr) throw vErr;
+  return verified.session;
+}
+const sessions = { parent: await sessionFor(EMAIL), student: await sessionFor("demo-student@tarbiyyah.co.uk").catch(() => null) };
 const storageKey = `sb-${new URL(SUPABASE_URL).hostname.split(".")[0]}-auth-token`;
 
-const TIDY = `(() => {
+const tidyFor = (greet) => `(() => {
+  const GREET = ${JSON.stringify(greet)};
   const swap = (s) => s
     .replace(/Demo Student/g, "Yusuf Khan")
     .replace(/Demo Parent/g, "Umm Yusuf")
@@ -105,10 +109,11 @@ const TIDY = `(() => {
     const ctx = (n.parentElement && n.parentElement.textContent) || "";
     let v = n.nodeValue
       .replace(/(Up next for\\s*)Demo\\b/, "$1Yusuf")
-      .replace(/((Good (morning|afternoon|evening)|Assalamu alaykum),\\s*)Demo\\b/, "$1Umm Yusuf");
-    if (t === "Demo") v = /Up next/.test(ctx) ? v.replace("Demo", "Yusuf") : v.replace("Demo", "Umm Yusuf");
+      .replace(/((Good (morning|afternoon|evening)|Assalamu alaykum),\\s*)Demo\\b/, "$1" + GREET);
+    if (t === "Demo") v = /Up next/.test(ctx) ? v.replace("Demo", "Yusuf") : v.replace("Demo", GREET);
     if (t === "DP") v = v.replace("DP", "UY");
-    if (t === ", Demo") v = v.replace("Demo", "Umm Yusuf");
+    if (t === "DS") v = v.replace("DS", "YK");
+    if (t === ", Demo") v = v.replace("Demo", GREET);
     if (v !== n.nodeValue) n.nodeValue = v;
   }
   // A settled family's view: drop the one-off onboarding prompts (sign the
@@ -119,16 +124,24 @@ const TIDY = `(() => {
 
 const browser = await chromium.launch();
 const shots = [
-  { name: "family-dashboard-phone", viewport: { width: 390, height: 844 }, scale: 3, mobile: true, height: 1500 },
-  { name: "family-dashboard-desktop", viewport: { width: 1440, height: 960 }, scale: 2, mobile: false, height: 960 },
+  { name: "family-dashboard-phone", who: "parent", path: "/family/dashboard/", greet: "Umm Yusuf", viewport: { width: 390, height: 844 }, scale: 3, mobile: true, height: 1500 },
+  { name: "family-dashboard-desktop", who: "parent", path: "/family/dashboard/", greet: "Umm Yusuf", viewport: { width: 1440, height: 960 }, scale: 2, mobile: false, height: 960 },
+  // Used in the prospectus's portal page.
+  { name: "student-dashboard-desktop", who: "student", path: "/student/dashboard/", greet: "Yusuf", viewport: { width: 1440, height: 960 }, scale: 2, mobile: false, height: 960 },
 ];
 for (const s of shots) {
+  const session = sessions[s.who];
+  if (!session) {
+    console.log(`skipped ${s.name}: no ${s.who} demo account`);
+    continue;
+  }
+  const TIDY = tidyFor(s.greet);
   const ctx = await browser.newContext({ viewport: s.viewport, deviceScaleFactor: s.scale, isMobile: s.mobile, hasTouch: s.mobile, locale: "en-GB", timezoneId: "Europe/London" });
   const page = await ctx.newPage();
   // Pass the staff gate (sets the cookie), then hand the page the session.
   await page.goto(`${LEARN_URL}/?key=${encodeURIComponent(PREVIEW_KEY)}`, { waitUntil: "domcontentloaded" });
   await page.evaluate(([k, v]) => localStorage.setItem(k, v), [storageKey, JSON.stringify(session)]);
-  await page.goto(`${LEARN_URL}/family/dashboard/`, { waitUntil: "networkidle" });
+  await page.goto(`${LEARN_URL}${s.path}`, { waitUntil: "networkidle" });
   await page.waitForTimeout(2500);
   await page.evaluate(TIDY);
   await page.waitForTimeout(300);
