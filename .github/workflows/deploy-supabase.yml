@@ -258,6 +258,39 @@ jobs:
             echo "GH_DISPATCH_TOKEN not set in repo secrets; website-content saves won't auto-trigger a rebuild yet."
           fi
 
+      # Claude (Anthropic) API, shared by every function that uses
+      # _shared/claude.ts (inbound-absence's second reader, ai-assist, ...),
+      # plus the absence-by-email settings (docs/absence-email-setup.md).
+      # This is the ONE place ANTHROPIC_API_KEY is wired: add new AI settings
+      # here rather than a second step. Each value is set only when the
+      # GitHub secret/variable exists, so values set in the Supabase
+      # dashboard are never blanked:
+      #   ANTHROPIC_API_KEY (secret)     Claude API key; AI features stay off without it
+      #   AI_MODEL (variable)            default model, else claude-haiku-5-5
+      #   RESEND_INBOUND_WEBHOOK_SECRET  signing secret (whsec_...) of the Resend
+      #     (secret)                     "email.received" webhook; without it
+      #                                  inbound-absence rejects every webhook
+      #   ABSENCE_PARSER_MODEL (var)     optional model just for absence emails
+      #   ABSENCE_INBOX_EMAIL (var)      optional; default absence@globalacademy.tarbiyyah.co.uk
+      - name: Set Claude AI and absence-email secrets (if provided)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          AI_MODEL: ${{ vars.AI_MODEL }}
+          RESEND_INBOUND_WEBHOOK_SECRET: ${{ secrets.RESEND_INBOUND_WEBHOOK_SECRET }}
+          ABSENCE_PARSER_MODEL: ${{ vars.ABSENCE_PARSER_MODEL }}
+          ABSENCE_INBOX_EMAIL: ${{ vars.ABSENCE_INBOX_EMAIL }}
+        run: |
+          ARGS=()
+          for NAME in ANTHROPIC_API_KEY AI_MODEL RESEND_INBOUND_WEBHOOK_SECRET ABSENCE_PARSER_MODEL ABSENCE_INBOX_EMAIL; do
+            VALUE="${!NAME}"
+            if [ -n "$VALUE" ]; then ARGS+=("$NAME=$VALUE"); fi
+          done
+          if [ ${#ARGS[@]} -gt 0 ]; then
+            supabase secrets set --project-ref "${{ steps.project.outputs.ref }}" "${ARGS[@]}"
+          else
+            echo "No Claude / absence-email secrets in the repo yet; AI features are off and inbound-absence rejects webhooks until RESEND_INBOUND_WEBHOOK_SECRET is set."
+          fi
+
       - name: Deploy Edge Functions
         run: |
           supabase functions deploy book-admissions-call --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
@@ -352,6 +385,11 @@ jobs:
           # the function accepts the service-role key or a signed-in
           # Headteacher/Admin (School settings → Microsoft 365 connection).
           supabase functions deploy teams-sync --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          # inbound-absence: Resend Inbound webhook for absence@ emails. No
+          # gateway JWT check because Resend is not a user; the function
+          # verifies the Svix signature (RESEND_INBOUND_WEBHOOK_SECRET) and
+          # re-checks Headteacher/Admin for the staff confirm/dismiss actions.
+          supabase functions deploy inbound-absence --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
 
       # Sign-in emails: Amazon SES SMTP when SES_SMTP_USER/SES_SMTP_PASS (and
       # AWS_SES_REGION) are set, otherwise Resend SMTP. Built with jq so a

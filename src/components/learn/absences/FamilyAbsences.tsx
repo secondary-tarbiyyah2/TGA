@@ -225,6 +225,9 @@ export function FamilyAbsences() {
               </div>
             )}
           </div>
+          <p className="mt-3 text-sm text-ink/65">
+            You can also email <a href="mailto:absence@globalacademy.tarbiyyah.co.uk" className="font-medium text-teal-700 underline-offset-2 hover:underline">absence@globalacademy.tarbiyyah.co.uk</a> from your registered email address and we&apos;ll record it for you.
+          </p>
 
           <section className="mt-6 rounded-2xl border border-gold-light bg-white p-4">
             <h2 className="text-base font-semibold text-ink">Your notes{notes && notes.length > 0 ? <span className="font-normal text-ink/60"> · {notes.length}</span> : null}</h2>

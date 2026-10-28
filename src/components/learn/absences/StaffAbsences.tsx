@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { PageHeader, type Crumb } from "@/components/learn/PageHeader";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { ukToday } from "@/lib/learn/ukTime";
 import { AbsenceReports } from "./AbsenceReports";
 import { CoverSuggestions } from "./CoverSuggestions";
+import { EmailAbsences, countEmailsToReview } from "./EmailAbsences";
 import { FollowUpTab } from "./FollowUpTab";
 import { NotesReview } from "./NotesReview";
 import { RecentAbsences } from "./RecentAbsences";
@@ -14,11 +15,12 @@ import { dateKeyDaysAgo, formatDay, useAbsenceData } from "./data";
 import { Tabs } from "@/components/learn/Tabs";
 
 type Term = { name: string; starts_on: string; ends_on: string };
-type Tab = "overview" | "followup" | "notes" | "reports" | "cover";
+type Tab = "overview" | "followup" | "notes" | "emails" | "reports" | "cover";
 const TABS: { key: Tab; label: string }[] = [
   { key: "overview", label: "Overview" },
   { key: "followup", label: "To follow up" },
   { key: "notes", label: "Parent notes" },
+  { key: "emails", label: "Emails" },
   { key: "reports", label: "Reports" },
   { key: "cover", label: "Suggest cover" },
 ];
@@ -30,7 +32,7 @@ const PERIODS: { key: Period; label: string }[] = [
   { key: "term", label: "This term" },
 ];
 
-export function StaffAbsences({ crumbs, subtitle, showCover = false }: { crumbs: Crumb[]; subtitle?: string; showCover?: boolean }) {
+export function StaffAbsences({ crumbs, subtitle, showCover = false, showEmails = false }: { crumbs: Crumb[]; subtitle?: string; showCover?: boolean; showEmails?: boolean }) {
   const [period, setPeriod] = useState<Period>("90");
   const [tab, setTab] = useState<Tab>("overview");
   const [terms, setTerms] = useState<Term[]>([]);
@@ -57,6 +59,23 @@ export function StaffAbsences({ crumbs, subtitle, showCover = false }: { crumbs:
   const to = today;
 
   const { notes, absences, error, reload } = useAbsenceData(from, to);
+  // Absence emails waiting for review (Headteacher/Admin only, see EmailAbsences).
+  const [emailCount, setEmailCount] = useState(0);
+  const [emailTick, setEmailTick] = useState(0);
+  useEffect(() => {
+    if (!showEmails) return;
+    let cancelled = false;
+    countEmailsToReview().then((n) => {
+      if (!cancelled) setEmailCount(n);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [showEmails, emailTick]);
+  const onEmailsChanged = useCallback(() => {
+    setEmailTick((t) => t + 1);
+    reload();
+  }, [reload]);
   const followCount = useMemo(() => {
     const seen = new Set<string>();
     (absences || []).forEach((a) => {
@@ -76,9 +95,9 @@ export function StaffAbsences({ crumbs, subtitle, showCover = false }: { crumbs:
       <PageHeader crumbs={crumbs} title="Absences" subtitle={subtitle || "What families have told us, and who has not been heard from."} />
       <div className="space-y-5">
         <Tabs
-          items={TABS.filter((t) => t.key !== "cover" || showCover).map((t) => ({
+          items={TABS.filter((t) => (t.key !== "cover" || showCover) && (t.key !== "emails" || showEmails)).map((t) => ({
             ...t,
-            count: t.key === "followup" && followCount > 0 ? followCount : undefined,
+            count: t.key === "followup" && followCount > 0 ? followCount : t.key === "emails" && emailCount > 0 ? emailCount : undefined,
             countAlert: true,
           }))}
           value={tab}
@@ -110,6 +129,7 @@ export function StaffAbsences({ crumbs, subtitle, showCover = false }: { crumbs:
         )}
         {tab === "followup" && <FollowUpTab absences={absences} onChanged={reload} />}
         {tab === "notes" && <NotesReview notes={notes} onChanged={reload} />}
+        {tab === "emails" && showEmails && <EmailAbsences onChanged={onEmailsChanged} />}
         {tab === "reports" && <AbsenceReports absences={absences} periodLabel={label} />}
         {tab === "cover" && showCover && <CoverSuggestions />}
       </div>

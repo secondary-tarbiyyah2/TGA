@@ -77,3 +77,8 @@ verify_jwt = false
 
 [functions.entry-assessment]
 verify_jwt = false
+
+# Public Resend Inbound webhook: authenticated by its Svix signature
+# (RESEND_INBOUND_WEBHOOK_SECRET) instead; staff actions re-check the JWT inside.
+[functions.inbound-absence]
+verify_jwt = false
