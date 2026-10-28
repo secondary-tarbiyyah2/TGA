@@ -61,7 +61,7 @@ This policy has due regard to legislation and statutory guidance, including:
 - Equality Act 2010 and Human Rights Act 1998
 - Data Protection Act 2018 and the UK GDPR
 - Online Safety Act 2023
-- DfE guidance: Teaching Online Safety in Schools; Sharing nudes and semi-nudes (UKCIS); Filtering and Monitoring Standards; Mental Health and Behaviour in Schools Where a pupil lives outside England, the Academy also takes account of the child protection arrangements of the pupil's country of residence (see section 10).
+- DfE guidance: Teaching Online Safety in Schools; Sharing nudes and semi-nudes (UKCIS); Filtering and Monitoring Standards; Mental Health and Behaviour in Schools. Where a pupil lives outside England, the Academy also takes account of the child protection arrangements of the pupil's country of residence (see section 10).
 
 ## 4. Definitions
 
