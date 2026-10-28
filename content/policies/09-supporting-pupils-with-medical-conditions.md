@@ -20,7 +20,7 @@ Pupils with medical conditions should be able to take full part in Academy life.
 
 ## 2. Legal Framework
 
-The Academy has regard to the Equality Act 2010, the Children and Families Act 2014 (section 100) and the DfE statutory guidance Supporting pupils at school with medical conditions, followed as good practice, applied in a way that is appropriate to online provision.
+The Academy has regard to the Equality Act 2010, the Children and Families Act 2014 (section 100) and the DfE statutory guidance *Supporting pupils at school with medical conditions*, followed as good practice, applied in a way that is appropriate to online provision.
 
 ## 3. Roles and Responsibilities
 
@@ -54,6 +54,7 @@ Examples include: additional movement or screen breaks; permission to keep camer
 4. The teacher informs the DSL and Headteacher and completes an incident record the same day.
 
 > **Addresses and emergency numbers**
+>
 > Every live teacher must be able to see, through the staff view of the Student Portal, each pupil's home address, local emergency number and parent contact numbers. This information is checked each term and whenever a family moves.
 
 ## 7. Medication

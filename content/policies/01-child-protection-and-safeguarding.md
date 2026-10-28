@@ -25,6 +25,7 @@ Tarbiyyah Global Academy is committed to safeguarding and promoting the physical
 - maintain a culture of safer recruitment, so that only suitable adults teach or support our pupils.
 
 > **Our safeguarding promise**
+>
 > If a member of staff is worried about a child, they do not wait for certainty. They tell the Designated Safeguarding Lead the same day. In an emergency, where a child is at immediate risk, they contact the emergency services in the child's country first and then the DSL.
 
 ## 2. Key Safeguarding Contacts
@@ -164,6 +165,7 @@ Many of our pupils live in other countries. The Academy's duty of care does not 
 - Where a pupil is a British national abroad and the concern is serious, the DSL may also contact the local authority where the family was last resident in the UK.
 
 > **Time zones**
+>
 > Safeguarding concerns are never left until "the UK morning". The DSL or a deputy provides out-of-hours cover for urgent concerns during term time, and staff are given the out-of-hours escalation number at induction. Outside the Academy day, the DSL and deputy DSL share an on-call rota during term time.
 
 ## 11. Pupils Potentially at Greater Risk of Harm
@@ -226,7 +228,7 @@ A low-level concern is any concern — no matter how small — that an adult may
 
 ## 17. Safer Recruitment and the Single Central Record
 
-This section sets out the Academy's safer recruitment procedures. All staff who teach pupils live are subject to an enhanced DBS check with barred list check, identity and right-to-work checks, two references, verification of qualifications, and prohibition-from-teaching checks. Staff who have lived or worked overseas are subject to overseas checks. Staff who work remotely from outside the UK are subject to equivalent checks and must still meet every UK safeguarding requirement. A Single Central Record is maintained and reviewed termly by the Headteacher and the safeguarding trustee.
+The Academy follows the safer recruitment section of the Child Protection and Safeguarding Policy. All staff who teach pupils live are subject to an enhanced DBS check with barred list check, identity and right-to-work checks, two references, verification of qualifications, and prohibition-from-teaching checks. Staff who have lived or worked overseas are subject to overseas checks. Staff who work remotely from outside the UK are subject to equivalent checks and must still meet every UK safeguarding requirement. A Single Central Record is maintained and reviewed termly by the Headteacher and the safeguarding trustee.
 
 ## 18. Training
 

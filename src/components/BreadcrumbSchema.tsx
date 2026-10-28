@@ -12,7 +12,6 @@ import { keyStages } from "@/content/curriculum";
 // a guessed one.
 const NAMES: Record<string, string> = {
   "/about": "Our School",
-  "/team": "Meet the team",
   "/testimonials": "Testimonials",
   "/learning": "Learning",
   "/curriculum": "Curriculum",
@@ -39,7 +38,6 @@ const NAMES: Record<string, string> = {
 // → /about, Learning → /learning, Admissions → /admissions, For Parents →
 // /parents), so the visible trail and the menu agree.
 const PARENT: Record<string, string> = {
-  "/team": "/about",
   "/testimonials": "/about",
   "/faqs": "/about",
   "/pastoral-care": "/learning",

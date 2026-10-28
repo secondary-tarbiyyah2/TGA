@@ -23,7 +23,6 @@ export const primaryNav: NavEntry[] = [
     blurb: "About us, team, testimonials, FAQs",
     items: [
       { href: "/about", label: "About us" },
-      { href: "/team", label: "Meet the team" },
       { href: "/testimonials", label: "Testimonials" },
       { href: "/faqs", label: "FAQs" },
     ],
@@ -95,7 +94,6 @@ export const footerColumns: { heading: string; links: NavLink[] }[] = [
     heading: "School",
     links: [
       { href: "/about", label: "About us" },
-      { href: "/team", label: "Meet the team" },
       { href: "/testimonials", label: "Testimonials" },
       { href: "/learning", label: "How learning works" },
       { href: "/curriculum", label: "Curriculum" },
