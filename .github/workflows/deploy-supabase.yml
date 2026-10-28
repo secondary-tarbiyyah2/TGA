@@ -267,6 +267,7 @@ jobs:
       # dashboard are never blanked:
       #   ANTHROPIC_API_KEY (secret)     Claude API key; AI features stay off without it
       #   AI_MODEL (variable)            default model, else claude-haiku-5-5
+      #   AI_DAILY_LIMIT (variable)      ai-assist calls per UK day, default 500
       #   RESEND_INBOUND_WEBHOOK_SECRET  signing secret (whsec_...) of the Resend
       #     (secret)                     "email.received" webhook; without it
       #                                  inbound-absence rejects every webhook
@@ -276,12 +277,16 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           AI_MODEL: ${{ vars.AI_MODEL }}
+          AI_DAILY_LIMIT: ${{ vars.AI_DAILY_LIMIT }}
           RESEND_INBOUND_WEBHOOK_SECRET: ${{ secrets.RESEND_INBOUND_WEBHOOK_SECRET }}
           ABSENCE_PARSER_MODEL: ${{ vars.ABSENCE_PARSER_MODEL }}
           ABSENCE_INBOX_EMAIL: ${{ vars.ABSENCE_INBOX_EMAIL }}
+          # Test senders: absence emails from these addresses are read as if sent by the
+          # demo parent (demo-parent@tarbiyyah.co.uk), so the owner can try it safely.
+          ABSENCE_TEST_SENDERS: ${{ vars.ABSENCE_TEST_SENDERS || 'itzamadou8007@gmail.com' }}
         run: |
           ARGS=()
-          for NAME in ANTHROPIC_API_KEY AI_MODEL RESEND_INBOUND_WEBHOOK_SECRET ABSENCE_PARSER_MODEL ABSENCE_INBOX_EMAIL; do
+          for NAME in ANTHROPIC_API_KEY AI_MODEL AI_DAILY_LIMIT RESEND_INBOUND_WEBHOOK_SECRET ABSENCE_PARSER_MODEL ABSENCE_INBOX_EMAIL ABSENCE_TEST_SENDERS; do
             VALUE="${!NAME}"
             if [ -n "$VALUE" ]; then ARGS+=("$NAME=$VALUE"); fi
           done
@@ -390,6 +395,10 @@ jobs:
           # verifies the Svix signature (RESEND_INBOUND_WEBHOOK_SECRET) and
           # re-checks Headteacher/Admin for the staff confirm/dismiss actions.
           supabase functions deploy inbound-absence --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          # ai-assist: verified; staff-only AI drafts (report comments, Weekly
+          # Tarbiyah Notes, parent-message triage). Re-checks the caller's role
+          # with their own token; never sends anything to families itself.
+          supabase functions deploy ai-assist --project-ref "${{ steps.project.outputs.ref }}"
 
       # Sign-in emails: Amazon SES SMTP when SES_SMTP_USER/SES_SMTP_PASS (and
       # AWS_SES_REGION) are set, otherwise Resend SMTP. Built with jq so a

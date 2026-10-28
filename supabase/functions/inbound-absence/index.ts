@@ -168,7 +168,12 @@ async function processEmail(m: {
     return jsonResponse({ ok: true, status: "rejected", reason: "auto_reply" });
   }
 
-  const candidates = await childrenForSender(service, m.from);
+  // Owner-approved test senders are read as the demo parent (demo children only);
+  // the reply still goes to the real sender.
+  const TEST_SENDERS = (Deno.env.get("ABSENCE_TEST_SENDERS") || "").toLowerCase().split(/[,\s]+/).filter(Boolean);
+  const fromAddr = (m.from.match(/<([^>]+)>/)?.[1] || m.from).trim().toLowerCase();
+  const isTest = TEST_SENDERS.includes(fromAddr);
+  const candidates = await childrenForSender(service, isTest ? "demo-parent@tarbiyyah.co.uk" : m.from);
   if (!candidates.length) {
     await update({ status: "rejected", review_reasons: ["unknown_sender"], parsed: { cleaned: cleanEmailBody(m.text).slice(0, 4000) } });
     const r = await replyIfAllowed(m.from, m.rowId, "Your absence email", unknownSenderHtml());
