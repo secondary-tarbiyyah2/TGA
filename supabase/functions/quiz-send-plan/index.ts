@@ -62,8 +62,23 @@ Deno.serve(async (req) => {
   const feeSummary = String(body.feeSummary || "");
   const timezoneFlagText = String(body.timezoneFlagText || "");
   const texts = Array.isArray(body.texts) ? (body.texts as string[]) : [];
+  const keyStage = String(body.keyStage || "");
+  const liveDayText = String(body.liveDayText || "");
+  const timezoneConcern = body.timezoneConcern === true;
 
   const sections: string[] = [];
+
+  if (yearGroup) {
+    sections.push(`<p style="font-size:14px;margin:0 0 8px;"><strong>${esc(yearGroup)}</strong>${keyStage ? ` · ${esc(keyStage)}` : ""}</p>`);
+  }
+
+  if (liveDayText) {
+    sections.push(`
+      <div style="background:${timezoneConcern ? "#FDECEC" : "#F7F1E3"};border-radius:8px;padding:12px 16px;">
+        <p style="font-size:14px;font-weight:bold;margin:0 0 4px;${timezoneConcern ? "color:#7A1F1F;" : ""}">${timezoneConcern ? "Worth talking through first: timing" : "Your live day"}</p>
+        <p style="font-size:14px;margin:0;${timezoneConcern ? "color:#7A1F1F;" : ""}">${esc(liveDayText)}</p>
+      </div>`);
+  }
 
   if (sampleSlots.length > 0) {
     sections.push(`
@@ -101,20 +116,20 @@ Deno.serve(async (req) => {
 
   if (feeSummary) {
     sections.push(`
-      <h2 style="font-size:16px;margin:24px 0 8px;">Your personalised fee estimate</h2>
+      <h2 style="font-size:16px;margin:24px 0 8px;">Fees, January to July 2027</h2>
       <p style="font-size:14px;margin:0;">${esc(feeSummary)}</p>`);
   }
 
   const result = await sendEmail({
     to: lead.email,
     toName: parentName || undefined,
-    subject: "Your Child's Week at Tarbiyyah Global Academy",
+    subject: "Your fit-check summary from Tarbiyyah Global Academy",
     html: emailShell(`
       <h1 style="font-size:20px;margin:0 0 16px;">Assalamu alaikum ${esc(firstName)},</h1>
-      <p style="font-size:14px;">Here is the personalised plan from your "Your Child's Week" quiz.</p>
+      <p style="font-size:14px;">Here is the summary from the fit check you completed on our website, with the dates and fees to hand.</p>
       ${sections.join("")}
-      <p style="font-size:14px;margin-top:24px;">This is a personalised estimate based on your answers, not a placement decision, starting points and timings are confirmed during application.</p>
-      <p style="font-size:14px;">Any questions? Just reply to this email, or <a href="https://globalacademy.tarbiyyah.co.uk/book-a-call" style="color:#5E4B1E;">book a free 20-minute call</a>.</p>
+      <p style="font-size:14px;margin-top:24px;">A quick summary based on your answers, not an offer of a place. Fees are the published 2026-27 founding-cohort fees; everything else is confirmed with you during admissions.</p>
+      <p style="font-size:14px;">Any questions? Just reply to this email, or <a href="https://globalacademy.tarbiyyah.co.uk/book-a-call#book" style="color:#5E4B1E;">book a free 20-minute call</a>, or <a href="https://globalacademy.tarbiyyah.co.uk/open-evening" style="color:#5E4B1E;">register for an open evening</a>.</p>
     `),
   });
 

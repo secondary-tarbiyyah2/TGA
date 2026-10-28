@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { getSupabaseClient, getEdgeFunctionUrl } from "@/lib/supabase/client";
 import { COUNTRIES } from "@/lib/countries";
@@ -54,6 +54,21 @@ export function BookingCalendar() {
   const [renderedAt] = useState(() => Date.now());
 
   const tz = useMemo(() => localTz(), []);
+  const timesRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  // On a phone the times and the form render below the calendar, so bring
+  // each into view as it appears rather than leaving the visitor to scroll
+  // and wonder whether their tap did anything.
+  useEffect(() => {
+    if (!selectedDate) return;
+    if (window.matchMedia("(min-width: 1024px)").matches) return;
+    timesRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [selectedDate]);
+  useEffect(() => {
+    if (!selectedSlot) return;
+    formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [selectedSlot]);
 
   useEffect(() => {
     const supabase = getSupabaseClient();
@@ -281,8 +296,13 @@ export function BookingCalendar() {
       </div>
 
       <div>
+        {!selectedDate && (
+          <p className="hidden rounded-2xl border border-dashed border-gold-light/60 p-6 text-sm text-ink/60 lg:block">
+            Choose a highlighted day to see the available times.
+          </p>
+        )}
         {selectedDate && (
-          <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
+          <div ref={timesRef} className="scroll-mt-24 rounded-2xl border border-gold-light/50 bg-white p-6">
             <h2 className="font-serif font-semibold text-ink">
               {new Date(selectedDate + "T00:00:00").toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" })}
             </h2>
@@ -308,7 +328,7 @@ export function BookingCalendar() {
         )}
 
         {selectedSlot && (
-          <form onSubmit={handleSubmit} className="mt-6 rounded-2xl border border-gold-light/50 bg-white p-6" noValidate>
+          <form ref={formRef} onSubmit={handleSubmit} className="mt-6 scroll-mt-24 rounded-2xl border border-gold-light/50 bg-white p-6" noValidate>
             <div className="grid gap-4 sm:grid-cols-2">
               <label className="block text-sm font-medium text-ink">
                 Your full name

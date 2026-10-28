@@ -84,7 +84,7 @@ export default async function HomePage() {
             <p className="mt-3 text-sm text-ink/70">
               Not sure yet?{" "}
               <Link href="/eligibility" className="font-semibold text-gold-700 underline">
-                Take our 2-minute fit quiz
+                Take the 2-minute fit check
               </Link>
             </p>
           </div>

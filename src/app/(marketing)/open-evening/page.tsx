@@ -29,7 +29,7 @@ export default async function OpenEveningPage() {
         <p className="mt-4 text-sm text-ink/70">
           Live lessons begin on Monday 11 January 2027. Read the{" "}
           <a href="/prospectus/TGA-Prospectus-2026-27.pdf" className="font-semibold text-gold-700 underline" target="_blank" rel="noopener noreferrer">prospectus (PDF)<span className="sr-only">, opens in a new tab</span></a>{" "}
-          before you come, or <Link href="/book-a-call" className="font-semibold text-gold-700 underline">book a call</Link> with the admissions team at any time.
+          before you come, or <Link href="/book-a-call#book" className="font-semibold text-gold-700 underline">book a call</Link> with the admissions team at any time.
         </p>
 
         {/* Dates and the booking form load in the browser, so a new

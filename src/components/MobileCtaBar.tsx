@@ -28,7 +28,7 @@ export function MobileCtaBar() {
           Apply
         </Link>
         <Link
-          href="/book-a-call"
+          href="/book-a-call#book"
           className="inline-flex min-h-11 flex-1 items-center justify-center rounded-full border-[1.5px] border-gold-500 px-4 text-sm font-semibold text-ink-900 hover:bg-gold-100"
         >
           Book a free call

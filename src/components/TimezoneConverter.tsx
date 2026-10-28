@@ -91,7 +91,7 @@ export function TimezoneConverter() {
       </div>
       <p className="mt-4 text-xs text-ink/70">
         All live lessons run in this UK school day. To check whether it suits your timezone, see our{" "}
-        <a href="/eligibility" className="font-semibold text-gold-700 underline">fit quiz</a> or book an admissions
+        <a href="/eligibility" className="font-semibold text-gold-700 underline">fit check</a> or book an admissions
         call to talk it through.
       </p>
     </div>

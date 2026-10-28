@@ -38,8 +38,8 @@ export default async function AdmissionsPage() {
           </p>
           <p className="mt-2 max-w-2xl text-sm text-ink/70">
             Not sure it&apos;s the right fit yet?{" "}
-            <Link href="/eligibility" className="font-semibold text-gold-700 underline">Take our 2-minute fit quiz</Link>{" "}
-            for a personalised recommendation before you apply.
+            <Link href="/eligibility" className="font-semibold text-gold-700 underline">Take the 2-minute fit check</Link>{" "}
+            to see the fees, your local lesson times and the next step before you apply.
           </p>
         </Container>
       </section>

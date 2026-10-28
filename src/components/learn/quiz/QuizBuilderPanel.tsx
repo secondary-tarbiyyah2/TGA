@@ -21,7 +21,7 @@ const RESULT_SECTION_LABELS: Record<ResultSectionKey, string> = {
   starting_points: "Arabic / Qur'an starting points",
   fees: "Fee estimate",
   timezone_flag: "Timezone workability flag",
-  hifz_role_note: "Hifdh role note / flags from rules",
+  hifz_role_note: "Next-step texts and flags from rules",
   ctas: "Calls to action (email plan / book a call)",
 };
 

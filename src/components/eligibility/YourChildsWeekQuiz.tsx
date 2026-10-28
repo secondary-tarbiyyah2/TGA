@@ -21,6 +21,9 @@ type YearGroupOption = { id: string; name: string };
 
 const FALLBACK_YEAR_GROUPS = ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5", "Year 6", "Year 7", "Year 8", "Year 9", "Year 10", "Year 11"];
 
+const btnPrimary = "rounded-full bg-gold-500 px-6 py-2.5 text-sm font-semibold text-ink-900 transition-all hover:brightness-95 disabled:opacity-50";
+const btnSecondary = "rounded-full border-[1.5px] border-gold-500 px-6 py-2.5 text-sm font-semibold text-ink-900 transition-all hover:bg-gold-100";
+
 function capitaliseName(name: string): string {
   return name
     .trim()
@@ -29,6 +32,17 @@ function capitaliseName(name: string): string {
     .join(" ");
 }
 
+/**
+ * The public "fit check" (/eligibility). Phases, in order:
+ *   1. the configured question steps (a step whose questions are all hidden
+ *      by showWhen is skipped, so the progress count is honest);
+ *   2. a contact step, BEFORE the result, so a family who has invested a
+ *      minute is asked for an email while they are still engaged, with a
+ *      plain "skip" for anyone who just wants to see the summary;
+ *   3. the summary itself, built only from published facts (key stage, the
+ *      live day in their time zone, the fee band) plus the config's
+ *      next-step text and flags. No level estimates, no timetable promises.
+ */
 export function YourChildsWeekQuiz({
   feeBands: feeBandsProp,
   siblingDiscountPercent,
@@ -73,7 +87,7 @@ export function YourChildsWeekQuiz({
   }, [configOverride]);
 
   const config = configOverride ?? liveConfig?.config ?? DEFAULT_QUIZ_CONFIG;
-  const steps = useMemo(() => questionsByStep(config.questions), [config.questions]);
+  const allSteps = useMemo(() => questionsByStep(config.questions), [config.questions]);
 
   const [yearGroups, setYearGroups] = useState<YearGroupOption[] | null>(null);
   useEffect(() => {
@@ -92,9 +106,15 @@ export function YourChildsWeekQuiz({
   }, []);
   const yearGroupNames = yearGroups?.map((y) => y.name) ?? FALLBACK_YEAR_GROUPS;
 
-  const [stepIndex, setStepIndex] = useState(0); // index into `steps`, or steps.length for the result screen
   const [answers, setAnswers] = useState<QuizAnswers>({});
   const [timezone, setTimezone] = useState("");
+
+  // Only steps with at least one question visible for the current answers
+  // count, so "Question 2 of 3" stays true when a conditional step is hidden.
+  const steps = useMemo(() => allSteps.filter((s) => s.questions.some((q) => isQuestionVisible(q, answers))), [allSteps, answers]);
+
+  // index into `steps`; steps.length = contact step; steps.length + 1 = result
+  const [stepIndex, setStepIndex] = useState(0);
   const [sessionRowId, setSessionRowId] = useState<string | null>(null);
   const [contactName, setContactName] = useState("");
   const [contactEmail, setContactEmail] = useState("");
@@ -158,16 +178,19 @@ export function YourChildsWeekQuiz({
     if (!previewMode) recordQuizEvent(sessionRowId, "step_viewed", index);
   }
 
-  const currentStepQuestions = (steps[stepIndex]?.questions ?? []).filter((q) => isQuestionVisible(q, answers));
-  const isResultStep = stepIndex >= steps.length;
   const totalSteps = steps.length;
-  const progress = Math.round((Math.min(stepIndex, totalSteps) / totalSteps) * 100);
-
+  const isContactStep = stepIndex === totalSteps;
+  const isResultStep = stepIndex > totalSteps;
+  const currentStepQuestions = (steps[stepIndex]?.questions ?? []).filter((q) => isQuestionVisible(q, answers));
+  // The contact step counts as the final question for the progress bar.
+  const progress = Math.round((Math.min(stepIndex, totalSteps + 1) / (totalSteps + 1)) * 100);
   const stepAnswered = currentStepQuestions.length > 0 && currentStepQuestions.every((q) => !!answers[q.key]);
 
   function advance() {
     const next = stepIndex + 1;
-    if (next >= steps.length && !previewMode) {
+    if (next === steps.length && !previewMode) {
+      // Every question answered: the anonymous session is complete whether
+      // or not the family goes on to leave an email.
       recordQuizEvent(sessionRowId, "completed", stepIndex);
       upsertQuizSession({
         rowId: sessionRowId,
@@ -185,47 +208,50 @@ export function YourChildsWeekQuiz({
   // ── result-screen derived data ───────────────────────────────────────
   const timeInfo = timezone ? schoolDayTimeInfo(timezone) : null;
   const evaluated = useMemo(() => evaluateRules(config, answers), [config, answers]);
-  const sampleWeek = useSampleWeek(isResultStep ? yearGroupAnswer || null : null, isResultStep ? timezone || null : null);
+  const sectionActive = (key: string) => config.resultSections.find((s) => s.key === key)?.active;
+  const sampleWeek = useSampleWeek(
+    isResultStep && sectionActive("sample_week") ? yearGroupAnswer || null : null,
+    isResultStep && sectionActive("sample_week") ? timezone || null : null
+  );
   const feeBand = yearGroupAnswer ? feeBandForYearGroup(yearGroupAnswer, feeBands) : null;
   const keyStage = yearGroupAnswer ? keyStageForYearGroup(yearGroupAnswer) : null;
-
-  const sectionActive = (key: string) => config.resultSections.find((s) => s.key === key)?.active;
   const orderedSections = [...config.resultSections].filter((s) => s.active).sort((a, b) => a.order - b.order);
 
   const firstName = contactName ? capitaliseName(contactName).split(" ")[0] : "";
-  // Before the parent has typed their name (in the CTA form further down
-  // the same screen), "{name}, here is..." has no name to fill in yet, 
-  // substituting a filler word there ("there, here is...") reads as
-  // broken English, not a personalised greeting. Drop the name clause
-  // entirely and capitalise what's left instead.
+  // Without a name, "{name}, here is..." reads as broken English with a
+  // filler word, so drop the name clause and capitalise what's left.
   const resultHeading = firstName
     ? config.resultHeading.replace("{name}", firstName)
     : config.resultHeading.replace(/\{name\},?\s*/, "").replace(/^[a-z]/, (c) => c.toUpperCase());
 
+  const liveDayText = timeInfo
+    ? `Live lessons run 9am to 3pm UK time, Monday to Thursday, and finish at 12 noon on Fridays. In your time zone that is about ${formatLocalHour(timeInfo.localStart)} to ${formatLocalHour(timeInfo.localEnd)}, and ${formatLocalHour(timeInfo.localStart)} to ${formatLocalHour(timeInfo.localStart + 3)} on Fridays.`
+    : "";
+  const liveDayConcern = timeInfo?.concern
+    ? "That is outside the hours most children learn well. It does not rule TGA out, but it is the first thing to talk through on a call before you apply."
+    : "";
+
   const bookCallHref = `/book-a-call?name=${encodeURIComponent(contactName)}&email=${encodeURIComponent(contactEmail)}&year=${encodeURIComponent(yearGroupAnswer)}&notes=${encodeURIComponent(
-    `From "Your Child's Week"– timezone: ${timezone}${timeInfo?.concern ? ", TIMEZONE CONCERN: lessons fall outside a workable local window" : ""}, hifdh role: ${answers.hifz_role ?? "n/a"}`
-  )}`;
+    `From the fit check. Time zone: ${timezone}${timeInfo?.concern ? " (TIME-ZONE CONCERN: live lessons fall outside 7am-9pm locally)" : ""}. Start: ${answers.start_when ?? "n/a"}.`
+  )}#book`;
 
   async function submitLead(e: React.FormEvent) {
     e.preventDefault();
     setLeadError(null);
     if (website) return; // honeypot
     if (!consentChecked) {
-      setLeadError("Please tick the consent box so we can email your plan.");
+      setLeadError("Please tick the box so we can email your summary.");
       return;
     }
     setLeadSubmitting(true);
     const supabase = getSupabaseClient();
     if (supabase) {
       const ref = await leadRef(contactEmail);
-      // The id is generated here, not read back via .select() · quiz_leads
-      // deliberately has no SELECT policy for anon ("anon cannot read back
-      // the lead they just submitted", enforced by RLS and proven in
-      // quiz_v2_rls.test.sql), so a .select().single() after this insert
-      // asks Postgres to RETURNING a row anon isn't allowed to see, and
-      // Postgres reports that as "new row violates row-level security
-      // policy"– indistinguishable from the insert itself being rejected.
-      // Same pattern already used for quiz_sessions' id in session.ts.
+      // The id is generated here, not read back via .select(): quiz_leads
+      // deliberately has no SELECT policy for anon (enforced by RLS and
+      // proven in quiz_v2_rls.test.sql), so a RETURNING would be reported
+      // by Postgres as an RLS violation, indistinguishable from the insert
+      // itself being rejected. Same pattern as quiz_sessions in session.ts.
       const leadId = generateId();
       const { error } = await supabase.from("quiz_leads").insert({
         id: leadId,
@@ -239,19 +265,16 @@ export function YourChildsWeekQuiz({
         answers_snapshot: answers,
       });
       if (error) {
-        setLeadError("Something went wrong saving your details, please try again, or book a call instead.");
+        setLeadError("Something went wrong saving your details. Please try again, or skip and book a call instead.");
         setLeadSubmitting(false);
         return;
       }
 
-      // The lead row is saved either way, this call only decides whether
-      // we can also honestly record "an email actually went out." Never
-      // record pdf_email_sent before this confirms success (see
-      // quiz-send-plan's header comment): that event feeds the admin
-      // analytics panel's "PDF emails" count, which must not lie about
-      // deliveries that never happened.
+      // The lead row is saved either way; this only decides whether we can
+      // honestly record that an email went out (feeds the admin "emails
+      // sent" count, which must never count deliveries that didn't happen).
       const feeSummary = feeBand
-        ? `${feeBand.yearGroupRange}: ${formatGBP(feeBand.annualFee)} for the year, ${formatGBP(feeBand.schedule?.termlyAmount ?? feeBand.termlyFee)} × 2 payments or ${formatGBP(feeBand.schedule?.monthlyAmount ?? feeBand.monthlyFee)} × ${feeBand.schedule?.instalments ?? 7} monthly payments${siblingDiscountNote ? ` · ${siblingDiscountNote}` : ""}`
+        ? `${feeBand.yearGroupRange}: ${formatGBP(feeBand.annualFee)} for January to July 2027, or ${formatGBP(feeBand.schedule?.termlyAmount ?? feeBand.termlyFee)} × 2 payments, or ${formatGBP(feeBand.schedule?.monthlyAmount ?? feeBand.monthlyFee)} × ${feeBand.schedule?.instalments ?? 7} monthly payments${siblingDiscountNote ? ` · ${siblingDiscountNote}` : ""}`
         : "";
       const functionUrl = getEdgeFunctionUrl("quiz-send-plan");
       const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
@@ -263,29 +286,30 @@ export function YourChildsWeekQuiz({
             body: JSON.stringify({
               leadId,
               yearGroup: yearGroupAnswer,
-              sampleSlots: sampleWeek.slots || [],
-              startingPoints: evaluated.startingPoints,
+              keyStage: keyStage ? `${keyStage.title} (${keyStage.range})` : "",
+              liveDayText: [liveDayText, liveDayConcern].filter(Boolean).join(" "),
+              timezoneConcern: Boolean(timeInfo?.concern),
+              sampleSlots: [],
+              startingPoints: {},
               feeSummary,
-              timezoneFlagText: timeInfo?.concern
-                ? `From your timezone, our live lessons (9am–3pm UK) fall around ${formatLocalHour(timeInfo.localStart)}–${formatLocalHour(timeInfo.localEnd)} · outside hours that work well for most children. We don't have an alternative live-lesson time slot to offer at this stage, so we'd want to talk this through honestly with you before you apply.`
-                : "",
-              texts: evaluated.texts,
+              timezoneFlagText: "",
+              texts: [...evaluated.texts, ...evaluated.flags.map((f) => f.text)],
             }),
           });
           const result = await res.json().catch(() => ({ ok: false }));
           if (result?.ok) recordQuizEvent(sessionRowId, "pdf_email_sent", stepIndex);
         } catch {
-          // Lead is already saved; a failed send just means we don't record
-          // the event below, no user-facing error needed for this part.
+          // Lead already saved; a failed send only means the event isn't recorded.
         }
       }
     }
     setLeadSubmitting(false);
     setLeadSubmitted(true);
+    if (isContactStep) goToStep(totalSteps + 1);
   }
 
-  if (steps.length === 0) {
-    return <p className="text-center text-ink/65">The quiz isn&apos;t configured yet, please check back shortly.</p>;
+  if (allSteps.length === 0) {
+    return <p className="text-center text-ink/65">The fit check isn&apos;t configured yet, please check back shortly.</p>;
   }
 
   return (
@@ -295,11 +319,14 @@ export function YourChildsWeekQuiz({
           <div className="h-1.5 w-full overflow-hidden rounded-full bg-gold-100">
             <div className="h-full rounded-full bg-gold-500 transition-all duration-500 ease-out" style={{ width: `${progress}%` }} />
           </div>
-          <p className="mt-2 text-xs font-medium text-ink/65">Question {stepIndex + 1} of {totalSteps}</p>
+          <p className="mt-2 text-xs font-medium text-ink/65">
+            {isContactStep ? "Last step" : `Question ${stepIndex + 1} of ${totalSteps}`}
+          </p>
         </div>
       )}
 
       {!isResultStep &&
+        !isContactStep &&
         currentStepQuestions.map((q, qi) => (
           <div key={q.key} className={qi > 0 ? "mt-8" : undefined}>
             {qi === 0 && stepIndex > 0 && (
@@ -322,7 +349,7 @@ export function YourChildsWeekQuiz({
 
               {q.type === "timezone" && (
                 <>
-                  <label className="block text-sm font-medium text-ink" htmlFor="timezone-select">Timezone</label>
+                  <label className="block text-sm font-medium text-ink" htmlFor="timezone-select">Time zone</label>
                   <select
                     id="timezone-select"
                     value={timezone}
@@ -339,18 +366,11 @@ export function YourChildsWeekQuiz({
                   </select>
                   {timeInfo && (
                     <div className={`mt-4 rounded-xl p-4 text-sm ${timeInfo.concern ? "bg-red-50 text-red-900" : "bg-gold-100 text-ink/80"}`}>
-                      {timeInfo.concern ? (
-                        <p>
-                          Our live lessons run roughly 9am–3pm UK time. From your timezone that lands around{" "}
-                          <strong>{formatLocalHour(timeInfo.localStart)}–{formatLocalHour(timeInfo.localEnd)}</strong>, outside hours that
-                          work well for most children. This does not rule things out, but is worth discussing directly.
-                        </p>
-                      ) : (
-                        <p>
-                          Our live lessons run roughly 9am–3pm UK time, from your timezone that is around{" "}
-                          <strong>{formatLocalHour(timeInfo.localStart)}–{formatLocalHour(timeInfo.localEnd)}</strong>, a workable school day.
-                        </p>
-                      )}
+                      <p>
+                        Live lessons run 9am–3pm UK time (Fridays to 12 noon). For you that is about{" "}
+                        <strong>{formatLocalHour(timeInfo.localStart)}–{formatLocalHour(timeInfo.localEnd)}</strong>
+                        {timeInfo.concern ? ", outside the hours most children learn well. Worth talking through, but it does not rule things out." : ", a workable school day."}
+                      </p>
                     </div>
                   )}
                   <button
@@ -360,7 +380,7 @@ export function YourChildsWeekQuiz({
                       advance();
                     }}
                     disabled={!timezone}
-                    className="mt-4 rounded-full bg-gold-500 px-6 py-2.5 text-sm font-semibold text-ink-900 transition-all hover:brightness-95 disabled:opacity-50"
+                    className={`mt-4 ${btnPrimary}`}
                   >
                     Continue
                   </button>
@@ -385,111 +405,79 @@ export function YourChildsWeekQuiz({
           </div>
         ))}
 
-      {!isResultStep && currentStepQuestions.length > 1 && (
-        <button
-          type="button"
-          onClick={advance}
-          disabled={!stepAnswered}
-          className="mt-6 rounded-full bg-gold-500 px-6 py-2.5 text-sm font-semibold text-ink-900 transition-all hover:brightness-95 disabled:opacity-50"
-        >
+      {!isResultStep && !isContactStep && currentStepQuestions.length > 0 && !currentStepQuestions.some((q) => q.type === "timezone") && stepAnswered && (
+        <button type="button" onClick={advance} className={`mt-6 ${btnPrimary}`}>
           Continue
         </button>
       )}
 
-      {!isResultStep && currentStepQuestions.length === 1 && currentStepQuestions[0].type === "single_select" && stepAnswered && (
-        <button type="button" onClick={advance} className="mt-6 rounded-full bg-gold-500 px-6 py-2.5 text-sm font-semibold text-ink-900 transition-all hover:brightness-95">
-          Continue
-        </button>
-      )}
-      {!isResultStep && currentStepQuestions.length === 1 && currentStepQuestions[0].type === "year_group" && stepAnswered && (
-        <button type="button" onClick={advance} className="mt-6 rounded-full bg-gold-500 px-6 py-2.5 text-sm font-semibold text-ink-900 transition-all hover:brightness-95">
-          Continue
-        </button>
+      {isContactStep && (
+        <div>
+          <button type="button" onClick={() => goToStep(stepIndex - 1)} className="mb-4 text-sm text-ink/65 hover:text-ink/80">
+            Back
+          </button>
+          <h2 className="font-serif text-xl font-semibold text-ink sm:text-2xl">Where should we send your summary?</h2>
+          <p className="mt-1 text-sm text-ink/65">
+            We&apos;ll email it so you have the dates and fees to hand, and keep you posted about the open evenings.
+          </p>
+          <form onSubmit={submitLead} className="mt-5 space-y-3">
+            <div className="hidden" aria-hidden="true">
+              <label htmlFor="yw-website">Leave this field empty</label>
+              <input id="yw-website" type="text" tabIndex={-1} autoComplete="off" value={website} onChange={(e) => setWebsite(e.target.value)} />
+            </div>
+            <div>
+              <label htmlFor="yw-name" className="text-sm font-medium text-ink">Your name</label>
+              <input id="yw-name" value={contactName} onChange={(e) => setContactName(e.target.value)} type="text" autoComplete="name" className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
+            </div>
+            <div>
+              <label htmlFor="yw-email" className="text-sm font-medium text-ink">Email</label>
+              <input id="yw-email" required value={contactEmail} onChange={(e) => setContactEmail(e.target.value)} type="email" autoComplete="email" className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
+            </div>
+            <label className="flex items-start gap-2 text-sm text-ink/80">
+              <input type="checkbox" required checked={consentChecked} onChange={(e) => setConsentChecked(e.target.checked)} className="mt-0.5 h-4 w-4 rounded border-gold-light/60" />
+              <span>{config.consentText}</span>
+            </label>
+            {leadError && <p role="alert" className="text-sm text-red-700">{leadError}</p>}
+            <div className="flex flex-wrap items-center gap-4 pt-1">
+              <button type="submit" disabled={leadSubmitting} className={btnPrimary}>
+                {leadSubmitting ? "Saving…" : "Show my summary"}
+              </button>
+              <button type="button" onClick={() => goToStep(totalSteps + 1)} className="text-sm text-ink/65 underline hover:text-ink/80">
+                Skip, just show me
+              </button>
+            </div>
+          </form>
+        </div>
       )}
 
       {isResultStep && (
         <div className="rounded-2xl border border-gold-light/50 bg-white p-8 shadow-warm">
           <h2 className="text-center font-serif text-2xl font-semibold text-ink">{resultHeading}</h2>
-          {liveConfig?.publishedAt && (
-            <p className="mt-1 text-center text-xs text-ink/40">Quiz content last updated {new Date(liveConfig.publishedAt).toLocaleDateString("en-GB")}</p>
+          {keyStage && (
+            <p className="mt-3 text-center text-sm text-ink/70">
+              {yearGroupAnswer} · {keyStage.title} ({keyStage.range})
+            </p>
+          )}
+          {leadSubmitted && contactEmail && (
+            <p className="mt-2 text-center text-xs text-ink/55">A copy is on its way to {contactEmail}.</p>
           )}
 
           {orderedSections.map((section) => {
             switch (section.key) {
-              case "sample_week":
-                if (!sectionActive("sample_week")) return null;
-                return (
-                  <div key="sample_week" className="mt-6 rounded-2xl border border-gold-light/50 p-5">
-                    <p className="font-semibold text-ink">A sample week for {yearGroupAnswer || "this year group"}, in your timezone</p>
-                    {sampleWeek.loading && <p className="mt-2 text-sm text-ink/65">Loading…</p>}
-                    {!sampleWeek.loading && sampleWeek.slots && sampleWeek.slots.length > 0 && (
-                      <>
-                        <ul className="mt-3 space-y-1.5 text-sm text-ink/80">
-                          {sampleWeek.slots.map((slot, i) => (
-                            <li key={i} className="flex items-center justify-between border-b border-gold-light/20 pb-1.5 last:border-0">
-                              <span>{slot.weekdayName} · {slot.subject}</span>
-                              <span className="font-medium text-ink">{slot.startLabel}–{slot.endLabel}</span>
-                            </li>
-                          ))}
-                        </ul>
-                        {sampleWeek.updatedAt && (
-                          <p className="mt-3 text-xs text-ink/40">Last updated {new Date(sampleWeek.updatedAt).toLocaleDateString("en-GB")}</p>
-                        )}
-                      </>
-                    )}
-                    {!sampleWeek.loading && sampleWeek.slots && sampleWeek.slots.length === 0 && (
-                      <p className="mt-2 text-sm text-ink/65">
-                        We haven&apos;t published a sample week for this year group yet, our admissions team can talk you through a typical week on a call.
-                      </p>
-                    )}
-                    {!sampleWeek.loading && sampleWeek.slots === null && (
-                      <p className="mt-2 text-sm text-ink/65">A sample week isn&apos;t available to show right now, our admissions team can talk you through a typical week on a call.</p>
-                    )}
-                  </div>
-                );
-              case "starting_points":
-                if (!sectionActive("starting_points") || (!evaluated.startingPoints.arabic && !evaluated.startingPoints.quran)) return null;
-                return (
-                  <div key="starting_points" className="mt-6 rounded-2xl border border-gold-light/50 p-5">
-                    <p className="font-semibold text-ink">Where your child would start</p>
-                    <ul className="mt-2 space-y-2 text-sm text-ink/80">
-                      {evaluated.startingPoints.arabic && <li><span className="font-medium text-ink">Arabic:</span> {evaluated.startingPoints.arabic}</li>}
-                      {evaluated.startingPoints.quran && <li><span className="font-medium text-ink">Qur&apos;an:</span> {evaluated.startingPoints.quran}</li>}
-                    </ul>
-                  </div>
-                );
               case "timezone_flag":
-                if (!sectionActive("timezone_flag") || !timeInfo?.concern) return null;
+                if (!timeInfo) return null;
                 return (
-                  <div key="timezone_flag" className="mt-6 rounded-2xl bg-red-50 p-5 text-red-900">
-                    <p className="font-semibold">Worth talking through first: timing</p>
-                    <p className="mt-1 text-sm">
-                      From your timezone, our live lessons (9am–3pm UK) fall around {formatLocalHour(timeInfo.localStart)}–{formatLocalHour(timeInfo.localEnd)}, 
-                      outside hours that work well for most children. We don&apos;t have an alternative live-lesson time slot to offer at this stage, so we&apos;d
-                      want to talk this through honestly with you before you apply.
-                    </p>
-                  </div>
-                );
-              case "hifz_role_note":
-                if (!sectionActive("hifz_role_note") || evaluated.texts.length === 0) return null;
-                return (
-                  <div key="hifz_role_note" className="mt-6 space-y-3">
-                    {evaluated.texts.map((t, i) => (
-                      <p key={i} className="rounded-2xl bg-gold-100 p-5 text-sm text-ink/80">{t}</p>
-                    ))}
-                    {evaluated.flags.map((f, i) => (
-                      <p key={`flag-${i}`} className={`rounded-2xl p-5 text-sm ${f.tone === "warning" ? "bg-red-50 text-red-900" : "bg-gold-100 text-ink/80"}`}>{f.text}</p>
-                    ))}
+                  <div key="timezone_flag" className={`mt-6 rounded-2xl p-5 ${timeInfo.concern ? "bg-red-50 text-red-900" : "border border-gold-light/50 text-ink/80"}`}>
+                    <p className={`font-semibold ${timeInfo.concern ? "" : "text-ink"}`}>{timeInfo.concern ? "Worth talking through first: timing" : "Your live day"}</p>
+                    <p className="mt-1 text-sm">{liveDayText}</p>
+                    {liveDayConcern && <p className="mt-2 text-sm">{liveDayConcern}</p>}
                   </div>
                 );
               case "fees":
-                if (!sectionActive("fees") || !feeBand) return null;
+                if (!feeBand) return null;
                 return (
                   <div key="fees" className="mt-6">
-                    {keyStage && (
-                      <p className="mb-2 text-sm text-ink/70">{keyStage.title} ({keyStage.range}) · {keyStage.liveSplit}</p>
-                    )}
-                    <p className="mb-2 text-sm font-semibold text-ink">Your personalised fee estimate</p>
+                    <p className="mb-2 text-sm font-semibold text-ink">Fees for {feeBand.yearGroupRange}, January to July 2027</p>
                     <FeeEstimator
                       feeBands={feeBands}
                       initialBandId={feeBand._id}
@@ -500,50 +488,99 @@ export function YourChildsWeekQuiz({
                     />
                   </div>
                 );
+              case "hifz_role_note":
+                if (evaluated.texts.length === 0 && evaluated.flags.length === 0) return null;
+                return (
+                  <div key="hifz_role_note" className="mt-6 space-y-3">
+                    {evaluated.texts.map((t, i) => (
+                      <p key={i} className="rounded-2xl bg-gold-100 p-5 text-sm text-ink/80">{t}</p>
+                    ))}
+                    {evaluated.flags.map((f, i) => (
+                      <p key={`flag-${i}`} className={`rounded-2xl p-5 text-sm ${f.tone === "warning" ? "bg-red-50 text-red-900" : "bg-gold-100 text-ink/80"}`}>{f.text}</p>
+                    ))}
+                  </div>
+                );
+              case "sample_week":
+                return (
+                  <div key="sample_week" className="mt-6 rounded-2xl border border-gold-light/50 p-5">
+                    <p className="font-semibold text-ink">A sample week for {yearGroupAnswer || "this year group"}, in your time zone</p>
+                    {sampleWeek.loading && <p className="mt-2 text-sm text-ink/65">Loading…</p>}
+                    {!sampleWeek.loading && sampleWeek.slots && sampleWeek.slots.length > 0 && (
+                      <ul className="mt-3 space-y-1.5 text-sm text-ink/80">
+                        {sampleWeek.slots.map((slot, i) => (
+                          <li key={i} className="flex items-center justify-between border-b border-gold-light/20 pb-1.5 last:border-0">
+                            <span>{slot.weekdayName} · {slot.subject}</span>
+                            <span className="font-medium text-ink">{slot.startLabel}–{slot.endLabel}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    {!sampleWeek.loading && (!sampleWeek.slots || sampleWeek.slots.length === 0) && (
+                      <p className="mt-2 text-sm text-ink/65">Our admissions team can talk you through a typical week on a call.</p>
+                    )}
+                  </div>
+                );
+              case "starting_points":
+                if (!evaluated.startingPoints.arabic && !evaluated.startingPoints.quran) return null;
+                return (
+                  <div key="starting_points" className="mt-6 rounded-2xl border border-gold-light/50 p-5">
+                    <p className="font-semibold text-ink">Where your child would start</p>
+                    <ul className="mt-2 space-y-2 text-sm text-ink/80">
+                      {evaluated.startingPoints.arabic && <li><span className="font-medium text-ink">Arabic:</span> {evaluated.startingPoints.arabic}</li>}
+                      {evaluated.startingPoints.quran && <li><span className="font-medium text-ink">Qur&apos;an:</span> {evaluated.startingPoints.quran}</li>}
+                    </ul>
+                  </div>
+                );
               case "ctas":
-                if (!sectionActive("ctas")) return null;
                 return (
                   <div key="ctas" className="mt-6 space-y-4">
                     <div className="rounded-2xl border border-gold-light/50 p-5">
-                      <p className="font-semibold text-ink">Email me this plan</p>
-                      {leadSubmitted ? (
-                        <p className="mt-2 text-sm text-ink/70">Thank you, we&apos;ve saved your plan and our admissions team will follow up by email shortly.</p>
-                      ) : (
+                      <p className="font-semibold text-ink">Take the next step</p>
+                      <div className="mt-3 flex flex-wrap gap-3">
+                        <Link
+                          href={bookCallHref}
+                          onClick={() => !previewMode && recordQuizEvent(sessionRowId, "call_booked", stepIndex)}
+                          className={btnPrimary}
+                        >
+                          Book a free 20-minute call
+                        </Link>
+                        <Link href="/open-evening" className={btnSecondary}>
+                          Open evenings
+                        </Link>
+                        {answers.start_when === "january" && (
+                          <Link href="/admissions" className={btnSecondary}>
+                            How to apply
+                          </Link>
+                        )}
+                      </div>
+                    </div>
+                    {!leadSubmitted && (
+                      <div className="rounded-2xl border border-gold-light/50 p-5">
+                        <p className="font-semibold text-ink">Email me this summary</p>
                         <form onSubmit={submitLead} className="mt-3 space-y-3">
                           <div className="hidden" aria-hidden="true">
-                            <label htmlFor="yw-website">Leave this field empty</label>
-                            <input id="yw-website" type="text" tabIndex={-1} autoComplete="off" value={website} onChange={(e) => setWebsite(e.target.value)} />
+                            <label htmlFor="yw-website-2">Leave this field empty</label>
+                            <input id="yw-website-2" type="text" tabIndex={-1} autoComplete="off" value={website} onChange={(e) => setWebsite(e.target.value)} />
                           </div>
                           <div>
-                            <label htmlFor="yw-name" className="text-sm font-medium text-ink">Your name</label>
-                            <input id="yw-name" value={contactName} onChange={(e) => setContactName(e.target.value)} type="text" className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
+                            <label htmlFor="yw-name-2" className="text-sm font-medium text-ink">Your name</label>
+                            <input id="yw-name-2" value={contactName} onChange={(e) => setContactName(e.target.value)} type="text" autoComplete="name" className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
                           </div>
                           <div>
-                            <label htmlFor="yw-email" className="text-sm font-medium text-ink">Email</label>
-                            <input id="yw-email" required value={contactEmail} onChange={(e) => setContactEmail(e.target.value)} type="email" className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
+                            <label htmlFor="yw-email-2" className="text-sm font-medium text-ink">Email</label>
+                            <input id="yw-email-2" required value={contactEmail} onChange={(e) => setContactEmail(e.target.value)} type="email" autoComplete="email" className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
                           </div>
                           <label className="flex items-start gap-2 text-sm text-ink/80">
                             <input type="checkbox" required checked={consentChecked} onChange={(e) => setConsentChecked(e.target.checked)} className="mt-0.5 h-4 w-4 rounded border-gold-light/60" />
                             <span>{config.consentText}</span>
                           </label>
                           {leadError && <p role="alert" className="text-sm text-red-700">{leadError}</p>}
-                          <button type="submit" disabled={leadSubmitting} className="rounded-full bg-gold-500 px-6 py-2.5 text-sm font-semibold text-ink-900 transition-all hover:brightness-95 disabled:opacity-60">
-                            {leadSubmitting ? "Saving…" : "Send me my plan"}
+                          <button type="submit" disabled={leadSubmitting} className={btnPrimary}>
+                            {leadSubmitting ? "Saving…" : "Send my summary"}
                           </button>
                         </form>
-                      )}
-                    </div>
-                    <div className="rounded-2xl border border-gold-light/50 p-5">
-                      <p className="font-semibold text-ink">Book a free 20-minute call</p>
-                      <p className="mt-1 text-sm text-ink/70">Talk it through with our admissions team, no obligation.</p>
-                      <Link
-                        href={bookCallHref}
-                        onClick={() => !previewMode && recordQuizEvent(sessionRowId, "call_booked", stepIndex)}
-                        className="mt-3 inline-block rounded-full bg-gold-500 px-6 py-2.5 text-sm font-semibold text-ink-900 transition-all hover:brightness-95"
-                      >
-                        Book a free 20-minute call
-                      </Link>
-                    </div>
+                      </div>
+                    )}
                   </div>
                 );
               default:

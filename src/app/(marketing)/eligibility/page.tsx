@@ -7,8 +7,8 @@ import { getFeeBands, getSiteSettings } from "@/lib/content";
 import { DEFAULT_QUIZ_CONFIG } from "@/lib/quiz/defaultConfig";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Your Child's Week",
-  description: "Five short questions to see a sample week for your child at Tarbiyyah Global Academy, in your own timezone, with fees and next steps.",
+  title: "Is TGA right for your child?",
+  description: "Three quick questions: your child's key stage, live-lesson times in your own time zone, the fee band and your next step at Tarbiyyah Global Academy.",
   path: "/eligibility",
 });
 
