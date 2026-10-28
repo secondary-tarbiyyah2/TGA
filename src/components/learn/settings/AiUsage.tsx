@@ -1,0 +1,112 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { getSupabaseClient } from "@/lib/supabase/client";
+import { useAiStatus } from "@/lib/learn/aiAssist";
+
+type Row = { day: string; task: string; calls: number; input_tokens: number; output_tokens: number };
+
+const TASKS: { key: string; label: string }[] = [
+  { key: "report_comment", label: "Report comments" },
+  { key: "tarbiyah_note", label: "Tarbiyah Notes" },
+  { key: "message_triage", label: "Parent messages" },
+];
+
+function ukToday(): string {
+  return new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/London" }).format(new Date());
+}
+
+function daysAgo(n: number): string {
+  const d = new Date(`${ukToday()}T12:00:00Z`);
+  d.setUTCDate(d.getUTCDate() - n);
+  return d.toISOString().slice(0, 10);
+}
+
+const fmt = (n: number) => n.toLocaleString("en-GB");
+
+/**
+ * A small summary of AI helper use (public.ai_usage, 0173) for the
+ * Headteacher/Admin: drafts per task today, this week and over 30 days, and
+ * tokens used. RLS lets only the Headteacher and Admin read it.
+ */
+export function AiUsage() {
+  const status = useAiStatus();
+  const [rows, setRows] = useState<Row[] | null>(null);
+  const [failed, setFailed] = useState(false);
+
+  useEffect(() => {
+    const supabase = getSupabaseClient();
+    if (!supabase) return;
+    let alive = true;
+    supabase
+      .from("ai_usage")
+      .select("day, task, calls, input_tokens, output_tokens")
+      .gte("day", daysAgo(29))
+      .then(({ data, error }) => {
+        if (!alive) return;
+        if (error) setFailed(true);
+        setRows((data as Row[]) || []);
+      });
+    return () => {
+      alive = false;
+    };
+  }, []);
+
+  const today = ukToday();
+  const weekFrom = daysAgo(6);
+  const sum = (task: string | null, from: string, key: "calls" | "input_tokens" | "output_tokens" = "calls") => (rows || []).filter((r) => (!task || r.task === task) && r.day >= from).reduce((a, r) => a + Number(r[key] || 0), 0);
+  const usedToday = sum(null, today);
+
+  return (
+    <details className="group rounded-2xl border border-gold-light bg-white">
+      <summary className="flex cursor-pointer list-none items-start justify-between gap-3 px-5 py-4">
+        <span>
+          <span className="block text-base font-semibold text-ink">AI helpers</span>
+          <span className="mt-0.5 block text-sm text-ink/65">Drafts of report comments, Tarbiyah Notes and replies to parents. Staff check every draft before it is sent.</span>
+        </span>
+        <span aria-hidden="true" className="mt-1 text-lg leading-none text-ink/50 transition-transform group-open:rotate-90">›</span>
+      </summary>
+      <div className="space-y-3 border-t border-gold-light px-5 py-5 text-sm">
+        {status && !status.configured && <p className="rounded-lg bg-amber-50 px-3 py-2 text-amber-950">AI is not set up yet. Add the ANTHROPIC_API_KEY secret in GitHub (Settings, Secrets and variables, Actions) and redeploy; the AI buttons appear for staff once it is set.</p>}
+        {status?.configured && (
+          <p className="text-ink/75">
+            Today: <span className="font-semibold text-ink">{fmt(usedToday)}</span>
+            {status.daily_limit !== undefined ? ` of ${fmt(status.daily_limit)} drafts (the daily limit resets at midnight UK time)` : " drafts"}.
+          </p>
+        )}
+        {failed ? (
+          <p className="text-ink/65">Couldn&apos;t load usage. Only the Headteacher and Admin can see it.</p>
+        ) : rows === null ? (
+          <div className="h-20 animate-pulse rounded-lg bg-cream" />
+        ) : (
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[420px] text-left text-sm">
+              <thead className="text-xs text-ink/65">
+                <tr>
+                  <th className="py-1 pr-3 font-medium">Helper</th>
+                  <th className="py-1 pr-3 text-right font-medium">Today</th>
+                  <th className="py-1 pr-3 text-right font-medium">7 days</th>
+                  <th className="py-1 pr-3 text-right font-medium">30 days</th>
+                  <th className="py-1 text-right font-medium">Tokens (30 days, in / out)</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gold-light/60">
+                {TASKS.map((t) => (
+                  <tr key={t.key}>
+                    <td className="py-1.5 pr-3 text-ink">{t.label}</td>
+                    <td className="py-1.5 pr-3 text-right tabular-nums">{fmt(sum(t.key, today))}</td>
+                    <td className="py-1.5 pr-3 text-right tabular-nums">{fmt(sum(t.key, weekFrom))}</td>
+                    <td className="py-1.5 pr-3 text-right tabular-nums">{fmt(sum(t.key, daysAgo(29)))}</td>
+                    <td className="py-1.5 text-right tabular-nums text-ink/70">
+                      {fmt(sum(t.key, daysAgo(29), "input_tokens"))} / {fmt(sum(t.key, daysAgo(29), "output_tokens"))}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </div>
+    </details>
+  );
+}

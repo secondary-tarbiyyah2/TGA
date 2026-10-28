@@ -6,6 +6,9 @@
 //                      and callClaude() returns { ok: false, error: "not_configured" }.
 //   AI_MODEL           optional model override (default claude-haiku-5-5).
 //
+// Exports: isClaudeConfigured() (alias claudeConfigured()), claudeModel(),
+// callClaude(), callClaudeJson(), extractJson().
+//
 // Behaviour: one request with a timeout; a 429 or 5xx (or a network error /
 // timeout) is retried a small number of times with a short backoff, honouring
 // a short Retry-After. Never throws.
@@ -16,12 +19,9 @@ export const DEFAULT_CLAUDE_MODEL = "claude-haiku-5-5";
 
 function env(name: string): string | undefined {
   try {
-    // deno-lint-ignore no-explicit-any
-    const d = (globalThis as any).Deno;
-    if (d?.env?.get) return d.env.get(name) || undefined;
-    // deno-lint-ignore no-explicit-any
-    const p = (globalThis as any).process;
-    return p?.env?.[name] || undefined;
+    const g = globalThis as unknown as { Deno?: { env?: { get(k: string): string | undefined } }; process?: { env?: Record<string, string | undefined> } };
+    if (g.Deno?.env?.get) return g.Deno.env.get(name) || undefined;
+    return g.process?.env?.[name] || undefined;
   } catch {
     return undefined;
   }
@@ -31,6 +31,9 @@ function env(name: string): string | undefined {
 export function isClaudeConfigured(): boolean {
   return !!env("ANTHROPIC_API_KEY");
 }
+
+/** Alias kept for callers written against the first version of this file (inbound-absence). */
+export const claudeConfigured = isClaudeConfigured;
 
 /** The model to use: AI_MODEL if set, else the default. */
 export function claudeModel(): string {
@@ -46,7 +49,8 @@ export type ClaudeRequest = {
   messages?: ClaudeMessage[];
   maxTokens?: number;
   temperature?: number;
-  model?: string;
+  /** Overrides AI_MODEL; null/empty means "use the default". */
+  model?: string | null;
   /** Per attempt. Default 25s. */
   timeoutMs?: number;
   /** Extra attempts after the first on 429/5xx/network errors. Default 2. */
@@ -59,15 +63,15 @@ export type ClaudeUsage = { input_tokens: number; output_tokens: number };
 
 export type ClaudeResult =
   | { ok: true; text: string; usage: ClaudeUsage; model: string; stopReason: string | null }
-  | { ok: false; error: "not_configured" | "rate_limited" | "upstream_error" | "timeout" | "bad_request"; status?: number; detail?: string; usage?: ClaudeUsage };
+  | { ok: false; error: "not_configured" | "rate_limited" | "upstream_error" | "timeout" | "bad_request"; model: string; status?: number; detail?: string; usage?: ClaudeUsage };
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 /** Calls the Messages API. Never throws. */
 export async function callClaude(req: ClaudeRequest): Promise<ClaudeResult> {
-  const apiKey = req.apiKey || env("ANTHROPIC_API_KEY");
-  if (!apiKey) return { ok: false, error: "not_configured" };
   const model = req.model || claudeModel();
+  const apiKey = req.apiKey || env("ANTHROPIC_API_KEY");
+  if (!apiKey) return { ok: false, error: "not_configured", model };
   const messages: ClaudeMessage[] = req.messages && req.messages.length ? req.messages : [{ role: "user", content: req.user || "" }];
   const body = JSON.stringify({
     model,
@@ -77,7 +81,7 @@ export async function callClaude(req: ClaudeRequest): Promise<ClaudeResult> {
     messages,
   });
   const retries = Math.max(0, Math.min(req.retries ?? 2, 4));
-  let last: ClaudeResult = { ok: false, error: "upstream_error" };
+  let last: ClaudeResult = { ok: false, error: "upstream_error", model };
 
   for (let attempt = 0; attempt <= retries; attempt++) {
     const ctrl = new AbortController();
@@ -108,16 +112,16 @@ export async function callClaude(req: ClaudeRequest): Promise<ClaudeResult> {
       }
       const detail = (await res.text().catch(() => "")).slice(0, 300);
       if (res.status === 429 || res.status >= 500) {
-        last = { ok: false, error: res.status === 429 ? "rate_limited" : "upstream_error", status: res.status, detail };
+        last = { ok: false, error: res.status === 429 ? "rate_limited" : "upstream_error", model, status: res.status, detail };
         const ra = Number(res.headers.get("retry-after"));
         if (Number.isFinite(ra) && ra > 0) retryAfterMs = Math.min(ra * 1000, 8_000);
       } else {
         // 400/401/403/404: retrying won't help.
-        return { ok: false, error: "bad_request", status: res.status, detail };
+        return { ok: false, error: "bad_request", model, status: res.status, detail };
       }
     } catch (e) {
       const aborted = (e as { name?: string })?.name === "AbortError";
-      last = { ok: false, error: aborted ? "timeout" : "upstream_error", detail: String(e).slice(0, 200) };
+      last = { ok: false, error: aborted ? "timeout" : "upstream_error", model, detail: String(e).slice(0, 200) };
     } finally {
       clearTimeout(timer);
     }
@@ -147,7 +151,7 @@ export function extractJson<T = Record<string, unknown>>(text: string): T | null
 
 export type ClaudeJsonResult<T> =
   | { ok: true; data: T; usage: ClaudeUsage; model: string }
-  | { ok: false; error: string; status?: number; detail?: string; usage?: ClaudeUsage };
+  | { ok: false; error: string; model: string; status?: number; detail?: string; usage?: ClaudeUsage };
 
 /**
  * Asks for JSON and parses it. `validate` turns the raw object into your
@@ -159,6 +163,6 @@ export async function callClaudeJson<T>(req: ClaudeRequest, validate: (raw: Reco
   if (!res.ok) return res;
   const raw = extractJson(res.text);
   const data = raw ? validate(raw) : null;
-  if (!data) return { ok: false, error: "bad_output", detail: res.text.slice(0, 200), usage: res.usage };
+  if (!data) return { ok: false, error: "bad_output", model: res.model, detail: res.text.slice(0, 200), usage: res.usage };
   return { ok: true, data, usage: res.usage, model: res.model };
 }

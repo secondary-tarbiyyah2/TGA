@@ -8,6 +8,7 @@ import { learnRoleLabel, STAFF_ROLES } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { ui } from "@/components/learn/ui";
 import { Microsoft365Connection } from "@/components/learn/settings/Microsoft365Connection";
+import { AiUsage } from "@/components/learn/settings/AiUsage";
 import { triggerPublish } from "@/lib/learn/publishSiteContent";
 
 type LmsSettings = {
@@ -365,6 +366,7 @@ export default function AdminSettingsPage() {
           <MessagingSettings />
           <ClockInSettingsSection />
           <Microsoft365Connection />
+          <AiUsage />
           <Shortcuts />
         </div>
       </LearnGate>

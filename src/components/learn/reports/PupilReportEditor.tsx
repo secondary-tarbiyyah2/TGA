@@ -6,6 +6,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { Tabs } from "@/components/learn/Tabs";
 import { Notice, StatusChip, ui } from "@/components/learn/ui";
 import { ReportDocument, fmtPct } from "./ReportDocument";
+import { ReportAiDraft } from "./ReportAiDraft";
 import {
   ATTAINMENT_OPTIONS,
   EFFORT_OPTIONS,
@@ -378,6 +379,21 @@ export function PupilReportEditor({
                   className={`mt-2 ${ui.input}`}
                   placeholder="What went well, one thing to work on next, and how home can help."
                 />
+                {canEdit && (
+                  <ReportAiDraft
+                    key={childId}
+                    firstName={firstName(pupil.name)}
+                    yearGroup={cls.group}
+                    subject={cls.name}
+                    rating={rating}
+                    live={live}
+                    comment={comment}
+                    onUse={(text, how) => {
+                      setComment((c) => (how === "append" ? append(c, text) : text));
+                      setDirty(true);
+                    }}
+                  />
+                )}
                 {canEdit && prompts.length > 0 && (
                   <div className="mt-3">
                     <p className="text-xs font-medium text-ink/75">From the figures (tap to add, then reword):</p>

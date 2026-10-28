@@ -6,6 +6,8 @@ import { MessageThread } from "@/components/learn/MessageThread";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { learnRoleLabel, type LearnRole } from "@/lib/learn/session";
+import { AiSpark } from "@/components/learn/AiBits";
+import { TRIAGE_CATEGORY_LABEL, aiAssist, aiErrorMessage, useAiStatus } from "@/lib/learn/aiAssist";
 
 type Person = { user_id: string; full_name: string; roles: string[]; detail: string | null };
 type ThreadRow = {
@@ -19,7 +21,8 @@ type ThreadRow = {
   created_at: string;
   children?: { name: string } | null;
 };
-type Last = { thread_id: string; body: string; created_at: string; sender_id: string };
+type Last = { id: string; thread_id: string; body: string; created_at: string; sender_id: string };
+type TriageRow = { thread_id: string; message_id: string; category: string; urgency: string };
 
 const STAFF_ROLES = ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover"];
 
@@ -60,6 +63,12 @@ export function MessagesHub({ canAddPeople = false, subtitle }: { canAddPeople?:
   const [error, setError] = useState<string | null>(null);
   const [directoryFailed, setDirectoryFailed] = useState(false);
   const [unread, setUnread] = useState<Record<string, number>>({});
+  const ai = useAiStatus();
+  const aiOn = !!ai?.configured && ai.can.message_triage;
+  const [triageBy, setTriageBy] = useState<Record<string, TriageRow>>({});
+  const [urgentOnly, setUrgentOnly] = useState(false);
+  const [sorting, setSorting] = useState(false);
+  const [sortNote, setSortNote] = useState<string | null>(null);
 
   const load = useCallback(async () => {
     const supabase = getSupabaseClient();
@@ -100,7 +109,7 @@ export function MessagesHub({ canAddPeople = false, subtitle }: { canAddPeople?:
     if (mine.length > 0) {
       const { data: msgs } = await supabase
         .from("message_thread_messages")
-        .select("thread_id, body, created_at, sender_id")
+        .select("id, thread_id, body, created_at, sender_id")
         .in(
           "thread_id",
           mine.map((t) => t.id),
@@ -110,6 +119,20 @@ export function MessagesHub({ canAddPeople = false, subtitle }: { canAddPeople?:
       const map: Record<string, Last> = {};
       for (const m of (msgs as Last[]) || []) if (!map[m.thread_id]) map[m.thread_id] = m;
       setLasts(map);
+
+      // AI triage results (0173). RLS returns rows only to staff who can see the thread; parents get none.
+      const { data: tri } = await supabase
+        .from("ai_message_triage")
+        .select("thread_id, message_id, category, urgency, created_at")
+        .in(
+          "thread_id",
+          mine.map((t) => t.id),
+        )
+        .order("created_at", { ascending: false })
+        .limit(400);
+      const tmap: Record<string, TriageRow> = {};
+      for (const r of (tri as TriageRow[] | null) || []) if (!tmap[r.thread_id]) tmap[r.thread_id] = r;
+      setTriageBy(tmap);
     }
   }, []);
 
@@ -139,9 +162,34 @@ export function MessagesHub({ canAddPeople = false, subtitle }: { canAddPeople?:
     return t.staff_a_id === me ? t.staff_b_id : t.staff_a_id;
   };
 
-  const sorted = useMemo(() => {
+  const sortedAll = useMemo(() => {
     return [...(threads || [])].sort((a, b) => (lasts[b.id]?.created_at || b.created_at).localeCompare(lasts[a.id]?.created_at || a.created_at));
   }, [threads, lasts]);
+  const sorted = urgentOnly ? sortedAll.filter((t) => triageBy[t.id]?.urgency === "urgent") : sortedAll;
+  const urgentCount = sortedAll.filter((t) => triageBy[t.id]?.urgency === "urgent").length;
+
+  const isParentId = (uid: string | null | undefined) => {
+    const p = uid ? byId.get(uid) : undefined;
+    return !!p && p.roles.includes("parent") && !p.roles.some((r) => STAFF_ROLES.includes(r));
+  };
+  /** Conversations whose newest message is from a parent and hasn't been sorted yet. */
+  const unsorted = sortedAll.filter((t) => {
+    const last = lasts[t.id];
+    return !!last && last.sender_id !== me && (isParentId(last.sender_id) || (t.kind === "parent_teacher" && last.sender_id === t.parent_id)) && triageBy[t.id]?.message_id !== last.id;
+  });
+
+  const sortInbox = async () => {
+    const ids = unsorted.slice(0, 10).map((t) => t.id);
+    if (!ids.length) return;
+    setSorting(true);
+    setSortNote(null);
+    const r = await aiAssist("triage_batch", { thread_ids: ids });
+    setSorting(false);
+    if (!r.ok) return setSortNote(aiErrorMessage(r));
+    await load();
+    const left = unsorted.length - ids.length;
+    setSortNote(r.stopped === "ai_daily_limit" ? "Stopped: the school's AI limit for today has been reached." : `Sorted ${ids.length} conversation${ids.length === 1 ? "" : "s"}.${left > 0 ? ` ${left} more to go.` : ""}`);
+  };
 
   const start = async (other: Person) => {
     const supabase = getSupabaseClient();
@@ -210,8 +258,25 @@ export function MessagesHub({ canAddPeople = false, subtitle }: { canAddPeople?:
       ) : (
         <div className="grid overflow-hidden rounded-2xl border border-gold-light bg-white md:grid-cols-[320px_minmax(0,1fr)]">
           <div className={`border-gold-light md:border-r ${active ? "hidden md:block" : ""}`}>
+            {(aiOn || urgentCount > 0) && (
+              <div className="flex flex-wrap items-center gap-2 border-b border-gold-light px-3 py-2">
+                <button type="button" aria-pressed={urgentOnly} onClick={() => setUrgentOnly((v) => !v)} className={`rounded-full border px-3 py-1 text-xs font-medium ${urgentOnly ? "border-red-700 bg-red-700 text-white" : "border-gold-light bg-white text-ink/75 hover:bg-cream"}`}>
+                  Urgent{urgentCount ? ` (${urgentCount})` : ""}
+                </button>
+                {aiOn && (
+                  <button type="button" disabled={sorting || unsorted.length === 0} onClick={sortInbox} title="Ask AI to sort the newest parent messages (up to 10 at a time)" className="inline-flex items-center gap-1 rounded-full border border-gold-light bg-white px-3 py-1 text-xs font-medium text-ink/75 hover:bg-cream disabled:opacity-50">
+                    <AiSpark className="h-3.5 w-3.5 text-teal-700" />
+                    {sorting ? "Sorting…" : unsorted.length ? `Sort my inbox (${Math.min(unsorted.length, 10)})` : "Inbox sorted"}
+                  </button>
+                )}
+                {sortNote && <span className="w-full text-xs text-ink/65">{sortNote}</span>}
+              </div>
+            )}
             <ul className="max-h-[70vh] divide-y divide-gold-light/70 overflow-y-auto">
-              {sorted.length === 0 && (
+              {sorted.length === 0 && urgentOnly && (
+                <li className="px-5 py-10 text-center text-sm text-ink/65">No urgent conversations.</li>
+              )}
+              {sorted.length === 0 && !urgentOnly && (
                 <li className="px-5 py-10 text-center">
                   <p className="text-sm font-semibold text-ink">No conversations yet</p>
                   <p className="mt-1 text-sm text-ink/65">Press “New message” to say hello.</p>
@@ -237,6 +302,12 @@ export function MessagesHub({ canAddPeople = false, subtitle }: { canAddPeople?:
                           {last && <span className="shrink-0 text-xs text-ink/65">{ago(last.created_at)}</span>}
                         </span>
                         <span className="block truncate text-xs text-ink/65">{context}</span>
+                        {triageBy[t.id] && (
+                          <span className="mt-0.5 flex flex-wrap gap-1">
+                            <span className={`rounded-full px-2 py-0.5 text-[10px] font-medium ${triageBy[t.id].category === "safeguarding concern" ? "bg-red-50 text-red-800" : "bg-teal-100 text-teal-900"}`}>{TRIAGE_CATEGORY_LABEL[triageBy[t.id].category] || triageBy[t.id].category}</span>
+                            {triageBy[t.id].urgency === "urgent" && <span className="rounded-full bg-red-700 px-2 py-0.5 text-[10px] font-semibold text-white">Urgent</span>}
+                          </span>
+                        )}
                         <span className="flex items-center gap-2">
                           <span className={`block min-w-0 flex-1 truncate text-sm ${unreadN ? "font-semibold text-ink" : "text-ink/65"}`}>{last ? `${last.sender_id === me ? "You: " : ""}${last.body}` : "No messages yet"}</span>
                           {unreadN > 0 && (
@@ -269,7 +340,7 @@ export function MessagesHub({ canAddPeople = false, subtitle }: { canAddPeople?:
                     </p>
                   </div>
                 </div>
-                <MessageThread key={activeThread.id} threadId={activeThread.id} onSent={load} onRead={loadUnread} />
+                <MessageThread key={activeThread.id} threadId={activeThread.id} onSent={load} onRead={loadUnread} aiTriage={aiOn && (isParentId(otherOf(activeThread)) || (activeThread.kind === "parent_teacher" && activeThread.parent_id !== me))} onTriaged={load} />
               </div>
             ) : (
               <div className="flex h-full min-h-[320px] flex-col items-center justify-center px-6 py-16 text-center">

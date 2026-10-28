@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { ReadTicks } from "@/components/learn/messages/ReadTicks";
+import { MessageTriagePanel } from "@/components/learn/messages/MessageTriagePanel";
 
 type Message = {
   id: string;
@@ -36,7 +37,7 @@ function dayLabel(iso: string): string {
  * messages are just shown as normal to the two participants, flagging
  * only changes who ELSE (the Safeguarding Lead) can see it, never blocks
  * sending. */
-export function MessageThread({ threadId, onSent, onRead }: { threadId: string; onSent?: () => void; onRead?: () => void }) {
+export function MessageThread({ threadId, onSent, onRead, aiTriage = false, onTriaged }: { threadId: string; onSent?: () => void; onRead?: () => void; /** Staff viewing a parent's thread: show the AI helper above the reply box. */ aiTriage?: boolean; onTriaged?: () => void }) {
   const supabase = getSupabaseClient();
   const [messages, setMessages] = useState<Message[] | null>(null);
   const [body, setBody] = useState("");
@@ -136,6 +137,8 @@ export function MessageThread({ threadId, onSent, onRead }: { threadId: string; 
       setBusy(false);
     }
   };
+
+  const latestIncomingId = aiTriage && messages && userId ? [...messages].reverse().find((m) => m.sender_id !== userId && !m.recalled_at)?.id || null : null;
 
   const withinWindow = (m: Message) => now - new Date(m.created_at).getTime() <= EDIT_WINDOW_MS;
 
@@ -294,14 +297,22 @@ export function MessageThread({ threadId, onSent, onRead }: { threadId: string; 
         <div ref={bottomRef} />
       </div>
       {actionError && <p role="alert" className="px-3 pb-1 text-xs text-red-700">{actionError}</p>}
-      <div className="flex items-center gap-2 border-t border-gold-light/30 p-2">
-        <input
-          type="text"
+      {aiTriage && <MessageTriagePanel threadId={threadId} latestIncomingId={latestIncomingId} onUseDraft={setBody} onTriaged={onTriaged} />}
+      <div className="flex items-end gap-2 border-t border-gold-light/30 p-2">
+        <textarea
           value={body}
           onChange={(e) => setBody(e.target.value)}
-          onKeyDown={(e) => e.key === "Enter" && send()}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" && !e.shiftKey) {
+              e.preventDefault();
+              send();
+            }
+          }}
+          rows={body.includes("\n") || body.length > 90 ? 5 : 1}
+          maxLength={4000}
+          aria-label="Type a message"
           placeholder="Type a message…"
-          className="flex-1 rounded-md border border-gold-light/60 px-3 py-2 text-sm"
+          className="flex-1 resize-none rounded-md border border-gold-light/60 px-3 py-2 text-sm"
         />
         <button type="button" disabled={!body.trim() || busy} onClick={send} className="rounded-lg bg-gold-700 px-4 py-2 text-sm text-white disabled:opacity-50 hover:bg-gold-900 font-medium transition-colors">
           Send

@@ -80,7 +80,7 @@ function AssessmentContent() {
         <section aria-label={`${child.name}: progress and notes`} className="space-y-4">
           <h2 className="font-serif text-h3 font-semibold text-ink">{child.name}</h2>
           {isAssessmentLead && <QuranProgressForm childId={child.id} classId={classId || null} />}
-          <WeeklyTarbiyahNoteForm childId={child.id} classId={classId} />
+          <WeeklyTarbiyahNoteForm childId={child.id} classId={classId} childName={child.name} />
         </section>
       )}
 

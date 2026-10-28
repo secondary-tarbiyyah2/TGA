@@ -25,7 +25,7 @@ async function callManageBooking(action: string, token: string, extra: Record<st
  * "if we found it, check your email" message either way (see the Edge
  * Function's resend_link action), never confirming whether an address has
  * a booking. */
-function ResendLinkForm() {
+function ResendLinkForm({ intro }: { intro: React.ReactNode }) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "done">("idle");
 
@@ -41,10 +41,22 @@ function ResendLinkForm() {
   }
 
   if (status === "done") {
-    return <p className="mt-4 text-sm text-ink/70">If that email has a booking with us, we&apos;ve just sent a link to manage it.</p>;
+    return (
+      <div className="rounded-2xl border border-gold-light/60 bg-white p-5">
+        <p className="font-semibold text-ink">Check your inbox</p>
+        <p className="mt-1 text-sm text-ink/70">
+          If {email.trim() || "that address"} has a booking with us, we&apos;ve sent a link to manage it. It can take a few minutes, so check your spam folder too.
+        </p>
+        <button type="button" onClick={() => setStatus("idle")} className="mt-3 text-sm font-semibold text-gold-700 underline">
+          Try a different email
+        </button>
+      </div>
+    );
   }
 
   return (
+    <>
+    {intro}
     <form onSubmit={submit} className="mt-4 flex flex-wrap items-end gap-2">
       <label className="text-sm text-ink">
         Your email
@@ -60,6 +72,7 @@ function ResendLinkForm() {
         {status === "sending" ? "Sending…" : "Email me my link"}
       </button>
     </form>
+    </>
   );
 }
 
@@ -98,16 +111,14 @@ export function ManageBookingClient() {
   if (error === "no_token") {
     return (
       <div>
-        <p className="text-ink/70">No booking link found. Use the link from your confirmation email, or get a new one below.</p>
-        <ResendLinkForm />
+        <ResendLinkForm intro={<p className="text-ink/70">To change or cancel your call, use the link in your confirmation email. Can&apos;t find it? Enter your email and we&apos;ll send a new link.</p>} />
       </div>
     );
   }
   if (error) {
     return (
       <div>
-        <p className="text-ink/70">We couldn&apos;t find that booking, the link may have expired. Get a new one below, or email us at globalacademy@tarbiyyah.co.uk.</p>
-        <ResendLinkForm />
+        <ResendLinkForm intro={<p className="text-ink/70">That link didn&apos;t work; it may have expired. Enter your email and we&apos;ll send a new one, or email us at globalacademy@tarbiyyah.co.uk.</p>} />
       </div>
     );
   }
