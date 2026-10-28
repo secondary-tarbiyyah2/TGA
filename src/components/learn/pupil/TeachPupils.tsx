@@ -11,6 +11,8 @@ import { ackState, usePupils, type PupilRow } from "./usePupils";
 import { Tabs } from "@/components/learn/Tabs";
 import { localDateKey } from "@/lib/learn/calendar";
 import { reasonLabel } from "@/components/learn/absences/data";
+import { useSupportPlans } from "@/lib/learn/send";
+import { PupilSupportCard, SupportBadge } from "@/components/learn/send/SupportAtAGlance";
 
 type Signals = { rate: number | null; lessons: number; awayToday: string | null };
 
@@ -78,13 +80,14 @@ export function TeachPupils() {
   const canAcknowledge = roles.some((r) => r.role === "teacher" || r.role === "teaching_assistant_cover");
   const [q, setQ] = useState("");
   const [cls, setCls] = useState("");
-  const [only, setOnly] = useState<"all" | "alerts" | "away" | "todo">("all");
+  const [only, setOnly] = useState<"all" | "alerts" | "away" | "todo" | "send">("all");
   const [open, setOpen] = useState<PupilRow | null>(null);
   const [busy, setBusy] = useState(false);
   const [ackError, setAckError] = useState<string | null>(null);
 
   const taught = useMemo(() => (pupils || []).filter((p) => p.classes.length > 0), [pupils]);
   const signals = usePupilSignals(taught.map((p) => p.id));
+  const plans = useSupportPlans(pupils ? taught.map((p) => p.id) : null);
 
   const classOptions = useMemo(() => {
     const m = new Map<string, string>();
@@ -101,9 +104,10 @@ export function TeachPupils() {
       if (only === "alerts") return p.alerts.length > 0;
       if (only === "away") return !!signals?.[p.id]?.awayToday;
       if (only === "todo") return ackState(p) !== "current";
+      if (only === "send") return !!plans?.[p.id];
       return true;
     });
-  }, [pupils, q, cls, only, signals]);
+  }, [pupils, q, cls, only, signals, plans]);
 
   // Links from the Action centre and the Qur'an page land here as ?pupil=<id>: open that pupil.
   useEffect(() => {
@@ -164,6 +168,7 @@ export function TeachPupils() {
             { key: "all" as const, label: "Everyone", count: taught.length },
             { key: "away" as const, label: "Away today", count: signals ? taught.filter((p) => signals[p.id]?.awayToday).length : undefined },
             { key: "alerts" as const, label: "Medical alerts", count: taught.filter((p) => p.alerts.length > 0).length },
+            ...(plans && Object.keys(plans).length ? [{ key: "send" as const, label: "Support plan", count: Object.keys(plans).length }] : []),
             ...(canAcknowledge ? [{ key: "todo" as const, label: "Still to read", count: todo, countAlert: todo > 0 }] : []),
           ]}
         />
@@ -183,7 +188,10 @@ export function TeachPupils() {
                   <button type="button" onClick={() => { setAckError(null); setOpen(p); }} className="flex w-full flex-wrap items-center gap-3 px-4 py-3 text-left hover:bg-cream/50">
                     <span aria-hidden="true" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-teal-100 text-sm font-semibold text-teal-900">{initials}</span>
                     <span className="min-w-0 flex-1">
-                      <span className="block font-medium text-ink">{p.name}</span>
+                      <span className="block font-medium text-ink">
+                        {p.name}
+                        <SupportBadge plan={plans?.[p.id]} />
+                      </span>
                       <span className="block truncate text-xs text-ink/65">{[p.yearGroup, p.classes.map((c) => c.name).join(", ")].filter(Boolean).join(" · ")}</span>
                       {sig?.awayToday && (
                         <span className="mt-1 block text-xs font-medium text-amber-900">
@@ -221,6 +229,7 @@ export function TeachPupils() {
               </button>
             </div>
             <div className="space-y-4 overflow-y-auto p-4">
+              {plans?.[open.id] && <PupilSupportCard plan={plans[open.id]} />}
               <PupilOverview childId={open.id} />
               <PupilRecord teacherView child={{ id: open.id, name: open.name, dob: open.dob, yearGroup: open.yearGroup, classes: open.classes.map((c) => c.name) }} />
             </div>

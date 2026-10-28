@@ -7,9 +7,10 @@ import { attachHomework } from "@/lib/learn/homeworkStatus";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { myTeachingClasses } from "@/lib/learn/classes";
 import { MARK_COLUMNS, nextSession, pupilStats, revisionRows, todayISO, type QuranMark, type Session } from "@/lib/learn/quranClassroom";
+import { reviewState, type RegisterRow } from "@/lib/learn/send";
 
 export type Urgency = "now" | "soon" | "info";
-export type ActionArea = "Homework" | "Qur'an" | "Absence" | "Signatures" | "Child details";
+export type ActionArea = "Homework" | "Qur'an" | "Absence" | "Signatures" | "Child details" | "SEND";
 export type ActionItem = { id: string; area: ActionArea; urgency: Urgency; title: string; detail: string; href: string; cta: string; who?: string; people?: { id: string; name: string }[] };
 export type Role = "teach" | "admin" | "student" | "family";
 
@@ -90,8 +91,36 @@ export async function loadStaffItems(role: "teach" | "admin"): Promise<ActionIte
     items.push({ id: "abs", area: "Absence", urgency: esc ? "now" : "soon", title: `${plural(due.length, "absence follow-up")} due`, detail: esc ? `${esc} escalated. The rest are waiting for a call or message.` : "Waiting for a call or message to the family.", href: `${base}/absences`, cta: "Open absences" });
   }
 
+  items.push(...(await loadSendItems(base)));
   if (role === "teach") items.push(...(await loadQuranTeacherItems()));
   return items;
+}
+
+/** SEND reviews due within 14 days or overdue, drafts to finish and family comments. Only the SENCo, Headteacher and admin get rows back. */
+async function loadSendItems(base: string): Promise<ActionItem[]> {
+  const supabase = getSupabaseClient();
+  if (!supabase) return [];
+  const { data, error } = await supabase.rpc("send_register");
+  if (error || !data) return [];
+  const rows = data as RegisterRow[];
+  const who = (list: RegisterRow[]) => list.slice(0, 5).map((r) => ({ id: r.child_id, name: r.child_name }));
+  const more = (list: RegisterRow[]) => (list.length > 5 ? `and ${list.length - 5} more` : undefined);
+  const href = `${base}/send`;
+  const out: ActionItem[] = [];
+  const active = rows.filter((r) => r.status === "active");
+  const overdue = active.filter((r) => reviewState(r.next_review_due).state === "overdue");
+  const soon = active.filter((r) => reviewState(r.next_review_due).state === "soon");
+  const undated = active.filter((r) => !r.next_review_due);
+  const drafts = rows.filter((r) => r.status === "draft");
+  const flagged = rows.filter((r) => !r.plan_id && r.flagged);
+  const comments = rows.reduce((n, r) => n + (r.unseen_comments || 0), 0);
+  if (overdue.length) out.push({ id: "send-overdue", area: "SEND", urgency: "now", title: `${plural(overdue.length, "support plan review")} overdue`, detail: "Book the review with the family and record it on the plan.", people: who(overdue), who: more(overdue), href, cta: "Open SEND register" });
+  if (soon.length) out.push({ id: "send-soon", area: "SEND", urgency: "soon", title: `${plural(soon.length, "support plan review")} due in the next 14 days`, detail: "Invite the family and ask the pupil's teachers how the adjustments are working.", people: who(soon), who: more(soon), href, cta: "Open SEND register" });
+  if (undated.length) out.push({ id: "send-undated", area: "SEND", urgency: "soon", title: `${plural(undated.length, "support plan")} with no review date`, detail: "Every plan needs a next review date, at least termly.", people: who(undated), who: more(undated), href, cta: "Set review dates" });
+  if (drafts.length) out.push({ id: "send-drafts", area: "SEND", urgency: "soon", title: `${plural(drafts.length, "draft support plan")} to finish`, detail: "Started from the application. Add adjustments and targets, then make it active so teachers and the family see it.", people: who(drafts), who: more(drafts), href, cta: "Finish plans" });
+  if (comments) out.push({ id: "send-comments", area: "SEND", urgency: "soon", title: `${plural(comments, "new comment")} from families on support plans`, detail: "Read and reply on the plan. The family sees your reply in the Parent Portal.", href, cta: "Read comments" });
+  if (flagged.length) out.push({ id: "send-flagged", area: "SEND", urgency: "info", title: `${plural(flagged.length, "pupil")} whose family mentioned a need, with no plan`, detail: "Check whether each needs a support plan or just monitoring.", people: who(flagged), who: more(flagged), href, cta: "Review" });
+  return out;
 }
 
 async function loadQuranTeacherItems(): Promise<ActionItem[]> {

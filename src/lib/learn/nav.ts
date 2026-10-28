@@ -125,6 +125,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       group: "Pupils",
       tabs: [
         { href: "/admin/pupils", label: "All pupils", hint: "Every pupil's record in one place" },
+        { href: "/admin/send", label: "SEND register", hint: "Support plans, adjustments, access arrangements and reviews", icon: "listChecks", headOnly: true },
         { href: "/admin/behaviour", label: "Behaviour", hint: "Incidents and praise", icon: "heartHandshake", headOnly: true },
         { href: "/admin/rewards", label: "House points", hint: "House points and Star of the Week", icon: "trophy", headOnly: true },
       ],
@@ -271,6 +272,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       icon: "backpack",
       tabs: [
         { href: "/teach/pupils", label: "Pupils", hint: "Records for the pupils you teach" },
+        { href: "/teach/send", label: "Support plans", hint: "Adjustments and access arrangements for pupils with SEND", icon: "listChecks" },
         { href: "/teach/quran", label: "Qur'an and Qaidah", hint: "Recitation and memorisation progress", icon: "bookMarked" },
         { href: "/teach/behaviour", label: "Behaviour", hint: "Incidents and praise", icon: "heartHandshake" },
         { href: "/teach/stars", label: "Houses and stars", hint: "House points and Star of the Week", icon: "trophy" },
@@ -367,6 +369,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       icon: "houseHeart",
       tabs: [
         { href: "/family/child-details", label: "Child details", hint: "Contact, medical and consent details", icon: "contact" },
+        { href: "/family/support", label: "Support plan", hint: "Your child's SEND support plan and reviews", icon: "listChecks" },
         { href: "/family/absences", label: "Report an absence", hint: "Tell us your child will be away", icon: "calendarX" },
         { href: "/family/fees", label: "Fees", hint: "Invoices and payments", icon: "wallet" },
       ],

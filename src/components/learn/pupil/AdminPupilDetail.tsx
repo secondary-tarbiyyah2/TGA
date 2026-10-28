@@ -15,13 +15,14 @@ import { ProgressBar, ageFromDob, completeness, formatDob, formatStamp, medicalA
 import { PupilOverview } from "./PupilOverview";
 import { RecordSections, usePupilRecordData, type RecordChild } from "./PupilRecord";
 import { Fig, PupilAttendanceTab, PupilBehaviourTab, PupilReportsTab, attendanceFigures } from "./ProfileTabs";
+import { SupportPlanEditor } from "@/components/learn/send/SupportPlanEditor";
 
 type ChildRaw = { id: string; name: string; dob: string | null; parent_user_id: string | null; year_groups?: { name: string } | null };
 type EnrolRaw = { classes?: { name: string } | null };
 type Parent = { full_name: string | null; email: string | null };
 
-type Tab = "overview" | "details" | "medical" | "attendance" | "behaviour" | "reports" | "assessment";
-const TABS: Tab[] = ["overview", "details", "medical", "attendance", "behaviour", "reports", "assessment"];
+type Tab = "overview" | "details" | "medical" | "send" | "attendance" | "behaviour" | "reports" | "assessment";
+const TABS: Tab[] = ["overview", "details", "medical", "send", "attendance", "behaviour", "reports", "assessment"];
 
 /**
  * A pupil's profile: the one place for everything about a child. Overview,
@@ -123,6 +124,7 @@ export function AdminPupilDetail({ id }: { id: string }) {
     { key: "overview", label: "Overview" },
     { key: "details", label: "Details & contacts", count: missing.length || undefined, countAlert: true },
     { key: "medical", label: "Medical & consents", count: alerts.length || undefined, countAlert: true },
+    { key: "send", label: "Support plan" },
     { key: "attendance", label: "Attendance" },
     { key: "behaviour", label: "Behaviour & rewards" },
     { key: "reports", label: "Reports" },
@@ -198,6 +200,7 @@ export function AdminPupilDetail({ id }: { id: string }) {
               </div>
             )}
             {tab === "medical" && (record.loaded ? <div className="space-y-4"><RecordSections data={record} showAcks only={["health", "consents", "acks"]} /></div> : <div className="h-32 animate-pulse rounded-2xl bg-white" />)}
+            {tab === "send" && <SupportPlanEditor childId={child.id} childName={child.name} />}
             {tab === "attendance" && <PupilAttendanceTab childId={child.id} />}
             {tab === "behaviour" && <PupilBehaviourTab childId={child.id} extra={<LeaderboardPrivacy kids={[{ id: child.id, name: child.name }]} />} />}
             {tab === "reports" && <PupilReportsTab childId={child.id} childName={child.name} />}

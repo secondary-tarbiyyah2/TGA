@@ -3,6 +3,8 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { ui } from "@/components/learn/ui";
+import { accessList, useSupportPlans } from "@/lib/learn/send";
+import { SupportAtAGlance } from "@/components/learn/send/SupportAtAGlance";
 
 export type GbPupil = { id: string; name: string };
 type Type = { id: string; name: string };
@@ -59,6 +61,8 @@ export function ClassGradebook({
   const [editing, setEditing] = useState<{ key: string | null; title: string; date: string; typeId: string; schemeId: string; max: string; entries: Record<string, Entry> } | null>(null);
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<{ text: string; error?: boolean } | null>(null);
+  // Access arrangements from support plans (0169), shown while a test is set up or marked.
+  const plans = useSupportPlans(pupils ? pupils.map((p) => p.id) : null);
 
   const load = useCallback(async () => {
     if (!supabase || !classId) return;
@@ -286,6 +290,8 @@ export function ClassGradebook({
           )}
         </div>
 
+        <SupportAtAGlance pupils={pupils || []} plans={plans} mode="assessment" />
+
         <table className="w-full text-sm">
           <caption className="sr-only">Results for each pupil</caption>
           <thead>
@@ -302,6 +308,9 @@ export function ClassGradebook({
                 <tr key={p.id} className="border-b border-gold-light/50">
                   <th scope="row" className="py-1.5 pr-3 text-left font-medium text-ink">
                     {p.name}
+                    {plans?.[p.id] && accessList(plans[p.id]).length > 0 && (
+                      <span className="block text-xs font-normal text-amber-900">{accessList(plans[p.id]).join(" · ")}</span>
+                    )}
                   </th>
                   <td className="py-1.5 pr-3">
                     <input

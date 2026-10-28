@@ -6,6 +6,7 @@ import { learnRoleLabel, useLearnSession, type LearnRole } from "@/lib/learn/ses
 import { dueState, trainingDue, type DueState, type Vetting } from "@/lib/learn/staffProfiles";
 import { StaffProfileForm } from "@/components/learn/staff/StaffProfileForm";
 import { Tabs } from "@/components/learn/Tabs";
+import { SencoToggle } from "@/components/learn/send/SencoToggle";
 import { ukToday } from "@/lib/learn/ukTime";
 
 type StaffRow = {
@@ -298,6 +299,9 @@ function DetailsForm({ person, canEditRoles, canSetDsl, isSelf, onSaved }: { per
           </p>
         )}
       </div>
+
+      {/* The Staff page is Headteacher/admin only, and set_senco re-checks. */}
+      <SencoToggle userId={person.user_id} name={person.full_name} canSet />
     </div>
   );
 }

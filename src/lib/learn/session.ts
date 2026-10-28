@@ -83,7 +83,7 @@ export function useLearnSession() {
   return { session, roles, rolesLoaded };
 }
 
-export type LearnAddOnPermission = "timetabler" | "safeguarding_lead" | "can_export_data" | "assessment_lead";
+export type LearnAddOnPermission = "timetabler" | "safeguarding_lead" | "can_export_data" | "assessment_lead" | "senco";
 
 /**
  * Whether the signed-in user currently holds a given add-on permission

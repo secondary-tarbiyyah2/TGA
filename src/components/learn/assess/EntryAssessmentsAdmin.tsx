@@ -201,6 +201,22 @@ function CreateForm({ onDone, onCancel }: { onDone: (link: string, emailed: bool
   const [email, setEmail] = useState(true);
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState<string | null>(null);
+  const [fromPlan, setFromPlan] = useState<string | null>(null);
+
+  // A current pupil with an active support plan (0169): apply its access arrangements to the paper.
+  const pickPupil = async (id: string) => {
+    setChildId(id);
+    setFromPlan(null);
+    if (!supabase || !id) return;
+    const { data } = await supabase.rpc("send_access_arrangements", { p_child: id });
+    const a = data as { extra_time_pct: number; reader: boolean; scribe: boolean; rest_breaks: boolean; word_processor: boolean; separate_room: boolean; other: string | null } | null;
+    if (!a) return;
+    const extras = [a.scribe ? "scribe" : "", a.word_processor ? "word processor" : "", a.separate_room ? "separate breakout room" : "", a.rest_breaks ? "supervised rest breaks" : "", a.other || ""].filter(Boolean);
+    setExtra(a.extra_time_pct || 0);
+    setReadAloud(!!a.reader);
+    if (extras.length) setOther(extras.join(", ").slice(0, 200));
+    setFromPlan([a.extra_time_pct ? `${a.extra_time_pct}% extra time` : "", a.reader ? "reader (questions read aloud)" : "", ...extras].filter(Boolean).join(", ") || null);
+  };
 
   useEffect(() => {
     if (!supabase) return;
@@ -258,7 +274,7 @@ function CreateForm({ onDone, onCancel }: { onDone: (link: string, emailed: bool
         )}
         {who === "pupil" && (
           <label className={`${ui.label} sm:col-span-2`}>Pupil
-            <select value={childId} onChange={(e) => setChildId(e.target.value)} className={`mt-1 ${ui.input}`}>
+            <select value={childId} onChange={(e) => void pickPupil(e.target.value)} className={`mt-1 ${ui.input}`}>
               <option value="">Choose…</option>
               {kids.map((k) => <option key={k.id} value={k.id}>{k.name}{k.year_groups?.name ? ` · ${k.year_groups.name}` : ""}</option>)}
             </select>
@@ -279,11 +295,12 @@ function CreateForm({ onDone, onCancel }: { onDone: (link: string, emailed: bool
 
       <fieldset>
         <legend className={ui.label}>Access arrangements</legend>
+        {who === "pupil" && fromPlan && <div className="mt-2"><Notice tone="info">From the pupil&apos;s support plan: {fromPlan}. Check them before making the paper.</Notice></div>}
         <div className="mt-2 grid gap-1 sm:grid-cols-2">
           <label className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm hover:bg-cream">
             <span className="font-medium text-ink">Extra time</span>
             <select value={extra} onChange={(e) => setExtra(Number(e.target.value))} className={`${ui.input} !w-auto`}>
-              {[0, 25, 50, 100].map((v) => <option key={v} value={v}>{v ? `${v}%` : "None"}</option>)}
+              {[...new Set([0, 25, 50, 100, extra])].sort((x, y) => x - y).map((v) => <option key={v} value={v}>{v ? `${v}%` : "None"}</option>)}
             </select>
           </label>
           <div className="flex flex-wrap items-center gap-2 rounded-lg px-3 py-2 text-sm hover:bg-cream">

@@ -5,6 +5,8 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { REASONS, saveReason } from "@/components/learn/absences/data";
 import { useLearnSession } from "@/lib/learn/session";
 import { ukTimeOf } from "@/lib/learn/ukTime";
+import { useSupportPlans } from "@/lib/learn/send";
+import { SupportAtAGlance, SupportBadge } from "@/components/learn/send/SupportAtAGlance";
 
 export type Status = "present" | "late" | "absent" | "excused" | "not_engaged" | "technical";
 /** The four marks used every lesson, as one-tap buttons. */
@@ -58,6 +60,8 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
   const [joinsLoaded, setJoinsLoaded] = useState(false);
   // Teams attendance report (teams-sync, 0145): a hint only, never used to mark anyone.
   const [teams, setTeams] = useState<Record<string, TeamsHint>>({});
+  // Active support plans for this class (0169): adjustments to use in the lesson.
+  const plans = useSupportPlans(children ? children.map((c) => c.id) : null);
 
   const loadJoins = useCallback(async () => {
     const supabase = getSupabaseClient();
@@ -212,6 +216,7 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
           </button>
         )}
       </div>
+      <SupportAtAGlance pupils={children} plans={plans} className="mx-5 my-3" />
       {reasonError && (
         <p role="alert" className="border-b border-gold-light/70 bg-red-50 px-5 py-2 text-xs text-red-800">
           {reasonError}
@@ -232,6 +237,7 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
             <li key={c.id} className="flex flex-wrap items-center gap-3 px-5 py-2.5">
               <span className="min-w-0 flex-1 truncate text-sm font-medium text-ink">
                 {c.name}
+                <SupportBadge plan={plans?.[c.id]} />
                 {didJoin ? <span className="ml-2 text-xs font-normal text-green-800">Joined {timeOf(joined[c.id])}</span> : anyJoins ? <span className="ml-2 text-xs font-normal text-amber-800">Has not joined</span> : null}
                 {teams[c.id] && (
                   <span

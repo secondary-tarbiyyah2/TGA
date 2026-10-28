@@ -22,12 +22,14 @@ async function loadFamilyExtras(): Promise<ActionItem[]> {
   if (!supabase) return [];
   const out: ActionItem[] = [];
   const plural = (n: number, one: string, many = `${one}s`) => `${n} ${n === 1 ? one : many}`;
-  const [sigs, kids, det, cons, notes] = await Promise.all([
+  const [sigs, kids, det, cons, notes, plans, agreed] = await Promise.all([
     supabase.from("my_outstanding_signatures").select("document_id", { count: "exact", head: true }),
     supabase.from("children").select("id, name, dob").order("name"),
     supabase.from("pupil_details").select(DETAILS_SELECT),
     supabase.from("pupil_emergency_contacts").select("child_id"),
     fetchNotes(),
+    supabase.from("send_support_plans").select("id, child_id, updated_at").eq("status", "active"),
+    supabase.from("send_plan_family_responses").select("plan_id, plan_updated_at").eq("agreed", true),
   ]);
   if (!sigs.error && (sigs.count || 0) > 0) {
     const n = sigs.count || 0;
@@ -41,6 +43,18 @@ async function loadFamilyExtras(): Promise<ActionItem[]> {
     const incomplete = list.filter((k) => completeness(detailsBy.get(k.id) || null, countBy.get(k.id) || 0, k.dob).percent < 100);
     if (incomplete.length) {
       out.push({ id: "fam-details", area: "Child details", urgency: "now", title: `Complete ${incomplete.map((k) => k.name.split(" ")[0]).join(" and ")}'s details`, detail: "Address, GP, health, emergency contacts and consents are required for every pupil.", href: "/family/child-details", cta: "Complete details" });
+    }
+  }
+  // An active support plan the family hasn't agreed to since it last changed (0169).
+  if (!plans.error && !kids.error) {
+    const names = new Map(((kids.data as unknown as { id: string; name: string }[]) || []).map((k) => [k.id, k.name.split(" ")[0]]));
+    const ok = ((agreed.data as { plan_id: string; plan_updated_at: string | null }[]) || []);
+    const toRead = ((plans.data as { id: string; child_id: string; updated_at: string }[]) || []).filter(
+      (p) => !ok.some((a) => a.plan_id === p.id && a.plan_updated_at && new Date(a.plan_updated_at).getTime() >= new Date(p.updated_at).getTime() - 1000),
+    );
+    if (toRead.length) {
+      const who = toRead.map((p) => names.get(p.child_id) || "your child").join(" and ");
+      out.push({ id: "fam-send", area: "SEND", urgency: "soon", title: `Read ${who}'s support plan`, detail: "It has been shared or updated. Tell us if you agree, or add a comment.", href: "/family/support", cta: "Read the plan" });
     }
   }
   if (!notes.error) {
