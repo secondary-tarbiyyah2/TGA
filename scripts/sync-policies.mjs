@@ -16,13 +16,39 @@
 //     version.
 // Rows not in the list (e.g. added by an admin) are left alone.
 //
+// Where content/policies/<stem>.md exists, its header fields and body are
+// written into the row (meta, body_md) so the policy is editable as text in
+// the portal (0171). By default that only happens for a row that has no text
+// yet, so wording edited in the portal is never overwritten by the repo copy;
+// --overwrite-text replaces it anyway (use after editing the markdown in git).
+//
 // Run AFTER the site deploy that ships the new PDFs, via
 // .github/workflows/sync-policies.yml. Pass --dry-run to only print the plan.
 import { createClient } from "@supabase/supabase-js";
 import { createHash } from "node:crypto";
-import { readFileSync } from "node:fs";
+import { readFileSync, existsSync } from "node:fs";
+
+/** Front matter + body of a content/policies markdown file, or null if there is none. */
+function readPolicyText(stem) {
+  const path = new URL(`../content/policies/${stem}.md`, import.meta.url);
+  if (!existsSync(path)) return null;
+  const text = readFileSync(path, "utf8");
+  const m = text.match(/^---\n([\s\S]*?)\n---\n?/);
+  if (!m) return null;
+  const meta = {};
+  for (const line of m[1].split("\n")) {
+    const i = line.indexOf(":");
+    if (i < 0) continue;
+    const key = line.slice(0, i).trim();
+    let value = line.slice(i + 1).trim();
+    if (value.startsWith('"') && value.endsWith('"')) value = value.slice(1, -1);
+    if (!["number", "title"].includes(key)) meta[key] = value;
+  }
+  return { meta, body: text.slice(m[0].length).trim() };
+}
 
 const dryRun = process.argv.includes("--dry-run");
+const overwriteText = process.argv.includes("--overwrite-text");
 const { SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY } = process.env;
 if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) {
   console.error("Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY");
@@ -42,7 +68,7 @@ const list = JSON.parse(readFileSync(new URL("./policies.json", import.meta.url)
 
 const { data: existing, error: readErr } = await supabase
   .from("policy_links")
-  .select("id, number, title, slug, file_url, file_path, deleted_at");
+  .select("id, number, title, slug, file_url, file_path, deleted_at, body_md");
 if (readErr) throw new Error(`read policy_links: ${readErr.message}`);
 
 const byId = new Map(existing.map((r) => [r.id, r]));
@@ -80,6 +106,11 @@ for (const p of list) {
     next_review: NEXT_REVIEW,
     ...(p.contentChanged ? { file_updated_at: now } : {}),
   };
+  const text = readPolicyText(p.stem);
+  if (text && (!match || !match.body_md || overwriteText)) {
+    fields.body_md = text.body;
+    fields.meta = text.meta;
+  }
   plan.push({ p, match, id: match ? match.id : id, fields });
 }
 
@@ -104,7 +135,7 @@ let added = 0;
 for (const { p, match, id, fields } of plan) {
   if (match) {
     const moved = match.number !== p.number || match.file_url !== fields.file_url;
-    console.log(`= ${p.number} ${p.title}${moved ? `  (was ${match.number}, ${match.file_url})` : ""}${match.file_path ? "  [detached admin upload]" : ""}${match.deleted_at ? "  [note: removed in admin, left removed]" : ""}`);
+    console.log(`= ${p.number} ${p.title}${moved ? `  (was ${match.number}, ${match.file_url})` : ""}${match.file_path ? "  [detached admin upload]" : ""}${match.deleted_at ? "  [note: removed in admin, left removed]" : ""}${fields.body_md ? "  [text imported]" : ""}`);
     if (!dryRun) {
       const { error } = await supabase.from("policy_links").update(fields).eq("id", match.id);
       if (error) throw new Error(`update ${p.number}: ${error.message}`);

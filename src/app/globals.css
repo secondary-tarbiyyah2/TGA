@@ -795,3 +795,22 @@ html[data-dark] .portal {
 .tile-emerald { --tile-bg: var(--tile-emerald-bg); --tile-fg: var(--tile-emerald-fg); }
 .tile-green { --tile-bg: var(--tile-green-bg); --tile-fg: var(--tile-green-fg); }
 .tile-slate { --tile-bg: var(--tile-slate-bg); --tile-fg: var(--tile-slate-fg); }
+
+/* Policy pages (/policies/<slug>/): rendered from the policy's markdown, so
+   the headings, tables and lists need the styles Tailwind's reset removed. */
+.policy-body { color: var(--color-ink-700); line-height: 1.65; }
+.policy-body h2 { font-family: var(--font-serif, serif); font-size: 1.5rem; font-weight: 600; color: var(--color-ink-900); margin: 2.25rem 0 0.75rem; }
+.policy-body h3 { font-size: 1.125rem; font-weight: 600; color: var(--color-ink-900); margin: 1.5rem 0 0.5rem; }
+.policy-body p { margin: 0 0 0.9rem; }
+.policy-body ul, .policy-body ol { margin: 0 0 1rem; padding-left: 1.5rem; }
+.policy-body ul { list-style: disc; }
+.policy-body ol { list-style: decimal; }
+.policy-body li { margin: 0.25rem 0; }
+.policy-body li > p { margin: 0; }
+.policy-body strong { color: var(--color-ink-900); }
+.policy-body a { color: var(--color-gold-700); text-decoration: underline; }
+.policy-body blockquote { margin: 0 0 1rem; padding: 0.75rem 1rem; border-left: 3px solid var(--color-gold-500); background: var(--color-gold-100); border-radius: 0.5rem; }
+.policy-body table { width: 100%; border-collapse: collapse; margin: 0.5rem 0 1.25rem; font-size: 0.925rem; }
+.policy-body th, .policy-body td { border: 1px solid var(--color-gold-light, #e6dcc3); padding: 0.5rem 0.7rem; text-align: left; vertical-align: top; }
+.policy-body th { background: var(--color-gold-100); color: var(--color-ink-900); font-weight: 600; }
+.policy-body table td:first-child { font-weight: 500; color: var(--color-ink-900); }

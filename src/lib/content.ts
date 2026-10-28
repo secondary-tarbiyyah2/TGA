@@ -202,9 +202,14 @@ function mapDifferentiator(r: Record<string, unknown>): Differentiator {
 
 export const getPolicyLinks = () =>
   queryOrFallback<PolicyLink[]>(
-    (s) => s.from("policy_links").select("id, number, title, category, parent_question_category, file_url, summary, last_reviewed, next_review, order_index, featured").eq("visibility", "public").order("order_index"),
+    (s) => s.from("policy_links").select("id, number, title, category, parent_question_category, file_url, summary, last_reviewed, next_review, order_index, featured, slug, body_md, file_path").eq("visibility", "public").order("order_index"),
     seedPolicyLinks
-  ).then((rows) => (rows === seedPolicyLinks ? rows : rows.map((r: unknown) => mapPolicyLink(r as Record<string, unknown>))));
+  ).then((rows) =>
+    rows === seedPolicyLinks
+      // The bundled policies all have markdown in content/policies/, so each one has a readable page too.
+      ? rows.map((p) => ({ ...p, readUrl: p.readUrl ?? (p.fileUrl.match(/^\/policies\/([a-z0-9][a-z0-9-]*)\.pdf$/)?.[1] ? `/policies/${p.fileUrl.match(/^\/policies\/([a-z0-9][a-z0-9-]*)\.pdf$/)![1]}/` : undefined) }))
+      : rows.map((r: unknown) => mapPolicyLink(r as Record<string, unknown>))
+  );
 
 /** The policies straight from the database (removed ones are hidden by RLS), or
  * null when they cannot be read. Used by the browser so a policy edit shows on
@@ -215,7 +220,7 @@ export const getLivePolicyLinks = async (): Promise<PolicyLink[] | null> => {
   try {
     const { data, error } = await supabase
       .from("policy_links")
-      .select("id, number, title, category, parent_question_category, file_url, summary, last_reviewed, next_review, order_index, featured")
+      .select("id, number, title, category, parent_question_category, file_url, summary, last_reviewed, next_review, order_index, featured, slug, body_md, file_path")
       .eq("visibility", "public")
       .order("order_index");
     if (error || !Array.isArray(data)) return null;
@@ -232,6 +237,7 @@ function mapPolicyLink(r: Record<string, unknown>): PolicyLink {
     fileUrl: r.file_url as string, summary: (r.summary as string) || undefined,
     lastReviewed: (r.last_reviewed as string) || undefined, nextReview: (r.next_review as string) || undefined, order: r.order_index as number,
     featured: r.featured === true,
+    readUrl: r.slug && r.body_md && !r.file_path ? `/policies/${r.slug as string}/` : undefined,
   };
 }
 

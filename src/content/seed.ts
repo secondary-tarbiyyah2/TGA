@@ -311,6 +311,8 @@ export type PolicyLink = {
   order?: number;
   /** Shown in the "Key documents" box at the top of the Policies page. */
   featured?: boolean;
+  /** Readable web page at /policies/<slug>/ when the policy is written as text (0171). */
+  readUrl?: string;
 };
 
 // Every policy here was issued September 2026 for the 2026–27 academic year,

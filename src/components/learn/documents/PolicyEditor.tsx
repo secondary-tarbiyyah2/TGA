@@ -7,6 +7,8 @@ import { getPolicyLinks } from "@/lib/content";
 import { DOCX_MIME, UPLOAD_ACCEPT, extractDocxText, storageObjectName, uploadKind, uploadProblem } from "@/lib/learn/documentUpload";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { ui } from "@/components/learn/ui";
+import { PolicyTextEditor } from "@/components/learn/documents/PolicyTextEditor";
+import type { PolicyMeta } from "@/lib/policyMeta";
 
 type Row = {
   id: string;
@@ -28,9 +30,11 @@ type Row = {
   extracted_text: string | null;
   visibility: "public" | "staff";
   featured: boolean;
+  body_md: string | null;
+  meta: PolicyMeta | null;
 };
 
-type Draft = Omit<Row, "id" | "deleted_at" | "slug">;
+type Draft = Omit<Row, "id" | "deleted_at" | "slug" | "body_md" | "meta">;
 
 const BLANK: Draft = {
   number: "", title: "", category: "required", parent_question_category: null, file_url: "", summary: null, last_reviewed: null, next_review: null, order_index: 0,
@@ -67,6 +71,7 @@ export function PolicyEditor() {
   const supabase = getSupabaseClient();
   const [rows, setRows] = useState<Row[] | null>(null);
   const [editingId, setEditingId] = useState<string | "new" | null>(null);
+  const [textId, setTextId] = useState<string | null>(null);
   const [draft, setDraft] = useState<Draft>(BLANK);
   const [editingSlug, setEditingSlug] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
@@ -309,7 +314,7 @@ export function PolicyEditor() {
             <input type="file" accept={UPLOAD_ACCEPT} className="sr-only" disabled={busy} onChange={(e) => { const f = e.target.files?.[0]; if (f) upload(f); e.target.value = ""; }} />
           </label>
           <p className="mt-1 text-xs text-ink/65">
-            A PDF is best. A Word (.docx) file is offered to visitors as a Word download. Replacing the file makes everyone who must sign this policy sign the new version.
+            Only needed for a policy you keep as a file. A policy written as text (Edit text) generates its own PDF and web page, and an upload here replaces that. Replacing the file makes everyone who must sign this policy sign the new version.
           </p>
         </div>
         <label className="text-sm text-ink">Category
@@ -352,7 +357,7 @@ export function PolicyEditor() {
   );
 
   return (
-    <Card title="Policy documents" description="Everything on the website's Policies page is controlled here: which policies are listed (Show / Hide from website), their order, which appear in the Key documents box, their group heading, and the PDF each one opens. Staff-only policies stay here for signing and the compliance tracker without being listed publicly. Changes are live immediately, no rebuild.">
+    <Card title="Policy documents" description="Everything on the website's Policies page is controlled here: which policies are listed (Show / Hide from website), their order, which appear in the Key documents box, their group heading, and the PDF each one opens. Staff-only policies stay here for signing and the compliance tracker without being listed publicly. Use Edit text to change a policy's wording: the PDF and its web page are regenerated when the site rebuilds (a few minutes). Details (order, grouping, visibility) are live immediately.">
       <div className="mb-3 flex flex-wrap items-center gap-2">
         {editingId !== "new" && (
           <button type="button" onClick={startNew} className="rounded-full bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900">
@@ -378,6 +383,8 @@ export function PolicyEditor() {
             <li key={r.id} className="p-3">
               {editingId === r.id ? (
                 form
+              ) : textId === r.id ? (
+                <PolicyTextEditor row={r} onClose={() => setTextId(null)} onSaved={load} />
               ) : (
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <div className="min-w-0">
@@ -390,6 +397,13 @@ export function PolicyEditor() {
                       {r.next_review ? ` · review due ${new Date(r.next_review).toLocaleDateString("en-GB", { month: "short", year: "numeric" })}` : ""}
                       {" · "}
                       <a href={absoluteFileUrl(r.file_url)} target="_blank" rel="noreferrer" className="text-teal-700 hover:underline">{r.file_kind === "docx" ? "Word file" : "file"}</a>
+                      {r.body_md && !r.file_path && r.slug && (
+                        <>
+                          {" · "}
+                          <a href={absoluteFileUrl(`/policies/${r.slug}/`)} target="_blank" rel="noreferrer" className="text-teal-700 hover:underline">web page</a>
+                          {" · "}<span className="text-ink/55">generated from text</span>
+                        </>
+                      )}
                     </p>
                   </div>
                   <div className="flex shrink-0 flex-wrap gap-2">
@@ -398,7 +412,10 @@ export function PolicyEditor() {
                     <button type="button" onClick={() => setVisibility(r, r.visibility === "public" ? "staff" : "public")} disabled={busy} className="rounded-full border border-gold-light px-3 py-1 text-xs text-ink/75 hover:bg-cream disabled:opacity-50">
                       {r.visibility === "public" ? "Hide from website" : "Show on website"}
                     </button>
-                    <button type="button" onClick={() => startEdit(r)} className="rounded-full border border-gold-500 px-3 py-1 text-xs text-gold-700 hover:bg-cream">Edit</button>
+                    <button type="button" onClick={() => { setEditingId(null); setTextId(r.id); }} className="rounded-full bg-gold-700 px-3 py-1 text-xs font-semibold text-white hover:bg-gold-900">
+                      {r.body_md ? "Edit text" : "Write as text"}
+                    </button>
+                    <button type="button" onClick={() => { setTextId(null); startEdit(r); }} className="rounded-full border border-gold-500 px-3 py-1 text-xs text-gold-700 hover:bg-cream">Details</button>
                     <button type="button" onClick={() => remove(r)} disabled={busy} className="rounded-full border border-red-300 px-3 py-1 text-xs text-red-700 hover:bg-red-50 disabled:opacity-50">Remove</button>
                   </div>
                 </div>

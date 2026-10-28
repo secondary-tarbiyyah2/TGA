@@ -160,6 +160,22 @@ jobs:
           NEXT_PUBLIC_LEARN_ORIGIN: ${{ vars.LEARN_SITE_URL || 'https://learn.tarbiyyah.co.uk' }}
         run: npm run build
 
+      # Policy PDFs from the text edited in the portal (policy_links.body_md,
+      # migration 0171). The bundled PDFs in public/policies/ are the fallback
+      # for any policy that has no text in the database; a row that does have
+      # text overwrites its PDF here, so "Edit text" in the portal is what the
+      # public downloads. marked and playwright are installed ad hoc so the
+      # site's own dependencies stay small (see scripts/build-policies.cjs).
+      - name: Render policy PDFs from the database
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: https://${{ steps.project.outputs.ref }}.supabase.co
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ steps.keys.outputs.anon_key }}
+        run: |
+          set -euo pipefail
+          npm i --no-save --no-audit --no-fund marked playwright
+          npx playwright install --with-deps chromium
+          node scripts/build-policies.cjs --from-db --out out/policies
+
       # Sanity Studio (the admin panel at /studio) is a separate static SPA
       # built from the same schema — only worth building once a project ID
       # exists, otherwise `sanity build` has nothing to point at.

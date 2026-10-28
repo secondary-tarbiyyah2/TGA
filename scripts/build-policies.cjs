@@ -7,13 +7,18 @@
 //   node scripts/build-policies.cjs            # all policies
 //   node scripts/build-policies.cjs 25-fees    # one stem
 //   node scripts/build-policies.cjs --html     # also write the HTML next to each PDF (for eyeballing)
+//   node scripts/build-policies.cjs --from-db --out out/policies
+//       # CI: render from the policy_links rows (body_md + meta) instead of the
+//       # markdown files, so text edited in the portal becomes the published PDF.
+//       # Needs NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY (public
+//       # read policy). Rows with an uploaded file or no body are skipped.
 //
 // marked and playwright are deliberately not project dependencies (the site
 // build must stay light); install them ad hoc as above, or point NODE_PATH at
 // a folder that has them. The generated PDFs are committed, so the site deploy
 // never needs this script. Fonts fall back to the system sans (Liberation
 // Sans on Linux), matching the original PDFs.
-const { readFileSync, writeFileSync, readdirSync, existsSync } = require("node:fs");
+const { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync } = require("node:fs");
 const { join } = require("node:path");
 const { marked } = require("marked");
 const { chromium } = require("playwright");
@@ -25,7 +30,10 @@ const LOGO = join(ROOT, "public", "brand", "ga-wordmark.png");
 
 const args = process.argv.slice(2);
 const writeHtml = args.includes("--html");
-const only = args.filter((a) => !a.startsWith("--"));
+const fromDb = args.includes("--from-db");
+const outArg = args.indexOf("--out");
+const OUT_DIR = outArg >= 0 ? join(process.cwd(), args[outArg + 1]) : OUT;
+const only = args.filter((a, i) => !a.startsWith("--") && !(outArg >= 0 && i === outArg + 1));
 
 function parseFrontMatter(text) {
   const m = text.match(/^---\n([\s\S]*?)\n---\n?/);
@@ -108,25 +116,48 @@ ${html}
 </body></html>`;
 }
 
-const files = readdirSync(SRC).filter((f) => f.endsWith(".md") && (only.length === 0 || only.some((o) => f.startsWith(o)))).sort();
-if (files.length === 0) {
-  console.error("No policies matched.");
-  process.exit(1);
+/** Policies to render: [{ stem, meta, body }], from the database or the markdown files. */
+async function loadPolicies() {
+  if (fromDb) {
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL;
+    const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || process.env.SUPABASE_ANON_KEY;
+    if (!url || !key) throw new Error("--from-db needs NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY");
+    const res = await fetch(`${url}/rest/v1/policy_links?select=slug,title,number,meta,body_md,file_path,deleted_at&order=order_index`, {
+      headers: { apikey: key, Authorization: `Bearer ${key}` },
+    });
+    if (!res.ok) throw new Error(`policy_links fetch failed: ${res.status} ${await res.text()}`);
+    const rows = await res.json();
+    return rows
+      .filter((r) => r.slug && r.body_md && !r.file_path && !r.deleted_at)
+      .map((r) => ({ stem: r.slug, meta: { title: r.title, number: r.number, ...(r.meta || {}) }, body: r.body_md }));
+  }
+  return readdirSync(SRC)
+    .filter((f) => f.endsWith(".md"))
+    .sort()
+    .map((f) => {
+      const { meta, body } = parseFrontMatter(readFileSync(join(SRC, f), "utf8"));
+      return { stem: f.replace(/\.md$/, ""), meta, body };
+    });
 }
 
 (async () => {
+const all = await loadPolicies();
+const policies = all.filter((p) => only.length === 0 || only.some((o) => p.stem.startsWith(o)));
+if (policies.length === 0) {
+  console.error("No policies matched.");
+  process.exit(fromDb ? 0 : 1);
+}
+mkdirSync(OUT_DIR, { recursive: true });
 const browser = await chromium.launch();
 const page = await browser.newPage();
-for (const f of files) {
-  const stem = f.replace(/\.md$/, "");
-  const { meta, body } = parseFrontMatter(readFileSync(join(SRC, f), "utf8"));
+for (const { stem, meta, body } of policies) {
   const html = render(meta, body);
-  if (writeHtml) writeFileSync(join(OUT, `${stem}.html`), html);
+  if (writeHtml) writeFileSync(join(OUT_DIR, `${stem}.html`), html);
   await page.setContent(html, { waitUntil: "load" });
   const headerLeft = "Tarbiyyah Global Academy";
   const headerRight = `${esc(meta.title).toUpperCase()} · 2026 – 2027`;
   await page.pdf({
-    path: join(OUT, `${stem}.pdf`),
+    path: join(OUT_DIR, `${stem}.pdf`),
     format: "A4",
     printBackground: true,
     displayHeaderFooter: true,

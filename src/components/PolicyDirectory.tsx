@@ -83,16 +83,27 @@ function PolicyRow({ p, complaintsLastYear, highlight }: { p: PolicyLink; compla
           </p>
         )}
       </div>
-      <a
-        href={p.fileUrl}
-        className="shrink-0 rounded-full border border-gold-500/60 px-3 py-1.5 text-sm font-semibold text-gold-900 hover:bg-gold-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-700 print:hidden"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-describedby={titleId}
-      >
-        {word ? "Open Word file" : "Open PDF"}
-        <span className="sr-only">: {p.title} (opens in a new tab)</span>
-      </a>
+      <span className="flex shrink-0 flex-wrap gap-2 print:hidden">
+        {p.readUrl && (
+          <Link
+            href={p.readUrl}
+            className="rounded-full bg-gold-500 px-3 py-1.5 text-sm font-semibold text-ink-900 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-700"
+            aria-describedby={titleId}
+          >
+            Read online<span className="sr-only">: {p.title}</span>
+          </Link>
+        )}
+        <a
+          href={p.fileUrl}
+          className="rounded-full border border-gold-500/60 px-3 py-1.5 text-sm font-semibold text-gold-900 hover:bg-gold-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-700"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-describedby={titleId}
+        >
+          {word ? "Open Word file" : "Open PDF"}
+          <span className="sr-only">: {p.title} (opens in a new tab)</span>
+        </a>
+      </span>
       <span className="hidden text-xs text-ink/60 print:block">{p.fileUrl}</span>
     </li>
   );

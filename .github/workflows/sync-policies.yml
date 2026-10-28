@@ -12,6 +12,10 @@ on:
         description: "Only print what would change"
         type: boolean
         default: false
+      overwrite_text:
+        description: "Replace policy text already edited in the portal with the content/policies markdown"
+        type: boolean
+        default: false
 
 concurrency:
   group: sync-policies
@@ -71,5 +75,5 @@ jobs:
         run: |
           set -euo pipefail
           npm ci
-          node scripts/sync-policies.mjs ${{ inputs.dry_run && '--dry-run' || '' }} 2>&1 | tee /tmp/out.txt
+          node scripts/sync-policies.mjs ${{ inputs.dry_run && '--dry-run' || '' }} ${{ inputs.overwrite_text && '--overwrite-text' || '' }} 2>&1 | tee /tmp/out.txt
           echo "::notice title=Policies::$(tail -1 /tmp/out.txt)"
