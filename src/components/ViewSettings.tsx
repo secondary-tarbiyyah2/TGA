@@ -288,12 +288,14 @@ export function ViewSettingsPanel({ className = "", portal = false, showReset = 
 const FOCUSABLE = 'button:not([disabled]), [href], input:not([disabled]), select, textarea, [tabindex]:not([tabindex="-1"])';
 
 /**
- * The "Display" button (public header and portal top bar) and its dialog:
+ * The "Display" button (a quiet icon in the public header, a text link in
+ * the public footer, and the portal top bar) and its dialog:
  * the option cards, Reset, and Done. Focus stays inside while it is open,
  * Esc or Done closes it, and focus goes back to the button.
  */
-export function ViewSettingsMenu({ variant = "site" }: { variant?: "site" | "portal" }) {
+export function ViewSettingsMenu({ variant = "site" }: { variant?: "site" | "portal" | "footer" }) {
   const portal = variant === "portal";
+  const footer = variant === "footer";
   const [open, setOpen] = useState(false);
   const [view] = useView();
   const dialog = useRef<HTMLDivElement>(null);
@@ -339,7 +341,8 @@ export function ViewSettingsMenu({ variant = "site" }: { variant?: "site" | "por
   }, [open, close]);
 
   const changed = !isDefault(view, portal);
-  const label = changed ? "Display options (some are on)" : "Display options";
+  const name = footer ? "Display and accessibility options" : "Display options";
+  const label = changed ? `${name} (some are on)` : name;
 
   return (
     <>
@@ -354,14 +357,24 @@ export function ViewSettingsMenu({ variant = "site" }: { variant?: "site" | "por
         className={
           portal
             ? "portal-topbar-btn relative px-2.5 text-sm font-medium text-ink/80"
-            : "relative flex items-center gap-1.5 rounded-full border border-gold-light/70 px-3 py-2 text-sm font-medium text-ink/80 transition-colors hover:border-gold-500 hover:text-gold-700"
+            : footer
+              ? "relative inline-flex items-center gap-1.5 rounded text-cream/75 transition-colors hover:text-cream focus-visible:outline-gold-light"
+              : "relative inline-flex h-9 w-9 items-center justify-center rounded-full text-ink/60 transition-colors hover:bg-gold-100 hover:text-ink"
         }
       >
-        <DisplayIcon />
-        <span aria-hidden="true" className={portal ? "hidden md:inline" : "hidden xl:inline"}>
-          Display
-        </span>
-        {changed && <span aria-hidden="true" className="absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full border-2 border-white bg-gold-500" />}
+        <DisplayIcon className={footer ? "h-4 w-4" : "h-[18px] w-[18px]"} />
+        {portal && (
+          <span aria-hidden="true" className="hidden md:inline">
+            Display
+          </span>
+        )}
+        {footer && <span aria-hidden="true">Display and accessibility</span>}
+        {changed && (
+          <span
+            aria-hidden="true"
+            className={`absolute h-2 w-2 rounded-full bg-gold-500 ${footer ? "-right-2.5 top-0" : portal ? "-right-0.5 -top-0.5 h-2.5 w-2.5 border-2 border-white" : "right-1 top-1 ring-2 ring-cream"}`}
+          />
+        )}
       </button>
       {open &&
         createPortal(

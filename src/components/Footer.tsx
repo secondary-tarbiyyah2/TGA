@@ -4,6 +4,7 @@ import { Container } from "./Container";
 import { footerColumns } from "@/lib/nav";
 import { getSiteSettings } from "@/lib/content";
 import { LEARN_ORIGIN } from "@/lib/learn/origin";
+import { ViewSettingsMenu } from "./ViewSettings";
 
 export async function Footer() {
   const settings = await getSiteSettings();
@@ -62,7 +63,8 @@ export async function Footer() {
       <div className="border-t border-white/10 pt-6 pb-24 md:pb-6">
         <Container className="flex flex-col gap-2 text-xs text-white/60 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Tarbiyyah Education Trust. All rights reserved.</p>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <ViewSettingsMenu variant="footer" />
             <p>globalacademy.tarbiyyah.co.uk</p>
             <Link href={`${LEARN_ORIGIN}/login/?as=staff`} className="text-white/60 hover:text-cream">Staff sign-in</Link>
           </div>

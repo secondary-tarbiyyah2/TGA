@@ -1,7 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import type { FaqEntry } from "@/content/seed";
+import { FaqAnswer } from "@/components/FaqAnswer";
+import { faqSlug } from "@/lib/faq";
 
 export function FaqPreview({ entries }: { entries: FaqEntry[] }) {
   const [openId, setOpenId] = useState<string | null>(entries[0]?._id ?? null);
@@ -25,11 +28,12 @@ export function FaqPreview({ entries }: { entries: FaqEntry[] }) {
                 <span aria-hidden="true" className={`shrink-0 text-gold-500 transition-transform ${open ? "rotate-45" : ""}`}>+</span>
               </button>
             </h3>
-            {open && (
-              <div id={`faq-preview-${e._id}`} className="px-5 pb-5 text-sm text-ink/70">
-                {e.answer}
-              </div>
-            )}
+            <div id={`faq-preview-${e._id}`} hidden={!open} className="px-5 pb-5 text-sm text-ink/70">
+              <FaqAnswer answer={e.answer} />
+              <Link href={`/faqs#${faqSlug(e.question)}`} className="mt-3 inline-block text-xs font-medium text-gold-700 hover:text-gold-900">
+                Open in FAQs
+              </Link>
+            </div>
           </li>
         );
       })}

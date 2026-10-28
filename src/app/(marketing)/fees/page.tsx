@@ -150,7 +150,7 @@ export default async function FeesPage() {
         </Container>
       </section>
 
-      <CtaBand heading="Have a question about fees?" body="Our FAQs cover payment plans, bursaries and what's included." ctaLabel="Read the FAQs" ctaHref="/faqs" />
+      <CtaBand heading="Have a question about fees?" body="Our FAQs cover payment plans, sibling discounts and what's included." ctaLabel="Read the FAQs" ctaHref="/faqs" />
     </>
   );
 }
