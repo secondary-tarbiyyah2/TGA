@@ -123,7 +123,9 @@ jobs:
       - name: Push database migrations
         run: |
           set +e
-          supabase db push --linked > /tmp/dbpush.txt 2>&1
+          # --include-all: migrations written in parallel can land with a lower number
+          # than one already applied; apply them anyway rather than fail.
+          supabase db push --linked --include-all > /tmp/dbpush.txt 2>&1
           code=$?
           if [ $code -ne 0 ]; then
             grep -v -i "password\|token\|secret" /tmp/dbpush.txt | tail -25 | while IFS= read -r line; do echo "::error::${line:0:400}"; done
