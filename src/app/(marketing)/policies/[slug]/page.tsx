@@ -37,7 +37,9 @@ export default async function PolicyPage({ params }: { params: Promise<{ slug: s
   const policy = (await getPolicyTexts()).find((p) => p.slug === slug);
   if (!policy) notFound();
 
-  const html = await marked.parse(policy.body, { gfm: true });
+  // Tables scroll sideways inside their own box on narrow screens instead of
+  // pushing the whole page wider.
+  const html = (await marked.parse(policy.body, { gfm: true })).replace(/<table>/g, '<div class="table-wrap"><table>').replace(/<\/table>/g, "</table></div>");
   const metaRows = POLICY_META_FIELDS.filter((f) => policy.meta[f.key]);
 
   return (

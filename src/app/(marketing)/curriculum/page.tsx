@@ -9,30 +9,20 @@ import { SCHOOL_WEEK_NOTE, lessonsAWeek } from "@/content/curriculum";
 
 export const metadata: Metadata = pageMetadata({
   title: "Curriculum",
-  description: "A specialist curriculum, Qur'an, Arabic and Islamic Studies alongside the full national curriculum, by key stage, Year 1 to International GCSE.",
+  description: "A specialist curriculum, Qur'an, Arabic and Islamic Studies alongside the full national curriculum, by key stage, Year 1 to GCSE.",
   path: "/curriculum",
 });
 
 const STRANDS = [
   { title: "Qur'an, Arabic and Islamic Studies", body: "Qur'an recitation, Tajweed and memorisation in groups set by ability; Arabic as the Academy's language so pupils connect with the texts directly; Islamic Studies covering aqeedah, fiqh, seerah and hadith. On the timetable every week, not an after-school extra." },
-  { title: "The national curriculum, to International GCSE", body: "English, Mathematics, Science, humanities and computing, sequenced from Year 1 to International GCSE, taught live by qualified teachers in classes of no more than 15." },
+  { title: "The national curriculum, to GCSE", body: "English, Mathematics, Science, humanities and computing, sequenced from Year 1 to GCSE, taught live by qualified teachers in classes of no more than 15." },
   { title: "Tarbiyyah and character", body: "Prayer built into the day, the RECIPE values taught by name, PSHE, and careers guidance from Year 7, so pupils grow in knowledge, character and faith together." },
 ];
 
-// KS4 subjects as set in the portal (content/syllabus/ks4). Every pupil sits Pearson Edexcel
-// International GCSEs; where a course is taught from a UK GCSE specification, the spec's
-// examEntry gives the International GCSE pupils sit. History is not offered at KS4.
-const EXAM_BOARDS = [
-  { subject: "English Language", taught: "AQA GCSE specification (8700)", exam: "English Language B (4EB1)" },
-  { subject: "English Literature", taught: "Same specification", exam: "English Literature (4ET1)" },
-  { subject: "Mathematics", taught: "Pearson Edexcel GCSE specification (1MA1)", exam: "Mathematics A (4MA1)" },
-  { subject: "Science: Double Award, or separate Biology, Chemistry and Physics", taught: "Same specifications", exam: "Science Double Award (4SD0), or Biology (4BI1), Chemistry (4CH1) and Physics (4PH1)" },
-  { subject: "Islamic Studies", taught: "Same specification", exam: "Islamic Studies (4IS1)" },
-  { subject: "Option: Arabic", taught: "Pearson Edexcel GCSE specification (1AA0)", exam: "Arabic (First Language) (4AA1)" },
-  { subject: "Option: Business", taught: "Same specification", exam: "Business (4BS1)" },
-  { subject: "Option: Computer Science", taught: "Pearson Edexcel GCSE specification (1CP2)", exam: "Computer Science (4CP0)" },
-  { subject: "Option: Geography", taught: "AQA GCSE specification (8035)", exam: "Geography (4GE1)" },
-];
+// Public subject listing only: no exam boards or specification codes (those
+// live in the portal and the Examinations policy, and change with entries).
+const GCSE_CORE = ["English Language", "English Literature", "Mathematics", "Science (Double Award, or Biology, Chemistry and Physics)", "Islamic Studies"];
+const GCSE_OPTIONS = ["Arabic", "Business", "Computer Science", "Geography"];
 
 export default async function CurriculumPage() {
   const [content, keyStages] = await Promise.all([getCurriculumContent(), getKeyStages()]);
@@ -48,7 +38,7 @@ export default async function CurriculumPage() {
           <p className="mt-6 max-w-2xl text-lg text-ink/75">
             {content.heroBody || (
               <>
-                A specialist curriculum, live-timetabled and taught by qualified teachers, through to International GCSE, 
+                A specialist curriculum, live-timetabled and taught by qualified teachers, through to GCSE, 
                 with Qur&apos;an, Islamic Studies and Arabic on the timetable at every key stage.
               </>
             )}
@@ -95,8 +85,8 @@ export default async function CurriculumPage() {
           </ul>
           <p className="mt-6 max-w-3xl text-sm text-ink/70">{SCHOOL_WEEK_NOTE}</p>
           <p className="mt-3 max-w-3xl text-sm text-ink/70">
-            See your child&apos;s week in your own time zone with{" "}
-            <Link href="/eligibility" className="font-semibold text-gold-700 underline">Your child&apos;s week</Link>, and how we support wellbeing and additional needs on{" "}
+            See the live day in your own time zone with{" "}
+            <Link href="/eligibility" className="font-semibold text-gold-700 underline">the fit check</Link>, and how we support wellbeing and additional needs on{" "}
             <Link href="/pastoral-care" className="font-semibold text-gold-700 underline">Pastoral care &amp; SEND</Link>.
           </p>
         </Container>
@@ -104,33 +94,33 @@ export default async function CurriculumPage() {
 
       <section className="section-pad">
         <Container>
-          <Kicker>International GCSE</Kicker>
+          <Kicker>GCSE years</Kicker>
           <h2 className="text-h2 font-serif font-semibold text-ink">Recognised qualifications, sat as private candidates.</h2>
           <p className="mt-4 max-w-2xl text-ink/75">
-            Years 10 and 11 follow two-year courses: the core subjects plus two options. Every pupil sits Pearson Edexcel International GCSEs. In English Language, Mathematics, Computer Science, Geography and Arabic we teach the UK GCSE course and add what the International GCSE exam needs, so pupils are ready for its papers. History is not offered at GCSE. Pupils sit their exams at an approved centre near home; we help families register and pay the centre directly (see the Examinations and Private Candidates Policy).
+            Years 10 and 11 follow two-year courses: the core subjects plus two options. Pupils are entered for their examinations through
+            Tarbiyyah Secondary School as the examination centre, and for families outside the UK we help arrange a suitable centre near home.
+            History is not offered in Years 10 and 11.
           </p>
-          <div className="mt-8 overflow-x-auto rounded-2xl border border-gold-light/50 bg-white">
-            <table className="w-full min-w-[36rem] text-sm">
-              <caption className="sr-only">International GCSE subjects: what is taught and the exam pupils sit</caption>
-              <thead>
-                <tr className="border-b border-gold-light/50 text-left text-xs uppercase tracking-wide text-ink/65">
-                  <th scope="col" className="px-4 py-3 font-semibold">Subject</th>
-                  <th scope="col" className="px-4 py-3 font-semibold">Taught from</th>
-                  <th scope="col" className="px-4 py-3 font-semibold">Exam pupils sit (Pearson Edexcel International GCSE)</th>
-                </tr>
-              </thead>
-              <tbody>
-                {EXAM_BOARDS.map((r) => (
-                  <tr key={r.subject} className="border-b border-gold-light/40 last:border-0">
-                    <th scope="row" className="px-4 py-3 text-left font-medium text-ink">{r.subject}</th>
-                    <td className="px-4 py-3 text-ink/80">{r.taught}</td>
-                    <td className="px-4 py-3 text-ink/80">{r.exam}</td>
-                  </tr>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            <div className="rounded-2xl border border-gold-light/50 bg-white p-5">
+              <p className="text-xs font-semibold uppercase tracking-wide text-ink/65">Core subjects</p>
+              <ul className="mt-3 space-y-2 text-sm text-ink/80">
+                {GCSE_CORE.map((sub) => (
+                  <li key={sub} className="flex items-start gap-2"><span aria-hidden="true" className="mt-1 text-gold-500">◆</span>{sub}</li>
                 ))}
-              </tbody>
-            </table>
+              </ul>
+            </div>
+            <div className="rounded-2xl border border-gold-light/50 bg-white p-5">
+              <p className="text-xs font-semibold uppercase tracking-wide text-ink/65">Two options from</p>
+              <ul className="mt-3 space-y-2 text-sm text-ink/80">
+                {GCSE_OPTIONS.map((sub) => (
+                  <li key={sub} className="flex items-start gap-2"><span aria-hidden="true" className="mt-1 text-gold-500">◆</span>{sub}</li>
+                ))}
+              </ul>
+              <p className="mt-4 text-xs text-ink/65">Qur&apos;an and Tajweed and PSHE continue alongside the examination subjects.</p>
+            </div>
           </div>
-          <p className="mt-3 text-xs text-ink/65">Exam codes are confirmed at the start of each course and may change if a specification is withdrawn. International GCSEs are not regulated by Ofqual; Pearson describes them as generally equivalent to GCSEs. Exam entry fees are not included in tuition.</p>
+          <p className="mt-3 text-xs text-ink/65">Exam entry fees are not included in tuition and are billed separately by the examination centre. Full details are in the Examinations and Private Candidates Policy.</p>
         </Container>
       </section>
 

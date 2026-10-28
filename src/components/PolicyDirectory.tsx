@@ -252,7 +252,7 @@ export function PolicyDirectory({ initialPolicies, initialSettings }: { initialP
             <ul className="flex flex-wrap gap-2">
               {PARENT_QUESTION_GROUPS.filter((g) => policies.some((p) => p.parentQuestionCategory === g.key)).map((g) => (
                 <li key={g.key}>
-                  <a href={`#${g.anchor}`} className="inline-block rounded-full border border-gold-light/60 px-3 py-1 text-sm text-ink/80 hover:bg-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-700">
+                  <a href={`#${g.anchor}`} className="inline-flex min-h-10 items-center rounded-full border border-gold-light/60 px-3 py-1.5 text-sm text-ink/80 hover:bg-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-700">
                     {g.heading}
                   </a>
                 </li>

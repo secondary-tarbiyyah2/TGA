@@ -52,7 +52,24 @@ export default async function FeesPage() {
 
       <section className="section-pad">
         <Container>
-          <div className="overflow-x-auto rounded-2xl border border-gold-light/50">
+          {/* Phones: one card per year group, so nothing is hidden off the edge of a wide table. */}
+          <ul className="space-y-3 md:hidden">
+            {rows.map(({ band: f, termly, monthly }) => (
+              <li key={f._id} className="rounded-2xl border border-gold-light/50 bg-white p-4">
+                <p className="font-semibold text-ink">{f.yearGroupRange}</p>
+                {f.notes && <p className="mt-1 text-xs text-ink/70">{f.notes}</p>}
+                <dl className="mt-3 grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 text-sm">
+                  <dt className="text-ink/70">Annual (Jan–Jul 2027)</dt>
+                  <dd className="font-semibold text-gold-700">{formatGBP(f.annualFee)}</dd>
+                  <dt className="text-ink/70">{terms} payments</dt>
+                  <dd><span className="font-medium text-ink">{termly.headline}</span><span className="block text-xs text-ink/70">{termly.detail}</span></dd>
+                  <dt className="text-ink/70">Monthly ({instalments})</dt>
+                  <dd><span className="font-medium text-ink">{monthly.headline}</span><span className="block text-xs text-ink/70">{monthly.detail}</span></dd>
+                </dl>
+              </li>
+            ))}
+          </ul>
+          <div className="hidden overflow-x-auto rounded-2xl border border-gold-light/50 md:block">
             <table className="w-full min-w-[560px] text-left text-sm">
               <caption className="sr-only">Tuition fees by year group: annual total, {terms} payments and monthly instalments</caption>
               <thead className="bg-cream text-ink/70">

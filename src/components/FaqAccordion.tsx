@@ -211,7 +211,7 @@ export function FaqAccordion({ entries }: { entries: FaqEntry[] }) {
           )}
         </p>
         {visible.length > 0 && (
-          <button type="button" onClick={toggleAll} className="rounded-full px-2 py-1 text-sm font-medium text-gold-700 hover:text-gold-900">
+          <button type="button" onClick={toggleAll} className="min-h-10 rounded-full px-3 py-1 text-sm font-medium text-gold-700 hover:text-gold-900">
             {allOpen ? "Collapse all" : "Expand all"}
           </button>
         )}

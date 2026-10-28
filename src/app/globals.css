@@ -814,3 +814,5 @@ html[data-dark] .portal {
 .policy-body th, .policy-body td { border: 1px solid var(--color-gold-light, #e6dcc3); padding: 0.5rem 0.7rem; text-align: left; vertical-align: top; }
 .policy-body th { background: var(--color-gold-100); color: var(--color-ink-900); font-weight: 600; }
 .policy-body table td:first-child { font-weight: 500; color: var(--color-ink-900); }
+.policy-body .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0.5rem 0 1.25rem; }
+.policy-body .table-wrap table { margin: 0; min-width: 28rem; }

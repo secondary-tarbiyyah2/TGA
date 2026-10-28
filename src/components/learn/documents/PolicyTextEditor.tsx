@@ -33,7 +33,7 @@ export function PolicyTextEditor({
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState<{ text: string; error?: boolean } | null>(null);
 
-  const preview = useMemo(() => (tab === "preview" ? (marked.parse(body, { gfm: true }) as string) : ""), [tab, body]);
+  const preview = useMemo(() => (tab === "preview" ? (marked.parse(body, { gfm: true }) as string).replace(/<table>/g, '<div class="table-wrap"><table>').replace(/<\/table>/g, "</table></div>") : ""), [tab, body]);
   const sections = useMemo(() => body.split("\n").filter((l) => l.startsWith("## ")).map((l) => l.slice(3)), [body]);
 
   async function save() {

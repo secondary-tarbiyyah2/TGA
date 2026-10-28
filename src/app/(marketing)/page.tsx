@@ -116,7 +116,7 @@ export default async function HomePage() {
             <h2 className="text-h2 font-serif font-semibold text-ink">{content.stagesHeading || "A specialist curriculum, from Year 1 to GCSE."}</h2>
             <p className="mt-4 text-ink/75">
               {content.stagesBody ||
-                "The full national curriculum, sequenced from Year 1 to International GCSE, with the length and number of live lessons matched to your child's age."}
+                "The full national curriculum, sequenced from Year 1 to GCSE, with the length and number of live lessons matched to your child's age."}
             </p>
             <Button href="/curriculum" variant="secondary" className="mt-6">
               Explore the curriculum
