@@ -23,7 +23,7 @@ Our pupils live in many countries. For some families, the standard UK timetable 
 | Option | What it involves | Who it is for |
 | --- | --- | --- |
 | Standard live timetable | All lessons live, 09:00–15:00 UK time Monday to Thursday and 09:00–12:00 on Fridays (the afternoon is free for Jumu'ah) | Most pupils in the UK and nearby time zones |
-| Four-day live week | Live lessons Monday to Thursday; Friday is a structured independent study day with set work, submitted through the Student Portal | Year 1 to Year 9. Not offered in Years 10–11, where GCSE courses need the full live timetable |
+| Four-day live week | Live lessons Monday to Thursday; Friday is a structured independent study day with set work, submitted through the Student Portal | Year 1 to Year 9. Not offered in Years 10–11, where International GCSE courses need the full live timetable |
 | Time-zone flexible | A mix of live lessons at feasible local times and recorded lessons with set tasks and live catch-up clinics | Pupils whose local time makes the full live timetable unreasonable |
 | Time-zone pods | Where five or more pupils in the same phase live in a similar time zone (for example the Gulf or South-East Asia), the Academy may run their form time, Qur'an group and catch-up clinics at a time that suits them, so they build friendships with pupils who share their day | Clusters of families abroad |
 | Temporary adjusted timetable | A reduced or adapted timetable for a limited period | Pupils with medical needs, SEND or exceptional circumstances, agreed with the SENCO or Pastoral Lead |

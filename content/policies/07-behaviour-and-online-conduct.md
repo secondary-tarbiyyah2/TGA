@@ -90,7 +90,7 @@ Where the same concern is logged three times in a half term, parents are invited
 | Ref | Expectation | Usual consequence |
 | --- | --- | --- |
 | 1 | Join every live lesson on time, camera on, from a quiet and suitable space | C1–C2 |
-| 2 | Be prepared with books, equipment and the right Teams files open | C2 |
+| 2 | Be prepared with books, equipment and the right files open in the Student Portal | C2 |
 | 3 | Follow the modest dress standard for camera-on lessons | C2 |
 | 4 | Keep phones away during lessons | C2–C3 |
 | 5 | Stay muted unless invited; use raise hand or chat to contribute | C1–C2 |

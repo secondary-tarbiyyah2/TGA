@@ -60,12 +60,12 @@ A core of English Language, English Literature, Mathematics, Combined or Separat
 | Live lessons per week | KS1 (30 min) | KS2 (45 min) | KS3 (50 min) | KS4 (50 min) |
 | --- | --- | --- | --- | --- |
 | English and phonics | 5 | 5 | 4 | 5 |
-| Mathematics | 4 | 5 | 4 | 5 |
-| Science / understanding the world | 1 | 2 | 4 | 5 |
+| Mathematics | 4 | 5 | 4 | 4 |
+| Science / understanding the world | 1 | 2 | 3 | 5 |
 | History, Geography and Computing | — | 2 | 3 | 4 (options) |
 | Qur'an and Tajweed | 3 | 2 | 3 | 2 |
 | Arabic and Islamic Studies | 1 | 2 | 4 | 2 |
-| PSHE, Art & Design | 1 | 2 | 3 | 2 |
+| PSHE, Art & Design | 1 | 2 | 2 | 1 |
 | Total | 15 | 20 | 23 | 23 |
 
 Form time, assemblies and clubs are in addition to these lessons. Years 1 and 2 have short daily live sessions (about 1.5 hours a day) with guided activities at home. The daily timetable is set out in the Live Lesson Protocols. The published timetable for each year group sets out the exact allocation.

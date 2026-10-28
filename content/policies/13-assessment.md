@@ -32,7 +32,7 @@ Assessment helps teachers understand what pupils know and can do, plan the next 
 | Entry (baseline) | Age-appropriate baseline check for primary pupils; a baseline assessment in English, Mathematics and Qur'an; Qur'an and Arabic placement | On admission |
 | Formative | Questioning, polls, mini-whiteboards, quizzes in the Student Portal, cold-calling, exit tickets, live feedback | Every lesson |
 | Summative (in-school) | End-of-unit tests and termly assessments, set in the Student Portal | End of units and each term |
-| Standardised | GL Assessment standardised tests (for example CAT4 and Progress Test Series), shared with the Tarbiyyah family of schools | Annually |
+| Standardised | Standardised tests in English and Mathematics, shared with the Tarbiyyah family of schools | Annually |
 | External | International GCSE examinations sat at an approved centre | End of Key Stage 4 |
 
 ## 4. Security of Assessments

@@ -87,7 +87,7 @@ Where there are more applicants than places in a class, places are offered in th
 2. Pupils with exceptional educational or welfare reasons for admission, supported by evidence.
 3. Date of completed application. A waiting list is held for each year group. A place on the waiting list is not an offer.
 
-## 11. Admissions Record and Records
+## 11. Admissions Records
 
 The Academy keeps an admissions record recording each pupil's full name, date of birth, date of admission, parents' names and contact details, home address and country of residence, emergency contacts (including a local adult where possible), and previous school. Parents must tell the Academy promptly of any change of address, contact details or country. Where a pupil leaves and the Academy does not know where their education will continue, the Academy may share its concern with the relevant local authority as good practice.
 
