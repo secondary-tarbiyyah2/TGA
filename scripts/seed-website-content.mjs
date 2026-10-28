@@ -48,10 +48,10 @@ async function upsertAll(table, rows) {
 const { error: settingsErr } = await supabase.from("site_settings").update({
   cta_primary_label: "Apply Now",
   cta_primary_href: "/admissions",
-  // Prospectus 2026-27 (v5) / Fees Policy: £50 application, £250 registration,
+  // Fees: £50 application fee only (no registration fee since 0160),
   // 2 termly or 7 monthly payments (4 Dec 2026, then 28 Dec 2026 to 28 Jun 2027).
   application_fee: 50,
-  registration_fee: 250,
+  registration_fee: null,
   // Termly/monthly fees are derived from annual_fee in the app (src/lib/fees.ts).
   fee_terms: 2,
   fee_instalments: 7,

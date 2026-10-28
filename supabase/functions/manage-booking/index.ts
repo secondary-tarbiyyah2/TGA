@@ -8,6 +8,7 @@ import { buildIcs } from "../_shared/ics.ts";
 import { emailShell, sendEmail } from "../_shared/resend.ts";
 import { generateToken, hashToken } from "../_shared/manageToken.ts";
 import { hashIp, isRateLimited, recordAttempt } from "../_shared/spam.ts";
+import { bookingWhenText, bookingWhenTextForStaff, escHtml } from "../_shared/bookingTime.ts";
 import { bbbConfigured, ensureMeeting, buildGuestJoinUrl, derivePasswords } from "../_shared/bbb.ts";
 
 const JOIN_WINDOW_MINUTES_BEFORE = 15;
@@ -31,9 +32,6 @@ async function findBooking(token: string) {
   return data;
 }
 
-function whenText(iso: string): string {
-  return new Date(iso).toLocaleString("en-GB", { dateStyle: "full", timeStyle: "short", timeZone: "Europe/London" }) + " (UK time)";
-}
 
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
@@ -120,7 +118,7 @@ Deno.serve(async (req) => {
         const { moderatorPassword, attendeePassword } = await derivePasswords(meetingId);
         const ensured = await ensureMeeting({
           meetingId,
-          meetingName: `Admissions call with ${booking.staff_members?.display_name || "Tarbiyyah Global Academy"}`,
+          meetingName: "Admissions call | Tarbiyyah Global Academy",
           moderatorPassword,
           attendeePassword,
           recordingEnabled: false,
@@ -141,7 +139,9 @@ Deno.serve(async (req) => {
         // Same fallback chain as booking-join, so both sides land in the same call.
         teamsJoinUrl: booking.teams_join_url || booking.staff_members?.teams_meeting_url || Deno.env.get("ADMISSIONS_TEAMS_URL") || null,
         bbbJoinUrl,
-        staffName: booking.staff_members?.display_name,
+        // The family's chosen time zone (0164), so the page can show their time with UK time alongside.
+        // No staff name or email is returned: who takes the call depends on who is available.
+        timezone: booking.contact_timezone ?? null,
       },
     });
   }
@@ -150,6 +150,9 @@ Deno.serve(async (req) => {
     return jsonResponse({ ok: false, error: "already_cancelled" }, 400);
   }
 
+  const familyTz = (booking.contact_timezone as string | null | undefined) ?? null;
+  const whenText = (iso: string) => bookingWhenText(iso, familyTz);
+  const staffWhenText = (iso: string) => bookingWhenTextForStaff(iso, familyTz);
   const staffEmail = booking.staff_members?.profiles?.email;
   const staffName = booking.staff_members?.profiles?.full_name;
 
@@ -183,7 +186,7 @@ Deno.serve(async (req) => {
         to: staffEmail,
         toName: staffName,
         subject: `Cancelled: admissions call with ${booking.contact_name}`,
-        html: emailShell(`<p>${booking.contact_name}'s call for ${whenText(booking.starts_at)} has been cancelled.</p>`),
+        html: emailShell(`<p>${escHtml(String(booking.contact_name || ""))}'s call for ${staffWhenText(booking.starts_at)} has been cancelled.</p>`),
         icsContent: cancelIcs,
         icsFilename: "cancelled.ics",
       });
@@ -232,7 +235,7 @@ Deno.serve(async (req) => {
         to: staffEmail,
         toName: staffName,
         subject: `Rescheduled: admissions call with ${booking.contact_name}`,
-        html: emailShell(`<p>${booking.contact_name}'s call moved to ${whenText(newStart)}.</p>`),
+        html: emailShell(`<p>${escHtml(String(booking.contact_name || ""))}'s call moved to ${staffWhenText(newStart)}.</p>`),
         icsContent: updateIcs,
         icsFilename: "updated.ics",
       });

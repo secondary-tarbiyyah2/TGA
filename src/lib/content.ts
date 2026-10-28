@@ -81,7 +81,6 @@ export const getLiveSiteSettings = async (): Promise<SiteSettings | null> => {
       ctaPrimaryLabel: (r.cta_primary_label as string) || undefined,
       ctaPrimaryHref: (r.cta_primary_href as string) || undefined,
       applicationFee: (r.application_fee as number) ?? undefined,
-      registrationFee: (r.registration_fee as number) ?? undefined,
       depositAmount: r.admissions_deposit_amount != null ? Number(r.admissions_deposit_amount) : undefined,
       feeTerms: sanitiseFeeSettings({ terms: r.fee_terms }).terms,
       feeInstalments: sanitiseFeeSettings({ instalments: r.fee_instalments }).instalments,
@@ -127,9 +126,9 @@ export const getFaqEntries = async (): Promise<FaqEntry[]> => {
     ),
   ]);
   const entries = rows === seedFaqEntries ? seedFaqEntries : rows.map((r: unknown) => mapFaq(r as Record<string, unknown>));
-  // Fee figures quoted in FAQ copy use {{applicationFee}} / {{registrationFee}} /
+  // Fee figures quoted in FAQ copy use {{applicationFee}} /
   // {{terms}} / {{instalments}} tokens so they always match the live settings.
-  const tokens = { applicationFee: settings.applicationFee, registrationFee: settings.registrationFee, terms: settings.feeTerms, instalments: settings.feeInstalments, annualDiscountPercent: settings.annualDiscountPercent };
+  const tokens = { applicationFee: settings.applicationFee, terms: settings.feeTerms, instalments: settings.feeInstalments, annualDiscountPercent: settings.annualDiscountPercent };
   return entries.map((e) => ({ ...e, answer: applyFeeTokens(e.answer, tokens) }));
 };
 
@@ -145,7 +144,7 @@ export const getLiveFaqEntries = async (): Promise<FaqEntry[] | null> => {
       supabase.from("faq_entries").select("id, question, answer, category, order_index").order("order_index"),
     ]);
     if (!settings || res.error || !Array.isArray(res.data)) return null;
-    const tokens = { applicationFee: settings.applicationFee, registrationFee: settings.registrationFee, terms: settings.feeTerms, instalments: settings.feeInstalments, annualDiscountPercent: settings.annualDiscountPercent };
+    const tokens = { applicationFee: settings.applicationFee, terms: settings.feeTerms, instalments: settings.feeInstalments, annualDiscountPercent: settings.annualDiscountPercent };
     return res.data.map((r: unknown) => mapFaq(r as Record<string, unknown>)).map((e) => ({ ...e, answer: applyFeeTokens(e.answer, tokens) }));
   } catch {
     return null;

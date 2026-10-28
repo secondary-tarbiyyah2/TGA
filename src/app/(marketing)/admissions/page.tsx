@@ -7,7 +7,16 @@ import { AdmissionsStepsGrid } from "@/components/admissions/AdmissionsSteps";
 import { PlacesRemaining } from "@/components/admissions/PlacesRemaining";
 import { admissionsProcessSteps } from "@/components/admissions/applicationShared";
 import { getSiteSettings } from "@/lib/content";
-import { formatGBP } from "@/lib/format";
+
+// Everything a family might check before applying, each linking to the one
+// page that holds it (so this page does not repeat fees, dates or the
+// document list, which live on /fees, /term-dates and /admissions/apply).
+const BEFORE_YOU_APPLY = [
+  { href: "/open-evening", title: "Open evenings & taster morning", body: "Online open evenings on Thursday 26 November (7:30pm) and Sunday 6 December (4pm UK time), and a taster morning on Saturday 12 December." },
+  { href: "/eligibility", title: "2-minute fit check", body: "A few quick questions to see your child's key stage, live lesson times in your time zone, the fee and the next step." },
+  { href: "/fees", title: "Fees and payment dates", body: "Every fee, payment plan and due date, with an estimator for your family." },
+  { href: "/term-dates", title: "Key dates", body: "Apply by 18 December. Induction week runs 4 to 8 January, and live lessons begin on Monday 11 January 2027." },
+];
 
 export const metadata: Metadata = {
   title: "Admissions",
@@ -16,7 +25,7 @@ export const metadata: Metadata = {
 
 export default async function AdmissionsPage() {
   const settings = await getSiteSettings();
-  const steps = admissionsProcessSteps({ applicationFee: settings.applicationFee, registrationFee: settings.registrationFee });
+  const steps = admissionsProcessSteps({ applicationFee: settings.applicationFee });
   return (
     <>
       <section className="geo-texture bg-cream section-pad">
@@ -33,63 +42,42 @@ export default async function AdmissionsPage() {
             </a>
           </div>
           <p className="mt-4 max-w-2xl text-sm text-ink/70">
-            Apply by Friday 18 December 2026 for the founding cohort; later applications are considered while places remain. Come to an{" "}
-            <Link href="/open-evening" className="font-semibold text-gold-700 underline">open evening or taster morning</Link> first if you would like to.
-          </p>
-          <p className="mt-2 max-w-2xl text-sm text-ink/70">
-            Not sure it&apos;s the right fit yet?{" "}
-            <Link href="/eligibility" className="font-semibold text-gold-700 underline">Take the 2-minute fit check</Link>{" "}
-            to see the fees, your local lesson times and the next step before you apply.
+            Apply by Friday 18 December 2026 for the founding cohort; later applications are considered while places remain.
           </p>
         </Container>
       </section>
 
       <section className="section-pad">
         <Container>
-          <h2 className="font-serif text-2xl font-semibold text-ink">How admissions works</h2>
+          <Kicker>Step by step</Kicker>
+          <h2 className="font-serif text-3xl font-semibold text-ink">How admissions works.</h2>
           <AdmissionsStepsGrid steps={steps} />
         </Container>
       </section>
 
       <PlacesRemaining />
 
-      <section className="geo-texture bg-cream section-pad">
-        <Container className="grid gap-4 sm:grid-cols-2">
-          {settings.applicationFee != null && (
-            <div className="rounded-2xl bg-white p-6">
-              <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">Application and assessment fee</p>
-              <p className="mt-1 font-serif text-3xl font-bold text-ink">{formatGBP(settings.applicationFee)}</p>
-              <p className="mt-1 text-sm text-ink/65">Non-refundable. Covers the baseline assessment and the administrative review. Paid when you apply.</p>
-            </div>
-          )}
-          {settings.registrationFee != null && (
-            <div className="rounded-2xl bg-white p-6">
-              <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">Registration fee</p>
-              <p className="mt-1 font-serif text-3xl font-bold text-ink">{formatGBP(settings.registrationFee)}</p>
-              <p className="mt-1 text-sm text-ink/65">One-off, due when you accept an offer: £125 for each additional sibling. Covers account setup, platform licences and onboarding. Refundable only within the 14-day cancellation period.</p>
-            </div>
-          )}
-          <p className="text-sm text-ink/70 sm:col-span-2">
-            Tuition is then paid on the dates in our Fees Policy: the whole year (with {settings.annualDiscountPercent ? `${settings.annualDiscountPercent}% off` : "a discount"}), the first of two payments or the first monthly payment is due with the registration fee by Friday 8 January 2027; the second payment is due on 28 March 2027, and monthly payments on the 28th of each month from 28 January to 28 June 2027. See the{" "}
-            <Link href="/fees#estimator" className="font-semibold text-gold-700 underline">fee estimator</Link> for your family&apos;s figures.
-          </p>
-        </Container>
-      </section>
-
-      <section className="section-pad" id="apply">
-        <Container className="max-w-2xl">
-          <Kicker>Application form</Kicker>
-          <h2 className="font-serif text-3xl font-semibold text-ink">Start your application.</h2>
-          <p className="mt-3 text-ink/70">
-            Our online form takes about ten minutes. Have your details and your child&apos;s to hand, plus a recent school report, photo ID for a parent or guardian, and proof of identity and address for your child (a passport or birth certificate, and a recent bill or statement showing your home address), as a PDF, JPG or PNG, ready to upload. Applying for more than one child? Add them all in the same form: you only enter your own details once.
-          </p>
-          <div className="mt-6">
-            <Button href="/admissions/apply">Apply now</Button>
+      <section className="geo-texture bg-cream section-pad" aria-labelledby="before-heading">
+        <Container>
+          <Kicker>Before you apply</Kicker>
+          <h2 id="before-heading" className="font-serif text-3xl font-semibold text-ink">Everything else you might want to check.</h2>
+          <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {BEFORE_YOU_APPLY.map((c) => (
+              <li key={c.href}>
+                <Link href={c.href} className="group flex h-full flex-col rounded-2xl border border-gold-light/50 bg-white p-5 shadow-sm transition hover:border-gold-500 hover:shadow-md">
+                  <h3 className="font-serif text-lg font-semibold text-gold-700">{c.title}</h3>
+                  <p className="mt-2 flex-1 text-sm text-ink/70">{c.body}</p>
+                  <span aria-hidden="true" className="mt-3 text-sm font-semibold text-ink group-hover:text-gold-700">→</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-10 flex flex-col gap-4 rounded-2xl border border-gold-light/60 bg-white p-6 sm:flex-row sm:items-center sm:justify-between">
+            <p className="max-w-2xl text-ink/75">
+              The online form takes about ten minutes, and you can add brothers and sisters to the same form. The application page lists the documents to have ready.
+            </p>
+            <Button href="/admissions/apply" className="shrink-0">Apply now</Button>
           </div>
-          <p className="mt-4 text-xs text-ink/70">
-            Key admissions dates for the January 2027 launch, including the 18 December application deadline and the 4 to 8 January induction week, are on our{" "}
-            <a href="/term-dates" className="underline">Term Dates</a> page.
-          </p>
         </Container>
       </section>
     </>

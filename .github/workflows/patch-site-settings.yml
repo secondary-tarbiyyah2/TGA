@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
     inputs:
       fields_json:
-        description: 'Fields to set, as JSON, e.g. {"registrationFee":50}'
+        description: 'Fields to set, as JSON, e.g. {"applicationFee":50}'
         required: true
 
 concurrency:

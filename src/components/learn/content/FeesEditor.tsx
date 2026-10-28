@@ -18,7 +18,6 @@ type SettingsDraft = {
   fee_terms: string;
   fee_instalments: string;
   application_fee: string;
-  registration_fee: string;
   annual_discount_percent: string;
   payment_schedule_text: string;
   admissions_deposit_amount: string;
@@ -76,7 +75,6 @@ export function FeesEditor() {
         fee_terms: String(fs.terms),
         fee_instalments: String(fs.instalments),
         application_fee: s.application_fee != null ? String(s.application_fee) : String(FEE_POLICY_DEFAULTS.applicationFee),
-        registration_fee: s.registration_fee != null ? String(s.registration_fee) : String(FEE_POLICY_DEFAULTS.registrationFee),
         annual_discount_percent: s.annual_discount_percent != null ? String(s.annual_discount_percent) : String(FEE_POLICY_DEFAULTS.annualDiscountPercent),
         // Never blank: pre-fill the default so the admin edits real text.
         payment_schedule_text: typeof s.payment_schedule_text === "string" && s.payment_schedule_text.trim() ? s.payment_schedule_text : FEE_POLICY_DEFAULTS.paymentScheduleText,
@@ -124,7 +122,6 @@ export function FeesEditor() {
     if (d == null || d < 0 || d > 100) problems.push("Annual payment discount must be between 0 and 100 (%).");
   }
   if (!settings.payment_schedule_text.trim()) problems.push("Payment schedule text cannot be blank.");
-  if (settings.registration_fee.trim() !== "" && (numOrNull(settings.registration_fee) ?? -1) < 0) problems.push("Registration fee must be zero or more.");
   if (settings.sibling_discount_percent.trim() !== "") {
     const d = numOrNull(settings.sibling_discount_percent);
     if (d == null || d < 0 || d > 100) problems.push("Sibling discount must be between 0 and 100 (%).");
@@ -160,7 +157,6 @@ export function FeesEditor() {
       fee_terms: terms,
       fee_instalments: instalments,
       application_fee: numOrNull(settings.application_fee),
-      registration_fee: numOrNull(settings.registration_fee),
       annual_discount_percent: numOrNull(settings.annual_discount_percent) ?? FEE_POLICY_DEFAULTS.annualDiscountPercent,
       payment_schedule_text: settings.payment_schedule_text.trim() || FEE_POLICY_DEFAULTS.paymentScheduleText,
       admissions_deposit_amount: numOrNull(settings.admissions_deposit_amount),
@@ -246,17 +242,12 @@ export function FeesEditor() {
           <label className="text-sm text-ink">
             Application fee (£, non-refundable)
             <input type="text" inputMode="decimal" min={0} step="0.01" value={settings.application_fee} onChange={(e) => setSettings({ ...settings, application_fee: e.target.value })} className={input} />
-            <span className="mt-0.5 block text-xs text-ink/65">Default £{FEE_POLICY_DEFAULTS.applicationFee} (Fees Policy). Covers the baseline assessment and admin review. Shown on the Admissions, Apply and Fees pages and in the fee estimator.</span>
+            <span className="mt-0.5 block text-xs text-ink/65">Default £{FEE_POLICY_DEFAULTS.applicationFee} (Fees Policy). Covers the baseline assessment and admin review. This is the only admissions fee (there is no registration fee). Shown on the Admissions, Apply and Fees pages and in the fee estimator.</span>
           </label>
           <label className="text-sm text-ink">
             Annual payment discount (%)
             <input type="text" inputMode="decimal" min={0} max={100} step="0.1" value={settings.annual_discount_percent} onChange={(e) => setSettings({ ...settings, annual_discount_percent: e.target.value })} className={input} />
             <span className="mt-0.5 block text-xs text-ink/65">Default {FEE_POLICY_DEFAULTS.annualDiscountPercent}%, if paid in full by 8 Jan 2027. Applied automatically in the fee estimator.</span>
-          </label>
-          <label className="text-sm text-ink">
-            Registration fee (£, one-time, per child)
-            <input type="text" inputMode="decimal" min={0} step="0.01" value={settings.registration_fee} onChange={(e) => setSettings({ ...settings, registration_fee: e.target.value })} className={input} />
-            <span className="mt-0.5 block text-xs text-ink/65">Default £{FEE_POLICY_DEFAULTS.registrationFee} (Fees Policy). Shown on the Admissions, Apply and Fees pages and in the fee estimator.</span>
           </label>
           <label className="text-sm text-ink sm:col-span-2">
             Payment schedule text (shown on the Fees page)

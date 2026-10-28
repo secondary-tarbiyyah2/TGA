@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { getEdgeFunctionUrl } from "@/lib/supabase/client";
+import { formatWhenWithUk, initialTimeZone, isValidTimeZone } from "@/lib/timezones";
 
-type Booking = { id: string; status: string; startsAt: string; endsAt: string; teamsJoinUrl: string; bbbJoinUrl: string | null; staffName: string };
+type Booking = { id: string; status: string; startsAt: string; endsAt: string; teamsJoinUrl: string; bbbJoinUrl: string | null; timezone?: string | null };
 
 async function callManageBooking(action: string, token: string, extra: Record<string, unknown> = {}) {
   const url = getEdgeFunctionUrl("manage-booking");
@@ -121,12 +122,14 @@ export function ManageBookingClient() {
     );
   }
 
-  const when = new Date(booking.startsAt).toLocaleString("en-GB", { dateStyle: "full", timeStyle: "short", timeZone: "Europe/London" });
+  // The zone chosen when booking, else this visitor's saved or detected zone.
+  const when = formatWhenWithUk(booking.startsAt, isValidTimeZone(booking.timezone) ? booking.timezone : initialTimeZone());
 
   return (
     <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
       <h2 className="font-serif text-lg font-semibold text-ink">Your admissions call</h2>
-      <p className="mt-2 text-ink/80">{when} (UK time), with {booking.staffName}</p>
+      <p className="mt-2 text-ink/80">{when}</p>
+      <p className="mt-1 text-sm text-ink/70">You&apos;ll speak with a member of our admissions team.</p>
       {booking.bbbJoinUrl ? (
         <a href={booking.bbbJoinUrl} className="mt-3 inline-block rounded-full bg-gold-500 px-4 py-2 text-sm font-semibold text-ink-900 hover:brightness-95">
           Join the call

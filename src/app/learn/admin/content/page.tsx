@@ -60,7 +60,7 @@ function TabContent({ tab }: { tab: Tab }) {
         <SimpleListEditor
           table="faq_entries"
           title="FAQs"
-          description="Grouped by parent question on the public FAQs page. In answers, use {{applicationFee}}, {{registrationFee}}, {{terms}}, {{instalments}} and {{annualDiscount}} so figures follow your Fees settings automatically."
+          description="Grouped by parent question on the public FAQs page. In answers, use {{applicationFee}}, {{terms}}, {{instalments}} and {{annualDiscount}} so figures follow your Fees settings automatically."
           orderKey="order_index"
           searchable
           rowLabel={(r) => `${r.category ? `${r.category}: ` : ""}${r.question}`}

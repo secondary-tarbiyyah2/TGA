@@ -24,7 +24,6 @@ export function normaliseSettings(sr: Record<string, unknown> | null): Admission
   return {
     ...(sr as unknown as AdmissionsSettings),
     application_fee: num(sr.application_fee),
-    registration_fee: num(sr.registration_fee),
     annual_discount_percent: num(sr.annual_discount_percent),
     sibling_discount_percent: num(sr.sibling_discount_percent),
   };
@@ -68,7 +67,6 @@ export async function fetchAdmissionsData(applicationId: string): Promise<Admiss
 export function feesFor(app: ApplicationRow, data: Pick<AdmissionsData, "settings" | "bands" | "details" | "planIntent">): FeeSummary {
   return summariseFees({
     yearGroup: app.year_group_applying,
-    adminFeeAmount: app.admin_fee_amount === null ? null : Number(app.admin_fee_amount),
     settings: data.settings,
     bands: data.bands,
     details: data.details,

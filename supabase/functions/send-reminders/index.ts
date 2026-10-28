@@ -5,15 +5,12 @@
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { jsonResponse } from "../_shared/cors.ts";
 import { emailShell, sendEmail } from "../_shared/resend.ts";
+import { bookingWhenText } from "../_shared/bookingTime.ts";
 
 const supabase = createClient(
   Deno.env.get("SUPABASE_URL")!,
   Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
 );
-
-function whenText(iso: string): string {
-  return new Date(iso).toLocaleString("en-GB", { dateStyle: "full", timeStyle: "short", timeZone: "Europe/London" }) + " (UK time)";
-}
 
 async function sendWindowReminders(hoursBefore: number, column: "reminder_24h_sent_at" | "reminder_1h_sent_at") {
   const now = Date.now();
@@ -39,7 +36,7 @@ async function sendWindowReminders(hoursBefore: number, column: "reminder_24h_se
       toName: booking.contact_name,
       subject: hoursBefore === 24 ? "Reminder: your admissions call is tomorrow" : "Reminder: your admissions call starts soon",
       html: emailShell(`
-        <p>This is a reminder that your admissions call is at <strong>${whenText(booking.starts_at)}</strong>.</p>
+        <p>This is a reminder that your admissions call is on <strong>${bookingWhenText(booking.starts_at, booking.contact_timezone)}</strong>.</p>
         <p><a href="${booking.teams_join_url}">Join on Microsoft Teams</a></p>
       `),
     });

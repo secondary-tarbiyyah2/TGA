@@ -165,6 +165,15 @@ Deno.serve(async (req) => {
   return jsonResponse({ ok: true, emailSent, staffNotified });
 });
 
+const MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+/** child_dob (a Postgres date, sent by the form as ISO yyyy-mm-dd) as "14 March 2018". */
+function britishDate(iso: string): string {
+  const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso || "");
+  if (!m) return iso || "";
+  return `${Number(m[3])} ${MONTH_NAMES[Number(m[2]) - 1] ?? m[2]} ${m[1]}`;
+}
+
 /** The pupil's home address, one part per line (or the older one-line address). */
 function addressLines(a: AppRow): string[] {
   const parts = [a.address_line1, a.address_line2, a.address_town, a.address_postcode, a.address_country].map((x) => (x || "").trim()).filter(Boolean);
@@ -184,7 +193,7 @@ async function notifyAdmissions(lead: AppRow, siblings: AppRow[]): Promise<boole
       `<tr><td style="padding:4px 12px 4px 0;vertical-align:top;color:#6b6b6b;white-space:nowrap;">${escapeHtml(label)}</td><td style="padding:4px 0;vertical-align:top;">${value}</td></tr>`;
     const addr = addressLines(lead);
     const children = siblings
-      .map((s) => `<li style="margin:0 0 4px;"><strong>${escapeHtml(`${s.child_first_name} ${s.child_last_name}`.trim())}</strong>, ${escapeHtml(s.year_group_applying)}, born ${escapeHtml(s.child_dob)}${s.reference ? ` (${escapeHtml(s.reference)})` : ""}</li>`)
+      .map((s) => `<li style="margin:0 0 4px;"><strong>${escapeHtml(`${s.child_first_name} ${s.child_last_name}`.trim())}</strong>, ${escapeHtml(s.year_group_applying)}, born ${escapeHtml(britishDate(s.child_dob))}${s.reference ? ` (${escapeHtml(s.reference)})` : ""}</li>`)
       .join("");
     const names = siblings.map((s) => s.child_first_name.trim()).join(", ");
     const subject = `New application${siblings.length > 1 ? "s" : ""}: ${lead.reference || ""} ${names}`.replace(/\s+/g, " ").trim();

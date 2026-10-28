@@ -4,23 +4,18 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { getSupabaseClient, getEdgeFunctionUrl } from "@/lib/supabase/client";
 import { COUNTRIES } from "@/lib/countries";
+import { formatTime, formatWhenWithUk, initialTimeZone, sameAsUk, saveTimeZone, UK_TIME_ZONE } from "@/lib/timezones";
+import { TimeZonePicker } from "@/components/booking/TimeZonePicker";
 
 type Slot = { slot_start: string; slot_end: string };
-type Staff = { id: string; display_name: string; role_title: string };
+/** A bookable time, with every staff member free then (who takes the call depends on who is available). */
+type OpenSlot = Slot & { staffIds: string[] };
 type Status = "idle" | "submitting" | "success" | "error";
 
 const YEAR_GROUPS = [
   "Year 1", "Year 2", "Year 3", "Year 4", "Year 5", "Year 6",
   "Year 7", "Year 8", "Year 9", "Year 10", "Year 11", "Not sure yet",
 ];
-
-function localTz(): string {
-  try {
-    return Intl.DateTimeFormat().resolvedOptions().timeZone;
-  } catch {
-    return "Europe/London";
-  }
-}
 
 // YYYY-MM-DD from the date's LOCAL parts. (toISOString() converts to UTC, which
 // shifts midnight-local dates back a day for anyone ahead of UTC, e.g. UK
@@ -34,14 +29,13 @@ function fmtDateKey(d: Date): string {
 
 export function BookingCalendar() {
   const params = useSearchParams();
-  const [staffList, setStaffList] = useState<Staff[]>([]);
-  const [staffId, setStaffId] = useState<string>("");
+  const [staffIds, setStaffIds] = useState<string[]>([]);
   const [monthCursor, setMonthCursor] = useState(() => {
     const d = new Date();
     d.setDate(1);
     return d;
   });
-  const [slotsByDate, setSlotsByDate] = useState<Record<string, Slot[]>>({});
+  const [openSlots, setOpenSlots] = useState<OpenSlot[]>([]);
   const [loadingSlots, setLoadingSlots] = useState(false);
   // "loading" until the bookable-staff query returns. "none" means the query
   // worked but no staff member is marked bookable; "error" means it failed.
@@ -49,11 +43,18 @@ export function BookingCalendar() {
   const [staffStatus, setStaffStatus] = useState<"loading" | "ready" | "none" | "error">("loading");
   const [slotsError, setSlotsError] = useState(false);
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
-  const [selectedSlot, setSelectedSlot] = useState<Slot | null>(null);
+  const [selectedSlot, setSelectedSlot] = useState<OpenSlot | null>(null);
   const [status, setStatus] = useState<Status>("idle");
   const [renderedAt] = useState(() => Date.now());
 
-  const tz = useMemo(() => localTz(), []);
+  // The visitor's time zone: their saved choice, else the one their device reports.
+  const [tz, setTz] = useState<string>(() => initialTimeZone());
+  const changeTz = (next: string) => {
+    setTz(next);
+    saveTimeZone(next);
+    setSelectedDate(null);
+    setSelectedSlot(null);
+  };
   const timesRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -75,15 +76,14 @@ export function BookingCalendar() {
     if (!supabase) return;
     supabase
       .from("bookable_staff")
-      .select("id, display_name, role_title")
+      .select("id")
       .then(({ data, error }) => {
         if (error) {
           setStaffStatus("error");
           return;
         }
         if (data && data.length) {
-          setStaffList(data);
-          setStaffId(data[0].id);
+          setStaffIds((data as { id: string }[]).map((d) => d.id));
           setStaffStatus("ready");
         } else {
           setStaffStatus("none");
@@ -92,7 +92,7 @@ export function BookingCalendar() {
   }, []);
 
   useEffect(() => {
-    if (!staffId) return;
+    if (staffIds.length === 0) return;
     const supabase = getSupabaseClient();
     if (!supabase) return;
     // eslint-disable-next-line react-hooks/set-state-in-effect -- kicks off an async fetch triggered by staff/month changing
@@ -102,19 +102,44 @@ export function BookingCalendar() {
     // (e.g. for visitors in Australia) fall outside the requested range.
     const from = fmtDateKey(new Date(monthCursor.getFullYear(), monthCursor.getMonth(), 0));
     const to = fmtDateKey(new Date(monthCursor.getFullYear(), monthCursor.getMonth() + 1, 1));
-    supabase
-      .rpc("get_open_slots", { p_meeting_type: "admissions", p_staff_id: staffId, p_from: from, p_to: to })
-      .then(({ data, error }: { data: Slot[] | null; error: unknown }) => {
-        setSlotsError(Boolean(error));
-        const grouped: Record<string, Slot[]> = {};
-        for (const slot of data || []) {
-          const key = new Date(slot.slot_start).toLocaleDateString("en-CA", { timeZone: tz }); // YYYY-MM-DD in local tz
-          (grouped[key] ||= []).push(slot);
+    // Every bookable team member's free times, merged: the family picks a time,
+    // not a person, and whoever is free then takes the call.
+    let cancelled = false;
+    Promise.all(
+      staffIds.map((id) =>
+        supabase
+          .rpc("get_open_slots", { p_meeting_type: "admissions", p_staff_id: id, p_from: from, p_to: to })
+          .then(({ data, error }: { data: Slot[] | null; error: unknown }) => ({ id, data: data || [], error: Boolean(error) }))
+      )
+    ).then((results) => {
+      if (cancelled) return;
+      const byStart = new Map<string, OpenSlot>();
+      for (const r of results) {
+        for (const slot of r.data) {
+          const existing = byStart.get(slot.slot_start);
+          if (existing) existing.staffIds.push(r.id);
+          else byStart.set(slot.slot_start, { ...slot, staffIds: [r.id] });
         }
-        setSlotsByDate(grouped);
-        setLoadingSlots(false);
-      });
-  }, [staffId, monthCursor, tz]);
+      }
+      setSlotsError(results.every((r) => r.error));
+      setOpenSlots([...byStart.values()].sort((x, y) => x.slot_start.localeCompare(y.slot_start)));
+      setLoadingSlots(false);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [staffIds, monthCursor]);
+
+  // Group by the day in the chosen time zone (recomputed when the zone changes).
+  const slotsByDate = useMemo(() => {
+    const grouped: Record<string, OpenSlot[]> = {};
+    for (const slot of openSlots) {
+      const key = new Date(slot.slot_start).toLocaleDateString("en-CA", { timeZone: tz }); // YYYY-MM-DD in the chosen zone
+      (grouped[key] ||= []).push(slot);
+    }
+    return grouped;
+  }, [openSlots, tz]);
+  const todayKey = new Date().toLocaleDateString("en-CA", { timeZone: tz });
 
   const daysInMonth = useMemo(() => {
     const year = monthCursor.getFullYear();
@@ -130,7 +155,7 @@ export function BookingCalendar() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (!selectedSlot || !staffId) return;
+    if (!selectedSlot || selectedSlot.staffIds.length === 0) return;
     setStatus("submitting");
     const form = new FormData(e.currentTarget);
     const url = getEdgeFunctionUrl("book-admissions-call");
@@ -139,31 +164,38 @@ export function BookingCalendar() {
       setStatus("error");
       return;
     }
+    // Try whoever is free at that time, in random order to share the calls;
+    // if someone's slot was taken a moment ago, try the next person.
+    const candidates = [...selectedSlot.staffIds].sort(() => Math.random() - 0.5);
     try {
-      const res = await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", apikey: anonKey, Authorization: `Bearer ${anonKey}` },
-        body: JSON.stringify({
-          parentName: form.get("parentName"),
-          email: form.get("email"),
-          phone: form.get("phone"),
-          country: form.get("country"),
-          yearGroups: form.get("yearGroups"),
-          notes: form.get("notes"),
-          consent: form.get("consent") === "yes",
-          company: form.get("company"),
-          formRenderedAt: renderedAt,
-          staffId,
-          slotStart: selectedSlot.slot_start,
-          slotEnd: selectedSlot.slot_end,
-        }),
-      });
-      const json = await res.json();
-      if (!res.ok || !json.ok) {
-        setStatus("error");
-        return;
+      for (const staffId of candidates) {
+        const res = await fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", apikey: anonKey, Authorization: `Bearer ${anonKey}` },
+          body: JSON.stringify({
+            parentName: form.get("parentName"),
+            email: form.get("email"),
+            phone: form.get("phone"),
+            country: form.get("country"),
+            yearGroups: form.get("yearGroups"),
+            notes: form.get("notes"),
+            consent: form.get("consent") === "yes",
+            company: form.get("company"),
+            formRenderedAt: renderedAt,
+            staffId,
+            slotStart: selectedSlot.slot_start,
+            slotEnd: selectedSlot.slot_end,
+            timezone: tz,
+          }),
+        });
+        const json = await res.json().catch(() => ({}));
+        if (res.ok && json.ok) {
+          setStatus("success");
+          return;
+        }
+        if (json.error !== "slot_taken") break;
       }
-      setStatus("success");
+      setStatus("error");
     } catch {
       setStatus("error");
     }
@@ -173,7 +205,8 @@ export function BookingCalendar() {
     return (
       <div role="status" className="rounded-2xl border border-gold-light/50 bg-white p-8 text-center">
         <h2 className="font-serif text-xl font-semibold text-ink">Call booked.</h2>
-        <p className="mt-2 text-ink/70">Check your email for confirmation, the Teams link, and a calendar invite.</p>
+        {selectedSlot && <p className="mt-2 font-medium text-ink">{formatWhenWithUk(selectedSlot.slot_start, tz)}</p>}
+        <p className="mt-2 text-ink/70">You&apos;ll speak with a member of our admissions team. Check your email for confirmation, the Teams link, and a calendar invite.</p>
         <ul className="mt-6 space-y-2 text-left text-sm text-ink/70">
           <li className="flex items-start gap-2">
             <span aria-hidden="true" className="mt-1 text-gold-500">◆</span>
@@ -224,27 +257,11 @@ export function BookingCalendar() {
     );
   }
 
-  const activeStaff = staffList.find((s) => s.id === staffId) || staffList[0];
-
   return (
     <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr]">
       <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-        {activeStaff && staffList.length === 1 && (
-          <p className="text-sm font-medium text-ink">
-            You&apos;ll be speaking with <span className="font-semibold">{activeStaff.display_name}</span>, {activeStaff.role_title}.
-          </p>
-        )}
-        {staffList.length > 1 && (
-          <label className="block text-sm font-medium text-ink">
-            Speak with
-            <select value={staffId} onChange={(e) => setStaffId(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2">
-              {staffList.map((s) => (
-                <option key={s.id} value={s.id}>{s.display_name} · {s.role_title}</option>
-              ))}
-            </select>
-          </label>
-        )}
-        <p className="mt-2 text-sm text-ink/65">Times shown in your local timezone ({tz}), UK time alongside.</p>
+        <p className="text-sm font-medium text-ink">You&apos;ll speak with a member of our admissions team.</p>
+        <TimeZonePicker value={tz} onChange={changeTz} />
 
         <div className="mt-4 flex items-center justify-between">
           <button type="button" onClick={() => setMonthCursor((d) => new Date(d.getFullYear(), d.getMonth() - 1, 1))} aria-label="Previous month" className="p-2 text-gold-700">
@@ -264,7 +281,7 @@ export function BookingCalendar() {
             if (!day) return <div key={i} />;
             const key = fmtDateKey(day);
             const hasSlots = (slotsByDate[key]?.length ?? 0) > 0;
-            const isPast = day < new Date(new Date().toDateString());
+            const isPast = key < todayKey;
             const isSelected = selectedDate === key;
             return (
               <button
@@ -308,8 +325,14 @@ export function BookingCalendar() {
             </h2>
             <div className="mt-4 flex flex-wrap gap-2">
               {(slotsByDate[selectedDate] || []).map((slot) => {
-                const local = new Date(slot.slot_start).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: tz });
-                const uk = new Date(slot.slot_start).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/London" });
+                const at = new Date(slot.slot_start);
+                const local = formatTime(at, tz);
+                let uk = "";
+                if (!sameAsUk(tz, at)) {
+                  const ukDay = at.toLocaleDateString("en-CA", { timeZone: UK_TIME_ZONE });
+                  const dayNote = ukDay !== selectedDate ? ` ${at.toLocaleDateString("en-GB", { weekday: "short", timeZone: UK_TIME_ZONE })}` : "";
+                  uk = `${formatTime(at, UK_TIME_ZONE)}${dayNote} UK`;
+                }
                 const selected = selectedSlot?.slot_start === slot.slot_start;
                 return (
                   <button
@@ -317,9 +340,10 @@ export function BookingCalendar() {
                     type="button"
                     onClick={() => setSelectedSlot(slot)}
                     aria-pressed={selected}
+                    aria-label={formatWhenWithUk(slot.slot_start, tz)}
                     className={`min-h-10 rounded-full border px-4 py-2.5 text-sm ${selected ? "border-gold-500 bg-gold-500 text-ink-900 font-semibold" : "border-gold-light/60 text-ink hover:border-gold-500"}`}
                   >
-                    {local}{tz !== "Europe/London" ? ` (${uk} UK)` : ""}
+                    {local}{uk ? ` (${uk})` : ""}
                   </button>
                 );
               })}
@@ -329,6 +353,9 @@ export function BookingCalendar() {
 
         {selectedSlot && (
           <form ref={formRef} onSubmit={handleSubmit} className="mt-6 scroll-mt-24 rounded-2xl border border-gold-light/50 bg-white p-6" noValidate>
+            <p className="mb-4 rounded-lg bg-cream px-3 py-2 text-sm text-ink">
+              Your call: <span className="font-semibold">{formatWhenWithUk(selectedSlot.slot_start, tz)}</span>
+            </p>
             <div className="grid gap-4 sm:grid-cols-2">
               <label className="block text-sm font-medium text-ink">
                 Your full name

@@ -144,3 +144,13 @@ export const keyStages: KeyStage[] = [
     gcseNote: "Exam entry fees are not included in tuition: families register their child at an approved exam centre and pay the centre's charges.",
   },
 ];
+
+/** "20 live lessons a week, 45 minutes each": the one wording used wherever a
+ * key stage's week is summarised (homepage, curriculum index). Falls back to
+ * this file's figures if a database row leaves either field empty. */
+export function lessonsAWeek(ks: Pick<KeyStage, "slug" | "totalLessons" | "lessonLength">): string {
+  const builtIn = keyStages.find((k) => k.slug === ks.slug);
+  const total = (ks.totalLessons || builtIn?.totalLessons || "").replace(/ a week.*$/, "");
+  const length = ks.lessonLength || builtIn?.lessonLength;
+  return length ? `${total} a week, ${length} each` : `${total} a week`;
+}

@@ -9,6 +9,7 @@ import { buildIcs } from "../_shared/ics.ts";
 import { emailShell, sendEmail } from "../_shared/resend.ts";
 import { generateToken, hashToken } from "../_shared/manageToken.ts";
 import { hashIp, isRateLimited, recordAttempt } from "../_shared/spam.ts";
+import { bookingWhenText, bookingWhenTextForStaff, escHtml, isValidTimeZone } from "../_shared/bookingTime.ts";
 
 const ADMISSIONS_TEAMS_URL = Deno.env.get("ADMISSIONS_TEAMS_URL") || "";
 const SITE_URL = Deno.env.get("SITE_URL") || "https://globalacademy.tarbiyyah.co.uk";
@@ -58,6 +59,8 @@ Deno.serve(async (req) => {
   const staffId = String(body.staffId || "");
   const slotStart = String(body.slotStart || "");
   const slotEnd = String(body.slotEnd || "");
+  // The family's chosen time zone (IANA id); used only for email wording.
+  const contactTimezone = isValidTimeZone(body.timezone) ? body.timezone : null;
 
   const errors: string[] = [];
   if (!parentName) errors.push("parentName");
@@ -96,37 +99,41 @@ Deno.serve(async (req) => {
   const manageToken = generateToken();
   const manageTokenHash = await hashToken(manageToken);
 
-  const { data: booking, error: insertErr } = await supabase
-    .from("bookings")
-    .insert({
-      meeting_type: "admissions",
-      staff_id: staffId,
-      starts_at: slotStart,
-      ends_at: slotEnd,
-      status: "confirmed",
-      contact_name: parentName,
-      contact_email: email,
-      contact_phone: phone,
-      notes: [`Country: ${country}`, `Year group(s): ${yearGroups}`, notes].filter(Boolean).join("\n"),
-      teams_join_url: teamsUrl,
-      manage_token_hash: manageTokenHash,
-    })
-    .select()
-    .single();
+  const row: Record<string, unknown> = {
+    meeting_type: "admissions",
+    staff_id: staffId,
+    starts_at: slotStart,
+    ends_at: slotEnd,
+    status: "confirmed",
+    contact_name: parentName,
+    contact_email: email,
+    contact_phone: phone,
+    notes: [`Country: ${country}`, `Year group(s): ${yearGroups}`, notes].filter(Boolean).join("\n"),
+    teams_join_url: teamsUrl,
+    manage_token_hash: manageTokenHash,
+    contact_timezone: contactTimezone,
+  };
+  let { data: booking, error: insertErr } = await supabase.from("bookings").insert(row).select().single();
+  // Unknown column (42703 / PostgREST PGRST204): migration 0164 not applied yet, so book without the time zone.
+  if (insertErr?.code === "42703" || insertErr?.code === "PGRST204") {
+    delete row.contact_timezone;
+    ({ data: booking, error: insertErr } = await supabase.from("bookings").insert(row).select().single());
+  }
 
-  if (insertErr) {
+  if (insertErr || !booking) {
     // 23P01 = exclusion_violation, i.e. the exact "someone else just took
     // this slot" race, the one case get_open_slots alone can't prevent.
-    if (insertErr.code === "23P01") {
+    if (insertErr?.code === "23P01") {
       return jsonResponse({ ok: false, error: "slot_taken" }, 409);
     }
-    return jsonResponse({ ok: false, error: "insert_failed", detail: insertErr.message }, 500);
+    return jsonResponse({ ok: false, error: "insert_failed", detail: insertErr?.message }, 500);
   }
 
   const manageUrl = `${SITE_URL}/manage-booking?token=${manageToken}`;
   const startsAt = new Date(slotStart);
   const endsAt = new Date(slotEnd);
-  const whenText = startsAt.toLocaleString("en-GB", { dateStyle: "full", timeStyle: "short", timeZone: "Europe/London" }) + " (UK time)";
+  const whenText = bookingWhenText(slotStart, contactTimezone);
+  const staffWhenText = bookingWhenTextForStaff(slotStart, contactTimezone);
 
   const ics = buildIcs({
     uid: `booking-${booking.id}@globalacademy.tarbiyyah.co.uk`,
@@ -152,8 +159,8 @@ Deno.serve(async (req) => {
     subject: "Your admissions call is confirmed | Tarbiyyah Global Academy",
     html: emailShell(`
       <h1 style="font-size:20px;margin:0 0 16px;">Your call is confirmed</h1>
-      <p>Assalamu alaikum ${parentName.split(" ")[0]},</p>
-      <p>Your admissions call is booked for <strong>${whenText}</strong>.</p>
+      <p>Assalamu alaikum ${escHtml(parentName.split(" ")[0])},</p>
+      <p>Your admissions call is booked for <strong>${escHtml(whenText)}</strong>. You'll speak with a member of our admissions team.</p>
       <p><a href="${teamsUrl}" style="color:#5E4B1E;">Join on Microsoft Teams</a>. No download needed, just click the link at the time of your call.</p>
       <p>Need to change or cancel? <a href="${manageUrl}" style="color:#5E4B1E;">Manage your booking</a>.</p>
       <p>We look forward to speaking with you.</p>
@@ -171,11 +178,11 @@ Deno.serve(async (req) => {
     subject: `New admissions call · ${parentName}`,
     html: emailShell(`
       <h1 style="font-size:20px;margin:0 0 16px;">New admissions call booked</h1>
-      <p><strong>${whenText}</strong></p>
-      <p>Parent: ${parentName} (${email}, ${phone})</p>
-      <p>Country: ${country}</p>
-      <p>Year group(s): ${yearGroups}</p>
-      ${notes ? `<p>Notes: ${notes}</p>` : ""}
+      <p><strong>${escHtml(staffWhenText)}</strong></p>
+      <p>Parent: ${escHtml(parentName)} (${escHtml(email)}, ${escHtml(phone)})</p>
+      <p>Country: ${escHtml(country)}</p>
+      <p>Year group(s): ${escHtml(yearGroups)}</p>
+      ${notes ? `<p>Notes: ${escHtml(notes)}</p>` : ""}
     `),
     icsContent: ics,
     icsFilename: "admissions-call.ics",

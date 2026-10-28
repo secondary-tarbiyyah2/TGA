@@ -4,7 +4,6 @@ import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { HubCards } from "@/components/HubCards";
 import { CtaBand } from "@/components/CtaBand";
-import { AdmissionsStrip } from "@/components/AdmissionsStrip";
 import { learningHub } from "@/lib/nav";
 
 export const metadata: Metadata = pageMetadata({
@@ -29,7 +28,6 @@ export default function LearningHubPage() {
           <HubCards cards={learningHub} />
         </Container>
       </section>
-      <AdmissionsStrip />
       <CtaBand heading="Ready to apply?" body="Start your child&apos;s application, or book a free call first." />
     </>
   );

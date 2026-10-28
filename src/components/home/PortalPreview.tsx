@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/Container";
+import { Kicker } from "@/components/Section";
 import { portalCta } from "@/lib/nav";
 
 /**
@@ -23,10 +24,7 @@ export function PortalPreview() {
     <section className="section-pad bg-teal-900 text-cream" aria-labelledby="portal-heading">
       <Container className="grid gap-12">
         <div className="max-w-5xl">
-          <div className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold-300">
-            <span className="h-px w-8 bg-gold-300" aria-hidden="true" />
-            The parent portal
-          </div>
+          <Kicker tone="light">The parent portal</Kicker>
           <h2 id="portal-heading" className="text-h2 font-serif font-semibold text-white">
             You stay close to school, without doing the teaching.
           </h2>

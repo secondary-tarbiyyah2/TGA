@@ -36,7 +36,7 @@ type Proof = {
 };
 
 const PROOF_COLUMNS = "id, submission_id, kind, covers, plan, amount_claimed, family_note, file_path, file_name, content_type, size_bytes, uploaded_at, status, amount_verified, verified_by, verified_at, note";
-const COVER_LABELS: Record<string, string> = { application_fee: "Application fee", registration_fee: "Registration fee", first_payment: "First payment" };
+const COVER_LABELS: Record<string, string> = { application_fee: "Application fee", registration_fee: "Registration fee (legacy, no longer charged)", first_payment: "First payment" };
 const PLAN_LABELS: Record<PlanId, string> = { annual: "Annual", termly: "2 payments", monthly: "Monthly" };
 const today = () => ukToday();
 
@@ -83,7 +83,6 @@ export function PaymentsPanel({
 
   const items = [
     { label: "Application fee", amount: fees.applicationFee, received: ctx.details?.application_fee_received ?? false },
-    { label: "Registration fee", amount: fees.registrationFee, received: app.admin_fee_received },
     { label: `First payment${fees.activePlan ? ` (${PLAN_LABELS[fees.activePlan].toLowerCase()})` : ""}`, amount: fees.activeFirstPayment, received: app.deposit_received },
   ];
 
@@ -119,7 +118,6 @@ export function PaymentsPanel({
     }
     // The database trigger (0062) has switched the fee flags on; mirror them locally.
     const patch: ApplicationPatch = {};
-    if (proof.covers.includes("registration_fee") && !app.admin_fee_received) Object.assign(patch, { admin_fee_received: true, admin_fee_received_at: app.admin_fee_received_at || today() });
     if (proof.covers.includes("first_payment") && !app.deposit_received) Object.assign(patch, { deposit_received: true, deposit_received_at: app.deposit_received_at || today() });
     if (Object.keys(patch).length) await onPatch(app.id, patch);
     let text = "Verified. Fee flags updated.";

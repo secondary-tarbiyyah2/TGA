@@ -95,7 +95,7 @@ statically exported, changes appear on the site after the next build+redeploy, n
 — wire a Sanity webhook to your CI build trigger if you want that to happen automatically on
 publish.
 - Fee table (`Fee bands`) — every year-group band, all three payment frequencies
-- `Site settings` — application/registration fee, Open Evening booking widget URL and past
+- `Site settings` — application fee, Open Evening booking widget URL and past
   recording URL, Parent/Student portal URL, admissions email
 - `FAQ entries` — question, answer, category (feeds the searchable/filterable FAQ page)
 - `Term & admissions dates`

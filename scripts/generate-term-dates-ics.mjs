@@ -29,7 +29,7 @@ const seedTermDates = [
   { _id: "7e0d0001-0e0e-4e0e-8e0e-000000000001", label: "Application deadline for the founding cohort", kind: "Admissions deadline", date: "2026-12-18", notes: "Applications received after 18 December are welcome and are considered while places remain.", confirmed: true },
   { _id: "7e0d0001-0e0e-4e0e-8e0e-000000000005", label: "Winter break", kind: "Holiday", date: "2026-12-19", endDate: "2027-01-03", confirmed: true },
   { _id: "7e0d0001-0e0e-4e0e-8e0e-000000000003", label: "Induction week (the Academy opens)", kind: "Event", date: "2027-01-04", endDate: "2027-01-08", notes: "Set up accounts, test devices and meet teachers.", confirmed: true },
-  { _id: "7e0d0001-0e0e-4e0e-8e0e-000000000002", label: "Registration fee and first fee payment due", kind: "Admissions deadline", date: "2027-01-08", confirmed: true },
+  { _id: "7e0d0001-0e0e-4e0e-8e0e-000000000002", label: "First fee payment due", kind: "Admissions deadline", date: "2027-01-08", confirmed: true },
   { _id: "7e0d0001-0e0e-4e0e-8e0e-000000000006", label: "Spring term A (first live lessons Monday 11 January)", kind: "Term date", date: "2027-01-11", endDate: "2027-02-12", confirmed: true },
   { _id: "7e0d0001-0e0e-4e0e-8e0e-000000000007", label: "Ramadan and Eid break", kind: "Holiday", date: "2027-02-15", endDate: "2027-03-12", notes: "Islamic dates depend on the moon sighting and may move by a day or two.", confirmed: true },
   { _id: "7e0d0001-0e0e-4e0e-8e0e-000000000008", label: "Spring term B", kind: "Term date", date: "2027-03-15", endDate: "2027-03-25", confirmed: true },

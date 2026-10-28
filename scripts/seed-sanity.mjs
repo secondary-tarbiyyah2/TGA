@@ -30,8 +30,7 @@ const feeBands = [
 const siteSettings = {
   _id: "siteSettings",
   _type: "siteSettings",
-  applicationFee: 100,
-  registrationFee: 150,
+  applicationFee: 50,
   bookingWidgetUrl: "",
   openEveningRecordingUrl: "",
   portalUrl: "",
@@ -43,7 +42,7 @@ const siteSettings = {
 const faqEntries = [
   { _id: "faqEntry-f1", _type: "faqEntry", category: "Admissions", order: 1, question: "How do I apply for a place?", answer: "Start by registering your interest, then complete the multi-step application form on the Admissions page. We'll confirm receipt, arrange an entry assessment where relevant, and follow up with next steps." },
   { _id: "faqEntry-f2", _type: "faqEntry", category: "Admissions", order: 2, question: "Is there an entry assessment?", answer: "Yes, a short, age-appropriate assessment helps us understand where your child is and how best to support them from day one. Details are shared once your application is received." },
-  { _id: "faqEntry-f3", _type: "faqEntry", category: "Fees", order: 1, question: "What does the application fee cover?", answer: "The {{applicationFee}} application fee is non-refundable and covers the baseline assessment and administrative review. It is separate from the one-time {{registrationFee}} registration fee, which is payable on acceptance of a place and no later than 19 December 2026." },
+  { _id: "faqEntry-f3", _type: "faqEntry", category: "Fees", order: 1, question: "What does the application fee cover?", answer: "The {{applicationFee}} application fee is non-refundable and covers the baseline assessment and administrative review. There is no registration fee." },
   { _id: "faqEntry-f4", _type: "faqEntry", category: "Fees", order: 2, question: "Can I pay fees monthly?", answer: "Yes. Fees are for the shortened January–July 2027 period. You can pay annually (with a {{annualDiscount}} discount if paid in full by 19 December 2026), termly ({{terms}} payments) or monthly ({{instalments}} payments) for every year group band. The instalments always add up exactly to the annual fee, see the Fees page for the full table and payment dates." },
   { _id: "faqEntry-f5", _type: "faqEntry", category: "Curriculum", order: 1, question: "Is this the full British curriculum?", answer: "Yes, taught live by qualified UK teachers, alongside a dedicated Islamic Studies programme, through to GCSE at Year 10–11." },
   { _id: "faqEntry-f6", _type: "faqEntry", category: "Technology", order: 1, question: "What equipment does my child need?", answer: "A reliable internet connection and a laptop or tablet with a camera and microphone. Full technical requirements are confirmed ahead of the January 2027 launch." },
@@ -53,7 +52,7 @@ const faqEntries = [
   { _id: "faqEntry-f9", _type: "faqEntry", category: "Admissions", order: 3, question: "What year groups do you accept?", answer: "We accept children from Reception through to Year 11, Early Years and Key Stage 1 through to GCSE (Key Stage 4)." },
   { _id: "faqEntry-f10", _type: "faqEntry", category: "Admissions", order: 4, question: "When does Tarbiyyah Global Academy launch, and can I apply now?", answer: "Live lessons launch in January 2027. Applications are open now, you can register your interest or start the full application at any time before then." },
   { _id: "faqEntry-f11", _type: "faqEntry", category: "Admissions", order: 5, question: "What's the difference between registering interest and applying?", answer: "Registering interest is a short, no-obligation form so we can keep you updated as places open. Applying is the full multi-step application, including your child's year group, and starts the formal admissions process." },
-  { _id: "faqEntry-f12", _type: "faqEntry", category: "Admissions", order: 6, question: "What happens after I submit my application?", answer: "We confirm receipt, arrange an entry assessment where relevant, and follow up with next steps. Places are offered subject to assessment and availability, and confirmed once the one-time registration fee is paid." },
+  { _id: "faqEntry-f12", _type: "faqEntry", category: "Admissions", order: 6, question: "What happens after I submit my application?", answer: "We confirm receipt, arrange an entry assessment where relevant, and follow up with next steps. Places are offered subject to assessment and availability, and confirmed once you accept within five working days and pay your first fee payment." },
   { _id: "faqEntry-f13", _type: "faqEntry", category: "Admissions", order: 7, question: "Can my family apply from outside the UK?", answer: "Yes. Tarbiyyah Global Academy is an online school for families anywhere in the world, bringing the same ethos and standard of care as our established UK schools to wherever home is." },
 
   { _id: "faqEntry-f14", _type: "faqEntry", category: "Fees", order: 3, question: "What does the published fee include, and what's billed separately?", answer: "The published fee covers tuition for the relevant year group band. GCSE exam entry fees (Year 10–11) are billed separately by the exam centre and are not included in tuition fees." },

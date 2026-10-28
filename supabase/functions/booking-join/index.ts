@@ -80,7 +80,7 @@ Deno.serve(async (req) => {
 
   const meetingId = `booking-${booking.id}`;
   const { moderatorPassword, attendeePassword } = await derivePasswords(meetingId);
-  const meetingName = `Admissions call with ${booking.staff_members?.display_name || "Tarbiyyah Global Academy"}`;
+  const meetingName = "Admissions call | Tarbiyyah Global Academy";
 
   const ensured = await ensureMeeting({ meetingId, meetingName, moderatorPassword, attendeePassword, recordingEnabled: false });
   if (!ensured.ok) return jsonResponse({ ok: false, error: "bbb_create_failed", detail: ensured.detail }, 502);

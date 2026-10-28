@@ -16,7 +16,7 @@ const MAX_CHILDREN = 6;
 /**
  * Pure client-side family fee estimate. Nothing here is submitted anywhere.
  * Every figure comes from props: band annual fees (fee_bands), and the fee
- * settings in site_settings (application / registration fee, annual payment
+ * settings in site_settings (application fee, annual payment
  * discount, sibling discount, the admin discount catalogue). The maths lives
  * in estimateFamilyFees (src/lib/fees.ts): per-child annual fees, discounts
  * off the annual total, then the total is split into terms / monthly payments
@@ -29,7 +29,6 @@ export function FeeEstimator({
   discounts = [],
   annualDiscountPercent = FEE_POLICY_DEFAULTS.annualDiscountPercent,
   applicationFee = FEE_POLICY_DEFAULTS.applicationFee,
-  registrationFee = FEE_POLICY_DEFAULTS.registrationFee,
   initialBandId,
   compact = false,
 }: {
@@ -41,8 +40,6 @@ export function FeeEstimator({
   annualDiscountPercent?: number;
   /** site_settings.application_fee, charged per child applying. */
   applicationFee?: number;
-  /** site_settings.registration_fee, charged per child on acceptance. */
-  registrationFee?: number;
   initialBandId?: string;
   compact?: boolean;
 }) {
@@ -81,9 +78,8 @@ export function FeeEstimator({
       siblingDiscountPercent: hasSiblingDiscount ? siblingDiscountPercent : undefined,
       extraDiscounts: extra,
       applicationFee,
-      registrationFee,
     });
-  }, [children, schedule, plan, annualDiscountPercent, hasSiblingDiscount, siblingDiscountPercent, discounts, checkedDiscounts, applicationFee, registrationFee]);
+  }, [children, schedule, plan, annualDiscountPercent, hasSiblingDiscount, siblingDiscountPercent, discounts, checkedDiscounts, applicationFee]);
 
   if (!estimate || !schedule) return null;
 
@@ -207,12 +203,8 @@ export function FeeEstimator({
           <p className="font-semibold text-ink">What you pay to secure a place</p>
           <ul className="mt-1 space-y-1 text-ink/80">
             <li className="flex justify-between gap-3">
-              <span>Application and assessment fee{childCount > 1 ? ` (${childCount} × ${formatGBP(applicationFee)})` : ""}<span className="block text-xs text-ink/70">Non-refundable. Paid when you apply, or with your proof of payment if not yet paid.</span></span>
+              <span>Application and assessment fee{childCount > 1 ? ` (${childCount} × ${formatGBP(applicationFee)})` : ""}<span className="block text-xs text-ink/70">Non-refundable. We email the payment details after you apply, and it must be paid before a place is confirmed.</span></span>
               <span className="shrink-0">{formatGBP(estimate.applicationFeeTotal)}</span>
-            </li>
-            <li className="flex justify-between gap-3">
-              <span>Registration fee{childCount > 1 ? ` (${formatGBP(registrationFee)} + ${childCount - 1} × ${formatGBP(registrationFee / 2)} for each additional sibling)` : ""}<span className="block text-xs text-ink/70">One-off, due when you accept an offer.</span></span>
-              <span className="shrink-0">{formatGBP(estimate.registrationFeeTotal)}</span>
             </li>
             <li className="flex justify-between gap-3">
               <span>First {plan === "annual" ? "payment (the full year)" : plan === "termly" ? "of two payments" : "month"}</span>
@@ -223,7 +215,7 @@ export function FeeEstimator({
             <span className="font-semibold text-ink">Due when you accept an offer</span>
             <span className="font-serif text-lg font-bold text-ink">{formatGBP(estimate.dueOnAcceptance)}</span>
           </div>
-          <p className="mt-1 text-xs text-ink/70">Registration fee plus first payment{estimate.applicationFeeTotal > 0 ? `, plus the application fee (${formatGBP(estimate.applicationFeeTotal)}) if you have not already paid it` : ""}.</p>
+          <p className="mt-1 text-xs text-ink/70">Your first payment{estimate.applicationFeeTotal > 0 ? `, plus the application fee (${formatGBP(estimate.applicationFeeTotal)}) if you have not already paid it` : ""}.</p>
         </div>
       </div>
 

@@ -197,15 +197,14 @@ export const PROCESS_OWNER_LABELS: Record<ProcessOwner, string> = { you: "Your p
  * Fee figures come from site_settings (never hard-coded in copy).
  * Titles are in sentence case and every sentence ends with a full stop.
  */
-export function admissionsProcessSteps(fees: { applicationFee?: number; registrationFee?: number }): ProcessStep[] {
-  const app = money(fees.applicationFee, "the application fee");
-  const reg = money(fees.registrationFee, "the registration fee");
+export function admissionsProcessSteps(fees: { applicationFee?: number }): ProcessStep[] {
+  const app = money(fees.applicationFee, "£50");
   return [
     {
       title: "Apply",
       owner: "you",
       short: "Complete the online form and upload your documents.",
-      body: "Complete the online application form, including your child's home address, and upload a school report, photo ID for a parent or guardian, your child's passport or birth certificate, and proof of your child's home address. Applying for more than one child? Add them all in the same form.",
+      body: "Complete the online application form, including your child's home address, and upload photo ID for a parent or guardian, your child's passport or birth certificate, proof of your child's home address and, if you have one, a recent school report or homeschool progress record. Applying for more than one child? Add them all in the same form.",
     },
     {
       title: "We review your application",
@@ -228,8 +227,8 @@ export function admissionsProcessSteps(fees: { applicationFee?: number; registra
     {
       title: "Offer and securing your place",
       owner: "you",
-      short: `We email the offer. Accept within five working days and pay the ${reg} registration fee and first fee payment to secure your place.`,
-      body: `We email you a conditional offer with the terms and conditions. To accept, reply within five working days and pay the ${reg} registration fee (£125 for each additional sibling) and the ${app} application fee, if not already paid, sending proof of payment. The first tuition payment (the whole year, the first of two payments, or the first monthly payment) is due by Friday 8 January 2027; the rest follow the Fees Policy (28 March 2027 for the second of two payments; the 28th of each month from 28 January to 28 June 2027 for monthly). You can cancel within 14 days of accepting, as the Fees Policy explains.`,
+      short: "We email the offer. Accept within five working days and pay your first fee payment to secure your place.",
+      body: `We email you a conditional offer. To accept, reply within five working days and pay your first fee payment (the whole year, the first of two payments, or the first monthly payment) by Friday 8 January 2027, plus the application fee (${app}) if not already paid. You can cancel within 14 days of accepting, as the Fees Policy explains.`,
     },
     {
       title: "Welcome",
@@ -246,51 +245,80 @@ export const MAX_REPORT_FILES = 5;
 export const MAX_REPORT_BYTES = 10 * 1024 * 1024;
 export const DOCUMENTS_BUCKET = "admissions-documents";
 
-const MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
+// ── date of birth and year group ─────────────────────────────────────────
+
+export const MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"] as const;
 
 /**
- * Start year of the UK academic year (1 Sep to 31 Aug) the child is entering.
- * If "Preferred start" names a year (e.g. "January 2027", "Sept 2027") that is
- * used (a bare year means September of that year). Otherwise: applying Sep to
- * Dec means the current academic year (a start this term or in January); Jan to
- * Aug means the NEXT September.
+ * The academic year families are applying for, by its starting year: 2026
+ * means 2026/27 (1 September 2026 to 31 August 2027; the Academy opens in
+ * January 2027 part way through it). Change this one number for the next intake.
  */
-export function entryAcademicYear(preferredStart?: string | null, today: Date = new Date()): number {
-  const text = (preferredStart || "").toLowerCase();
-  const y = /\b(20\d{2})\b/.exec(text);
-  if (y) {
-    const year = Number(y[1]);
-    const mi = MONTHS.findIndex((m) => text.includes(m.slice(0, 3)));
-    const month = mi === -1 ? 8 : mi; // 0-based; default September
-    return month >= 8 ? year : year - 1;
-  }
-  // Sep-Dec: current academic year; Jan-Aug: next September. Both start in this calendar year.
-  return today.getFullYear();
+export const ENTRY_ACADEMIC_YEAR = 2026;
+
+/**
+ * "YYYY-MM-DD" for a real calendar date typed as day, month (1 to 12) and a
+ * four-digit year, or "" if any part is missing or the date does not exist
+ * (31 February, say). Built by hand, never with Date parsing, so the result
+ * never shifts with the browser's time zone or locale.
+ */
+export function isoFromDayMonthYear(day: string, month: string, year: string): string {
+  const d = Number(day.trim());
+  const m = Number(month.trim());
+  const y = year.trim();
+  if (!/^\d{1,2}$/.test(day.trim()) || !Number.isInteger(m) || m < 1 || m > 12 || !/^\d{4}$/.test(y)) return "";
+  const daysInMonth = new Date(Date.UTC(Number(y), m, 0)).getUTCDate();
+  if (d < 1 || d > daysInMonth) return "";
+  return `${y}-${String(m).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
 }
 
+/** "2018-03-14" as "14 March 2018" (British order, month by name). Empty if not a date. */
+export function formatDateLong(iso: string): string {
+  const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso);
+  if (!m) return "";
+  return `${Number(m[3])} ${MONTH_NAMES[Number(m[2]) - 1] ?? ""} ${m[1]}`.trim();
+}
+
+/** The earliest and latest dates of birth for Year 11 and Year 1 in the entry year. */
+export function yearGroupBirthRange(entryYear: number = ENTRY_ACADEMIC_YEAR): { oldest: string; youngest: string } {
+  // Year N in academic year E/E+1: born 1 Sep (E-5-N) to 31 Aug (E-4-N).
+  return { oldest: `${entryYear - 16}-09-01`, youngest: `${entryYear - 5}-08-31` };
+}
+
+export type YearGroupSuggestion =
+  | { kind: "ok"; yearGroup: string; entryYear: number }
+  | { kind: "too_young"; entryYear: number }
+  | { kind: "too_old"; entryYear: number };
+
 /**
- * Suggested year group from a date of birth (yyyy-mm-dd): the child's age on
- * 31 August of the entry year. Age 5 = Year 1 ... 15 = Year 11. The Academy
- * does not run Reception, so a four-year-old is too young (null).
- * Returns null when the date is invalid or outside Year 1 to Year 11.
+ * The English school year for a date of birth (yyyy-mm-dd), using the
+ * 1 September cut-off: a child is in Year N in academic year E/E+1 when born
+ * between 1 September (E-5-N) and 31 August (E-4-N). For 2026/27 that makes
+ * Year 1 born 1 Sep 2020 to 31 Aug 2021 and Year 11 born 1 Sep 2010 to
+ * 31 Aug 2011 (the same rule state schools in England use). Equivalently, the
+ * child's age on 31 August E, minus 4. The Academy teaches Year 1 to Year 11
+ * only, so anything outside that comes back as too_young or too_old.
+ * Returns null when the date is not valid.
  */
-export function suggestYearGroup(dob: string, preferredStart?: string | null, today: Date = new Date()): { yearGroup: string; entryYear: number; ageAtEntry: number } | null {
+export function suggestYearGroup(dob: string, entryYear: number = ENTRY_ACADEMIC_YEAR): YearGroupSuggestion | null {
   const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dob);
   if (!m) return null;
   const [by, bm] = [Number(m[1]), Number(m[2])];
-  if (by < 1990 || bm < 1 || bm > 12) return null;
-  const entryYear = entryAcademicYear(preferredStart, today);
-  // Born 1 Sep or later: one year younger on the 31 Aug cut-off.
-  const age = entryYear - by - (bm >= 9 ? 1 : 0);
-  if (age < 5 || age > 15) return null;
-  return { yearGroup: `Year ${age - 4}`, entryYear, ageAtEntry: age };
+  if (bm < 1 || bm > 12) return null;
+  // Born 1 September or later: one year younger on the 31 August cut-off.
+  const ageOn31Aug = entryYear - by - (bm >= 9 ? 1 : 0);
+  const year = ageOn31Aug - 4;
+  if (year < 1) return { kind: "too_young", entryYear };
+  if (year > 11) return { kind: "too_old", entryYear };
+  return { kind: "ok", yearGroup: `Year ${year}`, entryYear };
 }
 
 /** Why an application should not yet move to Accepted (empty = fine). */
-export function acceptanceBlockers(a: Pick<ApplicationRow, "admin_fee_received" | "deposit_received">): string[] {
+export function acceptanceBlockers(a: Pick<ApplicationRow, "deposit_received">): string[] {
+  // There is no registration fee: the first fee payment is the only condition of acceptance.
+  // (admin_fee_* columns are legacy and no longer checked.)
   const out: string[] = [];
-  if (!a.admin_fee_received) out.push("admin fee");
-  if (!a.deposit_received) out.push("deposit");
+  if (!a.deposit_received) out.push("first fee payment");
   return out;
 }
 

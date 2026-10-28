@@ -46,7 +46,6 @@ export type StagePatch = Partial<Omit<StageDetails, "application_id">>;
 
 export type AdmissionsSettings = {
   application_fee: number | null;
-  registration_fee: number | null;
   fee_terms: number | null;
   fee_instalments: number | null;
   annual_discount_percent: number | null;
@@ -60,7 +59,7 @@ export type AdmissionsSettings = {
 };
 
 export const SETTINGS_COLUMNS =
-  "application_fee, registration_fee, fee_terms, fee_instalments, annual_discount_percent, sibling_discount_percent, payment_instructions, assessment_join_url, interview_join_url, assessment_duration_text, admissions_email, contact_phone";
+  "application_fee, fee_terms, fee_instalments, annual_discount_percent, sibling_discount_percent, payment_instructions, assessment_join_url, interview_join_url, assessment_duration_text, admissions_email, contact_phone";
 
 export type FeeBandRow = { year_group_range: string; annual_fee: number };
 

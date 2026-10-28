@@ -16,12 +16,22 @@ import {
   YEAR_GROUP_OPTIONS,
   addressOneLine,
   admissionsProcessSteps,
+  ENTRY_ACADEMIC_YEAR,
+  MONTH_NAMES,
   documentExtension,
+  formatDateLong,
+  isoFromDayMonthYear,
   postcodeOptionalFor,
   suggestYearGroup,
+  yearGroupBirthRange,
   type DocumentKind,
+  type YearGroupSuggestion,
 } from "@/components/admissions/applicationShared";
 import { COUNTRIES } from "@/lib/countries";
+import { COUNTRY_ALIASES } from "@/components/admissions/countryCodes";
+import { Combobox, SelectBox } from "@/components/admissions/Combobox";
+import { AddressLookup } from "@/components/admissions/AddressLookup";
+import type { AddressFill, AddressSuggestion } from "@/components/admissions/addressLookup";
 import { bandForYearGroup } from "@/components/learn/admissions/paymentCalc";
 import type { FeeBand } from "@/content/seed";
 import { FEE_DEFAULTS, FEE_POLICY_DEFAULTS, estimateFamilyFees, type FamilyEstimate, type PaymentPlan } from "@/lib/fees";
@@ -43,7 +53,10 @@ type ChildForm = {
   key: string;
   firstName: string;
   lastName: string;
-  dob: string;
+  /** Date of birth typed British-style as day, month (1 to 12) and year; sent as ISO yyyy-mm-dd. */
+  dobDay: string;
+  dobMonth: string;
+  dobYear: string;
   gender: string;
   yearGroup: string;
   /** Once the family picks a year group themselves we stop overwriting it. */
@@ -62,7 +75,7 @@ type ChildForm = {
   docs: Record<ChildDocKind, File[]>;
 };
 type ChildTextKey =
-  | "firstName" | "lastName" | "dob" | "gender" | "yearGroup" | "currentSchool" | "currentSchoolYear" | "islamicEducation" | "sendNotes"
+  | "firstName" | "lastName" | "dobDay" | "dobMonth" | "dobYear" | "gender" | "yearGroup" | "currentSchool" | "currentSchoolYear" | "islamicEducation" | "sendNotes"
   | "guardianName" | "guardianRelationship" | "guardianEmail" | "guardianPhone" | "guardianAddress";
 
 /** Keys: a parent field ("parentName"), a document ("doc-parent_id"), or a child field ("c0-firstName", "c0-doc-child_id"). The element id is "f-" + key. */
@@ -83,26 +96,48 @@ const INITIAL: Values = {
 function blankChild(key: string): ChildForm {
   return {
     key,
-    firstName: "", lastName: "", dob: "", gender: "", yearGroup: "", yearTouched: false,
+    firstName: "", lastName: "", dobDay: "", dobMonth: "", dobYear: "", gender: "", yearGroup: "", yearTouched: false,
     currentSchool: "", currentSchoolYear: "", islamicEducation: "", sendNotes: "",
     otherGuardian: false, guardianName: "", guardianRelationship: "", guardianEmail: "", guardianPhone: "", guardianAddress: "",
     docs: { report: [], child_id: [], guardian_id: [] },
   };
 }
 
-const inputCls = "mt-1 w-full rounded-lg border border-gold-light/60 bg-white px-3 py-2 text-ink disabled:opacity-60 aria-[invalid=true]:border-red-600";
+const inputBase =
+  "w-full rounded-lg border border-gold-light/60 bg-white px-3 py-2 text-ink transition-shadow focus:border-gold-500 focus:outline-none focus:ring-2 focus:ring-gold-300/70 disabled:opacity-60 aria-[invalid=true]:border-red-600";
+const inputCls = `mt-1 ${inputBase}`;
+const secondaryButtonCls =
+  "w-full whitespace-nowrap rounded-lg border border-gold-500 bg-white px-4 py-2 text-sm font-semibold text-ink hover:bg-cream disabled:opacity-60 sm:w-auto";
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 // ── validation ───────────────────────────────────────────────────────────
 
-function dobError(dob: string): string | undefined {
-  if (!dob) return "Please enter the date of birth.";
-  const d = new Date(dob);
+/** The child's date of birth as ISO yyyy-mm-dd, or "" until it is a real date. */
+function kidDob(k: Pick<ChildForm, "dobDay" | "dobMonth" | "dobYear">): string {
+  return isoFromDayMonthYear(k.dobDay, k.dobMonth, k.dobYear);
+}
+
+const ENTRY_LABEL = `${ENTRY_ACADEMIC_YEAR}/${String((ENTRY_ACADEMIC_YEAR + 1) % 100).padStart(2, "0")}`;
+
+/** A polite explanation for a date of birth outside Year 1 to Year 11. */
+function outOfRangeNote(kind: Exclude<YearGroupSuggestion["kind"], "ok">): string {
+  const r = yearGroupBirthRange();
+  return `We teach Year 1 to Year 11. In ${ENTRY_LABEL} that means children born between ${formatDateLong(r.oldest)} and ${formatDateLong(r.youngest)}, and this date of birth would place your child ${kind === "too_young" ? "below Year 1" : "above Year 11"}. Please check the date, or contact us if you would like to talk it through.`;
+}
+
+function dobError(k: ChildForm): string | undefined {
+  const d = k.dobDay.trim();
+  const y = k.dobYear.trim();
+  if (!d && !k.dobMonth && !y) return "Please enter the date of birth.";
+  if (!d || !k.dobMonth || !y) return "Please enter the day, month and year of birth.";
+  if (!/^\d{4}$/.test(y)) return "Please enter the year in full, for example 2016.";
+  const iso = kidDob(k);
+  if (!iso) return "That date doesn't exist. Please check the day and month.";
   const now = new Date();
-  const oldest = new Date(now.getFullYear() - 19, now.getMonth(), now.getDate());
-  if (Number.isNaN(d.getTime())) return "That date doesn't look right. Please check it.";
-  if (d > now) return "The date of birth can't be in the future.";
-  if (d < oldest) return "That date of birth looks too long ago. Please check the year.";
+  const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+  if (iso > today) return "The date of birth can't be in the future.";
+  const s = suggestYearGroup(iso);
+  if (s && s.kind !== "ok") return outOfRangeNote(s.kind);
   return undefined;
 }
 
@@ -138,7 +173,7 @@ function validateStep(step: number, v: Values, kids: ChildForm[], parentIds: Fil
       const p = `c${i}-`;
       put(`${p}firstName`, k.firstName.trim() ? undefined : "Please enter your child's first name.");
       put(`${p}lastName`, k.lastName.trim() ? undefined : "Please enter your child's last name.");
-      put(`${p}dob`, dobError(k.dob));
+      put(`${p}dob`, dobError(k));
       put(`${p}gender`, k.gender === "Male" || k.gender === "Female" ? undefined : "Please choose Male or Female.");
       put(`${p}yearGroup`, k.yearGroup ? undefined : "Please choose the year group you are applying for.");
       put(`${p}doc-child_id`, k.docs.child_id.length === 0 ? "Please upload your child's passport or birth certificate." : undefined);
@@ -190,12 +225,19 @@ function Field({ id, label, optional, error, hint, children }: { id: string; lab
   );
 }
 
-function Section({ title, intro, children }: { title: string; intro?: string; children: ReactNode }) {
+/**
+ * A card for one group of fields. The legend is floated so the browser draws
+ * it inside the card (a plain <legend> straddles the top border), keeping the
+ * fieldset grouping for screen readers.
+ */
+function Section({ title, intro, children }: { title: string; intro?: ReactNode; children: ReactNode }) {
   return (
-    <fieldset className="rounded-2xl border border-gold-light/50 bg-white p-6 sm:p-8">
-      <legend className="px-2 font-serif text-xl font-semibold text-ink">{title}</legend>
-      {intro && <p className="mb-4 text-sm text-ink/70">{intro}</p>}
-      <div className="grid gap-4 sm:grid-cols-2">{children}</div>
+    <fieldset className="min-w-0 rounded-2xl border border-gold-light/50 bg-white p-6 sm:p-8">
+      <legend className="float-left mb-1 w-full p-0 font-serif text-xl font-semibold text-ink">{title}</legend>
+      <div className="clear-left">
+        {intro && <p className="mb-5 text-sm text-ink/70">{intro}</p>}
+        <div className={`grid gap-4 sm:grid-cols-2 ${intro ? "" : "mt-4"}`}>{children}</div>
+      </div>
     </fieldset>
   );
 }
@@ -237,6 +279,90 @@ function DocPicker({
         </ul>
       )}
     </div>
+  );
+}
+
+/**
+ * Date of birth as Day / Month (named) / Year, so it always reads the British
+ * way round whatever the browser's locale (type="date" shows mm/dd/yyyy on a
+ * US-locale browser). The day box carries the f-c{i}-dob id so error links and
+ * "focus the first problem" land on it.
+ */
+function DobInput({
+  i, kid, error, disabled, onChange,
+}: {
+  i: number;
+  kid: ChildForm;
+  error?: string;
+  disabled: boolean;
+  onChange: (key: "dobDay" | "dobMonth" | "dobYear", value: string) => void;
+}) {
+  const base = `f-c${i}-dob`;
+  const describedBy = `h-${base}${error ? ` e-${base}` : ""}`;
+  const invalid = error ? true : undefined;
+  return (
+    <fieldset className="min-w-0">
+      <legend className="block p-0 text-sm font-medium text-ink">Date of birth</legend>
+      <p id={`h-${base}`} className="text-xs text-ink/70">Day, month and year, for example 27 March 2016.</p>
+      <div className="mt-1 flex gap-2">
+        <div className="w-16 shrink-0">
+          <label htmlFor={base} className="block text-xs text-ink/70">Day</label>
+          <input
+            id={base}
+            name={`c${i}-dobDay`}
+            type="text"
+            inputMode="numeric"
+            autoComplete="off"
+            maxLength={2}
+            placeholder="DD"
+            value={kid.dobDay}
+            disabled={disabled}
+            aria-invalid={invalid}
+            aria-describedby={describedBy}
+            onChange={(e) => onChange("dobDay", e.target.value.replace(/\D/g, ""))}
+            className={`mt-1 ${inputBase} text-center`}
+          />
+        </div>
+        <div className="min-w-0 flex-1">
+          <label htmlFor={`${base}-month`} className="block text-xs text-ink/70">Month</label>
+          <SelectBox
+            id={`${base}-month`}
+            name={`c${i}-dobMonth`}
+            autoComplete="off"
+            value={kid.dobMonth}
+            disabled={disabled}
+            aria-invalid={invalid}
+            aria-describedby={describedBy}
+            onChange={(e) => onChange("dobMonth", e.target.value)}
+            className={inputBase}
+          >
+            <option value="">Month</option>
+            {MONTH_NAMES.map((m, mi) => (
+              <option key={m} value={String(mi + 1)}>{m}</option>
+            ))}
+          </SelectBox>
+        </div>
+        <div className="w-24 shrink-0">
+          <label htmlFor={`${base}-year`} className="block text-xs text-ink/70">Year</label>
+          <input
+            id={`${base}-year`}
+            name={`c${i}-dobYear`}
+            type="text"
+            inputMode="numeric"
+            autoComplete="off"
+            maxLength={4}
+            placeholder="YYYY"
+            value={kid.dobYear}
+            disabled={disabled}
+            aria-invalid={invalid}
+            aria-describedby={describedBy}
+            onChange={(e) => onChange("dobYear", e.target.value.replace(/\D/g, ""))}
+            className={`mt-1 ${inputBase} text-center`}
+          />
+        </div>
+      </div>
+      {error && <p id={`e-${base}`} role="alert" className="mt-1 text-sm text-red-700">{error}</p>}
+    </fieldset>
   );
 }
 
@@ -316,10 +442,6 @@ function FeeSummary({
           <dt>Application fee, if you proceed</dt>
           <dd>{formatGBP(estimate.applicationFeeTotal)}{many ? ` (${kids.length} children)` : ""}</dd>
         </div>
-        <div className="flex justify-between gap-4 text-ink/80">
-          <dt>Registration fee, if we offer a place</dt>
-          <dd>{formatGBP(estimate.registrationFeeTotal)}{many ? ` (${kids.length} children)` : ""}</dd>
-        </div>
       </dl>
     </div>
   );
@@ -330,7 +452,6 @@ function FeeSummary({
 export function ApplyForm({
   admissionsEmail,
   applicationFee,
-  registrationFee,
   feeBands = [],
   siblingDiscountPercent,
   siblingDiscountNote,
@@ -340,7 +461,6 @@ export function ApplyForm({
 }: {
   admissionsEmail: string;
   applicationFee?: number;
-  registrationFee?: number;
   feeBands?: FeeBand[];
   siblingDiscountPercent?: number;
   siblingDiscountNote?: string;
@@ -358,6 +478,8 @@ export function ApplyForm({
   const [step, setStep] = useState(0);
   const [failedUploads, setFailedUploads] = useState<string[]>([]);
   const [submitted, setSubmitted] = useState<{ names: string[]; email: string } | null>(null);
+  /** The family chose to type the address rather than look it up. */
+  const [manualAddress, setManualAddress] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
@@ -385,20 +507,29 @@ export function ApplyForm({
   function setText(k: ParentKey, val: string) {
     setValues((v) => ({ ...v, [k]: val }));
     clearError(k);
-    if (k === "preferredStart") {
-      // A new start date can change the suggested year group of children the family hasn't set themselves.
-      setKids((list) =>
-        list.map((c) => {
-          if (c.yearTouched) return c;
-          const sg = suggestYearGroup(c.dob, val);
-          return sg ? { ...c, yearGroup: sg.yearGroup } : c;
-        }),
-      );
-    }
   }
   function setBool(k: BoolKey, val: boolean) {
     setValues((v) => ({ ...v, [k]: val }));
     clearError(k);
+  }
+  /** An address chosen from the lookup: fill the fields (all still editable). */
+  function pickAddress(fill: AddressFill, kind: AddressSuggestion["kind"]) {
+    setValues((v) => ({
+      ...v,
+      addressLine1: fill.line1 || v.addressLine1,
+      addressLine2: fill.line2,
+      addressTown: fill.town || v.addressTown,
+      addressPostcode: fill.postcode || v.addressPostcode,
+    }));
+    setErrors((er) => ({ ...er, addressLine1: undefined, addressTown: undefined, addressPostcode: undefined }));
+    // A street without a house: put the cursor where the number goes.
+    if (kind === "street") {
+      requestAnimationFrame(() => {
+        const el = formRef.current?.querySelector<HTMLInputElement>("#f-addressLine1");
+        el?.focus();
+        el?.setSelectionRange(0, 0);
+      });
+    }
   }
   const props = (k: ParentKey) => ({
     id: `f-${k}`,
@@ -416,9 +547,10 @@ export function ApplyForm({
       list.map((k, j) => {
         if (j !== i) return k;
         const next = { ...k, ...patch };
-        if ("dob" in patch && !next.yearTouched) {
-          const sg = suggestYearGroup(next.dob, values.preferredStart);
-          if (sg) next.yearGroup = sg.yearGroup;
+        // Until the family chooses a year group themselves, keep it in step with the date of birth.
+        if (("dobDay" in patch || "dobMonth" in patch || "dobYear" in patch) && !next.yearTouched) {
+          const sg = suggestYearGroup(kidDob(next));
+          next.yearGroup = sg?.kind === "ok" ? sg.yearGroup : "";
         }
         return next;
       }),
@@ -426,7 +558,7 @@ export function ApplyForm({
   }
   function setKidText(i: number, k: ChildTextKey, val: string) {
     patchKid(i, k === "yearGroup" ? { yearGroup: val, yearTouched: true } : ({ [k]: val } as Partial<ChildForm>));
-    clearError(`c${i}-${k}`);
+    clearError(`c${i}-${k.startsWith("dob") ? "dob" : k}`);
   }
   const kidProps = (i: number, k: ChildTextKey) => ({
     id: `f-c${i}-${k}`,
@@ -489,7 +621,6 @@ export function ApplyForm({
     annualDiscountPercent: annualDiscountPercent ?? FEE_POLICY_DEFAULTS.annualDiscountPercent,
     siblingDiscountPercent: sibPct > 0 ? sibPct : undefined,
     applicationFee: applicationFee ?? FEE_POLICY_DEFAULTS.applicationFee,
-    registrationFee: registrationFee ?? FEE_POLICY_DEFAULTS.registrationFee,
   });
 
   // ── navigation and submit ──
@@ -588,7 +719,7 @@ export function ApplyForm({
         ...addressParts,
         child_first_name: k.firstName.trim(),
         child_last_name: k.lastName.trim(),
-        child_dob: k.dob,
+        child_dob: kidDob(k),
         child_gender: k.gender,
         year_group_applying: k.yearGroup,
         preferred_start: nullIfEmpty(values.preferredStart),
@@ -637,7 +768,7 @@ export function ApplyForm({
     for (let i = 0; i < kids.length; i++) {
       const k = kids[i];
       const who = k.firstName.trim() || `child ${i + 1}`;
-      await upload(appIds[i], "report", k.docs.report, `${who}'s school report`);
+      await upload(appIds[i], "report", k.docs.report, `${who}'s school report or progress record`);
       await upload(appIds[i], "child_id", k.docs.child_id, `${who}'s passport or birth certificate`);
       if (k.otherGuardian) await upload(appIds[i], "guardian_id", k.docs.guardian_id, `${who}'s guardian's ID`);
     }
@@ -677,13 +808,13 @@ export function ApplyForm({
   }
 
   if (phase === "success") {
-    const processSteps = admissionsProcessSteps({ applicationFee, registrationFee });
+    const processSteps = admissionsProcessSteps({ applicationFee });
     const names = submitted?.names ?? [];
     const uploadNote =
       failedUploads.length > 0
-        ? `Your application was sent, but we couldn't upload ${failedUploads.join(", ")}. Please email ${failedUploads.length > 1 ? "them" : "it"} to ${admissionsEmail}.`
+        ? `Your application was sent, but we couldn't upload ${failedUploads.join(", ")}. Our admissions team will contact you to arrange ${failedUploads.length > 1 ? "them" : "it"}.`
         : addressProofs.length === 0
-          ? `Thank you for uploading your documents. We will ask you for proof of ${names.length > 1 ? "your children's" : "your child's"} home address during the review, or you can email it to ${admissionsEmail}.`
+          ? `Thank you for uploading your documents. We will ask you for proof of ${names.length > 1 ? "your children's" : "your child's"} home address during the review.`
           : "Thank you for uploading your documents. We will tell you if we need anything else.";
     return (
       <div role="status" className="min-w-0 rounded-2xl border border-gold-light/50 bg-white p-6 sm:p-8">
@@ -701,7 +832,6 @@ export function ApplyForm({
           <p className="mt-6 break-words rounded-lg bg-cream px-3 py-2 text-sm text-ink/80">
             You told us you expect to pay <strong>{values.paymentPlan}</strong>
             {names.length > 1 ? ` for ${names.length} children` : ""}. You can still change this before you accept an offer.
-            {registrationFee != null && ` The registration fee is ${formatGBP(registrationFee)}${names.length > 1 ? `, and ${formatGBP(registrationFee / 2)} for each additional sibling` : ""}.`}
             {names.length > 1 && estimate.totalDiscount > 0 && chosenPlan && ` Estimated tuition for the family, after discounts: ${formatGBP(estimate.total)}.`}
           </p>
         )}
@@ -765,14 +895,44 @@ export function ApplyForm({
           >
             <div className="sm:col-span-2">
               <Field id="f-addressCountry" label="Country" error={errors.addressCountry}>
-                <input {...props("addressCountry")} type="text" list="apply-countries" autoComplete="country-name" maxLength={80} className={inputCls} />
-                <datalist id="apply-countries">
-                  {COUNTRIES.map((c) => (
-                    <option key={c} value={c} />
-                  ))}
-                </datalist>
+                <Combobox
+                  id="f-addressCountry"
+                  name="addressCountry"
+                  value={values.addressCountry}
+                  onChange={(v) => setText("addressCountry", v)}
+                  options={COUNTRIES}
+                  aliases={COUNTRY_ALIASES}
+                  listLabel="Countries"
+                  placeholder="Start typing, for example United Kingdom"
+                  autoComplete="country-name"
+                  maxLength={80}
+                  disabled={busy}
+                  invalid={!!errors.addressCountry}
+                  describedBy={errors.addressCountry ? "e-f-addressCountry" : undefined}
+                  inputClassName={inputBase}
+                />
               </Field>
             </div>
+            <AddressLookup
+              key={values.addressCountry.trim().toLowerCase()}
+              country={values.addressCountry}
+              postcode={values.addressPostcode}
+              onPostcodeChange={(v) => setText("addressPostcode", v)}
+              line1={values.addressLine1}
+              onPick={pickAddress}
+              manual={manualAddress}
+              onManualChange={setManualAddress}
+              optional={postcodeOptionalFor(values.addressCountry)}
+              hint={
+                postcodeOptionalFor(values.addressCountry)
+                  ? `There is usually no postcode in ${values.addressCountry.trim()}, so you can leave this blank.`
+                  : "If there is no postcode where you live, type \"None\"."
+              }
+              error={errors.addressPostcode}
+              disabled={busy}
+              inputClassName={inputBase}
+              buttonClassName={secondaryButtonCls}
+            />
             <div className="sm:col-span-2">
               <Field id="f-addressLine1" label="Address line 1" error={errors.addressLine1}>
                 <input {...props("addressLine1")} type="text" autoComplete="address-line1" maxLength={120} className={inputCls} />
@@ -786,24 +946,6 @@ export function ApplyForm({
             <Field id="f-addressTown" label="Town or city" error={errors.addressTown}>
               <input {...props("addressTown")} type="text" autoComplete="address-level2" maxLength={80} className={inputCls} />
             </Field>
-            {(() => {
-              const optional = postcodeOptionalFor(values.addressCountry);
-              const hint = optional
-                ? `There is usually no postcode in ${values.addressCountry.trim()}, so you can leave this blank.`
-                : "If there is no postcode where you live, type \"None\".";
-              return (
-                <Field id="f-addressPostcode" label="Postcode or ZIP code" optional={optional} hint={hint} error={errors.addressPostcode}>
-                  <input
-                    {...props("addressPostcode")}
-                    type="text"
-                    autoComplete="postal-code"
-                    maxLength={20}
-                    aria-describedby={errors.addressPostcode ? "e-f-addressPostcode" : "h-f-addressPostcode"}
-                    className={inputCls}
-                  />
-                </Field>
-              );
-            })()}
           </Section>
 
           <Section
@@ -828,7 +970,7 @@ export function ApplyForm({
                 id="f-doc-address_proof"
                 label={kids.length > 1 ? "Proof of your children's home address" : "Proof of your child's home address"}
                 optional
-                hint={`A recent utility bill, council tax bill, bank statement or tenancy agreement showing the address above, dated in the last three months. PDF, JPG or PNG, up to ${MAX_ID_FILES} files, 10 MB each. If you don't have it to hand, we will ask for it during the review, or you can email it to ${admissionsEmail}.`}
+                hint={`A recent utility bill, council tax bill, bank statement or tenancy agreement showing the address above, dated in the last three months. PDF, JPG or PNG, up to ${MAX_ID_FILES} files, 10 MB each. If you don't have it to hand, we will ask for it during the review.`}
                 files={addressProofs}
                 limit={MAX_ID_FILES}
                 error={errors["doc-address_proof"]}
@@ -847,18 +989,23 @@ export function ApplyForm({
             Add a card for each child. Each child becomes their own application, and we link them as one family. Your details, home address, photo ID and proof of address are shared, so you do not repeat them.
           </p>
           {kids.map((k, i) => (
-            <fieldset key={k.key} className="rounded-2xl border border-gold-light/50 bg-white p-6 sm:p-8">
-              <legend className="px-2 font-serif text-xl font-semibold text-ink">{kids.length > 1 ? `Child ${i + 1}${k.firstName.trim() ? `: ${k.firstName.trim()}` : ""}` : "Your child"}</legend>
-              <div className="grid gap-4 sm:grid-cols-2">
+            <fieldset key={k.key} className="min-w-0 rounded-2xl border border-gold-light/50 bg-white p-6 sm:p-8">
+              {/* Floated so the heading sits inside the card, like the other sections. */}
+              <legend className="float-left mb-1 w-full p-0 font-serif text-xl font-semibold text-ink">{kids.length > 1 ? `Child ${i + 1}${k.firstName.trim() ? `: ${k.firstName.trim()}` : ""}` : "Your child"}</legend>
+              <div className="clear-left mt-4 grid gap-4 sm:grid-cols-2">
                 <Field id={`f-c${i}-firstName`} label="First name" error={errors[`c${i}-firstName`]}>
                   <input {...kidProps(i, "firstName")} type="text" autoComplete="off" maxLength={80} className={inputCls} />
                 </Field>
                 <Field id={`f-c${i}-lastName`} label="Last name" error={errors[`c${i}-lastName`]}>
                   <input {...kidProps(i, "lastName")} type="text" autoComplete="off" maxLength={80} className={inputCls} />
                 </Field>
-                <Field id={`f-c${i}-dob`} label="Date of birth" error={errors[`c${i}-dob`]}>
-                  <input {...kidProps(i, "dob")} type="date" className={inputCls} />
-                </Field>
+                <DobInput
+                  i={i}
+                  kid={k}
+                  error={errors[`c${i}-dob`]}
+                  disabled={busy}
+                  onChange={(key, val) => setKidText(i, key, val)}
+                />
                 <div role="radiogroup" aria-labelledby={`l-c${i}-gender`} aria-describedby={errors[`c${i}-gender`] ? `e-f-c${i}-gender` : undefined}>
                   <p id={`l-c${i}-gender`} className="block text-sm font-medium text-ink">Gender</p>
                   <div className="mt-2 flex gap-6">
@@ -879,29 +1026,47 @@ export function ApplyForm({
                   </div>
                   {errors[`c${i}-gender`] && <p id={`e-f-c${i}-gender`} role="alert" className="mt-1 text-sm text-red-700">{errors[`c${i}-gender`]}</p>}
                 </div>
-                <Field id={`f-c${i}-yearGroup`} label="Year group applying for" error={errors[`c${i}-yearGroup`]}>
-                  <select {...kidProps(i, "yearGroup")} className={inputCls}>
-                    <option value="">Select a year group</option>
-                    {YEAR_GROUP_OPTIONS.map((y) => (
-                      <option key={y.value} value={y.value}>{y.label}</option>
-                    ))}
-                  </select>
-                </Field>
                 {(() => {
-                  const suggestion = suggestYearGroup(k.dob, values.preferredStart);
-                  if (!suggestion) return null;
+                  const dob = kidDob(k);
+                  const suggestion = dob ? suggestYearGroup(dob) : null;
+                  const errId = errors[`c${i}-yearGroup`] ? `e-f-c${i}-yearGroup` : "";
+                  const noteId = suggestion ? `n-f-c${i}-yearGroup` : "";
                   return (
-                    <p role="status" className="rounded-lg bg-cream px-3 py-2 text-sm text-ink sm:col-span-2">
-                      Suggested year group: <strong className="text-base">{suggestion.yearGroup}</strong>{" "}
-                      <span className="text-ink/70">(age {suggestion.ageAtEntry} on 31 August {suggestion.entryYear}).</span>{" "}
-                      {k.yearGroup !== suggestion.yearGroup ? (
-                        <button type="button" onClick={() => patchKid(i, { yearGroup: suggestion.yearGroup, yearTouched: false })} className="font-semibold text-gold-700 underline">
-                          Use this
-                        </button>
-                      ) : (
-                        <span className="text-ink/70">You can change it above if it isn&apos;t right.</span>
+                    <>
+                      <Field id={`f-c${i}-yearGroup`} label={`Year group applying for (${ENTRY_LABEL})`} error={errors[`c${i}-yearGroup`]}>
+                        <SelectBox {...kidProps(i, "yearGroup")} aria-describedby={[noteId, errId].filter(Boolean).join(" ") || undefined} className={inputBase}>
+                          <option value="">Select a year group</option>
+                          {YEAR_GROUP_OPTIONS.map((y) => (
+                            <option key={y.value} value={y.value}>{y.label}</option>
+                          ))}
+                        </SelectBox>
+                        {suggestion?.kind === "ok" && (
+                          <p id={noteId} role="status" className="mt-1.5 text-xs text-ink/75">
+                            Suggested from date of birth: <strong className="font-semibold text-ink">{suggestion.yearGroup}</strong>.{" "}
+                            {k.yearGroup === suggestion.yearGroup ? (
+                              "You can change this."
+                            ) : (
+                              <button
+                                type="button"
+                                disabled={busy}
+                                onClick={() => {
+                                  patchKid(i, { yearGroup: suggestion.yearGroup, yearTouched: false });
+                                  clearError(`c${i}-yearGroup`);
+                                }}
+                                className="font-semibold text-gold-700 underline"
+                              >
+                                Use {suggestion.yearGroup}
+                              </button>
+                            )}
+                          </p>
+                        )}
+                      </Field>
+                      {suggestion && suggestion.kind !== "ok" && !errors[`c${i}-dob`] && (
+                        <p id={noteId} role="status" className="rounded-lg bg-cream px-3 py-2 text-sm text-ink sm:col-span-2">
+                          {outOfRangeNote(suggestion.kind)}
+                        </p>
                       )}
-                    </p>
+                    </>
                   );
                 })()}
                 <Field id={`f-c${i}-currentSchool`} label="Current school" optional>
@@ -924,9 +1089,9 @@ export function ApplyForm({
                 <div className="sm:col-span-2">
                   <DocPicker
                     id={`f-c${i}-doc-report`}
-                    label="Latest school report(s)"
+                    label="Latest school report or homeschool progress record (if you have one)"
                     optional
-                    hint={`PDF, JPG or PNG, up to ${MAX_REPORT_FILES} files, 10 MB each. You can also email them to ${admissionsEmail}.`}
+                    hint={`If your child is home educated, a recent progress record, tutor report or summary of their learning is ideal. PDF, JPG or PNG, up to ${MAX_REPORT_FILES} files, 10 MB each.`}
                     files={k.docs.report}
                     limit={MAX_REPORT_FILES}
                     error={errors[`c${i}-doc-report`]}
@@ -1035,12 +1200,12 @@ export function ApplyForm({
           <Section title="Fees and plan" intro={`Here is what ${childLabel} would cost, with any sibling discount already applied.`}>
             <FeeSummary estimate={estimate} kids={kids} plan={chosenPlan} siblingPercent={sibPct} siblingNote={siblingDiscountNote} terms={terms} instalments={instalments} />
             <Field id="f-paymentPlan" label="Payment plan you expect to use" error={errors.paymentPlan} hint="Annual, 2 payments or monthly. This is only your intention; you confirm it when you accept an offer.">
-              <select {...props("paymentPlan")} className={inputCls}>
+              <SelectBox {...props("paymentPlan")} aria-describedby={errors.paymentPlan ? "e-f-paymentPlan" : "h-f-paymentPlan"} className={inputBase}>
                 <option value="">Select a plan</option>
                 {PAYMENT_PLAN_OPTIONS.map((p) => (
                   <option key={p.value} value={p.value}>{p.label}</option>
                 ))}
-              </select>
+              </SelectBox>
             </Field>
             <div className="sm:col-span-2">
               <label className="flex items-start gap-2 text-sm text-ink/80">

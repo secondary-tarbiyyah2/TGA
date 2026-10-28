@@ -28,7 +28,6 @@ export type PlanOption = { id: PlanId; label: string; firstPayment: number; deta
 export type FeeSummary = {
   applicationFee: number;
   applicationFeeReceived: boolean;
-  registrationFee: number;
   annualFee: number | null;
   /** First-payment options; empty when no annual fee can be determined. */
   plans: PlanOption[];
@@ -37,7 +36,7 @@ export type FeeSummary = {
   /** The plan used for "amount due" (staff-chosen, else the family's stated intent, else null). */
   activePlan: PlanId | null;
   activeFirstPayment: number | null;
-  /** application fee (if unpaid) + registration fee + first payment of the active plan; null if no plan. */
+  /** application fee (if unpaid) + first payment of the active plan; null if no plan. (There is no registration fee.) */
   dueNowTotal: number | null;
   /** The same, but using the minimum first payment (monthly) when no plan is chosen. */
   dueNowMinimum: number | null;
@@ -48,7 +47,6 @@ const r2 = (n: number) => Math.round(n * 100) / 100;
 
 export function summariseFees(args: {
   yearGroup: string;
-  adminFeeAmount: number | null;
   settings: AdmissionsSettings | null;
   bands: FeeBandRow[];
   details: StageDetails | null;
@@ -56,7 +54,6 @@ export function summariseFees(args: {
 }): FeeSummary {
   const { settings, details } = args;
   const applicationFee = details?.application_fee_amount ?? settings?.application_fee ?? FEE_POLICY_DEFAULTS.applicationFee;
-  const registrationFee = args.adminFeeAmount ?? settings?.registration_fee ?? FEE_POLICY_DEFAULTS.registrationFee;
   const applicationFeeReceived = Boolean(details?.application_fee_received);
   const annualFee = details?.annual_fee_override ?? bandForYearGroup(args.yearGroup, args.bands)?.annual_fee ?? null;
 
@@ -88,13 +85,12 @@ export function summariseFees(args: {
   const activePlan = details?.chosen_plan ?? intent;
   const planAmount = (id: PlanId | null) => plans.find((p) => p.id === id)?.firstPayment ?? null;
   const activeFirstPayment = details?.first_payment_override ?? planAmount(activePlan);
-  const base = (applicationFeeReceived ? 0 : applicationFee) + registrationFee;
+  const base = applicationFeeReceived ? 0 : applicationFee;
   const minFirst = details?.first_payment_override ?? planAmount("monthly");
 
   return {
     applicationFee,
     applicationFeeReceived,
-    registrationFee,
     annualFee,
     plans,
     minFirstPayment: minFirst,

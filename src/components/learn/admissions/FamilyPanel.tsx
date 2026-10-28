@@ -45,7 +45,6 @@ export function FamilyPanel({
     annualDiscountPercent: settings?.annual_discount_percent ?? FEE_POLICY_DEFAULTS.annualDiscountPercent,
     siblingDiscountPercent: sibPct > 0 ? sibPct : undefined,
     applicationFee: ctx.fees.applicationFee,
-    registrationFee: ctx.fees.registrationFee,
   });
   const myIndex = family.findIndex((f) => f.id === app.id);
   const mine = estimate.perChild[myIndex];

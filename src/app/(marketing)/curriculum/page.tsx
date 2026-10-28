@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
+import Link from "next/link";
 import { CtaBand } from "@/components/CtaBand";
-import { AdmissionsStrip } from "@/components/AdmissionsStrip";
 import { getCurriculumContent, getKeyStages } from "@/lib/content";
-import { CurriculumSampleWeek } from "@/components/CurriculumSampleWeek";
+import { SCHOOL_WEEK_NOTE, lessonsAWeek } from "@/content/curriculum";
 
 export const metadata: Metadata = pageMetadata({
   title: "Curriculum",
@@ -72,7 +72,37 @@ export default async function CurriculumPage() {
         </Container>
       </section>
 
+      {/* One card per key stage: the figures come from src/content/curriculum.ts
+          (or the key_stage_pages rows), and each card opens the full subject
+          list and lessons-a-week table for that stage. */}
       <section className="geo-texture bg-cream section-pad">
+        <Container>
+          <Kicker>By key stage</Kicker>
+          <h2 className="text-h2 font-serif font-semibold text-ink">Subjects and live lessons a week.</h2>
+          <ul className="mt-8 grid gap-5 sm:grid-cols-2">
+            {keyStages.map((ks) => (
+              <li key={ks.slug}>
+                <Link href={`/curriculum/${ks.slug}`} className="group flex h-full flex-col rounded-2xl border border-gold-light/50 bg-white p-6 shadow-sm transition hover:border-gold-500 hover:shadow-md">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-gold-700">{ks.title}</p>
+                  <h3 className="mt-1 font-serif text-xl font-semibold text-ink">{ks.range}</h3>
+                  <p className="mt-2 flex-1 text-sm text-ink/75">
+                    {lessonsAWeek(ks)}
+                  </p>
+                  <span className="mt-4 text-sm font-semibold text-gold-700 group-hover:underline">Subjects and timetable<span aria-hidden="true"> →</span></span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6 max-w-3xl text-sm text-ink/70">{SCHOOL_WEEK_NOTE}</p>
+          <p className="mt-3 max-w-3xl text-sm text-ink/70">
+            See your child&apos;s week in your own time zone with{" "}
+            <Link href="/eligibility" className="font-semibold text-gold-700 underline">Your child&apos;s week</Link>, and how we support wellbeing and additional needs on{" "}
+            <Link href="/pastoral-care" className="font-semibold text-gold-700 underline">Pastoral care &amp; SEND</Link>.
+          </p>
+        </Container>
+      </section>
+
+      <section className="section-pad">
         <Container>
           <Kicker>International GCSE</Kicker>
           <h2 className="text-h2 font-serif font-semibold text-ink">Recognised qualifications, sat as private candidates.</h2>
@@ -104,35 +134,7 @@ export default async function CurriculumPage() {
         </Container>
       </section>
 
-      <section className="section-pad">
-        <Container>
-          <Kicker>By key stage</Kicker>
-          <h2 className="text-h2 font-serif font-semibold text-ink">Subjects and live lessons a week.</h2>
-        </Container>
-        <Container className="mt-8 grid gap-6 sm:grid-cols-2">
-          {keyStages.map((ks) => (
-            <a key={ks.slug} href={`/curriculum/${ks.slug}`} className="rounded-2xl border border-gold-light/50 bg-white p-6 shadow-sm transition hover:border-gold-500 hover:shadow-md">
-              <p className="text-xs font-semibold uppercase tracking-wide text-gold-700">{ks.title}</p>
-              <h3 className="mt-1 font-serif text-xl font-semibold text-ink">{ks.range}</h3>
-              <p className="mt-3 text-sm text-ink/70">{ks.subjects.slice(0, 4).join(" · ")}…</p>
-              <span className="mt-4 inline-block text-sm font-semibold text-gold-700">View timetable →</span>
-            </a>
-          ))}
-        </Container>
-      </section>
-
-      <section className="geo-texture bg-cream section-pad">
-        <Container>
-          <Kicker>Sample weekly timetable</Kicker>
-          <h2 className="text-h2 font-serif font-semibold text-ink">See how a typical week looks.</h2>
-          <div className="mt-8 max-w-xl">
-            <CurriculumSampleWeek stages={keyStages} />
-          </div>
-        </Container>
-      </section>
-
-      <AdmissionsStrip />
-      <CtaBand heading="Ready to apply?" body="Start your child's application today." />
+      <CtaBand heading="Ready to apply?" body="See how admissions works, from the online form to your child's first live lesson." ctaLabel="How to apply" />
     </>
   );
 }

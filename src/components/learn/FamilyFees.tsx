@@ -72,7 +72,6 @@ export function FamilyFees({ familyChildren }: { familyChildren: Child[] }) {
         annualDiscountPercent: 0,
         siblingDiscountPercent,
         applicationFee: 0,
-        registrationFee: 0,
       }).perChild
     : null;
 

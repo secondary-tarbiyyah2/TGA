@@ -23,18 +23,16 @@ export const FEE_DEFAULTS: FeeSettings = { terms: 2, instalments: 7 };
 export const INSTALMENT_CHOICES = [7, 8, 10, 12] as const;
 
 export const DEFAULT_PAYMENT_SCHEDULE_TEXT =
-  "The two payments are due on Friday 8 January 2027 and Sunday 28 March 2027. The first monthly payment is due on 8 January 2027, then payments are taken on the 28th of each month from 28 January to 28 June 2027. The registration fee is due on acceptance and no later than 8 January 2027.";
+  "The two payments are due on Friday 8 January 2027 and Sunday 28 March 2027. The first monthly payment is due on 8 January 2027, then payments are taken on the 28th of each month from 28 January to 28 June 2027. The first payment is due on acceptance and no later than 8 January 2027.";
 
 /** Non-schedule fee defaults from the Fees Policy PDF (all editable in the admin Fees editor). */
 export const FEE_POLICY_DEFAULTS = {
+  /** Application fee per child (the only admissions fee; there is no registration fee). */
   applicationFee: 50,
-  registrationFee: 250,
   /** % off the annual total when the annual option is paid in full by the due date (8 Jan 2027). */
   annualDiscountPercent: 2,
   /** Sibling discount for the third and later children (Prospectus p.18 / Fees Policy: 5% second child, 10% third and later). */
   siblingDiscountLaterPercent: 10,
-  /** Registration fee for each additional sibling, as a share of the full fee (Prospectus p.18: £125 of £250). */
-  siblingRegistrationShare: 0.5,
   paymentScheduleText: DEFAULT_PAYMENT_SCHEDULE_TEXT,
 } as const;
 
@@ -160,20 +158,19 @@ export function describePlan(amounts: number[], unit: "term" | "month"): { headl
   return { headline, detail, total };
 }
 
-/** Replace {{applicationFee}}, {{registrationFee}}, {{terms}}, {{instalments}}, {{annualDiscount}} tokens in editable copy (e.g. FAQ answers). */
+/** Replace {{applicationFee}}, {{terms}}, {{instalments}}, {{annualDiscount}} tokens in editable copy (e.g. FAQ answers). */
 export function applyFeeTokens(
   text: string,
-  v: { applicationFee?: number; registrationFee?: number; terms?: number; instalments?: number; annualDiscountPercent?: number }
+  v: { applicationFee?: number; terms?: number; instalments?: number; annualDiscountPercent?: number }
 ): string {
   const fmt = (n?: number) => (n == null ? null : Number.isInteger(n) ? `£${n}` : gbp(n));
   const map: Record<string, string | null> = {
     applicationFee: fmt(v.applicationFee),
-    registrationFee: fmt(v.registrationFee),
     terms: v.terms != null ? String(v.terms) : null,
     instalments: v.instalments != null ? String(v.instalments) : null,
     annualDiscount: v.annualDiscountPercent != null ? `${v.annualDiscountPercent}%` : null,
   };
-  return text.replace(/\{\{(applicationFee|registrationFee|terms|instalments|annualDiscount)\}\}/g, (m, k: string) => map[k] ?? m);
+  return text.replace(/\{\{(applicationFee|terms|instalments|annualDiscount)\}\}/g, (m, k: string) => map[k] ?? m);
 }
 
 export type PaymentPlan = "annual" | "termly" | "monthly";
@@ -195,7 +192,6 @@ export type FamilyEstimateInput = {
   /** Catalogue discounts that apply (automatic ones plus any the family ticked). */
   extraDiscounts?: EstimateDiscountInput[];
   applicationFee: number;
-  registrationFee: number;
 };
 
 export type FamilyEstimate = {
@@ -209,8 +205,7 @@ export type FamilyEstimate = {
   paymentUnit: "year" | "term" | "month";
   firstPayment: number;
   applicationFeeTotal: number;
-  registrationFeeTotal: number;
-  /** Registration fee(s) (full for the first child, reduced for each additional sibling) + first tuition payment: what is due once an offer is accepted. */
+  /** First tuition payment: what is due once an offer is accepted (there is no registration fee). */
   dueOnAcceptance: number;
 };
 
@@ -218,9 +213,8 @@ export type FamilyEstimate = {
  * Pure family fee estimate in integer pence. Sibling discount (Prospectus p.18)
  * applies to the younger siblings' tuition: children are ranked by fee, highest
  * (oldest) first; the second gets siblingDiscountPercent and the third and later
- * get siblingDiscountLaterPercent. The registration fee is full for the first
- * child and reduced (FEE_POLICY_DEFAULTS.siblingRegistrationShare, i.e. £125 of
- * £250) for each additional sibling. The annual-payment discount and
+ * get siblingDiscountLaterPercent. There is no registration fee: accepting an
+ * offer means paying the first tuition payment. The annual-payment discount and
  * percentage catalogue discounts come off the combined gross; fixed-amount
  * catalogue discounts come off once per family. Discounts can never take the
  * total below zero. The discounted total is then split with splitInstalments
@@ -265,7 +259,6 @@ export function estimateFamilyFees(input: FamilyEstimateInput): FamilyEstimate {
   const count = input.plan === "termly" ? Math.max(1, input.terms) : input.plan === "monthly" ? Math.max(1, input.instalments) : 1;
   const payments = splitInstalments(toPounds(totalP), count);
   const appTotal = toPence(input.applicationFee) * n;
-  const regTotal = n > 0 ? toPence(input.registrationFee) + Math.round(toPence(input.registrationFee) * FEE_POLICY_DEFAULTS.siblingRegistrationShare) * (n - 1) : 0;
   return {
     perChild: perChildP.map((c) => ({ label: c.label, gross: toPounds(c.gross), siblingDiscount: toPounds(c.sib), net: toPounds(c.gross - c.sib) })),
     gross: toPounds(grossP),
@@ -276,8 +269,7 @@ export function estimateFamilyFees(input: FamilyEstimateInput): FamilyEstimate {
     paymentUnit: input.plan === "annual" ? "year" : input.plan === "termly" ? "term" : "month",
     firstPayment: payments[0],
     applicationFeeTotal: toPounds(appTotal),
-    registrationFeeTotal: toPounds(regTotal),
-    dueOnAcceptance: toPounds(regTotal + toPence(payments[0])),
+    dueOnAcceptance: payments[0],
   };
 }
 
@@ -311,13 +303,13 @@ export function runFeeSelfCheck(): void {
   assert(computeFeeSchedule(2796, FEE_DEFAULTS).monthlyAmount === 399.43, "Y7-9 monthly");
   assert(computeFeeSchedule(3000, FEE_DEFAULTS).monthlyAmount === 428.57, "Y10-11 monthly");
   assert(applyAnnualDiscount(1596, 2).total === 1564.08, "2% annual discount");
-  const est = estimateFamilyFees({ children: [{ label: "a", annual: 1596 }, { label: "b", annual: 2130 }], plan: "annual", terms: 2, instalments: 7, annualDiscountPercent: 2, siblingDiscountPercent: 10, applicationFee: 50, registrationFee: 150 });
+  const est = estimateFamilyFees({ children: [{ label: "a", annual: 1596 }, { label: "b", annual: 2130 }], plan: "annual", terms: 2, instalments: 7, annualDiscountPercent: 2, siblingDiscountPercent: 10, applicationFee: 50 });
   assert(toPence(est.total) === toPence(est.gross) - toPence(est.totalDiscount), "estimate total = gross - discounts");
-  assert(est.registrationFeeTotal === 225 && est.dueOnAcceptance === est.total + 225, "estimate due on acceptance (sibling registration at half)");
+  assert(est.dueOnAcceptance === est.total && est.applicationFeeTotal === 100, "annual estimate: due on acceptance is the first (only) payment; application fee per child");
   assert(est.perChild[0].siblingDiscount === 159.6 && est.perChild[1].siblingDiscount === 0, "sibling discount on the younger (lower-fee) child");
-  const three = estimateFamilyFees({ children: [{ label: "a", annual: 1596 }, { label: "b", annual: 1596 }, { label: "c", annual: 1596 }], plan: "monthly", terms: 2, instalments: 7, annualDiscountPercent: 2, siblingDiscountPercent: 5, applicationFee: 50, registrationFee: 250 });
-  assert(three.perChild[1].siblingDiscount === 79.8 && three.perChild[2].siblingDiscount === 159.6 && three.registrationFeeTotal === 500, "5% second, 10% third, £250 + 2 x £125");
-  const m = estimateFamilyFees({ children: [{ label: "a", annual: 2130 }], plan: "monthly", terms: 2, instalments: 7, annualDiscountPercent: 2, applicationFee: 50, registrationFee: 150 });
+  const three = estimateFamilyFees({ children: [{ label: "a", annual: 1596 }, { label: "b", annual: 1596 }, { label: "c", annual: 1596 }], plan: "monthly", terms: 2, instalments: 7, annualDiscountPercent: 2, siblingDiscountPercent: 5, applicationFee: 50 });
+  assert(three.perChild[1].siblingDiscount === 79.8 && three.perChild[2].siblingDiscount === 159.6 && three.dueOnAcceptance === three.firstPayment, "5% second, 10% third; due on acceptance = first payment");
+  const m = estimateFamilyFees({ children: [{ label: "a", annual: 2130 }], plan: "monthly", terms: 2, instalments: 7, annualDiscountPercent: 2, applicationFee: 50 });
   assert(m.total === 2130 && m.payments.length === 7 && m.firstPayment === 304.29 && toPence(sumPounds(m.payments)) === 213000, "monthly estimate, no annual discount");
   const odd = splitInstalments(100, 3);
   assert(odd[0] === 33.33 && odd[1] === 33.33 && odd[2] === 33.34, "remainder on last instalment");

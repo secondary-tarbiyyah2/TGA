@@ -274,7 +274,7 @@ export function ApplicationsTab() {
         if (!window.confirm(`Mark ${nm}'s application as ${status}? The family is not notified automatically, and you can move it back later from the ${status[0].toUpperCase() + status.slice(1)} column.`)) return false;
       }
       if (status === "accepted") {
-        // Fees policy: the admin fee and deposit are conditions of acceptance.
+        // Fees policy: the first fee payment is the condition of acceptance (no registration fee).
         const blockers = acceptanceBlockers(current);
         if (blockers.length > 0) {
           const list = blockers.join(" and ");

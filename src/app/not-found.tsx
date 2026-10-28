@@ -15,9 +15,9 @@ export const metadata: Metadata = {
 const HELPFUL = [
   { href: "/admissions", title: "How to apply", body: "The admissions process, step by step." },
   { href: "/fees", title: "Fees", body: "Every fee published, by year group." },
-  { href: "/learning", title: "Learning", body: "Curriculum by key stage, pastoral care and a sample week." },
+  { href: "/curriculum", title: "Curriculum", body: "Subjects and live lessons a week, by key stage." },
   { href: "/faqs", title: "FAQs", body: "Quick answers on admissions, fees and more." },
-  { href: "/parents", title: "Parents", body: "Term dates, policies and safeguarding." },
+  { href: "/term-dates", title: "Term dates", body: "Term dates and the admissions calendar." },
   { href: "/contact", title: "Contact us", body: "Ask the admissions team directly." },
 ];
 

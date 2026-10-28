@@ -17,8 +17,7 @@ export default defineType({
     defineField({ name: "ctaPrimaryLabel", title: "Primary call-to-action label", type: "string", initialValue: "Apply Now", group: "launch" }),
     defineField({ name: "ctaPrimaryHref", title: "Primary call-to-action link", type: "string", initialValue: "/admissions", group: "launch" }),
 
-    defineField({ name: "applicationFee", title: "Application fee (£, non-refundable)", type: "number", initialValue: 247, group: "fees" }),
-    defineField({ name: "registrationFee", title: "Registration fee (£, one-time)", type: "number", initialValue: 150, group: "fees" }),
+    defineField({ name: "applicationFee", title: "Application fee (£, non-refundable)", type: "number", initialValue: 50, group: "fees" }),
     defineField({
       name: "siblingDiscountPercent",
       title: "Sibling discount (%)",

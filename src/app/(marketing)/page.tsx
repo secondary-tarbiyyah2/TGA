@@ -7,9 +7,9 @@ import { Kicker } from "@/components/Section";
 import { Button } from "@/components/Button";
 import { CtaBand } from "@/components/CtaBand";
 import { FaqPreview } from "@/components/FaqPreview";
-import { getFaqEntries, getHomepageContent, getSiteSettings, getTestimonials } from "@/lib/content";
+import { getFaqEntries, getHomepageContent, getKeyStages, getSiteSettings, getTestimonials } from "@/lib/content";
 import { admissionsProcessSteps } from "@/components/admissions/applicationShared";
-import { PlacesRemaining } from "@/components/admissions/PlacesRemaining";
+import { lessonsAWeek } from "@/content/curriculum";
 import { PortalPreview } from "@/components/home/PortalPreview";
 import { AdmissionsProcessFlow } from "@/components/admissions/AdmissionsSteps";
 
@@ -19,31 +19,25 @@ export const metadata: Metadata = pageMetadata({
   path: "",
 });
 
+// Three different reasons, each said once (the hero already names the subjects).
 const defaultPillars = [
-  { title: "Specialist curriculum", body: "Qur'an, Arabic and Islamic Studies every week, with the full national curriculum to GCSE, taught live by qualified teachers." },
-  { title: "Tarbiyyah & Islamic Studies", body: "Qur'an, Arabic and Islamic Studies on the timetable at every key stage, not an add-on." },
-  { title: "Live, small classes", body: "Real-time lessons with no more than 15 pupils in a class, so every child is known and supported." },
+  { title: "Faith at the centre of the day", body: "Qur'an, Arabic and Islamic Studies are timetabled lessons at every key stage, with prayer built into the school day." },
+  { title: "Live lessons, small classes", body: "Real-time lessons with qualified teachers and no more than 15 pupils in a class, so every child is known." },
+  { title: "Character as well as grades", body: "Our six RECIPE values are taught by name and recognised in every class, so akhlaq grows alongside attainment." },
 ];
 
 const NUMBER_WORDS = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
 const numberWord = (n: number) => NUMBER_WORDS[n] ?? String(n);
 const capitalise = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
-// Live lessons a week and their length, from the Curriculum Policy (12).
-const stages = [
-  { stage: "Year 1 – Year 2", href: "/curriculum/year-1-2", week: "15 lessons of 30 min a week" },
-  { stage: "Year 3 – Year 6", href: "/curriculum/year-3-6", week: "20 live lessons a week, 45 minutes each" },
-  { stage: "Year 7 – Year 9", href: "/curriculum/year-7-9", week: "23 live lessons a week, 50 minutes each" },
-  { stage: "Year 10 – Year 11 (International GCSE)", href: "/curriculum/year-10-11", week: "23 live lessons a week, leading to International GCSEs" },
-];
 
 export default async function HomePage() {
-  const [testimonials, faqs, settings, content] = await Promise.all([getTestimonials(), getFaqEntries(), getSiteSettings(), getHomepageContent()]);
+  const [testimonials, faqs, settings, content, keyStages] = await Promise.all([getTestimonials(), getFaqEntries(), getSiteSettings(), getHomepageContent(), getKeyStages()]);
   const pillars = content.pillars?.length ? content.pillars : defaultPillars;
   // The homepage summary uses the SAME steps as the Admissions page
   // (admissionsProcessSteps), so the two can never disagree. It previously
   // fell back to a separate four-step list under a "six steps" heading.
-  const processSteps = admissionsProcessSteps({ applicationFee: settings.applicationFee, registrationFee: settings.registrationFee });
+  const processSteps = admissionsProcessSteps({ applicationFee: settings.applicationFee });
   const stepCount = numberWord(processSteps.length);
   // A CMS heading is only used if it doesn't state a different number of steps.
   const cmsHeading = content.howItWorksHeading;
@@ -93,7 +87,7 @@ export default async function HomePage() {
               <Image src="/hero.webp" alt="An open notebook and pen on a warm wooden desk, calm, focused learning" fill className="object-cover" priority sizes="(min-width: 1024px) 24rem, 80vw" />
             </div>
             <div className="shadow-warm absolute -bottom-4 -left-4 rounded-2xl bg-white px-4 py-3 text-sm font-semibold text-gold-700">
-              Live lessons from Jan 2027
+              First live lessons 11 January 2027
             </div>
           </div>
         </Container>
@@ -122,17 +116,18 @@ export default async function HomePage() {
             <h2 className="text-h2 font-serif font-semibold text-ink">{content.stagesHeading || "A specialist curriculum, from Year 1 to GCSE."}</h2>
             <p className="mt-4 text-ink/75">
               {content.stagesBody ||
-                "The deen at the heart of the day: Qur'an, Islamic Studies and Arabic on the timetable at every key stage, with the full national curriculum to GCSE, taught live by qualified teachers."}
+                "The full national curriculum, sequenced from Year 1 to International GCSE, with the length and number of live lessons matched to your child's age."}
             </p>
-            <Button href="/learning" variant="secondary" className="mt-6">
-              Explore learning
+            <Button href="/curriculum" variant="secondary" className="mt-6">
+              Explore the curriculum
             </Button>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
-            {stages.map((st) => (
-              <Link key={st.href} href={st.href} className="rounded-2xl border border-gold-light/50 bg-white p-5 shadow-sm transition hover:border-gold-500 hover:shadow-md">
-                <p className="font-serif text-lg font-semibold text-gold-700">{st.stage}</p>
-                <p className="mt-1.5 text-sm text-ink/70">{st.week}</p>
+            {keyStages.map((ks) => (
+              <Link key={ks.slug} href={`/curriculum/${ks.slug}`} className="rounded-2xl border border-gold-light/50 bg-white p-5 shadow-sm transition hover:border-gold-500 hover:shadow-md">
+                <p className="text-xs font-semibold uppercase tracking-wide text-ink/60">{ks.title}</p>
+                <p className="mt-1 font-serif text-lg font-semibold text-gold-700">{ks.range}</p>
+                <p className="mt-1.5 text-sm text-ink/70">{lessonsAWeek(ks)}</p>
               </Link>
             ))}
           </div>
@@ -147,28 +142,18 @@ export default async function HomePage() {
         <Container>
           <Kicker>Admissions</Kicker>
           <h2 className="text-h2 font-serif font-semibold text-ink">{howItWorksHeading}</h2>
-          <p className="mt-3 max-w-2xl text-ink/75">Places are offered for live lessons from January 2027.</p>
+          <p className="mt-3 max-w-2xl text-ink/75">The school opens with an induction week on Monday 4 January 2027, and live lessons begin on Monday 11 January.</p>
           <AdmissionsProcessFlow steps={processSteps} />
-          <div className="mt-10 flex flex-wrap gap-3">
-            <Button href="/admissions">How to apply</Button>
-            <Button href="/book-a-call" variant="secondary">
-              Book a free call
-            </Button>
-          </div>
-        </Container>
-      </section>
-
-      {/* FEES */}
-      <section className="section-pad">
-        <Container>
-          <div className="flex flex-col gap-5 rounded-2xl border border-gold-light/60 bg-white p-6 sm:p-8 md:flex-row md:items-center md:justify-between">
+          {/* Fees sit with admissions (one block, one pair of buttons) rather than as a separate band. */}
+          <div className="mt-10 flex flex-col gap-5 rounded-2xl border border-gold-light/60 bg-white p-6 sm:p-8 md:flex-row md:items-center md:justify-between">
             <div className="max-w-2xl">
-              <h2 className="font-serif text-2xl font-semibold text-ink">{content.feeTeaserHeading || "Transparent fees, no surprises."}</h2>
+              <h3 className="font-serif text-xl font-semibold text-ink">{content.feeTeaserHeading || "Transparent fees, no surprises."}</h3>
               <p className="mt-2 text-ink/75">{content.feeTeaserBody || 'Every fee is published on our website, nothing shared only "on enquiry." Annual, two-payment and monthly plans are available for every year group.'}</p>
             </div>
-            <Button href="/fees" variant="secondary" className="shrink-0">
-              See fees and payment plans
-            </Button>
+            <div className="flex shrink-0 flex-wrap gap-3">
+              <Button href="/admissions">How to apply</Button>
+              <Button href="/fees" variant="secondary">See fees</Button>
+            </div>
           </div>
         </Container>
       </section>
@@ -214,7 +199,7 @@ export default async function HomePage() {
               {settings.headteacherName?.split(" ").map((n) => n[0]).join("").slice(0, 2) || ""}
             </div>
             <div>
-              <Kicker>A welcome from our Headteacher</Kicker>
+              <Kicker tone="light">A welcome from our Headteacher</Kicker>
               <p className="font-serif text-2xl leading-relaxed text-white">&ldquo;{settings.headteacherWelcomeQuote}&rdquo;</p>
               {settings.headteacherName && <p className="mt-4 font-semibold text-gold-300">{settings.headteacherName}, Headteacher</p>}
             </div>
@@ -222,15 +207,9 @@ export default async function HomePage() {
         </section>
       )}
 
-      {/* Founding cohort places, renders nothing until an admin has set a
-          real capacity for at least one year group (see PlacesRemaining). */}
-      <Container>
-        <PlacesRemaining />
-      </Container>
-
       <CtaBand
         heading="Be among the first families to join."
-        body="Tell us a little about your child and we'll be in touch as places open for January 2027. No obligation."
+        body="Applications for the founding cohort, starting in January 2027, are open now."
       />
     </>
   );

@@ -13,7 +13,7 @@
 //
 // POST JSON      { action: "info",   reference, token }
 // POST multipart { action: "upload", reference, token, covers (comma list of
-//                  application_fee|registration_fee|first_payment), plan, amount,
+//                  application_fee|first_payment), plan, amount,
 //                  note, files[] (JPG/PNG/PDF, <= 10 MB each, <= 5) }
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
@@ -33,7 +33,7 @@ const MAX_PROOFS_PER_APPLICATION = 20;
 const MAX_UPLOADS_PER_HOUR = 6;
 const MAX_FAILURES_PER_HOUR = 10;
 const TOKEN_TTL_DAYS = 90;
-const COVERS = ["application_fee", "registration_fee", "first_payment"] as const;
+const COVERS = ["application_fee", "first_payment"] as const; // no registration fee (0163)
 const PLANS = ["annual", "termly", "monthly"] as const;
 const CLOSED_STATUSES = ["declined", "withdrawn"];
 

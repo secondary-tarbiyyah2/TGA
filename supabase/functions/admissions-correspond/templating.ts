@@ -93,7 +93,6 @@ export type StageInput = {
 export type FeesInput = {
   applicationFee: number;
   applicationFeeReceived: boolean;
-  registrationFee: number;
   annualFee?: number | null;
   plans: { id: string; label: string; firstPayment: number; detail: string }[];
 };
@@ -133,11 +132,18 @@ export function fmtDayLong(d: string | null): string {
 }
 
 /** Today in UK time + n days, as "yyyy-mm-dd". */
-function londonDatePlus(days: number, now: Date): string {
+/** London date `n` working days (Mon to Fri) after today, as YYYY-MM-DD. */
+function londonWorkingDaysPlus(n: number, now: Date): string {
   const parts = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(now);
   const g = (t: string) => Number(parts.find((p) => p.type === t)?.value);
-  const ms = Date.UTC(g("year"), g("month") - 1, g("day") + days, 12);
-  return new Date(ms).toISOString().slice(0, 10);
+  const d = new Date(Date.UTC(g("year"), g("month") - 1, g("day"), 12));
+  let left = n;
+  while (left > 0) {
+    d.setUTCDate(d.getUTCDate() + 1);
+    const wd = d.getUTCDay();
+    if (wd !== 0 && wd !== 6) left--;
+  }
+  return d.toISOString().slice(0, 10);
 }
 
 function upperFirst(s: string): string {
@@ -239,7 +245,7 @@ export function buildTemplateContext(
   const bankRaw = (settings?.payment_instructions || "").trim();
   const bank = bankRaw && !/^bank transfer details to follow\.?$/i.test(bankRaw) ? bankRaw : "Please reply to this email and we will send you our bank transfer details.";
 
-  const deadline = fmtDayLong(app.offer_deadline) || fmtDayLong(londonDatePlus(7, now));
+  const deadline = fmtDayLong(app.offer_deadline) || fmtDayLong(londonWorkingDaysPlus(5, now));
 
   const start = fmtDayLong(stage?.offer_start_date || null) || (app.preferred_start || "").trim() || "the start of the next term";
 
@@ -273,6 +279,8 @@ export function buildTemplateContext(
     missing_documents: missing.join("\n"),
     family_fees: "",
     application_fee: "",
+    // Legacy token: there is no registration fee, so it is always empty and any
+    // stored template line that still uses it is dropped when rendered.
     registration_fee: "",
     application_fee_status: "",
     annual_fee: "",
@@ -288,9 +296,8 @@ export function buildTemplateContext(
   };
 
   if (fees) {
-    const baseDue = (fees.applicationFeeReceived ? 0 : fees.applicationFee) + fees.registrationFee;
+    const baseDue = fees.applicationFeeReceived ? 0 : fees.applicationFee;
     v.application_fee = gbp(fees.applicationFee);
-    v.registration_fee = gbp(fees.registrationFee);
     v.application_fee_status = fees.applicationFeeReceived ? "received, thank you" : gbp(fees.applicationFee);
     v.annual_fee = fees.annualFee != null ? gbp(fees.annualFee) : "";
     v.fee_plans = fees.plans.map((p) => `    * ${p.label}: ${gbp(p.firstPayment)} (${p.detail})`).join("\n");
@@ -338,12 +345,11 @@ export const TOKEN_DOCS: { token: string; description: string }[] = [
   { token: "family_fees", description: "Children on a multi-child application with estimated fees and any sibling discount (blank for one child)" },
   { token: "application_fee", description: "Application / assessment fee" },
   { token: "application_fee_status", description: "The fee, or \"received, thank you\"" },
-  { token: "registration_fee", description: "Registration fee" },
   { token: "annual_fee", description: "Annual fee for the year group (blank if no fee band)" },
   { token: "fee_plans", description: "First payment under each plan (monthly / termly / annual), one per line" },
   { token: "amounts_due", description: "Total due now under each plan, one per line" },
   { token: "first_payment_monthly", description: "First monthly instalment (also _termly, _annual)" },
-  { token: "deadline", description: "Offer deadline, or 7 days from today if none is set" },
+  { token: "deadline", description: "Offer deadline, or five working days from today if none is set" },
   { token: "bank_details", description: "Payment instructions from Admissions settings" },
   { token: "payment_link", description: "The family's personal proof-of-payment upload link (issued when sent)" },
   { token: "school_email", description: "Admissions email address" },
@@ -517,16 +523,15 @@ ${SIGN_OFF}`,
 
 We are delighted to offer {{child_name}} a place in {{year_group}} at Tarbiyyah Global Academy, starting {{start_date}}{{#reference}} ({{reference}}){{/reference}}. Masha'Allah, we enjoyed getting to know {{child_first_name}} and your family.
 
-TO ACCEPT THE PLACE, PLEASE PAY BY {{deadline}}
+TO ACCEPT THE PLACE, PLEASE REPLY AND PAY YOUR FIRST FEE PAYMENT BY {{deadline}}
 - Application / assessment fee: {{application_fee_status}}
-- Registration fee: {{registration_fee}}
 {{#fee_plans}}
 - First payment, depending on the plan you choose:
 {{fee_plans}}
 {{/fee_plans}}
 
 {{#amounts_due}}
-AMOUNT DUE NOW (application fee if not yet received + registration fee + first payment), by plan:
+AMOUNT DUE NOW (application fee if not yet received + first payment), by plan:
 {{amounts_due}}
 Please choose ONE plan. The remaining instalments follow the Fees Policy payment schedule.
 {{/amounts_due}}
@@ -645,7 +650,6 @@ export const SAMPLE_STAGE: StageInput = {
 export const SAMPLE_FEES: FeesInput = {
   applicationFee: 50,
   applicationFeeReceived: false,
-  registrationFee: 250,
   annualFee: 2130,
   plans: [
     { id: "monthly", label: "Monthly (7 instalments)", firstPayment: 304.29, detail: "first instalment £304.29 of 7, £2,130 in total" },
@@ -655,8 +659,8 @@ export const SAMPLE_FEES: FeesInput = {
 };
 
 export const SAMPLE_EXTRA = {
-  payment_covers: "Registration fee, First payment",
-  payment_amount: "£535.25",
+  payment_covers: "First payment",
+  payment_amount: "£304.29",
   reject_reason: "The screenshot was cropped and the amount could not be read.",
   reject_item: "the file \"receipt.png\"",
 };

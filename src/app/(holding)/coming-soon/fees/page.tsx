@@ -79,12 +79,12 @@ export default async function HoldingFeesPage() {
             <div className="rounded-2xl border border-gold-light/50 bg-white p-5">
               <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">Application fee</p>
               <p className="mt-1 font-serif text-3xl font-semibold text-ink">{formatGBP(settings.applicationFee ?? FEE_POLICY_DEFAULTS.applicationFee).replace(".00", "")}</p>
-              <p className="mt-1 text-sm text-ink/70">Non-refundable, paid when you apply.</p>
+              <p className="mt-1 text-sm text-ink/70">Non-refundable. We email the payment details after you apply, and it must be paid before a place is confirmed.</p>
             </div>
             <div className="rounded-2xl border border-gold-light/50 bg-white p-5">
-              <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">Registration fee</p>
-              <p className="mt-1 font-serif text-3xl font-semibold text-ink">{formatGBP(settings.registrationFee ?? FEE_POLICY_DEFAULTS.registrationFee).replace(".00", "")}</p>
-              <p className="mt-1 text-sm text-ink/70">One-off, on accepting a place; half for each additional sibling.</p>
+              <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">Securing a place</p>
+              <p className="mt-1 font-serif text-3xl font-semibold text-ink">First payment</p>
+              <p className="mt-1 text-sm text-ink/70">Accept an offer within five working days and pay your first fee payment. No other admissions fees.</p>
             </div>
             <div className="rounded-2xl border border-gold-light/50 bg-white p-5">
               <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">Sibling discount</p>

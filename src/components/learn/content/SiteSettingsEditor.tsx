@@ -13,7 +13,6 @@ type Row = {
   cta_primary_label: string | null;
   cta_primary_href: string | null;
   application_fee: number | null;
-  registration_fee: number | null;
   sibling_discount_percent: number | null;
   sibling_discount_note: string | null;
   booking_widget_url: string | null;
@@ -179,7 +178,7 @@ export function SiteSettingsEditor() {
   );
 
   return (
-    <Card title="Site settings" description="Contact details, links and key public-facing details. Fields that already show text on the website are filled with that text. Fees, discounts and the application and registration fees are in the Fees section.">
+    <Card title="Site settings" description="Contact details, links and key public-facing details. Fields that already show text on the website are filled with that text. Fees, discounts and the application fee are in the Fees section.">
       <div className="space-y-3">
         {SECTIONS.map((sec) => (
           <details key={sec.title} open={sec.open} className="group rounded-xl border border-gold-light/60 bg-white">

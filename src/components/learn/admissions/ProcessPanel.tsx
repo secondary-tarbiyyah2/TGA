@@ -29,9 +29,6 @@ type Draft = {
   appFee: string;
   appFeeReceived: boolean;
   appFeeReceivedAt: string;
-  adminFee: string;
-  adminFeeReceived: boolean;
-  adminFeeReceivedAt: string;
   deposit: string;
   depositReceived: boolean;
   depositReceivedAt: string;
@@ -101,9 +98,6 @@ function OfferSection({
     appFee: details?.application_fee_amount !== null && details?.application_fee_amount !== undefined ? String(details.application_fee_amount) : "",
     appFeeReceived: details?.application_fee_received ?? false,
     appFeeReceivedAt: details?.application_fee_received_at || "",
-    adminFee: app.admin_fee_amount !== null ? String(app.admin_fee_amount) : "",
-    adminFeeReceived: app.admin_fee_received,
-    adminFeeReceivedAt: app.admin_fee_received_at || "",
     deposit: app.deposit_amount !== null ? String(app.deposit_amount) : "",
     depositReceived: app.deposit_received,
     depositReceivedAt: app.deposit_received_at || "",
@@ -126,9 +120,6 @@ function OfferSection({
       decision_note: nz(d.decisionNote),
       offer_made_at: nz(d.offerMadeAt),
       offer_deadline: nz(d.offerDeadline),
-      admin_fee_amount: numOrNull(d.adminFee),
-      admin_fee_received: d.adminFeeReceived,
-      admin_fee_received_at: d.adminFeeReceived ? nz(d.adminFeeReceivedAt) || today() : nz(d.adminFeeReceivedAt),
       deposit_amount: numOrNull(d.deposit),
       deposit_received: d.depositReceived,
       deposit_received_at: d.depositReceived ? nz(d.depositReceivedAt) || today() : nz(d.depositReceivedAt),
@@ -160,7 +151,6 @@ function OfferSection({
   const showAccept = app.status === "offered" || app.status === "accepted";
   const feeRows = [
     { label: "Application fee (£) - covers the baseline assessment & admin review", amountKey: "appFee", recKey: "appFeeReceived", dateKey: "appFeeReceivedAt", placeholder: String(fees.applicationFee) },
-    { label: "Registration fee (£)", amountKey: "adminFee", recKey: "adminFeeReceived", dateKey: "adminFeeReceivedAt", placeholder: String(fees.registrationFee) },
     { label: "First payment (£) - per chosen plan", amountKey: "deposit", recKey: "depositReceived", dateKey: "depositReceivedAt", placeholder: fees.activeFirstPayment !== null ? String(fees.activeFirstPayment) : "" },
   ] as const;
 
@@ -168,7 +158,7 @@ function OfferSection({
     <div className="space-y-4">
       <Group
         title="Offer & fees"
-        help="Fees Policy 2026-27: application fee (covers the baseline assessment and admin review), registration fee, then the first payment of the family's chosen plan. Amounts start from site settings and the year group's fee band; override per application below. The offer email carries the amounts, payment instructions and a personal link for the family to upload proof of payment. Fee flags are set automatically when you verify proofs in the Payments tab; an application can't move to Accepted until the registration fee and first payment are received (a Headteacher can override)."
+        help="Fees Policy 2026-27: application fee (covers the baseline assessment and admin review), then the first payment of the family's chosen plan on accepting the offer. There is no registration fee. Amounts start from site settings and the year group's fee band; override per application below. The offer email carries the amounts, payment instructions and a personal link for the family to upload proof of payment. Fee flags are set automatically when you verify proofs in the Payments tab; an application can't move to Accepted until the first payment is received (a Headteacher can override)."
       >
         <div className="grid gap-3 sm:grid-cols-2">
           <label className="block text-sm font-medium text-ink">
@@ -207,8 +197,8 @@ function OfferSection({
             <ul className="mt-1 space-y-0.5">
               {fees.plans.map((p) => (
                 <li key={p.id}>
-                  {p.label}: <strong>{gbp(Math.round(((fees.applicationFeeReceived ? 0 : fees.applicationFee) + fees.registrationFee + p.firstPayment) * 100) / 100)}</strong>
-                  <span className="text-ink/65"> = {fees.applicationFeeReceived ? "" : `${gbp(fees.applicationFee)} + `}{gbp(fees.registrationFee)} + {gbp(p.firstPayment)}</span>
+                  {p.label}: <strong>{gbp(Math.round(((fees.applicationFeeReceived ? 0 : fees.applicationFee) + p.firstPayment) * 100) / 100)}</strong>
+                  {!fees.applicationFeeReceived && <span className="text-ink/65"> = {gbp(fees.applicationFee)} + {gbp(p.firstPayment)}</span>}
                 </li>
               ))}
             </ul>
@@ -256,9 +246,9 @@ function OfferSection({
             onSent={() => void offerSent()}
           />
         )}
-        {(app.admin_fee_amount === null || app.deposit_amount === null) && (
+        {app.deposit_amount === null && (
           <p className="mt-2 text-xs text-ink/65">
-            Registration fee default {formatMoney(fees.registrationFee)}; first payment default {fees.activeFirstPayment !== null ? formatMoney(fees.activeFirstPayment) : "set once a plan is chosen"}.
+            First payment default {fees.activeFirstPayment !== null ? formatMoney(fees.activeFirstPayment) : "set once a plan is chosen"}.
           </p>
         )}
       </Group>

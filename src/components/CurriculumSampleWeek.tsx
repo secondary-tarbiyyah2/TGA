@@ -1,7 +1,4 @@
-"use client";
-
-import { useState } from "react";
-import { SCHOOL_WEEK_NOTE, keyStages as defaultStages, type KeyStage } from "@/content/curriculum";
+import { SCHOOL_WEEK_NOTE, type KeyStage } from "@/content/curriculum";
 
 /** Live lessons a week by subject for one key stage, from the Curriculum Policy. */
 export function WeeklyLessons({ ks }: { ks: KeyStage }) {
@@ -38,35 +35,6 @@ export function WeeklyLessons({ ks }: { ks: KeyStage }) {
       </table>
       {ks.note && <p className="mt-3 text-sm text-ink/75">{ks.note}</p>}
       <p className="mt-2 text-xs text-ink/70">{SCHOOL_WEEK_NOTE} Each year group&apos;s exact timetable is published before enrolment.</p>
-    </div>
-  );
-}
-
-/** The curriculum index page's key-stage switcher. */
-export function CurriculumSampleWeek({ stages }: { stages?: KeyStage[] }) {
-  const keyStages = stages && stages.length > 0 ? stages : defaultStages;
-  const [active, setActive] = useState(keyStages[0].slug);
-  const stage = keyStages.find((ks) => ks.slug === active) || keyStages[0];
-
-  return (
-    <div>
-      <div className="flex flex-wrap gap-2" role="group" aria-label="Key stage">
-        {keyStages.map((ks) => (
-          <button
-            key={ks.slug}
-            type="button"
-            onClick={() => setActive(ks.slug)}
-            aria-pressed={active === ks.slug}
-            className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${active === ks.slug ? "bg-gold-500 text-ink-900" : "border border-gold-light/60 text-ink/70 hover:bg-cream"}`}
-          >
-            {ks.range}
-          </button>
-        ))}
-      </div>
-      <WeeklyLessons ks={stage} />
-      <a href={`/curriculum/${stage.slug}`} className="mt-3 inline-block text-sm font-semibold text-gold-700 underline">
-        Full subject list for {stage.range} →
-      </a>
     </div>
   );
 }

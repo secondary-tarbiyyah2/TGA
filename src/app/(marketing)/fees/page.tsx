@@ -3,7 +3,6 @@ import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { CtaBand } from "@/components/CtaBand";
-import { AdmissionsStrip } from "@/components/AdmissionsStrip";
 import Link from "next/link";
 import { getFeeBands, getSiteSettings } from "@/lib/content";
 import { formatGBP } from "@/lib/format";
@@ -12,7 +11,7 @@ import { FeeEstimator } from "@/components/FeeEstimator";
 
 export const metadata: Metadata = pageMetadata({
   title: "Fees & Payment Plans",
-  description: "Full, transparent fee table for every year group band, plus application and registration fees.",
+  description: "Full, transparent fee table for every year group band, plus the application fee and payment dates.",
   path: "/fees",
 });
 
@@ -35,8 +34,8 @@ export default async function FeesPage() {
           <Kicker>Fees &amp; Payment Plans</Kicker>
           <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">Transparent fees, no surprises.</h1>
           <p className="mt-6 max-w-2xl text-lg text-ink/75">
-            Every figure is published here, nothing shared only on enquiry. Choose to pay annually, in two payments
-            or monthly for any year group.
+            Every figure is published here, nothing shared only on enquiry, and the only admissions fee is the
+            application fee.
           </p>
           <p className="mt-3 max-w-2xl text-sm text-ink/70">
             Live lessons launch in January 2027, so the fees below are for the shortened January–July 2027 period.
@@ -104,12 +103,12 @@ export default async function FeesPage() {
             <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
               <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">Application fee</p>
               <p className="mt-1 font-serif text-3xl font-bold text-ink">£{settings.applicationFee}</p>
-              <p className="mt-1 text-sm text-ink/70">Non-refundable. Covers the baseline assessment and administrative review. If not yet paid, send proof of payment with your offer acceptance.</p>
+              <p className="mt-1 text-sm text-ink/70">Non-refundable. We email the payment details after you apply, and it must be paid before a place is confirmed. It covers the entry assessment and the review of your application.</p>
             </div>
             <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-              <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">Registration fee</p>
-              <p className="mt-1 font-serif text-3xl font-bold text-ink">£{settings.registrationFee}</p>
-              <p className="mt-1 text-sm text-ink/70">One-off, due on acceptance of a place and no later than 8 January 2027. £125 for each additional sibling. Refundable only within the 14-day cancellation period.</p>
+              <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">Securing your place</p>
+              <p className="mt-1 font-serif text-3xl font-bold text-ink">First fee payment</p>
+              <p className="mt-1 text-sm text-ink/70">Accept your offer within five working days and pay your first fee payment, no later than 8 January 2027. The application fee is the only admissions fee.</p>
             </div>
             {settings.siblingDiscountPercent != null && (
               <div className="rounded-2xl border border-gold-light/50 bg-white p-6 sm:col-span-2">
@@ -146,13 +145,10 @@ export default async function FeesPage() {
               discounts={settings.discounts}
               annualDiscountPercent={discountPercent}
               applicationFee={settings.applicationFee}
-              registrationFee={settings.registrationFee}
             />
           </div>
         </Container>
       </section>
-
-      <AdmissionsStrip />
 
       <CtaBand heading="Have a question about fees?" body="Our FAQs cover payment plans, bursaries and what's included." ctaLabel="Read the FAQs" ctaHref="/faqs" />
     </>

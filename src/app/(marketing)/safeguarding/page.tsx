@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { CtaBand } from "@/components/CtaBand";
-import { AdmissionsStrip } from "@/components/AdmissionsStrip";
 import { getPolicyLinks, getSiteSettings } from "@/lib/content";
 
 export const metadata: Metadata = pageMetadata({
@@ -115,7 +114,6 @@ export default async function SafeguardingPage() {
         </Container>
       </section>
 
-      <AdmissionsStrip />
       <CtaBand heading="Have a question first?" body="Get in touch and we'll point you to the right person." ctaLabel="Contact us" ctaHref="/contact" />
     </>
   );

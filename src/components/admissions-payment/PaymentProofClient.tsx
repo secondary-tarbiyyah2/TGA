@@ -9,7 +9,6 @@ const MAX_BYTES = 10 * 1024 * 1024;
 const ACCEPT = "image/jpeg,image/png,application/pdf,.jpg,.jpeg,.png,.pdf";
 const COVERS = [
   { id: "application_fee", label: "Application fee" },
-  { id: "registration_fee", label: "Registration fee" },
   { id: "first_payment", label: "First payment" },
 ] as const;
 const PLANS = [

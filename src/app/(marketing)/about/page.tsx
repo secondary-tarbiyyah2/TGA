@@ -1,30 +1,19 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { aboutDefaults } from "@/content/defaults";
 import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { CtaBand } from "@/components/CtaBand";
-import { AdmissionsStrip } from "@/components/AdmissionsStrip";
-import { HubCards } from "@/components/HubCards";
-import { aboutHub } from "@/lib/nav";
 import { getAboutContent, getSiteSettings } from "@/lib/content";
 
 export const metadata: Metadata = pageMetadata({
   title: "About Us",
-  description: "Our mission, Islamic ethos, the Tarbiyyah family background, and our safeguarding commitment.",
+  description: "Our mission, our RECIPE values, the Tarbiyyah family of schools, and the people teaching your child.",
   path: "/about",
 });
 
 const defaultRecipe = aboutDefaults.recipe_items;
-// The Arabic term behind each value, shown the same way on every card.
-const RECIPE_ARABIC: Record<string, { arabic: string; term: string }> = {
-  Resilience: { arabic: "صَبْر", term: "sabr" },
-  Eeman: { arabic: "إِيمَان", term: "eeman" },
-  Contentment: { arabic: "شُكْر", term: "shukr" },
-  Integrity: { arabic: "أَمَانَة", term: "amanah" },
-  Progress: { arabic: "تَقَدُّم", term: "taqaddum" },
-  Excellence: { arabic: "إِحْسَان", term: "ihsan" },
-};
 
 export default async function AboutPage() {
   const [content, settings] = await Promise.all([getAboutContent(), getSiteSettings()]);
@@ -34,7 +23,7 @@ export default async function AboutPage() {
     <>
       <section className="geo-texture bg-cream section-pad">
         <Container>
-          <Kicker>About Us</Kicker>
+          <Kicker>About us</Kicker>
           <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">
             {content.heroHeading || "Academic excellence, rooted in faith."}
           </h1>
@@ -60,36 +49,28 @@ export default async function AboutPage() {
               {content.safeguardingBody || (
                 <>The safety and wellbeing of every child is our first responsibility, with safer-recruitment vetting for every member of staff (enhanced DBS in the UK, overseas checks abroad) and a named Designated Safeguarding Lead.</>
               )}{" "}
-              Read our full approach, including how to raise a concern, on the{" "}
-              <a href="/safeguarding" className="text-gold-700 underline">Safeguarding</a> page.
+              <Link href="/safeguarding" className="font-semibold text-gold-700 underline">How we keep children safe</Link>.
             </p>
           </div>
         </Container>
       </section>
 
-      <section className="geo-texture bg-cream section-pad">
+      <section className="geo-texture bg-cream section-pad" aria-labelledby="recipe-heading">
         <Container>
-          <Kicker>Our character framework, RECIPE</Kicker>
-          <h2 className="font-serif text-3xl font-semibold text-ink">{content.recipeIntro || "Building akhlaq alongside attainment."}</h2>
-          <ol className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6" aria-label="The six RECIPE values">
-            {recipe.map((r) => {
-              const ar = RECIPE_ARABIC[r.word];
-              return (
-                <li key={r.word} className="flex h-full flex-col items-center rounded-2xl border border-gold-light/60 bg-white px-4 py-6 text-center shadow-sm">
-                  <span aria-hidden="true" className="flex h-12 w-12 items-center justify-center rounded-xl bg-ink-900 font-serif text-2xl font-bold text-gold-300">{r.letter}</span>
-                  <h3 className="mt-4 font-semibold text-ink">{r.word}</h3>
-                  {ar && (
-                    <p className="mt-2 flex h-12 flex-col items-center justify-center">
-                      <span lang="ar" dir="rtl" className="text-xl leading-none text-teal-700">{ar.arabic}</span>
-                      <span className="mt-1.5 text-xs italic text-ink/60">{ar.term}</span>
-                    </p>
-                  )}
-                  <p className="mt-3 text-sm leading-relaxed text-ink/70">{r.body}</p>
-                </li>
-              );
-            })}
+          <Kicker>Our values: RECIPE</Kicker>
+          <h2 id="recipe-heading" className="font-serif text-3xl font-semibold text-ink">{content.recipeIntro || "Building akhlaq alongside attainment."}</h2>
+          {/* Six in a row on desktop, 3 + 3 on tablets, two columns on phones.
+              Grid rows stretch, so every card in a row is the same height. */}
+          <ol className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6" aria-label="The six RECIPE values">
+            {recipe.map((r, i) => (
+              <li key={`${r.letter}-${i}`} className="flex h-full flex-col items-center rounded-2xl border border-gold-light/60 bg-white px-3 py-5 text-center shadow-sm">
+                <span aria-hidden="true" className="flex h-10 w-10 items-center justify-center rounded-xl bg-ink-900 font-serif text-xl font-bold text-gold-300">{r.letter}</span>
+                <h3 className="mt-3 font-semibold text-ink">{r.word}</h3>
+                <p className="mt-1 text-sm leading-snug text-ink/70">{r.body}</p>
+              </li>
+            ))}
           </ol>
-          <p className="mt-6 text-sm text-ink/70">Read together, the six letters spell RECIPE: one value a half term, recognised with merits, a RECIPE Star in every class and a character comment on every report.</p>
+          <p className="mt-6 max-w-3xl text-sm text-ink/70">One value is the focus each half term, recognised with merits, a RECIPE Star in every class and a character comment on every report.</p>
         </Container>
       </section>
 
@@ -103,11 +84,8 @@ export default async function AboutPage() {
                 "Tarbiyyah Global Academy is part of the established Tarbiyyah family of schools, Tarbiyyah Primary, Tarbiyyah Secondary School for Boys, and Tarbiyyah Al-Banaat, all operating for over ten years. The Academy brings that same ethos and standard of care online, for families anywhere in the world."}
             </p>
           </div>
-          {/* Same Site Settings field the homepage's welcome quote uses (see
-              src/app/(marketing)/page.tsx) · this used to be a hardcoded
-              quote with a hardcoded name here, out of step with the
-              homepage's "only a real, admin-confirmed quote appears"
-              pattern and liable to go stale/wrong independently of it. */}
+          {/* Same Site Settings field as the homepage welcome: only a real,
+              admin-confirmed quote ever appears. */}
           {settings.headteacherWelcomeQuote && (
             <div>
               <Kicker>Headteacher&apos;s message</Kicker>
@@ -122,18 +100,12 @@ export default async function AboutPage() {
         </Container>
       </section>
 
-      <section className="geo-texture bg-cream section-pad">
-        <Container>
-          <Kicker>Explore</Kicker>
-          <h2 className="font-serif text-3xl font-semibold text-ink">More about the Academy.</h2>
-          <div className="mt-8">
-            <HubCards cards={aboutHub} />
-          </div>
-        </Container>
-      </section>
-
-      <AdmissionsStrip />
-      <CtaBand heading="Ready to apply?" body="Start your child&apos;s application, or book a free call first." />
+      <CtaBand
+        heading="Meet us before you decide."
+        body="Join an online open evening to meet the Headteacher, see a live lesson and ask anything."
+        ctaLabel="Open evenings"
+        ctaHref="/open-evening"
+      />
     </>
   );
 }
