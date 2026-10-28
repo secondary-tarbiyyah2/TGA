@@ -262,6 +262,7 @@ export function YourChildsWeekQuiz({
             headers: { "Content-Type": "application/json", apikey: anonKey, Authorization: `Bearer ${anonKey}` },
             body: JSON.stringify({
               leadId,
+              email: contactEmail.trim().toLowerCase(),
               yearGroup: yearGroupAnswer,
               sampleSlots: sampleWeek.slots || [],
               startingPoints: evaluated.startingPoints,
@@ -411,7 +412,7 @@ export function YourChildsWeekQuiz({
         <div className="rounded-2xl border border-gold-light/50 bg-white p-8 shadow-warm">
           <h2 className="text-center font-serif text-2xl font-semibold text-ink">{resultHeading}</h2>
           {liveConfig?.publishedAt && (
-            <p className="mt-1 text-center text-xs text-ink/40">Quiz content last updated {new Date(liveConfig.publishedAt).toLocaleDateString("en-GB")}</p>
+            <p className="mt-1 text-center text-xs text-ink/65">Quiz content last updated {new Date(liveConfig.publishedAt).toLocaleDateString("en-GB")}</p>
           )}
 
           {orderedSections.map((section) => {
@@ -433,7 +434,7 @@ export function YourChildsWeekQuiz({
                           ))}
                         </ul>
                         {sampleWeek.updatedAt && (
-                          <p className="mt-3 text-xs text-ink/40">Last updated {new Date(sampleWeek.updatedAt).toLocaleDateString("en-GB")}</p>
+                          <p className="mt-3 text-xs text-ink/65">Last updated {new Date(sampleWeek.updatedAt).toLocaleDateString("en-GB")}</p>
                         )}
                       </>
                     )}

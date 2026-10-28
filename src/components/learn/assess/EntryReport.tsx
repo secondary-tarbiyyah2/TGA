@@ -124,28 +124,28 @@ export function EntryReport({ report, name }: { report: ReportData; name: string
             {headline.map((h) => (
               <tr key={h.key}>
                 <th scope="row" className="py-2 pr-3 text-left font-semibold text-ink">{h.label}</th>
-                <td className="py-2 pr-3">{h.band ? <StatusChip tone={BAND_TONE[h.band]}>{h.band}</StatusChip> : <span className="text-ink/60">Not enough to judge</span>}</td>
+                <td className="py-2 pr-3">{h.band ? <StatusChip tone={BAND_TONE[h.band]}>{h.band}</StatusChip> : <span className="text-ink/65">Not enough to judge</span>}</td>
                 <td className="py-2 pr-3 tabular-nums text-ink">{h.workingAt !== null ? label(h.workingAt) : "–"}</td>
-                <td className="hidden py-2 text-ink/60 sm:table-cell print:table-cell">{h.note}</td>
+                <td className="hidden py-2 text-ink/65 sm:table-cell print:table-cell">{h.note}</td>
               </tr>
             ))}
           </tbody>
         </table>
         {(r.quran || r.arabic) && (
           <div className="mt-3 grid gap-2 sm:grid-cols-2">
-            {r.quran && <p className="rounded-xl border border-gold-light/70 px-3 py-2 text-sm"><span className="block text-xs font-semibold uppercase tracking-wide text-ink/60">Qur&apos;an group</span><b className="text-ink">{r.quran.group}</b></p>}
-            {r.arabic && <p className="rounded-xl border border-gold-light/70 px-3 py-2 text-sm"><span className="block text-xs font-semibold uppercase tracking-wide text-ink/60">Arabic group</span><b className="text-ink">{r.arabic.group}</b></p>}
+            {r.quran && <p className="rounded-xl border border-gold-light/70 px-3 py-2 text-sm"><span className="block text-xs font-semibold uppercase tracking-wide text-ink/65">Qur&apos;an group</span><b className="text-ink">{r.quran.group}</b></p>}
+            {r.arabic && <p className="rounded-xl border border-gold-light/70 px-3 py-2 text-sm"><span className="block text-xs font-semibold uppercase tracking-wide text-ink/65">Arabic group</span><b className="text-ink">{r.arabic.group}</b></p>}
           </div>
         )}
       </Card>
 
       {/* 2. Strands */}
-      <Card title="Strand by strand" icon="chartLine" tile="tile-blue" aside={<span className="text-xs text-ink/60"><span className="mr-1 inline-block h-3 w-0.5 bg-ink/60 align-middle" /> Year {r.year} <span className="mx-1 inline-block h-3 w-3 rounded-full bg-teal-700 align-middle" /> estimate <span className="mx-1 inline-block h-2 w-5 rounded-full bg-teal-700/20 align-middle" /> likely range</span>}>
+      <Card title="Strand by strand" icon="chartLine" tile="tile-blue" aside={<span className="text-xs text-ink/65"><span className="mr-1 inline-block h-3 w-0.5 bg-ink/60 align-middle" /> Year {r.year} <span className="mx-1 inline-block h-3 w-3 rounded-full bg-teal-700 align-middle" /> estimate <span className="mx-1 inline-block h-2 w-5 rounded-full bg-teal-700/20 align-middle" /> likely range</span>}>
         <ul className="divide-y divide-gold-light/50">
           {r.strands.map((s) => (
             <li key={s.key} className="grid gap-x-4 gap-y-1 py-2 sm:grid-cols-[11rem_1fr_9rem] sm:items-center">
-              <span><span className="block text-sm font-semibold text-ink">{s.label}</span><span className="block text-xs text-ink/60">{s.correct}/{s.total} correct</span></span>
-              {s.workingAt !== null ? <Scale year={r.year} at={s.workingAt} low={s.low} high={s.high} /> : <span className="text-sm text-ink/60">Too few answers to judge</span>}
+              <span><span className="block text-sm font-semibold text-ink">{s.label}</span><span className="block text-xs text-ink/65">{s.correct}/{s.total} correct</span></span>
+              {s.workingAt !== null ? <Scale year={r.year} at={s.workingAt} low={s.low} high={s.high} /> : <span className="text-sm text-ink/65">Too few answers to judge</span>}
               <span className="flex items-center gap-2 sm:justify-end">
                 {s.workingAt !== null && <span className="text-sm font-semibold tabular-nums text-ink">{label(s.workingAt)}</span>}
                 {s.band && <StatusChip tone={BAND_TONE[s.band]}>{s.band}</StatusChip>}
@@ -196,7 +196,7 @@ export function EntryReport({ report, name }: { report: ReportData; name: string
           {w.flags?.filter((f) => f !== "safeguarding_concern").length ? <p className="mt-2 text-xs text-ink/65">Notes: {w.flags.filter((f) => f !== "safeguarding_concern").map((f) => FLAG_TEXT[f] || f).join("; ")}</p> : null}
           {w.overrideReason && <p className="mt-2 text-sm text-ink/80"><b className="text-ink">Why the overall judgement was changed:</b> {w.overrideReason}</p>}
           {w.notes && <p className="mt-2 text-sm text-ink/80"><b className="text-ink">Teacher&apos;s note:</b> {w.notes}</p>}
-          {w.checkedBy && <p className="mt-2 text-xs text-ink/55">Checked by {w.checkedBy}{w.checkedAt ? ` on ${time(w.checkedAt)}` : ""}.{w.wordCount ? ` ${w.wordCount} words.` : ""}</p>}
+          {w.checkedBy && <p className="mt-2 text-xs text-ink/65">Checked by {w.checkedBy}{w.checkedAt ? ` on ${time(w.checkedAt)}` : ""}.{w.wordCount ? ` ${w.wordCount} words.` : ""}</p>}
         </Card>
       )}
 
@@ -215,7 +215,7 @@ export function EntryReport({ report, name }: { report: ReportData; name: string
               ["Blocked shortcuts", String(integ.counts.shortcuts + integ.counts.rightClick)],
               ["Longest same-letter run", String(integ.counts.longestSameLetter)],
             ].map(([k, v]) => (
-              <div key={k} className="rounded-lg bg-cream/70 px-3 py-2 print:bg-transparent print:px-0"><dt className="text-xs text-ink/60">{k}</dt><dd className="font-semibold tabular-nums text-ink">{v}</dd></div>
+              <div key={k} className="rounded-lg bg-cream/70 px-3 py-2 print:bg-transparent print:px-0"><dt className="text-xs text-ink/65">{k}</dt><dd className="font-semibold tabular-nums text-ink">{v}</dd></div>
             ))}
           </dl>
         )}
@@ -226,7 +226,7 @@ export function EntryReport({ report, name }: { report: ReportData; name: string
             <summary className="cursor-pointer text-sm font-medium text-teal-800">Timeline ({integ.timeline.length} entries)</summary>
             <ol className="mt-2 max-h-72 space-y-0.5 overflow-y-auto text-xs">
               {integ.timeline.map((e, i) => (
-                <li key={i} className={`flex gap-3 ${e.kind === "note" ? "text-ink" : "text-ink/60"}`}>
+                <li key={i} className={`flex gap-3 ${e.kind === "note" ? "text-ink" : "text-ink/65"}`}>
                   <span className="w-28 shrink-0 tabular-nums">{time(e.t)}</span>
                   <span>{e.text}</span>
                 </li>
@@ -240,7 +240,7 @@ export function EntryReport({ report, name }: { report: ReportData; name: string
       {gaps.length > 0 && (
         <>
           <details className="break-inside-avoid rounded-2xl border border-gold-light bg-white p-5 print:hidden">
-            <summary className="cursor-pointer text-base font-semibold text-ink">Gaps to teach <span className="font-normal text-ink/60">(questions at or below Year {r.year} answered wrongly)</span></summary>
+            <summary className="cursor-pointer text-base font-semibold text-ink">Gaps to teach <span className="font-normal text-ink/65">(questions at or below Year {r.year} answered wrongly)</span></summary>
             <GapList gaps={gaps} />
           </details>
           <section className="hidden break-inside-avoid rounded-2xl border border-gray-300 p-3 print:block">
@@ -250,7 +250,7 @@ export function EntryReport({ report, name }: { report: ReportData; name: string
         </>
       )}
 
-      <p className="px-1 text-xs text-ink/60">{r.caveat.includes("not a diagnosis") ? r.caveat : `${r.caveat} This report is not a diagnosis.`}</p>
+      <p className="px-1 text-xs text-ink/65">{r.caveat.includes("not a diagnosis") ? r.caveat : `${r.caveat} This report is not a diagnosis.`}</p>
     </article>
   );
 }

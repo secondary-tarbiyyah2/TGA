@@ -16,7 +16,7 @@
 
   --color-ink-900: #1b1e21; /* headings, primary text */
   --color-ink-700: #3a3f45; /* body text */
-  --color-ink-500: #6b7178; /* muted text (large text only, see DESIGN.md) */
+  --color-ink-500: #626870; /* muted text, >= 4.5:1 on every brand background incl. gold-100 */
 
   --color-cream: #fdfbf6;
   --color-white: #ffffff;
@@ -31,9 +31,14 @@
      visually-identical sections) rather than every element competing for
      the same gold. */
   --color-teal-900: #0f3d3a; /* darkest, portal hover states */
+  --color-teal-800: #175652; /* text on teal-50/100 (7.8:1 on cream) */
   --color-teal-700: #1f6f6b; /* portal primary actions, links-in-portal */
+  --color-teal-600: #2a847f; /* hover fills */
   --color-teal-500: #3b9a93; /* fills, icons */
+  --color-teal-400: #67b6af; /* decorative only */
+  --color-teal-300: #9cd2cd; /* borders, dark-mode text */
   --color-teal-100: #e3f2f0; /* soft backgrounds, chips */
+  --color-teal-50: #f0f8f7; /* selected-option tint */
 
   /* Back-compat aliases so the many existing gold/gold-light/ink/ink-light
      utility classes across the site automatically pick up the real palette
@@ -63,9 +68,14 @@
   --color-white: var(--color-white);
 
   --color-teal-900: var(--color-teal-900);
+  --color-teal-800: var(--color-teal-800);
   --color-teal-700: var(--color-teal-700);
+  --color-teal-600: var(--color-teal-600);
   --color-teal-500: var(--color-teal-500);
+  --color-teal-400: var(--color-teal-400);
+  --color-teal-300: var(--color-teal-300);
   --color-teal-100: var(--color-teal-100);
+  --color-teal-50: var(--color-teal-50);
 
   --color-ink: var(--color-ink);
   --color-gold: var(--color-gold);
@@ -485,9 +495,23 @@ a.portal-card:hover, .portal a.rounded-2xl.border.bg-white:hover {
 
 :focus-visible {
   /* gold-900, not gold-500: a gold-500 ring would vanish against a gold-500
-     button fill. Darkest gold stays visible against every surface in use. */
-  outline: 3px solid var(--color-gold-900);
+     button fill. Darkest gold stays visible against every light surface;
+     dark bands (footer, CTA band, headteacher band, portal preview) switch
+     the ring to gold-300 below, since gold-900 on ink is only 1.9:1. */
+  outline: 3px solid var(--focus-ring, var(--color-gold-900));
   outline-offset: 2px;
+}
+.bg-ink,
+.bg-ink-900,
+.bg-teal-900,
+footer {
+  --focus-ring: var(--color-gold-300);
+}
+
+/* Anchor links (e.g. /fees#estimator) land below the 80px sticky header
+   rather than under it. rem, so it scales with the large-text setting. */
+html {
+  scroll-padding-top: 6rem;
 }
 
 /* Installed app with the title bar hidden (Chrome/Edge "window controls overlay"): the

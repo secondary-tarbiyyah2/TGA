@@ -3,7 +3,6 @@ import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { CtaBand } from "@/components/CtaBand";
-import { AdmissionsStrip } from "@/components/AdmissionsStrip";
 import { getStaffMembers, getSiteSettings } from "@/lib/content";
 
 export const metadata: Metadata = pageMetadata({
@@ -57,8 +56,6 @@ export default async function TeamPage() {
           )}
         </Container>
       </section>
-
-      <AdmissionsStrip />
       <CtaBand heading="Ready to meet us properly?" body="Book a place at our next virtual open evening." ctaLabel="Book Open Evening" ctaHref="/open-evening" />
     </>
   );

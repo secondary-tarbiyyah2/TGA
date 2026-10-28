@@ -3,26 +3,49 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Container } from "./Container";
 import { ViewSettingsMenu, ViewSettingsPanel } from "./ViewSettings";
 import { primaryNav, primaryCta, portalCta, isNavGroup, type NavGroup } from "@/lib/nav";
 
+// A disclosure (button + list of links), not an ARIA menu: role="menu"
+// promises arrow-key navigation that a list of ordinary links doesn't
+// need, and screen readers treat the two patterns differently. Escape
+// returns focus to the button; tabbing out of the list closes it.
 function DesktopDropdown({ group, open, onToggle, onClose }: { group: NavGroup; open: boolean; onToggle: () => void; onClose: () => void }) {
   const pathname = usePathname();
   const active = group.items.some((i) => i.href === pathname);
+  const panelId = useId();
+  const buttonRef = useRef<HTMLButtonElement | null>(null);
+  const wrapRef = useRef<HTMLDivElement | null>(null);
 
   return (
-    <div className="relative">
+    <div
+      ref={wrapRef}
+      className="relative"
+      onKeyDown={(e) => {
+        if (e.key === "Escape" && open) {
+          e.stopPropagation();
+          onClose();
+          buttonRef.current?.focus();
+        }
+      }}
+      onBlur={(e) => {
+        // Focus left the button + list entirely: close, so a keyboard user
+        // doesn't leave a dangling open panel behind them.
+        if (open && !wrapRef.current?.contains(e.relatedTarget as Node | null)) onClose();
+      }}
+    >
       <button
+        ref={buttonRef}
         type="button"
         onClick={onToggle}
         aria-expanded={open}
-        aria-haspopup="true"
-        className={`flex items-center gap-1 rounded-md px-3 py-2.5 text-sm font-medium transition-colors ${
+        aria-controls={panelId}
+        className={`flex min-h-11 items-center gap-1 rounded-md px-3 py-2.5 text-sm font-medium transition-colors ${
           active || open ? "text-gold-700" : "text-ink/80 hover:text-gold-700"
-        }`}
+        } ${active ? "underline decoration-gold-500 decoration-2 underline-offset-8" : ""}`}
       >
         {group.label}
         <svg viewBox="0 0 12 8" width="10" height="7" aria-hidden="true" className={`transition-transform ${open ? "rotate-180" : ""}`}>
@@ -30,14 +53,14 @@ function DesktopDropdown({ group, open, onToggle, onClose }: { group: NavGroup; 
         </svg>
       </button>
       {open && (
-        <div role="menu" className="absolute left-0 top-full z-10 mt-2 min-w-[220px] rounded-2xl border border-gold-light/50 bg-white p-2 shadow-warm">
+        <div id={panelId} className="absolute left-0 top-full z-10 mt-2 min-w-[220px] rounded-2xl border border-gold-light/50 bg-white p-2 shadow-warm">
           {group.items.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              role="menuitem"
+              aria-current={item.href === pathname ? "page" : undefined}
               onClick={onClose}
-              className="block rounded-lg px-4 py-2.5 text-sm text-ink/80 hover:bg-cream hover:text-gold-700"
+              className={`block rounded-lg px-4 py-2.5 text-sm hover:bg-cream hover:text-gold-700 ${item.href === pathname ? "bg-cream font-semibold text-gold-700" : "text-ink/80"}`}
             >
               {item.label}
             </Link>
@@ -62,6 +85,7 @@ function DesktopDropdown({ group, open, onToggle, onClose }: { group: NavGroup; 
 // is the robust fix, the drawer's positioning no longer depends on
 // whatever CSS an ancestor happens to have now or in the future.
 function MobileDrawer({ open, onClose, triggerRef }: { open: boolean; onClose: () => void; triggerRef: React.RefObject<HTMLButtonElement | null> }) {
+  const pathname = usePathname();
   const [mobileOpenGroups, setMobileOpenGroups] = useState<Set<string>>(new Set());
   const panelRef = useRef<HTMLDivElement>(null);
   const [mounted, setMounted] = useState(false);
@@ -176,7 +200,8 @@ function MobileDrawer({ open, onClose, triggerRef }: { open: boolean; onClose: (
                       key={item.href}
                       href={item.href}
                       onClick={close}
-                      className="flex items-center px-2 text-ink/75"
+                      aria-current={pathname === item.href ? "page" : undefined}
+                      className={`flex items-center px-2 ${pathname === item.href ? "font-semibold text-gold-700" : "text-ink/75"}`}
                       style={{ minHeight: 48, touchAction: "manipulation" }}
                     >
                       {item.label}
@@ -307,8 +332,8 @@ export function Header() {
                 key={entry.href}
                 href={entry.href}
                 aria-current={pathname === entry.href ? "page" : undefined}
-                className={`rounded-md px-3 py-2.5 text-sm font-medium transition-colors ${
-                  pathname === entry.href ? "text-gold-700" : "text-ink/80 hover:text-gold-700"
+                className={`inline-flex min-h-11 items-center whitespace-nowrap rounded-md px-3 py-2.5 text-sm font-medium transition-colors ${
+                  pathname === entry.href ? "text-gold-700 underline decoration-gold-500 decoration-2 underline-offset-8" : "text-ink/80 hover:text-gold-700"
                 }`}
               >
                 {entry.label}
@@ -316,14 +341,14 @@ export function Header() {
             )
           )}
           <ViewSettingsMenu />
-          <Link href={portalCta.href} className="ml-1 flex items-center gap-1.5 rounded-full border border-teal-700/30 px-3.5 py-2 text-sm font-medium text-teal-700 hover:border-teal-700 hover:bg-teal-100">
+          <Link href={portalCta.href} className="ml-1 flex min-h-11 items-center gap-1.5 whitespace-nowrap rounded-full border border-teal-700/30 px-3.5 py-2 text-sm font-medium text-teal-700 hover:border-teal-700 hover:bg-teal-100">
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
               <rect x="5" y="11" width="14" height="9" rx="1.5" />
               <path d="M8 11V8a4 4 0 0 1 8 0v3" />
             </svg>
             {portalCta.label}
           </Link>
-          <Link href={primaryCta.href} className="ml-2 inline-flex items-center justify-center rounded-full bg-gold-500 px-5 py-2.5 text-sm font-semibold text-ink-900 transition-all hover:brightness-95">
+          <Link href={primaryCta.href} className="ml-2 inline-flex min-h-11 items-center justify-center whitespace-nowrap rounded-full bg-gold-500 px-5 py-2.5 text-sm font-semibold text-ink-900 transition-all hover:brightness-95">
             {primaryCta.label}
           </Link>
         </nav>

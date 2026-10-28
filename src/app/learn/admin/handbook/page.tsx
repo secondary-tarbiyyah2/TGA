@@ -7,7 +7,7 @@ import { StaffHandbook } from "@/components/learn/StaffHandbook";
 export default function AdminHandbookPage() {
   return (
     <section className="app-pad">
-      <LearnGate allowedRoles={["head_teacher", "admin"]}>
+      <LearnGate allowedRoles={["head_teacher", "admin", "admissions"]}>
         <PageHeader crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "Staff handbook" }]} title="Staff handbook" subtitle="The few things every member of staff needs to know." />
         <StaffHandbook />
       </LearnGate>

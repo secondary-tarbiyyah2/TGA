@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { getSupabaseClient, getEdgeFunctionUrl } from "@/lib/supabase/client";
 import { PasswordInput } from "@/components/learn/PasswordInput";
 import { loginEmailFor } from "@/lib/learn/studentLogin";
-import { useLearnSession, dashboardPathForRole } from "@/lib/learn/session";
+import { useLearnSession, dashboardPathForRole, primaryRole } from "@/lib/learn/session";
 import { StarMark } from "@/components/StarMark";
 import { MAIN_SITE_ORIGIN } from "@/lib/learn/origin";
 
@@ -82,7 +82,7 @@ export default function LearnLoginPage() {
   // Already signed in with a known role, send them straight to their
   // dashboard rather than showing the login form again.
   if (!finishing && session && session !== "loading" && rolesLoaded && roles.length > 0) {
-    router.replace(dashboardPathForRole(roles[0].role));
+    router.replace(dashboardPathForRole(primaryRole(roles.map((r) => r.role)) ?? roles[0].role));
     return <p className="text-ink/65">Redirecting…</p>;
   }
 

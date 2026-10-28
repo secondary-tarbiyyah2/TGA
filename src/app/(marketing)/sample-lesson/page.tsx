@@ -69,7 +69,7 @@ export default async function SampleLessonPage() {
               </p>
             </div>
           )}
-          <p className="mt-3 text-xs text-ink/60">
+          <p className="mt-3 text-xs text-ink/65">
             Please keep this link within your family. The pupils in the recording and their parents have given permission for it to be shared with prospective families only.
           </p>
 
@@ -81,7 +81,7 @@ export default async function SampleLessonPage() {
                 <span aria-hidden="true" className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gold-100 text-sm font-semibold text-gold-900">{i + 1}</span>
                 <div>
                   <p className="font-medium text-ink">
-                    {s.step} <span className="ml-2 text-xs font-semibold uppercase tracking-wide text-ink/55">{s.mins}</span>
+                    {s.step} <span className="ml-2 text-xs font-semibold uppercase tracking-wide text-ink/65">{s.mins}</span>
                   </p>
                   <p className="mt-0.5 text-sm text-ink/70">{s.what}</p>
                 </div>

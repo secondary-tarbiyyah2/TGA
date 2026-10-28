@@ -78,7 +78,7 @@ export function PageHeader({
       )}
       {trail.length > 1 && (
         <nav aria-label="Breadcrumb" className="mb-3 hidden sm:block">
-          <ol className="flex flex-wrap items-center gap-1 text-[13px] text-ink/60">
+          <ol className="flex flex-wrap items-center gap-1 text-[13px] text-ink/65">
             {trail.map((c, i) => (
               <li key={`${c.label}-${i}`} className="flex min-w-0 items-center gap-1">
                 {i > 0 && <Icon name="chevronRight" className="h-3.5 w-3.5 text-ink/30" />}

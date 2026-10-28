@@ -7,7 +7,7 @@
 --     anon (cannot be read back), quiz_leads cannot exist without both an
 --     email and consent
 begin;
-select plan(17);
+select plan(20);
 
 insert into auth.users (id, email) values
   ('e1000000-0000-0000-0000-000000000001', 'ht@example.com'),
@@ -148,6 +148,25 @@ insert into public.quiz_sessions (id, session_token, year_group_id) values
 select is((select count(*)::int from public.quiz_sessions), 0, 'anon cannot read back any quiz_sessions row, including their own');
 insert into public.quiz_events (session_id, event_type, step_index) values
   ('f1000000-0000-0000-0000-000000000010', 'started', 0);
+
+-- ── quiz_sessions UPDATE needs the matching session token (0161) ─────────
+-- Without the x-quiz-session header nothing is updated: RLS hides the row
+-- from the UPDATE so it affects 0 rows rather than erroring.
+update public.quiz_sessions set current_step = 5 where id = 'f1000000-0000-0000-0000-000000000010';
+reset role;
+select is((select current_step from public.quiz_sessions where id = 'f1000000-0000-0000-0000-000000000010'), 0, 'anon cannot update a quiz session without its token');
+set local role anon;
+select set_config('request.headers', '{"x-quiz-session": "wrong-token"}', true);
+update public.quiz_sessions set current_step = 6 where id = 'f1000000-0000-0000-0000-000000000010';
+reset role;
+select is((select current_step from public.quiz_sessions where id = 'f1000000-0000-0000-0000-000000000010'), 0, 'anon cannot update a quiz session with someone else''s token');
+set local role anon;
+select set_config('request.headers', '{"x-quiz-session": "test-token-abc"}', true);
+update public.quiz_sessions set current_step = 7 where id = 'f1000000-0000-0000-0000-000000000010';
+reset role;
+select is((select current_step from public.quiz_sessions where id = 'f1000000-0000-0000-0000-000000000010'), 7, 'anon can update their own quiz session with its token');
+select set_config('request.headers', '{}', true);
+set local role anon;
 
 -- ── quiz_leads: cannot be inserted without a real email + consent —
 -- enforced at the schema level (not null / check constraints), matching

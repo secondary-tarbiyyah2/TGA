@@ -524,7 +524,6 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
   const ctx = { band, n: lesson.n, theme, accent: theme.accent || ACCENTS[subjectSlug] || TEAL, mathy: /^(mathematics|science|gcse-science|business)$/.test(subjectSlug), subjectLabel: file.subject, yearLabel: YEAR_LABEL(file.year), nav: nav || null, rec: { stage: {}, stageTitle: {}, agenda: null, close: null }, slideNo: () => slideCount };
   const quran = subjectSlug === "quran";
   const ks4 = file.year === "y10" || file.year === "y11";
-  const duration = lesson.duration || (band === "early" ? 30 : band === "junior" ? 45 : 50);
   const keywords = (lesson.keywords || []).filter((k) => k && k.term);
   const teach = lesson.teach || [];
   let breakNo = lesson.n * 3; // rotates the activities so neighbouring lessons differ
@@ -724,7 +723,10 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
     const blockBullets = (t.bullets || []).map(clean).filter(Boolean);
     if (band !== "early" && parts.renderBlock(s, ctx, t, blockBullets, { x: 0.8, y: 2.15, w: 11.8, h: 4.7 })) {
       s.addNotes(clean(t.note) + parts.blockNotes(t));
-      if (!quran && band !== "senior" && i === Math.min(1, teach.length - 2)) (breakSlide(pptx, ctx, nextBreak()), breaksAdded++);
+      if (!quran && band !== "senior" && i === Math.min(1, teach.length - 2)) {
+        breakSlide(pptx, ctx, nextBreak());
+        breaksAdded++;
+      }
       return;
     }
     const rawBullets = blockBullets;
@@ -756,8 +758,10 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
       }
     }
     s.addNotes(clean(t.note));
-    if (quran && teach.length >= 4 && i === 1) (breakSlide(pptx, ctx, nextBreak()), breaksAdded++);
-    else if (!quran && band !== "senior" && i === Math.min(1, teach.length - 2)) (breakSlide(pptx, ctx, nextBreak()), breaksAdded++);
+    if ((quran && teach.length >= 4 && i === 1) || (!quran && band !== "senior" && i === Math.min(1, teach.length - 2))) {
+      breakSlide(pptx, ctx, nextBreak());
+      breaksAdded++;
+    }
   });
 
   // 6. Guided practice ---------------------------------------------------------
@@ -783,7 +787,10 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
     s.addNotes("Work through these with the class, modelling your thinking aloud. Check every pupil (mini-whiteboards, chat or thumbs) before moving on.");
   }
 
-  if (quran) (breakSlide(pptx, ctx, nextBreak()), breaksAdded++);
+  if (quran) {
+    breakSlide(pptx, ctx, nextBreak());
+    breaksAdded++;
+  }
 
   // 7. Independent -------------------------------------------------------------
   {

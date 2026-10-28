@@ -116,7 +116,7 @@ export function ManageBookingClient() {
     return (
       <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
         <h2 className="font-serif text-lg font-semibold text-ink">This booking has been cancelled.</h2>
-        <p className="mt-2 text-sm text-ink/70">You can book a new call any time from our Admissions page.</p>
+        <p className="mt-2 text-sm text-ink/70">You can <a href="/book-a-call/" className="font-semibold text-gold-700 underline">book a new call</a> any time.</p>
       </div>
     );
   }

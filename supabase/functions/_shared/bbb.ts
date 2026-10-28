@@ -214,6 +214,17 @@ export type BbbRecording = {
  * to decide who ever sees the result of this call. */
 export async function listRecordings(meetingId: string): Promise<BbbRecording[]> {
   const url = await signedUrl("getRecordings", { meetingID: meetingId });
+  return fetchRecordings(url);
+}
+
+/** Looks one recording up by its own recordID (not the meeting's), so the caller can never be handed a different recording. */
+export async function getRecordingById(recordId: string): Promise<BbbRecording | null> {
+  const url = await signedUrl("getRecordings", { recordID: recordId });
+  const found = await fetchRecordings(url);
+  return found.find((r) => r.recordID === recordId) || null;
+}
+
+async function fetchRecordings(url: string): Promise<BbbRecording[]> {
   const res = await fetch(url);
   const text = await res.text();
   if (textBetween(text, "returncode") !== "SUCCESS") return [];
@@ -233,7 +244,7 @@ export async function listRecordings(meetingId: string): Promise<BbbRecording[]>
     }
     out.push({
       recordID,
-      meetingId,
+      meetingId: textBetween(recordingXml, "meetingID") || "",
       startTime: startTime ? Number(startTime) : null,
       endTime: endTime ? Number(endTime) : null,
       playbackUrl,

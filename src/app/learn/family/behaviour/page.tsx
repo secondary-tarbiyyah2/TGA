@@ -1,12 +1,12 @@
 "use client";
 
 import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
-import { useSearchParams } from "next/navigation";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { LearnShell } from "@/components/learn/LearnShell";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { EmptyState, ui } from "@/components/learn/ui";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { useSelectedChild } from "@/lib/learn/selectedChild";
 import { BadgeShelf } from "@/components/learn/behaviour/BadgeShelf";
 import { RecordsTable } from "@/components/learn/behaviour/RecordsTable";
 import { StatTile } from "@/components/learn/behaviour/StatTile";
@@ -24,9 +24,9 @@ import {
 type Child = { id: string; name: string };
 
 function FamilyBehaviourContent() {
-  const searchParams = useSearchParams();
   const [children, setChildren] = useState<Child[] | null>(null);
-  const [selected, setSelected] = useState<string>(searchParams.get("child") || "");
+  // ?child= wins, else the child chosen anywhere in the family area, else the first.
+  const [selected, setSelected] = useSelectedChild(children ? children.map((c) => c.id) : null);
   const [records, setRecords] = useState<BehaviourRecord[] | null>(null);
   const [badges, setBadges] = useState<BadgeAward[]>([]);
   const [detentions, setDetentions] = useState<Detention[]>([]);
@@ -40,12 +40,7 @@ function FamilyBehaviourContent() {
       .from("children")
       .select("id, name")
       .order("name")
-      .then(({ data }) => {
-        const rows = (data as Child[] | null) || [];
-        setChildren(rows);
-        // A ?child= that isn't one of this parent's children falls back to the first.
-        setSelected((cur) => (rows.some((r) => r.id === cur) ? cur : rows[0]?.id || ""));
-      });
+      .then(({ data }) => setChildren((data as Child[] | null) || []));
   }, []);
 
   const load = useCallback(async (childId: string) => {
@@ -130,7 +125,7 @@ function FamilyBehaviourContent() {
 
           <section className="rounded-2xl border border-gold-light/50 bg-white p-4">
             <h3 className="mb-3 text-base font-semibold text-ink">
-              Recent records {records.length > 0 && <span className="font-normal text-ink/60">· {records.length}</span>}
+              Recent records {records.length > 0 && <span className="font-normal text-ink/65">· {records.length}</span>}
             </h3>
             <RecordsTable records={records.slice(0, shown)} showStudent={false} empty="Nothing recorded yet. Good things are on the way, in sha Allah." />
             {records.length > shown && (

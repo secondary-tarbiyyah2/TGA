@@ -1,6 +1,6 @@
 name: Open evening reminders
 
-# Hourly: emails everyone booked on an open evening (open_evening_bookings,
+# Every 6 hours (see the cron note below): emails everyone booked on an open evening (open_evening_bookings,
 # 0087) a reminder in the 24 hours before it starts. All the logic, and the
 # "never remind the same booking twice" guarantee (reminder_sent_at), live in
 # the open-evening-reminders Edge Function; this only calls it. The function

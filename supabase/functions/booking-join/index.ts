@@ -37,12 +37,20 @@ Deno.serve(async (req) => {
   const bookingId = body.booking_id;
   if (!bookingId) return jsonResponse({ ok: false, error: "missing_booking_id" }, 400);
 
-  const { data: booking, error: bookingErr } = await serviceClient
+  const { data: bookingRow, error: bookingErr } = await serviceClient
     .from("bookings")
     .select("id, status, staff_id, teams_join_url, staff_members(display_name, teams_meeting_url)")
     .eq("id", bookingId)
     .single();
-  if (bookingErr || !booking) return jsonResponse({ ok: false, error: "booking_not_found" }, 404);
+  if (bookingErr || !bookingRow) return jsonResponse({ ok: false, error: "booking_not_found" }, 404);
+  // Without generated DB types supabase-js types a to-one join as an array.
+  const booking = bookingRow as unknown as {
+    id: string;
+    status: string;
+    staff_id: string;
+    teams_join_url: string | null;
+    staff_members: { display_name: string; teams_meeting_url: string | null } | null;
+  };
   if (booking.status === "cancelled") return jsonResponse({ ok: false, error: "booking_cancelled" }, 400);
 
   const [{ data: profile }, { data: ownStaffRow }, { data: staffRoles }] = await Promise.all([

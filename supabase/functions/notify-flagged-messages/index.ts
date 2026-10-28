@@ -12,6 +12,7 @@
 // verify_jwt either); it uses the service-role key throughout.
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { jsonResponse } from "../_shared/cors.ts";
+import { isServiceCaller } from "../_shared/auth.ts";
 import { emailShell, sendEmail } from "../_shared/resend.ts";
 
 const LEARN_SITE_URL = Deno.env.get("LEARN_SITE_URL") || "https://learn.tarbiyyah.co.uk";
@@ -23,6 +24,9 @@ const supabase = createClient(
 
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: { "Access-Control-Allow-Origin": "*" } });
+  if (req.method !== "POST") return jsonResponse({ ok: false, error: "method_not_allowed" }, 405);
+  // Scheduled job: only the scheduler (service-role key) may run it.
+  if (!(await isServiceCaller(req))) return jsonResponse({ ok: false, error: "forbidden" }, 403);
 
   const { data: pending, error } = await supabase
     .from("message_thread_messages")

@@ -4,6 +4,7 @@ import { StaffApp } from "@/components/staff/StaffApp";
 
 export const metadata: Metadata = {
   title: "Staff",
+  description: "Staff sign-in for the admissions booking panel.",
   robots: { index: false, follow: false },
 };
 

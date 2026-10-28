@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { telHref } from "@/lib/format";
 import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
@@ -33,7 +34,7 @@ export default async function ContactPage() {
             {settings.contactPhone && (
               <div>
                 <dt className="text-xs font-semibold uppercase tracking-wide text-gold-700">Phone</dt>
-                <dd><a href={`tel:${settings.contactPhone.replace(/\s+/g, "")}`} className="underline">{settings.contactPhone}</a></dd>
+                <dd><a href={telHref(settings.contactPhone)} className="underline">{settings.contactPhone}</a></dd>
               </div>
             )}
             {settings.openingHours && (

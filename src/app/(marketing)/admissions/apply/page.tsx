@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
@@ -8,10 +9,11 @@ import { FALLBACK_ADMISSIONS_EMAIL, admissionsProcessSteps } from "@/components/
 import { getFeeBands, getSiteSettings } from "@/lib/content";
 import { formatGBP } from "@/lib/format";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Apply online",
   description: "Apply for a place at Tarbiyyah Global Academy, our online application form and what happens next.",
-};
+  path: "/admissions/apply",
+});
 
 export default async function ApplyPage() {
   const [settings, feeBands] = await Promise.all([getSiteSettings(), getFeeBands()]);
@@ -22,7 +24,7 @@ export default async function ApplyPage() {
   const needs = [
     "Each child's latest school report (PDF, JPG or PNG). You can also email it after applying.",
     "Photo ID for a parent or guardian (passport, driving licence or national ID card), as a PDF, JPG or PNG. You only need to upload it once, even for several children.",
-    "Proof of identity and address for the pupil: each child's passport or birth certificate, and a recent utility bill, council tax bill, bank statement or tenancy agreement showing your child's home address (PDF, JPG or PNG). If you don't have the proof of address to hand, you can send it after applying.",
+    "Proof of identity and address for the pupil: each child's passport or birth certificate, and a recent utility bill, council tax bill (or the local equivalent in your country), bank statement or tenancy agreement showing your child's home address (PDF, JPG or PNG). If you don't have the proof of address to hand, you can send it after applying.",
     "Your child's home address, and a parent or guardian email address and phone number.",
     `Payment is not taken on this form. If we make an offer, you then send proof of payment (screenshot or receipt) for the application fee${settings.applicationFee != null ? ` (${formatGBP(settings.applicationFee)})` : ""} if not yet paid, the registration fee${settings.registrationFee != null ? ` (${formatGBP(settings.registrationFee)})` : ""} and your first payment, to confirm the place.`,
   ];

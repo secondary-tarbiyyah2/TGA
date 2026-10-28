@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { ukToday } from "@/lib/learn/ukTime";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { useLearnSession } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
@@ -28,7 +29,7 @@ function usePupilSignals(ids: string[]): Record<string, Signals> | null {
     if (!supabase || !key) return;
     let alive = true;
     (async () => {
-      const today = localDateKey(new Date());
+      const today = ukToday();
       const from = new Date();
       from.setDate(from.getDate() - 30);
       const [att, notes, reasons] = await Promise.all([

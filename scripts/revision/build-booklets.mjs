@@ -77,7 +77,12 @@ function build(subjectSlug, file, year, unit, lessons) {
   );
   const kwAll = [];
   const seen = new Set();
-  for (const l of lessons) for (const k of l.keywords || []) if (k.term && !seen.has(k.term.toLowerCase())) (seen.add(k.term.toLowerCase()), kwAll.push(k));
+  for (const l of lessons)
+    for (const k of l.keywords || [])
+      if (k.term && !seen.has(k.term.toLowerCase())) {
+        seen.add(k.term.toLowerCase());
+        kwAll.push(k);
+      }
   const nCheck = lessons.reduce((n, l) => n + (l.teach || []).filter((t) => t.check).length, 0);
   kids.push(box([para([run(`${lessons.length} lesson${lessons.length === 1 ? "" : "s"}  ·  ${kwAll.length} key words  ·  ${nCheck} quiz questions`, { bold: true })], { after: 40 }), para([run("Everything here is taken from your lessons, so it matches your slides.", { color: MUTED, size: 19 })], { after: 0 })], CREAM, accent));
 

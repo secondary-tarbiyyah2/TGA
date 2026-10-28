@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { ukToday } from "@/lib/learn/ukTime";
 import { useEffect, useState } from "react";
 import { Register } from "@/components/learn/attendance/Register";
 import { LearnGate } from "@/components/learn/LearnGate";
@@ -8,7 +9,6 @@ import { PageHeader } from "@/components/learn/PageHeader";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { callEdgeFunction, edgeErrorMessage } from "@/lib/learn/edge";
 import { classBannerStyle } from "@/lib/learn/classes";
-import { localDateKey } from "@/lib/learn/calendar";
 
 type TodayLesson = {
   id: string;
@@ -36,7 +36,7 @@ function useTodayLessons() {
       const published = ((slots as unknown as { id: string; class_id: string; start_time: string; end_time: string; classes?: { name: string } | null; timetable_runs?: { status: string } | null }[]) || []).filter(
         (s) => s.timetable_runs?.status === "published",
       );
-      const today = localDateKey(new Date());
+      const today = ukToday();
       type Raw = { id: string; date: string; bbb_status: string; objectives: string | null; timetable_slot_id: string; timetable_slots?: { class_id: string; start_time: string; end_time: string; classes?: { name: string } | null } | null };
       const cols = "id, date, bbb_status, objectives, timetable_slot_id, timetable_slots(class_id, start_time, end_time, classes(name))";
       // Your timetabled lessons, plus any lesson given to you directly (cover).

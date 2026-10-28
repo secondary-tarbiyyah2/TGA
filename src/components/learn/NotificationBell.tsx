@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { useLearnPermission } from "@/lib/learn/session";
@@ -19,7 +20,8 @@ type Signal = { id: string; message: string; href: string; createdAt: string };
 export function NotificationBell({ userId }: { userId: string }) {
   const supabase = getSupabaseClient();
   const isSafeguardingLead = useLearnPermission("safeguarding_lead");
-  const [signals, setSignals] = useState<Signal[] | null>(null);
+  // No client (env not configured) means nothing to show, never "Loading…" forever.
+  const [signals, setSignals] = useState<Signal[] | null>(supabase ? null : []);
   const [lastReadAt, setLastReadAt] = useState<string | null>(null);
   const [open, setOpen] = useState(false);
 
@@ -46,11 +48,11 @@ export function NotificationBell({ userId }: { userId: string }) {
       ]);
 
       const timestamped: Signal[] = [
-        ...(absences || []).map((a) => ({ id: `absence-${a.id}`, message: "An unexplained absence alert was sent.", href: "/admin/compliance", createdAt: a.created_at })),
+        ...(absences || []).map((a) => ({ id: `absence-${a.id}`, message: "An unexplained absence alert was sent.", href: "/admin/absences", createdAt: a.created_at })),
         ...((flaggedResult.data || []) as { id: string; created_at: string }[]).map((m) => ({
           id: `flag-${m.id}`,
           message: "A message was flagged for safeguarding review.",
-          href: "/admin/compliance",
+          href: "/admin/message-oversight",
           createdAt: m.created_at,
         })),
         ...((feedback || []) as { id: string; created_at: string; kind: string }[]).map((f) => ({
@@ -127,12 +129,12 @@ export function NotificationBell({ userId }: { userId: string }) {
             <ul className="max-h-80 space-y-1 overflow-y-auto">
               {signals.map((s) => (
                 <li key={s.id}>
-                  <a href={s.href} className="block rounded-lg px-2 py-2 text-sm hover:bg-cream">
+                  <Link href={s.href} onClick={() => setOpen(false)} className="block rounded-lg px-2 py-2 text-sm hover:bg-cream">
                     <span className="text-ink/80">{s.message}</span>
                     {s.createdAt && (
                       <span className="mt-0.5 block text-xs text-ink/65">{new Date(s.createdAt).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" })}</span>
                     )}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

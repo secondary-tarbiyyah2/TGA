@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { useLearnSession, dashboardPathForRole } from "@/lib/learn/session";
+import { useLearnSession, dashboardPathForRole, primaryRole } from "@/lib/learn/session";
 import { LearnAccountMenu } from "@/components/learn/LearnAccountMenu";
 import { NotificationBell } from "@/components/learn/NotificationBell";
 import { PortalSidebar, PortalSidebarDrawer } from "@/components/learn/PortalSidebar";
@@ -86,7 +86,7 @@ export function LearnLayoutShell({ children }: { children: React.ReactNode }) {
   // The entry assessment is a full-screen, distraction-free page of its own (no portal chrome).
   if (/^\/(learn\/)?assessment(\/|$)/.test(pathname || "")) return <div className="portal">{children}</div>;
   const signedIn = !!(activeSession && rolesLoaded && roles.length > 0);
-  const homeHref = signedIn ? dashboardPathForRole(roles[0].role) : "/";
+  const homeHref = signedIn ? dashboardPathForRole(primaryRole(roles.map((r) => r.role)) ?? roles[0].role) : "/";
   // Pages outside an area (/account, /report-concern) keep the sidebar of
   // the user's main area, so there's always a way back.
   const area = signedIn ? portalAreaFor(pathname) || portalAreaFor(homeHref) : null;

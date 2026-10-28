@@ -73,7 +73,23 @@ export function AdminStaffPanel({ roleFilter, defaultInviteRole = "staff" }: { r
     });
     setInviting(false);
     if (error || !data?.ok) {
-      setInviteError("Couldn't create the account, check the details and try again.");
+      // A non-2xx reply reaches us as `error`; the function's own error code is
+      // in its JSON body (supabase-js exposes it on error.context).
+      let code = data?.error as string | undefined;
+      if (!code && error && "context" in error) {
+        try {
+          code = (await (error as { context?: Response }).context?.clone().json())?.error;
+        } catch {
+          /* leave undefined */
+        }
+      }
+      setInviteError(
+        code === "already_exists"
+          ? "That email already has an account. Re-invite or reset it from Learn > People instead (that sends them a one-time link, never a password)."
+          : code === "head_teacher_required"
+            ? "Only the Headteacher can create admin accounts."
+            : "Couldn't create the account, check the details and try again.",
+      );
       return;
     }
     setInviteResult({ email, tempPassword: data.tempPassword, loginUrl: data.loginUrl, emailSent: data.emailSent });

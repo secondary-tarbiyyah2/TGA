@@ -227,7 +227,7 @@ export function FamilyAbsences() {
           </div>
 
           <section className="mt-6 rounded-2xl border border-gold-light bg-white p-4">
-            <h2 className="text-base font-semibold text-ink">Your notes{notes && notes.length > 0 ? <span className="font-normal text-ink/60"> · {notes.length}</span> : null}</h2>
+            <h2 className="text-base font-semibold text-ink">Your notes{notes && notes.length > 0 ? <span className="font-normal text-ink/65"> · {notes.length}</span> : null}</h2>
             {withdrawError && <p className="mt-2 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{withdrawError}</p>}
             {notes === null ? (
               <p className="mt-3 text-sm text-ink/65">Loading…</p>

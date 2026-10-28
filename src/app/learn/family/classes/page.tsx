@@ -7,6 +7,7 @@ import { LearnGate } from "@/components/learn/LearnGate";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { ClassGrid } from "@/components/learn/class/ClassGrid";
 import { useFamilyChildren, useViewerClasses, type ClassViewer, type FamilyChild } from "@/lib/learn/classes";
+import { writeSelectedChild } from "@/lib/learn/selectedChild";
 
 function ChildClasses({ child }: { child: FamilyChild }) {
   const viewer = useMemo<ClassViewer>(() => ({ kind: "parent", childId: child.id }), [child.id]);
@@ -42,6 +43,7 @@ function FamilyClassesContent() {
             <Link
               key={c.id}
               href={`/family/classes?child=${c.id}`}
+              onClick={() => writeSelectedChild(c.id)}
               className={`inline-flex min-h-10 items-center rounded-lg px-3 py-1.5 text-sm font-medium ${only === c.id ? "bg-teal-700 text-white" : "border border-gold-light bg-white text-ink/80 hover:bg-cream"}`}
             >
               {c.name}

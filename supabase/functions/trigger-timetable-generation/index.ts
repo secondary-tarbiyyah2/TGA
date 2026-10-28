@@ -77,14 +77,24 @@ Deno.serve(async (req) => {
     return jsonResponse({ ok: false, error: "invalid_json" }, 400);
   }
 
+  // Labels are plain text ("2026-27", "Draft 3"): letters, digits, spaces
+  // and a few punctuation marks, bounded in length. The workflow also passes
+  // them through environment variables rather than inline, but validating
+  // here keeps anything shell-like out of the dispatch entirely.
+  const LABEL = /^[A-Za-z0-9 ._\/()&'-]{1,80}$/;
   const academicYearLabel = (body.academic_year_label || "").trim();
   if (!academicYearLabel) {
     return jsonResponse({ ok: false, error: "missing_academic_year_label" }, 400);
   }
+  if (!LABEL.test(academicYearLabel)) return jsonResponse({ ok: false, error: "invalid_academic_year_label" }, 400);
+  const runLabel = (body.run_label || "").trim();
+  if (runLabel && !LABEL.test(runLabel)) return jsonResponse({ ok: false, error: "invalid_run_label" }, 400);
+  const maxSeconds = (body.solver_max_seconds || "").trim();
+  if (maxSeconds && !/^[0-9]{1,4}$/.test(maxSeconds)) return jsonResponse({ ok: false, error: "invalid_solver_max_seconds" }, 400);
 
   const inputs: Record<string, string> = { academic_year_label: academicYearLabel };
-  if (body.run_label?.trim()) inputs.run_label = body.run_label.trim();
-  if (body.solver_max_seconds?.trim()) inputs.solver_max_seconds = body.solver_max_seconds.trim();
+  if (runLabel) inputs.run_label = runLabel;
+  if (maxSeconds) inputs.solver_max_seconds = maxSeconds;
 
   const dispatchRes = await fetch(
     `https://api.github.com/repos/${githubRepo}/actions/workflows/generate-timetable.yml/dispatches`,

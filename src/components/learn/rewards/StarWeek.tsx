@@ -241,7 +241,7 @@ export function StarWeek({ isHead, classId, className, weekStart, me, onChanged 
           <span className="min-w-0 flex-1">
             <span className="block text-sm font-medium text-ink">
               {c.child_name}
-              {c.hidden && <span className="ml-2 text-xs font-normal text-ink/60">private: no public shout-out</span>}
+              {c.hidden && <span className="ml-2 text-xs font-normal text-ink/65">private: no public shout-out</span>}
             </span>
             <span className="block text-xs text-ink/65">{evidence(c).join(" · ") || "Nothing recorded this week yet"}</span>
           </span>

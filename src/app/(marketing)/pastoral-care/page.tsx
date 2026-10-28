@@ -3,7 +3,6 @@ import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { CtaBand } from "@/components/CtaBand";
-import { AdmissionsStrip } from "@/components/AdmissionsStrip";
 
 export const metadata: Metadata = pageMetadata({
   title: "Pastoral Care & SEND Support",
@@ -19,8 +18,8 @@ export default function PastoralCarePage() {
           <Kicker>Pastoral Care &amp; SEND Support</Kicker>
           <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">Every child known, every child supported.</h1>
           <p className="mt-6 max-w-2xl text-lg text-ink/75">
-            An online school still means real relationships. Every pupil has a form tutor who knows them personally
-            – academically and personally.
+            An online school still means real relationships. Every pupil has a form tutor who knows them well, as a
+            learner and as a person.
           </p>
         </Container>
       </section>
@@ -49,8 +48,6 @@ export default function PastoralCarePage() {
           </p>
         </Container>
       </section>
-
-      <AdmissionsStrip />
       <CtaBand heading="Questions about pastoral or SEND support?" body="Reach out, we're happy to talk it through before you apply." ctaLabel="Contact us" ctaHref="/contact" />
     </>
   );

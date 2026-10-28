@@ -67,7 +67,7 @@ export function PortalPreview() {
               <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
               <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
               <span className="h-3 w-3 rounded-full bg-[#28c840]" />
-              <span className="ml-4 rounded-md bg-white px-3 py-1 text-xs text-ink/60">learn.tarbiyyah.co.uk/family/dashboard</span>
+              <span className="ml-4 rounded-md bg-white px-3 py-1 text-xs text-ink/65">learn.tarbiyyah.co.uk/family/dashboard</span>
             </div>
             <Image src="/portal/family-dashboard-desktop.png" alt="The family dashboard in the Parent Portal on a computer" width={2880} height={1920} className="h-auto w-full" sizes="(min-width: 1280px) 72rem, 100vw" />
           </div>

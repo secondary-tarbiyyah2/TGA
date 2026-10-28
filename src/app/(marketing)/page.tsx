@@ -14,14 +14,17 @@ import { PortalPreview } from "@/components/home/PortalPreview";
 import { AdmissionsProcessFlow } from "@/components/admissions/AdmissionsSteps";
 
 export const metadata: Metadata = pageMetadata({
-  title: "A specialist, quality education, rooted in faith",
-  description: "An online school by Tarbiyyah Education Trust, delivering a specialist, quality education wherever home is. Live, timetabled lessons with qualified teachers: Qur'an, Arabic and Islamic Studies alongside the full national curriculum, from Year 1 to Year 11, taught with tarbiyyah at its heart.",
+  // Kept short: search results cut titles at about 60 characters and
+  // descriptions at about 160, and the template adds " | Tarbiyyah Global
+  // Academy" to the title.
+  title: "Specialist online Islamic school",
+  description: "Online Islamic school by Tarbiyyah Education Trust: live lessons with qualified teachers, Qur'an, Arabic and Islamic Studies alongside the national curriculum, Year 1 to 11.",
   path: "",
 });
 
 const defaultPillars = [
   { title: "Specialist curriculum", body: "Qur'an, Arabic and Islamic Studies every week, with the full national curriculum to GCSE, taught live by qualified teachers." },
-  { title: "Tarbiyyah & Islamic Studies", body: "Qur'an, Arabic and Islamic Studies on the timetable at every key stage, not an add-on." },
+  { title: "Character and faith", body: "Tarbiyyah runs through the day: our RECIPE values taught by name, a form tutor who knows each child, and faith as the foundation, not an add-on." },
   { title: "Live, small classes", body: "Real-time lessons with no more than 15 pupils in a class, so every child is known and supported." },
 ];
 
@@ -89,10 +92,10 @@ export default async function HomePage() {
             </p>
           </div>
           <div className="relative mx-auto w-full max-w-sm">
-            <div className="relative aspect-[3/4] overflow-hidden rounded-3xl border-2 border-gold-300 shadow-warm">
-              <Image src="/hero.webp" alt="An open notebook and pen on a warm wooden desk, calm, focused learning" fill className="object-cover" priority sizes="(min-width: 1024px) 24rem, 80vw" />
+            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border-2 border-gold-300 shadow-warm lg:aspect-[3/4]">
+              <Image src="/hero.webp" alt="An open notebook and pen on a warm wooden desk, calm, focused learning" fill className="object-cover" priority sizes="(min-width: 1024px) 24rem, min(24rem, 90vw)" />
             </div>
-            <div className="shadow-warm absolute -bottom-4 -left-4 rounded-2xl bg-white px-4 py-3 text-sm font-semibold text-gold-700">
+            <div className="shadow-warm absolute -bottom-4 left-2 rounded-2xl bg-white px-4 py-3 text-sm font-semibold text-gold-700 sm:-left-4">
               Live lessons from Jan 2027
             </div>
           </div>

@@ -461,12 +461,12 @@ function AnswerReview({ full }: { full: Full }) {
   return (
     <details className={`${ui.card} print:hidden`}>
       <summary className="cursor-pointer text-base font-semibold text-ink">Answers, question by question</summary>
-      <p className="mt-2 text-xs text-ink/60">For checking and appeals. Times under 2.5 seconds are shown in amber.</p>
+      <p className="mt-2 text-xs text-ink/65">For checking and appeals. Times under 2.5 seconds are shown in amber.</p>
       {sections.map((s) => (
         <div key={s.key} className="mt-4 overflow-x-auto">
           <h4 className="text-sm font-semibold text-ink">{s.title}</h4>
           <table className="mt-1 w-full min-w-[40rem] text-left text-sm">
-            <thead className="text-xs text-ink/60"><tr><th className="py-1 pr-2 font-medium">#</th><th className="py-1 pr-2 font-medium">Question</th><th className="py-1 pr-2 font-medium">Answer given</th><th className="py-1 pr-2 font-medium">Right answer</th><th className="py-1 pr-2 font-medium">Time</th></tr></thead>
+            <thead className="text-xs text-ink/65"><tr><th className="py-1 pr-2 font-medium">#</th><th className="py-1 pr-2 font-medium">Question</th><th className="py-1 pr-2 font-medium">Answer given</th><th className="py-1 pr-2 font-medium">Right answer</th><th className="py-1 pr-2 font-medium">Time</th></tr></thead>
             <tbody className="divide-y divide-gold-light/50">
               {s.items.filter((i) => i.type !== "text").map((it, n) => {
                 const r = full.responses[it.id];
@@ -474,11 +474,11 @@ function AnswerReview({ full }: { full: Full }) {
                 const t = r?.ms ?? r?.g;
                 return (
                   <tr key={it.id} className="align-top">
-                    <td className="py-1.5 pr-2 tabular-nums text-ink/60">{n + 1}</td>
-                    <td className="py-1.5 pr-2"><MathText text={it.stem} className="line-clamp-2" /><span className="block text-xs text-ink/55">{it.objective} · level {it.level}</span></td>
+                    <td className="py-1.5 pr-2 tabular-nums text-ink/65">{n + 1}</td>
+                    <td className="py-1.5 pr-2"><MathText text={it.stem} className="line-clamp-2" /><span className="block text-xs text-ink/65">{it.objective} · level {it.level}</span></td>
                     <td className={`py-1.5 pr-2 ${ok === true ? "text-green-800" : ok === false ? "text-red-800" : "text-ink/50"}`}>{r?.value === undefined || r?.value === "" ? "–" : <MathText text={String(r.value)} />}{ok === true ? " ✓" : ok === false ? " ✗" : ""}</td>
                     <td className="py-1.5 pr-2"><MathText text={String(it.answer)} />{it.unit && it.unit !== "£" ? ` ${it.unit}` : ""}</td>
-                    <td className={`py-1.5 pr-2 tabular-nums ${typeof t === "number" && t < 2500 ? "text-amber-700" : "text-ink/60"}`}>{typeof t === "number" ? `${(t / 1000).toFixed(1)} s` : "–"}</td>
+                    <td className={`py-1.5 pr-2 tabular-nums ${typeof t === "number" && t < 2500 ? "text-amber-700" : "text-ink/65"}`}>{typeof t === "number" ? `${(t / 1000).toFixed(1)} s` : "–"}</td>
                   </tr>
                 );
               })}
@@ -566,14 +566,14 @@ function WritingMark({ year, prompt, text, live, initial, marks, onSave, onRemar
         <div className="flex items-center gap-2"><span className="portal-tile tile-violet" aria-hidden="true"><Icon name="notebookPen" /></span><h4 className="font-semibold text-ink">Writing</h4></div>
         {lastStaff ? <StatusChip tone="good">Checked by {lastStaff.created_by_email || "staff"} on {new Date(lastStaff.created_at).toLocaleDateString("en-GB", { day: "numeric", month: "short" })}</StatusChip> : first ? <StatusChip tone="warn">Waiting for a staff check</StatusChip> : null}
       </div>
-      {prompt && <p className="text-sm text-ink/75"><b>{prompt.title}.</b> {prompt.prompt}<br /><span className="text-ink/60">Secure for this band: {prompt.guide}</span></p>}
-      {live ? <p className="rounded-lg bg-cream px-3 py-2 text-sm text-ink/75">Done on the call: read the task aloud, the child writes on paper and holds it up to the camera. Mark what you see.</p> : text ? <blockquote className="max-h-72 overflow-y-auto whitespace-pre-wrap rounded-lg border border-gold-light/70 bg-cream/60 p-3 text-sm leading-relaxed text-ink/90">{text}<footer className="mt-2 text-xs text-ink/55">{text.trim().split(/\s+/).length} words</footer></blockquote> : <p className="text-sm text-ink/60">No writing submitted yet.</p>}
+      {prompt && <p className="text-sm text-ink/75"><b>{prompt.title}.</b> {prompt.prompt}<br /><span className="text-ink/65">Secure for this band: {prompt.guide}</span></p>}
+      {live ? <p className="rounded-lg bg-cream px-3 py-2 text-sm text-ink/75">Done on the call: read the task aloud, the child writes on paper and holds it up to the camera. Mark what you see.</p> : text ? <blockquote className="max-h-72 overflow-y-auto whitespace-pre-wrap rounded-lg border border-gold-light/70 bg-cream/60 p-3 text-sm leading-relaxed text-ink/90">{text}<footer className="mt-2 text-xs text-ink/65">{text.trim().split(/\s+/).length} words</footer></blockquote> : <p className="text-sm text-ink/65">No writing submitted yet.</p>}
 
       {!live && first && (
         <div className="rounded-lg border border-violet-200 bg-violet-50/60 p-3 text-sm">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <p className="font-semibold text-ink">{first.source === "ai" ? "AI first mark" : "Estimate – needs staff marking"}{first.overall ? `: ${first.overall}` : ""}</p>
-            <span className="text-xs text-ink/55">{first.source === "ai" ? `${first.model || "AI"}${first.confidence ? `, ${first.confidence} confidence` : ""}` : "length, sentences, punctuation and a short spelling list"} · {new Date(first.created_at).toLocaleString("en-GB", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}</span>
+            <span className="text-xs text-ink/65">{first.source === "ai" ? `${first.model || "AI"}${first.confidence ? `, ${first.confidence} confidence` : ""}` : "length, sentences, punctuation and a short spelling list"} · {new Date(first.created_at).toLocaleString("en-GB", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}</span>
           </div>
           {(first.flags || []).includes("safeguarding_concern") && <p className="mt-2 rounded-md border border-red-200 bg-red-50 px-2 py-1 font-medium text-red-900">Possible safeguarding concern flagged. Read the writing and follow the safeguarding policy.</p>}
           {first.feedback && <p className="mt-1 text-ink/80">{first.feedback}</p>}
@@ -590,11 +590,11 @@ function WritingMark({ year, prompt, text, live, initial, marks, onSave, onRemar
         </div>
       )}
 
-      <p className="text-xs text-ink/60">Your marks: each strand against what is expected for Year {year}. {first ? "They start from the first mark; change any you disagree with." : ""}</p>
+      <p className="text-xs text-ink/65">Your marks: each strand against what is expected for Year {year}. {first ? "They start from the first mark; change any you disagree with." : ""}</p>
       <div className="space-y-2">
         {WRITING.map((c) => (
           <div key={c.key} className="grid gap-1 sm:grid-cols-[14rem_1fr] sm:items-center">
-            <span className="text-sm"><span className="font-medium text-ink">{c.label}</span><span className="block text-xs text-ink/60">{c.hint}</span></span>
+            <span className="text-sm"><span className="font-medium text-ink">{c.label}</span><span className="block text-xs text-ink/65">{c.hint}</span></span>
             <Scale name={c.label} value={scores[c.key]} onChange={(v) => setScores((s) => ({ ...s, [c.key]: v }))} />
           </div>
         ))}

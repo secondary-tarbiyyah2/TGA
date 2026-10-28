@@ -93,3 +93,18 @@ export function ukMinutesOfDay(iso: string): number {
   const p = parts(new Date(iso));
   return Number(p.hour) * 60 + Number(p.minute);
 }
+
+/**
+ * A UK lesson time shown in the viewer's own zone, or "" when the viewer is
+ * on UK time already: "09:00" -> "11:00 your time" for a family in Cairo.
+ */
+export function localTimeNote(key: string, hm: string): string {
+  const browserZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  if (!browserZone || browserZone === UK) return "";
+  const at = ukWallToDate(key, hm);
+  const local = at.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" });
+  if (local === hm) return "";
+  const localDay = at.toLocaleDateString("en-CA"); // YYYY-MM-DD in the browser zone
+  const shift = localDay > key ? " (next day)" : localDay < key ? " (previous day)" : "";
+  return `${local} your time${shift}`;
+}

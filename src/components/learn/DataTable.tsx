@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, type ReactNode } from "react";
+import { useMemo, useRef, useState, type ReactNode } from "react";
 import { Icon } from "@/components/learn/Icon";
 import { btn, ui } from "@/components/learn/ui";
 import { saveCsv, toCsv, type CsvCell } from "@/lib/learn/csv";
@@ -72,6 +72,13 @@ export function DataTable<T>({
   const [sort, setSort] = useState(initialSort || null);
   const [size, setSize] = useState<number>(initialPageSize);
   const [page, setPage] = useState(0);
+  // Paging scrolls the table back into view: on a long page the Previous/
+  // Next buttons sit under rows the reader has just scrolled past.
+  const rootRef = useRef<HTMLDivElement | null>(null);
+  const goToPage = (n: number) => {
+    setPage(n);
+    rootRef.current?.scrollIntoView({ block: "start", behavior: "smooth" });
+  };
 
   const shown = useMemo(() => {
     let list = rows || [];
@@ -113,7 +120,7 @@ export function DataTable<T>({
   const hasToolbar = !!search || !!filters || !!csvName;
 
   return (
-    <div className="space-y-3">
+    <div ref={rootRef} className="scroll-mt-20 space-y-3">
       {hasToolbar && (
         <div className={ui.toolbar}>
           {search && (
@@ -153,7 +160,7 @@ export function DataTable<T>({
           <div className="hidden overflow-x-auto rounded-2xl border border-gold-light bg-white sm:block">
             <table className="w-full text-sm">
               <caption className="sr-only">{caption}</caption>
-              <thead className="sticky top-0 z-[1] bg-white">
+              <thead className="bg-white">
                 <tr className="border-b border-gold-light">
                   {columns.map((c) => {
                     const active = sort?.key === c.key;
@@ -236,14 +243,14 @@ export function DataTable<T>({
               </label>
               {pages > 1 && (
                 <nav aria-label="Pages" className="flex items-center gap-1">
-                  <button type="button" onClick={() => setPage(current - 1)} disabled={current === 0} className={btn("secondary", "sm")}>
+                  <button type="button" onClick={() => goToPage(current - 1)} disabled={current === 0} className={btn("secondary", "sm")}>
                     <Icon name="chevronLeft" size="sm" />
                     Previous
                   </button>
                   <span className="px-1 tabular-nums">
                     {current + 1} / {pages}
                   </span>
-                  <button type="button" onClick={() => setPage(current + 1)} disabled={current >= pages - 1} className={btn("secondary", "sm")}>
+                  <button type="button" onClick={() => goToPage(current + 1)} disabled={current >= pages - 1} className={btn("secondary", "sm")}>
                     Next
                     <Icon name="chevronRight" size="sm" />
                   </button>

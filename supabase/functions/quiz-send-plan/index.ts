@@ -21,6 +21,7 @@
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
 import { emailShell, sendEmail } from "../_shared/resend.ts";
+import { hashIp, isRateLimited, recordAttempt } from "../_shared/spam.ts";
 
 const supabase = createClient(
   Deno.env.get("SUPABASE_URL")!,
@@ -45,14 +46,28 @@ Deno.serve(async (req) => {
   }
 
   const leadId = String(body.leadId || "");
-  if (!leadId) return jsonResponse({ ok: false, error: "missing_lead_id" }, 400);
+  const claimedEmail = String(body.email || "").trim().toLowerCase();
+  if (!leadId || !claimedEmail) return jsonResponse({ ok: false, error: "missing_lead_id" }, 400);
 
+  // The header comment above promised this check; the code never did it.
+  // Together these three rules stop the function being used as a relay:
+  //   1. the caller must know the lead's email as well as its id;
+  //   2. a lead is emailed once, within 15 minutes of being created
+  //      (the quiz calls this immediately after inserting the lead);
+  //   3. the usual per-IP / per-email hourly limits apply.
   const { data: lead, error: leadErr } = await supabase
     .from("quiz_leads")
-    .select("id, email, parent_name")
+    .select("id, email, parent_name, created_at, pdf_sent_at")
     .eq("id", leadId)
     .single();
-  if (leadErr || !lead) return jsonResponse({ ok: false, error: "unknown_lead" }, 404);
+  if (leadErr || !lead || lead.email.toLowerCase() !== claimedEmail) return jsonResponse({ ok: false, error: "unknown_lead" }, 404);
+  if (lead.pdf_sent_at) return jsonResponse({ ok: true, alreadySent: true });
+  if (Date.now() - new Date(lead.created_at).getTime() > 15 * 60 * 1000) return jsonResponse({ ok: false, error: "lead_too_old" }, 410);
+
+  const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+  const ipHash = await hashIp(ip);
+  if (await isRateLimited(supabase, ipHash, lead.email)) return jsonResponse({ ok: false, error: "rate_limited" }, 429);
+  await recordAttempt(supabase, ipHash, lead.email);
 
   const parentName = lead.parent_name || "";
   const firstName = parentName.trim().split(/\s+/)[0] || "there";
@@ -118,7 +133,10 @@ Deno.serve(async (req) => {
     `),
   });
 
-  if (!result.ok) return jsonResponse({ ok: false, error: "send_failed", detail: result.detail }, 502);
+  if (!result.ok) {
+    console.error("quiz-send-plan send failed:", result.detail);
+    return jsonResponse({ ok: false, error: "send_failed" }, 502);
+  }
 
   await supabase.from("quiz_leads").update({ pdf_sent_at: new Date().toISOString() }).eq("id", leadId);
 

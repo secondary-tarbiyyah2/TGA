@@ -22,6 +22,8 @@ const ERRORS: Record<string, string> = {
   not_accepted: "The application has to be in Accepted before accounts are created.",
   application_not_found: "That application could not be found.",
   forbidden: "Your account isn't allowed to create accounts.",
+  email_belongs_to_staff_account:
+    "The parent email on this application belongs to a staff account. Confirm the family's own email with them and update the application before creating accounts.",
 };
 
 /**

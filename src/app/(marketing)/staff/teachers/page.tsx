@@ -4,6 +4,7 @@ import { StaffApp } from "@/components/staff/StaffApp";
 
 export const metadata: Metadata = {
   title: "Teacher Accounts",
+  description: "Manage staff accounts for the admissions booking panel.",
   robots: { index: false, follow: false },
 };
 

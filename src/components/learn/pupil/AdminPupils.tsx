@@ -147,7 +147,7 @@ export function AdminPupils() {
                 </button>
               </>
             )}
-            {summary.missing > 0 && <span className="text-ink/60"> · families see a reminder on their dashboard until it&apos;s complete</span>}
+            {summary.missing > 0 && <span className="text-ink/65"> · families see a reminder on their dashboard until it&apos;s complete</span>}
           </p>
         )}
         <DataTable

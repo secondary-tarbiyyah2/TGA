@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 // Pages that already are (or sit inside) the apply / booking flow, a second
 // "Apply" bar there would just be noise over the form.
-const HIDDEN_ON = ["/admissions/apply", "/book-a-call", "/manage-booking"];
+const HIDDEN_ON = ["/admissions/apply", "/admissions/payment", "/book-a-call", "/manage-booking", "/open-evening", "/open-evening/manage", "/contact", "/eligibility"];
 
 /** Sticky Apply / Book-a-call bar, phones and small tablets only. */
 export function MobileCtaBar() {

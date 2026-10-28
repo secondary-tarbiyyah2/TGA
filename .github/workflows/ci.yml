@@ -98,3 +98,27 @@ jobs:
           exit $code
       - if: always()
         run: supabase stop
+
+  # Every Edge Function type-checks with the same Deno runtime that runs it.
+  # Until now a type error in supabase/functions only surfaced when
+  # deploy-supabase.yml bundled it on main.
+  edge-functions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+      - name: Type-check Edge Functions
+        run: |
+          set -euo pipefail
+          status=0
+          for f in supabase/functions/*/index.ts; do
+            if ! deno check --node-modules-dir=none "$f" > /tmp/check.txt 2>&1; then
+              status=1
+              echo "::group::$f"; cat /tmp/check.txt; echo "::endgroup::"
+              echo "::error file=$f::Type check failed (see the group above)"
+            fi
+          done
+          exit $status

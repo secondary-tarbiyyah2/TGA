@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { fetchChildClasses, useFamilyChildren, useStudentChildId, type ClassSummary } from "@/lib/learn/classes";
+import { useSelectedChild } from "@/lib/learn/selectedChild";
 import { Tabs } from "@/components/learn/Tabs";
 
 type StatusRow = { homework_id: string; class_id: string; due_at: string; status: "missing" | "late" | "on_time" | "not_yet_due"; submitted_at: string | null };
@@ -127,11 +128,11 @@ export function StudentTodo() {
 }
 
 /** Parent "To do": the same list for one chosen child (read only). */
-export function FamilyTodo({ initialChild }: { initialChild?: string }) {
+export function FamilyTodo() {
   const kids = useFamilyChildren();
-  const [selected, setSelected] = useState(initialChild || "");
-  // A stale ?child= (not one of this parent's children) falls back to the first child.
-  const childId = (kids?.some((k) => k.id === selected) ? selected : "") || kids?.[0]?.id || "";
+  // ?child= in the URL, else the child chosen anywhere else in the family
+  // area, else the first child (src/lib/learn/selectedChild.ts).
+  const [childId, setSelected] = useSelectedChild(kids ? kids.map((k) => k.id) : null);
   if (kids === null) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
   if (kids.length === 0)
     return (

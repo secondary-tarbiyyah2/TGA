@@ -47,6 +47,7 @@ yarn-error.log*
 # public/register.config.example.php)
 /public/register.config.php
 /public/register.log
+/public/register.ratelimit.json
 
 # typescript
 *.tsbuildinfo
@@ -54,3 +55,7 @@ next-env.d.ts
 supabase/.branches/
 supabase/.temp/
 /dist/
+
+# Python bytecode (scripts/timetable-solver)
+__pycache__/
+*.pyc

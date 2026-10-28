@@ -7,6 +7,7 @@ import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
 import { buildIcs } from "../_shared/ics.ts";
 import { emailShell, sendEmail } from "../_shared/resend.ts";
+import { escapeHtml as esc } from "../_shared/auth.ts";
 import { generateToken, hashToken } from "../_shared/manageToken.ts";
 import { hashIp, isRateLimited, recordAttempt } from "../_shared/spam.ts";
 
@@ -68,6 +69,13 @@ Deno.serve(async (req) => {
   if (!consent) errors.push("consent");
   if (!staffId || !slotStart || !slotEnd) errors.push("slot");
 
+  // Length caps: these go into emails and the bookings row.
+  if (parentName.length > 120 || email.length > 254 || phone.length > 40 || country.length > 80 || yearGroups.length > 120 || notes.length > 2000) errors.push("length");
+  // The slot must be a real, future, correctly-shaped time.
+  const startMs = Date.parse(slotStart);
+  const endMs = Date.parse(slotEnd);
+  if (!Number.isFinite(startMs) || !Number.isFinite(endMs) || endMs <= startMs || startMs < Date.now()) errors.push("slot");
+
   if (errors.length) return jsonResponse({ ok: false, error: "validation", fields: errors }, 400);
 
   const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
@@ -82,13 +90,35 @@ Deno.serve(async (req) => {
   // exclusion constraint (bookings_no_staff_overlap) is the real guarantee
   // against a race, this check is just to return a friendly "slot taken"
   // error rather than a raw constraint-violation error when it happens.
-  const { data: staff, error: staffErr } = await supabase
+  const { data: staffRow, error: staffErr } = await supabase
     .from("staff_members")
     .select("id, display_name, teams_meeting_url, profiles!inner(email, full_name)")
     .eq("id", staffId)
     .single();
 
-  if (staffErr || !staff) return jsonResponse({ ok: false, error: "unknown_staff" }, 400);
+  if (staffErr || !staffRow) return jsonResponse({ ok: false, error: "unknown_staff" }, 400);
+  // Without generated DB types supabase-js types a to-one join as an array.
+  const staff = staffRow as unknown as { id: string; display_name: string; teams_meeting_url: string | null; profiles: { email: string; full_name: string } };
+
+  // The slot must be one the booking page could have offered: produced by
+  // get_open_slots for this staff member (which applies their availability,
+  // exceptions, the meeting type's duration and existing bookings). Without
+  // this, anyone could book any length of time against any staff member.
+  const slotDay = new Date(startMs).toISOString().slice(0, 10);
+  const { data: openSlots, error: slotsErr } = await supabase.rpc("get_open_slots", {
+    p_meeting_type: "admissions",
+    p_staff_id: staffId,
+    p_from: slotDay,
+    p_to: slotDay,
+  });
+  if (slotsErr) {
+    console.error("book-admissions-call get_open_slots:", slotsErr.message);
+    return jsonResponse({ ok: false, error: "slot_check_failed" }, 500);
+  }
+  const offered = (openSlots || []).some(
+    (slot: { slot_start: string; slot_end: string }) => Date.parse(slot.slot_start) === startMs && Date.parse(slot.slot_end) === endMs,
+  );
+  if (!offered) return jsonResponse({ ok: false, error: "slot_taken" }, 409);
 
   const teamsUrl = staff.teams_meeting_url || ADMISSIONS_TEAMS_URL;
   if (!teamsUrl) return jsonResponse({ ok: false, error: "no_meeting_link_configured" }, 500);
@@ -120,7 +150,8 @@ Deno.serve(async (req) => {
     if (insertErr.code === "23P01") {
       return jsonResponse({ ok: false, error: "slot_taken" }, 409);
     }
-    return jsonResponse({ ok: false, error: "insert_failed", detail: insertErr.message }, 500);
+    console.error("book-admissions-call insert:", insertErr.message);
+    return jsonResponse({ ok: false, error: "insert_failed" }, 500);
   }
 
   const manageUrl = `${SITE_URL}/manage-booking?token=${manageToken}`;
@@ -152,7 +183,7 @@ Deno.serve(async (req) => {
     subject: "Your admissions call is confirmed | Tarbiyyah Global Academy",
     html: emailShell(`
       <h1 style="font-size:20px;margin:0 0 16px;">Your call is confirmed</h1>
-      <p>Assalamu alaikum ${parentName.split(" ")[0]},</p>
+      <p>Assalamu alaikum ${esc(parentName.split(" ")[0])},</p>
       <p>Your admissions call is booked for <strong>${whenText}</strong>.</p>
       <p><a href="${teamsUrl}" style="color:#5E4B1E;">Join on Microsoft Teams</a>. No download needed, just click the link at the time of your call.</p>
       <p>Need to change or cancel? <a href="${manageUrl}" style="color:#5E4B1E;">Manage your booking</a>.</p>
@@ -162,20 +193,20 @@ Deno.serve(async (req) => {
     icsFilename: "admissions-call.ics",
   });
   if (!parentEmailResult.ok) {
-    console.error(`booking ${booking.id}: confirmation email to parent (${email}) failed: ${parentEmailResult.detail}`);
+    console.error(`booking ${booking.id}: confirmation email to parent failed: ${parentEmailResult.detail}`);
   }
 
   const staffEmailResult = await sendEmail({
     to: staff.profiles.email,
     toName: staff.profiles.full_name,
-    subject: `New admissions call · ${parentName}`,
+    subject: `New admissions call · ${parentName.replace(/[\r\n]/g, " ")}`,
     html: emailShell(`
       <h1 style="font-size:20px;margin:0 0 16px;">New admissions call booked</h1>
       <p><strong>${whenText}</strong></p>
-      <p>Parent: ${parentName} (${email}, ${phone})</p>
-      <p>Country: ${country}</p>
-      <p>Year group(s): ${yearGroups}</p>
-      ${notes ? `<p>Notes: ${notes}</p>` : ""}
+      <p>Parent: ${esc(parentName)} (${esc(email)}, ${esc(phone)})</p>
+      <p>Country: ${esc(country)}</p>
+      <p>Year group(s): ${esc(yearGroups)}</p>
+      ${notes ? `<p>Notes: ${esc(notes).replace(/\n/g, "<br/>")}</p>` : ""}
     `),
     icsContent: ics,
     icsFilename: "admissions-call.ics",

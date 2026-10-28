@@ -95,6 +95,16 @@ Deno.serve(async (req) => {
   try {
     const existing = await findUserByEmail(contactEmail);
     if (existing) {
+      // The application form is public, so the email on it is whatever the
+      // applicant typed. If it matches a STAFF account, linking the child to
+      // it (and, with resend, minting a recovery link for it) would hand a
+      // staff login's reset link to whoever accepted the application. Refuse
+      // and let the office sort out the real parent address first.
+      const { data: existingRoles } = await serviceClient.from("user_roles").select("role").eq("user_id", existing.id);
+      const staffRoles = ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover"];
+      if ((existingRoles || []).some((r) => staffRoles.includes(String(r.role)))) {
+        return jsonResponse({ ok: false, error: "email_belongs_to_staff_account" }, 409);
+      }
       parentId = existing.id;
     } else {
       const { data: created, error: createErr } = await serviceClient.auth.admin.createUser({ email: contactEmail, email_confirm: true });

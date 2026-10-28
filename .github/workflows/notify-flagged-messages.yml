@@ -3,7 +3,8 @@ name: Notify flagged messages
 # A flagged message (0013's keyword-match trigger on message_thread_
 # messages) previously had NO alerting at all — a safeguarding lead had to
 # happen to open Compliance to ever see one. This calls the deployed
-# notify-flagged-messages Edge Function every 15 minutes, which emails
+# notify-flagged-messages Edge Function every 3 hours (see the cron note
+# below), which emails
 # every current safeguarding_lead and marks each message notified so it's
 # never sent twice. Same "find the project ref, call its Edge Function"
 # pattern as check-bookable-staff.yml; runs frequently (unlike the weekly
@@ -33,7 +34,7 @@ jobs:
         with:
           version: latest
 
-      - name: Find the project ref and anon key
+      - name: Find the project ref and service-role key
         id: keys
         run: |
           set -euo pipefail
@@ -47,15 +48,21 @@ jobs:
             echo "::error::Could not find the Supabase project."
             exit 1
           fi
-          ANON=$(supabase projects api-keys --project-ref "$REF" -o json | jq -r '.[] | select(.name=="anon" or .name=="publishable") | .api_key' | head -n1)
-          echo "::add-mask::$ANON"
+          # These functions only run for the scheduler: they check for the
+          # service-role key as the bearer token (see _shared/auth.ts).
+          KEY=$(supabase projects api-keys --project-ref "$REF" -o json | jq -r '.[] | select(.name=="service_role" or .name=="secret") | .api_key' | head -n1)
+          if [ -z "$KEY" ] || [ "$KEY" = "null" ]; then
+            echo "::error::Could not find a service_role/secret key."
+            exit 1
+          fi
+          echo "::add-mask::$KEY"
           echo "ref=$REF" >> "$GITHUB_OUTPUT"
-          echo "anon_key=$ANON" >> "$GITHUB_OUTPUT"
+          echo "service_role_key=$KEY" >> "$GITHUB_OUTPUT"
 
       - name: Call notify-flagged-messages
         run: |
           set -euo pipefail
-          curl -sS -X POST "https://${{ steps.keys.outputs.ref }}.supabase.co/functions/v1/notify-flagged-messages" \
-            -H "apikey: ${{ steps.keys.outputs.anon_key }}" \
-            -H "Authorization: Bearer ${{ steps.keys.outputs.anon_key }}" \
+          curl -sS --fail-with-body -X POST "https://${{ steps.keys.outputs.ref }}.supabase.co/functions/v1/notify-flagged-messages" \
+            -H "apikey: ${{ steps.keys.outputs.service_role_key }}" \
+            -H "Authorization: Bearer ${{ steps.keys.outputs.service_role_key }}" \
             -H "Content-Type: application/json"

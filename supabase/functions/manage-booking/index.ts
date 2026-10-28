@@ -6,6 +6,7 @@ import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
 import { buildIcs } from "../_shared/ics.ts";
 import { emailShell, sendEmail } from "../_shared/resend.ts";
+import { escapeHtml as esc } from "../_shared/auth.ts";
 import { generateToken, hashToken } from "../_shared/manageToken.ts";
 import { hashIp, isRateLimited, recordAttempt } from "../_shared/spam.ts";
 import { bbbConfigured, ensureMeeting, buildGuestJoinUrl, derivePasswords } from "../_shared/bbb.ts";
@@ -182,8 +183,8 @@ Deno.serve(async (req) => {
       await sendEmail({
         to: staffEmail,
         toName: staffName,
-        subject: `Cancelled: admissions call with ${booking.contact_name}`,
-        html: emailShell(`<p>${booking.contact_name}'s call for ${whenText(booking.starts_at)} has been cancelled.</p>`),
+        subject: `Cancelled: admissions call with ${String(booking.contact_name).replace(/[\r\n]/g, " ")}`,
+        html: emailShell(`<p>${esc(booking.contact_name)}'s call for ${whenText(booking.starts_at)} has been cancelled.</p>`),
         icsContent: cancelIcs,
         icsFilename: "cancelled.ics",
       });
@@ -196,6 +197,30 @@ Deno.serve(async (req) => {
     const newStart = String(body.newSlotStart || "");
     const newEnd = String(body.newSlotEnd || "");
     if (!newStart || !newEnd) return jsonResponse({ ok: false, error: "missing_slot" }, 400);
+
+    // Same rule as a fresh booking: the new time must be one get_open_slots
+    // currently offers for this staff member, so a reschedule cannot land
+    // outside their availability or on an arbitrary length of time.
+    const startMs = Date.parse(newStart);
+    const endMs = Date.parse(newEnd);
+    if (!Number.isFinite(startMs) || !Number.isFinite(endMs) || endMs <= startMs || startMs < Date.now()) {
+      return jsonResponse({ ok: false, error: "invalid_slot" }, 400);
+    }
+    const slotDay = new Date(startMs).toISOString().slice(0, 10);
+    const { data: openSlots, error: slotsErr } = await supabase.rpc("get_open_slots", {
+      p_meeting_type: booking.meeting_type || "admissions",
+      p_staff_id: booking.staff_id,
+      p_from: slotDay,
+      p_to: slotDay,
+    });
+    if (slotsErr) {
+      console.error("manage-booking get_open_slots:", slotsErr.message);
+      return jsonResponse({ ok: false, error: "update_failed" }, 500);
+    }
+    const offered = (openSlots || []).some(
+      (slot: { slot_start: string; slot_end: string }) => Date.parse(slot.slot_start) === startMs && Date.parse(slot.slot_end) === endMs,
+    );
+    if (!offered) return jsonResponse({ ok: false, error: "slot_taken" }, 409);
 
     const { error: updateErr } = await supabase
       .from("bookings")
@@ -231,8 +256,8 @@ Deno.serve(async (req) => {
       await sendEmail({
         to: staffEmail,
         toName: staffName,
-        subject: `Rescheduled: admissions call with ${booking.contact_name}`,
-        html: emailShell(`<p>${booking.contact_name}'s call moved to ${whenText(newStart)}.</p>`),
+        subject: `Rescheduled: admissions call with ${String(booking.contact_name).replace(/[\r\n]/g, " ")}`,
+        html: emailShell(`<p>${esc(booking.contact_name)}'s call moved to ${whenText(newStart)}.</p>`),
         icsContent: updateIcs,
         icsFilename: "updated.ics",
       });

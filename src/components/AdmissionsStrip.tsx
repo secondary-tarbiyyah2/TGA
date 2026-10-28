@@ -15,6 +15,7 @@ export async function AdmissionsStrip() {
             How admissions works
           </h2>
           <p className="flex flex-wrap gap-x-5 gap-y-1 text-sm font-semibold">
+            <Link href="/admissions/apply" className="inline-flex min-h-11 items-center text-gold-700 underline underline-offset-2">Apply online</Link>
             <Link href="/fees" className="inline-flex min-h-11 items-center text-gold-700 underline underline-offset-2">See fees and payment plans</Link>
           </p>
         </div>

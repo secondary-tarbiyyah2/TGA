@@ -51,6 +51,7 @@ export function BookingCalendar() {
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
   const [selectedSlot, setSelectedSlot] = useState<Slot | null>(null);
   const [status, setStatus] = useState<Status>("idle");
+  const [errorCode, setErrorCode] = useState<string | null>(null);
   const [renderedAt] = useState(() => Date.now());
 
   const tz = useMemo(() => localTz(), []);
@@ -143,9 +144,13 @@ export function BookingCalendar() {
           slotEnd: selectedSlot.slot_end,
         }),
       });
-      const json = await res.json();
+      const json = await res.json().catch(() => ({}));
       if (!res.ok || !json.ok) {
+        setErrorCode(typeof json.error === "string" ? json.error : null);
         setStatus("error");
+        // The slot is no longer offered, so refresh the list so the parent
+        // picks from what is actually free.
+        if (json.error === "slot_taken") setSelectedSlot(null);
         return;
       }
       setStatus("success");
@@ -353,7 +358,13 @@ export function BookingCalendar() {
             </button>
             {status === "error" && (
               <p role="alert" className="mt-3 text-sm text-red-700">
-                That slot may have just been taken, or something went wrong. Please pick another time.
+                {errorCode === "slot_taken"
+                  ? "That time has just been taken. Please pick another slot."
+                  : errorCode === "rate_limited"
+                    ? "Too many booking attempts from this connection. Please try again in an hour, or email us."
+                    : errorCode === "validation"
+                      ? "Please check the details you entered and try again."
+                      : "Something went wrong. Please pick another time or email us."}
               </p>
             )}
           </form>

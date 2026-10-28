@@ -1,16 +1,46 @@
 import type { Metadata, Viewport } from "next";
-import { Amiri, Inter, Space_Grotesk } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { CookieConsent } from "@/components/CookieConsent";
 import { Analytics } from "@/components/Analytics";
 import { getSiteSettings } from "@/lib/content";
 import { JsonLd } from "@/components/JsonLd";
 
-const inter = Inter({ variable: "--font-inter", subsets: ["latin"], weight: ["400", "500", "600", "700"] });
-const spaceGrotesk = Space_Grotesk({ variable: "--font-space-grotesk", subsets: ["latin"], weight: ["500", "600", "700"] });
+// Fonts are self-hosted from src/app/fonts (OFL-licensed woff2 subsets, see
+// the LICENSE-*.txt files there). This removes the build-time dependency on
+// fonts.googleapis.com (builds no longer fail offline or behind a proxy) and
+// the runtime third-party request, and lets the browser preload the Latin
+// faces from our own origin.
+const inter = localFont({
+  variable: "--font-inter",
+  display: "swap",
+  src: [
+    { path: "./fonts/inter-latin-400-normal.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/inter-latin-500-normal.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/inter-latin-600-normal.woff2", weight: "600", style: "normal" },
+    { path: "./fonts/inter-latin-700-normal.woff2", weight: "700", style: "normal" },
+  ],
+});
+const spaceGrotesk = localFont({
+  variable: "--font-space-grotesk",
+  display: "swap",
+  src: [
+    { path: "./fonts/space-grotesk-latin-500-normal.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/space-grotesk-latin-600-normal.woff2", weight: "600", style: "normal" },
+    { path: "./fonts/space-grotesk-latin-700-normal.woff2", weight: "700", style: "normal" },
+  ],
+});
 // Arabic script (Qur'an, Islamic Studies, Arabic terms). Not preloaded: the
 // browser only downloads it on pages that actually show Arabic.
-const amiri = Amiri({ variable: "--font-arabic", subsets: ["arabic"], weight: ["400", "700"], preload: false });
+const amiri = localFont({
+  variable: "--font-arabic",
+  display: "swap",
+  preload: false,
+  src: [
+    { path: "./fonts/amiri-arabic-400-normal.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/amiri-arabic-700-normal.woff2", weight: "700", style: "normal" },
+  ],
+});
 
 const siteUrl = "https://globalacademy.tarbiyyah.co.uk";
 
@@ -18,7 +48,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: "Tarbiyyah Global Academy | Online Islamic school for homeschooling families", template: "%s | Tarbiyyah Global Academy" },
   description:
-    "An online Islamic school for homeschooling families, by the Tarbiyyah Education Trust. Live, timetabled lessons with qualified teachers: Qur'an, Arabic and Islamic Studies alongside the full national curriculum, Year 1 to Year 11, launching January 2027.",
+    "Online Islamic school for homeschooling families by Tarbiyyah Education Trust: live lessons, qualified teachers, Qur'an, Arabic and Islamic Studies with the national curriculum.",
   openGraph: {
     type: "website",
     locale: "en_GB",

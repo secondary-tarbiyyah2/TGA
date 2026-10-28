@@ -50,16 +50,16 @@ export function DigestPreview({ parentId, family, compact = false }: { parentId:
     <div className="space-y-3">
       <div className="rounded-xl border border-gold-light bg-white p-3 text-sm">
         <dl className="grid grid-cols-[4.5rem_1fr] gap-x-2 gap-y-1">
-          <dt className="text-ink/60">To</dt>
+          <dt className="text-ink/65">To</dt>
           <dd className="min-w-0 truncate text-ink">
             {who}
-            {family?.parent_email && family.parent_name ? <span className="text-ink/60"> &lt;{family.parent_email}&gt;</span> : null}
+            {family?.parent_email && family.parent_name ? <span className="text-ink/65"> &lt;{family.parent_email}&gt;</span> : null}
           </dd>
-          <dt className="text-ink/60">Subject</dt>
+          <dt className="text-ink/65">Subject</dt>
           <dd className="min-w-0 text-ink">{data ? data.subject.replace(/^\[TEST\]\s*/, "") : error ? "–" : "Loading…"}</dd>
           {family && family.children.length > 0 && (
             <>
-              <dt className="text-ink/60">Covers</dt>
+              <dt className="text-ink/65">Covers</dt>
               <dd className="min-w-0 text-ink/80">{family.children.join(", ")}</dd>
             </>
           )}
@@ -83,7 +83,7 @@ export function DigestPreview({ parentId, family, compact = false }: { parentId:
       ) : !error ? (
         <div className={`animate-pulse rounded-xl bg-white ${compact ? "h-[60vh]" : "h-[70vh]"}`} />
       ) : null}
-      <p className="text-xs text-ink/60">The preview carries a &ldquo;test&rdquo; banner. The real email is the same without it.</p>
+      <p className="text-xs text-ink/65">The preview carries a &ldquo;test&rdquo; banner. The real email is the same without it.</p>
     </div>
   );
 }

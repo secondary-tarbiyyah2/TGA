@@ -193,7 +193,7 @@ export function AssessmentSitting() {
         <h1 className="text-2xl font-semibold text-ink">This assessment is open in another window</h1>
         <p className="mt-3 text-lg text-ink/75">It can only be used in one window at a time. If you have closed the other window, or want to carry on here instead, press the button.</p>
         <button type="button" onClick={() => token && load(token, { takeover: true, device: navigator.userAgent.slice(0, 300) })} className="mt-6 rounded-full bg-gold-700 px-7 py-3 text-lg font-semibold text-white hover:bg-gold-900">Use this window instead</button>
-        <p className="mt-6 text-sm text-ink/60">Your answers so far are saved.</p>
+        <p className="mt-6 text-sm text-ink/65">Your answers so far are saved.</p>
       </div>,
     );
   }
@@ -206,7 +206,7 @@ export function AssessmentSitting() {
         <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gold-100 text-4xl" aria-hidden="true">✓</div>
         <h1 className="mt-6 text-3xl font-semibold text-ink">Well done, {first}!</h1>
         <p className="mt-3 text-lg text-ink/75">You have finished every part. Thank you for working so hard. Your teachers will look at your answers, and the school will be in touch with your family.</p>
-        <p className="mt-6 text-sm text-ink/60">You can close this page now.</p>
+        <p className="mt-6 text-sm text-ink/65">You can close this page now.</p>
       </div>,
     );
   }
@@ -252,7 +252,7 @@ export function AssessmentSitting() {
           {st.sections.map((s, i) => (
             <li key={s.key} className={`flex items-center justify-between rounded-2xl border px-5 py-4 ${s.key === cur.key ? "border-gold-500 bg-white shadow-sm" : "border-gold-light/70 bg-white/60"}`}>
               <span className="flex items-center gap-3">
-                <span className={`flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold ${s.done ? "bg-green-100 text-green-800" : s.key === cur.key ? "bg-gold-700 text-white" : "bg-cream text-ink/60"}`}>{s.done ? "✓" : i + 1}</span>
+                <span className={`flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold ${s.done ? "bg-green-100 text-green-800" : s.key === cur.key ? "bg-gold-700 text-white" : "bg-cream text-ink/65"}`}>{s.done ? "✓" : i + 1}</span>
                 <span className="font-medium text-ink">{s.title}</span>
               </span>
               <span className="text-sm text-ink/65">{s.questions} {s.questions === 1 ? "task" : "questions"} · {s.minutes} min</span>
@@ -589,7 +589,7 @@ function Section({ api, st, cur, large, voice, rate, start, onPosition, onLarge,
             <p className="text-sm text-ink/70">{step?.kind === "passage" ? "Read the text" : total === 1 ? "One task" : `Question ${itemNo} of ${total}`}</p>
           </div>
           <div className="flex items-center gap-2">
-            <span className="hidden text-xs text-ink/55 sm:inline" aria-live="polite">{saving === "saving" ? "Saving…" : saving === "saved" ? "Saved" : saving === "error" ? "Not saved yet, it will try again" : ""}</span>
+            <span className="hidden text-xs text-ink/65 sm:inline" aria-live="polite">{saving === "saving" ? "Saving…" : saving === "saved" ? "Saved" : saving === "error" ? "Not saved yet, it will try again" : ""}</span>
             {cur.breaksLeft > 0 && <button type="button" onClick={takeBreak} className="rounded-full border border-gold-light bg-white px-4 py-2 text-sm font-semibold text-ink hover:bg-gold-50">Take a break</button>}
             <span className={`rounded-full px-4 py-1.5 font-mono text-lg font-semibold tabular-nums ring-1 ring-gold-light ${warn}`} role="timer" aria-label={`${Math.ceil(Math.max(0, left) / 60)} minutes left`}>{mmss(left)}</span>
           </div>
@@ -659,7 +659,7 @@ function Section({ api, st, cur, large, voice, rate, start, onPosition, onLarge,
                 <div className="mt-4">
                   <p className="mb-2 text-sm text-ink/65">Plan for a few minutes first. Check your spelling and punctuation at the end. Pasting is switched off: write in your own words.</p>
                   <textarea value={String(answers[item.id] ?? "")} onChange={(e) => answer(e.target.value, true)} onPaste={(e) => e.preventDefault()} rows={14} spellCheck={false} autoCorrect="off" autoCapitalize="sentences" aria-label="Your writing" className="w-full select-text rounded-xl border-2 border-gold-light p-4 text-lg leading-relaxed focus:border-gold-700" placeholder="Write your answer here…" />
-                  <p className="mt-1 text-right text-sm text-ink/60">{String(answers[item.id] ?? "").trim().split(/\s+/).filter(Boolean).length} words</p>
+                  <p className="mt-1 text-right text-sm text-ink/65">{String(answers[item.id] ?? "").trim().split(/\s+/).filter(Boolean).length} words</p>
                 </div>
               )}
 
@@ -682,7 +682,7 @@ function Section({ api, st, cur, large, voice, rate, start, onPosition, onLarge,
             <h2 id="fs-title" className="text-xl font-semibold text-ink">Back to full screen</h2>
             <p className="mt-2 text-ink/75">The assessment works best in full screen. Press the button to carry on where you were.</p>
             <button type="button" onClick={() => { if (!enterFullscreen()) setFsLost(false); }} className="mt-5 rounded-full bg-gold-700 px-6 py-3 text-lg font-semibold text-white">Carry on</button>
-            <button type="button" onClick={() => setFsLost(false)} className="mt-3 block w-full text-sm text-ink/60 underline">Carry on without full screen</button>
+            <button type="button" onClick={() => setFsLost(false)} className="mt-3 block w-full text-sm text-ink/65 underline">Carry on without full screen</button>
           </div>
         </div>
       )}
@@ -734,7 +734,7 @@ function BreakScreen({ seconds, onDone, timed, young }: { seconds: number; onDon
         <span className="relative font-mono text-4xl font-semibold tabular-nums text-teal-900">{over ? "0:00" : mmss(left)}</span>
       </div>
       <p className={`min-h-[3.5rem] text-ink/80 ${young ? "text-2xl" : "text-xl"}`} aria-live="polite">{over ? (timed ? "The clock has started again. Press the button when you are ready." : "Press the button when you are ready.") : tip}</p>
-      {timed && !over && <p className="mt-2 text-sm text-ink/60">The clock is paused while you rest. The questions are hidden.</p>}
+      {timed && !over && <p className="mt-2 text-sm text-ink/65">The clock is paused while you rest. The questions are hidden.</p>}
       <button type="button" disabled={busy} onClick={async () => { setBusy(true); await onDone(); setBusy(false); }} className={`mt-8 rounded-full bg-gold-700 font-semibold text-white hover:bg-gold-900 disabled:opacity-60 ${young ? "px-10 py-5 text-2xl" : "px-8 py-4 text-lg"}`}>{busy ? "One moment…" : "I'm ready to carry on"}</button>
       <style>{`@keyframes breathe { 0%, 100% { transform: scale(0.82); } 50% { transform: scale(1.08); } }`}</style>
     </div>
@@ -764,7 +764,7 @@ function Message({ title, body }: { title: string; body: string }) {
     <div className="mx-auto max-w-lg py-20 text-center">
       <h1 className="text-2xl font-semibold text-ink">{title}</h1>
       <p className="mt-3 text-ink/75">{body}</p>
-      <p className="mt-6 text-sm text-ink/60">globalacademy@tarbiyyah.co.uk · 020 3719 8697</p>
+      <p className="mt-6 text-sm text-ink/65">globalacademy@tarbiyyah.co.uk · 020 3719 8697</p>
     </div>
   );
 }

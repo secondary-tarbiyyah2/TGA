@@ -274,7 +274,7 @@ export function HomeworkForChild({
     <div className="space-y-5">
       <section aria-labelledby="hw-todo">
         <h2 id="hw-todo" className="mb-2 text-sm font-semibold text-ink">
-          Still to hand in <span className="font-normal text-ink/60">· {todo.length}</span>
+          Still to hand in <span className="font-normal text-ink/65">· {todo.length}</span>
         </h2>
         {todo.length ? (
           <ul className="space-y-2">{todo.map(item)}</ul>
@@ -285,7 +285,7 @@ export function HomeworkForChild({
       {done.length > 0 && (
         <details className="group" open={openInDone || undefined}>
           <summary className="flex min-h-11 cursor-pointer list-none items-center gap-2 text-sm font-semibold text-ink">
-            Handed in <span className="font-normal text-ink/60">· {done.length}</span>
+            Handed in <span className="font-normal text-ink/65">· {done.length}</span>
             <span className="text-xs font-normal text-teal-700 group-open:hidden">Show</span>
           </summary>
           <ul className="mt-2 space-y-2">{done.map(item)}</ul>

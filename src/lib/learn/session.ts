@@ -37,6 +37,17 @@ export function dashboardPathForRole(role: LearnRole): string {
 }
 
 /**
+ * Where someone with several roles lands after signing in. user_roles rows
+ * come back in no guaranteed order, so this picks by a fixed precedence
+ * (staff area first, then family, then student) rather than whichever row
+ * the database returned first.
+ */
+const ROLE_PRECEDENCE: LearnRole[] = ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover", "parent", "student"];
+export function primaryRole(roles: readonly LearnRole[]): LearnRole | null {
+  return ROLE_PRECEDENCE.find((r) => roles.includes(r)) ?? roles[0] ?? null;
+}
+
+/**
  * The client-side view of "who is signed in and what /learn roles do they
  * hold"– used to decide WHAT TO RENDER (role switcher, which dashboard).
  * This is UX only, never the security boundary: every role grant here comes

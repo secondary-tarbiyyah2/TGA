@@ -6,6 +6,7 @@ import { LearnGate } from "@/components/learn/LearnGate";
 import { LearnShell } from "@/components/learn/LearnShell";
 import { HomeworkForChild } from "@/components/learn/HomeworkForChild";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { useSelectedChild } from "@/lib/learn/selectedChild";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { EmptyState, ui } from "@/components/learn/ui";
 
@@ -15,7 +16,8 @@ function FamilyHomeworkContent() {
   const supabase = getSupabaseClient();
   const searchParams = useSearchParams();
   const [children, setChildren] = useState<Child[] | null>(null);
-  const [selected, setSelected] = useState<string>(searchParams.get("child") || "");
+  // ?child= wins, else the child chosen anywhere in the family area, else the first.
+  const [selected, setSelected] = useSelectedChild(children ? children.map((c) => c.id) : null);
   const openId = searchParams.get("hw") || undefined;
 
   useEffect(() => {
@@ -24,12 +26,7 @@ function FamilyHomeworkContent() {
       .from("children")
       .select("id, name")
       .order("name")
-      .then(({ data }) => {
-        const rows = (data as Child[]) || [];
-        setChildren(rows);
-        // No ?child=, or one that is not this parent's child: start on the first child.
-        setSelected((cur) => (rows.some((r) => r.id === cur) ? cur : rows[0]?.id || ""));
-      });
+      .then(({ data }) => setChildren((data as Child[]) || []));
   }, [supabase]);
 
   const name = children?.find((c) => c.id === selected)?.name?.split(" ")[0];

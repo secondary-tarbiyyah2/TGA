@@ -119,7 +119,7 @@ Deno.serve(async (req) => {
         .select("id, weekday, start_time, end_time, classes(name), subjects(name)")
         .eq("run_id", publishedRun.id)
         .in("class_id", relevantClassIds);
-      slots = (data as typeof slots) || [];
+      slots = (data as unknown as typeof slots) || [];
     }
   }
 

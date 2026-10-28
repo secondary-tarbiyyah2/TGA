@@ -192,7 +192,7 @@ export function SyllabusPack() {
                 </span>
                 <span className="min-w-0">
                   <span className="block text-sm font-semibold leading-tight">{sb}</span>
-                  <span className={`block text-xs ${subject === sb ? "text-white/80" : "text-ink/60"}`}>{countFor(sb)} document{countFor(sb) === 1 ? "" : "s"}</span>
+                  <span className={`block text-xs ${subject === sb ? "text-white/80" : "text-ink/65"}`}>{countFor(sb)} document{countFor(sb) === 1 ? "" : "s"}</span>
                 </span>
               </button>
             ))}

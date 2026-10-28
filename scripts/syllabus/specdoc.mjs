@@ -8,21 +8,19 @@ import { ROOT, clean, yearLabel } from "./lib.mjs";
 import { themeFor } from "../lessons/deck-parts.mjs";
 
 const require = createRequire(import.meta.url);
-const { AlignmentType, BorderStyle, Document, Footer, Header, ImageRun, LevelFormat, Packer, PageBreak, PageNumber, Paragraph, ShadingType, Table, TableCell, TableLayoutType, TableRow, TextRun, WidthType } = require("docx");
+const { AlignmentType, BorderStyle, Document, Footer, ImageRun, LevelFormat, Packer, PageBreak, PageNumber, Paragraph, ShadingType, Table, TableCell, TableLayoutType, TableRow, TextRun, WidthType } = require("docx");
 
 const LOGO = fs.readFileSync(path.join(ROOT, "public/brand/ga-wordmark.png"));
-const INK = "1B1E21", MUTED = "5B6168", GOLD_DARK = "7D6428", LINE = "D9D3C4", SOFT = "F5ECD6";
+const INK = "1B1E21", MUTED = "5B6168", GOLD_DARK = "7D6428", LINE = "D9D3C4";
 const FONT = "Calibri";
 const PAGE_W = 11906, MARGIN = 1000, CW = PAGE_W - 2 * MARGIN;
-const STATUS = { Verified: { c: "1E5B36", f: "DDEFE3" }, Provisional: { c: "7A4B00", f: "FBE9C8" } };
 
 const t = (s, o = {}) => new TextRun({ text: clean(s), font: o.font || FONT, size: o.size || 21, bold: o.bold, italics: o.italics, color: o.color || INK });
 const p = (kids, o = {}) => new Paragraph({ children: Array.isArray(kids) ? kids : [kids], spacing: { before: o.before ?? 0, after: o.after ?? 100, line: 276 }, alignment: o.align, numbering: o.numbering, keepNext: o.keepNext, pageBreakBefore: o.pageBreakBefore });
 const h1 = (s, acc) => new Paragraph({ children: [t(s, { size: 32, bold: true, color: acc, font: "Georgia" })], spacing: { before: 360, after: 140 }, keepNext: true, border: { bottom: { style: BorderStyle.SINGLE, size: 8, color: acc, space: 4 } }, pageBreakBefore: false });
-const h2 = (s, acc) => new Paragraph({ children: [t(s, { size: 26, bold: true, color: INK, font: "Georgia" })], spacing: { before: 280, after: 80 }, keepNext: true, outlineLevel: 1 });
+const h2 = (s) => new Paragraph({ children: [t(s, { size: 26, bold: true, color: INK, font: "Georgia" })], spacing: { before: 280, after: 80 }, keepNext: true, outlineLevel: 1 });
 const label = (s, acc) => new Paragraph({ children: [t(s.toUpperCase(), { size: 17, bold: true, color: acc })], spacing: { before: 140, after: 40 }, keepNext: true });
 const bl = (s) => p([t(s)], { numbering: { reference: "bul", level: 0 }, after: 50 });
-const num = (s) => p([t(s)], { numbering: { reference: "num", level: 0 }, after: 60 });
 const side = (c = LINE) => ({ style: BorderStyle.SINGLE, size: 4, color: c });
 
 function table(head, rows, widths, acc) {
@@ -56,7 +54,7 @@ function sourcesSection(d, acc) {
   return out;
 }
 
-function build(children, d, kind, acc) {
+function build(children, d, kind) {
   const footer = new Footer({ children: [new Paragraph({ alignment: AlignmentType.LEFT, children: [t(`Tarbiyyah Global Academy · ${d.subject} · ${kind}   ·   Page `, { size: 16, color: MUTED }), new TextRun({ children: [PageNumber.CURRENT], font: FONT, size: 16, color: MUTED })] })] });
   return new Document({
     creator: "Tarbiyyah Global Academy", title: `${d.subject} ${kind}`, description: `${d.subject} ${kind}`,
@@ -108,7 +106,7 @@ export function specDocument(d, extra = {}) {
   // overview table
   kids.push(table(["Ref", "Unit", "Paper", "Year", "Term", "Points"], d.units.map((u) => [u.ref, u.title, u.paper, u.year, u.term || "", String((u.points || []).length)]), [1, 4.2, 1.5, 0.7, 1, 0.8], acc));
   for (const u of d.units) {
-    kids.push(h2(`${u.ref}  ${u.title}`, acc));
+    kids.push(h2(`${u.ref}  ${u.title}`));
     kids.push(p([t(`${u.paper} · ${u.year}${u.term ? ` · ${u.term}` : ""}`, { size: 19, color: MUTED, bold: true })], { after: 60, keepNext: true }));
     kids.push(label("What the specification requires", acc));
     (u.points || []).forEach((pt, i) => kids.push(p([t(`${u.ref}.${i + 1}  `, { bold: true, color: acc, size: 19 }), t(pt)], { after: 50 })));
@@ -151,7 +149,7 @@ export function specDocument(d, extra = {}) {
     kids.push(p([t("Sign-off: a teacher writes their name and the date once they have checked the unit's points against the board's own document and the lessons against the points. Record the result in the portal Lesson library too, so it is kept with the lesson.", { italics: true, size: 19, color: MUTED })]));
   }
   kids.push(...sourcesSection(d, acc));
-  return build(kids, d, "Specification", acc);
+  return build(kids, d, "Specification");
 }
 
 export function syllabusDocument(d) {
@@ -166,13 +164,13 @@ export function syllabusDocument(d) {
   (d.purpose || []).forEach((x) => kids.push(bl(x)));
   kids.push(h1("2  Statutory content by key stage", acc));
   for (const ks of d.keyStages || []) {
-    kids.push(h2(`${ks.ks} · ${ks.years}`, acc));
+    kids.push(h2(`${ks.ks} · ${ks.years}`));
     for (const st of ks.strands) { kids.push(label(st.strand, acc)); st.statements.forEach((s) => kids.push(bl(s))); }
   }
   kids.push(h1("3  Year-by-year units", acc));
   kids.push(p([t("Year allocation is a recommended sequence unless the framework fixes it.", { italics: true, size: 19, color: MUTED })]));
   for (const y of yrs) {
-    kids.push(h2(yearLabel(y), acc));
+    kids.push(h2(yearLabel(y)));
     for (const u of d.yearMap[y]) {
       kids.push(p([t(u.unit, { bold: true, size: 22 })], { after: 40, keepNext: true }));
       (u.focus || []).forEach((f) => kids.push(bl(f)));
@@ -183,15 +181,15 @@ export function syllabusDocument(d) {
   }
   kids.push(h1("4  Progression across the years", acc));
   for (const th of d.progression || []) {
-    kids.push(h2(th.thread, acc));
+    kids.push(h2(th.thread));
     Object.entries(th.steps || {}).forEach(([k, v]) => kids.push(p([t(`${/^\d/.test(k) ? `Year ${k}` : k}: `, { bold: true, color: acc }), t(v)], { after: 40 })));
   }
   kids.push(h1("5  Looking ahead", acc));
   kids.push(p([t(d.toKS4 || "Not recorded.")]));
   kids.push(h1("6  Cross-curricular links", acc));
   if ((d.links || []).length) kids.push(table(["Subject", "Topic", "Years", "How the subjects connect"], d.links.map((l) => [l.with, l.topic, l.years || "", l.how]), [1.4, 1.8, 0.9, 3.7], acc));
-  kids.push(...sourcesSection(d, acc).map((x, i) => x));
-  return build(kids, d, "Syllabus", acc);
+  kids.push(...sourcesSection(d, acc));
+  return build(kids, d, "Syllabus");
 }
 
 export async function writeDoc(doc, file) {

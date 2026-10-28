@@ -34,12 +34,25 @@ RewriteOptions IgnoreInherit
 # here, and only then retire src/app/(marketing)/staff/ and StaffApp.tsx,
 # once /learn/admin/admissions' "My availability"/"All staff" views are
 # confirmed working for a real staff member — see SETUP.md.
+# (Not the images in /portal/*.png, which the homepage's portal preview
+# embeds; only page addresses redirect.)
+RewriteCond %{REQUEST_URI} !\.(png|jpe?g|webp)$
 RewriteRule ^portal(/.*)?$ https://learn.tarbiyyah.co.uk/login/ [R=301,L]
+
+# The staff handbook (/staff/*.pdf) is for signed-in staff. /staff/ has to
+# stay reachable on the public address for the legacy booking panel, but the
+# PDF under it only serves to a browser carrying the staff cookie (set by the
+# preview key for the whole .tarbiyyah.co.uk domain); everyone else gets a
+# plain 404, so the file is not discoverable from the holding site.
+RewriteCond %{HTTP_HOST} !^preview\. [NC]
+RewriteCond %{REQUEST_URI} ^/staff/.+\.pdf$ [NC]
+RewriteCond %{HTTP_COOKIE} !(^|;\s*)tga_staff=__PREVIEW_KEY__(;|$)
+RewriteRule ^ - [R=404,L]
 
 # ── PRE-LAUNCH (October 2026) ────────────────────────────────────────────────
 # Two separate sites from the same files, chosen by the address:
 #
-# 1. RewriteCond %{HTTP_HOST} !^preview\. [NC]LIC  https://globalacademy.tarbiyyah.co.uk
+# 1. PUBLIC  https://globalacademy.tarbiyyah.co.uk
 #    Always the simple holding site, for everyone (staff included): "/"
 #    (register interest), /term-dates/, /fees/ and /curriculum/ (subjects),
 #    plus the legal pages and booking links already emailed to families.
@@ -114,6 +127,21 @@ RewriteRule ^curriculum/?$ /coming-soon/subjects/index.html [L]
   <If "%{REQUEST_URI} =~ m#(/|\.html|\.txt)$#">
     Header always set Cache-Control "no-store"
   </If>
+
+  # Baseline security headers for every response on both hosts. No full
+  # Content-Security-Policy here: the pages frame CMS-chosen URLs (open
+  # evening booking widget, lesson/recording videos) whose origins change,
+  # and a policy that breaks those silently is worse than none; the /learn
+  # subdomain, which frames nothing external, carries a strict CSP of its own
+  # (deploy/learn-subdomain.htaccess). frame-ancestors still stops this site
+  # being framed by others (clickjacking), the only CSP directive that matters
+  # for a static brochure site.
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Content-Security-Policy "frame-ancestors 'self'"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
 </IfModule>
 
 # Policy documents (/policies/<slug>.pdf or .docx) are served live by
@@ -219,6 +247,6 @@ RewriteRule ^ /learn/index.html [L]
 </FilesMatch>
 
 # The send log records applicant email addresses — never expose it.
-<FilesMatch "^register\.log$">
+<FilesMatch "^register\.(log|ratelimit\.json)$">
   Require all denied
 </FilesMatch>

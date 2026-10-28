@@ -11,7 +11,7 @@
 // one from a previous build is removed) · the Term Dates page hides the
 // download link entirely rather than ever offering an empty calendar.
 import { createClient } from "@sanity/client";
-import { writeFileSync, existsSync, unlinkSync, mkdirSync } from "node:fs";
+import { writeFileSync, existsSync, unlinkSync, mkdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -96,6 +96,15 @@ if (dates.length === 0) {
   console.log("No confirmed term dates, skipped writing public/term-dates.ics.");
 } else {
   mkdirSync(path.dirname(outPath), { recursive: true });
-  writeFileSync(outPath, buildIcs(dates), "utf8");
-  console.log(`Wrote public/term-dates.ics with ${dates.length} confirmed date(s).`);
+  // DTSTAMP is "now", so every build would rewrite the committed file with
+  // nothing but a new timestamp. Keep the existing file when the dates are
+  // unchanged; calendar apps only re-import on a real change anyway.
+  const fresh = buildIcs(dates);
+  const strip = (t) => t.replace(/^DTSTAMP:.*$/gm, "");
+  if (existsSync(outPath) && strip(readFileSync(outPath, "utf8")) === strip(fresh)) {
+    console.log(`public/term-dates.ics unchanged (${dates.length} confirmed date(s)).`);
+  } else {
+    writeFileSync(outPath, fresh, "utf8");
+    console.log(`Wrote public/term-dates.ics with ${dates.length} confirmed date(s).`);
+  }
 }

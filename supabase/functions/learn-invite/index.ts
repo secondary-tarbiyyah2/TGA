@@ -19,6 +19,7 @@ import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
 import { sendEmail, emailShell } from "../_shared/resend.ts";
 import { setupCodeHtml } from "../_shared/setupCode.ts";
+import { escapeHtml, findUserByEmail, mayActOn, rolesOf } from "../_shared/auth.ts";
 
 const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
 const anonKey = Deno.env.get("SUPABASE_ANON_KEY")!;
@@ -60,18 +61,6 @@ function legacyProfileRole(role: Role): string {
   if (role === "head_teacher" || role === "admin" || role === "admissions") return "admin";
   if (role === "teacher" || role === "teaching_assistant_cover") return "teacher";
   return role; // 'parent' | 'student'
-}
-
-async function findUserByEmail(email: string) {
-  let page = 1;
-  for (;;) {
-    const { data, error } = await serviceClient.auth.admin.listUsers({ page, perPage: 200 });
-    if (error) throw error;
-    const found = data.users.find((u) => u.email?.toLowerCase() === email);
-    if (found) return found;
-    if (data.users.length < 200) return null;
-    page += 1;
-  }
 }
 
 async function requireInviter(authHeader: string | null) {
@@ -126,9 +115,16 @@ Deno.serve(async (req) => {
 
   let userId: string;
   let isNewUser = false;
-  const existing = await findUserByEmail(email);
+  const existing = await findUserByEmail(serviceClient, email);
   if (existing) {
     userId = existing.id;
+    // Re-inviting an EXISTING account mints a recovery link for it. Only the
+    // Headteacher may do that to an account that already holds Headteacher
+    // or Admin: otherwise any Admin could take over the Headteacher's login
+    // by "inviting" their email as a parent.
+    if (!mayActOn(inviter.roles, await rolesOf(serviceClient, userId))) {
+      return jsonResponse({ ok: false, error: "head_teacher_required" }, 403);
+    }
   } else {
     isNewUser = true;
     // No password set at all, Supabase creates the account in an
@@ -138,10 +134,19 @@ Deno.serve(async (req) => {
     userId = created.user.id;
   }
 
-  const { error: profileErr } = await serviceClient
-    .from("profiles")
-    .upsert({ id: userId, role: legacyProfileRole(role), full_name: fullName, email }, { onConflict: "id" });
-  if (profileErr) return jsonResponse({ ok: false, error: "profile_failed", detail: profileErr.message }, 500);
+  // A new account gets a full profile. An existing one keeps its name and
+  // legacy role (adding a second role to the Headteacher must not rename
+  // them or downgrade profiles.role to 'parent'); only a missing row or
+  // empty name is filled in.
+  const { data: currentProfile } = await serviceClient.from("profiles").select("id, full_name, role").eq("id", userId).maybeSingle();
+  const profileRow = currentProfile
+    ? { id: userId, email, full_name: currentProfile.full_name || fullName, role: currentProfile.role || legacyProfileRole(role) }
+    : { id: userId, role: legacyProfileRole(role), full_name: fullName, email };
+  const { error: profileErr } = await serviceClient.from("profiles").upsert(profileRow, { onConflict: "id" });
+  if (profileErr) {
+    console.error("learn-invite profile upsert:", profileErr.message);
+    return jsonResponse({ ok: false, error: "profile_failed" }, 500);
+  }
 
   const { error: roleErr } = await serviceClient
     .from("user_roles")
@@ -196,7 +201,7 @@ Deno.serve(async (req) => {
     toName: fullName,
     subject: isNewUser ? "Set up your Tarbiyyah Global Academy Learn account" : "Reset your Tarbiyyah Global Academy Learn password",
     html: emailShell(`
-      <p style="margin:0 0 16px;">Assalamu alaikum ${firstName},</p>
+      <p style="margin:0 0 16px;">Assalamu alaikum ${escapeHtml(firstName)},</p>
       <p style="margin:0 0 16px;">
         ${isNewUser ? "An account has been created for you" : "A password reset has been requested for your account"}
         on the Tarbiyyah Global Academy Learn portal, as <strong>${ROLE_LABEL[role]}</strong>.
@@ -211,12 +216,17 @@ Deno.serve(async (req) => {
     `),
   });
 
+  // For a brand-new account the inviter gets the link (and code) back as a
+  // fallback to pass on by hand if email is down. For an EXISTING account
+  // that link is a password reset for someone else's login, so it is only
+  // returned when the email could not be sent, and the code never is.
+  const handBack = isNewUser || !emailResult.ok;
   return jsonResponse({
     ok: true,
     profileId: userId,
     isNewUser,
-    setupLink,
-    setupCode,
+    setupLink: handBack ? setupLink : null,
+    setupCode: isNewUser ? setupCode : null,
     emailSent: emailResult.ok,
     emailError: emailResult.ok ? undefined : emailResult.detail,
   });

@@ -17,6 +17,12 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
+if (!mailer_check_origin($cfg)) {
+    http_response_code(403);
+    echo json_encode(['ok' => false, 'error' => 'forbidden_origin']);
+    exit;
+}
+
 $body = mailer_read_body();
 
 // Honeypot: silently accept (200) so bots don't retry, but send nothing.
@@ -25,13 +31,13 @@ if (!empty($body['company'])) {
     exit;
 }
 
-$parentName = mailer_clean($body['parent_name'] ?? '');
-$email      = mailer_clean($body['email']       ?? '');
-$phone      = mailer_clean($body['phone']       ?? '');
+$parentName = mailer_clean($body['parent_name'] ?? '', 120);
+$email      = mailer_clean($body['email']       ?? '', 254);
+$phone      = mailer_clean($body['phone']       ?? '', 40);
 $yeargroup  = mailer_clean($body['yeargroup']   ?? '');
 $consent    = mailer_clean($body['consent']     ?? '');
 $timezone   = mailer_clean($body['timezone']    ?? '');
-$message    = trim((string) ($body['message'] ?? ''));
+$message    = mb_substr(trim((string) ($body['message'] ?? '')), 0, 2000);
 // A short reference derived client-side from the email address (see
 // src/lib/leadRef.ts) · the same value the admissions application form
 // sends for the same email, so the two submissions can be matched by a
@@ -52,7 +58,13 @@ if ($errors) {
     exit;
 }
 
-$subject = 'Register interest' . $parentName . ' (' . $yeargroup . ')';
+if (mailer_rate_limited($email, $cfg)) {
+    http_response_code(429);
+    echo json_encode(['ok' => false, 'error' => 'rate_limited']);
+    exit;
+}
+
+$subject = 'Register interest: ' . $parentName . ' (' . $yeargroup . ')';
 $text = implode("\n", [
     'A new register-interest enquiry was submitted on Tarbiyyah Global Academy.',
     '',
@@ -72,7 +84,7 @@ mailer_log(($sent ? 'OK   ' : 'FAIL ') . 'register to=' . MAIL_RECIPIENT
     . ' from_applicant=' . $email . ' via=' . $transport . '– ' . $detail);
 
 if (MAIL_SEND_ACK && $sent) {
-    $firstName = trim(strtok($parentName, ' '));
+    $firstName = mailer_safe_name(strtok($parentName, ' '));
     $greetName = $firstName !== '' ? ' ' . $firstName : '';
     $ackText = implode("\n", [
         'Assalamu alaikum' . $greetName . ',',
@@ -86,7 +98,7 @@ if (MAIL_SEND_ACK && $sent) {
         MAIL_SITE,
         'Part of the Tarbiyyah Education Trust',
     ]);
-    list($ackOk, $ackTransport, $ackDetail) = mailer_send($email, $parentName, 'Thank you for registering your interest' . MAIL_SITE, $ackText, MAIL_RECIPIENT, MAIL_SITE);
+    list($ackOk, $ackTransport, $ackDetail) = mailer_send($email, $parentName, 'Thank you for registering your interest | ' . MAIL_SITE, $ackText, MAIL_RECIPIENT, MAIL_SITE);
     mailer_log(($ackOk ? 'OK   ' : 'FAIL ') . 'register ack to=' . $email . ' via=' . $ackTransport . '– ' . $ackDetail);
 }
 
