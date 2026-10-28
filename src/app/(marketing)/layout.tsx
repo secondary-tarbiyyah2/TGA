@@ -1,7 +1,8 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { MobileCtaBar } from "@/components/MobileCtaBar";
-import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
+import { BreadcrumbSchema, Breadcrumbs } from "@/components/BreadcrumbSchema";
+import { RelatedLinks } from "@/components/RelatedLinks";
 import { StaffPreviewBadge } from "@/components/prelaunch/StaffPreviewBadge";
 
 // The public marketing site's chrome, every route in this `(marketing)`
@@ -16,7 +17,9 @@ export default function MarketingLayout({ children }: { children: React.ReactNod
     <>
       <Header />
       <main id="main" className="flex-1">
+        <Breadcrumbs />
         {children}
+        <RelatedLinks />
       </main>
       <Footer />
       <MobileCtaBar />

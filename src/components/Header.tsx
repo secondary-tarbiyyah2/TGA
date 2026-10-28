@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Container } from "./Container";
 import { ViewSettingsMenu, ViewSettingsPanel } from "./ViewSettings";
-import { primaryNav, primaryCta, portalCta, isNavGroup, type NavGroup } from "@/lib/nav";
+import { primaryNav, primaryCta, secondaryCta, portalCta, isNavGroup, type NavGroup } from "@/lib/nav";
 
 function DesktopDropdown({ group, open, onToggle, onClose }: { group: NavGroup; open: boolean; onToggle: () => void; onClose: () => void }) {
   const pathname = usePathname();
@@ -63,6 +63,7 @@ function DesktopDropdown({ group, open, onToggle, onClose }: { group: NavGroup; 
 // whatever CSS an ancestor happens to have now or in the future.
 function MobileDrawer({ open, onClose, triggerRef }: { open: boolean; onClose: () => void; triggerRef: React.RefObject<HTMLButtonElement | null> }) {
   const [mobileOpenGroups, setMobileOpenGroups] = useState<Set<string>>(new Set());
+  const [a11yOpen, setA11yOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
   const [mounted, setMounted] = useState(false);
 
@@ -161,10 +162,13 @@ function MobileDrawer({ open, onClose, triggerRef }: { open: boolean; onClose: (
                 type="button"
                 onClick={() => toggleMobileGroup(entry.label)}
                 aria-expanded={mobileOpenGroups.has(entry.label)}
-                className="flex w-full items-center justify-between px-2 py-3 text-left text-base font-semibold text-ink"
+                className="flex w-full items-center justify-between px-2 py-3 text-left"
                 style={{ minHeight: 48, touchAction: "manipulation" }}
               >
-                {entry.label}
+                <span>
+                  <span className="block text-base font-semibold text-ink">{entry.label}</span>
+                  {entry.blurb && <span className="block text-xs text-ink/60">{entry.blurb}</span>}
+                </span>
                 <svg viewBox="0 0 12 8" width="12" height="8" aria-hidden="true" className={`transition-transform ${mobileOpenGroups.has(entry.label) ? "rotate-180" : ""}`}>
                   <path d="M1 1l5 5 5-5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
@@ -200,24 +204,54 @@ function MobileDrawer({ open, onClose, triggerRef }: { open: boolean; onClose: (
         <Link
           href={portalCta.href}
           onClick={close}
-          className="flex items-center border-b border-gold-light/40 px-2 text-base font-semibold text-ink"
+          className="flex items-center border-b border-gold-light/40 px-2 text-base font-medium text-ink/75"
           style={{ minHeight: 48, touchAction: "manipulation" }}
         >
           {portalCta.label}
         </Link>
       </nav>
-      <div className="border-t border-gold-light/40 px-3 py-3">
-        <p className="px-3 pb-1 text-[11px] font-semibold uppercase tracking-wider text-ink/65">Make this site easier to read</p>
-        <ViewSettingsPanel />
+      <div className="border-t border-gold-light/40 px-3 py-2">
+        <button
+          type="button"
+          onClick={() => setA11yOpen((v) => !v)}
+          aria-expanded={a11yOpen}
+          aria-controls="mobile-a11y-panel"
+          className="flex w-full items-center justify-between px-2 text-left text-sm font-semibold text-ink"
+          style={{ minHeight: 48, touchAction: "manipulation" }}
+        >
+          <span className="flex items-center gap-2">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="3" />
+              <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z" />
+            </svg>
+            Accessibility settings
+          </span>
+          <svg viewBox="0 0 12 8" width="12" height="8" aria-hidden="true" className={`transition-transform ${a11yOpen ? "rotate-180" : ""}`}>
+            <path d="M1 1l5 5 5-5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+        {a11yOpen && (
+          <div id="mobile-a11y-panel" className="pb-2">
+            <ViewSettingsPanel />
+          </div>
+        )}
       </div>
-      <div className="sticky bottom-0 border-t border-gold-light/40 bg-cream p-5">
+      <div className="sticky bottom-0 flex gap-3 border-t border-gold-light/40 bg-cream p-5">
         <Link
           href={primaryCta.href}
           onClick={close}
-          className="flex w-full items-center justify-center rounded-full bg-gold-500 px-5 py-3.5 text-base font-semibold text-ink-900"
+          className="flex flex-1 items-center justify-center rounded-full bg-gold-500 px-5 py-3.5 text-base font-semibold text-ink-900"
           style={{ touchAction: "manipulation" }}
         >
           {primaryCta.label}
+        </Link>
+        <Link
+          href={secondaryCta.href}
+          onClick={close}
+          className="flex flex-1 items-center justify-center rounded-full border-[1.5px] border-gold-500 px-5 py-3.5 text-base font-semibold text-ink-900"
+          style={{ touchAction: "manipulation" }}
+        >
+          {secondaryCta.label}
         </Link>
       </div>
     </div>,
@@ -316,12 +350,15 @@ export function Header() {
             )
           )}
           <ViewSettingsMenu />
-          <Link href={portalCta.href} className="ml-1 flex items-center gap-1.5 rounded-full border border-teal-700/30 px-3.5 py-2 text-sm font-medium text-teal-700 hover:border-teal-700 hover:bg-teal-100">
+          <Link href={portalCta.href} aria-label={portalCta.label} title={portalCta.label} className="ml-1 flex items-center gap-1.5 rounded-full border border-teal-700/30 px-3 py-2 text-sm font-medium text-teal-700 hover:border-teal-700 hover:bg-teal-100">
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
               <rect x="5" y="11" width="14" height="9" rx="1.5" />
               <path d="M8 11V8a4 4 0 0 1 8 0v3" />
             </svg>
-            {portalCta.label}
+            {portalCta.shortLabel}
+          </Link>
+          <Link href={secondaryCta.href} className="ml-2 hidden items-center justify-center rounded-full border-[1.5px] border-gold-500 px-4 py-2 text-sm font-semibold text-ink-900 transition-colors hover:bg-gold-100 xl:inline-flex">
+            {secondaryCta.label}
           </Link>
           <Link href={primaryCta.href} className="ml-2 inline-flex items-center justify-center rounded-full bg-gold-500 px-5 py-2.5 text-sm font-semibold text-ink-900 transition-all hover:brightness-95">
             {primaryCta.label}

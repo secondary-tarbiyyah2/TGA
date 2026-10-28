@@ -1,41 +1,64 @@
 import { LEARN_ORIGIN } from "./learn/origin";
 
 export type NavLink = { href: string; label: string };
-export type NavGroup = { label: string; items: NavLink[] };
+export type NavGroup = { label: string; items: NavLink[]; blurb?: string };
 export type NavEntry = NavLink | NavGroup;
 
 export function isNavGroup(entry: NavEntry): entry is NavGroup {
   return "items" in entry;
 }
 
-// Five top-level items, About / Learning / Admissions / Parents / Contact, 
-// plus a prominent "Apply" CTA and a "Log in" link. Only About and Admissions
-// open a (single-level) dropdown; Learning and Parents are plain links to hub
-// pages (/learning, /parents) whose sub-pages are presented as cards, so the
-// detail lives on sub-pages rather than in menu items. Every existing URL is
-// still live and reachable from a hub, the footer or a dropdown.
+// Five top-level items in the order a prospective parent thinks: understand
+// the school (Our School) → see how learning works (Learning) → decide,
+// cost it and take the next step (Admissions) → enrolled families (For
+// Parents) → Contact. Admissions is for prospective families and For
+// Parents for current ones, so neither group wades through the other's
+// links. Each group is a single-level dropdown on desktop and an
+// expandable section in the mobile drawer; `blurb` is the one-line hint
+// shown under the group name on mobile. Every existing URL stays live and
+// is reachable from a dropdown, a hub page or the footer.
 export const primaryNav: NavEntry[] = [
   {
-    label: "About",
+    label: "Our School",
+    blurb: "About us, team, testimonials, FAQs",
     items: [
       { href: "/about", label: "About us" },
-      { href: "/curriculum", label: "Curriculum" },
+      { href: "/team", label: "Meet the team" },
       { href: "/testimonials", label: "Testimonials" },
+      { href: "/faqs", label: "FAQs" },
     ],
   },
-  { href: "/learning", label: "Learning" },
+  {
+    label: "Learning",
+    blurb: "Curriculum, how live lessons work, support",
+    items: [
+      { href: "/learning", label: "How learning works" },
+      { href: "/curriculum", label: "Curriculum by key stage" },
+      { href: "/pastoral-care", label: "Pastoral care & SEND" },
+    ],
+  },
   {
     label: "Admissions",
+    blurb: "Fit check, open evenings, fees, how to apply",
     items: [
-      { href: "/admissions", label: "How to apply" },
-      { href: "/fees", label: "Fees" },
-      { href: "/open-evening", label: "Open evenings & taster morning" },
       { href: "/eligibility", label: "Is it right for us?" },
+      { href: "/open-evening", label: "Open evenings & taster morning" },
+      { href: "/fees", label: "Fees" },
+      { href: "/admissions", label: "How to apply" },
       { href: "/prospectus/TGA-Prospectus-2026-27.pdf", label: "Prospectus (PDF)" },
-      { href: "/book-a-call", label: "Book a free call" },
     ],
   },
-  { href: "/parents", label: "Parents" },
+  {
+    label: "For Parents",
+    blurb: "Parent hub, term dates, policies",
+    items: [
+      { href: "/parents", label: "Parent hub" },
+      { href: "/term-dates", label: "Term dates" },
+      { href: "/policies", label: "Policies" },
+      { href: "/safeguarding", label: "Safeguarding" },
+      { href: "/manage-booking", label: "Manage a booking" },
+    ],
+  },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -48,16 +71,15 @@ export const learningHub: HubCard[] = [
   { href: "/curriculum/year-7-9", title: "Year 7 – Year 9", body: "View timetable, subjects and sample week." },
   { href: "/curriculum/year-10-11", title: "Year 10 – Year 11 (GCSE)", body: "View timetable, subjects and sample week." },
   { href: "/pastoral-care", title: "Pastoral care & SEND", body: "How we support every child's wellbeing, character and additional needs." },
-  { href: "/eligibility", title: "Is it right for us?", body: "Two minutes: year group, your local lesson times, fees and the next step." },
+  { href: "/eligibility", title: "Is it right for us?", body: "Two minutes: your child's key stage, local lesson times, the fee band and the next step." },
 ];
 
 export const parentsHub: HubCard[] = [
   { href: "/term-dates", title: "Term dates", body: "Term dates and the admissions calendar for the January 2027 launch." },
-  { href: "/policies", title: "Policies", body: "Our statutory school policies, including Safeguarding, Admissions, Fees and Data Protection." },
+  { href: "/policies", title: "Policies", body: "Our school policies, including Safeguarding, Admissions, Fees and Data Protection." },
   { href: "/safeguarding", title: "Safeguarding", body: "How we keep children safe, and how to raise a concern." },
   { href: "/pastoral-care", title: "Pastoral care & SEND", body: "Wellbeing, character and additional needs support." },
-  { href: "/open-evening", title: "Virtual open evening", body: "Book a place, or watch a past recording." },
-  { href: "/faqs", title: "FAQs", body: "Admissions, fees, curriculum, technology, Islamic Studies and SEND." },
+  { href: "/faqs", title: "FAQs", body: "Fees, curriculum, technology, Islamic Studies and SEND." },
   { href: "/manage-booking", title: "Manage a booking", body: "Change or cancel an existing call booking." },
 ];
 
@@ -73,9 +95,10 @@ export const footerColumns: { heading: string; links: NavLink[] }[] = [
     heading: "School",
     links: [
       { href: "/about", label: "About us" },
+      { href: "/team", label: "Meet the team" },
       { href: "/testimonials", label: "Testimonials" },
+      { href: "/learning", label: "How learning works" },
       { href: "/curriculum", label: "Curriculum" },
-      { href: "/learning", label: "Learning" },
     ],
   },
   {
@@ -86,7 +109,7 @@ export const footerColumns: { heading: string; links: NavLink[] }[] = [
       { href: "/eligibility", label: "Is it right for us?" },
       { href: "/open-evening", label: "Open evenings & taster morning" },
       { href: "/prospectus/TGA-Prospectus-2026-27.pdf", label: "Prospectus (PDF)" },
-      { href: "/book-a-call", label: "Book a free call" },
+      { href: "/book-a-call#book", label: "Book a free call" },
     ],
   },
   {
@@ -97,6 +120,7 @@ export const footerColumns: { heading: string; links: NavLink[] }[] = [
       { href: "/safeguarding", label: "Safeguarding" },
       { href: "/policies", label: "Policies" },
       { href: "/faqs", label: "FAQs" },
+      { href: `${LEARN_ORIGIN}/login`, label: "Sign in to the portal" },
     ],
   },
   {
@@ -114,12 +138,16 @@ export const footerColumns: { heading: string; links: NavLink[] }[] = [
 // Kept for backwards compatibility with any importer.
 export const footerNav = footerColumns.flatMap((c) => c.links);
 
-// Primary header CTA is Apply; a free call stays reachable under Admissions.
-export const primaryCta = { href: "/admissions", label: "Apply" };
+// One primary action (Apply) and one secondary (Book a free call) for
+// families who are not ready to apply; Register interest is the holding
+// site's own form. The free call is also reachable from the fit check,
+// the open-evening page and the footer.
+export const primaryCta = { href: "/admissions", label: "Apply now" };
+export const secondaryCta = { href: "/book-a-call#book", label: "Book a free call" };
 // Single log-in destination across header, mobile drawer and footer, /staff
 // and /portal both 301-redirect to this same URL at the server level (see
 // public/.htaccess), so there is only ever one login entry point live. This
 // is a cross-origin, absolute link (not "/learn/login") because /learn lives
 // on its own subdomain, see src/lib/learn/origin.ts.
-export const portalCta = { href: `${LEARN_ORIGIN}/login`, label: "Log in" };
+export const portalCta = { href: `${LEARN_ORIGIN}/login`, label: "Staff & parent sign-in", shortLabel: "Sign in" };
 export const openEveningCta = { href: "/open-evening", label: "Book Open Evening" };
