@@ -16,6 +16,11 @@ const siteUrl = "https://globalacademy.tarbiyyah.co.uk";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  // The site's own name everywhere Google and browsers look for one, so results
+  // never borrow the parent domain's name (tarbiyyah.co.uk is the primary school).
+  applicationName: "Tarbiyyah Global Academy",
+  appleWebApp: { title: "Global Academy" },
+  publisher: "Tarbiyyah Global Academy",
   title: { default: "Tarbiyyah Global Academy | Online Islamic school for homeschooling families", template: "%s | Tarbiyyah Global Academy" },
   description:
     "An online Islamic school for homeschooling families, by the Tarbiyyah Education Trust. Live, timetabled lessons with qualified teachers: Qur'an, Arabic and Islamic Studies alongside the full national curriculum, Year 1 to Year 11, launching January 2027.",
@@ -83,8 +88,9 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Tarbiyyah Global Academy",
-    alternateName: ["Global Academy", "TGA"],
-    url: siteUrl,
+    alternateName: ["Global Academy", "TGA", "Tarbiyyah Global Academy online school"],
+    url: `${siteUrl}/`,
+    publisher: { "@type": "EducationalOrganization", name: "Tarbiyyah Global Academy", url: `${siteUrl}/` },
   };
 
   return (
