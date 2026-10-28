@@ -1,0 +1,55 @@
+name: Audit portal pages
+
+# Screenshots every Parent Portal page (phone + desktop) as the demo parent
+# and commits them to the portal-audit branch for review. Never touches main.
+on:
+  workflow_dispatch:
+  push:
+    branches: [portal-audit]
+    paths: [.github/workflows/audit-portal.yml, scripts/audit-portal-pages.mjs]
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+      - name: Keys
+        id: keys
+        run: |
+          set -euo pipefail
+          REF=$(supabase projects list -o json | jq -r '.[0].id')
+          KEYS=$(supabase projects api-keys --project-ref "$REF" -o json)
+          SR=$(echo "$KEYS" | jq -r '.[] | select(.name=="service_role" or .name=="secret") | .api_key' | head -n1)
+          AN=$(echo "$KEYS" | jq -r '.[] | select(.name=="anon" or .name=="publishable") | .api_key' | head -n1)
+          echo "::add-mask::$SR"
+          echo "ref=$REF" >> "$GITHUB_OUTPUT"; echo "sr=$SR" >> "$GITHUB_OUTPUT"; echo "anon=$AN" >> "$GITHUB_OUTPUT"
+      - run: npm ci --no-audit --no-fund && npm i --no-save --no-audit --no-fund playwright@1.49.1 && npx playwright install --with-deps chromium
+      - name: Screenshot
+        env:
+          SUPABASE_URL: https://${{ steps.keys.outputs.ref }}.supabase.co
+          SUPABASE_SERVICE_ROLE_KEY: ${{ steps.keys.outputs.sr }}
+          SUPABASE_ANON_KEY: ${{ steps.keys.outputs.anon }}
+          LEARN_URL: ${{ vars.LEARN_SITE_URL || 'https://learn.tarbiyyah.co.uk' }}
+        run: |
+          export PREVIEW_KEY="$(tr -d '[:space:]' < deploy/preview-key.txt)"
+          node scripts/audit-portal-pages.mjs
+      - name: Commit to portal-audit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f audit/portal
+          git commit -qm "Portal audit screenshots" || exit 0
+          git push -q origin HEAD:portal-audit
