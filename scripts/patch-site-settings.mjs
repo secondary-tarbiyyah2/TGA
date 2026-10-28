@@ -3,7 +3,7 @@
 // specific fields given so it never clobbers other fields an admin may have
 // already edited in Studio since seeding.
 //
-// Usage: node scripts/patch-site-settings.mjs '{"applicationFee":50}'
+// Usage: node scripts/patch-site-settings.mjs '{"applicationFee":150}'
 // Requires SANITY_API_TOKEN and NEXT_PUBLIC_SANITY_PROJECT_ID.
 import { createClient } from "@sanity/client";
 

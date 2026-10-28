@@ -648,7 +648,7 @@ export const SAMPLE_STAGE: StageInput = {
 };
 
 export const SAMPLE_FEES: FeesInput = {
-  applicationFee: 50,
+  applicationFee: 150,
   applicationFeeReceived: false,
   annualFee: 2130,
   plans: [

@@ -198,7 +198,7 @@ export const PROCESS_OWNER_LABELS: Record<ProcessOwner, string> = { you: "Your p
  * Titles are in sentence case and every sentence ends with a full stop.
  */
 export function admissionsProcessSteps(fees: { applicationFee?: number }): ProcessStep[] {
-  const app = money(fees.applicationFee, "£50");
+  const app = money(fees.applicationFee, "£150");
   return [
     {
       title: "Apply",

@@ -30,7 +30,7 @@ const feeBands = [
 const siteSettings = {
   _id: "siteSettings",
   _type: "siteSettings",
-  applicationFee: 50,
+  applicationFee: 150,
   bookingWidgetUrl: "",
   openEveningRecordingUrl: "",
   portalUrl: "",

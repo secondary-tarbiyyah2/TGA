@@ -1,6 +1,6 @@
 -- 0163: no registration fee (owner decision, 28 October 2026).
 --   "No need for registration fee, just application fee."
---   * The application fee stays at £50 per child and is the only admissions fee.
+--   * The application fee was £50 per child here; it became £150 in 0170 and is the only admissions fee.
 --   * Accepting an offer now means: reply within five working days and pay the
 --     first fee payment (no later than Friday 8 January 2027).
 --   * site_settings.registration_fee is cleared (null, no default). The column is

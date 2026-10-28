@@ -28,7 +28,7 @@ export const DEFAULT_PAYMENT_SCHEDULE_TEXT =
 /** Non-schedule fee defaults from the Fees Policy PDF (all editable in the admin Fees editor). */
 export const FEE_POLICY_DEFAULTS = {
   /** Application fee per child (the only admissions fee; there is no registration fee). */
-  applicationFee: 50,
+  applicationFee: 150,
   /** % off the annual total when the annual option is paid in full by the due date (8 Jan 2027). */
   annualDiscountPercent: 2,
   /** Sibling discount for the third and later children (Prospectus p.18 / Fees Policy: 5% second child, 10% third and later). */
@@ -303,13 +303,13 @@ export function runFeeSelfCheck(): void {
   assert(computeFeeSchedule(2796, FEE_DEFAULTS).monthlyAmount === 399.43, "Y7-9 monthly");
   assert(computeFeeSchedule(3000, FEE_DEFAULTS).monthlyAmount === 428.57, "Y10-11 monthly");
   assert(applyAnnualDiscount(1596, 2).total === 1564.08, "2% annual discount");
-  const est = estimateFamilyFees({ children: [{ label: "a", annual: 1596 }, { label: "b", annual: 2130 }], plan: "annual", terms: 2, instalments: 7, annualDiscountPercent: 2, siblingDiscountPercent: 10, applicationFee: 50 });
+  const est = estimateFamilyFees({ children: [{ label: "a", annual: 1596 }, { label: "b", annual: 2130 }], plan: "annual", terms: 2, instalments: 7, annualDiscountPercent: 2, siblingDiscountPercent: 10, applicationFee: 150 });
   assert(toPence(est.total) === toPence(est.gross) - toPence(est.totalDiscount), "estimate total = gross - discounts");
-  assert(est.dueOnAcceptance === est.total && est.applicationFeeTotal === 100, "annual estimate: due on acceptance is the first (only) payment; application fee per child");
+  assert(est.dueOnAcceptance === est.total && est.applicationFeeTotal === 300, "annual estimate: due on acceptance is the first (only) payment; application fee per child");
   assert(est.perChild[0].siblingDiscount === 159.6 && est.perChild[1].siblingDiscount === 0, "sibling discount on the younger (lower-fee) child");
-  const three = estimateFamilyFees({ children: [{ label: "a", annual: 1596 }, { label: "b", annual: 1596 }, { label: "c", annual: 1596 }], plan: "monthly", terms: 2, instalments: 7, annualDiscountPercent: 2, siblingDiscountPercent: 5, applicationFee: 50 });
+  const three = estimateFamilyFees({ children: [{ label: "a", annual: 1596 }, { label: "b", annual: 1596 }, { label: "c", annual: 1596 }], plan: "monthly", terms: 2, instalments: 7, annualDiscountPercent: 2, siblingDiscountPercent: 5, applicationFee: 150 });
   assert(three.perChild[1].siblingDiscount === 79.8 && three.perChild[2].siblingDiscount === 159.6 && three.dueOnAcceptance === three.firstPayment, "5% second, 10% third; due on acceptance = first payment");
-  const m = estimateFamilyFees({ children: [{ label: "a", annual: 2130 }], plan: "monthly", terms: 2, instalments: 7, annualDiscountPercent: 2, applicationFee: 50 });
+  const m = estimateFamilyFees({ children: [{ label: "a", annual: 2130 }], plan: "monthly", terms: 2, instalments: 7, annualDiscountPercent: 2, applicationFee: 150 });
   assert(m.total === 2130 && m.payments.length === 7 && m.firstPayment === 304.29 && toPence(sumPounds(m.payments)) === 213000, "monthly estimate, no annual discount");
   const odd = splitInstalments(100, 3);
   assert(odd[0] === 33.33 && odd[1] === 33.33 && odd[2] === 33.34, "remainder on last instalment");
