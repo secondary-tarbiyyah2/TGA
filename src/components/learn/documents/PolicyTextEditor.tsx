@@ -13,7 +13,7 @@ const inputCls = `mt-1 ${ui.input}`;
  * "Edit text" for one policy: the header table and the sections, written
  * in plain markdown (## 1. Heading, paragraphs, - bullets, 1. numbered
  * steps, | pipe | tables |, **bold**). Saving writes policy_links.body_md /
- * meta (migration 0171) and triggers the site rebuild that regenerates the
+ * meta (migration 0174) and triggers the site rebuild that regenerates the
  * PDF and the readable page. Saving text also detaches any uploaded file so
  * the generated version is what the website serves.
  */

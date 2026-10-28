@@ -161,7 +161,7 @@ jobs:
         run: npm run build
 
       # Policy PDFs from the text edited in the portal (policy_links.body_md,
-      # migration 0171). The bundled PDFs in public/policies/ are the fallback
+      # migration 0174). The bundled PDFs in public/policies/ are the fallback
       # for any policy that has no text in the database; a row that does have
       # text overwrites its PDF here, so "Edit text" in the portal is what the
       # public downloads. marked and playwright are installed ad hoc so the

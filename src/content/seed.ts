@@ -311,7 +311,7 @@ export type PolicyLink = {
   order?: number;
   /** Shown in the "Key documents" box at the top of the Policies page. */
   featured?: boolean;
-  /** Readable web page at /policies/<slug>/ when the policy is written as text (0171). */
+  /** Readable web page at /policies/<slug>/ when the policy is written as text (0174). */
   readUrl?: string;
 };
 

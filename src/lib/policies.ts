@@ -5,7 +5,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 /**
  * Policy text: the header fields and markdown body a policy is written as
  * (editable in /learn/admin/content -> Policy documents -> Edit text, stored
- * in policy_links.body_md / meta, migration 0171). The same text drives the
+ * in policy_links.body_md / meta, migration 0174). The same text drives the
  * PDF (scripts/build-policies.cjs) and the readable page at
  * /policies/<slug>/. When the database is not reachable at build time the
  * markdown files in content/policies/ (the seed, and the git backup) are

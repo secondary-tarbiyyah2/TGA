@@ -18,7 +18,7 @@
 //
 // Where content/policies/<stem>.md exists, its header fields and body are
 // written into the row (meta, body_md) so the policy is editable as text in
-// the portal (0171). By default that only happens for a row that has no text
+// the portal (0174). By default that only happens for a row that has no text
 // yet, so wording edited in the portal is never overwritten by the repo copy;
 // --overwrite-text replaces it anyway (use after editing the markdown in git).
 //
