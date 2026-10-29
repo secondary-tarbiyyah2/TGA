@@ -17,6 +17,19 @@ import { getPolicyTexts, POLICY_META_FIELDS } from "@/lib/policies";
 
 export const dynamicParams = false;
 
+function labelTableCells(html: string): string {
+  return html.replace(/<table>([\s\S]*?)<\/table>/g, (_m, inner: string) => {
+    const heads = [...inner.matchAll(/<th[^>]*>([\s\S]*?)<\/th>/g)].map((h) => h[1].replace(/<[^>]+>/g, "").replace(/"/g, "&quot;").trim());
+    let col = 0;
+    const body = inner.replace(/<tr>/g, () => { col = 0; return "<tr>"; }).replace(/<td([^>]*)>/g, (_t, attrs: string) => {
+      const label = heads[col] || "";
+      col += 1;
+      return `<td${attrs} data-label="${label}">`;
+    });
+    return `<div class="table-wrap"><table>${body}</table></div>`;
+  });
+}
+
 export async function generateStaticParams() {
   return (await getPolicyTexts()).map((p) => ({ slug: p.slug }));
 }
@@ -39,7 +52,10 @@ export default async function PolicyPage({ params }: { params: Promise<{ slug: s
 
   // Tables scroll sideways inside their own box on narrow screens instead of
   // pushing the whole page wider.
-  const html = (await marked.parse(policy.body, { gfm: true })).replace(/<table>/g, '<div class="table-wrap"><table>').replace(/<\/table>/g, "</table></div>");
+  // On phones each table row becomes a stacked card, with the column heading
+  // shown before each cell (data-label, see .policy-body td::before), so no
+  // table needs sideways scrolling; wider screens keep the normal grid.
+  const html = labelTableCells(await marked.parse(policy.body, { gfm: true }));
   const metaRows = POLICY_META_FIELDS.filter((f) => policy.meta[f.key]);
 
   return (

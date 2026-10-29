@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import { showsMobileCtaBar } from "@/components/MobileCtaBar";
 
 const STORAGE_KEY = "tga-cookie-consent";
 
@@ -8,6 +10,8 @@ type Consent = "accepted" | "rejected";
 
 export function CookieConsent() {
   const [visible, setVisible] = useState(false);
+  // Sit above the sticky Apply / Book a call bar only on pages that have it.
+  const aboveBar = showsMobileCtaBar(usePathname() || "/");
 
   useEffect(() => {
     // Reading localStorage requires the client, so whether to show the banner can only be
@@ -39,7 +43,7 @@ export function CookieConsent() {
       role="dialog"
       aria-live="polite"
       aria-label="Cookie consent"
-      className="shadow-warm fixed inset-x-3 bottom-[4.75rem] z-[60] md:bottom-4 max-w-[420px] rounded-2xl border border-gold-light/50 bg-white p-4 sm:inset-x-auto sm:left-4 sm:p-5"
+      className={`shadow-warm fixed inset-x-3 z-[60] max-w-[420px] rounded-2xl border border-gold-light/50 bg-white p-4 sm:inset-x-auto sm:left-4 sm:p-5 md:bottom-4 ${aboveBar ? "bottom-[4.75rem]" : "bottom-3"}`}
     >
       <p className="text-xs text-ink/80 sm:text-sm">
         We use essential cookies to run this site and, with your consent, analytics cookies. Change your choice any time in our{" "}

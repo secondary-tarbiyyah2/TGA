@@ -5,13 +5,19 @@ import { usePathname } from "next/navigation";
 
 // Pages that already are (or sit inside) the apply / booking flow, a second
 // "Apply" bar there would just be noise over the form.
-const HIDDEN_ON = ["/admissions/apply", "/book-a-call", "/manage-booking"];
+// Also hidden where the page itself is the next step (the fit check, open-evening
+// booking, contact and the apply page), so its own form is never covered.
+const HIDDEN_ON = ["/admissions/apply", "/book-a-call", "/manage-booking", "/eligibility", "/open-evening", "/contact", "/admissions"];
+
+/** Whether the sticky bar is shown on this path (CookieConsent positions itself above it). */
+export function showsMobileCtaBar(raw: string): boolean {
+  const path = raw.length > 1 ? raw.replace(/\/$/, "") : raw;
+  return !(HIDDEN_ON.includes(path) || path.startsWith("/policies/"));
+}
 
 /** Sticky Apply / Book-a-call bar, phones and small tablets only. */
 export function MobileCtaBar() {
-  const raw = usePathname() || "/";
-  const path = raw.length > 1 ? raw.replace(/\/$/, "") : raw;
-  if (HIDDEN_ON.includes(path)) return null;
+  if (!showsMobileCtaBar(usePathname() || "/")) return null;
 
   return (
     <div

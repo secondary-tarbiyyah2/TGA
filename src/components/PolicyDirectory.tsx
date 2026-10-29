@@ -46,7 +46,7 @@ function CategoryBadge({ category }: { category: PolicyLink["category"] }) {
   const required = category === "required";
   return (
     <span
-      className={`inline-flex shrink-0 items-center rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide ${
+      className={`inline-flex shrink-0 items-center rounded-full px-2 py-0.5 text-xs font-semibold uppercase tracking-wide ${
         required ? "bg-gold-100 text-gold-900" : "bg-ink/5 text-ink/70"
       }`}
     >
