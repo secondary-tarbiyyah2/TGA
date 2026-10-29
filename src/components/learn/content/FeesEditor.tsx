@@ -177,7 +177,7 @@ export function FeesEditor() {
     }).eq("id", true);
     if (sErr) {
       setSaving(false);
-      setMessage(`Could not save settings: ${sErr.message}`);
+      setMessage("Could not save the fee settings. Please try again.");
       return;
     }
 
@@ -188,7 +188,7 @@ export function FeesEditor() {
       const { error } = b.id ? await supabase.from("fee_bands").update(payload).eq("id", b.id) : await supabase.from("fee_bands").insert(payload);
       if (error) {
         setSaving(false);
-        setMessage(`Could not save "${b.year_group_range}": ${error.message}`);
+        setMessage(`Could not save "${b.year_group_range}". Please try again.`);
         return;
       }
     }
@@ -196,7 +196,7 @@ export function FeesEditor() {
       const { error } = await supabase.from("fee_bands").delete().in("id", removedIds);
       if (error) {
         setSaving(false);
-        setMessage(`Could not delete removed bands: ${error.message}`);
+        setMessage(`Could not delete removed bands. Please try again.`);
         return;
       }
       setRemovedIds([]);

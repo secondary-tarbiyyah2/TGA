@@ -237,12 +237,12 @@ export function AdminParentEvenings() {
     ]);
     setEvenings((evRes.data as unknown as EveningRow[]) || []);
     const problems: string[] = [];
-    if (evRes.error) problems.push(`Parent evenings: ${evRes.error.message}`);
+    if (evRes.error) problems.push("Parent evenings couldn't be loaded.");
     let list: Teacher[] = [];
     if (!optRes.error) {
       list = ((optRes.data as TeacherOption[] | null) || []).map((o) => ({ id: o.user_id, name: o.full_name, cover: o.role !== "teacher" }));
     } else {
-      problems.push(`Teachers: ${optRes.error.message}`);
+      problems.push("The list of teachers couldn't be loaded.");
       // Fallback without any profiles embed: roles first, then names.
       const rolesRes = await supabase.from("user_roles").select("user_id, role").in("role", ["teacher", "teaching_assistant_cover"]);
       const rows = (rolesRes.data as unknown as { user_id: string; role: string }[] | null) || [];

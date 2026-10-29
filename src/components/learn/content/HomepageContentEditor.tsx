@@ -112,7 +112,7 @@ export function HomepageContentEditor() {
     const { error } = await supabase.from("homepage_content").update(toPayload(row)).eq("id", true);
     if (error) {
       setSaving(false);
-      setMessage(`Could not save: ${error.message}`);
+      setMessage(`Could not save. Please try again.`);
       return;
     }
     setSavedJson(JSON.stringify(row));

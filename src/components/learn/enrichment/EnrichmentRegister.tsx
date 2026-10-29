@@ -102,7 +102,7 @@ export function EnrichmentRegister({ mode }: { mode: "supervisor" | "admin" }) {
         { onConflict: "period_id,attendance_date,child_id" },
       );
     setBusy(null);
-    if (err) return setError(`Could not save: ${err.message}`);
+    if (err) return setError(`Could not save. Please try again.`);
     setTicks((prev) => [...prev.filter((t) => !(t.period_id === pid && childIds.includes(t.child_id))), ...childIds.map((child_id) => ({ period_id: pid, child_id, present }))]);
   };
 

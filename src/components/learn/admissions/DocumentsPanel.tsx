@@ -125,9 +125,9 @@ export function DocumentsPanel({ applicationId, sharedIdFrom }: { applicationId:
           <div className="flex items-center justify-between gap-3">
             <p className="text-sm font-medium text-ink">{viewing.label}</p>
             <div className="flex gap-2 text-xs font-semibold">
-              <a href={viewing.url} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-gold-500 px-3 py-1 text-ink-900 hover:brightness-105">Open in new tab</a>
+              <a href={viewing.url} target="_blank" rel="noopener noreferrer" className={btn("secondary", "sm")}>Open in new tab</a>
               <a href={viewing.downloadUrl} className={btn("primary", "sm")}>Download</a>
-              <button type="button" onClick={() => setViewing(null)} className="px-2 py-1 text-ink/70 underline">Close</button>
+              <button type="button" onClick={() => setViewing(null)} className={btn("ghost", "sm")}>Close</button>
             </div>
           </div>
           <FilePreview key={viewing.url} url={viewing.url} type={mimeFromName(viewing.path)} name={viewing.label} />

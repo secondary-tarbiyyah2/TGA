@@ -130,7 +130,7 @@ export function SiteSettingsEditor() {
     const { error } = await supabase.from("site_settings").update(payload).eq("id", true);
     if (error) {
       setSaving(false);
-      setMessage({ text: `Could not save: ${error.message}`, error: true });
+      setMessage({ text: `Could not save. Please try again.`, error: true });
       return;
     }
     setSavedJson(JSON.stringify(row));

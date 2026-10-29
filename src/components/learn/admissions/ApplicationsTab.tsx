@@ -272,7 +272,7 @@ export function ApplicationsTab() {
       const previous = current.status;
       if (status === "declined" || status === "withdrawn") {
         const nm = `${current.child_first_name} ${current.child_last_name}`.trim();
-        if (!window.confirm(`Mark ${nm}'s application as ${status}? The family is not notified automatically, and you can move it back later from the ${status[0].toUpperCase() + status.slice(1)} column.`)) return false;
+        if (!window.confirm(`Mark ${nm}'s application as ${STATUS_LABELS[status].toLowerCase()}? The family is not notified automatically, and you can move it back later from the ${STATUS_LABELS[status]} column.`)) return false;
       }
       if (status === "accepted") {
         // Fees policy: the first fee payment is the condition of acceptance (no registration fee).

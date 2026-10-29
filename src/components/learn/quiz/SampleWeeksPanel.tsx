@@ -94,7 +94,7 @@ export function SampleWeeksPanel() {
       }));
     }
     setSaving(null);
-    if (error) return note({ ok: false, text: `Couldn't save: ${error.message}` });
+    if (error) return note({ ok: false, text: `Couldn't save. Please try again.` });
     note({ ok: true, text: status === "published" ? "Published." : status === "review" ? "Sent to review." : "Draft saved." });
     await load();
     if (existing && expanded === existing.id) await loadHistory(existing.id);

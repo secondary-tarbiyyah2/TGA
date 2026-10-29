@@ -45,7 +45,7 @@ export function KeyStagePagesEditor() {
   const load = useCallback(async () => {
     if (!supabase) return;
     const { data, error } = await supabase.from("key_stage_pages").select("*").order("order_index");
-    if (error) setMessage({ text: `Could not load the key-stage pages: ${error.message}`, error: true });
+    if (error) setMessage({ text: `Could not load the key-stage pages. Please try again.`, error: true });
     setRows(((data as Row[]) || []).map((r) => ({ ...r, subjects: Array.isArray(r.subjects) ? r.subjects : [], weekly: Array.isArray(r.weekly) ? r.weekly : [] })));
   }, [supabase]);
 
@@ -74,7 +74,7 @@ export function KeyStagePagesEditor() {
       .eq("slug", r.slug);
     if (error) {
       setBusy(false);
-      return setMessage({ text: `Could not save: ${error.message}`, error: true });
+      return setMessage({ text: `Could not save. Please try again.`, error: true });
     }
     const publishMessage = await triggerPublish();
     await load();

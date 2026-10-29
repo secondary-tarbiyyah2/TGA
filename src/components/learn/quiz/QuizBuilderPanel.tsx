@@ -140,7 +140,7 @@ export function QuizBuilderPanel({ onPreview }: { onPreview: (config: QuizConfig
       const currentlyPublished = versions.find((v) => v.status === "published");
       if (currentlyPublished) {
         const { error } = await supabase.from("quiz_config_versions").update({ status: "archived" }).eq("id", currentlyPublished.id);
-        if (error) return setNotice({ ok: false, text: `Couldn't publish: ${error.message}` });
+        if (error) return setNotice({ ok: false, text: `Couldn't publish. Please try again.` });
       }
       const { error } = await supabase
         .from("quiz_config_versions")
@@ -148,7 +148,7 @@ export function QuizBuilderPanel({ onPreview }: { onPreview: (config: QuizConfig
         .eq("id", draftId);
       if (error) {
         if (currentlyPublished) await supabase.from("quiz_config_versions").update({ status: "published" }).eq("id", currentlyPublished.id);
-        return setNotice({ ok: false, text: `Couldn't publish, so the previous version is still live: ${error.message}` });
+        return setNotice({ ok: false, text: `Couldn't publish, so the previous version is still live. Please try again.` });
       }
       setNotice({ ok: true, text: "Published. A fresh draft has been started for your next changes." });
       await load();

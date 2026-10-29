@@ -82,7 +82,7 @@ export function PolicyEditor() {
   const load = useCallback(async () => {
     if (!supabase) return;
     const { data, error } = await supabase.from("policy_links").select("*").order("order_index");
-    if (error) setMessage({ text: `Could not load policies: ${error.message}`, error: true });
+    if (error) setMessage({ text: `Could not load policies. Please try again.`, error: true });
     setRows((data as Row[]) || []);
   }, [supabase]);
 
@@ -140,7 +140,7 @@ export function PolicyEditor() {
     const { error } = await supabase.storage.from("policy-documents").upload(path, file, { contentType: kind === "pdf" ? "application/pdf" : DOCX_MIME, upsert: false });
     if (error) {
       setBusy(false);
-      return setMessage({ text: `Upload failed: ${error.message}. Only a Headteacher or Admin can upload.`, error: true });
+      return setMessage({ text: "Upload failed. Only a Headteacher or Admin can upload.", error: true });
     }
     setDraft((d) => ({
       ...d,
@@ -200,7 +200,7 @@ export function PolicyEditor() {
     }
     if (error) {
       setBusy(false);
-      return setMessage({ text: `Could not save: ${error.message}`, error: true });
+      return setMessage({ text: `Could not save. Please try again.`, error: true });
     }
     setEditingId(null);
     await load();
@@ -216,7 +216,7 @@ export function PolicyEditor() {
     const { error } = await supabase.from("policy_links").update({ deleted_at: new Date().toISOString(), deleted_by: u.user?.id ?? null }).eq("id", r.id);
     if (error) {
       setBusy(false);
-      return setMessage({ text: `Could not remove: ${error.message}`, error: true });
+      return setMessage({ text: `Could not remove. Please try again.`, error: true });
     }
     await stopAskingToSign(r.id);
     await load();
@@ -228,7 +228,7 @@ export function PolicyEditor() {
     if (!supabase) return;
     setBusy(true);
     const { error } = await supabase.from("policy_links").update({ deleted_at: null, deleted_by: null }).eq("id", r.id);
-    if (error) setMessage({ text: `Could not restore: ${error.message}`, error: true });
+    if (error) setMessage({ text: `Could not restore. Please try again.`, error: true });
     else {
       await load();
       liveMessage("Restored.");
@@ -247,7 +247,7 @@ export function PolicyEditor() {
     const b = other.order_index === r.order_index ? r.order_index : r.order_index;
     const res1 = await supabase.from("policy_links").update({ order_index: a, updated_at: new Date().toISOString() }).eq("id", r.id);
     const res2 = await supabase.from("policy_links").update({ order_index: b, updated_at: new Date().toISOString() }).eq("id", other.id);
-    if (res1.error || res2.error) setMessage({ text: `Could not reorder: ${(res1.error || res2.error)?.message}`, error: true });
+    if (res1.error || res2.error) setMessage({ text: "Could not reorder the policies. Please try again.", error: true });
     await load();
     setBusy(false);
   }
@@ -257,7 +257,7 @@ export function PolicyEditor() {
     if (!supabase) return;
     setBusy(true);
     const { error } = await supabase.from("policy_links").update({ visibility, updated_at: new Date().toISOString() }).eq("id", r.id);
-    if (error) setMessage({ text: `Could not change visibility: ${error.message}`, error: true });
+    if (error) setMessage({ text: `Could not change visibility. Please try again.`, error: true });
     else {
       await load();
       liveMessage(visibility === "public" ? "Now listed on the website." : "Now staff-only: kept for signing and compliance, not listed on the website.");
@@ -276,7 +276,7 @@ export function PolicyEditor() {
         summary: p.summary ?? null, last_reviewed: p.lastReviewed ?? null, next_review: p.nextReview ?? null, order_index: p.order ?? i + 1,
       })),
     );
-    if (error) setMessage({ text: `Could not import: ${error.message}`, error: true });
+    if (error) setMessage({ text: `Could not import. Please try again.`, error: true });
     else {
       await load();
       setMessage({ text: `Imported ${current.length} policies.` });

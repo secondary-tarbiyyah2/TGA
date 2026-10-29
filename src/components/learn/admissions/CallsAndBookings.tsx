@@ -102,7 +102,7 @@ function StaffAvailabilityEditor({ staff, onStaffUpdated }: { staff: StaffRow; o
     if (!window.confirm("Remove this availability slot? Families can no longer book it.")) return;
     const { error } = await supabase.from("availability_rules").delete().eq("id", id);
     // Keep the row on screen if the delete failed, rather than pretending it worked.
-    if (error) return window.alert(`Couldn't remove that slot: ${error.message}`);
+    if (error) return window.alert(`Couldn't remove that slot. Please try again.`);
     setRules((r) => (r || []).filter((x) => x.id !== id));
   }
 
@@ -229,14 +229,14 @@ function StaffBookingsPanel({ staffId }: { staffId: string }) {
     setOutcomeError(null);
     const { error } = await supabase.from("bookings").update({ status }).eq("id", bookingId);
     // Only move it to "past" once the change is really saved.
-    if (error) return setOutcomeError(`Couldn't update that booking: ${error.message}`);
+    if (error) return setOutcomeError(`Couldn't update that booking. Please try again.`);
     setBookings((b) => (b || []).map((x) => (x.id === bookingId ? { ...x, status } : x)));
   }
 
   function exportCsv() {
-    const header = "starts_at,ends_at,status,contact_name,contact_email,notes\n";
+    const header = "Starts,Ends,Status,Contact name,Contact email,Notes\n";
     const rows = (bookings || [])
-      .map((b) => [b.starts_at, b.ends_at, b.status, b.contact_name, b.contact_email, (b.notes || "").replace(/\n/g, " ")].map((v) => `"${String(v ?? "").replace(/"/g, '""')}"`).join(","))
+      .map((b) => [b.starts_at, b.ends_at, BOOKING_STATUS_LABEL[b.status] || b.status.replace(/_/g, " "), b.contact_name, b.contact_email, (b.notes || "").replace(/\n/g, " ")].map((v) => `"${String(v ?? "").replace(/"/g, '""')}"`).join(","))
       .join("\n");
     const blob = new Blob([header + rows], { type: "text/csv" });
     const a = document.createElement("a");

@@ -55,7 +55,7 @@ function RuleCard({ rule, due, onChanged }: { rule: RuleRow; due: PreviewRow[]; 
     const { error } = await supabase.from("retention_rules").update({ retention_months: monthsNum, action, enabled, basis_note: basis }).eq("id", rule.id);
     setBusy(false);
     if (error) {
-      setMessage(`Couldn't save: ${error.message}`);
+      setMessage(`Couldn't save. Please try again.`);
       return;
     }
     setReviewed(false);
@@ -72,7 +72,7 @@ function RuleCard({ rule, due, onChanged }: { rule: RuleRow; due: PreviewRow[]; 
     const { data, error } = await supabase.rpc("retention_run", { p_category: rule.category, p_expected: runnable.length });
     setBusy(false);
     if (error) {
-      setMessage(`Nothing was changed: ${error.message}`);
+      setMessage(`Nothing was changed. Please try again.`);
       onChanged();
       return;
     }

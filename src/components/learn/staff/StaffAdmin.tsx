@@ -8,7 +8,7 @@ import { StaffProfileForm } from "@/components/learn/staff/StaffProfileForm";
 import { Tabs } from "@/components/learn/Tabs";
 import { SencoToggle } from "@/components/learn/send/SencoToggle";
 import { ukToday } from "@/lib/learn/ukTime";
-import { btn } from "@/components/learn/ui";
+import { btn, ui } from "@/components/learn/ui";
 
 type StaffRow = {
   user_id: string;
@@ -32,7 +32,7 @@ function errText(e: { message?: string; details?: string; hint?: string; code?: 
 }
 
 const VETTING_COLUMNS = "user_id, dbs_check_date, dbs_renewal_due, right_to_work_verified, safeguarding_training_date, start_date";
-const INPUT = "mt-1 w-full rounded-lg border border-gold-light/60 bg-white px-3 py-2 text-sm text-ink";
+const INPUT = `mt-1 ${ui.input}`;
 
 const STATE_STYLE: Record<DueState, string> = {
   none: "bg-cream text-ink/65",
@@ -404,7 +404,7 @@ export function StaffAdmin({ initialUserId }: { initialUserId?: string }) {
 
   const details = person ? (
     <div>
-      <h2 className="font-serif text-h3 font-semibold text-ink">{person.full_name}</h2>
+      <h2 className="text-lg font-semibold text-ink">{person.full_name}</h2>
       <p className="text-sm text-ink/65">{[person.roles.map((r) => learnRoleLabel(r)).join(", "), person.email].filter(Boolean).join(" · ")}</p>
       {(warnings[person.user_id] || []).length > 0 && (
         <ul className="mt-3 flex flex-wrap gap-2" aria-label="Compliance warnings">
@@ -472,7 +472,7 @@ export function StaffAdmin({ initialUserId }: { initialUserId?: string }) {
           </div>
         )}
         {staff === null ? (
-          <p className="p-4 text-sm text-ink/65">Loading…</p>
+          <div className="m-4 h-24 animate-pulse rounded-xl bg-cream" aria-label="Loading" />
         ) : staff.length === 0 ? (
           <p className="p-4 text-sm text-amber-900">{problems.length > 0 ? "Couldn't load staff." : "No staff found."}</p>
         ) : (
@@ -496,7 +496,7 @@ export function StaffAdmin({ initialUserId }: { initialUserId?: string }) {
                     </span>
                     <span className="block text-xs text-ink/65">
                       {s.roles.map((r) => learnRoleLabel(r)).join(", ")}
-                      {s.is_dsl ? " · DSL" : ""}
+                      {s.is_dsl ? " · Safeguarding Lead" : ""}
                       {!s.active ? " · Inactive" : ""}
                     </span>
                   </button>

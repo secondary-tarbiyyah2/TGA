@@ -36,7 +36,7 @@ export function CurriculumContentEditor() {
     const { error } = await supabase.from("curriculum_content").update({ hero_heading: toStored(row.hero_heading, D.hero_heading), hero_body: toStored(row.hero_body, D.hero_body) }).eq("id", true);
     if (error) {
       setSaving(false);
-      setMessage(`Could not save: ${error.message}`);
+      setMessage(`Could not save. Please try again.`);
       return;
     }
     setSavedJson(JSON.stringify(row));

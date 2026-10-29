@@ -54,7 +54,7 @@ export function SimpleListEditor({
   const load = async () => {
     if (!supabase) return;
     const { data, error } = await supabase.from(table).select("*").order(orderKey, { ascending: defaultOrderAscending });
-    if (error) setMessage({ text: `Could not load this list: ${error.message}`, error: true });
+    if (error) setMessage({ text: `Could not load this list. Please try again.`, error: true });
     setRows((data as Row[]) || []);
   };
 
@@ -91,7 +91,7 @@ export function SimpleListEditor({
     const { error } = editingId === "new" ? await supabase.from(table).insert(payload) : await supabase.from(table).update(payload).eq("id", editingId);
     if (error) {
       setBusy(false);
-      setMessage({ text: `Could not save: ${error.message}`, error: true });
+      setMessage({ text: `Could not save. Please try again.`, error: true });
       return;
     }
     setEditingId(null);
@@ -106,7 +106,7 @@ export function SimpleListEditor({
     const { error } = await supabase.from(table).delete().eq("id", row.id as string);
     if (error) {
       setBusy(false);
-      return setMessage({ text: `Could not delete: ${error.message}`, error: true });
+      return setMessage({ text: `Could not delete. Please try again.`, error: true });
     }
     await load();
     setMessage({ text: await triggerPublish() });

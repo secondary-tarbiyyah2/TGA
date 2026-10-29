@@ -408,7 +408,7 @@ function Settings() {
     setMsg(null);
     const { error } = await supabase.from("digest_settings").upsert({ id: true, ...cfg, intro: cfg.intro?.trim() || null }, { onConflict: "id" });
     setBusy(false);
-    setMsg(error ? { tone: "bad", text: `Couldn't save: ${error.message}` } : { tone: "good", text: "Saved. Friday's digest will use these settings; previews use them straight away." });
+    setMsg(error ? { tone: "bad", text: `Couldn't save. Please try again.` } : { tone: "good", text: "Saved. Friday's digest will use these settings; previews use them straight away." });
   };
 
   if (!cfg) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
