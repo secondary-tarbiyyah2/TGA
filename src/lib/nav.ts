@@ -38,7 +38,7 @@ export const primaryNav: NavEntry[] = [
   },
   {
     label: "Admissions",
-    blurb: "Fit check, open evenings, fees, how to apply",
+    blurb: "Is it right for us? Open evenings, fees and how to apply",
     items: [
       { href: "/eligibility", label: "Is it right for us?" },
       { href: "/open-evening", label: "Open evenings & taster morning" },
@@ -64,13 +64,10 @@ export const primaryNav: NavEntry[] = [
 export type HubCard = { href: string; title: string; body: string };
 
 export const learningHub: HubCard[] = [
-  { href: "/curriculum", title: "Curriculum", body: "Qur'an, Arabic and Islamic Studies alongside the full national curriculum, by key stage, Year 1 to GCSE." },
-  { href: "/curriculum/year-1-2", title: "Year 1 – Year 2", body: "View timetable, subjects and sample week." },
-  { href: "/curriculum/year-3-6", title: "Year 3 – Year 6", body: "View timetable, subjects and sample week." },
-  { href: "/curriculum/year-7-9", title: "Year 7 – Year 9", body: "View timetable, subjects and sample week." },
-  { href: "/curriculum/year-10-11", title: "Year 10 – Year 11 (GCSE)", body: "View timetable, subjects and sample week." },
+  // The key stage pages are listed with their lessons a week on /learning itself, so not repeated here.
+  { href: "/curriculum", title: "Curriculum", body: "Qur'an, Arabic and Islamic Studies alongside the full national curriculum, Year 1 to International GCSE." },
   { href: "/pastoral-care", title: "Pastoral care & SEND", body: "How we support every child's wellbeing, character and additional needs." },
-  { href: "/eligibility", title: "Is it right for us?", body: "Two minutes: your child's key stage, local lesson times, the fee band and the next step." },
+  { href: "/eligibility", title: "Is it right for us?", body: "Two minutes: an honest answer, your local lesson times, the fees and the next step." },
 ];
 
 export const parentsHub: HubCard[] = [
@@ -83,7 +80,7 @@ export const parentsHub: HubCard[] = [
 ];
 
 export const aboutHub: HubCard[] = [
-  { href: "/testimonials", title: "Testimonials", body: "What parents and students say about the Academy." },
+  { href: "/testimonials", title: "Testimonials", body: "Words from our families, published once our founding cohort has joined." },
   { href: "/safeguarding", title: "Safeguarding", body: "Our commitment to every child's safety." },
   { href: "/pastoral-care", title: "Pastoral care", body: "How we nurture wellbeing and character." },
 ];
@@ -118,6 +115,7 @@ export const footerColumns: { heading: string; links: NavLink[] }[] = [
       { href: "/safeguarding", label: "Safeguarding" },
       { href: "/policies", label: "Policies" },
       { href: "/faqs", label: "FAQs" },
+      { href: "/contact", label: "Contact" },
       { href: `${LEARN_ORIGIN}/login`, label: "Sign in to the portal" },
     ],
   },
@@ -128,7 +126,6 @@ export const footerColumns: { heading: string; links: NavLink[] }[] = [
       { href: "/legal/cookies", label: "Cookie policy" },
       { href: "/accessibility", label: "Accessibility" },
       { href: "/legal/terms", label: "Terms" },
-      { href: "/contact", label: "Contact" },
     ],
   },
 ];
@@ -138,7 +135,7 @@ export const footerNav = footerColumns.flatMap((c) => c.links);
 
 // One primary action (Apply) and one secondary (Book a free call) for
 // families who are not ready to apply; Register interest is the holding
-// site's own form. The free call is also reachable from the fit check,
+// site's own form. The free call is also reachable from "Is it right for us?",
 // the open-evening page and the footer.
 export const primaryCta = { href: "/admissions", label: "Apply now" };
 export const secondaryCta = { href: "/book-a-call#book", label: "Book a free call" };

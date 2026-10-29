@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 // Pages that already are (or sit inside) the apply / booking flow, a second
 // "Apply" bar there would just be noise over the form.
-// Also hidden where the page itself is the next step (the fit check, open-evening
+// Also hidden where the page itself is the next step ("Is it right for us?", open-evening
 // booking, contact and the apply page), so its own form is never covered.
 const HIDDEN_ON = ["/admissions/apply", "/book-a-call", "/manage-booking", "/eligibility", "/open-evening", "/contact", "/admissions"];
 
@@ -31,7 +31,7 @@ export function MobileCtaBar() {
           href="/admissions"
           className="inline-flex min-h-11 flex-1 items-center justify-center rounded-full bg-gold-500 px-4 text-sm font-semibold text-ink-900 hover:brightness-95"
         >
-          Apply
+          Apply now
         </Link>
         <Link
           href="/book-a-call#book"

@@ -20,7 +20,7 @@ function DesktopDropdown({ group, open, onToggle, onClose }: { group: NavGroup; 
         onClick={onToggle}
         aria-expanded={open}
         aria-haspopup="true"
-        className={`flex items-center gap-1 rounded-md px-3 py-2.5 text-sm font-medium transition-colors ${
+        className={`flex items-center gap-1 whitespace-nowrap rounded-md px-2 py-2.5 text-sm font-medium transition-colors ${
           active || open ? "text-gold-700" : "text-ink/80 hover:text-gold-700"
         }`}
       >
@@ -306,8 +306,8 @@ export function Header() {
       }`}
     >
       <Container className="flex h-20 items-center justify-between gap-4">
-        <Link href="/" className="flex items-center" aria-label="Tarbiyyah Global Academy, home">
-          <Image src="/brand/ga-wordmark.png" alt="Tarbiyyah Global Academy" width={220} height={67} priority />
+        <Link href="/" className="flex shrink-0 items-center" aria-label="Tarbiyyah Global Academy, home">
+          <Image src="/brand/ga-wordmark.png" alt="Tarbiyyah Global Academy" width={200} height={61} priority className="h-auto w-[180px] xl:w-[200px]" />
         </Link>
 
         <button
@@ -326,7 +326,7 @@ export function Header() {
         </button>
 
         {/* Desktop nav */}
-        <nav ref={navRef} aria-label="Primary" className="hidden items-center gap-1 lg:flex">
+        <nav ref={navRef} aria-label="Primary" className="hidden min-w-0 items-center gap-0.5 lg:flex">
           {primaryNav.map((entry) =>
             isNavGroup(entry) ? (
               <DesktopDropdown
@@ -341,7 +341,7 @@ export function Header() {
                 key={entry.href}
                 href={entry.href}
                 aria-current={pathname === entry.href ? "page" : undefined}
-                className={`rounded-md px-3 py-2.5 text-sm font-medium transition-colors ${
+                className={`whitespace-nowrap rounded-md px-2 py-2.5 text-sm font-medium transition-colors ${
                   pathname === entry.href ? "text-gold-700" : "text-ink/80 hover:text-gold-700"
                 }`}
               >
@@ -349,18 +349,22 @@ export function Header() {
               </Link>
             )
           )}
-          <ViewSettingsMenu />
-          <Link href={portalCta.href} aria-label={portalCta.label} title={portalCta.label} className="ml-1 flex items-center gap-1.5 rounded-full border border-teal-700/30 px-3 py-2 text-sm font-medium text-teal-700 hover:border-teal-700 hover:bg-teal-100">
+          {/* Display settings stay in the mobile drawer and the footer; on a narrow desktop the icon gives way so the bar stays on one line. */}
+          <span className="hidden xl:inline-flex">
+            <ViewSettingsMenu />
+          </span>
+          <Link href={portalCta.href} aria-label={portalCta.label} title={portalCta.label} className="ml-2 flex items-center gap-1.5 whitespace-nowrap rounded-full border border-teal-700/30 px-3 py-2 text-sm font-medium text-teal-700 hover:border-teal-700 hover:bg-teal-100">
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
               <rect x="5" y="11" width="14" height="9" rx="1.5" />
               <path d="M8 11V8a4 4 0 0 1 8 0v3" />
             </svg>
             {portalCta.shortLabel}
           </Link>
-          <Link href={secondaryCta.href} className="ml-2 hidden items-center justify-center rounded-full border-[1.5px] border-gold-500 px-4 py-2 text-sm font-semibold text-ink-900 transition-colors hover:bg-gold-100 xl:inline-flex">
-            {secondaryCta.label}
+          <Link href={secondaryCta.href} className="ml-1.5 hidden items-center justify-center whitespace-nowrap rounded-full border-[1.5px] border-gold-500 px-4 py-2 text-sm font-semibold text-ink-900 transition-colors hover:bg-gold-100 xl:inline-flex">
+            {/* Shorter than the drawer/footer label so the desktop bar fits on one line. */}
+            Book a call
           </Link>
-          <Link href={primaryCta.href} className="ml-2 inline-flex items-center justify-center rounded-full bg-gold-500 px-5 py-2.5 text-sm font-semibold text-ink-900 transition-all hover:brightness-95">
+          <Link href={primaryCta.href} className="ml-1.5 inline-flex items-center justify-center whitespace-nowrap rounded-full bg-gold-500 px-4 py-2 text-sm font-semibold text-ink-900 transition-all hover:brightness-95">
             {primaryCta.label}
           </Link>
         </nav>

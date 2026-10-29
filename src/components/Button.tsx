@@ -31,7 +31,7 @@ export function Button({
   return (
     <Link
       href={href}
-      className={`inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide transition-all duration-150 ${styles[variant]} ${className}`}
+      className={`inline-flex min-h-11 items-center justify-center gap-2 whitespace-nowrap rounded-full px-6 py-3 text-sm font-semibold tracking-wide transition-all duration-150 ${styles[variant]} ${className}`}
       {...rest}
     >
       {children}

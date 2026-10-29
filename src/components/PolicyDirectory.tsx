@@ -56,38 +56,44 @@ function CategoryBadge({ category }: { category: PolicyLink["category"] }) {
   );
 }
 
-function PolicyRow({ p, complaintsLastYear, highlight }: { p: PolicyLink; complaintsLastYear?: number; highlight?: string }) {
-  const lastReviewed = formatReviewDate(p.lastReviewed);
-  const nextReview = formatReviewDate(p.nextReview);
+/** "Last reviewed September 2026 · Next review August 2027", or null. */
+function reviewLine(p: Pick<PolicyLink, "lastReviewed" | "nextReview">): string | null {
+  const last = formatReviewDate(p.lastReviewed);
+  const next = formatReviewDate(p.nextReview);
+  if (!last && !next) return null;
+  return [last && `Last reviewed ${last}`, next && `Next review ${next}`].filter(Boolean).join(" · ");
+}
+
+function PolicyRow({ p, complaintsLastYear, highlight, commonReview }: { p: PolicyLink; complaintsLastYear?: number; highlight?: string; commonReview?: string | null }) {
+  // When every policy shares the same review dates they are said once, above
+  // the list, instead of repeated on all 28 rows.
+  const review = reviewLine(p);
+  const showReview = review && review !== commonReview;
   const word = isWordFile(p.fileUrl);
   const titleId = `policy-${p.number}-${p._id}`.replace(/[^a-zA-Z0-9_-]/g, "");
   return (
     <li className="flex flex-wrap items-start justify-between gap-3 px-5 py-4 print:break-inside-avoid">
-      <div className="min-w-0">
-        <h3 id={titleId} className="flex flex-wrap items-center gap-2 font-medium text-ink">
-          <span className="text-ink/65 tabular-nums">
+      <div className="min-w-0 flex-1 basis-64">
+        {/* Inline (not flex-wrap) so the number, title and badge flow as one
+            line of text and wrap the same way on every row. */}
+        <h3 id={titleId} className="font-medium text-ink">
+          <span className="mr-2 text-ink/65 tabular-nums">
             <span className="sr-only">Policy </span>{p.number}
-          </span>{" "}
-          <Mark text={p.title} q={highlight} />
-          <CategoryBadge category={p.category} />
+          </span>
+          <Mark text={p.title} q={highlight} />{" "}
+          <span className="ml-1 inline-block align-middle"><CategoryBadge category={p.category} /></span>
         </h3>
         {p.summary && <p className="mt-0.5 text-sm text-ink/70">{p.summary}</p>}
         {p.number === "26" && typeof complaintsLastYear === "number" && (
           <p className="mt-0.5 text-sm text-ink/70">Formal complaints in the last academic year: {complaintsLastYear}</p>
         )}
-        {(lastReviewed || nextReview) && (
-          <p className="mt-1 text-sm text-ink/70">
-            {lastReviewed && <>Last reviewed {lastReviewed}</>}
-            {lastReviewed && nextReview && " · "}
-            {nextReview && <>Next review {nextReview}</>}
-          </p>
-        )}
+        {showReview && <p className="mt-1 text-sm text-ink/70">{review}</p>}
       </div>
       <span className="flex shrink-0 flex-wrap gap-2 print:hidden">
         {p.readUrl && (
           <Link
             href={p.readUrl}
-            className="rounded-full bg-gold-500 px-3 py-1.5 text-sm font-semibold text-ink-900 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-700"
+            className="inline-flex min-h-10 items-center rounded-full bg-gold-500 px-4 text-sm font-semibold text-ink-900 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-700"
             aria-describedby={titleId}
           >
             Read online<span className="sr-only">: {p.title}</span>
@@ -95,7 +101,7 @@ function PolicyRow({ p, complaintsLastYear, highlight }: { p: PolicyLink; compla
         )}
         <a
           href={p.fileUrl}
-          className="rounded-full border border-gold-500/60 px-3 py-1.5 text-sm font-semibold text-gold-900 hover:bg-gold-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-700"
+          className="inline-flex min-h-10 items-center rounded-full border border-gold-500/60 px-4 text-sm font-semibold text-gold-900 hover:bg-gold-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-700"
           target="_blank"
           rel="noopener noreferrer"
           aria-describedby={titleId}
@@ -106,6 +112,16 @@ function PolicyRow({ p, complaintsLastYear, highlight }: { p: PolicyLink; compla
       </span>
       <span className="hidden text-xs text-ink/60 print:block">{p.fileUrl}</span>
     </li>
+  );
+}
+
+/** The line under the Policies heading. Exported so the page can show it in its hero. */
+export function PoliciesIntro({ intro, className = "mt-4 text-ink/70" }: { intro?: string; className?: string }) {
+  return (
+    <p className={className}>
+      {intro || DEFAULT_INTRO} For our privacy notice, see the{" "}
+      <Link href="/legal/privacy" className="font-semibold text-gold-700 underline">Privacy page</Link>.
+    </p>
   );
 }
 
@@ -123,11 +139,11 @@ function Mark({ text, q }: { text: string; q?: string }) {
   );
 }
 
-function PolicyList({ policies, complaintsLastYear, labelledBy, highlight }: { policies: PolicyLink[]; complaintsLastYear?: number; labelledBy: string; highlight?: string }) {
+function PolicyList({ policies, complaintsLastYear, labelledBy, highlight, commonReview }: { policies: PolicyLink[]; complaintsLastYear?: number; labelledBy: string; highlight?: string; commonReview?: string | null }) {
   return (
     <ul aria-labelledby={labelledBy} className="mt-4 divide-y divide-gold-light/40 rounded-2xl border border-gold-light/50 bg-white">
       {policies.map((p) => (
-        <PolicyRow key={p._id} p={p} complaintsLastYear={complaintsLastYear} highlight={highlight} />
+        <PolicyRow key={p._id} p={p} complaintsLastYear={complaintsLastYear} highlight={highlight} commonReview={commonReview} />
       ))}
     </ul>
   );
@@ -148,7 +164,7 @@ function PolicyList({ policies, complaintsLastYear, labelledBy, highlight }: { p
  * don't rely on colour alone, and a print layout that lists file
  * addresses.
  */
-export function PolicyDirectory({ initialPolicies, initialSettings }: { initialPolicies: PolicyLink[]; initialSettings: PolicySettings }) {
+export function PolicyDirectory({ initialPolicies, initialSettings, showIntro = true }: { initialPolicies: PolicyLink[]; initialSettings: PolicySettings; showIntro?: boolean }) {
   const [policies, setPolicies] = useState<PolicyLink[]>(initialPolicies);
   const [settings, setSettings] = useState<PolicySettings>(initialSettings);
   const [query, setQuery] = useState("");
@@ -183,6 +199,8 @@ export function PolicyDirectory({ initialPolicies, initialSettings }: { initialP
     return policies.filter((p) => `${p.number} ${p.title} ${p.summary || ""}`.toLowerCase().includes(needle));
   }, [policies, q]);
 
+  const reviewLines = new Set(policies.map(reviewLine));
+  const commonReview = policies.length > 1 && reviewLines.size === 1 ? [...reviewLines][0] : null;
   const keyDocuments = policies.filter((p) => p.featured);
   const groups = PARENT_QUESTION_GROUPS.map((g) => ({ ...g, items: filtered.filter((p) => p.parentQuestionCategory === g.key) })).filter((g) => g.items.length > 0);
   const ungrouped = filtered.filter((p) => !p.parentQuestionCategory);
@@ -190,13 +208,10 @@ export function PolicyDirectory({ initialPolicies, initialSettings }: { initialP
 
   return (
     <>
-      <p className="mt-4 text-ink/70">
-        {settings.policiesIntro || DEFAULT_INTRO} For our privacy notice, see the{" "}
-        <Link href="/legal/privacy" className="font-semibold text-gold-700 underline">Privacy page</Link>.
-      </p>
+      {showIntro && <PoliciesIntro intro={settings.policiesIntro} />}
 
       {(settings.safeguardingLeadName || settings.regulatoryStatusNote) && (
-        <aside aria-label="Safeguarding contact" className="mt-8 rounded-2xl border border-gold-light/50 bg-cream p-5 text-sm text-ink/75">
+        <aside aria-label="Safeguarding contact" className="mb-8 rounded-2xl border border-gold-light/50 bg-cream p-5 text-sm text-ink/75">
           {settings.safeguardingLeadName && (
             <p>
               <span className="font-semibold text-ink">Designated Safeguarding Lead:</span> {settings.safeguardingLeadName}
@@ -209,31 +224,43 @@ export function PolicyDirectory({ initialPolicies, initialSettings }: { initialP
       )}
 
       {keyDocuments.length > 0 && !q && (
-        <section aria-labelledby="key-documents-heading" className="mt-10">
+        <section aria-labelledby="key-documents-heading" className="mt-10 first:mt-0">
           <h2 id="key-documents-heading" className="font-serif text-xl font-semibold text-ink">Key documents</h2>
           <p className="mt-1 text-sm text-ink/70">The policies parents ask for most often.</p>
           <ul className="mt-4 grid gap-3 sm:grid-cols-2">
             {keyDocuments.map((p) => (
               <li key={p._id}>
-                <a
-                  href={p.fileUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between gap-3 rounded-xl border border-gold-500/60 bg-gold-100/40 px-4 py-3 text-sm font-semibold text-ink hover:bg-gold-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-700"
-                >
-                  <span>
-                    {p.title}
-                    <span className="sr-only"> ({isWordFile(p.fileUrl) ? "Word file" : "PDF"}, opens in a new tab)</span>
-                  </span>
-                  <span aria-hidden="true" className="text-gold-700">→</span>
-                </a>
+                {/* The readable web page where there is one (better on a phone
+                    than a PDF); otherwise the file, in a new tab. */}
+                {p.readUrl ? (
+                  <Link
+                    href={p.readUrl}
+                    className="flex min-h-12 items-center justify-between gap-3 rounded-xl border border-gold-500/60 bg-gold-100/40 px-4 py-3 text-sm font-semibold text-ink hover:bg-gold-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-700"
+                  >
+                    <span>{p.title}</span>
+                    <span aria-hidden="true" className="text-gold-700">→</span>
+                  </Link>
+                ) : (
+                  <a
+                    href={p.fileUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex min-h-12 items-center justify-between gap-3 rounded-xl border border-gold-500/60 bg-gold-100/40 px-4 py-3 text-sm font-semibold text-ink hover:bg-gold-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-700"
+                  >
+                    <span>
+                      {p.title}
+                      <span className="sr-only"> ({isWordFile(p.fileUrl) ? "Word file" : "PDF"}, opens in a new tab)</span>
+                    </span>
+                    <span aria-hidden="true" className="text-gold-700">→</span>
+                  </a>
+                )}
               </li>
             ))}
           </ul>
         </section>
       )}
 
-      <div className="mt-10 rounded-2xl border border-gold-light/50 bg-white p-4 print:hidden">
+      <div className="mt-10 rounded-2xl border border-gold-light/50 bg-white p-4 first:mt-0 print:hidden">
         <label htmlFor={searchId} className="block text-sm font-semibold text-ink">Find a policy</label>
         <input
           id={searchId}
@@ -245,7 +272,7 @@ export function PolicyDirectory({ initialPolicies, initialSettings }: { initialP
           className="mt-2 w-full rounded-xl border border-gold-light/60 bg-cream px-4 py-2.5 text-ink placeholder:text-ink/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-700"
         />
         <p className="mt-2 text-sm text-ink/70" role="status" aria-live="polite">
-          {q ? `${filtered.length} of ${policies.length} policies match “${q}”.` : `${policies.length} policies, in ${PARENT_QUESTION_GROUPS.length} groups.`}
+          {q ? `${filtered.length} of ${policies.length} policies match “${q}”.` : `${policies.length} policies, grouped by the questions parents ask.${commonReview ? ` ${commonReview}.` : ""}`}
         </p>
         {!q && (
           <nav aria-label="Jump to a group" className="mt-3">
@@ -265,14 +292,14 @@ export function PolicyDirectory({ initialPolicies, initialSettings }: { initialP
       {groups.map((group) => (
         <section key={group.key} id={group.anchor} aria-labelledby={`${group.anchor}-heading`} className="scroll-mt-24">
           <h2 id={`${group.anchor}-heading`} className="mt-12 font-serif text-2xl font-semibold text-ink">{group.heading}</h2>
-          <PolicyList policies={group.items} complaintsLastYear={settings.complaintsLastYear} labelledBy={`${group.anchor}-heading`} highlight={q} />
+          <PolicyList policies={group.items} complaintsLastYear={settings.complaintsLastYear} labelledBy={`${group.anchor}-heading`} highlight={q} commonReview={commonReview} />
         </section>
       ))}
 
       {ungrouped.length > 0 && (
         <section id="other-policies" aria-labelledby="other-policies-heading" className="scroll-mt-24">
           <h2 id="other-policies-heading" className="mt-12 font-serif text-2xl font-semibold text-ink">Other policies</h2>
-          <PolicyList policies={ungrouped} complaintsLastYear={settings.complaintsLastYear} labelledBy="other-policies-heading" highlight={q} />
+          <PolicyList policies={ungrouped} complaintsLastYear={settings.complaintsLastYear} labelledBy="other-policies-heading" highlight={q} commonReview={commonReview} />
         </section>
       )}
 

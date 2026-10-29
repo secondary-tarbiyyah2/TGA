@@ -29,24 +29,22 @@ export default async function FeesPage() {
 
   return (
     <>
-      <section className="geo-texture bg-cream section-pad">
+      <section className="geo-texture bg-cream hero-pad">
         <Container>
-          <Kicker>Fees &amp; Payment Plans</Kicker>
-          <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">Transparent fees, no surprises.</h1>
-          <p className="mt-6 max-w-2xl text-lg text-ink/75">
-            Every figure is published here, nothing shared only on enquiry, and the only admissions fee is the
-            application fee.
+          <Kicker>Fees &amp; payment plans</Kicker>
+          <h1 className="text-h1 font-serif font-semibold text-ink">Fees for January to July 2027.</h1>
+          <p className="mt-5 max-w-2xl text-lg text-ink/75">
+            Every figure is published here, nothing shared only on enquiry. Live lessons start in January 2027, so these
+            fees cover the shortened first year. Pay annually, in {terms} payments or monthly ({instalments} payments).
           </p>
-          <p className="mt-3 max-w-2xl text-sm text-ink/70">
-            Live lessons launch in January 2027, so the fees below are for the shortened January–July 2027 period.
-            Choose to pay annually, in {terms} payments or monthly ({instalments} payments). All fees are
-            inclusive of VAT. Examination fees are not included and are paid directly to the examination centre.
-          </p>
-          <p className="mt-3 max-w-2xl text-sm text-ink/70">
-            Read the full{" "}
-            <Link href="/policies" className="font-semibold text-gold-700 underline">Fees Policy</Link>{" "}
-            before enrolling, it covers payment terms, refunds and what happens if a payment is missed.
-          </p>
+          <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm text-ink/70" aria-label="Good to know">
+            {["All fees include VAT", settings.applicationFee != null ? `Application fee £${settings.applicationFee}, no registration fee` : "No registration fee", "Exam entry fees are paid to the exam centre"].map((fact) => (
+              <li key={fact} className="flex items-center gap-2">
+                <span aria-hidden="true" className="h-1.5 w-1.5 shrink-0 rounded-full bg-gold-500" />
+                {fact}
+              </li>
+            ))}
+          </ul>
         </Container>
       </section>
 
@@ -87,10 +85,7 @@ export default async function FeesPage() {
                       {f.yearGroupRange}
                       {f.notes && <span className="mt-1 block text-xs font-normal text-ink/70">{f.notes}</span>}
                     </th>
-                    <td className="px-4 py-3 font-semibold text-gold-700">
-                      {formatGBP(f.annualFee)}
-                      <span className="block text-xs font-normal text-ink/70">Total {formatGBP(f.annualFee)}</span>
-                    </td>
+                    <td className="px-4 py-3 font-semibold text-gold-700">{formatGBP(f.annualFee)}</td>
                     <td className="px-4 py-3">
                       {termly.headline}
                       <span className="block text-xs text-ink/70">{termly.detail}</span>
@@ -124,8 +119,8 @@ export default async function FeesPage() {
             </div>
             <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
               <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">Securing your place</p>
-              <p className="mt-1 font-serif text-3xl font-bold text-ink">First fee payment</p>
-              <p className="mt-1 text-sm text-ink/70">Accept your offer within five working days and pay your first fee payment, no later than 8 January 2027. The application fee is the only admissions fee.</p>
+              <p className="mt-1 font-serif text-3xl font-bold text-ink">By 8 January 2027</p>
+              <p className="mt-1 text-sm text-ink/70">Accept your offer within five working days and make your first fee payment, no later than 8 January 2027. The application fee is the only admissions fee.</p>
             </div>
             {settings.siblingDiscountPercent != null && (
               <div className="rounded-2xl border border-gold-light/50 bg-white p-6 sm:col-span-2">
@@ -136,21 +131,30 @@ export default async function FeesPage() {
             )}
           </div>
 
-          <div className="mt-10">
-            <Kicker>Payment dates</Kicker>
-            <p className="mb-8 max-w-2xl text-ink/70">{scheduleText}</p>
-            <Kicker>Payment methods</Kicker>
-            <p className="text-ink/70">
-              Fees can be paid by standing order (preferred for monthly plans), card or bank transfer, using your child&apos;s full name as the reference. Full payment instructions are shared with your offer, after the assessment and interview. You then send proof of payment (a screenshot or receipt) to confirm your place.
-            </p>
+          <div className="mt-4 grid gap-4 sm:grid-cols-2">
+            <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
+              <h2 className="font-serif text-lg font-semibold text-ink">Payment dates</h2>
+              <p className="mt-2 text-sm text-ink/70">{scheduleText}</p>
+            </div>
+            <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
+              <h2 className="font-serif text-lg font-semibold text-ink">How to pay</h2>
+              <p className="mt-2 text-sm text-ink/70">
+                Standing order (preferred for monthly plans), card or bank transfer, with your child&apos;s full name as the reference. Full instructions come with your offer, after the assessment and interview; you then send proof of payment (a screenshot or receipt) to confirm your place.
+              </p>
+            </div>
           </div>
+          <p className="mt-6 text-sm text-ink/70">
+            Please read the{" "}
+            <Link href="/policies/25-fees" className="font-semibold text-gold-700 underline underline-offset-2 hover:text-gold-900">Fees Policy</Link>{" "}
+            before enrolling. It covers payment terms, refunds and what happens if a payment is missed.
+          </p>
         </Container>
       </section>
 
-      <section id="estimator" className="bg-cream py-16">
+      <section id="estimator" className="geo-texture border-t border-gold-light/30 bg-cream section-pad">
         <Container>
           <Kicker>Estimate your fees</Kicker>
-          <h2 className="font-serif text-2xl font-semibold text-ink sm:text-3xl">See a personalised estimate</h2>
+          <h2 className="text-h2 font-serif font-semibold text-ink">See a personalised estimate.</h2>
           <p className="mt-2 max-w-2xl text-ink/70">
             Choose how many children, each child&apos;s year group and your payment plan. We show a line for each child, the discounts that apply, your total and what you pay to secure a place.
           </p>
@@ -167,7 +171,7 @@ export default async function FeesPage() {
         </Container>
       </section>
 
-      <CtaBand heading="Have a question about fees?" body="Our FAQs cover payment plans, sibling discounts and what's included." ctaLabel="Read the FAQs" ctaHref="/faqs" />
+      <CtaBand heading="Ready to apply?" body="Apply by Friday 18 December 2026 for the founding cohort. The form takes about ten minutes." ctaLabel="Apply now" ctaHref="/admissions/apply" />
     </>
   );
 }

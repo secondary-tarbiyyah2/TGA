@@ -16,7 +16,6 @@ export default async function ApplyPage() {
   const [settings, feeBands] = await Promise.all([getSiteSettings(), getFeeBands()]);
   const email = settings.admissionsEmail || FALLBACK_ADMISSIONS_EMAIL;
 
-
   const needs = [
     "Each child's latest school report or homeschool progress record, if you have one (PDF, JPG or PNG).",
     "Photo ID for a parent or guardian (passport, driving licence or national ID card), as a PDF, JPG or PNG. You only need to upload it once, even for several children.",
@@ -27,27 +26,28 @@ export default async function ApplyPage() {
 
   return (
     <>
-      <section className="geo-texture bg-cream section-pad">
-        <Container>
-          <Kicker>Admissions</Kicker>
-          <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">Apply online.</h1>
-          <p className="mt-6 max-w-2xl text-lg text-ink/75">
-            The six steps, from applying to induction week, are on the <a href="/admissions" className="font-semibold text-gold-700 underline">Admissions page</a>. The form below takes about ten minutes in three short steps, and you can apply for several children at once without repeating your own details.
-          </p>
-          <p className="mt-4 text-sm text-ink/70">
-            <Link href="/admissions" className="font-semibold text-gold-700 underline">Back to admissions</Link>
-          </p>
-        </Container>
-      </section>
-
-      <section className="section-pad">
-        <Container>
-          <div className="rounded-2xl bg-cream p-5">
-            <h3 className="font-semibold text-ink">What you&apos;ll need</h3>
-            <ul className="mt-2 space-y-1 text-sm text-ink/80">
+      <section className="geo-texture bg-cream hero-pad">
+        <Container className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-start lg:gap-16">
+          <div>
+            <Kicker>Admissions</Kicker>
+            <h1 className="text-h1 font-serif font-semibold text-ink">Apply online.</h1>
+            <p className="mt-5 max-w-xl text-lg text-ink/75">
+              The form takes about ten minutes in three short steps, and you can apply for several children at once without repeating your own details.
+            </p>
+            <p className="mt-4 max-w-xl text-sm text-ink/70">
+              Apply by Friday 18 December 2026 for the founding cohort. What happens after you apply is set out in the{" "}
+              <Link href="/admissions" className="font-semibold text-gold-700 underline underline-offset-2 hover:text-gold-900">six admissions steps</Link>.
+            </p>
+            <a href="#application-form" className="mt-6 inline-flex min-h-11 items-center justify-center rounded-full bg-gold-500 px-6 py-3 text-sm font-semibold text-ink-900 transition-all hover:brightness-95 lg:hidden">
+              Start the form
+            </a>
+          </div>
+          <div className="rounded-2xl border border-gold-light/60 bg-white p-6">
+            <h2 className="font-serif text-lg font-semibold text-ink">What you&apos;ll need</h2>
+            <ul className="mt-3 space-y-2.5 text-sm text-ink/80">
               {needs.map((n) => (
-                <li key={n} className="flex gap-2">
-                  <span aria-hidden="true" className="text-gold-700">&#10003;</span>
+                <li key={n} className="flex gap-2.5">
+                  <span aria-hidden="true" className="mt-0.5 text-gold-700">&#10003;</span>
                   <span>{n}</span>
                 </li>
               ))}
@@ -56,21 +56,22 @@ export default async function ApplyPage() {
         </Container>
       </section>
 
-      <section className="geo-texture bg-cream section-pad" id="application-form">
-        <Container className="max-w-3xl">
-          <Kicker>Application form</Kicker>
-          <h2 className="font-serif text-3xl font-semibold text-ink">Your application.</h2>
-          <div className="mt-8">
-            <ApplyForm
-              admissionsEmail={email}
-              applicationFee={settings.applicationFee}
-              feeBands={feeBands}
-              siblingDiscountPercent={settings.siblingDiscountPercent}
-              siblingDiscountNote={settings.siblingDiscountNote}
-              annualDiscountPercent={settings.annualDiscountPercent}
-              feeTerms={settings.feeTerms}
-              feeInstalments={settings.feeInstalments}
-            />
+      <section className="section-pad scroll-mt-20" id="application-form" aria-labelledby="application-form-heading">
+        <Container>
+          <div className="mx-auto max-w-3xl">
+            <h2 id="application-form-heading" className="text-h2 font-serif font-semibold text-ink">Your application</h2>
+            <div className="mt-6">
+              <ApplyForm
+                admissionsEmail={email}
+                applicationFee={settings.applicationFee}
+                feeBands={feeBands}
+                siblingDiscountPercent={settings.siblingDiscountPercent}
+                siblingDiscountNote={settings.siblingDiscountNote}
+                annualDiscountPercent={settings.annualDiscountPercent}
+                feeTerms={settings.feeTerms}
+                feeInstalments={settings.feeInstalments}
+              />
+            </div>
           </div>
         </Container>
       </section>

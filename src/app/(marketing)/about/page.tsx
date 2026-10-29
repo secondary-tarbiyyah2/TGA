@@ -21,13 +21,13 @@ export default async function AboutPage() {
 
   return (
     <>
-      <section className="geo-texture bg-cream section-pad">
+      <section className="geo-texture bg-cream hero-pad">
         <Container>
           <Kicker>About us</Kicker>
-          <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">
+          <h1 className="text-h1 max-w-3xl font-serif font-semibold text-ink">
             {content.heroHeading || "Academic excellence, rooted in faith."}
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-ink/75">
+          <p className="mt-5 max-w-2xl text-lg text-ink/75">
             {content.heroBody ||
               "Tarbiyyah Global Academy is a specialist online school where academic excellence meets Islamic values, preparing children for success in this life and the Hereafter."}
           </p>
@@ -38,7 +38,7 @@ export default async function AboutPage() {
         <Container className="grid gap-12 lg:grid-cols-2">
           <div>
             <Kicker>Our mission</Kicker>
-            <p className="font-serif text-2xl leading-relaxed text-ink">
+            <p className="font-serif text-xl leading-relaxed text-ink sm:text-2xl">
               {content.missionBody ||
                 "To nurture confident, compassionate and capable Muslims who excel academically, lead with integrity and make a positive impact."}
             </p>
@@ -58,14 +58,14 @@ export default async function AboutPage() {
       <section className="geo-texture bg-cream section-pad" aria-labelledby="recipe-heading">
         <Container>
           <Kicker>Our values: RECIPE</Kicker>
-          <h2 id="recipe-heading" className="font-serif text-3xl font-semibold text-ink">{content.recipeIntro || "Building akhlaq alongside attainment."}</h2>
+          <h2 id="recipe-heading" className="text-h2 font-serif font-semibold text-ink">{content.recipeIntro || "Building akhlaq alongside attainment."}</h2>
           {/* Six in a row on desktop, 3 + 3 on tablets, two columns on phones.
               Grid rows stretch, so every card in a row is the same height. */}
           <ol className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6" aria-label="The six RECIPE values">
             {recipe.map((r, i) => (
               <li key={`${r.letter}-${i}`} className="flex h-full flex-col items-center rounded-2xl border border-gold-light/60 bg-white px-3 py-5 text-center shadow-sm">
                 <span aria-hidden="true" className="flex h-10 w-10 items-center justify-center rounded-xl bg-ink-900 font-serif text-xl font-bold text-gold-300">{r.letter}</span>
-                <h3 className="mt-3 font-semibold text-ink">{r.word}</h3>
+                <h3 className="mt-3 font-serif font-semibold text-ink">{r.word}</h3>
                 <p className="mt-1 text-sm leading-snug text-ink/70">{r.body}</p>
               </li>
             ))}
@@ -78,10 +78,10 @@ export default async function AboutPage() {
         <Container className={`grid gap-10 ${settings.headteacherWelcomeQuote ? "lg:grid-cols-2 lg:items-center" : ""}`}>
           <div>
             <Kicker>The Tarbiyyah family</Kicker>
-            <h2 className="font-serif text-3xl font-semibold text-ink">{content.familyHeading || "10+ years, three established schools."}</h2>
-            <p className="mt-4 text-ink/75">
+            <h2 className="text-h2 font-serif font-semibold text-ink">{content.familyHeading || "10+ years, three established schools."}</h2>
+            <p className="mt-4 max-w-3xl text-ink/75">
               {content.familyBody ||
-                "Tarbiyyah Global Academy is part of the established Tarbiyyah family of schools, Tarbiyyah Primary, Tarbiyyah Secondary School for Boys, and Tarbiyyah Al-Banaat, all operating for over ten years. The Academy brings that same ethos and standard of care online, for families anywhere in the world."}
+                "Tarbiyyah Global Academy is part of the established Tarbiyyah family of schools: Tarbiyyah Primary, Tarbiyyah Secondary School for Boys and Tarbiyyah Al-Banaat, all operating for over ten years. The Academy brings that same ethos and standard of care online, for families anywhere in the world."}
             </p>
           </div>
           {/* Same Site Settings field as the homepage welcome: only a real,

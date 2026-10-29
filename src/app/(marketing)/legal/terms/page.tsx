@@ -11,6 +11,9 @@ export const metadata: Metadata = pageMetadata({
   path: "/legal/terms",
 });
 
+// Fixed, not the build date; update it when the wording changes.
+const LAST_UPDATED = "29 October 2026";
+
 export default async function TermsPage() {
   const settings = await getSiteSettings();
   const contactEmail = settings.admissionsEmail || "globalacademy@tarbiyyah.co.uk";
@@ -20,36 +23,37 @@ export default async function TermsPage() {
       <Container className="max-w-2xl">
         <Kicker>Legal</Kicker>
         <h1 className="font-serif text-4xl font-semibold text-ink">Terms of Use</h1>
-        <p className="mt-6 text-sm text-ink/70">Last updated: {new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</p>
+        <p className="mt-6 text-sm text-ink/70">Last updated: {LAST_UPDATED}</p>
 
         <p className="mt-6 text-ink/75">
           These terms govern your use of this website (globalacademy.tarbiyyah.co.uk), operated by Tarbiyyah Global
           Academy, part of the Tarbiyyah Education Trust.
         </p>
 
-        <h2 className="mt-8 font-serif text-lg font-semibold text-ink">Using this site</h2>
+        <h2 className="mt-10 font-serif text-xl font-semibold text-ink">Using this site</h2>
         <p className="mt-2 text-ink/75">
           This website is provided to give information about Tarbiyyah Global Academy and to let families register
           interest, apply, and book admissions calls or open evenings. You agree to use it only for these purposes,
           and not to attempt to disrupt it or access any part of it you&apos;re not authorised to use, including the
-          staff, teacher, parent and student areas at <code>/learn</code>, which are restricted to account holders.
+          staff, teacher, parent and student portals, which are restricted to account holders.
         </p>
 
-        <h2 className="mt-8 font-serif text-lg font-semibold text-ink">Content and accuracy</h2>
+        <h2 className="mt-10 font-serif text-xl font-semibold text-ink">Content and accuracy</h2>
         <p className="mt-2 text-ink/75">
           We aim to keep the information on this site accurate and up to date, including fees, term dates and
           policies, all of which are managed directly by the school. Where a figure or date could change, the
           current published version on this site is the one that applies.
         </p>
 
-        <h2 className="mt-8 font-serif text-lg font-semibold text-ink">Enrolment terms</h2>
+        <h2 className="mt-10 font-serif text-xl font-semibold text-ink">Enrolment terms</h2>
         <p className="mt-2 text-ink/75">
           These website terms cover browsing and using this site. Separate enrolment terms and conditions, covering
-          fees, withdrawal and the Fee Policy, apply once a place is offered and accepted, see the{" "}
-          <Link href="/policies" className="underline">Policies</Link> page.
+          fees and withdrawal, apply once a place is offered and accepted. See the{" "}
+          <Link href="/policies/25-fees/" className="underline">Fees Policy</Link> and the{" "}
+          <Link href="/policies/24-admissions/" className="underline">Admissions Policy</Link>.
         </p>
 
-        <h2 className="mt-8 font-serif text-lg font-semibold text-ink">Contact</h2>
+        <h2 className="mt-10 font-serif text-xl font-semibold text-ink">Contact</h2>
         <p className="mt-2 text-ink/75">
           Questions about these terms can be sent to{" "}
           <a href={`mailto:${contactEmail}`} className="underline">{contactEmail}</a>.

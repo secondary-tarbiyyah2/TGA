@@ -13,17 +13,17 @@ type Related = { href: string; label: string; body: string };
 const RELATED: Record<string, Related[]> = {
   "/about": [
     { href: "/learning", label: "How learning works", body: "Live lessons, the portals and the school day." },
-    { href: "/eligibility", label: "Is it right for us?", body: "A two-minute fit check." },
-    { href: "/open-evening", label: "Open evenings", body: "Meet the Headteacher online." },
+    { href: "/curriculum", label: "Curriculum by key stage", body: "Subjects and timetables, Year 1 to Year 11." },
+    { href: "/eligibility", label: "Is it right for us?", body: "An honest two-minute check before you apply." },
   ],
   "/learning": [
     { href: "/curriculum", label: "Curriculum by key stage", body: "Subjects and timetables, Year 1 to Year 11." },
-    { href: "/eligibility", label: "Is it right for us?", body: "Your local lesson times, fees and the next step." },
+    { href: "/eligibility", label: "Is it right for us?", body: "An honest answer, your local lesson times, fees and the next step." },
     { href: "/fees", label: "Fees", body: "Published fees and payment plans." },
   ],
   "/curriculum": [
     { href: "/learning", label: "How learning works", body: "Live lessons, the portals and the school day." },
-    { href: "/eligibility", label: "Is it right for us?", body: "A two-minute fit check." },
+    { href: "/eligibility", label: "Is it right for us?", body: "An honest two-minute check before you apply." },
     { href: "/fees", label: "Fees", body: "Published fees and payment plans." },
   ],
   "/eligibility": [
@@ -32,14 +32,14 @@ const RELATED: Record<string, Related[]> = {
     { href: "/admissions", label: "How to apply", body: "The steps, the dates and what you need." },
   ],
   "/fees": [
-    { href: "/admissions", label: "How to apply", body: "The steps, the dates and what you need." },
     { href: "/book-a-call#book", label: "Book a free call", body: "Talk fees and payment plans through with admissions." },
     { href: "/faqs", label: "FAQs", body: "Payment plans, discounts and what is included." },
+    { href: "/term-dates", label: "Term dates", body: "Payment dates alongside the school calendar." },
   ],
   "/admissions": [
-    { href: "/eligibility", label: "Is it right for us?", body: "Check the fit before you apply." },
-    { href: "/fees", label: "Fees", body: "Published fees and payment plans." },
     { href: "/book-a-call#book", label: "Book a free call", body: "No obligation, 20 minutes." },
+    { href: "/curriculum", label: "Curriculum by key stage", body: "Subjects and timetables, Year 1 to Year 11." },
+    { href: "/faqs", label: "FAQs", body: "Assessment, joining mid-year and applying from abroad." },
   ],
   "/open-evening": [
     { href: "/book-a-call#book", label: "Book a free call", body: "Can't make a date? Talk to admissions instead." },
@@ -72,7 +72,7 @@ export function RelatedLinks() {
           {links.map((l) => (
             <li key={l.href}>
               <Link href={l.href} className="block h-full rounded-2xl border border-gold-light/50 bg-white p-4 transition-colors hover:border-gold-500">
-                <span className="block font-semibold text-ink">{l.label}</span>
+                <span className="block font-serif font-semibold text-ink">{l.label} <span aria-hidden="true" className="text-gold-700">→</span></span>
                 <span className="mt-1 block text-sm text-ink/65">{l.body}</span>
               </Link>
             </li>

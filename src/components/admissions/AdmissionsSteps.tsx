@@ -25,7 +25,7 @@ export function AdmissionsStepsGrid({ steps }: { steps: ProcessStep[] }) {
             </span>
             <OwnerChip owner={s.owner} />
           </div>
-          <h3 className="mt-3 break-words font-semibold text-ink">
+          <h3 className="mt-3 break-words font-serif text-lg font-semibold text-ink">
             <span className="sr-only">Step {i + 1}: </span>
             {s.title}
           </h3>

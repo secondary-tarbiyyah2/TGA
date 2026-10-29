@@ -5,6 +5,7 @@ import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { OpenEveningLive } from "@/components/OpenEveningLive";
 import { getSiteSettings } from "@/lib/content";
+import { KEY_DATES } from "@/content/keyDates";
 
 export const metadata: Metadata = pageMetadata({
   title: "Open Evenings & Taster Morning",
@@ -15,32 +16,54 @@ export const metadata: Metadata = pageMetadata({
 export default async function OpenEveningPage() {
   const settings = await getSiteSettings();
 
+  const sessions = KEY_DATES.filter((d) => d.href === "/open-evening");
+
   return (
-    <section className="section-pad">
-      <Container className="max-w-2xl">
-        <Kicker>See it live, from your own sofa</Kicker>
-        <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">Meet us online: open evenings and a taster morning.</h1>
-        <p className="mt-6 text-lg text-ink/75">
-          Meet the Headteacher, see a sample live lesson and the Parent and Student Portals, and ask anything you like.
-          At the taster morning (Saturday 12 December, after both open evenings) your child joins real lessons, in two age bands so every lesson is pitched right: Years 1–6
-          at 10:00 and Years 7–11 at 11:15 UK time. Every session is online; register below and the joining link is emailed
-          to you.
-        </p>
-        <p className="mt-4 text-sm text-ink/70">
-          Live lessons begin on Monday 11 January 2027. Read the{" "}
-          <a href="/prospectus/TGA-Prospectus-2026-27.pdf" className="font-semibold text-gold-700 underline" target="_blank" rel="noopener noreferrer">prospectus (PDF)<span className="sr-only">, opens in a new tab</span></a>{" "}
-          before you come, or <Link href="/book-a-call#book" className="font-semibold text-gold-700 underline">book a call</Link> with the admissions team at any time.
-        </p>
+    <section className="hero-pad-top pb-16 sm:pb-24">
+      <Container>
+        <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
+          <div>
+            <Kicker>Meet us online</Kicker>
+            <h1 className="text-h1 font-serif font-semibold text-ink">Open evenings and a taster morning.</h1>
+            <p className="mt-5 max-w-xl text-lg text-ink/75">
+              Meet the Headteacher, see a sample live lesson and the Parent and Student Portals, and ask anything you like.
+              Every session is online, and the joining link is emailed to you when you register.
+            </p>
+            <p className="mt-4 max-w-xl text-ink/75">
+              At the taster morning your child joins real lessons, in two age bands so every lesson is pitched right.
+            </p>
+            <p className="mt-6 max-w-xl text-sm text-ink/70">
+              Can&apos;t make a date?{" "}
+              <Link href="/book-a-call#book" className="font-semibold text-gold-700 underline underline-offset-2 hover:text-gold-900">Book a free call</Link>{" "}
+              or read the{" "}
+              <a href="/prospectus/TGA-Prospectus-2026-27.pdf" className="font-semibold text-gold-700 underline underline-offset-2 hover:text-gold-900" target="_blank" rel="noopener noreferrer">prospectus (PDF)<span className="sr-only">, opens in a new tab</span></a>.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-gold-light/60 bg-cream/70 p-6 geo-texture">
+            <h2 className="font-serif text-lg font-semibold text-ink">Dates (UK time)</h2>
+            <ul className="mt-4 space-y-3">
+              {sessions.map((d) => (
+                <li key={d.when} className="rounded-xl border border-gold-light/50 bg-white px-4 py-3">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-gold-700">{d.label}</p>
+                  <p className="mt-0.5 font-semibold text-ink">{d.when}</p>
+                  {d.detail && <p className="text-sm text-ink/70">{d.detail}</p>}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
 
         {/* Dates and the booking form load in the browser, so a new
             evening added in the admin portal appears without a site rebuild. */}
-        <OpenEveningLive
-          initialSettings={{
-            admissionsEmail: settings.admissionsEmail,
-            bookingWidgetUrl: settings.bookingWidgetUrl,
-            openEveningRecordingUrl: settings.openEveningRecordingUrl,
-          }}
-        />
+        <div id="book" className="max-w-3xl scroll-mt-24">
+          <OpenEveningLive
+            initialSettings={{
+              admissionsEmail: settings.admissionsEmail,
+              bookingWidgetUrl: settings.bookingWidgetUrl,
+              openEveningRecordingUrl: settings.openEveningRecordingUrl,
+            }}
+          />
+        </div>
       </Container>
     </section>
   );

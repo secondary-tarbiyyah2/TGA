@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Container } from "@/components/Container";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
 type Row = { year_group_id: string; name: string; sort_order: number; capacity: number | null; places_remaining: number | null };
@@ -29,9 +30,9 @@ export function PlacesRemaining() {
   if (!rows || rows.length === 0) return null;
 
   return (
-    <section className="section-pad" aria-labelledby="places-remaining-heading">
-      <div className="mx-auto max-w-4xl">
-        <h2 id="places-remaining-heading" className="font-serif text-2xl font-semibold text-ink">
+    <section className="pb-14 sm:pb-20" aria-labelledby="places-remaining-heading">
+      <Container>
+        <h2 id="places-remaining-heading" className="text-h3 font-serif font-semibold text-ink">
           Places remaining
         </h2>
         <p className="mt-2 text-sm text-ink/70">Updated in real time as places are confirmed.</p>
@@ -52,7 +53,7 @@ export function PlacesRemaining() {
             </div>
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

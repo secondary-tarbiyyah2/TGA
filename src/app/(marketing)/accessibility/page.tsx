@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
+import Link from "next/link";
 import { getSiteSettings } from "@/lib/content";
 
 export const metadata: Metadata = pageMetadata({
@@ -16,10 +17,10 @@ export default async function AccessibilityPage() {
   return (
     <>
       <section className="geo-texture bg-cream section-pad">
-        <Container className="max-w-2xl">
+        <Container>
           <Kicker>Accessibility</Kicker>
           <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">A website everyone can use.</h1>
-          <p className="mt-6 text-lg text-ink/75">
+          <p className="mt-6 max-w-2xl text-lg text-ink/75">
             We want every family and pupil to be able to use this website and the Academy portal, whatever device, ability or connection they have. This page says what we aim for, what you can change, and how to tell us when something is hard to use.
           </p>
         </Container>
@@ -35,7 +36,8 @@ export default async function AccessibilityPage() {
           <div>
             <Kicker>What you can change</Kicker>
             <ul className="list-disc space-y-2 pl-5 text-ink/80">
-              <li>Use the <b>View</b> control in the header, or the account menu in the portal, to turn on larger text, an easy-reading layout or high contrast. Your choice is remembered on that device.</li>
+              <li>Use the <b>Display</b> button (marked &ldquo;Aa&rdquo; in the header, and &ldquo;Display and accessibility&rdquo; in the footer), or the account menu in the portal, to turn on larger text, an easy-reading layout or high contrast. Your choice is remembered on that device.</li>
+              <li>Every school policy can be read as a web page with real headings and tables, as well as downloaded as a PDF, from the <Link href="/policies" className="underline">Policies page</Link>.</li>
               <li>Everything can be used with a keyboard alone. Press Tab to move and Enter to select.</li>
               <li>Arabic text is marked up so screen readers read it in Arabic and it displays right to left.</li>
             </ul>
@@ -50,7 +52,11 @@ export default async function AccessibilityPage() {
             <Kicker>Tell us about a problem</Kicker>
             <p className="text-ink/80">
               If something is hard to use, or you need information in another format, email{" "}
-              <a href={`mailto:${email}`} className="underline">{email}</a>. Tell us the page, what you were trying to do and what device or assistive technology you use. We will reply and aim to fix it quickly.
+              <a href={`mailto:${email}?subject=${encodeURIComponent("Accessibility")}`} className="font-semibold text-gold-700 underline">{email}</a>. Tell us the page, what you were trying to do and what device or assistive technology you use. We will reply and aim to fix it quickly.
+            </p>
+            <p className="mt-3 text-sm text-ink/70">
+              Our commitments to pupils and families with disabilities are set out in the{" "}
+              <Link href="/policies/29-equality-diversity-and-accessibility/" className="font-semibold text-gold-700 underline">Equality, Diversity and Accessibility Policy</Link>.
             </p>
           </div>
         </Container>

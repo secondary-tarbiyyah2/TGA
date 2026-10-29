@@ -38,8 +38,8 @@ export default async function CurriculumPage() {
           <p className="mt-6 max-w-2xl text-lg text-ink/75">
             {content.heroBody || (
               <>
-                A specialist curriculum, live-timetabled and taught by qualified teachers, through to GCSE, 
-                with Qur&apos;an, Islamic Studies and Arabic on the timetable at every key stage.
+                Qur&apos;an, Arabic and Islamic Studies on the timetable every week, alongside the full national
+                curriculum, taught live by qualified teachers in classes of no more than 15, from Year 1 to International GCSE.
               </>
             )}
           </p>
@@ -86,7 +86,7 @@ export default async function CurriculumPage() {
           <p className="mt-6 max-w-3xl text-sm text-ink/70">{SCHOOL_WEEK_NOTE}</p>
           <p className="mt-3 max-w-3xl text-sm text-ink/70">
             See the live day in your own time zone with{" "}
-            <Link href="/eligibility" className="font-semibold text-gold-700 underline">the fit check</Link>, and how we support wellbeing and additional needs on{" "}
+            <Link href="/eligibility" className="font-semibold text-gold-700 underline">Is it right for us?</Link>, and how we support wellbeing and additional needs on{" "}
             <Link href="/pastoral-care" className="font-semibold text-gold-700 underline">Pastoral care &amp; SEND</Link>.
           </p>
         </Container>
@@ -94,12 +94,12 @@ export default async function CurriculumPage() {
 
       <section className="section-pad">
         <Container>
-          <Kicker>GCSE years</Kicker>
+          <Kicker>Years 10 and 11</Kicker>
           <h2 className="text-h2 font-serif font-semibold text-ink">Recognised qualifications, sat as private candidates.</h2>
           <p className="mt-4 max-w-2xl text-ink/75">
-            Years 10 and 11 follow two-year courses: the core subjects plus two options. Pupils are entered for their examinations through
+            Years 10 and 11 follow two-year International GCSE courses: the core subjects plus two options. Pupils are entered for their examinations through
             Tarbiyyah Secondary School as the examination centre, and for families outside the UK we help arrange a suitable centre near home.
-            History is not offered in Years 10 and 11.
+            History is not offered at GCSE.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             <div className="rounded-2xl border border-gold-light/50 bg-white p-5">
@@ -120,7 +120,11 @@ export default async function CurriculumPage() {
               <p className="mt-4 text-xs text-ink/65">Qur&apos;an and Tajweed and PSHE continue alongside the examination subjects.</p>
             </div>
           </div>
-          <p className="mt-3 text-xs text-ink/65">Exam entry fees are not included in tuition and are billed separately by the examination centre. Full details are in the Examinations and Private Candidates Policy.</p>
+          <p className="mt-4 max-w-3xl text-sm text-ink/70">
+            Exam entry fees are not included in tuition and are paid to the examination centre. Full details are in the{" "}
+            <Link href="/policies/19-examinations-and-private-candidates/" className="font-semibold text-gold-700 underline">Examinations and Private Candidates Policy</Link>, and the subjects and lessons a week are on the{" "}
+            <Link href="/curriculum/year-10-11" className="font-semibold text-gold-700 underline">Year 10 to Year 11 page</Link>.
+          </p>
         </Container>
       </section>
 

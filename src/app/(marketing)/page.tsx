@@ -1,9 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
+import { StarMark } from "@/components/StarMark";
+import { KEY_DATES } from "@/content/keyDates";
 import { Button } from "@/components/Button";
 import { CtaBand } from "@/components/CtaBand";
 import { FaqPreview } from "@/components/FaqPreview";
@@ -49,7 +50,7 @@ export default async function HomePage() {
     <>
       {/* HERO */}
       <section className="geo-texture relative overflow-hidden bg-cream">
-        <Container className="grid gap-12 py-16 lg:grid-cols-2 lg:items-center lg:py-24">
+        <Container className="grid gap-12 py-14 lg:grid-cols-[1.15fr_1fr] lg:items-center lg:gap-16 lg:py-20">
           <div>
             <Kicker>{content.heroKicker || "An online school for homeschooling families"}</Kicker>
             {content.heroHeading ? (
@@ -68,28 +69,48 @@ export default async function HomePage() {
                 lessons launching January 2027.
               </p>
             )}
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Button href={settings.ctaPrimaryHref || "/admissions"}>{settings.ctaPrimaryLabel || "Apply Now"}</Button>
-              <Button href="/book-a-call" variant="secondary">Book a free call</Button>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Button href={settings.ctaPrimaryHref || "/admissions"}>{settings.ctaPrimaryLabel || "Apply now"}</Button>
+              <Button href="/book-a-call#book" variant="secondary">Book a free call</Button>
             </div>
-            <p className="mt-6 text-sm font-medium text-ink/70">
-              Part of the Tarbiyyah Education Trust · 10+ years · Classes of up to 15 · Year 1–Year 11
-            </p>
-            <p className="mt-3 text-sm text-ink/70">
+            <ul className="mt-7 flex flex-wrap gap-x-5 gap-y-2 text-sm text-ink/70" aria-label="At a glance">
+              {["Part of the Tarbiyyah Education Trust", "Classes of up to 15", "Year 1 to Year 11"].map((fact) => (
+                <li key={fact} className="flex items-center gap-2 whitespace-nowrap">
+                  <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-gold-500" />
+                  {fact}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4 text-sm text-ink/70">
               Not sure yet?{" "}
-              <Link href="/eligibility" className="font-semibold text-gold-700 underline">
-                Take the 2-minute fit check
+              <Link href="/eligibility" className="font-semibold text-gold-700 underline underline-offset-2 hover:text-gold-900">
+                Check if it&apos;s right for us
               </Link>
             </p>
           </div>
-          <div className="relative mx-auto w-full max-w-sm">
-            <div className="relative aspect-[3/4] overflow-hidden rounded-3xl border-2 border-gold-300 shadow-warm">
-              <Image src="/hero.webp" alt="An open notebook and pen on a warm wooden desk, calm, focused learning" fill className="object-cover" priority sizes="(min-width: 1024px) 24rem, 80vw" />
+
+          {/* Key dates, instead of a stock photo: the thing a family deciding
+              now actually needs to know. Same list as the admissions page. */}
+          <aside aria-labelledby="key-dates-heading" className="relative mx-auto w-full max-w-md lg:mr-0">
+            <div className="rounded-3xl border border-gold-light/70 bg-white p-6 shadow-warm sm:p-8">
+              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold-700">
+                <StarMark className="h-3.5 w-3.5" />
+                <h2 id="key-dates-heading">Key dates</h2>
+              </div>
+              <p className="mt-1 text-sm text-ink/65">For the founding cohort. All times UK.</p>
+              <ol className="mt-5 divide-y divide-gold-light/50">
+                {KEY_DATES.map((d) => (
+                  <li key={`${d.label}-${d.when}`} className="flex items-baseline justify-between gap-4 py-3">
+                    <span className="text-sm text-ink/70">{d.label}</span>
+                    <span className="text-right text-sm font-semibold text-ink">{d.when}</span>
+                  </li>
+                ))}
+              </ol>
+              <Link href="/open-evening" className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-gold-700 hover:text-gold-900">
+                Book an open evening <span aria-hidden="true">→</span>
+              </Link>
             </div>
-            <div className="shadow-warm absolute -bottom-4 -left-4 rounded-2xl bg-white px-4 py-3 text-sm font-semibold text-gold-700">
-              First live lessons 11 January 2027
-            </div>
-          </div>
+          </aside>
         </Container>
       </section>
 
@@ -97,19 +118,22 @@ export default async function HomePage() {
       <section className="section-pad">
         <Container>
           <Kicker>Why Tarbiyyah Global Academy</Kicker>
-          <div className="grid gap-6 sm:grid-cols-3">
-          {pillars.map((p) => (
-            <div key={p.title} className="rounded-2xl border border-gold-light/50 bg-white p-6">
-              <h2 className="font-serif text-lg font-semibold text-ink">{p.title}</h2>
-              <p className="mt-2 text-sm text-ink/70">{p.body}</p>
-            </div>
-          ))}
+          <h2 className="text-h2 max-w-2xl font-serif font-semibold text-ink">A real school day, built around faith and character.</h2>
+          <div className="mt-8 grid gap-5 md:grid-cols-3">
+            {pillars.map((p, i) => (
+              <div key={p.title} className="rounded-2xl border border-gold-light/50 bg-white p-6">
+                <span aria-hidden="true" className="font-serif text-sm font-semibold text-gold-500">0{i + 1}</span>
+                <h3 className="mt-2 font-serif text-lg font-semibold text-ink">{p.title}</h3>
+                <p className="mt-2 text-sm text-ink/70">{p.body}</p>
+              </div>
+            ))}
           </div>
         </Container>
       </section>
 
       {/* STAGES OF SCHOOL */}
-      <section className="section-pad">
+      {/* Shares the pillars section's background, so it takes only bottom padding (no double gap). */}
+      <section className="pb-14 sm:pb-20 lg:pb-24">
         <Container className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-center">
           <div>
             <Kicker>Curriculum</Kicker>
@@ -142,7 +166,7 @@ export default async function HomePage() {
         <Container>
           <Kicker>Admissions</Kicker>
           <h2 className="text-h2 font-serif font-semibold text-ink">{howItWorksHeading}</h2>
-          <p className="mt-3 max-w-2xl text-ink/75">The school opens with an induction week on Monday 4 January 2027, and live lessons begin on Monday 11 January.</p>
+          <p className="mt-3 max-w-2xl text-ink/75">From the online form to your child&apos;s first lesson, you always know what happens next and whose turn it is.</p>
           <AdmissionsProcessFlow steps={processSteps} />
           {/* Fees sit with admissions (one block, one pair of buttons) rather than as a separate band. */}
           <div className="mt-10 flex flex-col gap-5 rounded-2xl border border-gold-light/60 bg-white p-6 sm:p-8 md:flex-row md:items-center md:justify-between">
@@ -151,8 +175,7 @@ export default async function HomePage() {
               <p className="mt-2 text-ink/75">{content.feeTeaserBody || 'Every fee is published on our website, nothing shared only "on enquiry." Annual, two-payment and monthly plans are available for every year group.'}</p>
             </div>
             <div className="flex shrink-0 flex-wrap gap-3">
-              <Button href="/admissions">How to apply</Button>
-              <Button href="/fees" variant="secondary">See fees</Button>
+              <Button href="/fees" variant="secondary">See the fees</Button>
             </div>
           </div>
         </Container>
@@ -178,15 +201,16 @@ export default async function HomePage() {
 
       {/* FAQ PREVIEW */}
       <section className="section-pad">
-        <Container className="max-w-2xl">
-          <Kicker>FAQs</Kicker>
-          <h2 className="text-h2 font-serif font-semibold text-ink">Common questions, answered.</h2>
-          <div className="mt-8">
-            <FaqPreview entries={faqs.slice(0, 4)} />
+        <Container className="grid gap-8 lg:grid-cols-[1fr_2fr] lg:gap-16">
+          <div>
+            <Kicker>FAQs</Kicker>
+            <h2 className="text-h2 font-serif font-semibold text-ink">Common questions, answered.</h2>
+            <p className="mt-3 text-ink/75">Fees, the school day, Islamic Studies, equipment and support.</p>
+            <Button href="/faqs" variant="secondary" className="mt-6">
+              See all FAQs
+            </Button>
           </div>
-          <Button href="/faqs" variant="secondary" className="mt-8">
-            See all FAQs
-          </Button>
+          <FaqPreview entries={faqs.slice(0, 4)} />
         </Container>
       </section>
 

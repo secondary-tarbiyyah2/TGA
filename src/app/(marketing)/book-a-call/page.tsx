@@ -12,12 +12,13 @@ export const metadata: Metadata = {
 
 export default function BookACallPage() {
   return (
-    <section className="section-pad">
+    <section className="hero-pad-top pb-16 sm:pb-24">
       <Container>
         <div className="max-w-2xl">
           <Kicker>Book an admissions call</Kicker>
-          <h1 className="text-h2 font-serif font-semibold text-ink">Pick a time. A free 20-minute call, no obligation.</h1>
-          <p className="mt-3 text-ink/75">
+          <h1 className="text-h1 font-serif font-semibold text-ink">Book a free 20-minute call.</h1>
+          <p className="mt-5 text-lg text-ink/75">
+            Ask the admissions team anything, with no obligation to apply.{" "}
             Times are shown in your own time zone. You&apos;ll get a confirmation email with a Teams link (no download needed)
             and reminders before the call, and you can reschedule from that email at any time.
           </p>
@@ -32,11 +33,10 @@ export default function BookACallPage() {
           </Suspense>
         </div>
 
-        <p className="mt-8 max-w-2xl text-sm text-ink/65">
+        <p className="mt-8 max-w-2xl text-sm text-ink/70">
           Prefer not to book a slot? Email{" "}
           <a href="mailto:globalacademy@tarbiyyah.co.uk" className="font-semibold text-gold-700 underline">globalacademy@tarbiyyah.co.uk</a>{" "}
-          or see the <Link href="/fees" className="font-semibold text-gold-700 underline">fees</Link> and{" "}
-          <Link href="/open-evening" className="font-semibold text-gold-700 underline">open evenings</Link> first.
+          or come to an <Link href="/open-evening" className="font-semibold text-gold-700 underline">online open evening</Link>.
         </p>
       </Container>
     </section>

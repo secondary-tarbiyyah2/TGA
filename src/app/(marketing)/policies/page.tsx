@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
-import { PolicyDirectory } from "@/components/PolicyDirectory";
+import { PoliciesIntro, PolicyDirectory } from "@/components/PolicyDirectory";
 import { getPolicyLinks, getSiteSettings } from "@/lib/content";
 
 export const metadata: Metadata = pageMetadata({
@@ -19,24 +19,33 @@ export default async function PoliciesPage() {
   const [policies, siteSettings] = await Promise.all([getPolicyLinks(), getSiteSettings()]);
 
   return (
-    <section className="section-pad">
-      <Container className="max-w-2xl">
-        <Kicker>Policies</Kicker>
-        <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">School policies.</h1>
+    <>
+      <section className="geo-texture bg-cream section-pad">
+        <Container>
+          <Kicker>Policies</Kicker>
+          <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">School policies.</h1>
+          {/* Build-time copy of the intro; the list below is live. */}
+          <PoliciesIntro intro={siteSettings.policiesIntro} className="mt-6 max-w-2xl text-lg text-ink/75" />
+        </Container>
+      </section>
 
-        <PolicyDirectory
-          initialPolicies={policies}
-          initialSettings={{
-            safeguardingLeadName: siteSettings.safeguardingLeadName,
-            safeguardingLeadContact: siteSettings.safeguardingLeadContact,
-            regulatoryStatusNote: siteSettings.regulatoryStatusNote,
-            complaintsLastYear: siteSettings.complaintsLastYear,
-            admissionsEmail: siteSettings.admissionsEmail,
-            policiesIntro: siteSettings.policiesIntro,
-            policiesAccessibleFormatsNote: siteSettings.policiesAccessibleFormatsNote,
-          }}
-        />
-      </Container>
-    </section>
+      <section className="section-pad">
+        <Container className="max-w-4xl">
+          <PolicyDirectory
+            showIntro={false}
+            initialPolicies={policies}
+            initialSettings={{
+              safeguardingLeadName: siteSettings.safeguardingLeadName,
+              safeguardingLeadContact: siteSettings.safeguardingLeadContact,
+              regulatoryStatusNote: siteSettings.regulatoryStatusNote,
+              complaintsLastYear: siteSettings.complaintsLastYear,
+              admissionsEmail: siteSettings.admissionsEmail,
+              policiesIntro: siteSettings.policiesIntro,
+              policiesAccessibleFormatsNote: siteSettings.policiesAccessibleFormatsNote,
+            }}
+          />
+        </Container>
+      </section>
+    </>
   );
 }

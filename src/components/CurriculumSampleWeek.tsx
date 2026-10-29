@@ -3,7 +3,7 @@ import { SCHOOL_WEEK_NOTE, type KeyStage } from "@/content/curriculum";
 /** Live lessons a week by subject for one key stage, from the Curriculum Policy. */
 export function WeeklyLessons({ ks }: { ks: KeyStage }) {
   return (
-    <div className="mt-4">
+    <div className="mt-6">
       <table className="w-full overflow-hidden rounded-2xl border border-gold-light/50 bg-white text-sm">
         <caption className="sr-only">Live lessons a week for {ks.range}</caption>
         <thead>
@@ -28,7 +28,8 @@ export function WeeklyLessons({ ks }: { ks: KeyStage }) {
               Total
             </th>
             <td className="px-4 py-2.5 text-right font-semibold text-ink">
-              {ks.totalLessons.replace(/ a week.*$/, "")}, {ks.lessonLength} each
+              {ks.totalLessons.replace(/ a week.*$/, "").replace(/^(\d+) live lessons$/, "$1")}
+              <span className="block text-xs font-normal text-ink/65">{ks.lessonLength} each</span>
             </td>
           </tr>
         </tfoot>

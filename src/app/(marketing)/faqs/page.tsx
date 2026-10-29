@@ -27,14 +27,16 @@ export default async function FaqsPage() {
   };
 
   return (
-    <section className="section-pad">
+    <section className="hero-pad-top pb-16 sm:pb-24">
       {faqs.length > 0 && <JsonLd data={faqJsonLd} />}
-      <Container className="max-w-3xl">
-        <Kicker>FAQs</Kicker>
-        <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">Frequently asked questions.</h1>
-        <p className="mt-6 text-lg text-ink/75">Short answers, with links to the full detail. Search, or pick a topic.</p>
-        <div className="mt-10">
-          <LiveFaq initialEntries={faqs} />
+      <Container>
+        <div className="max-w-3xl">
+          <Kicker>FAQs</Kicker>
+          <h1 className="text-h1 font-serif font-semibold text-ink">Frequently asked questions.</h1>
+          <p className="mt-5 text-lg text-ink/75">Short answers, with links to the full detail. Search, or pick a topic.</p>
+          <div className="mt-8">
+            <LiveFaq initialEntries={faqs} />
+          </div>
         </div>
       </Container>
     </section>

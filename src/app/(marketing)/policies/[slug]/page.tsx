@@ -50,8 +50,6 @@ export default async function PolicyPage({ params }: { params: Promise<{ slug: s
   const policy = (await getPolicyTexts()).find((p) => p.slug === slug);
   if (!policy) notFound();
 
-  // Tables scroll sideways inside their own box on narrow screens instead of
-  // pushing the whole page wider.
   // On phones each table row becomes a stacked card, with the column heading
   // shown before each cell (data-label, see .policy-body td::before), so no
   // table needs sideways scrolling; wider screens keep the normal grid.

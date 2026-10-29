@@ -107,9 +107,17 @@ button:not(:disabled),
   font-size: clamp(2.5rem, 5.5vw, 4.25rem); /* 40–68px */
   line-height: 1.08;
 }
+.text-h1 {
+  /* Inner-page titles: one size for every page hero below the homepage. */
+  font-size: clamp(2.125rem, 4.4vw, 3.25rem); /* 34–52px */
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
 .text-h2 {
-  font-size: clamp(1.875rem, 3.8vw, 2.875rem); /* 30–46px */
-  line-height: 1.15;
+  font-size: clamp(1.75rem, 3vw, 2.375rem); /* 28–38px */
+  line-height: 1.18;
+  text-wrap: balance;
 }
 .text-h3 {
   font-size: clamp(1.375rem, 2vw, 1.625rem); /* 22–26px */
@@ -122,8 +130,22 @@ button:not(:disabled),
    appropriate to a handful of marketing sections per page than a dense
    app screen visited dozens of times a day. Use .app-pad there instead. */
 .section-pad {
-  padding-top: clamp(4rem, 10vw, 8rem);
-  padding-bottom: clamp(4rem, 10vw, 8rem);
+  /* 56–96px: generous but not so tall that two stacked sections leave a
+     near-empty screen between them (it was 128px each side). */
+  padding-top: clamp(3.5rem, 7vw, 6rem);
+  padding-bottom: clamp(3.5rem, 7vw, 6rem);
+}
+/* Page heroes on inner pages: a little tighter than a full section, so the
+   title, the lead and the first content block share the first screen. */
+.hero-pad {
+  padding-top: clamp(2.5rem, 5vw, 4.5rem);
+  padding-bottom: clamp(2.5rem, 5vw, 4.5rem);
+}
+/* Top only, for single-section pages that set their own bottom padding
+   with utilities (these classes sit outside Tailwind's layers, so a
+   utility cannot override a property they set). */
+.hero-pad-top {
+  padding-top: clamp(2.5rem, 5vw, 4.5rem);
 }
 
 /* The /learn portal's equivalent, same job (top-level vertical spacing
@@ -430,7 +452,9 @@ a.portal-card:hover, .portal a.rounded-2xl.border.bg-white:hover {
 }
 
 .font-serif {
-  font-family: var(--font-space-grotesk), var(--font-inter), serif;
+  /* The display face is Space Grotesk (a sans); fall back to sans, never to
+     Times, so a font that fails to load does not change the site's voice. */
+  font-family: var(--font-space-grotesk), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
 /* Subtle Islamic geometric texture, used sparingly on header/footer bands */
@@ -831,4 +855,24 @@ html[data-dark] .portal {
   .policy-body .table-wrap td:first-child { border-top: 0; background: var(--color-gold-100); }
   .policy-body .table-wrap td[data-label]:not([data-label=""])::before { content: attr(data-label); display: block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-ink-500); margin-bottom: 0.15rem; }
   .policy-body .table-wrap td:empty { display: none; }
+}
+
+/* Public site: the native "Choose files" button on upload fields (the
+   application form) styled as a quiet outline button instead of the grey
+   browser default. The portal keeps its own controls. */
+body:not(:has(.portal)) input[type="file"]::file-selector-button {
+  margin-right: 0.875rem;
+  border: 1.5px solid var(--color-gold-500);
+  border-radius: 9999px;
+  background: var(--color-white);
+  padding: 0.45rem 1rem;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-ink-900);
+  cursor: pointer;
+  transition: background-color 120ms;
+}
+body:not(:has(.portal)) input[type="file"]::file-selector-button:hover {
+  background: var(--color-gold-100);
 }

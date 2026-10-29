@@ -67,7 +67,7 @@ export const aboutDefaults = {
   ] as RecipeItem[],
   family_heading: "10+ years, three established schools.",
   family_body:
-    "Tarbiyyah Global Academy is part of the established Tarbiyyah family of schools, Tarbiyyah Primary, Tarbiyyah Secondary School for Boys, and Tarbiyyah Al-Banaat, all operating for over ten years. The Academy brings that same ethos and standard of care online, for families anywhere in the world.",
+    "Tarbiyyah Global Academy is part of the established Tarbiyyah family of schools: Tarbiyyah Primary, Tarbiyyah Secondary School for Boys and Tarbiyyah Al-Banaat, all operating for over ten years. The Academy brings that same ethos and standard of care online, for families anywhere in the world.",
 };
 
 export const curriculumDefaults = {

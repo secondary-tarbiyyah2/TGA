@@ -163,27 +163,19 @@ less to configure than Phase B. Still:
    six illustrative phrases ship in the migration; extend it to match your
    actual safeguarding policy before relying on it.
 
-## "Your Child's Week" quiz + per-year-group sample weeks — what's needed from you
+## "Is it right for us?" (/eligibility) — what's needed from you
 
-Runs on migrations/RLS already (`0016_eligibility_quiz_v2.sql`), and the
-public `/eligibility` page works out of the box on bundled fallback copy
-(`src/lib/quiz/defaultConfig.ts`) even before any of this is done. Still:
+Nothing. The check runs entirely in the browser from
+`src/content/fitCheck.ts` (all wording) and `src/lib/fitCheck.ts` (verdict
+logic), with fees from the published fee bands and site settings. To change
+any wording, edit `src/content/fitCheck.ts` and redeploy the site.
 
-1. **Publish an initial quiz config.** Visit `/learn/admin/quiz` as a Head
-   Teacher/Admin — a draft is seeded automatically from the bundled
-   default copy the first time the page loads. Review it and click
-   "Publish draft" so the public quiz reads from the database (and shows
-   a real "last updated" date) instead of the bundled fallback.
-2. **Mark a public sample week per year group.** Under the "Sample weeks"
-   tab, for each year group pick one of your PUBLISHED `timetable_runs`
-   and publish it as that year group's public sample week. Until this is
-   done for a year group, the quiz shows the honest "no sample week yet"
-   fallback for it — never a fabricated timetable — and the same tab
-   shows you exactly which year groups still need this.
-3. **No new secrets or scheduled workflows** — this phase reuses the
-   existing Supabase anon-key client and `leadRef()`/`register.php` lead
-   mechanism already deployed; nothing new to add to
-   `deploy-supabase.yml`.
+The only server part is the optional "Email me this summary": it saves a
+consented `quiz_leads` row (`0016_eligibility_quiz_v2.sql`) and calls the
+`quiz-send-plan` Edge Function, which is already deployed by
+`deploy-supabase.yml` and uses the existing email secrets. The old quiz
+builder and per-year-group sample weeks (`/learn/admin/quiz`) were removed
+in October 2026 when the check replaced the quiz.
 
 ## Compliance area (Phase D) — what's needed from you
 

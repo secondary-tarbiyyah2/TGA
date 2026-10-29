@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
-import { Kicker } from "@/components/Section";
-import { YourChildsWeekQuiz } from "@/components/eligibility/YourChildsWeekQuiz";
+import { FitCheck } from "@/components/eligibility/FitCheck";
 import { getFeeBands, getSiteSettings } from "@/lib/content";
-import { DEFAULT_QUIZ_CONFIG } from "@/lib/quiz/defaultConfig";
+import { FEE_DEFAULTS, FEE_POLICY_DEFAULTS } from "@/lib/fees";
+import { FIT_CHECK } from "@/content/fitCheck";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Is TGA right for your child?",
-  description: "Three quick questions: your child's key stage, live-lesson times in your own time zone, the fee band and your next step at Tarbiyyah Global Academy.",
+  title: FIT_CHECK.meta.title,
+  description: FIT_CHECK.meta.description,
   path: "/eligibility",
 });
 
@@ -18,19 +18,16 @@ export default async function EligibilityPage() {
   return (
     <section className="section-pad geo-texture bg-cream">
       <Container>
-        <div className="mx-auto max-w-xl text-center">
-          <Kicker>{DEFAULT_QUIZ_CONFIG.intro.kicker}</Kicker>
-          <h1 className="text-h2 font-serif font-semibold text-ink">{DEFAULT_QUIZ_CONFIG.intro.title}</h1>
-          <p className="mt-4 text-ink/70">{DEFAULT_QUIZ_CONFIG.intro.body}</p>
-        </div>
-        <div className="mt-10">
-          <YourChildsWeekQuiz
-            feeBands={feeBands}
-            siblingDiscountPercent={settings.siblingDiscountPercent}
-            siblingDiscountNote={settings.siblingDiscountNote}
-            discounts={settings.discounts}
-          />
-        </div>
+        <FitCheck
+          feeBands={feeBands}
+          fees={{
+            terms: settings.feeTerms ?? FEE_DEFAULTS.terms,
+            instalments: settings.feeInstalments ?? FEE_DEFAULTS.instalments,
+            annualDiscountPercent: settings.annualDiscountPercent ?? FEE_POLICY_DEFAULTS.annualDiscountPercent,
+            siblingDiscountPercent: settings.siblingDiscountPercent,
+            applicationFee: settings.applicationFee ?? FEE_POLICY_DEFAULTS.applicationFee,
+          }}
+        />
       </Container>
     </section>
   );

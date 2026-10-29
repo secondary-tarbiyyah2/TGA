@@ -145,6 +145,28 @@ export const keyStages: KeyStage[] = [
   },
 ];
 
+/** A subject as parents see it on the public site: the name only, without
+ * exam board or specification codes (those change with entries and live in
+ * the portal and the Examinations and Private Candidates Policy). Returns
+ * null for anything not offered (PE). Used by /curriculum/[stage] and the
+ * holding site's Subjects page. */
+const SUBJECT_DETAIL = /\s*\((?:[^()]*(?:GCSE|taught from|Double Award|Edexcel|AQA|Pearson)[^()]*)\)/g;
+export function publicSubject(s: string): string | null {
+  if (/^PE\b/i.test(s)) return null;
+  if (/^Combined\b.*separate sciences/i.test(s)) return "Science: combined (Double Award), or separate biology, chemistry and physics";
+  return s.replace(SUBJECT_DETAIL, "").replace(/\s+/g, " ").trim();
+}
+
+/** The shape of every live lesson, shown on /learning and /sample-lesson.
+ * Timings are for a 50-minute lesson (Years 7 to 11). */
+export const LESSON_SHAPE: { step: string; what: string; mins: string }[] = [
+  { step: "Register and retrieval", what: "Camera on, quick register, then three or four questions on last lesson's learning in the chat or on mini-whiteboards.", mins: "0–7 min" },
+  { step: "Short explanation", what: "The teacher teaches one idea clearly, with worked examples on the shared screen.", mins: "7–17 min" },
+  { step: "Guided practice", what: "Pupils try it together: cold-calling, polls and hands up, with the teacher correcting misunderstandings straight away.", mins: "17–32 min" },
+  { step: "Independent practice", what: "Pupils work on their own in the Class Notebook while the teacher drops in to check progress.", mins: "32–45 min" },
+  { step: "Closing check and homework", what: "An exit question to show what has been learned, and the homework set in Teams Assignments.", mins: "45–50 min" },
+];
+
 /** "20 live lessons a week, 45 minutes each": the one wording used wherever a
  * key stage's week is summarised (homepage, curriculum index). Falls back to
  * this file's figures if a database row leaves either field empty. */

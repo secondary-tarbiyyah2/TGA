@@ -1,23 +1,20 @@
-// Sends the "Your Child's Week" quiz result as a branded email, called
-// right after the client inserts a quiz_leads row (see
-// src/components/eligibility/YourChildsWeekQuiz.tsx's submitLead). Public
+// Sends the "Is it right for us?" summary (/eligibility) as a branded
+// email, called right after the client inserts a consented quiz_leads row
+// (see src/components/eligibility/FitCheck.tsx's EmailSummary). Public
 // function (verify_jwt = false, see supabase/config.toml) since anonymous
-// quiz-takers call this with no session, same pattern as
+// families call this with no session, same pattern as
 // book-admissions-call.
 //
-// Deliberately re-fetches the lead row by id and checks its email matches
-// the request rather than trusting a client-supplied email for the send
-// target, leadId alone isn't a secret (it's returned to the browser), so
-// without this check a caller could pass someone else's leadId with an
-// email address of their choosing and use this function as a relay to
-// spam that address. All other plan content (sample week, starting
-// points, fee line, timezone note) is accepted from the client, HTML-
-// escaped before use, it's already exactly what that same browser
-// session just rendered on screen from a published quiz config,
-// re-deriving it here from quiz_leads.answers_snapshot would duplicate
-// the whole rules engine (src/lib/quiz/rules.ts) and sample-week/timezone
-// conversion (useSampleWeek.ts, src/lib/quiz/timezone.ts) for no real
-// security gain.
+// Deliberately re-fetches the lead row by id and sends only to the email
+// stored on it, never to a client-supplied address: leadId alone isn't a
+// secret, so without this a caller could use this function as a relay to
+// spam an address of their choosing. The summary content (verdict,
+// reasons, live day, fee line, next steps) is accepted from the client
+// and HTML-escaped before use: it is exactly what that same browser just
+// rendered from published facts (src/lib/fitCheck.ts), and re-deriving it
+// here would duplicate that logic for no real security gain.
+// The sampleSlots / startingPoints / timezoneFlagText fields are from the
+// earlier quiz and are still accepted (and ignored when empty).
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
 import { emailShell, sendEmail } from "../_shared/resend.ts";
@@ -65,8 +62,13 @@ Deno.serve(async (req) => {
   const keyStage = String(body.keyStage || "");
   const liveDayText = String(body.liveDayText || "");
   const timezoneConcern = body.timezoneConcern === true;
+  const verdict = String(body.verdict || "");
 
   const sections: string[] = [];
+
+  if (verdict) {
+    sections.push(`<h2 style="font-size:18px;margin:16px 0 12px;">${esc(verdict)}</h2>`);
+  }
 
   if (yearGroup) {
     sections.push(`<p style="font-size:14px;margin:0 0 8px;"><strong>${esc(yearGroup)}</strong>${keyStage ? ` · ${esc(keyStage)}` : ""}</p>`);
@@ -123,10 +125,10 @@ Deno.serve(async (req) => {
   const result = await sendEmail({
     to: lead.email,
     toName: parentName || undefined,
-    subject: "Your fit-check summary from Tarbiyyah Global Academy",
+    subject: "Your \"Is it right for us?\" summary from Tarbiyyah Global Academy",
     html: emailShell(`
       <h1 style="font-size:20px;margin:0 0 16px;">Assalamu alaikum ${esc(firstName)},</h1>
-      <p style="font-size:14px;">Here is the summary from the fit check you completed on our website, with the dates and fees to hand.</p>
+      <p style="font-size:14px;">Here is the summary from the "Is it right for us?" check you completed on our website, with the times, fees and dates to hand.</p>
       ${sections.join("")}
       <p style="font-size:14px;margin-top:24px;">A quick summary based on your answers, not an offer of a place. Fees are the published 2026-27 founding-cohort fees; everything else is confirmed with you during admissions.</p>
       <p style="font-size:14px;">Any questions? Just reply to this email, or <a href="https://globalacademy.tarbiyyah.co.uk/book-a-call#book" style="color:#5E4B1E;">book a free 20-minute call</a>, or <a href="https://globalacademy.tarbiyyah.co.uk/open-evening" style="color:#5E4B1E;">register for an open evening</a>.</p>

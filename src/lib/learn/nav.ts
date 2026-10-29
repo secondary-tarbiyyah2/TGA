@@ -227,7 +227,6 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
         { href: "/admin/settings", label: "General", hint: "School details, alerts, clock-in and Microsoft 365" },
         { href: "/admin/academic", label: "Academic setup", hint: "Years, terms, year groups, classes and subjects", icon: "layers" },
         { href: "/admin/content", label: "Website", hint: "Pages on the public site", icon: "globe" },
-        { href: "/admin/quiz", label: "Quiz and sample weeks", hint: "Eligibility quiz and timetables", icon: "bookOpenCheck", headOnly: true },
       ],
     },
   ],
