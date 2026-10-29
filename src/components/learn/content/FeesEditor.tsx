@@ -11,6 +11,7 @@ import {
   FEE_DEFAULTS, FEE_POLICY_DEFAULTS, FEES_POLICY_REMINDER, roundingNote, INSTALMENT_CHOICES, MAX_INSTALMENTS, MAX_TERMS,
   computeFeeSchedule, describePlan, sanitiseFeeSettings, sumPounds,
 } from "@/lib/fees";
+import { btn } from "@/components/learn/ui";
 
 type BandDraft = { key: string; id?: string; year_group_range: string; annual_fee: string; notes: string };
 
@@ -318,7 +319,7 @@ export function FeesEditor() {
         <button
           type="button"
           onClick={() => setDiscountDrafts([...discountDrafts, { key: newKey(), label: "", type: "percent", value: "", note: "", eligibility: "", auto: false }])}
-          className="mt-4 rounded-full border border-gold-light/60 px-4 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream"
+          className={`${btn("secondary")} mt-4`}
         >
           Add a discount
         </button>
@@ -354,7 +355,7 @@ export function FeesEditor() {
         <button
           type="button"
           onClick={() => setBands([...bands, { key: newKey(), year_group_range: "", annual_fee: "", notes: "" }])}
-          className="mt-4 rounded-full border border-gold-light/60 px-4 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream"
+          className={`${btn("secondary")} mt-4`}
         >
           Add a band
         </button>

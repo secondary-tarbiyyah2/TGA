@@ -243,7 +243,7 @@ export function SubmissionFeedback({
     try {
       const err = await sendReturn(status);
       if (err) setError(err);
-      else setInfo(status === "feedback_given" ? "Returned to the student." : "Returned, and a resubmission has been requested.");
+      else setInfo(status === "feedback_given" ? "Returned to the pupil." : "Returned, and a resubmission has been requested.");
     } finally {
       setBusy(false);
     }
@@ -265,7 +265,7 @@ export function SubmissionFeedback({
         { onConflict: "submission_id" }
       );
       if (err) setError(err.message);
-      else setInfo("Draft saved. The student can't see it yet.");
+      else setInfo("Draft saved. The pupil can't see it yet.");
     } finally {
       setBusy(false);
     }
@@ -358,7 +358,7 @@ export function SubmissionFeedback({
           onClick={() => run("feedback_given")}
           className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs font-medium text-white transition-colors hover:bg-gold-900 disabled:opacity-50"
         >
-          {existing ? "Update & return" : "Return to student"}
+          {existing ? "Update & return" : "Return to pupil"}
         </button>
         <button
           type="button"

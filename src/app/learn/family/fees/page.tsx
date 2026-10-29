@@ -8,7 +8,7 @@ import { METHOD_LABEL, STATUS_LABEL, STATUS_STYLE, chargeStatus, formatDate, rou
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { formatGBP } from "@/lib/format";
 import { FamilyWithdrawal } from "@/components/learn/fees/FamilyWithdrawal";
-import { EmptyState, ui } from "@/components/learn/ui";
+import { EmptyState } from "@/components/learn/ui";
 import { FamilyFees } from "@/components/learn/FamilyFees";
 
 type Kid = { id: string; name: string; year_groups?: { name: string } | null };
@@ -83,11 +83,6 @@ function FamilyFeesContent() {
           title="Nothing to pay"
           icon="wallet"
           tile="tile-green"
-          action={
-            <a href="https://globalacademy.tarbiyyah.co.uk/fees/" className={ui.btnSecondary}>
-              See published fees
-            </a>
-          }
         >
           No fees have been charged to your family yet. Invoices and payment plans appear here once your child&apos;s place is confirmed.
         </EmptyState>

@@ -34,7 +34,7 @@ const inputCls = ui.input;
 const MAX_ATTACHMENTS = 10;
 
 function friendlyError(message: string): string {
-  if (/class_locked_has_submissions/.test(message)) return "Students have already handed work in, so this homework can't be moved to another class.";
+  if (/class_locked_has_submissions/.test(message)) return "Pupils have already handed work in, so this homework can't be moved to another class.";
   if (/not_your_class/.test(message)) return "You can only move homework to a class you teach.";
   if (/row-level security|violates row-level/.test(message)) return "You don't have permission to do that for this class.";
   if (/assigned_child_ids|homework_kind_check|'kind' column/.test(message)) return "Setting work for chosen pupils (or as a quiz) isn't switched on yet. Set it for the whole class, or ask the office to run the latest update.";
@@ -311,7 +311,7 @@ export function HomeworkEditor({
       </label>
 
       <div className="space-y-3 rounded-lg border border-gold-light/40 p-3">
-        <p className="text-xs font-medium uppercase tracking-wide text-ink/65">What students can hand in</p>
+        <p className="text-xs font-medium uppercase tracking-wide text-ink/65">What pupils can hand in</p>
         {ALL_SUBMISSION_TYPES.map((t) => (
           <Switch
             key={t}
@@ -333,13 +333,13 @@ export function HomeworkEditor({
           </div>
         )}
         <div className="border-t border-gold-light/30 pt-3">
-          <Switch label="Close to late work" description="After the due time students can no longer hand in, unless you ask for a resubmission." checked={blockLate} onChange={setBlockLate} />
+          <Switch label="Close to late work" description="After the due time pupils can no longer hand in, unless you ask for a resubmission." checked={blockLate} onChange={setBlockLate} />
         </div>
       </div>
 
       <div className="space-y-2 rounded-lg border border-gold-light/40 p-3">
         <div className="flex items-center justify-between gap-2">
-          <p className="text-xs font-medium uppercase tracking-wide text-ink/65">Attachments for students</p>
+          <p className="text-xs font-medium uppercase tracking-wide text-ink/65">Attachments for pupils</p>
           <button type="button" disabled={busy} onClick={() => picker.current?.click()} className="rounded-lg border border-gold-light bg-white px-3 py-1 text-xs font-medium text-ink/80 hover:bg-cream disabled:opacity-50">
             Add files
           </button>

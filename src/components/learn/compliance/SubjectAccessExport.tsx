@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { useLearnPermission, useLearnSession } from "@/lib/learn/session";
 import { useNow } from "@/lib/learn/useNow";
+import { btn, ui } from "@/components/learn/ui";
 
 type SubjectType = "pupil" | "parent";
 type Candidate = { id: string; label: string; detail: string };
@@ -138,8 +139,8 @@ export function SubjectAccessExport() {
       </div>
 
       <form onSubmit={search} className="mt-3 flex gap-2">
-        <input value={term} onChange={(e) => setTerm(e.target.value)} placeholder={type === "pupil" ? "Pupil name…" : "Parent name or email…"} className="flex-1 rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
-        <button type="submit" className="rounded-lg border border-gold-light bg-white px-4 py-2 text-sm font-medium text-ink/80 hover:bg-cream">
+        <input value={term} onChange={(e) => setTerm(e.target.value)} placeholder={type === "pupil" ? "Pupil name…" : "Parent name or email…"} className={`${ui.input} flex-1`} />
+        <button type="submit" className={btn("secondary")}>
           Find
         </button>
       </form>
@@ -177,7 +178,7 @@ export function SubjectAccessExport() {
           )}
           <label className="block text-xs text-ink/70">
             Link to a logged request (optional)
-            <select value={requestId} onChange={(e) => setRequestId(e.target.value)} className="mt-1 block w-full rounded-lg border border-gold-light/60 bg-white px-2 py-1.5 text-sm">
+            <select value={requestId} onChange={(e) => setRequestId(e.target.value)} className={`${ui.select} mt-1`}>
               <option value="">Not linked</option>
               {requests.map((r) => (
                 <option key={r.id} value={r.id}>
@@ -186,7 +187,7 @@ export function SubjectAccessExport() {
               ))}
             </select>
           </label>
-          <button type="button" onClick={generate} disabled={busy} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
+          <button type="button" onClick={generate} disabled={busy} className={btn("primary")}>
             {busy ? "Preparing the export…" : "Generate export"}
           </button>
         </div>

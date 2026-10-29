@@ -14,14 +14,10 @@ import { IcsFeedLink } from "@/components/learn/IcsFeedLink";
 import { DashboardWithPanel } from "@/components/learn/DashboardSidePanel";
 import { ClassGrid } from "@/components/learn/class/ClassGrid";
 import { useViewerClasses, type ClassViewer } from "@/lib/learn/classes";
-import { HomeworkDueWidget } from "@/components/learn/HomeworkDueWidget";
 import { LatestGradesWidget } from "@/components/learn/LatestGradesWidget";
 import { QuranProgressWidget } from "@/components/learn/QuranProgressWidget";
 import { GcseProgressWidget } from "@/components/learn/GcseTracker";
-import { HomeworkFeedbackWidget } from "@/components/learn/homework/HomeworkFeedbackWidget";
 import { WeeklyTarbiyahNoteWidget } from "@/components/learn/WeeklyTarbiyahNoteWidget";
-import { StudentLeaderboard } from "@/components/learn/behaviour/LeaderboardCards";
-import { StudentRewards } from "@/components/learn/rewards/RewardsCards";
 import { AnnouncementsFeed } from "@/components/learn/AnnouncementsFeed";
 import { UpNextCard } from "@/components/learn/UpNextCard";
 import { Icon } from "@/components/learn/Icon";
@@ -90,23 +86,24 @@ function StudentContent() {
   const viewer = useMemo<ClassViewer | null>(() => (childId ? { kind: "student", childId } : null), [childId]);
   const myClasses = useViewerClasses(viewer);
 
-  // Order follows what a pupil needs first: what's next, then their
-  // classes and work, then rewards; the full timetable is folded away
-  // (it's also on the Calendar page).
+  // What a pupil needs now: the next lesson (and its join button), then
+  // what is due. Everything else is one tap away in the menu (merits and
+  // house points on Progress, the calendar and notices under School), so
+  // the page stays short on a phone. The timetable is folded away.
   const content = (
     <div className="space-y-6">
       <DashboardHero subtitle="Ready to learn today?" chips={[{ label: "Lessons a week", value: slots === null ? "…" : slots.length, tone: "yellow" }]} />
 
-        <ActionCentreWidget role="student" />
       {childId && <JoinLessonCard who={{ kind: "student", childId }} />}
       {childId && <UpNextCard classIds={slots === null ? null : classIds} childId={childId} lessonHref={(id) => `/student/lessons/view?id=${id}`} homeworkHref="/student/todo" />}
+      <ActionCentreWidget role="student" />
 
       {viewer && (
         <section>
           <div className="mb-3 flex items-center justify-between">
             <h2 className="text-sm font-semibold text-ink">My classes</h2>
             <Link href="/student/classes" className="text-sm font-medium text-teal-700 hover:underline">
-              View all
+              See all
             </Link>
           </div>
           <ClassGrid
@@ -120,32 +117,27 @@ function StudentContent() {
       )}
 
       {childId && (
-        <section className="rounded-2xl border border-gold-light bg-white p-6">
-          <div className="flex items-center justify-between">
-            <h2 className="text-h3 font-semibold text-ink">Homework and grades</h2>
-            <Link href="/student/todo" className="text-sm font-medium text-teal-700 hover:underline">
-              See everything to do
+        <section className="rounded-2xl border border-gold-light bg-white p-4 sm:p-6">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <h2 className="text-h3 font-semibold text-ink">How I&apos;m doing</h2>
+            <Link href="/student/behaviour" className="text-sm font-medium text-teal-700 hover:underline">
+              My merits and badges
             </Link>
           </div>
           <div className="mt-4 grid gap-6 sm:grid-cols-2">
-            <HomeworkDueWidget childId={childId} />
             <LatestGradesWidget childId={childId} />
-            <HomeworkFeedbackWidget childId={childId} href="/student/homework" />
             <QuranProgressWidget childId={childId} />
             <GcseProgressWidget childId={childId} />
           </div>
-          <WeeklyTarbiyahNoteWidget childId={childId} />
+          <WeeklyTarbiyahNoteWidget childId={childId} limit={1} />
         </section>
       )}
 
-      {childId && <StudentRewards childId={childId} />}
-      {childId && <StudentLeaderboard childId={childId} />}
-
       <details className="group rounded-2xl border border-gold-light bg-white" open={simplified || undefined}>
-        <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-5 py-3">
+        <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 px-5 py-3">
           <h2 className="text-h3 font-semibold text-ink">My timetable</h2>
           <span className="flex items-center gap-2 text-sm text-ink/65">
-            {slots === null ? "" : `${slots.length} lessons a week`}
+            {slots === null ? "" : `${slots.length} ${slots.length === 1 ? "lesson" : "lessons"} a week`}
             <Icon name="chevronDown" className="h-4 w-4 transition-transform group-open:rotate-180" />
           </span>
         </summary>
@@ -161,13 +153,13 @@ function StudentContent() {
         </div>
       </details>
 
-      <AnnouncementsFeed classIds={classIds} />
+      <AnnouncementsFeed classIds={classIds} limit={3} hideWhenEmpty />
     </div>
   );
 
   if (!childId) return content;
   return (
-    <DashboardWithPanel viewer={{ kind: "student", childId, classIds }}>
+    <DashboardWithPanel viewer={{ kind: "student", childId, classIds }} wideOnly>
       {content}
     </DashboardWithPanel>
   );

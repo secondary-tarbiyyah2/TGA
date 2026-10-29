@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { PageHeader } from "@/components/learn/PageHeader";
+import { Button, EmptyState, Notice } from "@/components/learn/ui";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { ThreadList } from "@/components/learn/oversight/ThreadList";
 import { ThreadViewer } from "@/components/learn/oversight/ThreadViewer";
@@ -30,13 +31,15 @@ function Oversight() {
       <PageHeader
         crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "Message oversight" }]}
         title="Message oversight"
+        subtitle="A safeguarding view of conversations between staff and families."
       />
-      <div role="note" className="mb-4 rounded-lg border border-amber-300 bg-amber-50 px-4 py-2.5 text-sm text-amber-900">
-        Read-only oversight. Opening a conversation is recorded in the audit log.
+      <div className="mb-4">
+        <Notice tone="warn">Read only. Opening a conversation is recorded in the audit log.</Notice>
       </div>
-      {error && <p className="text-sm text-red-700">Could not load conversations: {error}</p>}
-      {!error && threads === null && <p className="text-ink/65">Loading…</p>}
-      {threads && (
+      {error && <Notice tone="bad">Could not load conversations. Please refresh the page and try again.</Notice>}
+      {!error && threads === null && <div className="h-40 animate-pulse rounded-2xl bg-white" aria-label="Loading" />}
+      {threads && threads.length === 0 && <EmptyState title="No conversations yet" icon="messageSquare">Conversations between staff and families will appear here.</EmptyState>}
+      {threads && threads.length > 0 && (
         // On phones the list and the open conversation take turns (with a
         // Back button) instead of the conversation opening far below the list.
         <div className="grid gap-4 md:h-[70vh] md:grid-cols-[minmax(0,22rem)_1fr]">
@@ -46,15 +49,15 @@ function Oversight() {
           <div className={`min-h-[24rem] md:block md:min-h-0 ${active ? "" : "hidden"}`}>
             {active ? (
               <div className="flex h-full min-h-[24rem] flex-col gap-2 md:min-h-0">
-                <button type="button" onClick={() => setActiveId(null)} className="self-start rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream md:hidden">
-                  ‹ All conversations
-                </button>
+                <Button icon="chevronLeft" size="sm" onClick={() => setActiveId(null)} className="self-start md:hidden">
+                  All conversations
+                </Button>
                 <div className="min-h-0 flex-1">
                   <ThreadViewer key={active.thread_id} thread={active} />
                 </div>
               </div>
             ) : (
-              <div className="flex h-full items-center justify-center rounded-lg border border-dashed border-ink/20 p-6 text-sm text-ink/65">
+              <div className="flex h-full items-center justify-center rounded-2xl border border-dashed border-gold-light p-6 text-sm text-ink/65">
                 Select a conversation to read it.
               </div>
             )}

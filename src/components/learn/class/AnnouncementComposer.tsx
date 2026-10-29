@@ -243,7 +243,7 @@ export function AnnouncementComposer({ classId, onPosted }: { classId: string; o
         {later && (
           <input type="datetime-local" value={publishAt} onChange={(e) => setPublishAt(e.target.value)} aria-label="Publish at" className="rounded-lg border border-gold-light/70 px-3 py-1.5 text-sm" />
         )}
-        <Switch checked={allowComments} onChange={setAllowComments} label="Allow comments" hint="Pupils can only comment if the class setting &ldquo;Students can comment&rdquo; is on." />
+        <Switch checked={allowComments} onChange={setAllowComments} label="Allow comments" hint="Pupils can only comment if the class setting &ldquo;Pupils can comment&rdquo; is on." />
       </div>
 
       {error && (

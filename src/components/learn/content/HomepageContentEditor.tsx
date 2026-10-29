@@ -7,6 +7,7 @@ import { Card } from "@/components/learn/Card";
 import { triggerPublish } from "@/lib/learn/publishSiteContent";
 import { homepageDefaults as D, withDefault, toStored, listWithDefault, listToStored } from "@/content/defaults";
 import { DefaultTextField, DefaultBadge, ResetLink } from "./DefaultField";
+import { ui } from "@/components/learn/ui";
 
 type TitleBody = { title: string; body: string };
 type Row = {
@@ -41,14 +42,14 @@ function TitleBodyListEditor({ label, items, def, onChange }: { label: string; i
                 value={item.title}
                 onChange={(e) => onChange(items.map((it, j) => (j === i ? { ...it, title: e.target.value } : it)))}
                 placeholder="Title"
-                className="block w-full rounded-md border border-gold-light/60 px-2 py-1 text-sm"
+                className={ui.input}
               />
               <textarea
                 value={item.body}
                 onChange={(e) => onChange(items.map((it, j) => (j === i ? { ...it, body: e.target.value } : it)))}
                 placeholder="Body"
                 rows={2}
-                className="block w-full rounded-md border border-gold-light/60 px-2 py-1 text-sm"
+                className={ui.textarea}
               />
             </div>
             <button type="button" onClick={() => onChange(items.filter((_, j) => j !== i))} className="self-start text-xs text-red-700">

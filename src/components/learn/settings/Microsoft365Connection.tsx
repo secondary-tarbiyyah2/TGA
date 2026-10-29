@@ -76,16 +76,18 @@ export function Microsoft365Connection() {
   const meetings = status?.meetings;
 
   return (
-    <section className="rounded-2xl border border-gold-light bg-white">
-      <div className="border-b border-gold-light px-5 py-4">
-        <h2 className="text-base font-semibold text-ink">Microsoft 365 connection</h2>
-        <p className="mt-0.5 text-sm text-ink/65">
-          School email from Outlook, a Teams meeting for each lesson, and Teams attendance hints on registers. The set-up guide is docs/microsoft-365-setup.md in the school&apos;s code repository.
-        </p>
-      </div>
+    <details className="group rounded-2xl border border-gold-light bg-white">
+      <summary className="flex cursor-pointer list-none items-start justify-between gap-3 px-5 py-4">
+        <span>
+          <span className="block text-base font-semibold text-ink">Microsoft 365 connection</span>
+          <span className="mt-0.5 block text-sm text-ink/65">School email from Outlook, a Teams meeting for each lesson, and Teams attendance hints on registers.</span>
+        </span>
+        <span aria-hidden="true" className="mt-1 text-lg leading-none text-ink/50 transition-transform group-open:rotate-90">›</span>
+      </summary>
+      <div className="border-t border-gold-light" />
       <div className="space-y-4 px-5 py-5">
         {!status && <div className="h-24 animate-pulse rounded-xl bg-cream" />}
-        {status && !status.ok && <p className="text-sm text-red-800">Couldn&apos;t check the connection: {status.error}</p>}
+        {status && !status.ok && <p role="alert" className="text-sm text-red-800">Couldn&apos;t check the connection. {status.error}</p>}
         {status?.ok && (
           <>
             <ul className="divide-y divide-gold-light/70 rounded-xl border border-gold-light">
@@ -115,7 +117,7 @@ export function Microsoft365Connection() {
                 {meetings.last_change && <span className="block text-xs text-ink/60">Last change {new Date(meetings.last_change).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" })}</span>}
               </p>
             ) : (
-              <p className="text-xs text-ink/60">Lesson meeting records aren&apos;t available yet (database update 0145 not applied).</p>
+              <p className="text-xs text-ink/60">Lesson meeting records aren&apos;t available yet.</p>
             )}
           </>
         )}
@@ -133,6 +135,6 @@ export function Microsoft365Connection() {
           </p>
         )}
       </div>
-    </section>
+    </details>
   );
 }

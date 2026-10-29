@@ -46,7 +46,7 @@ function AssessmentContent() {
 
   return (
     <div className="space-y-6">
-      <PageHeader title="Gradebook" subtitle="Enter a whole class's results at once, and see how every pupil is doing. Each class's Grades tab shows the same gradebook." />
+      <PageHeader title="Gradebook" subtitle="Enter a whole class's results at once. The same gradebook is on each class's Grades tab." />
       {classes !== null && classes.length === 0 ? (
         <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">
           You don&apos;t teach any classes yet. Once the office gives you a class (or the published timetable does), it appears here.
@@ -61,7 +61,7 @@ function AssessmentContent() {
                 setClassId(e.target.value);
                 setChildId("");
               }}
-              className="ml-1 rounded-lg border border-gold-light bg-white px-3 py-2 text-sm font-normal"
+              className="ml-1 min-h-10 max-w-[16rem] rounded-lg border border-gold-light bg-white px-3 py-2 text-sm font-normal"
             >
               {(classes || []).map((c) => (
                 <option key={c.id} value={c.id}>
@@ -70,7 +70,7 @@ function AssessmentContent() {
               ))}
             </select>
           </label>
-          {pupils && <span className="text-sm text-ink/65">{pupils.length} pupils</span>}
+          {pupils && <span className="text-sm text-ink/65">{pupils.length} pupil{pupils.length === 1 ? "" : "s"}</span>}
         </div>
       )}
 

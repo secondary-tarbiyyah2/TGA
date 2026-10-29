@@ -6,7 +6,7 @@ import { Card } from "@/components/learn/Card";
 import { getPolicyLinks } from "@/lib/content";
 import { DOCX_MIME, UPLOAD_ACCEPT, extractDocxText, storageObjectName, uploadKind, uploadProblem } from "@/lib/learn/documentUpload";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { ui } from "@/components/learn/ui";
+import { btn, ui } from "@/components/learn/ui";
 import { PolicyTextEditor } from "@/components/learn/documents/PolicyTextEditor";
 import type { PolicyMeta } from "@/lib/policyMeta";
 
@@ -350,8 +350,8 @@ export function PolicyEditor() {
         </label>
       </div>
       <div className="flex gap-2">
-        <button type="button" onClick={save} disabled={busy} className="rounded-full bg-gold-700 px-4 py-1.5 text-xs font-semibold text-white hover:bg-gold-900 disabled:opacity-60">{busy ? "Working…" : "Save"}</button>
-        <button type="button" onClick={() => setEditingId(null)} className="rounded-full border border-gold-light/60 px-4 py-1.5 text-xs text-ink/70 hover:bg-cream">Cancel</button>
+        <button type="button" onClick={save} disabled={busy} className={btn("primary", "sm")}>{busy ? "Working…" : "Save"}</button>
+        <button type="button" onClick={() => setEditingId(null)} className={btn("secondary", "sm")}>Cancel</button>
       </div>
     </div>
   );
@@ -360,12 +360,12 @@ export function PolicyEditor() {
     <Card title="Policy documents" description="Everything on the website's Policies page is controlled here: which policies are listed (Show / Hide from website), their order, which appear in the Key documents box, their group heading, and the PDF each one opens. Staff-only policies stay here for signing and the compliance tracker without being listed publicly. Use Edit text to change a policy's wording: the PDF and its web page are regenerated when the site rebuilds (a few minutes). Details (order, grouping, visibility) are live immediately.">
       <div className="mb-3 flex flex-wrap items-center gap-2">
         {editingId !== "new" && (
-          <button type="button" onClick={startNew} className="rounded-full bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900">
+          <button type="button" onClick={startNew} className={btn("primary")}>
             + Add policy
           </button>
         )}
         {live.length > 5 && (
-          <input type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Find a policy" aria-label="Find a policy" className="min-w-[180px] flex-1 rounded-lg border border-gold-light/60 px-3 py-2 text-sm sm:max-w-xs" />
+          <input type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Find a policy" aria-label="Find a policy" className={`${ui.input} min-w-[180px] flex-1 sm:max-w-xs`} />
         )}
         {rows && <span className="text-xs text-ink/65">{q ? `${shownLive.length} of ${live.length}` : `${live.length} on the list`}</span>}
       </div>
@@ -407,12 +407,12 @@ export function PolicyEditor() {
                     </p>
                   </div>
                   <div className="flex shrink-0 flex-wrap gap-2">
-                    <button type="button" aria-label={`Move ${r.title} up`} onClick={() => move(r, -1)} disabled={busy} className="rounded-full border border-gold-light px-2 py-1 text-xs text-ink/70 hover:bg-cream disabled:opacity-50">↑</button>
-                    <button type="button" aria-label={`Move ${r.title} down`} onClick={() => move(r, 1)} disabled={busy} className="rounded-full border border-gold-light px-2 py-1 text-xs text-ink/70 hover:bg-cream disabled:opacity-50">↓</button>
-                    <button type="button" onClick={() => setVisibility(r, r.visibility === "public" ? "staff" : "public")} disabled={busy} className="rounded-full border border-gold-light px-3 py-1 text-xs text-ink/75 hover:bg-cream disabled:opacity-50">
+                    <button type="button" aria-label={`Move ${r.title} up`} onClick={() => move(r, -1)} disabled={busy} className={btn("secondary", "sm")}>↑</button>
+                    <button type="button" aria-label={`Move ${r.title} down`} onClick={() => move(r, 1)} disabled={busy} className={btn("secondary", "sm")}>↓</button>
+                    <button type="button" onClick={() => setVisibility(r, r.visibility === "public" ? "staff" : "public")} disabled={busy} className={btn("secondary", "sm")}>
                       {r.visibility === "public" ? "Hide from website" : "Show on website"}
                     </button>
-                    <button type="button" onClick={() => { setEditingId(null); setTextId(r.id); }} className="rounded-full bg-gold-700 px-3 py-1 text-xs font-semibold text-white hover:bg-gold-900">
+                    <button type="button" onClick={() => { setEditingId(null); setTextId(r.id); }} className={btn("primary", "sm")}>
                       {r.body_md ? "Edit text" : "Write as text"}
                     </button>
                     <button type="button" onClick={() => { setTextId(null); startEdit(r); }} className="rounded-full border border-gold-500 px-3 py-1 text-xs text-gold-700 hover:bg-cream">Details</button>
@@ -442,7 +442,7 @@ export function PolicyEditor() {
               {removed.map((r) => (
                 <li key={r.id} className="flex items-center justify-between gap-3 p-3 text-sm text-ink/65">
                   <span>{r.number}. {r.title}</span>
-                  <button type="button" onClick={() => restore(r)} disabled={busy} className="rounded-full border border-gold-light px-3 py-1 text-xs text-ink/75 hover:bg-cream disabled:opacity-50">Restore</button>
+                  <button type="button" onClick={() => restore(r)} disabled={busy} className={btn("secondary", "sm")}>Restore</button>
                 </li>
               ))}
             </ul>

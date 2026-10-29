@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { btn, ui } from "@/components/learn/ui";
 
 type ChecklistItem = { key: string; label: string; done: boolean };
 type ReviewStatus = "required" | "in_progress" | "completed";
@@ -122,7 +123,7 @@ function ReviewCard({ review, onChanged }: { review: ReviewRow; onChanged: () =>
         <div className="mt-3 grid gap-2 sm:grid-cols-2">
           <label className="text-xs text-ink/70">
             Decision
-            <select value={decision} onChange={(e) => setDecision(e.target.value)} className="mt-1 block w-full rounded-lg border border-gold-light/60 bg-white px-2 py-1.5 text-sm">
+            <select value={decision} onChange={(e) => setDecision(e.target.value)} className={`${ui.select} mt-1`}>
               <option value="">Choose…</option>
               {DECISIONS.map((d) => (
                 <option key={d.value} value={d.value}>
@@ -138,21 +139,21 @@ function ReviewCard({ review, onChanged }: { review: ReviewRow; onChanged: () =>
         </div>
         <label className="mt-2 block text-xs text-ink/70">
           Outcome
-          <textarea value={outcome} onChange={(e) => setOutcome(e.target.value)} rows={2} className="mt-1 block w-full rounded-lg border border-gold-light/60 bg-white px-2 py-1.5 text-sm" />
+          <textarea value={outcome} onChange={(e) => setOutcome(e.target.value)} rows={2} className={`${ui.textarea} mt-1`} />
         </label>
         <label className="mt-2 block text-xs text-ink/70">
           Notes
-          <textarea value={notes} onChange={(e) => setNotes(e.target.value)} rows={2} className="mt-1 block w-full rounded-lg border border-gold-light/60 bg-white px-2 py-1.5 text-sm" />
+          <textarea value={notes} onChange={(e) => setNotes(e.target.value)} rows={2} className={`${ui.textarea} mt-1`} />
         </label>
       </fieldset>
 
       {error && <p role="alert" className="mt-2 text-xs text-red-700">{error}</p>}
       {!done && (
         <div className="mt-3 flex flex-wrap gap-2">
-          <button type="button" onClick={() => save(false)} disabled={busy} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-xs font-medium text-ink/80 hover:bg-cream disabled:opacity-50">
+          <button type="button" onClick={() => save(false)} disabled={busy} className={btn("secondary", "sm")}>
             Save progress
           </button>
-          <button type="button" onClick={() => save(true)} disabled={busy || !allTicked || !decision} className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
+          <button type="button" onClick={() => save(true)} disabled={busy || !allTicked || !decision} className={btn("primary", "sm")}>
             Complete review
           </button>
           {(!allTicked || !decision) && <span className="self-center text-xs text-ink/65">Tick every item and choose a decision to complete.</span>}

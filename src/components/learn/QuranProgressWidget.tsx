@@ -74,7 +74,13 @@ export function QuranProgressWidget({ childId, limit = 5 }: { childId: string; l
   const next = milestones.find((m) => !m.achieved && !m.id.startsWith("target-"));
 
   if (rows === null) return <p className="text-sm text-ink/65">Loading Qur&apos;an &amp; Islamic Studies progress…</p>;
-  if (rows.length === 0 && (targets || []).length === 0) return <p className="text-sm text-ink/65">No progress recorded yet.</p>;
+  if (rows.length === 0 && (targets || []).length === 0)
+    return (
+      <div>
+        <h3 className="text-sm font-medium text-ink">Qur&apos;an &amp; Islamic Studies</h3>
+        <p className="mt-2 text-sm text-ink/65">Nothing recorded yet. Marks appear here after a recitation session.</p>
+      </div>
+    );
 
   return (
     <div>

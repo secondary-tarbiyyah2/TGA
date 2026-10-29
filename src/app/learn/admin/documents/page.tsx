@@ -12,6 +12,7 @@ import { RecordSignatureModal, type SignTarget } from "@/components/learn/docume
 import { SignatureHistory } from "@/components/learn/documents/SignatureHistory";
 import { AUDIENCE_LABEL, audienceText, audienceToRoles, requestSignatures, rolesToAudience, type Audience } from "@/components/learn/documents/audience";
 import { Tabs } from "@/components/learn/Tabs";
+import { Button, EmptyState, Field, IconButton, StatusChip, SwitchKnob, btn, ui } from "@/components/learn/ui";
 import { csvEscape } from "@/components/learn/fees/shared";
 
 type PolicyRow = { id: string; number: string; title: string; category: string; fileUrl: string; lastReviewed?: string; nextReview?: string };
@@ -46,7 +47,7 @@ function AudiencePicker({ value, onChange, disabled }: { value: Audience[]; onCh
             disabled={disabled}
             aria-pressed={on}
             onClick={() => onChange(on ? value.filter((x) => x !== a) : [...value, a])}
-            className={`rounded-full border px-3 py-1 text-xs font-medium disabled:opacity-50 ${on ? "border-teal-700 bg-teal-700 text-white" : "border-gold-light bg-white text-ink/70 hover:bg-cream"}`}
+            className={`${on ? ui.chipOn : ui.chip} disabled:opacity-50`}
           >
             {AUDIENCE_LABEL[a]}
           </button>
@@ -65,9 +66,9 @@ function Switch({ on, onChange, label, disabled }: { on: boolean; onChange: (v: 
       aria-label={label}
       disabled={disabled}
       onClick={() => onChange(!on)}
-      className={`relative h-6 w-11 shrink-0 rounded-full transition-colors disabled:opacity-50 ${on ? "bg-teal-700" : "bg-ink/25"}`}
+      className="inline-flex min-h-11 shrink-0 items-center rounded-full disabled:opacity-50 sm:min-h-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
     >
-      <span className={`absolute top-0.5 h-5 w-5 rounded-full bg-white shadow transition-all ${on ? "left-[22px]" : "left-0.5"}`} />
+      <SwitchKnob checked={on} />
     </button>
   );
 }
@@ -86,7 +87,7 @@ function RolePicker({ value, onChange }: { value: string[]; onChange: (v: string
             type="button"
             aria-pressed={on}
             onClick={() => onChange(on ? value.filter((x) => x !== r) : [...value, r])}
-            className={`rounded-full border px-3 py-1 text-sm font-medium ${on ? "border-teal-700 bg-teal-700 text-white" : "border-gold-light bg-white text-ink/70 hover:bg-cream"}`}
+            className={on ? ui.chipOn : ui.chip}
           >
             {learnRoleLabel(r)}
           </button>
@@ -213,15 +214,12 @@ function NewDocument({ onClose, onDone }: { onClose: () => void; onDone: (messag
       <div className="max-h-[92vh] w-full max-w-xl overflow-y-auto rounded-t-2xl bg-white shadow-xl sm:rounded-2xl">
         <div className="flex items-center justify-between border-b border-gold-light px-5 py-4">
           <h2 className="text-lg font-semibold text-ink">New document to sign</h2>
-          <button type="button" onClick={onClose} aria-label="Close" className="rounded-lg px-2 py-1 text-xl leading-none text-ink/65 hover:bg-cream">
-            ×
-          </button>
+          <IconButton icon="x" label="Close" onClick={onClose} />
         </div>
         <div className="space-y-4 px-5 py-5">
-          <label className="block text-sm">
-            <span className="font-medium text-ink">Title</span>
-            <input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="e.g. Acceptable Use Agreement 2026/27" className="mt-1 w-full rounded-lg border border-gold-light px-3 py-2 text-sm" />
-          </label>
+          <Field label="Title" htmlFor="newdoc-title">
+            <input id="newdoc-title" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="e.g. Acceptable Use Agreement 2026/27" className={ui.input} />
+          </Field>
           <div className="block text-sm">
             <span className="font-medium text-ink">Upload a file</span>
             <span className="block text-xs text-ink/65">
@@ -240,19 +238,16 @@ function NewDocument({ onClose, onDone }: { onClose: () => void; onDone: (messag
             {file && (
               <p className="mt-1 text-xs text-ink/70">
                 {reading ? "Reading the Word file…" : `Chosen: ${file.name} (${kind === "pdf" ? "PDF" : "Word"}).`}{" "}
-                <button type="button" onClick={() => setFile(null)} className="font-medium text-red-700 underline">Remove</button>
+                <button type="button" onClick={() => setFile(null)} className={`${ui.btnLinkDanger} !text-xs`}>Remove</button>
               </p>
             )}
           </div>
-          <label className="block text-sm">
-            <span className="font-medium text-ink">Text</span>
-            <span className="block text-xs text-ink/65">What people read before signing. Optional if you upload a PDF or add a link instead.</span>
-            <textarea rows={7} value={body} onChange={(e) => setBody(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light px-3 py-2 text-sm" />
-          </label>
-          <label className="block text-sm">
-            <span className="font-medium text-ink">Link to a PDF or page (optional)</span>
-            <input value={fileUrl} onChange={(e) => setFileUrl(e.target.value)} placeholder="https://…" className="mt-1 w-full rounded-lg border border-gold-light px-3 py-2 text-sm" />
-          </label>
+          <Field label="Text" htmlFor="newdoc-body" hint="What people read before signing. Optional if you upload a PDF or add a link instead.">
+            <textarea id="newdoc-body" rows={7} value={body} onChange={(e) => setBody(e.target.value)} className={ui.textarea} />
+          </Field>
+          <Field label="Link to a PDF or page (optional)" htmlFor="newdoc-link">
+            <input id="newdoc-link" type="url" value={fileUrl} onChange={(e) => setFileUrl(e.target.value)} placeholder="https://…" className={ui.input} />
+          </Field>
           <div className="text-sm">
             <p className="mb-2 font-medium text-ink">Who has to sign</p>
             <RolePicker value={roles} onChange={setRoles} />
@@ -264,15 +259,15 @@ function NewDocument({ onClose, onDone }: { onClose: () => void; onDone: (messag
               <span className="block text-xs text-ink/65">Untick to add it quietly. It still appears in their portal, and the weekly reminder still goes out.</span>
             </span>
           </label>
-          {error && <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{error}</p>}
+          {error && <p role="alert" className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-800">{error}</p>}
         </div>
         <div className="flex justify-end gap-2 border-t border-gold-light px-5 py-3">
-          <button type="button" onClick={onClose} className="rounded-lg border border-gold-light px-4 py-2 text-sm font-medium text-ink/75 hover:bg-cream">
+          <Button variant="ghost" onClick={onClose}>
             Cancel
-          </button>
-          <button type="button" disabled={busy || reading} onClick={save} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
+          </Button>
+          <Button variant="primary" disabled={busy || reading} onClick={save}>
             {busy ? "Creating…" : emailNow ? "Create and email signers" : "Create"}
-          </button>
+          </Button>
         </div>
       </div>
     </div>
@@ -281,7 +276,11 @@ function NewDocument({ onClose, onDone }: { onClose: () => void; onDone: (messag
 
 function DocumentsContent() {
   const canExport = useLearnPermission("can_export_data");
-  const [tab, setTab] = useState<"policies" | "signing" | "outstanding">("policies");
+  // ?tab=outstanding (from the dashboard and Compliance) opens straight on who still has to sign.
+  const [tab, setTab] = useState<"policies" | "signing" | "outstanding">(() => {
+    const t = typeof window === "undefined" ? null : new URLSearchParams(window.location.search).get("tab");
+    return t === "signing" || t === "outstanding" ? t : "policies";
+  });
   const [policies, setPolicies] = useState<PolicyRow[] | null>(null);
   const [docs, setDocs] = useState<SignableDoc[] | null>(null);
   const [progress, setProgress] = useState<Record<string, Progress>>({});
@@ -475,16 +474,16 @@ function DocumentsContent() {
         title="Policies and signatures"
         subtitle="Every policy on the website, who has to sign what, and who still hasn't."
         actions={
-          <>
-            {canExport && (
-              <button type="button" onClick={exportCsv} className="rounded-lg border border-gold-light bg-white px-4 py-2 text-sm font-medium text-ink/80 hover:bg-cream">
-                Export signatures (CSV)
-              </button>
-            )}
-            <button type="button" onClick={() => setCreating(true)} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900">
-              + New document to sign
-            </button>
-          </>
+          canExport && (
+            <Button icon="download" onClick={exportCsv}>
+              Export signatures (CSV)
+            </Button>
+          )
+        }
+        action={
+          <Button variant="primary" icon="plus" onClick={() => setCreating(true)}>
+            New document to sign
+          </Button>
         }
       />
 
@@ -501,10 +500,10 @@ function DocumentsContent() {
       />
 
       {note && (
-        <p role={note.tone === "bad" ? "alert" : "status"} className={`mb-4 flex items-start justify-between gap-3 rounded-lg px-4 py-2 text-sm ${note.tone === "good" ? "bg-green-50 text-green-900" : "bg-red-50 text-red-800"}`}>
+        <p role={note.tone === "bad" ? "alert" : "status"} className={`mb-4 flex items-start justify-between gap-3 rounded-lg border px-4 py-2 text-sm ${note.tone === "good" ? "border-green-200 bg-green-50 text-green-900" : "border-red-200 bg-red-50 text-red-800"}`}>
           <span>{note.text}</span>
-          <button type="button" onClick={() => setNote(null)} aria-label="Dismiss" className="font-semibold opacity-70 hover:opacity-100">
-            ×
+          <button type="button" onClick={() => setNote(null)} aria-label="Dismiss" className="-my-1 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg opacity-70 hover:bg-white/60 hover:opacity-100">
+            <span aria-hidden="true">×</span>
           </button>
         </p>
       )}
@@ -521,16 +520,16 @@ function DocumentsContent() {
               onChange={(e) => setPolicyQ(e.target.value)}
               placeholder="Find a policy"
               aria-label="Find a policy"
-              className="min-w-[160px] flex-1 rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm sm:max-w-xs"
+              className={`${ui.input} min-w-[160px] flex-1 sm:max-w-xs`}
             />
-            <button type="button" onClick={autoAssignAll} disabled={busyId === "all"} className="rounded-full border border-teal-700 px-3 py-1 text-xs font-medium text-teal-700 hover:bg-teal-700/5 disabled:opacity-50">
+            <Button size="sm" onClick={autoAssignAll} disabled={busyId === "all"}>
               {busyId === "all" ? "Working…" : "Re-apply automatic audiences"}
-            </button>
+            </Button>
           </div>
           {policies === null ? (
             <div className="h-40 animate-pulse" />
           ) : policies.length === 0 ? (
-            <p className="px-5 py-10 text-center text-sm text-ink/65">No policies are published on the website yet.</p>
+            <div className="p-4"><EmptyState title="No policies on the website yet" icon="fileText">Policies published on the public website appear here automatically.</EmptyState></div>
           ) : (
             <ul className="divide-y divide-gold-light/70">
               {policies.filter((p) => !policyQ.trim() || `${p.number} ${p.title}`.toLowerCase().includes(policyQ.trim().toLowerCase())).map((p) => {
@@ -553,7 +552,7 @@ function DocumentsContent() {
                         </p>
                       </div>
                       {on && prog && <Bar signed={prog.signed_count} required={prog.required_count} />}
-                      {d && d.auto_audience !== false && <span className="rounded-full bg-teal-700/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-teal-700" title="Audience set automatically from the policy title">Auto</span>}
+                      {d && d.auto_audience !== false && <span title="Audience set automatically from the policy title"><StatusChip tone="info">Auto</StatusChip></span>}
                       <label className="flex items-center gap-2 text-sm font-medium text-ink/80">
                         <Switch
                           on={on}
@@ -573,13 +572,13 @@ function DocumentsContent() {
                           onChange={(v) => (v.length ? savePolicy(p, true, v) : setNote("At least one group must sign, or switch the signature off."))}
                         />
                         {d?.auto_audience === false && (
-                          <button type="button" onClick={() => applyRecommended(p)} disabled={busy} className="text-xs font-medium text-teal-700 underline disabled:opacity-50">Use automatic audience</button>
+                          <button type="button" onClick={() => applyRecommended(p)} disabled={busy} className={`${ui.btnLink} !text-xs`}>Use automatic audience</button>
                         )}
                       </div>
                     ) : (
                       <p className="mt-1 pl-12 text-xs text-ink/65">
                         View only. Nobody is asked to sign this.
-                        {d?.auto_audience === false && <> <button type="button" onClick={() => applyRecommended(p)} disabled={busy} className="font-medium text-teal-700 underline disabled:opacity-50">Use automatic audience</button></>}
+                        {d?.auto_audience === false && <> <button type="button" onClick={() => applyRecommended(p)} disabled={busy} className={`${ui.btnLink} !text-xs`}>Use automatic audience</button></>}
                       </p>
                     )}
                   </li>
@@ -595,9 +594,18 @@ function DocumentsContent() {
           {docs === null ? (
             <div className="h-40 animate-pulse" />
           ) : signing.length === 0 ? (
-            <div className="px-5 py-12 text-center">
-              <p className="text-base font-semibold text-ink">Nothing needs a signature yet</p>
-              <p className="mt-1 text-sm text-ink/65">Switch on &ldquo;Requires signature&rdquo; for a website policy, or create your own document.</p>
+            <div className="p-4">
+              <EmptyState
+                title="Nothing needs a signature yet"
+                icon="fileCheck"
+                action={
+                  <Button variant="primary" icon="plus" onClick={() => setCreating(true)}>
+                    New document to sign
+                  </Button>
+                }
+              >
+                Switch on &ldquo;Requires signature&rdquo; for a website policy, or create your own document.
+              </EmptyState>
             </div>
           ) : (
             <ul className="divide-y divide-gold-light/70">
@@ -609,7 +617,7 @@ function DocumentsContent() {
                     <div className="min-w-0 flex-1 basis-56">
                       <p className="truncate text-sm font-semibold text-ink">{d.title}</p>
                       <p className="text-xs text-ink/65">
-                        {audienceText(d.target_roles)} · {d.source === "portal" ? "Created here" : d.source === "policy" ? "Website policy" : "From Sanity"}
+                        {audienceText(d.target_roles)} · {d.source === "portal" ? "Created here" : d.source === "policy" ? "Website policy" : "From the website"}
                       </p>
                     </div>
                     {prog && <Bar signed={prog.signed_count} required={prog.required_count} />}
@@ -618,13 +626,13 @@ function DocumentsContent() {
                         type="button"
                         disabled={busyId === d.id}
                         onClick={() => remind(d.id, waiting, d.title)}
-                        className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream disabled:opacity-50"
+                        className={btn("secondary", "sm")}
                       >
                         {busyId === d.id ? "Sending…" : `Email ${waiting} to sign`}
                       </button>
                     )}
                     {d.file_url && (
-                      <a href={absoluteFileUrl(d.file_url)} target="_blank" rel="noreferrer" className="text-sm font-medium text-teal-700 hover:underline">
+                      <a href={absoluteFileUrl(d.file_url)} target="_blank" rel="noreferrer" className={ui.btnLink}>
                         Open
                       </a>
                     )}
@@ -637,13 +645,13 @@ function DocumentsContent() {
                           if (!supabase || !path) return;
                           if (!(await openSignableFile(supabase, path))) setNote("Couldn't open that file just now.");
                         }}
-                        className="text-sm font-medium text-teal-700 hover:underline"
+                        className={ui.btnLink}
                       >
                         {d.file_path ? "Open" : "Open Word file"}
                       </button>
                     )}
                     {d.source !== "sanity" && (
-                      <button type="button" disabled={busyId === d.id} onClick={() => stopSigning(d)} className="text-sm font-medium text-ink/65 hover:text-red-700 disabled:opacity-50">
+                      <button type="button" disabled={busyId === d.id} onClick={() => stopSigning(d)} className={ui.btnLinkDanger}>
                         Stop asking
                       </button>
                     )}
@@ -658,8 +666,8 @@ function DocumentsContent() {
       {tab === "outstanding" && (
         <div className="rounded-2xl border border-gold-light bg-white">
           <div className="flex flex-wrap gap-3 border-b border-gold-light px-5 py-3">
-            <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search by name or email…" className="min-w-[200px] flex-1 rounded-lg border border-gold-light px-3 py-2 text-sm" />
-            <select value={docFilter} onChange={(e) => setDocFilter(e.target.value)} className="rounded-lg border border-gold-light px-3 py-2 text-sm" aria-label="Document">
+            <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search by name or email…" aria-label="Search by name or email" className={`${ui.input} min-w-[200px] flex-1`} />
+            <select value={docFilter} onChange={(e) => setDocFilter(e.target.value)} className={`${ui.select} !w-auto max-w-full`} aria-label="Document">
               <option value="all">All documents</option>
               {[...new Set((outstanding || []).map((o) => o.title))].map((t) => (
                 <option key={t} value={t}>
@@ -672,20 +680,20 @@ function DocumentsContent() {
             <div className="flex flex-wrap items-center gap-2 border-b border-gold-light bg-cream px-5 py-2 text-sm">
               <span className="text-ink/70">{picked.size} selected.</span>
               {[...pickedByDoc.entries()].map(([id, g]) => (
-                <button key={id} type="button" onClick={() => setRecord({ documentId: id, title: g.title, targets: g.targets })} className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs font-semibold text-white hover:bg-gold-900">
+                <button key={id} type="button" onClick={() => setRecord({ documentId: id, title: g.title, targets: g.targets })} className={btn("primary", "sm")}>
                   Record {g.targets.length} by hand: {g.title}
                 </button>
               ))}
-              <button type="button" onClick={() => setPicked(new Set())} className="text-xs text-ink/65 underline">
-                Clear
-              </button>
+              <Button variant="ghost" size="sm" onClick={() => setPicked(new Set())}>
+                Clear selection
+              </Button>
               {pickedByDoc.size > 1 && <span className="text-xs text-ink/65">Each document is recorded separately.</span>}
             </div>
           )}
           {outstanding === null ? (
             <div className="h-32 animate-pulse" />
           ) : outstandingShown.length === 0 ? (
-            <p className="px-5 py-10 text-center text-sm text-ink/65">{outstanding.length === 0 ? "Everyone is up to date." : "No one matches."}</p>
+            <p className="px-5 py-10 text-center text-sm text-ink/65">{outstanding.length === 0 ? "Everyone is up to date." : "No one matches. Try clearing the search or document filter."}</p>
           ) : (
             <ul className="divide-y divide-gold-light/70">
               {outstandingShown.map((person) => {
@@ -696,7 +704,7 @@ function DocumentsContent() {
                     <div className="flex flex-wrap items-center justify-between gap-2">
                       <span>
                         <span className="font-medium text-ink">{person.name}</span>
-                        <span className="ml-2 rounded-full bg-amber-100 px-2 py-0.5 text-xs font-semibold text-amber-900">{docList.length} to sign</span>
+                        <span className="ml-2"><StatusChip tone="warn">{docList.length} to sign</StatusChip></span>
                         {person.email && person.name !== person.email && <span className="ml-2 text-ink/65">{person.email}</span>}
                       </span>
                       <button
@@ -714,7 +722,7 @@ function DocumentsContent() {
                           setNote(sent > 0 ? `Reminder sent to ${person.name}.` : `No email sent to ${person.name} (they were reminded recently, or email isn't available).`, sent > 0 ? "good" : "bad");
                           await load();
                         }}
-                        className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-xs font-medium text-ink/80 hover:bg-cream disabled:opacity-50"
+                        className={btn("secondary", "sm")}
                       >
                         {busyId === key ? "Sending…" : "Remind"}
                       </button>
@@ -739,7 +747,7 @@ function DocumentsContent() {
                             />
                             <span>{title}</span>
                             {asked && <span className="text-xs text-ink/65">asked {new Date(asked).toLocaleDateString("en-GB", { day: "numeric", month: "short" })}</span>}
-                            <button type="button" onClick={() => setRecord({ documentId: id, title, targets: [{ user_id: person.user_id, name: person.name }] })} className="text-xs font-medium text-teal-700 underline">
+                            <button type="button" onClick={() => setRecord({ documentId: id, title, targets: [{ user_id: person.user_id, name: person.name }] })} className={`${ui.btnLink} !text-xs`}>
                               Record signature by hand
                             </button>
                           </li>

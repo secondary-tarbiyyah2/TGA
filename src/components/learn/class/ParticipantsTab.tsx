@@ -79,8 +79,8 @@ function AddModal({ classId, yearGroupId, yearGroupName, onClose, onDone }: { cl
             type="search"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search students"
-            aria-label="Search students"
+            placeholder="Search pupils"
+            aria-label="Search pupils"
             className="w-full rounded-lg border border-gold-light bg-white px-3 py-2 text-sm text-ink focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
           />
           {yearGroupId && (
@@ -94,7 +94,7 @@ function AddModal({ classId, yearGroupId, yearGroupName, onClose, onDone }: { cl
           {candidates === null ? (
             <p className="px-5 py-4 text-sm text-ink/65">Loading…</p>
           ) : shown.length === 0 ? (
-            <p className="px-5 py-4 text-sm text-ink/65">No matching students to add.</p>
+            <p className="px-5 py-4 text-sm text-ink/65">No matching pupils to add.</p>
           ) : (
             <ul className="divide-y divide-gold-light/70">
               {shown.map((c) => (
@@ -199,14 +199,14 @@ export function ParticipantsTab({ classId, onChanged }: { classId: string; onCha
 
       <div>
         <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
-          <h3 className="text-xs font-semibold uppercase tracking-wide text-ink/65">Students ({people.length})</h3>
+          <h3 className="text-xs font-semibold uppercase tracking-wide text-ink/65">Pupils ({people.length})</h3>
           <button type="button" onClick={() => setAdding(true)} className="rounded-lg bg-gold-700 px-3 py-1.5 text-sm font-medium text-white hover:bg-gold-900">
             + Add participants
           </button>
         </div>
         {message && <p className="mb-2 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{message}</p>}
         {people.length === 0 ? (
-          <p className="text-sm text-ink/65">No students enrolled yet.</p>
+          <p className="text-sm text-ink/65">No pupils enrolled yet.</p>
         ) : (
           <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
             {people.map((p) => (

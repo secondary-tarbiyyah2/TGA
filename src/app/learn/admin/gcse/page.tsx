@@ -10,6 +10,7 @@ import { GcseInterventions } from "@/components/learn/gcse/GcseInterventions";
 import { isGcseYear } from "@/lib/learn/gcse";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { Tabs, tabPanelProps } from "@/components/learn/Tabs";
+import { ui } from "@/components/learn/ui";
 
 type Tab = "overview" | "mocks" | "interventions" | "enter";
 const TABS: { id: Tab; label: string }[] = [
@@ -68,11 +69,11 @@ function AdminGcseContent() {
         {tab === "interventions" && <GcseInterventions />}
         {tab === "enter" && (
           <>
-            <div className="mb-6 rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6">
-              <h2 className="font-serif text-h3 font-semibold text-ink">Enter or edit grades for a class</h2>
+            <div className={`mb-6 ${ui.card}`}>
+              <h2 className={ui.sectionTitle}>Enter or edit grades for a class</h2>
               <p className="mt-1 text-sm text-ink/65">Fill down, paste from a spreadsheet, or take actuals from assessments, then save once.</p>
-              <select value={classId} onChange={(e) => setClassId(e.target.value)} aria-label="GCSE class" className="mt-3 rounded-md border border-gold-light/60 px-3 py-2 text-sm">
-                <option value="">Choose a Year 10 / 11 class…</option>
+              <select value={classId} onChange={(e) => setClassId(e.target.value)} aria-label="GCSE class" className={`mt-3 ${ui.select} sm:max-w-sm`}>
+                <option value="">Choose a Year 10 or 11 class…</option>
                 {classGroups.map((g) =>
                   classGroups.length === 1 ? (
                     g.list.map((c) => (

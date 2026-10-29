@@ -5,6 +5,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { isDefaultRow, MAX_TEACHER_LESSONS_PER_WEEK, rowFor, teacherFor, teacherLoad, todayIso, type CstRow } from "@/lib/learn/teacherFor";
 import { dangerBtn, ghostBtn, inputCls, Notice, primaryBtn } from "./shared";
 import type { ClassRow, ClassTeacher, Subject, Teacher, YearGroup } from "./shared";
+import { btn } from "@/components/learn/ui";
 
 type Props = {
   classes: ClassRow[];
@@ -146,7 +147,7 @@ export function TeacherMatrix({ classes, yearGroups, subjects, teachers, classTe
                       return (
                         <td key={s.id} className="px-2 py-1.5">
                           {showAllSubjects && (
-                            <button type="button" className="rounded-lg border border-dashed border-gold-light px-2 py-1 text-ink/65 hover:bg-cream" aria-label={`Add ${s.name} to ${c.name}`} onClick={() => setCell({ classId: c.id, subjectId: s.id })}>+</button>
+                            <button type="button" className={btn("secondary", "sm")} aria-label={`Add ${s.name} to ${c.name}`} onClick={() => setCell({ classId: c.id, subjectId: s.id })}>+</button>
                           )}
                         </td>
                       );

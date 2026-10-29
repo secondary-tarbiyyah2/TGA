@@ -224,7 +224,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       icon: "settings",
       group: "School office",
       tabs: [
-        { href: "/admin/settings", label: "General", hint: "Bursary seats, Microsoft 365 and site options" },
+        { href: "/admin/settings", label: "General", hint: "School details, alerts, clock-in and Microsoft 365" },
         { href: "/admin/academic", label: "Academic setup", hint: "Years, terms, year groups, classes and subjects", icon: "layers" },
         { href: "/admin/content", label: "Website", hint: "Pages on the public site", icon: "globe" },
         { href: "/admin/quiz", label: "Quiz and sample weeks", hint: "Eligibility quiz and timetables", icon: "bookOpenCheck", headOnly: true },
@@ -404,7 +404,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       icon: "chartLine",
       tabs: [
         { href: "/student/reports", label: "Reports", icon: "fileText" },
-        { href: "/student/behaviour", label: "Behaviour", icon: "heartHandshake" },
+        { href: "/student/behaviour", label: "Merits", hint: "Your merits, badges and house points", icon: "heartHandshake" },
       ],
     },
     {

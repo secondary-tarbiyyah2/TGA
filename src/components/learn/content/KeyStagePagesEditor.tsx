@@ -5,7 +5,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { MAIN_SITE_ORIGIN } from "@/lib/learn/origin";
 import { Card } from "@/components/learn/Card";
 import { triggerPublish } from "@/lib/learn/publishSiteContent";
-import { ui } from "@/components/learn/ui";
+import { btn, ui } from "@/components/learn/ui";
 
 type WeeklyRow = { subject: string; lessons: number | string };
 type Row = {
@@ -151,7 +151,7 @@ export function KeyStagePagesEditor() {
                     </tbody>
                   </table>
                   <div className="mt-2 flex flex-wrap items-center justify-between gap-2">
-                    <button type="button" onClick={() => update(r.slug, { weekly: [...r.weekly, { subject: "", lessons: "" }] })} className="rounded-full border border-gold-light bg-white px-3 py-1 text-xs font-medium text-ink/80 hover:bg-cream">Add a subject row</button>
+                    <button type="button" onClick={() => update(r.slug, { weekly: [...r.weekly, { subject: "", lessons: "" }] })} className={btn("secondary", "sm")}>Add a subject row</button>
                     <p className="text-xs text-ink/65">Rows add up to {lessonsTotal(r)} lessons a week.</p>
                   </div>
                 </fieldset>
@@ -178,8 +178,8 @@ export function KeyStagePagesEditor() {
                   </label>
                 </div>
                 <div className="flex gap-2">
-                  <button type="button" onClick={() => save(r)} disabled={busy} className="rounded-full bg-gold-700 px-4 py-1.5 text-xs font-semibold text-white hover:bg-gold-900 disabled:opacity-60">{busy ? "Working…" : "Save & publish"}</button>
-                  <button type="button" onClick={() => { setOpen(null); load(); }} className="rounded-full border border-gold-light/60 px-4 py-1.5 text-xs text-ink/70 hover:bg-cream">Cancel</button>
+                  <button type="button" onClick={() => save(r)} disabled={busy} className={btn("primary", "sm")}>{busy ? "Working…" : "Save & publish"}</button>
+                  <button type="button" onClick={() => { setOpen(null); load(); }} className={btn("secondary", "sm")}>Cancel</button>
                 </div>
               </div>
             )}

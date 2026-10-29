@@ -433,7 +433,7 @@ export function ChildDetailsForm() {
             )}
           </section>
 
-          <div ref={tabsRef} className="flex scroll-mt-20 flex-wrap gap-2" role="tablist" aria-label="Sections">
+          <div ref={tabsRef} className="-mx-4 flex scroll-mt-20 gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:px-0" role="tablist" aria-label="Sections">
             {STEPS.map((s, i) => (
               <button
                 key={s.key}
@@ -445,10 +445,17 @@ export function ChildDetailsForm() {
                   setError(null);
                   setSaved(null);
                 }}
-                className={`rounded-full border px-3 py-1.5 text-sm font-medium ${step === s.key ? "border-teal-600 bg-teal-600 text-white" : "border-gold-light bg-white text-ink/70 hover:bg-cream"}`}
+                className={`inline-flex min-h-10 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border px-3 py-1.5 text-sm font-medium ${step === s.key ? "border-teal-600 bg-teal-600 text-white" : "border-gold-light bg-white text-ink/70 hover:bg-cream"}`}
               >
                 {i + 1}. {s.label}
-                {stepOk(s.key) && details ? <span aria-label="done"> ✓</span> : <span className="ml-1 text-[10px] font-semibold uppercase" aria-label="required">{step === s.key ? "" : "Required"}</span>}
+                {stepOk(s.key) && details ? (
+                  <span aria-label="done">✓</span>
+                ) : (
+                  <>
+                    <span aria-hidden="true" className={`h-2 w-2 rounded-full ${step === s.key ? "bg-white" : "bg-red-600"}`} />
+                    <span className="sr-only">still to do</span>
+                  </>
+                )}
               </button>
             ))}
           </div>

@@ -8,7 +8,7 @@ import { PageHeader } from "@/components/learn/PageHeader";
 import { AddPersonModal, type PersonType } from "@/components/learn/people/AddPersonModal";
 import { PeopleList } from "@/components/learn/people/PeopleList";
 import { usePeople } from "@/components/learn/people/usePeople";
-import { GOLD_BUTTON } from "@/components/learn/people/shared";
+import { Button } from "@/components/learn/ui";
 
 type ModalState = { open: boolean; type?: PersonType; parentId?: string; nonce: number };
 
@@ -24,10 +24,10 @@ function PeopleContent() {
       <PageHeader
         title="People"
         subtitle="Staff (including teachers) and families. Adults get an email to set their own password; pupils can have a username login instead."
-        actions={
-          <button type="button" onClick={() => openModal()} className={GOLD_BUTTON}>
-            + Add person
-          </button>
+        action={
+          <Button variant="primary" icon="plus" onClick={() => openModal()}>
+            Add person
+          </Button>
         }
       />
       <PeopleList

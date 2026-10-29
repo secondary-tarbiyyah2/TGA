@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { btn, ui } from "@/components/learn/ui";
 
 type YearGroup = { id: string; name: string };
 type Run = { id: string; label: string; status: string; academic_year_id: string };
@@ -130,7 +131,7 @@ export function SampleWeeksPanel() {
                   value={runId}
                   onChange={(e) => setChoice((cur) => ({ ...cur, [yg.id]: e.target.value }))}
                   aria-label={`Timetable for ${yg.name}`}
-                  className="rounded-lg border border-gold-light/60 px-3 py-2 text-sm"
+                  className={`${ui.select} !w-auto`}
                 >
                   <option value="" disabled>Choose a published timetable run…</option>
                   {runs.map((r) => (
@@ -142,7 +143,7 @@ export function SampleWeeksPanel() {
                     type="button"
                     disabled={saving === yg.id}
                     onClick={() => saveMark(yg.id, runId, "draft", existing)}
-                    className="rounded-lg border border-gold-light px-4 py-2 text-sm font-semibold hover:bg-cream bg-white text-ink/80 transition-colors"
+                    className={btn("secondary")}
                   >
                     Save draft
                   </button>
@@ -150,7 +151,7 @@ export function SampleWeeksPanel() {
                     type="button"
                     disabled={saving === yg.id}
                     onClick={() => saveMark(yg.id, runId, "review", existing)}
-                    className="rounded-lg border border-gold-light px-4 py-2 text-sm font-semibold hover:bg-cream bg-white text-ink/80 transition-colors"
+                    className={btn("secondary")}
                   >
                     Send to review
                   </button>
@@ -158,7 +159,7 @@ export function SampleWeeksPanel() {
                     type="button"
                     disabled={saving === yg.id}
                     onClick={() => saveMark(yg.id, runId, "published", existing)}
-                    className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 transition-colors disabled:opacity-50"
+                    className={btn("primary")}
                   >
                     Publish
                   </button>
@@ -197,7 +198,7 @@ export function SampleWeeksPanel() {
                       <button
                         type="button"
                         onClick={() => saveMark(yg.id, h.run_id, h.status as Mark["status"], existing)}
-                        className="shrink-0 rounded-lg border border-gold-light px-2 py-0.5 text-[11px] font-medium hover:bg-cream bg-white text-ink/80 transition-colors"
+                        className={`${btn("secondary", "sm")} shrink-0`}
                       >
                         Revert to this
                       </button>

@@ -6,6 +6,7 @@ import { formatGBP } from "@/lib/format";
 import { matchFeeBand } from "@/lib/learn/fees";
 import { parsePounds, round2, todayIso } from "./shared";
 import type { FeeBand } from "@/content/seed";
+import { btn } from "@/components/learn/ui";
 
 export type FamilyOpt = { id: string; name: string };
 export type ChildOpt = { id: string; name: string; parentId: string; yearGroupId: string | null; yearGroup: string | null };
@@ -217,7 +218,7 @@ export function NewChargeDialog({
                   ["Monthly", band.monthlyFee],
                 ] as [string, number][]
               ).map(([label, v]) => (
-                <button key={label} type="button" onClick={() => setAmount(v.toFixed(2))} className="rounded-full border border-gold-light bg-white px-2.5 py-1 font-medium text-ink/75 hover:bg-cream">
+                <button key={label} type="button" onClick={() => setAmount(v.toFixed(2))} className={btn("secondary", "sm")}>
                   {label} {formatGBP(v)}
                 </button>
               ))}
@@ -231,10 +232,10 @@ export function NewChargeDialog({
           {error && <p className="text-red-700">{error}</p>}
         </div>
         <div className="mt-5 flex justify-end gap-2">
-          <button type="button" onClick={onClose} className="rounded-lg border border-gold-light bg-white px-4 py-2 text-sm font-medium text-ink/80 hover:bg-cream">
+          <button type="button" onClick={onClose} className={btn("secondary")}>
             Cancel
           </button>
-          <button type="button" disabled={!valid || busy} onClick={save} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
+          <button type="button" disabled={!valid || busy} onClick={save} className={btn("primary")}>
             {busy ? "Creating…" : targets.length > 1 ? `Create ${targets.length} charges` : "Create charge"}
           </button>
         </div>

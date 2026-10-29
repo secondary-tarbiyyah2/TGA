@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
+import { StatusChip, ui } from "@/components/learn/ui";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { AdminShell } from "@/components/learn/AdminShell";
 import { DashboardWithPanel } from "@/components/learn/DashboardSidePanel";
@@ -21,7 +23,7 @@ const AUDIT_ACTION_LABELS: Record<string, string> = {
 };
 
 function humanizeAuditAction(action: string): string {
-  return AUDIT_ACTION_LABELS[action] || action.toLowerCase().replace(/_/g, " ");
+  return AUDIT_ACTION_LABELS[action] || `made a change (${action.toLowerCase().replace(/_/g, " ")})`;
 }
 
 type AuditRow = { id: number; actor_email: string | null; action: string; target_table: string | null; created_at: string };
@@ -48,12 +50,12 @@ function ActivityFeed() {
     <div className="h-full rounded-2xl border border-gold-light bg-white">
       <div className="flex items-center justify-between border-b border-gold-light px-5 py-3.5">
         <h2 className="text-sm font-semibold text-ink">Recent activity</h2>
-        <a href="/admin/audit-log" className="text-xs font-medium text-teal-700 hover:underline">
+        <Link href="/admin/audit-log" className={`${ui.btnLink} !text-xs`}>
           Full audit log
-        </a>
+        </Link>
       </div>
       {rows === null ? (
-        <p className="px-5 py-4 text-sm text-ink/65">Loading…</p>
+        <div className="m-5 h-24 animate-pulse rounded-xl bg-cream" aria-label="Loading" />
       ) : rows.length === 0 ? (
         <p className="px-5 py-4 text-sm text-ink/65">Nothing recorded yet.</p>
       ) : (
@@ -163,18 +165,18 @@ function TodayLessons({ lessons }: { lessons: TodayLessonRow[] | null }) {
   return (
     <div className="rounded-2xl border border-gold-light bg-white">
       <div className="flex items-center justify-between border-b border-gold-light px-5 py-3.5">
-        <h2 className="text-sm font-semibold text-ink">Today&apos;s live lessons</h2>
+        <h2 className="text-sm font-semibold text-ink">Today&apos;s lessons</h2>
         <span className="flex gap-3">
-          <a href="/admin/attendance" className="text-xs font-medium text-teal-700 hover:underline">
+          <Link href="/admin/attendance" className={`${ui.btnLink} !text-xs`}>
             Take registers
-          </a>
-          <a href="/admin/calendar" className="text-xs font-medium text-teal-700 hover:underline">
+          </Link>
+          <Link href="/admin/calendar" className={`${ui.btnLink} !text-xs`}>
             Calendar
-          </a>
+          </Link>
         </span>
       </div>
       {lessons === null ? (
-        <p className="px-5 py-4 text-sm text-ink/65">Loading…</p>
+        <div className="m-5 h-24 animate-pulse rounded-xl bg-cream" aria-label="Loading" />
       ) : lessons.length === 0 ? (
         <p className="px-5 py-4 text-sm text-ink/65">No lessons on the published timetable today.</p>
       ) : (
@@ -186,18 +188,18 @@ function TodayLessons({ lessons }: { lessons: TodayLessonRow[] | null }) {
                 <span className="w-24 shrink-0 font-medium tabular-nums text-ink/70">
                   {l.start_time.slice(0, 5)} to {l.end_time.slice(0, 5)}
                 </span>
-                <a href={`/admin/class?id=${l.class_id}`} className="min-w-0 flex-1 truncate font-medium text-ink hover:text-teal-700">
+                <Link href={`/admin/class?id=${l.class_id}`} className="min-w-0 flex-1 truncate font-medium text-ink hover:text-teal-700">
                   {l.className}
-                </a>
+                </Link>
                 {l.bbb_status === "live" && <span className="rounded-full bg-red-600 px-2 py-0.5 text-xs font-semibold text-white">Live</span>}
                 {started ? (
                   l.registered > 0 ? (
-                    <span className="rounded-full bg-green-50 px-2.5 py-0.5 text-xs font-medium text-green-800 ring-1 ring-inset ring-green-600/20">Register taken</span>
+                    <StatusChip tone="good">Register taken</StatusChip>
                   ) : (
-                    <span className="rounded-full bg-red-50 px-2.5 py-0.5 text-xs font-medium text-red-800 ring-1 ring-inset ring-red-600/20">Register missing</span>
+                    <StatusChip tone="bad">Register missing</StatusChip>
                   )
                 ) : (
-                  <span className="rounded-full bg-cream px-2.5 py-0.5 text-xs font-medium text-ink/65">Later</span>
+                  <StatusChip>Later</StatusChip>
                 )}
               </li>
             );
@@ -285,13 +287,15 @@ function DashboardContent() {
         <DashboardHero subtitle={myRoles} />
         <div className="grid gap-3 sm:grid-cols-2">
           {[
-            { href: "/admin/admissions", title: "Admissions", help: "Applications, calls and bookings." },
-            { href: "/admin/people", title: "People", help: "Add families and pupils once they are accepted." },
+            { href: "/admin/admissions", title: "Applications", help: "Applications, calls and bookings." },
+            { href: "/admin/assessments", title: "Entry assessments", help: "Set and mark each applicant's entry assessment." },
+            { href: "/admin/open-evening", title: "Open evenings", help: "Sessions, bookings and attendee lists." },
+            { href: "/admin/people", title: "Accounts", help: "Add families and pupils once they are accepted." },
           ].map((c) => (
-            <a key={c.href} href={c.href} className="rounded-2xl border border-gold-light bg-white p-5 transition hover:border-teal-500/40 hover:shadow-sm">
+            <Link key={c.href} href={c.href} className="rounded-2xl border border-gold-light bg-white p-5 transition hover:border-gold-500 hover:shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700">
               <h2 className="font-semibold text-ink">{c.title} &rarr;</h2>
               <p className="mt-1 text-sm text-ink/65">{c.help}</p>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
@@ -328,7 +332,7 @@ function DashboardContent() {
             status={statusOf(overdueMarking?.n)}
             href="/admin/homework"
           />
-          <StatTile label="Outstanding signatures" value={outstandingCount ?? "…"} status={statusOf(outstandingCount)} href="/admin/compliance" />
+          <StatTile label="Outstanding signatures" value={outstandingCount ?? "…"} status={statusOf(outstandingCount)} href="/admin/documents?tab=outstanding" />
           {isSafeguardingLead && <StatTile label="Flagged messages" value={flaggedCount ?? "…"} status={statusOf(flaggedCount)} href="/admin/compliance" />}
           {showReviews && (
             <StatTile

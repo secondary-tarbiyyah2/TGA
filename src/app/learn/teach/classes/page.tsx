@@ -11,7 +11,7 @@ function TeachClassesContent() {
   const classes = useViewerClasses(VIEWER);
   return (
     <>
-      <PageHeader crumbs={[{ label: "Home", href: "/teach/dashboard" }, { label: "My classes" }]} title="My classes" subtitle="Every class you teach or cover." />
+      <PageHeader title="My classes" subtitle="Every class you teach or cover." />
       <ClassGrid viewer={VIEWER} classes={classes} hrefFor={(c) => `/teach/class?id=${c.id}`} emptyLabel="You haven't been assigned to any classes yet." />
     </>
   );

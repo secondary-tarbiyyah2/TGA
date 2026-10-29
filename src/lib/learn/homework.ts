@@ -53,8 +53,9 @@ export function formatEdited(iso: string): string {
 /** One-line summary of what a student may hand in, e.g. "Typed answer, file upload (PDF, Photos & images)". */
 export function describeAllowed(hw: Homework, labels: { types: Record<SubmissionType, string>; files: Record<FileCategory, string> }): string {
   const types = submissionTypesOf(hw);
-  const parts = types.map((t) => labels.types[t]);
-  let out = parts.join(", ");
+  // "Typed answer, file upload or link": sentence case after the first item.
+  const parts = types.map((t, i) => (i === 0 ? labels.types[t] : labels.types[t].charAt(0).toLowerCase() + labels.types[t].slice(1)));
+  let out = parts.length > 1 ? `${parts.slice(0, -1).join(", ")} or ${parts[parts.length - 1]}` : parts.join("");
   if (types.includes("file")) {
     const cats = fileTypesOf(hw);
     if (cats.length > 0 && cats.length < ALL_FILE_CATEGORIES.length) out += ` (${cats.map((c) => labels.files[c]).join(", ")})`;

@@ -5,6 +5,7 @@ import { Card } from "@/components/learn/Card";
 import { useLearnSession } from "@/lib/learn/session";
 import { callEdgeFunction, edgeErrorMessage } from "@/lib/learn/edge";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { btn, ui } from "@/components/learn/ui";
 
 /**
  * Starts (or rejoins) the in-house video call for a booking, same
@@ -111,8 +112,8 @@ function StaffAvailabilityEditor({ staff, onStaffUpdated }: { staff: StaffRow; o
         <label className="text-sm font-medium text-ink">
           Teams meeting link
           <div className="mt-1 flex max-w-lg gap-2">
-            <input value={teamsUrl} onChange={(e) => setTeamsUrl(e.target.value)} type="url" placeholder="https://teams.microsoft.com/…" className="flex-1 rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
-            <button type="button" onClick={saveTeamsUrl} disabled={savingTeamsUrl} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold disabled:opacity-50 text-white hover:bg-gold-900 transition-colors">
+            <input value={teamsUrl} onChange={(e) => setTeamsUrl(e.target.value)} type="url" placeholder="https://teams.microsoft.com/…" className={`${ui.input} flex-1`} />
+            <button type="button" onClick={saveTeamsUrl} disabled={savingTeamsUrl} className={btn("primary")}>
               Save
             </button>
           </div>
@@ -149,7 +150,7 @@ function StaffAvailabilityEditor({ staff, onStaffUpdated }: { staff: StaffRow; o
         <form onSubmit={addRule} className="mt-3 flex flex-wrap items-end gap-2">
           <label className="text-xs text-ink">
             Day
-            <select name="weekday" className="mt-1 block rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm">
+            <select name="weekday" className={`${ui.select} mt-1 !w-auto`}>
               {WEEKDAYS.map((d, i) => (
                 <option key={d} value={i}>
                   {d}
@@ -159,13 +160,13 @@ function StaffAvailabilityEditor({ staff, onStaffUpdated }: { staff: StaffRow; o
           </label>
           <label className="text-xs text-ink">
             From
-            <input name="start_time" type="time" required defaultValue="09:00" className="mt-1 block rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm" />
+            <input name="start_time" type="time" required defaultValue="09:00" className={`${ui.input} mt-1 !w-auto`} />
           </label>
           <label className="text-xs text-ink">
             To
-            <input name="end_time" type="time" required defaultValue="15:00" className="mt-1 block rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm" />
+            <input name="end_time" type="time" required defaultValue="15:00" className={`${ui.input} mt-1 !w-auto`} />
           </label>
-          <button type="submit" className="rounded-lg bg-gold-700 px-4 py-1.5 text-sm font-semibold text-white hover:bg-gold-900 transition-colors">
+          <button type="submit" className={btn("primary")}>
             Add
           </button>
         </form>
@@ -256,7 +257,7 @@ function StaffBookingsPanel({ staffId }: { staffId: string }) {
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <p className="text-sm font-medium text-ink">Upcoming bookings</p>
-        <button type="button" onClick={exportCsv} className="rounded-lg border border-gold-light px-3 py-1.5 text-xs font-medium hover:bg-cream bg-white text-ink/80 transition-colors">
+        <button type="button" onClick={exportCsv} className={btn("secondary", "sm")}>
           Export CSV
         </button>
       </div>
@@ -281,11 +282,11 @@ function StaffBookingsPanel({ staffId }: { staffId: string }) {
                 type="button"
                 onClick={() => joinCall(b.id)}
                 disabled={callState[b.id] === "starting"}
-                className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs font-semibold text-white hover:bg-gold-900 disabled:opacity-50 transition-colors"
+                className={btn("primary", "sm")}
               >
                 {callState[b.id] === "starting" ? "Starting…" : "Start call"}
               </button>
-              <button type="button" onClick={() => setOutcome(b.id, "completed")} className="rounded-lg border border-gold-light px-3 py-1.5 text-xs hover:bg-cream bg-white text-ink/80 font-medium transition-colors">
+              <button type="button" onClick={() => setOutcome(b.id, "completed")} className={btn("secondary", "sm")}>
                 Mark completed
               </button>
               <button type="button" onClick={() => setOutcome(b.id, "no_show")} className="rounded-lg border border-red-300 px-3 py-1.5 text-xs text-red-700 hover:bg-red-50 font-medium transition-colors">

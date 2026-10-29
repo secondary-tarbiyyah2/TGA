@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { btn, ui } from "@/components/learn/ui";
 
 type RuleRow = {
   id: number;
@@ -97,11 +98,11 @@ function RuleCard({ rule, due, onChanged }: { rule: RuleRow; due: PreviewRow[]; 
       <div className="mt-3 grid gap-2 sm:grid-cols-4">
         <label className="text-xs text-ink/70">
           Keep for (months)
-          <input type="text" inputMode="decimal" min={1} max={600} value={months} onChange={(e) => setMonths(e.target.value)} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm" />
+          <input type="text" inputMode="decimal" min={1} max={600} value={months} onChange={(e) => setMonths(e.target.value)} className={`${ui.input} mt-1`} />
         </label>
         <label className="text-xs text-ink/70">
           Then
-          <select value={action} onChange={(e) => setAction(e.target.value)} className="mt-1 block w-full rounded-lg border border-gold-light/60 bg-white px-2 py-1.5 text-sm">
+          <select value={action} onChange={(e) => setAction(e.target.value)} className={`${ui.select} mt-1`}>
             {rule.allowed_actions.map((a) => (
               <option key={a} value={a}>
                 {a === "delete" ? "Delete" : "Anonymise"}
@@ -113,14 +114,14 @@ function RuleCard({ rule, due, onChanged }: { rule: RuleRow; due: PreviewRow[]; 
           <input type="checkbox" checked={enabled} onChange={(e) => setEnabled(e.target.checked)} /> Rule is on
         </label>
         <div className="flex items-end">
-          <button type="button" onClick={save} disabled={busy || !dirty || !validMonths} className="rounded-lg bg-gold-700 px-4 py-1.5 text-xs font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
+          <button type="button" onClick={save} disabled={busy || !dirty || !validMonths} className={btn("primary", "sm")}>
             Save rule
           </button>
         </div>
       </div>
       <label className="mt-2 block text-xs text-ink/70">
         Basis for this period (your note - check with legal / ICO guidance)
-        <textarea value={basis} onChange={(e) => setBasis(e.target.value)} rows={2} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm" />
+        <textarea value={basis} onChange={(e) => setBasis(e.target.value)} rows={2} className={`${ui.textarea} mt-1`} />
       </label>
       <p className="mt-1 text-xs text-ink/65">
         {rule.last_run_at ? `Last run ${new Date(rule.last_run_at).toLocaleString("en-GB")}: ${rule.last_run_count ?? 0} record(s).` : "Never run."}
@@ -162,7 +163,7 @@ function RuleCard({ rule, due, onChanged }: { rule: RuleRow; due: PreviewRow[]; 
                     <input type="checkbox" checked={reviewed} onChange={(e) => setReviewed(e.target.checked)} className="mt-0.5" />
                     I have reviewed this list and these {runnable.length} record(s) are no longer needed.
                   </label>
-                  <button type="button" onClick={run} disabled={busy || !reviewed} className="rounded-lg bg-red-700 px-4 py-1.5 text-xs font-semibold text-white hover:bg-red-800 disabled:opacity-50">
+                  <button type="button" onClick={run} disabled={busy || !reviewed} className={btn("danger", "sm")}>
                     {rule.action === "delete" ? `Delete ${runnable.length} record(s) now` : `Anonymise ${runnable.length} record(s) now`}
                   </button>
                 </div>

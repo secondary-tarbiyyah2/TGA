@@ -5,7 +5,7 @@ import type { ApplicationRow } from "@/components/admissions/applicationShared";
 import { sendAdmissionsEmail, type SendOutcome } from "@/components/learn/admissions/admissionsData";
 import { findUnresolvedTokens } from "@/components/learn/admissions/messageTemplates";
 import { TokenEditor } from "@/components/learn/admissions/TokenEditor";
-import { ui } from "@/components/learn/ui";
+import { btn, ui } from "@/components/learn/ui";
 
 export { sendAdmissionsEmail };
 export type { SendOutcome };
@@ -73,7 +73,7 @@ export function EmailComposer({
       </div>
       {unresolved.length > 0 && <p role="alert" className="text-xs text-red-700">Unfilled values to fix (highlighted in red): {unresolved.map((t) => `{{${t}}}`).join(", ")}</p>}
       <div className="flex items-center gap-3">
-        <button type="button" onClick={send} disabled={sending || !subject.trim() || !body.trim()} className="rounded-lg bg-gold-700 px-4 py-1.5 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
+        <button type="button" onClick={send} disabled={sending || !subject.trim() || !body.trim()} className={btn("primary")}>
           {sending ? "Sending…" : sendLabel}
         </button>
         <button type="button" onClick={onCancel} disabled={sending} className="text-sm text-ink/70 underline">Cancel</button>

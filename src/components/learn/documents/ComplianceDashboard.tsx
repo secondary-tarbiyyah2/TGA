@@ -3,11 +3,14 @@
 import { useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
 import { requestSignatures } from "@/components/learn/documents/audience";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import Link from "next/link";
 import { Tabs } from "@/components/learn/Tabs";
+import { btn, ui } from "@/components/learn/ui";
 
 type Severity = "critical" | "high" | "medium";
 type Status = "open" | "acknowledged" | "resolved";
 type Kind = "absence" | "escalation" | "flagged_message";
+const KIND_LABEL: Record<Kind, string> = { absence: "Unexplained absence", escalation: "Safeguarding escalation", flagged_message: "Flagged message" };
 type StatusRow = { alert_kind: Kind; alert_ref: string; status: Status; acknowledged_by: string | null; acknowledged_at: string | null; resolved_by: string | null; resolved_at: string | null; note: string | null };
 type Alert = {
   key: string;
@@ -289,11 +292,11 @@ export function ComplianceDashboard({ isHeadTeacher, alertsExtra, topExtra, reco
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div className="flex flex-wrap gap-1.5">
               {(["active", "open", "acknowledged", "resolved", "all"] as const).map((f) => (
-                <button key={f} type="button" aria-pressed={filter === f} onClick={() => setFilter(f)} className={`rounded-full border px-3 py-1 text-xs font-medium ${filter === f ? "border-teal-700 bg-teal-700 text-white" : "border-gold-light bg-white text-ink/70 hover:bg-cream"}`}>
+                <button key={f} type="button" aria-pressed={filter === f} onClick={() => setFilter(f)} className={filter === f ? ui.chipOn : ui.chip}>
                   {f === "active" ? "Needs action" : f[0].toUpperCase() + f.slice(1)}
                 </button>
               ))}
-              <select value={kindFilter} onChange={(e) => setKindFilter(e.target.value as Kind | "all")} aria-label="Type of alert" className="rounded-full border border-gold-light bg-white px-3 py-1 text-xs font-medium text-ink/70">
+              <select value={kindFilter} onChange={(e) => setKindFilter(e.target.value as Kind | "all")} aria-label="Type of alert" className={`${ui.select} !w-auto`}>
                 <option value="all">All types</option>
                 <option value="flagged_message">Flagged messages</option>
                 <option value="escalation">Safeguarding escalations</option>
@@ -304,10 +307,10 @@ export function ComplianceDashboard({ isHeadTeacher, alertsExtra, topExtra, reco
               <button
                 type="button"
                 onClick={() =>
-                  downloadCsv("safeguarding-alerts.csv", ["severity", "type", "pupil_or_sender_and_summary", "detail", "raised", "status", "acknowledged_by", "acknowledged_at", "resolved_by", "resolved_at", "note"],
-                    (alerts || []).map((a) => [SEVERITY_STYLE[a.severity].label, a.kind, a.title, a.detail, a.when, stateOf(a), names[a.state?.acknowledged_by || ""] || "", a.state?.acknowledged_at || "", names[a.state?.resolved_by || ""] || "", a.state?.resolved_at || "", a.state?.note || ""]))
+                  downloadCsv("safeguarding-alerts.csv", ["Severity", "Type", "Pupil or sender, and summary", "Detail", "Raised", "Status", "Acknowledged by", "Acknowledged at", "Resolved by", "Resolved at", "Note"],
+                    (alerts || []).map((a) => [SEVERITY_STYLE[a.severity].label, KIND_LABEL[a.kind], a.title, a.detail, a.when, stateOf(a), names[a.state?.acknowledged_by || ""] || "", a.state?.acknowledged_at || "", names[a.state?.resolved_by || ""] || "", a.state?.resolved_at || "", a.state?.note || ""]))
                 }
-                className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-xs font-medium text-ink/80 hover:bg-cream"
+                className={btn("secondary", "sm")}
               >
                 Export alerts (CSV)
               </button>
@@ -341,7 +344,7 @@ export function ComplianceDashboard({ isHeadTeacher, alertsExtra, topExtra, reco
                             <p className="mt-0.5 text-xs text-ink/65">
                               Raised {fmt(a.when)}
                               {a.body && (
-                                <button type="button" onClick={() => setOpenBody(openBody === a.key ? null : a.key)} className="ml-2 font-medium text-teal-700 underline">
+                                <button type="button" onClick={() => setOpenBody(openBody === a.key ? null : a.key)} className={`${ui.btnLink} ml-2 !text-xs`}>
                                   {openBody === a.key ? "Hide message" : "Show message"}
                                 </button>
                               )}
@@ -351,10 +354,10 @@ export function ComplianceDashboard({ isHeadTeacher, alertsExtra, topExtra, reco
                           <div className="flex items-center gap-2">
                             <span className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${s === "open" ? "bg-red-100 text-red-800" : s === "acknowledged" ? "bg-amber-100 text-amber-900" : "bg-green-100 text-green-800"}`}>{s[0].toUpperCase() + s.slice(1)}</span>
                             {s === "open" && (
-                              <button type="button" disabled={busy === a.key} onClick={() => setStatus(a, "acknowledged")} className="rounded-lg border border-gold-light bg-white px-3 py-1 text-xs font-medium text-ink/80 hover:bg-cream disabled:opacity-50">Acknowledge</button>
+                              <button type="button" disabled={busy === a.key} onClick={() => setStatus(a, "acknowledged")} className={btn("secondary", "sm")}>Acknowledge</button>
                             )}
                             {s !== "resolved" && (
-                              <button type="button" onClick={() => { setResolving(resolving === a.key ? null : a.key); setNote(""); }} className="rounded-lg bg-gold-700 px-3 py-1 text-xs font-semibold text-white hover:bg-gold-900">Resolve</button>
+                              <button type="button" onClick={() => { setResolving(resolving === a.key ? null : a.key); setNote(""); }} className={btn("primary", "sm")}>Resolve</button>
                             )}
                           </div>
                         </div>
@@ -369,9 +372,9 @@ export function ComplianceDashboard({ isHeadTeacher, alertsExtra, topExtra, reco
                           <div className="mt-2 space-y-2">
                             <label className="block text-xs font-medium text-ink/70">
                               What was done? (required)
-                              <textarea rows={2} value={note} onChange={(e) => setNote(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light bg-white px-3 py-2 text-sm" />
+                              <textarea rows={2} value={note} onChange={(e) => setNote(e.target.value)} className={`mt-1 ${ui.textarea}`} />
                             </label>
-                            <button type="button" disabled={!note.trim() || busy === a.key} onClick={() => setStatus(a, "resolved", note.trim())} className="rounded-lg bg-gold-700 px-4 py-1.5 text-xs font-semibold text-white hover:bg-gold-900 disabled:opacity-50">Mark resolved</button>
+                            <button type="button" disabled={!note.trim() || busy === a.key} onClick={() => setStatus(a, "resolved", note.trim())} className={btn("primary", "sm")}>Mark resolved</button>
                           </div>
                         )}
                       </li>
@@ -391,13 +394,13 @@ export function ComplianceDashboard({ isHeadTeacher, alertsExtra, topExtra, reco
             <p className="text-sm text-ink/70">{outstanding === null ? "Loading…" : people.length === 0 ? "Everyone is up to date." : `${people.length} ${people.length === 1 ? "person has" : "people have"} documents to sign.`}</p>
             <div className="flex gap-2">
               {people.length > 0 && (
-                <button type="button" disabled={busy === "all"} onClick={remindAll} className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs font-semibold text-white hover:bg-gold-900 disabled:opacity-50">{busy === "all" ? "Sending…" : "Remind everyone"}</button>
+                <button type="button" disabled={busy === "all"} onClick={remindAll} className={btn("secondary", "sm")}>{busy === "all" ? "Sending…" : "Remind everyone"}</button>
               )}
               {isHeadTeacher && people.length > 0 && (
                 <button
                   type="button"
-                  onClick={() => downloadCsv("outstanding-signatures.csv", ["person", "email", "document", "days_overdue"], people.flatMap((p) => [...p.docs].map(([title, d]) => [p.name, p.email, title, Math.max(0, daysOverdue(d.since))])))}
-                  className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-xs font-medium text-ink/80 hover:bg-cream"
+                  onClick={() => downloadCsv("outstanding-signatures.csv", ["Person", "Email", "Document", "Days overdue"], people.flatMap((p) => [...p.docs].map(([title, d]) => [p.name, p.email, title, Math.max(0, daysOverdue(d.since))])))}
+                  className={btn("secondary", "sm")}
                 >
                   Export (CSV)
                 </button>
@@ -414,14 +417,14 @@ export function ComplianceDashboard({ isHeadTeacher, alertsExtra, topExtra, reco
                       <span className="font-medium text-ink">{p.name}</span>
                       <span className="ml-2 rounded-full bg-amber-100 px-2 py-0.5 text-xs font-semibold text-amber-900">{list.length} to sign</span>
                     </span>
-                    <button type="button" disabled={busy === `p-${p.user_id}`} onClick={() => remindPerson(p)} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-xs font-medium text-ink/80 hover:bg-cream disabled:opacity-50">{busy === `p-${p.user_id}` ? "Sending…" : "Remind"}</button>
+                    <button type="button" disabled={busy === `p-${p.user_id}`} onClick={() => remindPerson(p)} className={btn("secondary", "sm")}>{busy === `p-${p.user_id}` ? "Sending…" : "Remind"}</button>
                   </div>
                   <ul className="mt-1 space-y-0.5">
                     {list.map(([title, d]) => {
                       const over = daysOverdue(d.since);
                       return (
                         <li key={d.id} className={over > 0 ? "text-red-800" : "text-ink/65"}>
-                          {d.critical && <span className="mr-1.5 rounded bg-red-600 px-1.5 py-0.5 text-[10px] font-semibold text-white">CRITICAL</span>}
+                          {d.critical && <span className="mr-1.5 rounded-full bg-red-50 px-2 py-0.5 text-[11px] font-semibold text-red-800 ring-1 ring-inset ring-red-600/20">Critical</span>}
                           {title}
                           {over > 0 && <span className="ml-2 text-xs font-semibold">overdue {over} day{over === 1 ? "" : "s"}</span>}
                         </li>
@@ -432,7 +435,7 @@ export function ComplianceDashboard({ isHeadTeacher, alertsExtra, topExtra, reco
               );
             })}
           </ul>
-          <p className="border-t border-gold-light px-5 py-3 text-xs text-ink/65">Overdue means more than a week since the person was first asked (or since the document was set up). People can sign in the portal or from the emailed link.</p>
+          <p className="border-t border-gold-light px-5 py-3 text-xs text-ink/65">Overdue means more than a week since the person was first asked (or since the document was set up). People can sign in the portal or from the emailed link. To record a paper signature or change who must sign, use <Link href="/admin/documents?tab=outstanding" className="font-medium text-teal-700 underline">Policies and signatures</Link>.</p>
         </div>
       )}
 

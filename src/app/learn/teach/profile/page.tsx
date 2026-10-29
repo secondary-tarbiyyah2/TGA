@@ -26,7 +26,7 @@ function ProfileContent() {
 
   return (
     <div className="max-w-2xl">
-      <PageHeader title="My profile" subtitle="This is what families and students of your classes see under Meet your teachers. Safeguarding and HR records are never shown." />
+      <PageHeader title="My profile" subtitle="This is what families and pupils in your classes see under Meet your teachers. Safeguarding and HR records are never shown." />
       <div className="rounded-2xl border border-gold-light bg-white p-6">{userId ? <StaffProfileForm userId={userId} fullName={name || "Teacher"} /> : <div className="h-40 animate-pulse rounded-lg bg-cream" />}</div>
     </div>
   );

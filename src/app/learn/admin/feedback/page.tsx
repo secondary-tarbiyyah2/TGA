@@ -7,6 +7,7 @@ import { PageHeader } from "@/components/learn/PageHeader";
 import { Tabs, tabPanelProps } from "@/components/learn/Tabs";
 import { Icon, type IconName } from "@/components/learn/Icon";
 import { ActivityList } from "@/components/learn/feedback/ActivityList";
+import { Button, ui } from "@/components/learn/ui";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { learnRoleLabel, type LearnRole } from "@/lib/learn/session";
 import {
@@ -88,7 +89,7 @@ function FeedbackAdmin() {
         title="Feedback and requests"
         subtitle="Problems, ideas and questions sent from the portal by staff, parents and pupils. Each comes with what the person was doing just before."
       />
-      {error && <p className="mb-4 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{error}</p>}
+      {error && <p role="alert" className="mb-4 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-800">{error}</p>}
 
       <Tabs
         items={[
@@ -107,8 +108,8 @@ function FeedbackAdmin() {
 
       <div {...tabPanelProps("feedback", view)}>
         <div className="mb-3 flex flex-wrap gap-2">
-          <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search title, name, page or FB-0001" aria-label="Search feedback" className="min-w-0 flex-1 rounded-lg border border-gold-light px-3 py-2 text-sm sm:max-w-sm" />
-          <select value={kind} onChange={(e) => setKind(e.target.value as FeedbackKind | "")} aria-label="Type" className="rounded-lg border border-gold-light px-3 py-2 text-sm">
+          <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search title, name, page or FB-0001" aria-label="Search feedback" className={`${ui.input} min-w-0 flex-1 sm:max-w-sm`} />
+          <select value={kind} onChange={(e) => setKind(e.target.value as FeedbackKind | "")} aria-label="Type" className={`${ui.select} !w-auto`}>
             <option value="">All types</option>
             {(Object.keys(KIND_LABEL) as FeedbackKind[]).map((k) => (
               <option key={k} value={k}>
@@ -124,7 +125,7 @@ function FeedbackAdmin() {
           <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">
             {q.trim() || kind ? "No feedback matches your search." : view === "new" ? "Nothing new. You're all caught up." : "Nothing here yet."}
             {(q.trim() || kind) && (
-              <button type="button" onClick={() => { setQ(""); setKind(""); }} className="ml-2 font-semibold text-teal-700 underline">
+              <button type="button" onClick={() => { setQ(""); setKind(""); }} className={`${ui.btnLink} ml-2`}>
                 Clear search
               </button>
             )}
@@ -262,11 +263,11 @@ function TicketDrawer({ ticket, onClose, onSaved }: { ticket: FeedbackTicket; on
           </section>
 
           <section className="space-y-3 rounded-xl border border-gold-light p-4">
-            <h3 className="text-sm font-semibold text-ink">Triage</h3>
+            <h3 className="text-sm font-semibold text-ink">Status and reply</h3>
             <div className="grid gap-3 sm:grid-cols-2">
               <label className="text-xs font-medium text-ink/70">
                 Status
-                <select value={status} onChange={(e) => setStatus(e.target.value as FeedbackStatus)} className="mt-1 w-full rounded-lg border border-gold-light px-3 py-2 text-sm text-ink">
+                <select value={status} onChange={(e) => setStatus(e.target.value as FeedbackStatus)} className={`mt-1 ${ui.select}`}>
                   {(Object.keys(STATUS_LABEL) as FeedbackStatus[]).map((s) => (
                     <option key={s} value={s}>
                       {STATUS_LABEL[s]}
@@ -276,7 +277,7 @@ function TicketDrawer({ ticket, onClose, onSaved }: { ticket: FeedbackTicket; on
               </label>
               <label className="text-xs font-medium text-ink/70">
                 Priority
-                <select value={priority} onChange={(e) => setPriority(e.target.value as FeedbackPriority)} className="mt-1 w-full rounded-lg border border-gold-light px-3 py-2 text-sm text-ink">
+                <select value={priority} onChange={(e) => setPriority(e.target.value as FeedbackPriority)} className={`mt-1 ${ui.select}`}>
                   {(Object.keys(PRIORITY_LABEL) as FeedbackPriority[]).map((p) => (
                     <option key={p} value={p}>
                       {PRIORITY_LABEL[p]}
@@ -287,7 +288,7 @@ function TicketDrawer({ ticket, onClose, onSaved }: { ticket: FeedbackTicket; on
             </div>
             <label className="block text-xs font-medium text-ink/70">
               Reply to {ticket.profiles?.full_name?.split(" ")[0] || "them"}
-              <textarea value={response} onChange={(e) => setResponse(e.target.value)} rows={4} maxLength={5000} placeholder="Thanks for letting us know. We've fixed this and it'll be live tomorrow." className="mt-1 w-full rounded-lg border border-gold-light px-3 py-2 text-sm text-ink" />
+              <textarea value={response} onChange={(e) => setResponse(e.target.value)} rows={4} maxLength={5000} placeholder="Thanks for letting us know. We've fixed this and it'll be live tomorrow." className={`mt-1 ${ui.textarea}`} />
               <span className="mt-1 block font-normal text-ink/65">They see this on their Your feedback page.</span>
             </label>
           </section>
@@ -343,12 +344,12 @@ function TicketDrawer({ ticket, onClose, onSaved }: { ticket: FeedbackTicket; on
               {note.text}
             </p>
           )}
-          <button type="button" onClick={requestClose} className="rounded-lg border border-gold-light px-4 py-2 text-sm font-medium text-ink hover:bg-cream">
+          <Button variant="ghost" onClick={requestClose}>
             Close
-          </button>
-          <button type="button" onClick={save} disabled={busy || !dirty} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
+          </Button>
+          <Button variant="primary" onClick={save} disabled={busy || !dirty}>
             {busy ? "Saving…" : "Save"}
-          </button>
+          </Button>
         </div>
       </aside>
     </div>

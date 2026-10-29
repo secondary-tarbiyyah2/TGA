@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { learnRoleLabel, type LearnRole } from "@/lib/learn/session";
 import { formatDateKey, ukToday } from "@/lib/learn/ukTime";
+import { btn, ui } from "@/components/learn/ui";
 
 type StaffRow = { user_id: string; full_name: string; role: string };
 type Vetting = {
@@ -125,7 +126,7 @@ export function SingleCentralRecord() {
             <div key={s.user_id} className={`rounded-lg border p-3 text-sm ${v && isExpiring(v.dbs_renewal_due) ? "border-red-300 bg-red-50" : "border-gold-light/40"}`}>
               <div className="flex items-center justify-between">
                 <p className="font-semibold">{s.full_name} <span className="font-normal text-ink/65">({learnRoleLabel(s.role as LearnRole) || s.role})</span></p>
-                <button type="button" onClick={() => startEdit(s.user_id)} className="rounded-lg border border-gold-light px-3 py-1.5 text-xs hover:bg-cream bg-white text-ink/80 font-medium transition-colors">
+                <button type="button" onClick={() => startEdit(s.user_id)} className={btn("secondary", "sm")}>
                   {v ? "Edit" : "Add record"}
                 </button>
               </div>
@@ -143,16 +144,16 @@ export function SingleCentralRecord() {
               {editing === s.user_id && (
                 <div className="mt-2 grid gap-2 border-t border-gold-light/30 pt-2 sm:grid-cols-2">
                   <label className="text-xs text-ink/70">DBS check date
-                    <input type="date" value={form.dbs_check_date} onChange={(e) => setForm({ ...form, dbs_check_date: e.target.value })} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-2 py-1 text-sm" />
+                    <input type="date" value={form.dbs_check_date} onChange={(e) => setForm({ ...form, dbs_check_date: e.target.value })} className={`${ui.input} mt-1`} />
                   </label>
                   <label className="text-xs text-ink/70">DBS certificate reference
-                    <input value={form.dbs_certificate_reference} onChange={(e) => setForm({ ...form, dbs_certificate_reference: e.target.value })} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-2 py-1 text-sm" />
+                    <input value={form.dbs_certificate_reference} onChange={(e) => setForm({ ...form, dbs_certificate_reference: e.target.value })} className={`${ui.input} mt-1`} />
                   </label>
                   <label className="text-xs text-ink/70">DBS renewal due
-                    <input type="date" value={form.dbs_renewal_due} onChange={(e) => setForm({ ...form, dbs_renewal_due: e.target.value })} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-2 py-1 text-sm" />
+                    <input type="date" value={form.dbs_renewal_due} onChange={(e) => setForm({ ...form, dbs_renewal_due: e.target.value })} className={`${ui.input} mt-1`} />
                   </label>
                   <label className="text-xs text-ink/70">Right-to-work document type
-                    <input value={form.right_to_work_document_type} onChange={(e) => setForm({ ...form, right_to_work_document_type: e.target.value })} placeholder="e.g. UK passport" className="mt-1 block w-full rounded-lg border border-gold-light/60 px-2 py-1 text-sm" />
+                    <input value={form.right_to_work_document_type} onChange={(e) => setForm({ ...form, right_to_work_document_type: e.target.value })} placeholder="e.g. UK passport" className={`${ui.input} mt-1`} />
                   </label>
                   <label className="flex items-center gap-2 text-xs text-ink/70">
                     <input type="checkbox" checked={form.references_received} onChange={(e) => setForm({ ...form, references_received: e.target.checked })} /> References received
@@ -165,8 +166,8 @@ export function SingleCentralRecord() {
                   </label>
                   {error && <p role="alert" className="text-xs text-red-700 sm:col-span-2">{error}</p>}
                   <div className="sm:col-span-2 flex gap-2">
-                    <button type="button" onClick={() => save(s.user_id)} disabled={busy} className="rounded-lg bg-gold-700 px-4 py-1.5 text-sm font-semibold disabled:opacity-60 text-white hover:bg-gold-900 transition-colors">Save</button>
-                    <button type="button" onClick={() => setEditing(null)} className="rounded-lg border border-gold-light px-4 py-1.5 text-sm bg-white text-ink/80 hover:bg-cream font-medium transition-colors">Cancel</button>
+                    <button type="button" onClick={() => save(s.user_id)} disabled={busy} className={btn("primary")}>Save</button>
+                    <button type="button" onClick={() => setEditing(null)} className={btn("secondary")}>Cancel</button>
                   </div>
                 </div>
               )}

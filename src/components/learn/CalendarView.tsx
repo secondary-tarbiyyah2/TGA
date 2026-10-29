@@ -223,11 +223,13 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
 
   return (
     <div className="space-y-4">
-      <div className="flex flex-wrap items-center gap-3">
-        <h2 className="mr-auto font-serif text-h3 font-semibold text-ink">Academic Calendar</h2>
-        {/* Term setup and date overrides are for the people who manage them; everyone else just sees the calendar. */}
-        {canManageTerms && <Tabs variant="switch" items={TABS.map((t) => ({ key: t.id, label: t.label }))} value={tab} onChange={setTab} label="Calendar sections" />}
-      </div>
+      {/* Term setup and date overrides are for the people who manage them; everyone else just sees the calendar (the page header already names it). */}
+      {canManageTerms && (
+        <div className="flex flex-wrap items-center gap-3">
+          <h2 className="mr-auto font-serif text-h3 font-semibold text-ink">Academic calendar</h2>
+          <Tabs variant="switch" items={TABS.map((t) => ({ key: t.id, label: t.label }))} value={tab} onChange={setTab} label="Calendar sections" />
+        </div>
+      )}
 
       {toast && (
         <p role="status" className="rounded-xl border border-green-200 bg-green-50 px-4 py-2 text-sm text-green-900">
@@ -265,6 +267,7 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
                 <button type="button" onClick={sync} className={`${navBtn} hidden sm:inline-block`}>
                   Sync Islamic dates
                 </button>
+                <div className="flex items-center gap-1">
                 <button
                   type="button"
                   onClick={() => (mode === "month" ? shiftMonth(-1) : select(shiftKey(selected, mode === "week" ? -7 : -1)))}
@@ -284,6 +287,7 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
                 >
                   ›
                 </button>
+                </div>
               </div>
 
               <div className="space-y-1.5 border-b border-gold-light px-4 py-2 text-xs">

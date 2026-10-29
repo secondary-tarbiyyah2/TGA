@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { displayName, signedPhotoUrls, type TeacherCardData } from "@/lib/learn/staffProfiles";
 import { StaffAvatar } from "@/components/learn/staff/StaffAvatar";
+import Link from "next/link";
 
 function useTeachers(classId?: string) {
   const [teachers, setTeachers] = useState<TeacherCardData[] | null>(null);
@@ -37,7 +38,7 @@ function useTeachers(classId?: string) {
   return { teachers, photos, error };
 }
 
-function TeacherCard({ t, photo, showClasses }: { t: TeacherCardData; photo?: string; showClasses: boolean }) {
+function TeacherCard({ t, photo, showClasses, messageHref }: { t: TeacherCardData; photo?: string; showClasses: boolean; messageHref?: string }) {
   const name = displayName(t.full_name, t.display_title);
   const subjects = t.subjects_taught || [];
   const languages = t.languages || [];
@@ -47,7 +48,7 @@ function TeacherCard({ t, photo, showClasses }: { t: TeacherCardData; photo?: st
       <div className="flex items-start gap-3">
         <StaffAvatar name={t.full_name} src={photo} size={56} />
         <div className="min-w-0">
-          <h3 className="font-semibold text-ink">{name}</h3>
+          <h3 className="font-semibold text-ink [overflow-wrap:anywhere]">{name}</h3>
           {showClasses && t.class_names && t.class_names.length > 0 && <p className="text-xs text-ink/65">{t.class_names.join(", ")}</p>}
           {subjects.length > 0 && (
             <ul className="mt-1.5 flex flex-wrap gap-1.5" aria-label="Subjects taught">
@@ -74,13 +75,20 @@ function TeacherCard({ t, photo, showClasses }: { t: TeacherCardData; photo?: st
           )}
         </div>
       ) : (
-        <p className="mt-3 text-sm text-ink/65">{t.full_name.split(" ")[0]} hasn&apos;t added a profile yet.</p>
+        <p className="mt-3 text-sm text-ink/65">{name} hasn&apos;t added a profile yet.</p>
       )}
-      {t.contact_email && (
-        <p className="mt-3 text-sm">
-          <a href={`mailto:${t.contact_email}`} className="font-medium text-teal-700 hover:underline">
-            {t.contact_email}
-          </a>
+      {(t.contact_email || messageHref) && (
+        <p className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+          {messageHref && (
+            <Link href={messageHref} className="font-medium text-teal-700 hover:underline">
+              Send a message
+            </Link>
+          )}
+          {t.contact_email && (
+            <a href={`mailto:${t.contact_email}`} className="font-medium text-teal-700 [overflow-wrap:anywhere] hover:underline">
+              {t.contact_email}
+            </a>
+          )}
         </p>
       )}
     </li>
@@ -93,7 +101,7 @@ function TeacherCard({ t, photo, showClasses }: { t: TeacherCardData; photo?: st
  * family/student is in. Data comes only from meet_my_teachers() (0067).
  * Pass classId to narrow to one class.
  */
-export function MeetYourTeachers({ classId, bare = false }: { classId?: string; bare?: boolean }) {
+export function MeetYourTeachers({ classId, bare = false, messageHref }: { classId?: string; bare?: boolean; /** Parents: where "Send a message" goes (the Messages inbox). */ messageHref?: string }) {
   const { teachers, photos, error } = useTeachers(classId);
 
   const body =
@@ -106,7 +114,7 @@ export function MeetYourTeachers({ classId, bare = false }: { classId?: string; 
     ) : (
       <ul className="grid gap-3 sm:grid-cols-2">
         {teachers.map((t) => (
-          <TeacherCard key={t.teacher_id} t={t} photo={t.photo_path ? photos[t.photo_path] : undefined} showClasses={!classId} />
+          <TeacherCard key={t.teacher_id} t={t} photo={t.photo_path ? photos[t.photo_path] : undefined} showClasses={!classId} messageHref={messageHref} />
         ))}
       </ul>
     );

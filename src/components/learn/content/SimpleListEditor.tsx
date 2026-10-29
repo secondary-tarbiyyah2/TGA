@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { Card } from "@/components/learn/Card";
 import { triggerPublish } from "@/lib/learn/publishSiteContent";
+import { btn, ui } from "@/components/learn/ui";
 
 export type FieldDef = {
   key: string;
@@ -120,12 +121,12 @@ export function SimpleListEditor({
       {/* Add sits above the list, so a new entry opens where you clicked rather than below a long list. */}
       <div className="mb-3 flex flex-wrap items-center gap-2">
         {editingId !== "new" && (
-          <button type="button" onClick={startNew} className="rounded-full bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900">
+          <button type="button" onClick={startNew} className={btn("primary")}>
             + Add new
           </button>
         )}
         {searchable && rows && rows.length > 5 && (
-          <input type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Filter this list" aria-label={`Filter ${title}`} className="min-w-[180px] flex-1 rounded-lg border border-gold-light/60 px-3 py-2 text-sm sm:max-w-xs" />
+          <input type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Filter this list" aria-label={`Filter ${title}`} className={`${ui.input} min-w-[180px] flex-1 sm:max-w-xs`} />
         )}
         {rows && <span className="text-xs text-ink/65">{q ? `${shown.length} of ${rows.length}` : `${rows.length} entr${rows.length === 1 ? "y" : "ies"}`}</span>}
       </div>
@@ -175,11 +176,11 @@ function RowForm({ fields, draft, setDraft, onSave, onCancel, busy }: { fields: 
             {f.label}
             {f.required && f.type !== "boolean" && <span className="text-red-700" aria-hidden="true"> *</span>}
             {f.type === "textarea" ? (
-              <textarea value={(draft[f.key] as string) || ""} onChange={(e) => setDraft({ ...draft, [f.key]: e.target.value })} rows={3} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
+              <textarea value={(draft[f.key] as string) || ""} onChange={(e) => setDraft({ ...draft, [f.key]: e.target.value })} rows={3} className={`${ui.textarea} mt-1`} />
             ) : f.type === "boolean" ? (
               <input type="checkbox" checked={Boolean(draft[f.key])} onChange={(e) => setDraft({ ...draft, [f.key]: e.target.checked })} className="mt-2 block" />
             ) : f.type === "select" ? (
-              <select value={(draft[f.key] as string) || ""} onChange={(e) => setDraft({ ...draft, [f.key]: e.target.value || null })} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm">
+              <select value={(draft[f.key] as string) || ""} onChange={(e) => setDraft({ ...draft, [f.key]: e.target.value || null })} className={`${ui.select} mt-1`}>
                 <option value="">–</option>
                 {(f.options || []).map((o) => (
                   <option key={o} value={o}>{f.optionLabels?.[o] ?? o}</option>
@@ -191,17 +192,17 @@ function RowForm({ fields, draft, setDraft, onSave, onCancel, busy }: { fields: 
                 value={(draft[f.key] as string | number) ?? ""}
                 onChange={(e) => setDraft({ ...draft, [f.key]: f.type === "number" ? (e.target.value === "" ? null : Number(e.target.value)) : e.target.value || null })}
                 required={f.required}
-                className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm"
+                className={`${ui.input} mt-1`}
               />
             )}
           </label>
         ))}
       </div>
       <div className="flex gap-2">
-        <button type="button" onClick={onSave} disabled={busy} className="rounded-full bg-gold-700 px-4 py-1.5 text-xs font-semibold text-white hover:bg-gold-900 disabled:opacity-60">
+        <button type="button" onClick={onSave} disabled={busy} className={btn("primary", "sm")}>
           {busy ? "Saving…" : "Save"}
         </button>
-        <button type="button" onClick={onCancel} className="rounded-full border border-gold-light/60 px-4 py-1.5 text-xs text-ink/70 hover:bg-cream">
+        <button type="button" onClick={onCancel} className={btn("secondary", "sm")}>
           Cancel
         </button>
       </div>

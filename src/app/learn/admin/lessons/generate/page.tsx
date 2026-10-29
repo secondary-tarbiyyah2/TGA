@@ -16,7 +16,7 @@ const STEPS = ["Choose year", "Check setup", "Generate", "Review & publish"];
 
 function Step({ n, title, help, active, done, children }: { n: number; title: string; help: string; active?: boolean; done?: boolean; children: React.ReactNode }) {
   return (
-    <section aria-labelledby={`step-${n}-title`} className={`rounded-2xl border bg-white p-4 sm:p-6 ${active ? "border-teal-500/60" : "border-gold-light/50"}`}>
+    <section aria-labelledby={`step-${n}-title`} className={`rounded-2xl border bg-white p-4 sm:p-6 ${active ? "border-teal-500/60" : "border-gold-light"}`}>
       <div className="flex items-start gap-3">
         <span aria-hidden="true" className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-sm font-semibold ${done ? "bg-green-100 text-green-900" : "bg-gold-100 text-gold-900"}`}>{done ? "✓" : n}</span>
         <div className="min-w-0">
@@ -132,7 +132,7 @@ function GenerateContent() {
       const { data: u } = await supabase.auth.getUser();
       const label = runLabel.trim() || `${year.label} (by hand)`;
       const { error } = await supabase.from("timetable_runs").insert({ academic_year_id: year.id, label, status: "draft", generated_by: "manual", created_by: u.user?.id ?? null });
-      if (error) return setMessage(`Could not create a blank draft: ${error.message}`);
+      if (error) return setMessage("Could not create a blank draft. Please try again.");
       await reload();
       setMessage("Blank draft created. Open it and click an empty spot in the grid to add lessons.");
     } finally {
@@ -149,7 +149,7 @@ function GenerateContent() {
       <LessonsHeader title="Generate" subtitle="Build a new draft timetable in four steps. A draft never changes the live timetable." />
       <ol aria-label="Progress" className="mb-5 grid grid-cols-2 gap-2 sm:grid-cols-4">
         {STEPS.map((s, i) => (
-          <li key={s} aria-current={stepDone.findIndex((d) => !d) === i ? "step" : undefined} className="flex items-center gap-2 rounded-xl border border-gold-light/50 bg-white px-3 py-2 text-xs font-medium text-ink/75">
+          <li key={s} aria-current={stepDone.findIndex((d) => !d) === i ? "step" : undefined} className="flex items-center gap-2 rounded-xl border border-gold-light bg-white px-3 py-2 text-xs font-medium text-ink/75">
             <span aria-hidden="true" className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px] font-semibold ${stepDone[i] ? "bg-green-100 text-green-900" : "bg-gold-100 text-gold-900"}`}>{stepDone[i] ? "✓" : i + 1}</span>
             {s}
             <span className="sr-only">{stepDone[i] ? "(done)" : "(to do)"}</span>
@@ -222,7 +222,7 @@ function GenerateContent() {
                 <span className={`ml-1 rounded-full px-2 py-0.5 text-xs font-medium ${loadProblems ? "bg-amber-100 text-amber-900" : "bg-green-100 text-green-900"}`}>{loadProblems ? `${load.rows.filter((r) => r.status !== "ok").length} to check` : "all OK"}</span>
               </summary>
               <p className="mt-1 text-xs text-ink/65">Lessons a week each teacher needs across every class, against the periods they can work (at most {DEFAULT_MAX_LESSONS_PER_DAY} lessons a day). Fix red rows first or the generator will leave lessons out.</p>
-              <div className="mt-2 overflow-x-auto rounded-xl border border-gold-light/50">
+              <div className="mt-2 overflow-x-auto rounded-xl border border-gold-light">
                 <table className="w-full min-w-[560px] border-collapse text-left text-sm">
                   <thead>
                     <tr className="bg-cream/70 text-xs text-ink/65">

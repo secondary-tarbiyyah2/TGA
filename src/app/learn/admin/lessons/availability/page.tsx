@@ -7,6 +7,8 @@ import { useTimetableData, type AvailabilityRow } from "@/components/learn/timet
 import { defaultYearId, hhmm, type Teacher } from "@/components/learn/timetable/types";
 import { WEEKDAYS } from "@/lib/learn/timetable";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import Link from "next/link";
+import { Notice, ui } from "@/components/learn/ui";
 
 function TeacherRow({ teacher, rows, yearId, reload }: { teacher: Teacher; rows: AvailabilityRow[]; yearId: string; reload: () => Promise<unknown> }) {
   const supabase = getSupabaseClient();
@@ -29,14 +31,14 @@ function TeacherRow({ teacher, rows, yearId, reload }: { teacher: Teacher; rows:
     setBusy(true);
     const { error: err } = await supabase.from("teacher_availability").insert(days.map((weekday) => ({ teacher_user_id: teacher.id, academic_year_id: yearId, weekday, start_time: start, end_time: end })));
     setBusy(false);
-    if (err) return setError(err.message);
+    if (err) return setError("Couldn't add that availability. Please try again.");
     await reload();
   };
   const remove = async (id: string) => {
     if (!supabase) return;
     setError(null);
     const { error: err } = await supabase.from("teacher_availability").delete().eq("id", id);
-    if (err) return setError(err.message);
+    if (err) return setError("Couldn't remove that availability. Please try again.");
     await reload();
   };
 
@@ -54,7 +56,7 @@ function TeacherRow({ teacher, rows, yearId, reload }: { teacher: Teacher; rows:
             })}
           </span>
         )}
-        <span className="ml-auto text-xs font-semibold text-gold-700">{open ? "Close" : "Edit"}</span>
+        <span className="ml-auto text-xs font-semibold text-teal-700">{open ? "Close" : "Edit"}</span>
       </button>
       {open && (
         <div className="mt-3 space-y-3 rounded-xl bg-cream/60 p-3">
@@ -63,7 +65,7 @@ function TeacherRow({ teacher, rows, yearId, reload }: { teacher: Teacher; rows:
               {[...rows].sort((a, b) => a.weekday - b.weekday || a.start_time.localeCompare(b.start_time)).map((r) => (
                 <li key={r.id} className="flex items-center justify-between gap-2">
                   <span>{WEEKDAYS.find((w) => w.value === r.weekday)?.label || r.weekday} {hhmm(r.start_time)}–{hhmm(r.end_time)}</span>
-                  <button type="button" onClick={() => remove(r.id)} className="rounded-lg px-2 py-1 text-xs font-medium text-red-700 hover:bg-red-50">Remove</button>
+                  <button type="button" onClick={() => remove(r.id)} className={`${ui.btnLinkDanger} !text-xs`}>Remove</button>
                 </li>
               ))}
             </ul>
@@ -98,11 +100,11 @@ function AvailabilityContent() {
     <div>
       <LessonsHeader title="Teacher availability" subtitle="When each teacher can be given lessons. Teachers can also set this themselves in their portal." />
       {!data.loaded ? (
-        <p className="text-sm text-ink/65">Loading…</p>
+        <div className="h-40 animate-pulse rounded-2xl bg-white" aria-label="Loading" />
       ) : data.years.length === 0 ? (
-        <p className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">Add an academic year first.</p>
+        <Notice tone="warn">Add an academic year first, under <Link href="/admin/academic/years" className="font-semibold underline">Academic setup</Link>.</Notice>
       ) : (
-        <div className="space-y-4 rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6">
+        <div className="space-y-4 rounded-2xl border border-gold-light bg-white p-4 sm:p-6">
           <div className="flex flex-wrap items-center gap-2">
             {data.years.map((y) => <button key={y.id} type="button" aria-pressed={y.id === effYearId} onClick={() => setYearId(y.id)} className={chipCls(y.id === effYearId)}>{y.label}</button>)}
             <span className="mx-2 h-5 w-px bg-gold-light" aria-hidden="true" />
@@ -110,7 +112,7 @@ function AvailabilityContent() {
             <button type="button" aria-pressed={show === "missing"} onClick={() => setShow("missing")} className={chipCls(show === "missing")}>Not set {missing}</button>
           </div>
           {shown.length === 0 ? (
-            <p className="text-sm text-ink/65">{data.teachers.length === 0 ? "No teachers yet. Add them under People." : "Every teacher has set their availability."}</p>
+            <p className="text-sm text-ink/65">{data.teachers.length === 0 ? "No teachers yet. Add them under Accounts." : "Every teacher has set their availability."}</p>
           ) : (
             <ul className="divide-y divide-gold-light/30">{shown.map((t) => <TeacherRow key={`${t.id}-${effYearId}`} teacher={t} rows={rowsFor(t.id)} yearId={effYearId} reload={reload} />)}</ul>
           )}

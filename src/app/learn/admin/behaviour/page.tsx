@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import Link from "next/link";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { getSupabaseClient } from "@/lib/supabase/client";
@@ -28,6 +27,7 @@ import {
   type StudentOption,
 } from "@/components/learn/behaviour/data";
 import { Tabs } from "@/components/learn/Tabs";
+import { Button, ButtonLink, ui } from "@/components/learn/ui";
 
 type Tab = "merits" | "incidents" | "badges";
 type Sub = "overview" | "all";
@@ -142,23 +142,19 @@ function BehaviourContent() {
         title="Behaviour"
         subtitle="Merits, demerits, incidents, online follow-up sessions and badges across the school."
         actions={
-          <>
-            <Link href="/report-concern" className="rounded-lg border border-red-300 px-4 py-2 text-sm font-medium text-red-700 hover:bg-red-50">
-              Raise a concern
-            </Link>
-            {tab !== "badges" && (
-              <button
-                type="button"
-                onClick={() => setModal(tab === "incidents" ? "incident" : "merit")}
-                className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900"
-              >
-                {tab === "incidents" ? "+ Log incident" : "+ Log merit or demerit"}
-              </button>
-            )}
-          </>
+          <ButtonLink href="/report-concern" icon="shieldAlert" className="!text-red-700">
+            Raise a concern
+          </ButtonLink>
+        }
+        action={
+          tab !== "badges" && (
+            <Button variant="primary" icon="plus" onClick={() => setModal(tab === "incidents" ? "incident" : "merit")}>
+              {tab === "incidents" ? "Log incident" : "Log merit or demerit"}
+            </Button>
+          )
         }
       />
-      {error && <p className="mb-4 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{error}</p>}
+      {error && <p role="alert" className="mb-4 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-800">{error} Please refresh the page and try again.</p>}
 
       <Tabs
         items={[
@@ -173,7 +169,7 @@ function BehaviourContent() {
       />
 
       {records === null ? (
-        <p className="text-ink/65">Loading…</p>
+        <div className="h-40 animate-pulse rounded-2xl bg-white" aria-label="Loading" />
       ) : tab === "badges" ? (
         <div className="space-y-4">
           <AwardBadgeForm students={students} onAwarded={load} />
@@ -195,7 +191,7 @@ function BehaviourContent() {
             {sub === "overview" && (
               <label className="text-sm text-ink/70">
                 <span className="sr-only">Period</span>
-                <select value={period} onChange={(e) => setPeriod(e.target.value as Period)} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm">
+                <select value={period} onChange={(e) => setPeriod(e.target.value as Period)} className={`${ui.select} !w-auto`}>
                   {(Object.keys(PERIOD_LABEL) as Period[]).map((p) => (
                     <option key={p} value={p}>
                       {PERIOD_LABEL[p]}
@@ -221,16 +217,16 @@ function BehaviourContent() {
               </div>
               <DetentionRegister detentions={detentions} onChanged={load} />
               <div className="grid gap-4 lg:grid-cols-3">
-                <section className="rounded-2xl border border-gold-light/50 bg-white p-4 lg:col-span-2">
+                <section className="rounded-2xl border border-gold-light bg-white p-4 lg:col-span-2">
                   <h3 className="mb-3 text-base font-semibold text-ink">Recent activity</h3>
-                  <RecordsTable records={periodRecords.slice(0, 8)} onVoid={voidRecord} empty="No merits or demerits in this period. Use + Log merit or demerit to add one." />
+                  <RecordsTable records={periodRecords.slice(0, 8)} onVoid={voidRecord} empty="No merits or demerits in this period. Use Log merit or demerit to add one." />
                   {periodRecords.length > 8 && (
-                    <button type="button" onClick={() => setSub("all")} className="mt-2 text-sm font-medium text-teal-700 hover:underline">
+                    <button type="button" onClick={() => setSub("all")} className={`${ui.btnLink} mt-2`}>
                       See all {periodRecords.length} in All records
                     </button>
                   )}
                 </section>
-                <section className="rounded-2xl border border-gold-light/50 bg-white p-4">
+                <section className="rounded-2xl border border-gold-light bg-white p-4">
                   <h3 className="mb-3 text-base font-semibold text-ink">Top merit earners</h3>
                   {top.length === 0 ? (
                     <p className="text-sm text-ink/65">No merits yet this period.</p>
@@ -257,7 +253,7 @@ function BehaviourContent() {
                 <StatTile label={`Incidents · ${PERIOD_LABEL[period].toLowerCase()}`} value={String(stats.incidents)} />
                 <StatTile label="Follow-ups outstanding" value={String(stats.detentionsOutstanding)} />
               </div>
-              <section className="rounded-2xl border border-gold-light/50 bg-white p-4">
+              <section className="rounded-2xl border border-gold-light bg-white p-4">
                 <h3 className="mb-3 text-base font-semibold text-ink">Latest incidents</h3>
                 <RecordsTable records={periodIncidents.slice(0, 10)} onVoid={voidRecord} empty="No incidents in this period. Safeguarding concerns are raised separately with Raise a concern." />
               </section>
@@ -265,10 +261,10 @@ function BehaviourContent() {
           )}
 
           {sub === "all" && (
-            <section className="rounded-2xl border border-gold-light/50 bg-white p-4">
+            <section className="rounded-2xl border border-gold-light bg-white p-4">
               <div className="mb-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
-                <input value={fName} onChange={(e) => setFName(e.target.value)} placeholder="Search student…" aria-label="Student" className="rounded-lg border border-gold-light px-3 py-2 text-sm" />
-                <select value={fClass} onChange={(e) => setFClass(e.target.value)} aria-label="Class" className="rounded-lg border border-gold-light px-3 py-2 text-sm">
+                <input type="search" value={fName} onChange={(e) => setFName(e.target.value)} placeholder="Search student…" aria-label="Student" className={ui.input} />
+                <select value={fClass} onChange={(e) => setFClass(e.target.value)} aria-label="Class" className={ui.select}>
                   <option value="">All classes</option>
                   {classes.map((c) => (
                     <option key={c.id} value={c.id}>
@@ -276,7 +272,7 @@ function BehaviourContent() {
                     </option>
                   ))}
                 </select>
-                <select value={fYear} onChange={(e) => setFYear(e.target.value)} aria-label="Year group" className="rounded-lg border border-gold-light px-3 py-2 text-sm">
+                <select value={fYear} onChange={(e) => setFYear(e.target.value)} aria-label="Year group" className={ui.select}>
                   <option value="">All year groups</option>
                   {years.map((y) => (
                     <option key={y.id} value={y.id}>
@@ -290,7 +286,7 @@ function BehaviourContent() {
                   max={fTo || undefined}
                   onChange={(e) => setFFrom(e.target.value)}
                   aria-label="From date"
-                  className="rounded-lg border border-gold-light px-3 py-2 text-sm"
+                  className={ui.input}
                 />
                 <input
                   type="date"
@@ -298,11 +294,11 @@ function BehaviourContent() {
                   min={fFrom || undefined}
                   onChange={(e) => setFTo(e.target.value)}
                   aria-label="To date"
-                  className="rounded-lg border border-gold-light px-3 py-2 text-sm"
+                  className={ui.input}
                 />
               </div>
               {filtersActive && (
-                <button type="button" onClick={clearFilters} className="mb-3 text-sm font-medium text-teal-700 hover:underline">
+                <button type="button" onClick={clearFilters} className={`${ui.btnLink} mb-3`}>
                   Clear filters
                 </button>
               )}

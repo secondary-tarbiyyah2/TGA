@@ -67,7 +67,7 @@ export function AiUsage() {
         <span aria-hidden="true" className="mt-1 text-lg leading-none text-ink/50 transition-transform group-open:rotate-90">›</span>
       </summary>
       <div className="space-y-3 border-t border-gold-light px-5 py-5 text-sm">
-        {status && !status.configured && <p className="rounded-lg bg-amber-50 px-3 py-2 text-amber-950">AI is not set up yet. Add the ANTHROPIC_API_KEY secret in GitHub (Settings, Secrets and variables, Actions) and redeploy; the AI buttons appear for staff once it is set.</p>}
+        {status && !status.configured && <p className="rounded-lg bg-amber-50 px-3 py-2 text-amber-950">AI helpers are not switched on yet. Ask whoever looks after the website to add the AI key (technical note: the ANTHROPIC_API_KEY secret); the AI buttons appear for staff once it is set.</p>}
         {status?.configured && (
           <p className="text-ink/75">
             Today: <span className="font-semibold text-ink">{fmt(usedToday)}</span>
@@ -87,7 +87,7 @@ export function AiUsage() {
                   <th className="py-1 pr-3 text-right font-medium">Today</th>
                   <th className="py-1 pr-3 text-right font-medium">7 days</th>
                   <th className="py-1 pr-3 text-right font-medium">30 days</th>
-                  <th className="py-1 text-right font-medium">Tokens (30 days, in / out)</th>
+                  <th className="py-1 text-right font-medium">Text used, in AI tokens (30 days, in / out)</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gold-light/60">

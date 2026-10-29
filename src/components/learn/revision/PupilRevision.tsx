@@ -61,21 +61,32 @@ export function PupilRevision() {
     load();
   }, [load]);
 
+  // Which subject the list is showing ("" = all), and where the pupil was
+  // in the list, so coming back from a unit lands where they left off.
+  const [subject, setSubject] = useState("");
+  const listScroll = useRef(0);
+
   const openUnit = (id: string | null) => {
+    if (id) listScroll.current = window.scrollY;
     setOpen(id);
     try {
       window.history.replaceState(null, "", id ? `#unit-${id}` : window.location.pathname);
     } catch {
       /* ignore */
     }
-    window.scrollTo(0, 0);
-    if (!id) load();
+    if (id) window.scrollTo(0, 0);
+    else {
+      const y = listScroll.current;
+      requestAnimationFrame(() => window.scrollTo(0, y));
+      load();
+    }
   };
 
   if (open) return <UnitView id={open} onBack={() => openUnit(null)} />;
 
   const bySubject = new Map<string, PupilUnitCard[]>();
   (units || []).forEach((u) => bySubject.set(u.subject, [...(bySubject.get(u.subject) || []), u]));
+  const shown = [...bySubject.entries()].filter(([s]) => !subject || s === subject);
 
   return (
     <div className="space-y-6">
@@ -88,9 +99,18 @@ export function PupilRevision() {
       {units && units.length === 0 && !error && (
         <EmptyState title="No revision units yet" icon="bookOpenCheck" tile="tile-teal">Your teachers add a summary and a quiz for each unit as the year goes on. Check back after your first topics.</EmptyState>
       )}
-      {[...bySubject.entries()].map(([subject, list]) => (
-        <section key={subject} aria-label={subject} className="space-y-3">
-          <h2 className="text-h3 font-semibold text-ink">{subject}</h2>
+      {bySubject.size > 1 && (
+        <div role="group" aria-label="Choose a subject" className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:px-0">
+          {["", ...bySubject.keys()].map((s) => (
+            <button key={s || "all"} type="button" aria-pressed={subject === s} onClick={() => setSubject(s)} className={`${subject === s ? ui.chipOn : ui.chip} min-h-10 shrink-0`}>
+              {s || "All subjects"}
+            </button>
+          ))}
+        </div>
+      )}
+      {shown.map(([subjectName, list]) => (
+        <section key={subjectName} aria-label={subjectName} className="space-y-3">
+          <h2 className="text-h3 font-semibold text-ink">{subjectName}</h2>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {list.map((u) => {
               const last = u.last_quiz ? pct(u.last_quiz.correct, u.last_quiz.total) : null;
@@ -100,12 +120,11 @@ export function PupilRevision() {
                   key={u.id}
                   type="button"
                   onClick={() => openUnit(u.id)}
-                  className="flex flex-col gap-3 rounded-2xl border border-gold-light bg-white p-4 text-left hover:border-teal-700 focus-visible:border-teal-700"
+                  className="flex flex-col gap-2.5 rounded-2xl border border-gold-light bg-white p-4 text-left hover:border-teal-700 focus-visible:border-teal-700"
                 >
-                  <span className="text-xs font-medium uppercase tracking-wide text-ink/65">{u.kind === "summary" ? (u.has_video ? "Video and summary" : "Summary") : "Lesson slides"}</span>
-                  <span className="text-base font-semibold text-ink">{u.title}</span>
+                  <span className="text-base font-semibold text-ink [overflow-wrap:anywhere]">{u.title}</span>
                   <span className="text-xs text-ink/65">
-                    {u.topics} topic{u.topics === 1 ? "" : "s"} · {u.questions} quiz questions
+                    {u.kind === "summary" ? (u.has_video ? "Video and summary" : "Summary") : "Lesson slides"} · {u.topics} topic{u.topics === 1 ? "" : "s"} · {u.questions} quiz question{u.questions === 1 ? "" : "s"}
                   </span>
                   <span className="h-1.5 overflow-hidden rounded-full bg-cream" aria-hidden="true">
                     <span className="block h-full rounded-full bg-teal-700" style={{ width: `${u.topics ? Math.round((u.mastered / u.topics) * 100) : 0}%` }} />

@@ -133,6 +133,12 @@ button:not(:disabled),
   padding-top: 1.5rem;
   padding-bottom: 3rem;
 }
+/* A hub's tab strip already gives the page its top spacing (mb-6).
+   General sibling (~), not +: Next can render a hidden element (streamed
+   metadata) between the tab strip and the page, which defeated +. */
+.hub-tabs ~ .app-pad {
+  padding-top: 0;
+}
 
 /* /learn portal look. The marketing site's warm beige borders and
    30-46px headings made the portal read as a brochure rather than an app.

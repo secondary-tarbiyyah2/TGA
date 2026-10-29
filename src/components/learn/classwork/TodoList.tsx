@@ -5,6 +5,8 @@ import { useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { fetchChildClasses, useFamilyChildren, useStudentChildId, type ClassSummary } from "@/lib/learn/classes";
 import { Tabs } from "@/components/learn/Tabs";
+import { PageHeader } from "@/components/learn/PageHeader";
+import { ui } from "@/components/learn/ui";
 
 type StatusRow = { homework_id: string; class_id: string; due_at: string; status: "missing" | "late" | "on_time" | "not_yet_due"; submitted_at: string | null };
 type Hw = { id: string; title: string; archived_at: string | null };
@@ -17,7 +19,13 @@ const TABS: { key: TabKey; label: string }[] = [
   { key: "done", label: "Done" },
 ];
 
-const fmt = (iso: string) => new Date(iso).toLocaleString("en-GB", { weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
+/** "Fri 30 Oct, 16:00", leaving out the time when it is midnight or 23:59 (a whole-day deadline). */
+const fmt = (iso: string) => {
+  const d = new Date(iso);
+  const time = d.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/London" });
+  const day = d.toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short", timeZone: "Europe/London" });
+  return time === "00:00" || time === "23:59" ? day : `${day}, ${time}`;
+};
 
 /** Which tab a status belongs to: late or on-time hand-ins are both "Done". */
 export function tabFor(status: StatusRow["status"]): TabKey {
@@ -56,7 +64,7 @@ function useTodo(childId: string | null) {
   return { items, classes };
 }
 
-function TodoBody({ childId, hwHref, heading }: { childId: string; hwHref: string | ((homeworkId: string) => string); heading: string }) {
+function TodoBody({ childId, hwHref, heading, subtitle, childPicker }: { childId: string; hwHref: string | ((homeworkId: string) => string); heading: string; subtitle: string; childPicker?: React.ReactNode }) {
   const { items, classes } = useTodo(childId);
   const [tab, setTab] = useState<TabKey>("assigned");
   const [classId, setClassId] = useState("");
@@ -79,20 +87,25 @@ function TodoBody({ childId, hwHref, heading }: { childId: string; hwHref: strin
   };
 
   return (
-    <div className="rounded-2xl border border-gold-light bg-white">
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-gold-light px-5 py-4">
-        <h1 className="font-serif text-h2 font-semibold text-ink">{heading}</h1>
-        {classes.length > 1 && (
-          <select value={classId} onChange={(e) => setClassId(e.target.value)} aria-label="Filter by class" className="rounded-lg border border-gold-light/70 px-3 py-2 text-sm">
-            <option value="">All classes</option>
-            {classes.map((c) => (
-              <option key={c.id} value={c.id}>
-                {c.name}
-              </option>
-            ))}
-          </select>
-        )}
-      </div>
+    <>
+      <PageHeader
+        title={heading}
+        subtitle={subtitle}
+        actions={
+          classes.length > 1 ? (
+            <select value={classId} onChange={(e) => setClassId(e.target.value)} aria-label="Filter by class" className={`${ui.select} max-w-full sm:w-64`}>
+              <option value="">All classes</option>
+              {classes.map((c) => (
+                <option key={c.id} value={c.id}>
+                  {c.name}
+                </option>
+              ))}
+            </select>
+          ) : undefined
+        }
+      />
+      {childPicker}
+      <div className="rounded-2xl border border-gold-light bg-white">
       <Tabs items={TABS.map((t) => ({ ...t, count: counts[t.key], countAlert: t.key === "missing" }))} value={tab} onChange={setTab} label="Homework status" className="px-3" />
       {items === null ? (
         <div className="m-5 h-24 animate-pulse rounded-lg bg-cream" />
@@ -102,19 +115,20 @@ function TodoBody({ childId, hwHref, heading }: { childId: string; hwHref: strin
         <ul role="tabpanel" className="divide-y divide-gold-light/60 p-2">
           {list.map((i) => (
             <li key={i.homework_id}>
-              <Link href={typeof hwHref === "function" ? hwHref(i.homework_id) : hwHref} className="flex flex-wrap items-center gap-3 rounded-lg px-3 py-3 hover:bg-cream">
-                <span className="min-w-0 flex-1">
-                  <span className="block truncate text-sm font-medium text-ink">{i.title}</span>
+              <Link href={typeof hwHref === "function" ? hwHref(i.homework_id) : hwHref} className="flex flex-wrap items-center gap-x-3 gap-y-1 rounded-lg px-3 py-3 hover:bg-cream">
+                <span className="min-w-0 flex-1 basis-56">
+                  <span className="block text-sm font-medium text-ink [overflow-wrap:anywhere]">{i.title}</span>
                   <span className="block truncate text-xs text-ink/65">{i.className}</span>
                 </span>
-                <span className="text-xs text-ink/65">{tab === "done" && i.submitted_at ? `Handed in ${fmt(i.submitted_at)}` : `Due ${fmt(i.due_at)}`}</span>
+                <span className={`text-xs ${tab === "missing" ? "font-medium text-red-700" : "text-ink/65"}`}>{tab === "done" && i.submitted_at ? `Handed in ${fmt(i.submitted_at)}` : tab === "missing" ? `Was due ${fmt(i.due_at)}` : `Due ${fmt(i.due_at)}`}</span>
                 {i.status === "late" && <span className="rounded-full bg-amber-50 px-2.5 py-1 text-xs font-medium text-amber-800 ring-1 ring-inset ring-amber-600/20">Handed in late</span>}
               </Link>
             </li>
           ))}
         </ul>
       )}
-    </div>
+      </div>
+    </>
   );
 }
 
@@ -123,7 +137,7 @@ export function StudentTodo() {
   const childId = useStudentChildId();
   if (childId === undefined) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
   if (!childId) return <p className="text-sm text-ink/65">No pupil account is linked to this login yet.</p>;
-  return <TodoBody childId={childId} hwHref="/student/homework" heading="To do" />;
+  return <TodoBody childId={childId} hwHref={(hw) => `/student/homework?hw=${hw}`} heading="To do" subtitle="Your homework: what is set, what is missing and what you have handed in. Tap one to open it." />;
 }
 
 /** Parent "To do": the same list for one chosen child (read only). */
@@ -144,25 +158,25 @@ export function FamilyTodo({ initialChild }: { initialChild?: string }) {
       </p>
     );
   const first = kids.find((k) => k.id === childId)?.name.split(" ")[0];
+  const picker =
+    kids.length > 1 ? (
+      <div role="group" aria-label="Child" className="mb-4 flex flex-wrap gap-2">
+        {kids.map((k) => (
+          <button key={k.id} type="button" aria-pressed={childId === k.id} onClick={() => setSelected(k.id)} className={`${childId === k.id ? ui.chipOn : ui.chip} min-h-10`}>
+            {k.name}
+          </button>
+        ))}
+      </div>
+    ) : null;
+  // Each row opens that exact piece of homework, expanded, on the Homework page.
   return (
-    <div className="space-y-3">
-      {kids.length > 1 && (
-        <div role="group" aria-label="Child" className="flex flex-wrap gap-2">
-          {kids.map((k) => (
-            <button
-              key={k.id}
-              type="button"
-              aria-pressed={childId === k.id}
-              onClick={() => setSelected(k.id)}
-              className={`min-h-10 rounded-full border px-3 py-1.5 text-sm font-medium ${childId === k.id ? "border-teal-700 bg-teal-700 text-white" : "border-gold-light bg-white text-ink/75 hover:bg-cream"}`}
-            >
-              {k.name}
-            </button>
-          ))}
-        </div>
-      )}
-      {/* Each row opens that exact piece of homework, expanded, on the Homework page. */}
-      <TodoBody key={childId} childId={childId} hwHref={(hw) => `/family/homework?child=${childId}&hw=${hw}`} heading={kids.length > 1 && first ? `To do for ${first}` : "To do"} />
-    </div>
+    <TodoBody
+      key={childId}
+      childId={childId}
+      hwHref={(hw) => `/family/homework?child=${childId}&hw=${hw}`}
+      heading="To do"
+      subtitle={`Homework set for ${first || "your child"}: what is due, what is missing and what has been handed in. Tap one to open it.`}
+      childPicker={picker}
+    />
   );
 }

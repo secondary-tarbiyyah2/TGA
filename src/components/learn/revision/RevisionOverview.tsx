@@ -32,7 +32,7 @@ export function RevisionOverview({ area }: { area: "teach" | "admin" }) {
       {rows === null && <div className="h-40 animate-pulse rounded-2xl bg-white" />}
       {rows && rows.length === 0 && !error && (
         <div className="space-y-2 rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">
-          <p>No pupils have used Unit revision yet.</p>
+          <p>No pupils have done any unit revision yet.</p>
           <p>
             Each unit&apos;s revision pack is in the{" "}
             <Link href={`/${area}/curriculum`} className="font-medium text-teal-700 underline">

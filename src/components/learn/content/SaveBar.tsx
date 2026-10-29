@@ -1,5 +1,7 @@
 "use client";
 
+import { btn } from "@/components/learn/ui";
+
 /**
  * Save button for the long website-content forms. It sticks to the bottom of
  * the screen while you scroll the form, so you never have to hunt for it, and
@@ -24,7 +26,7 @@ export function SaveBar({
 }) {
   return (
     <div className="sticky bottom-0 z-10 mt-6 flex flex-wrap items-center gap-3 rounded-xl border border-gold-light bg-white/95 px-4 py-3 shadow-sm backdrop-blur">
-      <button type="button" onClick={onSave} disabled={saving || disabled} className="rounded-full bg-gold-700 px-5 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-60">
+      <button type="button" onClick={onSave} disabled={saving || disabled} className={btn("primary")}>
         {saving ? "Saving…" : label}
       </button>
       <p role={error ? "alert" : "status"} className={`min-w-0 flex-1 text-sm ${error ? "text-red-700" : "text-ink/70"}`}>

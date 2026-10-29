@@ -7,6 +7,7 @@ import { Card } from "@/components/learn/Card";
 import { triggerPublish } from "@/lib/learn/publishSiteContent";
 import { aboutDefaults as D, withDefault, toStored, listWithDefault, listToStored } from "@/content/defaults";
 import { DefaultTextField, DefaultBadge, ResetLink } from "./DefaultField";
+import { ui } from "@/components/learn/ui";
 
 type RecipeItem = { letter: string; word: string; body: string };
 type Row = {
@@ -96,10 +97,10 @@ export function AboutContentEditor() {
           <div className="mt-2 space-y-2">
             {items.map((item, i) => (
               <div key={i} className="flex gap-2 rounded-lg border border-gold-light/50 p-2">
-                <input value={item.letter} onChange={(e) => setItems(items.map((it, j) => (j === i ? { ...it, letter: e.target.value } : it)))} placeholder="Letter" className="w-14 rounded-md border border-gold-light/60 px-2 py-1 text-sm" />
+                <input value={item.letter} onChange={(e) => setItems(items.map((it, j) => (j === i ? { ...it, letter: e.target.value } : it)))} placeholder="Letter" className={`${ui.input} !w-14`} />
                 <div className="flex-1 space-y-1">
-                  <input value={item.word} onChange={(e) => setItems(items.map((it, j) => (j === i ? { ...it, word: e.target.value } : it)))} placeholder="Word" className="block w-full rounded-md border border-gold-light/60 px-2 py-1 text-sm" />
-                  <textarea value={item.body} onChange={(e) => setItems(items.map((it, j) => (j === i ? { ...it, body: e.target.value } : it)))} placeholder="Description" rows={2} className="block w-full rounded-md border border-gold-light/60 px-2 py-1 text-sm" />
+                  <input value={item.word} onChange={(e) => setItems(items.map((it, j) => (j === i ? { ...it, word: e.target.value } : it)))} placeholder="Word" className={ui.input} />
+                  <textarea value={item.body} onChange={(e) => setItems(items.map((it, j) => (j === i ? { ...it, body: e.target.value } : it)))} placeholder="Description" rows={2} className={ui.textarea} />
                 </div>
                 <button type="button" onClick={() => setItems(items.filter((_, j) => j !== i))} className="self-start text-xs text-red-700">
                   Remove

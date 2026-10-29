@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState, type ReactNode } from "react";
-import Link from "next/link";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { AdminShell } from "@/components/learn/AdminShell";
 import { ComplianceDashboard } from "@/components/learn/documents/ComplianceDashboard";
@@ -17,6 +16,7 @@ import { IncidentBreachLog } from "@/components/learn/compliance/IncidentBreachL
 import { SafeguardingReviews } from "@/components/learn/compliance/SafeguardingReviews";
 import { PolicyReviewTracker } from "@/components/learn/compliance/PolicyReviewTracker";
 import { PageHeader } from "@/components/learn/PageHeader";
+import { Button, ButtonLink, ui } from "@/components/learn/ui";
 
 type Keyword = { id: string; phrase: string };
 
@@ -60,23 +60,23 @@ function SafeguardingKeywordsAdmin() {
   };
 
   return (
-    <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-      <h2 className="font-serif text-h3 font-semibold text-ink">Safeguarding keywords</h2>
-      <p className="mt-1 text-xs text-ink/65">Messages matching any phrase below are automatically flagged for the Safeguarding Lead.</p>
+    <div className={ui.card}>
+      <h2 className={ui.sectionTitle}>Safeguarding keywords</h2>
+      <p className="mt-1 text-sm text-ink/65">Messages matching any phrase below are automatically flagged for the Safeguarding Lead.</p>
       <form onSubmit={add} className="mt-3 flex gap-2">
-        <input value={phrase} onChange={(e) => setPhrase(e.target.value)} placeholder="Add a phrase…" aria-label="New safeguarding phrase" className="flex-1 rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
-        <button type="submit" disabled={!phrase.trim()} className="rounded-lg bg-gold-700 px-4 py-2 text-sm text-white hover:bg-gold-900 font-medium transition-colors disabled:opacity-50">
+        <input value={phrase} onChange={(e) => setPhrase(e.target.value)} placeholder="Add a phrase…" aria-label="New safeguarding phrase" className={`${ui.input} flex-1`} />
+        <Button type="submit" variant="primary" icon="plus" disabled={!phrase.trim()}>
           Add
-        </button>
+        </Button>
       </form>
       {error && <p role="alert" className="mt-2 text-xs text-red-700">{error}</p>}
       {keywords.length === 0 && <p className="mt-3 text-xs text-ink/65">No phrases yet, so no messages are flagged automatically.</p>}
       <ul className="mt-3 flex flex-wrap gap-2">
         {keywords.map((k) => (
-          <li key={k.id} className="flex items-center gap-1 rounded-full border border-gold-light/40 px-3 py-1 text-xs text-ink/70">
+          <li key={k.id} className="flex items-center gap-1 rounded-full border border-gold-light py-1 pl-3 pr-1 text-sm text-ink/80">
             {k.phrase}
-            <button type="button" onClick={() => remove(k)} className="text-ink/65 hover:text-red-700" aria-label={`Remove ${k.phrase}`}>
-              ×
+            <button type="button" onClick={() => remove(k)} className="inline-flex h-7 w-7 items-center justify-center rounded-full text-ink/60 hover:bg-red-50 hover:text-red-700" aria-label={`Remove ${k.phrase}`}>
+              <span aria-hidden="true">×</span>
             </button>
           </li>
         ))}
@@ -100,7 +100,7 @@ function RecordsPanel({ items }: { items: RecordItem[] }) {
     <div className="grid gap-4 md:grid-cols-[13rem_minmax(0,1fr)]">
       <label className="md:hidden">
         <span className="sr-only">Choose a record</span>
-        <select value={current.key} onChange={(e) => setActive(e.target.value)} className="w-full rounded-lg border border-gold-light bg-white px-3 py-2 text-sm">
+        <select value={current.key} onChange={(e) => setActive(e.target.value)} className={ui.select}>
           {items.map((i) => (
             <option key={i.key} value={i.key}>
               {i.label}
@@ -116,7 +116,7 @@ function RecordsPanel({ items }: { items: RecordItem[] }) {
                 type="button"
                 onClick={() => setActive(i.key)}
                 aria-current={i.key === current.key ? "true" : undefined}
-                className={`w-full rounded-lg px-3 py-2 text-left text-sm font-medium transition-colors ${i.key === current.key ? "bg-teal-700 text-white" : "text-ink/75 hover:bg-cream"}`}
+                className={`flex min-h-10 w-full items-center rounded-lg px-3 text-left text-sm font-medium transition-colors ${i.key === current.key ? "bg-teal-100 text-teal-900" : "text-ink/75 hover:bg-cream"}`}
               >
                 {i.label}
               </button>
@@ -169,16 +169,12 @@ function ComplianceContent() {
                       key: "audit",
                       label: "Audit log and data protection",
                       node: (
-                        <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-                          <h2 className="font-serif text-h3 font-semibold text-ink">Audit log and data protection</h2>
-                          <p className="mt-1 text-sm text-ink/65">These have their own pages.</p>
+                        <div className={ui.card}>
+                          <h2 className={ui.sectionTitle}>Audit log and data protection</h2>
+                          <p className="mt-1 text-sm text-ink/65">These have their own pages, in the tabs at the top of this page.</p>
                           <div className="mt-4 flex flex-wrap gap-2">
-                            <Link href="/admin/audit-log" className="rounded-lg border border-gold-light bg-white px-4 py-2 text-sm font-medium text-ink/80 hover:bg-cream">
-                              Open the audit log
-                            </Link>
-                            <Link href="/admin/data-protection" className="rounded-lg border border-gold-light bg-white px-4 py-2 text-sm font-medium text-ink/80 hover:bg-cream">
-                              Open data protection
-                            </Link>
+                            <ButtonLink href="/admin/audit-log">Open the audit log</ButtonLink>
+                            <ButtonLink href="/admin/data-protection">Open data protection</ButtonLink>
                           </div>
                           <p className="mt-3 text-xs text-ink/65">The audit log has filters and CSV export, with restricted records masked. Data protection holds the retention rules and subject access exports.</p>
                         </div>

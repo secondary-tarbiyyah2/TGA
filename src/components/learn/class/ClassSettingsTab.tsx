@@ -187,7 +187,7 @@ export function ClassSettingsTab({ classId, className, subject, canRename }: { c
       </Group>
 
       <Group title="Stream">
-        <Switch checked={s.studentsCanComment} onChange={(v) => toggle({ studentsCanComment: v })} label="Students can comment" hint="Off by default. When on, pupils can reply on posts that allow comments. Parents never comment here (they use Messages)." />
+        <Switch checked={s.studentsCanComment} onChange={(v) => toggle({ studentsCanComment: v })} label="Pupils can comment" hint="Off by default. When on, pupils can reply on posts that allow comments. Parents never comment here (they use Messages)." />
         <Switch checked={s.showDeletedToStaff} onChange={(v) => toggle({ showDeletedToStaff: v })} label="Show deleted items to staff" hint="Removed announcements and comments stay visible to teachers, greyed out, for safeguarding records." />
       </Group>
 
@@ -208,7 +208,7 @@ export function ClassSettingsTab({ classId, className, subject, canRename }: { c
             %
           </label>
         )}
-        <Switch checked={s.showOverallGrade} onChange={(v) => toggle({ showOverallGrade: v })} label="Show overall grade to students" hint="Pupils and parents see one overall percentage on the Grades tab." />
+        <Switch checked={s.showOverallGrade} onChange={(v) => toggle({ showOverallGrade: v })} label="Show overall grade to pupils" hint="Pupils and parents see one overall percentage on the Grades tab." />
         <label className="block text-sm font-medium text-ink">
           Overall grade calculation
           <select value={s.gradeCalculation} onChange={(e) => toggle({ gradeCalculation: e.target.value as GradeCalculation })} className="ml-3 rounded-lg border border-gold-light/70 px-3 py-1.5 text-sm font-normal">

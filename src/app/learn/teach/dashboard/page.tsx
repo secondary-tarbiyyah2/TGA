@@ -77,7 +77,7 @@ function TeachContent() {
 
         <TeachNow slots={slots} />
 
-        <SignaturePrompts />
+        <SignaturePrompts limit={3} />
 
         {covers && covers.length > 0 && (
           <section className="rounded-2xl border border-gold-light bg-white px-5 py-4" aria-labelledby="cover-heading">
@@ -105,7 +105,8 @@ function TeachContent() {
 
         <EnrichmentSupervisorLink />
 
-        <AnnouncementsFeed classIds={classIds} canPost={classIds.length > 0} postClassId={classIds[0]} postScope="class" limit={3} viewAllHref="/teach/announcements" />
+        {/* Read-only here: posting lives on the Announcements page (and each class's Stream), where you choose the class. */}
+        <AnnouncementsFeed classIds={classIds} limit={3} viewAllHref="/teach/announcements" hideWhenEmpty />
       </div>
     </DashboardWithPanel>
   );

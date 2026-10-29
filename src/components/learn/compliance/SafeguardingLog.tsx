@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { btn, ui } from "@/components/learn/ui";
 
 type Concern = {
   id: string;
@@ -100,7 +101,7 @@ function ConcernDetail({ concern, onChanged }: { concern: Concern; onChanged: ()
       <div className="mt-3 grid gap-2 sm:grid-cols-2">
         <label className="text-xs text-ink/70">
           Status
-          <select value={status} onChange={(e) => setStatus(e.target.value)} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm">
+          <select value={status} onChange={(e) => setStatus(e.target.value)} className={`${ui.select} mt-1`}>
             <option value="open">Open</option>
             <option value="in_progress">In progress</option>
             <option value="closed">Closed</option>
@@ -109,17 +110,17 @@ function ConcernDetail({ concern, onChanged }: { concern: Concern; onChanged: ()
       </div>
       <label className="mt-2 block text-xs text-ink/70">
         Actions taken
-        <textarea value={actionsTaken} onChange={(e) => setActionsTaken(e.target.value)} rows={2} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm" />
+        <textarea value={actionsTaken} onChange={(e) => setActionsTaken(e.target.value)} rows={2} className={`${ui.textarea} mt-1`} />
       </label>
       <label className="mt-2 block text-xs text-ink/70">
         Outcome
-        <textarea value={outcome} onChange={(e) => setOutcome(e.target.value)} rows={2} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm" />
+        <textarea value={outcome} onChange={(e) => setOutcome(e.target.value)} rows={2} className={`${ui.textarea} mt-1`} />
       </label>
       <label className="mt-2 block text-xs text-ink/70">
         Referral details (e.g. external agency referred to, and when)
-        <textarea value={referral} onChange={(e) => setReferral(e.target.value)} rows={2} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm" />
+        <textarea value={referral} onChange={(e) => setReferral(e.target.value)} rows={2} className={`${ui.textarea} mt-1`} />
       </label>
-      <button type="button" onClick={saveCase} disabled={busy} className="mt-2 rounded-lg bg-gold-700 px-4 py-1.5 text-sm font-semibold disabled:opacity-60 text-white hover:bg-gold-900 transition-colors">
+      <button type="button" onClick={saveCase} disabled={busy} className={`${btn("primary")} mt-2`}>
         Save case details
       </button>
 
@@ -136,7 +137,7 @@ function ConcernDetail({ concern, onChanged }: { concern: Concern; onChanged: ()
           {chronology?.length === 0 && <p className="text-sm text-ink/65">No chronology entries yet.</p>}
         </ul>
         <div className="mt-2 flex gap-2">
-          <textarea value={entry} onChange={(e) => setEntry(e.target.value)} rows={2} placeholder="Add a dated entry…" className="flex-1 rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm" />
+          <textarea value={entry} onChange={(e) => setEntry(e.target.value)} rows={2} placeholder="Add a dated entry…" className={`${ui.textarea} flex-1`} />
           <button type="button" onClick={addEntry} disabled={busy} className="self-start rounded-lg bg-ink px-4 py-1.5 text-sm font-semibold text-white disabled:opacity-60 transition-colors">
             Add
           </button>

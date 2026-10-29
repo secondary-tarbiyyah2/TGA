@@ -11,7 +11,6 @@ export default function TeachSyllabusPage() {
       <LearnGate allowedRoles={["teacher", "teaching_assistant_cover"]}>
         <LearnShell role="teach">
           <PageHeader
-            crumbs={[{ label: "Home", href: "/teach/dashboard" }, { label: "Lesson library", href: "/teach/curriculum" }, { label: "Syllabus and specifications" }]}
             title="Syllabus and specifications"
             subtitle="Our specification for each subject, built from the official exam board documents, with the syllabus for Year 1 to Year 9 and the cross-curricular links. Pick a subject."
           />

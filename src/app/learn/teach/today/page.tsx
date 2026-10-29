@@ -15,6 +15,8 @@ type TodayLesson = {
   date: string;
   bbb_status: string;
   objectives: string | null;
+  /** Pupils with a mark on this lesson's register when the page loaded. */
+  marked: number;
   slot: { start_time: string; end_time: string; class_id: string; className: string };
 };
 
@@ -52,10 +54,15 @@ function useTodayLessons() {
         .filter((l) => slotOf(l))
         .map((l) => {
           const s = slotOf(l)!;
-          return { id: l.id, date: l.date, bbb_status: l.bbb_status, objectives: l.objectives, slot: { start_time: s.start_time, end_time: s.end_time, class_id: s.class_id, className: s.classes?.name || "Class" } };
+          return { id: l.id, date: l.date, bbb_status: l.bbb_status, objectives: l.objectives, marked: 0, slot: { start_time: s.start_time, end_time: s.end_time, class_id: s.class_id, className: s.classes?.name || "Class" } };
         })
         .sort((a, b) => a.slot.start_time.localeCompare(b.slot.start_time));
-      setLessons(rows);
+      // How far each register has got, so a closed card still says whether it is done.
+      const ids = rows.map((r) => r.id);
+      const att = ids.length ? await supabase.from("attendance_records").select("lesson_instance_id").in("lesson_instance_id", ids) : { data: [] };
+      const marked = new Map<string, number>();
+      for (const a of (att.data as { lesson_instance_id: string }[] | null) || []) marked.set(a.lesson_instance_id, (marked.get(a.lesson_instance_id) || 0) + 1);
+      setLessons(rows.map((r) => ({ ...r, marked: marked.get(r.id) || 0 })));
     })();
   }, []);
   return lessons;
@@ -64,6 +71,9 @@ function useTodayLessons() {
 function LessonCard({ lesson, open, onToggle }: { lesson: TodayLesson; open: boolean; onToggle: () => void }) {
   const [message, setMessage] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+  // Live progress once the register has been opened; until then, what was saved when the page loaded.
+  const [progress, setProgress] = useState<{ taken: number; total: number } | null>(null);
+  const taken = progress ? progress.total > 0 && progress.taken >= progress.total : lesson.marked > 0;
   const now = new Date().toTimeString().slice(0, 5);
   const state = lesson.bbb_status === "live" ? "live" : now > lesson.slot.end_time.slice(0, 5) ? "done" : now >= lesson.slot.start_time.slice(0, 5) ? "now" : "later";
 
@@ -90,21 +100,21 @@ function LessonCard({ lesson, open, onToggle }: { lesson: TodayLesson; open: boo
 
   return (
     <section className="overflow-hidden rounded-2xl border border-gold-light bg-white">
-      <div className="flex flex-wrap items-center gap-4 px-5 py-4">
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-3 px-5 py-4">
         <span className="h-12 w-12 shrink-0 rounded-xl" style={classBannerStyle(lesson.slot.class_id)} aria-hidden="true" />
         <div className="min-w-0 flex-1">
-          <p className="text-sm font-semibold text-ink/65">
+          <p className="whitespace-nowrap text-sm font-semibold tabular-nums text-ink/65">
             {lesson.slot.start_time.slice(0, 5)}–{lesson.slot.end_time.slice(0, 5)}
             {state === "live" && <span className="ml-2 rounded-full bg-red-600 px-2 py-0.5 text-xs font-semibold text-white">Live</span>}
             {state === "now" && <span className="ml-2 rounded-full bg-teal-700 px-2 py-0.5 text-xs font-semibold text-white">Now</span>}
             {state === "done" && <span className="ml-2 rounded-full bg-cream px-2 py-0.5 text-xs font-semibold text-ink/65">Finished</span>}
           </p>
-          <Link href={`/teach/class?id=${lesson.slot.class_id}`} className="block truncate text-lg font-semibold text-ink hover:text-teal-700">
+          <Link href={`/teach/class?id=${lesson.slot.class_id}`} className="block truncate text-lg font-semibold text-ink hover:text-teal-700" title={lesson.slot.className}>
             {lesson.slot.className}
           </Link>
           {lesson.objectives && <p className="truncate text-sm text-ink/65">{lesson.objectives}</p>}
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex w-full items-center gap-2 sm:w-auto">
           <Link href={`/teach/lessons/view?id=${lesson.id}`} className="rounded-lg border border-gold-light bg-white px-3 py-2 text-sm font-medium text-ink/80 hover:bg-cream">
             Lesson page
           </Link>
@@ -122,14 +132,25 @@ function LessonCard({ lesson, open, onToggle }: { lesson: TodayLesson; open: boo
         aria-expanded={open}
         className="flex w-full items-center justify-between border-t border-gold-light px-5 py-2.5 text-left text-sm font-semibold text-ink hover:bg-cream/60"
       >
-        {open ? "Hide register" : "Register"}
+        <span className="flex items-center gap-2">
+          {open ? "Hide register" : taken ? "View register" : "Take register"}
+          {progress && !taken && progress.total > 0 ? (
+            <span className="rounded-full bg-amber-50 px-2 py-0.5 text-xs font-semibold text-amber-900">
+              {progress.taken}/{progress.total} marked
+            </span>
+          ) : taken ? (
+            <span className="rounded-full bg-green-50 px-2 py-0.5 text-xs font-medium text-green-800">Taken</span>
+          ) : state !== "later" ? (
+            <span className="rounded-full bg-amber-50 px-2 py-0.5 text-xs font-semibold text-amber-900">Not taken</span>
+          ) : null}
+        </span>
         <span aria-hidden="true" className={`transition-transform ${open ? "rotate-180" : ""}`}>
           ▾
         </span>
       </button>
       {open && (
         <div className="border-t border-gold-light">
-          <Register lessonId={lesson.id} classId={lesson.slot.class_id} />
+          <Register lessonId={lesson.id} classId={lesson.slot.class_id} onProgress={(t, total) => setProgress({ taken: t, total })} />
         </div>
       )}
     </section>
@@ -146,7 +167,7 @@ function TodayContent() {
   const dateLabel = new Date().toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" });
   return (
     <>
-      <PageHeader title="Today" subtitle={`${dateLabel}: your lessons. The register for the lesson on now is open; press Register on any other.`} />
+      <PageHeader title="Today" subtitle={`${dateLabel}. Your lessons and their registers; the current lesson's register opens by itself.`} />
       {lessons === null ? (
         <div className="h-48 animate-pulse rounded-2xl bg-white" />
       ) : lessons.length === 0 ? (

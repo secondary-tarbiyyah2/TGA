@@ -42,7 +42,7 @@ function useCardProgress(viewer: ClassViewer, classes: ClassSummary[]): Record<s
         const rows = (data as { class_id: string }[]) || [];
         ids.forEach((id) => {
           const n = rows.filter((r) => r.class_id === id).length;
-          out[id] = { label: `${n} student${n === 1 ? "" : "s"}`, percent: null };
+          out[id] = { label: `${n} pupil${n === 1 ? "" : "s"}`, percent: null };
         });
       }
       if (!cancelled) setProgress(out);

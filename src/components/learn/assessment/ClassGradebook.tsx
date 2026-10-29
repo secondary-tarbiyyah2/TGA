@@ -388,7 +388,7 @@ export function ClassGradebook({
             <caption className="sr-only">Gradebook</caption>
             <thead className="bg-cream/60">
               <tr>
-                <th scope="col" className="sticky left-0 z-[1] min-w-[11rem] bg-cream px-3 py-2 text-left text-xs font-semibold uppercase tracking-wide text-ink/65">
+                <th scope="col" className="sticky left-0 z-[1] min-w-[8rem] bg-cream px-3 sm:min-w-[11rem] py-2 text-left text-xs font-semibold uppercase tracking-wide text-ink/65">
                   Pupil
                 </th>
                 {columns.map((c) => (

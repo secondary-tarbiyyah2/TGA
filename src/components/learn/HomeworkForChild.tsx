@@ -285,8 +285,13 @@ export function HomeworkForChild({
       {done.length > 0 && (
         <details className="group" open={openInDone || undefined}>
           <summary className="flex min-h-11 cursor-pointer list-none items-center gap-2 text-sm font-semibold text-ink">
-            Handed in <span className="font-normal text-ink/60">· {done.length}</span>
-            <span className="text-xs font-normal text-teal-700 group-open:hidden">Show</span>
+            <span>
+              Handed in <span className="font-normal text-ink/60">· {done.length}</span>
+            </span>
+            <span className="text-xs font-medium text-teal-700">
+              <span className="group-open:hidden">Show</span>
+              <span className="hidden group-open:inline">Hide</span>
+            </span>
           </summary>
           <ul className="mt-2 space-y-2">{done.map(item)}</ul>
         </details>

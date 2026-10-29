@@ -36,7 +36,7 @@ export function TeacherAbsences() {
 
   return (
     <>
-      <PageHeader crumbs={[{ label: "Home", href: "/teach/dashboard" }, { label: "Pupil absences" }]} title="Pupil absences" subtitle="Who has been away from your lessons in the last 30 days, and why. The office follows up anything unexplained." />
+      <PageHeader title="Pupil absences" subtitle="Who has been away from your lessons in the last 30 days, and why. The office follows up anything unexplained." />
       {error && <p className="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-800">Some of this couldn&apos;t load: {error}</p>}
       <div className="space-y-5">
         {upcoming.length > 0 && (

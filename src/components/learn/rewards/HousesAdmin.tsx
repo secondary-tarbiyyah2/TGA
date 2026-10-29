@@ -7,6 +7,7 @@ import { HouseTable } from "@/components/learn/rewards/HouseTable";
 import { HouseBoard, type BoardChild } from "@/components/learn/rewards/HouseBoard";
 import { HouseStandingsMini } from "@/components/learn/rewards/HouseStandingsMini";
 import { fetchAllClasses, type ClassSummary } from "@/lib/learn/classes";
+import { btn, ui } from "@/components/learn/ui";
 
 // Headteacher/Admin tools for houses (0073): define houses (name, colour),
 // assign children, and award bonus points. Merits add house points
@@ -266,14 +267,14 @@ export function HousesAdmin() {
             {houses.map((h) => (
               <li key={h.id} className="flex flex-wrap items-center gap-2 rounded-lg border border-gold-light/50 px-3 py-2 text-sm">
                 <input type="color" aria-label={`${h.name} colour`} value={HEX.test(h.colour) ? h.colour : "#B08E45"} onChange={(e) => editHouse(h.id, { colour: e.target.value })} className="h-8 w-10 cursor-pointer rounded border border-gold-light" />
-                <input aria-label="House name" value={h.name} maxLength={40} onChange={(e) => editHouse(h.id, { name: e.target.value })} className="w-40 rounded-lg border border-gold-light px-2 py-1" />
-                <input aria-label="Motto" placeholder="Motto (optional)" value={h.motto || ""} maxLength={120} onChange={(e) => editHouse(h.id, { motto: e.target.value })} className="min-w-0 flex-1 rounded-lg border border-gold-light px-2 py-1" />
+                <input aria-label="House name" value={h.name} maxLength={40} onChange={(e) => editHouse(h.id, { name: e.target.value })} className={`${ui.input} !w-40`} />
+                <input aria-label="Motto" placeholder="Motto (optional)" value={h.motto || ""} maxLength={120} onChange={(e) => editHouse(h.id, { motto: e.target.value })} className={`${ui.input} min-w-0 flex-1`} />
                 <span className="text-xs text-ink/65">{counts.get(h.id) || 0} children</span>
                 <label className="flex items-center gap-1 text-xs text-ink/70">
                   <input type="checkbox" checked={h.active} onChange={(e) => editHouse(h.id, { active: e.target.checked })} />
                   Active
                 </label>
-                <button type="button" disabled={busy} onClick={() => saveHouse(h)} className="rounded-md bg-gold-700 px-2.5 py-1 text-xs font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
+                <button type="button" disabled={busy} onClick={() => saveHouse(h)} className={btn("primary", "sm")}>
                   Save
                 </button>
                 <button type="button" disabled={busy} onClick={() => deleteHouse(h)} className="rounded-md border border-red-300 px-2.5 py-1 text-xs font-semibold text-red-700 hover:bg-red-50 disabled:opacity-50">
@@ -286,7 +287,7 @@ export function HousesAdmin() {
         <div className="mt-4 flex flex-wrap items-end gap-2 border-t border-gold-light/40 pt-4">
           <label className="text-xs font-medium text-ink/70">
             Name
-            <input value={newName} maxLength={40} onChange={(e) => setNewName(e.target.value)} placeholder="e.g. Al-Farabi" className="mt-1 block w-40 rounded-lg border border-gold-light px-2 py-1.5 text-sm" />
+            <input value={newName} maxLength={40} onChange={(e) => setNewName(e.target.value)} placeholder="e.g. Al-Farabi" className={`${ui.input} mt-1 !w-40`} />
           </label>
           <label className="text-xs font-medium text-ink/70">
             Colour
@@ -294,9 +295,9 @@ export function HousesAdmin() {
           </label>
           <label className="min-w-[10rem] flex-1 text-xs font-medium text-ink/70">
             Motto (optional)
-            <input value={newMotto} maxLength={120} onChange={(e) => setNewMotto(e.target.value)} className="mt-1 block w-full rounded-lg border border-gold-light px-2 py-1.5 text-sm" />
+            <input value={newMotto} maxLength={120} onChange={(e) => setNewMotto(e.target.value)} className={`${ui.input} mt-1`} />
           </label>
-          <button type="button" disabled={busy} onClick={addHouse} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
+          <button type="button" disabled={busy} onClick={addHouse} className={btn("primary")}>
             Add house
           </button>
         </div>
@@ -320,7 +321,7 @@ export function HousesAdmin() {
               {awardTarget === "house" ? (
                 <label className="text-xs font-medium text-ink/70">
                   House
-                  <select value={awardHouse} onChange={(e) => setAwardHouse(e.target.value)} className="mt-1 block rounded-lg border border-gold-light bg-white px-2 py-1.5 text-sm">
+                  <select value={awardHouse} onChange={(e) => setAwardHouse(e.target.value)} className={`${ui.select} mt-1 !w-auto`}>
                     <option value="">Choose…</option>
                     {houses.filter((h) => h.active).map((h) => (
                       <option key={h.id} value={h.id}>
@@ -338,7 +339,7 @@ export function HousesAdmin() {
                       setAwardClass(e.target.value);
                       setClassShare(null);
                     }}
-                    className="mt-1 block rounded-lg border border-gold-light bg-white px-2 py-1.5 text-sm"
+                    className={`${ui.select} mt-1 !w-auto`}
                   >
                     <option value="">Choose…</option>
                     {classes.map((c) => (
@@ -351,13 +352,13 @@ export function HousesAdmin() {
               )}
               <label className="text-xs font-medium text-ink/70">
                 {awardTarget === "class" ? "Points per pupil" : "Points"}
-                <input type="text" inputMode="decimal" min={1} max={100} value={awardPoints} onChange={(e) => setAwardPoints(e.target.value)} className="mt-1 block w-20 rounded-lg border border-gold-light px-2 py-1.5 text-sm" />
+                <input type="text" inputMode="decimal" min={1} max={100} value={awardPoints} onChange={(e) => setAwardPoints(e.target.value)} className={`${ui.input} mt-1 !w-20`} />
               </label>
               <label className="min-w-[12rem] flex-1 text-xs font-medium text-ink/70">
                 Reason
-                <input value={awardReason} maxLength={200} onChange={(e) => setAwardReason(e.target.value)} placeholder="e.g. Charity bake sale" className="mt-1 block w-full rounded-lg border border-gold-light px-2 py-1.5 text-sm" />
+                <input value={awardReason} maxLength={200} onChange={(e) => setAwardReason(e.target.value)} placeholder="e.g. Charity bake sale" className={`${ui.input} mt-1`} />
               </label>
-              <button type="button" disabled={busy} onClick={award} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
+              <button type="button" disabled={busy} onClick={award} className={btn("primary")}>
                 Award
               </button>
             </div>

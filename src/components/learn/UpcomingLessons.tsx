@@ -61,24 +61,26 @@ export function UpcomingLessons({
 
   return (
     <ul className="space-y-2">
-      {lessons.map((l) => (
-        <li key={l.id}>
-          <Link
-            href={`${basePath}?id=${l.id}${extraQuery || ""}`}
-            className="flex flex-wrap items-center justify-between gap-x-3 gap-y-0.5 rounded-lg border border-gold-light/70 p-3 text-sm transition-colors hover:bg-cream"
-          >
-            <span className="font-medium text-ink">
-              {l.timetable_slots?.classes?.subjects?.name}
-              {l.timetable_slots?.classes?.subjects?.name ? "– " : ""}
-              {l.timetable_slots?.classes?.name}
-            </span>
-            <span className="text-ink/65">
-              {new Date(`${l.date}T00:00:00`).toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" })} ·{" "}
-              {l.timetable_slots?.start_time.slice(0, 5)}
-            </span>
-          </Link>
-        </li>
-      ))}
+      {lessons.map((l) => {
+        const cls = l.timetable_slots?.classes;
+        const subject = cls?.subjects?.name || "";
+        const className = cls?.name || "";
+        // The class name usually already says the subject ("Year 5 Qur'an"):
+        // only add the subject when it adds something.
+        const norm = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+        const showSubject = !!subject && !norm(className).includes(norm(subject));
+        return (
+          <li key={l.id}>
+            <Link href={`${basePath}?id=${l.id}${extraQuery || ""}`} className="block rounded-lg border border-gold-light/70 px-3 py-2.5 text-sm transition-colors hover:bg-cream">
+              <span className="block font-medium text-ink [overflow-wrap:anywhere]">{className || subject || "Lesson"}</span>
+              <span className="mt-0.5 block text-xs text-ink/65">
+                {new Date(`${l.date}T00:00:00`).toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" })} · {l.timetable_slots?.start_time.slice(0, 5)}
+                {showSubject ? ` · ${subject}` : ""}
+              </span>
+            </Link>
+          </li>
+        );
+      })}
     </ul>
   );
 }

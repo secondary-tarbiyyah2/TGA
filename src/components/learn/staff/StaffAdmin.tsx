@@ -8,6 +8,7 @@ import { StaffProfileForm } from "@/components/learn/staff/StaffProfileForm";
 import { Tabs } from "@/components/learn/Tabs";
 import { SencoToggle } from "@/components/learn/send/SencoToggle";
 import { ukToday } from "@/lib/learn/ukTime";
+import { btn } from "@/components/learn/ui";
 
 type StaffRow = {
   user_id: string;
@@ -151,7 +152,7 @@ function ComplianceForm({ person, record, onSaved }: { person: StaffRow; record:
           {msg.text}
         </p>
       )}
-      <button type="button" onClick={save} disabled={busy} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
+      <button type="button" onClick={save} disabled={busy} className={btn("primary")}>
         {busy ? "Saving…" : "Save compliance dates"}
       </button>
     </div>
@@ -278,7 +279,7 @@ function DetailsForm({ person, canEditRoles, canSetDsl, isSelf, onSaved }: { per
           {msg.text}
         </p>
       )}
-      <button type="button" onClick={save} disabled={busy} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
+      <button type="button" onClick={save} disabled={busy} className={btn("primary")}>
         {busy ? "Saving…" : "Save details"}
       </button>
 

@@ -9,9 +9,8 @@ export default function TeachEnrichmentPage() {
     <section className="app-pad">
       <LearnGate allowedRoles={["teacher", "teaching_assistant_cover"]}>
         <PageHeader
-          crumbs={[{ label: "Home", href: "/teach/dashboard" }, { label: "Enrichment" }]}
           title="Enrichment register"
-          subtitle="Tick the children who joined the enrichment blocks you supervise."
+          subtitle="Tick the pupils who joined the enrichment blocks you supervise."
         />
         <EnrichmentRegister mode="supervisor" />
       </LearnGate>

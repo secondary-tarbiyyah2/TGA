@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { useLearnPermission } from "@/lib/learn/session";
+import { btn, ui } from "@/components/learn/ui";
 
 type Request = {
   id: string;
@@ -104,11 +105,11 @@ export function DataRights() {
               {canAction && r.status !== "completed" && r.status !== "rejected" && (
                 <div className="mt-2 flex gap-2">
                   {r.status === "received" && (
-                    <button type="button" onClick={() => setStatus(r, "in_progress")} className="rounded-lg border border-gold-light px-3 py-1.5 text-xs hover:bg-cream bg-white text-ink/80 font-medium transition-colors">
+                    <button type="button" onClick={() => setStatus(r, "in_progress")} className={btn("secondary", "sm")}>
                       Mark in progress
                     </button>
                   )}
-                  <button type="button" onClick={() => setStatus(r, "completed")} className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs font-semibold text-white hover:bg-gold-900 transition-colors">
+                  <button type="button" onClick={() => setStatus(r, "completed")} className={btn("primary", "sm")}>
                     Mark completed
                   </button>
                   <button type="button" onClick={() => setStatus(r, "rejected")} className="rounded-lg border border-red-300 px-3 py-1.5 text-xs text-red-700 hover:bg-red-50 font-medium transition-colors">
@@ -131,18 +132,18 @@ export function DataRights() {
       <form onSubmit={submit} className="mt-4 space-y-2 border-t border-gold-light/30 pt-4">
         <p className="text-xs font-semibold uppercase tracking-wide text-ink/65">Log a new request</p>
         <div className="grid gap-2 sm:grid-cols-2">
-          <select value={form.request_type} onChange={(e) => setForm({ ...form, request_type: e.target.value })} aria-label="Request type" className="rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm">
+          <select value={form.request_type} onChange={(e) => setForm({ ...form, request_type: e.target.value })} aria-label="Request type" className={`${ui.select} !w-auto`}>
             <option value="subject_access">Subject access</option>
             <option value="rectification">Rectification</option>
             <option value="erasure">Erasure</option>
             <option value="export">Export</option>
             <option value="objection">Objection</option>
           </select>
-          <input value={form.requester_name} onChange={(e) => setForm({ ...form, requester_name: e.target.value })} placeholder="Requester name" className="rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm" />
-          <input value={form.requester_email} onChange={(e) => setForm({ ...form, requester_email: e.target.value })} placeholder="Requester email" type="email" className="rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm" />
-          <input value={form.subject_description} onChange={(e) => setForm({ ...form, subject_description: e.target.value })} placeholder="Whose data (e.g. name/relationship)" className="rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm" />
+          <input value={form.requester_name} onChange={(e) => setForm({ ...form, requester_name: e.target.value })} placeholder="Requester name" className={`${ui.input} !w-auto`} />
+          <input value={form.requester_email} onChange={(e) => setForm({ ...form, requester_email: e.target.value })} placeholder="Requester email" type="email" className={`${ui.input} !w-auto`} />
+          <input value={form.subject_description} onChange={(e) => setForm({ ...form, subject_description: e.target.value })} placeholder="Whose data (e.g. name/relationship)" className={`${ui.input} !w-auto`} />
         </div>
-        <button type="submit" disabled={busy} className="rounded-lg bg-gold-700 px-4 py-1.5 text-sm font-semibold disabled:opacity-60 text-white hover:bg-gold-900 transition-colors">
+        <button type="submit" disabled={busy} className={btn("primary")}>
           Log request
         </button>
       </form>

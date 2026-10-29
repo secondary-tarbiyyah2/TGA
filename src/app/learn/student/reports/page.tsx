@@ -9,7 +9,7 @@ export default function StudentReportsPage() {
     <section className="app-pad">
       <LearnGate allowedRoles={["student"]}>
         <LearnShell role="student">
-          <ReleasedReports />
+          <ReleasedReports audience="student" />
         </LearnShell>
       </LearnGate>
     </section>

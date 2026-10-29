@@ -15,7 +15,7 @@ import {
   type EveningStatus,
   type ParentEvening,
 } from "@/lib/learn/parentEvenings";
-import { ui } from "@/components/learn/ui";
+import { btn, ui } from "@/components/learn/ui";
 import { isoToUkLocal, ukLocalToIso } from "@/lib/learn/openEvening";
 import { useNow } from "@/lib/learn/useNow";
 
@@ -157,7 +157,7 @@ function EveningAdminCard({ ev, teachers, onChanged }: { ev: EveningRow; teacher
             <label className="block text-xs font-medium text-ink/70" htmlFor={`pe-ee-${ev.id}`}>Ends (UK time)</label>
             <input id={`pe-ee-${ev.id}`} type="datetime-local" value={editEnd} onChange={(e) => setEditEnd(e.target.value)} className={inputCls} />
           </div>
-          <button type="button" disabled={busy} onClick={saveWindow} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-medium text-white hover:bg-gold-900 disabled:opacity-50">
+          <button type="button" disabled={busy} onClick={saveWindow} className={btn("primary")}>
             Save times
           </button>
         </div>
@@ -334,7 +334,7 @@ export function AdminParentEvenings() {
     <div className="space-y-6">
       <div className="flex flex-wrap items-center gap-3">
         {!creating && (
-          <button type="button" onClick={() => { setCreating(true); setNotice(null); }} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900">
+          <button type="button" onClick={() => { setCreating(true); setNotice(null); }} className={btn("primary")}>
             + New parent evening
           </button>
         )}
@@ -402,10 +402,10 @@ export function AdminParentEvenings() {
         </div>
         {error && <p className="mt-3 text-sm text-red-700">{error}</p>}
         <div className="mt-4 flex flex-wrap gap-2">
-          <button type="button" disabled={busy} onClick={create} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-gold-900 disabled:opacity-50">
+          <button type="button" disabled={busy} onClick={create} className={btn("primary")}>
             {busy ? "Creating…" : "Create as draft"}
           </button>
-          <button type="button" onClick={() => { setCreating(false); setError(null); }} className="rounded-lg border border-gold-light px-4 py-2 text-sm font-medium text-ink/75 hover:bg-cream">
+          <button type="button" onClick={() => { setCreating(false); setError(null); }} className={btn("secondary")}>
             Cancel
           </button>
         </div>

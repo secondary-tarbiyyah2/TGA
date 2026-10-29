@@ -279,7 +279,7 @@ export function MessagesHub({ canAddPeople = false, subtitle }: { canAddPeople?:
               {sorted.length === 0 && !urgentOnly && (
                 <li className="px-5 py-10 text-center">
                   <p className="text-sm font-semibold text-ink">No conversations yet</p>
-                  <p className="mt-1 text-sm text-ink/65">Press “New message” to say hello.</p>
+                  <p className="mt-1 text-sm text-ink/65">Press “New message” to start one.</p>
                 </li>
               )}
               {sorted.map((t) => {

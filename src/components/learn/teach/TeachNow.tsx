@@ -10,7 +10,7 @@ import { ackState, usePupils } from "@/components/learn/pupil/usePupils";
 import { Icon, type IconName } from "@/components/learn/Icon";
 
 type Lesson = { id: string; classId: string; className: string; start: string; end: string; live: boolean; registerTaken: boolean };
-type Counts = { toMark: number; oldestDays: number; unread: number; toSign: number; dueSoon: number };
+type Counts = { toMark: number; oldestDays: number; unread: number; dueSoon: number };
 
 const hhmm = (t: string) => t.slice(0, 5);
 
@@ -38,7 +38,7 @@ export function TeachNow({ slots }: { slots: (TimetableSlot & { classes?: { name
         data: { user },
       } = await supabase.auth.getUser();
       const in7 = new Date(Date.now() + 7 * 86_400_000).toISOString();
-      const [slotLessons, ownLessons, unreadRes, signRes, queueRes, dueRes] = await Promise.all([
+      const [slotLessons, ownLessons, unreadRes, queueRes, dueRes] = await Promise.all([
         slots.length
           ? supabase.from("lesson_instances").select("id, bbb_status, timetable_slot_id").eq("date", today).in("timetable_slot_id", [...bySlot.keys()])
           : Promise.resolve({ data: [] }),
@@ -51,7 +51,6 @@ export function TeachNow({ slots }: { slots: (TimetableSlot & { classes?: { name
               .eq("teacher_user_id", user.id)
           : Promise.resolve({ data: [] }),
         supabase.rpc("thread_unread_counts"),
-        supabase.from("my_outstanding_signatures").select("document_id", { count: "exact", head: true }),
         // The same list as the To review page, so the two numbers always agree.
         supabase.from("homework_review_queue").select("submitted_at").order("submitted_at", { ascending: true }).limit(1000),
         user
@@ -83,7 +82,6 @@ export function TeachNow({ slots }: { slots: (TimetableSlot & { classes?: { name
         toMark: queue.length,
         oldestDays: queue.length ? Math.floor((Date.now() - new Date(queue[0].submitted_at).getTime()) / 86_400_000) : 0,
         unread: ((unreadRes.data as { unread: number }[] | null) || []).reduce((n, r) => n + r.unread, 0),
-        toSign: signRes.count || 0,
         dueSoon: (dueRes as { count: number | null }).count || 0,
       });
     })();
@@ -174,10 +172,10 @@ export function TeachNow({ slots }: { slots: (TimetableSlot & { classes?: { name
                   const due = !l.registerTaken && now >= hhmm(l.start);
                   return (
                     <li key={l.id} className="flex flex-wrap items-center gap-3 py-2.5">
-                      <span className="w-24 shrink-0 text-sm tabular-nums text-ink/65">
+                      <span className="w-24 shrink-0 whitespace-nowrap text-sm tabular-nums text-ink/65">
                         {hhmm(l.start)}–{hhmm(l.end)}
                       </span>
-                      <Link href={`/teach/lessons/view?id=${l.id}`} className="min-w-0 flex-1 truncate text-sm font-semibold text-ink hover:text-teal-700">
+                      <Link href={`/teach/lessons/view?id=${l.id}`} className="min-w-[10rem] flex-1 truncate text-sm font-semibold text-ink hover:text-teal-700" title={l.className}>
                         {l.className}
                       </Link>
                       {l.live && <span className="rounded-full bg-red-600 px-2 py-0.5 text-xs font-semibold text-white">Live</span>}
@@ -200,18 +198,12 @@ export function TeachNow({ slots }: { slots: (TimetableSlot & { classes?: { name
             )}
             {message && <p className="mt-2 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{message}</p>}
           </div>
-          {counts && (counts.unread > 0 || counts.toSign > 0) && (
+          {/* Documents to sign already have the banner above and their own list below, so only unread messages are flagged here. */}
+          {counts && counts.unread > 0 && (
             <div className="flex flex-wrap gap-2 border-t border-gold-light px-5 py-3">
-              {counts.unread > 0 && (
-                <Link href="/teach/messages" className="rounded-full bg-amber-50 px-3 py-1 text-sm font-semibold text-amber-900 hover:bg-amber-100">
-                  {counts.unread} unread message{counts.unread === 1 ? "" : "s"}
-                </Link>
-              )}
-              {counts.toSign > 0 && (
-                <Link href="/documents" className="rounded-full bg-amber-50 px-3 py-1 text-sm font-semibold text-amber-900 hover:bg-amber-100">
-                  {counts.toSign} document{counts.toSign === 1 ? "" : "s"} to sign
-                </Link>
-              )}
+              <Link href="/teach/messages" className="rounded-full bg-amber-50 px-3 py-1 text-sm font-semibold text-amber-900 hover:bg-amber-100">
+                {counts.unread} unread message{counts.unread === 1 ? "" : "s"}
+              </Link>
             </div>
           )}
         </section>

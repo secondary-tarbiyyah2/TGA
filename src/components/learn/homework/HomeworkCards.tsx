@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { btn, ui } from "@/components/learn/ui";
 import { FileLinks } from "@/components/learn/homework/FileViewer";
 import { SubmissionFeedback } from "@/components/learn/homework/SubmissionFeedback";
 import { FILE_CATEGORY_LABEL, SUBMISSION_TYPE_LABEL, submissionFiles } from "@/lib/learn/homeworkFiles";
@@ -116,7 +117,7 @@ export function HomeworkCard({
 
   const setArchived = async (on: boolean) => {
     if (!supabase) return;
-    if (on && !window.confirm(`Delete "${hw.title}"?\n\nStudents and families will no longer see it. Submissions, marks and feedback are kept, and you can restore it from "Show deleted".`)) return;
+    if (on && !window.confirm(`Delete "${hw.title}"?\n\nPupils and families will no longer see it. Submissions, marks and feedback are kept, and you can restore it from "Show deleted".`)) return;
     setBusy(true);
     setError(null);
     const { error: err } = await supabase.from("homework").update({ archived_at: on ? new Date().toISOString() : null }).eq("id", hw.id);
@@ -142,32 +143,32 @@ export function HomeworkCard({
             {hw.edited_at && <span title={`Edited ${formatEdited(hw.edited_at)}`}> · Edited {formatEdited(hw.edited_at)}</span>}
           </p>
           <p className="mt-0.5 text-xs text-ink/65">
-            {describeAllowed(hw, { types: SUBMISSION_TYPE_LABEL, files: FILE_CATEGORY_LABEL })}
+            Hand in: {describeAllowed(hw, { types: SUBMISSION_TYPE_LABEL, files: FILE_CATEGORY_LABEL })}
             {hw.max_points != null && ` · ${hw.max_points} marks`}
             {hw.late_policy === "block" && " · closes at the due time"}
           </p>
         </div>
-        <div className="flex shrink-0 items-center gap-3">
+        <div className="flex shrink-0 flex-wrap items-center gap-2">
           {actions}
+          <button type="button" onClick={() => setOpen((o) => !o)} aria-expanded={open} className={btn("secondary", "sm")}>
+            {open ? "Hide submissions" : "Submissions"}
+          </button>
           {archived ? (
-            <button type="button" disabled={busy} onClick={() => setArchived(false)} className="text-sm text-gold-700 underline disabled:opacity-50">
+            <button type="button" disabled={busy} onClick={() => setArchived(false)} className={btn("ghost", "sm")}>
               Restore
             </button>
           ) : (
             <>
               {onEdit && (
-                <button type="button" onClick={() => onEdit(hw)} className="text-sm text-gold-700 underline">
+                <button type="button" onClick={() => onEdit(hw)} className={btn("ghost", "sm")}>
                   Edit
                 </button>
               )}
-              <button type="button" disabled={busy} onClick={() => setArchived(true)} className="text-sm text-red-700 underline disabled:opacity-50">
+              <button type="button" disabled={busy} onClick={() => setArchived(true)} className={`${ui.btnLinkDanger} px-1`}>
                 Delete
               </button>
             </>
           )}
-          <button type="button" onClick={() => setOpen((o) => !o)} className="text-sm text-gold-700 underline">
-            {open ? "Hide" : "Submissions"}
-          </button>
         </div>
       </div>
       {hw.instructions && <p className="mt-2 line-clamp-2 whitespace-pre-line text-sm text-ink/70">{hw.instructions}</p>}
@@ -186,7 +187,7 @@ export function HomeworkCard({
           {statuses === null ? (
             <p className="text-sm text-ink/65">Loading…</p>
           ) : statuses.length === 0 ? (
-            <p className="text-sm text-ink/65">No enrolled students.</p>
+            <p className="text-sm text-ink/65">No enrolled pupils.</p>
           ) : (
             <>
               <p className="text-xs text-ink/65">

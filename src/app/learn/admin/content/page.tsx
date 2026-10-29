@@ -23,7 +23,7 @@ import { formatDateKey } from "@/lib/learn/ukTime";
 // a small switch inside each, instead of a wall of twelve buttons.
 const TABS = [
   "Site settings", "Homepage", "About page", "Curriculum page",
-  "Fees", "FAQs", "Policies", "Term dates", "Testimonials", "Team", "Differentiators", "Curriculum documents",
+  "Fees", "FAQs", "Policies", "Term dates", "Testimonials", "Team", "What makes us different", "Curriculum documents",
 ] as const;
 type Tab = (typeof TABS)[number];
 
@@ -32,7 +32,7 @@ const GROUPS: { key: Group; label: string; tabs: Tab[] }[] = [
   { key: "pages", label: "Pages and settings", tabs: ["Site settings", "Homepage", "About page", "Curriculum page"] },
   { key: "fees", label: "Fees", tabs: ["Fees"] },
   { key: "policies", label: "Policies", tabs: ["Policies"] },
-  { key: "lists", label: "Lists", tabs: ["FAQs", "Term dates", "Testimonials", "Team", "Differentiators", "Curriculum documents"] },
+  { key: "lists", label: "Lists", tabs: ["FAQs", "Term dates", "Testimonials", "Team", "What makes us different", "Curriculum documents"] },
 ];
 const groupOf = (t: Tab): Group => GROUPS.find((g) => g.tabs.includes(t))?.key || "pages";
 const slug = (t: Tab) => t.toLowerCase().replace(/\s+/g, "-");
@@ -78,7 +78,7 @@ function TabContent({ tab }: { tab: Tab }) {
       return (
         <SimpleListEditor
           table="site_term_dates"
-          title="Term dates & admissions calendar"
+          title="Term dates and admissions calendar"
           description="The public Term Dates page and its .ics download. Only entries with Confirmed ticked are shown. The portal calendar's own terms and closures are set separately under Calendar, Terms."
           orderKey="date"
           searchable
@@ -98,7 +98,7 @@ function TabContent({ tab }: { tab: Tab }) {
         <SimpleListEditor
           table="testimonials"
           title="Testimonials"
-          description="Placeholder testimonials never show publicly, only untick Placeholder once it's a real quote."
+          description="Placeholder testimonials never show publicly. Untick Placeholder only once it's a real quote."
           orderKey="order_index"
           rowLabel={(r) => `${r.attribution}${r.is_placeholder ? " (placeholder)" : ""}`}
           fields={[
@@ -115,32 +115,32 @@ function TabContent({ tab }: { tab: Tab }) {
         <SimpleListEditor
           table="team_profiles"
           title="Team profiles"
-          description="Placeholder profiles never show publicly, only untick Placeholder once it's a real, confirmed bio."
+          description="Placeholder profiles never show publicly. Untick Placeholder only once it's a real, confirmed biography."
           orderKey="order_index"
           rowLabel={(r) => `${r.name} · ${r.role_title}${r.is_placeholder ? " (placeholder)" : ""}`}
           fields={[
             { key: "name", label: "Name", required: true },
             { key: "role_title", label: "Role title", required: true },
             { key: "qualifications", label: "Qualifications", type: "textarea" },
-            { key: "intro_video_url", label: "Intro video URL" },
+            { key: "intro_video_url", label: "Intro video link" },
             { key: "is_placeholder", label: "Placeholder (hidden publicly)", type: "boolean" },
             { key: "order_index", label: "Display order", type: "number" },
           ]}
         />
       );
-    case "Differentiators":
+    case "What makes us different":
       return (
         <SimpleListEditor
           table="differentiators"
-          title="Differentiators ('What makes us different')"
-          description="Only 'Confirmed commitment' + Visible entries show on the homepage."
+          title="What makes us different"
+          description="Only entries that are a confirmed commitment and switched to Visible show on the homepage."
           orderKey="order_index"
           rowLabel={(r) => `${r.title} · ${r.status === "Confirmed commitment" ? "Confirmed" : "Draft"}${r.visible ? "" : " (hidden)"}`}
           fields={[
             { key: "title", label: "Title", required: true },
             { key: "summary", label: "Summary", type: "textarea", required: true },
             { key: "detail", label: "Detail (optional, longer)", type: "textarea" },
-            { key: "icon", label: "Icon key" },
+            { key: "icon", label: "Icon name (optional)" },
             {
               key: "status",
               label: "Status",
@@ -160,15 +160,15 @@ function TabContent({ tab }: { tab: Tab }) {
         <SimpleListEditor
           table="curriculum_documents"
           title="Curriculum documents"
-          description="Scheme-of-work / subject overview PDFs shown on each key stage's curriculum page."
+          description="Scheme of work and subject overview PDFs shown on each key stage's curriculum page."
           orderKey="order_index"
           rowLabel={(r) => `${r.title} (${r.key_stage} · ${r.subject})`}
           fields={[
-            { key: "key_stage", label: "Key stage slug (e.g. year-3-6)", required: true },
+            { key: "key_stage", label: "Key stage, as in its web address (e.g. year-3-6)", required: true },
             { key: "subject", label: "Subject", required: true },
             { key: "title", label: "Title", required: true },
-            { key: "term", label: "Term", type: "select", options: ["autumn", "spring", "summer"] },
-            { key: "file_url", label: "File URL", required: true },
+            { key: "term", label: "Term", type: "select", options: ["autumn", "spring", "summer"], optionLabels: { autumn: "Autumn", spring: "Spring", summer: "Summer" } },
+            { key: "file_url", label: "Link to the file", required: true },
             { key: "order_index", label: "Display order", type: "number" },
           ]}
         />

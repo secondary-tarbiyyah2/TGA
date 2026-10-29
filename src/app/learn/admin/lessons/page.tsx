@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { LessonsFrame, LessonsHeader } from "@/components/learn/timetable/LessonsFrame";
+import { LESSONS_HUB_TITLE, LessonsFrame, LessonsHeader } from "@/components/learn/timetable/LessonsFrame";
 import { useTimetableData } from "@/components/learn/timetable/useTimetableData";
 import { defaultYearId } from "@/components/learn/timetable/types";
+import { Notice, ui } from "@/components/learn/ui";
 
 function HubContent() {
   const { data } = useTimetableData();
@@ -26,21 +27,23 @@ function HubContent() {
 
   return (
     <div>
-      <LessonsHeader title="Timetable & lessons" subtitle={`Everything about when lessons happen, split into short pages.${yearLabel ? ` Showing ${yearLabel}.` : ""}`} />
+      <LessonsHeader title={LESSONS_HUB_TITLE} subtitle={`Everything about when lessons happen, split into short pages.${yearLabel ? ` Showing ${yearLabel}.` : ""}`} />
       {!data.loaded ? (
         <p className="text-sm text-ink/65">Loading…</p>
       ) : (
         <>
           {data.years.length === 0 && (
-            <p className="mb-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
-              Set the school up first. <Link href="/admin/academic" className="font-semibold underline">Open Academic setup</Link>.
-            </p>
+            <div className="mb-4">
+              <Notice tone="warn">
+                Set the school up first. <Link href="/admin/academic" className="font-semibold underline">Open Academic setup</Link>.
+              </Notice>
+            </div>
           )}
           <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {cards.map((c) => (
               <li key={c.href}>
-                <Link href={c.href} className="flex h-full flex-col rounded-2xl border border-gold-light/50 bg-white p-4 transition hover:border-gold-500 hover:shadow-sm">
-                  <h2 className="font-serif text-h3 font-semibold text-ink">{c.title}</h2>
+                <Link href={c.href} className="flex h-full flex-col rounded-2xl border border-gold-light bg-white p-4 transition hover:border-gold-500 hover:shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700">
+                  <h2 className={ui.sectionTitle}>{c.title}</h2>
                   <p className="mt-1 flex-1 text-sm text-ink/65">{c.help}</p>
                   <p className={`mt-3 text-xs font-semibold ${c.ok ? "text-green-800" : "text-amber-800"}`}>{c.status}</p>
                 </Link>

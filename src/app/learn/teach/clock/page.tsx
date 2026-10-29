@@ -86,12 +86,12 @@ function MyHoursContent() {
             Clocked in since {timeOf(current.clocked_in_at)} ({formatDuration(now.getTime() - new Date(current.clocked_in_at).getTime())}). Clock out from the top bar.
           </>
         ) : (
-          "You are not clocked in."
+          "You are not clocked in. Clock in with the clock button in the top bar when you start work."
         )}
       </p>
       <div className="grid gap-4 sm:grid-cols-2">
-        {stat("This week", formatHours(sum(weekStart)), `${days(weekStart)} days`)}
-        {stat("This month", formatHours(sum(monthStart)), `${days(monthStart)} days`)}
+        {stat("This week", formatHours(sum(weekStart)), `${days(weekStart)} day${days(weekStart) === 1 ? "" : "s"}`)}
+        {stat("This month", formatHours(sum(monthStart)), `${days(monthStart)} day${days(monthStart) === 1 ? "" : "s"}`)}
       </div>
       <section className="rounded-2xl border border-gold-light bg-white">
         <div className="border-b border-gold-light px-5 py-4">

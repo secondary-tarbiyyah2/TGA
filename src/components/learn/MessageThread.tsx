@@ -194,7 +194,7 @@ export function MessageThread({ threadId, onSent, onRead, aiTriage = false, onTr
         {messages === null ? (
           <p className="text-sm text-ink/65">Loading…</p>
         ) : messages.length === 0 ? (
-          <p className="text-sm text-ink/65">No messages yet, say hello.</p>
+          <p className="text-sm text-ink/65">No messages yet. Write the first one below.</p>
         ) : (
           messages.map((m, i) => {
             const mine = m.sender_id === userId;

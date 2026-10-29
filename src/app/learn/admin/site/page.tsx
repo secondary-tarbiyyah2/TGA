@@ -6,7 +6,28 @@ import { useRouter } from "next/navigation";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { useLearnSession } from "@/lib/learn/session";
-import { visibleAdminSections } from "@/lib/learn/nav";
+import { visibleAdminSections, type PortalNavItem } from "@/lib/learn/nav";
+import { ui } from "@/components/learn/ui";
+
+/** Pages that live one level below a sidebar page (a section's own steps or
+ * sub-pages). The sidebar doesn't list them, but this index should, so a
+ * search for "availability" or "subjects" finds them. Keyed by the parent's href. */
+const SUB_PAGES: Record<string, PortalNavItem[]> = {
+  "/admin/lessons": [
+    { href: "/admin/lessons/timetable", label: "Weekly timetable", hint: "Move, edit, print and publish the timetable" },
+    { href: "/admin/lessons/generate", label: "Generate a timetable", hint: "Build a new draft in four guided steps" },
+    { href: "/admin/lessons/availability", label: "Teacher availability", hint: "When each teacher can teach" },
+    { href: "/admin/lessons/day", label: "School day", hint: "Lesson periods, protected breaks and sessions" },
+    { href: "/admin/lessons/list", label: "Upcoming lessons", hint: "Dated lessons, join links and cover" },
+  ],
+  "/admin/academic": [
+    { href: "/admin/academic/years", label: "Years and terms", hint: "Academic years and their term dates" },
+    { href: "/admin/academic/year-groups", label: "Year groups", hint: "The year groups pupils are placed in" },
+    { href: "/admin/academic/subjects", label: "Subjects", hint: "Everything the school teaches" },
+    { href: "/admin/academic/classes", label: "Classes and teachers", hint: "Create classes, enrol pupils, choose teachers" },
+    { href: "/admin/academic/meeting-links", label: "Meeting links", hint: "A recurring lesson link for each class" },
+  ],
+};
 
 /**
  * Moodle's "Site administration" page: one place listing every admin
@@ -15,7 +36,10 @@ import { visibleAdminSections } from "@/lib/learn/nav";
  */
 function SiteAdminContent() {
   const { roles } = useLearnSession();
-  const sections = useMemo(() => visibleAdminSections(roles.map((r) => r.role)), [roles]);
+  const sections = useMemo(
+    () => visibleAdminSections(roles.map((r) => r.role)).map((s) => ({ ...s, items: s.items.flatMap((i) => [i, ...(SUB_PAGES[i.href] || []).map((c) => ({ ...c, sub: true }))]) })),
+    [roles],
+  );
   const [tab, setTab] = useState<string>("All");
   const [query, setQuery] = useState("");
   const router = useRouter();
@@ -30,7 +54,7 @@ function SiteAdminContent() {
 
   return (
     <>
-      <PageHeader crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "Site administration" }]} title="Site administration" />
+      <PageHeader crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "Site administration" }]} title="Site administration" subtitle="Every admin page in one place. Search, or pick a category." />
 
       <input
         type="search"
@@ -43,7 +67,7 @@ function SiteAdminContent() {
         }}
         placeholder="Search site administration"
         aria-label="Search site administration"
-        className="mb-4 w-full max-w-md rounded-lg border border-gold-light bg-white px-3 py-2 text-sm"
+        className={`${ui.input} mb-4 max-w-md`}
       />
       {q && shown.length > 0 && <p className="-mt-2 mb-4 text-xs text-ink/65">Searching every category. Press Enter to open the first match.</p>}
 
@@ -57,7 +81,7 @@ function SiteAdminContent() {
               setQuery("");
             }}
             aria-current={tab === label && !q ? "page" : undefined}
-            className={`-mb-px shrink-0 border-b-[3px] px-3 py-2.5 text-sm font-medium transition-colors ${
+            className={`-mb-px inline-flex min-h-11 shrink-0 items-center border-b-2 px-3 text-sm font-medium transition-colors ${
               tab === label && !q ? "border-teal-700 text-ink" : "border-transparent text-ink/65 hover:text-ink"
             }`}
           >
@@ -75,7 +99,7 @@ function SiteAdminContent() {
               <h2 className="text-base font-semibold text-ink">{s.label}</h2>
               <ul className="grid gap-x-8 gap-y-1 sm:grid-cols-2">
                 {s.items.map((i) => (
-                  <li key={i.href}>
+                  <li key={i.href} className={"sub" in i && i.sub ? "sm:pl-4" : undefined}>
                     <Link href={i.href} className="group block rounded-lg px-2 py-1.5 hover:bg-cream">
                       <span className="block text-sm font-medium text-teal-700 group-hover:underline">{i.label}</span>
                       {i.hint && <span className="block text-xs text-ink/65">{i.hint}</span>}

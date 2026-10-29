@@ -6,6 +6,7 @@ import { classTeacherNames, todayIso, type CstRow } from "@/lib/learn/teacherFor
 import { lessonMinutesFor } from "@/lib/learn/timetable";
 import { cleanMeetingUrl, dangerBtn, EmptyState, Field, ghostBtn, inputCls, Notice, primaryBtn, StepCard } from "./shared";
 import type { AcademicYear, Child, ClassRow, ClassTeacher, Enrolment, Subject, Teacher, YearGroup } from "./shared";
+import { ui } from "@/components/learn/ui";
 
 type Props = {
   classes: ClassRow[];
@@ -272,7 +273,7 @@ export function ClassesSection(props: Props) {
                     </div>
                   )}
                   <div className="mt-2 flex flex-wrap items-center gap-2">
-                    <select value={enrolForm[c.id] || ""} onChange={(e) => setEnrolForm((s) => ({ ...s, [c.id]: e.target.value }))} aria-label={`Enrol a child into ${c.name}`} className="rounded-lg border border-gold-light/70 px-2 py-1.5 text-xs">
+                    <select value={enrolForm[c.id] || ""} onChange={(e) => setEnrolForm((s) => ({ ...s, [c.id]: e.target.value }))} aria-label={`Enrol a child into ${c.name}`} className={`${ui.select} !w-auto`}>
                       <option value="">Enrol child…</option>
                       {kids.filter((ch) => !enrolled.some((e) => e.child_id === ch.id)).map((ch) => <option key={ch.id} value={ch.id}>{ch.name}</option>)}
                     </select>

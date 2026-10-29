@@ -12,7 +12,7 @@ import { formatDateKey, shiftDateKey, ukDaysAgo, ukToday } from "@/lib/learn/ukT
 import { saveCsv, toCsv as buildCsv } from "@/lib/learn/csv";
 import { classBannerStyle } from "@/lib/learn/classes";
 import { Tabs, tabPanelProps } from "@/components/learn/Tabs";
-import { ui } from "@/components/learn/ui";
+import { Button, StatusChip, btn, ui } from "@/components/learn/ui";
 
 type Status = "present" | "late" | "absent" | "excused" | "not_engaged" | "technical";
 const STATUSES: { value: Status; label: string; dot: string }[] = [
@@ -275,9 +275,9 @@ function ReportsContent() {
         <p className="text-sm text-ink/65">Whole-school register, filtered by lesson date (UK).</p>
         {canExport ? (
           filtered.length > 0 && (
-            <button type="button" onClick={exportCsv} className="rounded-lg border border-gold-light bg-white px-4 py-2 text-sm font-semibold text-ink/80 transition-colors hover:bg-cream">
+            <Button icon="download" onClick={exportCsv}>
               Export CSV ({filtered.length})
-            </button>
+            </Button>
           )
         ) : (
           <p className="text-xs text-ink/65">Exporting needs the &quot;Can export data&quot; permission.</p>
@@ -293,7 +293,7 @@ function ReportsContent() {
                 type="button"
                 onClick={() => applyPreset(p.key, p.days)}
                 aria-pressed={preset === p.key}
-                className={`rounded-full border px-3 py-1.5 text-sm font-medium transition-colors ${preset === p.key ? "border-teal-600 bg-teal-600 text-white" : "border-gold-light bg-white text-ink/70 hover:bg-cream"}`}
+                className={preset === p.key ? ui.chipOn : ui.chip}
               >
                 {p.label}
               </button>
@@ -375,14 +375,14 @@ function ReportsContent() {
             </label>
           </div>
           {filtersActive && (
-            <button type="button" onClick={reset} className="text-sm font-medium text-teal-700 hover:underline">
+            <button type="button" onClick={reset} className={ui.btnLink}>
               Clear filters
             </button>
           )}
           {badRange && <p className="text-sm text-red-700">The start date must be on or before the end date.</p>}
         </div>
 
-        {error && <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">Could not load attendance: {error}</p>}
+        {error && <p role="alert" className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">Could not load attendance just now. Please refresh the page or try a shorter date range.</p>}
         {rows === null && !error && !badRange && <p className="rounded-2xl border border-gold-light bg-white p-6 text-sm text-ink/65">Loading attendance…</p>}
         {truncated && (
           <p className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
@@ -404,9 +404,9 @@ function ReportsContent() {
                 <p className="font-medium text-ink">No attendance records match</p>
                 <p className="mt-1 text-sm text-ink/65">{filtersActive ? "Try clearing a filter or widening the date range." : "No registers were marked in this date range."}</p>
                 {filtersActive && (
-                  <button type="button" onClick={reset} className="mt-3 rounded-lg border border-gold-light px-4 py-2 text-sm font-semibold text-ink/80 hover:bg-cream">
+                  <Button onClick={reset} className="mt-3">
                     Clear filters
-                  </button>
+                  </Button>
                 )}
               </div>
             ) : (
@@ -544,12 +544,10 @@ function DayLessonCard({ lesson, open, onToggle, progress, onProgress }: { lesso
             {lesson.className}
           </Link>
         </div>
-        <span
-          className={`rounded-full px-2.5 py-1 text-xs font-semibold ${progress === undefined || empty ? "bg-cream text-ink/65" : done ? "bg-green-100 text-green-800" : partial ? "bg-amber-100 text-amber-800" : "bg-red-50 text-red-700"}`}
-        >
-          {progress === undefined ? "Checking…" : empty ? "No pupils enrolled" : done ? "Register taken" : partial ? `Part taken (${progress.taken}/${progress.total})` : "Register not taken"}
-        </span>
-        <button type="button" onClick={onToggle} aria-expanded={open} aria-controls={panelId} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm font-medium text-ink/70 hover:bg-cream">
+        <StatusChip tone={progress === undefined || empty ? "neutral" : done ? "good" : partial ? "warn" : "bad"}>
+          {progress === undefined ? "Checking…" : empty ? "No pupils enrolled" : done ? "Register taken" : partial ? `Part taken (${progress.taken} of ${progress.total})` : "Register not taken"}
+        </StatusChip>
+        <button type="button" onClick={onToggle} aria-expanded={open} aria-controls={panelId} className={btn(open || done ? "secondary" : "primary", "sm")}>
           {open ? "Hide register" : done ? "Review" : "Take register"}
         </button>
       </div>
@@ -561,7 +559,7 @@ function DayLessonCard({ lesson, open, onToggle, progress, onProgress }: { lesso
   );
 }
 
-const navBtn = "rounded-lg border border-gold-light px-3 py-2 text-sm font-medium text-ink/80 hover:bg-cream";
+const navBtn = btn("secondary");
 
 function TakeRegister() {
   const [date, setDate] = useState(ukToday());
@@ -637,14 +635,14 @@ function TakeRegister() {
     <>
       <div className="mb-4 flex flex-wrap items-center gap-2 rounded-2xl border border-gold-light bg-white p-3">
         <button type="button" onClick={() => go(shiftDateKey(date, -1))} className={navBtn} aria-label="Previous day">
-          ‹ Prev
+          ‹ Previous
         </button>
         <input type="date" value={date} onChange={(e) => go(e.target.value)} className={`${fieldCls} !w-auto`} aria-label="Register date" />
         <button type="button" onClick={() => go(shiftDateKey(date, 1))} className={navBtn} aria-label="Next day">
           Next ›
         </button>
         {date !== today && (
-          <button type="button" onClick={() => go(today)} className={`${navBtn} text-teal-700`}>
+          <button type="button" onClick={() => go(today)} className={btn("ghost")}>
             Today
           </button>
         )}
@@ -653,7 +651,7 @@ function TakeRegister() {
           {date === today ? " (today)" : ""}
         </span>
       </div>
-      {error && <p className="mb-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">Could not load lessons: {error}</p>}
+      {error && <p role="alert" className="mb-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">Could not load this day&apos;s lessons. Please refresh the page and try again.</p>}
       {lessons === null ? (
         <div className="h-40 animate-pulse rounded-2xl bg-white" />
       ) : lessons.length === 0 ? (
@@ -677,10 +675,10 @@ function TakeRegister() {
             </label>
             {list.length > 2 && (
               <span className="flex gap-3 sm:ml-auto">
-                <button type="button" onClick={() => setAll(true)} className="font-medium text-teal-700 hover:underline">
+                <button type="button" onClick={() => setAll(true)} className={ui.btnLink}>
                   Open all
                 </button>
-                <button type="button" onClick={() => setAll(false)} className="font-medium text-teal-700 hover:underline">
+                <button type="button" onClick={() => setAll(false)} className={ui.btnLink}>
                   Close all
                 </button>
               </span>

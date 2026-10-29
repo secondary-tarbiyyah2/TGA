@@ -10,7 +10,10 @@ import { useLearnPermission, useLearnSession } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { formatGBP } from "@/lib/format";
 import { saveCsv } from "@/lib/learn/csv";
-import { shiftDateKey, ukDaysAgo, ukToday, ukWallToDate } from "@/lib/learn/ukTime";
+import { formatDateKey, shiftDateKey, ukDaysAgo, ukToday, ukWallToDate } from "@/lib/learn/ukTime";
+import { Button, EmptyState, ui } from "@/components/learn/ui";
+
+const shortDate = (key: string) => formatDateKey(key, { day: "numeric", month: "short", year: "numeric" });
 
 type Term = { id: string; name: string; starts_on: string; ends_on: string };
 type ClassRow = { id: string; name: string; year_group_id: string | null; year_groups: { name: string } | null };
@@ -313,7 +316,7 @@ function SummaryContent() {
     if (period === "30") return "Last 30 days";
     if (period === "90") return "Last 90 days";
     const t = base?.terms.find((x) => x.id === termId);
-    return t ? `${t.name} (${t.starts_on} to ${t.ends_on})` : "Term";
+    return t ? `${t.name} (${shortDate(t.starts_on)} to ${shortDate(t.ends_on)})` : "Term";
   }, [period, base, termId]);
 
   const rows = useMemo(() => {
@@ -384,8 +387,7 @@ function SummaryContent() {
     saveCsv(`summary-${isoDay(new Date())}.csv`, lines.join("\r\n"));
   };
 
-  const field = "rounded-lg border border-gold-light bg-white px-3 py-2 text-sm text-ink focus:border-gold-700 focus:outline-none focus:ring-2 focus:ring-gold-300/60";
-  const btn = "rounded-lg border border-gold-light bg-white px-4 py-2 text-sm font-medium text-ink/80 hover:bg-cream";
+  const field = `${ui.select} !w-auto`;
   const hasTerms = !!base && base.terms.length > 0;
 
   const th = (k: SortKey, label: string, align: "left" | "right" = "right") => (
@@ -405,18 +407,18 @@ function SummaryContent() {
       <div className="print:hidden">
       <PageHeader
         crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "School summary" }]}
-        title="Summary"
+        title="School summary"
         subtitle="School-wide attendance, fees, homework and lessons, with a per-class breakdown."
         actions={
           <div className="no-print flex flex-wrap gap-2">
             {canExport && (
-              <button type="button" onClick={exportCsv} disabled={!calc} className={`${btn} disabled:opacity-50`}>
+              <Button icon="download" onClick={exportCsv} disabled={!calc}>
                 Download CSV
-              </button>
+              </Button>
             )}
-            <button type="button" onClick={() => window.print()} disabled={!calc} className={`${btn} disabled:opacity-50`}>
-              Save as PDF
-            </button>
+            <Button icon="printer" onClick={() => window.print()} disabled={!calc}>
+              Print or save as PDF
+            </Button>
           </div>
         }
       />
@@ -438,7 +440,7 @@ function SummaryContent() {
             <select value={termId} onChange={(e) => setTermId(e.target.value)} className={field}>
               {base?.terms.map((t) => (
                 <option key={t.id} value={t.id}>
-                  {t.name} ({t.starts_on.slice(0, 4)})
+                  {t.name} ({shortDate(t.starts_on)} to {shortDate(t.ends_on)})
                 </option>
               ))}
             </select>
@@ -453,7 +455,7 @@ function SummaryContent() {
         </p>
       )}
 
-      {!calc && !error && <p role="status" className="py-10 text-center text-sm text-ink/65">Loading summary…</p>}
+      {!calc && !error && <div role="status" aria-label="Loading summary" className="h-40 animate-pulse rounded-2xl bg-white" />}
 
       {calc && (
         <>
@@ -468,7 +470,7 @@ function SummaryContent() {
           </div>
 
           <div className="mb-3 flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
-            <h2 className="font-serif text-h3 font-semibold text-ink">Per-class breakdown</h2>
+            <h2 className={ui.sectionTitle}>{groupBy === "class" ? "By class" : "By year group"}</h2>
             <label className="no-print flex shrink-0 items-center gap-2 text-sm font-medium text-ink/70">
               Group by
               <select
@@ -486,9 +488,9 @@ function SummaryContent() {
           </div>
 
           {rows.length === 0 ? (
-            <div className="rounded-2xl border border-gold-light bg-white p-8 text-center text-sm text-ink/65">
-              No classes to show yet. Add classes under Academic setup and they will appear here.
-            </div>
+            <EmptyState title="No classes to show yet" icon="layers">
+              Add classes under Academic setup and they will appear here.
+            </EmptyState>
           ) : (
             <div className="print-scroll overflow-x-auto rounded-2xl border border-gold-light bg-white">
               <table className="w-full min-w-[720px] text-sm">

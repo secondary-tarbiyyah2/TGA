@@ -5,6 +5,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import type { LearnRole } from "@/lib/learn/session";
 import { CredentialsCard } from "./StudentCredentials";
 import { studentAccountAction, type IssuedCredentials } from "./studentAccounts";
+import { ui } from "@/components/learn/ui";
 import { GOLD_BUTTON, INPUT_CLASS, friendlyError, invite, type ClassOption, type InviteResult, type ParentOption, type YearGroup } from "./shared";
 
 export type PersonType = "student" | "parent" | "teacher" | "staff";
@@ -299,7 +300,7 @@ export function AddPersonModal({
                 ))}
               </ul>
               <div className="flex flex-wrap justify-end gap-2 pt-1">
-                <button type="button" onClick={onClose} className="rounded-xl border border-gold-light px-4 py-2.5 text-sm font-medium text-ink/80 hover:bg-cream">
+                <button type="button" onClick={onClose} className={ui.btnSecondary}>
                   Close
                 </button>
                 <button
@@ -527,7 +528,7 @@ export function AddPersonModal({
 
               <div className="flex flex-wrap items-center justify-between gap-2 pt-1">
                 {initialType ? <span /> : (
-                  <button type="button" onClick={() => { setType(null); setError(null); }} className="text-sm font-medium text-ink/65 hover:text-ink">
+                  <button type="button" onClick={() => { setType(null); setError(null); }} className={ui.btnGhost}>
                     ← Back
                   </button>
                 )}

@@ -15,7 +15,7 @@ import {
   type OpenEveningSession,
 } from "@/lib/learn/openEvening";
 import { useNow } from "@/lib/learn/useNow";
-import { EmptyState, ui } from "@/components/learn/ui";
+import { Button, EmptyState, StatusChip, Switch, btn, ui } from "@/components/learn/ui";
 
 type Draft = {
   title: string;
@@ -113,9 +113,9 @@ function OpenEveningContent() {
         ? await supabase.from("open_evening_sessions").insert({ ...payload, created_by: session && session !== "loading" ? session.user.id : null })
         : await supabase.from("open_evening_sessions").update(payload).eq("id", editingId);
     setBusy(false);
-    if (error) return setMessage({ text: `Couldn't save: ${error.message}`, error: true });
+    if (error) return setMessage({ text: "Couldn't save the open evening. Please check the details and try again.", error: true });
     setEditingId(null);
-    setMessage({ text: draft.published ? "Saved. It is on the website straight away." : "Saved as hidden. Tick \"Show on the website\" when you want parents to book it." });
+    setMessage({ text: draft.published ? "Saved. It is on the website straight away." : "Saved as hidden. Switch on \"Show on the website\" when you want parents to book it." });
     await load();
   }
 
@@ -125,7 +125,7 @@ function OpenEveningContent() {
     setBusy(true);
     const { error } = await supabase.from("open_evening_sessions").update({ cancelled_at: cancel ? new Date().toISOString() : null }).eq("id", s.id);
     setBusy(false);
-    if (error) return setMessage({ text: `Couldn't update it: ${error.message}`, error: true });
+    if (error) return setMessage({ text: "Couldn't update the open evening. Please try again.", error: true });
     setMessage({ text: cancel ? "Cancelled. It is no longer on the website." : "Reopened. It is on the website again." });
     await load();
   }
@@ -136,7 +136,7 @@ function OpenEveningContent() {
     setBusy(true);
     const { error } = await supabase.from("open_evening_bookings").update({ status: "cancelled", cancelled_at: new Date().toISOString() }).eq("id", b.id);
     setBusy(false);
-    if (error) return setMessage({ text: `Couldn't cancel it: ${error.message}`, error: true });
+    if (error) return setMessage({ text: "Couldn't cancel the booking. Please try again.", error: true });
     setMessage({ text: `Booking for ${b.parent_name} cancelled. Remember to let them know.` });
     await load();
   }
@@ -185,14 +185,13 @@ function OpenEveningContent() {
           <textarea rows={3} value={draft.description} onChange={(e) => set("description", e.target.value)} maxLength={2000} className={inputCls} />
           <span className="block text-xs text-ink/65">Shown to parents under the date, for example who will speak and what will be covered.</span>
         </label>
-        <label className="flex items-center gap-2 text-sm text-ink sm:col-span-2">
-          <input type="checkbox" checked={draft.published} onChange={(e) => set("published", e.target.checked)} />
-          Show on the website and accept bookings
-        </label>
+        <div className="-mx-3 sm:col-span-2">
+          <Switch checked={draft.published} onChange={(v) => set("published", v)} label="Show on the website and accept bookings" />
+        </div>
       </div>
       <div className="flex gap-2">
-        <button type="button" onClick={save} disabled={busy} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-60">{busy ? "Saving…" : "Save"}</button>
-        <button type="button" onClick={() => setEditingId(null)} className="rounded-lg border border-gold-light px-4 py-2 text-sm text-ink/70 hover:bg-cream">Cancel</button>
+        <Button variant="primary" onClick={save} disabled={busy}>{busy ? "Saving…" : "Save"}</Button>
+        <Button variant="ghost" onClick={() => setEditingId(null)}>Cancel</Button>
       </div>
     </div>
   );
@@ -220,20 +219,20 @@ function OpenEveningContent() {
                 <p className="font-semibold text-ink">{s.title}</p>
                 <p className="text-sm text-ink/75">{ukDateTime(s.starts_at)} to {new Date(s.ends_at).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/London" })} (UK time)</p>
                 <p className="mt-1 text-xs text-ink/65">
-                  <span className={`mr-2 rounded-full px-2 py-0.5 font-semibold ${state === "On the website" ? "bg-green-100 text-green-900" : "bg-ink/5 text-ink/70"}`}>{state}</span>
+                  <span className="mr-2"><StatusChip tone={state === "On the website" ? "good" : state === "Cancelled" ? "bad" : "neutral"}>{state}</StatusChip></span>
                   {people} of {s.capacity} places booked · {confirmed.length} {confirmed.length === 1 ? "booking" : "bookings"}
                   {s.join_url ? "" : " · no joining link yet"}
                 </p>
               </div>
               <div className="flex flex-wrap gap-2">
-                <button type="button" onClick={() => setOpenId(open ? null : s.id)} aria-expanded={open} className="rounded-lg border border-gold-light px-3 py-1.5 text-xs font-medium text-ink/80 hover:bg-cream">
+                <button type="button" onClick={() => setOpenId(open ? null : s.id)} aria-expanded={open} className={btn("secondary", "sm")}>
                   {open ? "Hide bookings" : `Bookings (${list.length})`}
                 </button>
-                <button type="button" onClick={() => startEdit(s)} className="rounded-lg border border-gold-500 px-3 py-1.5 text-xs font-medium text-gold-700 hover:bg-cream">Edit</button>
+                <button type="button" onClick={() => startEdit(s)} className={btn("secondary", "sm")}>Edit</button>
                 {s.cancelled_at ? (
-                  <button type="button" disabled={busy} onClick={() => setCancelled(s, false)} className="rounded-lg border border-gold-light px-3 py-1.5 text-xs font-medium text-ink/80 hover:bg-cream disabled:opacity-50">Reopen</button>
+                  <button type="button" disabled={busy} onClick={() => setCancelled(s, false)} className={btn("secondary", "sm")}>Reopen</button>
                 ) : (
-                  <button type="button" disabled={busy} onClick={() => setCancelled(s, true)} className="rounded-lg border border-red-300 px-3 py-1.5 text-xs font-medium text-red-700 hover:bg-red-50 disabled:opacity-50">Cancel evening</button>
+                  <button type="button" disabled={busy} onClick={() => setCancelled(s, true)} className={btn("ghost", "sm") + " !text-red-700 hover:!bg-red-50"}>Cancel evening</button>
                 )}
               </div>
             </div>
@@ -245,10 +244,10 @@ function OpenEveningContent() {
                 ) : (
                   <>
                     <div className="mb-2 flex flex-wrap gap-3 text-xs">
-                      <button type="button" onClick={() => exportCsv([s], `open-evening-${s.starts_at.slice(0, 10)}.csv`)} className="font-medium text-teal-700 underline">Export this evening (CSV)</button>
-                      {confirmed.length > 0 && <a href={mailtoAll(s)} className="font-medium text-teal-700 underline">Email everyone booked</a>}
+                      <button type="button" onClick={() => exportCsv([s], `open-evening-${s.starts_at.slice(0, 10)}.csv`)} className={`${ui.btnLink} !text-xs`}>Export this evening (CSV)</button>
+                      {confirmed.length > 0 && <a href={mailtoAll(s)} className={`${ui.btnLink} !text-xs`}>Email everyone booked</a>}
                       {confirmed.length > 0 && (
-                        <button type="button" onClick={() => copyEmails(s)} className="font-medium text-teal-700 underline">
+                        <button type="button" onClick={() => copyEmails(s)} className={`${ui.btnLink} !text-xs`}>
                           Copy email addresses
                         </button>
                       )}
@@ -275,7 +274,7 @@ function OpenEveningContent() {
                               <td className="max-w-xs whitespace-pre-wrap py-2 pr-3 align-top text-xs">{b.questions || ""}</td>
                               <td className="py-2 text-right align-top">
                                 {b.status === "confirmed" && (
-                                  <button type="button" disabled={busy} onClick={() => cancelBooking(b)} className="text-xs font-medium text-red-700 underline disabled:opacity-50">Cancel booking</button>
+                                  <button type="button" disabled={busy} onClick={() => cancelBooking(b)} className={`${ui.btnLinkDanger} !text-xs`}>Cancel booking</button>
                                 )}
                               </td>
                             </tr>
@@ -299,20 +298,21 @@ function OpenEveningContent() {
         title="Open evenings"
         subtitle="Create the virtual open evenings parents can book on the website, and see who has booked. Changes are live immediately."
         actions={
-          <>
-            {sessions && sessions.length > 0 && (
-              <button type="button" onClick={() => exportCsv(sessions, "open-evening-bookings.csv")} className="rounded-lg border border-gold-light bg-white px-4 py-2 text-sm font-medium text-ink/80 hover:bg-cream">
-                Export all bookings (CSV)
-              </button>
-            )}
-            <button type="button" onClick={startNew} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900">
-              + New open evening
-            </button>
-          </>
+          sessions &&
+          sessions.length > 0 && (
+            <Button icon="download" onClick={() => exportCsv(sessions, "open-evening-bookings.csv")}>
+              Export all bookings (CSV)
+            </Button>
+          )
+        }
+        action={
+          <Button variant="primary" icon="plus" onClick={startNew}>
+            New open evening
+          </Button>
         }
       />
 
-      {message && <p role={message.error ? "alert" : "status"} className={`mb-4 rounded-lg px-4 py-2 text-sm ${message.error ? "bg-red-50 text-red-800" : "bg-green-50 text-green-900"}`}>{message.text}</p>}
+      {message && <p role={message.error ? "alert" : "status"} className={`mb-4 rounded-lg border px-4 py-2 text-sm ${message.error ? "border-red-200 bg-red-50 text-red-800" : "border-green-200 bg-green-50 text-green-900"}`}>{message.text}</p>}
 
       {editingId === "new" && <div className="mb-4">{form}</div>}
 
@@ -322,7 +322,7 @@ function OpenEveningContent() {
         <EmptyState title="No open evenings yet" icon="calendarDays" tile="tile-gold">Add one and it appears on the Open evening page of the website straight away, with its own booking form.</EmptyState>
       ) : (
         <>
-          {upcoming.length === 0 && !editingId && <p className="mb-4 rounded-2xl border border-gold-light bg-white p-5 text-sm text-ink/65">No upcoming open evenings. Use &ldquo;+ New open evening&rdquo; to add the next one.</p>}
+          {upcoming.length === 0 && !editingId && <p className="mb-4 rounded-2xl border border-gold-light bg-white p-5 text-sm text-ink/65">No upcoming open evenings. Use &ldquo;New open evening&rdquo; to add the next one.</p>}
           {upcoming.length > 0 && <ul className="space-y-3">{upcoming.map(renderSession)}</ul>}
           {earlier.length > 0 && (
             <details className="mt-6">

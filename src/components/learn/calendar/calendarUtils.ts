@@ -5,7 +5,7 @@ export type CalView = { kind: "all" } | { kind: "child"; id: string } | { kind: 
 
 export const CHILD_COLOURS = ["#0f766e", "#b45309", "#7c3aed", "#be185d", "#1d4ed8", "#4d7c0f", "#c2410c", "#0e7490"];
 
-export const KIND_LABEL: Record<ItemKind, string> = { lesson: "Live lessons", homework: "Homework due", assessment: "Assessments", announcement: "Announcements" };
+export const KIND_LABEL: Record<ItemKind, string> = { lesson: "Lessons", homework: "Homework due", assessment: "Assessments", announcement: "Announcements" };
 
 export function viewKey(v: CalView): string {
   return v.kind === "all" ? "all" : `${v.kind}:${v.id}`;

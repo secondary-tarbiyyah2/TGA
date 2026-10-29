@@ -31,7 +31,7 @@ function DayContent() {
     if (protectedHere.some((p) => p.weekday === weekday && hhmm(p.start_time) < end && start < hhmm(p.end_time))) return setError("That overlaps a protected time already set for this day.");
     setError(null);
     const { error: err } = await supabase.from("protected_times").insert({ name: name.trim(), academic_year_id: effYearId, weekday, start_time: start, end_time: end });
-    if (err) return setError(err.message);
+    if (err) return setError("Couldn't add that protected time. Please try again.");
     setName("");
     await reload();
   };
@@ -39,7 +39,7 @@ function DayContent() {
     const p = data.protectedTimes.find((x) => x.id === id);
     if (!supabase || !window.confirm(`Remove the protected time${p ? ` "${p.name}"` : ""}? Lessons will no longer be flagged for overlapping it.`)) return;
     const { error: err } = await supabase.from("protected_times").delete().eq("id", id);
-    if (err) return setError(err.message);
+    if (err) return setError("Couldn't remove that protected time. Please try again.");
     await reload();
   };
 
@@ -49,7 +49,7 @@ function DayContent() {
     if (sessUrl.trim() && !/^https?:\/\//i.test(sessUrl.trim())) return setSessError("The meeting link should start with https://");
     setSessError(null);
     const { error: err } = await supabase.from("virtual_sessions").insert({ name: sessName.trim(), meeting_url: sessUrl.trim() || null });
-    if (err) return setSessError(err.message);
+    if (err) return setSessError("Couldn't add that session. Please try again.");
     setSessName("");
     setSessUrl("");
     await reload();
@@ -59,7 +59,7 @@ function DayContent() {
     if (!supabase || !window.confirm(`Remove the session${v ? ` "${v.name}"` : ""}?`)) return;
     setSessError(null);
     const { error: err } = await supabase.from("virtual_sessions").delete().eq("id", id);
-    if (err) return setSessError(/foreign key|violates/i.test(err.message) ? "That session is used by timetabled lessons, so it can't be removed." : err.message);
+    if (err) return setSessError(/foreign key|violates/i.test(err.message) ? "That session is used by timetabled lessons, so it can't be removed." : "Couldn't remove that session. Please try again.");
     await reload();
   };
 
@@ -67,12 +67,12 @@ function DayContent() {
     <div>
       <LessonsHeader title="School day" subtitle="The blocks of the school day (lessons, breaks, lunch, prayer, enrichment) and the protected times no lesson may overlap." />
       {!data.loaded ? (
-        <p className="text-sm text-ink/65">Loading…</p>
+        <div className="h-40 animate-pulse rounded-2xl bg-white" aria-label="Loading" />
       ) : (
         <div className="space-y-5">
           <PeriodsEditor periods={data.periods} reload={reload} staff={data.teachers} />
 
-          <section className="rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6">
+          <section className="rounded-2xl border border-gold-light bg-white p-4 sm:p-6">
             <h2 className="font-serif text-h3 font-semibold text-ink">Protected times</h2>
             <p className="mt-0.5 text-sm text-ink/65">Prayer or Jumu&apos;ah breaks. Lessons that overlap one are flagged on the timetable.</p>
             <div className="mt-3 flex flex-wrap gap-2" role="group" aria-label="Academic year">
@@ -106,7 +106,7 @@ function DayContent() {
             )}
           </section>
 
-          <section className="rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6">
+          <section className="rounded-2xl border border-gold-light bg-white p-4 sm:p-6">
             <h2 className="font-serif text-h3 font-semibold text-ink">Sessions (rooms)</h2>
             <p className="mt-0.5 text-sm text-ink/65">For an online school a room is a virtual session (a meeting link a lesson runs in). Two lessons can share a session only at different times.</p>
             {data.sessions.length === 0 ? (

@@ -7,6 +7,7 @@ import { triggerPublish } from "@/lib/learn/publishSiteContent";
 import { siteSettingsDefaults as D, withDefault, toStored } from "@/content/defaults";
 import { DefaultBadge, ResetLink } from "./DefaultField";
 import { LoadProblem, SaveBar } from "./SaveBar";
+import { ui } from "@/components/learn/ui";
 
 type Row = {
   launch_date: string | null;
@@ -162,7 +163,7 @@ export function SiteSettingsEditor() {
           value={(row[f.key] as string) || ""}
           onChange={(e) => setRow({ ...row, [f.key]: e.target.value })}
           rows={3}
-          className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm"
+          className={`${ui.textarea} mt-1`}
         />
       ) : (
         <input
@@ -170,7 +171,7 @@ export function SiteSettingsEditor() {
           inputMode={f.type === "number" ? "numeric" : undefined}
           value={(row[f.key] as string | number) ?? ""}
           onChange={(e) => setRow({ ...row, [f.key]: f.type === "number" ? (e.target.value.trim() === "" || !Number.isFinite(Number(e.target.value)) ? null : Number(e.target.value)) : e.target.value })}
-          className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm"
+          className={`${ui.input} mt-1`}
         />
       )}
       {f.hint && <span className="mt-0.5 block text-xs text-ink/65">{f.hint}</span>}

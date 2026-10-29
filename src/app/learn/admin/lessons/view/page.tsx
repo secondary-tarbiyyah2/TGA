@@ -1,25 +1,27 @@
 "use client";
 
 import { Suspense } from "react";
-import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { AdminShell } from "@/components/learn/AdminShell";
 import { LessonDetail } from "@/components/learn/LessonDetail";
+import { ButtonLink, EmptyState } from "@/components/learn/ui";
 
 function AdminLessonContent() {
   const searchParams = useSearchParams();
   const id = searchParams.get("id");
   const back = (
-    <Link href="/admin/lessons/list" className="mb-3 inline-block text-sm font-medium text-teal-700 hover:underline">
-      &larr; All lessons
-    </Link>
+    <ButtonLink href="/admin/lessons/list" variant="ghost" size="sm" icon="chevronLeft" className="-ml-2 mb-3">
+      All lessons
+    </ButtonLink>
   );
   if (!id)
     return (
       <>
         {back}
-        <p className="text-sm text-ink/65">No lesson selected. Choose one from the list of lessons.</p>
+        <EmptyState title="No lesson selected" icon="calendarDays" action={<ButtonLink href="/admin/lessons/list" variant="primary">Choose a lesson</ButtonLink>}>
+          Open a lesson from the list of upcoming lessons.
+        </EmptyState>
       </>
     );
   return (

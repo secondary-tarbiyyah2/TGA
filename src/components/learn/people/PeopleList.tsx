@@ -7,6 +7,7 @@ import { CredentialsCard } from "./StudentCredentials";
 import { studentAccountAction, type IssuedCredentials } from "./studentAccounts";
 import { CHIP_STYLES, GOLD_BUTTON, INPUT_CLASS, friendlyError, initials, invite, type Person } from "./shared";
 import { Tabs } from "@/components/learn/Tabs";
+import { btn as btnClass, ui } from "@/components/learn/ui";
 
 type Tab = "staff" | "families";
 type Chip = { id: string; label: string; roles: LearnRole[] };
@@ -130,7 +131,7 @@ function PersonRow({ person, onAddChild, onChanged }: { person: Person; onAddChi
     person.classNames.length ? person.classNames.join(", ") : null,
   ].filter(Boolean) as string[];
 
-  const btn = "rounded-lg border border-gold-light bg-white px-3 py-1.5 text-xs font-semibold text-ink/80 hover:bg-cream disabled:opacity-50";
+  const btn = btnClass("secondary", "sm");
 
   return (
     <li className="px-4 py-3">
@@ -303,7 +304,7 @@ export function PeopleList({
                 setChip(f.id);
                 setLimit(PAGE);
               }}
-              className={`rounded-full border px-3 py-1 text-sm font-medium ${chip === f.id ? "border-gold-500 bg-gold-500 text-ink" : "border-gold-light bg-white text-ink/70 hover:bg-cream"}`}
+              className={chip === f.id ? ui.chipOn : ui.chip}
             >
               {f.label} <span className="text-xs opacity-70">{chipCounts[f.id]}</span>
             </button>
@@ -314,7 +315,7 @@ export function PeopleList({
       {loading ? (
         <p className="p-6 text-sm text-ink/65">Loading…</p>
       ) : error ? (
-        <p className="p-6 text-sm text-amber-900">{error}</p>
+        <p role="alert" className="m-4 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-800">{error}</p>
       ) : people.length === 0 ? (
         <div className="p-10 text-center">
           <p className="text-base font-semibold text-ink">No one here yet</p>
@@ -347,13 +348,13 @@ export function PeopleList({
               {shown.length > limit && (
                 <>
                   Showing {limit} of {shown.length}.
-                  <button type="button" onClick={() => setLimit((n) => n + PAGE)} className="font-medium text-teal-700 hover:underline">
+                  <button type="button" onClick={() => setLimit((n) => n + PAGE)} className={ui.btnLink}>
                     Show more
                   </button>
                 </>
               )}
               {otherMatches > 0 && (
-                <button type="button" onClick={() => switchTab(other)} className="font-medium text-teal-700 hover:underline sm:ml-auto">
+                <button type="button" onClick={() => switchTab(other)} className={`${ui.btnLink} sm:ml-auto`}>
                   {otherMatches} more in {TABS.find((t) => t.id === other)?.label}
                 </button>
               )}

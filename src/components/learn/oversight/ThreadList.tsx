@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { shortTime, threadTitle, type Category, type OversightThread } from "./types";
 import { Tabs } from "@/components/learn/Tabs";
+import { ui } from "@/components/learn/ui";
 
 type Tab = "all" | Category | "flagged";
 const TABS: { id: Tab; label: string }[] = [
@@ -59,7 +60,7 @@ export function ThreadList({
         onChange={(e) => setQ(e.target.value)}
         placeholder="Search names or latest message"
         aria-label="Search conversations"
-        className="mt-3 w-full rounded-lg border border-ink/15 bg-white px-3 py-2 text-sm"
+        className={`${ui.input} mt-3`}
       />
       <ul className="mt-3 min-h-0 flex-1 divide-y divide-ink/10 overflow-y-auto rounded-lg border border-ink/10 bg-white">
         {shown.length === 0 && <li className="p-4 text-sm text-ink/65">{threads.length === 0 ? "No conversations yet." : "No conversations match."}</li>}

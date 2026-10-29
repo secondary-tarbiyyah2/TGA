@@ -5,6 +5,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { localDateKey } from "@/lib/learn/calendar";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { PERIOD_COLUMNS_WITH_SUPERVISOR, WEEKDAYS, attachSupervisorNames, normalisePeriods, type TimetablePeriod } from "@/lib/learn/timetable";
+import { btn } from "@/components/learn/ui";
 
 type RosterRow = { child_id: string; child_name: string; year_group: string | null };
 type TickRow = { period_id: string; child_id: string; present: boolean };
@@ -182,7 +183,7 @@ export function EnrichmentRegister({ mode }: { mode: "supervisor" | "admin" }) {
               <>
                 {mode === "supervisor" && unticked.length > 0 && (
                   <div className="border-b border-gold-light/40 px-5 py-2">
-                    <button type="button" disabled={busy !== null} onClick={() => mark(p.id, unticked.map((r) => r.child_id), true)} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream disabled:opacity-50">
+                    <button type="button" disabled={busy !== null} onClick={() => mark(p.id, unticked.map((r) => r.child_id), true)} className={btn("secondary")}>
                       Tick everyone who is left
                     </button>
                   </div>

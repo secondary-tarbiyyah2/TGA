@@ -7,6 +7,7 @@ import type { ApplicationRow, ApplicationStatus } from "@/components/admissions/
 import type { AccountsResult } from "@/components/learn/admissions/accountsApi";
 import type { MoveOptions } from "@/components/learn/admissions/ApplicationDrawer";
 import type { AdmissionsContext } from "@/components/learn/admissions/useAdmissionsContext";
+import { btn } from "@/components/learn/ui";
 
 type ClassOpt = { id: string; name: string; year_group_id: string | null };
 type YearGroupRow = { id: string; name: string };
@@ -161,11 +162,11 @@ export function AcceptAccounts({
       )}
 
       <div className="mt-3 flex flex-wrap items-center gap-3">
-        <button type="button" onClick={() => void run(false)} disabled={busy} className="rounded-lg bg-gold-700 px-4 py-1.5 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
+        <button type="button" onClick={() => void run(false)} disabled={busy} className={btn("primary")}>
           {busy ? "Working…" : app.status !== "accepted" ? "Accept and create accounts" : done ? "Run again (fill any gaps)" : "Create accounts now"}
         </button>
         {done && (
-          <button type="button" onClick={() => void run(true)} disabled={busy} className="rounded-lg border border-gold-light px-3 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream disabled:opacity-50">
+          <button type="button" onClick={() => void run(true)} disabled={busy} className={btn("secondary")}>
             Re-send setup email and reset password
           </button>
         )}

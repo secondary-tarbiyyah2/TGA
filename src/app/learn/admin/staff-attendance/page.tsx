@@ -8,6 +8,7 @@ import { formatDuration, formatHours, CLOCK_EVENT } from "@/components/learn/Clo
 import { learnRoleLabel, STAFF_ROLES, useLearnPermission, useLearnSession, type LearnRole } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { saveCsv, toCsv } from "@/lib/learn/csv";
+import { Button, Field, IconButton, StatusChip, btn, ui } from "@/components/learn/ui";
 import { fromUkDateTimeInput, shiftDateKey, ukDateTimeInput, ukDaysAgo, ukMinutesOfDay, ukToday, ukWallToDate } from "@/lib/learn/ukTime";
 
 type Shift = {
@@ -82,34 +83,28 @@ function EditShift({ shift, name, adminId, onClose, onDone }: { shift: Shift; na
       <div className="w-full max-w-md rounded-t-2xl bg-white shadow-xl sm:rounded-2xl">
         <div className="flex items-center justify-between border-b border-gold-light px-5 py-4">
           <h2 className="text-lg font-semibold text-ink">Edit shift: {name}</h2>
-          <button type="button" onClick={onClose} aria-label="Close" className="rounded-lg px-2 py-1 text-xl leading-none text-ink/65 hover:bg-cream">
-            ×
-          </button>
+          <IconButton icon="x" label="Close" onClick={onClose} />
         </div>
         <div className="space-y-4 px-5 py-5 text-sm">
           <p className="text-xs text-ink/65">Times are UK time.</p>
-          <label className="block">
-            <span className="font-medium text-ink">Clocked in</span>
-            <input type="datetime-local" value={inAt} onChange={(e) => setInAt(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light px-3 py-2" />
-          </label>
-          <label className="block">
-            <span className="font-medium text-ink">Clocked out</span>
-            <span className="block text-xs text-ink/65">Leave empty to keep the shift open.</span>
-            <input type="datetime-local" value={outAt} onChange={(e) => setOutAt(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light px-3 py-2" />
-          </label>
-          <label className="block">
-            <span className="font-medium text-ink">Note</span>
-            <input value={note} onChange={(e) => setNote(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light px-3 py-2" />
-          </label>
-          {error && <p className="rounded-lg bg-red-50 px-3 py-2 text-red-800">{error}</p>}
+          <Field label="Clocked in" htmlFor="shift-in">
+            <input id="shift-in" type="datetime-local" value={inAt} onChange={(e) => setInAt(e.target.value)} className={ui.input} />
+          </Field>
+          <Field label="Clocked out" htmlFor="shift-out" hint="Leave empty to keep the shift open.">
+            <input id="shift-out" type="datetime-local" value={outAt} onChange={(e) => setOutAt(e.target.value)} className={ui.input} />
+          </Field>
+          <Field label="Note" htmlFor="shift-note">
+            <input id="shift-note" value={note} onChange={(e) => setNote(e.target.value)} className={ui.input} />
+          </Field>
+          {error && <p role="alert" className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-red-800">{error}</p>}
         </div>
         <div className="flex justify-end gap-2 border-t border-gold-light px-5 py-3">
-          <button type="button" onClick={onClose} className="rounded-lg border border-gold-light px-4 py-2 text-sm font-medium text-ink/75 hover:bg-cream">
+          <Button variant="ghost" onClick={onClose}>
             Cancel
-          </button>
-          <button type="button" disabled={busy} onClick={save} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
+          </Button>
+          <Button variant="primary" disabled={busy} onClick={save}>
             {busy ? "Saving…" : "Save"}
-          </button>
+          </Button>
         </div>
       </div>
     </div>
@@ -242,14 +237,14 @@ function StaffAttendanceContent() {
     saveCsv(
       `staff-attendance-${from}-to-${to}.csv`,
       toCsv(
-        ["staff", "date", "clock_in", "clock_out", "hours", "closed_by", "note"],
+        ["Staff", "Date", "Clocked in", "Clocked out", "Hours", "Clocked out by", "Note"],
         history.map((s) => [
           nameOf(s.user_id),
           dayKeyOf(s.clocked_in_at),
           timeOf(s.clocked_in_at),
           s.clocked_out_at ? timeOf(s.clocked_out_at) : "",
           s.clocked_out_at ? ((new Date(s.clocked_out_at).getTime() - new Date(s.clocked_in_at).getTime()) / 3600000).toFixed(2) : "",
-          s.auto_closed ? "auto" : s.clocked_out_by ? "admin" : "",
+          s.auto_closed ? "Automatically" : s.clocked_out_by ? "Office" : "",
           s.note || "",
         ]),
       ),
@@ -260,7 +255,7 @@ function StaffAttendanceContent() {
 
   return (
     <div className="space-y-6">
-      {error && <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{error}</p>}
+      {error && <p role="alert" className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-800">{error} Please refresh the page and try again.</p>}
 
       <section className={card}>
         <div className="border-b border-gold-light px-5 py-4">
@@ -282,10 +277,10 @@ function StaffAttendanceContent() {
                     {s.note ? ` · ${s.note}` : ""}
                   </p>
                 </div>
-                <button type="button" onClick={() => setEditing(s)} className="text-sm font-medium text-teal-700 hover:underline">
+                <button type="button" onClick={() => setEditing(s)} className={ui.btnLink}>
                   Edit
                 </button>
-                <button type="button" disabled={busyId === s.id} onClick={() => closeShift(s)} className="rounded-lg border border-gold-light px-3 py-1.5 text-sm font-medium text-ink/75 hover:bg-cream disabled:opacity-50">
+                <button type="button" disabled={busyId === s.id} onClick={() => closeShift(s)} className={btn("secondary", "sm")}>
                   {busyId === s.id ? "Clocking out…" : "Clock out now"}
                 </button>
               </li>
@@ -322,11 +317,11 @@ function StaffAttendanceContent() {
           </div>
           <label className="text-xs text-ink/65">
             From
-            <input type="date" value={from} max={to} onChange={(e) => e.target.value && setFrom(e.target.value)} className="mt-1 block rounded-lg border border-gold-light px-2 py-1.5 text-sm text-ink" />
+            <input type="date" value={from} max={to} onChange={(e) => e.target.value && setFrom(e.target.value)} className={`mt-1 ${ui.input} !w-auto`} />
           </label>
           <label className="text-xs text-ink/65">
             To
-            <input type="date" value={to} min={from} onChange={(e) => e.target.value && setTo(e.target.value)} className="mt-1 block rounded-lg border border-gold-light px-2 py-1.5 text-sm text-ink" />
+            <input type="date" value={to} min={from} onChange={(e) => e.target.value && setTo(e.target.value)} className={`mt-1 ${ui.input} !w-auto`} />
           </label>
           <label className="text-xs text-ink/65">
             Expected start
@@ -342,13 +337,13 @@ function StaffAttendanceContent() {
                   /* storage unavailable: setting just won't persist */
                 }
               }}
-              className="mt-1 block rounded-lg border border-gold-light px-2 py-1.5 text-sm text-ink"
+              className={`mt-1 ${ui.input} !w-auto`}
             />
           </label>
           {canExport && (
-            <button type="button" onClick={exportCsv} disabled={history.length === 0} className="rounded-lg border border-gold-light px-3 py-1.5 text-sm font-medium text-ink/75 hover:bg-cream disabled:opacity-50">
+            <Button icon="download" onClick={exportCsv} disabled={history.length === 0}>
               Export CSV
-            </button>
+            </Button>
           )}
         </div>
 
@@ -368,7 +363,7 @@ function StaffAttendanceContent() {
                 key: "late",
                 header: "Late",
                 sort: (t) => t.late,
-                cell: (t) => (t.late > 0 ? <span className="rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-900">{t.late} late</span> : <span className="text-ink/65">–</span>),
+                cell: (t) => (t.late > 0 ? <StatusChip tone="warn">{t.late} late</StatusChip> : <span className="text-ink/65">–</span>),
               },
             ]}
           />
@@ -392,8 +387,8 @@ function StaffAttendanceContent() {
                 cell: (s) => (
                   <>
                     {s.clocked_out_at ? timeOf(s.clocked_out_at) : <span className="text-teal-700">On shift</span>}
-                    {s.auto_closed && <span className="ml-1 text-xs text-amber-800">(auto)</span>}
-                    {s.clocked_out_by && <span className="ml-1 text-xs text-ink/65">(by admin)</span>}
+                    {s.auto_closed && <span className="ml-1 text-xs text-amber-800" title="Clocked out automatically at the end of the day">(automatic)</span>}
+                    {s.clocked_out_by && <span className="ml-1 text-xs text-ink/65">(by the office)</span>}
                   </>
                 ),
               },
@@ -410,7 +405,7 @@ function StaffAttendanceContent() {
                 header: "",
                 align: "right",
                 cell: (s) => (
-                  <button type="button" onClick={() => setEditing(s)} className="text-sm font-medium text-teal-700 hover:underline">
+                  <button type="button" onClick={() => setEditing(s)} className={ui.btnLink} aria-label={`Edit shift for ${nameOf(s.user_id)}`}>
                     Edit
                   </button>
                 ),
@@ -440,7 +435,7 @@ export default function StaffAttendancePage() {
   return (
     <section className="app-pad">
       <LearnGate allowedRoles={["head_teacher", "admin"]}>
-        <PageHeader title="Staff attendance" subtitle="Who is on shift, who hasn't clocked in, and hours worked." />
+        <PageHeader title="Staff hours" subtitle="Who is on shift, who hasn't clocked in today, and hours worked." />
         <StaffAttendanceContent />
       </LearnGate>
     </section>

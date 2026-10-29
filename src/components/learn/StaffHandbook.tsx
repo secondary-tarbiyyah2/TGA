@@ -14,8 +14,8 @@ export function StaffHandbook() {
           <p className="text-sm text-ink/70">The full handbook: the school day, how we teach, safeguarding, behaviour, marking, attendance, recording and data, online conduct, the portal, who to contact, and a first-week checklist.</p>
         </div>
         <div className="flex gap-2">
-          <a href={HANDBOOK_PDF} target="_blank" rel="noreferrer" className="rounded-full bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900">Download PDF</a>
-          <a href="https://globalacademy.tarbiyyah.co.uk/policies/" target="_blank" rel="noreferrer" className="rounded-full border border-gold-500 px-4 py-2 text-sm font-semibold text-gold-700 hover:bg-cream">All policies</a>
+          <a href={HANDBOOK_PDF} target="_blank" rel="noreferrer" className={ui.btnPrimary}>Download PDF</a>
+          <a href="https://globalacademy.tarbiyyah.co.uk/policies/" target="_blank" rel="noreferrer" className={ui.btnSecondary}>All policies</a>
         </div>
       </section>
       <p className="text-sm text-ink/65">Below: the portal how-tos, kept short. The PDF is the full version and the policies are the authority.</p>
@@ -59,7 +59,7 @@ export function StaffHandbook() {
         <p>Schedule one-to-one recitation like a normal lesson. A surah is covered once it has been assessed once, and comes due for revision again after 3, 7, 14 or 30 days depending on the mark.</p>
       </Section>
       <Section title="A pupil is absent">
-        <p>Record it in the register, then follow it up with the family from Absences: call or message, note what happened, and close it once it is explained. Open follow-ups appear in your Action centre.</p>
+        <p>Mark them absent in the register. The office follows up with the family and records the reason, which you will then see on the register. If you know something the office should hear (for example the pupil seemed unwell yesterday), message the office. If you are worried about the child, use Report a concern.</p>
       </Section>
       <Section title="Worried about a child">
         <p>

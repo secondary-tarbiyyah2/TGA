@@ -24,6 +24,7 @@ import {
 import { useNow } from "@/lib/learn/useNow";
 import { ukToday } from "@/lib/learn/ukTime";
 import { saveCsv } from "@/lib/learn/csv";
+import { btn, ui } from "@/components/learn/ui";
 
 const FORM_URL = `${MAIN_SITE_ORIGIN}/admissions/apply`;
 
@@ -101,14 +102,14 @@ function ApplicationCard({
       {(prev || next) && (
         <div className="mt-2 flex justify-between gap-2">
           {prev ? (
-            <button type="button" onClick={() => onMove(app.id, prev)} aria-label={`Move ${name} back to ${STATUS_LABELS[prev]}`} className="rounded-md border border-gold-light/60 px-2 py-0.5 text-xs text-ink/70 hover:bg-cream">
+            <button type="button" onClick={() => onMove(app.id, prev)} aria-label={`Move ${name} back to ${STATUS_LABELS[prev]}`} className={btn("secondary", "sm")}>
               ← {STATUS_LABELS[prev]}
             </button>
           ) : (
             <span />
           )}
           {next && (
-            <button type="button" onClick={() => onMove(app.id, next)} aria-label={`Move ${name} on to ${STATUS_LABELS[next]}`} className="rounded-md border border-gold-light/60 px-2 py-0.5 text-xs text-ink/70 hover:bg-cream">
+            <button type="button" onClick={() => onMove(app.id, next)} aria-label={`Move ${name} on to ${STATUS_LABELS[next]}`} className={btn("secondary", "sm")}>
               {STATUS_LABELS[next]} →
             </button>
           )}
@@ -417,10 +418,10 @@ export function ApplicationsTab() {
         </span>
         <span className="flex flex-wrap items-center gap-2 sm:ml-auto">
           <code className="max-w-full break-all rounded-lg bg-cream px-2 py-1 text-xs text-ink/80">{FORM_URL}</code>
-          <button type="button" onClick={copyLink} className="rounded-lg border border-gold-light px-3 py-1.5 text-xs font-medium text-ink/80 hover:bg-cream">
+          <button type="button" onClick={copyLink} className={btn("secondary", "sm")}>
             {copied ? "Copied" : "Copy link"}
           </button>
-          <a href={FORM_URL} target="_blank" rel="noopener noreferrer" className="rounded-lg border border-gold-light px-3 py-1.5 text-xs font-medium text-ink/80 hover:bg-cream">
+          <a href={FORM_URL} target="_blank" rel="noopener noreferrer" className={btn("secondary", "sm")}>
             Preview
           </a>
         </span>
@@ -434,12 +435,12 @@ export function ApplicationsTab() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Child, parent, email or reference"
-            className="mt-1 block w-64 max-w-full rounded-lg border border-gold-light/60 bg-white px-3 py-2 text-sm"
+            className={`${ui.input} mt-1 !w-64 max-w-full`}
           />
         </label>
         <label className="text-xs font-medium text-ink">
           Year group
-          <select value={yearFilter} onChange={(e) => setYearFilter(e.target.value)} className="mt-1 block rounded-lg border border-gold-light/60 bg-white px-3 py-2 text-sm">
+          <select value={yearFilter} onChange={(e) => setYearFilter(e.target.value)} className={`${ui.select} mt-1 !w-auto`}>
             <option value="">All year groups</option>
             {YEAR_GROUP_OPTIONS.map((y) => (
               <option key={y.value} value={y.value}>{y.value}</option>
@@ -450,7 +451,7 @@ export function ApplicationsTab() {
           {newCount} new · {rows.length} total
         </p>
         {canExport && (
-          <button type="button" onClick={exportCsv} disabled={filtered.length === 0} className="ml-auto rounded-lg border border-gold-light px-3 py-2 text-sm font-medium text-ink/80 hover:bg-cream disabled:opacity-50">
+          <button type="button" onClick={exportCsv} disabled={filtered.length === 0} className={`${btn("secondary")} ml-auto`}>
             Export CSV
           </button>
         )}

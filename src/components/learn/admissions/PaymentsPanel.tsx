@@ -12,6 +12,7 @@ import type { PlanId } from "@/components/learn/admissions/stageTypes";
 import type { AdmissionsContext } from "@/components/learn/admissions/useAdmissionsContext";
 import { Group, Pill, fieldCls, ghostBtn, primaryBtn } from "@/components/learn/admissions/ui";
 import { ukToday } from "@/lib/learn/ukTime";
+import { btn } from "@/components/learn/ui";
 
 export const PAYMENTS_BUCKET = "admissions-payments";
 
@@ -305,7 +306,7 @@ export function PaymentsPanel({
                     Email the family with a new upload link
                   </label>
                   <div className="flex gap-3">
-                    <button type="button" onClick={() => void reject()} disabled={busyId === p.id} className="rounded-lg bg-red-700 px-4 py-1.5 text-sm font-semibold text-white hover:brightness-110 disabled:opacity-50">Reject proof</button>
+                    <button type="button" onClick={() => void reject()} disabled={busyId === p.id} className={btn("danger")}>Reject proof</button>
                     <button type="button" onClick={() => setRejecting(null)} className="text-sm text-ink/70 underline">Cancel</button>
                   </div>
                 </div>
@@ -313,7 +314,7 @@ export function PaymentsPanel({
               {viewing?.id === p.id && (
                 <div className="mt-3 space-y-2">
                   <div className="flex justify-end gap-2 text-xs font-semibold">
-                    <a href={viewing.url} target="_blank" rel="noopener noreferrer" className="rounded-lg border border-gold-light px-3 py-1 text-ink/80 hover:bg-cream">Open in new tab</a>
+                    <a href={viewing.url} target="_blank" rel="noopener noreferrer" className={btn("secondary", "sm")}>Open in new tab</a>
                     <button type="button" onClick={() => setViewing(null)} className="px-2 py-1 text-ink/70 underline">Close</button>
                   </div>
                   <FilePreview key={viewing.url} url={viewing.url} type={viewing.type || "application/pdf"} name={viewing.name} heightClass="h-[26rem]" />

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { formatGBP } from "@/lib/format";
 import { METHOD_LABEL, parsePounds, round2, todayIso, type PaymentMethod } from "./shared";
+import { btn, ui } from "@/components/learn/ui";
 
 export function PaymentDialog({
   chargeId,
@@ -74,7 +75,7 @@ export function PaymentDialog({
         <div className="mt-4 space-y-3 text-sm">
           <label className="block">
             <span className="text-ink/70">Amount (£)</span>
-            <input type="text" inputMode="decimal" autoFocus={!fullPayment} value={amount} onChange={(e) => setAmount(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light px-3 py-2" placeholder="e.g. 304.29" />
+            <input type="text" inputMode="decimal" autoFocus={!fullPayment} value={amount} onChange={(e) => setAmount(e.target.value)} className={`${ui.input} mt-1`} placeholder="e.g. 304.29" />
             {value > balance && <span className="mt-1 block text-xs text-red-700">More than the {formatGBP(balance)} outstanding.</span>}
             {amount.trim() !== "" && !(value > 0) && <span className="mt-1 block text-xs text-red-700">Enter an amount in pounds, for example 304.29.</span>}
           </label>
@@ -96,20 +97,20 @@ export function PaymentDialog({
           </div>
           <label className="block">
             <span className="text-ink/70">Date received</span>
-            <input type="date" value={paidOn} max={today} onChange={(e) => setPaidOn(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light px-3 py-2" />
+            <input type="date" value={paidOn} max={today} onChange={(e) => setPaidOn(e.target.value)} className={`${ui.input} mt-1`} />
             {future && <span className="mt-1 block text-xs text-red-700">The date received can&apos;t be in the future.</span>}
           </label>
           <label className="block">
             <span className="text-ink/70">Reference (optional)</span>
-            <input type="text" value={reference} onChange={(e) => setReference(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light px-3 py-2" placeholder="Bank ref, receipt no." />
+            <input type="text" value={reference} onChange={(e) => setReference(e.target.value)} className={`${ui.input} mt-1`} placeholder="Bank ref, receipt no." />
           </label>
           {error && <p className="text-red-700">{error}</p>}
         </div>
         <div className="mt-5 flex justify-end gap-2">
-          <button type="button" onClick={onClose} className="rounded-lg border border-gold-light bg-white px-4 py-2 text-sm font-medium text-ink/80 hover:bg-cream">
+          <button type="button" onClick={onClose} className={btn("secondary")}>
             Cancel
           </button>
-          <button type="button" disabled={!valid || busy} onClick={save} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
+          <button type="button" disabled={!valid || busy} onClick={save} className={btn("primary")}>
             {busy ? "Saving…" : "Save payment"}
           </button>
         </div>

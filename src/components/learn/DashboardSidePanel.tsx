@@ -154,7 +154,18 @@ const PANEL_KEY = "tga:side-panel-hidden";
  * dashboards: Timeline, upcoming lessons, recently accessed. It can be
  * hidden (remembered per browser), like Moodle's drawer toggle.
  */
-export function DashboardWithPanel({ viewer, children }: { viewer: Viewer; children: React.ReactNode }) {
+export function DashboardWithPanel({
+  viewer,
+  children,
+  wideOnly = false,
+}: {
+  viewer: Viewer;
+  children: React.ReactNode;
+  /** Only show the panel beside the content on wide screens. Below xl it
+   * would stack under the page, repeating what the dashboard and the
+   * Calendar page already show, so phones skip it. */
+  wideOnly?: boolean;
+}) {
   const [hidden, setHidden] = useState(false);
   const timeline = useTimeline(viewer);
   const area = viewer.kind === "staff" ? "/admin" : viewer.kind === "teacher" ? "/teach" : viewer.kind === "student" ? "/student" : "/family";
@@ -205,7 +216,7 @@ export function DashboardWithPanel({ viewer, children }: { viewer: Viewer; child
         {children}
       </div>
       {!hidden && (
-        <aside aria-label="Side panel" className="space-y-4">
+        <aside aria-label="Side panel" className={`space-y-4 ${wideOnly ? "hidden xl:block" : ""}`}>
           <Block title="Calendar">
             <MiniCalendar scope={calendarScope} href={`${area}/calendar`} />
           </Block>

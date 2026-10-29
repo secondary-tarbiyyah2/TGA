@@ -10,7 +10,7 @@ export default function TeachHandbookPage() {
     <section className="app-pad">
       <LearnGate allowedRoles={["teacher", "teaching_assistant_cover"]}>
         <LearnShell role="teach">
-          <PageHeader crumbs={[{ label: "Home", href: "/teach/dashboard" }, { label: "Staff handbook" }]} title="Staff handbook" subtitle="The few things every member of staff needs to know." />
+          <PageHeader title="Staff handbook" subtitle="The few things every member of staff needs to know." />
           <StaffHandbook />
         </LearnShell>
       </LearnGate>

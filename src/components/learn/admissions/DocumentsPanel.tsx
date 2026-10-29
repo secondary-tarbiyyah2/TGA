@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { FilePreview, mimeFromName } from "@/components/learn/admissions/FilePreview";
 import { DOCUMENTS_BUCKET } from "@/components/admissions/applicationShared";
+import { btn } from "@/components/learn/ui";
 
 type Doc = { path: string; name: string; size: number | null; created: string | null; appId: string; shared?: boolean };
 
@@ -111,7 +112,7 @@ export function DocumentsPanel({ applicationId, sharedIdFrom }: { applicationId:
                     {d.created ? ` · ${new Date(d.created).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "Europe/London" })}` : ""}
                   </span>
                 </span>
-                <button type="button" onClick={() => open(d, label)} disabled={busyPath === d.path} className="shrink-0 rounded-lg border border-gold-light px-3 py-1 text-xs font-semibold text-ink/80 hover:bg-cream disabled:opacity-50">
+                <button type="button" onClick={() => open(d, label)} disabled={busyPath === d.path} className={`${btn("secondary", "sm")} shrink-0`}>
                   {busyPath === d.path ? "Opening…" : viewing?.path === d.path ? "Reload" : "View"}
                 </button>
               </li>
@@ -125,7 +126,7 @@ export function DocumentsPanel({ applicationId, sharedIdFrom }: { applicationId:
             <p className="text-sm font-medium text-ink">{viewing.label}</p>
             <div className="flex gap-2 text-xs font-semibold">
               <a href={viewing.url} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-gold-500 px-3 py-1 text-ink-900 hover:brightness-105">Open in new tab</a>
-              <a href={viewing.downloadUrl} className="rounded-lg bg-gold-700 px-3 py-1 text-white hover:bg-gold-900">Download</a>
+              <a href={viewing.downloadUrl} className={btn("primary", "sm")}>Download</a>
               <button type="button" onClick={() => setViewing(null)} className="px-2 py-1 text-ink/70 underline">Close</button>
             </div>
           </div>

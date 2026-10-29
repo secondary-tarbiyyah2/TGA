@@ -110,7 +110,7 @@ export function AnnouncementsPage({ mode }: { mode: AnnouncementsMode }) {
     setBusyId(null);
   };
 
-  const subtitle = canManage ? "Post notices to guardians, students, and teachers." : "Notices from the school and your classes.";
+  const subtitle = canManage ? "Post notices to the families and pupils in your classes, or to the whole school." : "Notices from the school and your classes.";
   const canCompose = canManage && (isHead || (classes !== null && classes.length > 0));
 
   return (

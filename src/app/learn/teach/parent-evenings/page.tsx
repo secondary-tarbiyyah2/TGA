@@ -11,7 +11,6 @@ export default function TeachParentEveningsPage() {
       <LearnGate allowedRoles={["teacher", "teaching_assistant_cover"]}>
         <LearnShell role="teach">
           <PageHeader
-            crumbs={[{ label: "Overview", href: "/teach/dashboard" }, { label: "Parent evenings" }]}
             title="Parent evenings"
             subtitle="Your booked meetings, with the link parents use to join you."
           />

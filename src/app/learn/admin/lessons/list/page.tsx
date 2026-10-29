@@ -8,6 +8,7 @@ import { useTimetableData } from "@/components/learn/timetable/useTimetableData"
 import { addIsoDays, hhmm, ukIsoDate } from "@/components/learn/timetable/types";
 import { edgeErrorMessage } from "@/lib/learn/edge";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { StatusChip, ui } from "@/components/learn/ui";
 
 type Range = "week" | "fortnight" | "past";
 type Row = {
@@ -38,7 +39,7 @@ function GenerateInstances({ runId, onDone, defaultOpen }: { runId: string; onDo
     }
   };
   return (
-    <details className="rounded-2xl border border-gold-light/50 bg-white p-4" open={defaultOpen}>
+    <details className="rounded-2xl border border-gold-light bg-white p-4" open={defaultOpen}>
       <summary className="cursor-pointer text-sm font-semibold text-ink">Create dated lessons from the published timetable</summary>
       <p className="mt-2 text-sm text-ink/65">Creates one lesson (join link, objectives, resources, register, recording) for each occurrence of every published timetable slot in the range. Safe to re-run: existing dates are never duplicated.</p>
       <div className="mt-3 flex flex-wrap items-end gap-2">
@@ -86,7 +87,7 @@ function ListContent() {
     <div>
       <LessonsHeader title="Lessons" subtitle="Dated lessons made from the published timetable: join links, details and cover." />
       {!data.loaded ? (
-        <p className="text-sm text-ink/65">Loading…</p>
+        <div className="h-40 animate-pulse rounded-2xl bg-white" aria-label="Loading" />
       ) : !published ? (
         <p className="rounded-xl border border-dashed border-gold-light bg-cream/60 px-4 py-4 text-sm text-ink/70">
           No published timetable yet, so there are no lessons. <Link href="/admin/lessons/timetable" className="font-semibold underline">Review and publish a timetable</Link>.
@@ -94,7 +95,7 @@ function ListContent() {
       ) : (
         <div className="space-y-4">
           <GenerateInstances key={rows !== null && rows.length === 0 && upcoming ? "empty" : "some"} runId={published.id} onDone={() => setRefresh((k) => k + 1)} defaultOpen={rows !== null && rows.length === 0 && upcoming} />
-          <div className="rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6">
+          <div className="rounded-2xl border border-gold-light bg-white p-4 sm:p-6">
             <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Date range">
               {([["week", "Next 7 days"], ["fortnight", "Next 14 days"], ["past", "Past"]] as const).map(([id, label]) => (
                 <button key={id} type="button" aria-pressed={range === id} onClick={() => { setRange(id); setRows(null); }} className={chipCls(range === id)}>{label}</button>
@@ -117,9 +118,9 @@ function ListContent() {
                           <li key={r.id} className="flex flex-wrap items-center gap-x-3 gap-y-1 py-2 text-sm">
                             <span className="w-24 shrink-0 tabular-nums text-ink/65">{s ? `${hhmm(s.start_time)}–${hhmm(s.end_time)}` : ""}</span>
                             <span className="min-w-0 flex-1 basis-48"><strong className="text-ink">{s?.subjects?.name}</strong> <span className="text-ink/70">({s?.classes?.name})</span> <span className="text-ink/65">· {s ? teacherName(s.teacher_user_id) : ""}</span></span>
-                            {r.bbb_status === "live" && <span className="rounded-full bg-green-100 px-2 py-0.5 text-xs font-medium text-green-900">Live</span>}
-                            {link && <a href={link} target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-gold-700 underline">Join link</a>}
-                            <Link href={`/admin/lessons/view?id=${r.id}`} className="text-xs font-semibold text-gold-700 underline">Open</Link>
+                            {r.bbb_status === "live" && <StatusChip tone="good">Live</StatusChip>}
+                            {link && <a href={link} target="_blank" rel="noopener noreferrer" className={`${ui.btnLink} !text-xs`}>Join link</a>}
+                            <Link href={`/admin/lessons/view?id=${r.id}`} className={`${ui.btnLink} !text-xs`}>Open</Link>
                           </li>
                         );
                       })}

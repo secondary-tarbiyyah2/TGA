@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
@@ -45,7 +46,7 @@ export default async function TermsPage() {
         <p className="mt-2 text-ink/75">
           These website terms cover browsing and using this site. Separate enrolment terms and conditions, covering
           fees, withdrawal and the Fee Policy, apply once a place is offered and accepted, see the{" "}
-          <a href="/policies" className="underline">Policies</a> page.
+          <Link href="/policies" className="underline">Policies</Link> page.
         </p>
 
         <h2 className="mt-8 font-serif text-lg font-semibold text-ink">Contact</h2>

@@ -2,6 +2,7 @@
 
 import { forwardRef, useImperativeHandle, useMemo, useRef, useState, type CSSProperties } from "react";
 import { TOKEN_DOCS } from "@/components/learn/admissions/messageTemplates";
+import { btn, ui } from "@/components/learn/ui";
 
 // A plain <textarea> with a highlighter underneath. The stored value stays
 // ordinary text with {{tokens}}; a transparent-text copy sits behind the
@@ -117,12 +118,12 @@ export function VariablePicker({ onPick }: { onPick: (token: string) => void }) 
   }, [q]);
   return (
     <div className="relative inline-block" onKeyDown={(e) => e.key === "Escape" && setOpen(false)}>
-      <button type="button" aria-expanded={open} aria-haspopup="true" onClick={() => setOpen((v) => !v)} className="rounded-lg border border-gold-light bg-white px-3 py-1 text-xs font-semibold text-ink/80 hover:bg-cream">
+      <button type="button" aria-expanded={open} aria-haspopup="true" onClick={() => setOpen((v) => !v)} className={btn("secondary", "sm")}>
         Insert variable ▾
       </button>
       {open && (
         <div className="absolute left-0 z-20 mt-1 w-80 max-w-[85vw] rounded-lg border border-gold-light bg-white p-2 shadow-lg">
-          <input autoFocus value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search values" aria-label="Search values" className="mb-2 w-full rounded-md border border-gold-light/60 px-2 py-1 text-xs" />
+          <input autoFocus value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search values" aria-label="Search values" className={`${ui.input} mb-2`} />
           <ul className="max-h-64 overflow-auto">
             {list.map((t) => (
               <li key={t.token}>

@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { LearnShell } from "@/components/learn/LearnShell";
 import { HomeworkForChild } from "@/components/learn/HomeworkForChild";
@@ -10,6 +11,7 @@ import { PageHeader } from "@/components/learn/PageHeader";
 function StudentHomeworkContent() {
   const supabase = getSupabaseClient();
   const [childId, setChildId] = useState<string | null>(null);
+  const openId = useSearchParams().get("hw") || undefined;
 
   useEffect(() => {
     if (!supabase) return;
@@ -25,8 +27,8 @@ function StudentHomeworkContent() {
 
   return (
     <div>
-      <PageHeader crumbs={[{ label: "Home", href: "/student/dashboard" }, { label: "To do", href: "/student/todo" }, { label: "My homework" }]} title="My homework" subtitle="Hand in your work and read your teacher's feedback." />
-      <div className="rounded-2xl border border-gold-light bg-white p-6">{childId ? <HomeworkForChild childId={childId} canSubmit /> : <p className="text-sm text-ink/65">Loading…</p>}</div>
+      <PageHeader crumbs={[{ label: "Home", href: "/student/dashboard" }, { label: "To do", href: "/student/todo" }, { label: "My homework" }]} title="My homework" subtitle="Tap a piece of homework to open it, hand in your work and read your teacher's feedback." />
+      {childId ? <HomeworkForChild childId={childId} canSubmit groupByStatus openId={openId} /> : <p className="text-sm text-ink/65">Loading…</p>}
     </div>
   );
 }
@@ -36,7 +38,9 @@ export default function StudentHomeworkPage() {
     <section className="app-pad">
       <LearnGate allowedRoles={["student"]}>
         <LearnShell role="student">
-          <StudentHomeworkContent />
+          <Suspense fallback={<p className="text-ink/65">Loading…</p>}>
+            <StudentHomeworkContent />
+          </Suspense>
         </LearnShell>
       </LearnGate>
     </section>

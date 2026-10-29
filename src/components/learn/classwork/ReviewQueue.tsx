@@ -6,6 +6,7 @@ import { useNow } from "@/lib/learn/useNow";
 import { MarkRow } from "@/components/learn/homework/HomeworkCards";
 import { Tabs } from "@/components/learn/Tabs";
 import { ui } from "@/components/learn/ui";
+import { PageHeader } from "@/components/learn/PageHeader";
 
 type Item = {
   submission_id: string;
@@ -202,10 +203,7 @@ export function ReviewQueue({ classId: fixedClass, homeworkId, embedded = false,
   return (
     <div className="space-y-4">
       {!embedded && (
-        <div>
-          <h1 className="font-serif text-h2 font-semibold text-ink">To review</h1>
-          <p className="text-sm text-ink/65">Work handed in and waiting to be marked, by assignment, oldest first. Each class also has its own list under Classwork.</p>
-        </div>
+        <PageHeader title="To review" subtitle="Work handed in and waiting to be marked, oldest first." />
       )}
       {items === null ? (
         <div className="h-24 animate-pulse rounded-2xl bg-white" />
@@ -261,9 +259,9 @@ export function ReviewQueue({ classId: fixedClass, homeworkId, embedded = false,
               {groups.map((g) => {
                 const days = waiting(g.oldest);
                 return (
-                  <li key={g.homework_id} className="flex flex-wrap items-center gap-3 px-3 py-3">
-                    <span className="min-w-0 flex-1">
-                      <span className="block truncate text-sm font-semibold text-ink">{g.title}</span>
+                  <li key={g.homework_id} className="flex flex-wrap items-center gap-x-3 gap-y-2 px-3 py-3">
+                    <span className="min-w-0 basis-full sm:basis-0 sm:flex-1">
+                      <span className="block truncate text-sm font-semibold text-ink" title={g.title}>{g.title}</span>
                       <span className="block truncate text-xs text-ink/65">
                         {g.class_name ? `${g.class_name} · ` : ""}due {fmtDay(g.due_at)}
                       </span>
@@ -274,10 +272,10 @@ export function ReviewQueue({ classId: fixedClass, homeworkId, embedded = false,
                     {g.late > 0 && <span className="rounded-full bg-amber-50 px-2.5 py-1 text-xs font-medium text-amber-800 ring-1 ring-inset ring-amber-600/20">{g.late} late</span>}
                     {days >= 3 && (
                       <span className={`rounded-full px-2.5 py-1 text-xs font-medium ring-1 ring-inset ${days >= 7 ? "bg-red-50 text-red-800 ring-red-600/20" : "bg-cream text-ink/75 ring-gold-light"}`}>
-                        Oldest waiting {days} days
+                        {g.items.length === 1 ? "Waiting" : "Oldest waiting"} {days} days
                       </span>
                     )}
-                    <button type="button" className={btnPrimary} onClick={() => setMarking({ title: g.title, items: g.items, index: 0 })}>
+                    <button type="button" className={`${btnPrimary} ml-auto`} onClick={() => setMarking({ title: g.title, items: g.items, index: 0 })}>
                       Mark
                     </button>
                   </li>

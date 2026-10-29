@@ -10,7 +10,7 @@ export default function TeachActionsPage() {
     <section className="app-pad">
       <LearnGate allowedRoles={["teacher", "teaching_assistant_cover"]}>
         <LearnShell role="teach">
-          <PageHeader crumbs={[{ label: "Home", href: "/teach/dashboard" }, { label: "Action centre" }]} title="Action centre" subtitle="Everything that needs you, most urgent first: missing homework, absence follow-ups and Qur'an revision. Items clear by themselves when the work is done." />
+          <PageHeader title="Action centre" subtitle="Everything that needs you, most urgent first: missing homework, absence follow-ups and Qur'an revision. Items clear by themselves when the work is done." />
           <ActionCentre role="teach" />
         </LearnShell>
       </LearnGate>

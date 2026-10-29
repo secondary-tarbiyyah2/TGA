@@ -103,7 +103,8 @@ function TimetableContent() {
       setSlots(before);
       if (error.code === "23P01" || /no_(teacher|class|session)_overlap/.test(error.message)) return "That clashes with another lesson (same teacher, class or session at the same time).";
       if (/permission|row-level|policy/i.test(error.message)) return "Your account isn't allowed to change this timetable.";
-      return error.message;
+      // P0001 is a message the database wrote for people (e.g. a protected-time rule); anything else is technical.
+      return error.code === "P0001" ? error.message : "Couldn't save that change. Please try again.";
     }
     return null;
   };
@@ -177,7 +178,7 @@ function TimetableContent() {
     <div>
       <LessonsHeader title="Timetable" subtitle="The weekly grid. Drag a lesson to move it; click it to edit; nothing goes live until you publish." actions={exportActions} />
       {!data.loaded ? (
-        <p className="text-sm text-ink/65">Loading…</p>
+        <div className="h-40 animate-pulse rounded-2xl bg-white" aria-label="Loading" />
       ) : runs.length === 0 ? (
         <p className="rounded-xl border border-dashed border-gold-light bg-cream/60 px-4 py-4 text-sm text-ink/70">
           No timetable yet. <Link href="/admin/lessons/generate" className="font-semibold underline">Generate one</Link> or start a blank draft.
@@ -186,7 +187,7 @@ function TimetableContent() {
         <div className="space-y-4">
           {message && <p role="status" className="rounded-xl border border-teal-500/30 bg-teal-100/60 px-4 py-2 text-sm text-teal-900">{message}</p>}
 
-          <div className="rounded-2xl border border-gold-light/50 bg-white p-4">
+          <div className="rounded-2xl border border-gold-light bg-white p-4">
             <div className="flex flex-wrap items-center gap-2">
               <span className="text-xs font-semibold uppercase tracking-wider text-ink/65">Version</span>
               {runs.slice(0, 4).map((r) => (
@@ -259,7 +260,7 @@ function TimetableContent() {
             </ul>
           )}
 
-          <details className="rounded-2xl border border-gold-light/50 bg-white p-4" open={hardConflicts.length > 0}>
+          <details className="rounded-2xl border border-gold-light bg-white p-4" open={hardConflicts.length > 0}>
             <summary className="cursor-pointer text-sm font-semibold text-ink">
               Warnings <span className={`ml-1 rounded-full px-2 py-0.5 text-xs ${warningCount ? "bg-amber-100 text-amber-900" : "bg-green-100 text-green-900"}`}>{warningCount || "none"}</span>
             </summary>
@@ -272,7 +273,7 @@ function TimetableContent() {
           </details>
 
           {run?.status === "published" ? (
-            <details className="rounded-2xl border border-gold-light/50 bg-white p-4">
+            <details className="rounded-2xl border border-gold-light bg-white p-4">
               <summary className="cursor-pointer text-sm font-semibold text-ink">Arrange cover for one lesson</summary>
               <div className="mt-3"><CoverForm slots={slots} teachers={data.teachers} onDone={() => runId && loadDetail(runId)} /></div>
             </details>

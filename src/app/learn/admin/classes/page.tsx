@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { PageHeader } from "@/components/learn/PageHeader";
+import { ButtonLink } from "@/components/learn/ui";
 import { ClassGrid } from "@/components/learn/class/ClassGrid";
 import { useViewerClasses, type ClassViewer } from "@/lib/learn/classes";
 
@@ -16,13 +16,13 @@ function AdminClassesContent() {
         crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "Classes" }]}
         title="Classes"
         subtitle="Every class in the school. Open one to see its week-by-week course page."
-        actions={
-          <Link href="/admin/academic/classes" className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-medium text-white hover:bg-gold-900">
-            + Add a class
-          </Link>
+        action={
+          <ButtonLink href="/admin/academic/classes" variant="primary" icon="plus">
+            Add a class
+          </ButtonLink>
         }
       />
-      <ClassGrid viewer={VIEWER} classes={classes} hrefFor={(c) => `/admin/class?id=${c.id}`} emptyLabel="No classes yet. Use + Add a class to create one." />
+      <ClassGrid viewer={VIEWER} classes={classes} hrefFor={(c) => `/admin/class?id=${c.id}`} emptyLabel="No classes yet. Use Add a class to create one." />
     </>
   );
 }

@@ -29,7 +29,7 @@ const longDate = (iso: string | null) => (iso ? new Date(iso).toLocaleDateString
  * print. Only the latest issued copy of each is shown (0097); RLS limits rows
  * to the caller's own children.
  */
-export function ReleasedReports() {
+export function ReleasedReports({ audience = "family" }: { audience?: "family" | "student" } = {}) {
   const [rows, setRows] = useState<Row[] | null>(null);
   const [child, setChild] = useState<string>("");
   const [openId, setOpenId] = useState<string | null>(null);
@@ -89,7 +89,10 @@ export function ReleasedReports() {
     <div ref={topRef} className="scroll-mt-24 space-y-4">
       <PrintStyles />
       <div className="print:hidden">
-        <PageHeader title="Progress reports" subtitle="End-of-term reports from the school: attendance, homework, merits, Qur'an and grades, with your teachers' comments." />
+        <PageHeader
+          title={audience === "student" ? "My reports" : "Progress reports"}
+          subtitle={audience === "student" ? "Your end-of-term reports, with what your teachers say about your work." : "End-of-term reports from the school: attendance, homework, merits, Qur'an and grades, with your teachers' comments."}
+        />
       </div>
 
       {rows === null ? (
@@ -132,7 +135,7 @@ export function ReleasedReports() {
                       <div className="min-w-0">
                         <p className="font-semibold text-ink">{r.terms?.name || "All time"}</p>
                         <p className="text-xs text-ink/65">
-                          {r.children?.name || "Pupil"} · issued {longDate(r.released_at)}
+                          {audience === "student" || !r.children?.name ? "Issued" : `${r.children.name} · issued`} {longDate(r.released_at)}
                         </p>
                       </div>
                       {r.version > 1 && <StatusChip tone="info">Corrected</StatusChip>}

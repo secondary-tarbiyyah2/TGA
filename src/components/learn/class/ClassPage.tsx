@@ -102,7 +102,7 @@ function GradesTab({ classId, viewer }: { classId: string; viewer: ClassViewer }
       <table className="w-full min-w-[480px] text-left text-sm">
         <thead>
           <tr className="border-b border-gold-light text-xs uppercase tracking-wide text-ink/65">
-            {teacher && <th className="px-5 py-2 font-semibold">Student</th>}
+            {teacher && <th className="px-5 py-2 font-semibold">Pupil</th>}
             <th className="px-5 py-2 font-semibold">Assessment</th>
             <th className="px-5 py-2 font-semibold">Date</th>
             <th className="px-5 py-2 text-right font-semibold">Result</th>

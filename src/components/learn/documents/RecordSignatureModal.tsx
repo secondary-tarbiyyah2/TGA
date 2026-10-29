@@ -5,6 +5,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { SignatureCapture, type SignatureCaptureHandle } from "./SignatureCapture";
 import { uploadSignatureImage } from "./signatureImage";
 import { HAND_METHODS, METHOD_LABEL, type SignatureMethod } from "./signatureMethod";
+import { btn, ui } from "@/components/learn/ui";
 
 export type SignTarget = { user_id: string; name: string };
 
@@ -192,11 +193,11 @@ export function RecordSignatureModal({
           )}
           <label className="block">
             <span className="font-medium text-ink">Date signed</span>
-            <input type="date" value={date} max={todayIso()} onChange={(e) => setDate(e.target.value)} className="mt-1 block rounded-lg border border-gold-light px-3 py-2" />
+            <input type="date" value={date} max={todayIso()} onChange={(e) => setDate(e.target.value)} className={`${ui.input} mt-1 !w-auto`} />
           </label>
           <label className="block">
             <span className="font-medium text-ink">Note (optional)</span>
-            <textarea rows={2} value={note} onChange={(e) => setNote(e.target.value)} placeholder="e.g. Handed in at the open evening" className="mt-1 w-full rounded-lg border border-gold-light px-3 py-2" />
+            <textarea rows={2} value={note} onChange={(e) => setNote(e.target.value)} placeholder="e.g. Handed in at the open evening" className={`${ui.textarea} mt-1`} />
           </label>
           {bulk ? (
             <p className="text-xs text-ink/65">Scans can&apos;t be attached in bulk. To keep a scan for someone, record their signature on its own.</p>
@@ -214,10 +215,10 @@ export function RecordSignatureModal({
           {error && <p className="rounded-lg bg-red-50 px-3 py-2 text-red-800">{error}</p>}
         </div>
         <div className="flex justify-end gap-2 border-t border-gold-light px-5 py-3">
-          <button type="button" onClick={onClose} className="rounded-lg border border-gold-light px-4 py-2 text-sm font-medium text-ink/75 hover:bg-cream">
+          <button type="button" onClick={onClose} className={btn("secondary")}>
             Cancel
           </button>
-          <button type="button" disabled={busy || !seen || (capture && !padReady)} onClick={save} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
+          <button type="button" disabled={busy || !seen || (capture && !padReady)} onClick={save} className={btn("primary")}>
             {busy ? "Recording…" : bulk ? `Record ${targets.length} signatures` : "Record signature"}
           </button>
         </div>

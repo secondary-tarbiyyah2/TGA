@@ -5,6 +5,7 @@ import { STATUS_LABELS, type ApplicationRow } from "@/components/admissions/appl
 import { bandForYearGroup, gbp } from "@/components/learn/admissions/paymentCalc";
 import type { AdmissionsContext } from "@/components/learn/admissions/useAdmissionsContext";
 import { FEE_DEFAULTS, FEE_POLICY_DEFAULTS, estimateFamilyFees } from "@/lib/fees";
+import { btn } from "@/components/learn/ui";
 
 const fullName = (a: Pick<ApplicationRow, "child_first_name" | "child_last_name">) => `${a.child_first_name} ${a.child_last_name}`.trim();
 
@@ -109,7 +110,7 @@ export function FamilyPanel({
         </p>
         {mine && mine.siblingDiscount > 0 && (
           <div className="mt-2 flex flex-wrap items-center gap-3">
-            <button type="button" onClick={applyDiscount} disabled={saving} className="rounded-lg bg-gold-700 px-3 py-1.5 text-xs font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
+            <button type="button" onClick={applyDiscount} disabled={saving} className={btn("primary", "sm")}>
               {saving ? "Saving…" : `Apply ${app.child_first_name}'s discount to their fees`}
             </button>
             <span className="text-xs text-ink/65">Sets this child&apos;s annual fee override to {gbp(mine.net)}.</span>

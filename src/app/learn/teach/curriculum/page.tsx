@@ -12,7 +12,6 @@ export default function TeachCurriculumPage() {
       <LearnGate allowedRoles={["teacher", "teaching_assistant_cover"]}>
         <LearnShell role="teach">
           <PageHeader
-            crumbs={[{ label: "Home", href: "/teach/dashboard" }, { label: "Lesson library" }]}
             title="Lesson library"
             subtitle="Pick a year, then a unit. Each unit has its lessons (slides and lesson plans to view, download, edit or share), its revision pack for pupils, and your pupils' revision results."
           />

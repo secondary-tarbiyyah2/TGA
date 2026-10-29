@@ -5,6 +5,7 @@ import { Tabs, tabPanelProps } from "@/components/learn/Tabs";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { DEFAULT_QUIZ_CONFIG } from "@/lib/quiz/defaultConfig";
 import type { LineIcon, QuizConfig, QuizQuestion, QuizRule, RuleCondition, RuleOperator, ResultSectionKey } from "@/lib/quiz/schema";
+import { btn, ui } from "@/components/learn/ui";
 
 type VersionRow = { id: string; status: string; label: string; content: QuizConfig; published_at: string | null; created_at: string };
 
@@ -189,10 +190,10 @@ export function QuizBuilderPanel({ onPreview }: { onPreview: (config: QuizConfig
               void flush();
               onPreview(config);
             }}
-            className="rounded-lg border border-gold-light px-4 py-2 text-sm font-semibold hover:bg-cream bg-white text-ink/80 transition-colors">
+            className={btn("secondary")}>
             Preview as a parent
           </button>
-          <button type="button" onClick={publish} disabled={publishing || !draftId} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 transition-colors disabled:opacity-50">
+          <button type="button" onClick={publish} disabled={publishing || !draftId} className={btn("primary")}>
             {publishing ? "Publishing…" : "Publish draft"}
           </button>
         </div>
@@ -210,7 +211,7 @@ export function QuizBuilderPanel({ onPreview }: { onPreview: (config: QuizConfig
             {history.map((v) => (
               <li key={v.id} className="flex items-center justify-between gap-2 border-b border-gold-light/20 py-1">
                 <span>{v.label} · {v.status} · {new Date(v.created_at).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short", timeZone: "Europe/London" })}</span>
-                <button type="button" onClick={() => revertTo(v)} className="shrink-0 rounded-lg border border-gold-light px-2 py-0.5 text-[11px] font-medium hover:bg-cream bg-white text-ink/80 transition-colors">
+                <button type="button" onClick={() => revertTo(v)} className={`${btn("secondary", "sm")} shrink-0`}>
                   Load into draft
                 </button>
               </li>
@@ -291,8 +292,8 @@ function QuestionsEditor({ config, onChange }: { config: QuizConfig; onChange: (
           <div className="flex items-center justify-between gap-2">
             <span className="text-xs font-medium text-ink/65">Step {q.step}</span>
             <div className="flex items-center gap-2">
-              <button type="button" onClick={() => move(i, -1)} className="rounded border border-gold-light/60 px-2 py-0.5 text-xs text-ink/65 hover:bg-cream" aria-label="Move up">↑</button>
-              <button type="button" onClick={() => move(i, 1)} className="rounded border border-gold-light/60 px-2 py-0.5 text-xs text-ink/65 hover:bg-cream" aria-label="Move down">↓</button>
+              <button type="button" onClick={() => move(i, -1)} className={btn("secondary", "sm")} aria-label="Move up">↑</button>
+              <button type="button" onClick={() => move(i, 1)} className={btn("secondary", "sm")} aria-label="Move down">↓</button>
               <label className="flex items-center gap-1 text-xs text-ink/65">
                 <input type="checkbox" checked={q.active} onChange={(e) => updateQuestion(i, { active: e.target.checked })} />
                 Visible
@@ -301,10 +302,10 @@ function QuestionsEditor({ config, onChange }: { config: QuizConfig; onChange: (
           </div>
 
           <label className="mt-3 block text-xs font-medium text-ink/65">Title</label>
-          <input value={q.title} onChange={(e) => updateQuestion(i, { title: e.target.value })} className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
+          <input value={q.title} onChange={(e) => updateQuestion(i, { title: e.target.value })} className={`${ui.input} mt-1`} />
 
           <label className="mt-2 block text-xs font-medium text-ink/65">Subtitle (optional)</label>
-          <input value={q.subtitle ?? ""} onChange={(e) => updateQuestion(i, { subtitle: e.target.value })} className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
+          <input value={q.subtitle ?? ""} onChange={(e) => updateQuestion(i, { subtitle: e.target.value })} className={`${ui.input} mt-1`} />
 
           <label className="mt-2 block text-xs font-medium text-ink/65">Show only when (simple rule)</label>
           <ShowWhenEditor
@@ -318,9 +319,9 @@ function QuestionsEditor({ config, onChange }: { config: QuizConfig; onChange: (
               <p className="text-xs font-medium text-ink/65">Options</p>
               {q.options.map((opt, oi) => (
                 <div key={oi} className="grid grid-cols-[1fr_1fr_auto_auto] items-center gap-2">
-                  <input value={opt.label} onChange={(e) => updateOption(i, oi, { label: e.target.value })} placeholder="Label" className="rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm" />
-                  <input value={opt.detail ?? ""} onChange={(e) => updateOption(i, oi, { detail: e.target.value })} placeholder="Detail line (optional)" className="rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm" />
-                  <select value={opt.icon ?? "none"} onChange={(e) => updateOption(i, oi, { icon: e.target.value as LineIcon })} className="rounded-lg border border-gold-light/60 px-2 py-1.5 text-xs">
+                  <input value={opt.label} onChange={(e) => updateOption(i, oi, { label: e.target.value })} placeholder="Label" className={`${ui.input} !w-auto`} />
+                  <input value={opt.detail ?? ""} onChange={(e) => updateOption(i, oi, { detail: e.target.value })} placeholder="Detail line (optional)" className={`${ui.input} !w-auto`} />
+                  <select value={opt.icon ?? "none"} onChange={(e) => updateOption(i, oi, { icon: e.target.value as LineIcon })} className={`${ui.select} !w-auto`}>
                     {ICONS.map((icon) => (
                       <option key={icon} value={icon}>{icon}</option>
                     ))}
@@ -369,7 +370,7 @@ function ConditionRow({
       <select
         value={condition.questionKey}
         onChange={(e) => onChange({ questionKey: e.target.value, value: "" })}
-        className="rounded border border-gold-light/60 px-2 py-1"
+        className={`${ui.select} !w-auto`}
       >
         {questions.map((q) => (
           <option key={q.key} value={q.key}>{q.title}</option>
@@ -378,7 +379,7 @@ function ConditionRow({
       <select
         value={condition.operator}
         onChange={(e) => onChange({ operator: e.target.value as RuleOperator })}
-        className="rounded border border-gold-light/60 px-2 py-1"
+        className={`${ui.select} !w-auto`}
       >
         {OPERATORS.map((op) => (
           <option key={op} value={op}>{OPERATOR_LABELS[op]}</option>
@@ -390,7 +391,7 @@ function ConditionRow({
             multiple
             value={selectedValues}
             onChange={(e) => onChange({ value: Array.from(e.target.selectedOptions, (o) => o.value) })}
-            className="min-w-[10rem] rounded border border-gold-light/60 px-2 py-1"
+            className={`${ui.select} min-w-[10rem] !w-auto`}
           >
             {question.options.map((opt) => (
               <option key={opt.value} value={opt.value}>{opt.label}</option>
@@ -400,7 +401,7 @@ function ConditionRow({
           <select
             value={Array.isArray(condition.value) ? condition.value[0] ?? "" : condition.value}
             onChange={(e) => onChange({ value: e.target.value })}
-            className="rounded border border-gold-light/60 px-2 py-1"
+            className={`${ui.select} !w-auto`}
           >
             <option value="">Choose an answer…</option>
             {question.options.map((opt) => (
@@ -413,7 +414,7 @@ function ConditionRow({
           value={Array.isArray(condition.value) ? condition.value.join(",") : condition.value}
           onChange={(e) => onChange({ value: e.target.value })}
           placeholder={isMulti ? "comma-separated answers" : "answer"}
-          className="w-40 rounded border border-gold-light/60 px-2 py-1"
+          className={`${ui.input} !w-40`}
         />
       )}
       <button type="button" onClick={onRemove} className="text-red-700 hover:underline">Remove</button>
@@ -501,12 +502,12 @@ function RulesEditor({ config, onChange }: { config: QuizConfig; onChange: (next
       {config.rules.map((rule) => (
         <div key={rule.id} className="rounded-2xl border border-gold-light/50 bg-white p-4">
           <div className="flex flex-wrap items-center justify-between gap-2">
-            <input value={rule.name} onChange={(e) => updateRule(rule.id, { name: e.target.value })} className="rounded-lg border border-gold-light/60 px-2 py-1 text-sm font-medium" />
+            <input value={rule.name} onChange={(e) => updateRule(rule.id, { name: e.target.value })} className={`${ui.input} !w-auto`} />
             <div className="flex items-center gap-2 text-xs">
               <label className="flex items-center gap-1">
                 <input type="checkbox" checked={rule.active} onChange={(e) => updateRule(rule.id, { active: e.target.checked })} /> Active
               </label>
-              <select value={rule.match} onChange={(e) => updateRule(rule.id, { match: e.target.value as "all" | "any" })} className="rounded border border-gold-light/60 px-2 py-1">
+              <select value={rule.match} onChange={(e) => updateRule(rule.id, { match: e.target.value as "all" | "any" })} className={`${ui.select} !w-auto`}>
                 <option value="all">All of these must be true</option>
                 <option value="any">Any one of these can be true</option>
               </select>
@@ -538,7 +539,7 @@ function RulesEditor({ config, onChange }: { config: QuizConfig; onChange: (next
                   type === "show_text" ? { type, text: "" } : type === "show_flag" ? { type, text: "", tone: "info" } : { type, subject: "arabic", startingPoint: "" };
                 updateRule(rule.id, { action });
               }}
-              className="mt-1 rounded border border-gold-light/60 px-2 py-1 text-xs"
+              className={`${ui.select} mt-1 !w-auto`}
             >
               <option value="show_text">Show a message</option>
               <option value="show_flag">Show a highlighted flag</option>
@@ -550,7 +551,7 @@ function RulesEditor({ config, onChange }: { config: QuizConfig; onChange: (next
                 value={rule.action.text}
                 onChange={(e) => updateRule(rule.id, { action: { type: "show_text", text: e.target.value } })}
                 rows={2}
-                className="mt-2 w-full rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm"
+                className={`${ui.textarea} mt-2`}
               />
             )}
             {rule.action.type === "show_flag" && (
@@ -558,7 +559,7 @@ function RulesEditor({ config, onChange }: { config: QuizConfig; onChange: (next
                 <select
                   value={rule.action.tone}
                   onChange={(e) => updateRule(rule.id, { action: { type: "show_flag", text: rule.action.type === "show_flag" ? rule.action.text : "", tone: e.target.value as "info" | "warning" } })}
-                  className="rounded border border-gold-light/60 px-2 py-1 text-xs"
+                  className={`${ui.select} !w-auto`}
                 >
                   <option value="info">Info tone</option>
                   <option value="warning">Warning tone</option>
@@ -567,7 +568,7 @@ function RulesEditor({ config, onChange }: { config: QuizConfig; onChange: (next
                   value={rule.action.text}
                   onChange={(e) => updateRule(rule.id, { action: { type: "show_flag", tone: rule.action.type === "show_flag" ? rule.action.tone : "info", text: e.target.value } })}
                   rows={2}
-                  className="w-full rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm"
+                  className={ui.textarea}
                 />
               </div>
             )}
@@ -576,7 +577,7 @@ function RulesEditor({ config, onChange }: { config: QuizConfig; onChange: (next
                 <select
                   value={rule.action.subject}
                   onChange={(e) => updateRule(rule.id, { action: { type: "recommend_start", subject: e.target.value as "arabic" | "quran", startingPoint: rule.action.type === "recommend_start" ? rule.action.startingPoint : "" } })}
-                  className="rounded border border-gold-light/60 px-2 py-1 text-xs"
+                  className={`${ui.select} !w-auto`}
                 >
                   <option value="arabic">Arabic</option>
                   <option value="quran">Qur&apos;an</option>
@@ -585,14 +586,14 @@ function RulesEditor({ config, onChange }: { config: QuizConfig; onChange: (next
                   value={rule.action.startingPoint}
                   onChange={(e) => updateRule(rule.id, { action: { type: "recommend_start", subject: rule.action.type === "recommend_start" ? rule.action.subject : "arabic", startingPoint: e.target.value } })}
                   placeholder="Starting point description"
-                  className="w-full rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm"
+                  className={ui.input}
                 />
               </div>
             )}
           </div>
         </div>
       ))}
-      <button type="button" onClick={addRule} className="rounded-lg border border-gold-light px-4 py-2 text-sm font-semibold hover:bg-cream bg-white text-ink/80 transition-colors">
+      <button type="button" onClick={addRule} className={btn("secondary")}>
         Add rule
       </button>
     </div>
@@ -625,8 +626,8 @@ function SectionsEditor({ config, onChange }: { config: QuizConfig; onChange: (n
             {RESULT_SECTION_LABELS[s.key]}
           </label>
           <div className="flex gap-1">
-            <button type="button" onClick={() => move(i, -1)} className="rounded border border-gold-light/60 px-2 py-0.5 text-xs text-ink/65 hover:bg-cream">↑</button>
-            <button type="button" onClick={() => move(i, 1)} className="rounded border border-gold-light/60 px-2 py-0.5 text-xs text-ink/65 hover:bg-cream">↓</button>
+            <button type="button" onClick={() => move(i, -1)} className={btn("secondary", "sm")}>↑</button>
+            <button type="button" onClick={() => move(i, 1)} className={btn("secondary", "sm")}>↓</button>
           </div>
         </div>
       ))}

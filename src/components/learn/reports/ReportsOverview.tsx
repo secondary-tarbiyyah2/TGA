@@ -96,7 +96,7 @@ export function ReportsOverview({ mode, classes, term, termKey, tick }: { mode: 
                     </p>
                   </div>
                   <div className="w-full sm:w-56">{n ? <Progress n={n} /> : <div className="h-2 animate-pulse rounded-full bg-cream" />}</div>
-                  <div className="flex w-full items-center justify-between gap-2 sm:w-auto sm:justify-end">
+                  <div className="flex w-full items-center justify-between gap-2 sm:w-36 sm:justify-end">
                     {n && <span className="text-xs text-ink/65 sm:hidden">{summaryText(n)}</span>}
                     {next &&
                       (next.done ? (

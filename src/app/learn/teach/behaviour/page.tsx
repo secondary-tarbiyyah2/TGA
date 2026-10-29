@@ -5,6 +5,7 @@ import Link from "next/link";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { LearnShell } from "@/components/learn/LearnShell";
 import { PageHeader } from "@/components/learn/PageHeader";
+import { btn } from "@/components/learn/ui";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { useMyClasses } from "@/lib/learn/useMyClasses";
 import { AwardBadgeForm } from "@/components/learn/behaviour/BadgeShelf";
@@ -79,18 +80,17 @@ function TeachBehaviourContent() {
   return (
     <>
       <PageHeader
-        crumbs={[{ label: "Home", href: "/teach/dashboard" }, { label: "Behaviour" }]}
         title="Behaviour"
-        subtitle="Celebrate good choices and follow up on the rest, for the students you teach."
+        subtitle="Celebrate good choices and follow up on the rest, for the pupils you teach."
         actions={
-          <>
-            <Link href="/report-concern" className="rounded-lg border border-red-300 px-4 py-2 text-sm font-medium text-red-700 hover:bg-red-50">
-              Raise a concern
-            </Link>
-            <button type="button" onClick={() => setModal({ kind: "merit" })} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900">
-              + Log Merit / Demerit
-            </button>
-          </>
+          <Link href="/report-concern" className={btn("secondary")} title="A safeguarding concern goes to the safeguarding lead">
+            Report a concern
+          </Link>
+        }
+        action={
+          <button type="button" onClick={() => setModal({ kind: "merit" })} className={btn("primary")}>
+            + Log merit or demerit
+          </button>
         }
       />
       {error && <p className="mb-4 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{error}</p>}
@@ -125,7 +125,7 @@ function TeachBehaviourContent() {
           <section className="rounded-2xl border border-gold-light/50 bg-white p-4">
             <h3 className="mb-3 text-base font-semibold text-ink">Quick log</h3>
             {visibleStudents.length === 0 ? (
-              <p className="text-sm text-ink/65">No students are enrolled in this class yet.</p>
+              <p className="text-sm text-ink/65">No pupils are enrolled in this class yet.</p>
             ) : (
               <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
                 {visibleStudents.map((s) => (

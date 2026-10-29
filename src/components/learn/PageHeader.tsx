@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Icon, type IconName } from "@/components/learn/Icon";
-import { dashboardPathForArea, hubFor, navItemFor, tileFor } from "@/lib/learn/nav";
+import { dashboardPathForArea, hubFor, navItemFor, normalisePortalPath, tileFor } from "@/lib/learn/nav";
 
 export type Crumb = { label: string; href?: string };
 
@@ -56,13 +56,27 @@ export function PageHeader({
       return l === t || t.includes(l) || l.includes(t);
     };
     // A hub's name, then the tab, unless the page title already says it.
-    if (nav.item.label !== "Home" && !same(nav.item.label)) trail.push({ label: nav.item.label, href: nav.item.href });
-    if (nav.tab && !same(nav.tab.label) && nav.tab.label !== nav.item.label) trail.push({ label: nav.tab.label, href: nav.tab.href });
+    // A crumb that would link back to this very page (a hub's first tab, e.g.
+    // Messages › Inbox on the Inbox page) is left out: it goes nowhere.
+    const here = normalisePortalPath(pathname || "").replace(/\/$/, "");
+    const isHere = (href: string) => normalisePortalPath(href).replace(/\/$/, "") === here;
+    // Families and pupils: on one of a hub's own pages the hub link is only
+    // its first tab (a sibling, already in the tab strip), so "back" goes Home.
+    const siblingHub = !!nav.tab && (nav.area === "family" || nav.area === "student");
+    if (nav.item.label !== "Home" && !same(nav.item.label) && !isHere(nav.item.href) && !siblingHub) trail.push({ label: nav.item.label, href: nav.item.href });
+    if (nav.tab && !same(nav.tab.label) && nav.tab.label !== nav.item.label && !isHere(nav.tab.href)) trail.push({ label: nav.tab.label, href: nav.tab.href });
     trail.push({ label: title });
   } else if (crumbs && crumbs[0] && /^(admin|site administration|overview|dashboard)$/i.test(crumbs[0].label)) {
     // Older pages named the root differently; it is always "Home".
     trail = [{ label: "Home", href: home || crumbs[0].href }, ...crumbs.slice(1)];
   }
+
+  // A crumb that links to the page you are already on (a hub whose first tab
+  // is this page, e.g. Messages › Inbox) is dropped: on phones it made the
+  // "back" link reload the same screen.
+  const bare = (path: string) => normalisePortalPath(path.split(/[?#]/)[0]).replace(/(.)\/$/, "$1");
+  const herePath = bare(pathname || "");
+  trail = trail.filter((c, i) => i === trail.length - 1 || !c.href || bare(c.href) !== herePath);
 
   // Phones: one link back to the nearest section above this page.
   const parent = back === false ? null : back || [...trail.slice(0, -1)].reverse().find((c) => c.href) || null;

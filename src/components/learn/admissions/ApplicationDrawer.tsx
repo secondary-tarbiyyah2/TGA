@@ -22,6 +22,7 @@ import {
   type ApplicationStatus,
 } from "@/components/admissions/applicationShared";
 import { Tabs } from "@/components/learn/Tabs";
+import { btn, ui } from "@/components/learn/ui";
 
 export type MoveOptions = {
   /** Do not send the automatic email for this move (the caller has just sent it). */
@@ -132,7 +133,7 @@ export function ApplicationDrawer({
               </p>
               {badge && <span className="mt-1 inline-block rounded-full bg-gold-100 px-2.5 py-0.5 text-xs font-semibold text-gold-900">{badge}</span>}
             </div>
-            <button ref={closeRef} type="button" onClick={onClose} className="rounded-lg border border-gold-light px-3 py-1.5 text-sm text-ink/80 hover:bg-cream">
+            <button ref={closeRef} type="button" onClick={onClose} className={btn("secondary")}>
               Close
             </button>
           </div>
@@ -165,7 +166,7 @@ export function ApplicationDrawer({
               <section aria-label="Assigned to">
                 <label className="block text-sm font-medium text-ink">
                   Assigned to
-                  <select value={app.assigned_to || ""} onChange={(e) => assign(e.target.value)} className="mt-1 block w-full rounded-lg border border-gold-light/60 bg-white px-3 py-2 text-sm">
+                  <select value={app.assigned_to || ""} onChange={(e) => assign(e.target.value)} className={`${ui.select} mt-1`}>
                     <option value="">Unassigned</option>
                     {staff.map((s) => (
                       <option key={s.profile_id} value={s.profile_id}>{s.display_name}</option>
@@ -180,10 +181,10 @@ export function ApplicationDrawer({
                 <label className="block text-sm font-medium text-ink">
                   Internal notes
                   <span className="ml-1 text-xs font-normal text-ink/65">(staff only, never shown to families)</span>
-                  <textarea value={notes} onChange={(e) => setNotes(e.target.value)} rows={4} maxLength={10000} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm" />
+                  <textarea value={notes} onChange={(e) => setNotes(e.target.value)} rows={4} maxLength={10000} className={`${ui.textarea} mt-1`} />
                 </label>
                 <div className="mt-2 flex items-center gap-3">
-                  <button type="button" onClick={saveNotes} disabled={saving || notes === (app.notes || "")} className="rounded-lg bg-gold-700 px-4 py-1.5 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
+                  <button type="button" onClick={saveNotes} disabled={saving || notes === (app.notes || "")} className={btn("primary")}>
                     {saving ? "Saving…" : "Save notes"}
                   </button>
                   {msg && <span role="status" className="text-xs text-ink/70">{msg}</span>}

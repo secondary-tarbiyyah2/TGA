@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { shiftDateKey, ukDateTime, ukToday, ukWallToDate } from "@/lib/learn/ukTime";
+import { btn, ui } from "@/components/learn/ui";
 
 type AuditRow = {
   id: number;
@@ -153,11 +154,11 @@ export function AuditLogViewer() {
       <form onSubmit={applyFilters} className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-6">
         <label className="text-xs text-ink/70 lg:col-span-2">
           Who (email contains)
-          <input value={filters.actor} onChange={(e) => setFilters({ ...filters, actor: e.target.value })} placeholder="e.g. head@…" className="mt-1 block w-full rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm" />
+          <input value={filters.actor} onChange={(e) => setFilters({ ...filters, actor: e.target.value })} placeholder="e.g. head@…" className={`${ui.input} mt-1`} />
         </label>
         <label className="text-xs text-ink/70">
           Table
-          <select value={filters.table} onChange={(e) => setFilters({ ...filters, table: e.target.value })} className="mt-1 block w-full rounded-lg border border-gold-light/60 bg-white px-2 py-1.5 text-sm">
+          <select value={filters.table} onChange={(e) => setFilters({ ...filters, table: e.target.value })} className={`${ui.select} mt-1`}>
             <option value="">All tables</option>
             {tables.map((t) => (
               <option key={t} value={t}>
@@ -168,7 +169,7 @@ export function AuditLogViewer() {
         </label>
         <label className="text-xs text-ink/70">
           Action
-          <select value={filters.action} onChange={(e) => setFilters({ ...filters, action: e.target.value })} className="mt-1 block w-full rounded-lg border border-gold-light/60 bg-white px-2 py-1.5 text-sm">
+          <select value={filters.action} onChange={(e) => setFilters({ ...filters, action: e.target.value })} className={`${ui.select} mt-1`}>
             <option value="">All actions</option>
             {actions.map((a) => (
               <option key={a} value={a}>
@@ -179,20 +180,20 @@ export function AuditLogViewer() {
         </label>
         <label className="text-xs text-ink/70">
           From
-          <input type="date" value={filters.from} onChange={(e) => setFilters({ ...filters, from: e.target.value })} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm" />
+          <input type="date" value={filters.from} onChange={(e) => setFilters({ ...filters, from: e.target.value })} className={`${ui.input} mt-1`} />
         </label>
         <label className="text-xs text-ink/70">
           To
-          <input type="date" value={filters.to} onChange={(e) => setFilters({ ...filters, to: e.target.value })} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-2 py-1.5 text-sm" />
+          <input type="date" value={filters.to} onChange={(e) => setFilters({ ...filters, to: e.target.value })} className={`${ui.input} mt-1`} />
         </label>
         <div className="flex flex-wrap gap-2 sm:col-span-2 lg:col-span-6">
-          <button type="submit" className="rounded-lg bg-gold-700 px-4 py-1.5 text-sm font-semibold text-white hover:bg-gold-900">
+          <button type="submit" className={btn("primary")}>
             Apply filters
           </button>
-          <button type="button" onClick={clearFilters} className="rounded-lg border border-gold-light bg-white px-4 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream">
+          <button type="button" onClick={clearFilters} className={btn("secondary")}>
             Clear
           </button>
-          <button type="button" onClick={exportCsv} disabled={exporting || total === 0} className="rounded-lg border border-gold-light bg-white px-4 py-1.5 text-sm font-medium text-ink/80 hover:bg-cream disabled:opacity-50">
+          <button type="button" onClick={exportCsv} disabled={exporting || total === 0} className={btn("secondary")}>
             {exporting ? "Preparing…" : `Export CSV (${Math.min(total, EXPORT_MAX)} rows)`}
           </button>
         </div>
@@ -236,13 +237,13 @@ export function AuditLogViewer() {
       </div>
 
       <div className="mt-3 flex items-center gap-3 text-xs text-ink/65">
-        <button type="button" disabled={page === 0} onClick={() => setPage((p) => Math.max(0, p - 1))} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 font-medium text-ink/80 hover:bg-cream disabled:opacity-40">
+        <button type="button" disabled={page === 0} onClick={() => setPage((p) => Math.max(0, p - 1))} className={btn("secondary")}>
           Previous
         </button>
         <span>
           Page {page + 1} of {pages} ({total} total)
         </span>
-        <button type="button" disabled={(page + 1) * PAGE_SIZE >= total} onClick={() => setPage((p) => p + 1)} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 font-medium text-ink/80 hover:bg-cream disabled:opacity-40">
+        <button type="button" disabled={(page + 1) * PAGE_SIZE >= total} onClick={() => setPage((p) => p + 1)} className={btn("secondary")}>
           Next
         </button>
       </div>

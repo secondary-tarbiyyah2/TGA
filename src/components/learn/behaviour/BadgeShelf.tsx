@@ -38,7 +38,7 @@ export function AwardBadgeForm({ students, onAwarded }: { students: StudentOptio
   const award = async () => {
     const supabase = getSupabaseClient();
     if (!supabase) return;
-    if (!childId) return setError("Choose a student.");
+    if (!childId) return setError("Choose a pupil.");
     setBusy(true);
     setError(null);
     const { error: err } = await supabase.from("behaviour_badges").insert({ child_id: childId, badge });
@@ -53,7 +53,7 @@ export function AwardBadgeForm({ students, onAwarded }: { students: StudentOptio
       <h3 className="text-base font-semibold text-ink">Award a badge</h3>
       <div className="mt-3 flex flex-col gap-2 sm:flex-row">
         <select value={childId} onChange={(e) => setChildId(e.target.value)} aria-label="Student" className="min-w-0 flex-1 rounded-lg border border-gold-light px-3 py-2 text-sm">
-          <option value="">Choose a student…</option>
+          <option value="">Choose a pupil…</option>
           {unique.map((s) => (
             <option key={s.childId} value={s.childId}>
               {s.name}

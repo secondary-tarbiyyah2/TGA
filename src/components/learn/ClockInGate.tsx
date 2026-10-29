@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { STAFF_ROLES, useLearnSignOut, type LearnRole, type RoleGrant } from "@/lib/learn/session";
 import { normalisePortalPath } from "@/lib/learn/nav";
+import { Icon } from "@/components/learn/Icon";
 
 /** Fired on window whenever someone clocks in or out, so the gate and the
  * header chip (separate component trees) stay in step. */
@@ -287,9 +288,12 @@ export function ClockChip({ userId, roles }: { userId: string; roles: RoleGrant[
           await clockIn(userId, "");
           setBusy(false);
         }}
-        className="flex h-9 items-center gap-1.5 whitespace-nowrap rounded-full border border-gold-light px-3 text-sm font-medium text-ink/70 hover:bg-cream disabled:opacity-50"
+        aria-label="Clock in"
+        title="Clock in"
+        className="flex h-9 min-w-9 items-center justify-center gap-1.5 whitespace-nowrap rounded-full border border-gold-light px-2 text-sm font-medium text-ink/70 hover:bg-cream disabled:opacity-50 sm:px-3"
       >
-        Clock in
+        <Icon name="clock" className="h-4 w-4 sm:hidden" />
+        <span className="hidden sm:inline">Clock in</span>
       </button>
     );
   }

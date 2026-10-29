@@ -13,7 +13,7 @@ export default function StudentRevisionPage() {
           <PageHeader
             crumbs={[{ label: "Home", href: "/student/dashboard" }, { label: "Unit revision" }]}
             title="Unit revision"
-            subtitle="Revise a unit from its summary, take the quiz, then let the practice coach work on the topics you found hardest. Your teachers see your results so they can help."
+            subtitle="Pick a unit, read the summary, try the quiz, then practise the bits you found tricky. Your teachers see how you get on so they can help."
           />
           <PupilRevision />
         </LearnShell>

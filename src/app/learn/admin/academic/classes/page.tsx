@@ -6,7 +6,7 @@ import { TeacherMatrix } from "@/components/learn/academic/TeacherMatrix";
 
 export default function Page() {
   return (
-    <AcademicPage title="Classes & teachers" subtitle="Create classes, enrol pupils and choose the teacher for each class subject.">
+    <AcademicPage title="Classes and teachers" subtitle="Create classes, enrol pupils and choose the teacher for each class subject.">
       {(data, reload) => (
         <>
         <ClassesSection

@@ -19,12 +19,10 @@ import { HomeworkDueWidget } from "@/components/learn/HomeworkDueWidget";
 import { LatestGradesWidget } from "@/components/learn/LatestGradesWidget";
 import { QuranProgressWidget } from "@/components/learn/QuranProgressWidget";
 import { GcseProgressWidget } from "@/components/learn/GcseTracker";
-import { HomeworkFeedbackWidget } from "@/components/learn/homework/HomeworkFeedbackWidget";
 import { WeeklyTarbiyahNoteWidget } from "@/components/learn/WeeklyTarbiyahNoteWidget";
 import { FamilyRewards } from "@/components/learn/rewards/RewardsCards";
 import { ui } from "@/components/learn/ui";
 import { AnnouncementsFeed } from "@/components/learn/AnnouncementsFeed";
-import { SignaturePrompts } from "@/components/learn/SignaturePrompts";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import type { TimetableSlot } from "@/lib/learn/timetable";
 import { ukToday } from "@/lib/learn/ukTime";
@@ -84,16 +82,15 @@ function ChildCard({ child }: { child: Child }) {
         </h2>
 
         <div className="mt-4">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
             <h3 className="text-sm font-semibold text-ink">Homework and progress</h3>
-            <Link href={`/family/todo?child=${child.id}`} className="text-sm font-medium text-teal-700 hover:underline">
-              See everything to do
+            <Link href={`/family/homework?child=${child.id}`} className="text-sm font-medium text-teal-700 hover:underline">
+              All homework
             </Link>
           </div>
           <div className="mt-2 grid gap-6 sm:grid-cols-2">
             <HomeworkDueWidget childId={child.id} />
             <LatestGradesWidget childId={child.id} />
-            <HomeworkFeedbackWidget childId={child.id} href={`/family/homework?child=${child.id}`} />
             <QuranProgressWidget childId={child.id} />
             <GcseProgressWidget childId={child.id} />
           </div>
@@ -208,7 +205,7 @@ function FamilyContent() {
   // for the child, then the detail. Adding a child sits at the bottom
   // (it's rare), unless there are no children yet.
   return (
-    <DashboardWithPanel viewer={{ kind: "parent", children: (children || []).map((c) => ({ id: c.id, name: c.name })) }}>
+    <DashboardWithPanel viewer={{ kind: "parent", children: (children || []).map((c) => ({ id: c.id, name: c.name })) }} wideOnly>
       <div className="space-y-6">
         <DashboardHero subtitle="Your children's school life in one place" />
 
@@ -220,15 +217,11 @@ function FamilyContent() {
             <Link href="/family/messages" className={ui.btnSecondary}>
               Message a teacher
             </Link>
-            <Link href="/family/todo" className={ui.btnSecondary}>
-              To do
-            </Link>
           </nav>
         )}
 
         <ActionCentreWidget role="family" />
         <ChildDetailsBanner />
-        <SignaturePrompts limit={3} />
         <JoinLessonCard who={{ kind: "parent" }} />
 
         {children === null && <div className="h-32 animate-pulse rounded-2xl bg-white" />}

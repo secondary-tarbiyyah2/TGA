@@ -68,11 +68,13 @@ export function ParentSetup({ hasChild }: { hasChild: boolean }) {
       </div>
       <ul className="mt-2 space-y-1.5">
         {STEPS.map((s) => (
-          <li key={s.id} className="flex flex-wrap items-center gap-2 text-sm text-ink">
-            <input type="checkbox" id={`ps-${s.id}`} checked={isDone(s.id)} disabled={s.auto} onChange={() => toggle(s.id)} className="h-4 w-4 accent-teal-700" />
-            <label htmlFor={`ps-${s.id}`}>{s.label}</label>
+          <li key={s.id} className="flex min-h-11 items-center gap-3 text-sm text-ink">
+            <input type="checkbox" id={`ps-${s.id}`} checked={isDone(s.id)} disabled={s.auto} onChange={() => toggle(s.id)} className="h-4 w-4 shrink-0 accent-teal-700" />
+            <label htmlFor={`ps-${s.id}`} className={`min-w-0 flex-1 ${isDone(s.id) ? "text-ink/60 line-through decoration-ink/30" : ""}`}>
+              {s.label}
+            </label>
             {s.href && (
-              <Link href={s.href} className={ui.btnLink}>
+              <Link href={s.href} className={`${ui.btnLink} shrink-0`} aria-label={`Open: ${s.label}`}>
                 Open
               </Link>
             )}

@@ -69,7 +69,7 @@ function usePupilSignals(ids: string[]): Record<string, Signals> | null {
 }
 
 const ACK_BADGE = {
-  none: { label: "Not acknowledged", cls: "bg-amber-50 text-amber-900" },
+  none: { label: "Not read yet", cls: "bg-amber-50 text-amber-900" },
   stale: { label: "Changed since you read it", cls: "bg-amber-50 text-amber-900" },
   current: { label: "Acknowledged", cls: "bg-green-50 text-green-800" },
 } as const;
@@ -199,9 +199,9 @@ export function TeachPupils() {
                         </span>
                       )}
                     </span>
-                    <span className="w-24 shrink-0 text-right">
-                      <span className={`block text-sm font-semibold tabular-nums ${sig?.rate != null && sig.rate < 90 ? "text-amber-800" : "text-ink"}`}>{sig?.rate != null ? `${sig.rate}%` : "–"}</span>
-                      <span className="block text-[11px] text-ink/65">attendance, 30 days</span>
+                    <span className="w-28 shrink-0 text-right">
+                      <span className={`block text-sm font-semibold tabular-nums ${sig?.rate != null && sig.rate < 90 ? "text-amber-800" : "text-ink"}`}>{sig?.rate != null ? `${sig.rate}%` : <span className="font-normal text-ink/55">No data</span>}</span>
+                      <span className="block whitespace-nowrap text-[11px] text-ink/65">30-day attendance</span>
                     </span>
                     <span className="flex basis-full flex-wrap items-center gap-1.5 sm:basis-auto">
                       {p.alerts.map((a) => (

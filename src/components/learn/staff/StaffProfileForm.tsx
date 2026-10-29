@@ -159,7 +159,7 @@ export function StaffProfileForm({ userId, fullName }: { userId: string; fullNam
           <label className={LABEL} htmlFor="sp-title">
             Title
           </label>
-          <input id="sp-title" className={INPUT} value={form.display_title} maxLength={20} placeholder="Mr, Mrs, Ustadh…" onChange={(e) => set("display_title", e.target.value)} />
+          <input id="sp-title" className={INPUT} value={form.display_title} maxLength={20} placeholder="e.g. Ustadh" onChange={(e) => set("display_title", e.target.value)} />
         </div>
         <div>
           <label className={LABEL} htmlFor="sp-years">
@@ -171,7 +171,7 @@ export function StaffProfileForm({ userId, fullName }: { userId: string; fullNam
 
       <div>
         <label className={LABEL} htmlFor="sp-bio">
-          About me <span className="font-normal text-ink/65">(shown to families and students)</span>
+          About me <span className="font-normal text-ink/65">(shown to families and pupils)</span>
         </label>
         <textarea id="sp-bio" className={INPUT} rows={4} maxLength={2000} value={form.bio} onChange={(e) => set("bio", e.target.value)} />
       </div>

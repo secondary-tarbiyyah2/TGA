@@ -6,6 +6,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { formatDateKey, shiftDateKey, ukToday } from "@/lib/learn/ukTime";
 import { STATUS_LABEL, fetchAbsences, fetchNotes, formatDay, formatRange, type Absence, type AbsenceNote, type NoteStatus } from "./data";
 import { ui } from "@/components/learn/ui";
+import { Icon } from "@/components/learn/Icon";
 
 type Child = { id: string; name: string };
 const CHIP: Record<NoteStatus, string> = {
@@ -178,7 +179,6 @@ export function FamilyAbsences() {
   return (
     <>
       <PageHeader
-        crumbs={[{ label: "Home", href: "/family/dashboard" }, { label: "Absences" }]}
         title="Report an absence"
         subtitle="Let us know why your child was, or will be, away. It helps us look after them."
       />
@@ -199,10 +199,15 @@ export function FamilyAbsences() {
                 setFormError(null);
                 setView("report");
               }}
-              className="flex min-h-28 flex-col items-start justify-between rounded-2xl border border-gold-light bg-white p-5 text-left shadow-sm transition hover:border-gold-500 hover:shadow-md"
+              className="group flex min-h-28 items-center justify-between gap-4 rounded-2xl border border-gold-light bg-white p-5 text-left shadow-sm transition hover:border-gold-500 hover:shadow-md"
             >
-              <span className="text-lg font-semibold text-ink">Report an absence</span>
-              <span className="mt-1 text-sm text-ink/65">Your child is, or will be, away.</span>
+              <span className="min-w-0">
+                <span className="block text-lg font-semibold text-ink">Tell us about an absence</span>
+                <span className="mt-1 block text-sm text-ink/65">Your child is away today, was away, or will be away. It takes a minute.</span>
+              </span>
+              <span aria-hidden="true" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-teal-700 text-white transition group-hover:translate-x-0.5">
+                <Icon name="chevronRight" size="sm" />
+              </span>
             </button>
             {nudges.length > 0 ? (
               <button

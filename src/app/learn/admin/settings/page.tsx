@@ -6,7 +6,7 @@ import { LearnGate } from "@/components/learn/LearnGate";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { learnRoleLabel, STAFF_ROLES } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { ui } from "@/components/learn/ui";
+import { Switch, ui } from "@/components/learn/ui";
 import { Microsoft365Connection } from "@/components/learn/settings/Microsoft365Connection";
 import { AiUsage } from "@/components/learn/settings/AiUsage";
 import { triggerPublish } from "@/lib/learn/publishSiteContent";
@@ -47,7 +47,7 @@ function Section({ title, hint, children, onSave, busy, message, defaultOpen = f
       <div className="border-t border-gold-light px-5 py-5">{children}</div>
       {onSave && (
         <div className="flex flex-wrap items-center gap-3 border-t border-gold-light px-5 py-3">
-          <button type="button" disabled={busy} onClick={onSave} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
+          <button type="button" disabled={busy} onClick={onSave} className={ui.btnPrimary}>
             {busy ? "Saving…" : "Save changes"}
           </button>
           {message && <p role={bad ? "alert" : "status"} className={`text-sm ${bad ? "text-red-700" : "text-ink/70"}`}>{message}</p>}
@@ -174,7 +174,7 @@ function LessonSettings() {
             unexplained_absence_period_days: String(d.unexplained_absence_period_days),
           });
         }
-        else setLoadError(error?.message || "You don't have access to these settings.");
+        else setLoadError(error ? "Couldn't load these settings. Please refresh the page." : "You don't have access to these settings.");
       });
   }, []);
 
@@ -200,14 +200,14 @@ function LessonSettings() {
     } = await supabase.auth.getUser();
     const { error } = await supabase.from("lms_settings").update({ ...values, updated_by: user?.id, updated_at: new Date().toISOString() }).eq("id", true);
     setBusy(false);
-    setMsg(error ? `Couldn't save: ${error.message}` : "Saved.");
+    setMsg(error ? "Couldn't save. Only a Headteacher or Admin can change this." : "Saved.");
   };
 
-  if (loadError) return <Section title="Lessons & attendance" hint={loadError}>{null}</Section>;
+  if (loadError) return <Section title="Lessons and attendance" hint={loadError}>{null}</Section>;
   if (!s) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
   const num = (k: keyof LmsSettings) => (e: React.ChangeEvent<HTMLInputElement>) => setS({ ...s, [k]: e.target.value });
   return (
-    <Section title="Lessons & attendance" hint="When parents are told about absences, and how long recordings are kept." onSave={save} busy={busy} message={msg}>
+    <Section title="Lessons and attendance" hint="When parents are told about absences, and how long recordings are kept." onSave={save} busy={busy} message={msg}>
       <div className="grid gap-4 sm:grid-cols-2">
         <Field label="Recording retention (days)" help="Older recordings are deleted automatically each night.">
           <input type="text" inputMode="numeric" className={inputCls} value={s.recording_retention_days} onChange={num("recording_retention_days")} />
@@ -254,7 +254,7 @@ function MessagingSettings() {
     setMsg(null);
     const { error } = await supabase.from("messaging_settings").update({ message_retention_days: n }).eq("id", true);
     setBusy(false);
-    setMsg(error ? "Couldn't save." : "Saved.");
+    setMsg(error ? "Couldn't save. Only a Headteacher or Admin can change this." : "Saved.");
   };
 
   if (days === null) return null;
@@ -289,7 +289,7 @@ function ClockInSettingsSection() {
     const supabase = getSupabaseClient();
     if (!supabase || !s) return;
     const hours = wholeNumber(s.auto_clock_out_hours, 1, 48);
-    if (hours === null) return setMsg("Auto clock-out must be a whole number of hours, 1 to 48.");
+    if (hours === null) return setMsg("Automatic clock-out must be a whole number of hours, 1 to 48.");
     if (s.require_clock_in && s.clock_in_roles.length === 0) return setMsg("Choose at least one role that must clock in, or switch clock-in off.");
     setBusy(true);
     setMsg(null);
@@ -302,10 +302,9 @@ function ClockInSettingsSection() {
   return (
     <Section title="Staff clock-in" hint="Staff who must clock in see a clock-in screen instead of the portal until they do." onSave={save} busy={busy} message={msg}>
       <div className="space-y-4">
-        <label className="flex items-center gap-2 text-sm font-medium text-ink">
-          <input type="checkbox" checked={s.require_clock_in} onChange={(e) => setS({ ...s, require_clock_in: e.target.checked })} />
-          Require staff to clock in before using the portal
-        </label>
+        <div className="-mx-3">
+          <Switch checked={s.require_clock_in} onChange={(v) => setS({ ...s, require_clock_in: v })} label="Require staff to clock in before using the portal" />
+        </div>
         <fieldset className="text-sm">
           <legend className="mb-1 font-medium text-ink">Who must clock in</legend>
           <div className="flex flex-wrap gap-x-5 gap-y-2">
@@ -321,7 +320,7 @@ function ClockInSettingsSection() {
             ))}
           </div>
         </fieldset>
-        <Field label="Auto clock-out after (hours)" help="A shift left open this long is closed automatically at that length, so a forgotten clock-out doesn't run on.">
+        <Field label="Clock out automatically after (hours)" help="A shift left open this long is closed automatically at that length, so a forgotten clock-out doesn't run on.">
           <input type="text" inputMode="numeric" className={`${inputCls} max-w-xs`} value={s.auto_clock_out_hours} onChange={(e) => setS({ ...s, auto_clock_out_hours: e.target.value })} />
         </Field>
       </div>
@@ -331,20 +330,18 @@ function ClockInSettingsSection() {
 
 function Shortcuts() {
   const links = [
-    { href: "/admin/people", title: "People & accounts", text: "Add students, parents, teachers and admins." },
-    { href: "/admin/academic", title: "Academic setup", text: "Years, terms, year groups, subjects and classes. Add a Teams link per class here." },
-    { href: "/admin/content", title: "Website content", text: "Public website text, fees, FAQs, policies and term dates." },
+    { href: "/admin/people", title: "Accounts", text: "Add students, parents, teachers and admins." },
     { href: "/admin/calendar", title: "Calendar and terms", text: "Term dates, half terms, INSET days and closures used by the portal." },
-    { href: "/admin/documents", title: "Documents & signatures", text: "Policies and who needs to sign them." },
-    { href: "/admin/compliance", title: "Safeguarding & compliance", text: "Keyword alerts, records and audit log." },
+    { href: "/admin/documents", title: "Policies and signatures", text: "Policies and who needs to sign them." },
+    { href: "/admin/compliance", title: "Safeguarding and compliance", text: "Keyword alerts, records and audit log." },
     { href: "/account", title: "Your account", text: "Change your password and sign-in details." },
   ];
   return (
-    <Section title="Quick links" hint="Other places school-wide things are managed." defaultOpen>
+    <Section title="Related pages" hint="Other places school-wide things are managed. Academic setup and the website are in the tabs above.">
       <ul className="grid gap-3 sm:grid-cols-2">
         {links.map((l) => (
           <li key={l.href}>
-            <Link href={l.href} className="block rounded-xl border border-gold-light p-4 hover:bg-cream">
+            <Link href={l.href} className="block rounded-xl border border-gold-light p-4 hover:bg-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700">
               <span className="block text-sm font-semibold text-ink">{l.title}</span>
               <span className="mt-0.5 block text-sm text-ink/65">{l.text}</span>
             </Link>
@@ -359,7 +356,7 @@ export default function AdminSettingsPage() {
   return (
     <section className="app-pad">
       <LearnGate allowedRoles={["head_teacher", "admin", "admissions"]}>
-        <PageHeader title="Settings" subtitle="School details, alerts, retention and shortcuts. Open a section to change it." />
+        <PageHeader title="Settings" subtitle="School details, alerts, retention, staff clock-in and connections. Open a section to change it." />
         <div className="space-y-5">
           <SchoolDetails />
           <LessonSettings />

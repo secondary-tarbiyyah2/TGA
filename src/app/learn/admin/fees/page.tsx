@@ -25,6 +25,7 @@ import { formatGBP } from "@/lib/format";
 import type { FeeBand } from "@/content/seed";
 import { Tabs } from "@/components/learn/Tabs";
 import { WithdrawalNoticesAdmin } from "@/components/learn/fees/WithdrawalNoticesAdmin";
+import { Button, EmptyState, btn, ui } from "@/components/learn/ui";
 
 type Row = {
   charge: FeeCharge;
@@ -41,7 +42,9 @@ type Row = {
 type Profile = { id: string; full_name: string | null; email: string | null };
 type ChildRow = { id: string; name: string; parent_user_id: string; year_group_id: string | null; year_groups: { name: string } | null };
 
-const inputCls = "rounded-lg border border-gold-light bg-white px-3 py-2 text-sm";
+const inputCls = `${ui.select} !w-auto`;
+/** Charges shown before "Show more", so a long history stays quick to scan. */
+const PAGE = 50;
 
 function FeesContent() {
   const supabase = getSupabaseClient();
@@ -62,7 +65,9 @@ function FeesContent() {
   const [creating, setCreating] = useState(false);
   const [paying, setPaying] = useState<{ row: Row; full: boolean } | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
-  const [notice, setNotice] = useState<string | null>(null);
+  const [notice, setNoticeState] = useState<{ text: string; ok: boolean } | null>(null);
+  const setNotice = (text: string | null, ok = true) => setNoticeState(text ? { text, ok } : null);
+  const [limit, setLimit] = useState(PAGE);
   const [loadError, setLoadError] = useState(false);
 
   const load = useCallback(async () => {
@@ -190,7 +195,7 @@ function FeesContent() {
   const voidCharge = async (r: Row) => {
     if (!supabase || !window.confirm(`Void "${r.charge.description}" for ${r.familyName}? Payments already recorded are kept.`)) return;
     const { error } = await supabase.from("fee_charges").update({ voided_at: new Date().toISOString() }).eq("id", r.charge.id);
-    setNotice(error ? "Could not void the charge." : "Charge voided.");
+    setNotice(error ? "Could not void the charge. Please try again." : "Charge voided.", !error);
     await load();
   };
 
@@ -211,30 +216,32 @@ function FeesContent() {
   return (
     <>
       <PageHeader
-        crumbs={[{ label: "Site administration", href: "/admin/site" }, { label: "Fees" }]}
-        title="Fees & billing"
+        crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "Fees" }]}
+        title="Fees and billing"
         subtitle="Charges raised against families, payments received, and who still owes what."
         actions={
-          <>
-            {canExport && rows && rows.length > 0 && (
-              <button type="button" onClick={exportCsv} className="rounded-lg border border-gold-light bg-white px-4 py-2 text-sm font-medium text-ink/80 hover:bg-cream">
-                Export CSV
-              </button>
-            )}
-            <button type="button" onClick={() => setCreating(true)} className="rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900">
-              + New charge
-            </button>
-          </>
+          canExport &&
+          rows &&
+          rows.length > 0 && (
+            <Button icon="download" onClick={exportCsv}>
+              Export CSV
+            </Button>
+          )
+        }
+        action={
+          <Button variant="primary" icon="plus" onClick={() => setCreating(true)}>
+            New charge
+          </Button>
         }
       />
       <WithdrawalNoticesAdmin />
       {!canExport && rows && rows.length > 0 && <p className="-mt-3 mb-4 text-xs text-ink/65">Exporting needs the &quot;Can export data&quot; permission. Ask a Headteacher to grant it.</p>}
       {notice && (
-        <p role="status" className="mb-4 rounded-lg border border-green-200 bg-green-50 px-4 py-2 text-sm text-green-800">
-          {notice}
+        <p role={notice.ok ? "status" : "alert"} className={`mb-4 rounded-lg border px-4 py-2 text-sm ${notice.ok ? "border-green-200 bg-green-50 text-green-800" : "border-red-200 bg-red-50 text-red-800"}`}>
+          {notice.text}
         </p>
       )}
-      {loadError && <p className="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-800">Could not load fees. Has the latest database migration been applied?</p>}
+      {loadError && <p className="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-800">Could not load fees just now. Please refresh the page and try again.</p>}
 
       <div className="mb-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
         <StatTile label="Billed" value={formatGBP(stats.billed)} />
@@ -251,7 +258,7 @@ function FeesContent() {
               setSort("balance");
               setView("charges");
             }}
-            className="font-medium text-teal-700 underline"
+            className={ui.btnLink}
           >
             Show only overdue charges, largest first
           </button>
@@ -259,7 +266,7 @@ function FeesContent() {
       )}
 
       <div className="mb-4 flex flex-wrap items-center gap-2">
-        <input type="search" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search family, child, description" className={`${inputCls} min-w-0 flex-1 sm:max-w-xs`} />
+        <input type="search" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search family, child, description" aria-label="Search charges" className={`${ui.input} min-w-0 flex-1 sm:max-w-xs`} />
         <select value={statusFilter} onChange={(e) => setStatusFilter(e.target.value as "all" | ChargeStatus)} className={inputCls} aria-label="Status">
           <option value="all">All statuses</option>
           <option value="outstanding">Outstanding</option>
@@ -296,43 +303,46 @@ function FeesContent() {
       {(familyFilter || filtersOn) && (
         <div className="mb-4 flex flex-wrap items-center gap-2 text-sm text-ink/70">
           {familyFilter && (
-            <span className="inline-flex items-center gap-1 rounded-full border border-teal-700 bg-teal-50 px-3 py-1 text-teal-900">
+            <button type="button" onClick={() => setFamilyFilter(null)} aria-label={`Stop filtering by ${familyFilter.name}`} className={ui.chipOn}>
               Family: {familyFilter.name}
-              <button type="button" onClick={() => setFamilyFilter(null)} aria-label={`Stop filtering by ${familyFilter.name}`} className="ml-1 font-semibold">
-                ×
-              </button>
-            </span>
+              <span aria-hidden="true">×</span>
+            </button>
           )}
           <span>
             Showing {filtered.length} of {rows?.length ?? 0} charges.
           </span>
-          <button type="button" onClick={clearFilters} className="font-medium text-teal-700 underline">
+          <button type="button" onClick={clearFilters} className={ui.btnLink}>
             Clear filters
           </button>
         </div>
       )}
-      {rows === null && <p className="text-sm text-ink/65">Loading…</p>}
+      {rows === null && <div className="h-40 animate-pulse rounded-2xl bg-white" aria-label="Loading" />}
       {rows && rows.length === 0 && !loadError && (
-        <div className="rounded-2xl border border-gold-light bg-white p-8 text-center">
-          <p className="font-medium text-ink">No charges yet</p>
-          <p className="mt-1 text-sm text-ink/65">Raise a charge for one family, or for a whole year group or class in a few clicks.</p>
-          <button type="button" onClick={() => setCreating(true)} className="mt-4 rounded-lg bg-gold-700 px-4 py-2 text-sm font-semibold text-white hover:bg-gold-900">
-            + New charge
-          </button>
-        </div>
+        <EmptyState
+          title="No charges yet"
+          icon="wallet"
+          action={
+            <Button variant="primary" icon="plus" onClick={() => setCreating(true)}>
+              New charge
+            </Button>
+          }
+        >
+          Raise a charge for one family, or for a whole year group or class in a few clicks.
+        </EmptyState>
       )}
       {rows && rows.length > 0 && filtered.length === 0 && (
         <p className="rounded-2xl border border-gold-light bg-white p-6 text-sm text-ink/65">
           Nothing matches those filters.{" "}
-          <button type="button" onClick={clearFilters} className="font-medium text-teal-700 underline">
+          <button type="button" onClick={clearFilters} className={ui.btnLink}>
             Clear filters
           </button>
         </p>
       )}
 
       {rows && filtered.length > 0 && view === "charges" && (
+        <>
         <ul className="space-y-3">
-          {filtered.map((r) => (
+          {filtered.slice(0, limit).map((r) => (
             <li key={r.charge.id} className="rounded-2xl border border-gold-light bg-white p-4">
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div className="min-w-0">
@@ -355,22 +365,22 @@ function FeesContent() {
               <div className="mt-3 flex flex-wrap gap-2 text-sm">
                 {r.status !== "void" && r.balance > 0 && (
                   <>
-                    <button type="button" onClick={() => setPaying({ row: r, full: true })} className="rounded-lg bg-gold-700 px-3 py-1.5 font-medium text-white hover:bg-gold-900">
+                    <button type="button" onClick={() => setPaying({ row: r, full: true })} className={btn("primary", "sm")}>
                       Mark paid
                     </button>
-                    <button type="button" onClick={() => setPaying({ row: r, full: false })} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 font-medium text-ink/80 hover:bg-cream">
-                      Record payment
+                    <button type="button" onClick={() => setPaying({ row: r, full: false })} className={btn("secondary", "sm")}>
+                      Record part payment
                     </button>
                   </>
                 )}
                 {r.payments.length > 0 && (
-                  <button type="button" onClick={() => setExpanded(expanded === r.charge.id ? null : r.charge.id)} className="rounded-lg px-3 py-1.5 font-medium text-teal-700 hover:underline">
+                  <button type="button" onClick={() => setExpanded(expanded === r.charge.id ? null : r.charge.id)} aria-expanded={expanded === r.charge.id} className={btn("ghost", "sm")}>
                     {expanded === r.charge.id ? "Hide" : "Show"} payments ({r.payments.length})
                   </button>
                 )}
                 {r.status !== "void" && r.status !== "paid" && (
-                  <button type="button" onClick={() => voidCharge(r)} className="ml-auto rounded-lg px-3 py-1.5 text-ink/65 hover:text-red-700">
-                    Void
+                  <button type="button" onClick={() => voidCharge(r)} title="Cancel this charge. Payments already recorded are kept." className={`${ui.btnLinkDanger} ml-auto !text-xs`}>
+                    Void charge
                   </button>
                 )}
               </div>
@@ -390,6 +400,15 @@ function FeesContent() {
             </li>
           ))}
         </ul>
+        {filtered.length > limit && (
+          <div className="mt-4 flex flex-wrap items-center gap-3 text-sm text-ink/65">
+            Showing {limit} of {filtered.length}.
+            <Button size="sm" onClick={() => setLimit((n) => n + PAGE)}>
+              Show more
+            </Button>
+          </div>
+        )}
+        </>
       )}
 
       {rows && filtered.length > 0 && view === "families" && (
@@ -422,7 +441,7 @@ function FeesContent() {
                         setFamilyFilter({ id: f.id, name: f.name });
                         setView("charges");
                       }}
-                      className="whitespace-nowrap text-sm font-medium text-teal-700 hover:underline"
+                      className={`${ui.btnLink} whitespace-nowrap`}
                     >
                       View charges
                     </button>

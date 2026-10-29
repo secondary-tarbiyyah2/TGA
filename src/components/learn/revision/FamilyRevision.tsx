@@ -122,6 +122,31 @@ function UnitCard({ u }: { u: Unit }) {
   );
 }
 
+/** A folded list of units not started yet. */
+function IdleUnits({ units, label, count, bare = false }: { units: Unit[]; label: string; count?: string; bare?: boolean }) {
+  return (
+    <details className={`group ${bare ? "" : "rounded-xl border border-gold-light bg-white"}`}>
+      <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-2 px-4 py-2 text-sm">
+        <span className={bare ? "font-medium text-ink" : "text-ink/75"}>{label}</span>
+        <span className="flex shrink-0 items-center gap-2 text-xs text-ink/60">
+          {count}
+          <Icon name="chevronDown" className="h-4 w-4 text-ink/65 transition-transform group-open:rotate-180" />
+        </span>
+      </summary>
+      <ul className="divide-y divide-gold-light/60 border-t border-gold-light px-4">
+        {units.map((u) => (
+          <li key={u.id} className="flex flex-wrap items-center justify-between gap-2 py-2 text-sm">
+            <span className="min-w-0 text-ink [overflow-wrap:anywhere]">{u.title}</span>
+            <span className="text-xs text-ink/60">
+              {u.topics} topic{u.topics === 1 ? "" : "s"}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </details>
+  );
+}
+
 /**
  * Units grouped by subject. Units with any activity get a full card; units
  * not started yet are a single compact line each, folded away, so a new
@@ -134,6 +159,9 @@ function RevisionBySubject({ list, name }: { list: Unit[]; name: string }) {
     return [...map.entries()].map(([subject, units]) => ({ subject, active: units.filter(started), idle: units.filter((u) => !started(u)) }));
   }, [list]);
   const startedCount = list.filter(started).length;
+  // Subjects with nothing started share one compact list instead of a
+  // folded box each.
+  const untouched = subjects.filter((g) => g.active.length === 0);
   const topics = list.reduce((n, u) => n + u.topics, 0);
   const mastered = list.reduce((n, u) => n + u.mastered, 0);
 
@@ -148,40 +176,35 @@ function RevisionBySubject({ list, name }: { list: Unit[]; name: string }) {
           </>
         )}
       </p>
-      {subjects.map(({ subject, active, idle }) => (
-        <section key={subject} aria-label={subject}>
-          <h2 className="mb-2 text-sm font-semibold text-ink">
-            {subject} <span className="font-normal text-ink/60">· {active.length + idle.length} unit{active.length + idle.length === 1 ? "" : "s"}</span>
-          </h2>
-          {active.length > 0 && (
+      {subjects
+        .filter((g) => g.active.length > 0)
+        .map(({ subject, active, idle }) => (
+          <section key={subject} aria-label={subject}>
+            <h2 className="mb-2 text-sm font-semibold text-ink">
+              {subject} <span className="font-normal text-ink/60">· {active.length + idle.length} unit{active.length + idle.length === 1 ? "" : "s"}</span>
+            </h2>
             <ul className="mb-2 grid gap-3 sm:grid-cols-2">
               {active.map((u) => (
                 <UnitCard key={u.id} u={u} />
               ))}
             </ul>
-          )}
-          {idle.length > 0 && (
-            <details className="group rounded-xl border border-gold-light bg-white">
-              <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-2 px-4 py-2 text-sm text-ink/75">
-                <span>
-                  {idle.length} unit{idle.length === 1 ? "" : "s"} not started yet
-                </span>
-                <Icon name="chevronDown" className="h-4 w-4 text-ink/65 transition-transform group-open:rotate-180" />
-              </summary>
-              <ul className="divide-y divide-gold-light/60 border-t border-gold-light px-4">
-                {idle.map((u) => (
-                  <li key={u.id} className="flex flex-wrap items-center justify-between gap-2 py-2 text-sm">
-                    <span className="text-ink">{u.title}</span>
-                    <span className="text-xs text-ink/60">
-                      {u.topics} topic{u.topics === 1 ? "" : "s"}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </details>
-          )}
+            {idle.length > 0 && <IdleUnits units={idle} label={`${idle.length} more unit${idle.length === 1 ? "" : "s"} not started yet`} />}
+          </section>
+        ))}
+      {untouched.length > 0 && (
+        <section aria-labelledby="rev-not-started">
+          <h2 id="rev-not-started" className="mb-2 text-sm font-semibold text-ink">
+            {startedCount === 0 ? "Subjects" : "Not started yet"} <span className="font-normal text-ink/60">· {untouched.length}</span>
+          </h2>
+          <ul className="divide-y divide-gold-light/70 rounded-xl border border-gold-light bg-white">
+            {untouched.map(({ subject, idle }) => (
+              <li key={subject}>
+                <IdleUnits units={idle} label={subject} count={`${idle.length} unit${idle.length === 1 ? "" : "s"}`} bare />
+              </li>
+            ))}
+          </ul>
         </section>
-      ))}
+      )}
     </div>
   );
 }
