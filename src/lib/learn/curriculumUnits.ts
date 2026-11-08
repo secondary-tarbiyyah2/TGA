@@ -54,7 +54,8 @@ export type UnitDraft = Omit<CurriculumUnit, "id" | "updated_at" | "updated_by_n
 
 export type UnitVersion = { id: string; action: "update" | "delete"; snapshot: CurriculumUnit; edited_by_name: string | null; edited_at: string };
 
-export type SyncRun = { started_at: string; finished_at: string | null; ok: boolean; sent_units: number; sent_lessons: number; problems: string[]; message: string | null };
+export type SyncProblem = { scope?: string; text: string };
+export type SyncRun = { started_at: string; finished_at: string | null; ok: boolean; sent_units: number; sent_lessons: number; problems: SyncProblem[]; message: string | null };
 
 /** "Autumn 1: Dinosaur Planet" -> "autumn1". */
 export function halfTermFromTitle(title: string): HalfTerm | null {
@@ -141,7 +142,11 @@ export async function saveUnit(u: UnitDraft, expected?: string): Promise<Curricu
   if (!supabase) throw new Error("Not connected.");
   const { id, ...rest } = tidyUnit(u);
   if (id) {
-    let q = supabase.from("curriculum_units").update(rest).eq("id", id);
+    // A unit's subject and kind never change (and staff may not write them, migration 0179).
+    const { subject_slug: _slug, kind: _kind, ...fields } = rest;
+    void _slug;
+    void _kind;
+    let q = supabase.from("curriculum_units").update(fields).eq("id", id);
     if (expected) q = q.eq("updated_at", expected);
     const { data, error } = await q.select(UNIT_COLUMNS);
     if (error) throw error;
@@ -156,8 +161,31 @@ export async function saveUnit(u: UnitDraft, expected?: string): Promise<Curricu
 export async function removedUnits(year: string): Promise<UnitVersion[]> {
   const supabase = getSupabaseClient();
   if (!supabase) return [];
-  const { data } = await supabase.from("curriculum_unit_versions").select("id, action, snapshot, edited_by_name, edited_at").eq("year", year).eq("action", "delete").order("edited_at", { ascending: false }).limit(20);
+  const { data } = await supabase
+    .from("curriculum_unit_versions")
+    .select("id, action, snapshot, edited_by_name, edited_at")
+    .eq("year", year)
+    .eq("action", "delete")
+    .is("restored_at", null)
+    .order("edited_at", { ascending: false })
+    .limit(20);
   return (data as UnitVersion[]) || [];
+}
+
+/** Put a removed unit back exactly as it was (once). */
+export async function restoreRemovedUnit(versionId: string): Promise<void> {
+  const supabase = getSupabaseClient();
+  if (!supabase) throw new Error("Not connected.");
+  const { error } = await supabase.rpc("curriculum_restore_unit", { p_version: versionId });
+  if (error) throw error;
+}
+
+/**
+ * What the last sync could not send, or clashed on, for one part: a unit ("unit:<id>"), a lesson
+ * ("lesson:<subject>/<year>/<n>") or a whole year ("syllabus:<subject>:<year>", "spec:<subject>").
+ */
+export function problemsFor(run: SyncRun | null, scopes: string[]): string[] {
+  return (run?.problems || []).filter((p) => scopes.includes(p.scope || "")).map((p) => p.text);
 }
 
 /** A snapshot from the history, as a draft to save again. */
@@ -214,7 +242,9 @@ export async function lastSyncRun(): Promise<SyncRun | null> {
   const supabase = getSupabaseClient();
   if (!supabase) return null;
   const { data } = await supabase.from("curriculum_sync_runs").select("started_at, finished_at, ok, sent_units, sent_lessons, problems, message").order("started_at", { ascending: false }).limit(1).maybeSingle();
-  return (data as SyncRun) || null;
+  if (!data) return null;
+  const run = data as Omit<SyncRun, "problems"> & { problems: (SyncProblem | string)[] | null };
+  return { ...run, problems: (run.problems || []).map((p) => (typeof p === "string" ? { text: p } : p)) };
 }
 
 /**

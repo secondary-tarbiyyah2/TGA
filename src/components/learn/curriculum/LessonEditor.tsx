@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { ui } from "@/components/learn/ui";
 import { LinesField, Modal, TextField } from "@/components/learn/curriculum/Modal";
-import { triggerCurriculumSync, when } from "@/lib/learn/curriculumUnits";
+import { lastSyncRun, problemsFor, triggerCurriculumSync, when } from "@/lib/learn/curriculumUnits";
 import type { CurriculumLesson } from "@/lib/learn/curriculum";
 
 // The lesson as stored in curriculum_lessons.content: the lesson object from
@@ -111,6 +111,14 @@ export function LessonEditor({ lesson, canEdit, onClose, onSaved }: { lesson: Cu
   const [problems, setProblems] = useState<string[]>([]);
   const [versions, setVersions] = useState<Version[] | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [syncNotes, setSyncNotes] = useState<string[]>([]);
+  useEffect(() => {
+    let live = true;
+    lastSyncRun().then((r) => live && setSyncNotes(problemsFor(r, [`lesson:${lesson.subject_slug}/${lesson.year}/${lesson.lesson_no}`])));
+    return () => {
+      live = false;
+    };
+  }, [lesson.subject_slug, lesson.year, lesson.lesson_no]);
 
   useEffect(() => {
     if (!supabase) return;
@@ -188,6 +196,16 @@ export function LessonEditor({ lesson, canEdit, onClose, onSaved }: { lesson: Cu
         )}
         {loaded && c && (
           <>
+            {syncNotes.length > 0 && (
+              <div role="status" className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-900">
+                <p className="font-semibold">From the last copy to the slide builder</p>
+                <ul className="list-disc pl-5">
+                  {syncNotes.map((n) => (
+                    <li key={n}>{n}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
             <div className="space-y-1 text-xs text-ink/65">
               {loaded.content_updated_by_name && (
                 <p>

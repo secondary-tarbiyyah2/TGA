@@ -13,6 +13,8 @@ import {
   draftFromSnapshot,
   halfTermLabel,
   lastSyncRun,
+  problemsFor,
+  restoreRemovedUnit,
   loadUnits,
   removedUnits,
   retitleForHalfTerm,
@@ -172,10 +174,11 @@ export function CurriculumPlanner() {
   const restoreRemoved = async (v: UnitVersion) => {
     setBusy(true);
     try {
-      await saveUnit(draftFromSnapshot(v.snapshot, false));
+      await restoreRemovedUnit(v.id);
+      setRemoved((r) => r.filter((x) => x.id !== v.id));
       setMessage(await triggerCurriculumSync("unit"));
     } catch {
-      setMessage("Couldn't put that unit back.");
+      setMessage("Couldn't put that unit back. It may already have been put back.");
     }
     setBusy(false);
     load();
@@ -201,7 +204,7 @@ export function CurriculumPlanner() {
             <summary className="cursor-pointer font-semibold">{sync.problems.length} thing{sync.problems.length === 1 ? "" : "s"} could not be sent yet</summary>
             <ul className="mt-1 list-disc pl-5">
               {sync.problems.slice(0, 12).map((p) => (
-                <li key={p}>{p}</li>
+                <li key={p.text}>{p.text}</li>
               ))}
             </ul>
           </details>
@@ -319,6 +322,7 @@ export function CurriculumPlanner() {
           initial={editing.draft}
           original={editing.original}
           canEdit={canEdit}
+          syncNotes={editing.original ? problemsFor(sync, [`unit:${editing.original.id}`, editing.original.kind === "spec" ? `spec:${editing.original.subject_slug}` : `syllabus:${editing.original.subject_slug}:${editing.original.year}`]) : []}
           onClose={() => setEditing(null)}
           onSaved={(msg) => {
             setEditing(null);
@@ -333,7 +337,7 @@ export function CurriculumPlanner() {
 
 const blankWeek = (n: number): WeekPlan => ({ week: n, lessons: [], vocabulary: [], home: "" });
 
-function UnitEditor({ initial, original, canEdit, onClose, onSaved }: { initial: UnitDraft; original?: CurriculumUnit; canEdit: boolean; onClose: () => void; onSaved: (message: string) => void }) {
+function UnitEditor({ initial, original, canEdit, syncNotes, onClose, onSaved }: { initial: UnitDraft; original?: CurriculumUnit; canEdit: boolean; syncNotes: string[]; onClose: () => void; onSaved: (message: string) => void }) {
   const [d, setD] = useState<UnitDraft>(initial);
   const [busy, setBusy] = useState(false);
   const [problems, setProblems] = useState<string[]>([]);
@@ -392,6 +396,16 @@ function UnitEditor({ initial, original, canEdit, onClose, onSaved }: { initial:
   return (
     <Modal title={original ? `${d.subject}, ${yearLabel(d.year)}: ${original.title}` : `New ${d.subject} unit, ${yearLabel(d.year)}`} onClose={close} wide>
       <div className="space-y-5 p-4 sm:p-6">
+        {syncNotes.length > 0 && (
+          <div role="status" className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-900">
+            <p className="font-semibold">From the last copy to the syllabus pack</p>
+            <ul className="list-disc pl-5">
+              {syncNotes.map((n) => (
+                <li key={n}>{n}</li>
+              ))}
+            </ul>
+          </div>
+        )}
         {original?.updated_by_name && (
           <p className="text-xs text-ink/65">
             Last changed by {original.updated_by_name}, {when(original.updated_at)}.{" "}
