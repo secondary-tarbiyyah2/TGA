@@ -77,9 +77,15 @@ make your change on top of theirs.
   commits them to `main`, then starts Build lesson decks, Build revision booklets, Sync revision packs, Build
   syllabus pack and (when the syllabus index changes) Deploy site. It runs after each save (Edge Function
   `curriculum-sync`), every hour, after each backend deploy and whenever `content/` changes on `main`.
-- Editing the JSON files in the repo still works: a change to a unit or lesson nobody has edited in the portal since
-  the last sync is copied into the portal. If both changed, the portal's version wins and the run lists the clash
-  (the repo version stays in the git history).
+- Editing the JSON files in the repo still works. Units are compared one by one (lessons one by one too): a repo
+  change to a unit nobody has edited in the portal since the last sync is copied into the portal, even when other
+  units of the same year were edited in the portal. If both sides changed the same unit or lesson, the portal's
+  version wins and the clash is shown on that unit or lesson (the repo version stays in the git history).
+- Before anything is committed, each part is checked with the same rules as `scripts/*/validate.mjs`, including the
+  cross-curricular hub links (renaming a KS4 spec reference a hub uses is held back). A part that fails is left out
+  and shown in the planner or lesson editor as "Not sent yet" with the reason; everything else still syncs.
+- Uploaded decks are never replaced: builds are recorded through `curriculum_store_generated_deck`, which refuses
+  if a teacher uploaded slides during the build and never overwrites an uploaded version.
 - The first run after the migration fills the portal from the repo. It never overwrites portal edits.
 - New keys a unit may carry in `content/syllabus`: `halfTerm`, `weeks` (`[{ week, lessons[], vocabulary[], home }]`),
   `resources` and `foundingYear`. See `content/syllabus/README.md`.
