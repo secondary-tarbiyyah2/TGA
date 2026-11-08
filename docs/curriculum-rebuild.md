@@ -11,6 +11,16 @@ Keep this file current. Anyone (person or AI) picking up the curriculum work sta
   week by week, per subject, plus a dated week-by-week plan for the founding year (first live lessons Mon 4 Jan to 9 Jul 2027).
   - Year 1: **TGA Year 1 Curriculum Pack** https://claude.ai/artifact/MpxKfieQy6ZecHksoR5cko
     (tabs: Overview, English, Maths, Topic, Qur'an/Islamic Studies/PSHE). Its "To confirm" list is open.
+  - Year 2: https://claude.ai/artifact/4rgmPugGuzYB78PZJ1PEEs
+  - Year 3: https://claude.ai/artifact/9vYWnX4iNnNZRA3BazFLST
+  - Year 4: https://claude.ai/artifact/EsdKxjWQXTWcjXQHqguZQi
+  - Year 5: https://claude.ai/artifact/3uv1o5LGHDNUEWC4VPaXo6
+  - Year 6: https://claude.ai/artifact/XGKfWgxbdXaH4bQJxH17GK
+  - Year 7: https://claude.ai/artifact/Eh7nMbS7tKNTJJmavymD3S
+  - Year 8: https://claude.ai/artifact/WfgvRBFjZUmic9bM7PHtzg
+  - Year 9: https://claude.ai/artifact/RegmdsBx1cvrRpqab4tgzx
+  - Years 10 and 11: docs being created (sources in docs/curriculum-packs/).
+  Markdown sources and the briefs used: docs/curriculum-packs/.
 - Working files used to build each pack (subject plans by helper agents) are not kept in the repo; the docs are the record.
 - Years 1-6 follow **Tarbiyyah Primary's Long Term Plan 2026-2027** (Cornerstones Maestro projects, same order),
   **White Rose** maths and **Little Wandle** phonics. Years 7-11 will follow the **Tarbiyyah Secondary School for Boys
