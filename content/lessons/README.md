@@ -83,3 +83,13 @@ sentences), not placeholders.
 
 `node scripts/lessons/validate.mjs` checks all of this. To preview decks from a
 scratch folder: `LESSONS_DIR=path node scripts/lessons/build-decks.mjs out/preview`.
+
+## Edited in the portal
+
+Each lesson is also held in the portal (`curriculum_lessons.content`, migration 0179), where staff edit it with
+**Edit lesson** in the Lesson library. The portal is the source of truth: the workflow "Sync curriculum from the
+portal" (`scripts/curriculum/sync.mjs`) writes edited lessons back into these files (only the edited lesson objects
+change) and starts "Build lesson decks", which rebuilds the slides and plan of any lesson whose content changed (as a
+new version; a teacher's uploaded deck is kept). Editing a file here still works and is copied into the portal, unless
+the same lesson was also edited in the portal since the last sync (then the portal version wins). Add new lessons
+and retire lessons here, as before. See docs/curriculum-editing.md.
