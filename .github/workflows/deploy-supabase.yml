@@ -125,7 +125,7 @@ jobs:
           set +e
           # --include-all: migrations written in parallel can land with a lower number
           # than one already applied; apply them anyway rather than fail.
-          supabase db push --linked --include-all > /tmp/dbpush.txt 2>&1
+          supabase db push --linked --include-all --yes > /tmp/dbpush.txt 2>&1
           code=$?
           if [ $code -ne 0 ]; then
             grep -v -i "password\|token\|secret" /tmp/dbpush.txt | tail -25 | while IFS= read -r line; do echo "::error::${line:0:400}"; done
@@ -170,7 +170,7 @@ jobs:
 
       - name: Set Edge Function secrets
         run: |
-          supabase secrets set --project-ref "${{ steps.project.outputs.ref }}" \
+          supabase secrets set --yes --project-ref "${{ steps.project.outputs.ref }}" \
             RESEND_API_KEY="${{ secrets.RESEND_API_KEY }}" \
             ADMISSIONS_TEAMS_URL="${{ vars.ADMISSIONS_TEAMS_URL || 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_M2UwM2U2NzYtNjhkMS00ZDRkLTlmODctNTZiMWZmMWFiMzcw%40thread.v2/0?context=%7b%22Tid%22%3a%22a0b25b15-bb34-4892-a564-6c8277ae3db2%22%2c%22Oid%22%3a%223b6d0aa6-0912-44cc-b592-f83506cd0d80%22%7d' }}" \
             SITE_URL="https://globalacademy.tarbiyyah.co.uk" \
@@ -190,7 +190,7 @@ jobs:
           MS_SENDER_EMAIL: ${{ secrets.MS_SENDER_EMAIL }}
         run: |
           if [ -n "$MS_TENANT_ID" ] && [ -n "$MS_CLIENT_ID" ] && [ -n "$MS_CLIENT_SECRET" ] && [ -n "$MS_SENDER_EMAIL" ]; then
-            supabase secrets set --project-ref "${{ steps.project.outputs.ref }}" MS_TENANT_ID="$MS_TENANT_ID" MS_CLIENT_ID="$MS_CLIENT_ID" MS_CLIENT_SECRET="$MS_CLIENT_SECRET" MS_SENDER_EMAIL="$MS_SENDER_EMAIL"
+            supabase secrets set --yes --project-ref "${{ steps.project.outputs.ref }}" MS_TENANT_ID="$MS_TENANT_ID" MS_CLIENT_ID="$MS_CLIENT_ID" MS_CLIENT_SECRET="$MS_CLIENT_SECRET" MS_SENDER_EMAIL="$MS_SENDER_EMAIL"
           fi
 
       # Teams meetings / attendance switches (docs/microsoft-365-setup.md).
@@ -210,7 +210,7 @@ jobs:
             if [ -n "$VALUE" ]; then ARGS+=("$NAME=$VALUE"); fi
           done
           if [ ${#ARGS[@]} -gt 0 ]; then
-            supabase secrets set --project-ref "${{ steps.project.outputs.ref }}" "${ARGS[@]}"
+            supabase secrets set --yes --project-ref "${{ steps.project.outputs.ref }}" "${ARGS[@]}"
           fi
 
       # Amazon SES (see _shared/ses.ts). Only set when all three secrets
@@ -223,7 +223,7 @@ jobs:
           AWS_SES_SECRET_ACCESS_KEY: ${{ secrets.AWS_SES_SECRET_ACCESS_KEY }}
         run: |
           if [ -n "$AWS_SES_REGION" ] && [ -n "$AWS_SES_ACCESS_KEY_ID" ] && [ -n "$AWS_SES_SECRET_ACCESS_KEY" ]; then
-            supabase secrets set --project-ref "${{ steps.project.outputs.ref }}" AWS_SES_REGION="$AWS_SES_REGION" AWS_SES_ACCESS_KEY_ID="$AWS_SES_ACCESS_KEY_ID" AWS_SES_SECRET_ACCESS_KEY="$AWS_SES_SECRET_ACCESS_KEY"
+            supabase secrets set --yes --project-ref "${{ steps.project.outputs.ref }}" AWS_SES_REGION="$AWS_SES_REGION" AWS_SES_ACCESS_KEY_ID="$AWS_SES_ACCESS_KEY_ID" AWS_SES_SECRET_ACCESS_KEY="$AWS_SES_SECRET_ACCESS_KEY"
           else
             echo "AWS_SES_* not set in repo secrets; Edge Functions send via Resend."
           fi
@@ -237,7 +237,7 @@ jobs:
           BBB_SECRET: ${{ secrets.BBB_SECRET }}
         run: |
           if [ -n "$BBB_SERVER_URL" ] && [ -n "$BBB_SECRET" ]; then
-            supabase secrets set --project-ref "${{ steps.project.outputs.ref }}" BBB_SERVER_URL="$BBB_SERVER_URL" BBB_SECRET="$BBB_SECRET"
+            supabase secrets set --yes --project-ref "${{ steps.project.outputs.ref }}" BBB_SERVER_URL="$BBB_SERVER_URL" BBB_SECRET="$BBB_SECRET"
           else
             echo "BBB_SERVER_URL / BBB_SECRET not set in repo secrets; calls will use the Teams fallback."
           fi
@@ -253,7 +253,7 @@ jobs:
           GH_DISPATCH_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN }}
         run: |
           if [ -n "$GH_DISPATCH_TOKEN" ]; then
-            supabase secrets set --project-ref "${{ steps.project.outputs.ref }}" GH_DISPATCH_TOKEN="$GH_DISPATCH_TOKEN" GH_DISPATCH_REPO="${{ github.repository }}"
+            supabase secrets set --yes --project-ref "${{ steps.project.outputs.ref }}" GH_DISPATCH_TOKEN="$GH_DISPATCH_TOKEN" GH_DISPATCH_REPO="${{ github.repository }}"
           else
             echo "GH_DISPATCH_TOKEN not set in repo secrets; website-content saves won't auto-trigger a rebuild yet."
           fi
@@ -291,114 +291,114 @@ jobs:
             if [ -n "$VALUE" ]; then ARGS+=("$NAME=$VALUE"); fi
           done
           if [ ${#ARGS[@]} -gt 0 ]; then
-            supabase secrets set --project-ref "${{ steps.project.outputs.ref }}" "${ARGS[@]}"
+            supabase secrets set --yes --project-ref "${{ steps.project.outputs.ref }}" "${ARGS[@]}"
           else
             echo "No Claude / absence-email secrets in the repo yet; AI features are off and inbound-absence rejects webhooks until RESEND_INBOUND_WEBHOOK_SECRET is set."
           fi
 
       - name: Deploy Edge Functions
         run: |
-          supabase functions deploy book-admissions-call --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
-          supabase functions deploy manage-booking --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
-          supabase functions deploy send-reminders --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          supabase functions deploy book-admissions-call --yes --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          supabase functions deploy manage-booking --yes --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          supabase functions deploy send-reminders --yes --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
           # No --no-verify-jwt here on purpose: this one requires a valid
           # signed-in caller before its own code even runs (it separately
           # checks that caller is specifically an admin — see the function).
-          supabase functions deploy admin-manage-staff --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy admin-manage-staff --yes --project-ref "${{ steps.project.outputs.ref }}"
           # learn-login must be reachable with no session at all (it's what
           # decides whether a sign-in attempt is even allowed to proceed).
-          supabase functions deploy learn-login --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          supabase functions deploy learn-login --yes --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
           # learn-invite: verified, like admin-manage-staff — it separately
           # re-checks the caller holds Head Teacher/Admin under their own
           # RLS before doing anything (see the function).
-          supabase functions deploy learn-invite --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy learn-invite --yes --project-ref "${{ steps.project.outputs.ref }}"
           # timetable-ics must be reachable with no session at all (a
           # calendar app polling a URL) — security is the token, not login.
-          supabase functions deploy timetable-ics --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          supabase functions deploy timetable-ics --yes --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
           # timetable-move/-publish/-cover: verified — each separately
           # re-checks the caller's own permission server-side (see each
           # function's own comments).
-          supabase functions deploy timetable-move --project-ref "${{ steps.project.outputs.ref }}"
-          supabase functions deploy timetable-publish --project-ref "${{ steps.project.outputs.ref }}"
-          supabase functions deploy timetable-cover --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy timetable-move --yes --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy timetable-publish --yes --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy timetable-cover --yes --project-ref "${{ steps.project.outputs.ref }}"
           # These were written but never added here, so they didn't exist on
           # the server: "Start call", lesson joins, recordings, lesson set-up,
           # timetable generation, the quiz plan email and flagged-message
           # alerts all failed. Verified ones re-check the caller's role in
           # their own code; the two --no-verify-jwt ones are called with no
           # session (anonymous quiz-takers, a scheduled job).
-          supabase functions deploy admissions-correspond --project-ref "${{ steps.project.outputs.ref }}"
-          supabase functions deploy admissions-payment-proof --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          supabase functions deploy admissions-correspond --yes --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy admissions-payment-proof --yes --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
           # Automatic accounts on acceptance, student username logins and the
           # instant "application received" email. The first two are verified
           # (each re-checks the caller's role); admissions-submitted has no
           # session (the public form) and only emails the address already on
           # the fresh application.
-          supabase functions deploy admissions-create-accounts --project-ref "${{ steps.project.outputs.ref }}"
-          supabase functions deploy student-account --project-ref "${{ steps.project.outputs.ref }}"
-          supabase functions deploy admissions-submitted --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
-          supabase functions deploy document-sign-request --project-ref "${{ steps.project.outputs.ref }}"
-          supabase functions deploy document-signed-copy --project-ref "${{ steps.project.outputs.ref }}"
-          supabase functions deploy document-signed-pdf --project-ref "${{ steps.project.outputs.ref }}"
-          supabase functions deploy booking-join --project-ref "${{ steps.project.outputs.ref }}"
-          supabase functions deploy lesson-join --project-ref "${{ steps.project.outputs.ref }}"
-          supabase functions deploy lesson-instances-generate --project-ref "${{ steps.project.outputs.ref }}"
-          supabase functions deploy lesson-update-details --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy admissions-create-accounts --yes --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy student-account --yes --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy admissions-submitted --yes --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          supabase functions deploy document-sign-request --yes --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy document-signed-copy --yes --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy document-signed-pdf --yes --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy booking-join --yes --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy lesson-join --yes --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy lesson-instances-generate --yes --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy lesson-update-details --yes --project-ref "${{ steps.project.outputs.ref }}"
           # Verified: re-checks the caller is the booking's parent/teacher or
           # Head Teacher/Admin before emailing (see the function).
-          supabase functions deploy parent-evening-confirm --project-ref "${{ steps.project.outputs.ref }}"
-          supabase functions deploy recording-access --project-ref "${{ steps.project.outputs.ref }}"
-          supabase functions deploy recording-control --project-ref "${{ steps.project.outputs.ref }}"
-          supabase functions deploy trigger-timetable-generation --project-ref "${{ steps.project.outputs.ref }}"
-          supabase functions deploy quiz-send-plan --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
-          supabase functions deploy notify-flagged-messages --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          supabase functions deploy parent-evening-confirm --yes --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy recording-access --yes --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy recording-control --yes --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy trigger-timetable-generation --yes --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy quiz-send-plan --yes --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          supabase functions deploy notify-flagged-messages --yes --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
           # Scheduled (safeguarding-review-check.yml): idempotent sweep and
           # lead alert; the purge only deletes expired export files.
-          supabase functions deploy safeguarding-review-check --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
-          supabase functions deploy purge-data-exports --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          supabase functions deploy safeguarding-review-check --yes --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          supabase functions deploy purge-data-exports --yes --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
           # subject-access-export: verified; re-checks Headteacher/Admin with
           # the caller's own token, then uses the service role to assemble data.
-          supabase functions deploy subject-access-export --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy subject-access-export --yes --project-ref "${{ steps.project.outputs.ref }}"
           # noshow-alerts is scheduled (no session) so it skips JWT verification,
           # but the function itself requires the service-role key as the Bearer
           # token. cover-notify is verified and re-checks the caller's role.
-          supabase functions deploy noshow-alerts --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
-          supabase functions deploy cover-notify --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy noshow-alerts --yes --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          supabase functions deploy cover-notify --yes --project-ref "${{ steps.project.outputs.ref }}"
           # Verified -- separately re-checks the caller is an admin (see the
           # function); a session-less caller would be rejected before that
           # check even runs.
-          supabase functions deploy publish-website-content --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy publish-website-content --yes --project-ref "${{ steps.project.outputs.ref }}"
           # weekly-digest: no gateway JWT check because the Friday cron
           # (weekly-digest.yml) is not a user. The function authorises
           # itself: service-role key for the scheduled run, or a signed-in
           # Headteacher/Admin for the preview/test tools.
-          supabase functions deploy weekly-digest --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          supabase functions deploy weekly-digest --yes --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
           # star-certificate: verified; staff only (re-checked in the function).
-          supabase functions deploy star-certificate --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy star-certificate --yes --project-ref "${{ steps.project.outputs.ref }}"
           # absence-escalate: verified; head/admin only (re-checked in the function).
-          supabase functions deploy absence-escalate --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy absence-escalate --yes --project-ref "${{ steps.project.outputs.ref }}"
           # policy-file: public website policies streamed to deploy/policy.php
           # (the main site's /policies/<slug>.pdf); open-evening-book: the
           # public booking form (honeypot + rate limit inside); open-evening-
           # reminders: hourly scheduled job, requires the service-role key.
-          supabase functions deploy policy-file --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
-          supabase functions deploy open-evening-book --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
-          supabase functions deploy entry-assessment --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
-          supabase functions deploy open-evening-reminders --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          supabase functions deploy policy-file --yes --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          supabase functions deploy open-evening-book --yes --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          supabase functions deploy entry-assessment --yes --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          supabase functions deploy open-evening-reminders --yes --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
           # teams-sync: Microsoft Teams meetings + attendance for lessons. No
           # gateway JWT check because the cron (teams-sync.yml) is not a user;
           # the function accepts the service-role key or a signed-in
           # Headteacher/Admin (School settings → Microsoft 365 connection).
-          supabase functions deploy teams-sync --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          supabase functions deploy teams-sync --yes --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
           # inbound-absence: Resend Inbound webhook for absence@ emails. No
           # gateway JWT check because Resend is not a user; the function
           # verifies the Svix signature (RESEND_INBOUND_WEBHOOK_SECRET) and
           # re-checks Headteacher/Admin for the staff confirm/dismiss actions.
-          supabase functions deploy inbound-absence --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          supabase functions deploy inbound-absence --yes --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
           # ai-assist: verified; staff-only AI drafts (report comments, Weekly
           # Tarbiyah Notes, parent-message triage). Re-checks the caller's role
           # with their own token; never sends anything to families itself.
-          supabase functions deploy ai-assist --project-ref "${{ steps.project.outputs.ref }}"
+          supabase functions deploy ai-assist --yes --project-ref "${{ steps.project.outputs.ref }}"
 
       # Sign-in emails: Amazon SES SMTP when SES_SMTP_USER/SES_SMTP_PASS (and
       # AWS_SES_REGION) are set, otherwise Resend SMTP. Built with jq so a
