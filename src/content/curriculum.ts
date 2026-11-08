@@ -11,6 +11,10 @@
 // Lessons a week must fit the school day: lessons 1-3 run Monday to Friday
 // and lessons 4-5 Monday to Thursday, so a full live week has 23 slots
 // (migration 0150). PE is not offered (owner decision, 26 October 2026).
+// Years 1-2 (curriculum plan, November 2026; migration 0177): topic projects
+// (Cornerstones, as at Tarbiyyah Primary) get 2 lessons; Islamic Studies and
+// PSHE share 1 on alternate weeks; Arabic letters are taught in Qur'an through
+// the Qaidah, and Arabic as a language starts in Year 3.
 
 export type KeyStage = {
   slug: string;
@@ -42,20 +46,19 @@ export const keyStages: KeyStage[] = [
       "Geography",
       "Computing",
       "Art and design",
+      "Design and technology",
       "PSHE",
-      "Qur'an and Tajweed",
-      "Arabic",
+      "Qur'an and Tajweed, with the Qaidah (reading Arabic letters)",
       "Islamic Studies, including du'a and Islamic manners",
     ],
     liveSplit:
-      "Short, engaging 30-minute live lessons across the full curriculum, with a strong focus on phonics, early reading and number, alongside Qur'an, du'a and Islamic manners. Much of the learning is practical and done away from the screen with a parent, following guidance sent home each week, including art.",
+      "Short, engaging 30-minute live lessons across the full curriculum, with a strong focus on phonics, early reading and number, alongside Qur'an, du'a and Islamic manners. Science, history, geography, art, design and technology and computing are taught through a half-termly topic project. Much of the learning is practical and done away from the screen with a parent, following guidance sent home each week.",
     weekly: [
       { subject: "English and phonics", lessons: 5 },
       { subject: "Mathematics", lessons: 4 },
-      { subject: "Science, history, geography, computing, art and design", lessons: 1 },
-      { subject: "Qur'an and Tajweed", lessons: 3 },
-      { subject: "Arabic and Islamic Studies", lessons: 1 },
-      { subject: "PSHE", lessons: 1 },
+      { subject: "Topic: science, history, geography, art, design and technology, computing", lessons: 2 },
+      { subject: "Qur'an and Tajweed, with the Qaidah", lessons: 3 },
+      { subject: "Islamic Studies and PSHE (alternate weeks)", lessons: 1 },
     ],
     lessonLength: "30 minutes",
     totalLessons: "15 live lessons a week (Years 1–2)",
