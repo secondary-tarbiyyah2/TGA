@@ -47,12 +47,17 @@ Y1-2: English and phonics 5, maths 4, topic 2, Qur'an with Qaidah 3, Islamic Stu
 - Secondary curriculum maps (Years 7-11, xlsx from the TSS drive) cleaned of trips/visits/speakers and the
   "Redstone Academy" heading; sent to the owner (not stored in the repo).
 
+### In progress
+- In-portal curriculum editor: branch `curriculum-editor` (helper agent), PR not yet open. Migrations from 0179.
+
 ### Next
 0. Optional: add content/syllabus/ks1-3/design-technology.json (KS1-3 DT statements from gov.uk) so DT is its own
    subject in the portal; for now DT units sit inside art.json.
 1. Year 1 lessons for the founding year: bridge (4-15 Jan) + Spring 1 (Moon Zoom!), then Spring 2 to Summer 2.
    Existing content/lessons/*/y1.json lessons were written for an Autumn start: keep what fits, re-point the rest.
-2. Year 2 pack, then Years 3-6, then 7-11 (from the TSS booklet). Then the one-pass consolidation the owner
+2. Year 2-11 packs (breadth first: year on one page, founding-year week-by-week, Spring 1-Summer 2 weekly per subject):
+   being drafted (8 Nov) from briefs kept in the session scratchpad; each becomes a Claude Doc like Year 1. Not yet linked here.
+   Cornerstones/White Rose detail still to be checked in Maestro (owner to give access; logins were not kept). Then the one-pass consolidation the owner
    agreed (8 Nov): every old SOW/map marked keep, adapt or retire; retired ones to an "Archive - do not teach from" folder.
 3. After Headteacher sign-off of the plan: update policy 12 (Curriculum) text in the portal (it lives in
    policy_links.body_md; editing it asks staff to re-sign) so its KS1 table matches the new weekly lessons.
