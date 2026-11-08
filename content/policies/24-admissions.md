@@ -24,7 +24,7 @@ The Academy applies principles of fairness and transparency, having regard to th
 
 ## 3. Who We Admit
 
-Pupils are admitted from Year 1 to Year 11. Live lessons begin on Monday 11 January 2027. The application deadline for the founding cohort is Friday 18 December 2026; later applications are considered while places remain, and applications are processed on a rolling basis.
+Pupils are admitted from Year 1 to Year 11. Live lessons begin on Monday 4 January 2027. The application deadline for the founding cohort is Friday 18 December 2026; later applications are considered while places remain, and applications are processed on a rolling basis.
 
 | Point of entry | How admission works |
 | --- | --- |
@@ -64,7 +64,7 @@ Applications from pupils with SEND are welcomed and assessed on the same terms a
 | Stage | What happens |
 | --- | --- |
 | Conditional offer | Sent by email with the terms and conditions |
-| Acceptance | Families accept within five working days and pay the first fee payment, due no later than Friday 8 January 2027 |
+| Acceptance | Families accept within five working days and pay the first fee payment, due no later than Friday 1 January 2027 |
 | Cancellation right | Because enrolment is agreed at a distance, families may cancel within 14 days of accepting, as set out in the Fees Policy |
 | Conditions | The offer depends on accurate information, a satisfactory school report, the required documents, the technical requirements and payment |
 | Onboarding | Families receive Academy accounts, portal access, the timetable, device check and induction details |

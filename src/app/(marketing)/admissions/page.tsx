@@ -15,7 +15,7 @@ const BEFORE_YOU_APPLY = [
   { href: "/open-evening", cta: "Book a place", title: "Open evenings & taster morning", body: "Online open evenings on Thursday 26 November (7:30pm) and Sunday 6 December (4pm UK time), and a taster morning on Saturday 12 December." },
   { href: "/eligibility", cta: "Check if it's right for us", title: "Is it right for us?", body: "Eight quick questions for an honest answer: your child's live day in your time zone, what you would need at home, the fees and the next step." },
   { href: "/fees", cta: "See the fees", title: "Fees and payment dates", body: "Every fee, payment plan and due date, with an estimator for your family." },
-  { href: "/term-dates", cta: "See term dates", title: "Key dates", body: "Apply by 18 December. Induction week runs 4 to 8 January, and live lessons begin on Monday 11 January 2027." },
+  { href: "/term-dates", cta: "See term dates", title: "Key dates", body: "Apply by 18 December. Induction day is Friday 1 January, and live lessons begin on Monday 4 January 2027." },
 ];
 
 export const metadata: Metadata = {

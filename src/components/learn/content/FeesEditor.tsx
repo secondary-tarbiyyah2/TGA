@@ -221,7 +221,7 @@ export function FeesEditor() {
           <label className="text-sm text-ink">
             Number of payments (instalment plan)
             <input type="text" inputMode="decimal" min={1} max={MAX_TERMS} step={1} value={settings.fee_terms} onChange={(e) => setSettings({ ...settings, fee_terms: e.target.value })} className={input} />
-            <span className="mt-0.5 block text-xs text-ink/65">Default {FEE_DEFAULTS.terms} (Fees Policy: 8 Jan 2027 and 28 Mar 2027). Each payment = annual fee ÷ number of payments.</span>
+            <span className="mt-0.5 block text-xs text-ink/65">Default {FEE_DEFAULTS.terms} (Fees Policy: 1 Jan 2027 and 28 Mar 2027). Each payment = annual fee ÷ number of payments.</span>
           </label>
           <label className="text-sm text-ink">
             Number of monthly instalments
@@ -238,7 +238,7 @@ export function FeesEditor() {
             <datalist id="fee-instalment-choices">
               {INSTALMENT_CHOICES.map((n) => <option key={n} value={n} />)}
             </datalist>
-            <span className="mt-0.5 block text-xs text-ink/65">Default {FEE_DEFAULTS.instalments} (8 Jan 2027, then 28 Jan to 28 Jun 2027). Monthly fee = annual fee ÷ instalments.</span>
+            <span className="mt-0.5 block text-xs text-ink/65">Default {FEE_DEFAULTS.instalments} (1 Jan 2027, then 28 Jan to 28 Jun 2027). Monthly fee = annual fee ÷ instalments.</span>
           </label>
           <label className="text-sm text-ink">
             Application fee (£, non-refundable)
@@ -248,7 +248,7 @@ export function FeesEditor() {
           <label className="text-sm text-ink">
             Annual payment discount (%)
             <input type="text" inputMode="decimal" min={0} max={100} step="0.1" value={settings.annual_discount_percent} onChange={(e) => setSettings({ ...settings, annual_discount_percent: e.target.value })} className={input} />
-            <span className="mt-0.5 block text-xs text-ink/65">Default {FEE_POLICY_DEFAULTS.annualDiscountPercent}%, if paid in full by 8 Jan 2027. Applied automatically in the fee estimator.</span>
+            <span className="mt-0.5 block text-xs text-ink/65">Default {FEE_POLICY_DEFAULTS.annualDiscountPercent}%, if paid in full by 1 Jan 2027. Applied automatically in the fee estimator.</span>
           </label>
           <label className="text-sm text-ink sm:col-span-2">
             Payment schedule text (shown on the Fees page)

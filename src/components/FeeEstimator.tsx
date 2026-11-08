@@ -84,7 +84,7 @@ export function FeeEstimator({
   if (!estimate || !schedule) return null;
 
   const checkable = discounts.map((d, i) => ({ d, i })).filter(({ d }) => !d.appliesAutomatically);
-  const unitLabel = plan === "annual" ? "once, by 8 January 2027" : plan === "termly" ? "per payment" : "per month";
+  const unitLabel = plan === "annual" ? "once, by 1 January 2027" : plan === "termly" ? "per payment" : "per month";
   const evenPayments = estimate.payments.every((p) => p === estimate.payments[0]);
   const sel = "mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2 text-sm";
 

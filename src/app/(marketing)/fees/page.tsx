@@ -103,7 +103,7 @@ export default async function FeesPage() {
             Every payment plan adds up to exactly the annual total: each instalment is the annual fee divided by{" "}
             {terms} payments or {instalments} monthly payments, and if the division leaves a few pence over they are
             added to the final instalment. A {discountPercent}% discount applies when the annual option is chosen and
-            paid in full by 8 January 2027.
+            paid in full by 1 January 2027.
           </p>
           {rows.some((r) => roundingNote(r.sched.monthly)) && (
             <p className="mt-1 text-xs text-ink/70">
@@ -119,8 +119,8 @@ export default async function FeesPage() {
             </div>
             <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
               <p className="text-sm font-semibold uppercase tracking-wide text-gold-700">Securing your place</p>
-              <p className="mt-1 font-serif text-3xl font-bold text-ink">By 8 January 2027</p>
-              <p className="mt-1 text-sm text-ink/70">Accept your offer within five working days and make your first fee payment, no later than 8 January 2027. The application fee is the only admissions fee.</p>
+              <p className="mt-1 font-serif text-3xl font-bold text-ink">By 1 January 2027</p>
+              <p className="mt-1 text-sm text-ink/70">Accept your offer within five working days and make your first fee payment, no later than 1 January 2027. The application fee is the only admissions fee.</p>
             </div>
             {settings.siblingDiscountPercent != null && (
               <div className="rounded-2xl border border-gold-light/50 bg-white p-6 sm:col-span-2">

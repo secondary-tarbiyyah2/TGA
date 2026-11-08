@@ -13,7 +13,7 @@ const KEY_DATES = [
   { when: "Sun 6 Dec, 4:00pm", what: "Online open evening (UK time)" },
   { when: "Sat 12 Dec", what: "Taster morning: join a real live lesson" },
   { when: "Fri 18 Dec", what: "Application deadline for the founding cohort" },
-  { when: "Mon 4 Jan 2027", what: "The Academy opens with induction week" },
+  { when: "Fri 1 Jan 2027", what: "The Academy opens with induction day" },
   { when: "Mon 11 Jan 2027", what: "First live lessons" },
 ];
 

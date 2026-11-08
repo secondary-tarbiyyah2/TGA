@@ -152,8 +152,8 @@ export default async function LearningHubPage() {
               ))}
             </ul>
             <p className="mt-4 text-sm text-ink/70">
-              Lessons run on Microsoft Teams, which is free. We check your setup with you during induction week, which starts on
-              Monday 4 January 2027, before the first live lessons on Monday 11 January.
+              Lessons run on Microsoft Teams, which is free. We check your setup with you on induction day,
+              Friday 1 January 2027, before the first live lessons on Monday 4 January.
             </p>
           </div>
         </Container>
