@@ -4,7 +4,7 @@
   "slug": "geography",
   "framework": "National Curriculum in England (2014): Geography programmes of study, Key Stages 1 to 3, with EYFS Understanding the World",
   "status": "Verified",
-  "statusNote": "Verified from official text: National Curriculum geography programmes of study for key stages 1 to 3 (gov.uk, re-read October 2026) and the EYFS Understanding the World early learning goals (People, Culture and Communities; The Natural World) in the statutory framework from 1 September 2026, read in full text. The Reception unit now follows those goals. Year allocation is a recommended sequence, not statutory; the National Curriculum sets content by key stage. Year units follow the school's existing unit titles. School-choice notes, not verification gaps: KS1 contrasting-country place knowledge, KS2 Europe and North America, KS3 Africa and Asia, KS3 locational knowledge, development and economic sectors, geological time, weather and climate have no matching school units yet; online pupils need a route for fieldwork (for example guided local fieldwork with a parent or tutor).",
+  "statusNote": "Verified from official text: National Curriculum geography programmes of study for key stages 1 to 3 (gov.uk, re-read October 2026) and the EYFS Understanding the World early learning goals (People, Culture and Communities; The Natural World) in the statutory framework from 1 September 2026, read in full text. The Reception unit now follows those goals. Year allocation is a recommended sequence, not statutory; the National Curriculum sets content by key stage. Year units follow the school's existing unit titles. School-choice notes, not verification gaps: KS1 contrasting-country place knowledge, KS2 Europe and North America, KS3 Africa and Asia, KS3 locational knowledge, development and economic sectors, geological time, weather and climate have no matching school units yet; online pupils need a route for fieldwork (for example guided local fieldwork with a parent or tutor). Year 1 was rebuilt in November 2026 to the TGA Year 1 Curriculum Pack: one unit per half term, following Tarbiyyah Primary's Cornerstones projects (2026-27 order), White Rose maths and Little Wandle phonics.",
   "sources": [
     {
       "title": "National curriculum in England: geography programmes of study",
@@ -156,28 +156,112 @@
   "yearMap": {
     "y1": [
       {
-        "unit": "My place in the world",
+        "unit": "Autumn 1: Maps and woodland features (The Mysterious Woodlands)",
         "focus": [
-          "Home, school and local area",
-          "The four countries of the UK",
-          "Weather and the four seasons",
-          "Making a simple map"
+          "Physical features of a woodland",
+          "Maps from above, symbols and a key",
+          "Bird's eye view of a room"
         ],
         "skills": [
-          "Use location words",
-          "Draw a simple map with symbols and a key",
-          "School-grounds observation"
+          "Draw a simple map with a key",
+          "Use location words"
         ],
         "keyTerms": [
-          "country",
-          "capital",
-          "season",
           "map",
-          "key"
+          "symbol",
+          "key",
+          "bird's eye view",
+          "physical feature"
         ],
-        "assess": "Simple map and short speaking-and-drawing task",
-        "prereq": "Reception: my home and local area",
-        "leadsTo": "Year 2: Our world"
+        "assess": "Simple map with a key",
+        "prereq": "Reception: describing where they live",
+        "leadsTo": "Year 2: fieldwork and simple compass directions"
+      },
+      {
+        "unit": "Autumn 2: Continents, oceans, hot and cold places (Dinosaur Planet)",
+        "focus": [
+          "The seven continents and five oceans",
+          "The Equator and the North and South Poles",
+          "Hot and cold places"
+        ],
+        "skills": [
+          "Use a globe and world map",
+          "Name and locate"
+        ],
+        "keyTerms": [
+          "continent",
+          "ocean",
+          "globe",
+          "Equator",
+          "pole"
+        ],
+        "assess": "Continents and oceans labelling",
+        "prereq": "Autumn 1: maps",
+        "leadsTo": "Year 2: comparing a UK area with a non-European area"
+      },
+      {
+        "unit": "Spring 1: Earth from space (Moon Zoom!)",
+        "focus": [
+          "Satellite images of Earth",
+          "Land, sea and cloud from above"
+        ],
+        "skills": [
+          "Read satellite and aerial images"
+        ],
+        "keyTerms": [
+          "satellite image",
+          "land",
+          "sea",
+          "aerial"
+        ],
+        "assess": "Label features on a satellite image",
+        "prereq": "Autumn 2: world map",
+        "leadsTo": "Summer 1: aerial photographs of London"
+      },
+      {
+        "unit": "Summer 1: The UK, its capitals and London (Bright Lights, Big City)",
+        "focus": [
+          "The four countries of the UK, capitals and seas",
+          "London landmarks on aerial photos and maps",
+          "Comparing my area with central London (window survey)"
+        ],
+        "skills": [
+          "Name and locate",
+          "Compare places",
+          "Tally human and physical features"
+        ],
+        "keyTerms": [
+          "capital",
+          "country",
+          "landmark",
+          "human feature",
+          "physical feature"
+        ],
+        "assess": "Label the UK countries and capitals on a blank map",
+        "prereq": "Autumn 2: continents and oceans",
+        "leadsTo": "Year 2: the UK and the world"
+      },
+      {
+        "unit": "Summer 2: Weather and seasons in the UK (Splendid Skies)",
+        "focus": [
+          "Daily and seasonal UK weather",
+          "Weather symbols and a weather chart",
+          "UK summer compared with a place near the Equator"
+        ],
+        "skills": [
+          "Record weather over time",
+          "Compare places"
+        ],
+        "keyTerms": [
+          "weather",
+          "forecast",
+          "symbol",
+          "Equator",
+          "season"
+        ],
+        "assess": "Completed weather chart; place comparison",
+        "prereq": "Autumn 2: hot and cold places",
+        "leadsTo": "Year 2: hot and cold areas of the world"
       }
     ],
     "y2": [

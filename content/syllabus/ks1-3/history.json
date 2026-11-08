@@ -4,7 +4,7 @@
   "slug": "history",
   "framework": "National Curriculum in England (2014): History programmes of study, Key Stages 1 to 3, with EYFS Understanding the World",
   "status": "Verified",
-  "statusNote": "Key Stage 1 to 3 statutory content and period lists were re-read from the gov.uk National Curriculum history programme of study (page read through a fetch tool that returns summaries, checked against the earlier reading). EYFS Understanding the World: Past and Present was read in the 13 July 2026 statutory framework (in force 1 September 2026) and the Reception row matches it. Year allocation is a recommended sequence, not statutory; the National Curriculum sets content by key stage. Year units follow the school's existing unit titles. History is taught from Year 1 to Year 9 only; it is not offered at Key Stage 4.",
+  "statusNote": "Key Stage 1 to 3 statutory content and period lists were re-read from the gov.uk National Curriculum history programme of study (page read through a fetch tool that returns summaries, checked against the earlier reading). EYFS Understanding the World: Past and Present was read in the 13 July 2026 statutory framework (in force 1 September 2026) and the Reception row matches it. Year allocation is a recommended sequence, not statutory; the National Curriculum sets content by key stage. Year units follow the school's existing unit titles. History is taught from Year 1 to Year 9 only; it is not offered at Key Stage 4. Year 1 was rebuilt in November 2026 to the TGA Year 1 Curriculum Pack: one unit per half term, following Tarbiyyah Primary's Cornerstones projects (2026-27 order), White Rose maths and Little Wandle phonics.",
   "sources": [
     {
       "title": "National curriculum in England: history programmes of study",
@@ -119,28 +119,112 @@
   "yearMap": {
     "y1": [
       {
-        "unit": "Then and now",
+        "unit": "Autumn 2: Fossils and Mary Anning (Dinosaur Planet)",
         "focus": [
-          "Past, present and future",
-          "My own timeline",
-          "Toys from long ago and today",
-          "Asking questions about the past"
+          "Past, present and long ago on a simple timeline",
+          "What a fossil is",
+          "Mary Anning and why her finds mattered"
         ],
         "skills": [
+          "Order events",
           "Use time words",
-          "Place events in order",
-          "Ask simple questions of objects"
+          "Talk about a significant person"
         ],
         "keyTerms": [
           "past",
           "present",
-          "timeline",
-          "old",
-          "new"
+          "long ago",
+          "fossil",
+          "timeline"
         ],
-        "assess": "Timeline and a simple comparison of old and new toys",
-        "prereq": "Reception: talking about the past",
-        "leadsTo": "Year 2: Great Fire of London"
+        "assess": "Spoken account of Mary Anning; timeline task",
+        "prereq": "Reception: past and present in stories",
+        "leadsTo": "Year 2: significant individuals"
+      },
+      {
+        "unit": "Spring 1: Neil Armstrong and the Moon landing (Moon Zoom!)",
+        "focus": [
+          "Astronauts and the 1969 Moon landing",
+          "Asking older relatives what they remember"
+        ],
+        "skills": [
+          "Ask and answer questions",
+          "Use sources: photos and memories"
+        ],
+        "keyTerms": [
+          "astronaut",
+          "Moon",
+          "rocket",
+          "1969"
+        ],
+        "assess": "Short spoken retell with key facts",
+        "prereq": "Autumn 2: timelines",
+        "leadsTo": "Year 2: events beyond living memory"
+      },
+      {
+        "unit": "Spring 2: Childhood within living memory (Memory Box)",
+        "focus": [
+          "My own timeline from baby to now",
+          "Toys and childhood then and now",
+          "Interviewing a family elder"
+        ],
+        "skills": [
+          "Compare then and now",
+          "Handle artefacts",
+          "Ask questions"
+        ],
+        "keyTerms": [
+          "artefact",
+          "living memory",
+          "then",
+          "now",
+          "change"
+        ],
+        "assess": "Then-and-now comparison of two artefacts",
+        "prereq": "Spring 1: using memories as sources",
+        "leadsTo": "Year 2: changes within living memory"
+      },
+      {
+        "unit": "Summer 1: The Great Fire of London, 1666 (Bright Lights, Big City)",
+        "focus": [
+          "Pudding Lane and how the fire spread",
+          "Samuel Pepys' diary as a source",
+          "Why London was rebuilt in brick and stone"
+        ],
+        "skills": [
+          "Sequence events",
+          "Use a diary as evidence"
+        ],
+        "keyTerms": [
+          "1666",
+          "Pudding Lane",
+          "diary",
+          "evidence"
+        ],
+        "assess": "Four-picture sequence of the Great Fire",
+        "prereq": "Spring 2: then and now",
+        "leadsTo": "Year 2: events beyond living memory"
+      },
+      {
+        "unit": "Summer 2: Francis Beaufort and the wind scale (Splendid Skies)",
+        "focus": [
+          "Who Francis Beaufort was",
+          "The wind scale",
+          "Comparing two significant people (Beaufort and Armstrong)"
+        ],
+        "skills": [
+          "Compare significant individuals",
+          "Order on a timeline"
+        ],
+        "keyTerms": [
+          "Francis Beaufort",
+          "wind scale",
+          "gale",
+          "breeze"
+        ],
+        "assess": "End-of-year timeline and significant person task",
+        "prereq": "Spring 1: Neil Armstrong",
+        "leadsTo": "Year 2: significant individuals"
       }
     ],
     "y2": [

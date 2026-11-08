@@ -4,7 +4,7 @@
   "slug": "pshe",
   "framework": "Statutory guidance: Relationships Education, Relationships and Sex Education (RSE) and Health Education (revised, in force from 1 September 2026); National Curriculum in England: Citizenship programmes of study KS3 and KS4; PSHE Association programme of study (non-statutory reference); EYFS PSED for Reception. School position: PSHE only in every year group, with no RSE or sex education; puberty and bulugh taught from Year 7 to boys and girls separately",
   "status": "Provisional",
-  "statusNote": "Provisional. Read in full text from official sources: the 1 September 2026 RSHE statutory guidance PDF, compared line by line with the July 2025 PDF (the two extracts are identical; the 2026 file is the July 2025 text reissued); National Curriculum citizenship KS3 and KS4 (official PDF); the EYFS PSED goals (framework from 1 September 2026); the gov.uk collection page. The DfE will not publish standalone gender-questioning guidance: it proposes to put that content in Keeping children safe in education (policy paper, 12 February 2026), so nothing separate exists to read. Not verified: the PSHE Association programme of study download (learning opportunities by key stage), which could not be opened in October 2026; its core themes (Health and wellbeing, Relationships, Living in the wider world) come from earlier reads of site pages. Year allocation is a recommended sequence. School decisions recorded (October 2026, updated 26 October): the subject is PSHE only in every year group, with no RSE or sex education (manners, friendships, families, health and hygiene, and keeping safe, including body safety at a non-sexual level and what the law says to protect young people); puberty and bulugh are taught from Year 7 to boys and girls separately; parents can see all PSHE materials. Statements below quote the national guidance; the school's lessons follow these decisions.",
+  "statusNote": "Provisional. Read in full text from official sources: the 1 September 2026 RSHE statutory guidance PDF, compared line by line with the July 2025 PDF (the two extracts are identical; the 2026 file is the July 2025 text reissued); National Curriculum citizenship KS3 and KS4 (official PDF); the EYFS PSED goals (framework from 1 September 2026); the gov.uk collection page. The DfE will not publish standalone gender-questioning guidance: it proposes to put that content in Keeping children safe in education (policy paper, 12 February 2026), so nothing separate exists to read. Not verified: the PSHE Association programme of study download (learning opportunities by key stage), which could not be opened in October 2026; its core themes (Health and wellbeing, Relationships, Living in the wider world) come from earlier reads of site pages. Year allocation is a recommended sequence. School decisions recorded (October 2026, updated 26 October): the subject is PSHE only in every year group, with no RSE or sex education (manners, friendships, families, health and hygiene, and keeping safe, including body safety at a non-sexual level and what the law says to protect young people); puberty and bulugh are taught from Year 7 to boys and girls separately; parents can see all PSHE materials. Statements below quote the national guidance; the school's lessons follow these decisions. Year 1 was rebuilt in November 2026 to the TGA Year 1 Curriculum Pack: one unit per half term, following Tarbiyyah Primary's Cornerstones projects (2026-27 order), White Rose maths and Little Wandle phonics.",
   "sources": [
     {
       "title": "Relationships education, relationships and sex education (RSE) and health education (gov.uk collection page)",
@@ -187,47 +187,130 @@
   "yearMap": {
     "y1": [
       {
-        "unit": "Respect and kindness",
+        "unit": "Autumn 1: We're all stars!",
         "focus": [
-          "Adab in our live lessons",
-          "Listening to each other",
-          "Friends and solving problems kindly"
+          "Our class charter: adab in live lessons",
+          "What makes me special",
+          "Making choices; keeping private online"
         ],
         "skills": [
-          "Listening",
-          "Using words to solve problems"
+          "Agree and follow rules",
+          "Keep personal information private"
         ],
         "keyTerms": [
-          "adab",
           "respect",
-          "friend",
-          "kind"
+          "rules",
+          "special",
+          "private"
         ],
-        "assess": "Class discussion",
-        "prereq": "Reception: friendships",
-        "leadsTo": "Year 2: Families and resilience",
-        "inSchoolLessons": true
+        "assess": "Discussion: charter rules and one thing kept private",
+        "prereq": "Reception: class rules",
+        "leadsTo": "Autumn 2"
       },
       {
-        "unit": "Safe and healthy",
+        "unit": "Autumn 2: Be friendly, be wise",
         "focus": [
-          "My body belongs to me",
-          "Private parts are private",
-          "Online safety: ask first, be kind"
+          "Making friends, falling out, forgiving",
+          "Managing anger; bullying and telling",
+          "Safety at home and near roads"
         ],
         "skills": [
-          "Asking for help",
-          "Saying no"
+          "Calm-down steps",
+          "Spot hazards"
         ],
         "keyTerms": [
-          "private",
-          "safe",
+          "friendship",
+          "forgive",
+          "bullying",
+          "hazard"
+        ],
+        "assess": "Scenario cards",
+        "prereq": "Autumn 1",
+        "leadsTo": "Spring 1"
+      },
+      {
+        "unit": "Spring 1: Living long, living strong",
+        "focus": [
+          "Keeping clean; caring for teeth; miswak",
+          "My body belongs to me: private parts, saying no, telling a trusted adult",
+          "Food, water, sleep; a personal goal"
+        ],
+        "skills": [
+          "Show handwashing",
+          "Name a trusted adult"
+        ],
+        "keyTerms": [
+          "hygiene",
+          "amanah",
+          "haya",
           "trusted adult"
         ],
-        "assess": "Pupil can name a trusted adult",
-        "prereq": "Reception: staying safe",
-        "leadsTo": "Year 2: Healthy me",
-        "inSchoolLessons": true
+        "assess": "Handwashing on camera; trusted adult named",
+        "prereq": "Autumn 2",
+        "leadsTo": "Spring 2"
+      },
+      {
+        "unit": "Spring 2: Daring to be different",
+        "focus": [
+          "Likes, dislikes and being special",
+          "Feeling proud without showing off; worries",
+          "Staying calm; online: stop, say no, tell"
+        ],
+        "skills": [
+          "Talk about feelings",
+          "Respond safely online"
+        ],
+        "keyTerms": [
+          "unique",
+          "proud",
+          "worried",
+          "brave"
+        ],
+        "assess": "Discussion check",
+        "prereq": "Spring 1",
+        "leadsTo": "Summer 1"
+      },
+      {
+        "unit": "Summer 1: Dear diary",
+        "focus": [
+          "Asking for help; secrets that must be told",
+          "Naming feelings",
+          "Dealing with worries; personal information online"
+        ],
+        "skills": [
+          "Name feelings",
+          "Ask for help"
+        ],
+        "keyTerms": [
+          "trusted adult",
+          "secret",
+          "feelings",
+          "worry"
+        ],
+        "assess": "Trusted adults and a worry strategy named",
+        "prereq": "Spring 2",
+        "leadsTo": "Summer 2"
+      },
+      {
+        "unit": "Summer 2: Joining in and joining up",
+        "focus": [
+          "Listening and giving opinions politely",
+          "Right, wrong and why rules help",
+          "Caring for pets and plants"
+        ],
+        "skills": [
+          "Give an opinion with a reason",
+          "Take turns"
+        ],
+        "keyTerms": [
+          "opinion",
+          "honest",
+          "responsibility",
+          "rahmah"
+        ],
+        "assess": "Talk task; end-of-year scenario talk",
+        "prereq": "Summer 1",
+        "leadsTo": "Year 2: families and resilience; healthy me"
       }
     ],
     "y2": [

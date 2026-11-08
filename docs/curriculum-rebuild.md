@@ -8,7 +8,10 @@ Keep this file current. Anyone (person or AI) picking up the curriculum work sta
   Whole-school plan: principles, weekly lessons per key stage, Years 1-11 long-term plans, Qur'an/Arabic/Islamic
   Studies spine (hifdh targets), assessment, founding term (Jan-Jul 2027), decisions awaiting Headteacher sign-off.
 - **Year packs** (one Claude Doc per year group, built in order from Year 1): everything a teacher needs for the year,
-  week by week, per subject. Year 1 is the first (see "Status" below for the link).
+  week by week, per subject, plus a dated week-by-week plan for the founding year (11 Jan to 9 Jul 2027).
+  - Year 1: **TGA Year 1 Curriculum Pack** https://claude.ai/artifact/MpxKfieQy6ZecHksoR5cko
+    (tabs: Overview, English, Maths, Topic, Qur'an/Islamic Studies/PSHE). Its "To confirm" list is open.
+- Working files used to build each pack (subject plans by helper agents) are not kept in the repo; the docs are the record.
 - Years 1-6 follow **Tarbiyyah Primary's Long Term Plan 2026-2027** (Cornerstones Maestro projects, same order),
   **White Rose** maths and **Little Wandle** phonics. Years 7-11 will follow the **Tarbiyyah Secondary School for Boys
   Curriculum Overview 2026-27** booklet, adapted to TGA (International GCSEs, no PE).
@@ -35,10 +38,16 @@ Y1-2: English and phonics 5, maths 4, topic 2, Qur'an with Qaidah 3, Islamic Stu
 - Year 1 Arabic lessons retired (letters taught in Qur'an through the Qaidah; Arabic language from Year 3).
 - Years 1-2 key stage page: src/content/curriculum.ts + migration 0177 (topic 2, IS/PSHE alternate weeks, Qaidah).
 
-### In progress
-- Year 1 pack and Year 1 syllabus entries (content/syllabus/ks1-3/*.json, yearMap.y1).
+- Year 1 pack written (link above).
+- Year 1 syllabus entries rewritten to the pack: content/syllabus/ks1-3/{english,mathematics,science,history,
+  geography,art,computing,quran,islamic-studies,pshe}.json yearMap.y1 = one unit per half term
+  ("Autumn 1: ..."). Art carries design and technology for now (there is no DT syllabus file yet).
+- Secondary curriculum maps (Years 7-11, xlsx from the TSS drive) cleaned of trips/visits/speakers and the
+  "Redstone Academy" heading; sent to the owner (not stored in the repo).
 
 ### Next
+0. Optional: add content/syllabus/ks1-3/design-technology.json (KS1-3 DT statements from gov.uk) so DT is its own
+   subject in the portal; for now DT units sit inside art.json.
 1. Year 1 lessons for the founding year: bridge (11-22 Jan) + Spring 1 (Moon Zoom!), then Spring 2 to Summer 2.
    Existing content/lessons/*/y1.json lessons were written for an Autumn start: keep what fits, re-point the rest.
 2. Year 2 pack, then Years 3-6, then 7-11 (from the TSS booklet).

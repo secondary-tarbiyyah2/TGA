@@ -4,11 +4,20 @@
   "slug": "mathematics",
   "framework": "National Curriculum in England (2014): Mathematics programmes of study, with EYFS Mathematics (Number; Numerical Patterns) for Reception",
   "status": "Verified",
-  "statusNote": "Key stage statements were read and paraphrased from the gov.uk National Curriculum mathematics programmes of study (Key Stages 1 to 3) and the Reception goals from the EYFS statutory framework for group and school-based providers (version effective September 2026). Statutory content is set by key stage, not by year. The year allocation in the year map is a recommended sequence aligned to the school's existing unit names, not a statutory requirement.",
+  "statusNote": "Key stage statements were read and paraphrased from the gov.uk National Curriculum mathematics programmes of study (Key Stages 1 to 3) and the Reception goals from the EYFS statutory framework for group and school-based providers (version effective September 2026). Statutory content is set by key stage, not by year. The year allocation in the year map is a recommended sequence aligned to the school's existing unit names, not a statutory requirement. Year 1 was rebuilt in November 2026 to the TGA Year 1 Curriculum Pack: one unit per half term, following Tarbiyyah Primary's Cornerstones projects (2026-27 order), White Rose maths and Little Wandle phonics.",
   "sources": [
-    { "title": "National Curriculum in England: mathematics programmes of study (gov.uk)", "url": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study" },
-    { "title": "Early years foundation stage statutory framework, group and school-based providers (from September 2026)", "url": "https://assets.publishing.service.gov.uk/media/6a5f8e4fb00f3323bf1a23a1/EYFS_group_and_school_based_from_September_2026.pdf" },
-    { "title": "Pearson Edexcel GCSE (9-1) Mathematics 1MA1 specification", "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/specification-and-sample-assesment/gcse-maths-2015-specification.pdf" }
+    {
+      "title": "National Curriculum in England: mathematics programmes of study (gov.uk)",
+      "url": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study"
+    },
+    {
+      "title": "Early years foundation stage statutory framework, group and school-based providers (from September 2026)",
+      "url": "https://assets.publishing.service.gov.uk/media/6a5f8e4fb00f3323bf1a23a1/EYFS_group_and_school_based_from_September_2026.pdf"
+    },
+    {
+      "title": "Pearson Edexcel GCSE (9-1) Mathematics 1MA1 specification",
+      "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/specification-and-sample-assesment/gcse-maths-2015-specification.pdf"
+    }
   ],
   "purpose": [
     "Mathematics is a creative, connected discipline used in daily life, science, engineering, finance and work.",
@@ -21,267 +30,1672 @@
       "ks": "EYFS (Reception)",
       "years": "Reception",
       "strands": [
-        { "strand": "Number", "statements": [
-          "Understand numbers to 10, including what each number is made of.",
-          "Recognise small quantities, up to 5, at a glance without counting.",
-          "Recall number bonds to 5 and some to 10, including doubles, without aids."
-        ] },
-        { "strand": "Numerical patterns", "statements": [
-          "Count aloud beyond 20 and notice the pattern in the counting system.",
-          "Compare quantities to 10 using greater than, less than and equal to.",
-          "Explore patterns in numbers to 10: odd and even, doubles and equal sharing."
-        ] }
+        {
+          "strand": "Number",
+          "statements": [
+            "Understand numbers to 10, including what each number is made of.",
+            "Recognise small quantities, up to 5, at a glance without counting.",
+            "Recall number bonds to 5 and some to 10, including doubles, without aids."
+          ]
+        },
+        {
+          "strand": "Numerical patterns",
+          "statements": [
+            "Count aloud beyond 20 and notice the pattern in the counting system.",
+            "Compare quantities to 10 using greater than, less than and equal to.",
+            "Explore patterns in numbers to 10: odd and even, doubles and equal sharing."
+          ]
+        }
       ]
     },
     {
       "ks": "KS1",
       "years": "Years 1 to 2",
       "strands": [
-        { "strand": "Number and place value", "statements": [
-          "Count forwards and backwards, to and across 100, from any number.",
-          "Count in 2s, 5s and 10s; identify one more and one less.",
-          "Read and write numbers to 100 in numerals and words.",
-          "Compare and order numbers from 0 to 100 using <, > and =."
-        ] },
-        { "strand": "Addition and subtraction", "statements": [
-          "Read, write and interpret statements using +, - and =.",
-          "Know number bonds and related subtraction facts within 20.",
-          "Add and subtract one- and two-digit numbers, including with missing numbers.",
-          "Know addition can be done in any order but subtraction cannot."
-        ] },
-        { "strand": "Multiplication and division", "statements": [
-          "Recall and use the 2, 5 and 10 multiplication tables.",
-          "Solve problems using arrays, repeated addition, sharing and grouping.",
-          "Recognise odd and even numbers; write statements using x, divide and =."
-        ] },
-        { "strand": "Fractions", "statements": [
-          "Recognise, find and name halves and quarters of shapes and quantities.",
-          "Recognise, find and write thirds and three-quarters of quantities.",
-          "Know that two-quarters is equal to one-half."
-        ] },
-        { "strand": "Measurement", "statements": [
-          "Compare, describe and measure length, mass, capacity and temperature using standard units.",
-          "Recognise coins and notes and solve simple money problems.",
-          "Tell the time to the hour, half hour and five minutes; sequence events."
-        ] },
-        { "strand": "Geometry: shape, position and direction", "statements": [
-          "Recognise and name common 2D and 3D shapes and describe their properties.",
-          "Describe position, direction and movement, including whole, half and quarter turns.",
-          "Order and arrange objects in patterns and sequences."
-        ] },
-        { "strand": "Statistics (Year 2)", "statements": [
-          "Interpret and construct pictograms, tally charts, block diagrams and tables.",
-          "Answer questions by counting and comparing categories."
-        ] }
+        {
+          "strand": "Number and place value",
+          "statements": [
+            "Count forwards and backwards, to and across 100, from any number.",
+            "Count in 2s, 5s and 10s; identify one more and one less.",
+            "Read and write numbers to 100 in numerals and words.",
+            "Compare and order numbers from 0 to 100 using <, > and =."
+          ]
+        },
+        {
+          "strand": "Addition and subtraction",
+          "statements": [
+            "Read, write and interpret statements using +, - and =.",
+            "Know number bonds and related subtraction facts within 20.",
+            "Add and subtract one- and two-digit numbers, including with missing numbers.",
+            "Know addition can be done in any order but subtraction cannot."
+          ]
+        },
+        {
+          "strand": "Multiplication and division",
+          "statements": [
+            "Recall and use the 2, 5 and 10 multiplication tables.",
+            "Solve problems using arrays, repeated addition, sharing and grouping.",
+            "Recognise odd and even numbers; write statements using x, divide and =."
+          ]
+        },
+        {
+          "strand": "Fractions",
+          "statements": [
+            "Recognise, find and name halves and quarters of shapes and quantities.",
+            "Recognise, find and write thirds and three-quarters of quantities.",
+            "Know that two-quarters is equal to one-half."
+          ]
+        },
+        {
+          "strand": "Measurement",
+          "statements": [
+            "Compare, describe and measure length, mass, capacity and temperature using standard units.",
+            "Recognise coins and notes and solve simple money problems.",
+            "Tell the time to the hour, half hour and five minutes; sequence events."
+          ]
+        },
+        {
+          "strand": "Geometry: shape, position and direction",
+          "statements": [
+            "Recognise and name common 2D and 3D shapes and describe their properties.",
+            "Describe position, direction and movement, including whole, half and quarter turns.",
+            "Order and arrange objects in patterns and sequences."
+          ]
+        },
+        {
+          "strand": "Statistics (Year 2)",
+          "statements": [
+            "Interpret and construct pictograms, tally charts, block diagrams and tables.",
+            "Answer questions by counting and comparing categories."
+          ]
+        }
       ]
     },
     {
       "ks": "KS2",
       "years": "Years 3 to 6",
       "strands": [
-        { "strand": "Number and place value", "statements": [
-          "Read, write, order and compare numbers to 1,000,000 and then 10,000,000.",
-          "Count in multiples of 4, 6, 7, 8, 9, 25, 50, 100 and 1,000.",
-          "Use negative numbers in context and count through zero.",
-          "Round numbers to a required degree of accuracy; read Roman numerals."
-        ] },
-        { "strand": "Addition, subtraction, multiplication and division", "statements": [
-          "Use formal written methods for all four operations with whole numbers.",
-          "Recall multiplication tables to 12 x 12 and use factor pairs.",
-          "Identify multiples, factors, primes, squares and cubes.",
-          "Use the order of operations and estimate to check answers.",
-          "Solve multi-step problems in context, choosing methods and interpreting remainders."
-        ] },
-        { "strand": "Fractions, decimals and percentages", "statements": [
-          "Recognise equivalent fractions and compare, order, add and subtract fractions.",
-          "Convert between mixed numbers and improper fractions; multiply and divide simple fractions.",
-          "Read, write, round and compare decimals to three places.",
-          "Understand percentages as parts per 100 and link fractions, decimals and percentages."
-        ] },
-        { "strand": "Ratio and proportion (Year 6)", "statements": [
-          "Solve problems about relative sizes of two quantities.",
-          "Calculate percentages and use them to compare.",
-          "Solve scale factor problems with similar shapes and unequal sharing."
-        ] },
-        { "strand": "Algebra (Year 6)", "statements": [
-          "Use simple formulae and generate linear number sequences.",
-          "Express missing number problems algebraically.",
-          "Find pairs of numbers satisfying an equation with two unknowns."
-        ] },
-        { "strand": "Measurement", "statements": [
-          "Convert between metric units and between miles and kilometres.",
-          "Find perimeter and area of rectilinear shapes, parallelograms and triangles.",
-          "Calculate and compare volumes of cubes and cuboids.",
-          "Read, write and convert time, including 12-hour and 24-hour clocks."
-        ] },
-        { "strand": "Geometry: properties of shapes", "statements": [
-          "Classify triangles, quadrilaterals and polygons by their properties.",
-          "Know angle facts at a point, on a line and vertically opposite angles.",
-          "Draw shapes from dimensions and angles; build nets of 3D shapes.",
-          "Name circle parts and know diameter is twice the radius."
-        ] },
-        { "strand": "Geometry: position and direction", "statements": [
-          "Describe positions using coordinates in the first quadrant, then all four quadrants.",
-          "Translate and reflect shapes on a coordinate grid."
-        ] },
-        { "strand": "Statistics", "statements": [
-          "Present and interpret data using bar charts, pictograms, tables and time graphs.",
-          "Interpret and construct line graphs and pie charts.",
-          "Calculate and interpret the mean as an average."
-        ] }
+        {
+          "strand": "Number and place value",
+          "statements": [
+            "Read, write, order and compare numbers to 1,000,000 and then 10,000,000.",
+            "Count in multiples of 4, 6, 7, 8, 9, 25, 50, 100 and 1,000.",
+            "Use negative numbers in context and count through zero.",
+            "Round numbers to a required degree of accuracy; read Roman numerals."
+          ]
+        },
+        {
+          "strand": "Addition, subtraction, multiplication and division",
+          "statements": [
+            "Use formal written methods for all four operations with whole numbers.",
+            "Recall multiplication tables to 12 x 12 and use factor pairs.",
+            "Identify multiples, factors, primes, squares and cubes.",
+            "Use the order of operations and estimate to check answers.",
+            "Solve multi-step problems in context, choosing methods and interpreting remainders."
+          ]
+        },
+        {
+          "strand": "Fractions, decimals and percentages",
+          "statements": [
+            "Recognise equivalent fractions and compare, order, add and subtract fractions.",
+            "Convert between mixed numbers and improper fractions; multiply and divide simple fractions.",
+            "Read, write, round and compare decimals to three places.",
+            "Understand percentages as parts per 100 and link fractions, decimals and percentages."
+          ]
+        },
+        {
+          "strand": "Ratio and proportion (Year 6)",
+          "statements": [
+            "Solve problems about relative sizes of two quantities.",
+            "Calculate percentages and use them to compare.",
+            "Solve scale factor problems with similar shapes and unequal sharing."
+          ]
+        },
+        {
+          "strand": "Algebra (Year 6)",
+          "statements": [
+            "Use simple formulae and generate linear number sequences.",
+            "Express missing number problems algebraically.",
+            "Find pairs of numbers satisfying an equation with two unknowns."
+          ]
+        },
+        {
+          "strand": "Measurement",
+          "statements": [
+            "Convert between metric units and between miles and kilometres.",
+            "Find perimeter and area of rectilinear shapes, parallelograms and triangles.",
+            "Calculate and compare volumes of cubes and cuboids.",
+            "Read, write and convert time, including 12-hour and 24-hour clocks."
+          ]
+        },
+        {
+          "strand": "Geometry: properties of shapes",
+          "statements": [
+            "Classify triangles, quadrilaterals and polygons by their properties.",
+            "Know angle facts at a point, on a line and vertically opposite angles.",
+            "Draw shapes from dimensions and angles; build nets of 3D shapes.",
+            "Name circle parts and know diameter is twice the radius."
+          ]
+        },
+        {
+          "strand": "Geometry: position and direction",
+          "statements": [
+            "Describe positions using coordinates in the first quadrant, then all four quadrants.",
+            "Translate and reflect shapes on a coordinate grid."
+          ]
+        },
+        {
+          "strand": "Statistics",
+          "statements": [
+            "Present and interpret data using bar charts, pictograms, tables and time graphs.",
+            "Interpret and construct line graphs and pie charts.",
+            "Calculate and interpret the mean as an average."
+          ]
+        }
       ]
     },
     {
       "ks": "KS3",
       "years": "Years 7 to 9",
       "strands": [
-        { "strand": "Working mathematically", "statements": [
-          "Develop fluency with number, algebra and representations, moving between them.",
-          "Reason: make and test conjectures; begin deductive reasoning, proof and counter-examples.",
-          "Solve multi-step problems, model situations and apply mathematics to finance.",
-          "Choose methods for unfamiliar problems and evaluate outcomes."
-        ] },
-        { "strand": "Number", "statements": [
-          "Understand place value for decimals, measures and integers of any size.",
-          "Use primes, factors, multiples, prime factorisation, HCF and LCM.",
-          "Apply the four operations to integers, decimals and fractions, including negatives.",
-          "Use order of operations, integer powers, roots and standard form.",
-          "Work with percentages including those above 100%, and with fractions as operators.",
-          "Round, estimate, and use calculators sensibly, including error intervals."
-        ] },
-        { "strand": "Algebra", "statements": [
-          "Use algebraic notation; substitute into formulae, including scientific formulae.",
-          "Simplify, expand and factorise; rearrange formulae to change the subject.",
-          "Solve linear equations and simultaneous linear equations graphically.",
-          "Use coordinates in four quadrants; sketch linear and quadratic graphs; use y = mx + c.",
-          "Generate sequences and find the nth term of arithmetic sequences."
-        ] },
-        { "strand": "Ratio, proportion and rates of change", "statements": [
-          "Convert between standard units and use scale factors, diagrams and maps.",
-          "Use ratio notation, simplify ratios and divide quantities in a given ratio.",
-          "Solve percentage change problems, including simple interest.",
-          "Solve direct and inverse proportion problems and use compound units."
-        ] },
-        { "strand": "Geometry and measures", "statements": [
-          "Derive and use formulae for perimeter, area and volume, including circles and prisms.",
-          "Use ruler and compass constructions, congruence criteria and angle facts.",
-          "Use enlargement, Pythagoras' theorem and trigonometric ratios in right-angled triangles.",
-          "Describe translations, rotations and reflections and properties of 3D shapes."
-        ] },
-        { "strand": "Probability", "statements": [
-          "Record and analyse outcome frequencies on the 0 to 1 probability scale.",
-          "Know that probabilities of all outcomes sum to 1.",
-          "Use tables, grids and Venn diagrams to list outcomes and calculate theoretical probabilities."
-        ] },
-        { "strand": "Statistics", "statements": [
-          "Describe, compare and interpret distributions using averages and measures of spread.",
-          "Construct and interpret frequency tables, bar charts, pie charts and pictograms.",
-          "Use scatter graphs to describe relationships between two variables."
-        ] }
+        {
+          "strand": "Working mathematically",
+          "statements": [
+            "Develop fluency with number, algebra and representations, moving between them.",
+            "Reason: make and test conjectures; begin deductive reasoning, proof and counter-examples.",
+            "Solve multi-step problems, model situations and apply mathematics to finance.",
+            "Choose methods for unfamiliar problems and evaluate outcomes."
+          ]
+        },
+        {
+          "strand": "Number",
+          "statements": [
+            "Understand place value for decimals, measures and integers of any size.",
+            "Use primes, factors, multiples, prime factorisation, HCF and LCM.",
+            "Apply the four operations to integers, decimals and fractions, including negatives.",
+            "Use order of operations, integer powers, roots and standard form.",
+            "Work with percentages including those above 100%, and with fractions as operators.",
+            "Round, estimate, and use calculators sensibly, including error intervals."
+          ]
+        },
+        {
+          "strand": "Algebra",
+          "statements": [
+            "Use algebraic notation; substitute into formulae, including scientific formulae.",
+            "Simplify, expand and factorise; rearrange formulae to change the subject.",
+            "Solve linear equations and simultaneous linear equations graphically.",
+            "Use coordinates in four quadrants; sketch linear and quadratic graphs; use y = mx + c.",
+            "Generate sequences and find the nth term of arithmetic sequences."
+          ]
+        },
+        {
+          "strand": "Ratio, proportion and rates of change",
+          "statements": [
+            "Convert between standard units and use scale factors, diagrams and maps.",
+            "Use ratio notation, simplify ratios and divide quantities in a given ratio.",
+            "Solve percentage change problems, including simple interest.",
+            "Solve direct and inverse proportion problems and use compound units."
+          ]
+        },
+        {
+          "strand": "Geometry and measures",
+          "statements": [
+            "Derive and use formulae for perimeter, area and volume, including circles and prisms.",
+            "Use ruler and compass constructions, congruence criteria and angle facts.",
+            "Use enlargement, Pythagoras' theorem and trigonometric ratios in right-angled triangles.",
+            "Describe translations, rotations and reflections and properties of 3D shapes."
+          ]
+        },
+        {
+          "strand": "Probability",
+          "statements": [
+            "Record and analyse outcome frequencies on the 0 to 1 probability scale.",
+            "Know that probabilities of all outcomes sum to 1.",
+            "Use tables, grids and Venn diagrams to list outcomes and calculate theoretical probabilities."
+          ]
+        },
+        {
+          "strand": "Statistics",
+          "statements": [
+            "Describe, compare and interpret distributions using averages and measures of spread.",
+            "Construct and interpret frequency tables, bar charts, pie charts and pictograms.",
+            "Use scatter graphs to describe relationships between two variables."
+          ]
+        }
       ]
     }
   ],
   "yearMap": {
     "y1": [
-      { "unit": "Unit 1: Numbers to 10", "focus": ["Counting, reading and writing to 10 and 20", "One more and one less", "Comparing with <, > and =", "Ordinal numbers"], "skills": ["Counting", "Representing"], "keyTerms": ["numeral", "order", "equal"], "assess": "Short end-of-unit check.", "prereq": "Reception: numbers to 10.", "leadsTo": "Year 1: addition and subtraction." },
-      { "unit": "Unit 2: Addition within 10", "focus": ["Part-whole models", "Number bonds within 10 and 20", "Adding by counting on", "Missing number problems"], "skills": ["Recall", "Using + and ="], "keyTerms": ["add", "plus", "sum", "total"], "assess": "End-of-unit quiz.", "prereq": "Unit 1.", "leadsTo": "Unit 3." },
-      { "unit": "Unit 3: Subtraction within 10", "focus": ["Taking away and finding the difference", "Related facts", "Subtraction on a number line", "One-step word problems"], "skills": ["Recall", "Modelling"], "keyTerms": ["subtract", "take away", "difference"], "assess": "End-of-unit quiz.", "prereq": "Unit 2.", "leadsTo": "Year 1: numbers to 100." },
-      { "unit": "Place value to 100 and counting patterns", "focus": ["Counting to 100", "Tens and ones", "Counting in 2s, 5s and 10s", "Comparing numbers to 100"], "skills": ["Pattern", "Partitioning"], "keyTerms": ["tens", "ones", "digit"], "assess": "Unit check.", "prereq": "Numbers to 20.", "leadsTo": "Year 2: Place value to 100." },
-      { "unit": "Multiplication, division and fractions (early)", "focus": ["Grouping and sharing", "Doubling and halving", "Halves and quarters"], "skills": ["Visualising", "Sharing"], "keyTerms": ["group", "half", "quarter"], "assess": "Practical tasks.", "prereq": "Counting in steps.", "leadsTo": "Year 2: times tables and fractions." },
-      { "unit": "Shape, position and measures", "focus": ["2D and 3D shape properties", "Position, direction and turns", "Length, mass, capacity and time to the hour and half hour", "Coins and notes"], "skills": ["Measuring", "Spatial reasoning"], "keyTerms": ["side", "face", "clockwise", "half past"], "assess": "Practical tasks.", "prereq": "Reception: shape and pattern.", "leadsTo": "Year 2: measurement and geometry." }
+      {
+        "unit": "Autumn 1: Place value within 10; addition and subtraction within 10",
+        "focus": [
+          "Sort, count and represent to 10",
+          "1 more and 1 less; compare and order",
+          "Parts and wholes; number bonds to 10"
+        ],
+        "skills": [
+          "Use a ten frame",
+          "Use a part-whole model"
+        ],
+        "keyTerms": [
+          "count",
+          "more",
+          "less",
+          "part",
+          "whole",
+          "number bond"
+        ],
+        "assess": "White Rose end-of-block check",
+        "prereq": "Reception: numbers to 10",
+        "leadsTo": "Autumn 2: addition and subtraction"
+      },
+      {
+        "unit": "Autumn 2: Addition and subtraction within 10; shape; place value within 20",
+        "focus": [
+          "Add more, find a part, fact families",
+          "Subtraction: take away and on a number line",
+          "Recognise and sort 2-D and 3-D shapes",
+          "Teen numbers as ten and some more"
+        ],
+        "skills": [
+          "Write number sentences",
+          "Sort shapes by property"
+        ],
+        "keyTerms": [
+          "subtract",
+          "fact family",
+          "cube",
+          "sphere",
+          "ten and ones"
+        ],
+        "assess": "White Rose end-of-block checks",
+        "prereq": "Autumn 1",
+        "leadsTo": "Spring 1: place value within 20"
+      },
+      {
+        "unit": "Spring 1: Place value within 20; addition and subtraction within 20",
+        "focus": [
+          "Number line to 20; compare and order",
+          "Add by counting on; bonds to 20; doubles",
+          "Subtract by counting back; find the difference",
+          "Missing number problems"
+        ],
+        "skills": [
+          "Use bonds to 10 to add within 20",
+          "Solve one-step problems"
+        ],
+        "keyTerms": [
+          "estimate",
+          "double",
+          "difference",
+          "related fact"
+        ],
+        "assess": "White Rose end-of-block check",
+        "prereq": "Autumn 2",
+        "leadsTo": "Spring 2: place value within 50"
+      },
+      {
+        "unit": "Spring 2: Place value within 50; length and height; mass and volume",
+        "focus": [
+          "Count to 50; tens and ones",
+          "Measure length with objects and centimetres",
+          "Heavier and lighter; capacity"
+        ],
+        "skills": [
+          "Partition into tens and ones",
+          "Measure and compare"
+        ],
+        "keyTerms": [
+          "tens",
+          "ones",
+          "centimetre",
+          "mass",
+          "capacity"
+        ],
+        "assess": "White Rose end-of-block checks",
+        "prereq": "Spring 1",
+        "leadsTo": "Summer 1"
+      },
+      {
+        "unit": "Summer 1: Multiplication and division; fractions; position and direction",
+        "focus": [
+          "Count in 2s, 5s and 10s; equal groups; arrays",
+          "Grouping and sharing",
+          "Halves and quarters of shapes and quantities",
+          "Turns and position words; ordinal numbers"
+        ],
+        "skills": [
+          "Make equal groups",
+          "Find a half and a quarter"
+        ],
+        "keyTerms": [
+          "equal groups",
+          "array",
+          "half",
+          "quarter",
+          "turn"
+        ],
+        "assess": "White Rose end-of-block checks",
+        "prereq": "Spring 2",
+        "leadsTo": "Year 2: multiplication and division; fractions"
+      },
+      {
+        "unit": "Summer 2: Place value within 100; money; time",
+        "focus": [
+          "Count to and across 100; tens and ones",
+          "Recognise coins and notes; count in coins",
+          "Days, months, before and after; o'clock and half past"
+        ],
+        "skills": [
+          "Compare numbers to 100",
+          "Tell the time to the hour and half hour"
+        ],
+        "keyTerms": [
+          "hundred",
+          "coin",
+          "note",
+          "o'clock",
+          "half past"
+        ],
+        "assess": "White Rose end-of-year assessment (written and practical)",
+        "prereq": "Summer 1",
+        "leadsTo": "Year 2: place value within 100"
+      }
     ],
     "y2": [
-      { "unit": "Unit 1: Place value to 100", "focus": ["Tens and ones", "Comparing and ordering to 100", "Number lines", "Counting in 2s, 3s, 5s and 10s"], "skills": ["Partitioning", "Estimation on a line"], "keyTerms": ["place value", "partition", "digit"], "assess": "End-of-unit check.", "prereq": "Year 1: numbers to 100.", "leadsTo": "Unit 2." },
-      { "unit": "Unit 2: Addition", "focus": ["Adding two-digit numbers", "Adding with and without crossing ten", "Mental strategies", "Inverse and checking"], "skills": ["Mental calculation", "Written layout"], "keyTerms": ["column", "exchange", "inverse"], "assess": "End-of-unit quiz.", "prereq": "Year 1: bonds to 20.", "leadsTo": "Unit 3." },
-      { "unit": "Unit 3: Subtraction", "focus": ["Subtracting two-digit numbers", "Subtracting across tens", "Difference by counting on", "Checking with addition"], "skills": ["Mental and written methods"], "keyTerms": ["difference", "exchange"], "assess": "End-of-unit quiz.", "prereq": "Unit 2.", "leadsTo": "Unit 4." },
-      { "unit": "Unit 4: Problem solving", "focus": ["One- and two-step word problems", "Choosing operations", "Money problems", "Bar models"], "skills": ["Reasoning", "Representing"], "keyTerms": ["problem", "operation", "pounds and pence"], "assess": "Problem-solving tasks.", "prereq": "Units 2 and 3.", "leadsTo": "Year 3: addition and subtraction." },
-      { "unit": "Multiplication and division: 2, 5 and 10", "focus": ["Arrays and repeated addition", "2, 5 and 10 times tables", "Sharing and grouping", "Odd and even"], "skills": ["Recall", "Arrays"], "keyTerms": ["multiply", "divide", "array", "product"], "assess": "Times table checks.", "prereq": "Year 1: grouping.", "leadsTo": "Year 3: 3, 4 and 8 tables." },
-      { "unit": "Fractions, measures and shape", "focus": ["Thirds, quarters and three-quarters", "Time to five minutes", "Standard units of length, mass and capacity", "Properties of 2D and 3D shapes"], "skills": ["Measuring", "Fraction recognition"], "keyTerms": ["third", "quarter", "vertex", "edge"], "assess": "Unit check.", "prereq": "Year 1: halves and quarters.", "leadsTo": "Year 3: fractions and measures." },
-      { "unit": "Statistics: pictograms, tally charts and tables", "focus": ["Tally charts", "Pictograms", "Block diagrams", "Comparing categories"], "skills": ["Collecting and sorting data"], "keyTerms": ["tally", "pictogram", "category"], "assess": "Data task.", "prereq": "Counting and sorting.", "leadsTo": "Year 3: bar charts." }
+      {
+        "unit": "Unit 1: Place value to 100",
+        "focus": [
+          "Tens and ones",
+          "Comparing and ordering to 100",
+          "Number lines",
+          "Counting in 2s, 3s, 5s and 10s"
+        ],
+        "skills": [
+          "Partitioning",
+          "Estimation on a line"
+        ],
+        "keyTerms": [
+          "place value",
+          "partition",
+          "digit"
+        ],
+        "assess": "End-of-unit check.",
+        "prereq": "Year 1: numbers to 100.",
+        "leadsTo": "Unit 2."
+      },
+      {
+        "unit": "Unit 2: Addition",
+        "focus": [
+          "Adding two-digit numbers",
+          "Adding with and without crossing ten",
+          "Mental strategies",
+          "Inverse and checking"
+        ],
+        "skills": [
+          "Mental calculation",
+          "Written layout"
+        ],
+        "keyTerms": [
+          "column",
+          "exchange",
+          "inverse"
+        ],
+        "assess": "End-of-unit quiz.",
+        "prereq": "Year 1: bonds to 20.",
+        "leadsTo": "Unit 3."
+      },
+      {
+        "unit": "Unit 3: Subtraction",
+        "focus": [
+          "Subtracting two-digit numbers",
+          "Subtracting across tens",
+          "Difference by counting on",
+          "Checking with addition"
+        ],
+        "skills": [
+          "Mental and written methods"
+        ],
+        "keyTerms": [
+          "difference",
+          "exchange"
+        ],
+        "assess": "End-of-unit quiz.",
+        "prereq": "Unit 2.",
+        "leadsTo": "Unit 4."
+      },
+      {
+        "unit": "Unit 4: Problem solving",
+        "focus": [
+          "One- and two-step word problems",
+          "Choosing operations",
+          "Money problems",
+          "Bar models"
+        ],
+        "skills": [
+          "Reasoning",
+          "Representing"
+        ],
+        "keyTerms": [
+          "problem",
+          "operation",
+          "pounds and pence"
+        ],
+        "assess": "Problem-solving tasks.",
+        "prereq": "Units 2 and 3.",
+        "leadsTo": "Year 3: addition and subtraction."
+      },
+      {
+        "unit": "Multiplication and division: 2, 5 and 10",
+        "focus": [
+          "Arrays and repeated addition",
+          "2, 5 and 10 times tables",
+          "Sharing and grouping",
+          "Odd and even"
+        ],
+        "skills": [
+          "Recall",
+          "Arrays"
+        ],
+        "keyTerms": [
+          "multiply",
+          "divide",
+          "array",
+          "product"
+        ],
+        "assess": "Times table checks.",
+        "prereq": "Year 1: grouping.",
+        "leadsTo": "Year 3: 3, 4 and 8 tables."
+      },
+      {
+        "unit": "Fractions, measures and shape",
+        "focus": [
+          "Thirds, quarters and three-quarters",
+          "Time to five minutes",
+          "Standard units of length, mass and capacity",
+          "Properties of 2D and 3D shapes"
+        ],
+        "skills": [
+          "Measuring",
+          "Fraction recognition"
+        ],
+        "keyTerms": [
+          "third",
+          "quarter",
+          "vertex",
+          "edge"
+        ],
+        "assess": "Unit check.",
+        "prereq": "Year 1: halves and quarters.",
+        "leadsTo": "Year 3: fractions and measures."
+      },
+      {
+        "unit": "Statistics: pictograms, tally charts and tables",
+        "focus": [
+          "Tally charts",
+          "Pictograms",
+          "Block diagrams",
+          "Comparing categories"
+        ],
+        "skills": [
+          "Collecting and sorting data"
+        ],
+        "keyTerms": [
+          "tally",
+          "pictogram",
+          "category"
+        ],
+        "assess": "Data task.",
+        "prereq": "Counting and sorting.",
+        "leadsTo": "Year 3: bar charts."
+      }
     ],
     "y3": [
-      { "unit": "Unit 1: Place value to 1000", "focus": ["Hundreds, tens and ones", "Comparing and ordering to 1000", "Counting in 50s and 100s", "Rounding to the nearest 10 and 100"], "skills": ["Partitioning", "Number lines"], "keyTerms": ["hundreds", "round", "partition"], "assess": "End-of-unit check.", "prereq": "Year 2: place value to 100.", "leadsTo": "Unit 2." },
-      { "unit": "Unit 2: Addition and subtraction", "focus": ["Column addition and subtraction to three digits", "Mental methods", "Estimating and inverse checks", "Two-step problems"], "skills": ["Written methods", "Estimation"], "keyTerms": ["column", "exchange", "estimate"], "assess": "End-of-unit quiz.", "prereq": "Year 2: two-digit calculation.", "leadsTo": "Year 4: four-digit methods." },
-      { "unit": "Unit 3: Multiplication and division", "focus": ["3, 4 and 8 times tables", "Two-digit by one-digit multiplication", "Division facts", "Scaling and correspondence problems"], "skills": ["Recall", "Mental methods"], "keyTerms": ["multiple", "product", "quotient"], "assess": "Times table checks.", "prereq": "Year 2: 2, 5 and 10 tables.", "leadsTo": "Year 4: tables to 12." },
-      { "unit": "Fractions", "focus": ["Unit and non-unit fractions", "Equivalent fractions", "Adding and subtracting with same denominators", "Fractions of quantities"], "skills": ["Visual models", "Comparing"], "keyTerms": ["numerator", "denominator", "equivalent"], "assess": "Unit check.", "prereq": "Year 2: fractions.", "leadsTo": "Year 4: fractions and decimals." },
-      { "unit": "Measurement: length, mass, money and time", "focus": ["Perimeter of simple shapes", "Adding and subtracting lengths, mass and volume", "Money and change", "Analogue and digital time"], "skills": ["Measuring", "Unit conversion"], "keyTerms": ["perimeter", "millilitre", "gram", "kilometre"], "assess": "Practical tasks.", "prereq": "Year 2: measures.", "leadsTo": "Year 4: area and conversion." },
-      { "unit": "Geometry: angles, lines and shapes", "focus": ["Right angles and turns", "Horizontal, vertical, parallel and perpendicular lines", "Drawing and making 2D and 3D shapes"], "skills": ["Drawing", "Classifying"], "keyTerms": ["right angle", "parallel", "perpendicular"], "assess": "Unit check.", "prereq": "Year 2: shape.", "leadsTo": "Year 4: classifying shapes." },
-      { "unit": "Statistics: bar charts, pictograms and tables", "focus": ["Scaled bar charts", "Scaled pictograms", "Tables", "One- and two-step questions"], "skills": ["Interpreting graphs"], "keyTerms": ["scale", "axis", "frequency"], "assess": "Data task.", "prereq": "Year 2: pictograms.", "leadsTo": "Year 4: time graphs." }
+      {
+        "unit": "Unit 1: Place value to 1000",
+        "focus": [
+          "Hundreds, tens and ones",
+          "Comparing and ordering to 1000",
+          "Counting in 50s and 100s",
+          "Rounding to the nearest 10 and 100"
+        ],
+        "skills": [
+          "Partitioning",
+          "Number lines"
+        ],
+        "keyTerms": [
+          "hundreds",
+          "round",
+          "partition"
+        ],
+        "assess": "End-of-unit check.",
+        "prereq": "Year 2: place value to 100.",
+        "leadsTo": "Unit 2."
+      },
+      {
+        "unit": "Unit 2: Addition and subtraction",
+        "focus": [
+          "Column addition and subtraction to three digits",
+          "Mental methods",
+          "Estimating and inverse checks",
+          "Two-step problems"
+        ],
+        "skills": [
+          "Written methods",
+          "Estimation"
+        ],
+        "keyTerms": [
+          "column",
+          "exchange",
+          "estimate"
+        ],
+        "assess": "End-of-unit quiz.",
+        "prereq": "Year 2: two-digit calculation.",
+        "leadsTo": "Year 4: four-digit methods."
+      },
+      {
+        "unit": "Unit 3: Multiplication and division",
+        "focus": [
+          "3, 4 and 8 times tables",
+          "Two-digit by one-digit multiplication",
+          "Division facts",
+          "Scaling and correspondence problems"
+        ],
+        "skills": [
+          "Recall",
+          "Mental methods"
+        ],
+        "keyTerms": [
+          "multiple",
+          "product",
+          "quotient"
+        ],
+        "assess": "Times table checks.",
+        "prereq": "Year 2: 2, 5 and 10 tables.",
+        "leadsTo": "Year 4: tables to 12."
+      },
+      {
+        "unit": "Fractions",
+        "focus": [
+          "Unit and non-unit fractions",
+          "Equivalent fractions",
+          "Adding and subtracting with same denominators",
+          "Fractions of quantities"
+        ],
+        "skills": [
+          "Visual models",
+          "Comparing"
+        ],
+        "keyTerms": [
+          "numerator",
+          "denominator",
+          "equivalent"
+        ],
+        "assess": "Unit check.",
+        "prereq": "Year 2: fractions.",
+        "leadsTo": "Year 4: fractions and decimals."
+      },
+      {
+        "unit": "Measurement: length, mass, money and time",
+        "focus": [
+          "Perimeter of simple shapes",
+          "Adding and subtracting lengths, mass and volume",
+          "Money and change",
+          "Analogue and digital time"
+        ],
+        "skills": [
+          "Measuring",
+          "Unit conversion"
+        ],
+        "keyTerms": [
+          "perimeter",
+          "millilitre",
+          "gram",
+          "kilometre"
+        ],
+        "assess": "Practical tasks.",
+        "prereq": "Year 2: measures.",
+        "leadsTo": "Year 4: area and conversion."
+      },
+      {
+        "unit": "Geometry: angles, lines and shapes",
+        "focus": [
+          "Right angles and turns",
+          "Horizontal, vertical, parallel and perpendicular lines",
+          "Drawing and making 2D and 3D shapes"
+        ],
+        "skills": [
+          "Drawing",
+          "Classifying"
+        ],
+        "keyTerms": [
+          "right angle",
+          "parallel",
+          "perpendicular"
+        ],
+        "assess": "Unit check.",
+        "prereq": "Year 2: shape.",
+        "leadsTo": "Year 4: classifying shapes."
+      },
+      {
+        "unit": "Statistics: bar charts, pictograms and tables",
+        "focus": [
+          "Scaled bar charts",
+          "Scaled pictograms",
+          "Tables",
+          "One- and two-step questions"
+        ],
+        "skills": [
+          "Interpreting graphs"
+        ],
+        "keyTerms": [
+          "scale",
+          "axis",
+          "frequency"
+        ],
+        "assess": "Data task.",
+        "prereq": "Year 2: pictograms.",
+        "leadsTo": "Year 4: time graphs."
+      }
     ],
     "y4": [
-      { "unit": "Unit 1: Place value and rounding", "focus": ["Four-digit numbers", "Counting in 6, 7, 9, 25 and 1000", "Negative numbers", "Rounding to 10, 100 and 1000", "Roman numerals"], "skills": ["Reasoning about number"], "keyTerms": ["thousands", "negative", "round"], "assess": "End-of-unit check.", "prereq": "Year 3: place value to 1000.", "leadsTo": "Year 5: place value to 1,000,000." },
-      { "unit": "Unit 2: Addition and subtraction", "focus": ["Column methods to four digits", "Estimation and inverse checks", "Two-step problems", "Money and measures"], "skills": ["Written methods", "Checking"], "keyTerms": ["estimate", "inverse"], "assess": "End-of-unit quiz.", "prereq": "Year 3: column methods.", "leadsTo": "Year 5: larger numbers." },
-      { "unit": "Unit 3: Multiplication tables", "focus": ["Tables up to 12 x 12", "Factor pairs", "Multiplying and dividing by 10 and 100", "Multiplying three-digit numbers by one digit"], "skills": ["Recall", "Mental methods"], "keyTerms": ["factor", "multiple", "commutative"], "assess": "Timed table checks (multiplication tables check readiness).", "prereq": "Year 3: tables 2 to 8.", "leadsTo": "Year 5: multiplying four-digit numbers." },
-      { "unit": "Fractions and decimals", "focus": ["Tenths and hundredths", "Equivalent fractions", "Adding and subtracting fractions with same denominator", "Decimal equivalents of halves and quarters", "Rounding decimals"], "skills": ["Visual models", "Comparing"], "keyTerms": ["tenth", "hundredth", "decimal"], "assess": "Unit check.", "prereq": "Year 3: fractions.", "leadsTo": "Year 5: fractions and percentages." },
-      { "unit": "Measurement: area, perimeter and time", "focus": ["Area by counting squares", "Perimeter of rectilinear shapes", "Converting units", "12- and 24-hour time"], "skills": ["Measuring", "Converting"], "keyTerms": ["area", "rectilinear", "24-hour clock"], "assess": "Practical tasks.", "prereq": "Year 3: perimeter.", "leadsTo": "Year 5: area and volume." },
-      { "unit": "Geometry: shapes, symmetry and coordinates", "focus": ["Acute and obtuse angles", "Classifying triangles and quadrilaterals", "Lines of symmetry", "Coordinates and translations"], "skills": ["Classifying", "Plotting"], "keyTerms": ["acute", "obtuse", "symmetry", "coordinate"], "assess": "Unit check.", "prereq": "Year 3: angles.", "leadsTo": "Year 5: angles in degrees." },
-      { "unit": "Statistics: time graphs and discrete and continuous data", "focus": ["Bar charts", "Time graphs", "Comparison, sum and difference problems"], "skills": ["Interpreting and presenting data"], "keyTerms": ["discrete", "continuous", "time graph"], "assess": "Data task.", "prereq": "Year 3: bar charts.", "leadsTo": "Year 5: line graphs." }
+      {
+        "unit": "Unit 1: Place value and rounding",
+        "focus": [
+          "Four-digit numbers",
+          "Counting in 6, 7, 9, 25 and 1000",
+          "Negative numbers",
+          "Rounding to 10, 100 and 1000",
+          "Roman numerals"
+        ],
+        "skills": [
+          "Reasoning about number"
+        ],
+        "keyTerms": [
+          "thousands",
+          "negative",
+          "round"
+        ],
+        "assess": "End-of-unit check.",
+        "prereq": "Year 3: place value to 1000.",
+        "leadsTo": "Year 5: place value to 1,000,000."
+      },
+      {
+        "unit": "Unit 2: Addition and subtraction",
+        "focus": [
+          "Column methods to four digits",
+          "Estimation and inverse checks",
+          "Two-step problems",
+          "Money and measures"
+        ],
+        "skills": [
+          "Written methods",
+          "Checking"
+        ],
+        "keyTerms": [
+          "estimate",
+          "inverse"
+        ],
+        "assess": "End-of-unit quiz.",
+        "prereq": "Year 3: column methods.",
+        "leadsTo": "Year 5: larger numbers."
+      },
+      {
+        "unit": "Unit 3: Multiplication tables",
+        "focus": [
+          "Tables up to 12 x 12",
+          "Factor pairs",
+          "Multiplying and dividing by 10 and 100",
+          "Multiplying three-digit numbers by one digit"
+        ],
+        "skills": [
+          "Recall",
+          "Mental methods"
+        ],
+        "keyTerms": [
+          "factor",
+          "multiple",
+          "commutative"
+        ],
+        "assess": "Timed table checks (multiplication tables check readiness).",
+        "prereq": "Year 3: tables 2 to 8.",
+        "leadsTo": "Year 5: multiplying four-digit numbers."
+      },
+      {
+        "unit": "Fractions and decimals",
+        "focus": [
+          "Tenths and hundredths",
+          "Equivalent fractions",
+          "Adding and subtracting fractions with same denominator",
+          "Decimal equivalents of halves and quarters",
+          "Rounding decimals"
+        ],
+        "skills": [
+          "Visual models",
+          "Comparing"
+        ],
+        "keyTerms": [
+          "tenth",
+          "hundredth",
+          "decimal"
+        ],
+        "assess": "Unit check.",
+        "prereq": "Year 3: fractions.",
+        "leadsTo": "Year 5: fractions and percentages."
+      },
+      {
+        "unit": "Measurement: area, perimeter and time",
+        "focus": [
+          "Area by counting squares",
+          "Perimeter of rectilinear shapes",
+          "Converting units",
+          "12- and 24-hour time"
+        ],
+        "skills": [
+          "Measuring",
+          "Converting"
+        ],
+        "keyTerms": [
+          "area",
+          "rectilinear",
+          "24-hour clock"
+        ],
+        "assess": "Practical tasks.",
+        "prereq": "Year 3: perimeter.",
+        "leadsTo": "Year 5: area and volume."
+      },
+      {
+        "unit": "Geometry: shapes, symmetry and coordinates",
+        "focus": [
+          "Acute and obtuse angles",
+          "Classifying triangles and quadrilaterals",
+          "Lines of symmetry",
+          "Coordinates and translations"
+        ],
+        "skills": [
+          "Classifying",
+          "Plotting"
+        ],
+        "keyTerms": [
+          "acute",
+          "obtuse",
+          "symmetry",
+          "coordinate"
+        ],
+        "assess": "Unit check.",
+        "prereq": "Year 3: angles.",
+        "leadsTo": "Year 5: angles in degrees."
+      },
+      {
+        "unit": "Statistics: time graphs and discrete and continuous data",
+        "focus": [
+          "Bar charts",
+          "Time graphs",
+          "Comparison, sum and difference problems"
+        ],
+        "skills": [
+          "Interpreting and presenting data"
+        ],
+        "keyTerms": [
+          "discrete",
+          "continuous",
+          "time graph"
+        ],
+        "assess": "Data task.",
+        "prereq": "Year 3: bar charts.",
+        "leadsTo": "Year 5: line graphs."
+      }
     ],
     "y5": [
-      { "unit": "Unit 1: Place value to 1,000,000", "focus": ["Reading and writing to 1,000,000", "Powers of 10", "Negative numbers in context", "Rounding to 10,000 and 100,000", "Roman numerals to 1000"], "skills": ["Reasoning about number"], "keyTerms": ["million", "power of 10", "round"], "assess": "End-of-unit check.", "prereq": "Year 4: four-digit numbers.", "leadsTo": "Year 6: numbers to 10,000,000." },
-      { "unit": "Unit 2: Addition and subtraction", "focus": ["Column methods for larger numbers", "Mental strategies with rounding", "Multi-step problems"], "skills": ["Written and mental methods"], "keyTerms": ["inverse", "estimate"], "assess": "End-of-unit quiz.", "prereq": "Year 4: four-digit methods.", "leadsTo": "Year 6: the four operations." },
-      { "unit": "Unit 3: Multiples, factors and special numbers", "focus": ["Factors, multiples and common factors", "Prime and composite numbers", "Square and cube numbers", "Multiplying by one- and two-digit numbers", "Short division"], "skills": ["Number properties", "Formal methods"], "keyTerms": ["prime", "square number", "cube number", "factor"], "assess": "Unit check.", "prereq": "Year 4: tables and factor pairs.", "leadsTo": "Year 6: order of operations and factors." },
-      { "unit": "Fractions, decimals and percentages", "focus": ["Improper fractions and mixed numbers", "Adding and subtracting fractions with related denominators", "Multiplying fractions by whole numbers", "Decimals to three places", "Percentages as parts per 100"], "skills": ["Equivalence", "Comparing"], "keyTerms": ["improper fraction", "mixed number", "percent"], "assess": "Unit check.", "prereq": "Year 4: fractions and decimals.", "leadsTo": "Year 6: fractions, ratio." },
-      { "unit": "Measurement: area, volume and conversion", "focus": ["Perimeter of composite rectilinear shapes", "Area of rectangles", "Volume and capacity", "Metric and imperial approximations"], "skills": ["Calculating", "Converting"], "keyTerms": ["volume", "capacity", "imperial"], "assess": "Problem tasks.", "prereq": "Year 4: area.", "leadsTo": "Year 6: area of triangles, volume of cuboids." },
-      { "unit": "Geometry: angles, polygons and transformations", "focus": ["Measuring and drawing angles", "Angle facts at a point and on a line", "Regular and irregular polygons", "Reflection and translation"], "skills": ["Using a protractor", "Reasoning about angles"], "keyTerms": ["degrees", "protractor", "reflex", "regular polygon"], "assess": "Unit check.", "prereq": "Year 4: angles and symmetry.", "leadsTo": "Year 6: unknown angles." },
-      { "unit": "Statistics: line graphs and tables", "focus": ["Line graphs", "Timetables", "Comparison, sum and difference problems"], "skills": ["Interpreting data"], "keyTerms": ["line graph", "timetable"], "assess": "Data task.", "prereq": "Year 4: time graphs.", "leadsTo": "Year 6: pie charts and mean." }
+      {
+        "unit": "Unit 1: Place value to 1,000,000",
+        "focus": [
+          "Reading and writing to 1,000,000",
+          "Powers of 10",
+          "Negative numbers in context",
+          "Rounding to 10,000 and 100,000",
+          "Roman numerals to 1000"
+        ],
+        "skills": [
+          "Reasoning about number"
+        ],
+        "keyTerms": [
+          "million",
+          "power of 10",
+          "round"
+        ],
+        "assess": "End-of-unit check.",
+        "prereq": "Year 4: four-digit numbers.",
+        "leadsTo": "Year 6: numbers to 10,000,000."
+      },
+      {
+        "unit": "Unit 2: Addition and subtraction",
+        "focus": [
+          "Column methods for larger numbers",
+          "Mental strategies with rounding",
+          "Multi-step problems"
+        ],
+        "skills": [
+          "Written and mental methods"
+        ],
+        "keyTerms": [
+          "inverse",
+          "estimate"
+        ],
+        "assess": "End-of-unit quiz.",
+        "prereq": "Year 4: four-digit methods.",
+        "leadsTo": "Year 6: the four operations."
+      },
+      {
+        "unit": "Unit 3: Multiples, factors and special numbers",
+        "focus": [
+          "Factors, multiples and common factors",
+          "Prime and composite numbers",
+          "Square and cube numbers",
+          "Multiplying by one- and two-digit numbers",
+          "Short division"
+        ],
+        "skills": [
+          "Number properties",
+          "Formal methods"
+        ],
+        "keyTerms": [
+          "prime",
+          "square number",
+          "cube number",
+          "factor"
+        ],
+        "assess": "Unit check.",
+        "prereq": "Year 4: tables and factor pairs.",
+        "leadsTo": "Year 6: order of operations and factors."
+      },
+      {
+        "unit": "Fractions, decimals and percentages",
+        "focus": [
+          "Improper fractions and mixed numbers",
+          "Adding and subtracting fractions with related denominators",
+          "Multiplying fractions by whole numbers",
+          "Decimals to three places",
+          "Percentages as parts per 100"
+        ],
+        "skills": [
+          "Equivalence",
+          "Comparing"
+        ],
+        "keyTerms": [
+          "improper fraction",
+          "mixed number",
+          "percent"
+        ],
+        "assess": "Unit check.",
+        "prereq": "Year 4: fractions and decimals.",
+        "leadsTo": "Year 6: fractions, ratio."
+      },
+      {
+        "unit": "Measurement: area, volume and conversion",
+        "focus": [
+          "Perimeter of composite rectilinear shapes",
+          "Area of rectangles",
+          "Volume and capacity",
+          "Metric and imperial approximations"
+        ],
+        "skills": [
+          "Calculating",
+          "Converting"
+        ],
+        "keyTerms": [
+          "volume",
+          "capacity",
+          "imperial"
+        ],
+        "assess": "Problem tasks.",
+        "prereq": "Year 4: area.",
+        "leadsTo": "Year 6: area of triangles, volume of cuboids."
+      },
+      {
+        "unit": "Geometry: angles, polygons and transformations",
+        "focus": [
+          "Measuring and drawing angles",
+          "Angle facts at a point and on a line",
+          "Regular and irregular polygons",
+          "Reflection and translation"
+        ],
+        "skills": [
+          "Using a protractor",
+          "Reasoning about angles"
+        ],
+        "keyTerms": [
+          "degrees",
+          "protractor",
+          "reflex",
+          "regular polygon"
+        ],
+        "assess": "Unit check.",
+        "prereq": "Year 4: angles and symmetry.",
+        "leadsTo": "Year 6: unknown angles."
+      },
+      {
+        "unit": "Statistics: line graphs and tables",
+        "focus": [
+          "Line graphs",
+          "Timetables",
+          "Comparison, sum and difference problems"
+        ],
+        "skills": [
+          "Interpreting data"
+        ],
+        "keyTerms": [
+          "line graph",
+          "timetable"
+        ],
+        "assess": "Data task.",
+        "prereq": "Year 4: time graphs.",
+        "leadsTo": "Year 6: pie charts and mean."
+      }
     ],
     "y6": [
-      { "unit": "Unit 1: Place value to 10,000,000", "focus": ["Numbers to 10,000,000", "Rounding to a required accuracy", "Negative numbers and intervals across zero"], "skills": ["Reasoning about number"], "keyTerms": ["ten million", "negative", "interval"], "assess": "End-of-unit check.", "prereq": "Year 5: place value to 1,000,000.", "leadsTo": "Year 7: place value and decimals." },
-      { "unit": "Unit 2: The four operations", "focus": ["Long multiplication", "Long division with remainders", "Mental methods", "Multi-step problems"], "skills": ["Formal methods", "Interpreting remainders"], "keyTerms": ["long division", "remainder", "estimate"], "assess": "End-of-unit quiz.", "prereq": "Year 5: short division and multiplication.", "leadsTo": "Year 7: Number skills." },
-      { "unit": "Unit 3: Order of operations, factors and problem solving", "focus": ["BIDMAS and brackets", "Common factors and multiples", "Primes up to 100", "Multi-step problems"], "skills": ["Reasoning", "Checking by estimation"], "keyTerms": ["order of operations", "common factor", "prime"], "assess": "Problem-solving paper.", "prereq": "Year 5: factors and primes.", "leadsTo": "Year 7: number skills." },
-      { "unit": "Fractions, decimals and percentages", "focus": ["Adding and subtracting with different denominators", "Multiplying and dividing fractions", "Fraction, decimal and percentage equivalence", "Simplifying fractions"], "skills": ["Equivalence", "Calculating with fractions"], "keyTerms": ["simplify", "common denominator", "equivalent"], "assess": "Unit check.", "prereq": "Year 5: fractions.", "leadsTo": "Year 7: fractions and percentages." },
-      { "unit": "Ratio, proportion and algebra", "focus": ["Relative size of two quantities", "Scale factor and similar shapes", "Unequal sharing", "Simple formulae and linear sequences", "Missing number problems"], "skills": ["Proportional reasoning", "Using symbols"], "keyTerms": ["ratio", "scale factor", "formula", "variable"], "assess": "Unit check.", "prereq": "Year 5: multiplication, fractions.", "leadsTo": "Year 7: algebra and ratio." },
-      { "unit": "Measurement and geometry", "focus": ["Area of triangles and parallelograms", "Volume of cuboids", "Unknown angles", "Circles: radius, diameter, circumference", "Four-quadrant coordinates"], "skills": ["Calculating", "Drawing"], "keyTerms": ["parallelogram", "cuboid", "radius", "diameter"], "assess": "Unit check.", "prereq": "Year 5: area, volume, angles.", "leadsTo": "Year 7: area and angles." },
-      { "unit": "Statistics: pie charts, line graphs and the mean", "focus": ["Pie charts", "Line graphs", "The mean as an average"], "skills": ["Interpreting and calculating"], "keyTerms": ["pie chart", "mean", "average"], "assess": "Data task and end-of-primary SATs preparation.", "prereq": "Year 5: line graphs.", "leadsTo": "Year 7: Analysing and displaying data." }
+      {
+        "unit": "Unit 1: Place value to 10,000,000",
+        "focus": [
+          "Numbers to 10,000,000",
+          "Rounding to a required accuracy",
+          "Negative numbers and intervals across zero"
+        ],
+        "skills": [
+          "Reasoning about number"
+        ],
+        "keyTerms": [
+          "ten million",
+          "negative",
+          "interval"
+        ],
+        "assess": "End-of-unit check.",
+        "prereq": "Year 5: place value to 1,000,000.",
+        "leadsTo": "Year 7: place value and decimals."
+      },
+      {
+        "unit": "Unit 2: The four operations",
+        "focus": [
+          "Long multiplication",
+          "Long division with remainders",
+          "Mental methods",
+          "Multi-step problems"
+        ],
+        "skills": [
+          "Formal methods",
+          "Interpreting remainders"
+        ],
+        "keyTerms": [
+          "long division",
+          "remainder",
+          "estimate"
+        ],
+        "assess": "End-of-unit quiz.",
+        "prereq": "Year 5: short division and multiplication.",
+        "leadsTo": "Year 7: Number skills."
+      },
+      {
+        "unit": "Unit 3: Order of operations, factors and problem solving",
+        "focus": [
+          "BIDMAS and brackets",
+          "Common factors and multiples",
+          "Primes up to 100",
+          "Multi-step problems"
+        ],
+        "skills": [
+          "Reasoning",
+          "Checking by estimation"
+        ],
+        "keyTerms": [
+          "order of operations",
+          "common factor",
+          "prime"
+        ],
+        "assess": "Problem-solving paper.",
+        "prereq": "Year 5: factors and primes.",
+        "leadsTo": "Year 7: number skills."
+      },
+      {
+        "unit": "Fractions, decimals and percentages",
+        "focus": [
+          "Adding and subtracting with different denominators",
+          "Multiplying and dividing fractions",
+          "Fraction, decimal and percentage equivalence",
+          "Simplifying fractions"
+        ],
+        "skills": [
+          "Equivalence",
+          "Calculating with fractions"
+        ],
+        "keyTerms": [
+          "simplify",
+          "common denominator",
+          "equivalent"
+        ],
+        "assess": "Unit check.",
+        "prereq": "Year 5: fractions.",
+        "leadsTo": "Year 7: fractions and percentages."
+      },
+      {
+        "unit": "Ratio, proportion and algebra",
+        "focus": [
+          "Relative size of two quantities",
+          "Scale factor and similar shapes",
+          "Unequal sharing",
+          "Simple formulae and linear sequences",
+          "Missing number problems"
+        ],
+        "skills": [
+          "Proportional reasoning",
+          "Using symbols"
+        ],
+        "keyTerms": [
+          "ratio",
+          "scale factor",
+          "formula",
+          "variable"
+        ],
+        "assess": "Unit check.",
+        "prereq": "Year 5: multiplication, fractions.",
+        "leadsTo": "Year 7: algebra and ratio."
+      },
+      {
+        "unit": "Measurement and geometry",
+        "focus": [
+          "Area of triangles and parallelograms",
+          "Volume of cuboids",
+          "Unknown angles",
+          "Circles: radius, diameter, circumference",
+          "Four-quadrant coordinates"
+        ],
+        "skills": [
+          "Calculating",
+          "Drawing"
+        ],
+        "keyTerms": [
+          "parallelogram",
+          "cuboid",
+          "radius",
+          "diameter"
+        ],
+        "assess": "Unit check.",
+        "prereq": "Year 5: area, volume, angles.",
+        "leadsTo": "Year 7: area and angles."
+      },
+      {
+        "unit": "Statistics: pie charts, line graphs and the mean",
+        "focus": [
+          "Pie charts",
+          "Line graphs",
+          "The mean as an average"
+        ],
+        "skills": [
+          "Interpreting and calculating"
+        ],
+        "keyTerms": [
+          "pie chart",
+          "mean",
+          "average"
+        ],
+        "assess": "Data task and end-of-primary SATs preparation.",
+        "prereq": "Year 5: line graphs.",
+        "leadsTo": "Year 7: Analysing and displaying data."
+      }
     ],
     "y7": [
-      { "unit": "Unit 1: Analysing and displaying data", "focus": ["Mode, median, mean and range", "Frequency tables", "Pictograms, bar charts and pie charts", "Scatter graphs and correlation"], "skills": ["Averages", "Reading and drawing charts"], "keyTerms": ["mean", "median", "mode", "range", "scatter graph"], "assess": "End-of-unit test.", "prereq": "Year 6: mean, pie charts, line graphs.", "leadsTo": "Year 8: statistics and probability." },
-      { "unit": "Unit 2: Number skills", "focus": ["Place value, rounding and estimation", "Negative numbers", "Factors, multiples and primes", "Order of operations", "Calculator use"], "skills": ["Calculation", "Checking and estimating"], "keyTerms": ["factor", "multiple", "prime", "estimate"], "assess": "End-of-unit test.", "prereq": "Year 6: four operations.", "leadsTo": "Year 8: Number." },
-      { "unit": "Algebraic thinking", "focus": ["Algebraic notation and substitution", "Simplifying expressions", "Solving one-step and two-step equations", "Sequences and nth term"], "skills": ["Generalising", "Solving"], "keyTerms": ["expression", "term", "equation", "nth term"], "assess": "End-of-unit test.", "prereq": "Year 6: simple formulae and sequences.", "leadsTo": "Year 8: algebra." },
-      { "unit": "Fractions, decimals and percentages", "focus": ["Equivalent fractions and simplifying", "Adding and subtracting fractions", "Decimals and the four operations", "Percentages of amounts"], "skills": ["Equivalence", "Calculating"], "keyTerms": ["denominator", "decimal", "percentage"], "assess": "End-of-unit test.", "prereq": "Year 6: fractions.", "leadsTo": "Year 8: fractions and percentages." },
-      { "unit": "Angles, lines and shapes", "focus": ["Angle facts and parallel lines", "Triangles and quadrilaterals", "Perimeter and area", "Coordinates in four quadrants"], "skills": ["Reasoning about angles", "Measuring and drawing"], "keyTerms": ["parallel", "alternate", "polygon"], "assess": "End-of-unit test.", "prereq": "Year 6: unknown angles.", "leadsTo": "Year 8: area and volume." },
-      { "unit": "Ratio and proportion (introduction)", "focus": ["Ratio notation and simplifying", "Sharing in a ratio", "Unitary method", "Scale drawings"], "skills": ["Proportional reasoning"], "keyTerms": ["ratio", "proportion", "scale"], "assess": "End-of-unit test.", "prereq": "Year 6: ratio and proportion.", "leadsTo": "Year 8: ratio and proportion." }
+      {
+        "unit": "Unit 1: Analysing and displaying data",
+        "focus": [
+          "Mode, median, mean and range",
+          "Frequency tables",
+          "Pictograms, bar charts and pie charts",
+          "Scatter graphs and correlation"
+        ],
+        "skills": [
+          "Averages",
+          "Reading and drawing charts"
+        ],
+        "keyTerms": [
+          "mean",
+          "median",
+          "mode",
+          "range",
+          "scatter graph"
+        ],
+        "assess": "End-of-unit test.",
+        "prereq": "Year 6: mean, pie charts, line graphs.",
+        "leadsTo": "Year 8: statistics and probability."
+      },
+      {
+        "unit": "Unit 2: Number skills",
+        "focus": [
+          "Place value, rounding and estimation",
+          "Negative numbers",
+          "Factors, multiples and primes",
+          "Order of operations",
+          "Calculator use"
+        ],
+        "skills": [
+          "Calculation",
+          "Checking and estimating"
+        ],
+        "keyTerms": [
+          "factor",
+          "multiple",
+          "prime",
+          "estimate"
+        ],
+        "assess": "End-of-unit test.",
+        "prereq": "Year 6: four operations.",
+        "leadsTo": "Year 8: Number."
+      },
+      {
+        "unit": "Algebraic thinking",
+        "focus": [
+          "Algebraic notation and substitution",
+          "Simplifying expressions",
+          "Solving one-step and two-step equations",
+          "Sequences and nth term"
+        ],
+        "skills": [
+          "Generalising",
+          "Solving"
+        ],
+        "keyTerms": [
+          "expression",
+          "term",
+          "equation",
+          "nth term"
+        ],
+        "assess": "End-of-unit test.",
+        "prereq": "Year 6: simple formulae and sequences.",
+        "leadsTo": "Year 8: algebra."
+      },
+      {
+        "unit": "Fractions, decimals and percentages",
+        "focus": [
+          "Equivalent fractions and simplifying",
+          "Adding and subtracting fractions",
+          "Decimals and the four operations",
+          "Percentages of amounts"
+        ],
+        "skills": [
+          "Equivalence",
+          "Calculating"
+        ],
+        "keyTerms": [
+          "denominator",
+          "decimal",
+          "percentage"
+        ],
+        "assess": "End-of-unit test.",
+        "prereq": "Year 6: fractions.",
+        "leadsTo": "Year 8: fractions and percentages."
+      },
+      {
+        "unit": "Angles, lines and shapes",
+        "focus": [
+          "Angle facts and parallel lines",
+          "Triangles and quadrilaterals",
+          "Perimeter and area",
+          "Coordinates in four quadrants"
+        ],
+        "skills": [
+          "Reasoning about angles",
+          "Measuring and drawing"
+        ],
+        "keyTerms": [
+          "parallel",
+          "alternate",
+          "polygon"
+        ],
+        "assess": "End-of-unit test.",
+        "prereq": "Year 6: unknown angles.",
+        "leadsTo": "Year 8: area and volume."
+      },
+      {
+        "unit": "Ratio and proportion (introduction)",
+        "focus": [
+          "Ratio notation and simplifying",
+          "Sharing in a ratio",
+          "Unitary method",
+          "Scale drawings"
+        ],
+        "skills": [
+          "Proportional reasoning"
+        ],
+        "keyTerms": [
+          "ratio",
+          "proportion",
+          "scale"
+        ],
+        "assess": "End-of-unit test.",
+        "prereq": "Year 6: ratio and proportion.",
+        "leadsTo": "Year 8: ratio and proportion."
+      }
     ],
     "y8": [
-      { "unit": "Unit 1: Number", "focus": ["Fractions, decimals and percentages", "Powers and roots", "Prime factorisation, HCF and LCM", "Percentage change", "Rounding and significant figures"], "skills": ["Fluency", "Reasoning"], "keyTerms": ["index", "root", "HCF", "LCM", "significant figure"], "assess": "End-of-unit test.", "prereq": "Year 7: number skills.", "leadsTo": "Year 9: indices and standard form." },
-      { "unit": "Unit 2: Area and volume", "focus": ["Area of triangles, parallelograms and trapezia", "Circles: circumference and area", "Volume and surface area of prisms", "Unit conversions"], "skills": ["Using formulae", "Problem solving"], "keyTerms": ["circumference", "prism", "cross-section", "volume"], "assess": "End-of-unit test.", "prereq": "Year 7: perimeter and area.", "leadsTo": "Year 9: Pythagoras and further geometry." },
-      { "unit": "Algebra: expressions, equations and graphs", "focus": ["Expanding and factorising single brackets", "Solving equations with unknowns on both sides", "Straight-line graphs and y = mx + c", "Linear sequences"], "skills": ["Manipulation", "Graph plotting"], "keyTerms": ["expand", "factorise", "gradient", "intercept"], "assess": "End-of-unit test.", "prereq": "Year 7: algebraic thinking.", "leadsTo": "Year 9: Expressions and formulae." },
-      { "unit": "Ratio, proportion and rates", "focus": ["Direct proportion", "Best buys and unit pricing", "Speed, distance and time", "Scale factors and maps"], "skills": ["Proportional reasoning", "Compound units"], "keyTerms": ["direct proportion", "rate", "speed"], "assess": "End-of-unit test.", "prereq": "Year 7: ratio.", "leadsTo": "Year 9: compound measures." },
-      { "unit": "Geometry: transformations, constructions and angles", "focus": ["Rotation, reflection, translation and enlargement", "Ruler and compass constructions", "Angles in polygons", "Congruence"], "skills": ["Constructing", "Describing transformations"], "keyTerms": ["enlargement", "congruent", "bisector"], "assess": "End-of-unit test.", "prereq": "Year 7: angles and shapes.", "leadsTo": "Year 9: trigonometry." },
-      { "unit": "Probability and statistics", "focus": ["Probability scale and sample spaces", "Relative frequency", "Venn diagrams", "Comparing distributions"], "skills": ["Calculating probabilities", "Comparing data sets"], "keyTerms": ["outcome", "sample space", "relative frequency"], "assess": "End-of-unit test.", "prereq": "Year 7: analysing data.", "leadsTo": "Year 9: probability trees and statistics." }
+      {
+        "unit": "Unit 1: Number",
+        "focus": [
+          "Fractions, decimals and percentages",
+          "Powers and roots",
+          "Prime factorisation, HCF and LCM",
+          "Percentage change",
+          "Rounding and significant figures"
+        ],
+        "skills": [
+          "Fluency",
+          "Reasoning"
+        ],
+        "keyTerms": [
+          "index",
+          "root",
+          "HCF",
+          "LCM",
+          "significant figure"
+        ],
+        "assess": "End-of-unit test.",
+        "prereq": "Year 7: number skills.",
+        "leadsTo": "Year 9: indices and standard form."
+      },
+      {
+        "unit": "Unit 2: Area and volume",
+        "focus": [
+          "Area of triangles, parallelograms and trapezia",
+          "Circles: circumference and area",
+          "Volume and surface area of prisms",
+          "Unit conversions"
+        ],
+        "skills": [
+          "Using formulae",
+          "Problem solving"
+        ],
+        "keyTerms": [
+          "circumference",
+          "prism",
+          "cross-section",
+          "volume"
+        ],
+        "assess": "End-of-unit test.",
+        "prereq": "Year 7: perimeter and area.",
+        "leadsTo": "Year 9: Pythagoras and further geometry."
+      },
+      {
+        "unit": "Algebra: expressions, equations and graphs",
+        "focus": [
+          "Expanding and factorising single brackets",
+          "Solving equations with unknowns on both sides",
+          "Straight-line graphs and y = mx + c",
+          "Linear sequences"
+        ],
+        "skills": [
+          "Manipulation",
+          "Graph plotting"
+        ],
+        "keyTerms": [
+          "expand",
+          "factorise",
+          "gradient",
+          "intercept"
+        ],
+        "assess": "End-of-unit test.",
+        "prereq": "Year 7: algebraic thinking.",
+        "leadsTo": "Year 9: Expressions and formulae."
+      },
+      {
+        "unit": "Ratio, proportion and rates",
+        "focus": [
+          "Direct proportion",
+          "Best buys and unit pricing",
+          "Speed, distance and time",
+          "Scale factors and maps"
+        ],
+        "skills": [
+          "Proportional reasoning",
+          "Compound units"
+        ],
+        "keyTerms": [
+          "direct proportion",
+          "rate",
+          "speed"
+        ],
+        "assess": "End-of-unit test.",
+        "prereq": "Year 7: ratio.",
+        "leadsTo": "Year 9: compound measures."
+      },
+      {
+        "unit": "Geometry: transformations, constructions and angles",
+        "focus": [
+          "Rotation, reflection, translation and enlargement",
+          "Ruler and compass constructions",
+          "Angles in polygons",
+          "Congruence"
+        ],
+        "skills": [
+          "Constructing",
+          "Describing transformations"
+        ],
+        "keyTerms": [
+          "enlargement",
+          "congruent",
+          "bisector"
+        ],
+        "assess": "End-of-unit test.",
+        "prereq": "Year 7: angles and shapes.",
+        "leadsTo": "Year 9: trigonometry."
+      },
+      {
+        "unit": "Probability and statistics",
+        "focus": [
+          "Probability scale and sample spaces",
+          "Relative frequency",
+          "Venn diagrams",
+          "Comparing distributions"
+        ],
+        "skills": [
+          "Calculating probabilities",
+          "Comparing data sets"
+        ],
+        "keyTerms": [
+          "outcome",
+          "sample space",
+          "relative frequency"
+        ],
+        "assess": "End-of-unit test.",
+        "prereq": "Year 7: analysing data.",
+        "leadsTo": "Year 9: probability trees and statistics."
+      }
     ],
     "y9": [
-      { "unit": "Unit 1: Indices and standard form", "focus": ["Laws of indices", "Negative and fractional indices (introduction)", "Standard form: converting and calculating", "Roots and surds (introduction)"], "skills": ["Using index laws", "Calculator use"], "keyTerms": ["index law", "standard form", "surd"], "assess": "End-of-unit test.", "prereq": "Year 8: powers and roots.", "leadsTo": "GCSE N6-N9: indices and standard form." },
-      { "unit": "Unit 2: Expressions and formulae", "focus": ["Expanding double brackets", "Factorising quadratics (introduction)", "Substitution into formulae", "Rearranging formulae"], "skills": ["Manipulation", "Substitution"], "keyTerms": ["quadratic", "subject of a formula", "factorise"], "assess": "End-of-unit test.", "prereq": "Year 8: expanding and factorising.", "leadsTo": "GCSE A1-A7." },
-      { "unit": "Equations, inequalities and graphs", "focus": ["Solving linear equations and inequalities", "Simultaneous equations graphically", "Quadratic and cubic graphs", "Real-life graphs"], "skills": ["Graph sketching", "Solving"], "keyTerms": ["inequality", "simultaneous", "quadratic graph"], "assess": "End-of-unit test.", "prereq": "Year 8: straight-line graphs.", "leadsTo": "GCSE A8-A12, A17-A22." },
-      { "unit": "Pythagoras and trigonometry", "focus": ["Pythagoras' theorem", "Sine, cosine and tangent in right-angled triangles", "Angles and lengths", "Problem solving in context"], "skills": ["Using a calculator", "Modelling"], "keyTerms": ["hypotenuse", "opposite", "adjacent"], "assess": "End-of-unit test.", "prereq": "Year 8: area, volume, constructions.", "leadsTo": "GCSE G20-G23." },
-      { "unit": "Ratio, proportion and percentages", "focus": ["Percentage change and reverse percentages", "Direct and inverse proportion", "Compound measures", "Growth and simple interest"], "skills": ["Multipliers", "Reasoning"], "keyTerms": ["multiplier", "inverse proportion", "interest"], "assess": "End-of-unit test.", "prereq": "Year 8: ratio, proportion and rates.", "leadsTo": "GCSE R1-R16." },
-      { "unit": "Probability and statistics: further", "focus": ["Combined events and tree diagrams", "Venn diagrams and set notation", "Scatter graphs and lines of best fit", "Grouped data averages"], "skills": ["Probability calculation", "Data interpretation"], "keyTerms": ["tree diagram", "independent", "line of best fit"], "assess": "End-of-unit test and Year 9 assessment.", "prereq": "Year 8: probability and statistics.", "leadsTo": "GCSE P1-P9 and S1-S6." },
-      { "unit": "Geometry: circles, similarity and 3D shapes", "focus": ["Circle parts and arc and sector work (introduction)", "Similar shapes and scale factors", "Surface area and volume", "Vectors (introduction)"], "skills": ["Spatial reasoning", "Formulae"], "keyTerms": ["sector", "similar", "scale factor"], "assess": "End-of-unit test.", "prereq": "Year 8: area and volume.", "leadsTo": "GCSE G9-G19." }
+      {
+        "unit": "Unit 1: Indices and standard form",
+        "focus": [
+          "Laws of indices",
+          "Negative and fractional indices (introduction)",
+          "Standard form: converting and calculating",
+          "Roots and surds (introduction)"
+        ],
+        "skills": [
+          "Using index laws",
+          "Calculator use"
+        ],
+        "keyTerms": [
+          "index law",
+          "standard form",
+          "surd"
+        ],
+        "assess": "End-of-unit test.",
+        "prereq": "Year 8: powers and roots.",
+        "leadsTo": "GCSE N6-N9: indices and standard form."
+      },
+      {
+        "unit": "Unit 2: Expressions and formulae",
+        "focus": [
+          "Expanding double brackets",
+          "Factorising quadratics (introduction)",
+          "Substitution into formulae",
+          "Rearranging formulae"
+        ],
+        "skills": [
+          "Manipulation",
+          "Substitution"
+        ],
+        "keyTerms": [
+          "quadratic",
+          "subject of a formula",
+          "factorise"
+        ],
+        "assess": "End-of-unit test.",
+        "prereq": "Year 8: expanding and factorising.",
+        "leadsTo": "GCSE A1-A7."
+      },
+      {
+        "unit": "Equations, inequalities and graphs",
+        "focus": [
+          "Solving linear equations and inequalities",
+          "Simultaneous equations graphically",
+          "Quadratic and cubic graphs",
+          "Real-life graphs"
+        ],
+        "skills": [
+          "Graph sketching",
+          "Solving"
+        ],
+        "keyTerms": [
+          "inequality",
+          "simultaneous",
+          "quadratic graph"
+        ],
+        "assess": "End-of-unit test.",
+        "prereq": "Year 8: straight-line graphs.",
+        "leadsTo": "GCSE A8-A12, A17-A22."
+      },
+      {
+        "unit": "Pythagoras and trigonometry",
+        "focus": [
+          "Pythagoras' theorem",
+          "Sine, cosine and tangent in right-angled triangles",
+          "Angles and lengths",
+          "Problem solving in context"
+        ],
+        "skills": [
+          "Using a calculator",
+          "Modelling"
+        ],
+        "keyTerms": [
+          "hypotenuse",
+          "opposite",
+          "adjacent"
+        ],
+        "assess": "End-of-unit test.",
+        "prereq": "Year 8: area, volume, constructions.",
+        "leadsTo": "GCSE G20-G23."
+      },
+      {
+        "unit": "Ratio, proportion and percentages",
+        "focus": [
+          "Percentage change and reverse percentages",
+          "Direct and inverse proportion",
+          "Compound measures",
+          "Growth and simple interest"
+        ],
+        "skills": [
+          "Multipliers",
+          "Reasoning"
+        ],
+        "keyTerms": [
+          "multiplier",
+          "inverse proportion",
+          "interest"
+        ],
+        "assess": "End-of-unit test.",
+        "prereq": "Year 8: ratio, proportion and rates.",
+        "leadsTo": "GCSE R1-R16."
+      },
+      {
+        "unit": "Probability and statistics: further",
+        "focus": [
+          "Combined events and tree diagrams",
+          "Venn diagrams and set notation",
+          "Scatter graphs and lines of best fit",
+          "Grouped data averages"
+        ],
+        "skills": [
+          "Probability calculation",
+          "Data interpretation"
+        ],
+        "keyTerms": [
+          "tree diagram",
+          "independent",
+          "line of best fit"
+        ],
+        "assess": "End-of-unit test and Year 9 assessment.",
+        "prereq": "Year 8: probability and statistics.",
+        "leadsTo": "GCSE P1-P9 and S1-S6."
+      },
+      {
+        "unit": "Geometry: circles, similarity and 3D shapes",
+        "focus": [
+          "Circle parts and arc and sector work (introduction)",
+          "Similar shapes and scale factors",
+          "Surface area and volume",
+          "Vectors (introduction)"
+        ],
+        "skills": [
+          "Spatial reasoning",
+          "Formulae"
+        ],
+        "keyTerms": [
+          "sector",
+          "similar",
+          "scale factor"
+        ],
+        "assess": "End-of-unit test.",
+        "prereq": "Year 8: area and volume.",
+        "leadsTo": "GCSE G9-G19."
+      }
     ]
   },
   "progression": [
-    { "thread": "Place value and number", "steps": { "Reception": "Numbers to 10, subitising to 5", "Y1": "Numbers to 100", "Y3": "Numbers to 1,000", "Y6": "Numbers to 10,000,000 and negatives", "Y9": "Standard form and indices" } },
-    { "thread": "Calculation", "steps": { "Y1": "Bonds and facts to 20", "Y3": "Column methods to 3 digits", "Y4": "Tables to 12 x 12", "Y6": "Long multiplication and division, order of operations", "Y8": "Powers, roots, HCF and LCM", "Y9": "Surds and fractional indices begin" } },
-    { "thread": "Fractions, decimals and percentages", "steps": { "Y1": "Halves and quarters", "Y3": "Unit and non-unit fractions", "Y4": "Tenths, hundredths, decimals", "Y5": "Mixed numbers, percentages as parts per 100", "Y6": "All four operations with fractions", "Y9": "Percentage change and reverse percentages" } },
-    { "thread": "Ratio, proportion and rates of change", "steps": { "Y2": "Grouping and sharing", "Y6": "Ratio, scale factor, unequal sharing", "Y7": "Ratio notation, unitary method", "Y8": "Direct proportion, speed", "Y9": "Inverse proportion and compound measures" } },
-    { "thread": "Algebra", "steps": { "Y1": "Missing number sentences", "Y6": "Simple formulae and linear sequences", "Y7": "Notation, substitution, one- and two-step equations", "Y8": "Brackets, y = mx + c", "Y9": "Rearranging, double brackets, quadratic and cubic graphs" } },
-    { "thread": "Geometry and measures", "steps": { "Reception": "Shape names and patterns", "Y2": "Properties of 2D and 3D shapes", "Y4": "Area, perimeter, symmetry and coordinates", "Y6": "Area of triangles, angles, circles", "Y8": "Area, volume, constructions, transformations", "Y9": "Pythagoras and trigonometry" } },
-    { "thread": "Statistics and probability", "steps": { "Y2": "Tally charts and pictograms", "Y4": "Time graphs", "Y6": "Pie charts and the mean", "Y7": "Averages, scatter graphs", "Y8": "Probability scale and Venn diagrams", "Y9": "Tree diagrams and grouped data" } }
+    {
+      "thread": "Place value and number",
+      "steps": {
+        "Reception": "Numbers to 10, subitising to 5",
+        "Y1": "Numbers to 100",
+        "Y3": "Numbers to 1,000",
+        "Y6": "Numbers to 10,000,000 and negatives",
+        "Y9": "Standard form and indices"
+      }
+    },
+    {
+      "thread": "Calculation",
+      "steps": {
+        "Y1": "Bonds and facts to 20",
+        "Y3": "Column methods to 3 digits",
+        "Y4": "Tables to 12 x 12",
+        "Y6": "Long multiplication and division, order of operations",
+        "Y8": "Powers, roots, HCF and LCM",
+        "Y9": "Surds and fractional indices begin"
+      }
+    },
+    {
+      "thread": "Fractions, decimals and percentages",
+      "steps": {
+        "Y1": "Halves and quarters",
+        "Y3": "Unit and non-unit fractions",
+        "Y4": "Tenths, hundredths, decimals",
+        "Y5": "Mixed numbers, percentages as parts per 100",
+        "Y6": "All four operations with fractions",
+        "Y9": "Percentage change and reverse percentages"
+      }
+    },
+    {
+      "thread": "Ratio, proportion and rates of change",
+      "steps": {
+        "Y2": "Grouping and sharing",
+        "Y6": "Ratio, scale factor, unequal sharing",
+        "Y7": "Ratio notation, unitary method",
+        "Y8": "Direct proportion, speed",
+        "Y9": "Inverse proportion and compound measures"
+      }
+    },
+    {
+      "thread": "Algebra",
+      "steps": {
+        "Y1": "Missing number sentences",
+        "Y6": "Simple formulae and linear sequences",
+        "Y7": "Notation, substitution, one- and two-step equations",
+        "Y8": "Brackets, y = mx + c",
+        "Y9": "Rearranging, double brackets, quadratic and cubic graphs"
+      }
+    },
+    {
+      "thread": "Geometry and measures",
+      "steps": {
+        "Reception": "Shape names and patterns",
+        "Y2": "Properties of 2D and 3D shapes",
+        "Y4": "Area, perimeter, symmetry and coordinates",
+        "Y6": "Area of triangles, angles, circles",
+        "Y8": "Area, volume, constructions, transformations",
+        "Y9": "Pythagoras and trigonometry"
+      }
+    },
+    {
+      "thread": "Statistics and probability",
+      "steps": {
+        "Y2": "Tally charts and pictograms",
+        "Y4": "Time graphs",
+        "Y6": "Pie charts and the mean",
+        "Y7": "Averages, scatter graphs",
+        "Y8": "Probability scale and Venn diagrams",
+        "Y9": "Tree diagrams and grouped data"
+      }
+    }
   ],
   "toKS4": "Key Stage 3 prepares pupils for Pearson Edexcel GCSE Mathematics 1MA1 (Higher tier at the school). Number: place value, powers, roots, standard form and fractions set up N1 to N16. Algebra: notation, expanding, factorising, linear graphs and sequences set up A1 to A25. Ratio, proportion and rates of change: ratio, percentage change, direct proportion and compound units set up R1 to R16. Geometry and measures: angle facts, area, volume, constructions, Pythagoras and trigonometry set up G1 to G25. Probability: sample spaces and Venn diagrams set up P1 to P9. Statistics: averages, charts and scatter graphs set up S1 to S6. Year 9 introduces quadratics, standard form, trigonometry and tree diagrams so that Year 10 can begin the 1MA1 content at pace.",
   "links": [
-    { "with": "Science", "topic": "Formulae, substitution and rearranging", "years": "Y7-Y9", "how": "Maths teaches substitution and rearranging; Science uses them for speed, density and moments." },
-    { "with": "Science", "topic": "Graphs and data handling in investigations", "years": "Y7-Y9", "how": "Maths teaches plotting, gradient and averages; Science uses them for results tables, graphs and conclusions." },
-    { "with": "Science", "topic": "Standard form and unit conversion", "years": "Y8-Y9", "how": "Maths teaches standard form and metric conversion; Science uses them for very large and small quantities." },
-    { "with": "Computing", "topic": "Binary, Boolean logic and algorithms", "years": "Y7-Y9", "how": "Maths supplies number bases, sequences and logic; Computing applies them to binary, algorithms and programs." },
-    { "with": "Computing", "topic": "Spreadsheets and data handling", "years": "Y6-Y9", "how": "Maths teaches averages and charts; Computing uses spreadsheets to calculate and chart data." },
-    { "with": "Geography", "topic": "Scale, coordinates, maps and graphs", "years": "Y5-Y9", "how": "Maths teaches scale and grid references; Geography uses them in map work and fieldwork data." },
-    { "with": "History", "topic": "Chronology, Roman numerals and timelines", "years": "Y3-Y7", "how": "Maths teaches Roman numerals and negative numbers; History applies them to dates and timelines." },
-    { "with": "Design and Technology", "topic": "Measurement, area, volume and scale drawing", "years": "Y5-Y9", "how": "Maths supplies measuring and mensuration; Design and Technology applies them to plans and models." },
-    { "with": "Art", "topic": "Symmetry, pattern, tessellation and proportion", "years": "Y1-Y9", "how": "Maths supplies symmetry and transformations; Art applies them to pattern and composition." },
-    { "with": "Personal finance", "topic": "Money, percentages and interest", "years": "Y2-Y9", "how": "Maths teaches money, percentage change and simple interest; personal finance applies them to budgets and savings." }
+    {
+      "with": "Science",
+      "topic": "Formulae, substitution and rearranging",
+      "years": "Y7-Y9",
+      "how": "Maths teaches substitution and rearranging; Science uses them for speed, density and moments."
+    },
+    {
+      "with": "Science",
+      "topic": "Graphs and data handling in investigations",
+      "years": "Y7-Y9",
+      "how": "Maths teaches plotting, gradient and averages; Science uses them for results tables, graphs and conclusions."
+    },
+    {
+      "with": "Science",
+      "topic": "Standard form and unit conversion",
+      "years": "Y8-Y9",
+      "how": "Maths teaches standard form and metric conversion; Science uses them for very large and small quantities."
+    },
+    {
+      "with": "Computing",
+      "topic": "Binary, Boolean logic and algorithms",
+      "years": "Y7-Y9",
+      "how": "Maths supplies number bases, sequences and logic; Computing applies them to binary, algorithms and programs."
+    },
+    {
+      "with": "Computing",
+      "topic": "Spreadsheets and data handling",
+      "years": "Y6-Y9",
+      "how": "Maths teaches averages and charts; Computing uses spreadsheets to calculate and chart data."
+    },
+    {
+      "with": "Geography",
+      "topic": "Scale, coordinates, maps and graphs",
+      "years": "Y5-Y9",
+      "how": "Maths teaches scale and grid references; Geography uses them in map work and fieldwork data."
+    },
+    {
+      "with": "History",
+      "topic": "Chronology, Roman numerals and timelines",
+      "years": "Y3-Y7",
+      "how": "Maths teaches Roman numerals and negative numbers; History applies them to dates and timelines."
+    },
+    {
+      "with": "Design and Technology",
+      "topic": "Measurement, area, volume and scale drawing",
+      "years": "Y5-Y9",
+      "how": "Maths supplies measuring and mensuration; Design and Technology applies them to plans and models."
+    },
+    {
+      "with": "Art",
+      "topic": "Symmetry, pattern, tessellation and proportion",
+      "years": "Y1-Y9",
+      "how": "Maths supplies symmetry and transformations; Art applies them to pattern and composition."
+    },
+    {
+      "with": "Personal finance",
+      "topic": "Money, percentages and interest",
+      "years": "Y2-Y9",
+      "how": "Maths teaches money, percentage change and simple interest; personal finance applies them to budgets and savings."
+    }
   ],
   "gaps": [
     "The gov.uk programme-of-study page text was read up to 100,000 characters; the final few hundred characters (the closing notes) were not read.",

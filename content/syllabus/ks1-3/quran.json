@@ -4,7 +4,7 @@
   "slug": "quran",
   "framework": "School programme (no statutory framework)",
   "status": "Provisional",
-  "statusNote": "No National Curriculum or exam-board framework exists for Qur'an and Tajweed. This is the school's own programme, drawn from its lesson files (Reception to Year 9) and the tajweed-by-year layout of the old Drive Quran tracker. Recitation follows the Madinah mushaf, Hafs 'an 'Asim. Year allocation is a recommended sequence. Status Provisional.",
+  "statusNote": "No National Curriculum or exam-board framework exists for Qur'an and Tajweed. This is the school's own programme, drawn from its lesson files (Reception to Year 9) and the tajweed-by-year layout of the old Drive Quran tracker. Recitation follows the Madinah mushaf, Hafs 'an 'Asim. Year allocation is a recommended sequence. Status Provisional. Year 1 was rebuilt in November 2026 to the TGA Year 1 Curriculum Pack: one unit per half term, following Tarbiyyah Primary's Cornerstones projects (2026-27 order), White Rose maths and Little Wandle phonics.",
   "sources": [
     {
       "title": "School Drive Quran folder: TPS Quran Tracker 2020-21 (tajweed-by-year sheet only; pupil data not used)",
@@ -119,79 +119,121 @@
   "yearMap": {
     "y1": [
       {
-        "unit": "Joining the letters",
+        "unit": "Autumn 1: Al-Fatihah and the letters",
         "focus": [
-          "Letter shapes: start, middle and end",
-          "Joining families: jeem, seen, 'ayn, faa, kaaf and more",
-          "Letters that do not join: alif, daal, dhaal, raa, zay, waaw",
-          "Reading joined words fluently"
+          "Isolated Arabic letters: names, sounds, shapes",
+          "Hifdh: Al-Fatihah",
+          "Adab of reciting"
         ],
         "skills": [
-          "Recognise letter names, sounds and shapes",
-          "Distinguish similar letters by sound",
+          "Recognise letters",
+          "Recite from memory"
+        ],
+        "keyTerms": [
+          "harf (letter)",
+          "surah",
+          "ayah",
+          "hifdh"
+        ],
+        "assess": "Al-Fatihah sign-off; isolated-letter check",
+        "prereq": "Reception or home: early letters",
+        "leadsTo": "Autumn 2: short vowels"
+      },
+      {
+        "unit": "Autumn 2: An-Nas, Al-Falaq and short vowels",
+        "focus": [
+          "Fathah, kasrah and dammah on all letters",
+          "Hifdh: An-Nas and Al-Falaq"
+        ],
+        "skills": [
           "Read letters with short vowels"
         ],
         "keyTerms": [
-          "initial (the shape of a letter at the start of a word)",
-          "medial (the shape of a letter in the middle of a word)",
-          "final (the shape of a letter at the end of a word)",
-          "family (letters that share the same body shape)",
-          "connect (join to the letter that follows)",
-          "non-joiner (a letter that does not join to the letter after it)"
+          "fathah",
+          "kasrah",
+          "dammah",
+          "harakah"
         ],
-        "assess": "Teacher listening and recital assessment; exit questions in lesson files; memorisation checked by re-test",
-        "prereq": "Reception: Arabic letters and their sounds",
-        "leadsTo": "Applied and consolidated in later units"
+        "assess": "Hifdh sign-off; short-vowel reading check",
+        "prereq": "Autumn 1",
+        "leadsTo": "Spring 1: joining letters"
       },
       {
-        "unit": "Sukoon, shaddah, madd and tanween",
+        "unit": "Spring 1: Al-Ikhlas, Al-Masad and joining letters",
         "focus": [
-          "Sukoon: the quiet letter",
-          "Shaddah: the strong letter",
-          "Madd: long vowels (alif, waaw, yaa)",
-          "Tanween: the 'n' ending"
+          "Letter shapes at start, middle and end",
+          "Letters that do not join to the next",
+          "Hifdh: Al-Ikhlas and Al-Masad"
         ],
         "skills": [
-          "Read joined letters and words fluently from the mushaf",
-          "Apply signs: sukoon, shaddah, madd, tanween",
-          "Recite with steady pace and care"
+          "Read joined words with short vowels"
         ],
         "keyTerms": [
-          "sukoon (a small circle that means the letter has no vowel)",
-          "sakin (a letter with a sukoon)",
-          "shaddah (a mark like a small 'w' that doubles a letter)",
-          "mushaddad (a letter carrying a shaddah)",
-          "madd (stretching a sound for a fixed length)",
-          "count (one beat; two counts is the normal madd)"
+          "joining",
+          "non-joiner",
+          "kalimah (word)"
         ],
-        "assess": "Teacher listening and recital assessment; exit questions in lesson files; memorisation checked by re-test",
-        "prereq": "Reception: Short vowels and first reading",
-        "leadsTo": "Year 4: Beginning a recitation"
+        "assess": "Hifdh sign-off; joined-word reading check",
+        "prereq": "Autumn 2",
+        "leadsTo": "Spring 2: reading joined words"
       },
       {
-        "unit": "Reading and reciting short surahs",
+        "unit": "Spring 2: An-Nasr, Al-Kafirun and reading joined words",
         "focus": [
-          "Reciting Al-Fatihah from the mushaf",
-          "Surat An-Nas",
-          "Surat Al-Falaq",
-          "Surat Al-Ikhlas"
+          "Joined words with mixed vowels",
+          "Taa marbutah",
+          "Hifdh: An-Nasr and Al-Kafirun"
         ],
         "skills": [
-          "Recite the surah accurately from the mushaf",
-          "Memorise and retain it by revision cycles",
-          "Explain its meaning at the stage's level"
+          "Read a joined line fluently"
         ],
         "keyTerms": [
-          "Al-Fatihah (the Opening surah recited in every prayer)",
-          "makharij (the places where letters come from)",
-          "An-Nas (surah 114, six ayat, we seek Allah's protection)",
-          "a'udhu (I seek refuge)",
-          "Al-Falaq (surah 113, five ayat, seek protection with the Lord of the daybreak)",
-          "shar (evil or harm)"
+          "taa marbutah",
+          "istighfar",
+          "'ibadah"
         ],
-        "assess": "Teacher listening and recital assessment; exit questions in lesson files; memorisation checked by re-test",
-        "prereq": "Reception: Meeting the Qur'an",
-        "leadsTo": "Year 2: Applying tajweed in surahs"
+        "assess": "Hifdh sign-off; fluency check",
+        "prereq": "Spring 1",
+        "leadsTo": "Summer 1: sukoon"
+      },
+      {
+        "unit": "Summer 1: Al-Kawthar, Al-Ma'un and sukoon",
+        "focus": [
+          "Sukoon and syllables",
+          "Qalqalah letters on sukoon",
+          "Hifdh: Al-Kawthar and Al-Ma'un"
+        ],
+        "skills": [
+          "Read words with sukoon"
+        ],
+        "keyTerms": [
+          "sukoon",
+          "qalqalah",
+          "tajweed"
+        ],
+        "assess": "Hifdh sign-off; sukoon reading check",
+        "prereq": "Spring 2",
+        "leadsTo": "Summer 2: tanween"
+      },
+      {
+        "unit": "Summer 2: Quraysh, Al-Fil and beginning tanween",
+        "focus": [
+          "Fathatain, kasratain and dammatain",
+          "Arabic numbers 0 to 5 and colour words",
+          "Hifdh: Quraysh and Al-Fil; whole-year revision"
+        ],
+        "skills": [
+          "Read words with tanween",
+          "Recite all 11 surahs"
+        ],
+        "keyTerms": [
+          "tanween",
+          "arqam (numbers)",
+          "alwan (colours)"
+        ],
+        "assess": "End-of-year hifdh check (11 surahs) and Qaidah card",
+        "prereq": "Summer 1",
+        "leadsTo": "Year 2: Al-Humazah to Al-Bayyinah; Ayat al-Kursi; Qaidah complete"
       }
     ],
     "y2": [

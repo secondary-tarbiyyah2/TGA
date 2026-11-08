@@ -4,7 +4,7 @@
   "slug": "science",
   "framework": "National Curriculum in England (2014): Science programmes of study (Key Stages 1 to 3); Reception aligned to EYFS Understanding the World: The Natural World",
   "status": "Verified",
-  "statusNote": "Key Stage 1, 2 and 3 statements were read from the gov.uk National Curriculum science programme of study; the whole page, including the end of the Key Stage 4 section, has now been read, and a sample of Year 2 to Year 6 statements was re-checked against the official primary PDF with no errors found. EYFS Understanding the World: The Natural World was read in the 13 July 2026 statutory framework (in force 1 September 2026) and the Reception row is consistent with it. Statutory content is set by key stage and by named year for KS1 and KS2; the Year 7 to Year 9 allocation and all unit titles are a recommended sequence because the National Curriculum sets Key Stage 3 content as a whole. Pages were read through a fetch tool that summarises text.",
+  "statusNote": "Key Stage 1, 2 and 3 statements were read from the gov.uk National Curriculum science programme of study; the whole page, including the end of the Key Stage 4 section, has now been read, and a sample of Year 2 to Year 6 statements was re-checked against the official primary PDF with no errors found. EYFS Understanding the World: The Natural World was read in the 13 July 2026 statutory framework (in force 1 September 2026) and the Reception row is consistent with it. Statutory content is set by key stage and by named year for KS1 and KS2; the Year 7 to Year 9 allocation and all unit titles are a recommended sequence because the National Curriculum sets Key Stage 3 content as a whole. Pages were read through a fetch tool that summarises text. Year 1 was rebuilt in November 2026 to the TGA Year 1 Curriculum Pack: one unit per half term, following Tarbiyyah Primary's Cornerstones projects (2026-27 order), White Rose maths and Little Wandle phonics.",
   "sources": [
     {
       "title": "National Curriculum in England: science programmes of study (gov.uk)",
@@ -241,16 +241,17 @@
   "yearMap": {
     "y1": [
       {
-        "unit": "Plants and trees",
+        "unit": "Autumn 1: Plants and trees (The Mysterious Woodlands)",
         "focus": [
           "Common wild and garden plants",
-          "Parts of a plant",
-          "Deciduous and evergreen trees"
+          "Parts of a flowering plant",
+          "Deciduous and evergreen trees",
+          "Autumn changes and day length"
         ],
         "skills": [
           "Observe closely",
           "Identify and classify",
-          "Record in drawings"
+          "Record in labelled drawings"
         ],
         "keyTerms": [
           "root",
@@ -260,77 +261,128 @@
           "deciduous",
           "evergreen"
         ],
-        "assess": "Labelled drawing and end of unit questions",
-        "prereq": "Reception: Plants and growing",
-        "leadsTo": "Year 2: Plants; Year 3: Plants"
+        "assess": "Labelled plant and tree drawing; identification quiz",
+        "prereq": "Reception: plants and growing",
+        "leadsTo": "Year 2: plants (growth from seeds and bulbs)"
       },
       {
-        "unit": "Animals including humans",
+        "unit": "Autumn 2: Animal groups and diets (Dinosaur Planet)",
         "focus": [
-          "Fish, amphibians, reptiles, birds, mammals",
-          "Carnivores, herbivores, omnivores",
-          "Parts of the body and the five senses"
+          "Fish, amphibians, reptiles, birds and mammals",
+          "Carnivores, herbivores and omnivores",
+          "Comparing animal bodies, including pets"
         ],
         "skills": [
-          "Classify using observable features",
+          "Sort and group",
+          "Compare",
           "Ask simple questions"
         ],
         "keyTerms": [
           "mammal",
-          "bird",
           "reptile",
+          "amphibian",
           "carnivore",
           "herbivore",
-          "omnivore",
-          "senses"
+          "omnivore"
         ],
-        "assess": "Sorting task and short quiz",
-        "prereq": "Reception: Animals and their homes",
-        "leadsTo": "Year 2: Animals including humans"
+        "assess": "Animal sorting task by group and diet",
+        "prereq": "Reception: animals and their young",
+        "leadsTo": "Year 2: living things and their habitats"
       },
       {
-        "unit": "Everyday materials",
+        "unit": "Spring 1: Everyday materials (Moon Zoom! and Rain & Sunrays)",
         "focus": [
           "Objects and the materials they are made from",
-          "Wood, plastic, glass, metal, water, rock",
-          "Simple properties"
+          "Simple properties: hard, soft, bendy, transparent, waterproof",
+          "A simple test: which fabric keeps rain out?",
+          "Winter weather and short days"
         ],
         "skills": [
-          "Compare and group",
-          "Perform simple tests"
+          "Perform a simple test",
+          "Sort by property",
+          "Record results in a table"
         ],
         "keyTerms": [
           "material",
-          "hard",
-          "soft",
+          "property",
+          "transparent",
+          "opaque",
           "waterproof",
-          "transparent"
+          "test"
         ],
-        "assess": "Practical sorting and comparing task",
-        "prereq": "None",
-        "leadsTo": "Year 2: Uses of everyday materials"
+        "assess": "Practical sort by material and property; recorded waterproof test",
+        "prereq": "Reception: exploring materials",
+        "leadsTo": "Year 2: uses of everyday materials"
       },
       {
-        "unit": "Seasonal changes",
+        "unit": "Spring 2: The human body and senses (Memory Box and Human Senses)",
         "focus": [
-          "Autumn becomes winter",
-          "Four seasons and weather",
-          "Day length across the year"
+          "Humans are mammals",
+          "Naming and labelling body parts",
+          "The five senses and the body part for each"
         ],
         "skills": [
-          "Observe over time",
-          "Record weather"
+          "Observe",
+          "Identify",
+          "Simple sense tests at home"
+        ],
+        "keyTerms": [
+          "senses",
+          "sight",
+          "hearing",
+          "touch",
+          "taste",
+          "smell"
+        ],
+        "assess": "Labelled body diagram matched to the senses",
+        "prereq": "Autumn 2: animal groups",
+        "leadsTo": "Year 2: animals including humans (growth, exercise, hygiene)"
+      },
+      {
+        "unit": "Summer 1: Plants in spring and building materials (Bright Lights, Big City and How Do Leaves Change?)",
+        "focus": [
+          "Plant and tree parts revisited",
+          "Leaf changes in spring",
+          "Comparing wood, brick and stone for building"
+        ],
+        "skills": [
+          "Observe change over time",
+          "Compare and explain a choice"
+        ],
+        "keyTerms": [
+          "bud",
+          "blossom",
+          "deciduous",
+          "brick",
+          "stone",
+          "suitable"
+        ],
+        "assess": "Leaf observation record; materials comparison",
+        "prereq": "Autumn 1: plants and trees; Spring 1: materials",
+        "leadsTo": "Year 2: plants; uses of everyday materials"
+      },
+      {
+        "unit": "Summer 2: Seasonal changes (Splendid Skies)",
+        "focus": [
+          "The four seasons and weather in each",
+          "Day length across the year",
+          "End-of-year review: plants, animals, materials, seasons"
+        ],
+        "skills": [
+          "Observe and record weather over time",
+          "Compare data across seasons"
         ],
         "keyTerms": [
           "season",
           "weather",
-          "daylight",
-          "autumn",
-          "winter"
+          "day length",
+          "sunrise",
+          "sunset",
+          "forecast"
         ],
-        "assess": "Class weather record and discussion",
-        "prereq": "Reception: Autumn and the natural world",
-        "leadsTo": "Year 5: Earth and space"
+        "assess": "Seasons and weather matching task; end-of-year quiz",
+        "prereq": "Weather diary kept since Spring 1",
+        "leadsTo": "Year 2: living things and their habitats"
       }
     ],
     "y2": [
