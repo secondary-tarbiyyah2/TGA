@@ -31,8 +31,8 @@ on:
     paths:
       - "content/syllabus/**"
       - "content/lessons/**"
-      - "scripts/curriculum/**"
-      - ".github/workflows/sync-curriculum-from-portal.yml"
+  # The first run after a merge waits for the backend deploy (so the tables exist); runs that
+  # start earlier find the tables missing and stop without doing anything.
   workflow_run:
     workflows: ["Deploy Supabase backend"]
     types: [completed]
@@ -167,7 +167,9 @@ jobs:
           if [ "$PUSHED" = "true" ]; then
             LESSONS=$(jq -r '.lessonsChanged' "$S"); SYLLABUS=$(jq -r '.syllabusChanged' "$S")
           fi
-          if [ "$LESSONS" = "true" ] || [ "$(jq -r '.rebuildRequested' "$S")" = "true" ]; then
+          # Slides are built only from lessons pushed in this run, or lessons whose new slides were
+          # asked for and whose repo copy already matches the portal.
+          if [ "$LESSONS" = "true" ] || [ "$(jq -r '.rebuildReady' "$S")" = "true" ]; then
             gh workflow run build-lesson-decks.yml --ref main && echo "Started: Build lesson decks"
           fi
           if [ "$LESSONS" = "true" ]; then
@@ -200,9 +202,10 @@ jobs:
             echo "- Sent from the portal: $(jq -r '.sent_units' "$S") unit change(s), $(jq -r '.sent_lessons' "$S") lesson(s)"
             echo "- Brought in from the repo: $(jq -r '.received_units' "$S") unit(s), $(jq -r '.received_lessons' "$S") lesson(s)"
             echo "- Files changed: $(jq -r '.changedFiles | length' "$S")"
+            if [ "$(jq -r '.skipped // false' "$S")" = "true" ]; then echo "- Skipped: the backend (migration 0179) is not deployed yet."; fi
             if [ "$(jq '.problems | length' "$S")" != "0" ]; then
               echo ""
               echo "### Needs attention"
-              jq -r '.problems[] | "- " + .' "$S"
+              jq -r '.problems[] | "- " + .text' "$S"
             fi
           } >> "$GITHUB_STEP_SUMMARY"

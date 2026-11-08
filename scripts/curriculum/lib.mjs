@@ -127,8 +127,32 @@ export const scopeKey = {
 const str = (v) => typeof v === "string" && v.trim().length > 0;
 const strs = (a, min = 1) => Array.isArray(a) && a.length >= min && a.every((x) => typeof x === "string" && x.trim());
 
-/** Problems with one exported unit list, in plain English. */
-export function checkUnits(kind, units, label) {
+// The cross-curricular hubs (content/syllabus/matrices/hubs.json) point at KS4 spec units by
+// subject name and ref; scripts/syllabus/validate.mjs fails if a ref they use disappears.
+export const HUB_SUBJECT_SLUG = { Science: "gcse-science", Mathematics: "mathematics", Geography: "geography", History: "history", "English Language": "english-language", "English Literature": "english-literature", Business: "business", Computing: "computing", Arabic: "arabic", "Islamic Studies": "islamic-studies" };
+let hubCache = null;
+/** Spec refs the hubs need, per KS4 subject slug: Map slug -> Map ref -> hub titles. */
+export function hubRefs() {
+  if (hubCache) return hubCache;
+  hubCache = new Map();
+  const dir = path.join(SYLLABUS_DIR, "matrices");
+  for (const f of fs.existsSync(dir) ? fs.readdirSync(dir).filter((x) => x.endsWith(".json")) : []) {
+    const d = JSON.parse(fs.readFileSync(path.join(dir, f), "utf8"));
+    if (d.kind !== "hubs") continue;
+    for (const h of d.hubs || [])
+      for (const n of h.nodes || []) {
+        const slug = HUB_SUBJECT_SLUG[n.subject];
+        if (!slug) continue;
+        if (!hubCache.has(slug)) hubCache.set(slug, new Map());
+        const m = hubCache.get(slug);
+        m.set(n.ref, [...(m.get(n.ref) || []), h.title || h.id]);
+      }
+  }
+  return hubCache;
+}
+
+/** Problems with one exported unit list, in plain English. `slug` adds the hub check for KS4. */
+export function checkUnits(kind, units, label, slug) {
   const p = [];
   units.forEach((u, i) => {
     const name = `${label}, unit ${i + 1}${u.unit || u.title ? ` (${u.unit || u.title})` : ""}`;
@@ -146,6 +170,8 @@ export function checkUnits(kind, units, label) {
     const refs = units.map((u) => u.ref);
     const dup = refs.filter((r, i) => r && refs.indexOf(r) !== i);
     if (dup.length) p.push(`${label}: the spec reference ${[...new Set(dup)].join(", ")} is used twice`);
+    const need = slug ? hubRefs().get(slug) : null;
+    for (const [ref, hubs] of need || []) if (!refs.includes(ref)) p.push(`${label}: the cross-curricular hub "${hubs[0]}" links to spec unit ${ref}, which is no longer there. Put the reference ${ref} back (or ask for the hub to be updated)`);
   }
   return p;
 }
