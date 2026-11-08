@@ -1,12 +1,21 @@
 // Loads built lesson decks into Supabase (storage bucket lesson-decks + table curriculum_lessons).
 //   node scripts/lessons/upload-decks.mjs plan   <decksDir>   -> writes <decksDir>/needed.json (decks that still need a file)
 //   node scripts/lessons/upload-decks.mjs upload <decksDir>   -> uploads the needed decks (+ PDFs if converted)
-// Needs SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY. Teacher-edited lessons (version > 1) are never overwritten;
-// set FORCE=1 to re-upload generated decks that already exist (still never touching edited ones).
+// Needs SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY.
+//
+// Which decks are rebuilt (migration 0179):
+//   * a lesson whose content changed since its deck was built (the content's hash differs from
+//     curriculum_lessons.built_hash, or the portal's lesson editor asked for a rebuild) gets new
+//     slides as a NEW version, so the old deck stays in Version history;
+//   * a lesson using a teacher's own uploaded deck (custom_deck) keeps it: only its lesson plan
+//     is rebuilt;
+//   * FORCE=1 re-renders every generated deck in place (when the deck design changes).
+// Lesson plans are regenerated whenever the content changed (plan_hash).
 import fs from "node:fs";
 import path from "node:path";
 import { createClient } from "@supabase/supabase-js";
 import { retiredChecker, retiredList } from "./retired.mjs";
+import { contentHash } from "./content-hash.mjs";
 
 const [mode, dirArg] = process.argv.slice(2);
 const dir = path.resolve(dirArg || "out/decks");
@@ -21,36 +30,77 @@ const isRetired = retiredChecker();
 const manifest = JSON.parse(fs.readFileSync(path.join(dir, "manifest.json"), "utf8")).filter((m) => !isRetired(m.subject_slug, m.year, m.lesson_no));
 const force = process.env.FORCE === "1";
 
+// The hash of each lesson's content as it is in the repo now (what this run builds from).
+const LESSONS = process.env.LESSONS_DIR ? path.resolve(process.env.LESSONS_DIR) : path.resolve(path.dirname(new URL(import.meta.url).pathname), "../../content/lessons");
+const hashes = new Map();
+for (const s of fs.existsSync(LESSONS) ? fs.readdirSync(LESSONS) : []) {
+  const d = path.join(LESSONS, s);
+  if (!fs.statSync(d).isDirectory()) continue;
+  for (const f of fs.readdirSync(d).filter((x) => x.endsWith(".json"))) {
+    const data = JSON.parse(fs.readFileSync(path.join(d, f), "utf8"));
+    for (const l of data.lessons || []) hashes.set(`${s}/${data.year || f.replace(/\.json$/, "")}/${l.n}`, contentHash(l));
+  }
+}
+
+const ROW_COLS = "id, subject_slug, subject, year, board, unit, lesson_no, title, duration, objectives, deck_path, pdf_path, version, plan_pdf_path, plan_docx_path";
+const EDITOR_COLS = "custom_deck, rebuild_requested, built_hash, plan_hash, content_updated_at, content";
+
 async function existingRows() {
   const out = new Map();
   for (let from = 0; ; from += 1000) {
-    const { data, error } = await supabase
-      .from("curriculum_lessons")
-      .select("id, subject_slug, year, lesson_no, deck_path, pdf_path, version, plan_pdf_path, plan_docx_path")
-      .range(from, from + 999);
-    if (error) throw error;
-    for (const r of data) out.set(`${r.subject_slug}/${r.year}/${r.lesson_no}`, r);
+    const { data, error } = await supabase.from("curriculum_lessons").select(`${ROW_COLS}, ${EDITOR_COLS}`).order("id").range(from, from + 999);
+    if (error) {
+      // Migration 0179 not deployed yet (this can run straight after a merge): build nothing
+      // now; the curriculum sync starts this workflow again once the backend is deployed.
+      if (/column|does not exist|42703|schema cache/i.test(`${error.code} ${error.message}`)) return null;
+      throw error;
+    }
+    for (const r of data) {
+      // Keep only a fingerprint of the portal's copy of the lesson, not the lesson itself.
+      r.dbHash = r.content ? contentHash(r.content) : null;
+      delete r.content;
+      out.set(`${r.subject_slug}/${r.year}/${r.lesson_no}`, r);
+    }
     if (data.length < 1000) break;
   }
   return out;
 }
 
 const keyOf = (m) => `${m.subject_slug}/${m.year}/${m.lesson_no}`;
+const hashOf = (m) => hashes.get(keyOf(m)) || null;
 const existing = await existingRows();
-const needsFile = (m) => {
+if (!existing) {
+  console.log("::notice::The portal database has not been updated yet (migration 0179). Nothing is uploaded this time; this workflow runs again after the backend deploy and curriculum sync.");
+  if (mode === "plan") fs.writeFileSync(path.join(dir, "needed.json"), "[]");
+  process.exit(0);
+}
+// The editor asked for new slides and the repo now has the content it saved. If the repo does
+// not have it yet (the sync has not sent it), the request waits for a later run.
+const requestReady = (row, m) => !!row.rebuild_requested && !!hashOf(m) && row.dbHash === hashOf(m);
+// The content changed since the slides were built. A null built_hash is a deck built before
+// hashes were kept: it is taken as current.
+const contentChanged = (row, m) => requestReady(row, m) || (!!row.built_hash && !!hashOf(m) && row.built_hash !== hashOf(m));
+const wantsFile = (m) => {
   const row = existing.get(keyOf(m));
   if (!row) return true;
-  if (row.version > 1) return false; // a teacher has edited it: never overwrite
-  return force || !row.deck_path;
+  if (row.custom_deck) return false; // a teacher's own deck: never overwrite
+  return force || !row.deck_path || contentChanged(row, m);
 };
 
 // Lesson plans are generated (never teacher-edited), so they're added to
-// every lesson that lacks one, including lessons whose deck a teacher edited.
-const needsPlan = (m) => {
+// every lesson that lacks one, including lessons whose deck a teacher edited,
+// and rebuilt when the lesson content changes.
+const wantsPlan = (m) => {
   if (!m.plan_file) return false;
   const row = existing.get(keyOf(m));
-  return force || !row || !row.plan_pdf_path;
+  return force || !row || !row.plan_pdf_path || requestReady(row, m) || (!!row.plan_hash && !!hashOf(m) && row.plan_hash !== hashOf(m));
 };
+
+// The upload step uploads exactly what the plan step chose (and converted to PDF), even if a
+// teacher saves an edit in between: that edit is picked up by the next run.
+const planned = mode === "upload" && fs.existsSync(path.join(dir, "needed.json")) ? new Set(JSON.parse(fs.readFileSync(path.join(dir, "needed.json"), "utf8"))) : null;
+const needsFile = (m) => (planned ? planned.has(m.file) : wantsFile(m));
+const needsPlan = (m) => (planned ? planned.has(m.plan_file) : wantsPlan(m));
 
 if (mode === "plan") {
   const needed = [...manifest.filter(needsFile).map((m) => m.file), ...manifest.filter(needsPlan).map((m) => m.plan_file)];
@@ -88,35 +138,80 @@ async function uploadPlan(m) {
   return { plan_docx_path: docxPath, plan_pdf_path: pdfPath };
 }
 
+const same = (a, b) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null);
+/** Only the fields that really change, so a build does not touch (or audit-log) untouched lessons. */
+const changes = (row, patch) => Object.fromEntries(Object.entries(patch).filter(([k, v]) => !same(row?.[k], v)));
+
 let uploaded = 0;
+let rebuilt = 0;
 let metaOnly = 0;
+let skipped = 0;
 let failed = 0;
 await pool(manifest, 6, async (m) => {
-  const row = existing.get(keyOf(m));
+  let row = existing.get(keyOf(m));
+  const hash = hashOf(m);
+  // Wording from the repo. If the portal holds a newer edit the sync has not sent yet, its
+  // title, unit and objectives (already on the row) are left alone.
+  const portalAhead = !!row?.dbHash && !!hash && row.dbHash !== hash;
   const meta = {
-    subject_slug: m.subject_slug,
     subject: m.subject,
-    year: m.year,
     board: m.board,
-    unit: m.unit,
-    lesson_no: m.lesson_no,
-    title: m.title,
-    duration: m.duration,
-    objectives: m.objectives,
+    ...(portalAhead ? {} : { unit: m.unit, title: m.title, duration: m.duration, objectives: m.objectives }),
+  };
+  const ready = !!row && requestReady(row, m);
+  // A rebuild request is done once built, unless the lesson was edited again meanwhile.
+  const clearRequest = async () => {
+    if (!ready) return;
+    const q = supabase.from("curriculum_lessons").update({ rebuild_requested: false }).eq("id", row.id);
+    await (row.content_updated_at ? q.eq("content_updated_at", row.content_updated_at) : q.is("content_updated_at", null));
+  };
+  const update = async (patch) => {
+    const diff = changes(row, patch);
+    if (!Object.keys(diff).length) return false;
+    const { error } = await supabase.from("curriculum_lessons").update(diff).eq("id", row.id);
+    if (error) throw error;
+    return true;
   };
   try {
-    const planPaths = needsPlan(m) ? await uploadPlan(m) : null;
+    const planPaths = needsPlan(m) ? { ...(await uploadPlan(m)), plan_hash: hash } : null;
     if (!needsFile(m)) {
-      if (planPaths && row) await supabase.from("curriculum_lessons").update(planPaths).eq("id", row.id);
-      // Keep wording/ordering current without touching files or edited versions.
-      if (row && row.version === 1) {
-        await supabase.from("curriculum_lessons").update(meta).eq("id", row.id);
-        metaOnly++;
+      if (!row) return;
+      const patch = { ...(planPaths || {}) };
+      if (!row.plan_hash && !planPaths && hash) patch.plan_hash = hash;
+      // Keep wording/ordering current without touching files or a teacher's own deck.
+      if (!row.custom_deck) {
+        Object.assign(patch, meta);
+        if (!row.built_hash && hash) patch.built_hash = hash;
       }
+      if (await update(patch)) metaOnly++;
+      if (row.custom_deck && planPaths) await clearRequest();
       return;
     }
+    if (!row) {
+      // A lesson new to the library: add its row (never over one created meanwhile), then store the deck like any other.
+      const { error } = await supabase
+        .from("curriculum_lessons")
+        .upsert({ subject_slug: m.subject_slug, year: m.year, lesson_no: m.lesson_no, ...meta }, { onConflict: "subject_slug,year,lesson_no", ignoreDuplicates: true });
+      if (error) throw error;
+    }
+    // Read the lesson again just before storing: a teacher may have uploaded their own slides
+    // since this run started, and those are never replaced.
+    const { data: fresh, error: freshErr } = await supabase.from("curriculum_lessons").select(`${ROW_COLS}, custom_deck`).eq("subject_slug", m.subject_slug).eq("year", m.year).eq("lesson_no", m.lesson_no).single();
+    if (freshErr) throw freshErr;
+    if (fresh.custom_deck) {
+      skipped++;
+      return;
+    }
+    const isNew = !row;
+    row = row ? { ...row, ...fresh } : { ...fresh };
+    const { data: cur } = await supabase.from("curriculum_lesson_versions").select("source").eq("lesson_id", fresh.id).eq("version", fresh.version).maybeSingle();
+    // The content changed: the new slides are a new version, so the old deck stays in the history.
+    // A generated current version is re-rendered in place (first build, design refresh); an
+    // uploaded one is never overwritten, so the build becomes the next version instead.
+    const wantNew = !isNew && !!fresh.deck_path && !force && contentChanged(row, m);
+    const version = wantNew || (cur && cur.source !== "generated") ? fresh.version + 1 : fresh.version;
     const base = path.basename(m.file, ".pptx");
-    const deckPath = `${m.subject_slug}/${m.year}/${m.lesson_no}/v1-${base}.pptx`;
+    const deckPath = `${m.subject_slug}/${m.year}/${m.lesson_no}/v${version}-${base}.pptx`;
     const pdfLocal = path.join(dir, m.file.replace(/\.pptx$/, ".pdf"));
     const hasPdf = fs.existsSync(pdfLocal);
     const pdfPath = hasPdf ? deckPath.replace(/\.pptx$/, ".pdf") : null;
@@ -129,23 +224,34 @@ await pool(manifest, 6, async (m) => {
       const up2 = await supabase.storage.from("lesson-decks").upload(pdfPath, fs.readFileSync(pdfLocal), { upsert: true, contentType: "application/pdf" });
       if (up2.error) throw up2.error;
     }
-    const { data, error } = await supabase
-      .from("curriculum_lessons")
-      .upsert({ ...meta, ...(planPaths || {}), deck_path: deckPath, pdf_path: pdfPath, version: 1 }, { onConflict: "subject_slug,year,lesson_no" })
-      .select("id")
-      .single();
-    if (error) throw error;
-    await supabase
-      .from("curriculum_lesson_versions")
-      .upsert({ lesson_id: data.id, version: 1, deck_path: deckPath, pdf_path: pdfPath, note: "Original" }, { onConflict: "lesson_id,version" });
-    uploaded++;
+    // One transaction (migration 0179): refuses if a teacher's deck arrived or the version moved.
+    const { data: stored, error: storeErr } = await supabase.rpc("curriculum_store_generated_deck", {
+      p_lesson: fresh.id,
+      p_expected_version: fresh.version,
+      p_deck_path: deckPath,
+      p_pdf_path: pdfPath,
+      p_new_version: wantNew,
+      p_built_hash: hash,
+      p_note: fresh.version === 0 || isNew ? "Original" : wantNew ? "Rebuilt after the lesson was edited" : "Rebuilt from the lesson",
+    });
+    if (storeErr) throw storeErr;
+    if (stored == null) {
+      skipped++;
+      console.log(`${m.file}: a teacher changed this lesson's slides during the build; their version is kept.`);
+      return;
+    }
+    row = { ...row, deck_path: deckPath, pdf_path: pdfPath, version: stored, built_hash: hash };
+    await update({ ...meta, ...(planPaths || {}), ...(planPaths ? {} : row.plan_hash ? {} : { plan_hash: hash }) });
+    await clearRequest();
+    if (stored > fresh.version) rebuilt++;
+    else uploaded++;
   } catch (e) {
     failed++;
     console.error(`::warning::${m.file}: ${e.message || e}`);
   }
 });
-console.log(`Uploaded ${uploaded}, refreshed ${metaOnly}, failed ${failed}`);
-if (failed > 0 && uploaded === 0) process.exit(1);
+console.log(`Uploaded ${uploaded}, rebuilt ${rebuilt}, refreshed ${metaOnly}, kept teachers' own slides ${skipped}, failed ${failed}`);
+if (failed > 0 && uploaded + rebuilt === 0) process.exit(1);
 
 // Remove lessons retired from the library (content/retired-lessons.json) so off-spec lessons leave the portal:
 // the lesson row, its versions, and their deck, PDF and lesson-plan files in storage.

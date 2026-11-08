@@ -178,6 +178,12 @@ export function syllabusDocument(d) {
       (u.focus || []).forEach((f) => kids.push(bl(f)));
       const meta = [["Key terms", (u.keyTerms || []).join(" · ")], ["Check", u.assess], ["Builds on", u.prereq], ["Leads to", u.leadsTo]].filter(([, v]) => v);
       meta.forEach(([k, v]) => kids.push(p([t(`${k}: `, { bold: true, size: 19, color: acc }), t(v, { size: 19 })], { after: 30 })));
+      // Set in the portal's Curriculum planner (curriculum_units, migration 0179).
+      [["Resources", u.resources], ["Founding year", u.foundingYear]].filter(([, v]) => v).forEach(([k, v]) => kids.push(p([t(`${k}: `, { bold: true, size: 19, color: acc }), t(v, { size: 19 })], { after: 30 })));
+      if (Array.isArray(u.weeks) && u.weeks.length) {
+        kids.push(label("Week by week", acc));
+        kids.push(table(["Week", "Lessons", "Key vocabulary", "Home activity"], u.weeks.map((w, i) => [String(w.week ?? i + 1), (w.lessons || []).join("; "), (w.vocabulary || []).join(", "), w.home || ""]), [0.6, 3.4, 1.8, 2.2], acc));
+      }
       kids.push(p([t(" ")], { after: 80 }));
     }
   }

@@ -19,6 +19,10 @@ export type CurriculumLesson = {
   edited_at: string | null;
   plan_pdf_path?: string | null;
   plan_docx_path?: string | null;
+  /** 0179: the slides are a teacher's own upload, kept when the lesson is edited. */
+  custom_deck?: boolean;
+  /** 0179: edited in the portal; new slides and a new plan are on their way. */
+  rebuild_requested?: boolean;
 };
 
 export type CurriculumVersion = {
@@ -31,6 +35,8 @@ export type CurriculumVersion = {
 };
 
 export const LESSON_COLUMNS = "id, subject_slug, subject, year, board, unit, lesson_no, title, duration, objectives, deck_path, pdf_path, version, edited_at, plan_pdf_path, plan_docx_path";
+/** With the lesson editor's columns (migration 0179); fall back to LESSON_COLUMNS if it is not deployed yet. */
+export const LESSON_COLUMNS_EDITOR = `${LESSON_COLUMNS}, custom_deck, rebuild_requested`;
 
 // Year 1 to Year 11: the Academy does not run Reception (the "reception" code is still
 // accepted by the database for any legacy content, and labelled if it appears).

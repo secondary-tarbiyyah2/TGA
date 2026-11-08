@@ -170,6 +170,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       group: "Teaching",
       tabs: [
         { href: "/admin/curriculum", label: "Lesson library", hint: "Lesson plans, resources and revision packs", headOnly: true },
+        { href: "/admin/planner", label: "Curriculum planner", hint: "Long-term and week-by-week plans, unit by unit", icon: "layoutGrid", headOnly: true },
         { href: "/admin/syllabus", label: "Syllabus", hint: "Schemes of work and exam specifications", icon: "scrollText", headOnly: true },
         { href: "/admin/revision", label: "Revision results", hint: "How pupils did on each unit's revision", icon: "chartLine", headOnly: true },
       ],
@@ -285,6 +286,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       icon: "library",
       tabs: [
         { href: "/teach/curriculum", label: "Lesson library", hint: "Lesson plans, resources and revision packs" },
+        { href: "/teach/planner", label: "Curriculum planner", hint: "Long-term and week-by-week plans, unit by unit", icon: "layoutGrid" },
         { href: "/teach/syllabus", label: "Syllabus", hint: "Schemes of work and exam specifications", icon: "scrollText" },
         { href: "/teach/revision", label: "Revision results", hint: "How your pupils did on each unit's revision", icon: "chartLine" },
       ],

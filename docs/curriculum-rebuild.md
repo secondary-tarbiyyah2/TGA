@@ -57,9 +57,18 @@ Y1-2: English and phonics 5, maths 4, topic 2, Qur'an with Qaidah 3, Islamic Stu
   first fee payment 1 Jan. Code, policies, term-dates.ics, prospectus PDF and migration 0178 updated.
 - Secondary curriculum maps (Years 7-11, xlsx from the TSS drive) cleaned of trips/visits/speakers and the
   "Redstone Academy" heading; sent to the owner (not stored in the repo).
+- **Curriculum editor in the portal** (built on branch `curriculum-editor`, PR open, live once merged; migration 0179; staff guide:
+  docs/curriculum-editing.md). Curriculum planner (Curriculum hub, admin and teaching) edits units per year and half
+  term with a week-by-week plan; the Lesson library's **Edit lesson** form edits a lesson and its slides, plan and
+  PDFs rebuild with no upload. The workflow "Sync curriculum from the portal" (scripts/curriculum/sync.mjs) seeds the
+  portal from content/ and copies portal edits back into content/syllabus and content/lessons, then starts the
+  builds. **From now on the portal is the source of truth**: repo edits still flow in, but if a unit or lesson was
+  also edited in the portal since the last sync, the portal's version wins. Before a big repo-side rewrite of a year
+  (e.g. step 1 below), check the planner's "last change" line, or run the sync first.
 
 ### In progress
-- In-portal curriculum editor: branch `curriculum-editor` (helper agent), PR not yet open. Migrations from 0179.
+- In-portal curriculum editor: built, PR open from branch `curriculum-editor` (migration 0179), awaiting review and
+  merge. After merge: Deploy Supabase backend runs the migration, then the sync seeds the portal automatically.
 
 ### Next
 0. Optional: add content/syllabus/ks1-3/design-technology.json (KS1-3 DT statements from gov.uk) so DT is its own
@@ -73,3 +82,6 @@ Y1-2: English and phonics 5, maths 4, topic 2, Qur'an with Qaidah 3, Islamic Stu
 3. After Headteacher sign-off of the plan: update policy 12 (Curriculum) text in the portal (it lives in
    policy_links.body_md; editing it asks staff to re-sign) so its KS1 table matches the new weekly lessons.
 4. Retire Arabic Year 2 lessons the same way when the Year 2 pack is built.
+5. Curriculum editor follow-ups: place Years 2-9 units in half terms (they are all "Not placed yet": only Year 1
+   carries half terms), add week-by-week plans from the year packs, and later let the planner add new lessons (v1
+   edits existing lessons only; new lessons are still added in content/lessons).

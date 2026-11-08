@@ -4,6 +4,9 @@ import Link from "next/link";
 
 import { useCallback, useEffect, useId, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { useLearnSession } from "@/lib/learn/session";
+import { Modal } from "@/components/learn/curriculum/Modal";
+import { LessonEditor } from "@/components/learn/curriculum/LessonEditor";
 import { classColour, myTeachingClasses } from "@/lib/learn/classes";
 import { uploadClassFile } from "@/components/learn/class/Attachments";
 import { Tabs } from "@/components/learn/Tabs";
@@ -13,6 +16,7 @@ import { UnitResults } from "@/components/learn/revision/UnitResults";
 import { PackBuilder, QuestionEditor } from "@/components/learn/revision/PackBuilder";
 import {
   LESSON_COLUMNS,
+  LESSON_COLUMNS_EDITOR,
   YEARS,
   downloadDeck,
   fileNameFor,
@@ -32,27 +36,6 @@ type ClassOpt = { id: string; name: string };
 
 const btn = `${ui.btnSecondary} ${ui.sm}`;
 const btnPrimary = ui.btnPrimary;
-
-function Modal({ title, onClose, children, wide }: { title: string; onClose: () => void; children: React.ReactNode; wide?: boolean }) {
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [onClose]);
-  return (
-    <div role="dialog" aria-modal="true" aria-label={title} className="fixed inset-0 z-50 flex items-center justify-center bg-ink/60 p-3">
-      <div className={`flex max-h-full w-full flex-col overflow-hidden rounded-xl bg-white shadow-xl ${wide ? "max-w-5xl h-full" : "max-w-lg"}`}>
-        <div className="flex items-center justify-between gap-3 border-b border-gold-light px-4 py-2.5">
-          <p className="min-w-0 truncate text-sm font-semibold text-ink">{title}</p>
-          <button type="button" onClick={onClose} className={btn}>
-            Close
-          </button>
-        </div>
-        <div className="min-h-0 flex-1 overflow-auto">{children}</div>
-      </div>
-    </div>
-  );
-}
 
 const YEAR_KEY = "tga-library-year";
 const KIND_LABEL: Record<LessonFileKind, string> = {
@@ -204,6 +187,9 @@ const unitKey = (subjectSlug: string, unit: string) => `${subjectSlug}::${unit}`
  */
 export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
   const supabase = getSupabaseClient();
+  const { roles } = useLearnSession();
+  const canEditLessons = roles.some((r) => r.role === "teacher" || r.role === "head_teacher" || r.role === "admin");
+  const [editingLesson, setEditingLesson] = useState<CurriculumLesson | null>(null);
   const [year, setYearState] = useState<string | null>(null);
   const [myYears, setMyYears] = useState<string[]>([]);
   const [search, setSearch] = useState("");
@@ -307,10 +293,12 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
   const load = useCallback(async () => {
     if (!supabase || !year) return;
     setLessons(null);
-    const [{ data, error }, packList] = await Promise.all([
-      supabase.from("curriculum_lessons").select(LESSON_COLUMNS).eq("year", year).order("subject").order("lesson_no"),
-      unitsForYear(year).catch(() => [] as StaffUnit[]),
-    ]);
+    const fetchLessons = async () => {
+      const r = await supabase.from("curriculum_lessons").select(LESSON_COLUMNS_EDITOR).eq("year", year).order("subject").order("lesson_no");
+      // Before migration 0179 is deployed the editor's columns do not exist yet.
+      return r.error ? supabase.from("curriculum_lessons").select(LESSON_COLUMNS).eq("year", year).order("subject").order("lesson_no") : r;
+    };
+    const [{ data, error }, packList] = await Promise.all([fetchLessons(), unitsForYear(year).catch(() => [] as StaffUnit[])]);
     setPacks(packList);
     revisionOverview()
       .then((rows) => setScores(Object.fromEntries(rows.map((r) => [r.unit_id, r.avg_pct ?? null]))))
@@ -476,7 +464,8 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
             <span className="block text-xs text-ink/65">
               {showUnit ? `${l.subject} · ${l.unit || "Lessons"}` : ""}
               {!showUnit && (l.objectives || []).length ? `${l.objectives.length} objective${l.objectives.length === 1 ? "" : "s"}` : ""}
-              {l.version > 1 && <span className="ml-2 rounded-full bg-teal-100 px-2 py-0.5 font-medium text-teal-900">Edited · v{l.version}</span>}
+              {l.version > 1 && <span className="ml-2 rounded-full bg-teal-100 px-2 py-0.5 font-medium text-teal-900">{l.custom_deck ? "Own slides" : "Edited"} · v{l.version}</span>}
+              {l.rebuild_requested && <span className="ml-2 rounded-full bg-gold-100 px-2 py-0.5 font-medium text-gold-900">New slides on the way</span>}
             </span>
           </button>
           <span className="flex items-center gap-1.5">
@@ -504,16 +493,28 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
               <button type="button" className={btn} onClick={() => setSharing(l)}>
                 Share to class
               </button>
+              {canEditLessons && (
+                <button type="button" className={btn} onClick={() => setEditingLesson(l)}>
+                  Edit lesson
+                </button>
+              )}
               <ActionMenu
                 label={<span aria-label="More actions">⋯</span>}
                 items={[
-                  { label: "Upload my edited version", onClick: () => setReplacing(l) },
+                  ...(canEditLessons ? [{ label: "Upload my own slides instead", onClick: () => setReplacing(l) }] : []),
                   { label: "Version history", onClick: () => setHistory(l) },
                 ]}
               />
             </div>
           ) : (
-            <span className="text-xs text-ink/65">Slides not built yet</span>
+            <span className="flex items-center gap-2 text-xs text-ink/65">
+              Slides not built yet
+              {canEditLessons && (
+                <button type="button" className={btn} onClick={() => setEditingLesson(l)}>
+                  Edit lesson
+                </button>
+              )}
+            </span>
           )}
         </div>
         {expanded && (l.objectives || []).length > 0 && (
@@ -896,6 +897,18 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
           onChanged={() => {
             setHistory(null);
             setMessage("Version restored.");
+            load();
+          }}
+        />
+      )}
+      {editingLesson && (
+        <LessonEditor
+          lesson={editingLesson}
+          canEdit={canEditLessons}
+          onClose={() => setEditingLesson(null)}
+          onSaved={(msg) => {
+            setEditingLesson(null);
+            setMessage(msg);
             load();
           }}
         />
@@ -1463,7 +1476,10 @@ function ReplaceDialog({ lesson, onClose, onDone }: { lesson: CurriculumLesson; 
   return (
     <Modal title={`Upload edited deck: ${lesson.title}`} onClose={onClose}>
       <div className="space-y-3 p-4 text-sm text-ink/80">
-        <p>Download the PowerPoint, change it in PowerPoint, then upload it here. The old version is kept in History.</p>
+        <p>
+          Most changes are quicker with <strong>Edit lesson</strong>: the slides are rebuilt for you. Use this instead to keep slides you made yourself: download the PowerPoint, change it in PowerPoint,
+          then upload it here. Your slides are then kept even when the lesson is edited. The old version is kept in History.
+        </p>
         <label className="block font-medium">
           Edited PowerPoint (.pptx)
           <input type="file" accept=".pptx,.ppt,.odp" onChange={(e) => setPptx(e.target.files?.[0] || null)} className="mt-1 block w-full text-sm" />

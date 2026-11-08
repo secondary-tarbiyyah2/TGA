@@ -91,5 +91,19 @@ Every spec unit the board lists at section level must appear in `units` so the c
   "gaps": ["…"]
 }
 ```
+Optional keys on any unit (set by staff in the portal's Curriculum planner, see "Edited in the portal" below):
+`halfTerm` (`autumn1` … `summer2`; left out when the title already starts "Autumn 1:" etc.),
+`weeks` (the medium-term plan: `[{ "week": 1, "lessons": ["…"], "vocabulary": ["…"], "home": "…" }]`),
+`resources` and `foundingYear` (one line each). The syllabus pack prints them under the unit.
+
 `yearMap` keys: `reception`, `y1` … `y9`. Statutory statements are by key stage; the year allocation is a
 recommended sequence. Say so in `statusNote`. Provide EVERY year the subject runs.
+
+## Edited in the portal
+
+The units in these files (KS1-3 `yearMap`, KS4 `units`) are also held in the portal (table `curriculum_units`,
+migration 0179), where staff edit them in the Curriculum planner. The portal is the source of truth: the workflow
+"Sync curriculum from the portal" (`scripts/curriculum/sync.mjs`) writes portal edits back into these files and
+commits them, changing only the units that were edited. Editing a file here still works and is copied into the
+portal, unless the same part was also edited in the portal since the last sync (then the portal version wins).
+See docs/curriculum-editing.md.
