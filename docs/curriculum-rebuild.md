@@ -19,7 +19,8 @@ Keep this file current. Anyone (person or AI) picking up the curriculum work sta
   - Year 7: https://claude.ai/artifact/Eh7nMbS7tKNTJJmavymD3S
   - Year 8: https://claude.ai/artifact/WfgvRBFjZUmic9bM7PHtzg
   - Year 9: https://claude.ai/artifact/RegmdsBx1cvrRpqab4tgzx
-  - Years 10 and 11: docs being created (sources in docs/curriculum-packs/).
+  - Year 10: https://claude.ai/artifact/NTUgLkCJLJuKcUteoSF2xL
+  - Year 11: https://claude.ai/artifact/6smpe3kadbDLcrvknySaKb
   Markdown sources and the briefs used: docs/curriculum-packs/.
 - Working files used to build each pack (subject plans by helper agents) are not kept in the repo; the docs are the record.
 - Years 1-6 follow **Tarbiyyah Primary's Long Term Plan 2026-2027** (Cornerstones Maestro projects, same order),
