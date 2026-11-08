@@ -7,7 +7,9 @@ import type { FeeBand } from "@/content/seed";
 import { Kicker } from "@/components/Section";
 import { StarMark } from "@/components/StarMark";
 import { formatGBP } from "@/lib/format";
-import { COMMON_TIME_ZONES, UK_TIME_ZONE, gmtOffsetLabel, initialTimeZone, isValidTimeZone, otherTimeZones, saveTimeZone, zoneCity, zoneLabel } from "@/lib/timezones";
+import { UK_TIME_ZONE, isValidTimeZone } from "@/lib/timezones";
+import { initialPlace, placeLabel, placeTimeName, savePlace } from "@/lib/place";
+import { PlacePicker } from "@/components/booking/PlacePicker";
 import {
   EMPTY_ANSWERS,
   assessTiming,
@@ -27,6 +29,7 @@ import {
   type FitAnswers,
   type LocalDay,
   type LocalTime,
+  type NeedItem,
   type NeedStatus,
   type Reason,
   type StepKey,
@@ -104,8 +107,9 @@ export function FitCheck({ feeBands, fees }: { feeBands: FeeBand[]; fees: FeeSet
   function start() {
     moved.current = true;
     if (!tzDetected) {
-      setAnswers((a) => ({ ...a, timeZone: initialTimeZone() }));
-      setTzDetected(true);
+      const place = initialPlace();
+      setAnswers((a) => ({ ...a, timeZone: place.tz, country: place.country }));
+      setTzDetected(place.source === "device");
     }
     setStep(visibleSteps(answers)[0]);
     setPhase("questions");
@@ -116,7 +120,7 @@ export function FitCheck({ feeBands, fees }: { feeBands: FeeBand[]; fees: FeeSet
     moved.current = true;
     const list = visibleSteps(a);
     const i = list.indexOf(from);
-    if (from === "location") saveTimeZone(a.timeZone);
+    if (from === "location") savePlace(a.country ?? null, a.timeZone);
     if (i === -1 || i >= list.length - 1) setPhase("result");
     else setStep(list[i + 1]);
   }
@@ -231,8 +235,8 @@ export function FitCheck({ feeBands, fees }: { feeBands: FeeBand[]; fees: FeeSet
                 limitNudge={limitNudge}
                 onChooseSingle={chooseSingle}
                 onTogglePriority={togglePriority}
-                onTzChange={(tz) => {
-                  setAnswers((a) => ({ ...a, timeZone: tz }));
+                onTzChange={(tz, country) => {
+                  setAnswers((a) => ({ ...a, timeZone: tz, country }));
                   setTzDetected(false);
                 }}
               />
@@ -327,10 +331,10 @@ function QuestionBody({
   limitNudge: boolean;
   onChooseSingle: (key: SingleKey, value: string) => void;
   onTogglePriority: (value: string) => void;
-  onTzChange: (tz: string) => void;
+  onTzChange: (tz: string, country: string | null) => void;
 }) {
   if (step === "children") return <ChildrenStep answers={answers} setAnswers={setAnswers} headingRef={headingRef} />;
-  if (step === "location") return <LocationStep tz={answers.timeZone} detected={tzDetected} onChange={onTzChange} headingRef={headingRef} />;
+  if (step === "location") return <LocationStep tz={answers.timeZone} country={answers.country ?? null} detected={tzDetected} onChange={onTzChange} headingRef={headingRef} />;
 
   if (step === "priorities") {
     const chosen = answers.priorities;
@@ -508,54 +512,27 @@ function ChildrenStep({
   );
 }
 
-function LocationStep({ tz, detected, onChange, headingRef }: { tz: string; detected: boolean; onChange: (tz: string) => void; headingRef: React.RefObject<HTMLHeadingElement | null> }) {
+function LocationStep({
+  tz,
+  country,
+  detected,
+  onChange,
+  headingRef,
+}: {
+  tz: string;
+  country: string | null;
+  detected: boolean;
+  onChange: (tz: string, country: string | null) => void;
+  headingRef: React.RefObject<HTMLHeadingElement | null>;
+}) {
   const q = Q.location;
-  const others = useMemo(() => otherTimeZones(), []);
-  const known = COMMON_TIME_ZONES.some((z) => z.tz === tz) || others.some((z) => z.tz === tz);
   const timing = useMemo(() => (isValidTimeZone(tz) ? assessTiming(tz) : null), [tz]);
-  const now = useMemo(() => new Date(), []);
-  const withOffset = (zone: string, label: string) => {
-    const off = gmtOffsetLabel(zone, now);
-    return off ? `${label} (${off})` : label;
-  };
   const toneStyle = timing?.tone === "late" ? "border-ink/25 bg-ink-900 text-white" : timing?.tone === "edge" ? "border-gold-300 bg-gold-100 text-ink" : "border-gold-light/60 bg-gold-50 text-ink";
 
   return (
     <>
       <QuestionHeading title={q.title} subtitle={q.subtitle} headingRef={headingRef} />
-      <label htmlFor="fc-tz" className="text-sm font-semibold text-ink">
-        {q.selectLabel}
-      </label>
-      <div className="relative mt-1.5">
-        <select
-          id="fc-tz"
-          value={tz}
-          onChange={(e) => onChange(e.target.value)}
-          className="w-full appearance-none rounded-2xl border-[1.5px] border-gold-light/70 bg-white py-3.5 pl-4 pr-11 text-base text-ink focus:border-gold-500 focus:outline-none focus:ring-2 focus:ring-gold-300"
-        >
-          {!known && <option value={tz}>{withOffset(tz, zoneLabel(tz))}</option>}
-          <optgroup label={q.commonGroup}>
-            {COMMON_TIME_ZONES.map((z) => (
-              <option key={z.tz} value={z.tz}>
-                {withOffset(z.tz, z.label)}
-              </option>
-            ))}
-          </optgroup>
-          {others.length > 0 && (
-            <optgroup label={q.otherGroup}>
-              {others.map((z) => (
-                <option key={z.tz} value={z.tz}>
-                  {z.label}
-                </option>
-              ))}
-            </optgroup>
-          )}
-        </select>
-        <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-gold-700" aria-hidden="true">
-          <ChevronDown />
-        </span>
-      </div>
-      {detected && <p className="mt-2 text-xs text-ink/60">{q.detected}</p>}
+      <PlacePicker country={country} tz={tz} fromDevice={detected} onChange={(c, z) => onChange(z, c)} title={q.selectLabel} compact />
 
       {timing && (
         <div className={`mt-6 rounded-2xl border p-5 transition-colors ${toneStyle}`} aria-live="polite">
@@ -620,15 +597,16 @@ function Result({
   const nextKey = nextStepFor(verdict, answers.start);
   const v = C.verdicts[verdict];
   const isUk = answers.timeZone === UK_TIME_ZONE;
-  const city = zoneCity(answers.timeZone);
+  const city = placeTimeName(answers.timeZone, answers.country ?? null);
+  const where = placeLabel(answers.country ?? null, answers.timeZone);
 
   const startLabel = Q.start.options.find((o) => o.value === answers.start)?.label ?? "";
-  const summaryLine = `${years.join(", ")}. Time zone: ${zoneLabel(answers.timeZone)}. Verdict: ${v.label}. Start: ${startLabel}.`;
+  const summaryLine = `${years.join(", ")}. Joining from: ${where}. Verdict: ${v.label}. Start: ${startLabel}.`;
   const callHref = `${S.next.hrefs.call}?year=${encodeURIComponent(years[0] ?? "")}&notes=${encodeURIComponent(S.next.callNotes(summaryLine))}#book`;
 
   return (
     <div className="mx-auto max-w-5xl space-y-6">
-      <VerdictHero verdict={verdict} heading={v.heading} body={v.body} label={v.label} headingRef={headingRef} facts={[years.join(", "), zoneLabel(answers.timeZone), startLabel]} />
+      <VerdictHero verdict={verdict} heading={v.heading} body={v.body} label={v.label} headingRef={headingRef} facts={[years.join(", "), where, startLabel]} />
 
       <section className={card} aria-labelledby="fc-reasons">
         <SectionTitle id="fc-reasons">{C.reasons.reasonsTitle}</SectionTitle>
@@ -741,7 +719,7 @@ function Result({
 
       <NextSteps nextKey={nextKey} callHref={callHref} />
 
-      <EmailSummary answers={answers} years={years} verdict={verdict} reasons={reasons} timing={timing} family={family} nextKey={nextKey} />
+      <EmailSummary answers={answers} years={years} verdict={verdict} reasons={reasons} timing={timing} family={family} nextKey={nextKey} needs={needs} fees={fees} callHref={callHref} where={where} startLabel={startLabel} />
 
       <div className="flex flex-col items-center gap-4 pt-2 text-center">
         <div className="flex flex-wrap justify-center gap-3">
@@ -965,21 +943,25 @@ function CostDetails({ family, fees, years }: { family: NonNullable<ReturnType<t
   );
 }
 
-function NextSteps({ nextKey, callHref }: { nextKey: keyof typeof S.next.steps; callHref: string }) {
+/** The next-step buttons in the order that suits the verdict (also used for the email). */
+function nextButtons(nextKey: keyof typeof S.next.steps, callHref: string): { label: string; href: string }[] {
   const b = S.next.buttons;
   const h = S.next.hrefs;
   const call = { label: b.call, href: callHref };
   const evening = { label: b.openEvening, href: h.openEvening };
   const apply = { label: b.apply, href: h.apply };
   const register = { label: b.register, href: h.register };
-  const order =
-    nextKey === "strongJanuary" || nextKey === "sortJanuary"
-      ? [apply, evening, call]
-      : nextKey === "talk"
-        ? [call, evening, apply]
-        : nextKey === "later"
-          ? [register, evening, call]
-          : [evening, call, apply];
+  return nextKey === "strongJanuary" || nextKey === "sortJanuary"
+    ? [apply, evening, call]
+    : nextKey === "talk"
+      ? [call, evening, apply]
+      : nextKey === "later"
+        ? [register, evening, call]
+        : [evening, call, apply];
+}
+
+function NextSteps({ nextKey, callHref }: { nextKey: keyof typeof S.next.steps; callHref: string }) {
+  const order = nextButtons(nextKey, callHref);
   return (
     <section className={`${card} grid gap-8 lg:grid-cols-[1fr_1.1fr]`} aria-labelledby="fc-next">
       <div>
@@ -1014,6 +996,113 @@ function NextSteps({ nextKey, callHref }: { nextKey: keyof typeof S.next.steps; 
   );
 }
 
+/** Everything the summary email shows, as plain text in sections (the email function lays it out and escapes it). */
+function buildEmailSummary(p: {
+  answers: FitAnswers;
+  years: string[];
+  verdict: Verdict;
+  reasons: Reason[];
+  timing: ReturnType<typeof assessTiming>;
+  family: ReturnType<typeof familyFees>;
+  nextKey: keyof typeof S.next.steps;
+  needs: NeedItem[];
+  fees: FeeSettingsInput;
+  callHref: string;
+  where: string;
+  startLabel: string;
+  zone: string;
+}) {
+  const { answers, years, verdict, timing, family } = p;
+  const v = C.verdicts[verdict];
+  const isUk = answers.timeZone === UK_TIME_ZONE;
+  const range = (a: LocalTime, b: LocalTime) => {
+    const shift = (t: LocalTime) => (t.dayShift > 0 ? ` (${Q.location.nextDay})` : t.dayShift < 0 ? ` (${Q.location.prevDay})` : "");
+    return `${a.label}${shift(a)} to ${b.label}${shift(b)}`;
+  };
+  const w = timing.winter;
+  const needLabel: Record<NeedStatus, string> = { ready: S.need.statusReady, arrange: S.need.statusArrange, missing: S.need.statusMissing, check: S.need.statusCheck };
+  const priorities = answers.priorities.length > 0 ? answers.priorities : [...S.offer.defaults];
+  const n = years.length;
+  const fmtFee = (x: number) => (Number.isInteger(x) ? `£${x}` : formatGBP(x));
+  const siblingOff = family ? family.plans.termly.perChild.reduce((s, c) => s + c.siblingDiscount, 0) : 0;
+
+  return {
+    version: 2,
+    verdict: { key: verdict, label: v.label, heading: v.heading, body: v.body },
+    facts: [
+      { label: n > 1 ? "Children" : "Year group", value: years.join(", ") },
+      { label: "Joining from", value: p.where },
+      { label: "Starting", value: p.startLabel },
+    ].filter((f) => f.value),
+    reasonsTitle: C.reasons.reasonsTitle,
+    reasons: p.reasons.map((r) => ({ tone: r.tone, text: r.text })),
+    day: {
+      title: S.day.title,
+      lead: isUk ? "Live lessons in UK time." : S.day.lead(p.zone),
+      yourLabel: isUk ? S.day.ukTime : `${p.zone} time`,
+      showUk: !isUk,
+      rows: [
+        { day: S.day.monThu, yours: range(w.start, w.end), uk: `${timing.ukStart} to ${timing.ukEnd}` },
+        { day: S.day.fri, yours: range(w.start, w.fridayEnd), uk: `${timing.ukStart} to ${timing.ukFridayEnd}` },
+      ],
+      concern: timing.tone === "late",
+      notes: [
+        ...(timing.changesInSummer ? [S.day.summerChange(timing.summer.start.label, timing.summer.end.label)] : []),
+        ...years.map((y) => {
+          const ks = keyStageFor(y);
+          return `${ks ? S.day.childLine(y, ks.title) : y}: ${lessonsLine(y)}`;
+        }),
+        ...(years.some((y) => yearNumber(y) <= 2) ? [S.day.ks1Note] : []),
+        S.day.fridayNote,
+        S.day.classSize,
+      ],
+    },
+    need: { title: S.need.title, items: p.needs.map((x) => ({ text: S.need.items[x.key], status: x.status, statusLabel: needLabel[x.status] })) },
+    cost: family
+      ? {
+          title: S.cost.title,
+          period: S.cost.period,
+          rows: [
+            ...family.children.map((c) => ({ label: c.year, detail: c.band, amount: formatGBP(c.annual) })),
+            ...(siblingOff > 0 ? [{ label: S.cost.siblingRow, detail: "", amount: `-${formatGBP(siblingOff)}` }] : []),
+          ],
+          totalLabel: S.cost.perChildTitle,
+          total: formatGBP(family.plans.termly.total),
+          plansTitle: S.cost.plansTitle,
+          plans: [
+            { label: S.cost.annual, amount: planLine(family.plans.annual.payments), note: p.fees.annualDiscountPercent > 0 ? S.cost.annualNote(p.fees.annualDiscountPercent) : "" },
+            { label: S.cost.twoPayments, amount: planLine(family.plans.termly.payments), note: family.plans.termly.payments.length === 2 ? S.cost.twoPaymentsNote : "" },
+            { label: S.cost.monthly, amount: planLine(family.plans.monthly.payments), note: S.cost.monthlyNote(family.plans.monthly.payments.length) },
+          ],
+          notes: [
+            S.cost.applicationFee(fmtFee(family.applicationFee), n),
+            ...(n > 1 ? [family.siblingPercent ? S.cost.siblingLine(family.siblingPercent) : S.cost.siblingFallback] : []),
+            ...(years.some((y) => yearNumber(y) >= 10) ? [S.cost.examNote] : []),
+          ],
+          link: { label: S.cost.link, href: S.cost.href },
+        }
+      : null,
+    offer: {
+      title: S.offer.title,
+      intro: answers.priorities.length === 0 ? S.offer.noneChosen : "",
+      items: priorities
+        .map((k) => S.offer.items[k as keyof typeof S.offer.items])
+        .filter(Boolean)
+        .map((i) => ({ label: i.label, body: i.body })),
+      honestTitle: S.offer.honest.title,
+      honest: [...S.offer.honest.items],
+    },
+    next: {
+      title: S.next.title,
+      text: S.next.steps[p.nextKey],
+      buttons: nextButtons(p.nextKey, p.callHref),
+      datesTitle: S.next.datesTitle,
+      dates: S.next.dates.map((d) => ({ label: d.label, when: d.when })),
+    },
+    disclaimer: S.disclaimer,
+  };
+}
+
 type SendState = "idle" | "sending" | "sent" | "error";
 
 function EmailSummary({
@@ -1024,6 +1113,11 @@ function EmailSummary({
   timing,
   family,
   nextKey,
+  needs,
+  fees,
+  callHref,
+  where,
+  startLabel,
 }: {
   answers: FitAnswers;
   years: string[];
@@ -1032,6 +1126,11 @@ function EmailSummary({
   timing: ReturnType<typeof assessTiming>;
   family: ReturnType<typeof familyFees>;
   nextKey: keyof typeof S.next.steps;
+  needs: NeedItem[];
+  fees: FeeSettingsInput;
+  callHref: string;
+  where: string;
+  startLabel: string;
 }) {
   const E = S.email;
   const [name, setName] = useState("");
@@ -1069,7 +1168,7 @@ function EmailSummary({
       });
       if (insertError) throw insertError;
 
-      const zone = zoneCity(answers.timeZone);
+      const zone = placeTimeName(answers.timeZone, answers.country ?? null);
       const w = timing.winter;
       const liveDayText =
         answers.timeZone === UK_TIME_ZONE
@@ -1100,6 +1199,9 @@ function EmailSummary({
             `${S.next.title}: ${S.next.steps[nextKey]}`,
             S.next.dates.map((d) => `${d.label}: ${d.when}`).join(". ") + ".",
           ],
+          // The full summary, laid out section by section like the page (read by quiz-send-plan v2;
+          // the fields above stay for an older deployed function).
+          summary: buildEmailSummary({ answers, years, verdict, reasons, timing, family, nextKey, needs, fees, callHref, where, startLabel, zone }),
         }),
       });
       const result = await res.json().catch(() => ({ ok: false }));
@@ -1179,13 +1281,6 @@ function ArrowLeft() {
   return (
     <svg viewBox="0 0 20 20" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="M16 10H4M9 5l-5 5 5 5" />
-    </svg>
-  );
-}
-function ChevronDown() {
-  return (
-    <svg viewBox="0 0 20 20" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M5 8l5 5 5-5" />
     </svg>
   );
 }

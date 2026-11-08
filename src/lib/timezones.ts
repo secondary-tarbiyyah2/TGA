@@ -152,14 +152,15 @@ export function formatDay(at: Date, tz: string): string {
 
 /**
  * "Monday 2 November 2026 at 14:00 Dubai time (10:00 UK time)", or
+ * with `placeName` ("UAE") in place of the city, or
  * "Monday 2 November 2026 at 10:00 UK time" when the zone matches the UK.
  */
-export function formatWhenWithUk(iso: string, tz: string): string {
+export function formatWhenWithUk(iso: string, tz: string, placeName?: string): string {
   const at = new Date(iso);
   const ukDay = formatDay(at, UK_TIME_ZONE);
   const ukTime = formatTime(at, UK_TIME_ZONE);
   if (!isValidTimeZone(tz) || sameAsUk(tz, at)) return `${ukDay} at ${ukTime} UK time`;
   const day = formatDay(at, tz);
   const ukPart = day === ukDay ? `${ukTime} UK time` : `${ukDay} at ${ukTime} UK time`;
-  return `${day} at ${formatTime(at, tz)} ${zoneCity(tz)} time (${ukPart})`;
+  return `${day} at ${formatTime(at, tz)} ${placeName || zoneCity(tz)} time (${ukPart})`;
 }

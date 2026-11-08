@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import type { FeeBand, Discount } from "@/content/seed";
 import { formatGBP } from "@/lib/format";
 import { computeFeeSchedule, estimateFamilyFees, FEE_DEFAULTS, FEE_POLICY_DEFAULTS, type PaymentPlan } from "@/lib/fees";
+import { Select } from "@/components/ui/Dropdown";
 
 const PLANS: { value: PaymentPlan; label: string }[] = [
   { value: "annual", label: "Annual (pay in full)" },
@@ -95,25 +96,25 @@ export function FeeEstimator({
           <label htmlFor="estimator-children" className="text-sm font-medium text-ink">
             Number of children
           </label>
-          <select id="estimator-children" value={childCount} onChange={(e) => setChildCount(Number(e.target.value))} className={sel}>
+          <Select id="estimator-children" value={childCount} onChange={(e) => setChildCount(Number(e.target.value))} className={sel}>
             {Array.from({ length: MAX_CHILDREN }, (_, i) => i + 1).map((n) => (
               <option key={n} value={n}>{n}</option>
             ))}
-          </select>
+          </Select>
         </div>
 
         <div>
           <label htmlFor="estimator-frequency" className="text-sm font-medium text-ink">
             Payment plan
           </label>
-          <select id="estimator-frequency" value={plan} onChange={(e) => setPlan(e.target.value as PaymentPlan)} className={sel}>
+          <Select id="estimator-frequency" value={plan} onChange={(e) => setPlan(e.target.value as PaymentPlan)} className={sel}>
             {PLANS.map((f) => (
               <option key={f.value} value={f.value}>
                 {f.label}
                 {f.value === "termly" ? "" : f.value === "monthly" ? ` (${schedule.instalments} payments)` : ""}
               </option>
             ))}
-          </select>
+          </Select>
         </div>
 
         {bandIds.map((id, i) => (
@@ -121,7 +122,7 @@ export function FeeEstimator({
             <label htmlFor={`estimator-band-${i}`} className="text-sm font-medium text-ink">
               {childCount === 1 ? "Year group" : `Child ${i + 1}: year group`}
             </label>
-            <select
+            <Select
               id={`estimator-band-${i}`}
               value={id}
               onChange={(e) => setBandIds((ids) => ids.map((x, j) => (j === i ? e.target.value : x)))}
@@ -132,7 +133,7 @@ export function FeeEstimator({
                   {b.yearGroupRange}
                 </option>
               ))}
-            </select>
+            </Select>
           </div>
         ))}
       </div>

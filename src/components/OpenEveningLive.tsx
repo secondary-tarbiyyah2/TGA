@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { getLiveSiteSettings } from "@/lib/content";
 import { getEdgeFunctionUrl, getSupabaseClient } from "@/lib/supabase/client";
+import { Select } from "@/components/ui/Dropdown";
 
 type Session = {
   id: string;
@@ -238,11 +239,11 @@ export function OpenEveningLive({ initialSettings }: { initialSettings: OpenEven
                           </label>
                           <label className="block text-sm font-medium text-ink">
                             Number of people attending
-                            <select name="attendees" defaultValue="1" className={`${inputCls} ${bad("attendees")}`}>
+                            <Select name="attendees" defaultValue="1" className={`${inputCls} ${bad("attendees")}`}>
                               {Array.from({ length: Math.min(MAX_PER_BOOKING, s.seats_left) }, (_, i) => i + 1).map((n) => (
                                 <option key={n} value={n}>{n}</option>
                               ))}
-                            </select>
+                            </Select>
                           </label>
                         </div>
                         <fieldset className="mt-4">

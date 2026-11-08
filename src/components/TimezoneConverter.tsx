@@ -1,26 +1,9 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { FALLBACK_PERIODS } from "@/lib/learn/timetable";
-
-// Common home timezones for a globally-spread family audience, grouped
-// roughly by region. Real IANA zone identifiers, the actual conversion
-// math (below) is real, not illustrative; only the "which cities to list"
-// choice is editorial.
-const ZONES: { label: string; tz: string }[] = [
-  { label: "London (UK)", tz: "Europe/London" },
-  { label: "Lagos, Nigeria", tz: "Africa/Lagos" },
-  { label: "Cairo, Egypt", tz: "Africa/Cairo" },
-  { label: "Karachi, Pakistan", tz: "Asia/Karachi" },
-  { label: "Dubai, UAE", tz: "Asia/Dubai" },
-  { label: "Riyadh, Saudi Arabia", tz: "Asia/Riyadh" },
-  { label: "Kuala Lumpur, Malaysia", tz: "Asia/Kuala_Lumpur" },
-  { label: "Jakarta, Indonesia", tz: "Asia/Jakarta" },
-  { label: "Istanbul, Turkey", tz: "Europe/Istanbul" },
-  { label: "New York, USA", tz: "America/New_York" },
-  { label: "Toronto, Canada", tz: "America/Toronto" },
-  { label: "Sydney, Australia", tz: "Australia/Sydney" },
-];
+import { PlacePicker } from "@/components/booking/PlacePicker";
+import { initialPlace, savePlace, type Place } from "@/lib/place";
 
 // A real, non-DST-ambiguous reference date (mid-March, before the UK's
 // clock change) used purely to anchor the UK wall-clock times below to an
@@ -43,7 +26,11 @@ function formatInZone(d: Date, tz: string): string {
  * where they live.
  */
 export function TimezoneConverter() {
-  const [tz, setTz] = useState(ZONES[1].tz); // Lagos default, a globally-spread audience, not a UK-centric default
+  // Server render shows the UK; the visitor's own place (saved, or from their device) replaces it on load.
+  const [place, setPlace] = useState<Place>({ country: "GB", tz: "Europe/London", source: "device" });
+  // eslint-disable-next-line react-hooks/set-state-in-effect -- browser storage and the device's zone only exist after mount (static page)
+  useEffect(() => setPlace(initialPlace()), []);
+  const tz = place.tz;
 
   const bands = useMemo(() => {
     const span = (weekday: number) => {
@@ -63,18 +50,17 @@ export function TimezoneConverter() {
 
   return (
     <div className="rounded-3xl border-2 border-gold-300 bg-white p-8 shadow-warm">
-      <label className="block text-sm font-medium text-ink">
-        Where&apos;s home?
-        <select
-          value={tz}
-          onChange={(e) => setTz(e.target.value)}
-          className="mt-2 w-full max-w-xs rounded-lg border border-gold-light/60 px-3 py-2.5 text-sm"
-        >
-          {ZONES.map((z) => (
-            <option key={z.tz} value={z.tz}>{z.label}</option>
-          ))}
-        </select>
-      </label>
+      <PlacePicker
+        country={place.country}
+        tz={tz}
+        fromDevice={place.source === "device"}
+        onChange={(country, next) => {
+          setPlace({ country, tz: next, source: "saved" });
+          savePlace(country, next);
+        }}
+        title="Where's home?"
+        compact
+      />
 
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
         {bands.map((b) => (

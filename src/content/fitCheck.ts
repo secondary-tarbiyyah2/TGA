@@ -59,11 +59,8 @@ export const FIT_CHECK = {
     },
     location: {
       title: "Where will you be learning from?",
-      subtitle: "Live lessons run on UK time. Pick your time zone and we will show when the school day falls for you.",
-      selectLabel: "Your time zone",
-      commonGroup: "Common time zones",
-      otherGroup: "All other time zones",
-      detected: "We have picked this from your device. Change it if it is wrong.",
+      subtitle: "Live lessons run on UK time. Choose your country and we will show when the school day falls for you.",
+      selectLabel: "Your country",
       previewTitle: "Your child's live school day would be",
       monThu: "Monday to Thursday",
       fri: "Friday",

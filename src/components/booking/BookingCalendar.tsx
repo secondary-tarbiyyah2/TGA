@@ -4,8 +4,11 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { getSupabaseClient, getEdgeFunctionUrl } from "@/lib/supabase/client";
 import { COUNTRIES } from "@/lib/countries";
-import { formatTime, formatWhenWithUk, initialTimeZone, sameAsUk, saveTimeZone, UK_TIME_ZONE } from "@/lib/timezones";
-import { TimeZonePicker } from "@/components/booking/TimeZonePicker";
+import { formatTime, formatWhenWithUk as formatWhen, sameAsUk, UK_TIME_ZONE } from "@/lib/timezones";
+import { countryByCode, initialPlace, placeTimeName, savePlace, type Place } from "@/lib/place";
+import { PlacePicker } from "@/components/booking/PlacePicker";
+import { Select } from "@/components/ui/Dropdown";
+import { Combobox } from "@/components/admissions/Combobox";
 
 type Slot = { slot_start: string; slot_end: string };
 /** A bookable time, with every staff member free then (who takes the call depends on who is available). */
@@ -47,14 +50,26 @@ export function BookingCalendar() {
   const [status, setStatus] = useState<Status>("idle");
   const [renderedAt] = useState(() => Date.now());
 
-  // The visitor's time zone: their saved choice, else the one their device reports.
-  const [tz, setTz] = useState<string>(() => initialTimeZone());
-  const changeTz = (next: string) => {
-    setTz(next);
-    saveTimeZone(next);
-    setSelectedDate(null);
-    setSelectedSlot(null);
+  // Where the family is joining from: their saved choice, else what their device reports.
+  const [place, setPlace] = useState<Place>(() => initialPlace());
+  const tz = place.tz;
+  const changePlace = (country: string | null, next: string) => {
+    setPlace({ country, tz: next, source: "saved" });
+    savePlace(country, next);
+    const name = countryByCode(country)?.name;
+    if (name && COUNTRIES.includes(name)) setCountryField((v) => (v && v !== countryByCode(place.country)?.name ? v : name));
+    if (next !== tz) {
+      setSelectedDate(null);
+      setSelectedSlot(null);
+    }
   };
+  const placeName = placeTimeName(tz, place.country);
+  const formatWhenWithUk = (iso: string, zone: string) => formatWhen(iso, zone, placeName);
+  // The booking form's Country starts as the country chosen above (they can still change it).
+  const [countryField, setCountryField] = useState(() => {
+    const name = countryByCode(place.country)?.name;
+    return name && COUNTRIES.includes(name) ? name : "";
+  });
   const timesRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -260,8 +275,8 @@ export function BookingCalendar() {
   return (
     <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr]">
       <div className="rounded-2xl border border-gold-light/50 bg-white p-6">
-        <p className="text-sm font-medium text-ink">You&apos;ll speak with a member of our admissions team.</p>
-        <TimeZonePicker value={tz} onChange={changeTz} />
+        <PlacePicker country={place.country} tz={tz} fromDevice={place.source === "device"} onChange={changePlace} />
+        <p className="mt-5 border-t border-gold-light/40 pt-4 text-sm font-medium text-ink">Choose a day. You&apos;ll speak with a member of our admissions team.</p>
 
         <div className="mt-4 flex items-center justify-between">
           <button type="button" onClick={() => setMonthCursor((d) => new Date(d.getFullYear(), d.getMonth() - 1, 1))} aria-label="Previous month" className="p-2 text-gold-700">
@@ -369,21 +384,28 @@ export function BookingCalendar() {
                 Phone / WhatsApp
                 <input name="phone" type="tel" required className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
               </label>
-              <label className="block text-sm font-medium text-ink">
-                Country
-                <input name="country" type="text" list="booking-countries" required autoComplete="country-name" className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />
-                <datalist id="booking-countries">
-                  {COUNTRIES.map((c) => <option key={c} value={c} />)}
-                </datalist>
-              </label>
+              <div>
+                <label htmlFor="booking-country" className="block text-sm font-medium text-ink">Country</label>
+                <Combobox
+                  id="booking-country"
+                  name="country"
+                  value={countryField}
+                  onChange={setCountryField}
+                  options={COUNTRIES}
+                  aliases={{ "United Kingdom": ["UK", "England", "Britain"], "United Arab Emirates": ["UAE", "Dubai"], "United States": ["USA", "America"], "Saudi Arabia": ["KSA"] }}
+                  listLabel="Countries"
+                  autoComplete="country-name"
+                  inputClassName="w-full rounded-lg border border-gold-light/60 px-3 py-2"
+                />
+              </div>
             </div>
-            <label className="mt-4 block text-sm font-medium text-ink">
-              Child&apos;s year group(s)
-              <select name="yearGroups" defaultValue={params.get("year") || ""} required className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2">
+            <div className="mt-4">
+              <label htmlFor="booking-year" className="block text-sm font-medium text-ink">Child&apos;s year group(s)</label>
+              <Select id="booking-year" name="yearGroups" defaultValue={params.get("year") || ""} required wrapperClassName="mt-1" className="rounded-lg border border-gold-light/60 px-3 py-2">
                 <option value="">Select a year group</option>
                 {YEAR_GROUPS.map((y) => <option key={y}>{y}</option>)}
-              </select>
-            </label>
+              </Select>
+            </div>
             <label className="mt-4 block text-sm font-medium text-ink">
               Anything we should know? <span className="font-normal text-ink/65">(optional)</span>
               <textarea name="notes" defaultValue={params.get("notes") || ""} rows={3} className="mt-1 w-full rounded-lg border border-gold-light/60 px-3 py-2" />

@@ -14,9 +14,13 @@ const BRAND = {
   cream: "#FDFBF6",
 };
 
-export function emailShell(bodyHtml: string): string {
+/** `preheader`: the line inboxes show after the subject (hidden in the email itself). */
+export function emailShell(bodyHtml: string, preheader = ""): string {
+  const pre = preheader
+    ? `<div style="display:none;max-height:0;overflow:hidden;opacity:0;color:transparent;">${preheader.replace(/[<>&]/g, "")}</div>`
+    : "";
   return `<!DOCTYPE html>
-<html><body style="margin:0;padding:0;background:${BRAND.cream};font-family:Georgia,'Times New Roman',serif;color:${BRAND.ink};">
+<html><body style="margin:0;padding:0;background:${BRAND.cream};font-family:Georgia,'Times New Roman',serif;color:${BRAND.ink};">${pre}
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:${BRAND.cream};padding:32px 0;">
     <tr><td align="center">
       <table role="presentation" width="560" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid ${BRAND.gold};border-radius:16px;overflow:hidden;">

@@ -24,6 +24,8 @@ export type FitAnswers = {
   /** One year group ("Year 1" to "Year 11") per child; null until chosen. */
   children: (string | null)[];
   timeZone: string;
+  /** ISO country code chosen with the time zone (e.g. "AE"), or null if unknown. */
+  country?: string | null;
   reason: string | null;
   priorities: string[];
   setup: string | null;
@@ -36,6 +38,7 @@ export type FitAnswers = {
 export const EMPTY_ANSWERS: FitAnswers = {
   children: [null],
   timeZone: UK_TIME_ZONE,
+  country: "GB",
   reason: null,
   priorities: [],
   setup: null,

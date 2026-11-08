@@ -18,6 +18,7 @@
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
 import { emailShell, sendEmail } from "../_shared/resend.ts";
+import { renderSummaryEmail } from "./summaryEmail.ts";
 
 const supabase = createClient(
   Deno.env.get("SUPABASE_URL")!,
@@ -64,6 +65,17 @@ Deno.serve(async (req) => {
   const timezoneConcern = body.timezoneConcern === true;
   const verdict = String(body.verdict || "");
 
+  // Version 2: the full result, section by section, as the family saw it on the page.
+  const summary = body.summary && typeof body.summary === "object" ? (body.summary as Record<string, unknown>) : null;
+  if (summary && summary.version === 2) {
+    const out = renderSummaryEmail(summary, firstName);
+    const sent = await sendEmail({ to: lead.email, toName: parentName || undefined, subject: out.subject, html: emailShell(out.html, out.preheader) });
+    if (!sent.ok) return jsonResponse({ ok: false, error: "send_failed", detail: sent.detail }, 502);
+    await supabase.from("quiz_leads").update({ pdf_sent_at: new Date().toISOString() }).eq("id", leadId);
+    return jsonResponse({ ok: true });
+  }
+
+  // Older pages send the short form below.
   const sections: string[] = [];
 
   if (verdict) {

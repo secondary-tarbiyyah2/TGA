@@ -83,3 +83,13 @@ their section names. Our identity = gold, ink, cream, 8-point geometric star, "t
 - Anything touching children's personal data (student portal, achievements, absence reports)
   is safeguarding-sensitive: minimum data collected, no student-to-student contact, no public
   profiles, RLS enforced, and called out explicitly for human review before going live.
+- **Dropdowns:** never a bare `<select>` or `<datalist>` on the public site. Use
+  `Select` / `Dropdown` from `src/components/ui/Dropdown.tsx` (drop-in for `<select>`,
+  same `<option>` children, keyboard and screen-reader support, search for long lists) or
+  `Combobox` (`src/components/admissions/Combobox.tsx`) for free-text-with-suggestions.
+- **Times for families:** pages that show times ask "Where are you joining from?" with
+  `PlacePicker` (`src/components/booking/PlacePicker.tsx`): country first, then the region
+  for countries with several time zones. The choice is saved in the browser
+  (`src/lib/place.ts`) and shared by the booking page, "Is it right for us?" and the fees
+  page. The country list comes from `src/lib/countryZones.generated.ts`; regenerate it
+  with `python3 scripts/gen-country-zones.py`.

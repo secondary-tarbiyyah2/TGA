@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useId, useRef, useState, type KeyboardEvent, type ReactNode, type SelectHTMLAttributes } from "react";
+import { useEffect, useId, useRef, useState, type ChangeEvent, type KeyboardEvent, type ReactNode, type SelectHTMLAttributes } from "react";
+import { Select } from "@/components/ui/Dropdown";
 
 // Accessible dropdown pieces for the application form, following the WAI-ARIA
 // combobox pattern: focus stays in the text box, the list is a role="listbox"
@@ -264,16 +265,33 @@ export function Combobox({
   );
 }
 
-/** A native <select> with the form's own chevron, so every dropdown looks alike. */
-export function SelectBox({ className, children, ...rest }: SelectHTMLAttributes<HTMLSelectElement> & { className: string }) {
+/** The site's own dropdown (src/components/ui/Dropdown.tsx) with the form's styling, used like a <select>. */
+export function SelectBox({
+  className,
+  children,
+  value,
+  onChange,
+  id,
+  name,
+  disabled,
+  required,
+  "aria-invalid": ariaInvalid,
+  "aria-describedby": describedBy,
+}: Omit<SelectHTMLAttributes<HTMLSelectElement>, "onChange"> & { className: string; onChange?: (e: ChangeEvent<HTMLSelectElement>) => void }) {
   return (
-    <div className="relative mt-1">
-      <select {...rest} className={`${className} appearance-none pr-10`}>
-        {children}
-      </select>
-      <svg aria-hidden="true" viewBox="0 0 20 20" className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 fill-ink/60">
-        <path d="M5.3 7.3 10 12l4.7-4.7 1.4 1.4L10 14.8 3.9 8.7z" />
-      </svg>
-    </div>
+    <Select
+      id={id}
+      name={name}
+      value={value === undefined ? undefined : String(value)}
+      disabled={disabled}
+      required={required}
+      invalid={ariaInvalid === true || ariaInvalid === "true"}
+      aria-describedby={describedBy}
+      onChange={(e) => onChange?.(e as unknown as ChangeEvent<HTMLSelectElement>)}
+      wrapperClassName="mt-1"
+      className={className}
+    >
+      {children}
+    </Select>
   );
 }
