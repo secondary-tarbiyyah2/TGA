@@ -179,6 +179,51 @@ create policy "curriculum_unit_versions: staff read"
   using (public.current_has_role(array['head_teacher', 'admin', 'teacher', 'teaching_assistant_cover']));
 -- No insert/update/delete policies: history rows are written only by the trigger above.
 
+-- Staff change only the fields the planner shows. extra and key_order (repo keys with no
+-- column, and the repo's key order) are the sync's to write, so a client cannot corrupt the
+-- export. Column grants only bite once the table-wide grants are taken away.
+revoke insert, update on public.curriculum_units from anon, authenticated;
+grant insert (subject_slug, subject, kind, year, half_term, term, position, ref, paper, title, focus, skills, key_terms, assess, prereq, leads_to, weeks, resources, founding_year)
+  on public.curriculum_units to authenticated;
+grant update (subject, year, half_term, term, position, ref, paper, title, focus, skills, key_terms, assess, prereq, leads_to, weeks, resources, founding_year)
+  on public.curriculum_units to authenticated;
+
+-- "Put it back": restore a removed unit exactly as it was (same id, with its extra and
+-- key_order), once.
+alter table public.curriculum_unit_versions add column if not exists restored_at timestamptz;
+
+create or replace function public.curriculum_restore_unit(p_version uuid)
+returns uuid
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  v public.curriculum_unit_versions%rowtype;
+  s public.curriculum_units%rowtype;
+begin
+  if not public.current_has_role(array['head_teacher', 'admin', 'teacher']) then
+    raise exception 'not allowed' using errcode = '42501';
+  end if;
+  select * into v from public.curriculum_unit_versions where id = p_version and action = 'delete' for update;
+  if not found then
+    raise exception 'not found' using errcode = 'P0002';
+  end if;
+  if v.restored_at is not null or exists (select 1 from public.curriculum_units where id = v.unit_id) then
+    raise exception 'already restored' using errcode = '23505';
+  end if;
+  s := jsonb_populate_record(null::public.curriculum_units, v.snapshot);
+  insert into public.curriculum_units (id, subject_slug, subject, kind, year, half_term, term, position, ref, paper, title, focus, skills, key_terms, assess, prereq, leads_to, weeks, resources, founding_year, extra, key_order)
+  values (s.id, s.subject_slug, s.subject, s.kind, s.year, s.half_term, s.term, s.position, s.ref, s.paper, s.title, coalesce(s.focus, '{}'), coalesce(s.skills, '{}'), coalesce(s.key_terms, '{}'), s.assess, s.prereq, s.leads_to,
+          coalesce(s.weeks, '[]'), s.resources, s.founding_year, coalesce(s.extra, '{}'), coalesce(s.key_order, '{}'));
+  update public.curriculum_unit_versions set restored_at = now() where id = v.id;
+  return s.id;
+end;
+$$;
+
+revoke all on function public.curriculum_restore_unit(uuid) from public, anon;
+grant execute on function public.curriculum_restore_unit(uuid) to authenticated;
+
 -- ── 2. Lesson content, edited in the browser ────────────────────────────────
 -- custom_deck: a teacher uploaded their own slides (curriculum_replace_deck) or restored an
 -- older version; rebuilt slides never replace them until a teacher asks in the editor.
@@ -307,6 +352,87 @@ $$;
 revoke all on function public.curriculum_save_lesson_content(uuid, jsonb, text, boolean, timestamptz) from public, anon;
 grant execute on function public.curriculum_save_lesson_content(uuid, jsonb, text, boolean, timestamptz) to authenticated;
 
+-- The audit log for curriculum_lessons: the same record as audit_row_change() (0003) but
+-- without the lesson content itself (its history is curriculum_lesson_content_versions), and
+-- nothing at all for an update that changes nothing, so a deck build does not copy every
+-- lesson into the log.
+create or replace function public.audit_curriculum_lesson_change()
+returns trigger
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  v_actor uuid := auth.uid();
+  v_email text;
+  o jsonb := case when tg_op <> 'INSERT' then to_jsonb(old) - 'content' end;
+  n jsonb := case when tg_op <> 'DELETE' then to_jsonb(new) - 'content' end;
+begin
+  if tg_op = 'UPDATE' then
+    if o = n and old.content is not distinct from new.content then
+      return new;
+    end if;
+    n := n || jsonb_build_object('content_changed', old.content is distinct from new.content);
+  end if;
+  select email into v_email from public.profiles where id = v_actor;
+  insert into public.audit_log (actor_id, actor_email, action, target_table, target_id, changes)
+  values (
+    v_actor, v_email, tg_op, tg_table_name, coalesce(new.id, old.id)::text,
+    case when tg_op = 'DELETE' then jsonb_build_object('old', o) when tg_op = 'INSERT' then jsonb_build_object('new', n) else jsonb_build_object('old', o, 'new', n) end
+  );
+  return coalesce(new, old);
+end;
+$$;
+
+drop trigger if exists audit_curriculum_lessons on public.curriculum_lessons;
+create trigger audit_curriculum_lessons
+  after insert or update or delete on public.curriculum_lessons
+  for each row execute function public.audit_curriculum_lesson_change();
+
+-- For "Build lesson decks" (service role): record a newly built deck, in one transaction.
+-- Nothing is written (null is returned) if a teacher's own deck is in place or the lesson's
+-- version moved since the build read it (an upload or restore meanwhile). A generated current
+-- version may be re-rendered in place (p_new_version false, e.g. a design refresh); otherwise,
+-- or when the current version is an uploaded deck, the build becomes a new version. A version
+-- row marked 'uploaded' is never overwritten: a clash on the version number fails.
+create or replace function public.curriculum_store_generated_deck(p_lesson uuid, p_expected_version integer, p_deck_path text, p_pdf_path text, p_new_version boolean, p_built_hash text, p_note text)
+returns integer
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  l public.curriculum_lessons%rowtype;
+  src text;
+  v integer;
+begin
+  select * into l from public.curriculum_lessons where id = p_lesson for update;
+  if not found or l.custom_deck or l.version <> p_expected_version then
+    return null;
+  end if;
+  select source into src from public.curriculum_lesson_versions where lesson_id = l.id and version = l.version;
+  if not p_new_version and coalesce(src, 'generated') = 'generated' then
+    v := l.version;
+    if src is null then
+      insert into public.curriculum_lesson_versions (lesson_id, version, deck_path, pdf_path, note, source)
+      values (l.id, v, p_deck_path, p_pdf_path, coalesce(p_note, 'Original'), 'generated');
+    else
+      update public.curriculum_lesson_versions set deck_path = p_deck_path, pdf_path = p_pdf_path
+       where lesson_id = l.id and version = v and source = 'generated';
+    end if;
+  else
+    v := l.version + 1;
+    insert into public.curriculum_lesson_versions (lesson_id, version, deck_path, pdf_path, note, source)
+    values (l.id, v, p_deck_path, p_pdf_path, p_note, 'generated');
+  end if;
+  update public.curriculum_lessons set deck_path = p_deck_path, pdf_path = p_pdf_path, version = v, built_hash = p_built_hash where id = l.id;
+  return v;
+end;
+$$;
+
+revoke all on function public.curriculum_store_generated_deck(uuid, integer, text, text, boolean, text, text) from public, anon, authenticated;
+grant execute on function public.curriculum_store_generated_deck(uuid, integer, text, text, boolean, text, text) to service_role;
+
 -- Uploading your own deck (0091) now also marks the lesson as using its own slides,
 -- so a later rebuild from the lesson content never replaces them.
 create or replace function public.curriculum_replace_deck(p_lesson uuid, p_deck_path text, p_pdf_path text, p_note text)
@@ -388,8 +514,79 @@ create table if not exists public.curriculum_sync_state (
   synced_at timestamptz not null default now()
 );
 
+-- For unit parts: the agreed list unit by unit, [{ "id": "<curriculum_units.id>", "h": "<hash>" }],
+-- so a portal edit to one unit and a repo edit to another are both kept.
+alter table public.curriculum_sync_state add column if not exists units jsonb;
+
 alter table public.curriculum_sync_state enable row level security;
 -- No policies: only the sync (service role) reads or writes it.
+
+-- Replace one part's units (one subject's year, or one KS4 specification) in a single
+-- transaction, for the sync. p_expected maps each of the part's unit ids to the updated_at the
+-- sync read; if anything in the part changed since (a teacher saved meanwhile), nothing is
+-- written and null is returned. p_rows is the final list in teaching order: { "id", "keep": true }
+-- leaves a unit as it is (only its position may change), { "id", …fields } replaces it, and a
+-- row without an id is added. Units of the part not in the list are removed. Returns the ids
+-- in order.
+create or replace function public.curriculum_apply_units(p_kind text, p_slug text, p_year text, p_expected jsonb, p_rows jsonb, p_editor text)
+returns jsonb
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  cur record;
+  elem jsonb;
+  i integer := 0;
+  v_id uuid;
+  ids uuid[] := '{}';
+  seen integer := 0;
+begin
+  for cur in
+    select id, updated_at from public.curriculum_units
+     where subject_slug = p_slug and kind = p_kind and (p_kind = 'spec' or year = p_year)
+     for update
+  loop
+    if not (p_expected ? cur.id::text) or (p_expected ->> cur.id::text)::timestamptz is distinct from cur.updated_at then
+      return null;
+    end if;
+    seen := seen + 1;
+  end loop;
+  if seen <> (select count(*) from jsonb_object_keys(p_expected)) then
+    return null;
+  end if;
+
+  for elem in select value from jsonb_array_elements(p_rows) loop
+    if elem ? 'id' and coalesce((elem ->> 'keep')::boolean, false) then
+      v_id := (elem ->> 'id')::uuid;
+      update public.curriculum_units set position = i where id = v_id and position <> i;
+    elsif elem ? 'id' then
+      v_id := (elem ->> 'id')::uuid;
+      update public.curriculum_units u
+         set (subject, year, half_term, term, position, ref, paper, title, focus, skills, key_terms, assess, prereq, leads_to, weeks, resources, founding_year, extra, key_order, updated_by, updated_by_name) =
+             (select x.subject, coalesce(x.year, u.year), x.half_term, x.term, i, x.ref, x.paper, x.title, coalesce(x.focus, '{}'), coalesce(x.skills, '{}'), coalesce(x.key_terms, '{}'), x.assess, x.prereq, x.leads_to,
+                     coalesce(x.weeks, '[]'), x.resources, x.founding_year, coalesce(x.extra, '{}'), coalesce(x.key_order, '{}'), null::uuid, p_editor
+                from jsonb_populate_record(null::public.curriculum_units, elem) x)
+       where u.id = v_id;
+    else
+      insert into public.curriculum_units (subject_slug, subject, kind, year, half_term, term, position, ref, paper, title, focus, skills, key_terms, assess, prereq, leads_to, weeks, resources, founding_year, extra, key_order, updated_by_name)
+      select p_slug, x.subject, p_kind, coalesce(x.year, p_year), x.half_term, x.term, i, x.ref, x.paper, x.title, coalesce(x.focus, '{}'), coalesce(x.skills, '{}'), coalesce(x.key_terms, '{}'), x.assess, x.prereq, x.leads_to,
+             coalesce(x.weeks, '[]'), x.resources, x.founding_year, coalesce(x.extra, '{}'), coalesce(x.key_order, '{}'), p_editor
+        from jsonb_populate_record(null::public.curriculum_units, elem - 'id') x
+      returning id into v_id;
+    end if;
+    ids := ids || v_id;
+    i := i + 1;
+  end loop;
+
+  delete from public.curriculum_units
+   where subject_slug = p_slug and kind = p_kind and (p_kind = 'spec' or year = p_year) and not (id = any(ids));
+  return to_jsonb(ids);
+end;
+$$;
+
+revoke all on function public.curriculum_apply_units(text, text, text, jsonb, jsonb, text) from public, anon, authenticated;
+grant execute on function public.curriculum_apply_units(text, text, text, jsonb, jsonb, text) to service_role;
 
 create table if not exists public.curriculum_sync_runs (
   id uuid primary key default gen_random_uuid(),

@@ -3,7 +3,7 @@
 -- the lesson editor's save RPC refuses stale saves and non-teachers; an uploaded deck is
 -- marked as the teacher's own.
 begin;
-select plan(14);
+select plan(18);
 
 insert into auth.users (id, email) values
   ('a1790000-0000-0000-0000-000000000001', 'teacher-179@example.com'),
@@ -40,6 +40,10 @@ select throws_ok($$select public.curriculum_save_lesson_content('c1790000-0000-0
 select throws_ok($$select public.curriculum_save_lesson_content('c1790000-0000-0000-0000-000000000001', '{"unit":"Unit 1","title":"Short","objectives":["o"],"teach":[{}]}', null, false, null)$$, '22023', null, 'a lesson with too few slides is refused');
 select lives_ok($$select public.curriculum_replace_deck('c1790000-0000-0000-0000-000000000001', 'english/y1/1/own.pptx', null, 'mine')$$, 'a teacher can upload their own deck');
 select is((select custom_deck from public.curriculum_lessons where id = 'c1790000-0000-0000-0000-000000000001'), true, 'an uploaded deck is kept as the teacher''s own');
+select throws_ok($$update public.curriculum_units set extra = '{}' where id = 'b1790000-0000-0000-0000-000000000001'$$, '42501', null, 'a teacher cannot write the sync-only fields');
+select lives_ok($$delete from public.curriculum_units where title = 'New unit'$$, 'a teacher can remove a unit');
+select lives_ok($$select public.curriculum_restore_unit((select id from public.curriculum_unit_versions where action = 'delete' and snapshot ->> 'title' = 'New unit'))$$, 'a removed unit can be put back');
+select throws_ok($$select public.curriculum_restore_unit((select id from public.curriculum_unit_versions where action = 'delete' and snapshot ->> 'title' = 'New unit'))$$, '23505', null, 'but only once');
 
 -- A cover teaching assistant reads but cannot change anything
 set local "request.jwt.claims" to '{"sub": "a1790000-0000-0000-0000-000000000002"}';
