@@ -1,0 +1,208 @@
+name: Sync curriculum from the portal
+
+# Keeps the portal's curriculum (Curriculum planner units and Lesson library
+# lesson content, migration 0179) and the repo's content/syllabus/**.json and
+# content/lessons/**.json in step, using scripts/curriculum/sync.mjs:
+#   * portal edits are written into content/ and committed to main, then the
+#     builds that read content/ are started (slides and lesson plans, revision
+#     booklets and packs, the syllabus pack, and the site's syllabus index);
+#   * repo edits nobody has changed in the portal are copied into the portal;
+#   * the first run fills the portal from the repo (the seed).
+# The database is the source of truth: when both sides changed the same part,
+# the portal's version is kept and the clash is logged.
+#
+# Started by the portal after each save (Edge Function curriculum-sync), every
+# hour as a backstop, after the backend deploys (so the tables exist), when
+# content/ changes on main, or by hand. It cannot loop: it commits only when a
+# file really changed, and its own push (made with GITHUB_TOKEN) does not
+# start workflows, so it starts the builds itself.
+
+on:
+  workflow_dispatch:
+    inputs:
+      trigger:
+        description: "What started this run (portal or manual)"
+        required: false
+        default: "manual"
+  schedule:
+    - cron: "23 * * * *"
+  push:
+    branches: [main]
+    paths:
+      - "content/syllabus/**"
+      - "content/lessons/**"
+      - "scripts/curriculum/**"
+      - ".github/workflows/sync-curriculum-from-portal.yml"
+  workflow_run:
+    workflows: ["Deploy Supabase backend"]
+    types: [completed]
+    branches: [main]
+
+# One run at a time; GitHub keeps only the newest waiting run, so a burst of
+# saves becomes one sync.
+concurrency:
+  group: sync-curriculum
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  sync:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Find the project ref and service-role key
+        id: keys
+        run: |
+          set -euo pipefail
+          PROJECTS=$(supabase projects list -o json)
+          REF=$(echo "$PROJECTS" | jq -r ".[] | select(.name==\"secondary-tarbiyyah2's Project\") | .id" | head -n1)
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then
+            COUNT=$(echo "$PROJECTS" | jq 'length')
+            if [ "$COUNT" = "1" ]; then REF=$(echo "$PROJECTS" | jq -r '.[0].id'); fi
+          fi
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then
+            echo "::error::Could not find the Supabase project."
+            exit 1
+          fi
+          SERVICE_ROLE=$(supabase projects api-keys --project-ref "$REF" -o json | jq -r '.[] | select(.name=="service_role" or .name=="secret") | .api_key' | head -n1)
+          if [ -z "$SERVICE_ROLE" ] || [ "$SERVICE_ROLE" = "null" ]; then
+            echo "::error::Could not find a service_role/secret key."
+            exit 1
+          fi
+          echo "::add-mask::$SERVICE_ROLE"
+          echo "ref=$REF" >> "$GITHUB_OUTPUT"
+          echo "service_role_key=$SERVICE_ROLE" >> "$GITHUB_OUTPUT"
+
+      - name: Compare the portal and the repo
+        id: run
+        env:
+          SUPABASE_URL: https://${{ steps.keys.outputs.ref }}.supabase.co
+          SUPABASE_SERVICE_ROLE_KEY: ${{ steps.keys.outputs.service_role_key }}
+          SYNC_TRIGGER: ${{ github.event.inputs.trigger || github.event_name }}
+        run: |
+          # On the first run after a deploy the tables may only just exist; retry briefly.
+          for i in 1 2 3; do
+            if node scripts/curriculum/sync.mjs run out/curriculum-sync; then exit 0; fi
+            echo "Retrying in 30s…"; sleep 30
+          done
+          exit 1
+
+      - name: Check the files still pass the content checks
+        run: |
+          node scripts/syllabus/validate.mjs
+          node scripts/lessons/validate.mjs
+
+      - name: Refresh the portal's syllabus index
+        run: node scripts/syllabus/export-portal-index.mjs
+
+      - name: Commit and push
+        id: push
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- content src/lib/learn/syllabusIndex.json; then
+            echo "Nothing changed in the repo."
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          S=out/curriculum-sync/summary.json
+          EDITORS=$(jq -r '.editors | join(", ")' "$S")
+          TITLE="Curriculum: copy edits from the portal ($(jq -r '.sent_units' "$S") unit change(s), $(jq -r '.sent_lessons' "$S") lesson(s))"
+          BODY="Written by the \"Sync curriculum from the portal\" workflow from the portal's Curriculum planner and lesson editor."
+          if [ -n "$EDITORS" ]; then BODY="$BODY Edited by: $EDITORS."; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content src/lib/learn/syllabusIndex.json
+          git commit -q -m "$TITLE" -m "$BODY"
+          INDEX_CHANGED=false
+          if git diff --name-only HEAD~1 HEAD | grep -qx "src/lib/learn/syllabusIndex.json"; then INDEX_CHANGED=true; fi
+          ok=""
+          for i in 1 2 3 4 5; do
+            if git pull --rebase -q origin main && git push -q origin HEAD:main; then ok=1; break; fi
+            sleep $((i * 5))
+          done
+          if [ -z "$ok" ]; then echo "::error::Could not push the changes to main."; exit 1; fi
+          echo "pushed=true" >> "$GITHUB_OUTPUT"
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          echo "index_changed=$INDEX_CHANGED" >> "$GITHUB_OUTPUT"
+
+      - name: Remember what was sent
+        env:
+          SUPABASE_URL: https://${{ steps.keys.outputs.ref }}.supabase.co
+          SUPABASE_SERVICE_ROLE_KEY: ${{ steps.keys.outputs.service_role_key }}
+          COMMIT_SHA: ${{ steps.push.outputs.sha }}
+        run: node scripts/curriculum/sync.mjs record out/curriculum-sync
+
+      # A push made with GITHUB_TOKEN does not start other workflows, so start
+      # the builds that read content/ here.
+      - name: Start the rebuilds
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          S=out/curriculum-sync/summary.json
+          PUSHED="${{ steps.push.outputs.pushed }}"
+          LESSONS=false; SYLLABUS=false
+          if [ "$PUSHED" = "true" ]; then
+            LESSONS=$(jq -r '.lessonsChanged' "$S"); SYLLABUS=$(jq -r '.syllabusChanged' "$S")
+          fi
+          if [ "$LESSONS" = "true" ] || [ "$(jq -r '.rebuildRequested' "$S")" = "true" ]; then
+            gh workflow run build-lesson-decks.yml --ref main && echo "Started: Build lesson decks"
+          fi
+          if [ "$LESSONS" = "true" ]; then
+            gh workflow run build-revision-booklets.yml --ref main && echo "Started: Build revision booklets"
+            gh workflow run sync-revision.yml --ref main && echo "Started: Sync revision packs"
+          fi
+          if [ "$SYLLABUS" = "true" ]; then
+            gh workflow run build-syllabus-pack.yml --ref main && echo "Started: Build syllabus pack"
+          fi
+          if [ "${{ steps.push.outputs.index_changed }}" = "true" ]; then
+            gh workflow run deploy-site.yml --ref main && echo "Started: Deploy site (syllabus index changed)"
+          fi
+
+      - name: Log a failed run
+        if: failure() && steps.run.outcome == 'success'
+        env:
+          SUPABASE_URL: https://${{ steps.keys.outputs.ref }}.supabase.co
+          SUPABASE_SERVICE_ROLE_KEY: ${{ steps.keys.outputs.service_role_key }}
+          FAILED: "1"
+          FAILED_MESSAGE: "The changes could not be written to the repository this time (a content check failed or the push was refused). Nothing was lost: they will be sent on the next run. If this keeps happening, ask whoever manages the website."
+        run: node scripts/curriculum/sync.mjs record out/curriculum-sync
+
+      - name: Summary
+        if: always() && steps.run.outcome == 'success'
+        run: |
+          S=out/curriculum-sync/summary.json
+          {
+            echo "## Curriculum sync"
+            echo ""
+            echo "- Sent from the portal: $(jq -r '.sent_units' "$S") unit change(s), $(jq -r '.sent_lessons' "$S") lesson(s)"
+            echo "- Brought in from the repo: $(jq -r '.received_units' "$S") unit(s), $(jq -r '.received_lessons' "$S") lesson(s)"
+            echo "- Files changed: $(jq -r '.changedFiles | length' "$S")"
+            if [ "$(jq '.problems | length' "$S")" != "0" ]; then
+              echo ""
+              echo "### Needs attention"
+              jq -r '.problems[] | "- " + .' "$S"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"

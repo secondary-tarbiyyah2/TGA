@@ -3,8 +3,12 @@ name: Build lesson decks
 # Turns content/lessons/**/*.json into branded PowerPoint decks (with the TGA
 # logo) plus a PDF copy of each, and a teacher lesson plan (Word + PDF), and loads them into the portal's Lesson
 # library (storage bucket lesson-decks + table curriculum_lessons, migration
-# 0091). Decks a teacher has edited in the portal are never overwritten.
-# Runs when lesson content or the generator changes, or on demand.
+# 0091). Decks a teacher uploaded themselves are never overwritten. A lesson
+# whose content changed (edited in the portal's lesson editor, then copied
+# into content/lessons by "Sync curriculum from the portal", or edited in the
+# repo) gets new slides and a new plan as a new version (migration 0179).
+# Runs when lesson content or the generator changes, or on demand (the sync
+# workflow starts it after copying portal edits in).
 
 on:
   push:
@@ -37,7 +41,7 @@ jobs:
 
       # When the deck design itself changes (build-decks.mjs), every generated
       # deck already in the portal is refreshed so all lessons get the new
-      # look. Teacher-edited decks (version > 1) are still never touched.
+      # look. Decks a teacher uploaded (custom_deck) are still never touched.
       - name: Refresh existing decks if the design changed
         id: refresh
         run: |

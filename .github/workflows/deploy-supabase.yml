@@ -368,6 +368,10 @@ jobs:
           # function); a session-less caller would be rejected before that
           # check even runs.
           supabase functions deploy publish-website-content --yes --project-ref "${{ steps.project.outputs.ref }}"
+          # curriculum-sync: verified; teachers, Headteacher and admins only
+          # (re-checked in the function). Starts "Sync curriculum from the
+          # portal" after a curriculum or lesson edit is saved.
+          supabase functions deploy curriculum-sync --yes --project-ref "${{ steps.project.outputs.ref }}"
           # weekly-digest: no gateway JWT check because the Friday cron
           # (weekly-digest.yml) is not a user. The function authorises
           # itself: service-role key for the scheduled run, or a signed-in

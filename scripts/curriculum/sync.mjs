@@ -414,7 +414,10 @@ for (const e of fileEdits.values()) {
   }
 }
 
-const rebuildRequested = dbLessons.some((l) => l.rebuild_requested);
+// Lessons waiting for new slides (the editor's "build slides from this lesson"). Only recent
+// requests count, so one lesson that keeps failing to build cannot start a build every hour.
+const recent = Date.now() - 3 * 3600 * 1000;
+const rebuildRequested = dbLessons.some((l) => l.rebuild_requested && repoLessons.has(scopeKey.lesson(l.subject_slug, l.year, l.lesson_no)) && l.content_updated_at && Date.parse(l.content_updated_at) > recent);
 const summary = {
   changedFiles,
   lessonsChanged: changedFiles.some((f) => f.startsWith("content/lessons/")),
