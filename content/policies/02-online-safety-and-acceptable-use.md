@@ -7,7 +7,7 @@ appliesTo: All pupils, parents, staff, trustees and volunteers of Tarbiyyah Glob
 owner: Designated Safeguarding Lead and Digital Lead
 approvedBy: Ustadh Abu Zayn Haneef Sandhar, Headteacher
 agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
-dateOfIssue: 1 September 2026 (version 1.1, updated 28 October 2026 for the January 2027 launch)
+dateOfIssue: 1 September 2026 (version 1.2, updated 9 November 2026: a tablet with a stylus is recommended for every pupil, and a printer at home is required without one)
 nextReview: 31 August 2027
 basis: New policy for online provision (replaces the device and mobile phone sections of the Tarbiyyah Secondary policies)
 readAlongside: Child Protection and Safeguarding Policy; Live Lesson Protocols; Recording of Live Lessons and Use of Images Policy; Behaviour and Online Conduct Policy; Data Protection Policy; Technology and Digital Wellbeing guidance within the Health, Safety and Wellbeing Policy
@@ -70,7 +70,7 @@ Every pupil (with a parent for pupils in Years 1 to 6) agrees to the Pupil Accep
 
 Parents support safe learning at home by:
 
-- providing a suitable device, a reliable connection and a quiet, appropriate study space;
+- providing a suitable device, a reliable connection and a quiet, appropriate study space, with a tablet with a stylus (recommended) or, without one, a printer at home (required) for worksheets and the lesson PDF;
 - supervising younger children's device use and applying parental controls;
 - never recording, sharing or posting lessons or images of staff or other pupils;
 - keeping out of camera view and not intervening during live lessons, except to support their own child or in an emergency;

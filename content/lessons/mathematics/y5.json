@@ -2,92 +2,230 @@
   "subject": "Mathematics",
   "year": "y5",
   "board": "National Curriculum (KS2)",
-  "source": "National Curriculum (KS2 Year 5: number and place value to 1,000,000, negative numbers, Roman numerals, addition and subtraction, multiples, factors, primes, squares and cubes); sequencing checked against the school's Drive Maths folder (Primary national curriculum material; no Y5-specific scheme found, so lessons written from the National Curriculum)",
+  "source": "National Curriculum (KS2 Year 5: number and place value to 1,000,000, negative numbers, Roman numerals, addition and subtraction, multiples, factors, primes, squares and cubes); sequencing checked against the school's Drive Maths folder (Primary national curriculum material; no Y5-specific scheme found, so lessons written from the National Curriculum); Spring 1 founding year: White Rose Maths Year 5 small-step titles (bridge from Autumn blocks 1-4, then Spring blocks 1 Multiplication and division B and 2 Fractions B), Tarbiyyah Primary Maths Policy and Maths Long Term Plan 2023-24",
   "lessons": [
     {
-      "unit": "Unit 1: Place value to 1,000,000",
+      "unit": "Spring 1: Multiplication and division B; fractions B",
       "n": 1,
-      "title": "Reading and writing numbers to 1,000,000",
+      "title": "Bridge: numbers to 1,000,000",
       "duration": 45,
+      "bigQuestion": "How does place value let ten digits write any number?",
       "objectives": [
-        "Read and write numbers up to 1,000,000 in numerals and words",
-        "State the value of each digit in a 6-digit number"
+        "To understand how place value lets us write numbers up to a million"
       ],
+      "successCriteria": [
+        "All: read and write 6-digit numbers",
+        "Most: give the value of any digit",
+        "Some: partition flexibly"
+      ],
+      "crossCurricular": "Geography: populations of cities",
+      "smsc": "Spiritual: millions gather for Hajj (حَجّ) each year as one ummah (أُمَّة)",
       "keywords": [
-        { "term": "ten thousand", "def": "10,000; ten groups of one thousand" },
-        { "term": "hundred thousand", "def": "100,000; ten groups of ten thousand" },
-        { "term": "million", "def": "1,000,000; ten groups of one hundred thousand" },
-        { "term": "place value", "def": "the value a digit has because of its position" }
+        {
+          "term": "hundred thousand",
+          "def": "100,000"
+        },
+        {
+          "term": "million",
+          "def": "1,000,000: a thousand thousands"
+        },
+        {
+          "term": "place value",
+          "def": "a digit's value from its position"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which is the odd one out?",
+        "options": [
+          "304,050",
+          "300,000 + 4,000 + 50",
+          "three hundred and four thousand and fifty",
+          "340,050"
+        ],
+        "a": "340,050 has 4 ten-thousands; the others are 304,050."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "place value chart thousands hundreds tens ones",
+          "alt": "A place value chart",
+          "for": "teach:1"
+        },
+        {
+          "find": "Masjid an-Nabawi green dome",
+          "alt": "The green dome of the Prophet's Masjid (مَسْجِد) in Madinah (المَدِينَة)",
+          "for": "hook"
+        }
       ],
       "starter": [
-        "Say Bismillah. Write six thousand and forty-two as a number.",
-        "What is the value of the 7 in 7,305?",
-        "What is 9,999 + 1?"
+        {
+          "q": "What is the 7 worth in 7,452?",
+          "a": "7,000",
+          "mins": 1
+        },
+        {
+          "q": "10 × 1,000 = ?",
+          "a": "10,000",
+          "mins": 1
+        },
+        {
+          "q": "Round 4,738 to the nearest 100.",
+          "a": "4,700",
+          "mins": 1
+        },
+        {
+          "q": "6 × 8 = ?",
+          "a": "48",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Beyond 9,999",
-          "bullets": [
-            "10 thousands make 1 ten thousand: 10,000.",
-            "10 ten thousands make 1 hundred thousand: 100,000.",
-            "10 hundred thousands make 1 million: 1,000,000."
-          ],
-          "note": "Use a place value chart with HTh, TTh, Th, H, T, O. Each place is ten times the one to its right. Ask: what is the largest 6-digit number? (999,999) What happens when we add 1?"
+          "heading": "The columns",
+          "table": {
+            "head": [
+              "Number",
+              "HTh",
+              "TTh",
+              "Th",
+              "H",
+              "T",
+              "O"
+            ],
+            "rows": [
+              [
+                "562,018",
+                "5",
+                "6",
+                "2",
+                "0",
+                "1",
+                "8"
+              ],
+              [
+                "304,050",
+                "3",
+                "0",
+                "4",
+                "0",
+                "5",
+                "0"
+              ],
+              [
+                "90,909",
+                "0",
+                "9",
+                "0",
+                "9",
+                "0",
+                "9"
+              ]
+            ]
+          },
+          "note": "Ask: what is the 6 worth in 562,018? (60,000)."
         },
         {
-          "heading": "Reading 372,145",
+          "heading": "Read in groups",
           "bullets": [
-            "Read the thousands group first: 372 thousand.",
-            "Then the last three digits: 145.",
-            "Three hundred and seventy-two thousand, one hundred and forty-five."
+            "562,018",
+            "562 thousand ...",
+            "... and eighteen"
           ],
-          "note": "Point out the comma splits the number into two groups of three. Say each group like a 3-digit number, then add the word thousand. Common error: reading it digit by digit."
+          "note": "The comma separates thousands. Ask: read 304,050 aloud."
         },
         {
-          "heading": "Value of each digit",
-          "bullets": [
-            "In 372,145 the 3 is worth 300,000.",
-            "The 7 is worth 70,000 and the 2 is worth 2,000.",
-            "The 1 is 100, the 4 is 40 and the 5 is 5."
-          ],
-          "note": "Build with arrow cards. Ask pupils to say 'the 7 is worth seventy thousand, not seven'. Check the difference between digit and value."
+          "heading": "Partition",
+          "model": {
+            "problem": "Partition 562,018",
+            "steps": [
+              "500,000 + 60,000 + 2,000 + 10 + 8",
+              "Or 560,000 + 2,018"
+            ],
+            "answer": "Both equal 562,018"
+          },
+          "note": "Model."
         },
         {
-          "heading": "Zero holds the place",
-          "bullets": [
-            "805,030 has no tens of thousands and no ones.",
-            "Eight hundred and five thousand and thirty.",
-            "Each zero keeps the other digits in the right place."
-          ],
-          "note": "Compare 805,030, 85,030 and 850,030 on the chart. Typical mistake: writing 'eight hundred and five thousand and thirty' as 80,5030."
-        },
-        {
-          "heading": "One million",
-          "bullets": [
-            "999,999 + 1 = 1,000,000.",
-            "One million has seven digits.",
-            "One million is one thousand thousands."
-          ],
-          "note": "Give a sense of size: a stadium holding 60,000 would need to be filled about seventeen times to reach one million people. Keep it light; the aim is to feel the size."
+          "heading": "Hinge",
+          "check": {
+            "q": "Seven hundred thousand and forty =",
+            "options": [
+              "700,040",
+              "740,000",
+              "7,040"
+            ],
+            "answer": 0,
+            "why": "700 thousand and 40: 700,040."
+          },
+          "note": "Teams poll."
         }
       ],
       "practice": [
-        "Write 458,206 in words.",
-        "What is the value of the 5 in 451,908?",
-        "Write 'six hundred and three thousand and twelve' as a number."
+        {
+          "q": "Write 'two hundred and six thousand, three hundred' in digits.",
+          "a": "206,300",
+          "mins": 2,
+          "model": "Teacher writes 2 hundred thousands, 0 ten thousands, 6 thousands, 3 hundreds: 206,300."
+        },
+        {
+          "q": "What is the 8 worth in 481,207?",
+          "a": "80,000",
+          "mins": 2
+        },
+        {
+          "q": "635,402 = 600,000 + ? + 5,000 + 402",
+          "a": "30,000",
+          "mins": 3
+        }
       ],
       "independent": [
-        "Write as numbers: 4 hundred thousands, 2 ten thousands, 7 thousands, 0 hundreds, 3 tens, 9 ones; and seven hundred and eight thousand and five.",
-        "State the value of the digit 4 in each: 40,512; 415,000; 904,321; 12,345.",
-        "Write in words: 560,040; 999,999; 1,000,000.",
-        "I am a 6-digit number. My hundred thousands digit is 3, my ones digit is 0 and all other digits are 5. What number am I?"
+        {
+          "q": "Core: value of each digit in 905,316.",
+          "a": "900,000, 0, 5,000, 300, 10, 6",
+          "mins": 4,
+          "model": "Teacher reads 905,316 in the chart: 900,000, 0, 5,000, 300, 10, 6."
+        },
+        {
+          "q": "Extend: 10,000 more and 100,000 less than 547,820",
+          "a": "557,820; 447,820",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: make the greatest odd 6-digit number from 0, 2, 5, 7, 8, 9.",
+          "a": "987,205",
+          "mins": 3
+        }
       ],
       "exit": [
-        "What is the value of the 6 in 264,319?",
-        "Write 'four hundred and two thousand, six hundred and eight' as a number."
+        {
+          "q": "What is 1,000 more than 299,500?",
+          "a": "300,500",
+          "mins": 2
+        },
+        {
+          "q": "Big question: why is 50,000 different from 500,000?",
+          "a": "The 5 is in a different place: 5 ten-thousands vs 5 hundred-thousands",
+          "mins": 3
+        }
       ],
-      "homework": "Find six 5- or 6-digit numbers in real life (prices, distances, populations) and write each one in words.",
-      "send": "SEND: place value chart with arrow cards and counters. EAL: pre-teach thousand/hundred/million with a labelled chart. Stretch: read and write numbers up to 10,000,000."
+      "homework": "Find 3 large numbers in the news (populations, distances) and write them in words.",
+      "send": "SEND: concrete or pictorial first (counters, strips), worked example on screen, reduced set. EAL: key word cards; stem 'First I ..., then I ...'. Stretch: numbers to 10,000,000.",
+      "resources": [
+        "White Rose Maths Year 5, Autumn block 1: Place value: small step 'Numbers to 1,000,000; partition numbers to 1,000,000' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Place value counters or paper ones to hundred thousands",
+        "Place value chart to millions (paper)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 1 guided, independent and homework tasks"
+      ]
     },
     {
       "unit": "Unit 1: Place value to 1,000,000",
@@ -99,9 +237,18 @@
         "Find 10, 100, 1,000, 10,000 and 100,000 more or less than a number"
       ],
       "keywords": [
-        { "term": "partition", "def": "split a number into parts, usually by place value" },
-        { "term": "more than", "def": "add an amount to a number" },
-        { "term": "less than", "def": "subtract an amount from a number" }
+        {
+          "term": "partition",
+          "def": "split a number into parts, usually by place value"
+        },
+        {
+          "term": "more than",
+          "def": "add an amount to a number"
+        },
+        {
+          "term": "less than",
+          "def": "subtract an amount from a number"
+        }
       ],
       "starter": [
         "Say Bismillah. What is 10 more than 4,995?",
@@ -165,155 +312,439 @@
       "send": "SEND: place value chart and counters to move digits. EAL: sentence stems 'one thousand more than ... is ...'. Stretch: add and subtract 20,000 or 300,000."
     },
     {
-      "unit": "Unit 1: Place value to 1,000,000",
+      "unit": "Spring 1: Multiplication and division B; fractions B",
       "n": 3,
-      "title": "Comparing and ordering large numbers",
+      "title": "Bridge: compare and order numbers to 1,000,000",
       "duration": 45,
+      "bigQuestion": "Which digit do we check first when comparing large numbers?",
       "objectives": [
-        "Compare numbers up to 1,000,000 using < and >",
-        "Order a set of numbers from smallest to largest"
+        "To understand how to compare and order numbers to 1,000,000"
       ],
+      "successCriteria": [
+        "All: compare numbers with the same number of digits",
+        "Most: compare numbers with different numbers of digits",
+        "Some: order a set and explain"
+      ],
+      "crossCurricular": "Geography: comparing city populations",
+      "smsc": "Moral: contentment; comparing ourselves to others less fortunate",
       "keywords": [
-        { "term": "greater than", "def": "bigger than; shown by the symbol >" },
-        { "term": "less than", "def": "smaller than; shown by the symbol <" },
-        { "term": "ascending", "def": "in order from smallest to largest" },
-        { "term": "descending", "def": "in order from largest to smallest" }
+        {
+          "term": "ascending",
+          "def": "smallest to greatest"
+        },
+        {
+          "term": "descending",
+          "def": "greatest to smallest"
+        },
+        {
+          "term": "greater than (>)",
+          "def": "bigger than"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Birmingham has about 1,145,000 people; Leeds about 812,000; Bradford about 546,000. Order them. How did you decide so fast?",
+        "a": "Count digits first: the 7-digit number is largest; then compare from the left."
+      },
+      "routines": {
+        "hook": "think-pair-share",
+        "starter": "chat-waterfall",
+        "hinge": "teams-poll",
+        "practice": "think-pair-share",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "Birmingham city aerial view",
+          "alt": "Aerial view of Birmingham",
+          "for": "hook"
+        },
+        {
+          "find": "place value chart thousands hundreds tens ones",
+          "alt": "A place value chart",
+          "for": "teach:1"
+        }
       ],
       "starter": [
-        "Say Bismillah. Which is bigger: 7,908 or 7,980?",
-        "Write 50,000 + 600 + 7 as a number.",
-        "Put in order, smallest first: 1,200; 987; 10,000."
+        {
+          "q": "Write 406,020 in words.",
+          "a": "four hundred and six thousand and twenty",
+          "mins": 1
+        },
+        {
+          "q": "7,409 _ 7,490",
+          "a": "<",
+          "mins": 1
+        },
+        {
+          "q": "What is the 3 worth in 432,000?",
+          "a": "30,000",
+          "mins": 1
+        },
+        {
+          "q": "7 × 9 = ?",
+          "a": "63",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Compare from the left",
+          "heading": "From the left",
           "bullets": [
-            "456,789 and 456,798: start at the left.",
-            "The digits match until the tens: 8 and 9.",
-            "So 456,798 is greater."
+            "Same number of digits? Compare from the left.",
+            "456,712 vs 465,127",
+            "5 ten-thousands < 6"
           ],
-          "note": "Write one number above the other with columns lined up. Ask: where do they first differ? Stress that digit count comes first: a 6-digit number beats a 5-digit number."
+          "chart": {
+            "kind": "bar",
+            "labels": [
+              "Birmingham",
+              "Leeds",
+              "Bradford"
+            ],
+            "values": [
+              1145000,
+              812000,
+              546000
+            ],
+            "title": "Approximate populations"
+          },
+          "note": "Ask: 309,999 or 310,000? (310,000)."
         },
         {
-          "heading": "Using < and >",
-          "bullets": [
-            "The open side faces the bigger number.",
-            "456,789 < 456,798.",
-            "456,798 > 456,789."
-          ],
-          "note": "Use the 'crocodile eats the bigger number' image if useful. Ask pupils to say the sentence aloud in words each time."
+          "heading": "Order a set",
+          "sort": {
+            "columns": [
+              "Less than 500,000",
+              "500,000 or more"
+            ],
+            "cards": [
+              "499,999",
+              "500,001",
+              "95,000",
+              "750,300",
+              "405,000",
+              "1,000,000"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ]
+          },
+          "note": "Card sort first, then order."
         },
         {
-          "heading": "Ordering a list",
-          "bullets": [
-            "Order 305,210; 350,120; 305,021; 53,012.",
-            "53,012 has only 5 digits, so it is smallest.",
-            "53,012 < 305,021 < 305,210 < 350,120."
-          ],
-          "note": "Model: sort by number of digits first, then compare hundred thousands, then ten thousands, and so on. Check by reading the finished list in words."
+          "heading": "Missing digits",
+          "model": {
+            "problem": "45_,300 > 458,000. Which digits fit?",
+            "steps": [
+              "Compare ten-thousands: equal",
+              "Thousands digit must beat 8"
+            ],
+            "answer": "9 (459,300)"
+          },
+          "note": "Reason it out."
         },
         {
-          "heading": "Ascending and descending",
-          "bullets": [
-            "Ascending: smallest to largest.",
-            "Descending: largest to smallest.",
-            "Descending: 350,120; 305,210; 305,021; 53,012."
-          ],
-          "note": "Link ascending with climbing up stairs. Pupils often reverse the order when the question uses these words, so underline the key word."
+          "heading": "Hinge",
+          "check": {
+            "q": "Descending order?",
+            "options": [
+              "120,450, 102,540, 120,045",
+              "120,450, 120,045, 102,540",
+              "102,540, 120,045, 120,450"
+            ],
+            "answer": 1,
+            "why": "Greatest first; 120,450 > 120,045 > 102,540."
+          },
+          "note": "Teams poll."
         }
       ],
       "practice": [
-        "Write < or > : 640,300 ___ 640,030.",
-        "Which is greater: 99,999 or 100,000? Explain how you know.",
-        "Order smallest first: 450,001; 405,100; 450,010; 45,100."
+        {
+          "q": "608,413 _ 680,413",
+          "a": "<",
+          "mins": 2,
+          "model": "Teacher compares from the left: 6 = 6, then 0 < 8, so 608,413 < 680,413."
+        },
+        {
+          "q": "99,999 _ 100,000",
+          "a": "<",
+          "mins": 2
+        },
+        {
+          "q": "Order 34,567, 345,670, 34,765 ascending.",
+          "a": "34,567, 34,765, 345,670",
+          "mins": 3
+        }
       ],
       "independent": [
-        "Write < or > in each: 782,401 ___ 782,410; 91,250 ___ 912,500; 300,000 ___ 299,999.",
-        "Order from largest to smallest: 612,340; 612,304; 621,034; 61,234.",
-        "Write a number that is between 540,000 and 541,000. Write another that is between 540,000 and 540,100.",
-        "Five towns have populations 128,450; 128,045; 182,405; 82,540 and 128,540. Order them ascending."
+        {
+          "q": "Core: 707,070 _ 770,007; 250,000 _ 205,000",
+          "a": "<, >",
+          "mins": 4,
+          "model": "Teacher: 707,070 vs 770,007: ten thousands 0 < 7, so <."
+        },
+        {
+          "q": "Extend: order 612,000, 621,000, 6,120, 61,200 descending.",
+          "a": "621,000, 612,000, 61,200, 6,120",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: using the digits 1, 1, 1, 2, 2, 2 once each, write the greatest and smallest 6-digit numbers.",
+          "a": "222,111 and 111,222",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Write < or > : 367,200 ___ 367,020.",
-        "Order smallest first: 80,505; 85,005; 80,550."
+        {
+          "q": "540,321 _ 504,321",
+          "a": ">",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how do you compare 89,000 and 189,000 quickly?",
+          "a": "Count digits: 6 digits beats 5 digits",
+          "mins": 3
+        }
       ],
-      "homework": "Write six different 6-digit numbers using the digits 1 to 6 once each, then put them in ascending order.",
-      "send": "SEND: digit cards to line numbers up in columns. EAL: pre-teach greater/less/ascending/descending. Stretch: numbers with 7 digits."
+      "homework": "Order 5 UK city populations (teacher's list) and write each in words.",
+      "send": "SEND: concrete or pictorial first (counters, strips), worked example on screen, reduced set. EAL: key word cards; stem 'First I ..., then I ...'. Stretch: compare numbers in millions.",
+      "resources": [
+        "White Rose Maths Year 5, Autumn block 1: Place value: small step 'Compare and order numbers to 1,000,000' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Place value counters or paper ones to hundred thousands",
+        "Place value chart to millions (paper)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 3 guided, independent and homework tasks"
+      ]
     },
     {
-      "unit": "Unit 1: Place value to 1,000,000",
+      "unit": "Spring 1: Multiplication and division B; fractions B",
       "n": 4,
-      "title": "Rounding numbers up to 1,000,000",
+      "title": "Bridge: rounding numbers to 1,000,000",
       "duration": 45,
+      "bigQuestion": "How does rounding help us talk about big numbers?",
       "objectives": [
-        "Round any number up to 1,000,000 to the nearest 10, 100, 1,000, 10,000 and 100,000",
-        "Use rounding to estimate in context"
+        "To understand how rounding makes large numbers easier to use"
       ],
+      "successCriteria": [
+        "All: round to the nearest 1,000",
+        "Most: round to the nearest 10,000 and 100,000",
+        "Some: find all numbers that round to a given value"
+      ],
+      "crossCurricular": "Geography: rounding populations in news reports",
+      "smsc": "Moral: honesty: 'about' when we round",
       "keywords": [
-        { "term": "round", "def": "change a number to a simpler one that is close" },
-        { "term": "nearest", "def": "the closest number of the type asked for" },
-        { "term": "approximate", "def": "close to, but not exact" }
+        {
+          "term": "round",
+          "def": "change to the nearest multiple"
+        },
+        {
+          "term": "degree of accuracy",
+          "def": "how precise: nearest 10, 100, 1,000..."
+        },
+        {
+          "term": "approximately",
+          "def": "about"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A headline says 'nearly 600,000 people'. The true number is 547,820. Was the headline fair?",
+        "a": "It rounded to the nearest 100,000 (500,000 would be correct). To the nearest 10,000 it is 550,000. 'Nearly 600,000' is not fair."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "number line 0 to 20 printed",
+          "alt": "A printed number line",
+          "for": "teach:2"
+        },
+        {
+          "find": "Birmingham city aerial view",
+          "alt": "Aerial view of Birmingham",
+          "for": "keywords"
+        }
       ],
       "starter": [
-        "Say Bismillah. Round 48 to the nearest 10.",
-        "Round 650 to the nearest 100.",
-        "Round 3,500 to the nearest 1,000."
+        {
+          "q": "Round 4,738 to the nearest 1,000.",
+          "a": "5,000",
+          "mins": 1
+        },
+        {
+          "q": "Halfway between 40,000 and 50,000?",
+          "a": "45,000",
+          "mins": 1
+        },
+        {
+          "q": "What is the 2 worth in 527,000?",
+          "a": "20,000",
+          "mins": 1
+        },
+        {
+          "q": "8 × 7 = ?",
+          "a": "56",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "The rounding rule",
-          "bullets": [
-            "Look at the digit to the right of the rounding place.",
-            "4 or less: round down.",
-            "5 or more: round up."
-          ],
-          "note": "Use a number line with a halfway marker. Make clear that exactly halfway (for example 350 to the nearest 100) rounds up by convention."
+          "heading": "The digit to the right",
+          "table": {
+            "head": [
+              "547,820 to nearest",
+              "Look at",
+              "Answer"
+            ],
+            "rows": [
+              [
+                "10",
+                "ones 0",
+                "547,820"
+              ],
+              [
+                "100",
+                "tens 2",
+                "547,800"
+              ],
+              [
+                "1,000",
+                "hundreds 8",
+                "548,000"
+              ],
+              [
+                "10,000",
+                "thousands 7",
+                "550,000"
+              ],
+              [
+                "100,000",
+                "ten-thousands 4",
+                "500,000"
+              ]
+            ]
+          },
+          "note": "Look one place to the right."
         },
         {
-          "heading": "Round 358,946",
+          "heading": "On a number line",
           "bullets": [
-            "Nearest 10: 358,950.",
-            "Nearest 100: 358,900. Nearest 1,000: 359,000.",
-            "Nearest 10,000: 360,000. Nearest 100,000: 400,000."
+            "547,820 is between 540,000 and 550,000",
+            "Halfway is 545,000",
+            "Rounds to 550,000"
           ],
-          "note": "Underline the rounding digit and circle the deciding digit each time. For the tens: ones digit 6 rounds up. For 100,000: ten thousands digit is 5 so round up to 400,000. Ask why zeros are needed."
+          "numberline": {
+            "min": 540000,
+            "max": 550000,
+            "step": 1000,
+            "marks": [
+              {
+                "at": 545000,
+                "label": "halfway"
+              },
+              {
+                "at": 547820,
+                "label": "547,820"
+              }
+            ]
+          },
+          "note": "Ask: 544,999? (540,000)."
         },
         {
-          "heading": "Watch for 9s",
-          "bullets": [
-            "99,960 to the nearest 100 is 100,000.",
-            "74,500 to the nearest 1,000 is 75,000.",
-            "Carry over like column addition."
-          ],
-          "note": "When the rounding digit is 9 and we round up, it becomes 0 and the digit to the left increases. Use a number line to prove 99,960 is nearer 100,000 than 99,900."
+          "heading": "Watch out",
+          "misconception": {
+            "wrong": "395,600 to the nearest 10,000 is 390,000",
+            "right": "The thousands digit is 5, so round up: 400,000"
+          },
+          "note": "Ask: what went wrong?"
         },
         {
-          "heading": "Why round?",
-          "bullets": [
-            "Rounding makes numbers easier to use.",
-            "A crowd of 62,345 is about 62,000.",
-            "Estimates check answers make sense."
-          ],
-          "note": "Ask pupils when exact numbers matter (money in the bank) and when approximations are fine (a news report). Link to sadaqah totals: 'about £15,000 raised'."
+          "heading": "Hinge",
+          "check": {
+            "q": "Round 849,500 to the nearest 100,000.",
+            "options": [
+              "800,000",
+              "850,000",
+              "900,000"
+            ],
+            "answer": 0,
+            "why": "Ten-thousands digit 4: round down to 800,000."
+          },
+          "note": "Teams poll."
         }
       ],
       "practice": [
-        "Round 47,382 to the nearest 10, 100 and 1,000.",
-        "Round 635,418 to the nearest 10,000.",
-        "Round 249,999 to the nearest 100,000."
+        {
+          "q": "Round 263,459 to the nearest 1,000.",
+          "a": "263,000",
+          "mins": 2,
+          "model": "Teacher: 263,459 between 263,000 and 264,000; hundreds 4, so 263,000."
+        },
+        {
+          "q": "Round 263,459 to the nearest 10,000.",
+          "a": "260,000",
+          "mins": 2
+        },
+        {
+          "q": "Round 999,950 to the nearest 100.",
+          "a": "1,000,000",
+          "mins": 3
+        }
       ],
       "independent": [
-        "Round 83,574 to the nearest 10, 100, 1,000 and 10,000.",
-        "Round 507,260 to the nearest 1,000, 10,000 and 100,000.",
-        "A mosque fundraiser raised £124,650. Write this to the nearest £1,000 and the nearest £10,000.",
-        "Write the smallest and largest whole numbers that round to 70,000 when rounded to the nearest 10,000."
+        {
+          "q": "Core: round 178,345 to the nearest 10, 100 and 1,000.",
+          "a": "178,350; 178,300; 178,000",
+          "mins": 4,
+          "model": "Teacher: 178,345: ones 5 up to 178,350; tens 4 down to 178,300; hundreds 3 down to 178,000."
+        },
+        {
+          "q": "Extend: round 645,500 to the nearest 10,000 and 100,000.",
+          "a": "650,000; 600,000",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: smallest and greatest whole numbers that round to 70,000 (nearest 10,000)?",
+          "a": "65,000 and 74,999",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Round 56,481 to the nearest 1,000.",
-        "Round 349,500 to the nearest 100,000."
+        {
+          "q": "Round 452,610 to the nearest 10,000.",
+          "a": "450,000",
+          "mins": 2
+        },
+        {
+          "q": "Big question: when would rounding to the nearest 100,000 be sensible?",
+          "a": "For a quick idea of a very large number, like a city's population",
+          "mins": 3
+        }
       ],
-      "homework": "Find five large numbers in news or books, and round each to the nearest 1,000 and nearest 10,000.",
-      "send": "SEND: number line with halfway marker, circle the deciding digit. EAL: model 'round to the nearest ...'. Stretch: smallest and largest numbers that round to a given value."
+      "homework": "Round 4 big numbers (teacher's list) to the nearest 1,000, 10,000 and 100,000.",
+      "send": "SEND: concrete or pictorial first (counters, strips), worked example on screen, reduced set. EAL: key word cards; stem 'First I ..., then I ...'. Stretch: round to the nearest million.",
+      "resources": [
+        "White Rose Maths Year 5, Autumn block 1: Place value: small step 'Round to the nearest 10, 100, 1,000, 10,000 and 100,000' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Place value counters or paper ones to hundred thousands",
+        "Place value chart to millions (paper)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 4 guided, independent and homework tasks"
+      ]
     },
     {
       "unit": "Unit 1: Place value to 1,000,000",
@@ -325,9 +756,18 @@
         "Calculate intervals across zero"
       ],
       "keywords": [
-        { "term": "negative number", "def": "a number below zero, written with a minus sign" },
-        { "term": "interval", "def": "the distance between two numbers" },
-        { "term": "temperature", "def": "how hot or cold something is, in degrees Celsius" }
+        {
+          "term": "negative number",
+          "def": "a number below zero, written with a minus sign"
+        },
+        {
+          "term": "interval",
+          "def": "the distance between two numbers"
+        },
+        {
+          "term": "temperature",
+          "def": "how hot or cold something is, in degrees Celsius"
+        }
       ],
       "starter": [
         "Say Bismillah. Count back from 5 to -5.",
@@ -400,8 +840,14 @@
         "Recognise years written in Roman numerals"
       ],
       "keywords": [
-        { "term": "Roman numeral", "def": "a letter used by the Romans to stand for a number" },
-        { "term": "subtractive rule", "def": "a smaller numeral before a larger one is subtracted, as in IV" }
+        {
+          "term": "Roman numeral",
+          "def": "a letter used by the Romans to stand for a number"
+        },
+        {
+          "term": "subtractive rule",
+          "def": "a smaller numeral before a larger one is subtracted, as in IV"
+        }
       ],
       "starter": [
         "Say Bismillah. What is 40 + 9?",
@@ -474,154 +920,442 @@
       "send": "SEND: Roman numeral reference card. EAL: letters for numbers are quick to learn; pre-teach 'subtract'. Stretch: write years such as 1,999 and 2,049 in Roman numerals."
     },
     {
-      "unit": "Unit 2: Addition and subtraction",
+      "unit": "Spring 1: Multiplication and division B; fractions B",
       "n": 7,
-      "title": "Column addition with large numbers",
+      "title": "Bridge: column addition with large numbers",
       "duration": 45,
+      "bigQuestion": "Does the column method work for numbers of any size?",
       "objectives": [
-        "Add numbers with more than 4 digits using column addition",
-        "Check answers by estimating"
+        "To understand how column addition works for numbers of any size"
       ],
+      "successCriteria": [
+        "All: add 5-digit numbers",
+        "Most: add numbers with different numbers of digits",
+        "Some: estimate and check"
+      ],
+      "crossCurricular": "Geography: total visitors to two places",
+      "smsc": "Social: totals raised by a community for a masjid (مَسْجِد) appeal",
       "keywords": [
-        { "term": "column addition", "def": "adding numbers by lining up place value columns" },
-        { "term": "carry", "def": "move 10 of one place to the next column to the left" },
-        { "term": "sum", "def": "the answer to an addition" }
+        {
+          "term": "column addition",
+          "def": "adding in place value columns"
+        },
+        {
+          "term": "exchange",
+          "def": "swap 10 of one place for 1 of the next"
+        },
+        {
+          "term": "estimate",
+          "def": "a rough answer"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Estimate first: 45,678 + 37,594. Nearer 70,000, 80,000 or 90,000?",
+        "options": [
+          "70,000",
+          "80,000",
+          "90,000"
+        ],
+        "a": "80,000 (46,000 + 38,000 = 84,000). Exact: 83,272."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "chat-waterfall",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "column addition written method",
+          "alt": "A column addition set out on squared paper",
+          "for": "teach:1"
+        },
+        {
+          "find": "charity collection jar coins",
+          "alt": "A collection jar with coins",
+          "for": "keywords"
+        }
       ],
       "starter": [
-        "Say Bismillah. What is 7 + 6?",
-        "What is 80 + 90?",
-        "Round 4,687 to the nearest 1,000."
+        {
+          "q": "3,457 + 2,876 = ?",
+          "a": "6,333",
+          "mins": 2
+        },
+        {
+          "q": "Round 45,678 to the nearest 1,000.",
+          "a": "46,000",
+          "mins": 1
+        },
+        {
+          "q": "9 + 8 + 1 = ?",
+          "a": "18",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Line up the columns",
-          "bullets": [
-            "Write the numbers with matching place values.",
-            "Start with the ones column on the right.",
-            "Carry when a column totals 10 or more."
-          ],
-          "note": "Use squared paper, one digit per box. Messy columns are the main source of error. Remind pupils that carrying is exchanging 10 ones for 1 ten."
+          "heading": "Line up",
+          "table": {
+            "head": [
+              "Step",
+              "TTh",
+              "Th",
+              "H",
+              "T",
+              "O"
+            ],
+            "rows": [
+              [
+                "",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8"
+              ],
+              [
+                "+",
+                "3",
+                "7",
+                "5",
+                "9",
+                "4"
+              ],
+              [
+                "exch.",
+                "1",
+                "1",
+                "1",
+                "1",
+                ""
+              ],
+              [
+                "=",
+                "8",
+                "3",
+                "2",
+                "7",
+                "2"
+              ]
+            ]
+          },
+          "note": "Ones under ones; work right to left."
         },
         {
-          "heading": "45,687 + 38,596",
-          "bullets": [
-            "Ones: 7 + 6 = 13. Write 3, carry 1.",
-            "Tens: 8 + 9 + 1 = 18. Write 8, carry 1.",
-            "Hundreds: 6 + 5 + 1 = 12. Write 2, carry 1."
-          ],
-          "note": "Continue: thousands 5 + 8 + 1 = 14, write 4 and carry 1; ten thousands 4 + 3 + 1 = 8. The answer is 84,283. Say each step aloud as 'seven plus six equals thirteen'."
+          "heading": "Model",
+          "model": {
+            "problem": "45,678 + 37,594",
+            "steps": [
+              "Ones 12: write 2, exchange 1",
+              "Tens 17: write 7, exchange 1",
+              "Hundreds 12: write 2, exchange 1",
+              "Thousands 13: write 3, exchange 1; ten-thousands 8"
+            ],
+            "answer": "83,272"
+          },
+          "note": "Narrate each column."
         },
         {
-          "heading": "Check by estimating",
+          "heading": "Different lengths",
           "bullets": [
-            "45,687 rounds to 46,000; 38,596 rounds to 39,000.",
-            "46,000 + 39,000 = 85,000.",
-            "84,283 is close to 85,000, so it is sensible."
+            "204,365 + 8,947",
+            "Line up the ones!",
+            "= 213,312"
           ],
-          "note": "Estimating catches place value slips. Ask what would look wrong (an answer of 8,428 or 840,283)."
+          "note": "Ask: where does the 8 go? (thousands)."
         },
         {
-          "heading": "Six digits: 126,408 + 59,775",
-          "bullets": [
-            "Different lengths: line up from the right.",
-            "Ones 8 + 5 = 13; tens 0 + 7 + 1 = 8.",
-            "Answer: 186,183."
-          ],
-          "note": "Hundreds 4 + 7 = 11 (write 1, carry 1); thousands 6 + 9 + 1 = 16 (write 6, carry 1); ten thousands 2 + 5 + 1 = 8; hundred thousands 1. Total 186,183. Check: 126,000 + 60,000 is about 186,000."
+          "heading": "Hinge",
+          "check": {
+            "q": "26,849 + 15,376 = ?",
+            "options": [
+              "42,225",
+              "41,115",
+              "42,215"
+            ],
+            "answer": 0,
+            "why": "42,225."
+          },
+          "note": "Teams poll."
         }
       ],
       "practice": [
-        "Work out 23,456 + 18,979 and estimate to check.",
-        "Work out 305,200 + 94,865.",
-        "A shop sold 12,450 items in June and 9,875 in July. How many altogether?"
+        {
+          "q": "34,256 + 21,432 = ?",
+          "a": "55,688",
+          "mins": 2,
+          "model": "Teacher adds 34,256 + 21,432 column by column with no exchange: 55,688."
+        },
+        {
+          "q": "58,697 + 26,845 = ?",
+          "a": "85,542",
+          "mins": 2
+        },
+        {
+          "q": "125,708 + 9,465 = ?",
+          "a": "135,173",
+          "mins": 3
+        }
       ],
       "independent": [
-        "Calculate: 34,521 + 27,389; 68,907 + 5,094; 214,365 + 178,456.",
-        "Estimate first, then calculate: 52,918 + 36,487.",
-        "Three masjids raised £14,250, £9,875 and £21,600 for charity. How much in total?",
-        "A total of 71,017 is made from 45,632 and another number. Find the other number."
+        {
+          "q": "Core: 47,385 + 36,927; 63,018 + 28,994",
+          "a": "84,312; 92,012",
+          "mins": 4,
+          "model": "Teacher: 47,385 + 36,927: exchanges in ones, tens, hundreds and thousands: 84,312."
+        },
+        {
+          "q": "Extend: 345,678 + 254,329",
+          "a": "600,007",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: an appeal raised £128,450 then £96,785. Total?",
+          "a": "£225,235",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Calculate 47,865 + 36,478.",
-        "Estimate 52,310 + 28,790 by rounding to the nearest 1,000."
+        {
+          "q": "53,476 + 28,659 = ?",
+          "a": "82,135",
+          "mins": 2
+        },
+        {
+          "q": "Big question: what is the same for 4-digit and 6-digit addition?",
+          "a": "Same method: line up, add right to left, exchange 10 for 1 of the next place",
+          "mins": 3
+        }
       ],
-      "homework": "Write five addition calculations with 5- and 6-digit numbers, solve them using column addition and check each with an estimate.",
-      "send": "SEND: squared paper or place value columns, digit cards. EAL: model language 'carry one'. Stretch: add four numbers or decimals."
+      "homework": "Six additions of 5- and 6-digit numbers; estimate first.",
+      "send": "SEND: concrete or pictorial first (counters, strips), worked example on screen, reduced set. EAL: key word cards; stem 'First I ..., then I ...'. Stretch: add three large numbers.",
+      "resources": [
+        "White Rose Maths Year 5, Autumn block 2: Addition and subtraction: small step 'Add whole numbers with more than four digits' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Place value counters or paper ones to hundred thousands",
+        "Place value chart to millions (paper)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 7 guided, independent and homework tasks"
+      ]
     },
     {
-      "unit": "Unit 2: Addition and subtraction",
+      "unit": "Spring 1: Multiplication and division B; fractions B",
       "n": 8,
-      "title": "Column subtraction with large numbers",
+      "title": "Bridge: column subtraction and inverse checking",
       "duration": 45,
+      "bigQuestion": "How do we subtract and check with confidence?",
       "objectives": [
-        "Subtract numbers with more than 4 digits using column subtraction",
-        "Exchange across zeros accurately"
+        "To understand how to subtract large numbers and check with the inverse"
       ],
+      "successCriteria": [
+        "All: subtract with exchanges",
+        "Most: subtract across zeros",
+        "Some: check with addition"
+      ],
+      "crossCurricular": "Science: differences in measurements",
+      "smsc": "Moral: amanah (أَمَانَة): accurate records are a trust",
       "keywords": [
-        { "term": "column subtraction", "def": "subtracting by lining up place value columns" },
-        { "term": "exchange", "def": "swap 1 of one place for 10 of the place to the right" },
-        { "term": "difference", "def": "how much more or less one number is than another" }
+        {
+          "term": "difference",
+          "def": "how much more or less"
+        },
+        {
+          "term": "inverse",
+          "def": "the opposite operation"
+        },
+        {
+          "term": "exchange",
+          "def": "swap 1 for 10 of the next smaller place"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Sami says 70,000 - 23,456 = 53,456. Check with the inverse. Is he right?",
+        "a": "53,456 + 23,456 = 76,912, not 70,000. Correct: 46,544."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "column addition written method",
+          "alt": "A column addition set out on squared paper",
+          "for": "teach:2"
+        },
+        {
+          "find": "place value counters ones tens hundreds",
+          "alt": "Place value counters marked 1, 10, 100 and 1,000",
+          "for": "keywords"
+        }
       ],
       "starter": [
-        "Say Bismillah. What is 15 - 8?",
-        "What is 100 - 37?",
-        "Write 10,000 less than 53,200."
+        {
+          "q": "6,253 - 2,718 = ?",
+          "a": "3,535",
+          "mins": 2
+        },
+        {
+          "q": "1,000 - 456 = ?",
+          "a": "544",
+          "mins": 1
+        },
+        {
+          "q": "Estimate 70,000 - 23,456.",
+          "a": "70,000 - 20,000 = 50,000",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Exchange when needed",
-          "bullets": [
-            "Subtract the bottom digit from the top digit.",
-            "If the top digit is smaller, exchange from the left.",
-            "Exchanging gives 10 more in the column."
-          ],
-          "note": "Use place value counters to show exchanging 1 ten for 10 ones. Insist the bigger number goes on top."
+          "heading": "Several exchanges",
+          "model": {
+            "problem": "84,253 - 37,568",
+            "steps": [
+              "Ones: 13 - 8 = 5 (exchange)",
+              "Tens: 14 - 6 = 8 (exchange)",
+              "Hundreds: 11 - 5 = 6 (exchange)",
+              "Thousands: 13 - 7 = 6 (exchange); ten-thousands: 7 - 3 = 4"
+            ],
+            "answer": "46,685"
+          },
+          "note": "Narrate."
         },
         {
-          "heading": "72,405 - 38,689",
+          "heading": "Across zeros",
           "bullets": [
-            "Ones: 15 - 9 = 6 after exchanging.",
-            "Tens: 9 - 8 = 1. Hundreds: 13 - 6 = 7.",
-            "Answer: 33,716."
+            "70,000 - 23,456",
+            "Exchange: 6 TTh, 9 Th, 9 H, 9 T, 10 O",
+            "= 46,544"
           ],
-          "note": "Working: 5 < 9, but there are 0 tens, so exchange 1 hundred for 10 tens, then 1 ten for 10 ones. Thousands: 1 - 8 needs another exchange from the ten thousands, giving 11 - 8 = 3, and 6 - 3 = 3 ten thousands. Check using addition: 33,716 + 38,689 = 72,405."
+          "table": {
+            "head": [
+              "Step",
+              "TTh",
+              "Th",
+              "H",
+              "T",
+              "O"
+            ],
+            "rows": [
+              [
+                "70,000",
+                "6",
+                "9",
+                "9",
+                "9",
+                "10"
+              ],
+              [
+                "- 23,456",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6"
+              ],
+              [
+                "=",
+                "4",
+                "6",
+                "5",
+                "4",
+                "4"
+              ]
+            ]
+          },
+          "note": "Ask: why 9s? (each place gives 1 to the next)."
         },
         {
-          "heading": "Zeros in the number",
+          "heading": "Check",
           "bullets": [
-            "50,000 - 23,764: exchange across four zeros.",
-            "Think 49,999 - 23,764, then add 1.",
-            "Answer: 26,236."
+            "46,544 + 23,456 = 70,000",
+            "Inverse matches.",
+            "Answer is correct."
           ],
-          "note": "Show both methods: exchanging one place at a time, and the shortcut of subtracting from 49,999 and adding 1. Check by addition: 26,236 + 23,764 = 50,000."
+          "note": "Ask: check 84,253 - 37,568 = 46,685."
         },
         {
-          "heading": "Check with the inverse",
-          "bullets": [
-            "Subtraction is the inverse of addition.",
-            "305,120 - 148,975 = 156,145.",
-            "Check: 148,975 + 156,145 = 305,120."
-          ],
-          "note": "Stress that checking with the inverse is a habit, not extra work. Ask pupils to create a fact family: 148,975 + 156,145 = 305,120 and three more."
+          "heading": "Hinge",
+          "check": {
+            "q": "50,302 - 18,457 = ?",
+            "options": [
+              "31,845",
+              "32,155",
+              "31,955"
+            ],
+            "answer": 0,
+            "why": "31,845."
+          },
+          "note": "Teams poll."
         }
       ],
       "practice": [
-        "Work out 84,263 - 29,718 and check by adding.",
-        "Work out 400,000 - 156,284.",
-        "A school needs 60,000 stickers and has 38,450. How many more are needed?"
+        {
+          "q": "67,894 - 23,561 = ?",
+          "a": "44,333",
+          "mins": 2,
+          "model": "Teacher subtracts 67,894 - 23,561 column by column: 44,333; checks 44,333 + 23,561 = 67,894."
+        },
+        {
+          "q": "52,317 - 28,649 = ?",
+          "a": "23,668",
+          "mins": 2
+        },
+        {
+          "q": "Check: 52,317 - 28,649 = 23,668",
+          "a": "23,668 + 28,649 = 52,317: correct",
+          "mins": 3
+        }
       ],
       "independent": [
-        "Calculate: 65,432 - 28,765; 90,001 - 45,678; 512,300 - 249,875.",
-        "Estimate first, then calculate: 73,904 - 38,115.",
-        "A book had 125,400 words. A reader has read 87,865 words. How many words are left?",
-        "Spot the mistake: 7,000 - 2,345 = 5,765. Find the correct answer."
+        {
+          "q": "Core: 81,436 - 47,258; 100,000 - 36,742",
+          "a": "34,178; 63,258",
+          "mins": 4,
+          "model": "Teacher: 81,436 - 47,258 = 34,178; check: 34,178 + 47,258 = 81,436."
+        },
+        {
+          "q": "Extend: 403,005 - 189,567",
+          "a": "213,438",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: ? - 45,678 = 54,322",
+          "a": "100,000",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Calculate 52,300 - 17,845.",
-        "Check by addition that 80,000 - 36,500 = 43,500."
+        {
+          "q": "60,000 - 27,385 = ?",
+          "a": "32,615",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how do you check a subtraction?",
+          "a": "Add the answer to the number subtracted; it should give the starting number",
+          "mins": 3
+        }
       ],
-      "homework": "Write five subtraction questions involving zeros, solve them, then check each using the inverse addition.",
-      "send": "SEND: place value counters; highlight the exchanging digit in a colour. EAL: pre-teach exchange/difference. Stretch: subtract decimals or three numbers."
+      "homework": "Six subtractions with large numbers, each checked by adding.",
+      "send": "SEND: concrete or pictorial first (counters, strips), worked example on screen, reduced set. EAL: key word cards; stem 'First I ..., then I ...'. Stretch: multi-step problems with large numbers.",
+      "resources": [
+        "White Rose Maths Year 5, Autumn block 2: Addition and subtraction: small step 'Subtract whole numbers with more than four digits; inverse operations' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Place value counters or paper ones to hundred thousands",
+        "Place value chart to millions (paper)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 8 guided, independent and homework tasks"
+      ]
     },
     {
       "unit": "Unit 2: Addition and subtraction",
@@ -633,9 +1367,18 @@
         "Solve multi-step problems using the correct operations"
       ],
       "keywords": [
-        { "term": "estimate", "def": "find an approximate answer by rounding first" },
-        { "term": "inverse operation", "def": "the operation that undoes another, such as + and -" },
-        { "term": "multi-step", "def": "a problem that needs more than one calculation" }
+        {
+          "term": "estimate",
+          "def": "find an approximate answer by rounding first"
+        },
+        {
+          "term": "inverse operation",
+          "def": "the operation that undoes another, such as + and -"
+        },
+        {
+          "term": "multi-step",
+          "def": "a problem that needs more than one calculation"
+        }
       ],
       "starter": [
         "Say Bismillah. Round 48,612 to the nearest 1,000.",
@@ -699,89 +1442,250 @@
       "send": "SEND: bar model templates and step-by-step prompt cards. EAL: highlight key words in problems. Stretch: problems with three or more steps."
     },
     {
-      "unit": "Unit 3: Multiples, factors and special numbers",
+      "unit": "Spring 1: Multiplication and division B; fractions B",
       "n": 10,
-      "title": "Multiples and factors",
+      "title": "Bridge: multiples and factors",
       "duration": 45,
+      "bigQuestion": "How are factors and multiples linked?",
       "objectives": [
-        "Identify multiples and factors of a number",
-        "Find common factors and common multiples of two numbers"
+        "To understand how factors and multiples are linked"
       ],
+      "successCriteria": [
+        "All: list multiples",
+        "Most: find all factor pairs systematically",
+        "Some: find common factors and common multiples"
+      ],
+      "crossCurricular": "Art: designing tile patterns with equal rows",
+      "smsc": "Spiritual: order and pattern in numbers",
       "keywords": [
-        { "term": "multiple", "def": "a number in the times table of another number" },
-        { "term": "factor", "def": "a whole number that divides exactly into another number" },
-        { "term": "common factor", "def": "a factor shared by two numbers" },
-        { "term": "common multiple", "def": "a multiple shared by two numbers" }
+        {
+          "term": "multiple",
+          "def": "in the times table of a number"
+        },
+        {
+          "term": "factor",
+          "def": "divides a number exactly"
+        },
+        {
+          "term": "factor pair",
+          "def": "two factors that multiply to the number"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "24 chairs are set out in equal rows in a hall. How many different ways could the rows be arranged?",
+        "a": "8: 1 × 24, 2 × 12, 3 × 8, 4 × 6 and the reverse of each. The factors of 24 are 1, 2, 3, 4, 6, 8, 12, 24."
+      },
+      "routines": {
+        "hook": "think-pair-share",
+        "starter": "chat-waterfall",
+        "hinge": "teams-poll",
+        "practice": "think-pair-share",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "square floor tiles grid pattern",
+          "alt": "Square tiles in rows and columns",
+          "for": "hook"
+        },
+        {
+          "find": "muffin baking tray 3 by 4",
+          "alt": "A muffin tray: an array of 3 rows of 4",
+          "for": "keywords"
+        }
       ],
       "starter": [
-        "Say Bismillah. What is 6 x 7?",
-        "What is 48 ÷ 8?",
-        "List the multiples of 5 up to 50."
+        {
+          "q": "6 × 4 = ?",
+          "a": "24",
+          "mins": 1
+        },
+        {
+          "q": "Is 35 in the 5 times table?",
+          "a": "Yes",
+          "mins": 1
+        },
+        {
+          "q": "48 ÷ 8 = ?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "Round 4,450 to the nearest 1,000.",
+          "a": "4,000",
+          "mins": 1
+        }
       ],
       "teach": [
         {
           "heading": "Multiples",
           "bullets": [
-            "Multiples of 8: 8, 16, 24, 32, 40, 48.",
-            "They come from counting in 8s.",
-            "A multiple is divisible by the number."
+            "Multiples of 6: 6, 12, 18, 24, 30",
+            "Go on forever.",
+            "In the times table."
           ],
-          "note": "Use a number grid and shade multiples. Ask: is 56 a multiple of 8? How do you know (8 x 7)?"
+          "numberline": {
+            "min": 0,
+            "max": 60,
+            "step": 6,
+            "marks": [
+              {
+                "at": 24,
+                "label": "24"
+              },
+              {
+                "at": 48,
+                "label": "48"
+              }
+            ]
+          },
+          "note": "Ask: is 42 a multiple of 6? (yes, 7 × 6)."
         },
         {
-          "heading": "Factors in pairs",
-          "bullets": [
-            "Pairs: 1x36, 2x18, 3x12, 4x9, 6x6.",
-            "Factors of 36: 1, 2, 3, 4, 6, 9, 12, 18, 36.",
-            "Factors come in pairs."
-          ],
-          "note": "Work systematically from 1 upwards and stop when the pairs meet. 6 x 6 is listed once. Pupils often miss factors or include non-factors."
+          "heading": "Factor pairs",
+          "table": {
+            "head": [
+              "Factor",
+              "Pair",
+              "Product"
+            ],
+            "rows": [
+              [
+                "1",
+                "36",
+                "36"
+              ],
+              [
+                "2",
+                "18",
+                "36"
+              ],
+              [
+                "3",
+                "12",
+                "36"
+              ],
+              [
+                "4",
+                "9",
+                "36"
+              ],
+              [
+                "6",
+                "6",
+                "36"
+              ]
+            ]
+          },
+          "note": "Work systematically from 1."
         },
         {
           "heading": "Common factors",
-          "bullets": [
-            "Factors of 24: 1, 2, 3, 4, 6, 8, 12, 24.",
-            "Common factors of 24 and 36: 1, 2, 3, 4, 6, 12.",
-            "The highest is 12."
-          ],
-          "note": "Write the two factor lists one above the other and circle matches. Introduce a Venn diagram if time allows. The highest common factor is the greatest number in both lists."
+          "sort": {
+            "columns": [
+              "Factor of 12 only",
+              "Factor of 18 only",
+              "Common factor"
+            ],
+            "cards": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "6",
+              "9",
+              "12",
+              "18"
+            ],
+            "answer": [
+              2,
+              2,
+              2,
+              0,
+              2,
+              1,
+              0,
+              1
+            ]
+          },
+          "note": "Sort into the right column."
         },
         {
-          "heading": "Common multiples",
-          "bullets": [
-            "Multiples of 4: 4, 8, 12, 16, 20, 24, 28, 32, 36.",
-            "Multiples of 6: 6, 12, 18, 24, 30, 36.",
-            "Common multiples: 12, 24, 36."
-          ],
-          "note": "The lowest common multiple of 4 and 6 is 12. Real life: two buses leaving every 4 and 6 minutes meet again after 12 minutes."
-        },
-        {
-          "heading": "Quick divisibility checks",
-          "bullets": [
-            "Divisible by 2 if it ends in 0, 2, 4, 6, 8.",
-            "Divisible by 5 if it ends in 0 or 5.",
-            "Divisible by 10 if it ends in 0."
-          ],
-          "note": "Ask: is 3,475 a multiple of 5? Of 2? Of 10? Pupils can justify using the last digit."
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is NOT a factor of 36?",
+            "options": [
+              "9",
+              "8",
+              "12"
+            ],
+            "answer": 1,
+            "why": "36 ÷ 8 = 4 r 4, so 8 is not a factor."
+          },
+          "note": "Teams poll."
         }
       ],
       "practice": [
-        "List the first six multiples of 9.",
-        "List all the factors of 40.",
-        "Find the common factors of 18 and 30."
+        {
+          "q": "List the first 5 multiples of 7.",
+          "a": "7, 14, 21, 28, 35",
+          "mins": 2,
+          "model": "Teacher counts in 7s: 7, 14, 21, 28, 35."
+        },
+        {
+          "q": "All factors of 20?",
+          "a": "1, 2, 4, 5, 10, 20",
+          "mins": 2
+        },
+        {
+          "q": "Common factors of 16 and 24?",
+          "a": "1, 2, 4, 8",
+          "mins": 3
+        }
       ],
       "independent": [
-        "List all factors of 28, 45 and 64.",
-        "Find the common factors of 16 and 40. What is the highest?",
-        "Find the first three common multiples of 6 and 9.",
-        "Pens come in packs of 8 and pencils in packs of 12. What is the smallest number of each so that there are the same number of pens and pencils?"
+        {
+          "q": "Core: factors of 30 and 45.",
+          "a": "1, 2, 3, 5, 6, 10, 15, 30; 1, 3, 5, 9, 15, 45",
+          "mins": 4,
+          "model": "Teacher tests 1 to 5 for 30: pairs 1 × 30, 2 × 15, 3 × 10, 5 × 6."
+        },
+        {
+          "q": "Extend: common multiples of 4 and 6 below 40.",
+          "a": "12, 24, 36",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: which number under 50 has the most factors?",
+          "a": "48 (10 factors: 1, 2, 3, 4, 6, 8, 12, 16, 24, 48)",
+          "mins": 3
+        }
       ],
       "exit": [
-        "List all the factors of 30.",
-        "What is the lowest common multiple of 5 and 10?"
+        {
+          "q": "Factor pairs of 18?",
+          "a": "1 × 18, 2 × 9, 3 × 6",
+          "mins": 2
+        },
+        {
+          "q": "Big question: 7 is a factor of 28. So 28 is a ... of 7?",
+          "a": "Multiple",
+          "mins": 3
+        }
       ],
-      "homework": "Choose any three numbers between 20 and 60. List all factors of each and find any common factors.",
-      "send": "SEND: multiplication grid, arrays with counters to find factor pairs. EAL: pre-teach factor/multiple with examples. Stretch: three numbers' common factors."
+      "homework": "Find all the factors of 40, 42 and 60.",
+      "send": "SEND: concrete or pictorial first (counters, strips), worked example on screen, reduced set. EAL: key word cards; stem 'First I ..., then I ...'. Stretch: prime numbers to 50 (only two factors).",
+      "resources": [
+        "White Rose Maths Year 5, Autumn block 3: Multiplication and division A: small step 'Multiples; factors; common factors' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Place value counters",
+        "Times-table grid",
+        "Squared paper (for long multiplication layout)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 10 guided, independent and homework tasks"
+      ]
     },
     {
       "unit": "Unit 3: Multiples, factors and special numbers",
@@ -793,9 +1697,18 @@
         "Explain why a number is composite"
       ],
       "keywords": [
-        { "term": "prime number", "def": "a number with exactly two factors, 1 and itself" },
-        { "term": "composite number", "def": "a number with more than two factors" },
-        { "term": "sieve", "def": "a method of crossing out numbers to leave only the primes" }
+        {
+          "term": "prime number",
+          "def": "a number with exactly two factors, 1 and itself"
+        },
+        {
+          "term": "composite number",
+          "def": "a number with more than two factors"
+        },
+        {
+          "term": "sieve",
+          "def": "a method of crossing out numbers to leave only the primes"
+        }
       ],
       "starter": [
         "Say Bismillah. List the factors of 12.",
@@ -868,10 +1781,22 @@
         "Use the notation ² and ³"
       ],
       "keywords": [
-        { "term": "square number", "def": "the result of multiplying a whole number by itself" },
-        { "term": "cube number", "def": "the result of multiplying a whole number by itself, then by itself again" },
-        { "term": "squared (²)", "def": "multiplied by itself" },
-        { "term": "cubed (³)", "def": "multiplied by itself three times" }
+        {
+          "term": "square number",
+          "def": "the result of multiplying a whole number by itself"
+        },
+        {
+          "term": "cube number",
+          "def": "the result of multiplying a whole number by itself, then by itself again"
+        },
+        {
+          "term": "squared (²)",
+          "def": "multiplied by itself"
+        },
+        {
+          "term": "cubed (³)",
+          "def": "multiplied by itself three times"
+        }
       ],
       "starter": [
         "Say Bismillah. What is 7 x 7?",
@@ -933,6 +1858,3915 @@
       ],
       "homework": "Draw dot patterns for the first six square numbers and write what you notice about the differences between them.",
       "send": "SEND: counters and linking cubes to build squares and cubes. EAL: practise saying 'squared' and 'cubed'. Stretch: find the next number that is both square and cube after 64."
+    },
+    {
+      "unit": "Spring 1: Multiplication and division B; fractions B",
+      "n": 13,
+      "title": "Bridge: equivalent fractions",
+      "duration": 45,
+      "bigQuestion": "How can different fractions show the same amount?",
+      "objectives": [
+        "To understand how different fractions can show the same amount"
+      ],
+      "successCriteria": [
+        "All: show equivalence with fraction strips",
+        "Most: multiply or divide numerator and denominator by the same number",
+        "Some: simplify fully using common factors"
+      ],
+      "crossCurricular": "Cooking: half a cup or two quarters",
+      "smsc": "Moral: fairness: equal shares even when cut differently",
+      "keywords": [
+        {
+          "term": "equivalent",
+          "def": "equal in value"
+        },
+        {
+          "term": "simplify",
+          "def": "write with the smallest numbers possible"
+        },
+        {
+          "term": "common factor",
+          "def": "a factor of both numbers"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Would you rather have 1/2, 3/6 or 4/8 of a cake?",
+        "options": [
+          "1/2",
+          "3/6",
+          "4/8"
+        ],
+        "a": "They are all the same amount: equivalent fractions."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "fraction wall chart",
+          "alt": "A fraction wall",
+          "for": "teach:1"
+        },
+        {
+          "find": "pizza cut into eight slices",
+          "alt": "A pizza cut into 8 equal slices",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Factors of 12?",
+          "a": "1, 2, 3, 4, 6, 12",
+          "mins": 1
+        },
+        {
+          "q": "1/4 of 20?",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "4/4 = ?",
+          "a": "1",
+          "mins": 1
+        },
+        {
+          "q": "6 × 7 = ?",
+          "a": "42",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "See it",
+          "fraction": [
+            {
+              "parts": 3,
+              "shaded": 2,
+              "label": "2/3"
+            },
+            {
+              "parts": 6,
+              "shaded": 4,
+              "label": "4/6"
+            },
+            {
+              "parts": 12,
+              "shaded": 8,
+              "label": "8/12"
+            }
+          ],
+          "note": "Compare shaded lengths."
+        },
+        {
+          "heading": "Multiply both",
+          "bullets": [
+            "2/3 = 4/6 (× 2)",
+            "2/3 = 8/12 (× 4)",
+            "Same number top and bottom."
+          ],
+          "model": {
+            "problem": "3/5 = ?/20",
+            "steps": [
+              "5 × 4 = 20",
+              "So 3 × 4 = 12"
+            ],
+            "answer": "12/20"
+          },
+          "note": "Ask: 3/5 = ?/20 (12)."
+        },
+        {
+          "heading": "Simplify",
+          "bullets": [
+            "18/24: common factor 6",
+            "18 ÷ 6 = 3, 24 ÷ 6 = 4",
+            "18/24 = 3/4"
+          ],
+          "note": "Use the highest common factor for one step. Ask: simplify 10/15 (2/3)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is equivalent to 3/4?",
+            "options": [
+              "6/8",
+              "4/5",
+              "3/8"
+            ],
+            "answer": 0,
+            "why": "Multiply both by 2: 6/8."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "1/3 = ?/12",
+          "a": "4/12",
+          "mins": 2,
+          "model": "Teacher: 3 × 4 = 12, so 1 × 4 = 4: 4/12."
+        },
+        {
+          "q": "Simplify 12/16.",
+          "a": "3/4",
+          "mins": 2
+        },
+        {
+          "q": "Simplify 20/50.",
+          "a": "2/5",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 2/5 = ?/10; 5/6 = ?/18",
+          "a": "4/10; 15/18",
+          "mins": 4,
+          "model": "Teacher: 5 × 2 = 10, so 2 × 2 = 4: 4/10."
+        },
+        {
+          "q": "Extend: simplify 14/21, 27/36",
+          "a": "2/3, 3/4",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: find three fractions equivalent to 4/7.",
+          "a": "For example 8/14, 12/21, 40/70",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Simplify 9/12.",
+          "a": "3/4",
+          "mins": 2
+        },
+        {
+          "q": "Big question: why is 2/4 the same as 1/2?",
+          "a": "Both numerator and denominator are multiplied by 2; the amount is the same",
+          "mins": 3
+        }
+      ],
+      "homework": "Make a fraction wall from paper strips (halves to twelfths) and list 5 pairs of equivalent fractions.",
+      "send": "SEND: concrete or pictorial first (counters, strips), worked example on screen, reduced set. EAL: key word cards; stem 'First I ..., then I ...'. Stretch: equivalent fractions with improper fractions.",
+      "resources": [
+        "White Rose Maths Year 5, Autumn block 4: Fractions A: small step 'Equivalent fractions; simplify fractions' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4)",
+        "Fraction wall printout",
+        "Counters or pasta",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 13 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 1: Multiplication and division B; fractions B",
+      "n": 14,
+      "title": "Bridge: add and subtract fractions",
+      "duration": 45,
+      "bigQuestion": "Why must the denominators match before we add?",
+      "objectives": [
+        "To understand why denominators must match before adding or subtracting"
+      ],
+      "successCriteria": [
+        "All: add fractions with the same denominator",
+        "Most: convert one fraction to a common denominator",
+        "Some: simplify the answer or write it as a mixed number"
+      ],
+      "crossCurricular": "Cooking: combining parts of a recipe",
+      "smsc": "Social: shared work adds up",
+      "keywords": [
+        {
+          "term": "common denominator",
+          "def": "the same denominator for both fractions"
+        },
+        {
+          "term": "related denominators",
+          "def": "one is a multiple of the other, like 4 and 8"
+        },
+        {
+          "term": "simplify",
+          "def": "reduce to lowest terms"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Aaliyah says 1/2 + 1/4 = 2/6. Draw it. Is she right?",
+        "a": "No: 1/2 + 1/4 = 2/4 + 1/4 = 3/4. We cannot add denominators."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "chat-waterfall",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "fraction wall chart",
+          "alt": "A fraction wall",
+          "for": "teach:2"
+        },
+        {
+          "find": "pizza cut into eight slices",
+          "alt": "A pizza cut into 8 equal slices",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1/2 = ?/4",
+          "a": "2/4",
+          "mins": 1
+        },
+        {
+          "q": "Simplify 6/8.",
+          "a": "3/4",
+          "mins": 1
+        },
+        {
+          "q": "3/7 + 2/7 = ?",
+          "a": "5/7",
+          "mins": 1
+        },
+        {
+          "q": "2/3 = ?/12",
+          "a": "8/12",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Same denominator",
+          "bullets": [
+            "3/8 + 4/8 = 7/8",
+            "Add numerators only.",
+            "Denominator stays: same size parts."
+          ],
+          "fraction": [
+            {
+              "parts": 8,
+              "shaded": 3,
+              "label": "3/8"
+            },
+            {
+              "parts": 8,
+              "shaded": 4,
+              "label": "4/8"
+            },
+            {
+              "parts": 8,
+              "shaded": 7,
+              "label": "7/8"
+            }
+          ],
+          "note": "Ask: 9/10 - 4/10? (5/10 = 1/2)."
+        },
+        {
+          "heading": "Related denominators",
+          "model": {
+            "problem": "3/8 + 1/4",
+            "steps": [
+              "1/4 = 2/8",
+              "3/8 + 2/8"
+            ],
+            "answer": "5/8"
+          },
+          "note": "Make the denominators match."
+        },
+        {
+          "heading": "Subtract and simplify",
+          "bullets": [
+            "5/6 - 1/3",
+            "1/3 = 2/6",
+            "5/6 - 2/6 = 3/6 = 1/2"
+          ],
+          "note": "Ask: 7/12 + 1/3? (7/12 + 4/12 = 11/12)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "1/2 + 3/10 = ?",
+            "options": [
+              "4/12",
+              "8/10 = 4/5",
+              "4/10"
+            ],
+            "answer": 1,
+            "why": "1/2 = 5/10; 5/10 + 3/10 = 8/10 = 4/5."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "2/9 + 5/9 = ?",
+          "a": "7/9",
+          "mins": 2,
+          "model": "Teacher: same size parts, so add numerators: 2 + 5 = 7: 7/9."
+        },
+        {
+          "q": "3/4 - 3/8 = ?",
+          "a": "3/8",
+          "mins": 2
+        },
+        {
+          "q": "2/3 + 1/6 = ?",
+          "a": "5/6",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 4/5 - 1/5; 1/3 + 4/9",
+          "a": "3/5; 7/9",
+          "mins": 4,
+          "model": "Teacher: 4/5 - 1/5 = 3/5."
+        },
+        {
+          "q": "Extend: 5/6 + 1/3 (as a mixed number)",
+          "a": "1 1/6",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: 1/2 + 1/4 + 1/8",
+          "a": "7/8",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "3/4 + 1/8 = ?",
+          "a": "7/8",
+          "mins": 2
+        },
+        {
+          "q": "Big question: why can we not add 1/2 + 1/4 straight away?",
+          "a": "The parts are different sizes; make them the same (quarters) first",
+          "mins": 3
+        }
+      ],
+      "homework": "Six fraction additions and subtractions with related denominators (teacher's sheet).",
+      "send": "SEND: concrete or pictorial first (counters, strips), worked example on screen, reduced set. EAL: key word cards; stem 'First I ..., then I ...'. Stretch: add three fractions with related denominators.",
+      "resources": [
+        "White Rose Maths Year 5, Autumn block 4: Fractions A: small step 'Add and subtract fractions with the same denominator; with related denominators' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4)",
+        "Fraction wall printout",
+        "Counters or pasta",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 14 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 1: Multiplication and division B; fractions B",
+      "n": 15,
+      "title": "Bridge: add and subtract mixed numbers",
+      "duration": 45,
+      "bigQuestion": "Should we add the wholes first or turn everything into improper fractions?",
+      "objectives": [
+        "To understand how to add and subtract mixed numbers"
+      ],
+      "successCriteria": [
+        "All: add wholes then fractions",
+        "Most: add when fractions make more than 1",
+        "Some: subtract by exchanging a whole"
+      ],
+      "crossCurricular": "DT: measuring lengths of wood like 2 1/4 m",
+      "smsc": "Moral: patience when a problem has several steps",
+      "keywords": [
+        {
+          "term": "mixed number",
+          "def": "a whole number and a fraction"
+        },
+        {
+          "term": "improper fraction",
+          "def": "numerator greater than denominator"
+        },
+        {
+          "term": "exchange",
+          "def": "swap 1 whole for parts, like 1 = 5/5"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "2 3/4 + 1 1/2. Is the answer more than 4?",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "a": "Yes: wholes 3; 3/4 + 2/4 = 5/4 = 1 1/4, so 4 1/4."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "measuring jug millilitres",
+          "alt": "A measuring jug marked in millilitres",
+          "for": "teach:1"
+        },
+        {
+          "find": "tape measure metres extended",
+          "alt": "A tape measure showing metres and centimetres",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "7/4 as a mixed number?",
+          "a": "1 3/4",
+          "mins": 1
+        },
+        {
+          "q": "1/2 = ?/4",
+          "a": "2/4",
+          "mins": 1
+        },
+        {
+          "q": "3/8 + 1/4 = ?",
+          "a": "5/8",
+          "mins": 1
+        },
+        {
+          "q": "2 1/3 as an improper fraction?",
+          "a": "7/3",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Wholes, then parts",
+          "model": {
+            "problem": "2 1/4 + 1 3/8",
+            "steps": [
+              "Wholes: 2 + 1 = 3",
+              "Parts: 2/8 + 3/8 = 5/8"
+            ],
+            "answer": "3 5/8"
+          },
+          "note": "Partition."
+        },
+        {
+          "heading": "Parts make a whole",
+          "bullets": [
+            "2 3/4 + 1 1/2",
+            "3 + 3/4 + 2/4 = 3 + 5/4",
+            "= 4 1/4"
+          ],
+          "fraction": [
+            {
+              "parts": 4,
+              "shaded": 3,
+              "label": "3/4"
+            },
+            {
+              "parts": 4,
+              "shaded": 2,
+              "label": "2/4"
+            },
+            {
+              "parts": 4,
+              "shaded": 4,
+              "label": "5/4 = 1 1/4: one whole"
+            }
+          ],
+          "note": "Ask: 1 2/3 + 2 2/3? (4 1/3)."
+        },
+        {
+          "heading": "Subtract with exchange",
+          "model": {
+            "problem": "3 1/5 - 1 3/5",
+            "steps": [
+              "1/5 - 3/5: not enough fifths",
+              "3 1/5 = 2 6/5",
+              "2 6/5 - 1 3/5"
+            ],
+            "answer": "1 3/5"
+          },
+          "note": "Exchange 1 whole."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "4 1/3 - 2 2/3 = ?",
+            "options": [
+              "2 1/3",
+              "1 2/3",
+              "2 2/3"
+            ],
+            "answer": 1,
+            "why": "Exchange: 3 4/3 - 2 2/3 = 1 2/3."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "1 2/7 + 2 3/7 = ?",
+          "a": "3 5/7",
+          "mins": 2,
+          "model": "Teacher: wholes 1 + 2 = 3; parts 2/7 + 3/7 = 5/7: 3 5/7."
+        },
+        {
+          "q": "3 5/6 - 1 1/3 = ?",
+          "a": "2 1/2",
+          "mins": 2
+        },
+        {
+          "q": "2 5/8 + 1 1/2 = ?",
+          "a": "4 1/8",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 3 1/4 + 2 1/2; 5 7/10 - 2 3/10",
+          "a": "5 3/4; 3 2/5",
+          "mins": 4,
+          "model": "Teacher: 3 1/4 + 2 2/4: wholes 5, parts 3/4: 5 3/4."
+        },
+        {
+          "q": "Extend: 4 1/6 - 1 5/6",
+          "a": "2 1/3",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: a ribbon is 5 m long. 1 3/4 m and 2 1/2 m are cut off. What is left?",
+          "a": "3/4 m",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "2 3/5 + 1 4/5 = ?",
+          "a": "4 2/5",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how do you subtract 1 3/4 from 3 1/4?",
+          "a": "Exchange a whole: 2 5/4 - 1 3/4 = 1 2/4 = 1 1/2",
+          "mins": 3
+        }
+      ],
+      "homework": "Five mixed number additions and subtractions; show any exchange.",
+      "send": "SEND: concrete or pictorial first (counters, strips), worked example on screen, reduced set. EAL: key word cards; stem 'First I ..., then I ...'. Stretch: mixed numbers with different related denominators in subtraction.",
+      "resources": [
+        "White Rose Maths Year 5, Autumn block 4: Fractions A: small step 'Add mixed numbers; subtract mixed numbers' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4)",
+        "Fraction wall printout",
+        "Counters or pasta",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 15 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 1: Multiplication and division B; fractions B",
+      "n": 16,
+      "title": "Bridge: multiply up to a 4-digit number by a 1-digit number",
+      "duration": 45,
+      "bigQuestion": "How does short multiplication handle exchanges in every column?",
+      "objectives": [
+        "To understand how short multiplication handles exchanges"
+      ],
+      "successCriteria": [
+        "All: use the area model",
+        "Most: use short multiplication with exchanges",
+        "Some: estimate and check"
+      ],
+      "crossCurricular": "Science: totals of repeated measurements",
+      "smsc": "Social: planning food for a large community event",
+      "keywords": [
+        {
+          "term": "short multiplication",
+          "def": "the column method for multiplying by a 1-digit number"
+        },
+        {
+          "term": "area model",
+          "def": "a rectangle split by place value"
+        },
+        {
+          "term": "product",
+          "def": "the answer"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A masjid (مَسْجِد) orders 6 boxes of 1,245 dates for Ramadan (رَمَضَان). Estimate: more or less than 7,000?",
+        "options": [
+          "More",
+          "Less"
+        ],
+        "a": "More: 1,200 × 6 = 7,200. Exact: 7,470."
+      },
+      "routines": {
+        "hook": "think-pair-share",
+        "starter": "chat-waterfall",
+        "hinge": "teams-poll",
+        "practice": "think-pair-share",
+        "exit": "show-me"
+      },
+      "islamicLink": {
+        "text": "In Ramadan (رَمَضَان) Muslims often break the fast with dates, following the Sunnah. Masjids order dates in large amounts for iftar.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "bowl of dates fruit",
+          "alt": "A bowl of dates",
+          "for": "hook"
+        },
+        {
+          "find": "long multiplication written method",
+          "alt": "Long multiplication set out in columns",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "246 × 4 = ?",
+          "a": "984",
+          "mins": 1
+        },
+        {
+          "q": "6 × 7 = ?",
+          "a": "42",
+          "mins": 1
+        },
+        {
+          "q": "1,000 × 6 = ?",
+          "a": "6,000",
+          "mins": 1
+        },
+        {
+          "q": "3/4 + 1/8 = ?",
+          "a": "7/8",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Area model",
+          "table": {
+            "head": [
+              "×",
+              "1,000",
+              "200",
+              "40",
+              "5"
+            ],
+            "rows": [
+              [
+                "6",
+                "6,000",
+                "1,200",
+                "240",
+                "30"
+              ],
+              [
+                "Total",
+                "7,470",
+                "",
+                "",
+                ""
+              ]
+            ]
+          },
+          "note": "Partition 1,245."
+        },
+        {
+          "heading": "Short multiplication",
+          "model": {
+            "problem": "1,245 × 6",
+            "steps": [
+              "Ones: 30: write 0, exchange 3",
+              "Tens: 24 + 3 = 27: write 7, exchange 2",
+              "Hundreds: 12 + 2 = 14: write 4, exchange 1",
+              "Thousands: 6 + 1 = 7"
+            ],
+            "answer": "7,470"
+          },
+          "note": "Same parts, compact."
+        },
+        {
+          "heading": "Estimate and check",
+          "bullets": [
+            "2,978 × 4 ≈ 3,000 × 4 = 12,000",
+            "Exact: 11,912",
+            "Close, so sensible."
+          ],
+          "note": "Ask: estimate 4,123 × 7. (28,000)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "3,406 × 5 = ?",
+            "options": [
+              "17,030",
+              "15,230",
+              "17,300"
+            ],
+            "answer": 0,
+            "why": "17,030: ones 30, tens 0 + 3 = 3, hundreds 20, thousands 15 + 2 = 17."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "2,314 × 3 = ?",
+          "a": "6,942",
+          "mins": 2,
+          "model": "Teacher: 2,314 × 3: 12 ones (write 2, exchange 1), tens 3 + 1 = 4, hundreds 9, thousands 6: 6,942."
+        },
+        {
+          "q": "1,567 × 4 = ?",
+          "a": "6,268",
+          "mins": 2
+        },
+        {
+          "q": "4,089 × 7 = ?",
+          "a": "28,623",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 3,125 × 4; 2,406 × 6",
+          "a": "12,500; 14,436",
+          "mins": 4,
+          "model": "Teacher: 3,125 × 4: ones 20 (write 0, exchange 2), tens 8 + 2 = 10 (write 0, exchange 1), hundreds 4 + 1 = 5, thousands 12: 12,500."
+        },
+        {
+          "q": "Extend: 5,978 × 8",
+          "a": "47,824",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: which is greater, 2,345 × 7 or 3,456 × 5? By how much?",
+          "a": "17,280 - 16,415 = 865, so 3,456 × 5 is greater",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "1,836 × 6 = ?",
+          "a": "11,016",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how does the area model match short multiplication?",
+          "a": "Both multiply each place value part and add; short multiplication carries the exchanges",
+          "mins": 3
+        }
+      ],
+      "homework": "Bridge check: six 4-digit × 1-digit multiplications, estimated first.",
+      "send": "SEND: concrete or pictorial first (counters, strips), worked example on screen, reduced set. EAL: key word cards; stem 'First I ..., then I ...'. Stretch: 5-digit × 1-digit.",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 1: Multiplication and division B: small step 'Multiply up to a 4-digit number by a 1-digit number' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Place value counters",
+        "Times-table grid",
+        "Squared paper (for long multiplication layout)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 16 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 1: Multiplication and division B; fractions B",
+      "n": 17,
+      "title": "Multiply by multiples of 10; area model for 2-digit × 2-digit",
+      "duration": 45,
+      "bigQuestion": "How can we break a 2-digit × 2-digit multiplication into easier parts?",
+      "objectives": [
+        "To understand how the area model breaks up a 2-digit multiplication"
+      ],
+      "successCriteria": [
+        "All: multiply by 10, 20, 30",
+        "Most: use the area model for 23 × 14",
+        "Some: explain each part of the area model"
+      ],
+      "crossCurricular": "DT: area of a rectangular garden plot",
+      "smsc": "Spiritual: rewards multiplied: a good deed is rewarded many times",
+      "keywords": [
+        {
+          "term": "multiple of 10",
+          "def": "10, 20, 30, ..."
+        },
+        {
+          "term": "area model",
+          "def": "a rectangle split into parts to multiply"
+        },
+        {
+          "term": "partial product",
+          "def": "the answer to one part"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A rectangle of tiles is 23 tiles long and 14 wide. How could you count them without counting one by one?",
+        "a": "Split into 20 × 10, 20 × 4, 3 × 10, 3 × 4 and add: 322."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "square floor tiles grid pattern",
+          "alt": "Square tiles in rows and columns",
+          "for": "hook"
+        },
+        {
+          "find": "squared paper grid",
+          "alt": "Squared paper",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "23 × 10 = ?",
+          "a": "230",
+          "mins": 1
+        },
+        {
+          "q": "23 × 4 = ?",
+          "a": "92",
+          "mins": 1
+        },
+        {
+          "q": "14 × 20 = ?",
+          "a": "280",
+          "mins": 1
+        },
+        {
+          "q": "230 + 92 = ?",
+          "a": "322",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Multiples of 10",
+          "bullets": [
+            "23 × 20 = 23 × 2 × 10",
+            "= 46 × 10",
+            "= 460"
+          ],
+          "note": "Ask: 34 × 30? (1,020)."
+        },
+        {
+          "heading": "Area model",
+          "table": {
+            "head": [
+              "×",
+              "20",
+              "3"
+            ],
+            "rows": [
+              [
+                "10",
+                "200",
+                "30"
+              ],
+              [
+                "4",
+                "80",
+                "12"
+              ],
+              [
+                "Total",
+                "200 + 30 + 80 + 12 = 322",
+                ""
+              ]
+            ]
+          },
+          "note": "Each box is a partial product."
+        },
+        {
+          "heading": "Model",
+          "model": {
+            "problem": "36 × 24",
+            "steps": [
+              "30 × 20 = 600, 6 × 20 = 120",
+              "30 × 4 = 120, 6 × 4 = 24",
+              "600 + 120 + 120 + 24"
+            ],
+            "answer": "864"
+          },
+          "note": "Narrate."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "45 × 30 = ?",
+            "options": [
+              "135",
+              "1,350",
+              "13,500"
+            ],
+            "answer": 1,
+            "why": "45 × 3 = 135; × 10 = 1,350."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "16 × 40 = ?",
+          "a": "640",
+          "mins": 2,
+          "model": "Teacher: 16 × 4 = 64, then × 10 = 640."
+        },
+        {
+          "q": "Area model: 21 × 13",
+          "a": "273",
+          "mins": 2
+        },
+        {
+          "q": "Area model: 34 × 25",
+          "a": "850",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 42 × 12; 33 × 21",
+          "a": "504; 693",
+          "mins": 4,
+          "model": "Teacher: 42 × 12: 40 × 10 = 400, 2 × 10 = 20, 40 × 2 = 80, 2 × 2 = 4: 504."
+        },
+        {
+          "q": "Extend: 47 × 35",
+          "a": "1,645",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: find two 2-digit numbers whose product is 391.",
+          "a": "17 × 23",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Area model: 26 × 15",
+          "a": "390",
+          "mins": 2
+        },
+        {
+          "q": "Big question: what four parts make 36 × 24?",
+          "a": "30 × 20, 30 × 4, 6 × 20, 6 × 4",
+          "mins": 3
+        }
+      ],
+      "homework": "Five area-model multiplications (2-digit × 2-digit).",
+      "send": "SEND: concrete or pictorial first (counters, strips), worked example on screen, reduced set. EAL: key word cards; stem 'First I ..., then I ...'. Stretch: area model for 3-digit × 2-digit.",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 1: Multiplication and division B: small step 'Multiply by 10, 100 and 1,000; multiply 2-digit numbers (area model)' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Place value counters",
+        "Times-table grid",
+        "Squared paper (for long multiplication layout)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 17 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 1: Multiplication and division B; fractions B",
+      "n": 18,
+      "title": "Long multiplication: 2-digit × 2-digit",
+      "duration": 45,
+      "bigQuestion": "How does long multiplication record the area model in columns?",
+      "objectives": [
+        "To understand how long multiplication records the area model"
+      ],
+      "successCriteria": [
+        "All: multiply by the ones digit",
+        "Most: multiply by the tens digit with a placeholder zero",
+        "Some: add the rows and check with an estimate"
+      ],
+      "crossCurricular": "Science: totals for repeated trials",
+      "smsc": "Moral: neat, orderly work with ihsan (إِحْسَان)",
+      "keywords": [
+        {
+          "term": "long multiplication",
+          "def": "multiplying by each digit on a separate row, then adding"
+        },
+        {
+          "term": "placeholder",
+          "def": "the zero when multiplying by tens"
+        },
+        {
+          "term": "regroup",
+          "def": "exchange"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which is the odd one out?",
+        "options": [
+          "36 × 24",
+          "24 × 36",
+          "72 × 12",
+          "18 × 46"
+        ],
+        "a": "18 × 46 = 828; the rest are 864."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "chat-waterfall",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "long multiplication written method",
+          "alt": "Long multiplication set out in columns",
+          "for": "teach:1"
+        },
+        {
+          "find": "square floor tiles grid pattern",
+          "alt": "Square tiles in rows and columns",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "36 × 4 = ?",
+          "a": "144",
+          "mins": 1
+        },
+        {
+          "q": "36 × 20 = ?",
+          "a": "720",
+          "mins": 1
+        },
+        {
+          "q": "720 + 144 = ?",
+          "a": "864",
+          "mins": 1
+        },
+        {
+          "q": "Estimate 36 × 24.",
+          "a": "40 × 20 = 800",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Layout",
+          "table": {
+            "head": [
+              "Step",
+              "Th",
+              "H",
+              "T",
+              "O"
+            ],
+            "rows": [
+              [
+                "",
+                "",
+                "",
+                "3",
+                "6"
+              ],
+              [
+                "× 24",
+                "",
+                "",
+                "",
+                ""
+              ],
+              [
+                "36 × 4",
+                "",
+                "1",
+                "4",
+                "4"
+              ],
+              [
+                "36 × 20",
+                "",
+                "7",
+                "2",
+                "0"
+              ],
+              [
+                "Total",
+                "",
+                "8",
+                "6",
+                "4"
+              ]
+            ]
+          },
+          "note": "Row 1: × 4. Row 2: × 20."
+        },
+        {
+          "heading": "Model",
+          "model": {
+            "problem": "47 × 35",
+            "steps": [
+              "47 × 5 = 235",
+              "47 × 30 = 1,410 (placeholder 0)",
+              "235 + 1,410"
+            ],
+            "answer": "1,645"
+          },
+          "note": "Narrate with the placeholder."
+        },
+        {
+          "heading": "Watch out",
+          "misconception": {
+            "wrong": "47 × 35: 235 + 141 = 376",
+            "right": "The second row is 47 × 30 = 1,410 (placeholder zero): 1,645"
+          },
+          "note": "Ask: what was forgotten?"
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "28 × 16 = ?",
+            "options": [
+              "448",
+              "196",
+              "4,480"
+            ],
+            "answer": 0,
+            "why": "28 × 6 = 168, 28 × 10 = 280: 448."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "23 × 14 = ?",
+          "a": "322",
+          "mins": 2,
+          "model": "Teacher: 23 × 4 = 92, 23 × 10 = 230, 92 + 230 = 322."
+        },
+        {
+          "q": "52 × 37 = ?",
+          "a": "1,924",
+          "mins": 2
+        },
+        {
+          "q": "69 × 48 = ?",
+          "a": "3,312",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 34 × 26; 45 × 18",
+          "a": "884; 810",
+          "mins": 4,
+          "model": "Teacher: 34 × 6 = 204, 34 × 20 = 680, total 884."
+        },
+        {
+          "q": "Extend: 78 × 63; 96 × 54",
+          "a": "4,914; 5,184",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: a box holds 24 books. How many in 85 boxes?",
+          "a": "2,040",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "57 × 23 = ?",
+          "a": "1,311",
+          "mins": 2
+        },
+        {
+          "q": "Big question: why is there a zero at the start of the second row?",
+          "a": "We are multiplying by tens (20, 30...), so the ones place is 0",
+          "mins": 3
+        }
+      ],
+      "homework": "Six 2-digit × 2-digit long multiplications; estimate each first.",
+      "send": "SEND: concrete or pictorial first (counters, strips), worked example on screen, reduced set. EAL: key word cards; stem 'First I ..., then I ...'. Stretch: 3-digit × 2-digit.",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 1: Multiplication and division B: small step 'Multiply a 2-digit number by a 2-digit number' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Place value counters",
+        "Times-table grid",
+        "Squared paper (for long multiplication layout)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 18 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 1: Multiplication and division B; fractions B",
+      "n": 19,
+      "title": "Long multiplication: 3-digit × 2-digit",
+      "duration": 45,
+      "bigQuestion": "Can long multiplication handle bigger numbers the same way?",
+      "objectives": [
+        "To understand how to multiply 3-digit by 2-digit numbers"
+      ],
+      "successCriteria": [
+        "All: complete both rows",
+        "Most: add rows with exchanges",
+        "Some: estimate and judge the answer"
+      ],
+      "crossCurricular": "Geography: total distance of repeated journeys",
+      "smsc": "Social: planning resources for a whole school",
+      "keywords": [
+        {
+          "term": "estimate",
+          "def": "a rough answer by rounding"
+        },
+        {
+          "term": "partial product",
+          "def": "the answer of one row"
+        },
+        {
+          "term": "total",
+          "def": "the sum of the rows"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "234 × 16: about 2,000, 4,000 or 6,000?",
+        "options": [
+          "2,000",
+          "4,000",
+          "6,000"
+        ],
+        "a": "About 4,000 (200 × 20 = 4,000 or 230 × 16 ≈ 3,680). Exact: 3,744."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "long multiplication written method",
+          "alt": "Long multiplication set out in columns",
+          "for": "teach:1"
+        },
+        {
+          "find": "books on a bookshelf",
+          "alt": "Books on a shelf",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "234 × 6 = ?",
+          "a": "1,404",
+          "mins": 1
+        },
+        {
+          "q": "234 × 10 = ?",
+          "a": "2,340",
+          "mins": 1
+        },
+        {
+          "q": "47 × 35 = ?",
+          "a": "1,645",
+          "mins": 2
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Two rows",
+          "table": {
+            "head": [
+              "Step",
+              "Th",
+              "H",
+              "T",
+              "O"
+            ],
+            "rows": [
+              [
+                "",
+                "",
+                "2",
+                "3",
+                "4"
+              ],
+              [
+                "× 16",
+                "",
+                "",
+                "",
+                ""
+              ],
+              [
+                "234 × 6",
+                "1",
+                "4",
+                "0",
+                "4"
+              ],
+              [
+                "234 × 10",
+                "2",
+                "3",
+                "4",
+                "0"
+              ],
+              [
+                "Total",
+                "3",
+                "7",
+                "4",
+                "4"
+              ]
+            ]
+          },
+          "note": "Row 1 × 6; row 2 × 10."
+        },
+        {
+          "heading": "Model",
+          "model": {
+            "problem": "326 × 47",
+            "steps": [
+              "326 × 7 = 2,282",
+              "326 × 40 = 13,040",
+              "2,282 + 13,040"
+            ],
+            "answer": "15,322"
+          },
+          "note": "Narrate."
+        },
+        {
+          "heading": "Estimate",
+          "bullets": [
+            "326 × 47 ≈ 300 × 50 = 15,000",
+            "Exact 15,322",
+            "Sensible."
+          ],
+          "note": "Ask: estimate 489 × 31. (500 × 30 = 15,000)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "152 × 23 = ?",
+            "options": [
+              "3,496",
+              "760",
+              "3,040"
+            ],
+            "answer": 0,
+            "why": "152 × 3 = 456; 152 × 20 = 3,040; total 3,496."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "213 × 12 = ?",
+          "a": "2,556",
+          "mins": 2,
+          "model": "Teacher: 213 × 2 = 426, 213 × 10 = 2,130, total 2,556."
+        },
+        {
+          "q": "345 × 24 = ?",
+          "a": "8,280",
+          "mins": 2
+        },
+        {
+          "q": "608 × 35 = ?",
+          "a": "21,280",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 124 × 32; 251 × 43",
+          "a": "3,968; 10,793",
+          "mins": 4,
+          "model": "Teacher: 124 × 2 = 248, 124 × 30 = 3,720, total 3,968."
+        },
+        {
+          "q": "Extend: 479 × 56",
+          "a": "26,824",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: a school orders 365 books at £18 each. Cost?",
+          "a": "£6,570",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "417 × 26 = ?",
+          "a": "10,842",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how does an estimate protect us?",
+          "a": "It shows the answer's size, so a missing placeholder or wrong row is spotted",
+          "mins": 3
+        }
+      ],
+      "homework": "Five 3-digit × 2-digit long multiplications with estimates.",
+      "send": "SEND: concrete or pictorial first (counters, strips), worked example on screen, reduced set. EAL: key word cards; stem 'First I ..., then I ...'. Stretch: 4-digit × 2-digit.",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 1: Multiplication and division B: small step 'Multiply a 3-digit number by a 2-digit number' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Place value counters",
+        "Times-table grid",
+        "Squared paper (for long multiplication layout)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 19 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 1: Multiplication and division B; fractions B",
+      "n": 20,
+      "title": "Long multiplication: 4-digit × 2-digit",
+      "duration": 45,
+      "bigQuestion": "How do we stay accurate with large long multiplications?",
+      "objectives": [
+        "To understand how to stay accurate in long multiplication of large numbers"
+      ],
+      "successCriteria": [
+        "All: calculate each row",
+        "Most: add rows accurately",
+        "Some: check with an estimate or a different order"
+      ],
+      "crossCurricular": "Geography: travel distances over many trips",
+      "smsc": "Moral: perseverance with long tasks",
+      "keywords": [
+        {
+          "term": "long multiplication",
+          "def": "multiplying by each digit on its own row"
+        },
+        {
+          "term": "accurate",
+          "def": "correct and careful"
+        },
+        {
+          "term": "column",
+          "def": "a place value position"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A plane flies 1,234 km each day for 23 days. How far is that? Estimate first.",
+        "a": "About 1,200 × 20 = 24,000 km; exact 28,382 km."
+      },
+      "routines": {
+        "hook": "think-pair-share",
+        "starter": "chat-waterfall",
+        "hinge": "teams-poll",
+        "practice": "think-pair-share",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "airliner in flight",
+          "alt": "An aeroplane in flight",
+          "for": "hook"
+        },
+        {
+          "find": "long multiplication written method",
+          "alt": "Long multiplication set out in columns",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1,234 × 3 = ?",
+          "a": "3,702",
+          "mins": 1
+        },
+        {
+          "q": "1,234 × 20 = ?",
+          "a": "24,680",
+          "mins": 1
+        },
+        {
+          "q": "326 × 47 = ?",
+          "a": "15,322",
+          "mins": 2
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Two rows again",
+          "table": {
+            "head": [
+              "Step",
+              "TTh",
+              "Th",
+              "H",
+              "T",
+              "O"
+            ],
+            "rows": [
+              [
+                "",
+                "",
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              [
+                "× 23",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ],
+              [
+                "× 3",
+                "",
+                "3",
+                "7",
+                "0",
+                "2"
+              ],
+              [
+                "× 20",
+                "2",
+                "4",
+                "6",
+                "8",
+                "0"
+              ],
+              [
+                "Total",
+                "2",
+                "8",
+                "3",
+                "8",
+                "2"
+              ]
+            ]
+          },
+          "note": "Same method, more columns."
+        },
+        {
+          "heading": "Model",
+          "model": {
+            "problem": "2,358 × 46",
+            "steps": [
+              "2,358 × 6 = 14,148",
+              "2,358 × 40 = 94,320",
+              "14,148 + 94,320"
+            ],
+            "answer": "108,468"
+          },
+          "note": "Narrate."
+        },
+        {
+          "heading": "Check another way",
+          "bullets": [
+            "46 × 2,358 by area model",
+            "2,000 × 46 = 92,000; 358 × 46 = 16,468",
+            "Total 108,468"
+          ],
+          "note": "Ask: why do both give the same? (commutative and partitioning)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "3,012 × 15 = ?",
+            "options": [
+              "45,180",
+              "18,072",
+              "45,018"
+            ],
+            "answer": 0,
+            "why": "3,012 × 5 = 15,060; × 10 = 30,120; total 45,180."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "2,103 × 12 = ?",
+          "a": "25,236",
+          "mins": 2,
+          "model": "Teacher: 2,103 × 2 = 4,206, 2,103 × 10 = 21,030, total 25,236."
+        },
+        {
+          "q": "1,456 × 32 = ?",
+          "a": "46,592",
+          "mins": 2
+        },
+        {
+          "q": "3,075 × 24 = ?",
+          "a": "73,800",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 1,342 × 21; 2,415 × 13",
+          "a": "28,182; 31,395",
+          "mins": 4,
+          "model": "Teacher: 1,342 × 1 = 1,342, 1,342 × 20 = 26,840, total 28,182."
+        },
+        {
+          "q": "Extend: 4,687 × 38",
+          "a": "178,106",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: 1,440 minutes in a day. How many minutes in 31 days?",
+          "a": "44,640",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "2,516 × 34 = ?",
+          "a": "85,544",
+          "mins": 2
+        },
+        {
+          "q": "Big question: what stays the same from 2-digit to 4-digit long multiplication?",
+          "a": "Multiply by the ones, then the tens with a placeholder, then add",
+          "mins": 3
+        }
+      ],
+      "homework": "Four 4-digit × 2-digit multiplications; check one with the area model.",
+      "send": "SEND: concrete or pictorial first (counters, strips), worked example on screen, reduced set. EAL: key word cards; stem 'First I ..., then I ...'. Stretch: multiply by 3-digit numbers.",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 1: Multiplication and division B: small step 'Multiply a 4-digit number by a 2-digit number' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Place value counters",
+        "Times-table grid",
+        "Squared paper (for long multiplication layout)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 20 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 1: Multiplication and division B; fractions B",
+      "n": 21,
+      "title": "Solve problems with multiplication",
+      "duration": 45,
+      "bigQuestion": "How do we decide which multiplication method to use?",
+      "objectives": [
+        "To understand how to choose a method for multiplication problems"
+      ],
+      "successCriteria": [
+        "All: identify the multiplication in a problem",
+        "Most: choose an efficient method",
+        "Some: solve a two-step problem and check"
+      ],
+      "crossCurricular": "DT and PSHE: costing a project",
+      "smsc": "Moral: wasting nothing when we buy in bulk",
+      "keywords": [
+        {
+          "term": "efficient",
+          "def": "quick and accurate"
+        },
+        {
+          "term": "multi-step",
+          "def": "more than one calculation"
+        },
+        {
+          "term": "total cost",
+          "def": "price × quantity, added up"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Would you rather work out 25 × 48 in your head, with short multiplication or with long multiplication?",
+        "a": "Mentally: 25 × 4 = 100, so 25 × 48 = 100 × 12 = 1,200. Spot the shortcut first."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "egg carton with eggs two rows of six",
+          "alt": "An egg box: 2 rows of 6 eggs",
+          "for": "teach:1"
+        },
+        {
+          "find": "rows of empty chairs in a hall",
+          "alt": "Rows of empty chairs: an array",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "25 × 4 = ?",
+          "a": "100",
+          "mins": 1
+        },
+        {
+          "q": "45 × 18 = ?",
+          "a": "810",
+          "mins": 2
+        },
+        {
+          "q": "1,245 × 6 = ?",
+          "a": "7,470",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Choose a method",
+          "sort": {
+            "columns": [
+              "Mental",
+              "Short",
+              "Long"
+            ],
+            "cards": [
+              "25 × 48",
+              "3,421 × 6",
+              "57 × 34",
+              "99 × 5",
+              "2,038 × 7",
+              "426 × 28"
+            ],
+            "answer": [
+              0,
+              1,
+              2,
+              0,
+              1,
+              2
+            ]
+          },
+          "note": "Sort."
+        },
+        {
+          "heading": "Two steps",
+          "model": {
+            "problem": "A school buys 32 chairs at £45 and 6 tables at £128. Total?",
+            "steps": [
+              "32 × 45 = 1,440",
+              "6 × 128 = 768",
+              "1,440 + 768"
+            ],
+            "answer": "£2,208"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Mental shortcuts",
+          "bullets": [
+            "99 × 5 = 100 × 5 - 5 = 495",
+            "25 × 48 = 1,200",
+            "15 × 12 = 180"
+          ],
+          "note": "Ask: 49 × 20? (980)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "A coach holds 52. How many people in 14 coaches?",
+            "options": [
+              "728",
+              "520",
+              "66"
+            ],
+            "answer": 0,
+            "why": "52 × 14 = 728."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "A box holds 36 eggs. How many in 25 boxes?",
+          "a": "900",
+          "mins": 2,
+          "model": "Teacher spots 25 × 4 = 100: 36 × 25 = 9 × 100 = 900."
+        },
+        {
+          "q": "A bike costs £249. Cost of 12 bikes?",
+          "a": "£2,988",
+          "mins": 2
+        },
+        {
+          "q": "Buy 18 packs of 24 pencils; 50 are broken. How many good pencils?",
+          "a": "382",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 28 rows of 35 seats. How many seats?",
+          "a": "980",
+          "mins": 4,
+          "model": "Teacher: 28 × 35: 28 × 5 = 140, 28 × 30 = 840, total 980."
+        },
+        {
+          "q": "Extend: 14 crates of 144 bottles, then 6 more crates. Total bottles?",
+          "a": "2,880",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: which is cheaper: 15 packs at £2.40 or 12 packs at £2.95? (Work in pence.)",
+          "a": "15 × 240p = 3,600p; 12 × 295p = 3,540p, so the 12 packs are cheaper by 60p",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "24 × 65 = ?",
+          "a": "1,560",
+          "mins": 2
+        },
+        {
+          "q": "Big question: which method for 50 × 36 and why?",
+          "a": "Mental: 50 × 36 = 100 × 18 = 1,800",
+          "mins": 3
+        }
+      ],
+      "homework": "Four multiplication word problems (teacher's sheet), choosing a method for each.",
+      "send": "SEND: concrete or pictorial first (counters, strips), worked example on screen, reduced set. EAL: key word cards; stem 'First I ..., then I ...'. Stretch: three-step costing problems.",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 1: Multiplication and division B: small step 'Solve problems with multiplication' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Place value counters",
+        "Times-table grid",
+        "Squared paper (for long multiplication layout)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 21 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 1: Multiplication and division B; fractions B",
+      "n": 22,
+      "title": "Divide by 10, 100 and 1,000",
+      "duration": 45,
+      "bigQuestion": "What happens to digits when we divide by 10, 100 and 1,000?",
+      "objectives": [
+        "To understand what happens to digits when we divide by 10, 100 and 1,000"
+      ],
+      "successCriteria": [
+        "All: divide by 10 and 100 with a place value chart",
+        "Most: divide by 1,000",
+        "Some: solve missing number problems"
+      ],
+      "crossCurricular": "Science: converting grams to kilograms",
+      "smsc": "Social: sharing equally among large groups",
+      "keywords": [
+        {
+          "term": "divide",
+          "def": "share or group equally"
+        },
+        {
+          "term": "place value chart",
+          "def": "columns for each place"
+        },
+        {
+          "term": "inverse",
+          "def": "multiplying and dividing undo each other"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "45,000 g of rice is shared into 1,000 g bags. How many bags?",
+        "a": "45,000 ÷ 1,000 = 45 bags. Digits move 3 places right."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "chat-waterfall",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "place value chart thousands hundreds tens ones",
+          "alt": "A place value chart",
+          "for": "teach:1"
+        },
+        {
+          "find": "bag of rice 1 kg",
+          "alt": "A 1 kg bag of rice",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "450 × 10 = ?",
+          "a": "4,500",
+          "mins": 1
+        },
+        {
+          "q": "1 kg = ? g",
+          "a": "1,000 g",
+          "mins": 1
+        },
+        {
+          "q": "6,300 ÷ 100 = ?",
+          "a": "63",
+          "mins": 1
+        },
+        {
+          "q": "24 × 65 = ?",
+          "a": "1,560",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Digits move right",
+          "table": {
+            "head": [
+              "Calc",
+              "TTh",
+              "Th",
+              "H",
+              "T",
+              "O"
+            ],
+            "rows": [
+              [
+                "45,000",
+                "4",
+                "5",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "÷ 10",
+                "",
+                "4",
+                "5",
+                "0",
+                "0"
+              ],
+              [
+                "÷ 100",
+                "",
+                "",
+                "4",
+                "5",
+                "0"
+              ],
+              [
+                "÷ 1,000",
+                "",
+                "",
+                "",
+                "4",
+                "5"
+              ]
+            ]
+          },
+          "note": "Ask: 72,000 ÷ 100? (720)."
+        },
+        {
+          "heading": "Missing numbers",
+          "model": {
+            "problem": "? ÷ 100 = 306",
+            "steps": [
+              "Inverse: 306 × 100",
+              "Digits move 2 places left"
+            ],
+            "answer": "30,600"
+          },
+          "note": "Use the inverse."
+        },
+        {
+          "heading": "Units",
+          "bullets": [
+            "6,000 g ÷ 1,000 = 6 kg",
+            "9,000 m ÷ 1,000 = 9 km",
+            "Same digits, moved 3 places right."
+          ],
+          "note": "Ask: 9,000 m = ? km (9)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "80,500 ÷ 10 = ?",
+            "options": [
+              "8,050",
+              "805",
+              "80,50"
+            ],
+            "answer": 0,
+            "why": "Each digit moves one place right: 8,050."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "3,700 ÷ 10 = ?",
+          "a": "370",
+          "mins": 2,
+          "model": "Teacher moves 3 and 7 one place right: 370."
+        },
+        {
+          "q": "52,000 ÷ 100 = ?",
+          "a": "520",
+          "mins": 2
+        },
+        {
+          "q": "608,000 ÷ 1,000 = ?",
+          "a": "608",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 9,000 ÷ 10; 9,000 ÷ 100; 9,000 ÷ 1,000",
+          "a": "900; 90; 9",
+          "mins": 4,
+          "model": "Teacher moves the 9 one, two and three places right: 900, 90, 9."
+        },
+        {
+          "q": "Extend: ? ÷ 1,000 = 47; 2,400 ÷ ? = 24",
+          "a": "47,000; 100",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: 360,000 cm in km (100 cm = 1 m; 1,000 m = 1 km).",
+          "a": "3,600 m = 3 km 600 m",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "71,000 ÷ 100 = ?",
+          "a": "710",
+          "mins": 2
+        },
+        {
+          "q": "Big question: why is dividing by 100 the same as dividing by 10 twice?",
+          "a": "100 = 10 × 10, so each ÷ 10 moves digits one place; twice moves two",
+          "mins": 3
+        }
+      ],
+      "homework": "Ten questions × and ÷ by 10, 100 and 1,000 with units (g, kg, m, km).",
+      "send": "SEND: concrete or pictorial first (counters, strips), worked example on screen, reduced set. EAL: key word cards; stem 'First I ..., then I ...'. Stretch: divide by 10,000.",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 1: Multiplication and division B: small step 'Divide by 10, 100 and 1,000' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Place value counters",
+        "Times-table grid",
+        "Squared paper (for long multiplication layout)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 22 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 1: Multiplication and division B; fractions B",
+      "n": 23,
+      "title": "Short division: 3-digit ÷ 1-digit",
+      "duration": 45,
+      "bigQuestion": "How does short division share each place value fairly?",
+      "objectives": [
+        "To understand how short division shares each place value fairly"
+      ],
+      "successCriteria": [
+        "All: divide with no exchanges",
+        "Most: divide with exchanges",
+        "Some: check with multiplication"
+      ],
+      "crossCurricular": "PSHE: dividing money or supplies fairly",
+      "smsc": "Moral: justice ('adl, عَدْل) in sharing",
+      "keywords": [
+        {
+          "term": "short division",
+          "def": "a compact written method for dividing by a 1-digit number"
+        },
+        {
+          "term": "dividend",
+          "def": "the number being divided"
+        },
+        {
+          "term": "exchange",
+          "def": "carry a remainder into the next column"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "432 dates shared between 3 families. Share the hundreds, then the tens, then the ones. How many each?",
+        "a": "144: 4 hundreds ÷ 3 = 1 r 1; 13 tens ÷ 3 = 4 r 1; 12 ones ÷ 3 = 4."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "islamicLink": {
+        "text": "Allah commands justice ('adl, عَدْل) and doing good (Qur'an 16:90). Sharing equally is a way to be fair.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "short division bus stop method",
+          "alt": "Short division set out in the bus stop layout",
+          "for": "teach:2"
+        },
+        {
+          "find": "bowl of dates fruit",
+          "alt": "A bowl of dates",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "12 ÷ 3 = ?",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "13 ÷ 3 = ?",
+          "a": "4 r 1",
+          "mins": 1
+        },
+        {
+          "q": "72 ÷ 6 = ?",
+          "a": "12",
+          "mins": 1
+        },
+        {
+          "q": "50,000 ÷ 100 = ?",
+          "a": "500",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "No exchange",
+          "bullets": [
+            "396 ÷ 3",
+            "Hundreds 1, tens 3, ones 2",
+            "= 132"
+          ],
+          "note": "Ask: 848 ÷ 4? (212)."
+        },
+        {
+          "heading": "With exchanges",
+          "model": {
+            "problem": "432 ÷ 3",
+            "steps": [
+              "4 ÷ 3 = 1 r 1: exchange 1 hundred into 10 tens",
+              "13 ÷ 3 = 4 r 1: exchange into 10 ones",
+              "12 ÷ 3 = 4"
+            ],
+            "answer": "144"
+          },
+          "note": "Use counters and the 'bus stop'."
+        },
+        {
+          "heading": "Leading digit too small",
+          "bullets": [
+            "256 ÷ 4",
+            "2 ÷ 4 = 0 r 2: use 25 tens",
+            "25 ÷ 4 = 6 r 1; 16 ÷ 4 = 4: 64"
+          ],
+          "note": "Ask: 184 ÷ 8? (23)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "635 ÷ 5 = ?",
+            "options": [
+              "127",
+              "117",
+              "1,207"
+            ],
+            "answer": 0,
+            "why": "6 ÷ 5 = 1 r 1; 13 ÷ 5 = 2 r 3; 35 ÷ 5 = 7: 127."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "684 ÷ 2 = ?",
+          "a": "342",
+          "mins": 2,
+          "model": "Teacher: 6 ÷ 2 = 3, 8 ÷ 2 = 4, 4 ÷ 2 = 2: 342."
+        },
+        {
+          "q": "525 ÷ 3 = ?",
+          "a": "175",
+          "mins": 2
+        },
+        {
+          "q": "912 ÷ 8 = ?",
+          "a": "114",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 756 ÷ 4; 945 ÷ 7",
+          "a": "189; 135",
+          "mins": 4,
+          "model": "Teacher: 756 ÷ 4: 7 ÷ 4 = 1 r 3, 35 ÷ 4 = 8 r 3, 36 ÷ 4 = 9: 189."
+        },
+        {
+          "q": "Extend: 378 ÷ 6; 819 ÷ 9",
+          "a": "63; 91",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: 3 friends share £594 of prize money for charity. How much each gives?",
+          "a": "£198",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "672 ÷ 4 = ?",
+          "a": "168",
+          "mins": 2
+        },
+        {
+          "q": "Big question: what happens to a remainder in the hundreds column?",
+          "a": "It is exchanged into tens and added to the tens digit",
+          "mins": 3
+        }
+      ],
+      "homework": "Six short divisions (3-digit ÷ 1-digit), each checked by multiplying.",
+      "send": "SEND: concrete or pictorial first (counters, strips), worked example on screen, reduced set. EAL: key word cards; stem 'First I ..., then I ...'. Stretch: 4-digit ÷ 1-digit.",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 1: Multiplication and division B: small step 'Short division' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Place value counters",
+        "Times-table grid",
+        "Squared paper (for long multiplication layout)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 23 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 1: Multiplication and division B; fractions B",
+      "n": 24,
+      "title": "Divide a 4-digit number by a 1-digit number",
+      "duration": 45,
+      "bigQuestion": "Does short division work the same for bigger numbers?",
+      "objectives": [
+        "To understand how short division works for 4-digit numbers"
+      ],
+      "successCriteria": [
+        "All: divide with exchanges",
+        "Most: handle zeros in the answer",
+        "Some: check with multiplication and an estimate"
+      ],
+      "crossCurricular": "Geography: shared distances on a journey",
+      "smsc": "Social: fair shares in a large community",
+      "keywords": [
+        {
+          "term": "quotient",
+          "def": "the answer to a division"
+        },
+        {
+          "term": "divisor",
+          "def": "the number we divide by"
+        },
+        {
+          "term": "estimate",
+          "def": "a rough answer"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "5,936 ÷ 4. Will the answer be about 1,500, 2,500 or 15,000?",
+        "options": [
+          "1,500",
+          "2,500",
+          "15,000"
+        ],
+        "a": "About 1,500 (6,000 ÷ 4). Exact: 1,484."
+      },
+      "routines": {
+        "hook": "think-pair-share",
+        "starter": "chat-waterfall",
+        "hinge": "teams-poll",
+        "practice": "think-pair-share",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "short division bus stop method",
+          "alt": "Short division set out in the bus stop layout",
+          "for": "teach:1"
+        },
+        {
+          "find": "stacked cardboard boxes",
+          "alt": "Stacked cardboard boxes for packing",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "432 ÷ 3 = ?",
+          "a": "144",
+          "mins": 1
+        },
+        {
+          "q": "24 ÷ 4 = ?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "6,000 ÷ 4 = ?",
+          "a": "1,500",
+          "mins": 1
+        },
+        {
+          "q": "1,484 × 4 = ?",
+          "a": "5,936",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Model",
+          "model": {
+            "problem": "5,936 ÷ 4",
+            "steps": [
+              "5 ÷ 4 = 1 r 1: exchange",
+              "19 ÷ 4 = 4 r 3: exchange",
+              "33 ÷ 4 = 8 r 1: exchange",
+              "16 ÷ 4 = 4"
+            ],
+            "answer": "1,484"
+          },
+          "note": "Narrate each column."
+        },
+        {
+          "heading": "Zeros in the answer",
+          "bullets": [
+            "4,218 ÷ 6",
+            "4 ÷ 6 = 0: use 42",
+            "Hundreds 7; tens 0 r 1; ones 18 ÷ 6 = 3"
+          ],
+          "note": "Ask: why is there a 0 in 703? (1 ten cannot be shared into 6)."
+        },
+        {
+          "heading": "Watch out",
+          "misconception": {
+            "wrong": "4,218 ÷ 6 = 73",
+            "right": "A zero holds the tens place: 703 (check: 703 × 6 = 4,218)"
+          },
+          "note": "Ask: what went wrong?"
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "4,375 ÷ 5 = ?",
+            "options": [
+              "875",
+              "8,705",
+              "857"
+            ],
+            "answer": 0,
+            "why": "43 ÷ 5 = 8 r 3; 37 ÷ 5 = 7 r 2; 25 ÷ 5 = 5: 875."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "2,468 ÷ 2 = ?",
+          "a": "1,234",
+          "mins": 2,
+          "model": "Teacher: 2 ÷ 2 = 1, 4 ÷ 2 = 2, 6 ÷ 2 = 3, 8 ÷ 2 = 4: 1,234."
+        },
+        {
+          "q": "7,128 ÷ 3 = ?",
+          "a": "2,376",
+          "mins": 2
+        },
+        {
+          "q": "5,624 ÷ 8 = ?",
+          "a": "703",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 3,852 ÷ 4; 6,135 ÷ 5",
+          "a": "963; 1,227",
+          "mins": 4,
+          "model": "Teacher: 3,852 ÷ 4: 38 ÷ 4 = 9 r 2, 25 ÷ 4 = 6 r 1, 12 ÷ 4 = 3: 963."
+        },
+        {
+          "q": "Extend: 8,142 ÷ 6; 7,056 ÷ 7",
+          "a": "1,357; 1,008",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: 9 classes share 4,536 exercise books equally. How many each?",
+          "a": "504",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "6,328 ÷ 8 = ?",
+          "a": "791",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how do you know where a zero goes in the answer?",
+          "a": "When a column cannot be shared at least once, write 0 and exchange",
+          "mins": 3
+        }
+      ],
+      "homework": "Six 4-digit ÷ 1-digit short divisions with estimates.",
+      "send": "SEND: concrete or pictorial first (counters, strips), worked example on screen, reduced set. EAL: key word cards; stem 'First I ..., then I ...'. Stretch: divide by 11 and 12 using tables.",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 1: Multiplication and division B: small step 'Divide a 4-digit number by a 1-digit number' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Place value counters",
+        "Times-table grid",
+        "Squared paper (for long multiplication layout)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 24 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 1: Multiplication and division B; fractions B",
+      "n": 25,
+      "title": "Division with remainders",
+      "duration": 45,
+      "bigQuestion": "How should we show and use a remainder?",
+      "objectives": [
+        "To understand how to show and use a remainder"
+      ],
+      "successCriteria": [
+        "All: write the remainder as 'r'",
+        "Most: round the answer up or down in a story",
+        "Some: write a remainder as a fraction"
+      ],
+      "crossCurricular": "DT: packing items into boxes",
+      "smsc": "Moral: what is left over can be given in sadaqah (صَدَقَة)",
+      "keywords": [
+        {
+          "term": "remainder",
+          "def": "what is left after dividing"
+        },
+        {
+          "term": "interpret",
+          "def": "decide what the answer means"
+        },
+        {
+          "term": "fraction remainder",
+          "def": "the remainder over the divisor, like 1/6"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "2,749 dates are packed in boxes of 6. How many full boxes, and how many dates left over?",
+        "a": "458 full boxes, 1 left over: 2,749 ÷ 6 = 458 r 1."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "stacked cardboard boxes",
+          "alt": "Stacked cardboard boxes for packing",
+          "for": "hook"
+        },
+        {
+          "find": "charity collection jar coins",
+          "alt": "A collection jar with coins",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "5,936 ÷ 4 = ?",
+          "a": "1,484",
+          "mins": 1
+        },
+        {
+          "q": "29 ÷ 6 = ?",
+          "a": "4 r 5",
+          "mins": 1
+        },
+        {
+          "q": "6 × 458 = ?",
+          "a": "2,748",
+          "mins": 1
+        },
+        {
+          "q": "1/2 of 13 = ?",
+          "a": "6 1/2",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Short division with r",
+          "model": {
+            "problem": "2,749 ÷ 6",
+            "steps": [
+              "27 ÷ 6 = 4 r 3: exchange",
+              "34 ÷ 6 = 5 r 4: exchange",
+              "49 ÷ 6 = 8 r 1"
+            ],
+            "answer": "458 r 1"
+          },
+          "note": "Narrate."
+        },
+        {
+          "heading": "Three ways to show it",
+          "bullets": [
+            "458 r 1",
+            "458 1/6 (remainder ÷ divisor)",
+            "Round up or down in stories."
+          ],
+          "note": "Ask: 25 ÷ 4 as a mixed number? (6 1/4)."
+        },
+        {
+          "heading": "Interpret",
+          "sort": {
+            "columns": [
+              "Round up",
+              "Round down",
+              "Fraction"
+            ],
+            "cards": [
+              "Tables for 125 guests, 16 seats each",
+              "Full packs of 6 from 2,749",
+              "Share 7 pizzas between 4",
+              "Shelves for 230 books, 25 per shelf",
+              "Teams of 9 from 100 pupils",
+              "Share 13 m of rope between 4"
+            ],
+            "answer": [
+              0,
+              1,
+              2,
+              0,
+              1,
+              2
+            ]
+          },
+          "note": "Sort: round up, round down or fraction?"
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "1,000 ÷ 7 = ?",
+            "options": [
+              "142 r 6",
+              "143 r 1",
+              "142 r 8"
+            ],
+            "answer": 0,
+            "why": "7 × 142 = 994; 1,000 - 994 = 6. r 8 is too big."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "853 ÷ 4 = ?",
+          "a": "213 r 1",
+          "mins": 2,
+          "model": "Teacher: 8 ÷ 4 = 2, 5 ÷ 4 = 1 r 1, 13 ÷ 4 = 3 r 1: 213 r 1."
+        },
+        {
+          "q": "1,234 ÷ 5 = ?",
+          "a": "246 r 4",
+          "mins": 2
+        },
+        {
+          "q": "7 cakes shared between 2: answer as a mixed number.",
+          "a": "3 1/2",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 2,617 ÷ 3; 4,509 ÷ 8",
+          "a": "872 r 1; 563 r 5",
+          "mins": 4,
+          "model": "Teacher: 2,617 ÷ 3: 26 ÷ 3 = 8 r 2, 21 ÷ 3 = 7, 7 ÷ 3 = 2 r 1: 872 r 1."
+        },
+        {
+          "q": "Extend: 125 guests, 16 seats per table. How many tables?",
+          "a": "8 (125 ÷ 16 = 7 r 13, round up)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: find a number between 100 and 120 that leaves remainder 3 when divided by 4 and by 5.",
+          "a": "103",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "3,456 ÷ 7 = ?",
+          "a": "493 r 5",
+          "mins": 2
+        },
+        {
+          "q": "Big question: when would you round a division answer up?",
+          "a": "When everything must be included, like people needing seats",
+          "mins": 3
+        }
+      ],
+      "homework": "Five remainder problems; for each say whether to round up, down or use a fraction.",
+      "send": "SEND: concrete or pictorial first (counters, strips), worked example on screen, reduced set. EAL: key word cards; stem 'First I ..., then I ...'. Stretch: write remainders as decimals (Year 6 preview).",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 1: Multiplication and division B: small step 'Divide with remainders' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Place value counters",
+        "Times-table grid",
+        "Squared paper (for long multiplication layout)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 25 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 1: Multiplication and division B; fractions B",
+      "n": 26,
+      "title": "Scaling and division problems",
+      "duration": 45,
+      "bigQuestion": "What does 'times as many' mean, and how do we solve it?",
+      "objectives": [
+        "To understand how scaling uses multiplication and division"
+      ],
+      "successCriteria": [
+        "All: scale up by multiplying",
+        "Most: scale down by dividing",
+        "Some: solve two-step problems with × and ÷"
+      ],
+      "crossCurricular": "Cooking: scaling a recipe for more people",
+      "smsc": "Social: cooking for a community iftar (إِفْطَار)",
+      "keywords": [
+        {
+          "term": "scale",
+          "def": "make bigger or smaller by multiplying or dividing"
+        },
+        {
+          "term": "times as many",
+          "def": "multiply"
+        },
+        {
+          "term": "times smaller",
+          "def": "divide"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A recipe for 4 people uses 300 g of rice. How much for 12 people? For 2 people?",
+        "a": "12 people: 3 times as many, 900 g. 2 people: half, 150 g."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "chat-waterfall",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "islamicLink": {
+        "text": "Feeding others is a great good deed in Islam, especially giving food to those who are fasting at iftar (إِفْطَار). Scaling a recipe helps us cook for many guests.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "measuring cups and spoons",
+          "alt": "Measuring cups and spoons",
+          "for": "hook"
+        },
+        {
+          "find": "kitchen scales grams",
+          "alt": "Kitchen scales showing grams",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "300 × 3 = ?",
+          "a": "900",
+          "mins": 1
+        },
+        {
+          "q": "300 ÷ 2 = ?",
+          "a": "150",
+          "mins": 1
+        },
+        {
+          "q": "2,749 ÷ 6 = ?",
+          "a": "458 r 1",
+          "mins": 1
+        },
+        {
+          "q": "96 ÷ 8 = ?",
+          "a": "12",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Scale up and down",
+          "chart": {
+            "kind": "bar",
+            "labels": [
+              "Recipe for 4",
+              "For 12",
+              "For 2"
+            ],
+            "values": [
+              300,
+              900,
+              150
+            ],
+            "title": "Rice needed",
+            "unit": "g"
+          },
+          "note": "Bar model: one bar and three bars."
+        },
+        {
+          "heading": "Efficient division",
+          "bullets": [
+            "Divide by 4: halve twice.",
+            "840 ÷ 4 = 420 ÷ 2 = 210",
+            "Divide by 8: halve three times."
+          ],
+          "note": "Ask: 920 ÷ 8? (460, 230, 115)."
+        },
+        {
+          "heading": "Two steps",
+          "model": {
+            "problem": "5 pens cost £4.50 (450p). Cost of 8 pens?",
+            "steps": [
+              "One pen: 450 ÷ 5 = 90p",
+              "8 pens: 90 × 8 = 720p"
+            ],
+            "answer": "£7.20"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "A tree is 4 times as tall as a 3 m shed. How tall?",
+            "options": [
+              "7 m",
+              "12 m",
+              "1 m"
+            ],
+            "answer": 1,
+            "why": "Times as tall: multiply: 3 × 4 = 12 m."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "A tree is 8 m tall; a bush is 10 times smaller. How tall is the bush?",
+          "a": "80 cm",
+          "mins": 2,
+          "model": "Teacher: 10 times smaller means ÷ 10: 8 m = 800 cm, ÷ 10 = 80 cm."
+        },
+        {
+          "q": "1,560 ÷ 4 by halving twice.",
+          "a": "780, then 390",
+          "mins": 2
+        },
+        {
+          "q": "6 books cost £42. Cost of 9 books?",
+          "a": "£63 (one book £7)",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: a recipe for 6 uses 450 g flour. How much for 2? For 18?",
+          "a": "150 g; 1,350 g",
+          "mins": 4,
+          "model": "Teacher: 6 to 2 is ÷ 3: 450 ÷ 3 = 150 g; 6 to 18 is × 3: 1,350 g."
+        },
+        {
+          "q": "Extend: 7 boxes hold 2,100 dates. How many in 12 boxes?",
+          "a": "3,600 (one box 300)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A has 3 times as many as B. Together they have 1,000. How many each?",
+          "a": "B 250, A 750",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Scale 240 g up 5 times.",
+          "a": "1,200 g",
+          "mins": 2
+        },
+        {
+          "q": "Big question: what operation does 'times smaller' mean?",
+          "a": "Divide",
+          "mins": 3
+        }
+      ],
+      "homework": "Scale a family recipe for 2 people and for 12 people; show your working.",
+      "send": "SEND: concrete or pictorial first (counters, strips), worked example on screen, reduced set. EAL: key word cards; stem 'First I ..., then I ...'. Stretch: scaling with fractions: 2/3 as many.",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 1: Multiplication and division B: small step 'Efficient division; solve problems with multiplication and division (scaling)' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Place value counters",
+        "Times-table grid",
+        "Squared paper (for long multiplication layout)",
+        "Mini-whiteboard and pen",
+        "Kitchen scales (optional)",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 26 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 1: Multiplication and division B; fractions B",
+      "n": 27,
+      "title": "Fractions of an amount: unit fractions",
+      "duration": 45,
+      "bigQuestion": "How is finding a fraction of an amount like dividing?",
+      "objectives": [
+        "To understand how finding a fraction of an amount uses division"
+      ],
+      "successCriteria": [
+        "All: find 1/4 of 28",
+        "Most: find unit fractions of larger amounts",
+        "Some: find the whole from a unit fraction"
+      ],
+      "crossCurricular": "PSHE: sharing money and saving",
+      "smsc": "Moral: giving zakah (زَكَاة) purifies wealth and helps people in need",
+      "keywords": [
+        {
+          "term": "unit fraction",
+          "def": "a fraction with numerator 1"
+        },
+        {
+          "term": "bar model",
+          "def": "a bar split into equal parts"
+        },
+        {
+          "term": "whole",
+          "def": "the full amount"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Would you rather have 1/3 of £360 or 1/4 of £440?",
+        "options": [
+          "1/3 of £360",
+          "1/4 of £440"
+        ],
+        "a": "1/3 of 360 = £120; 1/4 of 440 = £110. The first is more."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "islamicLink": {
+        "text": "Zakah (زَكَاة) is one of the five pillars of Islam: a Muslim gives a fixed share (one fortieth) of savings above a set amount to people in need. Finding a fraction of an amount is how it is worked out.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "charity collection jar coins",
+          "alt": "A collection jar with coins",
+          "for": "hook"
+        },
+        {
+          "find": "bar of chocolate squares",
+          "alt": "A chocolate bar split into equal pieces",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "36 ÷ 4 = ?",
+          "a": "9",
+          "mins": 1
+        },
+        {
+          "q": "1/5 of 35?",
+          "a": "7",
+          "mins": 1
+        },
+        {
+          "q": "Simplify 6/9.",
+          "a": "2/3",
+          "mins": 1
+        },
+        {
+          "q": "480 ÷ 6 = ?",
+          "a": "80",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Bar model",
+          "bullets": [
+            "1/4 of 28",
+            "Split 28 into 4 equal parts",
+            "28 ÷ 4 = 7"
+          ],
+          "fraction": {
+            "parts": 4,
+            "shaded": 1,
+            "label": "1/4 of 28 = 7"
+          },
+          "note": "Ask: 1/8 of 56? (7)."
+        },
+        {
+          "heading": "Larger amounts",
+          "table": {
+            "head": [
+              "Unit fraction",
+              "Amount",
+              "÷",
+              "Answer"
+            ],
+            "rows": [
+              [
+                "1/3",
+                "360",
+                "÷ 3",
+                "120"
+              ],
+              [
+                "1/4",
+                "440",
+                "÷ 4",
+                "110"
+              ],
+              [
+                "1/8",
+                "1,000",
+                "÷ 8",
+                "125"
+              ],
+              [
+                "1/40",
+                "2,000",
+                "÷ 40",
+                "50"
+              ]
+            ]
+          },
+          "note": "Ask: 1/6 of 720? (120)."
+        },
+        {
+          "heading": "Find the whole",
+          "model": {
+            "problem": "1/5 of a number is 14. What is the number?",
+            "steps": [
+              "One part = 14",
+              "5 parts = 14 × 5"
+            ],
+            "answer": "70"
+          },
+          "note": "Work backwards."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "1/7 of 84 = ?",
+            "options": [
+              "12",
+              "77",
+              "588"
+            ],
+            "answer": 0,
+            "why": "84 ÷ 7 = 12."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "1/9 of 63?",
+          "a": "7",
+          "mins": 2,
+          "model": "Teacher: 63 ÷ 9 = 7."
+        },
+        {
+          "q": "1/5 of 2,500?",
+          "a": "500",
+          "mins": 2
+        },
+        {
+          "q": "1/6 of a number is 15. The number?",
+          "a": "90",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 1/3 of 96; 1/4 of 1,200; 1/10 of 3,450",
+          "a": "32; 300; 345",
+          "mins": 4,
+          "model": "Teacher: 96 ÷ 3 = 32."
+        },
+        {
+          "q": "Extend: 1/8 of 4,000 g in kg and g",
+          "a": "500 g",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: zakah (زَكَاة) is 1/40 of savings above a threshold. Zakah on £4,000 of eligible savings?",
+          "a": "£100",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "1/6 of 840?",
+          "a": "140",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how do you find 1/5 of an amount?",
+          "a": "Divide the amount by 5",
+          "mins": 3
+        }
+      ],
+      "homework": "Find 1/2, 1/4, 1/5 and 1/10 of £600 and of 1,000 g.",
+      "send": "SEND: concrete or pictorial first (counters, strips), worked example on screen, reduced set. EAL: key word cards; stem 'First I ..., then I ...'. Stretch: unit fractions of amounts with remainders as fractions.",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 2: Fractions B: small step 'Fraction of an amount (unit fractions)' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4)",
+        "Fraction wall printout",
+        "Counters or pasta",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 27 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 1: Multiplication and division B; fractions B",
+      "n": 28,
+      "title": "Fractions of an amount: non-unit fractions",
+      "duration": 45,
+      "bigQuestion": "How do we find 3/5 of an amount?",
+      "objectives": [
+        "To understand how to find non-unit fractions of amounts"
+      ],
+      "successCriteria": [
+        "All: divide by the denominator, multiply by the numerator",
+        "Most: use a bar model for problems",
+        "Some: find the whole from a non-unit fraction"
+      ],
+      "crossCurricular": "Geography: fractions of a journey completed",
+      "smsc": "Social: sharing out a charity budget",
+      "keywords": [
+        {
+          "term": "non-unit fraction",
+          "def": "numerator more than 1"
+        },
+        {
+          "term": "numerator",
+          "def": "the number of parts we want"
+        },
+        {
+          "term": "denominator",
+          "def": "the number of equal parts"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A 240 km journey. 3/4 is done. How far is left?",
+        "a": "1/4 of 240 = 60, so 3/4 = 180 km done; 60 km left."
+      },
+      "routines": {
+        "hook": "think-pair-share",
+        "starter": "chat-waterfall",
+        "hinge": "teams-poll",
+        "practice": "think-pair-share",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "map scale bar kilometres",
+          "alt": "A map scale bar marked in kilometres",
+          "for": "hook"
+        },
+        {
+          "find": "bar of chocolate squares",
+          "alt": "A chocolate bar split into equal pieces",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1/4 of 240?",
+          "a": "60",
+          "mins": 1
+        },
+        {
+          "q": "60 × 3 = ?",
+          "a": "180",
+          "mins": 1
+        },
+        {
+          "q": "1/6 of 840?",
+          "a": "140",
+          "mins": 1
+        },
+        {
+          "q": "Simplify 15/20.",
+          "a": "3/4",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Divide, then multiply",
+          "model": {
+            "problem": "3/5 of 450",
+            "steps": [
+              "1/5 of 450 = 450 ÷ 5 = 90",
+              "3/5 = 90 × 3"
+            ],
+            "answer": "270"
+          },
+          "note": "Bar of 5 parts."
+        },
+        {
+          "heading": "Bar model",
+          "fraction": {
+            "parts": 4,
+            "shaded": 3,
+            "label": "3/4 of 240 = 180"
+          },
+          "note": "Shade 3 of 4 parts."
+        },
+        {
+          "heading": "Find the whole",
+          "bullets": [
+            "2/3 of a number is 48",
+            "1/3 = 48 ÷ 2 = 24",
+            "Whole = 24 × 3 = 72"
+          ],
+          "note": "Ask: 3/4 of a number is 30. Whole? (40)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "5/8 of 64 = ?",
+            "options": [
+              "40",
+              "8",
+              "13"
+            ],
+            "answer": 0,
+            "why": "64 ÷ 8 = 8; 8 × 5 = 40."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "2/3 of 39?",
+          "a": "26",
+          "mins": 2,
+          "model": "Teacher: 39 ÷ 3 = 13, × 2 = 26."
+        },
+        {
+          "q": "7/10 of 500?",
+          "a": "350",
+          "mins": 2
+        },
+        {
+          "q": "3/5 of a number is 36. The number?",
+          "a": "60",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 3/4 of 92; 4/5 of 1,250; 5/6 of 360",
+          "a": "69; 1,000; 300",
+          "mins": 4,
+          "model": "Teacher: 92 ÷ 4 = 23, × 3 = 69."
+        },
+        {
+          "q": "Extend: £480 raised; 5/8 goes to a water well project. How much?",
+          "a": "£300",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Yasmin spent 2/5 of her money and has £36 left. How much did she start with?",
+          "a": "£60 (3/5 = £36, so 1/5 = £12)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "3/8 of 96?",
+          "a": "36",
+          "mins": 2
+        },
+        {
+          "q": "Big question: how do you find 3/5 of 450?",
+          "a": "Divide by 5 (90), multiply by 3: 270",
+          "mins": 3
+        }
+      ],
+      "homework": "Five non-unit fraction of amount questions, including one 'find the whole'.",
+      "send": "SEND: concrete or pictorial first (counters, strips), worked example on screen, reduced set. EAL: key word cards; stem 'First I ..., then I ...'. Stretch: fractions of measurements (2/3 of 1 kg in g).",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 2: Fractions B: small step 'Fraction of an amount (non-unit fractions)' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4)",
+        "Fraction wall printout",
+        "Counters or pasta",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 28 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 1: Multiplication and division B; fractions B",
+      "n": 29,
+      "title": "Multiply a fraction by a whole number",
+      "duration": 45,
+      "bigQuestion": "Why does multiplying a fraction by a whole number only change the numerator?",
+      "objectives": [
+        "To understand why multiplying a fraction by a whole number changes only the numerator"
+      ],
+      "successCriteria": [
+        "All: use repeated addition",
+        "Most: multiply the numerator",
+        "Some: convert improper answers to mixed numbers"
+      ],
+      "crossCurricular": "Cooking: 3/4 cup of flour, 5 times",
+      "smsc": "Moral: small good actions repeated add up",
+      "keywords": [
+        {
+          "term": "integer",
+          "def": "a whole number"
+        },
+        {
+          "term": "repeated addition",
+          "def": "adding the same fraction again and again"
+        },
+        {
+          "term": "improper fraction",
+          "def": "numerator greater than denominator"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A recipe needs 3/4 cup of oats. How much for 5 batches?",
+        "a": "3/4 × 5 = 15/4 = 3 3/4 cups."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "measuring jug millilitres",
+          "alt": "A measuring jug marked in millilitres",
+          "for": "hook"
+        },
+        {
+          "find": "measuring cups and spoons",
+          "alt": "Measuring cups and spoons",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "3/4 + 3/4 = ?",
+          "a": "1 1/2",
+          "mins": 1
+        },
+        {
+          "q": "15/4 as a mixed number?",
+          "a": "3 3/4",
+          "mins": 1
+        },
+        {
+          "q": "3/5 of 450?",
+          "a": "270",
+          "mins": 1
+        },
+        {
+          "q": "2/7 + 2/7 + 2/7 = ?",
+          "a": "6/7",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Repeated addition",
+          "bullets": [
+            "2/7 × 3 = 2/7 + 2/7 + 2/7",
+            "= 6/7",
+            "Denominator stays: same size parts."
+          ],
+          "fraction": [
+            {
+              "parts": 7,
+              "shaded": 2,
+              "label": "2/7"
+            },
+            {
+              "parts": 7,
+              "shaded": 4,
+              "label": "2/7 × 2"
+            },
+            {
+              "parts": 7,
+              "shaded": 6,
+              "label": "2/7 × 3 = 6/7"
+            }
+          ],
+          "note": "Ask: 1/5 × 4? (4/5)."
+        },
+        {
+          "heading": "Multiply the numerator",
+          "model": {
+            "problem": "3/8 × 4",
+            "steps": [
+              "3 × 4 = 12",
+              "12/8",
+              "Simplify: 1 4/8 = 1 1/2"
+            ],
+            "answer": "1 1/2"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Watch out",
+          "misconception": {
+            "wrong": "2/5 × 3 = 6/15",
+            "right": "Only the numerator is multiplied: 6/5 = 1 1/5 (three lots of two fifths)"
+          },
+          "note": "Ask: why is the wrong one wrong?"
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "5/6 × 4 = ?",
+            "options": [
+              "20/24",
+              "3 1/3",
+              "9/6"
+            ],
+            "answer": 1,
+            "why": "20/6 = 3 1/3."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "1/9 × 5 = ?",
+          "a": "5/9",
+          "mins": 2,
+          "model": "Teacher: 1/9 five times is 5/9."
+        },
+        {
+          "q": "2/3 × 4 = ?",
+          "a": "2 2/3",
+          "mins": 2
+        },
+        {
+          "q": "7/10 × 6 = ?",
+          "a": "4 1/5",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 3/7 × 2; 4/9 × 3; 1/4 × 8",
+          "a": "6/7; 1 1/3; 2",
+          "mins": 4,
+          "model": "Teacher: 3/7 × 2 = 6/7."
+        },
+        {
+          "q": "Extend: 5/8 × 7",
+          "a": "4 3/8",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: 3/4 of a litre of milk a day for 9 days. Total?",
+          "a": "6 3/4 litres",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "4/5 × 3 = ?",
+          "a": "2 2/5",
+          "mins": 2
+        },
+        {
+          "q": "Big question: why does only the numerator change?",
+          "a": "We have more parts of the same size; the size (denominator) does not change",
+          "mins": 3
+        }
+      ],
+      "homework": "Six fraction × whole number questions; write answers as mixed numbers.",
+      "send": "SEND: concrete or pictorial first (counters, strips), worked example on screen, reduced set. EAL: key word cards; stem 'First I ..., then I ...'. Stretch: multiply fractions by 2-digit whole numbers.",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 2: Fractions B: small step 'Multiply a unit fraction by an integer; multiply a non-unit fraction by an integer' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4)",
+        "Fraction wall printout",
+        "Counters or pasta",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 29 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 1: Multiplication and division B; fractions B",
+      "n": 30,
+      "title": "Multiply a mixed number by a whole number",
+      "duration": 45,
+      "bigQuestion": "Should we partition or convert to an improper fraction?",
+      "objectives": [
+        "To understand how to multiply a mixed number by a whole number"
+      ],
+      "successCriteria": [
+        "All: partition the mixed number",
+        "Most: convert to an improper fraction",
+        "Some: compare the two methods"
+      ],
+      "crossCurricular": "DT: lengths of wood cut many times",
+      "smsc": "Social: preparing food for many guests",
+      "keywords": [
+        {
+          "term": "mixed number",
+          "def": "wholes and a fraction"
+        },
+        {
+          "term": "partition",
+          "def": "split into wholes and a fraction"
+        },
+        {
+          "term": "convert",
+          "def": "change one form to another"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Each shelf is 2 1/4 m long. How long are 3 shelves end to end?",
+        "a": "2 × 3 = 6 and 1/4 × 3 = 3/4: 6 3/4 m."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "chat-waterfall",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "books on a bookshelf",
+          "alt": "Books on a shelf",
+          "for": "hook"
+        },
+        {
+          "find": "tape measure metres extended",
+          "alt": "A tape measure showing metres and centimetres",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "3/8 × 4 = ?",
+          "a": "1 1/2",
+          "mins": 1
+        },
+        {
+          "q": "2 1/4 as an improper fraction?",
+          "a": "9/4",
+          "mins": 1
+        },
+        {
+          "q": "9/4 × 3 = ?",
+          "a": "27/4",
+          "mins": 1
+        },
+        {
+          "q": "27/4 as a mixed number?",
+          "a": "6 3/4",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Partition",
+          "model": {
+            "problem": "2 1/4 × 3",
+            "steps": [
+              "2 × 3 = 6",
+              "1/4 × 3 = 3/4",
+              "6 + 3/4"
+            ],
+            "answer": "6 3/4"
+          },
+          "note": "Wholes, then fraction."
+        },
+        {
+          "heading": "Improper fractions",
+          "bullets": [
+            "1 2/5 × 4",
+            "7/5 × 4 = 28/5",
+            "= 5 3/5"
+          ],
+          "note": "Ask: which method was quicker?"
+        },
+        {
+          "heading": "When fractions cross 1",
+          "model": {
+            "problem": "3 2/3 × 2",
+            "steps": [
+              "3 × 2 = 6",
+              "2/3 × 2 = 4/3 = 1 1/3",
+              "6 + 1 1/3"
+            ],
+            "answer": "7 1/3"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "1 3/4 × 3 = ?",
+            "options": [
+              "3 9/4",
+              "5 1/4",
+              "3 3/4"
+            ],
+            "answer": 1,
+            "why": "3 + 9/4 = 3 + 2 1/4 = 5 1/4. '3 9/4' is not simplified."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "2 1/5 × 2 = ?",
+          "a": "4 2/5",
+          "mins": 2,
+          "model": "Teacher: 2 × 2 = 4, 1/5 × 2 = 2/5: 4 2/5."
+        },
+        {
+          "q": "1 1/2 × 5 = ?",
+          "a": "7 1/2",
+          "mins": 2
+        },
+        {
+          "q": "2 3/8 × 4 = ?",
+          "a": "9 1/2",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 3 1/3 × 3; 1 2/7 × 2",
+          "a": "10; 2 4/7",
+          "mins": 4,
+          "model": "Teacher: 3 × 3 = 9, 1/3 × 3 = 1: 10."
+        },
+        {
+          "q": "Extend: 4 5/6 × 4",
+          "a": "19 1/3",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: a jug holds 1 3/4 litres. How much do 6 jugs hold?",
+          "a": "10 1/2 litres",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "2 2/3 × 4 = ?",
+          "a": "10 2/3",
+          "mins": 2
+        },
+        {
+          "q": "Big question: show 1 1/2 × 3 two ways.",
+          "a": "Partition: 3 + 3/2 = 4 1/2; improper: 3/2 × 3 = 9/2 = 4 1/2",
+          "mins": 3
+        }
+      ],
+      "homework": "Five mixed number × whole number questions; try both methods on one.",
+      "send": "SEND: concrete or pictorial first (counters, strips), worked example on screen, reduced set. EAL: key word cards; stem 'First I ..., then I ...'. Stretch: multiply mixed numbers by 2-digit whole numbers.",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 2: Fractions B: small step 'Multiply a mixed number by an integer' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4)",
+        "Fraction wall printout",
+        "Counters or pasta",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 30 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 1: Multiplication and division B; fractions B",
+      "n": 31,
+      "title": "Fraction problems and unit assessment",
+      "duration": 45,
+      "bigQuestion": "Which fraction skill does each problem need?",
+      "objectives": [
+        "To understand which fraction skill a problem needs"
+      ],
+      "successCriteria": [
+        "All: choose the right fraction skill",
+        "Most: solve two-step fraction problems",
+        "Some: explain and correct a mistake"
+      ],
+      "crossCurricular": "Cooking and PSHE: budgets and recipes",
+      "smsc": "Moral: honest effort in an assessment",
+      "keywords": [
+        {
+          "term": "problem",
+          "def": "a question in a context"
+        },
+        {
+          "term": "strategy",
+          "def": "a plan to solve it"
+        },
+        {
+          "term": "check",
+          "def": "make sure the answer is right"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which is the odd one out?",
+        "options": [
+          "3/4 of 20",
+          "5 × 3",
+          "2 1/2 × 6",
+          "1/3 of 45"
+        ],
+        "a": "All four equal 15, so there is no odd one out: pupils must check each one, not guess."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "bag of rice 1 kg",
+          "alt": "A 1 kg bag of rice",
+          "for": "teach:2"
+        },
+        {
+          "find": "fraction wall chart",
+          "alt": "A fraction wall",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "2/3 of 60?",
+          "a": "40",
+          "mins": 1
+        },
+        {
+          "q": "3/5 × 4 = ?",
+          "a": "2 2/5",
+          "mins": 1
+        },
+        {
+          "q": "1 1/4 × 3 = ?",
+          "a": "3 3/4",
+          "mins": 1
+        },
+        {
+          "q": "4,375 ÷ 5 = ?",
+          "a": "875",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Which skill?",
+          "sort": {
+            "columns": [
+              "Fraction of an amount",
+              "Fraction × whole number",
+              "Add or subtract fractions"
+            ],
+            "cards": [
+              "3/4 of 200 m",
+              "2/3 cup × 6 batches",
+              "1/2 + 3/8 of a pizza",
+              "5/8 of £64",
+              "1 1/4 litres × 4",
+              "3 1/2 km - 1 3/4 km"
+            ],
+            "answer": [
+              0,
+              1,
+              2,
+              0,
+              1,
+              2
+            ]
+          },
+          "note": "Sort."
+        },
+        {
+          "heading": "Two steps",
+          "model": {
+            "problem": "A 2 kg bag of rice: 3/8 used on Monday, 1/4 on Tuesday. How many grams are left?",
+            "steps": [
+              "Used: 3/8 + 2/8 = 5/8",
+              "Left: 3/8",
+              "3/8 of 2,000 g = 250 × 3"
+            ],
+            "answer": "750 g"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Mistake hunt",
+          "misconception": {
+            "wrong": "2/5 of 30 = 30 ÷ 2 × 5 = 75",
+            "right": "Divide by the denominator, multiply by the numerator: 30 ÷ 5 × 2 = 12"
+          },
+          "note": "Ask: what went wrong?"
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "3/4 of a number is 45. The number?",
+            "options": [
+              "60",
+              "33 3/4",
+              "15"
+            ],
+            "answer": 0,
+            "why": "1/4 = 15; whole = 60."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "4/7 of 56?",
+          "a": "32",
+          "mins": 2,
+          "model": "Teacher: 56 ÷ 7 = 8, × 4 = 32."
+        },
+        {
+          "q": "2 2/5 × 5 = ?",
+          "a": "12",
+          "mins": 2
+        },
+        {
+          "q": "A 3 m rope; 5/6 m cut off 3 times. What is left?",
+          "a": "1/2 m",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Arithmetic quiz, core: 1/8 of 96; 3/10 of 250; 2/9 × 4; 1 1/3 × 6",
+          "a": "12; 75; 8/9; 8",
+          "mins": 4,
+          "model": "Teacher: 96 ÷ 8 = 12."
+        },
+        {
+          "q": "Quiz continued: 34 × 26; 2,016 ÷ 6; 4,505 + 3,698",
+          "a": "884; 336; 8,203",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: 2/3 of the pupils in a school of 420 walk; 1/4 of the walkers bring a scooter. How many scooters?",
+          "a": "2/3 of 420 = 280; 1/4 of 280 = 70",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "5/6 of 72?",
+          "a": "60",
+          "mins": 2
+        },
+        {
+          "q": "Big question: which fraction skill do you find hardest, and what is your next step?",
+          "a": "For example: finding the whole; next step: draw the bar model first",
+          "mins": 3
+        }
+      ],
+      "homework": "Spring half term: arithmetic practice sheet (10 questions) and times tables 5 minutes a day.",
+      "send": "SEND: concrete or pictorial first (counters, strips), worked example on screen, reduced set. EAL: key word cards; stem 'First I ..., then I ...'. Stretch: fraction problems with three steps.",
+      "resources": [
+        "White Rose Maths Year 5, Spring block 2: Fractions B: small step 'Fractions B: problem solving; end-of-block check' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper fraction strips (cut and folded from A4)",
+        "Fraction wall printout",
+        "Counters or pasta",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 5 maths lesson 31 guided, independent and homework tasks"
+      ]
     }
   ]
 }

@@ -1,106 +1,819 @@
 {
   "subject": "Mathematics",
   "year": "y1",
-  "board": "Edexcel",
-  "source": "National Curriculum (KS1 Year 1: number and place value; addition and subtraction within 10)",
+  "board": "National Curriculum (KS1)",
+  "source": "National Curriculum (KS1 Year 1: number and place value; addition and subtraction within 10); Spring 1 founding year: White Rose Maths Year 1 small-step titles (bridge from Autumn blocks 1-2, then Spring blocks 1-2), Tarbiyyah Primary Maths Policy and Maths Long Term Plan 2023-24",
   "lessons": [
     {
       "unit": "Unit 1: Numbers to 10",
       "n": 1,
       "title": "Counting forwards and backwards within 10",
       "duration": 30,
-      "objectives": ["Count forwards from 0 to 10", "Count backwards from 10 to 0"],
-      "keywords": [{ "term": "forwards", "def": "counting up: 1, 2, 3" }, { "term": "backwards", "def": "counting down: 3, 2, 1" }, { "term": "number track", "def": "a row of numbered squares" }],
-      "starter": ["Say Bismillah. Count 5 objects on the screen.", "What comes after 4?", "Hold up 7 fingers."],
-      "teach": [
-        { "heading": "Counting forwards", "bullets": ["0, 1, 2, 3, 4, 5.", "6, 7, 8, 9, 10.", "Each number is one more."], "note": "Use a number track. Point to each number as the class chants. Pause on a number and ask: what comes next?" },
-        { "heading": "Counting backwards", "bullets": ["10, 9, 8, 7, 6.", "5, 4, 3, 2, 1, 0.", "Each number is one less."], "note": "Backwards is harder than forwards. Use finger-folding and a rocket countdown. Common error: missing out 7 or 3." },
-        { "heading": "Starting from any number", "bullets": ["Start at 4: 4, 5, 6, 7.", "Start at 8: 8, 7, 6, 5.", "Say it with me."], "note": "Children practise starting from a number given by you. Ask: which direction are we going?" },
-        { "heading": "Missing numbers", "bullets": ["3, 4, __, 6.", "9, 8, __, 6.", "Which numbers are missing?"], "note": "Show number tracks with gaps. Ask children to explain how they know using counting." }
+      "objectives": [
+        "Count forwards from 0 to 10",
+        "Count backwards from 10 to 0"
       ],
-      "practice": ["Count from 0 to 10, then back to 0.", "Count on from 6 to 9.", "Fill in the missing number: 5, __, 7."],
-      "independent": ["Fill the gaps: 1, 2, __, 4, 5, __, 7.", "Fill the gaps: 10, 9, __, 7, __, 5.", "Write the numbers from 0 to 10 in order."],
-      "exit": ["What number comes after 8?", "What number comes before 5?"],
+      "keywords": [
+        {
+          "term": "forwards",
+          "def": "counting up: 1, 2, 3"
+        },
+        {
+          "term": "backwards",
+          "def": "counting down: 3, 2, 1"
+        },
+        {
+          "term": "number track",
+          "def": "a row of numbered squares"
+        }
+      ],
+      "starter": [
+        "Say Bismillah. Count 5 objects on the screen.",
+        "What comes after 4?",
+        "Hold up 7 fingers."
+      ],
+      "teach": [
+        {
+          "heading": "Counting forwards",
+          "bullets": [
+            "0, 1, 2, 3, 4, 5.",
+            "6, 7, 8, 9, 10.",
+            "Each number is one more."
+          ],
+          "note": "Use a number track. Point to each number as the class chants. Pause on a number and ask: what comes next?"
+        },
+        {
+          "heading": "Counting backwards",
+          "bullets": [
+            "10, 9, 8, 7, 6.",
+            "5, 4, 3, 2, 1, 0.",
+            "Each number is one less."
+          ],
+          "note": "Backwards is harder than forwards. Use finger-folding and a rocket countdown. Common error: missing out 7 or 3."
+        },
+        {
+          "heading": "Starting from any number",
+          "bullets": [
+            "Start at 4: 4, 5, 6, 7.",
+            "Start at 8: 8, 7, 6, 5.",
+            "Say it with me."
+          ],
+          "note": "Children practise starting from a number given by you. Ask: which direction are we going?"
+        },
+        {
+          "heading": "Missing numbers",
+          "bullets": [
+            "3, 4, __, 6.",
+            "9, 8, __, 6.",
+            "Which numbers are missing?"
+          ],
+          "note": "Show number tracks with gaps. Ask children to explain how they know using counting."
+        }
+      ],
+      "practice": [
+        "Count from 0 to 10, then back to 0.",
+        "Count on from 6 to 9.",
+        "Fill in the missing number: 5, __, 7."
+      ],
+      "independent": [
+        "Fill the gaps: 1, 2, __, 4, 5, __, 7.",
+        "Fill the gaps: 10, 9, __, 7, __, 5.",
+        "Write the numbers from 0 to 10 in order."
+      ],
+      "exit": [
+        "What number comes after 8?",
+        "What number comes before 5?"
+      ],
       "homework": "Count backwards from 10 to 0 to a family member, three times.",
       "send": "SEND: use a physical number line to touch. EAL: learn the number names with gestures. Stretch: count in 2s to 10."
     },
     {
-      "unit": "Unit 1: Numbers to 10",
+      "unit": "Spring 1: Place value within 20; addition and subtraction within 20",
       "n": 2,
-      "title": "Numerals and number words to 10",
+      "title": "Bridge: count, show and write numbers to 10",
       "duration": 30,
-      "objectives": ["Read and write numerals 0 to 10", "Read and write number words one to ten"],
-      "keywords": [{ "term": "numeral", "def": "the digit symbol for a number, like 7" }, { "term": "number word", "def": "a number written in letters, like seven" }],
-      "starter": ["Bismillah. Count back from 10.", "Fill the gap: 4, 5, __, 7.", "How many fingers on two hands?"],
-      "teach": [
-        { "heading": "Same number, three ways", "bullets": ["Seven objects.", "The numeral 7.", "The word seven."], "note": "Show a picture of 7 dates, the numeral and the word. Link all three. The same quantity can be shown in several ways." },
-        { "heading": "Words one to five", "bullets": ["one, two, three.", "four, five.", "Read them aloud."], "note": "Show each word with its numeral and a picture. Use phonics to sound out words. Note tricky words like 'one', 'two' and 'four'." },
-        { "heading": "Words six to ten", "bullets": ["six, seven, eight.", "nine, ten.", "Read them aloud."], "note": "Point out useful letter clues: six starts with s, ten starts with t. Cover and spell the words." },
-        { "heading": "Match them up", "bullets": ["Match 5 with five.", "Match 9 with nine.", "Draw lines to join."], "note": "Show a matching activity. Ask children to read each word before matching." }
+      "bigQuestion": "How many ways can we show the same number?",
+      "objectives": [
+        "To understand that a number can be shown in many ways"
       ],
-      "practice": ["Read the word and show that many fingers: three, eight, five.", "Write the numeral for six.", "Write the word for 2."],
-      "independent": ["Match each numeral 1 to 10 to its word.", "Write the number words for 4, 7 and 10.", "Draw 6 dates and write the numeral and word."],
-      "exit": ["Write the numeral for nine.", "Write the word for 3."],
-      "homework": "Write the numbers 1 to 10 as words on a card and put it on your wall.",
-      "send": "SEND: use numeral and word cards to match with pictures. Stretch: write words for 11 and 12."
+      "successCriteria": [
+        "All: count up to 10 objects, touching each one",
+        "Most: show a number on a ten frame and write the numeral",
+        "Some: write the number word and spot the same number shown in different ways"
+      ],
+      "crossCurricular": "English: reading and spelling number words",
+      "smsc": "Spiritual: the blessings of Allah are too many to count; we start by counting carefully",
+      "keywords": [
+        {
+          "term": "count",
+          "def": "say one number for each thing"
+        },
+        {
+          "term": "numeral",
+          "def": "a number written with digits, like 7"
+        },
+        {
+          "term": "ten frame",
+          "def": "a box with 10 spaces in two rows of 5"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which one does NOT show 6?",
+        "options": [
+          "Dice dots",
+          "The numeral 6",
+          "Ten frame: 5 and 1 more",
+          "Seven fingers"
+        ],
+        "a": "D: seven fingers show 7. The others all show 6."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "islamicLink": {
+        "text": "Allah tells us that if we tried to count His blessings we could never number them (Qur'an 14:34). We count carefully to thank Him for what we can see.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "ten frame with counters maths",
+          "alt": "A ten frame: two rows of five boxes with counters in some boxes",
+          "for": "teach:2"
+        },
+        {
+          "find": "dice showing six dots",
+          "alt": "A dice face with six dots",
+          "for": "hook"
+        },
+        {
+          "find": "dried pasta pieces close-up",
+          "alt": "Dried pasta pieces used for counting",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Count out loud from 0 to 10.",
+          "a": "0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10",
+          "mins": 1
+        },
+        {
+          "q": "Show me 4 fingers.",
+          "a": "4 fingers held up",
+          "mins": 1
+        },
+        {
+          "q": "What number comes after 7?",
+          "a": "8",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "One number for each thing",
+          "bullets": [
+            "Touch each thing once.",
+            "Say one number each time.",
+            "The last number tells us how many."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "marks": [
+              {
+                "at": 8,
+                "label": "8 pasta"
+              }
+            ]
+          },
+          "note": "Model counting 8 pasta pieces, moving each one. Ask: I said 8 last. How many are there? (8.) Show a muddle where you count one twice and ask what went wrong."
+        },
+        {
+          "heading": "Ten frames",
+          "bullets": [
+            "Fill the top row first.",
+            "A full row is 5.",
+            "5 and 2 more is 7."
+          ],
+          "fraction": {
+            "parts": 10,
+            "shaded": 7,
+            "label": "7 on a ten frame"
+          },
+          "note": "Hold up the egg-box ten frame with 7 pasta. Ask: how many without counting one by one? (5 and 2 more is 7.)"
+        },
+        {
+          "heading": "Numerals and words",
+          "table": {
+            "head": [
+              "Numeral",
+              "Word"
+            ],
+            "rows": [
+              [
+                "1",
+                "one"
+              ],
+              [
+                "3",
+                "three"
+              ],
+              [
+                "5",
+                "five"
+              ],
+              [
+                "7",
+                "seven"
+              ],
+              [
+                "9",
+                "nine"
+              ],
+              [
+                "10",
+                "ten"
+              ]
+            ]
+          },
+          "note": "Read each word together. Point out 'seven' has 5 letters. Ask: which word starts with 'th'? (three)."
+        },
+        {
+          "heading": "Check: which shows 9?",
+          "check": {
+            "q": "Which shows nine?",
+            "options": [
+              "A ten frame with 9 filled",
+              "The word 'nine' with 6 dots",
+              "9 fingers and 1 more"
+            ],
+            "answer": 0,
+            "why": "Only A is 9. B mixes the word with 6 dots; C is 10."
+          },
+          "note": "Pupils show A, B or C on fingers."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Count the pasta the teacher shows: how many?",
+          "a": "6",
+          "mins": 1,
+          "model": "Teacher counts 6 pasta aloud, moving each piece: 1, 2, 3, 4, 5, 6. 'The last number I say tells me how many: 6.'"
+        },
+        {
+          "q": "Show 8 on your ten frame.",
+          "a": "Top row full (5) and 3 more",
+          "mins": 1
+        },
+        {
+          "q": "Write the numeral for 'four'.",
+          "a": "4",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: count out 5, then 9, then 3 pasta. Write each numeral.",
+          "a": "5, 9, 3",
+          "mins": 2,
+          "model": "Teacher counts out 5 pasta, touching each one, then writes 5 and says 'five'."
+        },
+        {
+          "q": "Extend: write the word for 6 and for 10.",
+          "a": "six, ten",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: show 7 in two different ways.",
+          "a": "For example: 7 on a ten frame (5 and 2); 7 fingers; the word seven",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Hold up the number word 'eight' on your whiteboard as a numeral.",
+          "a": "8",
+          "mins": 1
+        },
+        {
+          "q": "Big question: show 5 in two ways.",
+          "a": "For example: 5 fingers and a full top row on a ten frame",
+          "mins": 1
+        }
+      ],
+      "homework": "Count 10 things at home (spoons, shoes) with a grown-up and write the numerals.",
+      "send": "SEND: count real pasta with the teacher, one at a time, and point to each. EAL: say the number word, then show it on fingers. Stretch: show 10 in three different ways.",
+      "resources": [
+        "White Rose Maths Year 1, Autumn block 1: Place value (within 10): small step 'Represent objects; recognise numbers as words' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 20 pieces of dried pasta or buttons",
+        "Egg box cut to 10 holes (a ten frame)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 2 guided, independent and homework tasks"
+      ]
     },
     {
-      "unit": "Unit 1: Numbers to 10",
+      "unit": "Spring 1: Place value within 20; addition and subtraction within 20",
       "n": 3,
-      "title": "One more and one less",
+      "title": "Bridge: one more and one less within 10",
       "duration": 30,
-      "objectives": ["Say one more than a number within 10", "Say one less than a number within 10"],
-      "keywords": [{ "term": "one more", "def": "the number after; add one" }, { "term": "one less", "def": "the number before; take one away" }],
-      "starter": ["Bismillah. Write the numeral for eight.", "Count on from 5 to 9.", "Count back from 6 to 2."],
-      "teach": [
-        { "heading": "One more", "bullets": ["5 and one more is 6.", "Use a number track.", "Move one step forward."], "note": "Use cubes and a number track. Say it in a full sentence: one more than 5 is 6." },
-        { "heading": "One less", "bullets": ["8 and one less is 7.", "Move one step back.", "Take one cube away."], "note": "Contrast one more and one less using the same starting number. Ask which direction on the track." },
-        { "heading": "Bar model view", "bullets": ["A tower of 4 cubes.", "Add one cube: 5.", "Take one off: 3."], "note": "Show a tower of cubes. Children see that the tower gets taller or shorter by one." },
-        { "heading": "Mixed questions", "bullets": ["One more than 9?", "One less than 1?", "One less than 10?"], "note": "Include edge cases. One less than 1 is 0. Zero is a number. One more than 9 is 10." }
+      "bigQuestion": "What happens to a number when we add one more or take one away?",
+      "objectives": [
+        "To understand how one more and one less change a number"
       ],
-      "practice": ["What is one more than 6?", "What is one less than 4?", "What is one more than 9?"],
-      "independent": ["Complete: one more than 3 is __, one more than 7 is __.", "Complete: one less than 5 is __, one less than 10 is __.", "Make a tower of 6 cubes. Make towers one taller and one shorter."],
-      "exit": ["One more than 8 is ...", "One less than 3 is ..."],
-      "homework": "Ask a grown-up to say a number to 10 and you tell them one more and one less.",
-      "send": "SEND: use cubes to build one more. Stretch: one more and one less than numbers to 20."
+      "successCriteria": [
+        "All: find 1 more than a number with pasta",
+        "Most: find 1 more and 1 less on a number line",
+        "Some: explain that 1 less is the number before"
+      ],
+      "crossCurricular": "Qur'an: counting forwards and back through short surahs learnt",
+      "smsc": "Moral: sharing one more with a friend is kind",
+      "keywords": [
+        {
+          "term": "one more",
+          "def": "the next number when we count"
+        },
+        {
+          "term": "one less",
+          "def": "the number just before"
+        },
+        {
+          "term": "backwards",
+          "def": "counting down: 5, 4, 3"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "I have 6 dates. My brother gives me one more. Then I give one to my sister. How many do I have now?",
+        "a": "6, then 7, then back to 6. One more and one less undo each other."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "number line 0 to 20 printed",
+          "alt": "A printed number line",
+          "for": "teach:1"
+        },
+        {
+          "find": "bowl of dates fruit",
+          "alt": "A bowl of dates",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Count from 3 to 9.",
+          "a": "3, 4, 5, 6, 7, 8, 9",
+          "mins": 1
+        },
+        {
+          "q": "What comes after 5?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "Show 7 on your ten frame.",
+          "a": "5 and 2 more",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "One more",
+          "bullets": [
+            "Add one pasta.",
+            "Say the next number.",
+            "1 more than 4 is 5."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "marks": [
+              {
+                "at": 4,
+                "label": "4"
+              },
+              {
+                "at": 5,
+                "label": "1 more"
+              }
+            ]
+          },
+          "note": "Put 4 pasta down, add one. Ask: 1 more than 6? (7). 1 more than 9? (10)."
+        },
+        {
+          "heading": "One less",
+          "bullets": [
+            "Take one away.",
+            "Say the number before.",
+            "1 less than 8 is 7."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "marks": [
+              {
+                "at": 8,
+                "label": "8"
+              },
+              {
+                "at": 7,
+                "label": "1 less"
+              }
+            ]
+          },
+          "note": "Take one from 8 pasta. Ask: 1 less than 3? (2). 1 less than 1? (0)."
+        },
+        {
+          "heading": "Counting backwards",
+          "bullets": [
+            "Start at 10.",
+            "Count down to 0.",
+            "Each step is 1 less."
+          ],
+          "note": "Count down together from 10 like a rocket. Then start from 7. Ask: what comes before 5? (4)."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "What is 1 less than 6?",
+            "options": [
+              "7",
+              "5",
+              "4"
+            ],
+            "answer": 1,
+            "why": "5. 7 is 1 more; 4 is 2 less."
+          },
+          "note": "Pupils hold up fingers for the answer."
+        }
+      ],
+      "practice": [
+        {
+          "q": "1 more than 3?",
+          "a": "4",
+          "mins": 1,
+          "model": "Teacher puts 3 pasta down, adds 1 and counts: 1, 2, 3, 4. '1 more than 3 is 4.'"
+        },
+        {
+          "q": "1 less than 10?",
+          "a": "9",
+          "mins": 1
+        },
+        {
+          "q": "Count back from 8 to 3.",
+          "a": "8, 7, 6, 5, 4, 3",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 1 more than 2, 5 and 8.",
+          "a": "3, 6, 9",
+          "mins": 2,
+          "model": "Teacher shows 2 pasta, adds one: 3. Then 5 add one: 6. Then 8 add one: 9."
+        },
+        {
+          "q": "Extend: 1 less than 4, 7 and 1.",
+          "a": "3, 6, 0",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: I am 1 more than 6 and 1 less than 8. What am I?",
+          "a": "7",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "1 more than 7?",
+          "a": "8",
+          "mins": 1
+        },
+        {
+          "q": "Big question: 1 less than 5?",
+          "a": "4",
+          "mins": 1
+        }
+      ],
+      "homework": "Count down from 10 to 0 at bedtime; say 1 more and 1 less than your age.",
+      "send": "SEND: count real pasta with the teacher, one at a time, and point to each. EAL: say the number word, then show it on fingers. Stretch: find 2 more and 2 less.",
+      "resources": [
+        "White Rose Maths Year 1, Autumn block 1: Place value (within 10): small step '1 more; 1 less; count backwards within 10' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 20 pieces of dried pasta or buttons",
+        "Egg box cut to 10 holes (a ten frame)",
+        "Mini-whiteboard and pen",
+        "Paper number line 0 to 10",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 3 guided, independent and homework tasks"
+      ]
     },
     {
-      "unit": "Unit 1: Numbers to 10",
+      "unit": "Spring 1: Place value within 20; addition and subtraction within 20",
       "n": 4,
-      "title": "Comparing groups: more, fewer and equal",
+      "title": "Bridge: compare groups: fewer, more, same",
       "duration": 30,
-      "objectives": ["Compare two groups of objects within 10", "Use the words more than, fewer than and equal to"],
-      "keywords": [{ "term": "more than", "def": "a larger amount" }, { "term": "fewer than", "def": "a smaller amount" }, { "term": "equal", "def": "the same amount" }],
-      "starter": ["Bismillah. What is one more than 7?", "What is one less than 5?", "Count in order: 6, 7, 8, __, 10."],
-      "teach": [
-        { "heading": "Matching groups", "bullets": ["Pair each cup with a plate.", "Look for left over items.", "The group with left over has more."], "note": "Show 5 cups and 4 plates. Pair them. Ask what is left over. This builds the idea of comparing without counting." },
-        { "heading": "Using the words", "bullets": ["5 is more than 4.", "4 is fewer than 5.", "4 is equal to 4."], "note": "Model each sentence stem and have the children repeat. Use dates in two bowls as the context." },
-        { "heading": "Count and compare", "bullets": ["Count the first group.", "Count the second group.", "Say which is more."], "note": "Show groups where the bigger group looks smaller (spaced out dots vs close together). Misconception: bigger-looking group means more." },
-        { "heading": "Make them equal", "bullets": ["Group A has 6.", "Group B has 4.", "Add 2 to B to make them equal."], "note": "Ask: how many more does B need? This leads to the idea of difference." }
+      "bigQuestion": "How can we tell which group has more without counting?",
+      "objectives": [
+        "To understand how to compare two groups"
       ],
-      "practice": ["Which is more: 7 stars or 5 stars?", "Which is fewer: 3 cars or 6 cars?", "Are 4 hats and 4 coats equal?"],
-      "independent": ["Draw two groups and say which has more.", "Write more than, fewer than or equal to: 5 __ 8.", "Make two groups that are equal using 6 objects each."],
-      "exit": ["Is 9 more than or fewer than 6?", "Make a sentence using equal to."],
-      "homework": "Count the cups and plates in your kitchen and say which group has more.",
-      "send": "SEND: physically pair items. Stretch: say how many more or fewer."
+      "successCriteria": [
+        "All: match two groups one to one",
+        "Most: say which group has more or fewer",
+        "Some: use 'greater than', 'less than' and 'equal to'"
+      ],
+      "crossCurricular": "Science: sorting and comparing objects",
+      "smsc": "Moral: being fair means equal shares",
+      "keywords": [
+        {
+          "term": "more",
+          "def": "the group with extra left over"
+        },
+        {
+          "term": "fewer",
+          "def": "the group with not as many"
+        },
+        {
+          "term": "equal",
+          "def": "the same amount"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two plates: one has 5 big dates, one has 6 tiny raisins. Which plate has more things?",
+        "a": "The raisins: 6 is more than 5. Size does not change how many."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "islamicLink": {
+        "text": "Allah commands justice ('adl, عَدْل) and doing good (Qur'an 16:90). Sharing equally is a way to be fair.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "bowl of dates fruit",
+          "alt": "A bowl of dates",
+          "for": "hook"
+        },
+        {
+          "find": "paper plates",
+          "alt": "Paper plates for sharing equal groups",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1 more than 6?",
+          "a": "7",
+          "mins": 1
+        },
+        {
+          "q": "Count back from 9 to 5.",
+          "a": "9, 8, 7, 6, 5",
+          "mins": 1
+        },
+        {
+          "q": "Write the numeral for 'three'.",
+          "a": "3",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Match them up",
+          "bullets": [
+            "Line up the two groups.",
+            "Match one to one.",
+            "The group with extras has more."
+          ],
+          "chart": {
+            "kind": "bar",
+            "labels": [
+              "Spoons",
+              "Cups"
+            ],
+            "values": [
+              4,
+              6
+            ],
+            "title": "Matching groups",
+            "unit": "things"
+          },
+          "note": "Match 4 spoons with 6 cups. Ask: which has more? (cups). How many extra? (2)."
+        },
+        {
+          "heading": "Equal groups",
+          "bullets": [
+            "Every one has a partner.",
+            "None left over.",
+            "The groups are equal."
+          ],
+          "note": "Match 5 with 5. Ask: is anything left over? (no) So they are equal."
+        },
+        {
+          "heading": "Greater than, less than",
+          "bullets": [
+            "7 is greater than 4.",
+            "4 is less than 7.",
+            "5 is equal to 5."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "marks": [
+              {
+                "at": 4,
+                "label": "4"
+              },
+              {
+                "at": 7,
+                "label": "7"
+              }
+            ]
+          },
+          "note": "Show on the number line: further along is greater. Ask: which is greater, 3 or 8? (8)."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "Which group has fewer: 7 or 9?",
+            "options": [
+              "7",
+              "9",
+              "They are equal"
+            ],
+            "answer": 0,
+            "why": "7 has fewer. 9 is greater."
+          },
+          "note": "Show 1 or 2 fingers."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Which is more: 3 or 6?",
+          "a": "6",
+          "mins": 1,
+          "model": "Teacher lines up 3 pasta above 6 pasta, matches them one to one, and points to the 3 extra: '6 is more.'"
+        },
+        {
+          "q": "Which is fewer: 8 or 5?",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "Are 4 and 4 equal?",
+          "a": "Yes",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: make a group of 5 and a group of 3. Which has more?",
+          "a": "5 has more",
+          "mins": 2,
+          "model": "Teacher makes 5 and 3, matches them up: 2 left over in the 5 group, so 5 has more."
+        },
+        {
+          "q": "Extend: make two equal groups of pasta.",
+          "a": "For example 6 and 6",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: one group has 2 more than 6. How many?",
+          "a": "8",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Greater: 9 or 6?",
+          "a": "9",
+          "mins": 1
+        },
+        {
+          "q": "Big question: how do we know without counting?",
+          "a": "Match them one to one; the group with extras has more",
+          "mins": 1
+        }
+      ],
+      "homework": "Make two groups of toys at home and tell a grown-up which has more.",
+      "send": "SEND: count real pasta with the teacher, one at a time, and point to each. EAL: say the number word, then show it on fingers. Stretch: say how many more one group has.",
+      "resources": [
+        "White Rose Maths Year 1, Autumn block 1: Place value (within 10): small step 'Compare groups by matching; fewer, more, same; less than, greater than, equal to' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 20 pieces of dried pasta or buttons",
+        "Egg box cut to 10 holes (a ten frame)",
+        "Mini-whiteboard and pen",
+        "Spoons and cups to match",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 4 guided, independent and homework tasks"
+      ]
     },
     {
       "unit": "Unit 1: Numbers to 10",
       "n": 5,
       "title": "Comparing numbers with <, > and =",
       "duration": 30,
-      "objectives": ["Compare numbers to 10", "Use the symbols <, > and ="],
-      "keywords": [{ "term": "greater than (>)", "def": "bigger than; the open end faces the bigger number" }, { "term": "less than (<)", "def": "smaller than; the point faces the smaller number" }, { "term": "equals (=)", "def": "has the same value" }],
-      "starter": ["Bismillah. Which is more: 8 or 6?", "Is 5 equal to 5?", "One less than 7?"],
-      "teach": [
-        { "heading": "The hungry crocodile", "bullets": ["The crocodile eats the bigger number.", "8 > 5.", "The mouth opens to 8."], "note": "Use the crocodile story: the mouth always opens towards the bigger number. Draw the symbol large and let children copy the shape with their arms." },
-        { "heading": "Less than", "bullets": ["3 < 7.", "Read it: three is less than seven.", "The point is at the smaller number."], "note": "Read symbols aloud with children repeating. Show that 3 < 7 and 7 > 3 mean the same thing." },
-        { "heading": "Equals", "bullets": ["4 = 4.", "Two lines, same length.", "Both sides are the same."], "note": "The equals sign means 'is the same as', not 'the answer comes next'. Establish this early." },
-        { "heading": "Choose the symbol", "bullets": ["6 __ 9: choose < , > or =.", "10 __ 10.", "2 __ 1."], "note": "Work through each. Ask children to say the sentence aloud in words." }
+      "objectives": [
+        "Compare numbers to 10",
+        "Use the symbols <, > and ="
       ],
-      "practice": ["Write <, > or = : 7 __ 4.", "Write <, > or = : 3 __ 8.", "Write <, > or = : 5 __ 5."],
-      "independent": ["Complete: 2 __ 9, 6 __ 6, 10 __ 7, 0 __ 1.", "Write two true statements using < with the numbers 3 and 8.", "Draw groups to show 4 < 6."],
-      "exit": ["Put the correct symbol: 9 __ 5.", "Write a true statement using > and the numbers 2 and 7."],
+      "keywords": [
+        {
+          "term": "greater than (>)",
+          "def": "bigger than; the open end faces the bigger number"
+        },
+        {
+          "term": "less than (<)",
+          "def": "smaller than; the point faces the smaller number"
+        },
+        {
+          "term": "equals (=)",
+          "def": "has the same value"
+        }
+      ],
+      "starter": [
+        "Bismillah. Which is more: 8 or 6?",
+        "Is 5 equal to 5?",
+        "One less than 7?"
+      ],
+      "teach": [
+        {
+          "heading": "The hungry crocodile",
+          "bullets": [
+            "The crocodile eats the bigger number.",
+            "8 > 5.",
+            "The mouth opens to 8."
+          ],
+          "note": "Use the crocodile story: the mouth always opens towards the bigger number. Draw the symbol large and let children copy the shape with their arms."
+        },
+        {
+          "heading": "Less than",
+          "bullets": [
+            "3 < 7.",
+            "Read it: three is less than seven.",
+            "The point is at the smaller number."
+          ],
+          "note": "Read symbols aloud with children repeating. Show that 3 < 7 and 7 > 3 mean the same thing."
+        },
+        {
+          "heading": "Equals",
+          "bullets": [
+            "4 = 4.",
+            "Two lines, same length.",
+            "Both sides are the same."
+          ],
+          "note": "The equals sign means 'is the same as', not 'the answer comes next'. Establish this early."
+        },
+        {
+          "heading": "Choose the symbol",
+          "bullets": [
+            "6 __ 9: choose < , > or =.",
+            "10 __ 10.",
+            "2 __ 1."
+          ],
+          "note": "Work through each. Ask children to say the sentence aloud in words."
+        }
+      ],
+      "practice": [
+        "Write <, > or = : 7 __ 4.",
+        "Write <, > or = : 3 __ 8.",
+        "Write <, > or = : 5 __ 5."
+      ],
+      "independent": [
+        "Complete: 2 __ 9, 6 __ 6, 10 __ 7, 0 __ 1.",
+        "Write two true statements using < with the numbers 3 and 8.",
+        "Draw groups to show 4 < 6."
+      ],
+      "exit": [
+        "Put the correct symbol: 9 __ 5.",
+        "Write a true statement using > and the numbers 2 and 7."
+      ],
       "homework": "Make five comparison cards using any numbers to 10, and choose the correct symbol for each.",
       "send": "SEND: use a symbol card with the crocodile picture. Stretch: compare numbers to 20."
     },
@@ -109,178 +822,1336 @@
       "n": 6,
       "title": "Ordering numbers and ordinal words",
       "duration": 30,
-      "objectives": ["Order numbers to 10 from smallest to largest", "Use first, second, third and so on"],
-      "keywords": [{ "term": "order", "def": "put in a line from smallest to biggest or biggest to smallest" }, { "term": "first, second, third", "def": "words that tell the position in a line" }],
-      "starter": ["Bismillah. 8 __ 6: which symbol?", "One more than 9.", "Say the number words for 3 and 7."],
-      "teach": [
-        { "heading": "Smallest to biggest", "bullets": ["Put these in order: 6, 2, 9, 4.", "2, 4, 6, 9.", "Start with the smallest."], "note": "Use number cards. Ask: which is the smallest? Then the next smallest. Ordering means each number is bigger than the one before." },
-        { "heading": "Biggest to smallest", "bullets": ["Same numbers: 9, 6, 4, 2.", "Start with the biggest.", "Which is the biggest?"], "note": "Contrast ascending and descending order. Use the words 'smallest' and 'biggest' and also 'least' and 'greatest'." },
-        { "heading": "First, second, third", "bullets": ["1st, 2nd, 3rd, 4th, 5th.", "Who is first in the line?", "Who is last?"], "note": "Line up 5 toys. Ask about positions. Note that ordinal numbers tell position, not how many." },
-        { "heading": "Race to the masjid", "bullets": ["Amina is 2nd.", "Yusuf is 1st.", "Who is 3rd? Ibrahim."], "note": "Use a simple story context. Include a mix of first to fifth and last." }
+      "objectives": [
+        "Order numbers to 10 from smallest to largest",
+        "Use first, second, third and so on"
       ],
-      "practice": ["Order from smallest: 5, 1, 8.", "Order from biggest: 3, 7, 10, 2.", "Which toy is 4th in the line?"],
-      "independent": ["Order smallest to biggest: 9, 3, 6, 1, 7.", "Order biggest to smallest: 4, 10, 2, 8.", "Draw 5 stars and colour the 3rd star."],
-      "exit": ["Order from smallest: 4, 9, 2.", "Who is first when the order is Zaynab, Hamza, Idris?"],
+      "keywords": [
+        {
+          "term": "order",
+          "def": "put in a line from smallest to biggest or biggest to smallest"
+        },
+        {
+          "term": "first, second, third",
+          "def": "words that tell the position in a line"
+        }
+      ],
+      "starter": [
+        "Bismillah. 8 __ 6: which symbol?",
+        "One more than 9.",
+        "Say the number words for 3 and 7."
+      ],
+      "teach": [
+        {
+          "heading": "Smallest to biggest",
+          "bullets": [
+            "Put these in order: 6, 2, 9, 4.",
+            "2, 4, 6, 9.",
+            "Start with the smallest."
+          ],
+          "note": "Use number cards. Ask: which is the smallest? Then the next smallest. Ordering means each number is bigger than the one before."
+        },
+        {
+          "heading": "Biggest to smallest",
+          "bullets": [
+            "Same numbers: 9, 6, 4, 2.",
+            "Start with the biggest.",
+            "Which is the biggest?"
+          ],
+          "note": "Contrast ascending and descending order. Use the words 'smallest' and 'biggest' and also 'least' and 'greatest'."
+        },
+        {
+          "heading": "First, second, third",
+          "bullets": [
+            "1st, 2nd, 3rd, 4th, 5th.",
+            "Who is first in the line?",
+            "Who is last?"
+          ],
+          "note": "Line up 5 toys. Ask about positions. Note that ordinal numbers tell position, not how many."
+        },
+        {
+          "heading": "Race to the masjid",
+          "bullets": [
+            "Amina is 2nd.",
+            "Yusuf is 1st.",
+            "Who is 3rd? Ibrahim."
+          ],
+          "note": "Use a simple story context. Include a mix of first to fifth and last."
+        }
+      ],
+      "practice": [
+        "Order from smallest: 5, 1, 8.",
+        "Order from biggest: 3, 7, 10, 2.",
+        "Which toy is 4th in the line?"
+      ],
+      "independent": [
+        "Order smallest to biggest: 9, 3, 6, 1, 7.",
+        "Order biggest to smallest: 4, 10, 2, 8.",
+        "Draw 5 stars and colour the 3rd star."
+      ],
+      "exit": [
+        "Order from smallest: 4, 9, 2.",
+        "Who is first when the order is Zaynab, Hamza, Idris?"
+      ],
       "homework": "Line up five toys. Name which is first, second, third, fourth and fifth.",
       "send": "SEND: use number cards that can be moved. Stretch: order numbers to 20."
     },
     {
-      "unit": "Unit 1: Numbers to 10",
+      "unit": "Spring 1: Place value within 20; addition and subtraction within 20",
       "n": 7,
-      "title": "Number line to 10",
+      "title": "Bridge: order numbers to 10 on a number line",
       "duration": 30,
-      "objectives": ["Place numbers on a number line from 0 to 10", "Find numbers between other numbers"],
-      "keywords": [{ "term": "number line", "def": "a line with numbers placed in order at equal gaps" }, { "term": "between", "def": "in the middle of two things" }],
-      "starter": ["Bismillah. Put in order: 7, 2, 5.", "Which is 3rd: 1st Aisha, 2nd Bilal, 3rd Dawud?", "Is 6 > 9?"],
-      "teach": [
-        { "heading": "A number line", "bullets": ["It starts at 0.", "Numbers are in order.", "The gaps are equal."], "note": "Draw a number line from 0 to 10. Point to the zero. Ask why the gaps need to be equal." },
-        { "heading": "Find a number", "bullets": ["Where is 6?", "Count along from 0.", "Put a dot on it."], "note": "Model counting steps along the line. Ask children to show the position of numbers such as 3, 8 and 10." },
-        { "heading": "Between", "bullets": ["What is between 4 and 6?", "5 is between 4 and 6.", "Check on the line."], "note": "Ask for numbers between two others. Note that 4 and 5 and 6: only 5 is between 4 and 6." },
-        { "heading": "Hop along", "bullets": ["Start at 3.", "Hop forward 4.", "You land on 7."], "note": "Preview the use of the number line for adding. Hop one at a time, counting out loud." }
+      "bigQuestion": "How does a number line help us put numbers in order?",
+      "objectives": [
+        "To understand how a number line shows numbers in order"
       ],
-      "practice": ["Point to 8 on the number line.", "What number is between 6 and 8?", "Start at 2, hop forward 3. Where do you land?"],
-      "independent": ["Draw a number line from 0 to 10 and mark 2, 5 and 9.", "Write the missing numbers: 0, 1, __, 3, __, 5.", "Which number is halfway between 0 and 10?"],
-      "exit": ["What number is between 7 and 9?", "Start at 5 and hop back 2. Where are you?"],
-      "homework": "Draw your own number line to 10 with a ruler and label each number.",
-      "send": "SEND: use a large floor number line or physical track. Stretch: number lines from 0 to 20."
+      "successCriteria": [
+        "All: find a number on a number line",
+        "Most: order three numbers smallest to greatest",
+        "Some: order numbers greatest to smallest and explain"
+      ],
+      "crossCurricular": "Everyday life: queues and house numbers go in order",
+      "smsc": "Social: waiting our turn in order",
+      "keywords": [
+        {
+          "term": "number line",
+          "def": "numbers in order on a line"
+        },
+        {
+          "term": "order",
+          "def": "put in a line from small to big"
+        },
+        {
+          "term": "smallest",
+          "def": "the least"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "The numbers 7, 2 and 5 fell off the line! Where does each one go back?",
+        "a": "2 near the start, 5 in the middle, 7 further along."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "number line 0 to 20 printed",
+          "alt": "A printed number line",
+          "for": "teach:1"
+        },
+        {
+          "find": "hundred square 1 to 100 chart",
+          "alt": "A hundred square chart",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Which is more: 5 or 8?",
+          "a": "8",
+          "mins": 1
+        },
+        {
+          "q": "1 less than 6?",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "Count from 0 to 10.",
+          "a": "0 to 10 in order",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The number line",
+          "bullets": [
+            "Numbers go up in ones.",
+            "0 is at the start.",
+            "Further along means bigger."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "marks": [
+              {
+                "at": 0,
+                "label": "start"
+              },
+              {
+                "at": 10,
+                "label": "end"
+              }
+            ]
+          },
+          "note": "Point and count along. Ask: what is between 3 and 5? (4)."
+        },
+        {
+          "heading": "Put them in order",
+          "bullets": [
+            "Find each number.",
+            "Smallest comes first.",
+            "2, 5, 7"
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "marks": [
+              {
+                "at": 2,
+                "label": "2"
+              },
+              {
+                "at": 5,
+                "label": "5"
+              },
+              {
+                "at": 7,
+                "label": "7"
+              }
+            ]
+          },
+          "note": "Place 7, 2, 5 on the line. Ask: which is smallest? (2)."
+        },
+        {
+          "heading": "Greatest first",
+          "bullets": [
+            "Start with the biggest.",
+            "7, 5, 2",
+            "Read right to left."
+          ],
+          "note": "Now order 9, 3, 6 greatest first: 9, 6, 3."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "Which is in order, smallest first?",
+            "options": [
+              "4, 8, 6",
+              "1, 3, 9",
+              "9, 3, 1"
+            ],
+            "answer": 1,
+            "why": "1, 3, 9. The others are not smallest first."
+          },
+          "note": "Pupils show the letter."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Order 6, 1, 4 smallest first.",
+          "a": "1, 4, 6",
+          "mins": 1,
+          "model": "Teacher finds 6, 1 and 4 on the line, points from left to right: 1, then 4, then 6."
+        },
+        {
+          "q": "What number is between 7 and 9?",
+          "a": "8",
+          "mins": 1
+        },
+        {
+          "q": "Order 10, 3, 7 greatest first.",
+          "a": "10, 7, 3",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: order 5, 9, 2 smallest first.",
+          "a": "2, 5, 9",
+          "mins": 2,
+          "model": "Teacher places 5, 9 and 2 on the paper number line and reads them from the start: 2, 5, 9."
+        },
+        {
+          "q": "Extend: order 8, 0, 6, 3 smallest first.",
+          "a": "0, 3, 6, 8",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: choose three numbers between 4 and 10 and order them.",
+          "a": "For example 5, 7, 9",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Order 3, 8, 1 smallest first.",
+          "a": "1, 3, 8",
+          "mins": 1
+        },
+        {
+          "q": "Big question: where are big numbers on the line?",
+          "a": "Further along, to the right",
+          "mins": 1
+        }
+      ],
+      "homework": "Make a number line 0 to 10 on paper and put 3 toys on 2, 5 and 9.",
+      "send": "SEND: count real pasta with the teacher, one at a time, and point to each. EAL: say the number word, then show it on fingers. Stretch: order five numbers.",
+      "resources": [
+        "White Rose Maths Year 1, Autumn block 1: Place value (within 10): small step 'Order objects and numbers; the number line' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 20 pieces of dried pasta or buttons",
+        "Egg box cut to 10 holes (a ten frame)",
+        "Mini-whiteboard and pen",
+        "Paper number line 0 to 10",
+        "Number cards 0 to 10",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 7 guided, independent and homework tasks"
+      ]
     },
     {
-      "unit": "Unit 2: Addition within 10",
+      "unit": "Spring 1: Place value within 20; addition and subtraction within 20",
       "n": 8,
-      "title": "Part-whole: parts and wholes",
+      "title": "Bridge: parts and wholes",
       "duration": 30,
-      "objectives": ["Understand that a whole is made of parts", "Use a part-whole model with numbers to 10"],
-      "keywords": [{ "term": "part", "def": "a smaller amount that makes up a whole" }, { "term": "whole", "def": "the total amount" }, { "term": "part-whole model", "def": "a picture with one whole and two parts" }],
-      "starter": ["Bismillah. Which number is halfway between 0 and 10?", "What is between 3 and 5?", "Count on from 6 to 10."],
-      "teach": [
-        { "heading": "Splitting a group", "bullets": ["6 dates: 4 are on a plate and 2 are in a bowl.", "4 and 2 are the parts.", "6 is the whole."], "note": "Use real or pictured dates. Show how the whole group splits into two parts. Link to sharing and kindness." },
-        { "heading": "The part-whole model", "bullets": ["Big circle on top is the whole.", "Two small circles below are the parts.", "Parts join to make the whole."], "note": "Draw the model. Fill in the whole 6, parts 4 and 2. Say: 4 and 2 make 6." },
-        { "heading": "Missing part", "bullets": ["Whole is 7.", "One part is 3.", "The other part is 4."], "note": "Children find the missing part using cubes: take 3 away from 7 and count what is left." },
-        { "heading": "Different ways", "bullets": ["5 = 1 and 4.", "5 = 2 and 3.", "5 = 0 and 5."], "note": "Show many ways to split 5. Ask: how many different ways can you find? Include 0 and 5." }
+      "bigQuestion": "How can two parts make one whole?",
+      "objectives": [
+        "To understand how two parts make a whole"
       ],
-      "practice": ["The whole is 8. One part is 5. What is the other part?", "The parts are 3 and 4. What is the whole?", "Find two parts that make 6."],
-      "independent": ["Complete the part-whole models: whole 9, part 4, part __.", "Whole 10, part 6, part __.", "Find three different pairs of parts that make 7."],
-      "exit": ["Parts 2 and 5. The whole is ...", "Whole 8, one part 3. The other part is ..."],
-      "homework": "Split 8 objects into two groups in as many ways as you can and write down each way.",
-      "send": "SEND: use two-colour counters. Stretch: use three parts for a whole."
+      "successCriteria": [
+        "All: say the two parts of a group",
+        "Most: fill in a part-whole model",
+        "Some: write the matching number sentence"
+      ],
+      "crossCurricular": "Science: sorting groups by colour or size",
+      "smsc": "Social: a family is one whole made of many parts",
+      "keywords": [
+        {
+          "term": "part",
+          "def": "a piece of the whole"
+        },
+        {
+          "term": "whole",
+          "def": "all of it together"
+        },
+        {
+          "term": "equals",
+          "def": "is the same as, ="
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Picture a bowl of 7 fruits: 4 apples and 3 bananas. What are the parts? What is the whole?",
+        "a": "Parts 4 and 3; whole 7."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "bowl of apples and bananas",
+          "alt": "A bowl of apples and bananas",
+          "for": "hook"
+        },
+        {
+          "find": "dried pasta pieces close-up",
+          "alt": "Dried pasta pieces used for counting",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Order 6, 2, 9 smallest first.",
+          "a": "2, 6, 9",
+          "mins": 1
+        },
+        {
+          "q": "1 more than 6?",
+          "a": "7",
+          "mins": 1
+        },
+        {
+          "q": "Show 5 on your ten frame.",
+          "a": "Top row full",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Parts and whole",
+          "bullets": [
+            "4 apples is a part.",
+            "3 bananas is a part.",
+            "7 fruits is the whole."
+          ],
+          "note": "Use pasta in two colours if possible. Ask: what is the whole? (7)."
+        },
+        {
+          "heading": "Part-whole model",
+          "diagram": {
+            "centre": "Whole: 7",
+            "items": [
+              "Part: 4",
+              "Part: 3",
+              "4 + 3 = 7"
+            ]
+          },
+          "note": "Draw the circles. Whole at top, parts below. Ask: if parts are 2 and 6, what is the whole? (8)."
+        },
+        {
+          "heading": "Number sentences",
+          "bullets": [
+            "4 + 3 = 7",
+            "part + part = whole",
+            "= means the same as"
+          ],
+          "model": {
+            "problem": "5 red and 1 blue pasta",
+            "steps": [
+              "Part: 5",
+              "Part: 1",
+              "Whole: 6"
+            ],
+            "answer": "5 + 1 = 6"
+          },
+          "note": "Write it together. Ask: what does + mean? (add). Read: 4 add 3 equals 7."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "Parts are 3 and 3. The whole is...",
+            "options": [
+              "3",
+              "6",
+              "33"
+            ],
+            "answer": 1,
+            "why": "3 + 3 = 6. '33' joins digits, not amounts."
+          },
+          "note": "Teams poll or fingers."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Parts 2 and 5. Whole?",
+          "a": "7",
+          "mins": 1,
+          "model": "Teacher puts 2 red and 5 blue pasta in the part circles, pushes them into the whole circle and counts: 7."
+        },
+        {
+          "q": "Parts 6 and 4. Whole?",
+          "a": "10",
+          "mins": 1
+        },
+        {
+          "q": "Write the sentence for parts 1 and 8.",
+          "a": "1 + 8 = 9",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: make parts 3 and 4 with pasta. Whole?",
+          "a": "7",
+          "mins": 2,
+          "model": "Teacher makes parts of 3 and 4 with pasta, joins them and counts all: 7. Writes 3 + 4 = 7."
+        },
+        {
+          "q": "Extend: whole 9, one part 5. Other part?",
+          "a": "4",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: find two different ways to split 6.",
+          "a": "For example 1 and 5; 2 and 4; 3 and 3",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Parts 4 and 2: write the sentence.",
+          "a": "4 + 2 = 6",
+          "mins": 1
+        },
+        {
+          "q": "Big question: what do two parts make?",
+          "a": "The whole",
+          "mins": 1
+        }
+      ],
+      "homework": "Split 8 spoons into two parts in different ways and say the number sentence.",
+      "send": "SEND: count real pasta with the teacher, one at a time, and point to each. EAL: say the number word, then show it on fingers. Stretch: find all the ways to split 7.",
+      "resources": [
+        "White Rose Maths Year 1, Autumn block 2: Addition and subtraction (within 10): small step 'Introduce parts and wholes; part-whole model; write number sentences' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 20 pieces of dried pasta or buttons",
+        "Egg box cut to 10 holes (a ten frame)",
+        "Mini-whiteboard and pen",
+        "Two colours of pasta or buttons",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 8 guided, independent and homework tasks"
+      ]
     },
     {
-      "unit": "Unit 2: Addition within 10",
+      "unit": "Spring 1: Place value within 20; addition and subtraction within 20",
       "n": 9,
-      "title": "Addition as combining groups",
+      "title": "Bridge: addition: add together and add more",
       "duration": 30,
-      "objectives": ["Understand addition as putting groups together", "Use the symbols + and = in number sentences"],
-      "keywords": [{ "term": "add", "def": "put together to find the total" }, { "term": "plus (+)", "def": "the symbol for adding" }, { "term": "total", "def": "how many altogether" }],
-      "starter": ["Bismillah. Whole 9, part 4: other part?", "Two parts are 3 and 3: whole?", "Count on from 5 to 10."],
-      "teach": [
-        { "heading": "Putting together", "bullets": ["3 dates and 2 dates.", "Put them together.", "5 dates altogether."], "note": "Combine two groups on screen. Count them all to find the total." },
-        { "heading": "The plus sign", "bullets": ["3 + 2 = 5.", "Read it: three plus two equals five.", "+ means add."], "note": "Link the picture to the number sentence. Remind that = means 'is the same as'." },
-        { "heading": "Write the sentence", "bullets": ["4 cars and 3 cars.", "4 + 3 = 7.", "There are 7 cars."], "note": "Work with several pictures. Children say the sentence and the answer in a full sentence." },
-        { "heading": "Order does not matter", "bullets": ["2 + 5 = 7.", "5 + 2 = 7.", "Same total."], "note": "Show that swapping the numbers gives the same total. Do not name the commutative law but notice it. Starting with the bigger number is quicker." }
+      "bigQuestion": "When we add, does the total get bigger?",
+      "objectives": [
+        "To understand that adding makes a total"
       ],
-      "practice": ["Write a number sentence for 2 stars and 4 stars.", "Solve 3 + 3.", "Solve 5 + 2."],
-      "independent": ["Solve: 1 + 4, 3 + 5, 6 + 2, 7 + 3.", "Draw a picture for 4 + 4 and write the sentence.", "Write two addition sentences with a total of 6."],
-      "exit": ["4 + 2 = ?", "Write an addition sentence with a total of 8."],
-      "homework": "Collect 10 small objects. Split into two groups and write the addition sentence.",
-      "send": "SEND: use cubes to combine and count all. Stretch: three-number addition such as 2 + 3 + 4."
+      "successCriteria": [
+        "All: add two groups by counting all",
+        "Most: count on from the bigger number",
+        "Some: write the number sentence for a story"
+      ],
+      "crossCurricular": "English: telling number stories",
+      "smsc": "Moral: giving to others; when we give sadaqah (صَدَقَة), the good grows",
+      "keywords": [
+        {
+          "term": "add",
+          "def": "put together to find the total"
+        },
+        {
+          "term": "altogether",
+          "def": "everything together"
+        },
+        {
+          "term": "count on",
+          "def": "start at a number and count up"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A bird has 5 seeds. It finds 3 more. How many seeds now? Tell the story with pasta.",
+        "a": "5 + 3 = 8. The total gets bigger when we add more (unless we add 0)."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "number line 0 to 20 printed",
+          "alt": "A printed number line",
+          "for": "teach:2"
+        },
+        {
+          "find": "charity collection jar coins",
+          "alt": "A collection jar with coins",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "6 + ? = 10",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "Parts 2 and 2. Whole?",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "1 more than 8?",
+          "a": "9",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Add together",
+          "bullets": [
+            "3 red and 4 blue.",
+            "Count them all: 7.",
+            "3 + 4 = 7"
+          ],
+          "note": "Push two groups together. Ask: how many altogether? (7)."
+        },
+        {
+          "heading": "Add more: count on",
+          "bullets": [
+            "Start at 5.",
+            "Count on 3: 6, 7, 8.",
+            "5 + 3 = 8"
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "marks": [
+              {
+                "at": 5,
+                "label": "start"
+              },
+              {
+                "at": 8,
+                "label": "+3"
+              }
+            ]
+          },
+          "note": "Jump on the number line. Ask: why start at 5? (we already have 5)."
+        },
+        {
+          "heading": "A number story",
+          "model": {
+            "problem": "Amina has 6 grapes. Her mum gives her 2 more. How many now?",
+            "steps": [
+              "Start: 6",
+              "Count on 2: 7, 8"
+            ],
+            "answer": "6 + 2 = 8 grapes"
+          },
+          "note": "Model reading the story and picking out the numbers."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "4 + 4 = ?",
+            "options": [
+              "8",
+              "44",
+              "0"
+            ],
+            "answer": 0,
+            "why": "4 add 4 is 8."
+          },
+          "note": "Fingers."
+        }
+      ],
+      "practice": [
+        {
+          "q": "2 + 5 = ?",
+          "a": "7",
+          "mins": 1,
+          "model": "Teacher starts at 2 on the number line and jumps 5: 3, 4, 5, 6, 7. Or starts at 5 and counts on 2: 6, 7."
+        },
+        {
+          "q": "Count on: 6 + 3 = ?",
+          "a": "9",
+          "mins": 1
+        },
+        {
+          "q": "7 + 0 = ?",
+          "a": "7",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 3 + 3, 5 + 4, 1 + 6.",
+          "a": "6, 9, 7",
+          "mins": 2,
+          "model": "Teacher puts 3 pasta and 3 pasta together and counts: 6. Writes 3 + 3 = 6."
+        },
+        {
+          "q": "Extend: 4 cars and 3 more come. How many?",
+          "a": "7",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: make up a story for 2 + 6 = 8.",
+          "a": "For example: 2 cats, then 6 more come, 8 cats",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "5 + 2 = ?",
+          "a": "7",
+          "mins": 1
+        },
+        {
+          "q": "Big question: what happens to the total when we add 0?",
+          "a": "It stays the same",
+          "mins": 1
+        }
+      ],
+      "homework": "Make up one adding story at home with toys and tell it to a grown-up.",
+      "send": "SEND: count real pasta with the teacher, one at a time, and point to each. EAL: say the number word, then show it on fingers. Stretch: add three numbers: 2 + 3 + 4.",
+      "resources": [
+        "White Rose Maths Year 1, Autumn block 2: Addition and subtraction (within 10): small step 'Addition: add together; addition: add more; addition problems' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 20 pieces of dried pasta or buttons",
+        "Egg box cut to 10 holes (a ten frame)",
+        "Mini-whiteboard and pen",
+        "Paper number line 0 to 10",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 9 guided, independent and homework tasks"
+      ]
     },
     {
       "unit": "Unit 2: Addition within 10",
       "n": 10,
       "title": "Adding by counting on",
       "duration": 30,
-      "objectives": ["Add by counting on from the larger number", "Use a number line to add within 10"],
-      "keywords": [{ "term": "count on", "def": "start at a number and count up from there" }, { "term": "larger number", "def": "the bigger of the two numbers" }],
-      "starter": ["Bismillah. 4 + 3 = ?", "Write a sentence with a total of 5.", "Hop forward 2 from 6."],
-      "teach": [
-        { "heading": "Do not count all", "bullets": ["For 6 + 2, start at 6.", "Count on: 7, 8.", "6 + 2 = 8."], "note": "Contrast counting all (1 to 8) with counting on. Counting on is faster. Put 6 in your head and hold up 2 fingers." },
-        { "heading": "Use the number line", "bullets": ["Start at 5.", "Hop 3 steps forward.", "You land on 8."], "note": "Draw hops on the line. Each hop is one. Ask children to say the number they land on after each hop." },
-        { "heading": "Start with the larger", "bullets": ["For 2 + 7, start at 7.", "Count on 2: 8, 9.", "2 + 7 = 9."], "note": "Show that starting with the larger number saves effort. Misconception: counting the starting number as one hop." },
-        { "heading": "Practise", "bullets": ["3 + 6.", "4 + 5.", "1 + 8."], "note": "Quick-fire. Children show the answer on mini whiteboards, then explain their method." }
+      "objectives": [
+        "Add by counting on from the larger number",
+        "Use a number line to add within 10"
       ],
-      "practice": ["Count on to solve 7 + 2.", "Use the number line to solve 4 + 4.", "Which number should you start with in 2 + 6?"],
-      "independent": ["Solve: 5 + 3, 8 + 1, 2 + 6, 3 + 7.", "Draw hops on a number line for 4 + 5.", "Write 3 additions that total 9."],
-      "exit": ["6 + 3 = ?", "Explain how you solved it."],
+      "keywords": [
+        {
+          "term": "count on",
+          "def": "start at a number and count up from there"
+        },
+        {
+          "term": "larger number",
+          "def": "the bigger of the two numbers"
+        }
+      ],
+      "starter": [
+        "Bismillah. 4 + 3 = ?",
+        "Write a sentence with a total of 5.",
+        "Hop forward 2 from 6."
+      ],
+      "teach": [
+        {
+          "heading": "Do not count all",
+          "bullets": [
+            "For 6 + 2, start at 6.",
+            "Count on: 7, 8.",
+            "6 + 2 = 8."
+          ],
+          "note": "Contrast counting all (1 to 8) with counting on. Counting on is faster. Put 6 in your head and hold up 2 fingers."
+        },
+        {
+          "heading": "Use the number line",
+          "bullets": [
+            "Start at 5.",
+            "Hop 3 steps forward.",
+            "You land on 8."
+          ],
+          "note": "Draw hops on the line. Each hop is one. Ask children to say the number they land on after each hop."
+        },
+        {
+          "heading": "Start with the larger",
+          "bullets": [
+            "For 2 + 7, start at 7.",
+            "Count on 2: 8, 9.",
+            "2 + 7 = 9."
+          ],
+          "note": "Show that starting with the larger number saves effort. Misconception: counting the starting number as one hop."
+        },
+        {
+          "heading": "Practise",
+          "bullets": [
+            "3 + 6.",
+            "4 + 5.",
+            "1 + 8."
+          ],
+          "note": "Quick-fire. Children show the answer on mini whiteboards, then explain their method."
+        }
+      ],
+      "practice": [
+        "Count on to solve 7 + 2.",
+        "Use the number line to solve 4 + 4.",
+        "Which number should you start with in 2 + 6?"
+      ],
+      "independent": [
+        "Solve: 5 + 3, 8 + 1, 2 + 6, 3 + 7.",
+        "Draw hops on a number line for 4 + 5.",
+        "Write 3 additions that total 9."
+      ],
+      "exit": [
+        "6 + 3 = ?",
+        "Explain how you solved it."
+      ],
       "homework": "Use a ruler as a number line to solve 5 + 4, 7 + 3 and 2 + 6.",
       "send": "SEND: use fingers or counters beside the number line. Stretch: add to numbers within 20."
     },
     {
-      "unit": "Unit 2: Addition within 10",
+      "unit": "Spring 1: Place value within 20; addition and subtraction within 20",
       "n": 11,
-      "title": "Number bonds to 10",
+      "title": "Bridge: number bonds to 10",
       "duration": 30,
-      "objectives": ["Know pairs of numbers that make 10", "Use bonds to 10 to solve problems"],
-      "keywords": [{ "term": "number bond", "def": "two numbers that add to make a given total" }, { "term": "ten frame", "def": "a grid of 10 boxes for showing numbers" }],
-      "starter": ["Bismillah. 2 + 6 = ?", "Start at 7, count on 3.", "Which is bigger: 8 or 5?"],
-      "teach": [
-        { "heading": "Ten frame", "bullets": ["A ten frame has 10 boxes.", "7 counters fill 7 boxes.", "3 boxes are empty."], "note": "Show a ten frame with 7 counters. Ask how many more to fill it. 7 and 3 make 10." },
-        { "heading": "Bonds to 10", "bullets": ["1 + 9, 2 + 8, 3 + 7.", "4 + 6, 5 + 5.", "6 + 4 ... they go both ways."], "note": "Build the full set. Notice patterns: one number goes up as the other goes down. These are very important facts to learn by heart." },
-        { "heading": "Fingers to 10", "bullets": ["Hold up 10 fingers.", "Fold down 3.", "7 are left: 3 + 7 = 10."], "note": "Use fingers to find bonds quickly. Check understanding with random questions." },
-        { "heading": "Missing numbers", "bullets": ["4 + __ = 10.", "__ + 8 = 10.", "10 = 5 + __."], "note": "Use the ten frame or fingers. Note that the equals sign can come first. Ask what number completes the bond." }
+      "bigQuestion": "How many pairs of numbers make 10?",
+      "objectives": [
+        "To understand how pairs of numbers make 10"
       ],
-      "practice": ["How many more to make 10: 6 + __ = 10?", "Find the missing number: __ + 3 = 10.", "Is 4 + 5 = 10?"],
-      "independent": ["Write all the number bonds to 10.", "Complete: 9 + __ = 10, 2 + __ = 10, 7 + __ = 10.", "Colour a ten frame to show 10 = 6 + 4."],
-      "exit": ["7 + __ = 10", "Write two numbers that add to 10."],
-      "homework": "Practise number bonds to 10 using your fingers, 5 times, until you know them quickly.",
-      "send": "SEND: use a ten frame with counters throughout. Stretch: bonds to 20 using the tens frame twice."
+      "successCriteria": [
+        "All: find three bonds to 10 with a ten frame",
+        "Most: list all bonds to 10 in order",
+        "Some: use a bond to find a missing number"
+      ],
+      "crossCurricular": "Everyday life: making 10 with coins and fingers",
+      "smsc": "Spiritual: two hands, ten fingers: a gift from Allah to use well",
+      "keywords": [
+        {
+          "term": "bond",
+          "def": "two numbers that make a total"
+        },
+        {
+          "term": "total",
+          "def": "how many altogether"
+        },
+        {
+          "term": "pair",
+          "def": "two that go together"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Hold up both hands. Fold some fingers down. How many are up? How many are down? Do they always make 10?",
+        "a": "Yes: up and down always total 10. These are bonds to 10."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "ten frame with counters maths",
+          "alt": "A ten frame: two rows of five boxes with counters in some boxes",
+          "for": "teach:1"
+        },
+        {
+          "find": "egg carton with eggs two rows of six",
+          "alt": "An egg box: 2 rows of 6 eggs",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Parts 3 and 4. Whole?",
+          "a": "7",
+          "mins": 1
+        },
+        {
+          "q": "1 less than 10?",
+          "a": "9",
+          "mins": 1
+        },
+        {
+          "q": "5 + 5 = ?",
+          "a": "10",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Ten frame bonds",
+          "bullets": [
+            "7 full spaces.",
+            "3 empty spaces.",
+            "7 + 3 = 10"
+          ],
+          "fraction": {
+            "parts": 10,
+            "shaded": 7,
+            "label": "7 + 3 = 10"
+          },
+          "note": "Fill 7. Ask: how many empty? (3). So 7 and 3 make 10."
+        },
+        {
+          "heading": "Work in order",
+          "table": {
+            "head": [
+              "Full",
+              "Empty",
+              "Bond"
+            ],
+            "rows": [
+              [
+                "0",
+                "10",
+                "0 + 10"
+              ],
+              [
+                "1",
+                "9",
+                "1 + 9"
+              ],
+              [
+                "2",
+                "8",
+                "2 + 8"
+              ],
+              [
+                "3",
+                "7",
+                "3 + 7"
+              ],
+              [
+                "4",
+                "6",
+                "4 + 6"
+              ],
+              [
+                "5",
+                "5",
+                "5 + 5"
+              ]
+            ]
+          },
+          "note": "Build the list together. Ask: what comes after 3 + 7? (4 + 6)."
+        },
+        {
+          "heading": "Missing number",
+          "bullets": [
+            "6 + ? = 10",
+            "Count the empty spaces.",
+            "6 + 4 = 10"
+          ],
+          "model": {
+            "problem": "2 + ? = 10",
+            "steps": [
+              "Fill 2 spaces",
+              "Count the empty spaces: 8"
+            ],
+            "answer": "2 + 8 = 10"
+          },
+          "note": "Ask: 8 + ? = 10 (2). 1 + ? = 10 (9)."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "What goes with 3 to make 10?",
+            "options": [
+              "6",
+              "7",
+              "13"
+            ],
+            "answer": 1,
+            "why": "3 + 7 = 10. 13 adds 10 on."
+          },
+          "note": "Show on fingers."
+        }
+      ],
+      "practice": [
+        {
+          "q": "4 + ? = 10",
+          "a": "6",
+          "mins": 1,
+          "model": "Teacher fills 4 spaces of the ten frame, counts the empty spaces: 6. '4 + 6 = 10.'"
+        },
+        {
+          "q": "? + 1 = 10",
+          "a": "9",
+          "mins": 1
+        },
+        {
+          "q": "8 + ? = 10",
+          "a": "2",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: write all the bonds to 10 from 0 + 10 to 10 + 0.",
+          "a": "0+10, 1+9, 2+8, 3+7, 4+6, 5+5, 6+4, 7+3, 8+2, 9+1, 10+0",
+          "mins": 2,
+          "model": "Teacher fills 0, then 1, then 2 spaces, saying each bond: 0 + 10, 1 + 9, 2 + 8 ... in order."
+        },
+        {
+          "q": "Extend: 10 = 5 + ?",
+          "a": "5",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: how many bonds are there from 0 + 10 to 10 + 0?",
+          "a": "11",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "7 + ? = 10",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "Big question: name two pairs that make 10.",
+          "a": "For example 6 + 4 and 9 + 1",
+          "mins": 1
+        }
+      ],
+      "homework": "Bond of the week: say the bonds to 10 with a grown-up using fingers, every day.",
+      "send": "SEND: count real pasta with the teacher, one at a time, and point to each. EAL: say the number word, then show it on fingers. Stretch: bonds to 9.",
+      "resources": [
+        "White Rose Maths Year 1, Autumn block 2: Addition and subtraction (within 10): small step 'Number bonds within 10; systematic number bonds; number bonds to 10' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 20 pieces of dried pasta or buttons",
+        "Egg box cut to 10 holes (a ten frame)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 11 guided, independent and homework tasks"
+      ]
     },
     {
       "unit": "Unit 2: Addition within 10",
       "n": 12,
       "title": "Fact families: addition and subtraction",
       "duration": 30,
-      "objectives": ["See how addition and subtraction link", "Write related number sentences for three numbers"],
-      "keywords": [{ "term": "fact family", "def": "related addition and subtraction sentences using the same numbers" }, { "term": "subtract", "def": "take away" }],
-      "starter": ["Bismillah. 6 + __ = 10", "3 + 7 = ?", "Whole is 9, a part is 5. Other part?"],
-      "teach": [
-        { "heading": "Three numbers", "bullets": ["Take 3, 4 and 7.", "Parts 3 and 4, whole 7.", "3 + 4 = 7."], "note": "Show the part-whole model for 3, 4, 7. Then write the addition sentence." },
-        { "heading": "Four sentences", "bullets": ["3 + 4 = 7 and 4 + 3 = 7.", "7 - 3 = 4 and 7 - 4 = 3.", "All use the same numbers."], "note": "Introduce the minus sign. Point to the whole in each sentence: it is the biggest number. In subtraction it comes first." },
-        { "heading": "Build a family", "bullets": ["Use 2, 6 and 8.", "2 + 6 = 8, 6 + 2 = 8.", "8 - 2 = 6, 8 - 6 = 2."], "note": "Children write all four sentences. Check that the whole is the largest number." },
-        { "heading": "Spot the odd one out", "bullets": ["5 + 3 = 8.", "8 - 3 = 5.", "5 + 8 = 3? That is wrong."], "note": "Include a wrong sentence to check understanding. Ask why it cannot be true." }
+      "objectives": [
+        "See how addition and subtraction link",
+        "Write related number sentences for three numbers"
       ],
-      "practice": ["Write the fact family for 2, 5, 7.", "Use 4 + 5 = 9 to write a subtraction fact.", "Which sentence is wrong: 9 - 4 = 5 or 4 + 9 = 5?"],
-      "independent": ["Write four sentences for 3, 6, 9.", "Write four sentences for 1, 8, 9.", "Complete: 10 - 7 = __ because 7 + __ = 10."],
-      "exit": ["Write one addition and one subtraction sentence using 4, 5 and 9.", "9 - 5 = ?"],
+      "keywords": [
+        {
+          "term": "fact family",
+          "def": "related addition and subtraction sentences using the same numbers"
+        },
+        {
+          "term": "subtract",
+          "def": "take away"
+        }
+      ],
+      "starter": [
+        "Bismillah. 6 + __ = 10",
+        "3 + 7 = ?",
+        "Whole is 9, a part is 5. Other part?"
+      ],
+      "teach": [
+        {
+          "heading": "Three numbers",
+          "bullets": [
+            "Take 3, 4 and 7.",
+            "Parts 3 and 4, whole 7.",
+            "3 + 4 = 7."
+          ],
+          "note": "Show the part-whole model for 3, 4, 7. Then write the addition sentence."
+        },
+        {
+          "heading": "Four sentences",
+          "bullets": [
+            "3 + 4 = 7 and 4 + 3 = 7.",
+            "7 - 3 = 4 and 7 - 4 = 3.",
+            "All use the same numbers."
+          ],
+          "note": "Introduce the minus sign. Point to the whole in each sentence: it is the biggest number. In subtraction it comes first."
+        },
+        {
+          "heading": "Build a family",
+          "bullets": [
+            "Use 2, 6 and 8.",
+            "2 + 6 = 8, 6 + 2 = 8.",
+            "8 - 2 = 6, 8 - 6 = 2."
+          ],
+          "note": "Children write all four sentences. Check that the whole is the largest number."
+        },
+        {
+          "heading": "Spot the odd one out",
+          "bullets": [
+            "5 + 3 = 8.",
+            "8 - 3 = 5.",
+            "5 + 8 = 3? That is wrong."
+          ],
+          "note": "Include a wrong sentence to check understanding. Ask why it cannot be true."
+        }
+      ],
+      "practice": [
+        "Write the fact family for 2, 5, 7.",
+        "Use 4 + 5 = 9 to write a subtraction fact.",
+        "Which sentence is wrong: 9 - 4 = 5 or 4 + 9 = 5?"
+      ],
+      "independent": [
+        "Write four sentences for 3, 6, 9.",
+        "Write four sentences for 1, 8, 9.",
+        "Complete: 10 - 7 = __ because 7 + __ = 10."
+      ],
+      "exit": [
+        "Write one addition and one subtraction sentence using 4, 5 and 9.",
+        "9 - 5 = ?"
+      ],
       "homework": "Choose three numbers to 10 that work as a fact family and write all four sentences.",
       "send": "SEND: colour-code the whole. Stretch: write fact families with numbers to 20."
     },
     {
-      "unit": "Unit 3: Subtraction within 10",
+      "unit": "Spring 1: Place value within 20; addition and subtraction within 20",
       "n": 13,
-      "title": "Subtraction as taking away",
+      "title": "Bridge: subtraction: take away and find a part",
       "duration": 30,
-      "objectives": ["Understand subtraction as taking away", "Write subtraction sentences using the - sign"],
-      "keywords": [{ "term": "take away", "def": "remove some from a group" }, { "term": "minus (-)", "def": "the symbol for subtracting" }, { "term": "left", "def": "what remains after taking some away" }],
-      "starter": ["Bismillah. Write the fact family for 2, 3, 5.", "4 + 6 = ?", "What is one less than 7?"],
-      "teach": [
-        { "heading": "Taking away", "bullets": ["There are 6 dates.", "Take 2 away.", "4 are left."], "note": "Use real or pictured dates. Cross out items taken away. Count what is left." },
-        { "heading": "The minus sign", "bullets": ["6 - 2 = 4.", "Read it: six take away two equals four.", "The first number is what we start with."], "note": "Link each part of the sentence to the picture. Common error: reading it as 2 - 6." },
-        { "heading": "Cross out and count", "bullets": ["Draw 8 circles.", "Cross out 3.", "8 - 3 = 5."], "note": "Children draw and cross out. Check that they start with all of the group, then cross out the right amount." },
-        { "heading": "Take away to zero", "bullets": ["5 - 5 = 0.", "5 - 0 = 5.", "Both are special."], "note": "Take everything away: nothing left. Take nothing away: the same left. Include as a surprise." }
+      "bigQuestion": "How are adding and taking away linked?",
+      "objectives": [
+        "To understand how subtraction and addition are linked"
       ],
-      "practice": ["Solve 7 - 3 by crossing out.", "There are 9 stars. Take 4 away. How many are left?", "Solve 6 - 6."],
-      "independent": ["Solve: 5 - 2, 8 - 4, 10 - 3, 9 - 9.", "Draw a picture for 7 - 5 and write the sentence.", "Write a take-away story using the numbers 8 and 3."],
-      "exit": ["9 - 4 = ?", "Say what 6 - 0 equals."],
-      "homework": "Use 10 objects. Take some away and write the subtraction sentence three times.",
-      "send": "SEND: use counters and a 'take away' tray. Stretch: subtract within 20."
+      "successCriteria": [
+        "All: take away and say how many are left",
+        "Most: find a missing part of a whole",
+        "Some: write four facts in a fact family"
+      ],
+      "crossCurricular": "Everyday life: eating some of a snack",
+      "smsc": "Moral: not wasting food; take only what we need",
+      "keywords": [
+        {
+          "term": "subtract",
+          "def": "take away"
+        },
+        {
+          "term": "left",
+          "def": "how many remain"
+        },
+        {
+          "term": "fact family",
+          "def": "add and subtract facts made from the same three numbers"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "There were 8 biscuits. Now there are 5. What happened?",
+        "a": "3 were eaten or taken away: 8 - 3 = 5."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "islamicLink": {
+        "text": "Allah tells us to eat and drink but not to waste (Qur'an 7:31). When food is eaten or given away, we can work out what is left.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "plate of biscuits",
+          "alt": "A plate of biscuits",
+          "for": "hook"
+        },
+        {
+          "find": "dried pasta pieces close-up",
+          "alt": "Dried pasta pieces used for counting",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "5 + 3 = ?",
+          "a": "8",
+          "mins": 1
+        },
+        {
+          "q": "7 + ? = 10",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "1 less than 4?",
+          "a": "3",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Take away",
+          "bullets": [
+            "Start with 9.",
+            "Take away 4.",
+            "9 - 4 = 5"
+          ],
+          "model": {
+            "problem": "9 - 4",
+            "steps": [
+              "Count out 9",
+              "Take away 4",
+              "Count what is left"
+            ],
+            "answer": "5"
+          },
+          "note": "Remove pasta one at a time. Ask: how many left? (5)."
+        },
+        {
+          "heading": "Find a part",
+          "bullets": [
+            "Whole: 8",
+            "Part: 6",
+            "Other part: 2"
+          ],
+          "diagram": {
+            "centre": "Whole: 8",
+            "items": [
+              "Part: 6",
+              "Part: ?",
+              "8 - 6 = 2"
+            ]
+          },
+          "note": "Use the part-whole model. Ask: 8 - 6? (2)."
+        },
+        {
+          "heading": "Fact family",
+          "table": {
+            "head": [
+              "Add",
+              "Subtract"
+            ],
+            "rows": [
+              [
+                "2 + 5 = 7",
+                "7 - 2 = 5"
+              ],
+              [
+                "5 + 2 = 7",
+                "7 - 5 = 2"
+              ]
+            ]
+          },
+          "note": "Show 3 numbers make 4 facts. Ask: what is 7 - 2? (5)."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "10 - 3 = ?",
+            "options": [
+              "13",
+              "7",
+              "3"
+            ],
+            "answer": 1,
+            "why": "10 take away 3 is 7. 13 adds instead."
+          },
+          "note": "Fingers."
+        }
+      ],
+      "practice": [
+        {
+          "q": "6 - 2 = ?",
+          "a": "4",
+          "mins": 1,
+          "model": "Teacher counts out 6 pasta, takes away 2 one at a time, counts what is left: 4."
+        },
+        {
+          "q": "Whole 9, part 3. Other part?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "5 - 5 = ?",
+          "a": "0",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 7 - 3, 8 - 1, 10 - 6.",
+          "a": "4, 7, 4",
+          "mins": 2,
+          "model": "Teacher counts out 7, takes away 3 and counts the rest: 4. Writes 7 - 3 = 4."
+        },
+        {
+          "q": "Extend: write the fact family for 3, 6, 9.",
+          "a": "3 + 6 = 9, 6 + 3 = 9, 9 - 3 = 6, 9 - 6 = 3",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: 10 - ? = 4",
+          "a": "6",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "8 - 5 = ?",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "Big question: 4 + 3 = 7, so 7 - 3 = ?",
+          "a": "4",
+          "mins": 1
+        }
+      ],
+      "homework": "Bond of the week: practise 'ten take away' facts with fingers (10 - 1 to 10 - 9).",
+      "send": "SEND: count real pasta with the teacher, one at a time, and point to each. EAL: say the number word, then show it on fingers. Stretch: find all subtraction facts from 10.",
+      "resources": [
+        "White Rose Maths Year 1, Autumn block 2: Addition and subtraction (within 10): small step 'Subtraction: take away; find a part; fact families' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 20 pieces of dried pasta or buttons",
+        "Egg box cut to 10 holes (a ten frame)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 13 guided, independent and homework tasks"
+      ]
     },
     {
       "unit": "Unit 3: Subtraction within 10",
       "n": 14,
       "title": "Subtracting by counting back",
       "duration": 30,
-      "objectives": ["Subtract by counting back on a number line", "Use bonds to 10 to subtract"],
-      "keywords": [{ "term": "count back", "def": "start at a number and count down" }, { "term": "difference", "def": "how much bigger or smaller one number is than another" }],
-      "starter": ["Bismillah. 8 - 3 = ?", "Say the number bonds to 10 for 4 and 7.", "What is one less than 10?"],
-      "teach": [
-        { "heading": "Count back", "bullets": ["For 8 - 3, start at 8.", "Count back: 7, 6, 5.", "8 - 3 = 5."], "note": "Use fingers: count back 3 as you fold 3 fingers. Do not count the starting number as the first step." },
-        { "heading": "Number line hops", "bullets": ["Start at 9.", "Hop back 4.", "Land on 5."], "note": "Draw backward hops. Ask children to say each number as they land." },
-        { "heading": "Use bonds to 10", "bullets": ["10 - 3: what goes with 3 to make 10?", "3 + 7 = 10.", "So 10 - 3 = 7."], "note": "Link subtraction to number bonds. This is a powerful way to remember subtraction from 10." },
-        { "heading": "Which method?", "bullets": ["Count back for small jumps.", "Use bonds for 10.", "Choose the quickest."], "note": "Discuss which method suits which question: 9 - 2 count back; 10 - 6 bonds. Encourage flexibility." }
+      "objectives": [
+        "Subtract by counting back on a number line",
+        "Use bonds to 10 to subtract"
       ],
-      "practice": ["Count back to solve 7 - 2.", "Use a bond to solve 10 - 4.", "Hop back 3 from 9."],
-      "independent": ["Solve: 6 - 1, 9 - 3, 10 - 8, 7 - 4.", "Draw hops on a number line for 8 - 5.", "Write three subtractions starting from 10."],
-      "exit": ["10 - 7 = ?", "Solve 8 - 2 by counting back."],
+      "keywords": [
+        {
+          "term": "count back",
+          "def": "start at a number and count down"
+        },
+        {
+          "term": "difference",
+          "def": "how much bigger or smaller one number is than another"
+        }
+      ],
+      "starter": [
+        "Bismillah. 8 - 3 = ?",
+        "Say the number bonds to 10 for 4 and 7.",
+        "What is one less than 10?"
+      ],
+      "teach": [
+        {
+          "heading": "Count back",
+          "bullets": [
+            "For 8 - 3, start at 8.",
+            "Count back: 7, 6, 5.",
+            "8 - 3 = 5."
+          ],
+          "note": "Use fingers: count back 3 as you fold 3 fingers. Do not count the starting number as the first step."
+        },
+        {
+          "heading": "Number line hops",
+          "bullets": [
+            "Start at 9.",
+            "Hop back 4.",
+            "Land on 5."
+          ],
+          "note": "Draw backward hops. Ask children to say each number as they land."
+        },
+        {
+          "heading": "Use bonds to 10",
+          "bullets": [
+            "10 - 3: what goes with 3 to make 10?",
+            "3 + 7 = 10.",
+            "So 10 - 3 = 7."
+          ],
+          "note": "Link subtraction to number bonds. This is a powerful way to remember subtraction from 10."
+        },
+        {
+          "heading": "Which method?",
+          "bullets": [
+            "Count back for small jumps.",
+            "Use bonds for 10.",
+            "Choose the quickest."
+          ],
+          "note": "Discuss which method suits which question: 9 - 2 count back; 10 - 6 bonds. Encourage flexibility."
+        }
+      ],
+      "practice": [
+        "Count back to solve 7 - 2.",
+        "Use a bond to solve 10 - 4.",
+        "Hop back 3 from 9."
+      ],
+      "independent": [
+        "Solve: 6 - 1, 9 - 3, 10 - 8, 7 - 4.",
+        "Draw hops on a number line for 8 - 5.",
+        "Write three subtractions starting from 10."
+      ],
+      "exit": [
+        "10 - 7 = ?",
+        "Solve 8 - 2 by counting back."
+      ],
       "homework": "Draw a number line from 0 to 10 and show 9 - 4 and 7 - 2 with hops.",
       "send": "SEND: use a physical number line and a counter. Stretch: counting back from numbers to 20."
     },
@@ -289,18 +2160,77 @@
       "n": 15,
       "title": "Missing number problems",
       "duration": 30,
-      "objectives": ["Find missing numbers in addition and subtraction sentences", "Use inverse operations to check"],
-      "keywords": [{ "term": "missing number", "def": "a number we have to find, shown by a box or blank" }, { "term": "inverse", "def": "the opposite operation that undoes another" }],
-      "starter": ["Bismillah. 10 - 6 = ?", "9 - 5 = ?", "Complete: 3 + __ = 10"],
-      "teach": [
-        { "heading": "Find the missing number", "bullets": ["4 + __ = 9.", "What goes with 4 to make 9?", "5, because 4 + 5 = 9."], "note": "Use cubes or a part-whole model. 4 is a part, 9 is the whole, the missing number is the other part." },
-        { "heading": "Missing at the start", "bullets": ["__ + 3 = 8.", "Think: what and 3 makes 8?", "5, because 5 + 3 = 8."], "note": "Children often struggle when the blank is first. Return to the part-whole model." },
-        { "heading": "Subtraction blanks", "bullets": ["9 - __ = 6.", "9 - 3 = 6.", "The missing number is 3."], "note": "Use counting back or fact families. Check by adding: 6 + 3 = 9." },
-        { "heading": "Equals on the left", "bullets": ["7 = 2 + __.", "7 = 2 + 5.", "Both sides must be equal."], "note": "Reinforce that equals means 'the same as'. Show a balance scale picture." }
+      "objectives": [
+        "Find missing numbers in addition and subtraction sentences",
+        "Use inverse operations to check"
       ],
-      "practice": ["Find the missing number: 6 + __ = 10.", "Find the missing number: __ + 2 = 7.", "Find the missing number: 8 - __ = 3."],
-      "independent": ["Complete: 3 + __ = 8, __ + 6 = 9, 5 + __ = 5.", "Complete: 10 - __ = 4, 7 - __ = 2, __ - 3 = 4.", "Make up two missing number questions for a partner."],
-      "exit": ["__ + 4 = 9", "7 - __ = 5"],
+      "keywords": [
+        {
+          "term": "missing number",
+          "def": "a number we have to find, shown by a box or blank"
+        },
+        {
+          "term": "inverse",
+          "def": "the opposite operation that undoes another"
+        }
+      ],
+      "starter": [
+        "Bismillah. 10 - 6 = ?",
+        "9 - 5 = ?",
+        "Complete: 3 + __ = 10"
+      ],
+      "teach": [
+        {
+          "heading": "Find the missing number",
+          "bullets": [
+            "4 + __ = 9.",
+            "What goes with 4 to make 9?",
+            "5, because 4 + 5 = 9."
+          ],
+          "note": "Use cubes or a part-whole model. 4 is a part, 9 is the whole, the missing number is the other part."
+        },
+        {
+          "heading": "Missing at the start",
+          "bullets": [
+            "__ + 3 = 8.",
+            "Think: what and 3 makes 8?",
+            "5, because 5 + 3 = 8."
+          ],
+          "note": "Children often struggle when the blank is first. Return to the part-whole model."
+        },
+        {
+          "heading": "Subtraction blanks",
+          "bullets": [
+            "9 - __ = 6.",
+            "9 - 3 = 6.",
+            "The missing number is 3."
+          ],
+          "note": "Use counting back or fact families. Check by adding: 6 + 3 = 9."
+        },
+        {
+          "heading": "Equals on the left",
+          "bullets": [
+            "7 = 2 + __.",
+            "7 = 2 + 5.",
+            "Both sides must be equal."
+          ],
+          "note": "Reinforce that equals means 'the same as'. Show a balance scale picture."
+        }
+      ],
+      "practice": [
+        "Find the missing number: 6 + __ = 10.",
+        "Find the missing number: __ + 2 = 7.",
+        "Find the missing number: 8 - __ = 3."
+      ],
+      "independent": [
+        "Complete: 3 + __ = 8, __ + 6 = 9, 5 + __ = 5.",
+        "Complete: 10 - __ = 4, 7 - __ = 2, __ - 3 = 4.",
+        "Make up two missing number questions for a partner."
+      ],
+      "exit": [
+        "__ + 4 = 9",
+        "7 - __ = 5"
+      ],
       "homework": "Write five missing number questions, with answers on the back, for someone in your family.",
       "send": "SEND: use a part-whole model with counters for each question. Stretch: missing numbers within 20."
     },
@@ -309,20 +2239,2636 @@
       "n": 16,
       "title": "Word problems and review",
       "duration": 30,
-      "objectives": ["Solve one-step addition and subtraction word problems within 10", "Choose whether to add or subtract"],
-      "keywords": [{ "term": "altogether", "def": "the total of all the groups" }, { "term": "left", "def": "what remains after some are taken away" }],
-      "starter": ["Bismillah. Solve: 5 + 4 and 9 - 4.", "Missing number: 6 + __ = 10.", "Which is greater: 3 or 8?"],
-      "teach": [
-        { "heading": "Read the story", "bullets": ["Read the problem slowly.", "What do we know?", "What do we need to find?"], "note": "Model reading and underlining numbers. Ask children to retell the story in their own words before picking an operation." },
-        { "heading": "Add or subtract?", "bullets": ["Altogether, in total: add.", "Left, take away, gave away: subtract.", "Draw a picture to check."], "note": "Teach key words but warn they are not always reliable. Always visualise the story." },
-        { "heading": "Example: dates", "bullets": ["Layla has 4 dates and gets 3 more.", "4 + 3 = 7.", "She has 7 dates."], "note": "Write the number sentence and the answer sentence. Include units (dates) in the answer." },
-        { "heading": "Example: sharing", "bullets": ["There are 9 biscuits.", "Hamza gives away 4 to friends.", "9 - 4 = 5 left."], "note": "Link to sharing and kindness. Check the answer makes sense by adding back 5 + 4 = 9." }
+      "objectives": [
+        "Solve one-step addition and subtraction word problems within 10",
+        "Choose whether to add or subtract"
       ],
-      "practice": ["Ali has 6 pens. He is given 2 more. How many now?", "There are 10 birds. 3 fly away. How many are left?", "Sara has 5 stickers and Noor has 4. How many altogether?"],
-      "independent": ["8 children are in the room. 5 are boys. How many are girls?", "Yusuf reads 3 books on Monday and 6 on Tuesday. How many altogether?", "Write your own word problem for 7 - 2 and solve it."],
-      "exit": ["There are 9 apples. 4 are eaten. How many are left?", "Mum buys 3 red and 5 green apples. How many altogether?"],
+      "keywords": [
+        {
+          "term": "altogether",
+          "def": "the total of all the groups"
+        },
+        {
+          "term": "left",
+          "def": "what remains after some are taken away"
+        }
+      ],
+      "starter": [
+        "Bismillah. Solve: 5 + 4 and 9 - 4.",
+        "Missing number: 6 + __ = 10.",
+        "Which is greater: 3 or 8?"
+      ],
+      "teach": [
+        {
+          "heading": "Read the story",
+          "bullets": [
+            "Read the problem slowly.",
+            "What do we know?",
+            "What do we need to find?"
+          ],
+          "note": "Model reading and underlining numbers. Ask children to retell the story in their own words before picking an operation."
+        },
+        {
+          "heading": "Add or subtract?",
+          "bullets": [
+            "Altogether, in total: add.",
+            "Left, take away, gave away: subtract.",
+            "Draw a picture to check."
+          ],
+          "note": "Teach key words but warn they are not always reliable. Always visualise the story."
+        },
+        {
+          "heading": "Example: dates",
+          "bullets": [
+            "Layla has 4 dates and gets 3 more.",
+            "4 + 3 = 7.",
+            "She has 7 dates."
+          ],
+          "note": "Write the number sentence and the answer sentence. Include units (dates) in the answer."
+        },
+        {
+          "heading": "Example: sharing",
+          "bullets": [
+            "There are 9 biscuits.",
+            "Hamza gives away 4 to friends.",
+            "9 - 4 = 5 left."
+          ],
+          "note": "Link to sharing and kindness. Check the answer makes sense by adding back 5 + 4 = 9."
+        }
+      ],
+      "practice": [
+        "Ali has 6 pens. He is given 2 more. How many now?",
+        "There are 10 birds. 3 fly away. How many are left?",
+        "Sara has 5 stickers and Noor has 4. How many altogether?"
+      ],
+      "independent": [
+        "8 children are in the room. 5 are boys. How many are girls?",
+        "Yusuf reads 3 books on Monday and 6 on Tuesday. How many altogether?",
+        "Write your own word problem for 7 - 2 and solve it."
+      ],
+      "exit": [
+        "There are 9 apples. 4 are eaten. How many are left?",
+        "Mum buys 3 red and 5 green apples. How many altogether?"
+      ],
       "homework": "Make up and solve two word problems about things at home, one adding and one subtracting.",
       "send": "SEND: act out each story with objects. EAL: pre-teach story vocabulary with pictures. Stretch: two-step problems."
+    },
+    {
+      "unit": "Spring 1: Place value within 20; addition and subtraction within 20",
+      "n": 17,
+      "title": "Count within 20 and understand 10",
+      "duration": 30,
+      "bigQuestion": "Why is 10 such a special number?",
+      "objectives": [
+        "To understand that 10 ones make 1 ten"
+      ],
+      "successCriteria": [
+        "All: count from 0 to 20",
+        "Most: count back from 20",
+        "Some: show 10 as one full ten frame and explain why"
+      ],
+      "crossCurricular": "Qur'an: counting ayat in a short surah",
+      "smsc": "Spiritual: Dhul Hijjah's Dhul Hijjah (ذُو الْحِجَّة) has ten special days; numbers help us mark time",
+      "keywords": [
+        {
+          "term": "ten",
+          "def": "10 ones make 1 ten"
+        },
+        {
+          "term": "ones",
+          "def": "single things"
+        },
+        {
+          "term": "teen",
+          "def": "numbers 13 to 19"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is it quicker to count 14 pasta one by one, or to see a full ten frame and 4 more?",
+        "a": "Ten and 4 more is quicker: 10 is a group we know."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "ten frame with counters maths",
+          "alt": "A ten frame: two rows of five boxes with counters in some boxes",
+          "for": "teach:3"
+        },
+        {
+          "find": "Lego bricks stacked tower",
+          "alt": "Lego bricks stacked into towers",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Count from 10 to 15.",
+          "a": "10, 11, 12, 13, 14, 15",
+          "mins": 1
+        },
+        {
+          "q": "7 + 3 = ?",
+          "a": "10",
+          "mins": 1
+        },
+        {
+          "q": "9 - 4 = ?",
+          "a": "5",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Counting to 20",
+          "bullets": [
+            "Count up in ones.",
+            "After 10 comes 11.",
+            "After 19 comes 20."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 20,
+            "step": 1,
+            "marks": [
+              {
+                "at": 10,
+                "label": "10"
+              },
+              {
+                "at": 20,
+                "label": "20"
+              }
+            ]
+          },
+          "note": "Count together using the line. Ask: what comes after 15? (16)."
+        },
+        {
+          "heading": "Counting back",
+          "bullets": [
+            "Start at 20.",
+            "Count down in ones.",
+            "20, 19, 18, 17..."
+          ],
+          "note": "Count back from 18 to 11. Ask: what comes before 13? (12)."
+        },
+        {
+          "heading": "Ten ones make one ten",
+          "bullets": [
+            "Fill the ten frame.",
+            "10 ones = 1 ten.",
+            "A Lego tower of ten."
+          ],
+          "fraction": {
+            "parts": 10,
+            "shaded": 10,
+            "label": "1 ten"
+          },
+          "note": "Fill the egg box. Ask: how many spaces? (10)."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "What comes before 16?",
+            "options": [
+              "17",
+              "15",
+              "6"
+            ],
+            "answer": 1,
+            "why": "15. 17 comes after."
+          },
+          "note": "Fingers or whiteboard."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Count back from 14 to 9.",
+          "a": "14, 13, 12, 11, 10, 9",
+          "mins": 1,
+          "model": "Teacher points along the number line from 14 back to 9, saying each number."
+        },
+        {
+          "q": "What comes after 19?",
+          "a": "20",
+          "mins": 1
+        },
+        {
+          "q": "How many ones make 1 ten?",
+          "a": "10",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: count out 12 pasta. Fill a ten frame first.",
+          "a": "1 full ten frame and 2 more",
+          "mins": 2,
+          "model": "Teacher fills the ten frame with 10 pasta, puts 2 more beside it: 'ten and 2 is 12.'"
+        },
+        {
+          "q": "Extend: fill in 13, 14, __, 16, __",
+          "a": "15, 17",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: fill in 20, 19, __, __, 16",
+          "a": "18, 17",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "What comes after 17?",
+          "a": "18",
+          "mins": 1
+        },
+        {
+          "q": "Big question: what is special about 10?",
+          "a": "10 ones make 1 ten",
+          "mins": 1
+        }
+      ],
+      "homework": "Count to 20 and back each day with a grown-up as a spoken chant.",
+      "send": "SEND: count real pasta with the teacher, one at a time, and point to each. EAL: say the number word, then show it on fingers. Stretch: count in 2s to 20.",
+      "resources": [
+        "White Rose Maths Year 1, Spring block 1: Place value (within 20): small step 'Count within 20; understand 10' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 20 pieces of pasta, two egg-box ten frames",
+        "Paper number line 0 to 20",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 17 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 1: Place value within 20; addition and subtraction within 20",
+      "n": 18,
+      "title": "Numbers 11 to 20 as tens and ones",
+      "duration": 30,
+      "bigQuestion": "What does each digit in 14 tell us?",
+      "objectives": [
+        "To understand that teen numbers are 1 ten and some ones"
+      ],
+      "successCriteria": [
+        "All: make a teen number with a ten frame and ones",
+        "Most: say how many tens and ones",
+        "Some: write the number word"
+      ],
+      "crossCurricular": "English: spelling eleven to twenty",
+      "smsc": "Social: working together, one full team and some more",
+      "keywords": [
+        {
+          "term": "tens",
+          "def": "groups of 10"
+        },
+        {
+          "term": "ones",
+          "def": "single things left over"
+        },
+        {
+          "term": "digit",
+          "def": "one of the symbols 0 to 9 in a number"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which does NOT show 15?",
+        "options": [
+          "1 ten and 5 ones",
+          "fifteen",
+          "10 + 5",
+          "5 tens and 1 one"
+        ],
+        "a": "5 tens and 1 one is 51. The others are 15."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "ten frame with counters maths",
+          "alt": "A ten frame: two rows of five boxes with counters in some boxes",
+          "for": "teach:1"
+        },
+        {
+          "find": "Lego bricks stacked tower",
+          "alt": "Lego bricks stacked into towers",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Count from 11 to 16.",
+          "a": "11, 12, 13, 14, 15, 16",
+          "mins": 1
+        },
+        {
+          "q": "10 + 2 = ?",
+          "a": "12",
+          "mins": 1
+        },
+        {
+          "q": "Before 20?",
+          "a": "19",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "1 ten and some ones",
+          "bullets": [
+            "14 = 1 ten and 4 ones.",
+            "Full ten frame and 4.",
+            "10 + 4 = 14"
+          ],
+          "fraction": [
+            {
+              "parts": 10,
+              "shaded": 10,
+              "label": "1 ten"
+            },
+            {
+              "parts": 10,
+              "shaded": 4,
+              "label": "4 ones"
+            }
+          ],
+          "note": "Show with two egg boxes. Ask: 17 is 1 ten and how many ones? (7)."
+        },
+        {
+          "heading": "What the digits mean",
+          "table": {
+            "head": [
+              "Number",
+              "Tens",
+              "Ones"
+            ],
+            "rows": [
+              [
+                "12",
+                "1",
+                "2"
+              ],
+              [
+                "15",
+                "1",
+                "5"
+              ],
+              [
+                "19",
+                "1",
+                "9"
+              ],
+              [
+                "20",
+                "2",
+                "0"
+              ]
+            ]
+          },
+          "note": "Point to each digit. Ask: in 18, what does the 1 mean? (1 ten)."
+        },
+        {
+          "heading": "Teen words",
+          "bullets": [
+            "thirteen, fourteen, fifteen",
+            "sixteen, seventeen",
+            "eighteen, nineteen, twenty"
+          ],
+          "note": "Read together. Note 'eleven' and 'twelve' do not end in teen. Ask: spell 'sixteen'."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "1 ten and 3 ones is...",
+            "options": [
+              "31",
+              "13",
+              "4"
+            ],
+            "answer": 1,
+            "why": "13. 31 is 3 tens and 1 one; 4 adds the digits."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "1 ten and 6 ones = ?",
+          "a": "16",
+          "mins": 1,
+          "model": "Teacher shows a full ten frame and 6 more: '1 ten and 6 ones is 16.'"
+        },
+        {
+          "q": "How many ones in 18?",
+          "a": "8",
+          "mins": 1
+        },
+        {
+          "q": "Write 'twelve' as a numeral.",
+          "a": "12",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: make 13, 17 and 11 with pasta.",
+          "a": "1 ten and 3; 1 ten and 7; 1 ten and 1",
+          "mins": 2,
+          "model": "Teacher makes 13 as a full ten frame and 3 more, and says 'thirteen: 1 ten and 3 ones'."
+        },
+        {
+          "q": "Extend: write 15 and 19 in words.",
+          "a": "fifteen, nineteen",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: 2 tens and 0 ones = ?",
+          "a": "20",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "10 + 7 = ?",
+          "a": "17",
+          "mins": 1
+        },
+        {
+          "q": "Big question: in 14, what does the 1 show?",
+          "a": "1 ten",
+          "mins": 1
+        }
+      ],
+      "homework": "Find a teen number at home (a page number, a clock) and tell a grown-up its tens and ones.",
+      "send": "SEND: count real pasta with the teacher, one at a time, and point to each. EAL: say the number word, then show it on fingers. Stretch: write all the teen words.",
+      "resources": [
+        "White Rose Maths Year 1, Spring block 1: Place value (within 20): small step 'Understand 11 to 20; tens and ones' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 20 pieces of pasta, two egg-box ten frames",
+        "Paper number line 0 to 20",
+        "Mini-whiteboard and pen",
+        "Lego tower of ten",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 18 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 1: Place value within 20; addition and subtraction within 20",
+      "n": 19,
+      "title": "1 more and 1 less within 20",
+      "duration": 30,
+      "bigQuestion": "How do we find 1 more or 1 less than any number to 20?",
+      "objectives": [
+        "To understand how to find 1 more and 1 less within 20"
+      ],
+      "successCriteria": [
+        "All: find 1 more using pasta",
+        "Most: find 1 more and 1 less on a number line",
+        "Some: explain 1 more than 19 and 1 less than 11"
+      ],
+      "crossCurricular": "Science: one more day in the week",
+      "smsc": "Moral: one more good deed each day",
+      "keywords": [
+        {
+          "term": "1 more",
+          "def": "the next number"
+        },
+        {
+          "term": "1 less",
+          "def": "the number before"
+        },
+        {
+          "term": "number line",
+          "def": "numbers in order on a line"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "I am 1 more than 15 and 1 less than 17. Who am I?",
+        "a": "16."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "number line 0 to 20 printed",
+          "alt": "A printed number line",
+          "for": "teach:1"
+        },
+        {
+          "find": "ten frame with counters maths",
+          "alt": "A ten frame: two rows of five boxes with counters in some boxes",
+          "for": "teach:3"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1 ten and 5 ones?",
+          "a": "15",
+          "mins": 1
+        },
+        {
+          "q": "1 more than 8?",
+          "a": "9",
+          "mins": 1
+        },
+        {
+          "q": "Count back from 13 to 10.",
+          "a": "13, 12, 11, 10",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "1 more",
+          "bullets": [
+            "1 more than 13 is 14.",
+            "Add one to the ones.",
+            "Jump forward 1."
+          ],
+          "numberline": {
+            "min": 10,
+            "max": 20,
+            "step": 1,
+            "marks": [
+              {
+                "at": 13,
+                "label": "13"
+              },
+              {
+                "at": 14,
+                "label": "1 more"
+              }
+            ]
+          },
+          "note": "Ask: 1 more than 16? (17)."
+        },
+        {
+          "heading": "1 less",
+          "bullets": [
+            "1 less than 18 is 17.",
+            "Take one away.",
+            "Jump back 1."
+          ],
+          "numberline": {
+            "min": 10,
+            "max": 20,
+            "step": 1,
+            "marks": [
+              {
+                "at": 18,
+                "label": "18"
+              },
+              {
+                "at": 17,
+                "label": "1 less"
+              }
+            ]
+          },
+          "note": "Ask: 1 less than 12? (11)."
+        },
+        {
+          "heading": "Tricky ones",
+          "bullets": [
+            "1 more than 19 is 20.",
+            "1 less than 10 is 9.",
+            "1 less than 11 is 10."
+          ],
+          "fraction": [
+            {
+              "parts": 10,
+              "shaded": 10,
+              "label": "10"
+            },
+            {
+              "parts": 10,
+              "shaded": 10,
+              "label": "10: 20"
+            }
+          ],
+          "note": "With 19, the ten frame fills: 2 full tens. Ask: 1 less than 20? (19)."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "1 less than 15 is...",
+            "options": [
+              "16",
+              "14",
+              "5"
+            ],
+            "answer": 1,
+            "why": "14. 16 is 1 more."
+          },
+          "note": "Whiteboards."
+        }
+      ],
+      "practice": [
+        {
+          "q": "1 more than 11?",
+          "a": "12",
+          "mins": 1,
+          "model": "Teacher finds 11 on the line, jumps forward 1: 12."
+        },
+        {
+          "q": "1 less than 20?",
+          "a": "19",
+          "mins": 1
+        },
+        {
+          "q": "1 more than 19?",
+          "a": "20",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 1 more than 12, 15 and 17.",
+          "a": "13, 16, 18",
+          "mins": 2,
+          "model": "Teacher finds 12 and jumps 1 forward: 13. Repeats for 15 (16) and 17 (18)."
+        },
+        {
+          "q": "Extend: 1 less than 14, 19 and 10.",
+          "a": "13, 18, 9",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: 1 more than 1 less than 16?",
+          "a": "16",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "1 less than 13?",
+          "a": "12",
+          "mins": 1
+        },
+        {
+          "q": "Big question: 1 more than 18?",
+          "a": "19",
+          "mins": 1
+        }
+      ],
+      "homework": "Say 1 more and 1 less than 5 numbers between 10 and 20 with a grown-up.",
+      "send": "SEND: count real pasta with the teacher, one at a time, and point to each. EAL: say the number word, then show it on fingers. Stretch: find 2 more and 2 less.",
+      "resources": [
+        "White Rose Maths Year 1, Spring block 1: Place value (within 20): small step '1 more and 1 less' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 20 pieces of pasta, two egg-box ten frames",
+        "Paper number line 0 to 20",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 19 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 1: Place value within 20; addition and subtraction within 20",
+      "n": 20,
+      "title": "The number line to 20",
+      "duration": 30,
+      "bigQuestion": "How can a number line show us where a number lives?",
+      "objectives": [
+        "To understand how a number line to 20 is organised"
+      ],
+      "successCriteria": [
+        "All: find a number on a labelled line",
+        "Most: fill missing numbers",
+        "Some: find numbers on a line labelled only in 5s"
+      ],
+      "crossCurricular": "Everyday life: rulers and house numbers",
+      "smsc": "Social: everyone has their own place in the line",
+      "keywords": [
+        {
+          "term": "number line",
+          "def": "numbers in order on a line"
+        },
+        {
+          "term": "between",
+          "def": "in the middle of two numbers"
+        },
+        {
+          "term": "interval",
+          "def": "the gap from one mark to the next"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A ladybird sits halfway between 10 and 20. What number is it on?",
+        "a": "15: halfway between 10 and 20."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "number line 0 to 20 printed",
+          "alt": "A printed number line",
+          "for": "teach:1"
+        },
+        {
+          "find": "ruler centimetre millimetre scale close-up",
+          "alt": "A ruler with centimetre and millimetre marks",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1 more than 16?",
+          "a": "17",
+          "mins": 1
+        },
+        {
+          "q": "1 ten and 2 ones?",
+          "a": "12",
+          "mins": 1
+        },
+        {
+          "q": "Count from 15 to 20.",
+          "a": "15, 16, 17, 18, 19, 20",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "A line to 20",
+          "bullets": [
+            "0 at the start.",
+            "10 in the middle.",
+            "20 at the end."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 20,
+            "step": 1,
+            "marks": [
+              {
+                "at": 0,
+                "label": "0"
+              },
+              {
+                "at": 10,
+                "label": "10"
+              },
+              {
+                "at": 20,
+                "label": "20"
+              }
+            ]
+          },
+          "note": "Count along together. Ask: where is 10? (the middle)."
+        },
+        {
+          "heading": "Missing numbers",
+          "bullets": [
+            "11, 12, ?, 14",
+            "Count on to find it.",
+            "The answer is 13."
+          ],
+          "numberline": {
+            "min": 10,
+            "max": 20,
+            "step": 1,
+            "marks": [
+              {
+                "at": 11,
+                "label": "11"
+              },
+              {
+                "at": 12,
+                "label": "12"
+              },
+              {
+                "at": 13,
+                "label": "?"
+              },
+              {
+                "at": 14,
+                "label": "14"
+              }
+            ]
+          },
+          "note": "Ask: what is between 16 and 18? (17)."
+        },
+        {
+          "heading": "Marks in 5s",
+          "bullets": [
+            "Only 0, 5, 10, 15, 20 are labelled.",
+            "Count on from the nearest label.",
+            "The arrow is at 12."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 20,
+            "step": 1,
+            "marks": [
+              {
+                "at": 0,
+                "label": "0"
+              },
+              {
+                "at": 5,
+                "label": "5"
+              },
+              {
+                "at": 10,
+                "label": "10"
+              },
+              {
+                "at": 12,
+                "label": "?"
+              },
+              {
+                "at": 15,
+                "label": "15"
+              },
+              {
+                "at": 20,
+                "label": "20"
+              }
+            ]
+          },
+          "note": "Ask: count from 10: 11, 12. So the arrow is at 12."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "What number is between 18 and 20?",
+            "options": [
+              "17",
+              "19",
+              "21"
+            ],
+            "answer": 1,
+            "why": "19 is between 18 and 20."
+          },
+          "note": "Whiteboards."
+        }
+      ],
+      "practice": [
+        {
+          "q": "What comes between 12 and 14?",
+          "a": "13",
+          "mins": 1,
+          "model": "Teacher points to 12 and 14 and the gap between them: the missing number is 13."
+        },
+        {
+          "q": "Fill in: 15, __, 17, __, 19",
+          "a": "16, 18",
+          "mins": 1
+        },
+        {
+          "q": "An arrow is 2 after 15. What number?",
+          "a": "17",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: draw a line 10 to 20 and mark 13 and 18.",
+          "a": "13 is 3 after 10; 18 is 2 before 20",
+          "mins": 2,
+          "model": "Teacher draws a line, writes 10 and 20 at the ends, counts 3 marks from 10 for 13 and 2 back from 20 for 18."
+        },
+        {
+          "q": "Extend: fill in 20, __, 18, __, 16",
+          "a": "19, 17",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: which is nearer 20: 16 or 12?",
+          "a": "16 (4 away; 12 is 8 away)",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "What is between 10 and 12?",
+          "a": "11",
+          "mins": 1
+        },
+        {
+          "q": "Big question: is 17 nearer 10 or 20?",
+          "a": "20 (3 away, not 7)",
+          "mins": 1
+        }
+      ],
+      "homework": "Make a number line 0 to 20 on a strip of paper and keep it in your maths kit.",
+      "send": "SEND: count real pasta with the teacher, one at a time, and point to each. EAL: say the number word, then show it on fingers. Stretch: label a line in 2s.",
+      "resources": [
+        "White Rose Maths Year 1, Spring block 1: Place value (within 20): small step 'The number line to 20' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 20 pieces of pasta, two egg-box ten frames",
+        "Paper number line 0 to 20",
+        "Mini-whiteboard and pen",
+        "Strip of paper and a pencil",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 20 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 1: Place value within 20; addition and subtraction within 20",
+      "n": 21,
+      "title": "Use a number line to 20",
+      "duration": 30,
+      "bigQuestion": "How can jumps on a number line help us count on and back?",
+      "objectives": [
+        "To understand how jumps on a number line add and subtract"
+      ],
+      "successCriteria": [
+        "All: jump forward on a line",
+        "Most: jump back on a line",
+        "Some: show 12 + 3 and 15 - 2 with jumps"
+      ],
+      "crossCurricular": "Science: hops and jumps of animals",
+      "smsc": "Moral: steady steps forward, like our good habits",
+      "keywords": [
+        {
+          "term": "jump",
+          "def": "a move along the line"
+        },
+        {
+          "term": "forwards",
+          "def": "towards bigger numbers"
+        },
+        {
+          "term": "backwards",
+          "def": "towards smaller numbers"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A frog sits on 11. It jumps 1, then 1, then 1. Where is it now?",
+        "a": "14: three jumps of 1 from 11."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "number line 0 to 20 printed",
+          "alt": "A printed number line",
+          "for": "teach:1"
+        },
+        {
+          "find": "ruler centimetre millimetre scale close-up",
+          "alt": "A ruler with centimetre and millimetre marks",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Between 14 and 16?",
+          "a": "15",
+          "mins": 1
+        },
+        {
+          "q": "1 less than 20?",
+          "a": "19",
+          "mins": 1
+        },
+        {
+          "q": "6 + 3 = ?",
+          "a": "9",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Jump forward",
+          "bullets": [
+            "Start at 12.",
+            "Jump 3: 13, 14, 15.",
+            "12 + 3 = 15"
+          ],
+          "numberline": {
+            "min": 10,
+            "max": 20,
+            "step": 1,
+            "marks": [
+              {
+                "at": 12,
+                "label": "start"
+              },
+              {
+                "at": 15,
+                "label": "+3"
+              }
+            ]
+          },
+          "note": "Draw arcs. Ask: where do we start? (12)."
+        },
+        {
+          "heading": "Jump back",
+          "bullets": [
+            "Start at 17.",
+            "Jump back 2: 16, 15.",
+            "17 - 2 = 15"
+          ],
+          "numberline": {
+            "min": 10,
+            "max": 20,
+            "step": 1,
+            "marks": [
+              {
+                "at": 17,
+                "label": "start"
+              },
+              {
+                "at": 15,
+                "label": "-2"
+              }
+            ]
+          },
+          "note": "Ask: which way for take away? (back)."
+        },
+        {
+          "heading": "Model",
+          "model": {
+            "problem": "14 + 4",
+            "steps": [
+              "Start at 14",
+              "Jump 4: 15, 16, 17, 18"
+            ],
+            "answer": "18"
+          },
+          "note": "Think aloud."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "Start at 16, jump back 3. Where?",
+            "options": [
+              "19",
+              "13",
+              "3"
+            ],
+            "answer": 1,
+            "why": "16, 15, 14, 13. 19 jumps forward."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "11 + 2 = ?",
+          "a": "13",
+          "mins": 1,
+          "model": "Teacher starts at 11 and draws two jumps: 12, 13."
+        },
+        {
+          "q": "19 - 3 = ?",
+          "a": "16",
+          "mins": 1
+        },
+        {
+          "q": "15 + 5 = ?",
+          "a": "20",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 13 + 3, 16 + 2, 10 + 4.",
+          "a": "16, 18, 14",
+          "mins": 2,
+          "model": "Teacher starts at 13 and draws 3 jumps: 14, 15, 16."
+        },
+        {
+          "q": "Extend: 18 - 4, 14 - 3, 20 - 2.",
+          "a": "14, 11, 18",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: start at 12, jump forward 5, then back 2.",
+          "a": "15",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "17 + 2 = ?",
+          "a": "19",
+          "mins": 1
+        },
+        {
+          "q": "Big question: 15 - 3 on a line?",
+          "a": "Start at 15, jump back 3: 12",
+          "mins": 1
+        }
+      ],
+      "homework": "Hop along your paper number line: try 3 adds and 3 take-aways.",
+      "send": "SEND: count real pasta with the teacher, one at a time, and point to each. EAL: say the number word, then show it on fingers. Stretch: write your own jump question.",
+      "resources": [
+        "White Rose Maths Year 1, Spring block 1: Place value (within 20): small step 'Use a number line to 20' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 20 pieces of pasta, two egg-box ten frames",
+        "Paper number line 0 to 20",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 21 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 1: Place value within 20; addition and subtraction within 20",
+      "n": 22,
+      "title": "Estimate on a number line to 20",
+      "duration": 30,
+      "bigQuestion": "How can we make a good guess about where a number is?",
+      "objectives": [
+        "To understand how to make a sensible estimate on a number line"
+      ],
+      "successCriteria": [
+        "All: place 10 at halfway",
+        "Most: estimate where 5 and 15 go",
+        "Some: explain an estimate using halfway"
+      ],
+      "crossCurricular": "Science: estimating how far a ball rolls",
+      "smsc": "Moral: an honest guess is fine; we then check",
+      "keywords": [
+        {
+          "term": "estimate",
+          "def": "a sensible guess"
+        },
+        {
+          "term": "halfway",
+          "def": "exactly in the middle"
+        },
+        {
+          "term": "about",
+          "def": "close to, not exact"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A line goes from 0 to 20 with no other numbers. The arrow is near the end. Is it about 3, 10 or 18?",
+        "options": [
+          "3",
+          "10",
+          "18"
+        ],
+        "a": "About 18: near the end means near 20."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "number line 0 to 20 printed",
+          "alt": "A printed number line",
+          "for": "teach:1"
+        },
+        {
+          "find": "ruler centimetre millimetre scale close-up",
+          "alt": "A ruler with centimetre and millimetre marks",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "12 + 3 = ?",
+          "a": "15",
+          "mins": 1
+        },
+        {
+          "q": "Halfway between 0 and 20?",
+          "a": "10",
+          "mins": 1
+        },
+        {
+          "q": "1 more than 19?",
+          "a": "20",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Find halfway first",
+          "bullets": [
+            "0 at the start.",
+            "20 at the end.",
+            "10 is halfway."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 20,
+            "step": 10,
+            "marks": [
+              {
+                "at": 10,
+                "label": "halfway"
+              }
+            ]
+          },
+          "note": "Fold a paper strip in half. Ask: what goes at the fold? (10)."
+        },
+        {
+          "heading": "Estimate",
+          "bullets": [
+            "5 is halfway to 10.",
+            "15 is halfway from 10 to 20.",
+            "Near the end is near 20."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 20,
+            "step": 5,
+            "marks": [
+              {
+                "at": 5,
+                "label": "about 5"
+              },
+              {
+                "at": 15,
+                "label": "about 15"
+              }
+            ]
+          },
+          "note": "Point to spots and ask pupils to guess. Ask: is this more or less than 10?"
+        },
+        {
+          "heading": "Check the guess",
+          "bullets": [
+            "Count the marks.",
+            "Was the guess close?",
+            "Close is good."
+          ],
+          "note": "Show the full line in 1s. Compare guesses with the exact number."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "An arrow is just before halfway. About...",
+            "options": [
+              "9",
+              "2",
+              "19"
+            ],
+            "answer": 0,
+            "why": "Just before halfway (10) is about 9."
+          },
+          "note": "Fingers: A, B or C."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Where is 10 on a 0 to 20 line?",
+          "a": "Halfway",
+          "mins": 1,
+          "model": "Teacher folds a paper strip in half and writes 10 at the fold."
+        },
+        {
+          "q": "Arrow near the start. About 1 or 19?",
+          "a": "About 1",
+          "mins": 1
+        },
+        {
+          "q": "Arrow between halfway and the end. About?",
+          "a": "About 15",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: on a blank 0 to 20 line mark 10, then 5.",
+          "a": "10 at the middle; 5 halfway from 0 to 10",
+          "mins": 2,
+          "model": "Teacher marks 10 at the middle, then folds the first half again to mark 5."
+        },
+        {
+          "q": "Extend: estimate and mark 17.",
+          "a": "A little before 20 (3 before)",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: explain where 12 goes.",
+          "a": "Just after halfway: 2 more than 10",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Arrow right at the end. Number?",
+          "a": "20",
+          "mins": 1
+        },
+        {
+          "q": "Big question: what helps us estimate?",
+          "a": "Finding halfway (10) first",
+          "mins": 1
+        }
+      ],
+      "homework": "Fold a paper strip in half, write 0, 10 and 20, and mark where 4 and 16 should go.",
+      "send": "SEND: count real pasta with the teacher, one at a time, and point to each. EAL: say the number word, then show it on fingers. Stretch: estimate on a 0 to 10 line then 0 to 20.",
+      "resources": [
+        "White Rose Maths Year 1, Spring block 1: Place value (within 20): small step 'Estimate on a number line to 20' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 20 pieces of pasta, two egg-box ten frames",
+        "Paper number line 0 to 20",
+        "Mini-whiteboard and pen",
+        "Paper strip to fold",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 22 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 1: Place value within 20; addition and subtraction within 20",
+      "n": 23,
+      "title": "Compare numbers to 20",
+      "duration": 30,
+      "bigQuestion": "How do we know which number is greater?",
+      "objectives": [
+        "To understand how to compare numbers to 20"
+      ],
+      "successCriteria": [
+        "All: say which is greater with ten frames",
+        "Most: use < and >",
+        "Some: compare by looking at tens then ones"
+      ],
+      "crossCurricular": "English: reading 'greater than' and 'less than'",
+      "smsc": "Moral: we never boast about having more",
+      "keywords": [
+        {
+          "term": "greater than",
+          "def": "more than, the sign >"
+        },
+        {
+          "term": "less than",
+          "def": "fewer than, the sign <"
+        },
+        {
+          "term": "equal to",
+          "def": "the same as, the sign ="
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which is greater: 12 or 21? Explain how you know.",
+        "a": "21: it has 2 tens; 12 has only 1 ten."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "ten frame with counters maths",
+          "alt": "A ten frame: two rows of five boxes with counters in some boxes",
+          "for": "teach:1"
+        },
+        {
+          "find": "number line 0 to 20 printed",
+          "alt": "A printed number line",
+          "for": "teach:3"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Halfway between 0 and 20?",
+          "a": "10",
+          "mins": 1
+        },
+        {
+          "q": "1 ten and 7 ones?",
+          "a": "17",
+          "mins": 1
+        },
+        {
+          "q": "Which is more: 6 or 9?",
+          "a": "9",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Compare with ten frames",
+          "bullets": [
+            "16 is 1 ten and 6.",
+            "13 is 1 ten and 3.",
+            "16 is greater."
+          ],
+          "chart": {
+            "kind": "bar",
+            "labels": [
+              "16",
+              "13"
+            ],
+            "values": [
+              16,
+              13
+            ],
+            "title": "Which is greater?"
+          },
+          "note": "Both have a full ten, so look at the ones. Ask: 14 or 18? (18)."
+        },
+        {
+          "heading": "The signs",
+          "bullets": [
+            "16 > 13",
+            "13 < 16",
+            "15 = 15"
+          ],
+          "note": "The open mouth faces the bigger number. Ask: 11 _ 19? (<)."
+        },
+        {
+          "heading": "Tens first",
+          "bullets": [
+            "Look at the tens.",
+            "Then the ones.",
+            "20 > 19"
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 20,
+            "step": 1,
+            "marks": [
+              {
+                "at": 9,
+                "label": "9"
+              },
+              {
+                "at": 10,
+                "label": "10"
+              },
+              {
+                "at": 19,
+                "label": "19"
+              },
+              {
+                "at": 20,
+                "label": "20"
+              }
+            ]
+          },
+          "note": "20 has 2 tens; 19 has 1 ten. Ask: 10 or 9? (10)."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "Which is true?",
+            "options": [
+              "17 < 12",
+              "17 > 12",
+              "17 = 12"
+            ],
+            "answer": 1,
+            "why": "17 has more ones than 12, so 17 > 12."
+          },
+          "note": "Whiteboards."
+        }
+      ],
+      "practice": [
+        {
+          "q": "14 _ 11 (<, > or =)",
+          "a": ">",
+          "mins": 1,
+          "model": "Teacher shows 14 and 11 on ten frames: both have a full ten, 4 ones beat 1 one, so 14 > 11."
+        },
+        {
+          "q": "9 _ 19",
+          "a": "<",
+          "mins": 1
+        },
+        {
+          "q": "18 _ 18",
+          "a": "=",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 13 _ 15, 20 _ 12, 16 _ 16",
+          "a": "<, >, =",
+          "mins": 2,
+          "model": "Teacher compares 13 and 15 on the line: 15 is further along, so 13 < 15."
+        },
+        {
+          "q": "Extend: which is greater, 10 + 4 or 13?",
+          "a": "10 + 4 (14 > 13)",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: find all numbers greater than 16 but less than 20.",
+          "a": "17, 18, 19",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "15 _ 19",
+          "a": "<",
+          "mins": 1
+        },
+        {
+          "q": "Big question: 18 or 12, which is greater and why?",
+          "a": "18: both have 1 ten, 8 ones is more than 2 ones",
+          "mins": 1
+        }
+      ],
+      "homework": "Roll or pick two numbers to 20 with a grown-up and say which is greater.",
+      "send": "SEND: count real pasta with the teacher, one at a time, and point to each. EAL: say the number word, then show it on fingers. Stretch: compare three numbers.",
+      "resources": [
+        "White Rose Maths Year 1, Spring block 1: Place value (within 20): small step 'Compare numbers to 20' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 20 pieces of pasta, two egg-box ten frames",
+        "Paper number line 0 to 20",
+        "Mini-whiteboard and pen",
+        "Signs <, > and = on card",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 23 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 1: Place value within 20; addition and subtraction within 20",
+      "n": 24,
+      "title": "Order numbers to 20",
+      "duration": 30,
+      "bigQuestion": "How do we put numbers in order from smallest to greatest?",
+      "objectives": [
+        "To understand how to order numbers to 20"
+      ],
+      "successCriteria": [
+        "All: order three numbers with a number line",
+        "Most: order four numbers",
+        "Some: order greatest to smallest and explain"
+      ],
+      "crossCurricular": "Everyday life: lining up by height",
+      "smsc": "Social: the rows at salah (صَلَاة) are straight and in order",
+      "keywords": [
+        {
+          "term": "order",
+          "def": "put in a line by size"
+        },
+        {
+          "term": "smallest",
+          "def": "the least"
+        },
+        {
+          "term": "greatest",
+          "def": "the most"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Put 19, 11 and 15 in order, smallest first.",
+        "a": "11, 15, 19."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "number line 0 to 20 printed",
+          "alt": "A printed number line",
+          "for": "teach:1"
+        },
+        {
+          "find": "hundred square 1 to 100 chart",
+          "alt": "A hundred square chart",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "12 _ 17",
+          "a": "<",
+          "mins": 1
+        },
+        {
+          "q": "1 less than 14?",
+          "a": "13",
+          "mins": 1
+        },
+        {
+          "q": "Which is greater: 20 or 18?",
+          "a": "20",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Use the line",
+          "bullets": [
+            "Find each number.",
+            "Smallest is nearest 0.",
+            "11, 15, 19"
+          ],
+          "numberline": {
+            "min": 10,
+            "max": 20,
+            "step": 1,
+            "marks": [
+              {
+                "at": 11,
+                "label": "11"
+              },
+              {
+                "at": 15,
+                "label": "15"
+              },
+              {
+                "at": 19,
+                "label": "19"
+              }
+            ]
+          },
+          "note": "Mark them. Ask: which is greatest? (19)."
+        },
+        {
+          "heading": "Sort the cards",
+          "sort": {
+            "columns": [
+              "Less than 15",
+              "15 or more"
+            ],
+            "cards": [
+              "12",
+              "18",
+              "15",
+              "9",
+              "20",
+              "14"
+            ],
+            "answer": [
+              0,
+              1,
+              1,
+              0,
+              1,
+              0
+            ]
+          },
+          "note": "Pupils say which column each card goes in."
+        },
+        {
+          "heading": "Greatest first",
+          "bullets": [
+            "Start with the biggest.",
+            "20, 16, 13, 10",
+            "Each one is less."
+          ],
+          "note": "Model ordering 13, 20, 10, 16 greatest first."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "Smallest first: 17, 7, 14",
+            "options": [
+              "7, 14, 17",
+              "17, 14, 7",
+              "7, 17, 14"
+            ],
+            "answer": 0,
+            "why": "7, 14, 17. B is greatest first."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Order 16, 12, 18 smallest first.",
+          "a": "12, 16, 18",
+          "mins": 1,
+          "model": "Teacher marks 16, 12 and 18 on the line and reads from the left: 12, 16, 18."
+        },
+        {
+          "q": "Order 10, 20, 15 greatest first.",
+          "a": "20, 15, 10",
+          "mins": 1
+        },
+        {
+          "q": "Which is smallest: 13, 19 or 11?",
+          "a": "11",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: order 14, 9, 17 smallest first.",
+          "a": "9, 14, 17",
+          "mins": 2,
+          "model": "Teacher puts 14, 9 and 17 on the line; 9 is nearest 0, then 14, then 17."
+        },
+        {
+          "q": "Extend: order 20, 11, 16, 13 greatest first.",
+          "a": "20, 16, 13, 11",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: order 19, 9, 10, 1 smallest first.",
+          "a": "1, 9, 10, 19",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Order 15, 10, 19 smallest first.",
+          "a": "10, 15, 19",
+          "mins": 1
+        },
+        {
+          "q": "Big question: how do we find the smallest?",
+          "a": "It is nearest 0 on the line; fewest tens then fewest ones",
+          "mins": 1
+        }
+      ],
+      "homework": "Write 5 numbers between 10 and 20 on paper scraps and order them for a grown-up.",
+      "send": "SEND: count real pasta with the teacher, one at a time, and point to each. EAL: say the number word, then show it on fingers. Stretch: order five numbers.",
+      "resources": [
+        "White Rose Maths Year 1, Spring block 1: Place value (within 20): small step 'Order numbers to 20' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 20 pieces of pasta, two egg-box ten frames",
+        "Paper number line 0 to 20",
+        "Mini-whiteboard and pen",
+        "Number cards 0 to 20",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 24 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 1: Place value within 20; addition and subtraction within 20",
+      "n": 25,
+      "title": "Place value within 20: show what you know",
+      "duration": 30,
+      "bigQuestion": "What do we now know about numbers to 20?",
+      "objectives": [
+        "To understand what we know about numbers to 20"
+      ],
+      "successCriteria": [
+        "All: answer tens and ones questions",
+        "Most: compare and order numbers to 20",
+        "Some: explain a wrong answer and fix it"
+      ],
+      "crossCurricular": "English: explaining in full sentences",
+      "smsc": "Moral: honest work: we show what we really know",
+      "keywords": [
+        {
+          "term": "tens",
+          "def": "groups of 10"
+        },
+        {
+          "term": "ones",
+          "def": "single things"
+        },
+        {
+          "term": "check",
+          "def": "show what we know"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "True or false: 19 is greater than 20 because 9 is bigger than 0.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "a": "False: 20 has 2 tens; 19 has 1 ten. Look at tens first."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "ten frame with counters maths",
+          "alt": "A ten frame: two rows of five boxes with counters in some boxes",
+          "for": "teach:1"
+        },
+        {
+          "find": "number line 0 to 20 printed",
+          "alt": "A printed number line",
+          "for": "teach:3"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1 ten and 4 ones?",
+          "a": "14",
+          "mins": 1
+        },
+        {
+          "q": "Order 18, 12, 15.",
+          "a": "12, 15, 18",
+          "mins": 1
+        },
+        {
+          "q": "1 more than 19?",
+          "a": "20",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Tens and ones",
+          "table": {
+            "head": [
+              "Tens",
+              "Ones",
+              "Number"
+            ],
+            "rows": [
+              [
+                "1",
+                "3",
+                "13"
+              ],
+              [
+                "1",
+                "9",
+                "19"
+              ],
+              [
+                "2",
+                "0",
+                "20"
+              ],
+              [
+                "1",
+                "0",
+                "10"
+              ]
+            ]
+          },
+          "note": "Quick fire: point to a row and pupils say the number."
+        },
+        {
+          "heading": "Mistake hunt",
+          "misconception": {
+            "wrong": "1 ten and 6 ones is 61",
+            "right": "1 ten and 6 ones is 16: the tens digit comes first"
+          },
+          "note": "Ask: why is the left wrong?"
+        },
+        {
+          "heading": "Lines and estimates",
+          "bullets": [
+            "The arrow is halfway.",
+            "It shows 10.",
+            "Near the end is near 20."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 20,
+            "step": 2,
+            "marks": [
+              {
+                "at": 10,
+                "label": "?"
+              }
+            ]
+          },
+          "note": "Ask: the arrow is just past halfway. About? (11 or 12)."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "Which is true?",
+            "options": [
+              "12 > 21",
+              "16 < 19",
+              "20 < 2"
+            ],
+            "answer": 1,
+            "why": "16 < 19. The others are false."
+          },
+          "note": "Whiteboards."
+        }
+      ],
+      "practice": [
+        {
+          "q": "How many tens in 17?",
+          "a": "1",
+          "mins": 1,
+          "model": "Teacher shows 17 on ten frames: one full ten, so 1 ten."
+        },
+        {
+          "q": "15 _ 11",
+          "a": ">",
+          "mins": 1
+        },
+        {
+          "q": "Between 18 and 20?",
+          "a": "19",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 1 more and 1 less than 14.",
+          "a": "15, 13",
+          "mins": 2,
+          "model": "Teacher finds 14 on the line and jumps 1 each way: 15 and 13."
+        },
+        {
+          "q": "Extend: order 20, 13, 17, 10 smallest first.",
+          "a": "10, 13, 17, 20",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: a number has 1 ten and is greater than 17. What could it be?",
+          "a": "18 or 19",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Write 'eighteen' as a numeral.",
+          "a": "18",
+          "mins": 1
+        },
+        {
+          "q": "Big question: tell me one thing you know about 15.",
+          "a": "For example: 1 ten and 5 ones; halfway between 10 and 20; greater than 12",
+          "mins": 1
+        }
+      ],
+      "homework": "Tell a grown-up three facts about the number 16.",
+      "send": "SEND: answer with ten frames and pasta, one question at a time; teacher reads questions aloud. EAL: number word cards. Stretch: write a check question for a partner.",
+      "resources": [
+        "White Rose Maths Year 1, Spring block 1: Place value (within 20): small step 'Place value within 20: end-of-block check' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 20 pieces of pasta, two egg-box ten frames",
+        "Paper number line 0 to 20",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 25 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 1: Place value within 20; addition and subtraction within 20",
+      "n": 26,
+      "title": "Add by counting on within 20",
+      "duration": 30,
+      "bigQuestion": "Why do we start counting on from the bigger number?",
+      "objectives": [
+        "To understand why we count on from the bigger number"
+      ],
+      "successCriteria": [
+        "All: count on from 12 to add",
+        "Most: start from the greater number",
+        "Some: explain why it is quicker"
+      ],
+      "crossCurricular": "Everyday life: adding more books to a shelf",
+      "smsc": "Moral: patience when counting carefully",
+      "keywords": [
+        {
+          "term": "count on",
+          "def": "start at one number and count up"
+        },
+        {
+          "term": "greater",
+          "def": "bigger"
+        },
+        {
+          "term": "total",
+          "def": "how many altogether"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "3 + 14. Is it quicker to start at 3 and count 14, or start at 14 and count 3?",
+        "a": "Start at 14: only 3 jumps. Addition can be done in any order."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "number line 0 to 20 printed",
+          "alt": "A printed number line",
+          "for": "teach:1"
+        },
+        {
+          "find": "books on a bookshelf",
+          "alt": "Books on a shelf",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "16 _ 12",
+          "a": ">",
+          "mins": 1
+        },
+        {
+          "q": "4 + 3 = ?",
+          "a": "7",
+          "mins": 1
+        },
+        {
+          "q": "1 more than 15?",
+          "a": "16",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Count on",
+          "bullets": [
+            "Start at 13.",
+            "Count on 4: 14, 15, 16, 17.",
+            "13 + 4 = 17"
+          ],
+          "numberline": {
+            "min": 10,
+            "max": 20,
+            "step": 1,
+            "marks": [
+              {
+                "at": 13,
+                "label": "start"
+              },
+              {
+                "at": 17,
+                "label": "+4"
+              }
+            ]
+          },
+          "note": "Ask: how many jumps? (4)."
+        },
+        {
+          "heading": "Bigger number first",
+          "bullets": [
+            "2 + 15",
+            "Start at 15.",
+            "16, 17: 17"
+          ],
+          "model": {
+            "problem": "2 + 15",
+            "steps": [
+              "Swap: 15 + 2",
+              "Start at 15",
+              "Count on 2: 16, 17"
+            ],
+            "answer": "17"
+          },
+          "note": "Ask: why 15? (fewer jumps)."
+        },
+        {
+          "heading": "Same total either way",
+          "bullets": [
+            "15 + 2 = 17",
+            "2 + 15 = 17",
+            "Order does not change it."
+          ],
+          "note": "Show both with pasta. Ask: is 4 + 12 the same as 12 + 4? (yes, 16)."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "3 + 16 = ?",
+            "options": [
+              "19",
+              "13",
+              "18"
+            ],
+            "answer": 0,
+            "why": "Start at 16, count 3: 17, 18, 19."
+          },
+          "note": "Whiteboards."
+        }
+      ],
+      "practice": [
+        {
+          "q": "11 + 5 = ?",
+          "a": "16",
+          "mins": 1,
+          "model": "Teacher starts at 11 and counts on 5 on fingers: 12, 13, 14, 15, 16."
+        },
+        {
+          "q": "4 + 13 = ?",
+          "a": "17",
+          "mins": 1
+        },
+        {
+          "q": "18 + 2 = ?",
+          "a": "20",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 12 + 3, 14 + 5, 16 + 4.",
+          "a": "15, 19, 20",
+          "mins": 2,
+          "model": "Teacher starts at 12 and counts on 3: 13, 14, 15."
+        },
+        {
+          "q": "Extend: 5 + 12, 3 + 17.",
+          "a": "17, 20",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: 15 + ? = 19",
+          "a": "4",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "13 + 6 = ?",
+          "a": "19",
+          "mins": 1
+        },
+        {
+          "q": "Big question: 2 + 17, where do you start?",
+          "a": "At 17: 18, 19, so 19",
+          "mins": 1
+        }
+      ],
+      "homework": "Use your paper number line to do 14 + 3, 2 + 16 and 11 + 7.",
+      "send": "SEND: count real pasta with the teacher, one at a time, and point to each. EAL: say the number word, then show it on fingers. Stretch: add three numbers like 10 + 3 + 4.",
+      "resources": [
+        "White Rose Maths Year 1, Spring block 2: Addition and subtraction (within 20): small step 'Add by counting on within 20' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 20 pieces of pasta, two egg-box ten frames",
+        "Paper number line 0 to 20",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 26 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 1: Place value within 20; addition and subtraction within 20",
+      "n": 27,
+      "title": "Add ones using number bonds",
+      "duration": 30,
+      "bigQuestion": "How can bonds to 10 help us add bigger numbers?",
+      "objectives": [
+        "To understand how known number bonds help us add bigger numbers"
+      ],
+      "successCriteria": [
+        "All: use 3 + 4 = 7 to find 13 + 4",
+        "Most: add ones to a teen number using a known fact",
+        "Some: explain why the ten stays the same"
+      ],
+      "crossCurricular": "Everyday life: adding to a full egg box",
+      "smsc": "Spiritual: what we learn builds on what we know",
+      "keywords": [
+        {
+          "term": "number bond",
+          "def": "two numbers that make a total"
+        },
+        {
+          "term": "related",
+          "def": "linked, connected"
+        },
+        {
+          "term": "ones",
+          "def": "single things"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which does not belong?",
+        "options": [
+          "2 + 5 = 7",
+          "12 + 5 = 17",
+          "2 + 15 = 17",
+          "12 + 5 = 71"
+        ],
+        "a": "12 + 5 = 71 is wrong: it is 17. The others are related facts."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "ten frame with counters maths",
+          "alt": "A ten frame: two rows of five boxes with counters in some boxes",
+          "for": "teach:1"
+        },
+        {
+          "find": "egg carton with eggs two rows of six",
+          "alt": "An egg box: 2 rows of 6 eggs",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "3 + 5 = ?",
+          "a": "8",
+          "mins": 1
+        },
+        {
+          "q": "14 + 2 = ?",
+          "a": "16",
+          "mins": 1
+        },
+        {
+          "q": "1 ten and 9 ones?",
+          "a": "19",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Use a fact you know",
+          "bullets": [
+            "3 + 4 = 7",
+            "13 + 4 = 17",
+            "The ten stays the same."
+          ],
+          "fraction": [
+            {
+              "parts": 10,
+              "shaded": 10,
+              "label": "the ten"
+            },
+            {
+              "parts": 10,
+              "shaded": 7,
+              "label": "3 + 4 = 7"
+            }
+          ],
+          "note": "Show ten frames: the full ten does not change. Ask: 5 + 2 = 7, so 15 + 2? (17)."
+        },
+        {
+          "heading": "Model",
+          "model": {
+            "problem": "12 + 6",
+            "steps": [
+              "Ones: 2 + 6 = 8",
+              "Keep the ten: 10 + 8"
+            ],
+            "answer": "18"
+          },
+          "note": "Say it aloud."
+        },
+        {
+          "heading": "Patterns",
+          "table": {
+            "head": [
+              "Ones fact",
+              "Teen fact"
+            ],
+            "rows": [
+              [
+                "1 + 6 = 7",
+                "11 + 6 = 17"
+              ],
+              [
+                "4 + 5 = 9",
+                "14 + 5 = 19"
+              ],
+              [
+                "2 + 2 = 4",
+                "12 + 2 = 14"
+              ],
+              [
+                "3 + 7 = 10",
+                "13 + 7 = 20"
+              ]
+            ]
+          },
+          "note": "Ask: what changes and what stays the same?"
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "6 + 3 = 9, so 16 + 3 = ?",
+            "options": [
+              "9",
+              "19",
+              "36"
+            ],
+            "answer": 1,
+            "why": "Keep the ten: 10 + 9 = 19."
+          },
+          "note": "Teams poll."
+        }
+      ],
+      "practice": [
+        {
+          "q": "4 + 4 = 8, so 14 + 4 = ?",
+          "a": "18",
+          "mins": 1,
+          "model": "Teacher writes 4 + 4 = 8 and shows a full ten frame beside it: 10 + 8 = 18."
+        },
+        {
+          "q": "15 + 3 = ?",
+          "a": "18",
+          "mins": 1
+        },
+        {
+          "q": "11 + 8 = ?",
+          "a": "19",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 13 + 5, 12 + 7, 16 + 2.",
+          "a": "18, 19, 18",
+          "mins": 2,
+          "model": "Teacher uses 3 + 5 = 8, keeps the ten: 13 + 5 = 18."
+        },
+        {
+          "q": "Extend: 14 + 6 (use 4 + 6 = 10).",
+          "a": "20",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: write two teen facts from 2 + 5 = 7.",
+          "a": "12 + 5 = 17; 2 + 15 = 17",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "17 + 2 = ?",
+          "a": "19",
+          "mins": 1
+        },
+        {
+          "q": "Big question: how does 3 + 5 help with 13 + 5?",
+          "a": "3 + 5 = 8, keep the ten, so 18",
+          "mins": 1
+        }
+      ],
+      "homework": "Bond of the week: 2 + 6, 12 + 6; 3 + 4, 13 + 4. Say both facts aloud each day.",
+      "send": "SEND: count real pasta with the teacher, one at a time, and point to each. EAL: say the number word, then show it on fingers. Stretch: use 7 + 2 to find 17 + 2 and 7 + 12.",
+      "resources": [
+        "White Rose Maths Year 1, Spring block 2: Addition and subtraction (within 20): small step 'Add ones using number bonds' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 20 pieces of pasta, two egg-box ten frames",
+        "Paper number line 0 to 20",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 27 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Spring 1: Place value within 20; addition and subtraction within 20",
+      "n": 28,
+      "title": "Find and make number bonds to 20",
+      "duration": 30,
+      "bigQuestion": "If we know bonds to 10, do we know bonds to 20?",
+      "objectives": [
+        "To understand how bonds to 10 give bonds to 20"
+      ],
+      "successCriteria": [
+        "All: use two ten frames to make 20",
+        "Most: use 7 + 3 = 10 to find 13 + 7 = 20",
+        "Some: find a missing number in a bond to 20"
+      ],
+      "crossCurricular": "Everyday life: 20 dates shared between two plates",
+      "smsc": "Social: sharing iftar (إِفْطَار) food fairly between two families",
+      "keywords": [
+        {
+          "term": "bond to 20",
+          "def": "two numbers that make 20"
+        },
+        {
+          "term": "double",
+          "def": "two of the same: 10 + 10"
+        },
+        {
+          "term": "missing",
+          "def": "the number we need to find"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two egg boxes hold 20. One has 14. How many more fill both boxes?",
+        "a": "6: 14 + 6 = 20 (4 + 6 = 10)."
+      },
+      "routines": {
+        "hook": "show-me",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "independent": "show-me",
+        "exit": "show-me"
+      },
+      "islamicLink": {
+        "text": "Sharing food, such as at iftar (إِفْطَار), is part of Muslim life. Bonds to 20 help us share 20 dates between two plates.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "ten frame with counters maths",
+          "alt": "A ten frame: two rows of five boxes with counters in some boxes",
+          "for": "teach:1"
+        },
+        {
+          "find": "bowl of dates fruit",
+          "alt": "A bowl of dates",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "6 + ? = 10",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "13 + 4 = ?",
+          "a": "17",
+          "mins": 1
+        },
+        {
+          "q": "10 + 10 = ?",
+          "a": "20",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Two ten frames",
+          "bullets": [
+            "One full: 10.",
+            "Second has 6.",
+            "16 + 4 = 20"
+          ],
+          "fraction": [
+            {
+              "parts": 10,
+              "shaded": 10,
+              "label": "10"
+            },
+            {
+              "parts": 10,
+              "shaded": 6,
+              "label": "6 + 4 = 10"
+            }
+          ],
+          "note": "Ask: how many empty? (4)."
+        },
+        {
+          "heading": "From 10 to 20",
+          "table": {
+            "head": [
+              "Bond to 10",
+              "Bond to 20"
+            ],
+            "rows": [
+              [
+                "7 + 3",
+                "17 + 3"
+              ],
+              [
+                "5 + 5",
+                "15 + 5"
+              ],
+              [
+                "9 + 1",
+                "19 + 1"
+              ],
+              [
+                "2 + 8",
+                "12 + 8"
+              ]
+            ]
+          },
+          "note": "Ask: 8 + 2 = 10, so 18 + 2? (20)."
+        },
+        {
+          "heading": "Missing number",
+          "model": {
+            "problem": "11 + ? = 20",
+            "steps": [
+              "Ones: 1 + 9 = 10",
+              "So 11 + 9 = 20"
+            ],
+            "answer": "9"
+          },
+          "note": "Model the reasoning."
+        },
+        {
+          "heading": "Check",
+          "check": {
+            "q": "15 + ? = 20",
+            "options": [
+              "5",
+              "15",
+              "10"
+            ],
+            "answer": 0,
+            "why": "5 + 5 = 10, so 15 + 5 = 20."
+          },
+          "note": "Whiteboards."
+        }
+      ],
+      "practice": [
+        {
+          "q": "13 + ? = 20",
+          "a": "7",
+          "mins": 1,
+          "model": "Teacher shows a full ten frame and 3 in the second: 7 empty, so 13 + 7 = 20."
+        },
+        {
+          "q": "? + 18 = 20",
+          "a": "2",
+          "mins": 1
+        },
+        {
+          "q": "20 = 10 + ?",
+          "a": "10",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 16 + ?, 12 + ?, 19 + ? (all make 20).",
+          "a": "4, 8, 1",
+          "mins": 2,
+          "model": "Teacher fills 16 on two ten frames and counts the empty spaces: 4."
+        },
+        {
+          "q": "Extend: 4 + ? = 20",
+          "a": "16",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: list bonds to 20 from 10 + 10 to 20 + 0.",
+          "a": "10+10, 11+9, 12+8, 13+7, 14+6, 15+5, 16+4, 17+3, 18+2, 19+1, 20+0",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "14 + ? = 20",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "Big question: how does 3 + 7 = 10 help with bonds to 20?",
+          "a": "13 + 7 = 20 (and 3 + 17 = 20)",
+          "mins": 1
+        }
+      ],
+      "homework": "Bond of the week (Spring half term practice): bonds to 20, five a day with a grown-up.",
+      "send": "SEND: count real pasta with the teacher, one at a time, and point to each. EAL: say the number word, then show it on fingers. Stretch: bonds to 20 with three parts, like 10 + 5 + 5.",
+      "resources": [
+        "White Rose Maths Year 1, Spring block 2: Addition and subtraction (within 20): small step 'Find and make number bonds to 20' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Maths kit: 20 pieces of pasta, two egg-box ten frames",
+        "Paper number line 0 to 20",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 28 guided, independent and homework tasks"
+      ]
     }
   ]
 }
