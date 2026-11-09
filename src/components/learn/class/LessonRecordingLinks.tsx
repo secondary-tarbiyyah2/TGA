@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { safeHttpUrl } from "@/lib/learn/markup";
 
+import { askConfirm } from "@/components/learn/kit";
 /** The exact wording the teacher agrees to; stored with the link (who and when are stamped by the database). */
 export const RECORDING_CONSENT_TEXT =
   "I confirm this recording shows only me (the teacher) and my shared screen. No pupil appears on camera or is heard, unless consent for that pupil is already recorded with the school.";
@@ -121,7 +122,7 @@ export function LessonRecordingPanel({ lessonInstanceId, canManage }: { lessonIn
   const remove = async (id: string) => {
     const supabase = getSupabaseClient();
     if (!supabase) return;
-    if (!window.confirm("Remove this recording link? Pupils will no longer see it.")) return;
+    if (!(await askConfirm("Remove this recording link? Pupils will no longer see it."))) return;
     await supabase.from("lesson_recording_links").delete().eq("id", id);
     await load();
   };

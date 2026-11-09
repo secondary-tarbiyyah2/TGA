@@ -13,6 +13,7 @@ import {
   type ParentEvening,
 } from "@/lib/learn/parentEvenings";
 
+import { askConfirm } from "@/components/learn/kit";
 type Row = { evening_id: string; join_url: string | null; parent_evenings: ParentEvening | null };
 type ScheduleRow = { booking_id: string; child_name: string; parent_name: string; slot_start: string; slot_end: string; join_url: string | null };
 
@@ -49,7 +50,7 @@ function EveningCard({ row, ev }: { row: Row; ev: ParentEvening }) {
 
   const cancel = async (b: ScheduleRow) => {
     if (!supabase) return;
-    if (!window.confirm(`Cancel the meeting with ${b.parent_name} (${b.child_name}) at ${formatTime(b.slot_start)}? The parent will be emailed.`)) return;
+    if (!(await askConfirm(`Cancel the meeting with ${b.parent_name} (${b.child_name}) at ${formatTime(b.slot_start)}? The parent will be emailed.`))) return;
     const { error } = await supabase.rpc("cancel_parent_evening_booking", { p_booking_id: b.booking_id });
     if (error) {
       setMsg(bookingErrorMessage(error.message));

@@ -38,6 +38,7 @@ import {
 import { LinesField, Modal, TextField } from "@/components/learn/curriculum/Modal";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 const YEAR_KEY = "tga-planner-year";
 const btn = `${ui.btnSecondary} ${ui.sm}`;
 const isKs4 = (y: string) => y === "y10" || y === "y11";
@@ -380,8 +381,8 @@ function UnitEditor({ initial, original, canEdit, syncNotes, onClose, onSaved }:
     set("weeks", w.map((x, k) => ({ ...x, week: k + 1 })));
   };
 
-  const close = () => {
-    if (dirty && canEdit && !window.confirm("Close without saving your changes?")) return;
+  const close = async () => {
+    if (dirty && canEdit && !(await askConfirm("Close without saving your changes?"))) return;
     onClose();
   };
 
@@ -404,7 +405,7 @@ function UnitEditor({ initial, original, canEdit, syncNotes, onClose, onSaved }:
   };
 
   const remove = async () => {
-    if (!original || !window.confirm(`Remove "${original.title}" from ${yearLabel(original.year)}? You can put it back from "Recently removed".`)) return;
+    if (!original || !(await askConfirm(`Remove "${original.title}" from ${yearLabel(original.year)}? You can put it back from "Recently removed".`))) return;
     setBusy(true);
     try {
       await deleteUnit(original.id);

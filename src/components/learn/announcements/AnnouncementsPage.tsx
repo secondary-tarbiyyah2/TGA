@@ -7,6 +7,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { ComposeModal } from "./ComposeModal";
 import { ANNOUNCEMENT_COLUMNS, formatDate, isExpired, isNew, type AnnouncementRow } from "./types";
 
+import { askConfirm } from "@/components/learn/kit";
 export type AnnouncementsMode = "admin" | "teach" | "family" | "student";
 
 const STAFF_VIEWER: ClassViewer = { kind: "staff" };
@@ -87,7 +88,7 @@ export function AnnouncementsPage({ mode }: { mode: AnnouncementsMode }) {
 
   const setRecalled = async (a: AnnouncementRow, recalled: boolean) => {
     if (!supabase) return;
-    if (recalled && !window.confirm(`Recall "${a.title}"? It disappears for everyone it was posted to. You can restore it later.`)) return;
+    if (recalled && !(await askConfirm(`Recall "${a.title}"? It disappears for everyone it was posted to. You can restore it later.`))) return;
     setBusyId(a.id);
     setError(null);
     const { error: err } = await supabase
@@ -101,7 +102,7 @@ export function AnnouncementsPage({ mode }: { mode: AnnouncementsMode }) {
 
   const remove = async (a: AnnouncementRow) => {
     if (!supabase) return;
-    if (!window.confirm(`Delete "${a.title}"? This can't be undone.`)) return;
+    if (!(await askConfirm(`Delete "${a.title}"? This can't be undone.`))) return;
     setBusyId(a.id);
     setError(null);
     const { error: err } = await supabase.from("announcements").delete().eq("id", a.id);

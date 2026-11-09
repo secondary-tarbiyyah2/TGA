@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
+import { askConfirm } from "@/components/learn/kit";
 type Person = { id: string; name: string };
 type Teacher = { user_id: string; full_name: string; role: string };
 type Candidate = { id: string; name: string; year_group_id: string | null };
@@ -163,7 +164,7 @@ export function ParticipantsTab({ classId, onChanged }: { classId: string; onCha
   }, [load]);
 
   const remove = async (p: Person) => {
-    if (!window.confirm(`Remove ${p.name} from this class?`)) return;
+    if (!(await askConfirm(`Remove ${p.name} from this class?`))) return;
     const supabase = getSupabaseClient();
     if (!supabase) return;
     setMessage(null);

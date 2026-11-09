@@ -7,6 +7,7 @@ import { findUnresolvedTokens } from "@/components/learn/admissions/messageTempl
 import { TokenEditor } from "@/components/learn/admissions/TokenEditor";
 import { btn, ui } from "@/components/learn/ui";
 
+import { askConfirm } from "@/components/learn/kit";
 export { sendAdmissionsEmail };
 export type { SendOutcome };
 
@@ -47,8 +48,8 @@ export function EmailComposer({
       setResult({ ok: false, emailSent: false, text: `Fix these before sending (they are not known values): ${unresolved.map((t) => `{{${t}}}`).join(", ")}.` });
       return;
     }
-    if (template === "decline" && !window.confirm(`This tells ${app.parent_name} that ${app.child_first_name}'s application is declined. Decline emails are never sent automatically. Send it now?`)) return;
-    if (!window.confirm(`Send this email to ${app.parent_email}?`)) return;
+    if (template === "decline" && !(await askConfirm(`This tells ${app.parent_name} that ${app.child_first_name}'s application is declined. Decline emails are never sent automatically. Send it now?`))) return;
+    if (!(await askConfirm(`Send this email to ${app.parent_email}?`))) return;
     setSending(true);
     setResult(null);
     const out = await sendAdmissionsEmail(app.id, template, subject, body);

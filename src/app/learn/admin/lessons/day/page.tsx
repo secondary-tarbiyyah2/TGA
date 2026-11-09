@@ -9,6 +9,7 @@ import { PeriodsEditor } from "@/components/learn/timetable/PeriodsEditor";
 import { WEEKDAYS } from "@/lib/learn/timetable";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
+import { askConfirm } from "@/components/learn/kit";
 function DayContent() {
   const supabase = getSupabaseClient();
   const { data, reload } = useTimetableData();
@@ -37,7 +38,7 @@ function DayContent() {
   };
   const remove = async (id: string) => {
     const p = data.protectedTimes.find((x) => x.id === id);
-    if (!supabase || !window.confirm(`Remove the protected time${p ? ` "${p.name}"` : ""}? Lessons will no longer be flagged for overlapping it.`)) return;
+    if (!supabase || !(await askConfirm(`Remove the protected time${p ? ` "${p.name}"` : ""}? Lessons will no longer be flagged for overlapping it.`))) return;
     const { error: err } = await supabase.from("protected_times").delete().eq("id", id);
     if (err) return setError("Couldn't remove that protected time. Please try again.");
     await reload();
@@ -56,7 +57,7 @@ function DayContent() {
   };
   const removeSession = async (id: string) => {
     const v = data.sessions.find((x) => x.id === id);
-    if (!supabase || !window.confirm(`Remove the session${v ? ` "${v.name}"` : ""}?`)) return;
+    if (!supabase || !(await askConfirm(`Remove the session${v ? ` "${v.name}"` : ""}?`))) return;
     setSessError(null);
     const { error: err } = await supabase.from("virtual_sessions").delete().eq("id", id);
     if (err) return setSessError(/foreign key|violates/i.test(err.message) ? "That session is used by timetabled lessons, so it can't be removed." : "Couldn't remove that session. Please try again.");

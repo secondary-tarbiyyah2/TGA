@@ -5,6 +5,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { ui } from "@/components/learn/ui";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 // Report settings (Headteacher/Admin): the comment bank teachers draw on,
 // assessment types and per-subject mark schemes / grade boundaries.
 
@@ -81,7 +82,7 @@ function CommentBankAdmin() {
   };
 
   const remove = async (id: string) => {
-    if (!supabase || !window.confirm("Remove this sentence from the comment bank?")) return;
+    if (!supabase || !(await askConfirm("Remove this sentence from the comment bank?"))) return;
     await supabase.from("comment_bank").delete().eq("id", id);
     await load();
   };

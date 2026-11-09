@@ -7,6 +7,7 @@ import { triggerPublish } from "@/lib/learn/publishSiteContent";
 import { btn, ui } from "@/components/learn/ui";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 export type FieldDef = {
   key: string;
   label: string;
@@ -102,7 +103,7 @@ export function SimpleListEditor({
   }
 
   async function remove(row: Row) {
-    if (!supabase || !confirm(`Delete "${rowLabel(row)}"? This can't be undone.`)) return;
+    if (!supabase || !(await askConfirm(`Delete "${rowLabel(row)}"? This can't be undone.`))) return;
     setBusy(true);
     const { error } = await supabase.from(table).delete().eq("id", row.id as string);
     if (error) {

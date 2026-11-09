@@ -4,6 +4,7 @@ import { useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { fmtDate, todayIso, type Detention, type DetentionStatus } from "./data";
 
+import { askConfirm } from "@/components/learn/kit";
 type View = "board" | "register" | "roster";
 
 function Item({ d, canAct, busy, onSet, showDate }: { d: Detention; canAct: boolean; busy: boolean; onSet: (id: string, s: DetentionStatus) => void; showDate?: boolean }) {
@@ -71,7 +72,7 @@ export function DetentionRegister({ detentions, canAct = true, onChanged }: { de
   const markAll = async (list: Detention[], status: DetentionStatus) => {
     const supabase = getSupabaseClient();
     if (!supabase || list.length === 0) return;
-    if (!window.confirm(`Mark all ${list.length} follow-up sessions as ${status}?`)) return;
+    if (!(await askConfirm(`Mark all ${list.length} follow-up sessions as ${status}?`))) return;
     setBusy(true);
     setError(null);
     const { error: err } = await supabase.from("detentions").update({ status }).in("id", list.map((d) => d.id));

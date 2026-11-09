@@ -5,6 +5,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { dangerBtn, EmptyState, Field, ghostBtn, inputCls, Notice, primaryBtn, StepCard } from "./shared";
 import type { AcademicYear, ClassRow, Enrolment, Subject, Term, YearGroup } from "./shared";
 
+import { askConfirm } from "@/components/learn/kit";
 type Common = { reload: () => Promise<void> };
 
 function useAction() {
@@ -157,7 +158,7 @@ export function YearGroupsSection({ yearGroups, classes, enrolments, reload }: C
   };
 
   const remove = async (y: YearGroup) => {
-    if (!supabase || !window.confirm(`Remove ${y.name}? Classes in it will be left without a year group.`)) return;
+    if (!supabase || !(await askConfirm(`Remove ${y.name}? Classes in it will be left without a year group.`))) return;
     const ok = await run(() => supabase.from("year_groups").delete().eq("id", y.id));
     if (ok) await reload();
   };
@@ -220,7 +221,7 @@ export function SubjectsSection({ subjects, reload }: Common & { subjects: Subje
     if (ok) await reload();
   };
   const remove = async (s: Subject) => {
-    if (!supabase || !window.confirm(`Remove ${s.name}?`)) return;
+    if (!supabase || !(await askConfirm(`Remove ${s.name}?`))) return;
     const ok = await run(() => supabase.from("subjects").delete().eq("id", s.id));
     if (ok) await reload();
   };

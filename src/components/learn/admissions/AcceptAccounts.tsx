@@ -9,6 +9,7 @@ import type { MoveOptions } from "@/components/learn/admissions/ApplicationDrawe
 import type { AdmissionsContext } from "@/components/learn/admissions/useAdmissionsContext";
 import { btn } from "@/components/learn/ui";
 
+import { askConfirm } from "@/components/learn/kit";
 type ClassOpt = { id: string; name: string; year_group_id: string | null };
 type YearGroupRow = { id: string; name: string };
 type LoginRow = { username: string; must_change_password: boolean };
@@ -80,7 +81,7 @@ export function AcceptAccounts({
   }
 
   async function run(resend: boolean) {
-    if (resend && !window.confirm("Re-send the parent's setup email and generate a NEW temporary password for the pupil? The old password stops working.")) return;
+    if (resend && !(await askConfirm("Re-send the parent's setup email and generate a NEW temporary password for the pupil? The old password stops working."))) return;
     setBusy(true);
     setNotes([]);
     try {

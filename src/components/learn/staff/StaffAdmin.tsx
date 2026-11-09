@@ -10,6 +10,7 @@ import { SencoToggle } from "@/components/learn/send/SencoToggle";
 import { ukToday } from "@/lib/learn/ukTime";
 import { btn, ui } from "@/components/learn/ui";
 
+import { askConfirm } from "@/components/learn/kit";
 type StaffRow = {
   user_id: string;
   full_name: string;
@@ -219,7 +220,7 @@ function DetailsForm({ person, canEditRoles, canSetDsl, isSelf, onSaved }: { per
   const setDsl = async (on: boolean) => {
     const supabase = getSupabaseClient();
     if (!supabase) return;
-    if (!on && !window.confirm(`Remove ${person.full_name} as a Designated Safeguarding Lead? The school must always have at least one.`)) return;
+    if (!on && !(await askConfirm(`Remove ${person.full_name} as a Designated Safeguarding Lead? The school must always have at least one.`))) return;
     setDslBusy(true);
     setDslMsg(null);
     const { error } = await supabase.rpc("set_safeguarding_lead", { p_user: person.user_id, p_on: on });

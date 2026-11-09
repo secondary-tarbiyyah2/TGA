@@ -11,6 +11,7 @@ import { ApplicationDetail } from "./ApplicationDetail";
 import { APPLICATION_COLUMNS, ukDate, type JobApplication } from "./types";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 type Filter = "active" | "all" | ApplicationStatus;
 type AiFilter = "" | "strong" | "possible" | "unlikely" | "unscreened";
 type Sort = "newest" | "ai" | "rating";
@@ -105,7 +106,7 @@ export function ApplicationsPanel({ userId }: { userId: string | null }) {
   /** Screens the unscreened applications in this view, five at a time. */
   async function screenAll() {
     if (!supabase || unscreened.length === 0) return;
-    if (!confirm(`Ask the AI for a first read of ${unscreened.length} application${unscreened.length === 1 ? "" : "s"}? It is advisory only and doesn't change any status.`)) return;
+    if (!(await askConfirm(`Ask the AI for a first read of ${unscreened.length} application${unscreened.length === 1 ? "" : "s"}? It is advisory only and doesn't change any status.`))) return;
     const ids = unscreened.map((a) => a.id);
     setNotice(null);
     setScreening({ done: 0, total: ids.length });
