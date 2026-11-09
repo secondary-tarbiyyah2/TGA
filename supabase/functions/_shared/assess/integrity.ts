@@ -8,7 +8,24 @@ import type { Item } from "./core.ts";
 
 export type AssessEvent = { t: string; type: string; section?: string; brk?: boolean; detail?: string };
 export type BreakLog = { section: string; start: string; end?: string; allowedMs: number };
-export type SectionLog = { key: string; started: string; ended: string; timedOut: boolean };
+/** leftLimit: the part was ended because the pupil left it as many times as staff allowed (access.leaveLimit). */
+export type SectionLog = { key: string; started: string; ended: string; timedOut: boolean; leftLimit?: boolean };
+
+/**
+ * Times the pupil left a running part (not during a break): a hidden tab, or
+ * another window in front (a blur with no hidden within 1.5 s). The same rule
+ * as the staff report's "Left the assessment" count and the pupil's on-screen count.
+ */
+export function countLeaves(events: AssessEvent[], section: string, since: string | null): number {
+  const from = since ? new Date(since).getTime() : 0;
+  const live = events.filter((e) => e.section === section && !e.brk && new Date(e.t).getTime() >= from);
+  let n = 0;
+  for (const e of live) {
+    if (e.type === "hidden") n++;
+    else if (e.type === "blur" && !live.some((x) => x.type === "hidden" && Math.abs(new Date(x.t).getTime() - new Date(e.t).getTime()) < 1500)) n++;
+  }
+  return n;
+}
 export type IntegrityRating = "No concerns" | "Some concerns" | "Review needed";
 
 export type IntegrityInput = {
@@ -31,6 +48,8 @@ export type IntegritySummary = {
   timeline: { t: string; section?: string; text: string; kind: "info" | "note" | "break" }[];
   /** Kept for older reports and the pupil-record sync. */
   tabHides: number; fastAnswers: number; answered: number; unanswered: number; timedOutSections: string[];
+  /** Parts ended early because the pupil left them too many times (staff setting). */
+  endedForLeaving?: string[];
 };
 
 export const RAPID_MS = 2500;
@@ -114,6 +133,7 @@ export function summariseIntegrity(input: IntegrityInput): IntegritySummary {
   }
   const unanswered = auto.filter((i) => resp[i.id] === undefined || resp[i.id].value === "" || resp[i.id].value === null).length;
   const timedOutSections = sectionsLog.filter((l) => l.timedOut).map((l) => titles.get(l.key) || l.key);
+  const endedForLeaving = sectionsLog.filter((l) => l.leftLimit).map((l) => titles.get(l.key) || l.key);
 
   // Points: only patterns that, together, are worth a conversation.
   let points = 0;
@@ -121,6 +141,7 @@ export function summariseIntegrity(input: IntegrityInput): IntegritySummary {
   else if (away >= 4 || awaySeconds >= 90) points += 2;
   else if (away >= 2 || awaySeconds >= 30) points += 1; // one brief moment away is not worth flagging
   // Moving to a new window is usually innocent (a closed tab, a change of device); two windows both trying to answer is less so.
+  if (endedForLeaving.length) points += 2;
   if (conflicts >= 1) points += 2;
   else if (takeovers >= 1) points += 1;
   if (paste >= 3) points += 2;
@@ -137,6 +158,7 @@ export function summariseIntegrity(input: IntegrityInput): IntegritySummary {
 
   const notes: string[] = [];
   if (away) notes.push(`The test window was left ${away} time${away === 1 ? "" : "s"} during timed parts (about ${dur(awaySeconds)} in all). Short moments away are common at home; if results look unexpected, a gentle word with the family may help.`);
+  if (endedForLeaving.length) notes.push(`${endedForLeaving.join(", ")} ended early because the pupil left ${endedForLeaving.length === 1 ? "it" : "them"} as many times as the school allows. Unanswered questions in ${endedForLeaving.length === 1 ? "that part" : "those parts"} count as wrong, so ${endedForLeaving.length === 1 ? "its" : "their"} results may underestimate the pupil.`);
   if (blur) notes.push(`Another window was in front of the test ${blur} time${blur === 1 ? "" : "s"} while it stayed open.`);
   if (otherSessions) notes.push("The assessment was opened in a second window or on another device while it was in progress. Only one window can answer at a time, so this may simply have been a change of device.");
   if (paste) notes.push(`Pasting was tried ${paste} time${paste === 1 ? "" : "s"} (it is switched off, so nothing was pasted). Worth reading the writing with this in mind.`);
@@ -153,7 +175,7 @@ export function summariseIntegrity(input: IntegrityInput): IntegritySummary {
   const timeline: IntegritySummary["timeline"] = [];
   for (const l of sectionsLog) {
     timeline.push({ t: l.started, section: l.key, text: `${titles.get(l.key) || l.key} started`, kind: "info" });
-    timeline.push({ t: l.ended, section: l.key, text: `${titles.get(l.key) || l.key} finished${l.timedOut ? " (time ran out)" : ""}`, kind: "info" });
+    timeline.push({ t: l.ended, section: l.key, text: `${titles.get(l.key) || l.key} finished${l.leftLimit ? " (ended: left too many times)" : l.timedOut ? " (time ran out)" : ""}`, kind: "info" });
   }
   for (const e of events) {
     if (["visible", "focus", "resize", "fullscreen_enter"].includes(e.type)) continue;
@@ -178,6 +200,6 @@ export function summariseIntegrity(input: IntegrityInput): IntegritySummary {
     counts: { away, awaySeconds: Math.round(awaySeconds), blur, fullscreenExits, copy, paste, rightClick, shortcuts, otherSessions, breaks: breaks.length, breakSeconds: Math.round(breakSeconds), rapid, timed: timedResp.length, longestSameLetter, mcqAnswered },
     notes,
     timeline: timeline.slice(0, 120),
-    tabHides: away, fastAnswers: rapid, answered: auto.length - unanswered, unanswered, timedOutSections,
+    tabHides: away, fastAnswers: rapid, answered: auto.length - unanswered, unanswered, timedOutSections, endedForLeaving,
   };
 }

@@ -38,6 +38,8 @@ type Current = {
 type State = {
   ok: boolean; error?: string; session?: string; firstName: string; year: number; status: string; readAloud: boolean; autoRead: boolean; largeText: boolean;
   breakRules?: { perSection: number; minutes: number }; finished: boolean;
+  /** Staff setting: the part ends once it has been left this many times. */
+  leaveLimit?: number | null; lastEndedForLeaving?: string | null;
   sections: { key: string; title: string; minutes: number; questions: number; done: boolean }[]; current?: Current;
 };
 type Light = { ok: boolean; error?: string; finished?: boolean; section?: string | null; started?: boolean; remaining?: number | null; onBreak?: boolean };
@@ -249,6 +251,11 @@ export function AssessmentSitting() {
             <p className="text-sm font-semibold uppercase tracking-wider text-gold-700">Part {doneCount + 1} of {st.sections.length}</p>
             <h1 className="mt-2 text-3xl font-semibold text-ink">Great work so far, {first}.</h1>
             <p className="mt-3 text-lg text-ink/75">Have a rest before the next part if you like. The clock only runs during a part.</p>
+            {st.lastEndedForLeaving && (
+              <p className="mt-4 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-ink">
+                {st.lastEndedForLeaving} ended because you left it {st.leaveLimit ? `${st.leaveLimit} times` : "too many times"}. Your answers up to then are saved. Please stay on the page during the next part.
+              </p>
+            )}
           </>
         )}
 
@@ -270,7 +277,7 @@ export function AssessmentSitting() {
             <ul className="mt-2 list-disc space-y-1 pl-5 text-ink/80">
               <li>Sit somewhere quiet{st.readAloud ? ", with the sound turned on: questions can be read out loud" : ""}.</li>
               <li>{young ? "A grown-up can help you use the mouse or screen, but not with the answers." : "Work on your own. You may use paper for working out, but not a calculator."}</li>
-              <li>The test fills the screen. Please stay on this page until you finish a part.</li>
+              <li>The test fills the screen. Please stay on this page until you finish a part.{st.leaveLimit ? ` If you leave a part ${st.leaveLimit} times, that part ends.` : ""}</li>
               {(st.breakRules?.perSection ?? 0) > 0 && <li>If you need a rest during a part, press <b>Take a break</b>. The clock stops while you rest.</li>}
               <li>If a question is too hard, choose your best answer and move on. Some questions are meant for older children.</li>
               <li>Your answers save as you go. If the internet drops, just open the link again.</li>
@@ -424,6 +431,8 @@ function Section({ api, st, cur, large, voice, rate, start, onPosition, onLarge,
   // Times the child left this page (tab, window or app switch) in this part.
   const [away, setAway] = useState(false);
   const [awayCount, setAwayCount] = useState(0);
+  // The server ended this part because it was left as many times as staff allow.
+  const [endedForLeaving, setEndedForLeaving] = useState(false);
   const [breakPrompt, setBreakPrompt] = useState<"no" | "show" | "dismissed">("no");
   const shownAt = useRef(0);
   const textTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -474,7 +483,7 @@ function Section({ api, st, cur, large, voice, rate, start, onPosition, onLarge,
       const now = Date.now();
       if (now - (last[type] || 0) < 1000) return;
       last[type] = now;
-      api({ action: "event", type, detail });
+      api<{ ended?: boolean }>({ action: "event", type, detail }).then((r) => { if (r.ended) setEndedForLeaving(true); });
     };
     const inText = (t: EventTarget | null) => t instanceof HTMLElement && (t.tagName === "TEXTAREA" || t.tagName === "INPUT");
     const leave = () => {
@@ -699,9 +708,12 @@ function Section({ api, st, cur, large, voice, rate, start, onPosition, onLarge,
       {away && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center bg-ink p-4" role="alertdialog" aria-modal="true" aria-labelledby="away-title" aria-describedby="away-body">
           <div className="w-full max-w-md rounded-3xl bg-white p-6 text-center shadow-xl">
-            <h2 id="away-title" className="text-xl font-semibold text-ink">You left the assessment</h2>
+            <h2 id="away-title" className="text-xl font-semibold text-ink">{endedForLeaving ? `${cur.title} has ended` : "You left the assessment"}</h2>
             <p id="away-body" className="mt-2 text-ink/75">
-              Please stay on this page until you have finished. Your teacher can see each time you leave{awayCount > 0 ? ` (${awayCount} ${awayCount === 1 ? "time" : "times"} so far)` : ""}.
+              {endedForLeaving
+                ? `You left this part ${st.leaveLimit ?? awayCount} times, so it has ended. Your answers up to now are saved.`
+                : `Please stay on this page until you have finished. Your teacher can see each time you leave${awayCount > 0 ? ` (${awayCount} ${awayCount === 1 ? "time" : "times"} so far)` : ""}.`}
+              {!endedForLeaving && st.leaveLimit ? ` If you leave ${st.leaveLimit} times, this part ends.` : ""}
             </p>
             <button
               type="button"
@@ -709,10 +721,12 @@ function Section({ api, st, cur, large, voice, rate, start, onPosition, onLarge,
               onClick={() => {
                 setAway(false);
                 enterFullscreen();
+                // Picks up a part the server has ended in the meantime.
+                if (st.leaveLimit) reload().then((s) => s.ok && onState(s));
               }}
               className="mt-5 rounded-full bg-gold-700 px-6 py-3 text-lg font-semibold text-white"
             >
-              Return to my assessment
+              {endedForLeaving ? "Carry on" : "Return to my assessment"}
             </button>
           </div>
         </div>
