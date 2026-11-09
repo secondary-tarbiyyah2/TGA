@@ -154,6 +154,8 @@ function Edit({
         }
         if (e.key === "Backspace" && onRemove && !e.currentTarget.innerText.trim()) {
           e.preventDefault();
+          // Leave the box first, so the boxes below show their new text once this one is gone.
+          e.currentTarget.blur();
           onRemove();
         }
       }}
@@ -170,6 +172,37 @@ function Edit({
 function BlockView({ value, onChange, canEdit, label }: { value: Json; onChange: (v: Json) => void; canEdit: boolean; label: string }) {
   if (typeof value === "string") return <Edit value={value} onChange={onChange} canEdit={canEdit} label={label} multiline />;
   if (typeof value === "number" || typeof value === "boolean" || value == null) return <span className="text-ink/70">{String(value ?? "")}</span>;
+  // A table ({ head, rows }) is shown as a table, each cell edited in place.
+  const t = value as { head?: Json; rows?: Json };
+  if (t && typeof t === "object" && !Array.isArray(t) && Array.isArray(t.head) && Array.isArray(t.rows) && (t.rows as Json[]).every(Array.isArray)) {
+    const head = t.head as Json[];
+    const rows = t.rows as Json[][];
+    const cell = (v: Json, l: string, set: (nv: Json) => void) => (typeof v === "string" ? <Edit value={v} onChange={set} canEdit={canEdit} label={l} /> : <span>{String(v ?? "")}</span>);
+    return (
+      <table className="w-full border-collapse text-left">
+        <thead>
+          <tr>
+            {head.map((h, i) => (
+              <th key={i} className="border-b-2 border-gold-500 px-[0.8cqw] py-[0.4cqw] font-semibold">
+                {cell(h, `${label}, column ${i + 1} heading`, (nv) => onChange({ ...t, head: head.map((x, j) => (j === i ? nv : x)) }))}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((r, ri) => (
+            <tr key={ri} className="border-b border-gold-light">
+              {r.map((v, ci) => (
+                <td key={ci} className="px-[0.8cqw] py-[0.4cqw] align-top">
+                  {cell(v, `${label}, row ${ri + 1} column ${ci + 1}`, (nv) => onChange({ ...t, rows: rows.map((x, j) => (j === ri ? x.map((y, k) => (k === ci ? nv : y)) : x)) }))}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    );
+  }
   if (Array.isArray(value)) {
     return (
       <ol className="space-y-[0.4cqw] pl-[2cqw]">
@@ -766,6 +799,16 @@ export function LessonStudio({
           {/* The editable preview (also what "Download PDF" prints) */}
           <div className="min-h-0 flex-1 overflow-y-auto bg-gold-50/60 p-3 sm:p-5">
             {!c && !error && <p className="text-sm text-ink/65">Opening…</p>}
+            {openNotes.length > 0 && (
+              <details className="mx-auto mb-4 max-w-4xl rounded-xl border border-amber-200 bg-white p-3 lg:hidden" open={!!feedback}>
+                <summary className="cursor-pointer text-sm font-semibold text-ink">Feedback on this lesson ({openNotes.length})</summary>
+                <ul className="mt-2 space-y-2">
+                  {openNotes.map((f) => (
+                    <FeedbackItem key={f.id} f={f} compact onChanged={(nf) => setNotes((n) => n.map((x) => (x.id === nf.id ? nf : x)))} />
+                  ))}
+                </ul>
+              </details>
+            )}
             <div ref={printRef} className="mx-auto max-w-4xl space-y-6">
               {c && tab === "slides" && (
                 <>
@@ -836,7 +879,7 @@ function BuildPanel({ build, stale, files, customDeck, onDownload, onPrint }: { 
     ];
     return (
       <div className="flex flex-wrap items-center gap-2 rounded-lg border border-green-200 bg-green-50 px-3 py-2">
-        <Icon name="circleCheck" size="sm" className="text-green-800" />
+        <Icon name="circleCheck" className="h-4 w-4 text-green-800" />
         <span className="font-semibold text-green-900">{customDeck ? "Your lesson plan is ready." : "Your new slides are ready."}</span>
         {build.message && <span className="text-green-900">{build.message}</span>}
         <span className="flex flex-wrap gap-1.5">
