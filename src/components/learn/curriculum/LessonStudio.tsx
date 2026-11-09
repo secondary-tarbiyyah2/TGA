@@ -45,12 +45,14 @@ function slideList(c: Content): { key: string; label: string }[] {
     { key: "title", label: "Title" },
     { key: "objectives", label: "Objectives" },
     ...(c.hook ? [{ key: "hook", label: "Hook" }] : []),
+    ...(c.islamicLink && (c.islamicLink as Obj).at !== "end" ? [{ key: "islamic", label: "Islamic foundation" }] : []),
     ...(Array.isArray(c.keywords) && c.keywords.length ? [{ key: "keywords", label: "Key words" }] : []),
     { key: "starter", label: "Starter" },
     ...(c.teach || []).map((t, i) => ({ key: `teach:${i}`, label: (t as Slide).heading || `Teaching slide ${i + 1}` })),
     { key: "practice", label: "Guided practice" },
     { key: "independent", label: "Independent" },
     { key: "exit", label: "Exit ticket" },
+    ...(c.islamicLink && (c.islamicLink as Obj).at === "end" ? [{ key: "islamic", label: "Islamic position" }] : []),
     { key: "homework", label: "Homework" },
   ];
 }
@@ -543,6 +545,15 @@ export function LessonStudio({
           ) : undefined,
       };
     }
+    if (key === "islamic" && c.islamicLink)
+      return {
+        body: (
+          <div className="flex h-full flex-col justify-center">
+            <p className="mb-[1.5cqw] font-serif text-[3.4cqw] font-semibold">{(c.islamicLink as Obj).at === "end" ? "The Islamic position" : "The Islamic foundation"}</p>
+            <Edit value={str((c.islamicLink as Obj).text)} onChange={(v) => up((x) => ((x.islamicLink as Obj).text = v))} canEdit={edit} label="Islamic link" multiline className="text-[2.6cqw]" />
+          </div>
+        ),
+      };
     if (key === "keywords")
       return {
         body: (

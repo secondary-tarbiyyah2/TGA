@@ -37,7 +37,7 @@ import { generateToken, hashToken } from "../_shared/manageToken.ts";
 import { toPublic } from "../_shared/assess/core.ts";
 import { type BreakRules, breakRulesFor, buildForm, type Form, newSeed, type SectionKey } from "../_shared/assess/form.ts";
 import { type BandName, buildReport, type Responses, type TeacherMarks } from "../_shared/assess/score.ts";
-import { type AssessEvent, type BreakLog, summariseIntegrity } from "../_shared/assess/integrity.ts";
+import { type AssessEvent, type BreakLog, type SectionLog, countLeaves, summariseIntegrity } from "../_shared/assess/integrity.ts";
 import { aiMarkWriting, BANDS, bandOfMean, estimateWriting, redactNames, WRITING_STRANDS, type WritingMark } from "../_shared/assess/writing.ts";
 
 declare const EdgeRuntime: { waitUntil(p: Promise<unknown>): void } | undefined;
@@ -58,11 +58,12 @@ const CLIENT_EVENTS = ["hidden", "visible", "blur", "focus", "resize", "copy", "
 type Row = {
   id: string; application_id: string | null; child_id: string | null; candidate_name: string; year: number; dob: string | null;
   eal: boolean; send_notes: string | null; access: Record<string, unknown>; seed: number; form: Form; token_hash: string | null; expires_at: string;
-  status: string; section_index: number; section_started_at: string | null; sections_log: { key: string; started: string; ended: string; timedOut: boolean }[];
+  status: string; section_index: number; section_started_at: string | null; sections_log: SectionLog[];
   responses: Responses & Record<string, { value: unknown; ms?: number; t?: string; g?: number; n?: number }>; events: AssessEvent[]; marks: TeacherMarks; report: unknown;
   started_at: string | null; submitted_at: string | null; breaks: BreakLog[] | null; break_started_at: string | null; device: string | null;
 };
-type Access = { extraTimePct?: number; readAloud?: boolean; largeText?: boolean; breaks?: Partial<BreakRules>; other?: string };
+/** leaveLimit: end the running part once the pupil has left it this many times (staff choice, off by default). */
+type Access = { extraTimePct?: number; readAloud?: boolean; largeText?: boolean; breaks?: Partial<BreakRules>; other?: string; leaveLimit?: number };
 
 const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const linkFor = (token: string) => `${LEARN}/assessment/?t=${token}`;
@@ -128,12 +129,12 @@ async function enforceTime(row: Row): Promise<Row> {
   return await closeSection(row, true);
 }
 
-async function closeSection(row: Row, timedOut: boolean): Promise<Row> {
+async function closeSection(row: Row, timedOut: boolean, leftLimit = false): Promise<Row> {
   const cur = currentSection(row);
   if (!cur) return row;
   const t = nowIso();
   const breaks = breaksOf(row).map((b) => (b.end ? b : { ...b, end: t }));
-  const log = [...row.sections_log, { key: cur.s.key, started: row.section_started_at || t, ended: t, timedOut }];
+  const log: SectionLog[] = [...row.sections_log, { key: cur.s.key, started: row.section_started_at || t, ended: t, timedOut, ...(leftLimit ? { leftLimit: true } : {}) }];
   const next = candidateSections(row.form).find((x) => x.i > cur.i);
   const patch: Record<string, unknown> = { sections_log: log, breaks, break_started_at: null, section_index: next ? next.i : row.form.sections.length, section_started_at: null };
   if (!next) {
@@ -258,6 +259,9 @@ function publicState(row: Row, session?: string) {
     autoRead: f.autoRead ?? (row.year <= 2 || !!access.readAloud),
     largeText: !!access.largeText,
     breakRules: rules,
+    leaveLimit: access.leaveLimit || null,
+    // Tells the pupil, on the next screen, that the last part was ended for leaving it.
+    lastEndedForLeaving: (() => { const l = row.sections_log[row.sections_log.length - 1]; return l?.leftLimit ? f.sections.find((s) => s.key === l.key)?.title || null : null; })(),
     serverNow: nowIso(),
     sections: f.sections.filter((s) => s.candidate && s.items.length).map((s) => ({ key: s.key, title: s.title, minutes: s.minutes, questions: s.items.length, done: done.has(s.key) })),
   };
@@ -361,7 +365,8 @@ function accessFrom(body: Record<string, unknown>): Access & { breaks: BreakRule
   const breaks = b && (b.perSection !== undefined || b.minutes !== undefined)
     ? { perSection: Math.max(0, Math.min(6, Math.round(Number(b.perSection ?? 0)))), minutes: Math.max(1, Math.min(15, Math.round(Number(b.minutes ?? 3)))) }
     : undefined;
-  return { extraTimePct: extra || undefined, readAloud: !!a.readAloud || undefined, largeText: !!a.largeText || undefined, breaks, other: typeof a.other === "string" ? a.other.slice(0, 200) : undefined };
+  const leaveLimit = Math.max(0, Math.min(20, Math.round(Number(a.leaveLimit) || 0)));
+  return { extraTimePct: extra || undefined, readAloud: !!a.readAloud || undefined, largeText: !!a.largeText || undefined, breaks, other: typeof a.other === "string" ? a.other.slice(0, 200) : undefined, leaveLimit: leaveLimit || undefined };
 }
 
 Deno.serve(async (req) => {
@@ -408,6 +413,20 @@ Deno.serve(async (req) => {
       const detail = typeof body.detail === "string" ? body.detail.replace(/[^\w +\-.]/g, "").slice(0, 40) || undefined : undefined;
       const ev: AssessEvent = { t, type, section: row.section_started_at ? cur?.s.key : undefined, brk: openBreak(row) ? true : undefined, detail };
       await addEvent(row, ev);
+      // Staff can choose to end a part once the pupil has left it N times (access.leaveLimit).
+      const limit = Number(((row.access || {}) as Access).leaveLimit) || 0;
+      if (limit > 0 && cur && row.section_started_at && !ev.brk && (type === "hidden" || type === "blur")) {
+        const left = countLeaves([...(row.events || []), ev], cur.s.key, row.section_started_at);
+        if (left >= limit) {
+          // Re-read first so two events arriving together cannot end two parts.
+          const { data: fresh } = await db.from("entry_assessments").select("*").eq("id", row.id).single();
+          const f = fresh as Row | null;
+          if (f && f.section_index === row.section_index && f.section_started_at === row.section_started_at) {
+            await closeSection(f, false, true);
+            return jsonResponse({ ok: true, ended: true });
+          }
+        }
+      }
       return jsonResponse({ ok: true });
     }
     if (!cur || row.status === "submitted" || row.status === "complete") return jsonResponse(publicState(row));

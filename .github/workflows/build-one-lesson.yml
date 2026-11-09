@@ -57,12 +57,12 @@ jobs:
 
       # LibreOffice for the PDF copies, cached between runs so it installs in seconds.
       - name: Install LibreOffice (for PDF copies)
-        uses: awalsh128/cache-apt-pkgs-action@v1.6.3
+        uses: awalsh128/cache-apt-pkgs-action@553a35bb8ebd9fcabcb1c9451aa4c98e1b4ca8a9 # v1.6.3
         with:
           packages: libreoffice-impress libreoffice-writer fonts-liberation fonts-crosextra-carlito fonts-dejavu-core fonts-noto-core fonts-noto-naskh-arabic
           version: "1"
 
-      - uses: supabase/setup-cli@v1
+      - uses: supabase/setup-cli@1dedf2c611547ede7232d26866dd3c56ab903bbb # v1.7.3
         with:
           version: latest
 
@@ -98,6 +98,22 @@ jobs:
           set -euo pipefail
           node scripts/lessons/one-lesson.mjs prepare "$LESSON_ID" "$RUNNER_TEMP/lessons" | tee "$RUNNER_TEMP/prep.txt"
           grep -E '^(only|lesson)=' "$RUNNER_TEMP/prep.txt" >> "$GITHUB_OUTPUT"
+
+      # Pictures (lessons v3): reuse the full build's downloaded pictures, and look up any new
+      # ones for this lesson. Never blocks the build: slides are built without a missing picture.
+      - name: Restore downloaded lesson pictures
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache/lesson-pictures
+          key: lesson-pictures-${{ hashFiles('content/lesson-pictures.json') }}
+          restore-keys: lesson-pictures-
+
+      - name: Find pictures for this lesson
+        continue-on-error: true
+        timeout-minutes: 3
+        env:
+          LESSONS_DIR: ${{ runner.temp }}/lessons
+        run: node scripts/lessons/pictures.mjs resolve
 
       - name: Build the slides and lesson plan
         env:

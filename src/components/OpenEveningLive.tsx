@@ -178,7 +178,18 @@ export function OpenEveningLive({ initialSettings }: { initialSettings: OpenEven
             </button>
           </div>
         ) : sessions === null ? (
-          <p role="status" aria-live="polite" className="mt-2 text-sm text-ink/65">Loading the upcoming evenings…</p>
+          // Holds the space the list of evenings will take, so the page doesn't jump when it arrives.
+          <div role="status" aria-live="polite">
+            <p className="mt-1 text-sm text-ink/65">Loading the upcoming evenings…</p>
+            <ul className="mt-4 space-y-3" aria-hidden="true">
+              {[0, 1, 2].map((i) => (
+                <li key={i} className="h-[6.5rem] rounded-xl border border-gold-light/60 p-4 sm:h-[5.5rem]">
+                  <span className="block h-4 w-40 rounded bg-gold-50 motion-safe:animate-pulse" />
+                  <span className="mt-2 block h-3.5 w-64 max-w-full rounded bg-gold-50 motion-safe:animate-pulse" />
+                </li>
+              ))}
+            </ul>
+          </div>
         ) : sessions.length === 0 ? (
           loadFailed ? (
             <p className="mt-2 text-sm text-ink/70">

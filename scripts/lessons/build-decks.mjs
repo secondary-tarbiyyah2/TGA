@@ -19,6 +19,13 @@
 // slides (show-me, chat waterfall, Teams poll…), "Check your answers" reveal
 // slides when the lesson gives answers, and a preview of the next lesson.
 //
+// Lessons v3 (deck-v3.mjs): a "ponder" first slide, the online class promise on the
+// title slide, the Islamic link (start or end), one objective set apart from the
+// success-criteria steps, "I do" model slides, Teams poll and poll-answer slides,
+// key words in each teach slide's corner and the unit's topic key words near the end,
+// Wikimedia Commons pictures (pictures.mjs), and a pupil PDF deck per lesson
+// (<NN>-<slug>-pupil.pptx, A4, the slides pupils need plus a worksheet).
+//
 // Text is sized here (fitSize) rather than relying on PowerPoint's autofit,
 // which only kicks in after a teacher edits a box.
 import fs from "node:fs";
@@ -26,7 +33,9 @@ import path from "node:path";
 import { createRequire } from "node:module";
 import { buildPlan } from "./lesson-plan.mjs";
 import { themeFor, makeParts } from "./deck-parts.mjs";
-import { ROUTINES, itemQ, itemA, hasAnswers, phaseMinutes, routineFor } from "../../src/lib/learn/lessonSchema.mjs";
+import { makeV3 } from "./deck-v3.mjs";
+import { readCache as readPictures, picturesFor } from "./pictures.mjs";
+import { BLOCKS, ISLAMIC_SUBJECTS, ROUTINES, itemQ, itemA, itemModel, itemOptions, hasAnswers, phaseMinutes, routineFor } from "../../src/lib/learn/lessonSchema.mjs";
 import { retiredChecker } from "./retired.mjs";
 
 // Cross-curricular hubs: lessons that teach a hub's spec unit get a "Connect it" slide (see content/syllabus/matrices/hubs.json).
@@ -65,6 +74,16 @@ const args = process.argv.slice(2);
 const outDir = path.resolve(args.find((a) => !a.startsWith("--")) || path.join(ROOT, "out/decks"));
 const only = (args.find((a) => a.startsWith("--only=")) || "").slice(7);
 const limit = Number((args.find((a) => a.startsWith("--limit=")) || "").slice(8)) || Infinity;
+// ONLY_LESSONS="english/y2/2,science/y8/1": build just these lessons (previews and checks).
+const ONLY_LESSONS = process.env.ONLY_LESSONS ? new Set(process.env.ONLY_LESSONS.split(",").map((x) => x.trim())) : null;
+// The pupil PDF (all the slides pupils need plus a worksheet) is opened from this portal page,
+// which checks the pupil is signed in and in that year (src/app/learn/lesson-pdf).
+const PUPIL_PDF_URL = process.env.PUPIL_PDF_URL || "https://learn.tarbiyyah.co.uk/lesson-pdf/";
+const pupilUrlFor = (subject, year, n) => `${PUPIL_PDF_URL}?s=${encodeURIComponent(subject)}&y=${encodeURIComponent(year)}&n=${n}`;
+// A4 landscape for the pupil PDF: each slide is scaled to fit, with a name line above it.
+const A4 = { w: 11.69, h: 8.27 };
+const PK = A4.w / 13.33;
+const PTOP = 0.62;
 
 // ── Brand ────────────────────────────────────────────────────────────────
 const INK = "1B1E21";
@@ -154,8 +173,11 @@ const slug = (s) => clean(s).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/
  */
 function fitSize(texts, w, h, max, min, gapPt = 8) {
   const list = (Array.isArray(texts) ? texts : [texts]).map(clean).filter(Boolean);
+  // The longest word must fit on one line: a word is never broken in the middle ("trie / d").
+  const longest = Math.max(1, ...list.flatMap((t) => t.split(" ").map((x) => x.length)));
   for (let size = max; size > min; size -= 1) {
     const charsPerLine = Math.max(4, Math.floor((w * 72 - 16) / (size * 0.48)));
+    if (longest * size * 0.56 > w * 72 - 16) continue;
     let lines = 0;
     for (const t of list) {
       // Word-wrap estimate.
@@ -253,12 +275,14 @@ function timerBadge(slide, ctx, minutes, right, y) {
  * Slide header: kicker, title, journey tracker, and on task slides a timer
  * badge (`minutes`) and a routine badge (`routine`, e.g. "show-me").
  */
-function header(slide, ctx, title, kicker, stage, minutes, routine) {
+function header(slide, ctx, title, kicker, stage, minutes, routine, terms) {
   const B = BAND[ctx.band];
   slide.background = { color: ctx.band === "early" ? "FFFBF3" : "FFFFFF" };
   slide.addShape("rect", { x: 0, y: 0, w: 0.28, h: 7.05, fill: { color: ctx.accent }, line: { color: ctx.accent, width: 0 } });
   if (kicker) slide.addText(kicker.toUpperCase(), { x: 0.8, y: 0.3, w: 6.2, h: 0.3, fontFace: FONT, fontSize: 13, bold: true, color: ctx.accent, charSpacing: 3 });
   let right = 12.6;
+  // Lessons v3: the key words used on this slide, in a small box in the corner.
+  if (terms && terms.length) right -= v3.keywordCorner(slide, ctx, terms, right, 0.98) + 0.15;
   if (minutes) right -= timerBadge(slide, ctx, minutes, right, 1.0) + 0.15;
   if (routine && ROUTINES[routine]) {
     const w = parts.routineWidth(routine);
@@ -423,6 +447,9 @@ function starIcon(slide, x, y, size, color) {
   slide.addShape("star8", { x, y, w: size, h: size, fill: { color }, line: { color, width: 0 } });
 }
 
+/** True when a teach slide carries a block (model, check, chart…). */
+const BLOCKS_IN = (t) => BLOCKS.some((k) => t && t[k] != null);
+
 const STEP_WORDS = /^(first|firstly|then|next|after|finally|lastly|step \d|\d+\s*[.)])/i;
 function chooseLayout(ctx, t, i) {
   const bullets = t.bullets || [];
@@ -530,6 +557,7 @@ function tajweedKeySlide(pptx, ctx) {
 }
 
 const parts = makeParts({ fitSize, clean, FONT, INK, MUTED, GOLD, GOLD_DARK, GOLD_SOFT, CREAM, LINE });
+// v3 is made after hookIcon (below) is defined: see makeV3 call after hookSlide.
 
 // ── Hook, answers and routines ───────────────────────────────────────────────
 
@@ -616,6 +644,8 @@ function hookSlide(pptx, ctx, lesson) {
   return s;
 }
 
+const v3 = makeV3({ header, fitSize, textHeight, clean, fw, khatam, hookIcon, parts, FONT, INK, MUTED, GOLD, GOLD_DARK, GOLD_SOFT, CREAM, LINE, PLAY, BAND });
+
 /** A thin strip saying how to answer (routine icon, name and what pupils do). */
 function routineStrip(s, ctx, id, y, h = 0.6) {
   const r = ROUTINES[id];
@@ -678,9 +708,18 @@ function answersSlide(pptx, ctx, items, { kicker, stage, labels, teacherOnly, ti
 }
 
 // ── The deck ───────────────────────────────────────────────────────────────
-function buildDeck(file, lesson, nextLesson, nav = null) {
+/**
+ * One lesson's deck. `opts`: { pics: picturesFor(lesson), unitKeywords: [{term, def}] for the
+ * unit, pupilUrl: the pupil PDF link, pupil: true to build the pupil PDF's deck instead (A4
+ * landscape, the slides pupils need with a name line, no teacher slides or answers, and a worksheet).
+ */
+function buildDeck(file, lesson, nextLesson, nav = null, opts = {}) {
   const pptx = new PptxGenJS();
-  pptx.layout = "LAYOUT_WIDE"; // 13.33 x 7.5
+  const pupil = !!opts.pupil;
+  if (pupil) {
+    pptx.defineLayout({ name: "A4_LANDSCAPE", width: A4.w, height: A4.h });
+    pptx.layout = "A4_LANDSCAPE";
+  } else pptx.layout = "LAYOUT_WIDE"; // 13.33 x 7.5
   pptx.title = `${file.subject} ${YEAR_LABEL(file.year)} – ${lesson.title}`;
   pptx.author = "Tarbiyyah Global Academy";
   pptx.company = "Tarbiyyah Global Academy";
@@ -707,16 +746,60 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
       return c;
     };
     s.addTable = (rows, opts) => atb(Array.isArray(rows) ? rows.map((r) => (Array.isArray(r) ? r.map(fixCell) : r)) : rows, opts);
+    if (pupil) toA4(s, slideCount);
     return s;
   };
+  /**
+   * Pupil PDF: every slide is drawn at 13.33 x 7.5 inches, so on an A4 page each position, size,
+   * font and line is scaled by PK and moved down by PTOP, under a band with the lesson and a name line.
+   */
+  function toA4(s, page) {
+    const num = (v) => typeof v === "number";
+    const fs = (v) => Math.max(6, Math.round(v * PK * 2) / 2);
+    const sc = (o) => {
+      if (!o || typeof o !== "object") return o;
+      const r = { ...o };
+      for (const k of ["x", "w", "h"]) if (num(r[k])) r[k] *= PK;
+      if (num(r.y)) r.y = r.y * PK + PTOP;
+      for (const k of ["fontSize", "titleFontSize", "legendFontSize", "dataLabelFontSize", "catAxisLabelFontSize", "valAxisLabelFontSize"]) if (num(r[k])) r[k] = fs(r[k]);
+      if (r.line && num(r.line.width)) r.line = { ...r.line, width: r.line.width * PK };
+      if (Array.isArray(r.colW)) r.colW = r.colW.map((v) => v * PK);
+      else if (num(r.colW)) r.colW *= PK;
+      if (Array.isArray(r.rowH)) r.rowH = r.rowH.map((v) => v * PK);
+      else if (num(r.rowH)) r.rowH *= PK;
+      if (num(r.margin)) r.margin *= PK;
+      if (r.border && num(r.border.pt)) r.border = { ...r.border, pt: r.border.pt * PK };
+      return r;
+    };
+    const runs = (t) => (Array.isArray(t) ? t.map((x) => (x && typeof x === "object" && x.options ? { ...x, options: sc(x.options) } : x)) : t);
+    const raw = { text: s.addText.bind(s), shape: s.addShape.bind(s), image: s.addImage.bind(s), table: s.addTable.bind(s), chart: s.addChart.bind(s) };
+    s.addText = (t, o = {}) => raw.text(runs(t), sc(o));
+    s.addShape = (k, o = {}) => raw.shape(k, sc(o));
+    s.addImage = (o = {}) => raw.image(sc(o));
+    s.addTable = (rows, o = {}) => raw.table(Array.isArray(rows) ? rows.map((r) => (Array.isArray(r) ? r.map((c) => (c && typeof c === "object" && c.options ? { ...c, options: sc(c.options) } : c)) : r)) : rows, sc(o));
+    s.addChart = (k, d, o = {}) => raw.chart(k, d, sc(o));
+    // A dark slide background would hide the name line: paint it into the slide's own area instead.
+    Object.defineProperty(s, "background", { configurable: true, set: (v) => v && v.color && raw.shape("rect", { x: 0, y: PTOP, w: A4.w, h: 7.5 * PK, fill: { color: v.color }, line: { color: v.color, width: 0 } }), get: () => undefined });
+    raw.text(`${file.subject} · ${YEAR_LABEL(file.year)} · Lesson ${lesson.n}: ${clean(lesson.title)}`, { x: 0.35, y: 0.12, w: 6.6, h: 0.36, fontFace: FONT, fontSize: 10, color: MUTED, valign: "middle", fit: "shrink" });
+    raw.text(page === 1 ? "Name: ________________________   Date: ____________" : "Name: ________________________", { x: 6.9, y: 0.12, w: 4.45, h: 0.36, fontFace: FONT, fontSize: 11, bold: true, color: INK, align: "right", valign: "middle" });
+    raw.shape("line", { x: 0.35, y: 0.52, w: A4.w - 0.7, h: 0, line: { color: LINE, width: 0.75 } });
+    raw.shape("rect", { x: 0, y: PTOP, w: A4.w, h: 7.5 * PK, fill: { color: "FFFFFF", transparency: 100 }, line: { color: LINE, width: 0.75 } });
+    raw.text(`Tarbiyyah Global Academy · Lesson PDF · page ${page}`, { x: 0.35, y: A4.h - 0.5, w: A4.w - 0.7, h: 0.3, fontFace: FONT, fontSize: 9, color: MUTED, align: "center" });
+  }
   const S = { teach: [] };
   let breaksAdded = 0;
   const subjectSlug = path.basename(path.dirname(file.path));
   const band = bandFor(file.year);
   const B = BAND[band];
   const theme = themeFor(subjectSlug);
-  const ctx = { band, enquiry: band !== "early" || file.year === "y3", n: lesson.n, theme, accent: theme.accent || ACCENTS[subjectSlug] || TEAL, mathy: /^(mathematics|science|gcse-science|business)$/.test(subjectSlug), subjectLabel: file.subject, yearLabel: YEAR_LABEL(file.year), nav: nav || null, rec: { stage: {}, stageTitle: {}, agenda: null, close: null }, slideNo: () => slideCount };
+  const ctx = { band, enquiry: band !== "early" || file.year === "y3", n: lesson.n, theme, accent: theme.accent || ACCENTS[subjectSlug] || TEAL, mathy: /^(mathematics|science|gcse-science|business)$/.test(subjectSlug), subjectLabel: file.subject, yearLabel: YEAR_LABEL(file.year), yearKey: file.year, nav: nav || null, rec: { stage: {}, stageTitle: {}, agenda: null, close: null }, slideNo: () => slideCount, pupil, pupilUrl: pupil ? null : opts.pupilUrl || null };
+  const pics = opts.pics || [];
+  const picFor = (where) => pics.find((p) => p.for === where) || null;
+  const ponder = lesson.hook && lesson.hook.type === "ponder" && lesson.hook.text ? lesson.hook : null;
+  S.polls = [];
   const quran = subjectSlug === "quran";
+  // Lessons v3: the Arabic bismillah heading on the title slide only in Qur'an, Islamic Studies and Arabic.
+  const islamicSubject = ISLAMIC_SUBJECTS.includes(subjectSlug);
   const ks4 = file.year === "y10" || file.year === "y11";
   const duration = lesson.duration || defaultDuration(file.year);
   ctx.duration = duration;
@@ -727,16 +810,20 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
   const nextBreak = () => breaks[breakNo++ % breaks.length];
 
   // Footer on a master so the logo is stored once in the file.
+  const M = (o) => (pupil ? { ...o, x: o.x * PK, y: o.y * PK + PTOP, w: o.w * PK, h: o.h * PK, ...(o.fontSize ? { fontSize: Math.round(o.fontSize * PK) } : {}), ...(o.charSpacing ? { charSpacing: 1 } : {}) } : o);
   pptx.defineSlideMaster({
     title: "TGA_CONTENT",
     background: { color: "FFFFFF" },
     objects: [
-      { rect: { x: 0, y: 7.05, w: W, h: 0.45, fill: { color: "FFFFFF" }, line: { color: "E5E5E5", width: 0.5 } } },
-      { text: { text: "TARBIYYAH GLOBAL ACADEMY", options: { x: 0.45, y: 7.1, w: 2.5, h: 0.34, fontFace: FONT, fontSize: 9, bold: true, color: GOLD_DARK, charSpacing: 2, valign: "middle" } } },
-      { text: { text: `${ctx.subjectLabel} · ${ctx.yearLabel} · Lesson ${lesson.n}`, options: { x: 3.1, y: 7.1, w: 6.9, h: 0.34, fontFace: FONT, fontSize: 11, color: MUTED, valign: "middle" } } },
+      { rect: M({ x: 0, y: 7.05, w: W, h: 0.45, fill: { color: "FFFFFF" }, line: { color: "E5E5E5", width: 0.5 } }) },
+      { text: { text: "TARBIYYAH GLOBAL ACADEMY", options: M({ x: 0.45, y: 7.1, w: 2.5, h: 0.34, fontFace: FONT, fontSize: 9, bold: true, color: GOLD_DARK, charSpacing: 2, valign: "middle" }) } },
+      { text: { text: `${ctx.subjectLabel} · ${ctx.yearLabel} · Lesson ${lesson.n}`, options: M({ x: 3.1, y: 7.1, w: 6.9, h: 0.34, fontFace: FONT, fontSize: 11, color: MUTED, valign: "middle" }) } },
     ],
-    slideNumber: { x: 12.2, y: 7.1, w: 0.7, h: 0.34, fontFace: FONT, fontSize: 11, color: MUTED, align: "right" },
+    ...(pupil ? {} : { slideNumber: { x: 12.2, y: 7.1, w: 0.7, h: 0.34, fontFace: FONT, fontSize: 11, color: MUTED, align: "right" } }),
   });
+
+  // 0. Ponder (lessons v3): the first slide, on screen while pupils join.
+  if (ponder) S.ponder = (v3.ponderSlide(pptx, ctx, lesson, picFor("hook")), slideCount);
 
   // 1. Title ---------------------------------------------------------------
   {
@@ -747,38 +834,42 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
         s.addShape("ellipse", { x, y, w: d, h: d, fill: { color: PLAY[c].solid, transparency: 25 }, line: { color: PLAY[c].solid, width: 0, transparency: 25 } }),
       );
       s.addImage({ path: LOGO_DARK, x: 1.0, y: 0.55, w: 0.7 * LOGO_RATIO, h: 0.7 });
-      s.addText("بسم الله الرحمن الرحيم", { x: 5.6, y: 0.6, w: 4.8, h: 0.6, fontFace: "Arial", fontSize: 24, color: GOLD_DARK, align: "right", rtlMode: true });
+      if (islamicSubject) s.addText("بسم الله الرحمن الرحيم", { x: 5.6, y: 0.6, w: 4.8, h: 0.6, fontFace: "Arial", fontSize: 24, color: GOLD_DARK, align: "right", rtlMode: true });
       const chip = `Mission ${lesson.n} · ${file.subject} · ${ctx.yearLabel}`;
       const chipW = Math.min(7.6, 0.6 + (chip.length * 18 * 0.5) / 72);
       s.addShape("roundRect", { x: 1.0, y: 1.75, w: chipW, h: 0.55, rectRadius: 0.27, fill: { color: ctx.accent }, line: { color: ctx.accent, width: 0 } });
       s.addText(chip, { x: 1.0, y: 1.75, w: chipW, h: 0.55, fontFace: FONT, fontSize: 18, bold: true, color: "FFFFFF", align: "center", valign: "middle" });
       s.addText(lesson.title, { x: 1.0, y: 2.55, w: 7.6, h: 2.6, fontFace: FONT, fontSize: fitSize(lesson.title, 7.6, 2.5, 56, 30), bold: true, color: INK, valign: "top" });
-      khatam(s, 8.9, 2.1, 3.3);
-      s.addShape("roundRect", { x: 8.6, y: 5.55, w: 3.9, h: 0.95, rectRadius: 0.45, fill: { color: "FFFFFF" }, line: { color: "F2B33D", width: 2 } });
-      s.addText("Let's learn!", { x: 8.75, y: 5.6, w: 3.6, h: 0.85, fontFace: FONT, fontSize: 18, bold: true, color: INK, align: "center", valign: "middle" });
-      s.addText(`Lesson ${lesson.n}`, { x: 1.0, y: 5.4, w: 7, h: 0.45, fontFace: FONT, fontSize: 18, color: MUTED });
+      khatam(s, 9.0, 1.9, 3.0);
+      s.addShape("roundRect", { x: 8.75, y: 5.1, w: 3.5, h: 0.8, rectRadius: 0.4, fill: { color: "FFFFFF" }, line: { color: "F2B33D", width: 2 } });
+      s.addText("Let's learn!", { x: 8.9, y: 5.1, w: 3.2, h: 0.8, fontFace: FONT, fontSize: 18, bold: true, color: INK, align: "center", valign: "middle" });
+      if (ponder || !ctx.pupilUrl) s.addText(`Lesson ${lesson.n}`, { x: 1.0, y: 5.3, w: 7, h: 0.45, fontFace: FONT, fontSize: 18, color: MUTED });
+      else v3.pdfLink(s, ctx, 1.0, 5.25, 7.0, false);
+      v3.promiseStrip(s, ctx, 6.35, false);
     } else {
       s.background = { color: theme.dark };
       s.addShape("rect", { x: 0, y: 0, w: 0.5, h: 7.5, fill: { color: ctx.accent }, line: { color: ctx.accent, width: 0 } });
       s.addShape("rect", { x: 0.5, y: 0, w: 0.06, h: 7.5, fill: { color: GOLD }, line: { color: GOLD, width: 0 } });
-      parts.motif(s, theme, { x: 9.0, y: 1.65, w: 4.0, h: 4.85 });
+      parts.motif(s, theme, { x: 9.0, y: 1.5, w: 4.0, h: 4.75 });
       s.addImage({ path: LOGO_WHITE, x: 1.0, y: 0.6, w: 0.8 * LOGO_RATIO, h: 0.8 });
-      s.addText("بسم الله الرحمن الرحيم", { x: 7.3, y: 0.7, w: 5.5, h: 0.7, fontFace: "Arial", fontSize: 26, color: "E3C98F", align: "right", rtlMode: true });
+      if (islamicSubject) s.addText("بسم الله الرحمن الرحيم", { x: 7.3, y: 0.7, w: 5.5, h: 0.7, fontFace: "Arial", fontSize: 26, color: "E3C98F", align: "right", rtlMode: true });
       const chip = band === "junior" ? `MISSION ${lesson.n}  ·  ${file.subject.toUpperCase()}  ·  ${ctx.yearLabel.toUpperCase()}` : `${file.subject.toUpperCase()}  ·  ${ctx.yearLabel.toUpperCase()}${ks4 && (file.examShort || file.exam) ? `  ·  EXAM: ${clean(file.examShort || file.exam).toUpperCase()}` : ks4 && (lesson.boardShort || lesson.board || file.boardShort || file.board) ? `  ·  ${clean(lesson.boardShort || lesson.board || file.boardShort || file.board).toUpperCase()}` : ""}`;
       s.addText(chip, { x: 1.0, y: 2.2, w: 7.9, h: 0.45, fontFace: FONT, fontSize: Math.min(16, fitSize(chip, 7.0, 0.42, 16, 9)), bold: true, color: "E3C98F", charSpacing: 3, fit: "shrink" });
       s.addText(lesson.title, { x: 1.0, y: 2.75, w: 7.8, h: 2.0, fontFace: theme.head, fontSize: fitSize(lesson.title, fw(7.8, theme.head), 2.0, 46, 22), bold: true, color: "FFFFFF", valign: "top" });
       s.addText(clean(lesson.unit), { x: 1.0, y: 4.9, w: 7.8, h: 0.5, fontFace: FONT, fontSize: fitSize(lesson.unit, 7.8, 0.5, 20, 12), color: "D9D4C7" });
       s.addText(`Lesson ${lesson.n}`, { x: 1.0, y: 5.45, w: 7.8, h: 0.4, fontFace: FONT, fontSize: 15, color: "B9B3A5" });
-      s.addText("Tarbiyyah Global Academy  ·  A British education, rooted in faith", { x: 1.0, y: 6.7, w: 7.8, h: 0.35, fontFace: FONT, fontSize: 13, color: "B9B3A5" });
+      if (ponder || !ctx.pupilUrl) s.addText("Tarbiyyah Global Academy  ·  A British education, rooted in faith", { x: 1.0, y: 5.9, w: 7.8, h: 0.35, fontFace: FONT, fontSize: 13, color: "B9B3A5" });
+      else v3.pdfLink(s, ctx, 1.0, 5.85, 7.6, true);
+      v3.promiseStrip(s, ctx, 6.5, true);
     }
-    s.addNotes(`Lesson ${lesson.n}: ${clean(lesson.title)}. ${clean(lesson.unit)}.`);
+    s.addNotes(`Lesson ${lesson.n}: ${clean(lesson.title)}. ${clean(lesson.unit)}. Our online class promise: cameras on, mic muted until asked, respect and kind words, stay on this lesson's window, try your best. Remind pupils of it briefly; praise those keeping it.${ctx.pupilUrl ? ` Today's lesson PDF: ${ctx.pupilUrl}` : ""}`);
   }
 
   // 1a. The hook: grabs attention in the first minute, before the lesson map.
-  if (lesson.hook && lesson.hook.text) S.hook = (hookSlide(pptx, ctx, lesson), slideCount);
+  if (lesson.hook && lesson.hook.text && !ponder) S.hook = (hookSlide(pptx, ctx, lesson), slideCount);
 
   // 1b. The big question: the lesson's enquiry, revisited at the exit ticket.
-  if (lesson.bigQuestion && ctx.enquiry) {
+  if (lesson.bigQuestion && ctx.enquiry && !ponder) {
     const s = pptx.addSlide();
     s.background = { color: theme.dark };
     s.addShape("rect", { x: 0, y: 0, w: 0.28, h: 7.5, fill: { color: ctx.accent }, line: { color: ctx.accent, width: 0 } });
@@ -792,8 +883,12 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
     s.addNotes(`Read the question aloud and take two or three first ideas. Do not answer it yet: pupils return to it at the exit ticket, which is where progress is evidenced.${lesson.smsc ? ` SMSC: ${clean(lesson.smsc)}` : ""}`);
   }
 
-  // 1c. Lesson map: every stage of the lesson, each one a link to its first slide.
-  {
+  // 1c. Lessons v3: the Islamic foundation, then one objective (the destination) and its steps.
+  if (lesson.islamicLink && lesson.islamicLink.text && lesson.islamicLink.at !== "end") S.islamicStart = (v3.islamicSlide(pptx, ctx, lesson.islamicLink), slideCount);
+  S.objectives = (v3.destinationSlide(pptx, ctx, lesson), slideCount);
+
+  // 1d. Lesson map: every stage of the lesson, each one a link to its first slide (not in the pupil PDF).
+  if (!pupil) {
     const s = pptx.addSlide();
     ctx.rec.agenda = slideCount;
     const dark = band !== "early";
@@ -821,76 +916,39 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
     s.addNotes("Show the lesson map at the start so pupils can see the journey. Each stage name is a link: use it to jump, for example straight to the independent task. The Lesson map link at the bottom of every slide returns here.");
   }
 
-  // 2. Objectives ------------------------------------------------------------
-  {
-    const s = pptx.addSlide({ masterName: "TGA_CONTENT" });
-    header(s, ctx, B.objectivesTitle, B.objectivesKicker, null);
-    const objs = (lesson.objectives || []).slice(0, 5);
-    const area = { x: 0.8, y: 2.15, w: band === "senior" ? 8.4 : 11.8, h: 4.6 };
-    const gap = 0.2;
-    const h = Math.min(1.35, (area.h - gap * (objs.length - 1)) / objs.length);
-    const size = Math.min(...objs.map((o) => fitSize(o, area.w - 1.3, h - 0.1, B.bodyMax - (band === "early" ? 4 : 2), B.bodyMin)));
-    objs.forEach((o, i) => {
-      const y = area.y + i * (h + gap);
-      if (band === "early") {
-        const p = PLAY[i % PLAY.length];
-        slide_circleNumber(s, area.x, y + h / 2 - 0.42, 0.84, p.solid, String(i + 1));
-        s.addShape("roundRect", { x: area.x + 1.1, y, w: area.w - 1.1, h, rectRadius: 0.15, fill: { color: p.tint }, line: { color: p.solid, width: 1.5 } });
-      } else if (band === "junior") {
-        s.addShape("roundRect", { x: area.x, y: y + h / 2 - 0.3, w: 0.6, h: 0.6, rectRadius: 0.08, fill: { color: "FFFFFF" }, line: { color: ctx.accent, width: 2.5 } });
-        s.addShape("roundRect", { x: area.x + 1.1, y, w: area.w - 1.1, h, rectRadius: 0.1, fill: { color: i % 2 ? "FFFFFF" : CREAM }, line: { color: LINE, width: 0.75 } });
-      } else {
-        s.addText(String(i + 1).padStart(2, "0"), { x: area.x, y, w: 0.9, h, fontFace: FONT, fontSize: 28, bold: true, color: ctx.accent, valign: "middle" });
-        s.addShape("line", { x: area.x + 1.1, y: y + h, w: area.w - 1.1, h: 0, line: { color: LINE, width: 1 } });
-      }
-      s.addText(clean(o), { x: area.x + 1.3, y, w: area.w - 1.5, h, fontFace: FONT, fontSize: size, bold: band === "early", color: INK, valign: "middle" });
-    });
-    const sc = (lesson.successCriteria || []).map(clean).filter(Boolean).slice(0, 3);
-    if (band === "senior" && sc.length) {
-      // School standard: success criteria differentiated for all / most / some.
-      s.addShape("roundRect", { x: 9.6, y: 2.15, w: 3.0, h: 4.6, rectRadius: 0.12, fill: { color: theme.soft }, line: { color: theme.soft, width: 0 } });
-      s.addText("SUCCESS CRITERIA", { x: 9.85, y: 2.3, w: 2.5, h: 0.3, fontFace: FONT, fontSize: 12, bold: true, color: ctx.accent, charSpacing: 2 });
-      const tiers = ["All", "Most", "Some"];
-      const rowH = 3.85 / sc.length;
-      const size = Math.min(...sc.map((x) => fitSize(x, 2.5, rowH - 0.4, 15, 10)));
-      sc.forEach((x, i) => {
-        const y = 2.7 + i * rowH;
-        s.addShape("roundRect", { x: 9.85, y, w: 0.85, h: 0.3, rectRadius: 0.15, fill: { color: i === 0 ? ctx.accent : i === 1 ? theme.dark : GOLD_DARK }, line: { color: "FFFFFF", width: 0 } });
-        s.addText(tiers[i], { x: 9.85, y, w: 0.85, h: 0.3, fontFace: FONT, fontSize: 11, bold: true, color: "FFFFFF", align: "center", valign: "middle" });
-        s.addText(x, { x: 9.85, y: y + 0.33, w: 2.55, h: rowH - 0.4, fontFace: FONT, fontSize: size, color: INK, valign: "top" });
-      });
-    } else if (band === "senior") {
-      s.addShape("roundRect", { x: 9.6, y: 2.15, w: 3.0, h: 4.6, rectRadius: 0.12, fill: { color: TEAL_SOFT }, line: { color: TEAL_SOFT, width: 0 } });
-      s.addText("THE BIG PICTURE", { x: 9.85, y: 2.35, w: 2.5, h: 0.3, fontFace: FONT, fontSize: 12, bold: true, color: TEAL, charSpacing: 2 });
-      s.addText(clean(lesson.unit), { x: 9.85, y: 2.75, w: 2.5, h: 1.9, fontFace: FONT, fontSize: fitSize(lesson.unit, 2.5, 1.9, 20, 12), bold: true, color: INK, valign: "top" });
-      // examShort: the International GCSE pupils sit when the course is taught from a UK GCSE specification.
-      const boardText = ks4 && (file.examShort || file.exam) ? `Exam: ${clean(file.examShort || file.exam)}` : ks4 && (lesson.board || file.board) ? `Exam board: ${clean(lesson.boardShort || lesson.board || file.boardShort || file.board)}` : `Lesson ${lesson.n}`;
-      s.addText(boardText, { x: 9.85, y: 4.8, w: 2.5, h: 0.4, fontFace: FONT, fontSize: fitSize(boardText, 2.5, 0.4, 14, 10), color: TEAL, bold: true });
-      s.addText(nextLesson ? `Builds towards: ${clean(nextLesson.title)}` : "End of this sequence", { x: 9.85, y: 5.25, w: 2.5, h: 1.3, fontFace: FONT, fontSize: fitSize(nextLesson ? nextLesson.title + "Builds towards: " : "x", 2.5, 1.3, 14, 10), color: MUTED, valign: "top" });
-    }
-    const extras = [lesson.crossCurricular ? `Cross-curricular links: ${clean(lesson.crossCurricular)}` : "", lesson.smsc ? `SMSC: ${clean(lesson.smsc)}` : ""].filter(Boolean).join(" ");
-    s.addNotes(`${band === "junior" ? "Read the mission goals together. Pupils can tick each box at the end of the lesson when they feel confident." : `Share the objectives${sc.length ? " and the success criteria: every pupil aims for 'All', most reach 'Most', some reach 'Some'" : ""}, and refer back to them at the exit ticket.`}${extras ? ` ${extras}` : ""}`);
-  }
-
   // 3. Key words -------------------------------------------------------------
   if (keywords.length) {
     const s = pptx.addSlide({ masterName: "TGA_CONTENT" });
     header(s, ctx, B.wordsTitle, B.wordsKicker, null);
     const words = keywords.slice(0, band === "early" ? 4 : 6);
+    // Lessons v3: a picture of a key word goes in that word's card (else the next card without one).
+    const kwPics = pics.filter((p) => p.for === "keywords");
+    const cardPic = new Map();
+    for (const p of kwPics) {
+      const txt = `${p.alt} ${p.find}`.toLowerCase();
+      const i = words.findIndex((k, j) => !cardPic.has(j) && txt.includes(clean(k.term).toLowerCase()));
+      const j = i >= 0 ? i : words.findIndex((k, j2) => !cardPic.has(j2));
+      if (j >= 0) cardPic.set(j, p);
+    }
     const cols = words.length <= 2 ? words.length : words.length <= 4 ? 2 : 3;
     const rows = Math.ceil(words.length / cols);
     const gap = 0.25;
-    const w = (11.8 - gap * (cols - 1)) / cols;
+    const cardW = (11.8 - gap * (cols - 1)) / cols;
     const h = (4.7 - gap * (rows - 1)) / rows;
     words.forEach((k, i) => {
-      const x = 0.8 + (i % cols) * (w + gap);
+      const x = 0.8 + (i % cols) * (cardW + gap);
       const y = 2.1 + Math.floor(i / cols) * (h + gap);
+      let w = cardW;
       const p = PLAY[i % PLAY.length];
       const edge = band === "early" ? p.solid : ctx.accent;
-      s.addShape("roundRect", { x, y, w, h, rectRadius: 0.14, fill: { color: band === "early" ? p.tint : "FFFFFF" }, line: { color: band === "senior" ? LINE : edge, width: band === "senior" ? 1 : 2 } });
+      s.addShape("roundRect", { x, y, w: cardW, h, rectRadius: 0.14, fill: { color: band === "early" ? p.tint : "FFFFFF" }, line: { color: band === "senior" ? LINE : edge, width: band === "senior" ? 1 : 2 } });
       s.addShape("rect", { x, y: y + 0.18, w: 0.1, h: h - 0.36, fill: { color: edge }, line: { color: edge, width: 0 } });
       const termH = band === "early" ? h * 0.48 : 0.75;
-      s.addText(clean(k.term), { x: x + 0.35, y: y + 0.12, w: w - 0.6, h: termH, fontFace: FONT, fontSize: fitSize(k.term, w - 0.6, termH, band === "early" ? 44 : 28, 16), bold: true, color: band === "early" ? INK : ctx.accent, valign: "middle" });
+      const pic = cardPic.get(i);
+      const pw = pic ? Math.min(w * 0.42, (h - 0.2) * 1.5) : 0;
+      if (pic) v3.keywordCardPicture(s, pic, x + w - pw - 0.12, y + 0.1, pw, h - 0.2);
+      w -= pw ? pw + 0.15 : 0;
+      s.addText(clean(k.term), { x: x + 0.35, y: y + 0.12, w: w - 0.6, h: termH, fontFace: FONT, fontSize: fitSize(k.term, w - 0.6, termH, band === "early" ? 44 : 28, 11), bold: true, color: band === "early" ? INK : ctx.accent, valign: "middle" });
       s.addText(clean(k.def), { x: x + 0.35, y: y + 0.12 + termH, w: w - 0.6, h: h - termH - 0.25, fontFace: FONT, fontSize: fitSize(k.def, w - 0.6, h - termH - 0.25, band === "early" ? 24 : 20, 12), color: band === "early" ? MUTED : INK, valign: "top" });
     });
     s.addNotes(band === "early" ? "Say each word slowly, clap the syllables, and have the children say it back three times." : band === "junior" ? "Read each word aloud. Ask pupils to use one of them in a sentence during the lesson." : "Pupils should use this vocabulary precisely in written answers. Check pronunciation and spelling.");
@@ -898,13 +956,30 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
 
   if (quran) tajweedKeySlide(pptx, ctx);
 
+  /** Lessons v3: a poll slide (and, for the teacher's deck, its answer slide) for each item. */
+  function pollSlides(items, section, title, stage) {
+    items.forEach((x, i) => {
+      const poll = itemOptions(x);
+      const at = (v3.pollSlide(pptx, ctx, poll, { title, kicker: `${title} · Teams poll${items.length > 1 ? ` ${i + 1} of ${items.length}` : ""}`, stage, mins: phaseMinutes(section, [x], duration), answer: itemA(x) }), slideCount);
+      if (section === "starter" && S.starter == null) S.starter = at;
+      if (section === "exit" && S.exit == null) S.exit = at;
+      const answerAt = !pupil && itemA(x) ? (v3.pollAnswerSlide(pptx, ctx, poll, { kicker: `${title} · poll answer`, stage, answer: itemA(x) }), slideCount) : null;
+      S.polls.push({ section, q: poll.q, options: poll.options, answer: itemA(x), slide: at, answerSlide: answerAt });
+    });
+  }
+
   // 4. Starter ---------------------------------------------------------------
-  {
+  // A Teams poll starter: each question with options gets its own poll slide and answer slide;
+  // any other questions go on the usual starter slide first.
+  const starterAll = (lesson.starter || []).slice(0, 4);
+  const starterPolls = routineFor(lesson, "starter") === "teams-poll" ? starterAll.filter((x) => itemOptions(x)) : [];
+  const starterRest = starterAll.filter((x) => !starterPolls.includes(x));
+  if (starterRest.length) {
     const s = pptx.addSlide({ masterName: "TGA_CONTENT" });
     S.starter = slideCount;
-    const items = (lesson.starter || []).slice(0, 4);
+    const items = starterRest;
     const mins = phaseMinutes("starter", items, duration);
-    const routine = routineFor(lesson, "starter");
+    const routine = starterPolls.length ? "show-me" : routineFor(lesson, "starter");
     header(s, ctx, B.starterTitle, B.starterKicker, 0, mins, routine);
     if (band === "early") {
       khatam(s, 0.9, 2.5, 2.4);
@@ -915,22 +990,34 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
       s.addText(band === "senior" ? `From memory, in silence, no notes. ${how}` : how, { x: 0.8, y: 6.45, w: 11.8, h: 0.4, fontFace: FONT, fontSize: 15, italic: true, color: MUTED });
     }
     s.addNotes(`${band === "early" ? "Keep it warm and lively: greet each child by name. Praise every try." : `Pupils answer from memory, without notes. About ${mins} minutes. Then reveal and correct misconceptions.`}${ROUTINES[routine] ? ` Routine: ${ROUTINES[routine].label}. ${ROUTINES[routine].how}` : ""}`);
-    if (hasAnswers(items)) S.starterAnswers = (answersSlide(pptx, ctx, items, { kicker: `${B.starterTitle} · answers`, stage: 0 }), slideCount);
+    if (hasAnswers(items) && !pupil) S.starterAnswers = (answersSlide(pptx, ctx, items, { kicker: `${B.starterTitle} · answers`, stage: 0 }), slideCount);
   }
+  pollSlides(starterPolls, "starter", B.starterTitle, 0);
 
   // 5. Teach slides ----------------------------------------------------------
   teach.forEach((t, i) => {
+    const pic = picFor(`teach:${i + 1}`);
+    const hasBlock = BLOCKS_IN(t);
+    // A picture for a slide with a block gets its own "Look closely" slide first (no room beside the block).
+    if (pic && hasBlock) (S.pictures = S.pictures || []).push((v3.pictureSlide(pptx, ctx, pic, t.heading, t.check ? 2 : 1), slideCount));
     const s = pptx.addSlide({ masterName: "TGA_CONTENT" });
     S.teach.push(slideCount);
+    const terms = v3.termsIn(t, keywords).slice(0, 3);
     const blockKicker = t.model ? "I do · worked example" : t.check ? "Check for understanding" : t.misconception ? "Common mistake" : t.quote ? "Read closely" : t.code ? "Read the code" : t.chart ? "Read the chart" : t.numberline ? "Number line" : t.fraction ? "Fractions" : t.diagram ? "Concept map" : t.sort ? "Card sort" : null;
     const kicker = band === "early" ? "Let's learn" : blockKicker ? `${blockKicker} · ${i + 1} of ${teach.length}` : band === "junior" ? `Learn · part ${i + 1} of ${teach.length}` : `Explain · ${i + 1} of ${teach.length}`;
     const routine = ROUTINES[t.routine] ? t.routine : t.check ? routineFor(lesson, "hinge") : routineFor(lesson, "teach");
-    header(s, ctx, clean(t.heading), kicker, t.check ? 2 : 1, null, routine);
+    header(s, ctx, clean(t.heading), kicker, t.check ? 2 : 1, null, routine, terms);
     const blockBullets = (t.bullets || []).map(clean).filter(Boolean);
     ctx.slideRoutine = routine;
+    const kwNote = terms.length ? `\n\nKey words on this slide: ${terms.map((k) => `${clean(k.term)} (${clean(k.def)})`).join("; ")}.` : "";
     if (parts.renderBlock(s, ctx, t, blockBullets, { x: 0.8, y: 2.15, w: 11.8, h: 4.7 })) {
-      s.addNotes(clean(t.note) + parts.blockNotes(t) + (ROUTINES[routine] ? `\n\nRoutine: ${ROUTINES[routine].label}. ${ROUTINES[routine].how}` : ""));
-      if (!quran && band !== "senior" && i === Math.min(1, teach.length - 2)) (breakSlide(pptx, ctx, nextBreak()), breaksAdded++);
+      s.addNotes(clean(t.note) + parts.blockNotes(t) + (ROUTINES[routine] ? `\n\nRoutine: ${ROUTINES[routine].label}. ${ROUTINES[routine].how}` : "") + kwNote);
+      // A hinge question run as a Teams poll: the answer slide follows (not in the pupil PDF).
+      if (t.check && routine === "teams-poll" && !pupil) {
+        const poll = { q: t.check.q, options: (t.check.options || []).map(String) };
+        S.polls.push({ section: "hinge", q: poll.q, options: poll.options, answer: `${"ABCD"[Number(t.check.answer)]}) ${clean(poll.options[Number(t.check.answer)])}`, slide: slideCount, answerSlide: (v3.pollAnswerSlide(pptx, ctx, poll, { kicker: "Hinge question · poll answer", stage: 2, index: Number(t.check.answer), why: t.check.why }), slideCount) });
+      }
+      if (!pupil && !quran && band !== "senior" && i === Math.min(1, teach.length - 2)) (breakSlide(pptx, ctx, nextBreak()), breaksAdded++);
       return;
     }
     const rawBullets = blockBullets;
@@ -941,7 +1028,10 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
     // Qur'an decks: when the teacher note quotes the Arabic, show it big on the slide.
     const ar = quran ? (String(t.note || "").match(/[؀-ۿݐ-ݿ][؀-ۿݐ-ݿً-ٰٟ\s،؛؟]{10,}/) || [])[0] : null;
     const withBubble = !!q && !ar;
-    const area = { x: 0.8, y: 2.15, w: 11.8, h: withBubble ? 3.45 : 4.65 };
+    // Lessons v3: a picture for this slide sits on the right; the layout takes the rest.
+    const sidePic = pic && !ar ? pic : null;
+    const area = { x: 0.8, y: 2.15, w: sidePic ? 8.15 : 11.8, h: withBubble ? 3.45 : 4.65 };
+    if (sidePic) v3.picture(s, sidePic, { x: 9.2, y: 2.15, w: 3.4, h: area.h });
     if (ar) {
       layoutSpotlight(s, ctx, bullets, { ...area, h: 2.5 });
       s.addShape("roundRect", { x: 0.8, y: 4.85, w: 11.8, h: 1.95, rectRadius: 0.1, fill: { color: "FFFFFF" }, line: { color: GOLD, width: 1.5 } });
@@ -961,18 +1051,23 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
         bubble(s, ctx, q, { x: 0.8, y: 5.8, w: 11.8, h: 1.05 }, band === "junior" ? "Think about it" : "Think · pair · share");
       }
     }
-    s.addNotes(clean(t.note) + (ROUTINES[routine] ? `\n\nRoutine: ${ROUTINES[routine].label}. ${ROUTINES[routine].how}` : ""));
+    s.addNotes(clean(t.note) + (ROUTINES[routine] ? `\n\nRoutine: ${ROUTINES[routine].label}. ${ROUTINES[routine].how}` : "") + kwNote + (sidePic ? `\n\nPicture: ${clean(sidePic.alt)}. ${v3.creditLine(sidePic)}.` : ""));
+    if (pupil) return; // no movement breaks in the pupil PDF
     if (quran && teach.length >= 4 && i === 1) (breakSlide(pptx, ctx, nextBreak()), breaksAdded++);
     else if (!quran && band !== "senior" && i === Math.min(1, teach.length - 2)) (breakSlide(pptx, ctx, nextBreak()), breaksAdded++);
   });
 
   // 6. Guided practice ---------------------------------------------------------
+  // Lessons v3: when item 1 has the teacher's model, it is shown first ("I do"), then "We do".
   {
+    const all = (lesson.practice || []).slice(0, 5);
+    const modelled = itemModel(all[0]);
+    if (modelled) S.iDo = (v3.modelSlide(pptx, ctx, all[0], { title: band === "early" ? "Watch me first!" : "I do: watch the model", kicker: `${B.practiceKicker} · I do`, stage: 2, next: "then pupils try the next ones with you" }), slideCount);
     const s = pptx.addSlide({ masterName: "TGA_CONTENT" });
     S.guided = slideCount;
-    const items = (lesson.practice || []).slice(0, 5);
+    const items = modelled && all.length > 1 ? all.slice(1) : all;
     const routine = routineFor(lesson, "practice");
-    header(s, ctx, B.practiceTitle, B.practiceKicker, 2, phaseMinutes("practice", items, duration), routine);
+    header(s, ctx, modelled && band === "senior" ? "We do: guided practice" : B.practiceTitle, modelled ? `${B.practiceKicker} · We do` : B.practiceKicker, 2, phaseMinutes("practice", items, duration), routine);
     if (band === "senior") {
       stackedCards(s, ctx, items, { x: 0.8, y: 2.15, w: 11.8, h: 3.75 });
       if (routine === "think-pair-share")
@@ -990,15 +1085,17 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
       }
     }
     s.addNotes(`Work through these with the class, modelling your thinking aloud. Check every pupil before moving on.${ROUTINES[routine] ? ` Routine: ${ROUTINES[routine].label}. ${ROUTINES[routine].how}` : ""}`);
-    if (hasAnswers(items)) S.guidedAnswers = (answersSlide(pptx, ctx, items, { kicker: `${B.practiceKicker} · answers`, stage: 2 }), slideCount);
+    if (hasAnswers(items) && !pupil) S.guidedAnswers = (answersSlide(pptx, ctx, items, { kicker: `${B.practiceKicker} · answers`, stage: 2 }), slideCount);
   }
 
-  if (quran) (breakSlide(pptx, ctx, nextBreak()), breaksAdded++);
+  if (quran && !pupil) (breakSlide(pptx, ctx, nextBreak()), breaksAdded++);
 
   // 7. Independent -------------------------------------------------------------
   {
-    const s = pptx.addSlide({ masterName: "TGA_CONTENT" });
     const items = (lesson.independent || []).slice(0, 4);
+    // Lessons v3: the teacher goes through task 1 first.
+    if (itemModel(items[0])) S.indModel = (v3.modelSlide(pptx, ctx, items[0], { title: band === "early" ? "Let's do number 1 together" : "Task 1: watch it done first", kicker: `${B.independentKicker} · task 1 modelled`, stage: 3, next: "then pupils carry on with the tasks on their own" }), slideCount);
+    const s = pptx.addSlide({ masterName: "TGA_CONTENT" });
     const tiered = items.length >= 3;
     S.independent = slideCount;
     const routine = routineFor(lesson, "independent");
@@ -1032,7 +1129,7 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
       stackedCards(s, ctx, items, { x: 0.8, y: 2.15, w: 11.8, h: 4.65 });
     }
     s.addNotes(`${tiered ? "Pupils choose a starting level; most should reach the middle column. " : ""}${ROUTINES[routine] ? `Routine: ${ROUTINES[routine].label}. ${ROUTINES[routine].how} ` : ""}${lesson.send ? `Adaptation (SEND / EAL / stretch): ${clean(lesson.send)}` : ""}`.trim());
-    if (hasAnswers(items)) {
+    if (hasAnswers(items) && !pupil) {
       const names = tiered ? (band === "senior" ? ["Core", "Extend", "Stretch", "Stretch"] : ["Bronze", "Silver", "Gold", "Gold"]) : null;
       S.independentAnswers = (answersSlide(pptx, ctx, items, { kicker: `${band === "senior" ? "Independent practice" : B.independentKicker} · answers`, stage: 3, labels: names }), slideCount);
     }
@@ -1081,17 +1178,23 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
   }
 
   // 8. Exit -------------------------------------------------------------------
+  const exitAll = (lesson.exit || []).slice(0, 3);
+  const exitPolls = routineFor(lesson, "exit") === "teams-poll" ? exitAll.filter((x) => itemOptions(x)) : [];
+  const exitRest = exitAll.filter((x) => !exitPolls.includes(x));
+  pollSlides(exitPolls, "exit", band === "early" ? "Let's vote!" : B.exitTitle, 4);
   {
     const s = pptx.addSlide({ masterName: "TGA_CONTENT" });
-    S.exit = slideCount;
-    const items = (lesson.exit || []).slice(0, 3);
-    const routine = routineFor(lesson, "exit");
+    if (S.exit == null) S.exit = slideCount;
+    S.exitMain = slideCount;
+    const items = exitRest;
+    const routine = exitPolls.length ? "chat-waterfall" : routineFor(lesson, "exit");
     header(s, ctx, B.exitTitle, B.exitKicker, 4, phaseMinutes("exit", items, duration), routine);
-    const bq = ctx.enquiry && lesson.bigQuestion ? clean(lesson.bigQuestion) : null;
-    stackedCards(s, ctx, items, { x: 0.8, y: 2.15, w: 11.8, h: bq ? 2.6 : 3.3 }, { maxH: 1.3 });
+    const bq = ctx.enquiry && (lesson.bigQuestion || ponder) ? clean(lesson.bigQuestion || ponder.text) : null;
+    if (items.length) stackedCards(s, ctx, items, { x: 0.8, y: 2.15, w: 11.8, h: bq ? 2.6 : 3.3 }, { maxH: 1.3 });
+    else if (!bq) s.addText("Look back at today's objective and the steps. Which step have you reached?", { x: 0.8, y: 2.6, w: 11.8, h: 1.6, fontFace: FONT, fontSize: 26, bold: true, color: INK, valign: "middle" });
     if (bq) {
       s.addShape("roundRect", { x: 0.8, y: 4.88, w: 11.8, h: 0.6, rectRadius: 0.1, fill: { color: theme.dark }, line: { color: theme.dark, width: 0 } });
-      s.addText([{ text: "BACK TO THE BIG QUESTION   ", options: { bold: true, color: "E3C98F", fontSize: 12, charSpacing: 2 } }, { text: bq, options: { color: "FFFFFF" } }], { x: 1.05, y: 4.88, w: 11.4, h: 0.6, fontFace: FONT, fontSize: fitSize(bq, 8.5, 0.6, 17, 10), valign: "middle" });
+      s.addText([{ text: lesson.bigQuestion ? "BACK TO THE BIG QUESTION   " : "BACK TO OUR PONDER QUESTION   ", options: { bold: true, color: "E3C98F", fontSize: 12, charSpacing: 2 } }, { text: bq, options: { color: "FFFFFF" } }], { x: 1.05, y: 4.88, w: 11.4, h: 0.6, fontFace: FONT, fontSize: fitSize(bq, 8.5, 0.6, 17, 10), valign: "middle" });
     }
     const labels = band === "early" ? ["I've got it!", "Nearly there", "Help please"] : band === "junior" ? ["Confident", "Getting there", "Need more practice"] : ["Secure", "Developing", "Not yet"];
     const colors = ["3E9B57", "E0A526", "D2553F"];
@@ -1105,6 +1208,10 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
     });
     s.addNotes(`${ROUTINES[routine] ? `${ROUTINES[routine].label}: ${ROUTINES[routine].how} ` : "Pupils answer in the chat or on paper. "}Then they show 1, 2 or 3 fingers for confidence. Use both to plan the start of the next lesson.${hasAnswers(items) ? " The answers are on the last slide (teacher only) and in the lesson plan." : ""}`);
   }
+
+  // 8b. Lessons v3: the Islamic position at the end, then the unit's key words (second-to-last).
+  if (lesson.islamicLink && lesson.islamicLink.text && lesson.islamicLink.at === "end") S.islamicEnd = (v3.islamicSlide(pptx, ctx, lesson.islamicLink), slideCount);
+  if ((opts.unitKeywords || []).length >= 2) S.topicKeywords = (v3.topicKeywordsSlide(pptx, ctx, lesson, opts.unitKeywords, keywords.length ? [] : pics.filter((p) => p.for === "keywords")), slideCount);
 
   // 9. Homework + close ---------------------------------------------------------
   {
@@ -1142,8 +1249,10 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
     s.addNotes(lesson.send ? `SEND / EAL / stretch: ${clean(lesson.send)}` : "");
   }
   // 10. Teacher only: exit ticket answers, after the last slide so they are never shown by accident.
-  {
-    const items = (lesson.exit || []).slice(0, 3);
+  // The pupil PDF ends with the worksheet instead.
+  if (pupil) S.worksheetPages = v3.worksheetPages(pptx, ctx, lesson);
+  else {
+    const items = exitRest;
     if (hasAnswers(items)) S.exitAnswers = (answersSlide(pptx, ctx, items, { kicker: "Teacher only · for marking", title: "Exit ticket answers", teacherOnly: true }), slideCount);
   }
   S.total = slideCount;
@@ -1165,13 +1274,16 @@ function slide_circleNumber(s, x, y, d, color, label) {
 function walk(d) {
   return fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => {
     const p = path.join(d, e.name);
-    return e.isDirectory() ? walk(p) : e.name.endsWith(".json") ? [p] : [];
+    return e.isDirectory() ? walk(p) : e.name.endsWith(".json") && !e.name.startsWith("_") ? [p] : [];
   });
 }
 
 const manifest = [];
 let built = 0;
 const isRetired = retiredChecker();
+// Pictures chosen from Wikimedia Commons (scripts/lessons/pictures.mjs resolve runs first in the workflow).
+const PICTURES = readPictures();
+let picturesPlaced = 0;
 for (const f of walk(LESSONS).sort()) {
   const rel = path.relative(LESSONS, f).replace(/\.json$/, ""); // subject/year
   if (only && !rel.startsWith(only)) continue;
@@ -1180,19 +1292,33 @@ for (const f of walk(LESSONS).sort()) {
   const file = { ...data, year: data.year || year, path: f };
   // Retired lessons (content/retired-lessons.json) are never built, so they cannot return to the portal.
   const ordered = [...data.lessons].filter((l) => !isRetired(subjectSlug, year, l.n)).sort((a, b) => a.n - b.n);
+  // The unit's key words, collected across its lessons in order (the topic keyword list).
+  const unitKeywords = new Map();
+  for (const l of ordered) {
+    const list = unitKeywords.get(clean(l.unit)) || [];
+    for (const k of l.keywords || []) if (k && k.term && !list.some((x) => clean(x.term).toLowerCase() === clean(k.term).toLowerCase())) list.push(k);
+    unitKeywords.set(clean(l.unit), list);
+  }
   for (const [i, lesson] of ordered.entries()) {
     if (built >= limit) break;
+    if (ONLY_LESSONS && !ONLY_LESSONS.has(`${subjectSlug}/${year}/${lesson.n}`)) continue;
     const name = `${String(lesson.n).padStart(2, "0")}-${slug(lesson.title)}.pptx`;
     const dir = path.join(outDir, subjectSlug, year);
     fs.mkdirSync(dir, { recursive: true });
     const next = ordered[i + 1] || null; // the next lesson taught, even across a retired lesson's number
     const prev = ordered[i - 1] || null;
+    const opts = { pics: picturesFor(lesson, PICTURES), unitKeywords: unitKeywords.get(clean(lesson.unit)) || [], pupilUrl: pupilUrlFor(subjectSlug, year, lesson.n) };
+    picturesPlaced += opts.pics.length;
     // Two passes: the first records where each stage starts, the second adds the links.
-    const first = buildDeck(file, lesson, next);
-    const { pptx, slides, breaks, ctx } = buildDeck(file, lesson, next, first.ctx.rec);
+    const first = buildDeck(file, lesson, next, null, opts);
+    const { pptx, slides, breaks, ctx } = buildDeck(file, lesson, next, first.ctx.rec, opts);
     await pptx.writeFile({ fileName: path.join(dir, name) });
+    // The pupil PDF's deck (A4, converted to PDF by the workflow): slides pupils need and a worksheet.
+    const pupilName = name.replace(/\.pptx$/, "-pupil.pptx");
+    const pupilDeck = buildDeck(file, lesson, next, null, { ...opts, pupil: true });
+    await pupilDeck.pptx.writeFile({ fileName: path.join(dir, pupilName) });
     const planName = name.replace(/\.pptx$/, "-plan.docx");
-    fs.writeFileSync(path.join(dir, planName), await buildPlan(file, lesson, { yearLabel: YEAR_LABEL(year), accent: ctx.accent, band: ctx.band, duration: ctx.duration, prev, next, slides, breaks, keyQuestions: (lesson.teach || []).map((x) => questionFrom(x.note)).filter(Boolean) }));
+    fs.writeFileSync(path.join(dir, planName), await buildPlan(file, lesson, { yearLabel: YEAR_LABEL(year), subjectSlug, accent: ctx.accent, band: ctx.band, duration: ctx.duration, prev, next, slides, breaks, pics: opts.pics, pupilUrl: opts.pupilUrl, keyQuestions: (lesson.teach || []).map((x) => questionFrom(x.note)).filter(Boolean) }));
     built++;
     manifest.push({
       subject_slug: subjectSlug,
@@ -1206,9 +1332,10 @@ for (const f of walk(LESSONS).sort()) {
       objectives: lesson.objectives,
       file: path.join(subjectSlug, year, name),
       plan_file: path.join(subjectSlug, year, planName),
+      pupil_file: path.join(subjectSlug, year, pupilName),
     });
   }
 }
 fs.mkdirSync(outDir, { recursive: true });
 fs.writeFileSync(path.join(outDir, "manifest.json"), JSON.stringify(manifest, null, 1));
-console.log(`Built ${built} decks into ${outDir}`);
+console.log(`Built ${built} decks (with pupil PDF decks and plans) into ${outDir}; ${picturesPlaced} picture(s) placed`);

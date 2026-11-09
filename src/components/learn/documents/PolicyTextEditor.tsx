@@ -6,6 +6,8 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { triggerPublish } from "@/lib/learn/publishSiteContent";
 import { POLICY_META_FIELDS, type PolicyMeta } from "@/lib/policyMeta";
 import { ui } from "@/components/learn/ui";
+import { PolicyOutline } from "@/components/PolicyOutline";
+import { outlinePolicyHtml } from "@/lib/policyOutline";
 
 const inputCls = `mt-1 ${ui.input}`;
 
@@ -33,7 +35,11 @@ export function PolicyTextEditor({
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState<{ text: string; error?: boolean } | null>(null);
 
-  const preview = useMemo(() => (tab === "preview" ? renderSafeMarkdown(body).replace(/<table>/g, '<div class="table-wrap"><table>').replace(/<\/table>/g, "</table></div>") : ""), [tab, body]);
+  // The preview reads like the public page: section ids plus the numbered side outline.
+  const preview = useMemo(
+    () => (tab === "preview" ? outlinePolicyHtml(renderSafeMarkdown(body).replace(/<table>/g, '<div class="table-wrap"><table>').replace(/<\/table>/g, "</table></div>")) : { html: "", outline: [] }),
+    [tab, body],
+  );
   const sections = useMemo(() => body.split("\n").filter((l) => l.startsWith("## ")).map((l) => l.slice(3)), [body]);
 
   async function save() {
@@ -125,7 +131,9 @@ export function PolicyTextEditor({
             </p>
           </>
         ) : (
-          <div className="policy-body rounded-2xl border border-gold-light/50 bg-white p-5" dangerouslySetInnerHTML={{ __html: preview }} />
+          <PolicyOutline outline={preview.outline} top={60} bleed={false}>
+            <div className="policy-body rounded-2xl border border-gold-light/50 bg-white p-5" dangerouslySetInnerHTML={{ __html: preview.html }} />
+          </PolicyOutline>
         )}
       </div>
 
