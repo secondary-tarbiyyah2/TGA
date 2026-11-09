@@ -11,8 +11,7 @@
       "duration": 45,
       "bigQuestion": "How do adjectives and prepositions turn a plain noun into a picture?",
       "objectives": [
-        "Name nouns, verbs, adjectives and adverbs in a sentence",
-        "Expand a noun phrase with adjectives and a prepositional phrase"
+        "To name nouns, verbs, adjectives and adverbs in a sentence"
       ],
       "successCriteria": [
         "All: identify nouns, verbs and adjectives",
@@ -44,7 +43,7 @@
         }
       ],
       "hook": {
-        "type": "odd-one-out",
+        "type": "ponder",
         "text": "Which word is the odd one out?",
         "options": [
           "fierce",
@@ -54,11 +53,24 @@
         ],
         "a": "pounced: it is a verb. The others are adjectives."
       },
+      "pictures": [
+        {
+          "find": "golden eagle in flight photograph",
+          "alt": "a golden eagle, for an expanded noun phrase",
+          "for": "teach:3"
+        },
+        {
+          "find": "Nile crocodile in water photograph",
+          "alt": "a crocodile waiting in water",
+          "for": "teach:3"
+        }
+      ],
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
-        "exit": "chat-waterfall"
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
       },
       "resources": [
         "Display: word classes poster (school English displays)",
@@ -91,8 +103,8 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: four word classes",
-          "note": "Begin with bismillah. Sort words in a card sort.",
+          "heading": "Four word classes",
+          "note": "Sort words in a card sort.",
           "sort": {
             "columns": [
               "noun",
@@ -172,7 +184,8 @@
         {
           "q": "Underline the adjectives: The sly red fox crept past.",
           "a": "sly, red",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: sly, red"
         },
         {
           "q": "Find the adverb: The owl flew silently.",
@@ -194,7 +207,8 @@
         {
           "q": "Core: expand four nouns (eagle, lion, frog, bat) with two adjectives each",
           "a": "For example: the golden, powerful eagle",
-          "mins": 6
+          "mins": 6,
+          "model": "Teacher does the first part aloud before pupils start, showing each step: For example: the golden, powerful eagle"
         },
         {
           "q": "Extend: add a prepositional phrase to each and write two as sentences",
@@ -326,8 +340,7 @@
       "duration": 45,
       "bigQuestion": "How do conjunctions show time and cause in my report?",
       "objectives": [
-        "Use the conjunctions when, before, after, while and because to join clauses",
-        "Use a comma when the conjunction starts the sentence"
+        "To use the conjunctions when, before, after, while and because to join clauses"
       ],
       "successCriteria": [
         "All: join two clauses with when or because",
@@ -355,7 +368,7 @@
         }
       ],
       "hook": {
-        "type": "odd-one-out",
+        "type": "ponder",
         "text": "Which word is not a conjunction?",
         "options": [
           "when",
@@ -365,11 +378,24 @@
         ],
         "a": "slide: it is a noun or verb. The others join clauses."
       },
+      "pictures": [
+        {
+          "find": "playground swings photograph",
+          "alt": "swings",
+          "for": "teach:1"
+        },
+        {
+          "find": "playground climbing frame photograph",
+          "alt": "a climbing frame",
+          "for": "teach:1"
+        }
+      ],
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
-        "exit": "chat-waterfall"
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
       },
       "resources": [
         "Display: conjunctions word mat",
@@ -397,8 +423,8 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: time and cause",
-          "note": "Begin with bismillah.",
+          "heading": "Time and cause",
+          "note": "Introduce the slide and check pupils are ready.",
           "table": {
             "head": [
               "Conjunction",
@@ -475,7 +501,8 @@
         {
           "q": "Join with while: One child swings. Another waits.",
           "a": "One child swings while another waits.",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: One child swings while another waits."
         },
         {
           "q": "Join with after: Wipe the slide. It rains.",
@@ -490,9 +517,10 @@
       ],
       "independent": [
         {
-          "q": "Core: write five sentences about your play equipment, one with each conjunction",
+          "q": "Core: write five sentences about your play equipment, one with each conjunction (in the portal response box, with the sentence starter and paragraph frame)",
           "a": "For example: The slide is safe because it has high sides.",
-          "mins": 10
+          "mins": 10,
+          "model": "Labelled model to go through first (The roundabout spins when you push it.): Main clause: The roundabout spins (makes sense alone) | Conjunction: when | Subordinate clause: you push it | Check: \"when you push it\" alone does not make sense | Result: Main clause + conjunction + subordinate clause."
         },
         {
           "q": "Extend: start two sentences with the conjunction and add the comma",
@@ -527,8 +555,7 @@
       "duration": 45,
       "bigQuestion": "How do adverbs and prepositions make an explanation precise?",
       "objectives": [
-        "Use adverbs and prepositions to express time, place and cause",
-        "Use them to make explanation sentences precise"
+        "To use adverbs and prepositions to express time, place and cause"
       ],
       "successCriteria": [
         "All: identify adverbs and prepositions in sentences",
@@ -537,6 +564,10 @@
       ],
       "crossCurricular": "Science: forces and magnets (Mighty Metals)",
       "smsc": "Spiritual: precise language helps us describe Allah's creation truthfully",
+      "islamicLink": {
+        "text": "Precise language helps us describe Allah's creation truthfully",
+        "at": "start"
+      },
       "keywords": [
         {
           "term": "adverb",
@@ -552,7 +583,7 @@
         }
       ],
       "hook": {
-        "type": "odd-one-out",
+        "type": "ponder",
         "text": "Which word is the odd one out?",
         "options": [
           "under",
@@ -562,11 +593,24 @@
         ],
         "a": "magnet: it is a noun. The others are prepositions."
       },
+      "pictures": [
+        {
+          "find": "magnet picking up pins photograph",
+          "alt": "a magnet picking up pins",
+          "for": "teach:2"
+        },
+        {
+          "find": "marble rolling on carpet photograph",
+          "alt": "a ball rolling on carpet",
+          "for": "teach:1"
+        }
+      ],
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
-        "exit": "chat-waterfall"
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
       },
       "resources": [
         "Display: word classes poster",
@@ -593,8 +637,8 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: time, place, cause",
-          "note": "Begin with bismillah.",
+          "heading": "Time, place, cause",
+          "note": "Introduce the slide and check pupils are ready.",
           "table": {
             "head": [
               "Job",
@@ -661,7 +705,8 @@
         {
           "q": "Add a preposition of place: The pins stick ___ the magnet.",
           "a": "For example: to, under",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: For example: to, under"
         },
         {
           "q": "Add an adverb of time: ___, the parachute opens.",
@@ -676,9 +721,10 @@
       ],
       "independent": [
         {
-          "q": "Core: write five sentences about forces, each with an adverb or preposition showing time, place or cause",
+          "q": "Core: write five sentences about forces, each with an adverb or preposition showing time, place or cause (in the portal response box, with the sentence starter and paragraph frame)",
           "a": "For example: Inside the toy, a spring stores energy.",
-          "mins": 10
+          "mins": 10,
+          "model": "Labelled model to go through first (The clip moves.): Place: The clip moves across the table. | Time: Soon, the clip moves across the table. | Cause: Because of the magnet, the clip moves across the table. | Comma after the opening phrase | Result: Soon, because of the magnet, the clip slides across the table."
         },
         {
           "q": "Extend: label each one T, P or C",
@@ -713,8 +759,7 @@
       "duration": 45,
       "bigQuestion": "How does a prefix change the meaning of a word?",
       "objectives": [
-        "Add the prefixes un-, dis-, mis-, re- and in- to root words",
-        "Explain the meaning a prefix adds"
+        "To add the prefixes un-, dis-, mis-, re- and in- to root words"
       ],
       "successCriteria": [
         "All: add un- and re- correctly",
@@ -746,15 +791,28 @@
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "appear, disappear, reappear. What do dis- and re- do to appear?",
         "a": "dis- makes the opposite; re- means again."
       },
+      "pictures": [
+        {
+          "find": "padlock and key photograph",
+          "alt": "a lock (unlock)",
+          "for": "teach:1"
+        },
+        {
+          "find": "recycling bins photograph",
+          "alt": "recycling (reuse)",
+          "for": "teach:1"
+        }
+      ],
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
-        "exit": "chat-waterfall"
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
       },
       "resources": [
         "Year 3/4 spelling: prefixes (National Curriculum Appendix 1)",
@@ -781,8 +839,8 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: prefixes",
-          "note": "Begin with bismillah. A prefix never changes the spelling of the root: dis + appear = disappear (one s, one p).",
+          "heading": "Prefixes",
+          "note": "A prefix never changes the spelling of the root: dis + appear = disappear (one s, one p).",
           "table": {
             "head": [
               "Prefix",
@@ -859,7 +917,8 @@
         {
           "q": "Add a prefix to make the opposite: visible",
           "a": "invisible",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: invisible"
         },
         {
           "q": "Add a prefix: spell (wrongly)",
@@ -879,9 +938,10 @@
       ],
       "independent": [
         {
-          "q": "Core: add the right prefix to ten words: lock, appear, correct, use, behave, fair, connect, wind, visible, tidy",
+          "q": "Core: add the right prefix to ten words: lock, appear, correct, use, behave, fair, connect, wind, visible, tidy (in the portal response box, with the sentence starter and paragraph frame)",
           "a": "unlock, disappear, incorrect, reuse, misbehave, unfair, disconnect, rewind, invisible, untidy",
-          "mins": 8
+          "mins": 8,
+          "model": "Teacher does the first part aloud before pupils start, showing each step: unlock, disappear, incorrect, reuse, misbehave, unfair, disconnect, rewind, invisible, untidy"
         },
         {
           "q": "Extend: write three sentences about magnets or toys using prefixed words",
@@ -1112,8 +1172,7 @@
       "duration": 45,
       "bigQuestion": "How do inverted commas show the reader exactly who is speaking?",
       "objectives": [
-        "Punctuate direct speech with inverted commas",
-        "Place a comma or question mark inside the inverted commas before the speech tag"
+        "To punctuate direct speech with inverted commas"
       ],
       "successCriteria": [
         "All: put inverted commas around the spoken words",
@@ -1122,6 +1181,10 @@
       ],
       "crossCurricular": "PSHE: polite conversation and good manners (adab)",
       "smsc": "Social: speaking kindly; the Prophet (peace be upon him) taught that a good word is charity",
+      "islamicLink": {
+        "text": "Speaking kindly; the Prophet (peace be upon him) taught that a good word is charity",
+        "at": "start"
+      },
       "keywords": [
         {
           "term": "direct speech",
@@ -1141,15 +1204,28 @@
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "Lets eat Grandma! Lets eat, Grandma! One mark changes everything. What does punctuation do?",
         "a": "It changes the meaning: punctuation helps the reader understand exactly what is meant (and who is spoken to)."
       },
+      "pictures": [
+        {
+          "find": "inverted commas punctuation marks diagram",
+          "alt": "inverted commas (speech marks)",
+          "for": "keywords"
+        },
+        {
+          "find": "dinner table set with plates photograph",
+          "alt": "a table set for a meal (polite conversation)",
+          "for": "teach:4"
+        }
+      ],
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
-        "exit": "chat-waterfall"
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
       },
       "resources": [
         "Punctuation Intervention Booklet (Lesson 5: Quotation marks and dialogue) for pupils who need extra punctuation support",
@@ -1182,13 +1258,13 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: what is direct speech?",
+          "heading": "What is direct speech?",
           "bullets": [
             "The exact words spoken",
             "Inside inverted commas",
             "A speech tag says who"
           ],
-          "note": "Begin with bismillah. Show a speech bubble, then the same words as a sentence with inverted commas."
+          "note": "Show a speech bubble, then the same words as a sentence with inverted commas."
         },
         {
           "heading": "The rules",
@@ -1241,7 +1317,8 @@
         {
           "q": "Punctuate: can I have some water asked Zara",
           "a": "\"Can I have some water?\" asked Zara.",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: \"Can I have some water?\" asked Zara."
         },
         {
           "q": "Punctuate: thank you said Musa",
@@ -1256,9 +1333,10 @@
       ],
       "independent": [
         {
-          "q": "Core: punctuate five sentences of direct speech",
+          "q": "Core: punctuate five sentences of direct speech (in the portal response box, with the sentence starter and paragraph frame)",
           "a": "For example: \"It is time to go,\" said Dad.",
-          "mins": 8
+          "mins": 8,
+          "model": "Teacher does the first part aloud before pupils start, showing each step: For example: \"It is time to go,\" said Dad."
         },
         {
           "q": "Extend: write a four-line polite conversation at a dinner table, new speaker new line",
@@ -1682,8 +1760,7 @@
       "duration": 45,
       "bigQuestion": "How can a dictionary and a thesaurus make me a better reader and writer?",
       "objectives": [
-        "Find words quickly in a dictionary using alphabetical order",
-        "Choose a precise synonym from a thesaurus"
+        "To find words quickly in a dictionary using alphabetical order"
       ],
       "successCriteria": [
         "All: put words in alphabetical order by the first letter",
@@ -1692,6 +1769,10 @@
       ],
       "crossCurricular": "Science: animal words from Predator! (predator, prey, carnivore)",
       "smsc": "Spiritual: the Qur'an teaches that Allah taught Adam the names of things; knowing words is a gift",
+      "islamicLink": {
+        "text": "The Qur'an teaches that Allah taught Adam the names of things; knowing words is a gift",
+        "at": "start"
+      },
       "keywords": [
         {
           "term": "dictionary",
@@ -1711,15 +1792,28 @@
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "Put these predators in alphabetical order: shark, eagle, snake, owl, spider. Two start with s. How do you decide?",
         "a": "eagle, owl, shark, snake, spider: look at the second letter (h, n, p)."
       },
+      "pictures": [
+        {
+          "find": "open dictionary page with guide words photograph",
+          "alt": "a dictionary page showing guide words",
+          "for": "teach:3"
+        },
+        {
+          "find": "thesaurus book open photograph",
+          "alt": "an open thesaurus",
+          "for": "keywords"
+        }
+      ],
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
-        "exit": "chat-waterfall"
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
       },
       "resources": [
         "Children's dictionary and thesaurus (book or online)",
@@ -1746,13 +1840,13 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: why words matter",
+          "heading": "Why words matter",
           "bullets": [
             "Precise words help readers picture things",
             "A dictionary gives meaning and spelling",
             "A thesaurus gives choices"
           ],
-          "note": "Begin with bismillah. Ask: when did you last meet a word you did not know? What did you do?"
+          "note": "Ask: when did you last meet a word you did not know? What did you do?"
         },
         {
           "heading": "Alphabetical order",
@@ -1817,7 +1911,8 @@
         {
           "q": "Order: wolf, whale, wasp, worm",
           "a": "wasp, whale, wolf, worm",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: wasp, whale, wolf, worm"
         },
         {
           "q": "Find the meaning of carnivore",
@@ -1834,7 +1929,8 @@
         {
           "q": "Core: order these ten animal words alphabetically: owl, otter, octopus, ostrich, orca, ocelot, oyster, osprey, opossum, orangutan",
           "a": "ocelot, octopus, opossum, orangutan, orca, osprey, ostrich, otter, owl, oyster",
-          "mins": 6
+          "mins": 6,
+          "model": "Teacher does the first part aloud before pupils start, showing each step: ocelot, octopus, opossum, orangutan, orca, osprey, ostrich, otter, owl, oyster"
         },
         {
           "q": "Extend: look up three words (prey, camouflage, talon) and write a definition in your own words",
@@ -1869,8 +1965,7 @@
       "duration": 45,
       "bigQuestion": "How do headings, captions and a glossary help me find information fast?",
       "objectives": [
-        "Identify the features of a non-chronological report",
-        "Retrieve facts and explain word meanings (VIPERS: Retrieval, Vocabulary)"
+        "To identify the features of a non-chronological report"
       ],
       "successCriteria": [
         "All: name three report features",
@@ -1879,6 +1974,10 @@
       ],
       "crossCurricular": "Science: animals, food chains (Predator!)",
       "smsc": "Spiritual: wonder at the design of creatures Allah created",
+      "islamicLink": {
+        "text": "Wonder at the design of creatures Allah created",
+        "at": "start"
+      },
       "keywords": [
         {
           "term": "non-chronological report",
@@ -1902,7 +2001,7 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "True or false: a peregrine falcon can dive faster than a racing car drives on a motorway.",
         "options": [
           "True",
@@ -1910,11 +2009,29 @@
         ],
         "a": "True: it can dive at over 300 km/h, much faster than motorway speeds."
       },
+      "pictures": [
+        {
+          "find": "peregrine falcon perched photograph",
+          "alt": "a peregrine falcon",
+          "for": "teach:2"
+        },
+        {
+          "find": "peregrine falcon nest on building ledge photograph",
+          "alt": "a peregrine nest on a tall building",
+          "for": "teach:2"
+        },
+        {
+          "find": "peregrine falcon talons close up photograph",
+          "alt": "talons",
+          "for": "keywords"
+        }
+      ],
       "routines": {
         "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
-        "exit": "chat-waterfall"
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
       },
       "resources": [
         "Teacher's model report: The Peregrine Falcon (on slides; written for this lesson)",
@@ -1947,8 +2064,8 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: features of a report",
-          "note": "Begin with bismillah. Show the model report. Pupils spot features in the chat.",
+          "heading": "Features of a report",
+          "note": "Show the model report. Pupils spot features in the chat.",
           "diagram": {
             "centre": "Report features",
             "items": [
@@ -2014,7 +2131,8 @@
         {
           "q": "R: How fast can a peregrine dive?",
           "a": "Over 300 km/h",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: Over 300 km/h"
         },
         {
           "q": "R: Which continent has no peregrines?",
@@ -2036,7 +2154,8 @@
         {
           "q": "Core: answer four retrieval questions on the report in full sentences",
           "a": "For example: Peregrines eat mainly other birds.",
-          "mins": 7
+          "mins": 7,
+          "model": "Labelled model to go through first (The falcon stoops on its prey from high above. What does stoops mean here?): Find the word in the sentence | Look for clues: from high above, on its prey | Try a meaning: dives down fast | Check it makes sense in the sentence | Result: stoops means dives steeply downwards"
         },
         {
           "q": "Extend: add two words to the glossary with definitions (talon, stoop)",
@@ -2071,8 +2190,7 @@
       "duration": 45,
       "bigQuestion": "How do I group facts so that each paragraph has one job?",
       "objectives": [
-        "Make notes from a short fact sheet",
-        "Group facts into paragraphs under headings"
+        "To make notes from a short fact sheet"
       ],
       "successCriteria": [
         "All: sort facts into two groups",
@@ -2081,6 +2199,10 @@
       ],
       "crossCurricular": "Science: animal habitats and diets",
       "smsc": "Moral: caring for animals and their habitats (amanah, أَمَانَة: looking after the earth)",
+      "islamicLink": {
+        "text": "Caring for animals and their habitats (amanah, أَمَانَة: looking after the earth)",
+        "at": "start"
+      },
       "keywords": [
         {
           "term": "notes",
@@ -2100,15 +2222,28 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "A fact sheet has 12 facts about the barn owl, all muddled up. How could you sort them so a reader can find what they want?",
         "a": "Group them by topic: appearance, home, food, babies."
       },
+      "pictures": [
+        {
+          "find": "barn owl in flight photograph",
+          "alt": "a barn owl",
+          "for": "hook"
+        },
+        {
+          "find": "red fox den entrance photograph",
+          "alt": "a fox den (earth)",
+          "for": "keywords"
+        }
+      ],
       "routines": {
         "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
-        "exit": "chat-waterfall"
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
       },
       "resources": [
         "Teacher's fact sheet: The Barn Owl (12 facts, on slides)",
@@ -2136,13 +2271,13 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: one paragraph, one job",
+          "heading": "One paragraph, one job",
           "bullets": [
             "Each paragraph has one topic",
             "A heading names the topic",
             "A topic sentence starts it"
           ],
-          "note": "Begin with bismillah. Show a jumbled paragraph about owls mixing food and nests: ask what is wrong."
+          "note": "Show a jumbled paragraph about owls mixing food and nests: ask what is wrong."
         },
         {
           "heading": "Sort the facts",
@@ -2223,7 +2358,8 @@
         {
           "q": "Which heading: nests in hollow trees?",
           "a": "Home",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: Home"
         },
         {
           "q": "Turn into a note: Barn owls can hear a mouse moving under snow.",
@@ -2238,9 +2374,10 @@
       ],
       "independent": [
         {
-          "q": "Core: choose an animal and plan three headed paragraphs with two notes each",
+          "q": "Core: choose an animal and plan three headed paragraphs with two notes each (in the portal response box, with the sentence starter and paragraph frame)",
           "a": "For example: Fox. Appearance: red-brown fur, bushy tail. Home: dens called earths. Food: rabbits, birds, scraps.",
-          "mins": 8
+          "mins": 8,
+          "model": "Labelled model to go through first (Write topic sentences for the barn owl report.): Appearance: Barn owls are easy to recognise. | Home: Barn owls live in open countryside. | Food: Barn owls are skilled hunters of small animals. | Each one tells the reader what the paragraph is about | Result: One topic sentence per paragraph."
         },
         {
           "q": "Extend: write a topic sentence for each paragraph",
@@ -2275,8 +2412,7 @@
       "duration": 45,
       "bigQuestion": "How do I turn my plan into a clear report for a reader?",
       "objectives": [
-        "Write a short non-chronological report from a plan",
-        "Use headings, present tense and expanded noun phrases"
+        "To write a short non-chronological report from a plan"
       ],
       "successCriteria": [
         "All: write two headed paragraphs in the present tense",
@@ -2300,15 +2436,28 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "Would you rather read a report with no headings, or one with no pictures? Which helps you more?",
         "a": "Answers vary; headings help you find facts, pictures help you see."
       },
+      "pictures": [
+        {
+          "find": "red fox in a field photograph",
+          "alt": "a red fox",
+          "for": "teach:2"
+        },
+        {
+          "find": "barn owl perched on post photograph",
+          "alt": "a barn owl",
+          "for": "teach:2"
+        }
+      ],
       "routines": {
         "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
-        "exit": "hands-down"
+        "practice": "hands-down",
+        "exit": "hands-down",
+        "hinge": "teams-poll"
       },
       "resources": [
         "Pupil's plan from the last lesson",
@@ -2336,14 +2485,14 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: from plan to paragraphs",
+          "heading": "From plan to paragraphs",
           "bullets": [
             "Heading",
             "Topic sentence",
             "Two or three facts",
             "Check the tense"
           ],
-          "note": "Begin with bismillah. Remind pupils of their plans."
+          "note": "Remind pupils of their plans."
         },
         {
           "heading": "Model: a paragraph",
@@ -2386,7 +2535,8 @@
         {
           "q": "Fix the tense: The owl hunted mice.",
           "a": "The owl hunts mice.",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: The owl hunts mice."
         },
         {
           "q": "Write a caption for a photo of a fox in its den",
@@ -2401,9 +2551,10 @@
       ],
       "independent": [
         {
-          "q": "Core: write two headed paragraphs from your plan",
+          "q": "Core: write two headed paragraphs from your plan (in the portal response box, with the sentence starter and paragraph frame)",
           "a": "For example: Home. Foxes live in dens called earths...",
-          "mins": 12
+          "mins": 9,
+          "model": "Labelled model to go through first (Food (barn owl)): Topic sentence: Barn owls are skilled night hunters. | Fact: They catch voles, mice and shrews. | Fact: Their soft feathers let them fly silently. | Fact: They swallow small prey whole. | Result: A paragraph with a heading, topic sentence and facts."
         },
         {
           "q": "Extend: add a third paragraph and an introduction",
@@ -2438,8 +2589,7 @@
       "duration": 45,
       "bigQuestion": "How do time connectives guide a reader through events?",
       "objectives": [
-        "Identify the features of a recount",
-        "Use time connectives to order events"
+        "To identify the features of a recount"
       ],
       "successCriteria": [
         "All: put events in order using time connectives",
@@ -2448,6 +2598,10 @@
       ],
       "crossCurricular": "DT: food preparation (Scrumdiddlyumptious!)",
       "smsc": "Spiritual: saying alhamdulillah for food and the people who prepare it",
+      "islamicLink": {
+        "text": "Saying alhamdulillah for food and the people who prepare it",
+        "at": "start"
+      },
       "keywords": [
         {
           "term": "recount",
@@ -2467,15 +2621,28 @@
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "After that we ate. First we washed our hands. Finally we tidied up. Next we chopped fruit. Put the recount in order.",
         "a": "First we washed our hands. Next we chopped fruit. After that we ate. Finally we tidied up."
       },
+      "pictures": [
+        {
+          "find": "fruit kebabs on skewers photograph",
+          "alt": "fruit kebabs",
+          "for": "teach:3"
+        },
+        {
+          "find": "chopped fruit on a board photograph",
+          "alt": "chopped fruit",
+          "for": "teach:3"
+        }
+      ],
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
-        "exit": "chat-waterfall"
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
       },
       "resources": [
         "Teacher's model recount: Making Fruit Kebabs (on slides)",
@@ -2507,8 +2674,8 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: features of a recount",
-          "note": "Begin with bismillah. Read the model recount; pupils spot the features.",
+          "heading": "Features of a recount",
+          "note": "Read the model recount; pupils spot the features.",
           "diagram": {
             "centre": "Recount",
             "items": [
@@ -2565,7 +2732,8 @@
         {
           "q": "Add a time connective: ___, we tidied up.",
           "a": "For example: Finally",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: For example: Finally"
         },
         {
           "q": "Change to past tense: We pour the juice.",
@@ -2580,9 +2748,10 @@
       ],
       "independent": [
         {
-          "q": "Core: write a recount paragraph of something you made or did this week with four time connectives",
+          "q": "Core: write a recount paragraph of something you made or did this week with four time connectives (in the portal response box, with the sentence starter and paragraph frame)",
           "a": "For example: First, I... Next, I... After that... Finally...",
-          "mins": 12
+          "mins": 11,
+          "model": "Labelled model to go through first (Recount: making fruit kebabs): Opening: On Saturday, my sister and I made fruit kebabs in our kitchen. | First, we washed our hands and the fruit. | Next, we chopped bananas and melon carefully. | After that, we threaded the fruit onto sticks. | Closing: They were delicious, alhamdulillah! | Result: Opening, ordered events, closing."
         },
         {
           "q": "Extend: add an opening (who, what, where, when) and a closing comment",
@@ -2617,8 +2786,7 @@
       "duration": 45,
       "bigQuestion": "What makes instructions impossible to misunderstand?",
       "objectives": [
-        "Identify the features of instructions",
-        "Write a recipe with imperative verbs, numbered steps and time adverbials"
+        "To identify the features of instructions"
       ],
       "successCriteria": [
         "All: write steps that start with a command verb",
@@ -2646,15 +2814,28 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "Instruction: \"Put the bread in.\" Put it where? For how long? What could go wrong with this instruction?",
         "a": "It is not precise: it needs where (in the toaster), how long and safety."
       },
+      "pictures": [
+        {
+          "find": "rainbow fruit salad bowl photograph",
+          "alt": "a rainbow fruit salad",
+          "for": "teach:4"
+        },
+        {
+          "find": "kitchen equipment bowl spoon measuring jug photograph",
+          "alt": "kitchen equipment",
+          "for": "keywords"
+        }
+      ],
       "routines": {
         "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
-        "exit": "chat-waterfall"
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
       },
       "resources": [
         "Teacher's model recipe: Rainbow Fruit Salad (on slides)",
@@ -2682,8 +2863,8 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: features of instructions",
-          "note": "Begin with bismillah. Look at a recipe: what do you notice?",
+          "heading": "Features of instructions",
+          "note": "Look at a recipe: what do you notice?",
           "diagram": {
             "centre": "Instructions",
             "items": [
@@ -2763,7 +2944,8 @@
         {
           "q": "Make it imperative: You should wash the grapes.",
           "a": "Wash the grapes.",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: Wash the grapes."
         },
         {
           "q": "Make it precise: Mix it.",
@@ -2778,9 +2960,10 @@
       ],
       "independent": [
         {
-          "q": "Core: write a recipe for a healthy snack with equipment, ingredients and four numbered steps",
+          "q": "Core: write a recipe for a healthy snack with equipment, ingredients and four numbered steps (in the portal response box, with the sentence starter and paragraph frame)",
           "a": "For example: How to make a yoghurt pot. 1. Spoon... 2. Sprinkle... 3. Add... 4. Serve...",
-          "mins": 12
+          "mins": 11,
+          "model": "Labelled model to go through first (How to make a rainbow fruit salad): You will need: a bowl, a spoon, a child-safe knife | Ingredients: strawberries, orange, kiwi, blueberries | 1. Wash your hands and the fruit. | 2. Ask an adult to help you slice the fruit. | 3. Place the fruit in the bowl in rainbow order. | 4. Stir gently and serve. | Result: Goal, lists, numbered imperative steps."
         },
         {
           "q": "Extend: add a time adverbial or adverb to every step",
@@ -2815,8 +2998,7 @@
       "duration": 45,
       "bigQuestion": "How do adverts persuade us to want something?",
       "objectives": [
-        "Identify persuasive features: slogans, exaggeration, alliteration, questions",
-        "Explain how a writer's word choice persuades (VIPERS: Explain, Vocabulary)"
+        "To identify persuasive features: slogans, exaggeration, alliteration, questions"
       ],
       "successCriteria": [
         "All: spot three persuasive features",
@@ -2825,6 +3007,10 @@
       ],
       "crossCurricular": "PSHE: being a careful consumer; DT: healthy food",
       "smsc": "Moral: honesty in selling; Islam teaches that traders must not deceive",
+      "islamicLink": {
+        "text": "Honesty in selling; Islam teaches that traders must not deceive",
+        "at": "start"
+      },
       "keywords": [
         {
           "term": "persuade",
@@ -2844,15 +3030,28 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "\"Super Smoothie: the most delicious drink in the whole universe!\" Is that true? Why would an advert say it?",
         "a": "It is exaggeration: no one can prove it. Adverts exaggerate to make us want the product."
       },
+      "pictures": [
+        {
+          "find": "fruit smoothie bottles on a shelf photograph",
+          "alt": "smoothie bottles on a shop shelf",
+          "for": "hook"
+        },
+        {
+          "find": "carrot sticks snack photograph",
+          "alt": "carrot sticks, a healthy snack",
+          "for": "teach:2"
+        }
+      ],
       "routines": {
         "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
-        "exit": "chat-waterfall"
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
       },
       "resources": [
         "Teacher's two model adverts for snacks (on slides; written for this lesson, no people pictured)",
@@ -2879,13 +3078,13 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: why adverts exist",
+          "heading": "Why adverts exist",
           "bullets": [
             "To make us notice",
             "To make us want",
             "To make us buy"
           ],
-          "note": "Begin with bismillah. Ask: what advert do you remember and why?"
+          "note": "Ask: what advert do you remember and why?"
         },
         {
           "heading": "Persuasive toolkit",
@@ -2956,7 +3155,8 @@
         {
           "q": "V: What does zesty mean?",
           "a": "Full of fresh, sharp flavour",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: Full of fresh, sharp flavour"
         },
         {
           "q": "E: Why might an advert ask \"Feeling hungry?\"",
@@ -2971,9 +3171,10 @@
       ],
       "independent": [
         {
-          "q": "Core: label five persuasive features on the second advert",
+          "q": "Core: label five persuasive features on the second advert (in the portal response box, with the sentence starter and paragraph frame)",
           "a": "For example: slogan, alliteration, question, imperative, exaggeration",
-          "mins": 8
+          "mins": 8,
+          "model": "Labelled model to go through first (Why does the advert say \"zingy, zesty lemon\"?): Find the words: zingy, zesty | Feature: alliteration and adjectives | Effect: the drink sounds fresh and exciting | Write: The words make the reader imagine a sharp, refreshing taste. | Result: The alliteration makes the drink sound lively and memorable."
         },
         {
           "q": "Extend: explain two word choices using the stem The word ___ makes the reader ___",
@@ -3008,8 +3209,7 @@
       "duration": 45,
       "bigQuestion": "Can an advert be persuasive and honest at the same time?",
       "objectives": [
-        "Plan and write a persuasive advert",
-        "Use a slogan, alliteration, a question and imperatives"
+        "To plan and write a persuasive advert"
       ],
       "successCriteria": [
         "All: write a name, a slogan and two persuasive sentences",
@@ -3018,6 +3218,10 @@
       ],
       "crossCurricular": "DT and science: healthy eating",
       "smsc": "Moral: honest trade and healthy choices; looking after the body Allah gave us",
+      "islamicLink": {
+        "text": "Honest trade and healthy choices; looking after the body Allah gave us",
+        "at": "start"
+      },
       "keywords": [
         {
           "term": "slogan",
@@ -3037,15 +3241,28 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "Name a smoothie made from banana, spinach and mango. It must make people want to try it but must not tell a lie.",
         "a": "For example: Mighty Mango Morning: fresh fruit and greens in every sip."
       },
+      "pictures": [
+        {
+          "find": "mango and banana smoothie in a glass photograph",
+          "alt": "a mango and banana smoothie",
+          "for": "hook"
+        },
+        {
+          "find": "fresh spinach leaves photograph",
+          "alt": "spinach leaves",
+          "for": "teach:1"
+        }
+      ],
       "routines": {
         "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
-        "exit": "chat-waterfall"
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
       },
       "resources": [
         "Advert planning frame (name, slogan, features, ingredients, call to action)",
@@ -3073,14 +3290,14 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: plan your product",
+          "heading": "Plan your product",
           "bullets": [
             "Name",
             "Ingredients",
             "Who is it for?",
             "Why is it good?"
           ],
-          "note": "Begin with bismillah. Pupils choose ingredients and an audience (children after school, for example)."
+          "note": "Pupils choose ingredients and an audience (children after school, for example)."
         },
         {
           "heading": "Slogans",
@@ -3129,7 +3346,8 @@
         {
           "q": "Write a slogan for a strawberry smoothie",
           "a": "For example: Simply strawberry, simply super!",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: For example: Simply strawberry, simply super!"
         },
         {
           "q": "Write a question to hook the reader",
@@ -3144,9 +3362,10 @@
       ],
       "independent": [
         {
-          "q": "Core: write your advert with a name, slogan and three persuasive sentences",
+          "q": "Core: write your advert with a name, slogan and three persuasive sentences (in the portal response box, with the sentence starter and paragraph frame)",
           "a": "For example: Tropical Twist. Sip the sunshine! Packed with fresh mango...",
-          "mins": 12
+          "mins": 12,
+          "model": "Labelled model to go through first (Advert: Tropical Twist): Name: Tropical Twist | Slogan: Sip the sunshine! | Question: Need a tasty way to start your day? | Claim: Packed with fresh mango and banana. | Imperative: Try Tropical Twist today! | Result: Persuasive and honest."
         },
         {
           "q": "Extend: use alliteration, a question and an imperative",
@@ -3181,8 +3400,7 @@
       "duration": 45,
       "bigQuestion": "How can I explain clearly what makes a toy move?",
       "objectives": [
-        "Describe pushes, pulls and twists using technical vocabulary",
-        "Write simple explanatory sentences about a toy"
+        "To describe pushes, pulls and twists using technical vocabulary"
       ],
       "successCriteria": [
         "All: sort toys into push, pull and twist",
@@ -3191,6 +3409,10 @@
       ],
       "crossCurricular": "Science: forces and magnets (Mighty Metals)",
       "smsc": "Spiritual: the laws of motion in Allah's creation are dependable and can be learned",
+      "islamicLink": {
+        "text": "The laws of motion in Allah's creation are dependable and can be learned",
+        "at": "start"
+      },
       "keywords": [
         {
           "term": "force",
@@ -3218,15 +3440,33 @@
         }
       ],
       "hook": {
-        "type": "image-prompt",
+        "type": "ponder",
         "text": "Bring three toys to the camera: one you push, one you pull, one that rolls on its own down a slope. What makes each one move?",
         "a": "A push, a pull, and gravity pulling the toy down the slope."
       },
+      "pictures": [
+        {
+          "find": "toy wooden pull along duck photograph",
+          "alt": "a pull-along toy",
+          "for": "teach:2"
+        },
+        {
+          "find": "spinning top toy photograph",
+          "alt": "a spinning top",
+          "for": "teach:4"
+        },
+        {
+          "find": "bar magnet with iron filings photograph",
+          "alt": "a magnet with iron filings",
+          "for": "keywords"
+        }
+      ],
       "routines": {
         "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
-        "exit": "chat-waterfall"
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
       },
       "resources": [
         "Tarbiyyah Primary English scheme of work, Mighty Metals: Engage (toys that use forces, sorted into force groups)",
@@ -3254,13 +3494,13 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: forces all around",
+          "heading": "Forces all around",
           "bullets": [
             "Push: a ball, a door",
             "Pull: a drawer, a zip",
             "Twist: a lid, a key"
           ],
-          "note": "Begin with bismillah. Pupils hold toys to camera and say push, pull or twist."
+          "note": "Pupils hold toys to camera and say push, pull or twist."
         },
         {
           "heading": "Sort the toys",
@@ -3354,7 +3594,8 @@
         {
           "q": "Push or pull: opening a drawer",
           "a": "pull",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: pull"
         },
         {
           "q": "Finish: The car stopped on the carpet because...",
@@ -3369,9 +3610,10 @@
       ],
       "independent": [
         {
-          "q": "Core: choose your favourite toy and write three sentences explaining how it works",
+          "q": "Core: choose your favourite toy and write three sentences explaining how it works (in the portal response box, with the sentence starter and paragraph frame)",
           "a": "For example: My spinning top moves when I twist it...",
-          "mins": 10
+          "mins": 8,
+          "model": "Labelled model to go through first (How does a toy car move?): Name the toy: A toy car moves when I push it. | Explain: It rolls because its wheels turn. | Add a force: It slows down because of friction with the carpet. | Use present tense | Result: Three explaining sentences with because."
         },
         {
           "q": "Extend: say which parts are essential and which could be missing",
@@ -3406,8 +3648,7 @@
       "duration": 45,
       "bigQuestion": "How does the layout of a report help a reader learn?",
       "objectives": [
-        "Identify headings, sub-headings, captions and labels in a report about magnets",
-        "Retrieve and summarise information (VIPERS: Retrieval, Summarise)"
+        "To identify headings, sub-headings, captions and labels in a report about magnets"
       ],
       "successCriteria": [
         "All: label the features of the report",
@@ -3416,6 +3657,10 @@
       ],
       "crossCurricular": "Science: forces and magnets (Mighty Metals)",
       "smsc": "Spiritual: curiosity about the hidden forces Allah placed in creation",
+      "islamicLink": {
+        "text": "Curiosity about the hidden forces Allah placed in creation",
+        "at": "start"
+      },
       "keywords": [
         {
           "term": "sub-heading",
@@ -3435,7 +3680,7 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "True or false: a magnet will pick up a drinks can.",
         "options": [
           "True",
@@ -3444,11 +3689,29 @@
         ],
         "a": "It depends: a steel can is magnetic; an aluminium can is not. Test one at home with an adult."
       },
+      "pictures": [
+        {
+          "find": "bar magnet attracting paper clips photograph",
+          "alt": "a magnet attracting paper clips",
+          "for": "teach:1"
+        },
+        {
+          "find": "iron filings magnetic field bar magnet photograph",
+          "alt": "iron filings showing a magnet's poles",
+          "for": "teach:2"
+        },
+        {
+          "find": "magnetic compass photograph",
+          "alt": "a compass",
+          "for": "keywords"
+        }
+      ],
       "routines": {
         "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
-        "exit": "chat-waterfall"
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
       },
       "resources": [
         "Tarbiyyah Primary English scheme of work, Mighty Metals: Engage (reading reports, features)",
@@ -3476,14 +3739,14 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: the Magnets report",
+          "heading": "The Magnets report",
           "bullets": [
             "What is a magnet?",
             "Magnetic materials",
             "Poles: north and south",
             "Magnets in everyday life"
           ],
-          "note": "Begin with bismillah. Show the model report. These are its sub-headings. Facts: magnets attract iron, nickel and cobalt; steel contains iron so it is magnetic; like poles repel and unlike poles attract."
+          "note": "Show the model report. These are its sub-headings. Facts: magnets attract iron, nickel and cobalt; steel contains iron so it is magnetic; like poles repel and unlike poles attract."
         },
         {
           "heading": "Features and their jobs",
@@ -3559,7 +3822,8 @@
         {
           "q": "R: What happens when two north poles meet?",
           "a": "They repel (push apart)",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: They repel (push apart)"
         },
         {
           "q": "R: Name a use of magnets at home",
@@ -3579,9 +3843,10 @@
       ],
       "independent": [
         {
-          "q": "Core: answer five retrieval questions using sub-headings",
+          "q": "Core: answer five retrieval questions using sub-headings (in the portal response box, with the sentence starter and paragraph frame)",
           "a": "For example: Magnets attract iron, nickel and cobalt.",
-          "mins": 8
+          "mins": 8,
+          "model": "Teacher does the first part aloud before pupils start, showing each step: For example: Magnets attract iron, nickel and cobalt."
         },
         {
           "q": "Extend: test five objects at home with a magnet and record magnetic or not magnetic",
@@ -3616,8 +3881,7 @@
       "duration": 45,
       "bigQuestion": "What can we infer about the Iron Man from how he behaves?",
       "objectives": [
-        "Predict and infer using clues from the opening chapter",
-        "Explain the meaning of powerful words in context (VIPERS: Prediction, Inference, Vocabulary)"
+        "To predict and infer using clues from the opening chapter"
       ],
       "successCriteria": [
         "All: make a prediction with a reason",
@@ -3645,15 +3909,28 @@
         }
       ],
       "hook": {
-        "type": "image-prompt",
+        "type": "ponder",
         "text": "A giant made of iron stands alone on the edge of a cliff at night. Nobody knows where he came from. What questions do you have?",
         "a": "For example: Who made him? Is he dangerous? Where is he going?"
       },
+      "pictures": [
+        {
+          "find": "chalk cliffs above a beach at dusk photograph",
+          "alt": "a cliff edge above a beach, like the Iron Man's",
+          "for": "hook"
+        },
+        {
+          "find": "rusty iron machinery parts photograph",
+          "alt": "iron parts",
+          "for": "keywords"
+        }
+      ],
       "routines": {
         "hook": "chat-waterfall",
         "starter": "show-me",
         "practice": "think-pair-share",
-        "exit": "chat-waterfall"
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
       },
       "resources": [
         "The Iron Man by Ted Hughes (class reader, TO CONFIRM; teacher reads from the class copy, text not reproduced), chapter 1: The Coming of the Iron Man",
@@ -3681,13 +3958,13 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: meet the Iron Man",
+          "heading": "Meet the Iron Man",
           "bullets": [
             "A huge figure made of iron",
             "Nobody knows where he came from",
             "Listen for clues"
           ],
-          "note": "Begin with bismillah. Read chapter 1 aloud from the class copy. In it, the Iron Man walks to a cliff edge in the dark, falls and breaks into pieces on the beach, then his parts search for each other and he puts himself back together before walking into the sea. Stop before the end to predict."
+          "note": "Read chapter 1 aloud from the class copy. In it, the Iron Man walks to a cliff edge in the dark, falls and breaks into pieces on the beach, then his parts search for each other and he puts himself back together before walking into the sea. Stop before the end to predict."
         },
         {
           "heading": "P: predict",
@@ -3752,7 +4029,8 @@
         {
           "q": "P: Where do you think the Iron Man came from? Give a reason",
           "a": "Answers vary with a reason, for example: from space, because nobody knows him",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: Answers vary with a reason, for example: from space, because nobody knows him"
         },
         {
           "q": "I: Is the Iron Man frightening or curious? Explain",
@@ -3767,9 +4045,10 @@
       ],
       "independent": [
         {
-          "q": "Core: write two inferences about the Iron Man with evidence (paraphrased)",
+          "q": "Core: write two inferences about the Iron Man with evidence (paraphrased) (in the portal response box, with the sentence starter and paragraph frame)",
           "a": "For example: He is determined because he puts himself back together.",
-          "mins": 8
+          "mins": 8,
+          "model": "Labelled model to go through first (What will the Iron Man do next?): Clue: his parts found each other | Clue: he is whole again | Prediction: he will walk away somewhere new | Because: he is searching for something | Result: Answers vary with a reason."
         },
         {
           "q": "Extend: reading journal: Summarise chapter 1 in two sentences and Respond with a prediction",
@@ -3804,8 +4083,7 @@
       "duration": 45,
       "bigQuestion": "What makes an explanation clear enough for a younger child to follow?",
       "objectives": [
-        "Write an explanatory paragraph about how a toy works",
-        "Use technical vocabulary and because, so and when"
+        "To write an explanatory paragraph about how a toy works"
       ],
       "successCriteria": [
         "All: write three sentences explaining how a toy works",
@@ -3833,15 +4111,28 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "Explain how a toy car works to a five-year-old in one sentence. Now explain it to a scientist. What changes?",
         "a": "The words: simple words for the child, technical words (friction, axle) for the scientist."
       },
+      "pictures": [
+        {
+          "find": "clockwork wind-up key toy photograph",
+          "alt": "a wind-up key",
+          "for": "teach:3"
+        },
+        {
+          "find": "toy car wheels and axle close up photograph",
+          "alt": "wheels and an axle",
+          "for": "keywords"
+        }
+      ],
       "routines": {
         "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
-        "exit": "chat-waterfall"
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
       },
       "resources": [
         "Tarbiyyah Primary English scheme of work, Mighty Metals: Engage (simple explanatory paragraph about a favourite toy)",
@@ -3869,14 +4160,14 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: what makes a good explanation?",
+          "heading": "What makes a good explanation?",
           "bullets": [
             "Says what it is",
             "Explains how it works, in order",
             "Uses because, so, when",
             "Uses technical words"
           ],
-          "note": "Begin with bismillah. Pupils hold up their toy. What does a reader need to know?"
+          "note": "Pupils hold up their toy. What does a reader need to know?"
         },
         {
           "heading": "Causal conjunctions",
@@ -3926,7 +4217,8 @@
         {
           "q": "Join with so: The slope was steep. The car went fast.",
           "a": "The slope was steep, so the car went fast.",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: The slope was steep, so the car went fast."
         },
         {
           "q": "Join with when: You pull the string. The duck waddles.",
@@ -3941,9 +4233,10 @@
       ],
       "independent": [
         {
-          "q": "Core: write a paragraph explaining how your toy works, using two causal conjunctions",
+          "q": "Core: write a paragraph explaining how your toy works, using two causal conjunctions (in the portal response box, with the sentence starter and paragraph frame)",
           "a": "For example: When I push the car, its wheels turn, so it rolls forward...",
-          "mins": 12
+          "mins": 12,
+          "model": "Labelled model to go through first (How a wind-up toy works): When you twist the key, a spring inside winds tightly. | The spring pushes on small gears as it unwinds. | The gears turn the wheels, so the toy moves forward. | It slows down because friction acts on the wheels. | The spring is essential; the painted ears are not. | Result: A clear explanation with causal conjunctions."
         },
         {
           "q": "Extend: add which parts are essential and which could be missing",
@@ -3978,8 +4271,7 @@
       "duration": 45,
       "bigQuestion": "How do I plan a report that answers exactly what my reader asked for?",
       "objectives": [
-        "Read a formal letter and identify what it asks for",
-        "Plan a report on a new piece of play equipment with headings and a labelled diagram"
+        "To read a formal letter and identify what it asks for"
       ],
       "successCriteria": [
         "All: say what the council wants to know",
@@ -4007,15 +4299,33 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "The council has money for ONE new thing in the park. A slide, a zip wire or a roundabout? Which forces does each one use?",
         "a": "Slide: gravity and friction. Zip wire: gravity. Roundabout: a push. Any choice with a reason."
       },
+      "pictures": [
+        {
+          "find": "spiral playground slide photograph",
+          "alt": "a spiral slide",
+          "for": "hook"
+        },
+        {
+          "find": "playground zip wire photograph",
+          "alt": "a zip wire",
+          "for": "hook"
+        },
+        {
+          "find": "playground roundabout photograph",
+          "alt": "a roundabout",
+          "for": "hook"
+        }
+      ],
       "routines": {
         "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
-        "exit": "chat-waterfall"
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
       },
       "resources": [
         "Tarbiyyah Primary English scheme of work, Mighty Metals: letter from the local council asking for ideas for new play equipment",
@@ -4043,13 +4353,13 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: read the letter",
+          "heading": "Read the letter",
           "bullets": [
             "Who wrote it? The council",
             "What do they want? Ideas for new equipment",
             "What must the report include?"
           ],
-          "note": "Begin with bismillah. Read the pretend council letter: it asks for a design, how it works (forces), and why it is safe."
+          "note": "Read the pretend council letter: it asks for a design, how it works (forces), and why it is safe."
         },
         {
           "heading": "Audience and purpose",
@@ -4120,7 +4430,8 @@
         {
           "q": "What two things does the council letter ask for?",
           "a": "For example: how the equipment works and why it is safe",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: For example: how the equipment works and why it is safe"
         },
         {
           "q": "Turn into a note: The swing moves because you push it.",
@@ -4135,9 +4446,10 @@
       ],
       "independent": [
         {
-          "q": "Core: plan your report with four headings and notes under each",
+          "q": "Core: plan your report with four headings and notes under each (in the portal response box, with the sentence starter and paragraph frame)",
           "a": "For example: Introduction, Appearance, How it works, Safety with notes",
-          "mins": 12
+          "mins": 10,
+          "model": "Labelled model to go through first (How it works: a spiral slide): gravity pulls the rider down | smooth metal: little friction | mat at bottom: friction slows rider | curved sides keep rider on | Result: Notes under the heading How it works."
         },
         {
           "q": "Extend: sketch a labelled diagram of your equipment (no people) with four labels",
@@ -4172,8 +4484,7 @@
       "duration": 45,
       "bigQuestion": "How do I turn notes into clear paragraphs for the council?",
       "objectives": [
-        "Draft a non-chronological report from a plan",
-        "Use headings, the present tense and conjunctions"
+        "To draft a non-chronological report from a plan"
       ],
       "successCriteria": [
         "All: write two headed paragraphs",
@@ -4197,15 +4508,28 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "Would the council be persuaded by \"My slide is well cool\" or \"Our slide is safe, exciting and strong\"? Why?",
         "a": "The second: it is formal and gives reasons the council cares about."
       },
+      "pictures": [
+        {
+          "find": "metal playground slide photograph",
+          "alt": "a metal slide",
+          "for": "teach:3"
+        },
+        {
+          "find": "rubber safety surface playground photograph",
+          "alt": "a rubber safety mat",
+          "for": "keywords"
+        }
+      ],
       "routines": {
         "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
-        "exit": "chat-waterfall"
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
       },
       "resources": [
         "Pupil's plan and labelled diagram",
@@ -4233,13 +4557,13 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: writing for the council",
+          "heading": "Writing for the council",
           "bullets": [
             "Formal, polite words",
             "Present tense facts",
             "One heading, one paragraph"
           ],
-          "note": "Begin with bismillah. Re-read the council letter: what do they want?"
+          "note": "Re-read the council letter: what do they want?"
         },
         {
           "heading": "Model: introduction",
@@ -4287,7 +4611,8 @@
         {
           "q": "Make formal: The slide is super cool.",
           "a": "For example: The slide is exciting and well designed.",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: For example: The slide is exciting and well designed."
         },
         {
           "q": "Write a topic sentence for the Safety paragraph",
@@ -4302,9 +4627,10 @@
       ],
       "independent": [
         {
-          "q": "Core: draft the introduction and two headed paragraphs",
+          "q": "Core: draft the introduction and two headed paragraphs (in the portal response box, with the sentence starter and paragraph frame)",
           "a": "For example: Introduction... What it looks like... How it works...",
-          "mins": 15
+          "mins": 14,
+          "model": "Labelled model to go through first (How it works): Topic sentence: The slide uses two forces. | Gravity pulls the rider down the curved metal chute. | The smooth surface has little friction, so riders move quickly. | At the bottom, a rubber mat slows them because it has more friction. | Result: A paragraph with technical words and conjunctions."
         },
         {
           "q": "Extend: draft the Safety paragraph with because",
@@ -4339,8 +4665,7 @@
       "duration": 45,
       "bigQuestion": "Was the trap a fair answer to the Iron Man's problem?",
       "objectives": [
-        "Retrieve and sequence key events from chapter 2",
-        "Infer characters' feelings and give an opinion with evidence (VIPERS: Retrieval, Inference, Explain)"
+        "To retrieve and sequence key events from chapter 2"
       ],
       "successCriteria": [
         "All: sequence four events",
@@ -4349,6 +4674,10 @@
       ],
       "crossCurricular": "Science: metals (the Iron Man eats metal); PSHE: solving problems fairly",
       "smsc": "Moral: dealing with a problem fairly and with mercy (rahmah, رَحْمَة)",
+      "islamicLink": {
+        "text": "Dealing with a problem fairly and with mercy (rahmah, رَحْمَة)",
+        "at": "start"
+      },
       "keywords": [
         {
           "term": "sequence",
@@ -4368,15 +4697,28 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "A giant keeps eating the farmers' tractors and fences. Would you trap him, talk to him or find him other food? Why?",
         "a": "Answers vary with a reason."
       },
+      "pictures": [
+        {
+          "find": "farm tractor in a field photograph",
+          "alt": "a tractor, like the machines the Iron Man eats",
+          "for": "teach:1"
+        },
+        {
+          "find": "barbed wire farm fence photograph",
+          "alt": "a metal farm fence",
+          "for": "teach:1"
+        }
+      ],
       "routines": {
         "hook": "chat-waterfall",
         "starter": "show-me",
         "practice": "think-pair-share",
-        "exit": "chat-waterfall"
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
       },
       "resources": [
         "The Iron Man by Ted Hughes (class reader, TO CONFIRM; teacher reads from the class copy, text not reproduced), chapter 2: The Return of the Iron Man",
@@ -4404,13 +4746,13 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: chapter 2",
+          "heading": "Chapter 2",
           "bullets": [
             "The Iron Man returns",
             "Farm machines disappear",
             "The farmers make a plan"
           ],
-          "note": "Begin with bismillah. Read chapter 2 aloud from the class copy. In outline: the Iron Man comes back and eats the farmers' metal machinery and fences; a boy called Hogarth sees him; the farmers dig a deep pit as a trap and the Iron Man falls in and is buried. Paraphrase only; do not display the text."
+          "note": "Read chapter 2 aloud from the class copy. In outline: the Iron Man comes back and eats the farmers' metal machinery and fences; a boy called Hogarth sees him; the farmers dig a deep pit as a trap and the Iron Man falls in and is buried. Paraphrase only; do not display the text."
         },
         {
           "heading": "R: sequence",
@@ -4487,7 +4829,8 @@
         {
           "q": "R: What did the Iron Man eat?",
           "a": "Farm machinery and metal fences",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: Farm machinery and metal fences"
         },
         {
           "q": "I: Why did the farmers want to trap him?",
@@ -4502,9 +4845,10 @@
       ],
       "independent": [
         {
-          "q": "Core: answer four VIPERS questions on chapter 2 in full sentences",
+          "q": "Core: answer four VIPERS questions on chapter 2 in full sentences (in the portal response box, with the sentence starter and paragraph frame)",
           "a": "For example: The farmers felt angry because...",
-          "mins": 10
+          "mins": 10,
+          "model": "Teacher does the first part aloud before pupils start, showing each step: For example: The farmers felt angry because..."
         },
         {
           "q": "Extend: write a PEE paragraph: was the trap fair?",
@@ -4539,8 +4883,7 @@
       "duration": 45,
       "bigQuestion": "How do I make my report the best it can be for the council?",
       "objectives": [
-        "Proofread for spelling and punctuation",
-        "Improve vocabulary and add a title, sub-headings and caption to publish"
+        "To proofread for spelling and punctuation"
       ],
       "successCriteria": [
         "All: correct capital letters, full stops and three spellings",
@@ -4568,15 +4911,28 @@
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "Find four mistakes: the slide is safe becuase it have high sides",
         "a": "The slide is safe because it has high sides. (capital T, because, has, full stop)"
       },
+      "pictures": [
+        {
+          "find": "playground slide side view photograph",
+          "alt": "a slide for the labelled diagram",
+          "for": "teach:3"
+        },
+        {
+          "find": "steel chain swing photograph",
+          "alt": "steel chains on a swing",
+          "for": "teach:3"
+        }
+      ],
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
         "practice": "think-pair-share",
-        "exit": "hands-down"
+        "exit": "hands-down",
+        "hinge": "teams-poll"
       },
       "resources": [
         "Pupil's draft report",
@@ -4604,13 +4960,13 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: edit then proofread",
+          "heading": "Edit then proofread",
           "bullets": [
             "Edit: make it better (words, sentences)",
             "Proofread: fix mistakes",
             "Then publish neatly"
           ],
-          "note": "Begin with bismillah. Explain the difference between editing and proofreading."
+          "note": "Explain the difference between editing and proofreading."
         },
         {
           "heading": "Proofreading checklist",
@@ -4686,7 +5042,8 @@
         {
           "q": "Fix: the frame are made of steal",
           "a": "The frame is made of steel.",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: The frame is made of steel."
         },
         {
           "q": "Improve: The swing is good.",
@@ -4696,9 +5053,10 @@
       ],
       "independent": [
         {
-          "q": "Core: proofread your report using the checklist and correct mistakes in coloured pen",
+          "q": "Core: proofread your report using the checklist and correct mistakes in coloured pen (in the portal response box, with the sentence starter and paragraph frame)",
           "a": "Corrections vary",
-          "mins": 8
+          "mins": 6,
+          "model": "Labelled model to go through first (It goes down fast.): Who or what? The spiral slide | Technical word: gravity | Conjunction: because | Improved: The spiral slide is fast because gravity pulls riders down the smooth chute. | Result: A clearer, more technical sentence."
         },
         {
           "q": "Extend: improve three sentences and act on your partner's EBI",
@@ -4706,9 +5064,9 @@
           "mins": 6
         },
         {
-          "q": "Stretch: publish a neat final copy with title, sub-headings, labelled diagram and caption",
+          "q": "Stretch: publish a neat final copy with title, sub-headings, labelled diagram and caption (in the portal response box, with the sentence starter and paragraph frame)",
           "a": "A complete published report",
-          "mins": 8
+          "mins": 6
         }
       ],
       "exit": [
@@ -4728,8 +5086,7 @@
       "duration": 45,
       "bigQuestion": "How is an explanation different from a report?",
       "objectives": [
-        "Identify the features of explanation texts",
-        "Suggest a heading for an untitled explanation and summarise it (VIPERS: Summarise, Explain)"
+        "To identify the features of explanation texts"
       ],
       "successCriteria": [
         "All: name three features of an explanation",
@@ -4757,15 +5114,28 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "Report: \"Parachutes are made of nylon.\" Explanation: \"A parachute slows you down because...\" What is the difference?",
         "a": "A report gives facts about a thing; an explanation tells how or why something happens."
       },
+      "pictures": [
+        {
+          "find": "parachute descending photograph",
+          "alt": "a parachute (air resistance)",
+          "for": "teach:2"
+        },
+        {
+          "find": "spinning top toy photograph",
+          "alt": "a spinner",
+          "for": "teach:4"
+        }
+      ],
       "routines": {
         "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
-        "exit": "chat-waterfall"
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
       },
       "resources": [
         "Tarbiyyah Primary English scheme of work, Mighty Metals: Develop (untitled explanatory texts, class checklist of features)",
@@ -4792,8 +5162,8 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: features of an explanation",
-          "note": "Begin with bismillah. Build the class checklist from the scheme.",
+          "heading": "Features of an explanation",
+          "note": "Build the class checklist from the scheme.",
           "diagram": {
             "centre": "Explanation",
             "items": [
@@ -4860,7 +5230,8 @@
         {
           "q": "Give a heading for text B (about a spinner slowing down)",
           "a": "For example: Why Does a Spinner Stop?",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: For example: Why Does a Spinner Stop?"
         },
         {
           "q": "E: Why do explanations use because and so?",
@@ -4875,9 +5246,10 @@
       ],
       "independent": [
         {
-          "q": "Core: give headings to texts B and C and list three features in each",
+          "q": "Core: give headings to texts B and C and list three features in each (in the portal response box, with the sentence starter and paragraph frame)",
           "a": "For example: Why Does a Spinner Stop? present tense, because, diagram",
-          "mins": 8
+          "mins": 8,
+          "model": "Teacher does the first part aloud before pupils start, showing each step: For example: Why Does a Spinner Stop? present tense, because, diagram"
         },
         {
           "q": "Extend: summarise text B as a four-step cause and effect chain",
@@ -4912,8 +5284,7 @@
       "duration": 45,
       "bigQuestion": "How do I plan an explanation so each step leads to the next?",
       "objectives": [
-        "Choose a force and plan an explanation in sequenced steps",
-        "Draw a labelled diagram (objects only) to support the explanation"
+        "To choose a force and plan an explanation in sequenced steps"
       ],
       "successCriteria": [
         "All: plan three steps in order",
@@ -4941,15 +5312,28 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "Choose one: Why does a spinner stop? How does a parachute work? How does a magnet pick up pins? Which would be easiest to explain? Hardest?",
         "a": "Any choice with a reason."
       },
+      "pictures": [
+        {
+          "find": "paper parachute toy photograph",
+          "alt": "a paper parachute",
+          "for": "teach:1"
+        },
+        {
+          "find": "spinning top toy photograph",
+          "alt": "a spinner",
+          "for": "teach:2"
+        }
+      ],
       "routines": {
         "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
-        "exit": "chat-waterfall"
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
       },
       "resources": [
         "Tarbiyyah Primary English scheme of work, Mighty Metals: Develop (choose a force to explain, plan with the checklist)",
@@ -4976,13 +5360,13 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: choose your force",
+          "heading": "Choose your force",
           "bullets": [
             "gravity: a parachute",
             "friction: a spinner",
             "magnetism: picking up pins"
           ],
-          "note": "Begin with bismillah. Pupils choose and, if possible, try it at home first."
+          "note": "Pupils choose and, if possible, try it at home first."
         },
         {
           "heading": "Plan the steps",
@@ -5028,7 +5412,8 @@
         {
           "q": "Order: it slows, you twist it, it stops, friction acts",
           "a": "you twist it, friction acts, it slows, it stops",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: you twist it, friction acts, it slows, it stops"
         },
         {
           "q": "Write a causal sentence for step 2 of your plan",
@@ -5038,9 +5423,10 @@
       ],
       "independent": [
         {
-          "q": "Core: complete the planning frame with a title and four steps",
+          "q": "Core: complete the planning frame with a title and four steps (in the portal response box, with the sentence starter and paragraph frame)",
           "a": "For example: How Does a Magnet Pick Up Pins? steps...",
-          "mins": 12
+          "mins": 12,
+          "model": "Labelled model to go through first (Why Does a Spinner Stop?): Intro: spinners are fun toys that spin and then stop | Step 1: a twist starts it spinning | Step 2: the point rubs on the table (friction) | Step 3: friction slows it, so it wobbles | Step 4: it stops and falls over | Conclusion: smooth surfaces make it spin longer | Result: A sequenced plan."
         },
         {
           "q": "Extend: sketch and label a diagram with arrows for the forces",
@@ -5070,8 +5456,7 @@
       "duration": 45,
       "bigQuestion": "How do cause and effect connectives make an explanation flow?",
       "objectives": [
-        "Write an explanation from a plan in paragraphs",
-        "Use cause and effect connectives (because, so, therefore, as a result)"
+        "To write an explanation from a plan in paragraphs"
       ],
       "successCriteria": [
         "All: write the steps in order with because and so",
@@ -5099,7 +5484,7 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "Fill the gap: The surface was rough. ___, the spinner stopped quickly. Which works best: However, Therefore, Meanwhile?",
         "options": [
           "However",
@@ -5108,11 +5493,24 @@
         ],
         "a": "Therefore: it shows the result of the rough surface."
       },
+      "pictures": [
+        {
+          "find": "spinning top toy photograph",
+          "alt": "a spinner",
+          "for": "teach:2"
+        },
+        {
+          "find": "bicycle brake close up photograph",
+          "alt": "a bicycle brake (friction)",
+          "for": "keywords"
+        }
+      ],
       "routines": {
         "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
-        "exit": "chat-waterfall"
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
       },
       "resources": [
         "Pupil's plan and diagram",
@@ -5139,8 +5537,8 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: linking cause and effect",
-          "note": "Begin with bismillah.",
+          "heading": "Linking cause and effect",
+          "note": "Introduce the slide and check pupils are ready.",
           "table": {
             "head": [
               "Connective",
@@ -5212,7 +5610,8 @@
         {
           "q": "Add a connective: The canopy opens. ___, air resistance slows the fall.",
           "a": "For example: As a result,",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: For example: As a result,"
         },
         {
           "q": "Rewrite to avoid repeating so: It falls so it speeds up so it hits the ground.",
@@ -5222,9 +5621,10 @@
       ],
       "independent": [
         {
-          "q": "Core: write the explanation in paragraphs from your plan, using because and so",
+          "q": "Core: write the explanation in paragraphs from your plan, using because and so (in the portal response box, with the sentence starter and paragraph frame)",
           "a": "For example: Why Does a Spinner Stop? Spinners are...",
-          "mins": 15
+          "mins": 15,
+          "model": "Labelled model to go through first (Step 2 and 3 paragraph): As the spinner turns, its point rubs against the table. | This creates friction, which acts against the spin. | As a result, the spinner slows down and begins to wobble. | Therefore, it soon falls onto its side. | Result: A linked paragraph."
         },
         {
           "q": "Extend: use therefore and as a result at least once each",
@@ -5254,8 +5654,7 @@
       "duration": 45,
       "bigQuestion": "How does a glossary help a reader, and how do I make my explanation ready to publish?",
       "objectives": [
-        "Create a glossary of technical words in alphabetical order",
-        "Proofread the explanation for spelling, grammar and punctuation"
+        "To create a glossary of technical words in alphabetical order"
       ],
       "successCriteria": [
         "All: write three glossary entries in alphabetical order",
@@ -5283,15 +5682,28 @@
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "Put these glossary words in order: magnet, friction, gravity, attract, repel, air resistance.",
         "a": "air resistance, attract, friction, gravity, magnet, repel"
       },
+      "pictures": [
+        {
+          "find": "book glossary page photograph",
+          "alt": "a glossary in a book",
+          "for": "teach:1"
+        },
+        {
+          "find": "ice skates on ice photograph",
+          "alt": "ice skates (low friction)",
+          "for": "keywords"
+        }
+      ],
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
-        "exit": "hands-down"
+        "practice": "hands-down",
+        "exit": "hands-down",
+        "hinge": "teams-poll"
       },
       "resources": [
         "Tarbiyyah Primary English scheme of work, Mighty Metals: Develop (glossaries in books and leaflets; check work with a dictionary)",
@@ -5319,13 +5731,13 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: what is a glossary for?",
+          "heading": "What is a glossary for?",
           "bullets": [
             "Explains technical words",
             "Alphabetical order",
             "Bold words in the text match the glossary"
           ],
-          "note": "Begin with bismillah. Show a glossary from a non-fiction book. How is it ordered?"
+          "note": "Show a glossary from a non-fiction book. How is it ordered?"
         },
         {
           "heading": "Model: glossary entries",
@@ -5401,7 +5813,8 @@
         {
           "q": "Order: therefore, surface, spin, canopy",
           "a": "canopy, spin, surface, therefore",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: canopy, spin, surface, therefore"
         },
         {
           "q": "Write a definition of attract",
@@ -5416,9 +5829,10 @@
       ],
       "independent": [
         {
-          "q": "Core: write a glossary of five technical words from your explanation in alphabetical order",
+          "q": "Core: write a glossary of five technical words from your explanation in alphabetical order (in the portal response box, with the sentence starter and paragraph frame)",
           "a": "For example: air resistance, canopy, friction, gravity, surface with definitions",
-          "mins": 8
+          "mins": 5,
+          "model": "Labelled model to go through first (Glossary): air resistance: a force from air that slows moving things | friction: a force that slows things when surfaces rub | gravity: the force that pulls things towards the Earth | repel: to push away | Result: Alphabetical, short, clear."
         },
         {
           "q": "Extend: proofread your explanation and correct at least three errors",

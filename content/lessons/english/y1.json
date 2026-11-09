@@ -319,8 +319,7 @@
       "duration": 30,
       "bigQuestion": "What does a sentence need so that a reader can read it?",
       "objectives": [
-        "Say, write and read back a sentence about a real event",
-        "Use a capital letter, finger spaces and a full stop"
+        "To say, write and read back a sentence about a real event"
       ],
       "successCriteria": [
         "All: write one sentence with a capital letter and a full stop",
@@ -329,6 +328,10 @@
       ],
       "crossCurricular": "PSHE: talking about a new school and new friends",
       "smsc": "Social: sharing news kindly and listening to others (adab of listening)",
+      "islamicLink": {
+        "text": "Sharing news kindly and listening to others (adab of listening)",
+        "at": "start"
+      },
       "keywords": [
         {
           "term": "recount",
@@ -348,15 +351,28 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "thisweekimetmynewteacher. What is wrong? How many fixes can you spot?",
         "a": "No capital letter, no spaces, no full stop: This week I met my new teacher."
       },
+      "pictures": [
+        {
+          "find": "laptop on a desk photograph",
+          "alt": "a laptop for online school",
+          "for": "keywords"
+        },
+        {
+          "find": "pencil and lined paper photograph",
+          "alt": "pencil and lined paper for writing",
+          "for": "keywords"
+        }
+      ],
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
-        "exit": "show-me"
+        "practice": "show-me",
+        "exit": "show-me",
+        "hinge": "teams-poll"
       },
       "resources": [
         "Slides",
@@ -384,17 +400,8 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: what is a recount?",
-          "bullets": [
-            "It tells what happened",
-            "It is in time order",
-            "It says I and we"
-          ],
-          "note": "Begin with bismillah. Explain a recount tells a real event in order. Today we recount our first week at TGA (induction week)."
-        },
-        {
           "heading": "Three rules for a sentence",
-          "note": "Show the rules on the checker card. Pupils touch head (capital), hold up a finger (space), point (full stop).",
+          "note": "What is a recount?: It tells what happened; It is in time order; It says I and we. Explain a recount tells a real event in order. Today we recount our first week at TGA (induction week). Show the rules on the checker card. Pupils touch head (capital), hold up a finger (space), point (full stop).",
           "compare": {
             "left": {
               "title": "Not yet",
@@ -457,12 +464,13 @@
         {
           "q": "Fix it: i read a book",
           "a": "I read a book.",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: I read a book."
         },
         {
           "q": "Fix it: wemetourteacher.",
           "a": "We met our teacher.",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Put in order: Then I read. First I logged in.",
@@ -474,7 +482,8 @@
         {
           "q": "Core: write 2 sentences about your first week",
           "a": "For example: First I met my teacher. Then I read a book.",
-          "mins": 4
+          "mins": 2,
+          "model": "Labelled model to go through first (Write: I met my new class.): Say it out loud | Count the words: 5 | Write with a finger space after each word | Add the full stop | Read it back | Result: I met my new class."
         },
         {
           "q": "Extend: write 3 sentences with First, Next, Then",
@@ -1695,16 +1704,13 @@
       "duration": 30,
       "bigQuestion": "How can two letters make one sound?",
       "objectives": [
-        "Read and spell words with ay, ou",
-        "Read a sentence with the new sounds"
+        "To read and spell words with ay, ou"
       ],
       "successCriteria": [
         "All: say the sound for ay, ou",
         "Most: read and spell words with the new sounds",
         "Some: read a whole sentence with the new sounds and explain what it means"
       ],
-      "crossCurricular": "Science and topic: words from our project",
-      "smsc": "Spiritual: we begin with bismillah and thank Allah for the gift of learning to read",
       "keywords": [
         {
           "term": "grapheme",
@@ -1720,7 +1726,7 @@
         }
       ],
       "hook": {
-        "type": "odd-one-out",
+        "type": "ponder",
         "text": "Which word is the odd one out? Look at the letters that make the sound.",
         "options": [
           "day",
@@ -1730,10 +1736,23 @@
         ],
         "a": "out: it has ou. The others all have ay."
       },
+      "pictures": [
+        {
+          "find": "white cumulus cloud blue sky photograph",
+          "alt": "a white cloud in a blue sky (cloud: ou)",
+          "for": "teach:1"
+        },
+        {
+          "find": "wooden serving tray photograph",
+          "alt": "a wooden tray (tray: ay)",
+          "for": "teach:1"
+        }
+      ],
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "exit": "show-me"
       },
       "resources": [
@@ -1761,8 +1780,8 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: today's sounds",
-          "note": "Begin with bismillah (بِسْمِ اللَّهِ) together. Show the graphemes for today (ay, ou). Point to each one: pupils say the sound, not the letter names. Bridge week: these are Autumn 2 sounds we must secure before Moon Zoom!",
+          "heading": "Today's sounds",
+          "note": "Point to each grapheme: pupils say the sound, not the letter names. Read the words with sound buttons, then blend. ay is usually at the end of a word: play, day. Model sound buttons: a line under ay. ou says /ow/ as in out. Contrast with ow in cow: same sound, different spelling. Bridge week: these are Autumn 2 sounds we must secure before Moon Zoom!",
           "diagram": {
             "centre": "Today we learn",
             "items": [
@@ -1773,26 +1792,8 @@
           }
         },
         {
-          "heading": "ay says /ai/",
-          "bullets": [
-            "2 letters, 1 sound",
-            "Read: play, day, tray, spray",
-            "Sound buttons, then blend"
-          ],
-          "note": "ay is usually at the end of a word: play, day. Model sound buttons: a line under ay."
-        },
-        {
-          "heading": "ou says /ow/",
-          "bullets": [
-            "2 letters, 1 sound",
-            "Read: out, cloud, loud, found",
-            "Sound buttons, then blend"
-          ],
-          "note": "ou says /ow/ as in out. Contrast with ow in cow: same sound, different spelling."
-        },
-        {
           "heading": "Hinge: which one?",
-          "note": "Pupils write the letter of their answer on mini-whiteboards and show on 3. Anyone who chose a wrong option gets a quick re-model before practice.",
+          "note": "Teams poll (or show the letter on a whiteboard on 3). Anyone who chose a wrong option gets a quick re-model before practice.",
           "check": {
             "q": "Which word has the /ow/ sound spelt ou?",
             "options": [
@@ -1837,7 +1838,8 @@
         {
           "q": "Read: say, way, stay",
           "a": "say, way, stay",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher goes through it first: point under each sound, say it, blend it, then read or write the whole word. Answer: say, way, stay"
         },
         {
           "q": "Read: shout, mouth, found",
@@ -1852,19 +1854,20 @@
         {
           "q": "ay or ou? tr__",
           "a": "tray (ay)",
-          "mins": 2
+          "mins": 1
         }
       ],
       "independent": [
         {
           "q": "Core: write 3 words with ay",
           "a": "For example: day, play, tray",
-          "mins": 3
+          "mins": 1,
+          "model": "Labelled model to go through first (Spell: cloud): Say it: cloud | Count the sounds: c-l-ou-d (4) | Write a grapheme for each sound | Check: ou for /ow/ | Result: cloud"
         },
         {
           "q": "Extend: write 3 words with ou",
           "a": "For example: out, loud, cloud",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Stretch: write a sentence with one ay word and one ou word",
@@ -1894,16 +1897,13 @@
       "duration": 30,
       "bigQuestion": "Can the same sound have more than one spelling?",
       "objectives": [
-        "Read and spell words with oy, ea",
-        "Read a sentence with the new sounds"
+        "To read and spell words with oy, ea"
       ],
       "successCriteria": [
         "All: say the sound for oy, ea",
         "Most: read and spell words with the new sounds",
         "Some: read a whole sentence with the new sounds and explain what it means"
       ],
-      "crossCurricular": "Science and topic: words from our project",
-      "smsc": "Spiritual: we begin with bismillah and thank Allah for the gift of learning to read",
       "keywords": [
         {
           "term": "digraph",
@@ -1919,14 +1919,27 @@
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "I am two letters. I am at the end of boy and toy. What am I?",
         "a": "oy"
       },
+      "pictures": [
+        {
+          "find": "wooden toy train photograph",
+          "alt": "a wooden toy (toy: oy)",
+          "for": "teach:1"
+        },
+        {
+          "find": "sandy beach and sea photograph",
+          "alt": "a beach by the sea (sea, beach: ea)",
+          "for": "teach:1"
+        }
+      ],
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "exit": "show-me"
       },
       "resources": [
@@ -1953,8 +1966,8 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: today's sounds",
-          "note": "Begin with bismillah (بِسْمِ اللَّهِ) together. Show the graphemes for today (oy, ea). Point to each one: pupils say the sound, not the letter names. ",
+          "heading": "Today's sounds",
+          "note": "Point to each grapheme: pupils say the sound, not the letter names. Read the words with sound buttons, then blend. oy usually comes at the end of a word: toy, boy. oi comes in the middle: coin. ea can say /ee/: sea, eat. ee says the same sound in see.",
           "diagram": {
             "centre": "Today we learn",
             "items": [
@@ -1965,26 +1978,8 @@
           }
         },
         {
-          "heading": "oy says /oi/",
-          "bullets": [
-            "2 letters, 1 sound",
-            "Read: toy, boy, enjoy, annoy",
-            "Sound buttons, then blend"
-          ],
-          "note": "oy usually comes at the end of a word: toy, boy. oi comes in the middle: coin."
-        },
-        {
-          "heading": "ea says /ee/",
-          "bullets": [
-            "2 letters, 1 sound",
-            "Read: sea, eat, read, dream",
-            "Sound buttons, then blend"
-          ],
-          "note": "ea can say /ee/: sea, eat. ee says the same sound in see."
-        },
-        {
           "heading": "Hinge: which one?",
-          "note": "Pupils write the letter of their answer on mini-whiteboards and show on 3. Anyone who chose a wrong option gets a quick re-model before practice.",
+          "note": "Teams poll (or show the letter on a whiteboard on 3). Anyone who chose a wrong option gets a quick re-model before practice.",
           "check": {
             "q": "Which word has /ee/ spelt ea?",
             "options": [
@@ -2029,7 +2024,8 @@
         {
           "q": "Read: boy, joy, enjoy",
           "a": "boy, joy, enjoy",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher goes through it first: point under each sound, say it, blend it, then read or write the whole word. Answer: boy, joy, enjoy"
         },
         {
           "q": "Read: team, leaf, seat",
@@ -2044,19 +2040,20 @@
         {
           "q": "Fill the gap: s__ (big water at the beach)",
           "a": "sea",
-          "mins": 2
+          "mins": 1
         }
       ],
       "independent": [
         {
           "q": "Core: write 3 words with ea",
           "a": "For example: sea, eat, read",
-          "mins": 3
+          "mins": 1,
+          "model": "Labelled model to go through first (Spell: toy): Say it: toy | Count the sounds: t-oy (2) | oy at the end of a word | Write and check | Result: toy"
         },
         {
           "q": "Extend: write 2 words with oy",
           "a": "For example: toy, boy",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Stretch: write a sentence about the sea",
@@ -2086,16 +2083,13 @@
       "duration": 30,
       "bigQuestion": "How do we know which spelling to use?",
       "objectives": [
-        "Read and spell words with ir, ie",
-        "Read a sentence with the new sounds"
+        "To read and spell words with ir, ie"
       ],
       "successCriteria": [
         "All: say the sound for ir, ie",
         "Most: read and spell words with the new sounds",
         "Some: read a whole sentence with the new sounds and explain what it means"
       ],
-      "crossCurricular": "Science and topic: words from our project",
-      "smsc": "Spiritual: we begin with bismillah and thank Allah for the gift of learning to read",
       "keywords": [
         {
           "term": "digraph",
@@ -2111,7 +2105,7 @@
         }
       ],
       "hook": {
-        "type": "odd-one-out",
+        "type": "ponder",
         "text": "Which word is the odd one out?",
         "options": [
           "bird",
@@ -2121,10 +2115,28 @@
         ],
         "a": "pie: it has ie. The others have ir."
       },
+      "pictures": [
+        {
+          "find": "robin bird on branch photograph",
+          "alt": "a robin (bird: ir)",
+          "for": "teach:1"
+        },
+        {
+          "find": "folded shirt photograph",
+          "alt": "a folded shirt (shirt: ir)",
+          "for": "teach:1"
+        },
+        {
+          "find": "apple pie photograph",
+          "alt": "a pie (pie: ie)",
+          "for": "teach:1"
+        }
+      ],
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "exit": "show-me"
       },
       "resources": [
@@ -2151,8 +2163,8 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: today's sounds",
-          "note": "Begin with bismillah (بِسْمِ اللَّهِ) together. Show the graphemes for today (ir, ie). Point to each one: pupils say the sound, not the letter names. ",
+          "heading": "Today's sounds",
+          "note": "Point to each grapheme: pupils say the sound, not the letter names. Read the words with sound buttons, then blend. ir says /ur/ as in bird. ur says the same sound in turn. ie says /igh/ as in pie. igh says the same in night.",
           "diagram": {
             "centre": "Today we learn",
             "items": [
@@ -2163,26 +2175,8 @@
           }
         },
         {
-          "heading": "ir says /ur/",
-          "bullets": [
-            "2 letters, 1 sound",
-            "Read: bird, girl, shirt, first",
-            "Sound buttons, then blend"
-          ],
-          "note": "ir says /ur/ as in bird. ur says the same sound in turn."
-        },
-        {
-          "heading": "ie says /igh/",
-          "bullets": [
-            "2 letters, 1 sound",
-            "Read: pie, tie, lie, cried",
-            "Sound buttons, then blend"
-          ],
-          "note": "ie says /igh/ as in pie. igh says the same in night."
-        },
-        {
           "heading": "Hinge: which one?",
-          "note": "Pupils write the letter of their answer on mini-whiteboards and show on 3. Anyone who chose a wrong option gets a quick re-model before practice.",
+          "note": "Teams poll (or show the letter on a whiteboard on 3). Anyone who chose a wrong option gets a quick re-model before practice.",
           "check": {
             "q": "Which word has /igh/ spelt ie?",
             "options": [
@@ -2227,7 +2221,8 @@
         {
           "q": "Read: skirt, third, twirl",
           "a": "skirt, third, twirl",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher goes through it first: point under each sound, say it, blend it, then read or write the whole word. Answer: skirt, third, twirl"
         },
         {
           "q": "Read: lie, fried, tried",
@@ -2242,19 +2237,20 @@
         {
           "q": "ir or ie? g__l",
           "a": "girl (ir)",
-          "mins": 2
+          "mins": 1
         }
       ],
       "independent": [
         {
           "q": "Core: write bird, girl, shirt",
           "a": "bird, girl, shirt",
-          "mins": 3
+          "mins": 1,
+          "model": "Labelled model to go through first (Spell: shirt): Say it: shirt | Count the sounds: sh-ir-t (3) | sh is two letters, ir is two letters | Write and check | Result: shirt"
         },
         {
           "q": "Extend: write pie, tie, cried",
           "a": "pie, tie, cried",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Stretch: write a sentence with first and bird",
@@ -2284,16 +2280,13 @@
       "duration": 30,
       "bigQuestion": "What do we do when a word has a tricky part?",
       "objectives": [
-        "Read and spell words with ue, u",
-        "Read a sentence with the new sounds"
+        "To read and spell words with ue, u"
       ],
       "successCriteria": [
         "All: say the sound for ue, u",
         "Most: read and spell words with the new sounds",
         "Some: read a whole sentence with the new sounds and explain what it means"
       ],
-      "crossCurricular": "Science and topic: words from our project",
-      "smsc": "Spiritual: we begin with bismillah and thank Allah for the gift of learning to read",
       "keywords": [
         {
           "term": "tricky word",
@@ -2309,14 +2302,27 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "Blue, blew. Same sound, two spellings. Why might English have two ways to write one sound?",
         "a": "Words come from different places and times; we learn which spelling goes with which word."
       },
+      "pictures": [
+        {
+          "find": "glue stick photograph",
+          "alt": "a glue stick (glue: ue)",
+          "for": "teach:1"
+        },
+        {
+          "find": "blue sky photograph",
+          "alt": "a clear blue sky (blue: ue)",
+          "for": "teach:1"
+        }
+      ],
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "exit": "show-me"
       },
       "resources": [
@@ -2344,38 +2350,20 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: today's sounds",
-          "note": "Begin with bismillah (بِسْمِ اللَّهِ) together. Show the graphemes for today (ue, u). Point to each one: pupils say the sound, not the letter names. ",
+          "heading": "Today's sounds",
+          "note": "Point to each grapheme: pupils say the sound, not the letter names. Read the words with sound buttons, then blend. ue can say /oo/ in blue and /yoo/ in rescue. Try both and choose the real word. u can say /yoo/ at the start of uniform. Pupils already know u as in up. Tricky words (their, people, oh, your): underline the tricky part together, then flash-read them three times.",
           "diagram": {
             "centre": "Today we learn",
             "items": [
               "ue: blue, glue",
               "u: uniform, unicorn",
-              "Tricky: their, people, oh"
+              "Tricky: their, people, oh, your"
             ]
           }
         },
         {
-          "heading": "ue says /oo/ and /yoo/",
-          "bullets": [
-            "2 letters, 1 sound",
-            "Read: blue, glue, clue, true",
-            "Sound buttons, then blend"
-          ],
-          "note": "ue can say /oo/ in blue and /yoo/ in rescue. Try both and choose the real word."
-        },
-        {
-          "heading": "u says /yoo/",
-          "bullets": [
-            "One letter, a new sound",
-            "Read: uniform, unicorn, menu, human",
-            "Sound buttons, then blend"
-          ],
-          "note": "u can say /yoo/ at the start of uniform. Pupils already know u as in up."
-        },
-        {
           "heading": "Hinge: which one?",
-          "note": "Pupils write the letter of their answer on mini-whiteboards and show on 3. Anyone who chose a wrong option gets a quick re-model before practice.",
+          "note": "Teams poll (or show the letter on a whiteboard on 3). Anyone who chose a wrong option gets a quick re-model before practice.",
           "check": {
             "q": "Which word has ue?",
             "options": [
@@ -2414,22 +2402,14 @@
             ],
             "answer": "glue"
           }
-        },
-        {
-          "heading": "Tricky words",
-          "bullets": [
-            "Read: their, people, oh, your",
-            "Find the tricky part",
-            "Read them fast"
-          ],
-          "note": "Tricky words have a part we cannot sound out yet. Underline the tricky part together, then flash-read the words three times."
         }
       ],
       "practice": [
         {
           "q": "Read: true, clue, argue",
           "a": "true, clue, argue",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher goes through it first: point under each sound, say it, blend it, then read or write the whole word. Answer: true, clue, argue"
         },
         {
           "q": "Read: uniform, menu",
@@ -2444,19 +2424,20 @@
         {
           "q": "Spell: blue",
           "a": "blue (b-l-ue)",
-          "mins": 2
+          "mins": 1
         }
       ],
       "independent": [
         {
           "q": "Core: write blue, glue, clue",
           "a": "blue, glue, clue",
-          "mins": 3
+          "mins": 1,
+          "model": "Labelled model to go through first (Spell: glue): Say it: glue | Count the sounds: g-l-ue (3) | ue at the end | Write and check | Result: glue"
         },
         {
           "q": "Extend: copy and read: their, people, your",
           "a": "their, people, your",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Stretch: write a sentence with a ue word and a tricky word",
@@ -2486,16 +2467,13 @@
       "duration": 30,
       "bigQuestion": "What do we do when a letter can make two sounds?",
       "objectives": [
-        "Read and spell words with o, i, a, e",
-        "Read a sentence with the new sounds"
+        "To read and spell words with o, i, a, e"
       ],
       "successCriteria": [
         "All: say the sound for o, i, a, e",
         "Most: read and spell words with the new sounds",
         "Some: read a whole sentence with the new sounds and explain what it means"
       ],
-      "crossCurricular": "Science and topic: words from our project",
-      "smsc": "Spiritual: we begin with bismillah and thank Allah for the gift of learning to read",
       "keywords": [
         {
           "term": "vowel",
@@ -2511,14 +2489,27 @@
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "Read this word two ways: wild. Wild as in will, or wild as in mild? Which is a real word?",
         "a": "wild with /igh/: we try the other sound if the first one does not make a word."
       },
+      "pictures": [
+        {
+          "find": "stack of paper sheets photograph",
+          "alt": "paper (a says /ai/)",
+          "for": "teach:1"
+        },
+        {
+          "find": "acorn on oak leaf photograph",
+          "alt": "an acorn (a says /ai/)",
+          "for": "teach:1"
+        }
+      ],
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "exit": "show-me"
       },
       "resources": [
@@ -2546,21 +2537,8 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: today's sounds",
-          "note": "Begin with bismillah (بِسْمِ اللَّهِ) together. Show the graphemes for today (o, i, a, e). Point to each one: pupils say the sound, not the letter names. ",
-          "diagram": {
-            "centre": "Today we learn",
-            "items": [
-              "o: go, no",
-              "i: I, find",
-              "a: paper, baby",
-              "e: he, she"
-            ]
-          }
-        },
-        {
-          "heading": "Sounds we know: quick review",
-          "note": "o can say /oa/: go, no, cold. i can say /igh/: find, kind. a can say /ai/: paper, baby. e can say /ee/: he, she. Review lesson: point and say each sound, then read the words together, then read them again faster.",
+          "heading": "Today's sounds",
+          "note": "Point to each grapheme: pupils say the sound, not the letter names, then read the words together, then faster. o can say /oa/: go, no, cold. i can say /igh/: find, kind. a can say /ai/: paper, baby. e can say /ee/: he, she.",
           "table": {
             "head": [
               "Grapheme",
@@ -2593,7 +2571,7 @@
         },
         {
           "heading": "Hinge: which one?",
-          "note": "Pupils write the letter of their answer on mini-whiteboards and show on 3. Anyone who chose a wrong option gets a quick re-model before practice.",
+          "note": "Teams poll (or show the letter on a whiteboard on 3). Anyone who chose a wrong option gets a quick re-model before practice.",
           "check": {
             "q": "In which word does a say /ai/?",
             "options": [
@@ -2638,7 +2616,8 @@
         {
           "q": "Read: go, no, so",
           "a": "go, no, so",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher goes through it first: point under each sound, say it, blend it, then read or write the whole word. Answer: go, no, so"
         },
         {
           "q": "Read: mind, wild, child",
@@ -2653,19 +2632,20 @@
         {
           "q": "Spell: we",
           "a": "we",
-          "mins": 2
+          "mins": 1
         }
       ],
       "independent": [
         {
           "q": "Core: write he, she, we, me",
           "a": "he, she, we, me",
-          "mins": 3
+          "mins": 1,
+          "model": "Labelled model to go through first (Spell: find): Say it: find | Count the sounds: f-i-n-d (4) | i says /igh/ here | Write and check | Result: find"
         },
         {
           "q": "Extend: write go, cold, find, kind",
           "a": "go, cold, find, kind",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Stretch: write a sentence with kind and baby",
@@ -2695,16 +2675,13 @@
       "duration": 30,
       "bigQuestion": "How can a silent e change a word?",
       "objectives": [
-        "Read and spell words with a-e, i-e",
-        "Read a sentence with the new sounds"
+        "To read and spell words with a-e, i-e"
       ],
       "successCriteria": [
         "All: say the sound for a-e, i-e",
         "Most: read and spell words with the new sounds",
         "Some: read a whole sentence with the new sounds and explain what it means"
       ],
-      "crossCurricular": "Science and topic: words from our project",
-      "smsc": "Spiritual: we begin with bismillah and thank Allah for the gift of learning to read",
       "keywords": [
         {
           "term": "split digraph",
@@ -2720,14 +2697,32 @@
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "cap, kit, hop. Add one letter to the end of each word to make a new word. Which letter works every time?",
         "a": "e: cape, kite, hope. The e changes the vowel sound."
       },
+      "pictures": [
+        {
+          "find": "round cake photograph",
+          "alt": "a cake (a-e)",
+          "for": "teach:1"
+        },
+        {
+          "find": "red kite flying photograph",
+          "alt": "a kite (i-e)",
+          "for": "teach:1"
+        },
+        {
+          "find": "dog bone photograph",
+          "alt": "a bone (o-e)",
+          "for": "teach:1"
+        }
+      ],
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "exit": "show-me"
       },
       "resources": [
@@ -2755,38 +2750,20 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: today's sounds",
-          "note": "Begin with bismillah (بِسْمِ اللَّهِ) together. Show the graphemes for today (a-e, i-e). Point to each one: pupils say the sound, not the letter names. ",
+          "heading": "Today's sounds",
+          "note": "Point to each grapheme: pupils say the sound, not the letter names. Read the words with sound buttons, then blend. The two letters are split by a consonant. The e is silent but changes the a to /ai/. Show cap to cape. i-e: show pin to pine. Draw a link line from the i to the e under the word. Same rule as a-e and i-e: the e reaches over the consonant and changes the vowel.",
           "diagram": {
             "centre": "Today we learn",
             "items": [
               "a-e: cake, make",
               "i-e: time, like",
-              "Read, spell, write"
+              "o-e: home, bone, rope, nose"
             ]
           }
         },
         {
-          "heading": "a-e says /ai/",
-          "bullets": [
-            "Split: the e jumps to the end",
-            "Read: cake, make, game, snake",
-            "Sound buttons, then blend"
-          ],
-          "note": "The two letters are split by a consonant. The e is silent but changes the a to /ai/. Show cap to cape."
-        },
-        {
-          "heading": "i-e says /igh/",
-          "bullets": [
-            "Split: the e jumps to the end",
-            "Read: time, like, bike, kite",
-            "Sound buttons, then blend"
-          ],
-          "note": "i-e: show pin to pine. Draw a link line from the i to the e under the word."
-        },
-        {
           "heading": "Hinge: which one?",
-          "note": "Pupils write the letter of their answer on mini-whiteboards and show on 3. Anyone who chose a wrong option gets a quick re-model before practice.",
+          "note": "Teams poll (or show the letter on a whiteboard on 3). Anyone who chose a wrong option gets a quick re-model before practice.",
           "check": {
             "q": "Which word has a split digraph?",
             "options": [
@@ -2825,22 +2802,14 @@
             ],
             "answer": "kite"
           }
-        },
-        {
-          "heading": "o-e says /oa/",
-          "bullets": [
-            "Read: home, bone, rope, nose",
-            "Hop to hope: the e changes o",
-            "Link line from o to e"
-          ],
-          "note": "Same rule as a-e and i-e: the e reaches over the consonant and changes the vowel."
         }
       ],
       "practice": [
         {
           "q": "Read: came, name, plate",
           "a": "came, name, plate",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher goes through it first: point under each sound, say it, blend it, then read or write the whole word. Answer: came, name, plate"
         },
         {
           "q": "Read: ride, slide, white",
@@ -2855,19 +2824,20 @@
         {
           "q": "Add e: cap becomes...",
           "a": "cape",
-          "mins": 2
+          "mins": 1
         }
       ],
       "independent": [
         {
           "q": "Core: write cake, bike, home",
           "a": "cake, bike, home",
-          "mins": 3
+          "mins": 1,
+          "model": "Labelled model to go through first (Spell: kite): Say it: kite | Count the sounds: k-i-t (3) | The /igh/ sound is split: i then t then e | Write and check | Result: kite"
         },
         {
           "q": "Extend: add e and read: pin, hop, tap",
           "a": "pine, hope, tape",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Stretch: write a sentence with two split digraph words",
@@ -2897,16 +2867,13 @@
       "duration": 30,
       "bigQuestion": "How many ways can we write the /oo/ sound?",
       "objectives": [
-        "Read and spell words with u-e, ew",
-        "Read a sentence with the new sounds"
+        "To read and spell words with u-e, ew"
       ],
       "successCriteria": [
         "All: say the sound for u-e, ew",
         "Most: read and spell words with the new sounds",
         "Some: read a whole sentence with the new sounds and explain what it means"
       ],
-      "crossCurricular": "Science and topic: words from our project",
-      "smsc": "Spiritual: we begin with bismillah and thank Allah for the gift of learning to read",
       "keywords": [
         {
           "term": "split digraph",
@@ -2915,10 +2882,14 @@
         {
           "term": "alternative spelling",
           "def": "another way to write the same sound"
+        },
+        {
+          "term": "grapheme",
+          "def": "the letter or letters that write a sound"
         }
       ],
       "hook": {
-        "type": "odd-one-out",
+        "type": "ponder",
         "text": "Which word is the odd one out?",
         "options": [
           "chew",
@@ -2928,10 +2899,23 @@
         ],
         "a": "tube: it has u-e. The others have ew."
       },
+      "pictures": [
+        {
+          "find": "test tube photograph",
+          "alt": "a tube (u-e)",
+          "for": "teach:1"
+        },
+        {
+          "find": "newspaper photograph",
+          "alt": "a new newspaper (ew)",
+          "for": "teach:1"
+        }
+      ],
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "exit": "show-me"
       },
       "resources": [
@@ -2958,38 +2942,20 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: today's sounds",
-          "note": "Begin with bismillah (بِسْمِ اللَّهِ) together. Show the graphemes for today (u-e, ew). Point to each one: pupils say the sound, not the letter names. ",
+          "heading": "Today's sounds",
+          "note": "Point to each grapheme: pupils say the sound, not the letter names. Read the words with sound buttons, then blend. u-e can say /yoo/ in cute and /oo/ in rude. ew can say /oo/ in chew and /yoo/ in new. e-e is rare; these is the word pupils will meet most.",
           "diagram": {
             "centre": "Today we learn",
             "items": [
               "u-e: cute, tube",
               "ew: chew, flew",
-              "Read, spell, write"
+              "e-e: these, theme, Pete, complete"
             ]
           }
         },
         {
-          "heading": "u-e says /yoo/ and /oo/",
-          "bullets": [
-            "Split: the e jumps to the end",
-            "Read: cute, tube, huge, rude",
-            "Sound buttons, then blend"
-          ],
-          "note": "u-e can say /yoo/ in cute and /oo/ in rude."
-        },
-        {
-          "heading": "ew says /oo/ and /yoo/",
-          "bullets": [
-            "2 letters, 1 sound",
-            "Read: chew, flew, grew, new",
-            "Sound buttons, then blend"
-          ],
-          "note": "ew can say /oo/ in chew and /yoo/ in new."
-        },
-        {
           "heading": "Hinge: which one?",
-          "note": "Pupils write the letter of their answer on mini-whiteboards and show on 3. Anyone who chose a wrong option gets a quick re-model before practice.",
+          "note": "Teams poll (or show the letter on a whiteboard on 3). Anyone who chose a wrong option gets a quick re-model before practice.",
           "check": {
             "q": "Which word says /oo/ with ew?",
             "options": [
@@ -3028,22 +2994,14 @@
             ],
             "answer": "new"
           }
-        },
-        {
-          "heading": "e-e says /ee/",
-          "bullets": [
-            "Read: these, theme, Pete, complete",
-            "Link line from e to e",
-            "Not many words use e-e"
-          ],
-          "note": "e-e is rare; these is the word pupils will meet most."
         }
       ],
       "practice": [
         {
           "q": "Read: tube, cute, use",
           "a": "tube, cute, use",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher goes through it first: point under each sound, say it, blend it, then read or write the whole word. Answer: tube, cute, use"
         },
         {
           "q": "Read: blew, crew, stew",
@@ -3058,19 +3016,20 @@
         {
           "q": "Spell: chew",
           "a": "chew",
-          "mins": 2
+          "mins": 1
         }
       ],
       "independent": [
         {
           "q": "Core: write new, few, flew",
           "a": "new, few, flew",
-          "mins": 3
+          "mins": 1,
+          "model": "Labelled model to go through first (Spell: new): Say it: new | Count the sounds: n-ew (2) | ew at the end of the word | Write and check | Result: new"
         },
         {
           "q": "Extend: write cute, huge, June",
           "a": "cute, huge, June",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Stretch: write a sentence with grew and huge",
@@ -3100,16 +3059,13 @@
       "duration": 30,
       "bigQuestion": "How do we choose the right sound when a spelling has two sounds?",
       "objectives": [
-        "Read and spell words with ie, aw",
-        "Read a sentence with the new sounds"
+        "To read and spell words with ie, aw"
       ],
       "successCriteria": [
         "All: say the sound for ie, aw",
         "Most: read and spell words with the new sounds",
         "Some: read a whole sentence with the new sounds and explain what it means"
       ],
-      "crossCurricular": "Science and topic: words from our project",
-      "smsc": "Spiritual: we begin with bismillah and thank Allah for the gift of learning to read",
       "keywords": [
         {
           "term": "tricky word",
@@ -3118,17 +3074,39 @@
         {
           "term": "alternative pronunciation",
           "def": "another sound the same letters can make"
+        },
+        {
+          "term": "grapheme",
+          "def": "the letter or letters that write a sound"
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "A word that means \"to make a picture with a pencil\" has aw in it. What is it?",
         "a": "draw"
       },
+      "pictures": [
+        {
+          "find": "wheat field photograph",
+          "alt": "a field (ie says /ee/)",
+          "for": "teach:1"
+        },
+        {
+          "find": "dog paw print photograph",
+          "alt": "a paw print (aw)",
+          "for": "teach:1"
+        },
+        {
+          "find": "drinking straw photograph",
+          "alt": "a straw (aw)",
+          "for": "teach:1"
+        }
+      ],
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "exit": "show-me"
       },
       "resources": [
@@ -3156,38 +3134,20 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: today's sounds",
-          "note": "Begin with bismillah (بِسْمِ اللَّهِ) together. Show the graphemes for today (ie, aw). Point to each one: pupils say the sound, not the letter names. ",
+          "heading": "Today's sounds",
+          "note": "Point to each grapheme: pupils say the sound, not the letter names. Read the words with sound buttons, then blend. ie can say /ee/ in field. Pupils met ie as /igh/ in pie: try both. aw says /or/: saw, paw. Tricky words (could, would, should, our): underline the tricky part together, then flash-read them three times.",
           "diagram": {
             "centre": "Today we learn",
             "items": [
               "ie: shield, field",
               "aw: saw, claw",
-              "Tricky: could, would, should"
+              "Tricky: could, would, should, our"
             ]
           }
         },
         {
-          "heading": "ie says /ee/",
-          "bullets": [
-            "2 letters, 1 sound",
-            "Read: shield, field, chief, thief",
-            "Sound buttons, then blend"
-          ],
-          "note": "ie can say /ee/ in field. Pupils met ie as /igh/ in pie: try both."
-        },
-        {
-          "heading": "aw says /or/",
-          "bullets": [
-            "2 letters, 1 sound",
-            "Read: saw, claw, draw, yawn",
-            "Sound buttons, then blend"
-          ],
-          "note": "aw says /or/: saw, paw."
-        },
-        {
           "heading": "Hinge: which one?",
-          "note": "Pupils write the letter of their answer on mini-whiteboards and show on 3. Anyone who chose a wrong option gets a quick re-model before practice.",
+          "note": "Teams poll (or show the letter on a whiteboard on 3). Anyone who chose a wrong option gets a quick re-model before practice.",
           "check": {
             "q": "In which word does ie say /ee/?",
             "options": [
@@ -3226,22 +3186,14 @@
             ],
             "answer": "claw"
           }
-        },
-        {
-          "heading": "Tricky words",
-          "bullets": [
-            "Read: could, would, should, our",
-            "Find the tricky part",
-            "Read them fast"
-          ],
-          "note": "Tricky words have a part we cannot sound out yet. Underline the tricky part together, then flash-read the words three times."
         }
       ],
       "practice": [
         {
           "q": "Read: straw, crawl, lawn",
           "a": "straw, crawl, lawn",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher goes through it first: point under each sound, say it, blend it, then read or write the whole word. Answer: straw, crawl, lawn"
         },
         {
           "q": "Read: field, chief",
@@ -3256,19 +3208,20 @@
         {
           "q": "Spell: saw",
           "a": "saw",
-          "mins": 2
+          "mins": 1
         }
       ],
       "independent": [
         {
           "q": "Core: write saw, paw, draw",
           "a": "saw, paw, draw",
-          "mins": 3
+          "mins": 1,
+          "model": "Labelled model to go through first (Spell: claw): Say it: claw | Count the sounds: c-l-aw (3) | aw at the end | Write and check | Result: claw"
         },
         {
           "q": "Extend: copy and read: could, would, should",
           "a": "could, would, should",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Stretch: write a sentence with field and could",
@@ -3298,8 +3251,7 @@
       "duration": 30,
       "bigQuestion": "How do bossy verbs help someone follow instructions?",
       "objectives": [
-        "Say and write instructions in order",
-        "Start each step with a bossy (command) verb"
+        "To say and write instructions in order"
       ],
       "successCriteria": [
         "All: write two steps that start with a bossy verb",
@@ -3323,15 +3275,28 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "Squash it. Roll it. Poke it. Make a ball first. Which instruction should come first? Why does the order matter?",
         "a": "Make a ball first: you cannot squash or poke a rock you have not made yet."
       },
+      "pictures": [
+        {
+          "find": "grey modelling clay photograph",
+          "alt": "grey dough or clay",
+          "for": "teach:1"
+        },
+        {
+          "find": "moon craters close up photograph",
+          "alt": "craters on the Moon, the model for our dough rock",
+          "for": "teach:1"
+        }
+      ],
       "routines": {
         "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
-        "exit": "show-me"
+        "practice": "show-me",
+        "exit": "show-me",
+        "hinge": "teams-poll"
       },
       "resources": [
         "Slides",
@@ -3359,17 +3324,8 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: what are instructions?",
-          "bullets": [
-            "They tell you how to make or do something",
-            "They are in order",
-            "They use bossy verbs"
-          ],
-          "note": "Begin with bismillah. Show a simple set of instructions. Ask: what do you notice about the first word of each step?"
-        },
-        {
           "heading": "Bossy verbs",
-          "note": "Act each verb with the dough on camera. Pupils copy the action.",
+          "note": "What are instructions?: They tell you how to make or do something; They are in order; They use bossy verbs. Show a simple set of instructions. Ask: what do you notice about the first word of each step? Act each verb with the dough on camera. Pupils copy the action.",
           "diagram": {
             "centre": "Bossy verbs",
             "items": [
@@ -3425,7 +3381,8 @@
         {
           "q": "Put in order: Poke holes. Roll a ball. Take some dough.",
           "a": "1. Take some dough. 2. Roll a ball. 3. Poke holes.",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: 1. Take some dough. 2. Roll a ball. 3. Poke holes."
         },
         {
           "q": "Underline the bossy verb: Press the dough.",
@@ -3442,7 +3399,8 @@
         {
           "q": "Core: write two numbered steps for your moon rock",
           "a": "For example: 1. Roll the dough. 2. Poke holes.",
-          "mins": 4
+          "mins": 2,
+          "model": "Labelled model to go through first (How to make a dough moon rock): 1. Take a lump of grey dough. | 2. Roll it into a ball. | 3. Press it to make it bumpy. | 4. Poke holes with a pencil for craters. | 5. Leave it to dry. | Result: Each step starts with a bossy verb."
         },
         {
           "q": "Extend: write four steps in order",
@@ -3477,8 +3435,7 @@
       "duration": 30,
       "bigQuestion": "Why does y sometimes say /ee/?",
       "objectives": [
-        "Read and spell words with y, ee and ea",
-        "Read a sentence with the new sounds"
+        "To read and spell words with y, ee and ea"
       ],
       "successCriteria": [
         "All: say the sound for y, ee and ea",
@@ -3486,7 +3443,6 @@
         "Some: read a whole sentence with the new sounds and explain what it means"
       ],
       "crossCurricular": "Topic: Moon Zoom! (aliens and space words)",
-      "smsc": "Spiritual: we begin with bismillah and thank Allah for the gift of learning to read",
       "keywords": [
         {
           "term": "alternative spelling",
@@ -3495,17 +3451,34 @@
         {
           "term": "syllable",
           "def": "a beat in a word"
+        },
+        {
+          "term": "grapheme",
+          "def": "the letter or letters that write a sound"
         }
       ],
       "hook": {
-        "type": "image-prompt",
+        "type": "ponder",
         "text": "Picture a little alien landing in a sunny park. It looks happy and a bit funny. Three words in that sentence end in y. Can you hear them?",
         "a": "sunny, happy, funny: y says /ee/."
       },
+      "pictures": [
+        {
+          "find": "jelly dessert photograph",
+          "alt": "a jelly (jelly: y says /ee/)",
+          "for": "teach:1"
+        },
+        {
+          "find": "sunny park photograph",
+          "alt": "a sunny park (sunny)",
+          "for": "teach:1"
+        }
+      ],
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "exit": "show-me"
       },
       "resources": [
@@ -3532,8 +3505,8 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: today's sounds",
-          "note": "Begin with bismillah (بِسْمِ اللَّهِ) together. Show the graphemes for today (y, ee and ea). Point to each one: pupils say the sound, not the letter names. Little Wandle Year 1 Spring 1, week 1.",
+          "heading": "Today's sounds",
+          "note": "Point to each grapheme: pupils say the sound, not the letter names. Read the words with sound buttons, then blend. At the end of a longer word, y often says /ee/: funny, happy. Clap the two beats: fun-ny. Quick link: we know ee and ea also say /ee/. y is another spelling, usually at the end. Little Wandle Year 1 Spring 1, week 1.",
           "diagram": {
             "centre": "Today we learn",
             "items": [
@@ -3544,26 +3517,8 @@
           }
         },
         {
-          "heading": "y says /ee/",
-          "bullets": [
-            "One letter, a new sound",
-            "Read: funny, happy, sunny, party",
-            "Sound buttons, then blend"
-          ],
-          "note": "At the end of a longer word, y often says /ee/: funny, happy. Clap the two beats: fun-ny."
-        },
-        {
-          "heading": "ee and ea says /ee/",
-          "bullets": [
-            "Same sound, more than one spelling",
-            "Read: see, tree, sea, eat",
-            "Sound buttons, then blend"
-          ],
-          "note": "Quick link: we know ee and ea also say /ee/. y is another spelling, usually at the end."
-        },
-        {
           "heading": "Hinge: which one?",
-          "note": "Pupils write the letter of their answer on mini-whiteboards and show on 3. Anyone who chose a wrong option gets a quick re-model before practice.",
+          "note": "Teams poll (or show the letter on a whiteboard on 3). Anyone who chose a wrong option gets a quick re-model before practice.",
           "check": {
             "q": "Which word ends in y saying /ee/?",
             "options": [
@@ -3608,7 +3563,8 @@
         {
           "q": "Read: jelly, puppy, silly",
           "a": "jelly, puppy, silly",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher goes through it first: point under each sound, say it, blend it, then read or write the whole word. Answer: jelly, puppy, silly"
         },
         {
           "q": "Read: lady, baby, body",
@@ -3623,19 +3579,20 @@
         {
           "q": "Spell: funny",
           "a": "funny",
-          "mins": 2
+          "mins": 1
         }
       ],
       "independent": [
         {
           "q": "Core: write happy, sunny, funny",
           "a": "happy, sunny, funny",
-          "mins": 3
+          "mins": 1,
+          "model": "Labelled model to go through first (Spell: sunny): Say it: sunny | Clap the beats: sun-ny | Spell each beat: s-u-nn, y | Write and check | Result: sunny"
         },
         {
           "q": "Extend: write 2 more words ending in y saying /ee/",
           "a": "For example: very, party",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Stretch: write a sentence about a funny alien",
@@ -3665,8 +3622,7 @@
       "duration": 30,
       "bigQuestion": "How can the same letters make different sounds?",
       "objectives": [
-        "Read and spell words with ea, ea",
-        "Read a sentence with the new sounds"
+        "To read and spell words with ea, ea"
       ],
       "successCriteria": [
         "All: say the sound for ea, ea",
@@ -3674,7 +3630,6 @@
         "Some: read a whole sentence with the new sounds and explain what it means"
       ],
       "crossCurricular": "Topic: astronauts wear a helmet on their head",
-      "smsc": "Spiritual: we begin with bismillah and thank Allah for the gift of learning to read",
       "keywords": [
         {
           "term": "alternative pronunciation",
@@ -3683,17 +3638,34 @@
         {
           "term": "digraph",
           "def": "two letters, one sound"
+        },
+        {
+          "term": "grapheme",
+          "def": "the letter or letters that write a sound"
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "bread and bead look nearly the same. Read them both. Do they rhyme?",
         "a": "No. bread has ea saying /e/; bead has ea saying /ee/."
       },
+      "pictures": [
+        {
+          "find": "loaf of bread photograph",
+          "alt": "a loaf of bread (bread: ea says /e/)",
+          "for": "teach:1"
+        },
+        {
+          "find": "feather photograph",
+          "alt": "a feather (feather)",
+          "for": "teach:1"
+        }
+      ],
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "exit": "show-me"
       },
       "resources": [
@@ -3720,8 +3692,8 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: today's sounds",
-          "note": "Begin with bismillah (بِسْمِ اللَّهِ) together. Show the graphemes for today (ea, ea). Point to each one: pupils say the sound, not the letter names. Little Wandle Year 1 Spring 1, week 1.",
+          "heading": "Today's sounds",
+          "note": "Point to each grapheme: pupils say the sound, not the letter names. Read the words with sound buttons, then blend. ea can say /e/ as in head. Pupils know ea as /ee/ in sea: try /ee/ first, then /e/. Sort: ea /ee/ and ea /e/. The word must make sense. Little Wandle Year 1 Spring 1, week 1.",
           "diagram": {
             "centre": "Today we learn",
             "items": [
@@ -3732,26 +3704,8 @@
           }
         },
         {
-          "heading": "ea says /e/",
-          "bullets": [
-            "2 letters, 1 sound",
-            "Read: head, bread, ready, feather",
-            "Sound buttons, then blend"
-          ],
-          "note": "ea can say /e/ as in head. Pupils know ea as /ee/ in sea: try /ee/ first, then /e/."
-        },
-        {
-          "heading": "ea says /ee/",
-          "bullets": [
-            "2 letters, 1 sound",
-            "Read: sea, eat, beach, dream",
-            "Sound buttons, then blend"
-          ],
-          "note": "Sort: ea /ee/ and ea /e/. The word must make sense."
-        },
-        {
           "heading": "Hinge: which one?",
-          "note": "Pupils write the letter of their answer on mini-whiteboards and show on 3. Anyone who chose a wrong option gets a quick re-model before practice.",
+          "note": "Teams poll (or show the letter on a whiteboard on 3). Anyone who chose a wrong option gets a quick re-model before practice.",
           "check": {
             "q": "In which word does ea say /e/?",
             "options": [
@@ -3796,7 +3750,8 @@
         {
           "q": "Read: breakfast, instead",
           "a": "breakfast, instead",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher goes through it first: point under each sound, say it, blend it, then read or write the whole word. Answer: breakfast, instead"
         },
         {
           "q": "Read: heavy, feather",
@@ -3811,19 +3766,20 @@
         {
           "q": "Spell: bread",
           "a": "bread",
-          "mins": 2
+          "mins": 1
         }
       ],
       "independent": [
         {
           "q": "Core: write head, bread, ready",
           "a": "head, bread, ready",
-          "mins": 3
+          "mins": 1,
+          "model": "Labelled model to go through first (Spell: head): Say it: head | Count the sounds: h-ea-d (3) | This time /e/ is spelt ea | Write and check | Result: head"
         },
         {
           "q": "Extend: sort: read, leaf, feather, heavy",
           "a": "/ee/: read, leaf; /e/: feather, heavy",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Stretch: write a sentence with heavy and head",
@@ -3853,8 +3809,7 @@
       "duration": 30,
       "bigQuestion": "Why do so many question words start with wh?",
       "objectives": [
-        "Read and spell words with wh, w",
-        "Read a sentence with the new sounds"
+        "To read and spell words with wh, w"
       ],
       "successCriteria": [
         "All: say the sound for wh, w",
@@ -3862,7 +3817,6 @@
         "Some: read a whole sentence with the new sounds and explain what it means"
       ],
       "crossCurricular": "Topic: questions to ask an astronaut",
-      "smsc": "Spiritual: we begin with bismillah and thank Allah for the gift of learning to read",
       "keywords": [
         {
           "term": "question word",
@@ -3871,17 +3825,34 @@
         {
           "term": "question mark",
           "def": "the mark at the end of a question"
+        },
+        {
+          "term": "grapheme",
+          "def": "the letter or letters that write a sound"
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "Who, what, when, where, why: if an alien landed in your garden, which question would you ask first?",
         "a": "Any wh question, for example: Where are you from?"
       },
+      "pictures": [
+        {
+          "find": "bicycle wheel photograph",
+          "alt": "a wheel (wh)",
+          "for": "teach:1"
+        },
+        {
+          "find": "kitchen whisk photograph",
+          "alt": "a whisk (wh)",
+          "for": "teach:1"
+        }
+      ],
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "exit": "show-me"
       },
       "resources": [
@@ -3908,8 +3879,8 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: today's sounds",
-          "note": "Begin with bismillah (بِسْمِ اللَّهِ) together. Show the graphemes for today (wh, w). Point to each one: pupils say the sound, not the letter names. Little Wandle Year 1 Spring 1, week 1.",
+          "heading": "Today's sounds",
+          "note": "Point to each grapheme: pupils say the sound, not the letter names. Read the words with sound buttons, then blend. wh says /w/ in most accents. Many question words start with wh. Same sound, different spelling. Question words use wh. Little Wandle Year 1 Spring 1, week 1.",
           "diagram": {
             "centre": "Today we learn",
             "items": [
@@ -3920,26 +3891,8 @@
           }
         },
         {
-          "heading": "wh says /w/",
-          "bullets": [
-            "2 letters, 1 sound",
-            "Read: wheel, when, what, which",
-            "Sound buttons, then blend"
-          ],
-          "note": "wh says /w/ in most accents. Many question words start with wh."
-        },
-        {
-          "heading": "w says /w/",
-          "bullets": [
-            "One letter, a new sound",
-            "Read: wet, win, wind, wish",
-            "Sound buttons, then blend"
-          ],
-          "note": "Same sound, different spelling. Question words use wh."
-        },
-        {
           "heading": "Hinge: which one?",
-          "note": "Pupils write the letter of their answer on mini-whiteboards and show on 3. Anyone who chose a wrong option gets a quick re-model before practice.",
+          "note": "Teams poll (or show the letter on a whiteboard on 3). Anyone who chose a wrong option gets a quick re-model before practice.",
           "check": {
             "q": "Which is a question word with wh?",
             "options": [
@@ -3984,7 +3937,8 @@
         {
           "q": "Read: whisk, whisper, whale",
           "a": "whisk, whisper, whale",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher goes through it first: point under each sound, say it, blend it, then read or write the whole word. Answer: whisk, whisper, whale"
         },
         {
           "q": "Read: why, where",
@@ -3999,19 +3953,20 @@
         {
           "q": "Spell: when",
           "a": "when",
-          "mins": 2
+          "mins": 1
         }
       ],
       "independent": [
         {
           "q": "Core: write when, what, which",
           "a": "when, what, which",
-          "mins": 3
+          "mins": 1,
+          "model": "Labelled model to go through first (Spell: wheel): Say it: wheel | Count the sounds: wh-ee-l (3) | wh at the start | Write and check | Result: wheel"
         },
         {
           "q": "Extend: write wheel, white, whale",
           "a": "wheel, white, whale",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Stretch: write a question for an astronaut that starts with wh",
@@ -4041,8 +3996,7 @@
       "duration": 30,
       "bigQuestion": "How do we remember tricky words?",
       "objectives": [
-        "Read and spell words with y, ea, wh",
-        "Read a sentence with the new sounds"
+        "To read and spell words with y, ea, wh"
       ],
       "successCriteria": [
         "All: say the sound for y, ea, wh",
@@ -4050,7 +4004,6 @@
         "Some: read a whole sentence with the new sounds and explain what it means"
       ],
       "crossCurricular": "Topic: counting aliens (maths: how many?)",
-      "smsc": "Spiritual: we begin with bismillah and thank Allah for the gift of learning to read",
       "keywords": [
         {
           "term": "tricky word",
@@ -4059,10 +4012,14 @@
         {
           "term": "dictation",
           "def": "writing down a sentence someone says"
+        },
+        {
+          "term": "grapheme",
+          "def": "the letter or letters that write a sound"
         }
       ],
       "hook": {
-        "type": "odd-one-out",
+        "type": "ponder",
         "text": "Which word does not have the /ee/ sound at the end?",
         "options": [
           "happy",
@@ -4072,10 +4029,23 @@
         ],
         "a": "my: y says /igh/ here."
       },
+      "pictures": [
+        {
+          "find": "birthday party balloons photograph",
+          "alt": "balloons for a party (party)",
+          "for": "teach:1"
+        },
+        {
+          "find": "car wheel photograph",
+          "alt": "a wheel (wh)",
+          "for": "teach:1"
+        }
+      ],
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "exit": "show-me"
       },
       "resources": [
@@ -4103,21 +4073,11 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: today's sounds",
-          "note": "Begin with bismillah (بِسْمِ اللَّهِ) together. Show the graphemes for today (y, ea, wh). Point to each one: pupils say the sound, not the letter names. Little Wandle Year 1 Spring 1, week 1 review.",
-          "diagram": {
-            "centre": "Today we learn",
-            "items": [
-              "y: happy, funny",
-              "ea: head, bread",
-              "wh: when, what",
-              "Tricky: any, many, again"
-            ]
-          }
-        },
-        {
-          "heading": "Sounds we know: quick review",
-          "note": " Review lesson: point and say each sound, then read the words together, then read them again faster.",
+          "heading": "Today's sounds",
+          "bullets": [
+            "Tricky: any, many, again"
+          ],
+          "note": "Point to each grapheme: pupils say the sound, not the letter names, then read the words together, then faster.  Tricky words (any, many, again): underline the tricky part together, then flash-read them three times. Little Wandle Year 1 Spring 1, week 1 review.",
           "table": {
             "head": [
               "Grapheme",
@@ -4145,7 +4105,7 @@
         },
         {
           "heading": "Hinge: which one?",
-          "note": "Pupils write the letter of their answer on mini-whiteboards and show on 3. Anyone who chose a wrong option gets a quick re-model before practice.",
+          "note": "Teams poll (or show the letter on a whiteboard on 3). Anyone who chose a wrong option gets a quick re-model before practice.",
           "check": {
             "q": "Which word is spelt correctly?",
             "options": [
@@ -4184,22 +4144,14 @@
             ],
             "answer": "wheel"
           }
-        },
-        {
-          "heading": "Tricky words",
-          "bullets": [
-            "Read: any, many, again",
-            "Find the tricky part",
-            "Read them fast"
-          ],
-          "note": "Tricky words have a part we cannot sound out yet. Underline the tricky part together, then flash-read the words three times."
         }
       ],
       "practice": [
         {
           "q": "Read: Is there any bread?",
           "a": "Is there any bread?",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher goes through it first: point under each sound, say it, blend it, then read or write the whole word. Answer: Is there any bread?"
         },
         {
           "q": "Read: Many rockets went up again.",
@@ -4214,19 +4166,20 @@
         {
           "q": "Spell: ready",
           "a": "ready",
-          "mins": 2
+          "mins": 1
         }
       ],
       "independent": [
         {
           "q": "Core: dictation: When is the party?",
           "a": "When is the party?",
-          "mins": 3
+          "mins": 1,
+          "model": "Teacher does the first part aloud before pupils start, showing each step: When is the party?"
         },
         {
           "q": "Extend: write any, many, again",
           "a": "any, many, again",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Stretch: write a sentence with many and again",
@@ -4256,8 +4209,7 @@
       "duration": 30,
       "bigQuestion": "How do we know what a character thinks and feels?",
       "objectives": [
-        "Say what Beegu might think or say using clues from the story",
-        "Write adjectives and a sentence to describe Beegu"
+        "To say what Beegu might think or say using clues from the story"
       ],
       "successCriteria": [
         "All: write a speech bubble for Beegu",
@@ -4266,6 +4218,10 @@
       ],
       "crossCurricular": "PSHE: feeling lost and lonely; welcoming someone new",
       "smsc": "Moral and social: Islam teaches us to be kind to a stranger and to make others welcome",
+      "islamicLink": {
+        "text": "Islam teaches us to be kind to a stranger and to make others welcome",
+        "at": "start"
+      },
       "keywords": [
         {
           "term": "character",
@@ -4289,15 +4245,28 @@
         }
       ],
       "hook": {
-        "type": "image-prompt",
+        "type": "ponder",
         "text": "Picture a small yellow creature with long floppy ears. It is lost on a planet it does not know. Nobody understands it. How might it feel?",
         "a": "Lost, lonely, scared, curious. This is Beegu."
       },
+      "pictures": [
+        {
+          "find": "Earth seen from space photograph",
+          "alt": "planet Earth, where Beegu lands",
+          "for": "hook"
+        },
+        {
+          "find": "yellow play dough photograph",
+          "alt": "yellow dough for a Beegu model",
+          "for": "hook"
+        }
+      ],
       "routines": {
         "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
-        "exit": "show-me"
+        "practice": "show-me",
+        "exit": "show-me",
+        "hinge": "teams-poll"
       },
       "resources": [
         "Beegu by Alexis Deacon (class copy; teacher reads aloud and shows the pages)",
@@ -4325,17 +4294,8 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: meet Beegu",
-          "bullets": [
-            "Beegu is lost on Earth",
-            "She looks for friends",
-            "Listen for clues about her feelings"
-          ],
-          "note": "Begin with bismillah. Read Beegu aloud from the class copy, pausing to show pictures. Do not read the whole story at once: stop after Beegu tries to make friends with the grown-ups. Ask: what will happen next?"
-        },
-        {
           "heading": "Speech or thought?",
-          "note": "Explain: a speech bubble is said out loud; a thought bubble is kept inside the head.",
+          "note": "Meet Beegu: Beegu is lost on Earth; She looks for friends; Listen for clues about her feelings. Read Beegu aloud from the class copy, pausing to show pictures. Do not read the whole story at once: stop after Beegu tries to make friends with the grown-ups. Ask: what will happen next? Explain: a speech bubble is said out loud; a thought bubble is kept inside the head.",
           "compare": {
             "left": {
               "title": "Speech bubble",
@@ -4387,7 +4347,7 @@
         },
         {
           "heading": "Hinge: which is a thought?",
-          "note": "Show me A, B or C.",
+          "note": "Show me A, B or C. Then: Character profile: Name: Beegu; Looks: two adjectives; Feels: lonely because...; Kind to her: who?. Pupils fill in the profile frame. Model: Beegu is small and yellow. She feels lonely because she is lost.",
           "check": {
             "q": "Which words belong in a thought bubble?",
             "options": [
@@ -4398,23 +4358,14 @@
             "answer": 1,
             "why": "B is what she thinks inside. A is said out loud (speech). C is the narrator describing her."
           }
-        },
-        {
-          "heading": "Character profile",
-          "bullets": [
-            "Name: Beegu",
-            "Looks: two adjectives",
-            "Feels: lonely because...",
-            "Kind to her: who?"
-          ],
-          "note": "Pupils fill in the profile frame. Model: Beegu is small and yellow. She feels lonely because she is lost."
         }
       ],
       "practice": [
         {
           "q": "Speech or thought: \"Will you be my friend?\"",
           "a": "Speech: Beegu says it out loud to others.",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: Speech: Beegu says it out loud to others."
         },
         {
           "q": "Give an adjective for Beegu when she is lost",
@@ -4424,14 +4375,15 @@
         {
           "q": "Finish: Beegu feels lonely because...",
           "a": "For example: she is lost and nobody understands her.",
-          "mins": 2
+          "mins": 1
         }
       ],
       "independent": [
         {
           "q": "Core: write one speech bubble and one thought bubble for Beegu",
           "a": "For example: Speech: Hello! Thought: I want to go home.",
-          "mins": 4
+          "mins": 2,
+          "model": "Labelled model to go through first (What is Beegu thinking when she is alone?): Look at the picture: she is alone | Find a clue: her ears are down | Think: how does she feel? | Write: I miss my mum. Where is my home? | Result: I miss my mum. Where is my home?"
         },
         {
           "q": "Extend: write two adjectives and a sentence for the profile",
@@ -4466,8 +4418,7 @@
       "duration": 30,
       "bigQuestion": "How do we know which sound y is making?",
       "objectives": [
-        "Read and spell words with y, igh",
-        "Read a sentence with the new sounds"
+        "To read and spell words with y, igh"
       ],
       "successCriteria": [
         "All: say the sound for y, igh",
@@ -4476,6 +4427,10 @@
       ],
       "crossCurricular": "Science: what is in the sky (Sun, Moon, stars)",
       "smsc": "Spiritual: wonder at the sky Allah created",
+      "islamicLink": {
+        "text": "Wonder at the sky Allah created",
+        "at": "start"
+      },
       "keywords": [
         {
           "term": "alternative pronunciation",
@@ -4484,10 +4439,14 @@
         {
           "term": "syllable",
           "def": "a beat in a word"
+        },
+        {
+          "term": "grapheme",
+          "def": "the letter or letters that write a sound"
         }
       ],
       "hook": {
-        "type": "odd-one-out",
+        "type": "ponder",
         "text": "Which word is the odd one out?",
         "options": [
           "fly",
@@ -4497,10 +4456,23 @@
         ],
         "a": "happy: its y says /ee/. The others say /igh/."
       },
+      "pictures": [
+        {
+          "find": "night sky with stars photograph",
+          "alt": "the sky at night (sky: y says /igh/)",
+          "for": "teach:1"
+        },
+        {
+          "find": "housefly photograph",
+          "alt": "a fly (fly)",
+          "for": "teach:1"
+        }
+      ],
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "exit": "show-me"
       },
       "resources": [
@@ -4527,8 +4499,8 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: today's sounds",
-          "note": "Begin with bismillah (بِسْمِ اللَّهِ) together. Show the graphemes for today (y, igh). Point to each one: pupils say the sound, not the letter names. Little Wandle Year 1 Spring 1, week 2.",
+          "heading": "Today's sounds",
+          "note": "Point to each grapheme: pupils say the sound, not the letter names. Read the words with sound buttons, then blend. In short words, y at the end often says /igh/: my, fly. In longer words it says /ee/: happy. Same sound, different spelling: igh in night. Little Wandle Year 1 Spring 1, week 2.",
           "diagram": {
             "centre": "Today we learn",
             "items": [
@@ -4539,26 +4511,8 @@
           }
         },
         {
-          "heading": "y says /igh/",
-          "bullets": [
-            "One letter, a new sound",
-            "Read: fly, sky, my, try",
-            "Sound buttons, then blend"
-          ],
-          "note": "In short words, y at the end often says /igh/: my, fly. In longer words it says /ee/: happy."
-        },
-        {
-          "heading": "igh says /igh/",
-          "bullets": [
-            "3 letters, 1 sound",
-            "Read: night, light, high, bright",
-            "Sound buttons, then blend"
-          ],
-          "note": "Same sound, different spelling: igh in night."
-        },
-        {
           "heading": "Hinge: which one?",
-          "note": "Pupils write the letter of their answer on mini-whiteboards and show on 3. Anyone who chose a wrong option gets a quick re-model before practice.",
+          "note": "Teams poll (or show the letter on a whiteboard on 3). Anyone who chose a wrong option gets a quick re-model before practice.",
           "check": {
             "q": "In which word does y say /igh/?",
             "options": [
@@ -4603,7 +4557,8 @@
         {
           "q": "Read: dry, shy, spy",
           "a": "dry, shy, spy",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher goes through it first: point under each sound, say it, blend it, then read or write the whole word. Answer: dry, shy, spy"
         },
         {
           "q": "Read: by, why, my",
@@ -4618,19 +4573,20 @@
         {
           "q": "Spell: sky",
           "a": "sky",
-          "mins": 2
+          "mins": 1
         }
       ],
       "independent": [
         {
           "q": "Core: write my, fly, sky",
           "a": "my, fly, sky",
-          "mins": 3
+          "mins": 1,
+          "model": "Labelled model to go through first (Spell: fly): Say it: fly | Count the sounds: f-l-y (3) | y says /igh/ at the end | Write and check | Result: fly"
         },
         {
           "q": "Extend: sort: try, happy, cry, party",
           "a": "/igh/: try, cry; /ee/: happy, party",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Stretch: write a sentence with fly and sky",
@@ -4660,8 +4616,7 @@
       "duration": 30,
       "bigQuestion": "How many ways can we write /oa/?",
       "objectives": [
-        "Read and spell words with oe, ou",
-        "Read a sentence with the new sounds"
+        "To read and spell words with oe, ou"
       ],
       "successCriteria": [
         "All: say the sound for oe, ou",
@@ -4669,7 +4624,6 @@
         "Some: read a whole sentence with the new sounds and explain what it means"
       ],
       "crossCurricular": "Science: parts of the body",
-      "smsc": "Spiritual: we begin with bismillah and thank Allah for the gift of learning to read",
       "keywords": [
         {
           "term": "alternative spelling",
@@ -4678,17 +4632,34 @@
         {
           "term": "boulder",
           "def": "a very big rock"
+        },
+        {
+          "term": "grapheme",
+          "def": "the letter or letters that write a sound"
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "Touch your toe, then your shoulder. Both words have the /oa/ sound. Do you think they are spelt the same way?",
         "a": "No: toe has oe and shoulder has ou."
       },
+      "pictures": [
+        {
+          "find": "large boulder rock photograph",
+          "alt": "a boulder (ou says /oa/)",
+          "for": "teach:1"
+        },
+        {
+          "find": "garden hoe tool photograph",
+          "alt": "a garden hoe (oe)",
+          "for": "teach:1"
+        }
+      ],
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "exit": "show-me"
       },
       "resources": [
@@ -4715,8 +4686,8 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: today's sounds",
-          "note": "Begin with bismillah (بِسْمِ اللَّهِ) together. Show the graphemes for today (oe, ou). Point to each one: pupils say the sound, not the letter names. Little Wandle Year 1 Spring 1, week 2.",
+          "heading": "Today's sounds",
+          "note": "Point to each grapheme: pupils say the sound, not the letter names. Read the words with sound buttons, then blend. oe says /oa/: toe, goes. ou can say /oa/ in shoulder. Pupils know ou as /ow/ in cloud: try both. Little Wandle Year 1 Spring 1, week 2.",
           "diagram": {
             "centre": "Today we learn",
             "items": [
@@ -4727,26 +4698,8 @@
           }
         },
         {
-          "heading": "oe says /oa/",
-          "bullets": [
-            "2 letters, 1 sound",
-            "Read: toe, goes, foe, hoe",
-            "Sound buttons, then blend"
-          ],
-          "note": "oe says /oa/: toe, goes."
-        },
-        {
-          "heading": "ou says /oa/",
-          "bullets": [
-            "2 letters, 1 sound",
-            "Read: shoulder, mould, boulder, soul",
-            "Sound buttons, then blend"
-          ],
-          "note": "ou can say /oa/ in shoulder. Pupils know ou as /ow/ in cloud: try both."
-        },
-        {
           "heading": "Hinge: which one?",
-          "note": "Pupils write the letter of their answer on mini-whiteboards and show on 3. Anyone who chose a wrong option gets a quick re-model before practice.",
+          "note": "Teams poll (or show the letter on a whiteboard on 3). Anyone who chose a wrong option gets a quick re-model before practice.",
           "check": {
             "q": "Which word has /oa/ spelt oe?",
             "options": [
@@ -4791,7 +4744,8 @@
         {
           "q": "Read: goes, toe, hoe",
           "a": "goes, toe, hoe",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher goes through it first: point under each sound, say it, blend it, then read or write the whole word. Answer: goes, toe, hoe"
         },
         {
           "q": "Read: shoulder, mould",
@@ -4806,19 +4760,20 @@
         {
           "q": "Spell: goes",
           "a": "goes",
-          "mins": 2
+          "mins": 1
         }
       ],
       "independent": [
         {
           "q": "Core: write toe, goes",
           "a": "toe, goes",
-          "mins": 3
+          "mins": 1,
+          "model": "Labelled model to go through first (Spell: toe): Say it: toe | Count the sounds: t-oe (2) | Use oe for this word | Write and check | Result: toe"
         },
         {
           "q": "Extend: write shoulder and boulder",
           "a": "shoulder, boulder",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Stretch: write a sentence with goes and shoulder",
@@ -4848,8 +4803,7 @@
       "duration": 30,
       "bigQuestion": "Why do some letters change their sound?",
       "objectives": [
-        "Read and spell words with ow, g",
-        "Read a sentence with the new sounds"
+        "To read and spell words with ow, g"
       ],
       "successCriteria": [
         "All: say the sound for ow, g",
@@ -4857,7 +4811,6 @@
         "Some: read a whole sentence with the new sounds and explain what it means"
       ],
       "crossCurricular": "Science: snow and seasons",
-      "smsc": "Spiritual: we begin with bismillah and thank Allah for the gift of learning to read",
       "keywords": [
         {
           "term": "alternative pronunciation",
@@ -4866,10 +4819,14 @@
         {
           "term": "soft g",
           "def": "g saying /j/, as in giant"
+        },
+        {
+          "term": "grapheme",
+          "def": "the letter or letters that write a sound"
         }
       ],
       "hook": {
-        "type": "odd-one-out",
+        "type": "ponder",
         "text": "Which word is the odd one out?",
         "options": [
           "snow",
@@ -4879,10 +4836,28 @@
         ],
         "a": "cow: ow says /ow/. In the others it says /oa/."
       },
+      "pictures": [
+        {
+          "find": "snow covered trees photograph",
+          "alt": "snow (ow says /oa/)",
+          "for": "teach:1"
+        },
+        {
+          "find": "giraffe photograph",
+          "alt": "a giraffe (g says /j/)",
+          "for": "teach:1"
+        },
+        {
+          "find": "window photograph",
+          "alt": "a window (ow)",
+          "for": "teach:1"
+        }
+      ],
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "exit": "show-me"
       },
       "resources": [
@@ -4909,8 +4884,8 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: today's sounds",
-          "note": "Begin with bismillah (بِسْمِ اللَّهِ) together. Show the graphemes for today (ow, g). Point to each one: pupils say the sound, not the letter names. Little Wandle Year 1 Spring 1, week 2.",
+          "heading": "Today's sounds",
+          "note": "Point to each grapheme: pupils say the sound, not the letter names. Read the words with sound buttons, then blend. ow can say /oa/ as in snow, and /ow/ as in cow. Try both. g before e, i or y often says /j/: gem, giant. Little Wandle Year 1 Spring 1, week 2.",
           "diagram": {
             "centre": "Today we learn",
             "items": [
@@ -4921,26 +4896,8 @@
           }
         },
         {
-          "heading": "ow says /oa/",
-          "bullets": [
-            "2 letters, 1 sound",
-            "Read: snow, grow, slow, window",
-            "Sound buttons, then blend"
-          ],
-          "note": "ow can say /oa/ as in snow, and /ow/ as in cow. Try both."
-        },
-        {
-          "heading": "g says /j/",
-          "bullets": [
-            "One letter, a new sound",
-            "Read: giant, gem, germ, ginger",
-            "Sound buttons, then blend"
-          ],
-          "note": "g before e, i or y often says /j/: gem, giant."
-        },
-        {
           "heading": "Hinge: which one?",
-          "note": "Pupils write the letter of their answer on mini-whiteboards and show on 3. Anyone who chose a wrong option gets a quick re-model before practice.",
+          "note": "Teams poll (or show the letter on a whiteboard on 3). Anyone who chose a wrong option gets a quick re-model before practice.",
           "check": {
             "q": "In which word does g say /j/?",
             "options": [
@@ -4985,7 +4942,8 @@
         {
           "q": "Read: show, blow, own",
           "a": "show, blow, own",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher goes through it first: point under each sound, say it, blend it, then read or write the whole word. Answer: show, blow, own"
         },
         {
           "q": "Read: gem, germ, energy",
@@ -5000,19 +4958,20 @@
         {
           "q": "Spell: grow",
           "a": "grow",
-          "mins": 2
+          "mins": 1
         }
       ],
       "independent": [
         {
           "q": "Core: write snow, grow, slow",
           "a": "snow, grow, slow",
-          "mins": 3
+          "mins": 1,
+          "model": "Labelled model to go through first (Spell: snow): Say it: snow | Count the sounds: s-n-ow (3) | ow at the end | Write and check | Result: snow"
         },
         {
           "q": "Extend: write giant, gem",
           "a": "giant, gem",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Stretch: write a sentence with giant and window",
@@ -5042,8 +5001,7 @@
       "duration": 30,
       "bigQuestion": "How do we remember words that sound the same?",
       "objectives": [
-        "Read and spell words with y, oe, ou, ow, g",
-        "Read a sentence with the new sounds"
+        "To read and spell words with y, oe, ou, ow, g"
       ],
       "successCriteria": [
         "All: say the sound for y, oe, ou, ow, g",
@@ -5051,7 +5009,6 @@
         "Some: read a whole sentence with the new sounds and explain what it means"
       ],
       "crossCurricular": "Maths: two and whole numbers",
-      "smsc": "Spiritual: we begin with bismillah and thank Allah for the gift of learning to read",
       "keywords": [
         {
           "term": "tricky word",
@@ -5060,17 +5017,34 @@
         {
           "term": "dictation",
           "def": "writing down a sentence someone says"
+        },
+        {
+          "term": "grapheme",
+          "def": "the letter or letters that write a sound"
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "Number 2, too, two. Which spelling means the number?",
         "a": "two"
       },
+      "pictures": [
+        {
+          "find": "two red apples photograph",
+          "alt": "two apples (two)",
+          "for": "teach:1"
+        },
+        {
+          "find": "snowy field photograph",
+          "alt": "snow (ow)",
+          "for": "teach:1"
+        }
+      ],
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "exit": "show-me"
       },
       "resources": [
@@ -5098,22 +5072,11 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: today's sounds",
-          "note": "Begin with bismillah (بِسْمِ اللَّهِ) together. Show the graphemes for today (y, oe, ou, ow, g). Point to each one: pupils say the sound, not the letter names. Little Wandle Year 1 Spring 1, week 2 review.",
-          "diagram": {
-            "centre": "Today we learn",
-            "items": [
-              "y: my, fly",
-              "oe, ou: toe, goes",
-              "ow: snow, grow",
-              "g: giant, gem",
-              "Tricky: who, whole, where"
-            ]
-          }
-        },
-        {
-          "heading": "Sounds we know: quick review",
-          "note": " Review lesson: point and say each sound, then read the words together, then read them again faster.",
+          "heading": "Today's sounds",
+          "bullets": [
+            "Tricky: who, whole, where, two"
+          ],
+          "note": "Point to each grapheme: pupils say the sound, not the letter names, then read the words together, then faster.  Tricky words (who, whole, where, two): underline the tricky part together, then flash-read them three times. Little Wandle Year 1 Spring 1, week 2 review.",
           "table": {
             "head": [
               "Grapheme",
@@ -5146,7 +5109,7 @@
         },
         {
           "heading": "Hinge: which one?",
-          "note": "Pupils write the letter of their answer on mini-whiteboards and show on 3. Anyone who chose a wrong option gets a quick re-model before practice.",
+          "note": "Teams poll (or show the letter on a whiteboard on 3). Anyone who chose a wrong option gets a quick re-model before practice.",
           "check": {
             "q": "Which word is spelt correctly?",
             "options": [
@@ -5185,22 +5148,14 @@
             ],
             "answer": "two"
           }
-        },
-        {
-          "heading": "Tricky words",
-          "bullets": [
-            "Read: who, whole, where, two",
-            "Find the tricky part",
-            "Read them fast"
-          ],
-          "note": "Tricky words have a part we cannot sound out yet. Underline the tricky part together, then flash-read the words three times."
         }
       ],
       "practice": [
         {
           "q": "Read: Where is the whole cake?",
           "a": "Where is the whole cake?",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher goes through it first: point under each sound, say it, blend it, then read or write the whole word. Answer: Where is the whole cake?"
         },
         {
           "q": "Read: Who has two gems?",
@@ -5215,19 +5170,20 @@
         {
           "q": "Spell: grow",
           "a": "grow",
-          "mins": 2
+          "mins": 1
         }
       ],
       "independent": [
         {
           "q": "Core: dictation: Where did the rocket fly?",
           "a": "Where did the rocket fly?",
-          "mins": 3
+          "mins": 1,
+          "model": "Teacher does the first part aloud before pupils start, showing each step: Where did the rocket fly?"
         },
         {
           "q": "Extend: write who, whole, where, two",
           "a": "who, whole, where, two",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Stretch: write a question with who and a word with ow",
@@ -5257,8 +5213,7 @@
       "duration": 30,
       "bigQuestion": "How does a report help a reader learn facts?",
       "objectives": [
-        "Name the features of a non-chronological report",
-        "Write facts about the Moon with a heading and plural -s words"
+        "To name the features of a non-chronological report"
       ],
       "successCriteria": [
         "All: write one fact about the Moon",
@@ -5267,6 +5222,10 @@
       ],
       "crossCurricular": "Science: the Moon and Earth (Moon Zoom! topic)",
       "smsc": "Spiritual: the Qur'an tells us Allah made the Sun and the Moon; we wonder at His creation",
+      "islamicLink": {
+        "text": "The Qur'an tells us Allah made the Sun and the Moon; we wonder at His creation",
+        "at": "start"
+      },
       "keywords": [
         {
           "term": "report",
@@ -5290,7 +5249,7 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "True or false? The Moon is made of cheese. The Moon has craters. People have walked on the Moon.",
         "options": [
           "Cheese: false",
@@ -5299,11 +5258,29 @@
         ],
         "a": "Only the first is false. A report only has true facts."
       },
+      "pictures": [
+        {
+          "find": "full moon photograph",
+          "alt": "the full Moon",
+          "for": "keywords"
+        },
+        {
+          "find": "moon craters close up photograph",
+          "alt": "craters on the Moon",
+          "for": "keywords"
+        },
+        {
+          "find": "Saturn V rocket launch photograph",
+          "alt": "a rocket launching",
+          "for": "keywords"
+        }
+      ],
       "routines": {
-        "hook": "teams-poll",
+        "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
-        "exit": "show-me"
+        "practice": "show-me",
+        "exit": "show-me",
+        "hinge": "teams-poll"
       },
       "resources": [
         "Tarbiyyah Primary English scheme of work, Moon Zoom!: non-chronological report on space",
@@ -5331,17 +5308,8 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: what is a report?",
-          "bullets": [
-            "It gives true facts",
-            "It has a heading",
-            "Facts are grouped together"
-          ],
-          "note": "Begin with bismillah. Show a page of the class space book. Ask: what do you notice? Point to the heading, sub-headings and captions."
-        },
-        {
           "heading": "Moon facts",
-          "note": "Read each fact aloud; pupils give a thumbs up if they knew it. All facts are checked: the Moon goes round the Earth; it has no air; astronauts first walked on it in 1969.",
+          "note": "What is a report?: It gives true facts; It has a heading; Facts are grouped together. Show a page of the class space book. Ask: what do you notice? Point to the heading, sub-headings and captions. Read each fact aloud; pupils give a thumbs up if they knew it. All facts are checked: the Moon goes round the Earth; it has no air; astronauts first walked on it in 1969.",
           "diagram": {
             "centre": "The Moon",
             "items": [
@@ -5395,7 +5363,8 @@
         {
           "q": "Make it plural: one rocket, two ...",
           "a": "rockets",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: rockets"
         },
         {
           "q": "Make it plural: one star, many ...",
@@ -5417,12 +5386,13 @@
         {
           "q": "Core: write a heading and one fact about the Moon",
           "a": "For example: The Moon. The Moon has craters.",
-          "mins": 4
+          "mins": 2,
+          "model": "Labelled model to go through first (The Moon): Heading: The Moon | Fact 1: The Moon goes round the Earth. | Fact 2: The Moon has lots of craters. | Fact 3: There is no air on the Moon. | Caption under a picture: Craters on the Moon. | Result: A heading and three facts."
         },
         {
           "q": "Extend: write three facts with capital letters and full stops",
           "a": "For example: The Moon goes round the Earth. It has craters. It has no air.",
-          "mins": 3
+          "mins": 2
         },
         {
           "q": "Stretch: add a sub-heading such as Craters and a caption",
@@ -5452,8 +5422,7 @@
       "duration": 30,
       "bigQuestion": "Why do some words use ph for /f/?",
       "objectives": [
-        "Read and spell words with ph, f, ff",
-        "Read a sentence with the new sounds"
+        "To read and spell words with ph, f, ff"
       ],
       "successCriteria": [
         "All: say the sound for ph, f, ff",
@@ -5461,7 +5430,6 @@
         "Some: read a whole sentence with the new sounds and explain what it means"
       ],
       "crossCurricular": "Science: animals (dolphin, elephant)",
-      "smsc": "Spiritual: we begin with bismillah and thank Allah for the gift of learning to read",
       "keywords": [
         {
           "term": "digraph",
@@ -5470,17 +5438,39 @@
         {
           "term": "alternative spelling",
           "def": "another way to write the same sound"
+        },
+        {
+          "term": "grapheme",
+          "def": "the letter or letters that write a sound"
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "I am two letters. I sound like f. I am at the start of phone. What am I?",
         "a": "ph"
       },
+      "pictures": [
+        {
+          "find": "dolphin jumping photograph",
+          "alt": "a dolphin (ph)",
+          "for": "teach:1"
+        },
+        {
+          "find": "old telephone photograph",
+          "alt": "a telephone (ph)",
+          "for": "teach:1"
+        },
+        {
+          "find": "elephant photograph",
+          "alt": "an elephant (ph)",
+          "for": "teach:1"
+        }
+      ],
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "exit": "show-me"
       },
       "resources": [
@@ -5507,8 +5497,8 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: today's sounds",
-          "note": "Begin with bismillah (بِسْمِ اللَّهِ) together. Show the graphemes for today (ph, f, ff). Point to each one: pupils say the sound, not the letter names. Little Wandle Year 1 Spring 1, week 3.",
+          "heading": "Today's sounds",
+          "note": "Point to each grapheme: pupils say the sound, not the letter names. Read the words with sound buttons, then blend. ph says /f/: phone. Two letters, one sound. Same sound, different spelling. Little Wandle Year 1 Spring 1, week 3.",
           "diagram": {
             "centre": "Today we learn",
             "items": [
@@ -5519,26 +5509,8 @@
           }
         },
         {
-          "heading": "ph says /f/",
-          "bullets": [
-            "2 letters, 1 sound",
-            "Read: phone, dolphin, graph, alphabet",
-            "Sound buttons, then blend"
-          ],
-          "note": "ph says /f/: phone. Two letters, one sound."
-        },
-        {
-          "heading": "f, ff says /f/",
-          "bullets": [
-            "Same sound, more than one spelling",
-            "Read: fun, off, puff",
-            "Sound buttons, then blend"
-          ],
-          "note": "Same sound, different spelling."
-        },
-        {
           "heading": "Hinge: which one?",
-          "note": "Pupils write the letter of their answer on mini-whiteboards and show on 3. Anyone who chose a wrong option gets a quick re-model before practice.",
+          "note": "Teams poll (or show the letter on a whiteboard on 3). Anyone who chose a wrong option gets a quick re-model before practice.",
           "check": {
             "q": "Which word has ph?",
             "options": [
@@ -5583,7 +5555,8 @@
         {
           "q": "Read: photo, graph",
           "a": "photo, graph",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher goes through it first: point under each sound, say it, blend it, then read or write the whole word. Answer: photo, graph"
         },
         {
           "q": "Read: alphabet, elephant",
@@ -5598,19 +5571,20 @@
         {
           "q": "Spell: dolphin",
           "a": "dolphin",
-          "mins": 2
+          "mins": 1
         }
       ],
       "independent": [
         {
           "q": "Core: write phone, photo, graph",
           "a": "phone, photo, graph",
-          "mins": 3
+          "mins": 1,
+          "model": "Labelled model to go through first (Spell: phone): Say it: phone | Count the sounds: ph-o-n (3) | ph for /f/; o-e for /oa/ | Write and check | Result: phone"
         },
         {
           "q": "Extend: write dolphin and elephant",
           "a": "dolphin, elephant",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Stretch: write a sentence with photo and alphabet",
@@ -5640,8 +5614,7 @@
       "duration": 30,
       "bigQuestion": "How can we hear the end of a two-beat word?",
       "objectives": [
-        "Read and spell words with le, al",
-        "Read a sentence with the new sounds"
+        "To read and spell words with le, al"
       ],
       "successCriteria": [
         "All: say the sound for le, al",
@@ -5649,7 +5622,6 @@
         "Some: read a whole sentence with the new sounds and explain what it means"
       ],
       "crossCurricular": "DT: metal parts on a space buggy",
-      "smsc": "Spiritual: we begin with bismillah and thank Allah for the gift of learning to read",
       "keywords": [
         {
           "term": "syllable",
@@ -5658,10 +5630,14 @@
         {
           "term": "ending",
           "def": "the last part of a word"
+        },
+        {
+          "term": "grapheme",
+          "def": "the letter or letters that write a sound"
         }
       ],
       "hook": {
-        "type": "odd-one-out",
+        "type": "ponder",
         "text": "Which word is the odd one out?",
         "options": [
           "apple",
@@ -5671,10 +5647,28 @@
         ],
         "a": "metal: it ends in al. The others end in le."
       },
+      "pictures": [
+        {
+          "find": "red apple photograph",
+          "alt": "an apple (le)",
+          "for": "teach:1"
+        },
+        {
+          "find": "wooden table photograph",
+          "alt": "a table (le)",
+          "for": "teach:1"
+        },
+        {
+          "find": "bicycle pedal photograph",
+          "alt": "a pedal (al)",
+          "for": "teach:1"
+        }
+      ],
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "exit": "show-me"
       },
       "resources": [
@@ -5701,8 +5695,8 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: today's sounds",
-          "note": "Begin with bismillah (بِسْمِ اللَّهِ) together. Show the graphemes for today (le, al). Point to each one: pupils say the sound, not the letter names. Little Wandle Year 1 Spring 1, week 3.",
+          "heading": "Today's sounds",
+          "note": "Point to each grapheme: pupils say the sound, not the letter names. Read the words with sound buttons, then blend. le at the end of a word says /l/ (with a small uh before it): ap-ple. al at the end can also say /l/: met-al. Little Wandle Year 1 Spring 1, week 3.",
           "diagram": {
             "centre": "Today we learn",
             "items": [
@@ -5713,26 +5707,8 @@
           }
         },
         {
-          "heading": "le says /l/",
-          "bullets": [
-            "2 letters, 1 sound",
-            "Read: apple, little, table, bottle",
-            "Sound buttons, then blend"
-          ],
-          "note": "le at the end of a word says /l/ (with a small uh before it): ap-ple."
-        },
-        {
-          "heading": "al says /l/",
-          "bullets": [
-            "2 letters, 1 sound",
-            "Read: metal, pedal, animal, petal",
-            "Sound buttons, then blend"
-          ],
-          "note": "al at the end can also say /l/: met-al."
-        },
-        {
           "heading": "Hinge: which one?",
-          "note": "Pupils write the letter of their answer on mini-whiteboards and show on 3. Anyone who chose a wrong option gets a quick re-model before practice.",
+          "note": "Teams poll (or show the letter on a whiteboard on 3). Anyone who chose a wrong option gets a quick re-model before practice.",
           "check": {
             "q": "Which word ends with al?",
             "options": [
@@ -5777,7 +5753,8 @@
         {
           "q": "Read: table, bottle, giggle",
           "a": "table, bottle, giggle",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher goes through it first: point under each sound, say it, blend it, then read or write the whole word. Answer: table, bottle, giggle"
         },
         {
           "q": "Read: animal, petal",
@@ -5792,19 +5769,20 @@
         {
           "q": "Spell: metal",
           "a": "metal",
-          "mins": 2
+          "mins": 1
         }
       ],
       "independent": [
         {
           "q": "Core: write apple, table, little",
           "a": "apple, table, little",
-          "mins": 3
+          "mins": 1,
+          "model": "Labelled model to go through first (Spell: apple): Say it: apple | Clap: ap-ple | Spell each beat: a-pp, le | Write and check | Result: apple"
         },
         {
           "q": "Extend: write metal, pedal, animal",
           "a": "metal, pedal, animal",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Stretch: write a sentence with a le word and an al word",
@@ -5834,8 +5812,7 @@
       "duration": 30,
       "bigQuestion": "Why does c sometimes sound like s?",
       "objectives": [
-        "Read and spell words with c, ve",
-        "Read a sentence with the new sounds"
+        "To read and spell words with c, ve"
       ],
       "successCriteria": [
         "All: say the sound for c, ve",
@@ -5843,7 +5820,6 @@
         "Some: read a whole sentence with the new sounds and explain what it means"
       ],
       "crossCurricular": "Maths: counting to five",
-      "smsc": "Spiritual: we begin with bismillah and thank Allah for the gift of learning to read",
       "keywords": [
         {
           "term": "soft c",
@@ -5852,17 +5828,39 @@
         {
           "term": "rule",
           "def": "a pattern that helps us spell"
+        },
+        {
+          "term": "grapheme",
+          "def": "the letter or letters that write a sound"
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "Spot the mistake: I hav fiv gloves. Two words are missing the same letter. What is it?",
         "a": "e: have, five. Words do not end in v."
       },
+      "pictures": [
+        {
+          "find": "ice cubes photograph",
+          "alt": "ice cubes (c says /s/)",
+          "for": "teach:1"
+        },
+        {
+          "find": "woollen glove photograph",
+          "alt": "a glove (ve)",
+          "for": "teach:1"
+        },
+        {
+          "find": "city skyline photograph",
+          "alt": "a city (c says /s/)",
+          "for": "teach:1"
+        }
+      ],
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "exit": "show-me"
       },
       "resources": [
@@ -5889,8 +5887,8 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: today's sounds",
-          "note": "Begin with bismillah (بِسْمِ اللَّهِ) together. Show the graphemes for today (c, ve). Point to each one: pupils say the sound, not the letter names. Little Wandle Year 1 Spring 1, week 3.",
+          "heading": "Today's sounds",
+          "note": "Point to each grapheme: pupils say the sound, not the letter names. Read the words with sound buttons, then blend. c before e, i or y often says /s/: ice, city. English words do not end in v, so we write ve: have, give. Little Wandle Year 1 Spring 1, week 3.",
           "diagram": {
             "centre": "Today we learn",
             "items": [
@@ -5901,26 +5899,8 @@
           }
         },
         {
-          "heading": "c says /s/",
-          "bullets": [
-            "One letter, a new sound",
-            "Read: ice, face, race, city",
-            "Sound buttons, then blend"
-          ],
-          "note": "c before e, i or y often says /s/: ice, city."
-        },
-        {
-          "heading": "ve says /v/",
-          "bullets": [
-            "2 letters, 1 sound",
-            "Read: give, have, live, five",
-            "Sound buttons, then blend"
-          ],
-          "note": "English words do not end in v, so we write ve: have, give."
-        },
-        {
           "heading": "Hinge: which one?",
-          "note": "Pupils write the letter of their answer on mini-whiteboards and show on 3. Anyone who chose a wrong option gets a quick re-model before practice.",
+          "note": "Teams poll (or show the letter on a whiteboard on 3). Anyone who chose a wrong option gets a quick re-model before practice.",
           "check": {
             "q": "In which word does c say /s/?",
             "options": [
@@ -5965,7 +5945,8 @@
         {
           "q": "Read: rice, dance, mice",
           "a": "rice, dance, mice",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher goes through it first: point under each sound, say it, blend it, then read or write the whole word. Answer: rice, dance, mice"
         },
         {
           "q": "Read: love, sleeve, glove",
@@ -5980,19 +5961,20 @@
         {
           "q": "Spell: face",
           "a": "face",
-          "mins": 2
+          "mins": 1
         }
       ],
       "independent": [
         {
           "q": "Core: write have, give, five",
           "a": "have, give, five",
-          "mins": 3
+          "mins": 1,
+          "model": "Labelled model to go through first (Spell: give): Say it: give | Count the sounds: g-i-v (3) | End with ve, never just v | Write and check | Result: give"
         },
         {
           "q": "Extend: write ice, face, city",
           "a": "ice, face, city",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Stretch: write a sentence with nice and have",
@@ -6022,8 +6004,7 @@
       "duration": 30,
       "bigQuestion": "How do we keep new sounds in our memory?",
       "objectives": [
-        "Read and spell words with ph, le, al, c, ve",
-        "Read a sentence with the new sounds"
+        "To read and spell words with ph, le, al, c, ve"
       ],
       "successCriteria": [
         "All: say the sound for ph, le, al, c, ve",
@@ -6031,7 +6012,6 @@
         "Some: read a whole sentence with the new sounds and explain what it means"
       ],
       "crossCurricular": "PSHE: what makes our online school different",
-      "smsc": "Spiritual: we begin with bismillah and thank Allah for the gift of learning to read",
       "keywords": [
         {
           "term": "tricky word",
@@ -6040,10 +6020,14 @@
         {
           "term": "review",
           "def": "practising again so we remember"
+        },
+        {
+          "term": "grapheme",
+          "def": "the letter or letters that write a sound"
         }
       ],
       "hook": {
-        "type": "odd-one-out",
+        "type": "ponder",
         "text": "Which word does not have the /f/ sound?",
         "options": [
           "phone",
@@ -6053,10 +6037,23 @@
         ],
         "a": "pencil: it has p and c saying /s/."
       },
+      "pictures": [
+        {
+          "find": "school building photograph",
+          "alt": "a school building (school)",
+          "for": "teach:1"
+        },
+        {
+          "find": "dolphin photograph",
+          "alt": "a dolphin (ph)",
+          "for": "teach:1"
+        }
+      ],
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "exit": "show-me"
       },
       "resources": [
@@ -6084,22 +6081,11 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: today's sounds",
-          "note": "Begin with bismillah (بِسْمِ اللَّهِ) together. Show the graphemes for today (ph, le, al, c, ve). Point to each one: pupils say the sound, not the letter names. Little Wandle Year 1 Spring 1, week 3 review.",
-          "diagram": {
-            "centre": "Today we learn",
-            "items": [
-              "ph: phone, photo",
-              "le, al: apple, little",
-              "c: ice, city",
-              "ve: have, give",
-              "Tricky: school, call, different"
-            ]
-          }
-        },
-        {
-          "heading": "Sounds we know: quick review",
-          "note": " Review lesson: point and say each sound, then read the words together, then read them again faster.",
+          "heading": "Today's sounds",
+          "bullets": [
+            "Tricky: school, call, different"
+          ],
+          "note": "Point to each grapheme: pupils say the sound, not the letter names, then read the words together, then faster.  Tricky words (school, call, different): underline the tricky part together, then flash-read them three times. Little Wandle Year 1 Spring 1, week 3 review.",
           "table": {
             "head": [
               "Grapheme",
@@ -6132,7 +6118,7 @@
         },
         {
           "heading": "Hinge: which one?",
-          "note": "Pupils write the letter of their answer on mini-whiteboards and show on 3. Anyone who chose a wrong option gets a quick re-model before practice.",
+          "note": "Teams poll (or show the letter on a whiteboard on 3). Anyone who chose a wrong option gets a quick re-model before practice.",
           "check": {
             "q": "Which word is spelt correctly?",
             "options": [
@@ -6171,22 +6157,14 @@
             ],
             "answer": "call"
           }
-        },
-        {
-          "heading": "Tricky words",
-          "bullets": [
-            "Read: school, call, different",
-            "Find the tricky part",
-            "Read them fast"
-          ],
-          "note": "Tricky words have a part we cannot sound out yet. Underline the tricky part together, then flash-read the words three times."
         }
       ],
       "practice": [
         {
           "q": "Read: My school is different.",
           "a": "My school is different.",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher goes through it first: point under each sound, say it, blend it, then read or write the whole word. Answer: My school is different."
         },
         {
           "q": "Read: Call the elephant.",
@@ -6201,19 +6179,20 @@
         {
           "q": "Spell: five",
           "a": "five",
-          "mins": 2
+          "mins": 1
         }
       ],
       "independent": [
         {
           "q": "Core: dictation: I have a little phone.",
           "a": "I have a little phone.",
-          "mins": 3
+          "mins": 1,
+          "model": "Teacher does the first part aloud before pupils start, showing each step: I have a little phone."
         },
         {
           "q": "Extend: write school, call, different",
           "a": "school, call, different",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Stretch: write a sentence with different and city",
@@ -6243,8 +6222,7 @@
       "duration": 30,
       "bigQuestion": "How does a poster catch a reader's eye and tell them what to do?",
       "objectives": [
-        "Name the features of a poster",
-        "Write a poster with a title, a description and what to do, using capital letters"
+        "To name the features of a poster"
       ],
       "successCriteria": [
         "All: write a big title and one sentence of description",
@@ -6272,15 +6250,28 @@
         }
       ],
       "hook": {
-        "type": "image-prompt",
+        "type": "ponder",
         "text": "Imagine a bright notice on a door: MISSING! It has huge letters and a short message. Why do posters use big, bold words?",
         "a": "So people see them quickly and know what to do."
       },
+      "pictures": [
+        {
+          "find": "missing poster on noticeboard photograph",
+          "alt": "a notice on a board",
+          "for": "hook"
+        },
+        {
+          "find": "crashed meteorite crater photograph",
+          "alt": "a crater where something landed",
+          "for": "hook"
+        }
+      ],
       "routines": {
         "hook": "chat-waterfall",
         "starter": "show-me",
-        "practice": "cold-call",
-        "exit": "show-me"
+        "practice": "show-me",
+        "exit": "show-me",
+        "hinge": "teams-poll"
       },
       "resources": [
         "Tarbiyyah Primary English scheme of work, Moon Zoom!: crash landing and missing alien poster",
@@ -6308,17 +6299,8 @@
       ],
       "teach": [
         {
-          "heading": "Bismillah: what is a poster for?",
-          "bullets": [
-            "To tell lots of people something quickly",
-            "Big, bold title",
-            "Short sentences"
-          ],
-          "note": "Begin with bismillah. Show two posters: one plain, one bright and clear. Ask which one they would notice first and why."
-        },
-        {
           "heading": "Poster features",
-          "note": "Label each feature on a model poster on screen.",
+          "note": "What is a poster for?: To tell lots of people something quickly; Big, bold title; Short sentences. Show two posters: one plain, one bright and clear. Ask which one they would notice first and why. Label each feature on a model poster on screen.",
           "diagram": {
             "centre": "Missing poster",
             "items": [
@@ -6374,7 +6356,8 @@
         {
           "q": "Fix: beegu was last seen in london.",
           "a": "Beegu was last seen in London.",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: Beegu was last seen in London."
         },
         {
           "q": "Give an eye-catching title for a missing alien poster",
@@ -6391,7 +6374,8 @@
         {
           "q": "Core: write a title and one description sentence",
           "a": "For example: MISSING! She is small and yellow.",
-          "mins": 4
+          "mins": 2,
+          "model": "Labelled model to go through first (MISSING ALIEN!): Title: MISSING ALIEN! | Description: She is small and yellow with long ears. | Last seen: Near the park in London. | What to do: Call Year 1 if you see her! | Check every capital letter | Result: Title, description, last seen, what to do."
         },
         {
           "q": "Extend: add last seen and what to do",
