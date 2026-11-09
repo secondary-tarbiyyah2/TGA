@@ -16,8 +16,8 @@ export const metadata: Metadata = pageMetadata({
 // the ways they can judge the school themselves. Dates match the term dates
 // and open evening pages.
 const SEE_FOR_YOURSELF = [
-  { href: "/open-evening", label: "Online open evenings", when: "Thu 26 November, 7:30pm and Sun 6 December, 4:00pm (UK time)", body: "Meet the Headteacher and ask your questions live." },
-  { href: "/open-evening", label: "Taster morning", when: "Saturday 12 December", body: "Your child joins a real live lesson with one of our teachers." },
+  { href: "/open-evening#open-evenings", label: "Online open evenings", when: "Thu 26 November, 7:30pm and Sun 6 December, 4:00pm (UK time)", body: "Meet the Headteacher and ask your questions live." },
+  { href: "/open-evening#taster", label: "Taster morning", when: "Saturday 12 December", body: "Your child joins a real live lesson with one of our teachers." },
   { href: "/book-a-call#book", label: "A free call", when: "At a time that suits you", body: "Twenty minutes with admissions, with no obligation." },
 ];
 
@@ -40,6 +40,14 @@ export default async function TestimonialsPage() {
               ? "Words from parents and pupils at the Academy, published with their permission."
               : "We will only ever publish words from real parents and pupils, with their permission, so this page will fill once they have had time to get to know us."}
           </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link href="/open-evening#open-evenings" className="inline-flex min-h-11 items-center justify-center rounded-full bg-gold-500 px-6 py-3 text-sm font-semibold text-ink-900 transition-all hover:brightness-95">
+              Book an open evening
+            </Link>
+            <Link href="/admissions/apply" className="inline-flex min-h-11 items-center justify-center rounded-full border border-gold-500 bg-white px-6 py-3 text-sm font-semibold text-ink hover:bg-cream">
+              Apply now
+            </Link>
+          </div>
         </Container>
       </section>
 
@@ -84,9 +92,7 @@ export default async function TestimonialsPage() {
         </section>
       )}
 
-      {hasQuotes && (
-        <CtaBand heading="Want to hear more?" body="Book a place at our next online open evening to ask questions live." ctaLabel="Book an open evening" ctaHref="/open-evening" />
-      )}
+      <CtaBand heading="Ready to apply?" body="Apply by Friday 18 December 2026 for the founding cohort. The form takes about ten minutes." ctaLabel="Apply now" ctaHref="/admissions/apply" />
     </>
   );
 }

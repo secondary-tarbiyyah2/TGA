@@ -41,7 +41,7 @@ export default async function KeyStagePage({ params }: { params: Promise<{ stage
 
   return (
     <>
-      <section className="geo-texture bg-cream section-pad">
+      <section className="geo-texture bg-cream section-pad-tight">
         <Container>
           {/* Move between key stages without going back to the index. */}
           {/* One scrolling row on phones (three wrapped rows of pills pushed the
@@ -68,12 +68,12 @@ export default async function KeyStagePage({ params }: { params: Promise<{ stage
           </nav>
           <Kicker>{ks.title}</Kicker>
           <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">{ks.range}</h1>
-          <p className="mt-6 max-w-2xl text-lg text-ink/75">{ks.liveSplit}</p>
+          <p className="mt-4 max-w-2xl text-lg text-ink/75">{ks.liveSplit}</p>
           {ks.gcseNote && <p className="mt-4 max-w-2xl text-sm text-ink/70">{ks.gcseNote}</p>}
         </Container>
       </section>
 
-      <section className="section-pad">
+      <section className="section-pad-tight">
         <Container className="grid gap-12 lg:grid-cols-2">
           <div>
             <Kicker>Subjects</Kicker>
@@ -102,7 +102,7 @@ export default async function KeyStagePage({ params }: { params: Promise<{ stage
       </section>
 
       {documents.length > 0 && (
-        <section className="geo-texture bg-cream section-pad" aria-labelledby="curriculum-documents-heading">
+        <section className="geo-texture bg-cream section-pad-tight" aria-labelledby="curriculum-documents-heading">
           <Container>
             <Kicker>Curriculum documents</Kicker>
             <h2 id="curriculum-documents-heading" className="font-serif text-2xl font-semibold text-ink">

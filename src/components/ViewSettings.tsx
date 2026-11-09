@@ -12,15 +12,15 @@ import { createPortal } from "react-dom";
 
 const KEY = "tga-view";
 type Size = 0 | 1 | 2;
-type View = { size: Size; reading: boolean; contrast: boolean; motion: boolean; dark: boolean };
-const OFF: View = { size: 0, reading: false, contrast: false, motion: false, dark: false };
+type View = { size: Size; reading: boolean; contrast: boolean; motion: boolean; dark: boolean; links: boolean };
+const OFF: View = { size: 0, reading: false, contrast: false, motion: false, dark: false, links: false };
 
 /** Older saves had `text: boolean` for "Larger text"; that is size 1 now. */
 function read(): View {
   try {
     const raw = JSON.parse(window.localStorage.getItem(KEY) || "{}") as Partial<View> & { text?: boolean };
     const size = raw.size === 1 || raw.size === 2 ? raw.size : raw.text ? 1 : 0;
-    return { size, reading: !!raw.reading, contrast: !!raw.contrast, motion: !!raw.motion, dark: !!raw.dark };
+    return { size, reading: !!raw.reading, contrast: !!raw.contrast, motion: !!raw.motion, dark: !!raw.dark, links: !!raw.links };
   } catch {
     return OFF;
   }
@@ -44,9 +44,10 @@ function apply(v: View) {
   r.toggleAttribute("data-contrast", v.contrast);
   r.toggleAttribute("data-reduce-motion", v.motion);
   r.toggleAttribute("data-dark", v.dark);
+  r.toggleAttribute("data-links", v.links);
 }
 
-const isDefault = (v: View, portal: boolean) => v.size === 0 && !v.reading && !v.contrast && !v.motion && (!portal || !v.dark);
+const isDefault = (v: View, portal: boolean) => v.size === 0 && !v.reading && !v.contrast && !v.motion && !v.links && (!portal || !v.dark);
 
 const CHANGE_EVENT = "tga:view-change";
 
@@ -203,6 +204,14 @@ const Theme = ({ dark }: { dark?: boolean }) => (
 
 const SIZE_LABEL = ["Default", "Large", "Larger"] as const;
 
+function LinkSample({ highlight = false }: { highlight?: boolean }) {
+  return (
+    <span aria-hidden="true" className={`inline-block rounded px-1.5 text-sm font-semibold text-gold-900 ${highlight ? "underline decoration-2 underline-offset-2 ring-2 ring-gold-900" : ""}`}>
+      Fees
+    </span>
+  );
+}
+
 /** The display options as cards. Remembered on this device; dark mode only shows (and applies) in the portal. */
 export function ViewSettingsPanel({ className = "", portal = false, showReset = true }: { className?: string; portal?: boolean; showReset?: boolean }) {
   const [view, setView] = useView();
@@ -252,6 +261,16 @@ export function ViewSettingsPanel({ className = "", portal = false, showReset = 
         choices={[
           { value: "standard", label: "Standard", preview: <Motion /> },
           { value: "reduce", label: "Reduce", preview: <Motion still /> },
+        ]}
+      />
+      <OptionCard<"standard" | "highlight">
+        title="Links and focus"
+        hint="Underline every link and show a bold outline on the item you are on"
+        value={view.links ? "highlight" : "standard"}
+        onChange={(v) => set({ links: v === "highlight" }, v === "highlight" ? "Links highlighted." : "Link highlighting off.")}
+        choices={[
+          { value: "standard", label: "Standard", preview: <LinkSample /> },
+          { value: "highlight", label: "Highlight", preview: <LinkSample highlight /> },
         ]}
       />
       {portal && (
@@ -341,7 +360,7 @@ export function ViewSettingsMenu({ variant = "site" }: { variant?: "site" | "por
   }, [open, close]);
 
   const changed = !isDefault(view, portal);
-  const name = footer ? "Display and accessibility options" : "Display options";
+  const name = "Accessibility and display options";
   const label = changed ? `${name} (some are on)` : name;
 
   return (
@@ -352,14 +371,14 @@ export function ViewSettingsMenu({ variant = "site" }: { variant?: "site" | "por
         aria-haspopup="dialog"
         aria-expanded={open}
         aria-label={label}
-        title="Display: text size, easy reading, contrast and motion"
+        title="Accessibility: text size, easy reading, contrast, motion and link highlighting"
         onClick={() => setOpen(true)}
         className={
           portal
             ? "portal-topbar-btn relative px-2.5 text-sm font-medium text-ink/80"
             : footer
               ? "relative inline-flex items-center gap-1.5 rounded text-cream/75 transition-colors hover:text-cream focus-visible:outline-gold-light"
-              : "relative inline-flex h-9 w-9 items-center justify-center rounded-full text-ink/60 transition-colors hover:bg-gold-100 hover:text-ink"
+              : "relative inline-flex h-9 min-w-9 items-center justify-center gap-1.5 rounded-full px-2 text-sm font-medium text-ink/70 transition-colors hover:bg-gold-100 hover:text-ink"
         }
       >
         <DisplayIcon className={footer ? "h-4 w-4" : "h-[18px] w-[18px]"} />
@@ -369,6 +388,11 @@ export function ViewSettingsMenu({ variant = "site" }: { variant?: "site" | "por
           </span>
         )}
         {footer && <span aria-hidden="true">Display and accessibility</span>}
+        {!portal && !footer && (
+          <span aria-hidden="true" className="hidden 2xl:inline">
+            Accessibility
+          </span>
+        )}
         {changed && (
           <span
             aria-hidden="true"
@@ -396,7 +420,7 @@ export function ViewSettingsMenu({ variant = "site" }: { variant?: "site" | "por
                 </span>
                 <div className="min-w-0 flex-1">
                   <h2 id={titleId} className="text-lg font-semibold leading-tight text-ink">
-                    Display
+                    Accessibility and display
                   </h2>
                   <p className="mt-0.5 text-sm text-ink/70">Changes apply straight away and are remembered on this device.</p>
                 </div>

@@ -349,8 +349,8 @@ export function Header() {
               </Link>
             )
           )}
-          {/* Display settings stay in the mobile drawer and the footer; on a narrow desktop the icon gives way so the bar stays on one line. */}
-          <span className="hidden xl:inline-flex">
+          {/* Accessibility and display settings: an icon on every desktop width (labelled on very wide screens), plus the mobile drawer and the footer. */}
+          <span className="hidden lg:inline-flex">
             <ViewSettingsMenu />
           </span>
           <Link href={portalCta.href} aria-label={portalCta.label} title={portalCta.label} className="ml-2 flex items-center gap-1.5 whitespace-nowrap rounded-full border border-teal-700/30 px-3 py-2 text-sm font-medium text-teal-700 hover:border-teal-700 hover:bg-teal-100">
