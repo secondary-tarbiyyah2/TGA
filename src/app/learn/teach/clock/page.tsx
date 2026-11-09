@@ -98,7 +98,7 @@ function MyHoursContent() {
           <h2 className="text-base font-semibold text-ink">This month&apos;s shifts</h2>
         </div>
         {shifts === null ? (
-          <div className="h-24 animate-pulse" />
+          <div className="h-24 motion-safe:animate-pulse" />
         ) : monthShifts.length === 0 ? (
           <p className="px-5 py-4 text-sm text-ink/65">No shifts yet this month.</p>
         ) : (

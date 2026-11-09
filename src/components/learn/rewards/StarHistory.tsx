@@ -72,7 +72,7 @@ export function StarHistory({ isHead, classId }: { isHead: boolean; classId: str
 
       {view === "weeks" ? (
         stars === null ? (
-          <div className="h-32 animate-pulse rounded-2xl bg-white" />
+          <div className="h-32 motion-safe:animate-pulse rounded-2xl bg-white" />
         ) : stars.length === 0 ? (
           <EmptyState title="No stars in this class yet" icon="star" tile="tile-gold" />
         ) : (
@@ -102,7 +102,7 @@ export function StarHistory({ isHead, classId }: { isHead: boolean; classId: str
           </ul>
         )
       ) : pupils === null ? (
-        <div className="h-32 animate-pulse rounded-2xl bg-white" />
+        <div className="h-32 motion-safe:animate-pulse rounded-2xl bg-white" />
       ) : (
         <ul className="divide-y divide-gold-light/60 rounded-2xl border border-gold-light bg-white">
           {byPupil.map((p) => (

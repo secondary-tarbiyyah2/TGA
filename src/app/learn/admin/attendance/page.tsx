@@ -654,7 +654,7 @@ function TakeRegister() {
       </div>
       {error && <p role="alert" className="mb-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">Could not load this day&apos;s lessons. Please refresh the page and try again.</p>}
       {lessons === null ? (
-        <div className="h-40 animate-pulse rounded-2xl bg-white" />
+        <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />
       ) : lessons.length === 0 ? (
         !error && (
           <div className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/65">

@@ -10,6 +10,7 @@ import { SencoToggle } from "@/components/learn/send/SencoToggle";
 import { ukToday } from "@/lib/learn/ukTime";
 import { btn, ui } from "@/components/learn/ui";
 
+import { askConfirm } from "@/components/learn/kit";
 type StaffRow = {
   user_id: string;
   full_name: string;
@@ -219,7 +220,7 @@ function DetailsForm({ person, canEditRoles, canSetDsl, isSelf, onSaved }: { per
   const setDsl = async (on: boolean) => {
     const supabase = getSupabaseClient();
     if (!supabase) return;
-    if (!on && !window.confirm(`Remove ${person.full_name} as a Designated Safeguarding Lead? The school must always have at least one.`)) return;
+    if (!on && !(await askConfirm(`Remove ${person.full_name} as a Designated Safeguarding Lead? The school must always have at least one.`))) return;
     setDslBusy(true);
     setDslMsg(null);
     const { error } = await supabase.rpc("set_safeguarding_lead", { p_user: person.user_id, p_on: on });
@@ -472,9 +473,13 @@ export function StaffAdmin({ initialUserId }: { initialUserId?: string }) {
           </div>
         )}
         {staff === null ? (
-          <div className="m-4 h-24 animate-pulse rounded-xl bg-cream" aria-label="Loading" />
+          <div role="status" className="m-4 h-24 rounded-xl bg-cream motion-safe:animate-pulse" aria-label="Loading staff" />
         ) : staff.length === 0 ? (
-          <p className="p-4 text-sm text-amber-900">{problems.length > 0 ? "Couldn't load staff." : "No staff found."}</p>
+          problems.length > 0 ? (
+            <p className="p-4 text-sm text-red-800">Couldn&apos;t load staff.</p>
+          ) : (
+            <p className="p-4 text-sm text-ink/70">No staff yet. Add teachers and office staff in People, then their profiles appear here.</p>
+          )
         ) : (
           <ul className="divide-y divide-gold-light/50">
             {q && shownStaff.length === 0 && <li className="px-4 py-3 text-sm text-ink/65">Nobody matches &quot;{query}&quot;.</li>}

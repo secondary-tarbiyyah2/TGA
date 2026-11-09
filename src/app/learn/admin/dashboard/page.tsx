@@ -10,6 +10,8 @@ import { ukDateTime, ukNowHm, ukToday } from "@/lib/learn/ukTime";
 import { AdminLeaderboard } from "@/components/learn/behaviour/LeaderboardCards";
 import { WithdrawalNoticesAdmin } from "@/components/learn/fees/WithdrawalNoticesAdmin";
 import { DashboardHero } from "@/components/learn/DashboardHero";
+import { CurriculumHealth, useCurriculumFigures } from "@/components/learn/curriculum/CurriculumHealth";
+import { RecentLessons } from "@/components/learn/curriculum/RecentLessons";
 import { ActionCentreWidget } from "@/components/learn/ActionCentreWidget";
 import { useLearnSession, learnRoleLabel } from "@/lib/learn/session";
 import { useActionItems } from "@/components/learn/actions/useActionItems";
@@ -54,7 +56,7 @@ function ActivityFeed() {
         </Link>
       </div>
       {rows === null ? (
-        <div className="m-5 h-24 animate-pulse rounded-xl bg-cream" aria-label="Loading" />
+        <div className="m-5 h-24 motion-safe:animate-pulse rounded-xl bg-cream" aria-label="Loading" />
       ) : rows.length === 0 ? (
         <p className="px-5 py-4 text-sm text-ink/65">Nothing recorded yet.</p>
       ) : (
@@ -142,7 +144,7 @@ function TodayLessons({ lessons }: { lessons: TodayLessonRow[] | null }) {
         </span>
       </div>
       {lessons === null ? (
-        <div className="m-5 h-24 animate-pulse rounded-xl bg-cream" aria-label="Loading" />
+        <div className="m-5 h-24 motion-safe:animate-pulse rounded-xl bg-cream" aria-label="Loading" />
       ) : lessons.length === 0 ? (
         <p className="px-5 py-4 text-sm text-ink/65">No lessons on the published timetable today.</p>
       ) : (
@@ -184,6 +186,7 @@ function TodayLessons({ lessons }: { lessons: TodayLessonRow[] | null }) {
  * a dashboard full of misleading zeros.
  */
 function DashboardContent() {
+  const curriculum = useCurriculumFigures();
   const { roles } = useLearnSession();
   // roles can hold one row per scope (e.g. several classes) that all
   // resolve to the same label, dedupe before display.
@@ -199,7 +202,7 @@ function DashboardContent() {
   if (!isHead) {
     return (
       <div className="space-y-6">
-        <DashboardHero subtitle={myRoles} />
+        <DashboardHero area="admin" subtitle={myRoles} />
         <div className="grid gap-3 sm:grid-cols-2">
           {[
             { href: "/admin/admissions", title: "Applications", help: "Applications, calls and bookings." },
@@ -218,18 +221,25 @@ function DashboardContent() {
   }
 
   const content = (
-    <div className="space-y-8">
+    <div className="space-y-6">
       <DashboardHero
-        subtitle={myRoles}
+        area="admin"
+        subtitle={myRoles ? `${myRoles}. The school today, and what needs a decision.` : "The school today, and what needs a decision."}
         chips={[
-          { label: "Lessons today", value: lessons === null ? "…" : lessons.length, tone: "yellow" },
-          { label: "Need attention", value: attentionTotal, tone: "pink" },
+          { label: "Lessons today", value: lessons === null ? "…" : lessons.length, href: "/admin/lessons" },
+          { label: "Need attention", value: attentionTotal, tone: "pink", href: "/admin/actions" },
+          { label: "Lessons to approve", value: curriculum ? curriculum.waiting : "…", tone: "pink", href: "/admin/curriculum/review" },
+          { label: "Curriculum approved", value: curriculum ? `${curriculum.lessons ? Math.round((curriculum.approved / curriculum.lessons) * 100) : 0}%` : "…", hint: curriculum ? `${curriculum.approved} of ${curriculum.lessons} lessons` : undefined, href: "/admin/curriculum/map" },
         ]}
       />
 
       <ActionCentreWidget role="admin" />
 
       <TodayLessons lessons={lessons} />
+
+      <CurriculumHealth figures={curriculum} />
+
+      <RecentLessons area="admin" />
 
       <WithdrawalNoticesAdmin compact />
 

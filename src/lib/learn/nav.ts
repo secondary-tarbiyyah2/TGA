@@ -91,7 +91,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       label: "Home",
       icon: "house",
       badge: "actions",
-      group: "Overview",
+      group: "Workspace",
       tabs: [
         { href: "/admin/dashboard", label: "Overview", hint: "Today across the school" },
         { href: "/admin/actions", label: "Action centre", hint: "Everything waiting for the office", icon: "flag", headOnly: true },
@@ -103,7 +103,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       label: "Messages",
       icon: "messageSquare",
       badge: "messages",
-      group: "Overview",
+      group: "Workspace",
       tabs: [
         { href: "/admin/messages", label: "Inbox", hint: "Conversations with families and staff", headOnly: true },
         { href: "/admin/announcements", label: "Announcements", hint: "School-wide notices", icon: "megaphone", headOnly: true },
@@ -116,7 +116,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       href: "/admin/calendar",
       label: "Calendar",
       icon: "calendarDays",
-      group: "Overview",
+      group: "Workspace",
       tabs: [
         { href: "/admin/calendar", label: "Calendar", hint: "Term dates and school events" },
         { href: "/admin/parent-evenings", label: "Parent evenings", hint: "Create evenings, open booking, see bookings", icon: "calendarClock", headOnly: true },
@@ -174,6 +174,8 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       group: "Teaching",
       tabs: [
         { href: "/admin/curriculum", label: "Lesson library", hint: "Lesson plans, resources and revision packs", headOnly: true },
+        { href: "/admin/curriculum/review", label: "Lesson review", hint: "Submitted, changes requested and approved lessons", icon: "clipboardCheck", headOnly: true },
+        { href: "/admin/curriculum/map", label: "Curriculum map", hint: "Every unit across the year, half term by half term", icon: "calendarDays", headOnly: true },
         { href: "/admin/planner", label: "Curriculum planner", hint: "Long-term and week-by-week plans, unit by unit", icon: "layoutGrid", headOnly: true },
         { href: "/admin/syllabus", label: "Syllabus", hint: "Schemes of work and exam specifications", icon: "scrollText", headOnly: true },
         { href: "/admin/revision", label: "Revision results", hint: "How pupils did on each unit's revision", icon: "chartLine", headOnly: true },
@@ -183,7 +185,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       href: "/admin/admissions",
       label: "Admissions",
       icon: "userRoundPlus",
-      group: "School office",
+      group: "Management",
       tabs: [
         { href: "/admin/admissions", label: "Applications", hint: "Applications, calls and availability" },
         { href: "/admin/assessments", label: "Entry assessments", hint: "Baseline and entry assessments", icon: "clipboardCheck" },
@@ -194,7 +196,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       href: "/admin/people",
       label: "People",
       icon: "idCard",
-      group: "School office",
+      group: "Management",
       tabs: [
         { href: "/admin/people", label: "Accounts", hint: "Families, students and staff accounts and roles" },
         { href: "/admin/staff", label: "Staff", hint: "Teacher profiles and compliance dates", icon: "userRound", headOnly: true },
@@ -207,7 +209,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       href: "/admin/fees",
       label: "Fees and policies",
       icon: "wallet",
-      group: "School office",
+      group: "Management",
       tabs: [
         { href: "/admin/fees", label: "Fees", hint: "Invoices and payment status", headOnly: true },
         { href: "/admin/documents", label: "Policies", hint: "Policies families and staff sign", icon: "fileCheck", headOnly: true },
@@ -217,7 +219,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       href: "/admin/compliance",
       label: "Safeguarding",
       icon: "shieldCheck",
-      group: "School office",
+      group: "Management",
       tabs: [
         { href: "/admin/compliance", label: "Compliance", hint: "Safeguarding, audit and retention" },
         { href: "/admin/data-protection", label: "Data protection", hint: "Retention rules and subject access exports", headOnly: true },
@@ -228,7 +230,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       href: "/admin/settings",
       label: "Settings",
       icon: "settings",
-      group: "School office",
+      group: "Management",
       tabs: [
         { href: "/admin/settings", label: "General", hint: "School details, alerts, clock-in and Microsoft 365" },
         { href: "/admin/academic", label: "Academic setup", hint: "Years, terms, year groups, classes and subjects", icon: "layers" },
@@ -240,7 +242,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
   teach: [
     {
       href: "/teach/dashboard",
-      label: "Home",
+      label: "Home", group: "Workspace",
       icon: "house",
       badge: "actions",
       tabs: [
@@ -248,10 +250,10 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
         { href: "/teach/actions", label: "Action centre", hint: "Things waiting for you", icon: "flag" },
       ],
     },
-    { href: "/teach/today", label: "Today", icon: "sun", matchPrefixes: ["/teach/enrichment"], hint: "Today's lessons and registers" },
+    { href: "/teach/today", label: "Today", group: "Workspace", icon: "sun", matchPrefixes: ["/teach/enrichment"], hint: "Today's lessons and registers" },
     {
       href: "/teach/classes",
-      label: "My classes",
+      label: "My classes", group: "Workspace",
       icon: "presentation",
       matchPrefixes: ["/teach/class", "/teach/lessons"],
       tabs: [
@@ -260,10 +262,23 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
         { href: "/teach/assessment", label: "Gradebook", hint: "Enter a whole class's results at once", icon: "award" },
       ],
     },
-    { href: "/teach/review", label: "To review", icon: "clipboardCheck", badge: "review", hint: "Work handed in and waiting to be marked" },
+    {
+      href: "/teach/curriculum",
+      label: "Curriculum", group: "Workspace",
+      icon: "library",
+      tabs: [
+        { href: "/teach/curriculum", label: "Lesson library", hint: "Lesson plans, resources and revision packs" },
+        { href: "/teach/curriculum/review", label: "Lesson review", hint: "Lessons in review, sent back or approved", icon: "clipboardCheck" },
+        { href: "/teach/curriculum/map", label: "Curriculum map", hint: "Every unit across the year, half term by half term", icon: "calendarDays" },
+        { href: "/teach/planner", label: "Curriculum planner", hint: "Long-term and week-by-week plans, unit by unit", icon: "layoutGrid" },
+        { href: "/teach/syllabus", label: "Syllabus", hint: "Schemes of work and exam specifications", icon: "scrollText" },
+        { href: "/teach/revision", label: "Revision results", hint: "How your pupils did on each unit's revision", icon: "chartLine" },
+      ],
+    },
+    { href: "/teach/review", label: "To review", group: "Workspace", icon: "clipboardCheck", badge: "review", hint: "Work handed in and waiting to be marked" },
     {
       href: "/teach/messages",
-      label: "Messages",
+      label: "Messages", group: "Workspace",
       icon: "messageSquare",
       badge: "messages",
       tabs: [
@@ -272,8 +287,17 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       ],
     },
     {
+      href: "/teach/calendar",
+      label: "Calendar", group: "Workspace",
+      icon: "calendarDays",
+      tabs: [
+        { href: "/teach/calendar", label: "Calendar", hint: "Term dates and school events" },
+        { href: "/teach/parent-evenings", label: "Parent evenings", hint: "Your parent evening slots and bookings", icon: "calendarClock" },
+      ],
+    },
+    {
       href: "/teach/pupils",
-      label: "Pupils",
+      label: "Pupils", group: "Pupils",
       icon: "backpack",
       tabs: [
         { href: "/teach/pupils", label: "Pupils", hint: "Records for the pupils you teach" },
@@ -284,30 +308,10 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
         { href: "/teach/absences", label: "Absences", hint: "Reported pupil absences", icon: "calendarX" },
       ],
     },
-    { href: "/teach/reports", label: "Reports", icon: "fileText", hint: "Term reports for your classes" },
-    {
-      href: "/teach/curriculum",
-      label: "Curriculum",
-      icon: "library",
-      tabs: [
-        { href: "/teach/curriculum", label: "Lesson library", hint: "Lesson plans, resources and revision packs" },
-        { href: "/teach/planner", label: "Curriculum planner", hint: "Long-term and week-by-week plans, unit by unit", icon: "layoutGrid" },
-        { href: "/teach/syllabus", label: "Syllabus", hint: "Schemes of work and exam specifications", icon: "scrollText" },
-        { href: "/teach/revision", label: "Revision results", hint: "How your pupils did on each unit's revision", icon: "chartLine" },
-      ],
-    },
-    {
-      href: "/teach/calendar",
-      label: "Calendar",
-      icon: "calendarDays",
-      tabs: [
-        { href: "/teach/calendar", label: "Calendar", hint: "Term dates and school events" },
-        { href: "/teach/parent-evenings", label: "Parent evenings", hint: "Your parent evening slots and bookings", icon: "calendarClock" },
-      ],
-    },
+    { href: "/teach/reports", label: "Reports", group: "Pupils", icon: "fileText", hint: "Term reports for your classes" },
     {
       href: "/teach/profile",
-      label: "My staff area",
+      label: "My staff area", group: "My account",
       icon: "userRound",
       tabs: [
         { href: "/teach/profile", label: "My profile", hint: "Your teacher profile" },
@@ -316,7 +320,6 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       ],
     },
   ],
-
   family: [
     {
       href: "/family/dashboard",
@@ -587,7 +590,7 @@ export type SidebarEntry = { kind: "link"; item: SidebarItem } | { kind: "sectio
 
 /** Areas whose sidebar is long enough to need headed, collapsible groups.
  * The others are short flat lists (seven or eight entries). */
-const GROUPED_AREAS: PortalArea[] = ["admin"];
+const GROUPED_AREAS: PortalArea[] = ["admin", "teach"];
 
 /** The sidebar layout. Flat areas: one link per entry, in the order written
  * above. Grouped areas: the first group's entries are plain links at the top

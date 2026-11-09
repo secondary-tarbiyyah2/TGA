@@ -11,6 +11,7 @@ import { printElement } from "@/components/learn/printScope";
 import { PrintHeader } from "@/components/learn/print";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 type Row = {
   id: string; candidate_name: string; year: number; status: string; created_at: string; started_at: string | null; submitted_at: string | null; completed_at: string | null;
   expires_at: string; application_id: string | null; child_id: string | null; eal: boolean; access: Record<string, unknown>; dob: string | null; invigilator: string | null;
@@ -58,8 +59,8 @@ export function EntryAssessmentsAdmin() {
 
   /** Runs a row action and returns what happened (null if the user backed out of a confirm). */
   const act = async (id: string, action: "reissue" | "email" | "void", extra: Record<string, unknown> = {}): Promise<ActResult | null> => {
-    if (action === "void" && !confirm("Cancel this assessment? The link stops working. You can issue a new paper later.")) return null;
-    if (action === "reissue" && !confirm(extra.newPaper ? "Start again with a new paper? The old link and any answers so far stop counting." : "Make a new link? The old link stops working.")) return null;
+    if (action === "void" && !(await askConfirm("Cancel this assessment? The link stops working. You can issue a new paper later."))) return null;
+    if (action === "reissue" && !(await askConfirm(extra.newPaper ? "Start again with a new paper? The old link and any answers so far stop counting." : "Make a new link? The old link stops working."))) return null;
     const res = await callEdgeFunction("entry-assessment", { action, id, ...extra });
     let out: ActResult;
     if (!res.ok) out = { tone: "bad", text: edgeErrorMessage(res) };
@@ -120,7 +121,7 @@ export function EntryAssessmentsAdmin() {
       )}
 
       {rows === null ? (
-        <div className="h-40 animate-pulse rounded-2xl bg-white" />
+        <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />
       ) : shown.length === 0 ? (
         <EmptyState title={filter === "marking" ? "Nothing to mark" : "No assessments here yet"} icon="clipboardCheck" tile="tile-violet" action={<button type="button" onClick={() => setCreating(true)} className={ui.btnPrimary}>New assessment</button>}>
           Each pupil gets their own paper for their year group: Maths, English and Reasoning on screen, then Writing, Qur&apos;an and Arabic with a teacher on the family call.
@@ -601,7 +602,7 @@ function WritingMark({ year, prompt, text, live, initial, marks, onSave, onRemar
       {live ? <p className="rounded-lg bg-cream px-3 py-2 text-sm text-ink/75">Done on the call: read the task aloud, the child writes on paper and holds it up to the camera. Mark what you see.</p> : text ? <blockquote className="max-h-72 overflow-y-auto whitespace-pre-wrap rounded-lg border border-gold-light/70 bg-cream/60 p-3 text-sm leading-relaxed text-ink/90">{text}<footer className="mt-2 text-xs text-ink/55">{text.trim().split(/\s+/).length} words</footer></blockquote> : <p className="text-sm text-ink/60">No writing submitted yet.</p>}
 
       {!live && first && (
-        <div className="rounded-lg border border-violet-200 bg-violet-50/60 p-3 text-sm">
+        <div className="rounded-lg border border-gold-light bg-cream/60 p-3 text-sm">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <p className="font-semibold text-ink">{first.source === "ai" ? "AI first mark" : "Estimate – needs staff marking"}{first.overall ? `: ${first.overall}` : ""}</p>
             <span className="text-xs text-ink/55">{first.source === "ai" ? `${first.model || "AI"}${first.confidence ? `, ${first.confidence} confidence` : ""}` : "length, sentences, punctuation and a short spelling list"} · {new Date(first.created_at).toLocaleString("en-GB", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}</span>

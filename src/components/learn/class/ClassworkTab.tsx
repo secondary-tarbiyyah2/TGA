@@ -14,6 +14,7 @@ import { ReviewQueue } from "@/components/learn/classwork/ReviewQueue";
 import { Tabs } from "@/components/learn/Tabs";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 type Topic = { id: string; name: string; position: number };
 type Hw = Homework & { topic_id: string | null; status?: string; kind?: string | null; assigned_child_ids?: string[] | null };
 type Mat = { id: string; title: string; kind: "material" | "question"; body: string | null; resources: unknown; topic_id: string | null; allow_comments: boolean; created_at: string };
@@ -330,7 +331,7 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
 
   const removeTopic = async (t: Topic) => {
     const supabase = getSupabaseClient();
-    if (!supabase || !window.confirm(`Delete the topic "${t.name}"? Its items stay in the class, just without a topic.`)) return;
+    if (!supabase || !(await askConfirm(`Delete the topic "${t.name}"? Its items stay in the class, just without a topic.`))) return;
     await supabase.from("class_topics").delete().eq("id", t.id);
     load();
   };
@@ -345,12 +346,12 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
 
   const removeMaterial = async (id: string) => {
     const supabase = getSupabaseClient();
-    if (!supabase || !window.confirm("Delete this item? Pupils will no longer see it.")) return;
+    if (!supabase || !(await askConfirm("Delete this item? Pupils will no longer see it."))) return;
     await supabase.from("class_materials").delete().eq("id", id);
     load();
   };
 
-  if (topics === null) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
+  if (topics === null) return <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />;
 
   const editor = setting ? (
         <section ref={editorRef} aria-label={setting.editing ? `Edit ${setting.editing.title}` : setting.kind === "quiz" ? "New quiz assignment" : "New assignment"} className="scroll-mt-24 rounded-2xl border border-gold-light bg-white p-5">

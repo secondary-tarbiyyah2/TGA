@@ -17,6 +17,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import type { TimetableSlot } from "@/lib/learn/timetable";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 type View = "all" | "class" | "teacher" | "session";
 const VIEWS: { id: View; label: string }[] = [
   { id: "all", label: "Everyone" },
@@ -152,7 +153,7 @@ function TimetableContent() {
     if (blocker) return setMessage(blocker);
     const live = runs.find((r) => r.status === "published" && r.academic_year_id === run.academic_year_id);
     const warn = warningCount > 0 ? ` It still has ${warningCount} warning${warningCount === 1 ? "" : "s"}.` : "";
-    if (!window.confirm(`Publish "${run.label}"?${live ? ` It replaces "${live.label}" as the live timetable` : " It becomes the live timetable"} for every teacher, pupil and family.${warn}`)) return;
+    if (!(await askConfirm(`Publish "${run.label}"?${live ? ` It replaces "${live.label}" as the live timetable` : " It becomes the live timetable"} for every teacher, pupil and family.${warn}`))) return;
     const result = await callFunction("timetable-publish", { action: "publish", run_id: runId });
     setMessage(result.ok ? "Published." : `Could not publish: ${edgeErrorMessage(result)}`);
     if (result.ok) await reload();
@@ -179,7 +180,7 @@ function TimetableContent() {
     <div>
       <LessonsHeader title="Timetable" subtitle="The weekly grid. Drag a lesson to move it; click it to edit; nothing goes live until you publish." actions={exportActions} />
       {!data.loaded ? (
-        <div className="h-40 animate-pulse rounded-2xl bg-white" aria-label="Loading" />
+        <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" aria-label="Loading" />
       ) : runs.length === 0 ? (
         <p className="rounded-xl border border-dashed border-gold-light bg-cream/60 px-4 py-4 text-sm text-ink/70">
           No timetable yet. <Link href="/admin/lessons/generate" className="font-semibold underline">Generate one</Link> or start a blank draft.

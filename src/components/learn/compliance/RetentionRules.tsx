@@ -5,6 +5,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { btn, ui } from "@/components/learn/ui";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 type RuleRow = {
   id: number;
   category: string;
@@ -67,7 +68,7 @@ function RuleCard({ rule, due, onChanged }: { rule: RuleRow; due: PreviewRow[]; 
   async function run() {
     if (!supabase) return;
     const verb = rule.action === "delete" ? "permanently delete" : "anonymise";
-    if (!confirm(`This will ${verb} ${runnable.length} record(s) under "${rule.label}". It cannot be undone. Continue?`)) return;
+    if (!(await askConfirm(`This will ${verb} ${runnable.length} record(s) under "${rule.label}". It cannot be undone. Continue?`))) return;
     setBusy(true);
     setMessage(null);
     const { data, error } = await supabase.rpc("retention_run", { p_category: rule.category, p_expected: runnable.length });
@@ -211,7 +212,7 @@ export function RetentionRules() {
         Nothing is removed automatically from here. Review the list for a rule, tick the box, then run it. Every run is logged, and the audit history of removed records is redacted. Recordings, the sign-in log and (in part) messages are also handled by their own scheduled jobs; see the retention schedule on the Compliance page.
       </p>
       {error && <p role="alert" className="mt-2 text-sm text-red-700">{error}</p>}
-      {rules === null && <div className="mt-3 h-24 animate-pulse rounded-xl bg-cream" />}
+      {rules === null && <div className="mt-3 h-24 motion-safe:animate-pulse rounded-xl bg-cream" />}
       <ul className="mt-4 space-y-3">
         {(rules || []).map((r) => (
           <RuleCard key={`${r.id}-${r.retention_months}-${r.action}-${r.enabled}`} rule={r} due={preview.filter((p) => p.category === r.category)} onChanged={load} />

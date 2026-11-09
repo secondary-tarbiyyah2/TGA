@@ -13,6 +13,7 @@ import { LESSON_COLUMNS, downloadDeck, fileNameFor, pathFor, saveBlob, yearLabel
 import { answerFeedback, loadFeedback, type LessonFeedback } from "@/lib/learn/lessonFeedback";
 import { BLOCKS } from "@/lib/learn/lessonSchema.mjs";
 
+import { askConfirm } from "@/components/learn/kit";
 // Edit a lesson directly on its slides (Tafweed T35). Every text box on the slide preview and in
 // the lesson plan is edited in place; Save stores the lesson exactly as the form editor does
 // (curriculum_save_lesson_content), then the quick build (workflow "Build one lesson") makes the
@@ -375,8 +376,8 @@ export function LessonStudio({
   const notesFor = (key: string) => notes.filter((f) => f.part === key && (f.status === "open" || f.status === "accepted")).length;
   const edit = mayEdit && !busy;
 
-  const close = () => {
-    if (dirty && !window.confirm("Close without saving your changes?")) return;
+  const close = async () => {
+    if (dirty && !(await askConfirm("Close without saving your changes?"))) return;
     onClose();
   };
 
@@ -751,7 +752,7 @@ export function LessonStudio({
             </button>
           )}
           {onOpenForm && mayEdit && (
-            <button type="button" className={btn} onClick={() => (!dirty || window.confirm("Open the full form without saving these changes?")) && onOpenForm()}>
+            <button type="button" className={btn} onClick={async () => (!dirty || (await askConfirm("Open the full form without saving these changes?"))) && onOpenForm()}>
               Full form
             </button>
           )}
@@ -924,7 +925,7 @@ function BuildPanel({ build, stale, files, customDeck, onDownload, onPrint }: { 
     );
   return (
     <p className="flex items-center gap-2 rounded-lg border border-teal-700/20 bg-teal-100 px-3 py-2 text-teal-900" role="status">
-      <span className="h-3 w-3 animate-spin rounded-full border-2 border-teal-700 border-t-transparent motion-reduce:animate-none" aria-hidden="true" />
+      <span className="h-3 w-3 motion-safe:animate-spin rounded-full border-2 border-teal-700 border-t-transparent motion-reduce:animate-none" aria-hidden="true" />
       {build.status === "queued" ? "Saved. Building your slides…" : "Building your slides and lesson plan…"} Usually under two minutes. You can keep working; the downloads appear here.
     </p>
   );

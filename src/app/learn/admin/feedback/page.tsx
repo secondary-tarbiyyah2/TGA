@@ -24,6 +24,7 @@ import {
 } from "@/lib/learn/feedback";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 type View = "new" | "in_progress" | "planned" | "closed" | "all";
 const KIND_ICON: Record<FeedbackKind, IconName> = { problem: "bug", idea: "lightbulb", question: "circleHelp" };
 const PRIORITY_LABEL: Record<FeedbackPriority, string> = { low: "Low", normal: "Normal", high: "High" };
@@ -121,7 +122,7 @@ function FeedbackAdmin() {
         </div>
 
         {tickets === null ? (
-          <div className="h-40 animate-pulse rounded-2xl bg-white" />
+          <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />
         ) : error ? null : shown.length === 0 ? (
           <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">
             {q.trim() || kind ? "No feedback matches your search." : view === "new" ? "Nothing new. You're all caught up." : "Nothing here yet."}
@@ -195,8 +196,8 @@ function TicketDrawer({ ticket, onClose, onSaved }: { ticket: FeedbackTicket; on
   const [note, setNote] = useState<{ ok: boolean; text: string } | null>(null);
   const dirty = status !== ticket.status || priority !== ticket.priority || response.trim() !== (ticket.response || "");
   // Don't throw away a half-written reply by pressing Escape or clicking outside.
-  const requestClose = useCallback(() => {
-    if (dirty && !window.confirm("Close without saving your changes?")) return;
+  const requestClose = useCallback(async () => {
+    if (dirty && !(await askConfirm("Close without saving your changes?"))) return;
     onClose();
   }, [dirty, onClose]);
 

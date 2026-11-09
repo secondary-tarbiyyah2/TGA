@@ -7,6 +7,7 @@ import { CLOSURE_LABEL, type ClosureKind, type ClosureRow, type TermRow, type Ye
 import { ui } from "@/components/learn/ui";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 const GREG = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
 
 function parse(k: string): Date {
@@ -277,8 +278,8 @@ export function TermsManager({
     );
   };
 
-  const deleteTerm = (t: TermRow) => {
-    if (!window.confirm(`Delete ${t.name}? Anything linked to this term (timetable, reports) may be removed with it.`)) return;
+  const deleteTerm = async (t: TermRow) => {
+    if (!(await askConfirm(`Delete ${t.name}? Anything linked to this term (timetable, reports) may be removed with it.`))) return;
     run(async () => {
       const supabase = getSupabaseClient();
       if (!supabase) return "Not connected.";
@@ -307,8 +308,8 @@ export function TermsManager({
     );
   };
 
-  const deleteClosure = (c: ClosureRow) => {
-    if (!window.confirm(`Remove ${c.name}?`)) return;
+  const deleteClosure = async (c: ClosureRow) => {
+    if (!(await askConfirm(`Remove ${c.name}?`))) return;
     run(async () => {
       const supabase = getSupabaseClient();
       if (!supabase) return "Not connected.";
@@ -460,7 +461,7 @@ export function TermsManager({
                     <div className="min-w-0 flex-1">
                       <span className="flex flex-wrap items-center gap-2 font-medium text-ink">
                         {t.name}
-                        {t.source === "sanity" && <span className="rounded-full bg-sky-100 px-2 py-0.5 text-[10px] font-medium text-sky-800">From website</span>}
+                        {t.source === "sanity" && <span className="rounded-full bg-teal-100 px-2 py-0.5 text-[10px] font-medium text-teal-900">From website</span>}
                       </span>
                       <span className="block text-xs text-ink/65">Starts: {both(t.starts_on)}</span>
                       <span className="block text-xs text-ink/65">Ends: {both(t.ends_on)}</span>

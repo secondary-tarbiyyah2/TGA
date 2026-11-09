@@ -269,7 +269,7 @@ export function CourseTab({ classId, viewer, routes }: { classId: string; viewer
   const isCollapsed = (w: Week) => collapsed[w.key] ?? w.start.getTime() < thisWeek - 14 * 86_400_000;
   const setAll = (value: boolean) => setCollapsed(Object.fromEntries(weeks.map((w) => [w.key, value])));
 
-  if (activities === null) return <div className="h-64 animate-pulse rounded-2xl border border-gold-light bg-white" />;
+  if (activities === null) return <div className="h-64 motion-safe:animate-pulse rounded-2xl border border-gold-light bg-white" />;
   if (weeks.length === 0) {
     return <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/65">Nothing in this class yet. Lessons, assignments and grades will appear here week by week.</p>;
   }

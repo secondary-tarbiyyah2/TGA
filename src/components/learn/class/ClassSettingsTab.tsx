@@ -7,6 +7,7 @@ import { fetchClassSettings, type ClassSettings, type GradeCalculation, type Gra
 import { Switch } from "@/components/learn/class/AnnouncementComposer";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 type AssessmentType = { id: string; name: string };
 
 function Group({ title, children }: { title: string; children: React.ReactNode }) {
@@ -135,13 +136,13 @@ export function ClassSettingsTab({ classId, className, subject, canRename }: { c
   const removeCat = async (c: GradeCategory) => {
     const supabase = getSupabaseClient();
     if (!supabase) return;
-    if (!window.confirm(`Delete the grade category "${c.name}"?`)) return;
+    if (!(await askConfirm(`Delete the grade category "${c.name}"?`))) return;
     const { error } = await supabase.from("class_grade_categories").delete().eq("id", c.id);
     if (error) setMsg({ tone: "err", text: "Could not delete the category." });
     load();
   };
 
-  if (!s) return <div className="h-64 animate-pulse rounded-2xl bg-white" />;
+  if (!s) return <div className="h-64 motion-safe:animate-pulse rounded-2xl bg-white" />;
   const total = cats.reduce((a, c) => a + c.weight, 0);
   const set = (patch: Partial<ClassSettings>) => setS({ ...s, ...patch });
 

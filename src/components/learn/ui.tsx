@@ -3,8 +3,9 @@
  * same: one set of buttons (primary, secondary, ghost, danger; two sizes),
  * one input style, one set of status chips and notices. Colour has a job:
  *
- *   gold, the action you take (Save, Submit, Mark, Issue)
- *   teal, where you are / what is selected (tabs, chosen filters, rows)
+ *   forest green, the action you take and where you are (Save, selected tabs,
+ *     chosen filters, links). In the portal the teal-* classes are forest too.
+ *   gold, the brand accent only (logo, the active-page marker, key figures)
  *   amber, needs attention soon (due, late, waiting)
  *   red, a problem, or something that can't be undone (Delete)
  *   green, done (saved, returned, present)
@@ -33,10 +34,11 @@ export type ButtonVariant = "primary" | "secondary" | "ghost" | "danger";
 export type ButtonSize = "sm" | "md";
 
 const VARIANT: Record<ButtonVariant, string> = {
-  primary: "bg-gold-700 font-semibold text-white shadow-sm hover:bg-gold-900",
+  // Forest green: the portal's action colour (docs/portal-redesign.md). Gold is never a button fill.
+  primary: "bg-forest-700 font-semibold text-white hover:bg-forest-900",
   secondary: "border border-gold-light bg-white font-medium text-ink hover:border-ink/25 hover:bg-cream",
   ghost: "font-medium text-ink/75 hover:bg-cream hover:text-ink",
-  danger: "bg-red-700 font-semibold text-white shadow-sm hover:bg-red-800",
+  danger: "bg-red-700 font-semibold text-white hover:bg-red-800",
 };
 
 /** Smaller buttons for inside rows, tables and cards. Still 44px tall on phones. */
@@ -78,7 +80,7 @@ export const ui = {
   /** A field's error message, under the input. */
   error: "text-xs font-medium text-red-700",
 
-  card: "rounded-2xl border border-gold-light bg-white p-4 sm:p-6",
+  card: "rounded-2xl border border-gold-light bg-white p-4 sm:p-5",
   /** A card's heading row: title on the left, one action on the right. */
   cardHead: "mb-4 flex flex-wrap items-center justify-between gap-x-4 gap-y-2",
   /** A card or section title. */
@@ -226,6 +228,38 @@ export function Notice({ tone = "info", children }: { tone?: Exclude<Tone, "neut
     <div role={tone === "bad" ? "alert" : "status"} className={`flex items-start gap-2.5 rounded-lg border px-3.5 py-2.5 text-sm ${NOTICE[tone]}`}>
       <Icon name={NOTICE_ICON[tone]} size="sm" className="mt-0.5 h-4 w-4 opacity-80" />
       <div className="min-w-0 flex-1">{children}</div>
+    </div>
+  );
+}
+
+/**
+ * One titled part of a long form ("About the pupil", "Parent", "Classes"),
+ * so a form reads as a few short groups instead of one long column. The
+ * title is the group's <legend>, so screen readers announce it with each
+ * field. Put several in a row; a hairline and space separate them.
+ * Layout only: the fields inside keep their own names, values and handlers.
+ */
+export function FormSection({ title, description, children, className = "" }: { title: ReactNode; description?: ReactNode; children: ReactNode; className?: string }) {
+  return (
+    <fieldset className={`portal-form-section min-w-0 border-0 p-0 ${className}`}>
+      <legend className="float-left w-full p-0 text-[0.8125rem] font-semibold uppercase tracking-wide text-ink/80">{title}</legend>
+      {description && <p className="clear-both pt-1 text-xs leading-relaxed text-ink/65">{description}</p>}
+      <div className="clear-both space-y-4 pt-3">{children}</div>
+    </fieldset>
+  );
+}
+
+/** A finished-looking placeholder while a list or card loads: a few soft bars, announced as "Loading". */
+export function LoadingState({ rows = 4, label = "Loading", className = "" }: { rows?: number; label?: string; className?: string }) {
+  return (
+    <div role="status" aria-label={label} className={`space-y-3 rounded-2xl border border-gold-light bg-white p-4 sm:p-5 ${className}`}>
+      {Array.from({ length: rows }, (_, i) => (
+        <div key={i} className="flex items-center gap-3">
+          <span className="h-8 w-8 shrink-0 rounded-full bg-cream motion-safe:animate-pulse" />
+          <span className="h-3.5 flex-1 rounded bg-cream motion-safe:animate-pulse" style={{ maxWidth: `${85 - ((i * 17) % 35)}%` }} />
+        </div>
+      ))}
+      <span className="sr-only">{label}</span>
     </div>
   );
 }

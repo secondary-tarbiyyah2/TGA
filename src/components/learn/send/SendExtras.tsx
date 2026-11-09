@@ -24,6 +24,7 @@ import {
   type SupportLevel,
 } from "@/lib/learn/send";
 
+import { askConfirm } from "@/components/learn/kit";
 const errText = (e: { message?: string } | null) => (e?.message ? e.message.replace(/^.*?:\s*/, "") : "Please try again.");
 
 /**
@@ -71,7 +72,7 @@ export function DocumentsSection({ planId, onChanged }: { planId: string; onChan
   };
 
   const remove = async (d: PlanDocument) => {
-    if (!supabase || !window.confirm(`Remove the link to "${d.title}"? The file itself stays where it is.`)) return;
+    if (!supabase || !(await askConfirm(`Remove the link to "${d.title}"? The file itself stays where it is.`))) return;
     const { error } = await supabase.from("send_plan_documents").delete().eq("id", d.id);
     if (error) return setMsg({ tone: "bad", text: `Couldn't remove it: ${errText(error)}` });
     setMsg({ tone: "good", text: "Link removed." });
@@ -84,7 +85,7 @@ export function DocumentsSection({ planId, onChanged }: { planId: string; onChan
       <div className="space-y-4">
         {msg && <Notice tone={msg.tone}>{msg.text}</Notice>}
         {docs === null ? (
-          <div className="h-16 animate-pulse rounded-xl bg-cream" />
+          <div className="h-16 motion-safe:animate-pulse rounded-xl bg-cream" />
         ) : docs.length === 0 ? (
           <p className="text-sm text-ink/65">No documents linked yet.</p>
         ) : (
@@ -156,7 +157,7 @@ export function ChangeLog({ childId, refreshKey = 0, showPupil = false, limit = 
   }, [childId, refreshKey, limit]);
 
   if (error) return <Notice tone="bad">Couldn&apos;t load the change log: {error}</Notice>;
-  if (rows === null) return <div className="h-24 animate-pulse rounded-xl bg-cream" />;
+  if (rows === null) return <div className="h-24 motion-safe:animate-pulse rounded-xl bg-cream" />;
   if (rows.length === 0) return <EmptyState title="No changes recorded yet." />;
   return (
     <ol className="divide-y divide-gold-light/60 rounded-xl border border-gold-light bg-white" aria-label="Changes, newest first">
@@ -190,7 +191,7 @@ export function RegisterTable({ rows, onOpen, onSaved }: { rows: RegisterRow[]; 
   const save = async (r: RegisterRow, patch: InlinePatch, what: string) => {
     const supabase = getSupabaseClient();
     if (!supabase || !r.plan_id) return;
-    if (patch.status === "closed" && !window.confirm(`Close ${r.child_name}'s plan? Teachers will stop seeing it; the family can still read it.`)) return;
+    if (patch.status === "closed" && !(await askConfirm(`Close ${r.child_name}'s plan? Teachers will stop seeing it; the family can still read it.`))) return;
     setSaving(r.child_id);
     setStatus(null);
     const { error } = await supabase.from("send_support_plans").update(patch).eq("id", r.plan_id);

@@ -45,7 +45,9 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    # A full rebuild (design change) converts every deck, lesson plan and pupil PDF (about
+    # 4,500 files since lessons v3): allow for it.
+    timeout-minutes: 300
     env:
       SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
     steps:

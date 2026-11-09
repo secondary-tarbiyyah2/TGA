@@ -427,7 +427,7 @@ export function RevisionPackPanel({
         <summary className="cursor-pointer text-base font-semibold text-ink">Quiz questions ({quizCount})</summary>
         <div className="mt-3 space-y-4">
           {qs === null ? (
-            <div className="h-32 animate-pulse rounded-2xl bg-cream" />
+            <div className="h-32 motion-safe:animate-pulse rounded-2xl bg-cream" />
           ) : quiz.length === 0 ? (
             <p className="text-sm text-ink/70">No quiz questions yet. Draft some with AI or write your own above.</p>
           ) : (

@@ -207,7 +207,7 @@ function FamilyContent() {
   return (
     <DashboardWithPanel viewer={{ kind: "parent", children: (children || []).map((c) => ({ id: c.id, name: c.name })) }} wideOnly>
       <div className="space-y-6">
-        <DashboardHero subtitle="Your children's school life in one place" />
+        <DashboardHero area="family" subtitle="Your children's school life in one place" />
 
         {hasChildren && (
           <nav aria-label="Quick actions" className="flex flex-wrap gap-2 print:hidden">
@@ -224,7 +224,7 @@ function FamilyContent() {
         <ChildDetailsBanner />
         <JoinLessonCard who={{ kind: "parent" }} />
 
-        {children === null && <div className="h-32 animate-pulse rounded-2xl bg-white" />}
+        {children === null && <div className="h-32 motion-safe:animate-pulse rounded-2xl bg-white" />}
         {children && children.length > 1 && (
           <div role="group" aria-label="Choose a child" className="flex flex-wrap gap-2">
             {children.map((c) => (

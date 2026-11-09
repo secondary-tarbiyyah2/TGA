@@ -146,7 +146,7 @@ export function ReportsWorkspace({ mode }: { mode: Mode }) {
       )}
 
       {term === undefined || classes === null ? (
-        <div className="h-40 animate-pulse rounded-2xl bg-white" />
+        <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />
       ) : view === "overview" ? (
         <ReportsOverview mode={mode} classes={classes} term={term} termKey={termKey} tick={tick} />
       ) : view === "class" ? (

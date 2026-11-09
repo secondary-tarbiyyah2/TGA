@@ -106,7 +106,7 @@ export function MeetYourTeachers({ classId, bare = false, messageHref }: { class
 
   const body =
     teachers === null ? (
-      <div className="h-24 animate-pulse rounded-xl bg-cream" />
+      <div className="h-24 motion-safe:animate-pulse rounded-xl bg-cream" />
     ) : error ? (
       <p className="text-sm text-amber-900">Couldn&apos;t load your teachers just now.</p>
     ) : teachers.length === 0 ? (

@@ -87,7 +87,7 @@ function ListContent() {
     <div>
       <LessonsHeader title="Lessons" subtitle="Dated lessons made from the published timetable: join links, details and cover." />
       {!data.loaded ? (
-        <div className="h-40 animate-pulse rounded-2xl bg-white" aria-label="Loading" />
+        <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" aria-label="Loading" />
       ) : !published ? (
         <p className="rounded-xl border border-dashed border-gold-light bg-cream/60 px-4 py-4 text-sm text-ink/70">
           No published timetable yet, so there are no lessons. <Link href="/admin/lessons/timetable" className="font-semibold underline">Review and publish a timetable</Link>.

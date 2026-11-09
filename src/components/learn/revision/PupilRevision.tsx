@@ -97,7 +97,7 @@ export function PupilRevision() {
           {error}
         </p>
       )}
-      {units === null && <div className="h-40 animate-pulse rounded-2xl bg-white" />}
+      {units === null && <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />}
       {units && units.length === 0 && !error && (
         <EmptyState title="No revision units yet" icon="bookOpenCheck" tile="tile-teal">Your teachers add a summary and a quiz for each unit as the year goes on. Check back after your first topics.</EmptyState>
       )}
@@ -178,7 +178,7 @@ function UnitView({ id, onBack }: { id: string; onBack: () => void }) {
           {error}
         </p>
       )}
-      {!unit && !error && <div className="h-40 animate-pulse rounded-2xl bg-white" />}
+      {!unit && !error && <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />}
       {unit && (
         <>
           <div>

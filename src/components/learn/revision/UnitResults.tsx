@@ -93,7 +93,7 @@ export function UnitResults({ unitId }: { unitId: string }) {
         {error}
       </p>
     );
-  if (!data || !stats) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
+  if (!data || !stats) return <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />;
 
   const cellFor = (answers: Record<string, number>, topic: string) => {
     let right = 0;

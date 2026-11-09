@@ -147,7 +147,7 @@ export function ClassworkToAction({ scope }: { scope: "teach" | "admin" }) {
       )}
 
       {groups === null ? (
-        <div className="h-32 animate-pulse rounded-2xl bg-white" />
+        <div className="h-32 motion-safe:animate-pulse rounded-2xl bg-white" />
       ) : shown.length === 0 ? (
         <EmptyState
           title="Nothing to action."

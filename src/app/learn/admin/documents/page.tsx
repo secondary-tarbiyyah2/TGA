@@ -16,6 +16,7 @@ import { Button, EmptyState, Field, IconButton, StatusChip, SwitchKnob, btn, ui 
 import { csvEscape } from "@/components/learn/fees/shared";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 type PolicyRow = { id: string; number: string; title: string; category: string; fileUrl: string; lastReviewed?: string; nextReview?: string };
 type SignableDoc = {
   id: string;
@@ -378,7 +379,7 @@ function DocumentsContent() {
 
   const autoAssignAll = async () => {
     if (!policies) return;
-    if (!confirm("Set every website policy to its automatic audience? Audiences you have customised by hand are kept.")) return;
+    if (!(await askConfirm("Set every website policy to its automatic audience? Audiences you have customised by hand are kept."))) return;
     // One reload at the end (not one per policy), and the button stays busy throughout.
     setBusyId("all");
     setNote(null);
@@ -396,7 +397,7 @@ function DocumentsContent() {
   };
 
   const remind = async (documentId: string, waiting: number, title: string) => {
-    if (!window.confirm(`Email a reminder to the ${waiting} ${waiting === 1 ? "person" : "people"} who still have to sign "${title}"? Anyone emailed in the last 6 hours is skipped.`)) return;
+    if (!(await askConfirm(`Email a reminder to the ${waiting} ${waiting === 1 ? "person" : "people"} who still have to sign "${title}"? Anyone emailed in the last 6 hours is skipped.`))) return;
     setNote(null);
     setBusyId(documentId);
     const r = await requestSignatures(documentId, { kind: "reminder" });
@@ -417,7 +418,7 @@ function DocumentsContent() {
   const stopSigning = async (d: SignableDoc) => {
     const supabase = getSupabaseClient();
     if (!supabase) return;
-    if (!window.confirm(`Stop asking people to sign "${d.title}"? Signatures already given are kept, and you can switch it back on later.`)) return;
+    if (!(await askConfirm(`Stop asking people to sign "${d.title}"? Signatures already given are kept, and you can switch it back on later.`))) return;
     setBusyId(d.id);
     const { error } = await supabase.from("signable_documents").update({ requires_signature: false }).eq("id", d.id);
     setBusyId(null);
@@ -528,7 +529,7 @@ function DocumentsContent() {
             </Button>
           </div>
           {policies === null ? (
-            <div className="h-40 animate-pulse" />
+            <div className="h-40 motion-safe:animate-pulse" />
           ) : policies.length === 0 ? (
             <div className="p-4"><EmptyState title="No policies on the website yet" icon="fileText">Policies published on the public website appear here automatically.</EmptyState></div>
           ) : (
@@ -593,7 +594,7 @@ function DocumentsContent() {
       {tab === "signing" && (
         <div className="overflow-hidden rounded-2xl border border-gold-light bg-white">
           {docs === null ? (
-            <div className="h-40 animate-pulse" />
+            <div className="h-40 motion-safe:animate-pulse" />
           ) : signing.length === 0 ? (
             <div className="p-4">
               <EmptyState
@@ -692,7 +693,7 @@ function DocumentsContent() {
             </div>
           )}
           {outstanding === null ? (
-            <div className="h-32 animate-pulse" />
+            <div className="h-32 motion-safe:animate-pulse" />
           ) : outstandingShown.length === 0 ? (
             <p className="px-5 py-10 text-center text-sm text-ink/65">{outstanding.length === 0 ? "Everyone is up to date." : "No one matches. Try clearing the search or document filter."}</p>
           ) : (

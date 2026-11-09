@@ -166,7 +166,7 @@ function PupilProfile({ id, onEdited }: { id: string; onEdited: () => void }) {
       </div>
 
       {state === "loading" || !child ? (
-        <div className="h-40 animate-pulse rounded-2xl bg-white" />
+        <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />
       ) : (
         <div className="space-y-4">
           {/* Who they are, at a glance. */}
@@ -216,10 +216,10 @@ function PupilProfile({ id, onEdited }: { id: string; onEdited: () => void }) {
             {tab === "details" && (
               <div className="space-y-4">
                 {record.loaded && missing.length > 0 && <MissingCard missing={missing} requestHref={requestHref} hasParentEmail={!!parent?.email} started={!!record.details} />}
-                {record.loaded ? <RecordSections data={record} only={["basics", "contacts"]} /> : <div className="h-32 animate-pulse rounded-2xl bg-white" />}
+                {record.loaded ? <RecordSections data={record} only={["basics", "contacts"]} /> : <div className="h-32 motion-safe:animate-pulse rounded-2xl bg-white" />}
               </div>
             )}
-            {tab === "medical" && (record.loaded ? <div className="space-y-4"><RecordSections data={record} showAcks only={["health", "consents", "acks"]} /></div> : <div className="h-32 animate-pulse rounded-2xl bg-white" />)}
+            {tab === "medical" && (record.loaded ? <div className="space-y-4"><RecordSections data={record} showAcks only={["health", "consents", "acks"]} /></div> : <div className="h-32 motion-safe:animate-pulse rounded-2xl bg-white" />)}
             {tab === "send" && <SupportPlanEditor childId={child.id} childName={child.name} />}
             {tab === "attendance" && <PupilAttendanceTab childId={child.id} />}
             {tab === "behaviour" && <PupilBehaviourTab childId={child.id} extra={<LeaderboardPrivacy kids={[{ id: child.id, name: child.name }]} />} />}

@@ -7,6 +7,7 @@ import { CONTRACT_LABELS, DEPARTMENTS, VACANCY_PUBLIC_COLUMNS, longDate, type Co
 import { Button, EmptyState, StatusChip, btn, ui } from "@/components/learn/ui";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 type Draft = Omit<Vacancy, "id" | "hours_text" | "salary_text" | "start_text" | "closing_date"> & {
   hours_text: string;
   salary_text: string;
@@ -131,7 +132,7 @@ export function VacanciesPanel({ userId }: { userId: string | null }) {
   async function setStatus(r: Vacancy, status: VacancyStatus) {
     if (!supabase) return;
     if (status === "open" && /\bDRAFT\b/.test(r.description)) return setMessage({ text: `"${r.title}" still has DRAFT wording. Edit it first, then open it.`, error: true });
-    if (status === "closed" && !confirm(`Close "${r.title}"? It comes off the Careers page straight away. Applications already received are kept.`)) return;
+    if (status === "closed" && !(await askConfirm(`Close "${r.title}"? It comes off the Careers page straight away. Applications already received are kept.`))) return;
     setBusy(true);
     const { error } = await supabase.from("job_vacancies").update({ status }).eq("id", r.id);
     setBusy(false);
@@ -245,7 +246,7 @@ export function VacanciesPanel({ userId }: { userId: string | null }) {
       {editingId === "new" && form}
 
       {roles === null ? (
-        <div className="h-40 animate-pulse rounded-2xl border border-gold-light bg-white" />
+        <div className="h-40 motion-safe:animate-pulse rounded-2xl border border-gold-light bg-white" />
       ) : roles.length === 0 && editingId !== "new" ? (
         <EmptyState title="No roles yet" icon="briefcase" action={<Button variant="primary" icon="plus" onClick={startNew}>New role</Button>}>
           Add a role, then open it to show it on the Careers page.

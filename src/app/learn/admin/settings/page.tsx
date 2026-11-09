@@ -116,7 +116,7 @@ function SchoolDetails() {
   };
 
   if (loadFailed) return <Section title="School details" hint="Couldn't load these. Only a Headteacher or Admin can see them.">{null}</Section>;
-  if (!s) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
+  if (!s) return <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />;
   const set = (k: keyof SchoolSettings) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setS({ ...s, [k]: e.target.value || null });
   return (
     <Section title="School details" hint="Shown on the website and in emails to families. Also editable under Website content, Site settings." onSave={save} busy={busy} message={msg} defaultOpen>
@@ -204,7 +204,7 @@ function LessonSettings() {
   };
 
   if (loadError) return <Section title="Lessons and attendance" hint={loadError}>{null}</Section>;
-  if (!s) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
+  if (!s) return <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />;
   const num = (k: keyof LmsSettings) => (e: React.ChangeEvent<HTMLInputElement>) => setS({ ...s, [k]: e.target.value });
   return (
     <Section title="Lessons and attendance" hint="When parents are told about absences, and how long recordings are kept." onSave={save} busy={busy} message={msg}>

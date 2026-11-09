@@ -92,7 +92,7 @@ function StudentContent() {
   // the page stays short on a phone. The timetable is folded away.
   const content = (
     <div className="space-y-6">
-      <DashboardHero subtitle="Ready to learn today?" chips={[{ label: "Lessons a week", value: slots === null ? "…" : slots.length, tone: "yellow" }]} />
+      <DashboardHero area="student" subtitle="Ready to learn today?" chips={[{ label: "Lessons a week", value: slots === null ? "…" : slots.length, tone: "yellow" }]} />
 
       {childId && <JoinLessonCard who={{ kind: "student", childId }} />}
       {childId && <UpNextCard classIds={slots === null ? null : classIds} childId={childId} lessonHref={(id) => `/student/lessons/view?id=${id}`} homeworkHref="/student/todo" />}

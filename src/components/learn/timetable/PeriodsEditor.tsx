@@ -8,6 +8,7 @@ import { AUDIENCES, bandFor, ENRICHMENT_ACTIVITIES, FALLBACK_PERIODS, KIND_STYLE
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 type Draft = {
   id: string | null;
   name: string;
@@ -109,7 +110,7 @@ export function PeriodsEditor({ periods, reload, staff = [] }: { periods: Timeta
 
   const remove = async (p: TimetablePeriod) => {
     if (!supabase) return;
-    if (typeof window !== "undefined" && !window.confirm(`Remove "${p.name}" (${p.start_time}-${p.end_time})?`)) return;
+    if (typeof window !== "undefined" && !(await askConfirm(`Remove "${p.name}" (${p.start_time}-${p.end_time})?`))) return;
     setError(null);
     const { error: err } = await supabase.from("timetable_periods").delete().eq("id", p.id);
     if (err) return setError(err.message);

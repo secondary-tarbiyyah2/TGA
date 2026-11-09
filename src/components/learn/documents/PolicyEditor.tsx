@@ -11,6 +11,7 @@ import { PolicyTextEditor } from "@/components/learn/documents/PolicyTextEditor"
 import type { PolicyMeta } from "@/lib/policyMeta";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 type Row = {
   id: string;
   number: string;
@@ -211,7 +212,7 @@ export function PolicyEditor() {
 
   async function remove(r: Row) {
     if (!supabase) return;
-    if (!confirm(`Remove "${r.title}" from the website? It stops being listed publicly and nobody is asked to sign it. You can restore it later.`)) return;
+    if (!(await askConfirm(`Remove "${r.title}" from the website? It stops being listed publicly and nobody is asked to sign it. You can restore it later.`))) return;
     setBusy(true);
     const { data: u } = await supabase.auth.getUser();
     const { error } = await supabase.from("policy_links").update({ deleted_at: new Date().toISOString(), deleted_by: u.user?.id ?? null }).eq("id", r.id);

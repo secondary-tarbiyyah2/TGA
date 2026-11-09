@@ -457,7 +457,7 @@ function SummaryContent() {
         </p>
       )}
 
-      {!calc && !error && <div role="status" aria-label="Loading summary" className="h-40 animate-pulse rounded-2xl bg-white" />}
+      {!calc && !error && <div role="status" aria-label="Loading summary" className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />}
 
       {calc && (
         <>

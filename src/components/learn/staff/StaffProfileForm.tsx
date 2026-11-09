@@ -135,7 +135,7 @@ export function StaffProfileForm({ userId, fullName }: { userId: string; fullNam
     }
   };
 
-  if (!loaded) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
+  if (!loaded) return <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />;
 
   return (
     <div className="space-y-5">

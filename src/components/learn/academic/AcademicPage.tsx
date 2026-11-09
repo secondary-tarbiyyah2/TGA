@@ -27,7 +27,7 @@ function Inner({ title, subtitle, children }: { title: string; subtitle: string;
         subtitle={subtitle}
       />
       <SubPageNav label="Academic setup steps" items={ACADEMIC_STEPS} />
-      {!data.loaded ? <div className="h-40 animate-pulse rounded-2xl bg-white" aria-label="Loading" /> : <div className="space-y-5">{children(data, reload)}</div>}
+      {!data.loaded ? <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" aria-label="Loading" /> : <div className="space-y-5">{children(data, reload)}</div>}
     </div>
   );
 }

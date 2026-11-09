@@ -28,6 +28,7 @@ import { WithdrawalNoticesAdmin } from "@/components/learn/fees/WithdrawalNotice
 import { Button, EmptyState, btn, ui } from "@/components/learn/ui";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 type Row = {
   charge: FeeCharge;
   familyName: string;
@@ -194,7 +195,7 @@ function FeesContent() {
   }, [filtered]);
 
   const voidCharge = async (r: Row) => {
-    if (!supabase || !window.confirm(`Void "${r.charge.description}" for ${r.familyName}? Payments already recorded are kept.`)) return;
+    if (!supabase || !(await askConfirm(`Void "${r.charge.description}" for ${r.familyName}? Payments already recorded are kept.`))) return;
     const { error } = await supabase.from("fee_charges").update({ voided_at: new Date().toISOString() }).eq("id", r.charge.id);
     setNotice(error ? "Could not void the charge. Please try again." : "Charge voided.", !error);
     await load();
@@ -317,7 +318,7 @@ function FeesContent() {
           </button>
         </div>
       )}
-      {rows === null && <div className="h-40 animate-pulse rounded-2xl bg-white" aria-label="Loading" />}
+      {rows === null && <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" aria-label="Loading" />}
       {rows && rows.length === 0 && !loadError && (
         <EmptyState
           title="No charges yet"

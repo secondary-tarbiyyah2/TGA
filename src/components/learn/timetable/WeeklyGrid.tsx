@@ -55,7 +55,7 @@ export type GridBreak = { weekday: number; start: string; end: string; name: str
 
 /** Band shading per period kind: break grey, lunch/prayer amber, enrichment green. */
 const BAND_CLASS: Record<Exclude<PeriodKind, "lesson">, string> = {
-  break: "bg-gray-200/70 text-gray-700",
+  break: "bg-cream text-ink/70",
   lunch: "bg-amber-100/80 text-amber-900",
   prayer: "bg-amber-100/80 text-amber-900",
   enrichment: "bg-green-100/80 text-green-900",

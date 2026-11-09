@@ -12,6 +12,7 @@ import { RecordingChip, useRecordingLinks } from "@/components/learn/class/Lesso
 import { useNow } from "@/lib/learn/useNow";
 import { ukToday } from "@/lib/learn/ukTime";
 
+import { askConfirm } from "@/components/learn/kit";
 type AnnRow = {
   id: string;
   title: string;
@@ -81,7 +82,7 @@ function CommentThread({
 
   const remove = async (id: string) => {
     const supabase = getSupabaseClient();
-    if (!supabase || !window.confirm("Delete this comment?")) return;
+    if (!supabase || !(await askConfirm("Delete this comment?"))) return;
     await supabase.from("class_post_comments").update({ deleted_at: new Date().toISOString() }).eq("id", id);
     onChanged();
   };
@@ -209,7 +210,7 @@ export function StreamTab({ classId, viewer, area, classHref }: { classId: strin
 
   const recall = async (id: string) => {
     const supabase = getSupabaseClient();
-    if (!supabase || !window.confirm("Recall this announcement? Families and pupils will no longer see it.")) return;
+    if (!supabase || !(await askConfirm("Recall this announcement? Families and pupils will no longer see it."))) return;
     await supabase.from("announcements").update({ recalled_at: new Date().toISOString() }).eq("id", id);
     load();
   };
@@ -260,7 +261,7 @@ export function StreamTab({ classId, viewer, area, classHref }: { classId: strin
 
       <div className="min-w-0 space-y-4">
         {isStaff && <AnnouncementComposer classId={classId} onPosted={load} />}
-        {items === null && <div className="h-28 animate-pulse rounded-2xl bg-white" />}
+        {items === null && <div className="h-28 motion-safe:animate-pulse rounded-2xl bg-white" />}
         {items !== null && shown.length === 0 && (
           <p className="rounded-2xl border border-gold-light bg-white px-5 py-8 text-center text-sm text-ink/65">
             {isStaff ? "Nothing here yet. Announce something to your class, or add classwork." : "Nothing has been posted to this class yet."}

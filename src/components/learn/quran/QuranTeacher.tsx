@@ -71,7 +71,7 @@ export function QuranTeacher() {
   };
   const fail = (text: string) => setMsg({ tone: "bad", text });
 
-  if (!data) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
+  if (!data) return <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />;
   if (data.pupils.length === 0) return <EmptyState title="No pupils yet.">Pupils from the classes you teach appear here, ready to be placed in a Qaidah or Qur&apos;an level.</EmptyState>;
 
   const levelOf = (childId: string, track: "qaidah" | "quran") => data.childLevels.find((c) => c.child_id === childId && c.track === track)?.level_id || "";

@@ -8,6 +8,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { btn, ui } from "@/components/learn/ui";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 /**
  * Starts (or rejoins) the in-house video call for a booking, same
  * BigBlueButton system already running lessons, including native
@@ -100,7 +101,7 @@ function StaffAvailabilityEditor({ staff, onStaffUpdated }: { staff: StaffRow; o
 
   async function removeRule(id: string) {
     if (!supabase) return;
-    if (!window.confirm("Remove this availability slot? Families can no longer book it.")) return;
+    if (!(await askConfirm("Remove this availability slot? Families can no longer book it."))) return;
     const { error } = await supabase.from("availability_rules").delete().eq("id", id);
     // Keep the row on screen if the delete failed, rather than pretending it worked.
     if (error) return window.alert(`Couldn't remove that slot. Please try again.`);
@@ -226,7 +227,7 @@ function StaffBookingsPanel({ staffId }: { staffId: string }) {
 
   async function setOutcome(bookingId: string, status: string) {
     if (!supabase) return;
-    if (status === "no_show" && !window.confirm("Mark this booking as a no-show?")) return;
+    if (status === "no_show" && !(await askConfirm("Mark this booking as a no-show?"))) return;
     setOutcomeError(null);
     const { error } = await supabase.from("bookings").update({ status }).eq("id", bookingId);
     // Only move it to "past" once the change is really saved.
