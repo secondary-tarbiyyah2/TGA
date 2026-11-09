@@ -1,9 +1,9 @@
 {
  "subject": "Mathematics",
  "year": "y7",
- "board": "Pearson Edexcel (KS3 Maths Progress, building to Edexcel GCSE Mathematics 1MA1)",
+ "board": "Pearson Edexcel (KS3 Maths Progress, building to International GCSE Mathematics A 4MA1)",
  "boardShort": "KS3 Maths Progress",
- "source": "School scheme of work: Pearson KS3 Maths Progress (2nd ed.) Year 7 Autumn, Unit 1 Analysing and displaying data and Unit 2 Number skills (ks3_maths_a_p_sow3.xlsx), in the scheme's order; INSET lesson standard (10 steps, success criteria, AfL).",
+ "source": "School scheme of work: Pearson KS3 Maths Progress (2nd ed.) (ks3_maths_a_p_sow3.xlsx), matched to the White Rose Secondary block order in content/syllabus/ks1-3/mathematics.json; founding-year bridge (11 and 18 Jan 2027: Autumn 1 and 2 essentials) and Spring 1 lessons written to the plan, building to Pearson Edexcel International GCSE Mathematics A (4MA1); INSET lesson standard (10 steps, success criteria, AfL).",
  "lessons": [
   {
    "unit": "Unit 1: Analysing and displaying data",
@@ -1582,56 +1582,82 @@
    }
   },
   {
-   "unit": "Unit 2: Number skills",
+   "unit": "Spring 1: Calculation problems; fractions and percentages of amounts",
    "n": 11,
-   "title": "Written multiplication",
+   "title": "Written multiplication and multiplication problems",
    "duration": 50,
-   "bigQuestion": "Why does long multiplication work?",
+   "bigQuestion": "Why does the column method for multiplication work?",
    "objectives": [
-    "Multiply whole numbers using a written method",
-    "Use an estimate to check a product",
-    "Solve word problems involving multiplication"
+    "Multiply up to 3-digit by 2-digit numbers using a written method",
+    "Estimate to check",
+    "Solve multiplication problems in context"
    ],
    "successCriteria": [
-    "Multiply a 3-digit number by a 1-digit number",
-    "Multiply a 3-digit number by a 2-digit number using column or grid method",
-    "Explain why the method works using place value"
+    "All: multiply a 3-digit number by a 1-digit number",
+    "Most: multiply 3-digit by 2-digit numbers with the column method",
+    "Some: solve multi-step problems and find missing digits"
    ],
-   "crossCurricular": "Business: costing orders; Science: calculating totals in experiments",
-   "smsc": "Spiritual: the value of patience and accuracy in work (itqan)",
+   "crossCurricular": "Science: scaling quantities in practicals; Business: costing an order",
+   "smsc": "Moral: accurate totals when buying for others, such as a masjid order, are a trust (amanah, أَمَانَة)",
    "keywords": [
     {
      "term": "product",
-     "def": "the result of multiplying"
+     "def": "the answer when you multiply"
     },
     {
      "term": "partition",
-     "def": "split a number into parts, such as 47 = 40 + 7"
+     "def": "split a number into parts, such as 27 = 20 + 7"
     },
     {
-     "term": "long multiplication",
-     "def": "a column method for multiplying by a number with two or more digits"
+     "term": "column method",
+     "def": "a written method that multiplies by each digit in turn"
     },
     {
      "term": "estimate",
-     "def": "an approximate answer using rounded numbers"
+     "def": "a rough answer to check with"
     }
    ],
+   "hook": {
+    "type": "odd-one-out",
+    "text": "Which calculation is the odd one out?",
+    "options": [
+     "24 × 15",
+     "12 × 30",
+     "36 × 10",
+     "18 × 25"
+    ],
+    "a": "18 × 25 = 450. The others all equal 360. Spotting doubling and halving saves work."
+   },
    "starter": [
-    "Round 4762 to the nearest 100",
-    "Work out 8 × 7",
-    "Work out 40 × 6",
-    "Estimate 298 + 403"
+    {
+     "q": "Bismillah. Round 5,482 to the nearest 100.",
+     "a": "5,500",
+     "mins": 1
+    },
+    {
+     "q": "Simplify 4a + 2a − a.",
+     "a": "5a",
+     "mins": 1
+    },
+    {
+     "q": "Work out 30 × 40.",
+     "a": "1,200",
+     "mins": 1
+    },
+    {
+     "q": "Write 0.35 as a percentage.",
+     "a": "35%",
+     "mins": 1
+    }
    ],
    "teach": [
     {
      "heading": "The grid method",
      "bullets": [
-      "Partition each number",
-      "Multiply each part",
-      "Add the parts"
+      "Partition both numbers",
+      "Multiply each pair, then add"
      ],
-     "note": "Grid first, so the place value is visible.",
+     "note": "Partition 346 into 300, 40 and 6 and 27 into 20 and 7. Add the rows: 6,920 + 2,422 = 9,342.",
      "table": {
       "head": [
        "×",
@@ -1642,13 +1668,13 @@
       "rows": [
        [
         "20",
-        "6000",
+        "6,000",
         "800",
         "120"
        ],
        [
         "7",
-        "2100",
+        "2,100",
         "280",
         "42"
        ]
@@ -1656,355 +1682,618 @@
      }
     },
     {
-     "heading": "Column method",
+     "heading": "The column method",
      "bullets": [
-      "Multiply by the ones, then the tens",
-      "The zero holds the tens place",
+      "Multiply by the ones digit",
+      "Then by the tens digit: write a 0 first",
       "Add the two rows"
      ],
-     "note": "Show the same product with the column method and point to where each grid number appears.",
+     "note": "Link each row to the grid: the 2,422 row is × 7, the 6,920 row is × 20.",
      "model": {
-      "problem": "Work out 346 × 27",
+      "problem": "Work out 346 × 27.",
       "steps": [
-       "Estimate: 350 × 30 = 10 500",
-       "346 × 7 = 2422",
-       "346 × 20 = 6920 (write 0, then 346 × 2)",
-       "Add: 2422 + 6920 = 9342"
+       "Estimate: 350 × 30 = 10,500",
+       "346 × 7 = 2,422",
+       "346 × 20 = 6,920",
+       "2,422 + 6,920 = 9,342"
       ],
-      "answer": "9342"
+      "answer": "9,342"
      }
     },
     {
-     "heading": "Forgetting the zero",
+     "heading": "Check: the place-holder",
      "bullets": [
-      "The second row is × tens, not × ones"
+      "The tens row is multiplying by tens"
      ],
-     "note": "Show the wrong answer and ask pupils to use the estimate to spot that it's far too small.",
-     "misconception": {
-      "wrong": "346 × 27: 2422 + 692 = 3114",
-      "right": "Second row is 346 × 20 = 6920, so 9342"
-     }
-    },
-    {
-     "heading": "Word problems",
-     "bullets": [
-      "Underline the numbers",
-      "Decide the operation",
-      "Answer in context with units"
-     ],
-     "note": "Example: A school orders 36 boxes of 144 pencils. 144 × 36 = 5184 pencils. Ask: 'How do you know it's multiplication?'"
-    },
-    {
-     "heading": "Check: estimate",
-     "bullets": [],
-     "note": "Show me on 3.",
+     "note": "Show me on 3. Ask what the wrong answers forgot.",
      "check": {
-      "q": "Which is the best estimate for 412 × 39?",
+      "q": "Work out 23 × 14.",
       "options": [
-       "1600",
-       "16 000",
-       "160 000",
-       "12 000"
+       "115",
+       "322",
+       "92",
+       "3,220"
       ],
       "answer": 1,
-      "why": "400 × 40 = 16 000. A and C have the wrong number of zeros; D uses 400 × 30."
+      "why": "23 × 4 = 92 and 23 × 10 = 230; 92 + 230 = 322. 115 comes from 92 + 23, forgetting that the 1 is worth 10."
+     }
+    },
+    {
+     "heading": "Problems in context",
+     "bullets": [
+      "Underline the numbers and what is asked",
+      "Estimate, calculate, then check it is sensible"
+     ],
+     "note": "Model the masjid order with the class, one step at a time.",
+     "model": {
+      "problem": "A masjid buys 48 chairs at £27 each and 15 tables at £64 each. Find the total cost.",
+      "steps": [
+       "Chairs: 48 × 27 = 1,296",
+       "Tables: 15 × 64 = 960",
+       "Total: 1,296 + 960 = 2,256",
+       "Estimate: 50 × 30 + 15 × 60 = 2,400, so sensible"
+      ],
+      "answer": "£2,256"
+     }
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Line up digits in place value columns"
+     ],
+     "note": "Ask pupils to spot the slip, then correct it.",
+     "misconception": {
+      "wrong": "38 × 46: 228 + 152 = 380",
+      "right": "38 × 6 = 228 and 38 × 40 = 1,520, so 228 + 1,520 = 1,748"
      }
     }
    ],
    "practice": [
-    "Work out 238 × 6",
-    "Work out 125 × 34",
-    "A coach holds 53 people. How many people do 18 coaches hold?"
+    {
+     "q": "Work out 254 × 6.",
+     "a": "1,524",
+     "mins": 2
+    },
+    {
+     "q": "Work out 38 × 46.",
+     "a": "1,748",
+     "mins": 2
+    },
+    {
+     "q": "Work out 512 × 34.",
+     "a": "17,408",
+     "mins": 2
+    },
+    {
+     "q": "A box holds 24 books. How many books are in 135 boxes?",
+     "a": "3,240",
+     "mins": 2
+    }
    ],
    "independent": [
-    "Core: Work out (a) 427 × 8 (b) 316 × 25 (c) 509 × 43, estimating first",
-    "Extend: Tickets cost £17. 286 people buy one. How much money is taken? Check with an estimate.",
-    "Stretch: Using the digits 2, 3, 4, 5 once each, make the largest possible product of a 2-digit number and a 2-digit number. Prove it is the largest."
+    {
+     "q": "Core: Work out (a) 367 × 8 (b) 63 × 47 (c) 425 × 36",
+     "a": "(a) 2,936 (b) 2,961 (c) 15,300",
+     "mins": 5
+    },
+    {
+     "q": "Extend: A printer prints 125 pages a minute. How many pages in 18 minutes? Is 2,000 pages in a quarter of an hour possible?",
+     "a": "125 × 18 = 2,250 pages. A quarter of an hour is 15 minutes: 125 × 15 = 1,875, so no.",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: Find the missing digits: □7 × 23 = 1,□81",
+     "a": "47 × 23 = 1,081, so the digits are 4 and 0",
+     "mins": 3
+    }
    ],
    "exit": [
-    "Work out 214 × 6.",
-    "Work out 52 × 47.",
-    "Estimate 389 × 21."
+    {
+     "q": "Work out 156 × 4.",
+     "a": "624",
+     "mins": 1
+    },
+    {
+     "q": "Work out 52 × 33.",
+     "a": "1,716",
+     "mins": 2
+    },
+    {
+     "q": "Big question: why does the column method work?",
+     "a": "It partitions one number by place value (tens and ones), multiplies each part, then adds the parts.",
+     "mins": 2
+    }
    ],
-   "homework": "Work out five multiplications from a menu or shop (e.g. 24 cans at 85p) and check each with an estimate.",
-   "send": "Support: grid method with times-table square. Stretch: digit puzzles."
+   "homework": "Work out 214 × 13, 405 × 27 and 368 × 52 with the column method; check each with an estimate.",
+   "send": "Support: grid method allowed; times table square. EAL: 'product' with an example. Stretch: 4-digit by 2-digit and missing-digit puzzles.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 7 2.3 Multiplication (the school's KS3 scheme)",
+    "Portal Year 7 lesson 11 (upgraded)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "starter": "show-me",
+    "hinge": "show-me",
+    "practice": "cold-call",
+    "exit": "chat-waterfall"
+   }
   },
   {
-   "unit": "Unit 2: Number skills",
+   "unit": "Spring 1: Calculation problems; fractions and percentages of amounts",
    "n": 12,
-   "title": "Written division and remainders",
+   "title": "Written division and remainders in context",
    "duration": 50,
-   "bigQuestion": "What should we do with a remainder in real life?",
+   "bigQuestion": "How do we decide what to do with a remainder?",
    "objectives": [
-    "Divide whole numbers using short division",
-    "Interpret remainders in context",
-    "Check division using multiplication"
+    "Divide using short division",
+    "Divide by a 2-digit number",
+    "Interpret remainders in context"
    ],
    "successCriteria": [
-    "Divide a 3- or 4-digit number by a 1-digit number",
-    "Decide whether to round up, round down or give the remainder in a problem",
-    "Divide by a 2-digit number using multiples"
+    "All: use short division with a 1-digit divisor",
+    "Most: divide by a 2-digit number and write the remainder",
+    "Some: decide whether to round up, round down or give a fraction or decimal"
    ],
-   "crossCurricular": "Islamic Studies: dividing zakah or inheritance shares fairly; PE: forming teams",
-   "smsc": "Moral: sharing fairly between people",
+   "crossCurricular": "Science: sharing equipment and measures; Business: packing and pricing",
+   "smsc": "Social: fair sharing; nobody is left out when we round up for everyone",
    "keywords": [
     {
-     "term": "dividend",
-     "def": "the number being divided"
+     "term": "quotient",
+     "def": "the answer when you divide"
     },
     {
      "term": "divisor",
      "def": "the number you divide by"
     },
     {
-     "term": "quotient",
-     "def": "the answer to a division"
-    },
-    {
      "term": "remainder",
      "def": "the amount left over"
+    },
+    {
+     "term": "short division",
+     "def": "the 'bus stop' written method"
     }
    ],
+   "hook": {
+    "type": "question",
+    "text": "193 books are packed in boxes of 16. Three pupils answer 12, 13 and 12.0625 boxes. Who is right?",
+    "a": "13 boxes, because every book needs packing. The right answer depends on the question, not just the calculation."
+   },
    "starter": [
-    "Work out 56 ÷ 7",
-    "Work out 23 × 4",
-    "What is the inverse of × 6?",
-    "Estimate 612 × 18"
+    {
+     "q": "Bismillah. Work out 48 × 6.",
+     "a": "288",
+     "mins": 1
+    },
+    {
+     "q": "Work out 72 ÷ 8.",
+     "a": "9",
+     "mins": 1
+    },
+    {
+     "q": "Estimate 612 ÷ 29.",
+     "a": "600 ÷ 30 = 20",
+     "mins": 1
+    },
+    {
+     "q": "List the multiples of 15 up to 75.",
+     "a": "15, 30, 45, 60, 75",
+     "mins": 2
+    }
    ],
    "teach": [
     {
-     "heading": "Short division (bus stop)",
+     "heading": "Short division",
      "bullets": [
       "Divide each digit from the left",
-      "Carry the remainder to the next digit",
-      "Check with multiplication"
+      "Carry the remainder to the next digit"
      ],
-     "note": "Model and say it aloud: 'How many 7s in 9? One, remainder 2.'",
+     "note": "6 into 27 is 4 remainder 3, carry 3; 6 into 34 is 5 remainder 4, carry 4; 6 into 48 is 8.",
      "model": {
-      "problem": "Work out 952 ÷ 7",
+      "problem": "Work out 2,748 ÷ 6.",
       "steps": [
-       "9 ÷ 7 = 1 remainder 2; carry 2",
-       "25 ÷ 7 = 3 remainder 4; carry 4",
-       "42 ÷ 7 = 6",
-       "Check: 136 × 7 = 952"
+       "6 into 2: 0, carry 2",
+       "6 into 27: 4 remainder 3",
+       "6 into 34: 5 remainder 4",
+       "6 into 48: 8",
+       "Check: 458 × 6 = 2,748"
       ],
-      "answer": "136"
-     }
-    },
-    {
-     "heading": "Remainders in context",
-     "bullets": [
-      "Round up: buses, boxes needed",
-      "Round down: whole items you can buy",
-      "Sometimes the remainder is the answer"
-     ],
-     "note": "Three questions all with 100 ÷ 30 = 3 r 10.",
-     "table": {
-      "head": [
-       "Question",
-       "Answer",
-       "Why"
-      ],
-      "rows": [
-       [
-        "100 pupils, coaches seat 30. How many coaches?",
-        "4",
-        "round up: no one is left behind"
-       ],
-       [
-        "£100, tickets £30. How many tickets?",
-        "3",
-        "round down: cannot buy part of one"
-       ],
-       [
-        "How much money is left?",
-        "£10",
-        "the remainder is the answer"
-       ]
-      ]
+      "answer": "458"
      }
     },
     {
      "heading": "Dividing by a 2-digit number",
      "bullets": [
-      "Write out multiples first",
-      "Then use short or long division"
+      "List some multiples of the divisor first",
+      "Then use short division"
      ],
-     "note": "Example: 846 ÷ 18. Multiples of 18: 18, 36, 54, 72, 90, 108, 126, 144, 162. 84 ÷ 18 = 4 r 12; 126 ÷ 18 = 7. Answer 47."
-    },
-    {
-     "heading": "Remainder slip",
-     "bullets": [
-      "A remainder is not a decimal digit"
-     ],
-     "note": "Explain why 3 r 2 for 17 ÷ 5 is 3.4, not 3.2.",
-     "misconception": {
-      "wrong": "17 ÷ 5 = 3 r 2 = 3.2",
-      "right": "17 ÷ 5 = 3 r 2 = 3 and 2/5 = 3.4"
+     "note": "Multiples of 24: 24, 48, 72, 96, 120, 144, 168, 192. 24 into 187 is 7 (168) remainder 19; 24 into 192 is 8.",
+     "model": {
+      "problem": "Work out 1,872 ÷ 24.",
+      "steps": [
+       "24 into 18: 0, carry 18",
+       "24 into 187: 7, remainder 19",
+       "24 into 192: 8",
+       "Check: 78 × 24 = 1,872"
+      ],
+      "answer": "78"
      }
     },
     {
-     "heading": "Check: remainders in context",
-     "bullets": [],
+     "heading": "What does the remainder mean?",
+     "bullets": [
+      "Read the question again",
+      "Round up, round down, or share it"
+     ],
+     "note": "Ask: which row applies to the hook?",
+     "table": {
+      "head": [
+       "Question",
+       "Calculation",
+       "Answer"
+      ],
+      "rows": [
+       [
+        "Boxes of 16 for 193 books?",
+        "193 ÷ 16 = 12 r 1",
+        "13 boxes (round up)"
+       ],
+       [
+        "£3 notebooks with £50?",
+        "50 ÷ 3 = 16 r 2",
+        "16 notebooks (round down)"
+       ],
+       [
+        "Share £45 between 4",
+        "45 ÷ 4 = 11 r 1",
+        "£11.25 each (decimal)"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Full bags only"
+     ],
      "note": "Show me on 3.",
      "check": {
-      "q": "Eggs come in boxes of 6. How many boxes are needed for 75 eggs?",
+      "q": "150 dates are packed in bags of 8. How many full bags are there?",
       "options": [
-       "12",
-       "12.5",
-       "13",
-       "12 r 3"
+       "18",
+       "19",
+       "18.75",
+       "18 r 6"
       ],
-      "answer": 2,
-      "why": "75 ÷ 6 = 12 r 3, and the 3 leftover eggs still need a box, so 13. A ignores the remainder."
+      "answer": 0,
+      "why": "150 ÷ 8 = 18 r 6, so 18 full bags. 19 is the bags needed for all dates; 18.75 and 18 r 6 do not answer 'how many bags'."
+     }
+    },
+    {
+     "heading": "Remainders as fractions",
+     "bullets": [
+      "17 ÷ 5 = 3 r 2",
+      "The 2 left is 2 of the 5 parts"
+     ],
+     "note": "Use fraction language: 2 out of 5 equal parts is 2/5.",
+     "misconception": {
+      "wrong": "17 ÷ 5 = 3 r 2 = 3.2",
+      "right": "3 r 2 = 3 2/5 = 3.4"
      }
     }
    ],
    "practice": [
-    "Work out 784 ÷ 4",
-    "Work out 1236 ÷ 6",
-    "A minibus seats 14. How many minibuses for 100 pupils?"
+    {
+     "q": "Work out 852 ÷ 4.",
+     "a": "213",
+     "mins": 1
+    },
+    {
+     "q": "Work out 3,195 ÷ 5.",
+     "a": "639",
+     "mins": 2
+    },
+    {
+     "q": "Work out 1,035 ÷ 15.",
+     "a": "69",
+     "mins": 2
+    },
+    {
+     "q": "420 chairs are put in rows of 18. How many full rows?",
+     "a": "23 full rows (420 ÷ 18 = 23 r 6)",
+     "mins": 2
+    }
    ],
    "independent": [
-    "Core: Work out (a) 945 ÷ 5 (b) 2448 ÷ 8 (c) 3129 ÷ 7",
-    "Extend: £500 is shared equally between 12 charities to the nearest penny. How much does each get, and how much is left over?",
-    "Stretch: Work out 4352 ÷ 17 using a list of multiples, and check your answer by multiplying."
+    {
+     "q": "Core: Work out (a) 5,184 ÷ 8 (b) 7,602 ÷ 7 (c) 1,288 ÷ 23",
+     "a": "(a) 648 (b) 1,086 (c) 56",
+     "mins": 5
+    },
+    {
+     "q": "Extend: A charity packs 1,000 tins, 24 to a box. How many boxes are needed? How many tins are in the last box?",
+     "a": "1,000 ÷ 24 = 41 r 16, so 42 boxes; the last box holds 16 tins.",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: Write a problem where the answer to 100 ÷ 7 should be (a) 14 (b) 15 (c) 14.29",
+     "a": "For example (a) full packs of 7 from 100 pens: 14; (b) packs needed for 100 pens: 15; (c) sharing £100 between 7: £14.29 (to the nearest penny).",
+     "mins": 4
+    }
    ],
    "exit": [
-    "Work out 672 ÷ 3.",
-    "Pencils come in packs of 8. How many packs give 50 pencils?",
-    "Check 736 ÷ 8 = 92 using multiplication."
+    {
+     "q": "Work out 936 ÷ 6.",
+     "a": "156",
+     "mins": 1
+    },
+    {
+     "q": "250 guests sit at tables of 12. How many tables are needed?",
+     "a": "21 (250 ÷ 12 = 20 r 10)",
+     "mins": 2
+    },
+    {
+     "q": "Big question: when do we round a remainder up?",
+     "a": "When everything or everyone must be included, such as boxes or tables needed.",
+     "mins": 1
+    }
    ],
-   "homework": "Plan a trip for 135 people with coaches of 52 seats and tickets of £14: how many coaches, total ticket cost and cost per person if the coaches cost £780 in total.",
-   "send": "Support: multiples list provided for each divisor. Stretch: long division with decimals."
+   "homework": "Write and solve three division problems from home life: one where you round up, one where you round down and one with a decimal answer.",
+   "send": "Support: multiples written out first; short division frame. EAL: 'each', 'share', 'left over' with examples. Stretch: remainders as fractions and decimals to 2 decimal places.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 7 2.4 Division (the school's KS3 scheme)",
+    "Portal Year 7 lesson 12 (upgraded)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "starter": "show-me",
+    "hinge": "show-me",
+    "practice": "cold-call",
+    "exit": "chat-waterfall"
+   }
   },
   {
-   "unit": "Unit 2: Number skills",
+   "unit": "Spring 1: Calculation problems; fractions and percentages of amounts",
    "n": 13,
    "title": "Calculating with money and time",
    "duration": 50,
-   "bigQuestion": "Why do people get time calculations wrong when they use a calculator?",
+   "bigQuestion": "Why does time need different methods from money?",
    "objectives": [
-    "Round money to the nearest pound or penny",
-    "Calculate with money in pounds and pence",
-    "Calculate time intervals and convert between hours and minutes"
+    "Add, subtract, multiply and divide money",
+    "Convert between hours and minutes",
+    "Find time intervals"
    ],
    "successCriteria": [
-    "Add and subtract money and give change",
-    "Work out durations across the hour",
-    "Interpret calculator answers for money and time correctly"
+    "All: find totals and change in money",
+    "Most: find time intervals across hours",
+    "Some: solve multi-step problems with money and time together"
    ],
-   "crossCurricular": "Islamic Studies: salah timetables; Business: costs and profit",
-   "smsc": "Moral: honesty with money; spiritual: valuing time (al-'Asr)",
+   "crossCurricular": "Islamic Studies: salah times; PSHE: budgeting",
+   "smsc": "Spiritual: the five daily prayers are prescribed at set times (Qur'an 4:103); planning time well is part of worship",
    "keywords": [
     {
-     "term": "pence",
-     "def": "100 pence make £1"
-    },
-    {
-     "term": "duration",
-     "def": "how long something lasts"
+     "term": "interval",
+     "def": "the length of time between two times"
     },
     {
      "term": "24-hour clock",
-     "def": "times written from 00:00 to 23:59"
+     "def": "times from 00:00 to 23:59"
     },
     {
-     "term": "interval",
-     "def": "the time between two times"
+     "term": "change",
+     "def": "money given back after paying"
+    },
+    {
+     "term": "convert",
+     "def": "change from one unit to another"
     }
    ],
+   "hook": {
+    "type": "odd-one-out",
+    "text": "Which is the odd one out?",
+    "options": [
+     "2.5 hours",
+     "150 minutes",
+     "2 h 30 min",
+     "2 h 50 min"
+    ],
+    "a": "2 h 50 min. 2.5 hours is 2 hours and half an hour, 30 minutes, because an hour has 60 minutes, not 100."
+   },
    "starter": [
-    "Work out 425 ÷ 5",
-    "How many minutes in 1 hour?",
-    "Round 3.47 to the nearest whole number",
-    "Write 6:30 pm in the 24-hour clock"
+    {
+     "q": "Bismillah. Work out 1,288 ÷ 23.",
+     "a": "56",
+     "mins": 2
+    },
+    {
+     "q": "Two amounts total 48; one is 3 times the other. Find the smaller.",
+     "a": "12",
+     "mins": 1
+    },
+    {
+     "q": "Work out 63 × 4.",
+     "a": "252",
+     "mins": 1
+    },
+    {
+     "q": "Round £4.678 to the nearest penny.",
+     "a": "£4.68",
+     "mins": 1
+    }
    ],
    "teach": [
     {
-     "heading": "Money on a calculator",
+     "heading": "Money",
      "bullets": [
-      "4.5 on a calculator means £4.50",
-      "Always write money with 2 decimal places",
-      "Round to the nearest penny"
+      "Line up the decimal points",
+      "Give answers with 2 decimal places: £20.70"
      ],
-     "note": "Ask: 'A calculator shows 12.3. How do you write that in pounds?' (£12.30). Show 7.456 → £7.46."
-    },
-    {
-     "heading": "Time is not decimal",
-     "bullets": [
-      "60 minutes in an hour, not 100",
-      "2.5 hours = 2 hours 30 minutes",
-      "1.3 hours is not 1 hour 30 minutes"
-     ],
-     "note": "This is the single biggest error in time questions.",
-     "misconception": {
-      "wrong": "1.3 hours = 1 hour 30 minutes",
-      "right": "0.3 × 60 = 18, so 1.3 hours = 1 hour 18 minutes"
-     }
-    },
-    {
-     "heading": "Counting on to find a duration",
-     "bullets": [
-      "Count to the next hour",
-      "Then whole hours",
-      "Then the minutes"
-     ],
-     "note": "Model with a number line, linking to salah times.",
+     "note": "Change from £20 after £13.85: count up 15p to £14, then £6: £6.15.",
      "model": {
-      "problem": "Dhuhr is at 12:47. Asr is at 15:22. How long is it between them?",
+      "problem": "Find the cost of 6 books at £3.45 each, and the change from £25.",
       "steps": [
-       "12:47 to 13:00 = 13 minutes",
-       "13:00 to 15:00 = 2 hours",
-       "15:00 to 15:22 = 22 minutes",
-       "Total: 2 hours + 13 + 22 minutes"
+       "6 × 3.45 = 20.70",
+       "25.00 − 20.70 = 4.30"
       ],
-      "answer": "2 hours 35 minutes"
+      "answer": "£20.70; change £4.30"
      }
     },
     {
-     "heading": "Shopping problems",
+     "heading": "Time intervals",
      "bullets": [
-      "Total the costs",
-      "Change = money given − total",
-      "Check with an estimate"
+      "Count on to the next hour",
+      "Then whole hours, then minutes"
      ],
-     "note": "Example: 3 notebooks at £1.85 and a pen at 99p. 3 × 1.85 = 5.55, + 0.99 = £6.54. Change from £10 = £3.46."
+     "note": "09:45 to 13:20: 15 min to 10:00, 3 h to 13:00, 20 min more: 3 h 35 min.",
+     "numberline": {
+      "min": 9,
+      "max": 14,
+      "step": 0.5,
+      "marks": [
+       {
+        "at": 9.75,
+        "label": "09:45"
+       },
+       {
+        "at": 10,
+        "label": "10:00"
+       },
+       {
+        "at": 13,
+        "label": "13:00"
+       },
+       {
+        "at": 13.33,
+        "label": "13:20"
+       }
+      ]
+     }
     },
     {
-     "heading": "Check: time",
-     "bullets": [],
+     "heading": "Hours and minutes",
+     "bullets": [
+      "60 minutes in an hour",
+      "0.5 h = 30 min; 0.25 h = 15 min",
+      "100 minutes = 1 h 40 min"
+     ],
+     "note": "A calculator shows hours as decimals; convert the decimal part × 60.",
+     "misconception": {
+      "wrong": "2.5 hours = 2 h 50 min",
+      "right": "0.5 of an hour is 30 minutes, so 2.5 h = 2 h 30 min"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Count on to the next hour"
+     ],
      "note": "Show me on 3.",
      "check": {
-      "q": "A film starts at 18:45 and lasts 1 hour 50 minutes. When does it end?",
+      "q": "Zuhr is at 12:24 and Asr is at 15:07. How long is it from Zuhr to Asr?",
       "options": [
-       "19:95",
-       "20:35",
-       "20:95",
-       "19:35"
+       "2 h 83 min",
+       "2 h 43 min",
+       "3 h 17 min",
+       "2 h 17 min"
       ],
       "answer": 1,
-      "why": "18:45 + 1 h = 19:45, + 50 min = 20:35. A and C treat minutes as decimals."
+      "why": "12:24 to 13:00 is 36 min, 13:00 to 15:00 is 2 h, then 7 min: 2 h 43 min. 2 h 83 min treats an hour as 100 minutes."
+     }
+    },
+    {
+     "heading": "Multi-step problems",
+     "bullets": [
+      "Write each step with its units",
+      "Check the answer makes sense"
+     ],
+     "note": "Model it with the class.",
+     "model": {
+      "problem": "A tutor earns £18 an hour. She works 2 h 45 min on Monday and 1 h 30 min on Wednesday. How much does she earn?",
+      "steps": [
+       "Total time: 4 h 15 min",
+       "15 min = 0.25 h, so 4.25 h",
+       "4.25 × 18 = 76.50"
+      ],
+      "answer": "£76.50"
      }
     }
    ],
    "practice": [
-    "Write 3.7 on a calculator as money",
-    "How long is it from 09:35 to 11:10?",
-    "Find the change from £20 for items costing £4.65 and £7.89"
+    {
+     "q": "Work out £7.85 × 4.",
+     "a": "£31.40",
+     "mins": 1
+    },
+    {
+     "q": "Find the change from £50 after spending £36.47.",
+     "a": "£13.53",
+     "mins": 2
+    },
+    {
+     "q": "A lesson starts at 13:35 and lasts 50 minutes. When does it end?",
+     "a": "14:25",
+     "mins": 1
+    },
+    {
+     "q": "Write 3.25 hours in hours and minutes.",
+     "a": "3 h 15 min",
+     "mins": 1
+    }
    ],
    "independent": [
-    "Core: (a) Convert 2.25 hours to hours and minutes (b) How long from 07:48 to 13:15? (c) 4 drinks at £1.35: total and change from £10",
-    "Extend: A train leaves at 16:52 and arrives at 19:07. Another leaves at 17:15 and takes 1 hour 58 minutes. Which arrives first, and by how many minutes?",
-    "Stretch: Ramadan fast: suhoor ends at 04:12 and iftar is at 20:48. Work out the length of the fast in hours and minutes, and as a decimal number of hours to 2 dp."
+    {
+     "q": "Core: Find the total cost of 3 Qur'an stands at £12.49 and 2 prayer mats at £8.75, and the change from £60.",
+     "a": "£37.47 + £17.50 = £54.97; change £5.03",
+     "mins": 4
+    },
+    {
+     "q": "Extend: Maghrib is at 16:18 and Isha at 17:52. A family reads Qur'an from 10 minutes after Maghrib until 15 minutes before Isha. For how long?",
+     "a": "16:28 to 17:37 = 1 h 9 min",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: A 4-hour car journey costs 12p per minute in fuel. Which costs less: that, or a £25 train ticket? By how much?",
+     "a": "4 h = 240 min; 240 × 12p = £28.80; the train is £3.80 cheaper.",
+     "mins": 4
+    }
    ],
    "exit": [
-    "Write 1.75 hours in hours and minutes.",
-    "How long from 10:40 to 12:15?",
-    "Round £6.348 to the nearest penny."
+    {
+     "q": "Work out £4.35 × 3.",
+     "a": "£13.05",
+     "mins": 1
+    },
+    {
+     "q": "How long from 08:50 to 11:15?",
+     "a": "2 h 25 min",
+     "mins": 2
+    },
+    {
+     "q": "Big question: why can time not be treated like decimals?",
+     "a": "An hour has 60 minutes, not 100, so 0.5 h is 30 min.",
+     "mins": 1
+    }
    ],
-   "homework": "Use today's salah timetable to work out the time between each prayer and the next.",
-   "send": "Support: blank time number lines. EAL: time vocabulary with clocks. Stretch: timetable puzzles with changes."
+   "homework": "Find tomorrow's five salah times on your masjid timetable and work out the interval between each pair of prayers.",
+   "send": "Support: clock face and time number lines. EAL: 'interval', 'change', 'each'. Stretch: problems across midnight and with rates.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 7 2.5 Money and time (the school's KS3 scheme)",
+    "Portal Year 7 lesson 13 (upgraded)",
+    "A masjid prayer timetable (household)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "starter": "show-me",
+    "hinge": "show-me",
+    "practice": "cold-call",
+    "exit": "chat-waterfall"
+   }
   },
   {
    "unit": "Unit 2: Number skills",
@@ -4206,6 +4495,2096 @@
    "send": "Support: balance diagrams drawn beside each equation. EAL: 'equivalent' with the symbol ≡. Stretch: two-step equations such as 3x + 4 = 19.",
    "resources": [
     "Pearson KS3 Maths Progress (Second Edition) Year 7 3.3 Simplifying expressions 2 and 3.5 Substituting into formulae (the school's KS3 scheme)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "starter": "show-me",
+    "hinge": "show-me",
+    "practice": "cold-call",
+    "exit": "chat-waterfall"
+   }
+  },
+  {
+   "unit": "Spring 1: Calculation problems; fractions and percentages of amounts",
+   "n": 24,
+   "title": "Scaling: multiplication and division problems with bar models",
+   "duration": 50,
+   "bigQuestion": "Why does 'times as many' need multiplying, not adding?",
+   "objectives": [
+    "Use bar models for 'times as many' problems",
+    "Scale quantities up and down",
+    "Solve sum and difference problems with multiplicative relationships"
+   ],
+   "successCriteria": [
+    "All: draw a bar model for 'times as many'",
+    "Most: scale a recipe or price by finding one unit first",
+    "Some: solve problems given the total or the difference"
+   ],
+   "crossCurricular": "Food: scaling recipes; Science: scaling solutions and measurements",
+   "smsc": "Social: cooking for guests (generosity to guests in Islam) needs scaling; Moral: fair prices",
+   "keywords": [
+    {
+     "term": "scale",
+     "def": "make bigger or smaller by multiplying or dividing"
+    },
+    {
+     "term": "unit",
+     "def": "one item or one person, used to scale from"
+    },
+    {
+     "term": "bar model",
+     "def": "bars of equal parts that show a problem"
+    },
+    {
+     "term": "times as many",
+     "def": "a multiplicative comparison"
+    }
+   ],
+   "hook": {
+    "type": "question",
+    "text": "Rice for 4 people needs 300 g. Hamza says 10 people need 306 g because 4 + 6 = 10. What do you think?",
+    "a": "He added instead of scaling. 300 ÷ 4 = 75 g each, so 10 people need 750 g."
+   },
+   "starter": [
+    {
+     "q": "Bismillah. Work out 23 × 14.",
+     "a": "322",
+     "mins": 1
+    },
+    {
+     "q": "Work out 1,872 ÷ 24.",
+     "a": "78",
+     "mins": 2
+    },
+    {
+     "q": "150 dates, bags of 8: how many full bags?",
+     "a": "18",
+     "mins": 1
+    },
+    {
+     "q": "Write 3/4 as a decimal.",
+     "a": "0.75",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Times as many",
+     "bullets": [
+      "Draw one bar for the smaller amount",
+      "The other is several equal bars"
+     ],
+     "note": "Zayd has 4 times as many stickers as Bilal. Together 85. 5 equal parts, so 85 ÷ 5 = 17.",
+     "model": {
+      "problem": "Zayd has 4 times as many stickers as Bilal. They have 85 in total. How many each?",
+      "steps": [
+       "Bilal: 1 part; Zayd: 4 parts",
+       "Total 5 parts = 85",
+       "1 part = 85 ÷ 5 = 17",
+       "Zayd = 4 × 17 = 68"
+      ],
+      "answer": "Bilal 17, Zayd 68"
+     }
+    },
+    {
+     "heading": "Bar model of the parts",
+     "bullets": [
+      "5 equal parts make the whole",
+      "1 part shaded is Bilal's share"
+     ],
+     "note": "Point at the bar: one fifth is Bilal's; four fifths are Zayd's.",
+     "fraction": {
+      "parts": 5,
+      "shaded": 1,
+      "label": "Bilal 1 part, Zayd 4 parts: 85 ÷ 5 = 17"
+     }
+    },
+    {
+     "heading": "Scaling through one",
+     "bullets": [
+      "Divide to find one unit",
+      "Multiply to find the amount you need"
+     ],
+     "note": "Recipe for 4 uses 300 g rice: one person 75 g; 10 people 750 g.",
+     "misconception": {
+      "wrong": "4 people → 300 g, so 10 people → 306 g (add 6)",
+      "right": "Divide by 4 for one person (75 g), then × 10: 750 g"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Find one unit first"
+     ],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "A box of dates for 6 people has 18 dates. How many dates for 15 people?",
+      "options": [
+       "27",
+       "45",
+       "90",
+       "36"
+      ],
+      "answer": 1,
+      "why": "18 ÷ 6 = 3 each, so 15 × 3 = 45. 27 adds 9 instead of scaling; 90 multiplies 18 by 5."
+     }
+    },
+    {
+     "heading": "Difference problems",
+     "bullets": [
+      "The difference is some of the parts"
+     ],
+     "note": "Fatima has 5 times as many as Khadijah and 48 more. The extra 4 parts are 48.",
+     "model": {
+      "problem": "Fatima has 5 times as many beads as Khadijah. Fatima has 48 more. How many each?",
+      "steps": [
+       "Khadijah 1 part, Fatima 5 parts",
+       "Difference = 4 parts = 48",
+       "1 part = 12",
+       "Fatima = 60"
+      ],
+      "answer": "Khadijah 12, Fatima 60"
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "A recipe for 5 uses 250 ml of milk. How much for 8?",
+     "a": "400 ml",
+     "mins": 2
+    },
+    {
+     "q": "A is 7 times B. B = 13. Find A.",
+     "a": "91",
+     "mins": 1
+    },
+    {
+     "q": "Two numbers total 96. One is 3 times the other. Find them.",
+     "a": "24 and 72",
+     "mins": 2
+    },
+    {
+     "q": "6 pens cost £4.20. How much do 10 pens cost?",
+     "a": "£7.00",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: A recipe for 6 people uses 450 g flour, 3 eggs and 120 ml water. Write the amounts for 8 people.",
+     "a": "600 g flour, 4 eggs, 160 ml water",
+     "mins": 4
+    },
+    {
+     "q": "Extend: A library has 3 times as many Arabic books as English books, 248 books in total. How many Arabic books?",
+     "a": "4 parts = 248, 1 part = 62, Arabic = 186",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: Ahmed is 4 times as old as Yusuf. In 5 years Ahmed will be 3 times as old as Yusuf. How old are they now?",
+     "a": "Yusuf 10, Ahmed 40 (in 5 years: 45 = 3 × 15)",
+     "mins": 5
+    }
+   ],
+   "exit": [
+    {
+     "q": "5 notebooks cost £8.50. Find the cost of 3.",
+     "a": "£5.10",
+     "mins": 2
+    },
+    {
+     "q": "Two amounts total 120; one is 5 times the other. Find them.",
+     "a": "20 and 100",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why is adding wrong for 'times as many'?",
+     "a": "The relationship is multiplicative: each unit is scaled by the same factor, not increased by a fixed amount.",
+     "mins": 1
+    }
+   ],
+   "homework": "Take a family recipe and rewrite it for 3 times as many people and for half as many; show the 'one unit' step.",
+   "send": "Support: bar model templates. EAL: 'times as many' and 'more than' contrasted. Stretch: problems with two relationships at once.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 7 2.3 Multiplication and 2.4 Division (the school's KS3 scheme)",
+    "A family recipe (household)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "starter": "show-me",
+    "hinge": "show-me",
+    "practice": "cold-call",
+    "exit": "chat-waterfall"
+   }
+  },
+  {
+   "unit": "Spring 1: Calculation problems; fractions and percentages of amounts",
+   "n": 25,
+   "title": "Unit fractions of amounts",
+   "duration": 50,
+   "bigQuestion": "Why is finding one fifth the same as dividing by five?",
+   "objectives": [
+    "Find a unit fraction of an amount",
+    "Find unit fractions of measures",
+    "Compare unit fractions of amounts"
+   ],
+   "successCriteria": [
+    "All: find 1/2, 1/4, 1/5 and 1/10 of whole numbers",
+    "Most: find unit fractions of measures, converting units",
+    "Some: solve two-step unit fraction problems"
+   ],
+   "crossCurricular": "Science: measuring parts of a quantity; Food: portions",
+   "smsc": "Spiritual: the Qur'an names fractions such as 1/2, 1/4, 1/8, 1/6 and 2/3 for shares of inheritance (Surat an-Nisa 4:11 to 12), so fractions serve justice",
+   "keywords": [
+    {
+     "term": "unit fraction",
+     "def": "a fraction with numerator 1, such as 1/5"
+    },
+    {
+     "term": "numerator",
+     "def": "the top number"
+    },
+    {
+     "term": "denominator",
+     "def": "the bottom number: how many equal parts"
+    },
+    {
+     "term": "of",
+     "def": "in fractions, 'of' means multiply"
+    }
+   ],
+   "hook": {
+    "type": "question",
+    "text": "Would you rather have 1/3 of £36 or 1/4 of £44?",
+    "options": [
+     "1/3 of £36",
+     "1/4 of £44"
+    ],
+    "a": "1/3 of £36 = £12; 1/4 of £44 = £11. A bigger denominator means smaller parts, but the amount matters too."
+   },
+   "starter": [
+    {
+     "q": "Bismillah. Work out £3.45 × 6.",
+     "a": "£20.70",
+     "mins": 1
+    },
+    {
+     "q": "How long from 09:45 to 13:20?",
+     "a": "3 h 35 min",
+     "mins": 2
+    },
+    {
+     "q": "Work out 2,748 ÷ 6.",
+     "a": "458",
+     "mins": 1
+    },
+    {
+     "q": "Write 1/4 as a percentage.",
+     "a": "25%",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "A fraction of an amount",
+     "bullets": [
+      "1/5 means 1 of 5 equal parts",
+      "1/5 of 35 = 35 ÷ 5 = 7"
+     ],
+     "note": "Split the bar into 5 equal parts: each is 7.",
+     "fraction": {
+      "parts": 5,
+      "shaded": 1,
+      "label": "1/5 of 35 = 7"
+     }
+    },
+    {
+     "heading": "Divide by the denominator",
+     "bullets": [
+      "1/n of an amount = amount ÷ n"
+     ],
+     "note": "Model, then pupils try 1/8 of 56.",
+     "model": {
+      "problem": "Find 1/6 of 84 kg.",
+      "steps": [
+       "Split into 6 equal parts",
+       "84 ÷ 6 = 14"
+      ],
+      "answer": "14 kg"
+     }
+    },
+    {
+     "heading": "Fractions of measures",
+     "bullets": [
+      "Convert first if it helps",
+      "1/3 of 2 hours = 1/3 of 120 min = 40 min",
+      "1/8 of 1 kg = 1000 g ÷ 8 = 125 g"
+     ],
+     "note": "Ask: why convert 2 hours to minutes? (2 ÷ 3 is not a whole number of hours).",
+     "misconception": {
+      "wrong": "1/4 of 20 = 20 − 4 = 16",
+      "right": "1/4 of 20 = 20 ÷ 4 = 5"
+     }
+    },
+    {
+     "heading": "Comparing unit fractions",
+     "bullets": [
+      "Bigger denominator, smaller parts",
+      "1/3 of 36 = 12 but 1/4 of 36 = 9"
+     ],
+     "note": "Show both bars the same length: thirds are bigger than quarters.",
+     "fraction": [
+      {
+       "parts": 3,
+       "shaded": 1,
+       "label": "1/3"
+      },
+      {
+       "parts": 4,
+       "shaded": 1,
+       "label": "1/4"
+      }
+     ]
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Divide by the denominator"
+     ],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "What is 1/6 of 72?",
+      "options": [
+       "12",
+       "66",
+       "432",
+       "6"
+      ],
+      "answer": 0,
+      "why": "72 ÷ 6 = 12. 66 subtracts 6; 432 multiplies by 6."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Find 1/8 of 56.",
+     "a": "7",
+     "mins": 1
+    },
+    {
+     "q": "Find 1/3 of 1.5 m.",
+     "a": "0.5 m (50 cm)",
+     "mins": 1
+    },
+    {
+     "q": "Find 1/10 of £4.50.",
+     "a": "£0.45 (45p)",
+     "mins": 1
+    },
+    {
+     "q": "Find 1/7 of 343.",
+     "a": "49",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Find (a) 1/5 of 85 (b) 1/9 of 108 (c) 1/4 of 3 kg (d) 1/12 of a day",
+     "a": "(a) 17 (b) 12 (c) 750 g (d) 2 hours",
+     "mins": 4
+    },
+    {
+     "q": "Extend: Which is more, 1/6 of 84 or 1/7 of 105? By how much?",
+     "a": "1/6 of 84 = 14; 1/7 of 105 = 15; 1/7 of 105 by 1",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Hafsa spends 1/4 of her £60 savings on books, then 1/5 of what is left on a gift. How much is left?",
+     "a": "£60 − £15 = £45; 1/5 of £45 = £9; £36 left",
+     "mins": 5
+    }
+   ],
+   "exit": [
+    {
+     "q": "Find 1/9 of 63.",
+     "a": "7",
+     "mins": 1
+    },
+    {
+     "q": "Find 1/4 of 1 hour in minutes.",
+     "a": "15 minutes",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why is finding 1/5 the same as dividing by 5?",
+     "a": "1/5 is one of 5 equal parts, and splitting into 5 equal parts is dividing by 5.",
+     "mins": 1
+    }
+   ],
+   "homework": "Find 1/2, 1/4, 1/5 and 1/10 of: £120, 2 kg and 3 hours (give sensible units).",
+   "send": "Support: fraction bars and a times table square. EAL: 'of' means 'times'. Stretch: unit fractions of decimals and mixed units.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 7 5.3 Working with fractions (the school's KS3 scheme)",
+    "Paper strip to fold into equal parts (household)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "starter": "show-me",
+    "hinge": "show-me",
+    "practice": "cold-call",
+    "exit": "chat-waterfall"
+   }
+  },
+  {
+   "unit": "Spring 1: Calculation problems; fractions and percentages of amounts",
+   "n": 26,
+   "title": "Non-unit fractions of amounts",
+   "duration": 50,
+   "bigQuestion": "How does knowing one part help us find several parts?",
+   "objectives": [
+    "Find a non-unit fraction of an amount",
+    "Find fractions of measures",
+    "Compare fractions of different amounts"
+   ],
+   "successCriteria": [
+    "All: find 3/4 or 2/5 of a whole number",
+    "Most: find fractions of measures and money",
+    "Some: compare and solve problems with non-unit fractions"
+   ],
+   "crossCurricular": "Science: fractions of measurements; Geography: fractions of land use",
+   "smsc": "Spiritual: the Qur'an names fractions such as 1/2, 1/4, 1/8, 1/6 and 2/3 for shares of inheritance (Surat an-Nisa 4:11 to 12), so fractions serve justice",
+   "keywords": [
+    {
+     "term": "non-unit fraction",
+     "def": "a fraction with numerator bigger than 1, such as 3/5"
+    },
+    {
+     "term": "equal parts",
+     "def": "parts that are all the same size"
+    },
+    {
+     "term": "whole",
+     "def": "the full amount"
+    },
+    {
+     "term": "simplify",
+     "def": "write a fraction with smaller numbers of the same value"
+    }
+   ],
+   "hook": {
+    "type": "odd-one-out",
+    "text": "Which is the odd one out?",
+    "options": [
+     "3/4 of 40",
+     "2/3 of 45",
+     "3/5 of 50",
+     "5/8 of 56"
+    ],
+    "a": "5/8 of 56 = 35. The other three are all 30: 3/4 of 40, 2/3 of 45 and 3/5 of 50."
+   },
+   "starter": [
+    {
+     "q": "Bismillah. Find 1/8 of 56.",
+     "a": "7",
+     "mins": 1
+    },
+    {
+     "q": "Find 1/5 of 85.",
+     "a": "17",
+     "mins": 1
+    },
+    {
+     "q": "Round 2.749 to 1 decimal place.",
+     "a": "2.7",
+     "mins": 1
+    },
+    {
+     "q": "Simplify 6/9.",
+     "a": "2/3",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Several equal parts",
+     "bullets": [
+      "3/5 means 3 of 5 equal parts",
+      "Find 1/5, then multiply by 3"
+     ],
+     "note": "1/5 of 40 = 8, so 3/5 = 24.",
+     "fraction": {
+      "parts": 5,
+      "shaded": 3,
+      "label": "3/5 of 40 = 24"
+     }
+    },
+    {
+     "heading": "Divide, then multiply",
+     "bullets": [
+      "÷ by the denominator",
+      "× by the numerator"
+     ],
+     "note": "Model, then pupils try 3/8 of 96.",
+     "model": {
+      "problem": "Find 5/8 of 72 kg.",
+      "steps": [
+       "1/8 of 72 = 72 ÷ 8 = 9",
+       "5/8 = 5 × 9 = 45"
+      ],
+      "answer": "45 kg"
+     }
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Which number do we divide by?"
+     ],
+     "note": "Ask pupils to say the rule aloud: divide by the bottom, times by the top.",
+     "misconception": {
+      "wrong": "3/4 of 20 = 20 ÷ 3 × 4",
+      "right": "3/4 of 20 = 20 ÷ 4 × 3 = 15"
+     }
+    },
+    {
+     "heading": "Measures and money",
+     "bullets": [
+      "3/4 of an hour = 45 min",
+      "2/5 of 1 km = 400 m",
+      "7/10 of £4.50 = £3.15"
+     ],
+     "note": "Convert units first where it helps. Ask: 2/3 of a day? (16 hours).",
+     "table": {
+      "head": [
+       "Fraction",
+       "Amount",
+       "1 part",
+       "Answer"
+      ],
+      "rows": [
+       [
+        "3/4",
+        "60 min",
+        "15 min",
+        "45 min"
+       ],
+       [
+        "2/5",
+        "1000 m",
+        "200 m",
+        "400 m"
+       ],
+       [
+        "7/10",
+        "£4.50",
+        "45p",
+        "£3.15"
+       ],
+       [
+        "2/3",
+        "24 h",
+        "8 h",
+        "16 h"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Divide first, then multiply"
+     ],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "What is 2/3 of 45?",
+      "options": [
+       "30",
+       "15",
+       "90",
+       "67.5"
+      ],
+      "answer": 0,
+      "why": "45 ÷ 3 = 15, × 2 = 30. 15 is only 1/3; 67.5 is 45 ÷ 2 × 3."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Find 2/7 of 63.",
+     "a": "18",
+     "mins": 1
+    },
+    {
+     "q": "Find 3/10 of 250.",
+     "a": "75",
+     "mins": 1
+    },
+    {
+     "q": "Find 4/9 of 81.",
+     "a": "36",
+     "mins": 1
+    },
+    {
+     "q": "Find 5/6 of an hour in minutes.",
+     "a": "50 minutes",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Find (a) 3/8 of 96 (b) 7/10 of 4.5 (c) 2/3 of 1.2 m (d) 5/12 of 144",
+     "a": "(a) 36 (b) 3.15 (c) 0.8 m (80 cm) (d) 60",
+     "mins": 5
+    },
+    {
+     "q": "Extend: In a class of 15, 3/5 attend the after-school hifdh circle. How many do not?",
+     "a": "3/5 of 15 = 9 attend, so 6 do not",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Which is larger, 3/4 of 92 or 5/6 of 84? By how much?",
+     "a": "3/4 of 92 = 69; 5/6 of 84 = 70; 5/6 of 84 by 1",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Find 3/5 of 55.",
+     "a": "33",
+     "mins": 1
+    },
+    {
+     "q": "Find 3/4 of 2 hours.",
+     "a": "90 minutes (1 h 30 min)",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how does 1/5 help you find 4/5?",
+     "a": "Find one part (÷ 5) and then take four of them (× 4).",
+     "mins": 1
+    }
+   ],
+   "homework": "Make your own odd-one-out of four fraction-of-amount calculations where three give the same answer.",
+   "send": "Support: fraction bars; first step given. EAL: 'divide by the bottom, times by the top' sentence frame. Stretch: fractions greater than 1 of an amount, such as 5/4 of 36.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 7 5.3 Working with fractions (the school's KS3 scheme)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "starter": "show-me",
+    "hinge": "show-me",
+    "practice": "cold-call",
+    "exit": "chat-waterfall"
+   }
+  },
+  {
+   "unit": "Spring 1: Calculation problems; fractions and percentages of amounts",
+   "n": 27,
+   "title": "Finding the whole from a fraction",
+   "duration": 50,
+   "bigQuestion": "How can knowing a part tell us the whole?",
+   "objectives": [
+    "Find the whole when a unit fraction is known",
+    "Find the whole when a non-unit fraction is known",
+    "Solve reverse fraction problems in context"
+   ],
+   "successCriteria": [
+    "All: find the whole when 1/n of it is known",
+    "Most: find the whole when a non-unit fraction is known",
+    "Some: solve multi-step problems that need working backwards"
+   ],
+   "crossCurricular": "Science: working back from a sample; Geography: estimating totals",
+   "smsc": "Moral: working back carefully to check we have been treated fairly, or treated others fairly",
+   "keywords": [
+    {
+     "term": "whole",
+     "def": "the full amount we are finding"
+    },
+    {
+     "term": "part",
+     "def": "a fraction of the whole"
+    },
+    {
+     "term": "reverse",
+     "def": "working backwards"
+    },
+    {
+     "term": "inverse",
+     "def": "the operation that undoes another"
+    }
+   ],
+   "hook": {
+    "type": "puzzle",
+    "text": "1/4 of my money is £12. How much do I have? 3/4 of my money is £12. How much now?",
+    "a": "£48, then £16. In the second, 3 parts are £12, so 1 part is £4 and 4 parts are £16."
+   },
+   "starter": [
+    {
+     "q": "Bismillah. Find 3/5 of 40.",
+     "a": "24",
+     "mins": 1
+    },
+    {
+     "q": "Find 1/7 of 343.",
+     "a": "49",
+     "mins": 1
+    },
+    {
+     "q": "Find 2/3 of 45.",
+     "a": "30",
+     "mins": 1
+    },
+    {
+     "q": "Work out 15 × 8.",
+     "a": "120",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "One part known",
+     "bullets": [
+      "If 1/4 of the whole is 12",
+      "The whole is 4 parts: 4 × 12 = 48"
+     ],
+     "note": "Draw the bar with 4 parts, label one part 12.",
+     "fraction": {
+      "parts": 4,
+      "shaded": 1,
+      "label": "1/4 = 12, so the whole = 48"
+     }
+    },
+    {
+     "heading": "Several parts known",
+     "bullets": [
+      "Divide by the numerator to find one part",
+      "Multiply by the denominator for the whole"
+     ],
+     "note": "Model, then pupils try: 3/4 of a number is 27.",
+     "model": {
+      "problem": "3/5 of a number is 36. Find the number.",
+      "steps": [
+       "3 parts = 36",
+       "1 part = 36 ÷ 3 = 12",
+       "5 parts = 5 × 12 = 60",
+       "Check: 3/5 of 60 = 36"
+      ],
+      "answer": "60"
+     }
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Is the answer bigger than the part?"
+     ],
+     "note": "The whole must be bigger than the part, so 21.6 cannot be right.",
+     "misconception": {
+      "wrong": "3/5 of x is 36, so x = 3/5 of 36 = 21.6",
+      "right": "Divide by 3 to get one fifth (12), then × 5: x = 60"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Find one part first"
+     ],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "2/7 of a number is 18. What is the number?",
+      "options": [
+       "63",
+       "36",
+       "126",
+       "9"
+      ],
+      "answer": 0,
+      "why": "18 ÷ 2 = 9 is one seventh; 7 × 9 = 63. 9 is only one part; 126 is 18 × 7."
+     }
+    },
+    {
+     "heading": "Problems with what is left",
+     "bullets": [
+      "If 2/5 is read, 3/5 is left",
+      "Use the fraction that matches the number given"
+     ],
+     "note": "Musa has read 2/5 of a book and has 135 pages left: 3/5 = 135, so 1/5 = 45, whole 225.",
+     "model": {
+      "problem": "Musa has read 2/5 of a book. He has 135 pages left. How many pages are in the book?",
+      "steps": [
+       "Left: 1 − 2/5 = 3/5",
+       "3/5 = 135, so 1/5 = 45",
+       "Whole = 5 × 45 = 225"
+      ],
+      "answer": "225 pages"
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "1/6 of a number is 14. Find the number.",
+     "a": "84",
+     "mins": 1
+    },
+    {
+     "q": "3/4 of a number is 27. Find the number.",
+     "a": "36",
+     "mins": 1
+    },
+    {
+     "q": "2/5 of Ali's money is £18. How much does he have?",
+     "a": "£45",
+     "mins": 2
+    },
+    {
+     "q": "5/8 of the books, 40 books, have been read. How many books are there?",
+     "a": "64",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Find the whole: (a) 1/9 is 7 (b) 3/10 is 24 (c) 4/7 is 28",
+     "a": "(a) 63 (b) 80 (c) 49",
+     "mins": 4
+    },
+    {
+     "q": "Extend: After giving away 1/3 of her stickers, Safiyyah has 46 left. How many did she start with?",
+     "a": "2/3 = 46, 1/3 = 23, whole 69",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: After spending 3/8 of his money, Idris has £35 left. He then spends 2/5 of what is left. How much did he start with, and how much does he have now?",
+     "a": "5/8 = £35, so 1/8 = £7 and he started with £56. 2/5 of £35 = £14, so £21 left.",
+     "mins": 5
+    }
+   ],
+   "exit": [
+    {
+     "q": "3/4 of a number is 45. Find the number.",
+     "a": "60",
+     "mins": 1
+    },
+    {
+     "q": "2/9 of a number is 16. Find the number.",
+     "a": "72",
+     "mins": 1
+    },
+    {
+     "q": "Big question: what is the first step when you know a non-unit fraction?",
+     "a": "Divide by the numerator to find one part.",
+     "mins": 1
+    }
+   ],
+   "homework": "Write three 'find the whole' puzzles for someone at home, with answers on the back.",
+   "send": "Support: bar model with parts drawn. EAL: 'left', 'remaining', 'whole'. Stretch: problems with two fractions taken in turn.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 7 5.3 Working with fractions (the school's KS3 scheme)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "starter": "show-me",
+    "hinge": "show-me",
+    "practice": "cold-call",
+    "exit": "chat-waterfall"
+   }
+  },
+  {
+   "unit": "Spring 1: Calculation problems; fractions and percentages of amounts",
+   "n": 28,
+   "title": "Working with fractions: combining parts and solving problems",
+   "duration": 50,
+   "bigQuestion": "How do we combine parts of the same whole?",
+   "objectives": [
+    "Add and subtract fractions with the same denominator",
+    "Add and subtract fractions where one denominator is a multiple of the other",
+    "Solve problems that combine fractions of amounts"
+   ],
+   "successCriteria": [
+    "All: add and subtract fractions with the same denominator",
+    "Most: add and subtract fractions using a common denominator",
+    "Some: solve multi-step problems with fractions of amounts"
+   ],
+   "crossCurricular": "PSHE: budgeting a family's money; Food: combining ingredients",
+   "smsc": "Spiritual: the Qur'an names fractions such as 1/2, 1/4, 1/8, 1/6 and 2/3 for shares of inheritance (Surat an-Nisa 4:11 to 12), so fractions serve justice",
+   "keywords": [
+    {
+     "term": "common denominator",
+     "def": "the same denominator for two fractions"
+    },
+    {
+     "term": "equivalent fraction",
+     "def": "a fraction with the same value, such as 1/2 = 2/4"
+    },
+    {
+     "term": "remaining",
+     "def": "what is left"
+    },
+    {
+     "term": "simplify",
+     "def": "divide numerator and denominator by a common factor"
+    }
+   ],
+   "hook": {
+    "type": "question",
+    "text": "True or false: 1/3 + 1/4 = 2/7. Explain how you know.",
+    "options": [
+     "True",
+     "False"
+    ],
+    "a": "False. 2/7 is less than 1/3, so adding 1/4 cannot give it. Make the parts the same size: 4/12 + 3/12 = 7/12."
+   },
+   "starter": [
+    {
+     "q": "Bismillah. 3/5 of a number is 36. Find it.",
+     "a": "60",
+     "mins": 1
+    },
+    {
+     "q": "Find 5/8 of 72.",
+     "a": "45",
+     "mins": 1
+    },
+    {
+     "q": "Find 1/4 of 3 kg in grams.",
+     "a": "750 g",
+     "mins": 1
+    },
+    {
+     "q": "Write 0.6 as a fraction in its simplest form.",
+     "a": "3/5",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Same denominator",
+     "bullets": [
+      "Add the numerators; the denominator stays",
+      "2/7 + 3/7 = 5/7"
+     ],
+     "note": "The parts are the same size, so we just count them.",
+     "misconception": {
+      "wrong": "2/7 + 3/7 = 5/14",
+      "right": "2/7 + 3/7 = 5/7: the size of each part (sevenths) does not change"
+     }
+    },
+    {
+     "heading": "Different denominators",
+     "bullets": [
+      "Make the parts the same size",
+      "1/2 = 2/4, so 1/2 + 1/4 = 3/4"
+     ],
+     "note": "Show the bars: halves made into quarters.",
+     "fraction": [
+      {
+       "parts": 4,
+       "shaded": 2,
+       "label": "1/2 = 2/4"
+      },
+      {
+       "parts": 4,
+       "shaded": 1,
+       "label": "1/4"
+      },
+      {
+       "parts": 4,
+       "shaded": 3,
+       "label": "2/4 + 1/4 = 3/4"
+      }
+     ]
+    },
+    {
+     "heading": "Common denominators",
+     "bullets": [
+      "Find a number both denominators divide into",
+      "1/3 + 1/4 = 4/12 + 3/12 = 7/12"
+     ],
+     "note": "Model with the family budget, then pupils try 1/2 + 1/5.",
+     "model": {
+      "problem": "A family spends 1/3 of £1,200 on food and 1/4 on bills. What fraction is left, and how much money is that?",
+      "steps": [
+       "1/3 + 1/4 = 4/12 + 3/12 = 7/12 spent",
+       "Left: 12/12 − 7/12 = 5/12",
+       "1/12 of £1,200 = £100",
+       "5/12 = £500"
+      ],
+      "answer": "5/12, which is £500"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Same-size parts first"
+     ],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Work out 1/2 + 1/3.",
+      "options": [
+       "2/5",
+       "5/6",
+       "1/6",
+       "2/6"
+      ],
+      "answer": 1,
+      "why": "3/6 + 2/6 = 5/6. 2/5 adds tops and bottoms; 1/6 multiplies."
+     }
+    },
+    {
+     "heading": "Finding what is left",
+     "bullets": [
+      "The whole is 1",
+      "Left = 1 − parts used"
+     ],
+     "note": "Madrasah group: 1/2 memorise Juz' 'Amma, 1/3 Juz' Tabarak, 4 pupils revise. 1/6 = 4, so 24 pupils.",
+     "model": {
+      "problem": "In a madrasah group, 1/2 memorise Juz' 'Amma, 1/3 memorise Juz' Tabarak and the other 4 pupils revise. How many pupils?",
+      "steps": [
+       "1/2 + 1/3 = 3/6 + 2/6 = 5/6",
+       "Left: 1/6 = 4 pupils",
+       "Whole: 6 × 4 = 24"
+      ],
+      "answer": "24 pupils"
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Work out 3/9 + 4/9.",
+     "a": "7/9",
+     "mins": 1
+    },
+    {
+     "q": "Work out 5/8 − 1/4.",
+     "a": "3/8",
+     "mins": 2
+    },
+    {
+     "q": "Work out 1/2 + 1/5.",
+     "a": "7/10",
+     "mins": 2
+    },
+    {
+     "q": "Work out 1 − 3/10.",
+     "a": "7/10",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Work out (a) 2/5 + 1/10 (b) 3/4 − 1/8 (c) 1/3 + 1/6, simplifying answers.",
+     "a": "(a) 1/2 (b) 5/8 (c) 1/2",
+     "mins": 4
+    },
+    {
+     "q": "Extend: From a 2 kg bag of rice, 3/8 is used on Monday and 1/4 on Tuesday. How many grams are left?",
+     "a": "5/8 used, 3/8 left: 3/8 of 2000 g = 750 g",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: Umar gives 1/4 of his dates to his sister and 1/3 to his neighbour. He has 15 dates left. How many did he start with?",
+     "a": "1/4 + 1/3 = 7/12 given; 5/12 = 15, 1/12 = 3, so 36 dates",
+     "mins": 5
+    }
+   ],
+   "exit": [
+    {
+     "q": "Work out 1/4 + 3/8.",
+     "a": "5/8",
+     "mins": 1
+    },
+    {
+     "q": "What fraction is left after 1/2 and 1/6 are used?",
+     "a": "1/3",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why must the denominators match before adding?",
+     "a": "So the parts are the same size and can be counted together.",
+     "mins": 1
+    }
+   ],
+   "homework": "Plan a pretend £600 monthly budget using three fractions that add to less than 1; work out each amount and what is saved.",
+   "send": "Support: fraction wall to find equivalents. EAL: 'remaining', 'left', 'common'. Stretch: denominators that are not multiples, such as 2/3 + 3/4.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 7 5.3 Working with fractions (the school's KS3 scheme)",
+    "Fraction wall (printed or drawn)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "starter": "show-me",
+    "hinge": "show-me",
+    "practice": "cold-call",
+    "exit": "chat-waterfall"
+   }
+  },
+  {
+   "unit": "Spring 1: Calculation problems; fractions and percentages of amounts",
+   "n": 29,
+   "title": "Percentages of amounts: 50%, 25%, 10% and 1%",
+   "duration": 50,
+   "bigQuestion": "Why is 10% such a useful building block?",
+   "objectives": [
+    "Find 50%, 25%, 10%, 5% and 1% of an amount",
+    "Link these percentages to fractions",
+    "Solve simple percentage problems"
+   ],
+   "successCriteria": [
+    "All: find 50%, 25% and 10% of amounts",
+    "Most: find 5% and 1% and use them",
+    "Some: find 2.5% and explain the method"
+   ],
+   "crossCurricular": "Islamic Studies: zakah at 2.5%; PSHE: discounts and budgeting",
+   "smsc": "Spiritual and moral: zakah (زَكَاة) is 2.5% (one fortieth) of eligible savings held for a lunar year; it purifies wealth and helps those in need",
+   "keywords": [
+    {
+     "term": "per cent",
+     "def": "out of 100"
+    },
+    {
+     "term": "percentage",
+     "def": "a part out of 100"
+    },
+    {
+     "term": "zakah",
+     "def": "زَكَاة: the obligatory charity, 2.5% of eligible savings"
+    },
+    {
+     "term": "discount",
+     "def": "an amount taken off a price"
+    }
+   ],
+   "hook": {
+    "type": "question",
+    "text": "A shop sign says '10% off everything'. Your bag costs £45. Is the discount more or less than £5? How do you know without a calculator?",
+    "a": "10% of £45 is £4.50, so less than £5. Dividing by 10 gives 10%."
+   },
+   "starter": [
+    {
+     "q": "Bismillah. Work out 1/3 + 1/4.",
+     "a": "7/12",
+     "mins": 1
+    },
+    {
+     "q": "3/4 of a number is 45. Find it.",
+     "a": "60",
+     "mins": 1
+    },
+    {
+     "q": "Write 25% as a fraction.",
+     "a": "1/4",
+     "mins": 1
+    },
+    {
+     "q": "Work out 360 ÷ 10.",
+     "a": "36",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Percentages as fractions",
+     "bullets": [
+      "50% = 1/2, 25% = 1/4",
+      "10% = 1/10, 1% = 1/100"
+     ],
+     "note": "So 50% of an amount: ÷ 2; 10%: ÷ 10; 1%: ÷ 100.",
+     "table": {
+      "head": [
+       "Percentage of £240",
+       "Fraction",
+       "Working",
+       "Answer"
+      ],
+      "rows": [
+       [
+        "50%",
+        "1/2",
+        "240 ÷ 2",
+        "£120"
+       ],
+       [
+        "25%",
+        "1/4",
+        "240 ÷ 4",
+        "£60"
+       ],
+       [
+        "10%",
+        "1/10",
+        "240 ÷ 10",
+        "£24"
+       ],
+       [
+        "5%",
+        "half of 10%",
+        "24 ÷ 2",
+        "£12"
+       ],
+       [
+        "1%",
+        "1/100",
+        "240 ÷ 100",
+        "£2.40"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "10% and 1%",
+     "bullets": [
+      "10%: divide by 10",
+      "1%: divide by 100"
+     ],
+     "note": "Model, then pupils find 10% and 1% of 650.",
+     "model": {
+      "problem": "Find 10% and 1% of 370.",
+      "steps": [
+       "10%: 370 ÷ 10 = 37",
+       "1%: 370 ÷ 100 = 3.7"
+      ],
+      "answer": "37 and 3.7"
+     }
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "5% is half of 10%"
+     ],
+     "note": "Ask: if 10% means ÷ 10, why is 5% not ÷ 5?",
+     "misconception": {
+      "wrong": "5% of 80 = 80 ÷ 5 = 16",
+      "right": "10% of 80 = 8, so 5% = 4. Dividing by 5 gives 20%."
+     }
+    },
+    {
+     "heading": "Zakah: 2.5%",
+     "bullets": [
+      "2.5% = a quarter of 10%",
+      "2.5% of £2,000: 10% = £200, so 2.5% = £50"
+     ],
+     "note": "Zakah is 2.5% of eligible savings above the nisab held for a lunar year. Keep the method simple: 10% then a quarter.",
+     "model": {
+      "problem": "Find 2.5% of £4,800.",
+      "steps": [
+       "10% = £480",
+       "2.5% = 480 ÷ 4",
+       "= £120"
+      ],
+      "answer": "£120"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Think: what fraction?"
+     ],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "What is 25% of 84?",
+      "options": [
+       "21",
+       "42",
+       "8.4",
+       "2.1"
+      ],
+      "answer": 0,
+      "why": "25% = 1/4, so 84 ÷ 4 = 21. 42 is 50%; 8.4 is 10%."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Find 10% of 560.",
+     "a": "56",
+     "mins": 1
+    },
+    {
+     "q": "Find 50% of 9.4.",
+     "a": "4.7",
+     "mins": 1
+    },
+    {
+     "q": "Find 25% of 320.",
+     "a": "80",
+     "mins": 1
+    },
+    {
+     "q": "Find 1% of 1,250.",
+     "a": "12.5",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: For £180 find 50%, 25%, 10%, 5% and 1%.",
+     "a": "£90, £45, £18, £9, £1.80",
+     "mins": 4
+    },
+    {
+     "q": "Extend: Find 2.5% of £3,600 (the zakah due on £3,600 of eligible savings).",
+     "a": "10% = £360, 2.5% = £90",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: Explain two different ways to find 75% of 64.",
+     "a": "3 × 25%: 3 × 16 = 48; or 100% − 25%: 64 − 16 = 48",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Find 10% of 92.",
+     "a": "9.2",
+     "mins": 1
+    },
+    {
+     "q": "Find 1% of 450.",
+     "a": "4.5",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why is 10% a useful building block?",
+     "a": "It is easy to find (÷ 10) and halving or multiplying it gives 5%, 20%, 30% and more.",
+     "mins": 1
+    }
+   ],
+   "homework": "Find 50%, 25%, 10%, 5% and 1% of £64, 350 g and 2 hours (in minutes).",
+   "send": "Support: the equivalence table to keep; calculator for ÷ 100. EAL: 'per cent' and 'discount'. Stretch: 0.5% and 12.5%.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 7 5.6 Percentages of amounts (the school's KS3 scheme)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "starter": "show-me",
+    "hinge": "show-me",
+    "practice": "cold-call",
+    "exit": "chat-waterfall"
+   }
+  },
+  {
+   "unit": "Spring 1: Calculation problems; fractions and percentages of amounts",
+   "n": 30,
+   "title": "Building up percentages",
+   "duration": 50,
+   "bigQuestion": "How can a few simple percentages make any percentage?",
+   "objectives": [
+    "Build percentages from 50%, 10%, 5% and 1%",
+    "Use a multiplier on a calculator",
+    "Choose an efficient method"
+   ],
+   "successCriteria": [
+    "All: find multiples of 10% such as 30%",
+    "Most: build percentages such as 35% and 17.5%",
+    "Some: use 1% for awkward percentages and check with a multiplier"
+   ],
+   "crossCurricular": "Science: percentage composition; PSHE: discounts",
+   "smsc": "Moral: understanding offers so we spend wisely and avoid waste (israf, إِسْرَاف)",
+   "keywords": [
+    {
+     "term": "build up",
+     "def": "combine easy percentages to make a harder one"
+    },
+    {
+     "term": "multiplier",
+     "def": "the decimal you multiply by, such as 0.35 for 35%"
+    },
+    {
+     "term": "efficient",
+     "def": "using the fewest steps"
+    },
+    {
+     "term": "percentage",
+     "def": "a part out of 100"
+    }
+   ],
+   "hook": {
+    "type": "puzzle",
+    "text": "Using only 10%, 5% and 1%, how many ways can you make 17%? Which is quickest?",
+    "a": "For example 10% + 5% + 1% + 1%, or 17 × 1%. The quickest depends on the number."
+   },
+   "starter": [
+    {
+     "q": "Bismillah. Find 25% of 84.",
+     "a": "21",
+     "mins": 1
+    },
+    {
+     "q": "Find 10% of 560.",
+     "a": "56",
+     "mins": 1
+    },
+    {
+     "q": "Find 1/5 of 85.",
+     "a": "17",
+     "mins": 1
+    },
+    {
+     "q": "Find 5/8 of 72.",
+     "a": "45",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Building 35%",
+     "bullets": [
+      "35% = 10% + 10% + 10% + 5%",
+      "Find each part, then add"
+     ],
+     "note": "35% of 260: 10% = 26, 30% = 78, 5% = 13, total 91.",
+     "table": {
+      "head": [
+       "Part",
+       "Working",
+       "Value"
+      ],
+      "rows": [
+       [
+        "10%",
+        "260 ÷ 10",
+        "26"
+       ],
+       [
+        "30%",
+        "26 × 3",
+        "78"
+       ],
+       [
+        "5%",
+        "26 ÷ 2",
+        "13"
+       ],
+       [
+        "35%",
+        "78 + 13",
+        "91"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "17.5%",
+     "bullets": [
+      "17.5% = 10% + 5% + 2.5%"
+     ],
+     "note": "Halve 10% for 5%, halve again for 2.5%.",
+     "model": {
+      "problem": "Find 17.5% of 80.",
+      "steps": [
+       "10% = 8",
+       "5% = 4",
+       "2.5% = 2",
+       "8 + 4 + 2 = 14"
+      ],
+      "answer": "14"
+     }
+    },
+    {
+     "heading": "Using 1%",
+     "bullets": [
+      "37% = 37 × 1%",
+      "99% = 100% − 1%"
+     ],
+     "note": "37% of 400: 1% = 4, × 37 = 148. 99% of 250 = 250 − 2.5 = 247.5.",
+     "misconception": {
+      "wrong": "15% of 60 = 60 ÷ 15 = 4",
+      "right": "10% = 6 and 5% = 3, so 15% = 9"
+     }
+    },
+    {
+     "heading": "Multipliers on a calculator",
+     "bullets": [
+      "35% = 35/100 = 0.35",
+      "35% of 260 = 0.35 × 260 = 91"
+     ],
+     "note": "Use the multiplier to check a built-up answer.",
+     "model": {
+      "problem": "Find 64% of 85 with a multiplier.",
+      "steps": [
+       "64% = 0.64",
+       "0.64 × 85 = 54.4"
+      ],
+      "answer": "54.4"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "50% + 10% + 5%"
+     ],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Find 65% of 40.",
+      "options": [
+       "26",
+       "24",
+       "2.6",
+       "34"
+      ],
+      "answer": 0,
+      "why": "50% = 20, 10% = 4, 5% = 2, total 26. 2.6 misplaces the decimal."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Find 20% of 75.",
+     "a": "15",
+     "mins": 1
+    },
+    {
+     "q": "Find 45% of 120.",
+     "a": "54",
+     "mins": 2
+    },
+    {
+     "q": "Find 12% of 250.",
+     "a": "30",
+     "mins": 2
+    },
+    {
+     "q": "Find 17.5% of 200.",
+     "a": "35",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Find (a) 30% of 90 (b) 15% of 340 (c) 95% of 60 (d) 2% of 850",
+     "a": "(a) 27 (b) 51 (c) 57 (d) 17",
+     "mins": 5
+    },
+    {
+     "q": "Extend: A coat costs £85. The shop takes 20% off. What is the sale price?",
+     "a": "20% of £85 = £17, so £68",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Is 40% of 70 the same as 70% of 40? Explain why.",
+     "a": "Yes, both are 28: 40/100 × 70 = 40 × 70 ÷ 100 = 70/100 × 40.",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Find 35% of 60.",
+     "a": "21",
+     "mins": 1
+    },
+    {
+     "q": "Find 85% of 200.",
+     "a": "170",
+     "mins": 1
+    },
+    {
+     "q": "Big question: show how 10%, 5% and 1% make 16%.",
+     "a": "10% + 5% + 1% = 16%",
+     "mins": 1
+    }
+   ],
+   "homework": "Find 35%, 60% and 17.5% of £240 by building up; check each with a multiplier.",
+   "send": "Support: building-up table template. EAL: 'build up', 'multiplier'. Stretch: 0.5% and percentages over 100%.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 7 5.6 Percentages of amounts (the school's KS3 scheme)",
+    "Calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "starter": "show-me",
+    "hinge": "show-me",
+    "practice": "cold-call",
+    "exit": "chat-waterfall"
+   }
+  },
+  {
+   "unit": "Spring 1: Calculation problems; fractions and percentages of amounts",
+   "n": 31,
+   "title": "Percentage problems: increase, decrease and comparing",
+   "duration": 50,
+   "bigQuestion": "How do we choose the best deal?",
+   "objectives": [
+    "Increase and decrease amounts by a percentage",
+    "Compare percentages and fractions of amounts",
+    "Solve multi-step percentage problems"
+   ],
+   "successCriteria": [
+    "All: find a sale price after a percentage discount",
+    "Most: compare offers given as percentages and fractions",
+    "Some: explain why two 10% cuts are not a 20% cut"
+   ],
+   "crossCurricular": "PSHE: spending wisely; Business: discounts and price rises",
+   "smsc": "Moral: honest trade; Islam forbids cheating in weights and measures (Surat al-Mutaffifin 83:1 to 3)",
+   "keywords": [
+    {
+     "term": "increase",
+     "def": "make bigger"
+    },
+    {
+     "term": "decrease",
+     "def": "make smaller"
+    },
+    {
+     "term": "sale price",
+     "def": "price after the discount"
+    },
+    {
+     "term": "compare",
+     "def": "decide which is bigger or better"
+    }
+   ],
+   "hook": {
+    "type": "question",
+    "text": "Shop A: £60, 15% off. Shop B: £56, £4 off. Shop C: £62.50, 20% off. Which is cheapest?",
+    "a": "A £51, B £52, C £50. C is cheapest, even though it started dearest."
+   },
+   "starter": [
+    {
+     "q": "Bismillah. Find 35% of 260.",
+     "a": "91",
+     "mins": 1
+    },
+    {
+     "q": "Find 17.5% of 80.",
+     "a": "14",
+     "mins": 1
+    },
+    {
+     "q": "Find 3/8 of 96.",
+     "a": "36",
+     "mins": 1
+    },
+    {
+     "q": "Write 3/5 as a percentage.",
+     "a": "60%",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Increase and decrease",
+     "bullets": [
+      "Find the percentage, then add or subtract",
+      "40 cm plant grows 15%: 6 cm more, 46 cm"
+     ],
+     "note": "Ask: what is a £120 price after 25% off? (£90).",
+     "model": {
+      "problem": "A £120 price is cut by 25%. Find the new price.",
+      "steps": [
+       "25% of £120 = £30",
+       "£120 − £30 = £90"
+      ],
+      "answer": "£90"
+     }
+    },
+    {
+     "heading": "Comparing offers",
+     "bullets": [
+      "Work out each final price",
+      "Then compare"
+     ],
+     "note": "The bar chart shows the hook's three prices after discount.",
+     "chart": {
+      "kind": "bar",
+      "title": "Price after discount",
+      "labels": [
+       "Shop A",
+       "Shop B",
+       "Shop C"
+      ],
+      "values": [
+       51,
+       52,
+       50
+      ],
+      "unit": "£"
+     }
+    },
+    {
+     "heading": "Percentages or fractions?",
+     "bullets": [
+      "Change both to amounts",
+      "30% of £70 = £21; 2/5 of £50 = £20"
+     ],
+     "note": "Pupils decide which is more, then explain.",
+     "model": {
+      "problem": "Which is more: 30% of £70 or 2/5 of £50?",
+      "steps": [
+       "30% of 70 = 21",
+       "2/5 of 50 = 20",
+       "21 > 20"
+      ],
+      "answer": "30% of £70"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Find the discount, then subtract"
+     ],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "A £40 book has 30% off. What is the new price?",
+      "options": [
+       "£12",
+       "£28",
+       "£10",
+       "£37"
+      ],
+      "answer": 1,
+      "why": "30% of £40 = £12, so £28. £12 is the discount; £37 subtracts 3."
+     }
+    },
+    {
+     "heading": "Two changes",
+     "bullets": [
+      "The second change is of the new amount"
+     ],
+     "note": "£100 up 10% is £110; down 10% is £99, not £100.",
+     "misconception": {
+      "wrong": "A 10% rise then a 10% fall gets back to the start",
+      "right": "£100 → £110 → £99: the fall is 10% of the bigger amount"
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Increase 80 by 25%.",
+     "a": "100",
+     "mins": 1
+    },
+    {
+     "q": "Decrease £250 by 10%.",
+     "a": "£225",
+     "mins": 1
+    },
+    {
+     "q": "Which is more: 60% of 45 or 3/4 of 36?",
+     "a": "They are equal: both are 27",
+     "mins": 2
+    },
+    {
+     "q": "A 2 kg bag has 15% extra free. How much is in the bag now?",
+     "a": "2.3 kg",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Find the sale price: (a) £70, 20% off (b) £150, 35% off (c) £8.40, 50% off",
+     "a": "(a) £56 (b) £97.50 (c) £4.20",
+     "mins": 4
+    },
+    {
+     "q": "Extend: A charity raised £2,400 last year and 15% more this year. 5% of this year's total paid for costs. How much reached the cause this year?",
+     "a": "£2,400 + £360 = £2,760; 5% = £138; £2,622",
+     "mins": 5
+    },
+    {
+     "q": "Stretch: A £200 item. Shop X: 10% off, then 10% off the new price. Shop Y: 20% off. Which is cheaper and why?",
+     "a": "X: £180 then £162. Y: £160. Y is cheaper because X's second 10% is of a smaller amount.",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Decrease £36 by 25%.",
+     "a": "£27",
+     "mins": 1
+    },
+    {
+     "q": "Which is more: 40% of 30 or 1/3 of 33?",
+     "a": "40% of 30 = 12 is more than 11",
+     "mins": 1
+    },
+    {
+     "q": "Big question: what must you do before comparing two offers?",
+     "a": "Work out each final amount in the same units, then compare.",
+     "mins": 1
+    }
+   ],
+   "homework": "Find two real offers (online or a leaflet) for the same item and work out which is the better deal.",
+   "send": "Support: step boxes (percentage, then add or subtract). EAL: 'increase', 'decrease', 'off'. Stretch: finding the percentage change from two prices.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 7 5.6 Percentages of amounts (the school's KS3 scheme)",
+    "Calculator",
+    "A shop leaflet or website prices (household)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "starter": "show-me",
+    "hinge": "show-me",
+    "practice": "cold-call",
+    "exit": "chat-waterfall"
+   }
+  },
+  {
+   "unit": "Spring 1: Calculation problems; fractions and percentages of amounts",
+   "n": 32,
+   "title": "Calculation, fractions and percentages: review and unit quiz",
+   "duration": 50,
+   "bigQuestion": "Which method fits which problem?",
+   "objectives": [
+    "Review written calculation, fractions of amounts and percentages of amounts",
+    "Choose efficient methods",
+    "Complete the unit quiz"
+   ],
+   "successCriteria": [
+    "All: answer the core quiz questions with methods shown",
+    "Most: answer the problem-solving questions",
+    "Some: explain the choice of method and check answers"
+   ],
+   "crossCurricular": "All subjects: reading a question carefully before calculating",
+   "smsc": "Spiritual: reflecting on progress with gratitude (shukr, شُكْر) and setting a target",
+   "keywords": [
+    {
+     "term": "method",
+     "def": "the steps used to solve a problem"
+    },
+    {
+     "term": "check",
+     "def": "make sure an answer is right, for example with an estimate"
+    },
+    {
+     "term": "inverse",
+     "def": "the operation that undoes another"
+    },
+    {
+     "term": "efficient",
+     "def": "using the fewest steps"
+    }
+   ],
+   "hook": {
+    "type": "odd-one-out",
+    "text": "Which is the odd one out?",
+    "options": [
+     "3/4 of 48",
+     "75% of 48",
+     "48 × 0.75",
+     "48 ÷ 0.75"
+    ],
+    "a": "48 ÷ 0.75 = 64. The others are all 36. Same calculation, three forms."
+   },
+   "starter": [
+    {
+     "q": "Bismillah. Work out 23 × 15.",
+     "a": "345",
+     "mins": 1
+    },
+    {
+     "q": "Find 3/8 of 64.",
+     "a": "24",
+     "mins": 1
+    },
+    {
+     "q": "Find 15% of 80.",
+     "a": "12",
+     "mins": 1
+    },
+    {
+     "q": "2/3 of a number is 18. Find the number.",
+     "a": "27",
+     "mins": 2
+    }
+   ],
+   "teach": [
+    {
+     "heading": "The unit in one picture",
+     "bullets": [
+      "Which method for which question?"
+     ],
+     "note": "Ask pupils to give one example question for each branch.",
+     "diagram": {
+      "centre": "Calculation, fractions and percentages",
+      "items": [
+       "Column multiplication",
+       "Short division and remainders",
+       "Scaling through one",
+       "Fraction of an amount",
+       "Finding the whole",
+       "Building up percentages",
+       "Percentage increase and decrease"
+      ]
+     }
+    },
+    {
+     "heading": "Mixed model",
+     "bullets": [
+      "Read, plan, calculate, check"
+     ],
+     "note": "Think aloud: which skills are needed here?",
+     "model": {
+      "problem": "A school buys 26 books at £8.75 each. It gets 20% off the total. How much does it pay?",
+      "steps": [
+       "26 × 8.75 = 227.50",
+       "10% = 22.75, so 20% = 45.50",
+       "227.50 − 45.50 = 182.00"
+      ],
+      "answer": "£182"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Find one part first"
+     ],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "3/5 of a number is 42. What is 1/5 of the number?",
+      "options": [
+       "14",
+       "70",
+       "25.2",
+       "8.4"
+      ],
+      "answer": 0,
+      "why": "42 ÷ 3 = 14. 70 is the whole; 25.2 is 3/5 of 42."
+     }
+    },
+    {
+     "heading": "Common errors to avoid",
+     "bullets": [
+      "Remainders: read the context",
+      "Fractions: ÷ denominator, × numerator"
+     ],
+     "note": "Ask pupils which error they make most and write it at the top of their quiz page.",
+     "misconception": {
+      "wrong": "5% of £60 = £60 ÷ 5 = £12",
+      "right": "10% = £6, so 5% = £3"
+     }
+    },
+    {
+     "heading": "Quiz rules",
+     "bullets": [
+      "Work alone, show working",
+      "Check with an estimate or inverse",
+      "20 minutes"
+     ],
+     "note": "The quiz is set in the portal in secure test mode; the same questions are on the next slides for anyone off camera.",
+     "table": {
+      "head": [
+       "Section",
+       "Questions",
+       "Skills"
+      ],
+      "rows": [
+       [
+        "A",
+        "1 to 3",
+        "Written methods and remainders"
+       ],
+       [
+        "B",
+        "4 to 5",
+        "Fractions of amounts"
+       ],
+       [
+        "C",
+        "6 to 8",
+        "Percentages"
+       ]
+      ]
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Work out 318 × 7.",
+     "a": "2,226",
+     "mins": 1
+    },
+    {
+     "q": "Work out 1,476 ÷ 6.",
+     "a": "246",
+     "mins": 1
+    },
+    {
+     "q": "Find 7/10 of 90.",
+     "a": "63",
+     "mins": 1
+    },
+    {
+     "q": "Find 35% of 120.",
+     "a": "42",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Quiz 1: Work out 427 × 36.",
+     "a": "15,372",
+     "mins": 3
+    },
+    {
+     "q": "Quiz 2: Work out 2,976 ÷ 8.",
+     "a": "372",
+     "mins": 2
+    },
+    {
+     "q": "Quiz 3: 350 dates are packed 24 to a box. How many boxes are needed for all of them?",
+     "a": "15 boxes (350 ÷ 24 = 14 r 14)",
+     "mins": 2
+    },
+    {
+     "q": "Quiz 4: Find 3/8 of 112.",
+     "a": "42",
+     "mins": 2
+    },
+    {
+     "q": "Quiz 5: 2/5 of a number is 26. Find the number.",
+     "a": "65",
+     "mins": 2
+    },
+    {
+     "q": "Quiz 6: Find 15% of 240.",
+     "a": "36",
+     "mins": 2
+    },
+    {
+     "q": "Quiz 7: A £64 jacket has 25% off. Find the sale price.",
+     "a": "£48",
+     "mins": 2
+    },
+    {
+     "q": "Quiz 8: Which is greater: 3/5 of 80 or 45% of 110? Show working.",
+     "a": "3/5 of 80 = 48; 45% of 110 = 49.5; 45% of 110 is greater",
+     "mins": 3
+    }
+   ],
+   "exit": [
+    {
+     "q": "Which quiz question was hardest, and what will you practise?",
+     "a": "For example: 'Question 5: I will practise finding the whole by dividing by the numerator first.'",
+     "mins": 2
+    },
+    {
+     "q": "Big question: which method would you use for 12.5% of 64, and why?",
+     "a": "Halve 25% (16) to get 8, or 1/8 of 64 = 8, because 12.5% = 1/8.",
+     "mins": 2
+    }
+   ],
+   "homework": "Redo any quiz question you got wrong, then write and solve a similar question of your own.",
+   "send": "Support: method cards for each section; read questions aloud. EAL: key words glossary allowed. Stretch: create a three-step problem using all three skills.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 7 Unit 2 Number skills and 5.3 and 5.6 (the school's KS3 scheme): Check, Strengthen and Extend pages",
+    "Portal unit quiz (secure test mode)",
+    "Calculator for Section C only",
     "Slides",
     "Mini-whiteboard and pen",
     "Exercise book"
