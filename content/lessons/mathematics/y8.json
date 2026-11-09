@@ -2185,6 +2185,1905 @@
    ],
    "homework": "Find five food labels and convert each mass or volume into a different unit (e.g. 500 g to kg).",
    "send": "Support: conversion ladder. Stretch: volume unit conversions."
+  },
+  {
+   "unit": "Autumn 1: Ratio and scale; multiplicative change; multiplying and dividing fractions",
+   "n": 17,
+   "title": "Ratio notation and simplifying ratios",
+   "duration": 50,
+   "bigQuestion": "How can a ratio describe a relationship without telling us the total?",
+   "objectives": [
+    "Use ratio notation a : b",
+    "Simplify ratios, including with units",
+    "Link ratios to fractions"
+   ],
+   "successCriteria": [
+    "All: write a ratio from a situation and simplify it",
+    "Most: simplify ratios with different units and three parts",
+    "Some: write ratios in the form 1 : n and link them to fractions"
+   ],
+   "crossCurricular": "Science: mixing solutions in ratios; Food: recipes",
+   "smsc": "Moral: fairness ('adl, عَدْل) in sharing depends on understanding ratios",
+   "keywords": [
+    {
+     "term": "ratio",
+     "def": "compares the sizes of two or more quantities"
+    },
+    {
+     "term": "simplest form",
+     "def": "a ratio that cannot be divided further by a common factor"
+    },
+    {
+     "term": "highest common factor",
+     "def": "the biggest number that divides into all the numbers"
+    },
+    {
+     "term": "part",
+     "def": "one share of a ratio"
+    }
+   ],
+   "hook": {
+    "type": "odd-one-out",
+    "text": "Which ratio is the odd one out?",
+    "options": [
+     "2 : 3",
+     "4 : 6",
+     "10 : 15",
+     "6 : 8"
+    ],
+    "a": "6 : 8 simplifies to 3 : 4; the others all simplify to 2 : 3."
+   },
+   "starter": [
+    {
+     "q": "Bismillah. Find the HCF of 12 and 18.",
+     "a": "6",
+     "mins": 1
+    },
+    {
+     "q": "Simplify 15/20.",
+     "a": "3/4",
+     "mins": 1
+    },
+    {
+     "q": "Find 25% of 60.",
+     "a": "15",
+     "mins": 1
+    },
+    {
+     "q": "Find 3/4 of 48.",
+     "a": "36",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "What a ratio shows",
+     "bullets": [
+      "3 green : 5 yellow beads",
+      "Order matters: green : yellow is 3 : 5",
+      "Green is 3/8 of all the beads"
+     ],
+     "note": "Ratio compares part to part; a fraction compares part to whole. Ask: what fraction is yellow? (5/8).",
+     "fraction": {
+      "parts": 8,
+      "shaded": 3,
+      "label": "green : yellow = 3 : 5; green = 3/8"
+     }
+    },
+    {
+     "heading": "Simplifying",
+     "bullets": [
+      "Divide every part by the HCF",
+      "Stop when no common factor is left"
+     ],
+     "note": "Model, then pupils simplify 20 : 35 (4 : 7).",
+     "model": {
+      "problem": "Simplify 24 : 36.",
+      "steps": [
+       "HCF of 24 and 36 is 12",
+       "24 ÷ 12 = 2 and 36 ÷ 12 = 3"
+      ],
+      "answer": "2 : 3"
+     }
+    },
+    {
+     "heading": "Units first",
+     "bullets": [
+      "Write both parts in the same unit",
+      "Then simplify"
+     ],
+     "note": "1 m : 25 cm: change metres to centimetres.",
+     "misconception": {
+      "wrong": "1 m : 25 cm = 1 : 25",
+      "right": "100 cm : 25 cm = 4 : 1"
+     }
+    },
+    {
+     "heading": "Three parts and 1 : n",
+     "bullets": [
+      "12 : 30 : 42 = 2 : 5 : 7 (÷ 6)",
+      "4 : 10 = 1 : 2.5 (÷ 4)"
+     ],
+     "note": "For 1 : n, divide both parts by the first part. Useful for comparing recipes.",
+     "table": {
+      "head": [
+       "Ratio",
+       "Divide by",
+       "Simplest form"
+      ],
+      "rows": [
+       [
+        "24 : 36",
+        "12",
+        "2 : 3"
+       ],
+       [
+        "45 : 30 : 15",
+        "15",
+        "3 : 2 : 1"
+       ],
+       [
+        "2 kg : 500 g = 2000 : 500",
+        "500",
+        "4 : 1"
+       ],
+       [
+        "4 : 10",
+        "4",
+        "1 : 2.5"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Is it fully simplified?"
+     ],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Simplify 18 : 12.",
+      "options": [
+       "3 : 2",
+       "2 : 3",
+       "6 : 4",
+       "9 : 6"
+      ],
+      "answer": 0,
+      "why": "HCF 6 gives 3 : 2, in the same order as the question. 2 : 3 reverses the order; 6 : 4 and 9 : 6 are not fully simplified."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Simplify 20 : 35.",
+     "a": "4 : 7",
+     "mins": 1
+    },
+    {
+     "q": "Simplify 45 : 30 : 15.",
+     "a": "3 : 2 : 1",
+     "mins": 1
+    },
+    {
+     "q": "Simplify 2 kg : 500 g.",
+     "a": "4 : 1",
+     "mins": 2
+    },
+    {
+     "q": "A bag has 6 green and 9 yellow beads. Write green : yellow in simplest form and the fraction that is green.",
+     "a": "2 : 3; 2/5 green",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Simplify (a) 16 : 24 (b) 35 : 14 (c) 12 : 30 : 42 (d) 40p : £2",
+     "a": "(a) 2 : 3 (b) 5 : 2 (c) 2 : 5 : 7 (d) 1 : 5",
+     "mins": 4
+    },
+    {
+     "q": "Extend: A recipe uses 300 g flour and 120 g butter. Write flour : butter in simplest form and in the form 1 : n.",
+     "a": "5 : 2 and 1 : 0.4",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: Arabic : English books = 3 : 5. What fraction are Arabic? If there are 24 Arabic books, how many books altogether?",
+     "a": "3/8 are Arabic. 3 parts = 24, 1 part = 8, total 8 × 8 = 64 books",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Simplify 36 : 48.",
+     "a": "3 : 4",
+     "mins": 1
+    },
+    {
+     "q": "Simplify 1.5 m : 30 cm.",
+     "a": "150 : 30 = 5 : 1",
+     "mins": 1
+    },
+    {
+     "q": "Big question: a ratio of 2 : 3 could describe 10 and 15, or 200 and 300. What stays the same?",
+     "a": "The relationship: the second is always 1.5 times the first (or the first is 2/5 of the total).",
+     "mins": 2
+    }
+   ],
+   "homework": "Find three ratios at home (a recipe, a squash or cleaning label, a photo size) and write each in simplest form.",
+   "send": "Support: list of factors to find the HCF. EAL: 'ratio', 'part', 'to'. Stretch: ratios with fractions and decimals, such as 1/2 : 3/4.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 7 7.2 Writing ratios and 7.3 Using ratios (the school's KS3 scheme)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "starter": "show-me",
+    "hinge": "show-me",
+    "practice": "cold-call",
+    "exit": "chat-waterfall"
+   }
+  },
+  {
+   "unit": "Autumn 1: Ratio and scale; multiplicative change; multiplying and dividing fractions",
+   "n": 18,
+   "title": "Sharing in a ratio",
+   "duration": 50,
+   "bigQuestion": "How can partners share fairly when they did not put in the same amount?",
+   "objectives": [
+    "Share an amount in a given ratio",
+    "Find the total or another share from one share",
+    "Solve ratio problems given a difference"
+   ],
+   "successCriteria": [
+    "All: share an amount in a two-part ratio using a bar model",
+    "Most: share in three-part ratios and work from one share",
+    "Some: solve problems given the difference between shares"
+   ],
+   "crossCurricular": "Business: sharing profit between partners; Islamic Studies: partnership in trade",
+   "smsc": "Moral: in Islamic partnership (mushārakah, مُشَارَكَة) the partners agree how profit is shared before trading; ratio makes that fair and clear",
+   "keywords": [
+    {
+     "term": "share",
+     "def": "split an amount into parts"
+    },
+    {
+     "term": "ratio",
+     "def": "compares the sizes of parts"
+    },
+    {
+     "term": "mushārakah",
+     "def": "مُشَارَكَة: an Islamic partnership where partners share profit as agreed"
+    },
+    {
+     "term": "difference",
+     "def": "how much more one share is than another"
+    }
+   ],
+   "hook": {
+    "type": "question",
+    "text": "Ali puts £300 into a market stall and Bilal puts £200. They make £150 profit. Should they share it equally? What else could be fair?",
+    "a": "Partners agree the profit ratio in advance. Sharing in the ratio of money put in, 3 : 2, gives £90 and £60."
+   },
+   "starter": [
+    {
+     "q": "Bismillah. Simplify 24 : 36.",
+     "a": "2 : 3",
+     "mins": 1
+    },
+    {
+     "q": "Ratio 3 : 5. What fraction of the whole is the first part?",
+     "a": "3/8",
+     "mins": 1
+    },
+    {
+     "q": "Find 1/5 of 85.",
+     "a": "17",
+     "mins": 1
+    },
+    {
+     "q": "3/5 of a number is 36. Find it.",
+     "a": "60",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Bar model",
+     "bullets": [
+      "Add the parts: 4 + 5 = 9 parts",
+      "One part = total ÷ number of parts"
+     ],
+     "note": "Draw 4 bars and 5 bars; each part is £5.",
+     "model": {
+      "problem": "Share £45 in the ratio 4 : 5.",
+      "steps": [
+       "4 + 5 = 9 parts",
+       "1 part = £45 ÷ 9 = £5",
+       "4 × £5 = £20 and 5 × £5 = £25",
+       "Check: £20 + £25 = £45"
+      ],
+      "answer": "£20 and £25"
+     }
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Divide by the total number of parts"
+     ],
+     "note": "Ask: why is dividing by 3 and by 5 wrong?",
+     "misconception": {
+      "wrong": "Share 40 in 3 : 5: 40 ÷ 3 and 40 ÷ 5",
+      "right": "3 + 5 = 8 parts; 40 ÷ 8 = 5; shares 15 and 25"
+     }
+    },
+    {
+     "heading": "Three parts",
+     "bullets": [
+      "2 : 3 : 5 of 200: 10 parts of 20",
+      "Shares 40, 60, 100"
+     ],
+     "note": "Pie chart of the three shares: one part is 36° of 360°.",
+     "chart": {
+      "kind": "pie",
+      "title": "200 shared 2 : 3 : 5",
+      "labels": [
+       "2 parts",
+       "3 parts",
+       "5 parts"
+      ],
+      "values": [
+       40,
+       60,
+       100
+      ]
+     }
+    },
+    {
+     "heading": "From one share or a difference",
+     "bullets": [
+      "A : B = 3 : 7 and B gets 56: 7 parts = 56",
+      "5 : 2 with difference 27: 3 parts = 27"
+     ],
+     "note": "Find one part, then whatever is asked.",
+     "model": {
+      "problem": "Ratio 5 : 2. The first share is 27 more than the second. Find both shares.",
+      "steps": [
+       "Difference = 5 − 2 = 3 parts",
+       "3 parts = 27, so 1 part = 9",
+       "Shares: 5 × 9 = 45 and 2 × 9 = 18"
+      ],
+      "answer": "45 and 18"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "How many parts altogether?"
+     ],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Share 60 in the ratio 1 : 3.",
+      "options": [
+       "15 and 45",
+       "20 and 40",
+       "30 and 30",
+       "20 and 60"
+      ],
+      "answer": 0,
+      "why": "4 parts, 60 ÷ 4 = 15, so 15 and 45. 20 and 40 divides by 3 parts; 20 and 60 does not total 60."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Share £72 in the ratio 5 : 3.",
+     "a": "£45 and £27",
+     "mins": 2
+    },
+    {
+     "q": "Share 150 g in the ratio 2 : 3.",
+     "a": "60 g and 90 g",
+     "mins": 1
+    },
+    {
+     "q": "Share 84 in the ratio 1 : 2 : 4.",
+     "a": "12, 24 and 48",
+     "mins": 2
+    },
+    {
+     "q": "Ratio 4 : 9. The smaller share is £36. Find the larger share.",
+     "a": "£81",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Share (a) £56 in 3 : 4 (b) 2.4 kg in 1 : 5 (c) 360° in 2 : 3 : 7",
+     "a": "(a) £24 and £32 (b) 0.4 kg and 2 kg (c) 60°, 90° and 210°",
+     "mins": 5
+    },
+    {
+     "q": "Extend: Sadaqah is shared between two charities in the ratio 5 : 3. The first gets £240 more than the second. How much was collected?",
+     "a": "2 parts = £240, 1 part = £120, total 8 parts = £960",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: red : blue = 2 : 3 and blue : green = 4 : 5. Find red : blue : green.",
+     "a": "Make blue 12 in both: 8 : 12 and 12 : 15, so 8 : 12 : 15",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Share 63 in the ratio 2 : 5.",
+     "a": "18 and 45",
+     "mins": 1
+    },
+    {
+     "q": "Ratio 3 : 5; the larger share is 40. Find the total.",
+     "a": "5 parts = 40, 1 part = 8, total 64",
+     "mins": 2
+    },
+    {
+     "q": "Big question: how could Ali and Bilal share £150 fairly?",
+     "a": "In the agreed ratio, for example 3 : 2 by money put in: £90 and £60.",
+     "mins": 1
+    }
+   ],
+   "homework": "Share £120 in the ratios 1 : 2, 3 : 5 and 1 : 2 : 3; check each set of shares adds to £120.",
+   "send": "Support: bar model templates and a multiplication square. EAL: 'share', 'part', 'each'. Stretch: combining ratios and ratio problems with fractions.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 7 7.3 Using ratios and 7.4 Ratios, proportions and fractions (the school's KS3 scheme)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "starter": "show-me",
+    "hinge": "show-me",
+    "practice": "cold-call",
+    "exit": "chat-waterfall"
+   }
+  },
+  {
+   "unit": "Autumn 1: Ratio and scale; multiplicative change; multiplying and dividing fractions",
+   "n": 19,
+   "title": "Scale drawings and maps",
+   "duration": 50,
+   "bigQuestion": "How can a small drawing tell us about something huge?",
+   "objectives": [
+    "Use scales such as 1 cm to 5 m",
+    "Use ratio scales such as 1 : 50 000",
+    "Convert between map and real distances"
+   ],
+   "successCriteria": [
+    "All: use a scale of 1 cm to n m to find real lengths",
+    "Most: use ratio scales and convert units",
+    "Some: work back from real lengths to drawings and models"
+   ],
+   "crossCurricular": "Geography: OS maps and scales; Art: scaled drawings of buildings",
+   "smsc": "Spiritual: maps help travellers find their way, including the qiblah direction and the distance to the masjid",
+   "keywords": [
+    {
+     "term": "scale",
+     "def": "how a length on a drawing compares with the real length"
+    },
+    {
+     "term": "scale drawing",
+     "def": "an accurate drawing with every length in the same ratio"
+    },
+    {
+     "term": "ratio scale",
+     "def": "a scale such as 1 : 50 000 with the same units on both sides"
+    },
+    {
+     "term": "represent",
+     "def": "stand for"
+    }
+   ],
+   "hook": {
+    "type": "question",
+    "text": "On a map, 1 cm represents 2 km. Two towns are 7.5 cm apart. Could you walk between them in an hour?",
+    "a": "7.5 × 2 = 15 km. Walking at about 5 km an hour takes about 3 hours, so no."
+   },
+   "starter": [
+    {
+     "q": "Bismillah. Share £45 in the ratio 4 : 5.",
+     "a": "£20 and £25",
+     "mins": 1
+    },
+    {
+     "q": "Simplify 2 m : 50 cm.",
+     "a": "4 : 1",
+     "mins": 1
+    },
+    {
+     "q": "How many metres in 1 km?",
+     "a": "1000",
+     "mins": 1
+    },
+    {
+     "q": "Write 350 cm in metres.",
+     "a": "3.5 m",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Scales in words",
+     "bullets": [
+      "1 cm represents 5 m",
+      "Drawing 3 cm → real 15 m"
+     ],
+     "note": "Multiply to go from drawing to real; divide to go from real to drawing.",
+     "model": {
+      "problem": "A plan uses 1 cm : 4 m. A room is 5.5 cm long on the plan. Find the real length.",
+      "steps": [
+       "Each cm is 4 m",
+       "5.5 × 4 = 22"
+      ],
+      "answer": "22 m"
+     }
+    },
+    {
+     "heading": "Ratio scales",
+     "bullets": [
+      "1 : 50 000 means 1 cm : 50 000 cm",
+      "50 000 cm = 500 m = 0.5 km"
+     ],
+     "note": "Units are the same on both sides. Convert at the end.",
+     "misconception": {
+      "wrong": "1 : 50 000 means 1 cm represents 50 000 km",
+      "right": "Same units: 1 cm represents 50 000 cm, which is 500 m"
+     }
+    },
+    {
+     "heading": "Map to real",
+     "bullets": [
+      "Multiply by the scale",
+      "Then convert cm → m → km"
+     ],
+     "note": "÷ 100 for metres, ÷ 1000 again for km.",
+     "model": {
+      "problem": "On a 1 : 25 000 map two points are 6 cm apart. Find the real distance in km.",
+      "steps": [
+       "6 × 25 000 = 150 000 cm",
+       "150 000 cm = 1500 m",
+       "1500 m = 1.5 km"
+      ],
+      "answer": "1.5 km"
+     }
+    },
+    {
+     "heading": "Real to map",
+     "bullets": [
+      "Convert to cm, then divide by the scale"
+     ],
+     "note": "4 km on a 1 : 50 000 map: 400 000 cm ÷ 50 000 = 8 cm.",
+     "table": {
+      "head": [
+       "Scale",
+       "Map",
+       "Real"
+      ],
+      "rows": [
+       [
+        "1 cm : 3 m",
+        "4.5 cm",
+        "13.5 m"
+       ],
+       [
+        "1 cm : 3 m",
+        "6 cm",
+        "18 m"
+       ],
+       [
+        "1 : 10 000",
+        "7 cm",
+        "700 m"
+       ],
+       [
+        "1 : 50 000",
+        "8 cm",
+        "4 km"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Multiply, then convert"
+     ],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Scale 1 : 20 000. Map distance 5 cm. Real distance?",
+      "options": [
+       "1 km",
+       "100 km",
+       "10 km",
+       "100 m"
+      ],
+      "answer": 0,
+      "why": "5 × 20 000 = 100 000 cm = 1000 m = 1 km. 100 km forgets that the units are cm."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Scale 1 cm : 3 m. Drawing 4.5 cm. Real length?",
+     "a": "13.5 m",
+     "mins": 1
+    },
+    {
+     "q": "Scale 1 cm : 3 m. Real 18 m. Drawing length?",
+     "a": "6 cm",
+     "mins": 1
+    },
+    {
+     "q": "Scale 1 : 10 000. Map 7 cm. Real distance in metres?",
+     "a": "700 m",
+     "mins": 2
+    },
+    {
+     "q": "Scale 1 : 200 000. Map 3 cm. Real distance in km?",
+     "a": "6 km",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: A plan of a prayer hall uses 1 cm : 2 m. The hall is 9 cm by 6.5 cm on the plan. Find the real length, width and floor area.",
+     "a": "18 m by 13 m; area 234 m²",
+     "mins": 4
+    },
+    {
+     "q": "Extend: On a 1 : 50 000 map two villages are 9.4 cm apart. Find the real distance in km.",
+     "a": "470 000 cm = 4.7 km",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: A model of a building uses 1 : 250. The real building is 45 m tall. How tall is the model? The model door is 0.8 cm tall: how tall is the real door?",
+     "a": "4500 cm ÷ 250 = 18 cm; 0.8 × 250 = 200 cm = 2 m",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Scale 1 cm : 5 km. Map 3.2 cm. Real distance?",
+     "a": "16 km",
+     "mins": 1
+    },
+    {
+     "q": "Scale 1 : 20 000. Real 3 km. Map distance?",
+     "a": "300 000 ÷ 20 000 = 15 cm",
+     "mins": 2
+    },
+    {
+     "q": "Big question: why must a scale drawing use the same scale for every length?",
+     "a": "So every length is in the same ratio and the shape stays the same; mixed scales would distort it.",
+     "mins": 1
+    }
+   ],
+   "homework": "Measure your bedroom (or one room) with a tape measure and draw a scale plan at 1 cm : 50 cm on squared paper; label the real lengths.",
+   "send": "Support: unit conversion ladder (km, m, cm). EAL: 'represents', 'scale', 'plan'. Stretch: area on a scale drawing (area scale factor).",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 7 4.3 Scales and measures and 7.3 Using ratios (the school's KS3 scheme)",
+    "Tape measure, ruler and squared paper (household)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "starter": "show-me",
+    "hinge": "show-me",
+    "practice": "cold-call",
+    "exit": "chat-waterfall"
+   }
+  },
+  {
+   "unit": "Autumn 1: Ratio and scale; multiplicative change; multiplying and dividing fractions",
+   "n": 20,
+   "title": "Multiplicative change: scale factors and direct proportion",
+   "duration": 50,
+   "bigQuestion": "How do you know when two quantities are in direct proportion?",
+   "objectives": [
+    "Find a scale factor between two quantities",
+    "Solve direct proportion problems by the unitary method",
+    "Compare value for money"
+   ],
+   "successCriteria": [
+    "All: use the unitary method",
+    "Most: use scale factors and compare best buys",
+    "Some: use y = kx for direct proportion"
+   ],
+   "crossCurricular": "Science: Hooke's law and other proportional relationships; Food: scaling",
+   "smsc": "Moral: wise spending and avoiding waste (israf, إِسْرَاف)",
+   "keywords": [
+    {
+     "term": "direct proportion",
+     "def": "when one quantity doubles, so does the other"
+    },
+    {
+     "term": "unitary method",
+     "def": "find the value of one, then multiply"
+    },
+    {
+     "term": "scale factor",
+     "def": "the number you multiply by"
+    },
+    {
+     "term": "best buy",
+     "def": "the better value item, often found by cost per unit"
+    }
+   ],
+   "hook": {
+    "type": "question",
+    "text": "Would you rather buy 8 bottles of water for £3.20 or 12 bottles for £4.50?",
+    "options": [
+     "8 for £3.20",
+     "12 for £4.50"
+    ],
+    "a": "8 for £3.20 is 40p each; 12 for £4.50 is 37.5p each. The bigger pack is better value."
+   },
+   "starter": [
+    {
+     "q": "Bismillah. Scale 1 : 25 000; map 6 cm. Real distance in km?",
+     "a": "1.5 km",
+     "mins": 2
+    },
+    {
+     "q": "Share 84 in the ratio 1 : 2 : 4.",
+     "a": "12, 24, 48",
+     "mins": 1
+    },
+    {
+     "q": "Find 35% of 60.",
+     "a": "21",
+     "mins": 1
+    },
+    {
+     "q": "Find 3/4 of 2 hours in minutes.",
+     "a": "90 minutes",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "The unitary method",
+     "bullets": [
+      "Divide to find one",
+      "Multiply to find many"
+     ],
+     "note": "Model, then pupils do 6 eggs £1.50, 10 eggs (£2.50).",
+     "model": {
+      "problem": "5 books cost £12.50. Find the cost of 8 books.",
+      "steps": [
+       "1 book: £12.50 ÷ 5 = £2.50",
+       "8 books: 8 × £2.50 = £20"
+      ],
+      "answer": "£20"
+     }
+    },
+    {
+     "heading": "Scale factors",
+     "bullets": [
+      "From 4 to 10 the scale factor is 10 ÷ 4 = 2.5",
+      "Apply the same factor to the other quantity"
+     ],
+     "note": "A 6 cm by 9 cm photo enlarged so 6 → 15: factor 2.5, so 9 → 22.5 cm.",
+     "misconception": {
+      "wrong": "4 cm → 10 cm, so 6 cm → 12 cm (add 6)",
+      "right": "The change is × 2.5, so 6 cm → 15 cm"
+     }
+    },
+    {
+     "heading": "Proportion graphs",
+     "bullets": [
+      "Rice at £3 per kg",
+      "Straight line through (0, 0)"
+     ],
+     "note": "Every extra kg adds £3. Zero rice costs £0.",
+     "chart": {
+      "kind": "line",
+      "title": "Cost of rice",
+      "labels": [
+       "0 kg",
+       "1 kg",
+       "2 kg",
+       "3 kg",
+       "4 kg",
+       "5 kg"
+      ],
+      "values": [
+       0,
+       3,
+       6,
+       9,
+       12,
+       15
+      ],
+      "unit": "£"
+     }
+    },
+    {
+     "heading": "Best buys",
+     "bullets": [
+      "Find cost per item or per gram",
+      "Lower cost per unit is better value"
+     ],
+     "note": "250 g for £1.60 is 0.64p per g; 400 g for £2.40 is 0.6p per g.",
+     "table": {
+      "head": [
+       "Pack",
+       "Price",
+       "Per unit"
+      ],
+      "rows": [
+       [
+        "8 bottles",
+        "£3.20",
+        "40p"
+       ],
+       [
+        "12 bottles",
+        "£4.50",
+        "37.5p"
+       ],
+       [
+        "250 g",
+        "£1.60",
+        "0.64p per g"
+       ],
+       [
+        "400 g",
+        "£2.40",
+        "0.6p per g"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Find one first"
+     ],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "3 kg of rice costs £4.80. How much do 5 kg cost?",
+      "options": [
+       "£8.00",
+       "£6.80",
+       "£1.60",
+       "£24.00"
+      ],
+      "answer": 0,
+      "why": "£4.80 ÷ 3 = £1.60 per kg; × 5 = £8.00. £6.80 adds £2; £1.60 is one kg only."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "6 eggs cost £1.50. How much do 10 eggs cost?",
+     "a": "£2.50",
+     "mins": 1
+    },
+    {
+     "q": "1 inch = 2.54 cm. Convert 20 inches to cm.",
+     "a": "50.8 cm",
+     "mins": 1
+    },
+    {
+     "q": "Find the scale factor from 8 to 20.",
+     "a": "2.5",
+     "mins": 1
+    },
+    {
+     "q": "Which is better value: 250 g for £1.60 or 400 g for £2.40?",
+     "a": "400 g (0.6p per g against 0.64p per g)",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: 4 tickets cost £18. Find the cost of 1, 7 and 10 tickets.",
+     "a": "£4.50, £31.50, £45",
+     "mins": 4
+    },
+    {
+     "q": "Extend: A 6 cm by 9 cm photo is enlarged so the 6 cm side becomes 15 cm. Find the new length of the other side.",
+     "a": "Scale factor 2.5; 9 × 2.5 = 22.5 cm",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: y is directly proportional to x. When x = 8, y = 28. Find y when x = 13 and x when y = 59.5.",
+     "a": "k = 28 ÷ 8 = 3.5, so y = 3.5x. x = 13 gives y = 45.5; y = 59.5 gives x = 17",
+     "mins": 5
+    }
+   ],
+   "exit": [
+    {
+     "q": "5 m of cloth costs £32. Find the cost of 8 m.",
+     "a": "£6.40 per m, so £51.20",
+     "mins": 2
+    },
+    {
+     "q": "Big question: how can you tell two quantities are in direct proportion?",
+     "a": "When one doubles the other doubles; the ratio stays the same; the graph is a straight line through the origin.",
+     "mins": 2
+    }
+   ],
+   "homework": "Compare the price per 100 g of two sizes of the same food at home or online; which is the best buy?",
+   "send": "Support: ratio tables with the 'one' row given. EAL: 'per', 'each', 'value'. Stretch: inverse proportion (more workers, less time).",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 7 7.1 Direct proportion and 7.5 Proportions and percentages (the school's KS3 scheme)",
+    "Food packets with prices (household)",
+    "Calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "starter": "show-me",
+    "hinge": "show-me",
+    "practice": "cold-call",
+    "exit": "chat-waterfall"
+   }
+  },
+  {
+   "unit": "Autumn 1: Ratio and scale; multiplicative change; multiplying and dividing fractions",
+   "n": 21,
+   "title": "Multiplying fractions",
+   "duration": 50,
+   "bigQuestion": "Why can multiplying make a number smaller?",
+   "objectives": [
+    "Multiply a fraction by an integer",
+    "Multiply two fractions",
+    "Simplify before multiplying"
+   ],
+   "successCriteria": [
+    "All: multiply a fraction by a whole number",
+    "Most: multiply two fractions and simplify the answer",
+    "Some: cancel common factors first and explain why it works"
+   ],
+   "crossCurricular": "Science: fractions of fractions in dilution; Food: halving recipes",
+   "smsc": "Spiritual: the Qur'an names shares such as half of a quarter in inheritance (Surat an-Nisa 4:11 to 12); exact fractions serve justice",
+   "keywords": [
+    {
+     "term": "product",
+     "def": "the result of multiplying"
+    },
+    {
+     "term": "numerator",
+     "def": "the top of a fraction"
+    },
+    {
+     "term": "denominator",
+     "def": "the bottom of a fraction"
+    },
+    {
+     "term": "cancel",
+     "def": "divide a numerator and a denominator by a common factor"
+    }
+   ],
+   "hook": {
+    "type": "question",
+    "text": "True or false: multiplying always makes a number bigger.",
+    "options": [
+     "True",
+     "False"
+    ],
+    "a": "False: 1/2 × 1/2 = 1/4. Multiplying by a number less than 1 takes part of it."
+   },
+   "starter": [
+    {
+     "q": "Bismillah. Find 3/5 of 40.",
+     "a": "24",
+     "mins": 1
+    },
+    {
+     "q": "Find the scale factor from 4 to 10.",
+     "a": "2.5",
+     "mins": 1
+    },
+    {
+     "q": "Work out 1/3 + 1/4.",
+     "a": "7/12",
+     "mins": 1
+    },
+    {
+     "q": "Simplify 12/18.",
+     "a": "2/3",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Fraction × integer",
+     "bullets": [
+      "3 × 2/5 = 6/5",
+      "6/5 = 1 1/5"
+     ],
+     "note": "Three lots of two fifths is six fifths. Multiply the numerator only.",
+     "model": {
+      "problem": "Work out 4 × 2/9.",
+      "steps": [
+       "Multiply the numerator: 4 × 2 = 8",
+       "Keep the denominator: 8/9"
+      ],
+      "answer": "8/9"
+     }
+    },
+    {
+     "heading": "'Of' means ×",
+     "bullets": [
+      "1/2 of 1/4 = 1/2 × 1/4",
+      "= 1/8"
+     ],
+     "note": "Halve a quarter bar: each piece is an eighth.",
+     "fraction": [
+      {
+       "parts": 4,
+       "shaded": 1,
+       "label": "1/4"
+      },
+      {
+       "parts": 8,
+       "shaded": 1,
+       "label": "1/2 of 1/4 = 1/8"
+      }
+     ]
+    },
+    {
+     "heading": "Fraction × fraction",
+     "bullets": [
+      "Multiply the numerators",
+      "Multiply the denominators",
+      "Simplify"
+     ],
+     "note": "2/3 × 3/4 = 6/12 = 1/2. Use an area model on squared paper.",
+     "misconception": {
+      "wrong": "1/2 × 1/3 = 2/5 (add tops and bottoms)",
+      "right": "Multiply: 1 × 1 = 1 and 2 × 3 = 6, so 1/6"
+     }
+    },
+    {
+     "heading": "Cancel first",
+     "bullets": [
+      "Divide a numerator and any denominator by a common factor",
+      "Smaller numbers, fewer errors"
+     ],
+     "note": "4 and 8 share 4; 3 and 9 share 3.",
+     "model": {
+      "problem": "Work out 4/9 × 3/8.",
+      "steps": [
+       "Cancel 4 and 8 by 4: 1/9 × 3/2",
+       "Cancel 3 and 9 by 3: 1/3 × 1/2",
+       "Multiply: 1/6"
+      ],
+      "answer": "1/6"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Tops × tops, bottoms × bottoms"
+     ],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Work out 3/5 × 2/7.",
+      "options": [
+       "6/35",
+       "5/12",
+       "6/12",
+       "21/10"
+      ],
+      "answer": 0,
+      "why": "3 × 2 = 6 and 5 × 7 = 35. 5/12 adds; 21/10 cross-multiplies."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Work out 5 × 3/4.",
+     "a": "15/4 = 3 3/4",
+     "mins": 1
+    },
+    {
+     "q": "Work out 1/3 × 3/5.",
+     "a": "3/15 = 1/5",
+     "mins": 1
+    },
+    {
+     "q": "Work out 2/7 × 7/10.",
+     "a": "1/5",
+     "mins": 2
+    },
+    {
+     "q": "Find 3/8 of 2/3.",
+     "a": "6/24 = 1/4",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Work out (a) 4 × 2/9 (b) 2/5 × 3/4 (c) 5/6 × 9/10 (d) 7/12 × 4/21",
+     "a": "(a) 8/9 (b) 3/10 (c) 3/4 (d) 1/9",
+     "mins": 5
+    },
+    {
+     "q": "Extend: A rectangle is 3/4 m by 2/5 m. Find its area.",
+     "a": "3/10 m²",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Find two different pairs of fractions whose product is 2/15.",
+     "a": "For example 1/3 × 2/5 and 2/3 × 1/5",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Work out 2/3 × 5/8.",
+     "a": "10/24 = 5/12",
+     "mins": 1
+    },
+    {
+     "q": "Work out 6 × 3/4.",
+     "a": "18/4 = 4 1/2",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why is 1/2 × 1/4 smaller than 1/4?",
+     "a": "It is half of a quarter: multiplying by a fraction less than 1 takes only part of the number.",
+     "mins": 1
+    }
+   ],
+   "homework": "Fold a sheet of paper to show 1/2 × 1/3 and 2/3 × 3/4; shade and label each answer.",
+   "send": "Support: area model grids. EAL: 'of' means multiply. Stretch: products of three fractions and fractions of amounts in one step.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 8 8.3 Multiplying fractions (the school's KS3 scheme)",
+    "Paper to fold (household)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "starter": "show-me",
+    "hinge": "show-me",
+    "practice": "cold-call",
+    "exit": "chat-waterfall"
+   }
+  },
+  {
+   "unit": "Autumn 1: Ratio and scale; multiplicative change; multiplying and dividing fractions",
+   "n": 22,
+   "title": "Multiplying mixed numbers and fraction problems",
+   "duration": 50,
+   "bigQuestion": "Why must mixed numbers become improper fractions before multiplying?",
+   "objectives": [
+    "Convert between mixed numbers and improper fractions",
+    "Multiply mixed numbers",
+    "Solve area and quantity problems with fractions"
+   ],
+   "successCriteria": [
+    "All: convert mixed numbers to improper fractions",
+    "Most: multiply two mixed numbers and simplify",
+    "Some: explain the area model for mixed numbers"
+   ],
+   "crossCurricular": "Design: measurements in fractions of a metre; Food: scaling recipes",
+   "smsc": "Social: working accurately when making things for others",
+   "keywords": [
+    {
+     "term": "mixed number",
+     "def": "a whole number and a fraction, such as 2 1/2"
+    },
+    {
+     "term": "improper fraction",
+     "def": "numerator bigger than the denominator, such as 5/2"
+    },
+    {
+     "term": "simplify",
+     "def": "write with smaller numbers"
+    },
+    {
+     "term": "area model",
+     "def": "a rectangle split into parts to show multiplying"
+    }
+   ],
+   "hook": {
+    "type": "puzzle",
+    "text": "Which is bigger: 2 1/2 × 1 1/2, or (2 × 1) + (1/2 × 1/2)?",
+    "a": "2 1/2 × 1 1/2 = 3 3/4, but (2 × 1) + (1/2 × 1/2) = 2 1/4. Multiplying the wholes and the parts separately misses two pieces."
+   },
+   "starter": [
+    {
+     "q": "Bismillah. Work out 2/5 × 3/4.",
+     "a": "3/10",
+     "mins": 1
+    },
+    {
+     "q": "Work out 4 × 2/9.",
+     "a": "8/9",
+     "mins": 1
+    },
+    {
+     "q": "Write 2 1/3 as an improper fraction.",
+     "a": "7/3",
+     "mins": 1
+    },
+    {
+     "q": "Write 11/4 as a mixed number.",
+     "a": "2 3/4",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Mixed to improper",
+     "bullets": [
+      "2 1/3 = 6/3 + 1/3 = 7/3",
+      "Wholes × denominator, add numerator"
+     ],
+     "note": "Practise three quickly: 1 3/4 (7/4), 3 2/5 (17/5), 2 1/2 (5/2).",
+     "fraction": [
+      {
+       "parts": 3,
+       "shaded": 3,
+       "label": "1"
+      },
+      {
+       "parts": 3,
+       "shaded": 3,
+       "label": "1"
+      },
+      {
+       "parts": 3,
+       "shaded": 1,
+       "label": "2 1/3 = 7/3"
+      }
+     ]
+    },
+    {
+     "heading": "Area model",
+     "bullets": [
+      "(2 + 1/2) × (1 + 1/2)",
+      "Four parts: 2 + 1 + 1/2 + 1/4 = 3 3/4"
+     ],
+     "note": "This is why we cannot multiply wholes and parts separately.",
+     "table": {
+      "head": [
+       "×",
+       "2",
+       "1/2"
+      ],
+      "rows": [
+       [
+        "1",
+        "2",
+        "1/2"
+       ],
+       [
+        "1/2",
+        "1",
+        "1/4"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Multiplying mixed numbers",
+     "bullets": [
+      "Make improper fractions",
+      "Cancel, multiply, simplify"
+     ],
+     "note": "Model, then pupils do 1 3/4 × 1 1/2 (21/8 = 2 5/8).",
+     "model": {
+      "problem": "Work out 2 1/2 × 1 1/3.",
+      "steps": [
+       "5/2 × 4/3",
+       "Cancel 2 and 4: 5/1 × 2/3",
+       "= 10/3",
+       "= 3 1/3"
+      ],
+      "answer": "3 1/3"
+     }
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Convert first"
+     ],
+     "note": "Ask: how big should 2 1/2 × 1 1/2 be? Estimate: between 2 × 1 = 2 and 3 × 2 = 6.",
+     "misconception": {
+      "wrong": "2 1/2 × 1 1/2 = 2 1/4 (2 × 1 and 1/2 × 1/2)",
+      "right": "5/2 × 3/2 = 15/4 = 3 3/4"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Improper fractions first"
+     ],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Work out 1 1/2 × 2/3.",
+      "options": [
+       "1",
+       "1 1/3",
+       "2/3",
+       "3/4"
+      ],
+      "answer": 0,
+      "why": "3/2 × 2/3 = 6/6 = 1. 1 1/3 multiplies only the fraction part and keeps the 1."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Work out 1 1/2 × 4.",
+     "a": "6",
+     "mins": 1
+    },
+    {
+     "q": "Work out 2 1/3 × 3/7.",
+     "a": "7/3 × 3/7 = 1",
+     "mins": 2
+    },
+    {
+     "q": "Work out 1 3/4 × 1 1/2.",
+     "a": "21/8 = 2 5/8",
+     "mins": 2
+    },
+    {
+     "q": "Find 3/4 of 2 2/3.",
+     "a": "3/4 × 8/3 = 2",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Work out (a) 1 1/4 × 2/5 (b) 2 1/2 × 2 1/2 (c) 3 1/3 × 1 1/5",
+     "a": "(a) 1/2 (b) 25/4 = 6 1/4 (c) 4",
+     "mins": 5
+    },
+    {
+     "q": "Extend: A rug is 2 1/2 m by 1 3/5 m. Find its area.",
+     "a": "5/2 × 8/5 = 4 m²",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: A jug holds 1 3/4 litres. How much do 4 2/3 jugs hold?",
+     "a": "7/4 × 14/3 = 98/12 = 8 1/6 litres",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Work out 1 1/2 × 1 1/2.",
+     "a": "9/4 = 2 1/4",
+     "mins": 1
+    },
+    {
+     "q": "Work out 2 2/5 × 5/6.",
+     "a": "2",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why convert mixed numbers first?",
+     "a": "So every part of each number is multiplied; multiplying wholes and fractions separately misses parts.",
+     "mins": 1
+    }
+   ],
+   "homework": "Draw an area model for 3 1/2 × 2 1/4 and check it against the improper fraction method.",
+   "send": "Support: conversion steps on a card. EAL: 'mixed', 'improper'. Stretch: dividing by a fraction: how many 3/4 in 6?",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 8 8.3 Multiplying fractions and 8.5 Calculating with mixed numbers (the school's KS3 scheme)",
+    "Squared paper",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "starter": "show-me",
+    "hinge": "show-me",
+    "practice": "cold-call",
+    "exit": "chat-waterfall"
+   }
+  },
+  {
+   "unit": "Autumn 2: The Cartesian plane, data and probability",
+   "n": 23,
+   "title": "Coordinates in four quadrants",
+   "duration": 50,
+   "bigQuestion": "Why do we always write the x-coordinate first?",
+   "objectives": [
+    "Read and plot coordinates in all four quadrants",
+    "Find missing vertices of shapes",
+    "Find distances along horizontal and vertical lines"
+   ],
+   "successCriteria": [
+    "All: read and plot points with negative coordinates",
+    "Most: complete shapes on a grid",
+    "Some: solve problems with coordinates without a grid"
+   ],
+   "crossCurricular": "Geography: grid references; Computing: screen coordinates in Scratch",
+   "smsc": "Spiritual: maps and coordinates help Muslims find the qiblah from anywhere on Earth",
+   "keywords": [
+    {
+     "term": "coordinates",
+     "def": "a pair (x, y) that gives a position"
+    },
+    {
+     "term": "origin",
+     "def": "the point (0, 0)"
+    },
+    {
+     "term": "x-axis",
+     "def": "the horizontal axis"
+    },
+    {
+     "term": "y-axis",
+     "def": "the vertical axis"
+    },
+    {
+     "term": "quadrant",
+     "def": "one of the four regions made by the axes"
+    }
+   ],
+   "hook": {
+    "type": "image-prompt",
+    "text": "Picture a grid over a town with the masjid at (0, 0). A shop is 3 blocks east and 2 blocks south. How would you describe where it is?",
+    "a": "(3, −2). Negative numbers let us go left of or below the origin."
+   },
+   "starter": [
+    {
+     "q": "Bismillah. Work out 2 1/2 × 1 1/3.",
+     "a": "3 1/3",
+     "mins": 2
+    },
+    {
+     "q": "Work out −3 + 5.",
+     "a": "2",
+     "mins": 1
+    },
+    {
+     "q": "Work out −4 − 2.",
+     "a": "−6",
+     "mins": 1
+    },
+    {
+     "q": "Order −5, 3, −1, 0 from smallest.",
+     "a": "−5, −1, 0, 3",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "The four quadrants",
+     "bullets": [
+      "(x, y): across first, then up or down",
+      "Left of the y-axis: x negative",
+      "Below the x-axis: y negative"
+     ],
+     "note": "Say 'along the corridor, then up the stairs'. Draw the axes from −6 to 6.",
+     "table": {
+      "head": [
+       "Point",
+       "x",
+       "y",
+       "Quadrant"
+      ],
+      "rows": [
+       [
+        "(4, 3)",
+        "+",
+        "+",
+        "1st (top right)"
+       ],
+       [
+        "(−4, 3)",
+        "−",
+        "+",
+        "2nd (top left)"
+       ],
+       [
+        "(−4, −3)",
+        "−",
+        "−",
+        "3rd (bottom left)"
+       ],
+       [
+        "(4, −3)",
+        "+",
+        "−",
+        "4th (bottom right)"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Sort the points",
+     "bullets": [
+      "Which quadrant or axis?"
+     ],
+     "note": "Teams poll for two cards, then reveal all.",
+     "sort": {
+      "columns": [
+       "Top half",
+       "Bottom half",
+       "On an axis"
+      ],
+      "cards": [
+       "(2, 5)",
+       "(−3, 1)",
+       "(0, −4)",
+       "(−6, −2)",
+       "(5, 0)",
+       "(1, −1)"
+      ],
+      "answer": [
+       0,
+       0,
+       2,
+       1,
+       2,
+       1
+      ]
+     }
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "x first, then y"
+     ],
+     "note": "Plot both points on screen and compare.",
+     "misconception": {
+      "wrong": "(3, −2) is 3 down and 2 left",
+      "right": "(3, −2) is 3 right, then 2 down"
+     }
+    },
+    {
+     "heading": "Completing shapes",
+     "bullets": [
+      "Use equal sides and right angles",
+      "Count units between points"
+     ],
+     "note": "Sketch the rectangle; D shares x with A and y with C.",
+     "model": {
+      "problem": "A(−2, 3), B(4, 3), C(4, −1). Find D to make rectangle ABCD and its area.",
+      "steps": [
+       "AB is horizontal, BC is vertical",
+       "D is below A and level with C: (−2, −1)",
+       "Width 4 − (−2) = 6; height 3 − (−1) = 4",
+       "Area 6 × 4 = 24"
+      ],
+      "answer": "D(−2, −1); area 24 square units"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Signs tell the quadrant"
+     ],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which point is in the 3rd quadrant (bottom left)?",
+      "options": [
+       "(−3, 2)",
+       "(3, −2)",
+       "(−3, −2)",
+       "(3, 2)"
+      ],
+      "answer": 2,
+      "why": "Both coordinates negative means left and down. (3, −2) is bottom right."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Start at (0, 0), move 4 left and 5 up. Coordinates?",
+     "a": "(−4, 5)",
+     "mins": 1
+    },
+    {
+     "q": "Which axis is (0, −6) on?",
+     "a": "The y-axis",
+     "mins": 1
+    },
+    {
+     "q": "How far is it from (−3, 2) to (5, 2)?",
+     "a": "8 units",
+     "mins": 1
+    },
+    {
+     "q": "What point is 3 units below (−1, 2)?",
+     "a": "(−1, −1)",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Plot A(−3, −2), B(1, −2), C(1, 3). Find D to make a rectangle and work out its area.",
+     "a": "D(−3, 3); 4 by 5, area 20 square units",
+     "mins": 4
+    },
+    {
+     "q": "Extend: (−1, 1) and (3, 1) are two corners of a square, joined by one side. Give both possible pairs of other corners.",
+     "a": "(3, 5) and (−1, 5), or (3, −3) and (−1, −3)",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: (−4, 1) and (2, 1) are the base of an isosceles triangle. The third corner is (x, 6). Find x.",
+     "a": "It must be above the middle of the base: x = −1",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Which quadrant is (5, −7) in?",
+     "a": "4th (bottom right)",
+     "mins": 1
+    },
+    {
+     "q": "What are the coordinates 6 left and 2 down from the origin?",
+     "a": "(−6, −2)",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why do we agree to write x first?",
+     "a": "So everyone reads a point the same way; (2, 5) and (5, 2) are different places.",
+     "mins": 1
+    }
+   ],
+   "homework": "On squared paper draw axes from −6 to 6 and plot a geometric pattern (no people or faces) with at least one point in each quadrant; list its coordinates.",
+   "send": "Support: printed axes; colour the quadrants. EAL: 'across' and 'up/down' gestures. Stretch: reflect your pattern in the y-axis and list the new points.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 7 9.3 Coordinates and midpoints (the school's KS3 scheme)",
+    "Squared paper, ruler and pencil (household)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "starter": "show-me",
+    "hinge": "show-me",
+    "practice": "cold-call",
+    "exit": "chat-waterfall"
+   }
+  },
+  {
+   "unit": "Autumn 2: The Cartesian plane, data and probability",
+   "n": 24,
+   "title": "Midpoints and lines parallel to the axes",
+   "duration": 50,
+   "bigQuestion": "How does averaging help us find the middle of a line?",
+   "objectives": [
+    "Find the midpoint of a line segment",
+    "Find an end point from the midpoint",
+    "Recognise and name lines x = a and y = b"
+   ],
+   "successCriteria": [
+    "All: find the midpoint of a segment with positive coordinates",
+    "Most: find midpoints with negative coordinates and name lines x = a, y = b",
+    "Some: find an end point from a midpoint"
+   ],
+   "crossCurricular": "Geography: halfway points on maps; Design: centring objects",
+   "smsc": "Moral: meeting someone halfway as a fair compromise",
+   "keywords": [
+    {
+     "term": "midpoint",
+     "def": "the point exactly halfway between two points"
+    },
+    {
+     "term": "line segment",
+     "def": "a straight line with two end points"
+    },
+    {
+     "term": "horizontal",
+     "def": "flat, going across"
+    },
+    {
+     "term": "vertical",
+     "def": "straight up and down"
+    },
+    {
+     "term": "mean",
+     "def": "add and divide by how many"
+    }
+   ],
+   "hook": {
+    "type": "question",
+    "text": "A is (−2, 1) and B is (6, 5). Where is the point exactly halfway between them?",
+    "a": "(2, 3): halfway across is the mean of −2 and 6; halfway up is the mean of 1 and 5."
+   },
+   "starter": [
+    {
+     "q": "Bismillah. Which quadrant is (−2, 5) in?",
+     "a": "2nd (top left)",
+     "mins": 1
+    },
+    {
+     "q": "Distance from (−3, 2) to (5, 2)?",
+     "a": "8 units",
+     "mins": 1
+    },
+    {
+     "q": "Work out −3 + 7.",
+     "a": "4",
+     "mins": 1
+    },
+    {
+     "q": "Work out (−4 + 6) ÷ 2.",
+     "a": "1",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Halfway along a number line",
+     "bullets": [
+      "Halfway between −2 and 6 is 2",
+      "(−2 + 6) ÷ 2 = 2"
+     ],
+     "note": "Count in from both ends together.",
+     "numberline": {
+      "min": -2,
+      "max": 6,
+      "step": 1,
+      "marks": [
+       {
+        "at": -2,
+        "label": "A"
+       },
+       {
+        "at": 2,
+        "label": "middle"
+       },
+       {
+        "at": 6,
+        "label": "B"
+       }
+      ]
+     }
+    },
+    {
+     "heading": "The midpoint rule",
+     "bullets": [
+      "Mean of the x-coordinates",
+      "Mean of the y-coordinates"
+     ],
+     "note": "Model, then pupils try (2, 8) and (6, 4) → (4, 6).",
+     "model": {
+      "problem": "Find the midpoint of (−3, 4) and (5, −2).",
+      "steps": [
+       "x: (−3 + 5) ÷ 2 = 1",
+       "y: (4 + (−2)) ÷ 2 = 1"
+      ],
+      "answer": "(1, 1)"
+     }
+    },
+    {
+     "heading": "Lines x = a and y = b",
+     "bullets": [
+      "x = 3: every point has x-coordinate 3",
+      "It is a vertical line",
+      "y = −2 is horizontal"
+     ],
+     "note": "List points on x = 3: (3, −1), (3, 0), (3, 4).",
+     "misconception": {
+      "wrong": "x = 3 is a horizontal line",
+      "right": "x = 3 is vertical: all its points have x = 3"
+     }
+    },
+    {
+     "heading": "Working backwards",
+     "bullets": [
+      "The step from A to M equals the step from M to B"
+     ],
+     "note": "A(−1, 1), M(2, 3): steps +3 and +2, so B(5, 5).",
+     "model": {
+      "problem": "M(1, 4) is the midpoint of AB. A is (−3, 7). Find B.",
+      "steps": [
+       "x step from A to M: −3 to 1 is +4",
+       "y step: 7 to 4 is −3",
+       "B = (1 + 4, 4 − 3)"
+      ],
+      "answer": "B(5, 1)"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Which coordinate stays the same?"
+     ],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which line passes through (4, −2) and (4, 7)?",
+      "options": [
+       "y = 4",
+       "x = 4",
+       "y = −2",
+       "x = 7"
+      ],
+      "answer": 1,
+      "why": "Both points have x = 4, so the vertical line x = 4. y = 4 is horizontal."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Find the midpoint of (2, 8) and (6, 4).",
+     "a": "(4, 6)",
+     "mins": 1
+    },
+    {
+     "q": "Find the midpoint of (−5, 3) and (1, −7).",
+     "a": "(−2, −2)",
+     "mins": 2
+    },
+    {
+     "q": "Name the line through (−3, 5) and (6, 5).",
+     "a": "y = 5",
+     "mins": 1
+    },
+    {
+     "q": "Where do x = −2 and y = 4 cross?",
+     "a": "(−2, 4)",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Find the midpoints of (a) (0, 0) and (8, 6) (b) (−4, 2) and (2, 10) (c) (3, −5) and (−3, 5)",
+     "a": "(a) (4, 3) (b) (−1, 6) (c) (0, 0)",
+     "mins": 4
+    },
+    {
+     "q": "Extend: M(−1, 2) is the midpoint of PQ and P is (3, −4). Find Q.",
+     "a": "Steps from P to M: −4 and +6, so Q(−5, 8)",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: x = −2, x = 4, y = 1 and y = 6 make a rectangle. Find its area, perimeter and the midpoint of a diagonal.",
+     "a": "6 by 5: area 30, perimeter 22; centre (1, 3.5)",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Find the midpoint of (−2, 7) and (4, −1).",
+     "a": "(1, 3)",
+     "mins": 1
+    },
+    {
+     "q": "Is y = −3 horizontal or vertical?",
+     "a": "Horizontal",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why is the midpoint the mean of the coordinates?",
+     "a": "The mean is the value exactly halfway between two numbers, across and up.",
+     "mins": 1
+    }
+   ],
+   "homework": "Plot four points of your choice, one in each quadrant; find the midpoint of each pair of neighbours and check on the grid.",
+   "send": "Support: number lines for each coordinate. EAL: 'midpoint', 'horizontal', 'vertical' with gestures. Stretch: find the point a third of the way along a segment.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 7 9.3 Coordinates and midpoints and 9.5 Straight-line graphs (the school's KS3 scheme)",
+    "Squared paper (household)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "starter": "show-me",
+    "hinge": "show-me",
+    "practice": "cold-call",
+    "exit": "chat-waterfall"
+   }
   }
  ]
 }
