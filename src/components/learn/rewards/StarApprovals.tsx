@@ -82,7 +82,7 @@ export function StarApprovals({ me, onChanged }: { me: { id: string } | null; on
     onChanged();
   };
 
-  if (rows === null) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
+  if (rows === null) return <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />;
 
   return (
     <div className="space-y-3">

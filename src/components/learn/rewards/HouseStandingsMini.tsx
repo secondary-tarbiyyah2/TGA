@@ -43,7 +43,7 @@ export function HouseStandingsMini({ refreshKey, highlightHouseId }: { refreshKe
         <span className="text-[10px] text-ink/65">all time</span>
       </div>
       {rows === null ? (
-        <div className="mt-3 h-24 animate-pulse rounded-lg bg-white/70" />
+        <div className="mt-3 h-24 motion-safe:animate-pulse rounded-lg bg-white/70" />
       ) : (
         <ol className="mt-2 space-y-2.5" aria-live="polite">
           {rows.map((r) => {

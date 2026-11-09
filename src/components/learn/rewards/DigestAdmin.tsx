@@ -324,7 +324,7 @@ function History({ weeks, families }: { weeks: WeekStat[] | null; families: Dige
     const f = (families || []).find((x) => x.parent_user_id === id);
     return f ? f.parent_name || f.parent_email : "A family no longer on roll";
   };
-  if (weeks === null) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
+  if (weeks === null) return <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />;
   if (weeks.length === 0)
     return (
       <EmptyState title="Nothing has been sent yet" icon="inbox">
@@ -412,7 +412,7 @@ function Settings() {
     setMsg(error ? { tone: "bad", text: `Couldn't save. Please try again.` } : { tone: "good", text: "Saved. Friday's digest will use these settings; previews use them straight away." });
   };
 
-  if (!cfg) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
+  if (!cfg) return <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />;
   return (
     <section className={`${ui.card} space-y-4`}>
       {missing && <Notice tone="warn">Settings aren&apos;t switched on on the server yet; every section is included. They will work after the next update.</Notice>}

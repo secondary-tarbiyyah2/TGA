@@ -60,7 +60,7 @@ export function FamilySupportPlan() {
     <>
       <PageHeader title="Support plan" subtitle="Your child's individual support plan: the help we give in lessons and assessments, their targets and our reviews with you." />
       {plans === null ? (
-        <div className="h-40 animate-pulse rounded-2xl bg-white" />
+        <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />
       ) : !plan || !current ? (
         <EmptyState title="No support plan">
           If your child has special educational needs, a support plan sets out the adjustments in lessons, extra time or a reader or scribe in assessments, and regular reviews with you. Message the school if you would like to talk about one.

@@ -224,7 +224,7 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
         </p>
       )}
       {Object.keys(teams).length > 0 && (
-        <p className="border-b border-gold-light/70 bg-indigo-50/50 px-5 py-2 text-xs text-indigo-900">
+        <p className="border-b border-gold-light/70 bg-teal-100/50 px-5 py-2 text-xs text-teal-900">
           &ldquo;Teams says&rdquo; tags come from the Microsoft Teams attendance report. They are suggestions only and are never saved as marks; pupils Teams couldn&apos;t match by email show no tag.
         </p>
       )}
@@ -242,7 +242,7 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
                 {didJoin ? <span className="ml-2 text-xs font-normal text-green-800">Joined {timeOf(joined[c.id])}</span> : anyJoins ? <span className="ml-2 text-xs font-normal text-amber-800">Has not joined</span> : null}
                 {teams[c.id] && (
                   <span
-                    className="ml-2 inline-block rounded-full bg-indigo-50 px-2 py-0.5 text-xs font-normal text-indigo-900"
+                    className="ml-2 inline-block rounded-full bg-teal-100 px-2 py-0.5 text-xs font-normal text-teal-900"
                     title={`Suggestion from the Microsoft Teams attendance report, matched by ${TEAMS_MATCH_LABEL[teams[c.id].matched_by] || "email"}. It is not saved as a mark: choose the mark yourself.`}
                   >
                     Teams says {teams[c.id].first_join_at ? `joined ${timeOf(teams[c.id].first_join_at!)}, ` : ""}

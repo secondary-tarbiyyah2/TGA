@@ -67,7 +67,7 @@ function DayContent() {
     <div>
       <LessonsHeader title="School day" subtitle="The blocks of the school day (lessons, breaks, lunch, prayer, enrichment) and the protected times no lesson may overlap." />
       {!data.loaded ? (
-        <div className="h-40 animate-pulse rounded-2xl bg-white" aria-label="Loading" />
+        <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" aria-label="Loading" />
       ) : (
         <div className="space-y-5">
           <PeriodsEditor periods={data.periods} reload={reload} staff={data.teachers} />

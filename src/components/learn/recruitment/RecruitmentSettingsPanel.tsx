@@ -33,7 +33,7 @@ export function RecruitmentSettingsPanel() {
     setMessage(error ? { text: "Couldn't save. Please try again.", error: true } : { text: "Saved." });
   }
 
-  if (!s) return <div className="h-40 animate-pulse rounded-2xl border border-gold-light bg-white" />;
+  if (!s) return <div className="h-40 motion-safe:animate-pulse rounded-2xl border border-gold-light bg-white" />;
 
   return (
     <div className={`${ui.card} max-w-2xl space-y-4`}>

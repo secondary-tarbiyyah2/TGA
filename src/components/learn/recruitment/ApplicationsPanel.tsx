@@ -157,7 +157,7 @@ export function ApplicationsPanel({ userId }: { userId: string | null }) {
     );
   }
 
-  if (apps === null) return <div className="h-40 animate-pulse rounded-2xl border border-gold-light bg-white" />;
+  if (apps === null) return <div className="h-40 motion-safe:animate-pulse rounded-2xl border border-gold-light bg-white" />;
 
   const activeCount = ACTIVE.reduce((n, s) => n + (counts.get(s) || 0), 0);
   const filters: { key: Filter; label: string; count?: number }[] = [

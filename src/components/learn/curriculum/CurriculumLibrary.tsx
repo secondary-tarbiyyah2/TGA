@@ -683,7 +683,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
         </p>
       )}
 
-      {lessons === null && <div className="h-40 animate-pulse rounded-2xl bg-white" />}
+      {lessons === null && <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />}
       {!building && lessons && allUnits.length === 0 && <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">No lessons for this year yet.</p>}
 
       {!building && lessons && allUnits.length > 0 && !activeKey && !results && (

@@ -826,6 +826,12 @@ html[data-dark][data-reading] .portal:not(.fixed) {
   background-image: radial-gradient(color-mix(in srgb, var(--color-gold-light) 70%, transparent) 1px, transparent 1px);
   background-size: 14px 14px;
 }
+/* FormSection (ui.tsx): a hairline and space between the titled parts of a long form. */
+.portal-form-section + .portal-form-section {
+  border-top: 1px solid var(--color-gold-light);
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+}
 .portal {
   --tile-gold-bg: #f5ecd6; --tile-gold-fg: #7d6428;
   --tile-amber-bg: #f9ecd2; --tile-amber-fg: #96620f;

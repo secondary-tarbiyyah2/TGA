@@ -70,7 +70,7 @@ export function FamilyRevision() {
       {children !== null && children.length === 0 ? (
         <EmptyState title="No children on your account yet." />
       ) : list === null ? (
-        <div className="h-32 animate-pulse rounded-2xl bg-white" />
+        <div className="h-32 motion-safe:animate-pulse rounded-2xl bg-white" />
       ) : list.length === 0 ? (
         <EmptyState title="No revision units for this year yet.">Teachers add a summary and a quiz for each unit as the year goes on. They will appear here.</EmptyState>
       ) : (

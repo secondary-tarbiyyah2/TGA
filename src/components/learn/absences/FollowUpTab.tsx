@@ -231,7 +231,7 @@ export function FollowUpTab({ absences, onChanged }: { absences: Absence[] | nul
         {error && <Notice tone="bad">{error}</Notice>}
         {notice && <Notice tone={notice.tone}>{notice.text}</Notice>}
         {absences === null ? (
-          <div className="h-24 animate-pulse rounded-xl bg-cream" />
+          <div className="h-24 motion-safe:animate-pulse rounded-xl bg-cream" />
         ) : rows.length === 0 ? (
           <EmptyState title="Nothing to follow up" icon="check" tile="tile-green">
             Every recent absence has a reason.

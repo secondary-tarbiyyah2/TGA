@@ -178,7 +178,7 @@ export function SyllabusBrowser({ area }: { area: "teach" | "admin" }) {
     setUnitKey(null);
   };
 
-  if (!plan) return <div className="h-48 animate-pulse rounded-2xl bg-white" aria-label="Loading the syllabus" />;
+  if (!plan) return <div className="h-48 motion-safe:animate-pulse rounded-2xl bg-white" aria-label="Loading the syllabus" />;
 
   const views: { key: View; label: string }[] = sp
     ? [

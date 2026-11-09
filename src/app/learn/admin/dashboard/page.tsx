@@ -54,7 +54,7 @@ function ActivityFeed() {
         </Link>
       </div>
       {rows === null ? (
-        <div className="m-5 h-24 animate-pulse rounded-xl bg-cream" aria-label="Loading" />
+        <div className="m-5 h-24 motion-safe:animate-pulse rounded-xl bg-cream" aria-label="Loading" />
       ) : rows.length === 0 ? (
         <p className="px-5 py-4 text-sm text-ink/65">Nothing recorded yet.</p>
       ) : (
@@ -142,7 +142,7 @@ function TodayLessons({ lessons }: { lessons: TodayLessonRow[] | null }) {
         </span>
       </div>
       {lessons === null ? (
-        <div className="m-5 h-24 animate-pulse rounded-xl bg-cream" aria-label="Loading" />
+        <div className="m-5 h-24 motion-safe:animate-pulse rounded-xl bg-cream" aria-label="Loading" />
       ) : lessons.length === 0 ? (
         <p className="px-5 py-4 text-sm text-ink/65">No lessons on the published timetable today.</p>
       ) : (

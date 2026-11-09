@@ -120,7 +120,7 @@ export function EntryAssessmentsAdmin() {
       )}
 
       {rows === null ? (
-        <div className="h-40 animate-pulse rounded-2xl bg-white" />
+        <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />
       ) : shown.length === 0 ? (
         <EmptyState title={filter === "marking" ? "Nothing to mark" : "No assessments here yet"} icon="clipboardCheck" tile="tile-violet" action={<button type="button" onClick={() => setCreating(true)} className={ui.btnPrimary}>New assessment</button>}>
           Each pupil gets their own paper for their year group: Maths, English and Reasoning on screen, then Writing, Qur&apos;an and Arabic with a teacher on the family call.
@@ -601,7 +601,7 @@ function WritingMark({ year, prompt, text, live, initial, marks, onSave, onRemar
       {live ? <p className="rounded-lg bg-cream px-3 py-2 text-sm text-ink/75">Done on the call: read the task aloud, the child writes on paper and holds it up to the camera. Mark what you see.</p> : text ? <blockquote className="max-h-72 overflow-y-auto whitespace-pre-wrap rounded-lg border border-gold-light/70 bg-cream/60 p-3 text-sm leading-relaxed text-ink/90">{text}<footer className="mt-2 text-xs text-ink/55">{text.trim().split(/\s+/).length} words</footer></blockquote> : <p className="text-sm text-ink/60">No writing submitted yet.</p>}
 
       {!live && first && (
-        <div className="rounded-lg border border-violet-200 bg-violet-50/60 p-3 text-sm">
+        <div className="rounded-lg border border-gold-light bg-cream/60 p-3 text-sm">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <p className="font-semibold text-ink">{first.source === "ai" ? "AI first mark" : "Estimate – needs staff marking"}{first.overall ? `: ${first.overall}` : ""}</p>
             <span className="text-xs text-ink/55">{first.source === "ai" ? `${first.model || "AI"}${first.confidence ? `, ${first.confidence} confidence` : ""}` : "length, sentences, punctuation and a short spelling list"} · {new Date(first.created_at).toLocaleString("en-GB", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}</span>

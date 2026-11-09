@@ -294,7 +294,7 @@ export function PackBuilder({
     onDone();
   }
 
-  if (loading) return <div className="h-64 animate-pulse rounded-2xl bg-white" />;
+  if (loading) return <div className="h-64 motion-safe:animate-pulse rounded-2xl bg-white" />;
 
   const step = (n: number, t: string, done: boolean) => (
     <h3 className="flex items-center gap-2 font-semibold text-ink">

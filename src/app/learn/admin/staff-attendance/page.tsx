@@ -295,7 +295,7 @@ function StaffAttendanceContent() {
           <p className="mt-0.5 text-sm text-ink/65">Everyone with a staff role who has no shift today.</p>
         </div>
         {people === null ? (
-          <div className="h-16 animate-pulse" />
+          <div className="h-16 motion-safe:animate-pulse" />
         ) : notIn.length === 0 ? (
           <p className="px-5 py-4 text-sm text-ink/65">Everyone has clocked in today.</p>
         ) : (

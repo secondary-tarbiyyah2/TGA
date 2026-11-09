@@ -224,7 +224,7 @@ function FamilyContent() {
         <ChildDetailsBanner />
         <JoinLessonCard who={{ kind: "parent" }} />
 
-        {children === null && <div className="h-32 animate-pulse rounded-2xl bg-white" />}
+        {children === null && <div className="h-32 motion-safe:animate-pulse rounded-2xl bg-white" />}
         {children && children.length > 1 && (
           <div role="group" aria-label="Choose a child" className="flex flex-wrap gap-2">
             {children.map((c) => (

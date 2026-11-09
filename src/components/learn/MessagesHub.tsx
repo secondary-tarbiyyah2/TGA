@@ -243,7 +243,7 @@ export function MessagesHub({ canAddPeople = false, subtitle }: { canAddPeople?:
       {error && <p className="mb-4 rounded-lg bg-red-50 px-4 py-2 text-sm text-red-800">{error}</p>}
 
       {loading ? (
-        <div className="h-72 animate-pulse rounded-2xl bg-white" />
+        <div className="h-72 motion-safe:animate-pulse rounded-2xl bg-white" />
       ) : nobodyToMessage && (threads || []).length === 0 ? (
         <div className="rounded-2xl border border-dashed border-gold-light bg-white p-10 text-center">
           <p className="text-base font-semibold text-ink">No one else is set up yet</p>

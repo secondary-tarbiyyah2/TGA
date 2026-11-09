@@ -84,7 +84,7 @@ export function DocumentsSection({ planId, onChanged }: { planId: string; onChan
       <div className="space-y-4">
         {msg && <Notice tone={msg.tone}>{msg.text}</Notice>}
         {docs === null ? (
-          <div className="h-16 animate-pulse rounded-xl bg-cream" />
+          <div className="h-16 motion-safe:animate-pulse rounded-xl bg-cream" />
         ) : docs.length === 0 ? (
           <p className="text-sm text-ink/65">No documents linked yet.</p>
         ) : (
@@ -156,7 +156,7 @@ export function ChangeLog({ childId, refreshKey = 0, showPupil = false, limit = 
   }, [childId, refreshKey, limit]);
 
   if (error) return <Notice tone="bad">Couldn&apos;t load the change log: {error}</Notice>;
-  if (rows === null) return <div className="h-24 animate-pulse rounded-xl bg-cream" />;
+  if (rows === null) return <div className="h-24 motion-safe:animate-pulse rounded-xl bg-cream" />;
   if (rows.length === 0) return <EmptyState title="No changes recorded yet." />;
   return (
     <ol className="divide-y divide-gold-light/60 rounded-xl border border-gold-light bg-white" aria-label="Changes, newest first">

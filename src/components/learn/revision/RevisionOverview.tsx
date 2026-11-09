@@ -29,7 +29,7 @@ export function RevisionOverview({ area }: { area: "teach" | "admin" }) {
           {error}
         </p>
       )}
-      {rows === null && <div className="h-40 animate-pulse rounded-2xl bg-white" />}
+      {rows === null && <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />}
       {rows && rows.length === 0 && !error && (
         <div className="space-y-2 rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">
           <p>No pupils have done any unit revision yet.</p>

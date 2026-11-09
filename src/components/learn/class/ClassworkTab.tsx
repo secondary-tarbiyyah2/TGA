@@ -350,7 +350,7 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
     load();
   };
 
-  if (topics === null) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
+  if (topics === null) return <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />;
 
   const editor = setting ? (
         <section ref={editorRef} aria-label={setting.editing ? `Edit ${setting.editing.title}` : setting.kind === "quiz" ? "New quiz assignment" : "New assignment"} className="scroll-mt-24 rounded-2xl border border-gold-light bg-white p-5">

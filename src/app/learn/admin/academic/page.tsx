@@ -50,7 +50,7 @@ function AcademicHub() {
       />
       <SubPageNav label="Academic setup steps" items={ACADEMIC_STEPS} />
       {!data.loaded ? (
-        <div className="h-40 animate-pulse rounded-2xl bg-white" aria-label="Loading" />
+        <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" aria-label="Loading" />
       ) : (
         <div className="space-y-5">
           <Notice tone={next ? "info" : "good"}>

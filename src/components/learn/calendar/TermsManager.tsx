@@ -460,7 +460,7 @@ export function TermsManager({
                     <div className="min-w-0 flex-1">
                       <span className="flex flex-wrap items-center gap-2 font-medium text-ink">
                         {t.name}
-                        {t.source === "sanity" && <span className="rounded-full bg-sky-100 px-2 py-0.5 text-[10px] font-medium text-sky-800">From website</span>}
+                        {t.source === "sanity" && <span className="rounded-full bg-teal-100 px-2 py-0.5 text-[10px] font-medium text-teal-900">From website</span>}
                       </span>
                       <span className="block text-xs text-ink/65">Starts: {both(t.starts_on)}</span>
                       <span className="block text-xs text-ink/65">Ends: {both(t.ends_on)}</span>

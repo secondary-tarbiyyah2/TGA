@@ -249,7 +249,7 @@ export function CurriculumPlanner() {
           {error}
         </p>
       )}
-      {units === null && <div className="h-40 animate-pulse rounded-2xl bg-white" />}
+      {units === null && <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />}
       {units && subjects.length === 0 && !error && (
         <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">The curriculum has not been loaded into the planner yet. It is filled from the syllabus files the first time the sync runs.</p>
       )}

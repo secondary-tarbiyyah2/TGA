@@ -380,7 +380,7 @@ export function ClassGradebook({
       )}
       {!types.length && <p className="text-sm text-ink/70">No assessment types are set up yet. The head or office adds them under Academic setup.</p>}
       {pupils === null || rows === null ? (
-        <div className="h-32 animate-pulse rounded-lg bg-cream" />
+        <div className="h-32 motion-safe:animate-pulse rounded-lg bg-cream" />
       ) : pupils.length === 0 ? (
         <p className="rounded-lg border border-dashed border-gold-light p-6 text-center text-sm text-ink/70">No pupils are enrolled in this class yet.</p>
       ) : (

@@ -230,6 +230,38 @@ export function Notice({ tone = "info", children }: { tone?: Exclude<Tone, "neut
   );
 }
 
+/**
+ * One titled part of a long form ("About the pupil", "Parent", "Classes"),
+ * so a form reads as a few short groups instead of one long column. The
+ * title is the group's <legend>, so screen readers announce it with each
+ * field. Put several in a row; a hairline and space separate them.
+ * Layout only: the fields inside keep their own names, values and handlers.
+ */
+export function FormSection({ title, description, children, className = "" }: { title: ReactNode; description?: ReactNode; children: ReactNode; className?: string }) {
+  return (
+    <fieldset className={`portal-form-section min-w-0 border-0 p-0 ${className}`}>
+      <legend className="float-left w-full p-0 text-[0.8125rem] font-semibold uppercase tracking-wide text-ink/80">{title}</legend>
+      {description && <p className="clear-both pt-1 text-xs leading-relaxed text-ink/65">{description}</p>}
+      <div className="clear-both space-y-4 pt-3">{children}</div>
+    </fieldset>
+  );
+}
+
+/** A finished-looking placeholder while a list or card loads: a few soft bars, announced as "Loading". */
+export function LoadingState({ rows = 4, label = "Loading", className = "" }: { rows?: number; label?: string; className?: string }) {
+  return (
+    <div role="status" aria-label={label} className={`space-y-3 rounded-2xl border border-gold-light bg-white p-4 sm:p-5 ${className}`}>
+      {Array.from({ length: rows }, (_, i) => (
+        <div key={i} className="flex items-center gap-3">
+          <span className="h-8 w-8 shrink-0 rounded-full bg-cream motion-safe:animate-pulse" />
+          <span className="h-3.5 flex-1 rounded bg-cream motion-safe:animate-pulse" style={{ maxWidth: `${85 - ((i * 17) % 35)}%` }} />
+        </div>
+      ))}
+      <span className="sr-only">{label}</span>
+    </div>
+  );
+}
+
 /** "Nothing here yet" with what to do about it: an icon tile, the headline, one line of help and (ideally) the action that fills it. */
 export function EmptyState({ title, children, icon = "inbox", tile = "tile-gold", action }: { title: string; children?: ReactNode; icon?: IconName; tile?: string; action?: ReactNode }) {
   return (

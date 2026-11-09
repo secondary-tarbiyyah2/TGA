@@ -179,7 +179,7 @@ function TimetableContent() {
     <div>
       <LessonsHeader title="Timetable" subtitle="The weekly grid. Drag a lesson to move it; click it to edit; nothing goes live until you publish." actions={exportActions} />
       {!data.loaded ? (
-        <div className="h-40 animate-pulse rounded-2xl bg-white" aria-label="Loading" />
+        <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" aria-label="Loading" />
       ) : runs.length === 0 ? (
         <p className="rounded-xl border border-dashed border-gold-light bg-cream/60 px-4 py-4 text-sm text-ink/70">
           No timetable yet. <Link href="/admin/lessons/generate" className="font-semibold underline">Generate one</Link> or start a blank draft.

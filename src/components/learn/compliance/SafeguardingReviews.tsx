@@ -218,7 +218,7 @@ export function SafeguardingReviews() {
         Opened automatically when concerns repeat (2+ about the same child in 30 days, 3+ in 90) or a serious concern stays open for 24 hours. Visible only to the Safeguarding Lead and Headteacher.
       </p>
 
-      {rows === null && <div className="mt-3 h-20 animate-pulse rounded-xl bg-cream" />}
+      {rows === null && <div className="mt-3 h-20 motion-safe:animate-pulse rounded-xl bg-cream" />}
       <ul className="mt-3 space-y-3">
         {open.map((r) => (
           <ReviewCard key={r.id} review={r} onChanged={load} />

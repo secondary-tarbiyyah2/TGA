@@ -317,7 +317,7 @@ function FeesContent() {
           </button>
         </div>
       )}
-      {rows === null && <div className="h-40 animate-pulse rounded-2xl bg-white" aria-label="Loading" />}
+      {rows === null && <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" aria-label="Loading" />}
       {rows && rows.length === 0 && !loadError && (
         <EmptyState
           title="No charges yet"
