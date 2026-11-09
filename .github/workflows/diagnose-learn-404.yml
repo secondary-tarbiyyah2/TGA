@@ -19,6 +19,10 @@ name: Diagnose the raw 404 response from learn.tarbiyyah.co.uk
 on:
   workflow_dispatch:
 
+# Least privilege (security audit T20): this workflow only reads the repo.
+permissions:
+  contents: read
+
 jobs:
   diagnose:
     runs-on: ubuntu-latest
