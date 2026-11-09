@@ -26,6 +26,7 @@ import { ukToday } from "@/lib/learn/ukTime";
 import { saveCsv } from "@/lib/learn/csv";
 import { btn, ui } from "@/components/learn/ui";
 
+import { Select } from "@/components/ui/Dropdown";
 const FORM_URL = `${MAIN_SITE_ORIGIN}/admissions/apply`;
 
 type Load = "loading" | "error" | "ready";
@@ -440,12 +441,12 @@ export function ApplicationsTab() {
         </label>
         <label className="text-xs font-medium text-ink">
           Year group
-          <select value={yearFilter} onChange={(e) => setYearFilter(e.target.value)} className={`${ui.select} mt-1 !w-auto`}>
+          <Select allowEmpty value={yearFilter} onChange={(e) => setYearFilter(e.target.value)} className={`${ui.select} mt-1 !w-auto`}>
             <option value="">All year groups</option>
             {YEAR_GROUP_OPTIONS.map((y) => (
               <option key={y.value} value={y.value}>{y.value}</option>
             ))}
-          </select>
+          </Select>
         </label>
         <p className="pb-2 text-sm text-ink/65">
           {newCount} new · {rows.length} total

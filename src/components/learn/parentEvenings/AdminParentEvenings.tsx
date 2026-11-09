@@ -19,6 +19,7 @@ import { btn, ui } from "@/components/learn/ui";
 import { isoToUkLocal, ukLocalToIso } from "@/lib/learn/openEvening";
 import { useNow } from "@/lib/learn/useNow";
 
+import { Select } from "@/components/ui/Dropdown";
 type Teacher = { id: string; name: string; cover: boolean };
 type TeacherOption = { user_id: string; full_name: string; role: string };
 type EveningRow = ParentEvening & { parent_evening_teachers: { teacher_id: string }[] };
@@ -362,13 +363,13 @@ export function AdminParentEvenings() {
             <label className="block text-xs font-medium text-ink/70" htmlFor="pe-slot">
               Length of each meeting
             </label>
-            <select id="pe-slot" value={slotMinutes} onChange={(e) => setSlotMinutes(Number(e.target.value))} className={inputCls}>
+            <Select allowEmpty id="pe-slot" value={slotMinutes} onChange={(e) => setSlotMinutes(Number(e.target.value))} className={inputCls}>
               {SLOT_LENGTHS.map((m) => (
                 <option key={m} value={m}>
                   {m} minutes
                 </option>
               ))}
-            </select>
+            </Select>
           </div>
           <input type="text" value={location} onChange={(e) => setLocation(e.target.value)} placeholder="Location (optional)" maxLength={200} aria-label="Location" className={`${inputCls} self-end`} />
           <input type="url" value={joinUrl} onChange={(e) => setJoinUrl(e.target.value)} placeholder="Default online link (optional, https://…)" aria-label="Default online link" className={`${inputCls} sm:col-span-2`} />

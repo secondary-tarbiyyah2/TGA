@@ -6,6 +6,7 @@ import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
 import { getPolicyTexts, POLICY_META_FIELDS } from "@/lib/policies";
+import { PolicyOutline, type OutlineItem } from "@/components/policies/PolicyOutline";
 
 /**
  * A policy as a readable web page, generated from the same text as its PDF
@@ -28,6 +29,21 @@ function labelTableCells(html: string): string {
     });
     return `<div class="table-wrap"><table>${body}</table></div>`;
   });
+}
+
+/** Gives every section heading an id and returns them in order, for the outline (T21). */
+function addSectionIds(html: string): { html: string; outline: OutlineItem[] } {
+  const outline: OutlineItem[] = [];
+  const used = new Set<string>();
+  const out = html.replace(/<h2>([\s\S]*?)<\/h2>/g, (_m, inner: string) => {
+    const text = inner.replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").replace(/&#39;/g, "'").replace(/&quot;/g, '"').trim();
+    let id = `s-${text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 60) || outline.length + 1}`;
+    while (used.has(id)) id += "-x";
+    used.add(id);
+    outline.push({ id, text });
+    return `<h2 id="${id}" class="scroll-mt-28">${inner}</h2>`;
+  });
+  return { html: out, outline };
 }
 
 export async function generateStaticParams() {
@@ -53,7 +69,7 @@ export default async function PolicyPage({ params }: { params: Promise<{ slug: s
   // On phones each table row becomes a stacked card, with the column heading
   // shown before each cell (data-label, see .policy-body td::before), so no
   // table needs sideways scrolling; wider screens keep the normal grid.
-  const html = labelTableCells(await marked.parse(policy.body, { gfm: true }));
+  const { html, outline } = addSectionIds(labelTableCells(await marked.parse(policy.body, { gfm: true })));
   const metaRows = POLICY_META_FIELDS.filter((f) => policy.meta[f.key]);
 
   return (
@@ -75,7 +91,13 @@ export default async function PolicyPage({ params }: { params: Promise<{ slug: s
       </section>
 
       <section className="section-pad">
-        <Container className="max-w-3xl">
+        <Container className={outline.length > 1 ? "max-w-6xl lg:grid lg:grid-cols-[15rem_minmax(0,48rem)] lg:gap-10" : "max-w-3xl"}>
+          {outline.length > 1 && (
+            <aside className="lg:row-span-1">
+              <PolicyOutline items={outline} />
+            </aside>
+          )}
+          <div className="min-w-0">
           {metaRows.length > 0 && (
             <table className="mb-10 w-full border-collapse text-sm">
               <tbody>
@@ -93,6 +115,7 @@ export default async function PolicyPage({ params }: { params: Promise<{ slug: s
             Approved by {policy.meta.approvedBy || "the Headteacher"}
             {policy.meta.nextReview ? ` · Next review due ${policy.meta.nextReview}` : ""}. Available in large print or another accessible format on request.
           </p>
+          </div>
         </Container>
       </section>
     </>

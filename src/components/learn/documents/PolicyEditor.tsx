@@ -10,6 +10,7 @@ import { btn, ui } from "@/components/learn/ui";
 import { PolicyTextEditor } from "@/components/learn/documents/PolicyTextEditor";
 import type { PolicyMeta } from "@/lib/policyMeta";
 
+import { Select } from "@/components/ui/Dropdown";
 type Row = {
   id: string;
   number: string;
@@ -318,16 +319,16 @@ export function PolicyEditor() {
           </p>
         </div>
         <label className="text-sm text-ink">Category
-          <select value={draft.category} onChange={(e) => set("category", e.target.value as Row["category"])} className={inputCls}>
+          <Select allowEmpty value={draft.category} onChange={(e) => set("category", e.target.value as Row["category"])} className={inputCls}>
             <option value="required">Required (DfE)</option>
             <option value="published">Published</option>
-          </select>
+          </Select>
         </label>
         <label className="text-sm text-ink">Parent question group
-          <select value={draft.parent_question_category || ""} onChange={(e) => set("parent_question_category", e.target.value || null)} className={inputCls}>
+          <Select allowEmpty value={draft.parent_question_category || ""} onChange={(e) => set("parent_question_category", e.target.value || null)} className={inputCls}>
             <option value="">None</option>
             {GROUPS.map((g) => <option key={g.key} value={g.key}>{g.label}</option>)}
-          </select>
+          </Select>
         </label>
         <label className="text-sm text-ink">Last reviewed
           <input type="date" value={draft.last_reviewed || ""} onChange={(e) => set("last_reviewed", e.target.value || null)} className={inputCls} />
@@ -339,10 +340,10 @@ export function PolicyEditor() {
           <input type="text" inputMode="decimal" value={draft.order_index} onChange={(e) => set("order_index", Number(e.target.value))} className={inputCls} />
         </label>
         <label className="text-sm text-ink">Who can see it
-          <select value={draft.visibility} onChange={(e) => set("visibility", e.target.value as Row["visibility"])} className={inputCls}>
+          <Select allowEmpty value={draft.visibility} onChange={(e) => set("visibility", e.target.value as Row["visibility"])} className={inputCls}>
             <option value="public">Everyone, listed on the website</option>
             <option value="staff">Staff only, for signing and compliance, not listed publicly</option>
-          </select>
+          </Select>
         </label>
         <label className="flex items-center gap-2 pt-6 text-sm text-ink">
           <input type="checkbox" checked={draft.featured} onChange={(e) => set("featured", e.target.checked)} />

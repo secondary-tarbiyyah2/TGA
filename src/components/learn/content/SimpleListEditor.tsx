@@ -6,6 +6,7 @@ import { Card } from "@/components/learn/Card";
 import { triggerPublish } from "@/lib/learn/publishSiteContent";
 import { btn, ui } from "@/components/learn/ui";
 
+import { Select } from "@/components/ui/Dropdown";
 export type FieldDef = {
   key: string;
   label: string;
@@ -180,12 +181,12 @@ function RowForm({ fields, draft, setDraft, onSave, onCancel, busy }: { fields: 
             ) : f.type === "boolean" ? (
               <input type="checkbox" checked={Boolean(draft[f.key])} onChange={(e) => setDraft({ ...draft, [f.key]: e.target.checked })} className="mt-2 block" />
             ) : f.type === "select" ? (
-              <select value={(draft[f.key] as string) || ""} onChange={(e) => setDraft({ ...draft, [f.key]: e.target.value || null })} className={`${ui.select} mt-1`}>
+              <Select allowEmpty value={(draft[f.key] as string) || ""} onChange={(e) => setDraft({ ...draft, [f.key]: e.target.value || null })} className={`${ui.select} mt-1`}>
                 <option value="">–</option>
                 {(f.options || []).map((o) => (
                   <option key={o} value={o}>{f.optionLabels?.[o] ?? o}</option>
                 ))}
-              </select>
+              </Select>
             ) : (
               <input
                 type={f.type === "number" ? "number" : f.type === "date" ? "date" : "text"}

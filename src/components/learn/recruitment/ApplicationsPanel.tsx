@@ -9,6 +9,7 @@ import { Button, EmptyState, StatusChip, ui } from "@/components/learn/ui";
 import { ApplicationDetail } from "./ApplicationDetail";
 import { APPLICATION_COLUMNS, ukDate, type JobApplication } from "./types";
 
+import { Select } from "@/components/ui/Dropdown";
 type Filter = "active" | "all" | ApplicationStatus;
 type AiFilter = "" | "strong" | "possible" | "unlikely" | "unscreened";
 type Sort = "newest" | "ai" | "rating";
@@ -172,33 +173,33 @@ export function ApplicationsPanel({ userId }: { userId: string | null }) {
         <label className="sr-only" htmlFor="rec-search">Search applications</label>
         <input id="rec-search" type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search name, email, reference or subject" className={`${ui.input} max-w-xs`} />
         <label className="sr-only" htmlFor="rec-role">Role</label>
-        <select id="rec-role" value={role} onChange={(e) => setRole(e.target.value)} className={`${ui.select} max-w-xs`}>
+        <Select allowEmpty id="rec-role" value={role} onChange={(e) => setRole(e.target.value)} className={`${ui.select} max-w-xs`}>
           <option value="">All roles</option>
           {roles.map((r) => (
             <option key={r} value={r}>{r}</option>
           ))}
-        </select>
+        </Select>
         <label className="sr-only" htmlFor="rec-subject">Subject</label>
-        <select id="rec-subject" value={subject} onChange={(e) => setSubject(e.target.value)} className={`${ui.select} max-w-xs`}>
+        <Select allowEmpty id="rec-subject" value={subject} onChange={(e) => setSubject(e.target.value)} className={`${ui.select} max-w-xs`}>
           <option value="">All subjects</option>
           {SUBJECTS.map((s) => (
             <option key={s} value={s}>{s}</option>
           ))}
-        </select>
+        </Select>
         <label className="sr-only" htmlFor="rec-ai">AI view</label>
-        <select id="rec-ai" value={aiFilter} onChange={(e) => setAiFilter(e.target.value as AiFilter)} className={`${ui.select} max-w-[12rem]`}>
+        <Select allowEmpty id="rec-ai" value={aiFilter} onChange={(e) => setAiFilter(e.target.value as AiFilter)} className={`${ui.select} max-w-[12rem]`}>
           <option value="">Any AI view</option>
           <option value="strong">AI: strong match</option>
           <option value="possible">AI: possible</option>
           <option value="unlikely">AI: unlikely</option>
           <option value="unscreened">Not screened yet</option>
-        </select>
+        </Select>
         <label className="sr-only" htmlFor="rec-sort">Sort</label>
-        <select id="rec-sort" value={sort} onChange={(e) => setSort(e.target.value as Sort)} className={`${ui.select} max-w-[12rem]`}>
+        <Select allowEmpty id="rec-sort" value={sort} onChange={(e) => setSort(e.target.value as Sort)} className={`${ui.select} max-w-[12rem]`}>
           <option value="newest">Newest first</option>
           <option value="ai">Highest AI score</option>
           <option value="rating">Highest panel rating</option>
-        </select>
+        </Select>
         <Button icon="download" onClick={exportCsv} disabled={shown.length === 0}>Export list (CSV)</Button>
         <Button variant="primary" onClick={screenAll} disabled={!!screening || unscreened.length === 0}>
           {screening ? `Screening ${screening.done} of ${screening.total}…` : `Screen with AI (${unscreened.length})`}

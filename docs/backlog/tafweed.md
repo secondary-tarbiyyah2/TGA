@@ -170,14 +170,15 @@ Statuses: **Not started** · **In progress** · **Done** · **Needs decision** �
 - **Reading:** a written review, then fixes. Check: every table has RLS and the policies match roles (`supabase/migrations`, `supabase/tests`); Edge Functions check the caller's role server-side and rate-limit public endpoints (`_shared/rateLimit.ts`, `booking_attempts`); no service-role key or secrets in client code (`grep -r SERVICE_ROLE src/`); storage buckets private with signed URLs; Supabase advisors (`get_advisors` security) clean; headers/CSP on the static host; dependency audit (`npm audit` in CI); recruitment data retention (6 months, policy 30) actually enforced.
 - **Files:** `supabase/migrations/*`, `supabase/functions/*`, `supabase/tests/*`, `next.config.*`, `.github/workflows/*`.
 - **Done when:** [ ] `docs/security-audit-2026-11.md` written with findings ranked; [ ] high findings fixed with pgTAP tests; [ ] advisors clean.
-- **Status:** Not started
+- **Found so far (9 Nov):** the "children: parent updates own" policy let a family change their own child's year group. Fixed in migration 0184 with a trigger (only `manage_people_accounts` may change year group or the working-ahead flag) and pgTAP test `pupil_working_ahead.test.sql`. Ihsan LMS (the owner's other product) keeps a `SECURITY-AUDIT.md` at the repo root; do the same here.
+- **Status:** In progress
 
 ### T21. Policies: a side outline like Google Docs ("1. Intent", "2. …")
 - **Owner's note:** "Have a nice navigation side bar for policies, '1. Intent of…', '2. …' just like Google Docs."
 - **Reading:** on each policy page, a sticky left outline built from the policy's `##` headings, numbered, highlighting the current section as you scroll; collapses to a "Contents" button on phones. Same pattern as the FAQ sidebar (T13).
 - **Files:** `src/app/(marketing)/policies/[slug]/page.tsx` (or wherever policy markdown renders), `src/components/FaqAccordion.tsx` (reuse the scroll-spy), the portal policy reader under `src/components/learn/policies/`.
-- **Done when:** [ ] outline on public and portal policy pages; [ ] current section highlighted; [ ] works at 360 px and by keyboard.
-- **Status:** Not started
+- **Done when:** [x] outline on public policy pages (`src/components/policies/PolicyOutline.tsx`, ids added in `policies/[slug]/page.tsx`); [ ] same outline in the portal policy reader; [x] current section highlighted; [x] phones get a "Contents" list that opens and closes.
+- **Status:** In progress (portal reader outstanding)
 
 ### T22. LADO equivalent for an online school, and who is involved
 - **Owner's note:** "Check equivalent of LADO and who's involved."
@@ -197,8 +198,9 @@ Statuses: **Not started** · **In progress** · **Done** · **Needs decision** �
 - **Owner's note:** "Ensure we can scroll on the portal, especially the calendar: there are 9 items, I see 3 or 4 but can't scroll."
 - **Reading:** a fixed-height card with `overflow-hidden` (or a flex child missing `min-h-0`) clips the list. Fix at the source: scrollable panels get `min-h-0 overflow-y-auto` and a visible fade/"N more" hint.
 - **Files:** the home/dashboard calendar widget under `src/components/learn/` (grep `upcoming`, `Calendar`), `LearnLayoutShell.tsx`, `globals.css` `.portal` rules.
-- **Done when:** [ ] all 9 items reachable by scroll, wheel, touch and keyboard; [ ] same fix applied to other clipped panels.
-- **Status:** Not started
+- **Cause:** the day panel beside the calendar (`calendar/DayPanel.tsx`) used `max-h-full` inside a box that only had a max-height, so the list never got a height to scroll in and the box's `overflow-hidden` cut it off after 3 or 4 items.
+- **Done when:** [x] the day panel, the phone sheet and day view are flex columns with `min-h-0`, so the list scrolls inside them; [ ] owner checks the 9-item day; [ ] other clipped panels reported get the same fix.
+- **Status:** Done (awaiting owner check)
 
 ### T25. Action centre: categorised, one page, actions in place
 - **Owner's note:** "Action centre needs to be categorised and easier to navigate and action, for save as PDF etc. Structure everything better and not across two pages."
@@ -211,15 +213,15 @@ Statuses: **Not started** · **In progress** · **Done** · **Needs decision** �
 - **Owner's note:** "admin/pupils too cluttered, not enough unique info for each student." "I should be able to add and edit students on Pupils; remove the emojis that are not appropriate."
 - **Reading:** extends T3. Compact rows with what's unique per pupil (photo/initials, year, classes count, SEND flag, attendance %, missing details, last contact); an "Add pupil" button and an Edit action that opens the full record in edit mode. No emojis; use the portal icon set.
 - **Files:** `src/components/learn/pupil/AdminPupils.tsx`, `ProfileTabs.tsx`, pupil insert/update RLS (admin/head only).
-- **Done when:** [ ] add and edit work for admin roles only (RLS tested); [ ] no emojis on the page; [ ] row opens the full record.
-- **Status:** Not started
+- **Done when:** [x] "Add pupil" on the Pupils page (opens the student form) and "Edit" on each row and on the profile (`EditPupilDialog.tsx`: name, date of birth, year group, working ahead, classes); [x] filter chips with counts (missing details, medical alerts, working ahead, no class, each year group) instead of dropdowns; [x] each row shows age, an "Ahead" chip or an "Age says Year N" warning, and classes as "first two +N"; [x] no emojis; [ ] attendance % and last contact per row (needs a light summary query); [ ] owner checks.
+- **Status:** In progress
 
 ### T27. Add pupil: year group from date of birth, branded date picker, "advanced", classes by year
 - **Owner's note:** "When adding a student it should suggest year group; the date picker needs to be smoother and in line with our brand. Year group should be derived from DOB. If a student is advanced (doing GCSE at 12) there should be a way to show that. Pick by year group or show classes based on year group on Add pupil."
 - **Reading:** England's rule: the school year runs 1 Sept to 31 Aug, so a child's year group = (academic year start − birth year), adjusted if born 1 Sept or later (Year 1 = turns 6 during the year). Suggest it and let staff override; if the chosen year is above the DOB year, show an "Working above age (advanced)" flag, stored on the pupil. Replace the native date input with a branded picker (day/month/year selects or a calendar in portal tokens). Class picker filtered to the chosen year group, with "show all" for advanced pupils.
 - **Files:** the add-pupil form (grep `Add pupil`), a new `src/lib/learn/yearGroup.ts` with unit tests, a migration adding `pupils.working_above_age boolean default false`.
-- **Done when:** [ ] DOB suggests the correct year (test 31 Aug and 1 Sept birthdays); [ ] override + advanced flag saved; [ ] classes filtered by year; [ ] branded date picker, keyboard accessible.
-- **Status:** Not started
+- **Done when:** [x] DOB suggests the year (`src/lib/learn/yearGroup.ts`; checked: born 31 Aug 2016 → Year 6, born 1 Sep 2016 → Year 5 in 2026/27); [x] override kept, and choosing a year above the DOB year ticks "Working ahead" (`children.working_ahead`, `working_ahead_note`, migration 0184, staff-only); [x] classes filtered to the chosen year with "Show all classes"; [x] Day / Month / Year picker in the portal's own dropdowns (`DateOfBirthField.tsx`). No unit-test runner in the repo yet; add one (vitest) and test `yearGroup.ts` when there is.
+- **Status:** Done (awaiting owner check)
 
 ### T28. SEND register: editable, accessible, and a SENCO role
 - **Owner's note:** "SEND register needs to be editable and accessible, with the role of SENCO leader available as an account."
@@ -232,8 +234,8 @@ Statuses: **Not started** · **In progress** · **Done** · **Needs decision** �
 - **Owner's note:** "Options shouldn't be the native dropdown, make it unique; remove the emojis and make it more suitable for the system; compartmentalise things to make it easy."
 - **Reading:** use the existing `Select`/`Dropdown` from `src/components/ui/Dropdown.tsx` (already used on the public site) across the portal instead of bare `<select>`; replace emoji icons with the icon set; long forms split into titled sections/cards.
 - **Files:** `grep -rn "<select" src/components/learn src/app/learn`, `grep -rnP "[\x{1F300}-\x{1FAFF}]" src/components/learn src/app/learn`.
-- **Done when:** [ ] no bare `<select>` in the portal; [ ] no emojis in portal UI; [ ] lint rule or test stops new ones.
-- **Status:** Not started
+- **Done when:** [x] all 185 `<select>`s in 95 portal files now use `Select` (`allowEmpty` keeps "All …" choices pickable; the trigger ignores `block` from `ui.input`); [x] emojis replaced with portal icons (Add person tiles, badges, leaderboard medals; ★ and ✓ marks kept as typography); [x] ESLint `no-restricted-syntax` blocks new `<select>` in the portal; [ ] owner checks long forms for "compartmentalise" (split into titled sections) page by page.
+- **Status:** In progress (form sectioning outstanding)
 
 ### T30. Cover and absences: more than the basics
 - **Owner's note:** "Suggesting cover and recording absences is very basic."
@@ -246,15 +248,16 @@ Statuses: **Not started** · **In progress** · **Done** · **Needs decision** �
 - **Owner's note:** "When filling in details from the profile, under pronoun we should have the pronoun of the child already linked."
 - **Reading:** wherever a form asks for pronouns for a pupil (reports, report AI drafts, letters), prefill from the pupil record instead of asking again.
 - **Files:** grep `pronoun` in `src/components/learn/` (e.g. `ReportAiDraft.tsx`).
-- **Done when:** [ ] prefilled everywhere; [ ] still editable per document.
-- **Status:** Not started
+- **Done when:** [x] report comment drafts and Weekly Tarbiyah notes start with the pronoun from the pupil's recorded gender (`src/lib/learn/pronoun.ts`); [x] still changeable per draft.
+- **Status:** Done (awaiting owner check)
 
 ### T32. Portal AI isn't working
 - **Owner's note:** "Need to fix AI because the API isn't working."
 - **Reading:** check in this order: Supabase Edge Function logs for `ai-assist` (status and error text); secret `ANTHROPIC_API_KEY` set on the project (`supabase secrets list`); model name in `supabase/functions/_shared/claude.ts` still valid; daily limit (`ai_usage_reserve`) not exhausted; the client shows the real error (`edgeErrorMessage`).
 - **Files:** `supabase/functions/_shared/claude.ts`, `supabase/functions/ai-assist/`, `.github/workflows/deploy-supabase.yml`.
-- **Done when:** [ ] root cause written here; [ ] a draft generates in the portal; [ ] errors shown to staff in plain words.
-- **Status:** Not started
+- **What we know (9 Nov):** the Supabase connector in this session reaches the owner's Ihsan LMS project, not TGA's, and GitHub Actions secrets can't be read from here, so the live cause isn't confirmed. If the AI buttons are missing entirely, `ANTHROPIC_API_KEY` isn't set (status returns `configured: false`). If they show an error, the new log line says which.
+- **Done when:** [x] ai-assist logs every failure ("ai-assist failed" with status and model) and tells staff the real reason (refused key, unknown model, no credit, busy, timeout); [ ] owner (or an AI with TGA's Supabase) reads the log after one try and fixes the setting; [ ] a draft generates.
+- **Status:** In progress (needs the owner's settings)
 
 ### T33. Revision packs made automatically when a unit's spec is done
 - **Owner's note:** "Revision packs need to be made automatically for the spec when done."
@@ -262,6 +265,16 @@ Statuses: **Not started** · **In progress** · **Done** · **Needs decision** �
 - **Files:** with T2: `PackBuilder.tsx`, revision migrations, a trigger or Edge Function on lesson status change.
 - **Done when:** [ ] draft pack created on unit completion; [ ] teacher notified; [ ] nothing visible to pupils until approved.
 - **Status:** Not started
+
+### Ideas from Ihsan LMS (owner, 9 Nov: "use ihsanlms for inspiration on structure and storing student data", not copied)
+The owner's other product (repo `Bananamc/madrasa-maina`) does these well. Each is a candidate for T26 and later items; build them TGA's way, with TGA's tables and RLS:
+- **Possible duplicates banner**: pupils with the same name (ignoring case) and date of birth flagged at the top of the list, with a merge or erase action.
+- **Field-level visibility written on the form**: each section says who sees it ("admin only, never shown to teachers" for the home address; "allergies are shown to teachers"). TGA already enforces this with `teacher_pupil_health`; say it on the form too.
+- **Consents with a timestamp**: photos, trips and emergency medical treatment stored as yes/no/not recorded plus when, with filter chips for "Not recorded" and "No photo consent". TGA has `photo_consent` and `trip_consent` without the date.
+- **Households**: siblings grouped under one family, with guardians listed once.
+- **Privacy tools per pupil**: export a pupil's data and erase a pupil (GDPR), from the roster.
+- **A master–detail roster**: the list stays on the left and the selected pupil opens beside it on wide screens.
+- **A handover file**: `docs/HANDOVER.md` with standing rules, decisions and PR status, kept current in every PR. This backlog plays that part here.
 
 ---
 
@@ -271,3 +284,4 @@ Statuses: **Not started** · **In progress** · **Done** · **Needs decision** �
 - 2026-11-09: T13 done. `FaqAccordion.tsx`: wide screens get a sticky left sidebar (search, topics with counts that jump to each section, "Still have a question?"), answers use the rest of the width; phones and tablets get a compact sticky bar under the header with search and a single scrolling row of topics. The current topic is highlighted as you scroll. Topics now jump to their section instead of filtering; search still filters. `faqs/page.tsx`: list no longer limited to `max-w-3xl`.
 - 2026-11-09: Owner answered: T2 action pack = a to-do list, AI-drafted questions OK for teacher review; T6 = sign-in tabs; T9 won't do; T18 later. New item T19 (portal-wide professional look). T6 done: `src/app/learn/login/page.tsx` now refuses an account on a tab it holds no role for (signs it out, names the right tab, offers to switch), and lands multi-role users on the chosen area.
 - 2026-11-09: Website batch (branch `claude/tafweed-website`): T7 booking wizard (`BookingCalendar.tsx`: Day → Time → Your details in one fixed panel with a summary column); T8 renamed RECIPE to **The Tarbiyyah Compass** (site, portal, lessons, policies, migration 0183); T10 accessibility menu visible from `lg` with a new links/focus option; T11 spacing scale and smooth transitions; T12 separate open-evening and taster sections and links, testimonials CTAs; T14 sticky header/footer and side-by-side children; T15 short/full email; T16 tighter curriculum pages; T17 fees calculator button. Also new policies 11 (Risk Assessment) and 30 (Safer Recruitment). Second batch added as T20–T33.
+- 2026-11-09: Portal batch (branch `claude/tafweed-portal`): T24 calendar day list scrolls; T26 Pupils page gets Add pupil, Edit, filter chips with counts and a richer row; T27 year group from date of birth, Day/Month/Year picker, "working ahead" flag (migration 0184, staff-only, also stops parents changing a year group: T20); T29 every portal `<select>` replaced and blocked by lint, emojis replaced with icons; T31 pronoun from the pupil record; T32 AI failures logged and explained; T21 policy pages get a numbered side outline. Ihsan LMS ideas recorded above.

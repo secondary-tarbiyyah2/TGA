@@ -24,6 +24,7 @@ import {
   type TargetStatus,
 } from "@/lib/learn/send";
 
+import { Select } from "@/components/ui/Dropdown";
 type Sources = {
   application_notes: string | null;
   application_ref: string | null;
@@ -218,26 +219,26 @@ export function SupportPlanEditor({ childId, childName, onChanged }: { childId: 
         </p>
         <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <Field label="Level of support" htmlFor="sp-level">
-            <select id="sp-level" className={ui.select} value={form.support_level} onChange={(e) => set("support_level", e.target.value as SupportLevel)}>
+            <Select allowEmpty id="sp-level" className={ui.select} value={form.support_level} onChange={(e) => set("support_level", e.target.value as SupportLevel)}>
               {(Object.keys(SUPPORT_LEVEL) as SupportLevel[]).map((k) => (
                 <option key={k} value={k}>
                   {SUPPORT_LEVEL[k]}
                 </option>
               ))}
-            </select>
+            </Select>
           </Field>
           <Field label="Main area of need" htmlFor="sp-need">
-            <select id="sp-need" className={ui.select} value={form.primary_need || ""} onChange={(e) => set("primary_need", (e.target.value || null) as PrimaryNeed | null)}>
+            <Select allowEmpty id="sp-need" className={ui.select} value={form.primary_need || ""} onChange={(e) => set("primary_need", (e.target.value || null) as PrimaryNeed | null)}>
               <option value="">Not set</option>
               {(Object.keys(PRIMARY_NEED) as PrimaryNeed[]).map((k) => (
                 <option key={k} value={k}>
                   {PRIMARY_NEED[k]}
                 </option>
               ))}
-            </select>
+            </Select>
           </Field>
           <Field label="SENCo" htmlFor="sp-senco">
-            <select id="sp-senco" className={ui.select} value={form.senco_id || ""} onChange={(e) => set("senco_id", e.target.value || null)}>
+            <Select allowEmpty id="sp-senco" className={ui.select} value={form.senco_id || ""} onChange={(e) => set("senco_id", e.target.value || null)}>
               <option value="">Not named</option>
               {staff.map((s) => (
                 <option key={s.user_id} value={s.user_id}>
@@ -245,17 +246,17 @@ export function SupportPlanEditor({ childId, childName, onChanged }: { childId: 
                   {s.is_senco ? " (SENCo)" : ""}
                 </option>
               ))}
-            </select>
+            </Select>
           </Field>
           <Field label="Key adult" htmlFor="sp-key" hint="Who the pupil and family go to first">
-            <select id="sp-key" className={ui.select} value={form.key_adult_id || ""} onChange={(e) => set("key_adult_id", e.target.value || null)}>
+            <Select allowEmpty id="sp-key" className={ui.select} value={form.key_adult_id || ""} onChange={(e) => set("key_adult_id", e.target.value || null)}>
               <option value="">Not named</option>
               {staff.map((s) => (
                 <option key={s.user_id} value={s.user_id}>
                   {s.full_name}
                 </option>
               ))}
-            </select>
+            </Select>
           </Field>
           <Field label="Next review due" htmlFor="sp-next" hint="Recording a review moves this on">
             <input id="sp-next" type="date" className={ui.input} value={form.next_review_due || ""} onChange={(e) => set("next_review_due", e.target.value || null)} />
@@ -299,13 +300,13 @@ export function SupportPlanEditor({ childId, childName, onChanged }: { childId: 
         <div className="grid gap-1 sm:grid-cols-2">
           <label className="flex min-h-11 items-center gap-3 rounded-lg px-3 py-2 text-sm hover:bg-cream">
             <span className="font-medium text-ink">Extra time</span>
-            <select className={`${ui.select} !w-auto`} value={form.access_extra_time_pct} onChange={(e) => set("access_extra_time_pct", Number(e.target.value))}>
+            <Select allowEmpty className={`${ui.select} !w-auto`} value={form.access_extra_time_pct} onChange={(e) => set("access_extra_time_pct", Number(e.target.value))}>
               {[...new Set([...EXTRA_TIME, form.access_extra_time_pct])].sort((a, b) => a - b).map((v) => (
                 <option key={v} value={v}>
                   {v ? `${v}%` : "None"}
                 </option>
               ))}
-            </select>
+            </Select>
           </label>
           <Switch checked={form.access_reader} onChange={(v) => set("access_reader", v)} label="Reader" hint="Questions read aloud by an adult or the computer" />
           <Switch checked={form.access_scribe} onChange={(v) => set("access_scribe", v)} label="Scribe" hint="An adult types or writes the pupil's answers" />
@@ -458,13 +459,13 @@ function TargetsSection({ planId, targets, onChanged }: { planId: string; target
               <input id="t-by" type="date" className={ui.input} value={d.by_when} onChange={(e) => setD({ by_when: e.target.value })} />
             </Field>
             <Field label="Progress" htmlFor="t-status">
-              <select id="t-status" className={ui.select} value={d.status} onChange={(e) => setD({ status: e.target.value as TargetStatus })}>
+              <Select allowEmpty id="t-status" className={ui.select} value={d.status} onChange={(e) => setD({ status: e.target.value as TargetStatus })}>
                 {(Object.keys(TARGET_STATUS) as TargetStatus[]).map((k) => (
                   <option key={k} value={k}>
                     {TARGET_STATUS[k]}
                   </option>
                 ))}
-              </select>
+              </Select>
             </Field>
           </div>
           {editing.id && (

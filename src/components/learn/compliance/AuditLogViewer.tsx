@@ -5,6 +5,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { shiftDateKey, ukDateTime, ukToday, ukWallToDate } from "@/lib/learn/ukTime";
 import { btn, ui } from "@/components/learn/ui";
 
+import { Select } from "@/components/ui/Dropdown";
 type AuditRow = {
   id: number;
   created_at: string;
@@ -158,25 +159,25 @@ export function AuditLogViewer() {
         </label>
         <label className="text-xs text-ink/70">
           Table
-          <select value={filters.table} onChange={(e) => setFilters({ ...filters, table: e.target.value })} className={`${ui.select} mt-1`}>
+          <Select allowEmpty value={filters.table} onChange={(e) => setFilters({ ...filters, table: e.target.value })} className={`${ui.select} mt-1`}>
             <option value="">All tables</option>
             {tables.map((t) => (
               <option key={t} value={t}>
                 {tableLabel(t)}
               </option>
             ))}
-          </select>
+          </Select>
         </label>
         <label className="text-xs text-ink/70">
           Action
-          <select value={filters.action} onChange={(e) => setFilters({ ...filters, action: e.target.value })} className={`${ui.select} mt-1`}>
+          <Select allowEmpty value={filters.action} onChange={(e) => setFilters({ ...filters, action: e.target.value })} className={`${ui.select} mt-1`}>
             <option value="">All actions</option>
             {actions.map((a) => (
               <option key={a} value={a}>
                 {a}
               </option>
             ))}
-          </select>
+          </Select>
         </label>
         <label className="text-xs text-ink/70">
           From

@@ -6,6 +6,7 @@ import { WEEKDAYS, timeLabel, type TimetableSlot } from "@/lib/learn/timetable";
 import { callFunction, btn, fieldCls } from "./api";
 import { hhmm, ukIsoDate, type Teacher } from "./types";
 
+import { Select } from "@/components/ui/Dropdown";
 /** Assign a covering teacher for one dated lesson. */
 export function CoverForm({ slots, teachers, onDone }: { slots: TimetableSlot[]; teachers: Teacher[]; onDone: () => void }) {
   const [slotId, setSlotId] = useState("");
@@ -41,20 +42,20 @@ export function CoverForm({ slots, teachers, onDone }: { slots: TimetableSlot[];
       {message && <p role="status" className="mb-2 text-xs text-ink/70">{message}</p>}
       <div className="grid gap-3 sm:grid-cols-2">
         <label className="block text-xs font-medium text-ink/70">Lesson
-          <select value={slotId} onChange={(e) => setSlotId(e.target.value)} className={fieldCls}>
+          <Select allowEmpty value={slotId} onChange={(e) => setSlotId(e.target.value)} className={fieldCls}>
             <option value="">Choose…</option>
             {ordered.map((s) => <option key={s.id} value={s.id}>{s.subjects?.name} ({s.classes?.name}) · {WEEKDAYS.find((w) => w.value === s.weekday)?.short} {timeLabel(s.start_time)}</option>)}
-          </select>
+          </Select>
         </label>
         <label className="block text-xs font-medium text-ink/70">Date
           <input type="date" value={date} min={ukIsoDate()} onChange={(e) => setDate(e.target.value)} className={fieldCls} aria-invalid={dayMismatch || undefined} />
           {dayMismatch && slot && <span className="mt-1 block text-xs text-amber-800">That date is not a {WEEKDAYS.find((w) => w.value === slot.weekday)?.label}.</span>}
         </label>
         <label className="block text-xs font-medium text-ink/70">Covering teacher
-          <select value={coveringTeacher} onChange={(e) => setCoveringTeacher(e.target.value)} className={fieldCls}>
+          <Select allowEmpty value={coveringTeacher} onChange={(e) => setCoveringTeacher(e.target.value)} className={fieldCls}>
             <option value="">Choose…</option>
             {teachers.filter((t) => t.id !== slot?.teacher_user_id).map((t) => <option key={t.id} value={t.id}>{t.full_name}</option>)}
-          </select>
+          </Select>
         </label>
         <label className="block text-xs font-medium text-ink/70">Reason (optional)
           <input value={reason} onChange={(e) => setReason(e.target.value)} className={fieldCls} />

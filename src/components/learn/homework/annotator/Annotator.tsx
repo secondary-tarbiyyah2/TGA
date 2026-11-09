@@ -22,6 +22,7 @@ import {
 } from "@/lib/learn/annotatorShapes";
 import { categoryOfMime, downloadFileBlob, safeObjectName, uploadWithProgress } from "@/lib/learn/homeworkFiles";
 
+import { Select } from "@/components/ui/Dropdown";
 export type AnnotatorFile = { path: string; name: string; mime: string };
 
 /** Lets the annotator show the mark box and "Return to student" owned by the marking form behind it. */
@@ -543,10 +544,10 @@ export function Annotator({
           {kind === "image" && (
             <label className="flex items-center gap-1 text-xs text-ink/70">
               Save as
-              <select value={exportAs} onChange={(e) => setExportAs(e.target.value === "pdf" ? "pdf" : "png")} className="rounded-md border border-gold-light/60 bg-white px-1.5 py-1 text-xs">
+              <Select allowEmpty value={exportAs} onChange={(e) => setExportAs(e.target.value === "pdf" ? "pdf" : "png")} className="rounded-md border border-gold-light/60 bg-white px-1.5 py-1 text-xs">
                 <option value="png">PNG</option>
                 <option value="pdf">PDF</option>
-              </select>
+              </Select>
             </label>
           )}
           {marking && (

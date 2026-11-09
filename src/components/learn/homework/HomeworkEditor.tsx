@@ -23,6 +23,7 @@ import { attachmentsOf, fileTypesOf, submissionTypesOf, toLocalInput, type Homew
 import { ui } from "@/components/learn/ui";
 import { PupilPicker } from "@/components/learn/class/PupilPicker";
 
+import { Select } from "@/components/ui/Dropdown";
 export type ClassOption = { id: string; name: string };
 export type HomeworkKind = "assignment" | "quiz";
 
@@ -254,14 +255,14 @@ export function HomeworkEditor({
           topics ? (
             <label className="block text-sm">
               <span className="mb-1 block text-xs font-medium text-ink/70">Topic</span>
-              <select value={topicId} onChange={(e) => setTopicId(e.target.value)} className={inputCls}>
+              <Select allowEmpty value={topicId} onChange={(e) => setTopicId(e.target.value)} className={inputCls}>
                 <option value="">No topic</option>
                 {topics.map((t) => (
                   <option key={t.id} value={t.id}>
                     {t.name}
                   </option>
                 ))}
-              </select>
+              </Select>
             </label>
           ) : (
             <div />
@@ -269,7 +270,7 @@ export function HomeworkEditor({
         ) : (
           <label className="block text-sm">
             <span className="mb-1 block text-xs font-medium text-ink/70">Class</span>
-            <select
+            <Select allowEmpty
               value={classId}
               onChange={(e) => {
                 setClassId(e.target.value);
@@ -283,7 +284,7 @@ export function HomeworkEditor({
                   {c.name}
                 </option>
               ))}
-            </select>
+            </Select>
           </label>
         )}
         <label className="block text-sm">

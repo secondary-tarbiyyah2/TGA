@@ -8,6 +8,7 @@ import { parsePounds, round2, todayIso } from "./shared";
 import type { FeeBand } from "@/content/seed";
 import { btn } from "@/components/learn/ui";
 
+import { Select } from "@/components/ui/Dropdown";
 export type FamilyOpt = { id: string; name: string };
 export type ChildOpt = { id: string; name: string; parentId: string; yearGroupId: string | null; yearGroup: string | null };
 export type YearGroupOpt = { id: string; name: string };
@@ -136,22 +137,22 @@ export function NewChargeDialog({
             <>
               <label className="block">
                 <span className="text-ink/70">Family</span>
-                <select value={familyId} onChange={(e) => { setFamilyId(e.target.value); setChildId(""); }} className={field}>
+                <Select allowEmpty value={familyId} onChange={(e) => { setFamilyId(e.target.value); setChildId(""); }} className={field}>
                   <option value="">Choose a family…</option>
                   {families.map((f) => (
                     <option key={f.id} value={f.id}>{f.name}</option>
                   ))}
-                </select>
+                </Select>
               </label>
               {familyChildren.length > 0 && (
                 <label className="block">
                   <span className="text-ink/70">For</span>
-                  <select value={childId} onChange={(e) => setChildId(e.target.value)} className={field}>
+                  <Select allowEmpty value={childId} onChange={(e) => setChildId(e.target.value)} className={field}>
                     <option value="">Whole family</option>
                     {familyChildren.map((c) => (
                       <option key={c.id} value={c.id}>{c.name}{c.yearGroup ? ` (${c.yearGroup})` : ""}</option>
                     ))}
-                  </select>
+                  </Select>
                 </label>
               )}
             </>
@@ -159,23 +160,23 @@ export function NewChargeDialog({
           {target === "year_group" && (
             <label className="block">
               <span className="text-ink/70">Year group</span>
-              <select value={yearGroupId} onChange={(e) => setYearGroupId(e.target.value)} className={field}>
+              <Select allowEmpty value={yearGroupId} onChange={(e) => setYearGroupId(e.target.value)} className={field}>
                 <option value="">Choose a year group…</option>
                 {yearGroups.map((y) => (
                   <option key={y.id} value={y.id}>{y.name}</option>
                 ))}
-              </select>
+              </Select>
             </label>
           )}
           {target === "class" && (
             <label className="block">
               <span className="text-ink/70">Class</span>
-              <select value={classId} onChange={(e) => setClassId(e.target.value)} className={field}>
+              <Select allowEmpty value={classId} onChange={(e) => setClassId(e.target.value)} className={field}>
                 <option value="">Choose a class…</option>
                 {classes.map((c) => (
                   <option key={c.id} value={c.id}>{c.name}</option>
                 ))}
-              </select>
+              </Select>
             </label>
           )}
 

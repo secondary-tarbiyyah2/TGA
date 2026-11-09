@@ -13,6 +13,7 @@ import { HomeworkEditor, type HomeworkKind } from "@/components/learn/homework/H
 import { ReviewQueue } from "@/components/learn/classwork/ReviewQueue";
 import { Tabs } from "@/components/learn/Tabs";
 
+import { Select } from "@/components/ui/Dropdown";
 type Topic = { id: string; name: string; position: number };
 type Hw = Homework & { topic_id: string | null; status?: string; kind?: string | null; assigned_child_ids?: string[] | null };
 type Mat = { id: string; title: string; kind: "material" | "question"; body: string | null; resources: unknown; topic_id: string | null; allow_comments: boolean; created_at: string };
@@ -120,14 +121,14 @@ function MaterialForm({ classId, kind, topics, defaultTopic, onDone, onCancel }:
       <div className="mt-4 flex flex-wrap items-center gap-4">
         <label className="text-sm text-ink/80">
           Topic{" "}
-          <select value={topicId} onChange={(e) => setTopicId(e.target.value)} className="ml-1 rounded-lg border border-gold-light/70 px-2 py-1.5 text-sm">
+          <Select allowEmpty value={topicId} onChange={(e) => setTopicId(e.target.value)} className="ml-1 rounded-lg border border-gold-light/70 px-2 py-1.5 text-sm">
             <option value="">No topic</option>
             {topics.map((t) => (
               <option key={t.id} value={t.id}>
                 {t.name}
               </option>
             ))}
-          </select>
+          </Select>
         </label>
         <label className="flex items-center gap-2 text-sm text-ink/80">
           <input type="checkbox" checked={allowComments} onChange={(e) => setAllowComments(e.target.checked)} />
@@ -532,14 +533,14 @@ export function ClassworkTab({ classId, classTitle, viewer, classHref }: { class
                           </button>
                         )}
                         {canEdit && (
-                          <select aria-label={`Topic for ${r.title}`} value={r.topicId ?? ""} onChange={(e) => moveItem(r, e.target.value)} className="max-w-[10rem] rounded-lg border border-gold-light/70 px-2 py-1 text-xs text-ink/70">
+                          <Select allowEmpty aria-label={`Topic for ${r.title}`} value={r.topicId ?? ""} onChange={(e) => moveItem(r, e.target.value)} className="max-w-[10rem] rounded-lg border border-gold-light/70 px-2 py-1 text-xs text-ink/70">
                             <option value="">No topic</option>
                             {topics.map((t) => (
                               <option key={t.id} value={t.id}>
                                 {t.name}
                               </option>
                             ))}
-                          </select>
+                          </Select>
                         )}
                         {canEdit && r.type === "material" && (
                           <button type="button" onClick={() => removeMaterial(r.id)} className="text-xs text-ink/65 hover:text-red-700 hover:underline">

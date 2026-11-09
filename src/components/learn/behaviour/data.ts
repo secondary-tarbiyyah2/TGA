@@ -1,6 +1,7 @@
 import type { getSupabaseClient } from "@/lib/supabase/client";
 import { ukToday } from "@/lib/learn/ukTime";
 
+import type { IconName } from "@/components/learn/Icon";
 export type Sb = NonNullable<ReturnType<typeof getSupabaseClient>>;
 
 export type BehaviourKind = "merit" | "demerit" | "incident";
@@ -67,16 +68,17 @@ export const DEMERIT_CATEGORIES: { label: string; points: number }[] = [
 
 export const INCIDENT_CATEGORIES: string[] = ["Classroom disruption", "Bullying or unkindness", "Physical incident", "Damage to property", "Online conduct", "Other"];
 
-export const BADGE_TYPES: { name: string; emoji: string }[] = [
-  { name: "Star of the week", emoji: "⭐" },
-  { name: "Great effort", emoji: "💪" },
-  { name: "Kindness", emoji: "💚" },
-  { name: "Punctuality", emoji: "⏰" },
-  { name: "Best Qur'an recitation", emoji: "📖" },
+// Portal icons, not emojis (owner, Nov 2026: "remove the emojis and make it more suitable for the system").
+export const BADGE_TYPES: { name: string; icon: IconName }[] = [
+  { name: "Star of the week", icon: "star" },
+  { name: "Great effort", icon: "target" },
+  { name: "Kindness", icon: "heartHandshake" },
+  { name: "Punctuality", icon: "clock" },
+  { name: "Best Qur'an recitation", icon: "bookOpen" },
 ];
 
-export function badgeEmoji(name: string): string {
-  return BADGE_TYPES.find((b) => b.name === name)?.emoji || "🏅";
+export function badgeIcon(name: string): IconName {
+  return BADGE_TYPES.find((b) => b.name === name)?.icon || "award";
 }
 
 // ── dates (all local, ISO yyyy-mm-dd) ───────────────────────────────────

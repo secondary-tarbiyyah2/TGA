@@ -7,6 +7,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { fetchTimetablePeriods, getPublishedRunId, timeLabel, type TimetablePeriod, type TimetableSlot } from "@/lib/learn/timetable";
 import { ui } from "@/components/learn/ui";
 
+import { Select } from "@/components/ui/Dropdown";
 type Staff = { id: string; name: string; isCoverStaff: boolean };
 type Absence = { id: string; teacher_user_id: string; starts_on: string; ends_on: string; reason: string | null };
 type CoverRow = { id: string; slot_id: string; cover_date: string; covering_teacher_user_id: string };
@@ -210,14 +211,14 @@ export function CoverSuggestions() {
         <div className="mt-3 grid gap-3 sm:grid-cols-4">
           <label className="block text-xs font-medium text-ink/70">
             Teacher
-            <select value={teacherId} onChange={(e) => setTeacherId(e.target.value)} className={fieldCls}>
+            <Select allowEmpty value={teacherId} onChange={(e) => setTeacherId(e.target.value)} className={fieldCls}>
               <option value="">Choose…</option>
               {staff.map((s) => (
                 <option key={s.id} value={s.id}>
                   {s.name}
                 </option>
               ))}
-            </select>
+            </Select>
           </label>
           <label className="block text-xs font-medium text-ink/70">
             First day

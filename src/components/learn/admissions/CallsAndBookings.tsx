@@ -7,6 +7,7 @@ import { callEdgeFunction, edgeErrorMessage } from "@/lib/learn/edge";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { btn, ui } from "@/components/learn/ui";
 
+import { Select } from "@/components/ui/Dropdown";
 /**
  * Starts (or rejoins) the in-house video call for a booking, same
  * BigBlueButton system already running lessons, including native
@@ -150,13 +151,13 @@ function StaffAvailabilityEditor({ staff, onStaffUpdated }: { staff: StaffRow; o
         <form onSubmit={addRule} className="mt-3 flex flex-wrap items-end gap-2">
           <label className="text-xs text-ink">
             Day
-            <select name="weekday" className={`${ui.select} mt-1 !w-auto`}>
+            <Select allowEmpty name="weekday" className={`${ui.select} mt-1 !w-auto`}>
               {WEEKDAYS.map((d, i) => (
                 <option key={d} value={i}>
                   {d}
                 </option>
               ))}
-            </select>
+            </Select>
           </label>
           <label className="text-xs text-ink">
             From

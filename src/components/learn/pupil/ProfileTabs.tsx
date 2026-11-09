@@ -9,6 +9,7 @@ import { reasonLabel } from "@/components/learn/absences/data";
 import { ReportDocument, PrintStyles, StatusBadge } from "@/components/learn/reports/ReportDocument";
 import { asNarrative } from "@/components/learn/reports/summary";
 
+import { Select } from "@/components/ui/Dropdown";
 // The tabs of a pupil's profile that come from other parts of the portal
 // (registers, behaviour, stars, reports). Each reads the same RLS-scoped
 // tables those pages use, so the numbers always agree with them.
@@ -81,11 +82,11 @@ export function PupilAttendanceTab({ childId }: { childId: string }) {
       <div className="flex flex-wrap items-center justify-between gap-2">
         <label className="flex items-center gap-2 text-sm text-ink/75">
           <span>Period</span>
-          <select value={days} onChange={(e) => setDays(Number(e.target.value) as 30 | 90 | 365)} className={`${ui.input} !w-auto !py-1.5`}>
+          <Select allowEmpty value={days} onChange={(e) => setDays(Number(e.target.value) as 30 | 90 | 365)} className={`${ui.input} !w-auto !py-1.5`}>
             <option value={30}>Last 30 days</option>
             <option value={90}>Last 90 days</option>
             <option value={365}>Last 12 months</option>
-          </select>
+          </Select>
         </label>
         <Link href="/admin/absences" className={`${ui.btnSecondary} ${ui.sm}`}>
           Open Absences

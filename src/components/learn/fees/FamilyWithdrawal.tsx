@@ -8,6 +8,7 @@ import { formatDate } from "@/components/learn/fees/shared";
 import { Notice, StatusChip, ui } from "@/components/learn/ui";
 import { DESTINATIONS, NEEDS_SCHOOL, NOTICE_COLUMNS, NOTICE_DAYS, NOTICE_STATUS_LABEL, addDays, destinationLabel, type Destination, type WithdrawalNotice } from "@/components/learn/fees/withdrawal";
 
+import { Select } from "@/components/ui/Dropdown";
 type Form = {
   childId: string;
   lastDay: string;
@@ -189,13 +190,13 @@ export function FamilyWithdrawal() {
           {kids.length > 1 && (
             <label className={ui.label}>
               Child
-              <select className={`${ui.input} ${field}`} value={childId} onChange={(e) => set({ childId: e.target.value })}>
+              <Select allowEmpty className={`${ui.input} ${field}`} value={childId} onChange={(e) => set({ childId: e.target.value })}>
                 {kids.map((k) => (
                   <option key={k.id} value={k.id}>
                     {k.name}
                   </option>
                 ))}
-              </select>
+              </Select>
             </label>
           )}
           {openNotice ? (

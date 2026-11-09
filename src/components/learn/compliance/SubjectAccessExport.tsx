@@ -6,6 +6,7 @@ import { useLearnPermission, useLearnSession } from "@/lib/learn/session";
 import { useNow } from "@/lib/learn/useNow";
 import { btn, ui } from "@/components/learn/ui";
 
+import { Select } from "@/components/ui/Dropdown";
 type SubjectType = "pupil" | "parent";
 type Candidate = { id: string; label: string; detail: string };
 type RequestOption = { id: string; requester_name: string; received_at: string };
@@ -178,14 +179,14 @@ export function SubjectAccessExport() {
           )}
           <label className="block text-xs text-ink/70">
             Link to a logged request (optional)
-            <select value={requestId} onChange={(e) => setRequestId(e.target.value)} className={`${ui.select} mt-1`}>
+            <Select allowEmpty value={requestId} onChange={(e) => setRequestId(e.target.value)} className={`${ui.select} mt-1`}>
               <option value="">Not linked</option>
               {requests.map((r) => (
                 <option key={r.id} value={r.id}>
                   {r.requester_name} · received {new Date(r.received_at).toLocaleDateString("en-GB")}
                 </option>
               ))}
-            </select>
+            </Select>
           </label>
           <button type="button" onClick={generate} disabled={busy} className={btn("primary")}>
             {busy ? "Preparing the export…" : "Generate export"}

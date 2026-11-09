@@ -107,7 +107,7 @@ export function DayPanel({
   const weekend = wd === 0 || wd === 6;
 
   return (
-    <div className="flex max-h-full flex-col">
+    <div className="flex max-h-full min-h-0 flex-1 flex-col">
       <div className="border-b border-gold-light px-4 py-3">
         <div className="flex items-start gap-2">
           <div className="min-w-0 flex-1">
@@ -148,7 +148,7 @@ export function DayPanel({
         </ul>
       )}
 
-      <div className="space-y-4 overflow-y-auto p-4">
+      <div className="min-h-0 flex-1 space-y-4 overflow-y-auto overscroll-contain p-4">
         {loading ? (
           <p className="text-sm text-ink/65">Loading…</p>
         ) : items.length === 0 ? (

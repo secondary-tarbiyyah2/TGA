@@ -91,6 +91,23 @@ async function addTokens(task: Task, usage?: { input_tokens: number; output_toke
 const LIMIT_REACHED = () => jsonResponse({ ok: false, error: "ai_daily_limit", detail: `The school's AI limit for today (${DAILY_LIMIT} drafts) has been reached. It resets at midnight.` }, 429);
 const AI_FAILED = (detail?: string) => jsonResponse({ ok: false, error: "ai_failed", detail: detail || "The AI couldn't write a draft just now. Try again in a moment." }, 502);
 
+/**
+ * Logs why a call failed (Supabase → Edge Functions → ai-assist → Logs) and
+ * turns a settings problem into words staff can pass on, instead of the same
+ * "try again" every time (owner, Nov 2026: "AI isn't working", Tafweed T32).
+ * Only staff writers reach the AI tasks, so naming the setting is safe.
+ */
+function failureDetail(task: string, res: { error?: string; status?: number; detail?: string; model?: string }): string | undefined {
+  console.error("ai-assist failed", task, JSON.stringify({ error: res.error, status: res.status, model: res.model, detail: (res.detail || "").slice(0, 300) }));
+  const d = (res.detail || "").toLowerCase();
+  if (res.status === 401 || res.status === 403) return "The AI provider refused the school's API key. The site admin needs to check ANTHROPIC_API_KEY in the repository secrets, then redeploy.";
+  if (res.status === 404 || (res.status === 400 && d.includes("model"))) return `The AI model "${res.model}" isn't available. The site admin needs to check the AI_MODEL setting.`;
+  if (d.includes("credit") || d.includes("billing")) return "The school's AI account has run out of credit. The site admin needs to top it up.";
+  if (res.error === "rate_limited") return "The AI service is busy. Try again in a minute.";
+  if (res.error === "timeout") return "The AI took too long to answer. Try again.";
+  return undefined;
+}
+
 function ukStamp(iso: string): string {
   return new Date(iso).toLocaleString("en-GB", { timeZone: "Europe/London", weekday: "long", day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" }) + " UK time";
 }
@@ -212,7 +229,7 @@ Deno.serve(async (req) => {
     const p = buildReportPrompt(v.input);
     const res = await callClaudeJson({ system: p.system, user: p.user, maxTokens: p.maxTokens, temperature: p.temperature }, (raw) => validateReportOutput(raw, v.input));
     await addTokens("report_comment", res.usage);
-    if (!res.ok) return AI_FAILED();
+    if (!res.ok) return AI_FAILED(failureDetail("report_comment", res));
     return jsonResponse({ ok: true, comment: res.data.comment, recipe_line: res.data.recipe_line });
   }
 
@@ -224,7 +241,7 @@ Deno.serve(async (req) => {
     const p = buildNotePrompt(v.input);
     const res = await callClaudeJson({ system: p.system, user: p.user, maxTokens: p.maxTokens, temperature: p.temperature }, validateNoteOutput);
     await addTokens("tarbiyah_note", res.usage);
-    if (!res.ok) return AI_FAILED();
+    if (!res.ok) return AI_FAILED(failureDetail("tarbiyah_note", res));
     return jsonResponse({ ok: true, note: res.data.note });
   }
 

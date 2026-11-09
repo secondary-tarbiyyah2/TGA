@@ -24,6 +24,7 @@ import {
 import { GcseStatusChip, GradeChip } from "@/components/learn/gcse/GcseParts";
 import { GcsePupilDrawer, type PupilSubjectRow } from "@/components/learn/gcse/GcsePupilDrawer";
 
+import { Select } from "@/components/ui/Dropdown";
 type Row = GcseRow & { children: { name: string } | null; subjects: { name: string } | null; classes: { name: string; year_group: string | null } | null };
 
 const STATUSES: GcseStatus[] = ["behind", "on_track", "ahead", "no_data"];
@@ -254,7 +255,7 @@ export function GcseOverview() {
         <div className="mt-4 flex flex-wrap items-end gap-3 text-xs font-medium text-ink/70">
           <label>
             Year group
-            <select
+            <Select allowEmpty
               value={year}
               onChange={(e) => {
                 setYear(e.target.value);
@@ -268,29 +269,29 @@ export function GcseOverview() {
                   {y}
                 </option>
               ))}
-            </select>
+            </Select>
           </label>
           <label>
             Class
-            <select value={classId} onChange={(e) => setClassId(e.target.value)} className={`${SELECT} mt-1 block`}>
+            <Select allowEmpty value={classId} onChange={(e) => setClassId(e.target.value)} className={`${SELECT} mt-1 block`}>
               <option value="">All</option>
               {classOpts.map(([id, name]) => (
                 <option key={id} value={id}>
                   {name}
                 </option>
               ))}
-            </select>
+            </Select>
           </label>
           <label>
             Subject
-            <select value={subjectId} onChange={(e) => setSubjectId(e.target.value)} className={`${SELECT} mt-1 block`}>
+            <Select allowEmpty value={subjectId} onChange={(e) => setSubjectId(e.target.value)} className={`${SELECT} mt-1 block`}>
               <option value="">All</option>
               {subjectOpts.map(([id, name]) => (
                 <option key={id} value={id}>
                   {name}
                 </option>
               ))}
-            </select>
+            </Select>
           </label>
           <label>
             Pupil

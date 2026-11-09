@@ -29,6 +29,7 @@ import {
 import { Tabs } from "@/components/learn/Tabs";
 import { Button, ButtonLink, ui } from "@/components/learn/ui";
 
+import { Select } from "@/components/ui/Dropdown";
 type Tab = "merits" | "incidents" | "badges";
 type Sub = "overview" | "all";
 type ClassOpt = { id: string; name: string };
@@ -191,13 +192,13 @@ function BehaviourContent() {
             {sub === "overview" && (
               <label className="text-sm text-ink/70">
                 <span className="sr-only">Period</span>
-                <select value={period} onChange={(e) => setPeriod(e.target.value as Period)} className={`${ui.select} !w-auto`}>
+                <Select allowEmpty value={period} onChange={(e) => setPeriod(e.target.value as Period)} className={`${ui.select} !w-auto`}>
                   {(Object.keys(PERIOD_LABEL) as Period[]).map((p) => (
                     <option key={p} value={p}>
                       {PERIOD_LABEL[p]}
                     </option>
                   ))}
-                </select>
+                </Select>
               </label>
             )}
           </div>
@@ -264,22 +265,22 @@ function BehaviourContent() {
             <section className="rounded-2xl border border-gold-light bg-white p-4">
               <div className="mb-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
                 <input type="search" value={fName} onChange={(e) => setFName(e.target.value)} placeholder="Search student…" aria-label="Student" className={ui.input} />
-                <select value={fClass} onChange={(e) => setFClass(e.target.value)} aria-label="Class" className={ui.select}>
+                <Select allowEmpty value={fClass} onChange={(e) => setFClass(e.target.value)} aria-label="Class" className={ui.select}>
                   <option value="">All classes</option>
                   {classes.map((c) => (
                     <option key={c.id} value={c.id}>
                       {c.name}
                     </option>
                   ))}
-                </select>
-                <select value={fYear} onChange={(e) => setFYear(e.target.value)} aria-label="Year group" className={ui.select}>
+                </Select>
+                <Select allowEmpty value={fYear} onChange={(e) => setFYear(e.target.value)} aria-label="Year group" className={ui.select}>
                   <option value="">All year groups</option>
                   {years.map((y) => (
                     <option key={y.id} value={y.id}>
                       {y.name}
                     </option>
                   ))}
-                </select>
+                </Select>
                 <input
                   type="date"
                   value={fFrom}

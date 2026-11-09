@@ -11,6 +11,7 @@ import type { AdmissionsContext } from "@/components/learn/admissions/useAdmissi
 import type { StaffOption } from "@/components/learn/admissions/ApplicationDrawer";
 import { Group, Pill, fieldCls, ghostBtn, primaryBtn } from "@/components/learn/admissions/ui";
 
+import { Select } from "@/components/ui/Dropdown";
 type Draft = {
   assessmentAt: string;
   link: string;
@@ -210,12 +211,12 @@ export function AssessmentPanel({
           </label>
           <label className="block text-sm font-medium text-ink sm:col-span-2">
             Invigilator
-            <select value={d.invigilator} onChange={(e) => set("invigilator", e.target.value)} className={fieldCls}>
+            <Select allowEmpty value={d.invigilator} onChange={(e) => set("invigilator", e.target.value)} className={fieldCls}>
               <option value="">Not assigned</option>
               {staff.map((s) => (
                 <option key={s.profile_id} value={s.profile_id}>{s.display_name}</option>
               ))}
-            </select>
+            </Select>
           </label>
           <label className="block text-sm font-medium text-ink">
             Started (UK time)

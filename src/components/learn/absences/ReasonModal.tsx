@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { REASONS, saveReason } from "./data";
 
+import { Select } from "@/components/ui/Dropdown";
 export const modalFieldCls = "mt-1 w-full rounded-lg border border-gold-light bg-white px-3 py-2 text-sm text-ink focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500";
 
 export function Modal({ title, onClose, children }: { title: string; onClose: () => void; children: React.ReactNode }) {
@@ -45,13 +46,13 @@ export function ReasonModal({ childId, childName, date, dateLabel, initialCode, 
         <p className="text-sm text-ink/65">{dateLabel}</p>
         <label className="block text-sm font-medium text-ink">
           Reason
-          <select value={code} onChange={(e) => setCode(e.target.value)} className={modalFieldCls}>
+          <Select allowEmpty value={code} onChange={(e) => setCode(e.target.value)} className={modalFieldCls}>
             {REASONS.map((r) => (
               <option key={r.value} value={r.value}>
                 {r.label}
               </option>
             ))}
-          </select>
+          </Select>
         </label>
         <label className="block text-sm font-medium text-ink">
           Note (optional, staff only)

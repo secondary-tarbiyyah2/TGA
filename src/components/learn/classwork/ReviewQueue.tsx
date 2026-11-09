@@ -8,6 +8,7 @@ import { Tabs } from "@/components/learn/Tabs";
 import { ui } from "@/components/learn/ui";
 import { PageHeader } from "@/components/learn/PageHeader";
 
+import { Select } from "@/components/ui/Dropdown";
 type Item = {
   submission_id: string;
   homework_id: string;
@@ -218,14 +219,14 @@ export function ReviewQueue({ classId: fixedClass, homeworkId, embedded = false,
           {/* Classes: a list with counts on wide screens, a drop-down on phones. */}
           <label className="block text-sm font-semibold text-ink lg:hidden">
             Class
-            <select value={classId} onChange={(e) => setClassId(e.target.value)} className="mt-1 block w-full rounded-lg border border-gold-light bg-white px-3 py-2 text-sm font-normal">
+            <Select allowEmpty value={classId} onChange={(e) => setClassId(e.target.value)} className="mt-1 block w-full rounded-lg border border-gold-light bg-white px-3 py-2 text-sm font-normal">
               <option value="">All classes ({items.length})</option>
               {classCounts.map((c) => (
                 <option key={c.id} value={c.id}>
                   {c.name} ({c.n})
                 </option>
               ))}
-            </select>
+            </Select>
           </label>
           <nav aria-label="Classes" className="hidden self-start rounded-2xl border border-gold-light bg-white p-2 lg:sticky lg:top-[76px] lg:block">
             <ul className="space-y-0.5">

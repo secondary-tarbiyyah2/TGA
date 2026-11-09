@@ -131,6 +131,9 @@ export function Dropdown({
 }: DropdownProps) {
   const autoId = useId().replace(/:/g, "");
   const triggerId = id ?? `dd-${autoId}`;
+  // Classes written for a <select> (e.g. the portal's ui.input) may say
+  // "block"; the trigger must stay a flex row so the chevron sits right.
+  const triggerClass = (className ?? "").replace(/(^|\s)(block|inline-block)(?=\s|$)/g, " ");
   const listId = `${triggerId}-list`;
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
@@ -331,7 +334,7 @@ export function Dropdown({
         onKeyDown={onTriggerKey}
         className={`flex w-full items-center gap-2 bg-white text-left transition-colors focus:outline-none focus-visible:border-gold-500 focus-visible:ring-2 focus-visible:ring-gold-300 disabled:cursor-not-allowed disabled:opacity-60 ${
           open ? "border-gold-500 ring-2 ring-gold-300" : ""
-        } ${invalid ? "border-red-500" : ""} ${className}`}
+        } ${invalid ? "border-red-500" : ""} ${triggerClass}`}
       >
         {selected?.icon && <span className="shrink-0 text-base leading-none" aria-hidden="true">{selected.icon}</span>}
         <span className={`min-w-0 flex-1 truncate ${selected ? "text-ink" : "text-ink/50"}`}>{selected ? selected.label : placeholder}</span>
@@ -464,13 +467,23 @@ export function Select({
   defaultValue?: string | number;
   onChange?: (e: SelectChange) => void;
   autoComplete?: string;
+  /** Keep the <option value=""> pickable as a real choice (e.g. "All year
+   *  groups" on a filter), as a native <select> does. Off by default so a
+   *  required form field's "Choose…" stays a placeholder only. */
+  allowEmpty?: boolean;
 }) {
-  const { options, placeholder } = useMemo(() => optionsFromChildren(children), [children]);
+  const parsed = useMemo(() => optionsFromChildren(children), [children]);
+  const { allowEmpty, ...restNoEmpty } = rest;
+  const { placeholder } = parsed;
+  const options = useMemo(
+    () => (allowEmpty && parsed.placeholder !== undefined ? [{ value: "", label: parsed.placeholder }, ...parsed.options] : parsed.options),
+    [allowEmpty, parsed]
+  );
   const [inner, setInner] = useState(() => String(defaultValue ?? ""));
   const controlled = value !== undefined;
   const current = controlled ? String(value) : inner;
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { autoComplete: _ac, ...dropdownProps } = rest as typeof rest & { autoComplete?: string };
+  const { autoComplete: _ac, ...dropdownProps } = restNoEmpty as typeof restNoEmpty & { autoComplete?: string };
   return (
     <Dropdown
       {...dropdownProps}

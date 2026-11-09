@@ -12,6 +12,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { Tabs, tabPanelProps } from "@/components/learn/Tabs";
 import { ui } from "@/components/learn/ui";
 
+import { Select } from "@/components/ui/Dropdown";
 type Tab = "overview" | "mocks" | "interventions" | "enter";
 const TABS: { id: Tab; label: string }[] = [
   { id: "overview", label: "Overview" },
@@ -72,7 +73,7 @@ function AdminGcseContent() {
             <div className={`mb-6 ${ui.card}`}>
               <h2 className={ui.sectionTitle}>Enter or edit grades for a class</h2>
               <p className="mt-1 text-sm text-ink/65">Fill down, paste from a spreadsheet, or take actuals from assessments, then save once.</p>
-              <select value={classId} onChange={(e) => setClassId(e.target.value)} aria-label="GCSE class" className={`mt-3 ${ui.select} sm:max-w-sm`}>
+              <Select allowEmpty value={classId} onChange={(e) => setClassId(e.target.value)} aria-label="GCSE class" className={`mt-3 ${ui.select} sm:max-w-sm`}>
                 <option value="">Choose a Year 10 or 11 class…</option>
                 {classGroups.map((g) =>
                   classGroups.length === 1 ? (
@@ -91,7 +92,7 @@ function AdminGcseContent() {
                     </optgroup>
                   ),
                 )}
-              </select>
+              </Select>
               {classes.length === 0 && <p className="mt-2 text-sm text-ink/65">No Year 10 or Year 11 classes with a subject yet.</p>}
             </div>
             {classId && <GcseClassPanel key={classId} classId={classId} onSaved={() => setVersion((v) => v + 1)} />}

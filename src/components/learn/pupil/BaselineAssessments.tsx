@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { ui } from "@/components/learn/ui";
 
+import { Select } from "@/components/ui/Dropdown";
 export type BaselineRow = {
   id: string;
   child_id: string;
@@ -195,9 +196,9 @@ export function BaselineAssessments({ childId, canEdit }: { childId: string; can
         <div className="mt-4 space-y-3 rounded-xl border border-gold-light/60 bg-cream/40 p-3">
           <div className="grid gap-3 sm:grid-cols-3">
             <label className="text-sm text-ink">Test
-              <select value={f.test} onChange={(e) => setF({ ...f, test: e.target.value as BaselineRow["test"] })} className={`mt-1 ${ui.input}`}>
+              <Select allowEmpty value={f.test} onChange={(e) => setF({ ...f, test: e.target.value as BaselineRow["test"] })} className={`mt-1 ${ui.input}`}>
                 {TESTS.map((t) => <option key={t.key} value={t.key}>{t.label}</option>)}
-              </select>
+              </Select>
             </label>
             <label className="text-sm text-ink">Level (e.g. C, D, E)
               <input value={f.level} onChange={(e) => setF({ ...f, level: e.target.value })} className={`mt-1 ${ui.input}`} />

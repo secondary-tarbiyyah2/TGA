@@ -7,6 +7,7 @@ import type { Teacher } from "@/components/learn/timetable/types";
 import { AUDIENCES, bandFor, ENRICHMENT_ACTIVITIES, FALLBACK_PERIODS, KIND_STYLE, PERIOD_KINDS, WEEKDAYS, getPublishedRunId, type PeriodKind, type TimetablePeriod, type TimetableSlot } from "@/lib/learn/timetable";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
+import { Select } from "@/components/ui/Dropdown";
 type Draft = {
   id: string | null;
   name: string;
@@ -150,9 +151,9 @@ export function PeriodsEditor({ periods, reload, staff = [] }: { periods: Timeta
       <div className="flex flex-wrap items-end gap-2">
         <label className="text-xs font-medium text-ink/70">
           Kind
-          <select value={draft.kind} onChange={(e) => set({ kind: e.target.value as PeriodKind })} className={fieldCls}>
+          <Select allowEmpty value={draft.kind} onChange={(e) => set({ kind: e.target.value as PeriodKind })} className={fieldCls}>
             {PERIOD_KINDS.map((k) => <option key={k.value} value={k.value}>{k.label}</option>)}
-          </select>
+          </Select>
         </label>
         <label className="text-xs font-medium text-ink/70">
           Name
@@ -180,10 +181,10 @@ export function PeriodsEditor({ periods, reload, staff = [] }: { periods: Timeta
         <div>
           <label className="block text-xs font-medium text-ink/70">
             Supervised by
-            <select value={draft.supervisor} onChange={(e) => set({ supervisor: e.target.value })} className={fieldCls}>
+            <Select allowEmpty value={draft.supervisor} onChange={(e) => set({ supervisor: e.target.value })} className={fieldCls}>
               <option value="">No supervisor yet</option>
               {staff.map((t) => <option key={t.id} value={t.id}>{t.full_name}</option>)}
-            </select>
+            </Select>
           </label>
           <p className="mt-1 text-xs text-ink/65">The supervisor is shown on timetables and calendars, and ticks who joined from Teaching, Enrichment.</p>
           {draftClashes.length > 0 && (

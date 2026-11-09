@@ -8,6 +8,7 @@ import { hhmm, moveProblem } from "./types";
 import { insertSlotLocked, updateSlotLocked } from "./api";
 import type { Availability, ClassOpt, ClassTeacherLink, Protected, Teacher } from "./types";
 
+import { Select } from "@/components/ui/Dropdown";
 const field = "mt-1 w-full rounded-lg border border-gold-light/70 bg-white px-3 py-2 text-sm text-ink";
 
 /**
@@ -147,7 +148,7 @@ export function SlotEditor({
           {!slot && (
             <label className="block text-xs font-medium text-ink/70">
               Class
-              <select className={field} value={classId} onChange={(e) => {
+              <Select allowEmpty className={field} value={classId} onChange={(e) => {
                 setClassId(e.target.value);
                 const sid = classes.find((c) => c.id === e.target.value)?.subject_id;
                 const t = sid ? teacherFor(subjectTeachers, e.target.value, sid, todayIso()) : null;
@@ -162,21 +163,21 @@ export function SlotEditor({
               }}>
                 <option value="">Choose…</option>
                 {classes.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
-              </select>
+              </Select>
             </label>
           )}
           <label className="block text-xs font-medium text-ink/70">
             Teacher
-            <select className={field} value={teacherId} onChange={(e) => setTeacherId(e.target.value)}>
+            <Select allowEmpty className={field} value={teacherId} onChange={(e) => setTeacherId(e.target.value)}>
               <option value="">Choose…</option>
               {sortedTeachers.map((t) => <option key={t.id} value={t.id}>{t.full_name}{assigned.has(t.id) ? " (teaches this subject)" : ""}</option>)}
-            </select>
+            </Select>
           </label>
           <label className="block text-xs font-medium text-ink/70">
             Day
-            <select className={field} value={weekday} onChange={(e) => setWeekday(Number(e.target.value))}>
+            <Select allowEmpty className={field} value={weekday} onChange={(e) => setWeekday(Number(e.target.value))}>
               {WEEKDAYS.map((w) => <option key={w.value} value={w.value}>{w.label}</option>)}
-            </select>
+            </Select>
           </label>
           <div className="grid grid-cols-2 gap-3">
             <label className="block text-xs font-medium text-ink/70">Starts<input type="time" className={field} value={start} onChange={(e) => setStart(e.target.value)} /></label>

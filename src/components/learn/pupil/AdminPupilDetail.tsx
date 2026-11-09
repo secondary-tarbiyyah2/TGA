@@ -16,8 +16,9 @@ import { PupilOverview } from "./PupilOverview";
 import { RecordSections, usePupilRecordData, type RecordChild } from "./PupilRecord";
 import { Fig, PupilAttendanceTab, PupilBehaviourTab, PupilReportsTab, attendanceFigures } from "./ProfileTabs";
 import { SupportPlanEditor } from "@/components/learn/send/SupportPlanEditor";
+import { EditPupilDialog } from "./EditPupilDialog";
 
-type ChildRaw = { id: string; name: string; dob: string | null; parent_user_id: string | null; year_groups?: { name: string } | null };
+type ChildRaw = { id: string; name: string; dob: string | null; parent_user_id: string | null; working_ahead?: boolean; working_ahead_note?: string | null; year_groups?: { name: string } | null };
 type EnrolRaw = { classes?: { name: string } | null };
 type Parent = { full_name: string | null; email: string | null };
 
@@ -39,6 +40,9 @@ export function AdminPupilDetail({ id }: { id: string }) {
   const [state, setState] = useState<"loading" | "ready" | "missing">("loading");
   const [att30, setAtt30] = useState<ReturnType<typeof attendanceFigures> | null>(null);
   const printRef = useRef<HTMLDivElement>(null);
+  const [editing, setEditing] = useState(false);
+  const [ahead, setAhead] = useState<{ on: boolean; note: string | null }>({ on: false, note: null });
+  const [tick, setTick] = useState(0);
 
   useEffect(() => {
     const supabase = getSupabaseClient();
@@ -48,7 +52,8 @@ export function AdminPupilDetail({ id }: { id: string }) {
       // The last 30 UK days, today included.
       const since = ukDaysAgo(29);
       const [c, e, a] = await Promise.all([
-        supabase.from("children").select("id, name, dob, parent_user_id, year_groups(name)").eq("id", id).maybeSingle(),
+        // "*" so the page still loads before migration 0184 (working_ahead) is applied.
+        supabase.from("children").select("*, year_groups(name)").eq("id", id).maybeSingle(),
         supabase.from("enrolments").select("classes(name)").eq("child_id", id),
         supabase.from("attendance_records").select("status, lesson_instances!inner(date)").eq("child_id", id).gte("lesson_instances.date", since).limit(1000),
       ]);
@@ -62,6 +67,7 @@ export function AdminPupilDetail({ id }: { id: string }) {
         yearGroup: row.year_groups?.name || null,
         classes: ((e.data as unknown as EnrolRaw[]) || []).map((x) => x.classes?.name || "").filter(Boolean),
       });
+      setAhead({ on: Boolean(row.working_ahead), note: row.working_ahead_note || null });
       setAtt30(attendanceFigures((a.data as { status: string }[]) || []));
       setState("ready");
       if (row.parent_user_id) {
@@ -72,7 +78,7 @@ export function AdminPupilDetail({ id }: { id: string }) {
     return () => {
       cancelled = true;
     };
-  }, [id]);
+  }, [id, tick]);
 
   const record = usePupilRecordData(id, { showAcks: true });
   const progress = useMemo(() => completeness(record.details, record.contacts.length, child ? child.dob : undefined), [record.details, record.contacts.length, child]);
@@ -139,9 +145,14 @@ export function AdminPupilDetail({ id }: { id: string }) {
           title={child?.name || "Pupil"}
           subtitle="Pupil profile. Opening it is logged because it contains medical details."
           actions={
-            <button type="button" onClick={() => printElement(findPrintScope(printRef.current, "pupil-record"))} className={ui.btnSecondary}>
-              Print record
-            </button>
+            <>
+              <button type="button" onClick={() => setEditing(true)} disabled={!child} className={ui.btnSecondary}>
+                Edit pupil
+              </button>
+              <button type="button" onClick={() => printElement(findPrintScope(printRef.current, "pupil-record"))} className={ui.btnSecondary}>
+                Print record
+              </button>
+            </>
           }
         />
       </div>
@@ -157,8 +168,14 @@ export function AdminPupilDetail({ id }: { id: string }) {
                 <p className="text-sm text-ink/70">{[child.yearGroup, child.classes.join(", ")].filter(Boolean).join(" · ") || "Not in a class yet"}</p>
                 <p className="text-sm text-ink/70">{child.dob ? `Born ${formatDob(child.dob)}${age !== null ? ` (age ${age})` : ""}` : "Date of birth not recorded"}</p>
                 {parent && <p className="text-sm text-ink/70">Parent: {parent.full_name || parent.email}</p>}
+                {ahead.on && ahead.note && <p className="text-sm text-ink/70">Working ahead: {ahead.note}</p>}
               </div>
               <div className="flex flex-wrap gap-1.5">
+                {ahead.on && (
+                  <StatusChip tone="info">
+                    Working ahead
+                  </StatusChip>
+                )}
                 {alerts.map((a) => (
                   <StatusChip key={a} tone="bad">
                     {a}
@@ -226,6 +243,7 @@ export function AdminPupilDetail({ id }: { id: string }) {
           </div>
         </div>
       )}
+      {editing && child && <EditPupilDialog childId={child.id} onClose={() => setEditing(false)} onSaved={() => setTick((t) => t + 1)} />}
     </>
   );
 }

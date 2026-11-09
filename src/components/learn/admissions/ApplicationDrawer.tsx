@@ -24,6 +24,7 @@ import {
 import { Tabs } from "@/components/learn/Tabs";
 import { btn, ui } from "@/components/learn/ui";
 
+import { Select } from "@/components/ui/Dropdown";
 export type MoveOptions = {
   /** Do not send the automatic email for this move (the caller has just sent it). */
   skipAutoEmail?: boolean;
@@ -166,12 +167,12 @@ export function ApplicationDrawer({
               <section aria-label="Assigned to">
                 <label className="block text-sm font-medium text-ink">
                   Assigned to
-                  <select value={app.assigned_to || ""} onChange={(e) => assign(e.target.value)} className={`${ui.select} mt-1`}>
+                  <Select allowEmpty value={app.assigned_to || ""} onChange={(e) => assign(e.target.value)} className={`${ui.select} mt-1`}>
                     <option value="">Unassigned</option>
                     {staff.map((s) => (
                       <option key={s.profile_id} value={s.profile_id}>{s.display_name}</option>
                     ))}
-                  </select>
+                  </Select>
                 </label>
               </section>
 

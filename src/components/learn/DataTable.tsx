@@ -5,6 +5,7 @@ import { Icon } from "@/components/learn/Icon";
 import { btn, ui } from "@/components/learn/ui";
 import { saveCsv, toCsv, type CsvCell } from "@/lib/learn/csv";
 
+import { Select } from "@/components/ui/Dropdown";
 /**
  * The one way the portal shows a list of records (pupils, registers, staff
  * hours, behaviour, the audit log…), so every list works the same:
@@ -219,7 +220,7 @@ export function DataTable<T>({
             <div className="flex flex-wrap items-center gap-2">
               <label className="flex items-center gap-1.5">
                 Per page
-                <select
+                <Select allowEmpty
                   value={size}
                   onChange={(e) => {
                     setSize(Number(e.target.value));
@@ -232,7 +233,7 @@ export function DataTable<T>({
                       {n || "All"}
                     </option>
                   ))}
-                </select>
+                </Select>
               </label>
               {pages > 1 && (
                 <nav aria-label="Pages" className="flex items-center gap-1">

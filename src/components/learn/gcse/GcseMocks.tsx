@@ -5,6 +5,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { GCSE_HISTORY_COLUMNS, downloadCsv, toCsv, type GcseHistoryRow } from "@/lib/learn/gcse";
 import { GradeChip } from "@/components/learn/gcse/GcseParts";
 
+import { Select } from "@/components/ui/Dropdown";
 type MockRow = GcseHistoryRow & { children: { name: string } | null; subjects: { name: string } | null; classes: { name: string } | null };
 
 const SELECT = "rounded-lg border border-gold-light/60 bg-white px-3 py-1.5 text-sm";
@@ -102,25 +103,25 @@ export function GcseMocks() {
       <div className="mt-3 flex flex-wrap items-end gap-3 text-xs font-medium text-ink/70">
         <label>
           Subject
-          <select value={subjectId} onChange={(e) => setSubjectId(e.target.value)} className={`${SELECT} mt-1 block`}>
+          <Select allowEmpty value={subjectId} onChange={(e) => setSubjectId(e.target.value)} className={`${SELECT} mt-1 block`}>
             <option value="">All</option>
             {subjects.map(([id, n]) => (
               <option key={id} value={id}>
                 {n}
               </option>
             ))}
-          </select>
+          </Select>
         </label>
         <label>
           Paper
-          <select value={paper} onChange={(e) => setPaper(e.target.value)} className={`${SELECT} mt-1 block`}>
+          <Select allowEmpty value={paper} onChange={(e) => setPaper(e.target.value)} className={`${SELECT} mt-1 block`}>
             <option value="">All</option>
             {papers.map((p) => (
               <option key={p} value={p}>
                 {p}
               </option>
             ))}
-          </select>
+          </Select>
         </label>
         <label>
           Pupil

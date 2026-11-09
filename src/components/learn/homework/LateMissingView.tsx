@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { ATTENTION_META, type AttentionKind, type AttentionRow } from "@/lib/learn/homeworkFeedback";
 
+import { Select } from "@/components/ui/Dropdown";
 const COLUMNS =
   "homework_id, homework_title, class_id, class_name, due_at, child_id, child_name, submission_id, submitted_at, attention, resubmission_requested_at";
 
@@ -82,7 +83,7 @@ export function LateMissingView({ scope }: { scope: "teach" | "admin" }) {
           <h2 className="font-serif text-h3 font-semibold text-ink">Late &amp; missing</h2>
           <p className="mt-1 text-sm text-ink/65">{scope === "admin" ? "Whole school." : "Your classes."} Homework that is overdue, handed in late, or waiting for a resubmission.</p>
         </div>
-        <select
+        <Select allowEmpty
           value={windowDays === null ? "all" : String(windowDays)}
           onChange={(e) => setWindowDays(e.target.value === "all" ? null : Number(e.target.value))}
           aria-label="Time window"
@@ -93,7 +94,7 @@ export function LateMissingView({ scope }: { scope: "teach" | "admin" }) {
               {w.label}
             </option>
           ))}
-        </select>
+        </Select>
       </div>
 
       <div className="mt-3 flex flex-wrap gap-2" role="group" aria-label="Filter">
@@ -106,14 +107,14 @@ export function LateMissingView({ scope }: { scope: "teach" | "admin" }) {
           </button>
         ))}
         {classes.length > 1 && (
-          <select value={classId} onChange={(e) => setClassId(e.target.value)} aria-label="Class" className="rounded-md border border-gold-light/60 px-3 py-1 text-sm">
+          <Select allowEmpty value={classId} onChange={(e) => setClassId(e.target.value)} aria-label="Class" className="rounded-md border border-gold-light/60 px-3 py-1 text-sm">
             <option value="">All classes</option>
             {classes.map(([id, name]) => (
               <option key={id} value={id}>
                 {name}
               </option>
             ))}
-          </select>
+          </Select>
         )}
       </div>
 

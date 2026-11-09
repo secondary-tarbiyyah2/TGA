@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import type { AnnouncementRow } from "./types";
 
+import { Select } from "@/components/ui/Dropdown";
 export type AudienceClass = { id: string; name: string };
 
 function toDateInput(iso: string | null): string {
@@ -125,7 +126,7 @@ export function ComposeModal({
           </label>
           <label className="block text-sm">
             <span className="font-medium text-ink">Audience</span>
-            <select value={audience} onChange={(e) => setAudience(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light bg-white px-3 py-2 text-sm">
+            <Select allowEmpty value={audience} onChange={(e) => setAudience(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light bg-white px-3 py-2 text-sm">
               {canPostSchool && <option value="school">Whole school</option>}
               {classes.map((c) => (
                 <option key={c.id} value={c.id}>
@@ -133,7 +134,7 @@ export function ComposeModal({
                 </option>
               ))}
               {!canPostSchool && classes.length === 0 && <option value="">No classes available</option>}
-            </select>
+            </Select>
           </label>
           <div className="grid gap-4 sm:grid-cols-2">
             <label className="flex items-start gap-2 text-sm">

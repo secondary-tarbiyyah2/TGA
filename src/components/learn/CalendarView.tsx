@@ -425,7 +425,7 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
                 </ul>
               )}
 
-              {mode === "day" && <div className="max-h-[75vh] overflow-y-auto">{panel()}</div>}
+              {mode === "day" && <div className="flex max-h-[75vh] flex-col">{panel()}</div>}
 
               <p className="px-4 py-2 text-[10px] text-ink/65">
                 {umalqura ? "Umm al-Qura calendar" : "Islamic civil calendar (fallback)"}
@@ -434,7 +434,7 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
             </section>
 
             {mode !== "day" && isDesktop && (
-              <aside aria-labelledby={headingId} className="overflow-hidden rounded-2xl border border-gold-light bg-white xl:sticky xl:top-[76px] xl:max-h-[calc(100vh-6rem)] xl:self-start">
+              <aside aria-labelledby={headingId} className="flex flex-col overflow-hidden rounded-2xl border border-gold-light bg-white xl:sticky xl:top-[76px] xl:max-h-[calc(100vh-6rem)] xl:self-start">
                 {panel()}
               </aside>
             )}
@@ -443,7 +443,7 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
           {sheetShown && (
             <div className="fixed inset-0 z-50 flex items-end" role="dialog" aria-modal="true" aria-labelledby={headingId}>
               <button type="button" aria-label="Close day details" tabIndex={-1} onClick={() => setSheetOpen(false)} className="absolute inset-0 bg-ink/40" />
-              <div ref={sheetRef} tabIndex={-1} className="relative max-h-[82vh] w-full overflow-hidden rounded-t-2xl border-t border-gold-light bg-white shadow-2xl outline-none">
+              <div ref={sheetRef} tabIndex={-1} className="relative flex max-h-[82vh] w-full flex-col overflow-hidden rounded-t-2xl border-t border-gold-light bg-white shadow-2xl outline-none">
                 <div aria-hidden="true" className="mx-auto mt-2 h-1 w-10 rounded-full bg-ink/20" />
                 {panel(() => setSheetOpen(false))}
               </div>

@@ -15,9 +15,12 @@ export type PupilRow = {
   missing: MissingKey[];
   alerts: string[];
   ack: Acknowledgement | null; // the current user's own acknowledgement
+  /** Taught ahead of the year their date of birth gives (0184; false before it's applied). */
+  workingAhead: boolean;
+  workingAheadNote: string | null;
 };
 
-type ChildRaw = { id: string; name: string; dob: string | null; year_group_id: string | null; year_groups?: { name: string } | null };
+type ChildRaw = { id: string; name: string; dob: string | null; year_group_id: string | null; working_ahead?: boolean; working_ahead_note?: string | null; year_groups?: { name: string } | null };
 type EnrolRaw = { child_id: string; class_id: string; classes?: { name: string } | null };
 
 const SUMMARY_SELECT =
@@ -37,7 +40,8 @@ export function usePupils(withOwnAcks = false) {
     (async () => {
       const uid = withOwnAcks ? (await supabase.auth.getUser()).data.user?.id : undefined;
       const [kids, enrols, det, cons, acks, yg] = await Promise.all([
-        supabase.from("children").select("id, name, dob, year_group_id, year_groups(name)").order("name"),
+        // "*" so this still loads before migration 0184 (working_ahead) is applied.
+        supabase.from("children").select("*, year_groups(name)").order("name"),
         supabase.from("enrolments").select("child_id, class_id, classes(name)"),
         // Teachers get health, needs, consents and the home address (0100
         // teacher_pupil_health, Policy 09); the office sees the whole record.
@@ -76,6 +80,8 @@ export function usePupils(withOwnAcks = false) {
           missing: p.missing,
           alerts: medicalAlerts(d),
           ack: ackBy.get(c.id) || null,
+          workingAhead: Boolean(c.working_ahead),
+          workingAheadNote: c.working_ahead_note || null,
         };
       });
       setPupils(rows);

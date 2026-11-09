@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useLearnSession } from "@/lib/learn/session";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
+import { Select } from "@/components/ui/Dropdown";
 type Category = { id: string; label: string };
 /** One row of safeguarding_leads() (migration 0085): a name and why they receive concerns. Names only. */
 type Recipient = { full_name: string; kind: "dsl" | "head_teacher" };
@@ -138,22 +139,22 @@ function ReportConcernForm() {
         {categories.length > 0 && (
           <label className="block text-sm text-ink">
             Category (optional)
-            <select value={categoryId} onChange={(e) => setCategoryId(e.target.value)} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2">
+            <Select allowEmpty value={categoryId} onChange={(e) => setCategoryId(e.target.value)} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2">
               <option value="">Not sure / other</option>
               {categories.map((c) => (
                 <option key={c.id} value={c.id}>{c.label}</option>
               ))}
-            </select>
+            </Select>
           </label>
         )}
         <label className="block text-sm text-ink">
           How urgent does this feel?
-          <select value={severity} onChange={(e) => setSeverity(e.target.value)} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2">
+          <Select allowEmpty value={severity} onChange={(e) => setSeverity(e.target.value)} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2">
             <option value="low">Low</option>
             <option value="standard">Standard</option>
             <option value="high">High</option>
             <option value="urgent">Urgent</option>
-          </select>
+          </Select>
         </label>
         <label className="block text-sm text-ink">
           What happened?

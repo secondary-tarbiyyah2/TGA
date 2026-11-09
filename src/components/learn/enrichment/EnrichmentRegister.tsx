@@ -7,6 +7,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { PERIOD_COLUMNS_WITH_SUPERVISOR, WEEKDAYS, attachSupervisorNames, normalisePeriods, type TimetablePeriod } from "@/lib/learn/timetable";
 import { btn } from "@/components/learn/ui";
 
+import { Select } from "@/components/ui/Dropdown";
 type RosterRow = { child_id: string; child_name: string; year_group: string | null };
 type TickRow = { period_id: string; child_id: string; present: boolean };
 
@@ -118,13 +119,13 @@ export function EnrichmentRegister({ mode }: { mode: "supervisor" | "admin" }) {
         {mode === "supervisor" && shown.length > 1 && (
           <label className="text-xs font-medium text-ink/70">
             Block
-            <select value={activeId} onChange={(e) => setPeriodId(e.target.value)} className={`${fieldCls} mt-1 block`}>
+            <Select allowEmpty value={activeId} onChange={(e) => setPeriodId(e.target.value)} className={`${fieldCls} mt-1 block`}>
               {shown.map((p) => (
                 <option key={p.id} value={p.id}>
                   {p.name} {p.start_time}-{p.end_time}
                 </option>
               ))}
-            </select>
+            </Select>
           </label>
         )}
       </div>

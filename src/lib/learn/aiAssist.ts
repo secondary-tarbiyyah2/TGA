@@ -58,7 +58,9 @@ const MESSAGES: Record<string, string> = {
 };
 
 export function aiErrorMessage(r: EdgeResult): string {
-  return (r.error === "invalid_input" || r.error === "input_too_long" ? r.detail : undefined) || (r.error && MESSAGES[r.error]) || r.detail || "Something went wrong. Try again.";
+  // ai_failed carries the server's reason when it knows one (a refused key, a
+  // retired model, no credit), so staff can tell the admin what to fix (T32).
+  return (r.error === "invalid_input" || r.error === "input_too_long" || r.error === "ai_failed" ? r.detail : undefined) || (r.error && MESSAGES[r.error]) || r.detail || "Something went wrong. Try again.";
 }
 
 export const TRIAGE_CATEGORY_LABEL: Record<string, string> = {

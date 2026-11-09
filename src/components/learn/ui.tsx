@@ -24,6 +24,7 @@ import Link from "next/link";
 import type { ButtonHTMLAttributes, ComponentProps, ReactNode } from "react";
 import { Icon, type IconName } from "@/components/learn/Icon";
 
+import { Select } from "@/components/ui/Dropdown";
 const focus = "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700";
 
 /** Shape and behaviour shared by every button, whatever its colour. */
@@ -69,7 +70,7 @@ export const ui = {
 
   /** Text fields, selects and textareas. */
   input: inputBase,
-  /** Same as input; named for readability on <select>. */
+  /** Same as input; named for readability on <Select allowEmpty>. */
   select: inputBase,
   /** Same as input, with a comfortable minimum height for writing. */
   textarea: `${inputBase} min-h-[6rem] leading-relaxed`,

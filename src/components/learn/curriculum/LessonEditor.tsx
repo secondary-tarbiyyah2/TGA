@@ -8,6 +8,7 @@ import { problemsFor, realEditAt, syncNotes, triggerCurriculumSync, when, type S
 import type { CurriculumLesson } from "@/lib/learn/curriculum";
 import { BLOCKS, HOOK_TYPES, ROUTINES, ROUTINE_SECTIONS, blockProblems, extrasProblems } from "@/lib/learn/lessonSchema.mjs";
 
+import { Select } from "@/components/ui/Dropdown";
 // The lesson as stored in curriculum_lessons.content: the lesson object from
 // content/lessons/<subject>/<year>.json (content/lessons/README.md). Fields this form does not
 // show (board, anything else) are kept as they are. Slide blocks (worked examples, charts…) are
@@ -540,14 +541,14 @@ function RoutineSelect({ label, value, onChange, disabled }: { label: string; va
   return (
     <label className="block">
       <span className={ui.label}>{label}</span>
-      <select value={value} onChange={(e) => onChange(e.target.value)} disabled={disabled} className={`mt-1 ${ui.select}`}>
+      <Select allowEmpty value={value} onChange={(e) => onChange(e.target.value)} disabled={disabled} className={`mt-1 ${ui.select}`}>
         <option value="">Usual</option>
         {Object.entries(ROUTINES as Record<string, { label: string }>).map(([id, r]) => (
           <option key={id} value={id}>
             {r.label}
           </option>
         ))}
-      </select>
+      </Select>
     </label>
   );
 }
@@ -564,14 +565,14 @@ function HookField({ hook, onChange, disabled }: { hook?: Hook; onChange: (h: Ho
       <p className={`sm:col-span-2 ${ui.hint}`}>A full-screen slide straight after the title to grab attention in the first minute.</p>
       <label className="block">
         <span className={ui.label}>Kind of hook</span>
-        <select value={h.type} onChange={(e) => (e.target.value ? up({ type: e.target.value }) : onChange(undefined))} className={`mt-1 ${ui.select}`}>
+        <Select allowEmpty value={h.type} onChange={(e) => (e.target.value ? up({ type: e.target.value }) : onChange(undefined))} className={`mt-1 ${ui.select}`}>
           <option value="">No hook</option>
           {(HOOK_TYPES as string[]).map((t) => (
             <option key={t} value={t}>
               {HOOK_LABEL[t] || t}
             </option>
           ))}
-        </select>
+        </Select>
       </label>
       {h.type && (
         <>
@@ -641,14 +642,14 @@ function BlockField({ slide, onChange, onInvalid, disabled }: { slide: Slide; on
       <div className="flex flex-wrap items-end gap-2">
         <label className="block">
           <span className={ui.label}>Slide block (optional)</span>
-          <select value={kind} disabled={disabled} onChange={(e) => pick(e.target.value)} className={`mt-1 ${ui.select}`}>
+          <Select allowEmpty value={kind} disabled={disabled} onChange={(e) => pick(e.target.value)} className={`mt-1 ${ui.select}`}>
             <option value="">None: bullet points only</option>
             {(BLOCKS as string[]).map((k) => (
               <option key={k} value={k}>
                 {BLOCK_LABEL[k] ? `${BLOCK_LABEL[k][0].toUpperCase()}${BLOCK_LABEL[k].slice(1)}` : k} ({k})
               </option>
             ))}
-          </select>
+          </Select>
         </label>
         {kind && (
           <button type="button" className={btn} onClick={() => setOpen((o) => !o)}>

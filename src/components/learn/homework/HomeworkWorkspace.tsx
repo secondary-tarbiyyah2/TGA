@@ -10,6 +10,7 @@ import type { Homework } from "@/lib/learn/homework";
 import { Tabs } from "@/components/learn/Tabs";
 import { useNow } from "@/lib/learn/useNow";
 
+import { Select } from "@/components/ui/Dropdown";
 type ClassOpt = { id: string; name: string };
 
 /**
@@ -130,14 +131,14 @@ export function HomeworkWorkspace({
         />
         {tab === "set" && (
           <>
-            <select value={classId} onChange={(e) => setClassId(e.target.value)} aria-label="Class" className="rounded-xl border border-gold-light bg-white px-3 py-2 text-sm">
+            <Select allowEmpty value={classId} onChange={(e) => setClassId(e.target.value)} aria-label="Class" className="rounded-xl border border-gold-light bg-white px-3 py-2 text-sm">
               <option value="">All classes</option>
               {(classes || []).map((c) => (
                 <option key={c.id} value={c.id}>
                   {c.name}
                 </option>
               ))}
-            </select>
+            </Select>
             <div className="ml-auto w-44">
               <Switch label="Show deleted" checked={showDeleted} onChange={onShowDeleted} />
             </div>

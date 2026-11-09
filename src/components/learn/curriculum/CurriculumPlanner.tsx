@@ -37,6 +37,7 @@ import {
 } from "@/lib/learn/curriculumUnits";
 import { LinesField, Modal, TextField } from "@/components/learn/curriculum/Modal";
 
+import { Select } from "@/components/ui/Dropdown";
 const YEAR_KEY = "tga-planner-year";
 const btn = `${ui.btnSecondary} ${ui.sm}`;
 const isKs4 = (y: string) => y === "y10" || y === "y11";
@@ -476,17 +477,17 @@ function UnitEditor({ initial, original, canEdit, syncNotes, onClose, onSaved }:
               <TextField label="Paper" hint="Which paper examines it" value={d.paper || ""} onChange={(v) => set("paper", v)} />
               <label className="block">
                 <span className={ui.label}>Year</span>
-                <select value={d.year} onChange={(e) => set("year", e.target.value)} className={`mt-1 ${ui.select}`}>
+                <Select allowEmpty value={d.year} onChange={(e) => set("year", e.target.value)} className={`mt-1 ${ui.select}`}>
                   <option value="y10">Year 10</option>
                   <option value="y11">Year 11</option>
-                </select>
+                </Select>
               </label>
               <TextField label="Term" hint="e.g. Autumn, or Spring to Summer" value={d.term || ""} onChange={(v) => set("term", v)} />
             </>
           ) : (
             <label className="block">
               <span className={ui.label}>Half term</span>
-              <select
+              <Select allowEmpty
                 value={d.half_term || ""}
                 onChange={(e) => {
                   const h = (e.target.value || null) as HalfTerm | null;
@@ -500,7 +501,7 @@ function UnitEditor({ initial, original, canEdit, syncNotes, onClose, onSaved }:
                     {h.label}
                   </option>
                 ))}
-              </select>
+              </Select>
             </label>
           )}
           <div className="sm:col-span-2">

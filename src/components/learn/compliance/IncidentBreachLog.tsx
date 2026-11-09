@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { btn, ui } from "@/components/learn/ui";
 
+import { Select } from "@/components/ui/Dropdown";
 type Incident = { id: string; title: string; severity: string; description: string; affected_count: number | null; status: string; discovered_at: string };
 type ChecklistItem = { id: number; item_key: string; done: boolean; done_at: string | null; notes: string | null };
 
@@ -124,12 +125,12 @@ export function IncidentBreachLog() {
         <p className="text-xs font-semibold uppercase tracking-wide text-ink/65">Log a new incident</p>
         <div className="grid gap-2 sm:grid-cols-2">
           <input value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} placeholder="Title" className={`${ui.input} !w-auto`} />
-          <select value={form.severity} onChange={(e) => setForm({ ...form, severity: e.target.value })} aria-label="Severity" className={`${ui.select} !w-auto`}>
+          <Select allowEmpty value={form.severity} onChange={(e) => setForm({ ...form, severity: e.target.value })} aria-label="Severity" className={`${ui.select} !w-auto`}>
             <option value="low">Low</option>
             <option value="medium">Medium</option>
             <option value="high">High</option>
             <option value="critical">Critical</option>
-          </select>
+          </Select>
           <input value={form.affected_count} onChange={(e) => setForm({ ...form, affected_count: e.target.value })} placeholder="Number of people affected (count only)" type="text" inputMode="decimal" min="0" className={`${ui.input} sm:col-span-2 !w-auto`} />
           <textarea value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} placeholder="What happened" rows={2} className={`${ui.textarea} sm:col-span-2 !w-auto`} />
         </div>

@@ -32,6 +32,7 @@ import {
 import { StatusChip, ui } from "@/components/learn/ui";
 import { allHubs, boardLabel, hubNodeLessons, matchSpecUnits, matchSyllabusUnits, sameSubject, specFor, syllabusFor } from "@/lib/learn/syllabusIndex";
 
+import { Select } from "@/components/ui/Dropdown";
 type ClassOpt = { id: string; name: string };
 
 const btn = `${ui.btnSecondary} ${ui.sm}`;
@@ -546,7 +547,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
             className="min-w-[12rem] flex-1 rounded-lg border border-gold-light px-3 py-2 text-sm"
           />
           {allSubjects.length > 1 && (
-            <select
+            <Select allowEmpty
               aria-label="Subject"
               value={subjectFilter}
               onChange={(e) => {
@@ -563,17 +564,17 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                   {x.name} ({x.units.length})
                 </option>
               ))}
-            </select>
+            </Select>
           )}
           {boards.length > 1 && (
-            <select aria-label="Exam board" value={boardFilter} onChange={(e) => setBoardFilter(e.target.value)} className="w-auto max-w-[14rem] rounded-lg border border-gold-light py-2 pl-3 text-sm">
+            <Select allowEmpty aria-label="Exam board" value={boardFilter} onChange={(e) => setBoardFilter(e.target.value)} className="w-auto max-w-[14rem] rounded-lg border border-gold-light py-2 pl-3 text-sm">
               <option value="all">Any exam board</option>
               {boards.map((bd) => (
                 <option key={bd} value={bd}>
                   {bd}
                 </option>
               ))}
-            </select>
+            </Select>
           )}
           <button
             type="button"
@@ -700,7 +701,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
             </button>
             <label className="block text-sm font-semibold text-ink">
               Unit
-              <select value={activeKey || ""} onChange={(e) => openUnit(e.target.value, tab)} className="mt-1 block w-full rounded-lg border border-gold-light bg-white px-3 py-2 text-sm">
+              <Select allowEmpty value={activeKey || ""} onChange={(e) => openUnit(e.target.value, tab)} className="mt-1 block w-full rounded-lg border border-gold-light bg-white px-3 py-2 text-sm">
                 {subjects.map((s) => (
                   <optgroup key={s.slug} label={s.name}>
                     {s.units.map((u) => (
@@ -710,7 +711,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                     ))}
                   </optgroup>
                 ))}
-              </select>
+              </Select>
             </label>
           </div>
           <nav aria-label="Units" className="hidden max-h-[75vh] space-y-4 self-start overflow-y-auto rounded-2xl border border-gold-light bg-white p-3 lg:sticky lg:top-[76px] lg:block">
@@ -1400,13 +1401,13 @@ function RevisionPackPanel({ pack, onChanged, onBuild }: { pack: StaffUnit | und
           {videos.length > 1 && (
             <label className="flex flex-wrap items-center gap-2 text-sm font-medium text-ink">
               Video
-              <select value={chapter} onChange={(e) => setChapter(Number(e.target.value))} className="min-w-0 flex-1 rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm">
+              <Select allowEmpty value={chapter} onChange={(e) => setChapter(Number(e.target.value))} className="min-w-0 flex-1 rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm">
                 {videos.map((v, k) => (
                   <option key={v.path} value={k}>
                     {v.label}
                   </option>
                 ))}
-              </select>
+              </Select>
             </label>
           )}
           {video ? (
@@ -1637,14 +1638,14 @@ function ShareDialog({ lesson, area, onClose, onDone }: { lesson: CurriculumLess
           <>
             <label className="block font-medium">
               Class
-              <select value={classId} onChange={(e) => setClassId(e.target.value)} className="mt-1 block w-full rounded-md border border-gold-light px-3 py-2 text-sm">
+              <Select allowEmpty value={classId} onChange={(e) => setClassId(e.target.value)} className="mt-1 block w-full rounded-md border border-gold-light px-3 py-2 text-sm">
                 <option value="">Choose a class…</option>
                 {classes.map((c) => (
                   <option key={c.id} value={c.id}>
                     {c.name}
                   </option>
                 ))}
-              </select>
+              </Select>
             </label>
             {lesson.pdf_path && (
               <label className="flex items-center gap-2">

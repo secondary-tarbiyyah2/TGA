@@ -5,6 +5,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { MEDIA_BUCKET, chapterEnd, clock, mediaUrl, toSeconds, type SummarySlide } from "@/lib/learn/revision";
 import { ui } from "@/components/learn/ui";
 
+import { Select } from "@/components/ui/Dropdown";
 /**
  * Make (or edit) a revision pack in the portal, the way Aqeedah 1 was made:
  *
@@ -330,14 +331,14 @@ export function PackBuilder({
         <div className="grid gap-3 sm:grid-cols-3">
           <label className="text-sm font-medium text-ink">
             Subject
-            <select className={input} value={subjectSlug} disabled={!!id} onChange={(e) => setSubjectSlug(e.target.value)}>
+            <Select allowEmpty className={input} value={subjectSlug} disabled={!!id} onChange={(e) => setSubjectSlug(e.target.value)}>
               {subjects.map((s) => (
                 <option key={s.slug} value={s.slug}>
                   {s.name}
                 </option>
               ))}
               <option value="__new">Another subject…</option>
-            </select>
+            </Select>
           </label>
           {subjectSlug === "__new" && (
             <label className="text-sm font-medium text-ink">
@@ -766,11 +767,11 @@ export function QuestionEditor({
         <label className="block text-sm font-medium text-ink">
           Chapter
           {topics.length ? (
-            <select className={input} value={draft.topic} onChange={(e) => setDraft({ ...draft, topic: e.target.value })}>
+            <Select allowEmpty className={input} value={draft.topic} onChange={(e) => setDraft({ ...draft, topic: e.target.value })}>
               {topics.map((t) => (
                 <option key={t}>{t}</option>
               ))}
-            </select>
+            </Select>
           ) : (
             <input className={input} value={draft.topic} onChange={(e) => setDraft({ ...draft, topic: e.target.value })} placeholder="Topic" />
           )}

@@ -6,19 +6,23 @@ import type { LearnRole } from "@/lib/learn/session";
 import { CredentialsCard } from "./StudentCredentials";
 import { studentAccountAction, type IssuedCredentials } from "./studentAccounts";
 import { ui } from "@/components/learn/ui";
+import { DateOfBirthField } from "@/components/learn/DateOfBirthField";
+import { ncYearFromDob, ncYearLabel, suggestYearGroup, yearsAheadOfAge } from "@/lib/learn/yearGroup";
 import { GOLD_BUTTON, INPUT_CLASS, friendlyError, invite, type ClassOption, type InviteResult, type ParentOption, type YearGroup } from "./shared";
 
+import { Select } from "@/components/ui/Dropdown";
+import { Icon, type IconName } from "@/components/learn/Icon";
 export type PersonType = "student" | "parent" | "teacher" | "staff";
 
 type Outcome = { text: string; link?: string; code?: string; creds?: IssuedCredentials };
 
 type LoginMode = "username" | "email" | "none";
 
-const TILES: { type: PersonType; title: string; blurb: string; icon: string }[] = [
-  { type: "student", title: "Student", blurb: "A pupil, linked to a parent", icon: "🎓" },
-  { type: "parent", title: "Parent", blurb: "A family login, with children", icon: "👨‍👩‍👧" },
-  { type: "teacher", title: "Teacher", blurb: "Teacher or teaching assistant", icon: "📚" },
-  { type: "staff", title: "Headteacher / Admin", blurb: "Headteacher, Admin or Admissions", icon: "🛡️" },
+const TILES: { type: PersonType; title: string; blurb: string; icon: IconName }[] = [
+  { type: "student", title: "Student", blurb: "A pupil, linked to a parent", icon: "graduationCap" },
+  { type: "parent", title: "Parent", blurb: "A family login, with children", icon: "houseHeart" },
+  { type: "teacher", title: "Teacher", blurb: "Teacher or teaching assistant", icon: "presentation" },
+  { type: "staff", title: "Headteacher / Admin", blurb: "Headteacher, Admin or Admissions", icon: "shieldCheck" },
 ];
 
 function Field({ label, hint, children }: { label: string; hint?: string; children: React.ReactNode }) {
@@ -72,6 +76,11 @@ export function AddPersonModal({
   // student / child fields
   const [dob, setDob] = useState("");
   const [yearGroupId, setYearGroupId] = useState("");
+  // Year group follows the date of birth until someone picks one by hand (T27).
+  const [yearTouched, setYearTouched] = useState(false);
+  const [workingAhead, setWorkingAhead] = useState(false);
+  const [aheadNote, setAheadNote] = useState("");
+  const [allClasses, setAllClasses] = useState(false);
   const [classId, setClassId] = useState("");
   const [studentEmail, setStudentEmail] = useState("");
   // A pupil can sign in with a username and temporary password (no email), or with their own email.
@@ -91,12 +100,41 @@ export function AddPersonModal({
   const [createdParentId, setCreatedParentId] = useState<string | null>(null);
   const [createdChildId, setCreatedChildId] = useState<string | null>(null);
 
-  // Same-year classes first, but every class stays selectable: a pupil can be in one class per subject.
-  const orderedClasses = [...classes].sort((a, b) => {
-    const am = yearGroupId && a.yearGroupId === yearGroupId ? 0 : 1;
-    const bm = yearGroupId && b.yearGroupId === yearGroupId ? 0 : 1;
-    return am - bm || a.name.localeCompare(b.name);
-  });
+  // Classes for the chosen year group only, unless "show all" (a pupil working
+  // ahead, or a mixed-year class). Ticked classes always stay visible.
+  const orderedClasses = [...classes]
+    .filter((c) => allClasses || !yearGroupId || c.yearGroupId === yearGroupId || classIds.includes(c.id))
+    .sort((a, b) => a.name.localeCompare(b.name));
+  const hiddenClassCount = classes.length - orderedClasses.length;
+
+  const dobYear = ncYearFromDob(dob);
+  const suggested = suggestYearGroup(dob, yearGroups);
+  const chosenYearName = yearGroups.find((y) => y.id === yearGroupId)?.name || null;
+  const ahead = yearsAheadOfAge(dob, chosenYearName);
+  const changeDob = (v: string) => {
+    setDob(v);
+    if (!yearTouched) {
+      const g = suggestYearGroup(v, yearGroups);
+      setYearGroupId(g?.id || "");
+    }
+  };
+  const changeYear = (v: string) => {
+    setYearTouched(true);
+    setYearGroupId(v);
+    const a = yearsAheadOfAge(dob, yearGroups.find((y) => y.id === v)?.name || null);
+    if (a !== null && a > 0) {
+      setWorkingAhead(true);
+      setAllClasses(true);
+    }
+  };
+  const yearHint = (() => {
+    if (!dob) return "Choose the date of birth and the year group is filled in for you.";
+    if (dobYear === null) return "This date of birth is outside school age. Check it.";
+    if (!suggested) return `By date of birth: ${ncYearLabel(dobYear)} (no matching year group set up yet).`;
+    if (ahead !== null && ahead > 0) return `By date of birth: ${ncYearLabel(dobYear)}. Chosen year is ${ahead} ahead.`;
+    if (ahead !== null && ahead < 0) return `By date of birth: ${ncYearLabel(dobYear)}. Chosen year is ${-ahead} behind.`;
+    return `Matches the date of birth (${ncYearLabel(dobYear)}).`;
+  })();
 
   const pickType = (t: PersonType) => {
     setType(t);
@@ -122,7 +160,14 @@ export function AddPersonModal({
     if (!childId) {
       const { data, error: insErr } = await supabase
         .from("children")
-        .insert({ parent_user_id: parent, name: cname, dob, year_group_id: yearGroupId || null })
+        .insert({
+          parent_user_id: parent,
+          name: cname,
+          dob,
+          year_group_id: yearGroupId || null,
+          working_ahead: workingAhead,
+          working_ahead_note: workingAhead && aheadNote.trim() ? aheadNote.trim().slice(0, 300) : null,
+        })
         .select("id")
         .single();
       const row = data as { id: string } | null;
@@ -312,6 +357,11 @@ export function AddPersonModal({
                     setName("");
                     setEmail("");
                     setDob("");
+                    setYearGroupId("");
+                    setYearTouched(false);
+                    setWorkingAhead(false);
+                    setAheadNote("");
+                    setAllClasses(false);
                     setStudentEmail("");
                     setNewParentName("");
                     setNewParentEmail("");
@@ -344,8 +394,8 @@ export function AddPersonModal({
                     onClick={() => pickType(t.type)}
                     className="flex items-center gap-3 rounded-2xl border border-gold-light bg-white p-4 text-left transition hover:border-gold-500 hover:bg-gold-50 hover:shadow-sm"
                   >
-                    <span aria-hidden="true" className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gold-100 text-2xl">
-                      {t.icon}
+                    <span aria-hidden="true" className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gold-100 text-gold-800">
+                      <Icon name={t.icon} size="lg" />
                     </span>
                     <span>
                       <span className="block text-base font-semibold text-ink">{t.title}</span>
@@ -364,20 +414,41 @@ export function AddPersonModal({
                   <Field label="Student's full name">
                     <input value={name} onChange={(e) => setName(e.target.value)} className={INPUT_CLASS} autoComplete="off" />
                   </Field>
-                  <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                    <Field label="Date of birth">
-                      <input type="date" value={dob} onChange={(e) => setDob(e.target.value)} className={INPUT_CLASS} />
-                    </Field>
+                  <div className="grid grid-cols-1 gap-3 sm:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
+                    <DateOfBirthField value={dob} onChange={changeDob} />
                     <Field label="Year group">
-                      <select value={yearGroupId} onChange={(e) => setYearGroupId(e.target.value)} className={INPUT_CLASS}>
+                      <Select allowEmpty value={yearGroupId} onChange={(e) => changeYear(e.target.value)} className={INPUT_CLASS}>
                         <option value="">Not set</option>
                         {yearGroups.map((y) => (
                           <option key={y.id} value={y.id}>
                             {y.name}
+                            {suggested?.id === y.id ? " (by date of birth)" : ""}
                           </option>
                         ))}
-                      </select>
+                      </Select>
                     </Field>
+                  </div>
+                  <p className={`-mt-2 text-xs ${ahead && ahead !== 0 ? "text-amber-900" : "text-ink/70"}`} aria-live="polite">
+                    {yearHint}
+                  </p>
+                  <div className="rounded-xl border border-gold-light/70 p-3">
+                    <label className="flex items-start gap-2 text-sm text-ink">
+                      <input type="checkbox" className="mt-0.5 h-4 w-4" checked={workingAhead} onChange={(e) => setWorkingAhead(e.target.checked)} />
+                      <span>
+                        <span className="font-medium">Working ahead of their age</span>
+                        <span className="block text-xs text-ink/65">For example GCSE at 12. Shown on their record and the pupils list.</span>
+                      </span>
+                    </label>
+                    {workingAhead && (
+                      <input
+                        value={aheadNote}
+                        maxLength={300}
+                        onChange={(e) => setAheadNote(e.target.value)}
+                        placeholder="What they're doing ahead, e.g. GCSE Maths with Year 10"
+                        aria-label="What they're doing ahead"
+                        className={`${INPUT_CLASS} mt-2`}
+                      />
+                    )}
                   </div>
 
                   <div className="rounded-xl bg-gold-50 p-3">
@@ -393,7 +464,7 @@ export function AddPersonModal({
                     </div>
                     {parentMode === "existing" ? (
                       <Field label="Parent">
-                        <select value={parentId} onChange={(e) => setParentId(e.target.value)} className={INPUT_CLASS}>
+                        <Select allowEmpty value={parentId} onChange={(e) => setParentId(e.target.value)} className={INPUT_CLASS}>
                           <option value="">Choose a parent…</option>
                           {parents.map((p) => (
                             <option key={p.id} value={p.id}>
@@ -401,7 +472,7 @@ export function AddPersonModal({
                               {p.email ? ` (${p.email})` : ""}
                             </option>
                           ))}
-                        </select>
+                        </Select>
                       </Field>
                     ) : (
                       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -417,9 +488,18 @@ export function AddPersonModal({
 
                   <fieldset>
                     <legend className="mb-1 text-sm font-medium text-ink">Classes (optional)</legend>
-                    <p className="mb-1 text-xs text-ink/65">Choose as many as needed, for example one per subject.</p>
+                    <div className="mb-1 flex flex-wrap items-center justify-between gap-2 text-xs text-ink/65">
+                      <span>{yearGroupId && !allClasses ? `Classes for ${chosenYearName}. Choose one per subject.` : "Choose as many as needed, for example one per subject."}</span>
+                      {yearGroupId && (
+                        <button type="button" onClick={() => setAllClasses((v) => !v)} aria-pressed={allClasses} className="font-semibold text-teal-800 underline underline-offset-2">
+                          {allClasses ? `Only ${chosenYearName}` : `Show all classes${hiddenClassCount ? ` (${hiddenClassCount} more)` : ""}`}
+                        </button>
+                      )}
+                    </div>
                     {classes.length === 0 ? (
                       <p className="text-xs text-ink/65">No classes have been set up yet.</p>
+                    ) : orderedClasses.length === 0 ? (
+                      <p className="text-xs text-ink/65">No classes for {chosenYearName} yet. Use &ldquo;Show all classes&rdquo; to pick from every year.</p>
                     ) : (
                       <ul className="grid max-h-44 gap-1 overflow-y-auto rounded-lg border border-gold-light/70 p-2 sm:grid-cols-2">
                         {orderedClasses.map((c) => (
@@ -439,11 +519,11 @@ export function AddPersonModal({
                     )}
                   </fieldset>
                   <Field label="Student's login" hint={loginMode === "username" ? "A username (firstname.lastname) and a temporary password are generated. The parent is emailed them, and you see them once. The student chooses their own password at first sign-in." : undefined}>
-                    <select value={loginMode} onChange={(e) => setLoginMode(e.target.value as LoginMode)} className={INPUT_CLASS}>
+                    <Select allowEmpty value={loginMode} onChange={(e) => setLoginMode(e.target.value as LoginMode)} className={INPUT_CLASS}>
                       <option value="username">Username and password (no email needed)</option>
                       <option value="email">Their own email address</option>
                       <option value="none">No login yet</option>
-                    </select>
+                    </Select>
                   </Field>
                   {loginMode === "email" && (
                     <Field label="Student's email">
@@ -476,18 +556,16 @@ export function AddPersonModal({
                         <input value={childName} onChange={(e) => setChildName(e.target.value)} className={INPUT_CLASS} autoComplete="off" />
                       </Field>
                       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                        <Field label="Date of birth">
-                          <input type="date" value={dob} onChange={(e) => setDob(e.target.value)} className={INPUT_CLASS} />
-                        </Field>
+                        <DateOfBirthField value={dob} onChange={changeDob} />
                         <Field label="Year group">
-                          <select value={yearGroupId} onChange={(e) => setYearGroupId(e.target.value)} className={INPUT_CLASS}>
+                          <Select allowEmpty value={yearGroupId} onChange={(e) => changeYear(e.target.value)} className={INPUT_CLASS}>
                             <option value="">Not set</option>
                             {yearGroups.map((y) => (
                               <option key={y.id} value={y.id}>
                                 {y.name}
                               </option>
                             ))}
-                          </select>
+                          </Select>
                         </Field>
                       </div>
                     </div>
@@ -498,31 +576,31 @@ export function AddPersonModal({
               {type === "teacher" && (
                 <>
                   <Field label="Role">
-                    <select value={teacherKind} onChange={(e) => setTeacherKind(e.target.value as LearnRole)} className={INPUT_CLASS}>
+                    <Select allowEmpty value={teacherKind} onChange={(e) => setTeacherKind(e.target.value as LearnRole)} className={INPUT_CLASS}>
                       <option value="teacher">Teacher</option>
                       <option value="teaching_assistant_cover">Teaching assistant / cover</option>
-                    </select>
+                    </Select>
                   </Field>
                   <Field label="Class (optional)" hint="You can assign more classes later from Academic → Classes.">
-                    <select value={classId} onChange={(e) => setClassId(e.target.value)} className={INPUT_CLASS}>
+                    <Select allowEmpty value={classId} onChange={(e) => setClassId(e.target.value)} className={INPUT_CLASS}>
                       <option value="">No class yet</option>
                       {classes.map((c) => (
                         <option key={c.id} value={c.id}>
                           {c.name}
                         </option>
                       ))}
-                    </select>
+                    </Select>
                   </Field>
                 </>
               )}
 
               {type === "staff" && (
                 <Field label="Role" hint="Only a Headteacher can add another Headteacher or an Admin.">
-                  <select value={staffRole} onChange={(e) => setStaffRole(e.target.value as LearnRole)} className={INPUT_CLASS}>
+                  <Select allowEmpty value={staffRole} onChange={(e) => setStaffRole(e.target.value as LearnRole)} className={INPUT_CLASS}>
                     <option value="admissions">Admissions</option>
                     <option value="admin">Admin</option>
                     <option value="head_teacher">Headteacher</option>
-                  </select>
+                  </Select>
                 </Field>
               )}
 

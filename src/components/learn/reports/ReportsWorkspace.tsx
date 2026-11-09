@@ -17,6 +17,7 @@ import { ApprovalQueue } from "./ApprovalQueue";
 import { IssuedReports } from "./IssuedReports";
 import { ReportSettings } from "./ReportSettings";
 
+import { Select } from "@/components/ui/Dropdown";
 const VIEWS: ReportView[] = ["overview", "class", "pupil", "approval", "issued", "settings"];
 type Section = "overview" | "approval" | "issued" | "settings";
 
@@ -116,14 +117,14 @@ export function ReportsWorkspace({ mode }: { mode: Mode }) {
         {view !== "pupil" && view !== "settings" && terms && (
           <label className="flex items-center gap-2 text-sm text-ink/75">
             <span>Term</span>
-            <select value={termKey} onChange={(e) => go({ view, cls: classId || undefined, term: e.target.value }, true)} className={`${ui.input} !w-auto !py-1.5`}>
+            <Select allowEmpty value={termKey} onChange={(e) => go({ view, cls: classId || undefined, term: e.target.value }, true)} className={`${ui.input} !w-auto !py-1.5`}>
               {terms.map((t) => (
                 <option key={t.id} value={t.id}>
                   {t.name}
                 </option>
               ))}
               <option value={ALL_TIME}>All time (no term)</option>
-            </select>
+            </Select>
           </label>
         )}
       </div>

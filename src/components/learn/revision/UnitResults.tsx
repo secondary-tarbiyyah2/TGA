@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { TONE, band, pct, unitInsights, type Insights } from "@/lib/learn/revision";
 import { EmptyState, ui } from "@/components/learn/ui";
 
+import { Select } from "@/components/ui/Dropdown";
 const btn = `${ui.btnSecondary} ${ui.sm}`;
 
 type TopicStat = { topic: string; right: number; total: number; p: number };
@@ -111,14 +112,14 @@ export function UnitResults({ unitId }: { unitId: string }) {
       <div className="flex flex-wrap items-center gap-3">
         <label className="flex items-center gap-2 text-sm font-medium text-ink">
           Class
-          <select value={cls} onChange={(e) => setCls(e.target.value)} className="rounded-md border border-gold-light bg-white px-3 py-1.5 text-sm">
+          <Select allowEmpty value={cls} onChange={(e) => setCls(e.target.value)} className="rounded-md border border-gold-light bg-white px-3 py-1.5 text-sm">
             <option value="">All my pupils in {data.unit.year === "reception" ? "Reception" : `Year ${data.unit.year.slice(1)}`}</option>
             {data.classes.map((c) => (
               <option key={c.id} value={c.id}>
                 {c.name}
               </option>
             ))}
-          </select>
+          </Select>
         </label>
         <button type="button" className={btn} onClick={load}>
           Refresh

@@ -18,6 +18,7 @@ import { PolicyReviewTracker } from "@/components/learn/compliance/PolicyReviewT
 import { PageHeader } from "@/components/learn/PageHeader";
 import { Button, ButtonLink, ui } from "@/components/learn/ui";
 
+import { Select } from "@/components/ui/Dropdown";
 type Keyword = { id: string; phrase: string };
 
 function SafeguardingKeywordsAdmin() {
@@ -100,13 +101,13 @@ function RecordsPanel({ items }: { items: RecordItem[] }) {
     <div className="grid gap-4 md:grid-cols-[13rem_minmax(0,1fr)]">
       <label className="md:hidden">
         <span className="sr-only">Choose a record</span>
-        <select value={current.key} onChange={(e) => setActive(e.target.value)} className={ui.select}>
+        <Select allowEmpty value={current.key} onChange={(e) => setActive(e.target.value)} className={ui.select}>
           {items.map((i) => (
             <option key={i.key} value={i.key}>
               {i.label}
             </option>
           ))}
-        </select>
+        </Select>
       </label>
       <nav aria-label="Records" className="hidden md:block">
         <ul className="sticky top-4 space-y-1">

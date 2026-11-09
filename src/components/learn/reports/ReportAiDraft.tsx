@@ -6,6 +6,8 @@ import { Notice, ui } from "@/components/learn/ui";
 import { aiAssist, aiErrorMessage, useAiStatus } from "@/lib/learn/aiAssist";
 import type { ClassSummary, SubjectRating } from "./summary";
 
+import { Select } from "@/components/ui/Dropdown";
+import { usePupilPronoun } from "@/lib/learn/pronoun";
 const RECIPE = ["Resilience", "Eeman", "Contentment", "Integrity", "Progress", "Excellence"];
 
 /**
@@ -23,7 +25,10 @@ export function ReportAiDraft({
   live,
   comment,
   onUse,
+  childId,
 }: {
+  /** Fills the pronoun from the pupil's record (T31). */
+  childId?: string;
   firstName: string;
   yearGroup: string;
   subject: string;
@@ -35,7 +40,10 @@ export function ReportAiDraft({
   const status = useAiStatus();
   const [open, setOpen] = useState(false);
   const [notes, setNotes] = useState("");
-  const [pronoun, setPronoun] = useState("");
+  // Starts from the pupil's record; the teacher can still change it for this draft.
+  const recordPronoun = usePupilPronoun(childId);
+  const [pronounPick, setPronoun] = useState<string | null>(null);
+  const pronoun = pronounPick ?? recordPronoun;
   const [recipe, setRecipe] = useState("");
   const [draft, setDraft] = useState<string | null>(null);
   const [recipeLine, setRecipeLine] = useState<string | null>(null);
@@ -96,20 +104,20 @@ export function ReportAiDraft({
           <div className="grid gap-2 sm:grid-cols-2">
             <label className={ui.label}>
               Pronoun
-              <select value={pronoun} onChange={(e) => setPronoun(e.target.value)} className={`mt-1 ${ui.select}`}>
+              <Select allowEmpty value={pronoun} onChange={(e) => setPronoun(e.target.value)} className={`mt-1 ${ui.select}`}>
                 <option value="">Use their name</option>
                 <option value="he">he / him</option>
                 <option value="she">she / her</option>
-              </select>
+              </Select>
             </label>
             <label className={ui.label}>
               Tarbiyyah Compass value this half term (optional)
-              <select value={recipe} onChange={(e) => setRecipe(e.target.value)} className={`mt-1 ${ui.select}`}>
+              <Select allowEmpty value={recipe} onChange={(e) => setRecipe(e.target.value)} className={`mt-1 ${ui.select}`}>
                 <option value="">None</option>
                 {RECIPE.map((r) => (
                   <option key={r}>{r}</option>
                 ))}
-              </select>
+              </Select>
             </label>
           </div>
           <p className={ui.hint}>Uses {firstName}&apos;s first name, your notes and the figures and judgements on this page. Nothing else is sent.</p>

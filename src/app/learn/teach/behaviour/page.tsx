@@ -26,6 +26,7 @@ import {
   type StudentOption,
 } from "@/components/learn/behaviour/data";
 
+import { Select } from "@/components/ui/Dropdown";
 type Modal = { kind: BehaviourKind; childId?: string };
 
 function TeachBehaviourContent() {
@@ -104,14 +105,14 @@ function TeachBehaviourContent() {
           <div className="flex flex-wrap items-center gap-2">
             <label className="text-sm text-ink/70">
               <span className="mr-2">Class</span>
-              <select value={classId} onChange={(e) => setClassId(e.target.value)} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm">
+              <Select allowEmpty value={classId} onChange={(e) => setClassId(e.target.value)} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm">
                 <option value="">All my classes</option>
                 {classes.map((c) => (
                   <option key={c.id} value={c.id}>
                     {c.name}
                   </option>
                 ))}
-              </select>
+              </Select>
             </label>
           </div>
 

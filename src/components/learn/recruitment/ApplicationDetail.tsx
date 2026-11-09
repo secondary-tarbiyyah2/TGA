@@ -21,6 +21,7 @@ import { Button, StatusChip, btn, ui } from "@/components/learn/ui";
 import { FilePreview } from "@/components/learn/admissions/FilePreview";
 import { RECRUITMENT_BUCKET, ukDate, ukDateTime, type ApplicationEvent, type JobApplication } from "./types";
 
+import { Select } from "@/components/ui/Dropdown";
 function Row({ label, children }: { label: string; children: ReactNode }) {
   const empty = children === null || children === undefined || children === "" || (Array.isArray(children) && children.length === 0);
   return (
@@ -170,7 +171,7 @@ export function ApplicationDetail({
         <div className="mt-5 grid gap-4 border-t border-gold-light/60 pt-4 sm:grid-cols-3">
           <label className="text-sm text-ink">
             Status
-            <select
+            <Select allowEmpty
               className={`mt-1 ${ui.select}`}
               value={app.status}
               disabled={busy}
@@ -183,7 +184,7 @@ export function ApplicationDetail({
               {APPLICATION_STATUSES.map((s) => (
                 <option key={s.value} value={s.value}>{s.label}</option>
               ))}
-            </select>
+            </Select>
           </label>
           <div className="text-sm text-ink">
             <span id="rating-label">Rating</span>

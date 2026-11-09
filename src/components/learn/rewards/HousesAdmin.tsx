@@ -9,6 +9,7 @@ import { HouseStandingsMini } from "@/components/learn/rewards/HouseStandingsMin
 import { fetchAllClasses, type ClassSummary } from "@/lib/learn/classes";
 import { btn, ui } from "@/components/learn/ui";
 
+import { Select } from "@/components/ui/Dropdown";
 // Headteacher/Admin tools for houses (0073): define houses (name, colour),
 // assign children, and award bonus points. Merits add house points
 // automatically, so nothing here has to be re-entered when merits are logged.
@@ -321,19 +322,19 @@ export function HousesAdmin() {
               {awardTarget === "house" ? (
                 <label className="text-xs font-medium text-ink/70">
                   House
-                  <select value={awardHouse} onChange={(e) => setAwardHouse(e.target.value)} className={`${ui.select} mt-1 !w-auto`}>
+                  <Select allowEmpty value={awardHouse} onChange={(e) => setAwardHouse(e.target.value)} className={`${ui.select} mt-1 !w-auto`}>
                     <option value="">Choose…</option>
                     {houses.filter((h) => h.active).map((h) => (
                       <option key={h.id} value={h.id}>
                         {h.name}
                       </option>
                     ))}
-                  </select>
+                  </Select>
                 </label>
               ) : (
                 <label className="text-xs font-medium text-ink/70">
                   Class
-                  <select
+                  <Select allowEmpty
                     value={awardClass}
                     onChange={(e) => {
                       setAwardClass(e.target.value);
@@ -347,7 +348,7 @@ export function HousesAdmin() {
                         {c.name}
                       </option>
                     ))}
-                  </select>
+                  </Select>
                 </label>
               )}
               <label className="text-xs font-medium text-ink/70">
