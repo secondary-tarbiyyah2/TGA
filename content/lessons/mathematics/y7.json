@@ -1355,142 +1355,231 @@
    "send": "Support: a BIDMAS checklist to tick through each step. Stretch: the four-fours challenge."
   },
   {
-   "unit": "Unit 2: Number skills",
+   "unit": "Autumn 2: Place value; fractions, decimals and percentages",
    "n": 10,
-   "title": "Rounding, adding and subtracting large numbers",
+   "title": "Rounding and estimating with large numbers and decimals",
    "duration": 50,
-   "bigQuestion": "When is an estimate more useful than an exact answer?",
+   "bigQuestion": "When is a rounded number more useful than an exact one?",
    "objectives": [
-    "Round whole numbers to the nearest 10, 100, 1000 and beyond",
-    "Add and subtract using the column method",
-    "Estimate to check answers"
+    "Round whole numbers to the nearest 10, 100, 1000 and million",
+    "Round decimals to the nearest whole number and to 1 decimal place",
+    "Estimate answers by rounding"
    ],
    "successCriteria": [
-    "Round to the nearest 10, 100 and 1000",
-    "Add and subtract large numbers with carrying and exchanging",
-    "Estimate first and use the estimate to spot errors"
+    "All: round whole numbers to a given power of 10",
+    "Most: round decimals to 1 decimal place and the nearest whole",
+    "Some: use rounding to estimate and check a calculation"
    ],
-   "crossCurricular": "Geography: populations of cities; History: dates and time spans",
-   "smsc": "Cultural: comparing populations of world cities",
+   "crossCurricular": "Science: rounding measurements; Geography: approximate populations",
+   "smsc": "Moral: when an exact amount matters (zakah, a debt, a trade) and when an estimate is fair",
    "keywords": [
     {
      "term": "round",
-     "def": "write a number to a simpler nearby value"
+     "def": "write a number to a simpler value close to it"
     },
     {
      "term": "estimate",
-     "def": "an approximate answer using rounded numbers"
+     "def": "a sensible approximate answer"
     },
     {
-     "term": "place value",
-     "def": "the value of a digit because of its position"
+     "term": "decimal place",
+     "def": "a column to the right of the decimal point"
     },
     {
-     "term": "exchange",
-     "def": "swap one of a higher place value for ten of the next place down"
+     "term": "approximately equal",
+     "def": "the sign ≈ means 'roughly equal to'"
     }
    ],
+   "hook": {
+    "type": "question",
+    "text": "A news headline says '2 million people visited'. The exact number was 1,548,207. Is the headline honest? What should it say?",
+    "a": "Rounded to the nearest million it is 2 million, but to the nearest hundred thousand it is 1.5 million, which is more useful. Rounding should not mislead."
+   },
    "starter": [
-    "Work out 6 + 4 × 3",
-    "Work out (6 + 4) × 3",
-    "What is the value of the 7 in 4720?",
-    "Work out 1000 − 1"
+    {
+     "q": "Bismillah. What is the value of the 7 in 3,762,140?",
+     "a": "700,000",
+     "mins": 1
+    },
+    {
+     "q": "Work out 2.45 × 100.",
+     "a": "245",
+     "mins": 1
+    },
+    {
+     "q": "Which is bigger: 0.39 or 0.4?",
+     "a": "0.4",
+     "mins": 1
+    },
+    {
+     "q": "Write six million and forty in figures.",
+     "a": "6,000,040",
+     "mins": 2
+    }
    ],
    "teach": [
     {
-     "heading": "Rounding large numbers",
+     "heading": "Rounding to the nearest 100",
      "bullets": [
-      "Look at the digit to the right",
-      "5 or more: round up",
-      "4 or less: round down"
+      "Find the two hundreds either side",
+      "Look at the next digit: 5 or more rounds up"
      ],
-     "note": "Use a number line between 37 000 and 38 000 to show 37 482 is nearer 37 000.",
-     "model": {
-      "problem": "Round 2 647 380 to the nearest 10 000",
-      "steps": [
-       "Ten-thousands digit: 4 (2 640 000)",
-       "Look right: 7 (in the thousands place)",
-       "7 is 5 or more, so round up",
-       "2 640 000 becomes 2 650 000"
-      ],
-      "answer": "2 650 000"
+     "note": "Place 3,762 on the line: it sits between 3,700 and 3,800, nearer 3,800. The tens digit 6 tells us.",
+     "numberline": {
+      "min": 3700,
+      "max": 3800,
+      "step": 10,
+      "marks": [
+       {
+        "at": 3762,
+        "label": "3,762"
+       },
+       {
+        "at": 3750,
+        "label": "halfway"
+       }
+      ]
      }
     },
     {
-     "heading": "Column addition and subtraction",
+     "heading": "Large numbers",
      "bullets": [
-      "Line up the place values",
-      "Carry when a column passes 9",
-      "Exchange when the top digit is smaller"
+      "Nearest 1000: look at the hundreds digit",
+      "Nearest million: look at the hundred thousands digit"
      ],
-     "note": "Model 6203 − 2758, exchanging across a zero. Narrate each exchange.",
+     "note": "Model one; pupils copy the method for 4,451,900 to the nearest million (4,000,000).",
      "model": {
-      "problem": "Work out 6203 − 2758",
+      "problem": "Round 1,548,207 to the nearest hundred thousand.",
       "steps": [
-       "Ones: 3 − 8 fails; tens is 0, so exchange via the hundreds",
-       "Now 13 − 8 = 5; tens 9 − 5 = 4",
-       "Hundreds: 1 − 7 fails; exchange a thousand: 11 − 7 = 4",
-       "Thousands: 5 − 2 = 3"
+       "The hundred thousands digit is 5: 1,500,000 or 1,600,000",
+       "Look at the next digit: 4",
+       "4 is less than 5, so round down"
       ],
-      "answer": "3445"
+      "answer": "1,500,000"
      }
     },
     {
-     "heading": "Estimate to check",
+     "heading": "Rounding decimals",
      "bullets": [
-      "Round each number first",
-      "Calculate mentally",
-      "Compare with your exact answer"
+      "Nearest whole: look at the tenths digit",
+      "1 decimal place: look at the hundredths digit",
+      "Keep the zero: 3.96 to 1 d.p. is 4.0"
      ],
-     "note": "6203 − 2758 ≈ 6000 − 3000 = 3000, and 3445 is close, so it is sensible. Show an error case: if someone got 4545, the estimate warns them."
-    },
-    {
-     "heading": "Rounding up or down?",
-     "bullets": [
-      "The 5 rule applies only to the next digit",
-      "Do not round in steps"
-     ],
-     "note": "Show 3449 to the nearest 100.",
+     "note": "Ask: why do we write 4.0 and not 4? (it shows we rounded to 1 d.p.).",
      "misconception": {
-      "wrong": "3449 → 3450 → 3500",
-      "right": "3449 to the nearest 100 is 3400"
+      "wrong": "6.47 to 1 d.p. = 6.5, because 7 rounds the 4 up, then 5 rounds up to 7",
+      "right": "Look only at the next digit: 6.47 to 1 d.p. is 6.5. Never round twice."
+     }
+    },
+    {
+     "heading": "Estimating",
+     "bullets": [
+      "Round each number to 1 significant figure",
+      "Calculate with the rounded numbers",
+      "Use ≈ for an estimate"
+     ],
+     "note": "Estimates catch keying errors on a calculator.",
+     "model": {
+      "problem": "Estimate 4,872 + 3,119.",
+      "steps": [
+       "4,872 ≈ 5,000",
+       "3,119 ≈ 3,000",
+       "5,000 + 3,000 = 8,000"
+      ],
+      "answer": "≈ 8,000 (exact answer 7,991)"
      }
     },
     {
      "heading": "Check: rounding",
-     "bullets": [],
+     "bullets": [
+      "Which digit decides?",
+      "Round once only"
+     ],
      "note": "Show me on 3.",
      "check": {
-      "q": "Round 48 513 to the nearest 1000",
+      "q": "Round 27.649 to 1 decimal place.",
       "options": [
-       "48 000",
-       "49 000",
-       "48 500",
-       "50 000"
+       "27.7",
+       "27.6",
+       "28.0",
+       "27.65"
       ],
       "answer": 1,
-      "why": "The hundreds digit is 5, so round up to 49 000. A rounds down; C rounds to the nearest 100."
+      "why": "The hundredths digit is 4, so round down to 27.6. 27.7 comes from rounding twice (49 then 5); 28.0 is to the nearest whole; 27.65 is 2 d.p."
      }
     }
    ],
    "practice": [
-    "Round 7385 to the nearest 10, 100 and 1000",
-    "Work out 4867 + 3758",
-    "Work out 9000 − 3647",
-    "Estimate 5912 + 2087"
+    {
+     "q": "Round 48,350 to the nearest 1000.",
+     "a": "48,000",
+     "mins": 1
+    },
+    {
+     "q": "Round 7,509,000 to the nearest million.",
+     "a": "8,000,000",
+     "mins": 1
+    },
+    {
+     "q": "Round 12.851 to 1 decimal place.",
+     "a": "12.9",
+     "mins": 2
+    },
+    {
+     "q": "Estimate 6,180 − 2,940.",
+     "a": "6,000 − 3,000 ≈ 3,000",
+     "mins": 2
+    }
    ],
    "independent": [
-    "Core: Work out (a) 27 638 + 45 495 (b) 50 000 − 18 742; estimate first each time",
-    "Extend: The 2021 Census recorded 1 144 919 people in Birmingham and 551 938 in Manchester. Round each to the nearest 10 000, estimate the difference, then calculate it exactly.",
-    "Stretch: Find the smallest whole number that rounds to 5000 to the nearest 1000 and the largest. Explain your answers."
+    {
+     "q": "Core: Round 3,456,789 to the nearest (a) 10 (b) 1000 (c) 100,000 (d) million.",
+     "a": "(a) 3,456,790 (b) 3,457,000 (c) 3,500,000 (d) 3,000,000",
+     "mins": 4
+    },
+    {
+     "q": "Extend: A number rounds to 2,400 to the nearest hundred. Write the smallest and largest whole numbers it could be.",
+     "a": "Smallest 2,350; largest 2,449",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: Amina adds 2,975 + 4,018 and gets 69,930. Use an estimate to show she is wrong, then find the right answer.",
+     "a": "Estimate 3,000 + 4,000 = 7,000, so 69,930 is about ten times too big. 2,975 + 4,018 = 6,993.",
+     "mins": 4
+    }
    ],
    "exit": [
-    "Round 6549 to the nearest 100.",
-    "Work out 3006 − 1489.",
-    "Estimate 4987 + 3012."
+    {
+     "q": "Round 5.083 to 1 decimal place.",
+     "a": "5.1",
+     "mins": 1
+    },
+    {
+     "q": "Round 649,500 to the nearest thousand.",
+     "a": "650,000",
+     "mins": 1
+    },
+    {
+     "q": "Big question: give one time when an estimate is better than an exact answer.",
+     "a": "For example: checking a calculator answer, or a quick shopping total; an exact answer is needed for money owed.",
+     "mins": 2
+    }
    ],
-   "homework": "Find the populations of three cities, round each to the nearest 1000 and work out the difference between the largest and smallest.",
-   "send": "Support: place-value grid for columns. Stretch: rounding with bounds."
+   "homework": "Round five prices from a shop receipt to the nearest pound, estimate the total, then compare with the real total.",
+   "send": "Support: number lines with the two 'neighbours' marked. EAL: sentence frame 'It is nearer to ...'. Stretch: rounding to significant figures.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 7 2.2 Addition and subtraction (rounding) and 4.1 Decimals and rounding (the school's KS3 scheme)",
+    "Portal Year 7 lesson 10 (upgraded)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "starter": "show-me",
+    "hinge": "show-me",
+    "practice": "cold-call",
+    "exit": "chat-waterfall"
+   }
   },
   {
    "unit": "Unit 2: Number skills",
@@ -2383,6 +2472,1750 @@
    ],
    "homework": "Learn the squares from 1² to 15² and their square roots; test yourself in a 2-minute challenge.",
    "send": "Support: squares table on screen. Stretch: cube numbers and cube roots."
+  },
+  {
+   "unit": "Autumn 2: Place value; fractions, decimals and percentages",
+   "n": 17,
+   "title": "Place value: millions and decimals",
+   "duration": 50,
+   "bigQuestion": "Why does the position of a digit change its value?",
+   "objectives": [
+    "Read and write whole numbers to millions",
+    "Know the value of each digit in a decimal",
+    "Multiply and divide by 10, 100 and 1000",
+    "Order decimals"
+   ],
+   "successCriteria": [
+    "All: say the value of any digit to millions and to hundredths",
+    "Most: multiply and divide by 10, 100 and 1000 without 'adding zeros'",
+    "Some: order decimals with different numbers of places and explain why"
+   ],
+   "crossCurricular": "Geography: reading populations and distances in an atlas; Science: measurements in millimetres and metres",
+   "smsc": "Spiritual: large numbers help us glimpse the vastness of Allah's creation; Moral: writing amounts accurately is part of honesty",
+   "keywords": [
+    {
+     "term": "place value",
+     "def": "the value a digit has because of its position"
+    },
+    {
+     "term": "digit",
+     "def": "one of the symbols 0 to 9"
+    },
+    {
+     "term": "tenth",
+     "def": "one part when a whole is split into 10 equal parts"
+    },
+    {
+     "term": "hundredth",
+     "def": "one part when a whole is split into 100 equal parts"
+    },
+    {
+     "term": "placeholder",
+     "def": "a zero that keeps other digits in the right place"
+    }
+   ],
+   "hook": {
+    "type": "odd-one-out",
+    "text": "Which one is the odd one out?",
+    "options": [
+     "3 tenths",
+     "0.3",
+     "30 hundredths",
+     "0.03"
+    ],
+    "a": "0.03 is 3 hundredths; the other three are all equal to 0.3."
+   },
+   "starter": [
+    {
+     "q": "Bismillah. Write 4,000 + 300 + 20 + 7 as one number.",
+     "a": "4,327",
+     "mins": 1
+    },
+    {
+     "q": "What is the value of the 6 in 5.63?",
+     "a": "6 tenths (0.6)",
+     "mins": 1
+    },
+    {
+     "q": "Work out 47 × 10.",
+     "a": "470",
+     "mins": 1
+    },
+    {
+     "q": "Work out 3.5 ÷ 10.",
+     "a": "0.35",
+     "mins": 2
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Place value columns",
+     "bullets": [
+      "Each column is worth 10 times the column on its right",
+      "The decimal point separates ones from tenths"
+     ],
+     "note": "Read it together: two million, four hundred and six thousand, one hundred and fifty-three point seven eight. Ask: what is the 4 worth? (400,000). What is the 8 worth? (8 hundredths).",
+     "table": {
+      "head": [
+       "M",
+       "HTh",
+       "TTh",
+       "Th",
+       "H",
+       "T",
+       "O",
+       "t",
+       "h"
+      ],
+      "rows": [
+       [
+        "2",
+        "4",
+        "0",
+        "6",
+        "1",
+        "5",
+        "3",
+        "7",
+        "8"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Writing large numbers",
+     "bullets": [
+      "Group digits in threes from the ones",
+      "Zeros hold empty places"
+     ],
+     "note": "Model, then ask pupils to write 'one million and one' (1,000,001) on whiteboards.",
+     "model": {
+      "problem": "Write 'four million, sixty thousand and nine' in figures.",
+      "steps": [
+       "Millions block: 4",
+       "Thousands block: sixty thousand is 060",
+       "Ones block: nine is 009",
+       "Join the blocks: 4,060,009"
+      ],
+      "answer": "4,060,009"
+     }
+    },
+    {
+     "heading": "× and ÷ by 10, 100 and 1000",
+     "bullets": [
+      "× 10: every digit moves one place left",
+      "÷ 100: every digit moves two places right",
+      "The decimal point stays still"
+     ],
+     "note": "Use the place value chart on screen and slide the digits. 3.4 × 10: the 3 moves to tens, the 4 to ones: 34.",
+     "misconception": {
+      "wrong": "3.4 × 10 = 3.40 (just add a zero)",
+      "right": "3.4 × 10 = 34: each digit moves one place to the left"
+     }
+    },
+    {
+     "heading": "Decimals on a number line",
+     "bullets": [
+      "There are ten hundredths between 2.3 and 2.4",
+      "A is 2.34 and B is 2.37"
+     ],
+     "note": "Count along in hundredths together. Ask: where would 2.305 go? (halfway between 2.30 and 2.31).",
+     "numberline": {
+      "min": 2.3,
+      "max": 2.4,
+      "step": 0.01,
+      "marks": [
+       {
+        "at": 2.34,
+        "label": "A"
+       },
+       {
+        "at": 2.37,
+        "label": "B"
+       }
+      ]
+     }
+    },
+    {
+     "heading": "Check: ordering decimals",
+     "bullets": [
+      "Line up the decimal points",
+      "Compare tenths first, then hundredths",
+      "0.5 = 0.50 = 0.500"
+     ],
+     "note": "Show me on 3. Ask a pupil who chose the correct list to explain using tenths.",
+     "check": {
+      "q": "Which list is in order, smallest first?",
+      "options": [
+       "0.5, 0.45, 0.405",
+       "0.405, 0.45, 0.5",
+       "0.45, 0.405, 0.5",
+       "0.5, 0.405, 0.45"
+      ],
+      "answer": 1,
+      "why": "0.405 and 0.45 both have 4 tenths, then 0 hundredths < 5 hundredths; 0.5 has 5 tenths. Choosing A shows 'more digits means bigger'."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Write 7,030,450 in words.",
+     "a": "Seven million, thirty thousand, four hundred and fifty",
+     "mins": 2
+    },
+    {
+     "q": "What is the value of the 8 in 3,861,204?",
+     "a": "800,000 (eight hundred thousand)",
+     "mins": 1
+    },
+    {
+     "q": "Work out 0.62 × 100 and 45 ÷ 1000.",
+     "a": "62 and 0.045",
+     "mins": 2
+    },
+    {
+     "q": "Order from smallest: 3.09, 3.9, 3.19, 3.091",
+     "a": "3.09, 3.091, 3.19, 3.9",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Write in figures: (a) two million, five hundred thousand (b) twelve thousand and four (c) six and seven hundredths.",
+     "a": "(a) 2,500,000 (b) 12,004 (c) 6.07",
+     "mins": 4
+    },
+    {
+     "q": "Extend: Fill the gaps: 4.7 × ___ = 470; 3,600 ÷ ___ = 3.6; ___ ÷ 100 = 0.08",
+     "a": "100; 1000; 8",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: Use the digits 3, 0, 7 and 5 once each and a decimal point to make the number closest to 50. Explain.",
+     "a": "50.37: it is only 0.37 away. A number just below 50 would need a 4 in the tens place, which we do not have.",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Write 9,004,020 in words.",
+     "a": "Nine million, four thousand and twenty",
+     "mins": 2
+    },
+    {
+     "q": "Which is bigger, 0.7 or 0.68? Explain with place value.",
+     "a": "0.7: it has 7 tenths, 0.68 has only 6 tenths.",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why is the 5 in 0.5 worth ten times the 5 in 0.05?",
+     "a": "Each place is worth ten times the place to its right: 5 tenths = 50 hundredths.",
+     "mins": 2
+    }
+   ],
+   "homework": "Find five large or decimal numbers at home (food labels, a map, a receipt); write each in words and in figures, then order them.",
+   "send": "Support: printed place value chart and digit cards. EAL: say each number aloud together; key words with examples. Stretch: thousandths and ordering numbers with up to four decimal places.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 7 4.1 Decimals and rounding (the school's KS3 scheme)",
+    "Place value chart (printed or drawn in the exercise book)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "starter": "show-me",
+    "hinge": "show-me",
+    "practice": "cold-call",
+    "exit": "chat-waterfall"
+   }
+  },
+  {
+   "unit": "Autumn 2: Place value; fractions, decimals and percentages",
+   "n": 18,
+   "title": "Fractions, decimals and percentages: equivalence",
+   "duration": 50,
+   "bigQuestion": "How can one amount have three different names?",
+   "objectives": [
+    "Know that per cent means 'out of 100'",
+    "Convert between tenths, hundredths, decimals and percentages",
+    "Recall key equivalences such as 1/4 = 0.25 = 25%"
+   ],
+   "successCriteria": [
+    "All: write a shaded hundred square as a fraction, decimal and percentage",
+    "Most: convert fractions with denominators 2, 4, 5, 10, 20, 25, 50 and 100",
+    "Some: explain equivalences using a fraction bar or number line"
+   ],
+   "crossCurricular": "Science: percentages in nutrition labels; PSHE: reading sale signs",
+   "smsc": "Social: understanding shares and portions fairly, such as dividing food at an iftar",
+   "keywords": [
+    {
+     "term": "per cent",
+     "def": "out of 100; the sign is %"
+    },
+    {
+     "term": "equivalent",
+     "def": "having the same value"
+    },
+    {
+     "term": "numerator",
+     "def": "the top number of a fraction"
+    },
+    {
+     "term": "denominator",
+     "def": "the bottom number of a fraction"
+    },
+    {
+     "term": "convert",
+     "def": "change into a different form"
+    }
+   ],
+   "hook": {
+    "type": "odd-one-out",
+    "text": "Which one is NOT equal to the others?",
+    "options": [
+     "1/4",
+     "0.25",
+     "25%",
+     "0.4"
+    ],
+    "a": "0.4 = 40% = 2/5. The others are a quarter. Many pupils think 1/4 = 0.4 because of the 4."
+   },
+   "starter": [
+    {
+     "q": "Bismillah. Round 3.47 to 1 decimal place.",
+     "a": "3.5",
+     "mins": 1
+    },
+    {
+     "q": "Write 0.7 as a fraction.",
+     "a": "7/10",
+     "mins": 1
+    },
+    {
+     "q": "What is 3/10 + 4/10?",
+     "a": "7/10",
+     "mins": 1
+    },
+    {
+     "q": "Simplify 6/8.",
+     "a": "3/4",
+     "mins": 2
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Per cent means out of 100",
+     "bullets": [
+      "37 out of 100 squares shaded = 37/100 = 0.37 = 37%",
+      "100% is the whole"
+     ],
+     "note": "Draw a hundred square on screen. Ask pupils to show 37% three ways on whiteboards.",
+     "fraction": {
+      "parts": 10,
+      "shaded": 7,
+      "label": "7/10 = 0.7 = 70%"
+     }
+    },
+    {
+     "heading": "Key equivalences",
+     "bullets": [
+      "Learn these by heart",
+      "Halves, quarters, fifths and tenths"
+     ],
+     "note": "Chant the rows aloud (spoken, no tune). Ask: which row do you already know?",
+     "table": {
+      "head": [
+       "Fraction",
+       "Decimal",
+       "Percentage"
+      ],
+      "rows": [
+       [
+        "1/2",
+        "0.5",
+        "50%"
+       ],
+       [
+        "1/4",
+        "0.25",
+        "25%"
+       ],
+       [
+        "3/4",
+        "0.75",
+        "75%"
+       ],
+       [
+        "1/5",
+        "0.2",
+        "20%"
+       ],
+       [
+        "1/10",
+        "0.1",
+        "10%"
+       ],
+       [
+        "1/100",
+        "0.01",
+        "1%"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Fraction to percentage",
+     "bullets": [
+      "Make the denominator 100",
+      "Multiply top and bottom by the same number"
+     ],
+     "note": "Model, then pupils try 7/20 (35%).",
+     "model": {
+      "problem": "Write 9/25 as a decimal and a percentage.",
+      "steps": [
+       "25 × 4 = 100, so multiply top and bottom by 4",
+       "9/25 = 36/100",
+       "36/100 = 0.36 = 36%"
+      ],
+      "answer": "0.36 and 36%"
+     }
+    },
+    {
+     "heading": "Percentage to fraction",
+     "bullets": [
+      "Write over 100",
+      "Simplify by dividing by a common factor"
+     ],
+     "note": "45% = 45/100 = 9/20. Ask: what did we divide by? (5).",
+     "misconception": {
+      "wrong": "0.3 = 3%",
+      "right": "0.3 = 30/100 = 30%; 3% = 0.03"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Think: out of 100"
+     ],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which is equal to 3/5?",
+      "options": [
+       "35%",
+       "0.35",
+       "60%",
+       "0.53"
+      ],
+      "answer": 2,
+      "why": "3/5 = 6/10 = 60/100 = 60%. Choosing 35% or 0.35 means the digits were just copied."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Write 0.09 as a percentage.",
+     "a": "9%",
+     "mins": 1
+    },
+    {
+     "q": "Write 65% as a fraction in its simplest form.",
+     "a": "13/20",
+     "mins": 2
+    },
+    {
+     "q": "Write 7/10 as a percentage.",
+     "a": "70%",
+     "mins": 1
+    },
+    {
+     "q": "Write 3/4 as a decimal.",
+     "a": "0.75",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Copy and complete the table for 1/2, 2/5, 3/20, 0.8, 12%: fraction, decimal, percentage.",
+     "a": "1/2 = 0.5 = 50%; 2/5 = 0.4 = 40%; 3/20 = 0.15 = 15%; 4/5 = 0.8 = 80%; 3/25 = 0.12 = 12%",
+     "mins": 5
+    },
+    {
+     "q": "Extend: Bilal scored 18/25 in a test and 70% in another. Which score is better?",
+     "a": "18/25 = 72%, which is better than 70%.",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Write 1/8 as a decimal and a percentage. Hint: half of 1/4.",
+     "a": "1/8 = 0.125 = 12.5%",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Write 0.4 as a fraction and a percentage.",
+     "a": "2/5 (4/10) and 40%",
+     "mins": 1
+    },
+    {
+     "q": "Write 7% as a decimal.",
+     "a": "0.07",
+     "mins": 1
+    },
+    {
+     "q": "Big question: name three ways to write one quarter.",
+     "a": "1/4, 0.25, 25%",
+     "mins": 1
+    }
+   ],
+   "homework": "Find three percentages on packaging or signs at home; write each as a fraction in its simplest form and as a decimal.",
+   "send": "Support: hundred squares and the equivalence table to keep. EAL: 'per' means 'for each', 'cent' means 100. Stretch: eighths and thirds as recurring decimals.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 7 5.4 Fractions and decimals and 5.5 Understanding percentages (the school's KS3 scheme)",
+    "Hundred square grid (printed or drawn)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "starter": "show-me",
+    "hinge": "show-me",
+    "practice": "cold-call",
+    "exit": "chat-waterfall"
+   }
+  },
+  {
+   "unit": "Autumn 2: Place value; fractions, decimals and percentages",
+   "n": 19,
+   "title": "Comparing and ordering fractions, decimals and percentages",
+   "duration": 50,
+   "bigQuestion": "How do we compare amounts written in different forms?",
+   "objectives": [
+    "Convert a fraction to a decimal by division",
+    "Order a mix of fractions, decimals and percentages",
+    "Solve simple comparison problems"
+   ],
+   "successCriteria": [
+    "All: convert all values to one form before comparing",
+    "Most: order lists with fractions, decimals and percentages",
+    "Some: choose the best form for a comparison and justify it"
+   ],
+   "crossCurricular": "Science: comparing results given in different forms; English: explaining a choice clearly",
+   "smsc": "Moral: comparing offers honestly; Social: sharing fairly",
+   "keywords": [
+    {
+     "term": "order",
+     "def": "put in order of size"
+    },
+    {
+     "term": "ascending",
+     "def": "from smallest to largest"
+    },
+    {
+     "term": "descending",
+     "def": "from largest to smallest"
+    },
+    {
+     "term": "convert",
+     "def": "change into another form with the same value"
+    }
+   ],
+   "hook": {
+    "type": "question",
+    "text": "Which is the best score: 4/5 in Arabic, 0.78 in science or 81% in maths?",
+    "a": "4/5 = 80%, 0.78 = 78%, so maths at 81% is best. Converting to one form makes it clear."
+   },
+   "starter": [
+    {
+     "q": "Bismillah. Write 3/4 as a percentage.",
+     "a": "75%",
+     "mins": 1
+    },
+    {
+     "q": "Write 0.06 as a percentage.",
+     "a": "6%",
+     "mins": 1
+    },
+    {
+     "q": "Write 35% as a fraction in its simplest form.",
+     "a": "7/20",
+     "mins": 2
+    },
+    {
+     "q": "Order 0.3, 0.29, 0.31.",
+     "a": "0.29, 0.3, 0.31",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "One form to compare",
+     "bullets": [
+      "Change everything into percentages (or decimals)",
+      "Then order and write the original forms"
+     ],
+     "note": "Use the hook: convert, compare, then answer in the original forms.",
+     "model": {
+      "problem": "Order 2/5, 0.38, 41%, 3/8 from smallest.",
+      "steps": [
+       "2/5 = 40%",
+       "0.38 = 38%",
+       "3/8 = 3 ÷ 8 = 0.375 = 37.5%",
+       "37.5% < 38% < 40% < 41%"
+      ],
+      "answer": "3/8, 0.38, 2/5, 41%"
+     }
+    },
+    {
+     "heading": "Fraction to decimal by division",
+     "bullets": [
+      "a/b means a ÷ b",
+      "Use short division with zeros after the point"
+     ],
+     "note": "Show 3 ÷ 8 by short division: 3.000 ÷ 8 = 0.375.",
+     "misconception": {
+      "wrong": "3/8 = 3.8",
+      "right": "3/8 means 3 ÷ 8 = 0.375"
+     }
+    },
+    {
+     "heading": "On a number line",
+     "bullets": [
+      "Placing values shows their order",
+      "0 to 1 split into tenths"
+     ],
+     "note": "Ask pupils to say where 3/8, 0.38 and 41% sit.",
+     "numberline": {
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "marks": [
+       {
+        "at": 0.375,
+        "label": "3/8"
+       },
+       {
+        "at": 0.4,
+        "label": "2/5"
+       },
+       {
+        "at": 0.75,
+        "label": "75%"
+       },
+       {
+        "at": 0.9,
+        "label": "0.9"
+       }
+      ]
+     }
+    },
+    {
+     "heading": "Card sort",
+     "bullets": [
+      "Sort each card: less than a half, a half, more than a half"
+     ],
+     "note": "Chat waterfall: type the card letters for the 'more than a half' column.",
+     "sort": {
+      "columns": [
+       "Less than 1/2",
+       "Equal to 1/2",
+       "More than 1/2"
+      ],
+      "cards": [
+       "0.45",
+       "5/10",
+       "3/5",
+       "48%",
+       "0.5",
+       "7/12",
+       "2/7",
+       "55%"
+      ],
+      "answer": [
+       0,
+       1,
+       2,
+       0,
+       1,
+       2,
+       0,
+       2
+      ]
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Convert first"
+     ],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which is largest?",
+      "options": [
+       "0.6",
+       "5/8",
+       "61%",
+       "3/5"
+      ],
+      "answer": 1,
+      "why": "5/8 = 62.5%, larger than 61% and 60%. Choosing 61% means 5/8 was not converted."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Write 7/8 as a decimal.",
+     "a": "0.875",
+     "mins": 2
+    },
+    {
+     "q": "Which is bigger: 0.7 or 2/3?",
+     "a": "0.7 (2/3 = 0.666...)",
+     "mins": 2
+    },
+    {
+     "q": "Order from smallest: 45%, 0.405, 2/5.",
+     "a": "2/5 (0.4), 0.405, 45% (0.45)",
+     "mins": 2
+    },
+    {
+     "q": "Order from largest: 1/4, 0.2, 22%.",
+     "a": "1/4, 22%, 0.2",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Order from smallest: 0.65, 3/5, 62%, 13/20, 0.6.",
+     "a": "3/5 = 0.6 (equal), then 62%, then 0.65 = 13/20 (equal). So 0.6 = 3/5, 62%, 0.65 = 13/20",
+     "mins": 5
+    },
+    {
+     "q": "Extend: Yusuf saved 3/8 of his money and Maryam saved 35% of hers. They each had £40. Who saved more, and by how much?",
+     "a": "Yusuf: 3/8 of £40 = £15. Maryam: 35% of £40 = £14. Yusuf by £1.",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: Find a fraction between 0.6 and 2/3. Explain how you know.",
+     "a": "For example 5/8 = 0.625, which is between 0.6 and 0.666...",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Order from smallest: 0.7, 3/4, 72%.",
+     "a": "0.7, 72%, 3/4",
+     "mins": 2
+    },
+    {
+     "q": "Big question: what is the first step when comparing a fraction and a percentage?",
+     "a": "Convert them into the same form (for example both percentages).",
+     "mins": 1
+    }
+   ],
+   "homework": "Order these test results from best to worst and show your conversions: 17/20, 0.83, 84%, 4/5, 0.9.",
+   "send": "Support: the equivalence table and a calculator for division. EAL: 'ascending' and 'descending' with arrows. Stretch: recurring decimals for 1/3, 2/3, 1/6.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 7 5.4 Fractions and decimals and 5.5 Understanding percentages (the school's KS3 scheme)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "starter": "show-me",
+    "hinge": "show-me",
+    "practice": "cold-call",
+    "exit": "chat-waterfall"
+   }
+  },
+  {
+   "unit": "Autumn 1: Sequences; algebraic notation; equality and equivalence",
+   "n": 20,
+   "title": "Sequences and term-to-term rules",
+   "duration": 50,
+   "bigQuestion": "How can we predict what comes next without counting every step?",
+   "objectives": [
+    "Continue number and shape sequences",
+    "Describe a sequence with a term-to-term rule",
+    "Tell linear from non-linear sequences"
+   ],
+   "successCriteria": [
+    "All: continue a sequence and say its rule",
+    "Most: find missing terms and decide if a term is in a sequence",
+    "Some: write rules for non-linear sequences such as doubling"
+   ],
+   "crossCurricular": "Science: patterns in data; Islamic Studies: patterns in Allah's creation, such as the phases of the moon",
+   "smsc": "Spiritual: order and pattern in creation; the moon's phases repeat each month as Allah measured them",
+   "keywords": [
+    {
+     "term": "sequence",
+     "def": "a list of numbers or shapes in order that follow a rule"
+    },
+    {
+     "term": "term",
+     "def": "one number in a sequence"
+    },
+    {
+     "term": "term-to-term rule",
+     "def": "how to get from one term to the next"
+    },
+    {
+     "term": "linear",
+     "def": "goes up or down by the same amount each time"
+    },
+    {
+     "term": "ascending",
+     "def": "going up"
+    }
+   ],
+   "hook": {
+    "type": "puzzle",
+    "text": "Matchstick squares in a row: 1 square uses 4 sticks, 2 squares use 7, 3 squares use 10. How many sticks for 10 squares?",
+    "a": "The rule is +3, so 4, 7, 10, 13, ... The 10th term is 31. Later we find a quicker way than counting on."
+   },
+   "starter": [
+    {
+     "q": "Bismillah. What comes next: 5, 10, 15, 20, ...?",
+     "a": "25",
+     "mins": 1
+    },
+    {
+     "q": "Work out 7 × 8.",
+     "a": "56",
+     "mins": 1
+    },
+    {
+     "q": "What is 100 − 37?",
+     "a": "63",
+     "mins": 1
+    },
+    {
+     "q": "Round 4.56 to 1 decimal place.",
+     "a": "4.6",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Term-to-term rules",
+     "bullets": [
+      "Look at the difference between terms",
+      "3, 7, 11, 15: first term 3, rule +4"
+     ],
+     "note": "Write the differences under each gap. Ask: is the difference always the same?",
+     "table": {
+      "head": [
+       "Term",
+       "1st",
+       "2nd",
+       "3rd",
+       "4th",
+       "5th"
+      ],
+      "rows": [
+       [
+        "Value",
+        "3",
+        "7",
+        "11",
+        "15",
+        "19"
+       ],
+       [
+        "Difference",
+        "",
+        "+4",
+        "+4",
+        "+4",
+        "+4"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Missing terms",
+     "bullets": [
+      "Use the rule forwards and backwards",
+      "Backwards: do the inverse"
+     ],
+     "note": "Model, then pupils find the missing terms in 50, __, 38, 32, __.",
+     "model": {
+      "problem": "Find the missing terms: __, 13, 20, __, 34",
+      "steps": [
+       "Difference 20 − 13 = 7, rule +7",
+       "Back from 13: 13 − 7 = 6",
+       "Forward from 20: 20 + 7 = 27",
+       "Check: 27 + 7 = 34"
+      ],
+      "answer": "6 and 27"
+     }
+    },
+    {
+     "heading": "Linear or not?",
+     "bullets": [
+      "Linear: same difference each time",
+      "Non-linear: for example ×2, or square numbers"
+     ],
+     "note": "Sort as a class. 1, 4, 9, 16 has differences 3, 5, 7: not linear.",
+     "sort": {
+      "columns": [
+       "Linear",
+       "Non-linear"
+      ],
+      "cards": [
+       "2, 5, 8, 11",
+       "1, 2, 4, 8",
+       "20, 17, 14, 11",
+       "1, 4, 9, 16",
+       "0.5, 1, 1.5, 2",
+       "3, 6, 12, 24"
+      ],
+      "answer": [
+       0,
+       1,
+       0,
+       1,
+       0,
+       1
+      ]
+     }
+    },
+    {
+     "heading": "Is it in the sequence?",
+     "bullets": [
+      "Count on with the rule, or look for a pattern",
+      "4, 7, 10, 13: all are one more than a multiple of 3"
+     ],
+     "note": "Ask: is 50 in 4, 7, 10, ...? 49 is not a multiple of 3, so no.",
+     "misconception": {
+      "wrong": "2, 4, 6, 8 has rule 'n + 2'",
+      "right": "It has term-to-term rule '+2'. The letter n comes later for position-to-term rules."
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Find the rule first"
+     ],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "What is the next term in 81, 27, 9, 3, ...?",
+      "options": [
+       "0",
+       "1",
+       "−3",
+       "−6"
+      ],
+      "answer": 1,
+      "why": "The rule is ÷3, so 3 ÷ 3 = 1. Choosing 0 or −3 means a subtracting pattern was assumed."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Write the next two terms: 12, 19, 26, 33, ...",
+     "a": "40, 47",
+     "mins": 1
+    },
+    {
+     "q": "Write the term-to-term rule: 90, 82, 74, 66.",
+     "a": "Subtract 8 (first term 90)",
+     "mins": 1
+    },
+    {
+     "q": "Find the missing terms: 5, __, 17, 23, __",
+     "a": "11 and 29",
+     "mins": 2
+    },
+    {
+     "q": "Is 1, 3, 9, 27 linear? Explain.",
+     "a": "No: the rule is ×3, the differences are 2, 6, 18.",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: First term 6, rule +5. Write the first five terms.",
+     "a": "6, 11, 16, 21, 26",
+     "mins": 3
+    },
+    {
+     "q": "Extend: In the matchstick pattern 4, 7, 10, ..., how many squares can you make with 40 sticks?",
+     "a": "Terms are 3 × squares + 1. 40 − 1 = 39, 39 ÷ 3 = 13 squares.",
+     "mins": 5
+    },
+    {
+     "q": "Stretch: A sequence starts 2, 6. Write two different ways it could continue and give each rule.",
+     "a": "For example +4: 2, 6, 10, 14; or ×3: 2, 6, 18, 54",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Next term: 1.5, 2.25, 3, 3.75, ...",
+     "a": "4.5 (rule +0.75)",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how could you find the 20th term of 4, 7, 10, 13 without writing them all?",
+     "a": "Start at 4 and add 3 nineteen times: 4 + 19 × 3 = 61.",
+     "mins": 2
+    }
+   ],
+   "homework": "Write three sequences of your own (one going up, one going down, one non-linear), each with five terms and its rule.",
+   "send": "Support: number line to count on. EAL: 'term' and 'rule' with a labelled example. Stretch: Fibonacci-type sequences (add the two previous terms).",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 7 9.1 Sequences, 9.2 Pattern sequences and 9.4 Extending sequences (the school's KS3 scheme)",
+    "Matchsticks or cotton buds to build the pattern (optional, household)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "starter": "show-me",
+    "hinge": "show-me",
+    "practice": "cold-call",
+    "exit": "chat-waterfall"
+   }
+  },
+  {
+   "unit": "Autumn 1: Sequences; algebraic notation; equality and equivalence",
+   "n": 21,
+   "title": "Function machines and algebraic notation",
+   "duration": 50,
+   "bigQuestion": "Why do mathematicians use letters for numbers?",
+   "objectives": [
+    "Find outputs and inputs of one- and two-step function machines",
+    "Write expressions using algebraic notation",
+    "Know that 3n means 3 × n and n/2 means n ÷ 2"
+   ],
+   "successCriteria": [
+    "All: find outputs of a function machine",
+    "Most: write the output as an expression in n",
+    "Some: find inputs by working backwards with inverse operations"
+   ],
+   "crossCurricular": "Computing: functions and inputs and outputs in programs",
+   "smsc": "Spiritual: the scholars of the Islamic world such as al-Khwarizmi wrote the early books of algebra (الجبر, al-jabr)",
+   "keywords": [
+    {
+     "term": "function",
+     "def": "a rule that changes an input into an output"
+    },
+    {
+     "term": "input",
+     "def": "the number that goes into the machine"
+    },
+    {
+     "term": "output",
+     "def": "the number that comes out"
+    },
+    {
+     "term": "expression",
+     "def": "letters and numbers joined by operations, with no equals sign"
+    },
+    {
+     "term": "inverse",
+     "def": "the operation that undoes another"
+    }
+   ],
+   "hook": {
+    "type": "puzzle",
+    "text": "I think of a number, multiply it by 4 and subtract 3. I get 29. What was my number?",
+    "a": "Work backwards: 29 + 3 = 32, 32 ÷ 4 = 8. Today we give the 'mystery number' a letter."
+   },
+   "starter": [
+    {
+     "q": "Bismillah. Next term: 7, 11, 15, 19, ...",
+     "a": "23",
+     "mins": 1
+    },
+    {
+     "q": "Work out 6 × 9 − 4.",
+     "a": "50",
+     "mins": 1
+    },
+    {
+     "q": "What is the inverse of × 5?",
+     "a": "÷ 5",
+     "mins": 1
+    },
+    {
+     "q": "Write 0.3 as a percentage.",
+     "a": "30%",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Function machines",
+     "bullets": [
+      "Input → × 3 → + 2 → output",
+      "Input 4: 4 × 3 = 12, 12 + 2 = 14"
+     ],
+     "note": "Do three inputs together: 0, 5, 10 (outputs 2, 17, 32).",
+     "table": {
+      "head": [
+       "Input",
+       "× 3",
+       "+ 2 (output)"
+      ],
+      "rows": [
+       [
+        "4",
+        "12",
+        "14"
+       ],
+       [
+        "0",
+        "0",
+        "2"
+       ],
+       [
+        "5",
+        "15",
+        "17"
+       ],
+       [
+        "10",
+        "30",
+        "32"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Algebraic notation",
+     "bullets": [
+      "3n means 3 × n",
+      "n + 5, n − 2, n/4 for ÷ 4",
+      "n² means n × n"
+     ],
+     "note": "Al-jabr (الجبر), the name 'algebra', comes from al-Khwarizmi's book. Write the number before the letter: 3n not n3.",
+     "misconception": {
+      "wrong": "3n means 3 + n, or the number 3 followed by n (like 34)",
+      "right": "3n means 3 × n: if n = 4, 3n = 12"
+     }
+    },
+    {
+     "heading": "Expressions from machines",
+     "bullets": [
+      "Input n → × 3 → + 2 gives 3n + 2",
+      "Input n → + 2 → × 3 gives 3(n + 2)"
+     ],
+     "note": "Order matters. Compare the two machines with n = 4: 14 and 18.",
+     "model": {
+      "problem": "Write the output for input n: n → − 1 → × 5",
+      "steps": [
+       "Start with n",
+       "Subtract 1: n − 1",
+       "Multiply all of it by 5: 5(n − 1)"
+      ],
+      "answer": "5(n − 1)"
+     }
+    },
+    {
+     "heading": "Working backwards",
+     "bullets": [
+      "Reverse the machine",
+      "Use inverse operations in reverse order"
+     ],
+     "note": "Pupils solve the hook with the reversed machine.",
+     "model": {
+      "problem": "n → × 4 → − 3 gives 29. Find n.",
+      "steps": [
+       "Reverse: 29 → + 3 → ÷ 4",
+       "29 + 3 = 32",
+       "32 ÷ 4 = 8"
+      ],
+      "answer": "n = 8"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Order of operations in the machine"
+     ],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which expression is 'n, multiply by 2, then add 7'?",
+      "options": [
+       "2(n + 7)",
+       "2n + 7",
+       "n2 + 7",
+       "2 + 7n"
+      ],
+      "answer": 1,
+      "why": "Multiply first: 2n, then add 7. 2(n + 7) adds first. n2 is not standard notation."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Input 6 into × 5 then − 4. Output?",
+     "a": "26",
+     "mins": 1
+    },
+    {
+     "q": "Write 'n divided by 3, then add 1' as an expression.",
+     "a": "n/3 + 1",
+     "mins": 1
+    },
+    {
+     "q": "Write the output for input n: + 4 then × 2.",
+     "a": "2(n + 4)",
+     "mins": 2
+    },
+    {
+     "q": "Machine: × 6 then + 1 gives 49. Find the input.",
+     "a": "(49 − 1) ÷ 6 = 8",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: For the machine × 2 then + 9, find the outputs for inputs 3, 0, 1.5 and n.",
+     "a": "15, 9, 12, 2n + 9",
+     "mins": 4
+    },
+    {
+     "q": "Extend: Write as expressions: (a) 7 more than y (b) y multiplied by 7 (c) 7 less than y (d) y shared between 7",
+     "a": "(a) y + 7 (b) 7y (c) y − 7 (d) y/7",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: Two machines: A is × 2 then + 6, B is + 3 then × 2. Show they always give the same output.",
+     "a": "A gives 2n + 6. B gives 2(n + 3) = 2n + 6. They are the same for every n.",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Write 'multiply n by 5 then subtract 2'.",
+     "a": "5n − 2",
+     "mins": 1
+    },
+    {
+     "q": "If 4n − 1 = 19, what is n?",
+     "a": "5",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why is a letter useful?",
+     "a": "It stands for any number, so one expression describes every input.",
+     "mins": 1
+    }
+   ],
+   "homework": "Make three function machines of your own, each with two steps; give a partner the output and ask them to find the input.",
+   "send": "Support: blank function machine template. EAL: 'input' and 'output' with arrows. Stretch: machines with squaring and their inverses.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 7 3.1 Functions and 3.4 Writing expressions (the school's KS3 scheme)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "starter": "show-me",
+    "hinge": "show-me",
+    "practice": "cold-call",
+    "exit": "chat-waterfall"
+   }
+  },
+  {
+   "unit": "Autumn 1: Sequences; algebraic notation; equality and equivalence",
+   "n": 22,
+   "title": "Forming and simplifying expressions; substitution",
+   "duration": 50,
+   "bigQuestion": "How can a short expression replace a long sentence?",
+   "objectives": [
+    "Collect like terms to simplify expressions",
+    "Form expressions from words and diagrams",
+    "Substitute positive whole numbers into expressions"
+   ],
+   "successCriteria": [
+    "All: collect like terms such as 3a + 2a",
+    "Most: simplify expressions with two letters and form perimeter expressions",
+    "Some: substitute into expressions with powers and brackets"
+   ],
+   "crossCurricular": "Science: substituting into simple formulae; Computing: variables",
+   "smsc": "Moral: the value of being exact and clear in what we write",
+   "keywords": [
+    {
+     "term": "term",
+     "def": "a single number, letter or product like 4x"
+    },
+    {
+     "term": "like terms",
+     "def": "terms with exactly the same letters and powers"
+    },
+    {
+     "term": "simplify",
+     "def": "write in a shorter way"
+    },
+    {
+     "term": "substitute",
+     "def": "replace a letter with a number"
+    },
+    {
+     "term": "coefficient",
+     "def": "the number in front of a letter"
+    }
+   ],
+   "hook": {
+    "type": "odd-one-out",
+    "text": "Which expression is the odd one out?",
+    "options": [
+     "4x + 2x",
+     "6x",
+     "3x + 3x",
+     "6 + x"
+    ],
+    "a": "6 + x is not equal to 6x. The others all simplify to 6x."
+   },
+   "starter": [
+    {
+     "q": "Bismillah. Write 'n multiplied by 4 then add 1'.",
+     "a": "4n + 1",
+     "mins": 1
+    },
+    {
+     "q": "If n = 5, what is 3n?",
+     "a": "15",
+     "mins": 1
+    },
+    {
+     "q": "What is the inverse of − 7?",
+     "a": "+ 7",
+     "mins": 1
+    },
+    {
+     "q": "Next term: 2, 4, 8, 16, ...",
+     "a": "32",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Like terms",
+     "bullets": [
+      "3a and 5a are like terms",
+      "3a and 3b are not",
+      "a and a² are not"
+     ],
+     "note": "Sort as a class, then ask why 2xy and 5yx are alike (same letters).",
+     "sort": {
+      "columns": [
+       "Like 4a",
+       "Like 4b",
+       "Like a²"
+      ],
+      "cards": [
+       "7a",
+       "a",
+       "3b",
+       "b",
+       "2a²",
+       "−5a",
+       "a²",
+       "10b"
+      ],
+      "answer": [
+       0,
+       0,
+       1,
+       1,
+       2,
+       0,
+       2,
+       1
+      ]
+     }
+    },
+    {
+     "heading": "Collecting like terms",
+     "bullets": [
+      "Add and subtract the coefficients of like terms",
+      "Keep the sign in front of each term"
+     ],
+     "note": "Circle each term with its sign before collecting.",
+     "model": {
+      "problem": "Simplify 5x + 3y − 2x + y.",
+      "steps": [
+       "x terms: 5x − 2x = 3x",
+       "y terms: 3y + y = 4y",
+       "Write them together"
+      ],
+      "answer": "3x + 4y"
+     }
+    },
+    {
+     "heading": "Forming expressions",
+     "bullets": [
+      "Perimeter: add all the sides",
+      "A rectangle with sides 2x and x + 3"
+     ],
+     "note": "Perimeter = 2x + (x + 3) + 2x + (x + 3) = 6x + 6.",
+     "misconception": {
+      "wrong": "3a + 4b = 7ab",
+      "right": "3a + 4b cannot be simplified: they are not like terms"
+     }
+    },
+    {
+     "heading": "Substitution",
+     "bullets": [
+      "Replace the letter, then calculate",
+      "Use the order of operations"
+     ],
+     "note": "Pupils try a = 2, b = 7 in 4a + b (15).",
+     "model": {
+      "problem": "Find 3x² − y when x = 4 and y = 10.",
+      "steps": [
+       "x² = 4² = 16",
+       "3 × 16 = 48",
+       "48 − 10 = 38"
+      ],
+      "answer": "38"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Like terms only"
+     ],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Simplify 6p + 2q − 4p − 5q.",
+      "options": [
+       "2p − 3q",
+       "2p + 7q",
+       "10p − 3q",
+       "−p"
+      ],
+      "answer": 0,
+      "why": "6p − 4p = 2p and 2q − 5q = −3q. Choosing 2p + 7q ignores the minus sign in front of 5q."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Simplify 9m − 3m + m.",
+     "a": "7m",
+     "mins": 1
+    },
+    {
+     "q": "Simplify 4a + 3b + 2a − b.",
+     "a": "6a + 2b",
+     "mins": 2
+    },
+    {
+     "q": "Find 5x − 2 when x = 6.",
+     "a": "28",
+     "mins": 1
+    },
+    {
+     "q": "Find ab + 3 when a = 4 and b = 5.",
+     "a": "23",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Simplify (a) 8y + 2 − 3y + 7 (b) 2x + 5 + x − 1 (c) 3c + 4d − c − 4d",
+     "a": "(a) 5y + 9 (b) 3x + 4 (c) 2c",
+     "mins": 4
+    },
+    {
+     "q": "Extend: A triangle has sides 2n, n + 4 and 3n − 1. Write and simplify an expression for the perimeter, then find it when n = 5.",
+     "a": "6n + 3; when n = 5 it is 33",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: Show that 2(x + 3) + 4x is equal to 6(x + 1).",
+     "a": "2(x + 3) + 4x = 2x + 6 + 4x = 6x + 6 = 6(x + 1)",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Simplify 7k + 3 − 2k − 5.",
+     "a": "5k − 2",
+     "mins": 1
+    },
+    {
+     "q": "Find 2n² when n = 3.",
+     "a": "18",
+     "mins": 1
+    },
+    {
+     "q": "Big question: write 'four lots of t, then three more lots of t' as a short expression.",
+     "a": "7t",
+     "mins": 1
+    }
+   ],
+   "homework": "Write three expressions for the perimeter of shapes you draw with lengths in x, and simplify each.",
+   "send": "Support: colour-code like terms (highlight). EAL: 'like' here means 'the same kind'. Stretch: expressions with negative coefficients and powers.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 7 3.2 Simplifying expressions 1, 3.5 Substituting into formulae and 3.6 Writing formulae (the school's KS3 scheme)",
+    "Highlighters (optional)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "starter": "show-me",
+    "hinge": "show-me",
+    "practice": "cold-call",
+    "exit": "chat-waterfall"
+   }
+  },
+  {
+   "unit": "Autumn 1: Sequences; algebraic notation; equality and equivalence",
+   "n": 23,
+   "title": "Equality and equivalence: the = and ≡ signs",
+   "duration": 50,
+   "bigQuestion": "What is the difference between 'equal for one value' and 'equal for every value'?",
+   "objectives": [
+    "Understand = as 'has the same value as'",
+    "Know when two expressions are equivalent and use ≡",
+    "Solve one-step equations using inverse operations"
+   ],
+   "successCriteria": [
+    "All: say whether a number statement is true or false",
+    "Most: tell an equation from an identity",
+    "Some: solve one-step equations and check by substitution"
+   ],
+   "crossCurricular": "Science: balancing in chemical equations (later); English: precise meanings of words",
+   "smsc": "Moral: justice ('adl, عَدْل) as keeping both sides fair and balanced",
+   "keywords": [
+    {
+     "term": "equals",
+     "def": "both sides have the same value"
+    },
+    {
+     "term": "equation",
+     "def": "a statement that is true only for some values of the letter"
+    },
+    {
+     "term": "identity",
+     "def": "a statement true for every value; uses ≡"
+    },
+    {
+     "term": "equivalent",
+     "def": "always equal in value"
+    },
+    {
+     "term": "solve",
+     "def": "find the value that makes an equation true"
+    }
+   ],
+   "hook": {
+    "type": "question",
+    "text": "True or false: 3 + 4 = 7 + 2? Many pupils say 'true'. Why might they?",
+    "a": "False: the left is 7 and the right is 9. Some read = as 'the answer is' instead of 'the same as'."
+   },
+   "starter": [
+    {
+     "q": "Bismillah. Simplify 3x + 5x − x.",
+     "a": "7x",
+     "mins": 1
+    },
+    {
+     "q": "Find 4n − 3 when n = 5.",
+     "a": "17",
+     "mins": 1
+    },
+    {
+     "q": "Next term: 31, 27, 23, 19, ...",
+     "a": "15",
+     "mins": 1
+    },
+    {
+     "q": "Write 3/5 as a percentage.",
+     "a": "60%",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "= means 'the same value as'",
+     "bullets": [
+      "Both sides must balance",
+      "8 + 5 = 10 + 3 is true",
+      "20 − 6 = 14 + 2 is false"
+     ],
+     "note": "Picture a balance scale: each side must weigh the same. Fill the gap: 9 + 6 = __ + 8 (7).",
+     "misconception": {
+      "wrong": "9 + 6 = __ + 8, so the gap is 15",
+      "right": "The left side is 15, so __ + 8 must be 15: the gap is 7"
+     }
+    },
+    {
+     "heading": "Equations",
+     "bullets": [
+      "x + 7 = 12 is true only when x = 5",
+      "Solve with the inverse operation"
+     ],
+     "note": "Do the same to both sides to keep the balance.",
+     "model": {
+      "problem": "Solve 4m = 36.",
+      "steps": [
+       "4m means 4 × m",
+       "Inverse of × 4 is ÷ 4",
+       "36 ÷ 4 = 9",
+       "Check: 4 × 9 = 36"
+      ],
+      "answer": "m = 9"
+     }
+    },
+    {
+     "heading": "Identities and ≡",
+     "bullets": [
+      "3(x + 2) ≡ 3x + 6 is true for every x",
+      "≡ means 'is equivalent to'"
+     ],
+     "note": "Test with x = 1, 5, 10: both sides always match.",
+     "table": {
+      "head": [
+       "x",
+       "3(x + 2)",
+       "3x + 6"
+      ],
+      "rows": [
+       [
+        "1",
+        "9",
+        "9"
+       ],
+       [
+        "5",
+        "21",
+        "21"
+       ],
+       [
+        "10",
+        "36",
+        "36"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Equation or identity?",
+     "bullets": [
+      "Equation: true for some values",
+      "Identity: true for all values"
+     ],
+     "note": "Teams poll: equation or identity for each card, then reveal.",
+     "sort": {
+      "columns": [
+       "Equation (=)",
+       "Identity (≡)"
+      ],
+      "cards": [
+       "x + 3 = 10",
+       "2x + 3x ≡ 5x",
+       "y/2 = 6",
+       "4(a + 1) ≡ 4a + 4",
+       "n − 5 = 1",
+       "b × b ≡ b²"
+      ],
+      "answer": [
+       0,
+       1,
+       0,
+       1,
+       0,
+       1
+      ]
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Is it true for every value?"
+     ],
+     "note": "Show me on 3.",
+     "check": {
+      "q": "Which is an identity?",
+      "options": [
+       "2x + 1 = 9",
+       "5y ≡ y + y + y + y + y",
+       "x/3 = 4",
+       "x + x = 8"
+      ],
+      "answer": 1,
+      "why": "y + y + y + y + y is always 5y. The others are true only for one value of the letter."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "True or false: 6 × 4 = 30 − 6?",
+     "a": "True: both are 24",
+     "mins": 1
+    },
+    {
+     "q": "Fill the gap: 45 − 17 = __ + 20.",
+     "a": "8",
+     "mins": 1
+    },
+    {
+     "q": "Solve x − 9 = 14.",
+     "a": "x = 23",
+     "mins": 1
+    },
+    {
+     "q": "Solve n/5 = 7.",
+     "a": "n = 35",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Solve (a) a + 12 = 30 (b) 7b = 63 (c) c − 4.5 = 2 (d) d/3 = 11",
+     "a": "(a) 18 (b) 9 (c) 6.5 (d) 33",
+     "mins": 4
+    },
+    {
+     "q": "Extend: Write = or ≡ in each gap: 2(x + 4) __ 2x + 8; 3x __ 12; x + x + x __ 3x",
+     "a": "≡; =; ≡",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Ali says 'x² = 2x is an identity because it works when x = 2.' Is he right? Explain with an example.",
+     "a": "No. When x = 3, x² = 9 but 2x = 6. It is only true for x = 0 and x = 2, so it is an equation.",
+     "mins": 5
+    }
+   ],
+   "exit": [
+    {
+     "q": "Solve 6y = 42.",
+     "a": "y = 7",
+     "mins": 1
+    },
+    {
+     "q": "Equation or identity: 4(n − 1) ≡ 4n − 4?",
+     "a": "Identity: true for every n",
+     "mins": 1
+    },
+    {
+     "q": "Big question: what does ≡ tell you that = does not?",
+     "a": "≡ means the two sides are equal for every value of the letter.",
+     "mins": 1
+    }
+   ],
+   "homework": "Write three equations and three identities of your own; solve the equations and test each identity with two values.",
+   "send": "Support: balance diagrams drawn beside each equation. EAL: 'equivalent' with the symbol ≡. Stretch: two-step equations such as 3x + 4 = 19.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 7 3.3 Simplifying expressions 2 and 3.5 Substituting into formulae (the school's KS3 scheme)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "starter": "show-me",
+    "hinge": "show-me",
+    "practice": "cold-call",
+    "exit": "chat-waterfall"
+   }
   }
  ]
 }
