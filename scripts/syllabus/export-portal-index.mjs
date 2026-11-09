@@ -13,6 +13,7 @@ const LABELS = {
   "islamic-studies": "Pearson Edexcel IGCSE 4IS1",
 };
 import { buildCoverage } from "./coverage.mjs";
+import { retiredChecker } from "../lessons/retired.mjs";
 const coverage = buildCoverage();
 const specs = {};
 for (const f of fs.readdirSync(dir).filter((x) => x.endsWith(".json")).sort()) {
@@ -37,7 +38,7 @@ for (const f of fs.readdirSync(dir).filter((x) => x.endsWith(".json")).sort()) {
     gaps: d.gaps || [],
     units: (d.units || []).map((u) => {
       const cu = coverage[d.slug]?.units.find((x) => x.ref === u.ref);
-      return { ref: u.ref, title: u.title, paper: u.paper || "", year: u.year || "", points: u.points || [], pl: cu ? cu.points.map((p) => p.lessons) : [], lessons: cu ? cu.lessons : [] };
+      return { ref: u.ref, title: u.title, paper: u.paper || "", year: u.year || "", term: u.term || "", keyTerms: u.keyTerms || [], weeks: u.weeks || [], points: u.points || [], pl: cu ? cu.points.map((p) => p.lessons) : [], lessons: cu ? cu.lessons : [] };
     }),
   };
 }
@@ -51,7 +52,16 @@ for (const f of fs.readdirSync(dir2).filter((x) => x.endsWith(".json") && x !== 
     framework: d.framework || "",
     status: d.status,
     statusNote: d.statusNote || "",
-    years: Object.fromEntries(Object.entries(d.yearMap || {}).map(([y, us]) => [y, us.map((u) => ({ unit: u.unit, focus: u.focus || [], skills: u.skills || [], keyTerms: u.keyTerms || [], assess: u.assess || "" }))])),
+    purpose: d.purpose || [],
+    toKS4: d.toKS4 || "",
+    // Everything the portal's Syllabus pages show when the Curriculum planner cannot be reached.
+    years: Object.fromEntries(
+      Object.entries(d.yearMap || {}).map(([y, us]) => [
+        y,
+        us.map((u) => ({ unit: u.unit, focus: u.focus || [], skills: u.skills || [], keyTerms: u.keyTerms || [], assess: u.assess || "", halfTerm: u.halfTerm || "", prereq: u.prereq || "", leadsTo: u.leadsTo || "", weeks: u.weeks || [], resources: u.resources || "", foundingYear: u.foundingYear || "" })),
+      ]),
+    ),
+    progression: (d.progression || []).map((p) => ({ thread: p.thread, steps: p.steps || {} })),
   };
 }
 const hubs = JSON.parse(fs.readFileSync(path.join(root, "content/syllabus/matrices/hubs.json"), "utf8")).hubs.map((h) => ({
@@ -60,6 +70,24 @@ const hubs = JSON.parse(fs.readFileSync(path.join(root, "content/syllabus/matric
   hook: h.hook,
   nodes: h.nodes.map((n) => ({ subject: n.subject, ref: n.ref, note: n.note })),
 }));
+// The Lesson library's units for each subject and year, so the Syllabus pages can link to them:
+// lessonUnits[slug][year] = [[unit name, number of lessons], ...]; lessonUnitOf[slug]["y10/12"] = unit name.
+const isRetired = retiredChecker();
+const lessonUnits = {};
+const lessonUnitOf = {};
+const ldir = path.join(root, "content/lessons");
+for (const slug of fs.readdirSync(ldir).filter((x) => fs.statSync(path.join(ldir, x)).isDirectory()).sort()) {
+  for (const f of fs.readdirSync(path.join(ldir, slug)).filter((x) => /^y\d+\.json$/.test(x))) {
+    const y = f.replace(/\.json$/, "");
+    const counts = new Map();
+    for (const l of JSON.parse(fs.readFileSync(path.join(ldir, slug, f), "utf8")).lessons || []) {
+      if (isRetired(slug, y, l.n) || !l.unit) continue;
+      counts.set(l.unit, (counts.get(l.unit) || 0) + 1);
+      if (specs[slug]) (lessonUnitOf[slug] ||= {})[`${y}/${l.n}`] = l.unit;
+    }
+    if (counts.size) (lessonUnits[slug] ||= {})[y] = [...counts.entries()];
+  }
+}
 const out = path.join(root, "src/lib/learn/syllabusIndex.json");
-fs.writeFileSync(out, JSON.stringify({ specs, syllabi, hubs }));
+fs.writeFileSync(out, JSON.stringify({ specs, syllabi, hubs, lessonUnits, lessonUnitOf }));
 console.log(`wrote ${path.relative(root, out)} (${fs.statSync(out).size} bytes): ${Object.keys(specs).length} specs, ${hubs.length} hubs`);

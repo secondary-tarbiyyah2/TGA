@@ -23,13 +23,13 @@ export const FEE_DEFAULTS: FeeSettings = { terms: 2, instalments: 7 };
 export const INSTALMENT_CHOICES = [7, 8, 10, 12] as const;
 
 export const DEFAULT_PAYMENT_SCHEDULE_TEXT =
-  "The two payments are due on Friday 1 January 2027 and Sunday 28 March 2027. The first monthly payment is due on 1 January 2027, then payments are taken on the 28th of each month from 28 January to 28 June 2027. The first payment is due on acceptance and no later than 1 January 2027.";
+  "The two payments are due on Friday 8 January 2027 and Sunday 28 March 2027. The first monthly payment is due on 8 January 2027, then payments are taken on the 28th of each month from 28 January to 28 June 2027. The first payment is due on acceptance and no later than 8 January 2027.";
 
 /** Non-schedule fee defaults from the Fees Policy PDF (all editable in the admin Fees editor). */
 export const FEE_POLICY_DEFAULTS = {
   /** Application fee per child (the only admissions fee; there is no registration fee). */
   applicationFee: 150,
-  /** % off the annual total when the annual option is paid in full by the due date (1 Jan 2027). */
+  /** % off the annual total when the annual option is paid in full by the due date (8 Jan 2027). */
   annualDiscountPercent: 2,
   /** Sibling discount for the third and later children (Prospectus p.18 / Fees Policy: 5% second child, 10% third and later). */
   siblingDiscountLaterPercent: 10,
@@ -245,7 +245,7 @@ export function estimateFamilyFees(input: FamilyEstimateInput): FamilyEstimate {
   if (input.plan === "annual" && pct(input.annualDiscountPercent) > 0) {
     discountsP.push({
       label: `Annual payment discount (${pct(input.annualDiscountPercent)}%)`,
-      note: "If paid in full by 1 January 2027.",
+      note: "If paid in full by 8 January 2027.",
       amountOff: Math.round((grossP * pct(input.annualDiscountPercent)) / 100),
     });
   }

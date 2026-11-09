@@ -8,6 +8,6 @@ export const KEY_DATES: KeyDate[] = [
   { label: "Online open evening", when: "Sun 6 December, 4pm", href: "/open-evening" },
   { label: "Taster morning", when: "Sat 12 December", detail: "Years 1 to 6 at 10:00, Years 7 to 11 at 11:15", href: "/open-evening" },
   { label: "Apply by", when: "Fri 18 December 2026", detail: "Later applications are considered while places remain", href: "/admissions" },
-  { label: "Induction day", when: "Fri 1 January 2027", detail: "Accounts, devices and meeting teachers" },
-  { label: "First live lessons", when: "Mon 4 January 2027" },
+  { label: "Induction week", when: "4 to 8 January 2027", detail: "Accounts, devices and meeting teachers" },
+  { label: "First live lessons", when: "Mon 11 January 2027" },
 ];

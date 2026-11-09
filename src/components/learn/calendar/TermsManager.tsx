@@ -59,7 +59,7 @@ function withKind(cf: ClosureDraft, kind: ClosureKind): ClosureDraft {
   return { ...cf, kind, name };
 }
 
-/** The founding year: the Academy opens on Fri 1 Jan 2027 (induction day),
+/** The founding year: the Academy opens on Mon 4 Jan 2027 (induction week),
  * so 2026/27 has no autumn term. These match the published term dates
  * (src/content/seed.ts): the Ramadan and Eid break and the Eid al-Adha half
  * term sit inside the two terms; the spring half term (26 to 30 March) falls
@@ -375,7 +375,7 @@ export function TermsManager({
               </Lbl>
               <p className="pb-2 text-xs text-ink/65">
                 {wizard.year === FOUNDING_YEAR
-                  ? "Prefilled from the published 2026/27 term dates: the Academy opens on Friday 1 January 2027, so there is no autumn term. Change anything before saving."
+                  ? "Prefilled from the published 2026/27 term dates: the Academy opens on Monday 4 January 2027, so there is no autumn term. Change anything before saving."
                   : "Prefilled with typical UK dates (Sept to Dec, Jan to Mar, Apr to Jul). Change anything before saving."}
               </p>
             </div>

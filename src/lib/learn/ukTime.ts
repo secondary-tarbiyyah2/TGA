@@ -38,7 +38,7 @@ export function ukDaysAgo(n: number): string {
   return shiftDateKey(ukToday(), -n);
 }
 
-/** "Fri 1 Jan 2027" style label for a YYYY-MM-DD key, independent of the browser zone. */
+/** "Mon 4 Jan 2027" style label for a YYYY-MM-DD key, independent of the browser zone. */
 export function formatDateKey(key: string, opts: Intl.DateTimeFormatOptions = { weekday: "short", day: "numeric", month: "short", year: "numeric" }): string {
   const [y, m, d] = key.split("-").map(Number);
   if (!y || !m || !d) return key;

@@ -228,13 +228,13 @@ export function admissionsProcessSteps(fees: { applicationFee?: number }): Proce
       title: "Offer and securing your place",
       owner: "you",
       short: "We email the offer. Accept within five working days and pay your first fee payment to secure your place.",
-      body: `We email you a conditional offer. To accept, reply within five working days and pay your first fee payment (the whole year, the first of two payments, or the first monthly payment) by Friday 1 January 2027, plus the application fee (${app}) if not already paid. You can cancel within 14 days of accepting, as the Fees Policy explains.`,
+      body: `We email you a conditional offer. To accept, reply within five working days and pay your first fee payment (the whole year, the first of two payments, or the first monthly payment) by Friday 8 January 2027, plus the application fee (${app}) if not already paid. You can cancel within 14 days of accepting, as the Fees Policy explains.`,
     },
     {
       title: "Welcome",
       owner: "us",
-      short: "We create your accounts; induction day is Friday 1 January.",
-      body: "We create your parent and pupil accounts, email you the sign-in details, and welcome your child to induction day (Friday 1 January 2027) to set up accounts, test devices and meet teachers, ahead of the first live lessons on Monday 4 January 2027.",
+      short: "We create your accounts; induction week runs 4 to 8 January.",
+      body: "We create your parent and pupil accounts, email you the sign-in details, and welcome your child to induction week (4 to 8 January 2027) to set up accounts, test devices and meet teachers, ahead of the first live lessons on Monday 11 January 2027.",
     },
   ];
 }

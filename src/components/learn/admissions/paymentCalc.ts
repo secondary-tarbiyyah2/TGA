@@ -2,7 +2,7 @@ import { FEE_POLICY_DEFAULTS, applyAnnualDiscount, computeFeeSchedule } from "@/
 import type { AdmissionsSettings, FeeBandRow, PlanId, StageDetails } from "@/components/learn/admissions/stageTypes";
 
 /** Policy deadline for the 2% annual-payment discount (Fees Policy 2026-27). */
-export const ANNUAL_DISCOUNT_DEADLINE = "1 January 2027";
+export const ANNUAL_DISCOUNT_DEADLINE = "8 January 2027";
 
 function yearNumber(label: string): number | null {
   if (/reception/i.test(label)) return 0;

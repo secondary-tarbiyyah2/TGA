@@ -9,7 +9,7 @@ approvedBy: Ustadh Abu Zayn Haneef Sandhar, Headteacher
 agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
 dateOfIssue: 1 September 2026 (version 1.2, updated 28 October 2026 for the January 2027 launch)
 nextReview: 31 August 2027
-basis: Tarbiyyah Global Academy Fee Policy (September 2026), updated in October 2026 to the founding-cohort fees, charges and payment dates published in the Prospectus 2026–27 (live lessons from 4 January 2027)
+basis: Tarbiyyah Global Academy Fee Policy (September 2026), updated in October 2026 to the founding-cohort fees, charges and payment dates published in the Prospectus 2026–27 (live lessons from 11 January 2027)
 readAlongside: Admissions Policy; Flexible Learning Policy; Examinations and Private Candidates Policy; Concerns and Complaints Policy
 availability: Published on the Academy website and Parent Portal. Available in large print or another accessible format on request.
 ---
@@ -20,7 +20,7 @@ The Academy's fees are set by the Senior Leadership Team with the approval of th
 
 ## 2. Tuition Fees 2026–2027 (January to July 2027)
 
-Live lessons begin on Monday 4 January 2027. The annual figure below is the total tuition for the founding-cohort period, January to July 2027 (seven months), with no charge for December. All fees are inclusive of VAT.
+Live lessons begin on Monday 11 January 2027. The annual figure below is the total tuition for the founding-cohort period, January to July 2027 (seven months), with no charge for December. All fees are inclusive of VAT.
 
 | Year group | Annual (Jan–Jul 2027) | Annual, paid in full (2% discount) | 2 payments | 7 monthly payments |
 | --- | --- | --- | --- | --- |
@@ -29,14 +29,14 @@ Live lessons begin on Monday 4 January 2027. The annual figure below is the tota
 | Year 7 – Year 9 | £2,796.00 | £2,740.08 | £1,398.00 | £399.43 |
 | Year 10 – Year 11 | £3,000.00 | £2,940.00 | £1,500.00 | £428.57 |
 
-The two payments are due on Friday 1 January 2027 and Sunday 28 March 2027. Monthly instalments are spread across seven payments: the first on Friday 1 January 2027, then the 28th of each month from 28 January to 28 June 2027. Instalments always add up exactly to the annual fee; where rounding makes them uneven, the final instalment absorbs the difference.
+The two payments are due on Friday 8 January 2027 and Sunday 28 March 2027. Monthly instalments are spread across seven payments: the first on Friday 8 January 2027, then the 28th of each month from 28 January to 28 June 2027. Instalments always add up exactly to the annual fee; where rounding makes them uneven, the final instalment absorbs the difference.
 
 ## 3. Other Charges
 
 | Charge | Detail |
 | --- | --- |
 | Application fee | £150 per child, non-refundable, payable when applying. It covers the entry assessment and the time spent with each family. There is no registration fee. |
-| Annual payment discount | 2% discount where the annual option is chosen and paid in full by Friday 1 January 2027 |
+| Annual payment discount | 2% discount where the annual option is chosen and paid in full by Friday 8 January 2027 |
 | Sibling discount | 5% off tuition for a second child and 10% for the third and later children, applied to the younger sibling's tuition. It can be combined with the annual payment discount |
 | Examination fees | Not included. International GCSE entry fees are billed separately by the examination centre (see the Examinations and Private Candidates Policy) |
 
@@ -44,10 +44,10 @@ The two payments are due on Friday 1 January 2027 and Sunday 28 March 2027. Mont
 
 | Payment | Due date |
 | --- | --- |
-| First payment (to secure a place for January 2027) | On acceptance of the place, and no later than Friday 1 January 2027 |
-| Annual payment | Friday 1 January 2027 |
-| Two payments | Friday 1 January 2027 and Sunday 28 March 2027 |
-| Monthly payments | Friday 1 January 2027, then the 28th of each month from 28 January to 28 June 2027 (seven payments) |
+| First payment (to secure a place for January 2027) | On acceptance of the place, and no later than Friday 8 January 2027 |
+| Annual payment | Friday 8 January 2027 |
+| Two payments | Friday 8 January 2027 and Sunday 28 March 2027 |
+| Monthly payments | Friday 8 January 2027, then the 28th of each month from 28 January to 28 June 2027 (seven payments) |
 
 ## 5. Ways to Pay
 
@@ -82,7 +82,7 @@ One half term's written notice is required to withdraw a pupil, and fees remain 
 15. The Academy will seek to recover outstanding fees. Where an account is referred to a collection agency or the courts, reasonable costs actually incurred may be claimed.
 16. Where a pupil is withdrawn without the required notice, an administration charge of £210 applies, reflecting account closure, transfer of records and loss of the place at short notice. It does not apply within the cancellation period, after a fee increase notice, where proper notice was given, or where the Academy ended the placement.
 17. The application fee of £150 per child is non-refundable.
-18. A pupil joining after Monday 4 January 2027 is charged from the start of the half term in which they join. Where a pupil starts after the start of the second half term, an additional £180 administration charge applies, covering the extra planning and assessment needed.
+18. A pupil joining after Monday 11 January 2027 is charged from the start of the half term in which they join. Where a pupil starts after the start of the second half term, an additional £180 administration charge applies, covering the extra planning and assessment needed.
 
 ## Appendix A — Standing Order Form
 
@@ -97,6 +97,6 @@ Please complete this form and give it to your bank, using capital letters. All s
 | Name and full address of your bank | |
 | Pay | An Noor Islamic School (Tarbiyyah Global Academy fees), account details as given in your offer letter |
 | Amount | £ |
-| First payment date | 1 January 2027 (or the date in your offer letter) |
-| Then | The 28th of each month from 21 January 2027 to 28 June 2027 |
+| First payment date | 8 January 2027 (or the date in your offer letter) |
+| Then | The 28th of each month from 28 January 2027 to 28 June 2027 |
 | Signature(s) and date | |

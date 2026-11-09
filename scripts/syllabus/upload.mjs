@@ -10,7 +10,7 @@ const url = process.env.SUPABASE_URL;
 const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
 if (!url || !key) { console.error("Needs SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY"); process.exit(1); }
 const supabase = createClient(url, key, { auth: { persistSession: false } });
-const TYPES = { ".pptx": "application/vnd.openxmlformats-officedocument.presentationml.presentation", ".pdf": "application/pdf" };
+const TYPES = { ".pptx": "application/vnd.openxmlformats-officedocument.presentationml.presentation", ".docx": "application/vnd.openxmlformats-officedocument.wordprocessingml.document", ".pdf": "application/pdf" };
 
 const files = [];
 (function walk(d) {
