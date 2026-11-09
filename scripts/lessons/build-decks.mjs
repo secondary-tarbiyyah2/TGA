@@ -6,10 +6,10 @@
 //
 // Each deck is designed for its age group, not one template for everyone:
 //   early  (Reception–Year 3): huge text, bright friendly colours, round
-//          shapes, Najm the star (an original TGA character) asks the
-//          questions, a star collected at each stage of the "mission", word
-//          cards, a movement break and a "Show me!" check.
-//   junior (Years 3–6): the lesson as a mission, warm-up timer, varied
+//          shapes, a plain eight-pointed star motif (no face: a symbol, not
+//          a character), a star collected at each stage of the "mission",
+//          word cards, a movement break and a "Show me!" check.
+//   junior (Years 4–6): the lesson as a mission, warm-up timer, varied
 //          layouts, a brain break, bronze/silver/gold challenges.
 //   senior (Years 7–11): Do now with timer, key vocabulary, think–pair–share,
 //          core/extend/stretch tasks, exam board label, confidence check.
@@ -284,22 +284,23 @@ function header(slide, ctx, title, kicker, stage, minutes, routine) {
   }
 }
 
-/** Original TGA character for the youngest: Najm, a smiling eight-point star. */
-function najm(slide, x, y, size) {
+/**
+ * The youngest decks' motif: a plain eight-pointed star (the khatam shape), gold with a lighter
+ * star inside. Deliberately no face: it is a symbol, not a character.
+ */
+function khatam(slide, x, y, size) {
   slide.addShape("star8", { x, y, w: size, h: size, fill: { color: "F2B33D" }, line: { color: "D99A22", width: 1.5 } });
-  const e = size * 0.09;
-  slide.addShape("ellipse", { x: x + size * 0.36 - e / 2, y: y + size * 0.4, w: e, h: e * 1.25, fill: { color: INK }, line: { color: INK, width: 0 } });
-  slide.addShape("ellipse", { x: x + size * 0.64 - e / 2, y: y + size * 0.4, w: e, h: e * 1.25, fill: { color: INK }, line: { color: INK, width: 0 } });
-  slide.addShape("blockArc", { x: x + size * 0.36, y: y + size * 0.42, w: size * 0.28, h: size * 0.24, angleRange: [20, 160], arcThicknessRatio: 0.22, fill: { color: INK }, line: { color: INK, width: 0 } });
-  slide.addShape("ellipse", { x: x + size * 0.24, y: y + size * 0.55, w: e * 1.2, h: e * 0.8, fill: { color: "F08A6B", transparency: 30 }, line: { color: "F08A6B", width: 0, transparency: 30 } });
-  slide.addShape("ellipse", { x: x + size * 0.76 - e * 1.2, y: y + size * 0.55, w: e * 1.2, h: e * 0.8, fill: { color: "F08A6B", transparency: 30 }, line: { color: "F08A6B", width: 0, transparency: 30 } });
+  const i = size * 0.5;
+  slide.addShape("star8", { x: x + (size - i) / 2, y: y + (size - i) / 2, w: i, h: i, rotate: 22.5, fill: { color: "FFE3A3" }, line: { color: "D99A22", width: 1 } });
+  const c = size * 0.16;
+  slide.addShape("octagon", { x: x + (size - c) / 2, y: y + (size - c) / 2, w: c, h: c, fill: { color: "F2B33D" }, line: { color: "D99A22", width: 0.75 } });
 }
 
-/** Speech bubble. `who` is "najm" (early) or a small label like "Think about it". */
+/** Question box: a callout with a small label like "Think about it" (a plain rounded box for the youngest). */
 function bubble(slide, ctx, text, box, label) {
   const B = BAND[ctx.band];
   const size = fitSize(text, box.w - 0.5, box.h - (label ? 0.55 : 0.3), ctx.band === "early" ? 30 : 22, 14);
-  slide.addShape("wedgeRoundRectCallout", { ...box, fill: { color: ctx.band === "early" ? "FFFFFF" : GOLD_SOFT }, line: { color: ctx.band === "early" ? "F2B33D" : GOLD, width: 2 }, rectRadius: 0.2 });
+  slide.addShape(ctx.band === "early" ? "roundRect" : "wedgeRoundRectCallout", { ...box, fill: { color: ctx.band === "early" ? "FFFFFF" : GOLD_SOFT }, line: { color: ctx.band === "early" ? "F2B33D" : GOLD, width: 2 }, rectRadius: 0.2 });
   if (label) slide.addText(label.toUpperCase(), { x: box.x + 0.25, y: box.y + 0.12, w: box.w - 0.5, h: 0.3, fontFace: FONT, fontSize: 12, bold: true, color: GOLD_DARK, charSpacing: 2 });
   slide.addText(clean(text), { x: box.x + 0.25, y: box.y + (label ? 0.42 : 0.1), w: box.w - 0.5, h: box.h - (label ? 0.55 : 0.2), fontFace: FONT, fontSize: size, bold: ctx.band === "early", color: INK, valign: "middle" });
   void B;
@@ -441,7 +442,7 @@ function chooseLayout(ctx, t, i) {
 const BREAK_SECONDS = 60;
 const MOVE_EARLY = [
   { name: "Stand like a tree", steps: ["Stand up tall like a tree trunk", "Stretch your arms out like branches", "Wiggle your fingers like leaves in the wind"] },
-  { name: "Copy Najm!", steps: ["Teacher makes a shape with their body", "Copy it as fast as you can", "Freeze… and sit down slowly"] },
+  { name: "Copy the teacher!", steps: ["Teacher makes a shape with their body", "Copy it as fast as you can", "Freeze… and sit down slowly"] },
   { name: "Count and jump", steps: ["Stand up", "Count to five together", "Do a little jump on every number"] },
   { name: "Air writing", steps: ["Hold up your magic finger", "Write today's special word in the air", "Now write it really big, then really small"] },
   { name: "Say SubhanAllah", steps: ["Take a big breath in", "Breathe out slowly and say SubhanAllah", "Do it three times, quietly"] },
@@ -491,7 +492,7 @@ function breakSlide(pptx, ctx, act) {
     s.addText(String(i + 1), { x: 0.9, y, w: 0.8, h: 0.8, fontFace: FONT, fontSize: 24, bold: true, color: "FFFFFF", align: "center", valign: "middle" });
     s.addText(t, { x: 1.95, y: y - 0.1, w: 6.6, h: 1.0, fontFace: FONT, fontSize: fitSize(t, 6.6, 1.0, early ? 28 : 24, 16), color: INK, valign: "middle" });
   });
-  if (early) najm(s, 9.4, 2.4, 3.0);
+  if (early) khatam(s, 9.4, 2.4, 3.0);
   else {
     s.addShape("ellipse", { x: 9.6, y: 2.7, w: 2.6, h: 2.6, fill: { color: "FFFFFF" }, line: { color: EMERALD, width: 6 } });
     s.addText(String(BREAK_SECONDS), { x: 9.6, y: 2.95, w: 2.6, h: 1.5, fontFace: FONT, fontSize: 72, bold: true, color: EMERALD, align: "center", valign: "middle" });
@@ -592,7 +593,7 @@ function hookSlide(pptx, ctx, lesson) {
   const textH = opts.length ? 2.9 : 4.4;
   const head = early ? FONT : ctx.theme.head;
   s.addText(clean(h.text), { x: 0.9, y: 1.35, w: textW, h: textH, fontFace: head, fontSize: fitSize(h.text, early ? textW : fw(textW, head), textH, early ? 48 : 44, early ? 28 : 22), bold: true, color: "FFFFFF", valign: "middle", italic: h.type === "story" && !early });
-  if (early) najm(s, 9.6, 1.25, 2.9);
+  if (early) khatam(s, 9.6, 1.25, 2.9);
   else hookIcon(s, h.type, 9.7, 1.35, 2.8);
   if (opts.length) {
     const gap = 0.25;
@@ -752,9 +753,9 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
       s.addShape("roundRect", { x: 1.0, y: 1.75, w: chipW, h: 0.55, rectRadius: 0.27, fill: { color: ctx.accent }, line: { color: ctx.accent, width: 0 } });
       s.addText(chip, { x: 1.0, y: 1.75, w: chipW, h: 0.55, fontFace: FONT, fontSize: 18, bold: true, color: "FFFFFF", align: "center", valign: "middle" });
       s.addText(lesson.title, { x: 1.0, y: 2.55, w: 7.6, h: 2.6, fontFace: FONT, fontSize: fitSize(lesson.title, 7.6, 2.5, 56, 30), bold: true, color: INK, valign: "top" });
-      najm(s, 8.9, 2.1, 3.3);
-      s.addShape("wedgeRoundRectCallout", { x: 8.6, y: 5.55, w: 3.9, h: 0.95, rectRadius: 0.2, fill: { color: "FFFFFF" }, line: { color: "F2B33D", width: 2 } });
-      s.addText("Hello! I'm Najm. Let's learn!", { x: 8.75, y: 5.6, w: 3.6, h: 0.85, fontFace: FONT, fontSize: 18, bold: true, color: INK, align: "center", valign: "middle" });
+      khatam(s, 8.9, 2.1, 3.3);
+      s.addShape("roundRect", { x: 8.6, y: 5.55, w: 3.9, h: 0.95, rectRadius: 0.45, fill: { color: "FFFFFF" }, line: { color: "F2B33D", width: 2 } });
+      s.addText("Let's learn!", { x: 8.75, y: 5.6, w: 3.6, h: 0.85, fontFace: FONT, fontSize: 18, bold: true, color: INK, align: "center", valign: "middle" });
       s.addText(`Lesson ${lesson.n}`, { x: 1.0, y: 5.4, w: 7, h: 0.45, fontFace: FONT, fontSize: 18, color: MUTED });
     } else {
       s.background = { color: theme.dark };
@@ -906,7 +907,7 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
     const routine = routineFor(lesson, "starter");
     header(s, ctx, B.starterTitle, B.starterKicker, 0, mins, routine);
     if (band === "early") {
-      najm(s, 0.9, 2.5, 2.4);
+      khatam(s, 0.9, 2.5, 2.4);
       stackedCards(s, ctx, items, { x: 3.7, y: 2.15, w: 8.9, h: 4.65 });
     } else {
       stackedCards(s, ctx, items, { x: 0.8, y: 2.15, w: 11.8, h: 4.2 });
@@ -954,7 +955,7 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
     }
     if (withBubble) {
       if (band === "early") {
-        najm(s, 0.85, 5.75, 1.2);
+        khatam(s, 0.85, 5.75, 1.2);
         bubble(s, ctx, q, { x: 2.3, y: 5.8, w: 10.3, h: 1.05 });
       } else {
         bubble(s, ctx, q, { x: 0.8, y: 5.8, w: 11.8, h: 1.05 }, band === "junior" ? "Think about it" : "Think · pair · share");
@@ -984,8 +985,8 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
     } else {
       stackedCards(s, ctx, items, { x: 0.8, y: 2.15, w: band === "early" ? 8.9 : 11.8, h: 4.65 });
       if (band === "early") {
-        najm(s, 10.0, 2.6, 2.4);
-        s.addText("Say it with me!", { x: 9.75, y: 5.2, w: 2.9, h: 0.6, fontFace: FONT, fontSize: 20, bold: true, color: GOLD_DARK, align: "center" });
+        khatam(s, 10.0, 2.6, 2.4);
+        s.addText("Say it together!", { x: 9.75, y: 5.2, w: 2.9, h: 0.6, fontFace: FONT, fontSize: 20, bold: true, color: GOLD_DARK, align: "center" });
       }
     }
     s.addNotes(`Work through these with the class, modelling your thinking aloud. Check every pupil before moving on.${ROUTINES[routine] ? ` Routine: ${ROUTINES[routine].label}. ${ROUTINES[routine].how}` : ""}`);
@@ -1133,7 +1134,7 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
     s.addText(band === "early" ? "Well done today! See you next time, in sha Allah." : "Thank you for your effort and adab today. See you next lesson, in sha Allah.", { x: 0.8, y: 5.95, w: textW, h: 0.45, fontFace: FONT, fontSize: 18, color: MUTED });
     s.addImage({ path: LOGO_DARK, x: 0.8, y: 6.55, w: 0.55 * LOGO_RATIO, h: 0.55 });
     if (band === "early") {
-      najm(s, 9.6, 1.2, 2.9);
+      khatam(s, 9.6, 1.2, 2.9);
       // Mission complete: one star for each stage of the lesson.
       for (let k = 0; k < 5; k++) s.addShape("star5", { x: 9.55 + k * 0.62, y: 4.35, w: 0.55, h: 0.55, fill: { color: "F2B33D" }, line: { color: "D99A22", width: 1 } });
       s.addText("Mission complete!", { x: 9.2, y: 5.0, w: 3.8, h: 0.5, fontFace: FONT, fontSize: 22, bold: true, color: GOLD_DARK, align: "center" });
