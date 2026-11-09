@@ -116,8 +116,8 @@ Statuses: **Not started** · **In progress** · **Done** · **Needs decision** �
 ### T13. FAQ page: wasted space on the right; sticky search and topics
 - **Owner's note:** "Blank space on the FAQ far right; ensure optimal use of space. The 'search questions' and navigation menu: when I scroll down, the navigation goes; it needs to be sticky under the header for constant access."
 - **Files:** `src/app/(marketing)/faqs/page.tsx`, `src/components/FaqAccordion.tsx`, `src/components/FaqPreview.tsx`, `src/components/Header.tsx` (header height for `top-*` offset).
-- **Done when:** [ ] layout uses the width (e.g. topic sidebar + answers); [ ] search and topic menu stay visible under the sticky header while scrolling; [ ] fine at 360 px.
-- **Status:** Not started
+- **Done when:** [x] layout uses the width (topic sidebar + answers on wide screens); [x] search and topic menu stay visible under the sticky header while scrolling (sidebar on desktop, compact bar on phones); [ ] owner checks it on a phone (360 px) and desktop after deploy.
+- **Status:** Done (awaiting owner check)
 
 ### T14. Eligibility ("Is it right for us?"): structure, sticky progress, second child
 - **Owner's note:** "On the eligibility form I need optimal structure, and scrolling down shouldn't remove it [the navigation]. Adding a second child should maybe pop up across? Better use of space and ease of navigation. 'Where next' shouldn't be at the bottom of the eligibility page."
@@ -154,3 +154,4 @@ Statuses: **Not started** · **In progress** · **Done** · **Needs decision** �
 ## Log
 
 - 2026-11-09: Backlog created from the owner's notes. T4 started: questions are now covered as soon as the pupil leaves the page, with a "Return to my assessment" button and a visible count (`AssessmentSitting.tsx`). T5 started: Print in the entry-assessment drawer now prints only the report (`EntryAssessmentsAdmin.tsx`, `printElement`).
+- 2026-11-09: T13 done. `FaqAccordion.tsx`: wide screens get a sticky left sidebar (search, topics with counts that jump to each section, "Still have a question?"), answers use the rest of the width; phones and tablets get a compact sticky bar under the header with search and a single scrolling row of topics. The current topic is highlighted as you scroll. Topics now jump to their section instead of filtering; search still filters. `faqs/page.tsx`: list no longer limited to `max-w-3xl`.
