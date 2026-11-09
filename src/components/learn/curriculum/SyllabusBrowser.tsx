@@ -50,6 +50,11 @@ type View = "plan" | "years" | "progression" | "exams";
 type PackFile = { name: string; path: string };
 type PackDocs = { pdf?: PackFile; editable?: PackFile };
 
+/** "Pearson Edexcel International GCSE (9-1) English Literature", without repeating the board when the qualification already names it. */
+const qualName = (board: string, qual: string) => {
+  const b = board.replace(/\s*\(.*?\)\s*/g, " ").trim();
+  return qual.toLowerCase().startsWith(b.split(" ")[0].toLowerCase()) ? qual : `${b} ${qual}`;
+};
 const yearShort = (y: string) => yearLabel(y).replace("Year ", "Y");
 const span = (p: SubjectPlan) => (p.yearKeys.length ? `${yearLabel(p.yearKeys[0])} to ${yearLabel(p.yearKeys[p.yearKeys.length - 1])}` : "");
 
@@ -70,6 +75,7 @@ export function SyllabusBrowser({ area }: { area: "teach" | "admin" }) {
   const [docs, setDocs] = useState<Record<string, PackDocs>>({});
   const [docError, setDocError] = useState<string | null>(null);
   const detailRef = useRef<HTMLElement | null>(null);
+  const [restored, setRestored] = useState(false);
 
   // Start from a link (?subject=&view=&year=&unit=), else the subject looked at last.
   useEffect(() => {
@@ -88,12 +94,15 @@ export function SyllabusBrowser({ area }: { area: "teach" | "admin" }) {
     if (v === "plan" || v === "years" || v === "progression" || v === "exams") setView(v);
     if (q.get("year")) setYear(q.get("year") || "");
     if (q.get("unit")) setUnitKey(q.get("unit"));
+    setRestored(true);
     /* eslint-enable react-hooks/set-state-in-effect */
     loadPlan().then(setPlan);
   }, []);
 
-  // Keep the address in step, so a view can be shared or bookmarked.
+  // Keep the address in step, so a view can be shared or bookmarked (only once the link has
+  // been read: writing earlier would wipe it before it is used).
   useEffect(() => {
+    if (!restored) return;
     const q = new URLSearchParams();
     if (slug) q.set("subject", slug);
     if (slug && view !== "plan") q.set("view", view);
@@ -106,7 +115,7 @@ export function SyllabusBrowser({ area }: { area: "teach" | "admin" }) {
     } catch {
       /* ignore */
     }
-  }, [slug, view, year, unitKey]);
+  }, [restored, slug, view, year, unitKey]);
 
   // The pack's documents in storage (staff-only bucket).
   useEffect(() => {
@@ -296,7 +305,7 @@ function WholeSchool({ docs, openFile }: { docs: Record<string, PackDocs>; openF
 function SubjectHeader({ sp, live, docs, overview, openFile, onSubject, canEdit, area }: { sp: SubjectPlan; live: boolean; docs?: PackDocs; overview?: PackDocs; openFile: (f: PackFile, d: boolean) => void; onSubject: (s: string) => void; canEdit: boolean; area: string }) {
   const facts: [string, string][] = [];
   if (sp.syllabus) facts.push(["Years 1 to 9", sp.syllabus.framework]);
-  sp.specs.forEach(({ info }) => facts.push([`Years 10 and 11${sp.specs.length > 1 ? `: ${info.subject}` : ""}`, info.examEntry ? `Taught from ${info.board} ${info.code}; pupils sit ${info.examEntry.board} ${info.examEntry.qualification} (${info.examEntry.code})` : `${info.board} ${info.qualification} (${info.code})`]));
+  sp.specs.forEach(({ info }) => facts.push([`Years 10 and 11${sp.specs.length > 1 ? `: ${info.subject}` : ""}`, info.examEntry ? `Taught from ${info.board} ${info.code}; pupils sit ${qualName(info.examEntry.board, info.examEntry.qualification)} (${info.examEntry.code})` : `${qualName(info.board, info.qualification)} (${info.code})`]));
   const statuses = [sp.syllabus?.status, ...sp.specs.map((s) => s.info.status)].filter(Boolean);
   const verified = statuses.every((s) => s === "Verified");
   return (
@@ -439,7 +448,7 @@ function PlanView({ sp, onOpen }: { sp: SubjectPlan; onOpen: (u: PlanUnit) => vo
                       .map((u) => (
                         <li key={u.key}>
                           <button type="button" onClick={() => onOpen(u)} className={`${cellBtn} flex items-baseline gap-2 ${isFoundingHalfTerm(h.key) ? "border-teal-100 bg-teal-100/60" : "border-gold-light bg-white"}`}>
-                            <span className="w-16 shrink-0 text-xs font-semibold text-ink/70">{h.label}</span>
+                            <span className="w-[4.5rem] shrink-0 whitespace-nowrap text-xs font-semibold text-ink/70">{h.label}</span>
                             <span>{focusTitle(u.title)}</span>
                           </button>
                         </li>
@@ -565,7 +574,7 @@ function UnitDetail({ u, sp, detailRef, area, canEdit, prev, next, onUnit }: { u
   const libHref = (l: { slug: string; year: string; unit: string }) => `/${area}/curriculum?year=${l.year}&subject=${encodeURIComponent(l.slug)}&unit=${encodeURIComponent(l.unit)}`;
   const h = `unit-${u.key.replace(/[^a-zA-Z0-9]/g, "")}`;
   return (
-    <article ref={detailRef} tabIndex={-1} aria-labelledby={h} className="min-w-0 scroll-mt-4 rounded-2xl border border-gold-light bg-white focus:outline-none">
+    <article ref={detailRef} tabIndex={-1} aria-labelledby={h} className="min-w-0 self-start scroll-mt-4 rounded-2xl border border-gold-light bg-white focus:outline-none">
       <header className="rounded-t-2xl border-b border-gold-light bg-cream/70 px-4 py-4 sm:px-6">
         <p className="flex flex-wrap items-center gap-2 text-xs font-semibold">
           <span className="rounded-full bg-teal-700 px-2.5 py-0.5 uppercase tracking-wide text-white">{spec ? u.ref : halfTermLabel(u.halfTerm)}</span>
@@ -856,7 +865,7 @@ function ExamsView({ sp }: { sp: SubjectPlan }) {
           {info.examEntry && (
             <div className="mt-3 rounded-xl border-l-4 border-gold-500 bg-cream px-4 py-3 text-sm">
               <p className="font-semibold text-ink">
-                Pupils sit {info.examEntry.board} {info.examEntry.qualification} ({info.examEntry.code})
+                Pupils sit {qualName(info.examEntry.board, info.examEntry.qualification)} ({info.examEntry.code})
               </p>
               {info.examEntry.papers && <p className="mt-1 text-ink/85">{info.examEntry.papers}</p>}
               {info.examEntry.notes.length > 0 && (
