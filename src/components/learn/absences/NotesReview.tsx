@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { ukToday } from "@/lib/learn/ukTime";
 import { STATUS_LABEL, formatDay, formatRange, type AbsenceNote, type NoteStatus } from "./data";
+import { Select } from "@/components/learn/Select";
 
 type Filter = NoteStatus | "all";
 const CHIP: Record<NoteStatus, string> = {
@@ -76,12 +77,12 @@ export function NotesReview({ notes, onChanged }: { notes: AbsenceNote[] | null;
         <h2 className="text-base font-semibold text-ink">Reasons parents have sent</h2>
         <label className="text-xs font-medium text-ink/65">
           <span className="sr-only">Filter by status</span>
-          <select value={filter} onChange={(e) => setFilter(e.target.value as Filter)} className="rounded-lg border border-gold-light bg-white px-3 py-2 text-sm text-ink">
+          <Select value={filter} onChange={(e) => setFilter(e.target.value as Filter)} className="rounded-lg border border-gold-light bg-white px-3 py-2 text-sm text-ink">
             <option value="undecided">Undecided ({counts.undecided})</option>
             <option value="authorised">Authorised ({counts.authorised})</option>
             <option value="unauthorised">Not authorised ({counts.unauthorised})</option>
             <option value="all">All ({(notes || []).length})</option>
-          </select>
+          </Select>
         </label>
       </div>
       <div className="px-4 py-4">

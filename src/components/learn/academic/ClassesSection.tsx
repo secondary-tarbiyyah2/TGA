@@ -7,6 +7,7 @@ import { lessonMinutesFor } from "@/lib/learn/timetable";
 import { cleanMeetingUrl, dangerBtn, EmptyState, Field, ghostBtn, inputCls, Notice, primaryBtn, StepCard } from "./shared";
 import type { AcademicYear, Child, ClassRow, ClassTeacher, Enrolment, Subject, Teacher, YearGroup } from "./shared";
 import { ui } from "@/components/learn/ui";
+import { Select } from "@/components/learn/Select";
 
 type Props = {
   classes: ClassRow[];
@@ -35,22 +36,22 @@ function ClassFields({ d, set, props }: { d: Draft; set: (f: (s: Draft) => Draft
     <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
       <Field label="Class name"><input className={inputCls} value={d.name} onChange={(e) => set((s) => ({ ...s, name: e.target.value }))} placeholder="Year 7 Arabic" /></Field>
       <Field label="Year group">
-        <select className={inputCls} value={d.year_group_id} onChange={(e) => { const id = e.target.value; set((s) => ({ ...s, year_group_id: id, lesson_length_minutes: DEFAULT_LENGTHS.includes(s.lesson_length_minutes.trim()) ? String(lessonMinutesFor(props.yearGroups.find((y) => y.id === id)?.name)) : s.lesson_length_minutes })); }}>
+        <Select className={inputCls} value={d.year_group_id} onChange={(e) => { const id = e.target.value; set((s) => ({ ...s, year_group_id: id, lesson_length_minutes: DEFAULT_LENGTHS.includes(s.lesson_length_minutes.trim()) ? String(lessonMinutesFor(props.yearGroups.find((y) => y.id === id)?.name)) : s.lesson_length_minutes })); }}>
           <option value="">Choose…</option>
           {props.yearGroups.map((y) => <option key={y.id} value={y.id}>{y.name}</option>)}
-        </select>
+        </Select>
       </Field>
       <Field label="Subject">
-        <select className={inputCls} value={d.subject_id} onChange={(e) => set((s) => ({ ...s, subject_id: e.target.value }))}>
+        <Select className={inputCls} value={d.subject_id} onChange={(e) => set((s) => ({ ...s, subject_id: e.target.value }))}>
           <option value="">Choose…</option>
           {props.subjects.map((y) => <option key={y.id} value={y.id}>{y.name}</option>)}
-        </select>
+        </Select>
       </Field>
       <Field label="Academic year">
-        <select className={inputCls} value={d.academic_year_id} onChange={(e) => set((s) => ({ ...s, academic_year_id: e.target.value }))}>
+        <Select className={inputCls} value={d.academic_year_id} onChange={(e) => set((s) => ({ ...s, academic_year_id: e.target.value }))}>
           <option value="">Choose…</option>
           {props.years.map((y) => <option key={y.id} value={y.id}>{y.label}</option>)}
-        </select>
+        </Select>
       </Field>
       <Field label="Lessons per week"><input type="text" inputMode="decimal" min={1} className={inputCls} value={d.weekly_lessons} onChange={(e) => set((s) => ({ ...s, weekly_lessons: e.target.value }))} /></Field>
       <Field label="Lesson length (minutes)"><input type="text" inputMode="decimal" min={15} step={5} className={inputCls} value={d.lesson_length_minutes} onChange={(e) => set((s) => ({ ...s, lesson_length_minutes: e.target.value }))} /></Field>
@@ -273,10 +274,10 @@ export function ClassesSection(props: Props) {
                     </div>
                   )}
                   <div className="mt-2 flex flex-wrap items-center gap-2">
-                    <select value={enrolForm[c.id] || ""} onChange={(e) => setEnrolForm((s) => ({ ...s, [c.id]: e.target.value }))} aria-label={`Enrol a child into ${c.name}`} className={`${ui.select} !w-auto`}>
+                    <Select value={enrolForm[c.id] || ""} onChange={(e) => setEnrolForm((s) => ({ ...s, [c.id]: e.target.value }))} aria-label={`Enrol a child into ${c.name}`} className={`${ui.select} !w-auto`}>
                       <option value="">Enrol child…</option>
                       {kids.filter((ch) => !enrolled.some((e) => e.child_id === ch.id)).map((ch) => <option key={ch.id} value={ch.id}>{ch.name}</option>)}
-                    </select>
+                    </Select>
                     <button type="button" className={ghostBtn} disabled={busy || !enrolForm[c.id]} onClick={() => enrol(c.id)}>Enrol</button>
                     {missingFromYear.length > 0 && yg && (
                       <button type="button" className={ghostBtn} disabled={busy} onClick={() => enrolYearGroup(c, missingFromYear, yg.name)}>

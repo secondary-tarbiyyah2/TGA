@@ -6,6 +6,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import Link from "next/link";
 import { Tabs } from "@/components/learn/Tabs";
 import { btn, ui } from "@/components/learn/ui";
+import { Select } from "@/components/learn/Select";
 
 type Severity = "critical" | "high" | "medium";
 type Status = "open" | "acknowledged" | "resolved";
@@ -296,12 +297,12 @@ export function ComplianceDashboard({ isHeadTeacher, alertsExtra, topExtra, reco
                   {f === "active" ? "Needs action" : f[0].toUpperCase() + f.slice(1)}
                 </button>
               ))}
-              <select value={kindFilter} onChange={(e) => setKindFilter(e.target.value as Kind | "all")} aria-label="Type of alert" className={`${ui.select} !w-auto`}>
+              <Select value={kindFilter} onChange={(e) => setKindFilter(e.target.value as Kind | "all")} aria-label="Type of alert" className={`${ui.select} !w-auto`}>
                 <option value="all">All types</option>
                 <option value="flagged_message">Flagged messages</option>
                 <option value="escalation">Safeguarding escalations</option>
                 <option value="absence">Unexplained absences</option>
-              </select>
+              </Select>
             </div>
             {isHeadTeacher && (
               <button

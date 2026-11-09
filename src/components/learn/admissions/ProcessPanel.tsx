@@ -14,6 +14,7 @@ import type { AdmissionsContext } from "@/components/learn/admissions/useAdmissi
 import { Group, Pill, fieldCls, primaryBtn } from "@/components/learn/admissions/ui";
 import { Tabs } from "@/components/learn/Tabs";
 import { ukToday } from "@/lib/learn/ukTime";
+import { Select } from "@/components/learn/Select";
 
 const today = () => ukToday();
 const numOrNull = (v: string): number | null => (v.trim() === "" || Number.isNaN(Number(v)) ? null : Number(v));
@@ -176,12 +177,12 @@ function OfferSection({
           </label>
           <label className="block text-sm font-medium text-ink">
             Plan chosen
-            <select value={d.plan} onChange={(e) => set("plan", e.target.value)} className={fieldCls}>
+            <Select value={d.plan} onChange={(e) => set("plan", e.target.value)} className={fieldCls}>
               <option value="">Not chosen yet{ctx.planIntent ? ` (family intends: ${ctx.planIntent})` : ""}</option>
               <option value="monthly">Monthly</option>
               <option value="termly">Termly</option>
               <option value="annual">Annual, paid in full</option>
-            </select>
+            </Select>
           </label>
           <label className="block text-sm font-medium text-ink sm:col-span-2">
             Annual fee override (£)

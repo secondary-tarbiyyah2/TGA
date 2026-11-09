@@ -4,6 +4,7 @@ import { useMemo, useState, type MouseEvent, type ReactNode } from "react";
 import { Icon } from "@/components/learn/Icon";
 import { btn, ui } from "@/components/learn/ui";
 import { saveCsv, toCsv, type CsvCell } from "@/lib/learn/csv";
+import { Select } from "@/components/learn/Select";
 
 /**
  * The one way the portal shows a list of records (pupils, registers, staff
@@ -237,7 +238,7 @@ export function DataTable<T>({
             <div className="flex flex-wrap items-center gap-2">
               <label className="flex items-center gap-1.5">
                 Per page
-                <select
+                <Select
                   value={size}
                   onChange={(e) => {
                     setSize(Number(e.target.value));
@@ -250,7 +251,7 @@ export function DataTable<T>({
                       {n || "All"}
                     </option>
                   ))}
-                </select>
+                </Select>
               </label>
               {pages > 1 && (
                 <nav aria-label="Pages" className="flex items-center gap-1">

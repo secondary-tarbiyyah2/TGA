@@ -7,6 +7,7 @@ import { fetchChildClasses, useFamilyChildren, useStudentChildId, type ClassSumm
 import { Tabs } from "@/components/learn/Tabs";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { ui } from "@/components/learn/ui";
+import { Select } from "@/components/learn/Select";
 
 type StatusRow = { homework_id: string; class_id: string; due_at: string; status: "missing" | "late" | "on_time" | "not_yet_due"; submitted_at: string | null };
 type Hw = { id: string; title: string; archived_at: string | null };
@@ -93,14 +94,14 @@ function TodoBody({ childId, hwHref, heading, subtitle, childPicker }: { childId
         subtitle={subtitle}
         actions={
           classes.length > 1 ? (
-            <select value={classId} onChange={(e) => setClassId(e.target.value)} aria-label="Filter by class" className={`${ui.select} max-w-full sm:w-64`}>
+            <Select value={classId} onChange={(e) => setClassId(e.target.value)} aria-label="Filter by class" className={`${ui.select} max-w-full sm:w-64`}>
               <option value="">All classes</option>
               {classes.map((c) => (
                 <option key={c.id} value={c.id}>
                   {c.name}
                 </option>
               ))}
-            </select>
+            </Select>
           ) : undefined
         }
       />

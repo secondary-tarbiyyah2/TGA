@@ -9,6 +9,7 @@ import { EntryReport, type ReportData } from "@/components/learn/assess/EntryRep
 import { MathText } from "@/components/learn/assess/MathText";
 import { printElement } from "@/components/learn/printScope";
 import { PrintHeader } from "@/components/learn/print";
+import { Select } from "@/components/learn/Select";
 
 type Row = {
   id: string; candidate_name: string; year: number; status: string; created_at: string; started_at: string | null; submitted_at: string | null; completed_at: string | null;
@@ -269,18 +270,18 @@ function CreateForm({ onDone, onCancel }: { onDone: (link: string, emailed: bool
       <div className="grid gap-4 sm:grid-cols-3">
         {who === "applicant" && (
           <label className={`${ui.label} sm:col-span-2`}>Applicant
-            <select value={appId} onChange={(e) => setAppId(e.target.value)} className={`mt-1 ${ui.input}`}>
+            <Select value={appId} onChange={(e) => setAppId(e.target.value)} className={`mt-1 ${ui.input}`}>
               <option value="">Choose…</option>
               {apps.map((a) => <option key={a.id} value={a.id}>{a.child_first_name} {a.child_last_name} · {a.year_group_applying}{a.reference ? ` · ${a.reference}` : ""}</option>)}
-            </select>
+            </Select>
           </label>
         )}
         {who === "pupil" && (
           <label className={`${ui.label} sm:col-span-2`}>Pupil
-            <select value={childId} onChange={(e) => void pickPupil(e.target.value)} className={`mt-1 ${ui.input}`}>
+            <Select value={childId} onChange={(e) => void pickPupil(e.target.value)} className={`mt-1 ${ui.input}`}>
               <option value="">Choose…</option>
               {kids.map((k) => <option key={k.id} value={k.id}>{k.name}{k.year_groups?.name ? ` · ${k.year_groups.name}` : ""}</option>)}
-            </select>
+            </Select>
           </label>
         )}
         {who === "other" && (
@@ -289,10 +290,10 @@ function CreateForm({ onDone, onCancel }: { onDone: (link: string, emailed: bool
           </label>
         )}
         <label className={ui.label}>Year group
-          <select value={year || (pickedYear ? String(pickedYear) : "")} onChange={(e) => setYear(e.target.value)} className={`mt-1 ${ui.input}`}>
+          <Select value={year || (pickedYear ? String(pickedYear) : "")} onChange={(e) => setYear(e.target.value)} className={`mt-1 ${ui.input}`}>
             <option value="">Choose…</option>
             {Array.from({ length: 11 }, (_, i) => <option key={i + 1} value={i + 1}>Year {i + 1}</option>)}
-          </select>
+          </Select>
         </label>
       </div>
 
@@ -302,30 +303,30 @@ function CreateForm({ onDone, onCancel }: { onDone: (link: string, emailed: bool
         <div className="mt-2 grid gap-1 sm:grid-cols-2">
           <label className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm hover:bg-cream">
             <span className="font-medium text-ink">Extra time</span>
-            <select value={extra} onChange={(e) => setExtra(Number(e.target.value))} className={`${ui.input} !w-auto`}>
+            <Select value={extra} onChange={(e) => setExtra(Number(e.target.value))} className={`${ui.input} !w-auto`}>
               {[...new Set([0, 25, 50, 100, extra])].sort((x, y) => x - y).map((v) => <option key={v} value={v}>{v ? `${v}%` : "None"}</option>)}
-            </select>
+            </Select>
           </label>
           <div className="flex flex-wrap items-center gap-2 rounded-lg px-3 py-2 text-sm hover:bg-cream">
             <label className="flex items-center gap-2"><span className="font-medium text-ink">Breaks in each part</span>
-              <select value={breaks} onChange={(e) => setBreaks(e.target.value as typeof breaks)} className={`${ui.input} !w-auto`}>
+              <Select value={breaks} onChange={(e) => setBreaks(e.target.value as typeof breaks)} className={`${ui.input} !w-auto`}>
                 <option value="default">{effectiveYear >= 1 ? `Usual for Year ${effectiveYear} (${defaultBreaks(effectiveYear).perSection})` : "Usual for the year"}</option>
                 {["0", "1", "2", "3", "4", "6"].map((v) => <option key={v} value={v}>{v === "0" ? "No breaks" : v}</option>)}
-              </select>
+              </Select>
             </label>
             <label className="flex items-center gap-2"><span className="text-ink/70">of</span>
-              <select value={breakMins} onChange={(e) => setBreakMins(Number(e.target.value))} className={`${ui.input} !w-auto`} aria-label="Length of each break">
+              <Select value={breakMins} onChange={(e) => setBreakMins(Number(e.target.value))} className={`${ui.input} !w-auto`} aria-label="Length of each break">
                 <option value={0}>{effectiveYear >= 1 ? `${defaultBreaks(effectiveYear).minutes} min (usual)` : "usual length"}</option>
                 {[2, 3, 5, 8, 10].map((v) => <option key={v} value={v}>{v} min</option>)}
-              </select>
+              </Select>
             </label>
           </div>
           <label className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm hover:bg-cream">
             <span className="font-medium text-ink">End a part if the child leaves it</span>
-            <select value={leaveLimit} onChange={(e) => setLeaveLimit(Number(e.target.value))} className={`${ui.input} !w-auto`}>
+            <Select value={leaveLimit} onChange={(e) => setLeaveLimit(Number(e.target.value))} className={`${ui.input} !w-auto`}>
               <option value={0}>Never (just count it)</option>
               {[3, 5, 10].map((v) => <option key={v} value={v}>{v} times</option>)}
-            </select>
+            </Select>
           </label>
           <Switch checked={readAloud} onChange={setReadAloud} label="Read questions aloud" hint="Available to Years 1–3 anyway; when on, each question is also read out automatically" />
           <Switch checked={largeText} onChange={setLargeText} label="Bigger text" />
@@ -506,7 +507,7 @@ function AnswerReview({ full }: { full: Full }) {
                   <tr key={it.id} className="align-top">
                     <td className="py-1.5 pr-2 tabular-nums text-ink/60">{n + 1}</td>
                     <td className="py-1.5 pr-2"><MathText text={it.stem} className="line-clamp-2" /><span className="block text-xs text-ink/55">{it.objective} · level {it.level}</span></td>
-                    <td className={`py-1.5 pr-2 ${ok === true ? "text-green-800" : ok === false ? "text-red-800" : "text-ink/50"}`}>{r?.value === undefined || r?.value === "" ? "–" : <MathText text={String(r.value)} />}{ok === true ? " ✓" : ok === false ? " ✗" : ""}</td>
+                    <td className={`py-1.5 pr-2 ${ok === true ? "text-green-800" : ok === false ? "text-red-800" : "text-ink/50"}`}>{r?.value === undefined || r?.value === "" ? "–" : <MathText text={String(r.value)} />}{ok === true ? <Icon name="check" className="ml-1 inline h-3.5 w-3.5 align-[-2px]" strokeWidth={2.5} /> : ok === false ? <Icon name="x" className="ml-1 inline h-3.5 w-3.5 align-[-2px]" strokeWidth={2.5} /> : null}</td>
                     <td className="py-1.5 pr-2"><MathText text={String(it.answer)} />{it.unit && it.unit !== "£" ? ` ${it.unit}` : ""}</td>
                     <td className={`py-1.5 pr-2 tabular-nums ${typeof t === "number" && t < 2500 ? "text-amber-700" : "text-ink/60"}`}>{typeof t === "number" ? `${(t / 1000).toFixed(1)} s` : "–"}</td>
                   </tr>
@@ -631,10 +632,10 @@ function WritingMark({ year, prompt, text, live, initial, marks, onSave, onRemar
       </div>
       <div className="grid gap-3 sm:grid-cols-2">
         <label className={ui.label}>Overall judgement
-          <select value={overall} onChange={(e) => setOverall(e.target.value)} className={`mt-1 ${ui.input}`}>
+          <Select value={overall} onChange={(e) => setOverall(e.target.value)} className={`mt-1 ${ui.input}`}>
             <option value="">{avgBand ? `From the strands: ${avgBand}` : "From the strands"}</option>
             {SCALE.map((b) => <option key={b} value={b}>{b}</option>)}
-          </select>
+          </Select>
         </label>
         {overriding && (
           <label className={ui.label}>Reason for changing it (needed)
@@ -662,10 +663,10 @@ function QuranMark({ initial, onSave }: { initial?: Record<string, unknown>; onS
       <div className="flex items-center gap-2"><span className="portal-tile tile-emerald" aria-hidden="true"><Icon name="bookMarked" /></span><h4 className="font-semibold text-ink">Qur&apos;an</h4></div>
       <p className="text-sm text-ink/70">Ask the child to read a short passage (Qa&apos;idah page or mushaf, depending on level) and recite their last memorised surah.</p>
       <label className={ui.label}>Reading stage
-        <select value={stage ?? ""} onChange={(e) => setStage(e.target.value === "" ? undefined : Number(e.target.value))} className={`mt-1 ${ui.input}`}>
+        <Select value={stage ?? ""} onChange={(e) => setStage(e.target.value === "" ? undefined : Number(e.target.value))} className={`mt-1 ${ui.input}`}>
           <option value="">Choose…</option>
           {STAGES.map((s, i) => <option key={s} value={i}>{s}</option>)}
-        </select>
+        </Select>
       </label>
       <div className="grid gap-3 sm:grid-cols-2">
         <div><p className={ui.label}>Tajweed</p><Scale name="Tajweed" value={tajweed} onChange={setTajweed} labels={["0", "1", "2", "3", "4"]} /></div>

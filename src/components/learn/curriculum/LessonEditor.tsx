@@ -7,6 +7,7 @@ import { LinesField, Modal, TextField } from "@/components/learn/curriculum/Moda
 import { problemsFor, realEditAt, syncNotes, triggerCurriculumSync, when, type SyncNote } from "@/lib/learn/curriculumUnits";
 import type { CurriculumLesson } from "@/lib/learn/curriculum";
 import { BLOCKS, HOOK_TYPES, ROUTINES, ROUTINE_SECTIONS, blockProblems, extrasProblems, lessonWarnings } from "@/lib/learn/lessonSchema.mjs";
+import { Select } from "@/components/learn/Select";
 
 // The lesson as stored in curriculum_lessons.content: the lesson object from
 // content/lessons/<subject>/<year>.json (content/lessons/README.md). Fields this form does not
@@ -591,14 +592,14 @@ function RoutineSelect({ label, value, onChange, disabled }: { label: string; va
   return (
     <label className="block">
       <span className={ui.label}>{label}</span>
-      <select value={value} onChange={(e) => onChange(e.target.value)} disabled={disabled} className={`mt-1 ${ui.select}`}>
+      <Select value={value} onChange={(e) => onChange(e.target.value)} disabled={disabled} className={`mt-1 ${ui.select}`}>
         <option value="">Usual</option>
         {Object.entries(ROUTINES as Record<string, { label: string }>).map(([id, r]) => (
           <option key={id} value={id}>
             {r.label}
           </option>
         ))}
-      </select>
+      </Select>
     </label>
   );
 }
@@ -615,14 +616,14 @@ function HookField({ hook, onChange, disabled }: { hook?: Hook; onChange: (h: Ho
       <p className={`sm:col-span-2 ${ui.hint}`}>A full-screen slide straight after the title to grab attention in the first minute.</p>
       <label className="block">
         <span className={ui.label}>Kind of hook</span>
-        <select value={h.type} onChange={(e) => (e.target.value ? up({ type: e.target.value }) : onChange(undefined))} className={`mt-1 ${ui.select}`}>
+        <Select value={h.type} onChange={(e) => (e.target.value ? up({ type: e.target.value }) : onChange(undefined))} className={`mt-1 ${ui.select}`}>
           <option value="">No hook</option>
           {(HOOK_TYPES as string[]).map((t) => (
             <option key={t} value={t}>
               {HOOK_LABEL[t] || t}
             </option>
           ))}
-        </select>
+        </Select>
       </label>
       {h.type && (
         <>
@@ -644,10 +645,10 @@ function IslamicLinkField({ value, onChange, disabled }: { value?: IslamicLink; 
       <TextField label="What it says" hint="Cite only ayat you are certain of (surah:ayah). Leave empty for none." value={v.text} onChange={(text) => onChange(text.trim() || v.text ? { ...v, text } : undefined)} multiline />
       <label className="block">
         <span className={ui.label}>Where</span>
-        <select value={v.at} onChange={(e) => onChange({ ...v, at: e.target.value })} className={`mt-1 ${ui.select}`}>
+        <Select value={v.at} onChange={(e) => onChange({ ...v, at: e.target.value })} className={`mt-1 ${ui.select}`}>
           <option value="start">At the start: the foundation</option>
           <option value="end">At the end: the Islamic position</option>
-        </select>
+        </Select>
       </label>
     </fieldset>
   );
@@ -666,13 +667,13 @@ function PicturesField({ value, teachCount, onChange, disabled }: { value: Pictu
           <li key={i} className="grid gap-2 rounded-lg border border-gold-light/70 p-2 sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_9rem_auto]">
             <input aria-label={`Picture ${i + 1}: search for`} value={r.find} onChange={(e) => setRow(i, { find: e.target.value })} className={ui.input} placeholder="Search for, e.g. Viking longship replica" />
             <input aria-label={`Picture ${i + 1}: what it shows`} value={r.alt} onChange={(e) => setRow(i, { alt: e.target.value })} className={ui.input} placeholder="What it shows" />
-            <select aria-label={`Picture ${i + 1}: slide`} value={r.for} onChange={(e) => setRow(i, { for: e.target.value })} className={ui.select}>
+            <Select aria-label={`Picture ${i + 1}: slide`} value={r.for} onChange={(e) => setRow(i, { for: e.target.value })} className={ui.select}>
               {places.map((p) => (
                 <option key={p} value={p}>
                   {p === "hook" ? "First slide" : p === "keywords" ? "Key words" : `Teaching slide ${p.slice(6)}`}
                 </option>
               ))}
-            </select>
+            </Select>
             <button type="button" className={ui.btnLinkDanger} onClick={() => onChange(value.filter((_, k) => k !== i))}>
               Remove
             </button>
@@ -746,14 +747,14 @@ function BlockField({ slide, onChange, onInvalid, disabled }: { slide: Slide; on
       <div className="flex flex-wrap items-end gap-2">
         <label className="block">
           <span className={ui.label}>Slide block (optional)</span>
-          <select value={kind} disabled={disabled} onChange={(e) => pick(e.target.value)} className={`mt-1 ${ui.select}`}>
+          <Select value={kind} disabled={disabled} onChange={(e) => pick(e.target.value)} className={`mt-1 ${ui.select}`}>
             <option value="">None: bullet points only</option>
             {(BLOCKS as string[]).map((k) => (
               <option key={k} value={k}>
                 {BLOCK_LABEL[k] ? `${BLOCK_LABEL[k][0].toUpperCase()}${BLOCK_LABEL[k].slice(1)}` : k} ({k})
               </option>
             ))}
-          </select>
+          </Select>
         </label>
         {kind && (
           <button type="button" className={btn} onClick={() => setOpen((o) => !o)}>

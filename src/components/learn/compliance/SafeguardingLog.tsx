@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { btn, ui } from "@/components/learn/ui";
+import { Select } from "@/components/learn/Select";
 
 type Concern = {
   id: string;
@@ -101,11 +102,11 @@ function ConcernDetail({ concern, onChanged }: { concern: Concern; onChanged: ()
       <div className="mt-3 grid gap-2 sm:grid-cols-2">
         <label className="text-xs text-ink/70">
           Status
-          <select value={status} onChange={(e) => setStatus(e.target.value)} className={`${ui.select} mt-1`}>
+          <Select value={status} onChange={(e) => setStatus(e.target.value)} className={`${ui.select} mt-1`}>
             <option value="open">Open</option>
             <option value="in_progress">In progress</option>
             <option value="closed">Closed</option>
-          </select>
+          </Select>
         </label>
       </div>
       <label className="mt-2 block text-xs text-ink/70">

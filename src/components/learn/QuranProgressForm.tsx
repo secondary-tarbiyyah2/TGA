@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { QuranTargetsPanel } from "@/components/learn/QuranTargets";
 import { localDateISO, summariseScores, TREND_LABEL, type QuranEntry } from "@/lib/learn/quran";
+import { Select } from "@/components/learn/Select";
 
 type Entry = QuranEntry;
 
@@ -125,13 +126,13 @@ export function QuranProgressForm({ childId, classId }: { childId: string; class
         ) : (
           <input type="text" value={topic} onChange={(e) => setTopic(e.target.value)} placeholder="Topic / unit" className="rounded-md border border-gold-light/60 px-3 py-2 text-sm sm:col-span-2" />
         )}
-        <select value={standard} onChange={(e) => setStandard(e.target.value as (typeof STANDARDS)[number])} className="rounded-md border border-gold-light/60 px-3 py-2 text-sm">
+        <Select value={standard} onChange={(e) => setStandard(e.target.value as (typeof STANDARDS)[number])} className="rounded-md border border-gold-light/60 px-3 py-2 text-sm">
           {STANDARDS.map((s) => (
             <option key={s} value={s}>
               {s.charAt(0).toUpperCase() + s.slice(1)}
             </option>
           ))}
-        </select>
+        </Select>
       </div>
       <div className="mt-3 grid gap-3 sm:grid-cols-2">
         <div>
