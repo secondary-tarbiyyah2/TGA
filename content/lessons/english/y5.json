@@ -2,119 +2,240 @@
   "subject": "English",
   "year": "y5",
   "board": "National Curriculum (KS2)",
-  "source": "National Curriculum Year 5 English (relative clauses, modal verbs, parenthesis, cohesion, poetry, suspense writing); The Eagle by Tennyson (public domain); Drive English folder held no KS2 material so content is otherwise original",
+  "source": "Tarbiyyah Primary Year 5 curriculum map 2023-24 (Alchemy Island text types; no school English scheme for this project among the files); founding-year bridge covers missed Autumn grammar, speech, paragraphing and register; creative writing frameworks (STASS, HOOK), VIPERS reading, reading journal and English intervention booklets; National Curriculum Year 5 English. Class reader TO CONFIRM.",
   "lessons": [
     {
-      "unit": "Unit 1: Complex sentences and cohesion",
+      "unit": "Spring 1: Alchemy Island",
       "n": 1,
-      "title": "Relative clauses",
+      "title": "Bridge grammar: relative clauses",
       "duration": 45,
+      "bigQuestion": "How do relative clauses add information without starting a new sentence?",
       "objectives": [
-        "Identify relative pronouns and relative clauses",
-        "Add relative clauses to sentences with correct punctuation"
+        "To use relative clauses beginning with who, which, where, when, whose or that"
       ],
+      "successCriteria": [
+        "All: identify the relative clause and its relative pronoun",
+        "Most: write relative clauses with commas to add extra information",
+        "Some: choose the right relative pronoun for people, things, places and times"
+      ],
+      "crossCurricular": "History: ancient Egypt (Pharaohs, Autumn 1)",
+      "smsc": "Cultural: the achievements of ancient civilisations",
       "keywords": [
         {
           "term": "relative clause",
-          "def": "a clause that gives extra information about a noun, starting with who, which, that, whose, where or when"
+          "def": "a clause that adds information about a noun, starting with who, which, where, when, whose or that"
         },
         {
           "term": "relative pronoun",
-          "def": "a word such as who, which, that or whose that introduces a relative clause"
+          "def": "the word that starts a relative clause"
         },
         {
-          "term": "main clause",
-          "def": "a clause that makes sense on its own"
+          "term": "embedded",
+          "def": "placed inside another sentence"
         },
         {
           "term": "noun",
-          "def": "a word naming a person, place or thing"
+          "def": "a naming word"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "The Great Pyramid was built for Khufu. It is near Cairo. It took about 20 years to build. Can you make this one sentence without losing any facts?",
+        "a": "For example: The Great Pyramid, which is near Cairo, was built for Khufu over about 20 years."
+      },
+      "pictures": [
+        {
+          "find": "Great Pyramid of Giza photograph",
+          "alt": "the Great Pyramid of Giza",
+          "for": "hook"
+        },
+        {
+          "find": "River Nile Egypt aerial photograph",
+          "alt": "the River Nile",
+          "for": "teach:2"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Bridge week 1: Year 5 grammar essential (missed Autumn: Pharaohs, Scream Machine)",
+        "Punctuation Intervention Booklet (Lesson 6: Brackets, dashes, hyphens and ellipses) for pupils who need extra support",
+        "Mini-whiteboard and pen",
+        "Exercise book"
+      ],
       "starter": [
-        "Bismillah. Underline the conjunction: I stayed in because it rained.",
-        "Write an expanded noun phrase about a library.",
-        "What is a pronoun? Give two."
+        {
+          "q": "Join with because: The Nile flooded. Farmers could grow crops.",
+          "a": "Farmers could grow crops because the Nile flooded.",
+          "mins": 1
+        },
+        {
+          "q": "What is a clause?",
+          "a": "A group of words with a verb",
+          "mins": 1
+        },
+        {
+          "q": "Give a noun from ancient Egypt",
+          "a": "For example: pyramid, pharaoh, papyrus",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Adding information",
-          "bullets": [
-            "A relative clause adds detail about a noun",
-            "The girl who won the race is my cousin.",
-            "who, which, that, whose, where, when"
-          ],
-          "note": "Begin with a short sentence: 'The teacher smiled.' Ask: which teacher? Add: 'The teacher who runs the reading club smiled.' Explain that who refers to a person, which to a thing, that to either."
+          "heading": "Relative pronouns",
+          "note": "Each pronoun has a job.",
+          "table": {
+            "head": [
+              "Pronoun",
+              "Used for",
+              "Example"
+            ],
+            "rows": [
+              [
+                "who",
+                "people",
+                "the pharaoh, who ruled Egypt,"
+              ],
+              [
+                "which",
+                "things and animals",
+                "the pyramid, which is made of stone,"
+              ],
+              [
+                "where",
+                "places",
+                "Giza, where the pyramids stand,"
+              ],
+              [
+                "when",
+                "times",
+                "in summer, when the Nile flooded,"
+              ],
+              [
+                "whose",
+                "belonging",
+                "the king, whose tomb was hidden,"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Who, which and that",
-          "bullets": [
-            "who: people",
-            "which: things or animals",
-            "that: people or things",
-            "whose: belonging to someone"
-          ],
-          "note": "Provide examples: 'The book which I borrowed was long.' 'The boy whose bag was lost cried.' Ask pupils to choose the correct pronoun. Misconception: using 'which' for people."
+          "heading": "Embedding with commas",
+          "note": "Model.",
+          "model": {
+            "problem": "The Nile is the longest river in Africa. It flows north.",
+            "steps": [
+              "Main clause: The Nile flows north.",
+              "Extra information: it is the longest river in Africa",
+              "Relative pronoun for a thing: which",
+              "Embed with commas: The Nile, which is the longest river in Africa, flows north."
+            ],
+            "answer": "The Nile, which is the longest river in Africa, flows north."
+          }
         },
         {
-          "heading": "Where and when",
-          "bullets": [
-            "where: places",
-            "when: times",
-            "The park where we play is large.",
-            "I remember the day when we planted the tree."
-          ],
-          "note": "Show how these words also begin relative clauses. Ask pupils to produce oral sentences about the school, using where and when."
+          "heading": "Common error",
+          "note": "who is for people, which is for things.",
+          "misconception": {
+            "wrong": "The scribe, which wrote on papyrus, was clever.",
+            "right": "The scribe, who wrote on papyrus, was clever."
+          }
         },
         {
-          "heading": "Commas and relative clauses",
-          "bullets": [
-            "Extra information: use commas",
-            "My uncle, who lives in Leeds, is a doctor.",
-            "Essential information: no commas"
-          ],
-          "note": "Contrast: 'The dog that barks loudly is mine' (needed to identify the dog) and 'My dog, which is called Biscuit, barks loudly' (extra). This distinction is sophisticated; support but do not overload. Test: if you remove the clause, does the sentence still make sense?"
-        },
-        {
-          "heading": "Embedding clauses",
-          "bullets": [
-            "Start simple, then expand",
-            "The mosque stands on the hill.",
-            "The mosque, which was built in 1890, stands on the hill."
-          ],
-          "note": "Take a simple sentence and embed a clause in the middle. Read aloud. The examples are invented; pupils may use their own."
+          "heading": "Hinge: which pronoun?",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Giza, ___ the pyramids stand, is near Cairo.",
+            "options": [
+              "who",
+              "where",
+              "which"
+            ],
+            "answer": 1,
+            "why": "Giza is a place, so where. who is for people; which would need \"in which\"."
+          }
         }
       ],
       "practice": [
-        "Choose the relative pronoun: The man ___ fixed the car was kind. (who/which)",
-        "Add a relative clause: The bridge ___ was old.",
-        "Add commas: My brother who is ten loves football."
+        {
+          "q": "Underline the relative clause: The cat, which was sacred, slept in the temple.",
+          "a": "which was sacred",
+          "mins": 1,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: which was sacred"
+        },
+        {
+          "q": "Add a relative clause: The pharaoh ___ was buried in a tomb.",
+          "a": "For example: The pharaoh, who ruled for 30 years, was buried in a tomb.",
+          "mins": 2
+        },
+        {
+          "q": "Choose: The boy ___ father was a scribe learned to write. (who / whose)",
+          "a": "whose",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Combine ten pairs of sentences using a relative pronoun.",
-        "Write six sentences about people and places using who, which, whose, where.",
-        "Edit five sentences to add the missing commas."
+        {
+          "q": "Core: combine six pairs of sentences about ancient Egypt using relative clauses (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "For example: Papyrus, which grew by the Nile, was used to make paper.",
+          "mins": 9,
+          "model": "Teacher does the first part aloud before pupils start, showing each step: For example: Papyrus, which grew by the Nile, was used to make paper."
+        },
+        {
+          "q": "Extend: write four sentences of your own, each with a different relative pronoun",
+          "a": "Sentences using who, which, where, when",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: write a sentence with a relative clause that has no commas because it is essential information",
+          "a": "For example: The tomb that Carter found in 1922 belonged to Tutankhamun.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Write a sentence with 'whose'.",
-        "Add commas: The library which is next to the mosque is quiet."
+        {
+          "q": "Which relative pronoun is used for places?",
+          "a": "where",
+          "mins": 1
+        },
+        {
+          "q": "Add commas: The Sphinx which has a lion's body guards the pyramids.",
+          "a": "The Sphinx, which has a lion's body, guards the pyramids.",
+          "mins": 1
+        }
       ],
-      "homework": "Write five sentences about your family or neighbours using relative clauses.",
-      "send": "SEND: give sentence halves to match. EAL: provide a table of relative pronouns with examples. Stretch: write a sentence with two relative clauses."
+      "homework": "Write five sentences about your home or school using a different relative pronoun in each. Read for 20 minutes a day.",
+      "send": "SEND: relative pronoun cards with picture cues (person, thing, place, time). EAL: model sentence frames. Stretch: use a relative clause after a preposition (the river in which...)."
     },
     {
-      "unit": "Unit 1: Complex sentences and cohesion",
+      "unit": "Spring 1: Alchemy Island",
       "n": 2,
-      "title": "Modal verbs and adverbs of possibility",
+      "title": "Bridge grammar: modal verbs and adverbs of possibility",
       "duration": 45,
+      "bigQuestion": "How do writers show how certain or uncertain something is?",
       "objectives": [
-        "Use modal verbs to show degrees of certainty",
-        "Use adverbs of possibility such as perhaps and certainly"
+        "To use modal verbs and adverbs to show degrees of possibility"
       ],
+      "successCriteria": [
+        "All: identify modal verbs in sentences",
+        "Most: order modal verbs and adverbs from certain to uncertain",
+        "Some: choose modals and adverbs precisely for predictions and persuasion"
+      ],
+      "crossCurricular": "Science: making predictions in investigations",
+      "smsc": "Spiritual: Muslims say in sha Allah (إِنْ شَاءَ اللَّه) about the future, because only Allah knows it for certain",
+      "islamicLink": {
+        "text": "Muslims say in sha Allah (إِنْ شَاءَ اللَّه) about the future, because only Allah knows it for certain",
+        "at": "start"
+      },
       "keywords": [
         {
           "term": "modal verb",
-          "def": "a verb such as can, could, may, might, will, would, should, must that shows possibility or obligation"
+          "def": "a verb that shows how likely something is, like might, should, will"
         },
         {
           "term": "possibility",
@@ -122,274 +243,568 @@
         },
         {
           "term": "adverb of possibility",
-          "def": "a word like perhaps, surely, definitely, probably"
+          "def": "an adverb like perhaps, certainly, probably"
         },
         {
-          "term": "certainty",
-          "def": "being completely sure"
+          "term": "prediction",
+          "def": "a guess about the future based on evidence"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "It will rain tomorrow. It might rain tomorrow. It must rain tomorrow. Which is the most certain? Can anyone be completely certain about tomorrow?",
+        "a": "\"will\" and \"must\" sound certain; \"might\" is uncertain. Only Allah knows the future for certain, so Muslims say in sha Allah."
+      },
+      "pictures": [
+        {
+          "find": "weather forecast symbols chart",
+          "alt": "weather forecast symbols (possibility)",
+          "for": "hook"
+        },
+        {
+          "find": "metal spoon in hot water photograph",
+          "alt": "a spoon in hot water",
+          "for": "teach:3"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Display: modal verbs scale",
+        "Vocabulary Intervention Programme (Lesson 5: Shades of meaning) for pupils who need extra support",
+        "Mini-whiteboard and pen",
+        "Exercise book",
+        "Bridge week 2: Year 5 grammar essential"
+      ],
       "starter": [
-        "Bismillah. Add a relative pronoun: The boy ___ lost his coat cried.",
-        "Punctuate: My aunt who lives in Cairo visited us.",
-        "Write a sentence with a fronted adverbial."
+        {
+          "q": "Add a relative clause: The star ___ is very bright.",
+          "a": "For example: The star, which is called Sirius, is very bright.",
+          "mins": 1
+        },
+        {
+          "q": "What is a prediction?",
+          "a": "A guess about the future based on evidence",
+          "mins": 1
+        },
+        {
+          "q": "Give an adverb",
+          "a": "For example: quickly",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "What are modal verbs?",
-          "bullets": [
-            "They show how likely or necessary something is",
-            "can, could, may, might",
-            "will, would, shall, should, must"
-          ],
-          "note": "Introduce modal verbs as helping verbs that go before another verb in its base form: 'might rain', 'must go'. Misconception: adding -s or -ing after a modal verb."
-        },
-        {
-          "heading": "A scale of certainty",
-          "bullets": [
-            "Certain: will, must",
-            "Likely: should, would",
-            "Possible: may, might, could"
-          ],
-          "note": "Draw a scale on the board. Place modal verbs on it. Sentences: 'It will rain', 'It may rain', 'It might rain'. Ask pupils to change the meaning by changing the modal verb."
+          "heading": "The possibility scale",
+          "note": "Order from certain to uncertain.",
+          "numberline": {
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "marks": [
+              {
+                "at": 1,
+                "label": "might"
+              },
+              {
+                "at": 3,
+                "label": "could"
+              },
+              {
+                "at": 5,
+                "label": "may"
+              },
+              {
+                "at": 7,
+                "label": "should"
+              },
+              {
+                "at": 9,
+                "label": "will / must"
+              }
+            ]
+          }
         },
         {
           "heading": "Adverbs of possibility",
           "bullets": [
-            "certainly, definitely, surely",
-            "probably, possibly, perhaps",
-            "Perhaps it will rain tomorrow."
+            "perhaps, possibly, maybe",
+            "probably, likely",
+            "definitely, certainly, surely"
           ],
-          "note": "Explain that these adverbs show how sure we are. Compare 'definitely' and 'perhaps'. They can go at the start or before the main verb."
+          "note": "Combine with modals: The comet will probably appear at dawn."
         },
         {
-          "heading": "Obligation and permission",
-          "bullets": [
-            "must: strong duty",
-            "should: advice",
-            "may: permission",
-            "can: ability"
-          ],
-          "note": "Link to school rules: 'You must wear uniform. You may ask for help.' Connect to adab: we should say salaam when we enter. Be careful to describe etiquette in general terms."
+          "heading": "Model: a scientific prediction",
+          "note": "Think aloud.",
+          "model": {
+            "problem": "Predict what happens to a metal spoon in hot water.",
+            "steps": [
+              "Evidence: metals are good thermal conductors",
+              "Certainty: high, so will",
+              "Adverb: almost certainly",
+              "Sentence: The spoon will almost certainly feel hot within a minute."
+            ],
+            "answer": "A precise prediction."
+          }
         },
         {
-          "heading": "Use in writing",
-          "bullets": [
-            "Predict: The storm might arrive tonight.",
-            "Advise: You should rest.",
-            "Warn: You must not touch the wires."
-          ],
-          "note": "Pupils write predictions and advice. Emphasise that modal verbs are useful when discussing possibilities in persuasive, informative and narrative writing."
+          "heading": "Hinge: most certain",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Which sentence is most certain?",
+            "options": [
+              "The plant might grow.",
+              "The plant will definitely grow.",
+              "The plant could grow."
+            ],
+            "answer": 1,
+            "why": "will plus definitely shows the highest certainty."
+          }
         }
       ],
       "practice": [
-        "Put in order from most to least certain: might, will, could.",
-        "Complete: I ___ be late, so please start without me. (may/will)",
-        "Rewrite using perhaps: It may snow."
+        {
+          "q": "Underline the modal verb: You should wear a coat.",
+          "a": "should",
+          "mins": 1,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: should"
+        },
+        {
+          "q": "Make it less certain: The bus will be late.",
+          "a": "For example: The bus might be late.",
+          "mins": 1
+        },
+        {
+          "q": "Add an adverb of possibility: The star ___ formed billions of years ago.",
+          "a": "For example: probably",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Write six sentences showing different levels of certainty about tomorrow's weather.",
-        "Write a list of advice for a new pupil using should, must and may.",
-        "Rewrite four sentences replacing the modal verb to change the meaning."
+        {
+          "q": "Core: rewrite six sentences to show a different level of certainty (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "For example: It will snow. → It might possibly snow.",
+          "mins": 8,
+          "model": "Labelled model to go through first (Predict what happens to a metal spoon in hot water.): Evidence: metals are good thermal conductors | Certainty: high, so will | Adverb: almost certainly | Sentence: The spoon will almost certainly feel hot within a minute. | Result: A precise prediction."
+        },
+        {
+          "q": "Extend: write four predictions for a science test with modals and adverbs",
+          "a": "For example: The ice will probably melt within ten minutes.",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: explain why a scientist might write \"may\" instead of \"will\"",
+          "a": "Because results are not certain until tested",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Which is more certain: might or will?",
-        "Write a sentence using probably."
+        {
+          "q": "Order: will, might, should",
+          "a": "might, should, will",
+          "mins": 1
+        },
+        {
+          "q": "Which phrase do Muslims say about the future?",
+          "a": "in sha Allah (if Allah wills)",
+          "mins": 1
+        }
       ],
-      "homework": "Write a short forecast for next week using modal verbs and adverbs of possibility.",
-      "send": "SEND: give a certainty scale card. EAL: practise with spoken predictions. Stretch: explain why 'definitely might' sounds wrong."
+      "homework": "Write five sentences about plans for the weekend using different modal verbs (and in sha Allah where it fits). Read for 20 minutes a day.",
+      "send": "SEND: modal verb cards to place on the scale. EAL: visuals for certain and uncertain. Stretch: use modals for persuasion (You must try...)."
     },
     {
-      "unit": "Unit 1: Complex sentences and cohesion",
+      "unit": "Spring 1: Alchemy Island",
       "n": 3,
-      "title": "Parenthesis: brackets, dashes and commas",
+      "title": "Bridge grammar: parenthesis with brackets, dashes and commas",
       "duration": 45,
+      "bigQuestion": "How can I add extra information to a sentence without confusing the reader?",
       "objectives": [
-        "Add extra information using brackets, dashes or commas",
-        "Check that a sentence still makes sense without the parenthesis"
+        "To use brackets, dashes and commas to add parenthesis"
       ],
+      "successCriteria": [
+        "All: identify parenthesis in a sentence",
+        "Most: add parenthesis using brackets, dashes or commas",
+        "Some: check the sentence still makes sense when the parenthesis is removed"
+      ],
+      "crossCurricular": "Science: space (Stargazers, Autumn 2)",
+      "smsc": "Spiritual: the Qur'an tells us that Allah placed the stars to guide people through the darkness of land and sea (6:97)",
+      "islamicLink": {
+        "text": "The Qur'an tells us that Allah placed the stars to guide people through the darkness of land and sea (6:97)",
+        "at": "start"
+      },
       "keywords": [
         {
           "term": "parenthesis",
-          "def": "extra information added to a sentence"
+          "def": "extra information added to a sentence, which could be removed"
         },
         {
           "term": "brackets",
-          "def": "curved marks ( ) around parenthesis"
+          "def": "the marks ( ) around extra information"
         },
         {
-          "term": "dashes",
-          "def": "long lines - used to separate extra information"
+          "term": "dash",
+          "def": "a short line used in pairs around extra information"
         },
         {
           "term": "comma",
-          "def": "a mark that can separate extra information"
+          "def": "a mark that can also be used in pairs for parenthesis"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Sentence: Jupiter is the largest planet. Add one extra fact in the middle without starting a new sentence. How would you show it is extra?",
+        "a": "For example: Jupiter (the fifth planet from the Sun) is the largest planet."
+      },
+      "pictures": [
+        {
+          "find": "Saturn rings Cassini photograph",
+          "alt": "Saturn and its rings",
+          "for": "teach:1"
+        },
+        {
+          "find": "Jupiter photograph NASA",
+          "alt": "Jupiter",
+          "for": "hook"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Punctuation Intervention Booklet (Lesson 6: Brackets, dashes, hyphens and ellipses) for pupils who need extra support",
+        "Display: punctuation posters",
+        "Mini-whiteboard and pen",
+        "Exercise book",
+        "Bridge week 2: Year 5 grammar essential"
+      ],
       "starter": [
-        "Bismillah. Write a sentence with the modal verb might.",
-        "Add a relative clause to: The garden was beautiful.",
-        "Name three modal verbs."
+        {
+          "q": "Most certain: might, will, could?",
+          "a": "will",
+          "mins": 1
+        },
+        {
+          "q": "Add a relative clause: Mars ___ is red.",
+          "a": "For example: Mars, which is called the Red Planet, is red.",
+          "mins": 1
+        },
+        {
+          "q": "Name a planet",
+          "a": "For example: Saturn",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Extra information",
-          "bullets": [
-            "Parenthesis adds extra detail",
-            "The sentence makes sense without it",
-            "Mohammed (my cousin) won the race."
-          ],
-          "note": "Write the sentence and cover the bracketed words. The sentence still works. That is the test for parenthesis."
+          "heading": "Three ways",
+          "note": "All work in pairs around the extra information.",
+          "table": {
+            "head": [
+              "Mark",
+              "Example"
+            ],
+            "rows": [
+              [
+                "brackets",
+                "Saturn (famous for its rings) is a gas giant."
+              ],
+              [
+                "dashes",
+                "Saturn - famous for its rings - is a gas giant."
+              ],
+              [
+                "commas",
+                "Saturn, famous for its rings, is a gas giant."
+              ]
+            ]
+          }
         },
         {
-          "heading": "Three ways to punctuate",
-          "bullets": [
-            "Brackets: The shop (which opens at nine) was busy.",
-            "Dashes: The shop - which opens at nine - was busy.",
-            "Commas: The shop, which opens at nine, was busy."
-          ],
-          "note": "Show the same sentence three ways. Explain that brackets feel quiet, dashes feel dramatic and commas are neutral. Use a pair of marks, one before and one after."
+          "heading": "The removal test",
+          "note": "Model.",
+          "model": {
+            "problem": "The Moon (which has no air) orbits the Earth.",
+            "steps": [
+              "Find the extra information: which has no air",
+              "Remove it",
+              "Read: The Moon orbits the Earth.",
+              "Still makes sense, so the parenthesis is correct"
+            ],
+            "answer": "Correct parenthesis."
+          }
         },
         {
-          "heading": "Make sure you use a pair",
-          "bullets": [
-            "Open and close",
-            "Check the sentence still works",
-            "Don't forget the comma or full stop outside"
-          ],
-          "note": "Check pupils do not use only one dash or one comma. Model a test: remove the parenthesis and read the sentence again."
+          "heading": "Pairs, not singles",
+          "note": "The second mark is often forgotten.",
+          "misconception": {
+            "wrong": "Venus, the hottest planet is covered in cloud.",
+            "right": "Venus, the hottest planet, is covered in cloud."
+          }
         },
         {
-          "heading": "Where can it go?",
-          "bullets": [
-            "After a noun: My uncle (a baker) arrived.",
-            "After a verb: She ran - quickly - home.",
-            "At the end: We went to the park (finally)."
-          ],
-          "note": "Experiment with different positions. Ask which is best and why. Link to writing for effect."
-        },
-        {
-          "heading": "Use in writing",
-          "bullets": [
-            "Add background in a story",
-            "Add facts in an explanation",
-            "Add an aside to show personality"
-          ],
-          "note": "Show a short paragraph with three parentheses: 'The ship - an old wooden vessel - creaked.' Ask pupils to find and explain them."
+          "heading": "Hinge: correct?",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Which uses parenthesis correctly?",
+            "options": [
+              "The Sun (a star is very hot.",
+              "The Sun (a star) is very hot.",
+              "The Sun a star) is very hot."
+            ],
+            "answer": 1,
+            "why": "Brackets must open and close around the extra information."
+          }
         }
       ],
       "practice": [
-        "Add brackets: My sister aged six loves painting.",
-        "Add dashes: The lion a fierce hunter roared.",
-        "Add commas: Our teacher Mr Khan is kind."
+        {
+          "q": "Add brackets: Mercury the smallest planet is closest to the Sun.",
+          "a": "Mercury (the smallest planet) is closest to the Sun.",
+          "mins": 1,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: Mercury (the smallest planet) is closest to the Sun."
+        },
+        {
+          "q": "Add dashes: The telescope a gift from my uncle is in the garden.",
+          "a": "The telescope - a gift from my uncle - is in the garden.",
+          "mins": 1
+        },
+        {
+          "q": "Add commas: Neptune the farthest planet is very cold.",
+          "a": "Neptune, the farthest planet, is very cold.",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Add parenthesis to ten sentences using different punctuation.",
-        "Write six sentences about a school trip using parenthesis.",
-        "Edit sentences with missing marks."
+        {
+          "q": "Core: add parenthesis to six sentences about space using all three methods (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Six correct sentences",
+          "mins": 8,
+          "model": "Teacher does the first part aloud before pupils start, showing each step: Six correct sentences"
+        },
+        {
+          "q": "Extend: write four sentences of your own about the night sky with parenthesis",
+          "a": "Correct parenthesis",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: explain when brackets might be better than commas",
+          "a": "For example: brackets for extra facts like dates, so they stand out clearly",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Add brackets to: The bus which was late arrived.",
-        "What test shows that something is parenthesis?"
+        {
+          "q": "Add commas: Saturn the ringed planet is huge.",
+          "a": "Saturn, the ringed planet, is huge.",
+          "mins": 1
+        },
+        {
+          "q": "What is the removal test?",
+          "a": "Remove the parenthesis: the sentence must still make sense",
+          "mins": 1
+        }
       ],
-      "homework": "Write five sentences about your family using parenthesis.",
-      "send": "SEND: highlight the parenthesis first. EAL: practise with three types of mark in colour. Stretch: use parenthesis within a complex sentence."
+      "homework": "Find two examples of parenthesis in a newspaper or book and copy them. Read for 20 minutes a day.",
+      "send": "SEND: sentence strips to cut and insert the extra information. EAL: model sentences. Stretch: use a relative clause as parenthesis inside dashes."
     },
     {
-      "unit": "Unit 1: Complex sentences and cohesion",
+      "unit": "Spring 1: Alchemy Island",
       "n": 4,
-      "title": "Cohesion: linking ideas across sentences and paragraphs",
+      "title": "Grammar: cohesion within and between paragraphs",
       "duration": 45,
+      "bigQuestion": "How do I make my report flow so each paragraph links to the next?",
       "objectives": [
-        "Use adverbials to link sentences and paragraphs",
-        "Keep verb tense consistent"
+        "To build cohesion with adverbials, pronouns, synonyms and topic sentences"
       ],
+      "successCriteria": [
+        "All: use adverbials to link sentences",
+        "Most: vary references to a noun with pronouns and synonyms",
+        "Some: link paragraphs with topic sentences that refer back"
+      ],
+      "crossCurricular": "Science: properties and changes of materials",
+      "smsc": "Social: writing that is easy for others to follow",
       "keywords": [
         {
           "term": "cohesion",
-          "def": "how ideas link together in a text"
+          "def": "how ideas link together across a text"
         },
         {
-          "term": "adverbial of time",
-          "def": "a word or phrase about when, such as meanwhile"
+          "term": "cohesive device",
+          "def": "a word or phrase that links ideas, like however or this metal"
         },
         {
-          "term": "tense",
-          "def": "shows when something happens"
+          "term": "adverbial",
+          "def": "a word or phrase that tells how, when or where, or links ideas"
         },
         {
-          "term": "paragraph",
-          "def": "a group of sentences about one idea"
+          "term": "synonym",
+          "def": "a word with a similar meaning"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Read: \"Iron is strong. Iron is magnetic. Iron rusts. Copper conducts electricity.\" Why does this feel choppy? How could we fix it?",
+        "a": "Use pronouns, synonyms and linking adverbials: Iron is strong and magnetic; however, this metal rusts..."
+      },
+      "pictures": [
+        {
+          "find": "iron bridge Ironbridge Shropshire photograph",
+          "alt": "the Iron Bridge (iron)",
+          "for": "teach:2"
+        },
+        {
+          "find": "copper pipes photograph",
+          "alt": "copper pipes",
+          "for": "teach:3"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Display: TiPToP paragraphing posters",
+        "Cohesive devices word mat",
+        "Mini-whiteboard and pen",
+        "Pupil's report plan"
+      ],
       "starter": [
-        "Bismillah. Add parenthesis: Hana my friend sings well.",
-        "Write a modal verb sentence.",
-        "Use a relative pronoun in a sentence."
+        {
+          "q": "Synonym for metal (in a report on iron)",
+          "a": "For example: this element, the material",
+          "mins": 1
+        },
+        {
+          "q": "Linking adverbial for contrast",
+          "a": "For example: however",
+          "mins": 1
+        },
+        {
+          "q": "What is a topic sentence?",
+          "a": "The first sentence of a paragraph saying what it is about",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Linking words",
-          "bullets": [
-            "Time: later, meanwhile, soon after",
-            "Place: nearby, beyond, above",
-            "Number: firstly, secondly, finally"
-          ],
-          "note": "Show a text where each sentence is separate. Add linking adverbials to show how ideas connect. Ask pupils to find the links."
+          "heading": "Cohesive devices",
+          "note": "Sort.",
+          "sort": {
+            "columns": [
+              "adverbials",
+              "pronouns",
+              "synonyms"
+            ],
+            "cards": [
+              "However,",
+              "it",
+              "this metal",
+              "In addition,",
+              "they",
+              "the material"
+            ],
+            "answer": [
+              0,
+              1,
+              2,
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        {
+          "heading": "Model: fixing the choppy paragraph",
+          "note": "Rewrite live.",
+          "model": {
+            "problem": "Iron is strong. Iron is magnetic. Iron rusts.",
+            "steps": [
+              "Combine: Iron is strong and magnetic.",
+              "Contrast adverbial: However,",
+              "Synonym instead of repeating: this metal",
+              "Result: Iron is strong and magnetic. However, this metal rusts when it is exposed to water and air."
+            ],
+            "answer": "A cohesive paragraph."
+          }
         },
         {
           "heading": "Linking paragraphs",
           "bullets": [
-            "Start a paragraph with a link",
-            "The next morning, ...",
-            "In contrast, ..."
+            "End one paragraph with a hint",
+            "Start the next by referring back",
+            "Unlike iron, copper..."
           ],
-          "note": "Explain that paragraphs signal a change of time, place, topic or speaker. Model: 'By the next morning, the storm had passed.' Ask pupils to find paragraph openers in a book."
+          "note": "Show two paragraphs joined by a referring-back topic sentence."
         },
         {
-          "heading": "Consistent tense",
-          "bullets": [
-            "Stay in the past or present",
-            "Wrong: He walked in and sees a snake.",
-            "Right: He walked in and saw a snake."
-          ],
-          "note": "Read a sample with tense errors aloud. Ask pupils to find the verb that shifts. Misconception: switching tenses while telling a story."
-        },
-        {
-          "heading": "Pronouns and cohesion",
-          "bullets": [
-            "Pronouns link to nouns",
-            "Check it is clear who 'they' are",
-            "Use synonyms to vary"
-          ],
-          "note": "Revisit Year 4 learning on pronouns. Take an example paragraph and underline references. Praise clarity."
-        },
-        {
-          "heading": "Edit a paragraph",
-          "bullets": [
-            "Add two linking adverbials",
-            "Fix the tense",
-            "Check it reads smoothly"
-          ],
-          "note": "Provide a short paragraph with deliberate errors. Edit it together on the board. Pupils then edit a second paragraph independently."
+          "heading": "Hinge: best link",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Best start for a paragraph on copper after one on iron?",
+            "options": [
+              "Copper.",
+              "Unlike iron, copper does not rust easily.",
+              "And copper."
+            ],
+            "answer": 1,
+            "why": "B refers back to iron and introduces copper: cohesion between paragraphs."
+          }
         }
       ],
       "practice": [
-        "Add a linking adverbial: ___, we reached the village.",
-        "Correct the tense: Yesterday I go to the shop and bought bread.",
-        "Write a paragraph opener showing a change of time."
+        {
+          "q": "Replace the repetition: Gold is soft. Gold does not tarnish.",
+          "a": "Gold is soft. This precious metal does not tarnish.",
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: Gold is soft. This precious metal does not tarnish."
+        },
+        {
+          "q": "Link with an adverbial: Aluminium is light. It is strong.",
+          "a": "For example: Aluminium is light. Furthermore, it is strong.",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Edit two paragraphs: add linking adverbials and fix tense.",
-        "Write a four-sentence account of a journey using time, place and number adverbials.",
-        "Rewrite a paragraph so that it uses a different link in each sentence."
+        {
+          "q": "Core: rewrite a choppy 8-sentence paragraph using three types of cohesive device (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Cohesive paragraph",
+          "mins": 9,
+          "model": "Labelled model to go through first (Iron is strong. Iron is magnetic. Iron rusts.): Combine: Iron is strong and magnetic. | Contrast adverbial: However, | Synonym instead of repeating: this metal | Result: Iron is strong and magnetic. However, this metal rusts when it is exposed to water and air. | Result: A cohesive paragraph."
+        },
+        {
+          "q": "Extend: write two linked topic sentences for your report sections",
+          "a": "For example: Unlike iron, aluminium...",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: highlight every cohesive device in your rewrite and name its type",
+          "a": "Labelled devices",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Write a linking adverbial of place.",
-        "Spot the tense error: The boy opens the door and walked in."
+        {
+          "q": "Give one cohesive device for contrast",
+          "a": "For example: however, unlike",
+          "mins": 1
+        }
       ],
-      "homework": "Write a paragraph about a family outing using at least four linking adverbials.",
-      "send": "SEND: provide link words on cards. EAL: use time lines. Stretch: write two paragraphs with a clear link between them."
+      "homework": "Underline the linking words in a page of your reading book. Read for 20 minutes a day.",
+      "send": "SEND: device word mat; rewrite four sentences. EAL: synonyms list for metal words. Stretch: use ellipsis (missing out repeated words) for cohesion."
     },
     {
       "unit": "Unit 2: Poetry - The Eagle and writing about nature",
@@ -1167,6 +1582,3800 @@
       ],
       "homework": "Practise reading your scene aloud with suitable pace.",
       "send": "SEND: use a shortened checklist. EAL: focus on spelling and verb tense. Stretch: rewrite the cliffhanger in two different ways."
+    },
+    {
+      "unit": "Spring 1: Alchemy Island",
+      "n": 13,
+      "title": "Bridge reading: retrieval and vocabulary in a text about the Great Pyramid (VIPERS)",
+      "duration": 45,
+      "bigQuestion": "How do I find exact information fast, and work out words I do not know?",
+      "objectives": [
+        "To retrieve information and work out word meanings from context in a non-fiction text"
+      ],
+      "successCriteria": [
+        "All: retrieve four facts using key words",
+        "Most: work out two word meanings from context clues",
+        "Some: explain why the writer included numbers and comparisons"
+      ],
+      "crossCurricular": "History: ancient Egypt",
+      "smsc": "Cultural: how ancient builders solved huge engineering problems",
+      "keywords": [
+        {
+          "term": "retrieve",
+          "def": "find and copy information from a text"
+        },
+        {
+          "term": "scan",
+          "def": "look quickly for a key word"
+        },
+        {
+          "term": "context",
+          "def": "the words around a word that help explain it"
+        },
+        {
+          "term": "quarry",
+          "def": "a place where stone is cut from the ground"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "The Great Pyramid is made of about 2.3 million stone blocks. How could people move them 4,500 years ago without engines?",
+        "a": "Sledges, ramps, ropes, water on the sand to reduce friction, boats on the Nile, huge teams of workers."
+      },
+      "pictures": [
+        {
+          "find": "Great Pyramid of Giza limestone blocks close up photograph",
+          "alt": "stone blocks of the Great Pyramid",
+          "for": "teach:1"
+        },
+        {
+          "find": "ancient Egyptian quarry Aswan photograph",
+          "alt": "an ancient quarry",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Teacher's information text: The Great Pyramid of Giza (on slides; facts checked)",
+        "Display: VIPERS question stems (school reading INSET)",
+        "Reading Fluency and Comprehension Intervention Workbook (Week 3, Lesson 7: Retrieval begins with the question; Week 5, Lesson 13: Use definition clues) for pupils who need extra support",
+        "Mini-whiteboard and pen"
+      ],
+      "starter": [
+        {
+          "q": "Add a relative clause: The Nile ___ floods each year.",
+          "a": "For example: The Nile, which is very long, floods each year.",
+          "mins": 1
+        },
+        {
+          "q": "What does retrieve mean?",
+          "a": "Find information in a text",
+          "mins": 1
+        },
+        {
+          "q": "Name an ancient Egyptian ruler",
+          "a": "For example: Khufu, Tutankhamun",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The text: key facts",
+          "bullets": [
+            "Built for the pharaoh Khufu about 4,500 years ago",
+            "About 146 metres tall when finished",
+            "About 2.3 million stone blocks",
+            "Tallest human-made structure for about 3,800 years"
+          ],
+          "note": "Read the information text aloud, then pupils re-read. Facts are checked against reliable sources."
+        },
+        {
+          "heading": "R: scan for the key word",
+          "note": "Model retrieval.",
+          "model": {
+            "problem": "How tall was the Great Pyramid when it was finished?",
+            "steps": [
+              "Underline the key words: how tall, finished",
+              "Scan for a number with metres",
+              "Read the sentence around it",
+              "Answer in a full sentence"
+            ],
+            "answer": "It was about 146 metres tall when finished."
+          }
+        },
+        {
+          "heading": "V: context clues",
+          "note": "Use the sentence to work out the word.",
+          "model": {
+            "problem": "Workers cut limestone from a quarry near the site and dragged it on sledges. What is a quarry?",
+            "steps": [
+              "Find the word: quarry",
+              "Clue: workers cut limestone from it",
+              "Try a meaning: a place where stone is dug out",
+              "Check: does it make sense in the sentence? Yes"
+            ],
+            "answer": "A place where stone is cut from the ground."
+          }
+        },
+        {
+          "heading": "Hinge: best answer",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Why did workers pour water on the sand in front of sledges?",
+            "options": [
+              "to cool the stones",
+              "to make the sledges slide more easily",
+              "to drink"
+            ],
+            "answer": 1,
+            "why": "Wet sand reduces friction so heavy sledges move more easily. (A painting from Egypt shows water being poured.)"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "R: Who was the Great Pyramid built for?",
+          "a": "The pharaoh Khufu",
+          "mins": 1,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: The pharaoh Khufu"
+        },
+        {
+          "q": "R: How many blocks were used, approximately?",
+          "a": "About 2.3 million",
+          "mins": 1
+        },
+        {
+          "q": "V: What does approximately mean?",
+          "a": "About; close to but not exact",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: answer six retrieval questions in full sentences (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "For example: It was built about 4,500 years ago.",
+          "mins": 9,
+          "model": "Teacher does the first part aloud before pupils start, showing each step: For example: It was built about 4,500 years ago."
+        },
+        {
+          "q": "Extend: find three tricky words and explain each using context clues",
+          "a": "For example: limestone: a type of stone used for building",
+          "mins": 5
+        },
+        {
+          "q": "Stretch (E): why does the writer compare the pyramid to modern buildings?",
+          "a": "To help the reader imagine how enormous it is",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "What is the first step in a retrieval question?",
+          "a": "Underline the key words",
+          "mins": 1
+        },
+        {
+          "q": "What is a quarry?",
+          "a": "A place where stone is cut from the ground",
+          "mins": 1
+        }
+      ],
+      "homework": "Read a non-fiction page and write three retrieval questions with answers for a family member. Read for 20 minutes a day.",
+      "send": "SEND: text with paragraph numbers; questions give the paragraph. EAL: glossary of building words. Stretch: write a summary of the text in 30 words."
+    },
+    {
+      "unit": "Spring 1: Alchemy Island",
+      "n": 14,
+      "title": "Bridge grammar: punctuating direct speech accurately",
+      "duration": 45,
+      "bigQuestion": "How does accurate speech punctuation help dialogue move a story forward?",
+      "objectives": [
+        "To punctuate direct speech accurately, including split speech"
+      ],
+      "successCriteria": [
+        "All: put inverted commas and the correct punctuation inside",
+        "Most: start a new line for each speaker and vary the reporting clause",
+        "Some: punctuate split speech correctly"
+      ],
+      "crossCurricular": "Drama: dialogue that reveals character",
+      "smsc": "Social: respectful, honest conversation",
+      "keywords": [
+        {
+          "term": "direct speech",
+          "def": "the exact words spoken"
+        },
+        {
+          "term": "reporting clause",
+          "def": "the part saying who spoke and how"
+        },
+        {
+          "term": "split speech",
+          "def": "speech broken by a reporting clause in the middle"
+        },
+        {
+          "term": "dialogue",
+          "def": "conversation between characters"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "\"If we open it,\" whispered Sami, \"we may never get out.\" How many punctuation marks are in that sentence, and what does each one do?",
+        "a": "Two pairs of inverted commas, two commas and a full stop: they show the spoken words and where the speech is split."
+      },
+      "pictures": [
+        {
+          "find": "ancient Egyptian painted wooden coffin museum photograph",
+          "alt": "a painted coffin in a museum",
+          "for": "teach:2"
+        },
+        {
+          "find": "speech marks punctuation diagram",
+          "alt": "inverted commas",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Punctuation Intervention Booklet (Lesson 5: Quotation marks and dialogue) for pupils who need extra support",
+        "Display: speech punctuation poster",
+        "Mini-whiteboard and pen",
+        "Exercise book",
+        "Bridge week 1: missed Autumn essential"
+      ],
+      "starter": [
+        {
+          "q": "Punctuate: where are we asked Lina",
+          "a": "\"Where are we?\" asked Lina.",
+          "mins": 1
+        },
+        {
+          "q": "Relative pronoun for people",
+          "a": "who",
+          "mins": 1
+        },
+        {
+          "q": "Synonym for said",
+          "a": "For example: muttered",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Rules recap",
+          "bullets": [
+            "Inverted commas around spoken words",
+            "Punctuation inside the closing marks",
+            "New speaker, new line",
+            "Capital letter at the start of speech"
+          ],
+          "note": "Quick recap; most pupils met this in Year 3 and 4."
+        },
+        {
+          "heading": "Split speech",
+          "note": "Model the tricky case.",
+          "model": {
+            "problem": "\"If we open it,\" whispered Sami, \"we may never get out.\"",
+            "steps": [
+              "First part ends with a comma inside",
+              "Reporting clause, then a comma",
+              "Reopen inverted commas",
+              "Lower case \"we\": it is the same sentence",
+              "Full stop inside the final marks"
+            ],
+            "answer": "\"If we open it,\" whispered Sami, \"we may never get out.\""
+          }
+        },
+        {
+          "heading": "Two sentences or one?",
+          "note": "If the first part is a full sentence, use a full stop and a capital.",
+          "misconception": {
+            "wrong": "\"Look,\" said Amir, \"it is moving.\"",
+            "right": "Correct when one sentence. Two sentences: \"Look,\" said Amir. \"It is moving.\""
+          }
+        },
+        {
+          "heading": "Hinge: correct?",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Which is correct?",
+            "options": [
+              "\"When the door opens,\" said Ali, \"Run.\"",
+              "\"When the door opens,\" said Ali, \"run.\"",
+              "\"When the door opens\" said Ali \"run.\""
+            ],
+            "answer": 1,
+            "why": "One sentence split by the reporting clause: lower case run, commas in place."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Punctuate: the map said Yusuf shows a hidden door",
+          "a": "\"The map,\" said Yusuf, \"shows a hidden door.\"",
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: \"The map,\" said Yusuf, \"shows a hidden door.\""
+        },
+        {
+          "q": "Punctuate as two sentences: stop said Zara it is a trap",
+          "a": "\"Stop,\" said Zara. \"It is a trap.\"",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: punctuate eight lines of a dialogue between two explorers (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Correctly punctuated lines",
+          "mins": 8,
+          "model": "Teacher does the first part aloud before pupils start, showing each step: Correctly punctuated lines"
+        },
+        {
+          "q": "Extend: write your own eight-line dialogue, including two split speeches",
+          "a": "Dialogue with split speech",
+          "mins": 6
+        },
+        {
+          "q": "Stretch: make the dialogue reveal character without telling (nervous, bossy)",
+          "a": "For example: \"We-we should go back,\" stammered Sami.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Punctuate: if you listen said the guide you can hear the river",
+          "a": "\"If you listen,\" said the guide, \"you can hear the river.\"",
+          "mins": 1
+        }
+      ],
+      "homework": "Copy a page of dialogue from your book and highlight every punctuation mark in the speech. Read for 20 minutes a day.",
+      "send": "SEND: speech punctuation card; four lines. EAL: model sentences with one change. Stretch: use speech to move the plot on (each line reveals new information)."
+    },
+    {
+      "unit": "Spring 1: Alchemy Island",
+      "n": 15,
+      "title": "Bridge writing: paragraphing with TiPToP and planning a scene",
+      "duration": 45,
+      "bigQuestion": "How do paragraphs guide a reader through a story?",
+      "objectives": [
+        "To organise a narrative into paragraphs using time, place, topic and person changes"
+      ],
+      "successCriteria": [
+        "All: mark where new paragraphs begin in a text",
+        "Most: give the TiPToP reason for each new paragraph",
+        "Some: plan a four-paragraph scene with a clear reason for each break"
+      ],
+      "crossCurricular": "History: ancient Egypt (museum setting)",
+      "smsc": "Cultural: museums as places that keep the past for everyone",
+      "keywords": [
+        {
+          "term": "paragraph",
+          "def": "a group of sentences about one idea, time or place"
+        },
+        {
+          "term": "TiPToP",
+          "def": "new paragraph for a new Time, Place, Topic or Person speaking"
+        },
+        {
+          "term": "setting",
+          "def": "where and when a story happens"
+        },
+        {
+          "term": "cohesion",
+          "def": "how ideas link across paragraphs"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A story with no paragraphs is one long block of text. Why do readers find that hard? What do paragraphs give the reader?",
+        "a": "Breaks to rest; signals that time, place, topic or speaker has changed."
+      },
+      "pictures": [
+        {
+          "find": "museum Egyptian gallery glass cases photograph",
+          "alt": "an Egyptian gallery (no people)",
+          "for": "teach:3"
+        },
+        {
+          "find": "ancient Egyptian painted wooden coffin photograph",
+          "alt": "a coffin case",
+          "for": "teach:3"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Display: TiPToP paragraphing posters (school English displays)",
+        "Creative writing frameworks (school file): STASS setting and HOOK opening steps, adapted for Year 5",
+        "Unparagraphed model text: The Egyptian Gallery (teacher-written)",
+        "Scene planning frame (four boxes)",
+        "Mini-whiteboard and pen"
+      ],
+      "starter": [
+        {
+          "q": "Punctuate: look said Huda",
+          "a": "\"Look,\" said Huda.",
+          "mins": 1
+        },
+        {
+          "q": "Name the four TiPToP reasons",
+          "a": "time, place, topic, person",
+          "mins": 1
+        },
+        {
+          "q": "Write a fronted adverbial of time",
+          "a": "For example: Later that evening,",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "TiPToP",
+          "note": "Each change signals a new paragraph.",
+          "diagram": {
+            "centre": "New paragraph",
+            "items": [
+              "Ti: time moves on",
+              "P: place changes",
+              "To: topic changes",
+              "P: a new person speaks"
+            ]
+          }
+        },
+        {
+          "heading": "Mark the breaks",
+          "note": "Read the unparagraphed model; pupils call out where to break and why.",
+          "model": {
+            "problem": "The Egyptian Gallery (unparagraphed)",
+            "steps": [
+              "Break 1: \"When the bell rang...\" (time)",
+              "Break 2: \"In the next room...\" (place)",
+              "Break 3: \"Sami said...\" (new person)",
+              "Break 4: \"The coffin itself...\" (topic)"
+            ],
+            "answer": "Four paragraphs, each with a reason."
+          }
+        },
+        {
+          "heading": "STASS setting plan",
+          "note": "From the school framework.",
+          "table": {
+            "head": [
+              "Step",
+              "Museum gallery idea"
+            ],
+            "rows": [
+              [
+                "Sky",
+                "grey light through high windows"
+              ],
+              [
+                "Time",
+                "closing time, almost dark"
+              ],
+              [
+                "Atmosphere",
+                "hushed, a little eerie"
+              ],
+              [
+                "Significant object",
+                "a painted wooden coffin case"
+              ],
+              [
+                "Spatial order",
+                "from the door to the glass case at the back"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Hinge: which reason?",
+          "note": "Teams poll.",
+          "check": {
+            "q": "\"Meanwhile, back at the entrance...\" starts a new paragraph because of a change in...",
+            "options": [
+              "person",
+              "place (and time)",
+              "nothing"
+            ],
+            "answer": 1,
+            "why": "Meanwhile and back at the entrance show a new place and parallel time."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Give the TiPToP reason: \"The next morning, ...\"",
+          "a": "time",
+          "mins": 1,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: time"
+        },
+        {
+          "q": "Give the reason: \"Sami replied, ...\"",
+          "a": "new person speaking",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: mark the paragraph breaks in the model text and give a reason for each (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Breaks with TiPToP reasons",
+          "mins": 8,
+          "model": "Labelled model to go through first (The Egyptian Gallery (unparagraphed)): Break 1: \"When the bell rang...\" (time) | Break 2: \"In the next room...\" (place) | Break 3: \"Sami said...\" (new person) | Break 4: \"The coffin itself...\" (topic) | Result: Four paragraphs, each with a reason."
+        },
+        {
+          "q": "Extend: plan your own four-paragraph museum scene with a STASS setting (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Plan with four paragraphs and setting notes",
+          "mins": 8
+        },
+        {
+          "q": "Stretch: plan a HOOK first line that hints at danger without explaining it",
+          "a": "For example: Nobody else noticed that the lid had moved.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Type your opening line",
+          "a": "Answers vary",
+          "mins": 1
+        }
+      ],
+      "homework": "Find two paragraph breaks in your reading book and write the TiPToP reason for each. Read for 20 minutes a day.",
+      "send": "SEND: model text with breaks already marked; pupils give reasons. EAL: TiPToP card with examples. Stretch: plan a paragraph that moves back in time (flashback) and signal it clearly."
+    },
+    {
+      "unit": "Spring 1: Alchemy Island",
+      "n": 16,
+      "title": "Bridge writing: a short scene with setting, dialogue and paragraphs",
+      "duration": 45,
+      "bigQuestion": "How do setting, dialogue and paragraphs work together in a scene?",
+      "objectives": [
+        "To write a short narrative scene that combines setting description, punctuated dialogue and paragraphs"
+      ],
+      "successCriteria": [
+        "All: write three paragraphs with a clear setting",
+        "Most: include correctly punctuated dialogue that moves the story on",
+        "Some: open with a HOOK line and end on a cliffhanger"
+      ],
+      "crossCurricular": "History: ancient Egypt",
+      "smsc": "Moral: honesty and respect for other people's property in a museum",
+      "keywords": [
+        {
+          "term": "cliffhanger",
+          "def": "an ending that leaves the reader desperate to know what happens next"
+        },
+        {
+          "term": "hook",
+          "def": "an opening that grabs the reader"
+        },
+        {
+          "term": "atmosphere",
+          "def": "the mood or feeling of a place"
+        },
+        {
+          "term": "dialogue",
+          "def": "conversation between characters"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "\"Nobody else noticed that the lid had moved.\" What questions does this first line make you ask?",
+        "a": "Whose lid? Who noticed? Why did it move? A good hook makes the reader ask questions."
+      },
+      "pictures": [
+        {
+          "find": "dim museum gallery at closing time photograph",
+          "alt": "a dim museum gallery",
+          "for": "hook"
+        },
+        {
+          "find": "ancient Egyptian coffin lid photograph",
+          "alt": "a coffin lid",
+          "for": "teach:1"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "hands-down",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Pupil's scene plan",
+        "Creative writing frameworks (school file): STASS setting and HOOK opening steps, adapted for Year 5",
+        "Writing checklist: STASS setting, dialogue punctuation, paragraphs, cliffhanger",
+        "Exercise book"
+      ],
+      "starter": [
+        {
+          "q": "Punctuate split speech: wait said Sami I heard something",
+          "a": "\"Wait,\" said Sami, \"I heard something.\"",
+          "mins": 2
+        },
+        {
+          "q": "TiPToP reason: \"An hour later, ...\"",
+          "a": "time",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Model: opening paragraph",
+          "note": "Write live, labelling STASS.",
+          "model": {
+            "problem": "Opening",
+            "steps": [
+              "Hook: Nobody else noticed that the lid had moved.",
+              "Time: It was closing time at the museum.",
+              "Atmosphere: The gallery was hushed and the lights were dimming.",
+              "Significant object: In the tall glass case lay a painted wooden coffin."
+            ],
+            "answer": "A hooked, atmospheric opening."
+          }
+        },
+        {
+          "heading": "Dialogue that moves the story",
+          "note": "Each line should reveal something new.",
+          "compare": {
+            "left": {
+              "title": "Empty dialogue",
+              "points": [
+                "\"Hello,\" said Sami.",
+                "\"Hello,\" said Huda."
+              ]
+            },
+            "right": {
+              "title": "Purposeful dialogue",
+              "points": [
+                "\"The lid,\" breathed Sami. \"It was closed before.\"",
+                "\"Then who opened it?\" Huda whispered."
+              ]
+            },
+            "label": "to"
+          }
+        },
+        {
+          "heading": "Cliffhanger endings",
+          "bullets": [
+            "Stop at the moment of danger",
+            "Leave a question unanswered",
+            "Short final sentence"
+          ],
+          "note": "Model: Then, from inside the case, something tapped."
+        },
+        {
+          "heading": "Hinge: best cliffhanger",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Which is the best cliffhanger?",
+            "options": [
+              "And then they went home for tea.",
+              "The light went out.",
+              "It was a nice day at the museum."
+            ],
+            "answer": 1,
+            "why": "B stops at a moment of danger with an unanswered question."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write a HOOK opening line for your scene",
+          "a": "For example: The guard had locked the doors, but the footsteps carried on.",
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: For example: The guard had locked the doors, but the footsteps carried on."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: write your scene in three or four paragraphs (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Scene with setting, dialogue and paragraphs",
+          "mins": 15,
+          "model": "Labelled model to go through first (Opening): Hook: Nobody else noticed that the lid had moved. | Time: It was closing time at the museum. | Atmosphere: The gallery was hushed and the lights were dimming. | Significant object: In the tall glass case lay a painted wooden coffin. | Result: A hooked, atmospheric opening."
+        },
+        {
+          "q": "Extend: include at least four lines of dialogue that move the story on",
+          "a": "Purposeful dialogue",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: end with a cliffhanger in a short sentence",
+          "a": "Cliffhanger ending",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Type your cliffhanger",
+          "a": "Answers vary",
+          "mins": 1
+        }
+      ],
+      "homework": "Read your scene aloud. Ask an adult what they think happens next. Read for 20 minutes a day.",
+      "send": "SEND: paragraph frames with starters (Opening, Discovery, Dialogue, Cliffhanger). EAL: setting word bank. Stretch: use a relative clause and a fronted adverbial in every paragraph."
+    },
+    {
+      "unit": "Spring 1: Alchemy Island",
+      "n": 17,
+      "title": "Bridge: formal and informal register",
+      "duration": 45,
+      "bigQuestion": "How do I choose the right register for my reader?",
+      "objectives": [
+        "To recognise and use formal and informal register for different audiences"
+      ],
+      "successCriteria": [
+        "All: sort phrases into formal and informal",
+        "Most: rewrite informal sentences formally",
+        "Some: explain the features that make writing formal (passive, no contractions, precise vocabulary)"
+      ],
+      "crossCurricular": "PSHE: communicating with adults and organisations",
+      "smsc": "Social: adab in speech: speaking appropriately to different people",
+      "islamicLink": {
+        "text": "Adab in speech: speaking appropriately to different people",
+        "at": "start"
+      },
+      "keywords": [
+        {
+          "term": "register",
+          "def": "how formal or informal language is"
+        },
+        {
+          "term": "formal",
+          "def": "serious and polite language for official situations"
+        },
+        {
+          "term": "informal",
+          "def": "relaxed language for friends and family"
+        },
+        {
+          "term": "contraction",
+          "def": "a shortened word with an apostrophe, like can't"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "\"Hiya mate, gimme a ticket!\" Would you say that to a museum manager? Why do we change how we speak for different people?",
+        "a": "No: we choose language that shows respect and suits the situation."
+      },
+      "pictures": [
+        {
+          "find": "formal letter on headed paper photograph",
+          "alt": "a formal letter",
+          "for": "teach:3"
+        },
+        {
+          "find": "mobile phone text message photograph",
+          "alt": "an informal text message",
+          "for": "teach:1"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Vocabulary Intervention Programme (Lesson 20: Formal and informal vocabulary) for pupils who need extra support",
+        "Mini-whiteboard and pen",
+        "Exercise book",
+        "Bridge week 2: missed Autumn essential"
+      ],
+      "starter": [
+        {
+          "q": "Add brackets: The Moon Earth's only satellite is bright.",
+          "a": "The Moon (Earth's only satellite) is bright.",
+          "mins": 1
+        },
+        {
+          "q": "Formal or informal: Yours sincerely",
+          "a": "Formal",
+          "mins": 1
+        },
+        {
+          "q": "Expand: can't",
+          "a": "cannot",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Features of each register",
+          "note": "Compare.",
+          "compare": {
+            "left": {
+              "title": "Informal",
+              "points": [
+                "contractions: it's, we're",
+                "slang: cool, loads",
+                "chatty questions"
+              ]
+            },
+            "right": {
+              "title": "Formal",
+              "points": [
+                "full forms: it is",
+                "precise words: excellent, many",
+                "passive voice: tickets can be booked"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Sort the phrases",
+          "note": "Card sort.",
+          "sort": {
+            "columns": [
+              "formal",
+              "informal"
+            ],
+            "cards": [
+              "I am writing to enquire",
+              "Hey there!",
+              "Please find attached",
+              "See ya",
+              "I would be grateful",
+              "loads of stuff"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "heading": "Model: make it formal",
+          "note": "Think aloud.",
+          "model": {
+            "problem": "Hey, can we come to see the stars at your place? It'd be well cool.",
+            "steps": [
+              "Greeting: Dear Sir or Madam,",
+              "Purpose: I am writing to ask whether our class could visit your observatory.",
+              "Remove contractions and slang",
+              "Reason: It would be an excellent opportunity to learn about astronomy."
+            ],
+            "answer": "A formal request."
+          }
+        },
+        {
+          "heading": "Hinge: most formal",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Which is most formal?",
+            "options": [
+              "Can you send us info?",
+              "I would be grateful if you could send further information.",
+              "Send us stuff pls."
+            ],
+            "answer": 1,
+            "why": "B uses polite modal phrasing and precise vocabulary."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Make formal: We're dead excited.",
+          "a": "We are very excited.",
+          "mins": 1,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: We are very excited."
+        },
+        {
+          "q": "Make formal: Loads of kids came.",
+          "a": "Many children attended.",
+          "mins": 1
+        },
+        {
+          "q": "Make informal (for a friend): I am delighted to inform you that I won.",
+          "a": "Guess what? I won!",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: rewrite eight informal sentences formally (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Formal versions",
+          "mins": 8,
+          "model": "Labelled model to go through first (Hey, can we come to see the stars at your place? It'd be well cool.): Greeting: Dear Sir or Madam, | Purpose: I am writing to ask whether our class could visit your observatory. | Remove contractions and slang | Reason: It would be an excellent opportunity to learn about astronomy. | Result: A formal request."
+        },
+        {
+          "q": "Extend: write the same news twice: a text to a friend and an email to a teacher",
+          "a": "Two registers",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: list the features you changed and why",
+          "a": "For example: removed contractions, used passive, precise words",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Make formal: Thanks loads!",
+          "a": "Thank you very much.",
+          "mins": 1
+        }
+      ],
+      "homework": "Notice two places where adults use formal language this week (a letter, a news report) and copy a phrase from each. Read for 20 minutes a day.",
+      "send": "SEND: formal/informal phrase bank with pairs. EAL: matching cards. Stretch: use the subjunctive in a formal sentence (If I were...)."
+    },
+    {
+      "unit": "Spring 1: Alchemy Island",
+      "n": 18,
+      "title": "Bridge reading: inference and prediction in \"The Night Watch\" (VIPERS)",
+      "duration": 45,
+      "bigQuestion": "How do I read between the lines to understand a character?",
+      "objectives": [
+        "To infer characters' feelings and motives and make evidence-based predictions"
+      ],
+      "successCriteria": [
+        "All: make an inference with one piece of evidence",
+        "Most: infer feelings and motives using quoted evidence",
+        "Some: make a prediction that draws on several clues"
+      ],
+      "crossCurricular": "Science and history: Muslim astronomers and observatories",
+      "smsc": "Spiritual: the Qur'an tells us that Allah placed the stars to guide people through the darkness of land and sea (6:97)",
+      "islamicLink": {
+        "text": "The Qur'an tells us that Allah placed the stars to guide people through the darkness of land and sea (6:97)",
+        "at": "start"
+      },
+      "keywords": [
+        {
+          "term": "infer",
+          "def": "work out what the writer suggests but does not say"
+        },
+        {
+          "term": "motive",
+          "def": "the reason a character does something"
+        },
+        {
+          "term": "evidence",
+          "def": "words from the text that support an answer"
+        },
+        {
+          "term": "observatory",
+          "def": "a building with telescopes for studying the sky"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A girl keeps glancing at the door while her grandfather points out the stars. What might she be thinking?",
+        "a": "Answers vary: worried, waiting for someone, wanting to leave; we infer from actions."
+      },
+      "pictures": [
+        {
+          "find": "brass refracting telescope on rooftop at night photograph",
+          "alt": "a brass telescope",
+          "for": "teach:1"
+        },
+        {
+          "find": "Maragheh observatory ruins photograph",
+          "alt": "the ruins of the Maragha observatory",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "think-pair-share",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Teacher's short story: The Night Watch (a girl and her grandfather at a rooftop telescope; written for this lesson)",
+        "Display: VIPERS question stems (school reading INSET)",
+        "Reading Fluency and Comprehension Intervention Workbook (Week 6, Lesson 16: Inference: combine clues without inventing) for pupils who need extra support",
+        "Reading journal (school template: Summarise, Zoom in, Explain, Respond)",
+        "Mini-whiteboard and pen"
+      ],
+      "starter": [
+        {
+          "q": "Make formal: It was awesome.",
+          "a": "It was excellent.",
+          "mins": 1
+        },
+        {
+          "q": "What is an inference?",
+          "a": "Working out what the writer suggests but does not say",
+          "mins": 1
+        },
+        {
+          "q": "Name a planet you can see without a telescope",
+          "a": "For example: Venus, Jupiter",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The story",
+          "bullets": [
+            "A rooftop at night",
+            "Grandfather and his old brass telescope",
+            "Maryam keeps looking at the door",
+            "A letter in her pocket"
+          ],
+          "note": "Read the story aloud. In it, Grandfather talks about Muslim astronomers who used the stars to find direction, while Maryam hides a letter saying the family is moving abroad."
+        },
+        {
+          "heading": "I: clue to inference",
+          "note": "Model.",
+          "model": {
+            "problem": "How does Maryam feel? Evidence?",
+            "steps": [
+              "Clue: she keeps glancing at the door",
+              "Clue: her hand stays on the letter in her pocket",
+              "Inference: she is anxious about something she has not said",
+              "Write: Maryam seems anxious because she keeps touching the hidden letter."
+            ],
+            "answer": "Point, evidence, explanation."
+          }
+        },
+        {
+          "heading": "P: predict from clues",
+          "bullets": [
+            "What is in the letter?",
+            "How will Grandfather react?",
+            "Use two clues"
+          ],
+          "note": "Pupils discuss in breakout pairs then share."
+        },
+        {
+          "heading": "Hinge: best evidence",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Which is the best evidence that Grandfather loves astronomy?",
+            "options": [
+              "He is old.",
+              "He polishes the telescope every evening.",
+              "It is night."
+            ],
+            "answer": 1,
+            "why": "Caring for the telescope every evening shows his love for it."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "I: Why does Grandfather talk about using stars to find the way?",
+          "a": "For example: he wants to teach Maryam, or hints that she can always find her way home",
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: For example: he wants to teach Maryam, or hints that she can always find her way home"
+        },
+        {
+          "q": "V: What does glancing mean?",
+          "a": "Looking quickly",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: answer five inference questions with evidence (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Answers with evidence",
+          "mins": 9,
+          "model": "Teacher does the first part aloud before pupils start, showing each step: Answers with evidence"
+        },
+        {
+          "q": "Extend: predict what happens next using two clues",
+          "a": "For example: she will show him the letter and he will give her the telescope",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: reading journal: Zoom in on one moment and Explain how the writer creates tension",
+          "a": "Answers vary",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Type one inference about Maryam with your evidence",
+          "a": "For example: She is worried: she keeps looking at the door.",
+          "mins": 1
+        }
+      ],
+      "homework": "Reading journal: Respond with a prediction about your own reading book and the evidence for it. Read for 20 minutes a day.",
+      "send": "SEND: inference grid (clue, what it suggests). EAL: pre-teach glancing, telescope, rooftop. Stretch: compare Maryam's and Grandfather's viewpoints."
+    },
+    {
+      "unit": "Spring 1: Alchemy Island",
+      "n": 19,
+      "title": "Bridge writing: a formal letter to an observatory",
+      "duration": 45,
+      "bigQuestion": "How do I write a formal letter that gets a polite yes?",
+      "objectives": [
+        "To write a formal letter of request with correct layout and register"
+      ],
+      "successCriteria": [
+        "All: use the correct layout, greeting and sign-off",
+        "Most: write three formal paragraphs with no contractions",
+        "Some: use modal verbs and parenthesis to sound polite and precise"
+      ],
+      "crossCurricular": "Science: astronomy",
+      "smsc": "Social: polite requests and gratitude",
+      "keywords": [
+        {
+          "term": "formal letter",
+          "def": "a letter for an official purpose, using formal register"
+        },
+        {
+          "term": "request",
+          "def": "politely asking for something"
+        },
+        {
+          "term": "Yours faithfully",
+          "def": "the sign-off after Dear Sir or Madam"
+        },
+        {
+          "term": "enquire",
+          "def": "ask for information"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You want an observatory to give your class an online tour. What three things must your letter do to persuade them?",
+        "a": "Say who you are, what you want and why it matters; be polite and clear."
+      },
+      "pictures": [
+        {
+          "find": "Royal Observatory Greenwich building photograph",
+          "alt": "an observatory",
+          "for": "hook"
+        },
+        {
+          "find": "observatory telescope dome interior photograph",
+          "alt": "a telescope inside an observatory dome",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "hands-down",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Letter layout model",
+        "Formal phrase bank",
+        "Vocabulary Intervention Programme (Lesson 20: Formal and informal vocabulary) for pupils who need extra support",
+        "Exercise book",
+        "Bridge week 2 Friday write"
+      ],
+      "starter": [
+        {
+          "q": "Make formal: Can u help?",
+          "a": "Could you possibly help?",
+          "mins": 1
+        },
+        {
+          "q": "Sign-off after Dear Sir or Madam",
+          "a": "Yours faithfully,",
+          "mins": 1
+        },
+        {
+          "q": "Add parenthesis: Our class Year 5 loves space.",
+          "a": "Our class (Year 5) loves space.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Layout",
+          "note": "Labelled layout.",
+          "diagram": {
+            "centre": "Formal letter",
+            "items": [
+              "your address and date",
+              "their address",
+              "Dear Sir or Madam,",
+              "paragraph 1: who and why",
+              "paragraph 2: details",
+              "paragraph 3: thanks",
+              "Yours faithfully,"
+            ]
+          }
+        },
+        {
+          "heading": "Model: paragraph 1",
+          "note": "Write live with labels.",
+          "model": {
+            "problem": "Paragraph 1",
+            "steps": [
+              "Who: I am a pupil in Year 5 at Tarbiyyah Global Academy, an online school.",
+              "Purpose: I am writing to enquire whether our class could join an online tour of your observatory.",
+              "Reason: We have been studying the solar system and would value an expert's view."
+            ],
+            "answer": "A clear, formal opening paragraph."
+          }
+        },
+        {
+          "heading": "Polite modals",
+          "bullets": [
+            "Would it be possible...",
+            "We would be very grateful if...",
+            "Could you possibly..."
+          ],
+          "note": "Modals soften requests."
+        },
+        {
+          "heading": "Hinge: correct sign-off",
+          "note": "Teams poll.",
+          "check": {
+            "q": "You began \"Dear Sir or Madam\". How do you sign off?",
+            "options": [
+              "Yours sincerely,",
+              "Yours faithfully,",
+              "Love from,"
+            ],
+            "answer": 1,
+            "why": "Faithfully when you do not know the name; sincerely when you do."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write paragraph 3 (thanks) in one formal sentence",
+          "a": "For example: Thank you for considering our request; we look forward to hearing from you.",
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: For example: Thank you for considering our request; we look forward to hearing from you."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: write the full letter with layout and three paragraphs (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Formal letter",
+          "mins": 15,
+          "model": "Labelled model to go through first (Paragraph 1): Who: I am a pupil in Year 5 at Tarbiyyah Global Academy, an online school. | Purpose: I am writing to enquire whether our class could join an online tour of your observatory. | Reason: We have been studying the solar system and would value an expert's view. | Result: A clear, formal opening paragraph."
+        },
+        {
+          "q": "Extend: use two polite modals and one parenthesis",
+          "a": "Modals and parenthesis present",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: check: no contractions, no slang, precise vocabulary",
+          "a": "Checked letter",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Type the most formal phrase you used",
+          "a": "Answers vary",
+          "mins": 1
+        }
+      ],
+      "homework": "Read your letter aloud to an adult in a formal voice and ask whether they would say yes. Read for 20 minutes a day.",
+      "send": "SEND: letter template with sentence starters. EAL: model letter to adapt. Stretch: write a short informal message to a friend about the same plan and compare."
+    },
+    {
+      "unit": "Spring 1: Alchemy Island",
+      "n": 20,
+      "title": "Reading: the alchemists and the beginnings of chemistry (VIPERS)",
+      "duration": 45,
+      "bigQuestion": "How did the alchemists' search for gold help to create modern chemistry?",
+      "objectives": [
+        "To retrieve, summarise and explain information from a non-fiction text about alchemy"
+      ],
+      "successCriteria": [
+        "All: retrieve three facts about alchemists",
+        "Most: summarise each paragraph in one sentence",
+        "Some: explain how alchemy led to chemistry, with evidence"
+      ],
+      "crossCurricular": "Science: properties and changes of materials",
+      "smsc": "Cultural: Muslim scholars such as al-Razi helped turn alchemy into careful experimental science",
+      "islamicLink": {
+        "text": "Muslim scholars such as al-Razi helped turn alchemy into careful experimental science",
+        "at": "start"
+      },
+      "keywords": [
+        {
+          "term": "alchemy",
+          "def": "an old practice that tried to change ordinary metals into gold"
+        },
+        {
+          "term": "alchemist",
+          "def": "a person who practised alchemy"
+        },
+        {
+          "term": "distillation",
+          "def": "heating a liquid to a gas and cooling it back to separate a mixture"
+        },
+        {
+          "term": "experiment",
+          "def": "a careful test to find something out"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "For hundreds of years, people tried to turn lead into gold. They never managed it. Was all that work wasted?",
+        "a": "No: they invented equipment and methods (like distillation) that chemists still use."
+      },
+      "pictures": [
+        {
+          "find": "alembic distillation apparatus museum photograph",
+          "alt": "an alembic used for distillation",
+          "for": "teach:2"
+        },
+        {
+          "find": "al-Razi manuscript page photograph",
+          "alt": "a page from a manuscript by al-Razi",
+          "for": "teach:1"
+        },
+        {
+          "find": "lead ingot and gold nugget photograph",
+          "alt": "lead and gold",
+          "for": "hook"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Primary Year 5 curriculum map 2023-24, Alchemy Island text types (no school English scheme for this project among the files)",
+        "Teacher's information text: The Alchemists (on slides; facts checked)",
+        "Display: VIPERS question stems (school reading INSET)",
+        "Reading Fluency and Comprehension Intervention Workbook (Week 4, Lesson 12: Summarise without shrinking the meaning) for pupils who need extra support",
+        "Mini-whiteboard and pen"
+      ],
+      "starter": [
+        {
+          "q": "Name a property of metals",
+          "a": "For example: shiny, conduct electricity, hard",
+          "mins": 1
+        },
+        {
+          "q": "What does summarise mean?",
+          "a": "Give the main points briefly",
+          "mins": 1
+        },
+        {
+          "q": "Is gold magnetic?",
+          "a": "No",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The text: four paragraphs",
+          "bullets": [
+            "What alchemists wanted: gold and long life",
+            "Where the word comes from: Arabic al-kimiya (الْكِيمِيَاء)",
+            "Scholars in the Islamic world",
+            "From alchemy to chemistry"
+          ],
+          "note": "Read the text aloud. Facts: the word alchemy comes through Arabic al-kimiya; alchemists tried to change base metals like lead into gold; al-Razi (about 865 to 925) sorted substances into groups and described laboratory equipment; words such as alkali and alembic (a distilling vessel) come from Arabic."
+        },
+        {
+          "heading": "Words from Arabic",
+          "note": "Retrieve from the text.",
+          "table": {
+            "head": [
+              "English word",
+              "Arabic origin"
+            ],
+            "rows": [
+              [
+                "alchemy",
+                "al-kimiya (الْكِيمِيَاء)"
+              ],
+              [
+                "alkali",
+                "al-qali (الْقِلْي)"
+              ],
+              [
+                "alembic",
+                "al-anbiq (الْأَنْبِيق)"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "S: summarise a paragraph",
+          "note": "Model.",
+          "model": {
+            "problem": "Summarise paragraph 4: From alchemy to chemistry",
+            "steps": [
+              "Find the main idea, not a detail",
+              "Ignore examples",
+              "Use your own words",
+              "One sentence"
+            ],
+            "answer": "Alchemists failed to make gold, but their careful methods grew into the science of chemistry."
+          }
+        },
+        {
+          "heading": "Hinge: retrieve",
+          "note": "Teams poll.",
+          "check": {
+            "q": "What were alchemists trying to make?",
+            "options": [
+              "plastic",
+              "gold from ordinary metals",
+              "electricity"
+            ],
+            "answer": 1,
+            "why": "They tried to change base metals such as lead into gold."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "R: Which language does the word alchemy come through?",
+          "a": "Arabic (al-kimiya)",
+          "mins": 1,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: Arabic (al-kimiya)"
+        },
+        {
+          "q": "R: What did al-Razi do?",
+          "a": "He sorted substances into groups and described laboratory equipment",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: summarise each of the four paragraphs in one sentence (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Four summary sentences",
+          "mins": 9,
+          "model": "Labelled model to go through first (Summarise paragraph 4: From alchemy to chemistry): Find the main idea, not a detail | Ignore examples | Use your own words | One sentence | Result: Alchemists failed to make gold, but their careful methods grew into the science of chemistry."
+        },
+        {
+          "q": "Extend: answer three VIPERS questions (R, V, E)",
+          "a": "Answers with evidence",
+          "mins": 6
+        },
+        {
+          "q": "Stretch: explain in a paragraph how alchemy led to chemistry",
+          "a": "Paragraph with evidence",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "What does distillation do?",
+          "a": "Separates a mixture by turning a liquid to gas and cooling it back",
+          "mins": 1
+        }
+      ],
+      "homework": "Find two more English words that come from Arabic (for example sugar, coffee, algebra) and what they mean. Read for 20 minutes a day.",
+      "send": "SEND: summary frame (This paragraph is mostly about...). EAL: glossary of science words with pictures. Stretch: research one more scholar and add two facts."
+    },
+    {
+      "unit": "Spring 1: Alchemy Island",
+      "n": 21,
+      "title": "Research: making notes on the properties of materials",
+      "duration": 45,
+      "bigQuestion": "How do I turn research into notes I can use?",
+      "objectives": [
+        "To make organised notes on the properties of materials from more than one source"
+      ],
+      "successCriteria": [
+        "All: make notes under three headings",
+        "Most: use abbreviations and key words, not sentences",
+        "Some: record which source each fact came from"
+      ],
+      "crossCurricular": "Science: properties and changes of materials",
+      "smsc": "Spiritual: the variety of materials in Allah's creation, each with uses for people",
+      "islamicLink": {
+        "text": "The variety of materials in Allah's creation, each with uses for people",
+        "at": "start"
+      },
+      "keywords": [
+        {
+          "term": "property",
+          "def": "a quality of a material, such as hardness"
+        },
+        {
+          "term": "conductor",
+          "def": "a material that lets heat or electricity pass through easily"
+        },
+        {
+          "term": "insulator",
+          "def": "a material that does not let heat or electricity pass easily"
+        },
+        {
+          "term": "source",
+          "def": "where information comes from"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why are saucepans made of metal but their handles often made of plastic or wood?",
+        "a": "Metal conducts heat to cook food; plastic and wood are insulators so the handle stays cool."
+      },
+      "pictures": [
+        {
+          "find": "copper wire coil photograph",
+          "alt": "copper wire",
+          "for": "teach:2"
+        },
+        {
+          "find": "rusty iron chain photograph",
+          "alt": "rusty iron",
+          "for": "teach:2"
+        },
+        {
+          "find": "aluminium drinks cans photograph",
+          "alt": "aluminium cans",
+          "for": "teach:2"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Primary Year 5 curriculum map 2023-24, Alchemy Island text types (no school English scheme for this project among the files)",
+        "Science textbook pages on properties of materials (or a safe website)",
+        "Notes grid: material, properties, uses, source",
+        "Household items: a metal spoon, a wooden spoon, foil, a plastic cup",
+        "Mini-whiteboard and pen"
+      ],
+      "starter": [
+        {
+          "q": "Summarise: alchemists tried to make gold and failed but invented methods",
+          "a": "For example: Their failures led to chemistry.",
+          "mins": 1
+        },
+        {
+          "q": "Is wood a conductor of heat?",
+          "a": "No, it is an insulator",
+          "mins": 1
+        },
+        {
+          "q": "Name a magnetic metal",
+          "a": "iron",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Properties we test in science",
+          "note": "Facts are checked.",
+          "diagram": {
+            "centre": "Properties",
+            "items": [
+              "hardness",
+              "solubility",
+              "transparency",
+              "thermal conductivity",
+              "electrical conductivity",
+              "magnetic or not"
+            ]
+          }
+        },
+        {
+          "heading": "Four materials",
+          "note": "Facts for notes.",
+          "table": {
+            "head": [
+              "Material",
+              "Key properties",
+              "Uses"
+            ],
+            "rows": [
+              [
+                "gold",
+                "does not rust, soft, conducts electricity",
+                "jewellery, electronics"
+              ],
+              [
+                "iron",
+                "strong, magnetic, rusts",
+                "bridges, tools"
+              ],
+              [
+                "copper",
+                "excellent electrical conductor",
+                "wires, pipes"
+              ],
+              [
+                "aluminium",
+                "light, does not rust, not magnetic",
+                "cans, aircraft"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Model: note-making",
+          "note": "From sentence to note.",
+          "model": {
+            "problem": "Copper is an excellent conductor of electricity, so it is used in electrical wires. Over time it turns green.",
+            "steps": [
+              "Heading: Copper",
+              "props: v. good elec. conductor; turns green over time",
+              "uses: wires",
+              "source: science textbook p. 34"
+            ],
+            "answer": "Short notes with a source."
+          }
+        },
+        {
+          "heading": "Hinge: best note",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Which is the best note?",
+            "options": [
+              "Aluminium is a metal that is light and is used to make aeroplanes and drinks cans because it is light.",
+              "aluminium: light, no rust; uses: cans, aircraft",
+              "metal"
+            ],
+            "answer": 1,
+            "why": "B keeps the key facts briefly. A is a full sentence; C loses the facts."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Make a note: Iron is magnetic and strong but rusts if it gets wet.",
+          "a": "iron: magnetic, strong, rusts when wet",
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: iron: magnetic, strong, rusts when wet"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: make notes on four materials under headings: properties, uses (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Notes grid completed",
+          "mins": 10,
+          "model": "Teacher does the first part aloud before pupils start, showing each step: Notes grid completed"
+        },
+        {
+          "q": "Extend: test two household items (metal spoon, wooden spoon) in warm water with an adult and note which feels warm",
+          "a": "Metal spoon warms: conductor; wooden stays cool: insulator",
+          "mins": 6
+        },
+        {
+          "q": "Stretch: add sources and one fact from a second source",
+          "a": "Sources recorded",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Why do notes not need full sentences?",
+          "a": "They are quick reminders of key facts",
+          "mins": 1
+        }
+      ],
+      "homework": "Find three objects at home made of different materials and note one property of each. Read for 20 minutes a day.",
+      "send": "SEND: notes grid with headings and one row done. EAL: property words with pictures. Stretch: note a material that is a mixture (steel = iron + carbon)."
+    },
+    {
+      "unit": "Spring 1: Alchemy Island",
+      "n": 22,
+      "title": "Spelling: words ending -able and -ible",
+      "duration": 45,
+      "bigQuestion": "How do I decide between -able and -ible?",
+      "objectives": [
+        "To spell words ending -able and -ible using the root-word rule"
+      ],
+      "successCriteria": [
+        "All: add -able to complete root words",
+        "Most: apply the rules for dropping e and changing y to i",
+        "Some: spell -ible words where the root is not a complete word"
+      ],
+      "crossCurricular": "Science: properties and changes of materials",
+      "smsc": "Moral: being reliable and responsible in our work",
+      "keywords": [
+        {
+          "term": "suffix",
+          "def": "letters added to the end of a word"
+        },
+        {
+          "term": "root word",
+          "def": "the word you start with"
+        },
+        {
+          "term": "-able",
+          "def": "used when the root is a complete word: washable"
+        },
+        {
+          "term": "-ible",
+          "def": "used when the root is not a complete word: visible"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "washable, visible. One root is a whole word, one is not. Which? Can you spot the rule?",
+        "a": "wash is a word: -able. vis is not a word: -ible."
+      },
+      "pictures": [
+        {
+          "find": "broken glass plate photograph",
+          "alt": "something breakable",
+          "for": "teach:2"
+        },
+        {
+          "find": "flexible bendy ruler photograph",
+          "alt": "something flexible",
+          "for": "teach:2"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Year 5/6 spelling: -able and -ible (National Curriculum Appendix 1)",
+        "Vocabulary Intervention Programme (Lesson 11: Suffixes: meaning and grammar at the end) for pupils who need extra support",
+        "Mini-whiteboard and pen",
+        "Exercise book"
+      ],
+      "starter": [
+        {
+          "q": "Spell: conductor",
+          "a": "conductor",
+          "mins": 1
+        },
+        {
+          "q": "Add a suffix: break + able",
+          "a": "breakable",
+          "mins": 1
+        },
+        {
+          "q": "What is a root word?",
+          "a": "The word you start with before adding parts",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The rules",
+          "note": "Most useful patterns.",
+          "table": {
+            "head": [
+              "Rule",
+              "Examples"
+            ],
+            "rows": [
+              [
+                "complete root: -able",
+                "washable, breakable, dependable"
+              ],
+              [
+                "root ends in e: drop it",
+                "adore, adorable; value, valuable"
+              ],
+              [
+                "keep e after soft c or g",
+                "noticeable, changeable"
+              ],
+              [
+                "root ends in y: change to i",
+                "rely, reliable"
+              ],
+              [
+                "root not a word: -ible",
+                "visible, possible, terrible, edible"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Materials words",
+          "note": "Use in reports.",
+          "diagram": {
+            "centre": "Describing materials",
+            "items": [
+              "breakable",
+              "washable",
+              "reliable",
+              "visible",
+              "flexible (learn this one)",
+              "durable"
+            ]
+          }
+        },
+        {
+          "heading": "Common error",
+          "note": "Learn these.",
+          "misconception": {
+            "wrong": "relyable, changable, visable",
+            "right": "reliable, changeable, visible"
+          }
+        },
+        {
+          "heading": "Hinge: -able or -ible?",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Choose the correct spelling:",
+            "options": [
+              "edable",
+              "edible",
+              "eatible"
+            ],
+            "answer": 1,
+            "why": "ed is not a word on its own, so -ible: edible."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Add -able: comfort",
+          "a": "comfortable",
+          "mins": 1,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: comfortable"
+        },
+        {
+          "q": "Add -able: rely",
+          "a": "reliable",
+          "mins": 1
+        },
+        {
+          "q": "Add -able: notice",
+          "a": "noticeable",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: spell twelve words: washable, breakable, adorable, valuable, reliable, noticeable, changeable, visible, possible, terrible, edible, horrible (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Twelve correct spellings",
+          "mins": 8,
+          "model": "Teacher does the first part aloud before pupils start, showing each step: Twelve correct spellings"
+        },
+        {
+          "q": "Extend: write four sentences about materials using -able or -ible words",
+          "a": "For example: Glass is breakable but transparent.",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: find two exceptions to the rule and explain them",
+          "a": "For example: flexible (flex is a word); accessible",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Spell: reliable",
+          "a": "reliable",
+          "mins": 1
+        },
+        {
+          "q": "Spell: visible",
+          "a": "visible",
+          "mins": 1
+        }
+      ],
+      "homework": "Learn the twelve -able and -ible words for a spelling check. Read for 20 minutes a day.",
+      "send": "SEND: six words; rule card. EAL: meanings with pictures. Stretch: add -ably and -ibly adverbs (comfortably, terribly)."
+    },
+    {
+      "unit": "Spring 1: Alchemy Island",
+      "n": 23,
+      "title": "Reading a model non-chronological report: formal features (VIPERS)",
+      "duration": 45,
+      "bigQuestion": "What makes a report sound expert and trustworthy?",
+      "objectives": [
+        "To identify the structural and language features that make a report formal and clear"
+      ],
+      "successCriteria": [
+        "All: label headings, sub-headings, introduction and glossary",
+        "Most: find formal language features (third person, present tense, technical words, passive)",
+        "Some: explain how each feature helps the reader trust the text"
+      ],
+      "crossCurricular": "Science: properties and changes of materials",
+      "smsc": "Moral: accuracy and honesty in presenting information",
+      "keywords": [
+        {
+          "term": "formal",
+          "def": "serious language for an official purpose"
+        },
+        {
+          "term": "third person",
+          "def": "writing using it, they, not I or you"
+        },
+        {
+          "term": "passive voice",
+          "def": "the object comes first: gold is used for jewellery"
+        },
+        {
+          "term": "technical vocabulary",
+          "def": "special subject words"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two reports about gold. One says \"Gold is mega shiny and I love it.\" The other says \"Gold is a dense, lustrous metal that does not tarnish.\" Which do you trust? Why?",
+        "a": "The second: it is formal, precise and factual."
+      },
+      "pictures": [
+        {
+          "find": "gold nugget photograph",
+          "alt": "a gold nugget",
+          "for": "hook"
+        },
+        {
+          "find": "bronze age axe head museum photograph",
+          "alt": "a bronze object (an alloy)",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Teacher's model report: Metals of Alchemy Island (on slides; facts checked)",
+        "Report frame: title, introduction, headed sections with sub-headings, conclusion, glossary",
+        "Display: VIPERS question stems (school reading INSET)",
+        "Mini-whiteboard and pen"
+      ],
+      "starter": [
+        {
+          "q": "Spell: visible",
+          "a": "visible",
+          "mins": 1
+        },
+        {
+          "q": "Name a copper use",
+          "a": "wires",
+          "mins": 1
+        },
+        {
+          "q": "Is a report written in time order?",
+          "a": "No",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Structure",
+          "note": "Label the model.",
+          "diagram": {
+            "centre": "Report structure",
+            "items": [
+              "title",
+              "introduction",
+              "headings and sub-headings",
+              "paragraphs with topic sentences",
+              "conclusion",
+              "glossary"
+            ]
+          }
+        },
+        {
+          "heading": "Formal language",
+          "note": "Find examples in the model.",
+          "table": {
+            "head": [
+              "Feature",
+              "Example from the model"
+            ],
+            "rows": [
+              [
+                "third person",
+                "Gold is found in rocks."
+              ],
+              [
+                "present tense",
+                "Iron rusts when it is wet."
+              ],
+              [
+                "passive voice",
+                "Copper is used in wiring."
+              ],
+              [
+                "technical words",
+                "conductor, alloy, tarnish"
+              ],
+              [
+                "relative clauses",
+                "Bronze, which is an alloy of copper and tin, ..."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "E: why it works",
+          "note": "Model an explanation.",
+          "model": {
+            "problem": "Why does the writer use the passive in \"Copper is used in wiring\"?",
+            "steps": [
+              "Find the sentence",
+              "Notice: no person is named",
+              "Effect: focus is on the copper, not who uses it",
+              "Sounds formal and scientific"
+            ],
+            "answer": "The passive keeps the focus on the material and sounds expert."
+          }
+        },
+        {
+          "heading": "Hinge: formal feature",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Which sentence is in the passive voice?",
+            "options": [
+              "People make cans from aluminium.",
+              "Cans are made from aluminium.",
+              "I like aluminium cans."
+            ],
+            "answer": 1,
+            "why": "In B the object (cans) comes first and the doer is left out."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Find a relative clause in the model",
+          "a": "For example: Bronze, which is an alloy of copper and tin,",
+          "mins": 1,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: For example: Bronze, which is an alloy of copper and tin,"
+        },
+        {
+          "q": "Change to passive: Builders use iron in bridges.",
+          "a": "Iron is used in bridges.",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: label structure and five language features on the model report (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Labels",
+          "mins": 9,
+          "model": "Labelled model to go through first (Why does the writer use the passive in \"Copper is used in wiring\"?): Find the sentence | Notice: no person is named | Effect: focus is on the copper, not who uses it | Sounds formal and scientific | Result: The passive keeps the focus on the material and sounds expert."
+        },
+        {
+          "q": "Extend: create a checklist for your own report from what you found",
+          "a": "Checklist of 6 to 8 features",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: explain which feature most helps the reader trust the text",
+          "a": "Reasoned answer",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Name two formal features of a report",
+          "a": "For example: third person, technical vocabulary",
+          "mins": 1
+        }
+      ],
+      "homework": "Find a report-style page in a book and tick off which features from your checklist it uses. Read for 20 minutes a day.",
+      "send": "SEND: model report with features colour-coded; match to labels. EAL: feature cards with examples. Stretch: rewrite an informal paragraph formally using the checklist."
+    },
+    {
+      "unit": "Spring 1: Alchemy Island",
+      "n": 24,
+      "title": "Planning the report: headings, sub-headings and a formal tone",
+      "duration": 45,
+      "bigQuestion": "How do I organise my research into a report a reader can navigate?",
+      "objectives": [
+        "To plan a non-chronological report on the materials of Alchemy Island with headings and sub-headings"
+      ],
+      "successCriteria": [
+        "All: plan an introduction and three headed sections",
+        "Most: add sub-headings and notes from research under each",
+        "Some: plan a hook for the introduction and a glossary"
+      ],
+      "crossCurricular": "Science: properties and changes of materials",
+      "smsc": "Spiritual: seeking knowledge is valued in Islam; we organise it carefully to share it",
+      "islamicLink": {
+        "text": "Seeking knowledge is valued in Islam; we organise it carefully to share it",
+        "at": "start"
+      },
+      "keywords": [
+        {
+          "term": "heading",
+          "def": "a title for a section"
+        },
+        {
+          "term": "sub-heading",
+          "def": "a smaller title within a section"
+        },
+        {
+          "term": "introduction",
+          "def": "the opening that tells the reader what the report covers"
+        },
+        {
+          "term": "glossary",
+          "def": "an alphabetical list of technical words"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your reader has landed on Alchemy Island and must choose metals to build a shelter, wire a lamp and make a cooking pot. How should your report be organised to help them?",
+        "a": "By material or by use, with clear headings so they can find what they need fast."
+      },
+      "pictures": [
+        {
+          "find": "volcanic island coastline aerial photograph",
+          "alt": "an island coastline",
+          "for": "hook"
+        },
+        {
+          "find": "metal ores minerals collection photograph",
+          "alt": "metal ores",
+          "for": "teach:2"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Primary Year 5 curriculum map 2023-24, Alchemy Island text types (no school English scheme for this project among the files)",
+        "Report frame: title, introduction, headed sections with sub-headings, conclusion, glossary",
+        "Pupil's research notes",
+        "Mini-whiteboard and pen"
+      ],
+      "starter": [
+        {
+          "q": "Change to passive: People mine gold.",
+          "a": "Gold is mined.",
+          "mins": 1
+        },
+        {
+          "q": "What is a sub-heading?",
+          "a": "A smaller title within a section",
+          "mins": 1
+        },
+        {
+          "q": "Spell: reliable",
+          "a": "reliable",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Two ways to organise",
+          "note": "Choose one.",
+          "compare": {
+            "left": {
+              "title": "By material",
+              "points": [
+                "Gold",
+                "Iron",
+                "Copper",
+                "Aluminium"
+              ]
+            },
+            "right": {
+              "title": "By use",
+              "points": [
+                "Building",
+                "Electricity",
+                "Cooking",
+                "Treasure"
+              ]
+            },
+            "label": "or"
+          }
+        },
+        {
+          "heading": "Model plan",
+          "note": "Labelled plan.",
+          "model": {
+            "problem": "Materials of Alchemy Island",
+            "steps": [
+              "Introduction: hook question + what the report covers",
+              "Heading: Metals; sub-headings: Iron, Copper, Gold",
+              "Heading: Non-metals; sub-headings: Wood, Glass",
+              "Heading: From alchemy to chemistry",
+              "Conclusion (later lesson)",
+              "Glossary: alloy, conductor, tarnish"
+            ],
+            "answer": "A clear, navigable plan."
+          }
+        },
+        {
+          "heading": "Hook introductions",
+          "bullets": [
+            "A question to the reader",
+            "A surprising fact",
+            "A short scene on the island"
+          ],
+          "note": "Model: Imagine stepping onto an island where every rock might hide a precious metal..."
+        },
+        {
+          "heading": "Hinge: best heading",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Best heading for a section on wires and lamps?",
+            "options": [
+              "Stuff",
+              "Materials that conduct electricity",
+              "Gold"
+            ],
+            "answer": 1,
+            "why": "B tells the reader exactly what the section covers."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write a hook question for your introduction",
+          "a": "For example: Which metal would you trust to carry electricity across the island?",
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: For example: Which metal would you trust to carry electricity across the island?"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: complete a plan with introduction and three headed sections with notes (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Completed plan",
+          "mins": 12,
+          "model": "Labelled model to go through first (Materials of Alchemy Island): Introduction: hook question + what the report covers | Heading: Metals; sub-headings: Iron, Copper, Gold | Heading: Non-metals; sub-headings: Wood, Glass | Heading: From alchemy to chemistry | Conclusion (later lesson) | Glossary: alloy, conductor, tarnish | Result: A clear, navigable plan."
+        },
+        {
+          "q": "Extend: add sub-headings and a planned hook",
+          "a": "Sub-headings and hook",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: plan a glossary of five words in alphabetical order",
+          "a": "Glossary plan",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Type your report title",
+          "a": "Answers vary",
+          "mins": 1
+        }
+      ],
+      "homework": "Read your plan to an adult; ask what question they would want answered. Read for 20 minutes a day.",
+      "send": "SEND: plan frame with headings given. EAL: note cards to place under headings. Stretch: plan a \"Did you know?\" box with an Arabic word origin."
+    },
+    {
+      "unit": "Spring 1: Alchemy Island",
+      "n": 25,
+      "title": "Drafting the report: introduction and first section with relative clauses",
+      "duration": 45,
+      "bigQuestion": "How do I write an introduction that makes the reader want to keep reading?",
+      "objectives": [
+        "To draft a report introduction and first section in a formal, cohesive style"
+      ],
+      "successCriteria": [
+        "All: write an introduction and one headed section",
+        "Most: use relative clauses to add information precisely",
+        "Some: hook the reader in the introduction while staying formal"
+      ],
+      "crossCurricular": "Science: properties and changes of materials",
+      "smsc": "Spiritual: wonder at the materials Allah placed in the earth for our use",
+      "islamicLink": {
+        "text": "Wonder at the materials Allah placed in the earth for our use",
+        "at": "start"
+      },
+      "keywords": [
+        {
+          "term": "draft",
+          "def": "a first version of writing to improve"
+        },
+        {
+          "term": "relative clause",
+          "def": "a clause that adds information about a noun"
+        },
+        {
+          "term": "formal",
+          "def": "serious language for an official purpose"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which opening hooks you more? (a) This report is about metals. (b) On Alchemy Island, the rocks glitter with secrets: some metals rust, some shine forever, and one can carry lightning.",
+        "options": [
+          "(a)",
+          "(b)"
+        ],
+        "a": "(b): it is vivid and intriguing, yet still informative."
+      },
+      "pictures": [
+        {
+          "find": "glittering pyrite mineral rock photograph",
+          "alt": "glittering rock",
+          "for": "teach:1"
+        },
+        {
+          "find": "blacksmith anvil and iron tools photograph",
+          "alt": "iron tools",
+          "for": "teach:2"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "hands-down",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Pupil's report plan",
+        "Report frame: title, introduction, headed sections with sub-headings, conclusion, glossary",
+        "Report checklist from lesson 23",
+        "Exercise book or typed draft"
+      ],
+      "starter": [
+        {
+          "q": "Add a relative clause: Copper ___ is used in wires.",
+          "a": "For example: Copper, which conducts electricity well, is used in wires.",
+          "mins": 1
+        },
+        {
+          "q": "Passive: People use gold in jewellery.",
+          "a": "Gold is used in jewellery.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Model: introduction",
+          "note": "Labelled model paragraph.",
+          "model": {
+            "problem": "Introduction",
+            "steps": [
+              "Hook: On Alchemy Island, the rocks glitter with secrets.",
+              "Topic: This report describes the metals and materials found there.",
+              "Scope: It explains their properties, their uses and how alchemists studied them.",
+              "Formal tone: third person, present tense"
+            ],
+            "answer": "A formal, hooked introduction."
+          }
+        },
+        {
+          "heading": "Model: first section",
+          "note": "Labelled model paragraph.",
+          "model": {
+            "problem": "Metals: Iron",
+            "steps": [
+              "Topic sentence: Iron is the most useful metal on the island.",
+              "Fact with relative clause: Iron, which is strong and magnetic, is ideal for tools and bridges.",
+              "Fact with passive: It is easily shaped when heated.",
+              "Drawback with cohesion: However, this metal rusts in wet air."
+            ],
+            "answer": "Topic sentence, facts, cohesion."
+          }
+        },
+        {
+          "heading": "Relative clauses for precision",
+          "bullets": [
+            "who for people: alchemists, who...",
+            "which for things: gold, which...",
+            "where for places: the caves, where..."
+          ],
+          "note": "Pupils add one relative clause per section."
+        },
+        {
+          "heading": "Hinge: formal?",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Which sentence fits the report?",
+            "options": [
+              "Iron is well useful.",
+              "Iron, which is magnetic, is used to make tools.",
+              "I reckon iron is good."
+            ],
+            "answer": 1,
+            "why": "B is formal, factual and uses a relative clause."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write a topic sentence for your second section",
+          "a": "For example: Copper is the island's best conductor of electricity.",
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: For example: Copper is the island's best conductor of electricity."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: draft your introduction and first headed section (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Draft introduction and section",
+          "mins": 15,
+          "model": "Teacher does the first part aloud before pupils start, showing each step: Draft introduction and section"
+        },
+        {
+          "q": "Extend: include two relative clauses and one passive sentence",
+          "a": "Features present",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: end the section with a sentence that links to the next",
+          "a": "Linking sentence",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Type your hook sentence",
+          "a": "Answers vary",
+          "mins": 1
+        }
+      ],
+      "homework": "Read your introduction to an adult and ask if it makes them want to read on. Read for 20 minutes a day.",
+      "send": "SEND: paragraph frames for introduction and section. EAL: relative clause starters. Stretch: add parenthesis with a surprising fact."
+    },
+    {
+      "unit": "Spring 1: Alchemy Island",
+      "n": 26,
+      "title": "Reading: \"Gold: the metal that never rusts\" (VIPERS)",
+      "duration": 45,
+      "bigQuestion": "How does a writer make facts interesting?",
+      "objectives": [
+        "To retrieve, summarise and comment on the writer's choices in a non-fiction text about gold"
+      ],
+      "successCriteria": [
+        "All: retrieve four facts about gold",
+        "Most: summarise the text in 40 words",
+        "Some: explain how the writer makes facts vivid (comparisons, numbers, questions)"
+      ],
+      "crossCurricular": "Science: properties and changes of materials",
+      "smsc": "Spiritual: gold is mentioned in the Qur'an among the adornments of this world; Islam teaches it is a test, not the goal of life",
+      "islamicLink": {
+        "text": "Gold is mentioned in the Qur'an among the adornments of this world; Islam teaches it is a test, not the goal of life",
+        "at": "start"
+      },
+      "keywords": [
+        {
+          "term": "tarnish",
+          "def": "lose shine because of a reaction with air"
+        },
+        {
+          "term": "malleable",
+          "def": "can be hammered into shape without breaking"
+        },
+        {
+          "term": "dense",
+          "def": "heavy for its size"
+        },
+        {
+          "term": "comparison",
+          "def": "showing how two things are alike or different"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Gold coins from shipwrecks hundreds of years old still shine. Iron from the same wrecks has rusted away. Why might that be?",
+        "a": "Gold does not react with air and water, so it does not rust or tarnish; iron does."
+      },
+      "pictures": [
+        {
+          "find": "gold leaf sheets photograph",
+          "alt": "gold leaf",
+          "for": "teach:1"
+        },
+        {
+          "find": "gold coins shipwreck treasure photograph",
+          "alt": "gold coins that still shine",
+          "for": "hook"
+        },
+        {
+          "find": "circuit board gold contacts photograph",
+          "alt": "gold on a circuit board",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Teacher's information text: Gold: the Metal that Never Rusts (on slides; facts checked)",
+        "Display: VIPERS question stems (school reading INSET)",
+        "Reading Fluency and Comprehension Intervention Workbook (Week 4, Lesson 11: Find the main idea, not just a detail) for pupils who need extra support",
+        "Reading journal (school template: Summarise, Zoom in, Explain, Respond)",
+        "Mini-whiteboard and pen"
+      ],
+      "starter": [
+        {
+          "q": "Spell: malleable",
+          "a": "malleable",
+          "mins": 1
+        },
+        {
+          "q": "Which metal rusts?",
+          "a": "iron",
+          "mins": 1
+        },
+        {
+          "q": "Synonym for shiny",
+          "a": "For example: lustrous, gleaming",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Facts in the text",
+          "note": "Facts checked.",
+          "diagram": {
+            "centre": "Gold",
+            "items": [
+              "does not rust or tarnish",
+              "very malleable: beaten into thin sheets (gold leaf)",
+              "very dense: heavy for its size",
+              "good conductor: used in electronics",
+              "found in rocks and rivers"
+            ]
+          }
+        },
+        {
+          "heading": "S: summarise",
+          "note": "Model.",
+          "model": {
+            "problem": "Summarise the text in 40 words or fewer",
+            "steps": [
+              "List the main idea of each paragraph",
+              "Join with cohesive devices",
+              "Remove examples and numbers",
+              "Check the word count"
+            ],
+            "answer": "Gold is a dense, malleable metal that never rusts or tarnishes. These properties make it valuable for jewellery, coins and electronics, which is why people have treasured it for thousands of years."
+          }
+        },
+        {
+          "heading": "E: writer's choices",
+          "bullets": [
+            "Comparison: thinner than a hair",
+            "Question: Why does it never rust?",
+            "Number: thousands of years"
+          ],
+          "note": "Discuss the effect of each: makes facts vivid and memorable."
+        },
+        {
+          "heading": "Hinge: meaning",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Malleable means...",
+            "options": [
+              "easily broken",
+              "can be hammered into shape",
+              "see-through"
+            ],
+            "answer": 1,
+            "why": "Malleable materials change shape without breaking when hammered."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "R: Why is gold used in electronics?",
+          "a": "It conducts electricity and does not corrode",
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: It conducts electricity and does not corrode"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: answer five VIPERS questions on the text (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Answers with evidence",
+          "mins": 9,
+          "model": "Teacher does the first part aloud before pupils start, showing each step: Answers with evidence"
+        },
+        {
+          "q": "Extend: summarise the text in 40 words",
+          "a": "Summary within limit",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: explain one technique the writer uses to make facts vivid",
+          "a": "For example: comparison helps the reader picture how thin gold leaf is",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Name one property of gold",
+          "a": "For example: does not tarnish",
+          "mins": 1
+        }
+      ],
+      "homework": "Reading journal: Summarise this week's reading and Zoom in on one fact that surprised you. Read for 20 minutes a day.",
+      "send": "SEND: summary frame; retrieval questions with paragraph numbers. EAL: glossary with images. Stretch: use one of the writer's techniques in your own report draft."
+    },
+    {
+      "unit": "Spring 1: Alchemy Island",
+      "n": 27,
+      "title": "Drafting the remaining sections of the report",
+      "duration": 45,
+      "bigQuestion": "How do I keep every section clear, formal and linked?",
+      "objectives": [
+        "To draft the remaining report sections with topic sentences, technical vocabulary and cohesion"
+      ],
+      "successCriteria": [
+        "All: draft two more headed sections",
+        "Most: use topic sentences and technical vocabulary throughout",
+        "Some: link sections cohesively and include a fact box or glossary"
+      ],
+      "crossCurricular": "Science: properties and changes of materials",
+      "smsc": "Cultural: Muslim scholars' contributions to chemistry (al-Razi)",
+      "islamicLink": {
+        "text": "Muslim scholars' contributions to chemistry (al-Razi)",
+        "at": "start"
+      },
+      "keywords": [
+        {
+          "term": "alloy",
+          "def": "a mixture of a metal with other elements, like bronze"
+        },
+        {
+          "term": "conductor",
+          "def": "a material that lets electricity or heat pass through"
+        },
+        {
+          "term": "topic sentence",
+          "def": "the first sentence saying what a paragraph is about"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Bronze is made by mixing copper and tin. Why might a mixture of metals be more useful than either metal alone?",
+        "a": "An alloy can be stronger or harder than the pure metals."
+      },
+      "pictures": [
+        {
+          "find": "bronze statue close up photograph",
+          "alt": "bronze, an alloy",
+          "for": "hook"
+        },
+        {
+          "find": "copper and tin ingots photograph",
+          "alt": "copper and tin",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "hands-down",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Pupil's plan and draft",
+        "Report frame: title, introduction, headed sections with sub-headings, conclusion, glossary",
+        "Report checklist",
+        "Exercise book or typed draft"
+      ],
+      "starter": [
+        {
+          "q": "Cohesive device for adding",
+          "a": "For example: In addition,",
+          "mins": 1
+        },
+        {
+          "q": "What is an alloy?",
+          "a": "A mixture of a metal with other elements",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Model: a section with sub-headings",
+          "note": "Labelled model paragraph.",
+          "model": {
+            "problem": "From Alchemy to Chemistry",
+            "steps": [
+              "Topic sentence: The island's old laboratory shows how alchemy became chemistry.",
+              "Fact with relative clause: Alchemists, who wanted to make gold, invented equipment for heating and distilling.",
+              "Islamic scholarship: Al-Razi, a physician in the 9th and 10th centuries, sorted substances into groups.",
+              "Link: Their careful methods became the basis of modern science."
+            ],
+            "answer": "A cohesive section."
+          }
+        },
+        {
+          "heading": "Checklist reminder",
+          "note": "Tick as you write.",
+          "table": {
+            "head": [
+              "Feature",
+              "Done?"
+            ],
+            "rows": [
+              [
+                "heading and sub-headings",
+                ""
+              ],
+              [
+                "topic sentence",
+                ""
+              ],
+              [
+                "technical words",
+                ""
+              ],
+              [
+                "relative clause",
+                ""
+              ],
+              [
+                "cohesive link to the next section",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Hinge: technical word",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Which is a technical word for this report?",
+            "options": [
+              "nice",
+              "conductor",
+              "thing"
+            ],
+            "answer": 1,
+            "why": "conductor is a precise science term."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write a linking topic sentence for your Non-metals section",
+          "a": "For example: Not every useful material on the island is a metal.",
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: For example: Not every useful material on the island is a metal."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: draft two more headed sections (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Two sections drafted",
+          "mins": 16,
+          "model": "Teacher does the first part aloud before pupils start, showing each step: Two sections drafted"
+        },
+        {
+          "q": "Extend: tick every checklist feature",
+          "a": "Checklist complete",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: add a fact box with an Arabic word origin",
+          "a": "For example: alembic from al-anbiq",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Type one technical word you used",
+          "a": "Answers vary",
+          "mins": 1
+        }
+      ],
+      "homework": "Read your draft aloud and mark any sentence that does not sound formal. Read for 20 minutes a day.",
+      "send": "SEND: section frames with topic sentences given. EAL: technical word bank. Stretch: add a comparison table of two metals."
+    },
+    {
+      "unit": "Spring 1: Alchemy Island",
+      "n": 28,
+      "title": "Peer feedback and improving the draft",
+      "duration": 45,
+      "bigQuestion": "How can feedback make my writing better?",
+      "objectives": [
+        "To give and act on specific, kind feedback to improve a report draft"
+      ],
+      "successCriteria": [
+        "All: give one WWW and one EBI linked to the checklist",
+        "Most: act on two pieces of feedback",
+        "Some: explain how each change improves the report for the reader"
+      ],
+      "crossCurricular": "Science: properties and changes of materials",
+      "smsc": "Social: the Prophet (peace be upon him) taught that religion is sincere advice; we give feedback kindly and honestly",
+      "islamicLink": {
+        "text": "The Prophet (peace be upon him) taught that religion is sincere advice; we give feedback kindly and honestly",
+        "at": "start"
+      },
+      "keywords": [
+        {
+          "term": "feedback",
+          "def": "comments that help someone improve"
+        },
+        {
+          "term": "WWW",
+          "def": "What Went Well"
+        },
+        {
+          "term": "EBI",
+          "def": "Even Better If"
+        },
+        {
+          "term": "revise",
+          "def": "change writing to improve it"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which feedback helps more: \"It is good\" or \"Your copper section is clear; add a relative clause to explain why copper is used in wires\"? Why?",
+        "a": "The second: it is specific and tells the writer what to do next."
+      },
+      "pictures": [
+        {
+          "find": "handwritten draft with edits photograph",
+          "alt": "a draft with corrections",
+          "for": "teach:3"
+        },
+        {
+          "find": "checklist on clipboard photograph",
+          "alt": "a checklist",
+          "for": "teach:1"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "think-pair-share",
+        "exit": "hands-down",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Pupil's draft report",
+        "Report checklist",
+        "Feedback card: WWW, EBI, one question",
+        "Teams breakout rooms",
+        "Coloured pen"
+      ],
+      "starter": [
+        {
+          "q": "What does EBI stand for?",
+          "a": "Even Better If",
+          "mins": 1
+        },
+        {
+          "q": "Add a relative clause: Gold ___ is valuable.",
+          "a": "For example: Gold, which never tarnishes, is valuable.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Kind, specific, helpful",
+          "bullets": [
+            "Link to the checklist",
+            "Quote the writer's words",
+            "Suggest one clear next step"
+          ],
+          "note": "Model with an anonymous draft."
+        },
+        {
+          "heading": "Model: feedback on a paragraph",
+          "note": "Labelled model feedback.",
+          "model": {
+            "problem": "Draft: Iron is strong. It is used for stuff. It rusts.",
+            "steps": [
+              "WWW: clear topic sentence and accurate fact about rust",
+              "EBI: replace \"stuff\" with technical examples (bridges, tools)",
+              "EBI: add a cohesive device: However, this metal rusts",
+              "Question: Why does iron rust?"
+            ],
+            "answer": "Specific, actionable feedback."
+          }
+        },
+        {
+          "heading": "Acting on feedback",
+          "note": "Before and after.",
+          "compare": {
+            "left": {
+              "title": "Before",
+              "points": [
+                "It is used for stuff."
+              ]
+            },
+            "right": {
+              "title": "After",
+              "points": [
+                "It is used to build bridges and make tools."
+              ]
+            },
+            "label": "to"
+          }
+        },
+        {
+          "heading": "Hinge: best EBI",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Which is the most useful EBI?",
+            "options": [
+              "Make it better.",
+              "Add a sub-heading so the reader can find the copper facts quickly.",
+              "I liked it."
+            ],
+            "answer": 1,
+            "why": "B is specific and linked to a feature."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Give a WWW and EBI on the sample paragraph",
+          "a": "For example: WWW accurate facts; EBI add a relative clause",
+          "mins": 3,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: For example: WWW accurate facts; EBI add a relative clause"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: swap drafts in a breakout pair and give WWW, EBI and one question (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Feedback card completed",
+          "mins": 8,
+          "model": "Teacher does the first part aloud before pupils start, showing each step: Feedback card completed"
+        },
+        {
+          "q": "Extend: act on two pieces of feedback in coloured pen (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Two improvements",
+          "mins": 8
+        },
+        {
+          "q": "Stretch: write one sentence explaining how a change helps the reader",
+          "a": "For example: The sub-heading helps the reader find facts quickly.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Type one change you made and why",
+          "a": "Answers vary",
+          "mins": 1
+        }
+      ],
+      "homework": "Make one more improvement to your draft at home. Read for 20 minutes a day.",
+      "send": "SEND: feedback card with sentence starters; adult partner. EAL: checklist with examples. Stretch: give feedback on cohesion as well as content."
+    },
+    {
+      "unit": "Spring 1: Alchemy Island",
+      "n": 29,
+      "title": "Reading: what makes a high-impact conclusion?",
+      "duration": 45,
+      "bigQuestion": "How should a report end so the reader remembers it?",
+      "objectives": [
+        "To compare conclusions and identify what makes one high-impact"
+      ],
+      "successCriteria": [
+        "All: say which of two conclusions is stronger",
+        "Most: identify three features of a high-impact conclusion",
+        "Some: explain how a conclusion links back to the introduction"
+      ],
+      "crossCurricular": "Science: properties and changes of materials",
+      "smsc": "Spiritual: reflecting on the purpose of knowledge: to benefit others",
+      "keywords": [
+        {
+          "term": "conclusion",
+          "def": "the final section that sums up and leaves an impression"
+        },
+        {
+          "term": "summarise",
+          "def": "give the main points briefly"
+        },
+        {
+          "term": "impact",
+          "def": "a strong effect on the reader"
+        },
+        {
+          "term": "circular ending",
+          "def": "an ending that links back to the opening"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "\"That is all about metals. The end.\" How do you feel as a reader? What would make you remember a report?",
+        "a": "Flat; a strong conclusion summarises, reflects and leaves a memorable final thought."
+      },
+      "pictures": [
+        {
+          "find": "library bookshelf non-fiction photograph",
+          "alt": "non-fiction books",
+          "for": "teach:1"
+        },
+        {
+          "find": "treasure chest photograph",
+          "alt": "a treasure chest",
+          "for": "teach:3"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Primary Year 5 curriculum map 2023-24, Alchemy Island text types (no school English scheme for this project among the files)",
+        "Two model conclusions (weak and strong) on slides",
+        "Display: VIPERS question stems (school reading INSET)",
+        "Mini-whiteboard and pen"
+      ],
+      "starter": [
+        {
+          "q": "What does summarise mean?",
+          "a": "Give the main points briefly",
+          "mins": 1
+        },
+        {
+          "q": "One property of copper",
+          "a": "For example: good electrical conductor",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Weak or strong?",
+          "note": "Compare the two conclusions.",
+          "compare": {
+            "left": {
+              "title": "Weak",
+              "points": [
+                "That is all about metals.",
+                "The end."
+              ]
+            },
+            "right": {
+              "title": "High-impact",
+              "points": [
+                "Summarises: each metal has its strengths",
+                "Reflects: alchemy's failures became science",
+                "Final thought: links to the opening hook"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Features of a high-impact conclusion",
+          "note": "Build the list.",
+          "diagram": {
+            "centre": "High-impact conclusion",
+            "items": [
+              "brief summary",
+              "why it matters",
+              "link back to the opening",
+              "a memorable final sentence",
+              "no new facts"
+            ]
+          }
+        },
+        {
+          "heading": "Model: labelled conclusion",
+          "note": "Labelled model paragraph.",
+          "model": {
+            "problem": "Conclusion",
+            "steps": [
+              "Summary: From strong iron to gleaming gold, each metal on Alchemy Island has its own strengths.",
+              "Why it matters: Knowing their properties helps us choose the right material for each job.",
+              "Reflection: The alchemists never made gold, yet their experiments created chemistry.",
+              "Final thought (links to opening): The island's real treasure is knowledge."
+            ],
+            "answer": "A circular, high-impact ending."
+          }
+        },
+        {
+          "heading": "Hinge: belongs in a conclusion?",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Which does NOT belong in a conclusion?",
+            "options": [
+              "a brief summary",
+              "a brand new fact about tin",
+              "a final thought"
+            ],
+            "answer": 1,
+            "why": "Conclusions do not introduce new facts."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Improve: \"So that was metals.\"",
+          "a": "For example: Each metal, from iron to gold, has properties that make it valuable in its own way.",
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: For example: Each metal, from iron to gold, has properties that make it valuable in its own way."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: annotate the strong conclusion with its features (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Labels for summary, reflection, link, final thought",
+          "mins": 8,
+          "model": "Teacher does the first part aloud before pupils start, showing each step: Labels for summary, reflection, link, final thought"
+        },
+        {
+          "q": "Extend: rewrite the weak conclusion as a high-impact one (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Improved conclusion",
+          "mins": 8
+        },
+        {
+          "q": "Stretch: explain how a circular ending satisfies the reader",
+          "a": "It completes the journey started by the hook",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Name two features of a high-impact conclusion",
+          "a": "For example: summary, link back to the opening",
+          "mins": 1
+        }
+      ],
+      "homework": "Find the last paragraph of a non-fiction text at home. Is it high-impact? Why? Read for 20 minutes a day.",
+      "send": "SEND: feature cards to match to the model. EAL: conclusion sentence starters. Stretch: write a conclusion for a different report topic."
+    },
+    {
+      "unit": "Spring 1: Alchemy Island",
+      "n": 30,
+      "title": "Writing a high-impact conclusion",
+      "duration": 45,
+      "bigQuestion": "How do I end my report so it lingers in the reader's mind?",
+      "objectives": [
+        "To write a high-impact conclusion that summarises, reflects and links back to the introduction"
+      ],
+      "successCriteria": [
+        "All: write a conclusion with a summary sentence",
+        "Most: add a reflection on why the topic matters",
+        "Some: end with a final thought that links back to the introduction"
+      ],
+      "crossCurricular": "Science: properties and changes of materials",
+      "smsc": "Spiritual: knowledge should benefit people; ending with what we learned and why it matters",
+      "keywords": [
+        {
+          "term": "conclusion",
+          "def": "the final section that sums up"
+        },
+        {
+          "term": "reflection",
+          "def": "thinking about what something means"
+        },
+        {
+          "term": "circular ending",
+          "def": "an ending that links back to the opening"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Read your introduction again. What promise did it make to the reader? Has your report kept it?",
+        "a": "Answers vary; the conclusion should show the promise was kept."
+      },
+      "pictures": [
+        {
+          "find": "glittering rocks cave photograph",
+          "alt": "glittering rocks",
+          "for": "hook"
+        },
+        {
+          "find": "old laboratory glassware photograph",
+          "alt": "laboratory glassware",
+          "for": "teach:2"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "hands-down",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Pupil's draft report",
+        "Conclusion frame: summary, why it matters, reflection, final thought",
+        "Exercise book or typed draft"
+      ],
+      "starter": [
+        {
+          "q": "Name a feature of a high-impact conclusion",
+          "a": "For example: links back to the opening",
+          "mins": 1
+        },
+        {
+          "q": "Should a conclusion add new facts?",
+          "a": "No",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Plan the conclusion",
+          "note": "Four parts.",
+          "cycle": [
+            "summary",
+            "why it matters",
+            "reflection",
+            "final thought linking to the hook"
+          ]
+        },
+        {
+          "heading": "Model: building the final sentence",
+          "note": "Think aloud.",
+          "model": {
+            "problem": "Final sentence linked to the hook \"rocks glitter with secrets\"",
+            "steps": [
+              "Recall the hook image: glittering rocks, secrets",
+              "Twist it: the real secret is knowledge",
+              "Keep it short",
+              "The island's greatest secret was never gold: it was knowledge."
+            ],
+            "answer": "A memorable, circular final sentence."
+          }
+        },
+        {
+          "heading": "Hinge: best final sentence",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Best final sentence?",
+            "options": [
+              "Bye!",
+              "The island's greatest secret was never gold: it was knowledge.",
+              "Metals are things."
+            ],
+            "answer": 1,
+            "why": "B links back to the hook and leaves a memorable thought."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write your summary sentence",
+          "a": "For example: Each material on Alchemy Island has properties that suit a particular job.",
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: For example: Each material on Alchemy Island has properties that suit a particular job."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: write your conclusion with summary and reflection (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Conclusion paragraph",
+          "mins": 14,
+          "model": "Labelled model to go through first (Final sentence linked to the hook \"rocks glitter with secrets\"): Recall the hook image: glittering rocks, secrets | Twist it: the real secret is knowledge | Keep it short | The island's greatest secret was never gold: it was knowledge. | Result: A memorable, circular final sentence."
+        },
+        {
+          "q": "Extend: add a final sentence that links back to your introduction",
+          "a": "Circular ending",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: read the whole report through and add one cohesive link where needed",
+          "a": "Improved cohesion",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Type your final sentence",
+          "a": "Answers vary",
+          "mins": 1
+        }
+      ],
+      "homework": "Read your introduction and conclusion together to an adult. Do they fit like bookends? Read for 20 minutes a day.",
+      "send": "SEND: conclusion frame with starters. EAL: phrase bank (Overall, In conclusion, Ultimately). Stretch: use a rhetorical question before the final thought."
+    },
+    {
+      "unit": "Spring 1: Alchemy Island",
+      "n": 31,
+      "title": "Grammar and punctuation: proofreading commas, parenthesis and apostrophes",
+      "duration": 45,
+      "bigQuestion": "Which small marks make the biggest difference to clarity?",
+      "objectives": [
+        "To proofread for commas, parenthesis and apostrophes in formal writing"
+      ],
+      "successCriteria": [
+        "All: correct missing commas after fronted adverbials and in lists",
+        "Most: correct parenthesis and apostrophes for possession",
+        "Some: explain how a punctuation error changes meaning"
+      ],
+      "crossCurricular": "Science: properties and changes of materials",
+      "smsc": "Moral: care and precision (itqan, إِتْقَان) in our work",
+      "keywords": [
+        {
+          "term": "proofread",
+          "def": "check writing carefully for errors"
+        },
+        {
+          "term": "apostrophe for possession",
+          "def": "shows something belongs, like the island's caves"
+        },
+        {
+          "term": "fronted adverbial",
+          "def": "an opener followed by a comma"
+        },
+        {
+          "term": "parenthesis",
+          "def": "extra information in brackets, dashes or commas"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "\"The alchemists gold\" or \"The alchemist's gold\" or \"The alchemists' gold\"? What is the difference?",
+        "a": "One alchemist owns it (alchemist's); several own it (alchemists'). Without an apostrophe it is wrong."
+      },
+      "pictures": [
+        {
+          "find": "apostrophe punctuation mark diagram",
+          "alt": "an apostrophe",
+          "for": "keywords"
+        },
+        {
+          "find": "alchemist laboratory tools museum photograph",
+          "alt": "old laboratory tools",
+          "for": "hook"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Punctuation Intervention Booklet (Lesson 2B: Apostrophes for possession; Lesson 6: Brackets, dashes, hyphens and ellipses) for pupils who need extra support",
+        "Proofreading checklist",
+        "Mini-whiteboard and pen",
+        "Pupil's report"
+      ],
+      "starter": [
+        {
+          "q": "Add a comma: After heating the metal glowed.",
+          "a": "After heating, the metal glowed.",
+          "mins": 1
+        },
+        {
+          "q": "Plural possession: the books of the scholars",
+          "a": "the scholars' books",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Apostrophes for possession",
+          "note": "Rules.",
+          "table": {
+            "head": [
+              "Owner",
+              "Rule",
+              "Example"
+            ],
+            "rows": [
+              [
+                "one owner",
+                "add 's",
+                "the island's caves"
+              ],
+              [
+                "plural ending in s",
+                "add '",
+                "the alchemists' tools"
+              ],
+              [
+                "plural not ending in s",
+                "add 's",
+                "the children's reports"
+              ],
+              [
+                "its (belonging)",
+                "no apostrophe",
+                "Iron loses its shine."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Its or it's?",
+          "note": "A frequent error in reports.",
+          "misconception": {
+            "wrong": "Gold keeps it's shine.",
+            "right": "Gold keeps its shine. (it's = it is)"
+          }
+        },
+        {
+          "heading": "Model: proofread a paragraph",
+          "note": "Think aloud.",
+          "model": {
+            "problem": "In the caves the alchemists tools lay rusting (most were iron and the islands gold glittered.",
+            "steps": [
+              "Fronted adverbial: In the caves,",
+              "Possession, plural: alchemists'",
+              "Close the bracket: (most were iron)",
+              "Possession, singular: island's"
+            ],
+            "answer": "In the caves, the alchemists' tools lay rusting (most were iron), and the island's gold glittered."
+          }
+        },
+        {
+          "heading": "Hinge: correct?",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Which is correct?",
+            "options": [
+              "The metals properties vary.",
+              "The metal's properties vary.",
+              "The metals' property's vary."
+            ],
+            "answer": 1,
+            "why": "One metal owns the properties: metal's. properties is a plural, not possessive."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Correct: The copper wires its glowing.",
+          "a": "The copper wire's glowing. / The copper wire is glowing.",
+          "mins": 1,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: The copper wire's glowing. / The copper wire is glowing."
+        },
+        {
+          "q": "Correct: the scientists notes (several scientists)",
+          "a": "the scientists' notes",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: proofread a paragraph with ten errors (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "All ten errors corrected",
+          "mins": 9,
+          "model": "Labelled model to go through first (In the caves the alchemists tools lay rusting (most were iron and the islands gold glittered.): Fronted adverbial: In the caves, | Possession, plural: alchemists' | Close the bracket: (most were iron) | Possession, singular: island's | Result: In the caves, the alchemists' tools lay rusting (most were iron), and the island's gold glittered."
+        },
+        {
+          "q": "Extend: proofread your own report for commas, parenthesis and apostrophes",
+          "a": "Corrections in coloured pen",
+          "mins": 7
+        },
+        {
+          "q": "Stretch: write two sentences where the apostrophe changes the meaning",
+          "a": "For example: the alchemist's gold / the alchemists' gold",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Correct: Iron loses it's strength when it rusts.",
+          "a": "Iron loses its strength when it rusts.",
+          "mins": 1
+        }
+      ],
+      "homework": "Proofread one page of your writing from this week for apostrophes. Read for 20 minutes a day.",
+      "send": "SEND: checklist with three items; five errors. EAL: apostrophe card. Stretch: proofread for hyphens (well-known, gold-coloured)."
+    },
+    {
+      "unit": "Spring 1: Alchemy Island",
+      "n": 32,
+      "title": "Editing and proofreading the whole report (assessment write)",
+      "duration": 45,
+      "bigQuestion": "Is my report ready for a real reader?",
+      "objectives": [
+        "To edit and proofread a complete report to meet the Year 5 writing criteria"
+      ],
+      "successCriteria": [
+        "All: correct spelling and punctuation errors using the checklist",
+        "Most: improve vocabulary and cohesion in three places",
+        "Some: check the report against every Year 5 criterion and fix gaps"
+      ],
+      "crossCurricular": "Science: properties and changes of materials",
+      "smsc": "Moral: taking pride in careful, honest work",
+      "keywords": [
+        {
+          "term": "edit",
+          "def": "improve the content and style"
+        },
+        {
+          "term": "proofread",
+          "def": "correct errors"
+        },
+        {
+          "term": "criteria",
+          "def": "the standards the writing is judged against"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If a real explorer used your report to choose metals for a shelter, which part would help them most? Which part might let them down?",
+        "a": "Answers vary; target the weak part today."
+      },
+      "pictures": [
+        {
+          "find": "red pen proofreading marks photograph",
+          "alt": "proofreading marks",
+          "for": "teach:1"
+        },
+        {
+          "find": "aluminium aircraft fuselage photograph",
+          "alt": "an aluminium aircraft",
+          "for": "teach:2"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "hands-down",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Pupil's complete draft report",
+        "Year 5 writing assessment criteria (school assessment system)",
+        "Proofreading checklist",
+        "Dictionary and thesaurus"
+      ],
+      "starter": [
+        {
+          "q": "Correct: the islands caves",
+          "a": "the island's caves",
+          "mins": 1
+        },
+        {
+          "q": "Spell: reliable",
+          "a": "reliable",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Edit, then proofread",
+          "note": "Two passes.",
+          "compare": {
+            "left": {
+              "title": "Edit (content)",
+              "points": [
+                "precise vocabulary",
+                "cohesion",
+                "relative clauses",
+                "formal tone"
+              ]
+            },
+            "right": {
+              "title": "Proofread (accuracy)",
+              "points": [
+                "spelling",
+                "commas",
+                "apostrophes",
+                "paragraph layout"
+              ]
+            },
+            "label": "then"
+          }
+        },
+        {
+          "heading": "Model: one edited sentence",
+          "note": "Think aloud.",
+          "model": {
+            "problem": "Aluminium is good because it is light.",
+            "steps": [
+              "Precise vocabulary: ideal instead of good",
+              "Relative clause: which does not rust",
+              "Specific use: for aircraft and cans",
+              "Result: Aluminium, which does not rust, is ideal for aircraft because it is so light."
+            ],
+            "answer": "An edited, precise sentence."
+          }
+        },
+        {
+          "heading": "Hinge: edit or proofread?",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Adding a relative clause to give more information is...",
+            "options": [
+              "proofreading",
+              "editing",
+              "publishing"
+            ],
+            "answer": 1,
+            "why": "It improves content and style, so it is editing."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Edit: Gold is nice and shiny.",
+          "a": "For example: Gold, which never tarnishes, is lustrous and highly valued.",
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: For example: Gold, which never tarnishes, is lustrous and highly valued."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: edit and proofread your whole report using the checklist (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Edited report",
+          "mins": 18,
+          "model": "Labelled model to go through first (Aluminium is good because it is light.): Precise vocabulary: ideal instead of good | Relative clause: which does not rust | Specific use: for aircraft and cans | Result: Aluminium, which does not rust, is ideal for aircraft because it is so light. | Result: An edited, precise sentence."
+        },
+        {
+          "q": "Extend: improve three sentences for vocabulary or cohesion",
+          "a": "Three improvements",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: check against every Year 5 criterion and fix one gap",
+          "a": "Criteria checked",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Type one improvement you are proud of",
+          "a": "Answers vary",
+          "mins": 1
+        }
+      ],
+      "homework": "Read your report aloud one final time and fix anything that sounds wrong. Read for 20 minutes a day.",
+      "send": "SEND: shorter checklist; adult reader. EAL: spelling list of technical words. Stretch: add a glossary with precise definitions."
+    },
+    {
+      "unit": "Spring 1: Alchemy Island",
+      "n": 33,
+      "title": "Publishing and presenting the report; reading journal reflection",
+      "duration": 45,
+      "bigQuestion": "How do I present my report so others learn from it?",
+      "objectives": [
+        "To publish and present a report clearly to an audience"
+      ],
+      "successCriteria": [
+        "All: publish a neat final copy",
+        "Most: present one section aloud with clear voice and pace",
+        "Some: answer a classmate's question using facts from the report"
+      ],
+      "crossCurricular": "Science: properties and changes of materials",
+      "smsc": "Social: sharing knowledge to benefit others",
+      "keywords": [
+        {
+          "term": "publish",
+          "def": "produce a final copy for readers"
+        },
+        {
+          "term": "present",
+          "def": "share your work aloud with an audience"
+        },
+        {
+          "term": "audience",
+          "def": "the people listening or reading"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You have two minutes to teach the class the most useful fact from your report. Which fact will you choose?",
+        "a": "Answers vary."
+      },
+      "pictures": [
+        {
+          "find": "printed report with headings photograph",
+          "alt": "a published report",
+          "for": "teach:1"
+        },
+        {
+          "find": "microphone headset photograph",
+          "alt": "a headset for presenting",
+          "for": "teach:2"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "think-pair-share",
+        "exit": "hands-down",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Pupil's edited report",
+        "A4 paper or typed template for the published copy",
+        "Reading journal (school template: Summarise, Zoom in, Explain, Respond)",
+        "Teams breakout rooms"
+      ],
+      "starter": [
+        {
+          "q": "Name a property of iron",
+          "a": "For example: magnetic",
+          "mins": 1
+        },
+        {
+          "q": "What does publish mean?",
+          "a": "Produce a final copy for readers",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Publishing checklist",
+          "bullets": [
+            "Title and headings clear",
+            "Neat, legible handwriting or typed",
+            "Diagram labelled (objects only)",
+            "Glossary in alphabetical order"
+          ],
+          "note": "Pupils finish their final copy."
+        },
+        {
+          "heading": "Presenting well",
+          "note": "Model a short presentation of one section.",
+          "model": {
+            "problem": "Presenting the Copper section",
+            "steps": [
+              "Read the heading clearly",
+              "Pause after each key fact",
+              "Look at the camera",
+              "End with: Any questions?"
+            ],
+            "answer": "A clear two-minute presentation."
+          }
+        },
+        {
+          "heading": "Reading journal reflection",
+          "bullets": [
+            "Summarise: what I learned",
+            "Zoom in: one fact",
+            "Explain: why it matters",
+            "Respond: a question I still have"
+          ],
+          "note": "Use the school reading journal steps to reflect on the reading done this half term."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Rehearse your two-minute presentation in a breakout pair",
+          "a": "Rehearsed presentation",
+          "mins": 4,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: Rehearsed presentation"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: finish the published copy (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Published report",
+          "mins": 12,
+          "model": "Teacher does the first part aloud before pupils start, showing each step: Published report"
+        },
+        {
+          "q": "Extend: present one section to the class",
+          "a": "Presentation",
+          "mins": 6
+        },
+        {
+          "q": "Stretch: reading journal reflection on this half term's reading",
+          "a": "Four-step journal entry",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Type one thing you learned from someone else's presentation",
+          "a": "Answers vary",
+          "mins": 1
+        }
+      ],
+      "homework": "Share your published report with your family. Then read for 20 minutes.",
+      "send": "SEND: present with a partner; read from the page. EAL: rehearse key words first. Stretch: answer two questions from the class."
     }
   ]
 }
