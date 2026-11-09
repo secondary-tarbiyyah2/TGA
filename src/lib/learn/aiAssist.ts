@@ -48,6 +48,11 @@ export function aiAssist(task: "report_comment" | "tarbiyah_note" | "triage_mess
   return callEdgeFunction("ai-assist", { task, ...body });
 }
 
+/** Headteacher/Admin: one tiny call to check the key, credit and model. */
+export function aiCheck(): Promise<EdgeResult> {
+  return callEdgeFunction("ai-assist", { task: "check" });
+}
+
 const MESSAGES: Record<string, string> = {
   ai_not_configured: "AI is not set up yet.",
   ai_daily_limit: "The school's AI limit for today has been reached. It resets at midnight.",
@@ -57,8 +62,12 @@ const MESSAGES: Record<string, string> = {
   network_error: "Couldn't reach the server. Check your connection and try again.",
 };
 
+// Codes whose server `detail` is already a plain-English sentence written for
+// staff (ai-assist uses claudeErrorMessage for ai_failed / ai_not_configured).
+const SERVER_WORDED = new Set(["invalid_input", "input_too_long", "ai_failed", "ai_not_configured", "ai_daily_limit"]);
+
 export function aiErrorMessage(r: EdgeResult): string {
-  return (r.error === "invalid_input" || r.error === "input_too_long" ? r.detail : undefined) || (r.error && MESSAGES[r.error]) || r.detail || "Something went wrong. Try again.";
+  return (r.error && SERVER_WORDED.has(r.error) ? r.detail : undefined) || (r.error && MESSAGES[r.error]) || r.detail || "Something went wrong. Try again.";
 }
 
 export const TRIAGE_CATEGORY_LABEL: Record<string, string> = {
