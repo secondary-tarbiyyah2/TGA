@@ -730,19 +730,40 @@ function buildDeck(file, lesson, nextLesson, nav = null, opts = {}) {
   // Georgia under LibreOffice, which makes the PDF copies wrong; DejaVu Sans anchors them
   // correctly (verified by rendering). Any text run containing one is switched to DejaVu Sans.
   const COMB = /[\u0300-\u036f\u20d0-\u20dc]/;
+  // Arrows (→ ⇌ ← in word and chemical equations) come out as a short dash in Cambria under
+  // LibreOffice, so the PDF copies were wrong (verified by rendering). Each arrow becomes its own run
+  // in DejaVu Sans; the rest of the text keeps its font (runs inherit the box's size and colour).
+  const ARROW = /([\u2190-\u21ff\u27f0-\u27ff\u2900-\u297f])/;
+  const splitRun = (text, options) => {
+    const bits = String(text).split(ARROW).filter((b) => b !== "");
+    return bits.map((b, i) => {
+      const o = { ...(options || {}) };
+      if (o.breakLine && i < bits.length - 1) delete o.breakLine; // a line break goes after the last piece only
+      if (ARROW.test(b)) o.fontFace = "DejaVu Sans";
+      return { text: b, options: o };
+    });
+  };
+  const withArrows = (txt) => {
+    if (typeof txt === "string") return ARROW.test(txt) ? splitRun(txt, {}) : txt;
+    if (!Array.isArray(txt)) return txt;
+    if (!txt.some((r) => r && typeof r === "object" && typeof r.text === "string" && ARROW.test(r.text))) return txt;
+    return txt.flatMap((r) => (r && typeof r === "object" && typeof r.text === "string" && ARROW.test(r.text) ? splitRun(r.text, r.options) : [r]));
+  };
   pptx.addSlide = (o) => {
     slideCount++;
     const s = addSlide(o);
     const at = s.addText.bind(s);
     s.addText = (txt, opts = {}) => {
       if (typeof txt === "string" && COMB.test(txt)) return at(txt, { ...opts, fontFace: "DejaVu Sans" });
-      if (Array.isArray(txt)) return at(txt.map((r) => (r && typeof r === "object" && typeof r.text === "string" && COMB.test(r.text) ? { ...r, options: { ...(r.options || {}), fontFace: "DejaVu Sans" } } : r)), opts);
-      return at(txt, opts);
+      if (Array.isArray(txt)) txt = txt.map((r) => (r && typeof r === "object" && typeof r.text === "string" && COMB.test(r.text) ? { ...r, options: { ...(r.options || {}), fontFace: "DejaVu Sans" } } : r));
+      return at(withArrows(txt), opts);
     };
     const atb = s.addTable.bind(s);
     const fixCell = (c) => {
       if (typeof c === "string" && COMB.test(c)) return { text: c, options: { fontFace: "DejaVu Sans" } };
+      if (typeof c === "string" && ARROW.test(c)) return { text: splitRun(c, {}), options: {} };
       if (c && typeof c === "object" && typeof c.text === "string" && COMB.test(c.text)) return { ...c, options: { ...(c.options || {}), fontFace: "DejaVu Sans" } };
+      if (c && typeof c === "object" && typeof c.text === "string" && ARROW.test(c.text)) return { ...c, text: splitRun(c.text, {}) };
       return c;
     };
     s.addTable = (rows, opts) => atb(Array.isArray(rows) ? rows.map((r) => (Array.isArray(r) ? r.map(fixCell) : r)) : rows, opts);
