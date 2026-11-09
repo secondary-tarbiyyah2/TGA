@@ -17,8 +17,31 @@
 //   code          a program listing in a terminal
 //   misconception "not this / but this"
 //   cycle         a repeating process drawn as a loop
+//   chart         a native PowerPoint bar, line or pie chart
+//   numberline    a number line with ticks and labelled marks
+//   fraction      one to four fraction bars, parts shaded
+//   diagram       a labelled spider diagram / concept map
+//   sort          a card-sort activity: cards to sort into 2-4 columns
+// Block shapes and limits: src/lib/learn/lessonSchema.mjs (shared with the validator and portal).
+import { BLOCKS, ROUTINES } from "../../src/lib/learn/lessonSchema.mjs";
 
-export const BLOCK_KINDS = ["model", "check", "quote", "compare", "timeline", "table", "code", "misconception", "cycle"];
+export const BLOCK_KINDS = BLOCKS;
+
+/** What pupils do on a hinge question, by routine. */
+const HINGE_HOW = {
+  "show-me": "Think in silence · write your letter · show me on 3",
+  "teams-poll": "Think in silence · answer the Teams poll · we look at the results together",
+  "chat-waterfall": "Think in silence · type your letter · press enter together on 'go'",
+  "cold-call": "Think in silence · be ready to explain your letter · no hands up",
+  "think-pair-share": "Think alone · agree a letter with your partner · share and explain",
+  "hands-down": "Think in silence · hands down · be ready to explain your letter",
+};
+
+/** "Column: A (card), C (card); Column: …" for a card sort with an answer. */
+export function sortAnswer(v) {
+  const t = (x) => String(x ?? "").replace(/\s+/g, " ").trim();
+  return (v.columns || []).map((c, ci) => `${t(c)}: ${(v.cards || []).map((x, i) => (v.answer[i] === ci ? `${"ABCDEFGHIJKL"[i]} (${t(x)})` : null)).filter(Boolean).join(", ") || "none"}`).join("; ");
+}
 
 // ── Themes ─────────────────────────────────────────────────────────────────
 // accent: the subject colour; dark: title/panel background; soft: tint
@@ -46,6 +69,7 @@ export const themeFor = (slug) => THEMES[slug] || T("1F6F6B", "0F3D3A", "E3F2F0"
 
 export function makeParts(h) {
   const { fitSize, clean, FONT, INK, MUTED, GOLD, GOLD_DARK, GOLD_SOFT, CREAM, LINE } = h;
+  void GOLD_DARK;
   const t = (s) => clean(s);
 
   // ── Motifs ───────────────────────────────────────────────────────────────
@@ -241,6 +265,14 @@ export function makeParts(h) {
     s.addText([{ text: `${title}  `, options: { bold: true, color: ctx.theme.accent } }, { text, options: { color: INK } }], { x: 1.0, y, w: 11.4, h: hh, fontFace: FONT, fontSize: fitSize(`${title} ${text}`, 11.4, hh, 18, 11), valign: "middle" });
   }
 
+  /** A straight line between two points (PowerPoint lines need a box plus a flip). */
+  const seg = (s, x1, y1, x2, y2, ln) => s.addShape("line", { x: Math.min(x1, x2), y: Math.min(y1, y2), w: Math.abs(x2 - x1) || 0.001, h: Math.abs(y2 - y1) || 0.001, flipV: (y2 < y1) !== (x2 < x1), line: ln });
+  /** 2.5 -> "2.5", -3 -> "−3" (a real minus sign), without float noise. */
+  const fmtNum = (v) => {
+    const r = Math.round(v * 1e6) / 1e6;
+    return `${r < 0 ? "−" : ""}${Math.abs(r)}`;
+  };
+
   const blocks = {
     // I do: problem, worked steps, answer; key points beside.
     model(s, ctx, m, bullets, area) {
@@ -293,7 +325,7 @@ export function makeParts(h) {
         s.addText("ABCD"[i], { x: x + 0.2, y: y + oh / 2 - 0.35, w: 0.7, h: 0.7, fontFace: FONT, fontSize: 24, bold: true, color: "FFFFFF", align: "center", valign: "middle" });
         s.addText(t(o), { x: x + 1.1, y, w: ow - 1.25, h: oh, fontFace: ctx.mathy ? "Cambria" : FONT, fontSize: size, color: INK, valign: "middle" });
       });
-      s.addText([{ text: "HINGE QUESTION  ", options: { bold: true, color: th.accent, charSpacing: 2 } }, { text: "Think in silence · write your letter · show me on 3", options: { color: MUTED } }], { x: area.x, y: area.y + area.h - 0.45, w: area.w, h: 0.45, fontFace: FONT, fontSize: 15, valign: "middle" });
+      s.addText([{ text: "HINGE QUESTION  ", options: { bold: true, color: th.accent, charSpacing: 2 } }, { text: HINGE_HOW[ctx.slideRoutine] || HINGE_HOW["show-me"], options: { color: MUTED } }], { x: area.x, y: area.y + area.h - 0.45, w: area.w, h: 0.45, fontFace: FONT, fontSize: 15, valign: "middle" });
       void bullets;
     },
 
@@ -434,6 +466,189 @@ export function makeParts(h) {
       });
       if (bullets.length) sideBullets(s, ctx, bullets, area.x + boxW + 0.3, area.y, area.w - boxW - 0.3, area.h, "Explain");
     },
+    // A native PowerPoint chart (stays editable in PowerPoint), key points beside it.
+    chart(s, ctx, c, bullets, area) {
+      const th = ctx.theme;
+      const early = ctx.band === "early";
+      const leftW = bullets.length ? 8.05 : area.w;
+      panel(s, area.x, area.y, leftW, area.h, "FFFFFF", LINE, 1);
+      const kind = c.kind;
+      const labels = (c.labels || []).map(t);
+      const values = (c.values || []).map(Number);
+      const lab = early ? 20 : 16;
+      const pal = [th.accent, GOLD, th.dark, "5BB36A", "EE7A5B", "9B7BD0", "4FA3D9", "B4538F"];
+      const o = {
+        x: area.x + 0.15, y: area.y + 0.1, w: leftW - 0.3, h: area.h - 0.2, fontFace: FONT,
+        showTitle: !!c.title, title: c.title ? t(c.title) : undefined, titleFontSize: early ? 24 : 20, titleColor: INK, titleFontFace: FONT,
+        showLegend: kind === "pie", legendPos: "r", legendFontSize: lab, legendColor: INK, legendFontFace: FONT,
+        dataLabelFontSize: lab, dataLabelColor: kind === "pie" ? "FFFFFF" : INK, dataLabelFontBold: true,
+        catAxisLabelFontSize: lab, catAxisLabelColor: INK, catAxisLabelFontFace: FONT, valAxisLabelFontSize: lab - 2, valAxisLabelColor: MUTED, valAxisLabelFontFace: FONT,
+        valGridLine: { color: "E6E2D8", size: 0.75 }, catGridLine: { style: "none" },
+      };
+      if (c.unit && kind !== "pie") Object.assign(o, { showValAxisTitle: true, valAxisTitle: t(c.unit), valAxisTitleFontSize: lab - 2, valAxisTitleColor: MUTED, valAxisTitleFontFace: FONT });
+      if (kind === "bar") Object.assign(o, { barDir: "col", chartColors: [th.accent], barGapWidthPct: 55, showValue: true, dataLabelPosition: "outEnd", valAxisMinVal: Math.min(0, ...values) });
+      else if (kind === "line") Object.assign(o, { chartColors: [th.accent], lineSize: 3, lineDataSymbol: "circle", lineDataSymbolSize: 11, showValue: true, dataLabelPosition: "t" });
+      else Object.assign(o, { chartColors: pal.slice(0, labels.length), showPercent: !c.unit, showValue: !!c.unit, dataLabelPosition: "ctr", dataBorder: { pt: 1.5, color: "FFFFFF" } });
+      s.addChart(kind, [{ name: c.unit ? t(c.unit) : c.title ? t(c.title) : "Value", labels, values }], o);
+      if (bullets.length) sideBullets(s, ctx, bullets, area.x + leftW + 0.3, area.y, area.w - leftW - 0.3, area.h, "Read it");
+    },
+
+    // A number line: ticks every `step`, labelled marks above the line.
+    numberline(s, ctx, v, bullets, area) {
+      const th = ctx.theme;
+      const early = ctx.band === "early";
+      const stripH = bullets.length ? 0.85 : 0;
+      const hh = area.h - (stripH ? stripH + 0.2 : 0);
+      panel(s, area.x, area.y, area.w, hh, th.soft);
+      const n = Math.round((v.max - v.min) / v.step);
+      const x0 = area.x + 0.8;
+      const span = area.w - 1.6;
+      const dx = span / n;
+      const ly = area.y + hh * 0.6;
+      s.addShape("line", { x: x0 - 0.5, y: ly, w: span + 1.0, h: 0, line: { color: INK, width: 3, beginArrowType: "triangle", endArrowType: "triangle" } });
+      const labels = Array.from({ length: n + 1 }, (_, i) => fmtNum(v.min + i * v.step));
+      const longest = labels.reduce((a, b) => (b.length > a.length ? b : a), "");
+      const size = Math.max(11, Math.min(early ? 32 : 26, Math.floor(((dx - 0.04) * 72) / (Math.max(2, longest.length) * 0.56))));
+      labels.forEach((lb, i) => {
+        const x = x0 + i * dx;
+        s.addShape("line", { x, y: ly - 0.2, w: 0, h: 0.4, line: { color: INK, width: 2.5 } });
+        s.addText(lb, { x: x - dx / 2, y: ly + 0.28, w: dx, h: 0.6, fontFace: ctx.mathy ? "Cambria" : FONT, fontSize: size, bold: true, color: INK, align: "center", valign: "top", margin: 0 });
+      });
+      const marks = [...(v.marks || [])].sort((a, b) => a.at - b.at);
+      let lastX = -99;
+      let level = 0;
+      marks.forEach((m) => {
+        const x = x0 + ((m.at - v.min) / v.step) * dx;
+        s.addShape("ellipse", { x: x - 0.17, y: ly - 0.17, w: 0.34, h: 0.34, fill: { color: th.accent }, line: { color: "FFFFFF", width: 2 } });
+        const text = m.label ? t(m.label) : "";
+        if (!text) return;
+        const lsize = early ? 24 : 18;
+        const w = Math.min(3.2, Math.max(0.9, (text.length * lsize * 0.52) / 72 + 0.4));
+        level = x - lastX < w + 0.1 ? 1 - level : 0;
+        lastX = x;
+        const py = ly - 1.15 - level * 0.85;
+        s.addShape("line", { x, y: py + 0.62, w: 0, h: ly - 0.17 - (py + 0.62), line: { color: th.accent, width: 1.5, dashType: "dash" } });
+        const px = Math.min(Math.max(x - w / 2, area.x + 0.1), area.x + area.w - w - 0.1);
+        s.addShape("roundRect", { x: px, y: py, w, h: 0.62, rectRadius: 0.12, fill: { color: GOLD_SOFT }, line: { color: GOLD, width: 1.5 } });
+        s.addText(text, { x: px, y: py, w, h: 0.62, fontFace: FONT, fontSize: fitSize(text, w - 0.1, 0.6, lsize, 11), bold: true, color: INK, align: "center", valign: "middle", margin: 0 });
+      });
+      if (stripH) strip(s, ctx, bullets, area.y + area.h - stripH, stripH, "So:");
+    },
+
+    // Fraction bars: each bar split into equal parts, some shaded, with its fraction beside it.
+    fraction(s, ctx, v, bullets, area) {
+      const th = ctx.theme;
+      const list = Array.isArray(v) ? v : [v];
+      const leftW = bullets.length ? 8.05 : area.w;
+      const labW = 1.9;
+      const barW = leftW - labW - 0.3;
+      const gap = 0.35;
+      const barH = Math.min(list.length === 1 ? 1.6 : 1.2, (area.h - gap * (list.length - 1)) / list.length);
+      const total = list.length * barH + gap * (list.length - 1);
+      const y0 = area.y + (area.h - total) / 2;
+      list.forEach((f, i) => {
+        const y = y0 + i * (barH + gap);
+        const pw = barW / f.parts;
+        const fill = i % 2 ? th.dark : th.accent;
+        for (let k = 0; k < f.parts; k++) {
+          const on = k < f.shaded;
+          s.addShape("rect", { x: area.x + k * pw, y, w: pw, h: barH, fill: { color: on ? fill : "FFFFFF" }, line: { color: INK, width: 1.75 } });
+          if (f.parts <= 10 && pw >= 0.6) s.addText(`1/${f.parts}`, { x: area.x + k * pw, y, w: pw, h: barH, fontFace: "Cambria", fontSize: Math.min(20, Math.floor(pw * 26)), color: on ? "FFFFFF" : MUTED, align: "center", valign: "middle", margin: 0 });
+        }
+        const text = f.label ? t(f.label) : `${f.shaded}/${f.parts}`;
+        s.addText(text, { x: area.x + barW + 0.3, y, w: labW, h: barH, fontFace: "Cambria", fontSize: fitSize(text, labW, barH, 40, 14), bold: true, color: fill, valign: "middle" });
+      });
+      if (bullets.length) sideBullets(s, ctx, bullets, area.x + leftW + 0.3, area.y, area.w - leftW - 0.3, area.h, "Notice");
+    },
+
+    // Spider diagram: the big idea in the middle, linked ideas around it.
+    diagram(s, ctx, d, bullets, area) {
+      const th = ctx.theme;
+      const early = ctx.band === "early";
+      const items = (d.items || []).slice(0, 8).map(t);
+      const side = bullets.length > 0 && items.length <= 5;
+      const stripH = bullets.length && !side ? 0.85 : 0;
+      const regionW = side ? 8.05 : area.w;
+      const hh = area.h - (stripH ? stripH + 0.2 : 0);
+      const n = items.length;
+      const nodeW = Math.min(side ? 2.6 : 3.1, regionW / 3.2);
+      const nodeH = early ? 1.15 : 0.95;
+      const cx = area.x + regionW / 2;
+      const cy = area.y + hh / 2;
+      const rx = regionW / 2 - nodeW / 2 - 0.05;
+      const ry = hh / 2 - nodeH / 2 - 0.05;
+      const pts = items.map((_, i) => {
+        const a = -Math.PI / 2 + (i * 2 * Math.PI) / n;
+        return [cx + rx * Math.cos(a), cy + ry * Math.sin(a)];
+      });
+      pts.forEach(([px, py]) => seg(s, cx, cy, px, py, { color: th.accent, width: 2.5, transparency: 25 }));
+      const cw = Math.min(3.2, regionW * 0.3);
+      const ch = early ? 1.5 : 1.3;
+      s.addShape("ellipse", { x: cx - cw / 2, y: cy - ch / 2, w: cw, h: ch, fill: { color: th.dark }, line: { color: GOLD, width: 2.5 } });
+      s.addText(t(d.centre), { x: cx - cw / 2 + 0.2, y: cy - ch / 2, w: cw - 0.4, h: ch, fontFace: FONT, fontSize: fitSize(d.centre, cw - 0.5, ch - 0.2, early ? 30 : 24, 12), bold: true, color: "FFFFFF", align: "center", valign: "middle" });
+      const size = Math.min(...items.map((x) => fitSize(x, nodeW - 0.3, nodeH - 0.1, early ? 26 : 20, early ? 16 : 11)));
+      pts.forEach(([px, py], i) => {
+        panel(s, px - nodeW / 2, py - nodeH / 2, nodeW, nodeH, i % 2 ? "FFFFFF" : CREAM, th.accent, 2);
+        s.addText(items[i], { x: px - nodeW / 2 + 0.12, y: py - nodeH / 2, w: nodeW - 0.24, h: nodeH, fontFace: FONT, fontSize: size, color: INK, align: "center", valign: "middle" });
+      });
+      if (side) sideBullets(s, ctx, bullets, area.x + regionW + 0.3, area.y, area.w - regionW - 0.3, area.h, "Explain");
+      else if (stripH) strip(s, ctx, bullets, area.y + area.h - stripH, stripH, "Links:");
+    },
+
+    // Card sort: lettered cards to sort into numbered columns (on whiteboards, or by typing "A1").
+    sort(s, ctx, v, bullets, area) {
+      const th = ctx.theme;
+      const early = ctx.band === "early";
+      const cards = (v.cards || []).slice(0, 12).map(t);
+      const cols = (v.columns || []).slice(0, 4).map(t);
+      const stripH = bullets.length ? 0.75 : 0;
+      const hh = area.h - (stripH ? stripH + 0.15 : 0);
+      // Lay the cards out in rows, shrinking the type until they fit in about half the space.
+      let size = early ? 24 : 20;
+      let rows;
+      let chipH;
+      const gap = 0.15;
+      for (;;) {
+        chipH = (size * 1.25 + 14) / 72;
+        rows = [[]];
+        let lineW = 0;
+        cards.forEach((c, i) => {
+          const w = Math.min(area.w, (c.length * size * 0.5) / 72 + 0.75);
+          if (lineW + w > area.w && rows[rows.length - 1].length) {
+            rows.push([]);
+            lineW = 0;
+          }
+          rows[rows.length - 1].push({ c, i, w });
+          lineW += w + gap;
+        });
+        const poolH = 0.4 + rows.length * (chipH + gap);
+        if (poolH <= hh * 0.5 || size <= 13) break;
+        size -= 1;
+      }
+      label(s, early ? "Cards to sort" : "Cards to sort · say or type the letter and the column", area.x, area.y, area.w, th.accent);
+      rows.forEach((row, r) => {
+        const used = row.reduce((a, b) => a + b.w, 0) + gap * (row.length - 1);
+        let x = area.x + (area.w - used) / 2;
+        const y = area.y + 0.4 + r * (chipH + gap);
+        row.forEach(({ c, i, w }) => {
+          s.addShape("roundRect", { x, y, w, h: chipH, rectRadius: 0.1, fill: { color: "FFFFFF" }, line: { color: GOLD, width: 1.5 } });
+          s.addText([{ text: `${"ABCDEFGHIJKL"[i]}  `, options: { bold: true, color: th.accent } }, { text: c, options: { color: INK } }], { x: x + 0.12, y, w: w - 0.17, h: chipH, fontFace: FONT, fontSize: size, valign: "middle", margin: 0 });
+          x += w + gap;
+        });
+      });
+      const top = area.y + 0.4 + rows.length * (chipH + gap) + 0.15;
+      const colH = area.y + hh - top;
+      const cgap = 0.25;
+      const cw = (area.w - cgap * (cols.length - 1)) / cols.length;
+      cols.forEach((c, i) => {
+        const x = area.x + i * (cw + cgap);
+        const col = i % 2 ? th.dark : th.accent;
+        s.addShape("roundRect", { x, y: top, w: cw, h: colH, rectRadius: 0.12, fill: { color: i % 2 ? "FFFFFF" : th.soft }, line: { color: col, width: 1.75, dashType: "dash" } });
+        s.addShape("roundRect", { x, y: top, w: cw, h: 0.62, rectRadius: 0.12, fill: { color: col }, line: { color: col, width: 0 } });
+        s.addText([{ text: `${i + 1}  `, options: { color: "E3C98F" } }, { text: c, options: { color: "FFFFFF" } }], { x: x + 0.15, y: top, w: cw - 0.3, h: 0.62, fontFace: FONT, fontSize: fitSize(`${i + 1} ${c}`, cw - 0.3, 0.6, early ? 24 : 20, 11), bold: true, align: "center", valign: "middle" });
+      });
+      if (stripH) strip(s, ctx, bullets, area.y + area.h - stripH, stripH, "How:");
+    },
   };
 
   /** Draw the slide's block if it has one. Returns the block kind or null. */
@@ -454,8 +669,66 @@ export function makeParts(h) {
       return `\n\nHINGE ANSWER: ${"ABCD"[i] || "?"}${c.options && c.options[i] ? ` (${t(c.options[i])})` : ""}. ${c.why ? t(c.why) : ""} Everyone shows their letter on 3. If fewer than about 80% are right, reteach before moving on.`;
     }
     if (tch.model) return "\n\nI do: narrate every step aloud as you write it. Then cover the steps and ask pupils to tell you each one back.";
+    if (tch.sort) {
+      const v = tch.sort;
+      const how = "\n\nCARD SORT: pupils write the column headings on their whiteboard and sort the letters under them (or type, e.g. A1 B2, in the chat and send together).";
+      if (!Array.isArray(v.answer)) return how;
+      return `${how} ANSWER: ${sortAnswer(v)}.`;
+    }
+    if (tch.chart) return "\n\nREAD THE CHART: ask what the axes show first, then the biggest and smallest values, then what the chart tells us. It is a real PowerPoint chart: right-click it and choose Edit Data to change it.";
+    if (tch.numberline) return "\n\nNUMBER LINE: count the steps aloud together before pointing to the marks. Ask pupils to show the value of a point on their whiteboards.";
+    if (tch.fraction) return "\n\nFRACTIONS: ask how many equal parts, how many are shaded, and so what fraction is shaded. Check the parts are equal before naming the fraction.";
+    if (tch.diagram) return "\n\nCONCEPT MAP: reveal the centre first and ask for links before talking through each idea. Pupils add one more link of their own.";
     return "";
   }
 
-  return { motif, renderBlock, blockNotes };
+  // ── Routine badges ───────────────────────────────────────────────────────
+  // A small drawn icon for each live-lesson routine (shapes only, no pictures of people).
+  function routineIcon(s, id, x, y, d, color) {
+    const f = { color };
+    const ln = { color, width: 0 };
+    switch (id) {
+      case "show-me":
+        s.addShape("roundRect", { x, y: y + d * 0.12, w: d, h: d * 0.76, rectRadius: 0.06, fill: { color: "FFFFFF" }, line: { color, width: 1.75 } });
+        s.addText("A", { x, y: y + d * 0.12, w: d, h: d * 0.76, fontFace: FONT, fontSize: Math.max(8, Math.round(d * 30)), bold: true, color, align: "center", valign: "middle", margin: 0 });
+        break;
+      case "chat-waterfall":
+        s.addShape("wedgeRoundRectCallout", { x, y: y + d * 0.05, w: d, h: d * 0.7, rectRadius: 0.08, fill: f, line: ln });
+        [0.25, 0.5, 0.75].forEach((fx) => s.addShape("ellipse", { x: x + d * fx - d * 0.065, y: y + d * 0.33, w: d * 0.13, h: d * 0.13, fill: { color: "FFFFFF" }, line: { color: "FFFFFF", width: 0 } }));
+        break;
+      case "teams-poll":
+        [0.45, 0.9, 0.65].forEach((fh, i) => s.addShape("rect", { x: x + i * d * 0.37, y: y + d * (1 - fh), w: d * 0.27, h: d * fh, fill: f, line: ln }));
+        break;
+      case "cold-call":
+        s.addShape("ellipse", { x, y, w: d, h: d, fill: { color: "FFFFFF" }, line: { color, width: 2 } });
+        s.addShape("ellipse", { x: x + d * 0.3, y: y + d * 0.3, w: d * 0.4, h: d * 0.4, fill: f, line: ln });
+        break;
+      case "think-pair-share":
+        s.addShape("ellipse", { x: x - d * 0.05, y: y + d * 0.15, w: d * 0.68, h: d * 0.68, fill: { color, transparency: 45 }, line: { color, width: 1.5 } });
+        s.addShape("ellipse", { x: x + d * 0.37, y: y + d * 0.15, w: d * 0.68, h: d * 0.68, fill: { color, transparency: 45 }, line: { color, width: 1.5 } });
+        break;
+      case "hands-down":
+        s.addShape("noSmoking", { x, y, w: d, h: d, fill: f, line: ln });
+        break;
+    }
+  }
+
+  const BADGE_PT = (h) => (h >= 0.66 ? 15 : 13);
+  /** Width of a routine pill (so a slide can leave room for it). */
+  const routineWidth = (id, h = 0.66) => (ROUTINES[id] ? 0.6 + h * 0.66 + (ROUTINES[id].label.length * BADGE_PT(h) * 0.52) / 72 : 0);
+
+  /** Pill with a routine's icon and name. Returns its width. `dark`: for dark slides. */
+  function routineBadge(s, ctx, id, x, y, h = 0.66, dark = false) {
+    const r = ROUTINES[id];
+    if (!r) return 0;
+    const w = routineWidth(id, h);
+    const fg = dark ? "E3C98F" : ctx.theme.accent;
+    s.addShape("roundRect", { x, y, w, h, rectRadius: h / 2, fill: { color: dark ? "FFFFFF" : ctx.theme.soft, transparency: dark ? 88 : 0 }, line: { color: fg, width: 1.5 } });
+    routineIcon(s, id, x + 0.2, y + h * 0.2, h * 0.6, fg);
+    s.addText(r.label, { x: x + 0.32 + h * 0.6, y, w: w - 0.4 - h * 0.6, h, fontFace: FONT, fontSize: BADGE_PT(h), bold: true, color: dark ? "FFFFFF" : fg, valign: "middle", margin: 0 });
+    return w;
+  }
+
+  return { motif, renderBlock, blockNotes, routineIcon, routineBadge, routineWidth, panel, seg };
+
 }
