@@ -819,109 +819,130 @@
     ],
     "y8": [
       {
-        "unit": "Unit 1: My Digital World",
+        "unit": "Autumn 1: My digital world",
         "focus": [
-          "Combining several applications in one project",
-          "Designing for an audience",
-          "Trust, design and usability",
-          "Reusing and revising digital work"
+          "Searching smartly",
+          "Copyright",
+          "Staying safe online; cyber abuse and keeping evidence"
         ],
         "skills": [
-          "Creating",
-          "Evaluating for an audience"
+          "Search smartly",
+          "Keep evidence"
         ],
         "keyTerms": [
-          "audience",
-          "usability",
-          "template",
-          "revise"
+          "copyright",
+          "evidence",
+          "report",
+          "privacy"
         ],
-        "assess": "Project.",
-        "prereq": "Year 7: using technology safely; Year 6: collecting and presenting data.",
-        "leadsTo": "Year 9: data projects."
+        "assess": "Unit quiz",
+        "prereq": "Year 7 Autumn 2: using technology safely",
+        "leadsTo": "Autumn 2"
       },
       {
-        "unit": "Binary and data representation",
+        "unit": "Autumn 2: Binary and data representation",
         "focus": [
-          "Binary and denary conversion",
-          "Adding binary numbers",
-          "How text, sound and images are stored as bits",
-          "File sizes"
+          "Binary numbers and converting to and from denary",
+          "Text and images as data"
         ],
         "skills": [
-          "Converting",
-          "Calculating"
+          "Convert binary"
         ],
         "keyTerms": [
           "binary",
+          "denary",
           "bit",
-          "byte",
-          "pixel",
-          "ASCII"
+          "byte"
         ],
-        "assess": "End-of-unit test.",
-        "prereq": "Year 7: how computers work.",
-        "leadsTo": "GCSE 2.1 to 2.3."
+        "assess": "Unit quiz",
+        "prereq": "Autumn 1",
+        "leadsTo": "Spring 1"
       },
       {
-        "unit": "Boolean logic and logic gates",
+        "unit": "Spring 1: Binary recap, safety and Boolean logic",
         "focus": [
-          "AND, OR and NOT",
-          "Truth tables",
-          "Using Boolean conditions in programs"
+          "Staying safe online; keeping evidence",
+          "Binary recap",
+          "Boolean logic: AND, OR and NOT",
+          "Logic gates and truth tables"
         ],
         "skills": [
-          "Logical reasoning"
+          "Build truth tables"
         ],
         "keyTerms": [
           "Boolean",
-          "truth table",
-          "logic gate"
+          "AND",
+          "OR",
+          "NOT",
+          "truth table"
         ],
-        "assess": "End-of-unit test.",
-        "prereq": "Year 7: algorithms; Year 4: selection.",
-        "leadsTo": "GCSE 1.3."
+        "assess": "Logic quiz",
+        "prereq": "Autumn 2",
+        "leadsTo": "Spring 2"
       },
       {
-        "unit": "Networks and the web",
+        "unit": "Spring 2: Networks and the web",
         "focus": [
-          "LANs, WANs and the internet",
-          "How web pages are delivered",
-          "IP addresses and protocols (introduction)",
-          "Cybersecurity basics"
+          "LAN and WAN; how the internet works",
+          "The web: browsers and servers",
+          "Network security: passwords and threats",
+          "Design a home network on paper"
         ],
         "skills": [
-          "Explaining systems"
+          "Design a network"
         ],
         "keyTerms": [
-          "router",
+          "network",
+          "packet",
           "IP address",
-          "protocol",
-          "malware"
+          "malware",
+          "phishing"
         ],
-        "assess": "End-of-unit test.",
-        "prereq": "Year 4: networks.",
-        "leadsTo": "GCSE 4.1 and 5.3."
+        "assess": "Quiz; project mark for the network design",
+        "prereq": "Spring 1",
+        "leadsTo": "Summer 1"
       },
       {
-        "unit": "Text-based programming: first steps",
+        "unit": "Summer 1: Python, first steps",
         "focus": [
-          "Writing simple programs in a text language",
-          "Variables, selection and iteration in text",
-          "Reading error messages"
+          "From Scratch to text: print, input and variables",
+          "Data types and calculations",
+          "Selection: if, elif and else",
+          "Loops: for and while; a guessing game"
         ],
         "skills": [
-          "Programming",
-          "Debugging"
+          "Write and debug Python"
         ],
         "keyTerms": [
-          "syntax",
           "variable",
-          "error message"
+          "string",
+          "selection",
+          "loop",
+          "debug"
         ],
-        "assess": "Practical task.",
-        "prereq": "Year 7: Scratch.",
-        "leadsTo": "Year 9: Python programming revisited."
+        "assess": "Short programming task (week 5)",
+        "prereq": "Year 7 Summer 1: Scratch",
+        "leadsTo": "Summer 2"
+      },
+      {
+        "unit": "Summer 2: Python project and review",
+        "focus": [
+          "Design a quiz program",
+          "Debugging, testing and presenting",
+          "Year review; functions"
+        ],
+        "skills": [
+          "Test and present a program"
+        ],
+        "keyTerms": [
+          "design",
+          "test",
+          "bug",
+          "function"
+        ],
+        "assess": "End-of-year test and project mark",
+        "prereq": "Summer 1",
+        "leadsTo": "Year 9: Computing"
       }
     ],
     "y9": [
