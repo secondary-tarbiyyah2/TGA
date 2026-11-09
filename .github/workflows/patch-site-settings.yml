@@ -16,6 +16,10 @@ concurrency:
   group: patch-site-settings
   cancel-in-progress: false
 
+# Least privilege (security audit T20): this workflow only reads the repo.
+permissions:
+  contents: read
+
 jobs:
   patch:
     runs-on: ubuntu-latest

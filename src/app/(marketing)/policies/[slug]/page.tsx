@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { marked } from "marked";
+import { renderSafeMarkdown } from "@/lib/safeMarkdown";
 import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
@@ -53,7 +53,7 @@ export default async function PolicyPage({ params }: { params: Promise<{ slug: s
   // On phones each table row becomes a stacked card, with the column heading
   // shown before each cell (data-label, see .policy-body td::before), so no
   // table needs sideways scrolling; wider screens keep the normal grid.
-  const html = labelTableCells(await marked.parse(policy.body, { gfm: true }));
+  const html = labelTableCells(renderSafeMarkdown(policy.body));
   const metaRows = POLICY_META_FIELDS.filter((f) => policy.meta[f.key]);
 
   return (
