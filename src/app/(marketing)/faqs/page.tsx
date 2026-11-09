@@ -34,9 +34,10 @@ export default async function FaqsPage() {
           <Kicker>FAQs</Kicker>
           <h1 className="text-h1 font-serif font-semibold text-ink">Frequently asked questions.</h1>
           <p className="mt-5 text-lg text-ink/75">Short answers, with links to the full detail. Search, or pick a topic.</p>
-          <div className="mt-8">
-            <LiveFaq initialEntries={faqs} />
-          </div>
+        </div>
+        {/* Full width: a sticky search-and-topics sidebar beside the answers on wide screens. */}
+        <div className="mt-8">
+          <LiveFaq initialEntries={faqs} />
         </div>
       </Container>
     </section>
