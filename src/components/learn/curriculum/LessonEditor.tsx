@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { ui } from "@/components/learn/ui";
 import { LinesField, Modal, TextField } from "@/components/learn/curriculum/Modal";
-import { problemsFor, syncNotes, triggerCurriculumSync, when, type SyncNote } from "@/lib/learn/curriculumUnits";
+import { problemsFor, realEditAt, syncNotes, triggerCurriculumSync, when, type SyncNote } from "@/lib/learn/curriculumUnits";
 import type { CurriculumLesson } from "@/lib/learn/curriculum";
 
 // The lesson as stored in curriculum_lessons.content: the lesson object from
@@ -141,7 +141,8 @@ export function LessonEditor({ lesson, canEdit, onClose, onSaved }: { lesson: Cu
   }, [supabase, lesson.id]);
 
   // A clash noted before the lesson was last saved has been dealt with.
-  const notesHere = problemsFor(allNotes, [`lesson:${lesson.subject_slug}/${lesson.year}/${lesson.lesson_no}`], loaded?.content_updated_at);
+  const lessonEditedAt = realEditAt(loaded?.content_updated_by_name, loaded?.content_updated_at);
+  const notesHere = problemsFor(allNotes, [`lesson:${lesson.subject_slug}/${lesson.year}/${lesson.lesson_no}`], () => lessonEditedAt);
   const dirty = !!(c && loaded?.content && JSON.stringify(tidy(c)) !== JSON.stringify(tidy(normalise(loaded.content))));
   const set = <K extends keyof LessonContent>(k: K, v: LessonContent[K]) => setC((x) => (x ? { ...x, [k]: v } : x));
   const setSlide = (i: number, s: Partial<Slide>) => setC((x) => (x ? { ...x, teach: x.teach.map((t, k) => (k === i ? { ...t, ...s } : t)) } : x));

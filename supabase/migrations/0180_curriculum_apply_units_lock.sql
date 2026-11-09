@@ -4,7 +4,40 @@
 --     same part at once.
 --   * Only units the sync read (the ids in p_expected) are ever removed. A unit added after the
 --     sync read the part is left alone; the next sync sees it and sends it to the repo.
+--   * Moving a unit up or down (a change to position only, by a teacher or by the sync) no
+--     longer counts as an edit: updated_at and "last changed by" stay as they were. So the
+--     planner's "last changed" line and its clash notes reflect real edits only, and the sync
+--     putting units in order does not look like someone editing them.
 -- Same signature and grants as 0179. Idempotent.
+
+create or replace function public.curriculum_units_stamp()
+returns trigger
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  who text;
+begin
+  if tg_op = 'UPDATE'
+     and (to_jsonb(new) - array['position', 'updated_at', 'updated_by', 'updated_by_name']) = (to_jsonb(old) - array['position', 'updated_at', 'updated_by', 'updated_by_name']) then
+    new.updated_at := old.updated_at;
+    new.updated_by := old.updated_by;
+    new.updated_by_name := old.updated_by_name;
+    return new;
+  end if;
+  if auth.uid() is not null then
+    select full_name into who from public.profiles where id = auth.uid();
+    new.updated_by := auth.uid();
+    new.updated_by_name := coalesce(who, 'A member of staff');
+  end if;
+  new.updated_at := now();
+  if tg_op = 'INSERT' then
+    new.created_at := coalesce(new.created_at, now());
+  end if;
+  return new;
+end;
+$$;
 
 create or replace function public.curriculum_apply_units(p_kind text, p_slug text, p_year text, p_expected jsonb, p_rows jsonb, p_editor text)
 returns jsonb

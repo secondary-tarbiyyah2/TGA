@@ -147,7 +147,8 @@ function fixtureStore(file) {
       const ids = rows.map((r, i) => {
         const at = r.id ? db.units.findIndex((u) => u.id === r.id) : -1;
         if (r.keep) {
-          if (db.units[at].position !== i) Object.assign(db.units[at], { position: i, updated_at: now() });
+          // A move only: not an edit, so updated_at stays (curriculum_units_stamp, 0180).
+          if (db.units[at].position !== i) db.units[at].position = i;
           return r.id;
         }
         const row = { ...r, subject_slug: part.slug, kind: part.kind, year: r.year || part.year, position: i, id: r.id || id(), updated_at: now(), updated_by_name: REPO_NAME };
