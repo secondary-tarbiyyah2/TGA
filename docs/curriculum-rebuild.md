@@ -102,6 +102,12 @@ routines, visuals) checked against house rules; (3) write the missing founding-y
 order, year by year, from docs/curriculum-packs; (4) syllabus pages/pack upgrade. Owner sees before/after slides
 before any whole-school rebuild.
 
+- 9 Nov 2026, Lessons: Mathematics Years 1-6, Spring 1 founding year (11 Jan to 8 Feb 2027, bridge weeks included), branch
+  `lessons-maths-ks12-s1`: 140 lessons (upgraded / new: Y1 8/12, Y2 8/12, Y3 10/15, Y4 10/15, Y5 6/19, Y6 8/17), White Rose
+  block order (titles only), written to the lessons v3 rules (one objective, ponder hook, pictures, islamicLink, polls,
+  worked models on guided and independent item 1, realistic timing). Needs builder v3 merged before validation passes
+  (hook type "ponder" and item "model").
+
 Stage 4 built on branch `syllabus-v2` (PR open, not merged): the pack is now one curriculum document per subject,
 Years 1 to 11 (`01_Subjects/<slug>/`, PDF via Chromium plus Word), and a whole-school overview (`00_Start_Here/`),
 from one model (`scripts/syllabus/model.mjs`, `render-html.mjs`, `render-pdf.mjs`, `render-docx.mjs`). The old
