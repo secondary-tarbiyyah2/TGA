@@ -1,10 +1,11 @@
 name: Build syllabus pack
 
-# Turns content/syllabus/**.json (official specification and National Curriculum
-# content, one file per subject) into branded PowerPoint decks plus PDF copies,
-# organised by level and subject, and uploads them to the portal's storage
-# bucket lesson-decks under syllabus-pack/ (staff-only, same RLS as the lesson
-# library). The same pack is attached to the run as a downloadable artifact.
+# Turns content/syllabus/**.json (kept in step with the portal's Curriculum planner)
+# into the syllabus pack: a whole-school curriculum overview and one curriculum
+# document per subject (PDF via Chromium, plus an editable Word copy), and the
+# cross-curricular matrix deck. Uploads it to the portal's storage bucket
+# lesson-decks under syllabus-pack/ (staff-only, same RLS as the lesson library).
+# The same pack is attached to the run as a downloadable artifact.
 
 on:
   push:
@@ -35,19 +36,23 @@ jobs:
       - name: Validate syllabus data
         run: node scripts/syllabus/validate.mjs
 
+      # The pack's own tools are not site dependencies, so they are installed here (in ONE
+      # command: a second `npm install --no-save` would remove the first one's packages).
       - name: Install dependencies
         run: |
           npm ci
-          npm install --no-save pptxgenjs@4.0.1
+          npm install --no-save --no-audit --no-fund pptxgenjs@4.0.1 docx@9.5.1 pdf-lib@1.17.1 playwright@1.63.0 @fontsource-variable/inter@5.3.0 @fontsource-variable/source-serif-4@5.3.1 @fontsource/amiri@5.3.0
+          npx playwright install --with-deps chromium
 
-      - name: Install LibreOffice (for PDF copies)
+      - name: Install LibreOffice (matrix deck PDF) and pdftotext (contents page numbers)
         run: |
+          sudo apt-get update -y
+          sudo apt-get install -y --no-install-recommends poppler-utils
           if ! command -v soffice >/dev/null; then
-            sudo apt-get update -y
             sudo apt-get install -y --no-install-recommends libreoffice-impress fonts-liberation fonts-crosextra-carlito fonts-noto-core fonts-noto-naskh-arabic || sudo apt-get install -y libreoffice
           fi
 
-      - name: Build the pack (PPTX and PDF)
+      - name: Build the pack (PDF, Word and the matrix deck)
         run: node scripts/syllabus/build.mjs --out dist/syllabus-pack --pdf
 
       - uses: actions/upload-artifact@v4

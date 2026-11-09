@@ -1,161 +1,106 @@
-// Builds the Syllabus & Specification pack into an organised folder.
-//   node scripts/syllabus/build.mjs --out <dir> [--pdf]
+// Builds the Syllabus pack into an organised folder:
+//   00_Start_Here/                 the whole-school curriculum overview (PDF and Word)
+//   01_Subjects/<slug>/            one curriculum document per subject, Years 1 to 11 (PDF and Word)
+//   02_Cross_Curricular_Matrices/  link heatmaps, teaching hubs, year maps (PowerPoint and PDF)
+//   03_Sources_and_Verification/   sources opened, verification register
+//
+//   node scripts/syllabus/build.mjs --out <dir> [--pdf] [--only english,overview]
+// --pdf also makes the PDFs (needs playwright + Chromium, pdf-lib, pdftotext, and LibreOffice for
+// the matrix deck). The portal links to 01_Subjects/<slug>/ and 00_Start_Here/ by these names.
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
-import { ROOT, W, MX, INK, MUTED, GOLD, GOLD_SOFT, LINE, WHITE, FONT, H, LOGO_WHITE, LOGO_RATIO, clean, slugify, ensureDir, makeTheme, tint, newDeck, contentSlide, chip, card, gridBoxes, STATUS, fitSize } from "./lib.mjs";
-import { buildSpecDeck, buildSyllabusDeck } from "./decks.mjs";
-import { loadPack, buildMatrixDeck, groupOf } from "./matrix.mjs";
-import { buildUnitDeck } from "./unit-decks.mjs";
-import { specDocument, syllabusDocument, writeDoc } from "./specdoc.mjs";
+import { ROOT, clean, ensureDir } from "./lib.mjs";
+import { loadPack, buildMatrixDeck } from "./matrix.mjs";
 import { buildCoverage } from "./coverage.mjs";
-const coverage = buildCoverage();
 import { loadChapters, videoMapFor } from "./video-links.mjs";
+import { subjectsFrom, subjectDocument, overviewDocument } from "./model.mjs";
+import { writeDocx } from "./render-docx.mjs";
 
 const args = process.argv.slice(2);
-const arg = (k, d) => { const i = args.indexOf(k); return i >= 0 ? args[i + 1] : d; };
+const arg = (k, d) => {
+  const i = args.indexOf(k);
+  return i >= 0 ? args[i + 1] : d;
+};
 const OUT = path.resolve(arg("--out", path.join(ROOT, "dist/syllabus-pack")));
 const PDF = args.includes("--pdf");
+const ONLY = arg("--only", "") ? new Set(arg("--only", "").split(",")) : null;
+const want = (slug) => !ONLY || ONLY.has(slug);
 
-const F = { start: "00_Start_Here", mx: "01_Cross_Curricular_Matrices", ks4: "02_KS4_Specifications_Y10-Y11", ks13: "03_KS1-KS3_Syllabus_Reception-Y9", src: "04_Sources_and_Verification" };
-for (const f of Object.values(F)) ensureDir(path.join(OUT, f));
+export const FOLDERS = { start: "00_Start_Here", subjects: "01_Subjects", mx: "02_Cross_Curricular_Matrices", src: "03_Sources_and_Verification" };
+fs.rmSync(OUT, { recursive: true, force: true });
+for (const f of Object.values(FOLDERS)) ensureDir(path.join(OUT, f));
 
+const generated = new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "Europe/London" });
 const pack = loadPack();
+const coverage = buildCoverage();
 const manifest = [];
-const chapters = loadChapters();
-const videoLinks = [];
-const short = (s) => clean(s).replace(/[^A-Za-z0-9 ]+/g, "").replace(/\s+/g, "_");
-const add = (m) => manifest.push(m);
+const fileBase = (name) => clean(name).replace(/'/g, "").replace(/[^A-Za-z0-9]+/g, "_").replace(/^_|_$/g, "");
 
-async function save(pres, rel, meta) {
-  const p = path.join(OUT, rel);
-  ensureDir(path.dirname(p));
-  await pres.writeFile({ fileName: p });
-  add({ ...meta, file: rel, pptx: rel, pdf: PDF ? rel.replace(/\.pptx$/, ".pdf") : null });
+const pdf = PDF ? await import("./render-pdf.mjs") : null;
+async function emit(doc, dir, base, meta) {
+  const rel = `${dir}/${base}`;
+  await writeDocx(doc, path.join(OUT, `${rel}.docx`), { generated });
+  let pages = null;
+  if (pdf) pages = await pdf.writePdf(doc, path.join(OUT, `${rel}.pdf`), { generated });
+  manifest.push({ ...meta, docx: `${rel}.docx`, pdf: pdf ? `${rel}.pdf` : null, pages });
+  console.log(`  ${rel}${pages ? ` (${pages} pages)` : ""}`);
 }
 
-async function saveDoc(doc, rel, meta) {
-  await writeDoc(doc, path.join(OUT, rel));
-  add({ ...meta, file: rel, pptx: null, docx: rel, pdf: PDF ? rel.replace(/\.docx$/, ".pdf") : null });
-}
-for (const d of pack.ks4) {
-  const code = (clean(d.code).match(/\b\d[A-Z]{2}\d{1,2}\b|\b[A-Z]{2,3}\d\b|\b\d{4}\b/g) || []).filter((v, i, a) => a.indexOf(v) === i).slice(0, 4).join("-") || "spec";
-  const sub = short(d.subject);
-  const bd = /AQA/i.test(d.board) ? "AQA" : /edexcel|pearson/i.test(d.board) ? "Edexcel" : short(d.board).slice(0, 12);
-  const vm = videoMapFor(d, chapters);
-  vm.forEach((list, ref) => list.forEach((v) => videoLinks.push({ subject: d.subject, unitRef: ref, ...v })));
-  await saveDoc(specDocument(d, { internationalNote: d.internationalNote, coverage: coverage[d.slug] }), `${F.ks4}/${sub}/KS4_${sub}_${bd}-${code}_Specification.docx`, { kind: "spec", level: "KS4 (Y10-Y11)", subject: d.subject, board: d.board, code: d.code, status: d.status, units: d.units.length });
-}
-for (const d of pack.ks13) {
-  const sub = short(d.subject);
-  const yrs = Object.keys(d.yearMap || {});
-  const first = yrs[0] === "reception" ? "Rec" : String(yrs[0]).toUpperCase();
-  const last = String(yrs[yrs.length - 1]).toUpperCase();
-  await saveDoc(syllabusDocument(d), `${F.ks13}/${sub}/KS1-3_${sub}_Syllabus_${first}-${last}.docx`, { kind: "syllabus", level: `${first} to ${last}`, subject: d.subject, board: d.framework, status: d.status, units: Object.values(d.yearMap).reduce((a, u) => a + u.length, 0) });
-}
-const mx = buildMatrixDeck(pack);
-await save(mx.pres, `${F.mx}/Cross_Curricular_Matrix_Pack.pptx`, { kind: "matrix", level: "All years", subject: "All subjects", board: "Cross-curricular", status: "Provisional" });
+// Whole-school overview
+if (want("overview")) await emit(overviewDocument(pack, coverage), FOLDERS.start, "TGA_Curriculum_Overview", { kind: "overview", slug: "overview", subject: "Whole school" });
 
-// Start Here deck
-{
-  const theme = makeTheme("islamic-studies");
-  theme.accent = "7D6428";
-  const ctx = { theme, status: "Provisional", page: 1, footerLeft: "Syllabus & Specification Pack · Start Here" };
-  const pres = newDeck("Syllabus and specification pack: start here", "Index");
-  const t = pres.addSlide();
-  t.background = { color: "1B1E21" };
-  t.addShape("rect", { x: 0, y: 0, w: 0.16, h: H, fill: { color: GOLD }, line: { color: GOLD, width: 0 } });
-  chip(t, "Start here", MX + 0.2, 0.75, 1.8, "1B1E21", "E3C98F", 11, 0.36);
-  t.addText("Syllabus and Specification Pack", { x: MX + 0.2, y: 1.5, w: 9, h: 1.8, fontFace: "Georgia", fontSize: 46, bold: true, color: WHITE, margin: 0, valign: "top" });
-  t.addText("Every subject, Reception to Year 11, as official specification content: what is taught, in what order, and how it is examined.", { x: MX + 0.2, y: 3.5, w: 8, h: 1.2, fontFace: FONT, fontSize: 19, color: "E3C98F", margin: 0, valign: "top" });
-  t.addImage({ path: LOGO_WHITE, x: MX + 0.2, y: 6.75, w: 1.9, h: 1.9 / LOGO_RATIO });
-
-  const s1 = contentSlide(pres, ctx, "What is what", "How this folder is organised");
-  const rows = [
-    [F.start, "This guide and the file register."],
-    [F.mx, "Link heatmaps, 12 teaching hubs, year-by-year maps, spiral threads."],
-    [F.ks4, "One specification document per examined subject (Word and PDF): how it is examined and what each unit requires."],
-    [F.ks13, "One syllabus document per subject, Reception to Year 9 (Word and PDF): framework content, year-by-year units, progression."],
-    [F.src, "Sources opened and open items for every subject."],
-  ];
-  rows.forEach(([a, b], i) => {
-    const y = 1.8 + i * 1.0;
-    card(s1, MX, y, W - 2 * MX, 0.88, WHITE, LINE, theme.accent);
-    s1.addText(a, { x: MX + 0.3, y, w: 5.2, h: 0.88, fontFace: "Consolas", fontSize: 14, bold: true, color: theme.accent, valign: "middle", margin: 0 });
-    s1.addText(b, { x: MX + 5.7, y, w: W - 2 * MX - 5.9, h: 0.88, fontFace: FONT, fontSize: fitSize(b, W - 2 * MX - 5.9, 0.8, 15, 10, 0), color: INK, valign: "middle", margin: 0 });
-  });
-
-
-  // register
-  const mk = (txt, o = {}) => ({ text: clean(txt), options: { fontFace: FONT, fontSize: 10, color: INK, valign: "middle", ...o } });
-  const reg = manifest.filter((m) => m.kind === "spec" || m.kind === "syllabus");
-  for (let p = 0; p * 11 < reg.length; p++) {
-    const s = contentSlide(pres, ctx, "File register", `All documents in the pack (${p + 1} of ${Math.ceil(reg.length / 11)})`);
-    const data = [["Level", "Subject", "Board or framework", "Units"].map((h) => mk(h, { bold: true, color: WHITE, fill: { color: theme.accent } }))];
-    reg.slice(p * 11, p * 11 + 11).forEach((m, i) => data.push([m.level, m.subject, m.kind === "spec" ? `${m.board} ${m.code}` : m.board.slice(0, 80), String(m.units)].map((x, j) => mk(x, { fill: { color: i % 2 ? WHITE : tint(theme.accent, 0.92) }, bold: j === 3, color: j === 3 ? (m.status === "Verified" ? "1E5B36" : "7A4B00") : INK }))));
-    s.addTable(data, { x: MX, y: 1.8, w: W - 2 * MX, colW: [1.9, 2.6, 5.6, W - 2 * MX - 10.1], border: { type: "solid", color: LINE, pt: 0.75 }, margin: [0.06, 0.08, 0.06, 0.08] });
-  }
-
-  const s4 = contentSlide(pres, ctx, "Exam entry and open questions", "What pupils sit, and what the school must still confirm");
-  const items = [
-    ["Exam entry", "Every pupil sits Pearson Edexcel International GCSEs. Mathematics, Computer Science, English Language, Geography and Arabic are taught from the UK GCSE spec; pupils are entered for 4MA1, 4CP0, 4EB1, 4GE1 and 4AA1 (see each spec's examEntry)."],
-    ["Arabic", "The International GCSE is Arabic (First Language) 4AA1: reading, summary, grammar and writing, no listening or speaking. Confirm each pupil's entry by the end of Year 10."],
-    ["Computer Science", "4CP0 Paper 2 is a 3-hour practical on a computer, June only. Confirm the exam centre can run it before entering a private candidate."],
-    ["Science", "Edexcel International GCSE Biology 4BI1, Chemistry 4CH1, Physics 4PH1 and Double Award 4SD0. Confirm separate or double award for each pupil."],
-    ["Business", "Edexcel International GCSE 4BS1, last assessed November 2028. The UK GCSE 1BS0 lessons were re-mapped or retired."],
-    ["English Literature", "Edexcel International GCSE 4ET1. Macbeth is a Pearson set text; the AQA 8702 lessons (A Christmas Carol and the AQA Macbeth format) were retired."],
-  ];
-
-  const bx = gridBoxes(6, { x: MX, y: 1.8, w: W - 2 * MX, h: 5.05 }, 2, 0.2);
-  items.forEach(([k, v], i) => {
-    const b = bx[i];
-    card(s4, b.x, b.y, b.w, b.h, WHITE, LINE, "B08E45");
-    s4.addText(k, { x: b.x + 0.3, y: b.y + 0.1, w: b.w - 0.5, h: 0.4, fontFace: "Georgia", fontSize: 17, bold: true, color: theme.accent, margin: 0 });
-    s4.addText(v, { x: b.x + 0.3, y: b.y + 0.55, w: b.w - 0.5, h: b.h - 0.65, fontFace: FONT, fontSize: fitSize(v, b.w - 0.5, b.h - 0.65, 14, 9, 0), color: INK, valign: "top", margin: 0 });
-  });
-  await save(pres, `${F.start}/00_Start_Here.pptx`, { kind: "guide", level: "All years", subject: "Index", board: "", status: "Provisional" });
+// One document per subject
+for (const s of subjectsFrom(pack)) {
+  if (!want(s.slug)) continue;
+  const doc = subjectDocument(s, coverage);
+  await emit(doc, `${FOLDERS.subjects}/${s.slug}`, `TGA_${fileBase(s.name)}_Curriculum`, { kind: "subject", slug: s.slug, subject: s.name, status: [s.syl, ...s.specs].filter(Boolean).every((d) => d.status === "Verified") ? "Verified" : "Provisional" });
 }
 
-// Verification register + README
+// Cross-curricular matrices (PowerPoint)
+if (!ONLY || ONLY.has("matrix")) {
+  const mx = buildMatrixDeck(pack);
+  const rel = `${FOLDERS.mx}/Cross_Curricular_Matrix_Pack.pptx`;
+  await mx.pres.writeFile({ fileName: path.join(OUT, rel) });
+  manifest.push({ kind: "matrix", slug: "matrix", subject: "All subjects", pptx: rel, pdf: PDF ? rel.replace(/\.pptx$/, ".pdf") : null });
+  fs.writeFileSync(path.join(OUT, FOLDERS.mx, "link_register.json"), JSON.stringify(mx.rows, null, 2));
+  const chapters = loadChapters();
+  const videoLinks = [];
+  for (const d of pack.ks4) videoMapFor(d, chapters).forEach((list, ref) => list.forEach((v) => videoLinks.push({ subject: d.subject, unitRef: ref, ...v })));
+  fs.writeFileSync(path.join(OUT, FOLDERS.mx, "video_chapter_links.json"), JSON.stringify(videoLinks, null, 2));
+  if (PDF) execFileSync("soffice", ["--headless", "--convert-to", "pdf", "--outdir", path.join(OUT, FOLDERS.mx), path.join(OUT, rel)], { stdio: "ignore" });
+}
+
+// Sources and verification
 {
   const lines = ["Level,Subject,Board or framework,Code,Status,Status note,Open items"];
   const q = (s) => `"${clean(s).replace(/"/g, '""')}"`;
-  for (const d of [...pack.ks4, ...pack.ks13]) lines.push([d.kind === "spec" ? "KS4" : "KS1-3", d.subject, d.kind === "spec" ? d.board : d.framework, d.code || "", d.status, d.statusNote, (d.gaps || []).join(" | ")].map(q).join(","));
-  fs.writeFileSync(path.join(OUT, F.src, "Verification_Register.csv"), lines.join("\n"));
+  for (const d of [...pack.ks4, ...pack.ks13]) lines.push([d.kind === "spec" ? "Years 10-11" : "Years 1-9", d.subject, d.kind === "spec" ? d.board : d.framework, d.code || "", d.status, d.statusNote, (d.gaps || []).join(" | ")].map(q).join(","));
+  fs.writeFileSync(path.join(OUT, FOLDERS.src, "Verification_Register.csv"), lines.join("\n"));
   const src = ["# Sources opened\n"];
   for (const d of [...pack.ks4, ...pack.ks13]) {
-    src.push(`## ${d.subject} (${d.kind === "spec" ? "KS4" : "KS1-3"}): ${d.status}\n`);
+    src.push(`## ${d.subject} (${d.kind === "spec" ? "Years 10-11" : "Years 1-9"}): ${d.status}\n`);
     (d.sources || []).forEach((s) => src.push(`- ${s.title}: ${s.url}`));
     src.push("");
   }
-  fs.writeFileSync(path.join(OUT, F.src, "Sources_Opened.md"), src.join("\n"));
-  const rd = `# Tarbiyyah Global Academy: Syllabus and Specification Pack
-
-Pure syllabus and specification content. Nothing here is about the school's own policies.
+  fs.writeFileSync(path.join(OUT, FOLDERS.src, "Sources_Opened.md"), src.join("\n"));
+  fs.writeFileSync(
+    path.join(OUT, "README.md"),
+    `# Tarbiyyah Global Academy: Syllabus pack
 
 | Folder | What it holds |
 |---|---|
-| ${F.start} | Start-here guide and file register |
-| ${F.mx} | Cross-curricular matrices: heatmaps, teaching hubs, year-by-year maps, spiral threads |
-| ${F.ks4} | One folder per subject: the specification deck (PPTX and PDF) for Years 10 to 11 |
-| ${F.ks13} | One folder per subject: the syllabus deck (PPTX and PDF) for Reception to Year 9 |
-| ${F.src} | Sources opened, verification register, open items |
+| ${FOLDERS.start} | The whole-school curriculum overview: every year group's long-term plan |
+| ${FOLDERS.subjects} | One curriculum document per subject, Year 1 to Year 11 (PDF and Word) |
+| ${FOLDERS.mx} | Cross-curricular matrices: heatmaps, teaching hubs, year-by-year maps |
+| ${FOLDERS.src} | Sources opened and the verification register |
 
-Each document ends with its sources and any open items.
+Built from the portal's Curriculum planner (via content/syllabus) on ${generated}.
 Specification wording is paraphrased. Teach from the awarding body's own document.
-`;
-  fs.writeFileSync(path.join(OUT, "README.md"), rd);
+`,
+  );
 }
 
-fs.writeFileSync(path.join(OUT, "manifest.json"), JSON.stringify({ generated: new Date().toISOString().slice(0, 10), files: manifest }, null, 2));
-fs.writeFileSync(path.join(OUT, F.mx, "video_chapter_links.json"), JSON.stringify(videoLinks, null, 2));
-fs.writeFileSync(path.join(OUT, F.mx, "link_register.json"), JSON.stringify(mx.rows, null, 2));
-
-if (PDF) {
-  const dirs = [...new Set(manifest.map((m) => path.dirname(path.join(OUT, m.file))))];
-  for (const d of dirs) {
-    const files = fs.readdirSync(d).filter((f) => f.endsWith(".pptx") || f.endsWith(".docx")).map((f) => path.join(d, f));
-    if (files.length) execFileSync("soffice", ["--headless", "--convert-to", "pdf", "--outdir", d, ...files], { stdio: "ignore" });
-  }
-}
-console.log(`Built ${manifest.length} files into ${OUT}`);
+fs.writeFileSync(path.join(OUT, "manifest.json"), JSON.stringify({ generated, files: manifest }, null, 2));
+if (pdf) await pdf.closeBrowser();
+console.log(`Built ${manifest.length} documents into ${OUT}`);

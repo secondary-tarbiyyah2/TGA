@@ -80,6 +80,15 @@ routines, visuals) checked against house rules; (3) write the missing founding-y
 order, year by year, from docs/curriculum-packs; (4) syllabus pages/pack upgrade. Owner sees before/after slides
 before any whole-school rebuild.
 
+Stage 4 built on branch `syllabus-v2` (PR open, not merged): the pack is now one curriculum document per subject,
+Years 1 to 11 (`01_Subjects/<slug>/`, PDF via Chromium plus Word), and a whole-school overview (`00_Start_Here/`),
+from one model (`scripts/syllabus/model.mjs`, `render-html.mjs`, `render-pdf.mjs`, `render-docx.mjs`). The old
+per-key-stage spec/syllabus documents and the Start Here deck are gone; the matrix deck stays. The portal Syllabus
+pages (`SyllabusBrowser.tsx`, `src/lib/learn/syllabusPlan.ts`) read `curriculum_units` live, falling back to
+`syllabusIndex.json`. The workflow now installs docx, playwright, pdf-lib and fonts (it was failing on a missing
+`docx`). Preview a change locally with `SYLLABUS_DIR=<copy of content/syllabus> node scripts/syllabus/build.mjs
+--out /tmp/pack --pdf --only english,overview`.
+
 ### Next
 0. Optional: add content/syllabus/ks1-3/design-technology.json (KS1-3 DT statements from gov.uk) so DT is its own
    subject in the portal; for now DT units sit inside art.json.
