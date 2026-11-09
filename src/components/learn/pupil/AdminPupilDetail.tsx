@@ -60,7 +60,7 @@ function PupilProfile({ id, onEdited }: { id: string; onEdited: () => void }) {
         supabase.from("children").select("id, name, dob, parent_user_id, year_groups(name)").eq("id", id).maybeSingle(),
         supabase.from("enrolments").select("classes(name)").eq("child_id", id),
         supabase.from("attendance_records").select("status, lesson_instances!inner(date)").eq("child_id", id).gte("lesson_instances.date", since).limit(1000),
-        // Separate, so the profile still loads before migration 0184 is applied.
+        // Separate, so the profile still loads before migration 0185 is applied.
         supabase.from("children").select("working_above_year_group").eq("id", id).maybeSingle(),
       ]);
       if (cancelled) return;

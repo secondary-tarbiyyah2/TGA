@@ -73,7 +73,7 @@ export function AddPersonModal({
   // student / child fields
   const [dob, setDob] = useState("");
   const [yearGroupId, setYearGroupId] = useState("");
-  // Placed in or working at a year above their age (T27); staff only (0184).
+  // Placed in or working at a year above their age (T27); staff only (0185).
   const [above, setAbove] = useState(false);
   const [classId, setClassId] = useState("");
   const [studentEmail, setStudentEmail] = useState("");

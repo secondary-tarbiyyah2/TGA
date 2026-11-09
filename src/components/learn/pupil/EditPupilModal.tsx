@@ -37,7 +37,7 @@ export function EditPupilModal({ childId, onClose, onSaved }: { childId: string;
     (async () => {
       const [c, flag, e, d, yg, cl] = await Promise.all([
         supabase.from("children").select("id, name, dob, year_group_id").eq("id", childId).maybeSingle(),
-        // Separate, so the form still opens if the 0184 column isn't there yet.
+        // Separate, so the form still opens if the 0185 column isn't there yet.
         supabase.from("children").select("working_above_year_group").eq("id", childId).maybeSingle(),
         supabase.from("enrolments").select("class_id").eq("child_id", childId),
         supabase.from("pupil_details").select("gender").eq("child_id", childId).maybeSingle(),

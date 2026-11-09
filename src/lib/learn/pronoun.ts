@@ -7,7 +7,7 @@ export type Pronoun = "he" | "she";
 
 /**
  * A pupil's pronoun from their record (the gender on pupil_details), via
- * public.pupil_pronoun() (0184): staff who may see the pupil get "he" or
+ * public.pupil_pronoun() (0185): staff who may see the pupil get "he" or
  * "she"; anyone else, or a record without gender, gets null. Forms use it as
  * the starting value and staff can still change it for that document.
  */

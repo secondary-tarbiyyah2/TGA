@@ -1,4 +1,4 @@
--- Run via `supabase test db`. Covers Tafweed T26, T27 and T31 (0184):
+-- Run via `supabase test db`. Covers Tafweed T26, T27 and T31 (0185):
 --  * only the Headteacher and Admin roles can add and edit pupils (children);
 --    a teacher can't, and a parent keeps editing only their own child;
 --  * "working above year group" can be set by Headteacher/Admin only;
