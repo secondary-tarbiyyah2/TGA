@@ -150,3 +150,13 @@ Also asked for (backlog): staff feedback on lessons with admin "make the change"
 directly in the portal with instant download (T-item), a per-term list of every worksheet and resource with all of them
 ready, and a device requirement (drawing tablet recommended; otherwise a printer) on the website and in the admissions
 information.
+
+### Work in flight (9 Nov 2026, 15:45), for whoever picks this up
+Branches pushed and unfinished (each is resumable; read its last commits):
+- `lesson-builder-v3`: slide builder v3 (owner feedback above). Not merged; needs owner sign-off of sample slides.
+- `lessons-maths-ks12-s1`, `lessons-english-ks12-s1`, `lessons-maths-ks34-s1`: Spring 1 founding-year lessons.
+- `claude/tafweed-T28-senco-cover` (T28 SENCO, T30 cover), `claude/tafweed-T21-policy-outline` (T21, T4, T5, T11),
+  `claude/tafweed-T20-security` (security audit), `claude/tafweed-lesson-feedback-editing` (lesson feedback, direct editing).
+Still to start: lessons for Science, humanities, Qur'an, Arabic, Islamic Studies, PSHE, Computing, Art, Business and English
+Years 7-11; term resource lists; consolidation register; T29 dropdowns and emojis; T19 portal polish; device requirement
+(drawing tablet recommended, otherwise a printer).
