@@ -41,7 +41,7 @@ export function SencoToggle({ userId, name, canSet }: { userId: string; name: st
         <span className="text-sm font-semibold text-ink">SENCo</span>
       </button>
       <p className="mt-2 text-xs text-ink/65">
-        A SENCo keeps the SEND register: writes and reviews support plans, sees every plan and the family&apos;s comments, and gets review reminders in the Action centre.
+        A SENCo keeps the SEND register: writes and reviews support plans, sees every plan and the family&apos;s comments, and gets review reminders in the Action centre. Switch this on for a teacher who is also the SENCo; for someone employed only as the SENCo, tick the SENCo role above instead.
         {!canSet ? " Only the Headteacher or an admin can change this." : ""}
       </p>
       {msg && (

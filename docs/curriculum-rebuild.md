@@ -137,3 +137,26 @@ pages (`SyllabusBrowser.tsx`, `src/lib/learn/syllabusPlan.ts`) read `curriculum_
 - Maths and Science (9 Nov 2026), branch `align-maths-sci`: the school's files are generic publisher schemes (Pearson KS3 Maths Progress, Pearson 4MA1 two-year scheme, an older Edexcel linear "in steps" scheme, a 1MA1 resit scheme; Pearson Exploring Science and Edexcel GCSE five-year schemes; Oxford Activate/AQA five-year schemes) plus the school's Mathematics, Biology, Chemistry and Physics intents. Maths Years 7 to 9 keep White Rose order with Maths Progress lessons as resources; KS4 maths is now taught from 4MA1 itself (was 1MA1 with a 4MA1 entry) in the Pearson scheme's Higher order (Units 1 to 32); science Years 7 to 9 follow the Exploring Science units in the intents' order; 4SD0 order follows the KS4 intents and off-spec content (separate-science only or not in 4SD0) was removed from the Year 10 weeks.
 - Next: the same pass for the other secondary SOWs (History, Geography, Maths, Science, Business, Computing, Art, PSHE) and the primary subject policies.
 - Syllabus v2 (PR #31) merged 9 Nov. Builder v2 (PR #30) approved by the owner; merging after the review fixes (slide-block editor key bug, save guard, revision-booklet triggers, delete replaced deck files). Year 3 keeps the friendly style.
+
+### Lessons v3: owner's design feedback (9 Nov 2026, 12:39)
+Full rules: one high-level objective; up to 3 success criteria kept distinct from it; a "ponder" hook as the first screen;
+real pictures of the topic and key vocabulary (no people); diagrams; topic keyword list plus corner keyword boxes; pupil PDF of
+everything at the start; Bismillah only where relevant; an "online class promise" values strip; Islamic point as the
+foundation at the start (conflicting theories such as human evolution: taught factually, Islamic position at the end);
+Teams polls instead of cold calls; teacher models guided item 1 (with a labelled model paragraph) and independent item 1;
+realistic timings; one accurate cross-curricular link, not several. Spec for lesson writers: the session scratchpad
+`packs/LESSONS-V3-ADDENDUM.md` (copied into content/lessons/README.md by the builder v3 PR, branch `lesson-builder-v3`).
+Also asked for (backlog): staff feedback on lessons with admin "make the change" (T-item), editing slides and plans
+directly in the portal with instant download (T-item), a per-term list of every worksheet and resource with all of them
+ready, and a device requirement (drawing tablet recommended; otherwise a printer) on the website and in the admissions
+information.
+
+### Work in flight (9 Nov 2026, 15:45), for whoever picks this up
+Branches pushed and unfinished (each is resumable; read its last commits):
+- `lesson-builder-v3`: slide builder v3 (owner feedback above). Not merged; needs owner sign-off of sample slides.
+- `lessons-maths-ks12-s1`, `lessons-english-ks12-s1`, `lessons-maths-ks34-s1`: Spring 1 founding-year lessons.
+- `claude/tafweed-T28-senco-cover` (T28 SENCO, T30 cover), `claude/tafweed-T21-policy-outline` (T21, T4, T5, T11),
+  `claude/tafweed-T20-security` (security audit), `claude/tafweed-lesson-feedback-editing` (lesson feedback, direct editing).
+Still to start: lessons for Science, humanities, Qur'an, Arabic, Islamic Studies, PSHE, Computing, Art, Business and English
+Years 7-11; term resource lists; consolidation register; T29 dropdowns and emojis; T19 portal polish; device requirement
+(drawing tablet recommended, otherwise a printer).

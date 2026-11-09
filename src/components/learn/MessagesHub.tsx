@@ -8,6 +8,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { learnRoleLabel, type LearnRole } from "@/lib/learn/session";
 import { AiSpark } from "@/components/learn/AiBits";
 import { TRIAGE_CATEGORY_LABEL, aiAssist, aiErrorMessage, useAiStatus } from "@/lib/learn/aiAssist";
+import { ScrollArea } from "@/components/learn/ScrollArea";
 
 type Person = { user_id: string; full_name: string; roles: string[]; detail: string | null };
 type ThreadRow = {
@@ -24,7 +25,7 @@ type ThreadRow = {
 type Last = { id: string; thread_id: string; body: string; created_at: string; sender_id: string };
 type TriageRow = { thread_id: string; message_id: string; category: string; urgency: string };
 
-const STAFF_ROLES = ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover"];
+const STAFF_ROLES = ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover", "senco"];
 
 function initials(name: string): string {
   const p = name.split(/\s+/).filter(Boolean);
@@ -272,7 +273,8 @@ export function MessagesHub({ canAddPeople = false, subtitle }: { canAddPeople?:
                 {sortNote && <span className="w-full text-xs text-ink/65">{sortNote}</span>}
               </div>
             )}
-            <ul className="max-h-[70vh] divide-y divide-gold-light/70 overflow-y-auto">
+            <ScrollArea label="Conversations" className="max-h-[70vh]">
+            <ul className="divide-y divide-gold-light/70">
               {sorted.length === 0 && urgentOnly && (
                 <li className="px-5 py-10 text-center text-sm text-ink/65">No urgent conversations.</li>
               )}
@@ -322,6 +324,7 @@ export function MessagesHub({ canAddPeople = false, subtitle }: { canAddPeople?:
                 );
               })}
             </ul>
+            </ScrollArea>
           </div>
 
           <div className={`min-w-0 ${active ? "" : "hidden md:block"}`}>
@@ -372,7 +375,7 @@ export function MessagesHub({ canAddPeople = false, subtitle }: { canAddPeople?:
             <div className="border-b border-gold-light px-5 py-3">
               <input autoFocus type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search by name or child…" className="w-full rounded-lg border border-gold-light px-3 py-2 text-sm" />
             </div>
-            <div className="overflow-y-auto px-2 py-2">
+            <ScrollArea label="People you can message" itemSelector="button" noun="more people" className="px-2 py-2">
               {[
                 { label: "Staff", list: staffList },
                 { label: "Parents", list: parentList },
@@ -397,7 +400,7 @@ export function MessagesHub({ canAddPeople = false, subtitle }: { canAddPeople?:
                   ),
               )}
               {filtered.length === 0 && <p className="px-4 py-8 text-center text-sm text-ink/65">No one matches “{query}”.</p>}
-            </div>
+            </ScrollArea>
           </div>
         </div>
       )}

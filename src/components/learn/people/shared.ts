@@ -63,11 +63,12 @@ export const CHIP_STYLES: Record<LearnRole, string> = {
   admissions: "bg-gold-100 text-gold-900",
   teacher: "bg-teal-100 text-teal-900",
   teaching_assistant_cover: "bg-teal-100 text-teal-900",
+  senco: "bg-teal-100 text-teal-900",
   parent: "bg-cream text-ink/75",
   student: "bg-cream text-ink/75",
 };
 
-export const ROLE_PRIORITY: LearnRole[] = ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover", "parent", "student"];
+export const ROLE_PRIORITY: LearnRole[] = ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover", "senco", "parent", "student"];
 
 /** The portal's one input style (see ui.tsx). */
 export const INPUT_CLASS = ui.input;
