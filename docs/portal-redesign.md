@@ -117,7 +117,10 @@ In the portal the old `teal-*` utilities now mean forest green, so existing page
 8. Later: curriculum analytics, connections visualiser.
 
 ## Next (in this order)
-1. Replace the 78 `window.confirm` calls with `useConfirm()` (`src/components/learn/kit.tsx`), page by page.
+1. [x] Every `window.confirm` in the portal now uses the portal dialog (`askConfirm()` in `kit.tsx`; 78 calls in 62
+   files). Use `askConfirm`/`useConfirm` for any new confirmation.
+1a. [x] Pinned lessons (migration 0193 `lesson_pins`, own rows only): pin from a lesson row or workspace; "Your lessons"
+   on the teacher and admin dashboards shows pins then recently opened.
 2. Move the remaining hand-written menus (`LearnAccountMenu`, `ClassworkTab`) onto `ActionsMenu`.
 3. Apply `WorkspaceHeader` to the other hub pages that still open with a card header (Classes, a class page, Pupils,
    Reports), and the "one primary action plus a menu" rule to their rows.
@@ -126,6 +129,7 @@ In the portal the old `teal-*` utilities now mean forest green, so existing page
 6. Later: curriculum analytics, connections visualiser.
 
 ## Log
+- 2026-11-09 (late): confirmations and pinned lessons (PR "Portal redesign 2").
 - 2026-11-09: PR #66 merged. Design system, grouped sidebars, workspace dashboards, lesson workspace, unit header,
   lesson rows, review workflow (0192) with Lesson review queue, Curriculum map, lessons and pupils in ⌘K search.
 - 2026-11-09: audit written; design rules agreed (forest green for actions, gold as accent only, monochrome icons).

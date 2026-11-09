@@ -8,6 +8,7 @@ import { Tabs } from "@/components/learn/Tabs";
 import { btn, ui } from "@/components/learn/ui";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 type Severity = "critical" | "high" | "medium";
 type Status = "open" | "acknowledged" | "resolved";
 type Kind = "absence" | "escalation" | "flagged_message";
@@ -248,7 +249,7 @@ export function ComplianceDashboard({ isHeadTeacher, alertsExtra, topExtra, reco
     await load();
   }
   async function remindAll() {
-    if (!confirm(`Email a reminder to all ${people.length} people with outstanding signatures?`)) return;
+    if (!(await askConfirm(`Email a reminder to all ${people.length} people with outstanding signatures?`))) return;
     setBusy("all");
     let sent = 0;
     for (const p of people) for (const d of p.docs.values()) sent += (await requestSignatures(d.id, { userIds: [p.user_id], kind: "reminder" })).sent;

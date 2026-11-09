@@ -11,6 +11,7 @@ import { printElement } from "@/components/learn/printScope";
 import { PrintHeader } from "@/components/learn/print";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 type Row = {
   id: string; candidate_name: string; year: number; status: string; created_at: string; started_at: string | null; submitted_at: string | null; completed_at: string | null;
   expires_at: string; application_id: string | null; child_id: string | null; eal: boolean; access: Record<string, unknown>; dob: string | null; invigilator: string | null;
@@ -58,8 +59,8 @@ export function EntryAssessmentsAdmin() {
 
   /** Runs a row action and returns what happened (null if the user backed out of a confirm). */
   const act = async (id: string, action: "reissue" | "email" | "void", extra: Record<string, unknown> = {}): Promise<ActResult | null> => {
-    if (action === "void" && !confirm("Cancel this assessment? The link stops working. You can issue a new paper later.")) return null;
-    if (action === "reissue" && !confirm(extra.newPaper ? "Start again with a new paper? The old link and any answers so far stop counting." : "Make a new link? The old link stops working.")) return null;
+    if (action === "void" && !(await askConfirm("Cancel this assessment? The link stops working. You can issue a new paper later."))) return null;
+    if (action === "reissue" && !(await askConfirm(extra.newPaper ? "Start again with a new paper? The old link and any answers so far stop counting." : "Make a new link? The old link stops working."))) return null;
     const res = await callEdgeFunction("entry-assessment", { action, id, ...extra });
     let out: ActResult;
     if (!res.ok) out = { tone: "bad", text: edgeErrorMessage(res) };

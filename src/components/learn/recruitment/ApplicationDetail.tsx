@@ -23,6 +23,7 @@ import { FilePreview } from "@/components/learn/admissions/FilePreview";
 import { RECRUITMENT_BUCKET, ukDate, ukDateTime, type ApplicationEvent, type JobApplication } from "./types";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 function Row({ label, children }: { label: string; children: ReactNode }) {
   const empty = children === null || children === undefined || children === "" || (Array.isArray(children) && children.length === 0);
   return (
@@ -176,9 +177,9 @@ export function ApplicationDetail({
               className={`mt-1 ${ui.select}`}
               value={app.status}
               disabled={busy}
-              onChange={(e) => {
+              onChange={async (e) => {
                 const next = e.target.value as ApplicationStatus;
-                if ((next === "unsuccessful" || next === "withdrawn") && !confirm(`Mark ${fullName} as ${statusLabel(next)}? The application, its notes and files are deleted automatically 6 months after this decision. The candidate is not emailed automatically.`)) return;
+                if ((next === "unsuccessful" || next === "withdrawn") && !(await askConfirm(`Mark ${fullName} as ${statusLabel(next)}? The application, its notes and files are deleted automatically 6 months after this decision. The candidate is not emailed automatically.`))) return;
                 void update({ status: next }, `Moved to ${statusLabel(next)}.`);
               }}
             >

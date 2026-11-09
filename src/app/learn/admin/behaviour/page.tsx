@@ -30,6 +30,7 @@ import { Tabs } from "@/components/learn/Tabs";
 import { Button, ButtonLink, ui } from "@/components/learn/ui";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 type Tab = "merits" | "incidents" | "badges";
 type Sub = "overview" | "all";
 type ClassOpt = { id: string; name: string };
@@ -89,7 +90,7 @@ function BehaviourContent() {
   const voidRecord = async (id: string) => {
     const supabase = getSupabaseClient();
     if (!supabase) return;
-    if (!window.confirm("Void this record? It stops counting towards points.")) return;
+    if (!(await askConfirm("Void this record? It stops counting towards points."))) return;
     const { error: err } = await supabase.from("behaviour_records").update({ voided_at: new Date().toISOString() }).eq("id", id);
     if (err) return setError("Couldn't void that record.");
     load();

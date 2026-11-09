@@ -26,6 +26,7 @@ import {
 import { ChangeLog, DocumentsSection } from "./SendExtras";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 type Sources = {
   application_notes: string | null;
   application_ref: string | null;
@@ -202,7 +203,7 @@ export function SupportPlanEditor({ childId, childName, onChanged }: { childId: 
             </Button>
           )}
           {plan.status === "active" && (
-            <Button size="sm" disabled={busy} onClick={() => window.confirm("Close this plan? Teachers will stop seeing it; the family can still read it.") && save({ status: "closed" })}>
+            <Button size="sm" disabled={busy} onClick={async () => (await askConfirm("Close this plan? Teachers will stop seeing it; the family can still read it.")) && save({ status: "closed" })}>
               Close plan
             </Button>
           )}
@@ -408,7 +409,7 @@ function TargetsSection({ planId, targets, onChanged }: { planId: string; target
   };
 
   const remove = async (id: string) => {
-    if (!supabase || !window.confirm("Delete this target? Mark it as achieved or not achieved instead if it has been reviewed.")) return;
+    if (!supabase || !(await askConfirm("Delete this target? Mark it as achieved or not achieved instead if it has been reviewed."))) return;
     const { error } = await supabase.from("send_plan_targets").delete().eq("id", id);
     if (error) return setErr(errText(error));
     onChanged();

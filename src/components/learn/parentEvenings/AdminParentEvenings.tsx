@@ -20,6 +20,7 @@ import { isoToUkLocal, ukLocalToIso } from "@/lib/learn/openEvening";
 import { useNow } from "@/lib/learn/useNow";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 type Teacher = { id: string; name: string; cover: boolean };
 type TeacherOption = { user_id: string; full_name: string; role: string };
 type EveningRow = ParentEvening & { parent_evening_teachers: { teacher_id: string }[] };
@@ -58,7 +59,7 @@ function EveningAdminCard({ ev, teachers, onChanged }: { ev: EveningRow; teacher
   const setStatus = async (status: EveningStatus) => {
     if (!supabase) return;
     if (status === "open" && chosen.size === 0) return setError("Choose at least one teacher (Teachers & bookings) before opening it for booking.");
-    if (status === "open" && !window.confirm(`Open "${ev.title}" for booking? Parents will see it in the family area straight away.`)) return;
+    if (status === "open" && !(await askConfirm(`Open "${ev.title}" for booking? Parents will see it in the family area straight away.`))) return;
     setBusy(true);
     setError(null);
     const { error: err } = await supabase.from("parent_evenings").update({ status }).eq("id", ev.id);
@@ -95,7 +96,7 @@ function EveningAdminCard({ ev, teachers, onChanged }: { ev: EveningRow; teacher
 
   const remove = async () => {
     if (!supabase) return;
-    if (!window.confirm(`Delete "${ev.title}"? All of its bookings will be deleted too (parents are not notified).`)) return;
+    if (!(await askConfirm(`Delete "${ev.title}"? All of its bookings will be deleted too (parents are not notified).`))) return;
     const { error: err } = await supabase.from("parent_evenings").delete().eq("id", ev.id);
     if (err) setError(err.message);
     await onChanged();
@@ -103,7 +104,7 @@ function EveningAdminCard({ ev, teachers, onChanged }: { ev: EveningRow; teacher
 
   const cancelBooking = async (b: AdminBooking) => {
     if (!supabase) return;
-    if (!window.confirm(`Cancel ${b.parent_name}'s meeting with ${b.teacher_name} at ${formatTime(b.slot_start)}?`)) return;
+    if (!(await askConfirm(`Cancel ${b.parent_name}'s meeting with ${b.teacher_name} at ${formatTime(b.slot_start)}?`))) return;
     const { error: err } = await supabase.rpc("cancel_parent_evening_booking", { p_booking_id: b.booking_id });
     if (err) setError(bookingErrorMessage(err.message));
     await loadBookings();

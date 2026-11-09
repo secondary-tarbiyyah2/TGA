@@ -10,6 +10,7 @@ import { asNarrative, buildClassSummaries, mergeNarrative, termRange, type Class
 import { STATE_LABEL, loadEnrolments, loadIssuedChildren, loadTermReports, reportsHref, stateOf, type ClassInfo, type Mode, type Pupil, type PupilState, type ReportRow } from "./data";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 const STATE_TONE: Record<PupilState, Tone> = { not_started: "neutral", draft: "info", returned: "warn", pending: "warn", released: "good" };
 type Filter = "all" | PupilState;
 
@@ -123,7 +124,7 @@ export function ClassReports({ mode, cls, term, termKey, me, onChanged }: { mode
   const issuePending = async () => {
     const supabase = getSupabaseClient();
     if (!supabase || pending.length === 0) return;
-    if (!window.confirm(`Approve and issue ${pending.length} report${pending.length === 1 ? "" : "s"} to families now?`)) return;
+    if (!(await askConfirm(`Approve and issue ${pending.length} report${pending.length === 1 ? "" : "s"} to families now?`))) return;
     setBusy(true);
     setMsg(null);
     const { error } = await supabase.from("term_reports").update({ status: "released" }).in("id", pending.map((r) => r.rep!.id));

@@ -14,6 +14,7 @@ import {
 } from "@/lib/learn/quran";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 /** A child's Qur'an targets (RLS-scoped), soonest deadline first. */
 export function useQuranTargets(childId: string) {
   const supabase = getSupabaseClient();
@@ -137,7 +138,7 @@ export function QuranTargetsPanel({ childId, classId, entries, canEdit }: { chil
 
   const remove = async (t: QuranTarget) => {
     if (!supabase) return;
-    if (!window.confirm(`Remove the target "${t.title}"?`)) return;
+    if (!(await askConfirm(`Remove the target "${t.title}"?`))) return;
     const { error: delError } = await supabase.from("quran_targets").delete().eq("id", t.id);
     if (delError) setError(delError.message);
     else await reload();
