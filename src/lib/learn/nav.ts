@@ -56,7 +56,7 @@ const underPrefix = (p: string, prefixes?: string[]) => !!prefixes?.some((m) => 
 export type SidebarIcon = IconName;
 
 /** One page inside a hub, shown as a tab at the top of the hub's pages. */
-export type HubTab = { href: string; label: string; hint?: string; icon?: SidebarIcon; headOnly?: boolean; matchPrefixes?: string[] };
+export type HubTab = { href: string; label: string; hint?: string; icon?: SidebarIcon; headOnly?: boolean; matchPrefixes?: string[]; senco?: boolean };
 
 /** `group` is the section the item sits under in grouped areas (admin); the
  * first group's items are the always-visible links at the top. `matchPrefixes` keeps an item highlighted
@@ -71,6 +71,8 @@ export type SidebarItem = {
   icon: SidebarIcon;
   hint?: string;
   headOnly?: boolean;
+  /** Also open to an account whose only staff role is SENCo (see sencoOnly). */
+  senco?: boolean;
   group?: string;
   matchPrefixes?: string[];
   badge?: "actions" | "messages" | "todo" | "review";
@@ -275,7 +277,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       icon: "backpack",
       tabs: [
         { href: "/teach/pupils", label: "Pupils", hint: "Records for the pupils you teach" },
-        { href: "/teach/send", label: "Support plans", hint: "Adjustments and access arrangements for pupils with SEND", icon: "listChecks" },
+        { href: "/teach/send", label: "Support plans", hint: "Adjustments and access arrangements for pupils with SEND", icon: "listChecks", senco: true },
         { href: "/teach/quran", label: "Qur'an and Qaidah", hint: "Recitation and memorisation progress", icon: "bookMarked" },
         { href: "/teach/behaviour", label: "Behaviour", hint: "Incidents and praise", icon: "heartHandshake" },
         { href: "/teach/stars", label: "Houses and stars", hint: "House points and Star of the Week", icon: "trophy" },
@@ -310,7 +312,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       tabs: [
         { href: "/teach/profile", label: "My profile", hint: "Your teacher profile" },
         { href: "/teach/clock", label: "My hours", hint: "Clock-ins and hours worked", icon: "clock" },
-        { href: "/teach/handbook", label: "Staff handbook", hint: "Policies and how-tos for staff", icon: "bookOpen" },
+        { href: "/teach/handbook", label: "Staff handbook", hint: "Policies and how-tos for staff", icon: "bookOpen", senco: true },
       ],
     },
   ],
@@ -452,6 +454,12 @@ function isHeadRole(roles: string[]): boolean {
   return roles.some((r) => r === "head_teacher" || r === "admin");
 }
 
+/** A SENCo account with no teaching or office role: in the Teaching area it
+ * sees only the pages marked `senco` (the SEND register and the handbook). */
+export function isSencoOnly(roles: string[]): boolean {
+  return roles.includes("senco") && !roles.some((r) => ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover"].includes(r));
+}
+
 /** How well a route matches the current path: the href's length for the page
  * or a sub-page, 1 for a matchPrefix, 0 for no match. Longest wins. */
 function matchScore(p: string, href: string, prefixes?: string[]): number {
@@ -509,14 +517,15 @@ export function isSidebarItemActive(pathname: string, item: SidebarItem): boolea
  * a hub left with no tabs dropped. */
 export function visibleSidebar(area: PortalArea, roles: string[]): SidebarItem[] {
   const isHead = isHeadRole(roles);
+  const sencoOnly = area === "teach" && isSencoOnly(roles);
   const out: SidebarItem[] = [];
   for (const i of SIDEBAR_NAV[area]) {
     if (i.headOnly && !isHead) continue;
     if (!i.tabs) {
-      out.push(i);
+      if (!sencoOnly || i.senco) out.push(i);
       continue;
     }
-    const tabs = i.tabs.filter((t) => isHead || !t.headOnly);
+    const tabs = i.tabs.filter((t) => (isHead || !t.headOnly) && (!sencoOnly || t.senco || i.senco));
     if (tabs.length === 0) continue;
     // A hub with one page left for this user is just that page. If that page
     // is the hub's own first page, it keeps the hub's name ("Home", not "Overview").
@@ -615,7 +624,7 @@ export const AREA_SUBTITLE: Record<PortalArea, string> = {
 export const MOBILE_TABS: Record<PortalArea, string[]> = {
   student: ["/student/dashboard", "/student/todo", "/student/classes", "/student/revision"],
   family: ["/family/dashboard", "/family/todo", "/family/messages", "/family/classes"],
-  teach: ["/teach/today", "/teach/classes", "/teach/review", "/teach/messages"],
+  teach: ["/teach/today", "/teach/classes", "/teach/review", "/teach/messages", "/teach/send", "/teach/handbook"],
   admin: ["/admin/dashboard", "/admin/messages", "/admin/pupils", "/admin/attendance", "/admin/admissions", "/admin/calendar"],
 };
 

@@ -25,7 +25,7 @@ type ThreadRow = {
 type Last = { id: string; thread_id: string; body: string; created_at: string; sender_id: string };
 type TriageRow = { thread_id: string; message_id: string; category: string; urgency: string };
 
-const STAFF_ROLES = ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover"];
+const STAFF_ROLES = ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover", "senco"];
 
 function initials(name: string): string {
   const p = name.split(/\s+/).filter(Boolean);

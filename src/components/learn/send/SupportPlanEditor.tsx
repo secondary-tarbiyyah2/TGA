@@ -23,6 +23,7 @@ import {
   type SupportPlan,
   type TargetStatus,
 } from "@/lib/learn/send";
+import { ChangeLog, DocumentsSection } from "./SendExtras";
 
 type Sources = {
   application_notes: string | null;
@@ -60,6 +61,7 @@ export function SupportPlanEditor({ childId, childName, onChanged }: { childId: 
   const [staff, setStaff] = useState<Staff[]>([]);
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<{ tone: "good" | "bad"; text: string } | null>(null);
+  const [logKey, setLogKey] = useState(0);
 
   const load = useCallback(async () => {
     if (!supabase) return;
@@ -328,6 +330,10 @@ export function SupportPlanEditor({ childId, childName, onChanged }: { childId: 
       <TargetsSection planId={plan.id} targets={targets} onChanged={() => done("Targets updated.")} />
       <ReviewsSection planId={plan.id} reviews={reviews} targets={targets} onChanged={() => done("Review recorded. The next review date has moved on.")} />
       <ResponsesSection responses={responses} onChanged={() => done("Reply saved. The family sees it on their child's plan.")} />
+      <DocumentsSection planId={plan.id} onChanged={() => setLogKey((k) => k + 1)} />
+      <Section title="Change history" description="Every change to this pupil's plan, targets, reviews, family comments and documents: who made it and when.">
+        <ChangeLog childId={childId} refreshKey={logKey + (plan.updated_at ? new Date(plan.updated_at).getTime() : 0) + targets.length + reviews.length} />
+      </Section>
     </div>
   );
 }
