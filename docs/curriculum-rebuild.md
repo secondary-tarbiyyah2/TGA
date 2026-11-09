@@ -6,9 +6,9 @@ Keep this file current. Anyone (person or AI) picking up the curriculum work sta
 
 - **TGA Curriculum Plan 2027** (Claude Doc, owner: the TGA lead): https://claude.ai/artifact/2WAihVvg7Jg9LWz2d99ha1
   Whole-school plan: principles, weekly lessons per key stage, Years 1-11 long-term plans, Qur'an/Arabic/Islamic
-  Studies spine (hifdh targets), assessment, founding term (1 Jan-9 Jul 2027), decisions awaiting Headteacher sign-off.
+  Studies spine (hifdh targets), assessment, founding term (Jan-Jul 2027), decisions awaiting Headteacher sign-off.
 - **Year packs** (one Claude Doc per year group, built in order from Year 1): everything a teacher needs for the year,
-  week by week, per subject, plus a dated week-by-week plan for the founding year (first live lessons Mon 4 Jan to 9 Jul 2027).
+  week by week, per subject, plus a dated week-by-week plan for the founding year (11 Jan to 9 Jul 2027).
   - Year 1: **TGA Year 1 Curriculum Pack** https://claude.ai/artifact/MpxKfieQy6ZecHksoR5cko
     (tabs: Overview, English, Maths, Topic, Qur'an/Islamic Studies/PSHE). Its "To confirm" list is open.
   - Year 2: https://claude.ai/artifact/4rgmPugGuzYB78PZJ1PEEs
@@ -54,8 +54,9 @@ Y1-2: English and phonics 5, maths 4, topic 2, Qur'an with Qaidah 3, Islamic Stu
   geography,art,computing,quran,islamic-studies,pshe}.json yearMap.y1 = one unit per half term
   ("Autumn 1: ..."). Art carries design and technology for now (there is no DT syllabus file yet).
 - Years 2-9 syllabus entries rewritten to the packs: yearMap.y2..y9 one unit per half term (placed in the planner).
-- Opening moved (owner, 8 Nov 2026): induction day Fri 1 Jan 2027, first live lessons Mon 4 Jan (99 teaching days),
-  first fee payment 1 Jan. Code, policies, term-dates.ics, prospectus PDF and migration 0178 updated.
+- Opening (owner, 9 Nov 2026; replaces the 8 Nov change): Fri 1 Jan 2027 is a bank holiday, so the first week is
+  induction week Mon 4 to Fri 8 Jan, first live lessons Mon 11 Jan, first fee payment Fri 8 Jan. Migration 0180 updates
+  the database copies; code, policies, term-dates.ics and the prospectus PDF went back to the 26 Oct wording.
 - Secondary curriculum maps (Years 7-11, xlsx from the TSS drive) cleaned of trips/visits/speakers and the
   "Redstone Academy" heading; sent to the owner (not stored in the repo).
 - **Curriculum editor in the portal** (built on branch `curriculum-editor`, PR open, live once merged; migration 0179; staff guide:
@@ -74,7 +75,7 @@ Y1-2: English and phonics 5, maths 4, topic 2, Qur'an with Qaidah 3, Islamic Stu
 ### Next
 0. Optional: add content/syllabus/ks1-3/design-technology.json (KS1-3 DT statements from gov.uk) so DT is its own
    subject in the portal; for now DT units sit inside art.json.
-1. Year 1 lessons for the founding year: bridge (4-15 Jan) + Spring 1 (Moon Zoom!), then Spring 2 to Summer 2.
+1. Year 1 lessons for the founding year: bridge (11-22 Jan) + Spring 1 (Moon Zoom!), then Spring 2 to Summer 2.
    Existing content/lessons/*/y1.json lessons were written for an Autumn start: keep what fits, re-point the rest.
 2. Year 2-11 packs (breadth first: year on one page, founding-year week-by-week, Spring 1-Summer 2 weekly per subject):
    being drafted (8 Nov) from briefs kept in the session scratchpad; each becomes a Claude Doc like Year 1. Not yet linked here.

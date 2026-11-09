@@ -131,7 +131,7 @@ export const FIT_CHECK = {
     start: {
       title: "When would you like to start?",
       options: [
-        { value: "january", label: "January 2027, the founding cohort", detail: "Induction on Friday 1 January, first live lessons on Monday 4 January 2027." },
+        { value: "january", label: "January 2027, the founding cohort", detail: "Induction 4 to 8 January, first live lessons on Monday 11 January 2027." },
         { value: "later", label: "Later in 2027 or beyond", detail: "Interested, but not for January." },
         { value: "exploring", label: "We are just exploring", detail: "Finding out what an online school would be like." },
       ] satisfies ChoiceOption[],
@@ -166,9 +166,9 @@ export const FIT_CHECK = {
     timezoneLate: (localStart: string, localEnd: string) =>
       `Live lessons would run from ${localStart} to ${localEnd} where you are. That is outside the hours most children learn well, and it is the first thing we would want to talk through. Families in other time zones can ask about the Academy's flexible learning options, but we cannot promise they will suit every year group.`,
     setupReady: "You already have the quiet space and the device with a camera that live lessons need.",
-    arrangeDevice: "You will need the quiet space and the device with a camera ready for induction day, Friday 1 January 2027.",
+    arrangeDevice: "You will need the quiet space and the device with a camera ready for induction week, 4 to 8 January 2027.",
     noDevice:
-      "Your child will need a laptop or tablet with a working camera and microphone, and a quiet place to learn. This is straightforward to put right, but it does need to be in place before induction day.",
+      "Your child will need a laptop or tablet with a working camera and microphone, and a quiet place to learn. This is straightforward to put right, but it does need to be in place before induction week.",
     primaryAdult: "An adult is usually nearby, which is what children in Years 1 to 6 need to settle into live lessons.",
     primarySometimesAdult:
       "Children in Years 1 to 6 settle best with an adult nearby. If that is only sometimes possible, plan who will be around on the other days before January.",
@@ -227,11 +227,11 @@ export const FIT_CHECK = {
       siblingRow: "Sibling discount",
       plansTitle: "Ways to pay",
       annual: "In one payment",
-      annualNote: (pct: number) => `Includes ${pct}% off for paying in full by 1 January 2027`,
+      annualNote: (pct: number) => `Includes ${pct}% off for paying in full by 8 January 2027`,
       twoPayments: "In two payments",
-      twoPaymentsNote: "1 January and 28 March 2027",
+      twoPaymentsNote: "8 January and 28 March 2027",
       monthly: "Monthly",
-      monthlyNote: (n: number) => `${n} payments from 1 January 2027`,
+      monthlyNote: (n: number) => `${n} payments from 8 January 2027`,
       applicationFee: (fee: string, n: number) =>
         n > 1 ? `Application fee ${fee} per child, paid once you apply. There is no registration fee.` : `Application fee ${fee}, paid once you apply. There is no registration fee.`,
       siblingLine: (pct: number) => `The sibling discount (${pct}% off the second child) is included above.`,
@@ -271,8 +271,8 @@ export const FIT_CHECK = {
         { label: "Open evening (online)", when: "Sunday 6 December 2026, 4pm UK", href: "/open-evening" },
         { label: "Taster morning (online)", when: "Saturday 12 December 2026", href: "/open-evening" },
         { label: "Applications close", when: "Friday 18 December 2026", href: "/admissions/apply" },
-        { label: "Induction day", when: "Friday 1 January 2027", href: "/term-dates" },
-        { label: "First live lessons", when: "Monday 4 January 2027", href: "/term-dates" },
+        { label: "Induction week", when: "4 to 8 January 2027", href: "/term-dates" },
+        { label: "First live lessons", when: "Monday 11 January 2027", href: "/term-dates" },
       ],
       steps: {
         strongJanuary: "Come to an open evening if you can, then apply online by Friday 18 December 2026. The application takes about ten minutes.",

@@ -98,7 +98,7 @@ Lessons provide a safe space, chaired by a teacher, to discuss difficult questio
 
 ## 10. Prevent Risk Assessment
 
-The DSL maintains an Academy Prevent Risk Assessment, reviewed annually, covering online platforms, guest speakers, the curriculum, staff training and the Academy's international pupil population. The first Prevent risk assessment is completed before live lessons begin on 4 January 2027 and is reviewed annually.
+The DSL maintains an Academy Prevent Risk Assessment, reviewed annually, covering online platforms, guest speakers, the curriculum, staff training and the Academy's international pupil population. The first Prevent risk assessment is completed before live lessons begin on 11 January 2027 and is reviewed annually.
 
 ## 11. Monitoring and Review
 
