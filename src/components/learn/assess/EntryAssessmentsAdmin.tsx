@@ -8,6 +8,7 @@ import { Icon } from "@/components/learn/Icon";
 import { EntryReport, type ReportData } from "@/components/learn/assess/EntryReport";
 import { MathText } from "@/components/learn/assess/MathText";
 import { printElement } from "@/components/learn/printScope";
+import { PrintHeader } from "@/components/learn/print";
 
 type Row = {
   id: string; candidate_name: string; year: number; status: string; created_at: string; started_at: string | null; submitted_at: string | null; completed_at: string | null;
@@ -426,6 +427,7 @@ function Detail({ row, onClose, onChanged, onAct }: { row: Row; onClose: () => v
   return (
     <div className="fixed inset-0 z-50 flex justify-end bg-ink/40 print:static print:block print:bg-transparent" onMouseDown={(e) => e.target === e.currentTarget && onClose()}>
       <div ref={printRef} role="dialog" aria-modal="true" aria-labelledby="ea-title" className="flex h-full w-full max-w-4xl flex-col overflow-y-auto bg-cream shadow-2xl print:h-auto print:max-w-none print:overflow-visible print:bg-white print:shadow-none">
+        <PrintHeader title="Entry assessment report" />
         <div className="sticky top-0 z-10 flex items-start justify-between gap-3 border-b border-gold-light bg-white px-5 py-4 print:static print:border-0 print:px-0">
           <div>
             <h2 id="ea-title" className="text-xl font-semibold text-ink">{row.candidate_name}</h2>

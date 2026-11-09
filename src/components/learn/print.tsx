@@ -45,6 +45,14 @@ export const PRINT_CSS = `
   /* A scoped print (see printScope.tsx): everything except the marked element,
      its ancestors and its contents is removed from the page. */
   body.print-scoped *:not([data-print-active]):not(:has([data-print-active])):not([data-print-active] *) { display: none !important; }
+  /* The marked element may sit in a drawer or dialog (fixed, scrolling,
+     full height), which the chrome rules above would hide: put it and its
+     ancestors back into the normal page flow so it runs over several pages. */
+  body.print-scoped :has([data-print-active]), body.print-scoped [data-print-active] {
+    display: block !important; position: static !important; inset: auto !important; transform: none !important;
+    height: auto !important; min-height: 0 !important; max-height: none !important; overflow: visible !important;
+    background: #fff !important; box-shadow: none !important;
+  }
   body.print-scoped [data-print-active] { border: none !important; box-shadow: none !important; width: 100% !important; max-width: none !important; margin: 0 !important; padding: 0 !important; }
   body.print-scoped .portal, body.print-scoped .portal > div, body.print-scoped .portal main, body.print-scoped .portal main > div { display: block !important; padding: 0 !important; margin: 0 !important; max-width: none !important; }
   body.print-scoped [data-print-active] table { width: 100% !important; min-width: 0 !important; font-size: 9pt; border-collapse: collapse; }

@@ -83,9 +83,10 @@ function Pips({ score, name }: { score: number; name: string }) {
   );
 }
 
-function Card({ title, children, icon, tile, aside }: { title: string; children: React.ReactNode; icon?: IconName; tile?: string; aside?: React.ReactNode }) {
+function Card({ title, children, icon, tile, aside, breakable }: { title: string; children: React.ReactNode; icon?: IconName; tile?: string; aside?: React.ReactNode; breakable?: boolean }) {
+  // Long cards may run on to the next page (their rows still stay whole) rather than leave half a page blank.
   return (
-    <section className="break-inside-avoid rounded-2xl border border-gold-light bg-white p-5 print:border-gray-300 print:p-3">
+    <section className={`${breakable ? "" : "break-inside-avoid "}rounded-2xl border border-gold-light bg-white p-5 print:border-gray-300 print:p-3`}>
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h3 className="flex items-center gap-2 text-base font-semibold text-ink">{icon && <span className={`portal-tile ${tile || "tile-slate"} print:hidden`} aria-hidden="true"><Icon name={icon} /></span>}{title}</h3>
         {aside}
@@ -153,7 +154,7 @@ export function EntryReport({ report, name }: { report: ReportData; name: string
       </Card>
 
       {/* 2. Strands */}
-      <Card title="Strand by strand" icon="chartLine" tile="tile-blue" aside={<span className="text-xs text-ink/60"><span className="mr-1 inline-block h-3 w-0.5 bg-ink/60 align-middle" /> Year {r.year} <span className="mx-1 inline-block h-3 w-3 rounded-full bg-teal-700 align-middle" /> estimate <span className="mx-1 inline-block h-2 w-5 rounded-full bg-teal-700/20 align-middle" /> likely range</span>}>
+      <Card title="Strand by strand" icon="chartLine" tile="tile-blue" breakable aside={<span className="text-xs text-ink/60"><span className="mr-1 inline-block h-3 w-0.5 bg-ink/60 align-middle" /> Year {r.year} <span className="mx-1 inline-block h-3 w-3 rounded-full bg-teal-700 align-middle" /> estimate <span className="mx-1 inline-block h-2 w-5 rounded-full bg-teal-700/20 align-middle" /> likely range</span>}>
         <ul className="divide-y divide-gold-light/50">
           {r.strands.map((s) => (
             <li key={s.key} className="grid gap-x-4 gap-y-1 py-2 sm:grid-cols-[11rem_1fr_9rem] sm:items-center">
@@ -166,12 +167,20 @@ export function EntryReport({ report, name }: { report: ReportData; name: string
             </li>
           ))}
         </ul>
+        {/* On paper the scale gets year labels, so the chart reads without the screen's hover and colour cues. */}
+        <div className="relative mt-1 hidden h-4 text-[8pt] text-ink/60 print:grid print:grid-cols-[11rem_1fr_9rem] print:gap-x-4" aria-hidden="true">
+          <span />
+          <span className="relative">
+            {[1, 3, 5, 7, 9, 11].map((y) => <span key={y} className="absolute -translate-x-1/2" style={{ left: `${(y - 0.5) / 11.5 * 100}%` }}>Y{y}</span>)}
+          </span>
+          <span />
+        </div>
         {r.narrative.length > 0 && <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-ink/75">{r.narrative.map((n, i) => <li key={i}>{n}</li>)}</ul>}
       </Card>
 
       {/* 3. Next steps by subject */}
       {groups.length > 0 && (
-        <Card title="Recommended next steps" icon="listChecks" tile="tile-teal">
+        <Card title="Recommended next steps" icon="listChecks" tile="tile-teal" breakable>
           <div className="grid gap-4 sm:grid-cols-2">
             {groups.map((g) => {
               const ic = SUBJECT_ICON[g.sub];
@@ -214,7 +223,7 @@ export function EntryReport({ report, name }: { report: ReportData; name: string
       )}
 
       {/* 5. How it was sat */}
-      <Card title="How this was sat" icon={rating?.icon || "shieldCheck"} tile="tile-slate" aside={rating && <StatusChip tone={rating.tone}>{integ.rating}</StatusChip>}>
+      <Card title="How this was sat" breakable icon={rating?.icon || "shieldCheck"} tile="tile-slate" aside={rating && <StatusChip tone={rating.tone}>{integ.rating}</StatusChip>}>
         {rating && <p className="text-sm text-ink/80">{rating.text}</p>}
         {integ.counts && (
           <dl className="mt-3 grid grid-cols-2 gap-2 text-sm sm:grid-cols-4">
