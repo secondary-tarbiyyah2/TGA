@@ -181,11 +181,48 @@ export async function restoreRemovedUnit(versionId: string): Promise<void> {
 }
 
 /**
- * What the last sync could not send, or clashed on, for one part: a unit ("unit:<id>"), a lesson
- * ("lesson:<subject>/<year>/<n>") or a whole year ("syllabus:<subject>:<year>", "spec:<subject>").
+ * A note from a sync run. "Not sent yet" notes are repeated by every run until fixed, so only the
+ * latest run's count. A clash (both sides changed; the portal version was kept) is reported once,
+ * so it is kept from every recent run until someone edits that unit or lesson again.
  */
-export function problemsFor(run: SyncRun | null, scopes: string[]): string[] {
-  return (run?.problems || []).filter((p) => scopes.includes(p.scope || "")).map((p) => p.text);
+export type SyncNote = SyncProblem & { at: string; clash: boolean };
+
+const isClash = (text: string) => !/^Not sent yet/i.test(text) && !/while the sync ran/i.test(text);
+
+/**
+ * The notes for one part: a unit ("unit:<id>"), a lesson ("lesson:<subject>/<year>/<n>") or a
+ * whole year ("syllabus:<subject>:<year>", "spec:<subject>"). `editedAt` is when that unit or lesson
+ * was last changed: a clash noted before then has been dealt with.
+ */
+export function problemsFor(notes: SyncNote[], scopes: string[], editedAt?: string | null): string[] {
+  return notes.filter((n) => scopes.includes(n.scope || "") && !(n.clash && editedAt && editedAt > n.at)).map((n) => n.text);
+}
+
+/** Notes from the last month of sync runs: everything from the latest run, and clashes from earlier ones. */
+export async function syncNotes(): Promise<{ latest: SyncRun | null; notes: SyncNote[] }> {
+  const supabase = getSupabaseClient();
+  if (!supabase) return { latest: null, notes: [] };
+  const since = new Date(Date.now() - 31 * 86400 * 1000).toISOString();
+  const { data } = await supabase
+    .from("curriculum_sync_runs")
+    .select("started_at, finished_at, ok, sent_units, sent_lessons, problems, message")
+    .gte("started_at", since)
+    .order("started_at", { ascending: false })
+    .limit(200);
+  const runs = ((data as (Omit<SyncRun, "problems"> & { problems: (SyncProblem | string)[] | null })[]) || []).map((r) => ({ ...r, problems: (r.problems || []).map((p) => (typeof p === "string" ? { text: p } : p)) }));
+  const seen = new Set<string>();
+  const notes: SyncNote[] = [];
+  runs.forEach((r, i) => {
+    for (const p of r.problems) {
+      const clash = isClash(p.text);
+      if (i > 0 && !clash) continue;
+      const key = `${p.scope || ""}|${p.text}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      notes.push({ ...p, at: r.started_at, clash });
+    }
+  });
+  return { latest: runs[0] || (await lastSyncRun()), notes };
 }
 
 /** A snapshot from the history, as a draft to save again. */
