@@ -2,101 +2,231 @@
   "subject": "Islamic Studies",
   "year": "y3",
   "board": "TGA Islamic Studies scheme (aqeedah, fiqh, seerah, hadith, akhlaq)",
-  "source": "Adapted from TGA Drive RE/Islamic Studies folder (Al-Baseerah Salah quiz KS2: blessings, gratitude, praying on time, the nafs delaying prayer, best deeds); National Curriculum RE (KS2)",
+  "source": "Adapted from TGA Drive RE/Islamic Studies folder (Al-Baseerah Salah quiz KS2: blessings, gratitude, praying on time, the nafs delaying prayer, best deeds); National Curriculum RE (KS2) | Spring 1 2027 (lessons 1, 4, 5 upgraded, 13 and 14 new): Year 3 pack Islamic Studies Spring 1 weeks 1 to 5 (tawheed bridge; arrival in Madinah; first masjid; brotherhood; call to prayer); Bukhari reports on the Hijrah, the masjid land, the brotherhood and the adhan described, not quoted; school seerah text for children TO CONFIRM",
   "lessons": [
     {
-      "unit": "Unit 1: Tawheed: believing in Allah alone",
+      "unit": "Spring 1: The Prophet in Madinah",
       "n": 1,
-      "title": "Why did Allah create us?",
-      "duration": 45,
+      "title": "Tawheed bridge: Allah is One, the Creator",
+      "bigQuestion": "Could a beautiful house build itself? What does that tell us about the world?",
       "objectives": [
-        "Explain that Allah created us to worship Him",
-        "Define worship (ibadah) with examples",
-        "Link worship to everyday life"
+        "To understand that tawheed means Allah is One and that everything we see is a sign of Him"
       ],
+      "successCriteria": [
+        "All: say what tawheed means",
+        "Most: give three signs of Allah in creation",
+        "Some: explain why we worship only Allah"
+      ],
+      "smsc": "Spiritual: awe and wonder at creation",
       "keywords": [
         {
-          "term": "ibadah",
-          "def": "worship: everything Allah loves of words and actions"
+          "term": "tawheed (تَوْحِيد)",
+          "def": "believing Allah is One, with no partner"
         },
         {
-          "term": "Rabb",
-          "def": "Lord, Creator and Sustainer"
+          "term": "Creator (الخَالِق)",
+          "def": "Allah, who made everything from nothing"
         },
         {
-          "term": "sincere",
-          "def": "doing something only for Allah"
+          "term": "ayah (آيَة)",
+          "def": "a sign of Allah; also a verse of the Qur'an"
+        },
+        {
+          "term": "worship (عِبَادَة)",
+          "def": "everything we do to please Allah"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Could a beautiful house build itself? What does that tell us about the world?",
+        "a": "Everything made needs a maker. The world shows us Allah, the Creator."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Say: He is Allah, the One. Allah, the Eternal Refuge. He neither begets nor is born, nor is there to Him any equivalent' (al-Ikhlas 112:1-4).",
+        "at": "start"
+      },
       "starter": [
-        "Name the six pillars of iman.",
-        "What does Tawheed mean?",
-        "Name two of Allah's beautiful names and their meanings.",
-        "Why do we say Bismillah?"
+        {
+          "q": "How many pillars of Islam are there?",
+          "a": "Five",
+          "mins": 1,
+          "options": [
+            "Five",
+            "Six",
+            "Three"
+          ]
+        },
+        {
+          "q": "How many pillars of iman are there?",
+          "a": "Six",
+          "mins": 1,
+          "options": [
+            "Six",
+            "Five",
+            "Four"
+          ]
+        },
+        {
+          "q": "Name the first pillar of iman.",
+          "a": "Belief in Allah",
+          "mins": 1
+        },
+        {
+          "q": "Which surah tells us Allah is One?",
+          "a": "Surah al-Ikhlas",
+          "mins": 1,
+          "options": [
+            "Surah al-Ikhlas",
+            "Surah al-Fil"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "Our purpose",
+          "heading": "What is tawheed?",
           "bullets": [
-            "Allah created jinn and humans to worship Him",
-            "Surah adh-Dhariyat 51:56",
-            "Worship is the purpose of life"
+            "Allah is One",
+            "He has no partner, no parent, no child",
+            "We worship Him alone"
           ],
-          "note": "Begin with Bismillah. Read 51:56: I did not create jinn and mankind except to worship Me. Ask: what do you think is the purpose of your life? Collect ideas. Clarify that worship gives life meaning; Allah does not need our worship, we need Him."
+          "note": "Recite Surah al-Ikhlas (112:1-4) together and explain each ayah simply. Tawheed is the most important thing a Muslim believes."
         },
         {
-          "heading": "What is ibadah?",
-          "bullets": [
-            "Prayer, fasting, dua, charity",
-            "Also kindness, honesty and good work",
-            "Done sincerely for Allah"
-          ],
-          "note": "Define ibadah as everything Allah loves, of inner and outer words and deeds. Give examples from school and home. Misconception: worship is only salah; stress that sincere good manners and honest work are worship when done for Allah."
+          "heading": "Signs everywhere",
+          "bullets": [],
+          "note": "Ask pupils to add their own signs in the chat.",
+          "diagram": {
+            "centre": "Signs of Allah the Creator",
+            "items": [
+              "The sun and moon",
+              "Rain and plants",
+              "Animals",
+              "Our bodies",
+              "Day and night"
+            ]
+          }
         },
         {
-          "heading": "Allah needs nothing",
+          "heading": "Only Allah",
           "bullets": [
-            "Allah is rich beyond need",
-            "We need Him",
-            "He is As-Samad"
+            "Only Allah creates",
+            "Only Allah gives life",
+            "So only Allah is worshipped"
           ],
-          "note": "Link to Surah al-Ikhlas: Allah as-Samad, the One everyone needs, who needs no one. Ask: who needs whom? Revisit Year 1."
+          "note": "Link: if Allah alone made us, then He alone deserves our worship (Allah created us to worship Him, 51:56).",
+          "misconception": {
+            "wrong": "We can ask a lucky charm to keep us safe",
+            "right": "Only Allah protects; we ask Him in du'a"
+          }
         },
         {
-          "heading": "Worship with love and fear",
+          "heading": "Quick check",
           "bullets": [
-            "Love Allah",
-            "Hope in His mercy",
-            "Fear His punishment"
+            "Think, then vote"
           ],
-          "note": "Explain the three together: love, hope and fear, as in 17:57 (hoping for His mercy and fearing His punishment). Keep fear balanced and age-appropriate. Encourage a sense of gratitude and awe."
-        },
-        {
-          "heading": "My worship plan",
-          "bullets": [
-            "List five worship actions",
-            "Add one new action",
-            "Say why it is for Allah"
-          ],
-          "note": "Pairs: tell your partner two ways to worship at home. Share with the class. Check they include non-ritual examples."
+          "note": "Launch the poll.",
+          "check": {
+            "q": "What does tawheed mean?",
+            "options": [
+              "Allah is One with no partner",
+              "There are many gods",
+              "Allah is like people"
+            ],
+            "answer": 0,
+            "why": "Tawheed means Allah is One. Surah al-Ikhlas says nothing is like Him."
+          }
         }
       ],
       "practice": [
-        "Fill: Allah is the ______ (Creator).",
-        "Name a pillar of Islam.",
-        "What does Rabb mean?"
+        {
+          "q": "Explain tawheed in one sentence.",
+          "a": "Tawheed means Allah is One and we worship only Him.",
+          "mins": 3,
+          "model": "Tawheed means Allah is One. He has no partner. So I worship only Him."
+        },
+        {
+          "q": "Name two signs of Allah in the sky.",
+          "a": "For example: the sun, the stars",
+          "mins": 2
+        },
+        {
+          "q": "Who do we ask when we need help?",
+          "a": "Allah",
+          "mins": 1,
+          "options": [
+            "Allah",
+            "A lucky charm"
+          ]
+        }
       ],
       "independent": [
-        "List five acts of worship and explain each in one sentence",
-        "Write a paragraph: 'Why did Allah create me?' using 51:56",
-        "Sort cards: worship / not worship, explain borderline cases"
+        {
+          "q": "Make a 'signs of Allah' poster: draw and label four signs from nature.",
+          "a": "Four labelled signs, for example sun, rain, tree, bird.",
+          "mins": 6,
+          "model": "Teacher draws rain falling on a plant and writes: Allah sends rain so plants grow."
+        },
+        {
+          "q": "Extend: write the meaning of Surah al-Ikhlas in your own words.",
+          "a": "Allah is One; He needs nothing; He has no parent or child; nothing is like Him.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: why is it wrong to worship anything other than Allah?",
+          "a": "Because only Allah created us and gives us everything.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Why did Allah create jinn and humans?",
-        "Give an example of worship besides salah."
+        {
+          "q": "Only ... deserves our worship.",
+          "a": "Allah",
+          "mins": 1,
+          "options": [
+            "Allah",
+            "The sun",
+            "People"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what does a well-built world tell us?",
+          "a": "It has a Maker: Allah, the Creator.",
+          "mins": 2
+        }
       ],
-      "homework": "Interview a family member: how do they worship Allah in daily life? Write three notes.",
-      "send": "SEND/EAL: ibadah card sort with pictures; sentence starters. Stretch: explain how a normal task becomes worship through intention."
+      "homework": "Find three signs of Allah at home or outside and tell your family how each one shows Allah's power.",
+      "send": "SEND: picture cards for the signs. EAL: key words with pictures. Stretch: add a sign from the human body and explain it.",
+      "resources": [
+        "Slides",
+        "School-approved seerah text for children (TO CONFIRM title with the Islamic Studies lead)",
+        "Display: tawheed key words",
+        "Pupil PDF worksheet: signs of Allah poster",
+        "Colouring pencils"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "stone house construction",
+          "alt": "A house being built: a house needs a builder",
+          "for": "hook"
+        },
+        {
+          "find": "rainbow over field",
+          "alt": "A rainbow after rain",
+          "for": "teach:2"
+        },
+        {
+          "find": "honeybee on flower",
+          "alt": "A bee on a flower",
+          "for": "keywords"
+        }
+      ]
     },
     {
       "unit": "Unit 1: Tawheed: believing in Allah alone",
@@ -287,193 +417,454 @@
       "send": "SEND/EAL: scenario cards with symbols; sentence frames. Stretch: explain the difference between asking Allah and asking people."
     },
     {
-      "unit": "Unit 2: Seerah: the Prophet ﷺ in Madinah",
+      "unit": "Spring 1: The Prophet in Madinah",
       "n": 4,
-      "title": "Arriving in Madinah and the first masjid",
-      "duration": 45,
+      "title": "Arriving in Madinah: the welcome of the Ansar",
+      "bigQuestion": "Imagine a family moves into your street with nothing. How could you make them feel welcome?",
       "objectives": [
-        "Describe the Prophet's ﷺ arrival in Madinah",
-        "Explain why the masjid was built first",
-        "Explain who the Ansar and Muhajirun were"
+        "To understand how the people of Madinah welcomed the Prophet ﷺ after the Hijrah"
       ],
+      "successCriteria": [
+        "All: order the journey from Makkah to Quba to Madinah",
+        "Most: say who the Ansar were",
+        "Some: explain how the Ansar showed kindness"
+      ],
+      "smsc": "Social: welcoming newcomers and refugees",
       "keywords": [
         {
-          "term": "Muhajirun",
-          "def": "those who migrated from Makkah"
+          "term": "Madinah (المَدِينَة)",
+          "def": "the city the Prophet ﷺ moved to"
         },
         {
-          "term": "Ansar",
-          "def": "the helpers of Madinah"
+          "term": "Hijrah (الهِجْرَة)",
+          "def": "the journey from Makkah to Madinah"
         },
         {
-          "term": "Masjid an-Nabawi",
-          "def": "the Prophet's mosque in Madinah"
+          "term": "Ansar (الأَنْصَار)",
+          "def": "the Muslims of Madinah: the helpers"
+        },
+        {
+          "term": "Quba (قُبَاء)",
+          "def": "a village near Madinah where he stopped first"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Imagine a family moves into your street with nothing. How could you make them feel welcome?",
+        "a": "Greet them, share food, help them settle. The Ansar did all this."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Do not grieve; indeed Allah is with us' (at-Tawbah 9:40), the words the Prophet ﷺ said to Abu Bakr in the cave.",
+        "at": "start"
+      },
       "starter": [
-        "What is Hijrah?",
-        "Who accompanied the Prophet ﷺ?",
-        "What did he say in the cave?",
-        "What is a masjid?"
+        {
+          "q": "What does tawheed mean?",
+          "a": "Allah is One with no partner",
+          "mins": 1,
+          "options": [
+            "Allah is One with no partner",
+            "Allah has a son"
+          ]
+        },
+        {
+          "q": "Where was the Prophet ﷺ born?",
+          "a": "Makkah",
+          "mins": 1,
+          "options": [
+            "Makkah",
+            "Madinah",
+            "London"
+          ]
+        },
+        {
+          "q": "Who hid in the cave with the Prophet ﷺ on the Hijrah?",
+          "a": "Abu Bakr",
+          "mins": 1,
+          "options": [
+            "Abu Bakr",
+            "Bilal"
+          ]
+        },
+        {
+          "q": "Name one sign of Allah.",
+          "a": "For example: the sun",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "A warm welcome",
+          "heading": "Why did he leave Makkah?",
           "bullets": [
-            "The people of Madinah welcomed him",
-            "They were waiting eagerly",
-            "Madinah was formerly Yathrib"
+            "The Quraysh hurt the Muslims",
+            "Allah allowed them to move",
+            "Madinah's people had invited him"
           ],
-          "note": "Bismillah. Show a map from Makkah to Madinah. The city was Yathrib and became Madinat an-Nabi. The Prophet ﷺ arrived after a long journey. Ask: how do you feel when guests arrive?"
+          "note": "Recap the Hijrah briefly. Abu Bakr was with him; Allah says 'Do not grieve, indeed Allah is with us' (at-Tawbah 9:40)."
         },
         {
-          "heading": "Quba and the masjid",
-          "bullets": [
-            "He stayed at Quba and built the first masjid there",
-            "Then he entered Madinah",
-            "He then entered Madinah"
-          ],
-          "note": "Masjid Quba is the first masjid built in Islam; Qur'an 9:108 speaks of a masjid founded on taqwa and Quba is the one usually mentioned. Keep to what is well-known: he rested at Quba, then entered Madinah. Avoid disputed details."
+          "heading": "The journey",
+          "bullets": [],
+          "note": "Point at the map. Explain Quba is just outside Madinah.",
+          "timeline": [
+            {
+              "label": "Leave Makkah",
+              "text": "At night, with Abu Bakr"
+            },
+            {
+              "label": "Cave of Thawr",
+              "text": "Hid for three nights"
+            },
+            {
+              "label": "Quba",
+              "text": "Stopped and built a masjid"
+            },
+            {
+              "label": "Madinah",
+              "text": "Arrived to a joyful welcome"
+            }
+          ]
         },
         {
-          "heading": "Masjid an-Nabawi",
+          "heading": "The Ansar welcome him",
           "bullets": [
-            "His camel stopped where the masjid was built",
-            "He and the Companions built it together",
-            "It was simple, made of palm trunks"
+            "People came out to greet him",
+            "Everyone wanted him as a guest",
+            "He stayed with Abu Ayyub al-Ansari"
           ],
-          "note": "The camel's stopping place is reported in the Seerah (Bukhari mentions the land of orphans of Banu an-Najjar purchased). Emphasise teamwork and simplicity. The masjid was for prayer, learning and community."
+          "note": "The people of Madinah waited every day outside the city. His camel knelt near the home of Abu Ayyub, who became his host."
         },
         {
-          "heading": "Role of the masjid",
+          "heading": "Quick check",
           "bullets": [
-            "Prayer",
-            "Learning",
-            "Helping the community"
+            "Think, then vote"
           ],
-          "note": "Ask: how is a masjid used today? Show masjid manners."
-        },
-        {
-          "heading": "Lessons",
-          "bullets": [
-            "Welcome others",
-            "Work together",
-            "Put worship first"
-          ],
-          "note": "Pairs write a sentence for each lesson. Invite sharing. Praise teamwork."
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Who were the Ansar?",
+            "options": [
+              "The Muslims of Madinah who helped",
+              "The people who hurt the Muslims",
+              "Travellers from Syria"
+            ],
+            "answer": 0,
+            "why": "Ansar means helpers: the Muslims of Madinah."
+          }
         }
       ],
       "practice": [
-        "What is Hijrah?",
-        "Where is Madinah?",
-        "Name the first masjid built.",
-        "What does Ansar mean?"
+        {
+          "q": "Put in order: Madinah, Makkah, Quba, cave.",
+          "a": "Makkah, cave, Quba, Madinah",
+          "mins": 3,
+          "model": "First he left Makkah. Next he hid in the cave. Then he stopped at Quba. Last he reached Madinah."
+        },
+        {
+          "q": "What does Ansar mean?",
+          "a": "Helpers",
+          "mins": 1,
+          "options": [
+            "Helpers",
+            "Travellers"
+          ]
+        },
+        {
+          "q": "Who was the Prophet's ﷺ host in Madinah?",
+          "a": "Abu Ayyub al-Ansari",
+          "mins": 2
+        }
       ],
       "independent": [
-        "Draw a timeline: Makkah -> Quba -> Madinah",
-        "Write a diary entry from a Madinah child who saw the Prophet ﷺ arrive (use respectful language)",
-        "Label parts of the masjid: prayer area, teaching area"
+        {
+          "q": "Write a diary entry from a child in Madinah on the day he arrived. Use 'First', 'Then', 'I felt'.",
+          "a": "For example: First we waited at the edge of the city. Then we saw him coming. I felt so happy.",
+          "mins": 7,
+          "model": "Teacher writes the first line: 'First, we waited outside the city in the hot sun.'"
+        },
+        {
+          "q": "Extend: give two ways the Ansar were kind.",
+          "a": "They welcomed him and offered their homes.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why did he build a masjid at Quba first?",
+          "a": "Worship of Allah came first in the new home.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Why did the Prophet ﷺ build a masjid first?",
-        "Who were the Ansar?"
+        {
+          "q": "The first stop near Madinah was ...",
+          "a": "Quba",
+          "mins": 1,
+          "options": [
+            "Quba",
+            "Ta'if",
+            "Badr"
+          ]
+        },
+        {
+          "q": "Back to our ponder: one way to welcome a new family, like the Ansar did.",
+          "a": "For example: share food and offer help.",
+          "mins": 2
+        }
       ],
-      "homework": "Find out the name of your nearest masjid and what activities it offers.",
-      "send": "SEND/EAL: map and timeline cards. Stretch: write a short speech welcoming a new student in the style of the Ansar."
+      "homework": "Tell your family the journey of the Hijrah in four steps using the words first, next, then, last.",
+      "send": "SEND: four picture cards to order. EAL: sentence starters 'First ... Then ...'. Stretch: diary includes a feeling and a reason.",
+      "resources": [
+        "Slides",
+        "School-approved seerah text for children (TO CONFIRM title with the Islamic Studies lead)",
+        "Map of Makkah and Madinah (shown on screen)",
+        "Pupil PDF worksheet: Madinah diary frame",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Quba Mosque Medina",
+          "alt": "Masjid Quba near Madinah today",
+          "for": "teach:3"
+        },
+        {
+          "find": "Medina map Hijaz",
+          "alt": "A map showing Makkah and Madinah",
+          "for": "teach:2"
+        },
+        {
+          "find": "date palm grove Medina",
+          "alt": "Date palms in Madinah",
+          "for": "hook"
+        }
+      ]
     },
     {
-      "unit": "Unit 2: Seerah: the Prophet ﷺ in Madinah",
+      "unit": "Spring 1: The Prophet in Madinah",
       "n": 5,
       "title": "Brotherhood: the Muhajirun and the Ansar",
-      "duration": 45,
+      "bigQuestion": "Would you share half of everything you own with someone you met yesterday?",
       "objectives": [
-        "Explain how the Ansar helped the Muhajirun",
-        "Describe Abdur-Rahman ibn Awf and Sa'd ibn ar-Rabi'",
-        "Explain generosity and thankfulness"
+        "To understand how the Prophet ﷺ joined the Muhajirun and the Ansar as brothers"
       ],
+      "successCriteria": [
+        "All: say who the Muhajirun and Ansar were",
+        "Most: retell the story of Abdur-Rahman ibn Awf and Sa'd",
+        "Some: explain what brotherhood means today"
+      ],
+      "smsc": "Social: generosity and care for newcomers",
       "keywords": [
         {
-          "term": "brotherhood",
-          "def": "a strong bond between believers"
+          "term": "Muhajirun (المُهَاجِرُون)",
+          "def": "Muslims who moved from Makkah"
         },
         {
-          "term": "generosity",
-          "def": "giving freely to others"
+          "term": "Ansar (الأَنْصَار)",
+          "def": "Muslims of Madinah who helped"
         },
         {
-          "term": "self-reliance",
-          "def": "working for your own living"
+          "term": "brotherhood (أُخُوَّة)",
+          "def": "caring for each other like family"
+        },
+        {
+          "term": "generous",
+          "def": "happy to give and share"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Would you share half of everything you own with someone you met yesterday?",
+        "a": "The Ansar offered just that. Brotherhood in Islam makes people family."
+      },
+      "islamicLink": {
+        "text": "Allah says the Ansar 'give them preference over themselves, even though they are in need' (al-Hashr 59:9).",
+        "at": "start"
+      },
       "starter": [
-        "Who were the Muhajirun?",
-        "What is generosity?",
-        "Where did the Prophet ﷺ build the first masjid?",
-        "What does 'Ansar' mean?"
+        {
+          "q": "What were the walls of the first masjid made of?",
+          "a": "Mud bricks",
+          "mins": 1,
+          "options": [
+            "Mud bricks",
+            "Glass"
+          ]
+        },
+        {
+          "q": "Who sold the land for the masjid?",
+          "a": "Two orphan boys",
+          "mins": 1,
+          "options": [
+            "Two orphan boys",
+            "A king"
+          ]
+        },
+        {
+          "q": "What does Ansar mean?",
+          "a": "Helpers",
+          "mins": 1
+        },
+        {
+          "q": "Name one use of the masjid.",
+          "a": "For example: prayer, learning",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Muhajirun had nothing",
-          "bullets": [
-            "They left homes and wealth",
-            "They arrived with little",
-            "The Ansar shared with them"
-          ],
-          "note": "Bismillah. Ask: what would you do if guests arrived without their things? Qur'an 59:8-9 praises the Muhajirun and the Ansar who loved those who migrated to them and preferred them over themselves."
+          "heading": "Two groups, one family",
+          "bullets": [],
+          "note": "Explain that the Muhajirun had left homes and money behind.",
+          "compare": {
+            "left": {
+              "title": "Muhajirun",
+              "points": [
+                "Came from Makkah",
+                "Left homes and money",
+                "Needed help"
+              ]
+            },
+            "right": {
+              "title": "Ansar",
+              "points": [
+                "Lived in Madinah",
+                "Had homes and farms",
+                "Ready to help"
+              ]
+            },
+            "label": "+"
+          }
         },
         {
-          "heading": "Pairs of brothers",
+          "heading": "Paired as brothers",
           "bullets": [
-            "The Prophet ﷺ paired Muhajirun with Ansar",
-            "They shared homes and wealth",
-            "They loved each other for Allah"
+            "Each Muhajir paired with an Ansari",
+            "They shared homes and work",
+            "Like real brothers"
           ],
-          "note": "Reported in Bukhari. This 'brotherhood' linked each Muhajir with an Ansari. Emphasise the love for Allah's sake."
+          "note": "The Prophet ﷺ joined them as brothers. Allah praises the Ansar who preferred others over themselves (al-Hashr 59:9)."
         },
         {
-          "heading": "Abdur-Rahman and Sa'd",
+          "heading": "Sa'd and Abdur-Rahman",
           "bullets": [
             "Sa'd offered half his wealth",
-            "He offered one of his wives to marry",
-            "Abdur-Rahman said: show me the market"
+            "Abdur-Rahman thanked him kindly",
+            "He asked: show me the market"
           ],
-          "note": "In Bukhari, Sa'd ibn ar-Rabi' offered Abdur-Rahman ibn Awf half his wealth. Abdur-Rahman replied: may Allah bless you in your family and wealth; show me the market. He began trading and became wealthy. Leave out the marriage offer for children; say 'he offered generously'."
+          "note": "Bukhari reports this. Abdur-Rahman made du'a for Sa'd's family and wealth, then worked hard as a trader. Generous giver; hard-working receiver."
         },
         {
-          "heading": "Lessons",
+          "heading": "Quick check",
           "bullets": [
-            "Be generous",
-            "Work hard",
-            "Do not beg if you can work"
+            "Think, then vote"
           ],
-          "note": "Link to honesty in trade. The Prophet ﷺ taught the upper hand is better than the lower hand (Bukhari and Muslim). Explain: giving is better than asking."
-        },
-        {
-          "heading": "Class chain",
-          "bullets": [
-            "Write an act of kindness",
-            "Link it to another",
-            "Make a chain"
-          ],
-          "note": "Create a paper chain with acts of brotherhood. Read some aloud. Praise unique ideas."
+          "note": "Launch the poll.",
+          "check": {
+            "q": "What did Abdur-Rahman ask Sa'd for?",
+            "options": [
+              "To be shown the market",
+              "Half of his house",
+              "A camel"
+            ],
+            "answer": 0,
+            "why": "He chose to work and earn, while thanking Sa'd for his kindness."
+          }
         }
       ],
       "practice": [
-        "Name the two groups of Madinah.",
-        "What is brotherhood?",
-        "Who is Abdur-Rahman ibn Awf?"
+        {
+          "q": "Explain who the Muhajirun were.",
+          "a": "Muslims who moved from Makkah to Madinah",
+          "mins": 3,
+          "model": "The Muhajirun were Muslims who left Makkah. They moved to Madinah for the sake of Allah. They left their homes behind."
+        },
+        {
+          "q": "Sa'd was one of the ...",
+          "a": "Ansar",
+          "mins": 1,
+          "options": [
+            "Ansar",
+            "Muhajirun"
+          ]
+        },
+        {
+          "q": "What two good things did Abdur-Rahman show?",
+          "a": "Thankfulness and hard work",
+          "mins": 2
+        }
       ],
       "independent": [
-        "Retell the story of Abdur-Rahman and Sa'd in 5 sentences",
-        "List three ways to show brotherhood today",
-        "Answer: why was the market a good choice?"
+        {
+          "q": "Write a short speech-bubble conversation between Sa'd and Abdur-Rahman (four lines).",
+          "a": "Sa'd offers to share; Abdur-Rahman thanks him, makes du'a and asks for the market.",
+          "mins": 6,
+          "model": "Teacher writes line 1. Sa'd: 'My brother, take half of what I have.'"
+        },
+        {
+          "q": "Extend: how can you be like the Ansar to a new pupil?",
+          "a": "For example: show them around and include them.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why was it good that Abdur-Rahman chose to work?",
+          "a": "He did not want to be a burden; he earned his own living.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "What did Sa'd offer?",
-        "What did Abdur-Rahman say?"
+        {
+          "q": "The Prophet ﷺ joined the Muhajirun and Ansar as ...",
+          "a": "Brothers",
+          "mins": 1,
+          "options": [
+            "Brothers",
+            "Enemies",
+            "Strangers"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what did the Ansar's sharing show?",
+          "a": "That Islam makes Muslims one family who care for each other.",
+          "mins": 2
+        }
       ],
-      "homework": "Do an act of generosity this week and write a short reflection.",
-      "send": "SEND/EAL: story sequence cards with key words. Stretch: explain the hadith about the upper hand."
+      "homework": "Do one act of brotherhood or sisterhood this week (share, help, include) and write one sentence about it.",
+      "send": "SEND: two-column picture sort. EAL: speech-bubble frame. Stretch: link to 59:9 and explain 'preferred others over themselves'.",
+      "resources": [
+        "Slides",
+        "School-approved seerah text for children (TO CONFIRM title with the Islamic Studies lead)",
+        "Map of Makkah and Madinah (shown on screen)",
+        "Pupil PDF worksheet: speech-bubble frame",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "market stall dates souk",
+          "alt": "A market where traders work",
+          "for": "teach:3"
+        },
+        {
+          "find": "two hands shaking",
+          "alt": "Two hands joined in friendship",
+          "for": "hook"
+        },
+        {
+          "find": "Medina old city",
+          "alt": "Madinah, where the brotherhood began",
+          "for": "keywords"
+        }
+      ]
     },
     {
       "unit": "Unit 2: Seerah: the Prophet ﷺ in Madinah",
@@ -1138,6 +1529,443 @@
       ],
       "homework": "Practise one anger strategy this week and report back.",
       "send": "SEND/EAL: feelings cards and sentence frames. Stretch: explain why forgiveness is strong."
+    },
+    {
+      "unit": "Spring 1: The Prophet in Madinah",
+      "n": 13,
+      "title": "Building the first masjid in Madinah",
+      "bigQuestion": "If you moved to a new town, what is the first building you would want to find, and why?",
+      "objectives": [
+        "To understand why the Prophet ﷺ built the masjid first and how everyone helped"
+      ],
+      "successCriteria": [
+        "All: say what the masjid was built from",
+        "Most: explain why the masjid came first",
+        "Some: describe what the masjid was used for"
+      ],
+      "smsc": "Social: working together for the community",
+      "keywords": [
+        {
+          "term": "masjid (مَسْجِد)",
+          "def": "a place where Muslims pray"
+        },
+        {
+          "term": "Masjid an-Nabawi (المَسْجِد النَّبَوِيّ)",
+          "def": "the Prophet's ﷺ masjid in Madinah"
+        },
+        {
+          "term": "together",
+          "def": "everyone working as one team"
+        },
+        {
+          "term": "build",
+          "def": "to make something by putting parts together"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you moved to a new town, what is the first building you would want to find, and why?",
+        "a": "A masjid: it is the heart of a Muslim community."
+      },
+      "islamicLink": {
+        "text": "Allah praises a masjid 'founded on righteousness from the first day' (at-Tawbah 9:108).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "What does Ansar mean?",
+          "a": "Helpers",
+          "mins": 1,
+          "options": [
+            "Helpers",
+            "Travellers",
+            "Traders"
+          ]
+        },
+        {
+          "q": "Where did the Prophet ﷺ stop before Madinah?",
+          "a": "Quba",
+          "mins": 1,
+          "options": [
+            "Quba",
+            "Ta'if"
+          ]
+        },
+        {
+          "q": "Who was his host in Madinah?",
+          "a": "Abu Ayyub al-Ansari",
+          "mins": 1
+        },
+        {
+          "q": "What does Hijrah mean?",
+          "a": "The journey from Makkah to Madinah",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The land",
+          "bullets": [
+            "Land belonged to two orphan boys",
+            "The Prophet ﷺ paid for it",
+            "He did not just take it"
+          ],
+          "note": "Bukhari reports the land was bought from two orphan boys. Ask: what does this teach us? (Be fair, pay for what you take.)"
+        },
+        {
+          "heading": "Everyone helped",
+          "bullets": [
+            "Mud bricks for walls",
+            "Palm trunks for pillars",
+            "Palm leaves for the roof",
+            "The Prophet ﷺ carried bricks too"
+          ],
+          "note": "Bukhari describes the walls of mud brick, pillars of palm trunk and a roof of palm branches. Leaders help with the work."
+        },
+        {
+          "heading": "More than a prayer hall",
+          "bullets": [],
+          "note": "Ask pupils which are still true of masajid today.",
+          "diagram": {
+            "centre": "The first masjid",
+            "items": [
+              "Prayer five times a day",
+              "Learning the Qur'an",
+              "Meeting and deciding",
+              "Helping the poor",
+              "A home for poor Companions"
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Think, then vote"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "What did the Prophet ﷺ do while the masjid was built?",
+            "options": [
+              "Carried bricks with everyone",
+              "Watched from far away",
+              "Went back to Makkah"
+            ],
+            "answer": 0,
+            "why": "He worked beside the Companions: a leader who helps."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "What was the masjid made from?",
+          "a": "Mud bricks, palm trunks and palm leaves",
+          "mins": 3,
+          "model": "Walls: mud bricks. Pillars: palm trunks. Roof: palm leaves. Simple, but full of iman."
+        },
+        {
+          "q": "Why did he pay for the land?",
+          "a": "To be fair to the orphan boys",
+          "mins": 2,
+          "options": [
+            "To be fair to the orphan boys",
+            "Because it was a game"
+          ]
+        },
+        {
+          "q": "Name one use of the masjid apart from prayer.",
+          "a": "For example: learning",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Label a drawing of the first masjid: walls, pillars, roof, and what each was made of.",
+          "a": "Walls: mud brick; pillars: palm trunks; roof: palm leaves",
+          "mins": 6,
+          "model": "Teacher draws one wall and labels it 'mud brick wall'."
+        },
+        {
+          "q": "Extend: write two sentences on how everyone helped.",
+          "a": "Everyone carried bricks. The Prophet ﷺ carried bricks too.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: why do you think the masjid came first?",
+          "a": "Prayer and worship of Allah are the centre of Muslim life.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "The pillars were made of ...",
+          "a": "Palm trunks",
+          "mins": 1,
+          "options": [
+            "Palm trunks",
+            "Glass",
+            "Metal"
+          ]
+        },
+        {
+          "q": "Back to our ponder: why is the masjid the heart of a community?",
+          "a": "We pray, learn and help each other there.",
+          "mins": 2
+        }
+      ],
+      "homework": "Ask an adult about your local masjid: what happens there besides prayer? Bring one fact.",
+      "send": "SEND: picture labels to drag onto the drawing. EAL: word bank (brick, palm, roof). Stretch: compare the first masjid with a masjid today.",
+      "resources": [
+        "Slides",
+        "School-approved seerah text for children (TO CONFIRM title with the Islamic Studies lead)",
+        "Pupil PDF worksheet: label the first masjid",
+        "Colouring pencils"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "mud brick wall",
+          "alt": "A wall of mud bricks",
+          "for": "teach:2"
+        },
+        {
+          "find": "date palm trunk",
+          "alt": "A palm trunk like the first pillars",
+          "for": "keywords"
+        },
+        {
+          "find": "Masjid an-Nabawi exterior",
+          "alt": "Masjid an-Nabawi in Madinah today",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: The Prophet in Madinah",
+      "n": 14,
+      "title": "The community learns to call to prayer",
+      "bigQuestion": "Before clocks and phones, how could a whole town know it was time to pray together?",
+      "objectives": [
+        "To understand how the Muslims of Madinah came to use the adhan to call people to prayer"
+      ],
+      "successCriteria": [
+        "All: say why the community needed a call to prayer",
+        "Most: retell how the adhan was chosen",
+        "Some: say the first words of the adhan and what they mean"
+      ],
+      "smsc": "Spiritual: answering the call to prayer",
+      "keywords": [
+        {
+          "term": "adhan (الأَذَان)",
+          "def": "the call to prayer"
+        },
+        {
+          "term": "mu'adhdhin (مُؤَذِّن)",
+          "def": "the person who calls the adhan"
+        },
+        {
+          "term": "Bilal (بِلَال)",
+          "def": "the first mu'adhdhin of Islam"
+        },
+        {
+          "term": "community",
+          "def": "people who live, pray and work together"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Before clocks and phones, how could a whole town know it was time to pray together?",
+        "a": "The Muslims thought about bells, horns and fires, then chose the human voice: the adhan."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'O you who have believed, when [the adhan] is called for the prayer on the day of Jumu'ah, then proceed to the remembrance of Allah' (al-Jumu'ah 62:9).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Who were the Muhajirun?",
+          "a": "Muslims who moved from Makkah",
+          "mins": 1,
+          "options": [
+            "Muslims who moved from Makkah",
+            "People of Madinah"
+          ]
+        },
+        {
+          "q": "What did Abdur-Rahman ask Sa'd for?",
+          "a": "To be shown the market",
+          "mins": 1,
+          "options": [
+            "To be shown the market",
+            "A house"
+          ]
+        },
+        {
+          "q": "What were the masjid pillars made of?",
+          "a": "Palm trunks",
+          "mins": 1
+        },
+        {
+          "q": "How many daily prayers are there?",
+          "a": "Five",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "A problem to solve",
+          "bullets": [
+            "People came to the masjid at different times",
+            "They guessed when to pray",
+            "They met to decide what to do"
+          ],
+          "note": "Bukhari reports the Muslims of Madinah gathered and discussed how to call people to prayer."
+        },
+        {
+          "heading": "Ideas they talked about",
+          "bullets": [],
+          "note": "Explain that Muslims wanted their own way, not copying others' worship.",
+          "sort": {
+            "columns": [
+              "Idea they talked about",
+              "What was chosen"
+            ],
+            "cards": [
+              "Ringing a bell",
+              "Blowing a horn",
+              "Lighting a fire",
+              "A man calling with his voice"
+            ],
+            "answer": [
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "heading": "Bilal calls the adhan",
+          "bullets": [
+            "Umar suggested a man calling",
+            "The Prophet ﷺ told Bilal to call",
+            "Bilal had a strong voice"
+          ],
+          "note": "Bukhari reports the Prophet ﷺ said to Bilal to stand and call for prayer. Other reports describe a Companion, Abdullah ibn Zayd, seeing the words in a dream. Say the opening words: اللَّهُ أَكْبَرُ (Allahu akbar: Allah is the Greatest)."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Think, then vote"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Who was the first person to call the adhan?",
+            "options": [
+              "Bilal",
+              "Abu Bakr",
+              "Sa'd"
+            ],
+            "answer": 0,
+            "why": "Bilal was told by the Prophet ﷺ to call; he became the first mu'adhdhin."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Why did the Muslims need a call to prayer?",
+          "a": "So everyone knew when to come and pray together",
+          "mins": 3,
+          "model": "People arrived at different times. They wanted to pray together. So they needed a signal that everyone could hear."
+        },
+        {
+          "q": "The person who calls the adhan is the ...",
+          "a": "Mu'adhdhin",
+          "mins": 1,
+          "options": [
+            "Mu'adhdhin",
+            "Imam of a shop"
+          ]
+        },
+        {
+          "q": "What does Allahu akbar mean?",
+          "a": "Allah is the Greatest",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Draw a four-box story strip: the problem, the meeting, the choice, Bilal's call. Add a caption to each.",
+          "a": "Problem: people did not know the time. Meeting: ideas shared. Choice: a voice. Bilal called the adhan.",
+          "mins": 6,
+          "model": "Teacher captions box 1: 'People came to pray at different times.'"
+        },
+        {
+          "q": "Extend: what should we do when we hear the adhan?",
+          "a": "Stop, listen, repeat the words and get ready to pray.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why is a human voice a good way to call to prayer?",
+          "a": "It uses Allah's words of praise and calls people kindly.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "The adhan begins with ...",
+          "a": "Allahu akbar",
+          "mins": 1,
+          "options": [
+            "Allahu akbar",
+            "Assalamu alaykum",
+            "Bismillah"
+          ]
+        },
+        {
+          "q": "Back to our ponder: how did Madinah know it was time to pray?",
+          "a": "Bilal called the adhan with his voice.",
+          "mins": 2
+        }
+      ],
+      "homework": "Listen to the adhan at home (from the masjid or a prayer-time app) and repeat the words after the mu'adhdhin.",
+      "send": "SEND: four picture boxes with sentence strips. EAL: adhan opening words with meaning card. Stretch: explain why Muslims chose their own way.",
+      "resources": [
+        "Slides",
+        "School-approved seerah text for children (TO CONFIRM title with the Islamic Studies lead)",
+        "Adhan words card (Arabic with meaning)",
+        "Pupil PDF worksheet: four-box story strip",
+        "Colouring pencils"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "minaret Medina",
+          "alt": "A minaret, where the adhan is called",
+          "for": "hook"
+        },
+        {
+          "find": "Masjid an-Nabawi minaret",
+          "alt": "A minaret of the Prophet's masjid",
+          "for": "keywords"
+        },
+        {
+          "find": "old wall clock",
+          "alt": "A clock: they had no clocks to tell prayer times",
+          "for": "teach:1"
+        }
+      ]
     }
   ]
 }

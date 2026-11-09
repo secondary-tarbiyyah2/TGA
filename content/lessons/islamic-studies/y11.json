@@ -3,7 +3,7 @@
   "year": "y11",
   "board": "Pearson Edexcel International GCSE (9-1) Islamic Studies (4IS1)",
   "boardShort": "Edexcel IGCSE 4IS1",
-  "source": "Drive: Islamic Studies schemes folder - Edexcel International GCSE Islamic Studies Specification (4IS1) and 'Islamic Studies KS4 SOW' used for content areas 1.8, 1.9, 2.1, 2.2, 2.3 and Appendix 5 passages (33:9, 5:3, 112:1-4, 9:128-129, 4:163); assumes Year 11 pupils have already covered spec 1.1-1.7 in Year 10; RE folder checked (KS3 material only) | Edexcel specification 4IS1 (school Drive copy) as recorded in content/syllabus/ks4/islamic-studies.json; new lessons for units not yet covered: 2.4-2.9 and 3.6-3.9, plus one extra lesson deepening 2.2 (the six earlier prophets). Units 1.8, 1.9, 2.1, 2.2 and 2.3 are already covered in content/lessons/islamic-studies/y11.json (12 lessons) and are not duplicated here. | Gap-fill against Pearson Edexcel International GCSE Islamic Studies 4IS1 specification",
+  "source": "Drive: Islamic Studies schemes folder - Edexcel International GCSE Islamic Studies Specification (4IS1) and 'Islamic Studies KS4 SOW' used for content areas 1.8, 1.9, 2.1, 2.2, 2.3 and Appendix 5 passages (33:9, 5:3, 112:1-4, 9:128-129, 4:163); assumes Year 11 pupils have already covered spec 1.1-1.7 in Year 10; RE folder checked (KS3 material only) | Edexcel specification 4IS1 (school Drive copy) as recorded in content/syllabus/ks4/islamic-studies.json; new lessons for units not yet covered: 2.4-2.9 and 3.6-3.9, plus one extra lesson deepening 2.2 (the six earlier prophets). Units 1.8, 1.9, 2.1, 2.2 and 2.3 are already covered in content/lessons/islamic-studies/y11.json (12 lessons) and are not duplicated here. | Gap-fill against Pearson Edexcel International GCSE Islamic Studies 4IS1 specification | Spring 1 2027 (lessons 35 to 42 new): Year 11 pack Islamic Studies founding-year fast-teach (week of 11 Jan 2.1 to 2.4; 18 Jan 2.5 to 2.9; 25 Jan 3.6 and 3.7; 1 Feb 3.8 and 3.9; mock week of 8 Feb not written as lessons), with portal lessons 8 to 34 as independent study; set passages 112:1-4, 9:128-129, 4:163, the predestination hadith with 92:5-10, 101:1-11, 2:97-98, 5:48, 49:11-13, 9:117, 49:15, the hadith of Abu 'Ubaid, 30:21, 46:15-18 and the guardian hadith; Shia content taught factually; approved resources for Shia content and the cohort's prior coverage TO CONFIRM",
   "lessons": [
     {
       "unit": "Unit 1: Section A - The battles fought by the Prophet (spec 1.8)",
@@ -4569,6 +4569,1876 @@
       ],
       "board": "Pearson Edexcel International GCSE (9-1) Islamic Studies (4IS1)",
       "boardShort": "Edexcel IGCSE 4IS1"
+    },
+    {
+      "unit": "Spring 1: Section B beliefs and 3.6 to 3.9 (founding-year fast-teach)",
+      "n": 35,
+      "title": "Fast-teach 2.1 and 2.2: Tawhid, the attributes of Allah, shirk and nifaq; risalah (Qur'an 112:1-4, 9:128-129)",
+      "duration": 50,
+      "bigQuestion": "If Allah is One, what follows for how a Muslim lives every day?",
+      "objectives": [
+        "To understand the nature of belief in Allah and the importance of risalah for Muslims"
+      ],
+      "successCriteria": [
+        "All: explain Tawhid using the set passage 112:1-4",
+        "Most: explain shirk and nifaq and why they are serious",
+        "Some: explain why risalah is needed, using 9:128-129"
+      ],
+      "smsc": "Spiritual: the Oneness of Allah as the centre of belief",
+      "keywords": [
+        {
+          "term": "Tawhid (تَوْحِيد)",
+          "def": "the Oneness of Allah"
+        },
+        {
+          "term": "shirk (شِرْك)",
+          "def": "associating partners with Allah"
+        },
+        {
+          "term": "nifaq (نِفَاق)",
+          "def": "hypocrisy: showing faith while hiding disbelief"
+        },
+        {
+          "term": "risalah (رِسَالَة)",
+          "def": "prophethood: Allah's message through messengers"
+        },
+        {
+          "term": "al-Qadir (الْقَادِر)",
+          "def": "the All-Powerful"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If Allah is One, what follows for how a Muslim lives every day?",
+        "a": "Worship, trust and love are for Allah alone; no partner in anything; and following the messengers He sent."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Say: He is Allah, One. Allah, the Eternal Refuge. He neither begets nor is born, nor is there to Him any equivalent' (al-Ikhlas 112:1-4). قُلْ هُوَ اللَّهُ أَحَدٌ",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which set passage goes with 1.5?",
+          "a": "33:36",
+          "mins": 1,
+          "options": [
+            "33:36",
+            "112:1-4"
+          ]
+        },
+        {
+          "q": "Which Companion slept in the Prophet's ﷺ bed on the night of the Hijrah?",
+          "a": "Ali",
+          "mins": 1,
+          "options": [
+            "Ali",
+            "Abu Bakr"
+          ]
+        },
+        {
+          "q": "Which battle was in Ramadan 2 AH?",
+          "a": "Badr",
+          "mins": 1,
+          "options": [
+            "Badr",
+            "Uhud",
+            "Khaybar"
+          ]
+        },
+        {
+          "q": "Name the three sections of the 4IS1 paper.",
+          "a": "A: the Prophet's ﷺ life; B: beliefs and the early community; C: living the Muslim life",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Set passage: 112:1-4",
+          "bullets": [],
+          "note": "Begin with Bismillah. Fast-teach for the founding Year 11: portal lessons y11 8 to 13 are independent study. Annotate each ayah.",
+          "table": {
+            "head": [
+              "Ayah",
+              "Meaning",
+              "Belief shown"
+            ],
+            "rows": [
+              [
+                "112:1",
+                "Allah is One (Ahad)",
+                "Tawhid: no partner"
+              ],
+              [
+                "112:2",
+                "As-Samad: all depend on Him",
+                "He needs no one"
+              ],
+              [
+                "112:3",
+                "Neither begets nor is born",
+                "Not like creation"
+              ],
+              [
+                "112:4",
+                "None is equal to Him",
+                "Unique in every way"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Attributes of Allah",
+          "bullets": [
+            "Omnipotent: al-Qadir, all-powerful",
+            "Creator: al-Khaliq, of everything",
+            "Merciful: ar-Rahman, ar-Rahim",
+            "Just: al-'Adl, never wrongs anyone"
+          ],
+          "note": "The spec names these attributes. Ask how each affects a Muslim: trust (omnipotence), gratitude (creator), hope (mercy), responsibility (justice)."
+        },
+        {
+          "heading": "Shirk and nifaq",
+          "bullets": [
+            "Shirk: the one sin not forgiven if unrepented (4:48)",
+            "Shirk is a great injustice (31:13)",
+            "Nifaq: three signs: lies, breaks promises, betrays trust",
+            "Hypocrites in the lowest depth of the Fire (4:145)"
+          ],
+          "note": "The three signs of a hypocrite are in Bukhari and Muslim. Historical example: Abdullah ibn Ubayy withdrew about a third of the army before Uhud (seerah).",
+          "check": {
+            "q": "Which is an example of nifaq?",
+            "options": [
+              "Praying in public but secretly mocking Islam",
+              "Worshipping an idol openly",
+              "Forgetting a prayer",
+              "Asking a question about faith"
+            ],
+            "answer": 0,
+            "why": "Nifaq is showing faith while hiding disbelief. Open idol worship is shirk; forgetting and asking questions are not hypocrisy."
+          }
+        },
+        {
+          "heading": "Risalah (2.2): set passage 9:128-129",
+          "bullets": [
+            "A Messenger from among yourselves (9:128)",
+            "Grieved by your suffering; kind and merciful",
+            "'Sufficient for me is Allah' (9:129)",
+            "Earlier prophets: Adam, Ibrahim, Isma'il, Musa, Dawud, Isa"
+          ],
+          "note": "Risalah is needed because humans need guidance from Allah on how to worship and live. The messengers are examples and warners. Portal lesson y11 13 covers the earlier prophets' lives."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain what 112:1-4 teaches about the nature of Allah.",
+          "a": "He is One, the Eternal Refuge on whom all depend, not born and has no child, and nothing is like Him: so He alone deserves worship.",
+          "mins": 4,
+          "model": "I do: 'Point: 112:1 teaches that Allah is One. Explain: there is no partner or division in Him. Point: 112:3 says He neither begets nor is born. Explain: He is not like creation, which comes into being and passes away. Link: so only Allah deserves worship (Tawhid).'"
+        },
+        {
+          "q": "Which ayah says shirk is a great injustice?",
+          "a": "31:13",
+          "mins": 1,
+          "options": [
+            "31:13",
+            "4:163",
+            "9:128"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "In the portal response box: 'Explain why shirk is regarded as the greatest sin in Islam.' Then: 'Explain the importance of risalah for Muslims, referring to 9:128-129.'",
+          "a": "Shirk: denies Tawhid, injustice to Allah (31:13), unforgiven if unrepented (4:48). Risalah: guidance, mercy (9:128), example, reliance on Allah (9:129).",
+          "mins": 11,
+          "model": "Teacher models the first sentence of each: 'Shirk is regarded as the greatest sin because it gives to others what belongs to Allah alone ...' and 'Risalah matters because Allah sent messengers from among people, as 9:128 says ...'"
+        },
+        {
+          "q": "Extend: give one way belief in each attribute (omnipotent, creator, merciful, just) affects a Muslim.",
+          "a": "Trust; gratitude; hope and repentance; fairness and accountability.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "What does as-Samad (112:2) mean?",
+          "a": "The Eternal Refuge on whom all depend",
+          "mins": 1,
+          "options": [
+            "The Eternal Refuge on whom all depend",
+            "The Creator of the heavens",
+            "The Judge"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what follows from Allah being One?",
+          "a": "Worship, trust and obedience are for Him alone, through the guidance of His messengers.",
+          "mins": 2
+        }
+      ],
+      "homework": "Independent study: portal lessons y11 8 to 13. Learn 112:1-4 and 9:128-129 with meanings.",
+      "send": "SEND: annotation sheet with ayat printed. EAL: glossary. Stretch: plan a 12-mark answer on 'Belief in the Oneness of Allah is the most important belief for Muslims.'",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: set-passage annotations and explain frames",
+        "Mushaf with translation (112:1-4, 9:128-129, 4:48, 31:13)",
+        "Portal lessons islamic-studies y11 8 to 13 (independent study)",
+        "Pearson Edexcel International GCSE Islamic Studies (4IS1) specification, Appendix 5 set passages",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Surah Ikhlas calligraphy",
+          "alt": "Calligraphy of Surah al-Ikhlas",
+          "for": "teach:1"
+        },
+        {
+          "find": "night sky galaxy",
+          "alt": "The heavens, created by Allah",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Section B beliefs and 3.6 to 3.9 (founding-year fast-teach)",
+      "n": 36,
+      "title": "Fast-teach 2.3 and 2.4: the holy books and al-Qadr (Qur'an 4:163; the hadith on predestination with 92:5-10)",
+      "duration": 50,
+      "bigQuestion": "If Allah already knows where you will end up, why does what you do matter?",
+      "objectives": [
+        "To understand Muslim belief about the holy books and about al-Qadr, free will and suffering"
+      ],
+      "successCriteria": [
+        "All: name the holy books and their prophets using 4:163",
+        "Most: explain the set passage on predestination and 92:5-10",
+        "Some: evaluate how Muslims reconcile al-Qadr, free will and suffering"
+      ],
+      "smsc": "Spiritual: trust in Allah's wisdom during hardship",
+      "keywords": [
+        {
+          "term": "kutub (كُتُب)",
+          "def": "the revealed books"
+        },
+        {
+          "term": "al-Qadr (الْقَدَر)",
+          "def": "Allah's decree and predestination"
+        },
+        {
+          "term": "ikhtiyar",
+          "def": "free will: the choice Allah gives humans"
+        },
+        {
+          "term": "ibtila' (ابْتِلَاء)",
+          "def": "testing through good and hardship"
+        },
+        {
+          "term": "Suhuf Ibrahim (صُحُف إِبْرَاهِيم)",
+          "def": "the scrolls of Ibrahim"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If Allah already knows where you will end up, why does what you do matter?",
+        "a": "Allah's knowledge does not force us: 'Act, for each is made easy for what he was created for' (Bukhari and Muslim), then 92:5-10."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'We have revealed to you as We revealed to Nuh and the prophets after him ... and to Dawud We gave the Zabur' (an-Nisa 4:163). This is the set passage for 2.3.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which set passage goes with 2.1?",
+          "a": "112:1-4",
+          "mins": 1,
+          "options": [
+            "112:1-4",
+            "9:128-129"
+          ]
+        },
+        {
+          "q": "Name the three signs of a hypocrite.",
+          "a": "He lies, breaks promises, betrays trust",
+          "mins": 1
+        },
+        {
+          "q": "Which ayah says shirk is unforgiven if unrepented?",
+          "a": "4:48",
+          "mins": 1,
+          "options": [
+            "4:48",
+            "31:13"
+          ]
+        },
+        {
+          "q": "Which set passage goes with 2.2?",
+          "a": "9:128-129",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "2.3 The holy books",
+          "bullets": [],
+          "note": "Begin with Bismillah. Portal lessons y11 12, 14 and 15 are independent study. The Qur'an is final and protected (15:9) and confirms and guards over earlier books (5:48).",
+          "table": {
+            "head": [
+              "Book",
+              "Prophet",
+              "Status for Muslims"
+            ],
+            "rows": [
+              [
+                "Suhuf",
+                "Ibrahim",
+                "Revealed; not preserved (87:18-19)"
+              ],
+              [
+                "Tawrat",
+                "Musa",
+                "Revealed; changed over time"
+              ],
+              [
+                "Zabur",
+                "Dawud (4:163)",
+                "Revealed; changed over time"
+              ],
+              [
+                "Injil",
+                "Isa",
+                "Revealed; changed over time"
+              ],
+              [
+                "Qur'an",
+                "Muhammad ﷺ",
+                "Final, protected (15:9)"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "2.4 Set passage: the hadith and 92:5-10",
+          "bullets": [
+            "Every person's place is already written",
+            "'Shall we not rely on that and stop acting?'",
+            "'Act, for each is made easy for what he was created for'",
+            "Then he recited 92:5-10"
+          ],
+          "note": "Narrated by Ali (Bukhari and Muslim). 92:5-10: whoever gives, fears Allah and believes in the best reward, We will ease him towards ease; whoever is stingy, thinks himself free of need and denies the best, We will ease him towards difficulty. Knowledge is Allah's; action and choice are ours."
+        },
+        {
+          "heading": "Decree and free will",
+          "bullets": [],
+          "note": "Early debates: some groups denied qadar (the Qadariyyah); others denied human choice (the Jabriyyah). Sunni scholars hold both: Allah's complete decree and real human responsibility. Shia theology also affirms qadar and especially stresses Allah's justice ('adl) and human free will.",
+          "compare": {
+            "left": {
+              "title": "Allah's decree",
+              "points": [
+                "Knows all (knowledge)",
+                "Wrote all (writing)",
+                "Wills and creates all"
+              ]
+            },
+            "right": {
+              "title": "Human responsibility",
+              "points": [
+                "Real choices",
+                "Judged on actions",
+                "'Act' (the hadith)"
+              ]
+            },
+            "label": "and"
+          }
+        },
+        {
+          "heading": "Evil and suffering",
+          "bullets": [
+            "Life is a test (67:2)",
+            "Patience in loss: 'To Allah we belong' (2:155-156)",
+            "Much evil comes from human choices",
+            "Justice is complete in the Akhirah"
+          ],
+          "note": "12-mark statement for 2.4: 'If everything is decreed, people cannot be held responsible for their actions.' Assess this statement.",
+          "check": {
+            "q": "What did the Prophet ﷺ answer to 'shall we just rely on what is written?'",
+            "options": [
+              "'Act, for each is made easy for what he was created for'",
+              "'Yes, actions do not matter'",
+              "'Nothing is written'",
+              "'Only scholars must act'"
+            ],
+            "answer": 0,
+            "why": "He commanded action: decree does not cancel responsibility. Saying nothing is written denies qadar."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain what the hadith on predestination and 92:5-10 teach about al-Qadr.",
+          "a": "Allah knows and has written everyone's end, yet people must act; each is eased towards what they choose: giving and taqwa lead to ease, stinginess and denial to difficulty.",
+          "mins": 4,
+          "model": "I do: 'Point: the hadith teaches that Allah has already written each person's destination. Evidence: ... Explain: but the Prophet ﷺ said \"act\", so knowledge does not remove choice. Then 92:5-10 shows ...'"
+        },
+        {
+          "q": "Which ayah says life is a test of who is best in deeds?",
+          "a": "67:2",
+          "mins": 1,
+          "options": [
+            "67:2",
+            "4:163",
+            "92:5"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "12-mark answer in the portal response box (or Forms long answer): 'If everything is decreed, people cannot be held responsible for their actions.' Assess this statement.",
+          "a": "For: if Allah wrote everything, choice seems unreal; Jabriyyah view. Against: the hadith 'act'; 92:5-10; 99:7-8; Allah's justice; Shia emphasis on free will. Weighing and justified conclusion.",
+          "mins": 12,
+          "model": "Teacher models the 'for' opening: 'Some people argue that if Allah has decreed everything, humans are not truly free. For example, the hadith says every person's place is already written ...'"
+        },
+        {
+          "q": "Extend: explain why Muslims believe the earlier books are not in their original form.",
+          "a": "They were entrusted to their communities and changed over time (2:79); only the Qur'an is promised protection (15:9).",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which book was given to Dawud (4:163)?",
+          "a": "The Zabur",
+          "mins": 1,
+          "options": [
+            "The Zabur",
+            "The Injil",
+            "The Tawrat"
+          ]
+        },
+        {
+          "q": "Back to our ponder: why do actions matter if Allah knows the end?",
+          "a": "His knowledge does not force us; we choose and are judged; 'act'.",
+          "mins": 2
+        }
+      ],
+      "homework": "Independent study: portal lessons y11 12, 14 and 15. Finish the 12-mark answer.",
+      "send": "SEND: decree and responsibility cards to sort. EAL: glossary. Stretch: add the Shia emphasis on 'adl to your evaluation.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: books table and 12-mark frame",
+        "Mushaf with translation (4:163, 92:5-10, 67:2, 2:155-156)",
+        "Portal lessons islamic-studies y11 12, 14, 15 (independent study)",
+        "Pearson Edexcel International GCSE Islamic Studies (4IS1) specification, Appendix 5 set passages",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "old scrolls",
+          "alt": "Ancient scrolls",
+          "for": "teach:1"
+        },
+        {
+          "find": "crossroads path",
+          "alt": "A fork in a path: choice",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Section B beliefs and 3.6 to 3.9 (founding-year fast-teach)",
+      "n": 37,
+      "title": "Fast-teach 2.5 and 2.6: Akhirah and Malaikah (Qur'an 101:1-11, 2:97-98)",
+      "duration": 50,
+      "bigQuestion": "How would you live differently if you were certain your deeds would be weighed?",
+      "objectives": [
+        "To understand Muslim belief about life after death and about the angels"
+      ],
+      "successCriteria": [
+        "All: describe the stages of the Akhirah",
+        "Most: explain the set passages 101:1-11 and 2:97-98",
+        "Some: explain how belief in the Akhirah and angels affects Muslim life"
+      ],
+      "smsc": "Moral: accountability for our actions",
+      "keywords": [
+        {
+          "term": "Akhirah (الْآخِرَة)",
+          "def": "the life after death"
+        },
+        {
+          "term": "Barzakh (الْبَرْزَخ)",
+          "def": "the barrier between death and resurrection"
+        },
+        {
+          "term": "Yawm ad-Din (يَوْمُ الدِّين)",
+          "def": "the Day of Judgement"
+        },
+        {
+          "term": "Malaikah (مَلَائِكَة)",
+          "def": "angels"
+        },
+        {
+          "term": "Jannah and Jahannam",
+          "def": "Paradise and Hell"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How would you live differently if you were certain your deeds would be weighed?",
+        "a": "Muslims believe exactly this (101:6-9): heavy scales bring a pleasing life; light scales bring the Fire."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'As for one whose scales are heavy, he will be in a pleasing life. But as for one whose scales are light, his refuge will be an abyss' (al-Qari'ah 101:6-9).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which book was given to Isa?",
+          "a": "The Injil",
+          "mins": 1,
+          "options": [
+            "The Injil",
+            "The Zabur"
+          ]
+        },
+        {
+          "q": "What did the Prophet ﷺ answer about relying on what is written?",
+          "a": "'Act, for each is made easy for what he was created for'",
+          "mins": 1
+        },
+        {
+          "q": "Which surah follows the predestination hadith?",
+          "a": "Al-Layl (92:5-10)",
+          "mins": 1,
+          "options": [
+            "Al-Layl (92:5-10)",
+            "Al-Ikhlas"
+          ]
+        },
+        {
+          "q": "Which ayah says life is a test?",
+          "a": "67:2",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "2.5 Stages of the Akhirah",
+          "bullets": [],
+          "note": "Begin with Bismillah. Portal lessons y11 16, 17 and 34 are independent study. Barzakh: 23:100.",
+          "timeline": [
+            {
+              "label": "Death",
+              "text": "The soul is taken by the Angel of Death (32:11)"
+            },
+            {
+              "label": "Barzakh",
+              "text": "The life of the grave until resurrection (23:100)"
+            },
+            {
+              "label": "Resurrection",
+              "text": "All are raised; the Horn is blown (39:68)"
+            },
+            {
+              "label": "Judgement",
+              "text": "Books of deeds; scales weighed"
+            },
+            {
+              "label": "Final abode",
+              "text": "Jannah or Jahannam"
+            }
+          ]
+        },
+        {
+          "heading": "Set passage: 101:1-11",
+          "bullets": [
+            "The Striking Calamity: what is it? (101:1-3)",
+            "People like scattered moths; mountains like wool (101:4-5)",
+            "Heavy scales: a pleasing life (101:6-7)",
+            "Light scales: the abyss, a blazing Fire (101:8-11)"
+          ],
+          "note": "Annotate the imagery: moths show confusion and weakness; carded wool shows the power of that Day. Link to Allah's justice (2.1)."
+        },
+        {
+          "heading": "2.6 Malaikah: set passage 2:97-98",
+          "bullets": [
+            "Jibril brought the Qur'an to the heart of the Prophet ﷺ",
+            "Enmity to Jibril and Mika'il is enmity to Allah",
+            "Angels are created from light and always obey (66:6)"
+          ],
+          "note": "Portal lesson y11 18 is independent study. Roles: Jibril, revelation; Mika'il, provision and rain (as scholars explain); Israfil, the Horn (named in hadith); the Angel of Death (malak al-mawt, 32:11; the name Izra'il is used by many Muslims but is not in the Qur'an).",
+          "check": {
+            "q": "Which angel is named with Jibril in the set passage 2:97-98?",
+            "options": [
+              "Mika'il",
+              "Israfil",
+              "Malik",
+              "The Angel of Death"
+            ],
+            "answer": 0,
+            "why": "2:98 names Jibril and Mika'il. Israfil is named in hadith; Malik in 43:77; the Angel of Death in 32:11."
+          }
+        },
+        {
+          "heading": "Effect on Muslim life",
+          "bullets": [
+            "Accountability: every deed weighed",
+            "Hope: Allah's mercy and Jannah",
+            "Angels record deeds: honesty in private",
+            "Patience: justice is complete in the Akhirah"
+          ],
+          "note": "Pupils need 'explain how belief affects' answers for both topics."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain how belief in the Akhirah affects the way Muslims live.",
+          "a": "They know deeds will be weighed (101:6-9), so they do good and avoid wrong; they hope for Jannah and fear Jahannam; they bear hardship knowing justice comes.",
+          "mins": 4,
+          "model": "I do: 'Point: belief in the Akhirah makes Muslims careful about their actions. Evidence: 101:6-9 says those whose scales are heavy will have a pleasing life. Explain: so Muslims try to add good deeds and avoid sin. Link: belief shapes behaviour daily.'"
+        },
+        {
+          "q": "What is the Barzakh?",
+          "a": "The barrier between death and resurrection",
+          "mins": 1,
+          "options": [
+            "The barrier between death and resurrection",
+            "The bridge over Hell"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Two set-passage answers in the portal response box: a) 'Explain what 101:1-11 teaches about the Day of Judgement.' b) 'Explain what 2:97-98 teaches about the angels.'",
+          "a": "a) A shocking Day, scales of deeds, outcomes of heavy and light scales. b) Jibril brings revelation by Allah's permission; angels are honoured servants; enmity to them is enmity to Allah.",
+          "mins": 12,
+          "model": "Teacher models the opening of a): 'Qur'an 101:1-11 describes the Day of Judgement as al-Qari'ah, the Striking Calamity, which shows ...'"
+        },
+        {
+          "q": "Extend: name the roles of four principal angels.",
+          "a": "Jibril revelation; Mika'il provision; Israfil the Horn; the Angel of Death takes souls.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "What happens to those whose scales are heavy (101:6-7)?",
+          "a": "A pleasing life",
+          "mins": 1,
+          "options": [
+            "A pleasing life",
+            "The abyss"
+          ]
+        },
+        {
+          "q": "Back to our ponder: how would you live differently?",
+          "a": "More careful, honest and generous, knowing every deed is weighed.",
+          "mins": 2
+        }
+      ],
+      "homework": "Independent study: portal lessons y11 16, 17, 18 and 34. Learn 101:1-11 and 2:97-98 with meanings.",
+      "send": "SEND: stage cards to order. EAL: glossary. Stretch: plan 'Belief in the Akhirah is the most important Muslim belief.' Assess this statement.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: Akhirah timeline and set-passage frames",
+        "Mushaf with translation (101:1-11, 2:97-98, 23:100, 32:11)",
+        "Portal lessons islamic-studies y11 16 to 18 and 34 (independent study)",
+        "Pearson Edexcel International GCSE Islamic Studies (4IS1) specification, Appendix 5 set passages",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "brass balance scale",
+          "alt": "Scales",
+          "for": "teach:2"
+        },
+        {
+          "find": "moths around light",
+          "alt": "Moths, as in the imagery of 101:4",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Section B beliefs and 3.6 to 3.9 (founding-year fast-teach)",
+      "n": 38,
+      "title": "Fast-teach 2.7 to 2.9: Shari'ah, Islamic etiquette and the early leaders (Qur'an 5:48, 49:11-13, 9:117)",
+      "duration": 50,
+      "bigQuestion": "Does a society need laws? Where should good laws and good manners come from?",
+      "objectives": [
+        "To understand the Shari'ah and its sources, Islamic etiquette, and the importance of the early leaders"
+      ],
+      "successCriteria": [
+        "All: name the four sources of Shari'ah and the five categories",
+        "Most: explain the set passages 5:48 and 49:11-13",
+        "Some: explain Sunni and Shia views of the early leaders with 9:117"
+      ],
+      "crossCurricular": "Citizenship: how laws are made in Britain compared with the sources of Shari'ah",
+      "smsc": "Social: manners, respect and avoiding mockery and backbiting",
+      "keywords": [
+        {
+          "term": "Shari'ah (شَرِيعَة)",
+          "def": "the way and law given by Allah"
+        },
+        {
+          "term": "ijma' (إِجْمَاع)",
+          "def": "the agreement of scholars"
+        },
+        {
+          "term": "qiyas (قِيَاس)",
+          "def": "analogy: applying a ruling to a similar new case"
+        },
+        {
+          "term": "adab (أَدَب)",
+          "def": "etiquette and good manners"
+        },
+        {
+          "term": "khalifah (خَلِيفَة)",
+          "def": "a successor; a caliph leading the community"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Does a society need laws? Where should good laws and good manners come from?",
+        "a": "Muslims believe the best guidance comes from Allah: the Shari'ah, and adab taught in the Qur'an and Sunnah."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'To each of you We prescribed a law and a clear way' (al-Ma'idah 5:48), and 'The most noble of you in the sight of Allah is the most righteous of you' (al-Hujurat 49:13).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which set passage goes with 2.5?",
+          "a": "101:1-11",
+          "mins": 1,
+          "options": [
+            "101:1-11",
+            "2:97-98"
+          ]
+        },
+        {
+          "q": "Which two angels are named in 2:97-98?",
+          "a": "Jibril and Mika'il",
+          "mins": 1,
+          "options": [
+            "Jibril and Mika'il",
+            "Israfil and Malik"
+          ]
+        },
+        {
+          "q": "What is the Barzakh?",
+          "a": "The barrier between death and resurrection",
+          "mins": 1
+        },
+        {
+          "q": "Which surah describes the Striking Calamity?",
+          "a": "Al-Qari'ah (101)",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "2.7 Shari'ah: sources and categories",
+          "bullets": [],
+          "note": "Begin with Bismillah. Portal lessons y11 19 to 24 are independent study. Sunni sources: Qur'an, Sunnah, ijma', qiyas. Twelver Shia scholars use the Qur'an, the Sunnah (including the Imams' teachings), ijma' and 'aql (reason) in place of qiyas. Qiyas example: drugs are forbidden by analogy with intoxicating drink.",
+          "table": {
+            "head": [
+              "Category",
+              "Meaning",
+              "Example"
+            ],
+            "rows": [
+              [
+                "Fard / wajib",
+                "Obligatory",
+                "The five daily prayers"
+              ],
+              [
+                "Mandub / mustahabb",
+                "Recommended",
+                "Voluntary sunnah prayers"
+              ],
+              [
+                "Mubah",
+                "Permitted",
+                "Eating halal food you like"
+              ],
+              [
+                "Makruh",
+                "Disliked",
+                "Wasting water in wudu"
+              ],
+              [
+                "Haram",
+                "Forbidden",
+                "Theft, riba, alcohol"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "2.8 Set passage: 49:11-13",
+          "bullets": [
+            "Do not mock others or use offensive nicknames (49:11)",
+            "Avoid suspicion, spying and backbiting (49:12)",
+            "Humanity from one pair, made nations to know one another (49:13)",
+            "Most noble: the most righteous"
+          ],
+          "note": "Portal lessons y11 21 and 22 cover adab with speech and eating (bismillah, right hand, eat from what is in front of you: Bukhari and Muslim)."
+        },
+        {
+          "heading": "2.9 The early leaders: set passage 9:117",
+          "bullets": [
+            "Allah forgave the Prophet ﷺ, Muhajirun and Ansar",
+            "They followed him in the hour of hardship",
+            "Sunni: four Rightly Guided Caliphs in order",
+            "Shia: Ali appointed as first Imam"
+          ],
+          "note": "9:117 refers to the expedition of Tabuk. Sunni: Abu Bakr (632 to 634), Umar (634 to 644), Uthman (644 to 656), Ali (656 to 661). Shia Muslims believe the Prophet ﷺ appointed Ali as leader (citing Ghadir Khumm) and follow a line of Imams. Teach factually; portal lessons y11 23 and 24 are independent study.",
+          "check": {
+            "q": "Which is a source of Shari'ah meaning 'agreement of scholars'?",
+            "options": [
+              "Ijma'",
+              "Qiyas",
+              "Adab",
+              "Mubah"
+            ],
+            "answer": 0,
+            "why": "Ijma' is consensus. Qiyas is analogy; adab is manners; mubah is a category of action."
+          }
+        },
+        {
+          "heading": "Why it matters",
+          "bullets": [
+            "Shari'ah guides all of life, not only courts",
+            "Adab builds trust and unity",
+            "The early leaders: models of sacrifice and justice"
+          ],
+          "note": "12-mark statement for 2.7: 'A society needs laws, and the Shari'ah gives Muslims the guidance they need.' Assess this statement."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain what 49:11-13 teaches Muslims about how to treat others.",
+          "a": "Do not mock or insult; avoid suspicion, spying and backbiting; all humans are equal in origin and the most noble is the most righteous, so no racism or pride.",
+          "mins": 4,
+          "model": "I do: 'Point: 49:11 forbids mocking others. Explain: those mocked may be better than those mocking, so pride is wrong. Point: 49:13 teaches that humans were made into nations to know one another. Explain: ...'"
+        },
+        {
+          "q": "Which category is 'disliked'?",
+          "a": "Makruh",
+          "mins": 1,
+          "options": [
+            "Makruh",
+            "Mubah",
+            "Mandub"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Table then paragraph (portal response box): complete the five categories with your own examples; then 'Explain the importance of the early leaders for Muslims', using 9:117 and both Sunni and Shia views.",
+          "a": "Correct categories and examples. Paragraph: they kept Islam united after the Prophet ﷺ, spread it, compiled the Qur'an; 9:117 praises the Muhajirun and Ansar; Sunni and Shia views stated fairly.",
+          "mins": 12,
+          "model": "Teacher models one row ('Fard: obligatory; example: fasting Ramadan') and the paragraph's opening sentence."
+        },
+        {
+          "q": "Extend: explain how qiyas works with an example.",
+          "a": "A new case shares the reason ('illah) of an old ruling, so the ruling applies: drugs intoxicate like alcohol, so they are haram.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Who was the second caliph for Sunni Muslims?",
+          "a": "Umar ibn al-Khattab",
+          "mins": 1,
+          "options": [
+            "Umar ibn al-Khattab",
+            "Uthman",
+            "Ali"
+          ]
+        },
+        {
+          "q": "Back to our ponder: where should good laws and manners come from?",
+          "a": "For Muslims: Allah's guidance in the Qur'an and Sunnah, applied by scholars.",
+          "mins": 2
+        }
+      ],
+      "homework": "Independent study: portal lessons y11 19 to 24. Learn 5:48, 49:11-13 and 9:117 with meanings.",
+      "send": "SEND: category cards with examples to match. EAL: glossary. Stretch: plan the 2.7 12-mark answer.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: Shari'ah table and explain frames",
+        "Mushaf with translation (5:48, 49:11-13, 9:117)",
+        "Portal lessons islamic-studies y11 19 to 24 (independent study)",
+        "Pearson Edexcel International GCSE Islamic Studies (4IS1) specification, Appendix 5 set passages",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "law books library",
+          "alt": "Books of law",
+          "for": "teach:1"
+        },
+        {
+          "find": "Al-Masjid an-Nabawi",
+          "alt": "Masjid an-Nabawi, centre of the early community",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Section B beliefs and 3.6 to 3.9 (founding-year fast-teach)",
+      "n": 39,
+      "title": "3.6 Jihad: meaning, the greater and lesser jihad and the conditions for lesser jihad (Qur'an 49:15)",
+      "duration": 50,
+      "bigQuestion": "The word 'jihad' is often misunderstood. What do you think its basic meaning is?",
+      "objectives": [
+        "To understand the meaning of jihad, the difference between greater and lesser jihad and the strict conditions for lesser jihad"
+      ],
+      "successCriteria": [
+        "All: define jihad and the greater and lesser jihad",
+        "Most: explain the set passage 49:15",
+        "Some: explain the conditions for lesser jihad using 2:190-194 and 22:39"
+      ],
+      "crossCurricular": "History and citizenship: rules of war, from Islamic teaching to modern international law",
+      "smsc": "Moral: struggle against wrongdoing in oneself; the sanctity of innocent life",
+      "keywords": [
+        {
+          "term": "jihad (جِهَاد)",
+          "def": "striving or struggling in the way of Allah"
+        },
+        {
+          "term": "greater jihad",
+          "def": "the struggle against one's own self and sins"
+        },
+        {
+          "term": "lesser jihad",
+          "def": "armed struggle in defence, under strict conditions"
+        },
+        {
+          "term": "nafs (نَفْس)",
+          "def": "the self and its desires"
+        },
+        {
+          "term": "mujahid (مُجَاهِد)",
+          "def": "one who strives in the way of Allah"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "The word 'jihad' is often misunderstood. What do you think its basic meaning is?",
+        "a": "Striving or struggling in the way of Allah: mostly against one's own self, and only in strict conditions in armed defence."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'The believers are only those who have believed in Allah and His Messenger and then do not doubt, and strive with their wealth and their lives in the cause of Allah. It is they who are the truthful' (al-Hujurat 49:15). This is the set passage for 3.6.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which set passage goes with 2.8?",
+          "a": "49:11-13",
+          "mins": 1,
+          "options": [
+            "49:11-13",
+            "49:15"
+          ]
+        },
+        {
+          "q": "Name the four Sunni sources of Shari'ah.",
+          "a": "Qur'an, Sunnah, ijma', qiyas",
+          "mins": 1
+        },
+        {
+          "q": "Which ayah praises those who followed the Prophet ﷺ in the hour of hardship?",
+          "a": "9:117",
+          "mins": 1,
+          "options": [
+            "9:117",
+            "5:48"
+          ]
+        },
+        {
+          "q": "What does haram mean?",
+          "a": "Forbidden",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "What jihad means",
+          "bullets": [
+            "From j-h-d: to strive, to make effort",
+            "Set passage 49:15: strive with wealth and lives",
+            "Striving: worship, learning, da'wah, self-control",
+            "'Those who strive for Us, We will guide' (29:69)"
+          ],
+          "note": "Begin with Bismillah. Portal lessons y11 25 and 26 are independent study. Read 49:15 and draw out: true belief shows in effort and sacrifice."
+        },
+        {
+          "heading": "Greater and lesser jihad",
+          "bullets": [],
+          "note": "The spec uses these terms. A well-known saying about returning 'from the lesser jihad to the greater jihad' has a weak chain; scholars teach the struggle against the self from authentic texts, e.g. 'the mujahid is the one who strives against his own self for the obedience of Allah' (at-Tirmidhi).",
+          "compare": {
+            "left": {
+              "title": "Greater jihad",
+              "points": [
+                "Against one's own nafs",
+                "Daily: prayer on time, honesty, patience",
+                "Every Muslim, always"
+              ]
+            },
+            "right": {
+              "title": "Lesser jihad",
+              "points": [
+                "Armed struggle in defence",
+                "Only under strict conditions",
+                "Declared by legitimate authority"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Conditions for lesser jihad",
+          "bullets": [
+            "Defence against attack or oppression (22:39)",
+            "Fight only those who fight you; do not transgress (2:190)",
+            "Stop when the enemy stops (2:192-193)",
+            "No harm to non-combatants, crops or places of worship"
+          ],
+          "note": "22:39: permission given to those fought against because they were wronged. 2:190-194 set limits. Abu Bakr's instructions to his army forbade killing women, children and the elderly and cutting fruit trees (reported in the Muwatta' of Malik). Declared by a legitimate authority, as a last resort, proportionate.",
+          "check": {
+            "q": "Which is NOT a condition of lesser jihad?",
+            "options": [
+              "Attacking civilians to spread fear",
+              "Fighting only those who fight you",
+              "Stopping when the enemy stops",
+              "Declared by legitimate authority"
+            ],
+            "answer": 0,
+            "why": "Targeting civilians is forbidden: 2:190 forbids transgression; 5:32 makes killing one innocent like killing all. The others are conditions."
+          }
+        },
+        {
+          "heading": "Misuse and the truth",
+          "bullets": [
+            "Killing one innocent is like killing all (5:32)",
+            "Terrorism breaks every condition",
+            "Muslim scholars worldwide condemn it",
+            "Most jihad is quiet and personal"
+          ],
+          "note": "Handle sensitively; pupils may face questions from others. Equip them with accurate, calm answers."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain the difference between greater and lesser jihad.",
+          "a": "Greater: the lifelong struggle against one's own self to obey Allah (e.g. prayer, honesty). Lesser: armed defence under strict conditions (22:39, 2:190). Greater is for every Muslim always; lesser is rare and regulated.",
+          "mins": 4,
+          "model": "I do: 'Greater jihad is the inner struggle against one's own nafs to obey Allah, for example waking for fajr. Lesser jihad is armed struggle, permitted only in defence and under strict conditions such as 2:190 ...'"
+        },
+        {
+          "q": "Which ayah gives permission to those who were wronged?",
+          "a": "22:39",
+          "mins": 1,
+          "options": [
+            "22:39",
+            "49:15",
+            "5:32"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "In the portal response box: a) set-passage answer: 'Explain what 49:15 teaches about jihad.' b) 12-mark plan: 'The greater jihad is more important than the lesser jihad.' Assess this statement.",
+          "a": "a) True belief is shown by striving with wealth and life; sincerity without doubt. b) For: daily, for all, character. Against: defending the oppressed is a duty when conditions are met; both are worship. Conclusion.",
+          "mins": 12,
+          "model": "Teacher models a): 'Qur'an 49:15 teaches that true believers do not doubt and strive with their wealth and lives in Allah's cause. This shows that jihad is ...'"
+        },
+        {
+          "q": "Extend: list four conditions for lesser jihad.",
+          "a": "Defensive or against oppression; legitimate authority; non-combatants protected; stop when the enemy stops; proportionate; last resort.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "What does jihad literally mean?",
+          "a": "Striving or struggling",
+          "mins": 1,
+          "options": [
+            "Striving or struggling",
+            "Holy war",
+            "Victory"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what is the basic meaning of jihad?",
+          "a": "Striving in the way of Allah, mostly against one's own self.",
+          "mins": 2
+        }
+      ],
+      "homework": "Independent study: portal lessons y11 25 and 26. Write the full 12-mark answer.",
+      "send": "SEND: compare cards. EAL: glossary. Stretch: research the conditions of just war in Islamic law and in the Geneva Conventions.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: jihad organiser and 12-mark frame",
+        "Mushaf with translation (49:15, 2:190-194, 22:39, 5:32, 29:69)",
+        "Portal lessons islamic-studies y11 25 and 26 (independent study)",
+        "Pearson Edexcel International GCSE Islamic Studies (4IS1) specification, Appendix 5 set passages",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "mountain path climbing",
+          "alt": "A steep path: striving",
+          "for": "hook"
+        },
+        {
+          "find": "olive tree orchard",
+          "alt": "Fruit trees, protected in war",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Section B beliefs and 3.6 to 3.9 (founding-year fast-teach)",
+      "n": 40,
+      "title": "3.7 Eid-ul-Fitr, Eid-ul-Adha and Ashura: origins, activities and meaning",
+      "duration": 50,
+      "bigQuestion": "Is a festival mainly about celebrating, or about worship? Can it be both?",
+      "objectives": [
+        "To understand the origins, activities and significance of Eid-ul-Fitr, Eid-ul-Adha and Ashura"
+      ],
+      "successCriteria": [
+        "All: describe the origin and main activities of each festival",
+        "Most: explain the set passage hadith on the two Eid days",
+        "Some: explain how Sunni and Shia Muslims mark Ashura differently"
+      ],
+      "smsc": "Cultural: shared celebrations of the worldwide ummah",
+      "keywords": [
+        {
+          "term": "Eid-ul-Fitr (عِيدُ الْفِطْر)",
+          "def": "the festival at the end of Ramadan"
+        },
+        {
+          "term": "Eid-ul-Adha (عِيدُ الْأَضْحَى)",
+          "def": "the festival of sacrifice on 10 Dhul Hijjah"
+        },
+        {
+          "term": "Ashura (عَاشُورَاء)",
+          "def": "the tenth of Muharram"
+        },
+        {
+          "term": "zakat al-fitr (زَكَاةُ الْفِطْر)",
+          "def": "charity paid before the Eid-ul-Fitr prayer"
+        },
+        {
+          "term": "qurbani (قُرْبَانِي)",
+          "def": "the sacrifice of an animal at Eid-ul-Adha"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is a festival mainly about celebrating, or about worship? Can it be both?",
+        "a": "In Islam the two Eids are worship and celebration together: prayer, takbir, charity, family and gratitude."
+      },
+      "islamicLink": {
+        "text": "Allah says of the sacrifice: 'Neither their meat nor their blood reaches Allah, but what reaches Him is taqwa from you' (al-Hajj 22:37).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which set passage goes with 3.6?",
+          "a": "49:15",
+          "mins": 1,
+          "options": [
+            "49:15",
+            "22:39"
+          ]
+        },
+        {
+          "q": "Which ayah: 'fight those who fight you, but do not transgress'?",
+          "a": "2:190",
+          "mins": 1,
+          "options": [
+            "2:190",
+            "5:32"
+          ]
+        },
+        {
+          "q": "What is the greater jihad?",
+          "a": "The struggle against one's own self",
+          "mins": 1,
+          "options": [
+            "The struggle against one's own self",
+            "Armed struggle"
+          ]
+        },
+        {
+          "q": "Name the first caliph.",
+          "a": "Abu Bakr",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Set passage: the hadith of Abu 'Ubaid",
+          "bullets": [
+            "Abu 'Ubaid prayed Eid with Umar ibn al-Khattab",
+            "Umar: the Prophet ﷺ forbade fasting on two days",
+            "The day you end your fast (Eid-ul-Fitr)",
+            "The day you eat from your sacrifices (Eid-ul-Adha)"
+          ],
+          "note": "Begin with Bismillah. The hadith is in Bukhari and Muslim. Portal lessons y11 27 and 28 are independent study. It shows the two Eids are set by the Sunnah, are days of eating and joy, and that fasting on them is forbidden."
+        },
+        {
+          "heading": "The two Eids",
+          "bullets": [],
+          "note": "Eid-ul-Adha links to Ibrahim's willingness to sacrifice his son and Allah's ransom (37:102-107). Qurbani meat is commonly shared between family, friends and the poor.",
+          "table": {
+            "head": [
+              "Feature",
+              "Eid-ul-Fitr",
+              "Eid-ul-Adha"
+            ],
+            "rows": [
+              [
+                "Date",
+                "1 Shawwal",
+                "10 Dhul Hijjah"
+              ],
+              [
+                "Origin",
+                "End of Ramadan's fast",
+                "Ibrahim's sacrifice (37:102-107); Hajj"
+              ],
+              [
+                "Before the prayer",
+                "Zakat al-fitr paid",
+                "Takbir from the days of Dhul Hijjah"
+              ],
+              [
+                "Activities",
+                "Eid prayer, takbir, new clothes, family",
+                "Eid prayer, qurbani, sharing meat"
+              ],
+              [
+                "Meaning",
+                "Gratitude for completing the fast",
+                "Submission and sacrifice; taqwa (22:37)"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Ashura (10 Muharram)",
+          "bullets": [
+            "Sunni: the Prophet ﷺ fasted it; Musa was saved",
+            "Fasting the 9th and 10th recommended (Muslim)",
+            "Shia: mourning Husayn's martyrdom at Karbala (61 AH)",
+            "Majalis, recitations and charity"
+          ],
+          "note": "The Prophet ﷺ found the Jews of Madinah fasting it for Musa's rescue and said 'we are closer to Musa than you' (Bukhari and Muslim). Fasting it expiates the previous year (Muslim). Husayn ibn Ali was killed at Karbala in 680 CE; Sunni Muslims also honour Husayn. Teach the Shia practice factually and respectfully.",
+          "check": {
+            "q": "Why do Sunni Muslims fast on Ashura?",
+            "options": [
+              "The Prophet ﷺ fasted it to mark Musa's rescue",
+              "To mourn Husayn",
+              "It ends Ramadan",
+              "It begins Hajj"
+            ],
+            "answer": 0,
+            "why": "Bukhari and Muslim: he fasted it and recommended it, connected with Musa. Mourning Husayn is the main Shia focus; it is not the end of Ramadan or start of Hajj."
+          }
+        },
+        {
+          "heading": "Significance today",
+          "bullets": [
+            "Unity: the whole ummah celebrates together",
+            "Charity: no one left out",
+            "Gratitude and remembrance of Allah",
+            "Identity for Muslims in Britain"
+          ],
+          "note": "12-mark statement: 'Eid-ul-Fitr is more important than Eid-ul-Adha.' Assess this statement. Sample assessment material Question 6(c) and 6(d)."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain what the hadith of Abu 'Ubaid teaches about the two Eids.",
+          "a": "They are the two festivals set by the Prophet ﷺ; fasting on them is forbidden; they are days of eating, joy and gratitude linked to Ramadan and the sacrifice.",
+          "mins": 4,
+          "model": "I do: 'The hadith teaches that the Prophet ﷺ forbade fasting on the two Eid days. This shows that Eid is a day of celebration and gratitude, after worship ...'"
+        },
+        {
+          "q": "When is zakat al-fitr paid?",
+          "a": "Before the Eid-ul-Fitr prayer",
+          "mins": 1,
+          "options": [
+            "Before the Eid-ul-Fitr prayer",
+            "On Ashura",
+            "After Eid-ul-Adha"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "12-mark answer in the portal response box (or Forms long answer): 'Eid-ul-Fitr is more important than Eid-ul-Adha.' Assess this statement.",
+          "a": "For: ends Ramadan, zakat al-fitr, gratitude for the Qur'an's month. Against: Eid-ul-Adha linked to Hajj and Ibrahim's sacrifice, called 'greater Eid' by many; the hadith pairs them equally. Justified conclusion.",
+          "mins": 12,
+          "model": "Teacher models the 'against' opening: 'Others would disagree, because Eid-ul-Adha remembers Ibrahim's complete submission to Allah (37:102-107) and comes with Hajj ...'"
+        },
+        {
+          "q": "Extend: compare how Sunni and Shia Muslims mark Ashura.",
+          "a": "Sunni: fasting the 9th and 10th, remembering Musa. Shia: mourning Husayn's martyrdom at Karbala with gatherings and recitations.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "On what date is Eid-ul-Adha?",
+          "a": "10 Dhul Hijjah",
+          "mins": 1,
+          "options": [
+            "10 Dhul Hijjah",
+            "1 Shawwal",
+            "10 Muharram"
+          ]
+        },
+        {
+          "q": "Back to our ponder: celebration or worship?",
+          "a": "Both: prayer, takbir and charity with family joy.",
+          "mins": 2
+        }
+      ],
+      "homework": "Independent study: portal lessons y11 27 and 28. Learn the hadith of Abu 'Ubaid and the dates of each festival.",
+      "send": "SEND: festival comparison grid. EAL: glossary. Stretch: include 22:37 and 2:185 in the 12-mark answer.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: festivals table and 12-mark frame",
+        "Mushaf with translation (22:37, 37:102-107)",
+        "Portal lessons islamic-studies y11 27 and 28 (independent study)",
+        "Pearson Edexcel International GCSE Islamic Studies (4IS1) specification, Appendix 5 set passages",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "crescent moon sunset",
+          "alt": "The new moon of Shawwal",
+          "for": "teach:2"
+        },
+        {
+          "find": "sheep flock",
+          "alt": "Sheep, as for the qurbani",
+          "for": "keywords"
+        },
+        {
+          "find": "Karbala Imam Husayn shrine exterior",
+          "alt": "The shrine of Husayn in Karbala",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Section B beliefs and 3.6 to 3.9 (founding-year fast-teach)",
+      "n": 41,
+      "title": "3.8 Marriage and the family: purpose, teachings and ceremonies at birth and death (Qur'an 30:21, 46:15-18)",
+      "duration": 50,
+      "bigQuestion": "What makes a family strong? What does a child owe their parents, and what do parents owe their child?",
+      "objectives": [
+        "To understand Muslim teaching on marriage, the purpose of the family and the ceremonies at birth and death"
+      ],
+      "successCriteria": [
+        "All: describe the nikah and the key ceremonies at birth and death",
+        "Most: explain the set passages 30:21 and 46:15-18",
+        "Some: explain how family life strengthens the ummah"
+      ],
+      "crossCurricular": "Citizenship: marriage in British law (registration) alongside the Islamic nikah",
+      "smsc": "Social: duties within the family",
+      "keywords": [
+        {
+          "term": "nikah (نِكَاح)",
+          "def": "the Islamic marriage contract"
+        },
+        {
+          "term": "mahr (مَهْر)",
+          "def": "the marriage gift that belongs to the bride"
+        },
+        {
+          "term": "aqiqah (عَقِيقَة)",
+          "def": "the sacrifice and celebration for a newborn"
+        },
+        {
+          "term": "janazah (جَنَازَة)",
+          "def": "the funeral prayer"
+        },
+        {
+          "term": "ummah (أُمَّة)",
+          "def": "the worldwide community of Muslims"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What makes a family strong? What does a child owe their parents, and what do parents owe their child?",
+        "a": "Love, mercy and tranquillity (30:21); kindness to parents (46:15); care, education and a good name for children."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And of His signs is that He created for you from yourselves mates so that you may find tranquillity in them, and He placed between you affection and mercy' (ar-Rum 30:21).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "When is zakat al-fitr paid?",
+          "a": "Before the Eid-ul-Fitr prayer",
+          "mins": 1,
+          "options": [
+            "Before the Eid-ul-Fitr prayer",
+            "On 10 Muharram"
+          ]
+        },
+        {
+          "q": "Who narrated the set passage on the two Eid days?",
+          "a": "Abu 'Ubaid",
+          "mins": 1,
+          "options": [
+            "Abu 'Ubaid",
+            "Abu Hurayrah"
+          ]
+        },
+        {
+          "q": "What do Shia Muslims commemorate on Ashura?",
+          "a": "The martyrdom of Husayn at Karbala",
+          "mins": 1
+        },
+        {
+          "q": "Which ayah: 'neither their meat nor their blood reaches Allah'?",
+          "a": "22:37",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Marriage in Islam",
+          "bullets": [
+            "A Sunnah of the prophets and a contract (nikah)",
+            "Consent of both is required (Bukhari and Muslim)",
+            "Mahr belongs to the bride (4:4)",
+            "Witnesses; a wali for the bride (majority of scholars)"
+          ],
+          "note": "Begin with Bismillah. Portal lessons y11 29 and 30 are independent study. The Prophet ﷺ said that whoever turns away from his Sunnah is not from him, in a hadith that includes marriage (Bukhari and Muslim). In Britain, Muslims also register the marriage under British law. Keep to the spec; no relationships education content."
+        },
+        {
+          "heading": "Set passages: 30:21 and 46:15-18",
+          "bullets": [
+            "30:21: tranquillity, affection and mercy are signs of Allah",
+            "46:15: kindness to parents; the mother's hardship",
+            "46:15: at forty, a du'a of gratitude",
+            "46:16-18: the grateful child rewarded; the ungrateful warned"
+          ],
+          "note": "Annotate both. 46:15 includes the du'a 'My Lord, enable me to be grateful for Your favour which You bestowed on me and on my parents'."
+        },
+        {
+          "heading": "Ceremonies at birth and death",
+          "bullets": [],
+          "note": "Tahnik (softening a date and placing it in the baby's mouth) is reported in Bukhari and Muslim; aqiqah, naming and shaving the head on the seventh day are in hadith collections such as Abu Dawud and at-Tirmidhi; many Muslims say the adhan in the baby's ear. At death: 'To Allah we belong and to Him we return' (2:156).",
+          "compare": {
+            "left": {
+              "title": "Birth",
+              "points": [
+                "Adhan in the ear (common practice)",
+                "Tahnik with a date",
+                "Seventh day: aqiqah, name, shave head",
+                "Charity"
+              ]
+            },
+            "right": {
+              "title": "Death",
+              "points": [
+                "Shahadah encouraged at the end",
+                "Ghusl and kafan (shroud)",
+                "Janazah prayer",
+                "Quick burial facing the qiblah"
+              ]
+            },
+            "label": "and"
+          }
+        },
+        {
+          "heading": "The family and the ummah",
+          "bullets": [
+            "Children raised on tawhid and good character",
+            "Parents cared for in old age (17:23-24)",
+            "Strong families make strong communities",
+            "Procreation continues the ummah"
+          ],
+          "note": "Ask: how does a family that prays together strengthen a masjid community?",
+          "check": {
+            "q": "What is the aqiqah?",
+            "options": [
+              "The sacrifice and celebration for a newborn",
+              "The funeral prayer",
+              "The marriage gift",
+              "The Eid charity"
+            ],
+            "answer": 0,
+            "why": "Aqiqah is for a newborn. The janazah is the funeral prayer; mahr the marriage gift; zakat al-fitr the Eid charity."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain what 30:21 teaches about marriage.",
+          "a": "Marriage is a sign of Allah; its purpose includes tranquillity, affection and mercy between spouses, so it is a source of peace and an act of worship.",
+          "mins": 4,
+          "model": "I do: 'Qur'an 30:21 calls marriage one of Allah's signs. It teaches that spouses should find tranquillity in each other, and that Allah places affection and mercy between them. This means ...'"
+        },
+        {
+          "q": "Which ayah describes the mother's hardship in pregnancy and birth?",
+          "a": "46:15",
+          "mins": 1,
+          "options": [
+            "46:15",
+            "30:21",
+            "4:4"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "In the portal response box: a) 'Describe the ceremonies Muslims perform at birth.' b) 'Explain what 46:15-18 teaches about the duties of children to parents.'",
+          "a": "a) Adhan (common practice), tahnik, aqiqah, naming, shaving the head, charity. b) Kindness, gratitude, du'a, care in old age; reward for the grateful and warning for the disrespectful.",
+          "mins": 12,
+          "model": "Teacher models a): 'Soon after birth many Muslims say the adhan in the baby's ear so the first words heard are about Allah. The Prophet ﷺ also softened a date and placed it in a newborn's mouth (tahnik) ...'"
+        },
+        {
+          "q": "Extend: why is the janazah held quickly?",
+          "a": "The Sunnah is to hasten burial (Bukhari and Muslim); it honours the deceased.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Who receives the mahr?",
+          "a": "The bride",
+          "mins": 1,
+          "options": [
+            "The bride",
+            "The bride's father",
+            "The imam"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what makes a family strong?",
+          "a": "Tawhid, love and mercy, kindness to parents, care for children.",
+          "mins": 2
+        }
+      ],
+      "homework": "Independent study: portal lessons y11 29 and 30. Learn 30:21 and 46:15 with meanings.",
+      "send": "SEND: ceremony cards to sort into birth and death. EAL: glossary. Stretch: plan 'Marriage is the most important stage of a Muslim's life.' Assess this statement.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: ceremonies organiser and set-passage frames",
+        "Mushaf with translation (30:21, 46:15-18, 4:4, 2:156, 17:23-24)",
+        "Portal lessons islamic-studies y11 29 and 30 (independent study)",
+        "Pearson Edexcel International GCSE Islamic Studies (4IS1) specification, Appendix 5 set passages",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "dates fruit",
+          "alt": "Dates, used for tahnik",
+          "for": "teach:3"
+        },
+        {
+          "find": "Muslim cemetery graves",
+          "alt": "A Muslim cemetery with simple graves",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Section B beliefs and 3.6 to 3.9 (founding-year fast-teach)",
+      "n": 42,
+      "title": "3.9 Leadership and citizenship: the Prophet ﷺ and his successors as models (hadith 'every one of you is a guardian')",
+      "duration": 50,
+      "bigQuestion": "Is everyone a leader in some way? Who are you responsible for?",
+      "objectives": [
+        "To understand Muslim teaching on leadership and citizenship and the Prophet ﷺ and his successors as models"
+      ],
+      "successCriteria": [
+        "All: explain the set passage hadith on guardianship",
+        "Most: describe the duties of religious and political leaders",
+        "Some: explain how Muslims can be active citizens in Britain"
+      ],
+      "crossCurricular": "Citizenship (PSHE): democracy, the rule of law and community participation in Britain",
+      "smsc": "Social: responsibility to the community and the wider society",
+      "keywords": [
+        {
+          "term": "ra'i (رَاعٍ)",
+          "def": "a guardian or shepherd responsible for others"
+        },
+        {
+          "term": "imamah (إِمَامَة)",
+          "def": "leadership; for Shia Muslims, the Imams after the Prophet ﷺ"
+        },
+        {
+          "term": "khilafah (خِلَافَة)",
+          "def": "the caliphate: leadership succeeding the Prophet ﷺ"
+        },
+        {
+          "term": "shura (شُورَى)",
+          "def": "consultation"
+        },
+        {
+          "term": "citizenship",
+          "def": "rights and duties as a member of a country"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is everyone a leader in some way? Who are you responsible for?",
+        "a": "Yes: 'Every one of you is a guardian and responsible for those in his care' (Bukhari and Muslim)."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Every one of you is a guardian and every one of you is responsible for those in his care. The leader is a guardian ... a man is a guardian of his family ... a woman is a guardian of her husband's home ...' (Bukhari and Muslim). This is the set passage for 3.9.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which set passage goes with 3.8?",
+          "a": "30:21 and 46:15-18",
+          "mins": 1,
+          "options": [
+            "30:21 and 46:15-18",
+            "49:15"
+          ]
+        },
+        {
+          "q": "What is the janazah?",
+          "a": "The funeral prayer",
+          "mins": 1,
+          "options": [
+            "The funeral prayer",
+            "The marriage contract"
+          ]
+        },
+        {
+          "q": "Which Companion became the first caliph?",
+          "a": "Abu Bakr",
+          "mins": 1,
+          "options": [
+            "Abu Bakr",
+            "Ali"
+          ]
+        },
+        {
+          "q": "What is shura?",
+          "a": "Consultation",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Set passage: every one is a guardian",
+          "bullets": [
+            "The leader, for his people",
+            "A man, for his family",
+            "A woman, for her husband's home and children",
+            "A servant, for his master's property"
+          ],
+          "note": "Begin with Bismillah. Portal lessons y11 31 and 32 are independent study. Leadership is an amanah (trust) that will be questioned on the Day of Judgement."
+        },
+        {
+          "heading": "Religious and political leaders",
+          "bullets": [],
+          "note": "Sunni: caliphs chosen by the community (consultation, pledge). Shia: Imams from the Prophet's ﷺ family, appointed by designation; in the absence of the Imam, scholars guide. 4:59: obey Allah, the Messenger and those in authority among you.",
+          "table": {
+            "head": [
+              "Leader",
+              "Duties",
+              "Model"
+            ],
+            "rows": [
+              [
+                "Imam of a masjid",
+                "Lead prayer, teach, advise",
+                "The Prophet ﷺ leading salah"
+              ],
+              [
+                "Political leader",
+                "Justice, security, welfare, consultation",
+                "Umar's justice; 3:159 shura"
+              ],
+              [
+                "Scholar",
+                "Teach the Shari'ah honestly",
+                "Ali's knowledge"
+              ],
+              [
+                "Parent",
+                "Raise children on faith and good character",
+                "The hadith of guardianship"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "The Prophet ﷺ and his successors",
+          "bullets": [
+            "The Prophet ﷺ: consultation, justice, service",
+            "Abu Bakr: 'obey me as long as I obey Allah'",
+            "Umar: accountability and care for the poor",
+            "Uthman: generosity; Ali: knowledge and justice"
+          ],
+          "note": "Abu Bakr's first speech as caliph ('obey me as long as I obey Allah and His Messenger') is reported in the seerah (Ibn Ishaq). Keep to well-known points.",
+          "check": {
+            "q": "In the set passage, who is responsible for those in their care?",
+            "options": [
+              "Every one of you",
+              "Only rulers",
+              "Only scholars",
+              "Only parents"
+            ],
+            "answer": 0,
+            "why": "'Every one of you is a guardian': responsibility applies to all, each in their role."
+          }
+        },
+        {
+          "heading": "Muslims as citizens in Britain",
+          "bullets": [
+            "Keep covenants and the law (5:1, 17:34)",
+            "Work for justice and the common good",
+            "Help neighbours of every faith",
+            "Take part: volunteer, many scholars encourage voting"
+          ],
+          "note": "17:34: fulfil the covenant; the covenant will be asked about. Living in Britain is a kind of covenant: keeping its laws where they do not require disobeying Allah."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain what the hadith 'every one of you is a guardian' teaches about leadership.",
+          "a": "Everyone has responsibility in some role; leadership is a trust; leaders will be questioned about those in their care; so Muslims must lead with justice and care at every level.",
+          "mins": 4,
+          "model": "I do: 'The hadith teaches that leadership is not only for rulers: every person is a guardian. For example, a parent is responsible for their family. This shows that ...'"
+        },
+        {
+          "q": "Which ayah: 'obey Allah, the Messenger and those in authority among you'?",
+          "a": "4:59",
+          "mins": 1,
+          "options": [
+            "4:59",
+            "17:34",
+            "30:21"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "12-mark answer in the portal response box (or Forms long answer): 'Muslims in Britain should be active citizens.' Assess this statement.",
+          "a": "For: guardianship hadith, 5:1, 17:34, justice and neighbours; the Prophet ﷺ in Madinah's Charter. Against: some scholars caution about participation in systems not based on Shari'ah; priorities of family and faith. Justified conclusion.",
+          "mins": 12,
+          "model": "Teacher models the 'for' opening: 'Many Muslims would agree, because Islam teaches that every person is a guardian with responsibilities (Bukhari and Muslim) ...'"
+        },
+        {
+          "q": "Extend: compare Sunni and Shia views of leadership after the Prophet ﷺ.",
+          "a": "Sunni: caliphs chosen by consultation, starting with Abu Bakr. Shia: Imams from the Prophet's ﷺ family, starting with Ali, by designation.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which is the set passage for 3.9?",
+          "a": "The hadith 'every one of you is a guardian'",
+          "mins": 1,
+          "options": [
+            "The hadith 'every one of you is a guardian'",
+            "4:59",
+            "49:15"
+          ]
+        },
+        {
+          "q": "Back to our ponder: who are you responsible for?",
+          "a": "Family, younger siblings, classmates in my care, my community: each in my role.",
+          "mins": 2
+        }
+      ],
+      "homework": "Independent study: portal lessons y11 31 and 32. Mock week next week: revise Sections A, B and C using your revision cards.",
+      "send": "SEND: leadership role cards. EAL: glossary. Stretch: include the Charter of Madinah and 4:59 in your 12-mark answer.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: leadership table and 12-mark frame",
+        "Mushaf with translation (4:59, 5:1, 17:34, 3:159)",
+        "Portal lessons islamic-studies y11 31 and 32 (independent study)",
+        "Pearson Edexcel International GCSE Islamic Studies (4IS1) specification, Appendix 5 set passages",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "shepherd flock sheep",
+          "alt": "A flock of sheep: the image of a shepherd's care",
+          "for": "hook"
+        },
+        {
+          "find": "Houses of Parliament London",
+          "alt": "The Houses of Parliament in London",
+          "for": "teach:4"
+        }
+      ]
     }
   ]
 }
