@@ -7,7 +7,7 @@
 /** Teach-slide blocks, in the order the builder looks for them (a slide carries at most one). */
 export const BLOCKS = ["model", "check", "quote", "compare", "timeline", "table", "code", "misconception", "cycle", "chart", "numberline", "fraction", "diagram", "sort"];
 
-/** Lesson sections whose items may be a string or { q, a?, mins? }. */
+/** Lesson sections whose items may be a string or { q, a?, mins?, model?, options? }. */
 export const ITEM_SECTIONS = ["starter", "practice", "independent", "exit"];
 
 /** Classroom routines for live online lessons (Teams). `short` goes on the slide badge. */
@@ -24,7 +24,17 @@ export const ROUTINE_IDS = Object.keys(ROUTINES);
 /** Sections a lesson's `routines` may set. `hinge` is the check (hinge question) slide. */
 export const ROUTINE_SECTIONS = ["hook", "starter", "teach", "hinge", "practice", "independent", "exit"];
 
-export const HOOK_TYPES = ["question", "image-prompt", "story", "puzzle", "odd-one-out"];
+/** `ponder`: one open question on the first slide, for pupils who log on early (lessons v3). */
+export const HOOK_TYPES = ["ponder", "question", "image-prompt", "story", "puzzle", "odd-one-out"];
+
+/** Subjects where "Bismillah" belongs in the starter (and the start-of-day register). */
+export const ISLAMIC_SUBJECTS = ["quran", "islamic-studies", "arabic"];
+
+/** Where an `islamicLink` goes: the foundation at the start, or the Islamic position at the end. */
+export const ISLAMIC_LINK_AT = ["start", "end"];
+
+/** Licences a picture from Wikimedia Commons may have (scripts/lessons/pictures.mjs). */
+export const PICTURE_LICENCES = ["CC0", "PD", "CC BY", "CC BY-SA"];
 
 /** Default minutes per task phase in a 50-minute lesson; scaled for shorter lessons. */
 const PHASE_MINS_50 = { starter: 5, practice: 8, independent: 12, exit: 5 };
@@ -32,6 +42,16 @@ const PHASE_MINS_50 = { starter: 5, practice: 8, independent: 12, exit: 5 };
 export const itemQ = (x) => (x && typeof x === "object" ? String(x.q ?? "") : String(x ?? ""));
 export const itemA = (x) => (x && typeof x === "object" && typeof x.a === "string" && x.a.trim() ? x.a : null);
 export const itemMins = (x) => (x && typeof x === "object" && Number.isInteger(x.mins) ? x.mins : null);
+/** The teacher's worked model for an item ("I do"), or null. */
+export const itemModel = (x) => (x && typeof x === "object" && typeof x.model === "string" && x.model.trim() ? x.model : null);
+/** Poll options for an item: its own `options`, else "A) … B) …" written into the question. Null when it has none. */
+export function itemOptions(x) {
+  if (x && typeof x === "object" && Array.isArray(x.options) && x.options.length >= 2) return { q: itemQ(x), options: x.options.map(String) };
+  const q = itemQ(x);
+  const m = q.match(/^(.*?)\s*\(?A[).:]\s+(.+?)\s+\(?B[).:]\s+(.+?)(?:\s+\(?C[).:]\s+(.+?))?(?:\s+\(?D[).:]\s+(.+?))?\s*$/s);
+  if (!m || !m[1].trim()) return null;
+  return { q: m[1].trim(), options: m.slice(2).filter(Boolean).map((o) => o.trim().replace(/[;,]$/, "")) };
+}
 export const hasAnswers = (list) => Array.isArray(list) && list.some((x) => itemA(x));
 
 /** Minutes for a task slide: the items' own `mins` added up, or the phase default for the lesson length. */
@@ -51,9 +71,10 @@ export function routineFor(lesson, section, hint) {
     case "starter":
       return "show-me";
     case "hinge":
-      return hint === "poll" ? "teams-poll" : "show-me";
+      // Lessons v3: polls, not cold calls. A hinge question has its options, so it is a Teams poll.
+      return "teams-poll";
     case "practice":
-      return "cold-call";
+      return "show-me";
     case "independent":
       return null;
     case "exit":
@@ -77,7 +98,9 @@ export function itemProblem(x) {
   if (!str(x.q)) return "an item has no question (q)";
   if (x.a != null && typeof x.a !== "string") return "an answer (a) must be text";
   if (x.mins != null && (!Number.isInteger(x.mins) || x.mins < 1 || x.mins > 30)) return "mins must be a whole number from 1 to 30";
-  const extra = Object.keys(x).filter((k) => !["q", "a", "mins"].includes(k));
+  if (x.model != null && !str(x.model)) return "a model (the teacher's worked answer) must be text";
+  if (x.options != null && (!strs(x.options, 2) || x.options.length > 4)) return "poll options: 2 to 4 short lines";
+  const extra = Object.keys(x).filter((k) => !["q", "a", "mins", "model", "options"].includes(k));
   if (extra.length) return `an item has unknown field(s): ${extra.join(", ")}`;
   return null;
 }
@@ -185,5 +208,65 @@ export function extrasProblems(l) {
       }
   }
   if (l.resources != null && (!strs(l.resources) || l.resources.length > 10)) p.push("resources: 1-10 lines of text");
+  if (l.islamicLink != null) {
+    const x = l.islamicLink;
+    if (!x || typeof x !== "object" || !str(x.text)) p.push("islamicLink needs text");
+    else if (x.text.length > 600) p.push("islamicLink text: at most 600 characters");
+    if (x && !ISLAMIC_LINK_AT.includes(x.at)) p.push('islamicLink at must be "start" or "end"');
+  }
+  if (l.pictures != null) {
+    if (!Array.isArray(l.pictures) || l.pictures.length > 8) p.push("pictures: a list of up to 8");
+    else
+      l.pictures.forEach((x, i) => {
+        const w = `picture ${i + 1}`;
+        if (!x || typeof x !== "object" || !str(x.find)) return p.push(`${w}: needs find (what to search Wikimedia Commons for)`);
+        if (!str(x.alt)) p.push(`${w}: needs alt (what it shows)`);
+        const m = /^teach:(\d+)$/.exec(String(x.for || ""));
+        if (!(x.for === "hook" || x.for === "keywords" || (m && Number(m[1]) >= 1 && Number(m[1]) <= (Array.isArray(l.teach) ? l.teach.length : 7)))) p.push(`${w}: for must be "hook", "keywords" or "teach:N" (a teach slide number)`);
+        for (const k of ["file", "credit", "licence"]) if (x[k] != null && !str(x[k])) p.push(`${w}: ${k} must be text`);
+        const extra = Object.keys(x).filter((k) => !["find", "alt", "for", "file", "credit", "licence"].includes(k));
+        if (extra.length) p.push(`${w}: unknown field(s): ${extra.join(", ")}`);
+      });
+  }
   return p;
+}
+
+const words = (s) =>
+  String(s || "")
+    .toLowerCase()
+    .replace(/^\s*(all|most|some)\s*[:\-–]\s*/, "")
+    .replace(/^(to|i can|we can|pupils can)\s+/, "")
+    .replace(/[^a-z0-9 ]+/g, " ")
+    .split(/\s+/)
+    .filter((w) => w.length > 2);
+/** True when a success criterion just says the objective again (instead of a step towards it). */
+export function repeatsObjective(criterion, objective) {
+  const A = new Set(words(criterion));
+  const B = new Set(words(objective));
+  if (!A.size || !B.size) return false;
+  const both = [...A].filter((w) => B.has(w)).length;
+  return both / Math.min(A.size, B.size) >= 0.85 && Math.abs(A.size - B.size) <= 2;
+}
+
+/**
+ * Advice on a lesson (lessons v3), shown by the validator and the portal editor. Never blocks a
+ * build, so older lessons still build. `subject` is the subject slug; `duration` the lesson length.
+ */
+export function lessonWarnings(l, subject, duration) {
+  const w = [];
+  const objs = Array.isArray(l.objectives) ? l.objectives : [];
+  if (objs.length > 1) w.push(`has ${objs.length} objectives: give one high-level objective (the destination)`);
+  const sc = Array.isArray(l.successCriteria) ? l.successCriteria : [];
+  if (sc.length > 3) w.push(`has ${sc.length} success criteria: at most 3 (All, Most, Some)`);
+  sc.forEach((c, i) => {
+    if (objs.some((o) => repeatsObjective(c, o))) w.push(`success criterion ${i + 1} repeats the objective: make it a checkable step towards it`);
+  });
+  const routines = [...Object.values(l.routines && typeof l.routines === "object" ? l.routines : {}), ...(Array.isArray(l.teach) ? l.teach.map((t) => t && t.routine) : [])];
+  if (routines.includes("cold-call")) w.push("uses cold call: use a Teams poll (or show me) instead");
+  if (subject && !ISLAMIC_SUBJECTS.includes(subject) && (Array.isArray(l.starter) ? l.starter : []).some((x) => /bismillah/i.test(itemQ(x)))) w.push('says "Bismillah" in the starter: keep it to Qur\'an, Islamic Studies and Arabic');
+  const mins = ITEM_SECTIONS.flatMap((k) => (Array.isArray(l[k]) ? l[k] : []).map(itemMins)).filter((m) => m != null);
+  const total = mins.reduce((a, b) => a + b, 0);
+  const len = duration || l.duration;
+  if (len && total > len - 3) w.push(`item minutes add up to ${total}, more than the ${len}-minute lesson less 3 minutes slack`);
+  return w;
 }
