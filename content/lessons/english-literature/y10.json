@@ -2,7 +2,7 @@
   "subject": "English Literature",
   "year": "y10",
   "board": "Pearson Edexcel International GCSE (9-1) in English Literature (4ET1)",
-  "source": "Edexcel spec: content/syllabus/ks4/english-literature.json (4ET1, Issue 3, Aug 2025), units 1A, 1B, 1B-P1, 1B-P2, 1C and 1C-OPT, written from own knowledge; no Drive material was used. Poems and novels are in copyright, so lessons teach methods and use only very short phrases; detailed analysis is offered only for works known accurately (If-, Prayer Before Birth, Blessing, Search For My Tongue, Piano, Sonnet 116, The Tyger, La Belle Dame sans Merci, My Last Duchess, War Photographer, Half-caste, Do not go gentle, Remember). Half-past Two, Hide and Seek and Poem at Thirty-Nine are taught as METHOD lessons that the teacher applies to the licensed anthology text, because their content was not verified. Unseen lessons use two ORIGINAL poems written for TGA. Prose lessons (1C) are option-neutral methods with models from Of Mice and Men, To Kill a Mockingbird and Things Fall Apart; The Whale Rider, The Joy Luck Club, Klara and the Sun and Western Lane appear only in context tables. Unit 2B-SCH-X (A Christmas Carol) is not on the Pearson list: the spec note says it may remain as wider reading, so no bridging lessons are written; the earlier AQA 8702 A Christmas Carol lessons were retired. Section B AO2/AO3 mark split and exact question stems were not confirmed in the spec file and must be checked against past papers. | Gap-fill against Pearson Edexcel International GCSE English Literature 4ET1 specification",
+  "source": "Edexcel spec: content/syllabus/ks4/english-literature.json (4ET1, Issue 3, Aug 2025), units 1A, 1B, 1B-P1, 1B-P2, 1C and 1C-OPT, written from own knowledge; no Drive material was used. Poems and novels are in copyright, so lessons teach methods and use only very short phrases; detailed analysis is offered only for works known accurately (If-, Prayer Before Birth, Blessing, Search For My Tongue, Piano, Sonnet 116, The Tyger, La Belle Dame sans Merci, My Last Duchess, War Photographer, Half-caste, Do not go gentle, Remember). Half-past Two, Hide and Seek and Poem at Thirty-Nine are taught as METHOD lessons that the teacher applies to the licensed anthology text, because their content was not verified. Unseen lessons use two ORIGINAL poems written for TGA. Prose lessons (1C) are option-neutral methods with models from Of Mice and Men, To Kill a Mockingbird and Things Fall Apart; The Whale Rider, The Joy Luck Club, Klara and the Sun and Western Lane appear only in context tables. Unit 2B-SCH-X (A Christmas Carol) is not on the Pearson list: the spec note says it may remain as wider reading, so no bridging lessons are written; the earlier AQA 8702 A Christmas Carol lessons were retired. Section B AO2/AO3 mark split and exact question stems were not confirmed in the spec file and must be checked against past papers. | Gap-fill against Pearson Edexcel International GCSE English Literature 4ET1 specification | Spring 1 founding year (Nov 2026, lessons v3), lessons 36 to 45: the bridge (11 Jan: Of Mice and Men core; 18 Jan: An Inspector Calls core) and Spring 1 Macbeth (Component 2 Section B) Acts 1 to 5 in the school's order, following the Tarbiyyah Secondary English scheme of work 2026-27 Year 10 HT2 and HT3 overviews and the school's KS4 Of Mice and Men scheme. Macbeth is quoted from the public-domain text (check line numbers against the prescribed clean edition); Of Mice and Men and An Inspector Calls are quoted in single lines only.",
   "lessons": [
     {
       "unit": "Unit 1B: Anthology poetry (16 poems) - comparison skills",
@@ -3930,6 +3930,2002 @@
       ],
       "board": "Pearson Edexcel International GCSE (9-1) in English Literature (4ET1)",
       "boardShort": "Edexcel IGCSE 4ET1"
+    },
+    {
+      "unit": "Autumn 1: Modern prose: Of Mice and Men (Component 1 Section C)",
+      "n": 36,
+      "title": "Of Mice and Men core: context, plot and the American Dream",
+      "duration": 50,
+      "bigQuestion": "What does the dream of the farm mean to Steinbeck's characters?",
+      "objectives": [
+        "To understand how Steinbeck's 1930s context shapes the story of George and Lennie's dream"
+      ],
+      "successCriteria": [
+        "All: retell the plot in six stages",
+        "Most: explain three features of 1930s America",
+        "Some: link one piece of context to the dream of the farm"
+      ],
+      "crossCurricular": "History: the Great Depression and the Dust Bowl",
+      "smsc": "Social: loneliness and the need for community",
+      "keywords": [
+        {
+          "term": "Great Depression",
+          "def": "the economic collapse of the 1930s"
+        },
+        {
+          "term": "itinerant worker",
+          "def": "a labourer who moves from job to job"
+        },
+        {
+          "term": "American Dream",
+          "def": "the belief that hard work brings success and freedom"
+        },
+        {
+          "term": "context",
+          "def": "the world around a text"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What do you dream of owning one day? What would it mean to you, beyond the thing itself?"
+      },
+      "pictures": [
+        {
+          "find": "Salinas River California",
+          "alt": "The Salinas River, California, where the novella opens",
+          "for": "hook"
+        },
+        {
+          "find": "1930s ranch bunkhouse",
+          "alt": "A ranch bunkhouse",
+          "for": "keywords"
+        },
+        {
+          "find": "Dust Bowl farm 1930s",
+          "alt": "A farm in the Dust Bowl era",
+          "for": "teach:1"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10: KS4 English Literature 'Of Mice and Men' scheme of work (modern prose); Pearson 4ET1 scheme of work (modern prose)",
+        "Of Mice and Men plot summary and quotation bank (pupil PDF)",
+        "Class copy of Of Mice and Men (John Steinbeck)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "starter": [
+        {
+          "q": "4ET1 Component 1 is...",
+          "options": [
+            "closed book",
+            "open book"
+          ],
+          "a": "A) closed book",
+          "mins": 1
+        },
+        {
+          "q": "The modern prose question is worth...",
+          "options": [
+            "40 marks",
+            "20 marks"
+          ],
+          "a": "A) 40 marks",
+          "mins": 1
+        },
+        {
+          "q": "AO4 is about...",
+          "options": [
+            "context",
+            "spelling"
+          ],
+          "a": "A) context",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "1930s America",
+          "bullets": [
+            "The Great Depression after 1929",
+            "Drought and the Dust Bowl",
+            "Itinerant workers moving from ranch to ranch",
+            "Loneliness and little security"
+          ],
+          "note": "John Steinbeck, published 1937. Component 1 Section C: closed book, 40 marks (AO1 20, AO4 20). Full study is Autumn 2027; today is the core."
+        },
+        {
+          "heading": "The plot in six stages",
+          "note": "Pupils retell from the plot summary on the pupil PDF (home reading).",
+          "timeline": [
+            {
+              "label": "1",
+              "text": "George and Lennie camp by the river, sharing their dream"
+            },
+            {
+              "label": "2",
+              "text": "They arrive at the ranch: Curley, Candy, Slim"
+            },
+            {
+              "label": "3",
+              "text": "Candy joins the dream; it seems possible"
+            },
+            {
+              "label": "4",
+              "text": "Crooks's isolation; the dream briefly shared"
+            },
+            {
+              "label": "5",
+              "text": "Lennie's strength leads to a death in the barn"
+            },
+            {
+              "label": "6",
+              "text": "Back at the river, George ends the dream"
+            }
+          ]
+        },
+        {
+          "heading": "Model: context linked to text",
+          "note": "Labelled.",
+          "model": {
+            "problem": "How does Steinbeck use the dream of the farm?",
+            "steps": [
+              "Context: workers had no land, no security",
+              "Text: the dream of 'a little house' and land of their own",
+              "Link: the dream offers what the Depression denied",
+              "Message: such dreams were rarely achieved"
+            ],
+            "answer": "Steinbeck makes the farm a symbol of the security the Depression denied to itinerant workers, which is why its loss is so painful."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Why do so many characters want to share the dream?",
+            "options": [
+              "They are lonely and have no security",
+              "They want to be farmers only",
+              "George orders them to"
+            ],
+            "answer": 0,
+            "why": "Loneliness and insecurity, central to the context, draw them in."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain 'itinerant worker' using George and Lennie.",
+          "a": "They travel from ranch to ranch for short-term work with no home of their own.",
+          "mins": 3,
+          "model": "Definition plus example: they arrive at the ranch after leaving Weed, with only what they carry."
+        },
+        {
+          "q": "Which characters join the dream?",
+          "a": "Candy, and briefly Crooks.",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: in the portal response box, write a paragraph: 'How does Steinbeck use the American Dream in Of Mice and Men?' (closed book: use remembered details). Starter: 'Steinbeck presents the dream as...'",
+          "a": "A paragraph combining AO1 argument and AO4 context.",
+          "mins": 12,
+          "model": "Point: Steinbeck presents the dream of the farm as a hope that sustains the lonely but is destroyed by their world. | Evidence: George and Lennie repeat the dream like a promise, and Candy offers his savings to share it. | Explain: In the Depression, itinerant workers had no land or security, so the dream offers belonging; its collapse shows how little control such men had. | Link: So the dream is Steinbeck's way of exposing the false promise of the American Dream."
+        },
+        {
+          "q": "Extend: add one more piece of context (for example the Dust Bowl).",
+          "a": "A linked context sentence.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: is the dream a strength or a weakness for George?",
+          "a": "Both: it gives purpose but makes the loss crueller.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "The novella was published in...",
+          "options": [
+            "1937",
+            "1912"
+          ],
+          "a": "A) 1937",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder: what would your dream mean beyond the thing itself?",
+          "a": "Answers vary, e.g. security, belonging, freedom.",
+          "mins": 2
+        }
+      ],
+      "homework": "Read the novella at home over the coming weeks (full study returns in Autumn 2027); learn five short quotations from the quotation bank.",
+      "send": "SEND: plot cards. EAL: context glossary. Stretch: research the Dust Bowl migration."
+    },
+    {
+      "unit": "Autumn 1: Modern prose: Of Mice and Men (Component 1 Section C)",
+      "n": 37,
+      "title": "Of Mice and Men core: characters, loneliness and the closed-book essay",
+      "duration": 50,
+      "bigQuestion": "How does Steinbeck present loneliness?",
+      "objectives": [
+        "To understand how Steinbeck presents loneliness through his characters and how to write about it from memory"
+      ],
+      "successCriteria": [
+        "All: name four lonely characters and why each is isolated",
+        "Most: learn three short quotations by heart",
+        "Some: write a closed-book paragraph combining argument and context"
+      ],
+      "smsc": "Moral: prejudice, exclusion and friendship",
+      "keywords": [
+        {
+          "term": "loneliness",
+          "def": "being without companionship"
+        },
+        {
+          "term": "isolation",
+          "def": "being cut off from others"
+        },
+        {
+          "term": "closed book",
+          "def": "the text is not allowed in the exam"
+        },
+        {
+          "term": "prejudice",
+          "def": "unfair judgement of a group"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is it possible to be lonely in a crowded place? Who on a ranch full of men is most alone?"
+      },
+      "pictures": [
+        {
+          "find": "ranch barn interior hay",
+          "alt": "Inside a barn",
+          "for": "hook"
+        },
+        {
+          "find": "horseshoe",
+          "alt": "A horseshoe, as in the men's game",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10: KS4 English Literature 'Of Mice and Men' scheme of work",
+        "Of Mice and Men quotation bank (pupil PDF)",
+        "Class copy of Of Mice and Men (John Steinbeck)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "starter": [
+        {
+          "q": "Itinerant workers...",
+          "options": [
+            "move from job to job",
+            "own farms"
+          ],
+          "a": "A) move from job to job",
+          "mins": 1
+        },
+        {
+          "q": "Who joins the dream first?",
+          "options": [
+            "Candy",
+            "Curley"
+          ],
+          "a": "A) Candy",
+          "mins": 1
+        },
+        {
+          "q": "Component 1 is...",
+          "options": [
+            "closed book",
+            "open book"
+          ],
+          "a": "A) closed book",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Lonely characters",
+          "note": "Pupils add reasons.",
+          "table": {
+            "head": [
+              "Character",
+              "Why isolated"
+            ],
+            "rows": [
+              [
+                "Candy",
+                "old age and disability"
+              ],
+              [
+                "Crooks",
+                "racial prejudice; made to live apart"
+              ],
+              [
+                "Curley's wife",
+                "no name, no friend on the ranch"
+              ],
+              [
+                "George",
+                "responsibility; he loses Lennie"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Quotations to memorise",
+          "note": "Short and memorable for a closed-book paper.",
+          "quote": {
+            "text": "Guys like us, that work on ranches, are the loneliest guys in the world.",
+            "source": "Of Mice and Men, section 1 (George)"
+          }
+        },
+        {
+          "heading": "Model: a closed-book paragraph",
+          "note": "Labelled.",
+          "model": {
+            "problem": "How does Steinbeck present loneliness?",
+            "steps": [
+              "Point: loneliness is the condition of almost every character",
+              "Evidence: 'the loneliest guys in the world'",
+              "Context: itinerant workers rarely formed lasting bonds",
+              "Development: Crooks is isolated further by prejudice",
+              "Link: friendship like George and Lennie's is rare and precious"
+            ],
+            "answer": "A closed-book paragraph."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why Crooks is more isolated than the other men.",
+          "a": "Racial prejudice keeps him apart in his own room.",
+          "mins": 3,
+          "model": "Character + cause + context: Crooks, racial segregation in 1930s America, so he is excluded even among outcasts."
+        },
+        {
+          "q": "Recall the 'loneliest guys' quotation without looking.",
+          "a": "Guys like us, that work on ranches, are the loneliest guys in the world.",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: in the portal response box (from memory), write a closed-book paragraph: 'How does Steinbeck present loneliness?' Starter: 'Steinbeck presents loneliness as...'",
+          "a": "A paragraph with a memorised quotation, argument and context.",
+          "mins": 13,
+          "model": "Point: Steinbeck presents loneliness as the defining condition of the itinerant worker's life. | Evidence: George says that men who 'work on ranches, are the loneliest guys in the world'. | Explain: In the Depression, workers moved constantly and rarely formed bonds, which makes George and Lennie's friendship remarkable, and its end tragic. | Link: So loneliness is both the context and the tragedy of the novella."
+        },
+        {
+          "q": "Extend: add a second paragraph on one other character.",
+          "a": "A paragraph on Candy, Crooks or Curley's wife.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: how does friendship challenge loneliness in the novella?",
+          "a": "George and Lennie's bond is the exception that gives the story hope.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Who is isolated by racial prejudice?",
+          "options": [
+            "Crooks",
+            "Slim"
+          ],
+          "a": "A) Crooks",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder.",
+          "a": "Yes; Crooks or Curley's wife are most alone.",
+          "mins": 2
+        }
+      ],
+      "homework": "Learn three quotations from the bank and write them from memory.",
+      "send": "SEND: quotation flashcards. EAL: character glossary. Stretch: comment on the circular structure."
+    },
+    {
+      "unit": "Autumn 2: Modern drama: An Inspector Calls (Component 2 Section A)",
+      "n": 38,
+      "title": "An Inspector Calls core: context, the Birlings and the Inspector",
+      "duration": 50,
+      "bigQuestion": "Who is responsible for what happens to Eva Smith?",
+      "objectives": [
+        "To understand how Priestley uses the 1912 setting and the Inspector to challenge a selfish society"
+      ],
+      "successCriteria": [
+        "All: explain the difference between 1912 and 1945",
+        "Most: describe the role of each Birling and Gerald",
+        "Some: explain how dramatic irony undermines Mr Birling"
+      ],
+      "crossCurricular": "History: the Edwardian class system and the welfare state after 1945",
+      "smsc": "Social: social responsibility and class",
+      "islamicLink": {
+        "text": "Islam teaches that every person is responsible for those in their care and for how they treat the weak; the Prophet ﷺ taught that each of us is a shepherd responsible for his flock (Sahih al-Bukhari and Sahih Muslim). Priestley's play asks the same question: are we responsible for each other?",
+        "at": "start"
+      },
+      "keywords": [
+        {
+          "term": "dramatic irony",
+          "def": "the audience knows more than a character"
+        },
+        {
+          "term": "social responsibility",
+          "def": "caring for others in society"
+        },
+        {
+          "term": "capitalism",
+          "def": "an economy run for private profit"
+        },
+        {
+          "term": "socialism",
+          "def": "the belief that society should share responsibility"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If one person's small unkindness helped ruin another person's life, who is to blame?"
+      },
+      "pictures": [
+        {
+          "find": "Edwardian dining room",
+          "alt": "An Edwardian dining room",
+          "for": "hook"
+        },
+        {
+          "find": "Titanic ship 1912",
+          "alt": "RMS Titanic, 1912",
+          "for": "keywords"
+        },
+        {
+          "find": "doorbell old house",
+          "alt": "An old front door",
+          "for": "teach:2"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 HT2 curriculum overview (An Inspector Calls, 7 weeks)",
+        "Clean prescribed edition of An Inspector Calls (open book for Component 2)",
+        "An Inspector Calls quotation bank (pupil PDF)",
+        "PETZAAL and PESTAL scaffolds (school framework cards)"
+      ],
+      "starter": [
+        {
+          "q": "The play is set in...",
+          "options": [
+            "1912",
+            "1945"
+          ],
+          "a": "A) 1912",
+          "mins": 1
+        },
+        {
+          "q": "Component 2 is...",
+          "options": [
+            "open book",
+            "closed book"
+          ],
+          "a": "A) open book",
+          "mins": 1
+        },
+        {
+          "q": "Dramatic irony means...",
+          "options": [
+            "the audience knows more",
+            "a funny scene"
+          ],
+          "a": "A) the audience knows more",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Two dates",
+          "note": "J B Priestley; first performed 1945; set in 1912.",
+          "compare": {
+            "left": {
+              "title": "1912 (setting)",
+              "points": [
+                "rigid class system",
+                "before two world wars"
+              ]
+            },
+            "right": {
+              "title": "1945 (audience)",
+              "points": [
+                "after two wars",
+                "hope for a fairer society"
+              ]
+            },
+            "label": "and"
+          }
+        },
+        {
+          "heading": "The family and the Inspector",
+          "bullets": [
+            "Mr Birling: profit first",
+            "Mrs Birling: class prejudice",
+            "Sheila and Eric: the young who change",
+            "Gerald: hides his part",
+            "Inspector Goole: Priestley's voice"
+          ],
+          "note": "Eva Smith's treatment by each is the chain of responsibility; keep detail general."
+        },
+        {
+          "heading": "Model: dramatic irony",
+          "note": "Labelled.",
+          "model": {
+            "problem": "How does Priestley use dramatic irony to undermine Mr Birling?",
+            "steps": [
+              "Birling calls the Titanic 'unsinkable'",
+              "The 1945 audience knows it sank in 1912",
+              "He also dismisses talk of war",
+              "Effect: his confident views look foolish",
+              "Message: his selfish capitalism is equally wrong"
+            ],
+            "answer": "Priestley makes Birling confidently wrong about the Titanic and war, so the audience distrusts his views on responsibility too."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Why does Priestley set the play in 1912 but write it in 1945?",
+            "options": [
+              "So the audience can judge the past with hindsight",
+              "Because he forgot",
+              "To make it a history lesson only"
+            ],
+            "answer": 0,
+            "why": "Hindsight creates dramatic irony and urges a fairer future."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Name one way Mrs Birling shows class prejudice.",
+          "a": "She refuses help to Eva at her charity because she judges her as beneath her.",
+          "mins": 3,
+          "model": "Character + action + attitude: Mrs Birling, the charity committee, prejudice against the working class."
+        },
+        {
+          "q": "Which characters change by the end?",
+          "a": "Sheila and Eric.",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: in the portal response box, write a PETZAAL paragraph: 'How does Priestley present Mr Birling?' Starter: 'Priestley presents Mr Birling as...'",
+          "a": "A paragraph with a short quotation, dramatic irony and context.",
+          "mins": 13,
+          "model": "Point: Priestley presents Mr Birling as confidently, dangerously wrong. | Evidence: 'unsinkable' | Technique: dramatic irony | Zoom in: 'unsinkable' is absolute, so the audience knows his certainty is false. | Analyse: If he is wrong about the Titanic, he may be wrong that a man should look after only himself. | Alternative: Some audiences might pity him as a man of his time. | Link: So Priestley uses Birling to discredit selfish capitalism."
+        },
+        {
+          "q": "Extend: add one sentence on 1945 context.",
+          "a": "Audiences in 1945 hoped for a fairer, more caring society.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: is the Inspector a character or a device?",
+          "a": "Both: a mysterious figure and Priestley's mouthpiece.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Who is Priestley's voice in the play?",
+          "options": [
+            "the Inspector",
+            "Gerald"
+          ],
+          "a": "A) the Inspector",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder.",
+          "a": "Priestley suggests everyone in the chain shares responsibility.",
+          "mins": 2
+        }
+      ],
+      "homework": "Read the play at home (full study in Autumn 2027); learn the Inspector's key line on responsibility.",
+      "send": "SEND: character cards. EAL: context glossary. Stretch: research the 1945 general election."
+    },
+    {
+      "unit": "Autumn 2: Modern drama: An Inspector Calls (Component 2 Section A)",
+      "n": 39,
+      "title": "An Inspector Calls core: responsibility and the 30-mark open-book answer",
+      "duration": 50,
+      "bigQuestion": "How does Priestley present responsibility?",
+      "objectives": [
+        "To understand how Priestley presents responsibility and how to answer an open-book Component 2 question"
+      ],
+      "successCriteria": [
+        "All: explain the Inspector's message about responsibility",
+        "Most: contrast how the older and younger Birlings respond",
+        "Some: plan a 30-mark answer using AO1 and AO2"
+      ],
+      "smsc": "Moral: accepting responsibility and changing",
+      "keywords": [
+        {
+          "term": "open book",
+          "def": "a clean copy of the text is allowed in the exam"
+        },
+        {
+          "term": "AO1",
+          "def": "knowledge and personal response with evidence"
+        },
+        {
+          "term": "AO2",
+          "def": "analysis of language, form and structure"
+        },
+        {
+          "term": "generational divide",
+          "def": "a difference between old and young"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Can people change their minds about how they have treated others? What makes them change?"
+      },
+      "pictures": [
+        {
+          "find": "closed book with bookmark",
+          "alt": "A book with a bookmark",
+          "for": "keywords"
+        },
+        {
+          "find": "old telephone 1912",
+          "alt": "An early telephone, used at the play's end",
+          "for": "hook"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 HT2 curriculum overview (An Inspector Calls)",
+        "Clean prescribed edition of An Inspector Calls",
+        "Component 2 answer planner (pupil PDF)",
+        "PETZAAL and PESTAL scaffolds (school framework cards)"
+      ],
+      "starter": [
+        {
+          "q": "Birling calls the Titanic...",
+          "options": [
+            "unsinkable",
+            "dangerous"
+          ],
+          "a": "A) unsinkable",
+          "mins": 1
+        },
+        {
+          "q": "Component 2 Section A is worth...",
+          "options": [
+            "30 marks",
+            "40 marks"
+          ],
+          "a": "A) 30 marks",
+          "mins": 1
+        },
+        {
+          "q": "Which Birling changes?",
+          "options": [
+            "Sheila",
+            "Mr Birling"
+          ],
+          "a": "A) Sheila",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The Inspector's message",
+          "note": "One line; check against the clean edition.",
+          "quote": {
+            "text": "We are members of one body. We are responsible for each other.",
+            "source": "An Inspector Calls, Act 3 (the Inspector)"
+          }
+        },
+        {
+          "heading": "Old and young",
+          "note": "Discuss.",
+          "compare": {
+            "left": {
+              "title": "Mr and Mrs Birling",
+              "points": [
+                "deny responsibility",
+                "relieved when the Inspector may be a hoax"
+              ]
+            },
+            "right": {
+              "title": "Sheila and Eric",
+              "points": [
+                "accept responsibility",
+                "changed by the evening"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Model: planning a 30-mark answer",
+          "note": "Labelled.",
+          "model": {
+            "problem": "How does Priestley present responsibility?",
+            "steps": [
+              "Thesis: responsibility is shared, and only the young accept it",
+              "Para 1: the Inspector's speech ('one body'), AO2",
+              "Para 2: Birling's 'unsinkable' certainty, dramatic irony",
+              "Para 3: Sheila's change versus her parents",
+              "Conclusion: Priestley's warning to the 1945 audience"
+            ],
+            "answer": "A four-part plan for an open-book answer."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain the metaphor 'members of one body'.",
+          "a": "Society is like one body: harm to one part harms all.",
+          "mins": 3,
+          "model": "Metaphor: society as a body. Effect: interdependence. Message: we cannot ignore others."
+        },
+        {
+          "q": "Why do Mr and Mrs Birling feel relief at the end?",
+          "a": "They think it was a hoax, so they need not change.",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: in the portal response box, write a thesis and one full paragraph: 'How does Priestley present the theme of responsibility?' Starter: 'Priestley presents responsibility as...'",
+          "a": "Thesis plus one PETZAAL paragraph with AO1 and AO2.",
+          "mins": 14,
+          "model": "Point: Priestley presents responsibility as shared by everyone, though only some accept it. | Evidence: 'We are members of one body' | Technique: metaphor | Zoom in: 'body' implies every part depends on every other. | Analyse: The audience is asked to see society as connected, not divided by class. | Alternative: Some may find the speech too direct, more lecture than drama. | Link: So Priestley uses the Inspector to deliver a clear warning about selfishness."
+        },
+        {
+          "q": "Extend: add a sentence on how Sheila changes.",
+          "a": "She moves from privilege to remorse and accepts her part.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: comment on the final phone call as structure.",
+          "a": "It restarts the investigation, so the lesson must still be learnt.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Component 2 Section A rewards...",
+          "options": [
+            "AO1 and AO2",
+            "AO4 only"
+          ],
+          "a": "A) AO1 and AO2",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder.",
+          "a": "Answers vary; in the play, honesty and the Inspector's challenge change the young.",
+          "mins": 2
+        }
+      ],
+      "homework": "Learn five short quotations for the play and write a thesis for a question on Sheila.",
+      "send": "SEND: plan template. EAL: glossary. Stretch: alternative reading of the Inspector."
+    },
+    {
+      "unit": "Spring 1: Literary heritage: Macbeth (Component 2 Section B)",
+      "n": 40,
+      "title": "Macbeth Act 1: the witches, prophecy and ambition",
+      "duration": 50,
+      "bigQuestion": "Does ambition make people great, or does it lead to their downfall?",
+      "objectives": [
+        "To understand how Shakespeare introduces ambition and the conflict between fate and free will in Act 1"
+      ],
+      "successCriteria": [
+        "All: explain Jacobean beliefs about kingship and witchcraft",
+        "Most: analyse the paradox 'Fair is foul'",
+        "Some: write a PETZAAL paragraph on Macbeth's reaction to the prophecy"
+      ],
+      "crossCurricular": "History: James I, the Gunpowder Plot (1605) and the Divine Right of Kings",
+      "smsc": "Moral: ambition, temptation and conscience",
+      "islamicLink": {
+        "text": "Islam teaches that power is a trust (amanah, أَمَانَة) to be used with justice (an-Nisa 4:58), and that knowledge of the unseen belongs to Allah alone (an-Naml 27:65), so seeking the future from fortune-tellers is forbidden. Macbeth shows a man who trusts prophecy and ambition over conscience, and is ruined by it.",
+        "at": "start"
+      },
+      "keywords": [
+        {
+          "term": "ambition",
+          "def": "a strong desire for power or success"
+        },
+        {
+          "term": "prophecy",
+          "def": "a prediction of the future"
+        },
+        {
+          "term": "regicide",
+          "def": "killing a king"
+        },
+        {
+          "term": "Jacobean",
+          "def": "from the reign of James I (1603 to 1625)"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Does ambition make people great, or does it lead to their downfall?"
+      },
+      "pictures": [
+        {
+          "find": "Scottish heath moorland mist",
+          "alt": "A misty Scottish heath",
+          "for": "hook"
+        },
+        {
+          "find": "Glamis Castle",
+          "alt": "Glamis Castle, Scotland",
+          "for": "keywords"
+        },
+        {
+          "find": "Scottish crown jewels Honours of Scotland",
+          "alt": "The crown of Scotland",
+          "for": "teach:1"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 HT3 Week 1 (Act 1, Scenes 1 to 3: the witches, prophecy and ambition)",
+        "Clean prescribed edition of Macbeth (open book for Component 2)",
+        "Macbeth Knowledge Organiser and quotation bank (Year 10 HT3)",
+        "PETZAAL and PESTAL scaffolds (school framework cards)"
+      ],
+      "starter": [
+        {
+          "q": "Component 2 Section B is...",
+          "options": [
+            "open book",
+            "closed book"
+          ],
+          "a": "A) open book",
+          "mins": 1
+        },
+        {
+          "q": "It rewards...",
+          "options": [
+            "AO1, AO2 and AO4",
+            "AO3 only"
+          ],
+          "a": "A) AO1, AO2 and AO4",
+          "mins": 1
+        },
+        {
+          "q": "Regicide means...",
+          "options": [
+            "killing a king",
+            "crowning a king"
+          ],
+          "a": "A) killing a king",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Jacobean context",
+          "bullets": [
+            "James I: King of Scotland and England",
+            "Divine Right of Kings: kings chosen by God",
+            "Regicide: a crime against God and nature",
+            "Fear of witchcraft"
+          ],
+          "note": "Pupils met Macbeth in Year 9; this is the 4ET1 literary heritage text."
+        },
+        {
+          "heading": "A world turned upside down",
+          "note": "Public domain.",
+          "quote": {
+            "text": "Fair is foul, and foul is fair.",
+            "source": "Macbeth, Act 1 Scene 1 (the witches)"
+          }
+        },
+        {
+          "heading": "Model: PETZAAL on Macbeth's reaction",
+          "note": "Labelled.",
+          "model": {
+            "problem": "How does Shakespeare present Macbeth's ambition in Act 1?",
+            "steps": [
+              "Point: the prophecy awakens an ambition already inside Macbeth.",
+              "Evidence: 'Stars, hide your fires' (1.4)",
+              "Technique: imperative and imagery of light and dark",
+              "Zoom: 'hide' shows he knows his desire is shameful",
+              "Alternative: the witches may plant, not reveal, the thought",
+              "Link: ambition and guilt begin together"
+            ],
+            "answer": "A PETZAAL paragraph."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "'Fair is foul, and foul is fair' is a...",
+            "options": [
+              "paradox",
+              "simile",
+              "rhyme only"
+            ],
+            "answer": 0,
+            "why": "It contradicts itself, signalling a world where values are inverted."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why regicide would horrify a Jacobean audience.",
+          "a": "Kings were believed chosen by God, so killing one defied God and nature.",
+          "mins": 3,
+          "model": "Belief: Divine Right. Crime: regicide. Effect: an offence against God and the natural order."
+        },
+        {
+          "q": "What does 'Stars, hide your fires' suggest?",
+          "a": "Macbeth wants his ambition hidden, even from heaven.",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: in the portal response box (open book: use your clean edition), write a PETZAAL paragraph: 'How does Shakespeare present Macbeth's ambition in Act 1?' Starter: 'Shakespeare presents Macbeth's ambition as...'",
+          "a": "A paragraph with a short quotation, analysis and Jacobean context.",
+          "mins": 13,
+          "model": "Point: Shakespeare presents Macbeth's ambition as a dark desire he already knows is wrong. | Evidence: 'Stars, hide your fires; Let not light see my black and deep desires' | Technique: imagery of light and darkness | Zoom in: 'black' marks his desire as evil. | Analyse: His wish to hide from 'light' shows conscience fighting ambition. | Alternative: Some argue the witches create the desire rather than reveal it. | Link: So, for a Jacobean audience, Macbeth's ambition is already a sin against the God-given order."
+        },
+        {
+          "q": "Extend: add a sentence on fate versus free will.",
+          "a": "The prophecy tells him what; he chooses how.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: compare Macbeth's and Banquo's reactions to the witches.",
+          "a": "Banquo is cautious; Macbeth is drawn in.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "The witches' words are...",
+          "options": [
+            "a prophecy",
+            "a command"
+          ],
+          "a": "A) a prophecy",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder.",
+          "a": "Answers vary; Shakespeare shows ambition without conscience leads to downfall.",
+          "mins": 2
+        }
+      ],
+      "homework": "Read Act 1 in your clean edition and learn three quotations.",
+      "send": "SEND: act summary and frame. EAL: glossary of Shakespearean words. Stretch: Banquo as a foil."
+    },
+    {
+      "unit": "Spring 1: Literary heritage: Macbeth (Component 2 Section B)",
+      "n": 41,
+      "title": "Macbeth Act 1: Lady Macbeth, persuasion and the decision to kill",
+      "duration": 50,
+      "bigQuestion": "Who is more responsible for Duncan's murder?",
+      "objectives": [
+        "To understand how Shakespeare presents the decision to murder Duncan as a struggle between conscience and persuasion"
+      ],
+      "successCriteria": [
+        "All: explain Macbeth's reasons not to kill Duncan",
+        "Most: analyse how Lady Macbeth persuades him",
+        "Some: argue who is more responsible for the murder"
+      ],
+      "smsc": "Moral: responsibility for our own choices",
+      "islamicLink": {
+        "text": "Islam teaches that power is a trust (amanah, أَمَانَة) to be used with justice (an-Nisa 4:58), and that knowledge of the unseen belongs to Allah alone (an-Naml 27:65), so seeking the future from fortune-tellers is forbidden. Macbeth shows a man who trusts prophecy and ambition over conscience, and is ruined by it.",
+        "at": "start"
+      },
+      "keywords": [
+        {
+          "term": "conscience",
+          "def": "the inner sense of right and wrong"
+        },
+        {
+          "term": "persuasion",
+          "def": "convincing someone to act"
+        },
+        {
+          "term": "soliloquy",
+          "def": "a speech revealing a character's thoughts, alone on stage"
+        },
+        {
+          "term": "manipulation",
+          "def": "controlling someone unfairly"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Who is more responsible for a wrong: the person who does it, or the person who talks them into it?"
+      },
+      "pictures": [
+        {
+          "find": "castle interior torchlight",
+          "alt": "A castle interior by torchlight",
+          "for": "hook"
+        },
+        {
+          "find": "dagger museum medieval",
+          "alt": "A medieval dagger in a museum",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 HT3 Week 2 (Act 1, Scenes 4 to 7: Macbeth, Lady Macbeth and the decision to kill)",
+        "Clean prescribed edition of Macbeth (open book for Component 2)",
+        "Macbeth Knowledge Organiser and quotation bank (Year 10 HT3)",
+        "PETZAAL and PESTAL scaffolds (school framework cards)"
+      ],
+      "starter": [
+        {
+          "q": "'Fair is foul' is a...",
+          "options": [
+            "paradox",
+            "simile"
+          ],
+          "a": "A) paradox",
+          "mins": 1
+        },
+        {
+          "q": "Jacobeans believed kings were...",
+          "options": [
+            "chosen by God",
+            "elected"
+          ],
+          "a": "A) chosen by God",
+          "mins": 1
+        },
+        {
+          "q": "A soliloquy is spoken...",
+          "options": [
+            "alone",
+            "to a crowd"
+          ],
+          "a": "A) alone",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Macbeth's doubts (1.7)",
+          "bullets": [
+            "Duncan is his king and kinsman",
+            "Duncan is his guest",
+            "Duncan is a good king",
+            "Only 'vaulting ambition' drives him"
+          ],
+          "note": "Check each against the clean edition."
+        },
+        {
+          "heading": "Lady Macbeth's methods",
+          "note": "Discuss.",
+          "diagram": {
+            "centre": "Lady Macbeth persuades",
+            "items": [
+              "questions his courage",
+              "attacks his manhood",
+              "makes a plan",
+              "shames him for breaking his word",
+              "hides guilt behind innocence"
+            ]
+          }
+        },
+        {
+          "heading": "Model: who is responsible?",
+          "note": "Labelled.",
+          "model": {
+            "problem": "Who is more responsible for Duncan's murder?",
+            "steps": [
+              "Thesis: Macbeth, because he chooses despite knowing it is wrong",
+              "Evidence: his soliloquy lists every reason not to kill",
+              "Counter: Lady Macbeth's persuasion is relentless",
+              "Judgement: persuasion explains, but does not excuse, his choice"
+            ],
+            "answer": "A balanced judgement."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "'I have no spur... but only vaulting ambition' shows Macbeth...",
+            "options": [
+              "knows ambition is his only motive",
+              "has many good reasons",
+              "is afraid of horses"
+            ],
+            "answer": 0,
+            "why": "He admits he has no justification except ambition."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain the image of 'vaulting ambition'.",
+          "a": "Ambition that leaps too high and falls, like a rider overleaping his horse.",
+          "mins": 3,
+          "model": "Image: a rider vaulting into the saddle. Overleaping: falls on the other side. Effect: ambition destroys itself."
+        },
+        {
+          "q": "Which of Lady Macbeth's methods is most effective, and why?",
+          "a": "Questioning his courage, because his identity is built on bravery.",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: in the portal response box, write two paragraphs: 'Who is more responsible for Duncan's murder: Macbeth or Lady Macbeth?' Starter: 'Although Lady Macbeth...'",
+          "a": "A balanced argument with quotations from 1.5 and 1.7 and a judgement.",
+          "mins": 14,
+          "model": "Although Lady Macbeth's persuasion is relentless, Shakespeare places responsibility on Macbeth. In his soliloquy he admits he has 'no spur' but 'vaulting ambition', so he chooses murder knowing it is wrong. Lady Macbeth exploits his pride, yet persuasion explains his choice; it does not excuse it."
+        },
+        {
+          "q": "Extend: add Jacobean context about loyalty to a king and guest.",
+          "a": "Hospitality and loyalty were sacred duties.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: alternative: are the witches responsible?",
+          "a": "They tempt, but do not force.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Duncan is Macbeth's...",
+          "options": [
+            "king, kinsman and guest",
+            "enemy"
+          ],
+          "a": "A) king, kinsman and guest",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder.",
+          "a": "Both share blame, but the one who acts carries the greater responsibility.",
+          "mins": 2
+        }
+      ],
+      "homework": "Learn 'vaulting ambition' and one Lady Macbeth quotation.",
+      "send": "SEND: argument frame. EAL: glossary. Stretch: analyse 1.5 'unsex me here' as language of power."
+    },
+    {
+      "unit": "Spring 1: Literary heritage: Macbeth (Component 2 Section B)",
+      "n": 42,
+      "title": "Macbeth Act 2: the dagger, the murder and guilt",
+      "duration": 50,
+      "bigQuestion": "Can a person escape a guilty conscience?",
+      "objectives": [
+        "To understand how Shakespeare presents Duncan's murder as a crime against nature that destroys Macbeth's peace"
+      ],
+      "successCriteria": [
+        "All: explain the dagger vision as a sign of inner conflict",
+        "Most: analyse blood and sleep imagery after the murder",
+        "Some: write a PETZAAL and PESTAL paragraph on guilt"
+      ],
+      "smsc": "Spiritual: conscience, guilt and repentance",
+      "islamicLink": {
+        "text": "Islam teaches that a guilty conscience is a mercy when it leads to sincere repentance (tawbah, تَوْبَة), and that Allah forgives those who turn back to Him. Macbeth feels guilt but chooses more crime instead of repentance.",
+        "at": "start"
+      },
+      "keywords": [
+        {
+          "term": "hallucination",
+          "def": "seeing something that is not there"
+        },
+        {
+          "term": "guilt",
+          "def": "the feeling of having done wrong"
+        },
+        {
+          "term": "motif",
+          "def": "a repeated image or idea"
+        },
+        {
+          "term": "natural order",
+          "def": "the God-given order of the world"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Can a person ever escape the consequences of a guilty conscience?"
+      },
+      "pictures": [
+        {
+          "find": "blood red water basin",
+          "alt": "Red water in a basin",
+          "for": "hook"
+        },
+        {
+          "find": "night sky owl",
+          "alt": "An owl at night",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 HT3 Week 3 (Act 2: Duncan's murder, guilt and the breakdown of order)",
+        "Clean prescribed edition of Macbeth (open book for Component 2)",
+        "Macbeth Knowledge Organiser and quotation bank (Year 10 HT3)",
+        "PETZAAL and PESTAL scaffolds (school framework cards)"
+      ],
+      "starter": [
+        {
+          "q": "'Vaulting ambition' means...",
+          "options": [
+            "ambition that overreaches",
+            "loyalty"
+          ],
+          "a": "A) ambition that overreaches",
+          "mins": 1
+        },
+        {
+          "q": "Who persuades Macbeth?",
+          "options": [
+            "Lady Macbeth",
+            "Banquo"
+          ],
+          "a": "A) Lady Macbeth",
+          "mins": 1
+        },
+        {
+          "q": "A motif is...",
+          "options": [
+            "a repeated image",
+            "a single event"
+          ],
+          "a": "A) a repeated image",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Before and after the murder",
+          "bullets": [
+            "Before: the floating dagger",
+            "After: 'Macbeth does murder sleep'",
+            "Blood on his hands",
+            "Nature disturbed"
+          ],
+          "note": "Act 2 Scenes 1 to 4."
+        },
+        {
+          "heading": "Blood that will not wash away",
+          "note": "Public domain.",
+          "quote": {
+            "text": "Will all great Neptune's ocean wash this blood clean from my hand?",
+            "source": "Macbeth, Act 2 Scene 2"
+          }
+        },
+        {
+          "heading": "Model: PETZAAL on guilt",
+          "note": "Labelled.",
+          "model": {
+            "problem": "How does Shakespeare present Macbeth's guilt?",
+            "steps": [
+              "Point: guilt overwhelms Macbeth immediately.",
+              "Evidence: 'Will all great Neptune's ocean wash this blood clean from my hand?'",
+              "Technique: rhetorical question and hyperbole",
+              "Zoom: 'all' the ocean cannot clean him",
+              "Alternative: Lady Macbeth's 'a little water' shows denial",
+              "Link: guilt is permanent"
+            ],
+            "answer": "A PETZAAL paragraph."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Why contrast Macbeth's ocean with Lady Macbeth's 'little water'?",
+            "options": [
+              "To show his guilt is overwhelming and hers is denied (for now)",
+              "Because she likes washing",
+              "To end the act"
+            ],
+            "answer": 0,
+            "why": "The contrast sets up her later breakdown."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "What does the dagger vision suggest about Macbeth's mind?",
+          "a": "He is torn and unstable, his conscience fighting his ambition.",
+          "mins": 3,
+          "model": "Vision: a dagger leading him. Meaning: his own intent made visible. Effect: inner conflict before the crime."
+        },
+        {
+          "q": "Explain 'Macbeth does murder sleep'.",
+          "a": "He has destroyed his own peace; he will never rest easily again.",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: in the portal response box, write a PETZAAL and PESTAL paragraph: 'How does Shakespeare present guilt in Act 2?' Starter: 'Shakespeare presents guilt as...'",
+          "a": "Language and structure analysis with context.",
+          "mins": 14,
+          "model": "Point: Shakespeare presents guilt as a stain that nothing in nature can remove. | Evidence: 'Will all great Neptune's ocean wash this blood clean from my hand?' | Technique: hyperbole in a rhetorical question | Zoom in: 'all' the ocean is not enough. | Analyse: The audience sees that regicide has made him permanently unclean. | Alternative: Lady Macbeth's 'a little water clears us of this deed' shows she denies what he feels. | Link: So guilt becomes a motif that grows until it destroys them both."
+        },
+        {
+          "q": "Extend: link to the natural order (Jacobean context).",
+          "a": "Regicide breaks God's order, so nature itself is disturbed.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: trace the blood motif to Act 5.",
+          "a": "It returns in Lady Macbeth's sleepwalking.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "'Neptune's ocean' is...",
+          "options": [
+            "hyperbole",
+            "understatement"
+          ],
+          "a": "A) hyperbole",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder.",
+          "a": "Shakespeare suggests not: guilt follows Macbeth to the end.",
+          "mins": 2
+        }
+      ],
+      "homework": "Read Act 2 and learn the 'Neptune's ocean' quotation.",
+      "send": "SEND: quotation cards. EAL: glossary. Stretch: comment on the Porter as dramatic relief."
+    },
+    {
+      "unit": "Spring 1: Literary heritage: Macbeth (Component 2 Section B)",
+      "n": 43,
+      "title": "Macbeth Act 3: Banquo, the banquet and the making of a tyrant",
+      "duration": 50,
+      "bigQuestion": "Does power corrupt, or reveal?",
+      "objectives": [
+        "To understand how Shakespeare shows Macbeth becoming a tyrant who has power but no peace"
+      ],
+      "successCriteria": [
+        "All: explain why Macbeth fears Banquo",
+        "Most: analyse the banquet scene as a public collapse",
+        "Some: write a PETZAAL paragraph on Macbeth's tyranny"
+      ],
+      "smsc": "Moral: the corruption of power",
+      "islamicLink": {
+        "text": "Islam teaches that power is a trust (amanah, أَمَانَة) to be used with justice (an-Nisa 4:58), and that knowledge of the unseen belongs to Allah alone (an-Naml 27:65), so seeking the future from fortune-tellers is forbidden. Macbeth shows a man who trusts prophecy and ambition over conscience, and is ruined by it.",
+        "at": "start"
+      },
+      "keywords": [
+        {
+          "term": "tyrant",
+          "def": "a cruel ruler who rules by fear"
+        },
+        {
+          "term": "paranoia",
+          "def": "irrational suspicion of others"
+        },
+        {
+          "term": "dramatic tension",
+          "def": "suspense created on stage"
+        },
+        {
+          "term": "foil",
+          "def": "a character who contrasts with another"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Does power corrupt people, or does it simply reveal who they really are?"
+      },
+      "pictures": [
+        {
+          "find": "medieval banquet hall table",
+          "alt": "A medieval banquet hall",
+          "for": "hook"
+        },
+        {
+          "find": "scorpion",
+          "alt": "A scorpion",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 HT3 Week 4 (Act 3: Banquo, the banquet scene and Macbeth's rise as a tyrant)",
+        "Clean prescribed edition of Macbeth (open book for Component 2)",
+        "Macbeth Knowledge Organiser and quotation bank (Year 10 HT3)",
+        "PETZAAL and PESTAL scaffolds (school framework cards)"
+      ],
+      "starter": [
+        {
+          "q": "'Neptune's ocean' shows...",
+          "options": [
+            "guilt",
+            "joy"
+          ],
+          "a": "A) guilt",
+          "mins": 1
+        },
+        {
+          "q": "Who is Macbeth's foil?",
+          "options": [
+            "Banquo",
+            "Duncan"
+          ],
+          "a": "A) Banquo",
+          "mins": 1
+        },
+        {
+          "q": "Paranoia is...",
+          "options": [
+            "irrational suspicion",
+            "courage"
+          ],
+          "a": "A) irrational suspicion",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "From hesitation to tyranny",
+          "bullets": [
+            "Fears Banquo's sons will be kings",
+            "Hires murderers without telling his wife",
+            "Banquo killed; Fleance escapes",
+            "Banquo's ghost at the banquet"
+          ],
+          "note": "Act 3."
+        },
+        {
+          "heading": "A mind full of scorpions",
+          "note": "Public domain.",
+          "quote": {
+            "text": "O, full of scorpions is my mind, dear wife!",
+            "source": "Macbeth, Act 3 Scene 2"
+          }
+        },
+        {
+          "heading": "Model: PETZAAL on tyranny",
+          "note": "Labelled.",
+          "model": {
+            "problem": "How does Shakespeare present Macbeth as a tyrant in Act 3?",
+            "steps": [
+              "Point: Macbeth has the crown but no peace.",
+              "Evidence: 'full of scorpions is my mind'",
+              "Technique: metaphor",
+              "Zoom: 'scorpions' suggests stinging, poisonous thoughts",
+              "Alternative: he still speaks tenderly ('dear wife'), so humanity lingers",
+              "Link: power has brought torment, not security"
+            ],
+            "answer": "A PETZAAL paragraph."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Why does Macbeth not tell Lady Macbeth about Banquo's murder?",
+            "options": [
+              "He now acts alone, showing growing independence in evil",
+              "He forgets",
+              "She is away"
+            ],
+            "answer": 0,
+            "why": "The partnership breaks as Macbeth becomes self-driven."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Why does Macbeth fear Banquo?",
+          "a": "The witches said Banquo's descendants would be kings, and Banquo suspects him.",
+          "mins": 3,
+          "model": "Prophecy: Banquo's heirs will reign. Threat: Banquo's suspicion. Result: Macbeth's paranoia."
+        },
+        {
+          "q": "What does the banquet show about Macbeth's control?",
+          "a": "He loses control in public; the court sees his guilt.",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: in the portal response box, write a PETZAAL paragraph: 'How does Shakespeare present Macbeth as a tyrant in Act 3?' Starter: 'Shakespeare presents Macbeth as...'",
+          "a": "A paragraph with quotation, analysis and context.",
+          "mins": 14,
+          "model": "Point: Shakespeare presents Macbeth as a tyrant tormented by the power he stole. | Evidence: 'O, full of scorpions is my mind' | Technique: metaphor | Zoom in: 'scorpions' are poisonous and restless. | Analyse: The audience sees that killing for the crown has filled his mind with fear. | Alternative: His 'dear wife' suggests he still clings to love. | Link: So Shakespeare shows that tyranny brings power without peace."
+        },
+        {
+          "q": "Extend: link to Jacobean ideas of a true king.",
+          "a": "A true king brings order; a tyrant brings fear.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Banquo as a foil.",
+          "a": "Banquo resists the prophecy; Macbeth acts on it.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Who escapes the murderers?",
+          "options": [
+            "Fleance",
+            "Banquo"
+          ],
+          "a": "A) Fleance",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder.",
+          "a": "Answers vary; Shakespeare suggests both.",
+          "mins": 2
+        }
+      ],
+      "homework": "Read Act 3; learn the 'scorpions' quotation.",
+      "send": "SEND: scene summary. EAL: glossary. Stretch: staging the ghost: seen or unseen?"
+    },
+    {
+      "unit": "Spring 1: Literary heritage: Macbeth (Component 2 Section B)",
+      "n": 44,
+      "title": "Macbeth Act 4: the apparitions, Macduff and false security",
+      "duration": 50,
+      "bigQuestion": "Can power survive when built on fear and violence?",
+      "objectives": [
+        "To understand how Shakespeare uses equivocation and the murder of Macduff's family to show the depth of Macbeth's tyranny"
+      ],
+      "successCriteria": [
+        "All: explain the three apparitions and their double meanings",
+        "Most: analyse Macduff's grief as a contrast to Macbeth",
+        "Some: write a PETZAAL paragraph on false security"
+      ],
+      "smsc": "Moral: deception and the cost of tyranny",
+      "islamicLink": {
+        "text": "Islam teaches that power is a trust (amanah, أَمَانَة) to be used with justice (an-Nisa 4:58), and that knowledge of the unseen belongs to Allah alone (an-Naml 27:65), so seeking the future from fortune-tellers is forbidden. Macbeth shows a man who trusts prophecy and ambition over conscience, and is ruined by it.",
+        "at": "start"
+      },
+      "keywords": [
+        {
+          "term": "equivocation",
+          "def": "speaking with double meanings to mislead"
+        },
+        {
+          "term": "apparition",
+          "def": "a ghostly vision"
+        },
+        {
+          "term": "false security",
+          "def": "feeling safe when you are not"
+        },
+        {
+          "term": "grief",
+          "def": "deep sorrow at a loss"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Have you ever been told something that was true, but misleading? How did it trick you?"
+      },
+      "pictures": [
+        {
+          "find": "Birnam Wood Scotland",
+          "alt": "Birnam Wood, Scotland",
+          "for": "hook"
+        },
+        {
+          "find": "castle ruins Scotland",
+          "alt": "Castle ruins in Scotland",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 HT3 Week 5 (Act 4: the second apparitions, false security and tyranny)",
+        "Clean prescribed edition of Macbeth (open book for Component 2)",
+        "Macbeth Knowledge Organiser and quotation bank (Year 10 HT3)",
+        "PETZAAL and PESTAL scaffolds (school framework cards)"
+      ],
+      "starter": [
+        {
+          "q": "'Full of scorpions' is a...",
+          "options": [
+            "metaphor",
+            "simile"
+          ],
+          "a": "A) metaphor",
+          "mins": 1
+        },
+        {
+          "q": "Equivocation means...",
+          "options": [
+            "misleading double meanings",
+            "a lie with no truth"
+          ],
+          "a": "A) misleading double meanings",
+          "mins": 1
+        },
+        {
+          "q": "Who flees to England?",
+          "options": [
+            "Macduff",
+            "Banquo"
+          ],
+          "a": "A) Macduff",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The apparitions",
+          "note": "Act 4 Scene 1.",
+          "table": {
+            "head": [
+              "Apparition",
+              "What Macbeth hears",
+              "Hidden truth"
+            ],
+            "rows": [
+              [
+                "Armed head",
+                "beware Macduff",
+                "a true warning"
+              ],
+              [
+                "Bloody child",
+                "none 'of woman born' can harm him",
+                "Macduff's unusual birth"
+              ],
+              [
+                "Crowned child with tree",
+                "safe until Birnam Wood comes to Dunsinane",
+                "soldiers carry branches"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "The murder of Macduff's family",
+          "bullets": [
+            "Ordered out of fear and spite",
+            "The lowest point of his tyranny",
+            "Macduff's grief: he must 'feel it as a man'"
+          ],
+          "note": "Handle soberly; focus on moral contrast."
+        },
+        {
+          "heading": "Model: PETZAAL on false security",
+          "note": "Labelled.",
+          "model": {
+            "problem": "How does Shakespeare present Macbeth's false security in Act 4?",
+            "steps": [
+              "Point: equivocation makes Macbeth reckless.",
+              "Evidence: none 'of woman born' can harm him",
+              "Technique: equivocation (a riddle)",
+              "Zoom: 'born' hides a double meaning",
+              "Alternative: Macbeth chooses to trust the convenient meaning",
+              "Link: false security leads straight to his fall"
+            ],
+            "answer": "A PETZAAL paragraph."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain the trick in 'Birnam Wood'.",
+          "a": "Soldiers carry branches from the wood, so it seems to move.",
+          "mins": 3,
+          "model": "Literal reading: a forest cannot move. Hidden meaning: soldiers camouflaged with branches."
+        },
+        {
+          "q": "How does Macduff's grief contrast with Macbeth?",
+          "a": "Macduff feels deeply; Macbeth has become numb to suffering.",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: in the portal response box, write a PETZAAL paragraph: 'How does Shakespeare present Macbeth's tyranny in Act 4?' Starter: 'In Act 4, Shakespeare presents Macbeth as...'",
+          "a": "A paragraph on the apparitions or Macduff's family with context.",
+          "mins": 14,
+          "model": "Point: In Act 4, Shakespeare presents Macbeth as a tyrant lulled by false security. | Evidence: none 'of woman born / Shall harm Macbeth' | Technique: equivocation | Zoom in: 'born' carries a hidden double meaning. | Analyse: Macbeth hears only the meaning that suits him, so he grows reckless and cruel. | Alternative: Some see the witches as wholly to blame for deceiving him. | Link: So Shakespeare shows that trusting prophecy over conscience ends in ruin."
+        },
+        {
+          "q": "Extend: comment on the murder of Macduff's family as structure (the lowest point).",
+          "a": "It turns the audience fully against Macbeth.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: compare Macduff and Macbeth as men.",
+          "a": "Macduff shows true manhood includes feeling; Macbeth's 'manhood' is violence.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Birnam Wood 'moves' because...",
+          "options": [
+            "soldiers carry branches",
+            "magic"
+          ],
+          "a": "A) soldiers carry branches",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder.",
+          "a": "Answers vary.",
+          "mins": 2
+        }
+      ],
+      "homework": "Read Act 4; learn one apparition and one Macduff quotation.",
+      "send": "SEND: apparitions table. EAL: glossary. Stretch: equivocation and the Gunpowder Plot context."
+    },
+    {
+      "unit": "Spring 1: Literary heritage: Macbeth (Component 2 Section B)",
+      "n": 45,
+      "title": "Macbeth Act 5: downfall, restoration and the 30-mark open-book answer",
+      "duration": 50,
+      "bigQuestion": "How does Shakespeare present ambition as the cause of Macbeth's tragic downfall?",
+      "objectives": [
+        "To understand how Shakespeare completes Macbeth's tragedy and how to write a strong 30-mark Component 2 answer"
+      ],
+      "successCriteria": [
+        "All: explain Lady Macbeth's decline and Macbeth's despair",
+        "Most: explain how Malcolm restores order",
+        "Some: plan and begin a 30-mark answer with AO1, AO2 and AO4"
+      ],
+      "smsc": "Moral: the consequences of unchecked ambition",
+      "islamicLink": {
+        "text": "Islam teaches that power is a trust (amanah, أَمَانَة) to be used with justice (an-Nisa 4:58), and that knowledge of the unseen belongs to Allah alone (an-Naml 27:65), so seeking the future from fortune-tellers is forbidden. Macbeth shows a man who trusts prophecy and ambition over conscience, and is ruined by it.",
+        "at": "start"
+      },
+      "keywords": [
+        {
+          "term": "tragedy",
+          "def": "a story of a great person's fall through a flaw"
+        },
+        {
+          "term": "hamartia",
+          "def": "the tragic flaw"
+        },
+        {
+          "term": "restoration",
+          "def": "putting the rightful order back"
+        },
+        {
+          "term": "nihilism",
+          "def": "the belief that life has no meaning"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How does Shakespeare present ambition as the cause of Macbeth's downfall?"
+      },
+      "pictures": [
+        {
+          "find": "candle burning out",
+          "alt": "A candle burning down",
+          "for": "hook"
+        },
+        {
+          "find": "crown on cushion",
+          "alt": "A crown, restored to the rightful king",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 HT3 Week 6 (whole-play revision and assessment)",
+        "Clean prescribed edition of Macbeth (open book for Component 2)",
+        "Macbeth Knowledge Organiser and quotation bank (Year 10 HT3)",
+        "Component 2 answer planner (pupil PDF)"
+      ],
+      "starter": [
+        {
+          "q": "Equivocation means...",
+          "options": [
+            "double meaning",
+            "silence"
+          ],
+          "a": "A) double meaning",
+          "mins": 1
+        },
+        {
+          "q": "Component 2 Section B marks are split across...",
+          "options": [
+            "AO1, AO2, AO4",
+            "AO3"
+          ],
+          "a": "A) AO1, AO2, AO4",
+          "mins": 1
+        },
+        {
+          "q": "Hamartia means...",
+          "options": [
+            "tragic flaw",
+            "happy ending"
+          ],
+          "a": "A) tragic flaw",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Act 5",
+          "bullets": [
+            "Lady Macbeth sleepwalks, washing invisible blood",
+            "Her death: 'Tomorrow, and tomorrow, and tomorrow'",
+            "Birnam Wood moves; Macduff's birth revealed",
+            "Malcolm crowned: order restored"
+          ],
+          "note": "Act 5 Scenes 1 to 9 (scene numbering varies by edition)."
+        },
+        {
+          "heading": "Despair",
+          "note": "Public domain.",
+          "quote": {
+            "text": "Out, damned spot! out, I say!",
+            "source": "Macbeth, Act 5 Scene 1 (Lady Macbeth)"
+          }
+        },
+        {
+          "heading": "Model: a 30-mark plan",
+          "note": "Labelled. Section B: 30 marks, 10 each for AO1, AO2 and AO4; open book.",
+          "model": {
+            "problem": "How does Shakespeare present ambition as the cause of Macbeth's downfall?",
+            "steps": [
+              "Thesis: ambition without conscience destroys Macbeth, his marriage and his peace",
+              "Para 1: Act 1, 'vaulting ambition' (AO2)",
+              "Para 2: Act 3, 'full of scorpions' and tyranny (AO1)",
+              "Para 3: Act 5, 'Tomorrow' despair and Malcolm's restoration (AO4: Divine Right)",
+              "Conclusion: a warning to King James's audience"
+            ],
+            "answer": "A whole-play plan."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Why end with Malcolm crowned?",
+            "options": [
+              "To restore the God-given order for a Jacobean audience",
+              "To introduce a new tyrant",
+              "To show the witches won"
+            ],
+            "answer": 0,
+            "why": "Order returns; the play reassures King James's audience."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "What does 'Out, damned spot!' show about Lady Macbeth?",
+          "a": "Guilt has broken her mind; the 'little water' has failed.",
+          "mins": 3,
+          "model": "Link back to Act 2: 'a little water clears us'. Now she cannot clean the imagined blood. Effect: guilt returns as madness."
+        },
+        {
+          "q": "Explain the restoration of order in one sentence.",
+          "a": "Malcolm, the rightful heir, is crowned, restoring the natural and divine order.",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: in the portal response box (open book), write a thesis and the first two paragraphs of: 'How does Shakespeare present ambition as the cause of Macbeth's downfall?' Starter: 'Shakespeare presents ambition as...'",
+          "a": "Thesis and two paragraphs with quotations from different acts, AO2 analysis and AO4 context.",
+          "mins": 15,
+          "model": "Thesis: Shakespeare presents ambition as a force that, once freed from conscience, destroys Macbeth's soul, marriage and kingdom. Paragraph 1: In Act 1, Macbeth admits he has 'no spur' but 'vaulting ambition'; the image of overleaping foreshadows his fall..."
+        },
+        {
+          "q": "Extend: add an AO4 sentence on the Divine Right of Kings.",
+          "a": "Regicide offends God's order, so Macbeth's fall is just.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: is Macbeth a tragic hero or a villain?",
+          "a": "Answers vary; strong answers weigh his conscience against his crimes.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Who becomes king at the end?",
+          "options": [
+            "Malcolm",
+            "Macduff"
+          ],
+          "a": "A) Malcolm",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder in one thesis sentence.",
+          "a": "Shakespeare presents ambition, unchecked by conscience, as the flaw that destroys Macbeth.",
+          "mins": 2
+        }
+      ],
+      "homework": "Independent study (weeks 4 to 6): complete the 30-mark answer as a timed paragraph-a-day plan; revise the quotation bank.",
+      "send": "SEND: plan template and quotation cards. EAL: AO glossary. Stretch: full answer in 45 minutes."
     }
   ],
   "boardShort": "Edexcel IGCSE 4ET1"
