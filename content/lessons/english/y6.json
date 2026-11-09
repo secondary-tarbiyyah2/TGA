@@ -2,7 +2,7 @@
   "subject": "English",
   "year": "y6",
   "board": "National Curriculum (KS2)",
-  "source": "National Curriculum Year 6 English and KS2 SATs content domains (reading 2a-2h, GPS test format); Drive English folder held no KS2 material so content is original",
+  "source": "Tarbiyyah Primary English scheme of work for Frozen Kingdom (the school's own adaptation of the Cornerstones English unit), with the founding-year bridge (grammar essentials, retrieval and inference, formal letter); The Call of the Wild (Jack London) opening paraphrased; creative writing frameworks (STASS, HOOK, TCCC), VIPERS reading, reading journal and English intervention booklets; National Curriculum Year 6 English.",
   "lessons": [
     {
       "unit": "Unit 1: Grammar, punctuation and vocabulary (SATs skills)",
@@ -104,197 +104,369 @@
       "send": "SEND: use colour coding for word classes. EAL: build a word class glossary with pictures. Stretch: find words that belong to more than one class and write sentences for each."
     },
     {
-      "unit": "Unit 1: Grammar, punctuation and vocabulary (SATs skills)",
+      "unit": "Spring 1: Frozen Kingdom",
       "n": 2,
-      "title": "Active and passive voice",
+      "title": "Bridge grammar: active and passive voice",
       "duration": 45,
+      "bigQuestion": "Why do reports use the passive voice?",
       "objectives": [
-        "Explain the difference between active and passive sentences",
-        "Convert sentences between active and passive"
+        "To use the passive voice to change the focus of a sentence and create a formal tone"
       ],
+      "successCriteria": [
+        "All: identify active and passive sentences",
+        "Most: change active sentences to passive",
+        "Some: explain when the passive is the better choice"
+      ],
+      "crossCurricular": "History: reporting the Titanic disaster",
+      "smsc": "Moral: being careful with blame when facts are not yet known",
       "keywords": [
         {
           "term": "active voice",
-          "def": "the subject does the action: The boy kicked the ball"
+          "def": "the subject does the action: The ship hit the iceberg."
         },
         {
           "term": "passive voice",
-          "def": "the subject has the action done to it: The ball was kicked by the boy"
-        },
-        {
-          "term": "subject",
-          "def": "who or what the sentence is about"
+          "def": "the subject has the action done to it: The iceberg was hit."
         },
         {
           "term": "agent",
-          "def": "the person or thing that does the action"
+          "def": "who or what does the action in a passive sentence (by the ship)"
+        },
+        {
+          "term": "formal",
+          "def": "serious language for official writing"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "\"Someone left the lifeboats half empty.\" versus \"The lifeboats were launched half empty.\" Which would an official report use? Why?",
+        "a": "The passive: it focuses on what happened, sounds formal and does not blame without evidence."
+      },
+      "pictures": [
+        {
+          "find": "RMS Titanic departing Southampton 1912 photograph",
+          "alt": "the Titanic leaving Southampton in 1912",
+          "for": "hook"
+        },
+        {
+          "find": "ship lifeboats on davits photograph",
+          "alt": "lifeboats on a ship",
+          "for": "teach:3"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Display: active and passive diagram",
+        "Punctuation Intervention Booklet (Lesson 1: Capital letters and end marks) for pupils who need extra support",
+        "Mini-whiteboard and pen",
+        "Exercise book"
+      ],
       "starter": [
-        "Bismillah. Name two word classes.",
-        "Label: The cheerful girl sang loudly.",
-        "Underline the subordinate clause: We stayed in because it rained."
+        {
+          "q": "Find the verb: The lookout spotted the iceberg.",
+          "a": "spotted",
+          "mins": 1
+        },
+        {
+          "q": "Who did the action in that sentence?",
+          "a": "the lookout",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Active sentences",
-          "bullets": [
-            "The subject does the action",
-            "The dog chased the cat.",
-            "Clear and direct"
-          ],
-          "note": "Introduce the active voice as the usual way of writing. Ask who does the action in 'The dog chased the cat'. Pupils identify subject, verb, object."
-        },
-        {
-          "heading": "Passive sentences",
-          "bullets": [
-            "The action is done to the subject",
-            "The cat was chased by the dog.",
-            "Pattern: was/were + past participle"
-          ],
-          "note": "Show how the object becomes the subject. Highlight 'was chased' as the passive verb. Explain that 'by the dog' is optional. Passive can be 'The cat was chased.'"
-        },
-        {
-          "heading": "The test",
-          "bullets": [
-            "Can you add 'by someone'?",
-            "The window was broken (by someone).",
-            "If yes, it is probably passive"
-          ],
-          "note": "Teach this test. Warn about the misconception that passive means past tense: 'The window is broken' (present passive) and 'The boy broke the window' (active past). Ask pupils to classify further examples."
+          "heading": "Active to passive",
+          "note": "Model.",
+          "model": {
+            "problem": "The lookout spotted the iceberg.",
+            "steps": [
+              "Object becomes subject: The iceberg",
+              "Add was or were plus the past participle: was spotted",
+              "Optional agent: by the lookout",
+              "Result: The iceberg was spotted by the lookout."
+            ],
+            "answer": "The iceberg was spotted by the lookout."
+          }
         },
         {
           "heading": "Why use the passive?",
           "bullets": [
-            "When the doer is unknown or unimportant",
-            "The mosque was built in 1986.",
-            "Used in formal writing and reports"
+            "Focus on the event or object",
+            "Doer unknown or unimportant",
+            "Formal, scientific, official tone"
           ],
-          "note": "Show examples from reports and notices: 'Visitors are asked to remove their shoes.' Discuss why active is often clearer in stories. Link to formal tone."
+          "note": "Examples: Warnings were received. The ship was built in Belfast."
         },
         {
-          "heading": "Changing voice",
-          "bullets": [
-            "Active to passive: swap subject and object",
-            "Passive to active: find the doer",
-            "Check the verb tense stays the same"
-          ],
-          "note": "Model converting 'The chef cooked the meal' to 'The meal was cooked by the chef'. Pupils practise on whiteboards. In SATs, they might be asked to rewrite a sentence in the active voice."
+          "heading": "Spot the passive",
+          "note": "Sort.",
+          "sort": {
+            "columns": [
+              "active",
+              "passive"
+            ],
+            "cards": [
+              "The ship struck the ice.",
+              "Warnings were ignored.",
+              "Carpathia rescued survivors.",
+              "The survivors were rescued."
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "heading": "Hinge: which is passive?",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Which sentence is passive?",
+            "options": [
+              "The crew lowered the lifeboats.",
+              "The lifeboats were lowered.",
+              "The lifeboats floated."
+            ],
+            "answer": 1,
+            "why": "In B the lifeboats receive the action (were lowered)."
+          }
         }
       ],
       "practice": [
-        "Active or passive: The letter was posted yesterday.",
-        "Rewrite as passive: The teacher marked the books.",
-        "Rewrite as active: The ball was kicked by Zayd."
+        {
+          "q": "Make passive: Engineers designed the hull.",
+          "a": "The hull was designed by engineers.",
+          "mins": 1,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: The hull was designed by engineers."
+        },
+        {
+          "q": "Make active: The message was sent by the radio operator.",
+          "a": "The radio operator sent the message.",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Sort twelve sentences into active and passive.",
-        "Convert eight sentences between voices.",
-        "Write a short notice for the school website using the passive."
+        {
+          "q": "Core: change eight active sentences about the Titanic into the passive (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Eight correct passives",
+          "mins": 9,
+          "model": "Teacher does the first part aloud before pupils start, showing each step: Eight correct passives"
+        },
+        {
+          "q": "Extend: write a formal paragraph about a ship's launch using three passives",
+          "a": "Paragraph with passives",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: explain when an active sentence would be better",
+          "a": "For example: in a story, to show who acted and add drama",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Rewrite in the active voice: The cake was eaten by the guests.",
-        "What is the 'by' test for passive?"
+        {
+          "q": "Make passive: The storm damaged the rail.",
+          "a": "The rail was damaged by the storm.",
+          "mins": 1
+        }
       ],
-      "homework": "Find five passive sentences in a newspaper or book and rewrite them as active.",
-      "send": "SEND: use colour for subject, verb and object. EAL: model the pattern with be + past participle. Stretch: explain how the passive changes emphasis."
+      "homework": "Find two passive sentences in a news article or information book. Read for 20 minutes a day.",
+      "send": "SEND: colour-coded sentence parts to rearrange. EAL: was/were + past participle table. Stretch: use the passive with a modal (It should have been noticed)."
     },
     {
-      "unit": "Unit 1: Grammar, punctuation and vocabulary (SATs skills)",
+      "unit": "Spring 1: Frozen Kingdom",
       "n": 3,
-      "title": "Formal and informal register; the subjunctive",
+      "title": "Bridge grammar: formal register and the subjunctive",
       "duration": 45,
+      "bigQuestion": "How do I make my writing sound formal enough for an official reader?",
       "objectives": [
-        "Distinguish formal from informal language",
-        "Recognise and use the subjunctive form"
+        "To use formal vocabulary, structures and the subjunctive in formal writing"
       ],
+      "successCriteria": [
+        "All: replace informal words with formal ones",
+        "Most: use formal structures (passive, no contractions, precise vocabulary)",
+        "Some: use the subjunctive correctly (If I were..., It is essential that he be...)"
+      ],
+      "crossCurricular": "Citizenship: official inquiries and reports",
+      "smsc": "Social: respectful, precise language when addressing authorities",
       "keywords": [
         {
           "term": "register",
-          "def": "the level of formality in language"
-        },
-        {
-          "term": "formal",
-          "def": "careful language used in letters, reports and speeches"
+          "def": "how formal or informal language is"
         },
         {
           "term": "subjunctive",
-          "def": "a verb form used for wishes, demands and unreal situations: If I were"
+          "def": "a verb form for wishes, demands or unreal situations: If I were..."
+        },
+        {
+          "term": "formal vocabulary",
+          "def": "precise, serious words, like request instead of ask"
         },
         {
           "term": "contraction",
-          "def": "a shortened word with an apostrophe, such as don't"
+          "def": "a shortened form like don't"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "\"If I was captain, I'd have slowed down.\" Now say it as an official inquiry would. What changes?",
+        "a": "\"Were the captain to have reduced speed...\" or \"If I were the captain, I would have reduced speed.\" (subjunctive, no contraction, formal verb)"
+      },
+      "pictures": [
+        {
+          "find": "official report document with seal photograph",
+          "alt": "an official document",
+          "for": "teach:1"
+        },
+        {
+          "find": "ship captain wheel bridge photograph",
+          "alt": "a ship's wheel on the bridge",
+          "for": "hook"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Vocabulary Intervention Programme (Lesson 20: Formal and informal vocabulary) for pupils who need extra support",
+        "Formal vocabulary word mat (ask → request, get → obtain, enough → sufficient)",
+        "Mini-whiteboard and pen",
+        "Exercise book"
+      ],
       "starter": [
-        "Bismillah. Active or passive: The door was opened.",
-        "Rewrite in the passive: The pupils cleaned the hall.",
-        "Write a sentence with a relative clause."
+        {
+          "q": "Make passive: Officials questioned the crew.",
+          "a": "The crew were questioned by officials.",
+          "mins": 1
+        },
+        {
+          "q": "Formal word for get",
+          "a": "obtain or receive",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Formal and informal",
-          "bullets": [
-            "Informal: Can you help me?",
-            "Formal: Would you be so kind as to assist me?",
-            "Match the language to the reader"
-          ],
-          "note": "Discuss when each is appropriate: talking to friends vs writing to the headteacher. Link to adab: speaking respectfully to elders and teachers. Note that informal is not rude, just different."
+          "heading": "Formal swaps",
+          "note": "Vocabulary.",
+          "table": {
+            "head": [
+              "Informal",
+              "Formal"
+            ],
+            "rows": [
+              [
+                "ask",
+                "request, enquire"
+              ],
+              [
+                "find out",
+                "discover, establish"
+              ],
+              [
+                "enough",
+                "sufficient"
+              ],
+              [
+                "lots of",
+                "numerous, a great many"
+              ],
+              [
+                "try",
+                "attempt"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Features of formal writing",
-          "bullets": [
-            "No contractions",
-            "Passive voice when suitable",
-            "Precise vocabulary: assist, purchase, require",
-            "Longer, complete sentences"
-          ],
-          "note": "Provide a casual message and edit it into a formal one. Replace 'get' with 'obtain', 'help' with 'assist', 'big' with 'considerable'."
+          "heading": "The subjunctive",
+          "note": "Three common patterns.",
+          "model": {
+            "problem": "Subjunctive forms",
+            "steps": [
+              "Unreal situation: If I were the captain, I would slow down.",
+              "Demand: The inquiry insists that every ship carry enough lifeboats.",
+              "Formal wish: I wish it were possible to undo the disaster.",
+              "Note: were for all persons; base verb (carry, be) after demands"
+            ],
+            "answer": "Three correct subjunctive sentences."
+          }
         },
         {
-          "heading": "The subjunctive: if I were",
-          "bullets": [
-            "If I were you, I would apologise.",
-            "I wish it were Friday.",
-            "Use were, not was, for unreal situations"
-          ],
-          "note": "Explain that the subjunctive is used for unreal or hypothetical situations. In SATs, pupils may be asked to choose the correct form. Misconception: 'If I was you' is common in speech but not formal Standard English."
+          "heading": "Common error",
+          "note": "Formal writing needs were.",
+          "misconception": {
+            "wrong": "If he was more careful, it would not have happened.",
+            "right": "If he were more careful... (or: Had he been more careful, it would not have happened.)"
+          }
         },
         {
-          "heading": "The subjunctive: demands",
-          "bullets": [
-            "The head insisted that every pupil wear a badge.",
-            "It is vital that she be on time.",
-            "The verb stays in its base form"
-          ],
-          "note": "Show 'He suggested that she bring a pen'. The verb after 'that' is in its base form, not 'brings'. Pupils compare 'The teacher requires that he is quiet' with the subjunctive 'be quiet'."
-        },
-        {
-          "heading": "Choose the register",
-          "bullets": [
-            "Who is the reader?",
-            "What is the purpose?",
-            "Choose words to match"
-          ],
-          "note": "Read three short texts: a text message, a letter to a head, a news report. Identify the register of each. Rewrite one in a different register."
+          "heading": "Hinge: subjunctive",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Which uses the subjunctive?",
+            "options": [
+              "If I was you, I would stay.",
+              "If I were you, I would stay.",
+              "If I am you, I stay."
+            ],
+            "answer": 1,
+            "why": "were is the subjunctive form for an unreal situation."
+          }
         }
       ],
       "practice": [
-        "Make this formal: Can I have another go?",
-        "Choose: If I (was/were) taller, I would play basketball.",
-        "Complete: The imam asked that everyone ___ (be/is) quiet."
+        {
+          "q": "Make formal: We need to find out what went wrong.",
+          "a": "It is necessary to establish what went wrong.",
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: It is necessary to establish what went wrong."
+        },
+        {
+          "q": "Use the subjunctive: The law demands that each ship (have) lifeboats.",
+          "a": "The law demands that each ship have lifeboats.",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Rewrite six informal sentences in formal English.",
-        "Complete eight subjunctive sentences with the correct verb form.",
-        "Write a formal request to the headteacher about a school trip."
+        {
+          "q": "Core: rewrite a 6-sentence informal message about the Titanic as a formal statement (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Formal paragraph",
+          "mins": 9,
+          "model": "Labelled model to go through first (Subjunctive forms): Unreal situation: If I were the captain, I would slow down. | Demand: The inquiry insists that every ship carry enough lifeboats. | Formal wish: I wish it were possible to undo the disaster. | Note: were for all persons; base verb (carry, be) after demands | Result: Three correct subjunctive sentences."
+        },
+        {
+          "q": "Extend: write three subjunctive sentences about safety at sea",
+          "a": "Three correct sentences",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: explain how the subjunctive changes the tone",
+          "a": "It sounds more formal and hypothetical",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Choose the correct form: If she (was/were) here, she would help.",
-        "Name two features of formal writing."
+        {
+          "q": "Correct for formal writing: If she was older, she could go.",
+          "a": "If she were older, she could go.",
+          "mins": 1
+        }
       ],
-      "homework": "Write a formal email to ask for information about a visit and then write the same in an informal style.",
-      "send": "SEND: sentence frames for formal requests. EAL: build a bank of formal vocabulary. Stretch: write three sentences using the subjunctive with insist, suggest and demand."
+      "homework": "Rewrite three sentences from a text message as formal sentences. Read for 20 minutes a day.",
+      "send": "SEND: word mat with matching pairs. EAL: subjunctive pattern card. Stretch: use \"Were...\" inversion (Were the warnings heeded, ...)."
     },
     {
       "unit": "Unit 1: Grammar, punctuation and vocabulary (SATs skills)",
@@ -490,198 +662,351 @@
       "send": "SEND: sort cards by punctuation function. EAL: practise with sentences and pictures. Stretch: explain why a hyphen changes the meaning of a sentence."
     },
     {
-      "unit": "Unit 2: Reading skills for the SATs - The Lighthouse",
+      "unit": "Spring 1: Frozen Kingdom",
       "n": 6,
-      "title": "Reading paper skills: structure and retrieval",
+      "title": "Bridge reading: retrieval and structure in The Lighthouse (VIPERS)",
       "duration": 45,
+      "bigQuestion": "How do I find exactly what a question asks for, quickly and accurately?",
       "objectives": [
-        "Understand the structure of the KS2 reading test",
-        "Answer retrieval questions accurately"
+        "To retrieve and record precise information from a narrative text"
       ],
+      "successCriteria": [
+        "All: find and copy short answers using key words",
+        "Most: number paragraphs and use them to locate answers",
+        "Some: answer two-mark questions with a point and evidence"
+      ],
+      "crossCurricular": "Geography and history: lighthouses and safety at sea",
+      "smsc": "Moral: responsibility and duty (amanah, أَمَانَة): Maryam keeps the light burning to keep others safe",
+      "islamicLink": {
+        "text": "Responsibility and duty (amanah, أَمَانَة): Maryam keeps the light burning to keep others safe",
+        "at": "start"
+      },
       "keywords": [
         {
           "term": "retrieve",
-          "def": "find and write down information from a text"
-        },
-        {
-          "term": "skim",
-          "def": "read quickly to get the general idea"
+          "def": "find and copy information from a text"
         },
         {
           "term": "scan",
-          "def": "look for specific words or facts"
+          "def": "look quickly for a key word"
         },
         {
-          "term": "content domain",
-          "def": "the type of reading skill being tested, such as 2b retrieval"
-        }
-      ],
-      "starter": [
-        "Bismillah. Add a hyphen: a well known writer.",
-        "Add brackets: The shop open until six is busy.",
-        "What does a colon introduce?"
-      ],
-      "teach": [
-        {
-          "heading": "The reading test",
-          "bullets": [
-            "One hour, three texts",
-            "About 50 marks",
-            "Mix of multiple choice, short and longer answers",
-            "Time yourself: about 20 minutes a text"
-          ],
-          "note": "Explain the test format. Questions follow the order of the text. Reassure pupils that they do not need to answer every question in a perfect way; practise using time well. Show the content domains (2a to 2h) in simple terms: vocabulary, retrieval, summarising, inference, prediction, structure, language effect, comparison."
-        },
-        {
-          "heading": "Read the text",
-          "bullets": [
-            "Read the title and any introduction",
-            "Skim first, then read carefully",
-            "Number the paragraphs"
-          ],
-          "note": "Read the text in the note aloud once. Text - The Lighthouse (para 1) Maryam pressed her nose against the cold glass. Below her, the sea heaved and roared like a wild animal trapped in a cage. It was the third night of the storm, and her father had not slept since it began. (para 2) 'Keep the lamp burning, Maryam,' he had said, buttoning his heavy coat. 'If a ship sees our light, she will know where the rocks are.' Then he had stepped out into the darkness to mend the broken rail on the gallery. (para 3) Now the clock chimed eleven. Maryam's hands trembled as she trimmed the wick, but she did not let the flame flicker. Far out on the water, a tiny yellow light bobbed up and down. 'A ship!' she whispered. She grabbed the signal lantern and swung it three times, just as her father had taught her. (para 4) The light on the water paused, turned slowly, and began to creep away from the jagged rocks. Maryam let out a long, shaky breath and smiled. Tell pupils to number paragraphs and underline key words as they read."
-        },
-        {
-          "heading": "Retrieval questions (2b)",
-          "bullets": [
-            "Use the key word in the question",
-            "Scan for it in the text",
-            "Copy exact words if asked to find and copy"
-          ],
-          "note": "Model: 'What did the clock chime?' Find 'clock chimed eleven'. Explain that retrieval answers are in the text and need accuracy. Misconception: adding opinion."
-        },
-        {
-          "heading": "Mark allocation",
-          "bullets": [
-            "1 mark: one fact",
-            "2 marks: two facts or a fact with explanation",
-            "Look at the number of lines",
-            "Answer fully but briefly"
-          ],
-          "note": "Link marks to answer length. For a 2-mark question, give two points. Underline the question command words: find, give, explain, why."
-        },
-        {
-          "heading": "Check your answer",
-          "bullets": [
-            "Does it answer the question?",
-            "Is it copied accurately?",
-            "Is it from the correct paragraph?"
-          ],
-          "note": "Pupils practise self-checking. Ask them to prove each answer with the paragraph number. Mention that spelling matters less in reading but clear handwriting matters."
-        }
-      ],
-      "practice": [
-        "How many nights had the storm lasted?",
-        "What was Maryam's father going to mend?",
-        "Find and copy a word that tells you the rocks were sharp."
-      ],
-      "independent": [
-        "Answer six retrieval questions on The Lighthouse.",
-        "Underline the evidence in the text for each answer.",
-        "Write two retrieval questions of your own for a partner."
-      ],
-      "exit": [
-        "What did Maryam swing three times?",
-        "Which paragraph tells us the time?"
-      ],
-      "homework": "Practise reading a short text and answering three retrieval questions.",
-      "send": "SEND: highlight key words in the questions. EAL: pre-teach gallery, wick, jagged. Stretch: write 2-mark retrieval questions for a partner."
-    },
-    {
-      "unit": "Unit 2: Reading skills for the SATs - The Lighthouse",
-      "n": 7,
-      "title": "Inference and prediction",
-      "duration": 45,
-      "objectives": [
-        "Make inferences using evidence from the text",
-        "Make a prediction supported by evidence"
-      ],
-      "keywords": [
-        {
-          "term": "inference",
-          "def": "an idea worked out from clues in the text"
+          "term": "paragraph",
+          "def": "a group of sentences about one idea"
         },
         {
           "term": "evidence",
-          "def": "words or phrases from the text that support an idea"
-        },
-        {
-          "term": "prediction",
-          "def": "a statement about what may happen next"
-        },
-        {
-          "term": "clue",
-          "def": "a hint in the text"
+          "def": "words from the text that support an answer"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "A lighthouse keeper must keep the lamp lit all night in a storm. Why does one small light matter so much to a ship far out at sea?",
+        "a": "It shows where the dangerous rocks are, so the ship can steer away."
+      },
+      "pictures": [
+        {
+          "find": "lighthouse in a storm at night photograph",
+          "alt": "a lighthouse in a storm",
+          "for": "hook"
+        },
+        {
+          "find": "lighthouse lamp lens interior photograph",
+          "alt": "a lighthouse lamp",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "The Lighthouse (short original text used in Years 6 reading lessons; on slides)",
+        "Display: VIPERS question stems (school reading INSET)",
+        "Reading Fluency and Comprehension Intervention Workbook (Week 3, Lesson 7: Retrieval begins with the question; Lesson 9: Reject plausible distractors) for pupils who need extra support",
+        "Mini-whiteboard and pen"
+      ],
       "starter": [
-        "Bismillah. Find and copy: the time Maryam's clock chimed.",
-        "Add dashes: Her father a brave man left.",
-        "Name two punctuation marks used for lists."
+        {
+          "q": "Add commas: The keeper who was tired kept watch.",
+          "a": "The keeper, who was tired, kept watch.",
+          "mins": 1
+        },
+        {
+          "q": "What does retrieve mean?",
+          "a": "Find and copy information from a text",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "What is an inference?",
+          "heading": "Read the text",
           "bullets": [
-            "The author does not say it directly",
-            "We use clues to work it out",
-            "I think... because the text says..."
+            "Number the paragraphs 1 to 4",
+            "Skim first, then read closely",
+            "Underline names, times and places"
           ],
-          "note": "Remind pupils of inference from earlier years. Model: 'Maryam's hands trembled' tells us she was nervous or frightened. Show how to link the feeling to a quotation."
+          "note": "Read The Lighthouse aloud: Maryam keeps the lamp burning while her father mends the gallery rail in a storm; at eleven she sees a ship and signals with a lantern; the ship turns away from the rocks."
         },
         {
-          "heading": "Inference: feelings",
-          "bullets": [
-            "Maryam: tense, determined",
-            "Her father: caring, brave",
-            "Evidence: 'hands trembled', 'did not let the flame flicker'"
-          ],
-          "note": "Reread paragraph 3. Ask pupils to find phrases showing she was scared but responsible. A 2-mark inference answer needs the idea and the evidence."
+          "heading": "Retrieval routine",
+          "note": "Model.",
+          "model": {
+            "problem": "What time did the clock chime?",
+            "steps": [
+              "Underline the key word: time, clock",
+              "Which paragraph? 3",
+              "Scan for a number or time word",
+              "Copy only what is needed: eleven"
+            ],
+            "answer": "eleven"
+          }
         },
         {
-          "heading": "Inference: reasons",
+          "heading": "Two-mark answers",
           "bullets": [
-            "Why did the ship turn away?",
-            "Because it saw the light and understood the danger",
-            "Use 'because' and quote"
+            "Point: what the answer is",
+            "Evidence: a short quotation",
+            "Both needed for 2 marks"
           ],
-          "note": "Use paragraph 4. Ask pupils to answer in a sentence: 'The ship turned because Maryam's signal showed where the rocks were.' Mark points: reason and evidence."
+          "note": "Model: Why did her father go outside? He went to mend the broken rail on the gallery (\"to mend the broken rail\")."
         },
         {
-          "heading": "Prediction",
-          "bullets": [
-            "Use clues to say what happens next",
-            "I predict... because...",
-            "Stay close to the text"
-          ],
-          "note": "Ask what will happen next. Accept ideas that fit: her father returns, the storm ends. Evidence: 'the third night', 'broken rail'. Explain that predictions must be supported."
-        },
-        {
-          "heading": "Writing it up",
-          "bullets": [
-            "Point + evidence + explanation",
-            "Use a short quotation",
-            "Don't retell the story"
-          ],
-          "note": "Provide a frame. Model one full answer. Pupils write their own. Ask partners to check that the answer includes a quotation and an explanation."
+          "heading": "Hinge: plausible distractor",
+          "note": "Teams poll.",
+          "check": {
+            "q": "How many times did Maryam swing the lantern?",
+            "options": [
+              "once",
+              "three times",
+              "eleven times"
+            ],
+            "answer": 1,
+            "why": "Paragraph 3: she swung it three times. Eleven is the time the clock chimed: a distractor."
+          }
         }
       ],
       "practice": [
-        "What does 'did not let the flame flicker' suggest about Maryam?",
-        "Why did Maryam's father tell her to keep the lamp burning?",
-        "What do you think will happen next? Give evidence."
+        {
+          "q": "R: How many nights had the storm lasted?",
+          "a": "Three (it was the third night)",
+          "mins": 1,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: Three (it was the third night)"
+        },
+        {
+          "q": "R: What colour was the light on the water?",
+          "a": "yellow",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Answer six inference and prediction questions with quotations.",
-        "Write a paragraph about what Maryam is like using three pieces of evidence.",
-        "Predict the next paragraph in the story."
+        {
+          "q": "Core: answer eight retrieval questions on The Lighthouse (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Answers copied accurately",
+          "mins": 10,
+          "model": "Teacher does the first part aloud before pupils start, showing each step: Answers copied accurately"
+        },
+        {
+          "q": "Extend: answer two 2-mark questions with point and evidence",
+          "a": "Point plus quotation",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: write two retrieval questions with a plausible distractor for a partner",
+          "a": "Questions with answers",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Write an inference about Maryam's father using evidence.",
-        "What clue helps you predict what happens next?"
+        {
+          "q": "First step for any retrieval question?",
+          "a": "Underline the key words",
+          "mins": 1
+        }
       ],
-      "homework": "Write a paragraph on how Maryam changes during the extract.",
-      "send": "SEND: highlight evidence and give answer frames. EAL: teach vocabulary of feelings. Stretch: infer how the sea is presented and why."
+      "homework": "Write three retrieval questions about a page of your reading book, with answers. Read for 20 minutes a day.",
+      "send": "SEND: questions name the paragraph. EAL: glossary (gallery, wick, lantern). Stretch: time yourself: eight questions in eight minutes."
+    },
+    {
+      "unit": "Spring 1: Frozen Kingdom",
+      "n": 7,
+      "title": "Bridge reading: inference with evidence in The Lighthouse (VIPERS)",
+      "duration": 45,
+      "bigQuestion": "How do I prove an inference with evidence from the text?",
+      "objectives": [
+        "To make inferences about characters' feelings and motives and justify them with evidence"
+      ],
+      "successCriteria": [
+        "All: make an inference about Maryam's feelings",
+        "Most: support inferences with a short quotation",
+        "Some: explain how the quotation proves the inference (PEE)"
+      ],
+      "crossCurricular": "PSHE: courage and responsibility",
+      "smsc": "Moral: courage and responsibility in keeping others safe",
+      "keywords": [
+        {
+          "term": "inference",
+          "def": "a conclusion from clues in the text"
+        },
+        {
+          "term": "quotation",
+          "def": "words copied exactly from the text, in inverted commas"
+        },
+        {
+          "term": "justify",
+          "def": "give reasons and evidence"
+        },
+        {
+          "term": "PEE",
+          "def": "Point, Evidence, Explain"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Maryam's hands trembled, but she did not let the flame flicker. What two different things does that tell us about her?",
+        "a": "She was frightened, yet determined and responsible."
+      },
+      "pictures": [
+        {
+          "find": "oil lantern burning photograph",
+          "alt": "a lantern like Maryam's",
+          "for": "hook"
+        },
+        {
+          "find": "ship lights at sea at night photograph",
+          "alt": "a ship's light far out at sea",
+          "for": "teach:4"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "The Lighthouse (short original text used in Years 6 reading lessons; on slides)",
+        "Display: VIPERS question stems (school reading INSET)",
+        "Reading Fluency and Comprehension Intervention Workbook (Week 6, Lesson 17: Infer feelings and motives from behaviour; Week 7, Lesson 21: Attach evidence to a clear answer) for pupils who need extra support",
+        "Reading journal (school template: Summarise, Zoom in, Explain, Respond)",
+        "Mini-whiteboard and pen"
+      ],
+      "starter": [
+        {
+          "q": "R: What was Maryam's father mending?",
+          "a": "the broken rail on the gallery",
+          "mins": 1
+        },
+        {
+          "q": "Make passive: Maryam lit the lamp.",
+          "a": "The lamp was lit by Maryam.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "From clue to inference",
+          "note": "Table.",
+          "table": {
+            "head": [
+              "Clue (quotation)",
+              "Inference"
+            ],
+            "rows": [
+              [
+                "\"hands trembled\"",
+                "she is frightened"
+              ],
+              [
+                "\"did not let the flame flicker\"",
+                "she is determined and responsible"
+              ],
+              [
+                "\"just as her father had taught her\"",
+                "she trusts and respects her father"
+              ],
+              [
+                "\"a long, shaky breath\"",
+                "she is relieved"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Model: PEE answer",
+          "note": "Labelled model.",
+          "model": {
+            "problem": "How does Maryam feel when she sees the ship?",
+            "steps": [
+              "Point: Maryam feels anxious but determined.",
+              "Evidence: Her hands \"trembled\", yet she \"did not let the flame flicker\".",
+              "Explain: Trembling shows fear, but keeping the flame steady shows she controls her fear to do her duty."
+            ],
+            "answer": "A full PEE answer."
+          }
+        },
+        {
+          "heading": "Avoid inventing",
+          "note": "Inferences must come from the text.",
+          "misconception": {
+            "wrong": "Maryam is angry with her father.",
+            "right": "Maryam trusts her father: she signals \"just as her father had taught her\"."
+          }
+        },
+        {
+          "heading": "Hinge: best evidence",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Best evidence that the ship understood the warning?",
+            "options": [
+              "\"the sea heaved and roared\"",
+              "\"began to creep away from the jagged rocks\"",
+              "\"the clock chimed eleven\""
+            ],
+            "answer": 1,
+            "why": "B shows the ship changing course after the signal."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "I: How does Maryam feel at the end? Give evidence.",
+          "a": "Relieved: she \"let out a long, shaky breath and smiled\".",
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: Relieved: she \"let out a long, shaky breath and smiled\"."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: answer four inference questions using PEE (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "PEE answers",
+          "mins": 10,
+          "model": "Teacher does the first part aloud before pupils start, showing each step: PEE answers"
+        },
+        {
+          "q": "Extend: infer the father's character with two pieces of evidence",
+          "a": "For example: dedicated: he had not slept since the storm began",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: reading journal: Explain how the writer builds tension in paragraph 3",
+          "a": "Short sentences, a ticking clock, the tiny light",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "What does PEE stand for?",
+          "a": "Point, Evidence, Explain",
+          "mins": 1
+        }
+      ],
+      "homework": "Reading journal: Zoom in on a character in your book and make one inference with evidence. Read for 20 minutes a day.",
+      "send": "SEND: PEE frame with sentence starters. EAL: feelings word bank. Stretch: compare Maryam's feelings at the start and end."
     },
     {
       "unit": "Unit 2: Reading skills for the SATs - The Lighthouse",
@@ -1173,6 +1498,3755 @@
       ],
       "homework": "Practise your weakest topic with five new questions.",
       "send": "SEND: use a shorter test with larger print. EAL: allow bilingual dictionaries in the practice stage. Stretch: write your own GPS questions for a partner."
+    },
+    {
+      "unit": "Spring 1: Frozen Kingdom",
+      "n": 13,
+      "title": "Bridge grammar: relative clauses for precise information",
+      "duration": 45,
+      "bigQuestion": "How do relative clauses pack more information into formal writing?",
+      "objectives": [
+        "To use relative clauses, including those with omitted or prepositional relative pronouns, to add precise information"
+      ],
+      "successCriteria": [
+        "All: write relative clauses with who, which, where, when, whose",
+        "Most: punctuate non-essential relative clauses with commas",
+        "Some: use \"in which\", \"during which\" and omitted pronouns for a formal style"
+      ],
+      "crossCurricular": "Geography: polar regions (Frozen Kingdom)",
+      "smsc": "Spiritual: wonder at the vast frozen continent in Allah's creation",
+      "islamicLink": {
+        "text": "Wonder at the vast frozen continent in Allah's creation",
+        "at": "start"
+      },
+      "keywords": [
+        {
+          "term": "relative clause",
+          "def": "a clause that adds information about a noun"
+        },
+        {
+          "term": "relative pronoun",
+          "def": "who, which, where, when, whose or that"
+        },
+        {
+          "term": "essential clause",
+          "def": "information the sentence needs, with no commas"
+        },
+        {
+          "term": "non-essential clause",
+          "def": "extra information, separated by commas"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Antarctica is the coldest continent. It is covered by an ice sheet. The ice sheet is up to about 4.8 km thick. Can you make it one elegant sentence?",
+        "a": "For example: Antarctica, which is the coldest continent, is covered by an ice sheet that is up to about 4.8 km thick."
+      },
+      "pictures": [
+        {
+          "find": "Antarctic ice sheet aerial photograph",
+          "alt": "the Antarctic ice sheet",
+          "for": "hook"
+        },
+        {
+          "find": "emperor penguins colony photograph",
+          "alt": "emperor penguins",
+          "for": "teach:4"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Bridge week 1: Year 6 grammar essential (missed Autumn: Blood Heart)",
+        "Punctuation Intervention Booklet (Lesson 6: Brackets, dashes, hyphens and ellipses) for pupils who need extra support",
+        "Mini-whiteboard and pen",
+        "Exercise book"
+      ],
+      "starter": [
+        {
+          "q": "Add a relative clause: The Arctic ___ is an ocean.",
+          "a": "For example: The Arctic, which surrounds the North Pole, is an ocean.",
+          "mins": 1
+        },
+        {
+          "q": "Relative pronoun for a place",
+          "a": "where",
+          "mins": 1
+        },
+        {
+          "q": "Is Antarctica a continent or an ocean?",
+          "a": "A continent",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Essential or extra?",
+          "note": "Commas only for extra information.",
+          "compare": {
+            "left": {
+              "title": "Essential (no commas)",
+              "points": [
+                "The ship that struck the iceberg sank."
+              ]
+            },
+            "right": {
+              "title": "Extra (commas)",
+              "points": [
+                "The Titanic, which was on its first voyage, sank."
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Formal relative clauses",
+          "note": "Model.",
+          "model": {
+            "problem": "The expedition reached the Pole. During the expedition, the team faced storms.",
+            "steps": [
+              "Find the shared noun: the expedition",
+              "Formal pronoun after a preposition: during which",
+              "Embed: The expedition, during which the team faced storms, reached the Pole.",
+              "Check commas"
+            ],
+            "answer": "The expedition, during which the team faced storms, reached the Pole."
+          }
+        },
+        {
+          "heading": "Omitted pronoun",
+          "bullets": [
+            "The iceberg (that) they saw was huge.",
+            "that can be left out when it is the object",
+            "Keep it in formal reports if clearer"
+          ],
+          "note": "Show how fluent writers sometimes omit that."
+        },
+        {
+          "heading": "Hinge: commas needed?",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Which sentence needs commas?",
+            "options": [
+              "The penguins that live in Antarctica are birds.",
+              "Emperor penguins which are the largest penguins breed in winter.",
+              "The dog that pulled the sled was strong."
+            ],
+            "answer": 1,
+            "why": "B adds extra information about all emperor penguins, so it needs commas: Emperor penguins, which are the largest penguins, breed in winter."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Combine: Greenland is the largest island. It is mostly covered in ice.",
+          "a": "Greenland, which is the largest island, is mostly covered in ice.",
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: Greenland, which is the largest island, is mostly covered in ice."
+        },
+        {
+          "q": "Use \"in which\": The tent was small. The explorers slept in it.",
+          "a": "The tent in which the explorers slept was small.",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: combine six pairs of polar facts with relative clauses, punctuated correctly (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Six correct sentences",
+          "mins": 9,
+          "model": "Teacher does the first part aloud before pupils start, showing each step: Six correct sentences"
+        },
+        {
+          "q": "Extend: write three formal sentences using in which, during which or whose",
+          "a": "Three correct sentences",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: explain the difference in meaning with and without commas in one of your sentences",
+          "a": "Commas make the information extra about all of them; no commas limit it to some",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Add commas: Amundsen who was Norwegian reached the South Pole first.",
+          "a": "Amundsen, who was Norwegian, reached the South Pole first.",
+          "mins": 1
+        }
+      ],
+      "homework": "Write five sentences about a place you know, each with a relative clause, two of them formal (in which, whose). Read for 20 minutes a day.",
+      "send": "SEND: relative pronoun cards and sentence strips. EAL: sentence frames. Stretch: rewrite a paragraph of your own writing to vary relative clauses."
+    },
+    {
+      "unit": "Spring 1: Frozen Kingdom",
+      "n": 14,
+      "title": "Bridge writing: dialogue that moves the action on",
+      "duration": 45,
+      "bigQuestion": "How can dialogue reveal character and drive a story forward?",
+      "objectives": [
+        "To write and punctuate dialogue that reveals character and advances the action"
+      ],
+      "successCriteria": [
+        "All: punctuate speech correctly with new lines for new speakers",
+        "Most: use reporting clauses and actions that show feeling",
+        "Some: make every line of dialogue reveal something new"
+      ],
+      "crossCurricular": "Drama: voice and character",
+      "smsc": "Social: how what we say shows who we are",
+      "keywords": [
+        {
+          "term": "dialogue",
+          "def": "conversation between characters"
+        },
+        {
+          "term": "reporting clause",
+          "def": "the part that says who spoke and how"
+        },
+        {
+          "term": "action beat",
+          "def": "an action placed beside speech to show feeling"
+        },
+        {
+          "term": "advance the action",
+          "def": "move the story forward"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Maryam's father returns from the gallery, soaked. What is the first thing each of them says? Make it reveal how they feel.",
+        "a": "For example: \"Did you see it?\" he gasped. \"I saw it,\" Maryam whispered. \"And it saw us.\""
+      },
+      "pictures": [
+        {
+          "find": "storm waves crashing on rocks photograph",
+          "alt": "storm waves on rocks",
+          "for": "hook"
+        },
+        {
+          "find": "lighthouse gallery railing photograph",
+          "alt": "a lighthouse gallery rail",
+          "for": "teach:2"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "hands-down",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "The Lighthouse (short original text used in Years 6 reading lessons; on slides)",
+        "Punctuation Intervention Booklet (Lesson 5: Quotation marks and dialogue) for pupils who need extra support",
+        "Creative writing frameworks (school file): STASS setting, HOOK opening and TCCC events steps, adapted for Year 6",
+        "Exercise book"
+      ],
+      "starter": [
+        {
+          "q": "Punctuate: keep the lamp burning he said",
+          "a": "\"Keep the lamp burning,\" he said.",
+          "mins": 1
+        },
+        {
+          "q": "Punctuate split speech: if a ship sees our light he said she will know",
+          "a": "\"If a ship sees our light,\" he said, \"she will know.\"",
+          "mins": 2
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Dialogue jobs",
+          "note": "Each line should do at least one job.",
+          "diagram": {
+            "centre": "Good dialogue",
+            "items": [
+              "reveals feelings",
+              "shows character",
+              "gives new information",
+              "builds tension",
+              "moves the plot"
+            ]
+          }
+        },
+        {
+          "heading": "Model: labelled dialogue",
+          "note": "Labelled model.",
+          "model": {
+            "problem": "The father returns",
+            "steps": [
+              "Action beat: The door burst open and a gust of icy rain swept in.",
+              "\"Did you keep it lit?\" Father gasped. (reveals worry)",
+              "\"Every second,\" Maryam said, lifting her chin. (shows pride)",
+              "\"Then the ship...\" He stared at the empty sea. (builds tension, new information)"
+            ],
+            "answer": "Dialogue that reveals and advances."
+          }
+        },
+        {
+          "heading": "Vary the tags",
+          "note": "Mix said, precise verbs and action beats.",
+          "compare": {
+            "left": {
+              "title": "Repetitive",
+              "points": [
+                "he said",
+                "she said",
+                "he said"
+              ]
+            },
+            "right": {
+              "title": "Varied",
+              "points": [
+                "he gasped",
+                "Maryam lifted her chin.",
+                "(no tag: clear from context)"
+              ]
+            },
+            "label": "to"
+          }
+        },
+        {
+          "heading": "Hinge: which advances the story?",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Which line moves the story on most?",
+            "options": [
+              "\"Hello,\" said Maryam.",
+              "\"Father, the rail you mended has gone,\" Maryam whispered.",
+              "\"It is cold,\" she said."
+            ],
+            "answer": 1,
+            "why": "B gives new information that creates a new problem."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Rewrite with an action beat: \"I am fine,\" said Maryam.",
+          "a": "For example: \"I am fine.\" Maryam hid her shaking hands behind her back.",
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: For example: \"I am fine.\" Maryam hid her shaking hands behind her back."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: write a 10-line dialogue between Maryam and her father after the storm (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Punctuated, purposeful dialogue",
+          "mins": 13,
+          "model": "Labelled model to go through first (The father returns): Action beat: The door burst open and a gust of icy rain swept in. | \"Did you keep it lit?\" Father gasped. (reveals worry) | \"Every second,\" Maryam said, lifting her chin. (shows pride) | \"Then the ship...\" He stared at the empty sea. (builds tension, new information) | Result: Dialogue that reveals and advances."
+        },
+        {
+          "q": "Extend: include three action beats and varied reporting clauses",
+          "a": "Features present",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: end the scene with a line that hints at a new problem",
+          "a": "For example: \"Father, whose boat is that on the rocks?\"",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Type your strongest line of dialogue",
+          "a": "Answers vary",
+          "mins": 1
+        }
+      ],
+      "homework": "Read a dialogue in your book. Note one line that reveals character and why. Read for 20 minutes a day.",
+      "send": "SEND: dialogue frame with speakers and starters. EAL: reporting verb bank. Stretch: write the same exchange from the father's viewpoint."
+    },
+    {
+      "unit": "Spring 1: Frozen Kingdom",
+      "n": 15,
+      "title": "Bridge grammar: cohesive devices across a text",
+      "duration": 45,
+      "bigQuestion": "How do I make a long piece of writing hang together?",
+      "objectives": [
+        "To use a range of cohesive devices to link ideas across paragraphs"
+      ],
+      "successCriteria": [
+        "All: link sentences with adverbials",
+        "Most: use pronouns, synonyms and repetition for effect",
+        "Some: use ellipsis and paragraph links to create a cohesive whole"
+      ],
+      "crossCurricular": "Geography: polar regions (Frozen Kingdom)",
+      "smsc": "Social: writing that is easy for others to follow",
+      "keywords": [
+        {
+          "term": "cohesion",
+          "def": "how ideas link across a text"
+        },
+        {
+          "term": "cohesive device",
+          "def": "a word or phrase that links ideas"
+        },
+        {
+          "term": "ellipsis",
+          "def": "leaving out words that can be understood"
+        },
+        {
+          "term": "synonym",
+          "def": "a word with a similar meaning"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Read: \"Icebergs float. Icebergs are dangerous. Icebergs hide most of their size.\" What three changes would make this read smoothly?",
+        "a": "Use a pronoun (they), a synonym (these frozen giants) and a linking adverbial (because, however)."
+      },
+      "pictures": [
+        {
+          "find": "iceberg in the ocean photograph",
+          "alt": "an iceberg",
+          "for": "hook"
+        },
+        {
+          "find": "glacier flowing into sea photograph",
+          "alt": "a glacier reaching the sea",
+          "for": "teach:2"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Cohesive devices word mat (adverbials, pronouns, synonyms, ellipsis)",
+        "Display: TiPToP paragraphing posters",
+        "Mini-whiteboard and pen",
+        "Exercise book"
+      ],
+      "starter": [
+        {
+          "q": "Synonym for iceberg",
+          "a": "For example: frozen giant, floating ice",
+          "mins": 1
+        },
+        {
+          "q": "Linking adverbial for result",
+          "a": "For example: as a result, consequently",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The toolkit",
+          "note": "Sort examples.",
+          "sort": {
+            "columns": [
+              "adverbial",
+              "pronoun",
+              "synonym",
+              "ellipsis"
+            ],
+            "cards": [
+              "Consequently,",
+              "they",
+              "these frozen giants",
+              "Some sank; others did not.",
+              "Furthermore,",
+              "it"
+            ],
+            "answer": [
+              0,
+              1,
+              2,
+              3,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "heading": "Model: a cohesive paragraph",
+          "note": "Labelled model paragraph.",
+          "model": {
+            "problem": "Icebergs",
+            "steps": [
+              "Topic sentence: Icebergs are among the most dangerous hazards at sea.",
+              "Pronoun: They form when chunks of ice break off glaciers.",
+              "Synonym: These frozen giants can drift for years.",
+              "Adverbial: Consequently, ships in polar waters must keep a careful watch."
+            ],
+            "answer": "A cohesive paragraph."
+          }
+        },
+        {
+          "heading": "Linking paragraphs",
+          "bullets": [
+            "End with a hint of what comes next",
+            "Begin by referring back",
+            "Despite these dangers, ..."
+          ],
+          "note": "Show two paragraphs joined by a referring-back topic sentence."
+        },
+        {
+          "heading": "Hinge: device",
+          "note": "Teams poll.",
+          "check": {
+            "q": "\"These frozen giants\" is an example of...",
+            "options": [
+              "a pronoun",
+              "a synonym phrase",
+              "ellipsis"
+            ],
+            "answer": 1,
+            "why": "It refers back to icebergs with different words: a synonym phrase."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Rewrite cohesively: Penguins live in Antarctica. Penguins cannot fly. Penguins swim well.",
+          "a": "For example: Penguins live in Antarctica. Although these birds cannot fly, they swim superbly.",
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: For example: Penguins live in Antarctica. Although these birds cannot fly, they swim superbly."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: rewrite a choppy 10-sentence text about glaciers using four types of device (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Cohesive rewrite",
+          "mins": 10,
+          "model": "Labelled model to go through first (Icebergs): Topic sentence: Icebergs are among the most dangerous hazards at sea. | Pronoun: They form when chunks of ice break off glaciers. | Synonym: These frozen giants can drift for years. | Adverbial: Consequently, ships in polar waters must keep a careful watch. | Result: A cohesive paragraph."
+        },
+        {
+          "q": "Extend: label each device you used",
+          "a": "Labels",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: write a paragraph link that refers back and looks forward",
+          "a": "For example: Despite their beauty, glaciers are shrinking, which raises a serious question.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Give an example of ellipsis",
+          "a": "For example: Some ships turned back; others did not.",
+          "mins": 1
+        }
+      ],
+      "homework": "Find three cohesive devices in an information text and name their type. Read for 20 minutes a day.",
+      "send": "SEND: device mat with examples; six sentences. EAL: synonym bank. Stretch: analyse cohesion in a paragraph of a published text."
+    },
+    {
+      "unit": "Spring 1: Frozen Kingdom",
+      "n": 16,
+      "title": "Reading non-fiction: icebergs, glaciers and ice shelves (VIPERS)",
+      "duration": 45,
+      "bigQuestion": "How do I research a topic and record precise technical vocabulary?",
+      "objectives": [
+        "To retrieve, define and summarise technical information from non-fiction about polar ice"
+      ],
+      "successCriteria": [
+        "All: write research questions and find answers",
+        "Most: build a glossary of five ice terms with precise definitions",
+        "Some: summarise how an iceberg forms in a sequence of steps"
+      ],
+      "crossCurricular": "Geography: polar regions (Frozen Kingdom)",
+      "smsc": "Spiritual: wonder at the vast frozen regions of Allah's creation and our duty to look after the earth",
+      "islamicLink": {
+        "text": "Wonder at the vast frozen regions of Allah's creation and our duty to look after the earth",
+        "at": "start"
+      },
+      "keywords": [
+        {
+          "term": "glacier",
+          "def": "a huge, slow-moving river of ice on land"
+        },
+        {
+          "term": "ice shelf",
+          "def": "a floating sheet of ice joined to the land"
+        },
+        {
+          "term": "calving",
+          "def": "when chunks of ice break off a glacier or ice shelf"
+        },
+        {
+          "term": "iceberg",
+          "def": "a large floating piece of freshwater ice"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "An iceberg floats with only about one-tenth showing above the water. What does that mean for a ship sailing nearby?",
+        "a": "Most of it is hidden underwater and extends far out, so it is far more dangerous than it looks."
+      },
+      "pictures": [
+        {
+          "find": "iceberg underwater view diagram",
+          "alt": "how much of an iceberg is underwater",
+          "for": "hook"
+        },
+        {
+          "find": "glacier calving ice into sea photograph",
+          "alt": "calving",
+          "for": "keywords"
+        },
+        {
+          "find": "Ross Ice Shelf edge photograph",
+          "alt": "an ice shelf",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Primary English scheme of work, Frozen Kingdom: research questions from photographs, glossary of ice terms (week 1 folded into the bridge)",
+        "Teacher's information text: Ice at the Ends of the Earth (on slides; facts checked)",
+        "Photographs of icebergs and glaciers",
+        "Display: VIPERS question stems (school reading INSET)",
+        "Mini-whiteboard and pen"
+      ],
+      "starter": [
+        {
+          "q": "Synonym for iceberg",
+          "a": "For example: floating ice",
+          "mins": 1
+        },
+        {
+          "q": "Which pole is in an ocean, north or south?",
+          "a": "The North Pole (Arctic Ocean)",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Questions from photographs",
+          "bullets": [
+            "Look at the iceberg photograph",
+            "Write two research questions",
+            "Who? What? How? Why?"
+          ],
+          "note": "Pupils write questions before reading, as in the school scheme."
+        },
+        {
+          "heading": "How an iceberg forms",
+          "note": "Facts checked.",
+          "cycle": [
+            "snow falls and packs into ice",
+            "a glacier flows slowly to the sea",
+            "ice breaks off (calving)",
+            "the iceberg drifts and slowly melts"
+          ]
+        },
+        {
+          "heading": "Glossary model",
+          "note": "Precise definitions.",
+          "model": {
+            "problem": "Define: ice shelf",
+            "steps": [
+              "What kind of thing? a sheet of ice",
+              "Key detail: floating on the sea",
+              "Key detail: still joined to the land",
+              "An ice shelf is a floating sheet of ice that is still attached to the land."
+            ],
+            "answer": "An ice shelf is a floating sheet of ice that is still attached to the land."
+          }
+        },
+        {
+          "heading": "Hinge: retrieve",
+          "note": "Teams poll.",
+          "check": {
+            "q": "What is calving?",
+            "options": [
+              "an iceberg melting",
+              "chunks of ice breaking off a glacier or ice shelf",
+              "snow falling"
+            ],
+            "answer": 1,
+            "why": "Calving is when ice breaks off into the sea."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "R: About how much of an iceberg is above water?",
+          "a": "About one-tenth",
+          "mins": 1,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: About one-tenth"
+        },
+        {
+          "q": "V: Define glacier",
+          "a": "A huge, slow-moving river of ice on land",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: answer your own research questions from the text (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Answers from the text",
+          "mins": 8,
+          "model": "Teacher does the first part aloud before pupils start, showing each step: Answers from the text"
+        },
+        {
+          "q": "Extend: build a glossary of five ice terms in alphabetical order",
+          "a": "calving, glacier, ice sheet, ice shelf, iceberg with definitions",
+          "mins": 6
+        },
+        {
+          "q": "Stretch: summarise how an iceberg forms in four sequenced sentences",
+          "a": "Four sequenced sentences",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Is iceberg ice made of fresh water or salt water?",
+          "a": "Fresh water",
+          "mins": 1
+        }
+      ],
+      "homework": "Find one more fact about icebergs or glaciers from a reliable source and add it to your glossary. Read for 20 minutes a day.",
+      "send": "SEND: glossary frame with first letters. EAL: picture glossary. Stretch: explain why sea levels are affected when land ice melts but not when sea ice melts."
+    },
+    {
+      "unit": "Spring 1: Frozen Kingdom",
+      "n": 17,
+      "title": "Bridge writing: planning a formal letter to a newspaper about protecting polar wildlife",
+      "duration": 45,
+      "bigQuestion": "How do I plan a formal letter that persuades an official reader?",
+      "objectives": [
+        "To plan a formal persuasive letter with a clear purpose, points and evidence"
+      ],
+      "successCriteria": [
+        "All: plan the layout and three points",
+        "Most: support each point with a fact",
+        "Some: plan a counter-argument and a polite call to action"
+      ],
+      "crossCurricular": "Geography: polar regions (Frozen Kingdom)",
+      "smsc": "Moral: Islam teaches that people are trustees (khalifah, خَلِيفَة) on earth with a duty to care for it",
+      "islamicLink": {
+        "text": "Islam teaches that people are trustees (khalifah, خَلِيفَة) on earth with a duty to care for it",
+        "at": "start"
+      },
+      "keywords": [
+        {
+          "term": "persuade",
+          "def": "convince someone to agree or act"
+        },
+        {
+          "term": "counter-argument",
+          "def": "the opposite view, which you answer"
+        },
+        {
+          "term": "call to action",
+          "def": "what you want the reader to do"
+        },
+        {
+          "term": "editor",
+          "def": "the person in charge of a newspaper"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Sea ice in the Arctic is shrinking. Who should do something about it, and what could a 10-year-old do?",
+        "a": "Answers vary: governments, companies, families; a child can write, save energy, raise awareness."
+      },
+      "pictures": [
+        {
+          "find": "polar bear on sea ice photograph",
+          "alt": "a polar bear on sea ice",
+          "for": "teach:2"
+        },
+        {
+          "find": "Arctic sea ice minimum satellite image",
+          "alt": "Arctic sea ice from space",
+          "for": "hook"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Letter planning frame: purpose, three points with evidence, counter-argument, call to action",
+        "Teacher's fact sheet: polar wildlife and sea ice (facts checked)",
+        "Vocabulary Intervention Programme (Lesson 20: Formal and informal vocabulary) for pupils who need extra support",
+        "Mini-whiteboard and pen"
+      ],
+      "starter": [
+        {
+          "q": "Make formal: We gotta help.",
+          "a": "We must act.",
+          "mins": 1
+        },
+        {
+          "q": "Use the subjunctive: It is vital that everyone (be) careful.",
+          "a": "It is vital that everyone be careful.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Purpose and audience",
+          "note": "Formal reader.",
+          "compare": {
+            "left": {
+              "title": "Audience",
+              "points": [
+                "the editor",
+                "newspaper readers"
+              ]
+            },
+            "right": {
+              "title": "Purpose",
+              "points": [
+                "persuade readers to help",
+                "politely and with evidence"
+              ]
+            },
+            "label": "and"
+          }
+        },
+        {
+          "heading": "Points with evidence",
+          "note": "Facts checked.",
+          "table": {
+            "head": [
+              "Point",
+              "Evidence"
+            ],
+            "rows": [
+              [
+                "Polar bears need sea ice",
+                "They hunt seals from the ice"
+              ],
+              [
+                "Sea ice is shrinking",
+                "Arctic summer sea ice has declined since satellite records began in 1979"
+              ],
+              [
+                "Small actions add up",
+                "Saving energy reduces pollution"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Plan model",
+          "note": "Labelled plan.",
+          "model": {
+            "problem": "Letter plan",
+            "steps": [
+              "Opening: who I am and why I am writing",
+              "Point 1 + evidence: polar bears depend on sea ice",
+              "Point 2 + evidence: the ice is shrinking",
+              "Counter-argument: \"It is too far away to matter\" + answer",
+              "Call to action: readers can save energy and support protection"
+            ],
+            "answer": "A persuasive formal plan."
+          }
+        },
+        {
+          "heading": "Hinge: best call to action",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Best formal call to action?",
+            "options": [
+              "Do something!!!",
+              "I urge readers to reduce energy use and support polar conservation.",
+              "Whatever."
+            ],
+            "answer": 1,
+            "why": "B is polite, formal and specific."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write a counter-argument and your answer",
+          "a": "For example: Some say the Arctic is too far away to matter; however, the climate affects us all.",
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: For example: Some say the Arctic is too far away to matter; however, the climate affects us all."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: complete the letter plan with three points and evidence (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Completed plan",
+          "mins": 10,
+          "model": "Labelled model to go through first (Letter plan): Opening: who I am and why I am writing | Point 1 + evidence: polar bears depend on sea ice | Point 2 + evidence: the ice is shrinking | Counter-argument: \"It is too far away to matter\" + answer | Call to action: readers can save energy and support protection | Result: A persuasive formal plan."
+        },
+        {
+          "q": "Extend: plan a counter-argument and call to action",
+          "a": "Planned",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: plan one subjunctive sentence and one passive sentence",
+          "a": "For example: It is essential that action be taken.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Type your call to action",
+          "a": "Answers vary",
+          "mins": 1
+        }
+      ],
+      "homework": "Discuss your plan with an adult. Which point do they find most persuasive? Read for 20 minutes a day.",
+      "send": "SEND: plan frame with sentence starters. EAL: fact cards to choose from. Stretch: plan a rhetorical question for the opening."
+    },
+    {
+      "unit": "Spring 1: Frozen Kingdom",
+      "n": 18,
+      "title": "Bridge writing: a formal letter to a newspaper editor",
+      "duration": 45,
+      "bigQuestion": "Can I write a formal letter that is both polite and persuasive?",
+      "objectives": [
+        "To write a formal persuasive letter using formal register, cohesion and evidence"
+      ],
+      "successCriteria": [
+        "All: write a correctly laid-out letter with three paragraphs",
+        "Most: support each point with evidence and use cohesive devices",
+        "Some: answer a counter-argument and use the subjunctive or passive"
+      ],
+      "crossCurricular": "Geography: polar regions (Frozen Kingdom)",
+      "smsc": "Moral: Islam teaches that people are trustees (khalifah, خَلِيفَة) on earth with a duty to care for it",
+      "islamicLink": {
+        "text": "Islam teaches that people are trustees (khalifah, خَلِيفَة) on earth with a duty to care for it",
+        "at": "start"
+      },
+      "keywords": [
+        {
+          "term": "formal letter",
+          "def": "a letter for an official purpose"
+        },
+        {
+          "term": "evidence",
+          "def": "facts that support a point"
+        },
+        {
+          "term": "rhetorical question",
+          "def": "a question asked for effect, not for an answer"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Begin your letter with a question that makes the editor stop and think. What would it be?",
+        "a": "For example: What will the Arctic look like when today's children are grown up?"
+      },
+      "pictures": [
+        {
+          "find": "polar bear on sea ice photograph",
+          "alt": "a polar bear",
+          "for": "hook"
+        },
+        {
+          "find": "newspaper letters page photograph",
+          "alt": "a newspaper letters page",
+          "for": "teach:1"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "hands-down",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Pupil's letter plan",
+        "Formal letter layout model",
+        "Cohesive devices word mat",
+        "Exercise book"
+      ],
+      "starter": [
+        {
+          "q": "Sign-off for \"Dear Editor\"",
+          "a": "Yours faithfully, (name unknown) or Yours sincerely, (named editor)",
+          "mins": 1
+        },
+        {
+          "q": "Formal synonym for help",
+          "a": "assist or support",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Model: opening paragraph",
+          "note": "Labelled model paragraph.",
+          "model": {
+            "problem": "Opening",
+            "steps": [
+              "Greeting: Dear Editor,",
+              "Rhetorical question: What will the Arctic look like when today's children are grown up?",
+              "Who and why: I am a Year 6 pupil writing to urge your readers to protect polar wildlife.",
+              "Preview: The evidence shows that action is needed now."
+            ],
+            "answer": "A formal, persuasive opening."
+          }
+        },
+        {
+          "heading": "Model: answering a counter-argument",
+          "note": "Labelled model paragraph.",
+          "model": {
+            "problem": "Counter-argument paragraph",
+            "steps": [
+              "Counter: Some readers may feel that the Arctic is too far away to matter.",
+              "Answer: However, the climate connects every part of the planet.",
+              "Evidence: Changes in polar ice affect sea levels and weather around the world.",
+              "Link: Therefore, it is in everyone's interest to act."
+            ],
+            "answer": "A balanced, persuasive paragraph."
+          }
+        },
+        {
+          "heading": "Hinge: formal?",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Which sentence suits the letter?",
+            "options": [
+              "Polar bears are well cute so save them.",
+              "It is essential that urgent action be taken to protect polar habitats.",
+              "Do it now!!!"
+            ],
+            "answer": 1,
+            "why": "B is formal, precise and uses the subjunctive."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write your call-to-action sentence formally",
+          "a": "For example: I urge every reader to reduce their energy use.",
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: For example: I urge every reader to reduce their energy use."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: write the letter with layout and three paragraphs (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Formal letter",
+          "mins": 16,
+          "model": "Labelled model to go through first (Counter-argument paragraph): Counter: Some readers may feel that the Arctic is too far away to matter. | Answer: However, the climate connects every part of the planet. | Evidence: Changes in polar ice affect sea levels and weather around the world. | Link: Therefore, it is in everyone's interest to act. | Result: A balanced, persuasive paragraph."
+        },
+        {
+          "q": "Extend: include a counter-argument paragraph",
+          "a": "Counter-argument answered",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: use one subjunctive and one passive sentence",
+          "a": "Features present",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Type your strongest sentence",
+          "a": "Answers vary",
+          "mins": 1
+        }
+      ],
+      "homework": "Read your letter aloud to an adult and ask whether it would persuade them. Read for 20 minutes a day.",
+      "send": "SEND: letter template with paragraph starters. EAL: model letter to adapt. Stretch: write a short reply from the editor."
+    },
+    {
+      "unit": "Spring 1: Frozen Kingdom",
+      "n": 19,
+      "title": "The Titanic: reading factual accounts and building a timeline (VIPERS)",
+      "duration": 45,
+      "bigQuestion": "What happened on the night of 14 to 15 April 1912, in what order?",
+      "objectives": [
+        "To retrieve and sequence events from factual accounts to build an accurate timeline"
+      ],
+      "successCriteria": [
+        "All: put six events in order with dates and times",
+        "Most: retrieve precise facts (numbers, times, places)",
+        "Some: explain which events were causes and which were consequences"
+      ],
+      "crossCurricular": "History: the Titanic disaster, 1912",
+      "smsc": "Moral: remembering those who died with respect; humility, as no ship is truly \"unsinkable\"",
+      "keywords": [
+        {
+          "term": "maiden voyage",
+          "def": "a ship's first journey"
+        },
+        {
+          "term": "timeline",
+          "def": "events shown in date and time order"
+        },
+        {
+          "term": "chronological",
+          "def": "in the order events happened"
+        },
+        {
+          "term": "survivor",
+          "def": "a person who stayed alive after a disaster"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "People called the Titanic \"unsinkable\". What does that word tell us about how people felt about the ship, and why is it a dangerous thing to believe?",
+        "a": "They were overconfident; believing a ship cannot sink can make people less careful."
+      },
+      "pictures": [
+        {
+          "find": "RMS Titanic 1912 photograph",
+          "alt": "RMS Titanic",
+          "for": "hook"
+        },
+        {
+          "find": "RMS Carpathia ship photograph",
+          "alt": "RMS Carpathia",
+          "for": "teach:2"
+        },
+        {
+          "find": "Titanic lifeboat 1912 photograph",
+          "alt": "a Titanic lifeboat",
+          "for": "teach:1"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Primary English scheme of work, Frozen Kingdom: factual accounts of the sinking and a timeline of events",
+        "Teacher's factual account: The Last Voyage of the Titanic (on slides; facts checked)",
+        "Timeline frame",
+        "Display: VIPERS question stems (school reading INSET)",
+        "Mini-whiteboard and pen"
+      ],
+      "starter": [
+        {
+          "q": "Make passive: An iceberg struck the ship.",
+          "a": "The ship was struck by an iceberg.",
+          "mins": 1
+        },
+        {
+          "q": "What is calving?",
+          "a": "Ice breaking off a glacier or ice shelf",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Key facts",
+          "note": "Facts checked against reliable accounts.",
+          "table": {
+            "head": [
+              "Fact",
+              "Detail"
+            ],
+            "rows": [
+              [
+                "Left Southampton",
+                "10 April 1912, for New York"
+              ],
+              [
+                "People on board",
+                "about 2,224"
+              ],
+              [
+                "Lifeboats",
+                "20, with room for about 1,178 people"
+              ],
+              [
+                "Survivors",
+                "about 710"
+              ],
+              [
+                "Lives lost",
+                "more than 1,500"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "The timeline",
+          "note": "Sequence.",
+          "timeline": [
+            {
+              "label": "10 Apr",
+              "text": "Leaves Southampton on its maiden voyage"
+            },
+            {
+              "label": "14 Apr",
+              "text": "Several ice warnings received by radio"
+            },
+            {
+              "label": "11:40 pm",
+              "text": "Strikes an iceberg in the North Atlantic"
+            },
+            {
+              "label": "12:45 am",
+              "text": "First lifeboat lowered, not full"
+            },
+            {
+              "label": "2:20 am",
+              "text": "The ship sinks"
+            },
+            {
+              "label": "about 4 am",
+              "text": "RMS Carpathia begins rescuing survivors"
+            }
+          ]
+        },
+        {
+          "heading": "Cause and consequence",
+          "note": "Model.",
+          "model": {
+            "problem": "Why did so many people die?",
+            "steps": [
+              "Cause: not enough lifeboat places for everyone",
+              "Cause: some lifeboats launched half empty",
+              "Cause: the water was below freezing",
+              "Consequence: more than 1,500 lives were lost"
+            ],
+            "answer": "Several causes combined."
+          }
+        },
+        {
+          "heading": "Hinge: retrieve",
+          "note": "Teams poll.",
+          "check": {
+            "q": "At what time did the Titanic strike the iceberg?",
+            "options": [
+              "10:40 pm",
+              "11:40 pm",
+              "2:20 am"
+            ],
+            "answer": 1,
+            "why": "It struck at 11:40 pm on 14 April; it sank at 2:20 am on 15 April."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "R: How many lifeboats did the Titanic carry?",
+          "a": "20",
+          "mins": 1,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: 20"
+        },
+        {
+          "q": "R: Which ship rescued the survivors?",
+          "a": "RMS Carpathia",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: build a timeline of eight events with times and dates (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Accurate timeline",
+          "mins": 10,
+          "model": "Teacher does the first part aloud before pupils start, showing each step: Accurate timeline"
+        },
+        {
+          "q": "Extend: write a sentence describing each timeline point",
+          "a": "Sentences",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: explain one cause of the high loss of life with evidence",
+          "a": "For example: lifeboat places for only about half of those aboard",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "How many lifeboat places were there for about 2,224 people?",
+          "a": "About 1,178",
+          "mins": 1
+        }
+      ],
+      "homework": "Find out one change to ship safety made after the Titanic (for example, enough lifeboats for everyone). Read for 20 minutes a day.",
+      "send": "SEND: timeline cards to order; facts table provided. EAL: glossary (lifeboat, iceberg, voyage). Stretch: research the 1914 safety rules (SOLAS) and add them to the timeline."
+    },
+    {
+      "unit": "Spring 1: Frozen Kingdom",
+      "n": 20,
+      "title": "Features of a chronological report written for an inquiry",
+      "duration": 45,
+      "bigQuestion": "How is a chronological report organised for an official reader?",
+      "objectives": [
+        "To identify the structure and language features of a formal chronological report"
+      ],
+      "successCriteria": [
+        "All: label the structure (introduction, sections in time order, conclusion)",
+        "Most: find time connectives, the passive and formal vocabulary",
+        "Some: explain how the features suit the audience (a government inquiry)"
+      ],
+      "crossCurricular": "History and citizenship: the United States Senate inquiry, 1912",
+      "smsc": "Moral: telling the truth carefully and fairly in an investigation",
+      "keywords": [
+        {
+          "term": "chronological report",
+          "def": "a report that explains events in time order"
+        },
+        {
+          "term": "inquiry",
+          "def": "an official investigation"
+        },
+        {
+          "term": "time connective",
+          "def": "a word or phrase that shows when, like subsequently"
+        },
+        {
+          "term": "objective",
+          "def": "based on facts, not feelings"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "After the Titanic sank, the United States Senate held an inquiry within days. If you were investigating, what would you most want to find out?",
+        "a": "For example: why it hit the iceberg, why lifeboats were half empty, whether warnings were ignored."
+      },
+      "pictures": [
+        {
+          "find": "United States Capitol building photograph",
+          "alt": "the US Capitol, home of the Senate",
+          "for": "hook"
+        },
+        {
+          "find": "typed report pages photograph",
+          "alt": "a typed report",
+          "for": "teach:1"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Primary English scheme of work, Frozen Kingdom: chronological report in role as an engineer reporting to the American Senate",
+        "Teacher's model report: The Loss of the SS Northern Star (an invented ship, so pupils write their own Titanic report)",
+        "Display: VIPERS question stems (school reading INSET)",
+        "Mini-whiteboard and pen"
+      ],
+      "starter": [
+        {
+          "q": "When did the Titanic sink?",
+          "a": "2:20 am, 15 April 1912",
+          "mins": 1
+        },
+        {
+          "q": "Formal word for find out",
+          "a": "establish or determine",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Structure",
+          "note": "Label the model.",
+          "diagram": {
+            "centre": "Chronological report",
+            "items": [
+              "title and who it is for",
+              "introduction: what, when, where",
+              "sections in time order with headings",
+              "findings: causes",
+              "recommendations",
+              "conclusion"
+            ]
+          }
+        },
+        {
+          "heading": "Language features",
+          "note": "Find them in the model.",
+          "table": {
+            "head": [
+              "Feature",
+              "Example from the model"
+            ],
+            "rows": [
+              [
+                "time connectives",
+                "At 11:15 pm, Subsequently, By midnight"
+              ],
+              [
+                "passive voice",
+                "Warnings were received."
+              ],
+              [
+                "formal vocabulary",
+                "vessel, evacuation, insufficient"
+              ],
+              [
+                "objective tone",
+                "The evidence indicates..."
+              ],
+              [
+                "third person",
+                "The crew, the captain"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "E: why these features?",
+          "note": "Model.",
+          "model": {
+            "problem": "Why does the report say \"Warnings were received\" rather than \"The radio man got warnings\"?",
+            "steps": [
+              "Passive: focus on the warnings",
+              "Formal vocabulary: received",
+              "Objective: does not blame one person before the evidence is weighed",
+              "Suits a Senate inquiry"
+            ],
+            "answer": "It is formal, objective and focused on facts."
+          }
+        },
+        {
+          "heading": "Hinge: objective?",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Which sentence is objective?",
+            "options": [
+              "The captain was totally useless.",
+              "The evidence indicates that the ship was travelling at high speed.",
+              "It was the saddest night ever."
+            ],
+            "answer": 1,
+            "why": "B states evidence without emotion or blame."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Find two time connectives in the model",
+          "a": "For example: Subsequently, By midnight",
+          "mins": 1,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: For example: Subsequently, By midnight"
+        },
+        {
+          "q": "Make objective: The lookouts were rubbish.",
+          "a": "For example: The lookouts did not see the iceberg until it was very close.",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: annotate the model with five language features and the structure (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Annotations",
+          "mins": 9,
+          "model": "Teacher does the first part aloud before pupils start, showing each step: Annotations"
+        },
+        {
+          "q": "Extend: create a checklist for your own Titanic report",
+          "a": "Checklist",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: explain how the report suits its audience",
+          "a": "Formal, objective, organised for decision-makers",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Name two features of a chronological report",
+          "a": "For example: time connectives, passive voice",
+          "mins": 1
+        }
+      ],
+      "homework": "Plan the headings for your Titanic report. Read for 20 minutes a day.",
+      "send": "SEND: model with features colour-coded. EAL: feature cards with examples. Stretch: identify a sentence that could be more objective and rewrite it."
+    },
+    {
+      "unit": "Spring 1: Frozen Kingdom",
+      "n": 21,
+      "title": "Grammar for reports: passive voice and time connectives",
+      "duration": 45,
+      "bigQuestion": "How do the passive and time connectives make a report sound official?",
+      "objectives": [
+        "To use the passive voice and varied time connectives in a chronological report"
+      ],
+      "successCriteria": [
+        "All: write passive sentences about the Titanic",
+        "Most: use five different time connectives",
+        "Some: combine passive, time connectives and relative clauses in one sentence"
+      ],
+      "crossCurricular": "History: the Titanic",
+      "smsc": "Moral: careful, fair reporting",
+      "keywords": [
+        {
+          "term": "passive voice",
+          "def": "the subject has the action done to it"
+        },
+        {
+          "term": "time connective",
+          "def": "a word showing when, like subsequently"
+        },
+        {
+          "term": "subsequently",
+          "def": "after that"
+        },
+        {
+          "term": "meanwhile",
+          "def": "at the same time"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which sounds more like an official report: \"Then they put people in boats\" or \"Subsequently, passengers were evacuated in lifeboats\"? What exactly makes the difference?",
+        "a": "The second: a formal time connective, the passive and precise vocabulary."
+      },
+      "pictures": [
+        {
+          "find": "ship telegraph radio room photograph",
+          "alt": "a ship's radio room",
+          "for": "teach:2"
+        },
+        {
+          "find": "pocket watch photograph",
+          "alt": "a watch (timing events)",
+          "for": "teach:1"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Time connectives word mat (initially, subsequently, meanwhile, shortly afterwards, by 2:20 am)",
+        "Punctuation Intervention Booklet (Lesson 1: Capital letters and end marks) for pupils who need extra support",
+        "Mini-whiteboard and pen",
+        "Exercise book"
+      ],
+      "starter": [
+        {
+          "q": "Make passive: The crew lowered the boats.",
+          "a": "The boats were lowered by the crew.",
+          "mins": 1
+        },
+        {
+          "q": "Formal time connective for after that",
+          "a": "subsequently",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Time connectives ladder",
+          "note": "Order of a night.",
+          "timeline": [
+            {
+              "label": "Initially",
+              "text": "the sea was calm"
+            },
+            {
+              "label": "At 11:40 pm",
+              "text": "the iceberg was struck"
+            },
+            {
+              "label": "Shortly afterwards",
+              "text": "the damage was inspected"
+            },
+            {
+              "label": "Meanwhile",
+              "text": "distress signals were sent"
+            },
+            {
+              "label": "Subsequently",
+              "text": "lifeboats were launched"
+            },
+            {
+              "label": "By 2:20 am",
+              "text": "the ship had sunk"
+            }
+          ]
+        },
+        {
+          "heading": "Model: a report sentence",
+          "note": "Build it.",
+          "model": {
+            "problem": "Combine: time connective + passive + relative clause",
+            "steps": [
+              "Time: Shortly afterwards,",
+              "Passive: distress signals were sent",
+              "Relative clause: to the Carpathia, which was about 58 miles away",
+              "Comma check"
+            ],
+            "answer": "Shortly afterwards, distress signals were sent to the Carpathia, which was about 58 miles away."
+          }
+        },
+        {
+          "heading": "Avoid repetition",
+          "note": "Vary connectives.",
+          "misconception": {
+            "wrong": "Then... Then... Then...",
+            "right": "Initially... Shortly afterwards... Subsequently... By 2:20 am..."
+          }
+        },
+        {
+          "heading": "Hinge: best connective",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Which connective shows two things happening at the same time?",
+            "options": [
+              "Subsequently",
+              "Meanwhile",
+              "Finally"
+            ],
+            "answer": 1,
+            "why": "Meanwhile means at the same time."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write a passive sentence with a time connective about the lifeboats",
+          "a": "For example: Subsequently, the lifeboats were lowered into the sea.",
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: For example: Subsequently, the lifeboats were lowered into the sea."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: write eight report sentences about the night, each with a time connective; at least four passive (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Eight sentences",
+          "mins": 10,
+          "model": "Labelled model to go through first (Combine: time connective + passive + relative clause): Time: Shortly afterwards, | Passive: distress signals were sent | Relative clause: to the Carpathia, which was about 58 miles away | Comma check | Result: Shortly afterwards, distress signals were sent to the Carpathia, which was about 58 miles away."
+        },
+        {
+          "q": "Extend: use five different time connectives",
+          "a": "Varied connectives",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: write two sentences combining a time connective, the passive and a relative clause",
+          "a": "Two complex sentences",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Make passive with a connective: At 2:20 am the sea swallowed the ship.",
+          "a": "At 2:20 am, the ship was swallowed by the sea. (or: At 2:20 am, the ship sank.)",
+          "mins": 1
+        }
+      ],
+      "homework": "Write five sentences about your morning routine using formal time connectives. Read for 20 minutes a day.",
+      "send": "SEND: connective ladder and passive frame (was/were + verb). EAL: timeline with picture prompts. Stretch: use the passive with a modal (could have been prevented)."
+    },
+    {
+      "unit": "Spring 1: Frozen Kingdom",
+      "n": 22,
+      "title": "Writing the chronological report in role as an engineer for the Senate inquiry",
+      "duration": 45,
+      "bigQuestion": "Can I write an objective, formal report that explains what happened and why?",
+      "objectives": [
+        "To write a formal chronological report in role, using structure, the passive and time connectives"
+      ],
+      "successCriteria": [
+        "All: write an introduction and two sections in time order",
+        "Most: use headings, the passive and varied time connectives",
+        "Some: add findings and a recommendation in an objective tone"
+      ],
+      "crossCurricular": "History: the Titanic and the 1912 inquiries",
+      "smsc": "Moral: honesty and fairness when explaining a tragedy",
+      "keywords": [
+        {
+          "term": "in role",
+          "def": "writing as if you were another person"
+        },
+        {
+          "term": "findings",
+          "def": "what the investigation discovered"
+        },
+        {
+          "term": "recommendation",
+          "def": "a suggestion for what should change"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You are an engineer. The Senate asks you one question: \"Could this have been prevented?\" How will you answer without blaming anyone unfairly?",
+        "a": "Use evidence: speed, warnings, lifeboat numbers; be objective and recommend changes."
+      },
+      "pictures": [
+        {
+          "find": "Titanic wreck bow photograph",
+          "alt": "the wreck of the Titanic on the seabed",
+          "for": "hook"
+        },
+        {
+          "find": "Titanic lifeboat 1912 photograph",
+          "alt": "a lifeboat",
+          "for": "teach:3"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "hands-down",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Pupil's timeline and headings",
+        "Report checklist from the last lesson",
+        "Report frame: introduction, sections in time order, findings, recommendations",
+        "Exercise book or typed draft"
+      ],
+      "starter": [
+        {
+          "q": "Formal connective for at the same time",
+          "a": "Meanwhile",
+          "mins": 1
+        },
+        {
+          "q": "Passive: The lookouts saw the iceberg.",
+          "a": "The iceberg was seen by the lookouts.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Model: introduction",
+          "note": "Labelled model paragraph.",
+          "model": {
+            "problem": "Introduction",
+            "steps": [
+              "Audience: To the Committee of the United States Senate",
+              "Purpose: This report sets out the events that led to the loss of RMS Titanic.",
+              "What, when, where: The vessel sank in the North Atlantic in the early hours of 15 April 1912.",
+              "Scope: It describes the sequence of events, the findings and recommendations."
+            ],
+            "answer": "A formal introduction."
+          }
+        },
+        {
+          "heading": "Model: one section",
+          "note": "Labelled model paragraph.",
+          "model": {
+            "problem": "11:40 pm: The collision",
+            "steps": [
+              "Time connective: At 11:40 pm,",
+              "Passive: an iceberg was sighted directly ahead.",
+              "Fact: The ship turned but struck it along the starboard side.",
+              "Consequence: Several compartments were opened to the sea."
+            ],
+            "answer": "A precise section."
+          }
+        },
+        {
+          "heading": "Recommendations",
+          "bullets": [
+            "Lifeboat places for every person",
+            "Radios staffed day and night",
+            "Slower speeds in ice fields"
+          ],
+          "note": "These match changes made after 1912 (safety rules agreed in 1914). Pupils write their own in formal language."
+        },
+        {
+          "heading": "Hinge: recommendation?",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Which is a formal recommendation?",
+            "options": [
+              "They should have been more careful lol.",
+              "It is recommended that every vessel carry sufficient lifeboats for all on board.",
+              "Boats are big."
+            ],
+            "answer": 1,
+            "why": "B is formal, specific and uses the passive."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write your first time-connective sentence for the evacuation section",
+          "a": "For example: Shortly after midnight, the order was given to uncover the lifeboats.",
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: For example: Shortly after midnight, the order was given to uncover the lifeboats."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: write the introduction and at least two sections in time order (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Report draft",
+          "mins": 16,
+          "model": "Labelled model to go through first (11:40 pm: The collision): Time connective: At 11:40 pm, | Passive: an iceberg was sighted directly ahead. | Fact: The ship turned but struck it along the starboard side. | Consequence: Several compartments were opened to the sea. | Result: A precise section."
+        },
+        {
+          "q": "Extend: add findings using the passive and objective language",
+          "a": "Findings section",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: add two formal recommendations",
+          "a": "Recommendations",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Type one objective finding",
+          "a": "Answers vary",
+          "mins": 1
+        }
+      ],
+      "homework": "Read your report aloud and underline every passive sentence. Read for 20 minutes a day.",
+      "send": "SEND: report frame with starters for each section. EAL: timeline and word mat beside the frame. Stretch: include a short table of key numbers."
+    },
+    {
+      "unit": "Spring 1: Frozen Kingdom",
+      "n": 23,
+      "title": "Editing and improving the Titanic report (assessed piece)",
+      "duration": 45,
+      "bigQuestion": "How can I make my report more precise, formal and accurate?",
+      "objectives": [
+        "To edit and proofread a formal report against the Year 6 writing criteria"
+      ],
+      "successCriteria": [
+        "All: correct spelling and punctuation",
+        "Most: improve formality and precision in three places",
+        "Some: check every fact against the timeline and the criteria"
+      ],
+      "crossCurricular": "History: the Titanic",
+      "smsc": "Moral: accuracy when writing about real people and events",
+      "keywords": [
+        {
+          "term": "edit",
+          "def": "improve content and style"
+        },
+        {
+          "term": "proofread",
+          "def": "correct errors"
+        },
+        {
+          "term": "accuracy",
+          "def": "being correct and exact"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "An inquiry finds one wrong number in your report. What happens to the reader's trust in everything else you wrote?",
+        "a": "It drops: accuracy matters in official writing."
+      },
+      "pictures": [
+        {
+          "find": "red pen proofreading photograph",
+          "alt": "proofreading",
+          "for": "teach:2"
+        },
+        {
+          "find": "RMS Titanic 1912 photograph",
+          "alt": "RMS Titanic",
+          "for": "teach:1"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "hands-down",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Pupil's draft report",
+        "Year 6 writing assessment criteria (school assessment system)",
+        "Timeline and facts table for checking",
+        "Dictionary and thesaurus"
+      ],
+      "starter": [
+        {
+          "q": "Check: The Titanic left Southampton on 10 April 1912. True or false?",
+          "a": "True",
+          "mins": 1
+        },
+        {
+          "q": "Correct: If I was the captain...",
+          "a": "If I were the captain...",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Fact check first",
+          "note": "Key numbers.",
+          "table": {
+            "head": [
+              "Fact",
+              "Correct value"
+            ],
+            "rows": [
+              [
+                "collision",
+                "11:40 pm, 14 April 1912"
+              ],
+              [
+                "sinking",
+                "about 2:20 am, 15 April 1912"
+              ],
+              [
+                "on board",
+                "about 2,224"
+              ],
+              [
+                "lives lost",
+                "more than 1,500"
+              ],
+              [
+                "lifeboats",
+                "20 (about 1,178 places)"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Model: improving a sentence",
+          "note": "Think aloud.",
+          "model": {
+            "problem": "Then they found out the boats were not enough.",
+            "steps": [
+              "Formal connective: Subsequently,",
+              "Formal verb: it was established",
+              "Precise vocabulary: insufficient lifeboat places",
+              "Result: Subsequently, it was established that there were insufficient lifeboat places for all on board."
+            ],
+            "answer": "A formal, precise sentence."
+          }
+        },
+        {
+          "heading": "Hinge: edit or proofread?",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Changing \"lots of\" to \"numerous\" is...",
+            "options": [
+              "proofreading",
+              "editing",
+              "publishing"
+            ],
+            "answer": 1,
+            "why": "Improving word choice is editing."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Edit: The ship was going really fast.",
+          "a": "For example: The vessel was travelling at high speed.",
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: For example: The vessel was travelling at high speed."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: fact-check and proofread your report (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Corrected report",
+          "mins": 12,
+          "model": "Labelled model to go through first (Then they found out the boats were not enough.): Formal connective: Subsequently, | Formal verb: it was established | Precise vocabulary: insufficient lifeboat places | Result: Subsequently, it was established that there were insufficient lifeboat places for all on board. | Result: A formal, precise sentence."
+        },
+        {
+          "q": "Extend: improve three sentences for formality and precision",
+          "a": "Three improvements",
+          "mins": 6
+        },
+        {
+          "q": "Stretch: check against every Year 6 criterion and fix one gap",
+          "a": "Criteria checked",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Type the improvement you are proudest of",
+          "a": "Answers vary",
+          "mins": 1
+        }
+      ],
+      "homework": "Copy out a neat final version of your report or type it. Read for 20 minutes a day.",
+      "send": "SEND: checklist with four items; adult reader. EAL: spelling list of key words. Stretch: add a short executive summary at the top."
+    },
+    {
+      "unit": "Spring 1: Frozen Kingdom",
+      "n": 24,
+      "title": "The Call of the Wild: the opening paragraph (VIPERS)",
+      "duration": 45,
+      "bigQuestion": "What does an opening paragraph tell us about the whole novel?",
+      "objectives": [
+        "To infer themes and predict events from the opening of a classic novel"
+      ],
+      "successCriteria": [
+        "All: summarise what the opening tells us",
+        "Most: infer what \"trouble\" is coming for Buck with evidence",
+        "Some: explain how the writer creates a sense of threat"
+      ],
+      "crossCurricular": "History and geography: the Klondike gold rush in the Yukon, 1890s",
+      "smsc": "Moral: greed for gold and how people treated animals; Islam teaches mercy to animals",
+      "islamicLink": {
+        "text": "Greed for gold and how people treated animals; Islam teaches mercy to animals",
+        "at": "start"
+      },
+      "keywords": [
+        {
+          "term": "theme",
+          "def": "a big idea a story explores, like survival"
+        },
+        {
+          "term": "gold rush",
+          "def": "a time when many people rushed to a place to find gold"
+        },
+        {
+          "term": "foreshadowing",
+          "def": "hints about what will happen later"
+        },
+        {
+          "term": "classic",
+          "def": "an old book still widely read"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A big, comfortable dog lives on a sunny estate in California. Gold has just been found in the frozen north, and men need strong dogs to pull sleds. What might happen to him?",
+        "a": "He may be taken north to work as a sled dog: this is Buck's story."
+      },
+      "pictures": [
+        {
+          "find": "Klondike gold rush Chilkoot Pass 1898 photograph",
+          "alt": "the trail to the Klondike, 1898 (landscape)",
+          "for": "teach:1"
+        },
+        {
+          "find": "sled dogs team in snow photograph",
+          "alt": "a team of sled dogs",
+          "for": "hook"
+        },
+        {
+          "find": "Yukon River winter photograph",
+          "alt": "the Yukon in winter",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "The Call of the Wild by Jack London (class copy; opening paragraph read aloud and paraphrased on slides) (published 1903)",
+        "Tarbiyyah Primary English scheme of work, Frozen Kingdom: opening paragraph, clues to the theme",
+        "Display: VIPERS question stems (school reading INSET)",
+        "Reading journal (school template: Summarise, Zoom in, Explain, Respond)",
+        "Mini-whiteboard and pen"
+      ],
+      "starter": [
+        {
+          "q": "What is a theme?",
+          "a": "A big idea a story explores",
+          "mins": 1
+        },
+        {
+          "q": "Where is the Arctic?",
+          "a": "Around the North Pole",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Context",
+          "note": "Facts checked.",
+          "diagram": {
+            "centre": "The Call of the Wild",
+            "items": [
+              "by Jack London, 1903",
+              "Buck: a large, strong dog",
+              "starts in California",
+              "Klondike gold rush, Yukon, 1890s",
+              "theme: survival in the wild"
+            ]
+          }
+        },
+        {
+          "heading": "The opening (paraphrased)",
+          "bullets": [
+            "Buck does not read newspapers",
+            "So he does not know trouble is coming",
+            "Men have found gold in the frozen north",
+            "They need heavy, strong dogs"
+          ],
+          "note": "Read the opening paragraph aloud from the class copy; the slide shows a paraphrase only."
+        },
+        {
+          "heading": "I and P: model",
+          "note": "Model a PEE answer.",
+          "model": {
+            "problem": "What trouble is coming for Buck?",
+            "steps": [
+              "Point: Buck will be taken from his home to work in the frozen north.",
+              "Evidence: The writer says men found gold in the Arctic and wanted strong, heavy dogs.",
+              "Explain: Buck is a strong, heavy dog, so he is exactly what they want: he is in danger."
+            ],
+            "answer": "An inference with evidence."
+          }
+        },
+        {
+          "heading": "Hinge: foreshadowing",
+          "note": "Teams poll.",
+          "check": {
+            "q": "The line about Buck not reading newspapers is an example of...",
+            "options": [
+              "a fact about dogs",
+              "foreshadowing and gentle humour",
+              "a description of the setting"
+            ],
+            "answer": 1,
+            "why": "It hints that trouble is coming that Buck cannot know about, with a touch of humour."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "S: Summarise the opening in one sentence",
+          "a": "For example: A strong dog is unaware that men in the gold rush want dogs like him.",
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: For example: A strong dog is unaware that men in the gold rush want dogs like him."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: answer four VIPERS questions on the opening (I, P, V, S) (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Answers with evidence",
+          "mins": 10,
+          "model": "Teacher does the first part aloud before pupils start, showing each step: Answers with evidence"
+        },
+        {
+          "q": "Extend: identify the theme and explain the clues",
+          "a": "Survival, greed, the wild; clues: gold, frozen north, strong dogs",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: reading journal: Respond with a prediction about Buck's journey",
+          "a": "Answers vary with reasons",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "What is foreshadowing?",
+          "a": "Hints about what will happen later",
+          "mins": 1
+        }
+      ],
+      "homework": "Reading journal: Summarise the opening and Zoom in on the word or phrase that most suggests danger. Read for 20 minutes a day.",
+      "send": "SEND: paraphrased opening with key words bold. EAL: map of California and the Yukon. Stretch: compare the opening with the opening of your own reading book."
+    },
+    {
+      "unit": "Spring 1: Frozen Kingdom",
+      "n": 25,
+      "title": "Building an Arctic or Antarctic animal character from research",
+      "duration": 45,
+      "bigQuestion": "How do real facts help me create a believable animal character?",
+      "objectives": [
+        "To use research notes to develop an animal character and introduce it in a paragraph"
+      ],
+      "successCriteria": [
+        "All: make notes on a polar animal's appearance and behaviour",
+        "Most: turn facts into character traits",
+        "Some: write a paragraph that shows character through actions, not labels"
+      ],
+      "crossCurricular": "Science: animals adapted to polar habitats",
+      "smsc": "Spiritual: how Allah has suited each creature to its environment",
+      "islamicLink": {
+        "text": "How Allah has suited each creature to its environment",
+        "at": "start"
+      },
+      "keywords": [
+        {
+          "term": "adaptation",
+          "def": "a feature that helps a living thing survive in its habitat"
+        },
+        {
+          "term": "character trait",
+          "def": "what a character is like, such as patient"
+        },
+        {
+          "term": "show, don't tell",
+          "def": "reveal character through actions, not labels"
+        },
+        {
+          "term": "habitat",
+          "def": "the natural home of an animal"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "An emperor penguin father stands for weeks in the Antarctic winter with an egg on his feet, without eating. What character traits would you give him?",
+        "a": "Patient, devoted, enduring, protective."
+      },
+      "pictures": [
+        {
+          "find": "emperor penguin with egg on feet photograph",
+          "alt": "an emperor penguin keeping an egg warm",
+          "for": "hook"
+        },
+        {
+          "find": "Arctic fox winter coat photograph",
+          "alt": "an Arctic fox in its white winter coat",
+          "for": "teach:1"
+        },
+        {
+          "find": "walrus on ice photograph",
+          "alt": "a walrus",
+          "for": "teach:1"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Primary English scheme of work, Frozen Kingdom: choose an Arctic or Antarctic animal and build its character from photographs and information texts",
+        "Teacher's fact cards: polar bear, Arctic fox, emperor penguin, walrus (facts checked)",
+        "Photographs of polar animals",
+        "Mini-whiteboard and pen"
+      ],
+      "starter": [
+        {
+          "q": "What is an adaptation?",
+          "a": "A feature that helps a living thing survive in its habitat",
+          "mins": 1
+        },
+        {
+          "q": "Polar bears live in the Arctic or Antarctic?",
+          "a": "Arctic",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Fact to trait",
+          "note": "Facts checked.",
+          "table": {
+            "head": [
+              "Animal",
+              "Fact",
+              "Trait"
+            ],
+            "rows": [
+              [
+                "emperor penguin",
+                "father keeps the egg warm on his feet through winter",
+                "patient, devoted"
+              ],
+              [
+                "Arctic fox",
+                "fur turns white in winter; follows polar bears for scraps",
+                "clever, resourceful"
+              ],
+              [
+                "polar bear",
+                "waits by breathing holes in the ice to hunt seals",
+                "patient, powerful"
+              ],
+              [
+                "walrus",
+                "uses tusks to haul itself onto ice",
+                "determined, strong"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Show, don't tell",
+          "note": "Compare.",
+          "compare": {
+            "left": {
+              "title": "Tell",
+              "points": [
+                "The fox was clever."
+              ]
+            },
+            "right": {
+              "title": "Show",
+              "points": [
+                "The fox trotted a careful distance behind the bear, waiting for scraps."
+              ]
+            },
+            "label": "to"
+          }
+        },
+        {
+          "heading": "Model: character paragraph",
+          "note": "Labelled model paragraph.",
+          "model": {
+            "problem": "Introducing Tika, an Arctic fox",
+            "steps": [
+              "Setting first (STASS): Snow hissed across the frozen bay.",
+              "Appearance from facts: Tika's thick white coat blended with the drifts.",
+              "Trait shown by action: She trotted a careful distance behind the great bear.",
+              "Hint of story: Today, though, the bear was not alone."
+            ],
+            "answer": "Facts turned into character."
+          }
+        },
+        {
+          "heading": "Hinge: show or tell?",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Which sentence shows rather than tells?",
+            "options": [
+              "The bear was hungry.",
+              "The bear sniffed the wind and paced beside the breathing hole.",
+              "The bear was big."
+            ],
+            "answer": 1,
+            "why": "B reveals hunger and patience through actions."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Turn a fact into a \"show\" sentence: polar bears swim long distances",
+          "a": "For example: The bear slid into the black water and swam on, mile after mile.",
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: For example: The bear slid into the black water and swam on, mile after mile."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: make notes on your chosen animal (appearance, habitat, behaviour, traits) (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Notes grid",
+          "mins": 8,
+          "model": "Teacher does the first part aloud before pupils start, showing each step: Notes grid"
+        },
+        {
+          "q": "Extend: write a paragraph introducing your animal character using show, don't tell (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Character paragraph",
+          "mins": 8
+        },
+        {
+          "q": "Stretch: include a STASS setting detail and a hint of the story to come",
+          "a": "Setting and hint",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Type one trait for your animal and the action that shows it",
+          "a": "Answers vary",
+          "mins": 1
+        }
+      ],
+      "homework": "Find one more fact about your animal and turn it into a \"show\" sentence. Read for 20 minutes a day.",
+      "send": "SEND: fact cards and a paragraph frame. EAL: picture word bank. Stretch: give the animal a contrasting second character."
+    },
+    {
+      "unit": "Spring 1: Frozen Kingdom",
+      "n": 26,
+      "title": "Planning the animal story: story map, viewpoint and dilemma",
+      "duration": 45,
+      "bigQuestion": "How do viewpoint and a dilemma shape a story?",
+      "objectives": [
+        "To plan a narrative with a clear viewpoint, setting, build-up, dilemma and resolution"
+      ],
+      "successCriteria": [
+        "All: complete a five-part story map",
+        "Most: choose and keep one viewpoint and tense",
+        "Some: plan a dilemma that forces the character to make a hard choice"
+      ],
+      "crossCurricular": "Geography: polar regions (Frozen Kingdom)",
+      "smsc": "Moral: choices and their consequences",
+      "keywords": [
+        {
+          "term": "viewpoint",
+          "def": "whose eyes the story is told through"
+        },
+        {
+          "term": "dilemma",
+          "def": "a difficult choice between two options"
+        },
+        {
+          "term": "build-up",
+          "def": "the part where tension grows"
+        },
+        {
+          "term": "resolution",
+          "def": "how the problem is solved"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A young penguin is lost in a blizzard. It hears its parent's call to the left, but the ice cracks to the left. What should it do? Why makes this a good story?",
+        "a": "A dilemma forces a hard choice: readers want to know what happens."
+      },
+      "pictures": [
+        {
+          "find": "Antarctic blizzard photograph",
+          "alt": "a blizzard",
+          "for": "hook"
+        },
+        {
+          "find": "cracked sea ice photograph",
+          "alt": "cracked sea ice",
+          "for": "teach:3"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Primary English scheme of work, Frozen Kingdom: story map of setting, build-up, problem or dilemma, resolution and conclusion",
+        "Creative writing frameworks (school file): STASS setting, HOOK opening and TCCC events steps, adapted for Year 6",
+        "Story map frame (places and objects only)",
+        "Mini-whiteboard and pen"
+      ],
+      "starter": [
+        {
+          "q": "What is a dilemma?",
+          "a": "A difficult choice",
+          "mins": 1
+        },
+        {
+          "q": "First or third person: \"I padded across the ice.\"",
+          "a": "First person",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "TCCC shape",
+          "note": "From the school framework, adapted.",
+          "cycle": [
+            "Tension: uneasy calm",
+            "Crisis: danger strikes",
+            "Climax: the hard choice",
+            "Closing: what changes"
+          ]
+        },
+        {
+          "heading": "Viewpoint choice",
+          "note": "Pick one and keep it.",
+          "compare": {
+            "left": {
+              "title": "First person (the animal)",
+              "points": [
+                "I heard the ice groan.",
+                "close, personal"
+              ]
+            },
+            "right": {
+              "title": "Third person",
+              "points": [
+                "Tika heard the ice groan.",
+                "wider view"
+              ]
+            },
+            "label": "or"
+          }
+        },
+        {
+          "heading": "Model: story map",
+          "note": "Labelled plan.",
+          "model": {
+            "problem": "Tika and the Thin Ice",
+            "steps": [
+              "Setting: frozen bay, polar night, wind",
+              "Build-up: Tika follows the bear for food",
+              "Dilemma: the ice cracks between Tika and her cub",
+              "Climax: she leaps the gap to reach the cub",
+              "Resolution: they shelter in a snow den; dawn comes"
+            ],
+            "answer": "A five-part plan."
+          }
+        },
+        {
+          "heading": "Hinge: consistent?",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Which keeps the same viewpoint and tense?",
+            "options": [
+              "I ran. Tika jumps.",
+              "I ran across the ice and leapt the gap.",
+              "She runs and I jumped."
+            ],
+            "answer": 1,
+            "why": "B stays in first person, past tense."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write your dilemma in one sentence",
+          "a": "For example: Tika must choose between the food and her cub.",
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: For example: Tika must choose between the food and her cub."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: complete the story map with five parts (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Completed map",
+          "mins": 10,
+          "model": "Labelled model to go through first (Tika and the Thin Ice): Setting: frozen bay, polar night, wind | Build-up: Tika follows the bear for food | Dilemma: the ice cracks between Tika and her cub | Climax: she leaps the gap to reach the cub | Resolution: they shelter in a snow den; dawn comes | Result: A five-part plan."
+        },
+        {
+          "q": "Extend: choose a viewpoint and tense and note why",
+          "a": "Choice with reason",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: plan a HOOK first line that hints at danger",
+          "a": "For example: The ice had been groaning all morning; Tika did not like the sound.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Type your viewpoint and tense",
+          "a": "For example: third person, past tense",
+          "mins": 1
+        }
+      ],
+      "homework": "Tell an adult your story plan and ask what they think the animal should choose. Read for 20 minutes a day.",
+      "send": "SEND: story map with prompts in each box. EAL: sequencing words. Stretch: plan a twist in the resolution."
+    },
+    {
+      "unit": "Spring 1: Frozen Kingdom",
+      "n": 27,
+      "title": "Writing the opening and build-up: setting, hook and consistent tense",
+      "duration": 45,
+      "bigQuestion": "How do I hook a reader and build tension from the first line?",
+      "objectives": [
+        "To write a narrative opening and build-up that hooks the reader and keeps a consistent viewpoint and tense"
+      ],
+      "successCriteria": [
+        "All: write an opening paragraph with a clear setting",
+        "Most: use a HOOK first line and STASS details",
+        "Some: build tension with sentence length and foreshadowing"
+      ],
+      "crossCurricular": "Geography: polar regions (Frozen Kingdom)",
+      "smsc": "Spiritual: describing the beauty and power of the polar world",
+      "keywords": [
+        {
+          "term": "hook",
+          "def": "an opening that grabs the reader"
+        },
+        {
+          "term": "foreshadowing",
+          "def": "a hint of what is to come"
+        },
+        {
+          "term": "atmosphere",
+          "def": "the mood of a place"
+        },
+        {
+          "term": "tense",
+          "def": "past or present: keep it the same"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which first line makes you read on? (a) Once upon a time there was a fox. (b) The ice had been groaning all morning; Tika did not like the sound.",
+        "options": [
+          "(a)",
+          "(b)"
+        ],
+        "a": "(b): it hints at danger without explaining it."
+      },
+      "pictures": [
+        {
+          "find": "aurora borealis over snow photograph",
+          "alt": "the northern lights over snow",
+          "for": "teach:1"
+        },
+        {
+          "find": "crack in sea ice photograph",
+          "alt": "a crack in the ice",
+          "for": "teach:3"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "hands-down",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Pupil's story map",
+        "Creative writing frameworks (school file): STASS setting, HOOK opening and TCCC events steps, adapted for Year 6",
+        "Writing checklist: hook, STASS, viewpoint, tense, tension",
+        "Exercise book or typed draft"
+      ],
+      "starter": [
+        {
+          "q": "Fix the tense: Tika runs and leapt.",
+          "a": "Tika ran and leapt. (or runs and leaps)",
+          "mins": 1
+        },
+        {
+          "q": "What does STASS stand for?",
+          "a": "Sky, Time, Atmosphere, Significant objects, Spatial order",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Model: opening paragraph",
+          "note": "Labelled model paragraph.",
+          "model": {
+            "problem": "Opening",
+            "steps": [
+              "Hook: The ice had been groaning all morning; Tika did not like the sound.",
+              "Sky: Green light rippled across the polar night.",
+              "Atmosphere: Everything was still, too still.",
+              "Significant object: Far out, a dark crack zigzagged across the bay."
+            ],
+            "answer": "A hooked, atmospheric opening."
+          }
+        },
+        {
+          "heading": "Building tension",
+          "note": "Sentence length controls pace.",
+          "compare": {
+            "left": {
+              "title": "Calm",
+              "points": [
+                "Tika padded slowly across the wide white bay, following the bear's huge tracks."
+              ]
+            },
+            "right": {
+              "title": "Tense",
+              "points": [
+                "A groan. A crack. Silence."
+              ]
+            },
+            "label": "to"
+          }
+        },
+        {
+          "heading": "Hinge: foreshadowing?",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Which sentence foreshadows danger?",
+            "options": [
+              "The snow was white.",
+              "Far out, a dark crack zigzagged across the bay.",
+              "Tika liked fish."
+            ],
+            "answer": 1,
+            "why": "The crack hints at the danger to come."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write a short-sentence moment of tension",
+          "a": "For example: A groan. A crack. Silence.",
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: For example: A groan. A crack. Silence."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: write the opening and build-up paragraphs (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Two or three paragraphs",
+          "mins": 16,
+          "model": "Labelled model to go through first (Opening): Hook: The ice had been groaning all morning; Tika did not like the sound. | Sky: Green light rippled across the polar night. | Atmosphere: Everything was still, too still. | Significant object: Far out, a dark crack zigzagged across the bay. | Result: A hooked, atmospheric opening."
+        },
+        {
+          "q": "Extend: include a HOOK line, STASS details and foreshadowing",
+          "a": "Features present",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: vary sentence length to build tension",
+          "a": "Short sentences at key moments",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Type your hook line",
+          "a": "Answers vary",
+          "mins": 1
+        }
+      ],
+      "homework": "Read your opening aloud. Underline one word you could make more precise. Read for 20 minutes a day.",
+      "send": "SEND: opening frame with STASS prompts. EAL: polar setting word bank. Stretch: write the opening in present tense and compare the effect."
+    },
+    {
+      "unit": "Spring 1: Frozen Kingdom",
+      "n": 28,
+      "title": "Writing the dilemma, resolution and ending; editing for cohesion",
+      "duration": 45,
+      "bigQuestion": "How do I make the ending satisfying and the whole story flow?",
+      "objectives": [
+        "To complete a narrative with a dilemma, climax and satisfying resolution, edited for cohesion"
+      ],
+      "successCriteria": [
+        "All: write the dilemma and the resolution",
+        "Most: show the character's choice through actions and thoughts",
+        "Some: end with a reflective final image and edit for cohesion"
+      ],
+      "crossCurricular": "Geography: polar regions (Frozen Kingdom)",
+      "smsc": "Moral: courage and sacrifice for those we care for",
+      "keywords": [
+        {
+          "term": "climax",
+          "def": "the most exciting moment"
+        },
+        {
+          "term": "resolution",
+          "def": "how the problem is solved"
+        },
+        {
+          "term": "reflective ending",
+          "def": "an ending that shows what has changed"
+        },
+        {
+          "term": "cohesion",
+          "def": "how the story flows"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How do you want your reader to feel when they close your story: relieved, hopeful, thoughtful? What final image would create that feeling?",
+        "a": "Answers vary; for example, dawn light on the snow for hope."
+      },
+      "pictures": [
+        {
+          "find": "sunrise over Arctic snow photograph",
+          "alt": "dawn over the snow",
+          "for": "hook"
+        },
+        {
+          "find": "snow den photograph",
+          "alt": "a snow den",
+          "for": "teach:1"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "hands-down",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Pupil's draft and story map",
+        "Creative writing frameworks (school file): STASS setting, HOOK opening and TCCC events steps, adapted for Year 6",
+        "Editing checklist: tense, viewpoint, paragraphs, cohesion, punctuation",
+        "Exercise book or typed draft"
+      ],
+      "starter": [
+        {
+          "q": "What is a climax?",
+          "a": "The most exciting moment",
+          "mins": 1
+        },
+        {
+          "q": "Cohesive device for time",
+          "a": "For example: moments later",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Model: dilemma and climax",
+          "note": "Labelled model paragraph.",
+          "model": {
+            "problem": "The choice",
+            "steps": [
+              "Dilemma: The crack widened between Tika and her cub.",
+              "Thought: The bear's scraps lay behind her; her cub whimpered ahead.",
+              "Choice through action: She turned her back on the food.",
+              "Climax: She gathered herself and leapt the black gap."
+            ],
+            "answer": "A dilemma shown through action."
+          }
+        },
+        {
+          "heading": "Endings that linger",
+          "note": "Compare.",
+          "compare": {
+            "left": {
+              "title": "Flat",
+              "points": [
+                "And they lived happily ever after."
+              ]
+            },
+            "right": {
+              "title": "Reflective image",
+              "points": [
+                "As the first light touched the snow, Tika curled around her cub and listened: the ice had stopped groaning."
+              ]
+            },
+            "label": "to"
+          }
+        },
+        {
+          "heading": "Hinge: best ending",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Which ending links back to the opening hook?",
+            "options": [
+              "The end.",
+              "The ice had stopped groaning.",
+              "Tika was happy."
+            ],
+            "answer": 1,
+            "why": "B echoes the opening line about the groaning ice: a circular ending."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write your final sentence",
+          "a": "Answers vary",
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: Answers vary"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: write the dilemma, climax and resolution (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Completed story",
+          "mins": 15,
+          "model": "Labelled model to go through first (The choice): Dilemma: The crack widened between Tika and her cub. | Thought: The bear's scraps lay behind her; her cub whimpered ahead. | Choice through action: She turned her back on the food. | Climax: She gathered herself and leapt the black gap. | Result: A dilemma shown through action."
+        },
+        {
+          "q": "Extend: edit the whole story for tense, viewpoint and cohesion",
+          "a": "Edits made",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: end with a reflective image that links to your opening",
+          "a": "Circular ending",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Type your final line",
+          "a": "Answers vary",
+          "mins": 1
+        }
+      ],
+      "homework": "Read your whole story to an adult and ask how it made them feel at the end. Read for 20 minutes a day.",
+      "send": "SEND: frame for dilemma and resolution. EAL: feelings and action word bank. Stretch: add a moment of dialogue at the climax."
+    },
+    {
+      "unit": "Spring 1: Frozen Kingdom",
+      "n": 29,
+      "title": "Who was Captain Scott? Researching the Terra Nova expedition (VIPERS)",
+      "duration": 45,
+      "bigQuestion": "What was it like to travel to the South Pole in 1911 to 1912?",
+      "objectives": [
+        "To retrieve and summarise information about Scott's expedition from non-fiction sources"
+      ],
+      "successCriteria": [
+        "All: retrieve five key facts",
+        "Most: summarise the expedition in time order",
+        "Some: explain why conditions were harsher then than for explorers today"
+      ],
+      "crossCurricular": "History and geography: Antarctic exploration",
+      "smsc": "Moral: courage, perseverance (sabr, صَبْر) and respect for those who lost their lives",
+      "islamicLink": {
+        "text": "Courage, perseverance (sabr, صَبْر) and respect for those who lost their lives",
+        "at": "start"
+      },
+      "keywords": [
+        {
+          "term": "expedition",
+          "def": "a long journey with a purpose"
+        },
+        {
+          "term": "Antarctica",
+          "def": "the frozen continent around the South Pole"
+        },
+        {
+          "term": "sledge",
+          "def": "a vehicle that slides over snow, pulled by people, dogs or ponies"
+        },
+        {
+          "term": "hardship",
+          "def": "great difficulty and suffering"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "In 1911 there were no satellite phones, no GPS and no planes to rescue explorers in Antarctica. How would you prepare for a journey of over 1,400 km each way across ice?",
+        "a": "Food depots, warm clothing, sledges, careful navigation by sun and stars, a strong team."
+      },
+      "pictures": [
+        {
+          "find": "Scott's hut Cape Evans interior photograph",
+          "alt": "inside Scott's hut at Cape Evans (objects only)",
+          "for": "teach:2"
+        },
+        {
+          "find": "Terra Nova ship photograph",
+          "alt": "the ship Terra Nova",
+          "for": "teach:1"
+        },
+        {
+          "find": "crevasse Antarctica photograph",
+          "alt": "a crevasse",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Primary English scheme of work, Frozen Kingdom: Scott of the Antarctic: what life was like on the expedition",
+        "Teacher's information text: The Race to the South Pole (on slides; facts checked)",
+        "Photographs of the expedition's hut and equipment (objects and places only)",
+        "Display: VIPERS question stems (school reading INSET)",
+        "Mini-whiteboard and pen"
+      ],
+      "starter": [
+        {
+          "q": "Is Antarctica a continent?",
+          "a": "Yes",
+          "mins": 1
+        },
+        {
+          "q": "Formal word for difficulty",
+          "a": "hardship",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Timeline of the expedition",
+          "note": "Facts checked.",
+          "timeline": [
+            {
+              "label": "1910",
+              "text": "Terra Nova sails from Britain"
+            },
+            {
+              "label": "Nov 1911",
+              "text": "Scott's party sets out for the Pole"
+            },
+            {
+              "label": "14 Dec 1911",
+              "text": "Roald Amundsen's Norwegian team reaches the Pole first"
+            },
+            {
+              "label": "17 Jan 1912",
+              "text": "Scott's party of five reaches the Pole"
+            },
+            {
+              "label": "Feb and Mar 1912",
+              "text": "All five die on the return journey"
+            },
+            {
+              "label": "Nov 1912",
+              "text": "Their tent and diaries are found"
+            }
+          ]
+        },
+        {
+          "heading": "Conditions",
+          "note": "Retrieve from the text.",
+          "diagram": {
+            "centre": "Antarctic conditions",
+            "items": [
+              "temperatures far below freezing",
+              "blizzards",
+              "crevasses (deep cracks)",
+              "man-hauling heavy sledges",
+              "limited food at depots"
+            ]
+          }
+        },
+        {
+          "heading": "S: summarise",
+          "note": "Model.",
+          "model": {
+            "problem": "Summarise the expedition in two sentences",
+            "steps": [
+              "Main idea 1: Scott's team reached the South Pole",
+              "Main idea 2: they were second and did not survive the return",
+              "Leave out minor details",
+              "Write in own words"
+            ],
+            "answer": "Scott's team reached the South Pole in January 1912, a month after Amundsen. All five men died on the long return journey, and their diaries were found later that year."
+          }
+        },
+        {
+          "heading": "Hinge: retrieve",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Who reached the South Pole first?",
+            "options": [
+              "Scott",
+              "Amundsen",
+              "Shackleton"
+            ],
+            "answer": 1,
+            "why": "Amundsen's team arrived on 14 December 1911, about five weeks before Scott."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "R: When did Scott reach the Pole?",
+          "a": "17 January 1912",
+          "mins": 1,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: 17 January 1912"
+        },
+        {
+          "q": "V: What is a crevasse?",
+          "a": "A deep crack in ice",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: answer six retrieval questions (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Answers in full sentences",
+          "mins": 9,
+          "model": "Teacher does the first part aloud before pupils start, showing each step: Answers in full sentences"
+        },
+        {
+          "q": "Extend: summarise the expedition in five sentences in time order",
+          "a": "Summary",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: explain why conditions were harsher in 1912 than for explorers today",
+          "a": "No radio contact or rescue, heavier equipment, less knowledge of nutrition",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Name one danger the team faced",
+          "a": "For example: blizzards, crevasses, extreme cold",
+          "mins": 1
+        }
+      ],
+      "homework": "Find one fact about Antarctica today (for example, research stations) and compare it with 1912. Read for 20 minutes a day.",
+      "send": "SEND: timeline cards and fact table. EAL: glossary (sledge, depot, crevasse). Stretch: compare Scott's and Amundsen's methods (ponies and man-hauling versus dogs)."
+    },
+    {
+      "unit": "Spring 1: Frozen Kingdom",
+      "n": 30,
+      "title": "Features of a diary: reading a model expedition diary",
+      "duration": 45,
+      "bigQuestion": "How does a diary reveal what a person thought and felt?",
+      "objectives": [
+        "To identify the features of a diary and how it reveals thoughts and feelings"
+      ],
+      "successCriteria": [
+        "All: label date, first person, past tense and feelings",
+        "Most: find reflective language and informal touches",
+        "Some: explain how a diary differs from a report about the same events"
+      ],
+      "crossCurricular": "History: Antarctic exploration",
+      "smsc": "Spiritual: reflection and gratitude even in hardship",
+      "keywords": [
+        {
+          "term": "diary",
+          "def": "a private daily record of events, thoughts and feelings"
+        },
+        {
+          "term": "first person",
+          "def": "written using I and we"
+        },
+        {
+          "term": "reflect",
+          "def": "think carefully about what something means"
+        },
+        {
+          "term": "entry",
+          "def": "one day's writing in a diary"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A report says \"The temperature was minus 30 degrees.\" A diary says \"My fingers will hardly hold the pencil tonight.\" What does the diary give us that the report does not?",
+        "a": "Personal feelings and experience: what it was like, not just what happened."
+      },
+      "pictures": [
+        {
+          "find": "old leather diary and pencil photograph",
+          "alt": "an old diary",
+          "for": "hook"
+        },
+        {
+          "find": "Scott's hut Cape Evans shelves photograph",
+          "alt": "supplies in Scott's hut",
+          "for": "teach:3"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Primary English scheme of work, Frozen Kingdom: diary features checklist",
+        "Teacher's model diary: two entries by an invented expedition member (on slides)",
+        "Diary features checklist",
+        "Mini-whiteboard and pen"
+      ],
+      "starter": [
+        {
+          "q": "When did Scott reach the Pole?",
+          "a": "17 January 1912",
+          "mins": 1
+        },
+        {
+          "q": "First or third person: \"We marched ten miles.\"",
+          "a": "First person",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Diary features",
+          "note": "Build the checklist.",
+          "diagram": {
+            "centre": "Diary entry",
+            "items": [
+              "date at the top",
+              "first person",
+              "past tense for events",
+              "feelings and thoughts",
+              "reflective questions",
+              "some informal touches"
+            ]
+          }
+        },
+        {
+          "heading": "Report or diary?",
+          "note": "Compare.",
+          "compare": {
+            "left": {
+              "title": "Report",
+              "points": [
+                "The party covered 12 miles.",
+                "objective, third person"
+              ]
+            },
+            "right": {
+              "title": "Diary",
+              "points": [
+                "We managed twelve miles today, though every step felt like fifty.",
+                "personal, first person"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Model: labelled entry",
+          "note": "Labelled model paragraph.",
+          "model": {
+            "problem": "Monday 15 January 1912",
+            "steps": [
+              "Date: Monday 15 January 1912",
+              "Event (past tense): We set off early and marched until the light failed.",
+              "Feeling: My heart lifted when the sun broke through.",
+              "Reflection: I wonder whether we will be first."
+            ],
+            "answer": "A diary entry with every feature."
+          }
+        },
+        {
+          "heading": "Hinge: diary feature",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Which sentence belongs in a diary?",
+            "options": [
+              "The temperature was recorded at minus 30 degrees.",
+              "I could not stop shivering, even inside my sleeping bag.",
+              "Antarctica is a continent."
+            ],
+            "answer": 1,
+            "why": "B is first person and personal."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Turn into a diary sentence: The team walked 10 miles.",
+          "a": "For example: We dragged ourselves ten miles today, and I was proud of every one.",
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: For example: We dragged ourselves ten miles today, and I was proud of every one."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: label the diary features on the model entries (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Labels",
+          "mins": 8,
+          "model": "Labelled model to go through first (Monday 15 January 1912): Date: Monday 15 January 1912 | Event (past tense): We set off early and marched until the light failed. | Feeling: My heart lifted when the sun broke through. | Reflection: I wonder whether we will be first. | Result: A diary entry with every feature."
+        },
+        {
+          "q": "Extend: write three diary sentences about a hard day you remember",
+          "a": "First person, feelings, reflection",
+          "mins": 6
+        },
+        {
+          "q": "Stretch: explain how a diary differs from a report on the same day",
+          "a": "Personal and reflective versus objective and factual",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Name two diary features",
+          "a": "For example: first person, feelings",
+          "mins": 1
+        }
+      ],
+      "homework": "Write a short diary entry about your own day with a date, events, feelings and a reflection. Read for 20 minutes a day.",
+      "send": "SEND: checklist with examples. EAL: feelings word bank. Stretch: find a reflective question in the model and explain its effect."
+    },
+    {
+      "unit": "Spring 1: Frozen Kingdom",
+      "n": 31,
+      "title": "Grammar for diaries: first person, past tense, modals and reflective language",
+      "duration": 45,
+      "bigQuestion": "How do grammar choices make a diary sound personal and reflective?",
+      "objectives": [
+        "To use first person, consistent past tense, modal verbs and reflective language in a diary"
+      ],
+      "successCriteria": [
+        "All: keep first person and past tense consistent",
+        "Most: use modal verbs to express hope, fear and doubt",
+        "Some: use reflective questions and the perfect tense for effect"
+      ],
+      "crossCurricular": "History: Antarctic exploration",
+      "smsc": "Spiritual: hope and trust in Allah even in hardship",
+      "islamicLink": {
+        "text": "Hope and trust in Allah even in hardship",
+        "at": "start"
+      },
+      "keywords": [
+        {
+          "term": "modal verb",
+          "def": "a verb showing possibility, like might or must"
+        },
+        {
+          "term": "perfect tense",
+          "def": "have or had plus a past participle: we have walked"
+        },
+        {
+          "term": "reflective language",
+          "def": "words that show thinking about meaning: I wonder, perhaps"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Compare: \"We will reach the Pole.\" \"We might reach the Pole.\" \"We must reach the Pole.\" What does each tell you about the writer's feelings?",
+        "a": "Confidence; doubt; determination."
+      },
+      "pictures": [
+        {
+          "find": "Antarctic sastrugi snow photograph",
+          "alt": "wind-carved snow",
+          "for": "hook"
+        },
+        {
+          "find": "expedition sledge museum photograph",
+          "alt": "an expedition sledge",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "chat-waterfall",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Display: modal verbs scale",
+        "Vocabulary Intervention Programme (Lesson 5: Shades of meaning) for pupils who need extra support",
+        "Mini-whiteboard and pen",
+        "Exercise book"
+      ],
+      "starter": [
+        {
+          "q": "Fix the tense: We march and we were tired.",
+          "a": "We marched and we were tired.",
+          "mins": 1
+        },
+        {
+          "q": "Order by certainty: might, will, could",
+          "a": "might, could, will",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Modals for feelings",
+          "note": "Possibility scale.",
+          "numberline": {
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "marks": [
+              {
+                "at": 2,
+                "label": "might (doubt)"
+              },
+              {
+                "at": 5,
+                "label": "could (hope)"
+              },
+              {
+                "at": 7,
+                "label": "should (expectation)"
+              },
+              {
+                "at": 9,
+                "label": "must (determination)"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "Perfect tenses",
+          "note": "Show time relationships.",
+          "model": {
+            "problem": "Show what happened before",
+            "steps": [
+              "Simple past: We reached the Pole.",
+              "Past perfect: Another team had already been there.",
+              "Present perfect (looking back): We have walked further than I imagined.",
+              "Effect: shows disappointment and reflection"
+            ],
+            "answer": "We reached the Pole, but another team had already been there."
+          }
+        },
+        {
+          "heading": "Reflective language",
+          "bullets": [
+            "I wonder whether...",
+            "Perhaps...",
+            "I cannot help thinking...",
+            "If only..."
+          ],
+          "note": "Model a reflective sentence: I wonder whether our families can feel how much we miss them."
+        },
+        {
+          "heading": "Hinge: past perfect",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Which sentence uses the past perfect?",
+            "options": [
+              "We walk on.",
+              "We had hoped to be first.",
+              "We will rest."
+            ],
+            "answer": 1,
+            "why": "had hoped is the past perfect."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write a sentence with must showing determination",
+          "a": "For example: We must keep going, whatever the weather.",
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: For example: We must keep going, whatever the weather."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: rewrite a diary paragraph so it stays in first person and past tense (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Consistent paragraph",
+          "mins": 8,
+          "model": "Labelled model to go through first (Show what happened before): Simple past: We reached the Pole. | Past perfect: Another team had already been there. | Present perfect (looking back): We have walked further than I imagined. | Effect: shows disappointment and reflection | Result: We reached the Pole, but another team had already been there."
+        },
+        {
+          "q": "Extend: add three modal verbs that show hope, fear and determination",
+          "a": "Modals added",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: add a past perfect sentence and a reflective question",
+          "a": "Features added",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Type a reflective sentence starter",
+          "a": "For example: I wonder whether...",
+          "mins": 1
+        }
+      ],
+      "homework": "Write three reflective sentences about something you hoped for this week. Read for 20 minutes a day.",
+      "send": "SEND: modal and reflective starter cards. EAL: tense table. Stretch: use the subjunctive in a wish (If only the weather were kinder)."
+    },
+    {
+      "unit": "Spring 1: Frozen Kingdom",
+      "n": 32,
+      "title": "Writing the diary pages from the expedition (handled with sensitivity)",
+      "duration": 45,
+      "bigQuestion": "How do I write in role with empathy and respect for real people?",
+      "objectives": [
+        "To write diary entries in role that convey thoughts, feelings and reflection, with respect for real events"
+      ],
+      "successCriteria": [
+        "All: write a dated entry in first person and past tense",
+        "Most: convey feelings and hopes with modals and reflective language",
+        "Some: write with restraint and respect, focusing on courage and loyalty rather than suffering"
+      ],
+      "crossCurricular": "History: Antarctic exploration",
+      "smsc": "Moral: respect for those who died; courage, loyalty and perseverance (sabr, صَبْر)",
+      "islamicLink": {
+        "text": "Respect for those who died; courage, loyalty and perseverance (sabr, صَبْر)",
+        "at": "start"
+      },
+      "keywords": [
+        {
+          "term": "in role",
+          "def": "writing as if you were another person"
+        },
+        {
+          "term": "empathy",
+          "def": "understanding how someone else feels"
+        },
+        {
+          "term": "restraint",
+          "def": "holding back detail out of respect"
+        },
+        {
+          "term": "loyalty",
+          "def": "staying faithful to others"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Scott and his companions wrote diaries and letters to their families even in their last days. What do you think they most wanted their families to know?",
+        "a": "That they were brave, loved their families and stayed loyal to each other."
+      },
+      "pictures": [
+        {
+          "find": "expedition tent in Antarctic snow photograph",
+          "alt": "a tent in the Antarctic snow",
+          "for": "teach:2"
+        },
+        {
+          "find": "Antarctic plateau photograph",
+          "alt": "the Antarctic plateau",
+          "for": "hook"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "hands-down",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Primary English scheme of work, Frozen Kingdom: write the missing pages of Scott's diary (sensitive, no detail of suffering)",
+        "Diary features checklist",
+        "Pupil's notes from lesson 29",
+        "Exercise book or typed draft"
+      ],
+      "starter": [
+        {
+          "q": "Past perfect: We (hope) to be first.",
+          "a": "We had hoped to be first.",
+          "mins": 1
+        },
+        {
+          "q": "Name a diary feature",
+          "a": "For example: first person",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Writing with respect",
+          "bullets": [
+            "These were real people with families",
+            "Focus on courage, loyalty and hope",
+            "No detail of suffering",
+            "Use restraint"
+          ],
+          "note": "Set the tone carefully. Pupils may write as an invented expedition member if they prefer not to write as Scott."
+        },
+        {
+          "heading": "Model: labelled entry",
+          "note": "Labelled model paragraph.",
+          "model": {
+            "problem": "An entry written in role (invented member of the team)",
+            "steps": [
+              "Date: Thursday 18 January 1912",
+              "Event: Yesterday we reached the Pole and found that another team had been there first.",
+              "Feeling with modal: I must admit my heart sank, but we must not lose hope.",
+              "Loyalty: My companions have been steadfast; I could not ask for better friends.",
+              "Reflection: I wonder what our families will think when they hear our news."
+            ],
+            "answer": "Respectful, reflective entry."
+          }
+        },
+        {
+          "heading": "Hinge: suitable tone?",
+          "note": "Teams poll.",
+          "check": {
+            "q": "Which sentence has the most suitable tone for these diary pages?",
+            "options": [
+              "It was a total disaster and so gross.",
+              "Though our hopes are fading, our friendship has never been stronger.",
+              "LOL we lost."
+            ],
+            "answer": 1,
+            "why": "B is restrained, respectful and reflective."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write one sentence showing loyalty to companions",
+          "a": "For example: Each man has shared his last biscuit without a word of complaint.",
+          "mins": 2,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: For example: Each man has shared his last biscuit without a word of complaint."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: write two dated diary entries in role (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Two entries",
+          "mins": 16,
+          "model": "Labelled model to go through first (An entry written in role (invented member of the team)): Date: Thursday 18 January 1912 | Event: Yesterday we reached the Pole and found that another team had been there first. | Feeling with modal: I must admit my heart sank, but we must not lose hope. | Loyalty: My companions have been steadfast; I could not ask for better friends. | Reflection: I wonder what our families will think when they hear our news. | Result: Respectful, reflective entry."
+        },
+        {
+          "q": "Extend: use modals, the past perfect and reflective language",
+          "a": "Features present",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: end with a message of hope or love to a family member",
+          "a": "Respectful closing",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Type the sentence that best shows courage or loyalty",
+          "a": "Answers vary",
+          "mins": 1
+        }
+      ],
+      "homework": "Read your diary entries to an adult and talk about what courage means. Read for 20 minutes a day.",
+      "send": "SEND: diary frame with date and starters; option to write as an invented team member. EAL: feelings and loyalty word bank. Stretch: write a short letter in role to a family member."
+    },
+    {
+      "unit": "Spring 1: Frozen Kingdom",
+      "n": 33,
+      "title": "Editing the diary; reading review and reading journal",
+      "duration": 45,
+      "bigQuestion": "What have I learned as a reader and writer this half term?",
+      "objectives": [
+        "To edit a diary for consistency and effect and reflect on reading progress"
+      ],
+      "successCriteria": [
+        "All: correct tense, person and punctuation errors",
+        "Most: improve two sentences for effect",
+        "Some: reflect on reading progress using the reading journal model"
+      ],
+      "crossCurricular": "History: Antarctic exploration",
+      "smsc": "Spiritual: reflecting on our learning and saying alhamdulillah for progress",
+      "islamicLink": {
+        "text": "Reflecting on our learning and saying alhamdulillah for progress",
+        "at": "start"
+      },
+      "keywords": [
+        {
+          "term": "edit",
+          "def": "improve content and style"
+        },
+        {
+          "term": "consistency",
+          "def": "keeping tense and viewpoint the same"
+        },
+        {
+          "term": "reflection",
+          "def": "thinking about what you have learned"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Look back at your first piece of writing this half term. What can you do now that you could not do then?",
+        "a": "Answers vary: passive voice, formal tone, PEE answers, cohesion."
+      },
+      "pictures": [
+        {
+          "find": "open reading journal notebook photograph",
+          "alt": "a reading journal",
+          "for": "teach:3"
+        },
+        {
+          "find": "Antarctic landscape photograph",
+          "alt": "Antarctica",
+          "for": "teach:2"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "practice": "hands-down",
+        "exit": "hands-down",
+        "hinge": "teams-poll"
+      },
+      "resources": [
+        "Pupil's diary entries",
+        "Editing checklist",
+        "Reading journal (school template: Summarise, Zoom in, Explain, Respond)",
+        "Short reading practice text on Antarctica (teacher-written) with five VIPERS questions"
+      ],
+      "starter": [
+        {
+          "q": "Fix: I walk on and we had stopped.",
+          "a": "I walked on and we stopped. (consistent past tense)",
+          "mins": 1
+        },
+        {
+          "q": "What is a modal verb?",
+          "a": "A verb showing possibility, like might",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Edit for consistency",
+          "note": "Model.",
+          "model": {
+            "problem": "We marched all day. I am so tired and we had stopped at dusk.",
+            "steps": [
+              "Check tense: am → was",
+              "Check order: had stopped → stopped (simple sequence)",
+              "Add feeling with restraint: I was so tired that my legs shook.",
+              "Result: We marched all day. I was so tired that my legs shook, and we stopped at dusk."
+            ],
+            "answer": "Consistent, improved sentence."
+          }
+        },
+        {
+          "heading": "Reading review: VIPERS",
+          "note": "Five-question practice on a short text.",
+          "table": {
+            "head": [
+              "Skill",
+              "Question type"
+            ],
+            "rows": [
+              [
+                "Vocabulary",
+                "What does ... mean?"
+              ],
+              [
+                "Inference",
+                "How do you know...?"
+              ],
+              [
+                "Prediction",
+                "What might happen next?"
+              ],
+              [
+                "Retrieval",
+                "Find and copy..."
+              ],
+              [
+                "Summarise",
+                "Sum up in one sentence"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Reading journal reflection",
+          "bullets": [
+            "Summarise: my half term of reading",
+            "Zoom in: one text",
+            "Explain: why it mattered",
+            "Respond: my next goal"
+          ],
+          "note": "Use the school four-step reading journal model."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Answer the five VIPERS questions on the practice text",
+          "a": "Answers vary by text; mark with the class",
+          "mins": 6,
+          "model": "Teacher works this one aloud: read the question, underline the key words, link it to today's rule, then give the answer in a full sentence: Answers vary by text; mark with the class"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: edit your diary entries for tense, person and punctuation (in the portal response box, with the sentence starter and paragraph frame)",
+          "a": "Edited entries",
+          "mins": 9,
+          "model": "Labelled model to go through first (We marched all day. I am so tired and we had stopped at dusk.): Check tense: am → was | Check order: had stopped → stopped (simple sequence) | Add feeling with restraint: I was so tired that my legs shook. | Result: We marched all day. I was so tired that my legs shook, and we stopped at dusk. | Result: Consistent, improved sentence."
+        },
+        {
+          "q": "Extend: improve two sentences for effect",
+          "a": "Improvements",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: reading journal reflection on the half term",
+          "a": "Four-step reflection",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Type your reading goal for next half term",
+          "a": "Answers vary",
+          "mins": 1
+        }
+      ],
+      "homework": "Choose your next reading book and write a prediction about it in your journal. Read for 20 minutes a day.",
+      "send": "SEND: checklist with three items; read-aloud support for the practice text. EAL: VIPERS stems. Stretch: write a short review comparing two texts read this half term."
     }
   ]
 }

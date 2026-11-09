@@ -8,6 +8,7 @@ import { Icon } from "@/components/learn/Icon";
 import { EntryReport, type ReportData } from "@/components/learn/assess/EntryReport";
 import { MathText } from "@/components/learn/assess/MathText";
 import { printElement } from "@/components/learn/printScope";
+import { PrintHeader } from "@/components/learn/print";
 
 type Row = {
   id: string; candidate_name: string; year: number; status: string; created_at: string; started_at: string | null; submitted_at: string | null; completed_at: string | null;
@@ -198,6 +199,7 @@ function CreateForm({ onDone, onCancel }: { onDone: (link: string, emailed: bool
   const [breaks, setBreaks] = useState<"default" | "0" | "1" | "2" | "3" | "4" | "6">("default");
   const [breakMins, setBreakMins] = useState(0);
   const [other, setOther] = useState("");
+  const [leaveLimit, setLeaveLimit] = useState(0);
   const [invigilator, setInvigilator] = useState("");
   const [email, setEmail] = useState(true);
   const [busy, setBusy] = useState(false);
@@ -244,7 +246,7 @@ function CreateForm({ onDone, onCancel }: { onDone: (link: string, emailed: bool
       year: effectiveYear,
       eal,
       access: {
-        extraTimePct: extra, readAloud, largeText, other: other.trim() || undefined,
+        extraTimePct: extra, readAloud, largeText, other: other.trim() || undefined, leaveLimit: leaveLimit || undefined,
         breaks: breaks === "default" && !breakMins ? undefined : { perSection: breaks === "default" ? defaultBreaks(effectiveYear).perSection : Number(breaks), minutes: breakMins || defaultBreaks(effectiveYear).minutes },
       },
       skip: skipLive ? ["quran", "arabic"] : [],
@@ -318,6 +320,13 @@ function CreateForm({ onDone, onCancel }: { onDone: (link: string, emailed: bool
               </select>
             </label>
           </div>
+          <label className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm hover:bg-cream">
+            <span className="font-medium text-ink">End a part if the child leaves it</span>
+            <select value={leaveLimit} onChange={(e) => setLeaveLimit(Number(e.target.value))} className={`${ui.input} !w-auto`}>
+              <option value={0}>Never (just count it)</option>
+              {[3, 5, 10].map((v) => <option key={v} value={v}>{v} times</option>)}
+            </select>
+          </label>
           <Switch checked={readAloud} onChange={setReadAloud} label="Read questions aloud" hint="Available to Years 1–3 anyway; when on, each question is also read out automatically" />
           <Switch checked={largeText} onChange={setLargeText} label="Bigger text" />
           <Switch checked={eal} onChange={setEal} label="English is an additional language" hint="Shown on the report so verbal results are read with care" />
@@ -326,7 +335,7 @@ function CreateForm({ onDone, onCancel }: { onDone: (link: string, emailed: bool
         <label className={`${ui.label} mt-2`}>Other arrangements (optional, shown on the report)
           <input value={other} onChange={(e) => setOther(e.target.value)} maxLength={200} placeholder="e.g. a parent reads the screen's buttons; coloured overlay" className={`mt-1 ${ui.input}`} />
         </label>
-        <p className={`${ui.hint} mt-2`}>Breaks pause the clock and hide the questions; the report notes them as allowed. Years 1–2 are offered a break halfway through each part and between parts.</p>
+        <p className={`${ui.hint} mt-2`}>Leaving the page (another tab, window or app) always covers the questions, is counted and shows on the report. Ending a part is stricter: unanswered questions in it count as wrong, so use it only when the child knows the rule. Breaks pause the clock and hide the questions; the report notes them as allowed. Years 1–2 are offered a break halfway through each part and between parts.</p>
       </fieldset>
 
       <div className="grid gap-4 sm:grid-cols-2">
@@ -418,6 +427,7 @@ function Detail({ row, onClose, onChanged, onAct }: { row: Row; onClose: () => v
   return (
     <div className="fixed inset-0 z-50 flex justify-end bg-ink/40 print:static print:block print:bg-transparent" onMouseDown={(e) => e.target === e.currentTarget && onClose()}>
       <div ref={printRef} role="dialog" aria-modal="true" aria-labelledby="ea-title" className="flex h-full w-full max-w-4xl flex-col overflow-y-auto bg-cream shadow-2xl print:h-auto print:max-w-none print:overflow-visible print:bg-white print:shadow-none">
+        <PrintHeader title="Entry assessment report" />
         <div className="sticky top-0 z-10 flex items-start justify-between gap-3 border-b border-gold-light bg-white px-5 py-4 print:static print:border-0 print:px-0">
           <div>
             <h2 id="ea-title" className="text-xl font-semibold text-ink">{row.candidate_name}</h2>

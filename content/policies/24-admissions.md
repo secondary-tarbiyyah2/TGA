@@ -7,7 +7,7 @@ appliesTo: All applicants for a place at Tarbiyyah Global Academy, and their par
 owner: Admissions Lead
 approvedBy: Ustadh Abu Zayn Haneef Sandhar, Headteacher
 agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
-dateOfIssue: 1 September 2026 (version 1.1, updated 28 October 2026 for the January 2027 launch)
+dateOfIssue: 1 September 2026 (version 1.2, updated 9 November 2026: a tablet with a stylus is recommended for every pupil, and a printer at home is required without one)
 nextReview: 31 August 2027
 basis: Adapted from the Tarbiyyah Secondary Admissions Policy 2026–27 for an online, co-educational Year 1 to Year 11 school
 readAlongside: Fees Policy; SEND and Inclusion Policy; Equality, Diversity and Accessibility Policy; Behaviour and Online Conduct Policy; Attendance, Punctuality and Children Missing Education Policy; Child Protection and Safeguarding Policy; Data Protection Policy
@@ -41,6 +41,7 @@ Because all learning is online, a place is conditional on the family providing:
 - a laptop or desktop computer (Windows or Mac) or an iPad, with a working webcam, microphone and headset;
 - a reliable broadband connection;
 - a quiet, suitable space for study;
+- a way for the pupil to write on worksheets and the lesson PDF each day: a tablet with a stylus is recommended for every pupil (any tablet that takes a stylus, or a basic graphics tablet that plugs into the laptop), and where the pupil does not have one, a printer at home is required;
 - for secure tests, a device supported by Safe Exam Browser (Windows, Mac or iPad). The minimum specification is published on the website, and a device check is completed before the pupil starts.
 
 ## 5. How to Apply

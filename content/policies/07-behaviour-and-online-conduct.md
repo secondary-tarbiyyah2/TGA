@@ -7,7 +7,7 @@ appliesTo: All pupils, parents, staff, trustees and volunteers of Tarbiyyah Glob
 owner: Pastoral and Behaviour Lead
 approvedBy: Ustadh Abu Zayn Haneef Sandhar, Headteacher
 agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
-dateOfIssue: 1 September 2026 (version 1.1, updated 28 October 2026 for the January 2027 launch)
+dateOfIssue: 1 September 2026 (version 1.2, updated 9 November 2026: a tablet with a stylus is recommended for every pupil, and a printer at home is required without one)
 nextReview: 31 August 2027
 basis: Tidied and updated from the Tarbiyyah Global Academy Behaviour and Online Conduct Policy draft (September 2026), which was adapted from the Tarbiyyah Secondary Behaviour Policy
 readAlongside: Live Lesson Protocols; Anti-Bullying and Cyberbullying Policy; Online Safety and Acceptable Use Policy; Academic Integrity and Secure Assessment Policy; SEND and Inclusion Policy; Child Protection and Safeguarding Policy
@@ -34,7 +34,7 @@ This policy applies to all pupils during live lessons, assemblies, form times, c
 | Pastoral and Behaviour Lead | Support staff, conduct lesson drop-ins, lead reflection sessions and pastoral plans, analyse patterns |
 | Headteacher | Ensures consistency and the Islamic ethos; holds sole authority to suspend or permanently exclude |
 | Trustees | Ensure the policy is lawful and fair; form the independent panel for exclusion reviews |
-| Parents | Provide a suitable study space and device; ensure punctual attendance with camera working; support the Academy's standards at home |
+| Parents | Provide a suitable study space and device, and a tablet with a stylus (recommended) or a printer at home (required without one) for worksheets and the lesson PDF; ensure punctual attendance with camera working; support the Academy's standards at home |
 | Pupils | Follow the Live Lesson Protocols and this policy; treat everyone with respect; act with integrity |
 
 ### Adab of correction

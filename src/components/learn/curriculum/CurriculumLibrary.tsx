@@ -7,6 +7,9 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { useLearnSession } from "@/lib/learn/session";
 import { Modal } from "@/components/learn/curriculum/Modal";
 import { LessonEditor } from "@/components/learn/curriculum/LessonEditor";
+import { LessonStudio } from "@/components/learn/curriculum/LessonStudio";
+import { FeedbackDialog, FeedbackQueue } from "@/components/learn/curriculum/LessonFeedback";
+import { loadFeedback, type LessonFeedback } from "@/lib/learn/lessonFeedback";
 import { classColour, myTeachingClasses } from "@/lib/learn/classes";
 import { uploadClassFile } from "@/components/learn/class/Attachments";
 import { Tabs } from "@/components/learn/Tabs";
@@ -191,6 +194,34 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
   const { roles } = useLearnSession();
   const canEditLessons = roles.some((r) => r.role === "teacher" || r.role === "head_teacher" || r.role === "admin");
   const [editingLesson, setEditingLesson] = useState<CurriculumLesson | null>(null);
+  // T34/T35: the click-to-edit lesson (optionally opened from a feedback note), feedback, and the Headteacher's queue.
+  const isHead = roles.some((r) => r.role === "head_teacher" || r.role === "admin");
+  const [studio, setStudio] = useState<{ lesson: CurriculumLesson; feedback?: LessonFeedback | null } | null>(null);
+  const [feedbackFor, setFeedbackFor] = useState<{ lesson: CurriculumLesson; part: string; content?: { teach?: { heading?: string }[]; hook?: unknown } | null } | null>(null);
+  const [queueOpen, setQueueOpen] = useState(false);
+  const [waitingFeedback, setWaitingFeedback] = useState(0);
+  const loadWaiting = useCallback(async () => {
+    if (!isHead) return;
+    setWaitingFeedback((await loadFeedback({ openOnly: true })).length);
+  }, [isHead]);
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- count once for the queue button
+    loadWaiting();
+  }, [loadWaiting]);
+  // Opened from the Action centre: ?feedback=<id> opens that lesson at the slide the note is about.
+  const openFromFeedback = useCallback(
+    async (f: LessonFeedback) => {
+      if (!supabase) return;
+      const { data } = await supabase.from("curriculum_lessons").select(LESSON_COLUMNS_EDITOR).eq("id", f.lesson_id).maybeSingle();
+      if (data) setStudio({ lesson: data as unknown as CurriculumLesson, feedback: f });
+    },
+    [supabase],
+  );
+  useEffect(() => {
+    const id = new URLSearchParams(window.location.search).get("feedback");
+    if (!id || !/^[0-9a-f-]{36}$/i.test(id)) return;
+    loadFeedback({ id }).then((r) => r[0] && openFromFeedback(r[0]));
+  }, [openFromFeedback]);
   const [year, setYearState] = useState<string | null>(null);
   const [myYears, setMyYears] = useState<string[]>([]);
   const [search, setSearch] = useState("");
@@ -494,14 +525,16 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
               <button type="button" className={btn} onClick={() => setSharing(l)}>
                 Share to class
               </button>
-              {canEditLessons && (
-                <button type="button" className={btn} onClick={() => setEditingLesson(l)}>
-                  Edit lesson
-                </button>
-              )}
+              <button type="button" className={btn} onClick={() => setStudio({ lesson: l })}>
+                {canEditLessons ? "Edit lesson" : "Open lesson"}
+              </button>
+              <button type="button" className={btn} onClick={() => setFeedbackFor({ lesson: l, part: "lesson" })}>
+                Feedback
+              </button>
               <ActionMenu
                 label={<span aria-label="More actions">⋯</span>}
                 items={[
+                  ...(canEditLessons ? [{ label: "Edit in the full form", onClick: () => setEditingLesson(l) }] : []),
                   ...(canEditLessons ? [{ label: "Upload my own slides instead", onClick: () => setReplacing(l) }] : []),
                   { label: "Version history", onClick: () => setHistory(l) },
                 ]}
@@ -510,11 +543,12 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
           ) : (
             <span className="flex items-center gap-2 text-xs text-ink/65">
               Slides not built yet
-              {canEditLessons && (
-                <button type="button" className={btn} onClick={() => setEditingLesson(l)}>
-                  Edit lesson
-                </button>
-              )}
+              <button type="button" className={btn} onClick={() => setStudio({ lesson: l })}>
+                {canEditLessons ? "Edit lesson" : "Open lesson"}
+              </button>
+              <button type="button" className={btn} onClick={() => setFeedbackFor({ lesson: l, part: "lesson" })}>
+                Feedback
+              </button>
             </span>
           )}
         </div>
@@ -535,7 +569,14 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
       <div className="space-y-3 rounded-2xl border border-gold-light bg-white p-4" role="group" aria-label="Find lessons">
         <div className="flex flex-wrap items-center justify-between gap-2">
           {year && <Tabs variant="switch" items={yearTabs} value={year} onChange={setYear} label="Year group" />}
-          {myYears.length > 0 && <p className="text-xs text-ink/65">• = a year you teach</p>}
+          <span className="flex flex-wrap items-center gap-3">
+            {myYears.length > 0 && <span className="text-xs text-ink/65">• = a year you teach</span>}
+            {isHead && (
+              <button type="button" className={btn} onClick={() => setQueueOpen(true)}>
+                Staff feedback{waitingFeedback ? ` (${waitingFeedback} waiting)` : ""}
+              </button>
+            )}
+          </span>
         </div>
         <div className="flex flex-wrap items-center gap-2">
           <input
@@ -864,6 +905,20 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
               <button type="button" className={btn} onClick={() => download(viewing.lesson, viewing.kind)}>
                 Download
               </button>
+              <button type="button" className={btn} onClick={() => setFeedbackFor({ lesson: viewing.lesson, part: viewing.kind === "plan-pdf" ? "plan" : "lesson" })}>
+                Feedback
+              </button>
+              <button
+                type="button"
+                className={btn}
+                onClick={() => {
+                  const l = viewing.lesson;
+                  closeViewer();
+                  setStudio({ lesson: l });
+                }}
+              >
+                {canEditLessons ? "Edit lesson" : "Open lesson"}
+              </button>
             </div>
             {viewing.url ? (
               <iframe src={viewing.url} title={viewing.lesson.title} className="min-h-[70vh] w-full flex-1 border-0" />
@@ -916,6 +971,52 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
             setEditingLesson(null);
             setMessage(msg);
             load();
+          }}
+        />
+      )}
+      {studio && (
+        <LessonStudio
+          key={studio.lesson.id + (studio.feedback?.id || "")}
+          lesson={studio.lesson}
+          canEdit={canEditLessons}
+          isHead={isHead}
+          feedback={studio.feedback}
+          onClose={() => {
+            setStudio(null);
+            load();
+            loadWaiting();
+          }}
+          onSaved={() => loadWaiting()}
+          onOpenForm={() => {
+            const l = studio.lesson;
+            setStudio(null);
+            setEditingLesson(l);
+          }}
+          onFeedback={(part, content) => setFeedbackFor({ lesson: studio.lesson, part, content })}
+        />
+      )}
+      {feedbackFor && (
+        <FeedbackDialog
+          lesson={feedbackFor.lesson}
+          content={feedbackFor.content}
+          initialPart={feedbackFor.part}
+          onClose={() => setFeedbackFor(null)}
+          onSent={(m) => {
+            setFeedbackFor(null);
+            setMessage(m);
+            loadWaiting();
+          }}
+        />
+      )}
+      {queueOpen && (
+        <FeedbackQueue
+          onClose={() => {
+            setQueueOpen(false);
+            loadWaiting();
+          }}
+          onEdit={(f) => {
+            setQueueOpen(false);
+            openFromFeedback(f);
           }}
         />
       )}

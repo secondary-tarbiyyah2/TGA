@@ -101,6 +101,17 @@ portal editor + sync carry the new fields); (2) upgrade the existing 1,521 lesso
 routines, visuals) checked against house rules; (3) write the missing founding-year lessons from Mon 11 Jan in date
 order, year by year, from docs/curriculum-packs; (4) syllabus pages/pack upgrade. Owner sees before/after slides
 before any whole-school rebuild.
+- 9 Nov 2026, branch `lessons-english-ks12-s1`: English Years 1-6, Spring 1 founding year (11 Jan to 8 Feb, bridge weeks
+  included), 150 lessons to the v3 addendum (ponder hook, one objective, pictures, polls, worked models, islamicLink).
+  Upgraded / new: Y1 1/24, Y2 4/21, Y3 5/20, Y4 4/21, Y5 4/21, Y6 4/21. Upgraded lessons keep their old `n`, so their
+  numbers sit before the new ones; the consolidation pass should renumber in teaching order. Needs `lesson-builder-v3`
+  merged first (hook type `ponder`, item `model`).
+
+- 9 Nov 2026, Lessons: Mathematics Years 1-6, Spring 1 founding year (11 Jan to 8 Feb 2027, bridge weeks included), branch
+  `lessons-maths-ks12-s1`: 140 lessons (upgraded / new: Y1 8/12, Y2 8/12, Y3 10/15, Y4 10/15, Y5 6/19, Y6 8/17), White Rose
+  block order (titles only), written to the lessons v3 rules (one objective, ponder hook, pictures, islamicLink, polls,
+  worked models on guided and independent item 1, realistic timing). Needs builder v3 merged before validation passes
+  (hook type "ponder" and item "model").
 
 Stage 4 built on branch `syllabus-v2` (PR open, not merged): the pack is now one curriculum document per subject,
 Years 1 to 11 (`01_Subjects/<slug>/`, PDF via Chromium plus Word), and a whole-school overview (`00_Start_Here/`),
@@ -150,6 +161,9 @@ Also asked for (backlog): staff feedback on lessons with admin "make the change"
 directly in the portal with instant download (T-item), a per-term list of every worksheet and resource with all of them
 ready, and a device requirement (drawing tablet recommended; otherwise a printer) on the website and in the admissions
 information.
+
+### Lessons status
+- 9 Nov 2026, Maths Years 7-11 Spring 1 (branch `lessons-maths-ks34-s1`): 100 lessons for 11 Jan to 8 Feb 2027 (bridge + Spring 1), v3 rules applied. Y7 4 upgraded, 16 new; Y8 20 new; Y9 5 upgraded, 15 new; Y10 12 upgraded, 8 new (4MA1); Y11 20 new (revision cycle 1 and mock week, 4MA1). Y10 and Y11 files now labelled 4MA1 (taught and examined). Uses v3 fields (ponder hook, item `model`, `pictures`, `islamicLink`), so validation passes only once `lesson-builder-v3` merges.
 
 ### Work in flight (9 Nov 2026, 15:45), for whoever picks this up
 Branches pushed and unfinished (each is resumable; read its last commits):

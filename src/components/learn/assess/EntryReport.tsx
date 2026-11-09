@@ -21,7 +21,7 @@ export type ReportData = {
   narrative: string[];
   recommendations: { area: string; subject?: string; text: string }[];
   integrity: {
-    notes: string[]; tabHides: number; fastAnswers: number; answered: number; unanswered: number;
+    notes: string[]; tabHides: number; fastAnswers: number; answered: number; unanswered: number; endedForLeaving?: string[];
     rating?: "No concerns" | "Some concerns" | "Review needed";
     counts?: { away: number; awaySeconds: number; blur: number; fullscreenExits: number; copy: number; paste: number; rightClick: number; shortcuts: number; otherSessions: number; breaks: number; breakSeconds: number; rapid: number; timed: number; longestSameLetter: number };
     timeline?: { t: string; section?: string; text: string; kind: "info" | "note" | "break" }[];
@@ -83,9 +83,10 @@ function Pips({ score, name }: { score: number; name: string }) {
   );
 }
 
-function Card({ title, children, icon, tile, aside }: { title: string; children: React.ReactNode; icon?: IconName; tile?: string; aside?: React.ReactNode }) {
+function Card({ title, children, icon, tile, aside, breakable }: { title: string; children: React.ReactNode; icon?: IconName; tile?: string; aside?: React.ReactNode; breakable?: boolean }) {
+  // Long cards may run on to the next page (their rows still stay whole) rather than leave half a page blank.
   return (
-    <section className="break-inside-avoid rounded-2xl border border-gold-light bg-white p-5 print:border-gray-300 print:p-3">
+    <section className={`${breakable ? "" : "break-inside-avoid "}rounded-2xl border border-gold-light bg-white p-5 print:border-gray-300 print:p-3`}>
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h3 className="flex items-center gap-2 text-base font-semibold text-ink">{icon && <span className={`portal-tile ${tile || "tile-slate"} print:hidden`} aria-hidden="true"><Icon name={icon} /></span>}{title}</h3>
         {aside}
@@ -107,6 +108,11 @@ export function EntryReport({ report, name }: { report: ReportData; name: string
   const access = r.access || {};
   const accessList = [access.extraTimePct ? `${access.extraTimePct}% extra time` : "", access.readAloud ? "questions read aloud" : "", access.largeText ? "larger text" : "", access.breaks ? `up to ${access.breaks.perSection} break${access.breaks.perSection === 1 ? "" : "s"} of ${access.breaks.minutes} min in each part` : "", access.other || ""].filter(Boolean);
   const w = r.writing;
+  // Times the pupil left the assessment during timed parts: another tab or app
+  // (away) plus another window in front (blur). Same rule as the pupil's own count.
+  const leaves = integ.counts ? integ.counts.away + integ.counts.blur : integ.tabHides;
+  const leaveTone: Tone = leaves === 0 ? "good" : leaves === 1 ? "neutral" : leaves < 4 ? "warn" : "bad";
+  const ended = integ.endedForLeaving || [];
 
   return (
     <article className="space-y-4 print:space-y-3 print:text-[11pt]" aria-label={`Entry assessment report for ${name}`}>
@@ -116,6 +122,14 @@ export function EntryReport({ report, name }: { report: ReportData; name: string
 
       {/* 1. Summary */}
       <Card title={`Summary for ${first}`} icon="clipboardCheck" tile="tile-gold" aside={rating && <StatusChip tone={rating.tone}>How it was sat: {integ.rating}</StatusChip>}>
+        <div className={`mb-3 flex flex-wrap items-center gap-x-4 gap-y-1 rounded-xl border px-4 py-3 print:bg-transparent ${leaves === 0 ? "border-gold-light/70 bg-white" : leaves < 4 ? "border-amber-200 bg-amber-50" : "border-red-200 bg-red-50"}`}>
+          <p className="text-lg font-semibold text-ink">
+            {leaves === 0 ? "Did not leave the assessment" : `Left the assessment ${leaves} ${leaves === 1 ? "time" : "times"}`}
+          </p>
+          {leaves > 0 && integ.counts && integ.counts.awaySeconds > 0 && <span className="text-sm text-ink/75">about {dur(integ.counts.awaySeconds)} away in all</span>}
+          {ended.length > 0 && <StatusChip tone="bad">{ended.join(", ")} ended early for leaving</StatusChip>}
+          <span className="ml-auto print:hidden"><StatusChip tone={leaveTone}>{leaves === 0 ? "Stayed on the page" : leaves === 1 ? "Once" : leaves < 4 ? "A few times" : "Many times"}</StatusChip></span>
+        </div>
         {r.placement && <p className="rounded-xl bg-cream px-4 py-3 font-semibold text-ink print:bg-transparent print:px-0">{r.placement}</p>}
         <table className="mt-3 w-full text-sm">
           <caption className="sr-only">Each area against the expectation for Year {r.year}</caption>
@@ -140,7 +154,7 @@ export function EntryReport({ report, name }: { report: ReportData; name: string
       </Card>
 
       {/* 2. Strands */}
-      <Card title="Strand by strand" icon="chartLine" tile="tile-blue" aside={<span className="text-xs text-ink/60"><span className="mr-1 inline-block h-3 w-0.5 bg-ink/60 align-middle" /> Year {r.year} <span className="mx-1 inline-block h-3 w-3 rounded-full bg-teal-700 align-middle" /> estimate <span className="mx-1 inline-block h-2 w-5 rounded-full bg-teal-700/20 align-middle" /> likely range</span>}>
+      <Card title="Strand by strand" icon="chartLine" tile="tile-blue" breakable aside={<span className="text-xs text-ink/60"><span className="mr-1 inline-block h-3 w-0.5 bg-ink/60 align-middle" /> Year {r.year} <span className="mx-1 inline-block h-3 w-3 rounded-full bg-teal-700 align-middle" /> estimate <span className="mx-1 inline-block h-2 w-5 rounded-full bg-teal-700/20 align-middle" /> likely range</span>}>
         <ul className="divide-y divide-gold-light/50">
           {r.strands.map((s) => (
             <li key={s.key} className="grid gap-x-4 gap-y-1 py-2 sm:grid-cols-[11rem_1fr_9rem] sm:items-center">
@@ -153,12 +167,20 @@ export function EntryReport({ report, name }: { report: ReportData; name: string
             </li>
           ))}
         </ul>
+        {/* On paper the scale gets year labels, so the chart reads without the screen's hover and colour cues. */}
+        <div className="relative mt-1 hidden h-4 text-[8pt] text-ink/60 print:grid print:grid-cols-[11rem_1fr_9rem] print:gap-x-4" aria-hidden="true">
+          <span />
+          <span className="relative">
+            {[1, 3, 5, 7, 9, 11].map((y) => <span key={y} className="absolute -translate-x-1/2" style={{ left: `${(y - 0.5) / 11.5 * 100}%` }}>Y{y}</span>)}
+          </span>
+          <span />
+        </div>
         {r.narrative.length > 0 && <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-ink/75">{r.narrative.map((n, i) => <li key={i}>{n}</li>)}</ul>}
       </Card>
 
       {/* 3. Next steps by subject */}
       {groups.length > 0 && (
-        <Card title="Recommended next steps" icon="listChecks" tile="tile-teal">
+        <Card title="Recommended next steps" icon="listChecks" tile="tile-teal" breakable>
           <div className="grid gap-4 sm:grid-cols-2">
             {groups.map((g) => {
               const ic = SUBJECT_ICON[g.sub];
@@ -201,12 +223,12 @@ export function EntryReport({ report, name }: { report: ReportData; name: string
       )}
 
       {/* 5. How it was sat */}
-      <Card title="How this was sat" icon={rating?.icon || "shieldCheck"} tile="tile-slate" aside={rating && <StatusChip tone={rating.tone}>{integ.rating}</StatusChip>}>
+      <Card title="How this was sat" breakable icon={rating?.icon || "shieldCheck"} tile="tile-slate" aside={rating && <StatusChip tone={rating.tone}>{integ.rating}</StatusChip>}>
         {rating && <p className="text-sm text-ink/80">{rating.text}</p>}
         {integ.counts && (
           <dl className="mt-3 grid grid-cols-2 gap-2 text-sm sm:grid-cols-4">
             {[
-              ["Left the window", `${integ.counts.away}${integ.counts.away ? ` (${dur(integ.counts.awaySeconds)})` : ""}`],
+              ["Switched tab or app", `${integ.counts.away}${integ.counts.away ? ` (${dur(integ.counts.awaySeconds)})` : ""}`],
               ["Breaks (allowed)", `${integ.counts.breaks}${integ.counts.breaks ? ` (${dur(integ.counts.breakSeconds)})` : ""}`],
               ["Very quick answers", `${integ.counts.rapid} of ${integ.counts.timed}`],
               ["Second window", String(integ.counts.otherSessions)],

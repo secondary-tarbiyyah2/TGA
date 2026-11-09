@@ -48,7 +48,22 @@ export function CareersLive({ email }: { email: string }) {
   useEffect(() => load(), [load]);
 
   if (roles === null) {
-    return <p role="status" aria-live="polite" className="rounded-2xl border border-gold-light/50 bg-white p-6 text-ink/70">Loading the current vacancies…</p>;
+    // Two role-sized placeholders hold the space, so the page doesn't jump when the roles arrive.
+    return (
+      <div role="status" aria-live="polite">
+        <p className="sr-only">Loading the current vacancies…</p>
+        <ul className="space-y-4" aria-hidden="true">
+          {[0, 1].map((i) => (
+            <li key={i} className="h-[15rem] rounded-2xl border border-gold-light/60 bg-white p-5 sm:h-[12.5rem] sm:p-6">
+              <span className="block h-6 w-2/3 rounded bg-gold-50 motion-safe:animate-pulse" />
+              <span className="mt-3 block h-6 w-1/2 rounded-full bg-gold-50 motion-safe:animate-pulse" />
+              <span className="mt-4 block h-4 w-full max-w-prose rounded bg-gold-50 motion-safe:animate-pulse" />
+              <span className="mt-2 block h-4 w-4/5 max-w-prose rounded bg-gold-50 motion-safe:animate-pulse" />
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
   }
 
   if (roles.length === 0) {

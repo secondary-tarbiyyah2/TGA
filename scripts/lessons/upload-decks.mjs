@@ -11,6 +11,9 @@
 //     is rebuilt;
 //   * FORCE=1 re-renders every generated deck in place (when the deck design changes).
 // Lesson plans are regenerated whenever the content changed (plan_hash).
+// Pupil PDFs (lessons v3: the slides pupils need plus a worksheet; migration 0189) go with the plan:
+// stored at '<subject>/<year>/<lesson_no>/pupil-<file>.pdf' (the same path each time, so the link
+// on the slides keeps working) and recorded in curriculum_lessons.pupil_pdf_path.
 import fs from "node:fs";
 import path from "node:path";
 import { createClient } from "@supabase/supabase-js";
@@ -67,6 +70,20 @@ async function existingRows() {
 }
 
 const keyOf = (m) => `${m.subject_slug}/${m.year}/${m.lesson_no}`;
+// Migration 0189 adds pupil_pdf_path. Until it is deployed, pupil PDFs are not uploaded (nothing could find them).
+const pupilPaths = new Map();
+let hasPupilCol = false;
+{
+  const probe = await supabase.from("curriculum_lessons").select("pupil_pdf_path").limit(1);
+  hasPupilCol = !probe.error;
+  if (hasPupilCol)
+    for (let from = 0; ; from += 1000) {
+      const { data, error } = await supabase.from("curriculum_lessons").select("subject_slug, year, lesson_no, pupil_pdf_path").order("id").range(from, from + 999);
+      if (error) break;
+      for (const r of data) pupilPaths.set(`${r.subject_slug}/${r.year}/${r.lesson_no}`, r.pupil_pdf_path);
+      if (data.length < 1000) break;
+    }
+}
 const hashOf = (m) => hashes.get(keyOf(m)) || null;
 const existing = await existingRows();
 if (!existing) {
@@ -99,13 +116,15 @@ const wantsPlan = (m) => {
 // The upload step uploads exactly what the plan step chose (and converted to PDF), even if a
 // teacher saves an edit in between: that edit is picked up by the next run.
 const planned = mode === "upload" && fs.existsSync(path.join(dir, "needed.json")) ? new Set(JSON.parse(fs.readFileSync(path.join(dir, "needed.json"), "utf8"))) : null;
+const wantsPupil = (m) => hasPupilCol && !!m.pupil_file && (wantsPlan(m) || !pupilPaths.get(keyOf(m)));
 const needsFile = (m) => (planned ? planned.has(m.file) : wantsFile(m));
 const needsPlan = (m) => (planned ? planned.has(m.plan_file) : wantsPlan(m));
+const needsPupil = (m) => hasPupilCol && !!m.pupil_file && (planned ? planned.has(m.pupil_file) : wantsPupil(m));
 
 if (mode === "plan") {
-  const needed = [...manifest.filter(needsFile).map((m) => m.file), ...manifest.filter(needsPlan).map((m) => m.plan_file)];
+  const needed = [...manifest.filter(needsFile).map((m) => m.file), ...manifest.filter(needsPlan).map((m) => m.plan_file), ...manifest.filter(needsPupil).map((m) => m.pupil_file)];
   fs.writeFileSync(path.join(dir, "needed.json"), JSON.stringify(needed));
-  console.log(`${needed.filter((f) => f.endsWith(".pptx")).length} of ${manifest.length} decks and ${needed.filter((f) => f.endsWith(".docx")).length} lesson plans need uploading`);
+  console.log(`${needed.filter((f) => f.endsWith(".pptx") && !f.endsWith("-pupil.pptx")).length} of ${manifest.length} decks, ${needed.filter((f) => f.endsWith(".docx")).length} lesson plans and ${needed.filter((f) => f.endsWith("-pupil.pptx")).length} pupil PDFs need uploading${hasPupilCol ? "" : " (pupil PDFs wait for migration 0189)"}`);
   process.exit(0);
 }
 
@@ -136,6 +155,16 @@ async function uploadPlan(m) {
     if (up2.error) throw up2.error;
   }
   return { plan_docx_path: docxPath, plan_pdf_path: pdfPath };
+}
+
+/** The pupil PDF (converted from <name>-pupil.pptx by the workflow), always at the same path. */
+async function uploadPupil(m) {
+  const pdfLocal = path.join(dir, m.pupil_file.replace(/\.pptx$/, ".pdf"));
+  if (!fs.existsSync(pdfLocal)) return null;
+  const dest = `${m.subject_slug}/${m.year}/${m.lesson_no}/pupil-${path.basename(m.pupil_file, "-pupil.pptx")}.pdf`;
+  const up = await supabase.storage.from("lesson-decks").upload(dest, fs.readFileSync(pdfLocal), { upsert: true, contentType: "application/pdf" });
+  if (up.error) throw up.error;
+  return { pupil_pdf_path: dest };
 }
 
 /**
@@ -206,10 +235,11 @@ await pool(manifest, 6, async (m) => {
     // (a renamed lesson gets a new plan file name; a plan without a PDF any more drops its old PDF).
     const oldPlan = [row?.plan_docx_path, row?.plan_pdf_path];
     const planPaths = needsPlan(m) ? { ...(await uploadPlan(m)), plan_hash: hash } : null;
+    const pupilPatch = needsPupil(m) ? await uploadPupil(m) : null;
     const dropOldPlan = () => (planPaths ? removeUnused(oldPlan.filter((x) => x && x !== planPaths.plan_docx_path && x !== planPaths.plan_pdf_path)) : null);
     if (!needsFile(m)) {
       if (!row) return;
-      const patch = { ...(planPaths || {}) };
+      const patch = { ...(planPaths || {}), ...(pupilPatch || {}) };
       if (!row.plan_hash && !planPaths && hash) patch.plan_hash = hash;
       // Keep wording/ordering current without touching files or a teacher's own deck.
       if (!row.custom_deck) {
@@ -293,7 +323,7 @@ await pool(manifest, 6, async (m) => {
     // ~1,500 unused decks behind.
     if (stored === fresh.version) await removeUnused([fresh.deck_path, fresh.pdf_path].filter((p) => p && !ours.includes(p)));
     row = { ...row, deck_path: deckPath, pdf_path: pdfPath, version: stored, built_hash: hash };
-    await update({ ...meta, ...(planPaths || {}), ...(planPaths ? {} : row.plan_hash ? {} : { plan_hash: hash }) });
+    await update({ ...meta, ...(planPaths || {}), ...(pupilPatch || {}), ...(planPaths ? {} : row.plan_hash ? {} : { plan_hash: hash }) });
     await dropOldPlan();
     await clearRequest();
     if (stored > fresh.version) rebuilt++;
@@ -318,7 +348,7 @@ if (mode === "upload") {
     );
     if (!row) continue;
     const { data: versions } = await supabase.from("curriculum_lesson_versions").select("deck_path, pdf_path").eq("lesson_id", row.id);
-    const files = [row.deck_path, row.pdf_path, row.plan_pdf_path, row.plan_docx_path, ...(versions || []).flatMap((v) => [v.deck_path, v.pdf_path])].filter(Boolean);
+    const files = [row.deck_path, row.pdf_path, row.plan_pdf_path, row.plan_docx_path, pupilPaths.get(`${row.subject_slug}/${row.year}/${row.lesson_no}`), ...(versions || []).flatMap((v) => [v.deck_path, v.pdf_path])].filter(Boolean);
     await supabase.from("curriculum_lesson_versions").delete().eq("lesson_id", row.id);
     const { error } = await supabase.from("curriculum_lessons").delete().eq("id", row.id);
     if (error) {
