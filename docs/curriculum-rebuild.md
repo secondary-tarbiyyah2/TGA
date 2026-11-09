@@ -101,6 +101,11 @@ portal editor + sync carry the new fields); (2) upgrade the existing 1,521 lesso
 routines, visuals) checked against house rules; (3) write the missing founding-year lessons from Mon 11 Jan in date
 order, year by year, from docs/curriculum-packs; (4) syllabus pages/pack upgrade. Owner sees before/after slides
 before any whole-school rebuild.
+- 9 Nov 2026, branch `lessons-english-ks12-s1`: English Years 1-6, Spring 1 founding year (11 Jan to 8 Feb, bridge weeks
+  included), 150 lessons to the v3 addendum (ponder hook, one objective, pictures, polls, worked models, islamicLink).
+  Upgraded / new: Y1 1/24, Y2 4/21, Y3 5/20, Y4 4/21, Y5 4/21, Y6 4/21. Upgraded lessons keep their old `n`, so their
+  numbers sit before the new ones; the consolidation pass should renumber in teaching order. Needs `lesson-builder-v3`
+  merged first (hook type `ponder`, item `model`).
 
 Stage 4 built on branch `syllabus-v2` (PR open, not merged): the pack is now one curriculum document per subject,
 Years 1 to 11 (`01_Subjects/<slug>/`, PDF via Chromium plus Word), and a whole-school overview (`00_Start_Here/`),
