@@ -1,179 +1,200 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import { getSupabaseClient } from "@/lib/supabase/client";
-import { useFamilyChildren, useStudentChildId } from "@/lib/learn/classes";
-import { EmptyState, StatusChip, ui } from "@/components/learn/ui";
+import { useFamilyChildren } from "@/lib/learn/classes";
+import { Button, EmptyState, StatusChip, ui } from "@/components/learn/ui";
+import { Icon, type IconName } from "@/components/learn/Icon";
 import { ParentSetup } from "@/components/learn/ParentSetup";
-import { loadPupilItems, loadStaffItems, sortItems, type ActionItem, type Role, type Urgency } from "@/lib/learn/actionCentre";
-import { fetchAbsences, fetchNotes } from "@/components/learn/absences/data";
-import { completeness, DETAILS_SELECT, type PupilDetails } from "@/components/learn/pupil/data";
-import { shiftDateKey, ukToday } from "@/lib/learn/ukTime";
+import { PrintHeader } from "@/components/learn/print";
+import { printElement } from "@/components/learn/printScope";
+import { CATEGORIES, categoryOf, type ActionItem, type CategoryKey, type Role, type Urgency } from "@/lib/learn/actionCentre";
+import { useActionItems } from "@/components/learn/actions/useActionItems";
 
-/**
- * The parent-only things the homework and Qur'an lists don't cover, so the
- * Action centre agrees with the dashboard: documents waiting for a signature,
- * child details still incomplete, and recent absences with no reason given.
- * Each piece fails quietly on its own (no item is better than a wrong one).
- */
-async function loadFamilyExtras(): Promise<ActionItem[]> {
-  const supabase = getSupabaseClient();
-  if (!supabase) return [];
-  const out: ActionItem[] = [];
-  const plural = (n: number, one: string, many = `${one}s`) => `${n} ${n === 1 ? one : many}`;
-  const [sigs, kids, det, cons, notes, plans, agreed] = await Promise.all([
-    supabase.from("my_outstanding_signatures").select("document_id", { count: "exact", head: true }),
-    supabase.from("children").select("id, name, dob").order("name"),
-    supabase.from("pupil_details").select(DETAILS_SELECT),
-    supabase.from("pupil_emergency_contacts").select("child_id"),
-    fetchNotes(),
-    supabase.from("send_support_plans").select("id, child_id, updated_at").eq("status", "active"),
-    supabase.from("send_plan_family_responses").select("plan_id, plan_updated_at").eq("agreed", true),
-  ]);
-  if (!sigs.error && (sigs.count || 0) > 0) {
-    const n = sigs.count || 0;
-    out.push({ id: "fam-sign", area: "Signatures", urgency: "now", title: `${plural(n, "document")} to read and sign`, detail: "School policies and agreements that need your signature.", href: "/documents", cta: "Review and sign" });
+const URGENCY: Record<Urgency, { label: string; tone: "bad" | "warn" | "neutral" }> = {
+  now: { label: "Do now", tone: "bad" },
+  soon: { label: "This week", tone: "warn" },
+  info: { label: "Good to know", tone: "neutral" },
+};
+
+/** Items marked done on this device: id -> the title it had. An item comes back by itself when its title changes (a new count, a new pupil). */
+const doneKey = (role: Role) => `tga-ac-done:${role}`;
+function readDone(role: Role): Record<string, string> {
+  try {
+    return JSON.parse(window.localStorage.getItem(doneKey(role)) || "{}") as Record<string, string>;
+  } catch {
+    return {};
   }
-  if (!kids.error) {
-    const list = (kids.data as unknown as { id: string; name: string; dob: string | null }[]) || [];
-    const detailsBy = new Map(((det.data as unknown as PupilDetails[]) || []).map((d) => [d.child_id, d]));
-    const countBy = new Map<string, number>();
-    for (const c of (cons.data as unknown as { child_id: string }[]) || []) countBy.set(c.child_id, (countBy.get(c.child_id) || 0) + 1);
-    const incomplete = list.filter((k) => completeness(detailsBy.get(k.id) || null, countBy.get(k.id) || 0, k.dob).percent < 100);
-    if (incomplete.length) {
-      out.push({ id: "fam-details", area: "Child details", urgency: "now", title: `Complete ${incomplete.map((k) => k.name.split(" ")[0]).join(" and ")}'s details`, detail: "Address, GP, health, emergency contacts and consents are required for every pupil.", href: "/family/child-details", cta: "Complete details" });
-    }
+}
+function writeDone(role: Role, v: Record<string, string>) {
+  try {
+    window.localStorage.setItem(doneKey(role), JSON.stringify(v));
+  } catch {
+    /* fine: it just won't be remembered */
   }
-  // An active support plan the family hasn't agreed to since it last changed (0169).
-  if (!plans.error && !kids.error) {
-    const names = new Map(((kids.data as unknown as { id: string; name: string }[]) || []).map((k) => [k.id, k.name.split(" ")[0]]));
-    const ok = ((agreed.data as { plan_id: string; plan_updated_at: string | null }[]) || []);
-    const toRead = ((plans.data as { id: string; child_id: string; updated_at: string }[]) || []).filter(
-      (p) => !ok.some((a) => a.plan_id === p.id && a.plan_updated_at && new Date(a.plan_updated_at).getTime() >= new Date(p.updated_at).getTime() - 1000),
-    );
-    if (toRead.length) {
-      const who = toRead.map((p) => names.get(p.child_id) || "your child").join(" and ");
-      out.push({ id: "fam-send", area: "SEND", urgency: "soon", title: `Read ${who}'s support plan`, detail: "It has been shared or updated. Tell us if you agree, or add a comment.", href: "/family/support", cta: "Read the plan" });
-    }
-  }
-  if (!notes.error) {
-    const today = ukToday();
-    const abs = await fetchAbsences(shiftDateKey(today, -30), today, notes.notes);
-    if (!abs.error) {
-      const days = new Set(
-        abs.absences
-          .filter((a) => a.kind === "unexplained" && !notes.notes.some((n) => n.child_id === a.childId && a.date >= n.from_date && a.date <= n.to_date))
-          .map((a) => `${a.childId}|${a.date}`),
-      );
-      if (days.size) out.push({ id: "fam-abs", area: "Absence", urgency: "soon", title: `${plural(days.size, "absence")} we haven't heard about`, detail: "Tell us why your child was away. It takes a few seconds.", href: "/family/absences", cta: "Tell us why" });
-    }
-  }
-  return out;
 }
 
-const GROUPS: { key: Urgency; title: string; hint: string }[] = [
-  { key: "now", title: "Do now", hint: "Overdue or needs a decision today" },
-  { key: "soon", title: "This week", hint: "Coming up or worth doing soon" },
-  { key: "info", title: "Good to know", hint: "No action needed" },
-];
+/** The letterhead for whatever is being printed: shown only when its own parent is the thing printed, so a full list doesn't repeat it on every item. */
+function OwnPrintHeader({ title }: { title: string }) {
+  return (
+    <div className="hidden print:[[data-print-active]>&]:block">
+      <PrintHeader title={title} />
+    </div>
+  );
+}
+
+function readCat(): CategoryKey | "all" {
+  if (typeof window === "undefined") return "all";
+  const c = new URLSearchParams(window.location.search).get("cat");
+  return CATEGORIES.some((k) => k.key === c) ? (c as CategoryKey) : "all";
+}
 
 /**
- * One list of what needs doing, for every role. Items come from the data itself, so they clear on their own
- * once the thing is done. Each has one button that goes straight to the right page.
+ * One page with everything that needs doing, for every role, in categories
+ * (Safeguarding, Attendance, Classwork, Pupils and SEND, Qur'an, Admissions,
+ * Recruitment, Documents) with counts. Items come from the data itself, so
+ * they clear on their own once the thing is done. Each item can be opened,
+ * marked done (hidden on this device until something about it changes) or
+ * printed / saved as PDF on its own; a whole category or the full list can be
+ * saved as PDF too. `?cat=attendance` opens a category directly.
  */
 export function ActionCentre({ role }: { role: Role }) {
   const family = useFamilyChildren();
-  const studentChild = useStudentChildId();
-  const [items, setItems] = useState<ActionItem[] | null>(null);
-  const [failed, setFailed] = useState(false);
-
+  const { items, failed } = useActionItems(role, { fresh: true });
+  const [cat, setCat] = useState<CategoryKey | "all">("all");
+  const [done, setDone] = useState<Record<string, string>>({});
+  const [showDone, setShowDone] = useState(false);
+  const listRef = useRef<HTMLDivElement>(null);
+  const navRef = useRef<HTMLElement>(null);
   const staff = role === "teach" || role === "admin";
-  const pupils = role === "family" ? family : role === "student" ? (studentChild === undefined ? null : studentChild ? [{ id: studentChild, name: "You" }] : []) : [];
-  const key = staff ? role : pupils ? pupils.map((c) => c.id).join(",") || "none" : "wait";
 
   useEffect(() => {
-    const supabase = getSupabaseClient();
-    if (!supabase || key === "wait") return;
-    let alive = true;
-    (async () => {
-      try {
-        const [list, extras] = await Promise.all([
-          staff ? loadStaffItems(role as "teach" | "admin") : loadPupilItems(pupils || [], role as "student" | "family"),
-          role === "family" ? loadFamilyExtras().catch(() => [] as ActionItem[]) : Promise.resolve([] as ActionItem[]),
-        ]);
-        if (alive) {
-          setItems(sortItems([...list, ...extras]));
-          setFailed(false);
-        }
-      } catch {
-        if (alive) {
-          setItems([]);
-          setFailed(true);
-        }
-      }
-    })();
-    return () => {
-      alive = false;
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- `key` already captures role and the pupil list
-  }, [key]);
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- the URL and browser storage are only readable after mount
+    setCat(readCat());
+    setDone(readDone(role));
+  }, [role]);
 
-  if (items === null) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
+  // On phones the categories are one scrolling row: keep the chosen one in view.
+  useEffect(() => {
+    navRef.current?.querySelector<HTMLElement>('[aria-pressed="true"]')?.scrollIntoView({ block: "nearest", inline: "nearest" });
+  }, [cat, items]);
+
+  const choose = (c: CategoryKey | "all") => {
+    setCat(c);
+    try {
+      const url = new URL(window.location.href);
+      if (c === "all") url.searchParams.delete("cat");
+      else url.searchParams.set("cat", c);
+      window.history.replaceState(window.history.state, "", url.toString());
+    } catch {
+      /* the filter still works without the URL */
+    }
+  };
+
+  const isDone = (i: ActionItem) => done[i.id] === i.title;
+  const markDone = (i: ActionItem, on: boolean) => {
+    const next = { ...done };
+    if (on) next[i.id] = i.title;
+    else delete next[i.id];
+    // Forget entries for items that have gone, so the list doesn't grow forever.
+    for (const id of Object.keys(next)) if (items && !items.some((x) => x.id === id)) delete next[id];
+    setDone(next);
+    writeDone(role, next);
+  };
+
+  const open = useMemo(() => (items || []).filter((i) => !isDone(i)), [items, done]); // eslint-disable-line react-hooks/exhaustive-deps -- isDone reads `done`
+  const hiddenCount = (items || []).length - open.length;
+  const visible = showDone ? items || [] : open;
+
+  const cats = useMemo(
+    () =>
+      CATEGORIES.map((c) => {
+        const list = open.filter((i) => categoryOf(i.area) === c.key);
+        return { ...c, count: list.length, urgent: list.filter((i) => i.urgency === "now").length };
+      }).filter((c) => c.count > 0 || (items || []).some((i) => categoryOf(i.area) === c.key)),
+    [open, items],
+  );
+  const urgentAll = open.filter((i) => i.urgency === "now").length;
+  const sections = CATEGORIES.filter((c) => cat === "all" || c.key === cat)
+    .map((c) => ({ ...c, list: visible.filter((i) => categoryOf(i.area) === c.key) }))
+    .filter((c) => c.list.length > 0);
+  const catLabel = cat === "all" ? "Everything" : CATEGORIES.find((c) => c.key === cat)?.label || "";
+
+  if (items === null) return <div className="h-40 animate-pulse rounded-2xl bg-white" aria-label="Loading" />;
+
+  const navButton = (key: CategoryKey | "all", label: string, count: number, urgent: number, icon: IconName | null) => {
+    const on = cat === key;
+    return (
+      <button
+        key={key}
+        type="button"
+        onClick={() => choose(key)}
+        aria-pressed={on}
+        className={`flex min-h-11 w-full shrink-0 items-center gap-2.5 rounded-xl px-3 text-left text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700 max-lg:w-auto max-lg:border lg:min-h-10 ${
+          on ? "bg-teal-700 text-white max-lg:border-teal-700" : "text-ink/80 hover:bg-white hover:text-ink max-lg:border-gold-light max-lg:bg-white"
+        }`}
+      >
+        {icon && <Icon name={icon} size="sm" />}
+        <span className="min-w-0 flex-1 truncate">{label}</span>
+        <span className={`rounded-full px-2 text-xs font-semibold leading-5 tabular-nums ${on ? "bg-white/20 text-white" : urgent ? "bg-red-100 text-red-800" : "bg-cream text-ink/70"}`}>
+          {count}
+          <span className="sr-only">{urgent ? `, ${urgent} to do now` : ""}</span>
+        </span>
+      </button>
+    );
+  };
 
   return (
     <div className="space-y-5">
       {role === "family" && <ParentSetup hasChild={(family?.length || 0) > 0} />}
-      {failed && <p role="alert" className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">Some items couldn&apos;t load. Refresh to try again.</p>}
-      {items.length === 0 ? (
-        <EmptyState title="All clear.">Nothing needs doing right now. New items appear here by themselves, and clear once the work is done.</EmptyState>
-      ) : (
-        GROUPS.map((g) => {
-          const list = items.filter((i) => i.urgency === g.key);
-          if (!list.length) return null;
-          return (
-            <section key={g.key} aria-labelledby={`ac-${g.key}`}>
-              <h2 id={`ac-${g.key}`} className="text-base font-semibold text-ink">
-                {g.title} <span className="font-normal text-ink/65">· {list.length}</span>
-              </h2>
-              <p className={ui.hint}>{g.hint}</p>
-              <ul className="mt-2 space-y-2">
-                {list.map((i) => (
-                  <li key={i.id} className={`${ui.card} flex flex-wrap items-center justify-between gap-3`}>
-                    <div className="min-w-0 flex-1">
-                      <p className="flex flex-wrap items-center gap-2 text-sm font-semibold text-ink">
-                        <StatusChip tone={g.key === "now" ? "bad" : g.key === "soon" ? "warn" : "neutral"}>{i.area}</StatusChip>
-                        {i.title}
-                      </p>
-                      <p className="mt-1 text-sm text-ink/75">{i.detail}</p>
-                      {(i.people?.length || i.who) && (
-                        <p className="mt-0.5 text-xs text-ink/65">
-                          {role === "teach" && i.people
-                            ? i.people.map((p, n) => (
-                                <span key={p.id}>
-                                  {n > 0 && ", "}
-                                  <Link href={`/teach/pupils?pupil=${p.id}`} className="font-medium text-teal-700 hover:underline">
-                                    {p.name}
-                                  </Link>
-                                </span>
-                              ))
-                            : i.people?.map((p) => p.name).join(", ")}
-                          {i.who ? ` ${i.who}` : ""}
-                        </p>
-                      )}
-                    </div>
-                    <Link href={i.href} className={`${g.key === "now" ? ui.btnPrimary : ui.btnSecondary} ${ui.sm}`}>
-                      {i.cta}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          );
-        })
+      {failed && (
+        <p role="alert" className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">
+          Some items couldn&apos;t load. Refresh to try again.
+        </p>
       )}
+
+      {items.length === 0 ? (
+        <EmptyState title="All clear." icon="circleCheck" tile="tile-green">
+          Nothing needs doing right now. New items appear here by themselves, and clear once the work is done.
+        </EmptyState>
+      ) : (
+        <div className="grid grid-cols-[minmax(0,1fr)] gap-5 lg:grid-cols-[15rem_minmax(0,1fr)]">
+          <nav ref={navRef} aria-label="Categories" className="min-w-0 print:hidden lg:sticky lg:top-[76px] lg:self-start">
+            <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 lg:mx-0 lg:flex-col lg:gap-0.5 lg:overflow-visible lg:px-0 lg:pb-0">
+              {navButton("all", "Everything", open.length, urgentAll, "layoutGrid")}
+              {cats.map((c) => navButton(c.key, c.label, c.count, c.urgent, c.icon))}
+            </div>
+          </nav>
+
+          <div ref={listRef} className="min-w-0 space-y-5">
+            <OwnPrintHeader title={`Action centre: ${catLabel}`} />
+            <div className={`${ui.toolbar} print:hidden`}>
+              <p className="mr-auto text-sm text-ink/70">
+                <span className="font-semibold text-ink">{catLabel}</span> · {sections.reduce((n, s) => n + s.list.length, 0)} {sections.reduce((n, s) => n + s.list.length, 0) === 1 ? "item" : "items"}
+              </p>
+              {hiddenCount > 0 && (
+                <button type="button" onClick={() => setShowDone((v) => !v)} aria-pressed={showDone} className={ui.chip}>
+                  {showDone ? "Hide" : "Show"} {hiddenCount} marked done
+                </button>
+              )}
+              <Button size="sm" icon="printer" onClick={() => printElement(listRef.current)}>
+                Save as PDF
+              </Button>
+            </div>
+
+            {sections.length === 0 ? (
+              <EmptyState title="Nothing here." icon="circleCheck" tile="tile-green">
+                {hiddenCount ? "Everything left in this category is marked done." : "Nothing in this category needs doing right now."}
+              </EmptyState>
+            ) : (
+              sections.map((s) => <CategorySection key={s.key} title={s.label} icon={s.icon} list={s.list} role={role} isDone={isDone} onDone={markDone} showTitle={cat === "all"} />)
+            )}
+          </div>
+        </div>
+      )}
+
       {staff && (
-        <details className={ui.card}>
+        <details className={`${ui.card} print:hidden`}>
           <summary className="cursor-pointer text-sm font-semibold text-ink">How missing homework is followed up</summary>
           <ol className="mt-2 space-y-1.5 text-sm text-ink/80">
             <li><b>Due date:</b> anything not handed in is marked missing by itself. No one has to mark it.</li>
@@ -187,5 +208,77 @@ export function ActionCentre({ role }: { role: Role }) {
         </details>
       )}
     </div>
+  );
+}
+
+function CategorySection({ title, icon, list, role, isDone, onDone, showTitle }: { title: string; icon: IconName; list: ActionItem[]; role: Role; isDone: (i: ActionItem) => boolean; onDone: (i: ActionItem, on: boolean) => void; showTitle: boolean }) {
+  const ref = useRef<HTMLElement>(null);
+  const id = `ac-${title.toLowerCase().replace(/[^a-z]+/g, "-")}`;
+  return (
+    <section ref={ref} aria-labelledby={id} className="space-y-2">
+      <OwnPrintHeader title={`Action centre: ${title}`} />
+      <div className={`flex items-center gap-2 ${showTitle ? "" : "sr-only"}`}>
+        <Icon name={icon} size="sm" className="h-4 w-4 text-ink/65" />
+        <h2 id={id} className="mr-auto text-base font-semibold text-ink">
+          {title} <span className="font-normal text-ink/65">· {list.length}</span>
+        </h2>
+        {showTitle && (
+          <button type="button" onClick={() => printElement(ref.current)} className={`${ui.btnLink} !text-xs print:hidden`}>
+            Save as PDF
+          </button>
+        )}
+      </div>
+      <ul className="space-y-2">
+        {list.map((i) => (
+          <ItemRow key={i.id} item={i} role={role} done={isDone(i)} onDone={(on) => onDone(i, on)} />
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+function ItemRow({ item: i, role, done, onDone }: { item: ActionItem; role: Role; done: boolean; onDone: (on: boolean) => void }) {
+  const ref = useRef<HTMLLIElement>(null);
+  const u = URGENCY[i.urgency];
+  return (
+    <li ref={ref} className={`rounded-2xl border bg-white p-4 ${i.urgency === "now" && !done ? "border-red-200" : "border-gold-light"} ${done ? "opacity-70" : ""}`}>
+      <OwnPrintHeader title={`Action centre: ${i.area}`} />
+      <div className="flex flex-wrap items-start gap-x-4 gap-y-3">
+        <div className="min-w-0 flex-1 basis-72">
+          <p className="flex flex-wrap items-center gap-2 text-xs">
+            <StatusChip tone={done ? "neutral" : u.tone}>{done ? "Marked done" : u.label}</StatusChip>
+            <span className="font-medium text-ink/65">{i.area}</span>
+          </p>
+          <p className="mt-1.5 text-sm font-semibold text-ink">{i.title}</p>
+          <p className="mt-0.5 text-sm text-ink/75">{i.detail}</p>
+          {(i.people?.length || i.who) && (
+            <p className="mt-1 text-xs text-ink/65">
+              {role === "teach" && i.people
+                ? i.people.map((p, n) => (
+                    <span key={p.id}>
+                      {n > 0 && ", "}
+                      <Link href={`/teach/pupils?pupil=${p.id}`} className="font-medium text-teal-700 hover:underline">
+                        {p.name}
+                      </Link>
+                    </span>
+                  ))
+                : i.people?.map((p) => p.name).join(", ")}
+              {i.who ? ` ${i.who}` : ""}
+            </p>
+          )}
+        </div>
+        <div className="flex flex-wrap items-center gap-1.5 print:hidden">
+          <Link href={i.href} className={`${i.urgency === "now" && !done ? ui.btnPrimary : ui.btnSecondary} ${ui.sm}`}>
+            {i.cta}
+          </Link>
+          <Button size="sm" variant="ghost" icon={done ? "refresh" : "check"} onClick={() => onDone(!done)} title={done ? "Put it back in the list" : "Hide it on this device until something about it changes"}>
+            {done ? "Undo" : "Mark done"}
+          </Button>
+          <button type="button" onClick={() => printElement(ref.current)} aria-label={`Print or save as PDF: ${i.title}`} title="Print or save as PDF" className={ui.btnIcon}>
+            <Icon name="printer" size="sm" />
+          </button>
+        </div>
+      </div>
+    </li>
   );
 }
