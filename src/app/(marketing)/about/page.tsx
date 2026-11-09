@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { StarMark } from "@/components/StarMark";
 import Link from "next/link";
 import { aboutDefaults } from "@/content/defaults";
 import { pageMetadata } from "@/lib/seo";
@@ -9,7 +10,7 @@ import { getAboutContent, getSiteSettings } from "@/lib/content";
 
 export const metadata: Metadata = pageMetadata({
   title: "About Us",
-  description: "Our mission, our RECIPE values, the Tarbiyyah family of schools, and the people teaching your child.",
+  description: "Our mission, our Tarbiyyah Compass values, the Tarbiyyah family of schools, and the people teaching your child.",
   path: "/about",
 });
 
@@ -57,20 +58,20 @@ export default async function AboutPage() {
 
       <section className="geo-texture bg-cream section-pad" aria-labelledby="recipe-heading">
         <Container>
-          <Kicker>Our values: RECIPE</Kicker>
+          <Kicker>Our values: the Tarbiyyah Compass</Kicker>
           <h2 id="recipe-heading" className="text-h2 font-serif font-semibold text-ink">{content.recipeIntro || "Building akhlaq alongside attainment."}</h2>
           {/* Six in a row on desktop, 3 + 3 on tablets, two columns on phones.
               Grid rows stretch, so every card in a row is the same height. */}
-          <ol className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6" aria-label="The six RECIPE values">
+          <ol className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6" aria-label="The six Tarbiyyah Compass values">
             {recipe.map((r, i) => (
               <li key={`${r.letter}-${i}`} className="flex h-full flex-col items-center rounded-2xl border border-gold-light/60 bg-white px-3 py-5 text-center shadow-sm">
-                <span aria-hidden="true" className="flex h-10 w-10 items-center justify-center rounded-xl bg-ink-900 font-serif text-xl font-bold text-gold-300">{r.letter}</span>
+                <span aria-hidden="true" className="flex h-10 w-10 items-center justify-center rounded-xl bg-ink-900 text-gold-300"><StarMark className="h-6 w-6" /></span>
                 <h3 className="mt-3 font-serif font-semibold text-ink">{r.word}</h3>
                 <p className="mt-1 text-sm leading-snug text-ink/70">{r.body}</p>
               </li>
             ))}
           </ol>
-          <p className="mt-6 max-w-3xl text-sm text-ink/70">One value is the focus each half term, recognised with merits, a RECIPE Star in every class and a character comment on every report.</p>
+          <p className="mt-6 max-w-3xl text-sm text-ink/70">One value is the focus each half term, recognised with merits, a Compass Star in every class and a character comment on every report.</p>
         </Container>
       </section>
 

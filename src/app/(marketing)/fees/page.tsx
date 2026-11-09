@@ -7,7 +7,7 @@ import Link from "next/link";
 import { getFeeBands, getSiteSettings } from "@/lib/content";
 import { formatGBP } from "@/lib/format";
 import { computeFeeSchedule, describePlan, roundingNote, FEE_DEFAULTS, FEE_POLICY_DEFAULTS } from "@/lib/fees";
-import { FeeEstimator } from "@/components/FeeEstimator";
+import { FeeCalculatorPanel } from "@/components/FeeCalculatorPanel";
 
 export const metadata: Metadata = pageMetadata({
   title: "Fees & Payment Plans",
@@ -45,6 +45,16 @@ export default async function FeesPage() {
               </li>
             ))}
           </ul>
+          <div className="mt-8">
+            <FeeCalculatorPanel
+              feeBands={feeBands}
+              siblingDiscountPercent={settings.siblingDiscountPercent}
+              siblingDiscountNote={settings.siblingDiscountNote}
+              discounts={settings.discounts}
+              annualDiscountPercent={discountPercent}
+              applicationFee={settings.applicationFee}
+            />
+          </div>
         </Container>
       </section>
 
@@ -148,28 +158,13 @@ export default async function FeesPage() {
             <Link href="/policies/25-fees" className="font-semibold text-gold-700 underline underline-offset-2 hover:text-gold-900">Fees Policy</Link>{" "}
             before enrolling. It covers payment terms, refunds and what happens if a payment is missed.
           </p>
+          <p className="mt-3 text-sm text-ink/70">
+            Want a figure for your family?{" "}
+            <a href="#calculator" className="font-semibold text-gold-700 underline underline-offset-2 hover:text-gold-900">Work out your fees</a>.
+          </p>
         </Container>
       </section>
 
-      <section id="estimator" className="geo-texture border-t border-gold-light/30 bg-cream section-pad">
-        <Container>
-          <Kicker>Estimate your fees</Kicker>
-          <h2 className="text-h2 font-serif font-semibold text-ink">See a personalised estimate.</h2>
-          <p className="mt-2 max-w-2xl text-ink/70">
-            Choose how many children, each child&apos;s year group and your payment plan. We show a line for each child, the discounts that apply, your total and what you pay to secure a place.
-          </p>
-          <div className="mt-6 max-w-2xl">
-            <FeeEstimator
-              feeBands={feeBands}
-              siblingDiscountPercent={settings.siblingDiscountPercent}
-              siblingDiscountNote={settings.siblingDiscountNote}
-              discounts={settings.discounts}
-              annualDiscountPercent={discountPercent}
-              applicationFee={settings.applicationFee}
-            />
-          </div>
-        </Container>
-      </section>
 
       <CtaBand heading="Ready to apply?" body="Apply by Friday 18 December 2026 for the founding cohort. The form takes about ten minutes." ctaLabel="Apply now" ctaHref="/admissions/apply" />
     </>

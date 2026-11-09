@@ -93,9 +93,16 @@ export type StaffUnit = {
   questions: number;
   practice_questions: number;
   takers: number;
-  /** 'staff': made in the portal (editable there); 'content': loaded from the repo. */
-  source?: "content" | "staff";
+  /** 'staff': made in the portal (editable there); 'content': loaded from the repo; 'auto': a draft made when every lesson was signed off (0184). */
+  source?: "content" | "staff" | "auto";
   checked_at?: string | null;
+  /** 0184: set when the portal made this draft by itself. */
+  auto_created_at?: string | null;
+  /** 0184: questions (e.g. AI-drafted) waiting for a teacher to approve. */
+  pending_questions?: number;
+  /** 0184: items on the unit's to-do list, and when a teacher showed it to pupils. */
+  todos?: number;
+  todos_checked_at?: string | null;
 };
 
 export type OverviewRow = {

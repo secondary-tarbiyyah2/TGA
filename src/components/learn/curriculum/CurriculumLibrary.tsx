@@ -11,9 +11,10 @@ import { classColour, myTeachingClasses } from "@/lib/learn/classes";
 import { uploadClassFile } from "@/components/learn/class/Attachments";
 import { Tabs } from "@/components/learn/Tabs";
 import { makeZip, type ZipEntry } from "@/lib/learn/zip";
-import { mediaUrl, revisionOverview, unitsForYear, type StaffUnit, type SummarySlide } from "@/lib/learn/revision";
+import { revisionOverview, unitsForYear, type StaffUnit } from "@/lib/learn/revision";
 import { UnitResults } from "@/components/learn/revision/UnitResults";
-import { PackBuilder, QuestionEditor } from "@/components/learn/revision/PackBuilder";
+import { PackBuilder } from "@/components/learn/revision/PackBuilder";
+import { RevisionPackPanel } from "@/components/learn/revision/RevisionPackPanel";
 import {
   LESSON_COLUMNS,
   LESSON_COLUMNS_EDITOR,
@@ -816,6 +817,11 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
                   {tab === "revision" && (
                     <RevisionPackPanel
                       pack={currentPack}
+                      year={year || ""}
+                      subjectSlug={current.subject_slug}
+                      unit={current.unit}
+                      lessonCount={current.lessons.length}
+                      signedOff={current.lessons.filter((l) => signoffs[signKey(l.subject_slug, "lesson", `${l.year}/${l.lesson_no}`)]?.status === "approved").length}
                       onChanged={load}
                       onBuild={() =>
                         setBuilding(currentPack ? { packId: currentPack.id } : { initial: { subject_slug: current.subject_slug, subject: current.subject, unit: current.unit } })
@@ -918,7 +924,6 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
   );
 }
 
-type PackQuestion = { id: string; topic: string; lesson_no: number | null; question: string; options: string[]; answer: number; explanation: string | null; in_quiz: boolean };
 
 /** The whole specification for this subject, laid out like the board's own document, with the units this lesson unit seems to cover opened first. Matching is by name, so treat it as a suggestion. */
 function SpecPanel({ slug, unit, year, signoffs, onSign, onOpenLesson }: { slug: string; unit: string; year: string; signoffs: Record<string, Signoff>; onSign: (ref: string, label: string) => void; onOpenLesson: (id: string) => void }) {
@@ -1288,172 +1293,6 @@ function ConnectionsPanel({ subject, unit, onOpenLesson }: { subject: string; un
           ))
         )}
       </div>
-    </div>
-  );
-}
-
-/** What pupils revise from for this unit: status, the quiz questions with answers, and a switch to hide it. */
-function RevisionPackPanel({ pack, onChanged, onBuild }: { pack: StaffUnit | undefined; onChanged: () => void; onBuild: () => void }) {
-  const supabase = getSupabaseClient();
-  const [qs, setQs] = useState<PackQuestion[] | null>(null);
-  // The pack's videos: one per chapter for chaptered packs, otherwise the unit video.
-  const [videos, setVideos] = useState<{ path: string; label: string }[]>([]);
-  const [chapter, setChapter] = useState(0);
-  const [loaded, setLoaded] = useState<{ path: string; url: string | null } | null>(null);
-  const [busy, setBusy] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (!supabase || !pack) return;
-    let alive = true;
-    (async () => {
-      const [{ data }, { data: unit }] = await Promise.all([
-        supabase.from("revision_questions").select("id, topic, lesson_no, question, options, answer, explanation, in_quiz").eq("unit_id", pack.id).eq("active", true).order("lesson_no").order("qkey"),
-        supabase.from("revision_units").select("video_path, summary").eq("id", pack.id).maybeSingle(),
-      ]);
-      if (!alive) return;
-      setQs((data as PackQuestion[]) || []);
-      const u = unit as { video_path: string | null; summary: SummarySlide[] | null } | null;
-      const chapters = (u?.summary || []).flatMap((x, k) => (x.video_path ? [{ path: x.video_path, label: `Chapter ${k + 1}: ${x.title}${x.length ? ` (${x.length})` : ""}` }] : []));
-      setVideos(chapters.length ? chapters : u?.video_path ? [{ path: u.video_path, label: "Unit video" }] : []);
-      setChapter(0);
-    })();
-    return () => {
-      alive = false;
-    };
-  }, [supabase, pack]);
-
-  const videoPath = videos[chapter]?.path || null;
-  useEffect(() => {
-    if (!videoPath) return;
-    let alive = true;
-    mediaUrl(videoPath).then((url) => alive && setLoaded({ path: videoPath, url }));
-    return () => {
-      alive = false;
-    };
-  }, [videoPath]);
-  const video = loaded && loaded.path === videoPath ? loaded.url : null;
-
-  if (!pack)
-    return (
-      <div className="space-y-2 rounded-2xl border border-dashed border-gold-light bg-white p-6 text-sm text-ink/75">
-        <p className="font-semibold text-ink">No revision pack for this unit yet.</p>
-        <p>
-          A pack is made automatically once the unit&apos;s lessons have at least four hinge questions (the “check” slides). Or make one yourself: upload a summary video, mark its chapters and add
-          quiz questions.
-        </p>
-        <button type="button" className={btnPrimary} onClick={onBuild}>
-          Make a revision pack
-        </button>
-      </div>
-    );
-
-  const togglePublished = async () => {
-    if (!supabase) return;
-    setBusy(true);
-    setError(null);
-    const { error: err } = await supabase.from("revision_units").update({ published: !pack.published }).eq("id", pack.id);
-    setBusy(false);
-    if (err) return setError("Couldn't change that. Only teachers and the head can.");
-    onChanged();
-  };
-
-  const quiz = (qs || []).filter((q) => q.in_quiz);
-  const topics = [...new Set(quiz.map((q) => q.topic))];
-  const letters = "ABCDEF";
-
-  return (
-    <div className="space-y-4">
-      <div className="flex flex-wrap items-center gap-3 rounded-2xl border border-gold-light bg-white p-4">
-        <span className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${pack.published ? "bg-green-50 text-green-800 ring-1 ring-green-200" : "bg-amber-50 text-amber-900 ring-1 ring-amber-200"}`}>
-          {pack.published ? "Pupils can see this pack" : "Hidden from pupils"}
-        </span>
-        <span className="text-sm text-ink/75">
-          {pack.kind === "summary" ? "Summary slides" : "The unit's lesson slides"}
-          {pack.has_video ? " · video" : ""} · {pack.questions} quiz questions · {pack.practice_questions} extra practice questions from the key words
-        </span>
-        <span className="flex-1" />
-        {pack.source === "staff" ? (
-          <button type="button" className={btnPrimary} onClick={onBuild}>
-            Edit pack
-          </button>
-        ) : (
-          <button type="button" className={btn} disabled={busy} onClick={togglePublished}>
-            {pack.published ? "Hide from pupils" : "Show to pupils"}
-          </button>
-        )}
-      </div>
-      {error && (
-        <p role="alert" className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">
-          {error}
-        </p>
-      )}
-      <div className="rounded-2xl border border-gold-light bg-white p-4 text-sm text-ink/75">
-        <p className="font-semibold text-ink">How pupils use it</p>
-        <p>
-          Under <strong>Unit revision</strong> pupils see this unit for their year. They revise from the {pack.kind === "summary" ? "summary slides and video" : "lesson slides"}, take the quiz (marked on the
-          server, so answers never reach their browser early), then the practice coach works on their weakest topics with hints. No AI is involved; every question comes from the teacher-checked lessons.
-        </p>
-      </div>
-      {videos.length > 0 && (
-        <div className="space-y-2 rounded-2xl border border-gold-light bg-white p-3">
-          {videos.length > 1 && (
-            <label className="flex flex-wrap items-center gap-2 text-sm font-medium text-ink">
-              Video
-              <select value={chapter} onChange={(e) => setChapter(Number(e.target.value))} className="min-w-0 flex-1 rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm">
-                {videos.map((v, k) => (
-                  <option key={v.path} value={k}>
-                    {v.label}
-                  </option>
-                ))}
-              </select>
-            </label>
-          )}
-          {video ? (
-            <video key={videoPath} src={video} controls playsInline preload="metadata" className="aspect-video w-full rounded-lg bg-ink" />
-          ) : (
-            <div role="status" className="flex aspect-video w-full items-center justify-center rounded-lg bg-cream text-sm text-ink/65">
-              Loading the video…
-            </div>
-          )}
-        </div>
-      )}
-      {pack.source !== "staff" && (
-        <details className="rounded-2xl border border-gold-light bg-white p-4">
-          <summary className="cursor-pointer text-sm font-semibold text-ink">Add your own question to this pack</summary>
-          <p className="mt-1 text-sm text-ink/70">Questions you add here are kept when the pack is updated.</p>
-          <div className="mt-3">
-            <QuestionEditor unitId={pack.id} topics={topics} questions={[]} onChange={() => onChanged()} onError={setError} />
-          </div>
-        </details>
-      )}
-      {qs === null ? (
-        <div className="h-32 animate-pulse rounded-2xl bg-white" />
-      ) : (
-        topics.map((t) => (
-          <section key={t} aria-label={t} className="rounded-2xl border border-gold-light bg-white p-4">
-            <h3 className="mb-2 font-semibold text-ink">{t}</h3>
-            <ol className="space-y-3">
-              {quiz
-                .filter((q) => q.topic === t)
-                .map((q) => (
-                  <li key={q.id} className="text-sm">
-                    <p className="font-medium text-ink">{q.question}</p>
-                    <ul className="mt-1 grid gap-1 sm:grid-cols-2">
-                      {q.options.map((o, i) => (
-                        <li key={i} className={`rounded-md px-2 py-1 ${i === q.answer ? "bg-green-50 font-semibold text-green-900" : "bg-cream/60 text-ink/80"}`}>
-                          {letters[i]}. {o}
-                          {i === q.answer && <span className="sr-only"> (correct)</span>}
-                        </li>
-                      ))}
-                    </ul>
-                    {q.explanation && <p className="mt-1 text-xs text-ink/65">Why: {q.explanation}</p>}
-                  </li>
-                ))}
-            </ol>
-          </section>
-        ))
-      )}
     </div>
   );
 }

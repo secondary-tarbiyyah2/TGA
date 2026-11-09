@@ -5,7 +5,7 @@
 // voice, no em dashes, no invented facts, and it is always a DRAFT a member
 // of staff edits and sends themselves.
 
-export type Task = "report_comment" | "tarbiyah_note" | "message_triage";
+export type Task = "report_comment" | "tarbiyah_note" | "message_triage" | "revision_questions";
 export type Pronoun = "he" | "she" | "they";
 export type Variant = "default" | "shorter" | "more_formal" | "try_again";
 
@@ -194,7 +194,7 @@ Rules:
 - Warm, specific and professional, in the school's voice ("we", "this term"). Start with genuine strengths, then give one clear, practical next step.
 - Use the figures only if they help, and quote them exactly as given.
 - Do not mention attendance unless the figure is given.
-${i.want_recipe_line ? `- Also write one short sentence (max 25 words) about how the pupil showed the RECIPE character value "${i.recipe_value}" this half term, ONLY if the teacher's notes support it; otherwise return an empty string for it.\n` : ""}Reply with JSON only, no prose: {"comment": "<paragraph>"${i.want_recipe_line ? ', "recipe_line": "<sentence or empty>"' : ""}}`;
+${i.want_recipe_line ? `- Also write one short sentence (max 25 words) about how the pupil showed the Tarbiyyah Compass character value "${i.recipe_value}" this half term, ONLY if the teacher's notes support it; otherwise return an empty string for it.\n` : ""}Reply with JSON only, no prose: {"comment": "<paragraph>"${i.want_recipe_line ? ', "recipe_line": "<sentence or empty>"' : ""}}`;
 
   const facts: string[] = [`Pupil first name: ${i.first_name}.`, pronounLine(i.first_name, i.pronoun)];
   if (i.year_group) facts.push(`Year group: ${i.year_group}.`);
@@ -204,7 +204,7 @@ ${i.want_recipe_line ? `- Also write one short sentence (max 25 words) about how
   if (i.attendance_pct !== null) facts.push(`Attendance this term: ${i.attendance_pct}%.`);
   if (i.homework) facts.push(`Homework: ${i.homework}.`);
   if (i.assessment_avg !== null) facts.push(`Assessment average: ${i.assessment_avg}%.`);
-  if (i.recipe_value) facts.push(`RECIPE character value for this half term: ${i.recipe_value}.`);
+  if (i.recipe_value) facts.push(`Tarbiyyah Compass character value for this half term: ${i.recipe_value}.`);
 
   const ask =
     i.variant === "shorter"

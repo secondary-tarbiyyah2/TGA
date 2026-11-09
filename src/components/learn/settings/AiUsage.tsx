@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
-import { useAiStatus } from "@/lib/learn/aiAssist";
+import { aiCheck, aiErrorMessage, useAiStatus } from "@/lib/learn/aiAssist";
 
 type Row = { day: string; task: string; calls: number; input_tokens: number; output_tokens: number };
 
@@ -23,6 +23,26 @@ function daysAgo(n: number): string {
 }
 
 const fmt = (n: number) => n.toLocaleString("en-GB");
+
+/** "Test the AI connection": one tiny call, the answer in plain words. */
+function AiCheck() {
+  const [state, setState] = useState<{ busy: boolean; ok?: boolean; text?: string }>({ busy: false });
+  async function run() {
+    setState({ busy: true });
+    const r = await aiCheck();
+    setState(r.ok ? { busy: false, ok: true, text: "The AI is working. Draft buttons are ready for staff." } : { busy: false, ok: false, text: aiErrorMessage(r) });
+  }
+  return (
+    <div className="flex flex-wrap items-center gap-3">
+      <button type="button" onClick={run} disabled={state.busy} className="rounded-lg border border-gold-light bg-white px-3 py-1.5 text-sm font-medium text-ink hover:bg-cream disabled:opacity-60">
+        {state.busy ? "Testing…" : "Test the AI connection"}
+      </button>
+      <p role="status" aria-live="polite" className={state.ok === false ? "text-red-800" : "text-ink/75"}>
+        {state.text}
+      </p>
+    </div>
+  );
+}
 
 /**
  * A small summary of AI helper use (public.ai_usage, 0173) for the
@@ -74,6 +94,7 @@ export function AiUsage() {
             {status.daily_limit !== undefined ? ` of ${fmt(status.daily_limit)} drafts (the daily limit resets at midnight UK time)` : " drafts"}.
           </p>
         )}
+        {status?.configured && <AiCheck />}
         {failed ? (
           <p className="text-ink/65">Couldn&apos;t load usage. Only the Headteacher and Admin can see it.</p>
         ) : rows === null ? (

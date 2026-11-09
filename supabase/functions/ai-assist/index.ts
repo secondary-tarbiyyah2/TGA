@@ -17,8 +17,15 @@
 // POST { task: "triage_batch", thread_ids: string[] (max 10) }
 //   -> { ok, results: { [thread_id]: triage | null }, stopped? }
 //
-// Errors: ai_not_configured (503, "AI is not set up yet."), ai_daily_limit
-// (429), forbidden (403), invalid_input / input_too_long (400), ai_failed (502).
+// POST { task: "revision_questions", unit_id, count? (3-12, default 8) }
+//   -> { ok, drafted }  questions saved as 'pending' for a teacher to approve
+// POST { task: "check" }  one tiny call to test key, credit and model
+//   -> { ok, model } or ai_failed with a plain-English detail
+//
+// Errors: ai_not_configured (503), ai_daily_limit (429), forbidden (403),
+// invalid_input / input_too_long (400), ai_failed (502, with `reason` such as
+// auth / no_credit / model_not_found / bad_request and a plain-English
+// `detail` from claudeErrorMessage). The API's own error text is logged.
 //
 // Privacy: only first names reach the model; contact details are stripped
 // from parent messages; no medical or SEND data is read by this function.
@@ -26,7 +33,7 @@
 // AI_DAILY_LIMIT (default 500) caps calls per day across all tasks.
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
-import { callClaudeJson, isClaudeConfigured } from "../_shared/claude.ts";
+import { callClaude, callClaudeJson, claudeErrorMessage, claudeModel, isClaudeConfigured } from "../_shared/claude.ts";
 import {
   LIMITS,
   buildNotePrompt,
@@ -43,6 +50,7 @@ import {
   type ThreadMessage,
   type TriageResult,
 } from "./prompts.ts";
+import { buildRevisionPrompt, validateRevisionOutput, type DraftQuestion, type LessonForPrompt } from "./revision.ts";
 
 const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
 const anonKey = Deno.env.get("SUPABASE_ANON_KEY")!;
@@ -54,8 +62,10 @@ const DAILY_LIMIT = (() => {
 
 const STAFF = ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover"];
 const WRITERS = ["head_teacher", "admin", "teacher", "teaching_assistant_cover"];
+// Same roles as the revision_questions write policy (0094).
+const PACK_WRITERS = ["head_teacher", "admin", "teacher"];
 
-const NOT_SET_UP = { ok: false, error: "ai_not_configured", detail: "AI is not set up yet." };
+const NOT_SET_UP = { ok: false, error: "ai_not_configured", detail: claudeErrorMessage({ error: "not_configured" }) };
 
 const callerClient = (auth: string) => createClient(supabaseUrl, anonKey, { global: { headers: { Authorization: auth } } });
 type Caller = { id: string; roles: string[]; client: ReturnType<typeof callerClient> };
@@ -89,7 +99,11 @@ async function addTokens(task: Task, usage?: { input_tokens: number; output_toke
 }
 
 const LIMIT_REACHED = () => jsonResponse({ ok: false, error: "ai_daily_limit", detail: `The school's AI limit for today (${DAILY_LIMIT} drafts) has been reached. It resets at midnight.` }, 429);
-const AI_FAILED = (detail?: string) => jsonResponse({ ok: false, error: "ai_failed", detail: detail || "The AI couldn't write a draft just now. Try again in a moment." }, 502);
+/** A failed AI call: plain English for staff, the reason code for support, details only in the log. */
+const AI_FAILED = (r?: { error: string; status?: number; detail?: string }) => {
+  if (r) console.error("ai-assist: AI call failed", r.error, r.status ?? "", r.detail ?? "");
+  return jsonResponse({ ok: false, error: "ai_failed", reason: r?.error || "upstream_error", detail: claudeErrorMessage(r || { error: "upstream_error" }) }, 502);
+};
 
 function ukStamp(iso: string): string {
   return new Date(iso).toLocaleString("en-GB", { timeZone: "Europe/London", weekday: "long", day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" }) + " UK time";
@@ -98,7 +112,7 @@ function ukStamp(iso: string): string {
 // ── triage ──────────────────────────────────────────────────────────────
 
 type TriageOut = { message_id: string; category: string; urgency: string; summary: string; handler: string; dsl: boolean; cached: boolean };
-type TriageAttempt = { triage: TriageOut | null; reply?: string | null; limit?: boolean; failed?: string; forbidden?: boolean };
+type TriageAttempt = { triage: TriageOut | null; reply?: string | null; limit?: boolean; failed?: { error: string; status?: number; detail?: string }; forbidden?: boolean };
 
 /**
  * mode "open":  a member of staff opened the thread. Cached result if there is
@@ -165,7 +179,7 @@ async function triageThread(caller: Caller, threadId: string, mode: "open" | "dr
   const p = buildTriagePrompt(ctx);
   const res = await callClaudeJson<TriageResult>({ system: p.system, user: p.user, maxTokens: p.maxTokens, temperature: p.temperature }, (raw) => validateTriageOutput(raw, ctx));
   await addTokens("message_triage", res.usage);
-  if (!res.ok) return { triage: null, failed: res.error };
+  if (!res.ok) return { triage: null, failed: res };
 
   const t = res.data;
   const { error: upErr } = await service.from("ai_message_triage").upsert(
@@ -199,10 +213,21 @@ Deno.serve(async (req) => {
   const task = String(body.task || "");
 
   if (task === "status") {
-    return jsonResponse({ ok: true, configured: isClaudeConfigured(), daily_limit: DAILY_LIMIT, can: { report_comment: isWriter, tarbiyah_note: isWriter, message_triage: true } });
+    return jsonResponse({ ok: true, configured: isClaudeConfigured(), daily_limit: DAILY_LIMIT, can: { report_comment: isWriter, tarbiyah_note: isWriter, message_triage: true, revision_questions: caller.roles.some((r) => PACK_WRITERS.includes(r)) } });
   }
 
   if (!isClaudeConfigured()) return jsonResponse(NOT_SET_UP, 503);
+
+  // "Test the AI connection" (Settings › AI): one tiny call, so the owner can
+  // see in plain words whether the key, credit and model all work.
+  // Headteacher/Admin only; not counted against the daily cap (ai_usage only
+  // allows the drafting tasks) and costs a few tokens.
+  if (task === "check") {
+    if (!caller.roles.some((r) => r === "head_teacher" || r === "admin")) return jsonResponse({ ok: false, error: "forbidden" }, 403);
+    const res = await callClaude({ user: "Reply with the single word: ready", maxTokens: 20, retries: 0, timeoutMs: 20_000 });
+    if (!res.ok) return AI_FAILED(res);
+    return jsonResponse({ ok: true, model: res.model || claudeModel() });
+  }
 
   if (task === "report_comment") {
     if (!isWriter) return jsonResponse({ ok: false, error: "forbidden" }, 403);
@@ -212,7 +237,7 @@ Deno.serve(async (req) => {
     const p = buildReportPrompt(v.input);
     const res = await callClaudeJson({ system: p.system, user: p.user, maxTokens: p.maxTokens, temperature: p.temperature }, (raw) => validateReportOutput(raw, v.input));
     await addTokens("report_comment", res.usage);
-    if (!res.ok) return AI_FAILED();
+    if (!res.ok) return AI_FAILED(res);
     return jsonResponse({ ok: true, comment: res.data.comment, recipe_line: res.data.recipe_line });
   }
 
@@ -224,8 +249,62 @@ Deno.serve(async (req) => {
     const p = buildNotePrompt(v.input);
     const res = await callClaudeJson({ system: p.system, user: p.user, maxTokens: p.maxTokens, temperature: p.temperature }, validateNoteOutput);
     await addTokens("tarbiyah_note", res.usage);
-    if (!res.ok) return AI_FAILED();
+    if (!res.ok) return AI_FAILED(res);
     return jsonResponse({ ok: true, note: res.data.note });
+  }
+
+  // Draft quiz questions for a revision pack from the unit's lessons. Saved as
+  // 'pending' (never active), so pupils see none until a teacher approves each.
+  if (task === "revision_questions") {
+    if (!caller.roles.some((r) => PACK_WRITERS.includes(r))) return jsonResponse({ ok: false, error: "forbidden" }, 403);
+    const unitId = typeof body.unit_id === "string" && /^[0-9a-f-]{36}$/i.test(body.unit_id) ? body.unit_id : "";
+    if (!unitId) return jsonResponse({ ok: false, error: "invalid_input", detail: "Missing revision pack." }, 400);
+    const count = Math.max(3, Math.min(12, Number(body.count) || 8));
+    // Read as the caller, so RLS decides what they may see.
+    const { data: unitRow } = await caller.client.from("revision_units").select("id, subject_slug, subject, year, unit").eq("id", unitId).maybeSingle();
+    const unit = unitRow as { id: string; subject_slug: string; subject: string; year: string; unit: string } | null;
+    if (!unit) return jsonResponse({ ok: false, error: "forbidden" }, 403);
+    const { data: lessonRows } = await caller.client
+      .from("curriculum_lessons")
+      .select("lesson_no, title, objectives, content, unit")
+      .eq("subject_slug", unit.subject_slug)
+      .eq("year", unit.year)
+      .order("lesson_no");
+    const lessons = ((lessonRows || []) as (LessonForPrompt & { unit: string | null })[]).filter((l) => (l.unit || "Lessons") === unit.unit);
+    if (!lessons.length) return jsonResponse({ ok: false, error: "invalid_input", detail: "This unit has no lessons in the Lesson library to draft questions from." }, 400);
+    const { data: existing } = await caller.client.from("revision_questions").select("question").eq("unit_id", unit.id).limit(60);
+    const avoid = ((existing || []) as { question: string }[]).map((q) => q.question.slice(0, 160));
+    if (!(await reserve("revision_questions"))) return LIMIT_REACHED();
+    const p = buildRevisionPrompt({ subject: unit.subject, year: unit.year.replace(/^y/, "Year "), unit: unit.unit, lessons, count, avoid });
+    const res = await callClaudeJson<DraftQuestion[]>({ system: p.system, user: p.user, maxTokens: p.maxTokens, timeoutMs: 60_000 }, (raw) => validateRevisionOutput(raw, lessons, count));
+    await addTokens("revision_questions", res.usage);
+    if (!res.ok) return AI_FAILED(res);
+    const stamp = Date.now().toString(36);
+    const rows = res.data.map((q, i) => ({
+      unit_id: unit.id,
+      qkey: `ai-${stamp}-${i + 1}`,
+      lesson_no: q.lesson_no,
+      topic: q.topic,
+      question: q.question,
+      options: q.options,
+      answer: q.answer,
+      explanation: q.explanation || null,
+      hint: q.hint,
+      in_quiz: true,
+      source: "staff",
+      review: "pending",
+      drafted_by_ai: true,
+      active: false,
+      created_by: caller.id,
+    }));
+    // Insert as the caller: the teachers' write policy applies, and the
+    // review trigger keeps every row inactive until approved.
+    const { error: insErr } = await caller.client.from("revision_questions").insert(rows);
+    if (insErr) {
+      console.error("ai-assist revision_questions insert", insErr.message);
+      return jsonResponse({ ok: false, error: "ai_failed", detail: "The questions were drafted but couldn't be saved. Try again." }, 500);
+    }
+    return jsonResponse({ ok: true, drafted: rows.length });
   }
 
   if (task === "triage_message") {
@@ -234,7 +313,7 @@ Deno.serve(async (req) => {
     const r = await triageThread(caller, threadId, body.draft === true ? "draft" : "open");
     if (r.forbidden) return jsonResponse({ ok: false, error: "forbidden" }, 403);
     if (r.limit) return LIMIT_REACHED();
-    if (r.failed) return AI_FAILED();
+    if (r.failed) return AI_FAILED(r.failed);
     return jsonResponse({ ok: true, triage: r.triage, reply: r.reply ?? null });
   }
 

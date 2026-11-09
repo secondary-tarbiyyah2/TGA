@@ -10,7 +10,7 @@ agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
 dateOfIssue: 1 September 2026 (version 1.1, updated 28 October 2026 for the January 2027 launch)
 nextReview: 31 August 2027
 basis: New policy for online provision
-readAlongside: RECIPE Character Framework; Live Lesson Protocols; No Platform for Extremism (Prevent) Policy; Health, Safety and Wellbeing Policy
+readAlongside: Tarbiyyah Compass Character Framework; Live Lesson Protocols; No Platform for Extremism (Prevent) Policy; Health, Safety and Wellbeing Policy
 availability: Published on the Academy website and Parent Portal. Available in large print or another accessible format on request.
 ---
 

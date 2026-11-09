@@ -2,767 +2,618 @@
   "kind": "spec",
   "subject": "Geography",
   "slug": "geography",
-  "board": "AQA",
-  "qualification": "GCSE Geography (9-1)",
-  "code": "8035",
-  "specVersion": "Specification for first teaching 2016, dated 16 February 2016 (as listed on the AQA page opened)",
+  "board": "Pearson Edexcel",
+  "qualification": "International GCSE (9-1) Geography",
+  "code": "4GE1",
+  "specVersion": "Issue 4, February 2026 (first teaching September 2017, first examination June 2019)",
   "status": "Verified",
-  "statusNote": "Paper structure, marks, weightings, AOs and SPaG read from the AQA specification-at-a-glance and scheme-of-assessment pages; content for 3.1 to 3.4 read from the AQA subject-content pages (summaries). The board's command-word glossary was not on the pages opened. Year and term allocation is a recommended sequence only; AQA allows flexible sequencing.",
+  "statusNote": "Rebuilt 9 Nov 2026 as the specification pupils sit, from the raw text (pdftotext) of the Pearson 4GE1 specification PDF, Issue 4: paper structure, marks, sections, all Topic 1 to 9 detailed content, fieldwork requirements (Sections B), AO weightings and the command word taxonomy (Appendix 3) were read. Points are paraphrased. Order follows the school's KS4 plan (Tarbiyyah Geography Curriculum Intent, written for AQA 8035, and Pearson's own 4GE1 Paper 1 and Paper 2 Section A schemes of work, which are generic) only where the content is on the 4GE1 specification: hazards first, then fragile environments and climate change, rivers, coasts and physical fieldwork in Year 10; urban environments, economic activity and energy and human fieldwork in Year 11. The earlier file taught AQA 8035 with a 4GE1 exam entry; AQA-only content (Paper 3 issue evaluation, glacial landscapes, cold environments) is no longer taught. Year and term placement is the school's sequence; Pearson allows any order.",
   "sources": [
     {
-      "title": "AQA GCSE Geography 8035: specification at a glance",
-      "url": "https://www.aqa.org.uk/subjects/geography/gcse/geography-8035/specification/specification-at-a-glance"
+      "title": "Pearson Edexcel International GCSE in Geography (4GE1) specification, Issue 4, February 2026",
+      "url": "https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/Geography/2017/specification-and-sample-assessments/9781446958360-int-gcse-geog-issue-3.pdf"
     },
     {
-      "title": "AQA 8035 subject content 3.1 Living with the physical environment",
-      "url": "https://www.aqa.org.uk/subjects/geography/gcse/geography-8035/specification/subject-content/living-with-the-physical-environment"
-    },
-    {
-      "title": "AQA 8035 subject content 3.2 Challenges in the human environment",
-      "url": "https://www.aqa.org.uk/subjects/geography/gcse/geography-8035/specification/subject-content/challenges-in-the-human-environment"
-    },
-    {
-      "title": "AQA 8035 subject content 3.3 Geographical applications",
-      "url": "https://www.aqa.org.uk/subjects/geography/gcse/geography-8035/specification/subject-content/geographical-applications"
-    },
-    {
-      "title": "AQA 8035 subject content 3.4 Geographical skills",
-      "url": "https://www.aqa.org.uk/subjects/geography/gcse/geography-8035/specification/subject-content/geographical-skills"
-    },
-    {
-      "title": "AQA 8035 scheme of assessment",
-      "url": "https://www.aqa.org.uk/subjects/geography/gcse/geography-8035/specification/scheme-of-assessment"
+      "title": "Pearson: information for centres entering private candidates",
+      "url": "https://qualifications.pearson.com/en/support/support-topics/registrations-and-entries/academic-registrations-and-entries/private-candidates/information-for-centres-entering-private-candidates.html"
     }
   ],
   "years": "Years 10 to 11",
-  "tiers": "None (single tier, linear, all exams at the end of the course)",
+  "tiers": "None (untiered, linear, graded 9 to 1; all papers at the end of the course)",
   "assessment": [
     {
-      "paper": "Paper 1",
-      "title": "Living with the physical environment",
-      "duration": "1 hour 30 minutes",
-      "marks": 88,
-      "weight": "35%",
-      "content": "3.1.1 natural hazards; 3.1.2 the living world; 3.1.3 physical landscapes in the UK; 3.4 skills",
-      "format": "Multiple-choice, short answer, levels of response and extended prose. Section A (33 marks) all questions; B (25) all questions; C (30) any two of Questions 3, 4, 5. Includes 3 SPaG marks."
+      "paper": "Paper 1 (4GE1/01)",
+      "title": "Physical geography",
+      "duration": "1 hour 10 minutes",
+      "marks": 70,
+      "weight": "40%",
+      "content": "Section A: two of river, coastal and hazardous environments (50 marks). Section B: one of three fieldwork questions on the same environments (20 marks).",
+      "format": "Multiple-choice, short-answer, data-response and open-ended questions with a resource booklet; paper-based or onscreen. Available June and November."
     },
     {
-      "paper": "Paper 2",
-      "title": "Challenges in the human environment",
-      "duration": "1 hour 30 minutes",
-      "marks": 88,
-      "weight": "35%",
-      "content": "3.2.1 urban issues; 3.2.2 changing economic world; 3.2.3 resource management; 3.4 skills",
-      "format": "Multiple-choice, short answer, levels of response and extended prose. Section A (33 marks) all; B (30) all; C (25) Question 3 plus one of Questions 4, 5, 6. Includes 3 SPaG marks."
-    },
-    {
-      "paper": "Paper 3",
-      "title": "Geographical applications",
-      "duration": "1 hour 30 minutes",
-      "marks": 76,
-      "weight": "30%",
-      "content": "3.3.1 issue evaluation; 3.3.2 fieldwork; 3.4 skills",
-      "format": "Section A issue evaluation (37 marks) and Section B fieldwork (39 marks), all questions. Pre-release booklet issued 12 weeks before the exam. Includes 6 SPaG marks."
+      "paper": "Paper 2 (4GE1/02)",
+      "title": "Human geography",
+      "duration": "1 hour 45 minutes",
+      "marks": 105,
+      "weight": "60%",
+      "content": "Section A: two of economic activity and energy, rural and urban environments (50). Section B: one of three fieldwork questions (20). Section C: one of fragile environments and climate change, globalisation and migration, development and human welfare (35).",
+      "format": "Multiple-choice, short-answer, data-response and open-ended questions with a resource booklet; paper-based or onscreen. Available June and November."
     }
   ],
-  "nonExam": "No coursework. Fieldwork is compulsory: at least two enquiries in two contrasting environments, human and physical, on at least two outside-school visits; the centre submits a signed fieldwork statement (date, place, numbers, enquiry focus, spec link) and the work is examined in Paper 3.",
-  "examEntry": {
-    "summary": "Taught from the UK GCSE specification above; pupils are entered for Pearson Edexcel International GCSE (9-1) Geography (4GE1).",
-    "board": "Pearson Edexcel",
-    "qualification": "International GCSE (9-1) Geography",
-    "code": "4GE1",
-    "label": "Pearson Edexcel IGCSE 4GE1",
-    "tier": "None (untiered, graded 9 to 1)",
-    "papers": "Paper 1 Physical geography (4GE1/01): 1 hour 10 minutes, 70 marks, 40%; Section A two of river, coastal and hazardous environments; Section B one fieldwork question on the same three topics. Paper 2 Human geography (4GE1/02): 1 hour 45 minutes, 105 marks, 60%; Section A two of economic activity and energy, rural environments and urban environments; Section B one fieldwork question on those topics; Section C one of fragile environments and climate change, globalisation and migration, development and human welfare. Paper-based or onscreen.",
-    "series": "June and November",
-    "privateCandidates": "Written papers only, with no coursework. Fieldwork is examined in the papers, so pupils still need two enquiries of their own.",
-    "notes": [
-      "There is no Paper 3 and no pre-release issue evaluation: drop AQA Paper 3 practice.",
-      "Fieldwork is examined inside each paper (Section B). Pupils need one physical enquiry linked to rivers, coasts or hazards and one human enquiry linked to economic activity, rural or urban environments, each using quantitative and qualitative methods (4GE1 Appendix 6).",
-      "Options that reuse the AQA content: Paper 1 river and coastal environments (or hazardous environments, from AQA 3.1.1); Paper 2 urban environments and economic activity and energy (from AQA 3.2.1 and the 3.2.3 energy option); Section C fragile environments and climate change (from AQA 3.1.1 and 3.1.2) or development and human welfare (from AQA 3.2.2).",
-      "4GE1 needs four in-depth case studies: in each paper, one developed country and one developing or emerging country.",
-      "Rural environments has no AQA equivalent; teach it only if it replaces one of the options above.",
-      "Use 4GE1 command words (Appendix 3) and past papers in Year 11."
-    ],
-    "regulation": "International GCSEs are not regulated by Ofqual. Pearson describes them as generally equivalent to GCSEs; sixth forms and universities set their own entry rules.",
-    "checked": "Codes, papers and series checked on 25 October 2026 against the Pearson specification PDFs listed in sources.",
-    "sources": [
-      {
-        "title": "Pearson Edexcel International GCSE Geography (4GE1) specification, Issue 4, February 2026",
-        "url": "https://qualifications.pearson.com/content/dam/pdf/International%20GCSE/Geography/2017/specification-and-sample-assessments/9781446958360-int-gcse-geog-issue-3.pdf"
-      },
-      {
-        "title": "Pearson: information for centres entering private candidates",
-        "url": "https://qualifications.pearson.com/en/support/support-topics/registrations-and-entries/academic-registrations-and-entries/private-candidates/information-for-centres-entering-private-candidates.html"
-      },
-      {
-        "title": "British Council: school exams for private candidates (Pearson Edexcel International GCSEs)",
-        "url": "https://internationalschools.britishcouncil.org/students/private-candidates"
-      }
-    ]
-  },
+  "nonExam": "No coursework. Fieldwork is examined in Section B of each paper: one enquiry in a Paper 1 physical environment and one in a Paper 2 human environment, each with quantitative and qualitative primary data and at least two secondary sources. TGA pupils do both enquiries at home or locally, with a written guide and a live debrief.",
   "aos": [
     {
       "code": "AO1",
       "desc": "Knowledge of locations, places, processes, environments and different scales",
-      "weight": "15%"
+      "weight": "15-16%"
     },
     {
       "code": "AO2",
-      "desc": "Understanding of geographical concepts and the interrelationships between places, environments and processes",
-      "weight": "25%"
+      "desc": "Understanding of concepts and the interrelationships between places, environments and processes",
+      "weight": "25-26%"
     },
     {
       "code": "AO3",
-      "desc": "Interpret, analyse and evaluate geographical information to make judgements (10% within fieldwork contexts)",
-      "weight": "35%"
+      "desc": "Interpret, analyse and evaluate geographical information and issues to make judgements (about 13% in fieldwork contexts)",
+      "weight": "34-35%"
     },
     {
       "code": "AO4",
-      "desc": "Select, adapt and use skills and techniques to investigate questions and communicate findings (5% within fieldwork)",
-      "weight": "25%"
+      "desc": "Select, adapt and use skills and techniques to investigate questions and communicate findings (about 10% with fieldwork data)",
+      "weight": "24-25%"
     }
   ],
   "units": [
     {
-      "ref": "3.1.1.1",
-      "title": "Natural hazards (3.1.1 The challenge of natural hazards)",
+      "ref": "SK",
+      "title": "Geographical skills (Appendix 4), taught throughout",
+      "paper": "Paper 1 and Paper 2",
+      "year": "Y10",
+      "term": "Autumn",
+      "points": [
+        "Recognise and describe patterns of physical and human features on maps and atlases at different scales.",
+        "Draw, label and interpret sketch maps, diagrams, graphs and photographs, including satellite images.",
+        "Use grid references, scale, symbols and relief on maps, including digital maps and GIS.",
+        "Use simple statistics: means, medians, modes and lines of best fit.",
+        "Integrated skills in each topic: hydrographs, triangular graphs, population pyramids, footprint calculations."
+      ],
+      "keyTerms": [
+        "grid reference",
+        "GIS",
+        "choropleth",
+        "median",
+        "line of best fit"
+      ]
+    },
+    {
+      "ref": "3.1",
+      "title": "Hazardous environments: some places are more hazardous than others",
       "paper": "Paper 1",
       "year": "Y10",
       "term": "Autumn",
       "points": [
-        "Define a natural hazard and distinguish the main types of hazard.",
-        "Explain why some hazards carry greater risk to people than others.",
-        "Factors affecting risk include vulnerability, capacity to cope and the nature of the hazard."
+        "Characteristics, distribution and measurement of tropical cyclones, earthquakes and volcanoes.",
+        "Causes of tropical cyclones: ocean temperature, air pressure, wind shear and the Coriolis force.",
+        "Causes of volcanic and earthquake hazards: plate boundaries and hotspots."
       ],
       "keyTerms": [
-        "natural hazard",
-        "risk",
+        "tropical cyclone",
+        "plate boundary",
+        "hotspot",
+        "Coriolis force"
+      ],
+      "option": "Paper 1 Section A: two of Topics 1 to 3"
+    },
+    {
+      "ref": "3.2",
+      "title": "Hazardous environments: impacts on people and the environment",
+      "paper": "Paper 1",
+      "year": "Y10",
+      "term": "Autumn",
+      "points": [
+        "Why people continue to live in areas at risk from hazards.",
+        "Why some countries are more physically, socially and economically vulnerable than others.",
+        "Shorter- and longer-term impacts of one earthquake, one volcano and one tropical cyclone."
+      ],
+      "keyTerms": [
         "vulnerability",
-        "capacity to cope"
+        "impact",
+        "risk"
       ]
     },
     {
-      "ref": "3.1.1.2",
-      "title": "Tectonic hazards (3.1.1)",
+      "ref": "3.3",
+      "title": "Hazardous environments: managing earthquakes (case studies)",
       "paper": "Paper 1",
       "year": "Y10",
       "term": "Autumn",
       "points": [
-        "Describe plate tectonic theory and the structure of the Earth that supports it.",
-        "Locate earthquakes and volcanoes globally and link them to plate margins.",
-        "Explain how constructive, destructive and conservative margins produce earthquakes and volcanic activity.",
-        "Distinguish primary from secondary effects and immediate from long-term responses.",
-        "Explain why people continue to live in tectonically active areas.",
-        "Evaluate monitoring, prediction, protection and planning as ways to reduce risk.",
-        "Case studies required: two named tectonic events, one in a high-income and one in a low-income country, compared."
+        "Preparation for earthquakes: warning, evacuation, building design, remote sensing and GIS.",
+        "Short-term responses and relief: emergency aid, shelter and supplies.",
+        "Longer-term planning: risk assessment, hazard mapping and rebuilding.",
+        "Case studies: earthquake management in a developed and in a developing or emerging country."
       ],
       "keyTerms": [
-        "plate margin",
-        "epicentre",
-        "focus",
-        "primary effect",
-        "secondary effect",
-        "prediction"
+        "preparation",
+        "relief",
+        "hazard mapping"
       ]
     },
     {
-      "ref": "3.1.1.3",
-      "title": "Weather hazards (3.1.1)",
-      "paper": "Paper 1",
+      "ref": "7.1",
+      "title": "Fragile environments and climate change: environments under threat",
+      "paper": "Paper 2",
       "year": "Y10",
       "term": "Autumn",
       "points": [
-        "Use the general atmospheric circulation model: pressure belts and surface winds.",
-        "Describe where tropical storms occur and link this to atmospheric circulation.",
-        "Explain how tropical storms form and develop, and describe their structure.",
-        "Discuss how climate change may alter their distribution, frequency and intensity.",
-        "Describe primary and secondary effects, and immediate and long-term responses.",
-        "Judge how monitoring, prediction, protection and planning reduce the effects.",
-        "Outline UK weather hazards and evidence that UK weather is becoming more extreme.",
-        "Case studies required: one named tropical storm, and one recent UK extreme weather event with impacts and management."
+        "Distribution and characteristics of the world's fragile environments.",
+        "Causes of desertification (drought, population, fuel, overgrazing) and of deforestation.",
+        "Natural causes of climate change and how human activity enhances the greenhouse effect."
       ],
       "keyTerms": [
-        "tropical storm",
-        "eye",
-        "storm surge",
-        "Coriolis effect",
-        "atmospheric circulation",
-        "extreme weather"
-      ]
+        "fragile environment",
+        "desertification",
+        "deforestation",
+        "enhanced greenhouse effect"
+      ],
+      "option": "Paper 2 Section C: one of Topics 7 to 9"
     },
     {
-      "ref": "3.1.1.4",
-      "title": "Climate change (3.1.1)",
-      "paper": "Paper 1",
+      "ref": "7.2",
+      "title": "Fragile environments and climate change: impacts",
+      "paper": "Paper 2",
       "year": "Y10",
       "term": "Autumn",
       "points": [
-        "Use evidence for climate change from the start of the Quaternary to the present.",
-        "Explain natural causes: orbital changes, volcanic activity and solar output.",
-        "Explain human causes: fossil fuel use, agriculture and deforestation.",
-        "Give an overview of effects on people and the environment.",
-        "Mitigation: alternative energy, carbon capture, tree planting and international agreements.",
-        "Adaptation: changing farming systems, managing water supply and reducing sea-level risk."
-      ],
-      "keyTerms": [
-        "Quaternary",
-        "greenhouse effect",
-        "mitigation",
-        "adaptation",
-        "carbon capture"
-      ]
-    },
-    {
-      "ref": "3.1.2.1",
-      "title": "Ecosystems (3.1.2 The living world)",
-      "paper": "Paper 1",
-      "year": "Y10",
-      "term": "Spring",
-      "points": [
-        "Explain producers, consumers, decomposers, food chains, food webs and nutrient cycling within an ecosystem.",
-        "Show how changing one component affects the balance of the whole system.",
-        "Describe the distribution and characteristics of large-scale global ecosystems (biomes).",
-        "Case study required: a small-scale UK ecosystem, such as a pond or woodland."
-      ],
-      "keyTerms": [
-        "biome",
-        "food web",
-        "nutrient cycle",
-        "decomposer"
-      ]
-    },
-    {
-      "ref": "3.1.2.2",
-      "title": "Tropical rainforests (3.1.2)",
-      "paper": "Paper 1",
-      "year": "Y10",
-      "term": "Spring",
-      "points": [
-        "Describe physical characteristics and how climate, water, soils, plants, animals and people interrelate.",
-        "Explain plant and animal adaptations and issues of biodiversity.",
-        "Describe changing rates of deforestation and its causes (farming, logging, roads, mining, energy, settlement).",
-        "Assess impacts: economic development, soil erosion and contribution to climate change.",
-        "Explain the value of rainforests to people and the environment.",
-        "Evaluate sustainable management: selective logging, conservation, ecotourism, hardwood agreements and debt reduction.",
-        "Case study required: a named tropical rainforest area."
+        "Social, economic and environmental impacts of desertification.",
+        "Impacts of deforestation: biodiversity loss, climate change, development and soil erosion.",
+        "Effects of climate change on fragile environments and people, including sea level and food supply."
       ],
       "keyTerms": [
         "biodiversity",
-        "canopy",
-        "deforestation",
-        "nutrient cycle",
-        "selective logging",
-        "ecotourism"
+        "soil erosion",
+        "sea-level rise"
       ]
     },
     {
-      "ref": "3.1.2.3",
-      "title": "Hot deserts (3.1.2) - option, hot deserts or cold environments",
+      "ref": "7.3",
+      "title": "Fragile environments and climate change: responses",
+      "paper": "Paper 2",
+      "year": "Y10",
+      "term": "Autumn",
+      "points": [
+        "How technology can resolve water shortages in areas threatened by desertification.",
+        "Approaches to sustainable use and management of a rainforest in a named region.",
+        "Responses to climate change by individuals, organisations and governments in two named countries."
+      ],
+      "keyTerms": [
+        "sustainable management",
+        "mitigation",
+        "adaptation"
+      ]
+    },
+    {
+      "ref": "1.1",
+      "title": "River environments: the hydrological cycle",
       "paper": "Paper 1",
       "year": "Y10",
       "term": "Spring",
       "points": [
-        "Describe physical characteristics and the interdependence of climate, water, soils, plants, animals and people.",
-        "Explain adaptations of plants and animals, and biodiversity issues.",
-        "Opportunities: mineral extraction, energy, farming and tourism.",
-        "Challenges: extreme temperatures, water supply and inaccessibility.",
-        "Causes of desertification: climate change, population growth, fuelwood removal, overgrazing, over-cultivation, soil erosion.",
-        "Strategies to reduce desertification: water and soil management, tree planting, appropriate technology.",
-        "Case study required: a named hot desert area."
+        "The hydrological cycle: characteristics, stores and transfers.",
+        "Drainage basin features: source, watershed, channel network and mouth.",
+        "Factors affecting river regimes, including storm hydrographs, land use, abstraction and dams."
       ],
       "keyTerms": [
-        "desertification",
-        "adaptation",
-        "aridity",
-        "appropriate technology"
-      ]
+        "hydrological cycle",
+        "drainage basin",
+        "watershed",
+        "storm hydrograph"
+      ],
+      "option": "Paper 1 Section A: two of Topics 1 to 3"
     },
     {
-      "ref": "3.1.2.4",
-      "title": "Cold environments (3.1.2) - option, hot deserts or cold environments",
+      "ref": "1.2",
+      "title": "River environments: processes and landforms",
       "paper": "Paper 1",
       "year": "Y10",
       "term": "Spring",
       "points": [
-        "Describe physical characteristics and the links between climate, permafrost, soils, plants, animals and people.",
-        "Explain adaptations and biodiversity issues.",
-        "Opportunities: mineral extraction, energy, fishing and tourism.",
-        "Challenges: extreme temperatures, inaccessibility, and providing buildings and infrastructure.",
-        "Explain the value of cold environments as wilderness and why they need protection.",
-        "Evaluate strategies balancing development and conservation: technology, governments, treaties and conservation groups.",
-        "Case study required: a named cold environment."
-      ],
-      "keyTerms": [
-        "permafrost",
-        "tundra",
-        "wilderness",
-        "conservation"
-      ]
-    },
-    {
-      "ref": "3.1.3.1",
-      "title": "UK physical landscapes (3.1.3 Physical landscapes in the UK)",
-      "paper": "Paper 1",
-      "year": "Y10",
-      "term": "Summer",
-      "points": [
-        "Locate the major upland and lowland areas of the UK.",
-        "Locate the major river systems of the UK.",
-        "Apply this overview as the base for the chosen landscape studies."
-      ],
-      "keyTerms": [
-        "upland",
-        "lowland",
-        "river system"
-      ]
-    },
-    {
-      "ref": "3.1.3.2",
-      "title": "Coastal landscapes in the UK (3.1.3) - option, two of coasts, rivers, glaciers",
-      "paper": "Paper 1",
-      "year": "Y10",
-      "term": "Summer",
-      "points": [
-        "Describe wave types and characteristics.",
-        "Explain weathering (mechanical, chemical), mass movement, erosion, longshore drift and deposition.",
-        "Explain how geology and rock type shape coastal forms.",
-        "Explain erosional landforms: headlands, bays, cliffs, wave-cut platforms, caves, arches, stacks.",
-        "Explain depositional landforms: beaches, sand dunes, spits and bars.",
-        "Evaluate hard engineering, soft engineering and managed retreat, with costs and benefits.",
-        "Case studies required: a UK coastline with landforms, and a UK coastal management scheme."
-      ],
-      "keyTerms": [
-        "hydraulic power",
-        "abrasion",
-        "attrition",
-        "longshore drift",
-        "managed retreat"
-      ]
-    },
-    {
-      "ref": "3.1.3.3",
-      "title": "River landscapes in the UK (3.1.3) - option, two of coasts, rivers, glaciers",
-      "paper": "Paper 1",
-      "year": "Y10",
-      "term": "Summer",
-      "points": [
-        "Describe the long profile and changing cross profile of a river and its valley.",
-        "Explain erosion, transportation and deposition processes in rivers.",
-        "Explain landforms: interlocking spurs, waterfalls, gorges, meanders, ox-bow lakes, levees, flood plains, estuaries.",
-        "Explain flood risk factors: precipitation, geology, relief and land use.",
-        "Interpret hydrographs showing the precipitation-discharge relationship.",
-        "Evaluate hard engineering (dams, straightening, embankments, relief channels) and soft engineering (warnings, zoning, tree planting, restoration).",
-        "Case studies required: a UK river valley with landforms, and a UK flood management scheme."
+        "Fluvial erosion, weathering, mass movement, transport and deposition, and factors affecting them.",
+        "How channel shape, profiles, gradient, velocity, discharge and sediment change along a named river.",
+        "Upland and lowland landforms: valleys, interlocking spurs, waterfalls, meanders, oxbow lakes, flood plains, levees."
       ],
       "keyTerms": [
         "long profile",
-        "hydrograph",
         "discharge",
-        "flood plain",
-        "meander"
+        "meander",
+        "levee"
       ]
     },
     {
-      "ref": "3.1.3.4",
-      "title": "Glacial landscapes in the UK (3.1.3) - option, two of coasts, rivers, glaciers",
+      "ref": "1.3",
+      "title": "River environments: importance to people and management (case studies)",
+      "paper": "Paper 1",
+      "year": "Y10",
+      "term": "Spring",
+      "points": [
+        "Uses of water, rising demand and supply; areas of water shortage and surplus.",
+        "Variations in water quality and the storage and supply of clean water.",
+        "Causes of river flooding and its prediction and prevention.",
+        "Case studies: river management in a developed and in a developing or emerging country."
+      ],
+      "keyTerms": [
+        "water quality",
+        "flood risk",
+        "reservoir"
+      ]
+    },
+    {
+      "ref": "2.1",
+      "title": "Coastal environments: processes and landforms",
+      "paper": "Paper 1",
+      "year": "Y10",
+      "term": "Spring",
+      "points": [
+        "Marine processes, weathering and mass movement at the coast, including longshore drift.",
+        "Influence of geology, vegetation, people and sea-level change on coasts.",
+        "Erosional and depositional landforms: headlands, bays, cliffs, caves, arches, stacks, beaches, spits, bars."
+      ],
+      "keyTerms": [
+        "longshore drift",
+        "wave-cut platform",
+        "spit",
+        "stack"
+      ],
+      "option": "Paper 1 Section A: two of Topics 1 to 3"
+    },
+    {
+      "ref": "2.2",
+      "title": "Coastal environments: coastal ecosystems",
+      "paper": "Paper 1",
+      "year": "Y10",
+      "term": "Spring",
+      "points": [
+        "Distribution and features of coral reefs, mangroves, sand dunes and salt marshes.",
+        "Abiotic and biotic characteristics of one named coastal ecosystem.",
+        "Threats to coastal ecosystems from industry, farming, tourism and deforestation."
+      ],
+      "keyTerms": [
+        "coral reef",
+        "mangrove",
+        "abiotic",
+        "biotic"
+      ]
+    },
+    {
+      "ref": "2.3",
+      "title": "Coastal environments: conflicts and management (case studies)",
+      "paper": "Paper 1",
+      "year": "Y10",
+      "term": "Spring",
+      "points": [
+        "Conflicts between coastal users over conservation or development.",
+        "Causes of coastal flooding and its prediction and prevention.",
+        "Soft and hard engineering and shoreline management plans.",
+        "Case studies: coastal management in a developed and in a developing or emerging country."
+      ],
+      "keyTerms": [
+        "hard engineering",
+        "soft engineering",
+        "shoreline management plan"
+      ]
+    },
+    {
+      "ref": "1B",
+      "title": "Paper 1 Section B: physical fieldwork enquiry",
       "paper": "Paper 1",
       "year": "Y10",
       "term": "Summer",
       "points": [
-        "Describe the maximum extent of UK ice cover in the last ice age.",
-        "Explain freeze-thaw, plucking, abrasion, glacial movement and deposition.",
-        "Explain erosional landforms: corries, arêtes, pyramidal peaks, truncated spurs, troughs, ribbon lakes, hanging valleys.",
-        "Explain transport and deposition landforms: erratics, drumlins and moraines.",
-        "Describe economic activities in glaciated uplands: tourism, farming, forestry and quarrying.",
-        "Discuss land-use conflicts and tensions between development and conservation.",
-        "Case studies required: a UK glaciated upland with landforms, and one used for tourism with impacts and management."
+        "One enquiry with fieldwork in one Paper 1 environment (river, coast or hazards), answered in Section B.",
+        "Primary data must include quantitative and qualitative techniques.",
+        "Secondary data must use at least two different sources for the chosen environment.",
+        "Questions cover the pupil's own enquiry and unfamiliar data from the same environment."
       ],
       "keyTerms": [
-        "freeze-thaw",
-        "plucking",
-        "corrie",
-        "moraine",
-        "till"
+        "primary data",
+        "secondary data",
+        "qualitative",
+        "quantitative"
       ]
     },
     {
-      "ref": "3.2.1",
-      "title": "Urban issues and challenges",
+      "ref": "6.1",
+      "title": "Urban environments: urbanisation",
       "paper": "Paper 2",
-      "year": "Y10",
-      "term": "Summer",
+      "year": "Y11",
+      "term": "Autumn",
       "points": [
-        "Describe global urban change and the drivers of urbanisation: migration and natural increase.",
-        "Explain the rise of megacities and urban trends in high- and low-income countries.",
-        "Case study required: a major city in an LIC or NEE (location, growth, opportunities, challenges).",
-        "Challenges include slums, services, unemployment, pollution, congestion and waste.",
-        "Example required: urban planning that improves life for the urban poor.",
-        "Case study required: a major UK city (migration, opportunities, inequalities, sprawl and commuter settlements).",
-        "Example required: a UK urban regeneration project.",
-        "Describe sustainable urban living and traffic management strategies."
+        "Contrasting urbanisation trends over 50 years, including suburbanisation and counter-urbanisation.",
+        "Factors affecting the rate of urbanisation and the growth of megacities.",
+        "Problems of rapid urbanisation: congestion, transport, employment, crime and environment."
       ],
       "keyTerms": [
         "urbanisation",
         "megacity",
-        "squatter settlement",
-        "regeneration",
-        "brownfield",
-        "urban sprawl"
-      ]
+        "counter-urbanisation"
+      ],
+      "option": "Paper 2 Section A: two of Topics 4 to 6"
     },
     {
-      "ref": "3.2.2",
-      "title": "The changing economic world",
+      "ref": "6.2",
+      "title": "Urban environments: challenges (case studies)",
       "paper": "Paper 2",
       "year": "Y11",
       "term": "Autumn",
       "points": [
-        "Classify countries by development and quality of life; evaluate measures such as GNI, HDI and life expectancy.",
-        "Link the Demographic Transition Model to development.",
-        "Explain physical, economic and historical causes of uneven development, and the consequences.",
-        "Evaluate strategies to reduce the gap: investment, aid, Fairtrade, debt relief, microfinance, intermediate technology.",
-        "Example required: how tourism growth in an LIC or NEE reduces the development gap.",
-        "Case study required: one LIC or NEE (context, economy, TNCs, aid, environment, quality of life).",
-        "Explain UK economic change: de-industrialisation, globalisation, post-industrial economy and policy.",
-        "Example required: how modern industry can be more environmentally sustainable.",
-        "Discuss rural change, the north-south divide, and the UK's trade, cultural and political links."
+        "Factors affecting urban land use: location, accessibility and land values.",
+        "Urban challenges in a named developed country: resource demands, waste and segregation.",
+        "Urban challenges in a named developing or emerging country: squatter settlements and informal economy.",
+        "Case studies: urban environments in a developed and in a developing or emerging country."
       ],
       "keyTerms": [
-        "GNI",
-        "HDI",
-        "Demographic Transition Model",
-        "TNC",
-        "globalisation",
-        "de-industrialisation"
+        "land use",
+        "squatter settlement",
+        "segregation"
       ]
     },
     {
-      "ref": "3.2.3.1",
-      "title": "Resource management (3.2.3 The challenge of resource management) - compulsory",
+      "ref": "6.3",
+      "title": "Urban environments: sustainable management",
       "paper": "Paper 2",
       "year": "Y11",
-      "term": "Spring",
+      "term": "Autumn",
       "points": [
-        "Explain the importance of food, water and energy for wellbeing.",
-        "Describe global inequalities in resource supply and consumption.",
-        "Explain changing UK demand and provision for food, water and energy.",
-        "Food: demand for imports, seasonal and organic food, food miles, local sourcing, agribusiness.",
-        "Water: changing demand, water quality, and matching supply to surplus and deficit areas.",
-        "Energy: the changing energy mix, fossil fuel decline and growth of renewables."
+        "Development of the rural-urban fringe; greenfield versus brownfield sites.",
+        "Strategies to make urban living more sustainable and improve quality of life.",
+        "Roles of planners, politicians, developers and industrialists in managing urban challenges."
       ],
       "keyTerms": [
-        "resource",
-        "food miles",
+        "rural-urban fringe",
+        "brownfield",
+        "sustainable"
+      ]
+    },
+    {
+      "ref": "4.1",
+      "title": "Economic activity and energy: economic sectors",
+      "paper": "Paper 2",
+      "year": "Y11",
+      "term": "Autumn",
+      "points": [
+        "Classification of employment into four sectors and differences by level of development (Clark Fisher).",
+        "Factors affecting the location of economic activity and how they change over time.",
+        "Reasons for changes in sector employment: raw materials, globalisation, mechanisation, policy."
+      ],
+      "keyTerms": [
+        "primary",
+        "quaternary",
+        "Clark Fisher model"
+      ],
+      "option": "Paper 2 Section A: two of Topics 4 to 6"
+    },
+    {
+      "ref": "4.2",
+      "title": "Economic activity and energy: impacts of sector change",
+      "paper": "Paper 2",
+      "year": "Y11",
+      "term": "Autumn",
+      "points": [
+        "Impacts of sector shifts in a named developed and a named developing or emerging country.",
+        "Informal employment in a named megacity: causes and characteristics.",
+        "Malthus and Boserup on population and resources."
+      ],
+      "keyTerms": [
+        "informal employment",
+        "Malthus",
+        "Boserup"
+      ]
+    },
+    {
+      "ref": "4.3",
+      "title": "Economic activity and energy: energy (case studies)",
+      "paper": "Paper 2",
+      "year": "Y11",
+      "term": "Autumn",
+      "points": [
+        "Global variation in energy demand and production and the factors behind it.",
+        "Advantages and disadvantages of non-renewable and renewable energy sources.",
+        "Managing energy sustainably through education, efficiency and conservation.",
+        "Case studies: energy resource management in a developed and in a developing or emerging country."
+      ],
+      "keyTerms": [
         "energy mix",
-        "water stress"
-      ]
-    },
-    {
-      "ref": "3.2.3.2",
-      "title": "Food (3.2.3) - option, one of food, water or energy",
-      "paper": "Paper 2",
-      "year": "Y11",
-      "term": "Spring",
-      "points": [
-        "Describe global food surplus and deficit and calorie supply.",
-        "Explain rising consumption and the supply factors affecting food security.",
-        "Assess impacts of insecurity: famine, undernutrition, soil erosion, price rises and unrest.",
-        "Evaluate strategies: irrigation, hydroponics, new green revolution, biotechnology, appropriate technology.",
-        "Example required: a large-scale agricultural development with pros and cons.",
-        "Explain sustainable options: organic farming, permaculture, urban farming, waste reduction.",
-        "Example required: a local scheme in an LIC or NEE increasing sustainable food supply."
-      ],
-      "keyTerms": [
-        "food security",
-        "undernutrition",
-        "green revolution",
-        "permaculture"
-      ]
-    },
-    {
-      "ref": "3.2.3.3",
-      "title": "Water (3.2.3) - option, one of food, water or energy",
-      "paper": "Paper 2",
-      "year": "Y11",
-      "term": "Spring",
-      "points": [
-        "Describe global water surplus and deficit patterns.",
-        "Explain rising consumption and supply factors: climate, geology, pollution, over-abstraction, poverty.",
-        "Assess impacts of insecurity: disease, pollution, reduced output and conflict.",
-        "Evaluate supply strategies: diversion, storage, dams and reservoirs, transfers, desalination.",
-        "Example required: a large-scale water transfer scheme with advantages and disadvantages.",
-        "Explain sustainable options: conservation, groundwater management, recycling and grey water.",
-        "Example required: a local scheme in an LIC or NEE increasing sustainable water supply."
-      ],
-      "keyTerms": [
-        "water stress",
-        "over-abstraction",
-        "desalination",
-        "water transfer",
-        "grey water"
-      ]
-    },
-    {
-      "ref": "3.2.3.4",
-      "title": "Energy (3.2.3) - option, one of food, water or energy",
-      "paper": "Paper 2",
-      "year": "Y11",
-      "term": "Spring",
-      "points": [
-        "Describe global distribution of energy consumption and supply.",
-        "Explain rising consumption and supply factors: geography, cost, technology and politics.",
-        "Assess impacts of insecurity on sensitive areas, economies, environment and conflict.",
-        "Compare renewable sources and non-renewable sources including fossil fuels and nuclear.",
-        "Example required: extraction of a fossil fuel with advantages and disadvantages.",
-        "Explain sustainable options: energy conservation, sustainable design, demand reduction, cleaner fossil fuel technology.",
-        "Example required: a local renewable energy scheme in an LIC or NEE."
-      ],
-      "keyTerms": [
         "energy security",
-        "renewable",
-        "non-renewable",
-        "carbon footprint"
+        "renewable"
       ]
     },
     {
-      "ref": "3.3.1",
-      "title": "Issue evaluation",
-      "paper": "Paper 3",
+      "ref": "2B",
+      "title": "Paper 2 Section B: human fieldwork enquiry",
+      "paper": "Paper 2",
       "year": "Y11",
-      "term": "Spring",
+      "term": "Autumn",
       "points": [
-        "Study a contemporary geographical issue drawn from compulsory content, shown through a pre-release booklet.",
-        "The booklet is issued 12 weeks before the exam; a clean copy is given in the exam.",
-        "Sources may include maps, graphs, statistics, photographs, satellite images and stakeholder statements.",
-        "Link physical (3.1) and human (3.2) themes across several scales.",
-        "Weigh stakeholders' views, advantages and disadvantages, and alternative options.",
-        "Make and justify a decision in an extended evaluative answer."
+        "One enquiry with fieldwork in one Paper 2 environment (economic activity, rural or urban).",
+        "Primary data with quantitative and qualitative techniques; at least two secondary sources.",
+        "Questions cover the pupil's own enquiry and unfamiliar fieldwork data."
       ],
       "keyTerms": [
-        "stakeholder",
-        "pre-release",
-        "evaluation",
-        "synoptic"
+        "environmental quality survey",
+        "land use survey",
+        "questionnaire"
       ]
     },
     {
-      "ref": "3.3.2",
-      "title": "Fieldwork",
-      "paper": "Paper 3",
-      "year": "Y10",
+      "ref": "5",
+      "title": "Rural environments (option not taught: school choice)",
+      "paper": "Paper 2",
+      "year": "Y11",
       "term": "Summer",
       "points": [
-        "Complete two geographical enquiries using primary data collected in the field.",
-        "The enquiries must be in two contrasting environments, with at least two outside-school visits.",
-        "Both physical and human geography must be covered, and at least one must show their interaction.",
-        "Know the six enquiry stages: question, data collection, presentation, analysis, conclusions, evaluation.",
-        "Choose and justify sampling methods and assess risks in the field.",
-        "Present and analyse data using suitable graphical, cartographic and statistical techniques.",
-        "Evaluate method, reliability and the limits of conclusions.",
-        "The school submits a signed fieldwork statement; students state their own enquiry titles in the exam."
+        "Biomes, ecosystem goods and services and farming systems.",
+        "Rural change in a named developed and a named developing or emerging country.",
+        "Diversification and sustainable rural strategies; roles of different groups."
       ],
-      "keyTerms": [
-        "primary data",
-        "sampling",
-        "hypothesis",
-        "reliability",
-        "anomaly"
-      ]
+      "option": "Paper 2 Section A: not chosen (Topics 4 and 6 taught)"
     },
     {
-      "ref": "3.4",
-      "title": "Geographical skills",
-      "paper": "Paper 1, Paper 2 and Paper 3",
-      "year": "Y10",
-      "term": "Autumn",
+      "ref": "8",
+      "title": "Globalisation and migration (option not taught: school choice)",
+      "paper": "Paper 2",
+      "year": "Y11",
+      "term": "Summer",
       "points": [
-        "Cartographic: atlas and OS maps, grid references, distance, direction, gradient, relief, photographs, sketch maps.",
-        "Graphical: choose, draw and read bar, line, pie, histogram, scatter, pyramid, choropleth, isoline and flow-line maps.",
-        "Numerical: number, area, scale, ratio, proportion, frequency and data-sheet design.",
-        "Statistical: averages, spread, cumulative frequency, percentage change, percentiles and misleading presentation.",
-        "Use qualitative and quantitative data, including GIS and satellite imagery.",
-        "Enquiry and argument: frame questions and build evidenced conclusions.",
-        "Literacy: communicate clearly in writing for different audiences."
+        "Growth of the global economy; WTO, IMF and TNCs; push and pull factors of migration.",
+        "Impacts of globalisation, migration and tourism on different groups.",
+        "Managing trade, long-term migration and sustainable tourism."
       ],
-      "keyTerms": [
-        "interquartile range",
-        "choropleth",
-        "isoline",
-        "scatter graph",
-        "median"
-      ]
+      "option": "Paper 2 Section C: not chosen (Topic 7 taught)"
+    },
+    {
+      "ref": "9",
+      "title": "Development and human welfare (option not taught: school choice)",
+      "paper": "Paper 2",
+      "year": "Y11",
+      "term": "Summer",
+      "points": [
+        "Defining and measuring development: GDP per capita, HDI, inequality and corruption indices.",
+        "Uneven development and its impact on welfare in one named country; demographic differences.",
+        "Aid, agreements and top-down versus bottom-up projects."
+      ],
+      "option": "Paper 2 Section C: not chosen (Topic 7 taught)"
     }
   ],
   "commandWords": [
     {
-      "word": "Describe",
-      "meaning": "Set out characteristics, patterns or features"
+      "word": "Identify, state, name",
+      "meaning": "Recall or select one or more pieces of information"
     },
     {
-      "word": "Explain",
-      "meaning": "Give reasons or causes, with development of the point"
+      "word": "Define",
+      "meaning": "State the meaning of a term"
     },
     {
-      "word": "Outline",
-      "meaning": "Give the main points briefly"
-    },
-    {
-      "word": "Suggest",
-      "meaning": "Offer a reasoned idea from the information provided"
+      "word": "Calculate",
+      "meaning": "Produce a numerical answer, showing working"
     },
     {
       "word": "Compare",
-      "meaning": "Identify similarities and differences"
+      "meaning": "Give similarities and differences, each point relating to both elements"
     },
     {
-      "word": "Assess",
-      "meaning": "Weigh up factors and reach a judgement of importance"
+      "word": "Describe",
+      "meaning": "Give an account of main characteristics or steps; no reasons needed"
     },
     {
-      "word": "Evaluate",
-      "meaning": "Judge strengths and weaknesses and reach a conclusion"
+      "word": "Explain",
+      "meaning": "Give reasons why or how something happens, with justification"
     },
     {
-      "word": "Justify",
-      "meaning": "Support a decision or view with evidence"
-    },
-    {
-      "word": "To what extent",
-      "meaning": "Weigh evidence for and against and give a reasoned judgement"
+      "word": "Suggest",
+      "meaning": "Apply understanding to give a reasoned explanation of what may happen"
     },
     {
       "word": "Examine",
-      "meaning": "Look closely at evidence or causes in detail"
+      "meaning": "Break into parts and show how each contributes and how they interrelate"
     },
     {
-      "word": "Using Figure/Resource",
-      "meaning": "Base your answer on the data or source shown"
+      "word": "Assess",
+      "meaning": "Use evidence to judge the relative significance of factors"
+    },
+    {
+      "word": "Analyse",
+      "meaning": "Break an issue into parts and make evidence-based links between them"
+    },
+    {
+      "word": "Evaluate",
+      "meaning": "Weigh strengths, weaknesses and evidence to reach a substantiated judgement"
+    },
+    {
+      "word": "Discuss",
+      "meaning": "Explore different sides of an issue through reasoning or argument"
     }
   ],
   "skills": [
-    "Read and use atlas, OS and sketch maps: grid references, scale, relief and gradient",
-    "Construct and interpret graphs and maps: choropleth, isoline, flow-line, population pyramid, hydrograph",
-    "Calculate averages, spread, percentage change and cumulative frequency",
-    "Interpret photographs and satellite images; use GIS data",
-    "Plan, carry out, present, analyse and evaluate fieldwork enquiries",
-    "Write extended, evidenced geographical answers (6 and 9 marks) with accurate SPaG"
+    "Atlas, OS and digital map skills: grid references, scale, symbols, relief",
+    "Graphs and diagrams: hydrographs, triangular graphs, population pyramids, flow lines, proportional symbols",
+    "Photograph and satellite image interpretation, including GIS",
+    "Simple statistics: means, medians, modes, lines of best fit; carbon and ecological footprints",
+    "Fieldwork: enquiry design, data collection, presentation, analysis, conclusion and evaluation"
   ],
   "prerequisites": [
     {
-      "from": "KS2 Restless Earth: layers of the Earth, plates, volcanoes",
-      "to": "3.1.1.2"
+      "from": "Year 9 Summer 1: tectonic hazards (Geog.3 chapter 5)",
+      "to": "3.1"
     },
     {
-      "from": "KS2 Rivers and the water cycle",
-      "to": "3.1.3.3"
+      "from": "Year 8 Spring 2: weather, climate and climate change (Geog.2 chapters 5 and 6)",
+      "to": "7.1"
     },
     {
-      "from": "KS2 South America and the Amazon rainforest",
-      "to": "3.1.2.2"
+      "from": "Year 7 Spring 2: rivers (Geog.1 chapter 5)",
+      "to": "1.2"
     },
     {
-      "from": "KS3 Coasts: waves, landforms and management",
-      "to": "3.1.3.2"
+      "from": "Year 8 Spring 1: coasts (Geog.2 chapter 4)",
+      "to": "2.1"
     },
     {
-      "from": "KS3 UK and its connections; population distribution",
-      "to": "3.2.1"
+      "from": "Year 8 Autumn 2: urban change (Geog.2 chapter 3)",
+      "to": "6.1"
     },
     {
-      "from": "KS3 Resources, energy and sustainability",
-      "to": "3.2.3.1"
+      "from": "Year 9 Spring 1: earning a living and globalisation (Geog.3 chapter 3)",
+      "to": "4.1"
     },
     {
-      "from": "KS2 and KS3 OS map and grid reference skills",
-      "to": "3.4"
+      "from": "Year 9 Autumn 2: natural resources and energy (Geog.3 chapter 2)",
+      "to": "4.3"
     },
     {
-      "from": "KS3 Lake District landscape and stewardship conflicts",
-      "to": "3.3.1"
+      "from": "Years 7 and 8: map skills, GIS and home fieldwork",
+      "to": "1B"
     }
   ],
   "links": [
     {
       "with": "History",
       "topic": "Victorian cities and public health",
-      "unitRef": "3.2.1",
-      "how": "Geography explains urban growth and inequality; History supplies the 1854 Soho cholera outbreak and John Snow's mapping as a shared hub"
+      "unitRef": "6.2",
+      "how": "Geography explains urban growth and challenges; History supplies the 1854 cholera outbreak and John Snow's map"
     },
     {
       "with": "Science (Biology)",
-      "topic": "Disease, water-borne infection and sanitation",
-      "unitRef": "3.2.1",
-      "how": "Biology explains pathogens and spread; Geography maps outbreaks and links them to slums and clean water"
+      "topic": "Ecosystems, deforestation and the carbon cycle",
+      "unitRef": "7.2",
+      "how": "Biology explains ecosystems and cycles; Geography explains threats to fragile environments and responses"
+    },
+    {
+      "with": "Science (Physics and Chemistry)",
+      "topic": "Energy resources and the greenhouse effect",
+      "unitRef": "4.3",
+      "how": "Science explains energy transfers and greenhouse gases; Geography weighs energy mixes and security"
     },
     {
       "with": "Mathematics",
-      "topic": "Data handling, scatter graphs and percentage change",
-      "unitRef": "3.4",
-      "how": "Maths teaches the techniques; Geography applies them to fieldwork and development data"
+      "topic": "Statistics and graphs in fieldwork",
+      "unitRef": "1B",
+      "how": "Maths teaches averages and graphing; Geography applies them to fieldwork data"
     },
     {
-      "with": "Science (Physics)",
-      "topic": "Energy transfer, pressure and the Coriolis effect",
-      "unitRef": "3.1.1.3",
-      "how": "Physics explains evaporation, latent heat and air pressure that drive tropical storms"
-    },
-    {
-      "with": "Science (Chemistry/Physics)",
-      "topic": "Greenhouse gases, fossil fuels and renewable energy",
-      "unitRef": "3.1.1.4",
-      "how": "Science explains the greenhouse effect and combustion; Geography covers causes, mitigation and adaptation"
-    },
-    {
-      "with": "Science (Biology)",
-      "topic": "Ecosystems, adaptation and food webs",
-      "unitRef": "3.1.2.1",
-      "how": "Biology provides adaptation and energy-flow ideas; Geography applies them to biomes and human impact"
-    },
-    {
-      "with": "History",
-      "topic": "Industrial Revolution and de-industrialisation",
-      "unitRef": "3.2.2",
-      "how": "History explains the rise of coal, factories and towns; Geography explains their decline and the north-south divide"
-    },
-    {
-      "with": "History",
-      "topic": "Whitechapel inner-city housing and migration, c1870-c1900",
-      "unitRef": "3.2.1",
-      "how": "History uses Whitechapel as a historic environment; Geography studies the same urban processes today"
-    },
-    {
-      "with": "Science (Chemistry)",
-      "topic": "Water treatment, desalination and pollution",
-      "unitRef": "3.2.3.3",
-      "how": "Chemistry explains separation and purification; Geography evaluates supply schemes"
-    },
-    {
-      "with": "Religious Education / Citizenship",
-      "topic": "Stewardship, fairness and sustainable use of resources",
-      "unitRef": "3.2.3.1",
-      "how": "RE and Citizenship examine duty to protect resources and fairness; Geography supplies the evidence"
-    },
-    {
-      "with": "English",
-      "topic": "Extended argument and evaluative writing",
-      "unitRef": "3.3.1",
-      "how": "English develops structured argument; Geography applies it to 9-mark and issue-evaluation answers"
-    },
-    {
-      "with": "Design and Technology",
-      "topic": "Appropriate and intermediate technology",
-      "unitRef": "3.2.2",
-      "how": "D&T design thinking links to low-cost technologies used to reduce the development gap"
+      "with": "Business",
+      "topic": "Location of economic activity and globalisation",
+      "unitRef": "4.1",
+      "how": "Business studies firms' location choices; Geography explains sector change and its impacts"
     }
   ],
-  "contextNote": "Unit-ref mapping: the school's slides follow the Oxford AQA textbook (Geog.1/Geog.2) chapter numbers, for example '3.5 Typhoon Haiyan', '4.1 What Causes Waves and Tides', '7.6 Reducing the Risks of Desertification'. These are NOT AQA numbers. Use this pack's AQA refs: Haiyan, tropical storms and atmospheric circulation sit in 3.1.1.3 (Weather hazards); hot desert and desertification (including Drive '7.6') sit in 3.1.2.3; Oxford coasts material sits in 3.1.3.2; water resource units sit in 3.2.3.3 with resource context in 3.2.3.1. Always map slides to the AQA ref, never to the chapter number. Section refs 3.1.1, 3.1.2, 3.1.3 and 3.2.3 are split into AQA sub-sections so the coverage list is exact.",
+  "contextNote": "Climate change content (7.1) must be taught accurately, including natural causes and the enhanced greenhouse effect; teach what the specification requires. Hazard impacts are taught factually without distressing images.",
   "gaps": [
-    "AQA's own command-word glossary was not on the pages opened; the command words listed are those used in AQA question papers and should be checked against the glossary or past papers.",
-    "Content was read from AQA's web summaries of the subject content, not the full specification PDF; named-example wording should be checked against the PDF.",
-    "Options in this file: hot deserts and cold environments (one required), coasts, rivers and glaciers (two required), and food, water, energy (one required). School lessons so far show hot deserts and water; the other choices are not yet confirmed.",
-    "Fieldwork route for online pupils: the spec needs two outside-school enquiries in contrasting environments with primary data. Online pupils need an agreed route (for example supervised local fieldwork with a parent or tutor using a standard data-collection pack, or a residential or partner-centre day) and a signed centre statement. Remote or secondary data alone does not meet the requirement.",
-    "AQA assessment dates and the pre-release booklet date for the sitting were not checked.",
-    "Year and term placement is the recommended sequence, not an AQA requirement."
+    "Question papers, mark schemes and grade boundaries were not opened.",
+    "Option choices are the school's: Paper 1 rivers and coasts with hazards also taught (pupils answer two of three); Paper 2 Section A urban environments and economic activity and energy; Section C fragile environments and climate change. TO CONFIRM.",
+    "Case studies (four in-depth, a developed and a developing or emerging country in each paper) are not yet chosen: TO CONFIRM.",
+    "Fieldwork sites depend on where each pupil lives: TO CONFIRM a standard home or local enquiry pack for rivers or coasts and for an urban environmental quality survey.",
+    "Portal geography lessons (y10 52, y11 22) were written for AQA 8035: hazards, rivers, coasts, urban, resources and fieldwork lessons are reusable with 4GE1 command words; hot deserts, cold environments, Paper 3 and AQA-only case-study framing are retired or adapted (lessons are a later stage).",
+    "The school's KS4 Oxford AQA scheme (oxo_gegaq20 files) and the intent's AQA long-term plan are used for order and activities only where the content is on 4GE1."
   ]
 }

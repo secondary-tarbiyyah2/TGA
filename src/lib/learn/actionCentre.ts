@@ -24,7 +24,8 @@ export type ActionArea =
   | "Pupils"
   | "Safeguarding"
   | "Admissions"
-  | "Recruitment";
+  | "Recruitment"
+  | "Revision";
 export type ActionItem = { id: string; area: ActionArea; urgency: Urgency; title: string; detail: string; href: string; cta: string; who?: string; people?: { id: string; name: string }[] };
 export type Role = "teach" | "admin" | "student" | "family";
 
@@ -35,7 +36,7 @@ export type CategoryIcon = "shieldAlert" | "userCheck" | "notebookPen" | "backpa
 export const CATEGORIES: { key: CategoryKey; label: string; icon: CategoryIcon; areas: ActionArea[] }[] = [
   { key: "safeguarding", label: "Safeguarding", icon: "shieldAlert", areas: ["Safeguarding"] },
   { key: "attendance", label: "Attendance", icon: "userCheck", areas: ["Registers", "Absence"] },
-  { key: "classwork", label: "Classwork", icon: "notebookPen", areas: ["Homework", "Marking"] },
+  { key: "classwork", label: "Classwork", icon: "notebookPen", areas: ["Homework", "Marking", "Revision"] },
   { key: "pupils", label: "Pupils and SEND", icon: "backpack", areas: ["SEND", "Child details", "Pupils"] },
   { key: "quran", label: "Qur'an", icon: "bookMarked", areas: ["Qur'an"] },
   { key: "admissions", label: "Admissions", icon: "userRoundPlus", areas: ["Admissions"] },
@@ -122,6 +123,7 @@ export async function loadStaffItems(role: "teach" | "admin"): Promise<ActionIte
   }
 
   items.push(...(await loadSendItems(base)));
+  items.push(...(await loadRevisionItems(base)));
   if (role === "teach") items.push(...(await loadQuranTeacherItems()));
   if (role === "admin") items.push(...(await loadAdminItems().catch(() => [] as ActionItem[])));
   return items;
@@ -228,6 +230,53 @@ async function loadAdminItems(): Promise<ActionItem[]> {
   if (!enrol.error) {
     const n = new Set(((enrol.data as { child_id: string }[]) || []).map((r) => r.child_id)).size;
     if (n) out.push({ id: "adm-new-pupils", area: "Pupils", urgency: "info", title: `${plural(n, "new pupil")} this week`, detail: "Check their details are complete and they are in the right classes.", href: "/admin/pupils", cta: "Open pupils" });
+  }
+  return out;
+}
+
+/**
+ * Revision packs waiting for a teacher (Tafweed T33, migration 0184): drafts
+ * the portal made when every lesson in a unit was signed off, and questions
+ * drafted by AI. They clear once the pack is checked or the questions approved.
+ * Fails quietly before 0184 is deployed (the columns don't exist yet).
+ */
+async function loadRevisionItems(base: string): Promise<ActionItem[]> {
+  const supabase = getSupabaseClient();
+  if (!supabase) return [];
+  const out: ActionItem[] = [];
+  const link = (u: { year: string; subject_slug: string; unit: string }) =>
+    `${base}/curriculum?year=${encodeURIComponent(u.year)}&subject=${encodeURIComponent(u.subject_slug)}&unit=${encodeURIComponent(u.unit)}&tab=revision`;
+  const yearLabel = (y: string) => y.replace(/^y/, "Year ");
+  const drafts = await supabase.from("revision_units").select("id, subject, subject_slug, year, unit, auto_created_at").not("auto_created_at", "is", null).is("checked_at", null).order("auto_created_at", { ascending: false }).limit(20);
+  for (const u of ((drafts.error ? [] : drafts.data) || []) as { id: string; subject: string; subject_slug: string; year: string; unit: string }[]) {
+    out.push({
+      id: `rev-draft-${u.id}`,
+      area: "Revision",
+      urgency: "soon",
+      title: `Revision pack ready to check: ${u.subject}, ${u.unit} (${yearLabel(u.year)})`,
+      detail: "Every lesson in this unit is signed off, so a draft pack was made. Check the questions and the to-do list, then show it to pupils.",
+      href: link(u),
+      cta: "Check the pack",
+    });
+  }
+  const pend = await supabase.from("revision_questions").select("unit_id, revision_units(subject, subject_slug, year, unit)").eq("review", "pending").limit(500);
+  const byUnit = new Map<string, { n: number; u: { subject: string; subject_slug: string; year: string; unit: string } }>();
+  for (const r of ((pend.error ? [] : pend.data) || []) as unknown as { unit_id: string; revision_units: { subject: string; subject_slug: string; year: string; unit: string } | null }[]) {
+    if (!r.revision_units) continue;
+    const cur = byUnit.get(r.unit_id) || { n: 0, u: r.revision_units };
+    cur.n++;
+    byUnit.set(r.unit_id, cur);
+  }
+  for (const [id, { n, u }] of byUnit) {
+    out.push({
+      id: `rev-pending-${id}`,
+      area: "Revision",
+      urgency: "soon",
+      title: `${plural(n, "drafted question")} to check: ${u.subject}, ${u.unit} (${yearLabel(u.year)})`,
+      detail: "Pupils see none of these until you approve them.",
+      href: link(u),
+      cta: "Check questions",
+    });
   }
   return out;
 }
