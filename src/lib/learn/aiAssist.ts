@@ -12,10 +12,10 @@ export const AI_DISCLAIMER = "Drafted by AI from your notes. Check before sendin
 export type AiStatus = {
   configured: boolean;
   daily_limit?: number;
-  can: { report_comment: boolean; tarbiyah_note: boolean; message_triage: boolean };
+  can: { report_comment: boolean; tarbiyah_note: boolean; message_triage: boolean; revision_questions?: boolean };
 };
 
-const OFF: AiStatus = { configured: false, can: { report_comment: false, tarbiyah_note: false, message_triage: false } };
+const OFF: AiStatus = { configured: false, can: { report_comment: false, tarbiyah_note: false, message_triage: false, revision_questions: false } };
 
 let statusPromise: Promise<AiStatus> | null = null;
 
@@ -44,7 +44,7 @@ export function useAiStatus(): AiStatus | null {
   return status;
 }
 
-export function aiAssist(task: "report_comment" | "tarbiyah_note" | "triage_message" | "triage_batch", body: Record<string, unknown>): Promise<EdgeResult> {
+export function aiAssist(task: "report_comment" | "tarbiyah_note" | "triage_message" | "triage_batch" | "revision_questions", body: Record<string, unknown>): Promise<EdgeResult> {
   return callEdgeFunction("ai-assist", { task, ...body });
 }
 

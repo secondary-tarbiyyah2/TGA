@@ -17,6 +17,8 @@
 // POST { task: "triage_batch", thread_ids: string[] (max 10) }
 //   -> { ok, results: { [thread_id]: triage | null }, stopped? }
 //
+// POST { task: "revision_questions", unit_id, count? (3-12, default 8) }
+//   -> { ok, drafted }  questions saved as 'pending' for a teacher to approve
 // POST { task: "check" }  one tiny call to test key, credit and model
 //   -> { ok, model } or ai_failed with a plain-English detail
 //
@@ -48,6 +50,7 @@ import {
   type ThreadMessage,
   type TriageResult,
 } from "./prompts.ts";
+import { buildRevisionPrompt, validateRevisionOutput, type DraftQuestion, type LessonForPrompt } from "./revision.ts";
 
 const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
 const anonKey = Deno.env.get("SUPABASE_ANON_KEY")!;
@@ -59,6 +62,8 @@ const DAILY_LIMIT = (() => {
 
 const STAFF = ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover"];
 const WRITERS = ["head_teacher", "admin", "teacher", "teaching_assistant_cover"];
+// Same roles as the revision_questions write policy (0094).
+const PACK_WRITERS = ["head_teacher", "admin", "teacher"];
 
 const NOT_SET_UP = { ok: false, error: "ai_not_configured", detail: claudeErrorMessage({ error: "not_configured" }) };
 
@@ -208,7 +213,7 @@ Deno.serve(async (req) => {
   const task = String(body.task || "");
 
   if (task === "status") {
-    return jsonResponse({ ok: true, configured: isClaudeConfigured(), daily_limit: DAILY_LIMIT, can: { report_comment: isWriter, tarbiyah_note: isWriter, message_triage: true } });
+    return jsonResponse({ ok: true, configured: isClaudeConfigured(), daily_limit: DAILY_LIMIT, can: { report_comment: isWriter, tarbiyah_note: isWriter, message_triage: true, revision_questions: caller.roles.some((r) => PACK_WRITERS.includes(r)) } });
   }
 
   if (!isClaudeConfigured()) return jsonResponse(NOT_SET_UP, 503);
@@ -246,6 +251,60 @@ Deno.serve(async (req) => {
     await addTokens("tarbiyah_note", res.usage);
     if (!res.ok) return AI_FAILED(res);
     return jsonResponse({ ok: true, note: res.data.note });
+  }
+
+  // Draft quiz questions for a revision pack from the unit's lessons. Saved as
+  // 'pending' (never active), so pupils see none until a teacher approves each.
+  if (task === "revision_questions") {
+    if (!caller.roles.some((r) => PACK_WRITERS.includes(r))) return jsonResponse({ ok: false, error: "forbidden" }, 403);
+    const unitId = typeof body.unit_id === "string" && /^[0-9a-f-]{36}$/i.test(body.unit_id) ? body.unit_id : "";
+    if (!unitId) return jsonResponse({ ok: false, error: "invalid_input", detail: "Missing revision pack." }, 400);
+    const count = Math.max(3, Math.min(12, Number(body.count) || 8));
+    // Read as the caller, so RLS decides what they may see.
+    const { data: unitRow } = await caller.client.from("revision_units").select("id, subject_slug, subject, year, unit").eq("id", unitId).maybeSingle();
+    const unit = unitRow as { id: string; subject_slug: string; subject: string; year: string; unit: string } | null;
+    if (!unit) return jsonResponse({ ok: false, error: "forbidden" }, 403);
+    const { data: lessonRows } = await caller.client
+      .from("curriculum_lessons")
+      .select("lesson_no, title, objectives, content, unit")
+      .eq("subject_slug", unit.subject_slug)
+      .eq("year", unit.year)
+      .order("lesson_no");
+    const lessons = ((lessonRows || []) as (LessonForPrompt & { unit: string | null })[]).filter((l) => (l.unit || "Lessons") === unit.unit);
+    if (!lessons.length) return jsonResponse({ ok: false, error: "invalid_input", detail: "This unit has no lessons in the Lesson library to draft questions from." }, 400);
+    const { data: existing } = await caller.client.from("revision_questions").select("question").eq("unit_id", unit.id).limit(60);
+    const avoid = ((existing || []) as { question: string }[]).map((q) => q.question.slice(0, 160));
+    if (!(await reserve("revision_questions"))) return LIMIT_REACHED();
+    const p = buildRevisionPrompt({ subject: unit.subject, year: unit.year.replace(/^y/, "Year "), unit: unit.unit, lessons, count, avoid });
+    const res = await callClaudeJson<DraftQuestion[]>({ system: p.system, user: p.user, maxTokens: p.maxTokens, timeoutMs: 60_000 }, (raw) => validateRevisionOutput(raw, lessons, count));
+    await addTokens("revision_questions", res.usage);
+    if (!res.ok) return AI_FAILED(res);
+    const stamp = Date.now().toString(36);
+    const rows = res.data.map((q, i) => ({
+      unit_id: unit.id,
+      qkey: `ai-${stamp}-${i + 1}`,
+      lesson_no: q.lesson_no,
+      topic: q.topic,
+      question: q.question,
+      options: q.options,
+      answer: q.answer,
+      explanation: q.explanation || null,
+      hint: q.hint,
+      in_quiz: true,
+      source: "staff",
+      review: "pending",
+      drafted_by_ai: true,
+      active: false,
+      created_by: caller.id,
+    }));
+    // Insert as the caller: the teachers' write policy applies, and the
+    // review trigger keeps every row inactive until approved.
+    const { error: insErr } = await caller.client.from("revision_questions").insert(rows);
+    if (insErr) {
+      console.error("ai-assist revision_questions insert", insErr.message);
+      return jsonResponse({ ok: false, error: "ai_failed", detail: "The questions were drafted but couldn't be saved. Try again." }, 500);
+    }
+    return jsonResponse({ ok: true, drafted: rows.length });
   }
 
   if (task === "triage_message") {
