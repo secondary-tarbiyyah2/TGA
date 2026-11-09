@@ -9,12 +9,20 @@ name: Build lesson decks
 # repo) gets new slides and a new plan as a new version (migration 0179).
 # Runs when lesson content or the generator changes, or on demand (the sync
 # workflow starts it after copying portal edits in).
+#
+# Lessons v3: before building, each lesson's pictures[] are looked up on Wikimedia
+# Commons (scripts/lessons/pictures.mjs: open licences only, never people); the
+# choices are saved back to content/lesson-pictures.json at the end so builds are
+# repeatable. If Commons cannot be reached the slides are built without pictures.
+# Each lesson also gets a pupil PDF (slides pupils need + a worksheet), converted
+# and uploaded with the plan (migration 0189).
 
 on:
   push:
     branches: [main]
     paths:
       - "content/lessons/**"
+      - "content/lesson-pictures.json"
       - "scripts/lessons/**"
       - "src/lib/learn/lessonSchema.mjs"
       - ".github/workflows/build-lesson-decks.yml"
@@ -29,9 +37,10 @@ concurrency:
   group: build-lesson-decks
   cancel-in-progress: false
 
-# Least privilege (security audit T20): this workflow only reads the repo.
+# Least privilege (security audit T20): the only write is saving the picture choices
+# (content/lesson-pictures.json, the last step).
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
@@ -52,7 +61,7 @@ jobs:
         run: |
           FORCE=0
           if [ "${{ github.event.inputs.force }}" = "true" ]; then FORCE=1; fi
-          if [ "${{ github.event_name }}" = "push" ] && git diff --name-only HEAD~1 HEAD 2>/dev/null | grep -qxE "scripts/lessons/(build-decks|deck-parts|lesson-plan).mjs|src/lib/learn/lessonSchema.mjs"; then
+          if [ "${{ github.event_name }}" = "push" ] && git diff --name-only HEAD~1 HEAD 2>/dev/null | grep -qxE "scripts/lessons/(build-decks|deck-parts|deck-v3|lesson-plan).mjs|src/lib/learn/lessonSchema.mjs"; then
             echo "Deck design changed: refreshing all generated decks."
             FORCE=1
           fi
@@ -69,6 +78,19 @@ jobs:
         run: |
           npm ci
           npm install --no-save pptxgenjs@4.0.1 docx@9.5.1
+
+      # Pictures (lessons v3): downloaded images are cached between runs; the choices are in the repo.
+      - name: Cache downloaded lesson pictures
+        uses: actions/cache@v4
+        with:
+          path: .cache/lesson-pictures
+          key: lesson-pictures-${{ hashFiles('content/lesson-pictures.json') }}
+          restore-keys: lesson-pictures-
+
+      - name: Find pictures on Wikimedia Commons
+        continue-on-error: true # never block the build: slides are built without pictures instead
+        timeout-minutes: 20
+        run: node scripts/lessons/pictures.mjs resolve
 
       - uses: supabase/setup-cli@1dedf2c611547ede7232d26866dd3c56ab903bbb # v1.7.3
         with:
@@ -139,3 +161,7 @@ jobs:
           SUPABASE_SERVICE_ROLE_KEY: ${{ steps.keys.outputs.service_role_key }}
           FORCE: ${{ steps.refresh.outputs.force }}
         run: node scripts/lessons/upload-decks.mjs upload out/decks
+
+      - name: Save the picture choices
+        if: always()
+        run: bash scripts/lessons/commit-pictures.sh
