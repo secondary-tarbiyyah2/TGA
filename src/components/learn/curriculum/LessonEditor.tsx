@@ -6,13 +6,21 @@ import { ui } from "@/components/learn/ui";
 import { LinesField, Modal, TextField } from "@/components/learn/curriculum/Modal";
 import { problemsFor, realEditAt, syncNotes, triggerCurriculumSync, when, type SyncNote } from "@/lib/learn/curriculumUnits";
 import type { CurriculumLesson } from "@/lib/learn/curriculum";
+import { BLOCKS, HOOK_TYPES, ROUTINES, ROUTINE_SECTIONS, blockProblems, extrasProblems } from "@/lib/learn/lessonSchema.mjs";
 
 // The lesson as stored in curriculum_lessons.content: the lesson object from
 // content/lessons/<subject>/<year>.json (content/lessons/README.md). Fields this form does not
-// show (slide blocks such as worked examples, board, anything else) are kept as they are.
-type Slide = { heading?: string; bullets?: string[]; note?: string; [block: string]: unknown };
+// show (board, anything else) are kept as they are. Slide blocks (worked examples, charts…) are
+// edited as checked JSON. Shapes and limits: src/lib/learn/lessonSchema.mjs.
+type Slide = { heading?: string; bullets?: string[]; note?: string; routine?: string; [block: string]: unknown };
 type Keyword = { term: string; def: string };
-export type LessonContent = {
+/** A question or task: plain text, or with an answer and minutes ({ q, a, mins }). */
+type Item = string | { q: string; a?: string; mins?: number };
+/** The form's copy of an item, always with all three fields. */
+type ItemRow = { q: string; a: string; mins: string };
+type Hook = { type: string; text: string; options?: string[]; a?: string };
+/** Everything in a lesson except its question lists. */
+type LessonBase = {
   unit: string;
   n: number;
   title: string;
@@ -23,15 +31,19 @@ export type LessonContent = {
   crossCurricular?: string;
   smsc?: string;
   keywords: Keyword[];
-  starter: string[];
   teach: Slide[];
-  practice: string[];
-  independent: string[];
-  exit: string[];
   homework: string | string[];
   send?: string;
+  hook?: Hook;
+  routines?: Record<string, string>;
+  resources?: string[];
   [key: string]: unknown;
 };
+export type LessonContent = LessonBase & { starter: Item[]; practice: Item[]; independent: Item[]; exit: Item[] };
+
+/** The form state: items as rows, so the answer and minutes can be typed beside each question. */
+type FormContent = LessonBase & { starter: ItemRow[]; practice: ItemRow[]; independent: ItemRow[]; exit: ItemRow[] };
+const ITEM_KEYS = ["starter", "practice", "independent", "exit"] as const;
 
 const BLOCK_LABEL: Record<string, string> = {
   model: "a worked example",
@@ -43,17 +55,62 @@ const BLOCK_LABEL: Record<string, string> = {
   code: "a program to trace",
   misconception: "a common mistake and its correction",
   cycle: "a cycle diagram",
+  chart: "a chart",
+  numberline: "a number line",
+  fraction: "fraction bars",
+  diagram: "a concept map",
+  sort: "a card sort",
 };
-const blockOf = (s: Slide) => Object.keys(BLOCK_LABEL).find((k) => s[k] != null);
+const blockOf = (s: Slide) => (BLOCKS as string[]).find((k) => s[k] != null);
+/** A starting point for each block, so staff can see its shape (content/lessons/README.md). */
+const BLOCK_TEMPLATE: Record<string, unknown> = {
+  model: { problem: "", steps: ["", ""], answer: "" },
+  check: { q: "", options: ["", "", "", ""], answer: 0, why: "" },
+  misconception: { wrong: "", right: "" },
+  quote: { text: "", source: "" },
+  compare: { left: { title: "", points: [""] }, right: { title: "", points: [""] }, label: "vs" },
+  timeline: [{ label: "", text: "" }, { label: "", text: "" }, { label: "", text: "" }],
+  table: { head: ["", ""], rows: [["", ""]] },
+  code: { lang: "python", text: "", output: "" },
+  cycle: ["", "", ""],
+  chart: { kind: "bar", title: "", labels: ["", ""], values: [0, 0], unit: "" },
+  numberline: { min: 0, max: 10, step: 1, marks: [{ at: 5, label: "" }] },
+  fraction: { parts: 4, shaded: 1 },
+  diagram: { centre: "", items: ["", "", ""] },
+  sort: { columns: ["", ""], cards: ["", "", "", ""], answer: [0, 1, 0, 1] },
+};
+const ROUTINE_SECTION_LABEL: Record<string, string> = { hook: "Hook", starter: "Starter", teach: "Teaching slides", hinge: "Hinge question", practice: "Guided practice", independent: "Independent", exit: "Exit ticket" };
+const toRow = (x: unknown): ItemRow => {
+  if (x && typeof x === "object") {
+    const o = x as { q?: unknown; a?: unknown; mins?: unknown };
+    return { q: String(o.q ?? ""), a: o.a == null ? "" : String(o.a), mins: o.mins == null ? "" : String(o.mins) };
+  }
+  return { q: String(x ?? ""), a: "", mins: "" };
+};
+/** A row back to the lesson format: plain text unless it has an answer or minutes. */
+const fromRow = (r: ItemRow): Item => {
+  const q = r.q.trim();
+  const a = r.a.trim();
+  const mins = r.mins.trim() ? Number(r.mins) : undefined;
+  if (!a && mins == null) return q;
+  return { q, ...(a ? { a } : {}), ...(mins != null ? { mins } : {}) };
+};
+/** The slide with its block replaced (kind null: no block). */
+function withBlock(t: Slide, kind: string | null, value: unknown): Slide {
+  const x: Slide = { ...t };
+  for (const k of BLOCKS as string[]) delete x[k];
+  if (kind) x[kind] = value;
+  return x;
+}
 const btn = `${ui.btnSecondary} ${ui.sm}`;
 const lines = (a: unknown) => (Array.isArray(a) ? a.map(String) : typeof a === "string" && a ? [a] : []);
 const clean = (a: string[]) => a.map((x) => x.trim()).filter(Boolean);
 
 /** Tidy the form for saving, so the lesson always passes the content checks the slide builder runs. */
-function tidy(c: LessonContent): LessonContent {
-  const out: LessonContent = { ...c, title: c.title.trim(), unit: c.unit.trim() };
-  const lists = ["objectives", "starter", "practice", "independent", "exit"] as const;
-  lists.forEach((k) => (out[k] = clean(out[k])));
+function tidy(c: FormContent): LessonContent {
+  const out = { ...c, title: c.title.trim(), unit: c.unit.trim() } as unknown as LessonContent;
+  out.objectives = clean(c.objectives);
+  ITEM_KEYS.forEach((k) => (out[k] = c[k].filter((r) => r.q.trim()).map(fromRow)));
   out.keywords = c.keywords.map((k) => ({ ...k, term: k.term.trim(), def: k.def.trim() })).filter((k) => k.term);
   out.teach = c.teach.map((s) => {
     const t: Slide = { ...s, heading: (s.heading || "").trim(), bullets: clean(s.bullets || []) };
@@ -73,10 +130,27 @@ function tidy(c: LessonContent): LessonContent {
     if (v) out[k] = v;
     else delete out[k];
   }
+  // Optional extras: left out of the lesson when empty, so untouched lessons do not change.
+  const res = clean(c.resources || []);
+  if (res.length) out.resources = res;
+  else delete out.resources;
+  const routines = Object.fromEntries(Object.entries(c.routines || {}).filter(([, v]) => v));
+  if (Object.keys(routines).length) out.routines = routines;
+  else delete out.routines;
+  if (c.hook && c.hook.type && c.hook.text.trim()) {
+    const opts = clean(c.hook.options || []);
+    out.hook = { type: c.hook.type, text: c.hook.text.trim(), ...(opts.length ? { options: opts } : {}), ...(c.hook.a?.trim() ? { a: c.hook.a.trim() } : {}) };
+  } else delete out.hook;
+  out.teach = out.teach.map((t) => {
+    const x = { ...t };
+    if (!x.routine) delete x.routine;
+    return x;
+  });
   return out;
 }
 
 function problemsOf(c: LessonContent): string[] {
+  const extra = (extrasProblems(c) as string[]).map((x) => `${x[0].toUpperCase()}${x.slice(1)}.`);
   const p: string[] = [];
   if (!c.title) p.push("Give the lesson a title.");
   if (!c.unit) p.push("Say which unit the lesson belongs to.");
@@ -85,13 +159,14 @@ function problemsOf(c: LessonContent): string[] {
   if (c.teach.length < 3 || c.teach.length > 7) p.push("A lesson needs 3 to 7 teaching slides.");
   c.teach.forEach((s, i) => {
     if (!s.heading || (!blockOf(s) && !(s.bullets || []).length)) p.push(`Teaching slide ${i + 1} needs a heading and at least one bullet point.`);
+    (blockProblems(s).problems as string[]).forEach((x) => p.push(`Teaching slide ${i + 1}: ${x}.`));
   });
   if (!c.practice.length) p.push("Add at least one practice question.");
   if (!c.independent.length) p.push("Add at least one independent task.");
   if (!c.exit.length) p.push("Add at least one exit ticket question.");
   if (!(Array.isArray(c.homework) ? c.homework.length : c.homework)) p.push("Add the homework.");
   if ((c.successCriteria || []).length > 3) p.push("Success criteria are at most three lines (all, most, some).");
-  return p;
+  return [...p, ...extra];
 }
 
 type Loaded = { content: LessonContent | null; content_updated_at: string | null; content_updated_by_name: string | null; custom_deck: boolean; rebuild_requested: boolean };
@@ -104,7 +179,7 @@ type Version = { id: string; content: LessonContent; note: string | null; edited
 export function LessonEditor({ lesson, canEdit, onClose, onSaved }: { lesson: CurriculumLesson; canEdit: boolean; onClose: () => void; onSaved: (message: string) => void }) {
   const supabase = getSupabaseClient();
   const [loaded, setLoaded] = useState<Loaded | null>(null);
-  const [c, setC] = useState<LessonContent | null>(null);
+  const [c, setC] = useState<FormContent | null>(null);
   const [note, setNote] = useState("");
   const [rebuild, setRebuild] = useState(false);
   const [busy, setBusy] = useState(false);
@@ -144,7 +219,7 @@ export function LessonEditor({ lesson, canEdit, onClose, onSaved }: { lesson: Cu
   const lessonEditedAt = realEditAt(loaded?.content_updated_by_name, loaded?.content_updated_at);
   const notesHere = problemsFor(allNotes, [`lesson:${lesson.subject_slug}/${lesson.year}/${lesson.lesson_no}`], () => lessonEditedAt);
   const dirty = !!(c && loaded?.content && JSON.stringify(tidy(c)) !== JSON.stringify(tidy(normalise(loaded.content))));
-  const set = <K extends keyof LessonContent>(k: K, v: LessonContent[K]) => setC((x) => (x ? { ...x, [k]: v } : x));
+  const set = <K extends keyof FormContent>(k: K, v: FormContent[K]) => setC((x) => (x ? { ...x, [k]: v } : x));
   const setSlide = (i: number, s: Partial<Slide>) => setC((x) => (x ? { ...x, teach: x.teach.map((t, k) => (k === i ? { ...t, ...s } : t)) } : x));
   const moveSlide = (i: number, dir: -1 | 1) =>
     setC((x) => {
@@ -262,9 +337,12 @@ export function LessonEditor({ lesson, canEdit, onClose, onSaved }: { lesson: Cu
               <LinesField label="Objectives" hint="One per line." value={c.objectives} onChange={(v) => set("objectives", v)} />
               <LinesField label="Success criteria (optional)" hint="Up to three lines: All, Most, Some." value={c.successCriteria || []} onChange={(v) => set("successCriteria", v)} />
               <div className="sm:col-span-2">
-                <LinesField label="Starter" hint="Retrieval questions, one per line." value={c.starter} onChange={(v) => set("starter", v)} />
+                <TextField label="Resources (optional)" hint="One per line. Left empty, the plan lists slides, mini-whiteboard and pen, exercise book." value={(c.resources || []).join("\n")} onChange={(v) => set("resources", v.split("\n"))} multiline />
               </div>
             </fieldset>
+
+            <HookField hook={c.hook} disabled={dis} onChange={(h) => set("hook", h)} />
+            <ItemsField label="Starter" hint="Retrieval questions. Add the answer to show a “Check your answers” slide; minutes set the slide timer." rows={c.starter} disabled={dis} onChange={(v) => set("starter", v)} />
 
             <section aria-labelledby="kw-h" className="space-y-2">
               <h3 id="kw-h" className={ui.sectionTitle}>
@@ -305,7 +383,9 @@ export function LessonEditor({ lesson, canEdit, onClose, onSaved }: { lesson: Cu
                         <TextField label="Heading" value={s.heading || ""} onChange={(v) => setSlide(i, { heading: v })} />
                         <LinesField label={block ? "Bullet points (optional)" : "Bullet points"} hint="One per line." value={s.bullets || []} onChange={(v) => setSlide(i, { bullets: v })} rows={3} />
                         <TextField label="Teacher note" hint="What to say and ask; shown in the speaker notes and the lesson plan" value={s.note || ""} onChange={(v) => setSlide(i, { note: v })} multiline />
-                        {block && <p className="rounded-lg bg-cream px-3 py-2 text-xs text-ink/75">This slide also shows {BLOCK_LABEL[block]}. It is kept as it is.</p>}
+                        <RoutineSelect label="Routine on this slide (optional)" value={s.routine || ""} disabled={dis} onChange={(v) => setSlide(i, { routine: v || undefined })} />
+                        <BlockField slide={s} disabled={dis} onChange={(kind, value) => setC((x) => (x ? { ...x, teach: x.teach.map((t, k) => (k === i ? withBlock(t, kind, value) : t)) } : x))} />
+                        {block && <p className="text-xs text-ink/65">This slide shows {BLOCK_LABEL[block]}.</p>}
                       </fieldset>
                       {canEdit && (
                         <div className="mt-2 flex flex-wrap gap-2">
@@ -331,10 +411,23 @@ export function LessonEditor({ lesson, canEdit, onClose, onSaved }: { lesson: Cu
               )}
             </section>
 
+            <ItemsField label="Practice (guided questions)" rows={c.practice} disabled={dis} onChange={(v) => set("practice", v)} />
+            <ItemsField label="Independent tasks" hint="Usually three: core, extend, stretch." rows={c.independent} disabled={dis} onChange={(v) => set("independent", v)} />
+            <ItemsField label="Exit ticket" hint="Answers go on a teacher-only slide at the end and in the lesson plan." rows={c.exit} disabled={dis} onChange={(v) => set("exit", v)} />
+
+            <section aria-labelledby="routines-h" className="space-y-2">
+              <h3 id="routines-h" className={ui.sectionTitle}>
+                Routines
+              </h3>
+              <p className={ui.hint}>How pupils answer on Teams, shown as a badge on the slide. Left on “Usual”, the starter and hinge question are Show me, guided practice Cold call and the exit ticket Chat waterfall.</p>
+              <div className="grid gap-3 sm:grid-cols-3">
+                {(ROUTINE_SECTIONS as string[]).map((k) => (
+                  <RoutineSelect key={k} label={ROUTINE_SECTION_LABEL[k] || k} value={c.routines?.[k] || ""} disabled={dis} onChange={(v) => set("routines", { ...(c.routines || {}), [k]: v })} />
+                ))}
+              </div>
+            </section>
+
             <fieldset disabled={dis} className="grid gap-4 sm:grid-cols-2">
-              <LinesField label="Practice (guided questions)" hint="One per line." value={c.practice} onChange={(v) => set("practice", v)} />
-              <LinesField label="Independent tasks" hint="One per line, e.g. core, extend, stretch." value={c.independent} onChange={(v) => set("independent", v)} />
-              <LinesField label="Exit ticket" hint="One question per line." value={c.exit} onChange={(v) => set("exit", v)} />
               {Array.isArray(c.homework) ? (
                 <LinesField label="Homework" hint="One per line." value={c.homework} onChange={(v) => set("homework", v)} />
               ) : (
@@ -387,19 +480,154 @@ export function LessonEditor({ lesson, canEdit, onClose, onSaved }: { lesson: Cu
   );
 }
 
-/** Fill in any list the form expects but the stored lesson lacks. */
-function normalise(raw: LessonContent): LessonContent {
+/** Fill in any list the form expects but the stored lesson lacks. Items keep their answers and minutes. */
+function normalise(raw: LessonContent): FormContent {
+  const rows = (a: unknown) => (Array.isArray(a) ? a.map(toRow) : typeof a === "string" && a ? [toRow(a)] : []);
   return {
     ...raw,
     title: String(raw.title || ""),
     unit: String(raw.unit || ""),
     objectives: lines(raw.objectives),
-    starter: lines(raw.starter),
-    practice: lines(raw.practice),
-    independent: lines(raw.independent),
-    exit: lines(raw.exit),
+    starter: rows(raw.starter),
+    practice: rows(raw.practice),
+    independent: rows(raw.independent),
+    exit: rows(raw.exit),
     keywords: Array.isArray(raw.keywords) ? raw.keywords.map((k) => ({ ...k, term: String(k?.term ?? ""), def: String(k?.def ?? "") })) : [],
     teach: Array.isArray(raw.teach) ? raw.teach.map((s) => ({ ...s, bullets: lines(s?.bullets) })) : [],
     homework: Array.isArray(raw.homework) ? raw.homework.map(String) : String(raw.homework ?? ""),
   };
+}
+
+/** Questions with an optional answer and minutes each. */
+function ItemsField({ label, hint, rows, onChange, disabled }: { label: string; hint?: string; rows: ItemRow[]; onChange: (v: ItemRow[]) => void; disabled?: boolean }) {
+  const setRow = (i: number, r: Partial<ItemRow>) => onChange(rows.map((x, k) => (k === i ? { ...x, ...r } : x)));
+  return (
+    <fieldset disabled={disabled} className="space-y-2">
+      <legend className={ui.label}>{label}</legend>
+      <p className={ui.hint}>{hint || "One question per row."} The answer (optional) goes on a “Check your answers” slide and in the lesson plan.</p>
+      <ol className="space-y-2">
+        {rows.map((r, i) => (
+          <li key={i} className="grid gap-2 rounded-lg border border-gold-light/70 p-2 sm:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)_5rem_auto]">
+            <textarea aria-label={`${label} ${i + 1}: question`} value={r.q} onChange={(e) => setRow(i, { q: e.target.value })} rows={2} className={ui.textarea} placeholder="Question or task" />
+            <textarea aria-label={`${label} ${i + 1}: answer`} value={r.a} onChange={(e) => setRow(i, { a: e.target.value })} rows={2} className={ui.textarea} placeholder="Answer (optional)" />
+            <input aria-label={`${label} ${i + 1}: minutes`} type="number" min={1} max={30} value={r.mins} onChange={(e) => setRow(i, { mins: e.target.value })} className={ui.input} placeholder="Mins" />
+            <button type="button" className={ui.btnLinkDanger} onClick={() => onChange(rows.filter((_, k) => k !== i))}>
+              Remove
+            </button>
+          </li>
+        ))}
+      </ol>
+      <button type="button" className={btn} onClick={() => onChange([...rows, { q: "", a: "", mins: "" }])}>
+        + Add a question
+      </button>
+    </fieldset>
+  );
+}
+
+function RoutineSelect({ label, value, onChange, disabled }: { label: string; value: string; onChange: (v: string) => void; disabled?: boolean }) {
+  return (
+    <label className="block">
+      <span className={ui.label}>{label}</span>
+      <select value={value} onChange={(e) => onChange(e.target.value)} disabled={disabled} className={`mt-1 ${ui.select}`}>
+        <option value="">Usual</option>
+        {Object.entries(ROUTINES as Record<string, { label: string }>).map(([id, r]) => (
+          <option key={id} value={id}>
+            {r.label}
+          </option>
+        ))}
+      </select>
+    </label>
+  );
+}
+
+const HOOK_LABEL: Record<string, string> = { question: "A big question", "image-prompt": "Picture this (imagine a scene)", story: "A short story", puzzle: "A puzzle", "odd-one-out": "Odd one out" };
+
+/** The optional hook: a striking first slide straight after the title. */
+function HookField({ hook, onChange, disabled }: { hook?: Hook; onChange: (h: Hook | undefined) => void; disabled?: boolean }) {
+  const h = hook || { type: "", text: "" };
+  const up = (x: Partial<Hook>) => onChange({ ...h, ...x });
+  return (
+    <fieldset disabled={disabled} className="grid gap-3 rounded-xl border border-gold-light p-3 sm:grid-cols-2">
+      <legend className={`${ui.sectionTitle} px-1`}>Hook (optional)</legend>
+      <p className={`sm:col-span-2 ${ui.hint}`}>A full-screen slide straight after the title to grab attention in the first minute.</p>
+      <label className="block">
+        <span className={ui.label}>Kind of hook</span>
+        <select value={h.type} onChange={(e) => (e.target.value ? up({ type: e.target.value }) : onChange(undefined))} className={`mt-1 ${ui.select}`}>
+          <option value="">No hook</option>
+          {(HOOK_TYPES as string[]).map((t) => (
+            <option key={t} value={t}>
+              {HOOK_LABEL[t] || t}
+            </option>
+          ))}
+        </select>
+      </label>
+      {h.type && (
+        <>
+          <TextField label="What it says" hint="At most 240 characters." value={h.text} onChange={(v) => up({ text: v })} multiline />
+          <LinesField label="Options (optional)" hint="2 to 5, one per line. An odd-one-out needs 3 to 5." value={h.options || []} onChange={(v) => up({ options: v })} />
+          <TextField label="Answer or what to draw out (optional)" hint="Goes in the notes and the lesson plan, not on the slide." value={h.a || ""} onChange={(v) => up({ a: v })} multiline />
+        </>
+      )}
+    </fieldset>
+  );
+}
+
+/** A slide's block as JSON (checked as you type), with a template for each kind. */
+function BlockField({ slide, onChange, disabled }: { slide: Slide; onChange: (kind: string | null, value: unknown) => void; disabled?: boolean }) {
+  const kind = blockOf(slide) || "";
+  const [text, setText] = useState(() => (kind ? JSON.stringify(slide[kind], null, 2) : ""));
+  const [error, setError] = useState<string | null>(null);
+  const [open, setOpen] = useState(false);
+  const pick = (k: string) => {
+    if (!k) {
+      setText("");
+      setError(null);
+      return onChange(null, null);
+    }
+    const v = k === kind ? slide[k] : BLOCK_TEMPLATE[k];
+    setText(JSON.stringify(v, null, 2));
+    setError(null);
+    setOpen(true);
+    onChange(k, v);
+  };
+  const edit = (t: string) => {
+    setText(t);
+    try {
+      const v = JSON.parse(t);
+      const problems = blockProblems({ ...withBlock(slide, kind, v), heading: slide.heading }).problems as string[];
+      setError(problems.length ? problems.join("; ") : null);
+      onChange(kind, v);
+    } catch {
+      setError("This is not valid JSON yet (check the commas, quotes and brackets). It is not saved until it is.");
+    }
+  };
+  return (
+    <div className="space-y-2 rounded-lg bg-cream/60 p-2">
+      <div className="flex flex-wrap items-end gap-2">
+        <label className="block">
+          <span className={ui.label}>Slide block (optional)</span>
+          <select value={kind} disabled={disabled} onChange={(e) => pick(e.target.value)} className={`mt-1 ${ui.select}`}>
+            <option value="">None: bullet points only</option>
+            {(BLOCKS as string[]).map((k) => (
+              <option key={k} value={k}>
+                {BLOCK_LABEL[k] ? `${BLOCK_LABEL[k][0].toUpperCase()}${BLOCK_LABEL[k].slice(1)}` : k} ({k})
+              </option>
+            ))}
+          </select>
+        </label>
+        {kind && (
+          <button type="button" className={btn} onClick={() => setOpen((o) => !o)}>
+            {open ? "Hide the block" : "Edit the block"}
+          </button>
+        )}
+      </div>
+      {kind && open && (
+        <label className="block">
+          <span className={ui.hint}>The block as JSON. Its shape is in the lesson format guide (content/lessons/README.md).</span>
+          <textarea value={text} disabled={disabled} onChange={(e) => edit(e.target.value)} rows={Math.min(16, text.split("\n").length + 1)} spellCheck={false} className={`mt-1 font-mono text-xs ${ui.textarea}`} />
+        </label>
+      )}
+      {error && <p className="text-xs text-red-800">{error}</p>}
+    </div>
+  );
 }
