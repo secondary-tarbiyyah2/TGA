@@ -56,7 +56,7 @@ export const aboutDefaults = {
   safeguarding_body:
     "The safety and wellbeing of every child is our first responsibility, with safer-recruitment vetting for every member of staff (enhanced DBS in the UK, overseas checks abroad) and a named Designated Safeguarding Lead.",
   recipe_intro: "Building akhlaq alongside attainment.",
-  // The six values exactly as the RECIPE Character Framework (policy 23) names them.
+  // The six values exactly as the Tarbiyyah Compass Character Framework (policy 23) names them.
   recipe_items: [
     { letter: "R", word: "Resilience", body: "Persevering through difficulty with patience." },
     { letter: "E", word: "Eeman", body: "Faith that shapes action." },

@@ -108,7 +108,7 @@ export function ReportAiDraft({
               {fromRecord && <span className={`mt-1 block font-normal ${ui.hint}`}>From {firstName}&apos;s record. Change it here if needed.</span>}
             </label>
             <label className={ui.label}>
-              RECIPE value this half term (optional)
+              Tarbiyyah Compass value this half term (optional)
               <select value={recipe} onChange={(e) => setRecipe(e.target.value)} className={`mt-1 ${ui.select}`}>
                 <option value="">None</option>
                 {RECIPE.map((r) => (
@@ -137,7 +137,7 @@ export function ReportAiDraft({
           {draft && (
             <div className="rounded-lg border border-gold-light bg-white p-3">
               <p className="whitespace-pre-wrap text-sm text-ink/90">{draft}</p>
-              {recipeLine && <p className="mt-2 border-t border-gold-light/60 pt-2 text-sm text-ink/80">RECIPE: {recipeLine}</p>}
+              {recipeLine && <p className="mt-2 border-t border-gold-light/60 pt-2 text-sm text-ink/80">Compass: {recipeLine}</p>}
               <div className="mt-2 flex flex-wrap gap-2">
                 <button type="button" onClick={() => onUse(draft, "replace")} className={`${ui.btnPrimary} ${ui.sm}`}>
                   {comment.trim() ? "Replace my comment" : "Use draft"}
@@ -149,7 +149,7 @@ export function ReportAiDraft({
                 )}
                 {recipeLine && (
                   <button type="button" onClick={() => onUse(recipeLine, "append")} className={`${ui.btnSecondary} ${ui.sm}`}>
-                    Add RECIPE line
+                    Add Compass line
                   </button>
                 )}
               </div>

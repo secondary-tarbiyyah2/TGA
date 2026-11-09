@@ -10,7 +10,7 @@ agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
 dateOfIssue: 1 September 2026 (version 1.1, updated 28 October 2026 for the January 2027 launch)
 nextReview: 31 August 2027
 basis: Adapted from the Tarbiyyah Secondary Curriculum Policy 2025–26 for a Year 1 to Year 11 online school
-readAlongside: Assessment Policy; Marking and Feedback Policy; Homework and Independent Study Policy; SEND and Inclusion Policy; PSHE Policy; Careers Education and Guidance Policy; Flexible Learning Policy; RECIPE Character Framework; Live Lesson Protocols
+readAlongside: Assessment Policy; Marking and Feedback Policy; Homework and Independent Study Policy; SEND and Inclusion Policy; PSHE Policy; Careers Education and Guidance Policy; Flexible Learning Policy; Tarbiyyah Compass Character Framework; Live Lesson Protocols
 availability: Published on the Academy website and Parent Portal. Available in large print or another accessible format on request.
 ---
 
@@ -84,7 +84,7 @@ Literacy is every teacher's responsibility. Reading is promoted through a readin
 
 ## 8. Personal Development
 
-PSHE in every year group, taught in line with Islam, citizenship, careers education and the RECIPE Character Framework are taught through a planned programme, supported by assemblies, form time and enrichment. The curriculum teaches respect for the law, for others and for people of different faiths and beliefs, as Islam requires, and has regard to the protected characteristics of the Equality Act 2010.
+PSHE in every year group, taught in line with Islam, citizenship, careers education and the Tarbiyyah Compass Character Framework are taught through a planned programme, supported by assemblies, form time and enrichment. The curriculum teaches respect for the law, for others and for people of different faiths and beliefs, as Islam requires, and has regard to the protected characteristics of the Equality Act 2010.
 
 ## 9. Inclusion
 

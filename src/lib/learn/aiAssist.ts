@@ -12,10 +12,10 @@ export const AI_DISCLAIMER = "Drafted by AI from your notes. Check before sendin
 export type AiStatus = {
   configured: boolean;
   daily_limit?: number;
-  can: { report_comment: boolean; tarbiyah_note: boolean; message_triage: boolean };
+  can: { report_comment: boolean; tarbiyah_note: boolean; message_triage: boolean; revision_questions?: boolean };
 };
 
-const OFF: AiStatus = { configured: false, can: { report_comment: false, tarbiyah_note: false, message_triage: false } };
+const OFF: AiStatus = { configured: false, can: { report_comment: false, tarbiyah_note: false, message_triage: false, revision_questions: false } };
 
 let statusPromise: Promise<AiStatus> | null = null;
 
@@ -44,8 +44,13 @@ export function useAiStatus(): AiStatus | null {
   return status;
 }
 
-export function aiAssist(task: "report_comment" | "tarbiyah_note" | "triage_message" | "triage_batch", body: Record<string, unknown>): Promise<EdgeResult> {
+export function aiAssist(task: "report_comment" | "tarbiyah_note" | "triage_message" | "triage_batch" | "revision_questions", body: Record<string, unknown>): Promise<EdgeResult> {
   return callEdgeFunction("ai-assist", { task, ...body });
+}
+
+/** Headteacher/Admin: one tiny call to check the key, credit and model. */
+export function aiCheck(): Promise<EdgeResult> {
+  return callEdgeFunction("ai-assist", { task: "check" });
 }
 
 const MESSAGES: Record<string, string> = {
@@ -57,8 +62,12 @@ const MESSAGES: Record<string, string> = {
   network_error: "Couldn't reach the server. Check your connection and try again.",
 };
 
+// Codes whose server `detail` is already a plain-English sentence written for
+// staff (ai-assist uses claudeErrorMessage for ai_failed / ai_not_configured).
+const SERVER_WORDED = new Set(["invalid_input", "input_too_long", "ai_failed", "ai_not_configured", "ai_daily_limit"]);
+
 export function aiErrorMessage(r: EdgeResult): string {
-  return (r.error === "invalid_input" || r.error === "input_too_long" ? r.detail : undefined) || (r.error && MESSAGES[r.error]) || r.detail || "Something went wrong. Try again.";
+  return (r.error && SERVER_WORDED.has(r.error) ? r.detail : undefined) || (r.error && MESSAGES[r.error]) || r.detail || "Something went wrong. Try again.";
 }
 
 export const TRIAGE_CATEGORY_LABEL: Record<string, string> = {

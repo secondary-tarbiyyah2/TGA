@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Tabs } from "@/components/learn/Tabs";
 import { downloadDeck } from "@/lib/learn/curriculum";
 import { QuestionCard } from "@/components/learn/revision/QuestionCard";
+import { UnitTodos } from "@/components/learn/revision/UnitTodos";
 import { WithArabic } from "@/components/learn/WithArabic";
 import {
   TONE,
@@ -183,6 +184,7 @@ function UnitView({ id, onBack }: { id: string; onBack: () => void }) {
             <p className="text-sm text-ink/65">{unit.subject}</p>
             <h2 className="text-h2 font-semibold text-ink">{unit.title}</h2>
           </div>
+          <UnitTodos unitId={id} />
           <Tabs
             items={[
               { key: "summary" as Tab, label: "1 · Summary" },
