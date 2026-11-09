@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 // Renders every policy in content/policies/*.md to public/policies/<stem>.pdf
 // in the Academy's house style (logo, policy header table, contents,
 // numbered sections, page numbers), so the markdown is the single editable
