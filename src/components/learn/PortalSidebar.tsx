@@ -216,6 +216,12 @@ function SidebarBody({
           </ul>
         ) : (
           <ul className="space-y-0.5">
+            {/* Grouped areas: the everyday links sit under a fixed "Workspace" heading. */}
+            {entries.some((e) => e.kind === "section") && entries[0]?.kind === "link" && (
+              <li role="presentation">
+                <p className="portal-nav-label !pt-1">{entries[0].item.group || "Workspace"}</p>
+              </li>
+            )}
             {entries.map((e) => (
               <li key={e.kind === "link" ? e.item.id || e.item.href : e.section.label} className={e.kind === "section" ? "pt-3" : undefined}>
                 {e.kind === "link" ? (
