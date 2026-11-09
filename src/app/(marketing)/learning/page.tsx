@@ -37,6 +37,8 @@ const KIT = [
   "A webcam, microphone and headset",
   "A wired connection or good Wi-Fi",
   "A quiet place to work",
+  "Recommended: a tablet with a stylus, to write on worksheets and the lesson PDF",
+  "If there is no tablet with a stylus: a printer at home (required)",
 ];
 
 export default async function LearningHubPage() {
@@ -152,6 +154,11 @@ export default async function LearningHubPage() {
               ))}
             </ul>
             <p className="mt-4 text-sm text-ink/70">
+              Every day your child writes on worksheets and the lesson PDF. A tablet with a stylus is the simplest way: any tablet
+              that takes a stylus will do, or a basic graphics tablet that plugs into the laptop. Without one, a printer at home is
+              needed so the pages can be printed and written on by hand.
+            </p>
+            <p className="mt-3 text-sm text-ink/70">
               Lessons run on Microsoft Teams, which is free. We check your setup with you during induction week, which starts on
               Monday 4 January 2027, before the first live lessons on Monday 11 January.
             </p>
