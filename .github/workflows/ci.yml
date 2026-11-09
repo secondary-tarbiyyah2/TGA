@@ -57,7 +57,20 @@ jobs:
         run: node --experimental-strip-types scripts/assess-selftest.ts
       - name: Unit tests (src/**/*.test.ts)
         if: always()
-        run: node --test --experimental-strip-types src/lib/learn/*.test.ts
+        run: node --test --experimental-strip-types src/lib/learn/*.test.ts src/lib/safeMarkdown.test.ts
+      - name: Dependency audit (information only)
+        if: always()
+        # Security audit T20: shows known advisories in production dependencies
+        # in the job summary. Does not fail the build: the live site is a static
+        # export, so most Next.js server advisories do not apply. See
+        # docs/security-audit-2026-11.md (M11).
+        run: |
+          {
+            echo "## npm audit (production dependencies)"
+            echo '```'
+            npm audit --omit=dev --audit-level=none 2>&1 | tail -n 4 || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
 
   a11y:
     runs-on: ubuntu-latest
