@@ -1,13 +1,14 @@
-// Emails the families of a class when a cover teacher has been assigned to
-// one of its lessons. Called by the admin "Suggest cover" panel straight
+// Emails the covering teacher (T30) and the families of a class when a cover
+// teacher has been assigned to one of its lessons. Called by the admin "Suggest cover" panel straight
 // after timetable-cover succeeds. Deployed WITH JWT verification; the caller
 // must hold manage_academic or be head_teacher/admin (re-checked here from
 // their own roles/permissions, like timetable-cover).
 //
-// Idempotent: cover_assignments.families_notified_at (migration 0070) is set
-// once the emails have gone out, and a second call is a no-op.
+// Idempotent: cover_assignments.teacher_notified_at (0187) and
+// families_notified_at (0070) are set once each email has gone out, and a
+// second call only sends what hasn't been sent.
 //
-// POST { slot_id, cover_date }  ->  { ok, emailed, already? }
+// POST { slot_id, cover_date }  ->  { ok, emailed, teacherEmailed, already? }
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
 import { emailShell, sendEmail } from "../_shared/resend.ts";
@@ -60,12 +61,12 @@ Deno.serve(async (req) => {
 
   const { data: cover } = await serviceClient
     .from("cover_assignments")
-    .select("id, original_teacher_user_id, covering_teacher_user_id, families_notified_at")
+    .select("id, original_teacher_user_id, covering_teacher_user_id, families_notified_at, teacher_notified_at")
     .eq("slot_id", slot_id)
     .eq("cover_date", cover_date)
     .maybeSingle();
   if (!cover) return jsonResponse({ ok: false, error: "cover_not_found" }, 404);
-  if (cover.families_notified_at) return jsonResponse({ ok: true, emailed: 0, already: true });
+  if (cover.families_notified_at && cover.teacher_notified_at) return jsonResponse({ ok: true, emailed: 0, teacherEmailed: false, already: true });
 
   const { data: slotData } = await serviceClient
     .from("timetable_slots")
@@ -76,7 +77,7 @@ Deno.serve(async (req) => {
   if (!slot) return jsonResponse({ ok: false, error: "slot_not_found" }, 404);
 
   const [{ data: teachers }, { data: enrolData }] = await Promise.all([
-    serviceClient.from("profiles").select("id, full_name").in("id", [cover.original_teacher_user_id, cover.covering_teacher_user_id]),
+    serviceClient.from("profiles").select("id, full_name, email").in("id", [cover.original_teacher_user_id, cover.covering_teacher_user_id]),
     serviceClient.from("enrolments").select("children(name, parent_user_id)").eq("class_id", slot.class_id),
   ]);
   const nameOf = (id: string): string => (teachers || []).find((t) => t.id === id)?.full_name || "a colleague";
@@ -98,6 +99,28 @@ Deno.serve(async (req) => {
   const when = new Date(`${cover_date}T12:00:00`).toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" });
   const time = `${slot.start_time.slice(0, 5)}-${slot.end_time.slice(0, 5)}`;
 
+  // The covering teacher first: what, when, and where to find it. The reason
+  // for the absence is never included (it may be medical).
+  let teacherEmailed = false;
+  if (!cover.teacher_notified_at) {
+    const coverer = (teachers || []).find((t) => t.id === cover.covering_teacher_user_id) as { full_name: string | null; email: string | null } | undefined;
+    if (coverer?.email) {
+      const html = emailShell(`
+        <h2 style="margin:0 0 12px;font-size:18px;">You're covering ${esc(subject)} for ${esc(className)}</h2>
+        <p style="margin:0 0 12px;">Assalamu alaikum${coverer.full_name ? ` ${esc(coverer.full_name)}` : ""},</p>
+        <p style="margin:0 0 12px;">Please cover <strong>${esc(subject)}</strong> for <strong>${esc(className)}</strong> on <strong>${esc(when)}</strong> (${time}) in place of ${esc(originalName)}.</p>
+        <p style="margin:0 0 20px;">The lesson is on your Today page with its register and lesson plan, and it uses the class's usual Teams link.</p>
+        <p style="margin:0;"><a href="${LEARN_SITE_URL}/teach/today" style="color:#B08E45;">Open Today &rarr;</a></p>
+      `);
+      const result = await sendEmail({ to: coverer.email, toName: coverer.full_name || undefined, subject: `Cover: ${subject}, ${className}, ${when}`, html });
+      if (result.ok) {
+        teacherEmailed = true;
+        await serviceClient.from("cover_assignments").update({ teacher_notified_at: new Date().toISOString() }).eq("id", cover.id);
+      }
+    }
+  }
+  if (cover.families_notified_at) return jsonResponse({ ok: true, emailed: 0, teacherEmailed });
+
   let emailed = 0;
   for (const p of (parentRows as { id: string; email: string | null; full_name: string | null }[] | null) || []) {
     if (!p.email) continue;
@@ -118,5 +141,5 @@ Deno.serve(async (req) => {
   if (emailed > 0 || byParent.size === 0) {
     await serviceClient.from("cover_assignments").update({ families_notified_at: new Date().toISOString() }).eq("id", cover.id);
   }
-  return jsonResponse({ ok: true, emailed });
+  return jsonResponse({ ok: true, emailed, teacherEmailed });
 });
