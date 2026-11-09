@@ -1,9 +1,9 @@
 {
  "subject": "Mathematics",
  "year": "y8",
- "board": "Pearson Edexcel (KS3 Maths Progress, building to Edexcel GCSE Mathematics 1MA1)",
+ "board": "Pearson Edexcel (KS3 Maths Progress, building to International GCSE Mathematics A 4MA1)",
  "boardShort": "KS3 Maths Progress",
- "source": "School scheme of work: Pearson KS3 Maths Progress (2nd ed.) Year 8 Autumn, Unit 1 Number and Unit 2 Area and volume (ks3_maths_a_p_sow3.xlsx), in the scheme's order; INSET lesson standard.",
+ "source": "School scheme of work: Pearson KS3 Maths Progress (2nd ed.) (ks3_maths_a_p_sow3.xlsx), matched to the White Rose Secondary block order in content/syllabus/ks1-3/mathematics.json; founding-year bridge (11 and 18 Jan 2027: ratio, scale, multiplying fractions, Cartesian plane) and Spring 1 lessons (brackets, equations, sequences) written to the plan, building to Pearson Edexcel International GCSE Mathematics A (4MA1); INSET lesson standard.",
  "lessons": [
   {
    "unit": "Unit 1: Number",
@@ -2185,6 +2185,4975 @@
    ],
    "homework": "Find five food labels and convert each mass or volume into a different unit (e.g. 500 g to kg).",
    "send": "Support: conversion ladder. Stretch: volume unit conversions."
+  },
+  {
+   "unit": "Autumn 1: Ratio and scale; multiplicative change; multiplying and dividing fractions",
+   "n": 17,
+   "title": "Ratio notation and simplifying ratios",
+   "duration": 50,
+   "bigQuestion": "How can a ratio describe a relationship without telling us the total?",
+   "objectives": [
+    "To understand how a ratio compares quantities"
+   ],
+   "successCriteria": [
+    "All: write a ratio from a situation and simplify it",
+    "Most: simplify ratios with different units and three parts",
+    "Some: write ratios in the form 1 : n and link them to fractions"
+   ],
+   "crossCurricular": "Science: mixing solutions in ratios",
+   "smsc": "Moral: fairness ('adl, عَدْل) in sharing depends on understanding ratios",
+   "keywords": [
+    {
+     "term": "ratio",
+     "def": "compares the sizes of two or more quantities"
+    },
+    {
+     "term": "simplest form",
+     "def": "a ratio that cannot be divided further by a common factor"
+    },
+    {
+     "term": "highest common factor",
+     "def": "the biggest number that divides into all the numbers"
+    },
+    {
+     "term": "part",
+     "def": "one share of a ratio"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Which ratio is the odd one out? Why?",
+    "options": [
+     "2 : 3",
+     "4 : 6",
+     "10 : 15",
+     "6 : 8"
+    ],
+    "a": "6 : 8 simplifies to 3 : 4; the others all simplify to 2 : 3."
+   },
+   "starter": [
+    {
+     "q": "Find the HCF of 12 and 18.",
+     "a": "6",
+     "mins": 1
+    },
+    {
+     "q": "Simplify 15/20.",
+     "a": "3/4",
+     "mins": 1
+    },
+    {
+     "q": "Find 25% of 60.",
+     "a": "15",
+     "mins": 1
+    },
+    {
+     "q": "Find 3/4 of 48.",
+     "a": "36",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "What a ratio shows",
+     "bullets": [
+      "3 green : 5 yellow beads",
+      "Order matters: green : yellow is 3 : 5",
+      "Green is 3/8 of all the beads"
+     ],
+     "note": "Ratio compares part to part; a fraction compares part to whole. Ask: what fraction is yellow? (5/8).",
+     "fraction": {
+      "parts": 8,
+      "shaded": 3,
+      "label": "green : yellow = 3 : 5; green = 3/8"
+     }
+    },
+    {
+     "heading": "Simplifying",
+     "bullets": [
+      "Divide every part by the HCF",
+      "Stop when no common factor is left"
+     ],
+     "note": "Model, then pupils simplify 20 : 35 (4 : 7).",
+     "model": {
+      "problem": "Simplify 24 : 36.",
+      "steps": [
+       "HCF of 24 and 36 is 12",
+       "24 ÷ 12 = 2 and 36 ÷ 12 = 3"
+      ],
+      "answer": "2 : 3"
+     }
+    },
+    {
+     "heading": "Units first",
+     "bullets": [
+      "Write both parts in the same unit",
+      "Then simplify"
+     ],
+     "note": "1 m : 25 cm: change metres to centimetres.",
+     "misconception": {
+      "wrong": "1 m : 25 cm = 1 : 25",
+      "right": "100 cm : 25 cm = 4 : 1"
+     }
+    },
+    {
+     "heading": "Three parts and 1 : n",
+     "bullets": [
+      "12 : 30 : 42 = 2 : 5 : 7 (÷ 6)",
+      "4 : 10 = 1 : 2.5 (÷ 4)"
+     ],
+     "note": "For 1 : n, divide both parts by the first part. Useful for comparing recipes.",
+     "table": {
+      "head": [
+       "Ratio",
+       "Divide by",
+       "Simplest form"
+      ],
+      "rows": [
+       [
+        "24 : 36",
+        "12",
+        "2 : 3"
+       ],
+       [
+        "45 : 30 : 15",
+        "15",
+        "3 : 2 : 1"
+       ],
+       [
+        "2 kg : 500 g = 2000 : 500",
+        "500",
+        "4 : 1"
+       ],
+       [
+        "4 : 10",
+        "4",
+        "1 : 2.5"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Is it fully simplified?"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Simplify 18 : 12.",
+      "options": [
+       "3 : 2",
+       "2 : 3",
+       "6 : 4",
+       "9 : 6"
+      ],
+      "answer": 0,
+      "why": "HCF 6 gives 3 : 2, in the same order as the question. 2 : 3 reverses the order; 6 : 4 and 9 : 6 are not fully simplified."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Simplify 20 : 35.",
+     "a": "4 : 7",
+     "mins": 2,
+     "model": "HCF of 20 and 35 is 5. 20 ÷ 5 = 4 and 35 ÷ 5 = 7. Answer 4 : 7."
+    },
+    {
+     "q": "Simplify 45 : 30 : 15.",
+     "a": "3 : 2 : 1",
+     "mins": 1
+    },
+    {
+     "q": "Simplify 2 kg : 500 g.",
+     "a": "4 : 1",
+     "mins": 2
+    },
+    {
+     "q": "A bag has 6 green and 9 yellow beads. Write green : yellow in simplest form and the fraction that is green.",
+     "a": "2 : 3; 2/5 green",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Simplify (a) 16 : 24 (b) 35 : 14 (c) 12 : 30 : 42 (d) 40p : £2",
+     "a": "(a) 2 : 3 (b) 5 : 2 (c) 2 : 5 : 7 (d) 1 : 5",
+     "mins": 4,
+     "model": "(a) HCF 8: 2 : 3. (b) HCF 7: 5 : 2. (c) HCF 6: 2 : 5 : 7. (d) £2 = 200p, so 40 : 200; HCF 40: 1 : 5."
+    },
+    {
+     "q": "Extend: A recipe uses 300 g flour and 120 g butter. Write flour : butter in simplest form and in the form 1 : n.",
+     "a": "5 : 2 and 1 : 0.4",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: Arabic : English books = 3 : 5. What fraction are Arabic? If there are 24 Arabic books, how many books altogether?",
+     "a": "3/8 are Arabic. 3 parts = 24, 1 part = 8, total 8 × 8 = 64 books",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Simplify 36 : 48.",
+     "a": "3 : 4",
+     "mins": 1
+    },
+    {
+     "q": "Simplify 1.5 m : 30 cm.",
+     "a": "150 : 30 = 5 : 1",
+     "mins": 1
+    },
+    {
+     "q": "Big question: a ratio of 2 : 3 could describe 10 and 15, or 200 and 300. What stays the same?",
+     "a": "The relationship: the second is always 1.5 times the first (or the first is 2/5 of the total).",
+     "mins": 2
+    }
+   ],
+   "homework": "Find three ratios at home (a recipe, a squash or cleaning label, a photo size) and write each in simplest form.",
+   "send": "Support: list of factors to find the HCF. EAL: 'ratio', 'part', 'to'. Stretch: ratios with fractions and decimals, such as 1/2 : 3/4.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 7 7.2 Writing ratios and 7.3 Using ratios (the school's KS3 scheme)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "coloured beads ratio",
+     "alt": "Beads of two colours to compare in a ratio",
+     "for": "teach:1"
+    },
+    {
+     "find": "recipe ingredients flour butter scale",
+     "alt": "Recipe ingredients weighed for a ratio",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Autumn 1: Ratio and scale; multiplicative change; multiplying and dividing fractions",
+   "n": 18,
+   "title": "Sharing in a ratio",
+   "duration": 50,
+   "bigQuestion": "How can partners share fairly when they did not put in the same amount?",
+   "objectives": [
+    "To understand how to share an amount in a given ratio"
+   ],
+   "successCriteria": [
+    "All: share an amount in a two-part ratio using a bar model",
+    "Most: share in three-part ratios and work from one share",
+    "Some: solve problems given the difference between shares"
+   ],
+   "crossCurricular": "Business: sharing profit between partners",
+   "smsc": "Moral: in Islamic partnership (mushārakah, مُشَارَكَة) the partners agree how profit is shared before trading",
+   "keywords": [
+    {
+     "term": "share",
+     "def": "split an amount into parts"
+    },
+    {
+     "term": "ratio",
+     "def": "compares the sizes of parts"
+    },
+    {
+     "term": "mushārakah",
+     "def": "مُشَارَكَة: an Islamic partnership where partners share profit as agreed"
+    },
+    {
+     "term": "difference",
+     "def": "how much more one share is than another"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Ali puts £300 into a market stall and Bilal puts £200. They make £150 profit. Should they share it equally? What else could be fair?",
+    "a": "Partners agree the profit ratio in advance. Sharing in the ratio of money put in, 3 : 2, gives £90 and £60."
+   },
+   "starter": [
+    {
+     "q": "Simplify 24 : 36.",
+     "a": "2 : 3",
+     "mins": 1
+    },
+    {
+     "q": "Ratio 3 : 5. What fraction of the whole is the first part?",
+     "a": "3/8",
+     "mins": 1
+    },
+    {
+     "q": "Find 1/5 of 85.",
+     "a": "17",
+     "mins": 1
+    },
+    {
+     "q": "3/5 of a number is 36. Find it.",
+     "a": "60",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Bar model",
+     "bullets": [
+      "Add the parts: 4 + 5 = 9 parts",
+      "One part = total ÷ number of parts"
+     ],
+     "note": "Draw 4 bars and 5 bars; each part is £5.",
+     "model": {
+      "problem": "Share £45 in the ratio 4 : 5.",
+      "steps": [
+       "4 + 5 = 9 parts",
+       "1 part = £45 ÷ 9 = £5",
+       "4 × £5 = £20 and 5 × £5 = £25",
+       "Check: £20 + £25 = £45"
+      ],
+      "answer": "£20 and £25"
+     }
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Divide by the total number of parts"
+     ],
+     "note": "Ask: why is dividing by 3 and by 5 wrong?",
+     "misconception": {
+      "wrong": "Share 40 in 3 : 5: 40 ÷ 3 and 40 ÷ 5",
+      "right": "3 + 5 = 8 parts; 40 ÷ 8 = 5; shares 15 and 25"
+     }
+    },
+    {
+     "heading": "Three parts",
+     "bullets": [
+      "2 : 3 : 5 of 200: 10 parts of 20",
+      "Shares 40, 60, 100"
+     ],
+     "note": "Pie chart of the three shares: one part is 36° of 360°.",
+     "chart": {
+      "kind": "pie",
+      "title": "200 shared 2 : 3 : 5",
+      "labels": [
+       "2 parts",
+       "3 parts",
+       "5 parts"
+      ],
+      "values": [
+       40,
+       60,
+       100
+      ]
+     }
+    },
+    {
+     "heading": "From one share or a difference",
+     "bullets": [
+      "A : B = 3 : 7, B gets 56: 7 parts = 56",
+      "5 : 2 with difference 27: 3 parts = 27"
+     ],
+     "note": "Find one part, then whatever is asked.",
+     "model": {
+      "problem": "Ratio 5 : 2. The first share is 27 more than the second. Find both shares.",
+      "steps": [
+       "Difference = 5 − 2 = 3 parts",
+       "3 parts = 27, so 1 part = 9",
+       "Shares: 5 × 9 = 45 and 2 × 9 = 18"
+      ],
+      "answer": "45 and 18"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "How many parts altogether?"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Share 60 in the ratio 1 : 3.",
+      "options": [
+       "15 and 45",
+       "20 and 40",
+       "30 and 30",
+       "20 and 60"
+      ],
+      "answer": 0,
+      "why": "4 parts, 60 ÷ 4 = 15, so 15 and 45. 20 and 40 divides by 3 parts; 20 and 60 does not total 60."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Share £72 in the ratio 5 : 3.",
+     "a": "£45 and £27",
+     "mins": 2,
+     "model": "5 + 3 = 8 parts. £72 ÷ 8 = £9 a part. 5 × £9 = £45 and 3 × £9 = £27. Check: £45 + £27 = £72."
+    },
+    {
+     "q": "Share 150 g in the ratio 2 : 3.",
+     "a": "60 g and 90 g",
+     "mins": 1
+    },
+    {
+     "q": "Share 84 in the ratio 1 : 2 : 4.",
+     "a": "12, 24 and 48",
+     "mins": 2
+    },
+    {
+     "q": "Ratio 4 : 9. The smaller share is £36. Find the larger share.",
+     "a": "£81",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Share (a) £56 in 3 : 4 (b) 2.4 kg in 1 : 5 (c) 360° in 2 : 3 : 7",
+     "a": "(a) £24 and £32 (b) 0.4 kg and 2 kg (c) 60°, 90° and 210°",
+     "mins": 5,
+     "model": "(a) 7 parts; 56 ÷ 7 = 8: £24 and £32. (b) 6 parts; 2.4 ÷ 6 = 0.4: 0.4 kg and 2 kg. (c) 12 parts; 360 ÷ 12 = 30: 60°, 90°, 210°."
+    },
+    {
+     "q": "Extend: Sadaqah is shared between two charities in the ratio 5 : 3. The first gets £240 more than the second. How much was collected?",
+     "a": "2 parts = £240, 1 part = £120, total 8 parts = £960",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: red : blue = 2 : 3 and blue : green = 4 : 5. Find red : blue : green.",
+     "a": "Make blue 12 in both: 8 : 12 and 12 : 15, so 8 : 12 : 15",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Share 63 in the ratio 2 : 5.",
+     "a": "18 and 45",
+     "mins": 1
+    },
+    {
+     "q": "Ratio 3 : 5; the larger share is 40. Find the total.",
+     "a": "5 parts = 40, 1 part = 8, total 64",
+     "mins": 2
+    },
+    {
+     "q": "Big question: how could Ali and Bilal share £150 fairly?",
+     "a": "In the agreed ratio, for example 3 : 2 by money put in: £90 and £60.",
+     "mins": 1
+    }
+   ],
+   "homework": "Share £120 in the ratios 1 : 2, 3 : 5 and 1 : 2 : 3; check each set of shares adds to £120.",
+   "send": "Support: bar model templates and a multiplication square. EAL: 'share', 'part', 'each'. Stretch: combining ratios and ratio problems with fractions.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 7 7.3 Using ratios and 7.4 Ratios, proportions and fractions (the school's KS3 scheme)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "market stall fruit",
+     "alt": "A market stall, as in the partnership problem",
+     "for": "hook"
+    },
+    {
+     "find": "bar model ratio sharing",
+     "alt": "A bar model splitting an amount in a ratio",
+     "for": "teach:1"
+    }
+   ],
+   "islamicLink": {
+    "text": "Islam permits trade and partnership. In mushārakah (مُشَارَكَة) partners agree in advance how profit will be shared, and losses are shared by what each put in. Ratio is the mathematics of that fairness.",
+    "at": "start"
+   }
+  },
+  {
+   "unit": "Autumn 1: Ratio and scale; multiplicative change; multiplying and dividing fractions",
+   "n": 19,
+   "title": "Scale drawings and maps",
+   "duration": 50,
+   "bigQuestion": "How can a small drawing tell us about something huge?",
+   "objectives": [
+    "To understand how scales link drawings and maps to real sizes"
+   ],
+   "successCriteria": [
+    "All: use a scale of 1 cm to n m to find real lengths",
+    "Most: use ratio scales and convert units",
+    "Some: work back from real lengths to drawings and models"
+   ],
+   "crossCurricular": "Geography: OS maps and scales",
+   "smsc": "Spiritual: maps help travellers find their way, including the qiblah direction and the distance to the masjid",
+   "keywords": [
+    {
+     "term": "scale",
+     "def": "how a length on a drawing compares with the real length"
+    },
+    {
+     "term": "scale drawing",
+     "def": "an accurate drawing with every length in the same ratio"
+    },
+    {
+     "term": "ratio scale",
+     "def": "a scale such as 1 : 50 000 with the same units on both sides"
+    },
+    {
+     "term": "represent",
+     "def": "stand for"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "On a map, 1 cm represents 2 km. Two towns are 7.5 cm apart. Could you walk between them in an hour?",
+    "a": "7.5 × 2 = 15 km. Walking at about 5 km an hour takes about 3 hours, so no."
+   },
+   "starter": [
+    {
+     "q": "Share £45 in the ratio 4 : 5.",
+     "a": "£20 and £25",
+     "mins": 1
+    },
+    {
+     "q": "Simplify 2 m : 50 cm.",
+     "a": "4 : 1",
+     "mins": 1
+    },
+    {
+     "q": "How many metres in 1 km?",
+     "a": "1000",
+     "mins": 1
+    },
+    {
+     "q": "Write 350 cm in metres.",
+     "a": "3.5 m",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Scales in words",
+     "bullets": [
+      "1 cm represents 5 m",
+      "Drawing 3 cm → real 15 m"
+     ],
+     "note": "Multiply to go from drawing to real; divide to go from real to drawing.",
+     "model": {
+      "problem": "A plan uses 1 cm : 4 m. A room is 5.5 cm long on the plan. Find the real length.",
+      "steps": [
+       "Each cm is 4 m",
+       "5.5 × 4 = 22"
+      ],
+      "answer": "22 m"
+     }
+    },
+    {
+     "heading": "Ratio scales",
+     "bullets": [
+      "1 : 50 000 means 1 cm : 50 000 cm",
+      "50 000 cm = 500 m = 0.5 km"
+     ],
+     "note": "Units are the same on both sides. Convert at the end.",
+     "misconception": {
+      "wrong": "1 : 50 000 means 1 cm represents 50 000 km",
+      "right": "Same units: 1 cm represents 50 000 cm, which is 500 m"
+     }
+    },
+    {
+     "heading": "Map to real",
+     "bullets": [
+      "Multiply by the scale",
+      "Then convert cm → m → km"
+     ],
+     "note": "÷ 100 for metres, ÷ 1000 again for km.",
+     "model": {
+      "problem": "On a 1 : 25 000 map two points are 6 cm apart. Find the real distance in km.",
+      "steps": [
+       "6 × 25 000 = 150 000 cm",
+       "150 000 cm = 1500 m",
+       "1500 m = 1.5 km"
+      ],
+      "answer": "1.5 km"
+     }
+    },
+    {
+     "heading": "Real to map",
+     "bullets": [
+      "Convert to cm, then divide by the scale"
+     ],
+     "note": "4 km on a 1 : 50 000 map: 400 000 cm ÷ 50 000 = 8 cm.",
+     "table": {
+      "head": [
+       "Scale",
+       "Map",
+       "Real"
+      ],
+      "rows": [
+       [
+        "1 cm : 3 m",
+        "4.5 cm",
+        "13.5 m"
+       ],
+       [
+        "1 cm : 3 m",
+        "6 cm",
+        "18 m"
+       ],
+       [
+        "1 : 10 000",
+        "7 cm",
+        "700 m"
+       ],
+       [
+        "1 : 50 000",
+        "8 cm",
+        "4 km"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Multiply, then convert"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Scale 1 : 20 000. Map distance 5 cm. Real distance?",
+      "options": [
+       "1 km",
+       "100 km",
+       "10 km",
+       "100 m"
+      ],
+      "answer": 0,
+      "why": "5 × 20 000 = 100 000 cm = 1000 m = 1 km. 100 km forgets that the units are cm."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Scale 1 cm : 3 m. Drawing 4.5 cm. Real length?",
+     "a": "13.5 m",
+     "mins": 2,
+     "model": "Scale 1 cm : 3 m. 4.5 cm × 3 = 13.5 m."
+    },
+    {
+     "q": "Scale 1 cm : 3 m. Real 18 m. Drawing length?",
+     "a": "6 cm",
+     "mins": 1
+    },
+    {
+     "q": "Scale 1 : 10 000. Map 7 cm. Real distance in metres?",
+     "a": "700 m",
+     "mins": 2
+    },
+    {
+     "q": "Scale 1 : 200 000. Map 3 cm. Real distance in km?",
+     "a": "6 km",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: A plan of a prayer hall uses 1 cm : 2 m. The hall is 9 cm by 6.5 cm on the plan. Find the real length, width and floor area.",
+     "a": "18 m by 13 m; area 234 m²",
+     "mins": 4,
+     "model": "Length 9 cm × 2 = 18 m; width 6.5 cm × 2 = 13 m; area 18 × 13 = 234 m²."
+    },
+    {
+     "q": "Extend: On a 1 : 50 000 map two villages are 9.4 cm apart. Find the real distance in km.",
+     "a": "470 000 cm = 4.7 km",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: A model of a building uses 1 : 250. The real building is 45 m tall. How tall is the model? The model door is 0.8 cm tall: how tall is the real door?",
+     "a": "4500 cm ÷ 250 = 18 cm; 0.8 × 250 = 200 cm = 2 m",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Scale 1 cm : 5 km. Map 3.2 cm. Real distance?",
+     "a": "16 km",
+     "mins": 1
+    },
+    {
+     "q": "Scale 1 : 20 000. Real 3 km. Map distance?",
+     "a": "300 000 ÷ 20 000 = 15 cm",
+     "mins": 2
+    },
+    {
+     "q": "Big question: why must a scale drawing use the same scale for every length?",
+     "a": "So every length is in the same ratio and the shape stays the same; mixed scales would distort it.",
+     "mins": 1
+    }
+   ],
+   "homework": "Measure your bedroom (or one room) with a tape measure and draw a scale plan at 1 cm : 50 cm on squared paper; label the real lengths.",
+   "send": "Support: unit conversion ladder (km, m, cm). EAL: 'represents', 'scale', 'plan'. Stretch: area on a scale drawing (area scale factor).",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 7 4.3 Scales and measures and 7.3 Using ratios (the school's KS3 scheme)",
+    "Tape measure, ruler and squared paper (household)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "Ordnance Survey map scale bar 1:50000",
+     "alt": "An OS map with its scale bar",
+     "for": "teach:2"
+    },
+    {
+     "find": "architectural floor plan scale",
+     "alt": "A floor plan drawn to scale",
+     "for": "teach:1"
+    }
+   ]
+  },
+  {
+   "unit": "Autumn 1: Ratio and scale; multiplicative change; multiplying and dividing fractions",
+   "n": 20,
+   "title": "Multiplicative change: scale factors and direct proportion",
+   "duration": 50,
+   "bigQuestion": "How do you know when two quantities are in direct proportion?",
+   "objectives": [
+    "To understand how direct proportion works through multiplicative change"
+   ],
+   "successCriteria": [
+    "All: use the unitary method",
+    "Most: use scale factors and compare best buys",
+    "Some: use y = kx for direct proportion"
+   ],
+   "crossCurricular": "Science: Hooke's law and other proportional relationships",
+   "smsc": "Moral: wise spending and avoiding waste (israf, إِسْرَاف)",
+   "keywords": [
+    {
+     "term": "direct proportion",
+     "def": "when one quantity doubles, so does the other"
+    },
+    {
+     "term": "unitary method",
+     "def": "find the value of one, then multiply"
+    },
+    {
+     "term": "scale factor",
+     "def": "the number you multiply by"
+    },
+    {
+     "term": "best buy",
+     "def": "the better value item, often found by cost per unit"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Would you rather buy 8 bottles of water for £3.20 or 12 bottles for £4.50?",
+    "options": [
+     "8 for £3.20",
+     "12 for £4.50"
+    ],
+    "a": "8 for £3.20 is 40p each; 12 for £4.50 is 37.5p each. The bigger pack is better value."
+   },
+   "starter": [
+    {
+     "q": "Scale 1 : 25 000; map 6 cm. Real distance in km?",
+     "a": "1.5 km",
+     "mins": 2
+    },
+    {
+     "q": "Share 84 in the ratio 1 : 2 : 4.",
+     "a": "12, 24, 48",
+     "mins": 1
+    },
+    {
+     "q": "Find 35% of 60.",
+     "a": "21",
+     "mins": 1
+    },
+    {
+     "q": "Find 3/4 of 2 hours in minutes.",
+     "a": "90 minutes",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "The unitary method",
+     "bullets": [
+      "Divide to find one",
+      "Multiply to find many"
+     ],
+     "note": "Model, then pupils do 6 eggs £1.50, 10 eggs (£2.50).",
+     "model": {
+      "problem": "5 books cost £12.50. Find the cost of 8 books.",
+      "steps": [
+       "1 book: £12.50 ÷ 5 = £2.50",
+       "8 books: 8 × £2.50 = £20"
+      ],
+      "answer": "£20"
+     }
+    },
+    {
+     "heading": "Scale factors",
+     "bullets": [
+      "From 4 to 10 the scale factor is 10 ÷ 4 = 2.5",
+      "Apply the same factor to the other quantity"
+     ],
+     "note": "A 6 cm by 9 cm photo enlarged so 6 → 15: factor 2.5, so 9 → 22.5 cm.",
+     "misconception": {
+      "wrong": "4 cm → 10 cm, so 6 cm → 12 cm (add 6)",
+      "right": "The change is × 2.5, so 6 cm → 15 cm"
+     }
+    },
+    {
+     "heading": "Proportion graphs",
+     "bullets": [
+      "Rice at £3 per kg",
+      "Straight line through (0, 0)"
+     ],
+     "note": "Every extra kg adds £3. Zero rice costs £0.",
+     "chart": {
+      "kind": "line",
+      "title": "Cost of rice",
+      "labels": [
+       "0 kg",
+       "1 kg",
+       "2 kg",
+       "3 kg",
+       "4 kg",
+       "5 kg"
+      ],
+      "values": [
+       0,
+       3,
+       6,
+       9,
+       12,
+       15
+      ],
+      "unit": "£"
+     }
+    },
+    {
+     "heading": "Best buys",
+     "bullets": [
+      "Find cost per item or per gram",
+      "Lower cost per unit is better value"
+     ],
+     "note": "250 g for £1.60 is 0.64p per g; 400 g for £2.40 is 0.6p per g.",
+     "table": {
+      "head": [
+       "Pack",
+       "Price",
+       "Per unit"
+      ],
+      "rows": [
+       [
+        "8 bottles",
+        "£3.20",
+        "40p"
+       ],
+       [
+        "12 bottles",
+        "£4.50",
+        "37.5p"
+       ],
+       [
+        "250 g",
+        "£1.60",
+        "0.64p per g"
+       ],
+       [
+        "400 g",
+        "£2.40",
+        "0.6p per g"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Find one first"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "3 kg of rice costs £4.80. How much do 5 kg cost?",
+      "options": [
+       "£8.00",
+       "£6.80",
+       "£1.60",
+       "£24.00"
+      ],
+      "answer": 0,
+      "why": "£4.80 ÷ 3 = £1.60 per kg; × 5 = £8.00. £6.80 adds £2; £1.60 is one kg only."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "6 eggs cost £1.50. How much do 10 eggs cost?",
+     "a": "£2.50",
+     "mins": 2,
+     "model": "One egg: £1.50 ÷ 6 = 25p. Ten eggs: 10 × 25p = £2.50."
+    },
+    {
+     "q": "1 inch = 2.54 cm. Convert 20 inches to cm.",
+     "a": "50.8 cm",
+     "mins": 1
+    },
+    {
+     "q": "Find the scale factor from 8 to 20.",
+     "a": "2.5",
+     "mins": 1
+    },
+    {
+     "q": "Which is better value: 250 g for £1.60 or 400 g for £2.40?",
+     "a": "400 g (0.6p per g against 0.64p per g)",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: 4 tickets cost £18. Find the cost of 1, 7 and 10 tickets.",
+     "a": "£4.50, £31.50, £45",
+     "mins": 4,
+     "model": "One ticket: £18 ÷ 4 = £4.50. Seven: 7 × £4.50 = £31.50. Ten: 10 × £4.50 = £45."
+    },
+    {
+     "q": "Extend: A 6 cm by 9 cm photo is enlarged so the 6 cm side becomes 15 cm. Find the new length of the other side.",
+     "a": "Scale factor 2.5; 9 × 2.5 = 22.5 cm",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: y is directly proportional to x. When x = 8, y = 28. Find y when x = 13 and x when y = 59.5.",
+     "a": "k = 28 ÷ 8 = 3.5, so y = 3.5x. x = 13 gives y = 45.5; y = 59.5 gives x = 17",
+     "mins": 5
+    }
+   ],
+   "exit": [
+    {
+     "q": "5 m of cloth costs £32. Find the cost of 8 m.",
+     "a": "£6.40 per m, so £51.20",
+     "mins": 2
+    },
+    {
+     "q": "Big question: how can you tell two quantities are in direct proportion?",
+     "a": "When one doubles the other doubles; the ratio stays the same; the graph is a straight line through the origin.",
+     "mins": 2
+    }
+   ],
+   "homework": "Compare the price per 100 g of two sizes of the same food at home or online; which is the best buy?",
+   "send": "Support: ratio tables with the 'one' row given. EAL: 'per', 'each', 'value'. Stretch: inverse proportion (more workers, less time).",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 7 7.1 Direct proportion and 7.5 Proportions and percentages (the school's KS3 scheme)",
+    "Food packets with prices (household)",
+    "Calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "supermarket shelf price per 100g label",
+     "alt": "Shelf labels showing unit prices",
+     "for": "teach:4"
+    },
+    {
+     "find": "bottled water multipack",
+     "alt": "Packs of bottled water of different sizes",
+     "for": "hook"
+    }
+   ]
+  },
+  {
+   "unit": "Autumn 1: Ratio and scale; multiplicative change; multiplying and dividing fractions",
+   "n": 21,
+   "title": "Multiplying fractions",
+   "duration": 50,
+   "bigQuestion": "Why can multiplying make a number smaller?",
+   "objectives": [
+    "To understand how to multiply fractions and why the answer can be smaller"
+   ],
+   "successCriteria": [
+    "All: multiply a fraction by a whole number",
+    "Most: multiply two fractions and simplify the answer",
+    "Some: cancel common factors first and explain why it works"
+   ],
+   "crossCurricular": "Science: fractions of fractions in dilution",
+   "smsc": "Spiritual: the Qur'an names shares such as half of a quarter in inheritance (Surat an-Nisa 4:11 to 12)",
+   "keywords": [
+    {
+     "term": "product",
+     "def": "the result of multiplying"
+    },
+    {
+     "term": "numerator",
+     "def": "the top of a fraction"
+    },
+    {
+     "term": "denominator",
+     "def": "the bottom of a fraction"
+    },
+    {
+     "term": "cancel",
+     "def": "divide a numerator and a denominator by a common factor"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "True or false: multiplying always makes a number bigger.",
+    "options": [
+     "True",
+     "False"
+    ],
+    "a": "False: 1/2 × 1/2 = 1/4. Multiplying by a number less than 1 takes part of it."
+   },
+   "starter": [
+    {
+     "q": "Find 3/5 of 40.",
+     "a": "24",
+     "mins": 1
+    },
+    {
+     "q": "Find the scale factor from 4 to 10.",
+     "a": "2.5",
+     "mins": 1
+    },
+    {
+     "q": "Work out 1/3 + 1/4.",
+     "a": "7/12",
+     "mins": 1
+    },
+    {
+     "q": "Simplify 12/18.",
+     "a": "2/3",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Fraction × integer",
+     "bullets": [
+      "3 × 2/5 = 6/5",
+      "6/5 = 1 1/5"
+     ],
+     "note": "Three lots of two fifths is six fifths. Multiply the numerator only.",
+     "model": {
+      "problem": "Work out 4 × 2/9.",
+      "steps": [
+       "Multiply the numerator: 4 × 2 = 8",
+       "Keep the denominator: 8/9"
+      ],
+      "answer": "8/9"
+     }
+    },
+    {
+     "heading": "'Of' means ×",
+     "bullets": [
+      "1/2 of 1/4 = 1/2 × 1/4",
+      "= 1/8"
+     ],
+     "note": "Halve a quarter bar: each piece is an eighth.",
+     "fraction": [
+      {
+       "parts": 4,
+       "shaded": 1,
+       "label": "1/4"
+      },
+      {
+       "parts": 8,
+       "shaded": 1,
+       "label": "1/2 of 1/4 = 1/8"
+      }
+     ]
+    },
+    {
+     "heading": "Fraction × fraction",
+     "bullets": [
+      "Multiply the numerators",
+      "Multiply the denominators",
+      "Simplify"
+     ],
+     "note": "2/3 × 3/4 = 6/12 = 1/2. Use an area model on squared paper.",
+     "misconception": {
+      "wrong": "1/2 × 1/3 = 2/5 (add tops and bottoms)",
+      "right": "Multiply: 1 × 1 = 1 and 2 × 3 = 6, so 1/6"
+     }
+    },
+    {
+     "heading": "Cancel first",
+     "bullets": [
+      "Divide a numerator and any denominator by a common factor",
+      "Smaller numbers, fewer errors"
+     ],
+     "note": "4 and 8 share 4; 3 and 9 share 3.",
+     "model": {
+      "problem": "Work out 4/9 × 3/8.",
+      "steps": [
+       "Cancel 4 and 8 by 4: 1/9 × 3/2",
+       "Cancel 3 and 9 by 3: 1/3 × 1/2",
+       "Multiply: 1/6"
+      ],
+      "answer": "1/6"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Tops × tops, bottoms × bottoms"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Work out 3/5 × 2/7.",
+      "options": [
+       "6/35",
+       "5/12",
+       "6/12",
+       "21/10"
+      ],
+      "answer": 0,
+      "why": "3 × 2 = 6 and 5 × 7 = 35. 5/12 adds; 21/10 cross-multiplies."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Work out 5 × 3/4.",
+     "a": "15/4 = 3 3/4",
+     "mins": 2,
+     "model": "Multiply the numerator by 5: 5 × 3 = 15, so 15/4. 15 ÷ 4 = 3 remainder 3, so 3 3/4."
+    },
+    {
+     "q": "Work out 1/3 × 3/5.",
+     "a": "3/15 = 1/5",
+     "mins": 1
+    },
+    {
+     "q": "Work out 2/7 × 7/10.",
+     "a": "1/5",
+     "mins": 2
+    },
+    {
+     "q": "Find 3/8 of 2/3.",
+     "a": "6/24 = 1/4",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Work out (a) 4 × 2/9 (b) 2/5 × 3/4 (c) 5/6 × 9/10 (d) 7/12 × 4/21",
+     "a": "(a) 8/9 (b) 3/10 (c) 3/4 (d) 1/9",
+     "mins": 5,
+     "model": "(a) 4 × 2 = 8: 8/9. (b) 6/20 = 3/10. (c) Cancel 5/10 = 1/2 and 9/6 = 3/2: 1/2 × 3/2 = 3/4. (d) Cancel 7 and 21 by 7, 4 and 12 by 4: 1/3 × 1/3 = 1/9."
+    },
+    {
+     "q": "Extend: A rectangle is 3/4 m by 2/5 m. Find its area.",
+     "a": "3/10 m²",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Find two different pairs of fractions whose product is 2/15.",
+     "a": "For example 1/3 × 2/5 and 2/3 × 1/5",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Work out 2/3 × 5/8.",
+     "a": "10/24 = 5/12",
+     "mins": 1
+    },
+    {
+     "q": "Work out 6 × 3/4.",
+     "a": "18/4 = 4 1/2",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why is 1/2 × 1/4 smaller than 1/4?",
+     "a": "It is half of a quarter: multiplying by a fraction less than 1 takes only part of the number.",
+     "mins": 1
+    }
+   ],
+   "homework": "Fold a sheet of paper to show 1/2 × 1/3 and 2/3 × 3/4; shade and label each answer.",
+   "send": "Support: area model grids. EAL: 'of' means multiply. Stretch: products of three fractions and fractions of amounts in one step.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 8 8.3 Multiplying fractions (the school's KS3 scheme)",
+    "Paper to fold (household)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "area model fraction multiplication grid",
+     "alt": "An area model of multiplying two fractions",
+     "for": "teach:3"
+    },
+    {
+     "find": "folded paper fractions",
+     "alt": "Paper folded into equal parts",
+     "for": "teach:2"
+    }
+   ],
+   "islamicLink": {
+    "text": "The Qur'an names fractional shares of inheritance, including shares of shares (Surat an-Nisa 4:11 to 12). Scholars of inheritance (al-farā'iḍ, الفرائض) multiply fractions to divide estates exactly and fairly.",
+    "at": "start"
+   }
+  },
+  {
+   "unit": "Autumn 1: Ratio and scale; multiplicative change; multiplying and dividing fractions",
+   "n": 22,
+   "title": "Multiplying mixed numbers and fraction problems",
+   "duration": 50,
+   "bigQuestion": "Why must mixed numbers become improper fractions before multiplying?",
+   "objectives": [
+    "To understand how to multiply mixed numbers"
+   ],
+   "successCriteria": [
+    "All: convert mixed numbers to improper fractions",
+    "Most: multiply two mixed numbers and simplify",
+    "Some: explain the area model for mixed numbers"
+   ],
+   "crossCurricular": "Design: measurements in fractions of a metre",
+   "smsc": "Social: working accurately when making things for others",
+   "keywords": [
+    {
+     "term": "mixed number",
+     "def": "a whole number and a fraction, such as 2 1/2"
+    },
+    {
+     "term": "improper fraction",
+     "def": "numerator bigger than the denominator, such as 5/2"
+    },
+    {
+     "term": "simplify",
+     "def": "write with smaller numbers"
+    },
+    {
+     "term": "area model",
+     "def": "a rectangle split into parts to show multiplying"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Which is bigger: 2 1/2 × 1 1/2, or (2 × 1) + (1/2 × 1/2)?",
+    "a": "2 1/2 × 1 1/2 = 3 3/4, but (2 × 1) + (1/2 × 1/2) = 2 1/4. Multiplying the wholes and the parts separately misses two pieces."
+   },
+   "starter": [
+    {
+     "q": "Work out 2/5 × 3/4.",
+     "a": "3/10",
+     "mins": 1
+    },
+    {
+     "q": "Work out 4 × 2/9.",
+     "a": "8/9",
+     "mins": 1
+    },
+    {
+     "q": "Write 2 1/3 as an improper fraction.",
+     "a": "7/3",
+     "mins": 1
+    },
+    {
+     "q": "Write 11/4 as a mixed number.",
+     "a": "2 3/4",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Mixed to improper",
+     "bullets": [
+      "2 1/3 = 6/3 + 1/3 = 7/3",
+      "Wholes × denominator, add numerator"
+     ],
+     "note": "Practise three quickly: 1 3/4 (7/4), 3 2/5 (17/5), 2 1/2 (5/2).",
+     "fraction": [
+      {
+       "parts": 3,
+       "shaded": 3,
+       "label": "1"
+      },
+      {
+       "parts": 3,
+       "shaded": 3,
+       "label": "1"
+      },
+      {
+       "parts": 3,
+       "shaded": 1,
+       "label": "2 1/3 = 7/3"
+      }
+     ]
+    },
+    {
+     "heading": "Area model",
+     "bullets": [
+      "(2 + 1/2) × (1 + 1/2)",
+      "Four parts: 2 + 1 + 1/2 + 1/4 = 3 3/4"
+     ],
+     "note": "This is why we cannot multiply wholes and parts separately.",
+     "table": {
+      "head": [
+       "×",
+       "2",
+       "1/2"
+      ],
+      "rows": [
+       [
+        "1",
+        "2",
+        "1/2"
+       ],
+       [
+        "1/2",
+        "1",
+        "1/4"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Multiplying mixed numbers",
+     "bullets": [
+      "Make improper fractions",
+      "Cancel, multiply, simplify"
+     ],
+     "note": "Model, then pupils do 1 3/4 × 1 1/2 (21/8 = 2 5/8).",
+     "model": {
+      "problem": "Work out 2 1/2 × 1 1/3.",
+      "steps": [
+       "5/2 × 4/3",
+       "Cancel 2 and 4: 5/1 × 2/3",
+       "= 10/3",
+       "= 3 1/3"
+      ],
+      "answer": "3 1/3"
+     }
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Convert first"
+     ],
+     "note": "Ask: how big should 2 1/2 × 1 1/2 be? Estimate: between 2 × 1 = 2 and 3 × 2 = 6.",
+     "misconception": {
+      "wrong": "2 1/2 × 1 1/2 = 2 1/4 (2 × 1 and 1/2 × 1/2)",
+      "right": "5/2 × 3/2 = 15/4 = 3 3/4"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Improper fractions first"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Work out 1 1/2 × 2/3.",
+      "options": [
+       "1",
+       "1 1/3",
+       "2/3",
+       "3/4"
+      ],
+      "answer": 0,
+      "why": "3/2 × 2/3 = 6/6 = 1. 1 1/3 multiplies only the fraction part and keeps the 1."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Work out 1 1/2 × 4.",
+     "a": "6",
+     "mins": 2,
+     "model": "1 1/2 = 3/2. 3/2 × 4 = 12/2 = 6."
+    },
+    {
+     "q": "Work out 2 1/3 × 3/7.",
+     "a": "7/3 × 3/7 = 1",
+     "mins": 2
+    },
+    {
+     "q": "Work out 1 3/4 × 1 1/2.",
+     "a": "21/8 = 2 5/8",
+     "mins": 2
+    },
+    {
+     "q": "Find 3/4 of 2 2/3.",
+     "a": "3/4 × 8/3 = 2",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Work out (a) 1 1/4 × 2/5 (b) 2 1/2 × 2 1/2 (c) 3 1/3 × 1 1/5",
+     "a": "(a) 1/2 (b) 25/4 = 6 1/4 (c) 4",
+     "mins": 5,
+     "model": "(a) 5/4 × 2/5 = 10/20 = 1/2. (b) 5/2 × 5/2 = 25/4 = 6 1/4. (c) 10/3 × 6/5 = 60/15 = 4."
+    },
+    {
+     "q": "Extend: A rug is 2 1/2 m by 1 3/5 m. Find its area.",
+     "a": "5/2 × 8/5 = 4 m²",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: A jug holds 1 3/4 litres. How much do 4 2/3 jugs hold?",
+     "a": "7/4 × 14/3 = 98/12 = 8 1/6 litres",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Work out 1 1/2 × 1 1/2.",
+     "a": "9/4 = 2 1/4",
+     "mins": 1
+    },
+    {
+     "q": "Work out 2 2/5 × 5/6.",
+     "a": "2",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why convert mixed numbers first?",
+     "a": "So every part of each number is multiplied; multiplying wholes and fractions separately misses parts.",
+     "mins": 1
+    }
+   ],
+   "homework": "Draw an area model for 3 1/2 × 2 1/4 and check it against the improper fraction method.",
+   "send": "Support: conversion steps on a card. EAL: 'mixed', 'improper'. Stretch: dividing by a fraction: how many 3/4 in 6?",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 8 8.3 Multiplying fractions and 8.5 Calculating with mixed numbers (the school's KS3 scheme)",
+    "Squared paper",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "area model mixed number multiplication",
+     "alt": "An area model for multiplying mixed numbers",
+     "for": "teach:2"
+    },
+    {
+     "find": "rug rectangle measurements",
+     "alt": "A rectangular rug to find the area of",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Autumn 2: The Cartesian plane, data and probability",
+   "n": 23,
+   "title": "Coordinates in four quadrants",
+   "duration": 50,
+   "bigQuestion": "Why do we always write the x-coordinate first?",
+   "objectives": [
+    "To understand how coordinates locate points in all four quadrants"
+   ],
+   "successCriteria": [
+    "All: read and plot points with negative coordinates",
+    "Most: complete shapes on a grid",
+    "Some: solve problems with coordinates without a grid"
+   ],
+   "crossCurricular": "Geography: grid references",
+   "smsc": "Spiritual: maps and coordinates help Muslims find the qiblah from anywhere on Earth",
+   "keywords": [
+    {
+     "term": "coordinates",
+     "def": "a pair (x, y) that gives a position"
+    },
+    {
+     "term": "origin",
+     "def": "the point (0, 0)"
+    },
+    {
+     "term": "x-axis",
+     "def": "the horizontal axis"
+    },
+    {
+     "term": "y-axis",
+     "def": "the vertical axis"
+    },
+    {
+     "term": "quadrant",
+     "def": "one of the four regions made by the axes"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Picture a grid over a town with the masjid at (0, 0). A shop is 3 blocks east and 2 blocks south. How would you describe where it is?",
+    "a": "(3, −2). Negative numbers let us go left of or below the origin."
+   },
+   "starter": [
+    {
+     "q": "Work out 2 1/2 × 1 1/3.",
+     "a": "3 1/3",
+     "mins": 2
+    },
+    {
+     "q": "Work out −3 + 5.",
+     "a": "2",
+     "mins": 1
+    },
+    {
+     "q": "Work out −4 − 2.",
+     "a": "−6",
+     "mins": 1
+    },
+    {
+     "q": "Order −5, 3, −1, 0 from smallest.",
+     "a": "−5, −1, 0, 3",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "The four quadrants",
+     "bullets": [
+      "(x, y): across first, then up or down",
+      "Left of the y-axis: x negative",
+      "Below the x-axis: y negative"
+     ],
+     "note": "Say 'along the corridor, then up the stairs'. Draw the axes from −6 to 6.",
+     "table": {
+      "head": [
+       "Point",
+       "x",
+       "y",
+       "Quadrant"
+      ],
+      "rows": [
+       [
+        "(4, 3)",
+        "+",
+        "+",
+        "1st (top right)"
+       ],
+       [
+        "(−4, 3)",
+        "−",
+        "+",
+        "2nd (top left)"
+       ],
+       [
+        "(−4, −3)",
+        "−",
+        "−",
+        "3rd (bottom left)"
+       ],
+       [
+        "(4, −3)",
+        "+",
+        "−",
+        "4th (bottom right)"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Sort the points",
+     "bullets": [
+      "Which quadrant or axis?"
+     ],
+     "note": "Teams poll for two cards, then reveal all.",
+     "sort": {
+      "columns": [
+       "Top half",
+       "Bottom half",
+       "On an axis"
+      ],
+      "cards": [
+       "(2, 5)",
+       "(−3, 1)",
+       "(0, −4)",
+       "(−6, −2)",
+       "(5, 0)",
+       "(1, −1)"
+      ],
+      "answer": [
+       0,
+       0,
+       2,
+       1,
+       2,
+       1
+      ]
+     }
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "x first, then y"
+     ],
+     "note": "Plot both points on screen and compare.",
+     "misconception": {
+      "wrong": "(3, −2) is 3 down and 2 left",
+      "right": "(3, −2) is 3 right, then 2 down"
+     }
+    },
+    {
+     "heading": "Completing shapes",
+     "bullets": [
+      "Use equal sides and right angles",
+      "Count units between points"
+     ],
+     "note": "Sketch the rectangle; D shares x with A and y with C.",
+     "model": {
+      "problem": "A(−2, 3), B(4, 3), C(4, −1). Find D to make rectangle ABCD and its area.",
+      "steps": [
+       "AB is horizontal, BC is vertical",
+       "D is below A and level with C: (−2, −1)",
+       "Width 4 − (−2) = 6; height 3 − (−1) = 4",
+       "Area 6 × 4 = 24"
+      ],
+      "answer": "D(−2, −1); area 24 square units"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Signs tell the quadrant"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Which point is in the 3rd quadrant (bottom left)?",
+      "options": [
+       "(−3, 2)",
+       "(3, −2)",
+       "(−3, −2)",
+       "(3, 2)"
+      ],
+      "answer": 2,
+      "why": "Both coordinates negative means left and down. (3, −2) is bottom right."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Start at (0, 0), move 4 left and 5 up. Coordinates?",
+     "a": "(−4, 5)",
+     "mins": 2,
+     "model": "4 left means x = −4; 5 up means y = 5. Point (−4, 5)."
+    },
+    {
+     "q": "Which axis is (0, −6) on?",
+     "a": "The y-axis",
+     "mins": 1
+    },
+    {
+     "q": "How far is it from (−3, 2) to (5, 2)?",
+     "a": "8 units",
+     "mins": 1
+    },
+    {
+     "q": "What point is 3 units below (−1, 2)?",
+     "a": "(−1, −1)",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Plot A(−3, −2), B(1, −2), C(1, 3). Find D to make a rectangle and work out its area.",
+     "a": "D(−3, 3); 4 by 5, area 20 square units",
+     "mins": 4,
+     "model": "D has the x of A (−3) and the y of C (3): D(−3, 3). Width 1 − (−3) = 4; height 3 − (−2) = 5; area 4 × 5 = 20."
+    },
+    {
+     "q": "Extend: (−1, 1) and (3, 1) are two corners of a square, joined by one side. Give both possible pairs of other corners.",
+     "a": "(3, 5) and (−1, 5), or (3, −3) and (−1, −3)",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: (−4, 1) and (2, 1) are the base of an isosceles triangle. The third corner is (x, 6). Find x.",
+     "a": "It must be above the middle of the base: x = −1",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Which quadrant is (5, −7) in?",
+     "a": "4th (bottom right)",
+     "mins": 1
+    },
+    {
+     "q": "What are the coordinates 6 left and 2 down from the origin?",
+     "a": "(−6, −2)",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why do we agree to write x first?",
+     "a": "So everyone reads a point the same way; (2, 5) and (5, 2) are different places.",
+     "mins": 1
+    }
+   ],
+   "homework": "On squared paper draw axes from −6 to 6 and plot a geometric pattern (no people or faces) with at least one point in each quadrant; list its coordinates.",
+   "send": "Support: printed axes; colour the quadrants. EAL: 'across' and 'up/down' gestures. Stretch: reflect your pattern in the y-axis and list the new points.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 7 9.3 Coordinates and midpoints (the school's KS3 scheme)",
+    "Squared paper, ruler and pencil (household)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "Cartesian coordinate plane four quadrants",
+     "alt": "A coordinate grid with four quadrants",
+     "for": "teach:1"
+    },
+    {
+     "find": "qibla compass",
+     "alt": "A qiblah compass showing direction",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Autumn 2: The Cartesian plane, data and probability",
+   "n": 24,
+   "title": "Midpoints and lines parallel to the axes",
+   "duration": 50,
+   "bigQuestion": "How does averaging help us find the middle of a line?",
+   "objectives": [
+    "To understand how to find midpoints and recognise lines parallel to the axes"
+   ],
+   "successCriteria": [
+    "All: find the midpoint of a segment with positive coordinates",
+    "Most: find midpoints with negative coordinates and name lines x = a, y = b",
+    "Some: find an end point from a midpoint"
+   ],
+   "crossCurricular": "Geography: halfway points on maps",
+   "smsc": "Moral: meeting someone halfway as a fair compromise",
+   "keywords": [
+    {
+     "term": "midpoint",
+     "def": "the point exactly halfway between two points"
+    },
+    {
+     "term": "line segment",
+     "def": "a straight line with two end points"
+    },
+    {
+     "term": "horizontal",
+     "def": "flat, going across"
+    },
+    {
+     "term": "vertical",
+     "def": "straight up and down"
+    },
+    {
+     "term": "mean",
+     "def": "add and divide by how many"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A is (−2, 1) and B is (6, 5). Where is the point exactly halfway between them?",
+    "a": "(2, 3): halfway across is the mean of −2 and 6; halfway up is the mean of 1 and 5."
+   },
+   "starter": [
+    {
+     "q": "Which quadrant is (−2, 5) in?",
+     "a": "2nd (top left)",
+     "mins": 1
+    },
+    {
+     "q": "Distance from (−3, 2) to (5, 2)?",
+     "a": "8 units",
+     "mins": 1
+    },
+    {
+     "q": "Work out −3 + 7.",
+     "a": "4",
+     "mins": 1
+    },
+    {
+     "q": "Work out (−4 + 6) ÷ 2.",
+     "a": "1",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Halfway along a number line",
+     "bullets": [
+      "Halfway between −2 and 6 is 2",
+      "(−2 + 6) ÷ 2 = 2"
+     ],
+     "note": "Count in from both ends together.",
+     "numberline": {
+      "min": -2,
+      "max": 6,
+      "step": 1,
+      "marks": [
+       {
+        "at": -2,
+        "label": "A"
+       },
+       {
+        "at": 2,
+        "label": "middle"
+       },
+       {
+        "at": 6,
+        "label": "B"
+       }
+      ]
+     }
+    },
+    {
+     "heading": "The midpoint rule",
+     "bullets": [
+      "Mean of the x-coordinates",
+      "Mean of the y-coordinates"
+     ],
+     "note": "Model, then pupils try (2, 8) and (6, 4) → (4, 6).",
+     "model": {
+      "problem": "Find the midpoint of (−3, 4) and (5, −2).",
+      "steps": [
+       "x: (−3 + 5) ÷ 2 = 1",
+       "y: (4 + (−2)) ÷ 2 = 1"
+      ],
+      "answer": "(1, 1)"
+     }
+    },
+    {
+     "heading": "Lines x = a and y = b",
+     "bullets": [
+      "x = 3: every point has x-coordinate 3",
+      "It is a vertical line",
+      "y = −2 is horizontal"
+     ],
+     "note": "List points on x = 3: (3, −1), (3, 0), (3, 4).",
+     "misconception": {
+      "wrong": "x = 3 is a horizontal line",
+      "right": "x = 3 is vertical: all its points have x = 3"
+     }
+    },
+    {
+     "heading": "Working backwards",
+     "bullets": [
+      "The step from A to M equals the step from M to B"
+     ],
+     "note": "A(−1, 1), M(2, 3): steps +3 and +2, so B(5, 5).",
+     "model": {
+      "problem": "M(1, 4) is the midpoint of AB. A is (−3, 7). Find B.",
+      "steps": [
+       "x step from A to M: −3 to 1 is +4",
+       "y step: 7 to 4 is −3",
+       "B = (1 + 4, 4 − 3)"
+      ],
+      "answer": "B(5, 1)"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Which coordinate stays the same?"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Which line passes through (4, −2) and (4, 7)?",
+      "options": [
+       "y = 4",
+       "x = 4",
+       "y = −2",
+       "x = 7"
+      ],
+      "answer": 1,
+      "why": "Both points have x = 4, so the vertical line x = 4. y = 4 is horizontal."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Find the midpoint of (2, 8) and (6, 4).",
+     "a": "(4, 6)",
+     "mins": 2,
+     "model": "x: (2 + 6) ÷ 2 = 4. y: (8 + 4) ÷ 2 = 6. Midpoint (4, 6)."
+    },
+    {
+     "q": "Find the midpoint of (−5, 3) and (1, −7).",
+     "a": "(−2, −2)",
+     "mins": 2
+    },
+    {
+     "q": "Name the line through (−3, 5) and (6, 5).",
+     "a": "y = 5",
+     "mins": 1
+    },
+    {
+     "q": "Where do x = −2 and y = 4 cross?",
+     "a": "(−2, 4)",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Find the midpoints of (a) (0, 0) and (8, 6) (b) (−4, 2) and (2, 10) (c) (3, −5) and (−3, 5)",
+     "a": "(a) (4, 3) (b) (−1, 6) (c) (0, 0)",
+     "mins": 4,
+     "model": "(a) (0 + 8) ÷ 2 = 4, (0 + 6) ÷ 2 = 3: (4, 3). (b) (−4 + 2) ÷ 2 = −1, (2 + 10) ÷ 2 = 6: (−1, 6). (c) (3 + −3) ÷ 2 = 0, (−5 + 5) ÷ 2 = 0: (0, 0)."
+    },
+    {
+     "q": "Extend: M(−1, 2) is the midpoint of PQ and P is (3, −4). Find Q.",
+     "a": "Steps from P to M: −4 and +6, so Q(−5, 8)",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: x = −2, x = 4, y = 1 and y = 6 make a rectangle. Find its area, perimeter and the midpoint of a diagonal.",
+     "a": "6 by 5: area 30, perimeter 22; centre (1, 3.5)",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Find the midpoint of (−2, 7) and (4, −1).",
+     "a": "(1, 3)",
+     "mins": 1
+    },
+    {
+     "q": "Is y = −3 horizontal or vertical?",
+     "a": "Horizontal",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why is the midpoint the mean of the coordinates?",
+     "a": "The mean is the value exactly halfway between two numbers, across and up.",
+     "mins": 1
+    }
+   ],
+   "homework": "Plot four points of your choice, one in each quadrant; find the midpoint of each pair of neighbours and check on the grid.",
+   "send": "Support: number lines for each coordinate. EAL: 'midpoint', 'horizontal', 'vertical' with gestures. Stretch: find the point a third of the way along a segment.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 7 9.3 Coordinates and midpoints and 9.5 Straight-line graphs (the school's KS3 scheme)",
+    "Squared paper (household)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "midpoint of a line segment diagram",
+     "alt": "A line segment with its midpoint marked",
+     "for": "teach:2"
+    },
+    {
+     "find": "graph paper horizontal vertical lines",
+     "alt": "Squared paper showing vertical and horizontal lines",
+     "for": "teach:3"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 1: Brackets, equations, inequalities and sequences",
+   "n": 25,
+   "title": "Expanding single brackets",
+   "duration": 50,
+   "bigQuestion": "What does a number outside a bracket do to everything inside it?",
+   "objectives": [
+    "To understand how to expand a single bracket"
+   ],
+   "successCriteria": [
+    "All: expand brackets such as 3(x + 4)",
+    "Most: expand with negative or letter multipliers",
+    "Some: work backwards to find missing terms"
+   ],
+   "crossCurricular": "Science: rearranging formulae later depends on expanding",
+   "smsc": "Spiritual: al-Khwarizmi's book on al-jabr (الجبر), written in Baghdad, gave algebra its name",
+   "keywords": [
+    {
+     "term": "expand",
+     "def": "multiply out a bracket"
+    },
+    {
+     "term": "term",
+     "def": "a number, letter or product such as 4x"
+    },
+    {
+     "term": "coefficient",
+     "def": "the number in front of a letter"
+    },
+    {
+     "term": "expression",
+     "def": "terms joined by + or −, with no equals sign"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Is 3(x + 4) the same as 3x + 4? Test it with x = 2.",
+    "options": [
+     "Yes",
+     "No"
+    ],
+    "a": "No: 3(2 + 4) = 18 but 3 × 2 + 4 = 10. The 3 multiplies both terms: 3x + 12."
+   },
+   "starter": [
+    {
+     "q": "Simplify 3a + 5 − a + 2.",
+     "a": "2a + 7",
+     "mins": 1
+    },
+    {
+     "q": "Work out 4 × −3.",
+     "a": "−12",
+     "mins": 1
+    },
+    {
+     "q": "Work out −2 × −5.",
+     "a": "10",
+     "mins": 1
+    },
+    {
+     "q": "Find 3n − 5 when n = 4.",
+     "a": "7",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "The area model",
+     "bullets": [
+      "3(x + 4) is a rectangle 3 by (x + 4)",
+      "Two parts: 3x and 12"
+     ],
+     "note": "Draw the rectangle split into x and 4. Total area 3x + 12.",
+     "table": {
+      "head": [
+       "×",
+       "x",
+       "+4"
+      ],
+      "rows": [
+       [
+        "3",
+        "3x",
+        "+12"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Multiply every term",
+     "bullets": [
+      "The outside number multiplies each term inside"
+     ],
+     "note": "Model, then pupils try 6(x + 2) and 4(3 − 2a).",
+     "model": {
+      "problem": "Expand 5(2y − 3).",
+      "steps": [
+       "5 × 2y = 10y",
+       "5 × −3 = −15"
+      ],
+      "answer": "10y − 15"
+     }
+    },
+    {
+     "heading": "Negative multipliers",
+     "bullets": [
+      "−2(x − 6): −2 × x = −2x",
+      "−2 × −6 = +12"
+     ],
+     "note": "Negative times negative is positive. Ask: what is −(x − 9)? (−x + 9).",
+     "model": {
+      "problem": "Expand −2(x − 6).",
+      "steps": [
+       "−2 × x = −2x",
+       "−2 × −6 = +12"
+      ],
+      "answer": "−2x + 12"
+     }
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "The outside number reaches every term"
+     ],
+     "note": "Ask pupils to test their answer with x = 1.",
+     "misconception": {
+      "wrong": "4(n + 2) = 4n + 2",
+      "right": "4(n + 2) = 4n + 8"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Watch the signs"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Expand −3(2x − 5).",
+      "options": [
+       "−6x − 15",
+       "−6x + 15",
+       "6x − 15",
+       "−6x − 5"
+      ],
+      "answer": 1,
+      "why": "−3 × 2x = −6x and −3 × −5 = +15. −6x − 15 forgets that two negatives make a positive."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Expand 6(x + 2).",
+     "a": "6x + 12",
+     "mins": 2,
+     "model": "6 × x = 6x and 6 × 2 = 12. Answer 6x + 12."
+    },
+    {
+     "q": "Expand 4(3 − 2a).",
+     "a": "12 − 8a",
+     "mins": 1
+    },
+    {
+     "q": "Expand −5(y + 1).",
+     "a": "−5y − 5",
+     "mins": 1
+    },
+    {
+     "q": "Expand x(x − 7).",
+     "a": "x² − 7x",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Expand (a) 7(m + 3) (b) 2(5p − 4) (c) −4(2 − k) (d) 3b(b + 2)",
+     "a": "(a) 7m + 21 (b) 10p − 8 (c) −8 + 4k (d) 3b² + 6b",
+     "mins": 4,
+     "model": "(a) 7m + 21. (b) 10p − 8. (c) −4 × 2 = −8 and −4 × −k = +4k: −8 + 4k. (d) 3b × b = 3b² and 3b × 2 = 6b: 3b² + 6b."
+    },
+    {
+     "q": "Extend: A rectangle is 4 by (2x + 5). Write an expression for its area and expand it.",
+     "a": "4(2x + 5) = 8x + 20",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Fill in the gaps: □(3x − □) = 12x − 20",
+     "a": "4(3x − 5)",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Expand 8(2w − 1).",
+     "a": "16w − 8",
+     "mins": 1
+    },
+    {
+     "q": "Expand −(x − 9).",
+     "a": "−x + 9",
+     "mins": 1
+    },
+    {
+     "q": "Big question: what does the number outside a bracket do?",
+     "a": "It multiplies every term inside the bracket.",
+     "mins": 1
+    }
+   ],
+   "homework": "Expand ten brackets of your own choice (include three with negative numbers outside) and check each by substituting x = 2.",
+   "send": "Support: area grid for each bracket. EAL: 'expand' means 'multiply out'. Stretch: brackets with two letters, such as 3a(2a − 5b).",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 8 4.2 Expressions and brackets (the school's KS3 scheme)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "algebra tiles expanding brackets",
+     "alt": "Algebra tiles showing 3(x + 4)",
+     "for": "teach:1"
+    },
+    {
+     "find": "Kitab al-jabr wa-l-muqabala manuscript page",
+     "alt": "A page from al-Khwarizmi's book on algebra",
+     "for": "keywords"
+    }
+   ],
+   "islamicLink": {
+    "text": "Algebra takes its name from al-jabr (الجبر) in the book of Muhammad ibn Musa al-Khwarizmi, written in Baghdad in the 9th century. He wrote it to solve real problems of the Muslim community, such as dividing inheritance and trade.",
+    "at": "start"
+   }
+  },
+  {
+   "unit": "Spring 1: Brackets, equations, inequalities and sequences",
+   "n": 26,
+   "title": "Expanding and simplifying expressions",
+   "duration": 50,
+   "bigQuestion": "How do we keep track of signs when there are two brackets?",
+   "objectives": [
+    "To understand how to expand and simplify expressions with more than one bracket"
+   ],
+   "successCriteria": [
+    "All: expand and simplify the sum of two brackets",
+    "Most: expand and simplify when a bracket is subtracted",
+    "Some: prove two expressions are equivalent"
+   ],
+   "crossCurricular": "Computing: simplifying expressions in code",
+   "smsc": "Spiritual: al-Khwarizmi's book on al-jabr (الجبر), written in Baghdad, gave algebra its name",
+   "keywords": [
+    {
+     "term": "simplify",
+     "def": "collect like terms to write more briefly"
+    },
+    {
+     "term": "like terms",
+     "def": "terms with the same letters and powers"
+    },
+    {
+     "term": "equivalent",
+     "def": "equal for every value"
+    },
+    {
+     "term": "identity",
+     "def": "a statement true for all values, written with ≡"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Which expression is the odd one out? Why?",
+    "options": [
+     "2(x + 3) + 4x",
+     "6x + 6",
+     "3(2x + 2)",
+     "6(x + 2)"
+    ],
+    "a": "6(x + 2) = 6x + 12. The other three all simplify to 6x + 6."
+   },
+   "starter": [
+    {
+     "q": "Expand 5(2y − 3).",
+     "a": "10y − 15",
+     "mins": 1
+    },
+    {
+     "q": "Expand −2(x − 6).",
+     "a": "−2x + 12",
+     "mins": 1
+    },
+    {
+     "q": "Simplify 4x − 7x.",
+     "a": "−3x",
+     "mins": 1
+    },
+    {
+     "q": "Work out 3 − (−2).",
+     "a": "5",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Expand, then collect",
+     "bullets": [
+      "Expand each bracket",
+      "Collect the x terms, then the numbers"
+     ],
+     "note": "Model, then pupils try 2(x + 5) + 3(x + 1).",
+     "model": {
+      "problem": "Expand and simplify 3(x + 4) + 2(x − 1).",
+      "steps": [
+       "3x + 12",
+       "2x − 2",
+       "3x + 2x = 5x; 12 − 2 = 10"
+      ],
+      "answer": "5x + 10"
+     }
+    },
+    {
+     "heading": "Subtracting a bracket",
+     "bullets": [
+      "−3(a − 4) means −3 × a and −3 × −4"
+     ],
+     "note": "The minus belongs to the 3. Circle −3 before multiplying.",
+     "model": {
+      "problem": "Expand and simplify 5(a + 2) − 3(a − 4).",
+      "steps": [
+       "5a + 10",
+       "−3a + 12",
+       "5a − 3a = 2a; 10 + 12 = 22"
+      ],
+      "answer": "2a + 22"
+     }
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "The sign multiplies too"
+     ],
+     "note": "Ask: what is −3 × −4?",
+     "misconception": {
+      "wrong": "5(a + 2) − 3(a − 4) = 5a + 10 − 3a − 12",
+      "right": "−3 × −4 = +12, so 5a + 10 − 3a + 12 = 2a + 22"
+     }
+    },
+    {
+     "heading": "Track the signs",
+     "bullets": [
+      "Write each term with its sign",
+      "Then collect"
+     ],
+     "note": "Use the table to organise terms before collecting.",
+     "table": {
+      "head": [
+       "Expression",
+       "x terms",
+       "Numbers",
+       "Simplified"
+      ],
+      "rows": [
+       [
+        "2(x + 5) + 3(x + 1)",
+        "2x + 3x",
+        "10 + 3",
+        "5x + 13"
+       ],
+       [
+        "6(b + 2) − 2(b + 4)",
+        "6b − 2b",
+        "12 − 8",
+        "4b + 4"
+       ],
+       [
+        "4(2a − 1) + 3a",
+        "8a + 3a",
+        "−4",
+        "11a − 4"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Signs first"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Expand and simplify 4(y + 2) − 2(y + 3).",
+      "options": [
+       "2y + 2",
+       "2y + 14",
+       "2y + 5",
+       "6y + 2"
+      ],
+      "answer": 0,
+      "why": "4y + 8 − 2y − 6 = 2y + 2. 2y + 14 adds the 6 instead of subtracting it."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Expand and simplify 2(x + 5) + 3(x + 1).",
+     "a": "5x + 13",
+     "mins": 2,
+     "model": "Expand: 2x + 10 and 3x + 3. Collect: 2x + 3x = 5x; 10 + 3 = 13. Answer 5x + 13."
+    },
+    {
+     "q": "Expand and simplify 4(2a − 1) + 3a.",
+     "a": "11a − 4",
+     "mins": 1
+    },
+    {
+     "q": "Expand and simplify 6(b + 2) − 2(b + 4).",
+     "a": "4b + 4",
+     "mins": 2
+    },
+    {
+     "q": "Expand and simplify x(x + 3) + 2x.",
+     "a": "x² + 5x",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Expand and simplify (a) 3(2m + 1) + 4(m − 2) (b) 5(p + 3) − 2(p − 1) (c) 2(4 − k) − 3(k + 1)",
+     "a": "(a) 10m − 5 (b) 3p + 17 (c) 5 − 5k",
+     "mins": 5,
+     "model": "(a) 6m + 3 + 4m − 8 = 10m − 5. (b) 5p + 15 − 2p + 2 = 3p + 17. (c) 8 − 2k − 3k − 3 = 5 − 5k."
+    },
+    {
+     "q": "Extend: Show that 3(2x + 4) − 2(x + 1) ≡ 2(2x + 5).",
+     "a": "6x + 12 − 2x − 2 = 4x + 10 = 2(2x + 5)",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: A rectangle has sides 2(x + 3) and 3(x − 1). Find and simplify an expression for its perimeter.",
+     "a": "2(2x + 6 + 3x − 3) = 2(5x + 3) = 10x + 6",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Expand and simplify 7(x + 1) − 3(x + 2).",
+     "a": "4x + 1",
+     "mins": 2
+    },
+    {
+     "q": "Big question: what happens to the signs in −2(x − 5)?",
+     "a": "Both terms are multiplied by −2: −2x and +10.",
+     "mins": 1
+    }
+   ],
+   "homework": "Expand and simplify 3(x + 2) + 5(x − 1), 4(2y + 3) − 3(y − 2) and 6(a − 1) − 2(3a − 3); explain the last answer.",
+   "send": "Support: term table to sort before collecting. EAL: 'collect', 'like terms'. Stretch: expand x(x + 2) − x(x − 3).",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 8 4.2 Expressions and brackets (the school's KS3 scheme)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "algebra tiles collecting like terms",
+     "alt": "Algebra tiles grouped as like terms",
+     "for": "teach:4"
+    },
+    {
+     "find": "rectangle algebraic side lengths perimeter",
+     "alt": "A rectangle with algebraic sides",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 1: Brackets, equations, inequalities and sequences",
+   "n": 27,
+   "title": "Factorising into a single bracket",
+   "duration": 50,
+   "bigQuestion": "How do expanding and factorising undo each other?",
+   "objectives": [
+    "To understand how factorising reverses expanding"
+   ],
+   "successCriteria": [
+    "All: factorise expressions such as 4x + 20",
+    "Most: factorise fully with letters in the HCF",
+    "Some: factorise expressions with two letters and powers"
+   ],
+   "crossCurricular": "Science: factorising in formulae such as v = u + at",
+   "smsc": "Spiritual: al-Khwarizmi's book on al-jabr (الجبر), written in Baghdad, gave algebra its name",
+   "keywords": [
+    {
+     "term": "factorise",
+     "def": "write as a product, putting a common factor outside a bracket"
+    },
+    {
+     "term": "common factor",
+     "def": "a factor shared by every term"
+    },
+    {
+     "term": "HCF",
+     "def": "highest common factor"
+    },
+    {
+     "term": "fully",
+     "def": "the biggest common factor has been taken out"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Expanding takes 3(x + 2) to 3x + 6. What would going backwards look like for 10x + 15?",
+    "a": "5(2x + 3). Factorising is the reverse of expanding."
+   },
+   "starter": [
+    {
+     "q": "Expand 4(3x − 2).",
+     "a": "12x − 8",
+     "mins": 1
+    },
+    {
+     "q": "Find the HCF of 18 and 24.",
+     "a": "6",
+     "mins": 1
+    },
+    {
+     "q": "Find the HCF of 12x and 8.",
+     "a": "4",
+     "mins": 1
+    },
+    {
+     "q": "Expand x(x + 5).",
+     "a": "x² + 5x",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Two directions",
+     "bullets": [
+      "Expanding and factorising are inverses"
+     ],
+     "note": "Write both arrows on the board. Always check a factorisation by expanding it.",
+     "compare": {
+      "left": {
+       "title": "Expand",
+       "points": [
+        "6(2x + 3)",
+        "multiply out",
+        "gives 12x + 18"
+       ]
+      },
+      "right": {
+       "title": "Factorise",
+       "points": [
+        "12x + 18",
+        "take out the HCF",
+        "gives 6(2x + 3)"
+       ]
+      },
+      "label": "inverse"
+     }
+    },
+    {
+     "heading": "Factorising with numbers",
+     "bullets": [
+      "Find the HCF of the terms",
+      "Divide each term by it"
+     ],
+     "note": "Model, then pupils factorise 9a − 6.",
+     "model": {
+      "problem": "Factorise 12x + 18.",
+      "steps": [
+       "HCF of 12x and 18 is 6",
+       "12x ÷ 6 = 2x and 18 ÷ 6 = 3",
+       "Check: 6(2x + 3) = 12x + 18"
+      ],
+      "answer": "6(2x + 3)"
+     }
+    },
+    {
+     "heading": "Letters in the HCF",
+     "bullets": [
+      "x² + 7x = x(x + 7)",
+      "8a² − 12a: HCF 4a"
+     ],
+     "note": "Find the number HCF, then the letter HCF.",
+     "model": {
+      "problem": "Factorise fully 8a² − 12a.",
+      "steps": [
+       "Numbers: HCF of 8 and 12 is 4",
+       "Letters: a² and a share a",
+       "8a² ÷ 4a = 2a; 12a ÷ 4a = 3"
+      ],
+      "answer": "4a(2a − 3)"
+     }
+    },
+    {
+     "heading": "Factorise fully",
+     "bullets": [
+      "Is there still a common factor inside?"
+     ],
+     "note": "2(6x + 9) still has 3 in common inside.",
+     "misconception": {
+      "wrong": "12x + 18 = 2(6x + 9)",
+      "right": "Not fully: 6x + 9 still has a factor 3. Fully: 6(2x + 3)"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Use the highest common factor"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Factorise fully 15y − 25.",
+      "options": [
+       "5(3y − 5)",
+       "5(3y − 25)",
+       "3(5y − 25)",
+       "15(y − 25)"
+      ],
+      "answer": 0,
+      "why": "HCF 5: 15y ÷ 5 = 3y and 25 ÷ 5 = 5. Expanding the others does not give 15y − 25."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Factorise 4x + 20.",
+     "a": "4(x + 5)",
+     "mins": 2,
+     "model": "HCF of 4x and 20 is 4. 4x ÷ 4 = x, 20 ÷ 4 = 5: 4(x + 5). Check: 4x + 20."
+    },
+    {
+     "q": "Factorise 9a − 6.",
+     "a": "3(3a − 2)",
+     "mins": 1
+    },
+    {
+     "q": "Factorise y² − 3y.",
+     "a": "y(y − 3)",
+     "mins": 1
+    },
+    {
+     "q": "Factorise 14m + 21n.",
+     "a": "7(2m + 3n)",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Factorise fully (a) 6p + 30 (b) 20 − 8k (c) 10x² + 5x (d) 18ab − 12a",
+     "a": "(a) 6(p + 5) (b) 4(5 − 2k) (c) 5x(2x + 1) (d) 6a(3b − 2)",
+     "mins": 5,
+     "model": "(a) HCF 6: 6(p + 5). (b) HCF 4: 4(5 − 2k). (c) HCF 5x: 5x(2x + 1). (d) HCF 6a: 6a(3b − 2)."
+    },
+    {
+     "q": "Extend: The area of a rectangle is 6x + 9. Give two possible pairs of side lengths.",
+     "a": "For example 3 and 2x + 3, or 1 and 6x + 9",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Factorise fully 24x²y − 16xy².",
+     "a": "8xy(3x − 2y)",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Factorise fully 12n − 16.",
+     "a": "4(3n − 4)",
+     "mins": 1
+    },
+    {
+     "q": "Factorise x² + 9x.",
+     "a": "x(x + 9)",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how can you check a factorisation?",
+     "a": "Expand it: you should get the original expression back.",
+     "mins": 1
+    }
+   ],
+   "homework": "Write five expressions that factorise with a common factor (include one with a letter in the HCF); swap with a partner or family member to factorise.",
+   "send": "Support: HCF table of the numbers. EAL: 'factor', 'common', 'fully'. Stretch: factorise expressions with three terms, such as 6x² + 9x − 3x³.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 8 4.3 Factorising expressions (the school's KS3 scheme)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "factor tree",
+     "alt": "A factor tree for finding common factors",
+     "for": "keywords"
+    },
+    {
+     "find": "algebra tiles factorising rectangle",
+     "alt": "Algebra tiles arranged as a rectangle",
+     "for": "teach:2"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 1: Brackets, equations, inequalities and sequences",
+   "n": 28,
+   "title": "Substituting into expressions and formulae",
+   "duration": 50,
+   "bigQuestion": "Why do brackets matter when we substitute negative numbers?",
+   "objectives": [
+    "To understand how to substitute values, including negatives, into expressions and formulae"
+   ],
+   "successCriteria": [
+    "All: substitute positive whole numbers",
+    "Most: substitute negative numbers and powers",
+    "Some: use formulae from science and find a value that meets conditions"
+   ],
+   "crossCurricular": "Science: substituting into v = u + at and F = ma",
+   "smsc": "Moral: precise working builds trust in our results",
+   "keywords": [
+    {
+     "term": "substitute",
+     "def": "replace a letter with a number"
+    },
+    {
+     "term": "formula",
+     "def": "a rule connecting quantities, such as A = lw"
+    },
+    {
+     "term": "order of operations",
+     "def": "brackets, indices, ×÷, +−"
+    },
+    {
+     "term": "square",
+     "def": "multiply a number by itself"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "True or false: if x = −3 then x² = −9.",
+    "options": [
+     "True",
+     "False"
+    ],
+    "a": "False: (−3)² = −3 × −3 = 9. Writing the bracket stops the mistake."
+   },
+   "starter": [
+    {
+     "q": "Factorise 9a − 6.",
+     "a": "3(3a − 2)",
+     "mins": 1
+    },
+    {
+     "q": "Expand −2(x − 4).",
+     "a": "−2x + 8",
+     "mins": 1
+    },
+    {
+     "q": "Work out (−3)².",
+     "a": "9",
+     "mins": 1
+    },
+    {
+     "q": "Work out −4 × 5.",
+     "a": "−20",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Brackets around negatives",
+     "bullets": [
+      "a = 4, b = −2",
+      "3a − 5b = 3(4) − 5(−2) = 12 + 10"
+     ],
+     "note": "Write every substituted number in brackets first.",
+     "model": {
+      "problem": "Find 3a − 5b when a = 4 and b = −2.",
+      "steps": [
+       "3 × 4 = 12",
+       "5 × −2 = −10",
+       "12 − (−10) = 22"
+      ],
+      "answer": "22"
+     }
+    },
+    {
+     "heading": "Powers first",
+     "bullets": [
+      "2x² means 2 × x², not (2x)²"
+     ],
+     "note": "Order of operations: indices before multiplying.",
+     "misconception": {
+      "wrong": "2x² when x = 3 is (2 × 3)² = 36",
+      "right": "x² = 9, then 2 × 9 = 18"
+     }
+    },
+    {
+     "heading": "One value, many expressions",
+     "bullets": [
+      "x = −2",
+      "Fill in each row"
+     ],
+     "note": "Pupils type one row each in the chat.",
+     "table": {
+      "head": [
+       "Expression",
+       "Working",
+       "Value"
+      ],
+      "rows": [
+       [
+        "x²",
+        "(−2) × (−2)",
+        "4"
+       ],
+       [
+        "3x",
+        "3 × (−2)",
+        "−6"
+       ],
+       [
+        "5 − x",
+        "5 − (−2)",
+        "7"
+       ],
+       [
+        "x³",
+        "(−2)³",
+        "−8"
+       ],
+       [
+        "2x² + x",
+        "2 × 4 + (−2)",
+        "6"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Formulae",
+     "bullets": [
+      "v = u + at",
+      "u = 5, a = 2, t = 7.5"
+     ],
+     "note": "This is the physics formula for final speed.",
+     "model": {
+      "problem": "Find v when u = 5, a = 2 and t = 7.5 in v = u + at.",
+      "steps": [
+       "at = 2 × 7.5 = 15",
+       "v = 5 + 15"
+      ],
+      "answer": "v = 20"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Brackets for negatives"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Find 4 − 3y when y = −2.",
+      "options": [
+       "10",
+       "−2",
+       "2",
+       "−10"
+      ],
+      "answer": 0,
+      "why": "3 × −2 = −6, and 4 − (−6) = 10. −2 comes from 4 − 6."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Find 5p + 2q when p = 3 and q = −4.",
+     "a": "7",
+     "mins": 2,
+     "model": "5p + 2q = 5(3) + 2(−4) = 15 − 8 = 7."
+    },
+    {
+     "q": "Find x² − 4x when x = 5.",
+     "a": "5",
+     "mins": 1
+    },
+    {
+     "q": "Find ab/4 when a = 6 and b = −2.",
+     "a": "−3",
+     "mins": 2
+    },
+    {
+     "q": "Use F = 1.8C + 32 to find F when C = 25.",
+     "a": "77",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: m = −1 and n = 4. Find (a) 3m + n (b) n² − m (c) 2mn (d) (n − m)/5",
+     "a": "(a) 1 (b) 17 (c) −8 (d) 1",
+     "mins": 4,
+     "model": "(a) 3(−1) + 4 = 1. (b) 4² − (−1) = 16 + 1 = 17. (c) 2(−1)(4) = −8. (d) (4 − (−1)) ÷ 5 = 5 ÷ 5 = 1."
+    },
+    {
+     "q": "Extend: s = ut + ½at². Find s when u = 3, t = 4 and a = 10.",
+     "a": "12 + 80 = 92",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: Find a value of x for which 2x² > 50 but 3x < 0. Explain.",
+     "a": "x must be negative with x² > 25, for example x = −6: 2 × 36 = 72 and 3 × −6 = −18",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Find 6 − 2k when k = −3.",
+     "a": "12",
+     "mins": 1
+    },
+    {
+     "q": "Find 3t² when t = −2.",
+     "a": "12",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why write (−3)² and not −3²?",
+     "a": "Without brackets a calculator squares 3 first and gives −9; with brackets it gives 9.",
+     "mins": 1
+    }
+   ],
+   "homework": "Use C = (F − 32) ÷ 1.8 to convert 50°F, 212°F and 5°F to Celsius; check each on a calculator.",
+   "send": "Support: substitution grid with brackets printed. EAL: 'substitute' means 'swap in'. Stretch: substitute fractions and decimals.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 8 4.2 Expressions and brackets; Pearson KS3 Maths Progress (Second Edition) Year 9 2.2 Substituting into expressions (the school's KS3 scheme)",
+    "Calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "thermometer Celsius Fahrenheit scale",
+     "alt": "A thermometer with both temperature scales",
+     "for": "teach:4"
+    },
+    {
+     "find": "scientific calculator negative number key",
+     "alt": "A calculator, for brackets round negatives",
+     "for": "hook"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 1: Brackets, equations, inequalities and sequences",
+   "n": 29,
+   "title": "One-step equations and inverse operations",
+   "duration": 50,
+   "bigQuestion": "Why must we do the same to both sides of an equation?",
+   "objectives": [
+    "To understand how inverse operations solve one-step equations"
+   ],
+   "successCriteria": [
+    "All: solve one-step equations with whole-number answers",
+    "Most: solve one-step equations with negative, decimal and fraction answers",
+    "Some: form a one-step equation from words"
+   ],
+   "crossCurricular": "Science: finding an unknown from a formula",
+   "smsc": "Moral: balance and justice",
+   "keywords": [
+    {
+     "term": "equation",
+     "def": "a statement that two expressions are equal"
+    },
+    {
+     "term": "solve",
+     "def": "find the value that makes the equation true"
+    },
+    {
+     "term": "inverse operation",
+     "def": "the operation that undoes another"
+    },
+    {
+     "term": "solution",
+     "def": "the value that works"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "3 identical bags of dates and 2 loose dates balance 17 loose dates. How many dates are in each bag?",
+    "a": "Take 2 dates off each side: 3 bags balance 15, so each bag holds 5."
+   },
+   "starter": [
+    {
+     "q": "Find 2x² when x = −3.",
+     "a": "18",
+     "mins": 1
+    },
+    {
+     "q": "Factorise 4x + 20.",
+     "a": "4(x + 5)",
+     "mins": 1
+    },
+    {
+     "q": "What is the inverse of − 9?",
+     "a": "+ 9",
+     "mins": 1
+    },
+    {
+     "q": "Is 3(x + 1) ≡ 3x + 3 an identity?",
+     "a": "Yes",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Inverse operations",
+     "bullets": [
+      "+ undoes −; × undoes ÷",
+      "x/4 = 9: multiply both sides by 4"
+     ],
+     "note": "The equation is a balance. Whatever we do to one side we do to the other.",
+     "model": {
+      "problem": "Solve x/4 = 9.",
+      "steps": [
+       "× 4 both sides",
+       "x = 36",
+       "Check: 36 ÷ 4 = 9"
+      ],
+      "answer": "x = 36"
+     }
+    },
+    {
+     "heading": "Negative and decimal answers",
+     "bullets": [
+      "x + 12 = 5 gives x = −7",
+      "5x = 13 gives x = 2.6"
+     ],
+     "note": "Solutions are not always whole or positive.",
+     "model": {
+      "problem": "Solve 5x = 13.",
+      "steps": [
+       "÷ 5 both sides",
+       "x = 13 ÷ 5"
+      ],
+      "answer": "x = 2.6"
+     }
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Use the inverse, on both sides"
+     ],
+     "note": "Ask pupils to check by substituting.",
+     "misconception": {
+      "wrong": "x − 7 = 3, so x = 3 − 7 = −4",
+      "right": "Add 7 to both sides: x = 10. Check: 10 − 7 = 3"
+     }
+    },
+    {
+     "heading": "Sort by solution",
+     "bullets": [
+      "Solve each in your head"
+     ],
+     "note": "Teams poll on two cards, then reveal.",
+     "sort": {
+      "columns": [
+       "x = 4",
+       "x = −4",
+       "x = 12"
+      ],
+      "cards": [
+       "x + 6 = 10",
+       "3x = 36",
+       "x/2 = −2",
+       "x − 8 = 4",
+       "5x = −20",
+       "x/3 = 4",
+       "x + 9 = 13",
+       "−x = 4"
+      ],
+      "answer": [
+       0,
+       2,
+       1,
+       2,
+       1,
+       2,
+       0,
+       1
+      ]
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Which side is the unknown?"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Solve 8 = y − 5.",
+      "options": [
+       "13",
+       "3",
+       "−3",
+       "40"
+      ],
+      "answer": 0,
+      "why": "Add 5 to both sides: y = 13. 3 comes from subtracting 5 instead."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Solve x + 15 = 41.",
+     "a": "x = 26",
+     "mins": 2,
+     "model": "Subtract 15 from both sides: x = 41 − 15 = 26. Check: 26 + 15 = 41."
+    },
+    {
+     "q": "Solve 7x = 91.",
+     "a": "x = 13",
+     "mins": 1
+    },
+    {
+     "q": "Solve x/6 = 2.5.",
+     "a": "x = 15",
+     "mins": 1
+    },
+    {
+     "q": "Solve 20 = x − 13.",
+     "a": "x = 33",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Solve (a) a − 4.5 = 10 (b) 9b = 54 (c) c/8 = −3 (d) 3 + d = −2",
+     "a": "(a) 14.5 (b) 6 (c) −24 (d) −5",
+     "mins": 4,
+     "model": "(a) Add 4.5: a = 14.5. (b) Divide by 9: b = 6. (c) Multiply by 8: c = −24. (d) Subtract 3: d = −5."
+    },
+    {
+     "q": "Extend: I think of a number and multiply it by 12. The answer is 150. Write and solve an equation.",
+     "a": "12n = 150, n = 12.5",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Solve 0.4x = 18 and (3/4)x = 27.",
+     "a": "x = 45 and x = 36",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Solve 6x = 39.",
+     "a": "x = 6.5",
+     "mins": 1
+    },
+    {
+     "q": "Solve x + 11 = 4.",
+     "a": "x = −7",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why do we do the same to both sides?",
+     "a": "To keep the equation balanced, so it stays true.",
+     "mins": 1
+    }
+   ],
+   "homework": "Write six one-step equations whose solutions are −3, 0.5, 7, 12, −10 and 100; swap and solve.",
+   "send": "Support: inverse operation cards; balance pictures. EAL: 'solve', 'inverse', 'both sides'. Stretch: equations with x on the right-hand side and fractions.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 8 4.4 One-step equations (the school's KS3 scheme)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "balance scale equal weights",
+     "alt": "A balanced pair of scales",
+     "for": "hook"
+    },
+    {
+     "find": "bag of dates",
+     "alt": "Bags of dates for the balance puzzle",
+     "for": "keywords"
+    }
+   ],
+   "islamicLink": {
+    "text": "Allah commands justice and fair measure: 'And establish weight in justice and do not make the balance deficient' (Surat ar-Rahman 55:9). An equation is a balance: whatever is done to one side must be done to the other.",
+    "at": "start"
+   }
+  },
+  {
+   "unit": "Spring 1: Brackets, equations, inequalities and sequences",
+   "n": 30,
+   "title": "Two-step equations with function machines",
+   "duration": 50,
+   "bigQuestion": "Why do we undo the operations in reverse order?",
+   "objectives": [
+    "To understand how to solve two-step equations by reversing operations"
+   ],
+   "successCriteria": [
+    "All: solve equations such as 3x + 7 = 31",
+    "Most: solve equations with division or brackets as two steps",
+    "Some: solve equations with negative or fraction solutions"
+   ],
+   "crossCurricular": "Computing: reversing the steps of an algorithm",
+   "smsc": "Spiritual: al-Khwarizmi's book on al-jabr (الجبر), written in Baghdad, gave algebra its name",
+   "keywords": [
+    {
+     "term": "function machine",
+     "def": "a diagram of the operations applied to an input"
+    },
+    {
+     "term": "reverse",
+     "def": "go backwards"
+    },
+    {
+     "term": "two-step equation",
+     "def": "an equation needing two inverse operations"
+    },
+    {
+     "term": "check",
+     "def": "substitute the answer back in"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "I think of a number, multiply by 3 and add 7. I get 31. What was my number?",
+    "a": "Reverse: 31 − 7 = 24, 24 ÷ 3 = 8."
+   },
+   "starter": [
+    {
+     "q": "Solve 7x = 91.",
+     "a": "13",
+     "mins": 1
+    },
+    {
+     "q": "Solve x/6 = 2.5.",
+     "a": "15",
+     "mins": 1
+    },
+    {
+     "q": "Expand 3(2x − 1).",
+     "a": "6x − 3",
+     "mins": 1
+    },
+    {
+     "q": "Next term: 5, 8, 11, ...",
+     "a": "14",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "The machine and its reverse",
+     "bullets": [
+      "3x + 7 = 31: x → × 3 → + 7 → 31",
+      "Reverse: 31 → − 7 → ÷ 3 → 8"
+     ],
+     "note": "The last operation done is the first undone, like taking off shoes before socks.",
+     "table": {
+      "head": [
+       "Forwards",
+       "Step 1",
+       "Step 2",
+       "Output"
+      ],
+      "rows": [
+       [
+        "x",
+        "× 3",
+        "+ 7",
+        "31"
+       ],
+       [
+        "Backwards",
+        "− 7: 24",
+        "÷ 3: 8",
+        "x = 8"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Model",
+     "bullets": [
+      "Undo + or − first",
+      "Then undo × or ÷"
+     ],
+     "note": "Pupils then try 2x + 9 = 23 (7).",
+     "model": {
+      "problem": "Solve 5x − 4 = 21.",
+      "steps": [
+       "+ 4: 5x = 25",
+       "÷ 5: x = 5",
+       "Check: 5 × 5 − 4 = 21"
+      ],
+      "answer": "x = 5"
+     }
+    },
+    {
+     "heading": "Division and brackets",
+     "bullets": [
+      "x/3 + 2 = 6: − 2, then × 3",
+      "3(x + 2) = 24: ÷ 3, then − 2"
+     ],
+     "note": "Order in the machine decides the order of undoing.",
+     "model": {
+      "problem": "Solve 3(x + 2) = 24.",
+      "steps": [
+       "Machine: + 2 then × 3",
+       "Reverse: ÷ 3 gives 8",
+       "Then − 2 gives 6"
+      ],
+      "answer": "x = 6"
+     }
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Reverse order"
+     ],
+     "note": "Show both methods; check by substituting.",
+     "misconception": {
+      "wrong": "2x + 5 = 17: ÷ 2 first gives x + 5 = 8.5",
+      "right": "Subtract 5 first: 2x = 12, so x = 6"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Last step done, first undone"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Solve 4x − 3 = 25.",
+      "options": [
+       "7",
+       "5.5",
+       "88",
+       "22"
+      ],
+      "answer": 0,
+      "why": "+ 3 gives 4x = 28, ÷ 4 gives 7. 5.5 subtracts 3; 22 forgets to divide."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Solve 2x + 9 = 23.",
+     "a": "x = 7",
+     "mins": 2,
+     "model": "Subtract 9: 2x = 14. Divide by 2: x = 7. Check: 2 × 7 + 9 = 23."
+    },
+    {
+     "q": "Solve 6x − 5 = 31.",
+     "a": "x = 6",
+     "mins": 1
+    },
+    {
+     "q": "Solve x/4 − 1 = 5.",
+     "a": "x = 24",
+     "mins": 2
+    },
+    {
+     "q": "Solve 3(x + 4) = 27.",
+     "a": "x = 5",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Solve (a) 7a + 2 = 51 (b) 5b − 8 = 12 (c) (c + 6)/2 = 9 (d) 4d + 11 = 3",
+     "a": "(a) 7 (b) 4 (c) 12 (d) −2",
+     "mins": 5,
+     "model": "(a) − 2, ÷ 7: a = 7. (b) + 8, ÷ 5: b = 4. (c) × 2: c + 6 = 18, − 6: c = 12. (d) − 11: 4d = −8, ÷ 4: d = −2."
+    },
+    {
+     "q": "Extend: Draw the function machine and solve 2(x − 3) + 5 = 19.",
+     "a": "x → − 3 → × 2 → + 5 → 19. Reverse: 14, 7, 10. x = 10",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: Solve 8x + 3 = 4, giving x as a fraction.",
+     "a": "8x = 1, x = 1/8",
+     "mins": 3
+    }
+   ],
+   "exit": [
+    {
+     "q": "Solve 3x + 8 = 20.",
+     "a": "x = 4",
+     "mins": 1
+    },
+    {
+     "q": "Solve x/5 − 2 = 1.",
+     "a": "x = 15",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why do we undo in reverse order?",
+     "a": "The last operation applied to x is the outermost, so it must be undone first.",
+     "mins": 1
+    }
+   ],
+   "homework": "Make four 'think of a number' puzzles with two steps; write the equation and solve each one.",
+   "send": "Support: blank function machines. EAL: 'reverse', 'first', 'then'. Stretch: three-step equations such as (2x − 1)/3 + 4 = 9.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 8 4.5 Two-step equations (the school's KS3 scheme)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "function machine diagram two steps",
+     "alt": "A two-step function machine",
+     "for": "teach:1"
+    },
+    {
+     "find": "flowchart reverse arrows",
+     "alt": "A flowchart read backwards",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 1: Brackets, equations, inequalities and sequences",
+   "n": 31,
+   "title": "The balancing method: unknowns on both sides",
+   "duration": 50,
+   "bigQuestion": "What can we do when the unknown appears on both sides?",
+   "objectives": [
+    "To understand how the balancing method solves equations with unknowns on both sides"
+   ],
+   "successCriteria": [
+    "All: solve two-step equations with the balancing method",
+    "Most: solve equations with x on both sides",
+    "Some: solve equations with brackets and fractions"
+   ],
+   "crossCurricular": "Science: balancing equations in chemistry (later)",
+   "smsc": "Moral: justice as balance",
+   "keywords": [
+    {
+     "term": "balancing method",
+     "def": "doing the same to both sides to keep an equation true"
+    },
+    {
+     "term": "unknown",
+     "def": "the letter whose value we find"
+    },
+    {
+     "term": "collect",
+     "def": "bring all the unknown terms to one side"
+    },
+    {
+     "term": "simplify",
+     "def": "make an expression shorter"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "4 bags of dates and 3 loose dates balance 2 bags and 11 loose dates. How many dates are in a bag?",
+    "a": "Take 2 bags off each side: 2 bags + 3 = 11, so 2 bags = 8 and 1 bag = 4."
+   },
+   "starter": [
+    {
+     "q": "Solve 5x − 4 = 21.",
+     "a": "5",
+     "mins": 1
+    },
+    {
+     "q": "Solve 3(x + 4) = 27.",
+     "a": "5",
+     "mins": 1
+    },
+    {
+     "q": "Simplify 7x − 2x.",
+     "a": "5x",
+     "mins": 1
+    },
+    {
+     "q": "Expand 2(x − 3).",
+     "a": "2x − 6",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Balance both sides",
+     "bullets": [
+      "Remove the smaller x term from both sides",
+      "Then solve the two-step equation"
+     ],
+     "note": "Model the hook as an equation.",
+     "model": {
+      "problem": "Solve 4x + 3 = 2x + 11.",
+      "steps": [
+       "− 2x both sides: 2x + 3 = 11",
+       "− 3: 2x = 8",
+       "÷ 2: x = 4",
+       "Check: 19 = 19"
+      ],
+      "answer": "x = 4"
+     }
+    },
+    {
+     "heading": "Two methods",
+     "bullets": [
+      "Function machines need x on one side",
+      "Balancing works for x on both sides"
+     ],
+     "note": "Ask which method each equation needs.",
+     "compare": {
+      "left": {
+       "title": "Function machine",
+       "points": [
+        "3x + 7 = 31",
+        "x on one side only",
+        "reverse the steps"
+       ]
+      },
+      "right": {
+       "title": "Balancing",
+       "points": [
+        "5x + 2 = 3x + 10",
+        "x on both sides",
+        "same to both sides"
+       ]
+      },
+      "label": "vs"
+     }
+    },
+    {
+     "heading": "Brackets on both sides",
+     "bullets": [
+      "Expand first",
+      "Then collect x terms"
+     ],
+     "note": "Pupils try 2(a + 5) = a + 16 (6).",
+     "model": {
+      "problem": "Solve 3(x − 2) = 2(x + 1).",
+      "steps": [
+       "Expand: 3x − 6 = 2x + 2",
+       "− 2x: x − 6 = 2",
+       "+ 6: x = 8"
+      ],
+      "answer": "x = 8"
+     }
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Subtract the x term; do not add"
+     ],
+     "note": "Ask: what happened to the 3x?",
+     "misconception": {
+      "wrong": "5x + 2 = 3x + 10, so 8x + 2 = 10",
+      "right": "Subtract 3x from both sides: 2x + 2 = 10, so x = 4"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Collect x on the side with more x"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Solve 6x − 5 = 2x + 7.",
+      "options": [
+       "3",
+       "0.5",
+       "1.5",
+       "2"
+      ],
+      "answer": 0,
+      "why": "− 2x: 4x − 5 = 7; + 5: 4x = 12; x = 3. 0.5 comes from 4x = 2."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Solve 5x + 1 = 3x + 9.",
+     "a": "x = 4",
+     "mins": 2,
+     "model": "Subtract 3x from both sides: 2x + 1 = 9. Subtract 1: 2x = 8. Divide by 2: x = 4."
+    },
+    {
+     "q": "Solve 7y − 4 = 4y + 11.",
+     "a": "y = 5",
+     "mins": 2
+    },
+    {
+     "q": "Solve 2(a + 5) = a + 16.",
+     "a": "a = 6",
+     "mins": 2
+    },
+    {
+     "q": "Solve 9 − x = 2x + 3.",
+     "a": "x = 2",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Solve (a) 8m − 3 = 5m + 9 (b) 4(p + 1) = 2p + 14 (c) 3(2k − 1) = 4(k + 2)",
+     "a": "(a) 4 (b) 5 (c) 5.5",
+     "mins": 5,
+     "model": "(a) − 5m: 3m − 3 = 9, so m = 4. (b) 4p + 4 = 2p + 14, so 2p = 10, p = 5. (c) 6k − 3 = 4k + 8, so 2k = 11, k = 5.5."
+    },
+    {
+     "q": "Extend: Solve 5(x − 2) − 2(x + 1) = 9.",
+     "a": "3x − 12 = 9, x = 7",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Solve (x + 3)/2 = (2x − 1)/3.",
+     "a": "3(x + 3) = 2(2x − 1): 3x + 9 = 4x − 2, x = 11",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Solve 7x + 2 = 3x + 18.",
+     "a": "x = 4",
+     "mins": 1
+    },
+    {
+     "q": "Solve 3(x + 6) = 5x.",
+     "a": "18 = 2x, x = 9",
+     "mins": 2
+    },
+    {
+     "q": "Big question: what is the first step when x is on both sides?",
+     "a": "Subtract the smaller x term from both sides so x is on one side only.",
+     "mins": 1
+    }
+   ],
+   "homework": "Solve 6x + 4 = 2x + 24, 3(y − 1) = y + 9 and 10 − 2n = n + 1; check each answer by substituting.",
+   "send": "Support: balance diagrams; step-by-step frame. EAL: 'both sides', 'collect'. Stretch: equations with fractions on both sides.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 8 4.6 The balancing method (the school's KS3 scheme)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "balance scale weighing",
+     "alt": "A balance scale",
+     "for": "hook"
+    },
+    {
+     "find": "bags and loose dates on scales",
+     "alt": "Bags and loose items balancing",
+     "for": "teach:1"
+    }
+   ],
+   "islamicLink": {
+    "text": "Allah commands justice and fair measure: 'And establish weight in justice and do not make the balance deficient' (Surat ar-Rahman 55:9). An equation is a balance: whatever is done to one side must be done to the other.",
+    "at": "start"
+   }
+  },
+  {
+   "unit": "Spring 1: Brackets, equations, inequalities and sequences",
+   "n": 32,
+   "title": "Forming and solving equations from problems",
+   "duration": 50,
+   "bigQuestion": "How can algebra solve a problem in words?",
+   "objectives": [
+    "To understand how to form and solve equations from problems"
+   ],
+   "successCriteria": [
+    "All: form and solve equations from number puzzles",
+    "Most: form equations from angles and perimeters",
+    "Some: solve multi-step problems with two conditions"
+   ],
+   "crossCurricular": "Science: forming equations from data",
+   "smsc": "Spiritual: al-Khwarizmi's book on al-jabr (الجبر), written in Baghdad, gave algebra its name",
+   "keywords": [
+    {
+     "term": "form",
+     "def": "write an equation from information"
+    },
+    {
+     "term": "consecutive",
+     "def": "following one after another, such as 31, 32, 33"
+    },
+    {
+     "term": "perimeter",
+     "def": "distance around a shape"
+    },
+    {
+     "term": "angle sum",
+     "def": "total of the angles, such as 180° in a triangle"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Three consecutive whole numbers add up to 96. What are they?",
+    "a": "n + (n + 1) + (n + 2) = 96, so 3n + 3 = 96, n = 31: 31, 32, 33."
+   },
+   "starter": [
+    {
+     "q": "Solve 4x + 3 = 2x + 11.",
+     "a": "4",
+     "mins": 1
+    },
+    {
+     "q": "Solve 2(a + 5) = a + 16.",
+     "a": "6",
+     "mins": 1
+    },
+    {
+     "q": "Write '5 more than twice n'.",
+     "a": "2n + 5",
+     "mins": 1
+    },
+    {
+     "q": "Write the perimeter of a square with side x + 2.",
+     "a": "4x + 8",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Five steps",
+     "bullets": [
+      "Choose a letter for the unknown",
+      "Write an equation",
+      "Solve, answer, check"
+     ],
+     "note": "Write the steps on the board. The answer must be in words and units.",
+     "diagram": {
+      "centre": "Solving a word problem",
+      "items": [
+       "Define the letter",
+       "Write the equation",
+       "Solve",
+       "Answer the question asked",
+       "Check in the story"
+      ]
+     }
+    },
+    {
+     "heading": "Angles",
+     "bullets": [
+      "Triangle angles add to 180°",
+      "Angles on a line add to 180°"
+     ],
+     "note": "Model, then pupils do angles x, x + 10, x + 20.",
+     "model": {
+      "problem": "A triangle has angles x, 2x and 3x. Find each angle.",
+      "steps": [
+       "x + 2x + 3x = 180",
+       "6x = 180",
+       "x = 30",
+       "Angles: 30°, 60°, 90°"
+      ],
+      "answer": "30°, 60° and 90°"
+     }
+    },
+    {
+     "heading": "Perimeters",
+     "bullets": [
+      "Add all the sides",
+      "Then solve"
+     ],
+     "note": "Sides (x + 4) and (2x − 1); perimeter 30.",
+     "model": {
+      "problem": "A rectangle has sides x + 4 and 2x − 1. Its perimeter is 30 cm. Find the side lengths.",
+      "steps": [
+       "2(x + 4) + 2(2x − 1) = 30",
+       "6x + 6 = 30",
+       "x = 4",
+       "Sides: 8 cm and 7 cm"
+      ],
+      "answer": "8 cm and 7 cm"
+     }
+    },
+    {
+     "heading": "Answer the question",
+     "bullets": [
+      "x is not always the answer"
+     ],
+     "note": "Ask: what did the question ask for?",
+     "misconception": {
+      "wrong": "The sides are x + 4 and 2x − 1, so the answer is x = 4",
+      "right": "Substitute back: the sides are 8 cm and 7 cm"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Angles on a line"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Angles on a straight line are x + 20 and 3x. Find x.",
+      "options": [
+       "40",
+       "50",
+       "53.3",
+       "20"
+      ],
+      "answer": 0,
+      "why": "4x + 20 = 180, 4x = 160, x = 40. 53.3 comes from 3x = 160."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "I think of a number, double it and subtract 7. I get 29. Find the number.",
+     "a": "2n − 7 = 29, n = 18",
+     "mins": 2,
+     "model": "Let the number be n. 2n − 7 = 29. Add 7: 2n = 36. Divide by 2: n = 18."
+    },
+    {
+     "q": "A triangle has angles x, x + 10 and x + 20. Find them.",
+     "a": "3x + 30 = 180, x = 50: 50°, 60°, 70°",
+     "mins": 2
+    },
+    {
+     "q": "A square has perimeter 36 cm and side x − 1. Find x.",
+     "a": "4(x − 1) = 36, x = 10",
+     "mins": 2
+    },
+    {
+     "q": "Ali has £x and Umar has £(x + 15). Together they have £85. How much does Ali have?",
+     "a": "2x + 15 = 85, x = 35: £35",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: A quadrilateral has angles 2x, 3x, 100° and 80°. Find x and the two unknown angles.",
+     "a": "5x + 180 = 360, x = 36: 72° and 108°",
+     "mins": 4,
+     "model": "Angle sum 360°: 2x + 3x + 100 + 80 = 360, so 5x = 180 and x = 36. Angles: 72° and 108°."
+    },
+    {
+     "q": "Extend: A pen costs p pence and a notebook costs 3 times as much. 4 pens and 2 notebooks cost £3.50. Find the cost of each.",
+     "a": "4p + 6p = 350, p = 35: pen 35p, notebook £1.05",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: A rectangle's length is 5 cm more than its width. If the width is doubled and the length is cut by 3 cm, the perimeter goes up by 4 cm. Find the original sides.",
+     "a": "Width w: 4w + 10 becomes 6w + 4, so 6w + 4 = 4w + 14, w = 5: 5 cm by 10 cm",
+     "mins": 5
+    }
+   ],
+   "exit": [
+    {
+     "q": "Two angles on a straight line are 2x and x + 30. Find x.",
+     "a": "3x + 30 = 180, x = 50",
+     "mins": 2
+    },
+    {
+     "q": "Big question: what is the last step of a word problem?",
+     "a": "Answer the question in context with units, and check it fits the story.",
+     "mins": 1
+    }
+   ],
+   "homework": "Write two angle problems and one perimeter problem that each give x = 12; show the solutions.",
+   "send": "Support: equation frames with blanks. EAL: 'consecutive', 'perimeter', key angle facts card. Stretch: problems giving two equations.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 8 4.6 The balancing method; Pearson KS3 Maths Progress (Second Edition) Year 9 2.1 Solving equations (the school's KS3 scheme)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "triangle angles labelled algebra",
+     "alt": "A triangle with algebraic angles",
+     "for": "teach:2"
+    },
+    {
+     "find": "rectangle perimeter diagram",
+     "alt": "A rectangle with labelled sides",
+     "for": "teach:3"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 1: Brackets, equations, inequalities and sequences",
+   "n": 33,
+   "title": "Term-to-term and position-to-term rules",
+   "duration": 50,
+   "bigQuestion": "Why is a position-to-term rule more powerful than a term-to-term rule?",
+   "objectives": [
+    "To understand how position-to-term rules generate sequences"
+   ],
+   "successCriteria": [
+    "All: generate terms from an nth term",
+    "Most: find the 50th or 100th term",
+    "Some: find where two sequences meet"
+   ],
+   "crossCurricular": "Computing: loops and counters generate sequences",
+   "smsc": "Spiritual: patterns and order in creation, such as the regular phases of the moon",
+   "keywords": [
+    {
+     "term": "sequence",
+     "def": "an ordered list that follows a rule"
+    },
+    {
+     "term": "term",
+     "def": "one item in a sequence"
+    },
+    {
+     "term": "position",
+     "def": "where a term is in the list (1st, 2nd, ...)"
+    },
+    {
+     "term": "nth term",
+     "def": "a rule giving any term from its position n"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Sequence A starts at 5 and adds 3 each time. Sequence B has nth term 3n + 2. Are they the same sequence?",
+    "options": [
+     "Yes",
+     "No"
+    ],
+    "a": "Yes: both are 5, 8, 11, 14, ... One describes steps, the other jumps straight to any term."
+   },
+   "starter": [
+    {
+     "q": "Solve 3x + 30 = 180.",
+     "a": "50",
+     "mins": 1
+    },
+    {
+     "q": "Next term: 7, 13, 19, ...",
+     "a": "25",
+     "mins": 1
+    },
+    {
+     "q": "Find 3n + 2 when n = 5.",
+     "a": "17",
+     "mins": 1
+    },
+    {
+     "q": "Expand 4(n − 1).",
+     "a": "4n − 4",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Position and term",
+     "bullets": [
+      "Substitute n = 1, 2, 3, ...",
+      "4n − 1 gives 3, 7, 11, 15, 19"
+     ],
+     "note": "The position is the input; the term is the output.",
+     "table": {
+      "head": [
+       "Position n",
+       "1",
+       "2",
+       "3",
+       "4",
+       "5"
+      ],
+      "rows": [
+       [
+        "4n",
+        "4",
+        "8",
+        "12",
+        "16",
+        "20"
+       ],
+       [
+        "4n − 1",
+        "3",
+        "7",
+        "11",
+        "15",
+        "19"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Linear growth",
+     "bullets": [
+      "Equal steps: a straight-line pattern"
+     ],
+     "note": "Plotting term against position gives points in a straight line.",
+     "chart": {
+      "kind": "line",
+      "title": "Terms of 4n − 1",
+      "labels": [
+       "1",
+       "2",
+       "3",
+       "4",
+       "5"
+      ],
+      "values": [
+       3,
+       7,
+       11,
+       15,
+       19
+      ]
+     }
+    },
+    {
+     "heading": "Any term",
+     "bullets": [
+      "Substitute the position"
+     ],
+     "note": "Model, then pupils find the 20th term of 3n + 1 (61).",
+     "model": {
+      "problem": "Find the first four terms and the 10th term of 6n − 4.",
+      "steps": [
+       "n = 1: 2; n = 2: 8; n = 3: 14; n = 4: 20",
+       "n = 10: 6 × 10 − 4 = 56"
+      ],
+      "answer": "2, 8, 14, 20; 10th term 56"
+     }
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Use the rule, not a shortcut"
+     ],
+     "note": "Ask why 3 × 10 does not work.",
+     "misconception": {
+      "wrong": "10th term of 3, 7, 11, ... is 3 × 10 = 30",
+      "right": "The nth term is 4n − 1, so the 10th term is 39"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Substitute n = 1, 2, 3"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Which sequence has nth term 5n − 2?",
+      "options": [
+       "3, 8, 13, 18",
+       "5, 10, 15, 20",
+       "−2, 3, 8, 13",
+       "3, 7, 11, 15"
+      ],
+      "answer": 0,
+      "why": "n = 1 gives 3, then add 5 each time. −2, 3, 8 starts from n = 0."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Write the first three terms of n + 7.",
+     "a": "8, 9, 10",
+     "mins": 2,
+     "model": "n = 1: 1 + 7 = 8. n = 2: 9. n = 3: 10."
+    },
+    {
+     "q": "Write the first three terms of 10 − 2n.",
+     "a": "8, 6, 4",
+     "mins": 1
+    },
+    {
+     "q": "Find the 20th term of 3n + 1.",
+     "a": "61",
+     "mins": 1
+    },
+    {
+     "q": "What is the term-to-term rule of 7n − 3?",
+     "a": "Add 7",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Write the first five terms of (a) 2n + 9 (b) 4n − 3 (c) 20 − 3n",
+     "a": "(a) 11, 13, 15, 17, 19 (b) 1, 5, 9, 13, 17 (c) 17, 14, 11, 8, 5",
+     "mins": 4,
+     "model": "(a) 11, 13, 15, 17, 19. (b) 1, 5, 9, 13, 17. (c) 17, 14, 11, 8, 5."
+    },
+    {
+     "q": "Extend: The nth term is 6n + 1. Which term is equal to 97?",
+     "a": "6n + 1 = 97, n = 16: the 16th term",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: 3n + 4 and 5n − 6 have the same term in the same position. Find the position and the term.",
+     "a": "3n + 4 = 5n − 6, n = 5; the term is 19",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Find the 50th term of 4n − 5.",
+     "a": "195",
+     "mins": 1
+    },
+    {
+     "q": "Write the first three terms of 0.5n + 2.",
+     "a": "2.5, 3, 3.5",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why is the nth term more powerful than a term-to-term rule?",
+     "a": "It finds any term straight away without listing all the terms before it.",
+     "mins": 1
+    }
+   ],
+   "homework": "Write the first five terms and the 100th term of 2n + 3, 5n − 1 and 50 − 4n.",
+   "send": "Support: position-term tables. EAL: 'position', 'term', 'nth'. Stretch: sequences with decimal or fraction steps.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 9 6.1 nth term of arithmetic sequences (the school's KS3 scheme)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "arithmetic sequence table position term",
+     "alt": "A table of positions and terms",
+     "for": "teach:1"
+    },
+    {
+     "find": "dot pattern sequence",
+     "alt": "A growing dot pattern",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 1: Brackets, equations, inequalities and sequences",
+   "n": 34,
+   "title": "Finding the nth term of a linear sequence",
+   "duration": 50,
+   "bigQuestion": "How does the difference between terms reveal the rule?",
+   "objectives": [
+    "To understand how to find the nth term of a linear sequence"
+   ],
+   "successCriteria": [
+    "All: find the nth term of an increasing sequence",
+    "Most: find the nth term of a decreasing sequence",
+    "Some: find nth terms from shape patterns and use them"
+   ],
+   "crossCurricular": "Computing: a loop counter as a linear rule",
+   "smsc": "Spiritual: reasoning from evidence to a general rule, reflecting on the order Allah placed in creation",
+   "keywords": [
+    {
+     "term": "common difference",
+     "def": "the amount added each time"
+    },
+    {
+     "term": "linear sequence",
+     "def": "a sequence with a common difference"
+    },
+    {
+     "term": "coefficient",
+     "def": "the number multiplying n"
+    },
+    {
+     "term": "zero term",
+     "def": "the term before the first, found by going back one step"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Matchstick squares in a row use 4, 7, 10, 13 sticks. Find a rule for n squares without counting on.",
+    "a": "3n + 1: each new square adds 3 sticks, plus the first stick on the left."
+   },
+   "starter": [
+    {
+     "q": "Find the 20th term of 3n + 1.",
+     "a": "61",
+     "mins": 1
+    },
+    {
+     "q": "Write the first three terms of 10 − 2n.",
+     "a": "8, 6, 4",
+     "mins": 1
+    },
+    {
+     "q": "What is the common difference of 9, 14, 19?",
+     "a": "5",
+     "mins": 1
+    },
+    {
+     "q": "Solve 6n + 1 = 97.",
+     "a": "16",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Compare with the times table",
+     "bullets": [
+      "Difference 4 means compare with 4n",
+      "5, 9, 13, 17 is 4n + 1"
+     ],
+     "note": "Each term is one more than the 4 times table.",
+     "table": {
+      "head": [
+       "n",
+       "1",
+       "2",
+       "3",
+       "4"
+      ],
+      "rows": [
+       [
+        "4n",
+        "4",
+        "8",
+        "12",
+        "16"
+       ],
+       [
+        "Sequence",
+        "5",
+        "9",
+        "13",
+        "17"
+       ],
+       [
+        "Adjust",
+        "+1",
+        "+1",
+        "+1",
+        "+1"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "The zero term",
+     "bullets": [
+      "Go back one step from the first term",
+      "nth term = difference × n + zero term"
+     ],
+     "note": "For 5, 9, 13: zero term 5 − 4 = 1, so 4n + 1.",
+     "model": {
+      "problem": "Find the nth term of 3, 8, 13, 18.",
+      "steps": [
+       "Difference 5: 5n",
+       "Zero term: 3 − 5 = −2",
+       "nth term = 5n − 2",
+       "Check n = 2: 8"
+      ],
+      "answer": "5n − 2"
+     }
+    },
+    {
+     "heading": "Decreasing sequences",
+     "bullets": [
+      "A negative difference gives −n",
+      "7, 4, 1, −2: difference −3"
+     ],
+     "note": "Zero term 7 + 3 = 10, so 10 − 3n.",
+     "model": {
+      "problem": "Find the nth term of 7, 4, 1, −2.",
+      "steps": [
+       "Difference −3: −3n",
+       "Zero term: 7 + 3 = 10",
+       "nth term = −3n + 10 = 10 − 3n"
+      ],
+      "answer": "10 − 3n"
+     }
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "The difference is the coefficient of n"
+     ],
+     "note": "Test any rule with n = 1 and n = 2.",
+     "misconception": {
+      "wrong": "3, 8, 13, 18 has nth term n + 5",
+      "right": "The difference is 5, so 5n − 2. (n + 5 gives 6, 7, 8, ...)"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Difference first, then adjust"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Find the nth term of 2, 8, 14, 20.",
+      "options": [
+       "6n − 4",
+       "6n + 2",
+       "n + 6",
+       "2n + 6"
+      ],
+      "answer": 0,
+      "why": "Difference 6, zero term 2 − 6 = −4: 6n − 4. 6n + 2 uses the first term instead of the zero term."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Find the nth term of 6, 11, 16, 21.",
+     "a": "5n + 1",
+     "mins": 2,
+     "model": "Difference 5, so 5n. Zero term: 6 − 5 = 1. nth term 5n + 1. Check n = 2: 11."
+    },
+    {
+     "q": "Find the nth term of 1, 3, 5, 7.",
+     "a": "2n − 1",
+     "mins": 1
+    },
+    {
+     "q": "Find the nth term of 12, 22, 32, 42.",
+     "a": "10n + 2",
+     "mins": 1
+    },
+    {
+     "q": "Find the nth term of 20, 17, 14, 11.",
+     "a": "23 − 3n",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Find the nth term of (a) 9, 13, 17, 21 (b) 2, 9, 16, 23 (c) 0.5, 1, 1.5, 2 (d) 30, 26, 22, 18",
+     "a": "(a) 4n + 5 (b) 7n − 5 (c) 0.5n (d) 34 − 4n",
+     "mins": 5,
+     "model": "(a) d = 4, zero term 5: 4n + 5. (b) d = 7, zero term −5: 7n − 5. (c) d = 0.5, zero term 0: 0.5n. (d) d = −4, zero term 34: 34 − 4n."
+    },
+    {
+     "q": "Extend: Find the nth term of 4, 7, 10, 13 and the 50th term.",
+     "a": "3n + 1; 151",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Hexagons in a row sharing sides use 6, 11, 16 sticks for 1, 2, 3 hexagons. Find the nth term and the sticks for 25 hexagons.",
+     "a": "5n + 1; 126 sticks",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Find the nth term of 8, 11, 14, 17.",
+     "a": "3n + 5",
+     "mins": 1
+    },
+    {
+     "q": "Find the nth term of 3, 10, 17, 24.",
+     "a": "7n − 4",
+     "mins": 1
+    },
+    {
+     "q": "Big question: what does the common difference tell you?",
+     "a": "The number that multiplies n in the nth term.",
+     "mins": 1
+    }
+   ],
+   "homework": "Build a matchstick or cotton-bud pattern of triangles in a row; record sticks for 1 to 5 triangles and find the nth term.",
+   "send": "Support: times table rows printed under each sequence. EAL: 'difference', 'zero term'. Stretch: find the nth term from two non-consecutive terms.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 9 6.1 nth term of arithmetic sequences (the school's KS3 scheme)",
+    "Matchsticks or cotton buds (household)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "matchstick squares pattern sequence",
+     "alt": "Matchstick squares in a row",
+     "for": "hook"
+    },
+    {
+     "find": "hexagon matchstick pattern",
+     "alt": "Hexagons made from matchsticks",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 1: Brackets, equations, inequalities and sequences",
+   "n": 35,
+   "title": "Using the nth term: is a number in the sequence?",
+   "duration": 50,
+   "bigQuestion": "How can we prove a number is, or is not, in a sequence?",
+   "objectives": [
+    "To understand how the nth term shows whether a number is in a sequence"
+   ],
+   "successCriteria": [
+    "All: test a number by solving nth term = number",
+    "Most: find the first term above a value",
+    "Some: prove a property, such as no term is a multiple of 4"
+   ],
+   "crossCurricular": "Computing: testing conditions in a loop",
+   "smsc": "Moral: proving with reasons rather than guessing",
+   "keywords": [
+    {
+     "term": "term",
+     "def": "a number in the sequence"
+    },
+    {
+     "term": "position",
+     "def": "must be a positive whole number"
+    },
+    {
+     "term": "prove",
+     "def": "show it must be true for every case"
+    },
+    {
+     "term": "inequality",
+     "def": "a statement using < or >"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Is 100 in the sequence 4, 7, 10, 13, ...? Is 101?",
+    "a": "nth term 3n + 1. 3n + 1 = 100 gives n = 33, a whole number, so yes. 101 gives n = 33.3..., so no."
+   },
+   "starter": [
+    {
+     "q": "Find the nth term of 9, 13, 17, 21.",
+     "a": "4n + 5",
+     "mins": 1
+    },
+    {
+     "q": "Find the 100th term of 2n + 5.",
+     "a": "205",
+     "mins": 1
+    },
+    {
+     "q": "Solve 4n + 5 = 85.",
+     "a": "n = 20",
+     "mins": 1
+    },
+    {
+     "q": "Solve 3n − 2 = 50.",
+     "a": "n = 17.33... (not a whole number)",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Is it a term?",
+     "bullets": [
+      "Set the nth term equal to the number",
+      "Solve: a whole number n means yes"
+     ],
+     "note": "Positions are 1st, 2nd, 3rd: never 12.5th.",
+     "model": {
+      "problem": "Is 247 in the sequence 5n − 3?",
+      "steps": [
+       "5n − 3 = 247",
+       "5n = 250",
+       "n = 50, a whole number"
+      ],
+      "answer": "Yes, it is the 50th term"
+     }
+    },
+    {
+     "heading": "When it is not",
+     "bullets": [
+      "80 in 6n + 5? 6n = 75, n = 12.5",
+      "Not whole, so not a term"
+     ],
+     "note": "Show the terms either side: n = 12 gives 77, n = 13 gives 83.",
+     "misconception": {
+      "wrong": "80 is the 12.5th term of 6n + 5",
+      "right": "Positions are whole numbers, so 80 is not in the sequence"
+     }
+    },
+    {
+     "heading": "First term over a value",
+     "bullets": [
+      "Solve the inequality",
+      "Round up to the next whole n"
+     ],
+     "note": "7n + 2 > 100: 7n > 98, n > 14, so n = 15.",
+     "model": {
+      "problem": "Find the first term of 7n + 2 that is greater than 100.",
+      "steps": [
+       "7n + 2 > 100",
+       "7n > 98, so n > 14",
+       "n = 15: 7 × 15 + 2 = 107"
+      ],
+      "answer": "107 (the 15th term)"
+     }
+    },
+    {
+     "heading": "Sorting terms",
+     "bullets": [
+      "Is each number in 4n + 3?"
+     ],
+     "note": "Chat waterfall: which cards are terms?",
+     "sort": {
+      "columns": [
+       "In 4n + 3",
+       "Not in 4n + 3"
+      ],
+      "cards": [
+       "95",
+       "60",
+       "43",
+       "100",
+       "203",
+       "71"
+      ],
+      "answer": [
+       0,
+       1,
+       0,
+       1,
+       0,
+       0
+      ]
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Solve, then look at n"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Which number is in the sequence 3n + 2?",
+      "options": [
+       "51",
+       "62",
+       "70",
+       "85"
+      ],
+      "answer": 1,
+      "why": "3n + 2 = 62 gives n = 20. The others give n = 16.3..., 22.6..., 27.6..."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Is 95 in 4n + 3?",
+     "a": "4n = 92, n = 23: yes, the 23rd term",
+     "mins": 2,
+     "model": "4n + 3 = 95. Subtract 3: 4n = 92. Divide by 4: n = 23, a whole number, so 95 is the 23rd term."
+    },
+    {
+     "q": "Is 60 in 7n − 1?",
+     "a": "7n = 61, n = 8.71...: no",
+     "mins": 1
+    },
+    {
+     "q": "Which term of 8n − 6 is 186?",
+     "a": "8n = 192, n = 24: the 24th term",
+     "mins": 1
+    },
+    {
+     "q": "Find the first term of 9n + 4 greater than 200.",
+     "a": "9n > 196, n = 22: 202",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: For 6n − 1, find (a) the 10th term (b) whether 113 is a term (c) whether 150 is a term",
+     "a": "(a) 59 (b) 6n = 114, n = 19: yes (c) 6n = 151, n = 25.16...: no",
+     "mins": 4,
+     "model": "(a) 6 × 10 − 1 = 59. (b) 6n − 1 = 113 gives 6n = 114, n = 19: yes. (c) 6n − 1 = 150 gives 6n = 151, n = 25.16...: no."
+    },
+    {
+     "q": "Extend: Find the smallest number in both 4n + 1 and 6n − 3.",
+     "a": "4n + 1: 5, 9, 13, ...; 6n − 3: 3, 9, 15, ...; the first common number is 9",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: Prove that no term of 4n + 2 is a multiple of 4.",
+     "a": "4n is a multiple of 4, so 4n + 2 is always 2 more than a multiple of 4 and leaves remainder 2 when divided by 4.",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Is 76 in 5n + 1?",
+     "a": "5n = 75, n = 15: yes",
+     "mins": 1
+    },
+    {
+     "q": "Is 76 in 3n + 2?",
+     "a": "3n = 74, n = 24.6...: no",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how do you prove a number is not in a sequence?",
+     "a": "Solve nth term = number; if n is not a positive whole number, it is not a term.",
+     "mins": 1
+    }
+   ],
+   "homework": "Choose an nth term and list five numbers, some in the sequence and some not; write the proof for each.",
+   "send": "Support: solve-and-check frame. EAL: 'whole number', 'prove'. Stretch: prove that every term of 6n + 3 is a multiple of 3.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 9 6.1 nth term of arithmetic sequences (the school's KS3 scheme)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "number line sequence terms marked",
+     "alt": "A number line with sequence terms marked",
+     "for": "teach:2"
+    },
+    {
+     "find": "arithmetic sequence table",
+     "alt": "A table of terms",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 1: Brackets, equations, inequalities and sequences",
+   "n": 36,
+   "title": "Brackets, equations and sequences: review and half-term quiz",
+   "duration": 50,
+   "bigQuestion": "Which algebra tool fits which question?",
+   "objectives": [
+    "To show secure understanding of brackets, equations and sequences"
+   ],
+   "successCriteria": [
+    "All: answer the core quiz questions with working shown",
+    "Most: answer the forming and problem-solving questions",
+    "Some: check answers by substitution and explain errors"
+   ],
+   "crossCurricular": "Science: algebra skills used in physics formulae",
+   "smsc": "Spiritual: reflecting on effort and progress with gratitude (shukr, شُكْر)",
+   "keywords": [
+    {
+     "term": "expand",
+     "def": "multiply out brackets"
+    },
+    {
+     "term": "factorise",
+     "def": "take out a common factor"
+    },
+    {
+     "term": "solve",
+     "def": "find the value of the unknown"
+    },
+    {
+     "term": "nth term",
+     "def": "rule for any term from its position"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Which equation is the odd one out? Why?",
+    "options": [
+     "2(x + 4) = 18",
+     "3x − 5 = 10",
+     "x/5 + 4 = 5",
+     "4x + 1 = 20"
+    ],
+    "a": "4x + 1 = 20 gives x = 4.75. The other three all give x = 5."
+   },
+   "starter": [
+    {
+     "q": "Expand 3(2x − 5).",
+     "a": "6x − 15",
+     "mins": 1
+    },
+    {
+     "q": "Factorise 8x + 12.",
+     "a": "4(2x + 3)",
+     "mins": 1
+    },
+    {
+     "q": "Solve 5x − 7 = 18.",
+     "a": "x = 5",
+     "mins": 1
+    },
+    {
+     "q": "Find the nth term of 5, 8, 11, ...",
+     "a": "3n + 2",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "The half term in one picture",
+     "bullets": [
+      "Which tool for which question?"
+     ],
+     "note": "Pupils give one example for each branch on whiteboards.",
+     "diagram": {
+      "centre": "Algebra toolkit",
+      "items": [
+       "Expand brackets",
+       "Factorise",
+       "Substitute",
+       "Solve one and two steps",
+       "Unknowns on both sides",
+       "Form equations",
+       "nth term"
+      ]
+     }
+    },
+    {
+     "heading": "Mixed model",
+     "bullets": [
+      "Form, expand, solve, answer"
+     ],
+     "note": "Think aloud, naming each tool as it is used.",
+     "model": {
+      "problem": "A rectangle is x by 2x + 1. A square has side x + 2. Their perimeters are equal. Find x and both perimeters.",
+      "steps": [
+       "Rectangle: 2(x + 2x + 1) = 6x + 2",
+       "Square: 4(x + 2) = 4x + 8",
+       "6x + 2 = 4x + 8, so 2x = 6, x = 3",
+       "Both perimeters: 6(3) + 2 = 20"
+      ],
+      "answer": "x = 3; both perimeters are 20"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Difference, then zero term"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Find the nth term of 11, 17, 23, 29.",
+      "options": [
+       "6n + 5",
+       "6n + 11",
+       "11n + 6",
+       "5n + 6"
+      ],
+      "answer": 0,
+      "why": "Difference 6; zero term 11 − 6 = 5. 6n + 11 uses the first term."
+     }
+    },
+    {
+     "heading": "Quiz rules",
+     "bullets": [
+      "Work alone and show working",
+      "Check each answer",
+      "20 minutes"
+     ],
+     "note": "The quiz runs in the portal in secure test mode; the same questions follow on the slides.",
+     "table": {
+      "head": [
+       "Section",
+       "Questions",
+       "Skills"
+      ],
+      "rows": [
+       [
+        "A",
+        "1 to 3",
+        "Expand, factorise, substitute"
+       ],
+       [
+        "B",
+        "4 to 6",
+        "Solve and form equations"
+       ],
+       [
+        "C",
+        "7 to 8",
+        "Sequences"
+       ]
+      ]
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Expand −3(4 − x).",
+     "a": "−12 + 3x",
+     "mins": 2,
+     "model": "−3 × 4 = −12 and −3 × −x = +3x. Answer −12 + 3x."
+    },
+    {
+     "q": "Solve x/3 − 4 = 2.",
+     "a": "x = 18",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Warm-up (teacher models first): solve 2(x + 3) = 14.",
+     "a": "x = 4",
+     "mins": 2,
+     "model": "Expand: 2x + 6 = 14. Subtract 6: 2x = 8. Divide by 2: x = 4. Check: 2(4 + 3) = 14."
+    },
+    {
+     "q": "Quiz 1: Expand and simplify 4(x + 3) − 2(x − 5).",
+     "a": "2x + 22",
+     "mins": 2
+    },
+    {
+     "q": "Quiz 2: Factorise fully 18y − 27.",
+     "a": "9(2y − 3)",
+     "mins": 2
+    },
+    {
+     "q": "Quiz 3: Find 3a² − b when a = −2 and b = 5.",
+     "a": "7",
+     "mins": 2
+    },
+    {
+     "q": "Quiz 4: Solve 7x − 9 = 40.",
+     "a": "x = 7",
+     "mins": 2
+    },
+    {
+     "q": "Quiz 5: Solve 5(x − 1) = 2x + 13.",
+     "a": "x = 6",
+     "mins": 2
+    },
+    {
+     "q": "Quiz 6: A triangle has angles x, 2x and x + 40. Find all three angles.",
+     "a": "4x + 40 = 180, x = 35: 35°, 70°, 75°",
+     "mins": 3
+    },
+    {
+     "q": "Quiz 7: Find the nth term of 11, 17, 23, 29.",
+     "a": "6n + 5",
+     "mins": 2
+    },
+    {
+     "q": "Quiz 8: Is 135 a term of 4n − 1? Show how you know.",
+     "a": "4n = 136, n = 34: yes, the 34th term",
+     "mins": 2
+    }
+   ],
+   "exit": [
+    {
+     "q": "Which quiz question was hardest, and what will you practise next?",
+     "a": "For example: 'Question 5: I will practise expanding before collecting x terms.'",
+     "mins": 2
+    },
+    {
+     "q": "Big question: which tool would you use first for 3(x + 2) = x + 14, and why?",
+     "a": "Expand the bracket, so the x terms can be collected on one side: x = 4.",
+     "mins": 2
+    }
+   ],
+   "homework": "Redo any quiz question you got wrong and write one similar question with its full solution.",
+   "send": "Support: toolkit card with one example for each skill; questions read aloud. EAL: glossary allowed. Stretch: write a word problem that needs all three sections.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 8 Unit 4 Check, Strengthen and Extend pages; Pearson KS3 Maths Progress (Second Edition) Year 9 6.1 (the school's KS3 scheme)",
+    "Portal half-term quiz (secure test mode)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "balance scale",
+     "alt": "A balance scale for equations",
+     "for": "teach:1"
+    },
+    {
+     "find": "Kitab al-jabr wa-l-muqabala manuscript page",
+     "alt": "A page from al-Khwarizmi's book on algebra",
+     "for": "keywords"
+    }
+   ]
   }
  ]
 }
