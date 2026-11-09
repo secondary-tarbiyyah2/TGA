@@ -10,6 +10,7 @@ import {
   useMemo,
   useRef,
   useState,
+  type CSSProperties,
   type KeyboardEvent,
   type ReactElement,
   type ReactNode,
@@ -108,6 +109,12 @@ export type DropdownProps = {
   onBlur?: () => void;
   /** Keep the option's right-hand note in the list only. */
   hideAsideOnTrigger?: boolean;
+  /**
+   * Draw the list in a fixed layer over the page, at least 14rem wide and kept
+   * on screen, so it isn't cut off inside a table, card or scrolling panel
+   * (the portal uses this). It closes when the page scrolls, as a native list does.
+   */
+  floating?: boolean;
 };
 
 export function Dropdown({
@@ -127,6 +134,7 @@ export function Dropdown({
   wrapperClassName = "",
   onBlur,
   hideAsideOnTrigger,
+  floating,
   ...aria
 }: DropdownProps) {
   const autoId = useId().replace(/:/g, "");
@@ -136,6 +144,8 @@ export function Dropdown({
   const [query, setQuery] = useState("");
   const [active, setActive] = useState(-1);
   const [above, setAbove] = useState(false);
+  const [layer, setLayer] = useState<CSSProperties | null>(null);
+  const popRef = useRef<HTMLDivElement>(null);
   const wrapRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const searchRef = useRef<HTMLInputElement>(null);
@@ -159,6 +169,16 @@ export function Dropdown({
 
   const openList = () => {
     if (disabled) return;
+    if (floating && wrapRef.current) {
+      // Placed now, not after the first paint, so the list can take focus straight away.
+      const r = wrapRef.current.getBoundingClientRect();
+      const below = window.innerHeight - r.bottom;
+      const up = below < 300 && r.top > below;
+      const vw = document.documentElement.clientWidth || window.innerWidth;
+      const width = Math.min(Math.max(r.width, 224), vw - 16);
+      const left = Math.max(8, Math.min(r.left, vw - 8 - width));
+      setLayer(up ? { position: "fixed", left, width, bottom: window.innerHeight - r.top + 6 } : { position: "fixed", left, width, top: r.bottom + 6 });
+    }
     setQuery("");
     setOpen(true);
     const at = options.findIndex((o) => o.value === value);
@@ -181,11 +201,27 @@ export function Dropdown({
 
   // Open upwards when there isn't room below (e.g. a field near the bottom of a phone screen).
   useLayoutEffect(() => {
-    if (!open || !wrapRef.current) return;
+    if (!open || floating || !wrapRef.current) return;
     const r = wrapRef.current.getBoundingClientRect();
     const below = window.innerHeight - r.bottom;
     setAbove(below < 300 && r.top > below);
-  }, [open]);
+  }, [open, floating]);
+
+  // A fixed layer would drift away from its field when the page scrolls, so close it then.
+  useEffect(() => {
+    if (!open || !floating) return;
+    const onScroll = (e: Event) => {
+      if (popRef.current && e.target instanceof Node && popRef.current.contains(e.target)) return;
+      close(false);
+    };
+    window.addEventListener("scroll", onScroll, true);
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll, true);
+      window.removeEventListener("resize", onScroll);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open, floating]);
 
   useEffect(() => {
     if (!open) return;
@@ -356,7 +392,13 @@ export function Dropdown({
 
       {open ? (
         <div
-          className={`absolute left-0 right-0 z-40 overflow-hidden rounded-2xl border border-gold-light/70 bg-white shadow-xl shadow-ink/10 ${above ? "bottom-full mb-1.5" : "top-full mt-1.5"}`}
+          ref={popRef}
+          // Inside a <label>, a click on an option would otherwise be passed on to the button and reopen the list.
+          onClick={(e) => e.preventDefault()}
+          style={floating ? (layer ?? { position: "fixed" }) : undefined}
+          className={`overflow-hidden rounded-2xl border border-gold-light/70 bg-white shadow-xl shadow-ink/10 ${
+            floating ? "z-[80]" : `absolute left-0 right-0 z-40 ${above ? "bottom-full mb-1.5" : "top-full mt-1.5"}`
+          }`}
         >
           {withSearch && (
             <div className="border-b border-gold-light/50 p-2">
@@ -405,7 +447,7 @@ export function Dropdown({
 
 // ── <select>-compatible wrapper ─────────────────────────────────────────
 
-type OptionEl = ReactElement<{ value?: string | number; children?: ReactNode; disabled?: boolean; label?: string }>;
+type OptionEl = ReactElement<{ value?: string | number; children?: ReactNode; disabled?: boolean; hidden?: boolean; label?: string }>;
 
 function textOf(node: ReactNode): string {
   if (node == null || typeof node === "boolean") return "";
@@ -415,8 +457,13 @@ function textOf(node: ReactNode): string {
   return "";
 }
 
-/** Reads <option>/<optgroup> children the way a <select> would. */
-export function optionsFromChildren(children: ReactNode): { options: DropdownOption[]; placeholder?: string } {
+/**
+ * Reads <option>/<optgroup> children the way a <select> would. With
+ * `keepEmpty`, an enabled <option value=""> (e.g. "All classes") stays a
+ * choice in the list, as it is in a native <select>; a disabled or hidden one
+ * is only the placeholder.
+ */
+export function optionsFromChildren(children: ReactNode, keepEmpty = false): { options: DropdownOption[]; placeholder?: string } {
   const options: DropdownOption[] = [];
   let placeholder: string | undefined;
   const visit = (nodes: ReactNode, group?: string) => {
@@ -429,8 +476,10 @@ export function optionsFromChildren(children: ReactNode): { options: DropdownOpt
         const v = el.props.value ?? label;
         if (String(v) === "") {
           placeholder ??= label;
+          if (keepEmpty && !el.props.disabled && !el.props.hidden) options.push({ value: "", label, group });
           return;
         }
+        if (keepEmpty && el.props.hidden) return;
         options.push({ value: String(v), label, group, disabled: el.props.disabled });
         return;
       }
@@ -464,13 +513,21 @@ export function Select({
   defaultValue?: string | number;
   onChange?: (e: SelectChange) => void;
   autoComplete?: string;
+  /**
+   * Behave exactly like a browser <select>: an enabled <option value=""> can be
+   * picked again, and with no value or defaultValue the first option starts
+   * chosen (so a form posts what it posted before).
+   */
+  native?: boolean;
 }) {
-  const { options, placeholder } = useMemo(() => optionsFromChildren(children), [children]);
-  const [inner, setInner] = useState(() => String(defaultValue ?? ""));
+  const { options, placeholder } = useMemo(() => optionsFromChildren(children, rest.native), [children, rest.native]);
+  const [inner, setInner] = useState(() =>
+    String(defaultValue ?? (rest.native ? (options.find((o) => !o.disabled)?.value ?? "") : "")),
+  );
   const controlled = value !== undefined;
   const current = controlled ? String(value) : inner;
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { autoComplete: _ac, ...dropdownProps } = rest as typeof rest & { autoComplete?: string };
+  const { autoComplete: _ac, native: _native, ...dropdownProps } = rest;
   return (
     <Dropdown
       {...dropdownProps}
