@@ -39,8 +39,11 @@ begin
 end;
 $$;
 
+-- NOT VALID: the domain is also used in arrays (signable_documents.target_roles),
+-- which Postgres can't re-check in place. Existing values only ever used the
+-- older, narrower list, so they all pass; new values are checked as usual.
 alter domain public.learn_role add constraint learn_role_check
-  check (value in ('head_teacher', 'admin', 'admissions', 'teacher', 'teaching_assistant_cover', 'senco', 'parent', 'student'));
+  check (value in ('head_teacher', 'admin', 'admissions', 'teacher', 'teaching_assistant_cover', 'senco', 'parent', 'student')) not valid;
 
 -- A SENCo is a member of staff (clock-in, staff lists, can be named on a plan).
 create or replace function public.is_staff_member(p_user_id uuid)
