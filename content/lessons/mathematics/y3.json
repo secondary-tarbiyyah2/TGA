@@ -11,8 +11,7 @@
       "duration": 45,
       "bigQuestion": "Why does the position of a digit change its value?",
       "objectives": [
-        "Represent 3-digit numbers with hundreds, tens and ones",
-        "State the value of each digit"
+        "To understand how the position of a digit gives its value"
       ],
       "successCriteria": [
         "All: make a 3-digit number with counters",
@@ -36,7 +35,7 @@
         }
       ],
       "hook": {
-        "type": "odd-one-out",
+        "type": "ponder",
         "text": "Which is the odd one out?",
         "options": [
           "3 hundreds, 4 tens, 2 ones",
@@ -44,15 +43,31 @@
           "300 + 40 + 2",
           "3 hundreds, 2 tens, 4 ones"
         ],
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 3 hundreds, 2 tens, 4 ones is 324; the rest are 342."
+        "a": "3 hundreds, 2 tens, 4 ones is 324; the rest are 342."
       },
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
         "hinge": "teams-poll",
-        "practice": "cold-call",
+        "practice": "show-me",
         "exit": "chat-waterfall"
       },
+      "islamicLink": {
+        "text": "Allah tells us that if we tried to count His blessings we could never number them (Qur'an 14:34). We count carefully to thank Him for what we can see.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "base ten blocks units rods flats",
+          "alt": "Base 10 blocks: ones, tens, hundreds and a thousand cube",
+          "for": "teach:1"
+        },
+        {
+          "find": "place value chart thousands hundreds tens ones",
+          "alt": "A place value chart",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "What is the 7 worth in 74?",
@@ -165,7 +180,8 @@
         {
           "q": "4 hundreds, 2 tens, 6 ones = ?",
           "a": "426",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher places 4 hundreds, 2 tens and 6 ones counters on the chart and reads 426."
         },
         {
           "q": "What is the 3 worth in 734?",
@@ -182,7 +198,8 @@
         {
           "q": "Core: give the value of each digit in 672 and 509.",
           "a": "600, 70, 2; 500, 0, 9",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher writes 672 in the chart: 6 hundreds = 600, 7 tens = 70, 2 ones = 2."
         },
         {
           "q": "Extend: make the greatest and smallest numbers from 3, 0, 8.",
@@ -215,7 +232,8 @@
         "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
         "Place value counters or paper ones, tens and hundreds (cut from squared paper)",
         "Place value chart (paper)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 1 guided, independent and homework tasks"
       ]
     },
     {
@@ -225,8 +243,7 @@
       "duration": 45,
       "bigQuestion": "How many ways can we partition one number?",
       "objectives": [
-        "Partition 3-digit numbers into hundreds, tens and ones",
-        "Partition flexibly"
+        "To understand that a number can be partitioned in more than one way"
       ],
       "successCriteria": [
         "All: partition into H, T and O",
@@ -250,17 +267,29 @@
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "456 = 400 + 50 + 6. Is 456 also 300 + 150 + 6? Prove it.",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). Yes: 300 + 150 + 6 = 456. One hundred has been exchanged for 10 tens."
+        "a": "Yes: 300 + 150 + 6 = 456. One hundred has been exchanged for 10 tens."
       },
       "routines": {
         "hook": "think-pair-share",
         "starter": "chat-waterfall",
-        "hinge": "show-me",
+        "hinge": "teams-poll",
         "practice": "think-pair-share",
         "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "base ten blocks units rods flats",
+          "alt": "Base 10 blocks: ones, tens, hundreds and a thousand cube",
+          "for": "teach:2"
+        },
+        {
+          "find": "place value counters ones tens hundreds",
+          "alt": "Place value counters marked 1, 10, 100 and 1,000",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "What is the 8 worth in 384?",
@@ -343,7 +372,8 @@
         {
           "q": "Partition 846.",
           "a": "800 + 40 + 6",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher writes 846 in the chart and reads each value: 800 + 40 + 6."
         },
         {
           "q": "613 = 500 + ? + 3",
@@ -360,7 +390,8 @@
         {
           "q": "Core: partition 275, 908 and 360.",
           "a": "200 + 70 + 5; 900 + 8; 300 + 60",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher partitions 275 into 200 + 70 + 5 and notes 908 has no tens: 900 + 8."
         },
         {
           "q": "Extend: partition 275 in two other ways.",
@@ -393,7 +424,8 @@
         "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
         "Place value counters or paper ones, tens and hundreds (cut from squared paper)",
         "Place value chart (paper)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 2 guided, independent and homework tasks"
       ]
     },
     {
@@ -403,8 +435,7 @@
       "duration": 45,
       "bigQuestion": "How can we find any number on a number line?",
       "objectives": [
-        "Place 3-digit numbers on number lines",
-        "Work out the interval and estimate"
+        "To understand how to find any number on a number line"
       ],
       "successCriteria": [
         "All: count in 100s and 10s on a line",
@@ -428,17 +459,29 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "A line goes from 300 to 400. The arrow is halfway. What number is it?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 350: halfway between 300 and 400."
+        "a": "350: halfway between 300 and 400."
       },
       "routines": {
         "hook": "chat-waterfall",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "hands-down",
-        "exit": "teams-poll"
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
       },
+      "pictures": [
+        {
+          "find": "ruler centimetre millimetre scale close-up",
+          "alt": "A ruler with centimetre and millimetre marks",
+          "for": "teach:1"
+        },
+        {
+          "find": "tape measure metres extended",
+          "alt": "A tape measure showing metres and centimetres",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "Count in 100s from 200 to 700.",
@@ -542,7 +585,8 @@
         {
           "q": "Line 0 to 1,000 in 100s: the 9th mark?",
           "a": "900",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher works out the step: 1,000 ÷ 10 = 100, then counts 9 steps: 900."
         },
         {
           "q": "Line 200 to 300: halfway?",
@@ -559,7 +603,8 @@
         {
           "q": "Core: fill the line 400, 410, __, __, 440, __",
           "a": "420, 430, 450",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher sees each step is 10 and counts on: 420, 430, then 450."
         },
         {
           "q": "Extend: line 0 to 200 with 10 intervals. What is each worth?",
@@ -593,7 +638,8 @@
         "Place value counters or paper ones, tens and hundreds (cut from squared paper)",
         "Place value chart (paper)",
         "Mini-whiteboard and pen",
-        "Strip of paper for a number line"
+        "Strip of paper for a number line",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 3 guided, independent and homework tasks"
       ]
     },
     {
@@ -603,8 +649,7 @@
       "duration": 45,
       "bigQuestion": "Which digit do we look at first when we compare?",
       "objectives": [
-        "Compare 3-digit numbers with <, > and =",
-        "Order a set of 3-digit numbers"
+        "To understand how to compare 3-digit numbers using place value"
       ],
       "successCriteria": [
         "All: compare by looking at the hundreds first",
@@ -628,17 +673,29 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "Which is greater: 589 or 612? The first has bigger tens and ones!",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 612: compare hundreds first. 6 hundreds is more than 5 hundreds."
+        "a": "612: compare hundreds first. 6 hundreds is more than 5 hundreds."
       },
       "routines": {
-        "hook": "teams-poll",
+        "hook": "chat-waterfall",
         "starter": "chat-waterfall",
         "hinge": "teams-poll",
-        "practice": "cold-call",
-        "exit": "chat-waterfall"
+        "practice": "show-me",
+        "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "place value chart thousands hundreds tens ones",
+          "alt": "A place value chart",
+          "for": "teach:2"
+        },
+        {
+          "find": "base ten blocks units rods flats",
+          "alt": "Base 10 blocks: ones, tens, hundreds and a thousand cube",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "78 _ 87",
@@ -740,7 +797,8 @@
         {
           "q": "645 _ 654",
           "a": "<",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher compares hundreds (equal), then tens: 4 < 5, so 645 < 654."
         },
         {
           "q": "900 _ 899",
@@ -757,7 +815,8 @@
         {
           "q": "Core: 456 _ 465, 803 _ 830, 700 _ 699",
           "a": "<, <, >",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher compares 456 and 465: hundreds equal, tens 5 < 6, so 456 < 465."
         },
         {
           "q": "Extend: order 519, 591, 159, 951, 915 descending.",
@@ -790,7 +849,8 @@
         "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
         "Place value counters or paper ones, tens and hundreds (cut from squared paper)",
         "Place value chart (paper)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 4 guided, independent and homework tasks"
       ]
     },
     {
@@ -800,8 +860,7 @@
       "duration": 45,
       "bigQuestion": "When we add 10 or 100, which digit changes?",
       "objectives": [
-        "Count in 50s",
-        "Add and subtract 1s, 10s and 100s mentally"
+        "To understand which digit changes when we add 1, 10 or 100"
       ],
       "successCriteria": [
         "All: count in 50s to 1,000",
@@ -825,17 +884,29 @@
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "245, 295, 345, 395. What is the rule? What comes next?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). Add 50 each time; next is 445."
+        "a": "Add 50 each time; next is 445."
       },
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
         "hinge": "teams-poll",
-        "practice": "cold-call",
+        "practice": "show-me",
         "exit": "chat-waterfall"
       },
+      "pictures": [
+        {
+          "find": "place value counters ones tens hundreds",
+          "alt": "Place value counters marked 1, 10, 100 and 1,000",
+          "for": "teach:2"
+        },
+        {
+          "find": "hundred square 1 to 100 chart",
+          "alt": "A hundred square chart",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "Count in 50s from 0 to 300.",
@@ -947,7 +1018,8 @@
         {
           "q": "358 + 100 = ?",
           "a": "458",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher adds one hundreds counter to 358: 4 hundreds, 5 tens, 8 ones = 458."
         },
         {
           "q": "496 + 10 = ?",
@@ -969,7 +1041,8 @@
         {
           "q": "Core: 245 + 10, 245 + 100, 245 - 1",
           "a": "255, 345, 244",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher adds 1 ten counter to 245: 255."
         },
         {
           "q": "Extend: 990 + 10, 504 - 10, 110 - 100",
@@ -1002,7 +1075,8 @@
         "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
         "Place value counters or paper ones, tens and hundreds (cut from squared paper)",
         "Place value chart (paper)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 5 guided, independent and homework tasks"
       ]
     },
     {
@@ -1403,8 +1477,7 @@
       "duration": 45,
       "bigQuestion": "Why do we line up digits by place value?",
       "objectives": [
-        "Add two 3-digit numbers in columns",
-        "Exchange 10 ones for 1 ten and 10 tens for 1 hundred"
+        "To understand why we line up digits and exchange in column addition"
       ],
       "successCriteria": [
         "All: add with one exchange",
@@ -1428,17 +1501,29 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "Zaid says 457 + 276 = 623. Without working it out fully, is he right? Estimate first.",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). Estimate 460 + 280 = 740. 623 is far off. The answer is 733."
+        "a": "Estimate 460 + 280 = 740. 623 is far off. The answer is 733."
       },
       "routines": {
         "hook": "think-pair-share",
         "starter": "chat-waterfall",
-        "hinge": "show-me",
+        "hinge": "teams-poll",
         "practice": "think-pair-share",
         "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "column addition written method",
+          "alt": "A column addition set out on squared paper",
+          "for": "teach:1"
+        },
+        {
+          "find": "place value counters ones tens hundreds",
+          "alt": "Place value counters marked 1, 10, 100 and 1,000",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "7 + 6 = ?",
@@ -1541,7 +1626,8 @@
         {
           "q": "235 + 148 = ?",
           "a": "383",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher sets 235 + 148 in columns: ones 13, write 3 exchange 1; tens 3 + 4 + 1 = 8; hundreds 3: 383."
         },
         {
           "q": "389 + 245 = ?",
@@ -1558,7 +1644,8 @@
         {
           "q": "Core: 359 + 267, 486 + 357",
           "a": "626, 843",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher adds 359 + 267: ones 16 (write 6, exchange 1), tens 12 (write 2, exchange 1), hundreds 6: 626."
         },
         {
           "q": "Extend: 295 + 408, 648 + 283",
@@ -1591,7 +1678,8 @@
         "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
         "Place value counters or paper ones, tens and hundreds (cut from squared paper)",
         "Place value chart (paper)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 11 guided, independent and homework tasks"
       ]
     },
     {
@@ -1680,8 +1768,7 @@
       "duration": 45,
       "bigQuestion": "What do we do when there are not enough ones to subtract?",
       "objectives": [
-        "Subtract 3-digit numbers in columns",
-        "Exchange 1 ten for 10 ones, and 1 hundred for 10 tens"
+        "To understand how exchange works in column subtraction"
       ],
       "successCriteria": [
         "All: subtract with one exchange",
@@ -1705,21 +1792,33 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "True or false: in 532 - 217, we do 7 - 2 in the ones because 2 is too small.",
         "options": [
           "True",
           "False"
         ],
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). False: we always do top minus bottom. Exchange a ten so 12 - 7 = 5."
+        "a": "False: we always do top minus bottom. Exchange a ten so 12 - 7 = 5."
       },
       "routines": {
         "hook": "chat-waterfall",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "hands-down",
-        "exit": "teams-poll"
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
       },
+      "pictures": [
+        {
+          "find": "place value counters ones tens hundreds",
+          "alt": "Place value counters marked 1, 10, 100 and 1,000",
+          "for": "teach:1"
+        },
+        {
+          "find": "column addition written method",
+          "alt": "A column addition set out on squared paper",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "12 - 7 = ?",
@@ -1816,7 +1915,8 @@
         {
           "q": "645 - 382 = ?",
           "a": "263",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher subtracts 645 - 382: ones 3; tens 4 - 8 needs an exchange: 14 - 8 = 6; hundreds 5 - 3 = 2: 263."
         },
         {
           "q": "374 - 126 = ?",
@@ -1833,7 +1933,8 @@
         {
           "q": "Core: 563 - 245, 781 - 354",
           "a": "318, 427",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher subtracts 563 - 245: ones 13 - 5 = 8 (exchange), tens 5 - 4 = 1, hundreds 3: 318."
         },
         {
           "q": "Extend: 612 - 375, 900 - 456",
@@ -1866,7 +1967,8 @@
         "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
         "Place value counters or paper ones, tens and hundreds (cut from squared paper)",
         "Place value chart (paper)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 13 guided, independent and homework tasks"
       ]
     },
     {
@@ -1876,8 +1978,7 @@
       "duration": 45,
       "bigQuestion": "How can we tell if an answer is sensible before and after we work it out?",
       "objectives": [
-        "Estimate by rounding to the nearest 10 or 100",
-        "Check additions with subtraction and subtractions with addition"
+        "To understand how to estimate and check answers"
       ],
       "successCriteria": [
         "All: round to the nearest 100 to estimate",
@@ -1901,7 +2002,7 @@
         }
       ],
       "hook": {
-        "type": "odd-one-out",
+        "type": "ponder",
         "text": "Which answer is NOT sensible?",
         "options": [
           "298 + 405 = 703",
@@ -1909,15 +2010,27 @@
           "386 + 421 = 1,807",
           "640 - 320 = 320"
         ],
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 386 + 421 is about 400 + 400 = 800, not 1,807 (it is 807)."
+        "a": "386 + 421 is about 400 + 400 = 800, not 1,807 (it is 807)."
       },
       "routines": {
-        "hook": "teams-poll",
+        "hook": "chat-waterfall",
         "starter": "chat-waterfall",
         "hinge": "teams-poll",
-        "practice": "cold-call",
-        "exit": "chat-waterfall"
+        "practice": "show-me",
+        "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "number line 0 to 20 printed",
+          "alt": "A printed number line",
+          "for": "teach:1"
+        },
+        {
+          "find": "shop till receipt",
+          "alt": "A shop receipt with prices",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "Round 372 to the nearest 100.",
@@ -2023,7 +2136,8 @@
         {
           "q": "Estimate 296 + 507.",
           "a": "300 + 500 = 800",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher rounds 296 to 300 and 507 to 500: estimate 800."
         },
         {
           "q": "Work out 296 + 507 and check with subtraction.",
@@ -2040,7 +2154,8 @@
         {
           "q": "Core: estimate then calculate 389 + 412 and 605 - 298.",
           "a": "About 800, exact 801; about 300, exact 307",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher estimates 389 + 412 as 400 + 400 = 800, then calculates 801: close, so sensible."
         },
         {
           "q": "Extend: check both with the inverse.",
@@ -2073,7 +2188,8 @@
         "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
         "Place value counters or paper ones, tens and hundreds (cut from squared paper)",
         "Place value chart (paper)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 14 guided, independent and homework tasks"
       ]
     },
     {
@@ -2245,8 +2361,7 @@
       "duration": 45,
       "bigQuestion": "How do arrays help us learn a times table?",
       "objectives": [
-        "Recall the 2, 5 and 10 times tables",
-        "Use arrays to learn the 3 times table"
+        "To understand how arrays help us learn the 3 times table"
       ],
       "successCriteria": [
         "All: recall 2, 5 and 10 facts",
@@ -2270,17 +2385,29 @@
         }
       ],
       "hook": {
-        "type": "image-prompt",
+        "type": "ponder",
         "text": "Picture 3 rows of worshippers' prayer mats with 7 mats in each row. How many mats?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 3 × 7 = 21. Count in 3s seven times or in 7s three times."
+        "a": "3 × 7 = 21. Count in 3s seven times or in 7s three times."
       },
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
         "hinge": "teams-poll",
-        "practice": "cold-call",
+        "practice": "show-me",
         "exit": "chat-waterfall"
       },
+      "pictures": [
+        {
+          "find": "prayer mats in rows in a mosque",
+          "alt": "Prayer mats laid out in straight rows in a masjid (مَسْجِد)",
+          "for": "hook"
+        },
+        {
+          "find": "square floor tiles grid pattern",
+          "alt": "Square tiles in rows and columns",
+          "for": "teach:1"
+        }
+      ],
       "starter": [
         {
           "q": "7 × 2 = ?",
@@ -2400,7 +2527,8 @@
         {
           "q": "5 × 3 = ?",
           "a": "15",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher draws 5 rows of 3 dots and counts in 3s: 3, 6, 9, 12, 15."
         },
         {
           "q": "3 × 9 = ?",
@@ -2422,7 +2550,8 @@
         {
           "q": "Core: 2 × 3, 7 × 3, 11 × 3, 12 × 3",
           "a": "6, 21, 33, 36",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher counts 2 jumps of 3 (6), then uses 7 × 3 = 21 from the line."
         },
         {
           "q": "Extend: 24 ÷ 3, 15 ÷ 3",
@@ -2456,7 +2585,8 @@
         "Place value counters or Lego (ones and towers of ten)",
         "Times tables grid",
         "Mini-whiteboard and pen",
-        "Squared paper"
+        "Squared paper",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 17 guided, independent and homework tasks"
       ]
     },
     {
@@ -2466,8 +2596,7 @@
       "duration": 45,
       "bigQuestion": "How can doubling help us with the 4 and 8 times tables?",
       "objectives": [
-        "Recall the 4 times table using doubles of the 2s",
-        "Recall the 8 times table using doubles of the 4s"
+        "To understand how doubling links the 2, 4 and 8 times tables"
       ],
       "successCriteria": [
         "All: recall 4 times table facts",
@@ -2491,17 +2620,29 @@
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "5 × 2 = 10. 5 × 4 = 20. 5 × 8 = ? What is the pattern?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 40: each time the number doubles, the answer doubles."
+        "a": "40: each time the number doubles, the answer doubles."
       },
       "routines": {
         "hook": "think-pair-share",
         "starter": "chat-waterfall",
-        "hinge": "show-me",
+        "hinge": "teams-poll",
         "practice": "think-pair-share",
         "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "egg carton with eggs two rows of six",
+          "alt": "An egg box: 2 rows of 6 eggs",
+          "for": "teach:1"
+        },
+        {
+          "find": "muffin baking tray 3 by 4",
+          "alt": "A muffin tray: an array of 3 rows of 4",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "6 × 2 = ?",
@@ -2630,7 +2771,8 @@
         {
           "q": "4 × 7 = ?",
           "a": "28",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher doubles 7 × 2 = 14 to get 7 × 4 = 28."
         },
         {
           "q": "8 × 3 = ?",
@@ -2652,7 +2794,8 @@
         {
           "q": "Friday check, core: 4 × 4, 4 × 11, 8 × 5, 8 × 9",
           "a": "16, 44, 40, 72",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher doubles 4 × 2 = 8 for 4 × 4 = 16; doubles 4 × 5 = 20 for 8 × 5 = 40."
         },
         {
           "q": "Extend: 56 ÷ 8, 44 ÷ 4, 96 ÷ 8",
@@ -2686,7 +2829,8 @@
         "Place value counters or Lego (ones and towers of ten)",
         "Times tables grid",
         "Mini-whiteboard and pen",
-        "Squared paper"
+        "Squared paper",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 18 guided, independent and homework tasks"
       ]
     },
     {
@@ -2854,8 +2998,7 @@
       "duration": 45,
       "bigQuestion": "How does 3 × 4 help us work out 3 × 40?",
       "objectives": [
-        "Multiply a multiple of 10 by a 1-digit number",
-        "Use place value: 4 tens × 3 = 12 tens"
+        "To understand how a times table fact helps multiply multiples of 10"
       ],
       "successCriteria": [
         "All: count in multiples of 10",
@@ -2879,17 +3022,29 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "A box holds 40 dates. How many dates in 3 boxes?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 3 × 40 = 120. 3 × 4 tens = 12 tens = 120."
+        "a": "3 × 40 = 120. 3 × 4 tens = 12 tens = 120."
       },
       "routines": {
         "hook": "chat-waterfall",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "hands-down",
-        "exit": "teams-poll"
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
       },
+      "pictures": [
+        {
+          "find": "place value counters ones tens hundreds",
+          "alt": "Place value counters marked 1, 10, 100 and 1,000",
+          "for": "teach:1"
+        },
+        {
+          "find": "stacked cardboard boxes",
+          "alt": "Stacked cardboard boxes for packing",
+          "for": "hook"
+        }
+      ],
       "starter": [
         {
           "q": "3 × 4 = ?",
@@ -2994,7 +3149,8 @@
         {
           "q": "2 × 40 = ?",
           "a": "80",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher uses 2 × 4 = 8, so 2 × 4 tens = 8 tens = 80."
         },
         {
           "q": "3 × 50 = ?",
@@ -3011,7 +3167,8 @@
         {
           "q": "Core: 4 × 20, 3 × 60, 5 × 50",
           "a": "80, 180, 250",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher uses 4 × 2 = 8, so 4 × 20 = 80."
         },
         {
           "q": "Extend: 8 × 40, 4 × 90",
@@ -3045,7 +3202,8 @@
         "Place value counters or Lego (ones and towers of ten)",
         "Times tables grid",
         "Mini-whiteboard and pen",
-        "Squared paper"
+        "Squared paper",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 21 guided, independent and homework tasks"
       ]
     },
     {
@@ -3055,8 +3213,7 @@
       "duration": 45,
       "bigQuestion": "How many facts can we work out from one fact?",
       "objectives": [
-        "Use a known fact to find related multiplication and division facts",
-        "Use tens to scale facts"
+        "To understand how one multiplication fact gives related facts"
       ],
       "successCriteria": [
         "All: write a fact family",
@@ -3080,17 +3237,29 @@
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "8 × 3 = 24. Find 80 × 3, 240 ÷ 3 and 240 ÷ 80.",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 240, 80 and 3. One fact unlocks many."
+        "a": "240, 80 and 3. One fact unlocks many."
       },
       "routines": {
-        "hook": "teams-poll",
+        "hook": "chat-waterfall",
         "starter": "chat-waterfall",
         "hinge": "teams-poll",
-        "practice": "cold-call",
-        "exit": "chat-waterfall"
+        "practice": "show-me",
+        "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "place value counters ones tens hundreds",
+          "alt": "Place value counters marked 1, 10, 100 and 1,000",
+          "for": "teach:2"
+        },
+        {
+          "find": "measuring cups and spoons",
+          "alt": "Measuring cups and spoons",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "4 × 50 = ?",
@@ -3185,7 +3354,8 @@
         {
           "q": "3 × 5 = 15. So 3 × 50 = ?",
           "a": "150",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher uses 3 × 5 = 15; 50 is 10 times 5, so 3 × 50 = 150."
         },
         {
           "q": "180 ÷ 3 = ?",
@@ -3202,7 +3372,8 @@
         {
           "q": "Core: from 8 × 5 = 40 write 4 related facts.",
           "a": "5 × 8 = 40, 40 ÷ 5 = 8, 40 ÷ 8 = 5, 80 × 5 = 400",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher writes 5 × 8 = 40, 40 ÷ 5 = 8, 40 ÷ 8 = 5, then 80 × 5 = 400."
         },
         {
           "q": "Extend: 160 ÷ 4, 210 ÷ 3",
@@ -3236,7 +3407,8 @@
         "Place value counters or Lego (ones and towers of ten)",
         "Times tables grid",
         "Mini-whiteboard and pen",
-        "Squared paper"
+        "Squared paper",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 22 guided, independent and homework tasks"
       ]
     },
     {
@@ -3246,8 +3418,7 @@
       "duration": 45,
       "bigQuestion": "How does partitioning help us multiply bigger numbers?",
       "objectives": [
-        "Multiply a 2-digit by a 1-digit number by partitioning",
-        "Record with a part-whole model or columns"
+        "To understand how partitioning helps us multiply"
       ],
       "successCriteria": [
         "All: partition and multiply tens and ones",
@@ -3271,17 +3442,29 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "There are 3 rows of 23 chairs in a hall. Can you work out how many without counting?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 3 × 20 = 60, 3 × 3 = 9, 60 + 9 = 69."
+        "a": "3 × 20 = 60, 3 × 3 = 9, 60 + 9 = 69."
       },
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
         "hinge": "teams-poll",
-        "practice": "cold-call",
+        "practice": "show-me",
         "exit": "chat-waterfall"
       },
+      "pictures": [
+        {
+          "find": "rows of empty chairs in a hall",
+          "alt": "Rows of empty chairs: an array",
+          "for": "hook"
+        },
+        {
+          "find": "place value counters ones tens hundreds",
+          "alt": "Place value counters marked 1, 10, 100 and 1,000",
+          "for": "teach:1"
+        }
+      ],
       "starter": [
         {
           "q": "3 × 20 = ?",
@@ -3389,7 +3572,8 @@
         {
           "q": "12 × 4 = ?",
           "a": "48",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher partitions 12 into 10 + 2: 10 × 4 = 40, 2 × 4 = 8, total 48."
         },
         {
           "q": "33 × 3 = ?",
@@ -3406,7 +3590,8 @@
         {
           "q": "Core: 13 × 3, 24 × 2, 11 × 8",
           "a": "39, 48, 88",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher partitions 13: 10 × 3 = 30, 3 × 3 = 9, total 39."
         },
         {
           "q": "Extend: 32 × 3, 22 × 4",
@@ -3440,7 +3625,8 @@
         "Place value counters or Lego (ones and towers of ten)",
         "Times tables grid",
         "Mini-whiteboard and pen",
-        "Squared paper"
+        "Squared paper",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 23 guided, independent and homework tasks"
       ]
     },
     {
@@ -3450,8 +3636,7 @@
       "duration": 45,
       "bigQuestion": "What happens when the ones make more than 10?",
       "objectives": [
-        "Multiply a 2-digit by a 1-digit number when the ones make 10 or more",
-        "Exchange 10 ones for 1 ten"
+        "To understand how to exchange when multiplying"
       ],
       "successCriteria": [
         "All: multiply with an exchange from ones to tens",
@@ -3475,17 +3660,29 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "Ali says 24 × 4 = 816. What did he do? What is the right answer?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). He wrote 80 and 16 side by side. 80 + 16 = 96."
+        "a": "He wrote 80 and 16 side by side. 80 + 16 = 96."
       },
       "routines": {
         "hook": "think-pair-share",
         "starter": "chat-waterfall",
-        "hinge": "show-me",
+        "hinge": "teams-poll",
         "practice": "think-pair-share",
         "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "place value counters ones tens hundreds",
+          "alt": "Place value counters marked 1, 10, 100 and 1,000",
+          "for": "teach:1"
+        },
+        {
+          "find": "column addition written method",
+          "alt": "A column addition set out on squared paper",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "6 × 4 = ?",
@@ -3588,7 +3785,8 @@
         {
           "q": "16 × 3 = ?",
           "a": "48",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher: ones 6 × 3 = 18, write 8 exchange 1; tens 1 × 3 + 1 = 4: 48."
         },
         {
           "q": "25 × 4 = ?",
@@ -3605,7 +3803,8 @@
         {
           "q": "Core: 15 × 4, 27 × 3, 19 × 5",
           "a": "60, 81, 95",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher: 15 × 4: ones 20, write 0 exchange 2; tens 4 + 2 = 6: 60."
         },
         {
           "q": "Extend: 36 × 4, 58 × 3",
@@ -3639,7 +3838,8 @@
         "Place value counters or Lego (ones and towers of ten)",
         "Times tables grid",
         "Mini-whiteboard and pen",
-        "Squared paper"
+        "Squared paper",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 24 guided, independent and homework tasks"
       ]
     },
     {
@@ -3649,8 +3849,7 @@
       "duration": 45,
       "bigQuestion": "How can a multiplication help us divide?",
       "objectives": [
-        "Use multiplication facts to solve divisions",
-        "Understand division as sharing and grouping"
+        "To understand how multiplication helps us divide"
       ],
       "successCriteria": [
         "All: solve a division using a times table fact",
@@ -3674,17 +3873,33 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "24 × 3 = 72. So how many 3s are in 72?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 24: division is the inverse of multiplication."
+        "a": "24: division is the inverse of multiplication."
       },
       "routines": {
         "hook": "chat-waterfall",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "hands-down",
-        "exit": "teams-poll"
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
       },
+      "islamicLink": {
+        "text": "Allah commands justice ('adl, عَدْل) and doing good (Qur'an 16:90). Sharing equally is a way to be fair.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "paper plates",
+          "alt": "Paper plates for sharing equal groups",
+          "for": "teach:1"
+        },
+        {
+          "find": "bowl of dates fruit",
+          "alt": "A bowl of dates",
+          "for": "hook"
+        }
+      ],
       "starter": [
         {
           "q": "24 × 3 = ?",
@@ -3792,7 +4007,8 @@
         {
           "q": "15 ÷ 3 = ?",
           "a": "5",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher thinks '? × 3 = 15': 5 × 3 = 15, so 15 ÷ 3 = 5."
         },
         {
           "q": "23 × 3 = 69, so 69 ÷ 3 = ?",
@@ -3809,7 +4025,8 @@
         {
           "q": "Core: 40 ÷ 8, 36 ÷ 4, 27 ÷ 3",
           "a": "5, 9, 9",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher uses 5 × 8 = 40, so 40 ÷ 8 = 5."
         },
         {
           "q": "Extend: 48 ÷ 4 (use 12 × 4)",
@@ -3843,7 +4060,8 @@
         "Place value counters or Lego (ones and towers of ten)",
         "Times tables grid",
         "Mini-whiteboard and pen",
-        "Squared paper"
+        "Squared paper",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 25 guided, independent and homework tasks"
       ]
     },
     {
@@ -3853,8 +4071,7 @@
       "duration": 45,
       "bigQuestion": "How does partitioning help us divide?",
       "objectives": [
-        "Divide a 2-digit number by partitioning into tens and ones",
-        "Check with multiplication"
+        "To understand how partitioning helps us divide"
       ],
       "successCriteria": [
         "All: share tens and ones equally",
@@ -3878,17 +4095,33 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "69 dates shared between 3 families. Can you share the tens first, then the ones?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 6 tens ÷ 3 = 2 tens; 9 ones ÷ 3 = 3 ones: 23 each."
+        "a": "6 tens ÷ 3 = 2 tens; 9 ones ÷ 3 = 3 ones: 23 each."
       },
       "routines": {
-        "hook": "teams-poll",
+        "hook": "chat-waterfall",
         "starter": "chat-waterfall",
         "hinge": "teams-poll",
-        "practice": "cold-call",
-        "exit": "chat-waterfall"
+        "practice": "show-me",
+        "exit": "show-me"
       },
+      "islamicLink": {
+        "text": "Allah commands justice ('adl, عَدْل) and doing good (Qur'an 16:90). Sharing equally is a way to be fair.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "paper plates",
+          "alt": "Paper plates for sharing equal groups",
+          "for": "teach:1"
+        },
+        {
+          "find": "place value counters ones tens hundreds",
+          "alt": "Place value counters marked 1, 10, 100 and 1,000",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "6 ÷ 3 = ?",
@@ -3966,7 +4199,8 @@
         {
           "q": "48 ÷ 2 = ?",
           "a": "24",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher partitions 48: 40 ÷ 2 = 20, 8 ÷ 2 = 4, total 24."
         },
         {
           "q": "96 ÷ 3 = ?",
@@ -3983,7 +4217,8 @@
         {
           "q": "Core: 66 ÷ 3, 86 ÷ 2, 44 ÷ 4",
           "a": "22, 43, 11",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher partitions 66: 60 ÷ 3 = 20, 6 ÷ 3 = 2: 22."
         },
         {
           "q": "Extend: 99 ÷ 3, 88 ÷ 8",
@@ -4017,7 +4252,8 @@
         "Place value counters or Lego (ones and towers of ten)",
         "Times tables grid",
         "Mini-whiteboard and pen",
-        "Squared paper"
+        "Squared paper",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 26 guided, independent and homework tasks"
       ]
     },
     {
@@ -4027,8 +4263,7 @@
       "duration": 45,
       "bigQuestion": "What if the tens do not share equally?",
       "objectives": [
-        "Partition a 2-digit number into multiples of the divisor",
-        "Divide numbers such as 52 ÷ 4"
+        "To understand how flexible partitioning helps us divide"
       ],
       "successCriteria": [
         "All: see why 52 ÷ 4 cannot share 5 tens equally",
@@ -4052,17 +4287,29 @@
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "Share 52 sweets between 4. 5 tens will not share into 4 equal parts. What can you do?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). Partition 52 as 40 + 12: 40 ÷ 4 = 10, 12 ÷ 4 = 3, so 13."
+        "a": "Partition 52 as 40 + 12: 40 ÷ 4 = 10, 12 ÷ 4 = 3, so 13."
       },
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
         "hinge": "teams-poll",
-        "practice": "cold-call",
+        "practice": "show-me",
         "exit": "chat-waterfall"
       },
+      "pictures": [
+        {
+          "find": "place value counters ones tens hundreds",
+          "alt": "Place value counters marked 1, 10, 100 and 1,000",
+          "for": "teach:1"
+        },
+        {
+          "find": "bowl of dates fruit",
+          "alt": "A bowl of dates",
+          "for": "hook"
+        }
+      ],
       "starter": [
         {
           "q": "40 ÷ 4 = ?",
@@ -4165,7 +4412,8 @@
         {
           "q": "42 ÷ 3 = ?",
           "a": "14",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher partitions 42 as 30 + 12: 10 + 4 = 14."
         },
         {
           "q": "56 ÷ 4 = ?",
@@ -4182,7 +4430,8 @@
         {
           "q": "Core: 48 ÷ 3, 72 ÷ 4, 70 ÷ 5",
           "a": "16, 18, 14",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher partitions 48 as 30 + 18: 10 + 6 = 16."
         },
         {
           "q": "Extend: 92 ÷ 4, 81 ÷ 3",
@@ -4216,7 +4465,8 @@
         "Place value counters or Lego (ones and towers of ten)",
         "Times tables grid",
         "Mini-whiteboard and pen",
-        "Squared paper"
+        "Squared paper",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 27 guided, independent and homework tasks"
       ]
     },
     {
@@ -4226,8 +4476,7 @@
       "duration": 45,
       "bigQuestion": "What do we do with the ones left over?",
       "objectives": [
-        "Divide with remainders",
-        "Write answers as '7 r 2'"
+        "To understand what a remainder is"
       ],
       "successCriteria": [
         "All: find a remainder with counters",
@@ -4251,17 +4500,29 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "13 dates shared between 4 people. Each gets 3. What happens to the 1 left?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 13 ÷ 4 = 3 r 1. It cannot be shared equally as a whole date."
+        "a": "13 ÷ 4 = 3 r 1. It cannot be shared equally as a whole date."
       },
       "routines": {
         "hook": "think-pair-share",
         "starter": "chat-waterfall",
-        "hinge": "show-me",
+        "hinge": "teams-poll",
         "practice": "think-pair-share",
         "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "bowl of dates fruit",
+          "alt": "A bowl of dates",
+          "for": "hook"
+        },
+        {
+          "find": "paper plates",
+          "alt": "Paper plates for sharing equal groups",
+          "for": "teach:1"
+        }
+      ],
       "starter": [
         {
           "q": "4 × 3 = ?",
@@ -4356,7 +4617,8 @@
         {
           "q": "17 ÷ 5 = ?",
           "a": "3 r 2",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher jumps in 5s to 15 (3 jumps) and counts 2 more to 17: 3 r 2."
         },
         {
           "q": "23 ÷ 4 = ?",
@@ -4373,7 +4635,8 @@
         {
           "q": "Core: 19 ÷ 3, 26 ÷ 5, 35 ÷ 8",
           "a": "6 r 1, 5 r 1, 4 r 3",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher uses 6 × 3 = 18, 19 - 18 = 1: 6 r 1."
         },
         {
           "q": "Extend: 58 ÷ 5, 70 ÷ 3",
@@ -4407,7 +4670,8 @@
         "Place value counters or Lego (ones and towers of ten)",
         "Times tables grid",
         "Mini-whiteboard and pen",
-        "Squared paper"
+        "Squared paper",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 28 guided, independent and homework tasks"
       ]
     },
     {
@@ -4417,8 +4681,7 @@
       "duration": 45,
       "bigQuestion": "Should we round up, round down or keep the remainder?",
       "objectives": [
-        "Solve division problems with remainders",
-        "Decide what the remainder means in the story"
+        "To understand how to decide what a remainder means in a problem"
       ],
       "successCriteria": [
         "All: solve a sharing problem with a remainder",
@@ -4442,22 +4705,34 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "26 books need packing. Each box holds 8 books. How many boxes do we need?",
         "options": [
           "3",
           "4",
           "3 r 2"
         ],
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 4 boxes: 26 ÷ 8 = 3 r 2, but the last 2 books still need a box, so round up."
+        "a": "4 boxes: 26 ÷ 8 = 3 r 2, but the last 2 books still need a box, so round up."
       },
       "routines": {
         "hook": "chat-waterfall",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "hands-down",
-        "exit": "teams-poll"
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
       },
+      "pictures": [
+        {
+          "find": "stacked cardboard boxes",
+          "alt": "Stacked cardboard boxes for packing",
+          "for": "hook"
+        },
+        {
+          "find": "books on a bookshelf",
+          "alt": "Books on a shelf",
+          "for": "teach:2"
+        }
+      ],
       "starter": [
         {
           "q": "26 ÷ 8 = ?",
@@ -4540,7 +4815,8 @@
         {
           "q": "29 people, 5 per car. How many cars?",
           "a": "6 (29 ÷ 5 = 5 r 4, round up)",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher: 29 ÷ 5 = 5 r 4; the 4 people still need a car, so 6 cars."
         },
         {
           "q": "43p, sweets cost 8p. How many sweets?",
@@ -4557,7 +4833,8 @@
         {
           "q": "Core: 35 apples, 4 in a bag. How many full bags?",
           "a": "8 (35 ÷ 4 = 8 r 3)",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher: 35 ÷ 4 = 8 r 3; only full bags count, so 8."
         },
         {
           "q": "Extend: 35 apples, 4 per bag. How many bags to pack them all?",
@@ -4591,7 +4868,8 @@
         "Place value counters or Lego (ones and towers of ten)",
         "Times tables grid",
         "Mini-whiteboard and pen",
-        "Squared paper"
+        "Squared paper",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 29 guided, independent and homework tasks"
       ]
     },
     {
@@ -4601,8 +4879,7 @@
       "duration": 45,
       "bigQuestion": "Which method is best for each calculation?",
       "objectives": [
-        "Choose a method to multiply and divide",
-        "Recall the 2, 3, 4, 5, 8 and 10 times tables"
+        "To understand how to choose a method to multiply and divide"
       ],
       "successCriteria": [
         "All: answer tables facts quickly",
@@ -4626,7 +4903,7 @@
         }
       ],
       "hook": {
-        "type": "odd-one-out",
+        "type": "ponder",
         "text": "Which is the odd one out?",
         "options": [
           "24 × 4",
@@ -4634,15 +4911,27 @@
           "32 × 3",
           "12 × 6"
         ],
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 12 × 6 = 72; the others all equal 96."
+        "a": "12 × 6 = 72; the others all equal 96."
       },
       "routines": {
-        "hook": "teams-poll",
+        "hook": "chat-waterfall",
         "starter": "chat-waterfall",
         "hinge": "teams-poll",
-        "practice": "cold-call",
-        "exit": "chat-waterfall"
+        "practice": "show-me",
+        "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "square floor tiles grid pattern",
+          "alt": "Square tiles in rows and columns",
+          "for": "teach:1"
+        },
+        {
+          "find": "egg carton with eggs two rows of six",
+          "alt": "An egg box: 2 rows of 6 eggs",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "8 × 7 = ?",
@@ -4744,7 +5033,8 @@
         {
           "q": "34 × 4 = ?",
           "a": "136",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher: 34 × 4: ones 16 (write 6, exchange 1), tens 12 + 1 = 13: 136."
         },
         {
           "q": "84 ÷ 3 = ?",
@@ -4761,7 +5051,8 @@
         {
           "q": "Core: 25 × 3, 18 × 8, 96 ÷ 4",
           "a": "75, 144, 24",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher: 25 × 3: 20 × 3 = 60, 5 × 3 = 15, 75."
         },
         {
           "q": "Extend: a box holds 8 eggs. How many boxes for 60 eggs?",
@@ -4795,7 +5086,8 @@
         "Place value counters or Lego (ones and towers of ten)",
         "Times tables grid",
         "Mini-whiteboard and pen",
-        "Squared paper"
+        "Squared paper",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 30 guided, independent and homework tasks"
       ]
     },
     {
@@ -4805,8 +5097,7 @@
       "duration": 45,
       "bigQuestion": "Which unit is best for measuring different things?",
       "objectives": [
-        "Measure lengths in m, cm and mm",
-        "Know 1 m = 100 cm and 1 cm = 10 mm"
+        "To understand how metres, centimetres and millimetres are related"
       ],
       "successCriteria": [
         "All: measure an object to the nearest cm",
@@ -4830,17 +5121,38 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "Would you measure a door, a pencil and an ant in m, cm or mm?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). Door in m (about 2 m), pencil in cm (about 15 cm), ant in mm (a few mm)."
+        "a": "Door in m (about 2 m), pencil in cm (about 15 cm), ant in mm (a few mm)."
       },
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
         "hinge": "teams-poll",
-        "practice": "cold-call",
+        "practice": "show-me",
         "exit": "chat-waterfall"
       },
+      "islamicLink": {
+        "text": "Allah commands us to give full measure and weigh with a fair balance (Qur'an 17:35). Measuring accurately is part of honesty.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "ruler centimetre millimetre scale close-up",
+          "alt": "A ruler with centimetre and millimetre marks",
+          "for": "teach:1"
+        },
+        {
+          "find": "tape measure metres extended",
+          "alt": "A tape measure showing metres and centimetres",
+          "for": "keywords"
+        },
+        {
+          "find": "trundle wheel measuring wheel",
+          "alt": "A trundle wheel for measuring long distances",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "100 ÷ 10 = ?",
@@ -4952,7 +5264,8 @@
         {
           "q": "4 m = ? cm",
           "a": "400 cm",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher: 1 m = 100 cm, so 4 m = 4 × 100 = 400 cm."
         },
         {
           "q": "70 mm = ? cm",
@@ -4969,7 +5282,8 @@
         {
           "q": "Core: 300 cm = ? m; 6 cm = ? mm; 2 m 40 cm = ? cm",
           "a": "3 m; 60 mm; 240 cm",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher: 300 cm ÷ 100 = 3 m."
         },
         {
           "q": "Extend: order 1 m 5 cm, 150 cm, 99 cm",
@@ -5003,7 +5317,8 @@
         "Ruler (cm and mm) and a tape measure if possible",
         "String or wool and scissors",
         "Squared paper",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 31 guided, independent and homework tasks"
       ]
     },
     {
@@ -5013,8 +5328,7 @@
       "duration": 45,
       "bigQuestion": "How far is it all the way around a shape?",
       "objectives": [
-        "Understand perimeter as the distance around a 2-D shape",
-        "Measure perimeter with string and a ruler"
+        "To understand what perimeter is"
       ],
       "successCriteria": [
         "All: trace the perimeter of a shape",
@@ -5038,17 +5352,29 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "An ant walks once around the edge of a book. Is the distance it walks the same as the size of the cover?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). No: the walk is the perimeter (a length); the cover is the area (space inside)."
+        "a": "No: the walk is the perimeter (a length); the cover is the area (space inside)."
       },
       "routines": {
         "hook": "think-pair-share",
         "starter": "chat-waterfall",
-        "hinge": "show-me",
+        "hinge": "teams-poll",
         "practice": "think-pair-share",
         "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "fence around a field",
+          "alt": "A fence around a field: its perimeter",
+          "for": "hook"
+        },
+        {
+          "find": "empty wooden picture frame",
+          "alt": "A picture frame: its edge is a perimeter",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "1 m = ? cm",
@@ -5139,7 +5465,8 @@
         {
           "q": "A triangle has sides 3 cm, 4 cm, 5 cm. Perimeter?",
           "a": "12 cm",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher traces the triangle, adding each side: 3 + 4 + 5 = 12 cm."
         },
         {
           "q": "Rectangle 6 cm by 2 cm. Perimeter?",
@@ -5156,7 +5483,8 @@
         {
           "q": "Core: perimeter of a square with 9 cm sides.",
           "a": "36 cm",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher adds four 9 cm sides: 9 + 9 + 9 + 9 = 36 cm."
         },
         {
           "q": "Extend: rectangle 10 cm by 7 cm.",
@@ -5190,7 +5518,8 @@
         "Ruler (cm and mm) and a tape measure if possible",
         "String or wool and scissors",
         "Squared paper",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 32 guided, independent and homework tasks"
       ]
     },
     {
@@ -5200,8 +5529,7 @@
       "duration": 45,
       "bigQuestion": "How can we measure perimeter accurately?",
       "objectives": [
-        "Measure each side with a ruler and add",
-        "Find perimeter on squared paper"
+        "To understand how to measure perimeter accurately"
       ],
       "successCriteria": [
         "All: measure each side to the nearest cm",
@@ -5225,21 +5553,33 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "On squared paper, a shape covers 6 squares in a 2 by 3 rectangle. Is its perimeter 6?",
         "options": [
           "Yes",
           "No"
         ],
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). No: count the edges round the outside: 3 + 2 + 3 + 2 = 10 units."
+        "a": "No: count the edges round the outside: 3 + 2 + 3 + 2 = 10 units."
       },
       "routines": {
         "hook": "chat-waterfall",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "hands-down",
-        "exit": "teams-poll"
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
       },
+      "pictures": [
+        {
+          "find": "squared paper grid",
+          "alt": "Squared paper",
+          "for": "teach:2"
+        },
+        {
+          "find": "ruler centimetre millimetre scale close-up",
+          "alt": "A ruler with centimetre and millimetre marks",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "8 + 3 + 8 + 3 = ?",
@@ -5313,7 +5653,8 @@
         {
           "q": "Perimeter of a 5 by 1 rectangle on a grid?",
           "a": "12 units",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher counts the edges of a 5 by 1 rectangle, ticking each: 5 + 1 + 5 + 1 = 12."
         },
         {
           "q": "Sides 7 cm, 2 cm, 7 cm, 2 cm?",
@@ -5330,7 +5671,8 @@
         {
           "q": "Core: perimeter of 6 by 2 and 3 by 3 rectangles on a grid.",
           "a": "16 and 12 units",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher counts round a 6 by 2 rectangle: 6 + 2 + 6 + 2 = 16."
         },
         {
           "q": "Extend: draw two different rectangles with perimeter 14 units.",
@@ -5364,7 +5706,8 @@
         "Ruler (cm and mm) and a tape measure if possible",
         "String or wool and scissors",
         "Squared paper",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 33 guided, independent and homework tasks"
       ]
     },
     {
@@ -5374,8 +5717,7 @@
       "duration": 45,
       "bigQuestion": "Why do we only need two measurements for a rectangle's perimeter?",
       "objectives": [
-        "Calculate the perimeter of rectangles and squares",
-        "Use opposite sides being equal"
+        "To understand why two measurements give a rectangle's perimeter"
       ],
       "successCriteria": [
         "All: add four sides",
@@ -5399,17 +5741,29 @@
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "A rectangle is 8 cm long and 3 cm wide. Two pupils get 22 cm and 11 cm. Who is right?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 22 cm: 8 + 3 + 8 + 3. 11 cm only counts two sides."
+        "a": "22 cm: 8 + 3 + 8 + 3. 11 cm only counts two sides."
       },
       "routines": {
-        "hook": "teams-poll",
+        "hook": "chat-waterfall",
         "starter": "chat-waterfall",
         "hinge": "teams-poll",
-        "practice": "cold-call",
-        "exit": "chat-waterfall"
+        "practice": "show-me",
+        "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "fence around a field",
+          "alt": "A fence around a field: its perimeter",
+          "for": "hook"
+        },
+        {
+          "find": "floor plan diagram rooms",
+          "alt": "A floor plan of a building",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "8 + 3 = ?",
@@ -5510,7 +5864,8 @@
         {
           "q": "12 cm by 4 cm?",
           "a": "32 cm",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher: (12 + 4) × 2 = 16 × 2 = 32 cm."
         },
         {
           "q": "Square, 9 cm sides?",
@@ -5527,7 +5882,8 @@
         {
           "q": "Core: 7 cm by 5 cm; 15 cm by 10 cm",
           "a": "24 cm; 50 cm",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher: (7 + 5) × 2 = 24 cm."
         },
         {
           "q": "Extend: a garden is 20 m by 8 m. Fencing needed?",
@@ -5561,7 +5917,8 @@
         "Ruler (cm and mm) and a tape measure if possible",
         "String or wool and scissors",
         "Squared paper",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 34 guided, independent and homework tasks"
       ]
     },
     {
@@ -5571,8 +5928,7 @@
       "duration": 45,
       "bigQuestion": "How do we find missing sides on an L-shape?",
       "objectives": [
-        "Calculate the perimeter of rectilinear shapes",
-        "Find missing side lengths"
+        "To understand how to find missing sides and perimeters of rectilinear shapes"
       ],
       "successCriteria": [
         "All: add the sides of a rectilinear shape with all lengths given",
@@ -5596,22 +5952,34 @@
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "An L-shape fits inside a 6 cm by 5 cm rectangle with a corner cut out. Is its perimeter more, less or the same as the rectangle's?",
         "options": [
           "More",
           "Less",
           "The same"
         ],
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). The same: 22 cm. The cut-out moves edges inwards but does not change their total."
+        "a": "The same: 22 cm. The cut-out moves edges inwards but does not change their total."
       },
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
         "hinge": "teams-poll",
-        "practice": "cold-call",
+        "practice": "show-me",
         "exit": "chat-waterfall"
       },
+      "pictures": [
+        {
+          "find": "floor plan diagram rooms",
+          "alt": "A floor plan of a building",
+          "for": "teach:1"
+        },
+        {
+          "find": "Masjid an-Nabawi green dome",
+          "alt": "The green dome of the Prophet's Masjid (مَسْجِد) in Madinah (المَدِينَة)",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "(6 + 5) × 2 = ?",
@@ -5715,7 +6083,8 @@
         {
           "q": "L-shape sides 5, 2, 3, 2, 2, 4 cm. Perimeter?",
           "a": "18 cm",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher adds round the L-shape, ticking each side: 5 + 2 + 3 + 2 + 2 + 4 = 18 cm."
         },
         {
           "q": "L-shape: left 6, bottom 8, right 2, top 3. Missing sides?",
@@ -5732,7 +6101,8 @@
         {
           "q": "End-of-block check, core: 4 m = ? cm; rectangle 9 cm by 6 cm perimeter",
           "a": "400 cm; 30 cm",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher converts 4 m = 400 cm, then (9 + 6) × 2 = 30 cm."
         },
         {
           "q": "Extend: L-shape: left 10, bottom 12, right 4, top 5. Perimeter?",
@@ -5766,7 +6136,8 @@
         "Ruler (cm and mm) and a tape measure if possible",
         "String or wool and scissors",
         "Squared paper",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 35 guided, independent and homework tasks"
       ]
     }
   ]

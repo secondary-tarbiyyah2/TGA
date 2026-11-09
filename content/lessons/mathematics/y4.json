@@ -11,8 +11,7 @@
       "duration": 45,
       "bigQuestion": "How does a 4-digit number show its value?",
       "objectives": [
-        "Represent 4-digit numbers with place value counters",
-        "State the value of each digit; partition"
+        "To understand how place value shows the value of 4-digit numbers"
       ],
       "successCriteria": [
         "All: read and write 4-digit numbers",
@@ -36,7 +35,7 @@
         }
       ],
       "hook": {
-        "type": "odd-one-out",
+        "type": "ponder",
         "text": "Which is the odd one out?",
         "options": [
           "4,000 + 300 + 6",
@@ -44,15 +43,27 @@
           "four thousand, three hundred and six",
           "4,360"
         ],
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 4,360 has 6 tens; the others are 4,306."
+        "a": "4,360 has 6 tens; the others are 4,306."
       },
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
         "hinge": "teams-poll",
-        "practice": "cold-call",
+        "practice": "show-me",
         "exit": "chat-waterfall"
       },
+      "pictures": [
+        {
+          "find": "base ten blocks units rods flats",
+          "alt": "Base 10 blocks: ones, tens, hundreds and a thousand cube",
+          "for": "teach:1"
+        },
+        {
+          "find": "place value chart thousands hundreds tens ones",
+          "alt": "A place value chart",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "TT: 6 × 3 = ?",
@@ -174,7 +185,8 @@
         {
           "q": "Write 'six thousand and fifteen' in digits.",
           "a": "6,015",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher writes 6 thousands, 0 hundreds, 1 ten, 5 ones in the chart: 6,015."
         },
         {
           "q": "What is the 9 worth in 2,975?",
@@ -191,7 +203,8 @@
         {
           "q": "Core: give the value of each digit in 9,316 and 2,054.",
           "a": "9,000, 300, 10, 6; 2,000, 0, 50, 4",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher reads 9,316 in the chart: 9,000, 300, 10 and 6."
         },
         {
           "q": "Extend: 6,372 = 5,000 + ? + 72",
@@ -225,7 +238,8 @@
         "Place value counters or paper ones, tens, hundreds and thousands",
         "Place value chart (paper)",
         "Times tables grid (for the weekly TT starter)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 1 guided, independent and homework tasks"
       ]
     },
     {
@@ -314,8 +328,7 @@
       "duration": 45,
       "bigQuestion": "Where do we look first when comparing big numbers?",
       "objectives": [
-        "Compare 4-digit numbers using <, > and =",
-        "Order sets of 4-digit numbers"
+        "To understand how to compare and order 4-digit numbers"
       ],
       "successCriteria": [
         "All: compare by the thousands digit",
@@ -339,17 +352,29 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "Ben Nevis is 1,345 m. Snowdon is 1,085 m. Scafell Pike is 978 m. Which is tallest? How do you know quickly?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). Ben Nevis: compare thousands, then hundreds (3 > 0)."
+        "a": "Ben Nevis: compare thousands, then hundreds (3 > 0)."
       },
       "routines": {
         "hook": "think-pair-share",
         "starter": "chat-waterfall",
-        "hinge": "show-me",
+        "hinge": "teams-poll",
         "practice": "think-pair-share",
         "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "Ben Nevis summit",
+          "alt": "Ben Nevis, the UK's highest mountain",
+          "for": "hook"
+        },
+        {
+          "find": "place value chart thousands hundreds tens ones",
+          "alt": "A place value chart",
+          "for": "teach:2"
+        }
+      ],
       "starter": [
         {
           "q": "TT: 6 × 8 = ?",
@@ -478,7 +503,8 @@
         {
           "q": "6,054 _ 6,504",
           "a": "<",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher compares thousands (equal), then hundreds: 0 < 5, so 6,054 < 6,504."
         },
         {
           "q": "8,999 _ 9,000",
@@ -495,7 +521,8 @@
         {
           "q": "Core: 5,670 _ 5,607; 3,002 _ 3,020",
           "a": ">, <",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher: 5,670 vs 5,607: tens 7 > 0, so >."
         },
         {
           "q": "Extend: order 9,190, 9,019, 9,901, 9,109 descending.",
@@ -529,7 +556,8 @@
         "Place value counters or paper ones, tens, hundreds and thousands",
         "Place value chart (paper)",
         "Times tables grid (for the weekly TT starter)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 3 guided, independent and homework tasks"
       ]
     },
     {
@@ -539,8 +567,7 @@
       "duration": 45,
       "bigQuestion": "Why do we round numbers, and which way do we go?",
       "objectives": [
-        "Round 3- and 4-digit numbers to the nearest 10 and 100",
-        "Use a number line to decide"
+        "To understand how and why we round to the nearest 10 and 100"
       ],
       "successCriteria": [
         "All: round to the nearest 10 using a number line",
@@ -564,17 +591,29 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "A shop says 'about £350' for a bike that is £347. Which number did they round to?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). The nearest 10: 347 is nearer 350 than 340."
+        "a": "The nearest 10: 347 is nearer 350 than 340."
       },
       "routines": {
         "hook": "chat-waterfall",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "hands-down",
-        "exit": "teams-poll"
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
       },
+      "pictures": [
+        {
+          "find": "number line 0 to 20 printed",
+          "alt": "A printed number line",
+          "for": "teach:1"
+        },
+        {
+          "find": "supermarket shelf price labels",
+          "alt": "Price labels on a shop shelf",
+          "for": "hook"
+        }
+      ],
       "starter": [
         {
           "q": "TT: 6 × 6 = ?",
@@ -698,7 +737,8 @@
         {
           "q": "Round 572 to the nearest 10.",
           "a": "570",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher: 572 is between 570 and 580; ones 2, so 570."
         },
         {
           "q": "Round 572 to the nearest 100.",
@@ -715,7 +755,8 @@
         {
           "q": "Core: round 1,346 and 2,981 to the nearest 10 and 100.",
           "a": "1,350 and 1,300; 2,980 and 3,000",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher: 1,346: ones 6, round up to 1,350; tens 4, round down to 1,300."
         },
         {
           "q": "Extend: which numbers round to 500 (nearest 100)?",
@@ -750,7 +791,8 @@
         "Place value chart (paper)",
         "Times tables grid (for the weekly TT starter)",
         "Mini-whiteboard and pen",
-        "Paper number line strips"
+        "Paper number line strips",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 4 guided, independent and homework tasks"
       ]
     },
     {
@@ -839,8 +881,7 @@
       "duration": 45,
       "bigQuestion": "Which digit do we look at to round to the nearest 1,000?",
       "objectives": [
-        "Round 4-digit numbers to the nearest 1,000",
-        "Compare rounding to 10, 100 and 1,000"
+        "To understand how to round to the nearest 1,000"
       ],
       "successCriteria": [
         "All: round to the nearest 1,000 using a number line",
@@ -864,17 +905,29 @@
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "I am a 4-digit number. I round to 5,000. My hundreds digit is 4. What could I be?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). Between 4,500 and 5,499 with a 4 in the hundreds: for example 5,4__ (5,400 to 5,499)."
+        "a": "Between 4,500 and 5,499 with a 4 in the hundreds: for example 5,4__ (5,400 to 5,499)."
       },
       "routines": {
-        "hook": "teams-poll",
+        "hook": "chat-waterfall",
         "starter": "chat-waterfall",
         "hinge": "teams-poll",
-        "practice": "cold-call",
-        "exit": "chat-waterfall"
+        "practice": "show-me",
+        "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "number line 0 to 20 printed",
+          "alt": "A printed number line",
+          "for": "teach:1"
+        },
+        {
+          "find": "Birmingham city aerial view",
+          "alt": "Aerial view of Birmingham",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "TT: 6 × 4 = ?",
@@ -981,7 +1034,8 @@
         {
           "q": "Round 3,812 to the nearest 1,000.",
           "a": "4,000",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher: 3,812 is between 3,000 and 4,000; hundreds 8, so 4,000."
         },
         {
           "q": "Round 6,099 to the nearest 1,000.",
@@ -998,7 +1052,8 @@
         {
           "q": "Core: round 1,234, 5,678 and 8,500 to the nearest 1,000.",
           "a": "1,000, 6,000, 9,000",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher: 1,234 (hundreds 2) 1,000; 5,678 (6) 6,000; 8,500 (5) 9,000."
         },
         {
           "q": "Extend: round 7,365 to 10, 100 and 1,000.",
@@ -1032,7 +1087,8 @@
         "Place value counters or paper ones, tens, hundreds and thousands",
         "Place value chart (paper)",
         "Times tables grid (for the weekly TT starter)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 6 guided, independent and homework tasks"
       ]
     },
     {
@@ -1042,8 +1098,7 @@
       "duration": 45,
       "bigQuestion": "How did the Romans write numbers without a zero?",
       "objectives": [
-        "Read and write Roman numerals to 100",
-        "Know I, V, X, L and C"
+        "To understand how Roman numerals work and why place value is better"
       ],
       "successCriteria": [
         "All: read numerals to 20",
@@ -1067,17 +1122,38 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "Some clocks show IV for 4 and IX for 9. Why might IV be 4?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). I before V means 1 less than 5. A smaller numeral before a bigger one is subtracted."
+        "a": "I before V means 1 less than 5. A smaller numeral before a bigger one is subtracted."
       },
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
         "hinge": "teams-poll",
-        "practice": "cold-call",
+        "practice": "show-me",
         "exit": "chat-waterfall"
       },
+      "islamicLink": {
+        "text": "Muslim mathematicians such as al-Khwarizmi (الخوارزمي) in Baghdad wrote about calculating with the Hindu-Arabic digits and zero, which spread to Europe and replaced Roman numerals.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "clock face Roman numerals",
+          "alt": "A clock face with Roman numerals",
+          "for": "hook"
+        },
+        {
+          "find": "Roman numerals inscription stone",
+          "alt": "Roman numerals carved in stone",
+          "for": "teach:1"
+        },
+        {
+          "find": "al-Khwarizmi algebra book manuscript page",
+          "alt": "A page from al-Khwarizmi's book on calculation",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "TT: 6 × 11 = ?",
@@ -1198,7 +1274,8 @@
         {
           "q": "XIV = ?",
           "a": "14",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher: X = 10, IV = 4, so XIV = 14."
         },
         {
           "q": "Write 29 in Roman numerals.",
@@ -1215,7 +1292,8 @@
         {
           "q": "Core: XVII, XXXV, LIV",
           "a": "17, 35, 54",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher: XVII = 10 + 5 + 2 = 17."
         },
         {
           "q": "Extend: write 49, 64 and 91.",
@@ -1249,7 +1327,8 @@
         "Place value counters or paper ones, tens, hundreds and thousands",
         "Place value chart (paper)",
         "Times tables grid (for the weekly TT starter)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 7 guided, independent and homework tasks"
       ]
     },
     {
@@ -1417,8 +1496,7 @@
       "duration": 45,
       "bigQuestion": "How do we keep track of several exchanges?",
       "objectives": [
-        "Add two 4-digit numbers in columns",
-        "Make exchanges in any column"
+        "To understand how to add 4-digit numbers with exchanges"
       ],
       "successCriteria": [
         "All: add with one exchange",
@@ -1442,22 +1520,34 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "Estimate first: is 3,457 + 2,876 nearer 5,000, 6,000 or 7,000?",
         "options": [
           "5,000",
           "6,000",
           "7,000"
         ],
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 6,000: 3,000 + 3,000 = 6,000. Exact: 6,333."
+        "a": "6,000: 3,000 + 3,000 = 6,000. Exact: 6,333."
       },
       "routines": {
         "hook": "think-pair-share",
         "starter": "chat-waterfall",
-        "hinge": "show-me",
+        "hinge": "teams-poll",
         "practice": "think-pair-share",
         "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "column addition written method",
+          "alt": "A column addition set out on squared paper",
+          "for": "teach:1"
+        },
+        {
+          "find": "place value counters ones tens hundreds",
+          "alt": "Place value counters marked 1, 10, 100 and 1,000",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "TT: 9 × 3 = ?",
@@ -1566,7 +1656,8 @@
         {
           "q": "4,325 + 2,148 = ?",
           "a": "6,473",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher: 4,325 + 2,148: ones 13 (write 3, exchange 1), tens 7, hundreds 4, thousands 6: 6,473."
         },
         {
           "q": "3,679 + 1,454 = ?",
@@ -1583,7 +1674,8 @@
         {
           "q": "Core: 2,345 + 3,428; 4,568 + 3,795",
           "a": "5,773; 8,363",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher: 2,345 + 3,428: ones 13 (exchange), tens 7, hundreds 7, thousands 5: 5,773."
         },
         {
           "q": "Extend: 6,709 + 2,893",
@@ -1617,7 +1709,8 @@
         "Place value counters or paper ones, tens, hundreds and thousands",
         "Place value chart (paper)",
         "Times tables grid (for the weekly TT starter)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 10 guided, independent and homework tasks"
       ]
     },
     {
@@ -1627,8 +1720,7 @@
       "duration": 45,
       "bigQuestion": "How do we subtract when a column has a zero?",
       "objectives": [
-        "Subtract 4-digit numbers in columns",
-        "Exchange across zeros"
+        "To understand how to subtract 4-digit numbers, including across zeros"
       ],
       "successCriteria": [
         "All: subtract with one exchange",
@@ -1652,21 +1744,33 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "True or false: 5,000 - 1,346 is hard because there are zeros, so we can just do 1,346 - 0.",
         "options": [
           "True",
           "False"
         ],
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). False. Exchange across the zeros: 3,654."
+        "a": "False. Exchange across the zeros: 3,654."
       },
       "routines": {
         "hook": "chat-waterfall",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "hands-down",
-        "exit": "teams-poll"
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
       },
+      "pictures": [
+        {
+          "find": "place value counters ones tens hundreds",
+          "alt": "Place value counters marked 1, 10, 100 and 1,000",
+          "for": "teach:2"
+        },
+        {
+          "find": "column addition written method",
+          "alt": "A column addition set out on squared paper",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "TT: 9 × 7 = ?",
@@ -1773,7 +1877,8 @@
         {
           "q": "5,746 - 2,323 = ?",
           "a": "3,423",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher: 5,746 - 2,323 with no exchanges: 3,423."
         },
         {
           "q": "7,425 - 3,681 = ?",
@@ -1790,7 +1895,8 @@
         {
           "q": "Core: 8,364 - 5,127; 4,520 - 1,785",
           "a": "3,237; 2,735",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher: 8,364 - 5,127: ones 14 - 7 = 7 (exchange), tens 5 - 2 = 3, hundreds 3 - 1 = 2, thousands 3: 3,237."
         },
         {
           "q": "Extend: 9,003 - 4,568",
@@ -1824,7 +1930,8 @@
         "Place value counters or paper ones, tens, hundreds and thousands",
         "Place value chart (paper)",
         "Times tables grid (for the weekly TT starter)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 11 guided, independent and homework tasks"
       ]
     },
     {
@@ -1834,8 +1941,7 @@
       "duration": 45,
       "bigQuestion": "How can a quick estimate catch a big mistake?",
       "objectives": [
-        "Estimate sums and differences by rounding",
-        "Judge whether an answer is reasonable"
+        "To understand how estimating helps us catch mistakes"
       ],
       "successCriteria": [
         "All: round to the nearest 1,000 to estimate",
@@ -1859,7 +1965,7 @@
         }
       ],
       "hook": {
-        "type": "odd-one-out",
+        "type": "ponder",
         "text": "One answer is clearly wrong. Which?",
         "options": [
           "4,987 + 3,012 = 7,999",
@@ -1867,15 +1973,27 @@
           "2,498 + 2,503 = 50,001",
           "8,000 - 3,999 = 4,001"
         ],
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 2,498 + 2,503 ≈ 2,500 + 2,500 = 5,000, not 50,001 (it is 5,001)."
+        "a": "2,498 + 2,503 ≈ 2,500 + 2,500 = 5,000, not 50,001 (it is 5,001)."
       },
       "routines": {
-        "hook": "teams-poll",
+        "hook": "chat-waterfall",
         "starter": "chat-waterfall",
         "hinge": "teams-poll",
-        "practice": "cold-call",
-        "exit": "chat-waterfall"
+        "practice": "show-me",
+        "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "number line 0 to 20 printed",
+          "alt": "A printed number line",
+          "for": "teach:1"
+        },
+        {
+          "find": "shop till receipt",
+          "alt": "A shop receipt with prices",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "TT: 9 × 9 = ?",
@@ -1985,7 +2103,8 @@
         {
           "q": "Estimate 3,912 + 4,105.",
           "a": "4,000 + 4,000 = 8,000",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher rounds 3,912 to 4,000 and 4,105 to 4,000: 8,000."
         },
         {
           "q": "Estimate 7,049 - 2,950.",
@@ -2002,7 +2121,8 @@
         {
           "q": "Core: estimate then calculate 2,815 + 3,164.",
           "a": "≈ 6,000; 5,979",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher estimates 3,000 + 3,000 = 6,000, then calculates 5,979: close."
         },
         {
           "q": "Extend: estimate then calculate 8,402 - 3,598.",
@@ -2036,7 +2156,8 @@
         "Place value counters or paper ones, tens, hundreds and thousands",
         "Place value chart (paper)",
         "Times tables grid (for the weekly TT starter)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 12 guided, independent and homework tasks"
       ]
     },
     {
@@ -2046,8 +2167,7 @@
       "duration": 45,
       "bigQuestion": "How do we plan a problem with more than one step?",
       "objectives": [
-        "Solve two-step addition and subtraction problems",
-        "Use a bar model to plan"
+        "To understand how to plan and solve two-step problems"
       ],
       "successCriteria": [
         "All: find what is known and unknown",
@@ -2071,17 +2191,33 @@
         }
       ],
       "hook": {
-        "type": "story",
+        "type": "ponder",
         "text": "A masjid (مَسْجِد) appeal collected £2,350 in week 1 and £1,875 in week 2. The goal is £6,000. How much more is needed?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). Step 1: 4,225. Step 2: £1,775 more."
+        "a": "Step 1: 4,225. Step 2: £1,775 more."
       },
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
         "hinge": "teams-poll",
-        "practice": "cold-call",
+        "practice": "show-me",
         "exit": "chat-waterfall"
       },
+      "islamicLink": {
+        "text": "Giving sadaqah (صَدَقَة) to build and help masjids is a lasting good deed. Two-step problems help us track an appeal.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "charity collection jar coins",
+          "alt": "A collection jar with coins",
+          "for": "hook"
+        },
+        {
+          "find": "Masjid an-Nabawi green dome",
+          "alt": "The green dome of the Prophet's Masjid (مَسْجِد) in Madinah (المَدِينَة)",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "TT: 9 × 4 = ?",
@@ -2186,7 +2322,8 @@
         {
           "q": "A farmer has 3,420 sheep, sells 1,150 and buys 980. How many now?",
           "a": "3,250",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher: 3,420 - 1,150 = 2,270; 2,270 + 980 = 3,250."
         },
         {
           "q": "Two towns have 4,385 and 3,927 people. How many more in the first?",
@@ -2203,7 +2340,8 @@
         {
           "q": "Core: a car travels 1,256 km then 2,348 km. Total?",
           "a": "3,604 km",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher: 1,256 + 2,348 = 3,604 km."
         },
         {
           "q": "Extend: a 5,000-piece puzzle: 1,836 done on Monday and 2,407 on Tuesday. How many left?",
@@ -2237,7 +2375,8 @@
         "Place value counters or paper ones, tens, hundreds and thousands",
         "Place value chart (paper)",
         "Times tables grid (for the weekly TT starter)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 13 guided, independent and homework tasks"
       ]
     },
     {
@@ -2247,8 +2386,7 @@
       "duration": 45,
       "bigQuestion": "How can we be sure an answer is right?",
       "objectives": [
-        "Check additions and subtractions with the inverse",
-        "Find missing numbers using the inverse"
+        "To understand how inverse operations check answers"
       ],
       "successCriteria": [
         "All: check a sum by subtracting",
@@ -2272,17 +2410,29 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "Sara says 4,815 - 2,962 = 2,853. Can you check in 30 seconds?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 2,853 + 2,962 = 5,815, not 4,815, so it is wrong. The answer is 1,853."
+        "a": "2,853 + 2,962 = 5,815, not 4,815, so it is wrong. The answer is 1,853."
       },
       "routines": {
         "hook": "think-pair-share",
         "starter": "chat-waterfall",
-        "hinge": "show-me",
+        "hinge": "teams-poll",
         "practice": "think-pair-share",
         "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "shop till receipt",
+          "alt": "A shop receipt with prices",
+          "for": "keywords"
+        },
+        {
+          "find": "column addition written method",
+          "alt": "A column addition set out on squared paper",
+          "for": "teach:1"
+        }
+      ],
       "starter": [
         {
           "q": "TT: 9 × 8 = ?",
@@ -2375,7 +2525,8 @@
         {
           "q": "Check 3,604 + 2,789 = 6,393.",
           "a": "6,393 - 2,789 = 3,604: correct",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher: 6,393 - 2,789 = 3,604, which matches, so correct."
         },
         {
           "q": "? + 1,234 = 5,000",
@@ -2392,7 +2543,8 @@
         {
           "q": "Core: ? + 3,600 = 8,100; ? - 2,500 = 1,900",
           "a": "4,500; 4,400",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher: ? + 3,600 = 8,100, so 8,100 - 3,600 = 4,500."
         },
         {
           "q": "Extend: check 9,040 - 5,673 = 3,367.",
@@ -2426,7 +2578,8 @@
         "Place value counters or paper ones, tens, hundreds and thousands",
         "Place value chart (paper)",
         "Times tables grid (for the weekly TT starter)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 14 guided, independent and homework tasks"
       ]
     },
     {
@@ -2898,8 +3051,7 @@
       "duration": 45,
       "bigQuestion": "What happens to the digits when we multiply or divide by 10 or 100?",
       "objectives": [
-        "Multiply whole numbers by 10 and 100",
-        "Divide multiples of 10 and 100 by 10 and 100"
+        "To understand what happens to digits when we multiply and divide by 10 and 100"
       ],
       "successCriteria": [
         "All: multiply by 10 using a place value chart",
@@ -2923,17 +3075,29 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "Is '× 10 means add a zero' a good rule? Try 36 × 10, then 360 ÷ 10.",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 360 and 36: digits move one place left or right; the zero is a placeholder. 'Add a zero' breaks for decimals in Year 5."
+        "a": "360 and 36: digits move one place left or right; the zero is a placeholder. 'Add a zero' breaks for decimals in Year 5."
       },
       "routines": {
         "hook": "chat-waterfall",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "hands-down",
-        "exit": "teams-poll"
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
       },
+      "pictures": [
+        {
+          "find": "place value chart thousands hundreds tens ones",
+          "alt": "A place value chart",
+          "for": "teach:1"
+        },
+        {
+          "find": "ruler centimetre millimetre scale close-up",
+          "alt": "A ruler with centimetre and millimetre marks",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "TT: 7 × 3 = ?",
@@ -3047,7 +3211,8 @@
         {
           "q": "58 × 10 = ?",
           "a": "580",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher moves the 5 and 8 one place left on the chart: 580."
         },
         {
           "q": "42 × 100 = ?",
@@ -3064,7 +3229,8 @@
         {
           "q": "Core: 7 × 100, 91 × 10, 450 ÷ 10",
           "a": "700, 910, 45",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher moves 7 two places left: 700."
         },
         {
           "q": "Extend: ? × 10 = 3,500; 8,000 ÷ ? = 80",
@@ -3098,7 +3264,8 @@
         "Place value counters",
         "Times tables grid",
         "Squared paper",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 21 guided, independent and homework tasks"
       ]
     },
     {
@@ -3108,8 +3275,7 @@
       "duration": 45,
       "bigQuestion": "How does partitioning lead to the column method?",
       "objectives": [
-        "Multiply 2-digit by 1-digit numbers by partitioning",
-        "Record in the short column method with exchange"
+        "To understand how partitioning leads to the column method for multiplication"
       ],
       "successCriteria": [
         "All: multiply using the grid method",
@@ -3133,22 +3299,34 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "47 × 6. Is the answer nearer 240, 280 or 300?",
         "options": [
           "240",
           "280",
           "300"
         ],
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 280 is the closest: 50 × 6 = 300 is an over-estimate; exact 282."
+        "a": "280 is the closest: 50 × 6 = 300 is an over-estimate; exact 282."
       },
       "routines": {
-        "hook": "teams-poll",
+        "hook": "chat-waterfall",
         "starter": "chat-waterfall",
         "hinge": "teams-poll",
-        "practice": "cold-call",
-        "exit": "chat-waterfall"
+        "practice": "show-me",
+        "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "long multiplication written method",
+          "alt": "Long multiplication set out in columns",
+          "for": "teach:2"
+        },
+        {
+          "find": "square floor tiles grid pattern",
+          "alt": "Square tiles in rows and columns",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "TT: 7 × 7 = ?",
@@ -3236,7 +3414,8 @@
         {
           "q": "23 × 4 = ?",
           "a": "92",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher: 23 × 4: 20 × 4 = 80, 3 × 4 = 12, total 92; then the same in columns."
         },
         {
           "q": "56 × 3 = ?",
@@ -3253,7 +3432,8 @@
         {
           "q": "Core: 34 × 5, 72 × 6, 45 × 9",
           "a": "170, 432, 405",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher: 34 × 5: ones 20 (write 0, exchange 2), tens 15 + 2 = 17: 170."
         },
         {
           "q": "Extend: 87 × 8, 99 × 7",
@@ -3287,7 +3467,8 @@
         "Place value counters",
         "Times tables grid",
         "Squared paper",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 22 guided, independent and homework tasks"
       ]
     },
     {
@@ -3297,8 +3478,7 @@
       "duration": 45,
       "bigQuestion": "Can the column method work for any size of number?",
       "objectives": [
-        "Multiply 3-digit by 1-digit numbers in columns",
-        "Multiply three numbers in a helpful order"
+        "To understand how the column method works for 3-digit numbers"
       ],
       "successCriteria": [
         "All: multiply with one exchange",
@@ -3322,17 +3502,29 @@
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "Which is easiest to work out: 2 × 7 × 5 or 7 × 2 × 5 or 2 × 5 × 7?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 2 × 5 × 7: 2 × 5 = 10, then 10 × 7 = 70. All three give 70."
+        "a": "2 × 5 × 7: 2 × 5 = 10, then 10 × 7 = 70. All three give 70."
       },
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
         "hinge": "teams-poll",
-        "practice": "cold-call",
+        "practice": "show-me",
         "exit": "chat-waterfall"
       },
+      "pictures": [
+        {
+          "find": "long multiplication written method",
+          "alt": "Long multiplication set out in columns",
+          "for": "teach:1"
+        },
+        {
+          "find": "rows of empty chairs in a hall",
+          "alt": "Rows of empty chairs: an array",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "TT: 7 × 8 = ?",
@@ -3440,7 +3632,8 @@
         {
           "q": "213 × 3 = ?",
           "a": "639",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher: 213 × 3: 9 ones, 3 tens, 6 hundreds: 639."
         },
         {
           "q": "425 × 4 = ?",
@@ -3457,7 +3650,8 @@
         {
           "q": "Core: 132 × 5, 207 × 6, 341 × 7",
           "a": "660, 1,242, 2,387",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher: 132 × 5: ones 10 (write 0, exchange 1), tens 15 + 1 = 16 (write 6, exchange 1), hundreds 5 + 1 = 6: 660."
         },
         {
           "q": "Extend: 586 × 8, 679 × 9",
@@ -3491,7 +3685,8 @@
         "Place value counters",
         "Times tables grid",
         "Squared paper",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 23 guided, independent and homework tasks"
       ]
     },
     {
@@ -3501,8 +3696,7 @@
       "duration": 45,
       "bigQuestion": "How can partitioning help us divide when tens do not share equally?",
       "objectives": [
-        "Divide 2-digit by 1-digit numbers by partitioning",
-        "Use flexible partitioning into multiples of the divisor"
+        "To understand how partitioning helps us divide"
       ],
       "successCriteria": [
         "All: divide by partitioning into tens and ones",
@@ -3526,17 +3720,33 @@
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "Share 84 dates between 7 families. How many each?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 84 = 70 + 14: 10 + 2 = 12 each."
+        "a": "84 = 70 + 14: 10 + 2 = 12 each."
       },
       "routines": {
         "hook": "think-pair-share",
         "starter": "chat-waterfall",
-        "hinge": "show-me",
+        "hinge": "teams-poll",
         "practice": "think-pair-share",
         "exit": "show-me"
       },
+      "islamicLink": {
+        "text": "Allah commands justice ('adl, عَدْل) and doing good (Qur'an 16:90). Sharing equally is a way to be fair.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "bowl of dates fruit",
+          "alt": "A bowl of dates",
+          "for": "hook"
+        },
+        {
+          "find": "paper plates",
+          "alt": "Paper plates for sharing equal groups",
+          "for": "teach:1"
+        }
+      ],
       "starter": [
         {
           "q": "TT: 7 × 12 = ?",
@@ -3639,7 +3849,8 @@
         {
           "q": "48 ÷ 4 = ?",
           "a": "12",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher: 48 = 40 + 8: 10 + 2 = 12."
         },
         {
           "q": "75 ÷ 5 = ?",
@@ -3656,7 +3867,8 @@
         {
           "q": "Core: 66 ÷ 6, 85 ÷ 5, 72 ÷ 4",
           "a": "11, 17, 18",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher: 66 = 60 + 6: 10 + 1 = 11."
         },
         {
           "q": "Extend: 84 ÷ 6, 96 ÷ 4",
@@ -3690,7 +3902,8 @@
         "Place value counters",
         "Times tables grid",
         "Squared paper",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 24 guided, independent and homework tasks"
       ]
     },
     {
@@ -3700,8 +3913,7 @@
       "duration": 45,
       "bigQuestion": "What does a remainder tell us, and how many ways can things combine?",
       "objectives": [
-        "Divide with remainders",
-        "Solve correspondence problems (how many combinations)"
+        "To understand what remainders mean and how to count combinations"
       ],
       "successCriteria": [
         "All: find a remainder",
@@ -3725,17 +3937,29 @@
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "A lunch menu has 3 mains and 4 drinks. How many different meals of one main and one drink?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 3 × 4 = 12 combinations."
+        "a": "3 × 4 = 12 combinations."
       },
       "routines": {
         "hook": "chat-waterfall",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "hands-down",
-        "exit": "teams-poll"
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
       },
+      "pictures": [
+        {
+          "find": "stacked cardboard boxes",
+          "alt": "Stacked cardboard boxes for packing",
+          "for": "teach:2"
+        },
+        {
+          "find": "paper plates",
+          "alt": "Paper plates for sharing equal groups",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "TT: 7 × 9 = ?",
@@ -3836,7 +4060,8 @@
         {
           "q": "47 ÷ 3 = ?",
           "a": "15 r 2",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher: 47 = 30 + 17: 10 + 5 r 2 = 15 r 2."
         },
         {
           "q": "65 ÷ 4 = ?",
@@ -3853,7 +4078,8 @@
         {
           "q": "Core: 38 ÷ 5, 79 ÷ 6, 93 ÷ 7",
           "a": "7 r 3, 13 r 1, 13 r 2",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher: 7 × 5 = 35, 38 - 35 = 3: 7 r 3."
         },
         {
           "q": "Extend: 52 pupils in teams of 6. How many full teams? How many left?",
@@ -3887,7 +4113,8 @@
         "Place value counters",
         "Times tables grid",
         "Squared paper",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 25 guided, independent and homework tasks"
       ]
     },
     {
@@ -3897,8 +4124,7 @@
       "duration": 45,
       "bigQuestion": "How far is a kilometre?",
       "objectives": [
-        "Know 1 km = 1,000 m",
-        "Estimate and compare distances in km and m"
+        "To understand how far a kilometre is"
       ],
       "successCriteria": [
         "All: convert whole km to m",
@@ -3922,17 +4148,38 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "Walking 1 km takes about 12 to 15 minutes. Is your nearest masjid (مَسْجِد) more or less than 1 km away?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). Answers vary; 1 km is 1,000 m, about 2 and a half laps of a running track."
+        "a": "Answers vary; 1 km is 1,000 m, about 2 and a half laps of a running track."
       },
       "routines": {
-        "hook": "teams-poll",
+        "hook": "chat-waterfall",
         "starter": "chat-waterfall",
         "hinge": "teams-poll",
-        "practice": "cold-call",
-        "exit": "chat-waterfall"
+        "practice": "show-me",
+        "exit": "show-me"
       },
+      "islamicLink": {
+        "text": "The Hijrah (هِجْرَة) from Makkah (مَكَّة) to Madinah (المَدِينَة) was a journey of hundreds of kilometres, made by camel. Kilometres help us understand how far it was.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "kilometre marker post road",
+          "alt": "A kilometre marker post beside a road",
+          "for": "teach:1"
+        },
+        {
+          "find": "map scale bar kilometres",
+          "alt": "A map scale bar marked in kilometres",
+          "for": "keywords"
+        },
+        {
+          "find": "Masjid an-Nabawi green dome",
+          "alt": "The green dome of the Prophet's Masjid (مَسْجِد) in Madinah (المَدِينَة)",
+          "for": "hook"
+        }
+      ],
       "starter": [
         {
           "q": "TT: 11 × 4 = ?",
@@ -4041,7 +4288,8 @@
         {
           "q": "6 km = ? m",
           "a": "6,000 m",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher: 1 km = 1,000 m, so 6 km = 6,000 m."
         },
         {
           "q": "3 km 200 m = ? m",
@@ -4058,7 +4306,8 @@
         {
           "q": "Core: 9 km, 1 km 750 m and 5 km 5 m in metres",
           "a": "9,000 m, 1,750 m, 5,005 m",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher: 9 km = 9,000 m; 1 km 750 m = 1,000 + 750 = 1,750 m."
         },
         {
           "q": "Extend: order 2 km 30 m, 2,300 m, 2 km 3 m",
@@ -4092,7 +4341,8 @@
         "Ruler and tape measure",
         "Squared paper",
         "Local map or online map (distances in km)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 26 guided, independent and homework tasks"
       ]
     },
     {
@@ -4102,8 +4352,7 @@
       "duration": 45,
       "bigQuestion": "How do we add and compare lengths in mixed units?",
       "objectives": [
-        "Convert between km and m",
-        "Add and subtract lengths in km and m"
+        "To understand how to add and subtract lengths in km and m"
       ],
       "successCriteria": [
         "All: convert both ways",
@@ -4127,21 +4376,33 @@
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "Musa walks 650 m to the shop and 480 m to the park. Is that more or less than 1 km?",
         "options": [
           "More",
           "Less"
         ],
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). More: 650 + 480 = 1,130 m = 1 km 130 m."
+        "a": "More: 650 + 480 = 1,130 m = 1 km 130 m."
       },
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
         "hinge": "teams-poll",
-        "practice": "cold-call",
+        "practice": "show-me",
         "exit": "chat-waterfall"
       },
+      "pictures": [
+        {
+          "find": "map scale bar kilometres",
+          "alt": "A map scale bar marked in kilometres",
+          "for": "teach:1"
+        },
+        {
+          "find": "kilometre marker post road",
+          "alt": "A kilometre marker post beside a road",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "TT: 11 × 7 = ?",
@@ -4230,7 +4491,8 @@
         {
           "q": "How far from 375 m to 1 km?",
           "a": "625 m",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher counts on from 375 m: 25 m to 400, 600 m to 1,000: 625 m."
         },
         {
           "q": "2 km 400 m + 1 km 800 m = ?",
@@ -4247,7 +4509,8 @@
         {
           "q": "Core: 450 m + 750 m = ? km ? m",
           "a": "1 km 200 m",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher: 450 + 750 = 1,200 m = 1 km 200 m."
         },
         {
           "q": "Extend: a 10 km run: 6 km 750 m done. How far to go?",
@@ -4281,7 +4544,8 @@
         "Ruler and tape measure",
         "Squared paper",
         "Local map or online map (distances in km)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 27 guided, independent and homework tasks"
       ]
     },
     {
@@ -4291,8 +4555,7 @@
       "duration": 45,
       "bigQuestion": "How do we count perimeter accurately on squared paper?",
       "objectives": [
-        "Find the perimeter of shapes on a grid",
-        "Draw shapes with a given perimeter"
+        "To understand how to find perimeter on a grid"
       ],
       "successCriteria": [
         "All: count edges round a rectangle",
@@ -4316,17 +4579,29 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "On a grid, a 3 by 3 square and a 1 by 5 rectangle. Which has the longer perimeter?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). Both are 12 units! Different shapes can have the same perimeter."
+        "a": "Both are 12 units! Different shapes can have the same perimeter."
       },
       "routines": {
         "hook": "think-pair-share",
         "starter": "chat-waterfall",
-        "hinge": "show-me",
+        "hinge": "teams-poll",
         "practice": "think-pair-share",
         "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "squared paper grid",
+          "alt": "Squared paper",
+          "for": "teach:1"
+        },
+        {
+          "find": "Islamic geometric pattern tiles Alhambra",
+          "alt": "An Islamic geometric tile pattern",
+          "for": "hook"
+        }
+      ],
       "starter": [
         {
           "q": "TT: 11 × 9 = ?",
@@ -4418,7 +4693,8 @@
         {
           "q": "Perimeter of a 6 by 1 rectangle?",
           "a": "14 units",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher counts round a 6 by 1 rectangle: 6 + 1 + 6 + 1 = 14."
         },
         {
           "q": "Perimeter of a 4 by 4 square?",
@@ -4435,7 +4711,8 @@
         {
           "q": "Core: perimeters of 3 by 2, 5 by 4 and 7 by 1 rectangles.",
           "a": "10, 18, 16 units",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher: 3 by 2: 3 + 2 + 3 + 2 = 10."
         },
         {
           "q": "Extend: draw 3 different rectangles with perimeter 16.",
@@ -4469,7 +4746,8 @@
         "Ruler and tape measure",
         "Squared paper",
         "Local map or online map (distances in km)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 28 guided, independent and homework tasks"
       ]
     },
     {
@@ -4479,8 +4757,7 @@
       "duration": 45,
       "bigQuestion": "Is there a quick way to find the perimeter of any rectangle?",
       "objectives": [
-        "Calculate the perimeter of rectangles from length and width",
-        "Find a missing length from a perimeter"
+        "To understand how to calculate the perimeter of any rectangle"
       ],
       "successCriteria": [
         "All: add four sides",
@@ -4504,17 +4781,29 @@
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "Fencing costs the same per metre. Which garden needs more: 12 m by 3 m, or 8 m by 7 m?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 12 by 3: 30 m. 8 by 7: 30 m. The same!"
+        "a": "12 by 3: 30 m. 8 by 7: 30 m. The same!"
       },
       "routines": {
         "hook": "chat-waterfall",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "hands-down",
-        "exit": "teams-poll"
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
       },
+      "pictures": [
+        {
+          "find": "fence around a field",
+          "alt": "A fence around a field: its perimeter",
+          "for": "hook"
+        },
+        {
+          "find": "floor plan diagram rooms",
+          "alt": "A floor plan of a building",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "TT: 12 × 7 = ?",
@@ -4616,7 +4905,8 @@
         {
           "q": "9 cm by 4 cm?",
           "a": "26 cm",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher: (9 + 4) × 2 = 26 cm."
         },
         {
           "q": "Square, 11 m sides?",
@@ -4633,7 +4923,8 @@
         {
           "q": "Core: 14 m by 6 m; 30 cm by 20 cm",
           "a": "40 m; 100 cm",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher: (14 + 6) × 2 = 40 m."
         },
         {
           "q": "Extend: 1 m 20 cm by 80 cm (answer in cm)",
@@ -4667,7 +4958,8 @@
         "Ruler and tape measure",
         "Squared paper",
         "Local map or online map (distances in km)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 29 guided, independent and homework tasks"
       ]
     },
     {
@@ -4677,8 +4969,7 @@
       "duration": 45,
       "bigQuestion": "How can we find perimeters when sides are missing or all equal?",
       "objectives": [
-        "Find missing lengths and perimeters of rectilinear shapes",
-        "Find the perimeter of regular polygons"
+        "To understand how to find perimeters of rectilinear shapes and regular polygons"
       ],
       "successCriteria": [
         "All: add all sides of a rectilinear shape",
@@ -4702,17 +4993,33 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "Bees build hexagon cells. A cell has 6 sides of 3 mm. What is its perimeter?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 6 × 3 = 18 mm."
+        "a": "6 × 3 = 18 mm."
       },
       "routines": {
-        "hook": "teams-poll",
+        "hook": "chat-waterfall",
         "starter": "chat-waterfall",
         "hinge": "teams-poll",
-        "practice": "cold-call",
-        "exit": "chat-waterfall"
+        "practice": "show-me",
+        "exit": "show-me"
       },
+      "islamicLink": {
+        "text": "Allah tells us He inspired the bee to build its homes (Qur'an 16:68). Bees build honeycomb from regular hexagons.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "honeycomb hexagonal cells close-up",
+          "alt": "Honeycomb: regular hexagons built by bees",
+          "for": "hook"
+        },
+        {
+          "find": "Islamic geometric pattern tiles Alhambra",
+          "alt": "An Islamic geometric tile pattern",
+          "for": "teach:2"
+        }
+      ],
       "starter": [
         {
           "q": "TT: 12 × 9 = ?",
@@ -4821,7 +5128,8 @@
         {
           "q": "Regular pentagon, 11 cm sides?",
           "a": "55 cm",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher: 5 sides × 11 cm = 55 cm."
         },
         {
           "q": "L-shape: left 9, bottom 12, right 4, top 7 (m). Missing sides?",
@@ -4838,7 +5146,8 @@
         {
           "q": "End-of-block check, core: 3 km 60 m = ? m; perimeter of 13 cm by 7 cm",
           "a": "3,060 m; 40 cm",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher: 3 km = 3,000 m, + 60 = 3,060 m; (13 + 7) × 2 = 40 cm."
         },
         {
           "q": "Extend: regular hexagon perimeter 72 mm. Side?",
@@ -4872,7 +5181,8 @@
         "Ruler and tape measure",
         "Squared paper",
         "Local map or online map (distances in km)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 30 guided, independent and homework tasks"
       ]
     },
     {
@@ -4882,8 +5192,7 @@
       "duration": 45,
       "bigQuestion": "What does the denominator tell us about the whole?",
       "objectives": [
-        "Know that a whole is made of equal parts",
-        "Write a whole as a fraction, such as 4/4"
+        "To understand what the denominator tells us about the whole"
       ],
       "successCriteria": [
         "All: name numerator and denominator",
@@ -4907,7 +5216,7 @@
         }
       ],
       "hook": {
-        "type": "odd-one-out",
+        "type": "ponder",
         "text": "Which is the odd one out?",
         "options": [
           "4/4",
@@ -4915,15 +5224,27 @@
           "2/2",
           "3/4"
         ],
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 3/4: the others are all equal to 1 whole."
+        "a": "3/4: the others are all equal to 1 whole."
       },
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
         "hinge": "teams-poll",
-        "practice": "cold-call",
+        "practice": "show-me",
         "exit": "chat-waterfall"
       },
+      "pictures": [
+        {
+          "find": "fraction wall chart",
+          "alt": "A fraction wall",
+          "for": "teach:1"
+        },
+        {
+          "find": "pizza cut into eight slices",
+          "alt": "A pizza cut into 8 equal slices",
+          "for": "hook"
+        }
+      ],
       "starter": [
         {
           "q": "TT: mixed: 7 × 8 = ?",
@@ -5015,7 +5336,8 @@
         {
           "q": "What fraction is 2 out of 5 equal parts?",
           "a": "2/5",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher shades 2 of 5 equal parts: 2/5."
         },
         {
           "q": "Write 1 whole in sixths.",
@@ -5032,7 +5354,8 @@
         {
           "q": "Core: write 1 as a fraction with denominators 2, 9 and 12.",
           "a": "2/2, 9/9, 12/12",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher shows a strip in 2, 9 and 12 equal parts, all shaded: 2/2, 9/9, 12/12."
         },
         {
           "q": "Extend: 7/10 of a pizza is eaten. What is left?",
@@ -5066,7 +5389,8 @@
         "Paper fraction strips (cut and folded from A4)",
         "Paper number line 0 to 3",
         "Counters, pasta or buttons (for sets)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 31 guided, independent and homework tasks"
       ]
     },
     {
@@ -5076,8 +5400,7 @@
       "duration": 45,
       "bigQuestion": "What happens when we count past one whole?",
       "objectives": [
-        "Count in fractions beyond 1",
-        "Write amounts as mixed numbers and improper fractions"
+        "To understand how to count in fractions beyond 1"
       ],
       "successCriteria": [
         "All: count in quarters past 1",
@@ -5101,17 +5424,29 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "We count 1/4, 2/4, 3/4, 4/4... what comes next?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 5/4, which is 1 whole and 1/4: 1 1/4."
+        "a": "5/4, which is 1 whole and 1/4: 1 1/4."
       },
       "routines": {
         "hook": "think-pair-share",
         "starter": "chat-waterfall",
-        "hinge": "show-me",
+        "hinge": "teams-poll",
         "practice": "think-pair-share",
         "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "pizza cut into eight slices",
+          "alt": "A pizza cut into 8 equal slices",
+          "for": "hook"
+        },
+        {
+          "find": "fraction wall chart",
+          "alt": "A fraction wall",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "TT: 12 × 12 = ?",
@@ -5235,7 +5570,8 @@
         {
           "q": "Count on in halves from 0 to 3.",
           "a": "1/2, 1, 1 1/2, 2, 2 1/2, 3",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher jumps in halves along the line: 1/2, 1, 1 1/2, 2, 2 1/2, 3."
         },
         {
           "q": "What comes after 1 4/5?",
@@ -5252,7 +5588,8 @@
         {
           "q": "Core: write 3/2, 6/5 and 11/10 as mixed numbers.",
           "a": "1 1/2, 1 1/5, 1 1/10",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher: 3/2 = 2/2 + 1/2 = 1 1/2."
         },
         {
           "q": "Extend: count back in thirds from 2 to 1.",
@@ -5286,7 +5623,8 @@
         "Paper fraction strips (cut and folded from A4)",
         "Paper number line 0 to 3",
         "Counters, pasta or buttons (for sets)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 32 guided, independent and homework tasks"
       ]
     },
     {
@@ -5296,8 +5634,7 @@
       "duration": 45,
       "bigQuestion": "How many ways can we split a mixed number?",
       "objectives": [
-        "Partition mixed numbers into wholes and parts",
-        "Partition flexibly"
+        "To understand how mixed numbers can be partitioned"
       ],
       "successCriteria": [
         "All: write 2 3/4 = 2 + 3/4",
@@ -5321,17 +5658,29 @@
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "2 3/4 = 2 + 3/4. Can 2 3/4 also be 1 + 1 3/4? Or 1 + 7/4?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). Yes to both: 1 3/4 + 1 = 2 3/4 and 7/4 = 1 3/4."
+        "a": "Yes to both: 1 3/4 + 1 = 2 3/4 and 7/4 = 1 3/4."
       },
       "routines": {
         "hook": "chat-waterfall",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "hands-down",
-        "exit": "teams-poll"
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
       },
+      "pictures": [
+        {
+          "find": "orange cut into segments",
+          "alt": "An orange in equal segments",
+          "for": "hook"
+        },
+        {
+          "find": "fraction wall chart",
+          "alt": "A fraction wall",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "TT: 8 × 6 = ?",
@@ -5421,7 +5770,8 @@
         {
           "q": "4 2/5 = 4 + ?",
           "a": "2/5",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher: 4 2/5 is 4 wholes and 2/5, so 4 + 2/5."
         },
         {
           "q": "3 1/3 = 2 + ?",
@@ -5438,7 +5788,8 @@
         {
           "q": "Core: partition 5 1/4, 2 7/10 and 6 2/3 into wholes and fractions.",
           "a": "5 + 1/4, 2 + 7/10, 6 + 2/3",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher: 5 1/4 = 5 + 1/4."
         },
         {
           "q": "Extend: 2 3/5 = 1 + ?",
@@ -5472,7 +5823,8 @@
         "Paper fraction strips (cut and folded from A4)",
         "Paper number line 0 to 3",
         "Counters, pasta or buttons (for sets)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 33 guided, independent and homework tasks"
       ]
     },
     {
@@ -5482,8 +5834,7 @@
       "duration": 45,
       "bigQuestion": "How do we find a mixed number on a number line?",
       "objectives": [
-        "Place mixed numbers on a number line",
-        "Work out the interval in fraction steps"
+        "To understand how to place mixed numbers on a number line"
       ],
       "successCriteria": [
         "All: find the interval between marks",
@@ -5507,17 +5858,29 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "A line from 2 to 3 is split into 5 equal parts. What is each step worth?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 1/5: so the marks are 2 1/5, 2 2/5, 2 3/5, 2 4/5."
+        "a": "1/5: so the marks are 2 1/5, 2 2/5, 2 3/5, 2 4/5."
       },
       "routines": {
-        "hook": "teams-poll",
+        "hook": "chat-waterfall",
         "starter": "chat-waterfall",
         "hinge": "teams-poll",
-        "practice": "cold-call",
-        "exit": "chat-waterfall"
+        "practice": "show-me",
+        "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "ruler centimetre millimetre scale close-up",
+          "alt": "A ruler with centimetre and millimetre marks",
+          "for": "teach:1"
+        },
+        {
+          "find": "measuring jug millilitres",
+          "alt": "A measuring jug marked in millilitres",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "TT: 7 × 12 = ?",
@@ -5628,7 +5991,8 @@
         {
           "q": "Line 0 to 2 in thirds: name the 4th mark.",
           "a": "1 1/3",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher splits each whole into thirds and counts 4 steps: 1/3, 2/3, 1, 1 1/3."
         },
         {
           "q": "Line 3 to 4 in fifths: the 2nd mark?",
@@ -5645,7 +6009,8 @@
         {
           "q": "Core: draw a line 0 to 3 in halves and mark 1 1/2 and 2 1/2.",
           "a": "1 1/2 is halfway between 1 and 2; 2 1/2 halfway between 2 and 3",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher marks halves: 1 1/2 halfway between 1 and 2; 2 1/2 halfway between 2 and 3."
         },
         {
           "q": "Extend: order 1 2/3, 2 1/3, 1 1/3",
@@ -5679,7 +6044,8 @@
         "Paper fraction strips (cut and folded from A4)",
         "Paper number line 0 to 3",
         "Counters, pasta or buttons (for sets)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 34 guided, independent and homework tasks"
       ]
     },
     {
@@ -5689,8 +6055,7 @@
       "duration": 45,
       "bigQuestion": "How do we find a fraction of a group of objects?",
       "objectives": [
-        "Find unit and non-unit fractions of a set",
-        "Use division to find a fraction of an amount"
+        "To understand how to find a fraction of a set"
       ],
       "successCriteria": [
         "All: find 1/4 of 12 by sharing",
@@ -5714,21 +6079,37 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "There are 20 dates. You may have 1/4 or 1/5. Which gives more?",
         "options": [
           "1/4",
           "1/5"
         ],
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 1/4: 20 ÷ 4 = 5 dates; 1/5 = 4 dates."
+        "a": "1/4: 20 ÷ 4 = 5 dates; 1/5 = 4 dates."
       },
       "routines": {
-        "hook": "show-me",
+        "hook": "chat-waterfall",
         "starter": "show-me",
         "hinge": "teams-poll",
-        "practice": "cold-call",
+        "practice": "show-me",
         "exit": "chat-waterfall"
       },
+      "islamicLink": {
+        "text": "Zakah (زَكَاة) is one of the five pillars of Islam: a Muslim gives a fixed share (one fortieth) of savings above a set amount to people in need. Finding a fraction of an amount is how it is worked out.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "bowl of dates fruit",
+          "alt": "A bowl of dates",
+          "for": "hook"
+        },
+        {
+          "find": "charity collection jar coins",
+          "alt": "A collection jar with coins",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "TT: check: 6 × 7, 9 × 8, 12 × 4",
@@ -5830,7 +6211,8 @@
         {
           "q": "1/6 of 24?",
           "a": "4",
-          "mins": 2
+          "mins": 2,
+          "model": "Teacher shares 24 counters into 6 equal groups: 4 in each, so 1/6 of 24 = 4."
         },
         {
           "q": "3/6 of 24?",
@@ -5847,7 +6229,8 @@
         {
           "q": "TT check, core: 1/2 of 16, 1/8 of 56, 3/4 of 20",
           "a": "8, 7, 15",
-          "mins": 4
+          "mins": 4,
+          "model": "Teacher: 16 ÷ 2 = 8."
         },
         {
           "q": "Extend: 5/6 of 42; 3/10 of 70",
@@ -5881,7 +6264,8 @@
         "Paper fraction strips (cut and folded from A4)",
         "Paper number line 0 to 3",
         "Counters, pasta or buttons (for sets)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 4 maths lesson 35 guided, independent and homework tasks"
       ]
     }
   ]

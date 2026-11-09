@@ -94,9 +94,7 @@
       "duration": 30,
       "bigQuestion": "How many ways can we show the same number?",
       "objectives": [
-        "Count up to 10 objects",
-        "Show a number on a ten frame and on fingers",
-        "Read and write numbers 0 to 10 in numerals and words"
+        "To understand that a number can be shown in many ways"
       ],
       "successCriteria": [
         "All: count up to 10 objects, touching each one",
@@ -120,7 +118,7 @@
         }
       ],
       "hook": {
-        "type": "odd-one-out",
+        "type": "ponder",
         "text": "Which one does NOT show 6?",
         "options": [
           "Dice dots",
@@ -128,16 +126,37 @@
           "Ten frame: 5 and 1 more",
           "Seven fingers"
         ],
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). D: seven fingers show 7. The others all show 6."
+        "a": "D: seven fingers show 7. The others all show 6."
       },
       "routines": {
         "hook": "show-me",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "independent": "show-me",
         "exit": "show-me"
       },
+      "islamicLink": {
+        "text": "Allah tells us that if we tried to count His blessings we could never number them (Qur'an 14:34). We count carefully to thank Him for what we can see.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "ten frame with counters maths",
+          "alt": "A ten frame: two rows of five boxes with counters in some boxes",
+          "for": "teach:2"
+        },
+        {
+          "find": "dice showing six dots",
+          "alt": "A dice face with six dots",
+          "for": "hook"
+        },
+        {
+          "find": "dried pasta pieces close-up",
+          "alt": "Dried pasta pieces used for counting",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "Count out loud from 0 to 10.",
@@ -245,12 +264,13 @@
         {
           "q": "Count the pasta the teacher shows: how many?",
           "a": "6",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher counts 6 pasta aloud, moving each piece: 1, 2, 3, 4, 5, 6. 'The last number I say tells me how many: 6.'"
         },
         {
           "q": "Show 8 on your ten frame.",
           "a": "Top row full (5) and 3 more",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Write the numeral for 'four'.",
@@ -262,7 +282,8 @@
         {
           "q": "Core: count out 5, then 9, then 3 pasta. Write each numeral.",
           "a": "5, 9, 3",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher counts out 5 pasta, touching each one, then writes 5 and says 'five'."
         },
         {
           "q": "Extend: write the word for 6 and for 10.",
@@ -272,14 +293,14 @@
         {
           "q": "Stretch: show 7 in two different ways.",
           "a": "For example: 7 on a ten frame (5 and 2); 7 fingers; the word seven",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
         {
           "q": "Hold up the number word 'eight' on your whiteboard as a numeral.",
           "a": "8",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Big question: show 5 in two ways.",
@@ -295,7 +316,8 @@
         "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
         "Maths kit: 20 pieces of dried pasta or buttons",
         "Egg box cut to 10 holes (a ten frame)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 2 guided, independent and homework tasks"
       ]
     },
     {
@@ -305,8 +327,7 @@
       "duration": 30,
       "bigQuestion": "What happens to a number when we add one more or take one away?",
       "objectives": [
-        "Find 1 more and 1 less than a number to 10",
-        "Count forwards and backwards from any number within 10"
+        "To understand how one more and one less change a number"
       ],
       "successCriteria": [
         "All: find 1 more than a number with pasta",
@@ -330,18 +351,30 @@
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "I have 6 dates. My brother gives me one more. Then I give one to my sister. How many do I have now?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 6, then 7, then back to 6. One more and one less undo each other."
+        "a": "6, then 7, then back to 6. One more and one less undo each other."
       },
       "routines": {
-        "hook": "hands-down",
+        "hook": "show-me",
         "starter": "show-me",
         "hinge": "teams-poll",
-        "practice": "hands-down",
+        "practice": "show-me",
         "independent": "show-me",
-        "exit": "cold-call"
+        "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "number line 0 to 20 printed",
+          "alt": "A printed number line",
+          "for": "teach:1"
+        },
+        {
+          "find": "bowl of dates fruit",
+          "alt": "A bowl of dates",
+          "for": "hook"
+        }
+      ],
       "starter": [
         {
           "q": "Count from 3 to 9.",
@@ -436,24 +469,26 @@
         {
           "q": "1 more than 3?",
           "a": "4",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher puts 3 pasta down, adds 1 and counts: 1, 2, 3, 4. '1 more than 3 is 4.'"
         },
         {
           "q": "1 less than 10?",
           "a": "9",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Count back from 8 to 3.",
           "a": "8, 7, 6, 5, 4, 3",
-          "mins": 2
+          "mins": 1
         }
       ],
       "independent": [
         {
           "q": "Core: 1 more than 2, 5 and 8.",
           "a": "3, 6, 9",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher shows 2 pasta, adds one: 3. Then 5 add one: 6. Then 8 add one: 9."
         },
         {
           "q": "Extend: 1 less than 4, 7 and 1.",
@@ -463,7 +498,7 @@
         {
           "q": "Stretch: I am 1 more than 6 and 1 less than 8. What am I?",
           "a": "7",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -475,7 +510,7 @@
         {
           "q": "Big question: 1 less than 5?",
           "a": "4",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "Count down from 10 to 0 at bedtime; say 1 more and 1 less than your age.",
@@ -487,7 +522,8 @@
         "Maths kit: 20 pieces of dried pasta or buttons",
         "Egg box cut to 10 holes (a ten frame)",
         "Mini-whiteboard and pen",
-        "Paper number line 0 to 10"
+        "Paper number line 0 to 10",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 3 guided, independent and homework tasks"
       ]
     },
     {
@@ -497,8 +533,7 @@
       "duration": 30,
       "bigQuestion": "How can we tell which group has more without counting?",
       "objectives": [
-        "Compare two groups by matching",
-        "Use the words more, fewer and equal to"
+        "To understand how to compare two groups"
       ],
       "successCriteria": [
         "All: match two groups one to one",
@@ -522,18 +557,34 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "Two plates: one has 5 big dates, one has 6 tiny raisins. Which plate has more things?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). The raisins: 6 is more than 5. Size does not change how many."
+        "a": "The raisins: 6 is more than 5. Size does not change how many."
       },
       "routines": {
-        "hook": "think-pair-share",
+        "hook": "show-me",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "independent": "show-me",
-        "exit": "hands-down"
+        "exit": "show-me"
       },
+      "islamicLink": {
+        "text": "Allah commands justice ('adl, عَدْل) and doing good (Qur'an 16:90). Sharing equally is a way to be fair.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "bowl of dates fruit",
+          "alt": "A bowl of dates",
+          "for": "hook"
+        },
+        {
+          "find": "paper plates",
+          "alt": "Paper plates for sharing equal groups",
+          "for": "teach:1"
+        }
+      ],
       "starter": [
         {
           "q": "1 more than 6?",
@@ -626,12 +677,13 @@
         {
           "q": "Which is more: 3 or 6?",
           "a": "6",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher lines up 3 pasta above 6 pasta, matches them one to one, and points to the 3 extra: '6 is more.'"
         },
         {
           "q": "Which is fewer: 8 or 5?",
           "a": "5",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Are 4 and 4 equal?",
@@ -643,7 +695,8 @@
         {
           "q": "Core: make a group of 5 and a group of 3. Which has more?",
           "a": "5 has more",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher makes 5 and 3, matches them up: 2 left over in the 5 group, so 5 has more."
         },
         {
           "q": "Extend: make two equal groups of pasta.",
@@ -653,7 +706,7 @@
         {
           "q": "Stretch: one group has 2 more than 6. How many?",
           "a": "8",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -665,7 +718,7 @@
         {
           "q": "Big question: how do we know without counting?",
           "a": "Match them one to one; the group with extras has more",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "Make two groups of toys at home and tell a grown-up which has more.",
@@ -677,7 +730,8 @@
         "Maths kit: 20 pieces of dried pasta or buttons",
         "Egg box cut to 10 holes (a ten frame)",
         "Mini-whiteboard and pen",
-        "Spoons and cups to match"
+        "Spoons and cups to match",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 4 guided, independent and homework tasks"
       ]
     },
     {
@@ -849,8 +903,7 @@
       "duration": 30,
       "bigQuestion": "How does a number line help us put numbers in order?",
       "objectives": [
-        "Find numbers on a number line to 10",
-        "Order numbers from smallest to greatest"
+        "To understand how a number line shows numbers in order"
       ],
       "successCriteria": [
         "All: find a number on a number line",
@@ -874,18 +927,30 @@
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "The numbers 7, 2 and 5 fell off the line! Where does each one go back?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 2 near the start, 5 in the middle, 7 further along."
+        "a": "2 near the start, 5 in the middle, 7 further along."
       },
       "routines": {
         "hook": "show-me",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "independent": "show-me",
         "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "number line 0 to 20 printed",
+          "alt": "A printed number line",
+          "for": "teach:1"
+        },
+        {
+          "find": "hundred square 1 to 100 chart",
+          "alt": "A hundred square chart",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "Which is more: 5 or 8?",
@@ -984,7 +1049,8 @@
         {
           "q": "Order 6, 1, 4 smallest first.",
           "a": "1, 4, 6",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher finds 6, 1 and 4 on the line, points from left to right: 1, then 4, then 6."
         },
         {
           "q": "What number is between 7 and 9?",
@@ -994,14 +1060,15 @@
         {
           "q": "Order 10, 3, 7 greatest first.",
           "a": "10, 7, 3",
-          "mins": 2
+          "mins": 1
         }
       ],
       "independent": [
         {
           "q": "Core: order 5, 9, 2 smallest first.",
           "a": "2, 5, 9",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher places 5, 9 and 2 on the paper number line and reads them from the start: 2, 5, 9."
         },
         {
           "q": "Extend: order 8, 0, 6, 3 smallest first.",
@@ -1011,14 +1078,14 @@
         {
           "q": "Stretch: choose three numbers between 4 and 10 and order them.",
           "a": "For example 5, 7, 9",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
         {
           "q": "Order 3, 8, 1 smallest first.",
           "a": "1, 3, 8",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Big question: where are big numbers on the line?",
@@ -1036,7 +1103,8 @@
         "Egg box cut to 10 holes (a ten frame)",
         "Mini-whiteboard and pen",
         "Paper number line 0 to 10",
-        "Number cards 0 to 10"
+        "Number cards 0 to 10",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 7 guided, independent and homework tasks"
       ]
     },
     {
@@ -1046,9 +1114,7 @@
       "duration": 30,
       "bigQuestion": "How can two parts make one whole?",
       "objectives": [
-        "Find the parts and the whole",
-        "Use a part-whole model",
-        "Write a number sentence with + and ="
+        "To understand how two parts make a whole"
       ],
       "successCriteria": [
         "All: say the two parts of a group",
@@ -1072,18 +1138,30 @@
         }
       ],
       "hook": {
-        "type": "image-prompt",
+        "type": "ponder",
         "text": "Picture a bowl of 7 fruits: 4 apples and 3 bananas. What are the parts? What is the whole?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). Parts 4 and 3; whole 7."
+        "a": "Parts 4 and 3; whole 7."
       },
       "routines": {
-        "hook": "hands-down",
+        "hook": "show-me",
         "starter": "show-me",
         "hinge": "teams-poll",
-        "practice": "hands-down",
+        "practice": "show-me",
         "independent": "show-me",
-        "exit": "cold-call"
+        "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "bowl of apples and bananas",
+          "alt": "A bowl of apples and bananas",
+          "for": "hook"
+        },
+        {
+          "find": "dried pasta pieces close-up",
+          "alt": "Dried pasta pieces used for counting",
+          "for": "teach:1"
+        }
+      ],
       "starter": [
         {
           "q": "Order 6, 2, 9 smallest first.",
@@ -1160,12 +1238,13 @@
         {
           "q": "Parts 2 and 5. Whole?",
           "a": "7",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher puts 2 red and 5 blue pasta in the part circles, pushes them into the whole circle and counts: 7."
         },
         {
           "q": "Parts 6 and 4. Whole?",
           "a": "10",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Write the sentence for parts 1 and 8.",
@@ -1177,7 +1256,8 @@
         {
           "q": "Core: make parts 3 and 4 with pasta. Whole?",
           "a": "7",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher makes parts of 3 and 4 with pasta, joins them and counts all: 7. Writes 3 + 4 = 7."
         },
         {
           "q": "Extend: whole 9, one part 5. Other part?",
@@ -1187,14 +1267,14 @@
         {
           "q": "Stretch: find two different ways to split 6.",
           "a": "For example 1 and 5; 2 and 4; 3 and 3",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
         {
           "q": "Parts 4 and 2: write the sentence.",
           "a": "4 + 2 = 6",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Big question: what do two parts make?",
@@ -1211,7 +1291,8 @@
         "Maths kit: 20 pieces of dried pasta or buttons",
         "Egg box cut to 10 holes (a ten frame)",
         "Mini-whiteboard and pen",
-        "Two colours of pasta or buttons"
+        "Two colours of pasta or buttons",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 8 guided, independent and homework tasks"
       ]
     },
     {
@@ -1221,9 +1302,7 @@
       "duration": 30,
       "bigQuestion": "When we add, does the total get bigger?",
       "objectives": [
-        "Add two groups together",
-        "Add more by counting on",
-        "Solve a simple addition story"
+        "To understand that adding makes a total"
       ],
       "successCriteria": [
         "All: add two groups by counting all",
@@ -1247,18 +1326,30 @@
         }
       ],
       "hook": {
-        "type": "story",
+        "type": "ponder",
         "text": "A bird has 5 seeds. It finds 3 more. How many seeds now? Tell the story with pasta.",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 5 + 3 = 8. The total gets bigger when we add more (unless we add 0)."
+        "a": "5 + 3 = 8. The total gets bigger when we add more (unless we add 0)."
       },
       "routines": {
-        "hook": "think-pair-share",
+        "hook": "show-me",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "independent": "show-me",
-        "exit": "hands-down"
+        "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "number line 0 to 20 printed",
+          "alt": "A printed number line",
+          "for": "teach:2"
+        },
+        {
+          "find": "charity collection jar coins",
+          "alt": "A collection jar with coins",
+          "for": "hook"
+        }
+      ],
       "starter": [
         {
           "q": "6 + ? = 10",
@@ -1341,12 +1432,13 @@
         {
           "q": "2 + 5 = ?",
           "a": "7",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher starts at 2 on the number line and jumps 5: 3, 4, 5, 6, 7. Or starts at 5 and counts on 2: 6, 7."
         },
         {
           "q": "Count on: 6 + 3 = ?",
           "a": "9",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "7 + 0 = ?",
@@ -1358,7 +1450,8 @@
         {
           "q": "Core: 3 + 3, 5 + 4, 1 + 6.",
           "a": "6, 9, 7",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher puts 3 pasta and 3 pasta together and counts: 6. Writes 3 + 3 = 6."
         },
         {
           "q": "Extend: 4 cars and 3 more come. How many?",
@@ -1368,7 +1461,7 @@
         {
           "q": "Stretch: make up a story for 2 + 6 = 8.",
           "a": "For example: 2 cats, then 6 more come, 8 cats",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -1380,7 +1473,7 @@
         {
           "q": "Big question: what happens to the total when we add 0?",
           "a": "It stays the same",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "Make up one adding story at home with toys and tell it to a grown-up.",
@@ -1392,7 +1485,8 @@
         "Maths kit: 20 pieces of dried pasta or buttons",
         "Egg box cut to 10 holes (a ten frame)",
         "Mini-whiteboard and pen",
-        "Paper number line 0 to 10"
+        "Paper number line 0 to 10",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 9 guided, independent and homework tasks"
       ]
     },
     {
@@ -1481,8 +1575,7 @@
       "duration": 30,
       "bigQuestion": "How many pairs of numbers make 10?",
       "objectives": [
-        "Find pairs that make 10",
-        "Work in order so no pair is missed"
+        "To understand how pairs of numbers make 10"
       ],
       "successCriteria": [
         "All: find three bonds to 10 with a ten frame",
@@ -1506,18 +1599,30 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "Hold up both hands. Fold some fingers down. How many are up? How many are down? Do they always make 10?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). Yes: up and down always total 10. These are bonds to 10."
+        "a": "Yes: up and down always total 10. These are bonds to 10."
       },
       "routines": {
         "hook": "show-me",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "independent": "show-me",
         "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "ten frame with counters maths",
+          "alt": "A ten frame: two rows of five boxes with counters in some boxes",
+          "for": "teach:1"
+        },
+        {
+          "find": "egg carton with eggs two rows of six",
+          "alt": "An egg box: 2 rows of 6 eggs",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "Parts 3 and 4. Whole?",
@@ -1629,7 +1734,8 @@
         {
           "q": "4 + ? = 10",
           "a": "6",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher fills 4 spaces of the ten frame, counts the empty spaces: 6. '4 + 6 = 10.'"
         },
         {
           "q": "? + 1 = 10",
@@ -1639,14 +1745,15 @@
         {
           "q": "8 + ? = 10",
           "a": "2",
-          "mins": 2
+          "mins": 1
         }
       ],
       "independent": [
         {
           "q": "Core: write all the bonds to 10 from 0 + 10 to 10 + 0.",
           "a": "0+10, 1+9, 2+8, 3+7, 4+6, 5+5, 6+4, 7+3, 8+2, 9+1, 10+0",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher fills 0, then 1, then 2 spaces, saying each bond: 0 + 10, 1 + 9, 2 + 8 ... in order."
         },
         {
           "q": "Extend: 10 = 5 + ?",
@@ -1656,7 +1763,7 @@
         {
           "q": "Stretch: how many bonds are there from 0 + 10 to 10 + 0?",
           "a": "11",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -1668,7 +1775,7 @@
         {
           "q": "Big question: name two pairs that make 10.",
           "a": "For example 6 + 4 and 9 + 1",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "Bond of the week: say the bonds to 10 with a grown-up using fingers, every day.",
@@ -1679,7 +1786,8 @@
         "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
         "Maths kit: 20 pieces of dried pasta or buttons",
         "Egg box cut to 10 holes (a ten frame)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 11 guided, independent and homework tasks"
       ]
     },
     {
@@ -1768,9 +1876,7 @@
       "duration": 30,
       "bigQuestion": "How are adding and taking away linked?",
       "objectives": [
-        "Take away to subtract",
-        "Find a missing part",
-        "Write a fact family"
+        "To understand how subtraction and addition are linked"
       ],
       "successCriteria": [
         "All: take away and say how many are left",
@@ -1794,18 +1900,34 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "There were 8 biscuits. Now there are 5. What happened?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 3 were eaten or taken away: 8 - 3 = 5."
+        "a": "3 were eaten or taken away: 8 - 3 = 5."
       },
       "routines": {
-        "hook": "hands-down",
+        "hook": "show-me",
         "starter": "show-me",
         "hinge": "teams-poll",
-        "practice": "hands-down",
+        "practice": "show-me",
         "independent": "show-me",
-        "exit": "cold-call"
+        "exit": "show-me"
       },
+      "islamicLink": {
+        "text": "Allah tells us to eat and drink but not to waste (Qur'an 7:31). When food is eaten or given away, we can work out what is left.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "plate of biscuits",
+          "alt": "A plate of biscuits",
+          "for": "hook"
+        },
+        {
+          "find": "dried pasta pieces close-up",
+          "alt": "Dried pasta pieces used for counting",
+          "for": "teach:1"
+        }
+      ],
       "starter": [
         {
           "q": "5 + 3 = ?",
@@ -1898,12 +2020,13 @@
         {
           "q": "6 - 2 = ?",
           "a": "4",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher counts out 6 pasta, takes away 2 one at a time, counts what is left: 4."
         },
         {
           "q": "Whole 9, part 3. Other part?",
           "a": "6",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "5 - 5 = ?",
@@ -1915,7 +2038,8 @@
         {
           "q": "Core: 7 - 3, 8 - 1, 10 - 6.",
           "a": "4, 7, 4",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher counts out 7, takes away 3 and counts the rest: 4. Writes 7 - 3 = 4."
         },
         {
           "q": "Extend: write the fact family for 3, 6, 9.",
@@ -1925,14 +2049,14 @@
         {
           "q": "Stretch: 10 - ? = 4",
           "a": "6",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
         {
           "q": "8 - 5 = ?",
           "a": "3",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Big question: 4 + 3 = 7, so 7 - 3 = ?",
@@ -1948,7 +2072,8 @@
         "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
         "Maths kit: 20 pieces of dried pasta or buttons",
         "Egg box cut to 10 holes (a ten frame)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 13 guided, independent and homework tasks"
       ]
     },
     {
@@ -2195,8 +2320,7 @@
       "duration": 30,
       "bigQuestion": "Why is 10 such a special number?",
       "objectives": [
-        "Count forwards and backwards within 20",
-        "Know that 10 ones make 1 ten"
+        "To understand that 10 ones make 1 ten"
       ],
       "successCriteria": [
         "All: count from 0 to 20",
@@ -2220,18 +2344,30 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "Is it quicker to count 14 pasta one by one, or to see a full ten frame and 4 more?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). Ten and 4 more is quicker: 10 is a group we know."
+        "a": "Ten and 4 more is quicker: 10 is a group we know."
       },
       "routines": {
         "hook": "show-me",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "independent": "show-me",
         "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "ten frame with counters maths",
+          "alt": "A ten frame: two rows of five boxes with counters in some boxes",
+          "for": "teach:3"
+        },
+        {
+          "find": "Lego bricks stacked tower",
+          "alt": "Lego bricks stacked into towers",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "Count from 10 to 15.",
@@ -2316,7 +2452,8 @@
         {
           "q": "Count back from 14 to 9.",
           "a": "14, 13, 12, 11, 10, 9",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher points along the number line from 14 back to 9, saying each number."
         },
         {
           "q": "What comes after 19?",
@@ -2326,14 +2463,15 @@
         {
           "q": "How many ones make 1 ten?",
           "a": "10",
-          "mins": 2
+          "mins": 1
         }
       ],
       "independent": [
         {
           "q": "Core: count out 12 pasta. Fill a ten frame first.",
           "a": "1 full ten frame and 2 more",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher fills the ten frame with 10 pasta, puts 2 more beside it: 'ten and 2 is 12.'"
         },
         {
           "q": "Extend: fill in 13, 14, __, 16, __",
@@ -2343,7 +2481,7 @@
         {
           "q": "Stretch: fill in 20, 19, __, __, 16",
           "a": "18, 17",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -2355,7 +2493,7 @@
         {
           "q": "Big question: what is special about 10?",
           "a": "10 ones make 1 ten",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "Count to 20 and back each day with a grown-up as a spoken chant.",
@@ -2366,7 +2504,8 @@
         "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
         "Maths kit: 20 pieces of pasta, two egg-box ten frames",
         "Paper number line 0 to 20",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 17 guided, independent and homework tasks"
       ]
     },
     {
@@ -2376,8 +2515,7 @@
       "duration": 30,
       "bigQuestion": "What does each digit in 14 tell us?",
       "objectives": [
-        "Make 11 to 20 as 1 ten and some ones",
-        "Read and write teen numbers in numerals and words"
+        "To understand that teen numbers are 1 ten and some ones"
       ],
       "successCriteria": [
         "All: make a teen number with a ten frame and ones",
@@ -2401,7 +2539,7 @@
         }
       ],
       "hook": {
-        "type": "odd-one-out",
+        "type": "ponder",
         "text": "Which does NOT show 15?",
         "options": [
           "1 ten and 5 ones",
@@ -2409,16 +2547,28 @@
           "10 + 5",
           "5 tens and 1 one"
         ],
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 5 tens and 1 one is 51. The others are 15."
+        "a": "5 tens and 1 one is 51. The others are 15."
       },
       "routines": {
-        "hook": "hands-down",
+        "hook": "show-me",
         "starter": "show-me",
         "hinge": "teams-poll",
-        "practice": "hands-down",
+        "practice": "show-me",
         "independent": "show-me",
-        "exit": "cold-call"
+        "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "ten frame with counters maths",
+          "alt": "A ten frame: two rows of five boxes with counters in some boxes",
+          "for": "teach:1"
+        },
+        {
+          "find": "Lego bricks stacked tower",
+          "alt": "Lego bricks stacked into towers",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "Count from 11 to 16.",
@@ -2519,12 +2669,13 @@
         {
           "q": "1 ten and 6 ones = ?",
           "a": "16",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher shows a full ten frame and 6 more: '1 ten and 6 ones is 16.'"
         },
         {
           "q": "How many ones in 18?",
           "a": "8",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Write 'twelve' as a numeral.",
@@ -2536,7 +2687,8 @@
         {
           "q": "Core: make 13, 17 and 11 with pasta.",
           "a": "1 ten and 3; 1 ten and 7; 1 ten and 1",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher makes 13 as a full ten frame and 3 more, and says 'thirteen: 1 ten and 3 ones'."
         },
         {
           "q": "Extend: write 15 and 19 in words.",
@@ -2546,7 +2698,7 @@
         {
           "q": "Stretch: 2 tens and 0 ones = ?",
           "a": "20",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -2558,7 +2710,7 @@
         {
           "q": "Big question: in 14, what does the 1 show?",
           "a": "1 ten",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "Find a teen number at home (a page number, a clock) and tell a grown-up its tens and ones.",
@@ -2570,7 +2722,8 @@
         "Maths kit: 20 pieces of pasta, two egg-box ten frames",
         "Paper number line 0 to 20",
         "Mini-whiteboard and pen",
-        "Lego tower of ten"
+        "Lego tower of ten",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 18 guided, independent and homework tasks"
       ]
     },
     {
@@ -2580,8 +2733,7 @@
       "duration": 30,
       "bigQuestion": "How do we find 1 more or 1 less than any number to 20?",
       "objectives": [
-        "Find 1 more and 1 less than numbers to 20",
-        "Use a number line and ten frames"
+        "To understand how to find 1 more and 1 less within 20"
       ],
       "successCriteria": [
         "All: find 1 more using pasta",
@@ -2605,18 +2757,30 @@
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "I am 1 more than 15 and 1 less than 17. Who am I?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 16."
+        "a": "16."
       },
       "routines": {
-        "hook": "think-pair-share",
+        "hook": "show-me",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "independent": "show-me",
-        "exit": "hands-down"
+        "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "number line 0 to 20 printed",
+          "alt": "A printed number line",
+          "for": "teach:1"
+        },
+        {
+          "find": "ten frame with counters maths",
+          "alt": "A ten frame: two rows of five boxes with counters in some boxes",
+          "for": "teach:3"
+        }
+      ],
       "starter": [
         {
           "q": "1 ten and 5 ones?",
@@ -2723,24 +2887,26 @@
         {
           "q": "1 more than 11?",
           "a": "12",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher finds 11 on the line, jumps forward 1: 12."
         },
         {
           "q": "1 less than 20?",
           "a": "19",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "1 more than 19?",
           "a": "20",
-          "mins": 2
+          "mins": 1
         }
       ],
       "independent": [
         {
           "q": "Core: 1 more than 12, 15 and 17.",
           "a": "13, 16, 18",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher finds 12 and jumps 1 forward: 13. Repeats for 15 (16) and 17 (18)."
         },
         {
           "q": "Extend: 1 less than 14, 19 and 10.",
@@ -2750,7 +2916,7 @@
         {
           "q": "Stretch: 1 more than 1 less than 16?",
           "a": "16",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -2762,7 +2928,7 @@
         {
           "q": "Big question: 1 more than 18?",
           "a": "19",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "Say 1 more and 1 less than 5 numbers between 10 and 20 with a grown-up.",
@@ -2773,7 +2939,8 @@
         "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
         "Maths kit: 20 pieces of pasta, two egg-box ten frames",
         "Paper number line 0 to 20",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 19 guided, independent and homework tasks"
       ]
     },
     {
@@ -2783,8 +2950,7 @@
       "duration": 30,
       "bigQuestion": "How can a number line show us where a number lives?",
       "objectives": [
-        "Find numbers on a number line to 20",
-        "Fill missing numbers on a line"
+        "To understand how a number line to 20 is organised"
       ],
       "successCriteria": [
         "All: find a number on a labelled line",
@@ -2808,18 +2974,30 @@
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "A ladybird sits halfway between 10 and 20. What number is it on?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 15: halfway between 10 and 20."
+        "a": "15: halfway between 10 and 20."
       },
       "routines": {
         "hook": "show-me",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "independent": "show-me",
         "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "number line 0 to 20 printed",
+          "alt": "A printed number line",
+          "for": "teach:1"
+        },
+        {
+          "find": "ruler centimetre millimetre scale close-up",
+          "alt": "A ruler with centimetre and millimetre marks",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "1 more than 16?",
@@ -2957,24 +3135,26 @@
         {
           "q": "What comes between 12 and 14?",
           "a": "13",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher points to 12 and 14 and the gap between them: the missing number is 13."
         },
         {
           "q": "Fill in: 15, __, 17, __, 19",
           "a": "16, 18",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "An arrow is 2 after 15. What number?",
           "a": "17",
-          "mins": 2
+          "mins": 1
         }
       ],
       "independent": [
         {
           "q": "Core: draw a line 10 to 20 and mark 13 and 18.",
           "a": "13 is 3 after 10; 18 is 2 before 20",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher draws a line, writes 10 and 20 at the ends, counts 3 marks from 10 for 13 and 2 back from 20 for 18."
         },
         {
           "q": "Extend: fill in 20, __, 18, __, 16",
@@ -2984,7 +3164,7 @@
         {
           "q": "Stretch: which is nearer 20: 16 or 12?",
           "a": "16 (4 away; 12 is 8 away)",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -2996,7 +3176,7 @@
         {
           "q": "Big question: is 17 nearer 10 or 20?",
           "a": "20 (3 away, not 7)",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "Make a number line 0 to 20 on a strip of paper and keep it in your maths kit.",
@@ -3008,7 +3188,8 @@
         "Maths kit: 20 pieces of pasta, two egg-box ten frames",
         "Paper number line 0 to 20",
         "Mini-whiteboard and pen",
-        "Strip of paper and a pencil"
+        "Strip of paper and a pencil",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 20 guided, independent and homework tasks"
       ]
     },
     {
@@ -3018,8 +3199,7 @@
       "duration": 30,
       "bigQuestion": "How can jumps on a number line help us count on and back?",
       "objectives": [
-        "Count on and back with jumps",
-        "Use a number line to add and subtract 1, 2 or 3"
+        "To understand how jumps on a number line add and subtract"
       ],
       "successCriteria": [
         "All: jump forward on a line",
@@ -3043,18 +3223,30 @@
         }
       ],
       "hook": {
-        "type": "story",
+        "type": "ponder",
         "text": "A frog sits on 11. It jumps 1, then 1, then 1. Where is it now?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 14: three jumps of 1 from 11."
+        "a": "14: three jumps of 1 from 11."
       },
       "routines": {
-        "hook": "hands-down",
+        "hook": "show-me",
         "starter": "show-me",
         "hinge": "teams-poll",
-        "practice": "hands-down",
+        "practice": "show-me",
         "independent": "show-me",
-        "exit": "cold-call"
+        "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "number line 0 to 20 printed",
+          "alt": "A printed number line",
+          "for": "teach:1"
+        },
+        {
+          "find": "ruler centimetre millimetre scale close-up",
+          "alt": "A ruler with centimetre and millimetre marks",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "Between 14 and 16?",
@@ -3152,12 +3344,13 @@
         {
           "q": "11 + 2 = ?",
           "a": "13",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher starts at 11 and draws two jumps: 12, 13."
         },
         {
           "q": "19 - 3 = ?",
           "a": "16",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "15 + 5 = ?",
@@ -3169,7 +3362,8 @@
         {
           "q": "Core: 13 + 3, 16 + 2, 10 + 4.",
           "a": "16, 18, 14",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher starts at 13 and draws 3 jumps: 14, 15, 16."
         },
         {
           "q": "Extend: 18 - 4, 14 - 3, 20 - 2.",
@@ -3179,7 +3373,7 @@
         {
           "q": "Stretch: start at 12, jump forward 5, then back 2.",
           "a": "15",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -3191,7 +3385,7 @@
         {
           "q": "Big question: 15 - 3 on a line?",
           "a": "Start at 15, jump back 3: 12",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "Hop along your paper number line: try 3 adds and 3 take-aways.",
@@ -3202,7 +3396,8 @@
         "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
         "Maths kit: 20 pieces of pasta, two egg-box ten frames",
         "Paper number line 0 to 20",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 21 guided, independent and homework tasks"
       ]
     },
     {
@@ -3212,8 +3407,7 @@
       "duration": 30,
       "bigQuestion": "How can we make a good guess about where a number is?",
       "objectives": [
-        "Estimate where a number goes on a line with only 0 and 20 marked",
-        "Use halfway (10) to help"
+        "To understand how to make a sensible estimate on a number line"
       ],
       "successCriteria": [
         "All: place 10 at halfway",
@@ -3237,23 +3431,35 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "A line goes from 0 to 20 with no other numbers. The arrow is near the end. Is it about 3, 10 or 18?",
         "options": [
           "3",
           "10",
           "18"
         ],
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). About 18: near the end means near 20."
+        "a": "About 18: near the end means near 20."
       },
       "routines": {
-        "hook": "think-pair-share",
+        "hook": "show-me",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "independent": "show-me",
-        "exit": "hands-down"
+        "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "number line 0 to 20 printed",
+          "alt": "A printed number line",
+          "for": "teach:1"
+        },
+        {
+          "find": "ruler centimetre millimetre scale close-up",
+          "alt": "A ruler with centimetre and millimetre marks",
+          "for": "teach:2"
+        }
+      ],
       "starter": [
         {
           "q": "12 + 3 = ?",
@@ -3344,7 +3550,8 @@
         {
           "q": "Where is 10 on a 0 to 20 line?",
           "a": "Halfway",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher folds a paper strip in half and writes 10 at the fold."
         },
         {
           "q": "Arrow near the start. About 1 or 19?",
@@ -3354,14 +3561,15 @@
         {
           "q": "Arrow between halfway and the end. About?",
           "a": "About 15",
-          "mins": 2
+          "mins": 1
         }
       ],
       "independent": [
         {
           "q": "Core: on a blank 0 to 20 line mark 10, then 5.",
           "a": "10 at the middle; 5 halfway from 0 to 10",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher marks 10 at the middle, then folds the first half again to mark 5."
         },
         {
           "q": "Extend: estimate and mark 17.",
@@ -3371,7 +3579,7 @@
         {
           "q": "Stretch: explain where 12 goes.",
           "a": "Just after halfway: 2 more than 10",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -3383,7 +3591,7 @@
         {
           "q": "Big question: what helps us estimate?",
           "a": "Finding halfway (10) first",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "Fold a paper strip in half, write 0, 10 and 20, and mark where 4 and 16 should go.",
@@ -3395,7 +3603,8 @@
         "Maths kit: 20 pieces of pasta, two egg-box ten frames",
         "Paper number line 0 to 20",
         "Mini-whiteboard and pen",
-        "Paper strip to fold"
+        "Paper strip to fold",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 22 guided, independent and homework tasks"
       ]
     },
     {
@@ -3405,8 +3614,7 @@
       "duration": 30,
       "bigQuestion": "How do we know which number is greater?",
       "objectives": [
-        "Compare two numbers to 20",
-        "Use the signs <, > and ="
+        "To understand how to compare numbers to 20"
       ],
       "successCriteria": [
         "All: say which is greater with ten frames",
@@ -3430,18 +3638,30 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "Which is greater: 12 or 21? Explain how you know.",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 21: it has 2 tens; 12 has only 1 ten."
+        "a": "21: it has 2 tens; 12 has only 1 ten."
       },
       "routines": {
         "hook": "show-me",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "independent": "show-me",
         "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "ten frame with counters maths",
+          "alt": "A ten frame: two rows of five boxes with counters in some boxes",
+          "for": "teach:1"
+        },
+        {
+          "find": "number line 0 to 20 printed",
+          "alt": "A printed number line",
+          "for": "teach:3"
+        }
+      ],
       "starter": [
         {
           "q": "Halfway between 0 and 20?",
@@ -3541,7 +3761,8 @@
         {
           "q": "14 _ 11 (<, > or =)",
           "a": ">",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher shows 14 and 11 on ten frames: both have a full ten, 4 ones beat 1 one, so 14 > 11."
         },
         {
           "q": "9 _ 19",
@@ -3551,14 +3772,15 @@
         {
           "q": "18 _ 18",
           "a": "=",
-          "mins": 2
+          "mins": 1
         }
       ],
       "independent": [
         {
           "q": "Core: 13 _ 15, 20 _ 12, 16 _ 16",
           "a": "<, >, =",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher compares 13 and 15 on the line: 15 is further along, so 13 < 15."
         },
         {
           "q": "Extend: which is greater, 10 + 4 or 13?",
@@ -3568,7 +3790,7 @@
         {
           "q": "Stretch: find all numbers greater than 16 but less than 20.",
           "a": "17, 18, 19",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -3580,7 +3802,7 @@
         {
           "q": "Big question: 18 or 12, which is greater and why?",
           "a": "18: both have 1 ten, 8 ones is more than 2 ones",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "Roll or pick two numbers to 20 with a grown-up and say which is greater.",
@@ -3592,7 +3814,8 @@
         "Maths kit: 20 pieces of pasta, two egg-box ten frames",
         "Paper number line 0 to 20",
         "Mini-whiteboard and pen",
-        "Signs <, > and = on card"
+        "Signs <, > and = on card",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 23 guided, independent and homework tasks"
       ]
     },
     {
@@ -3602,8 +3825,7 @@
       "duration": 30,
       "bigQuestion": "How do we put numbers in order from smallest to greatest?",
       "objectives": [
-        "Order three or more numbers to 20",
-        "Use the words smallest and greatest"
+        "To understand how to order numbers to 20"
       ],
       "successCriteria": [
         "All: order three numbers with a number line",
@@ -3627,18 +3849,30 @@
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "Put 19, 11 and 15 in order, smallest first.",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 11, 15, 19."
+        "a": "11, 15, 19."
       },
       "routines": {
-        "hook": "hands-down",
+        "hook": "show-me",
         "starter": "show-me",
         "hinge": "teams-poll",
-        "practice": "hands-down",
+        "practice": "show-me",
         "independent": "show-me",
-        "exit": "cold-call"
+        "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "number line 0 to 20 printed",
+          "alt": "A printed number line",
+          "for": "teach:1"
+        },
+        {
+          "find": "hundred square 1 to 100 chart",
+          "alt": "A hundred square chart",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "12 _ 17",
@@ -3739,12 +3973,13 @@
         {
           "q": "Order 16, 12, 18 smallest first.",
           "a": "12, 16, 18",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher marks 16, 12 and 18 on the line and reads from the left: 12, 16, 18."
         },
         {
           "q": "Order 10, 20, 15 greatest first.",
           "a": "20, 15, 10",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Which is smallest: 13, 19 or 11?",
@@ -3756,7 +3991,8 @@
         {
           "q": "Core: order 14, 9, 17 smallest first.",
           "a": "9, 14, 17",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher puts 14, 9 and 17 on the line; 9 is nearest 0, then 14, then 17."
         },
         {
           "q": "Extend: order 20, 11, 16, 13 greatest first.",
@@ -3766,14 +4002,14 @@
         {
           "q": "Stretch: order 19, 9, 10, 1 smallest first.",
           "a": "1, 9, 10, 19",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
         {
           "q": "Order 15, 10, 19 smallest first.",
           "a": "10, 15, 19",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Big question: how do we find the smallest?",
@@ -3790,7 +4026,8 @@
         "Maths kit: 20 pieces of pasta, two egg-box ten frames",
         "Paper number line 0 to 20",
         "Mini-whiteboard and pen",
-        "Number cards 0 to 20"
+        "Number cards 0 to 20",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 24 guided, independent and homework tasks"
       ]
     },
     {
@@ -3800,8 +4037,7 @@
       "duration": 30,
       "bigQuestion": "What do we now know about numbers to 20?",
       "objectives": [
-        "Show tens and ones in numbers to 20",
-        "Compare, order and find numbers on a line"
+        "To understand what we know about numbers to 20"
       ],
       "successCriteria": [
         "All: answer tens and ones questions",
@@ -3825,22 +4061,34 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "True or false: 19 is greater than 20 because 9 is bigger than 0.",
         "options": [
           "True",
           "False"
         ],
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). False: 20 has 2 tens; 19 has 1 ten. Look at tens first."
+        "a": "False: 20 has 2 tens; 19 has 1 ten. Look at tens first."
       },
       "routines": {
-        "hook": "think-pair-share",
+        "hook": "show-me",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "independent": "show-me",
-        "exit": "hands-down"
+        "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "ten frame with counters maths",
+          "alt": "A ten frame: two rows of five boxes with counters in some boxes",
+          "for": "teach:1"
+        },
+        {
+          "find": "number line 0 to 20 printed",
+          "alt": "A printed number line",
+          "for": "teach:3"
+        }
+      ],
       "starter": [
         {
           "q": "1 ten and 4 ones?",
@@ -3939,24 +4187,26 @@
         {
           "q": "How many tens in 17?",
           "a": "1",
-          "mins": 1
+          "mins": 1,
+          "model": "Teacher shows 17 on ten frames: one full ten, so 1 ten."
         },
         {
           "q": "15 _ 11",
           "a": ">",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Between 18 and 20?",
           "a": "19",
-          "mins": 2
+          "mins": 1
         }
       ],
       "independent": [
         {
           "q": "Core: 1 more and 1 less than 14.",
           "a": "15, 13",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher finds 14 on the line and jumps 1 each way: 15 and 13."
         },
         {
           "q": "Extend: order 20, 13, 17, 10 smallest first.",
@@ -3966,7 +4216,7 @@
         {
           "q": "Stretch: a number has 1 ten and is greater than 17. What could it be?",
           "a": "18 or 19",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -3978,7 +4228,7 @@
         {
           "q": "Big question: tell me one thing you know about 15.",
           "a": "For example: 1 ten and 5 ones; halfway between 10 and 20; greater than 12",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "Tell a grown-up three facts about the number 16.",
@@ -3989,7 +4239,8 @@
         "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
         "Maths kit: 20 pieces of pasta, two egg-box ten frames",
         "Paper number line 0 to 20",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 25 guided, independent and homework tasks"
       ]
     },
     {
@@ -3999,8 +4250,7 @@
       "duration": 30,
       "bigQuestion": "Why do we start counting on from the bigger number?",
       "objectives": [
-        "Add a 1-digit number to a teen number by counting on",
-        "Start from the greater number"
+        "To understand why we count on from the bigger number"
       ],
       "successCriteria": [
         "All: count on from 12 to add",
@@ -4024,18 +4274,30 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "3 + 14. Is it quicker to start at 3 and count 14, or start at 14 and count 3?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). Start at 14: only 3 jumps. Addition can be done in any order."
+        "a": "Start at 14: only 3 jumps. Addition can be done in any order."
       },
       "routines": {
         "hook": "show-me",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "independent": "show-me",
         "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "number line 0 to 20 printed",
+          "alt": "A printed number line",
+          "for": "teach:1"
+        },
+        {
+          "find": "books on a bookshelf",
+          "alt": "Books on a shelf",
+          "for": "hook"
+        }
+      ],
       "starter": [
         {
           "q": "16 _ 12",
@@ -4124,12 +4386,13 @@
         {
           "q": "11 + 5 = ?",
           "a": "16",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher starts at 11 and counts on 5 on fingers: 12, 13, 14, 15, 16."
         },
         {
           "q": "4 + 13 = ?",
           "a": "17",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "18 + 2 = ?",
@@ -4141,7 +4404,8 @@
         {
           "q": "Core: 12 + 3, 14 + 5, 16 + 4.",
           "a": "15, 19, 20",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher starts at 12 and counts on 3: 13, 14, 15."
         },
         {
           "q": "Extend: 5 + 12, 3 + 17.",
@@ -4151,7 +4415,7 @@
         {
           "q": "Stretch: 15 + ? = 19",
           "a": "4",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -4163,7 +4427,7 @@
         {
           "q": "Big question: 2 + 17, where do you start?",
           "a": "At 17: 18, 19, so 19",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "Use your paper number line to do 14 + 3, 2 + 16 and 11 + 7.",
@@ -4174,7 +4438,8 @@
         "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
         "Maths kit: 20 pieces of pasta, two egg-box ten frames",
         "Paper number line 0 to 20",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 26 guided, independent and homework tasks"
       ]
     },
     {
@@ -4184,8 +4449,7 @@
       "duration": 30,
       "bigQuestion": "How can bonds to 10 help us add bigger numbers?",
       "objectives": [
-        "Use bonds to 10 to add ones to a teen number",
-        "Spot the link 3 + 4 = 7 and 13 + 4 = 17"
+        "To understand how known number bonds help us add bigger numbers"
       ],
       "successCriteria": [
         "All: use 3 + 4 = 7 to find 13 + 4",
@@ -4209,7 +4473,7 @@
         }
       ],
       "hook": {
-        "type": "odd-one-out",
+        "type": "ponder",
         "text": "Which does not belong?",
         "options": [
           "2 + 5 = 7",
@@ -4217,16 +4481,28 @@
           "2 + 15 = 17",
           "12 + 5 = 71"
         ],
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 12 + 5 = 71 is wrong: it is 17. The others are related facts."
+        "a": "12 + 5 = 71 is wrong: it is 17. The others are related facts."
       },
       "routines": {
-        "hook": "hands-down",
+        "hook": "show-me",
         "starter": "show-me",
         "hinge": "teams-poll",
-        "practice": "hands-down",
+        "practice": "show-me",
         "independent": "show-me",
-        "exit": "cold-call"
+        "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "ten frame with counters maths",
+          "alt": "A ten frame: two rows of five boxes with counters in some boxes",
+          "for": "teach:1"
+        },
+        {
+          "find": "egg carton with eggs two rows of six",
+          "alt": "An egg box: 2 rows of 6 eggs",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "3 + 5 = ?",
@@ -4325,12 +4601,13 @@
         {
           "q": "4 + 4 = 8, so 14 + 4 = ?",
           "a": "18",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher writes 4 + 4 = 8 and shows a full ten frame beside it: 10 + 8 = 18."
         },
         {
           "q": "15 + 3 = ?",
           "a": "18",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "11 + 8 = ?",
@@ -4342,7 +4619,8 @@
         {
           "q": "Core: 13 + 5, 12 + 7, 16 + 2.",
           "a": "18, 19, 18",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher uses 3 + 5 = 8, keeps the ten: 13 + 5 = 18."
         },
         {
           "q": "Extend: 14 + 6 (use 4 + 6 = 10).",
@@ -4352,7 +4630,7 @@
         {
           "q": "Stretch: write two teen facts from 2 + 5 = 7.",
           "a": "12 + 5 = 17; 2 + 15 = 17",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -4364,7 +4642,7 @@
         {
           "q": "Big question: how does 3 + 5 help with 13 + 5?",
           "a": "3 + 5 = 8, keep the ten, so 18",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "Bond of the week: 2 + 6, 12 + 6; 3 + 4, 13 + 4. Say both facts aloud each day.",
@@ -4375,7 +4653,8 @@
         "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
         "Maths kit: 20 pieces of pasta, two egg-box ten frames",
         "Paper number line 0 to 20",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 27 guided, independent and homework tasks"
       ]
     },
     {
@@ -4385,8 +4664,7 @@
       "duration": 30,
       "bigQuestion": "If we know bonds to 10, do we know bonds to 20?",
       "objectives": [
-        "Find pairs that make 20",
-        "Use bonds to 10 to find bonds to 20"
+        "To understand how bonds to 10 give bonds to 20"
       ],
       "successCriteria": [
         "All: use two ten frames to make 20",
@@ -4410,18 +4688,34 @@
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "Two egg boxes hold 20. One has 14. How many more fill both boxes?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 6: 14 + 6 = 20 (4 + 6 = 10)."
+        "a": "6: 14 + 6 = 20 (4 + 6 = 10)."
       },
       "routines": {
-        "hook": "think-pair-share",
+        "hook": "show-me",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "independent": "show-me",
-        "exit": "hands-down"
+        "exit": "show-me"
       },
+      "islamicLink": {
+        "text": "Sharing food, such as at iftar (إِفْطَار), is part of Muslim life. Bonds to 20 help us share 20 dates between two plates.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "ten frame with counters maths",
+          "alt": "A ten frame: two rows of five boxes with counters in some boxes",
+          "for": "teach:1"
+        },
+        {
+          "find": "bowl of dates fruit",
+          "alt": "A bowl of dates",
+          "for": "hook"
+        }
+      ],
       "starter": [
         {
           "q": "6 + ? = 10",
@@ -4520,12 +4814,13 @@
         {
           "q": "13 + ? = 20",
           "a": "7",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher shows a full ten frame and 3 in the second: 7 empty, so 13 + 7 = 20."
         },
         {
           "q": "? + 18 = 20",
           "a": "2",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "20 = 10 + ?",
@@ -4537,7 +4832,8 @@
         {
           "q": "Core: 16 + ?, 12 + ?, 19 + ? (all make 20).",
           "a": "4, 8, 1",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher fills 16 on two ten frames and counts the empty spaces: 4."
         },
         {
           "q": "Extend: 4 + ? = 20",
@@ -4547,7 +4843,7 @@
         {
           "q": "Stretch: list bonds to 20 from 10 + 10 to 20 + 0.",
           "a": "10+10, 11+9, 12+8, 13+7, 14+6, 15+5, 16+4, 17+3, 18+2, 19+1, 20+0",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -4559,7 +4855,7 @@
         {
           "q": "Big question: how does 3 + 7 = 10 help with bonds to 20?",
           "a": "13 + 7 = 20 (and 3 + 17 = 20)",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "Bond of the week (Spring half term practice): bonds to 20, five a day with a grown-up.",
@@ -4570,7 +4866,8 @@
         "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
         "Maths kit: 20 pieces of pasta, two egg-box ten frames",
         "Paper number line 0 to 20",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 1 maths lesson 28 guided, independent and homework tasks"
       ]
     }
   ]

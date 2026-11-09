@@ -11,8 +11,7 @@
       "duration": 30,
       "bigQuestion": "What does each digit in a 2-digit number tell us?",
       "objectives": [
-        "Make 2-digit numbers from tens and ones",
-        "Say the value of each digit"
+        "To understand what each digit in a 2-digit number is worth"
       ],
       "successCriteria": [
         "All: make a number with Lego tens and ones",
@@ -36,7 +35,7 @@
         }
       ],
       "hook": {
-        "type": "odd-one-out",
+        "type": "ponder",
         "text": "Which does NOT show 46?",
         "options": [
           "4 tens and 6 ones",
@@ -44,16 +43,28 @@
           "6 tens and 4 ones",
           "forty-six"
         ],
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 6 tens and 4 ones is 64."
+        "a": "6 tens and 4 ones is 64."
       },
       "routines": {
-        "hook": "hands-down",
+        "hook": "show-me",
         "starter": "show-me",
         "hinge": "teams-poll",
-        "practice": "hands-down",
+        "practice": "show-me",
         "independent": "show-me",
-        "exit": "cold-call"
+        "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "Lego bricks stacked tower",
+          "alt": "Lego bricks stacked into towers",
+          "for": "teach:1"
+        },
+        {
+          "find": "base ten blocks units rods flats",
+          "alt": "Base 10 blocks: ones, tens, hundreds and a thousand cube",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "Count in 10s to 60.",
@@ -163,12 +174,13 @@
         {
           "q": "6 tens and 3 ones = ?",
           "a": "63",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher shows 6 Lego towers of ten and 3 single bricks: 60 and 3 is 63."
         },
         {
           "q": "What is the 9 worth in 29?",
           "a": "9 (ones)",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "How many tens in 80?",
@@ -180,7 +192,8 @@
         {
           "q": "Core: make 47, 74 and 70 with Lego.",
           "a": "4 tens 7 ones; 7 tens 4 ones; 7 tens 0 ones",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher builds 47 (4 towers, 7 bricks), then 74 (7 towers, 4 bricks), then 70 (7 towers, no bricks)."
         },
         {
           "q": "Extend: what is the 3 worth in 37 and in 73?",
@@ -190,7 +203,7 @@
         {
           "q": "Stretch: 2 tens and 15 ones = ?",
           "a": "35",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -202,7 +215,7 @@
         {
           "q": "Big question: in 64, what does each digit tell us?",
           "a": "6 tens (60) and 4 ones",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "Make three 2-digit numbers with Lego or pasta in tens and say the tens and ones.",
@@ -213,7 +226,8 @@
         "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
         "Maths kit: Lego towers of ten and single bricks (or pasta in tens)",
         "Paper number line 0 to 100 or a 100 square",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 1 guided, independent and homework tasks"
       ]
     },
     {
@@ -223,8 +237,7 @@
       "duration": 30,
       "bigQuestion": "How many ways can we split a 2-digit number?",
       "objectives": [
-        "Read and write numbers to 100 in numerals and words",
-        "Partition into tens and ones, and in other ways"
+        "To understand how a 2-digit number can be partitioned in different ways"
       ],
       "successCriteria": [
         "All: write a number in words",
@@ -248,18 +261,30 @@
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "56 = 50 + 6. Can 56 also be 40 + 16? Prove it with Lego.",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). Yes: 40 + 16 = 56. We can partition flexibly."
+        "a": "Yes: 40 + 16 = 56. We can partition flexibly."
       },
       "routines": {
-        "hook": "think-pair-share",
+        "hook": "show-me",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "independent": "show-me",
-        "exit": "hands-down"
+        "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "base ten blocks units rods flats",
+          "alt": "Base 10 blocks: ones, tens, hundreds and a thousand cube",
+          "for": "teach:2"
+        },
+        {
+          "find": "Lego bricks stacked tower",
+          "alt": "Lego bricks stacked into towers",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "7 tens and 2 ones?",
@@ -332,12 +357,13 @@
         {
           "q": "Write 'ninety-one' in digits.",
           "a": "91",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher reads 'ninety' as 9 tens and 'one' as 1 one: 91."
         },
         {
           "q": "Write 37 in words.",
           "a": "thirty-seven",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "82 = 80 + ?",
@@ -349,7 +375,8 @@
         {
           "q": "Core: partition 29, 64 and 50 into tens and ones.",
           "a": "20 + 9, 60 + 4, 50 + 0",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher splits 29 into 2 towers and 9 bricks: 20 + 9."
         },
         {
           "q": "Extend: 71 = 60 + ?",
@@ -359,7 +386,7 @@
         {
           "q": "Stretch: write three ways to partition 48.",
           "a": "For example 40 + 8, 30 + 18, 20 + 28",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -371,7 +398,7 @@
         {
           "q": "Big question: give two ways to split 35.",
           "a": "For example 30 + 5 and 20 + 15",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "Write your door number (or any number to 100) in words and partition it two ways.",
@@ -382,7 +409,8 @@
         "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
         "Maths kit: Lego towers of ten and single bricks (or pasta in tens)",
         "Paper number line 0 to 100 or a 100 square",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 2 guided, independent and homework tasks"
       ]
     },
     {
@@ -392,8 +420,7 @@
       "duration": 30,
       "bigQuestion": "How do we decide which number is greater?",
       "objectives": [
-        "Compare numbers to 100 with <, > and =",
-        "Order numbers smallest to greatest"
+        "To understand how to compare and order numbers to 100"
       ],
       "successCriteria": [
         "All: compare by tens",
@@ -417,18 +444,30 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "Which is greater: 38 or 83? Same digits! How can you tell?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 83: 8 tens beats 3 tens."
+        "a": "83: 8 tens beats 3 tens."
       },
       "routines": {
         "hook": "show-me",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "independent": "show-me",
         "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "hundred square 1 to 100 chart",
+          "alt": "A hundred square chart",
+          "for": "teach:1"
+        },
+        {
+          "find": "base ten blocks units rods flats",
+          "alt": "Base 10 blocks: ones, tens, hundreds and a thousand cube",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "Write 54 in words.",
@@ -525,12 +564,13 @@
         {
           "q": "45 _ 54",
           "a": "<",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher compares tens first: 45 has 4 tens, 54 has 5 tens, so 45 < 54."
         },
         {
           "q": "80 _ 79",
           "a": ">",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Order 33, 13, 31 smallest first.",
@@ -542,7 +582,8 @@
         {
           "q": "Core: 62 _ 26, 50 _ 50, 18 _ 81",
           "a": ">, =, <",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher compares 62 and 26: 6 tens beats 2 tens, so 62 > 26."
         },
         {
           "q": "Extend: order 72, 27, 70, 77 greatest first.",
@@ -552,7 +593,7 @@
         {
           "q": "Stretch: 4_ > 47. What digits could go in the gap?",
           "a": "8 or 9",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -564,7 +605,7 @@
         {
           "q": "Big question: how do you compare 64 and 69?",
           "a": "Same tens, so compare ones: 9 > 4, so 69 > 64",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "Find four 2-digit numbers at home (on packets or clocks) and order them.",
@@ -576,7 +617,8 @@
         "Maths kit: Lego towers of ten and single bricks (or pasta in tens)",
         "Paper number line 0 to 100 or a 100 square",
         "Mini-whiteboard and pen",
-        "Signs <, > and = on card"
+        "Signs <, > and = on card",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 3 guided, independent and homework tasks"
       ]
     },
     {
@@ -586,8 +628,7 @@
       "duration": 30,
       "bigQuestion": "How can counting in groups make counting quicker?",
       "objectives": [
-        "Count to 100 forwards and backwards from any number",
-        "Count in 2s, 5s and 10s"
+        "To understand how counting in groups makes counting quicker"
       ],
       "successCriteria": [
         "All: count on and back in ones across a ten",
@@ -611,18 +652,34 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "There are 40 dates on a tray. Is it quicker to count them in 1s or in 10s?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). In 10s: 4 jumps instead of 40."
+        "a": "In 10s: 4 jumps instead of 40."
       },
       "routines": {
         "hook": "show-me",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "independent": "show-me",
         "exit": "show-me"
       },
+      "islamicLink": {
+        "text": "Allah tells us that if we tried to count His blessings we could never number them (Qur'an 14:34). We count carefully to thank Him for what we can see.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "hundred square 1 to 100 chart",
+          "alt": "A hundred square chart",
+          "for": "teach:1"
+        },
+        {
+          "find": "bowl of dates fruit",
+          "alt": "A bowl of dates",
+          "for": "hook"
+        }
+      ],
       "starter": [
         {
           "q": "Count on from 28 to 33.",
@@ -746,12 +803,13 @@
         {
           "q": "Count back from 100 to 94.",
           "a": "100, 99, 98, 97, 96, 95, 94",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher counts back on the 100 square from 100, pointing: 99, 98, 97, 96, 95, 94."
         },
         {
           "q": "Count in 5s from 35 to 60.",
           "a": "35, 40, 45, 50, 55, 60",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Count in 2s from 14 to 24.",
@@ -763,7 +821,8 @@
         {
           "q": "Core: fill in 46, 47, __, __, 50, __",
           "a": "48, 49, 51",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher counts on from 46: 47, 48, 49, 50, 51, and writes the missing 48, 49 and 51."
         },
         {
           "q": "Extend: fill in 90, 80, __, 60, __",
@@ -773,7 +832,7 @@
         {
           "q": "Stretch: count in 10s from 6 to 96. How many jumps?",
           "a": "6, 16, 26 ... 96: 9 jumps",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -785,7 +844,7 @@
         {
           "q": "Big question: count 30 pasta in 10s and in 2s. Which is quicker?",
           "a": "10s (3 counts) is quicker than 2s (15 counts)",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "Count in 2s, 5s and 10s to 100 with a grown-up as a spoken chant, 5 minutes a day.",
@@ -796,7 +855,8 @@
         "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
         "Maths kit: Lego towers of ten and single bricks (or pasta in tens)",
         "Paper number line 0 to 100 or a 100 square",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 4 guided, independent and homework tasks"
       ]
     },
     {
@@ -885,8 +945,7 @@
       "duration": 30,
       "bigQuestion": "If we know one fact, how many more facts do we know?",
       "objectives": [
-        "Recall bonds to 10 and 20",
-        "Use a bond to find related facts"
+        "To understand how one known fact gives many related facts"
       ],
       "successCriteria": [
         "All: recall bonds to 10",
@@ -910,18 +969,30 @@
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "7 + 3 = 10. Use it to find 17 + 3, 70 + 30 and 10 - 3. How many facts can you make?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 20, 100, 7, and more: one fact unlocks many."
+        "a": "20, 100, 7, and more: one fact unlocks many."
       },
       "routines": {
-        "hook": "hands-down",
+        "hook": "show-me",
         "starter": "show-me",
         "hinge": "teams-poll",
-        "practice": "hands-down",
+        "practice": "show-me",
         "independent": "show-me",
-        "exit": "cold-call"
+        "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "ten frame with counters maths",
+          "alt": "A ten frame: two rows of five boxes with counters in some boxes",
+          "for": "teach:1"
+        },
+        {
+          "find": "British coins 1p 2p 5p 10p 20p 50p",
+          "alt": "UK coins: 1p, 2p, 5p, 10p, 20p and 50p",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "6 + ? = 10",
@@ -1024,12 +1095,13 @@
         {
           "q": "13 + ? = 20",
           "a": "7",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher uses 3 + 7 = 10, so 13 + 7 = 20."
         },
         {
           "q": "20 + ? = 100",
           "a": "80",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "20 - 9 = ?",
@@ -1041,7 +1113,8 @@
         {
           "q": "Core: 9 + ? = 20, 4 + ? = 10, 60 + ? = 100",
           "a": "11, 6, 40",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher uses 9 + 1 = 10, so 9 + 11 = 20 (one more ten)."
         },
         {
           "q": "Extend: write the fact family for 12, 8, 20.",
@@ -1051,7 +1124,7 @@
         {
           "q": "Stretch: 100 - 30 = ? Explain with a bond.",
           "a": "70, because 3 + 7 = 10 so 30 + 70 = 100",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -1063,7 +1136,7 @@
         {
           "q": "Big question: from 2 + 8 = 10 write two more facts.",
           "a": "For example 12 + 8 = 20; 20 + 80 = 100; 10 - 8 = 2",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "Bond of the week: bonds to 20 and tens to 100, 5 minutes a day.",
@@ -1074,7 +1147,8 @@
         "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
         "Maths kit: Lego towers of ten and single bricks (or pasta in tens)",
         "Paper number line 0 to 100 or a 100 square",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 6 guided, independent and homework tasks"
       ]
     },
     {
@@ -1084,8 +1158,7 @@
       "duration": 30,
       "bigQuestion": "What changes when we add ones to a 2-digit number?",
       "objectives": [
-        "Add and subtract a 1-digit number to and from a 2-digit number",
-        "Cross a ten using a bond"
+        "To understand how to add and subtract ones to a 2-digit number"
       ],
       "successCriteria": [
         "All: add ones without crossing a ten",
@@ -1109,18 +1182,30 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "34 + 5 is easy. Why is 38 + 5 trickier?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 38 + 5 crosses a ten: 38 + 2 = 40, then + 3 = 43."
+        "a": "38 + 5 crosses a ten: 38 + 2 = 40, then + 3 = 43."
       },
       "routines": {
-        "hook": "think-pair-share",
+        "hook": "show-me",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "independent": "show-me",
-        "exit": "hands-down"
+        "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "hundred square 1 to 100 chart",
+          "alt": "A hundred square chart",
+          "for": "teach:1"
+        },
+        {
+          "find": "Lego bricks stacked tower",
+          "alt": "Lego bricks stacked into towers",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "6 + 3 = ?",
@@ -1228,12 +1313,13 @@
         {
           "q": "45 + 3 = ?",
           "a": "48",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher uses 5 + 3 = 8, keeps the 4 tens: 45 + 3 = 48."
         },
         {
           "q": "46 + 7 = ?",
           "a": "53",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "71 - 4 = ?",
@@ -1245,7 +1331,8 @@
         {
           "q": "Core: 23 + 4, 36 + 7, 58 + 5",
           "a": "27, 43, 63",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher uses 3 + 4 = 7: 23 + 4 = 27; then 36 + 4 = 40, + 3 = 43."
         },
         {
           "q": "Extend: 64 - 2, 42 - 6, 80 - 3",
@@ -1255,7 +1342,7 @@
         {
           "q": "Stretch: 89 + 8 = ?",
           "a": "97",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -1267,7 +1354,7 @@
         {
           "q": "Big question: how do you add 47 + 6?",
           "a": "47 + 3 = 50, then + 3 = 53",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "Use your 100 square: 5 additions crossing a ten (like 37 + 5) with a grown-up.",
@@ -1278,7 +1365,8 @@
         "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
         "Maths kit: Lego towers of ten and single bricks (or pasta in tens)",
         "Paper number line 0 to 100 or a 100 square",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 7 guided, independent and homework tasks"
       ]
     },
     {
@@ -1363,8 +1451,7 @@
       "duration": 30,
       "bigQuestion": "What happens to the digits when we add a ten?",
       "objectives": [
-        "Add and subtract multiples of 10 to and from a 2-digit number",
-        "Spot that only the tens digit changes"
+        "To understand how adding and subtracting tens changes a number"
       ],
       "successCriteria": [
         "All: find 10 more and 10 less",
@@ -1388,18 +1475,30 @@
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "45, 55, 65, 75. What is happening? What comes next?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). Adding 10 each time; next is 85."
+        "a": "Adding 10 each time; next is 85."
       },
       "routines": {
         "hook": "show-me",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "independent": "show-me",
         "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "hundred square 1 to 100 chart",
+          "alt": "A hundred square chart",
+          "for": "teach:1"
+        },
+        {
+          "find": "Lego bricks stacked tower",
+          "alt": "Lego bricks stacked into towers",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "38 + 4 = ?",
@@ -1486,12 +1585,13 @@
         {
           "q": "10 less than 70?",
           "a": "60",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher takes 1 Lego tower from 7 towers: 6 towers, so 60."
         },
         {
           "q": "33 + 40 = ?",
           "a": "73",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "86 - 30 = ?",
@@ -1503,7 +1603,8 @@
         {
           "q": "Core: 25 + 10, 25 + 20, 25 + 50",
           "a": "35, 45, 75",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher starts at 25 on the 100 square and moves down 1 row: 35."
         },
         {
           "q": "Extend: 92 - 40, 78 - 60",
@@ -1513,7 +1614,7 @@
         {
           "q": "Stretch: ? + 30 = 81",
           "a": "51",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -1525,7 +1626,7 @@
         {
           "q": "Big question: why does 36 + 20 still end in 6?",
           "a": "We added tens, not ones, so the ones digit stays",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "Start at your age and count on in 10s to over 90; then back.",
@@ -1537,7 +1638,8 @@
         "Maths kit: Lego towers of ten and single bricks (or pasta in tens)",
         "Paper number line 0 to 100 or a 100 square",
         "Mini-whiteboard and pen",
-        "10p coins"
+        "10p coins",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 9 guided, independent and homework tasks"
       ]
     },
     {
@@ -1934,8 +2036,7 @@
       "duration": 30,
       "bigQuestion": "How can subtraction check an addition?",
       "objectives": [
-        "Use subtraction to check addition, and the other way",
-        "Find a missing number using the inverse"
+        "To understand how the inverse checks a calculation"
       ],
       "successCriteria": [
         "All: check an addition with subtraction",
@@ -1959,18 +2060,30 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "Bilal says 34 + 25 = 69. How can he check without adding again?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 69 - 25 should give 34. It gives 44, so he was wrong: 34 + 25 = 59."
+        "a": "69 - 25 should give 34. It gives 44, so he was wrong: 34 + 25 = 59."
       },
       "routines": {
-        "hook": "hands-down",
+        "hook": "show-me",
         "starter": "show-me",
         "hinge": "teams-poll",
-        "practice": "hands-down",
+        "practice": "show-me",
         "independent": "show-me",
-        "exit": "cold-call"
+        "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "number line 0 to 20 printed",
+          "alt": "A printed number line",
+          "for": "teach:1"
+        },
+        {
+          "find": "shop till receipt",
+          "alt": "A shop receipt with prices",
+          "for": "hook"
+        }
+      ],
       "starter": [
         {
           "q": "10 more than 47?",
@@ -2063,12 +2176,13 @@
         {
           "q": "Check 50 + 30 = 80 with subtraction.",
           "a": "80 - 30 = 50, correct",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher writes 80 - 30 = 50, which matches the start, so 50 + 30 = 80 is correct."
         },
         {
           "q": "? + 6 = 26",
           "a": "20",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "40 - ? = 25",
@@ -2080,7 +2194,8 @@
         {
           "q": "Core: 13 + ? = 20, ? + 50 = 70, 64 - ? = 60",
           "a": "7, 20, 4",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher uses the part-whole model: 20 - 13 = 7, so 13 + 7 = 20."
         },
         {
           "q": "Extend: check 45 + 23 = 68.",
@@ -2090,7 +2205,7 @@
         {
           "q": "Stretch: ? - 15 = 30",
           "a": "45",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -2102,7 +2217,7 @@
         {
           "q": "Big question: 41 + 18 = 59. Write the check.",
           "a": "59 - 18 = 41",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "Bridge quiz practice: 5 missing number questions with a grown-up (for example ? + 8 = 20).",
@@ -2113,7 +2228,8 @@
         "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
         "Maths kit: Lego towers of ten and single bricks (or pasta in tens)",
         "Paper number line 0 to 100 or a 100 square",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 15 guided, independent and homework tasks"
       ]
     },
     {
@@ -2202,8 +2318,7 @@
       "duration": 30,
       "bigQuestion": "How can a few coins be worth more than lots of coins?",
       "objectives": [
-        "Recognise 1p, 2p, 5p, 10p, 20p and 50p",
-        "Count totals in pence"
+        "To understand how coins of different values make totals in pence"
       ],
       "successCriteria": [
         "All: name each coin",
@@ -2227,22 +2342,38 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "Would you rather have three 1p coins or one 50p coin?",
         "options": [
           "Three 1p coins",
           "One 50p coin"
         ],
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). One 50p: 50p is more than 3p. More coins does not always mean more money."
+        "a": "One 50p: 50p is more than 3p. More coins does not always mean more money."
       },
       "routines": {
         "hook": "show-me",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "independent": "show-me",
         "exit": "show-me"
       },
+      "islamicLink": {
+        "text": "Islam teaches honesty in buying and selling. Allah warns those who give short measure (Qur'an 83:1-3), so we count money and change carefully.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "British coins 1p 2p 5p 10p 20p 50p",
+          "alt": "UK coins: 1p, 2p, 5p, 10p, 20p and 50p",
+          "for": "teach:1"
+        },
+        {
+          "find": "charity collection jar coins",
+          "alt": "A collection jar with coins",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "Count in 2s to 12.",
@@ -2327,12 +2458,13 @@
         {
           "q": "Six 2p coins = ?",
           "a": "12p",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher counts six 2p coins in 2s: 2, 4, 6, 8, 10, 12. 12p."
         },
         {
           "q": "50p + 20p = ?",
           "a": "70p",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "10p + 5p + 1p = ?",
@@ -2344,7 +2476,8 @@
         {
           "q": "Core: count 5p, 5p, 5p, 5p.",
           "a": "20p",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher counts four 5p coins in 5s: 5, 10, 15, 20. 20p."
         },
         {
           "q": "Extend: count 20p, 20p, 10p, 2p, 1p.",
@@ -2354,7 +2487,7 @@
         {
           "q": "Stretch: which three coins make 27p?",
           "a": "20p, 5p, 2p",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -2366,7 +2499,7 @@
         {
           "q": "Big question: is one 20p more than five 2p coins?",
           "a": "Yes: 20p is more than 10p",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "With a grown-up, count the coins in a purse or jar and say the total in pence.",
@@ -2376,7 +2509,8 @@
         "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
         "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
         "Real coins: 1p, 2p, 5p, 10p, 20p, 50p, £1, £2 (and a £5 note if possible)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 17 guided, independent and homework tasks"
       ]
     },
     {
@@ -2386,8 +2520,7 @@
       "duration": 30,
       "bigQuestion": "How do we count pounds using coins and notes?",
       "objectives": [
-        "Recognise £1 and £2 coins and £5, £10, £20 and £50 notes",
-        "Count totals in pounds"
+        "To understand how to count amounts in pounds"
       ],
       "successCriteria": [
         "All: name pound coins and notes",
@@ -2411,7 +2544,7 @@
         }
       ],
       "hook": {
-        "type": "odd-one-out",
+        "type": "ponder",
         "text": "Which is the odd one out?",
         "options": [
           "£1 coin",
@@ -2419,16 +2552,32 @@
           "£5 note",
           "50p coin"
         ],
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 50p: it is pence, not pounds. (Or the £5 note: it is a note.)"
+        "a": "50p: it is pence, not pounds. (Or the £5 note: it is a note.)"
       },
       "routines": {
-        "hook": "hands-down",
+        "hook": "show-me",
         "starter": "show-me",
         "hinge": "teams-poll",
-        "practice": "hands-down",
+        "practice": "show-me",
         "independent": "show-me",
-        "exit": "cold-call"
+        "exit": "show-me"
       },
+      "islamicLink": {
+        "text": "In Islam money is an amanah (أَمَانَة), a trust from Allah. We look after it and spend it well.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "Bank of England banknotes 5 10 20 50 pounds",
+          "alt": "UK banknotes: £5, £10, £20 and £50",
+          "for": "teach:1"
+        },
+        {
+          "find": "British one pound and two pound coins",
+          "alt": "UK £1 and £2 coins",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "20p + 20p + 5p = ?",
@@ -2519,12 +2668,13 @@
         {
           "q": "Five £2 coins = ?",
           "a": "£10",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher counts five £2 coins in 2s: 2, 4, 6, 8, 10. £10."
         },
         {
           "q": "£20 + £20 + £5 = ?",
           "a": "£45",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "£50 + £10 = ?",
@@ -2536,7 +2686,8 @@
         {
           "q": "Core: £5 + £5 + £2 = ?",
           "a": "£12",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher counts £5, £5 and £2 starting with the biggest: 5, 10, 12. £12."
         },
         {
           "q": "Extend: £20 + £10 + £5 + £2 + £1 = ?",
@@ -2546,7 +2697,7 @@
         {
           "q": "Stretch: make £25 with notes and coins in two ways.",
           "a": "For example £20 + £5; £10 + £10 + £5",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -2558,7 +2709,7 @@
         {
           "q": "Big question: how do you count £20, £5 and £1?",
           "a": "Start with the biggest: 20, 25, 26: £26",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "Look at a shop receipt or price label with a grown-up and say the pounds.",
@@ -2568,7 +2719,8 @@
         "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
         "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
         "Real coins: 1p, 2p, 5p, 10p, 20p, 50p, £1, £2 (and a £5 note if possible)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 18 guided, independent and homework tasks"
       ]
     },
     {
@@ -2578,8 +2730,7 @@
       "duration": 30,
       "bigQuestion": "How do we write an amount with pounds and pence?",
       "objectives": [
-        "Count amounts with pounds and pence",
-        "Write amounts like £3 and 40p"
+        "To understand how pounds and pence are written together"
       ],
       "successCriteria": [
         "All: count pounds then pence",
@@ -2603,23 +2754,35 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "Is £1 more or less than 99p?",
         "options": [
           "More",
           "Less",
           "The same"
         ],
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). More: £1 = 100p, which is 1p more than 99p."
+        "a": "More: £1 = 100p, which is 1p more than 99p."
       },
       "routines": {
-        "hook": "think-pair-share",
+        "hook": "show-me",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "independent": "show-me",
-        "exit": "hands-down"
+        "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "British coins 1p 2p 5p 10p 20p 50p",
+          "alt": "UK coins: 1p, 2p, 5p, 10p, 20p and 50p",
+          "for": "teach:1"
+        },
+        {
+          "find": "supermarket shelf price labels",
+          "alt": "Price labels on a shop shelf",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "£5 + £2 = ?",
@@ -2724,12 +2887,13 @@
         {
           "q": "£2 + 20p + 10p = ?",
           "a": "£2 and 30p",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher counts pounds first (£2), then pence (20, 30): £2 and 30p."
         },
         {
           "q": "£10 + £1 + 50p = ?",
           "a": "£11 and 50p",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "How many 10p in £1?",
@@ -2741,7 +2905,8 @@
         {
           "q": "Core: £5, £1, 20p, 5p",
           "a": "£6 and 25p",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher counts £5, £6, then 20p, 25p: £6 and 25p."
         },
         {
           "q": "Extend: £20, £2, 50p, 20p, 1p",
@@ -2751,7 +2916,7 @@
         {
           "q": "Stretch: 150p = £? and ?p",
           "a": "£1 and 50p",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -2763,7 +2928,7 @@
         {
           "q": "Big question: write £3 and 5p using coins.",
           "a": "For example £2, £1, 5p",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "Find two prices on food packets or receipts and read them as pounds and pence.",
@@ -2773,7 +2938,8 @@
         "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
         "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
         "Real coins: 1p, 2p, 5p, 10p, 20p, 50p, £1, £2 (and a £5 note if possible)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 19 guided, independent and homework tasks"
       ]
     },
     {
@@ -2783,8 +2949,7 @@
       "duration": 30,
       "bigQuestion": "How many different ways can we make the same amount?",
       "objectives": [
-        "Choose coins to make an amount",
-        "Make the same amount in different ways"
+        "To understand that the same amount can be made in different ways"
       ],
       "successCriteria": [
         "All: make 10p with coins",
@@ -2808,18 +2973,34 @@
         }
       ],
       "hook": {
-        "type": "puzzle",
+        "type": "ponder",
         "text": "Make 20p. Who can find the most ways in one minute?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). There are many: 20p; 10p + 10p; 10p + 5p + 5p; 5p + 5p + 5p + 5p; and more."
+        "a": "There are many: 20p; 10p + 10p; 10p + 5p + 5p; 5p + 5p + 5p + 5p; and more."
       },
       "routines": {
         "hook": "show-me",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "independent": "show-me",
         "exit": "show-me"
       },
+      "islamicLink": {
+        "text": "Giving sadaqah (صَدَقَة) is a good deed for every Muslim. Choosing coins carefully helps us give the amount we planned.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "British coins 1p 2p 5p 10p 20p 50p",
+          "alt": "UK coins: 1p, 2p, 5p, 10p, 20p and 50p",
+          "for": "teach:1"
+        },
+        {
+          "find": "charity collection jar coins",
+          "alt": "A collection jar with coins",
+          "for": "hook"
+        }
+      ],
       "starter": [
         {
           "q": "20p + 5p + 2p = ?",
@@ -2907,12 +3088,13 @@
         {
           "q": "Make 15p two ways.",
           "a": "10p + 5p; 5p + 5p + 5p",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher shows 10p + 5p, then swaps the 10p for two 5p coins: 5p + 5p + 5p."
         },
         {
           "q": "Fewest coins for 40p?",
           "a": "20p + 20p",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Make £3 with coins.",
@@ -2924,7 +3106,8 @@
         {
           "q": "Core: make 25p in three ways.",
           "a": "20p + 5p; 10p + 10p + 5p; five 5p coins",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher makes 25p three ways with real coins and checks each by counting."
         },
         {
           "q": "Extend: fewest coins for 78p.",
@@ -2934,7 +3117,7 @@
         {
           "q": "Stretch: make £1 with exactly 4 coins.",
           "a": "50p + 20p + 20p + 10p",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -2946,7 +3129,7 @@
         {
           "q": "Big question: show 50p two ways.",
           "a": "For example 50p; 20p + 20p + 10p",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "Make 50p in as many ways as you can with a grown-up's coins; draw the coins.",
@@ -2956,7 +3139,8 @@
         "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
         "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
         "Real coins: 1p, 2p, 5p, 10p, 20p, 50p, £1, £2 (and a £5 note if possible)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 20 guided, independent and homework tasks"
       ]
     },
     {
@@ -2966,8 +3150,7 @@
       "duration": 30,
       "bigQuestion": "How do we decide which amount is worth more?",
       "objectives": [
-        "Compare amounts with <, > and =",
-        "Compare amounts given as different coins"
+        "To understand how to compare amounts of money"
       ],
       "successCriteria": [
         "All: compare two amounts in pence",
@@ -2991,23 +3174,35 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "Purse A: five 10p coins. Purse B: one 50p coin. Which has more money?",
         "options": [
           "A",
           "B",
           "The same"
         ],
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). The same: both are 50p."
+        "a": "The same: both are 50p."
       },
       "routines": {
-        "hook": "hands-down",
+        "hook": "show-me",
         "starter": "show-me",
         "hinge": "teams-poll",
-        "practice": "hands-down",
+        "practice": "show-me",
         "independent": "show-me",
-        "exit": "cold-call"
+        "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "British coins 1p 2p 5p 10p 20p 50p",
+          "alt": "UK coins: 1p, 2p, 5p, 10p, 20p and 50p",
+          "for": "teach:1"
+        },
+        {
+          "find": "supermarket shelf price labels",
+          "alt": "Price labels on a shop shelf",
+          "for": "hook"
+        }
+      ],
       "starter": [
         {
           "q": "Fewest coins for 15p?",
@@ -3084,12 +3279,13 @@
         {
           "q": "40p _ 4p",
           "a": ">",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher compares values, not the number of coins: 40p is more than 4p, so 40p > 4p."
         },
         {
           "q": "50p + 50p _ £1",
           "a": "=",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "£2 and 10p _ £2 and 1p",
@@ -3101,7 +3297,8 @@
         {
           "q": "Core: 30p _ 25p, 18p _ 81p, 50p _ 20p + 20p + 10p",
           "a": ">, <, =",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher counts 20p + 20p + 10p = 50p, then compares with 50p: equal."
         },
         {
           "q": "Extend: order 99p, £1 and 5p, 90p smallest first.",
@@ -3111,7 +3308,7 @@
         {
           "q": "Stretch: who has more: Sara with £1 and 20p or Musa with 115p?",
           "a": "Sara: £1 and 20p = 120p > 115p",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -3123,7 +3320,7 @@
         {
           "q": "Big question: three 20p or two 50p?",
           "a": "Two 50p: 100p > 60p",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "Compare two prices at home with a grown-up and say which is more and how you know.",
@@ -3133,7 +3330,8 @@
         "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
         "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
         "Real coins: 1p, 2p, 5p, 10p, 20p, 50p, £1, £2 (and a £5 note if possible)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 21 guided, independent and homework tasks"
       ]
     },
     {
@@ -3143,8 +3341,7 @@
       "duration": 30,
       "bigQuestion": "How do we add two prices, even when we cross a ten?",
       "objectives": [
-        "Add two amounts in pence",
-        "Add with an exchange (crossing a ten)"
+        "To understand how to add amounts of money"
       ],
       "successCriteria": [
         "All: add amounts with no exchange",
@@ -3168,22 +3365,38 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "An apple is 35p and a banana is 24p. Do you have enough with 60p?",
         "options": [
           "Yes",
           "No"
         ],
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). Yes: 35p + 24p = 59p, which is 1p less than 60p."
+        "a": "Yes: 35p + 24p = 59p, which is 1p less than 60p."
       },
       "routines": {
-        "hook": "think-pair-share",
+        "hook": "show-me",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "independent": "show-me",
-        "exit": "hands-down"
+        "exit": "show-me"
       },
+      "islamicLink": {
+        "text": "Islam teaches honesty in buying and selling. Allah warns those who give short measure (Qur'an 83:1-3), so we count money and change carefully.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "supermarket shelf price labels",
+          "alt": "Price labels on a shop shelf",
+          "for": "hook"
+        },
+        {
+          "find": "shop till receipt",
+          "alt": "A shop receipt with prices",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "30 + 20 = ?",
@@ -3281,12 +3494,13 @@
         {
           "q": "23p + 14p = ?",
           "a": "37p",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher partitions: 20 + 10 = 30, 3 + 4 = 7, so 37p."
         },
         {
           "q": "46p + 27p = ?",
           "a": "73p",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "£6 + £8 = ?",
@@ -3298,7 +3512,8 @@
         {
           "q": "Core: 31p + 25p, 52p + 16p",
           "a": "56p, 68p",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher adds tens then ones: 31p + 25p: 50 + 6 = 56p."
         },
         {
           "q": "Extend: 38p + 45p, 29p + 29p",
@@ -3308,7 +3523,7 @@
         {
           "q": "Stretch: a pen is 48p, a ruler 35p, a rubber 12p. Total?",
           "a": "95p",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -3320,7 +3535,7 @@
         {
           "q": "Big question: 36p + 47p = ? Show the exchange.",
           "a": "6 + 7 = 13, exchange 10 ones for a ten; 30 + 40 + 10 = 80; 83p",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "Choose two snacks from a price list your grown-up writes; find the total.",
@@ -3331,7 +3546,8 @@
         "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
         "Real coins: 1p, 2p, 5p, 10p, 20p, 50p, £1, £2 (and a £5 note if possible)",
         "Mini-whiteboard and pen",
-        "Price cards for a pretend shop"
+        "Price cards for a pretend shop",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 22 guided, independent and homework tasks"
       ]
     },
     {
@@ -3341,8 +3557,7 @@
       "duration": 30,
       "bigQuestion": "How much change should we get back?",
       "objectives": [
-        "Find the difference between two amounts",
-        "Find change from 10p, 20p, 50p and £1"
+        "To understand how to work out change"
       ],
       "successCriteria": [
         "All: find change from 10p",
@@ -3366,22 +3581,38 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "You pay 50p for a 35p drink. The shopkeeper gives you 5p back. Is that right?",
         "options": [
           "Yes",
           "No"
         ],
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). No: the change should be 15p. Count on from 35p to 50p."
+        "a": "No: the change should be 15p. Count on from 35p to 50p."
       },
       "routines": {
         "hook": "show-me",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "independent": "show-me",
         "exit": "show-me"
       },
+      "islamicLink": {
+        "text": "The Prophet ﷺ was known as al-Amin (الأَمِين), the trustworthy, when he traded. Giving the right change is part of being trustworthy.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "British coins 1p 2p 5p 10p 20p 50p",
+          "alt": "UK coins: 1p, 2p, 5p, 10p, 20p and 50p",
+          "for": "teach:1"
+        },
+        {
+          "find": "shop till receipt",
+          "alt": "A shop receipt with prices",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "10 - 7 = ?",
@@ -3482,12 +3713,13 @@
         {
           "q": "Pay 10p for 6p. Change?",
           "a": "4p",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher counts on from 6p to 10p: 7, 8, 9, 10. 4p change."
         },
         {
           "q": "Pay 50p for 28p. Change?",
           "a": "22p",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Difference between 45p and 60p?",
@@ -3499,7 +3731,8 @@
         {
           "q": "Core: change from 20p for 15p, 11p, 18p",
           "a": "5p, 9p, 2p",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher counts on from 15p to 20p: 5p change."
         },
         {
           "q": "Extend: change from 50p for 37p and 45p",
@@ -3509,7 +3742,7 @@
         {
           "q": "Stretch: change from £1 for 73p",
           "a": "27p",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -3521,7 +3754,7 @@
         {
           "q": "Big question: how do you find change from £1 for 85p?",
           "a": "Count on 85 to 90 (5p), 90 to 100 (10p): 15p",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "With a grown-up, play shop: pay with 50p or £1 and work out the change three times.",
@@ -3532,7 +3765,8 @@
         "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
         "Real coins: 1p, 2p, 5p, 10p, 20p, 50p, £1, £2 (and a £5 note if possible)",
         "Mini-whiteboard and pen",
-        "Price cards for a pretend shop"
+        "Price cards for a pretend shop",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 23 guided, independent and homework tasks"
       ]
     },
     {
@@ -3542,8 +3776,7 @@
       "duration": 30,
       "bigQuestion": "How do we know what to do in a money story?",
       "objectives": [
-        "Decide whether to add or subtract",
-        "Solve two-step money problems"
+        "To understand how to plan and solve two-step money problems"
       ],
       "successCriteria": [
         "All: solve a one-step money problem",
@@ -3567,18 +3800,30 @@
         }
       ],
       "hook": {
-        "type": "story",
+        "type": "ponder",
         "text": "Aisha has 50p. She buys a pencil for 20p and a rubber for 15p. How much is left for the sadaqah (صَدَقَة) jar?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). Step 1: 20p + 15p = 35p. Step 2: 50p - 35p = 15p."
+        "a": "Step 1: 20p + 15p = 35p. Step 2: 50p - 35p = 15p."
       },
       "routines": {
-        "hook": "hands-down",
+        "hook": "show-me",
         "starter": "show-me",
         "hinge": "teams-poll",
-        "practice": "hands-down",
+        "practice": "show-me",
         "independent": "show-me",
-        "exit": "cold-call"
+        "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "charity collection jar coins",
+          "alt": "A collection jar with coins",
+          "for": "hook"
+        },
+        {
+          "find": "shop till receipt",
+          "alt": "A shop receipt with prices",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "Pay 20p for 12p. Change?",
@@ -3661,12 +3906,13 @@
         {
           "q": "A drink is 40p and a cake 25p. Total?",
           "a": "65p",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher underlines 40p and 25p, decides 'total' means add: 40p + 25p = 65p."
         },
         {
           "q": "Pay £1 for the drink and cake. Change?",
           "a": "35p",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Is it add or subtract: 'how much more'?",
@@ -3678,7 +3924,8 @@
         {
           "q": "Core: 3 stickers at 10p each. Total?",
           "a": "30p",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher counts in 10s: three stickers at 10p = 30p."
         },
         {
           "q": "Extend: Zayd has 80p. He buys a 45p pen. Can he also buy a 30p ruler?",
@@ -3688,7 +3935,7 @@
         {
           "q": "Stretch: write your own two-step money story and solve it.",
           "a": "For example: 2 apples at 30p, pay with £1: 60p, change 40p",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -3700,7 +3947,7 @@
         {
           "q": "Big question: what are the two steps?",
           "a": "Find the total spent, then subtract from what you paid",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "White Rose money end-of-block practice: 4 money problems set by the teacher, done with a grown-up's coins.",
@@ -3710,7 +3957,8 @@
         "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Spring 1 order)",
         "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
         "Real coins: 1p, 2p, 5p, 10p, 20p, 50p, £1, £2 (and a £5 note if possible)",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 24 guided, independent and homework tasks"
       ]
     },
     {
@@ -3720,8 +3968,7 @@
       "duration": 30,
       "bigQuestion": "What makes groups equal?",
       "objectives": [
-        "Say whether groups are equal or unequal",
-        "Make equal groups and describe them"
+        "To understand what makes groups equal"
       ],
       "successCriteria": [
         "All: spot equal and unequal groups",
@@ -3745,7 +3992,7 @@
         }
       ],
       "hook": {
-        "type": "odd-one-out",
+        "type": "ponder",
         "text": "Which set of plates is NOT equal?",
         "options": [
           "3, 3, 3",
@@ -3753,16 +4000,32 @@
           "2, 4, 2",
           "4, 4, 4, 4"
         ],
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 2, 4, 2: one plate has more."
+        "a": "2, 4, 2: one plate has more."
       },
       "routines": {
-        "hook": "think-pair-share",
+        "hook": "show-me",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "independent": "show-me",
-        "exit": "hands-down"
+        "exit": "show-me"
       },
+      "islamicLink": {
+        "text": "Allah commands justice ('adl, عَدْل) and doing good (Qur'an 16:90). Sharing equally is a way to be fair.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "paper plates",
+          "alt": "Paper plates for sharing equal groups",
+          "for": "teach:1"
+        },
+        {
+          "find": "egg carton with eggs two rows of six",
+          "alt": "An egg box: 2 rows of 6 eggs",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "Count in 2s to 16.",
@@ -3845,12 +4108,13 @@
         {
           "q": "Are groups of 3, 3 and 4 equal?",
           "a": "No",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher counts each group: 3, 3, 4. One group has more, so they are not equal."
         },
         {
           "q": "Make 2 groups of 6. How many?",
           "a": "12",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "Describe 5, 5, 5.",
@@ -3862,7 +4126,8 @@
         {
           "q": "Core: make 3 groups of 2. How many?",
           "a": "6",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher makes 3 piles of 2 pasta and counts in 2s: 2, 4, 6."
         },
         {
           "q": "Extend: make 5 groups of 10. How many?",
@@ -3872,7 +4137,7 @@
         {
           "q": "Stretch: share 12 pasta into equal groups in two ways.",
           "a": "For example 2 groups of 6; 3 groups of 4; 4 groups of 3",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -3884,7 +4149,7 @@
         {
           "q": "Big question: what makes groups equal?",
           "a": "Every group has the same number",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "Make equal groups with socks, spoons or toys and describe them: '_ groups of _'.",
@@ -3895,7 +4160,8 @@
         "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
         "Maths kit: 30 pieces of pasta",
         "Paper plates or cups",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 25 guided, independent and homework tasks"
       ]
     },
     {
@@ -3905,8 +4171,7 @@
       "duration": 30,
       "bigQuestion": "How is multiplying like adding?",
       "objectives": [
-        "Write repeated addition for equal groups",
-        "Write a multiplication sentence with × and ="
+        "To understand how multiplication is repeated addition"
       ],
       "successCriteria": [
         "All: write 3 + 3 + 3 + 3 for 4 groups of 3",
@@ -3930,18 +4195,30 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "Which is quicker to write: 5 + 5 + 5 + 5 + 5 + 5 or 6 × 5?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 6 × 5: multiplication is a short way to write repeated addition."
+        "a": "6 × 5: multiplication is a short way to write repeated addition."
       },
       "routines": {
         "hook": "show-me",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "independent": "show-me",
         "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "egg carton with eggs two rows of six",
+          "alt": "An egg box: 2 rows of 6 eggs",
+          "for": "teach:2"
+        },
+        {
+          "find": "muffin baking tray 3 by 4",
+          "alt": "A muffin tray: an array of 3 rows of 4",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "3 groups of 2?",
@@ -4048,12 +4325,13 @@
         {
           "q": "Write 5 + 5 + 5 as multiplication.",
           "a": "3 × 5 = 15",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher counts three groups of 5: 5, 10, 15. 'Three fives: 3 × 5 = 15.'"
         },
         {
           "q": "Write 4 × 10 as addition.",
           "a": "10 + 10 + 10 + 10 = 40",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "6 × 2 = ?",
@@ -4065,7 +4343,8 @@
         {
           "q": "Core: 3 × 2, 2 × 5, 3 × 10",
           "a": "6, 10, 30",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher counts in 2s three times: 2, 4, 6, so 3 × 2 = 6."
         },
         {
           "q": "Extend: write 2 + 2 + 2 + 2 + 2 + 2 as multiplication.",
@@ -4075,7 +4354,7 @@
         {
           "q": "Stretch: is 5 + 5 + 3 a multiplication? Why?",
           "a": "No: the groups are not equal",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -4087,7 +4366,7 @@
         {
           "q": "Big question: write 3 groups of 4 two ways.",
           "a": "4 + 4 + 4 = 12 and 3 × 4 = 12",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "Find packs of things at home (eggs, yoghurts) and write a multiplication for each.",
@@ -4098,7 +4377,8 @@
         "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
         "Maths kit: 30 pieces of pasta",
         "Paper plates or cups",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 26 guided, independent and homework tasks"
       ]
     },
     {
@@ -4108,8 +4388,7 @@
       "duration": 30,
       "bigQuestion": "Why can one array show two multiplications?",
       "objectives": [
-        "Make arrays in rows and columns",
-        "Write two multiplications for one array"
+        "To understand how an array shows two multiplications"
       ],
       "successCriteria": [
         "All: make an array with pasta",
@@ -4133,18 +4412,30 @@
         }
       ],
       "hook": {
-        "type": "image-prompt",
+        "type": "ponder",
         "text": "Picture an egg box with 2 rows of 6 eggs. How many eggs? Can you see two ways to count?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 12: 2 rows of 6 or 6 columns of 2."
+        "a": "12: 2 rows of 6 or 6 columns of 2."
       },
       "routines": {
-        "hook": "hands-down",
+        "hook": "show-me",
         "starter": "show-me",
         "hinge": "teams-poll",
-        "practice": "hands-down",
+        "practice": "show-me",
         "independent": "show-me",
-        "exit": "cold-call"
+        "exit": "show-me"
       },
+      "pictures": [
+        {
+          "find": "muffin baking tray 3 by 4",
+          "alt": "A muffin tray: an array of 3 rows of 4",
+          "for": "teach:1"
+        },
+        {
+          "find": "prayer mats in rows in a mosque",
+          "alt": "Prayer mats laid out in straight rows in a masjid (مَسْجِد)",
+          "for": "hook"
+        }
+      ],
       "starter": [
         {
           "q": "3 × 5 = ?",
@@ -4245,12 +4536,13 @@
         {
           "q": "Make 2 rows of 3. Total?",
           "a": "6",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher lays 2 rows of 3 pasta and counts in 3s: 3, 6."
         },
         {
           "q": "Write two multiplications for 4 rows of 2.",
           "a": "4 × 2 = 8 and 2 × 4 = 8",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "3 rows of 10?",
@@ -4262,7 +4554,8 @@
         {
           "q": "Core: make 3 rows of 5. Write the multiplication.",
           "a": "3 × 5 = 15",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher lays 3 rows of 5 and counts in 5s: 5, 10, 15. Writes 3 × 5 = 15 and 5 × 3 = 15."
         },
         {
           "q": "Extend: draw an array for 2 × 6.",
@@ -4272,7 +4565,7 @@
         {
           "q": "Stretch: find all the arrays for 12.",
           "a": "1 × 12, 2 × 6, 3 × 4 (and the turns)",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -4284,7 +4577,7 @@
         {
           "q": "Big question: why does one array show two facts?",
           "a": "Count rows or columns: 3 × 4 and 4 × 3 give the same total",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "Find arrays at home (egg box, window panes, tiles) and write two multiplications for one.",
@@ -4296,7 +4589,8 @@
         "Maths kit: 30 pieces of pasta",
         "Egg box",
         "Squared paper",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 27 guided, independent and homework tasks"
       ]
     },
     {
@@ -4306,8 +4600,7 @@
       "duration": 30,
       "bigQuestion": "What patterns can we find in the 2 times table?",
       "objectives": [
-        "Recall the 2 times table to 12 × 2",
-        "Spot that multiples of 2 are even"
+        "To understand the patterns in the 2 times table"
       ],
       "successCriteria": [
         "All: count in 2s to 24",
@@ -4331,18 +4624,34 @@
         }
       ],
       "hook": {
-        "type": "question",
+        "type": "ponder",
         "text": "How many shoes do 6 children have? How many for 10 children?",
-        "a": "Begin with bismillah (بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ). 6 × 2 = 12; 10 × 2 = 20."
+        "a": "6 × 2 = 12; 10 × 2 = 20."
       },
       "routines": {
-        "hook": "think-pair-share",
+        "hook": "show-me",
         "starter": "show-me",
-        "hinge": "show-me",
-        "practice": "cold-call",
+        "hinge": "teams-poll",
+        "practice": "show-me",
         "independent": "show-me",
-        "exit": "hands-down"
+        "exit": "show-me"
       },
+      "islamicLink": {
+        "text": "Allah tells us He created everything in pairs (Qur'an 51:49). Counting in 2s counts pairs.",
+        "at": "start"
+      },
+      "pictures": [
+        {
+          "find": "pair of socks",
+          "alt": "A pair of socks: 2 make a pair",
+          "for": "hook"
+        },
+        {
+          "find": "pair of shoes",
+          "alt": "A pair of shoes",
+          "for": "keywords"
+        }
+      ],
       "starter": [
         {
           "q": "2 + 2 + 2 + 2 = ?",
@@ -4467,12 +4776,13 @@
         {
           "q": "3 × 2 = ?",
           "a": "6",
-          "mins": 2
+          "mins": 1,
+          "model": "Teacher counts 3 jumps of 2 on the line: 2, 4, 6."
         },
         {
           "q": "9 × 2 = ?",
           "a": "18",
-          "mins": 2
+          "mins": 1
         },
         {
           "q": "? × 2 = 20",
@@ -4484,7 +4794,8 @@
         {
           "q": "Core: 5 × 2, 7 × 2, 11 × 2",
           "a": "10, 14, 22",
-          "mins": 3
+          "mins": 2,
+          "model": "Teacher counts in 2s five times on fingers: 10."
         },
         {
           "q": "Extend: half-term quiz: 12 × 2, 2 × 4, 6 × 2, 2 × 10",
@@ -4494,7 +4805,7 @@
         {
           "q": "Stretch: 8 pairs of socks. How many socks?",
           "a": "16",
-          "mins": 2
+          "mins": 1
         }
       ],
       "exit": [
@@ -4506,7 +4817,7 @@
         {
           "q": "Big question: name one pattern in the 2 times table.",
           "a": "The answers are all even; they go up in 2s",
-          "mins": 2
+          "mins": 1
         }
       ],
       "homework": "Spring half term: say the 2 times table as a spoken chant, 5 minutes a day.",
@@ -4517,7 +4828,8 @@
         "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
         "Maths kit: 30 pieces of pasta",
         "Paper number line 0 to 30",
-        "Mini-whiteboard and pen"
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 2 maths lesson 28 guided, independent and homework tasks"
       ]
     }
   ]
