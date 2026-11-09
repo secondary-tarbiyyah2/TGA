@@ -43,6 +43,22 @@ menu (⋯) choose **Upload my own slides instead**. Uploaded slides are never re
 lesson; only the lesson plan is rebuilt. To go back to slides built from the lesson, open **Edit lesson** and tick
 "replace them with new slides built from this lesson".
 
+## The Syllabus pages and the syllabus pack
+
+**Where:** Curriculum, then the **Syllabus** tab (Teaching area; in Admin for the Headteacher).
+
+Pick a subject. **Long-term plan** shows Years 1 to 9 half term by half term (the founding-year half terms, Spring 1
+to Summer 2, are shaded) and the Years 10 and 11 specification route by term. **Year by year** lists a year's units;
+choose one to see what it covers, the skills and vocabulary, how it is checked, what it builds on and leads to, the
+week-by-week plan, and links to its lessons in the Lesson library. **Progression** and **Exams** show how the subject
+builds across the years and how Years 10 and 11 are examined. The page reads the Curriculum planner directly, so a
+saved change shows at once. A link to the page keeps the subject, year and unit, so it can be shared.
+
+**Print or save the PDF** opens the subject's curriculum document (cover, contents, intent, long-term plan, a page
+per unit with its weekly plan, progression, assessment, coverage, sources); **Word** downloads an editable copy. The
+whole-school **Curriculum overview** (every year group's long-term plan) is on the page before a subject is chosen.
+The documents are rebuilt by the "Build syllabus pack" workflow after each change (`scripts/syllabus/build.mjs`).
+
 ## What happens after you save
 
 1. Your change is saved for everyone at once. Anyone who opens the unit or lesson sees it.

@@ -1,7 +1,7 @@
 # Syllabus and specification data
 
 One JSON file per subject, in two folders. These files are the single source of truth for the
-"Syllabus & specifications" pack (PowerPoint + PDF decks, matrices). Nothing here describes the
+syllabus pack (one curriculum document per subject and a whole-school overview, PDF and Word; the matrix deck). Nothing here describes the
 school itself: it records what each curriculum or qualification requires, and how subjects connect.
 
 ```
