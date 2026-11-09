@@ -66,6 +66,11 @@ use end-of-year White Rose and reading assessments instead. Year 2 pupils in the
   "Peasants, Princes & Pestilence", "Off with Her Head!", "A Child's War", "Blood Heart": age-appropriate, no gore.
 - No trips, visitors, guest speakers, theme weeks. Online school: practical work must be doable at a kitchen table with household items.
 - No PE anywhere. "PSHE" only (never RSE, never "wellbeing"). Puberty is NOT taught in primary at TGA (it starts in Year 7).
+- Owner decisions, 9 Nov 2026: (1) Art and every other subject: no drawing of people (faces or figures); subjects are objects,
+  plants, buildings, landscapes, pattern, geometry and calligraphy; no portraits, "draw yourself", comic strips with people or
+  puppets with faces. (3) Wherever interest appears, add: "Islamic note: riba (رِبَا) is forbidden (Qur'an 2:275: Allah has
+  permitted trade and forbidden riba). Islamic finance uses partnership (mushārakah, مُشَارَكَة) and cost-plus sale (murābaḥah,
+  مُرَابَحَة) instead." Never encourage taking interest.
 - British spelling. NO em dashes (use commas, colons or "to"). "Spring half term", never "Easter break". "hifdh" not "hifz".
 - Arabic shown in Arabic script beside any transliteration.
 - Do not reproduce copyrighted scheme text: paraphrase; name White Rose steps / Little Wandle units / Cornerstones projects by short title only.
