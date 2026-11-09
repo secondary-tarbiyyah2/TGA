@@ -3,7 +3,7 @@
 // Opens a lesson's pupil PDF (lessons v3): the slides pupils need plus a worksheet with space to
 // write. Linked from the first slide of every lesson deck and from the lesson plan as
 // learn.tarbiyyah.co.uk/lesson-pdf/?s=<subject>&y=<year>&n=<lesson>. Staff can open any lesson's
-// PDF; a pupil can open the lessons of their own year (migration 0188).
+// PDF; a pupil can open the lessons of their own year (migration 0189).
 
 import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";

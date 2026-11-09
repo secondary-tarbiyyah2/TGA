@@ -11,7 +11,7 @@
 //     is rebuilt;
 //   * FORCE=1 re-renders every generated deck in place (when the deck design changes).
 // Lesson plans are regenerated whenever the content changed (plan_hash).
-// Pupil PDFs (lessons v3: the slides pupils need plus a worksheet; migration 0188) go with the plan:
+// Pupil PDFs (lessons v3: the slides pupils need plus a worksheet; migration 0189) go with the plan:
 // stored at '<subject>/<year>/<lesson_no>/pupil-<file>.pdf' (the same path each time, so the link
 // on the slides keeps working) and recorded in curriculum_lessons.pupil_pdf_path.
 import fs from "node:fs";
@@ -70,7 +70,7 @@ async function existingRows() {
 }
 
 const keyOf = (m) => `${m.subject_slug}/${m.year}/${m.lesson_no}`;
-// Migration 0188 adds pupil_pdf_path. Until it is deployed, pupil PDFs are not uploaded (nothing could find them).
+// Migration 0189 adds pupil_pdf_path. Until it is deployed, pupil PDFs are not uploaded (nothing could find them).
 const pupilPaths = new Map();
 let hasPupilCol = false;
 {
@@ -124,7 +124,7 @@ const needsPupil = (m) => hasPupilCol && !!m.pupil_file && (planned ? planned.ha
 if (mode === "plan") {
   const needed = [...manifest.filter(needsFile).map((m) => m.file), ...manifest.filter(needsPlan).map((m) => m.plan_file), ...manifest.filter(needsPupil).map((m) => m.pupil_file)];
   fs.writeFileSync(path.join(dir, "needed.json"), JSON.stringify(needed));
-  console.log(`${needed.filter((f) => f.endsWith(".pptx") && !f.endsWith("-pupil.pptx")).length} of ${manifest.length} decks, ${needed.filter((f) => f.endsWith(".docx")).length} lesson plans and ${needed.filter((f) => f.endsWith("-pupil.pptx")).length} pupil PDFs need uploading${hasPupilCol ? "" : " (pupil PDFs wait for migration 0188)"}`);
+  console.log(`${needed.filter((f) => f.endsWith(".pptx") && !f.endsWith("-pupil.pptx")).length} of ${manifest.length} decks, ${needed.filter((f) => f.endsWith(".docx")).length} lesson plans and ${needed.filter((f) => f.endsWith("-pupil.pptx")).length} pupil PDFs need uploading${hasPupilCol ? "" : " (pupil PDFs wait for migration 0189)"}`);
   process.exit(0);
 }
 

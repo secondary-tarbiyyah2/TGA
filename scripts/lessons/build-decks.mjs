@@ -35,7 +35,7 @@ import { buildPlan } from "./lesson-plan.mjs";
 import { themeFor, makeParts } from "./deck-parts.mjs";
 import { makeV3 } from "./deck-v3.mjs";
 import { readCache as readPictures, picturesFor } from "./pictures.mjs";
-import { BLOCKS, ROUTINES, itemQ, itemA, itemModel, itemOptions, hasAnswers, phaseMinutes, routineFor } from "../../src/lib/learn/lessonSchema.mjs";
+import { BLOCKS, ISLAMIC_SUBJECTS, ROUTINES, itemQ, itemA, itemModel, itemOptions, hasAnswers, phaseMinutes, routineFor } from "../../src/lib/learn/lessonSchema.mjs";
 import { retiredChecker } from "./retired.mjs";
 
 // Cross-curricular hubs: lessons that teach a hub's spec unit get a "Connect it" slide (see content/syllabus/matrices/hubs.json).
@@ -798,6 +798,8 @@ function buildDeck(file, lesson, nextLesson, nav = null, opts = {}) {
   const ponder = lesson.hook && lesson.hook.type === "ponder" && lesson.hook.text ? lesson.hook : null;
   S.polls = [];
   const quran = subjectSlug === "quran";
+  // Lessons v3: the Arabic bismillah heading on the title slide only in Qur'an, Islamic Studies and Arabic.
+  const islamicSubject = ISLAMIC_SUBJECTS.includes(subjectSlug);
   const ks4 = file.year === "y10" || file.year === "y11";
   const duration = lesson.duration || defaultDuration(file.year);
   ctx.duration = duration;
@@ -832,7 +834,7 @@ function buildDeck(file, lesson, nextLesson, nav = null, opts = {}) {
         s.addShape("ellipse", { x, y, w: d, h: d, fill: { color: PLAY[c].solid, transparency: 25 }, line: { color: PLAY[c].solid, width: 0, transparency: 25 } }),
       );
       s.addImage({ path: LOGO_DARK, x: 1.0, y: 0.55, w: 0.7 * LOGO_RATIO, h: 0.7 });
-      s.addText("بسم الله الرحمن الرحيم", { x: 5.6, y: 0.6, w: 4.8, h: 0.6, fontFace: "Arial", fontSize: 24, color: GOLD_DARK, align: "right", rtlMode: true });
+      if (islamicSubject) s.addText("بسم الله الرحمن الرحيم", { x: 5.6, y: 0.6, w: 4.8, h: 0.6, fontFace: "Arial", fontSize: 24, color: GOLD_DARK, align: "right", rtlMode: true });
       const chip = `Mission ${lesson.n} · ${file.subject} · ${ctx.yearLabel}`;
       const chipW = Math.min(7.6, 0.6 + (chip.length * 18 * 0.5) / 72);
       s.addShape("roundRect", { x: 1.0, y: 1.75, w: chipW, h: 0.55, rectRadius: 0.27, fill: { color: ctx.accent }, line: { color: ctx.accent, width: 0 } });
@@ -850,7 +852,7 @@ function buildDeck(file, lesson, nextLesson, nav = null, opts = {}) {
       s.addShape("rect", { x: 0.5, y: 0, w: 0.06, h: 7.5, fill: { color: GOLD }, line: { color: GOLD, width: 0 } });
       parts.motif(s, theme, { x: 9.0, y: 1.5, w: 4.0, h: 4.75 });
       s.addImage({ path: LOGO_WHITE, x: 1.0, y: 0.6, w: 0.8 * LOGO_RATIO, h: 0.8 });
-      s.addText("بسم الله الرحمن الرحيم", { x: 7.3, y: 0.7, w: 5.5, h: 0.7, fontFace: "Arial", fontSize: 26, color: "E3C98F", align: "right", rtlMode: true });
+      if (islamicSubject) s.addText("بسم الله الرحمن الرحيم", { x: 7.3, y: 0.7, w: 5.5, h: 0.7, fontFace: "Arial", fontSize: 26, color: "E3C98F", align: "right", rtlMode: true });
       const chip = band === "junior" ? `MISSION ${lesson.n}  ·  ${file.subject.toUpperCase()}  ·  ${ctx.yearLabel.toUpperCase()}` : `${file.subject.toUpperCase()}  ·  ${ctx.yearLabel.toUpperCase()}${ks4 && (file.examShort || file.exam) ? `  ·  EXAM: ${clean(file.examShort || file.exam).toUpperCase()}` : ks4 && (lesson.boardShort || lesson.board || file.boardShort || file.board) ? `  ·  ${clean(lesson.boardShort || lesson.board || file.boardShort || file.board).toUpperCase()}` : ""}`;
       s.addText(chip, { x: 1.0, y: 2.2, w: 7.9, h: 0.45, fontFace: FONT, fontSize: Math.min(16, fitSize(chip, 7.0, 0.42, 16, 9)), bold: true, color: "E3C98F", charSpacing: 3, fit: "shrink" });
       s.addText(lesson.title, { x: 1.0, y: 2.75, w: 7.8, h: 2.0, fontFace: theme.head, fontSize: fitSize(lesson.title, fw(7.8, theme.head), 2.0, 46, 22), bold: true, color: "FFFFFF", valign: "top" });

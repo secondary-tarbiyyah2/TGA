@@ -15,7 +15,7 @@ name: Build lesson decks
 # choices are saved back to content/lesson-pictures.json at the end so builds are
 # repeatable. If Commons cannot be reached the slides are built without pictures.
 # Each lesson also gets a pupil PDF (slides pupils need + a worksheet), converted
-# and uploaded with the plan (migration 0188).
+# and uploaded with the plan (migration 0189).
 
 on:
   push:
