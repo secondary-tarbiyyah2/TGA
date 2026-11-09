@@ -57,6 +57,12 @@ Y1-2: English and phonics 5, maths 4, topic 2, Qur'an with Qaidah 3, Islamic Stu
 - Opening (owner, 9 Nov 2026; replaces the 8 Nov change): Fri 1 Jan 2027 is a bank holiday, so the first week is
   induction week Mon 4 to Fri 8 Jan, first live lessons Mon 11 Jan, first fee payment Fri 8 Jan. Migration 0181 updates
   the database copies; code, policies, term-dates.ics and the prospectus PDF went back to the 26 Oct wording.
+- Curriculum plans moved to the same opening (9 Nov 2026, branch `founding-year-11-jan`): docs/curriculum-packs/y2 to
+  y11, the briefs and content/syllabus founding-year fields. Week of 4 Jan is induction week (baseline assessments, no
+  live lessons); the maths and English bridge is 11 and 18 Jan; 20 live weeks (94 days). Spring 1 now has 5 live weeks,
+  so each subject drops one Spring 1 week (its EXTENSION week, otherwise the least essential, named in each pack's
+  "Founding year:" line); Spring 2 onwards is unchanged. The Claude Doc packs (links above) still show the old
+  4 Jan start and need the same update.
 - Secondary curriculum maps (Years 7-11, xlsx from the TSS drive) cleaned of trips/visits/speakers and the
   "Redstone Academy" heading; sent to the owner (not stored in the repo).
 - **Curriculum editor in the portal** (built on branch `curriculum-editor`, PR open, live once merged; migration 0179; staff guide:
@@ -76,7 +82,7 @@ Y1-2: English and phonics 5, maths 4, topic 2, Qur'an with Qaidah 3, Islamic Stu
 Stages: (1) builder v2 on branch `lesson-builder-v2` (answers + answer-reveal slides, timers, online routines,
 hook slide, chart/numberline/fraction/diagram/sort blocks, Years 1-3 design, fuller lesson plan; backwards compatible;
 portal editor + sync carry the new fields); (2) upgrade the existing 1,521 lessons subject by subject (answers, hooks,
-routines, visuals) checked against house rules; (3) write the missing founding-year lessons from Mon 4 Jan in date
+routines, visuals) checked against house rules; (3) write the missing founding-year lessons from Mon 11 Jan in date
 order, year by year, from docs/curriculum-packs; (4) syllabus pages/pack upgrade. Owner sees before/after slides
 before any whole-school rebuild.
 

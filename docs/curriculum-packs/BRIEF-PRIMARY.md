@@ -35,9 +35,10 @@ in depth; the pillars · Y5 tawheed and qadar; Ta'if to the Hijrah; zakah, sawm 
 Y6 the names and attributes of Allah; the pillars of iman in depth; the later Madinan years and the Prophet's ﷺ character; preparing for secondary.
 
 ## Calendar
-Plan EVERY half term as 6 teaching weeks. The founding year (first live lessons Mon 4 Jan 2027; induction day Fri 1 Jan) teaches
-Spring 1 to Summer 2 only (99 teaching days, 21 weeks). Dated weeks (week of Monday):
-Spring 1: 4 Jan, 11 Jan (these two = maths/English "bridge" of missed Autumn essentials), 18 Jan, 25 Jan, 1 Feb, 8 Feb ·
+Plan EVERY half term as 6 teaching weeks. The founding year (Fri 1 Jan 2027 is a bank holiday; induction week Mon 4 to Fri 8 Jan; first live lessons Mon 11 Jan 2027) teaches
+Spring 1 to Summer 2 only (94 teaching days, 20 weeks). Dated weeks (week of Monday):
+Induction week 4 Jan (no live lessons; baseline assessments happen here) ·
+Spring 1: 11 Jan, 18 Jan (these two = maths/English "bridge" of missed Autumn essentials), 25 Jan, 1 Feb, 8 Feb (5 live weeks: drop the EXTENSION week, or the least essential one) ·
 Ramadan and Eid break 15 Feb to 12 Mar ·
 Spring 2: 15 Mar, 22 Mar (Mon to Thu), [Spring half term 26 to 30 Mar], 31 Mar (Wed to Fri), 5 Apr (no Fri), 12 Apr, 19 Apr ·
 Summer 1: 26 Apr, 3 May (no Mon), [Eid al-Adha half term 10 to 21 May], 24 May, 31 May (no Mon), 7 Jun ·
