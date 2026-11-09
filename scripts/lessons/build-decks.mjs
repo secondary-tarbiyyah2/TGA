@@ -808,7 +808,7 @@ function buildDeck(file, lesson, nextLesson, nav = null, opts = {}) {
   const nextBreak = () => breaks[breakNo++ % breaks.length];
 
   // Footer on a master so the logo is stored once in the file.
-  const M = (o) => (pupil ? { ...o, x: o.x * PK, y: o.y * PK + PTOP, w: o.w * PK, h: o.h * PK, ...(o.fontSize ? { fontSize: Math.round(o.fontSize * PK) } : {}) } : o);
+  const M = (o) => (pupil ? { ...o, x: o.x * PK, y: o.y * PK + PTOP, w: o.w * PK, h: o.h * PK, ...(o.fontSize ? { fontSize: Math.round(o.fontSize * PK) } : {}), ...(o.charSpacing ? { charSpacing: 1 } : {}) } : o);
   pptx.defineSlideMaster({
     title: "TGA_CONTENT",
     background: { color: "FFFFFF" },

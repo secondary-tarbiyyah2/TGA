@@ -446,7 +446,9 @@ export function makeV3(h) {
       [ctx.band === "early" ? "My turn" : "You do", lesson.independent],
       ["Exit ticket", lesson.exit],
     ];
-    const LINE_GAP = 0.44;
+    const early = ctx.band === "early";
+    const LINE_GAP = early ? 0.56 : 0.44; // wider lines for the youngest writers
+    const qPt = early ? 22 : 16;
     const top = 1.3;
     const bottom = 6.85;
     let s = null;
@@ -474,11 +476,11 @@ export function makeV3(h) {
         n++;
         const poll = itemOptions(item);
         const q = clean(poll ? poll.q : itemQ(item));
-        const qH = Math.max(0.42, textHeight(`${n}. ${q}`, 11.6, 15) + 0.02);
+        const qH = Math.max(0.42, textHeight(`${n}. ${q}`, 11.6, qPt) + 0.02);
         const lines = linesFor(item);
         const need = qH + (poll ? 0.5 : lines * LINE_GAP) + 0.18;
         if (y + Math.min(need, qH + 2 * LINE_GAP) > bottom) newPage();
-        s.addText([{ text: `${n}.  `, options: { bold: true, color: ctx.accent } }, { text: q, options: { color: INK } }], { x: 0.8, y, w: 11.8, h: qH, fontFace: FONT, fontSize: 15, valign: "top", margin: 0 });
+        s.addText([{ text: `${n}.  `, options: { bold: true, color: ctx.accent } }, { text: q, options: { color: INK } }], { x: 0.8, y, w: 11.8, h: qH, fontFace: FONT, fontSize: qPt, valign: "top", margin: 0 });
         y += qH + 0.04;
         if (poll) {
           const ow = 11.6 / poll.options.length;
