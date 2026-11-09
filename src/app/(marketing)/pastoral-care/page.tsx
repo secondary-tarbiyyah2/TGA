@@ -28,7 +28,7 @@ const CARE = [
   },
   {
     title: "Character, taught by name",
-    body: "Prayer built into the day, our RECIPE values taught explicitly, and PSHE in every year group, so pupils grow in character and faith as well as knowledge.",
+    body: "Prayer built into the day, our Tarbiyyah Compass values taught explicitly, and PSHE in every year group, so pupils grow in character and faith as well as knowledge.",
   },
 ];
 
@@ -54,7 +54,7 @@ const POLICIES = [
   { href: "/policies/16-send-and-inclusion/", label: "SEND and Inclusion Policy" },
   { href: "/policies/06-anti-bullying-and-cyberbullying/", label: "Anti-Bullying and Cyberbullying Policy" },
   { href: "/policies/09-supporting-pupils-with-medical-conditions/", label: "Supporting Pupils with Medical Conditions Policy" },
-  { href: "/policies/23-recipe-character-framework/", label: "RECIPE Character Framework" },
+  { href: "/policies/23-tarbiyyah-compass-character-framework/", label: "Tarbiyyah Compass Character Framework" },
 ];
 
 export default function PastoralCarePage() {

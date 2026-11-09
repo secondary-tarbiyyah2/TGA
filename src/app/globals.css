@@ -130,10 +130,16 @@ button:not(:disabled),
    appropriate to a handful of marketing sections per page than a dense
    app screen visited dozens of times a day. Use .app-pad there instead. */
 .section-pad {
-  /* 56–96px: generous but not so tall that two stacked sections leave a
-     near-empty screen between them (it was 128px each side). */
-  padding-top: clamp(3.5rem, 7vw, 6rem);
-  padding-bottom: clamp(3.5rem, 7vw, 6rem);
+  /* 48–80px: generous but not so tall that two stacked sections leave a
+     near-empty screen between them (it was 128px, then 96px, each side). */
+  padding-top: clamp(3rem, 6vw, 5rem);
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+/* Dense information pages (curriculum, key stages): 32–56px, so the
+   subjects and timetable are not separated by empty bands. */
+.section-pad-tight {
+  padding-top: clamp(2rem, 4vw, 3.5rem);
+  padding-bottom: clamp(2rem, 4vw, 3.5rem);
 }
 /* Page heroes on inner pages: a little tighter than a full section, so the
    title, the lead and the first content block share the first screen. */
@@ -504,6 +510,21 @@ a.portal-card:hover, .portal a.rounded-2xl.border.bg-white:hover {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* Smoothness (owner, Nov 2026: "avoid chunkiness"): in-page links glide
+   instead of jumping, and pages fade gently between routes where the
+   browser supports view transitions. Both are off for reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+  @view-transition {
+    navigation: auto;
+  }
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 180ms;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -614,6 +635,17 @@ html[data-reading] :is(p, li, td, label) {
 }
 html[data-reading] :is(td, th, label) {
   max-width: none;
+}
+/* "Links and focus": every link underlined, and a strong outline on the
+   focused control, for visitors who find colour alone hard to follow. */
+html[data-links] a {
+  text-decoration-line: underline !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 3px !important;
+}
+html[data-links] :focus-visible {
+  outline: 3px solid var(--color-gold-900) !important;
+  outline-offset: 3px !important;
 }
 html[data-contrast] {
   --color-ink-500: #3a3f45;

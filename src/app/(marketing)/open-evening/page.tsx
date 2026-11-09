@@ -53,6 +53,32 @@ export default async function OpenEveningPage() {
           </div>
         </div>
 
+        {/* Two different events on one page: the menu links straight to each. */}
+        <div className="mt-12 grid gap-5 md:grid-cols-2">
+          <section id="open-evenings" aria-labelledby="open-evenings-heading" className="scroll-mt-24 rounded-2xl border border-gold-light/60 bg-white p-6">
+            <p className="text-xs font-semibold uppercase tracking-wide text-gold-700">For parents</p>
+            <h2 id="open-evenings-heading" className="mt-1 font-serif text-2xl font-semibold text-ink">Online open evenings</h2>
+            <p className="mt-2 text-ink/75">An hour with the Headteacher: how the school day works, a short sample lesson, a tour of the Parent and Student Portals, and your questions answered live.</p>
+            <ul className="mt-3 space-y-1 text-sm text-ink/80">
+              {sessions.filter((d) => /open evening/i.test(d.label)).map((d) => (
+                <li key={d.when}>{d.when} (UK time)</li>
+              ))}
+            </ul>
+            <a href="#book" className="mt-5 inline-flex min-h-11 items-center rounded-full bg-gold-500 px-5 py-2.5 text-sm font-semibold text-ink-900 hover:brightness-95">Book an open evening</a>
+          </section>
+          <section id="taster" aria-labelledby="taster-heading" className="scroll-mt-24 rounded-2xl border border-gold-light/60 bg-white p-6">
+            <p className="text-xs font-semibold uppercase tracking-wide text-gold-700">For your child</p>
+            <h2 id="taster-heading" className="mt-1 font-serif text-2xl font-semibold text-ink">Taster morning</h2>
+            <p className="mt-2 text-ink/75">Your child joins real live lessons with our teachers, in two age bands so every lesson is pitched right. Parents can watch alongside.</p>
+            <ul className="mt-3 space-y-1 text-sm text-ink/80">
+              {sessions.filter((d) => /taster/i.test(d.label)).map((d) => (
+                <li key={d.when}>{d.when}{d.detail ? `: ${d.detail}` : ""}</li>
+              ))}
+            </ul>
+            <a href="#book" className="mt-5 inline-flex min-h-11 items-center rounded-full bg-gold-500 px-5 py-2.5 text-sm font-semibold text-ink-900 hover:brightness-95">Book the taster morning</a>
+          </section>
+        </div>
+
         {/* Dates and the booking form load in the browser, so a new
             evening added in the admin portal appears without a site rebuild. */}
         <div id="book" className="max-w-3xl scroll-mt-24">
