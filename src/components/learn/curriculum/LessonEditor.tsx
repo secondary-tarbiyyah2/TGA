@@ -12,7 +12,10 @@ import { BLOCKS, HOOK_TYPES, ROUTINES, ROUTINE_SECTIONS, blockProblems, extrasPr
 // content/lessons/<subject>/<year>.json (content/lessons/README.md). Fields this form does not
 // show (board, anything else) are kept as they are. Slide blocks (worked examples, charts…) are
 // edited as checked JSON. Shapes and limits: src/lib/learn/lessonSchema.mjs.
-type Slide = { heading?: string; bullets?: string[]; note?: string; routine?: string; [block: string]: unknown };
+// `_key` is a form-only id (never saved) so each slide keeps its own inputs when slides move.
+type Slide = { heading?: string; bullets?: string[]; note?: string; routine?: string; _key?: string; [block: string]: unknown };
+let keySeq = 0;
+const newKey = () => `slide-${++keySeq}`;
 type Keyword = { term: string; def: string };
 /** A question or task: plain text, or with an answer and minutes ({ q, a, mins }). */
 type Item = string | { q: string; a?: string; mins?: number };
@@ -114,6 +117,7 @@ function tidy(c: FormContent): LessonContent {
   out.keywords = c.keywords.map((k) => ({ ...k, term: k.term.trim(), def: k.def.trim() })).filter((k) => k.term);
   out.teach = c.teach.map((s) => {
     const t: Slide = { ...s, heading: (s.heading || "").trim(), bullets: clean(s.bullets || []) };
+    delete t._key;
     if (typeof s.note === "string") t.note = s.note.trim();
     if (!t.note) delete t.note;
     if (!t.bullets?.length && blockOf(t)) delete t.bullets;
@@ -184,6 +188,7 @@ export function LessonEditor({ lesson, canEdit, onClose, onSaved }: { lesson: Cu
   const [rebuild, setRebuild] = useState(false);
   const [busy, setBusy] = useState(false);
   const [problems, setProblems] = useState<string[]>([]);
+  const [badBlocks, setBadBlocks] = useState<Record<string, boolean>>({});
   const [versions, setVersions] = useState<Version[] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [allNotes, setAllNotes] = useState<SyncNote[]>([]);
@@ -237,7 +242,9 @@ export function LessonEditor({ lesson, canEdit, onClose, onSaved }: { lesson: Cu
   const save = async () => {
     if (!supabase || !c || !loaded) return;
     const t = tidy(c);
-    const p = problemsOf(t);
+    // A block box still holding JSON that does not parse would otherwise be saved as its last valid version.
+    const unparsed = c.teach.map((s, i) => (s._key && badBlocks[s._key] ? i + 1 : 0)).filter(Boolean);
+    const p = [...unparsed.map((n) => `Teaching slide ${n}: the slide block is not valid JSON yet. Fix it (check the commas, quotes and brackets) or choose “None” before saving.`), ...problemsOf(t)];
     setProblems(p);
     if (p.length) return;
     setBusy(true);
@@ -377,14 +384,19 @@ export function LessonEditor({ lesson, canEdit, onClose, onSaved }: { lesson: Cu
                 {c.teach.map((s, i) => {
                   const block = blockOf(s);
                   return (
-                    <li key={i} className="rounded-xl border border-gold-light p-3">
+                    <li key={s._key || i} className="rounded-xl border border-gold-light p-3">
                       <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-ink/60">Slide {i + 1}</p>
                       <fieldset disabled={dis} className="grid gap-3">
                         <TextField label="Heading" value={s.heading || ""} onChange={(v) => setSlide(i, { heading: v })} />
                         <LinesField label={block ? "Bullet points (optional)" : "Bullet points"} hint="One per line." value={s.bullets || []} onChange={(v) => setSlide(i, { bullets: v })} rows={3} />
                         <TextField label="Teacher note" hint="What to say and ask; shown in the speaker notes and the lesson plan" value={s.note || ""} onChange={(v) => setSlide(i, { note: v })} multiline />
                         <RoutineSelect label="Routine on this slide (optional)" value={s.routine || ""} disabled={dis} onChange={(v) => setSlide(i, { routine: v || undefined })} />
-                        <BlockField slide={s} disabled={dis} onChange={(kind, value) => setC((x) => (x ? { ...x, teach: x.teach.map((t, k) => (k === i ? withBlock(t, kind, value) : t)) } : x))} />
+                        <BlockField
+                          slide={s}
+                          disabled={dis}
+                          onChange={(kind, value) => setC((x) => (x ? { ...x, teach: x.teach.map((t) => (t._key === s._key ? withBlock(t, kind, value) : t)) } : x))}
+                          onInvalid={(bad) => s._key && setBadBlocks((b) => ({ ...b, [s._key as string]: bad }))}
+                        />
                         {block && <p className="text-xs text-ink/65">This slide shows {BLOCK_LABEL[block]}.</p>}
                       </fieldset>
                       {canEdit && (
@@ -405,7 +417,7 @@ export function LessonEditor({ lesson, canEdit, onClose, onSaved }: { lesson: Cu
                 })}
               </ol>
               {canEdit && c.teach.length < 7 && (
-                <button type="button" className={btn} disabled={busy} onClick={() => set("teach", [...c.teach, { heading: "", bullets: [] }])}>
+                <button type="button" className={btn} disabled={busy} onClick={() => set("teach", [...c.teach, { heading: "", bullets: [], _key: newKey() }])}>
                   + Add a slide
                 </button>
               )}
@@ -493,7 +505,7 @@ function normalise(raw: LessonContent): FormContent {
     independent: rows(raw.independent),
     exit: rows(raw.exit),
     keywords: Array.isArray(raw.keywords) ? raw.keywords.map((k) => ({ ...k, term: String(k?.term ?? ""), def: String(k?.def ?? "") })) : [],
-    teach: Array.isArray(raw.teach) ? raw.teach.map((s) => ({ ...s, bullets: lines(s?.bullets) })) : [],
+    teach: Array.isArray(raw.teach) ? raw.teach.map((s) => ({ ...s, bullets: lines(s?.bullets), _key: newKey() })) : [],
     homework: Array.isArray(raw.homework) ? raw.homework.map(String) : String(raw.homework ?? ""),
   };
 }
@@ -573,20 +585,41 @@ function HookField({ hook, onChange, disabled }: { hook?: Hook; onChange: (h: Ho
 }
 
 /** A slide's block as JSON (checked as you type), with a template for each kind. */
-function BlockField({ slide, onChange, disabled }: { slide: Slide; onChange: (kind: string | null, value: unknown) => void; disabled?: boolean }) {
+function BlockField({ slide, onChange, onInvalid, disabled }: { slide: Slide; onChange: (kind: string | null, value: unknown) => void; onInvalid: (bad: boolean) => void; disabled?: boolean }) {
   const kind = blockOf(slide) || "";
-  const [text, setText] = useState(() => (kind ? JSON.stringify(slide[kind], null, 2) : ""));
+  const propText = kind ? JSON.stringify(slide[kind], null, 2) : "";
+  const [text, setText] = useState(propText);
+  const [synced, setSynced] = useState(propText);
+  const [invalid, setInvalid] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [open, setOpen] = useState(false);
+  // The block changed from outside this box (another version loaded, a template picked): show it,
+  // unless the box holds an edit that does not parse yet.
+  if (propText !== synced) {
+    setSynced(propText);
+    if (!invalid) {
+      let same = false;
+      try {
+        same = JSON.stringify(JSON.parse(text || "null")) === JSON.stringify(kind ? slide[kind] : null);
+      } catch {
+        same = false;
+      }
+      if (!same) setText(propText);
+    }
+  }
+  const markInvalid = (bad: boolean) => {
+    setInvalid(bad);
+    onInvalid(bad);
+  };
   const pick = (k: string) => {
+    markInvalid(false);
+    setError(null);
     if (!k) {
       setText("");
-      setError(null);
       return onChange(null, null);
     }
     const v = k === kind ? slide[k] : BLOCK_TEMPLATE[k];
     setText(JSON.stringify(v, null, 2));
-    setError(null);
     setOpen(true);
     onChange(k, v);
   };
@@ -596,9 +629,11 @@ function BlockField({ slide, onChange, disabled }: { slide: Slide; onChange: (ki
       const v = JSON.parse(t);
       const problems = blockProblems({ ...withBlock(slide, kind, v), heading: slide.heading }).problems as string[];
       setError(problems.length ? problems.join("; ") : null);
+      markInvalid(false);
       onChange(kind, v);
     } catch {
-      setError("This is not valid JSON yet (check the commas, quotes and brackets). It is not saved until it is.");
+      markInvalid(true);
+      setError("This is not valid JSON yet (check the commas, quotes and brackets). The lesson cannot be saved until it is.");
     }
   };
   return (
