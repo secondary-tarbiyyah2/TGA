@@ -191,14 +191,15 @@ export function makeV3(h) {
     header(s, ctx, early ? "Today we will…" : ctx.band === "junior" ? "Today's mission" : "Where we are going", early ? "Our learning" : "Objective and success criteria", null);
     const objs = (lesson.objectives || []).map(clean).filter(Boolean).slice(0, 3);
     const sc = (lesson.successCriteria || []).map((x) => clean(x).replace(/^(all|most|some)\s*[:\-–]\s*/i, "")).filter(Boolean).slice(0, 3).map((x) => x[0].toUpperCase() + x.slice(1));
-    const dY = 2.1;
-    const dH = sc.length ? 1.55 : 4.6;
+    // Without success criteria (older lessons) the destination panel is centred on the slide.
+    const dY = sc.length ? 2.1 : 2.8;
+    const dH = sc.length ? 1.55 : 3.2;
     const fill = early ? ctx.accent : th.dark;
     s.addShape("roundRect", { x: 0.8, y: dY, w: 11.8, h: dH, rectRadius: 0.14, fill: { color: fill }, line: { color: fill, width: 0 } });
     icon(s, "flag", 1.1, dY + 0.3, 0.75, LIGHT_GOLD);
     s.addText(early ? "WHERE WE ARE GOING" : objs.length > 1 ? "THE DESTINATION · OBJECTIVES" : "THE DESTINATION · OUR OBJECTIVE", { x: 2.1, y: dY + 0.15, w: 9.5, h: 0.32, fontFace: FONT, fontSize: 12, bold: true, color: LIGHT_GOLD, charSpacing: 3 });
     const objText = objs.length > 1 ? objs.map((o) => `• ${o}`) : objs;
-    const objSize = fitSize(objText, early ? 10.2 : fw(10.2, th.head), dH - 0.6, early ? 32 : 28, 14, 4);
+    const objSize = fitSize(objText, early ? 10.2 : fw(10.2, th.head), dH - 0.6, early ? 32 : sc.length ? 28 : 32, 14, 4);
     s.addText(objText.map((o, i) => ({ text: o, options: { breakLine: i < objText.length - 1 } })), { x: 2.1, y: dY + 0.47, w: 10.3, h: dH - 0.57, fontFace: early ? FONT : th.head, fontSize: objSize, bold: true, color: "FFFFFF", valign: "middle" });
     if (sc.length) {
       // The steps: a staircase rising towards the destination (All, then Most, then Some).
@@ -384,7 +385,7 @@ export function makeV3(h) {
     s.addShape("roundRect", { x, y, w, h: hh, rectRadius: 0.08, fill: { color: "FFFFFF" }, line: { color: ctx.accent, width: 1.25, dashType: "dash" } });
     s.addText("KEY WORDS", { x: x + 0.12, y: y + 0.04, w: w - 0.24, h: 0.2, fontFace: FONT, fontSize: 8, bold: true, color: ctx.accent, charSpacing: 2, margin: 0 });
     const txt = kwText(terms);
-    s.addText(txt, { x: x + 0.12, y: y + 0.24, w: w - 0.24, h: hh - 0.28, fontFace: FONT, fontSize: Math.max(10, fitSize(txt, w - 0.1, hh - 0.22, 16, 9)), bold: true, color: INK, valign: "middle", margin: 0 });
+    s.addText(txt, { x: x + 0.12, y: y + 0.24, w: w - 0.24, h: hh - 0.28, fontFace: FONT, fontSize: Math.max(10, fitSize(txt, w - 0.1, hh - 0.22, ctx.band === "early" ? 20 : 16, 9)), bold: true, color: INK, valign: "middle", margin: 0 });
     return w;
   }
 

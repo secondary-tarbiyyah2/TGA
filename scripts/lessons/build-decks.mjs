@@ -19,6 +19,13 @@
 // slides (show-me, chat waterfall, Teams poll…), "Check your answers" reveal
 // slides when the lesson gives answers, and a preview of the next lesson.
 //
+// Lessons v3 (deck-v3.mjs): a "ponder" first slide, the online class promise on the
+// title slide, the Islamic link (start or end), one objective set apart from the
+// success-criteria steps, "I do" model slides, Teams poll and poll-answer slides,
+// key words in each teach slide's corner and the unit's topic key words near the end,
+// Wikimedia Commons pictures (pictures.mjs), and a pupil PDF deck per lesson
+// (<NN>-<slug>-pupil.pptx, A4, the slides pupils need plus a worksheet).
+//
 // Text is sized here (fitSize) rather than relying on PowerPoint's autofit,
 // which only kicks in after a teacher edits a box.
 import fs from "node:fs";
