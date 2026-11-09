@@ -6,6 +6,7 @@ import type { LearnRole } from "@/lib/learn/session";
 import { CredentialsCard } from "./StudentCredentials";
 import { studentAccountAction, type IssuedCredentials } from "./studentAccounts";
 import { ui } from "@/components/learn/ui";
+import { Icon } from "@/components/learn/Icon";
 import { PupilPlacement } from "@/components/learn/pupil/PupilPlacement";
 import { GOLD_BUTTON, INPUT_CLASS, friendlyError, invite, type ClassOption, type InviteResult, type ParentOption, type YearGroup } from "./shared";
 
@@ -273,7 +274,8 @@ export function AddPersonModal({
               <ul className="space-y-2">
                 {done.map((o, i) => (
                   <li key={i} className="rounded-lg bg-teal-100/60 px-3 py-2 text-sm text-ink">
-                    ✓ {o.text}
+                    <Icon name="check" className="mr-1 inline h-4 w-4 align-[-3px] text-green-800" />
+                    {o.text}
                     {o.creds && <span className="mt-2 block"><CredentialsCard creds={o.creds} onDismiss={() => setDone((d) => (d ? d.map((x) => (x === o ? { ...x, creds: undefined } : x)) : d))} /></span>}
                     {o.link && (
                       <span className="mt-1 flex flex-wrap items-center gap-2">
