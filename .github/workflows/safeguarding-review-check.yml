@@ -34,7 +34,7 @@ jobs:
         with:
           version: latest
 
-      - name: Find the project ref and anon key
+      - name: Find the project ref and service-role key
         id: keys
         run: |
           set -euo pipefail
@@ -48,23 +48,27 @@ jobs:
             echo "::error::Could not find the Supabase project."
             exit 1
           fi
-          ANON=$(supabase projects api-keys --project-ref "$REF" -o json | jq -r '.[] | select(.name=="anon" or .name=="publishable") | .api_key' | head -n1)
-          echo "::add-mask::$ANON"
+          SERVICE_ROLE=$(supabase projects api-keys --project-ref "$REF" -o json | jq -r '.[] | select(.name=="service_role" or .name=="secret") | .api_key' | head -n1)
+          if [ -z "$SERVICE_ROLE" ] || [ "$SERVICE_ROLE" = "null" ]; then
+            echo "::error::Could not find a service_role/secret key."
+            exit 1
+          fi
+          echo "::add-mask::$SERVICE_ROLE"
           echo "ref=$REF" >> "$GITHUB_OUTPUT"
-          echo "anon_key=$ANON" >> "$GITHUB_OUTPUT"
+          echo "service_role_key=$SERVICE_ROLE" >> "$GITHUB_OUTPUT"
 
       - name: Call safeguarding-review-check
         run: |
           set -euo pipefail
           curl -sS --fail-with-body -X POST "https://${{ steps.keys.outputs.ref }}.supabase.co/functions/v1/safeguarding-review-check" \
-            -H "apikey: ${{ steps.keys.outputs.anon_key }}" \
-            -H "Authorization: Bearer ${{ steps.keys.outputs.anon_key }}" \
+            -H "apikey: ${{ steps.keys.outputs.service_role_key }}" \
+            -H "Authorization: Bearer ${{ steps.keys.outputs.service_role_key }}" \
             -H "Content-Type: application/json"
 
       - name: Call purge-data-exports
         run: |
           set -euo pipefail
           curl -sS --fail-with-body -X POST "https://${{ steps.keys.outputs.ref }}.supabase.co/functions/v1/purge-data-exports" \
-            -H "apikey: ${{ steps.keys.outputs.anon_key }}" \
-            -H "Authorization: Bearer ${{ steps.keys.outputs.anon_key }}" \
+            -H "apikey: ${{ steps.keys.outputs.service_role_key }}" \
+            -H "Authorization: Bearer ${{ steps.keys.outputs.service_role_key }}" \
             -H "Content-Type: application/json"
