@@ -3,8 +3,9 @@
  * same: one set of buttons (primary, secondary, ghost, danger; two sizes),
  * one input style, one set of status chips and notices. Colour has a job:
  *
- *   gold, the action you take (Save, Submit, Mark, Issue)
- *   teal, where you are / what is selected (tabs, chosen filters, rows)
+ *   forest green, the action you take and where you are (Save, selected tabs,
+ *     chosen filters, links). In the portal the teal-* classes are forest too.
+ *   gold, the brand accent only (logo, the active-page marker, key figures)
  *   amber, needs attention soon (due, late, waiting)
  *   red, a problem, or something that can't be undone (Delete)
  *   green, done (saved, returned, present)
@@ -33,10 +34,11 @@ export type ButtonVariant = "primary" | "secondary" | "ghost" | "danger";
 export type ButtonSize = "sm" | "md";
 
 const VARIANT: Record<ButtonVariant, string> = {
-  primary: "bg-gold-700 font-semibold text-white shadow-sm hover:bg-gold-900",
+  // Forest green: the portal's action colour (docs/portal-redesign.md). Gold is never a button fill.
+  primary: "bg-forest-700 font-semibold text-white hover:bg-forest-900",
   secondary: "border border-gold-light bg-white font-medium text-ink hover:border-ink/25 hover:bg-cream",
   ghost: "font-medium text-ink/75 hover:bg-cream hover:text-ink",
-  danger: "bg-red-700 font-semibold text-white shadow-sm hover:bg-red-800",
+  danger: "bg-red-700 font-semibold text-white hover:bg-red-800",
 };
 
 /** Smaller buttons for inside rows, tables and cards. Still 44px tall on phones. */
@@ -78,7 +80,7 @@ export const ui = {
   /** A field's error message, under the input. */
   error: "text-xs font-medium text-red-700",
 
-  card: "rounded-2xl border border-gold-light bg-white p-4 sm:p-6",
+  card: "rounded-2xl border border-gold-light bg-white p-4 sm:p-5",
   /** A card's heading row: title on the left, one action on the right. */
   cardHead: "mb-4 flex flex-wrap items-center justify-between gap-x-4 gap-y-2",
   /** A card or section title. */
