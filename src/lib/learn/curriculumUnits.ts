@@ -311,8 +311,10 @@ export async function lastSyncRun(): Promise<SyncRun | null> {
  * After a save: ask GitHub to copy the change into the repo and rebuild the slides and the
  * syllabus pack. Never throws; returns the message to show beside "Saved".
  */
-export async function triggerCurriculumSync(what: "unit" | "lesson"): Promise<string> {
-  const r = await callEdgeFunction("curriculum-sync", {});
+export async function triggerCurriculumSync(what: "unit" | "lesson", lessonId?: string): Promise<string> {
+  // With a lesson id, the quick build (Tafweed T35, "Build one lesson") makes that lesson's slides now.
+  const r = await callEdgeFunction("curriculum-sync", lessonId ? { lesson_id: lessonId } : {});
+  if ((r as { quick?: { ok?: boolean } }).quick?.ok) return "Saved. The new slides, lesson plan and PDFs are being built now and are usually ready to download in about two minutes.";
   const after = what === "lesson" ? "The slides, lesson plan and PDFs are rebuilt automatically" : "The syllabus pack is rebuilt automatically";
   if (r.ok) return `Saved. ${after}, usually within 30 minutes.`;
   return `Saved. ${after} within the hour.`;

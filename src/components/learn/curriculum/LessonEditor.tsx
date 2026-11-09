@@ -20,8 +20,8 @@ type Keyword = { term: string; def: string };
 /** A question or task: plain text, or with an answer and minutes ({ q, a, mins }). */
 type Item = string | { q: string; a?: string; mins?: number };
 /** The form's copy of an item, always with all three fields. */
-type ItemRow = { q: string; a: string; mins: string };
-type Hook = { type: string; text: string; options?: string[]; a?: string };
+type ItemRow = { q: string; a: string; mins: string; x?: Record<string, unknown> };
+type Hook = { type: string; text: string; options?: string[]; a?: string; [key: string]: unknown };
 /** Everything in a lesson except its question lists. */
 type LessonBase = {
   unit: string;
@@ -83,10 +83,12 @@ const BLOCK_TEMPLATE: Record<string, unknown> = {
   sort: { columns: ["", ""], cards: ["", "", "", ""], answer: [0, 1, 0, 1] },
 };
 const ROUTINE_SECTION_LABEL: Record<string, string> = { hook: "Hook", starter: "Starter", teach: "Teaching slides", hinge: "Hinge question", practice: "Guided practice", independent: "Independent", exit: "Exit ticket" };
+const x0 = (x: unknown) => x as { q?: unknown; a?: unknown; mins?: unknown; [k: string]: unknown };
 const toRow = (x: unknown): ItemRow => {
   if (x && typeof x === "object") {
-    const o = x as { q?: unknown; a?: unknown; mins?: unknown };
-    return { q: String(o.q ?? ""), a: o.a == null ? "" : String(o.a), mins: o.mins == null ? "" : String(o.mins) };
+    // Any other fields an item has (added by a newer lesson format) are kept as they are.
+    const { q, a, mins, ...rest } = x0(x);
+    return { q: String(q ?? ""), a: a == null ? "" : String(a), mins: mins == null ? "" : String(mins), ...(Object.keys(rest).length ? { x: rest } : {}) };
   }
   return { q: String(x ?? ""), a: "", mins: "" };
 };
@@ -95,8 +97,8 @@ const fromRow = (r: ItemRow): Item => {
   const q = r.q.trim();
   const a = r.a.trim();
   const mins = r.mins.trim() ? Number(r.mins) : undefined;
-  if (!a && mins == null) return q;
-  return { q, ...(a ? { a } : {}), ...(mins != null ? { mins } : {}) };
+  if (!a && mins == null && !r.x) return q;
+  return { ...(r.x || {}), q, ...(a ? { a } : {}), ...(mins != null ? { mins } : {}) } as Item;
 };
 /** The slide with its block replaced (kind null: no block). */
 function withBlock(t: Slide, kind: string | null, value: unknown): Slide {
@@ -143,7 +145,11 @@ function tidy(c: FormContent): LessonContent {
   else delete out.routines;
   if (c.hook && c.hook.type && c.hook.text.trim()) {
     const opts = clean(c.hook.options || []);
-    out.hook = { type: c.hook.type, text: c.hook.text.trim(), ...(opts.length ? { options: opts } : {}), ...(c.hook.a?.trim() ? { a: c.hook.a.trim() } : {}) };
+    // Other hook fields (from a newer lesson format) are kept.
+    const { options: _o, a: _a, ...rest } = c.hook;
+    void _o;
+    void _a;
+    out.hook = { ...rest, type: c.hook.type, text: c.hook.text.trim(), ...(opts.length ? { options: opts } : {}), ...(c.hook.a?.trim() ? { a: c.hook.a.trim() } : {}) };
   } else delete out.hook;
   out.teach = out.teach.map((t) => {
     const x = { ...t };
@@ -153,7 +159,8 @@ function tidy(c: FormContent): LessonContent {
   return out;
 }
 
-function problemsOf(c: LessonContent): string[] {
+/** What stops a lesson being saved (the same checks the slide builder runs). Shared with LessonStudio. */
+export function problemsOf(c: LessonContent): string[] {
   const extra = (extrasProblems(c) as string[]).map((x) => `${x[0].toUpperCase()}${x.slice(1)}.`);
   const p: string[] = [];
   if (!c.title) p.push("Give the lesson a title.");
@@ -260,7 +267,7 @@ export function LessonEditor({ lesson, canEdit, onClose, onSaved }: { lesson: Cu
       ]);
       return;
     }
-    const msg = await triggerCurriculumSync("lesson");
+    const msg = await triggerCurriculumSync("lesson", lesson.id);
     onSaved(loaded.custom_deck && !rebuild ? `${msg.split(".")[0]}. This lesson uses slides you uploaded, so they stay as they are; its lesson plan is rebuilt from your changes.` : msg);
   };
 
