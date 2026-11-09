@@ -81,7 +81,7 @@ export function DigestPreview({ parentId, family, compact = false }: { parentId:
       {data ? (
         <iframe title={`Digest preview for ${who}`} sandbox="" srcDoc={data.html} className={`w-full rounded-xl border border-gold-light bg-white ${compact ? "h-[60vh]" : "h-[80vh]"}`} />
       ) : !error ? (
-        <div className={`animate-pulse rounded-xl bg-white ${compact ? "h-[60vh]" : "h-[70vh]"}`} />
+        <div className={`motion-safe:animate-pulse rounded-xl bg-white ${compact ? "h-[60vh]" : "h-[70vh]"}`} />
       ) : null}
       <p className="text-xs text-ink/60">The preview carries a &ldquo;test&rdquo; banner. The real email is the same without it.</p>
     </div>

@@ -162,7 +162,7 @@ export function TeachNow({ slots }: { slots: (TimetableSlot & { classes?: { name
           </div>
           <div className="px-5 py-3">
             {lessons === null ? (
-              <div className="h-16 animate-pulse rounded-lg bg-cream" />
+              <div className="h-16 motion-safe:animate-pulse rounded-lg bg-cream" />
             ) : lessons.length === 0 ? (
               <p className="text-sm text-ink/65">No lessons today.</p>
             ) : (

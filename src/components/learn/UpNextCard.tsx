@@ -194,7 +194,7 @@ export function UpNextCard({
           <div className="min-w-0">
             <p className="text-xs font-medium text-ink/65">Next lesson</p>
             {lesson === undefined ? (
-              <div className="mt-1 h-10 w-48 animate-pulse rounded bg-cream" />
+              <div className="mt-1 h-10 w-48 motion-safe:animate-pulse rounded bg-cream" />
             ) : lesson === null ? (
               <p className="mt-0.5 text-sm text-ink/70">No lessons in the next two weeks.</p>
             ) : (
@@ -217,7 +217,7 @@ export function UpNextCard({
             <div className="min-w-0">
               <p className="text-xs font-medium text-ink/65">Homework</p>
               {homework === null ? (
-                <div className="mt-1 h-10 w-48 animate-pulse rounded bg-cream" />
+                <div className="mt-1 h-10 w-48 motion-safe:animate-pulse rounded bg-cream" />
               ) : !first ? (
                 <p className="mt-0.5 text-sm text-ink/70">All caught up. Nothing to hand in.</p>
               ) : (

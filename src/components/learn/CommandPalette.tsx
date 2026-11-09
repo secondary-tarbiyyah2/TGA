@@ -8,10 +8,10 @@ import { fetchAllClasses, fetchChildClasses, fetchTeacherClasses, readRecentPage
 import { visiblePages, type PortalArea } from "@/lib/learn/nav";
 import { Icon, type IconName } from "@/components/learn/Icon";
 
-type Item = { id: string; group: "Recent" | "Pages" | "Classes" | "People"; label: string; hint?: string; href: string; keywords?: string; icon: IconName };
+type Item = { id: string; group: "Recent" | "Pages" | "Classes" | "Lessons" | "Pupils" | "People"; label: string; hint?: string; href: string; keywords?: string; icon: IconName };
 type PersonHit = { id: string; full_name: string | null; email: string | null };
 
-const GROUPS: Item["group"][] = ["Recent", "Pages", "Classes", "People"];
+const GROUPS: Item["group"][] = ["Recent", "Pages", "Classes", "Lessons", "Pupils", "People"];
 
 async function loadClasses(area: PortalArea, isHead: boolean): Promise<ClassSummary[]> {
   const supabase = getSupabaseClient();
@@ -48,6 +48,9 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
   const [active, setActive] = useState(0);
   const [classes, setClasses] = useState<ClassSummary[] | null>(null);
   const [people, setPeople] = useState<PersonHit[]>([]);
+  // Universal search (docs/portal-redesign.md): lessons and units for staff, pupils for the office.
+  const [lessonHits, setLessonHits] = useState<{ id: string; title: string; subject: string; year: string; unit: string | null; lesson_no: number }[]>([]);
+  const [pupilHits, setPupilHits] = useState<{ id: string; name: string }[]>([]);
   const [recent, setRecent] = useState<Item[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
   const returnFocus = useRef<HTMLElement | null>(null);
@@ -55,6 +58,7 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
 
   const isHead = roles.some((r) => r === "head_teacher" || r === "admin");
   const canSearchPeople = area === "admin" && isHead;
+  const canSearchLessons = (area === "admin" && isHead) || area === "teach";
 
   const openPalette = useCallback(() => {
     returnFocus.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
@@ -139,6 +143,45 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
     };
   }, [query, open, canSearchPeople]);
 
+  // Debounced lesson, unit and pupil search.
+  useEffect(() => {
+    const term = query.replace(/[%,()*\\]/g, " ").trim();
+    if (!open || term.length < 2) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- clear results when the search is too short
+      setLessonHits([]);
+      setPupilHits([]);
+      return;
+    }
+    const supabase = getSupabaseClient();
+    if (!supabase) return;
+    let cancelled = false;
+    const timer = window.setTimeout(() => {
+      if (canSearchLessons)
+        supabase
+          .from("curriculum_lessons")
+          .select("id, title, subject, year, unit, lesson_no")
+          .or(`title.ilike.%${term}%,unit.ilike.%${term}%`)
+          .order("year")
+          .limit(8)
+          .then(({ data }) => {
+            if (!cancelled) setLessonHits((data as typeof lessonHits | null) || []);
+          });
+      if (canSearchPeople)
+        supabase
+          .from("children")
+          .select("id, name")
+          .ilike("name", `%${term}%`)
+          .limit(6)
+          .then(({ data }) => {
+            if (!cancelled) setPupilHits((data as { id: string; name: string }[] | null) || []);
+          });
+    }, 250);
+    return () => {
+      cancelled = true;
+      window.clearTimeout(timer);
+    };
+  }, [query, open, canSearchLessons, canSearchPeople]);
+
   const items = useMemo((): Item[] => {
     const q = query.trim().toLowerCase();
     // Every page, hub tabs included: "Absences" shows as "Absences · Attendance".
@@ -155,13 +198,22 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
       const name = p.full_name || p.email || "Unnamed";
       return { id: `person:${p.id}`, group: "People", label: name, hint: p.full_name ? p.email || undefined : undefined, href: `/admin/people?q=${encodeURIComponent(name)}`, icon: "userRound" };
     });
+    const lessonItems: Item[] = lessonHits.map((l) => ({
+      id: `lesson:${l.id}`,
+      group: "Lessons",
+      label: l.title,
+      hint: [l.subject, l.year.startsWith("y") ? `Year ${l.year.slice(1)}` : l.year, l.unit].filter(Boolean).join(" · "),
+      href: `/${area}/curriculum/lesson?id=${l.id}`,
+      icon: "bookOpen",
+    }));
+    const pupilItems: Item[] = pupilHits.map((p) => ({ id: `pupil:${p.id}`, group: "Pupils", label: p.name, href: `/admin/pupils?id=${p.id}`, icon: "backpack" }));
     if (!q) return [...recent.slice(0, 5), ...pages.slice(0, 8)];
     const match = (i: Item) => `${i.label} ${i.hint || ""} ${i.keywords || ""}`.toLowerCase().includes(q);
     // Pages whose name matches come before ones that only match their description.
     const named = pages.filter((i) => `${i.label} ${i.hint || ""}`.toLowerCase().includes(q));
     const described = pages.filter((i) => !named.includes(i) && match(i));
-    return [...[...named, ...described].slice(0, 10), ...cls.filter(match).slice(0, 8), ...ppl];
-  }, [query, area, roles, classes, people, recent]);
+    return [...[...named, ...described].slice(0, 8), ...cls.filter(match).slice(0, 6), ...lessonItems, ...pupilItems, ...ppl];
+  }, [query, area, roles, classes, people, recent, lessonHits, pupilHits]);
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- reset the highlighted result when the search text changes
@@ -241,7 +293,7 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   onKeyDown={onInputKey}
-                  placeholder={canSearchPeople ? "Search pages, classes and people…" : "Search pages and classes…"}
+                  placeholder={canSearchPeople ? "Search pages, classes, lessons, pupils and people…" : canSearchLessons ? "Search pages, classes and lessons…" : "Search pages and classes…"}
                   className="h-14 min-w-0 flex-1 bg-transparent text-base text-ink placeholder:text-ink/65 focus:outline-none"
                 />
                 <button type="button" onClick={closePalette} aria-label="Close search" className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-md px-2 text-xs font-medium text-ink/65 hover:bg-cream sm:min-h-8 sm:min-w-0 sm:border sm:border-gold-light">

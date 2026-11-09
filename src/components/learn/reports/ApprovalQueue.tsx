@@ -95,7 +95,7 @@ export function ApprovalQueue({ me, onChanged }: { me: { id: string; name: strin
     onChanged();
   };
 
-  if (items === null) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
+  if (items === null) return <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />;
 
   return (
     <div className="space-y-4">

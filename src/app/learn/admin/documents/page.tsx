@@ -528,7 +528,7 @@ function DocumentsContent() {
             </Button>
           </div>
           {policies === null ? (
-            <div className="h-40 animate-pulse" />
+            <div className="h-40 motion-safe:animate-pulse" />
           ) : policies.length === 0 ? (
             <div className="p-4"><EmptyState title="No policies on the website yet" icon="fileText">Policies published on the public website appear here automatically.</EmptyState></div>
           ) : (
@@ -593,7 +593,7 @@ function DocumentsContent() {
       {tab === "signing" && (
         <div className="overflow-hidden rounded-2xl border border-gold-light bg-white">
           {docs === null ? (
-            <div className="h-40 animate-pulse" />
+            <div className="h-40 motion-safe:animate-pulse" />
           ) : signing.length === 0 ? (
             <div className="p-4">
               <EmptyState
@@ -692,7 +692,7 @@ function DocumentsContent() {
             </div>
           )}
           {outstanding === null ? (
-            <div className="h-32 animate-pulse" />
+            <div className="h-32 motion-safe:animate-pulse" />
           ) : outstandingShown.length === 0 ? (
             <p className="px-5 py-10 text-center text-sm text-ink/65">{outstanding.length === 0 ? "Everyone is up to date." : "No one matches. Try clearing the search or document filter."}</p>
           ) : (

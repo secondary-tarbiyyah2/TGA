@@ -60,7 +60,7 @@ export function TeacherAbsences() {
             Last 30 days
           </h2>
           {absences === null ? (
-            <div className="m-4 h-16 animate-pulse rounded-lg bg-cream" />
+            <div className="m-4 h-16 motion-safe:animate-pulse rounded-lg bg-cream" />
           ) : rows.length === 0 ? (
             <div className="p-4">
               <EmptyState title="No absences from your lessons in the last 30 days." />

@@ -123,7 +123,7 @@ export function StarManager({ isHead, housesAdmin }: { isHead: boolean; housesAd
       <Tabs variant="switch" label="Star of the Week sections" items={tabs} value={view} onChange={setView} />
 
       {classes === null ? (
-        <div className="h-40 animate-pulse rounded-2xl bg-white" />
+        <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />
       ) : view === "approvals" ? (
         <StarApprovals me={me} onChanged={changed} />
       ) : view === "houses" ? (

@@ -96,7 +96,7 @@ export function ReleasedReports({ audience = "family" }: { audience?: "family" |
       </div>
 
       {rows === null ? (
-        <div className="h-40 animate-pulse rounded-2xl bg-white" />
+        <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />
       ) : rows.length === 0 ? (
         <EmptyState title="No reports yet" icon="fileText" tile="tile-blue">
           Reports are written at the end of each term and appear here the day the school issues them.

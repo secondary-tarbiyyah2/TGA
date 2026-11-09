@@ -141,7 +141,7 @@ function StaffGrades({ classId }: { classId: string }) {
       .maybeSingle()
       .then(({ data }) => setSubjectId((data as { subject_id: string | null } | null)?.subject_id ?? null));
   }, [classId]);
-  if (subjectId === undefined) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
+  if (subjectId === undefined) return <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />;
   return <ClassGradebook classId={classId} subjectId={subjectId} pupils={pupils} selected={selected} onSelect={(id) => setSelected(id === selected ? "" : id)} />;
 }
 
@@ -208,7 +208,7 @@ export function ClassPage({ viewer }: { viewer: ClassViewer }) {
         </Link>
       </p>
     );
-  if (cls === undefined) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
+  if (cls === undefined) return <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />;
   if (cls === null)
     return (
       <p className="text-sm text-ink/65">

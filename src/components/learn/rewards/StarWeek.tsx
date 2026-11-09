@@ -158,7 +158,7 @@ export function StarWeek({ isHead, classId, className, weekStart, me, onChanged 
     }
   };
 
-  if (cands === null || star === undefined) return <div className="h-48 animate-pulse rounded-2xl bg-white" />;
+  if (cands === null || star === undefined) return <div className="h-48 motion-safe:animate-pulse rounded-2xl bg-white" />;
   if (cands.length === 0) return <EmptyState title="No pupils in this class yet" icon="star" tile="tile-gold" />;
 
   // ── This week's star is already chosen ──

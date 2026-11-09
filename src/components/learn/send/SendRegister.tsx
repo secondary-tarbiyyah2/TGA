@@ -137,7 +137,7 @@ function SendRegister({ area }: { area: "admin" | "teach" }) {
         {filter === "log" ? (
           <ChangeLog showPupil limit={100} refreshKey={rows?.length || 0} />
         ) : rows === null ? (
-          <div className="h-40 animate-pulse rounded-2xl bg-white" />
+          <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />
         ) : shown.length === 0 ? (
           <EmptyState title={filter === "flagged" ? "No unplanned needs." : filter === "due" ? "No reviews due in the next 14 days." : "Nothing here."}>
             {filter === "plans" ? "Use Add a pupil above, or open a pupil from Needs mentioned, no plan." : null}
@@ -174,7 +174,7 @@ function TeacherSupportPlans() {
     <>
       <PageHeader title="Support plans" subtitle="Pupils you teach who have a support plan: what to do in lessons and in tests. The SENCo writes and reviews the plans." />
       {plans === null ? (
-        <div className="h-40 animate-pulse rounded-2xl bg-white" />
+        <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />
       ) : plans.length === 0 ? (
         <EmptyState title="None of your pupils has a support plan.">If you think a pupil needs one, talk to the SENCo.</EmptyState>
       ) : (

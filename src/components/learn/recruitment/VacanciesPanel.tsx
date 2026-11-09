@@ -245,7 +245,7 @@ export function VacanciesPanel({ userId }: { userId: string | null }) {
       {editingId === "new" && form}
 
       {roles === null ? (
-        <div className="h-40 animate-pulse rounded-2xl border border-gold-light bg-white" />
+        <div className="h-40 motion-safe:animate-pulse rounded-2xl border border-gold-light bg-white" />
       ) : roles.length === 0 && editingId !== "new" ? (
         <EmptyState title="No roles yet" icon="briefcase" action={<Button variant="primary" icon="plus" onClick={startNew}>New role</Button>}>
           Add a role, then open it to show it on the Careers page.

@@ -134,7 +134,7 @@ export function MeritLeaderboard({
 
       <div className="p-5" aria-live="polite">
         {rows === null ? (
-          <div className="h-32 animate-pulse rounded-xl bg-cream" />
+          <div className="h-32 motion-safe:animate-pulse rounded-xl bg-cream" />
         ) : error ? (
           <p className="text-sm text-ink/65">The leaderboard isn&apos;t available right now.</p>
         ) : rows.length === 0 ? (

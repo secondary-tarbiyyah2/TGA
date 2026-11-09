@@ -211,7 +211,7 @@ export function ReviewQueue({ classId: fixedClass, homeworkId, embedded = false,
         <PageHeader title="To review" subtitle="Work handed in and waiting to be marked, oldest first." />
       )}
       {items === null ? (
-        <div className="h-24 animate-pulse rounded-2xl bg-white" />
+        <div className="h-24 motion-safe:animate-pulse rounded-2xl bg-white" />
       ) : error ? (
         <p className="rounded-2xl bg-white p-5 text-sm text-red-800">The review list could not be loaded. Refresh to try again.</p>
       ) : items.length === 0 ? (

@@ -14,10 +14,10 @@ type SyncPart = { enabled: boolean; reason?: string; created?: number; updated?:
 const STATE: Record<CapState, { label: string; cls: string }> = {
   ok: { label: "OK", cls: "bg-green-100 text-green-900" },
   missing_permission: { label: "Missing permission", cls: "bg-red-100 text-red-900" },
-  not_configured: { label: "Not configured", cls: "bg-slate-100 text-slate-800" },
+  not_configured: { label: "Not configured", cls: "bg-cream text-ink/80" },
   off: { label: "Ready, switched off", cls: "bg-amber-100 text-amber-900" },
   error: { label: "Problem", cls: "bg-red-100 text-red-900" },
-  untested: { label: "Not checked yet", cls: "bg-slate-100 text-slate-800" },
+  untested: { label: "Not checked yet", cls: "bg-cream text-ink/80" },
 };
 
 /**
@@ -86,7 +86,7 @@ export function Microsoft365Connection() {
       </summary>
       <div className="border-t border-gold-light" />
       <div className="space-y-4 px-5 py-5">
-        {!status && <div className="h-24 animate-pulse rounded-xl bg-cream" />}
+        {!status && <div className="h-24 motion-safe:animate-pulse rounded-xl bg-cream" />}
         {status && !status.ok && <p role="alert" className="text-sm text-red-800">Couldn&apos;t check the connection. {status.error}</p>}
         {status?.ok && (
           <>

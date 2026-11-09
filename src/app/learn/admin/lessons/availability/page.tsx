@@ -100,7 +100,7 @@ function AvailabilityContent() {
     <div>
       <LessonsHeader title="Teacher availability" subtitle="When each teacher can be given lessons. Teachers can also set this themselves in their portal." />
       {!data.loaded ? (
-        <div className="h-40 animate-pulse rounded-2xl bg-white" aria-label="Loading" />
+        <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" aria-label="Loading" />
       ) : data.years.length === 0 ? (
         <Notice tone="warn">Add an academic year first, under <Link href="/admin/academic/years" className="font-semibold underline">Academic setup</Link>.</Notice>
       ) : (

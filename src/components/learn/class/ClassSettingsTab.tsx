@@ -141,7 +141,7 @@ export function ClassSettingsTab({ classId, className, subject, canRename }: { c
     load();
   };
 
-  if (!s) return <div className="h-64 animate-pulse rounded-2xl bg-white" />;
+  if (!s) return <div className="h-64 motion-safe:animate-pulse rounded-2xl bg-white" />;
   const total = cats.reduce((a, c) => a + c.weight, 0);
   const set = (patch: Partial<ClassSettings>) => setS({ ...s, ...patch });
 

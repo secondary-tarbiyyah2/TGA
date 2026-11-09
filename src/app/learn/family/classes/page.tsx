@@ -50,7 +50,7 @@ function FamilyClassesContent() {
         </div>
       )}
       {children === null ? (
-        <div className="h-48 animate-pulse rounded-2xl bg-white" />
+        <div className="h-48 motion-safe:animate-pulse rounded-2xl bg-white" />
       ) : children.length === 0 ? (
         <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/65">
           No children on your account yet. Add them from your <Link href="/family/dashboard" className="text-teal-700 underline">dashboard</Link>.

@@ -273,7 +273,7 @@ export function FamilyParentEvenings() {
     load();
   }, [load]);
 
-  if (evenings === null) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
+  if (evenings === null) return <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />;
   // Meetings already over drop off "Your bookings" (and their join links).
   const upcoming = bookings.filter((b) => new Date(b.slot_end).getTime() > now).sort((a, b) => a.slot_start.localeCompare(b.slot_start));
 

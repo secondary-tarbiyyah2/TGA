@@ -301,7 +301,7 @@ export function PupilReportEditor({
       )}
 
       {loading ? (
-        <div className="h-64 animate-pulse rounded-2xl bg-white" />
+        <div className="h-64 motion-safe:animate-pulse rounded-2xl bg-white" />
       ) : (
         <>
           <div className="flex flex-wrap items-center justify-between gap-2 print:hidden">
@@ -509,7 +509,7 @@ export function PupilReportEditor({
 }
 
 function Figures({ s }: { s: ClassSummary | undefined }) {
-  if (!s) return <div className="h-24 animate-pulse rounded-2xl bg-white" />;
+  if (!s) return <div className="h-24 motion-safe:animate-pulse rounded-2xl bg-white" />;
   const a = s.attendance;
   const h = s.homework;
   const b = s.behaviour;

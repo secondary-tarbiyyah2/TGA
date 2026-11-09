@@ -86,7 +86,7 @@ export function ClassAttendanceTab({ classId, area }: { classId: string; area: s
     [roster, marks],
   );
 
-  if (lessons === null || roster === null) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
+  if (lessons === null || roster === null) return <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />;
 
   const total = roster.length;
   const taken = lessons.filter((l) => (byLesson.get(l.id)?.length || 0) > 0).length;

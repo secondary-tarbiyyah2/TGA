@@ -318,7 +318,7 @@ export function ComplianceDashboard({ isHeadTeacher, alertsExtra, topExtra, reco
             )}
           </div>
 
-          {alerts === null && <div className="h-32 animate-pulse rounded-2xl bg-cream" />}
+          {alerts === null && <div className="h-32 motion-safe:animate-pulse rounded-2xl bg-cream" />}
           {alerts && shown.length === 0 && <p className="rounded-2xl border border-gold-light bg-white px-5 py-8 text-center text-sm text-ink/65">Nothing here. No alerts match this view.</p>}
           {SEVERITY_ORDER.map((sev) => {
             const group = shown.filter((a) => a.severity === sev);

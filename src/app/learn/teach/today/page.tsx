@@ -169,7 +169,7 @@ function TodayContent() {
     <>
       <PageHeader title="Today" subtitle={`${dateLabel}. Your lessons and their registers; the current lesson's register opens by itself.`} />
       {lessons === null ? (
-        <div className="h-48 animate-pulse rounded-2xl bg-white" />
+        <div className="h-48 motion-safe:animate-pulse rounded-2xl bg-white" />
       ) : lessons.length === 0 ? (
         <div className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center">
           <p className="text-base font-semibold text-ink">No lessons today</p>

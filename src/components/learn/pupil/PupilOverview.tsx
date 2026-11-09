@@ -71,7 +71,7 @@ export function PupilOverview({ childId }: { childId: string }) {
   }, [childId]);
 
   if (failed) return <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">The progress summary couldn&apos;t load. The record below still works.</p>;
-  if (!d || d.child !== childId) return <div className="h-24 animate-pulse rounded-xl bg-white" />;
+  if (!d || d.child !== childId) return <div className="h-24 motion-safe:animate-pulse rounded-xl bg-white" />;
 
   const handedIn = d.onTime + d.late;
   const total = handedIn + d.missing;

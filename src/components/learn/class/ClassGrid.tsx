@@ -163,7 +163,7 @@ export function ClassGrid({
     return (
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {[0, 1, 2].map((i) => (
-          <div key={i} className="h-48 animate-pulse rounded-2xl border border-gold-light bg-white" />
+          <div key={i} className="h-48 motion-safe:animate-pulse rounded-2xl border border-gold-light bg-white" />
         ))}
       </div>
     );

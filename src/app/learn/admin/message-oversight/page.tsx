@@ -37,7 +37,7 @@ function Oversight() {
         <Notice tone="warn">Read only. Opening a conversation is recorded in the audit log.</Notice>
       </div>
       {error && <Notice tone="bad">Could not load conversations. Please refresh the page and try again.</Notice>}
-      {!error && threads === null && <div className="h-40 animate-pulse rounded-2xl bg-white" aria-label="Loading" />}
+      {!error && threads === null && <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" aria-label="Loading" />}
       {threads && threads.length === 0 && <EmptyState title="No conversations yet" icon="messageSquare">Conversations between staff and families will appear here.</EmptyState>}
       {threads && threads.length > 0 && (
         // On phones the list and the open conversation take turns (with a

@@ -170,7 +170,7 @@ function BehaviourContent() {
       />
 
       {records === null ? (
-        <div className="h-40 animate-pulse rounded-2xl bg-white" aria-label="Loading" />
+        <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" aria-label="Loading" />
       ) : tab === "badges" ? (
         <div className="space-y-4">
           <AwardBadgeForm students={students} onAwarded={load} />

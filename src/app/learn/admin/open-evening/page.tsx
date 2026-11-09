@@ -317,7 +317,7 @@ function OpenEveningContent() {
       {editingId === "new" && <div className="mb-4">{form}</div>}
 
       {sessions === null ? (
-        <div className="h-40 animate-pulse rounded-2xl border border-gold-light bg-white" />
+        <div className="h-40 motion-safe:animate-pulse rounded-2xl border border-gold-light bg-white" />
       ) : sessions.length === 0 ? (
         <EmptyState title="No open evenings yet" icon="calendarDays" tile="tile-gold">Add one and it appears on the Open evening page of the website straight away, with its own booking form.</EmptyState>
       ) : (

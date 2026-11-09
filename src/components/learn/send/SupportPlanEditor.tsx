@@ -161,7 +161,7 @@ export function SupportPlanEditor({ childId, childName, onChanged }: { childId: 
     await done(patch?.status === "active" ? `Plan is active. ${childName}'s teachers now see the adjustments and access arrangements, and the family can read it in the Parent Portal.` : "Saved.");
   };
 
-  if (plan === undefined) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
+  if (plan === undefined) return <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />;
 
   if (!plan || !form) {
     const hasSource = meaningful(sources?.application_notes) || meaningful(sources?.record_sen_notes);

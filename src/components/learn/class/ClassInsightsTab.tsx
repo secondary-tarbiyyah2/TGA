@@ -64,7 +64,7 @@ export function ClassInsightsTab({ classId, classHref }: { classId: string; clas
       .sort((a, b) => b.reasons.length - a.reasons.length || a.name.localeCompare(b.name));
   }, [roster, marks, hw, grades]);
 
-  if (!roster || !marks || !hw || review === null || !grades || !pupils) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
+  if (!roster || !marks || !hw || review === null || !grades || !pupils) return <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />;
 
   const due = hw.filter((h) => h.status !== "not_yet_due");
   const handedIn = due.filter((h) => h.status === "on_time" || h.status === "late").length;

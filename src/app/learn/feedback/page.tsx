@@ -52,7 +52,7 @@ function YourFeedback() {
       <PageHeader title="Your feedback" subtitle="Problems you've reported, ideas you've shared and questions you've asked, with our replies." actions={<FeedbackButton />} />
       {error && <p className="mb-4 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{error}</p>}
       {tickets === null ? (
-        <div className="h-32 animate-pulse rounded-2xl bg-white" />
+        <div className="h-32 motion-safe:animate-pulse rounded-2xl bg-white" />
       ) : tickets.length === 0 ? (
         <div className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center">
           <p className="font-semibold text-ink">Help us improve the portal</p>

@@ -98,7 +98,7 @@ export function AiUsage() {
         {failed ? (
           <p className="text-ink/65">Couldn&apos;t load usage. Only the Headteacher and Admin can see it.</p>
         ) : rows === null ? (
-          <div className="h-20 animate-pulse rounded-lg bg-cream" />
+          <div className="h-20 motion-safe:animate-pulse rounded-lg bg-cream" />
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full min-w-[420px] text-left text-sm">

@@ -102,7 +102,7 @@ export function PupilAttendanceTab({ childId }: { childId: string }) {
       <section className="rounded-2xl border border-gold-light bg-white">
         <h3 className="border-b border-gold-light px-4 py-2.5 text-sm font-semibold text-ink">Days away</h3>
         {rows === null ? (
-          <div className="m-4 h-12 animate-pulse rounded-lg bg-cream" />
+          <div className="m-4 h-12 motion-safe:animate-pulse rounded-lg bg-cream" />
         ) : absences.length === 0 ? (
           <p className="px-4 py-3 text-sm text-ink/65">No absences in this period.</p>
         ) : (
@@ -210,7 +210,7 @@ export function PupilBehaviourTab({ childId, extra }: { childId: string; extra?:
           </Link>
         </div>
         {rows === null ? (
-          <div className="m-4 h-12 animate-pulse rounded-lg bg-cream" />
+          <div className="m-4 h-12 motion-safe:animate-pulse rounded-lg bg-cream" />
         ) : rows.length === 0 ? (
           <p className="px-4 py-3 text-sm text-ink/65">Nothing recorded in the last four months.</p>
         ) : (
@@ -297,7 +297,7 @@ export function PupilReportsTab({ childId, childName }: { childId: string; child
         </section>
       )}
       {issued === null ? (
-        <div className="h-24 animate-pulse rounded-2xl bg-white" />
+        <div className="h-24 motion-safe:animate-pulse rounded-2xl bg-white" />
       ) : issued.length === 0 ? (
         working.length === 0 && <EmptyState title="No reports yet" icon="fileText" tile="tile-blue">Issued reports appear here, exactly as the family sees them.</EmptyState>
       ) : shown ? (
