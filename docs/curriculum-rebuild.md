@@ -53,6 +53,7 @@ Y1-2: English and phonics 5, maths 4, topic 2, Qur'an with Qaidah 3, Islamic Stu
 - Year 1 syllabus entries rewritten to the pack: content/syllabus/ks1-3/{english,mathematics,science,history,
   geography,art,computing,quran,islamic-studies,pshe}.json yearMap.y1 = one unit per half term
   ("Autumn 1: ..."). Art carries design and technology for now (there is no DT syllabus file yet).
+- Years 2-9 syllabus entries rewritten to the packs: yearMap.y2..y9 one unit per half term (placed in the planner).
 - Opening moved (owner, 8 Nov 2026): induction day Fri 1 Jan 2027, first live lessons Mon 4 Jan (99 teaching days),
   first fee payment 1 Jan. Code, policies, term-dates.ics, prospectus PDF and migration 0178 updated.
 - Secondary curriculum maps (Years 7-11, xlsx from the TSS drive) cleaned of trips/visits/speakers and the
