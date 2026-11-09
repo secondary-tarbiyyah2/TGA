@@ -97,24 +97,35 @@ In the portal the old `teal-*` utilities now mean forest green, so existing page
 
 ## Plan and status
 1. [x] Audit (this file).
-2. [ ] Design system: tokens, buttons, `ActionsMenu`, `ConfirmDialog`, stat tiles, workflow status badge, quieter
-   sidebar.
-3. [ ] Navigation (grouped sidebar for every staff area: Workspace / Pupils / Management) and role dashboards
+2. [x] Design system: tokens, buttons, `ActionsMenu`, `ConfirmDialog`, stat tiles, workflow status badge, quieter
+   sidebar (PR #66).
+3. [x] Navigation (grouped sidebar for every staff area: Workspace / Pupils / Management) and role dashboards
    (teacher: today, priorities, classes, recently opened lessons; admin: curriculum coverage, approvals, staff
    activity, alerts).
-4. [ ] Curriculum:
+4. [x] Curriculum (PR #66):
    - a unit workspace (compact header with lesson, objective and review counts; lesson rows with one primary action
      and a menu);
    - a lesson workspace page per lesson (overview, slides, plan, objectives, spec links, connections, resources,
      teacher notes, review and version history);
    - a year curriculum map.
-5. [ ] Review and approval workflow:
+5. [x] Review and approval workflow (PR #66, migration 0192):
    - Draft → Submitted → Under review → Changes requested / Approved → Published.
    - Who created, edited and approved it, and when; reviewer comments; versions.
    - Editing an approved or published lesson reopens it automatically (database trigger).
-6. [ ] Universal search: lessons, units, pupils and classes in the existing ⌘K palette.
+6. [x] Universal search: lessons, units, pupils and classes in the existing ⌘K palette (PR #66).
 7. [ ] Pass over every page for consistency, phones (360px), keyboard and contrast; replace `window.confirm`.
 8. Later: curriculum analytics, connections visualiser.
 
+## Next (in this order)
+1. Replace the 78 `window.confirm` calls with `useConfirm()` (`src/components/learn/kit.tsx`), page by page.
+2. Move the remaining hand-written menus (`LearnAccountMenu`, `ClassworkTab`) onto `ActionsMenu`.
+3. Apply `WorkspaceHeader` to the other hub pages that still open with a card header (Classes, a class page, Pupils,
+   Reports), and the "one primary action plus a menu" rule to their rows.
+4. Family and student dashboards: their own figures (as teacher and admin now have).
+5. A phone pass at 360px over the new pages (lesson workspace, map, review queue).
+6. Later: curriculum analytics, connections visualiser.
+
 ## Log
+- 2026-11-09: PR #66 merged. Design system, grouped sidebars, workspace dashboards, lesson workspace, unit header,
+  lesson rows, review workflow (0192) with Lesson review queue, Curriculum map, lessons and pupils in ⌘K search.
 - 2026-11-09: audit written; design rules agreed (forest green for actions, gold as accent only, monochrome icons).
