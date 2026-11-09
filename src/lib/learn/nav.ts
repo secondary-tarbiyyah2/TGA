@@ -195,6 +195,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
         { href: "/admin/people", label: "Accounts", hint: "Families, students and staff accounts and roles" },
         { href: "/admin/staff", label: "Staff", hint: "Teacher profiles and compliance dates", icon: "userRound", headOnly: true },
         { href: "/admin/staff-attendance", label: "Staff hours", hint: "Clock-ins, hours and late arrivals", icon: "clock", headOnly: true },
+        { href: "/admin/recruitment", label: "Recruitment", hint: "Vacancies and job applications", icon: "briefcase", headOnly: true },
         { href: "/admin/handbook", label: "Handbook", hint: "Policies and how-tos for staff", icon: "bookOpen" },
       ],
     },
