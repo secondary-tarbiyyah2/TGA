@@ -7,6 +7,7 @@ import { MarkRow } from "@/components/learn/homework/HomeworkCards";
 import { Tabs } from "@/components/learn/Tabs";
 import { ui } from "@/components/learn/ui";
 import { PageHeader } from "@/components/learn/PageHeader";
+import { ScrollArea } from "@/components/learn/ScrollArea";
 
 type Item = {
   submission_id: string;
@@ -139,7 +140,8 @@ export function ReviewQueue({ classId: fixedClass, homeworkId, embedded = false,
 
         <div className="grid gap-4 lg:grid-cols-[15rem_minmax(0,1fr)]">
           <nav aria-label="Pupils to mark" className="self-start rounded-2xl border border-gold-light bg-white p-2 lg:sticky lg:top-[76px]">
-            <ol className="max-h-[60vh] space-y-0.5 overflow-y-auto">
+            <ScrollArea label="Pupils to mark" className="max-h-[60vh]">
+            <ol className="space-y-0.5">
               {marking.items.map((i, k) => {
                 const returned = !stillWaiting.has(i.submission_id);
                 return (
@@ -158,6 +160,7 @@ export function ReviewQueue({ classId: fixedClass, homeworkId, embedded = false,
                 );
               })}
             </ol>
+            </ScrollArea>
           </nav>
 
           <div className="min-w-0 space-y-3">
