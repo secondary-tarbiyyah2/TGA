@@ -146,6 +146,9 @@ function SidebarBody({
     hidePages,
   );
   const sections = entries.flatMap((e) => (e.kind === "section" ? [e.section] : []));
+  // Grouped areas: the everyday links at the top sit under their own heading ("Workspace").
+  const firstEntry = entries[0];
+  const firstGroupLabel = sections.length > 0 && firstEntry?.kind === "link" ? firstEntry.item.group || "Workspace" : null;
   const { isOpen, toggle } = useClosedSections(area, sections, pathname);
   const badges = useNavBadges(area);
   const areas = [...new Set(roles.map((r) => dashboardPathForRole(r.role)))];
@@ -217,9 +220,9 @@ function SidebarBody({
         ) : (
           <ul className="space-y-0.5">
             {/* Grouped areas: the everyday links sit under a fixed "Workspace" heading. */}
-            {entries.some((e) => e.kind === "section") && entries[0]?.kind === "link" && (
+            {firstGroupLabel && (
               <li role="presentation">
-                <p className="portal-nav-label !pt-1">{entries[0].item.group || "Workspace"}</p>
+                <p className="portal-nav-label !pt-1">{firstGroupLabel}</p>
               </li>
             )}
             {entries.map((e) => (

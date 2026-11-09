@@ -97,9 +97,10 @@ export function LessonWorkspace({ id, area }: { id: string; area: "teach" | "adm
 
   const load = useCallback(async () => {
     if (!supabase) return;
-    let res = await supabase.from("curriculum_lessons").select(`${LESSON_COLUMNS_EDITOR}, content, content_updated_at, content_updated_by_name, pupil_pdf_path`).eq("id", id).maybeSingle();
-    if (res.error) res = await supabase.from("curriculum_lessons").select(LESSON_COLUMNS).eq("id", id).maybeSingle();
-    const l = res.data as unknown as Full | null;
+    // Fall back to the older columns if a migration hasn't reached the database yet.
+    const full = await supabase.from("curriculum_lessons").select(`${LESSON_COLUMNS_EDITOR}, content, content_updated_at, content_updated_by_name, pupil_pdf_path`).eq("id", id).maybeSingle();
+    const data = full.error ? (await supabase.from("curriculum_lessons").select(LESSON_COLUMNS).eq("id", id).maybeSingle()).data : full.data;
+    const l = data as unknown as Full | null;
     if (!l) return setState("missing");
     setLesson(l);
     setState("ready");
