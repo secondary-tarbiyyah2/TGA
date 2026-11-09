@@ -27,11 +27,15 @@ jobs:
     env:
       SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
     steps:
+      # Read the inputs from the event file, never as ${{ inputs.* }} in the
+      # script: GitHub prints a run step's script (with expressions filled in)
+      # at the top of its log, so that would show the passwords in clear.
       - name: Mask passwords
         run: |
-          echo "::add-mask::${{ inputs.teacher_password }}"
-          echo "::add-mask::${{ inputs.parent_password }}"
-          echo "::add-mask::${{ inputs.student_password }}"
+          for k in teacher_password parent_password student_password; do
+            P=$(jq -r --arg k "$k" '.inputs[$k] // ""' "$GITHUB_EVENT_PATH")
+            if [ -n "$P" ]; then echo "::add-mask::$P"; fi
+          done
 
       - uses: actions/checkout@v4
 
