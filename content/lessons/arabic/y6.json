@@ -2,7 +2,7 @@
   "subject": "Arabic",
   "year": "y6",
   "board": "School curriculum (Madinah-style progression)",
-  "source": "Drive: Curriculum/Arabic folder and Secondary Lesson Plan - Arabic - Y8 (format and approach); Madinah-style progression (present tense verbs, question words); National Curriculum KS2 languages",
+  "source": "Drive: Curriculum/Arabic folder and Secondary Lesson Plan - Arabic - Y8 (format and approach); Madinah-style progression (present tense verbs, question words); National Curriculum KS2 languages | Spring 1 2027 (lessons 2, 5 to 8): founding-year bridge (11 and 18 Jan) and Spring 1 weeks 1 to 3 (dialogues: a school event, getting to know each other; text: the heater, with the reading check), order from the Tarbiyyah Primary Year 6 curriculum map (2023-24); the dialogues and text on the slides are our own until the Kitabi texts are checked (CHECK IN KITABI); lessons v3",
   "lessons": [
     {
       "unit": "Unit 1: Verbs in the present",
@@ -115,114 +115,252 @@
       "send": "SEND: verb cards with picture and mime, limit to three verbs. EAL: bilingual verb list. Stretch: add objects and adjectives to make longer sentences."
     },
     {
-      "unit": "Unit 1: Verbs in the present",
+      "unit": "Spring 1: Reading dialogues: a school event; getting to know each other; the heater",
       "n": 2,
-      "title": "My daily routine",
-      "duration": 45,
+      "title": "Bridge: what is the time now? My daily routine",
+      "bigQuestion": "How can I tell someone what I do at each time of the day?",
       "objectives": [
-        "Describe five parts of a daily routine in Arabic",
-        "Use time-of-day phrases",
-        "Include salah in the routine"
+        "To understand how to tell the time on the hour and describe my day with times"
       ],
+      "successCriteria": [
+        "All: ask كَمِ السَّاعَةُ الآنَ؟ and say the hour",
+        "Most: say a routine verb with a time, e.g. أُصَلِّي الفَجْرَ فِي السَّاعَةِ السَّادِسَةِ",
+        "Some: add half past: وَالنِّصْفُ (wa n-nisf)"
+      ],
+      "crossCurricular": "Maths: telling the time on an analogue clock",
+      "smsc": "Spiritual: our day is built around the five prayers at their times",
       "keywords": [
         {
-          "term": "أَسْتَيْقِظُ",
+          "term": "سَاعَة (sa'ah)",
+          "def": "hour, clock or watch"
+        },
+        {
+          "term": "كَمِ السَّاعَةُ الآنَ؟ (kam is-sa'atu l-an?)",
+          "def": "what is the time now?"
+        },
+        {
+          "term": "الآنَ (al-an)",
+          "def": "now"
+        },
+        {
+          "term": "وَالنِّصْفُ (wa n-nisf)",
+          "def": "and a half: half past"
+        },
+        {
+          "term": "أَسْتَيْقِظُ (astayqizu)",
           "def": "I wake up"
-        },
-        {
-          "term": "أُصَلِّي",
-          "def": "I pray"
-        },
-        {
-          "term": "الْفَجْرُ",
-          "def": "dawn / Fajr prayer"
-        },
-        {
-          "term": "الْفَطُورُ",
-          "def": "breakfast"
-        },
-        {
-          "term": "أَرْجِعُ",
-          "def": "I return"
-        },
-        {
-          "term": "أَنَامُ",
-          "def": "I sleep"
-        },
-        {
-          "term": "فِي الصَّبَاحِ",
-          "def": "in the morning"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Muslims check the time five times a day. Why do you think knowing the time matters so much in Islam?",
+        "a": "Each prayer has its time; Allah says prayer is prescribed at set times (an-Nisa' 4:103)."
+      },
+      "islamicLink": {
+        "text": "Allah says that prayer has been prescribed for the believers at fixed times (an-Nisa' 4:103). Telling the time helps us pray on time.",
+        "at": "start"
+      },
       "starter": [
-        "Say 'I read the book' in Arabic.",
-        "Say 'she goes' in Arabic.",
-        "What is the first letter of 'I' verbs?"
+        {
+          "q": "Bismillah. What does أَذْهَبُ إِلَى المَدْرَسَةِ mean? A) I go to school B) I come home",
+          "a": "A) I go to school",
+          "mins": 1,
+          "options": [
+            "I go to school",
+            "I come home"
+          ]
+        },
+        {
+          "q": "Count from ٦ to ١٠ in Arabic.",
+          "a": "سِتَّة، سَبْعَة، ثَمَانِيَة، تِسْعَة، عَشَرَة",
+          "mins": 1
+        },
+        {
+          "q": "What is ثُمَّ (thumma)?",
+          "a": "then",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "In the morning",
+          "heading": "What is the time?",
           "bullets": [
-            "أَسْتَيْقِظُ لِصَلَاةِ الْفَجْرِ",
-            "أُصَلِّي الْفَجْرَ",
-            "آكُلُ الْفَطُورَ"
+            "كَمِ السَّاعَةُ الآنَ؟ (kam is-sa'atu l-an?)",
+            "السَّاعَةُ الثَّامِنَةُ (as-sa'atu th-thaminah)",
+            "It is eight o'clock"
           ],
-          "note": "Start with bismillah. Act out waking up, praying, eating breakfast. Pupils echo. Note: for Fajr we say 'I wake up for the Fajr prayer'. Sensitively allow pupils who do not pray yet to talk about others."
+          "note": "Begin with bismillah. For the hour we use the 'eighth' form: الثَّامِنَةُ, not ثَمَانِيَة."
         },
         {
-          "heading": "Going to school",
-          "bullets": [
-            "أَذْهَبُ إِلَى الْمَدْرَسَةِ",
-            "أَقْرَأُ وَأَكْتُبُ",
-            "أَتَعَلَّمُ الْعَرَبِيَّةَ"
-          ],
-          "note": "Introduce ilaa = to. Add أَتَعَلَّمُ (I learn). Pupils make a sentence about school. Highlight the repeated pattern verb + object."
+          "heading": "The hours",
+          "table": {
+            "head": [
+              "Hour",
+              "Arabic",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "1",
+                "الوَاحِدَةُ",
+                "al-wahidah"
+              ],
+              [
+                "2",
+                "الثَّانِيَةُ",
+                "ath-thaniyah"
+              ],
+              [
+                "3",
+                "الثَّالِثَةُ",
+                "ath-thalithah"
+              ],
+              [
+                "4",
+                "الرَّابِعَةُ",
+                "ar-rabi'ah"
+              ],
+              [
+                "5",
+                "الخَامِسَةُ",
+                "al-khamisah"
+              ],
+              [
+                "6",
+                "السَّادِسَةُ",
+                "as-sadisah"
+              ],
+              [
+                "7",
+                "السَّابِعَةُ",
+                "as-sabi'ah"
+              ],
+              [
+                "8 to 10",
+                "الثَّامِنَةُ، التَّاسِعَةُ، العَاشِرَةُ",
+                "ath-thaminah, at-tasi'ah, al-'ashirah"
+              ]
+            ]
+          },
+          "note": "Pupils echo. Notice the sun letters: ath-thaniyah, ar-rabi'ah, as-sadisah."
         },
         {
-          "heading": "Afternoon and evening",
+          "heading": "Half past",
           "bullets": [
-            "أَرْجِعُ إِلَى الْبَيْتِ",
-            "أَلْعَبُ مَعَ أَصْدِقَائِي",
-            "أَنَامُ فِي اللَّيْلِ"
+            "السَّاعَةُ السَّابِعَةُ وَالنِّصْفُ",
+            "It is half past seven",
+            "النِّصْفُ (an-nisf) = the half"
           ],
-          "note": "Show a clock picture or sun/moon. Pupils say the time-of-day phrases: فِي الصَّبَاحِ، بَعْدَ الظُّهْرِ، فِي الْمَسَاءِ، فِي اللَّيْلِ. Practise with mime."
+          "note": "Show a clock on screen at 7:30. Quarter past (وَالرُّبْعُ) is for the most able."
         },
         {
-          "heading": "Order with words",
+          "heading": "My day with times",
           "bullets": [
-            "أَوَّلًا - first",
-            "ثُمَّ - then",
-            "بَعْدَ ذَلِكَ - after that"
+            "أَسْتَيْقِظُ فِي السَّاعَةِ السَّادِسَةِ: I wake up at six",
+            "أُصَلِّي الفَجْرَ ثُمَّ آكُلُ الفَطُورَ",
+            "أَذْهَبُ إِلَى المَدْرَسَةِ فِي السَّاعَةِ الثَّامِنَةِ"
           ],
-          "note": "Teach connecting words to sequence the routine. Model: أَوَّلًا أَسْتَيْقِظُ، ثُمَّ أُصَلِّي. Pupils build their own two-sentence routines. Display a model on screen."
+          "note": "After فِي the words take kasrah: فِي السَّاعَةِ السَّادِسَةِ."
         },
         {
-          "heading": "Model paragraph",
+          "heading": "Check",
           "bullets": [
-            "أَسْتَيْقِظُ فِي الصَّبَاحِ",
-            "ثُمَّ أَذْهَبُ إِلَى الْمَدْرَسَةِ",
-            "بَعْدَ ذَلِكَ أَرْجِعُ إِلَى الْبَيْتِ"
+            "Vote in the Teams poll"
           ],
-          "note": "Read the three-sentence paragraph aloud together. Ask comprehension questions in English. Encourage pupils to adapt for themselves; check verb forms."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "السَّاعَةُ الرَّابِعَةُ means:",
+            "options": [
+              "It is two o'clock",
+              "It is four o'clock",
+              "It is ten o'clock"
+            ],
+            "answer": 1,
+            "why": "الرَّابِعَةُ is 'the fourth': four o'clock."
+          }
         }
       ],
       "practice": [
-        "Make three sentences: I write, he reads, she goes.",
-        "Say 'I drink water' in Arabic.",
-        "Order the routine pictures and say each sentence.",
-        "Pair work: ask 'What do you do in the morning?' in English; answer in Arabic."
+        {
+          "q": "Say: It is nine o'clock.",
+          "a": "السَّاعَةُ التَّاسِعَةُ (as-sa'atu t-tasi'ah)",
+          "mins": 2,
+          "model": "Start with السَّاعَةُ.\nNine is تِسْعَة, so the hour is التَّاسِعَةُ.\nTogether: as-sa'atu t-tasi'ah."
+        },
+        {
+          "q": "Read: السَّاعَةُ الخَامِسَةُ وَالنِّصْفُ.",
+          "a": "It is half past five.",
+          "mins": 1
+        },
+        {
+          "q": "Say 'I wake up at six'.",
+          "a": "أَسْتَيْقِظُ فِي السَّاعَةِ السَّادِسَةِ",
+          "mins": 2
+        }
       ],
       "independent": [
-        "Write a five-sentence routine using أَوَّلًا and ثُمَّ.",
-        "Match routine pictures to Arabic sentences.",
-        "Perform your routine for a partner."
+        {
+          "q": "Core: Write four sentences about your school day, each with a time.",
+          "a": "For example: أَسْتَيْقِظُ فِي السَّاعَةِ السَّادِسَةِ. أَذْهَبُ إِلَى المَدْرَسَةِ فِي السَّاعَةِ الثَّامِنَةِ. أَرْجِعُ إِلَى البَيْتِ فِي السَّاعَةِ الثَّالِثَةِ. أَنَامُ فِي السَّاعَةِ التَّاسِعَةِ.",
+          "mins": 6,
+          "model": "Teacher writes the first sentence with a clock drawing beside it."
+        },
+        {
+          "q": "Extend: Join your sentences with ثُمَّ (then) and بَعْدَ ذٰلِكَ (after that).",
+          "a": "A joined paragraph using ثُمَّ and بَعْدَ ذٰلِكَ",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Add one time with half past.",
+          "a": "For example: آكُلُ الغَدَاءَ فِي السَّاعَةِ الثَّانِيَةَ عَشْرَةَ وَالنِّصْفِ.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "How do you say 'I go to school' in Arabic?",
-        "What does ثُمَّ mean?"
+        {
+          "q": "How do you ask the time? A) كَمِ السَّاعَةُ الآنَ؟ B) كَمْ عُمْرُكَ؟",
+          "a": "A) كَمِ السَّاعَةُ الآنَ؟",
+          "mins": 1,
+          "options": [
+            "كَمِ السَّاعَةُ الآنَ؟",
+            "كَمْ عُمْرُكَ؟"
+          ]
+        },
+        {
+          "q": "Big question: tell me one thing you do and when.",
+          "a": "For example: أَذْهَبُ إِلَى المَدْرَسَةِ فِي السَّاعَةِ الثَّامِنَةِ.",
+          "mins": 2
+        }
       ],
-      "homework": "Write your own morning routine in Arabic (4-5 sentences).",
-      "send": "SEND: picture sequence cards and sentence frames. EAL: bilingual routine glossary. Stretch: add evening routine with salah and the connectives."
+      "homework": "Ask the time in Arabic three times at home and write a timetable of your Saturday in Arabic.",
+      "send": "SEND: clock face with the Arabic hours around it. EAL: verb cards with pictures of objects (alarm clock, bowl, bag). Stretch: use وَالرُّبْعُ (quarter past).",
+      "resources": [
+        "Tarbiyyah Primary Year 6 Arabic curriculum map (2023-24), Autumn 1 essentials (bridge)",
+        "Portal arabic y6 lessons 1 and 2 (verbs; my daily routine); lesson 2 upgraded",
+        "Kitabi: what is the time now? (CHECK IN KITABI)",
+        "Clock face sheet (portal worksheet)",
+        "A clock or watch"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "analogue wall clock",
+          "alt": "A wall clock",
+          "for": "keywords"
+        },
+        {
+          "find": "alarm clock on bedside table",
+          "alt": "An alarm clock",
+          "for": "teach:4"
+        }
+      ],
+      "duration": 45
     },
     {
       "unit": "Unit 2: My day and asking questions",
@@ -439,6 +577,930 @@
       ],
       "homework": "Write a final copy of your paragraph neatly and bring a copy to share.",
       "send": "SEND: structured paragraph frame with gaps. EAL: bilingual checklist. Stretch: write a second paragraph about the weekend."
+    },
+    {
+      "unit": "Spring 1: Reading dialogues: a school event; getting to know each other; the heater",
+      "n": 5,
+      "title": "Bridge: the months; my computer and devices",
+      "bigQuestion": "How do Muslims name the months, and how do we name the devices we use?",
+      "objectives": [
+        "To understand how to name the Islamic months and everyday devices in Arabic"
+      ],
+      "successCriteria": [
+        "All: name رَمَضَان and two other Hijri months",
+        "Most: say the twelve Hijri months in order with help",
+        "Some: describe my device: عِنْدِي حَاسُوبٌ (I have a computer)"
+      ],
+      "crossCurricular": "Computing: names of computer hardware",
+      "smsc": "Spiritual: the Islamic calendar follows the moon, as Allah set it",
+      "keywords": [
+        {
+          "term": "شَهْر (shahr)",
+          "def": "month"
+        },
+        {
+          "term": "سَنَة (sanah)",
+          "def": "year"
+        },
+        {
+          "term": "حَاسُوب (hasub)",
+          "def": "computer"
+        },
+        {
+          "term": "شَاشَة (shashah)",
+          "def": "screen"
+        },
+        {
+          "term": "لَوْحَةُ المَفَاتِيحِ (lawhat al-mafatih)",
+          "def": "keyboard"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why does Ramadan start about 11 days earlier each year in the January to December calendar?",
+        "a": "Hijri months follow the moon; a moon year is about 354 days, shorter than the sun year."
+      },
+      "islamicLink": {
+        "text": "Allah says the number of months with Him is twelve (at-Tawbah 9:36). The Hijri months begin with each new crescent moon.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. السَّاعَةُ الثَّالِثَةُ is: A) 3 o'clock B) 8 o'clock",
+          "a": "A) 3 o'clock",
+          "mins": 1,
+          "options": [
+            "3 o'clock",
+            "8 o'clock"
+          ]
+        },
+        {
+          "q": "Name three days of the week in Arabic.",
+          "a": "For example: الأَحَد، الاِثْنَيْن، الجُمُعَة",
+          "mins": 1
+        },
+        {
+          "q": "Say 'half past seven'.",
+          "a": "السَّابِعَةُ وَالنِّصْفُ",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Hijri months 1 to 6",
+          "table": {
+            "head": [
+              "No.",
+              "Arabic",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "1",
+                "مُحَرَّم",
+                "Muharram"
+              ],
+              [
+                "2",
+                "صَفَر",
+                "Safar"
+              ],
+              [
+                "3",
+                "رَبِيعٌ الأَوَّلُ",
+                "Rabi' al-awwal"
+              ],
+              [
+                "4",
+                "رَبِيعٌ الآخِرُ",
+                "Rabi' al-akhir"
+              ],
+              [
+                "5",
+                "جُمَادَى الأُولَى",
+                "Jumada l-ula"
+              ],
+              [
+                "6",
+                "جُمَادَى الآخِرَةُ",
+                "Jumada l-akhirah"
+              ]
+            ]
+          },
+          "note": "Begin with bismillah. Pupils echo. Ask which month starts the Hijri year (Muharram)."
+        },
+        {
+          "heading": "Hijri months 7 to 12",
+          "table": {
+            "head": [
+              "No.",
+              "Arabic",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "7",
+                "رَجَب",
+                "Rajab"
+              ],
+              [
+                "8",
+                "شَعْبَان",
+                "Sha'ban"
+              ],
+              [
+                "9",
+                "رَمَضَان",
+                "Ramadan"
+              ],
+              [
+                "10",
+                "شَوَّال",
+                "Shawwal"
+              ],
+              [
+                "11",
+                "ذُو القَعْدَةِ",
+                "Dhu l-Qa'dah"
+              ],
+              [
+                "12",
+                "ذُو الحِجَّةِ",
+                "Dhu l-Hijjah"
+              ]
+            ]
+          },
+          "note": "We are now in Sha'ban, the month before Ramadan. Eid al-Fitr is on 1 Shawwal; Hajj and Eid al-Adha are in Dhu l-Hijjah."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which month comes before Ramadan?",
+            "options": [
+              "Shawwal",
+              "Sha'ban",
+              "Muharram"
+            ],
+            "answer": 1,
+            "why": "Sha'ban is the 8th month; Ramadan is the 9th."
+          }
+        },
+        {
+          "heading": "My devices",
+          "diagram": {
+            "centre": "أَجْهِزَتِي (ajhizati) my devices",
+            "items": [
+              "حَاسُوب (hasub) computer",
+              "شَاشَة (shashah) screen",
+              "لَوْحَةُ المَفَاتِيحِ keyboard",
+              "فَأْرَة (fa'rah) mouse",
+              "سَمَّاعَة (samma'ah) headset"
+            ]
+          },
+          "note": "Pupils show each device on camera. Sentence: عِنْدِي حَاسُوبٌ (I have a computer)."
+        },
+        {
+          "heading": "Using devices well",
+          "bullets": [
+            "أَسْتَخْدِمُ الحَاسُوبَ لِلدِّرَاسَةِ",
+            "I use the computer for studying",
+            "أَسْتَخْدِمُ (astakhdimu) = I use"
+          ],
+          "note": "Link to our online school: we learn on these devices every day."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say: Ramadan is the ninth month.",
+          "a": "رَمَضَانُ الشَّهْرُ التَّاسِعُ (Ramadanu sh-shahru t-tasi')",
+          "mins": 2,
+          "model": "Start with the month: رَمَضَانُ.\nThe month: الشَّهْرُ.\nNinth: التَّاسِعُ (like the hour, but for a boy word)."
+        },
+        {
+          "q": "Which month has Eid al-Adha?",
+          "a": "ذُو الحِجَّةِ (Dhu l-Hijjah)",
+          "mins": 1
+        },
+        {
+          "q": "What is شَاشَة?",
+          "a": "screen",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write the twelve Hijri months in order (use the slide for help) and circle the months of Ramadan and the two Eids.",
+          "a": "مُحَرَّم، صَفَر، رَبِيعٌ الأَوَّلُ، رَبِيعٌ الآخِرُ، جُمَادَى الأُولَى، جُمَادَى الآخِرَةُ، رَجَب، شَعْبَان، رَمَضَان، شَوَّال، ذُو القَعْدَةِ، ذُو الحِجَّةِ; circle رَمَضَان، شَوَّال، ذُو الحِجَّةِ",
+          "mins": 6,
+          "model": "Teacher writes the first three in a column, numbering them."
+        },
+        {
+          "q": "Extend: Write two sentences about your devices: عِنْدِي ... / أَسْتَخْدِمُ ...",
+          "a": "For example: عِنْدِي حَاسُوبٌ. أَسْتَخْدِمُ الحَاسُوبَ لِلدِّرَاسَةِ.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Find the Hijri date today on an Islamic calendar and write the month in Arabic.",
+          "a": "شَعْبَان (in late January 2027)",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which month is Ramadan? A) the 7th B) the 9th C) the 12th",
+          "a": "B) the 9th",
+          "mins": 1,
+          "options": [
+            "the 7th",
+            "the 9th",
+            "the 12th"
+          ]
+        },
+        {
+          "q": "Big question: how many months are there with Allah, and what is 'computer' in Arabic?",
+          "a": "Twelve (at-Tawbah 9:36); حَاسُوب.",
+          "mins": 2
+        }
+      ],
+      "homework": "Learn the twelve Hijri months in order; say them to someone at home.",
+      "send": "SEND: month cards to put in order. EAL: device labels with pictures. Stretch: the international months يَنَايِر (January), فِبْرَايِر (February).",
+      "resources": [
+        "Tarbiyyah Primary Year 6 Arabic curriculum map (2023-24), Autumn 2 essentials (bridge)",
+        "Kitabi: months of the year; my computer and devices (CHECK IN KITABI)",
+        "Hijri month cards and an Islamic calendar (portal worksheet)",
+        "Pupil's own device for the camera"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "crescent moon at dusk",
+          "alt": "A new crescent moon",
+          "for": "hook"
+        },
+        {
+          "find": "computer keyboard",
+          "alt": "A keyboard (lawhat al-mafatih)",
+          "for": "keywords"
+        },
+        {
+          "find": "computer mouse",
+          "alt": "A computer mouse (fa'rah)",
+          "for": "teach:4"
+        }
+      ],
+      "duration": 45
+    },
+    {
+      "unit": "Spring 1: Reading dialogues: a school event; getting to know each other; the heater",
+      "n": 6,
+      "title": "Reading dialogue: a school event",
+      "bigQuestion": "How do I find the key information in an Arabic dialogue?",
+      "objectives": [
+        "To understand a short Arabic dialogue about a school event and answer questions on it"
+      ],
+      "successCriteria": [
+        "All: read the dialogue aloud with a partner",
+        "Most: answer four questions: who, what, when, where",
+        "Some: explain what بِالتَّوْفِيقِ and مَا شَاءَ اللّٰهُ show about the speakers"
+      ],
+      "crossCurricular": "English: reading a play script (speakers, lines, turn-taking)",
+      "smsc": "Spiritual: a Qur'an competition as a way of loving the Book of Allah",
+      "keywords": [
+        {
+          "term": "نَشَاط (nashat)",
+          "def": "an activity"
+        },
+        {
+          "term": "مُسَابَقَة (musabaqah)",
+          "def": "a competition"
+        },
+        {
+          "term": "يُشَارِكُ (yushariku)",
+          "def": "he takes part"
+        },
+        {
+          "term": "جَائِزَة (ja'izah)",
+          "def": "a prize"
+        },
+        {
+          "term": "حِوَار (hiwar)",
+          "def": "a dialogue, a conversation"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What makes a school event exciting? Think of one event you would like our online school to hold.",
+        "a": "For example a Qur'an competition, a reading challenge, a charity day."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'So race to all that is good' (al-Baqarah 2:148). A Qur'an competition is racing in good.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Which is the 9th Hijri month? A) رَمَضَان B) شَوَّال",
+          "a": "A) رَمَضَان",
+          "mins": 1,
+          "options": [
+            "رَمَضَان",
+            "شَوَّال"
+          ]
+        },
+        {
+          "q": "What is حَاسُوب?",
+          "a": "computer",
+          "mins": 1
+        },
+        {
+          "q": "Which day is الخَمِيس?",
+          "a": "Thursday",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Words we need",
+          "table": {
+            "head": [
+              "Arabic",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "مُسَابَقَةُ القُرْآنِ",
+                "musabaqat al-qur'an",
+                "Qur'an competition"
+              ],
+              [
+                "تُشَارِكُ",
+                "tushariku",
+                "you take part"
+              ],
+              [
+                "سَأَقْرَأُ",
+                "sa-aqra'u",
+                "I will read"
+              ],
+              [
+                "بِالتَّوْفِيقِ",
+                "bit-tawfiq",
+                "good luck (with Allah's help)"
+              ]
+            ]
+          },
+          "note": "Begin with bismillah. سَـ at the start of a verb means 'will'."
+        },
+        {
+          "heading": "The dialogue",
+          "quote": {
+            "text": "سَلْمَى: مَاذَا عِنْدَنَا يَوْمَ الخَمِيسِ؟ / خَالِدٌ: عِنْدَنَا مُسَابَقَةُ القُرْآنِ فِي المَدْرَسَةِ. / سَلْمَى: هَلْ تُشَارِكُ فِي المُسَابَقَةِ؟ / خَالِدٌ: نَعَمْ، سَأَقْرَأُ سُورَةَ المُلْكِ. / سَلْمَى: مَا شَاءَ اللّٰهُ! بِالتَّوْفِيقِ.",
+            "source": "Our own dialogue for 'a school event' (Kitabi version: CHECK IN KITABI)"
+          },
+          "note": "Read it twice; then two pupils read the parts. Meaning: What do we have on Thursday? We have a Qur'an competition at school. Are you taking part? Yes, I will read Surat al-Mulk. Masha'Allah! Good luck."
+        },
+        {
+          "heading": "Question words",
+          "bullets": [
+            "مَاذَا؟ (madha?) what?",
+            "مَتَى؟ (mata?) when?",
+            "هَلْ؟ (hal?) a yes or no question"
+          ],
+          "note": "Model: مَتَى المُسَابَقَةُ؟ يَوْمَ الخَمِيسِ."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which surah will Khalid read?",
+            "options": [
+              "سُورَةُ الفَاتِحَةِ",
+              "سُورَةُ المُلْكِ",
+              "سُورَةُ الكَهْفِ"
+            ],
+            "answer": 1,
+            "why": "Khalid says سَأَقْرَأُ سُورَةَ المُلْكِ."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "مَتَى المُسَابَقَةُ؟",
+          "a": "يَوْمَ الخَمِيسِ (on Thursday)",
+          "mins": 2,
+          "model": "مَتَى asks when.\nFind a day in the dialogue: يَوْمَ الخَمِيسِ.\nAnswer: al-musabaqah yawma l-khamis."
+        },
+        {
+          "q": "أَيْنَ المُسَابَقَةُ؟",
+          "a": "فِي المَدْرَسَةِ (at school)",
+          "mins": 1
+        },
+        {
+          "q": "هَلْ يُشَارِكُ خَالِدٌ؟",
+          "a": "نَعَمْ (yes)",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Answer in Arabic (portal response box): 1) مَاذَا عِنْدَهُمْ يَوْمَ الخَمِيسِ؟ 2) مَاذَا سَيَقْرَأُ خَالِدٌ؟",
+          "a": "1) مُسَابَقَةُ القُرْآنِ. 2) سُورَةَ المُلْكِ.",
+          "mins": 5,
+          "model": "Teacher answers the first, underlining the line in the dialogue where the answer is."
+        },
+        {
+          "q": "Extend: Read the dialogue with a partner in a breakout room, then swap parts.",
+          "a": "Fluent reading with correct vowels",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Change the dialogue: a different day and a different surah.",
+          "a": "For example: يَوْمَ الأَحَدِ ... سَأَقْرَأُ سُورَةَ النَّبَأِ.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "What does مُسَابَقَة mean? A) competition B) school C) prize",
+          "a": "A) competition",
+          "mins": 1,
+          "options": [
+            "competition",
+            "school",
+            "prize"
+          ]
+        },
+        {
+          "q": "Big question: how did you find the key information in the dialogue?",
+          "a": "By using the question words (what, when, where) and finding the line that answers them.",
+          "mins": 2
+        }
+      ],
+      "homework": "Read the dialogue to someone at home and teach them the meaning of بِالتَّوْفِيقِ.",
+      "send": "SEND: dialogue with the speaker names in colour and an English line under each. EAL: key words with pictures. Stretch: add one more line to the dialogue.",
+      "resources": [
+        "Tarbiyyah Primary Year 6 Arabic curriculum map (2023-24), Spring 1 week 1",
+        "Kitabi: reading dialogue, a school event (CHECK IN KITABI); our own dialogue on the slides until checked",
+        "Dialogue and question sheet (portal worksheet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Quran on a wooden rehal stand",
+          "alt": "A mushaf on a stand",
+          "for": "keywords"
+        },
+        {
+          "find": "trophy cup",
+          "alt": "A trophy (ja'izah)",
+          "for": "hook"
+        }
+      ],
+      "duration": 45
+    },
+    {
+      "unit": "Spring 1: Reading dialogues: a school event; getting to know each other; the heater",
+      "n": 7,
+      "title": "Reading dialogue: getting to know each other",
+      "bigQuestion": "What questions help us get to know someone new?",
+      "objectives": [
+        "To understand a getting-to-know-you dialogue and use its questions myself"
+      ],
+      "successCriteria": [
+        "All: read the dialogue and answer three questions",
+        "Most: ask and answer مِنْ أَيْنَ؟ كَمْ عُمْرُكَ؟ مَا هِوَايَتُكَ؟",
+        "Some: say my age correctly: عُمْرِي إِحْدَى عَشْرَةَ سَنَةً"
+      ],
+      "crossCurricular": "PSHE: making new friends and being welcoming",
+      "smsc": "Social: welcoming a new pupil with salam and kind questions",
+      "keywords": [
+        {
+          "term": "تَعَارُف (ta'aruf)",
+          "def": "getting to know each other"
+        },
+        {
+          "term": "أَهْلًا وَسَهْلًا (ahlan wa sahlan)",
+          "def": "welcome"
+        },
+        {
+          "term": "كَمْ عُمْرُكَ؟ (kam 'umruka?)",
+          "def": "how old are you?"
+        },
+        {
+          "term": "هِوَايَة (hiwayah)",
+          "def": "a hobby"
+        },
+        {
+          "term": "تَشَرَّفْنَا (tasharrafna)",
+          "def": "pleased to meet you"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A new pupil joins our class. What three questions would you ask to get to know them?",
+        "a": "Name, where from, age, hobbies."
+      },
+      "islamicLink": {
+        "text": "Allah made us nations and tribes so that we may know one another (al-Hujurat 49:13). The Arabic word تَعَارُف (getting to know each other) comes from the same root as لِتَعَارَفُوا in that ayah.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. What is مُسَابَقَة? A) competition B) prize",
+          "a": "A) competition",
+          "mins": 1,
+          "options": [
+            "competition",
+            "prize"
+          ]
+        },
+        {
+          "q": "What does مَتَى ask?",
+          "a": "when?",
+          "mins": 1
+        },
+        {
+          "q": "Ask a boy where he is from.",
+          "a": "مِنْ أَيْنَ أَنْتَ؟",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The dialogue",
+          "quote": {
+            "text": "أَحْمَدُ: اَلسَّلَامُ عَلَيْكُمْ، أَنَا أَحْمَدُ، طَالِبٌ جَدِيدٌ. / يُوسُفُ: وَعَلَيْكُمُ السَّلَامُ، أَهْلًا وَسَهْلًا! مِنْ أَيْنَ أَنْتَ؟ / أَحْمَدُ: أَنَا مِنْ مِصْرَ. كَمْ عُمْرُكَ؟ / يُوسُفُ: عُمْرِي إِحْدَى عَشْرَةَ سَنَةً. مَا هِوَايَتُكَ؟ / أَحْمَدُ: هِوَايَتِي القِرَاءَةُ. / يُوسُفُ: تَشَرَّفْنَا!",
+            "source": "Our own dialogue for 'getting to know each other' (Kitabi version: CHECK IN KITABI)"
+          },
+          "note": "Begin with bismillah. Read twice, then two pupils read. Meaning: I am Ahmad, a new pupil. Welcome! Where are you from? Egypt. How old are you? I am eleven. What is your hobby? Reading. Pleased to meet you!"
+        },
+        {
+          "heading": "Three key questions",
+          "table": {
+            "head": [
+              "Question",
+              "Answer"
+            ],
+            "rows": [
+              [
+                "مِنْ أَيْنَ أَنْتَ؟",
+                "أَنَا مِنْ ..."
+              ],
+              [
+                "كَمْ عُمْرُكَ؟",
+                "عُمْرِي ... سَنَةً"
+              ],
+              [
+                "مَا هِوَايَتُكَ؟",
+                "هِوَايَتِي ..."
+              ]
+            ]
+          },
+          "note": "To a girl: أَنْتِ، عُمْرُكِ، هِوَايَتُكِ."
+        },
+        {
+          "heading": "Saying my age",
+          "bullets": [
+            "عُمْرِي عَشْرُ سَنَوَاتٍ: I am ten",
+            "عُمْرِي إِحْدَى عَشْرَةَ سَنَةً: I am eleven",
+            "سَنَة (year) is a girl word"
+          ],
+          "note": "Learn these two as fixed phrases; most Year 6 pupils are 10 or 11."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "What is Ahmad's hobby?",
+            "options": [
+              "الرِّيَاضَة (sport)",
+              "القِرَاءَة (reading)",
+              "الرَّسْم (drawing)"
+            ],
+            "answer": 1,
+            "why": "Ahmad says هِوَايَتِي القِرَاءَةُ: my hobby is reading."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Answer: مِنْ أَيْنَ أَحْمَدُ؟",
+          "a": "أَحْمَدُ مِنْ مِصْرَ (Ahmad is from Egypt)",
+          "mins": 2,
+          "model": "Find Ahmad's line with مِنْ: أَنَا مِنْ مِصْرَ.\nChange أَنَا to his name.\nAnswer: Ahmadu min Misr."
+        },
+        {
+          "q": "What does أَهْلًا وَسَهْلًا mean?",
+          "a": "Welcome",
+          "mins": 1
+        },
+        {
+          "q": "Ask a girl her hobby.",
+          "a": "مَا هِوَايَتُكِ؟",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Answer the three key questions about yourself in Arabic (portal response box).",
+          "a": "For example: أَنَا مِنْ بِرِيطَانِيَا. عُمْرِي عَشْرُ سَنَوَاتٍ. هِوَايَتِي القِرَاءَةُ.",
+          "mins": 5,
+          "model": "Teacher answers all three about an imaginary pupil, writing each on the whiteboard."
+        },
+        {
+          "q": "Extend: In a breakout pair, act out a getting-to-know-you dialogue using your own answers.",
+          "a": "Six-line dialogue with greeting, three questions and تَشَرَّفْنَا",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Write the dialogue out with a new pupil who is a girl, changing the endings.",
+          "a": "For example: مِنْ أَيْنَ أَنْتِ؟ كَمْ عُمْرُكِ؟ مَا هِوَايَتُكِ؟",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "كَمْ عُمْرُكَ؟ asks: A) your age B) your name C) your hobby",
+          "a": "A) your age",
+          "mins": 1,
+          "options": [
+            "your age",
+            "your name",
+            "your hobby"
+          ]
+        },
+        {
+          "q": "Big question: which questions help us get to know someone new? Write two in Arabic.",
+          "a": "For example: مِنْ أَيْنَ أَنْتَ؟ مَا هِوَايَتُكَ؟",
+          "mins": 2
+        }
+      ],
+      "homework": "Interview a family member with the three questions and write their answers in Arabic.",
+      "send": "SEND: question cards with answer frames. EAL: English beside each line. Stretch: add مَا اسْمُ مَدْرَسَتِكَ؟ (what is your school's name?).",
+      "resources": [
+        "Tarbiyyah Primary Year 6 Arabic curriculum map (2023-24), Spring 1 week 2",
+        "Kitabi: reading dialogue, getting to know each other (CHECK IN KITABI); our own dialogue on the slides until checked",
+        "Dialogue and question frame sheet (portal worksheet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "stack of children's books",
+          "alt": "Books (a hobby: reading)",
+          "for": "keywords"
+        },
+        {
+          "find": "map of Egypt",
+          "alt": "A map of Egypt",
+          "for": "teach:1"
+        }
+      ],
+      "duration": 45
+    },
+    {
+      "unit": "Spring 1: Reading dialogues: a school event; getting to know each other; the heater",
+      "n": 8,
+      "title": "Reading text: the heater; reading check",
+      "bigQuestion": "How can I show I have understood an Arabic text?",
+      "objectives": [
+        "To understand a short Arabic text about the heater and show it by answering questions"
+      ],
+      "successCriteria": [
+        "All: read the text and match five words to their meaning",
+        "Most: answer four questions in Arabic",
+        "Some: explain the safety rule in the text and why it matters"
+      ],
+      "crossCurricular": "Science: heat, burns and keeping safe near hot things",
+      "smsc": "Moral: following safety rules to protect our family",
+      "keywords": [
+        {
+          "term": "المِدْفَأَةُ (al-midfa'ah)",
+          "def": "the heater"
+        },
+        {
+          "term": "بَارِد (barid)",
+          "def": "cold"
+        },
+        {
+          "term": "حَارّ (harr)",
+          "def": "hot"
+        },
+        {
+          "term": "لَا تَلْمِسُوا (la talmisu)",
+          "def": "do not touch (to a group)"
+        },
+        {
+          "term": "نُطْفِئُ (nutfi'u)",
+          "def": "we turn off, we put out"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Heaters keep us warm in winter. What rules should a family follow to stay safe near a heater?",
+        "a": "Do not touch it; keep things away; turn it off before sleeping."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ taught us not to leave a fire burning in our homes when we go to sleep (Sahih al-Bukhari and Sahih Muslim). Safety at home is part of our deen.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. كَمْ عُمْرُكَ؟ asks your: A) age B) hobby",
+          "a": "A) age",
+          "mins": 1,
+          "options": [
+            "age",
+            "hobby"
+          ]
+        },
+        {
+          "q": "What does تَشَرَّفْنَا mean?",
+          "a": "Pleased to meet you",
+          "mins": 1
+        },
+        {
+          "q": "Which room is غُرْفَةُ الجُلُوسِ?",
+          "a": "The living room",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The text",
+          "quote": {
+            "text": "الجَوُّ بَارِدٌ فِي الشِّتَاءِ. فِي غُرْفَةِ الجُلُوسِ مِدْفَأَةٌ. تُشْعِلُ أُمِّي المِدْفَأَةَ فِي المَسَاءِ. نَجْلِسُ قُرْبَ المِدْفَأَةِ وَنَقْرَأُ. قَالَ أَبِي: لَا تَلْمِسُوا المِدْفَأَةَ، هِيَ حَارَّةٌ جِدًّا! نُطْفِئُ المِدْفَأَةَ قَبْلَ النَّوْمِ.",
+            "source": "Our own text for 'the heater' (Kitabi version: CHECK IN KITABI)"
+          },
+          "note": "Begin with bismillah. Read twice. Meaning: The weather is cold in winter. In the living room there is a heater. My mother turns on the heater in the evening. We sit near the heater and read. My father said: do not touch the heater, it is very hot! We turn off the heater before sleeping."
+        },
+        {
+          "heading": "Verbs in the text",
+          "table": {
+            "head": [
+              "Verb",
+              "Who",
+              "English"
+            ],
+            "rows": [
+              [
+                "تُشْعِلُ",
+                "she",
+                "turns on, lights"
+              ],
+              [
+                "نَجْلِسُ / نَقْرَأُ",
+                "we",
+                "sit / read"
+              ],
+              [
+                "لَا تَلْمِسُوا",
+                "you all",
+                "do not touch"
+              ],
+              [
+                "نُطْفِئُ",
+                "we",
+                "turn off"
+              ]
+            ]
+          },
+          "note": "نَـ at the start means we; تَـ can mean she. لَا + verb gives a 'do not' rule."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "When does the family turn off the heater?",
+            "options": [
+              "فِي المَسَاءِ (in the evening)",
+              "قَبْلَ النَّوْمِ (before sleeping)",
+              "فِي الصَّيْفِ (in summer)"
+            ],
+            "answer": 1,
+            "why": "The text says نُطْفِئُ المِدْفَأَةَ قَبْلَ النَّوْمِ."
+          }
+        },
+        {
+          "heading": "Reading check: how to answer",
+          "bullets": [
+            "Read the question word first",
+            "Find the line in the text",
+            "Answer in a short Arabic phrase"
+          ],
+          "note": "The reading check covers today's text and the two dialogues. Pupils work alone; 10 minutes."
+        }
+      ],
+      "practice": [
+        {
+          "q": "أَيْنَ المِدْفَأَةُ؟",
+          "a": "فِي غُرْفَةِ الجُلُوسِ (in the living room)",
+          "mins": 2,
+          "model": "أَيْنَ asks where.\nFind المِدْفَأَة with a place: فِي غُرْفَةِ الجُلُوسِ مِدْفَأَةٌ.\nAnswer: fi ghurfati l-julus."
+        },
+        {
+          "q": "مَنْ يُشْعِلُ المِدْفَأَةَ؟",
+          "a": "أُمِّي (my mother)",
+          "mins": 1
+        },
+        {
+          "q": "Why must they not touch it?",
+          "a": "هِيَ حَارَّةٌ جِدًّا (it is very hot)",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (reading check, portal response box or paper): 1) مَتَى تُشْعِلُ الأُمُّ المِدْفَأَةَ؟ 2) مَاذَا تَفْعَلُ الأُسْرَةُ قُرْبَ المِدْفَأَةِ؟ 3) Match: بَارِد، حَارّ، مُسَابَقَة، هِوَايَة with cold, hot, competition, hobby. 4) In the school event dialogue, which day is the competition?",
+          "a": "1) فِي المَسَاءِ 2) تَجْلِسُ وَتَقْرَأُ (they sit and read) 3) بَارِد cold; حَارّ hot; مُسَابَقَة competition; هِوَايَة hobby 4) يَوْمَ الخَمِيسِ",
+          "mins": 8,
+          "model": "Teacher does question 1 aloud: مَتَى asks when; find تُشْعِلُ in the text; the answer is فِي المَسَاءِ."
+        },
+        {
+          "q": "Extend: Write the father's safety rule in Arabic and in English.",
+          "a": "لَا تَلْمِسُوا المِدْفَأَةَ، هِيَ حَارَّةٌ جِدًّا. Do not touch the heater, it is very hot.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Write one more safety rule with لَا, e.g. لَا تَتْرُكُوا ... (do not leave ...).",
+          "a": "For example: لَا تَتْرُكُوا المِدْفَأَةَ مُشْتَعِلَةً فِي اللَّيْلِ.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "What is المِدْفَأَة? A) the heater B) the window C) the kitchen",
+          "a": "A) the heater",
+          "mins": 1,
+          "options": [
+            "the heater",
+            "the window",
+            "the kitchen"
+          ]
+        },
+        {
+          "q": "Big question: what did you do to show you understood the text?",
+          "a": "Found the question word, found the line, answered in Arabic.",
+          "mins": 1
+        }
+      ],
+      "homework": "Read the heater text to an adult at home and check together that your home heaters are safe.",
+      "send": "SEND: text with a picture above each key word and two-choice answers. EAL: English line under each sentence. Stretch: retell the text in the past with أَشْعَلَتْ (she turned on).",
+      "resources": [
+        "Tarbiyyah Primary Year 6 Arabic curriculum map (2023-24), Spring 1 week 3 and the review (row 6 reading check)",
+        "Kitabi: reading text, the heater (CHECK IN KITABI); our own text on the slides until checked",
+        "Text and reading check sheet (portal worksheet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "electric heater",
+          "alt": "An electric heater",
+          "for": "keywords"
+        },
+        {
+          "find": "fireplace with burning logs",
+          "alt": "A fire in a fireplace",
+          "for": "hook"
+        }
+      ],
+      "duration": 45
     }
   ]
 }
