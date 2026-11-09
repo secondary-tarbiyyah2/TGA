@@ -2,7 +2,7 @@
   "subject": "Islamic Studies",
   "year": "y1",
   "board": "TGA Islamic Studies scheme (aqeedah, fiqh, seerah, hadith, akhlaq)",
-  "source": "Adapted from TGA Drive RE/Islamic Studies folder (Al-Baseerah Salah quizzes EYFS-KS1/KS2: blessings, gratitude, amanah, best act after the shahadah, praying on time); National Curriculum RE (KS1)",
+  "source": "Adapted from TGA Drive RE/Islamic Studies folder (Al-Baseerah Salah quizzes EYFS-KS1/KS2: blessings, gratitude, amanah, best act after the shahadah, praying on time); National Curriculum RE (KS1) | Spring 1 2027 (lessons 7 and 8 upgraded, 13 new): TGA Year 1 Curriculum Pack (Islamic Studies Spring 1 weeks 1, 3, 5); hadith of the five pillars (Bukhari 8, Muslim 16); school-approved children's Islamic Studies texts TO CONFIRM",
   "lessons": [
     {
       "unit": "Unit 1: Allah, the One and Only",
@@ -564,198 +564,438 @@
       "send": "SEND/EAL: story sequence cards. Stretch: explain why 'read' was the first command."
     },
     {
-      "unit": "Unit 3: The pillars of Islam and salah",
+      "unit": "Spring 1: Islam and the five pillars",
       "n": 7,
       "title": "The five pillars of Islam",
-      "duration": 30,
+      "bigQuestion": "What would happen to a house if one of its pillars was taken away?",
       "objectives": [
-        "Name the five pillars of Islam",
-        "Know the Prophet ﷺ taught them",
-        "Explain one pillar simply"
+        "To understand that Islam is built on five pillars, like a strong building"
       ],
+      "successCriteria": [
+        "All: name the five pillars",
+        "Most: match each pillar to something a Muslim does",
+        "Some: explain why a building needs all of its pillars"
+      ],
+      "smsc": "Spiritual: Islam gives each day a shape through the five pillars",
       "keywords": [
         {
-          "term": "pillar",
-          "def": "a strong post that holds up a building"
+          "term": "pillar (رُكْن)",
+          "def": "a strong post that holds a building up"
         },
         {
-          "term": "shahadah",
-          "def": "the declaration of faith"
+          "term": "Islam (إِسْلَام)",
+          "def": "our way of life: obeying Allah"
         },
         {
-          "term": "zakah",
-          "def": "giving a set part of wealth to those in need"
+          "term": "shahadah (شَهَادَة)",
+          "def": "saying Allah is One and Muhammad ﷺ is His Messenger"
+        },
+        {
+          "term": "salah (صَلَاة)",
+          "def": "the prayer five times a day"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "What would happen to a house if one of its pillars was taken away?",
+        "a": "It would wobble or fall down. Islam has five pillars and we need all five."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'I did not create jinn and mankind except to worship Me' (adh-Dhariyat 51:56). The five pillars show us how to worship Allah.",
+        "at": "start"
+      },
       "starter": [
-        "What was the first word of revelation?",
-        "Who is Al-Amin?",
-        "What do we say before eating?"
+        {
+          "q": "Who made you and everything around you?",
+          "a": "Allah",
+          "mins": 1,
+          "options": [
+            "Allah",
+            "The sun",
+            "People"
+          ]
+        },
+        {
+          "q": "How many gods are there?",
+          "a": "One: Allah",
+          "mins": 1,
+          "options": [
+            "One: Allah",
+            "Two",
+            "Many"
+          ]
+        },
+        {
+          "q": "Say one of Allah's names.",
+          "a": "For example: Ar-Rahman (the Most Merciful)",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "A building with pillars",
+          "heading": "Islam is built on five",
           "bullets": [
-            "Islam is like a strong building",
-            "It is built on five pillars",
-            "Each one matters"
+            "The Prophet ﷺ said Islam is built on five",
+            "Like five pillars holding up a building",
+            "Bukhari and Muslim reported it"
           ],
-          "note": "Draw a building with five pillars. The Prophet ﷺ said Islam is built on five (Bukhari and Muslim, narrated by Ibn Umar). Ask children to guess what they might be."
+          "note": "Hold up five fingers. Tell the class the Prophet ﷺ taught that Islam is built on five things (Bukhari 8, Muslim 16). Build a 'house' with five pencils under a book: take one away and watch it tip."
         },
         {
-          "heading": "1. Shahadah",
-          "bullets": [
-            "Saying 'La ilaha illa Allah'",
-            "Saying 'Muhammadur Rasulullah'",
-            "It means: no god but Allah"
-          ],
-          "note": "Explain it fully: there is none worthy of worship but Allah, and Muhammad ﷺ is Allah's messenger. Children echo. This is the first pillar and the foundation."
+          "heading": "The five pillars on five fingers",
+          "bullets": [],
+          "note": "Point to each finger in turn and say the pillar together. Pupils copy on camera.",
+          "table": {
+            "head": [
+              "Finger",
+              "Pillar",
+              "What we do"
+            ],
+            "rows": [
+              [
+                "Thumb",
+                "Shahadah (شَهَادَة)",
+                "Say Allah is One"
+              ],
+              [
+                "Pointer",
+                "Salah (صَلَاة)",
+                "Pray five times a day"
+              ],
+              [
+                "Middle",
+                "Zakah (زَكَاة)",
+                "Give to people in need"
+              ],
+              [
+                "Ring",
+                "Sawm (صَوْم)",
+                "Fast in Ramadan"
+              ],
+              [
+                "Little",
+                "Hajj (حَجّ)",
+                "Visit the Ka'bah once"
+              ]
+            ]
+          }
         },
         {
-          "heading": "2 and 3. Salah and zakah",
+          "heading": "Quick check",
           "bullets": [
-            "Salah: five daily prayers",
-            "Zakah: giving to those in need",
-            "Both help us love Allah and people"
+            "Think, then vote"
           ],
-          "note": "Say salah = prayer; zakah = a set amount of wealth for the needy. Keep amounts out; that is for older children. Link to kindness."
-        },
-        {
-          "heading": "4 and 5. Sawm and Hajj",
-          "bullets": [
-            "Sawm: fasting in Ramadan",
-            "Hajj: visiting Makkah if able",
-            "They teach patience and thanks"
-          ],
-          "note": "Fasting from dawn to sunset; Hajj for those who are able. Reassure children that the young do not need to fast. Show pictures of the Kaaba."
-        },
-        {
-          "heading": "Pillar chant",
-          "bullets": [
-            "Shahadah, salah, zakah",
-            "Sawm and Hajj",
-            "Five pillars of Islam"
-          ],
-          "note": "Chant with five finger counts. Check each child can name at least three. Repeat."
+          "note": "Launch the Teams poll. Praise everyone who tries.",
+          "check": {
+            "q": "Which pillar is praying five times a day?",
+            "options": [
+              "Salah",
+              "Hajj",
+              "Zakah"
+            ],
+            "answer": 0,
+            "why": "Salah is prayer. Hajj is the journey to Makkah; zakah is giving."
+          }
         }
       ],
       "practice": [
-        "Name Allah's names: Ar-Rahman and ___",
-        "Who is the last Prophet?",
-        "What is a pillar?"
+        {
+          "q": "Say the five pillars on your fingers.",
+          "a": "Shahadah, salah, zakah, sawm, Hajj",
+          "mins": 2,
+          "model": "I hold my thumb: shahadah. Pointer: salah. Middle: zakah. Ring: sawm. Little finger: Hajj."
+        },
+        {
+          "q": "Fasting in Ramadan is called ...",
+          "a": "Sawm",
+          "mins": 1,
+          "options": [
+            "Sawm",
+            "Salah"
+          ]
+        }
       ],
       "independent": [
-        "Label the five pillars on the building picture",
-        "Match the pillar to the picture: shahadah / salah / zakah / sawm / Hajj",
-        "Write two sentences about your favourite pillar"
+        {
+          "q": "Draw a building with five pillars. Write one pillar on each.",
+          "a": "Five pillars labelled: shahadah, salah, zakah, sawm, Hajj",
+          "mins": 4,
+          "model": "Teacher draws a roof with the word Islam, then five lines underneath and writes 'shahadah' on the first."
+        },
+        {
+          "q": "Extend: tick the pillar you can do every day.",
+          "a": "Salah (and saying the shahadah)",
+          "mins": 1
+        },
+        {
+          "q": "Stretch: why does the house need all five pillars?",
+          "a": "Without one, it is not complete and strong.",
+          "mins": 1
+        }
       ],
       "exit": [
-        "Name three pillars.",
-        "What does the shahadah say?"
+        {
+          "q": "How many pillars of Islam are there?",
+          "a": "Five",
+          "mins": 1,
+          "options": [
+            "Five",
+            "Three",
+            "Ten"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what happens if a pillar is missing?",
+          "a": "The building is not strong. We need all five pillars.",
+          "mins": 1
+        }
       ],
-      "homework": "Teach your family the five pillars with finger counting.",
-      "send": "SEND/EAL: building picture with pre-written labels. Stretch: explain what the pillars teach us."
+      "homework": "Show your family the five pillars on your fingers and teach them to one person.",
+      "send": "SEND: five-finger picture card with one word on each. EAL: say each pillar after the teacher. Stretch: say what each pillar means in a sentence.",
+      "resources": [
+        "Slides",
+        "School-approved children's Islamic Studies book (TO CONFIRM title with the Islamic Studies lead)",
+        "Five pencils and a book (to model the pillars)",
+        "Pupil PDF worksheet: five-pillar building",
+        "Paper and colouring pencils"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mosque of Cordoba columns arches",
+          "alt": "Rows of strong pillars inside a building",
+          "for": "hook"
+        },
+        {
+          "find": "prayer rug",
+          "alt": "A prayer mat for salah",
+          "for": "keywords"
+        },
+        {
+          "find": "Kaaba Masjid al-Haram aerial",
+          "alt": "The Ka'bah in Makkah, the place of Hajj",
+          "for": "teach:2"
+        }
+      ]
     },
     {
-      "unit": "Unit 3: The pillars of Islam and salah",
+      "unit": "Spring 1: Islam and the five pillars",
       "n": 8,
-      "title": "The five daily prayers",
-      "duration": 30,
+      "title": "The shahadah and the five daily prayers",
+      "bigQuestion": "If you could talk to Allah five times every day, what would you say to Him?",
       "objectives": [
-        "Name the five daily prayers in order",
-        "Match each prayer to a time of day",
-        "Know salah is the second pillar"
+        "To understand what the shahadah means and know the names of the five daily prayers"
       ],
+      "successCriteria": [
+        "All: say the shahadah with the teacher",
+        "Most: name the five prayers in order",
+        "Some: match each prayer to a time of day"
+      ],
+      "smsc": "Spiritual: salah is a daily meeting with Allah",
       "keywords": [
         {
-          "term": "Fajr",
+          "term": "shahadah (شَهَادَة)",
+          "def": "the words that say Allah is One and Muhammad ﷺ is His Messenger"
+        },
+        {
+          "term": "salah (صَلَاة)",
+          "def": "the prayer"
+        },
+        {
+          "term": "Fajr (فَجْر)",
           "def": "the dawn prayer"
         },
         {
-          "term": "Dhuhr",
-          "def": "the midday prayer"
-        },
-        {
-          "term": "Asr",
-          "def": "the afternoon prayer"
-        },
-        {
-          "term": "Maghrib",
+          "term": "Maghrib (مَغْرِب)",
           "def": "the sunset prayer"
         },
         {
-          "term": "Isha",
+          "term": "Isha (عِشَاء)",
           "def": "the night prayer"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you could talk to Allah five times every day, what would you say to Him?",
+        "a": "Thank you, help me, forgive me. Salah is our special time with Allah."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, prayer has been decreed upon the believers at fixed times' (an-Nisa 4:103).",
+        "at": "start"
+      },
       "starter": [
-        "Name the first pillar.",
-        "What is the second pillar?",
-        "Say the first two ayat of Surah al-Ikhlas."
+        {
+          "q": "How many pillars of Islam are there?",
+          "a": "Five",
+          "mins": 1,
+          "options": [
+            "Five",
+            "Six",
+            "Two"
+          ]
+        },
+        {
+          "q": "What is the first pillar?",
+          "a": "Shahadah",
+          "mins": 1,
+          "options": [
+            "Shahadah",
+            "Hajj",
+            "Sawm"
+          ]
+        },
+        {
+          "q": "What is the second pillar?",
+          "a": "Salah (prayer)",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Five times a day",
+          "heading": "The shahadah",
           "bullets": [
-            "Fajr: before sunrise",
-            "Dhuhr: after midday",
-            "Asr: afternoon"
+            "Allah is the only One we worship",
+            "Muhammad ﷺ is His Messenger",
+            "Muslims say it and believe it"
           ],
-          "note": "Show a sun path diagram. Allah made salah compulsory in five parts of the day. Ask children when they wake up and go to bed. Link to a daily timetable."
+          "note": "Say the shahadah slowly with pupils: أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ. Explain in simple words: I say for sure there is no god but Allah, and Muhammad ﷺ is the Messenger of Allah."
         },
         {
-          "heading": "Evening and night",
-          "bullets": [
-            "Maghrib: just after sunset",
-            "Isha: when it is dark",
-            "Five prayers in a day"
-          ],
-          "note": "Add the last two on the diagram. Count with five fingers. Pupils say the order together. Mention the times change every day with the sun."
+          "heading": "Five prayers through the day",
+          "bullets": [],
+          "note": "Show the day on a line: dark, sunrise, midday, afternoon, sunset, night. Pupils point as you say each prayer.",
+          "timeline": [
+            {
+              "label": "Dawn",
+              "text": "Fajr (فَجْر)"
+            },
+            {
+              "label": "Midday",
+              "text": "Dhuhr (ظُهْر)"
+            },
+            {
+              "label": "Afternoon",
+              "text": "Asr (عَصْر)"
+            },
+            {
+              "label": "Sunset",
+              "text": "Maghrib (مَغْرِب)"
+            },
+            {
+              "label": "Night",
+              "text": "Isha (عِشَاء)"
+            }
+          ]
         },
         {
-          "heading": "Why do we pray?",
+          "heading": "Quick check",
           "bullets": [
-            "To thank Allah",
-            "To ask Allah for help",
-            "To keep close to Allah"
+            "Think, then vote"
           ],
-          "note": "Salah is a gift. In the Al-Baseerah Salah talk children learned that salah is the best act after the shahadah. Ask: who gave us everything? Allah. The Prophet ﷺ said prayer at its proper time is the most beloved deed to Allah (Bukhari and Muslim)."
-        },
-        {
-          "heading": "Pray on time",
-          "bullets": [
-            "Pray early in the time",
-            "Do not say 'five more minutes'",
-            "Be ready when the adhan calls"
-          ],
-          "note": "Role-play: parent calls it is time for prayer. Praise 'I am coming now'. Link to prioritising Allah's call. Be sensitive to families who are not praying yet; encourage children's love of salah."
-        },
-        {
-          "heading": "Prayer clock",
-          "bullets": [
-            "Draw the sun on a clock",
-            "Place the five prayers",
-            "Say them in order"
-          ],
-          "note": "Give a prayer-time clock activity. Children point to where on the clock each prayer might be. Check order."
+          "note": "Launch the poll; then ask pupils to show the prayer on their hands.",
+          "check": {
+            "q": "Which prayer is at sunset?",
+            "options": [
+              "Maghrib",
+              "Fajr",
+              "Dhuhr"
+            ],
+            "answer": 0,
+            "why": "Maghrib is at sunset. Fajr is at dawn and Dhuhr at midday."
+          }
         }
       ],
       "practice": [
-        "Name the 5 pillars (any 3).",
-        "What is the shahadah?",
-        "What is the second pillar?"
+        {
+          "q": "Say the five prayers in order.",
+          "a": "Fajr, Dhuhr, Asr, Maghrib, Isha",
+          "mins": 2,
+          "model": "I start with the morning: Fajr. Then midday: Dhuhr. Afternoon: Asr. Sunset: Maghrib. Night: Isha."
+        },
+        {
+          "q": "Which prayer do we pray before school?",
+          "a": "Fajr",
+          "mins": 1,
+          "options": [
+            "Fajr",
+            "Isha"
+          ]
+        }
       ],
       "independent": [
-        "Put the five prayers in order",
-        "Match each prayer to a picture of the sun or moon",
-        "Complete: I pray Fajr when ______"
+        {
+          "q": "Draw five suns or moons for a day and label each prayer.",
+          "a": "Fajr (dawn), Dhuhr (midday), Asr (afternoon), Maghrib (sunset), Isha (night)",
+          "mins": 4,
+          "model": "Teacher draws a small sun coming up and writes Fajr under it, then a high sun for Dhuhr."
+        },
+        {
+          "q": "Extend: which prayer is in the dark night?",
+          "a": "Isha",
+          "mins": 1
+        },
+        {
+          "q": "Stretch: what does the shahadah say about Allah?",
+          "a": "There is no god but Allah: He is the only One we worship.",
+          "mins": 1
+        }
       ],
       "exit": [
-        "Name the 5 daily prayers.",
-        "Which prayer is at sunset?"
+        {
+          "q": "The midday prayer is ...",
+          "a": "Dhuhr",
+          "mins": 1,
+          "options": [
+            "Dhuhr",
+            "Asr",
+            "Isha"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what is one thing you can say to Allah in your prayer?",
+          "a": "For example: thank You, Allah, for my family.",
+          "mins": 1
+        }
       ],
-      "homework": "Look at a prayer timetable at home and say which prayer is next.",
-      "send": "SEND/EAL: picture timeline; practise names by echo. Stretch: explain why prayer on time is loved by Allah."
+      "homework": "Listen for each adhan at home this week and tell your family which prayer it is.",
+      "send": "SEND: picture strip of the sky at five times of day. EAL: repeat the prayer names. Stretch: say how many prayers are in a week (35).",
+      "resources": [
+        "Slides",
+        "School-approved children's Islamic Studies book (TO CONFIRM title with the Islamic Studies lead)",
+        "Shahadah card in Arabic with meaning",
+        "Pupil PDF worksheet: my prayer day",
+        "Colouring pencils"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "sunrise over sea dawn",
+          "alt": "The sky at dawn, the time of Fajr",
+          "for": "teach:2"
+        },
+        {
+          "find": "sunset desert sky",
+          "alt": "The sky at sunset, the time of Maghrib",
+          "for": "keywords"
+        },
+        {
+          "find": "prayer rug",
+          "alt": "A prayer mat ready for salah",
+          "for": "hook"
+        }
+      ]
     },
     {
       "unit": "Unit 3: The pillars of Islam and salah",
@@ -1128,6 +1368,222 @@
       ],
       "homework": "Look after one gift from Allah this week and tell us how.",
       "send": "SEND/EAL: picture sort and frames. Stretch: explain the bike example in your own words."
+    },
+    {
+      "unit": "Spring 1: Islam and the five pillars",
+      "n": 13,
+      "title": "Zakah and sadaqah: giving to people in need",
+      "bigQuestion": "If you had one apple and your friend had none, what would you do?",
+      "objectives": [
+        "To understand why Muslims give zakah and sadaqah to people in need"
+      ],
+      "successCriteria": [
+        "All: say what zakah and sadaqah are",
+        "Most: give two ways a child can give sadaqah",
+        "Some: name sawm and Hajj as the last two pillars"
+      ],
+      "smsc": "Moral and social: caring for people in need",
+      "keywords": [
+        {
+          "term": "zakah (زَكَاة)",
+          "def": "money Muslims must give each year to people in need"
+        },
+        {
+          "term": "sadaqah (صَدَقَة)",
+          "def": "any good thing we give or do to help"
+        },
+        {
+          "term": "sawm (صَوْم)",
+          "def": "fasting in Ramadan"
+        },
+        {
+          "term": "Hajj (حَجّ)",
+          "def": "the visit to the Ka'bah in Makkah"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you had one apple and your friend had none, what would you do?",
+        "a": "Share it. Islam teaches us to give to people who need help."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And establish prayer and give zakah' (al-Baqarah 2:43).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Name the five prayers.",
+          "a": "Fajr, Dhuhr, Asr, Maghrib, Isha",
+          "mins": 1
+        },
+        {
+          "q": "What is the first pillar?",
+          "a": "Shahadah",
+          "mins": 1,
+          "options": [
+            "Shahadah",
+            "Salah",
+            "Zakah"
+          ]
+        },
+        {
+          "q": "Which prayer is at dawn?",
+          "a": "Fajr",
+          "mins": 1,
+          "options": [
+            "Fajr",
+            "Isha",
+            "Asr"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Zakah: the third pillar",
+          "bullets": [
+            "Muslims with enough money must give some",
+            "It goes to poor and needy people",
+            "Giving makes our money clean and blessed"
+          ],
+          "note": "Use real coins: pretend you have 40 coins and give 1 away. Keep it simple: grown-ups with enough money give a small part every year."
+        },
+        {
+          "heading": "Sadaqah: everyone can give",
+          "bullets": [
+            "Sadaqah is any good we give",
+            "Even half a date helps",
+            "Helping and kind words count too"
+          ],
+          "note": "The Prophet ﷺ said to protect yourselves from the Fire even with half a date (Bukhari and Muslim). Ask: what can a child give? Toys, help, a smile, a kind word."
+        },
+        {
+          "heading": "Sort it",
+          "bullets": [],
+          "note": "Read each card. Pupils show 1 for zakah or 2 for sadaqah on their fingers.",
+          "sort": {
+            "columns": [
+              "Zakah",
+              "Sadaqah"
+            ],
+            "cards": [
+              "A grown-up gives part of their savings each year",
+              "I share my lunch",
+              "I help Mum tidy up",
+              "Money given every year to the poor",
+              "I give my old coat to someone cold"
+            ],
+            "answer": [
+              0,
+              1,
+              1,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Think, then vote"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Which one can every child do?",
+            "options": [
+              "Give sadaqah",
+              "Go on Hajj alone",
+              "Pay zakah on a house"
+            ],
+            "answer": 0,
+            "why": "Sadaqah can be any good deed, so every child can give it."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say two kinds of sadaqah a child can give.",
+          "a": "For example: share food, help someone",
+          "mins": 2,
+          "model": "I can share my snack with my brother. I can carry the shopping for Grandma. Both are sadaqah."
+        },
+        {
+          "q": "Fasting in Ramadan is the pillar called ...",
+          "a": "Sawm",
+          "mins": 1,
+          "options": [
+            "Sawm",
+            "Hajj"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Draw two hands giving. Write one way you will give sadaqah this week.",
+          "a": "For example: I will give my toy car to my cousin.",
+          "mins": 3,
+          "model": "Teacher draws two hands and writes: I will help Dad wash the dishes."
+        },
+        {
+          "q": "Extend: name all five pillars.",
+          "a": "Shahadah, salah, zakah, sawm, Hajj",
+          "mins": 1
+        },
+        {
+          "q": "Stretch: why does Allah love it when we give?",
+          "a": "It helps people and shows we care, and Allah rewards it.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Zakah is given to ...",
+          "a": "People in need",
+          "mins": 1,
+          "options": [
+            "People in need",
+            "Rich people",
+            "No one"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what would you do with the apple, and why?",
+          "a": "Share it, because Islam teaches us to give.",
+          "mins": 1
+        }
+      ],
+      "homework": "Do one act of sadaqah at home and tell the class about it next lesson.",
+      "send": "SEND: picture cards of giving. EAL: model sentence 'I can give ...'. Stretch: explain the difference between zakah and sadaqah.",
+      "resources": [
+        "Slides",
+        "School-approved children's Islamic Studies book (TO CONFIRM title with the Islamic Studies lead)",
+        "A few coins (to show giving a part)",
+        "Pupil PDF worksheet: my sadaqah hands",
+        "Colouring pencils"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "dates fruit bowl",
+          "alt": "A bowl of dates to share",
+          "for": "hook"
+        },
+        {
+          "find": "charity box coins",
+          "alt": "A charity box for giving",
+          "for": "keywords"
+        },
+        {
+          "find": "British coins pile",
+          "alt": "Coins for the zakah example",
+          "for": "teach:1"
+        }
+      ]
     }
   ]
 }
