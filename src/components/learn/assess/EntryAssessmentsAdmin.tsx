@@ -7,6 +7,7 @@ import { EmptyState, Notice, StatusChip, Switch, ui, type Tone } from "@/compone
 import { Icon } from "@/components/learn/Icon";
 import { EntryReport, type ReportData } from "@/components/learn/assess/EntryReport";
 import { MathText } from "@/components/learn/assess/MathText";
+import { printElement } from "@/components/learn/printScope";
 
 type Row = {
   id: string; candidate_name: string; year: number; status: string; created_at: string; started_at: string | null; submitted_at: string | null; completed_at: string | null;
@@ -358,6 +359,8 @@ export type WritingMarkRow = {
 };
 
 function Detail({ row, onClose, onChanged, onAct }: { row: Row; onClose: () => void; onChanged: () => void; onAct: (id: string, a: "reissue" | "email" | "void", extra?: Record<string, unknown>) => Promise<ActResult | null> }) {
+  // Print only this report (not the page behind the drawer), laid out for paper.
+  const printRef = useRef<HTMLDivElement>(null);
   const supabase = getSupabaseClient();
   const [full, setFull] = useState<Full | null>(null);
   const [wmarks, setWmarks] = useState<WritingMarkRow[]>([]);
@@ -414,7 +417,7 @@ function Detail({ row, onClose, onChanged, onAct }: { row: Row; onClose: () => v
 
   return (
     <div className="fixed inset-0 z-50 flex justify-end bg-ink/40 print:static print:block print:bg-transparent" onMouseDown={(e) => e.target === e.currentTarget && onClose()}>
-      <div role="dialog" aria-modal="true" aria-labelledby="ea-title" className="flex h-full w-full max-w-4xl flex-col overflow-y-auto bg-cream shadow-2xl print:h-auto print:max-w-none print:overflow-visible print:bg-white print:shadow-none">
+      <div ref={printRef} role="dialog" aria-modal="true" aria-labelledby="ea-title" className="flex h-full w-full max-w-4xl flex-col overflow-y-auto bg-cream shadow-2xl print:h-auto print:max-w-none print:overflow-visible print:bg-white print:shadow-none">
         <div className="sticky top-0 z-10 flex items-start justify-between gap-3 border-b border-gold-light bg-white px-5 py-4 print:static print:border-0 print:px-0">
           <div>
             <h2 id="ea-title" className="text-xl font-semibold text-ink">{row.candidate_name}</h2>
@@ -422,7 +425,7 @@ function Detail({ row, onClose, onChanged, onAct }: { row: Row; onClose: () => v
           </div>
           <div className="flex items-center gap-2 print:hidden">
             <StatusChip tone={(STATUS[status] || STATUS.issued).tone}>{(STATUS[status] || STATUS.issued).label}</StatusChip>
-            <button type="button" onClick={() => window.print()} className={`${ui.btnSecondary} ${ui.sm}`}>Print</button>
+            <button type="button" onClick={() => printElement(printRef.current)} className={`${ui.btnSecondary} ${ui.sm}`}>Print</button>
             <button type="button" onClick={onClose} aria-label="Close" className="portal-icon-btn"><Icon name="x" /></button>
           </div>
         </div>
