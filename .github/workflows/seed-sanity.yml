@@ -24,6 +24,10 @@ concurrency:
   group: seed-sanity
   cancel-in-progress: false
 
+# Least privilege (security audit T20): this workflow only reads the repo.
+permissions:
+  contents: read
+
 jobs:
   seed:
     runs-on: ubuntu-latest

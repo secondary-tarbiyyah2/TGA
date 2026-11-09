@@ -93,6 +93,10 @@ concurrency:
   group: deploy-site
   cancel-in-progress: false
 
+# Least privilege (security audit T20): this workflow only reads the repo.
+permissions:
+  contents: read
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -116,7 +120,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - uses: supabase/setup-cli@v1
+      - uses: supabase/setup-cli@1dedf2c611547ede7232d26866dd3c56ab903bbb # v1.7.3
         with:
           version: latest
 
@@ -214,7 +218,7 @@ jobs:
           if grep -q "__PREVIEW_KEY__" out-main/.htaccess out-learn/.htaccess; then echo "::error::preview key placeholder left in .htaccess"; exit 1; fi
 
       - name: Deploy main site to FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: SamKirkland/FTP-Deploy-Action@8e83cea8672e3fbcbb9fdafff34debf6ae4c5f65 # v4.3.5
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
@@ -257,7 +261,7 @@ jobs:
       # matter what server-dir is given (confirmed live — see top comment).
       - name: Deploy /learn portal to FTP (subdomain)
         if: env.FTP_LEARN_USERNAME != ''
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: SamKirkland/FTP-Deploy-Action@8e83cea8672e3fbcbb9fdafff34debf6ae4c5f65 # v4.3.5
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_LEARN_USERNAME }}

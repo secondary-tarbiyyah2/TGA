@@ -10,6 +10,10 @@ name: Verify live deploy matches latest build
 on:
   workflow_dispatch:
 
+# Least privilege (security audit T20): this workflow only reads the repo.
+permissions:
+  contents: read
+
 jobs:
   verify:
     runs-on: ubuntu-latest

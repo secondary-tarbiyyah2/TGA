@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { marked } from "marked";
+import { renderSafeMarkdown } from "@/lib/safeMarkdown";
 import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
 import { Kicker } from "@/components/Section";
@@ -57,7 +57,7 @@ export default async function PolicyPage({ params }: { params: Promise<{ slug: s
   // table needs sideways scrolling; wider screens keep the normal grid.
   // Each section heading gets an id, and the numbered outline down the side
   // (a "Contents" button on phones) is built from them.
-  const { html, outline } = outlinePolicyHtml(labelTableCells(await marked.parse(policy.body, { gfm: true })));
+  const { html, outline } = outlinePolicyHtml(labelTableCells(renderSafeMarkdown(policy.body)));
   // Lines the hero text up with the reading column beside the outline.
   const column = outline.length >= 2 ? "max-w-3xl lg:ml-[17.5rem] xl:ml-[20.5rem]" : "max-w-3xl mx-auto";
   const metaRows = POLICY_META_FIELDS.filter((f) => policy.meta[f.key]);

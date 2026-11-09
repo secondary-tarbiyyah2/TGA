@@ -35,14 +35,36 @@ Deno.serve(async (req) => {
     (roleRows || []).some((r) => r.role === "head_teacher" || r.role === "admin");
   if (!canManage) return jsonResponse({ ok: false, error: "forbidden" }, 403);
 
-  let body: { slot_id?: string; cover_date?: string; covering_teacher_user_id?: string; reason?: string };
+  let body: { action?: string; cover_id?: string; slot_id?: string; cover_date?: string; covering_teacher_user_id?: string; reason?: string; absence_id?: string };
   try {
     body = await req.json();
   } catch {
     return jsonResponse({ ok: false, error: "invalid_json" }, 400);
   }
 
+  // Undo a cover from the cover log (T30): the dated lesson goes back to the
+  // teacher who would have taught it.
+  if (body.action === "remove") {
+    if (!body.cover_id) return jsonResponse({ ok: false, error: "missing_fields" }, 400);
+    const { data: cover } = await serviceClient
+      .from("cover_assignments")
+      .select("id, slot_id, cover_date, original_teacher_user_id, covering_teacher_user_id")
+      .eq("id", body.cover_id)
+      .maybeSingle();
+    if (!cover) return jsonResponse({ ok: false, error: "cover_not_found" }, 404);
+    const { error: delErr } = await serviceClient.from("cover_assignments").delete().eq("id", cover.id);
+    if (delErr) return jsonResponse({ ok: false, error: "db_rejected", detail: delErr.message }, 409);
+    await serviceClient
+      .from("lesson_instances")
+      .update({ teacher_user_id: cover.original_teacher_user_id })
+      .eq("timetable_slot_id", cover.slot_id)
+      .eq("date", cover.cover_date)
+      .eq("teacher_user_id", cover.covering_teacher_user_id);
+    return jsonResponse({ ok: true });
+  }
+
   const { slot_id, cover_date, covering_teacher_user_id, reason } = body;
+  const absence_id = typeof body.absence_id === "string" && /^[0-9a-f-]{36}$/i.test(body.absence_id) ? body.absence_id : null;
   if (!slot_id || !cover_date || !covering_teacher_user_id) {
     return jsonResponse({ ok: false, error: "missing_fields" }, 400);
   }
@@ -97,6 +119,7 @@ Deno.serve(async (req) => {
     original_teacher_user_id: originalTeacher,
     covering_teacher_user_id,
     reason: reason || null,
+    absence_id,
     created_by: userData.user.id,
   });
   if (insertErr) {

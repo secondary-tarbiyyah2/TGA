@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { marked } from "marked";
+import { renderSafeMarkdown } from "@/lib/safeMarkdown";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { triggerPublish } from "@/lib/learn/publishSiteContent";
 import { POLICY_META_FIELDS, type PolicyMeta } from "@/lib/policyMeta";
@@ -37,7 +37,7 @@ export function PolicyTextEditor({
 
   // The preview reads like the public page: section ids plus the numbered side outline.
   const preview = useMemo(
-    () => (tab === "preview" ? outlinePolicyHtml((marked.parse(body, { gfm: true }) as string).replace(/<table>/g, '<div class="table-wrap"><table>').replace(/<\/table>/g, "</table></div>")) : { html: "", outline: [] }),
+    () => (tab === "preview" ? outlinePolicyHtml(renderSafeMarkdown(body).replace(/<table>/g, '<div class="table-wrap"><table>').replace(/<\/table>/g, "</table></div>")) : { html: "", outline: [] }),
     [tab, body],
   );
   const sections = useMemo(() => body.split("\n").filter((l) => l.startsWith("## ")).map((l) => l.slice(3)), [body]);

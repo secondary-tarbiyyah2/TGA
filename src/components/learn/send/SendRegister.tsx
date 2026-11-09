@@ -6,12 +6,13 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { Tabs } from "@/components/learn/Tabs";
-import { EmptyState, Notice, StatusChip, ui } from "@/components/learn/ui";
-import { PLAN_COLUMNS, PLAN_STATUS, SUPPORT_LEVEL, fmtDate, reviewState, useCanManageSend, type RegisterRow, type SupportPlan } from "@/lib/learn/send";
+import { EmptyState, Notice, ui } from "@/components/learn/ui";
+import { PLAN_COLUMNS, PLAN_STATUS, reviewState, useCanManageSend, type RegisterRow, type SupportPlan } from "@/lib/learn/send";
 import { SupportPlanEditor } from "./SupportPlanEditor";
 import { PupilSupportCard } from "./SupportAtAGlance";
+import { AddPupilPicker, ChangeLog, RegisterTable } from "./SendExtras";
 
-type Filter = "plans" | "due" | "drafts" | "flagged" | "closed";
+type Filter = "plans" | "due" | "drafts" | "flagged" | "closed" | "log";
 
 /**
  * /admin/send and /teach/send. The SENCo, Headteacher and admin get the SEND
@@ -32,6 +33,7 @@ function SendRegister({ area }: { area: "admin" | "teach" }) {
   const [error, setError] = useState<string | null>(null);
   const [filter, setFilter] = useState<Filter>("plans");
   const [q, setQ] = useState("");
+  const [picked, setPicked] = useState<Record<string, string>>({});
   const base = `/${area}/send`;
 
   const load = useCallback(async () => {
@@ -76,7 +78,7 @@ function SendRegister({ area }: { area: "admin" | "teach" }) {
   const go = (id: string | null) => router.replace(id ? `${base}?pupil=${id}` : base, { scroll: true });
 
   if (openId) {
-    const name = open?.child_name || "Pupil";
+    const name = open?.child_name || picked[openId] || "Pupil";
     return (
       <>
         <PageHeader
@@ -105,12 +107,18 @@ function SendRegister({ area }: { area: "admin" | "teach" }) {
     <>
       <PageHeader
         title="SEND register"
-        subtitle="Pupils with a support plan, reviews coming up, and pupils whose family mentioned a need. Open a pupil to write or review their plan."
+        subtitle="Pupils with a support plan, reviews coming up, and pupils whose family mentioned a need. Change the level, need, status or review date in the table; open a plan for everything else. Every change is logged."
       />
       {error && <Notice tone="bad">Couldn&apos;t load the register: {error}</Notice>}
       <div className="space-y-4">
         <div className={ui.toolbar}>
           <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search by name" aria-label="Search by name" className={`${ui.input} !w-auto min-w-[12rem] flex-1`} />
+          <AddPupilPicker
+            onPick={(id, name) => {
+              setPicked((p) => ({ ...p, [id]: name }));
+              go(id);
+            }}
+          />
         </div>
         <Tabs
           variant="switch"
@@ -123,55 +131,22 @@ function SendRegister({ area }: { area: "admin" | "teach" }) {
             { key: "drafts", label: "Drafts", count: counts.drafts },
             { key: "flagged", label: "Needs mentioned, no plan", count: counts.flagged, countAlert: counts.flagged > 0 },
             { key: "closed", label: "Closed", count: counts.closed },
+            { key: "log", label: "Recent changes" },
           ]}
         />
-        {rows === null ? (
+        {filter === "log" ? (
+          <ChangeLog showPupil limit={100} refreshKey={rows?.length || 0} />
+        ) : rows === null ? (
           <div className="h-40 animate-pulse rounded-2xl bg-white" />
         ) : shown.length === 0 ? (
           <EmptyState title={filter === "flagged" ? "No unplanned needs." : filter === "due" ? "No reviews due in the next 14 days." : "Nothing here."}>
-            {filter === "plans" ? "Open a pupil from Needs mentioned, no plan, or start a plan from a pupil's profile." : null}
+            {filter === "plans" ? "Use Add a pupil above, or open a pupil from Needs mentioned, no plan." : null}
           </EmptyState>
         ) : (
-          <ul className="divide-y divide-gold-light/50 rounded-2xl border border-gold-light bg-white">
-            {shown.map((r) => {
-              const rs = reviewState(r.next_review_due);
-              return (
-                <li key={r.child_id}>
-                  <button type="button" onClick={() => go(r.child_id)} className="flex w-full flex-wrap items-center gap-x-3 gap-y-1.5 px-4 py-3 text-left hover:bg-cream/50">
-                    <span className="min-w-0 flex-1">
-                      <span className="block font-medium text-ink">{r.child_name}</span>
-                      <span className="block truncate text-xs text-ink/65">
-                        {[
-                          r.year_group,
-                          r.support_level ? SUPPORT_LEVEL[r.support_level] : "",
-                          r.key_adult_name ? `Key adult ${r.key_adult_name}` : "",
-                          r.plan_id ? `${r.adjustments_count} adjustment${r.adjustments_count === 1 ? "" : "s"}, ${r.open_targets} open target${r.open_targets === 1 ? "" : "s"}` : "Mentioned on the application or pupil information",
-                        ]
-                          .filter(Boolean)
-                          .join(" · ")}
-                      </span>
-                    </span>
-                    <span className="flex flex-wrap items-center gap-1.5">
-                      {r.status === "draft" && <StatusChip tone="warn">Draft</StatusChip>}
-                      {r.status === "closed" && <StatusChip>Closed</StatusChip>}
-                      {!r.plan_id && <StatusChip tone="warn">No plan</StatusChip>}
-                      {r.status === "active" && (
-                        <StatusChip tone={rs.state === "overdue" ? "bad" : rs.state === "soon" || rs.state === "none" ? "warn" : "neutral"}>
-                          {rs.state === "ok" ? `Review ${fmtDate(r.next_review_due)}` : rs.label}
-                        </StatusChip>
-                      )}
-                      {r.has_access && <StatusChip tone="info">Access arrangements</StatusChip>}
-                      {r.status === "active" && !r.family_agreed_at && <StatusChip>Not agreed yet</StatusChip>}
-                      {r.unseen_comments > 0 && <StatusChip tone="warn">{r.unseen_comments} new from family</StatusChip>}
-                    </span>
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
+          <RegisterTable rows={shown} onOpen={(id) => go(id)} onSaved={load} />
         )}
         <p className={ui.hint}>
-          Draft plans start by themselves when an applicant who mentioned a need is accepted. The Headteacher or an admin names the SENCo under People, Staff.
+          Draft plans start by themselves when an applicant who mentioned a need is accepted. The Headteacher gives someone the SENCo role under People, Staff (or switches SENCo on for a teacher who also keeps the register).
         </p>
       </div>
     </>

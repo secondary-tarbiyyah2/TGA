@@ -25,6 +25,45 @@ function mailer_log($msg) {
     );
 }
 
+/**
+ * Simple per-hour limit for the public forms (security audit T20): at most
+ * 6 submissions from one network and 3 for one email address, so the forms
+ * cannot be used to flood the school inbox or send many acknowledgement
+ * emails to a stranger. Kept in a small file outside the web folder; IPs and
+ * addresses are stored only as hashes. Fails open if the file can't be used.
+ */
+function mailer_rate_limited($email) {
+    $ip = $_SERVER['HTTP_CF_CONNECTING_IP'] ?? ($_SERVER['REMOTE_ADDR'] ?? 'unknown');
+    $keys = ['ip:' . hash('sha256', $ip) => 6, 'em:' . hash('sha256', strtolower((string) $email)) => 3];
+    $file = rtrim(sys_get_temp_dir(), '/') . '/tga-mailer-rate.json';
+    $fh = @fopen($file, 'c+');
+    if (!$fh) return false;
+    $limited = false;
+    if (@flock($fh, LOCK_EX)) {
+        $raw = stream_get_contents($fh);
+        $data = json_decode($raw ?: '{}', true);
+        if (!is_array($data)) $data = [];
+        $cutoff = time() - 3600;
+        foreach ($data as $k => $times) {
+            $data[$k] = array_values(array_filter((array) $times, function ($t) use ($cutoff) { return $t > $cutoff; }));
+            if (!$data[$k]) unset($data[$k]);
+        }
+        foreach ($keys as $k => $max) {
+            if (count($data[$k] ?? []) >= $max) $limited = true;
+        }
+        if (!$limited) {
+            foreach ($keys as $k => $max) $data[$k][] = time();
+        }
+        ftruncate($fh, 0);
+        rewind($fh);
+        fwrite($fh, json_encode($data));
+        fflush($fh);
+        flock($fh, LOCK_UN);
+    }
+    fclose($fh);
+    return $limited;
+}
+
 function mailer_clean($v) {
     return trim(str_replace(["\r", "\n"], ' ', (string) $v));
 }

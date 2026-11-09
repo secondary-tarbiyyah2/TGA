@@ -18,6 +18,7 @@
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
 import { emailShell, sendEmail } from "../_shared/resend.ts";
+import { hashIp, isRateLimited, recordAttempt } from "../_shared/spam.ts";
 import { renderSummaryEmail } from "./summaryEmail.ts";
 
 const supabase = createClient(
@@ -27,6 +28,18 @@ const supabase = createClient(
 
 function esc(s: unknown): string {
   return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c] as string));
+}
+
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+const FRESH_MS = 60 * 60 * 1000;
+
+function clientIp(req: Request): string {
+  return (req.headers.get("cf-connecting-ip") || req.headers.get("x-forwarded-for") || "unknown").split(",")[0].trim();
+}
+
+/** A failed send frees the lead again so the family can retry. */
+async function release(leadId: string) {
+  await supabase.from("quiz_leads").update({ pdf_sent_at: null }).eq("id", leadId);
 }
 
 type SampleSlot = { weekdayName: string; startLabel: string; endLabel: string; subject: string };
@@ -43,14 +56,31 @@ Deno.serve(async (req) => {
   }
 
   const leadId = String(body.leadId || "");
-  if (!leadId) return jsonResponse({ ok: false, error: "missing_lead_id" }, 400);
+  if (!UUID.test(leadId)) return jsonResponse({ ok: false, error: "missing_lead_id" }, 400);
 
+  // Security audit (T20): one email per lead, only for a lead made in the
+  // last hour, and a per-IP / per-address limit. Before this, anyone could
+  // insert one lead with any address and call this again and again, so the
+  // school's sending domain could be used to flood a stranger's inbox.
+  // The claim (pdf_sent_at null -> now) is atomic, so two calls at once send once.
+  const freshSince = new Date(Date.now() - FRESH_MS).toISOString();
   const { data: lead, error: leadErr } = await supabase
     .from("quiz_leads")
-    .select("id, email, parent_name")
+    .update({ pdf_sent_at: new Date().toISOString() })
     .eq("id", leadId)
-    .single();
+    .is("pdf_sent_at", null)
+    .gte("created_at", freshSince)
+    .select("id, email, parent_name")
+    .maybeSingle();
   if (leadErr || !lead) return jsonResponse({ ok: false, error: "unknown_lead" }, 404);
+
+  const ipHash = await hashIp(clientIp(req));
+  const rateKey = `quiz:${String(lead.email).toLowerCase()}`;
+  if (await isRateLimited(supabase, ipHash, rateKey)) {
+    await supabase.from("quiz_leads").update({ pdf_sent_at: null }).eq("id", leadId);
+    return jsonResponse({ ok: false, error: "rate_limited" }, 429);
+  }
+  await recordAttempt(supabase, ipHash, rateKey);
 
   const parentName = lead.parent_name || "";
   const firstName = parentName.trim().split(/\s+/)[0] || "there";
@@ -70,8 +100,11 @@ Deno.serve(async (req) => {
   if (summary && summary.version === 2) {
     const out = renderSummaryEmail(summary, firstName);
     const sent = await sendEmail({ to: lead.email, toName: parentName || undefined, subject: out.subject, html: emailShell(out.html, out.preheader) });
-    if (!sent.ok) return jsonResponse({ ok: false, error: "send_failed", detail: sent.detail }, 502);
-    await supabase.from("quiz_leads").update({ pdf_sent_at: new Date().toISOString() }).eq("id", leadId);
+    if (!sent.ok) {
+      console.error("quiz-send-plan: send failed", sent.detail);
+      await release(leadId);
+      return jsonResponse({ ok: false, error: "send_failed" }, 502);
+    }
     return jsonResponse({ ok: true });
   }
 
@@ -147,9 +180,11 @@ Deno.serve(async (req) => {
     `),
   });
 
-  if (!result.ok) return jsonResponse({ ok: false, error: "send_failed", detail: result.detail }, 502);
-
-  await supabase.from("quiz_leads").update({ pdf_sent_at: new Date().toISOString() }).eq("id", leadId);
+  if (!result.ok) {
+    console.error("quiz-send-plan: send failed", result.detail);
+    await release(leadId);
+    return jsonResponse({ ok: false, error: "send_failed" }, 502);
+  }
 
   return jsonResponse({ ok: true });
 });

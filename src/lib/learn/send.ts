@@ -157,11 +157,11 @@ export function fmtDate(iso: string | null | undefined): string {
   return d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
 }
 
-/** Headteacher, admin or the SENCo: may write plans and see the SEND register. UX only; RLS enforces it. */
+/** Headteacher, admin or a SENCo (role or add-on): may write plans and see the SEND register. UX only; RLS enforces it. */
 export function useCanManageSend(): boolean {
   const { roles } = useLearnSession();
   const senco = useLearnPermission("senco");
-  return senco || roles.some((r) => r.role === "head_teacher" || r.role === "admin");
+  return senco || roles.some((r) => r.role === "head_teacher" || r.role === "admin" || r.role === "senco");
 }
 
 /** Active plans for these pupils (only the ones this user may read), keyed by pupil. */
@@ -226,3 +226,81 @@ export type RegisterRow = {
   unseen_comments: number;
   updated_at: string | null;
 };
+
+// ── T28 (migration 0186): documents and the change log ────────────────────
+
+export type DocKind = "ehcp" | "professional_report" | "review_minutes" | "assessment" | "family" | "other";
+export const DOC_KIND: Record<DocKind, string> = {
+  ehcp: "EHC plan",
+  professional_report: "Report from a professional",
+  review_minutes: "Review notes",
+  assessment: "Assessment",
+  family: "From the family",
+  other: "Other",
+};
+export type PlanDocument = { id: string; plan_id: string; title: string; kind: DocKind; url: string; dated: string | null; created_at: string };
+export const DOCUMENT_COLUMNS = "id, plan_id, title, kind, url, dated, created_at";
+
+/** One row of send_change_log(). */
+export type ChangeLogRow = {
+  changed_at: string;
+  actor_name: string;
+  action: "insert" | "update" | "delete";
+  what: string;
+  child_id: string | null;
+  child_name: string | null;
+  fields: string[];
+};
+
+/** Plain words for the fields named in the change log. */
+const FIELD_WORDS: Record<string, string> = {
+  status: "status",
+  support_level: "level of support",
+  primary_need: "main area of need",
+  needs_summary: "needs summary",
+  needs_source: "where the needs came from",
+  strengths: "strengths",
+  pupil_views: "pupil's views",
+  adjustments: "adjustments",
+  adjustments_other: "other adjustments",
+  access_extra_time_pct: "extra time",
+  access_reader: "reader",
+  access_scribe: "scribe",
+  access_rest_breaks: "rest breaks",
+  access_word_processor: "word processor",
+  access_separate_room: "separate room",
+  access_other: "other arrangements",
+  senco_id: "SENCo",
+  key_adult_id: "key adult",
+  next_review_due: "next review date",
+  last_reviewed_on: "last review date",
+  target: "target",
+  success_criteria: "success criteria",
+  support: "support",
+  by_when: "by when",
+  review_note: "review note",
+  sort: "order",
+  held_on: "date held",
+  attendees: "who attended",
+  parent_attended: "parent attended",
+  notes: "notes",
+  outcomes: "outcomes",
+  shared_with_family: "shared with the family",
+  reply: "reply to the family",
+  seen_at: "marked as read",
+  title: "title",
+  kind: "type",
+  url: "link",
+  dated: "date",
+};
+
+/** "Support plan changed: status, next review date" and the like. */
+export function describeChange(r: ChangeLogRow): string {
+  const verb = r.action === "insert" ? "added" : r.action === "delete" ? "removed" : "changed";
+  const fields = r.action === "update" && r.fields.length ? `: ${r.fields.map((f) => FIELD_WORDS[f] || f.replace(/_/g, " ")).join(", ")}` : "";
+  return `${r.what} ${verb}${fields}`;
+}
+
+export function fmtDateTime(iso: string): string {
+  return new Date(iso).toLocaleString("en-GB", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit", timeZone: "Europe/London" });
+}
