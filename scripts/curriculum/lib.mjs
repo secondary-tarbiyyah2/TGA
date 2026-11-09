@@ -5,6 +5,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { contentHash, stableStringify } from "../lessons/content-hash.mjs";
+import { BLOCKS, blockProblems, extrasProblems } from "../../src/lib/learn/lessonSchema.mjs";
 
 export { contentHash, stableStringify };
 
@@ -176,7 +177,6 @@ export function checkUnits(kind, units, label, slug) {
   return p;
 }
 
-const BLOCKS = ["model", "check", "quote", "compare", "timeline", "table", "code", "misconception", "cycle"];
 /** Problems with one lesson (the checks scripts/lessons/validate.mjs makes). */
 export function checkLesson(l, label) {
   const p = [];
@@ -186,9 +186,9 @@ export function checkLesson(l, label) {
   if (!Array.isArray(l.starter) || !l.starter.length) p.push(`${label}: add at least one starter question`);
   if (!Array.isArray(l.teach) || l.teach.length < 3 || l.teach.length > 7) p.push(`${label}: a lesson needs 3 to 7 teaching slides`);
   for (const t of l.teach || []) {
-    const kinds = BLOCKS.filter((k) => t?.[k] != null);
-    if (kinds.length > 1) p.push(`${label}: slide "${t.heading}" has more than one block`);
-    if (!str(t?.heading) || (!kinds.length && !strs(t?.bullets))) p.push(`${label}: every teaching slide needs a heading and at least one bullet point`);
+    const { kind, problems } = blockProblems(t || {});
+    problems.forEach((x) => p.push(`${label}: slide "${t?.heading}" ${x}`));
+    if (!str(t?.heading) || (!kind && !strs(t?.bullets))) p.push(`${label}: every teaching slide needs a heading and at least one bullet point`);
     if (t?.bullets != null && !Array.isArray(t.bullets)) p.push(`${label}: slide bullets must be a list`);
   }
   for (const [k, name] of [["practice", "practice question"], ["independent", "independent task"], ["exit", "exit ticket question"]]) if (!Array.isArray(l[k]) || !l[k].length) p.push(`${label}: add at least one ${name}`);
@@ -196,6 +196,8 @@ export function checkLesson(l, label) {
   if (!Array.isArray(l.keywords)) p.push(`${label}: key words must be a list`);
   if (l.successCriteria != null && (!strs(l.successCriteria) || l.successCriteria.length > 3)) p.push(`${label}: success criteria are 1 to 3 lines (all, most, some)`);
   for (const k of ["bigQuestion", "crossCurricular", "smsc"]) if (l[k] != null && !str(l[k])) p.push(`${label}: ${k} must not be empty (leave it out instead)`);
+  // Answers and minutes on questions, the hook, routines, resources (src/lib/learn/lessonSchema.mjs).
+  extrasProblems(l).forEach((x) => p.push(`${label}: ${x}`));
   return p;
 }
 
@@ -203,9 +205,10 @@ export function checkLesson(l, label) {
 // The database does not keep key order, so a changed lesson is written back in the order
 // its repo copy used (or the README order for anything new).
 const CANON = [
-  "unit", "n", "title", "duration", "board", "bigQuestion", "objectives", "successCriteria", "crossCurricular", "smsc", "keywords", "term", "def",
-  "starter", "teach", "heading", "bullets", "note", ...BLOCKS, "problem", "steps", "answer", "q", "options", "why", "wrong", "right", "text", "source",
-  "left", "label", "title", "points", "head", "rows", "lang", "output", "practice", "independent", "exit", "homework", "send",
+  "unit", "n", "title", "duration", "board", "bigQuestion", "hook", "type", "objectives", "successCriteria", "crossCurricular", "smsc", "resources", "keywords", "term", "def",
+  "routines", "starter", "teach", "hinge", "heading", "bullets", "note", "routine", ...BLOCKS, "problem", "steps", "answer", "q", "a", "mins",
+  "options", "why", "wrong", "right", "text", "source", "left", "label", "title", "points", "head", "rows", "lang", "output", "kind", "labels", "values", "unit",
+  "min", "max", "step", "marks", "at", "parts", "shaded", "centre", "items", "columns", "cards", "practice", "independent", "exit", "homework", "send",
 ];
 export function orderLike(v, template) {
   if (Array.isArray(v)) return v.map((x, i) => orderLike(x, Array.isArray(template) ? template[i] ?? template[0] : undefined));

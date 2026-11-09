@@ -138,8 +138,13 @@ async function uploadPlan(m) {
   return { plan_docx_path: docxPath, plan_pdf_path: pdfPath };
 }
 
-/** Delete stored deck files that no lesson or version row points at any more. Never throws. */
+/**
+ * Delete stored files (decks, PDFs, lesson plans) that no lesson or version row points at any
+ * more. Called only after the replacement is stored, so a full re-render (FORCE) cleans up as it
+ * goes instead of leaving a second copy of every file. Never throws; if in doubt, keeps the files.
+ */
 async function removeUnused(paths) {
+  paths = [...new Set(paths.filter(Boolean))];
   if (!paths.length) return;
   try {
     const used = new Set();
@@ -148,6 +153,8 @@ async function removeUnused(paths) {
       ["curriculum_lesson_versions", "pdf_path"],
       ["curriculum_lessons", "deck_path"],
       ["curriculum_lessons", "pdf_path"],
+      ["curriculum_lessons", "plan_docx_path"],
+      ["curriculum_lessons", "plan_pdf_path"],
     ]) {
       const { data, error } = await supabase.from(table).select(col).in(col, paths);
       if (error) return; // if in doubt, keep the files
@@ -195,7 +202,11 @@ await pool(manifest, 6, async (m) => {
     return true;
   };
   try {
+    // The plan files this lesson pointed at before this run: removed once the new plan is recorded
+    // (a renamed lesson gets a new plan file name; a plan without a PDF any more drops its old PDF).
+    const oldPlan = [row?.plan_docx_path, row?.plan_pdf_path];
     const planPaths = needsPlan(m) ? { ...(await uploadPlan(m)), plan_hash: hash } : null;
+    const dropOldPlan = () => (planPaths ? removeUnused(oldPlan.filter((x) => x && x !== planPaths.plan_docx_path && x !== planPaths.plan_pdf_path)) : null);
     if (!needsFile(m)) {
       if (!row) return;
       const patch = { ...(planPaths || {}) };
@@ -206,6 +217,7 @@ await pool(manifest, 6, async (m) => {
         if (!row.built_hash && hash) patch.built_hash = hash;
       }
       if (await update(patch)) metaOnly++;
+      await dropOldPlan();
       if (row.custom_deck && planPaths) await clearRequest();
       return;
     }
@@ -274,13 +286,15 @@ await pool(manifest, 6, async (m) => {
       console.log(`${m.file}: a teacher changed this lesson's slides during the build; their version is kept.`);
       return;
     }
-    // Re-rendered in place: the previous files of that version are no longer current. Remove them
+    // Re-rendered in place (a design refresh / FORCE): the previous files of that version are no
+    // longer current. Remove them
     // unless something still points at them (a restored version copies the paths it restored, and
     // pupils' revision slides read curriculum_lessons.pdf_path), so a design refresh does not leave
     // ~1,500 unused decks behind.
     if (stored === fresh.version) await removeUnused([fresh.deck_path, fresh.pdf_path].filter((p) => p && !ours.includes(p)));
     row = { ...row, deck_path: deckPath, pdf_path: pdfPath, version: stored, built_hash: hash };
     await update({ ...meta, ...(planPaths || {}), ...(planPaths ? {} : row.plan_hash ? {} : { plan_hash: hash }) });
+    await dropOldPlan();
     await clearRequest();
     if (stored > fresh.version) rebuilt++;
     else uploaded++;

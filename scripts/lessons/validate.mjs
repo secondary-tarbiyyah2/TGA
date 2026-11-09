@@ -4,56 +4,25 @@
 import fs from "node:fs";
 import path from "node:path";
 import { retiredChecker } from "./retired.mjs";
+import { BLOCKS, ITEM_SECTIONS, blockProblems, extrasProblems, hasAnswers } from "../../src/lib/learn/lessonSchema.mjs";
 const root = process.env.LESSONS_DIR ? new URL(process.env.LESSONS_DIR.replace(/\/?$/, "/"), "file://" + process.cwd() + "/").pathname : new URL("../../content/lessons/", import.meta.url).pathname;
 // Year 1 to Year 11 only: the Academy does not run Reception.
 const YEARS = Array.from({ length: 11 }, (_, i) => `y${i + 1}`);
 // Subjects not taught in a year (History is not offered at KS4 / GCSE).
 const NOT_TAUGHT = { history: ["y10", "y11"] };
-const BLOCKS = ["model", "check", "quote", "compare", "timeline", "table", "code", "misconception", "cycle"];
 let bad = 0, files = 0, lessons = 0;
 const blockCount = Object.fromEntries(BLOCKS.map((k) => [k, 0]));
+const extraCount = { answers: 0, hook: 0, routines: 0, resources: 0 };
 const err = (f, m) => { bad++; console.error(`${f}: ${m}`); };
 const strs = (a, min = 1) => Array.isArray(a) && a.length >= min && a.every((x) => typeof x === "string" && x.trim());
 function walk(d) { return fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => e.isDirectory() ? walk(path.join(d, e.name)) : e.name.endsWith(".json") ? [path.join(d, e.name)] : []); }
 
+// Block shapes and limits live in src/lib/learn/lessonSchema.mjs (shared with the portal and the sync).
 function checkBlock(id, t) {
-  const kinds = BLOCKS.filter((k) => t[k] != null);
-  if (kinds.length > 1) err(id, `teach slide "${t.heading}" has more than one block (${kinds.join(", ")})`);
-  const k = kinds[0];
-  if (!k) return false;
-  blockCount[k]++;
-  const v = t[k];
-  const where = `${id} [${k}] "${t.heading}"`;
-  switch (k) {
-    case "model":
-      if (!v.problem || !strs(v.steps, 2) || v.steps.length > 6) err(where, "model needs problem and 2-6 steps");
-      break;
-    case "check":
-      if (!v.q || !strs(v.options, 3) || v.options.length > 4 || !Number.isInteger(v.answer) || v.answer < 0 || v.answer >= v.options.length) err(where, "check needs q, 3-4 options and a valid answer index");
-      if (!v.why) err(where, "check needs why (explains the answer and the trap in the distractors)");
-      break;
-    case "quote":
-      if (!v.text) err(where, "quote needs text");
-      break;
-    case "compare":
-      if (!v.left?.title || !v.right?.title || !strs(v.left.points) || !strs(v.right.points)) err(where, "compare needs left/right {title, points[]}");
-      break;
-    case "timeline":
-    case "cycle":
-      if (!Array.isArray(v) || v.length < 3 || v.length > 6) err(where, `${k} needs 3-6 items`);
-      else if (k === "timeline" && !v.every((e) => e.label && e.text)) err(where, "timeline items need label and text");
-      else if (k === "cycle" && !strs(v, 3)) err(where, "cycle items are strings");
-      break;
-    case "table":
-      if (!strs(v.head, 2) || !Array.isArray(v.rows) || !v.rows.length || v.rows.length > 8 || !v.rows.every((r) => Array.isArray(r) && r.length === v.head.length)) err(where, "table needs head and 1-8 rows of the same width");
-      break;
-    case "code":
-      if (!v.text || String(v.text).split("\n").length > 16) err(where, "code needs text of at most 16 lines");
-      break;
-    case "misconception":
-      if (!v.wrong || !v.right) err(where, "misconception needs wrong and right");
-      break;
-  }
+  const { kind, problems } = blockProblems(t);
+  problems.forEach((m) => err(`${id}${kind ? ` [${kind}]` : ""} "${t.heading}"`, m));
+  if (!kind) return false;
+  blockCount[kind]++;
   return true;
 }
 
@@ -84,6 +53,10 @@ for (const f of walk(root)) {
       if (t.bullets != null && !Array.isArray(t.bullets)) err(id, "bullets must be an array");
     }
     for (const k of ["practice", "independent", "exit"]) if (!Array.isArray(l[k]) || !l[k].length) err(id, k);
+    // Items may be strings or { q, a?, mins? }; plus the optional hook, routines and resources.
+    extrasProblems(l).forEach((m) => err(id, m));
+    if (ITEM_SECTIONS.some((k) => hasAnswers(l[k]))) extraCount.answers++;
+    for (const k of ["hook", "routines", "resources"]) if (l[k] != null) extraCount[k]++;
     if (!l.homework) err(id, "homework");
     if (!Array.isArray(l.keywords)) err(id, "keywords");
     if (l.successCriteria != null && (!strs(l.successCriteria) || l.successCriteria.length > 3)) err(id, "successCriteria: 1-3 strings (all / most / some)");
@@ -91,5 +64,6 @@ for (const f of walk(root)) {
   }
 }
 const used = Object.entries(blockCount).filter(([, n]) => n).map(([k, n]) => `${k} ${n}`).join(", ");
-console.log(`${files} files, ${lessons} lessons, ${bad} problems${used ? ` · blocks: ${used}` : ""}`);
+const extras = Object.entries(extraCount).filter(([, n]) => n).map(([k, n]) => `${k} ${n}`).join(", ");
+console.log(`${files} files, ${lessons} lessons, ${bad} problems${used ? ` · blocks: ${used}` : ""}${extras ? ` · lessons with ${extras}` : ""}`);
 process.exit(bad ? 1 : 0);

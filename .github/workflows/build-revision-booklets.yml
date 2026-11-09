@@ -9,6 +9,7 @@ on:
     paths:
       - "content/lessons/**"
       - "scripts/revision/**"
+      - "src/lib/learn/lessonSchema.mjs"
       - ".github/workflows/build-revision-booklets.yml"
   workflow_dispatch:
 

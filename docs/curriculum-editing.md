@@ -30,10 +30,21 @@ Who can edit: teachers, the Headteacher and admins. Cover teaching assistants ca
 
 **Where:** Curriculum, **Lesson library**. Pick the year and the unit, then press **Edit lesson** on the lesson.
 
-You can change the title, unit, length, big question, objectives, success criteria, key words, starter, each teaching
-slide (heading, bullet points and the teacher note), practice, independent tasks, exit ticket, homework, and the SEND,
-EAL and stretch line. A lesson needs 3 to 7 teaching slides. Some slides also show a worked example, a hinge question,
-a table or similar: those are kept exactly as they are.
+You can change the title, unit, length, big question, objectives, success criteria, key words, resources, each teaching
+slide (heading, bullet points, the teacher note, a routine and its block), homework, and the SEND, EAL and stretch line.
+A lesson needs 3 to 7 teaching slides.
+
+- **Questions with answers.** The starter, practice, independent tasks and exit ticket have a row per question: the
+  question, its answer (optional) and minutes (optional). An answer adds a "Check your answers" slide after that
+  section (exit ticket answers go on a teacher-only slide at the very end) and goes in the lesson plan's answer key.
+  Minutes set the timer shown on the slide.
+- **Hook (optional).** A full-screen first slide to grab attention: a question, a scene to picture, a short story, a
+  puzzle or an odd one out, with optional options and what to draw out.
+- **Routines.** How pupils answer on Teams (Show me, Chat waterfall, Teams poll, Cold call, Think pair share, Hands
+  down), shown as a badge on the slide. Leave on "Usual" for the school's defaults.
+- **Slide blocks.** Pick a block for a slide (worked example, hinge question, chart, number line, fraction bars,
+  concept map, card sort and others): a template appears to fill in. It is checked as you type; the shapes are in
+  `content/lessons/README.md`.
 
 Write what you changed in the box at the bottom (optional, it helps colleagues) and press **Save and rebuild the
 slides**.
@@ -106,5 +117,12 @@ make your change on top of theirs.
 - If `main` moves while the sync is pushing (a rebase clash, often in the generated `syllabusIndex.json`), the sync
   starts again from the latest `main`, re-runs the comparison and retries, up to five times
   (`scripts/curriculum/commit-and-push.sh`). If it still cannot push, nothing is lost: the next run sends it.
+- Lessons may carry optional answers and minutes on questions, a hook, routines, resources and chart, numberline,
+  fraction, diagram and sort blocks (`content/lessons/README.md`; rules in `src/lib/learn/lessonSchema.mjs`, used by
+  the validator, the sync and the editor alike). `node scripts/curriculum/test-lesson-fields.mjs` checks offline that
+  they survive the repo -> portal -> repo round trip.
+- When the deck or plan design changes (`scripts/lessons/build-decks.mjs`, `deck-parts.mjs` or `lesson-plan.mjs`), the
+  next Build lesson decks run on `main` re-renders every generated deck and plan (FORCE). It can also be started by
+  hand: Actions, Build lesson decks, Run workflow, force = true.
 - New keys a unit may carry in `content/syllabus`: `halfTerm`, `weeks` (`[{ week, lessons[], vocabulary[], home }]`),
   `resources` and `foundingYear`. See `content/syllabus/README.md`.
