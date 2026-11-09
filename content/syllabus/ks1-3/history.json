@@ -4,7 +4,7 @@
   "slug": "history",
   "framework": "National Curriculum in England (2014): History programmes of study, Key Stages 1 to 3, with EYFS Understanding the World",
   "status": "Verified",
-  "statusNote": "Key Stage 1 to 3 statutory content and period lists were re-read from the gov.uk National Curriculum history programme of study (page read through a fetch tool that returns summaries, checked against the earlier reading). EYFS Understanding the World: Past and Present was read in the 13 July 2026 statutory framework (in force 1 September 2026) and the Reception row matches it. Year allocation is a recommended sequence, not statutory; the National Curriculum sets content by key stage. Year units follow the school's existing unit titles. History is taught from Year 1 to Year 9 only; it is not offered at Key Stage 4. Year 1 was rebuilt in November 2026 to the TGA Year 1 Curriculum Pack: one unit per half term, following Tarbiyyah Primary's Cornerstones projects (2026-27 order), White Rose maths and Little Wandle phonics. Years 2 to 9 were rebuilt in November 2026 to the TGA curriculum packs (docs/curriculum-packs/y2.md to y9.md): one unit per half term, titled by half term so the portal planner places each one.",
+  "statusNote": "Key Stage 1 to 3 statutory content and period lists were re-read from the gov.uk National Curriculum history programme of study (page read through a fetch tool that returns summaries, checked against the earlier reading). EYFS Understanding the World: Past and Present was read in the 13 July 2026 statutory framework (in force 1 September 2026) and the Reception row matches it. Year allocation is a recommended sequence, not statutory; the National Curriculum sets content by key stage. Year units follow the school's existing unit titles. History is taught from Year 1 to Year 9 only; it is not offered at Key Stage 4. Year 1 was rebuilt in November 2026 to the TGA Year 1 Curriculum Pack: one unit per half term, following Tarbiyyah Primary's Cornerstones projects (2026-27 order), White Rose maths and Little Wandle phonics. Years 2 to 9 were rebuilt in November 2026 to the TGA curriculum packs (docs/curriculum-packs/y2.md to y9.md): one unit per half term, titled by half term so the portal planner places each one. November 2026 alignment with the school's own files: Years 7 to 9 follow the Tarbiyyah Secondary History Curriculum Intent (its KS3 programme overview sets the order and topics) and Hodder's Understanding History: Key Stage 3 scheme of work (2019; a publisher's generic scheme, in the school folder as 'Progress in History Scheme of Work KS3'), whose lesson numbers are named on each unit. The founding year teaches Spring 1 to Summer 2 from Mon 11 Jan 2027. History is not taught at KS4; the school's KS4 History scheme (Weimar and Nazi Germany) is not used.",
   "sources": [
     {
       "title": "National curriculum in England: history programmes of study",
@@ -805,401 +805,461 @@
     ],
     "y7": [
       {
-        "unit": "Autumn 1: 1066 and the Norman Conquest",
+        "unit": "Autumn 1: What is a historian? Ancient civilisations; water and health through time",
         "focus": [
-          "Who should be king in 1066?",
-          "Stamford Bridge and Hastings",
-          "Why William won"
+          "The six concepts: chronology, cause and consequence, change and continuity, evidence, interpretation, significance",
+          "Early civilisations and their achievements in maths, astronomy, building, medicine, government and trade",
+          "Thematic study: water and health through time, Iron Age to industrial Britain (Hodder 1A to 1F)",
+          "Period names and dates; BC and AD; how different sources tell us about each period"
         ],
         "skills": [
-          "Explain causes",
-          "Use sources"
+          "Place periods in order",
+          "Describe change and continuity"
         ],
         "keyTerms": [
-          "succession",
-          "Hastings",
-          "Harold",
-          "William",
+          "chronology",
+          "BC and AD",
+          "sanitation",
+          "archaeology",
+          "public health"
+        ],
+        "assess": "Baseline piece of supported extended writing at the end of the water and health enquiry (Hodder 1F)",
+        "prereq": "Year 6: the school primary history units",
+        "leadsTo": "Autumn 2: The Norman Conquest",
+        "resources": "Order and topics: Tarbiyyah Secondary History Curriculum Intent (KS3 programme overview). Understanding History: Key Stage 3 (Hodder, 2019) scheme of work, Unit 1, lessons 1A to 1F. TO CONFIRM: which ancient civilisations are studied (the intent names none).",
+        "foundingYear": "Not taught as a unit in 2027: the six concepts open Spring 1 week 1; the rest goes to the Autumn 2027 review."
+      },
+      {
+        "unit": "Autumn 2: The Norman Conquest",
+        "focus": [
+          "Big picture: the Middle Ages, 1000 to 1450 (Hodder 2.1)",
+          "How the Normans conquered England in 1066 (2.2A, 2.2B)",
+          "Gaining and keeping control, 1067 to 1087: castles, the Harrying of the North, Domesday (2.2C, 2.2D)",
+          "Picturing medieval monarchs: interpretations (2.3)"
+        ],
+        "skills": [
+          "Explain why William won",
+          "Compare interpretations"
+        ],
+        "keyTerms": [
+          "conquest",
+          "claimant",
+          "motte and bailey",
+          "Domesday",
+          "feudal"
+        ],
+        "assess": "Unit quiz and an explanation paragraph: why did William win?",
+        "prereq": "Autumn 1: What is a historian? Ancient civilisations; water and health through time",
+        "leadsTo": "Spring 1: The Crusades and Christendom",
+        "resources": "Understanding History: Key Stage 3 (Hodder, 2019) scheme of work, Unit 2, lessons 2.1 to 2.3.",
+        "foundingYear": "Not taught in 2027: Autumn 2027 review."
+      },
+      {
+        "unit": "Spring 1: The Crusades and Christendom",
+        "focus": [
+          "What a historian does (the six concepts); Christendom and the Islamic world in 1095",
+          "How can we explain the First Crusade? (Hodder 2.4A)",
+          "The crusaders' journey and the capture of Jerusalem, 1099 (2.4B, 2.4C)",
+          "Salahuddin (صلاح الدين), Hattin and Jerusalem in 1187; the Third Crusade",
+          "Source enquiry: how reliable are accounts of the Crusades? Unit quiz"
+        ],
+        "keyTerms": [
+          "Christendom",
+          "caliphate",
+          "pope",
+          "chronology",
+          "crusade",
+          "pilgrimage",
+          "motive",
           "cause"
         ],
-        "assess": "Unit enquiry",
-        "prereq": "Year 4 Spring 2: 1066",
-        "leadsTo": "Autumn 2"
-      },
-      {
-        "unit": "Autumn 2: Norman control of England",
-        "focus": [
-          "Castles and feudalism",
-          "The Domesday Book",
-          "The Harrying of the North"
-        ],
-        "skills": [
-          "Explain how control was kept"
-        ],
-        "keyTerms": [
-          "castle",
-          "feudalism",
-          "Domesday",
-          "Harrying",
-          "control"
-        ],
-        "assess": "Unit quiz",
-        "prereq": "Autumn 1",
-        "leadsTo": "Spring 1"
-      },
-      {
-        "unit": "Spring 1: The Crusades and Salahuddin",
-        "focus": [
-          "The world in 1095 and why the Crusades began",
-          "The First Crusade and Jerusalem in 1099",
-          "Nur ad-Din, Salahuddin, Hattin and Jerusalem in 1187",
-          "Richard I and the Third Crusade; sources and reputation"
-        ],
-        "skills": [
-          "Assess source reliability",
-          "Explain causes"
-        ],
-        "keyTerms": [
-          "Crusade",
-          "Jerusalem",
-          "Hattin",
-          "truce",
-          "bias"
-        ],
         "assess": "Source enquiry and unit quiz (week 6)",
-        "prereq": "Autumn 2",
-        "leadsTo": "Spring 2"
+        "prereq": "Autumn 2: The Norman Conquest",
+        "leadsTo": "Spring 2: Medieval monarchs: Magna Carta and Edward I",
+        "resources": "Understanding History: Key Stage 3 (Hodder, 2019) scheme of work, Unit 2, lessons 2.4A to 2.4C and 2.5. Salahuddin and the Third Crusade follow the intent's 'the Crusades' (no Hodder lesson: new).",
+        "foundingYear": "Rows 1 to 4 and 6 taught 11 Jan to 8 Feb; row 5 (EXT) goes to the Autumn 2027 review."
       },
       {
-        "unit": "Spring 2: Al-Andalus and the medieval Muslim world",
+        "unit": "Spring 2: Medieval monarchs: Magna Carta and Edward I",
         "focus": [
-          "Spain in 711: Tariq ibn Ziyad",
-          "Cordoba as a capital; learning and science",
-          "Decline and the fall of Granada in 1492",
-          "The House of Wisdom in Baghdad and links to Europe"
-        ],
-        "skills": [
-          "Judge significance",
-          "Use evidence"
+          "King John and Magna Carta, 1215",
+          "Why kings needed Parliament: taxes, barons and the first Parliaments",
+          "What did Edward I achieve? (Hodder 2.6A)",
+          "Ruling England: law and government under Edward I (2.6B)",
+          "Edward's wars in Wales and Scotland (2.6C)",
+          "Site study: the Tower of London, how and why castles changed (2.7, virtual tour); assessment"
         ],
         "keyTerms": [
-          "al-Andalus (الأندلس)",
-          "caliphate",
-          "translation",
-          "Granada",
-          "legacy"
-        ],
-        "assess": "Unit quiz (week 6)",
-        "prereq": "Year 4 Summer 2: Baghdad",
-        "leadsTo": "Summer 1"
-      },
-      {
-        "unit": "Summer 1: Medieval Britain: Magna Carta and the Church",
-        "focus": [
-          "King John, the barons and Magna Carta in 1215",
-          "The Church in medieval Britain; Henry II and Becket",
-          "Life in a medieval village",
-          "How far did Magna Carta limit the king?"
-        ],
-        "skills": [
-          "Judge significance",
-          "Explain change"
-        ],
-        "keyTerms": [
-          "baron",
           "charter",
-          "tithe",
-          "Becket",
-          "Parliament"
+          "baron",
+          "tyranny",
+          "parliament",
+          "tax",
+          "consent",
+          "achievement",
+          "reputation"
+        ],
+        "assess": "End-of-unit written assessment: how successful was Edward I? (week 6)",
+        "prereq": "Spring 1: The Crusades and Christendom",
+        "leadsTo": "Summer 1: Medieval society, economy and culture",
+        "resources": "Understanding History: Key Stage 3 (Hodder, 2019) scheme of work, Unit 2, lessons 2.6A to 2.6C and 2.7 (virtual site study). Magna Carta and Parliament follow the school intent.",
+        "foundingYear": "All six weeks taught (15 Mar to 19 Apr)."
+      },
+      {
+        "unit": "Summer 1: Medieval society, economy and culture",
+        "focus": [
+          "The lords and the feudal system (Hodder 2.8A)",
+          "Peasants and village life (2.8B)",
+          "People in towns and the growth of trade; the Medieval Warm Period (2.8C)",
+          "Why religion mattered so much; Church and Crown (2.8D)",
+          "Site study: Fountains Abbey and the wealth of the monasteries (2.9, virtual); unit quiz"
+        ],
+        "keyTerms": [
+          "feudal",
+          "lord",
+          "knight",
+          "vassal",
+          "peasant",
+          "villein",
+          "manor",
+          "charter"
         ],
         "assess": "Unit quiz (week 5)",
-        "prereq": "Year 5 Summer 1: medieval peasants",
-        "leadsTo": "Summer 2"
+        "prereq": "Spring 2: Medieval monarchs: Magna Carta and Edward I",
+        "leadsTo": "Summer 2: The Black Death; review of the Middle Ages",
+        "resources": "Understanding History: Key Stage 3 (Hodder, 2019) scheme of work, Unit 2, lessons 2.8A to 2.8D and 2.9 (virtual site study). Crime and punishment and the Medieval Warm Period follow the school intent.",
+        "foundingYear": "Rows 1 to 5 taught (26 Apr to 7 Jun); row 6 (EXT) dropped."
       },
       {
-        "unit": "Summer 2: Medieval Britain: the Black Death",
+        "unit": "Summer 2: The Black Death; review of the Middle Ages",
         "focus": [
-          "The Black Death reaches England in 1348",
-          "Effects on villages, work and the Church",
-          "The Peasants' Revolt of 1381"
-        ],
-        "skills": [
-          "Explain consequences"
+          "The Black Death arrives, 1348; famine and poor harvests (Hodder 2.10A)",
+          "How people responded and what the Black Death changed (2.10B, 2.10C)",
+          "End-of-year test",
+          "Feedback; period review: how would you sum up the Middle Ages? (2.12)"
         ],
         "keyTerms": [
           "plague",
-          "labour",
+          "famine",
+          "epidemic",
+          "flagellant",
           "wages",
-          "revolt",
-          "tax"
+          "Peasants' Revolt",
+          "chronology",
+          "evidence"
         ],
-        "assess": "End-of-year history test",
-        "prereq": "Summer 1",
-        "leadsTo": "Year 8: History"
+        "assess": "End-of-year test (week 3)",
+        "prereq": "Summer 1: Medieval society, economy and culture",
+        "leadsTo": "Year 8 Autumn 1: Church, state and society",
+        "resources": "Understanding History: Key Stage 3 (Hodder, 2019) scheme of work, Unit 2, lessons 2.10A to 2.10C, 2.11 and 2.12.",
+        "foundingYear": "Rows 1 to 4 taught (14 Jun to 5 Jul): end-of-year test in the week of 28 Jun; rows 5 and 6 (EXT) dropped."
       }
     ],
     "y8": [
       {
-        "unit": "Autumn 1: The Tudors and the Reformation",
+        "unit": "Autumn 1: Church, state and society: the Renaissance, the Reformation and Henry VIII",
         "focus": [
-          "Henry VIII and the break with Rome",
-          "The dissolution of the monasteries",
-          "Edward VI, Mary I and Elizabeth I",
-          "Reading a source for its purpose and audience"
+          "Big picture: the Early Modern period, 1450 to 1750 (Hodder 4.1)",
+          "The Renaissance and connecting the world (4.2A to 4.2C)",
+          "The Reformation (4.2D)",
+          "Henry VIII: the early, middle and later years (4.4A to 4.4C)",
+          "Site study: Hampton Court Palace (4.5, virtual)"
         ],
         "skills": [
-          "Judge a source's purpose",
-          "Explain change"
+          "Explain causes of the Reformation",
+          "Evaluate interpretations of a monarch"
         ],
         "keyTerms": [
+          "Renaissance",
           "Reformation",
-          "dissolution",
-          "monarch",
-          "purpose",
-          "audience"
+          "Protestant",
+          "break with Rome",
+          "dissolution"
         ],
-        "assess": "Source and explanation task",
-        "prereq": "Year 5 Summer 2: the Tudors",
-        "leadsTo": "Autumn 2"
+        "assess": "Unit quiz and an interpretation question on Henry VIII",
+        "prereq": "Year 7 Summer 2: The Black Death; review of the Middle Ages",
+        "leadsTo": "Autumn 2: Church, state and society, part II: Elizabeth I and the Civil War",
+        "resources": "Order and topics: Tarbiyyah Secondary History Curriculum Intent. Understanding History: Key Stage 3 (Hodder, 2019) scheme of work, Unit 4, lessons 4.1 to 4.5.",
+        "foundingYear": "Not taught in 2027: Autumn 2027 review."
       },
       {
-        "unit": "Autumn 2: The Ottoman world",
+        "unit": "Autumn 2: Church, state and society, part II: Elizabeth I and the Civil War",
         "focus": [
-          "The rise of the Ottoman state and Constantinople (Istanbul)",
-          "Suleiman the Magnificent",
-          "The empire's links with Europe"
+          "The defeat of the Spanish Armada, 1588 (Hodder 4.6A)",
+          "Wealth and poverty; adventurers; a 'golden age'? (4.6B to 4.6D)",
+          "Years of turmoil and the road to civil war, 1625 to 1642 (4.8A, 4.8B)",
+          "Fighting the Civil War; Parliament against the monarch (4.8C)",
+          "Site study: Dyrham Park, how the rich lived (4.9, virtual)"
         ],
         "skills": [
-          "Explain a state's rise"
+          "Group causes into categories",
+          "Argue a case with evidence"
         ],
         "keyTerms": [
-          "Ottoman",
-          "Constantinople",
-          "Suleiman",
-          "empire",
-          "sultan"
+          "Armada",
+          "Puritan",
+          "Parliament",
+          "civil war",
+          "Royalist"
         ],
-        "assess": "Unit quiz",
-        "prereq": "Year 7 Spring 2: Al-Andalus",
-        "leadsTo": "Summer 1: empire"
+        "assess": "Persuasive answer: why did civil war break out in 1642?",
+        "prereq": "Autumn 1: Church, state and society: the Renaissance, the Reformation and Henry VIII",
+        "leadsTo": "Spring 1: The Mughal Empire",
+        "resources": "Understanding History: Key Stage 3 (Hodder, 2019) scheme of work, Unit 4, lessons 4.6 to 4.9.",
+        "foundingYear": "Not taught in 2027: Autumn 2027 review."
       },
       {
-        "unit": "Spring 1: The Industrial Revolution: causes and change",
+        "unit": "Spring 1: The Mughal Empire",
         "focus": [
-          "Britain before industry: farming and cottage work",
-          "Inventions, factories and new towns",
-          "Canals and railways",
-          "Why Britain? Coal, iron, empire and trade"
-        ],
-        "skills": [
-          "Explain cause and consequence"
+          "The Mughals in 1526: Babur and Humayun (Hodder 4.10A)",
+          "Akbar and Jahangir: ruling a vast and diverse empire (4.10B)",
+          "Shah Jahan and Aurangzeb; buildings as sources (4.10C)",
+          "One of the richest empires: trade, revenue and good administration",
+          "Period review: how would you sum up 1450 to 1750? (4.12); unit quiz"
         ],
         "keyTerms": [
-          "agriculture",
-          "invention",
-          "factory",
-          "railway",
-          "resource"
-        ],
-        "assess": "Unit quiz and an explanation paragraph",
-        "prereq": "Year 6 Summer 1: Victorians",
-        "leadsTo": "Spring 2"
-      },
-      {
-        "unit": "Spring 2: The Industrial Revolution: people and reform",
-        "focus": [
-          "Women and children in mills and mines",
-          "Public health, housing and cholera",
-          "Reform: factory acts, protest and the vote",
-          "Was it progress? A local history enquiry"
-        ],
-        "skills": [
-          "Weigh gains and costs",
-          "Use interpretations"
-        ],
-        "keyTerms": [
-          "child labour",
-          "sanitation",
-          "reform",
-          "suffrage",
-          "interpretation"
-        ],
-        "assess": "End-of-unit source question and essay plan; assessment point 2",
-        "prereq": "Spring 1",
-        "leadsTo": "Summer 1"
-      },
-      {
-        "unit": "Summer 1: Empire, India and the Mughals",
-        "focus": [
-          "The Mughal empire: Babur to Akbar",
-          "Shah Jahan, the Taj Mahal and Aurangzeb",
-          "The East India Company: trade to rule",
-          "The 1857 uprising and life under British rule; sugar, slavery and abolition"
-        ],
-        "skills": [
-          "Use sources",
-          "Explain how rule changed"
-        ],
-        "keyTerms": [
+          "dynasty",
+          "emperor",
           "Mughal",
-          "East India Company",
-          "colony",
-          "rebellion",
-          "abolition"
+          "administration",
+          "diversity",
+          "court",
+          "succession",
+          "architecture"
         ],
-        "assess": "Short source question after week 3",
-        "prereq": "Autumn 2: Ottomans",
-        "leadsTo": "Summer 2"
+        "assess": "Unit quiz and period review (week 6)",
+        "prereq": "Autumn 2: Church, state and society, part II: Elizabeth I and the Civil War",
+        "leadsTo": "Spring 2: Sugar, empire and slavery through time",
+        "resources": "Understanding History: Key Stage 3 (Hodder, 2019) scheme of work, Unit 4, lessons 4.10A to 4.10C, 4.11 and 4.12. The economy lesson follows the school intent.",
+        "foundingYear": "Rows 1 to 4 and 6 taught 11 Jan to 8 Feb; row 5 (EXT) goes to the Autumn 2027 review."
       },
       {
-        "unit": "Summer 2: Empire, legacy and review",
+        "unit": "Spring 2: Sugar, empire and slavery through time",
         "focus": [
-          "Empire and its legacy: partition and independence in brief",
-          "Review of the year: timeline and significance",
-          "A historical enquiry"
-        ],
-        "skills": [
-          "Judge significance"
+          "How sugar reached the Islamic world, AD 350 to 1100 (Hodder 5A)",
+          "How sugar spread to Europe and the Caribbean, 1100 to 1500 (5B)",
+          "Transatlantic sugar, 1500 to 1800: Africa before slavery and the triangular trade (5C)",
+          "The human cost of sugar: auctions, treatment and resistance; Toussaint Louverture (5D)",
+          "Sugar for everyone, 1800 to 1900: abolition and emancipation (5E)",
+          "The sugar crisis, 1900 to the present (5F); unit assessment"
         ],
         "keyTerms": [
-          "legacy",
-          "partition",
-          "independence",
-          "significance"
+          "sugar cane",
+          "refine",
+          "trade route",
+          "plantation",
+          "colony",
+          "Caribbean",
+          "triangular trade",
+          "Middle Passage"
         ],
-        "assess": "End-of-year history test",
-        "prereq": "Summer 1",
-        "leadsTo": "Year 9: History"
+        "assess": "End-of-enquiry extended writing (week 6)",
+        "prereq": "Spring 1: The Mughal Empire",
+        "leadsTo": "Summer 1: Industry and empire, 1750 to 1900: the Industrial Revolution",
+        "resources": "Understanding History: Key Stage 3 (Hodder, 2019) scheme of work, Unit 5, lessons 5A to 5F.",
+        "foundingYear": "All six weeks taught (15 Mar to 19 Apr)."
+      },
+      {
+        "unit": "Summer 1: Industry and empire, 1750 to 1900: the Industrial Revolution",
+        "focus": [
+          "Big picture, 1750 to 1900; what was the Industrial Revolution? (Hodder 6.1, 6.2A)",
+          "The working lives of men, women and children (6.2B to 6.2D)",
+          "Site study: Ancoats, Manchester, an industrial landscape (6.3, virtual)",
+          "Peterloo, 1819: protest and the vote (6.4A to 6.4C)",
+          "Families in industrial Britain and the Great Exhibition of 1851 (6.7, 6.8); unit quiz"
+        ],
+        "keyTerms": [
+          "industrial",
+          "revolution",
+          "steam power",
+          "factory",
+          "mill",
+          "child labour",
+          "urban",
+          "landscape"
+        ],
+        "assess": "Unit quiz (week 5)",
+        "prereq": "Spring 2: Sugar, empire and slavery through time",
+        "leadsTo": "Summer 2: Industry through empire, part II: the British Empire; review",
+        "resources": "Understanding History: Key Stage 3 (Hodder, 2019) scheme of work, Unit 6, lessons 6.1 to 6.4, 6.7 to 6.9 (site studies as virtual tours).",
+        "foundingYear": "Rows 1 to 5 taught (26 Apr to 7 Jun); row 6 (EXT) dropped."
+      },
+      {
+        "unit": "Summer 2: Industry through empire, part II: the British Empire; review",
+        "focus": [
+          "End-of-year test",
+          "Close up: the British Empire map of 1886; reasons for empire (Hodder 6.5)",
+          "Australia: claiming, settling and the indigenous peoples (6.6A to 6.6D); India: Company rule to 1857 (6.10A, 6.10B)",
+          "Voices of empire: glory or plunder? How empire ended (independence in 1947); year review"
+        ],
+        "keyTerms": [
+          "chronology",
+          "evidence",
+          "empire",
+          "colony",
+          "imperialism",
+          "convict",
+          "indigenous",
+          "rebellion"
+        ],
+        "assess": "End-of-year test (week 1)",
+        "prereq": "Summer 1: Industry and empire, 1750 to 1900: the Industrial Revolution",
+        "leadsTo": "Year 9 Autumn 1: Victorian values and the impact of empire",
+        "resources": "Understanding History: Key Stage 3 (Hodder, 2019) scheme of work, Unit 6, lessons 6.5, 6.6, 6.10A, 6.10B and 6.11.",
+        "foundingYear": "Rows 1 to 4 taught (14 Jun to 5 Jul): end-of-year test in the week of 14 Jun; rows 5 and 6 (EXT) dropped."
       }
     ],
     "y9": [
       {
-        "unit": "Autumn 1: The First World War, including the Indian Army's Muslim soldiers",
+        "unit": "Autumn 1: Victorian values and the impact of empire: the British Raj",
         "focus": [
-          "Causes of the war",
-          "The Western Front",
-          "Soldiers from the Empire"
+          "The British Raj, 1858 to 1905: rule, society and economy (Hodder 6.10C)",
+          "Close up: the Koh-i-Nur diamond (6.11)",
+          "Political and social history of Britain and its former colonies",
+          "Period review: how would you sum up 1750 to 1900? (6.12)"
         ],
         "skills": [
-          "Explain causes",
-          "Use sources"
+          "Use sources to explain impact",
+          "Extended writing"
+        ],
+        "keyTerms": [
+          "Raj",
+          "viceroy",
+          "imperialism",
+          "famine",
+          "nationalism"
+        ],
+        "assess": "Extended source-based answer on the impact of British rule in India",
+        "prereq": "Year 8 Summer 2: Industry through empire, part II",
+        "leadsTo": "Autumn 2: Migration to Britain through time, with a local study",
+        "resources": "Order and topics: Tarbiyyah Secondary History Curriculum Intent. Understanding History: Key Stage 3 (Hodder, 2019) scheme of work, Unit 6, lessons 6.10C to 6.12.",
+        "foundingYear": "Not taught in 2027. History ends in Year 9, so there is no Autumn 2027 review: key ideas are set as reading (TO CONFIRM)."
+      },
+      {
+        "unit": "Autumn 2: Migration to Britain through time, with a local study",
+        "focus": [
+          "Overview, then early medieval and late medieval migration (Hodder 7A to 7C)",
+          "Early modern migration: Huguenots and Jewish return (7D)",
+          "Industrial and imperial migration: lascars and colonial workers (7E)",
+          "Modern migration: Commonwealth, refugees and the European Union (7F)",
+          "Local study: the story of a Muslim community in Britain from records and family testimony"
+        ],
+        "skills": [
+          "Compare experiences across periods",
+          "Use local records"
+        ],
+        "keyTerms": [
+          "migration",
+          "refugee",
+          "Huguenots",
+          "lascars",
+          "Commonwealth"
+        ],
+        "assess": "End-of-enquiry extended writing; short local study write-up",
+        "prereq": "Autumn 1: Victorian values and the impact of empire: the British Raj",
+        "leadsTo": "Spring 1: Challenges for Britain, Europe and the wider world: the First World War",
+        "resources": "Understanding History: Key Stage 3 (Hodder, 2019) scheme of work, Unit 7, lessons 7A to 7F. The local study keeps the National Curriculum's required local history study.",
+        "foundingYear": "Not taught in 2027 (no Autumn 2027 review in Year 10): TO CONFIRM how the local study is covered for this cohort."
+      },
+      {
+        "unit": "Spring 1: Challenges for Britain, Europe and the wider world: the First World War",
+        "focus": [
+          "Big picture: the modern world (Hodder 8.1); why war broke out in 1914",
+          "'Your country needs you!': recruitment and propaganda (8.2A)",
+          "Living and fighting on the Western Front; shell shock (8.2B)",
+          "The global conflict, including the Indian Army's Muslim soldiers (8.2C)",
+          "The peace treaty and future problems; unit quiz"
         ],
         "keyTerms": [
           "alliance",
-          "Western Front",
-          "Empire",
-          "trench"
+          "empire",
+          "nationalism",
+          "propaganda",
+          "recruitment",
+          "volunteer",
+          "trench",
+          "Somme"
         ],
-        "assess": "Unit enquiry",
-        "prereq": "Year 8 Autumn 1: war poetry",
-        "leadsTo": "Autumn 2"
+        "assess": "Unit quiz (week 6)",
+        "prereq": "Autumn 2: Migration to Britain through time, with a local study",
+        "leadsTo": "Spring 2: The Second World War, Churchill and the Holocaust",
+        "resources": "Understanding History: Key Stage 3 (Hodder, 2019) scheme of work, Unit 8, lessons 8.1 to 8.3; the peace treaty follows the school intent.",
+        "foundingYear": "Rows 1 to 4 and 6 taught 11 Jan to 8 Feb; row 5 (EXT) is set as independent reading."
       },
       {
-        "unit": "Autumn 2: The First World War: the wider war and its end",
+        "unit": "Spring 2: The Second World War, Churchill and the Holocaust",
         "focus": [
-          "The war beyond the Western Front",
-          "The end of the war and the peace settlement"
-        ],
-        "skills": [
-          "Judge consequences"
+          "Churchill's career to 1940 (Hodder 8.4A, 8.4B)",
+          "War leader: Dunkirk, the Battle of Britain, the Blitz and wartime propaganda (8.4C, 8.5)",
+          "A world war: Stalingrad, Pearl Harbor, D-Day and the atomic bombs",
+          "Jewish life before the war and increasing persecution, 1933 to 1939 (8.6A)",
+          "Ghettos and mass murder, 1939 to 1945; rescuers and resistance (8.6B, 8.6C)",
+          "Justice and remembrance: trials, perpetrators and how we remember; assessment"
         ],
         "keyTerms": [
-          "armistice",
-          "treaty",
-          "peace settlement",
-          "consequence"
-        ],
-        "assess": "Unit quiz",
-        "prereq": "Autumn 1",
-        "leadsTo": "Spring 1"
-      },
-      {
-        "unit": "Spring 1: The Second World War",
-        "focus": [
-          "From the peace of 1919 to dictators; appeasement",
-          "Blitzkrieg, the Battle of Britain and the Blitz",
-          "A world war: the Eastern Front and Pearl Harbor",
-          "The Empire at war; D-Day and the end in 1945"
-        ],
-        "skills": [
-          "Explain why war came again"
-        ],
-        "keyTerms": [
+          "statesman",
           "appeasement",
-          "blitzkrieg",
-          "Axis",
+          "evacuation",
+          "Blitz",
+          "morale",
           "Allies",
-          "D-Day"
+          "Axis",
+          "atomic"
         ],
-        "assess": "Unit quiz",
-        "prereq": "Year 6 Autumn 2: A Child's War",
-        "leadsTo": "Spring 2"
+        "assess": "Extended written assessment (week 6)",
+        "prereq": "Spring 1: Challenges for Britain, Europe and the wider world: the First World War",
+        "leadsTo": "Summer 1: Britain and the world since 1900: rights, campaigns and change",
+        "resources": "Understanding History: Key Stage 3 (Hodder, 2019) scheme of work, Unit 8, lessons 8.4 to 8.6. Holocaust lessons use survivor testimony in text form; no graphic images.",
+        "foundingYear": "All six weeks taught (15 Mar to 19 Apr)."
       },
       {
-        "unit": "Spring 2: The Holocaust",
+        "unit": "Summer 1: Britain and the world since 1900: rights, campaigns and change",
         "focus": [
-          "Anti-Jewish persecution from 1933",
-          "Kristallnacht and ghettos",
-          "The Final Solution, taught factually with no graphic images",
-          "Resistance, rescue, liberation and Nuremberg; prejudice, dignity and the sanctity of life in Islam"
-        ],
-        "skills": [
-          "Handle sensitive evidence with care"
+          "Britain in 1945; Commonwealth migration to post-war Britain",
+          "Votes for women: suffragists and suffragettes; close up: Millicent Fawcett (Hodder 8.9)",
+          "The Representation of the People Acts, 1918 and 1928",
+          "1960 to the present: an overview; campaigns and campaigners (8.8A, 8.8B)",
+          "Factors and trends: education, healthcare, democracy, space travel (8.8C); unit quiz"
         ],
         "keyTerms": [
-          "persecution",
-          "genocide",
-          "resistance",
-          "bystander",
-          "justice"
-        ],
-        "assess": "Reflective written response",
-        "prereq": "Spring 1",
-        "leadsTo": "Summer 1"
-      },
-      {
-        "unit": "Summer 1: Britain since 1945: migration and the Commonwealth",
-        "focus": [
-          "Britain in 1945: rebuilding and labour shortages",
-          "Migration from the Caribbean (Windrush) and South Asia",
-          "Discrimination and how Muslim communities responded",
-          "Mosques, schools and charities; migration since 1990"
-        ],
-        "skills": [
-          "Show change over time"
-        ],
-        "keyTerms": [
-          "Windrush",
+          "welfare state",
           "Commonwealth",
-          "discrimination",
-          "community",
-          "integration"
+          "Windrush",
+          "suffrage",
+          "suffragist",
+          "suffragette",
+          "franchise",
+          "Act"
         ],
-        "assess": "Unit quiz",
-        "prereq": "Spring 2",
-        "leadsTo": "Summer 2"
+        "assess": "Unit quiz (week 5)",
+        "prereq": "Spring 2: The Second World War, Churchill and the Holocaust",
+        "leadsTo": "Summer 2: The modern world since 1960, part II; review of Key Stage 3",
+        "resources": "Understanding History: Key Stage 3 (Hodder, 2019) scheme of work, Unit 8, lessons 8.7 to 8.9.",
+        "foundingYear": "Rows 1 to 5 taught (26 Apr to 7 Jun); row 6 (EXT) dropped."
       },
       {
-        "unit": "Summer 2: Local study: Muslim communities in Britain",
+        "unit": "Summer 2: The modern world since 1960, part II; review of Key Stage 3",
         "focus": [
-          "Choosing an enquiry question and types of sources",
-          "Family and community oral history",
-          "Local records, archives and maps",
-          "Writing up and presenting findings"
-        ],
-        "skills": [
-          "Run a local enquiry"
+          "One event, many viewpoints: 11 September 2001 (Hodder 8.10), taught from named sources",
+          "Close up: the invention of the World Wide Web (8.11)",
+          "End-of-year test",
+          "Feedback; period review: how would you sum up the twentieth century? (8.12)"
         ],
         "keyTerms": [
-          "enquiry",
-          "oral history",
-          "archive",
-          "evidence",
-          "bias"
+          "interpretation",
+          "viewpoint",
+          "terrorism",
+          "internet",
+          "web",
+          "technology",
+          "chronology",
+          "evidence"
         ],
-        "assess": "Local study write-up",
-        "prereq": "Summer 1",
-        "leadsTo": "Year 10: International GCSE History"
+        "assess": "End-of-year test (week 3)",
+        "prereq": "Summer 1: Britain and the world since 1900: rights, campaigns and change",
+        "leadsTo": "History ends in Year 9 (not taught at KS4)",
+        "resources": "Understanding History: Key Stage 3 (Hodder, 2019) scheme of work, Unit 8, lessons 8.10 to 8.12. TO CONFIRM: how the school frames enquiry 8.10 (al-Qaeda and 9/11).",
+        "foundingYear": "Rows 1 to 4 taught (14 Jun to 5 Jul): end-of-year test in the week of 28 Jun; rows 5 and 6 (EXT) dropped."
       }
     ]
   },
@@ -1210,8 +1270,8 @@
         "Y1": "Personal timeline and time words",
         "Y3": "Prehistory, BC and AD",
         "Y5": "Narrative from Roman Britain to 1066",
-        "Y7": "Medieval Britain 1066-1509",
-        "Y9": "Twentieth-century overview"
+        "Y7": "Water and health through time; the Middle Ages 1000-1450",
+        "Y9": "Twentieth-century overview and period review"
       }
     },
     {
@@ -1220,7 +1280,8 @@
         "Y2": "Why the fire spread",
         "Y4": "Why Boudica rebelled",
         "Y7": "Why William won",
-        "Y9": "Why war broke out"
+        "Y9": "Why war broke out",
+        "Y8": "Why civil war broke out in 1642"
       }
     },
     {
@@ -1238,7 +1299,8 @@
       "steps": {
         "Y1": "Toys then and now",
         "Y3": "Stone Age to Iron Age",
-        "Y8": "Industrial change"
+        "Y8": "Industrial change",
+        "Y9": "Migration to Britain through time"
       }
     },
     {
@@ -1247,7 +1309,7 @@
         "Y4": "Roman legacy",
         "Y6": "Baghdad's legacy",
         "Y7": "Magna Carta",
-        "Y9": "Different views of the Somme"
+        "Y9": "Viewpoints on 9/11; different views of the Somme"
       }
     }
   ],
@@ -1315,8 +1377,12 @@
     }
   ],
   "gaps": [
-    "School choice, not a verification gap: statutory KS2 and KS3 content with no unit in the school's lesson files yet (local history study, Ancient Greece, earliest civilisations depth study, medieval Britain 1066-1509 beyond the Norman unit, Britain 1509-1745, Britain 1745-1901 beyond the Industrial Revolution, the Second World War and the Holocaust, a significant world society).",
-    "School choice, not a verification gap: the lessons so far have one history unit per year, so the KS3 periods are covered only in part.",
-    "Note: the year-by-year split is a recommended sequence, not statutory."
+    "Note: the year-by-year split is a recommended sequence, not statutory.",
+    "School choice: the KS3 study of a significant society or issue in world history is met by the Mughal Empire (Year 8) and the Crusades (Year 7); the local history study is the Year 9 migration local study.",
+    "TO CONFIRM: which ancient civilisations Year 7 studies (the school intent names none).",
+    "Dropped from the earlier TGA plan because the school's scheme does not include them: Al-Andalus (Year 7) and the Ottoman world (Year 8). TO CONFIRM.",
+    "TO CONFIRM: how the school frames Hodder enquiry 8.10 (al-Qaeda and 9/11) in Year 9.",
+    "Year 9 Autumn units have no catch-up in Year 10 for the founding cohort (History ends in Year 9).",
+    "Portal History lessons were written for the earlier plan: y8 Industrial Revolution lessons fit Year 8 Summer 1; most units need new lessons."
   ]
 }
