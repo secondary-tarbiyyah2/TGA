@@ -8,183 +8,269 @@
   "source": "School Maths folder: Edexcel GCSE (9–1) Mathematics content, sequenced using the school's two-year scheme order (decimals and recurring decimals, powers and roots, surds, algebraic manipulation, formulae, linear equations and inequalities); Edexcel 1MA1 Higher exam style; INSET lesson standard. | Pearson Edexcel 1MA1 specification as recorded in content/syllabus/ks4/mathematics.json (units N and A only), Higher tier with Foundation-accessible starts; Edexcel 1MA1 Higher exam style; INSET lesson standard. Skipped as already taught well in the school's existing mathematics lessons: N4 primes/HCF/LCM, N7 fractional and negative indices, N8 surds, N10 recurring decimals (existing Year 10 lessons 1-5); A4 binomials and quadratic factorising, A5 subject appearing twice, A6 identities and proof, A17 linear equations, A21 forming equations, A22 linear inequalities (existing Year 10 lessons 6-16); A11/A12 quadratic, cubic and reciprocal graphs, A13 translations and reflections of graphs, A17 solving by graphs, A19 algebraic simultaneous equations (existing Year 11 lessons 1-8). | Edexcel GCSE (9–1) Mathematics 1MA1 specification (Issue 2, June 2015) via content/syllabus/ks4/mathematics.json, units R1-R12, G1-G8, G15-G19 and P1-P9 (Year 10 placement); Higher tier with Foundation-accessible starts. Original lessons and questions. No overlap with the school's existing first-four-weeks Year 10 lessons (Units 1, 9, 10, 11: number, algebra, equations), so no spec point was skipped. | Gap-fill against Pearson Edexcel 1MA1 specification",
   "lessons": [
     {
-      "unit": "Unit 1: Number: decimals, powers and roots",
+      "unit": "Unit 1: Decimals",
       "n": 1,
       "title": "Recurring decimals and fractions",
       "duration": 50,
-      "bigQuestion": "Can every fraction be written as a decimal, and every decimal as a fraction?",
+      "bigQuestion": "How can a decimal that never ends be an exact fraction?",
       "objectives": [
-        "Know which fractions give terminating or recurring decimals",
-        "Convert a fraction to a recurring decimal",
-        "Convert a recurring decimal to a fraction using algebra"
+        "To understand how to convert recurring decimals into fractions and why the method works"
       ],
       "successCriteria": [
-        "Write fractions as recurring decimals using dot notation",
-        "Convert simple recurring decimals such as 0.4̇ to fractions",
-        "Convert decimals like 0.12̇7̇ to fractions and show the method in 1MA1 style"
+        "All: say whether a fraction gives a terminating or recurring decimal",
+        "Most: convert recurring decimals with one or two repeating digits to fractions",
+        "Some: prove a recurring decimal equals a given fraction when the repeat starts later"
       ],
-      "crossCurricular": "Computing: why computers store some fractions inexactly",
-      "smsc": "Spiritual: infinity in a finite-looking number; wonder at mathematical structure",
+      "crossCurricular": "Computing: computers store some fractions only approximately, which causes rounding errors",
+      "smsc": "Spiritual: infinitely repeating patterns can still be exact, prompting reflection on the infinite and the exact knowledge of Allah",
       "keywords": [
         {
-          "term": "terminating decimal",
-          "def": "a decimal that ends, such as 0.375"
-        },
-        {
           "term": "recurring decimal",
-          "def": "a decimal with a digit or block of digits repeating forever"
+          "def": "a decimal with digits that repeat for ever"
         },
         {
-          "term": "dot notation",
-          "def": "dots over the first and last repeating digits"
+          "term": "terminating decimal",
+          "def": "a decimal that ends"
         },
         {
-          "term": "rational number",
-          "def": "a number that can be written as a fraction of two integers"
+          "term": "prove",
+          "def": "show something must be true using algebra"
+        },
+        {
+          "term": "prime factor",
+          "def": "a factor that is a prime number"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "0.999... (nines for ever) and 1: are they the same number or not? How could you decide?",
+        "a": "They are equal. If x = 0.999..., then 10x = 9.999..., so 9x = 9 and x = 1. Today's method proves it."
+      },
       "starter": [
-        "Bismillah. Write 3/8 as a decimal",
-        "Write 0.35 as a fraction in its simplest form",
-        "Work out 1 ÷ 3 on a calculator",
-        "Write 2/9 as a decimal"
+        {
+          "q": "Write 3/8 as a decimal.",
+          "a": "0.375",
+          "mins": 1
+        },
+        {
+          "q": "Write 0.45 as a fraction in its simplest form.",
+          "a": "9/20",
+          "mins": 1
+        },
+        {
+          "q": "Work out 1 ÷ 3 as a decimal.",
+          "a": "0.333...",
+          "mins": 1
+        },
+        {
+          "q": "Write 72 as a product of prime factors.",
+          "a": "2³ × 3²",
+          "mins": 1
+        }
       ],
       "teach": [
         {
           "heading": "Terminating or recurring?",
           "bullets": [
-            "Simplify the fraction first",
-            "Denominator with only prime factors 2 and 5: terminates",
-            "Any other prime factor: recurs"
+            "In simplest form, look at the denominator's prime factors",
+            "Only 2s and 5s: terminating"
           ],
-          "note": "Examples: 7/40 (40 = 2³ × 5) terminates; 5/12 (12 = 2² × 3) recurs. Ask pupils to predict before calculating.",
-          "table": {
-            "head": [
-              "Fraction",
-              "Denominator primes",
-              "Decimal"
+          "note": "7/40: 40 = 2³ × 5, so terminating (0.175). 5/12: 12 = 2² × 3, so recurring.",
+          "sort": {
+            "columns": [
+              "Terminating",
+              "Recurring"
             ],
-            "rows": [
-              [
-                "7/40",
-                "2, 5",
-                "0.175"
-              ],
-              [
-                "5/12",
-                "2, 3",
-                "0.416̇"
-              ],
-              [
-                "3/11",
-                "11",
-                "0.2̇7̇"
-              ]
+            "cards": [
+              "3/8",
+              "5/12",
+              "7/40",
+              "2/9",
+              "11/25",
+              "1/6"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
             ]
           }
         },
         {
-          "heading": "Recurring decimal to fraction",
+          "heading": "One digit or two repeating",
           "bullets": [
-            "Let x = the decimal",
-            "Multiply by 10ⁿ to line up the repeats",
-            "Subtract to cancel the recurring part"
+            "Multiply by 10 for one repeating digit, 100 for two",
+            "Subtract to remove the repeat"
           ],
-          "note": "This is the method the mark scheme expects: show both lines and the subtraction.",
+          "note": "4MA1 asks pupils to show the algebra, not just state the answer.",
           "model": {
-            "problem": "Write 0.2̇7̇ as a fraction",
+            "problem": "Convert 0.454545... to a fraction.",
             "steps": [
-              "x = 0.272727…",
-              "100x = 27.272727…",
-              "100x − x: 99x = 27",
-              "x = 27/99"
+              "x = 0.454545...",
+              "100x = 45.454545...",
+              "100x − x: 99x = 45",
+              "x = 45/99 = 5/11"
             ],
-            "answer": "3/11"
+            "answer": "5/11"
           }
         },
         {
-          "heading": "A non-repeating start",
+          "heading": "Repeat starting later",
           "bullets": [
-            "Multiply to move the non-repeating part first",
-            "Then line up the repeats"
+            "Make two numbers with the same repeating tail"
           ],
-          "note": "0.13̇: let x = 0.1333…; 10x = 1.333…; 100x = 13.333…; 90x = 12; x = 12/90 = 2/15."
+          "note": "Choose 10x and 100x so the tails match.",
+          "model": {
+            "problem": "Convert 0.2333... to a fraction.",
+            "steps": [
+              "x = 0.2333...",
+              "10x = 2.333..., 100x = 23.333...",
+              "90x = 21",
+              "x = 21/90 = 7/30"
+            ],
+            "answer": "7/30"
+          }
         },
         {
-          "heading": "Wrong multiplier",
+          "heading": "Common error",
           "bullets": [
-            "Two digits repeat: use 100x",
-            "One digit repeats: use 10x"
+            "Subtract numbers with matching tails"
           ],
-          "note": "Show the error and how the decimals fail to cancel.",
+          "note": "Write the tails under each other to check.",
           "misconception": {
-            "wrong": "0.2̇7̇: 10x − x = 9x = 2.4545…",
-            "right": "Use 100x so the blocks line up: 99x = 27"
+            "wrong": "0.1666...: 10x − x = 1.5, so x = 1.5/9",
+            "right": "Use 100x − 10x = 16.666... − 1.666... = 15, so 90x = 15 and x = 1/6"
           }
         },
         {
-          "heading": "Check: terminate?",
-          "bullets": [],
-          "note": "Show me on 3.",
+          "heading": "Check",
+          "bullets": [
+            "Repeat of two digits: 99"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
           "check": {
-            "q": "Which fraction gives a terminating decimal?",
+            "q": "Which fraction equals 0.181818...?",
             "options": [
-              "5/6",
-              "7/15",
-              "9/20",
-              "4/21"
+              "2/11",
+              "18/100",
+              "9/50",
+              "1/18"
             ],
-            "answer": 2,
-            "why": "20 = 2² × 5, so 9/20 = 0.45. 6, 15 and 21 each have a factor of 3 (or 7), so they recur."
+            "answer": 0,
+            "why": "18/99 = 2/11. 18/100 and 9/50 are 0.18, which terminates."
           }
         }
       ],
       "practice": [
-        "Write 7/9 as a recurring decimal",
-        "Write 0.5̇ as a fraction",
-        "Write 0.4̇5̇ as a fraction in its simplest form"
+        {
+          "q": "Convert 0.777... to a fraction.",
+          "a": "7/9",
+          "mins": 2,
+          "model": "x = 0.777...; 10x = 7.777...; subtract: 9x = 7; x = 7/9."
+        },
+        {
+          "q": "Convert 0.363636... to a fraction.",
+          "a": "4/11",
+          "mins": 1
+        },
+        {
+          "q": "Convert 0.8333... to a fraction.",
+          "a": "5/6",
+          "mins": 2
+        },
+        {
+          "q": "Is 7/40 terminating? Give its decimal.",
+          "a": "Yes (40 = 2³ × 5): 0.175",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Core: Convert to fractions in their simplest form: (a) 0.8̇ (b) 0.3̇6̇ (c) 0.1̇2̇3̇",
-        "Extend: Show that 0.16̇ = 1/6 and that 0.24̇ = 11/45",
-        "Stretch: Prove that 0.9̇ = 1 using algebra, and explain why this is not a rounding error."
+        {
+          "q": "Core: Convert to fractions in their simplest form: (a) 0.555... (b) 0.090909... (c) 0.1222... (d) 0.123123...",
+          "a": "(a) 5/9 (b) 1/11 (c) 11/90 (d) 41/333",
+          "mins": 6,
+          "model": "(a) 10x − x = 5, x = 5/9. (b) 100x − x = 9, x = 9/99 = 1/11. (c) 100x − 10x = 12.222... − 1.222... = 11, x = 11/90. (d) 1000x − x = 123, x = 123/999 = 41/333."
+        },
+        {
+          "q": "Extend (exam style, 3 marks): Prove algebraically that 0.3181818... = 7/22.",
+          "a": "x = 0.31818...; 10x = 3.1818...; 1000x = 318.1818...; 990x = 315 (M1 M1); x = 315/990 = 7/22 (A1)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Prove that 0.999... = 1.",
+          "a": "x = 0.999...; 10x = 9.999...; 9x = 9; x = 1",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Is 11/40 terminating or recurring? Why?",
-        "Write 0.7̇ as a fraction.",
-        "Write 0.0̇9̇ as a fraction."
+        {
+          "q": "Convert 0.636363... to a fraction.",
+          "a": "7/11",
+          "mins": 2
+        },
+        {
+          "q": "Which of 3/8, 5/12 and 7/20 gives a recurring decimal?",
+          "a": "5/12 (its denominator has a factor 3)",
+          "mins": 1
+        }
       ],
-      "homework": "Exam practice: four 1MA1-style 'show that' recurring-decimal questions (3 marks each) from the homework sheet.",
-      "send": "Support: method frame with the two lines to complete. Stretch: proofs about rational and irrational numbers.",
-      "board": "Pearson Edexcel GCSE (9-1) Mathematics (1MA1), Higher tier",
-      "boardShort": "Edexcel GCSE 1MA1 Higher"
+      "homework": "Convert 0.4444..., 0.272727..., 0.1555... and 0.142857142857... to fractions, showing the algebra each time.",
+      "send": "Support: x, 10x, 100x frame with tails lined up. EAL: 'recurring', 'terminating', 'prove'. Stretch: three-digit repeats starting after two decimal places.",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Unit 1 Decimals (4MA1 1.3A)",
+        "Portal Year 10 lesson 1 (upgraded)",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book",
+        "Scientific calculator"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "long division of 1 by 7 recurring decimal",
+          "alt": "A long division showing a repeating decimal",
+          "for": "teach:2"
+        },
+        {
+          "find": "scientific calculator recurring decimal display",
+          "alt": "A calculator display of a recurring decimal",
+          "for": "keywords"
+        }
+      ]
     },
     {
-      "unit": "Unit 1: Number: decimals, powers and roots",
+      "unit": "Unit 2: Special numbers, powers and roots",
       "n": 2,
       "title": "Prime factors, HCF and LCM",
       "duration": 50,
-      "bigQuestion": "How can prime factors solve real problems with timings and sharing?",
+      "bigQuestion": "How do prime factors reveal what two numbers share?",
       "objectives": [
-        "Write numbers as products of prime factors in index form",
-        "Find HCF and LCM using prime factors",
-        "Solve HCF and LCM problems, including given in index form"
+        "To understand how prime factorisation finds the HCF and LCM"
       ],
       "successCriteria": [
-        "Write a number as a product of prime factors",
-        "Find HCF and LCM using a Venn diagram",
-        "Find HCF and LCM of numbers given in index form without working them out"
+        "All: write a number as a product of prime factors in index form",
+        "Most: find the HCF and LCM of two numbers from their prime factors",
+        "Some: solve HCF and LCM problems and reason with index form"
       ],
-      "crossCurricular": "Computing: prime factorisation and encryption",
-      "smsc": "Social: planning fair shares and schedules",
+      "crossCurricular": "Science: gear wheels and repeating cycles meet again at the LCM",
+      "smsc": "Spiritual: the primes, the building blocks of every whole number, show order in mathematics",
       "keywords": [
         {
-          "term": "prime factor decomposition",
-          "def": "a number written as a product of primes"
+          "term": "prime factor",
+          "def": "a prime number that divides exactly"
         },
         {
           "term": "index form",
-          "def": "using powers, e.g. 2³ × 5"
+          "def": "using powers, such as 2³ × 3²"
         },
         {
           "term": "HCF",
@@ -195,282 +281,568 @@
           "def": "lowest common multiple"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two bells ring every 12 and every 18 minutes. They ring together at 9:00. When will they next ring together, and how could you be sure without listing every time?",
+        "a": "At 9:36: the LCM of 12 and 18 is 36. Prime factors find it quickly."
+      },
       "starter": [
-        "Write 0.4̇ as a fraction",
-        "Is 91 prime?",
-        "Work out 2³ × 3²",
-        "List the factors of 36"
+        {
+          "q": "List the factors of 36.",
+          "a": "1, 2, 3, 4, 6, 9, 12, 18, 36",
+          "mins": 1
+        },
+        {
+          "q": "Write the first five multiples of 15.",
+          "a": "15, 30, 45, 60, 75",
+          "mins": 1
+        },
+        {
+          "q": "Is 91 prime?",
+          "a": "No: 7 × 13",
+          "mins": 1
+        },
+        {
+          "q": "Work out 2³ × 3².",
+          "a": "72",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Product of primes",
+          "heading": "Prime factorisation",
           "bullets": [
-            "Factor tree or repeated division",
-            "Write in index form, in order"
+            "Divide by primes until you reach 1",
+            "Write in index form"
           ],
-          "note": "Model 504 by division: 2, 2, 2, 3, 3, 7 → 2³ × 3² × 7."
+          "note": "Use a factor tree or repeated division.",
+          "model": {
+            "problem": "Write 360 as a product of prime factors in index form.",
+            "steps": [
+              "360 = 2 × 180 = 2 × 2 × 90",
+              "90 = 2 × 45 = 2 × 3 × 15 = 2 × 3 × 3 × 5",
+              "360 = 2 × 2 × 2 × 3 × 3 × 5"
+            ],
+            "answer": "2³ × 3² × 5"
+          }
         },
         {
-          "heading": "HCF and LCM in index form",
+          "heading": "HCF and LCM from prime factors",
           "bullets": [
-            "HCF: lowest power of each common prime",
+            "HCF: lowest power of each shared prime",
             "LCM: highest power of every prime"
           ],
-          "note": "Model.",
-          "model": {
-            "problem": "A = 2³ × 3² × 5 and B = 2² × 3⁴ × 7. Find the HCF and LCM.",
-            "steps": [
-              "Common primes: 2 and 3",
-              "HCF: 2² × 3² = 36",
-              "LCM: 2³ × 3⁴ × 5 × 7",
-              "= 8 × 81 × 35"
+          "note": "84 = 2² × 3 × 7; 120 = 2³ × 3 × 5.",
+          "table": {
+            "head": [
+              "Prime",
+              "84",
+              "120",
+              "HCF",
+              "LCM"
             ],
-            "answer": "HCF 36, LCM 22 680"
+            "rows": [
+              [
+                "2",
+                "2²",
+                "2³",
+                "2²",
+                "2³"
+              ],
+              [
+                "3",
+                "3",
+                "3",
+                "3",
+                "3"
+              ],
+              [
+                "5",
+                "none",
+                "5",
+                "none",
+                "5"
+              ],
+              [
+                "7",
+                "7",
+                "none",
+                "none",
+                "7"
+              ],
+              [
+                "Result",
+                "",
+                "",
+                "12",
+                "840"
+              ]
+            ]
           }
         },
         {
-          "heading": "Mixing up highest and lowest",
+          "heading": "Problems",
           "bullets": [
-            "HCF divides into both, so use the lower powers"
+            "Meeting again: LCM",
+            "Largest equal groups or tiles: HCF"
           ],
-          "note": "Ask pupils to check: does 36 divide into A = 360 and B = 2268? Yes: 360 = 36 × 10 and 2268 = 36 × 63.",
-          "misconception": {
-            "wrong": "HCF = 2³ × 3⁴",
-            "right": "HCF uses the lowest powers: 2² × 3²"
+          "note": "Bells: LCM(12, 18) = 36 minutes.",
+          "model": {
+            "problem": "Two bells ring every 45 s and 60 s. They ring together at 12:00:00. When do they next ring together?",
+            "steps": [
+              "45 = 3² × 5; 60 = 2² × 3 × 5",
+              "LCM = 2² × 3² × 5 = 180 s",
+              "180 s = 3 minutes"
+            ],
+            "answer": "12:03:00"
           }
         },
         {
-          "heading": "Check: LCM",
-          "bullets": [],
-          "note": "Show me on 3.",
+          "heading": "Common error",
+          "bullets": [
+            "LCM uses the highest power"
+          ],
+          "note": "Ask: does 2² × 3 × 5 contain 120?",
+          "misconception": {
+            "wrong": "LCM of 84 and 120 = 2² × 3 × 5 × 7 = 420",
+            "right": "Use 2³ from 120: LCM = 2³ × 3 × 5 × 7 = 840"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Lowest powers of shared primes"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
           "check": {
-            "q": "LCM of 2⁴ × 3 and 2² × 3³ × 5?",
+            "q": "Find the HCF of 2³ × 3² × 5 and 2² × 3³ × 7.",
             "options": [
-              "2² × 3",
-              "2⁴ × 3³ × 5",
-              "2⁶ × 3⁴ × 5",
-              "2⁴ × 3³"
+              "36",
+              "2³ × 3³ × 5 × 7",
+              "6",
+              "12"
             ],
-            "answer": 1,
-            "why": "Highest power of each prime: 2⁴, 3³ and 5. A is the HCF; C adds the powers; D misses the 5."
+            "answer": 0,
+            "why": "Shared primes 2 and 3 at lowest powers: 2² × 3² = 36. The second option is the LCM."
           }
         }
       ],
       "practice": [
-        "Write 360 in index form",
-        "Find the HCF and LCM of 84 and 90",
-        "Find the HCF of 2⁵ × 7 and 2³ × 7²"
+        {
+          "q": "Write 252 as a product of prime factors.",
+          "a": "2² × 3² × 7",
+          "mins": 2,
+          "model": "252 = 2 × 126 = 2 × 2 × 63 = 2 × 2 × 3 × 21 = 2 × 2 × 3 × 3 × 7. Index form: 2² × 3² × 7."
+        },
+        {
+          "q": "Find the HCF of 48 and 180.",
+          "a": "12",
+          "mins": 1
+        },
+        {
+          "q": "Find the LCM of 48 and 180.",
+          "a": "720",
+          "mins": 1
+        },
+        {
+          "q": "Find the LCM of 15 and 20.",
+          "a": "60",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Core: Find the HCF and LCM of (a) 120 and 150 (b) 2² × 3 × 5² and 2 × 3³ × 5",
-        "Extend: Two runners lap a track in 72 s and 84 s. They start together. After how many minutes are they next together at the start line?",
-        "Stretch: x = 2ᵃ × 3 and y = 2³ × 3ᵇ. HCF(x, y) = 12 and LCM(x, y) = 216. Find a and b."
+        {
+          "q": "Core: (a) Write 600 in index form. (b) Find the HCF and LCM of 72 and 84.",
+          "a": "(a) 2³ × 3 × 5² (b) HCF 12, LCM 504",
+          "mins": 5,
+          "model": "(a) 600 = 2 × 300 = 2² × 150 = 2³ × 75 = 2³ × 3 × 25 = 2³ × 3 × 5². (b) 72 = 2³ × 3²; 84 = 2² × 3 × 7. HCF = 2² × 3 = 12; LCM = 2³ × 3² × 7 = 504."
+        },
+        {
+          "q": "Extend (exam style, 3 marks): Tiles 84 cm by 120 cm are cut into identical squares as large as possible with no waste. Find the side of each square and how many there are.",
+          "a": "HCF(84, 120) = 12 cm (M1 A1); (84 ÷ 12) × (120 ÷ 12) = 7 × 10 = 70 squares (A1)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A = 2⁴ × 3 × 5² and B = 2² × 3³ × 5. Find the HCF and LCM in index form, and the smallest k such that Ak is a square number.",
+          "a": "HCF 2² × 3 × 5 = 60; LCM 2⁴ × 3³ × 5² = 10 800; k = 3",
+          "mins": 4
+        }
       ],
       "exit": [
-        "Write 252 as a product of primes.",
-        "HCF of 2³ × 5 and 2 × 5²?",
-        "LCM of 2³ × 5 and 2 × 5²?"
+        {
+          "q": "Write 196 as a product of prime factors.",
+          "a": "2² × 7²",
+          "mins": 1
+        },
+        {
+          "q": "Find the HCF of 56 and 70.",
+          "a": "14",
+          "mins": 1
+        },
+        {
+          "q": "Big question: what do the prime factors tell us about two numbers?",
+          "a": "Which building blocks they share (HCF) and the smallest number containing both (LCM).",
+          "mins": 1
+        }
       ],
-      "homework": "1MA1 past-paper style: five HCF/LCM questions, including two in index form.",
-      "send": "Support: Venn template. Stretch: number of factors of a number from its prime factors.",
-      "board": "Pearson Edexcel GCSE (9-1) Mathematics (1MA1), Higher tier",
-      "boardShort": "Edexcel GCSE 1MA1 Higher"
+      "homework": "Find the HCF and LCM of 90 and 126, and of 2⁵ × 7 and 2³ × 3 × 7², showing prime factors.",
+      "send": "Support: factor tree templates. EAL: 'factor', 'multiple', 'common'. Stretch: HCF and LCM of three numbers.",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Unit 2 (4MA1 1.4D, 1.4E)",
+        "Portal Year 10 lesson 2 (upgraded)",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book",
+        "Scientific calculator"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "factor tree prime factorisation",
+          "alt": "A factor tree breaking a number into primes",
+          "for": "teach:1"
+        },
+        {
+          "find": "Venn diagram prime factors HCF LCM",
+          "alt": "A Venn diagram of prime factors",
+          "for": "teach:2"
+        }
+      ]
     },
     {
-      "unit": "Unit 1: Number: decimals, powers and roots",
+      "unit": "Unit 2: Special numbers, powers and roots",
       "n": 3,
       "title": "Negative and fractional indices",
       "duration": 50,
-      "bigQuestion": "What could it mean to raise a number to the power one half?",
+      "bigQuestion": "What could a negative or a fractional power possibly mean?",
       "objectives": [
-        "Use the laws of indices including zero and negative powers",
-        "Interpret fractional indices as roots",
-        "Evaluate expressions such as 27^(−2/3)"
+        "To understand how negative and fractional indices follow from the index laws"
       ],
       "successCriteria": [
-        "Evaluate a⁰ and a⁻ⁿ",
-        "Evaluate a^(1/n) and a^(m/n)",
-        "Evaluate negative fractional powers of fractions"
+        "All: evaluate negative indices as reciprocals",
+        "Most: evaluate fractional indices such as 27^(2/3)",
+        "Some: solve simple equations with indices by writing both sides with the same base"
       ],
-      "crossCurricular": "Science: exponential decay and growth; Computing: binary powers",
-      "smsc": "Spiritual: extending a rule logically into new territory",
+      "crossCurricular": "Science: negative powers appear in units such as m s⁻¹ (metres per second)",
+      "smsc": "Spiritual: following a pattern faithfully to discover new truths shows the reliability of reason",
       "keywords": [
         {
           "term": "reciprocal",
           "def": "1 divided by the number"
         },
         {
+          "term": "negative index",
+          "def": "a⁻ⁿ = 1/aⁿ"
+        },
+        {
           "term": "fractional index",
-          "def": "a^(1/n) means the nth root of a"
+          "def": "a^(1/n) is the nth root of a"
         },
         {
-          "term": "root",
-          "def": "the inverse of a power"
-        },
-        {
-          "term": "evaluate",
-          "def": "find the value"
+          "term": "base",
+          "def": "the number being raised to a power"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "If 2³ = 8, 2² = 4, 2¹ = 2 and 2⁰ = 1, what should 2⁻¹ and 2^(1/2) be? How could the pattern decide?",
+        "a": "Each step down divides by 2, so 2⁻¹ = 1/2. And 2^(1/2) × 2^(1/2) = 2¹, so 2^(1/2) = √2."
+      },
       "starter": [
-        "Simplify 5³ × 5⁴",
-        "Evaluate 2⁻³",
-        "Evaluate ∛64",
-        "What is any non-zero number to the power 0?"
+        {
+          "q": "Simplify 5³ × 5⁴.",
+          "a": "5⁷",
+          "mins": 1
+        },
+        {
+          "q": "Simplify (2³)⁴.",
+          "a": "2¹²",
+          "mins": 1
+        },
+        {
+          "q": "Work out ∛64.",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "Write 0.25 as a fraction.",
+          "a": "1/4",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Why a half power is a square root",
+          "heading": "The rules",
           "bullets": [
-            "9^(1/2) × 9^(1/2) = 9¹ = 9",
-            "So 9^(1/2) is the number that squares to 9",
-            "9^(1/2) = √9 = 3"
+            "a⁰ = 1, a⁻ⁿ = 1/aⁿ",
+            "a^(1/n) = ⁿ√a, a^(m/n) = (ⁿ√a)ᵐ"
           ],
-          "note": "Answer the big question using the multiplication law. Then 8^(1/3) = ∛8 = 2."
+          "note": "Each rule follows from the index laws. Evaluate the root first to keep numbers small.",
+          "table": {
+            "head": [
+              "Expression",
+              "Meaning",
+              "Value"
+            ],
+            "rows": [
+              [
+                "2⁻³",
+                "1/2³",
+                "1/8"
+              ],
+              [
+                "25^(1/2)",
+                "√25",
+                "5"
+              ],
+              [
+                "8^(1/3)",
+                "∛8",
+                "2"
+              ],
+              [
+                "32^(3/5)",
+                "(⁵√32)³",
+                "8"
+              ],
+              [
+                "100^(−1/2)",
+                "1/√100",
+                "0.1"
+              ]
+            ]
+          }
         },
         {
-          "heading": "The three-step method",
+          "heading": "Fractional indices",
           "bullets": [
-            "Negative: take the reciprocal",
-            "Denominator: take the root",
-            "Numerator: raise to the power"
+            "Root first, then power"
           ],
-          "note": "Root first keeps the numbers small.",
+          "note": "Pupils then try 125^(2/3) (25).",
           "model": {
-            "problem": "Evaluate (8/27)^(−2/3)",
+            "problem": "Evaluate 27^(2/3).",
             "steps": [
-              "Reciprocal: (27/8)^(2/3)",
-              "Cube root: 3/2",
-              "Square: (3/2)² = 9/4"
+              "Denominator 3: cube root",
+              "∛27 = 3",
+              "3² = 9"
             ],
-            "answer": "9/4"
+            "answer": "9"
           }
         },
         {
-          "heading": "Negative index error",
+          "heading": "Negative fractional indices",
           "bullets": [
-            "A negative index never makes the answer negative"
+            "Negative: reciprocal",
+            "Fraction: root then power"
           ],
-          "note": "Show 4⁻² = 1/16, not −16 or −8.",
+          "note": "Flip fractions for a negative power.",
+          "model": {
+            "problem": "Evaluate (4/9)^(−1/2).",
+            "steps": [
+              "Negative: flip to (9/4)^(1/2)",
+              "Square root: √9/√4",
+              "= 3/2"
+            ],
+            "answer": "3/2"
+          }
+        },
+        {
+          "heading": "Common error",
+          "bullets": [
+            "A negative index does not make a negative number"
+          ],
+          "note": "Ask: is 5⁻² bigger or smaller than 1?",
           "misconception": {
-            "wrong": "4⁻² = −16",
-            "right": "4⁻² = 1/4² = 1/16"
+            "wrong": "5⁻² = −25",
+            "right": "5⁻² = 1/5² = 1/25"
           }
         },
         {
-          "heading": "Writing as a power",
+          "heading": "Check",
           "bullets": [
-            "√x = x^(1/2)",
-            "1/x³ = x⁻³",
-            "1/√x = x^(−1/2)"
+            "Root, then power"
           ],
-          "note": "Exam questions ask: write 1/√8 as a power of 2: 8 = 2³, √8 = 2^(3/2), so 2^(−3/2)."
-        },
-        {
-          "heading": "Check: evaluate",
-          "bullets": [],
-          "note": "Show me on 3.",
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
           "check": {
-            "q": "Evaluate 16^(3/4)",
+            "q": "Evaluate 64^(2/3).",
             "options": [
-              "12",
-              "8",
-              "64",
-              "1/8"
+              "16",
+              "42.67",
+              "4096",
+              "1/16"
             ],
-            "answer": 1,
-            "why": "Fourth root of 16 is 2, and 2³ = 8. A multiplies 16 by 3/4; D treats the index as negative."
+            "answer": 0,
+            "why": "∛64 = 4 and 4² = 16. 42.67 is 64 × 2/3; 1/16 would need a negative index."
           }
         }
       ],
       "practice": [
-        "Evaluate 25^(1/2)",
-        "Evaluate 64^(2/3)",
-        "Evaluate 9^(−1/2)",
-        "Write 1/x⁴ as a power of x"
+        {
+          "q": "Evaluate 3⁻².",
+          "a": "1/9",
+          "mins": 2,
+          "model": "Negative index means reciprocal: 3⁻² = 1/3² = 1/9."
+        },
+        {
+          "q": "Evaluate 49^(1/2).",
+          "a": "7",
+          "mins": 1
+        },
+        {
+          "q": "Evaluate 125^(2/3).",
+          "a": "25",
+          "mins": 1
+        },
+        {
+          "q": "Evaluate 81^(−1/4).",
+          "a": "1/3",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Core: Evaluate (a) 49^(1/2) (b) 125^(2/3) (c) 32^(−1/5) (d) (1/4)^(−2)",
-        "Extend: Find n: (a) 2ⁿ = √32 (b) 9ⁿ = 1/27 (c) 4ⁿ × 8 = 2¹¹",
-        "Stretch: Write √(2⁷) × 4^(−1/4) as a power of 2."
+        {
+          "q": "Core: Evaluate (a) 2⁻⁵ (b) 36^(−1/2) (c) 1000^(2/3) (d) (27/8)^(1/3)",
+          "a": "(a) 1/32 (b) 1/6 (c) 100 (d) 3/2",
+          "mins": 5,
+          "model": "(a) 1/2⁵ = 1/32. (b) 1/√36 = 1/6. (c) ∛1000 = 10, 10² = 100. (d) ∛27 = 3, ∛8 = 2: 3/2."
+        },
+        {
+          "q": "Extend (exam style, 2 marks): Write √8 as a power of 2, and solve 4ˣ = 8.",
+          "a": "√8 = (2³)^(1/2) = 2^(3/2). 4ˣ = 2²ˣ = 2³, so x = 3/2",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Solve 9^(x + 1) = 27ˣ.",
+          "a": "3^(2x + 2) = 3^(3x), so 2x + 2 = 3x and x = 2",
+          "mins": 4
+        }
       ],
       "exit": [
-        "Evaluate 36^(1/2)",
-        "Evaluate 27^(−1/3)",
-        "Write ∛x² as a power of x"
+        {
+          "q": "Evaluate 16^(3/4).",
+          "a": "8",
+          "mins": 1
+        },
+        {
+          "q": "Evaluate 10⁻³.",
+          "a": "0.001",
+          "mins": 1
+        },
+        {
+          "q": "Big question: what does a fractional index mean?",
+          "a": "A root: the denominator gives the root, the numerator the power.",
+          "mins": 1
+        }
       ],
-      "homework": "1MA1 style: ten index questions from the sheet, including 'write as a power of 2/3' items.",
-      "send": "Support: three-step card (reciprocal, root, power). Stretch: index equations.",
-      "board": "Pearson Edexcel GCSE (9-1) Mathematics (1MA1), Higher tier",
-      "boardShort": "Edexcel GCSE 1MA1 Higher"
+      "homework": "Evaluate 8^(−2/3), 0.25^(−1/2), (16/81)^(3/4) and 1^(−5); show the root step each time.",
+      "send": "Support: rules card and roots table (squares and cubes). EAL: 'reciprocal', 'root', 'index'. Stretch: simplify algebraic expressions such as (8x⁶)^(2/3).",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Unit 2 (4MA1 1.4C) and Unit 9 (2.1A)",
+        "Portal Year 10 lesson 3 (upgraded)",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book",
+        "Scientific calculator"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "exponent rules chart",
+          "alt": "A chart of the laws of indices",
+          "for": "teach:1"
+        },
+        {
+          "find": "square root and cube root symbols",
+          "alt": "Root symbols",
+          "for": "keywords"
+        }
+      ]
     },
     {
-      "unit": "Unit 1: Number: decimals, powers and roots",
+      "unit": "Unit 2: Special numbers, powers and roots",
       "n": 4,
-      "title": "Simplifying surds",
+      "title": "Simplifying surds and rationalising the denominator",
       "duration": 50,
-      "bigQuestion": "Why do mathematicians prefer √8 written as 2√2?",
+      "bigQuestion": "Why do mathematicians prefer √2 to 1.41421...?",
       "objectives": [
-        "Understand what a surd is",
-        "Simplify surds using square factors",
-        "Add, subtract and multiply surds"
+        "To understand how to simplify surds and rationalise denominators"
       ],
       "successCriteria": [
-        "Simplify √12 and √50",
-        "Add and subtract like surds",
-        "Multiply and simplify expressions such as (3√2)(5√6)"
+        "All: simplify surds such as √72 = 6√2",
+        "Most: add, multiply and divide surds and rationalise a simple denominator",
+        "Some: rationalise a denominator of the form a ± √b"
       ],
-      "crossCurricular": "Science: exact answers in physics; Art: the √2 ratio in A-series paper",
-      "smsc": "Cultural: irrational numbers discovered by the ancient Greeks, developed by Muslim mathematicians such as Abu Kamil",
+      "crossCurricular": "Design: paper sizes A4 and A3 have sides in the ratio 1 : √2",
+      "smsc": "Spiritual: exact answers such as √2 are perfect where decimals only approximate",
       "keywords": [
         {
           "term": "surd",
-          "def": "a root that cannot be simplified to a whole number, e.g. √2"
+          "def": "a root that cannot be written exactly as a fraction, such as √2"
         },
         {
-          "term": "irrational",
-          "def": "cannot be written as a fraction of integers"
+          "term": "simplify",
+          "def": "take out square factors: √72 = 6√2"
         },
         {
-          "term": "exact form",
-          "def": "an answer left as a surd, not a rounded decimal"
+          "term": "rationalise",
+          "def": "remove the surd from the denominator"
         },
         {
-          "term": "square factor",
-          "def": "a factor that is a square number"
+          "term": "exact",
+          "def": "not rounded"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "A square has area 2 cm². How long is its side? Can you ever write the answer exactly as a decimal?",
+        "a": "√2 cm. Its decimal never ends or repeats, so √2 is the only exact way to write it."
+      },
       "starter": [
-        "Evaluate 81^(1/2)",
-        "List the square numbers to 100",
-        "Is √36 rational?",
-        "Work out √4 × √9 and √36"
+        {
+          "q": "Evaluate 27^(2/3).",
+          "a": "9",
+          "mins": 1
+        },
+        {
+          "q": "List the square numbers up to 100.",
+          "a": "1, 4, 9, 16, 25, 36, 49, 64, 81, 100",
+          "mins": 1
+        },
+        {
+          "q": "Expand 3(x + 2).",
+          "a": "3x + 6",
+          "mins": 1
+        },
+        {
+          "q": "Work out √36 × √4.",
+          "a": "12",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Two rules",
+          "heading": "Simplifying surds",
           "bullets": [
-            "√a × √b = √(ab)",
-            "√a ÷ √b = √(a/b)",
-            "But √a + √b ≠ √(a + b)"
+            "√ab = √a × √b",
+            "Find the largest square factor"
           ],
-          "note": "Test with numbers: √4 + √9 = 5 but √13 ≈ 3.6.",
-          "misconception": {
-            "wrong": "√9 + √16 = √25 = 5",
-            "right": "√9 + √16 = 3 + 4 = 7"
-          }
-        },
-        {
-          "heading": "Simplifying",
-          "bullets": [
-            "Find the largest square factor",
-            "Split and square-root it"
-          ],
-          "note": "Model.",
+          "note": "Pupils then simplify √45 (3√5).",
           "model": {
-            "problem": "Simplify √72",
+            "problem": "Simplify √72.",
             "steps": [
-              "Largest square factor of 72: 36",
+              "Largest square factor: 36",
               "√72 = √36 × √2",
               "= 6√2"
             ],
@@ -478,59 +850,157 @@
           }
         },
         {
-          "heading": "Collecting like surds",
+          "heading": "Adding and multiplying",
           "bullets": [
-            "Simplify each first",
-            "Then add like terms"
+            "Add like surds: 5√2 + 3√2 = 8√2",
+            "√a × √b = √ab"
           ],
-          "note": "Example: √50 + √18 = 5√2 + 3√2 = 8√2. Like collecting 5x + 3x."
+          "note": "√50 + √18 = 5√2 + 3√2 = 8√2. √12 × √3 = √36 = 6.",
+          "misconception": {
+            "wrong": "√9 + √16 = √25 = 5",
+            "right": "√9 + √16 = 3 + 4 = 7: roots do not add like that"
+          }
         },
         {
-          "heading": "Multiplying surds",
+          "heading": "Rationalising",
           "bullets": [
-            "Multiply whole numbers together",
-            "Multiply surds together",
-            "Simplify"
+            "Multiply top and bottom by the surd",
+            "a/√b = a√b/b"
           ],
-          "note": "(3√2)(5√6) = 15√12 = 15 × 2√3 = 30√3."
-        },
-        {
-          "heading": "Check: simplify",
-          "bullets": [],
-          "note": "Show me on 3.",
-          "check": {
-            "q": "Simplify √48",
-            "options": [
-              "2√12",
-              "4√3",
-              "16√3",
-              "24√2"
+          "note": "Pupils then do 8/√2 (4√2).",
+          "model": {
+            "problem": "Rationalise 10/√5.",
+            "steps": [
+              "× √5/√5",
+              "10√5/5",
+              "= 2√5"
             ],
-            "answer": 1,
-            "why": "48 = 16 × 3, so √48 = 4√3. A is not fully simplified; C does not root the 16."
+            "answer": "2√5"
+          }
+        },
+        {
+          "heading": "Denominators a ± √b",
+          "bullets": [
+            "Multiply by the conjugate",
+            "(a + √b)(a − √b) = a² − b"
+          ],
+          "note": "The middle terms cancel, leaving a whole number.",
+          "model": {
+            "problem": "Rationalise 4/(3 − √5).",
+            "steps": [
+              "× (3 + √5)/(3 + √5)",
+              "Denominator: 9 − 5 = 4",
+              "4(3 + √5)/4"
+            ],
+            "answer": "3 + √5"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Largest square factor"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "Simplify √48.",
+            "options": [
+              "4√3",
+              "2√12",
+              "16√3",
+              "3√4"
+            ],
+            "answer": 0,
+            "why": "48 = 16 × 3, so 4√3. 2√12 is not fully simplified (12 still has a square factor 4)."
           }
         }
       ],
       "practice": [
-        "Simplify √20",
-        "Simplify √75",
-        "Simplify √12 + √27",
-        "Simplify √3 × √15"
+        {
+          "q": "Simplify √45.",
+          "a": "3√5",
+          "mins": 2,
+          "model": "45 = 9 × 5 and 9 is square. √45 = √9 × √5 = 3√5."
+        },
+        {
+          "q": "Work out √12 × √3.",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "Simplify √75 − √27.",
+          "a": "2√3",
+          "mins": 1
+        },
+        {
+          "q": "Rationalise 8/√2.",
+          "a": "4√2",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Core: Simplify (a) √98 (b) √200 (c) 2√5 + √45 (d) √8 × √6",
-        "Extend: A rectangle has sides √18 cm and √8 cm. Find its area and perimeter in exact form.",
-        "Stretch: Show that √(12) + √(75) − √(27) can be written as k√3, and find k."
+        {
+          "q": "Core: Simplify (a) √200 (b) √20 + √80 (c) 15/√5 (rationalise) (d) √6 × √15",
+          "a": "(a) 10√2 (b) 6√5 (c) 3√5 (d) 3√10",
+          "mins": 5,
+          "model": "(a) √200 = √100 × √2 = 10√2. (b) √20 = 2√5, √80 = 4√5; total 6√5. (c) 15√5/5 = 3√5. (d) √90 = √9 × √10 = 3√10."
+        },
+        {
+          "q": "Extend (exam style, 3 marks): A rectangle is √18 cm by √8 cm. Find its area and its perimeter in simplest form.",
+          "a": "Area √144 = 12 cm² (B1). Perimeter 2(3√2 + 2√2) = 10√2 cm (M1 A1)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Rationalise and simplify 6/(√3 + 1).",
+          "a": "× (√3 − 1): 6(√3 − 1)/(3 − 1) = 3(√3 − 1) = 3√3 − 3",
+          "mins": 4
+        }
       ],
       "exit": [
-        "Simplify √18",
-        "Simplify 3√2 + √32",
-        "Simplify √2 × √10"
+        {
+          "q": "Simplify √98.",
+          "a": "7√2",
+          "mins": 1
+        },
+        {
+          "q": "Rationalise 12/√3.",
+          "a": "4√3",
+          "mins": 1
+        },
+        {
+          "q": "Big question: why keep answers as surds?",
+          "a": "A surd is exact; its decimal never ends, so any decimal is rounded.",
+          "mins": 1
+        }
       ],
-      "homework": "1MA1 style: exact-form questions on surd simplification (eight questions).",
-      "send": "Support: list of square numbers to 144. Stretch: surds in Pythagoras problems.",
-      "board": "Pearson Edexcel GCSE (9-1) Mathematics (1MA1), Higher tier",
-      "boardShort": "Edexcel GCSE 1MA1 Higher"
+      "homework": "Simplify √32, √108, √8 + √50 and 9/√3; check each with a calculator.",
+      "send": "Support: list of square numbers to find square factors. EAL: 'surd', 'exact', 'rationalise'. Stretch: expand (2 + √3)² and (√5 − 1)(√5 + 3).",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Unit 2 (4MA1 1.4A, 1.4B)",
+        "Portal Year 10 lessons 4 and 5 (lesson 4 upgraded)",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book",
+        "Scientific calculator"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "A4 A3 paper size ratio diagram",
+          "alt": "Paper sizes in the ratio 1 : √2",
+          "for": "keywords"
+        },
+        {
+          "find": "square with diagonal root 2",
+          "alt": "A unit square with diagonal √2",
+          "for": "hook"
+        }
+      ]
     },
     {
       "unit": "Unit 1: Number: decimals, powers and roots",
@@ -781,121 +1251,247 @@
     {
       "unit": "Unit 9: Algebraic manipulation",
       "n": 7,
-      "title": "Factorising quadratics x² + bx + c",
+      "title": "Expanding and factorising quadratics x² + bx + c",
       "duration": 50,
-      "bigQuestion": "How do we reverse an expansion without guessing blindly?",
+      "bigQuestion": "How are expanding and factorising two sides of one idea?",
       "objectives": [
-        "Factorise x² + bx + c",
-        "Use sign patterns to guide factorising",
-        "Check factorisations by expanding"
+        "To understand how to expand double brackets and factorise quadratic expressions"
       ],
       "successCriteria": [
-        "Factorise x² + 7x + 12",
-        "Factorise with negative terms such as x² − 2x − 15",
-        "Factorise expressions with a common factor first, e.g. 3x² − 3x − 18"
+        "All: expand (x + a)(x + b)",
+        "Most: factorise x² + bx + c with positive and negative terms, and the difference of two squares",
+        "Some: factorise ax² + bx + c and use factorising to solve"
       ],
-      "crossCurricular": "Science: projectile motion; Business: profit models",
-      "smsc": "Moral: checking our answers honestly by reversing",
+      "crossCurricular": "Physics: projectile and area problems lead to quadratic expressions",
+      "smsc": "Spiritual: al-Khwarizmi's work on squares and roots (الجبر) began the study of quadratics",
       "keywords": [
         {
-          "term": "factorise",
-          "def": "write as a product of factors"
-        },
-        {
           "term": "quadratic",
-          "def": "an expression with highest power 2"
+          "def": "an expression with x² as the highest power"
         },
         {
-          "term": "coefficient",
-          "def": "the number multiplying a term"
+          "term": "expand",
+          "def": "multiply out brackets"
         },
         {
-          "term": "constant term",
-          "def": "the number without a letter"
+          "term": "factorise",
+          "def": "write as a product of brackets"
+        },
+        {
+          "term": "difference of two squares",
+          "def": "a² − b² = (a + b)(a − b)"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "A rectangle has area x² + 7x + 12. What could its side lengths be? Is there more than one answer?",
+        "a": "(x + 3) and (x + 4), because they multiply to x² + 7x + 12. With whole-number terms this is the only pair."
+      },
       "starter": [
-        "Expand (x + 3)(x + 4)",
-        "Two numbers multiply to 12 and add to 7?",
-        "Two numbers multiply to −10 and add to 3?",
-        "Factorise 5x + 20"
+        {
+          "q": "Expand 4(x − 3).",
+          "a": "4x − 12",
+          "mins": 1
+        },
+        {
+          "q": "Find two numbers that multiply to 12 and add to 7.",
+          "a": "3 and 4",
+          "mins": 1
+        },
+        {
+          "q": "Find two numbers that multiply to −15 and add to −2.",
+          "a": "−5 and 3",
+          "mins": 1
+        },
+        {
+          "q": "Factorise 6x + 9.",
+          "a": "3(2x + 3)",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "The product–sum idea",
+          "heading": "Expanding double brackets",
           "bullets": [
-            "(x + p)(x + q) = x² + (p + q)x + pq",
-            "Find p and q: product c, sum b"
+            "Multiply every term by every term",
+            "Then collect like terms"
           ],
-          "note": "Link to the starter questions."
+          "note": "Grid for (x + 5)(x − 2): x², −2x, 5x, −10.",
+          "table": {
+            "head": [
+              "×",
+              "x",
+              "−2"
+            ],
+            "rows": [
+              [
+                "x",
+                "x²",
+                "−2x"
+              ],
+              [
+                "+5",
+                "5x",
+                "−10"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Using signs",
+          "heading": "Factorising x² + bx + c",
           "bullets": [
-            "c positive: same signs (sign of b)",
-            "c negative: different signs"
+            "Find two numbers: product c, sum b"
           ],
-          "note": "Model.",
+          "note": "Pupils then try x² + 9x + 20.",
           "model": {
-            "problem": "Factorise x² − 2x − 15",
+            "problem": "Factorise x² − 2x − 15.",
             "steps": [
               "Product −15, sum −2",
-              "c is negative: one positive, one negative",
-              "Pairs: 3 and −5 (sum −2)",
-              "Write the brackets"
+              "Pairs: −5 and 3 work",
+              "(x − 5)(x + 3)",
+              "Check by expanding"
             ],
-            "answer": "(x + 3)(x − 5)"
+            "answer": "(x − 5)(x + 3)"
           }
         },
         {
-          "heading": "Common factor first",
+          "heading": "Difference of two squares",
           "bullets": [
-            "3x² − 3x − 18 = 3(x² − x − 6)",
-            "= 3(x − 3)(x + 2)"
+            "a² − b² = (a + b)(a − b)",
+            "x² − 49 = (x + 7)(x − 7)"
           ],
-          "note": "The exam asks to 'factorise fully'.",
-          "misconception": {
-            "wrong": "3x² − 3x − 18 = (3x − 9)(x + 2) and stop",
-            "right": "Take out 3 first: 3(x − 3)(x + 2)"
+          "note": "The middle terms cancel when expanded.",
+          "model": {
+            "problem": "Factorise 2x² + 7x + 3.",
+            "steps": [
+              "ac = 6: numbers 6 and 1 add to 7",
+              "2x² + 6x + x + 3",
+              "2x(x + 3) + 1(x + 3)"
+            ],
+            "answer": "(2x + 1)(x + 3)"
           }
         },
         {
-          "heading": "Check: factorise",
-          "bullets": [],
-          "note": "Show me on 3.",
+          "heading": "Common error",
+          "bullets": [
+            "Signs: product and sum both matter"
+          ],
+          "note": "Check: −2 × 3 = −6, not +6.",
+          "misconception": {
+            "wrong": "x² − 5x + 6 = (x − 2)(x + 3)",
+            "right": "Product +6, sum −5: −2 and −3, so (x − 2)(x − 3)"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Product, then sum"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
           "check": {
-            "q": "Factorise x² + x − 12",
+            "q": "Factorise x² + x − 12.",
             "options": [
-              "(x + 3)(x − 4)",
               "(x + 4)(x − 3)",
+              "(x − 4)(x + 3)",
               "(x + 6)(x − 2)",
-              "(x − 4)(x − 3)"
+              "(x + 12)(x − 1)"
             ],
-            "answer": 1,
-            "why": "4 × −3 = −12 and 4 + (−3) = 1. A gives −x; C gives +4x; D gives +12."
+            "answer": 0,
+            "why": "4 × −3 = −12 and 4 + −3 = 1. (x − 4)(x + 3) gives −x."
           }
         }
       ],
       "practice": [
-        "Factorise x² + 9x + 20",
-        "Factorise x² − 8x + 15",
-        "Factorise x² + 2x − 24",
-        "Factorise x² − 49"
+        {
+          "q": "Factorise x² + 9x + 20.",
+          "a": "(x + 4)(x + 5)",
+          "mins": 2,
+          "model": "Product 20, sum 9: 4 and 5. x² + 9x + 20 = (x + 4)(x + 5). Check: x² + 5x + 4x + 20."
+        },
+        {
+          "q": "Factorise x² − 8x + 15.",
+          "a": "(x − 3)(x − 5)",
+          "mins": 1
+        },
+        {
+          "q": "Factorise x² + 2x − 24.",
+          "a": "(x + 6)(x − 4)",
+          "mins": 1
+        },
+        {
+          "q": "Factorise x² − 36.",
+          "a": "(x + 6)(x − 6)",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Core: Factorise (a) x² + 10x + 21 (b) x² − x − 20 (c) x² − 11x + 28",
-        "Extend: Factorise fully 2x² + 6x − 56 and 5x² − 45",
-        "Stretch: Find all integers b so that x² + bx + 24 can be factorised."
+        {
+          "q": "Core: Factorise (a) x² + 11x + 28 (b) x² − 3x − 40 (c) x² − 10x + 25 (d) x² − 81",
+          "a": "(a) (x + 4)(x + 7) (b) (x − 8)(x + 5) (c) (x − 5)² (d) (x + 9)(x − 9)",
+          "mins": 5,
+          "model": "(a) 4 × 7 = 28, 4 + 7 = 11. (b) −8 × 5 = −40, −8 + 5 = −3. (c) −5 × −5 = 25, sum −10: (x − 5)². (d) difference of two squares: (x + 9)(x − 9)."
+        },
+        {
+          "q": "Extend: Factorise 3x² + 10x + 8.",
+          "a": "ac = 24: 6 and 4. 3x² + 6x + 4x + 8 = 3x(x + 2) + 4(x + 2) = (3x + 4)(x + 2)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch (exam style, 3 marks): Solve x² − x − 20 = 0.",
+          "a": "(x − 5)(x + 4) = 0 (M1 A1); x = 5 or x = −4 (A1)",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Factorise x² + 5x + 6",
-        "Factorise x² − 3x − 10",
-        "Factorise fully 2x² − 8x + 6"
+        {
+          "q": "Factorise x² + 5x − 14.",
+          "a": "(x + 7)(x − 2)",
+          "mins": 1
+        },
+        {
+          "q": "Factorise x² − 100.",
+          "a": "(x + 10)(x − 10)",
+          "mins": 1
+        },
+        {
+          "q": "Big question: how can you check a factorisation?",
+          "a": "Expand the brackets: you must get the original quadratic.",
+          "mins": 1
+        }
       ],
-      "homework": "1MA1 practice: 12 factorising questions in increasing difficulty.",
-      "send": "Support: factor-pair lists. Stretch: factorising in x and y, e.g. x² + 5xy + 6y².",
-      "board": "Pearson Edexcel GCSE (9-1) Mathematics (1MA1), Higher tier",
-      "boardShort": "Edexcel GCSE 1MA1 Higher"
+      "homework": "Factorise x² + 13x + 42, x² − 4x − 21, x² − 64 and 2x² + 9x + 4; check each by expanding.",
+      "send": "Support: product-sum table. EAL: 'product', 'sum', 'factorise'. Stretch: factorise 6x² − x − 12.",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Unit 9 (4MA1 2.2A, 2.2B)",
+        "Portal Year 10 lessons 6 to 9 (lesson 7 upgraded)",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book",
+        "Scientific calculator"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "algebra tiles quadratic rectangle",
+          "alt": "Algebra tiles arranged as a rectangle for a quadratic",
+          "for": "teach:1"
+        },
+        {
+          "find": "Kitab al-jabr wa-l-muqabala manuscript page",
+          "alt": "A page from al-Khwarizmi's book on algebra",
+          "for": "keywords"
+        }
+      ],
+      "islamicLink": {
+        "text": "Algebra takes its name from al-jabr (الجبر) in the book of Muhammad ibn Musa al-Khwarizmi, written in Baghdad in the 9th century. He described completing and balancing equations to solve problems of inheritance and trade, the same methods we use today.",
+        "at": "start"
+      }
     },
     {
       "unit": "Unit 9: Algebraic manipulation",
@@ -1649,117 +2245,230 @@
       "n": 14,
       "title": "Solving linear equations",
       "duration": 50,
-      "bigQuestion": "What does 'balancing' an equation really mean?",
+      "bigQuestion": "How do we solve any linear equation, however it is written?",
       "objectives": [
-        "Solve linear equations with unknowns on both sides",
-        "Solve equations with brackets and fractions",
-        "Check solutions by substitution"
+        "To understand how to solve linear equations with brackets, fractions and unknowns on both sides"
       ],
       "successCriteria": [
-        "Solve 5x − 3 = 2x + 9",
-        "Solve 3(2x − 1) = 4(x + 2)",
-        "Solve (x + 1)/3 − (x − 2)/4 = 2"
+        "All: solve equations with brackets and unknowns on both sides",
+        "Most: solve equations with fractions by multiplying by the LCM",
+        "Some: form and solve equations from geometric contexts in exam style"
       ],
-      "crossCurricular": "Science: solving for unknowns in physics; Business: break-even",
-      "smsc": "Moral: balance and fairness ('adl) · what you do to one side you do to the other",
+      "crossCurricular": "Science: finding an unknown quantity from a formula and data",
+      "smsc": "Moral: balancing an equation mirrors justice ('adl, عَدْل): what is done to one side is done to the other",
       "keywords": [
         {
           "term": "linear equation",
-          "def": "an equation where the highest power of x is 1"
+          "def": "an equation where the unknown has power 1"
         },
         {
-          "term": "solve",
-          "def": "find the value(s) that make it true"
+          "term": "LCM",
+          "def": "lowest common multiple, used to clear fractions"
         },
         {
-          "term": "balance",
-          "def": "do the same to both sides"
+          "term": "solution",
+          "def": "the value that satisfies the equation"
         },
         {
-          "term": "verify",
-          "def": "check by substituting"
+          "term": "form",
+          "def": "write an equation from information"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two friends start with different amounts of money and save at different rates. How could an equation tell you when they will have the same?",
+        "a": "Write each total as an expression in the number of weeks, set them equal and solve."
+      },
       "starter": [
-        "Solve 4x = 28",
-        "Solve x/5 + 2 = 6",
-        "Expand 3(2x − 4)",
-        "LCM of 3 and 4?"
+        {
+          "q": "Expand −3(x − 4).",
+          "a": "−3x + 12",
+          "mins": 1
+        },
+        {
+          "q": "Solve 5x + 2 = 3x + 10.",
+          "a": "x = 4",
+          "mins": 1
+        },
+        {
+          "q": "Find the LCM of 3 and 4.",
+          "a": "12",
+          "mins": 1
+        },
+        {
+          "q": "Make x the subject of y = 2x + 5.",
+          "a": "x = (y − 5)/2",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Unknowns on both sides",
+          "heading": "Brackets on both sides",
           "bullets": [
-            "Collect x terms on the side with more x",
-            "Then the numbers"
+            "Expand, collect, solve"
           ],
-          "note": "5x − 3 = 2x + 9 → 3x = 12 → x = 4. Check: 17 = 17."
-        },
-        {
-          "heading": "Brackets and fractions",
-          "bullets": [
-            "Clear fractions by multiplying by the LCM",
-            "Use brackets around numerators"
-          ],
-          "note": "Model.",
+          "note": "Pupils then solve 4(x − 3) = 2x + 10.",
           "model": {
-            "problem": "Solve (x + 1)/3 − (x − 2)/4 = 2",
+            "problem": "Solve 5(2x − 3) = 3(x + 2).",
             "steps": [
-              "Multiply every term by 12",
-              "4(x + 1) − 3(x − 2) = 24",
-              "4x + 4 − 3x + 6 = 24",
-              "x + 10 = 24"
+              "10x − 15 = 3x + 6",
+              "7x = 21",
+              "x = 3"
             ],
-            "answer": "x = 14"
+            "answer": "x = 3"
           }
         },
         {
-          "heading": "Forgetting to multiply every term",
+          "heading": "Fractions",
           "bullets": [
-            "The right-hand side is multiplied too"
+            "Multiply every term by the LCM of the denominators",
+            "Brackets round numerators"
           ],
-          "note": "Show the error.",
-          "misconception": {
-            "wrong": "4(x + 1) − 3(x − 2) = 2",
-            "right": "Multiply the 2 by 12 as well: = 24"
+          "note": "4MA1 2.4A includes fractional coefficients.",
+          "model": {
+            "problem": "Solve (x + 2)/3 − (x − 1)/4 = 2.",
+            "steps": [
+              "× 12: 4(x + 2) − 3(x − 1) = 24",
+              "4x + 8 − 3x + 3 = 24",
+              "x + 11 = 24"
+            ],
+            "answer": "x = 13"
           }
         },
         {
-          "heading": "Check: solve",
-          "bullets": [],
-          "note": "Show me on 3.",
-          "check": {
-            "q": "Solve 2(3x − 4) = 5x + 1",
-            "options": [
-              "x = 5",
-              "x = 9",
-              "x = −3",
-              "x = 7"
+          "heading": "Common error",
+          "bullets": [
+            "The minus multiplies the whole bracket"
+          ],
+          "note": "Ask: what is −3 × −1?",
+          "misconception": {
+            "wrong": "4(x + 2) − 3(x − 1) = 4x + 8 − 3x − 3",
+            "right": "−3 × −1 = +3, so 4x + 8 − 3x + 3"
+          }
+        },
+        {
+          "heading": "Exam style: forming",
+          "bullets": [
+            "Angles, perimeters and ages give equations",
+            "Answer the question asked"
+          ],
+          "note": "Mark schemes give M1 for a correct equation, M1 for a correct step, A1 for the answer.",
+          "model": {
+            "problem": "A triangle has angles 2x + 10, 3x − 20 and x + 10. Show that it is isosceles.",
+            "steps": [
+              "6x = 180, so x = 30",
+              "Angles: 70°, 70°, 40°",
+              "Two equal angles, so isosceles"
             ],
-            "answer": 1,
-            "why": "6x − 8 = 5x + 1, so x = 9. A forgets to multiply the 4 by 2 (6x − 4)."
+            "answer": "Angles 70°, 70° and 40°: isosceles"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Clear the fraction first"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "Solve 3x/4 − 2 = 7.",
+            "options": [
+              "12",
+              "6.75",
+              "27",
+              "3"
+            ],
+            "answer": 0,
+            "why": "3x/4 = 9, 3x = 36, x = 12. 6.75 multiplies 9 by 3/4."
           }
         }
       ],
       "practice": [
-        "Solve 7x + 2 = 3x + 18",
-        "Solve 4(x − 3) = 2(x + 5)",
-        "Solve (2x − 1)/5 = (x + 3)/4"
+        {
+          "q": "Solve 4(x − 3) = 2x + 10.",
+          "a": "x = 11",
+          "mins": 2,
+          "model": "Expand: 4x − 12 = 2x + 10. Subtract 2x: 2x − 12 = 10. Add 12: 2x = 22. x = 11."
+        },
+        {
+          "q": "Solve (2x + 5)/3 = x − 1.",
+          "a": "x = 8",
+          "mins": 1
+        },
+        {
+          "q": "Solve 7 − 3x = 2(x − 4).",
+          "a": "x = 3",
+          "mins": 1
+        },
+        {
+          "q": "Solve x/2 + x/3 = 15.",
+          "a": "x = 18",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Core: Solve (a) 9 − 2x = 3x − 11 (b) 5(2x + 1) = 3(x − 4) + 3 (c) (x − 4)/2 + x/3 = 8",
-        "Extend: Solve (3x + 2)/4 − (x − 5)/6 = x",
-        "Stretch: Find the value of k for which 3(x + k) = 2x + 7 has the solution x = −2, and solve 4(x − k) = x + k for that k."
+        {
+          "q": "Core: Solve (a) 6(x + 2) − 4(x − 3) = 30 (b) (3x − 1)/4 = (x + 5)/2 (c) 5 − (x − 2)/3 = x",
+          "a": "(a) 3 (b) 11 (c) 4.25",
+          "mins": 5,
+          "model": "(a) 6x + 12 − 4x + 12 = 30, 2x + 24 = 30, x = 3. (b) × 4: 3x − 1 = 2(x + 5) = 2x + 10, x = 11. (c) × 3: 15 − (x − 2) = 3x, 17 − x = 3x, x = 4.25."
+        },
+        {
+          "q": "Extend (exam style, 3 marks): Ali has £x. Bilal has £(2x − 5). Chloe has £(x + 15). Together they have £130. How much does Bilal have?",
+          "a": "4x + 10 = 130 (M1), x = 30 (A1), Bilal £55 (A1)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A rectangle's length is 3 cm more than twice its width. A square with side 13.5 cm has the same perimeter. Find the rectangle's length and width.",
+          "a": "2(w + 2w + 3) = 54, 6w + 6 = 54, w = 8 cm, length 19 cm",
+          "mins": 4
+        }
       ],
       "exit": [
-        "Solve 6x − 5 = 2x + 7",
-        "Solve 3(x + 2) = 21",
-        "Solve x/2 + x/3 = 10"
+        {
+          "q": "Solve 3(2x − 1) = 4x + 9.",
+          "a": "x = 6",
+          "mins": 1
+        },
+        {
+          "q": "Solve (x − 3)/5 = 2.",
+          "a": "x = 13",
+          "mins": 1
+        },
+        {
+          "q": "Big question: what is the first step with fractions?",
+          "a": "Multiply every term by the LCM of the denominators.",
+          "mins": 1
+        }
       ],
-      "homework": "1MA1 linear equations practice: ten questions including fractions.",
-      "send": "Support: balance diagrams. Stretch: equations with algebraic fractions.",
-      "board": "Pearson Edexcel GCSE (9-1) Mathematics (1MA1), Higher tier",
-      "boardShort": "Edexcel GCSE 1MA1 Higher"
+      "homework": "Solve 2(3x + 4) = 5(x + 3), (x + 4)/2 + (x − 1)/5 = 4 and 9 − 2(x − 1) = 3x + 1; check each.",
+      "send": "Support: expand-collect-solve frame. EAL: 'linear', 'LCM'. Stretch: equations with three fractions.",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Unit 11 (4MA1 2.4A, 2.4B)",
+        "Portal Year 10 lessons 14 to 16 (lesson 14 upgraded)",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book",
+        "Scientific calculator"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "balance scale",
+          "alt": "A balance scale for equations",
+          "for": "keywords"
+        },
+        {
+          "find": "triangle with labelled angles",
+          "alt": "A triangle with algebraic angles",
+          "for": "teach:4"
+        }
+      ]
     },
     {
       "unit": "Unit 11: Linear equations and inequalities",
@@ -3975,23 +4684,21 @@
       "boardShort": "Edexcel GCSE 1MA1 Higher"
     },
     {
-      "unit": "A1-A7 Algebra: notation, vocabulary and manipulation",
+      "unit": "Unit 10: Expressions, formulae and rearranging formulae",
       "n": 32,
-      "title": "Using standard formulae and changing the subject",
+      "title": "Rearranging formulae",
       "duration": 50,
-      "bigQuestion": "If you know the area of a circle, how do you work back to its radius?",
+      "bigQuestion": "How do we make a different letter the subject of a formula?",
       "objectives": [
-        "Recall and use standard formulae",
-        "Rearrange formulae to change the subject",
-        "Rearrange formulae involving squares and roots"
+        "To understand how to change the subject of a formula, including when the subject appears twice"
       ],
       "successCriteria": [
-        "All: rearrange one-step and two-step formulae",
-        "Most: change the subject when the subject is squared or a fraction",
-        "Some: rearrange formulae with fractions and roots"
+        "All: change the subject of a formula with two steps",
+        "Most: rearrange formulae with powers and roots",
+        "Some: rearrange when the subject appears twice by factorising"
       ],
-      "crossCurricular": "Science: rearranging formulae in physics and chemistry",
-      "smsc": "Social: learning from the structure of a method rather than guessing",
+      "crossCurricular": "Physics: v = u + at is rearranged to find the acceleration or the time",
+      "smsc": "Algebra takes its name from al-jabr (الجبر) in the book of Muhammad ibn Musa al-Khwarizmi, written in Baghdad in the 9th century, and balancing both sides is the heart of rearranging",
       "keywords": [
         {
           "term": "subject",
@@ -3999,111 +4706,212 @@
         },
         {
           "term": "rearrange",
-          "def": "change the form of a formula"
+          "def": "change which letter is the subject"
         },
         {
           "term": "inverse operation",
-          "def": "undoes another operation"
+          "def": "the operation that undoes another"
         },
         {
-          "term": "standard formula",
-          "def": "a known formula such as speed = distance ÷ time"
+          "term": "factorise",
+          "def": "take out a common factor"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "The formula F = 1.8C + 32 changes Celsius to Fahrenheit. How could you make a formula that goes the other way?",
+        "a": "Rearrange: subtract 32, then divide by 1.8: C = (F − 32)/1.8."
+      },
       "starter": [
-        "Bismillah. Solve 3x + 5 = 20.",
-        "What is the inverse of squaring?",
-        "Write the formula for the area of a circle.",
-        "Solve x/4 = 7."
+        {
+          "q": "Solve 3x − 7 = 11.",
+          "a": "x = 6",
+          "mins": 1
+        },
+        {
+          "q": "Factorise ax − bx.",
+          "a": "x(a − b)",
+          "mins": 1
+        },
+        {
+          "q": "Expand y(x − 2).",
+          "a": "xy − 2y",
+          "mins": 1
+        },
+        {
+          "q": "Solve x/4 + 3 = 5.",
+          "a": "x = 8",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Standard formulae to know",
+          "heading": "Like solving an equation",
           "bullets": [
-            "Area of circle: A = πr²",
-            "Speed = distance ÷ time",
-            "Pythagoras: a² + b² = c²",
-            "Density = mass ÷ volume"
-          ],
-          "note": "Quick fire recall. Ask which letter is the subject in each."
-        },
-        {
-          "heading": "Change the subject: undo in reverse order",
-          "bullets": [
-            "y = 3x − 5: add 5, then divide by 3",
-            "x = (y + 5)/3",
             "Do the same to both sides",
-            "Undo operations in the reverse order of BIDMAS"
+            "Undo operations in reverse order"
           ],
-          "note": "Foundation access: use the flow diagram. Show that the order of operations done to x is multiply by 3, then subtract 5.",
+          "note": "Pupils then make x the subject of y = 3x − 7.",
           "model": {
-            "problem": "Make v the subject of E = ½mv²",
+            "problem": "Make t the subject of v = u + at.",
             "steps": [
-              "Multiply both sides by 2: 2E = mv²",
-              "Divide by m: 2E/m = v²",
-              "Square root: v = √(2E/m)",
-              "Both roots are possible but v > 0 here"
+              "Subtract u: v − u = at",
+              "Divide by a"
             ],
-            "answer": "v = √(2E/m)"
+            "answer": "t = (v − u)/a"
           }
         },
         {
-          "heading": "Fractions and brackets",
+          "heading": "Powers and roots",
           "bullets": [
-            "C = 5(F − 32)/9: multiply by 9 then divide by 5",
-            "9C/5 = F − 32, so F = 9C/5 + 32",
-            "y = (x + 2)/5 gives x = 5y − 2"
+            "Undo a square with a square root",
+            "Undo a root by squaring"
           ],
-          "note": "Check by substituting a number: C = 100 gives F = 212."
+          "note": "A = πr²: divide by π, then square root.",
+          "model": {
+            "problem": "Make r the subject of A = πr².",
+            "steps": [
+              "Divide by π: A/π = r²",
+              "Square root"
+            ],
+            "answer": "r = √(A/π)"
+          }
+        },
+        {
+          "heading": "The subject twice",
+          "bullets": [
+            "Collect subject terms on one side",
+            "Factorise, then divide"
+          ],
+          "note": "4MA1 2.3A includes the subject appearing twice.",
+          "model": {
+            "problem": "Make x the subject of y = (x + 3)/(x − 2).",
+            "steps": [
+              "y(x − 2) = x + 3",
+              "xy − 2y = x + 3",
+              "xy − x = 3 + 2y",
+              "x(y − 1) = 3 + 2y"
+            ],
+            "answer": "x = (3 + 2y)/(y − 1)"
+          }
         },
         {
           "heading": "Common error",
           "bullets": [
-            "Do the same to every term on both sides"
+            "Divide the whole side"
           ],
-          "note": "Show 2E = mv²: divide whole side by m.",
+          "note": "Brackets show the whole of v − u is divided.",
           "misconception": {
-            "wrong": "From y = 3x − 5, x = y/3 − 5",
-            "right": "x = (y + 5)/3, because the whole of y + 5 is divided by 3"
+            "wrong": "v = u + at gives t = v − u/a",
+            "right": "t = (v − u)/a: the whole of v − u is divided by a"
           }
         },
         {
           "heading": "Check",
-          "bullets": [],
-          "note": "Whiteboards.",
+          "bullets": [
+            "Undo × 2π"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
           "check": {
-            "q": "Make x the subject of y = (x + 2)/5",
+            "q": "Make r the subject of C = 2πr.",
             "options": [
-              "x = 5y − 2",
-              "x = 5y + 2",
-              "x = y/5 − 2",
-              "x = (y − 2)/5"
+              "r = C/(2π)",
+              "r = C − 2π",
+              "r = 2πC",
+              "r = 2π/C"
             ],
             "answer": 0,
-            "why": "Multiply by 5: 5y = x + 2, then subtract 2. B forgets to subtract; C divides by 5 instead of multiplying."
+            "why": "Divide both sides by 2π. Subtracting 2π treats the multiplication as addition."
           }
         }
       ],
       "practice": [
-        "Make x the subject of y = 4x + 7",
-        "Make r the subject of A = πr²",
-        "Make t the subject of v = u + at",
-        "Make F the subject of C = 5(F − 32)/9"
+        {
+          "q": "Make x the subject of y = 3x − 7.",
+          "a": "x = (y + 7)/3",
+          "mins": 2,
+          "model": "Add 7 to both sides: y + 7 = 3x. Divide by 3: x = (y + 7)/3."
+        },
+        {
+          "q": "Make w the subject of P = 2(l + w).",
+          "a": "w = P/2 − l",
+          "mins": 1
+        },
+        {
+          "q": "Make v the subject of E = ½mv² (v > 0).",
+          "a": "v = √(2E/m)",
+          "mins": 1
+        },
+        {
+          "q": "Make t the subject of s = (u + v)t/2.",
+          "a": "t = 2s/(u + v)",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Core: (a) make a the subject of P = 3a + 2 (b) make x the subject of y = (x − 1)/4 (c) v = s/t, make t the subject",
-        "Extend: Make r the subject of V = (1/3)πr²h. Make u the subject of v² = u² + 2as.",
-        "Stretch: The cost C of a taxi trip is C = 3 + 0.5d. Make d the subject and find d when C = £11."
+        {
+          "q": "Core: (a) Make v the subject of a = (v − u)/t (b) Make x the subject of y = 5 − 2x (c) Make h the subject of V = ⅓πr²h",
+          "a": "(a) v = u + at (b) x = (5 − y)/2 (c) h = 3V/(πr²)",
+          "mins": 5,
+          "model": "(a) Multiply by t: at = v − u; add u: v = u + at. (b) 2x = 5 − y, x = (5 − y)/2. (c) Multiply by 3: 3V = πr²h; divide by πr²: h = 3V/(πr²)."
+        },
+        {
+          "q": "Extend: Make x the subject of ax + 3 = bx − 5.",
+          "a": "ax − bx = −8, x(a − b) = −8, x = 8/(b − a)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch (exam style, 4 marks): Make x the subject of y = (2x + 1)/(x − 3).",
+          "a": "xy − 3y = 2x + 1 (M1); xy − 2x = 1 + 3y (M1); x(y − 2) = 1 + 3y (M1); x = (3y + 1)/(y − 2) (A1)",
+          "mins": 4
+        }
       ],
       "exit": [
-        "Make x the subject of y = 5x − 3",
-        "Make r the subject of C = 2πr",
-        "Make m the subject of E = ½mv²."
+        {
+          "q": "Make x the subject of y = (x − 4)/5.",
+          "a": "x = 5y + 4",
+          "mins": 1
+        },
+        {
+          "q": "Make b the subject of A = ½bh.",
+          "a": "b = 2A/h",
+          "mins": 1
+        },
+        {
+          "q": "Big question: what extra step is needed when the subject appears twice?",
+          "a": "Collect the subject terms on one side and factorise to get the subject once.",
+          "mins": 1
+        }
       ],
-      "homework": "Eight rearrangement questions including two from physics and one from geometry. The subject-appearing-twice case is taught in the school's Year 10 'Rearranging formulae where the subject appears twice'.",
-      "send": "SEND/EAL: flow diagrams to undo steps; sentence frame 'to undo ___, I ___'. Stretch: formulae with the subject in a denominator.",
-      "board": "Pearson Edexcel GCSE (9-1) Mathematics (1MA1), Higher tier",
-      "boardShort": "Edexcel GCSE 1MA1 Higher"
+      "homework": "Rearrange C = (F − 32)/1.8 for F, s = ut + ½at² for a, and k = (m + 2)/(m − 1) for m.",
+      "send": "Support: inverse operations flowchart. EAL: 'subject', 'rearrange'. Stretch: make l the subject of T = 2π√(l/g).",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Unit 10 (4MA1 2.3A)",
+        "Portal Year 10 lessons 12 and 32 (lesson 32 upgraded)",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book",
+        "Scientific calculator"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "thermometer Celsius Fahrenheit",
+          "alt": "A thermometer with both scales",
+          "for": "hook"
+        },
+        {
+          "find": "circle area formula diagram radius",
+          "alt": "A circle with radius labelled",
+          "for": "teach:2"
+        }
+      ]
     },
     {
       "unit": "A1-A7 Algebra: notation, vocabulary and manipulation",
@@ -6202,136 +7010,254 @@
       "boardShort": "Edexcel GCSE 1MA1 Higher"
     },
     {
-      "unit": "A23-A25 Algebra: sequences",
+      "unit": "Unit 12: Sequences",
       "n": 49,
-      "title": "The nth term of a linear sequence",
+      "title": "Arithmetic sequences: nth term and sum",
       "duration": 50,
-      "bigQuestion": "How can one formula describe every term of a pattern?",
+      "bigQuestion": "How can we add up many terms of a sequence without listing them?",
       "objectives": [
-        "Find the nth term of an arithmetic sequence",
-        "Use the nth term to find any term or test membership",
-        "Find the nth term from a pattern of shapes"
+        "To understand how to use a + (n − 1)d for the nth term and find the sum of an arithmetic series"
       ],
       "successCriteria": [
-        "All: find the nth term of a sequence with a positive common difference",
-        "Most: handle a negative common difference",
-        "Some: use nth terms in context such as matchstick patterns and find the first term over a limit"
+        "All: find the nth term of an arithmetic sequence",
+        "Most: find a and d from two terms and decide if a number is a term",
+        "Some: use Sn = n/2[2a + (n − 1)d] to solve problems"
       ],
-      "crossCurricular": "Art and design: tile patterns; Computing: loops",
-      "smsc": "Spiritual: order and pattern in design traditions, such as geometric tiling",
+      "crossCurricular": "Computing: a loop that adds the same amount each time builds an arithmetic sequence",
+      "smsc": "Spiritual: steady daily deeds add up",
       "keywords": [
         {
-          "term": "nth term",
-          "def": "a formula giving the term in position n"
+          "term": "arithmetic sequence",
+          "def": "a sequence with a common difference"
         },
         {
-          "term": "common difference",
-          "def": "the constant amount added each time"
+          "term": "first term a",
+          "def": "the first number in the sequence"
         },
         {
-          "term": "linear sequence",
-          "def": "has a constant first difference"
+          "term": "common difference d",
+          "def": "the amount added each time"
         },
         {
-          "term": "coefficient",
-          "def": "the number multiplying n"
+          "term": "series",
+          "def": "the sum of the terms of a sequence"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "A pupil memorises 3 ayat on day 1, 5 on day 2, 7 on day 3 and so on. How could you find the total after 20 days without adding 20 numbers?",
+        "a": "Pair the first and last: (3 + 41) × 20 ÷ 2 = 440. The formula Sn does this."
+      },
       "starter": [
-        "Bismillah. Continue 7, 11, 15, 19, ...",
-        "Find the difference in 20, 17, 14, ...",
-        "Evaluate 4n + 1 for n = 1, 2, 3.",
-        "Solve 3n + 2 = 77."
+        {
+          "q": "Find the nth term of 5, 8, 11, ...",
+          "a": "3n + 2",
+          "mins": 1
+        },
+        {
+          "q": "Find the 20th term of 4n − 1.",
+          "a": "79",
+          "mins": 1
+        },
+        {
+          "q": "Solve 3n + 2 = 50.",
+          "a": "n = 16",
+          "mins": 1
+        },
+        {
+          "q": "Work out 20 × 41 ÷ 2.",
+          "a": "410",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "The method",
+          "heading": "The formula",
           "bullets": [
-            "Common difference d gives dn",
-            "5, 8, 11, 14: d = 3 so 3n",
-            "3n gives 3, 6, 9, 12; add 2",
-            "nth term = 3n + 2"
+            "nth term = a + (n − 1)d",
+            "a: first term; d: common difference"
           ],
-          "note": "Compare the sequence with the d times table, then adjust.",
-          "model": {
-            "problem": "Find the nth term of 20, 17, 14, 11",
-            "steps": [
-              "Common difference −3, so −3n",
-              "−3n gives −3, −6, −9, −12",
-              "To get 20 from −3 add 23",
-              "nth term = −3n + 23"
+          "note": "7, 11, 15: a = 7, d = 4: 7 + 4(n − 1) = 4n + 3.",
+          "table": {
+            "head": [
+              "Sequence",
+              "a",
+              "d",
+              "nth term"
             ],
-            "answer": "−3n + 23"
+            "rows": [
+              [
+                "7, 11, 15, ...",
+                "7",
+                "4",
+                "4n + 3"
+              ],
+              [
+                "20, 17, 14, ...",
+                "20",
+                "−3",
+                "23 − 3n"
+              ],
+              [
+                "2.5, 4, 5.5, ...",
+                "2.5",
+                "1.5",
+                "1.5n + 1"
+              ]
+            ]
           }
         },
         {
-          "heading": "Using the formula",
+          "heading": "Finding a and d",
           "bullets": [
-            "100th term of 3n + 2 is 302",
-            "Which term is 77? n = 25",
-            "First term over 200: 3n + 2 > 200, n > 66, n = 67",
-            "The 67th term is 203"
+            "Two terms give two facts",
+            "The gap in positions × d = the gap in values"
           ],
-          "note": "Explain the 'first term exceeding' method with an inequality."
+          "note": "4MA1 3.1A, 3.1B.",
+          "model": {
+            "problem": "The 5th term is 23 and the 12th term is 51. Find a and d.",
+            "steps": [
+              "7d = 51 − 23 = 28",
+              "d = 4",
+              "a + 4d = 23, so a = 7"
+            ],
+            "answer": "a = 7, d = 4"
+          }
         },
         {
-          "heading": "Patterns",
+          "heading": "Sum of a series",
           "bullets": [
-            "Matchstick patterns: 5, 9, 13",
-            "d = 4, so 4n + 1",
-            "Pattern 10 has 41 sticks",
-            "Explain: 4 per square plus 1"
+            "Sn = n/2[2a + (n − 1)d]",
+            "Or Sn = n/2(first + last)"
           ],
-          "note": "Show the structure in the picture."
+          "note": "Pairing first and last terms always gives the same total.",
+          "model": {
+            "problem": "Find the sum of the first 20 terms of 7, 11, 15, ...",
+            "steps": [
+              "a = 7, d = 4, n = 20",
+              "S20 = 20/2 × (14 + 19 × 4)",
+              "= 10 × 90"
+            ],
+            "answer": "900"
+          }
         },
         {
           "heading": "Common error",
           "bullets": [
-            "The nth term is not 'n + d'"
+            "Use n − 1 differences"
           ],
-          "note": "For 5, 8, 11: d = 3 means 3n + 2.",
+          "note": "The 1st term has had no differences added.",
           "misconception": {
-            "wrong": "5, 8, 11, 14 has nth term n + 3",
-            "right": "The nth term is 3n + 2: the coefficient of n is the common difference"
+            "wrong": "nth term of 7, 11, 15 is 7 + 4n",
+            "right": "a + (n − 1)d = 7 + 4(n − 1) = 4n + 3"
           }
         },
         {
           "heading": "Check",
-          "bullets": [],
-          "note": "Whiteboards.",
+          "bullets": [
+            "a + (n − 1)d"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
           "check": {
-            "q": "What is the nth term of 7, 11, 15, 19?",
+            "q": "What is the nth term of 20, 17, 14, ...?",
             "options": [
-              "4n + 3",
-              "4n + 7",
-              "3n + 4",
-              "n + 4"
+              "23 − 3n",
+              "20 − 3n",
+              "3n + 17",
+              "−3n + 20"
             ],
             "answer": 0,
-            "why": "d = 4, so 4n; 4n gives 4, 8, 12, 16 so add 3. B adds the first term."
+            "why": "20 − 3(n − 1) = 23 − 3n. 20 − 3n gives 17 as the first term."
           }
         }
       ],
       "practice": [
-        "Find the nth term of 5, 8, 11, 14",
-        "Find the nth term of 20, 17, 14",
-        "Is 77 a term of 3n + 2?",
-        "Which is the first term of 4n − 1 over 150?"
+        {
+          "q": "Find the nth term of 5, 12, 19, ...",
+          "a": "7n − 2",
+          "mins": 2,
+          "model": "a = 5, d = 7. nth term = 5 + 7(n − 1) = 7n − 2. Check: n = 2 gives 12."
+        },
+        {
+          "q": "Find the 50th term of 3n + 8.",
+          "a": "158",
+          "mins": 1
+        },
+        {
+          "q": "Find the sum of the first 10 terms of 2, 5, 8, ...",
+          "a": "155",
+          "mins": 1
+        },
+        {
+          "q": "Is 100 a term of 6n − 4?",
+          "a": "6n = 104, n is not whole: no",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Core: nth term of (a) 3, 7, 11, 15 (b) 2, 9, 16, 23 (c) 10, 7, 4",
-        "Extend: A pattern of tiles uses 7, 12, 17 tiles. Find the nth term and how many tiles in pattern 30.",
-        "Stretch: The 5th term of a linear sequence is 23 and the 9th term is 39. Find the nth term."
+        {
+          "q": "Core: For 13, 9, 5, 1, ... find (a) the nth term (b) the 30th term (c) the sum of the first 15 terms",
+          "a": "(a) 17 − 4n (b) −103 (c) −225",
+          "mins": 5,
+          "model": "(a) a = 13, d = −4: 13 − 4(n − 1) = 17 − 4n. (b) 17 − 120 = −103. (c) S15 = 15/2 × (26 + 14 × (−4)) = 7.5 × (−30) = −225."
+        },
+        {
+          "q": "Extend (exam style, 4 marks): The 4th term of an arithmetic sequence is 17 and the 9th term is 42. Find the sum of the first 20 terms.",
+          "a": "5d = 25, d = 5 (M1); a = 2 (A1); S20 = 10 × (4 + 95) (M1) = 990 (A1)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: How many terms of 3, 7, 11, ... are needed for the sum to exceed 1000?",
+          "a": "Sn = n(2n + 1). n = 22 gives 990; n = 23 gives 1081. So 23 terms",
+          "mins": 4
+        }
       ],
       "exit": [
-        "nth term of 6, 11, 16, 21",
-        "Is 100 a term of 4n + 1?",
-        "nth term of 9, 7, 5, 3"
+        {
+          "q": "Find the nth term of 9, 15, 21, ...",
+          "a": "6n + 3",
+          "mins": 1
+        },
+        {
+          "q": "Find the sum of the first 5 terms of 9, 15, 21, ...",
+          "a": "105",
+          "mins": 1
+        },
+        {
+          "q": "Big question: how does pairing terms help find a sum?",
+          "a": "First + last, second + second last, and so on, all give the same total, so Sn = n/2 × (first + last).",
+          "mins": 1
+        }
       ],
-      "homework": "Eight nth term questions including one matchstick pattern and one 'first term greater than' question.",
-      "send": "SEND/EAL: times-table comparison table; colour the common difference. Stretch: finding the nth term from two non-adjacent terms.",
-      "board": "Pearson Edexcel GCSE (9-1) Mathematics (1MA1), Higher tier",
-      "boardShort": "Edexcel GCSE 1MA1 Higher"
+      "homework": "Answer the hook: find the total ayat after 20 days, and the day on which the running total first passes 600.",
+      "send": "Support: a, d, n labelled on each sequence. EAL: 'series', 'common difference'. Stretch: prove Sn = n/2[2a + (n − 1)d] by writing the sum forwards and backwards.",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Unit 12 (4MA1 3.1A to 3.1C)",
+        "Portal Year 10 lessons 47 and 49 (lesson 49 upgraded)",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book",
+        "Scientific calculator"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "stacked cans pyramid arithmetic series",
+          "alt": "Cans stacked in rows that decrease by one",
+          "for": "teach:3"
+        },
+        {
+          "find": "Mushaf Quran open on stand",
+          "alt": "An open mushaf on a stand, for the daily hifdh plan",
+          "for": "hook"
+        }
+      ]
     },
     {
       "unit": "A23-A25 Algebra: sequences",
