@@ -72,6 +72,14 @@ Y1-2: English and phonics 5, maths 4, topic 2, Qur'an with Qaidah 3, Islamic Stu
 - In-portal curriculum editor: built, PR open from branch `curriculum-editor` (migration 0179), awaiting review and
   merge. After merge: Deploy Supabase backend runs the migration, then the sync seeds the portal automatically.
 
+### Lessons, slides and plans upgrade (owner request, 9 Nov 2026)
+Stages: (1) builder v2 on branch `lesson-builder-v2` (answers + answer-reveal slides, timers, online routines,
+hook slide, chart/numberline/fraction/diagram/sort blocks, Years 1-3 design, fuller lesson plan; backwards compatible;
+portal editor + sync carry the new fields); (2) upgrade the existing 1,521 lessons subject by subject (answers, hooks,
+routines, visuals) checked against house rules; (3) write the missing founding-year lessons from Mon 4 Jan in date
+order, year by year, from docs/curriculum-packs; (4) syllabus pages/pack upgrade. Owner sees before/after slides
+before any whole-school rebuild.
+
 ### Next
 0. Optional: add content/syllabus/ks1-3/design-technology.json (KS1-3 DT statements from gov.uk) so DT is its own
    subject in the portal; for now DT units sit inside art.json.
