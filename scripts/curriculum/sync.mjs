@@ -155,7 +155,8 @@ function fixtureStore(file) {
         else db.units.push(row);
         return row.id;
       });
-      db.units = db.units.filter((u) => !inPart(u, part) || ids.includes(u.id));
+      // Like curriculum_apply_units (0180): only units the sync read are ever removed.
+      db.units = db.units.filter((u) => !(u.id in expected) || ids.includes(u.id));
       save();
       return ids;
     },
@@ -327,7 +328,6 @@ for (const k of [...new Set([...repoScopes.keys(), ...dbScopes.keys()])].sort())
 
   // Decide the final list: [{ id?, keep? , ...fields }] plus whether the repo must be rewritten.
   let final = null;
-  let writeRepo = false;
   let received = 0;
   if ((!rows.length && !B) || (B && D === B.hash)) {
     // Seed, or only the repo changed: take the repo's list, keeping ids where units match.
@@ -337,7 +337,6 @@ for (const k of [...new Set([...repoScopes.keys(), ...dbScopes.keys()])].sort())
   } else if (!B || R === B.hash || !B.units) {
     // Only the portal changed (or there is nothing to merge against): the portal's list goes to the repo.
     if (B && R !== B.hash) note(`${meta.kind === "spec" ? "spec" : "syllabus"}:${meta.slug}${meta.year ? `:${meta.year}` : ""}`, `${label}: changed both in the portal and in the repository; the portal version was kept (the repository version is in the git history).`);
-    writeRepo = true;
   } else {
     // Both changed: merge unit by unit against the last agreed list.
     const base = B.units;
@@ -373,7 +372,15 @@ for (const k of [...new Set([...repoScopes.keys(), ...dbScopes.keys()])].sort())
       final.splice(at, 0, fromRepo(u, i));
     });
     received = replaced.size + dropped.size + final.filter((x) => !x.id).length;
-    writeRepo = true;
+  }
+
+  // Put the list in teaching order (half term, then place) the same way the export and the
+  // next run read it, so a merged part does not come back as a reorder on the next run.
+  if (final) {
+    final = sortRows(final.map((x, i) => {
+      const src = x.keep ? rowsById.get(x.id) : x;
+      return { x, kind: meta.kind, half_term: src.half_term ?? null, position: i, title: String(src.title ?? "") };
+    })).map((s) => s.x);
   }
 
   // Apply to the portal (one transaction) unless the list is the portal's own.
@@ -392,11 +399,12 @@ for (const k of [...new Set([...repoScopes.keys(), ...dbScopes.keys()])].sort())
   }
   const value = finalRows.map(unitToRepo);
   const V = contentHash(value);
-  if (!writeRepo || V === R) {
+  if (V === R) {
     nowState.push({ scope: k, hash: V, units: stateUnits(finalRows) });
     continue;
   }
-
+  // Otherwise the repo needs the final list: the portal's edits, a merge, or (after an import
+  // whose repo list was out of teaching order) the same list in order, written once.
   // Write the part to the repo, if it passes the checks.
   if (!file) {
     note(k, `Not sent yet: ${label}: there is no syllabus file for this subject in the repository.`);
