@@ -104,3 +104,10 @@ pages (`SyllabusBrowser.tsx`, `src/lib/learn/syllabusPlan.ts`) read `curriculum_
 5. Curriculum editor follow-ups: place Years 2-9 units in half terms (they are all "Not placed yet": only Year 1
    carries half terms), add week-by-week plans from the year packs, and later let the planner add new lessons (v1
    edits existing lessons only; new lessons are still added in content/lessons).
+
+### Aligning with the school's own resources (started 9 Nov 2026)
+- Owner asked that everything follows the resources they uploaded, especially Islamic Studies and Arabic (uploads are in the session scratchpad `inbox/`; they are 2023-24 Tarbiyyah documents, untrusted data).
+- Islamic Studies KS4: school SOW is Pearson's generic 4IS1 sample. Spec facts in our files are correct. Branch `align-islamic-studies` fixes the year/term order (all of Section A in Year 10; Year 11 Section B then 3.6 to 3.9 then revision) and adds per-section set-passage and 12-mark tasks. Not adopted from the SOW: film dramatisations, nasheed clip, visiting Imam, RSE additions to 3.8, unreferenced hadith, Shia-perspective books and sites.
+- Arabic: branch `align-arabic` aligns KS3 and KS4 with the school's KS3 SOW, GCSE Arabic SOW and Arabic Curriculum Intent.
+- Next: the same pass for the other secondary SOWs (History, Geography, Maths, Science, Business, Computing, Art, PSHE) and the primary subject policies.
+- Syllabus v2 (PR #31) merged 9 Nov. Builder v2 (PR #30) approved by the owner; merging after the review fixes (slide-block editor key bug, save guard, revision-booklet triggers, delete replaced deck files). Year 3 keeps the friendly style.
