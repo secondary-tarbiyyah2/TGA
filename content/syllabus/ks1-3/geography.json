@@ -4,7 +4,7 @@
   "slug": "geography",
   "framework": "National Curriculum in England (2014): Geography programmes of study, Key Stages 1 to 3, with EYFS Understanding the World",
   "status": "Verified",
-  "statusNote": "Verified from official text: National Curriculum geography programmes of study for key stages 1 to 3 (gov.uk, re-read October 2026) and the EYFS Understanding the World early learning goals (People, Culture and Communities; The Natural World) in the statutory framework from 1 September 2026, read in full text. The Reception unit now follows those goals. Year allocation is a recommended sequence, not statutory; the National Curriculum sets content by key stage. Year units follow the school's existing unit titles. School-choice notes, not verification gaps: KS1 contrasting-country place knowledge, KS2 Europe and North America, KS3 Africa and Asia, KS3 locational knowledge, development and economic sectors, geological time, weather and climate have no matching school units yet; online pupils need a route for fieldwork (for example guided local fieldwork with a parent or tutor). Year 1 was rebuilt in November 2026 to the TGA Year 1 Curriculum Pack: one unit per half term, following Tarbiyyah Primary's Cornerstones projects (2026-27 order), White Rose maths and Little Wandle phonics.",
+  "statusNote": "Verified from official text: National Curriculum geography programmes of study for key stages 1 to 3 (gov.uk, re-read October 2026) and the EYFS Understanding the World early learning goals (People, Culture and Communities; The Natural World) in the statutory framework from 1 September 2026, read in full text. The Reception unit now follows those goals. Year allocation is a recommended sequence, not statutory; the National Curriculum sets content by key stage. Year units follow the school's existing unit titles. School-choice notes, not verification gaps: KS1 contrasting-country place knowledge, KS2 Europe and North America, KS3 Africa and Asia, KS3 locational knowledge, development and economic sectors, geological time, weather and climate have no matching school units yet; online pupils need a route for fieldwork (for example guided local fieldwork with a parent or tutor). Year 1 was rebuilt in November 2026 to the TGA Year 1 Curriculum Pack: one unit per half term, following Tarbiyyah Primary's Cornerstones projects (2026-27 order), White Rose maths and Little Wandle phonics. Years 2 to 9 were rebuilt in November 2026 to the TGA curriculum packs (docs/curriculum-packs/y2.md to y9.md): one unit per half term, titled by half term so the portal planner places each one.",
   "sources": [
     {
       "title": "National curriculum in England: geography programmes of study",
@@ -1171,33 +1171,132 @@
     ],
     "y9": [
       {
-        "unit": "Resources, energy and sustainability",
+        "unit": "Autumn 1: Tectonic hazards",
         "focus": [
-          "Natural resources and who uses them",
-          "Fossil fuels",
-          "The energy mix: UK and the world",
-          "Renewable energy",
-          "Water resources: supply, demand and stress",
-          "Food resources and food security",
-          "Carbon footprints and sustainable living"
+          "Plate tectonics",
+          "Earthquakes and volcanoes",
+          "Responses to tectonic hazards"
         ],
         "skills": [
-          "Compare energy sources",
-          "Use graphs and data",
-          "Decide and justify a choice"
+          "Explain hazard processes"
+        ],
+        "keyTerms": [
+          "plate",
+          "earthquake",
+          "volcano",
+          "hazard",
+          "response"
+        ],
+        "assess": "Unit assessment",
+        "prereq": "Year 3 Summer 2: volcanoes and earthquakes",
+        "leadsTo": "Autumn 2"
+      },
+      {
+        "unit": "Autumn 2: Weather hazards",
+        "focus": [
+          "Tropical storms",
+          "Extreme weather",
+          "Links to climate change"
+        ],
+        "skills": [
+          "Explain weather hazards"
+        ],
+        "keyTerms": [
+          "tropical storm",
+          "extreme weather",
+          "climate change",
+          "hazard"
+        ],
+        "assess": "Unit assessment",
+        "prereq": "Autumn 1",
+        "leadsTo": "Spring 1"
+      },
+      {
+        "unit": "Spring 1: Development",
+        "focus": [
+          "What development is; GDP, HDI and life expectancy",
+          "Causes of uneven development",
+          "The development gap and quality of life",
+          "Case studies; aid, Fairtrade and zakah (زكاة)"
+        ],
+        "skills": [
+          "Interpret development data"
+        ],
+        "keyTerms": [
+          "development",
+          "GDP",
+          "HDI",
+          "inequality",
+          "zakah (زكاة)"
+        ],
+        "assess": "Case study task",
+        "prereq": "Year 8 Summer 1: population",
+        "leadsTo": "Spring 2"
+      },
+      {
+        "unit": "Spring 2: The global economy",
+        "focus": [
+          "Globalisation and why it has grown",
+          "Transnational companies and supply chains",
+          "Changing jobs: primary to quaternary",
+          "Winners and losers; development strategies"
+        ],
+        "skills": [
+          "Evaluate globalisation"
+        ],
+        "keyTerms": [
+          "globalisation",
+          "TNC",
+          "supply chain",
+          "sector",
+          "microfinance"
+        ],
+        "assess": "Case study essay",
+        "prereq": "Spring 1",
+        "leadsTo": "Summer 1"
+      },
+      {
+        "unit": "Summer 1: Resources, energy and sustainability",
+        "focus": [
+          "Natural resources and fossil fuels",
+          "The energy mix: UK and world",
+          "Renewable energy and a decision-making task",
+          "Water resources: supply, demand and stress"
+        ],
+        "skills": [
+          "Make a reasoned decision"
         ],
         "keyTerms": [
           "resource",
-          "fossil fuel",
-          "renewable",
           "energy mix",
-          "water stress",
-          "food security",
-          "carbon footprint"
+          "renewable",
+          "water stress"
         ],
-        "assess": "Decision-making task (which energy source) and end-of-unit assessment",
-        "prereq": "Year 7: UK and population; Year 8: evaluating options",
-        "leadsTo": "GCSE 3.2.3 resource management; 3.1.1.4 climate change; 3.2.2"
+        "assess": "Decision-making task",
+        "prereq": "Year 9 Spring 2 science: energy resources",
+        "leadsTo": "Summer 2"
+      },
+      {
+        "unit": "Summer 2: Food, sustainability and a local fieldwork enquiry",
+        "focus": [
+          "Water stress and food security; sustainable living",
+          "Carbon footprints and personal action",
+          "Fieldwork: a home audit of energy or water use",
+          "Presenting, analysing and concluding"
+        ],
+        "skills": [
+          "Run and evaluate fieldwork"
+        ],
+        "keyTerms": [
+          "food security",
+          "carbon footprint",
+          "hypothesis",
+          "primary data",
+          "evaluate"
+        ],
+        "assess": "Fieldwork report and end-of-year review",
+        "prereq": "Summer 1",
+        "leadsTo": "Year 10: International GCSE Geography"
       }
     ]
   },

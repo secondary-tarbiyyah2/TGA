@@ -4,7 +4,7 @@
   "slug": "islamic-studies",
   "framework": "Statutory RE entitlement (no National Curriculum programme of study); the school's own Islamic Studies programme",
   "status": "Provisional",
-  "statusNote": "There is no National Curriculum programme of study for RE, so this is the school's own programme, taken from its lesson files (content/lessons/islamic-studies, Reception to Year 9) and the Ibn Baz course plan in the school Drive. The gov.uk RE page was opened but says nothing about independent schools. Year allocation is a recommended sequence. Status Provisional. Year 1 was rebuilt in November 2026 to the TGA Year 1 Curriculum Pack: one unit per half term, following Tarbiyyah Primary's Cornerstones projects (2026-27 order), White Rose maths and Little Wandle phonics.",
+  "statusNote": "There is no National Curriculum programme of study for RE, so this is the school's own programme, taken from its lesson files (content/lessons/islamic-studies, Reception to Year 9) and the Ibn Baz course plan in the school Drive. The gov.uk RE page was opened but says nothing about independent schools. Year allocation is a recommended sequence. Status Provisional. Year 1 was rebuilt in November 2026 to the TGA Year 1 Curriculum Pack: one unit per half term, following Tarbiyyah Primary's Cornerstones projects (2026-27 order), White Rose maths and Little Wandle phonics. Years 2 to 9 were rebuilt in November 2026 to the TGA curriculum packs (docs/curriculum-packs/y2.md to y9.md): one unit per half term, titled by half term so the portal planner places each one.",
   "sources": [
     {
       "title": "GOV.UK: Other compulsory subjects (religious education)",
@@ -1195,121 +1195,127 @@
     ],
     "y9": [
       {
-        "unit": "Aqeedah: knowing Allah, the Last Day and al-Qadr",
+        "unit": "Autumn 1: Knowing Allah and the Last Day",
         "focus": [
-          "Allah’s names and attributes: the methodology of ahl as-sunnah",
-          "The Akhirah: death, the grave and the Last Day",
-          "Al-Qadr: divine decree and human responsibility",
-          "Why is there evil and suffering?"
+          "Names and attributes of Allah",
+          "The Akhirah (آخرة)"
         ],
         "skills": [
-          "Explain a belief in own words",
-          "Name the evidence type used (Qur'an, hadith) by reference",
-          "Tell tawhid from its opposite accurately"
+          "Explain the names and the Last Day"
         ],
         "keyTerms": [
-          "tahrif (distorting the meaning of a revealed text)",
-          "ta’til (denying or emptying Allah’s attributes)",
-          "takyif (asking or claiming to know ‘how’ an attribute is)",
-          "tamthil (likening Allah to His creation)",
-          "Akhirah (the Hereafter)",
-          "Barzakh (the barrier: the stage between death and resurrection)"
+          "asma' (أسماء)",
+          "sifat (صفات)",
+          "akhirah (آخرة)"
         ],
-        "assess": "Exit questions in every lesson (from the lesson files); unit review set by the teacher",
-        "prereq": "Year 7: Foundations of Aqeedah",
-        "leadsTo": "Key stage 4 (see toKS4)"
+        "assess": "Unit quiz",
+        "prereq": "Year 8 Autumn 1: pillars of iman",
+        "leadsTo": "Autumn 2"
       },
       {
-        "unit": "Seerah: the Prophet as leader",
+        "unit": "Autumn 2: Al-Qadr",
         "focus": [
-          "The Treaty of Hudaybiyyah",
-          "The Conquest of Makkah and forgiveness",
-          "The Farewell Pilgrimage and Sermon"
+          "Divine decree and responsibility",
+          "Why evil and suffering exist"
         ],
         "skills": [
-          "Sequence events on a timeline",
-          "Use who, where, when and why in explanations",
-          "Separate the event from the lesson drawn from it"
+          "Explain qadar and responsibility"
         ],
         "keyTerms": [
-          "Hudaybiyyah (a place near Makkah where the treaty was signed in 6 AH)",
-          "Bay’at ar-Ridwan (the pledge of allegiance under the tree)",
-          "treaty (a formal agreement)",
-          "Suhayl ibn Amr (Quraysh negotiator)",
-          "Fath Makkah (the conquest of Makkah in Ramadan 8 AH)",
-          "amnesty (an official pardon)"
+          "qadr (قدر)",
+          "responsibility",
+          "trial",
+          "patience"
         ],
-        "assess": "Exit questions in every lesson (from the lesson files); unit review set by the teacher",
-        "prereq": "Year 8: Seerah: the road to Madinah",
-        "leadsTo": "Key stage 4 (see toKS4)"
+        "assess": "Unit quiz",
+        "prereq": "Autumn 1",
+        "leadsTo": "Spring 1"
       },
       {
-        "unit": "Hadith, fiqh and the law",
+        "unit": "Spring 1: The Prophet as leader and sawm",
         "focus": [
+          "The Treaty of Hudaybiyyah: events, terms and wisdom",
+          "The conquest of Makkah and forgiveness",
+          "Leadership lessons",
+          "Sawm (صوم): rules and spirit; preparing for Ramadan"
+        ],
+        "skills": [
+          "Draw leadership lessons"
+        ],
+        "keyTerms": [
+          "Hudaybiyyah (الحديبية)",
+          "forgiveness",
+          "sawm (صوم)",
+          "niyyah (نية)",
+          "taqwa (تقوى)"
+        ],
+        "assess": "Unit quiz",
+        "prereq": "Year 8 Autumn 2: the road to Madinah",
+        "leadsTo": "Spring 2"
+      },
+      {
+        "unit": "Spring 2: Farewell Pilgrimage, hadith and fiqh",
+        "focus": [
+          "The Farewell Pilgrimage and Sermon",
           "How hadith were collected and graded",
-          "The four schools of fiqh and the etiquette of differing",
-          "Sawm: the rules and spirit of fasting"
+          "Four schools of fiqh (مذهب)",
+          "The etiquette of differing"
         ],
         "skills": [
-          "Read and explain a hadith's message",
-          "Say what the narration tells us about its source and preservation",
-          "Apply a hadith to a modern situation"
+          "Explain how rulings differ"
         ],
         "keyTerms": [
-          "rijal (the study of narrators)",
-          "sahih (authentic: connected chain of upright, accurate narrators, without hidden defect)",
-          "mutawatir (narrated by so many that agreement on lying is impossible)",
-          "Kutub as-Sittah (the six major collections)",
-          "madhhab (a school of Islamic jurisprudence)",
-          "faqih (a jurist expert in fiqh)"
+          "hajj (حج)",
+          "hadith (حديث)",
+          "sahih (صحيح)",
+          "madhhab (مذهب)",
+          "adab (أدب)"
         ],
-        "assess": "Exit questions in every lesson (from the lesson files); unit review set by the teacher",
-        "prereq": "Year 8: Hadith and Akhlaq",
-        "leadsTo": "Key stage 4 (see toKS4)"
+        "assess": "Unit review",
+        "prereq": "Year 8 Spring 2: hadith",
+        "leadsTo": "Summer 1"
       },
       {
-        "unit": "Akhlaq and dealings",
+        "unit": "Summer 1: Dealings with others and Important Lessons",
         "focus": [
-          "Halal earning, honest trade and riba",
-          "Guarding the tongue: backbiting and good speech"
+          "Halal earning and honest trade",
+          "Riba (ربا) and why Islam forbids it",
+          "Honesty, fairness and guarding the tongue",
+          "Important Lessons for Every Muslim: units 6 and 7"
         ],
         "skills": [
-          "Give examples of good character from daily life",
-          "Explain the reason for a manner (adab)",
-          "Reflect on and set a personal target"
+          "Apply rules of dealings"
         ],
         "keyTerms": [
-          "kasb halal (lawful earning)",
-          "riba (usury or interest: an unjust increase on a loan)",
-          "gharar (excessive uncertainty or deception in a contract)",
-          "ghishsh (cheating or deceiving in trade)",
-          "ghibah (backbiting: mentioning your brother in a way he would dislike, even if true)",
-          "buhtan (slander: saying something false about someone)"
+          "halal (حلال)",
+          "riba (ربا)",
+          "gheebah (غيبة)",
+          "honesty"
         ],
-        "assess": "Exit questions in every lesson (from the lesson files); unit review set by the teacher",
-        "prereq": "Year 4: Akhlaq and hadith: trust, family and neighbours",
-        "leadsTo": "Key stage 4 (see toKS4)"
+        "assess": "Unit quiz",
+        "prereq": "Year 8 Summer 1: the law in action",
+        "leadsTo": "Summer 2"
       },
       {
-        "unit": "Supplementary course: Important Lessons for Every Muslim (Units 6, 7, 8) and final review",
+        "unit": "Summer 2: Knowing Allah, the Last Day and al-Qadr (review)",
         "focus": [
-          "Unit 6 Character and Etiquette: prescribed character and Islamic etiquette (3 sessions)",
-          "Unit 7 Major Sins: three groups of major sins (3 sessions)",
-          "Unit 8 The Deceased: care of the dying, washing, shrouding, funeral prayer, burial, condolences (4 sessions)",
-          "Session 38: course review and final assessment"
+          "Allah's names and attributes",
+          "The Akhirah: death, the grave and the Last Day",
+          "Al-Qadr; why evil and suffering exist",
+          "Important Lessons: unit 8"
         ],
         "skills": [
-          "Explain a ruling with reasons",
-          "Apply etiquette and character teachings to daily life"
+          "Retrieve and link"
         ],
         "keyTerms": [
-          "akhlaq (character)",
-          "kaba'ir (major sins)",
-          "janazah (funeral prayer)"
+          "asma' (أسماء)",
+          "akhirah (آخرة)",
+          "qadr (قدر)",
+          "trial"
         ],
-        "assess": "Course plan: exit ticket each session, checkpoint per unit, cumulative final assessment in session 38",
-        "prereq": "Year 8: Supplementary course (Units 2, 3)",
-        "leadsTo": "Key stage 4 (see toKS4)"
+        "assess": "End-of-year review",
+        "prereq": "Summer 1",
+        "leadsTo": "Year 10: International GCSE Islamic Studies (4IS1)"
       }
     ]
   },

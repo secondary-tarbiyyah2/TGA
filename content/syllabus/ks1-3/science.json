@@ -4,7 +4,7 @@
   "slug": "science",
   "framework": "National Curriculum in England (2014): Science programmes of study (Key Stages 1 to 3); Reception aligned to EYFS Understanding the World: The Natural World",
   "status": "Verified",
-  "statusNote": "Key Stage 1, 2 and 3 statements were read from the gov.uk National Curriculum science programme of study; the whole page, including the end of the Key Stage 4 section, has now been read, and a sample of Year 2 to Year 6 statements was re-checked against the official primary PDF with no errors found. EYFS Understanding the World: The Natural World was read in the 13 July 2026 statutory framework (in force 1 September 2026) and the Reception row is consistent with it. Statutory content is set by key stage and by named year for KS1 and KS2; the Year 7 to Year 9 allocation and all unit titles are a recommended sequence because the National Curriculum sets Key Stage 3 content as a whole. Pages were read through a fetch tool that summarises text. Year 1 was rebuilt in November 2026 to the TGA Year 1 Curriculum Pack: one unit per half term, following Tarbiyyah Primary's Cornerstones projects (2026-27 order), White Rose maths and Little Wandle phonics.",
+  "statusNote": "Key Stage 1, 2 and 3 statements were read from the gov.uk National Curriculum science programme of study; the whole page, including the end of the Key Stage 4 section, has now been read, and a sample of Year 2 to Year 6 statements was re-checked against the official primary PDF with no errors found. EYFS Understanding the World: The Natural World was read in the 13 July 2026 statutory framework (in force 1 September 2026) and the Reception row is consistent with it. Statutory content is set by key stage and by named year for KS1 and KS2; the Year 7 to Year 9 allocation and all unit titles are a recommended sequence because the National Curriculum sets Key Stage 3 content as a whole. Pages were read through a fetch tool that summarises text. Year 1 was rebuilt in November 2026 to the TGA Year 1 Curriculum Pack: one unit per half term, following Tarbiyyah Primary's Cornerstones projects (2026-27 order), White Rose maths and Little Wandle phonics. Years 2 to 9 were rebuilt in November 2026 to the TGA curriculum packs (docs/curriculum-packs/y2.md to y9.md): one unit per half term, titled by half term so the portal planner places each one.",
   "sources": [
     {
       "title": "National Curriculum in England: science programmes of study (gov.uk)",
@@ -1356,119 +1356,137 @@
     ],
     "y9": [
       {
-        "unit": "9A: Genetics and evolution",
+        "unit": "Autumn 1: Genetics and evolution",
         "focus": [
-          "Continuous and discontinuous variation",
-          "Inherited and environmental variation",
-          "Chromosomes, genes and DNA",
+          "Variation, chromosomes, genes and DNA",
           "Natural selection",
-          "Extinction, gene banks and conservation"
+          "Extinction and conservation (human origins framing to be confirmed)"
         ],
         "skills": [
-          "Graph variation data",
-          "Explain with evidence"
+          "Explain inheritance",
+          "Link to evidence"
         ],
         "keyTerms": [
-          "variation",
+          "chromosome",
           "gene",
           "DNA",
           "natural selection",
           "extinction"
         ],
-        "assess": "End of unit test and extended explanation",
-        "prereq": "Year 6: Evolution and inheritance",
-        "leadsTo": "KS4 Biology Topics 3, 4 and 9"
+        "assess": "Unit assessment",
+        "prereq": "Year 6 Summer 2: evolution and inheritance",
+        "leadsTo": "Autumn 2"
       },
       {
-        "unit": "9E: Making materials",
+        "unit": "Autumn 2: Ecosystems and material cycles",
         "focus": [
-          "Ceramics, polymers and composites",
-          "Problems with plastics and recycling",
-          "Life-cycle assessments",
-          "Making polymers"
+          "Food webs and energy flow",
+          "The carbon and water cycles",
+          "Decomposers",
+          "Human impact"
         ],
         "skills": [
-          "Compare materials with data",
-          "Evaluate environmental impact"
-        ],
-        "keyTerms": [
-          "polymer",
-          "composite",
-          "ceramic",
-          "recycling",
-          "life-cycle"
-        ],
-        "assess": "End of unit test",
-        "prereq": "Year 5: Properties and changes of materials",
-        "leadsTo": "KS4 Chemistry Topics 4 and 9"
-      },
-      {
-        "unit": "Ecosystems and material cycles",
-        "focus": [
-          "Food webs and interdependence",
-          "Photosynthesis and respiration in cycles",
-          "Pollination and food security",
-          "Toxin accumulation"
-        ],
-        "skills": [
-          "Sampling techniques",
           "Interpret food webs"
         ],
         "keyTerms": [
-          "ecosystem",
           "food web",
-          "bioaccumulation",
-          "interdependence"
+          "decomposer",
+          "carbon cycle",
+          "water cycle",
+          "impact"
         ],
-        "assess": "Fieldwork task and test",
-        "prereq": "Year 4: Food chains; Year 7: Plant nutrition",
-        "leadsTo": "KS4 Biology Topic 9"
+        "assess": "Unit assessment",
+        "prereq": "Autumn 1",
+        "leadsTo": "Spring 1"
       },
       {
-        "unit": "Energy and energy resources",
+        "unit": "Spring 1: Making materials",
         "focus": [
-          "Energy stores and transfers",
-          "Conduction and radiation",
-          "Power and domestic energy costs",
-          "Fuels and energy resources"
+          "Ceramics and their properties",
+          "Polymers: structure, properties and uses",
+          "Composites",
+          "Plastics, recycling and life-cycle assessments"
         ],
         "skills": [
-          "Calculate with kWh",
-          "Draw energy diagrams"
+          "Evaluate materials"
+        ],
+        "keyTerms": [
+          "ceramic",
+          "polymer",
+          "composite",
+          "microplastic",
+          "life-cycle assessment"
+        ],
+        "assess": "Unit review",
+        "prereq": "Year 8 Spring 2: periodic table",
+        "leadsTo": "Spring 2"
+      },
+      {
+        "unit": "Spring 2: Energy and energy resources",
+        "focus": [
+          "Energy stores, transfers and conservation",
+          "Dissipation and efficiency; conduction, convection and radiation",
+          "Energy resources: fossil fuels, nuclear and renewables",
+          "Power and the cost of energy; an insulation investigation"
+        ],
+        "skills": [
+          "Calculate efficiency",
+          "Plan an investigation"
         ],
         "keyTerms": [
           "energy store",
-          "joule",
-          "watt",
-          "kilowatt-hour",
-          "conservation"
+          "efficiency",
+          "renewable",
+          "power",
+          "kilowatt-hour"
         ],
-        "assess": "Calculation task and test",
-        "prereq": "Year 8: Combustion",
-        "leadsTo": "KS4 Physics Topics 3 and 8"
+        "assess": "Energy investigation",
+        "prereq": "Spring 1",
+        "leadsTo": "Summer 1"
       },
       {
-        "unit": "Earth, atmosphere and space",
+        "unit": "Summer 1: Earth, atmosphere and space",
         "focus": [
-          "Structure of the Earth and rock cycle",
-          "Atmosphere and climate",
-          "Gravity, weight and the Solar System",
-          "Seasons, stars and light years"
+          "Structure of the Earth and the rock cycle",
+          "The atmosphere and air pollution",
+          "The greenhouse effect and climate change",
+          "The Sun, Earth and Moon (including the Hijri month); the solar system and universe"
         ],
         "skills": [
-          "Use models",
-          "Interpret climate data"
+          "Explain with evidence"
         ],
         "keyTerms": [
           "rock cycle",
           "atmosphere",
-          "gravity",
-          "light year",
-          "galaxy"
+          "greenhouse gas",
+          "orbit",
+          "light year"
         ],
-        "assess": "End of unit test",
-        "prereq": "Year 5: Earth and space",
-        "leadsTo": "KS4 Chemistry Topic 8; Physics Topic 7"
+        "assess": "Unit review",
+        "prereq": "Year 5 Autumn 2: Earth and space",
+        "leadsTo": "Summer 2"
+      },
+      {
+        "unit": "Summer 2: Practical skills for the International GCSE",
+        "focus": [
+          "Planning an investigation: variables and hypotheses",
+          "Measuring and recording: accuracy, precision and means",
+          "Sampling a habitat at home",
+          "Analysing results, risk assessment and a mini-project"
+        ],
+        "skills": [
+          "Plan, record and evaluate"
+        ],
+        "keyTerms": [
+          "hypothesis",
+          "accuracy",
+          "precision",
+          "quadrat",
+          "risk assessment"
+        ],
+        "assess": "Mini-project and end-of-year review",
+        "prereq": "Year 8 Summer 2: working scientifically",
+        "leadsTo": "Year 10: International GCSE sciences"
       }
     ]
   },

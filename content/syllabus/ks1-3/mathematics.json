@@ -4,7 +4,7 @@
   "slug": "mathematics",
   "framework": "National Curriculum in England (2014): Mathematics programmes of study, with EYFS Mathematics (Number; Numerical Patterns) for Reception",
   "status": "Verified",
-  "statusNote": "Key stage statements were read and paraphrased from the gov.uk National Curriculum mathematics programmes of study (Key Stages 1 to 3) and the Reception goals from the EYFS statutory framework for group and school-based providers (version effective September 2026). Statutory content is set by key stage, not by year. The year allocation in the year map is a recommended sequence aligned to the school's existing unit names, not a statutory requirement. Year 1 was rebuilt in November 2026 to the TGA Year 1 Curriculum Pack: one unit per half term, following Tarbiyyah Primary's Cornerstones projects (2026-27 order), White Rose maths and Little Wandle phonics.",
+  "statusNote": "Key stage statements were read and paraphrased from the gov.uk National Curriculum mathematics programmes of study (Key Stages 1 to 3) and the Reception goals from the EYFS statutory framework for group and school-based providers (version effective September 2026). Statutory content is set by key stage, not by year. The year allocation in the year map is a recommended sequence aligned to the school's existing unit names, not a statutory requirement. Year 1 was rebuilt in November 2026 to the TGA Year 1 Curriculum Pack: one unit per half term, following Tarbiyyah Primary's Cornerstones projects (2026-27 order), White Rose maths and Little Wandle phonics. Years 2 to 9 were rebuilt in November 2026 to the TGA curriculum packs (docs/curriculum-packs/y2.md to y9.md): one unit per half term, titled by half term so the portal planner places each one.",
   "sources": [
     {
       "title": "National Curriculum in England: mathematics programmes of study (gov.uk)",
@@ -1376,151 +1376,141 @@
     ],
     "y9": [
       {
-        "unit": "Unit 1: Indices and standard form",
+        "unit": "Autumn 1: Straight-line graphs; forming and solving equations",
         "focus": [
-          "Laws of indices",
-          "Negative and fractional indices (introduction)",
-          "Standard form: converting and calculating",
-          "Roots and surds (introduction)"
+          "Gradient and y = mx + c; parallel lines",
+          "Forming equations from words and shapes",
+          "Equations with brackets and unknowns on both sides"
         ],
         "skills": [
-          "Using index laws",
-          "Calculator use"
+          "Plot and interpret lines",
+          "Form equations"
         ],
         "keyTerms": [
-          "index law",
+          "gradient",
+          "intercept",
+          "parallel",
+          "equation",
+          "unknown"
+        ],
+        "assess": "Topic check",
+        "prereq": "Year 8 Spring 1: equations",
+        "leadsTo": "Autumn 2"
+      },
+      {
+        "unit": "Autumn 2: Testing conjectures; 3D shapes; constructions and congruence",
+        "focus": [
+          "Counterexamples and proof by example",
+          "Volume and surface area of prisms",
+          "Constructions with compasses",
+          "Congruent triangles"
+        ],
+        "skills": [
+          "Test a conjecture",
+          "Construct accurately"
+        ],
+        "keyTerms": [
+          "conjecture",
+          "counterexample",
+          "prism",
+          "congruent",
+          "construction"
+        ],
+        "assess": "Topic check",
+        "prereq": "Year 7 Summer 1: constructions",
+        "leadsTo": "Spring 1"
+      },
+      {
+        "unit": "Spring 1: Number; percentages; maths and money",
+        "focus": [
+          "Rounding, estimation, powers and standard form",
+          "Percentage increase and decrease; reverse percentages",
+          "Repeated change and compound interest",
+          "Wages, tax, best buys; halal finance without riba"
+        ],
+        "skills": [
+          "Use multipliers",
+          "Calculate with standard form"
+        ],
+        "keyTerms": [
           "standard form",
-          "surd"
-        ],
-        "assess": "End-of-unit test.",
-        "prereq": "Year 8: powers and roots.",
-        "leadsTo": "GCSE N6-N9: indices and standard form."
-      },
-      {
-        "unit": "Unit 2: Expressions and formulae",
-        "focus": [
-          "Expanding double brackets",
-          "Factorising quadratics (introduction)",
-          "Substitution into formulae",
-          "Rearranging formulae"
-        ],
-        "skills": [
-          "Manipulation",
-          "Substitution"
-        ],
-        "keyTerms": [
-          "quadratic",
-          "subject of a formula",
-          "factorise"
-        ],
-        "assess": "End-of-unit test.",
-        "prereq": "Year 8: expanding and factorising.",
-        "leadsTo": "GCSE A1-A7."
-      },
-      {
-        "unit": "Equations, inequalities and graphs",
-        "focus": [
-          "Solving linear equations and inequalities",
-          "Simultaneous equations graphically",
-          "Quadratic and cubic graphs",
-          "Real-life graphs"
-        ],
-        "skills": [
-          "Graph sketching",
-          "Solving"
-        ],
-        "keyTerms": [
-          "inequality",
-          "simultaneous",
-          "quadratic graph"
-        ],
-        "assess": "End-of-unit test.",
-        "prereq": "Year 8: straight-line graphs.",
-        "leadsTo": "GCSE A8-A12, A17-A22."
-      },
-      {
-        "unit": "Pythagoras and trigonometry",
-        "focus": [
-          "Pythagoras' theorem",
-          "Sine, cosine and tangent in right-angled triangles",
-          "Angles and lengths",
-          "Problem solving in context"
-        ],
-        "skills": [
-          "Using a calculator",
-          "Modelling"
-        ],
-        "keyTerms": [
-          "hypotenuse",
-          "opposite",
-          "adjacent"
-        ],
-        "assess": "End-of-unit test.",
-        "prereq": "Year 8: area, volume, constructions.",
-        "leadsTo": "GCSE G20-G23."
-      },
-      {
-        "unit": "Ratio, proportion and percentages",
-        "focus": [
-          "Percentage change and reverse percentages",
-          "Direct and inverse proportion",
-          "Compound measures",
-          "Growth and simple interest"
-        ],
-        "skills": [
-          "Multipliers",
-          "Reasoning"
-        ],
-        "keyTerms": [
           "multiplier",
-          "inverse proportion",
-          "interest"
+          "compound interest",
+          "riba",
+          "exchange rate"
         ],
-        "assess": "End-of-unit test.",
-        "prereq": "Year 8: ratio, proportion and rates.",
-        "leadsTo": "GCSE R1-R16."
+        "assess": "Topic quiz",
+        "prereq": "Year 8 Spring 2: indices and percentages",
+        "leadsTo": "Spring 2"
       },
       {
-        "unit": "Probability and statistics: further",
+        "unit": "Spring 2: Deduction; rotation and translation; Pythagoras",
         "focus": [
-          "Combined events and tree diagrams",
-          "Venn diagrams and set notation",
-          "Scatter graphs and lines of best fit",
-          "Grouped data averages"
+          "Angle reasoning and simple proof",
+          "Rotation and translation with column vectors; combining transformations",
+          "Pythagoras: finding lengths and Pythagorean triples",
+          "Pythagoras in context"
         ],
         "skills": [
-          "Probability calculation",
-          "Data interpretation"
+          "Reason in steps",
+          "Apply Pythagoras"
         ],
         "keyTerms": [
-          "tree diagram",
-          "independent",
-          "line of best fit"
+          "deduce",
+          "rotation",
+          "vector",
+          "hypotenuse",
+          "triple"
         ],
-        "assess": "End-of-unit test and Year 9 assessment.",
-        "prereq": "Year 8: probability and statistics.",
-        "leadsTo": "GCSE P1-P9 and S1-S6."
+        "assess": "Topic quiz",
+        "prereq": "Spring 1",
+        "leadsTo": "Summer 1"
       },
       {
-        "unit": "Geometry: circles, similarity and 3D shapes",
+        "unit": "Summer 1: Enlargement and similarity; ratio and proportion; rates",
         "focus": [
-          "Circle parts and arc and sector work (introduction)",
-          "Similar shapes and scale factors",
-          "Surface area and volume",
-          "Vectors (introduction)"
+          "Enlargement with fractional scale factors",
+          "Similar shapes: lengths, areas and volumes",
+          "Ratio, direct and inverse proportion",
+          "Rates: speed, density and pressure"
         ],
         "skills": [
-          "Spatial reasoning",
-          "Formulae"
+          "Enlarge and compare similar shapes",
+          "Use compound measures"
         ],
         "keyTerms": [
-          "sector",
+          "scale factor",
           "similar",
-          "scale factor"
+          "proportion",
+          "density",
+          "compound measure"
         ],
-        "assess": "End-of-unit test.",
-        "prereq": "Year 8: area and volume.",
-        "leadsTo": "GCSE G9-G19."
+        "assess": "Topic quiz",
+        "prereq": "Year 8 Autumn 1: ratio and scale",
+        "leadsTo": "Summer 2"
+      },
+      {
+        "unit": "Summer 2: Probability; algebraic representation",
+        "focus": [
+          "Sample spaces and mutually exclusive events",
+          "Tree diagrams: independent and dependent events",
+          "Graphs of linear and simple quadratic functions",
+          "Sequences, inequalities and rearranging; Venn diagrams"
+        ],
+        "skills": [
+          "Use tree diagrams",
+          "Solve by graph"
+        ],
+        "keyTerms": [
+          "sample space",
+          "tree diagram",
+          "quadratic",
+          "nth term",
+          "Venn diagram"
+        ],
+        "assess": "End-of-year review and 4MA1-style questions",
+        "prereq": "Summer 1",
+        "leadsTo": "Year 10: International GCSE Maths (4MA1)"
       }
     ]
   },

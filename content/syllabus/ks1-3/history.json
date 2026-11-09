@@ -4,7 +4,7 @@
   "slug": "history",
   "framework": "National Curriculum in England (2014): History programmes of study, Key Stages 1 to 3, with EYFS Understanding the World",
   "status": "Verified",
-  "statusNote": "Key Stage 1 to 3 statutory content and period lists were re-read from the gov.uk National Curriculum history programme of study (page read through a fetch tool that returns summaries, checked against the earlier reading). EYFS Understanding the World: Past and Present was read in the 13 July 2026 statutory framework (in force 1 September 2026) and the Reception row matches it. Year allocation is a recommended sequence, not statutory; the National Curriculum sets content by key stage. Year units follow the school's existing unit titles. History is taught from Year 1 to Year 9 only; it is not offered at Key Stage 4. Year 1 was rebuilt in November 2026 to the TGA Year 1 Curriculum Pack: one unit per half term, following Tarbiyyah Primary's Cornerstones projects (2026-27 order), White Rose maths and Little Wandle phonics.",
+  "statusNote": "Key Stage 1 to 3 statutory content and period lists were re-read from the gov.uk National Curriculum history programme of study (page read through a fetch tool that returns summaries, checked against the earlier reading). EYFS Understanding the World: Past and Present was read in the 13 July 2026 statutory framework (in force 1 September 2026) and the Reception row matches it. Year allocation is a recommended sequence, not statutory; the National Curriculum sets content by key stage. Year units follow the school's existing unit titles. History is taught from Year 1 to Year 9 only; it is not offered at Key Stage 4. Year 1 was rebuilt in November 2026 to the TGA Year 1 Curriculum Pack: one unit per half term, following Tarbiyyah Primary's Cornerstones projects (2026-27 order), White Rose maths and Little Wandle phonics. Years 2 to 9 were rebuilt in November 2026 to the TGA curriculum packs (docs/curriculum-packs/y2.md to y9.md): one unit per half term, titled by half term so the portal planner places each one.",
   "sources": [
     {
       "title": "National curriculum in England: history programmes of study",
@@ -1074,28 +1074,132 @@
     ],
     "y9": [
       {
-        "unit": "The First World War",
+        "unit": "Autumn 1: The First World War, including the Indian Army's Muslim soldiers",
         "focus": [
-          "Why war broke out in 1914",
-          "Life in the trenches",
-          "The Battle of the Somme, 1916",
-          "A world war: soldiers from the Empire and Muslim soldiers"
+          "Causes of the war",
+          "The Western Front",
+          "Soldiers from the Empire"
         ],
         "skills": [
-          "Evaluate source utility",
-          "Explain causation",
-          "Consider interpretations"
+          "Explain causes",
+          "Use sources"
         ],
         "keyTerms": [
           "alliance",
-          "trench",
-          "Somme",
+          "Western Front",
           "Empire",
-          "conscription"
+          "trench"
         ],
-        "assess": "Source utility question and extended causation answer",
-        "prereq": "Year 8: industrial warfare context",
-        "leadsTo": "End of KS3 history (not offered at KS4); context for English Literature (4ET1 AO4) and Islamic Studies source work"
+        "assess": "Unit enquiry",
+        "prereq": "Year 8 Autumn 1: war poetry",
+        "leadsTo": "Autumn 2"
+      },
+      {
+        "unit": "Autumn 2: The First World War: the wider war and its end",
+        "focus": [
+          "The war beyond the Western Front",
+          "The end of the war and the peace settlement"
+        ],
+        "skills": [
+          "Judge consequences"
+        ],
+        "keyTerms": [
+          "armistice",
+          "treaty",
+          "peace settlement",
+          "consequence"
+        ],
+        "assess": "Unit quiz",
+        "prereq": "Autumn 1",
+        "leadsTo": "Spring 1"
+      },
+      {
+        "unit": "Spring 1: The Second World War",
+        "focus": [
+          "From the peace of 1919 to dictators; appeasement",
+          "Blitzkrieg, the Battle of Britain and the Blitz",
+          "A world war: the Eastern Front and Pearl Harbor",
+          "The Empire at war; D-Day and the end in 1945"
+        ],
+        "skills": [
+          "Explain why war came again"
+        ],
+        "keyTerms": [
+          "appeasement",
+          "blitzkrieg",
+          "Axis",
+          "Allies",
+          "D-Day"
+        ],
+        "assess": "Unit quiz",
+        "prereq": "Year 6 Autumn 2: A Child's War",
+        "leadsTo": "Spring 2"
+      },
+      {
+        "unit": "Spring 2: The Holocaust",
+        "focus": [
+          "Anti-Jewish persecution from 1933",
+          "Kristallnacht and ghettos",
+          "The Final Solution, taught factually with no graphic images",
+          "Resistance, rescue, liberation and Nuremberg; prejudice, dignity and the sanctity of life in Islam"
+        ],
+        "skills": [
+          "Handle sensitive evidence with care"
+        ],
+        "keyTerms": [
+          "persecution",
+          "genocide",
+          "resistance",
+          "bystander",
+          "justice"
+        ],
+        "assess": "Reflective written response",
+        "prereq": "Spring 1",
+        "leadsTo": "Summer 1"
+      },
+      {
+        "unit": "Summer 1: Britain since 1945: migration and the Commonwealth",
+        "focus": [
+          "Britain in 1945: rebuilding and labour shortages",
+          "Migration from the Caribbean (Windrush) and South Asia",
+          "Discrimination and how Muslim communities responded",
+          "Mosques, schools and charities; migration since 1990"
+        ],
+        "skills": [
+          "Show change over time"
+        ],
+        "keyTerms": [
+          "Windrush",
+          "Commonwealth",
+          "discrimination",
+          "community",
+          "integration"
+        ],
+        "assess": "Unit quiz",
+        "prereq": "Spring 2",
+        "leadsTo": "Summer 2"
+      },
+      {
+        "unit": "Summer 2: Local study: Muslim communities in Britain",
+        "focus": [
+          "Choosing an enquiry question and types of sources",
+          "Family and community oral history",
+          "Local records, archives and maps",
+          "Writing up and presenting findings"
+        ],
+        "skills": [
+          "Run a local enquiry"
+        ],
+        "keyTerms": [
+          "enquiry",
+          "oral history",
+          "archive",
+          "evidence",
+          "bias"
+        ],
+        "assess": "Local study write-up",
+        "prereq": "Summer 1",
+        "leadsTo": "Year 10: International GCSE History"
       }
     ]
   },

@@ -4,7 +4,7 @@
   "slug": "computing",
   "framework": "National Curriculum in England (2014): Computing programmes of study (Key Stages 1 to 3), with an early-years technology foundation for Reception",
   "status": "Verified",
-  "statusNote": "Key stage statements were read and paraphrased from the gov.uk National Curriculum computing programmes of study. The EYFS statutory framework (September 2026 version) has no technology-specific early learning goal, so the Reception year map is a recommended early-skills sequence, not statutory content. Statutory content is set by key stage, not by year; the year allocation is a recommended sequence aligned to the school's existing unit names. Year 1 was rebuilt in November 2026 to the TGA Year 1 Curriculum Pack: one unit per half term, following Tarbiyyah Primary's Cornerstones projects (2026-27 order), White Rose maths and Little Wandle phonics.",
+  "statusNote": "Key stage statements were read and paraphrased from the gov.uk National Curriculum computing programmes of study. The EYFS statutory framework (September 2026 version) has no technology-specific early learning goal, so the Reception year map is a recommended early-skills sequence, not statutory content. Statutory content is set by key stage, not by year; the year allocation is a recommended sequence aligned to the school's existing unit names. Year 1 was rebuilt in November 2026 to the TGA Year 1 Curriculum Pack: one unit per half term, following Tarbiyyah Primary's Cornerstones projects (2026-27 order), White Rose maths and Little Wandle phonics. Years 2 to 9 were rebuilt in November 2026 to the TGA curriculum packs (docs/curriculum-packs/y2.md to y9.md): one unit per half term, titled by half term so the portal planner places each one.",
   "sources": [
     {
       "title": "National Curriculum in England: computing programmes of study (gov.uk)",
@@ -947,117 +947,132 @@
     ],
     "y9": [
       {
-        "unit": "Unit 1: Python programming revisited",
+        "unit": "Autumn 1: Python programming revisited",
         "focus": [
-          "Variables, input and data types",
-          "Selection and iteration",
-          "Lists and strings",
-          "Functions and procedures",
-          "Testing and debugging"
+          "Input, variables and arithmetic",
+          "Selection and iteration"
         ],
         "skills": [
-          "Programming",
-          "Debugging",
-          "Modular design"
+          "Write Python programs"
         ],
         "keyTerms": [
-          "function",
-          "list",
-          "string",
-          "loop"
+          "input",
+          "variable",
+          "selection",
+          "iteration"
         ],
-        "assess": "Programming project and test.",
-        "prereq": "Year 8: text-based programming; Year 7: Scratch.",
-        "leadsTo": "GCSE 6.1 to 6.6."
+        "assess": "Programming task",
+        "prereq": "Year 8 Summer 2: Python project",
+        "leadsTo": "Autumn 2"
       },
       {
-        "unit": "Searching and sorting algorithms",
+        "unit": "Autumn 2: Searching and sorting algorithms",
         "focus": [
           "Linear and binary search",
-          "Bubble sort and merge sort",
-          "Comparing algorithms",
+          "Bubble and merge sort",
           "Tracing algorithms"
         ],
         "skills": [
-          "Analysing",
-          "Tracing"
+          "Trace algorithms"
         ],
         "keyTerms": [
           "linear search",
           "binary search",
           "bubble sort",
-          "merge sort"
+          "merge sort",
+          "trace"
         ],
-        "assess": "End-of-unit test.",
-        "prereq": "Year 7: algorithms and flowcharts.",
-        "leadsTo": "GCSE 1.2."
+        "assess": "Tracing task",
+        "prereq": "Autumn 1",
+        "leadsTo": "Spring 1"
       },
       {
-        "unit": "Computer systems and architecture",
+        "unit": "Spring 1: Computer systems and architecture",
         "focus": [
-          "CPU and fetch-decode-execute (introduction)",
-          "Memory and storage",
-          "Operating systems and utilities",
-          "Low-level and high-level languages"
+          "Hardware, software and storage",
+          "The CPU and the fetch-decode-execute cycle",
+          "RAM, ROM and secondary storage",
+          "Binary, data units and logic gates"
         ],
         "skills": [
-          "Explaining",
-          "Comparing"
+          "Explain how a CPU works"
         ],
         "keyTerms": [
-          "fetch-decode-execute",
+          "CPU",
+          "register",
           "RAM",
-          "compiler",
-          "interpreter"
+          "ROM",
+          "logic gate"
         ],
-        "assess": "End-of-unit test.",
-        "prereq": "Year 7: hardware and software.",
-        "leadsTo": "GCSE 3.1 to 3.3."
+        "assess": "Review quiz",
+        "prereq": "Year 8 Spring 1: binary and logic",
+        "leadsTo": "Spring 2"
       },
       {
-        "unit": "Data handling and spreadsheets",
+        "unit": "Spring 2: Data and spreadsheets",
         "focus": [
-          "Spreadsheet formulae and functions",
-          "Sorting, filtering and charts",
-          "Using data to answer questions",
-          "Introduction to databases"
+          "Cells, formulas and functions",
+          "Sorting, filtering and conditional formatting",
+          "Charts; modelling with lookup and validation",
+          "Databases; a household budget model"
         ],
         "skills": [
-          "Data analysis",
-          "Presenting"
+          "Model with a spreadsheet"
         ],
         "keyTerms": [
           "formula",
-          "function",
-          "database",
-          "field"
+          "filter",
+          "lookup",
+          "validation",
+          "database"
         ],
-        "assess": "Digital artefact.",
-        "prereq": "Year 8: My Digital World.",
-        "leadsTo": "GCSE 6.4 (files and data)."
+        "assess": "Household budget model project",
+        "prereq": "Year 6 Summer 1: spreadsheets",
+        "leadsTo": "Summer 1"
       },
       {
-        "unit": "Impact of technology and cybersecurity",
+        "unit": "Summer 1: Impact of technology",
         "focus": [
-          "Legal and ethical use of data and AI",
-          "Environmental impact of technology",
-          "Cyber threats and protection",
-          "Copyright and licensing"
+          "Benefits and harms of technology",
+          "Ethical, legal and environmental issues",
+          "Privacy, data and the law; AI and automation",
+          "Screen time and wellbeing; a debate"
         ],
         "skills": [
-          "Discussing issues",
-          "Evaluating"
+          "Evaluate impacts"
         ],
         "keyTerms": [
-          "bias",
-          "copyright",
-          "encryption",
-          "phishing",
-          "e-waste"
+          "impact",
+          "ethical",
+          "privacy",
+          "automation",
+          "bias"
         ],
-        "assess": "Extended-answer task.",
-        "prereq": "Year 8: networks and the web.",
-        "leadsTo": "GCSE 5.1 to 5.3."
+        "assess": "Debate and review",
+        "prereq": "Spring 2",
+        "leadsTo": "Summer 2"
+      },
+      {
+        "unit": "Summer 2: Cyber security",
+        "focus": [
+          "Threats: malware, phishing and hacking",
+          "Defences: passwords, firewalls and updates",
+          "Social engineering",
+          "Encryption and a simple cipher in Python"
+        ],
+        "skills": [
+          "Explain threats and defences"
+        ],
+        "keyTerms": [
+          "malware",
+          "phishing",
+          "firewall",
+          "encryption",
+          "cipher"
+        ],
+        "assess": "End-of-year review",
+        "prereq": "Year 8 Spring 2: network security",
+        "leadsTo": "Year 10: Computer Science"
       }
     ]
   },

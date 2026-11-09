@@ -4,7 +4,7 @@
   "slug": "arabic",
   "framework": "National Curriculum in England (2013): Languages programmes of study, key stage 2 (foreign language) and key stage 3 (modern foreign language)",
   "status": "Provisional",
-  "statusNote": "The gov.uk statutory guidance page for the languages programmes of study was opened and summarised; the two programme-of-study PDFs were not separately opened. Arabic is not named in the programmes, but KS2 allows any modern or ancient foreign language and KS3 any modern foreign language. Units follow the school's lesson files. Reception to Year 2 Arabic is optional and not mapped here. Year allocation is a recommended sequence. Status Provisional.",
+  "statusNote": "The gov.uk statutory guidance page for the languages programmes of study was opened and summarised; the two programme-of-study PDFs were not separately opened. Arabic is not named in the programmes, but KS2 allows any modern or ancient foreign language and KS3 any modern foreign language. Units follow the school's lesson files. Reception to Year 2 Arabic is optional and not mapped here. Year allocation is a recommended sequence. Status Provisional. Years 2 to 9 were rebuilt in November 2026 to the TGA curriculum packs (docs/curriculum-packs/y2.md to y9.md): one unit per half term, titled by half term so the portal planner places each one.",
   "sources": [
     {
       "title": "GOV.UK: National curriculum in England: languages programmes of study (statutory guidance)",
@@ -871,79 +871,127 @@
     ],
     "y9": [
       {
-        "unit": "My school and my opinions",
+        "unit": "Autumn 1: School and opinions",
         "focus": [
-          "My school and my subjects",
-          "Giving opinions and comparing subjects",
-          "Plurals and the dual",
-          "My school day: present and past"
+          "My school and subjects",
+          "Opinions",
+          "Plurals and the dual; present and past"
         ],
         "skills": [
-          "Give opinions and compare",
-          "Read and write about familiar topics",
-          "Speak in short conversations with unfamiliar questions"
+          "Give opinions about school"
         ],
         "keyTerms": [
-          "الْمَادَّةُ (subject (al-mādda))",
-          "الرِّيَاضِيَّاتُ (mathematics)",
-          "الْعُلُومُ (sciences)",
-          "الْحَاسُوبُ (computing (al-ḥāsūb))",
-          "أُحِبُّ (I like / love (uḥibbu))",
-          "لِأَنَّهُ / لِأَنَّهَا (because it (m) / because it (f))"
+          "مدرسة (madrasah)",
+          "رأي (ra'y)",
+          "مادة (maddah)",
+          "مثنى (muthanna)"
         ],
-        "assess": "Exit questions in each lesson; review and assessment lessons (reading, writing, speaking) at the end of Year 8 and Year 9 units",
-        "prereq": "Year 7: Free time and my profile",
-        "leadsTo": "Key stage 4 (see toKS4)"
+        "assess": "Oral and written check",
+        "prereq": "Year 8 Summer 2: year review",
+        "leadsTo": "Autumn 2"
       },
       {
-        "unit": "Plans for the future",
+        "unit": "Autumn 2: Future plans",
         "focus": [
-          "The future tense with سَـ and سَوْفَ",
-          "Weekend and holiday plans",
-          "Invitations: accepting and declining politely",
-          "Writing about my plans"
+          "The future with سَـ (sa-) and سَوْفَ (sawfa)",
+          "Weekend and holiday plans; invitations",
+          "Writing about plans"
         ],
         "skills": [
-          "Use present and past verb forms with different people",
-          "Ask and answer questions",
-          "Write short paragraphs about my day"
+          "Talk about the future"
         ],
         "keyTerms": [
-          "سَـ (will (prefix) (sa-))",
-          "سَوْفَ (will (separate word) (sawfa))",
-          "غَدًا (tomorrow (ghadan))",
-          "الْأُسْبُوعَ الْقَادِمَ (next week)",
-          "بَعْدَ غَدٍ (the day after tomorrow)",
-          "إِنْ شَاءَ اللَّهُ (if Allah wills (in shā' Allāh))"
+          "سَـ (sa-)",
+          "سَوْفَ (sawfa)",
+          "مستقبل (mustaqbal)",
+          "خطة (khuttah)"
         ],
-        "assess": "Exit questions in each lesson; review and assessment lessons (reading, writing, speaking) at the end of Year 8 and Year 9 units",
-        "prereq": "Year 8: Time and my daily routine",
-        "leadsTo": "Key stage 4 (see toKS4)"
+        "assess": "Plans task",
+        "prereq": "Autumn 1",
+        "leadsTo": "Spring 1"
       },
       {
-        "unit": "Food and shopping",
+        "unit": "Spring 1: Food and drink",
         "focus": [
-          "Food and drink: ordering in a restaurant",
-          "Shopping and prices: numbers 20 to 100",
-          "Comparing things: bigger, cheaper, better",
-          "Review and assessment: speaking and writing"
+          "Meals: طَعَام (ta'am) and شَرَاب (sharab)",
+          "Likes, dislikes and opinions",
+          "Ordering in a restaurant: مَطْعَم (mat'am)",
+          "Quantities and a role-play"
         ],
         "skills": [
-          "Give opinions and compare",
-          "Read and write about familiar topics",
-          "Speak in short conversations with unfamiliar questions"
+          "Order and give opinions"
         ],
         "keyTerms": [
-          "طَعَامٌ (food (ṭaʿām))",
-          "شَرَابٌ (drink (sharāb))",
-          "دَجَاجٌ (chicken (dajāj))",
-          "أَرُزٌّ (rice (aruzz))",
-          "عَصِيرٌ (juice (ʿaṣīr))",
-          "مِنْ فَضْلِكَ (please (min faḍlika))"
+          "طَعَام (ta'am)",
+          "شَرَاب (sharab)",
+          "مَطْعَم (mat'am)",
+          "أُحِبّ (uhibb)",
+          "كَمْ (kam)"
         ],
-        "assess": "Exit questions in each lesson; review and assessment lessons (reading, writing, speaking) at the end of Year 8 and Year 9 units",
-        "prereq": "Year 7: Free time and my profile",
-        "leadsTo": "Key stage 4 (see toKS4)"
+        "assess": "Review quiz",
+        "prereq": "Autumn 2",
+        "leadsTo": "Spring 2"
+      },
+      {
+        "unit": "Spring 2: Shopping and prices",
+        "focus": [
+          "Shopping: سُوق (suq) and شِرَاء (shira')",
+          "Prices and numbers 20 to 100: ثَمَن (thaman)",
+          "Comparing: أَكْثَر (akthar) and أَرْخَص (arkhas)",
+          "Bargaining politely; writing a dialogue"
+        ],
+        "skills": [
+          "Buy and compare"
+        ],
+        "keyTerms": [
+          "سُوق (suq)",
+          "ثَمَن (thaman)",
+          "أَرْخَص (arkhas)",
+          "مِنْ فَضْلِك (min fadlik)"
+        ],
+        "assess": "Review quiz",
+        "prereq": "Spring 1",
+        "leadsTo": "Summer 1"
+      },
+      {
+        "unit": "Summer 1: Reading longer texts: school and plans",
+        "focus": [
+          "Reading a short text on school and opinions",
+          "Past, present and future verbs in context",
+          "Summarising and answering questions on a text"
+        ],
+        "skills": [
+          "Summarise a text"
+        ],
+        "keyTerms": [
+          "رَأْي (ra'y)",
+          "مُسْتَقْبَل (mustaqbal)",
+          "ملخص (summary)",
+          "فعل (fi'l)"
+        ],
+        "assess": "Reading comprehension",
+        "prereq": "Autumn 2",
+        "leadsTo": "Summer 2"
+      },
+      {
+        "unit": "Summer 2: Reading longer texts: writing and review",
+        "focus": [
+          "A longer text on food and shopping",
+          "Writing a paragraph about plans",
+          "Speaking assessment practice",
+          "End-of-year review"
+        ],
+        "skills": [
+          "Write a paragraph"
+        ],
+        "keyTerms": [
+          "فقرة (faqrah)",
+          "نص (nass, text)",
+          "مراجعة (muraja'ah)"
+        ],
+        "assess": "End-of-year review",
+        "prereq": "Summer 1",
+        "leadsTo": "Year 10: Arabic 4AA1 or 1AA0"
       }
     ]
   },
