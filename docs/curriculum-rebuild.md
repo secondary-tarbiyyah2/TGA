@@ -33,6 +33,22 @@ No PE. No RSE ("PSHE" only). No trips, visitors or theme weeks (online school). 
 faiths' festivals. Arabic script beside any transliteration. "hifdh" not "hifz". "Spring half term", never "Easter
 break". British spelling. No em dashes. Never invent hadith, ayat or scholars' words.
 
+Owner decisions, 9 Nov 2026:
+1. Art: no drawing of people (faces or figures) in any year (1 to 11), and no tasks in other subjects that have pupils
+   draw or paint people (portraits, "draw yourself", comic strips, puppets with faces). Subjects are objects, plants,
+   buildings, landscapes, pattern, geometry and calligraphy. Artists' work that shows people may be looked at; pupils do
+   not reproduce the people. The Year 8 study of the hand (no face) is kept for now (owner to check).
+2. PSHE Year 8 "types of relationships in Britain" and Year 9 "marriage, civil partnerships and same-sex relationships and
+   the British law relating to them" are taught as law and citizenship: what British law says (Marriage Act, civil
+   partnership, Equality Act 2010 protected characteristics), with the Islamic teaching on marriage taught alongside and
+   respect for every person; no relationships or sex education content, no promotion, factual and age-appropriate.
+   Puberty and bulugh are taught in Year 7 only, boys and girls separately.
+3. Riba and interest: interest rates, loans, shares and compound interest are taught where the exam requires them
+   (Business 4BS1, Maths 4MA1, KS3 maths) as knowledge of how the wider economy works, never as something to take.
+   Wherever interest appears: "Islamic note: riba (رِبَا) is forbidden (Qur'an 2:275: Allah has permitted trade and
+   forbidden riba). Islamic finance uses partnership (mushārakah, مُشَارَكَة) and cost-plus sale (murābaḥah, مُرَابَحَة)
+   instead." The Year 9 Islamic Studies riba unit is unchanged.
+
 ## Weekly lessons (from the plan)
 
 | | Y1-2 (30 min) | Y3-6 (45 min) | Y7-9 (50 min) | Y10-11 (50 min) |

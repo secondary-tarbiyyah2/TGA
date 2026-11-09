@@ -55,6 +55,9 @@ jobs:
         # Builds papers for every year group and checks every question is well-formed,
         # then checks the scoring recovers simulated pupils' known levels.
         run: node --experimental-strip-types scripts/assess-selftest.ts
+      - name: Unit tests (src/**/*.test.ts)
+        if: always()
+        run: node --test --experimental-strip-types src/lib/learn/*.test.ts
 
   a11y:
     runs-on: ubuntu-latest

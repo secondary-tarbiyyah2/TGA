@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, type ReactNode } from "react";
+import { useMemo, useState, type MouseEvent, type ReactNode } from "react";
 import { Icon } from "@/components/learn/Icon";
 import { btn, ui } from "@/components/learn/ui";
 import { saveCsv, toCsv, type CsvCell } from "@/lib/learn/csv";
@@ -49,6 +49,7 @@ export function DataTable<T>({
   emptyFiltered = "Nothing matches. Try clearing the search or filters.",
   pageSize: initialPageSize = 25,
   rowClassName,
+  onRowClick,
 }: {
   /** null while loading. */
   rows: T[] | null;
@@ -67,6 +68,13 @@ export function DataTable<T>({
   emptyFiltered?: string;
   pageSize?: number;
   rowClassName?: (row: T) => string;
+  /**
+   * Makes the whole row (and the phone card) a click target, e.g. to open a
+   * record. Clicks on links, buttons and form controls inside the row keep
+   * their own behaviour. Keyboard users need a link or button in the row that
+   * does the same (put one in the first column).
+   */
+  onRowClick?: (row: T) => void;
 }) {
   const [q, setQ] = useState("");
   const [sort, setSort] = useState(initialSort || null);
@@ -108,6 +116,16 @@ export function DataTable<T>({
     const cols = columns.filter((c) => c.csv);
     saveCsv(csvName || "export", toCsv(cols.map((c) => c.header), shown.map((r) => cols.map((c) => c.csv!(r)))));
   };
+
+  const rowClick = (r: T) =>
+    onRowClick
+      ? (e: MouseEvent) => {
+          if ((e.target as HTMLElement).closest("a, button, input, select, textarea, label, summary, details, [role=button], [role=combobox]")) return;
+          if (window.getSelection()?.toString()) return; // selecting text, not opening
+          onRowClick(r);
+        }
+      : undefined;
+  const clickCls = onRowClick ? "cursor-pointer" : "";
 
   const alignCls = (a?: Column<T>["align"]) => (a === "right" ? "text-right" : a === "center" ? "text-center" : "text-left");
   const hasToolbar = !!search || !!filters || !!csvName;
@@ -179,7 +197,7 @@ export function DataTable<T>({
               </thead>
               <tbody>
                 {pageRows.map((r) => (
-                  <tr key={rowKey(r)} className={`border-t border-gold-light/50 align-top hover:bg-cream/60 ${rowClassName?.(r) || ""}`}>
+                  <tr key={rowKey(r)} onClick={rowClick(r)} className={`border-t border-gold-light/50 align-top hover:bg-cream/60 ${clickCls} ${rowClassName?.(r) || ""}`}>
                     {columns.map((c) => (
                       <td key={c.key} className={`px-4 py-3 text-ink ${alignCls(c.align)} ${c.className || ""}`}>
                         {c.cell(r)}
@@ -196,7 +214,7 @@ export function DataTable<T>({
             {pageRows.map((r) => {
               const [first, ...rest] = columns.filter((c) => !c.hideOnPhone);
               return (
-                <li key={rowKey(r)} className={`rounded-2xl border border-gold-light bg-white p-4 ${rowClassName?.(r) || ""}`}>
+                <li key={rowKey(r)} onClick={rowClick(r)} className={`rounded-2xl border border-gold-light bg-white p-4 ${clickCls} ${rowClassName?.(r) || ""}`}>
                   <div className="font-medium text-ink">{first.cell(r)}</div>
                   <dl className="mt-2 grid grid-cols-[auto_minmax(0,1fr)] gap-x-3 gap-y-1 text-sm">
                     {rest.map((c) => (

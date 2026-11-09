@@ -43,6 +43,15 @@ Mark which weeks are ESSENTIAL vs EXTENSION in Spring 1 to Summer 2.
   English set texts with unsuitable content: flag "TO CONFIRM: text suitability" rather than silently swapping a set text.
 - No trips, visitors, guest speakers, theme weeks. Online school: practicals and fieldwork at home or locally with household items,
   a written guide and a live debrief.
+- Owner decisions, 9 Nov 2026: (1) Art and every other subject: no drawing of people (faces or figures); subjects are objects,
+  plants, buildings, landscapes, pattern, geometry and calligraphy (the Year 8 study of the hand is kept for now). (2) PSHE Year 8
+  "types of relationships in Britain" and Year 9 "marriage, civil partnerships and same-sex relationships and the British law
+  relating to them" are law and citizenship: what British law says (Marriage Act, civil partnership, Equality Act 2010 protected
+  characteristics), the Islamic teaching on marriage alongside, respect for every person; no RSE content, no promotion. Puberty
+  and bulugh in Year 7 only. (3) Interest, loans, shares and compound interest are taught where the exam requires them, as
+  knowledge of the wider economy; wherever interest appears add: "Islamic note: riba (رِبَا) is forbidden (Qur'an 2:275: Allah
+  has permitted trade and forbidden riba). Islamic finance uses partnership (mushārakah, مُشَارَكَة) and cost-plus sale
+  (murābaḥah, مُرَابَحَة) instead." Never encourage taking interest.
 - No PE anywhere. British spelling. NO em dashes (use commas, colons or "to"). "Spring half term", never "Easter break". "hifdh".
 - Arabic shown in Arabic script beside any transliteration.
 - Do not reproduce copyrighted text: paraphrase; name specification topics by short title only.
