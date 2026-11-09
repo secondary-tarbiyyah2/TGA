@@ -22,9 +22,9 @@ type StaffRow = {
 };
 type DirectoryRow = { user_id: string; full_name: string; email: string | null; phone: string | null; display_title: string | null; roles: string[]; active: boolean; is_dsl: boolean };
 
-const STAFF_ROLE_LIST: LearnRole[] = ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover"];
+const STAFF_ROLE_LIST: LearnRole[] = ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover", "senco"];
 /** Roles the Headteacher can switch on/off here (head_teacher itself is never changed from this screen). */
-const EDITABLE_ROLES: LearnRole[] = ["teacher", "teaching_assistant_cover", "admissions", "admin"];
+const EDITABLE_ROLES: LearnRole[] = ["teacher", "teaching_assistant_cover", "senco", "admissions", "admin"];
 
 function errText(e: { message?: string; details?: string; hint?: string; code?: string } | null | undefined): string {
   if (!e) return "unknown error";
