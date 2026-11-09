@@ -10,7 +10,7 @@ insert into auth.users (id, email) values
   ('a1920000-0000-0000-0000-000000000002', 'head-192@example.com');
 insert into public.profiles (id, role, full_name, email) values
   ('a1920000-0000-0000-0000-000000000001', 'teacher', 'Teacher 192', 'teacher-192@example.com'),
-  ('a1920000-0000-0000-0000-000000000002', 'head_teacher', 'Head 192', 'head-192@example.com');
+  ('a1920000-0000-0000-0000-000000000002', 'admin', 'Head 192', 'head-192@example.com');
 insert into public.user_roles (user_id, role, scope_type, scope_id) values
   ('a1920000-0000-0000-0000-000000000001', 'teacher', 'none', null),
   ('a1920000-0000-0000-0000-000000000002', 'head_teacher', 'none', null);
