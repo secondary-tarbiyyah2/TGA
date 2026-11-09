@@ -84,7 +84,7 @@ export function PupilPlacement({
 
   return (
     <div className="space-y-4">
-      <div className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_minmax(0,14rem)]">
+      <div className="grid gap-4">
         <DatePicker
           id={`${idPrefix}-dob`}
           label="Date of birth"
@@ -105,6 +105,7 @@ export function PupilPlacement({
             aria-describedby={`${idPrefix}-yg-hint`}
             className={ui.select}
             placeholder="Not set"
+            wrapperClassName="sm:max-w-xs"
             onChange={onYear}
             options={yearGroups.map((g) => ({ value: g.id, label: g.name, aside: suggested?.id === g.id ? "Suggested" : undefined }))}
           />

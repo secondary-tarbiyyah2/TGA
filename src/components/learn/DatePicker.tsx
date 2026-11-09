@@ -312,7 +312,7 @@ function Calendar({ id, value, start, min, max, onPick, onClose }: { id: string;
         <span className="flex">
           <button type="button" className={navBtn} aria-label="Previous year" title="Previous year" onClick={() => nav(-12)}>
             <Icon name="chevronLeft" size="sm" />
-            <Icon name="chevronLeft" size="sm" className="-ml-2.5" />
+            <Icon name="chevronLeft" className="-ml-2.5 h-4 w-4" />
           </button>
           <button type="button" className={navBtn} aria-label="Previous month" title="Previous month" onClick={() => nav(-1)}>
             <Icon name="chevronLeft" size="sm" />
@@ -327,7 +327,7 @@ function Calendar({ id, value, start, min, max, onPick, onClose }: { id: string;
           </button>
           <button type="button" className={navBtn} aria-label="Next year" title="Next year" onClick={() => nav(12)}>
             <Icon name="chevronRight" size="sm" />
-            <Icon name="chevronRight" size="sm" className="-ml-2.5" />
+            <Icon name="chevronRight" className="-ml-2.5 h-4 w-4" />
           </button>
         </span>
       </div>

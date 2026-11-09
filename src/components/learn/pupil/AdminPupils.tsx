@@ -121,9 +121,9 @@ function ClassesCell({ classes }: { classes: { id: string; name: string }[] }) {
   if (classes.length === 1) return <span className="block max-w-[14rem] truncate text-ink/80" title={classes[0].name}>{classes[0].name}</span>;
   return (
     <details className="group max-w-[16rem]">
-      <summary className="inline-flex cursor-pointer list-none items-center gap-1 rounded text-ink/80 hover:text-ink [&::-webkit-details-marker]:hidden">
+      <summary className="inline-flex cursor-pointer list-none items-center gap-1 whitespace-nowrap rounded text-ink/80 hover:text-ink [&::-webkit-details-marker]:hidden">
         {classes.length} classes
-        <Icon name="chevronDown" size="sm" className="transition-transform group-open:rotate-180" />
+        <Icon name="chevronDown" className="h-3.5 w-3.5 transition-transform group-open:rotate-180" />
       </summary>
       <ul className="mt-1 space-y-0.5 text-xs text-ink/75">
         {classes.map((c) => (
@@ -227,7 +227,7 @@ export function AdminPupils() {
       sort: (p) => p.name,
       csv: (p) => p.name,
       cell: (p) => (
-        <span className="flex min-w-0 items-center gap-3">
+        <span className="flex min-w-0 items-center gap-2.5">
           <span aria-hidden="true" className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gold-100 text-xs font-semibold text-gold-900">
             {initials(p.name)}
           </span>
@@ -235,7 +235,11 @@ export function AdminPupils() {
             <Link href={`/admin/pupils?id=${p.id}`} className="block font-medium text-ink hover:text-teal-700 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700">
               {p.name}
             </Link>
-            {extras.above.has(p.id) && <span className="mt-0.5 block text-xs font-medium text-teal-700">Working above year group</span>}
+            {extras.above.has(p.id) && (
+              <span className="mt-0.5 block text-xs font-medium text-teal-700" title="Working above year group">
+                Above year group
+              </span>
+            )}
           </span>
         </span>
       ),
@@ -244,7 +248,6 @@ export function AdminPupils() {
     {
       key: "class",
       header: "Classes",
-      sort: (p) => p.classes.length,
       csv: (p) => p.classes.map((c) => c.name).join("; "),
       cell: (p) => <ClassesCell classes={p.classes} />,
       hideOnPhone: true,
@@ -303,7 +306,6 @@ export function AdminPupils() {
       key: "alerts",
       header: "Medical",
       align: "center",
-      sort: (p) => p.alerts.length,
       csv: (p) => p.alerts.join("; "),
       cell: (p) =>
         p.alerts.length > 0 ? (
@@ -323,6 +325,7 @@ export function AdminPupils() {
       header: "Edit",
       align: "right",
       hideOnPhone: true,
+      className: "!pl-1 !pr-3",
       cell: (p) => <IconButton icon="pencil" label={`Edit ${p.name}`} onClick={() => setEditing(p.id)} className="-my-2" />,
     },
   ];
@@ -392,6 +395,7 @@ export function AdminPupils() {
           rowKey={(p) => p.id}
           columns={columns}
           onRowClick={(p) => router.push(`/admin/pupils?id=${p.id}`)}
+          rowClassName={() => "!align-middle"}
           search={{ text: (p) => `${p.name} ${p.yearGroup || ""} ${p.classes.map((c) => c.name).join(" ")}`, placeholder: "Search pupils or classes" }}
           filters={
             yearGroups.length > 0 && (
