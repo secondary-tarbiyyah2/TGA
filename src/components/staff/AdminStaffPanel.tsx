@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { Select } from "@/components/ui/Dropdown";
 
 type StaffRow = {
   id: string;
@@ -165,11 +166,11 @@ export function AdminStaffPanel({ roleFilter, defaultInviteRole = "staff" }: { r
           ) : (
             <label className="text-sm text-ink sm:col-span-1">
               Account level
-              <select name="role" defaultValue={defaultInviteRole} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2">
+              <Select native name="role" defaultValue={defaultInviteRole} className="mt-1 block w-full rounded-lg border border-gold-light/60 px-3 py-2">
                 <option value="staff">Staff</option>
                 <option value="teacher">Teacher</option>
                 <option value="admin">Admin</option>
-              </select>
+              </Select>
             </label>
           )}
           <div className="sm:col-span-2">

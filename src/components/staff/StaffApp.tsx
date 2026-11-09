@@ -5,6 +5,7 @@ import type { Session } from "@supabase/supabase-js";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { friendlyPasswordError } from "@/lib/learn/passwordRules";
 import { AdminStaffPanel } from "./AdminStaffPanel";
+import { Select } from "@/components/ui/Dropdown";
 
 type StaffRow = { id: string; display_name: string; role_title: string; teams_meeting_url: string | null; bookable?: boolean };
 type BookingRow = {
@@ -413,9 +414,9 @@ function Dashboard({ session }: { session: Session }) {
         <form onSubmit={addRule} className="mt-4 flex flex-wrap items-end gap-3">
           <label className="text-sm text-ink">
             Day
-            <select name="weekday" className="mt-1 block rounded-lg border border-gold-light/60 px-3 py-2">
+            <Select native name="weekday" className="mt-1 block rounded-lg border border-gold-light/60 px-3 py-2">
               {WEEKDAYS.map((d, i) => <option key={d} value={i}>{d}</option>)}
-            </select>
+            </Select>
           </label>
           <label className="text-sm text-ink">
             From
