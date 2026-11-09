@@ -1,0 +1,144 @@
+name: Build one lesson
+
+# The portal's quick build (Tafweed T35). Started by the Edge Function curriculum-sync straight
+# after a teacher saves a lesson in the Lesson library, with that lesson's id. Builds the new
+# slides (PowerPoint + PDF) and the lesson plan (Word + PDF) for that one lesson from the copy
+# saved in the portal, and loads them into the Lesson library, usually within two minutes. The
+# editor watches curriculum_lesson_builds and offers the downloads as soon as they are ready.
+#
+# The portal stays the source of truth: "Sync curriculum from the portal" still copies the edit
+# into content/lessons, and the full "Build lesson decks" run then finds these slides current.
+# Decks a teacher uploaded themselves are never overwritten (only the plan is rebuilt).
+
+on:
+  workflow_dispatch:
+    inputs:
+      lesson_id:
+        description: "curriculum_lessons.id of the lesson to build"
+        required: true
+
+concurrency:
+  group: build-one-lesson-${{ github.event.inputs.lesson_id }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+      LESSON_ID: ${{ github.event.inputs.lesson_id }}
+    steps:
+      - name: Check the lesson id
+        run: |
+          if ! [[ "$LESSON_ID" =~ ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$ ]]; then
+            echo "::error::Not a lesson id."; exit 1
+          fi
+
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Only the three packages the builder needs, not the whole site (much faster than npm ci).
+      - name: Install the slide builder
+        run: |
+          mkdir -p "$RUNNER_TEMP/deps"
+          cd "$RUNNER_TEMP/deps"
+          npm init -y >/dev/null
+          npm install --no-audit --no-fund pptxgenjs@4.0.1 docx@9.5.1 @supabase/supabase-js@2 >/dev/null
+          ln -s "$RUNNER_TEMP/deps/node_modules" "$GITHUB_WORKSPACE/node_modules"
+
+      # LibreOffice for the PDF copies, cached between runs so it installs in seconds.
+      - name: Install LibreOffice (for PDF copies)
+        uses: awalsh128/cache-apt-pkgs-action@v1.6.3
+        with:
+          packages: libreoffice-impress libreoffice-writer fonts-liberation fonts-crosextra-carlito fonts-dejavu-core fonts-noto-core fonts-noto-naskh-arabic
+          version: "1"
+
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Find the project ref and service-role key
+        id: keys
+        run: |
+          set -euo pipefail
+          PROJECTS=$(supabase projects list -o json)
+          REF=$(echo "$PROJECTS" | jq -r ".[] | select(.name==\"secondary-tarbiyyah2's Project\") | .id" | head -n1)
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then
+            COUNT=$(echo "$PROJECTS" | jq 'length')
+            if [ "$COUNT" = "1" ]; then REF=$(echo "$PROJECTS" | jq -r '.[0].id'); fi
+          fi
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then
+            echo "::error::Could not find the Supabase project."
+            exit 1
+          fi
+          SERVICE_ROLE=$(supabase projects api-keys --project-ref "$REF" -o json | jq -r '.[] | select(.name=="service_role" or .name=="secret") | .api_key' | head -n1)
+          if [ -z "$SERVICE_ROLE" ] || [ "$SERVICE_ROLE" = "null" ]; then
+            echo "::error::Could not find a service_role/secret key."
+            exit 1
+          fi
+          echo "::add-mask::$SERVICE_ROLE"
+          echo "ref=$REF" >> "$GITHUB_OUTPUT"
+          echo "service_role_key=$SERVICE_ROLE" >> "$GITHUB_OUTPUT"
+
+      - name: Take the lesson from the portal
+        id: prep
+        env:
+          SUPABASE_URL: https://${{ steps.keys.outputs.ref }}.supabase.co
+          SUPABASE_SERVICE_ROLE_KEY: ${{ steps.keys.outputs.service_role_key }}
+        run: |
+          set -euo pipefail
+          node scripts/lessons/one-lesson.mjs prepare "$LESSON_ID" "$RUNNER_TEMP/lessons" | tee "$RUNNER_TEMP/prep.txt"
+          grep -E '^(only|lesson)=' "$RUNNER_TEMP/prep.txt" >> "$GITHUB_OUTPUT"
+
+      - name: Build the slides and lesson plan
+        env:
+          LESSONS_DIR: ${{ runner.temp }}/lessons
+        run: |
+          set -euo pipefail
+          node scripts/lessons/build-decks.mjs out/decks --only="${{ steps.prep.outputs.only }}"
+          node scripts/lessons/one-lesson.mjs trim out/decks "${{ steps.prep.outputs.only }}" "${{ steps.prep.outputs.lesson }}"
+
+      - name: Work out what needs uploading
+        env:
+          SUPABASE_URL: https://${{ steps.keys.outputs.ref }}.supabase.co
+          SUPABASE_SERVICE_ROLE_KEY: ${{ steps.keys.outputs.service_role_key }}
+          LESSONS_DIR: ${{ runner.temp }}/lessons
+        run: node scripts/lessons/upload-decks.mjs plan out/decks
+
+      - name: Convert to PDF
+        run: |
+          set -euo pipefail
+          cd out/decks
+          for f in $(node -e 'console.log(require("./needed.json").join("\n"))'); do
+            soffice -env:UserInstallation=file:///tmp/lo_one --headless --convert-to pdf --outdir "$(dirname "$f")" "$f" >/dev/null 2>&1 || echo "::warning::PDF failed for $f"
+          done
+
+      - name: Upload to the Lesson library
+        env:
+          SUPABASE_URL: https://${{ steps.keys.outputs.ref }}.supabase.co
+          SUPABASE_SERVICE_ROLE_KEY: ${{ steps.keys.outputs.service_role_key }}
+          LESSONS_DIR: ${{ runner.temp }}/lessons
+        run: node scripts/lessons/upload-decks.mjs upload out/decks
+
+      - name: Tell the editor it is ready
+        if: success()
+        env:
+          SUPABASE_URL: https://${{ steps.keys.outputs.ref }}.supabase.co
+          SUPABASE_SERVICE_ROLE_KEY: ${{ steps.keys.outputs.service_role_key }}
+        run: node scripts/lessons/one-lesson.mjs finish "$LESSON_ID" ok
+
+      - name: Tell the editor it failed
+        if: failure() && steps.keys.outcome == 'success'
+        env:
+          SUPABASE_URL: https://${{ steps.keys.outputs.ref }}.supabase.co
+          SUPABASE_SERVICE_ROLE_KEY: ${{ steps.keys.outputs.service_role_key }}
+        run: node scripts/lessons/one-lesson.mjs finish "$LESSON_ID" failed
