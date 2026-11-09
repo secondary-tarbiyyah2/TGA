@@ -8,6 +8,9 @@
    words, the files involved, "Done when" checks and a status. When the owner
    says "carry on" or "do T7", start there, and update that file (status, log
    line) in the same pull request.
+   **Curriculum, lessons, slides and syllabus work** is tracked in
+   `docs/curriculum-rebuild.md`: read its "START HERE: handover" section first,
+   and reuse the briefs in `docs/agent-briefs/`.
 3. **Branches and PRs:** branch from `main` as `claude/<topic>`; never push to
    `main`. The sandbox usually can't run `npm`, so CI (lint, `tsc`, build,
    a11y, `supabase test db`) is the check: open the PR and make sure it's green.
