@@ -893,121 +893,237 @@
    "send": "Support: worked-example card. Stretch: problems with mixed units."
   },
   {
-   "unit": "Unit 2: Expressions and formulae",
+   "unit": "Autumn 1: Straight-line graphs; forming and solving equations",
    "n": 8,
    "title": "Solving equations with fractions",
    "duration": 50,
-   "bigQuestion": "How do we 'undo' a fraction in an equation?",
+   "bigQuestion": "How do we clear fractions from an equation?",
    "objectives": [
-    "Solve equations where the unknown is divided by a number",
-    "Solve equations with fractions on one or both sides",
-    "Give fractional answers in their simplest form"
+    "To understand how to solve equations that contain fractions"
    ],
    "successCriteria": [
-    "Solve x/4 = 7 and (x + 2)/3 = 5",
-    "Solve equations with two fractions using a common multiple",
-    "Decide when to give answers as fractions or decimals"
+    "All: solve equations such as (x + 3)/5 = 4",
+    "Most: solve equations such as x/2 + x/3 = 10",
+    "Some: solve equations with fractions on both sides"
    ],
-   "crossCurricular": "Science: rearranging physics formulae; Business: sharing profits",
-   "smsc": "Moral: keeping both sides balanced, like justice ('adl)",
+   "crossCurricular": "Science: rearranging formulae with fractions, such as density = mass ÷ volume",
+   "smsc": "Spiritual: al-Khwarizmi's book on al-jabr (الجبر), written in Baghdad, gave algebra its name",
    "keywords": [
     {
-     "term": "equation",
-     "def": "a statement with an equals sign containing an unknown"
+     "term": "denominator",
+     "def": "the bottom of a fraction"
     },
     {
-     "term": "solve",
-     "def": "find the value of the unknown that makes it true"
+     "term": "common denominator",
+     "def": "a number every denominator divides into"
     },
     {
-     "term": "inverse operation",
-     "def": "the operation that undoes another"
+     "term": "clear the fractions",
+     "def": "multiply every term so no fractions remain"
     },
     {
-     "term": "common multiple",
-     "def": "a number both denominators divide into"
+     "term": "LCM",
+     "def": "lowest common multiple"
     }
    ],
+   "hook": {
+    "type": "ponder",
+    "text": "Hafsa says x/3 + 2 = 5 means x = 1. Is she right?",
+    "options": [
+     "Yes",
+     "No"
+    ],
+    "a": "No: x/3 = 3, so x = 9. She divided 3 by 3 instead of multiplying."
+   },
    "starter": [
-    "Solve 3x = 21",
-    "Solve x + 7 = 12",
-    "Find the LCM of 3 and 4",
-    "Work out 2 × 10³ × 3"
+    {
+     "q": "Solve 7(x − 2) = 3(x + 2).",
+     "a": "x = 5",
+     "mins": 1
+    },
+    {
+     "q": "Find 2/3 of 18.",
+     "a": "12",
+     "mins": 1
+    },
+    {
+     "q": "Find the LCM of 4 and 6.",
+     "a": "12",
+     "mins": 1
+    },
+    {
+     "q": "Work out 3/4 × 8.",
+     "a": "6",
+     "mins": 1
+    }
    ],
    "teach": [
     {
-     "heading": "Undoing division",
+     "heading": "One fraction",
      "bullets": [
-      "x/4 = 7: multiply both sides by 4",
-      "x = 28",
-      "Balance: same to both sides"
+      "(x + 3)/5 = 4: × 5 both sides",
+      "x + 3 = 20, x = 17"
      ],
-     "note": "Use a balance-scales picture."
-    },
-    {
-     "heading": "A bracket on top",
-     "bullets": [
-      "Multiply both sides by the denominator first",
-      "Then solve the linear equation"
-     ],
-     "note": "Model.",
+     "note": "The fraction line is a bracket: (x + 3) is all divided by 5.",
      "model": {
-      "problem": "Solve (2x + 3)/5 = 7",
+      "problem": "Solve 2x/3 = 8.",
       "steps": [
-       "Multiply both sides by 5: 2x + 3 = 35",
-       "Subtract 3: 2x = 32",
-       "Divide by 2"
+       "× 3: 2x = 24",
+       "÷ 2: x = 12"
       ],
-      "answer": "x = 16"
+      "answer": "x = 12"
      }
     },
     {
      "heading": "Two fractions",
      "bullets": [
-      "Multiply every term by the LCM of the denominators",
-      "This clears the fractions"
+      "Multiply every term by the LCM",
+      "x/2 + x/3 = 10: × 6"
      ],
-     "note": "Example: x/3 + x/4 = 14. Multiply by 12: 4x + 3x = 168, so 7x = 168, x = 24.",
-     "misconception": {
-      "wrong": "x/3 + 2 = 5 → x + 2 = 15",
-      "right": "Multiply every term: x + 6 = 15, so x = 9"
+     "note": "Every term, including the 10.",
+     "model": {
+      "problem": "Solve x/2 + x/3 = 10.",
+      "steps": [
+       "× 6: 3x + 2x = 60",
+       "5x = 60",
+       "x = 12"
+      ],
+      "answer": "x = 12"
      }
     },
     {
-     "heading": "Check: solve",
-     "bullets": [],
-     "note": "Show me on 3.",
-     "check": {
-      "q": "Solve (x − 4)/3 = 6",
-      "options": [
-       "x = 6",
-       "x = 22",
-       "x = 14",
-       "x = 10"
+     "heading": "Fractions on both sides",
+     "bullets": [
+      "Cross-multiply",
+      "Use brackets round numerators"
+     ],
+     "note": "Pupils try (x + 1)/3 = (2x − 3)/5 (x = 14).",
+     "model": {
+      "problem": "Solve (2x − 1)/3 = (x + 4)/2.",
+      "steps": [
+       "× 6: 2(2x − 1) = 3(x + 4)",
+       "4x − 2 = 3x + 12",
+       "x = 14"
       ],
-      "answer": 1,
-      "why": "x − 4 = 18 so x = 22. C subtracts 4 after multiplying; D adds 4 to 6 without multiplying."
+      "answer": "x = 14"
+     }
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Multiply every term"
+     ],
+     "note": "Ask: what happened to the 3?",
+     "misconception": {
+      "wrong": "x/2 + 3 = 7, so x + 3 = 14",
+      "right": "× 2 every term: x + 6 = 14, so x = 8"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Undo the division last added"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Solve (x − 4)/3 = 5.",
+      "options": [
+       "19",
+       "11",
+       "3",
+       "23"
+      ],
+      "answer": 0,
+      "why": "× 3: x − 4 = 15, x = 19. 11 comes from x − 4 = 5 + 2."
      }
     }
    ],
    "practice": [
-    "Solve x/5 = 9",
-    "Solve (x + 1)/4 = 3",
-    "Solve 2x/3 = 8",
-    "Solve x/2 + x/3 = 10"
+    {
+     "q": "Solve x/5 = 6.",
+     "a": "x = 30",
+     "mins": 2,
+     "model": "Multiply both sides by 5: x = 30. Check: 30 ÷ 5 = 6."
+    },
+    {
+     "q": "Solve (x + 2)/4 = 3.",
+     "a": "x = 10",
+     "mins": 1
+    },
+    {
+     "q": "Solve 3x/4 = 9.",
+     "a": "x = 12",
+     "mins": 1
+    },
+    {
+     "q": "Solve x/3 − 1 = 4.",
+     "a": "x = 15",
+     "mins": 1
+    }
    ],
    "independent": [
-    "Core: Solve (a) x/6 = 4 (b) (3x − 1)/2 = 7 (c) (x + 5)/4 = 2 (d) 5x/3 = 20",
-    "Extend: Solve x/2 − x/5 = 9 and (x + 1)/3 = (x − 1)/2",
-    "Stretch: Hamza spends a third of his money on a book and a quarter on lunch. He has £20 left. How much did he start with? Write and solve an equation."
+    {
+     "q": "Core: Solve (a) (x − 7)/2 = 9 (b) 5x/2 = 15 (c) (3x + 1)/4 = 7 (d) x/4 + 5 = 2",
+     "a": "(a) 25 (b) 6 (c) 9 (d) −12",
+     "mins": 5,
+     "model": "(a) × 2: x − 7 = 18, x = 25. (b) × 2: 5x = 30, x = 6. (c) × 4: 3x + 1 = 28, x = 9. (d) − 5: x/4 = −3, x = −12."
+    },
+    {
+     "q": "Extend: Solve x/2 + x/5 = 14.",
+     "a": "× 10: 5x + 2x = 140, x = 20",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Solve (x + 1)/3 = (2x − 3)/5.",
+     "a": "5(x + 1) = 3(2x − 3): 5x + 5 = 6x − 9, x = 14",
+     "mins": 4
+    }
    ],
    "exit": [
-    "Solve x/7 = 3",
-    "Solve (x + 2)/5 = 4",
-    "Solve x/2 + x/4 = 9"
+    {
+     "q": "Solve (x + 6)/3 = 4.",
+     "a": "x = 6",
+     "mins": 1
+    },
+    {
+     "q": "Solve x/3 + x/6 = 5.",
+     "a": "× 6: 2x + x = 30, x = 10",
+     "mins": 2
+    },
+    {
+     "q": "Big question: how do we clear fractions?",
+     "a": "Multiply every term on both sides by a common denominator.",
+     "mins": 1
+    }
    ],
-   "homework": "Write three word problems that lead to equations with fractions and solve them.",
-   "send": "Support: balance diagrams. Stretch: equations with unknowns on both sides and fractions."
+   "homework": "Solve (x + 5)/2 = 9, 2x/5 = 6, x/4 + x/2 = 9 and (x − 2)/3 = (x + 1)/4; check each answer.",
+   "send": "Support: brackets drawn round each numerator. EAL: 'every term', 'denominator'. Stretch: equations with three fractions.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 9 2.1 Solving equations (the school's KS3 scheme)",
+    "Portal Year 9 lesson 8 (upgraded)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "fraction bar divided into fifths",
+     "alt": "A bar split into fifths",
+     "for": "teach:1"
+    },
+    {
+     "find": "lowest common multiple diagram",
+     "alt": "Multiples lists showing a common multiple",
+     "for": "keywords"
+    }
+   ]
   },
   {
    "unit": "Unit 2: Expressions and formulae",
@@ -2032,6 +2148,1744 @@
    ],
    "homework": "Complete the Units 1–2 review sheet and write two targets based on your weakest topics.",
    "send": "Support: skill cards with a worked example each. Stretch: algebraic proof challenges."
+  },
+  {
+   "unit": "Autumn 1: Straight-line graphs; forming and solving equations",
+   "n": 17,
+   "title": "Plotting straight-line graphs",
+   "duration": 50,
+   "bigQuestion": "How does an equation become a picture?",
+   "objectives": [
+    "To understand how a linear equation is plotted as a straight-line graph"
+   ],
+   "successCriteria": [
+    "All: complete a table of values and plot the line",
+    "Most: test whether points lie on a line without plotting",
+    "Some: find where two lines cross from their equations"
+   ],
+   "crossCurricular": "Science: plotting results that give straight lines",
+   "smsc": "Spiritual: a few symbols describe infinitely many points, showing the order in mathematics that Allah placed in creation",
+   "keywords": [
+    {
+     "term": "linear",
+     "def": "makes a straight line"
+    },
+    {
+     "term": "table of values",
+     "def": "inputs x with outputs y"
+    },
+    {
+     "term": "plot",
+     "def": "mark points accurately on a grid"
+    },
+    {
+     "term": "coordinates",
+     "def": "the pair (x, y)"
+    },
+    {
+     "term": "intercept",
+     "def": "where a line crosses an axis"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Which of these points lie on the line y = 2x + 1: (3, 7), (−1, −1), (0, 2), (5, 11)?",
+    "a": "(3, 7), (−1, −1) and (5, 11) do. (0, 2) does not: when x = 0, y = 1."
+   },
+   "starter": [
+    {
+     "q": "Find 3x + 1 when x = −2.",
+     "a": "−5",
+     "mins": 1
+    },
+    {
+     "q": "Find the midpoint of (−2, 4) and (6, 0).",
+     "a": "(2, 2)",
+     "mins": 1
+    },
+    {
+     "q": "Find the nth term of 5, 8, 11, ...",
+     "a": "3n + 2",
+     "mins": 1
+    },
+    {
+     "q": "Solve 2x − 3 = 7.",
+     "a": "x = 5",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Table of values",
+     "bullets": [
+      "Substitute each x into y = 2x + 1",
+      "Each column gives a point"
+     ],
+     "note": "Fill the table together; watch the negatives.",
+     "table": {
+      "head": [
+       "x",
+       "−2",
+       "−1",
+       "0",
+       "1",
+       "2",
+       "3"
+      ],
+      "rows": [
+       [
+        "y = 2x + 1",
+        "−3",
+        "−1",
+        "1",
+        "3",
+        "5",
+        "7"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Plotting the line",
+     "bullets": [
+      "The points make a straight line",
+      "Join with a ruler, past the end points"
+     ],
+     "note": "The graph shows the y values from the table. Ask: what is y when x = 1.5? (4).",
+     "chart": {
+      "kind": "line",
+      "title": "y = 2x + 1",
+      "labels": [
+       "−2",
+       "−1",
+       "0",
+       "1",
+       "2",
+       "3"
+      ],
+      "values": [
+       -3,
+       -1,
+       1,
+       3,
+       5,
+       7
+      ]
+     }
+    },
+    {
+     "heading": "Model",
+     "bullets": [
+      "A negative x term slopes down"
+     ],
+     "note": "Pupils copy and plot.",
+     "model": {
+      "problem": "Complete a table for y = 3 − x for x = −1 to 3.",
+      "steps": [
+       "x = −1: 3 − (−1) = 4",
+       "x = 0: 3; x = 1: 2",
+       "x = 2: 1; x = 3: 0"
+      ],
+      "answer": "4, 3, 2, 1, 0"
+     }
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Brackets round negative x"
+     ],
+     "note": "Substitute with brackets every time.",
+     "misconception": {
+      "wrong": "y = 2x + 1 at x = −2 gives 2 − 2 + 1 = 1",
+      "right": "2 × (−2) + 1 = −3"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Substitute x, compare y"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Which point lies on y = 4x − 3?",
+      "options": [
+       "(2, 5)",
+       "(1, 4)",
+       "(0, 3)",
+       "(−1, −1)"
+      ],
+      "answer": 0,
+      "why": "4 × 2 − 3 = 5. (1, 4) gives 1; (0, 3) gives −3; (−1, −1) gives −7."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Complete y = x + 4 for x = −3, 0 and 2.",
+     "a": "1, 4, 6",
+     "mins": 2,
+     "model": "x = −3: −3 + 4 = 1. x = 0: 0 + 4 = 4. x = 2: 2 + 4 = 6."
+    },
+    {
+     "q": "Complete y = −2x for x = −1, 0 and 3.",
+     "a": "2, 0, −6",
+     "mins": 1
+    },
+    {
+     "q": "Does (4, 10) lie on y = 3x − 2?",
+     "a": "Yes: 3 × 4 − 2 = 10",
+     "mins": 1
+    },
+    {
+     "q": "Where does y = 2x − 6 cross the x-axis?",
+     "a": "y = 0 gives x = 3: (3, 0)",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Complete a table for y = 2x − 3 for x = −2 to 3, then plot the line.",
+     "a": "y values: −7, −5, −3, −1, 1, 3",
+     "mins": 5,
+     "model": "x = −2: 2(−2) − 3 = −7; x = −1: −5; x = 0: −3; x = 1: −1; x = 2: 1; x = 3: 3. Plot the six points and join them with a ruler."
+    },
+    {
+     "q": "Extend: Without plotting, find where y = 5 − 2x crosses both axes.",
+     "a": "(0, 5) and (2.5, 0)",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Find where y = 2x + 1 and y = 7 − x cross.",
+     "a": "2x + 1 = 7 − x, x = 2, y = 5: (2, 5)",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Find y on y = 4x − 1 when x = −2.",
+     "a": "−9",
+     "mins": 1
+    },
+    {
+     "q": "Is (−3, −5) on y = 2x + 1?",
+     "a": "Yes: 2 × (−3) + 1 = −5",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how does an equation become a graph?",
+     "a": "Each x gives a y; the points (x, y) are plotted and, for a linear equation, make a straight line.",
+     "mins": 1
+    }
+   ],
+   "homework": "Draw the graphs of y = x + 2, y = 2x + 2 and y = 3x + 2 on one set of axes from x = −2 to 3; write what is the same and what changes.",
+   "send": "Support: tables partly filled; printed axes. EAL: 'plot', 'table', 'line'. Stretch: lines like 2x + 3y = 12 by the cover-up method.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 8 9.3 Equations of straight lines; Pearson KS3 Maths Progress (Second Edition) Year 9 8.1 Using y = mx + c (the school's KS3 scheme)",
+    "Graph or squared paper and ruler (household)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "graph of linear function y = 2x + 1",
+     "alt": "A straight-line graph on a grid",
+     "for": "teach:2"
+    },
+    {
+     "find": "graph paper ruler",
+     "alt": "Graph paper and a ruler for plotting",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Autumn 1: Straight-line graphs; forming and solving equations",
+   "n": 18,
+   "title": "The gradient of a straight line",
+   "duration": 50,
+   "bigQuestion": "How do we measure how steep a line is?",
+   "objectives": [
+    "To understand how the gradient measures the steepness of a line"
+   ],
+   "successCriteria": [
+    "All: find a positive whole-number gradient",
+    "Most: find negative and fraction gradients from two points",
+    "Some: use the gradient to find missing coordinates"
+   ],
+   "crossCurricular": "Geography: slopes and contour lines",
+   "smsc": "Social: ramps for wheelchair access must have gentle gradients",
+   "keywords": [
+    {
+     "term": "gradient",
+     "def": "the steepness: change in y ÷ change in x"
+    },
+    {
+     "term": "positive gradient",
+     "def": "slopes up from left to right"
+    },
+    {
+     "term": "negative gradient",
+     "def": "slopes down from left to right"
+    },
+    {
+     "term": "rise",
+     "def": "change in y"
+    },
+    {
+     "term": "run",
+     "def": "change in x"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Path A rises 3 m for every 12 m across. Path B rises 2 m for every 5 m across. Which is steeper?",
+    "options": [
+     "Path A",
+     "Path B"
+    ],
+    "a": "A: 3 ÷ 12 = 0.25. B: 2 ÷ 5 = 0.4. Path B is steeper."
+   },
+   "starter": [
+    {
+     "q": "Find y on y = 2x + 1 when x = 3.",
+     "a": "7",
+     "mins": 1
+    },
+    {
+     "q": "Where does y = 2x − 6 cross the x-axis?",
+     "a": "(3, 0)",
+     "mins": 1
+    },
+    {
+     "q": "Work out −8 ÷ 4.",
+     "a": "−2",
+     "mins": 1
+    },
+    {
+     "q": "Simplify 6/4.",
+     "a": "3/2",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Rise over run",
+     "bullets": [
+      "gradient = change in y ÷ change in x",
+      "Read left to right"
+     ],
+     "note": "Draw a right-angled triangle under the line.",
+     "model": {
+      "problem": "Find the gradient of the line through (1, 2) and (4, 11).",
+      "steps": [
+       "Change in y: 11 − 2 = 9",
+       "Change in x: 4 − 1 = 3",
+       "9 ÷ 3 = 3"
+      ],
+      "answer": "3"
+     }
+    },
+    {
+     "heading": "Negative gradients",
+     "bullets": [
+      "Going down left to right",
+      "The change in y is negative"
+     ],
+     "note": "Pupils predict the sign before calculating.",
+     "model": {
+      "problem": "Find the gradient through (−2, 5) and (2, −3).",
+      "steps": [
+       "Change in y: −3 − 5 = −8",
+       "Change in x: 2 − (−2) = 4",
+       "−8 ÷ 4 = −2"
+      ],
+      "answer": "−2"
+     }
+    },
+    {
+     "heading": "Types of gradient",
+     "bullets": [
+      "Sort the lines by gradient"
+     ],
+     "note": "Chat waterfall: letters in the 'negative' column.",
+     "sort": {
+      "columns": [
+       "Positive",
+       "Negative",
+       "Zero"
+      ],
+      "cards": [
+       "(0, 0) to (2, 6)",
+       "(0, 4) to (4, 0)",
+       "(1, 3) to (5, 3)",
+       "(−1, −2) to (1, 2)",
+       "(2, 5) to (3, 1)",
+       "(−3, 7) to (3, 7)"
+      ],
+      "answer": [
+       0,
+       1,
+       2,
+       0,
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "y on top"
+     ],
+     "note": "Say 'rise over run' aloud.",
+     "misconception": {
+      "wrong": "Gradient = change in x ÷ change in y",
+      "right": "Gradient = change in y ÷ change in x"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Rise ÷ run"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Find the gradient of the line through (0, 1) and (2, 7).",
+      "options": [
+       "3",
+       "1/3",
+       "4",
+       "6"
+      ],
+      "answer": 0,
+      "why": "6 ÷ 2 = 3. 1/3 is run over rise; 6 is the rise only."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Gradient through (2, 3) and (6, 11)?",
+     "a": "2",
+     "mins": 2,
+     "model": "Change in y: 11 − 3 = 8. Change in x: 6 − 2 = 4. Gradient 8 ÷ 4 = 2."
+    },
+    {
+     "q": "Gradient through (0, 5) and (5, 0)?",
+     "a": "−1",
+     "mins": 1
+    },
+    {
+     "q": "Gradient through (−1, −4) and (3, 4)?",
+     "a": "2",
+     "mins": 1
+    },
+    {
+     "q": "Gradient through (1, 2) and (3, 3)?",
+     "a": "0.5",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Find the gradients through (a) (0, 0) and (4, 12) (b) (−2, 1) and (4, 4) (c) (1, 9) and (4, 0)",
+     "a": "(a) 3 (b) 0.5 (c) −3",
+     "mins": 4,
+     "model": "(a) 12 ÷ 4 = 3. (b) (4 − 1) ÷ (4 − (−2)) = 3 ÷ 6 = 0.5. (c) (0 − 9) ÷ (4 − 1) = −9 ÷ 3 = −3."
+    },
+    {
+     "q": "Extend: A line has gradient 4 and passes through (1, 3). Find y when x = 5.",
+     "a": "x goes up 4, so y goes up 16: y = 19",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: (2, k) and (6, 13) lie on a line with gradient 2. Find k.",
+     "a": "(13 − k) ÷ 4 = 2, so k = 5",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Gradient through (−1, 2) and (3, 10)?",
+     "a": "2",
+     "mins": 1
+    },
+    {
+     "q": "What is the gradient of a horizontal line?",
+     "a": "0",
+     "mins": 1
+    },
+    {
+     "q": "Big question: what does a gradient of −2 tell you?",
+     "a": "y goes down 2 for every 1 across: it slopes down from left to right.",
+     "mins": 1
+    }
+   ],
+   "homework": "Measure the rise and run of a ramp or stair step at home and work out its gradient; compare two of them.",
+   "send": "Support: triangle drawn on each line. EAL: 'steep', 'rise', 'run'. Stretch: gradients of parallel and perpendicular lines.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 8 9.2 Gradients (the school's KS3 scheme)",
+    "Tape measure (household)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "road sign steep hill gradient percent",
+     "alt": "A road sign warning of a steep gradient",
+     "for": "hook"
+    },
+    {
+     "find": "wheelchair ramp",
+     "alt": "A ramp with a gentle gradient",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Autumn 1: Straight-line graphs; forming and solving equations",
+   "n": 19,
+   "title": "y = mx + c: gradient, intercept and parallel lines",
+   "duration": 50,
+   "bigQuestion": "What do m and c tell us about a line?",
+   "objectives": [
+    "To understand what m and c tell us in y = mx + c"
+   ],
+   "successCriteria": [
+    "All: read m and c from y = mx + c",
+    "Most: rearrange to find m and c, and spot parallel lines",
+    "Some: write the equation of a parallel line through a given intercept"
+   ],
+   "crossCurricular": "Science: straight-line laws such as cost = rate × time + fixed charge",
+   "smsc": "Spiritual: al-Khwarizmi's book on al-jabr (الجبر), written in Baghdad, gave algebra its name",
+   "keywords": [
+    {
+     "term": "gradient m",
+     "def": "the number multiplying x in y = mx + c"
+    },
+    {
+     "term": "y-intercept c",
+     "def": "where the line crosses the y-axis"
+    },
+    {
+     "term": "parallel",
+     "def": "lines with the same gradient that never meet"
+    },
+    {
+     "term": "rearrange",
+     "def": "write with a different subject"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Which line is the odd one out? Why?",
+    "options": [
+     "y = 2x + 1",
+     "y = 2x − 5",
+     "y = 3 + 2x",
+     "y = x + 2"
+    ],
+    "a": "y = x + 2: its gradient is 1. The others have gradient 2, so they are parallel."
+   },
+   "starter": [
+    {
+     "q": "Gradient through (1, 2) and (4, 11)?",
+     "a": "3",
+     "mins": 1
+    },
+    {
+     "q": "Find y on y = 3x − 4 when x = 0.",
+     "a": "−4",
+     "mins": 1
+    },
+    {
+     "q": "Solve 2x + 5 = 0.",
+     "a": "x = −2.5",
+     "mins": 1
+    },
+    {
+     "q": "Expand 2(x − 3).",
+     "a": "2x − 6",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Reading m and c",
+     "bullets": [
+      "y = mx + c",
+      "m is the gradient, c the y-intercept"
+     ],
+     "note": "Watch the order: y = 5 − 3x has m = −3.",
+     "table": {
+      "head": [
+       "Equation",
+       "m",
+       "c"
+      ],
+      "rows": [
+       [
+        "y = 4x + 1",
+        "4",
+        "1"
+       ],
+       [
+        "y = 5 − 3x",
+        "−3",
+        "5"
+       ],
+       [
+        "y = 0.5x",
+        "0.5",
+        "0"
+       ],
+       [
+        "y = 7",
+        "0",
+        "7"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Rearranging first",
+     "bullets": [
+      "Make y the subject",
+      "Then read m and c"
+     ],
+     "note": "Pupils try x + y = 5 (y = −x + 5).",
+     "model": {
+      "problem": "Find m and c for 2y = 6x − 4.",
+      "steps": [
+       "Divide every term by 2",
+       "y = 3x − 2"
+      ],
+      "answer": "m = 3, c = −2"
+     }
+    },
+    {
+     "heading": "Parallel lines",
+     "bullets": [
+      "Parallel lines have the same m",
+      "Only c changes"
+     ],
+     "note": "Show y = 2x + 1 and y = 2x − 5: same slope, different crossing points.",
+     "model": {
+      "problem": "Write the line parallel to y = 4x − 1 that crosses the y-axis at (0, 7).",
+      "steps": [
+       "Parallel: m = 4",
+       "Intercept: c = 7"
+      ],
+      "answer": "y = 4x + 7"
+     }
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "The gradient goes with x"
+     ],
+     "note": "Ask pupils to circle the x term first.",
+     "misconception": {
+      "wrong": "y = 5 − 3x has gradient 5",
+      "right": "The x term is −3x, so the gradient is −3"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Same m"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Which line is parallel to y = 3x + 2?",
+      "options": [
+       "y = 2x + 3",
+       "y = 3x − 7",
+       "y = −3x + 2",
+       "y = x + 3"
+      ],
+      "answer": 1,
+      "why": "Same gradient 3. y = −3x + 2 has the opposite gradient; y = 2x + 3 swaps m and c."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Give m and c for y = 7x − 2.",
+     "a": "m = 7, c = −2",
+     "mins": 2,
+     "model": "y = 7x − 2 is already in the form y = mx + c: m = 7, c = −2."
+    },
+    {
+     "q": "Give m and c for y = 4 − x.",
+     "a": "m = −1, c = 4",
+     "mins": 1
+    },
+    {
+     "q": "Give m and c for 3y = 6x + 9.",
+     "a": "y = 2x + 3: m = 2, c = 3",
+     "mins": 2
+    },
+    {
+     "q": "Write the line with m = −2 and c = 5.",
+     "a": "y = −2x + 5",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Give m and c for (a) y = 0.5x + 6 (b) y = −4x (c) 2y = 8x − 10 (d) y − 3x = 1",
+     "a": "(a) 0.5, 6 (b) −4, 0 (c) 4, −5 (d) 3, 1",
+     "mins": 4,
+     "model": "(a) m = 0.5, c = 6. (b) m = −4, c = 0. (c) Divide by 2: y = 4x − 5, so m = 4, c = −5. (d) Add 3x: y = 3x + 1, so m = 3, c = 1."
+    },
+    {
+     "q": "Extend: Which of y = 2x + 1, 2y = 4x − 3, y = 1 − 2x and y − 2x = 7 are parallel?",
+     "a": "y = 2x + 1, 2y = 4x − 3 (y = 2x − 1.5) and y − 2x = 7 (y = 2x + 7) are parallel; y = 1 − 2x is not",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: Find the line parallel to 4x + 2y = 9 that passes through (0, −3).",
+     "a": "2y = −4x + 9, so m = −2: y = −2x − 3",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Give m and c for y = 6 − 2x.",
+     "a": "m = −2, c = 6",
+     "mins": 1
+    },
+    {
+     "q": "Write the line parallel to y = 5x + 1 through (0, −4).",
+     "a": "y = 5x − 4",
+     "mins": 1
+    },
+    {
+     "q": "Big question: what do m and c tell us?",
+     "a": "m is how steep the line is; c is where it crosses the y-axis.",
+     "mins": 1
+    }
+   ],
+   "homework": "Write four equations: two parallel lines and two lines crossing the y-axis at the same point; sketch them.",
+   "send": "Support: m and c highlighted in colour. EAL: 'parallel', 'intercept'. Stretch: perpendicular gradients (product −1).",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 9 8.1 Using y = mx + c and 8.2 More straight-line graphs (the school's KS3 scheme)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "parallel straight line graphs",
+     "alt": "Parallel straight lines on a grid",
+     "for": "teach:3"
+    },
+    {
+     "find": "y-intercept graph diagram",
+     "alt": "A line crossing the y-axis",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Autumn 1: Straight-line graphs; forming and solving equations",
+   "n": 20,
+   "title": "Finding the equation of a straight line",
+   "duration": 50,
+   "bigQuestion": "How many facts do we need to pin down a line?",
+   "objectives": [
+    "To understand how to find the equation of a straight line"
+   ],
+   "successCriteria": [
+    "All: find the equation from the gradient and intercept",
+    "Most: find the equation through two points",
+    "Some: write and interpret equations in context"
+   ],
+   "crossCurricular": "Science: lines of best fit",
+   "smsc": "Moral: understanding fixed charges and rates helps us avoid unfair deals",
+   "keywords": [
+    {
+     "term": "equation of a line",
+     "def": "y = mx + c with numbers for m and c"
+    },
+    {
+     "term": "substitute",
+     "def": "put the coordinates of a known point in"
+    },
+    {
+     "term": "fixed charge",
+     "def": "a cost paid however much is used: c"
+    },
+    {
+     "term": "rate",
+     "def": "cost per unit: m"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A line passes through (1, 5) and (3, 9). Where does it cross the y-axis?",
+    "a": "Gradient (9 − 5) ÷ 2 = 2. Going back 1 from (1, 5) to x = 0: y = 3. It crosses at (0, 3): y = 2x + 3."
+   },
+   "starter": [
+    {
+     "q": "Gradient through (−2, 5) and (2, −3)?",
+     "a": "−2",
+     "mins": 1
+    },
+    {
+     "q": "Give m and c for 2y = 8x − 10.",
+     "a": "m = 4, c = −5",
+     "mins": 1
+    },
+    {
+     "q": "y = 2x + c passes through (3, 11). Find c.",
+     "a": "c = 5",
+     "mins": 1
+    },
+    {
+     "q": "Is (1, 4) on y = 3x + 1?",
+     "a": "Yes",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Three steps",
+     "bullets": [
+      "Find m",
+      "Substitute a point to find c",
+      "Write y = mx + c and check"
+     ],
+     "note": "Model with the hook, then check with the other point.",
+     "model": {
+      "problem": "Find the equation of the line through (1, 5) and (3, 9).",
+      "steps": [
+       "m = (9 − 5) ÷ (3 − 1) = 2",
+       "5 = 2 × 1 + c, so c = 3",
+       "Check (3, 9): 2 × 3 + 3 = 9"
+      ],
+      "answer": "y = 2x + 3"
+     }
+    },
+    {
+     "heading": "With negatives",
+     "bullets": [
+      "Brackets around negatives when substituting"
+     ],
+     "note": "Pupils try (−1, −1) and (1, 5): y = 3x + 2.",
+     "model": {
+      "problem": "Find the line through (−2, 7) and (4, −5).",
+      "steps": [
+       "m = (−5 − 7) ÷ (4 − (−2)) = −12 ÷ 6 = −2",
+       "7 = −2 × (−2) + c, so c = 3",
+       "Check (4, −5): −8 + 3 = −5"
+      ],
+      "answer": "y = −2x + 3"
+     }
+    },
+    {
+     "heading": "Real life: a taxi fare",
+     "bullets": [
+      "£3 fixed charge plus £1.50 per mile",
+      "cost = 1.5 × miles + 3"
+     ],
+     "note": "The gradient is the rate; the intercept is the fixed charge.",
+     "chart": {
+      "kind": "line",
+      "title": "Taxi fare (£)",
+      "labels": [
+       "0",
+       "1",
+       "2",
+       "3",
+       "4",
+       "5"
+      ],
+      "values": [
+       3,
+       4.5,
+       6,
+       7.5,
+       9,
+       10.5
+      ],
+      "unit": "£"
+     }
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "c is where x = 0"
+     ],
+     "note": "Ask: is x zero at the first point?",
+     "misconception": {
+      "wrong": "Through (2, 7) with m = 3, so c = 7",
+      "right": "7 = 3 × 2 + c, so c = 1: y = 3x + 1"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Gradient, then c"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Which is the line through (0, −2) and (3, 4)?",
+      "options": [
+       "y = 2x − 2",
+       "y = −2x + 2",
+       "y = 0.5x − 2",
+       "y = 2x + 4"
+      ],
+      "answer": 0,
+      "why": "m = 6 ÷ 3 = 2 and c = −2. y = 0.5x − 2 inverts the gradient."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Line with gradient 4 through (1, 6)?",
+     "a": "y = 4x + 2",
+     "mins": 2,
+     "model": "m = 4. Substitute (1, 6): 6 = 4(1) + c, so c = 2. Equation y = 4x + 2."
+    },
+    {
+     "q": "Line through (2, 3) and (4, 7)?",
+     "a": "y = 2x − 1",
+     "mins": 2
+    },
+    {
+     "q": "Line through (0, 5) and (5, 0)?",
+     "a": "y = −x + 5",
+     "mins": 1
+    },
+    {
+     "q": "Line through (−1, −1) and (1, 5)?",
+     "a": "y = 3x + 2",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Find the line through (a) (1, 4) and (3, 10) (b) (2, 9) and (6, 1) (c) (−3, 0) and (3, 4)",
+     "a": "(a) y = 3x + 1 (b) y = −2x + 13 (c) y = (2/3)x + 2",
+     "mins": 5,
+     "model": "(a) m = (10 − 4) ÷ (3 − 1) = 3; 4 = 3 + c, c = 1: y = 3x + 1. (b) m = (1 − 9) ÷ 4 = −2; 9 = −4 + c, c = 13: y = −2x + 13. (c) m = 4 ÷ 6 = 2/3; 0 = −2 + c, c = 2: y = (2/3)x + 2."
+    },
+    {
+     "q": "Extend: A plumber charges £40 call-out plus £30 an hour. Write C in terms of h, and say what the gradient and intercept mean.",
+     "a": "C = 30h + 40. Gradient: £30 per hour; intercept: £40 fixed charge",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Find the line through (3, 1) parallel to the line through (0, 1) and (4, 9).",
+     "a": "m = 8 ÷ 4 = 2; 1 = 6 + c, c = −5: y = 2x − 5",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Find the line through (0, 4) and (2, 10).",
+     "a": "y = 3x + 4",
+     "mins": 1
+    },
+    {
+     "q": "Find the line with gradient −1 through (3, 2).",
+     "a": "y = −x + 5",
+     "mins": 1
+    },
+    {
+     "q": "Big question: what is the least information that fixes a line?",
+     "a": "Two points, or one point and the gradient.",
+     "mins": 1
+    }
+   ],
+   "homework": "Find a real price with a fixed charge and a rate (delivery, a phone plan or a taxi); write its equation and say what m and c mean.",
+   "send": "Support: three-step frame. EAL: 'fixed', 'rate', 'per'. Stretch: the line through two points with fraction gradients.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 9 8.1 Using y = mx + c and 8.2 More straight-line graphs (the school's KS3 scheme)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "taxi meter fare",
+     "alt": "A taxi meter, a fixed charge plus a rate",
+     "for": "teach:3"
+    },
+    {
+     "find": "straight line through two points graph",
+     "alt": "A line drawn through two points",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Autumn 1: Straight-line graphs; forming and solving equations",
+   "n": 21,
+   "title": "Equations with brackets and unknowns on both sides",
+   "duration": 50,
+   "bigQuestion": "When do two plans cost the same?",
+   "objectives": [
+    "To understand how to solve equations with brackets and unknowns on both sides"
+   ],
+   "successCriteria": [
+    "All: solve equations with one bracket",
+    "Most: solve equations with brackets on both sides",
+    "Some: solve multi-bracket equations with fraction answers"
+   ],
+   "crossCurricular": "Business: comparing price plans",
+   "smsc": "Spiritual: al-Khwarizmi's book on al-jabr (الجبر), written in Baghdad, gave algebra its name",
+   "keywords": [
+    {
+     "term": "expand",
+     "def": "multiply out brackets"
+    },
+    {
+     "term": "unknown",
+     "def": "the letter to find"
+    },
+    {
+     "term": "solution",
+     "def": "the value that makes the equation true"
+    },
+    {
+     "term": "collect",
+     "def": "bring like terms together"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Plan A costs £12 plus £2 per GB. Plan B costs £20 plus £1 per GB. When do they cost the same?",
+    "a": "12 + 2g = 20 + g, so g = 8. At 8 GB both cost £28."
+   },
+   "starter": [
+    {
+     "q": "Find the line through (1, 4) and (3, 10).",
+     "a": "y = 3x + 1",
+     "mins": 1
+    },
+    {
+     "q": "Expand −3(x − 4).",
+     "a": "−3x + 12",
+     "mins": 1
+    },
+    {
+     "q": "Solve 5x + 1 = 3x + 9.",
+     "a": "x = 4",
+     "mins": 1
+    },
+    {
+     "q": "Factorise 6x − 9.",
+     "a": "3(2x − 3)",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "When are the plans equal?",
+     "bullets": [
+      "Compare costs at each amount"
+     ],
+     "note": "At 8 GB both cost £28.",
+     "table": {
+      "head": [
+       "GB used",
+       "0",
+       "4",
+       "8",
+       "12"
+      ],
+      "rows": [
+       [
+        "Plan A: 12 + 2g",
+        "12",
+        "20",
+        "28",
+        "36"
+       ],
+       [
+        "Plan B: 20 + g",
+        "20",
+        "24",
+        "28",
+        "32"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Brackets on both sides",
+     "bullets": [
+      "Expand both sides",
+      "Collect x on the side with more x"
+     ],
+     "note": "Pupils try 6(x − 1) = 4(x + 2) (x = 7).",
+     "model": {
+      "problem": "Solve 4(2x − 1) = 3(x + 7).",
+      "steps": [
+       "8x − 4 = 3x + 21",
+       "− 3x: 5x − 4 = 21",
+       "+ 4: 5x = 25",
+       "x = 5"
+      ],
+      "answer": "x = 5"
+     }
+    },
+    {
+     "heading": "Negative solutions",
+     "bullets": [
+      "Keep x positive if you can",
+      "Then divide"
+     ],
+     "note": "Collect x on the right this time.",
+     "model": {
+      "problem": "Solve 2(x + 7) = 5x + 20.",
+      "steps": [
+       "2x + 14 = 5x + 20",
+       "− 2x: 14 = 3x + 20",
+       "− 20: −6 = 3x",
+       "x = −2"
+      ],
+      "answer": "x = −2"
+     }
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Negative × negative"
+     ],
+     "note": "Expand slowly, term by term.",
+     "misconception": {
+      "wrong": "−2(x − 3) = −2x − 6",
+      "right": "−2 × −3 = +6, so −2x + 6"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Expand, collect, solve"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Solve 5(x − 2) = 3(x + 4).",
+      "options": [
+       "11",
+       "1",
+       "7",
+       "−11"
+      ],
+      "answer": 0,
+      "why": "5x − 10 = 3x + 12, 2x = 22, x = 11. 1 comes from 5x − 2 = 3x + 4."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Solve 3(x + 4) = 2x + 17.",
+     "a": "x = 5",
+     "mins": 2,
+     "model": "Expand: 3x + 12 = 2x + 17. Subtract 2x: x + 12 = 17. Subtract 12: x = 5."
+    },
+    {
+     "q": "Solve 6(x − 1) = 4(x + 2).",
+     "a": "x = 7",
+     "mins": 2
+    },
+    {
+     "q": "Solve 2(3 − x) = 4(x − 3).",
+     "a": "x = 3",
+     "mins": 2
+    },
+    {
+     "q": "Solve 5(2x + 1) = 3(3x − 2).",
+     "a": "x = −11",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Solve (a) 7(x − 2) = 3(x + 2) (b) 4(2y + 1) = 6(y + 3) (c) 3(4 − k) = 2(k + 1)",
+     "a": "(a) 5 (b) 7 (c) 2",
+     "mins": 5,
+     "model": "(a) 7x − 14 = 3x + 6, 4x = 20, x = 5. (b) 8y + 4 = 6y + 18, 2y = 14, y = 7. (c) 12 − 3k = 2k + 2, 10 = 5k, k = 2."
+    },
+    {
+     "q": "Extend: Tutor A charges £25 plus £18 an hour; tutor B charges £40 plus £15 an hour. After how many hours do they cost the same?",
+     "a": "25 + 18h = 40 + 15h, h = 5 hours",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Solve 2(x + 3) − 3(x − 1) = 4(2x − 3).",
+     "a": "−x + 9 = 8x − 12, 21 = 9x, x = 7/3",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Solve 3(x + 5) = 5(x − 1).",
+     "a": "x = 10",
+     "mins": 2
+    },
+    {
+     "q": "Big question: what does the solution of 12 + 2g = 20 + g mean?",
+     "a": "The amount (8 GB) at which both plans cost the same.",
+     "mins": 1
+    }
+   ],
+   "homework": "Compare two real price plans (phone, delivery or a tutor) by writing and solving an equation for when they are equal.",
+   "send": "Support: expand-collect-solve frame. EAL: 'both sides', 'expand'. Stretch: equations that give no solution or infinitely many.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 9 2.1 Solving equations and 6.4 Solving equations (the school's KS3 scheme)",
+    "Portal Year 9 lessons 8 to 11 (equations and formulae)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "mobile phone data plan comparison",
+     "alt": "Two price plans to compare",
+     "for": "hook"
+    },
+    {
+     "find": "balance scale",
+     "alt": "A balance scale",
+     "for": "keywords"
+    }
+   ],
+   "islamicLink": {
+    "text": "Algebra takes its name from al-jabr (الجبر) in the book of Muhammad ibn Musa al-Khwarizmi, written in Baghdad in the 9th century to solve real problems of the Muslim community such as inheritance and trade.",
+    "at": "start"
+   }
+  },
+  {
+   "unit": "Autumn 1: Straight-line graphs; forming and solving equations",
+   "n": 22,
+   "title": "Forming equations from words",
+   "duration": 50,
+   "bigQuestion": "How do we turn a story into an equation?",
+   "objectives": [
+    "To understand how to form equations from problems in words"
+   ],
+   "successCriteria": [
+    "All: translate phrases such as '4 less than x'",
+    "Most: form and solve equations from number and money problems",
+    "Some: form equations from problems with two conditions"
+   ],
+   "crossCurricular": "English: reading carefully for key words",
+   "smsc": "Spiritual: al-Khwarizmi's book on al-jabr (الجبر), written in Baghdad, gave algebra its name",
+   "keywords": [
+    {
+     "term": "form",
+     "def": "write an equation from information"
+    },
+    {
+     "term": "consecutive",
+     "def": "following each other in order"
+    },
+    {
+     "term": "sum",
+     "def": "the total when adding"
+    },
+    {
+     "term": "difference",
+     "def": "the result of subtracting"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Zayd is 4 times as old as his son. In 20 years he will be twice as old as his son. How old are they now?",
+    "a": "Son s: 4s + 20 = 2(s + 20), so 2s = 20, s = 10. The son is 10 and Zayd is 40."
+   },
+   "starter": [
+    {
+     "q": "Solve (x + 2)/4 = 3.",
+     "a": "x = 10",
+     "mins": 1
+    },
+    {
+     "q": "Solve 3(x + 5) = 5(x − 1).",
+     "a": "x = 10",
+     "mins": 1
+    },
+    {
+     "q": "Write '7 less than three times n'.",
+     "a": "3n − 7",
+     "mins": 1
+    },
+    {
+     "q": "If 2n is even, write the next even number.",
+     "a": "2n + 2",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Phrases into algebra",
+     "bullets": [
+      "Read each phrase slowly",
+      "Order matters for − and ÷"
+     ],
+     "note": "Pupils type one row each in the chat.",
+     "table": {
+      "head": [
+       "Words",
+       "Algebra"
+      ],
+      "rows": [
+       [
+        "5 more than x",
+        "x + 5"
+       ],
+       [
+        "4 less than x",
+        "x − 4"
+       ],
+       [
+        "twice the sum of x and 3",
+        "2(x + 3)"
+       ],
+       [
+        "x shared equally by 4",
+        "x/4"
+       ],
+       [
+        "the difference between x and 9",
+        "x − 9"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "'Less than' reverses the order"
+     ],
+     "note": "Test with x = 10: 4 less than 10 is 6.",
+     "misconception": {
+      "wrong": "4 less than x = 4 − x",
+      "right": "4 less than x = x − 4"
+     }
+    },
+    {
+     "heading": "Model: sharing books",
+     "bullets": [
+      "Let a letter be the smaller amount",
+      "Write the condition as an equation"
+     ],
+     "note": "Then pupils try the coat and scarf problem.",
+     "model": {
+      "problem": "Ahmed has 3 times as many books as Bilal. If Ahmed gives Bilal 10 books, they have the same. How many each?",
+      "steps": [
+       "Bilal b, Ahmed 3b",
+       "3b − 10 = b + 10",
+       "2b = 20, b = 10",
+       "Ahmed 30, Bilal 10"
+      ],
+      "answer": "Ahmed 30, Bilal 10"
+     }
+    },
+    {
+     "heading": "Consecutive numbers",
+     "bullets": [
+      "Odd numbers: x, x + 2, x + 4"
+     ],
+     "note": "Ask: why + 2 and not + 1?",
+     "model": {
+      "problem": "Three consecutive odd numbers add to 75. Find them.",
+      "steps": [
+       "x + (x + 2) + (x + 4) = 75",
+       "3x + 6 = 75",
+       "x = 23"
+      ],
+      "answer": "23, 25, 27"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Define, form, solve"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Ali has £x. Sara has £12 more than twice Ali's amount. Together they have £87. Which equation?",
+      "options": [
+       "x + 2x + 12 = 87",
+       "x + 2(x + 12) = 87",
+       "2x + 12 = 87",
+       "x + 12x + 2 = 87"
+      ],
+      "answer": 0,
+      "why": "Sara has 2x + 12; add Ali's x. Option 2 doubles 'x + 12'; option 3 forgets Ali."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "I think of a number, subtract 6 and multiply by 4. I get 28. Find the number.",
+     "a": "4(n − 6) = 28, n = 13",
+     "mins": 2,
+     "model": "Let the number be n. Subtract 6 then multiply by 4: 4(n − 6) = 28. Divide by 4: n − 6 = 7. Add 6: n = 13."
+    },
+    {
+     "q": "Three consecutive numbers sum to 156. Find them.",
+     "a": "51, 52, 53",
+     "mins": 2
+    },
+    {
+     "q": "Twice a number plus 15 equals five times the number. Find it.",
+     "a": "2n + 15 = 5n, n = 5",
+     "mins": 2
+    },
+    {
+     "q": "A coat and a scarf cost £90. The coat costs £50 more. Find each price.",
+     "a": "Scarf £20, coat £70",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: An adult ticket costs £x and a child ticket £(x − 4). 2 adults and 3 children pay £58. Find both prices.",
+     "a": "5x − 12 = 58, x = 14: adult £14, child £10",
+     "mins": 4,
+     "model": "Adult £x, child £(x − 4). 2x + 3(x − 4) = 58, so 5x − 12 = 58, 5x = 70, x = 14. Adult £14, child £10."
+    },
+    {
+     "q": "Extend: Fatimah is 5 years older than Maryam. In 3 years the sum of their ages will be 39. How old are they now?",
+     "a": "m + (m + 5) + 6 = 39, m = 14: Maryam 14, Fatimah 19",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: A number multiplied by 3, plus 8, equals 4 less than the number, multiplied by 5. Find the number.",
+     "a": "3n + 8 = 5(n − 4), 28 = 2n, n = 14",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "4 more than half a number is 13. Find the number.",
+     "a": "n/2 + 4 = 13, n = 18",
+     "mins": 2
+    },
+    {
+     "q": "Big question: what is the first step in turning a story into an equation?",
+     "a": "Choose a letter for one unknown and write the others in terms of it.",
+     "mins": 1
+    }
+   ],
+   "homework": "Write three word problems about your family or the masjid that give equations; solve them and check the answers fit the story.",
+   "send": "Support: phrase-to-algebra card. EAL: 'sum', 'difference', 'consecutive', 'less than'. Stretch: age problems with two time points.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 9 2.1 Solving equations and 6.4 Solving equations (the school's KS3 scheme)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "stack of books",
+     "alt": "Books, for the sharing problem",
+     "for": "teach:3"
+    },
+    {
+     "find": "cinema ticket prices board",
+     "alt": "A board of ticket prices",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Autumn 1: Straight-line graphs; forming and solving equations",
+   "n": 23,
+   "title": "Forming equations from shapes",
+   "duration": 50,
+   "bigQuestion": "How can angle and length facts give us an equation?",
+   "objectives": [
+    "To understand how shape facts give equations to solve"
+   ],
+   "successCriteria": [
+    "All: form equations from angles on a line and in a triangle",
+    "Most: form equations from perimeters, areas and polygons",
+    "Some: solve problems needing two facts"
+   ],
+   "crossCurricular": "Art: geometric Islamic patterns use exact angles",
+   "smsc": "Spiritual: the precise angles of Islamic geometric patterns, such as in masjid tiles, show beauty from order",
+   "keywords": [
+    {
+     "term": "vertically opposite",
+     "def": "angles opposite each other where two lines cross: equal"
+    },
+    {
+     "term": "isosceles",
+     "def": "a triangle with two equal sides and two equal angles"
+    },
+    {
+     "term": "perimeter",
+     "def": "distance around"
+    },
+    {
+     "term": "area",
+     "def": "space inside a 2D shape"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A rectangle (x + 5) by 3 has the same perimeter as a square with side x. Find x.",
+    "a": "2(x + 5) + 2(3) = 4x, so 2x + 16 = 4x and x = 8."
+   },
+   "starter": [
+    {
+     "q": "4 more than half a number is 13. Find it.",
+     "a": "18",
+     "mins": 1
+    },
+    {
+     "q": "What do the angles in a quadrilateral add to?",
+     "a": "360°",
+     "mins": 1
+    },
+    {
+     "q": "Write the area of a 5 by (x + 2) rectangle.",
+     "a": "5x + 10",
+     "mins": 1
+    },
+    {
+     "q": "What do angles around a point add to?",
+     "a": "360°",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Angle facts",
+     "bullets": [
+      "Learn these by heart"
+     ],
+     "note": "Spoken recall: line 180, point 360, triangle 180, quadrilateral 360.",
+     "table": {
+      "head": [
+       "Fact",
+       "Sum or rule"
+      ],
+      "rows": [
+       [
+        "Angles on a straight line",
+        "180°"
+       ],
+       [
+        "Angles around a point",
+        "360°"
+       ],
+       [
+        "Angles in a triangle",
+        "180°"
+       ],
+       [
+        "Angles in a quadrilateral",
+        "360°"
+       ],
+       [
+        "Vertically opposite angles",
+        "equal"
+       ],
+       [
+        "Isosceles triangle base angles",
+        "equal"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Isosceles triangle",
+     "bullets": [
+      "Base angles are equal",
+      "Add all three to 180°"
+     ],
+     "note": "Pupils find the apex and base angles.",
+     "model": {
+      "problem": "An isosceles triangle has apex angle 2x + 10 and base angles x + 15. Find the angles.",
+      "steps": [
+       "2x + 10 + 2(x + 15) = 180",
+       "4x + 40 = 180",
+       "x = 35",
+       "Apex 80°, base angles 50°"
+      ],
+      "answer": "80°, 50°, 50°"
+     }
+    },
+    {
+     "heading": "Area and perimeter",
+     "bullets": [
+      "Write the formula, then substitute"
+     ],
+     "note": "Rectangle (x + 3) by 4 with area 36.",
+     "model": {
+      "problem": "A rectangle is (x + 3) by 4 and its area is 36 cm². Find x.",
+      "steps": [
+       "4(x + 3) = 36",
+       "4x + 12 = 36",
+       "x = 6"
+      ],
+      "answer": "x = 6 (the rectangle is 9 cm by 4 cm)"
+     }
+    },
+    {
+     "heading": "Common error",
+     "bullets": [
+      "Give what is asked"
+     ],
+     "note": "The question asks for the angle, not x.",
+     "misconception": {
+      "wrong": "Vertically opposite angles 3x − 20 and x + 40, so the angle is 30°",
+      "right": "x = 30, so the angle is 3(30) − 20 = 70°"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Which fact?"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Angles around a point are 2x, 3x, 4x and 90°. Find x.",
+      "options": [
+       "30",
+       "40",
+       "20",
+       "45"
+      ],
+      "answer": 0,
+      "why": "9x + 90 = 360, 9x = 270, x = 30. 20 comes from using 180°."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Angles on a line are 5x and 4x. Find x.",
+     "a": "9x = 180, x = 20",
+     "mins": 2,
+     "model": "Angles on a line add to 180°: 5x + 4x = 180, 9x = 180, x = 20."
+    },
+    {
+     "q": "A triangle has angles x, 3x and 2x + 12. Find x.",
+     "a": "6x + 12 = 180, x = 28",
+     "mins": 2
+    },
+    {
+     "q": "Vertically opposite angles are 4x − 10 and 2x + 30. Find x.",
+     "a": "x = 20",
+     "mins": 1
+    },
+    {
+     "q": "A rectangle x by 6 has perimeter 40. Find x.",
+     "a": "2x + 12 = 40, x = 14",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: A quadrilateral has angles x + 20, 2x, 3x − 10 and 110°. Find each angle.",
+     "a": "6x + 120 = 360, x = 40: 60°, 80°, 110°, 110°",
+     "mins": 4,
+     "model": "Angle sum 360°: (x + 20) + 2x + (3x − 10) + 110 = 360, so 6x + 120 = 360 and x = 40. Angles 60°, 80°, 110°, 110°."
+    },
+    {
+     "q": "Extend: A triangle has sides 2x + 1, 3x − 2 and x + 4 and perimeter 33. Is it isosceles?",
+     "a": "6x + 3 = 33, x = 5: sides 11, 13, 9. All different, so no",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: A rectangle has length 3x − 1 and width x + 2. Its perimeter is 50 cm. Find its area.",
+     "a": "2(4x + 1) = 50, x = 6: 17 cm by 8 cm, area 136 cm²",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Angles on a line are 3x + 15 and 2x − 5. Find x.",
+     "a": "5x + 10 = 180, x = 34",
+     "mins": 2
+    },
+    {
+     "q": "Big question: which shape facts give equations?",
+     "a": "Angle sums (line, point, triangle, quadrilateral), equal angles, and perimeter and area formulae.",
+     "mins": 1
+    }
+   ],
+   "homework": "Design two angle problems with algebraic angles that give whole-number answers, using a straight line and a quadrilateral; solve them.",
+   "send": "Support: angle facts card and labelled diagrams. EAL: 'opposite', 'apex', 'base'. Stretch: interior angles of polygons with algebraic angles.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition) Year 9 6.4 Solving equations (the school's KS3 scheme)",
+    "Ruler and protractor (household)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "Islamic geometric pattern tiles",
+     "alt": "An Islamic geometric tile pattern",
+     "for": "hook"
+    },
+    {
+     "find": "angles on a straight line diagram",
+     "alt": "Angles on a straight line",
+     "for": "keywords"
+    }
+   ]
   }
  ]
 }
