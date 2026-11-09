@@ -68,7 +68,7 @@ owner feedback: ponder hook, one objective, up to 3 criteria, pictures, polls, m
 on-slide editing in the portal (#59); Tafweed website batch, pupils pages, Action centre, AI fix, revision packs,
 SENCo and SEND register, cover, security audit, policy outline, device requirement.
 
-Lessons written to v3 for Spring 1 (11 Jan to 8 Feb 2027) and merged: Maths Y1-11, English Y1-6, Science Y3-11.
+Lessons written to v3 for Spring 1 (11 Jan to 8 Feb 2027) and merged: Maths Y1-11, English Y1-11, Science Y3-11.
 
 Portal redesign (owner brief, 9 Nov 2026, evening): done first, before more lessons. PR #66 merged: design system,
 navigation, dashboards, lesson workspaces, review workflow (migration 0192), curriculum map, search. The plan, rules and
@@ -76,8 +76,8 @@ what's left are in docs/portal-redesign.md; follow its design rules for every ne
 
 Next, in this order (each one agent; briefs in docs/agent-briefs/):
 1. Spring 1 lessons still to write. Paused for the portal redesign, half done and pushed (finish these first, on the same
-   branches): English Y7-10 written, Y11 (4EB1/4ET1) still to do (branch `lessons-english-ks34-s1`); Islamic Studies
-   Y1-5 written, Y6-11 still to do, then Arabic Y3-11 (branch `lessons-is-arabic-s1`). Then: Year 1-2 Topic and
+   branch): Islamic Studies Y1-5 written, Y6-11 still to do, then Arabic Y3-11 (branch `lessons-is-arabic-s1`).
+   (English Y7-11 is done: branch `lessons-english-ks34-s1`.) Then: Year 1-2 Topic and
    Year 1-2 science; History, Geography, Computing, Art and DT, PSHE (Y1-11); Qur'an, Arabic, Islamic Studies (Y1-11);
    Business and Computer Science options (Y10-11).
 2. Then Spring 2, Summer 1, Summer 2 the same way, subject by subject.
@@ -205,6 +205,7 @@ ready, and a device requirement (drawing tablet recommended; otherwise a printer
 information.
 
 ### Lessons status
+- 9 Nov 2026, English Years 7-11 Spring 1 (branch `lessons-english-ks34-s1`): 130 lessons for 11 Jan to 8 Feb 2027 (bridge weeks included), v3 rules. Upgraded / new: Y7 5/15; Y8 0/20; Y9 0/20; Y10 Language (4EB1) 3/12, Literature (4ET1) 0/10; Y11 Language (4EB1) 0/15 (revision cycle 1: Section A language and structure, writers' perspectives, Section B directed writing, Section C, then mock week), Literature (4ET1) 0/10 (anthology poems 1 to 16, unseen poetry, Of Mice and Men, then the Component 2 mock week). Y11 marks and AO splits checked against Pearson 4EB1 mark schemes; source texts and unseen poems are teacher-written originals. Also: the deck builder now keeps line breaks in quote blocks, so poems show their lines and stanzas. TO CONFIRM: which set texts each founding-year Year 11 pupil has studied.
 - 9 Nov 2026, Maths Years 7-11 Spring 1 (branch `lessons-maths-ks34-s1`): 100 lessons for 11 Jan to 8 Feb 2027 (bridge + Spring 1), v3 rules applied. Y7 4 upgraded, 16 new; Y8 20 new; Y9 5 upgraded, 15 new; Y10 12 upgraded, 8 new (4MA1); Y11 20 new (revision cycle 1 and mock week, 4MA1). Y10 and Y11 files now labelled 4MA1 (taught and examined). Uses v3 fields (ponder hook, item `model`, `pictures`, `islamicLink`), so validation passes only once `lesson-builder-v3` merges.
 - 9 Nov 2026, Science Years 3-11 Spring 1 (branch `lessons-science-s1`): 130 lessons for 11 Jan to 8 Feb 2027, v3 rules (ponder, one objective, Teams polls, I do models, pictures, Islamic foundation where Islam speaks to the topic), home practicals with written safety guides. Y3 10 new; Y4 4 upgraded, 6 new; Y5 10 new; Y6 10 new; Y7 15 new; Y8 7 upgraded, 8 new; Y9 6 upgraded, 9 new; Y10 (4SD0) 20 upgraded (bridge weeks + S1 w1 to w3), 5 new; Y11 (4SD0) 20 new revision lessons with own exam-style questions (mock week of 8 Feb not written as lessons). Y9 lessons 11 (composites) and 14 (LCA) are independent reading.
 
