@@ -320,6 +320,7 @@ export function buildNeeds(a: FitAnswers): NeedItem[] {
   const items: NeedItem[] = [
     { key: "device", status: setupStatus },
     { key: "space", status: setupStatus },
+    { key: "writing", status: "check" },
   ];
   if (years.some(isPrimary)) items.push({ key: "adult", status: a.adult === "usually" ? "ready" : a.adult === "sometimes" ? "arrange" : "missing" });
   if (years.some((n) => n <= 2)) items.push({ key: "ks1Parent", status: "check" });

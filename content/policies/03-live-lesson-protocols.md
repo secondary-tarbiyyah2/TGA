@@ -7,7 +7,7 @@ appliesTo: All pupils, parents, staff, trustees and volunteers of Tarbiyyah Glob
 owner: Deputy Headteacher (Teaching and Learning)
 approvedBy: Ustadh Abu Zayn Haneef Sandhar, Headteacher
 agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
-dateOfIssue: 1 September 2026 (version 1.1, updated 28 October 2026 for the January 2027 launch)
+dateOfIssue: 1 September 2026 (version 1.2, updated 9 November 2026: a tablet with a stylus is recommended for every pupil, and a printer at home is required without one)
 nextReview: 31 August 2027
 basis: New policy for online provision
 readAlongside: Behaviour and Online Conduct Policy; Online Safety and Acceptable Use Policy; Recording of Live Lessons and Use of Images Policy
@@ -60,7 +60,7 @@ Primary pupils follow a shorter live timetable with more offline activity: Years
 
 - Join from a desk or table in a quiet, well-lit space — never from a bed or a room shared with adults who are not supporting them.
 - Be dressed in the Academy's modest dress standard: clean, tidy clothing appropriate for a school day.
-- Have books, stationery, headphones and a charged device ready.
+- Have books, stationery, headphones and a charged device ready, with the day's worksheets and lesson PDF open on a tablet with a stylus or printed out.
 - Log in two minutes before the start time.
 
 ## 4. During the Lesson
