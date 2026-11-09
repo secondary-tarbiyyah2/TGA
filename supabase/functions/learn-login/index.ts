@@ -7,7 +7,13 @@
 // "record" bypasses this layer's lockout entirely. The backstop that can't
 // be skipped is Supabase Auth's own built-in server-side rate limiting on
 // sign-in, which this supplements (account-level lockout + a visible
-// login_attempts audit trail) rather than replaces. The real login call
+// login_attempts audit trail) rather than replaces.
+//
+// Security audit (T20): the lockout counts failures for this email FROM THIS
+// NETWORK (hashed IP) only. Counting by email alone let anyone lock any
+// account (the Headteacher's, say) by reporting five fake failures for it.
+// Because a client can skip "record" anyway, this costs no real protection;
+// Supabase Auth's own server-side limits remain the backstop. The real login call
 // itself (supabase.auth.signInWithPassword) still goes directly from the
 // browser to Supabase Auth, this function only sits either side of it.
 import { createClient } from "jsr:@supabase/supabase-js@2";
@@ -22,7 +28,7 @@ const LOCKOUT_WINDOW_MINUTES = 15;
 const LOCKOUT_DURATION_MINUTES = 15;
 
 async function ipHash(req: Request): Promise<string> {
-  const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+  const ip = (req.headers.get("cf-connecting-ip") || req.headers.get("x-forwarded-for") || "unknown").split(",")[0].trim();
   const bytes = new TextEncoder().encode(ip);
   const digest = await crypto.subtle.digest("SHA-256", bytes);
   return Array.from(new Uint8Array(digest)).map((b) => b.toString(16).padStart(2, "0")).join("");
@@ -49,10 +55,14 @@ Deno.serve(async (req) => {
       .from("login_attempts")
       .select("success, attempted_at")
       .eq("email", email)
+      .eq("ip_hash", await ipHash(req))
       .gte("attempted_at", since)
       .order("attempted_at", { ascending: false })
       .limit(LOCKOUT_THRESHOLD * 3);
-    if (error) return jsonResponse({ ok: false, error: "check_failed", detail: error.message }, 500);
+    if (error) {
+      console.error("learn-login check failed", error.message);
+      return jsonResponse({ ok: false, error: "check_failed" }, 500);
+    }
 
     // Count only the CONSECUTIVE most-recent failures, a success anywhere
     // in the window resets the count, so one bad guess days apart from
@@ -76,7 +86,10 @@ Deno.serve(async (req) => {
   if (action === "record") {
     const success = Boolean(body.success);
     const { error } = await serviceClient.from("login_attempts").insert({ email, success, ip_hash: await ipHash(req) });
-    if (error) return jsonResponse({ ok: false, error: "record_failed", detail: error.message }, 500);
+    if (error) {
+      console.error("learn-login record failed", error.message);
+      return jsonResponse({ ok: false, error: "record_failed" }, 500);
+    }
     return jsonResponse({ ok: true });
   }
 

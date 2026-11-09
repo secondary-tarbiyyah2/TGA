@@ -23,17 +23,21 @@ concurrency:
   group: notify-flagged-messages
   cancel-in-progress: false
 
+# Least privilege (security audit T20): this workflow only reads the repo.
+permissions:
+  contents: read
+
 jobs:
   notify:
     runs-on: ubuntu-latest
     env:
       SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
     steps:
-      - uses: supabase/setup-cli@v1
+      - uses: supabase/setup-cli@1dedf2c611547ede7232d26866dd3c56ab903bbb # v1.7.3
         with:
           version: latest
 
-      - name: Find the project ref and anon key
+      - name: Find the project ref and service-role key
         id: keys
         run: |
           set -euo pipefail
@@ -47,15 +51,19 @@ jobs:
             echo "::error::Could not find the Supabase project."
             exit 1
           fi
-          ANON=$(supabase projects api-keys --project-ref "$REF" -o json | jq -r '.[] | select(.name=="anon" or .name=="publishable") | .api_key' | head -n1)
-          echo "::add-mask::$ANON"
+          SERVICE_ROLE=$(supabase projects api-keys --project-ref "$REF" -o json | jq -r '.[] | select(.name=="service_role" or .name=="secret") | .api_key' | head -n1)
+          if [ -z "$SERVICE_ROLE" ] || [ "$SERVICE_ROLE" = "null" ]; then
+            echo "::error::Could not find a service_role/secret key."
+            exit 1
+          fi
+          echo "::add-mask::$SERVICE_ROLE"
           echo "ref=$REF" >> "$GITHUB_OUTPUT"
-          echo "anon_key=$ANON" >> "$GITHUB_OUTPUT"
+          echo "service_role_key=$SERVICE_ROLE" >> "$GITHUB_OUTPUT"
 
       - name: Call notify-flagged-messages
         run: |
           set -euo pipefail
           curl -sS -X POST "https://${{ steps.keys.outputs.ref }}.supabase.co/functions/v1/notify-flagged-messages" \
-            -H "apikey: ${{ steps.keys.outputs.anon_key }}" \
-            -H "Authorization: Bearer ${{ steps.keys.outputs.anon_key }}" \
+            -H "apikey: ${{ steps.keys.outputs.service_role_key }}" \
+            -H "Authorization: Bearer ${{ steps.keys.outputs.service_role_key }}" \
             -H "Content-Type: application/json"

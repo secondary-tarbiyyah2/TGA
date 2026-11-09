@@ -19,6 +19,10 @@ name: Verify /learn deployment
 on:
   workflow_dispatch:
 
+# Least privilege (security audit T20): this workflow only reads the repo.
+permissions:
+  contents: read
+
 jobs:
   verify:
     runs-on: ubuntu-latest
