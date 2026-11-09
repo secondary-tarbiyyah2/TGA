@@ -7,6 +7,7 @@ import { addDays, formatHijri, toHijri } from "@/lib/learn/hijri";
 import { localDateKey } from "@/lib/learn/calendar";
 import type { DayItem, ItemKind } from "./useCalendarData";
 import { itemColour, KIND_LABEL } from "./calendarUtils";
+import { ScrollArea } from "@/components/learn/ScrollArea";
 
 export function parseKey(k: string): Date {
   return new Date(`${k}T12:00:00`);
@@ -107,7 +108,7 @@ export function DayPanel({
   const weekend = wd === 0 || wd === 6;
 
   return (
-    <div className="flex max-h-full flex-col">
+    <div className="flex min-h-0 flex-1 flex-col">
       <div className="border-b border-gold-light px-4 py-3">
         <div className="flex items-start gap-2">
           <div className="min-w-0 flex-1">
@@ -148,7 +149,7 @@ export function DayPanel({
         </ul>
       )}
 
-      <div className="space-y-4 overflow-y-auto p-4">
+      <ScrollArea label={`Items on ${gregLong(d)}`} className="space-y-4 p-4">
         {loading ? (
           <p className="text-sm text-ink/65">Loading…</p>
         ) : items.length === 0 ? (
@@ -166,7 +167,7 @@ export function DayPanel({
             );
           })
         )}
-      </div>
+      </ScrollArea>
     </div>
   );
 }

@@ -106,6 +106,18 @@ RewriteCond %{HTTP_HOST} !^preview\. [NC]
 RewriteRule ^curriculum/?$ /coming-soon/subjects/index.html [L]
 
 <IfModule mod_headers.c>
+  # Basic browser protections for every response (security audit T20):
+  # no MIME sniffing, no framing by other sites (clickjacking), and only the
+  # site's origin (not the full address) sent to other sites. Skipped for
+  # the portal (learn.*), whose folder sits inside this one on the server and
+  # sets its own stricter headers in its own .htaccess.
+  <If "%{HTTP_HOST} !~ /^learn\./i">
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Content-Security-Policy "frame-ancestors 'self'; base-uri 'self'"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+  </If>
   # The staff preview site never appears in search results.
   <If "%{HTTP_HOST} =~ /^preview\./i">
     Header always set X-Robots-Tag "noindex, nofollow, noarchive"

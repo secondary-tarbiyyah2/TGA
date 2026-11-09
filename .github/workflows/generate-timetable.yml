@@ -30,6 +30,10 @@ concurrency:
   group: generate-timetable
   cancel-in-progress: false
 
+# Least privilege (security audit T20): this workflow only reads the repo.
+permissions:
+  contents: read
+
 jobs:
   solve:
     runs-on: ubuntu-latest
@@ -39,7 +43,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: supabase/setup-cli@v1
+      - uses: supabase/setup-cli@1dedf2c611547ede7232d26866dd3c56ab903bbb # v1.7.3
         with:
           version: latest
 

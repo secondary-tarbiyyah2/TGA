@@ -76,6 +76,8 @@ string or an object:
 | `q` | string | required: the question or task, as it appears on the slide |
 | `a` | string | optional: the answer (or a model answer: "For example: …") |
 | `mins` | whole number 1-30 | optional: minutes for this item |
+| `model` | string | optional (v3): the teacher's worked model, gone through first ("I do"); see Lessons v3 |
+| `options` | 2-4 strings | optional (v3): Teams poll options; or write them in `q` as "… A) x B) y C) z" |
 
 When any item in a section has an `a`, a **"Check your answers"** slide (ticks, for pupils to
 self-mark) follows the do now, guided practice and independent practice. Exit ticket answers go
@@ -106,8 +108,9 @@ do in the speaker notes and the plan:
 
 Sections: `hook`, `starter`, `teach` (every teach slide), `hinge` (slides with a `check`
 block), `practice`, `independent`, `exit`. A teach slide may also set its own `"routine": "…"`.
-Defaults when not set: starter `show-me`, hinge `show-me`, practice `cold-call`, exit
+Defaults when not set: starter `show-me`, hinge `teams-poll`, practice `show-me`, exit
 `chat-waterfall`, hook `chat-waterfall` (`show-me` for a puzzle or odd-one-out), others none.
+Avoid `cold-call` (the validator warns): use Teams polls (see Lessons v3).
 
 **Hook.** A striking full-screen slide straight after the title, before the lesson map, to grab
 attention in the first minute:
@@ -116,8 +119,8 @@ attention in the first minute:
 "hook": { "type": "odd-one-out", "text": "Each describes 3, 5, 5, 8, 9. Which is the odd one out?", "options": ["5 (the mode)", "5 (the median)", "6 (the range)", "6 (the mean)"], "a": "The range: it is a spread, not an average." }
 ```
 
-`type` is `question`, `image-prompt` (a scene for pupils to picture: no pictures are used),
-`story`, `puzzle` or `odd-one-out`; `text` at most 240 characters; `options` 2-5 short lines
+`type` is `ponder` (v3: the first slide, see Lessons v3), `question`, `image-prompt` (a scene
+for pupils to picture), `story`, `puzzle` or `odd-one-out`; `text` at most 240 characters; `options` 2-5 short lines
 (3-5 for odd-one-out); `a` (optional) is what to draw out, in the notes and plan only.
 
 **Resources.** `"resources": ["Slides", "Mini-whiteboard and pen", "Dice"]` (1-10 lines) for the
@@ -161,13 +164,103 @@ friendlier deck design (bigger type, rounder shapes, a star collected at each st
 
 Rules: 3-7 `teach` slides, each with 2-5 bullets of at most 14 words; real, accurate,
 age-appropriate content only; British spelling; Islamic ethos woven in where natural
-(bismillah starter, adab) and never contradicting Islamic belief; no invented facts,
+(adab; "Bismillah" in Qur'an, Islamic Studies and Arabic starters only) and never contradicting
+Islamic belief; no invented facts,
 hadith or quotations. Questions must have concrete content (real numbers, real
 sentences), not placeholders.
 
 `node scripts/lessons/validate.mjs` checks all of this (the shapes and limits live in
 `src/lib/learn/lessonSchema.mjs`, shared with the portal editor and the curriculum sync). To preview decks from a
 scratch folder: `LESSONS_DIR=path node scripts/lessons/build-decks.mjs out/preview`.
+
+## Lessons v3 (the owner's design feedback, 9 Nov 2026)
+
+All optional, so older lessons still build; new lessons should use them. The validator
+(`node scripts/lessons/validate.mjs`, `--warnings` for the full list) **warns** (never fails) when
+a lesson has more than 1 objective, more than 3 success criteria, a criterion that repeats the
+objective, a `cold-call` routine, "Bismillah" in the starter of a subject other than Qur'an,
+Islamic Studies or Arabic, or item `mins` adding up to more than the lesson length less 3 minutes.
+The portal's lesson editor shows the same advice.
+
+```json
+"objectives": ["To understand why the body needs a variety of foods to stay healthy"],
+"successCriteria": ["All: name the seven components of a balanced diet", "Most: give two food sources for each", "Some: explain why no single food gives the body everything"],
+"hook": { "type": "ponder", "text": "If you could only eat one food for a month, which would keep you healthiest, and why?" },
+"islamicLink": { "text": "Allah says: 'O mankind, eat from whatever is on earth that is lawful and good' (al-Baqarah 2:168) …", "at": "start" },
+"pictures": [
+  { "find": "olive oil bottle", "alt": "A bottle of olive oil (lipid)", "for": "keywords" },
+  { "find": "fruit and vegetables market stall", "alt": "Fruit and vegetables", "for": "teach:2" }
+],
+"routines": { "starter": "teams-poll", "hinge": "teams-poll", "practice": "show-me", "exit": "teams-poll" },
+"practice": [{ "q": "Name the seven components.", "a": "Carbohydrates, proteins, lipids, vitamins, minerals, fibre, water", "model": "Use the memory hook …", "mins": 3 }],
+"exit": [{ "q": "What does fibre do? A) gives energy B) keeps food moving through the gut C) builds muscle", "a": "B) keeps food moving through the gut", "mins": 1 }]
+```
+
+1. **One objective**, high level ("To understand how …", "To explain why …"): the destination.
+2. **Success criteria**: up to 3, All / Most / Some, each a concrete, checkable step towards the
+   objective, never a restatement of it. The objective slide shows the destination above and the
+   three steps as a staircase below.
+3. **Ponder**: `hook` `{ "type": "ponder", "text": one open question }` is the **first slide**, on
+   screen while pupils join ("Think while we wait"), with the link to the lesson PDF. Every lesson
+   has one. It replaces the hook and big-question slides; the exit ticket returns to it.
+4. **Pictures**: 2-4 `pictures` `{ find, alt, for, file?, credit?, licence? }`. `find` is a precise
+   search phrase for a real photo, map or diagram on Wikimedia Commons; `for` is `hook` (the ponder
+   slide), `teach:N` (teach slide N, 1-based) or `keywords` (the key words slide: one picture per key
+   word where possible). Never people or faces, never drawn living beings: objects, places, plants
+   and animals as photos, maps and diagrams only. `scripts/lessons/pictures.mjs resolve` (run by
+   "Build lesson decks") picks the first safe file (licences CC0, public domain, CC BY, CC BY-SA;
+   skips anything whose categories, file name or structured data suggest people, faces, paintings,
+   statues or unsuitable content; when unsure it skips) and saves the choice in
+   `content/lesson-pictures.json`, so the same picture is used every time. To choose a picture
+   yourself, put its Commons file name in `file` (e.g. `"File:Olive oil from Oneglia.jpg"`). Each
+   picture carries a small credit line. If Commons cannot be reached the slides are built without it.
+   A picture for a teach slide with a block gets its own "Look closely" slide just before it.
+5. **Diagrams**: use the `diagram` / `chart` / `numberline` / `fraction` / `sort` blocks wherever a
+   picture of the idea helps.
+6. **Key words**: keep `keywords` (3-6, child-friendly definitions). Each teach slide shows the key
+   words it uses in a small box in its corner, and the unit's key words (collected across its
+   lessons, today's highlighted) are the second-to-last slide.
+7. **Bismillah** only in Qur'an, Islamic Studies and Arabic (and the start-of-day register).
+8. **Islamic link**: `islamicLink` `{ text, at }`. Where Islam speaks to the topic, start from it as
+   the foundation (`"at": "start"`, a slide straight after the title). Where the topic is a theory
+   that conflicts with Islamic belief, teach the specification factually and give the Islamic
+   position at the end (`"at": "end"`, after the exit ticket). Cite only ayat you are certain of
+   (surah:ayah); never invent hadith.
+9. **Polls, not cold calls**: with the routine `teams-poll` on the starter or exit, each item with
+   2-4 options (in `options`, or "A) … B) …" in `q`) gets a poll slide (question, lettered options,
+   "Vote in the Teams poll" and how to launch a Forms poll in the meeting) and then an answer slide
+   (the right option ticked). Hinge questions (`check` blocks) are polls by default and also get an
+   answer slide. Keep polls short, one correct answer, plausible wrong answers, not too hard.
+10. **Modelling**: `practice` item 1 has a `model` (the worked answer; for writing subjects a model
+    paragraph with its structure labelled, e.g. "Point: … Evidence: … Explain: … Link: …"): it gets an
+    "I do" slide before the guided practice ("We do", the other items). `independent` item 1 also has
+    a `model`, shown on a "Task 1: watch it done first" slide before the tasks.
+11. **Longer written answers**: say in the item's `q` where pupils write (the portal's response box
+    or a Forms long-answer question) and give a sentence starter.
+12. **Timing**: the items' `mins` plus about 3-5 minutes a teach slide must fit the lesson (30 / 45 /
+    50 minutes) with 3 minutes to spare. The plan adds the phases up and shows the total.
+13. **Cross-curricular and SMSC**: one accurate, specific connection each, or leave it out.
+14. **Resources**: name every resource precisely in `resources` (for the term resource list).
+
+**Deck order (v3):** ponder · title with "Our online class promise" (cameras on, mic muted until
+asked, respect and kind words, stay on this lesson's window, try your best) · Islamic foundation ·
+objective and steps · lesson map · key words · starter (and polls) · teach slides · I do · we do ·
+task 1 modelled · independent · connect it · exit (and polls) · Islamic position · topic key words ·
+homework · teacher-only exit answers.
+
+**Pupil PDF:** every lesson also gets `<NN>-<slug>-pupil.pptx`, converted to an A4 PDF: the slides
+pupils need (no lesson map, breaks, answer slides or teacher-only slide) with a name line on each
+page, then a worksheet with every guided, independent and exit question and lines to write on,
+printable or for a drawing tablet. It is uploaded with the plan and opened from
+`https://learn.tarbiyyah.co.uk/lesson-pdf/?s=<subject>&y=<year>&n=<lesson>` (staff, and pupils in
+that year; migration 0189), linked on the first slide and in the plan.
+
+**Lesson plan (two pages):** the objective, up to 3 criteria, the ponder question, a timed run-through
+whose minutes add up (with a total), the models, polls and pictures, and the resources (with the
+pupil PDF).
+
+To preview: `ONLY_LESSONS=science/y8/1 LESSONS_DIR=path node scripts/lessons/build-decks.mjs out/preview`
+(`PICTURES_JSON` and `PICTURES_DIR` point at another picture file and image folder).
 
 ## Edited in the portal
 

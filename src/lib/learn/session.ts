@@ -5,10 +5,10 @@ import { useRouter } from "next/navigation";
 import type { Session } from "@supabase/supabase-js";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
-export const LEARN_ROLES = ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover", "parent", "student"] as const;
+export const LEARN_ROLES = ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover", "senco", "parent", "student"] as const;
 export type LearnRole = (typeof LEARN_ROLES)[number];
 
-export const STAFF_ROLES: LearnRole[] = ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover"];
+export const STAFF_ROLES: LearnRole[] = ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover", "senco"];
 
 export type RoleGrant = { role: LearnRole; scope_type: "none" | "class" | "family"; scope_id: string | null };
 
@@ -18,6 +18,7 @@ const ROLE_LABELS: Record<LearnRole, string> = {
   admissions: "Admissions",
   teacher: "Teacher",
   teaching_assistant_cover: "Teaching Assistant / Cover",
+  senco: "SENCo",
   parent: "Parent",
   student: "Student",
 };
@@ -30,7 +31,8 @@ export function learnRoleLabel(role: LearnRole): string {
 // subdomain's own root (see src/lib/learn/origin.ts), so an in-app link
 // between them should never carry the old path prefix.
 export function dashboardPathForRole(role: LearnRole): string {
-  if (role === "teacher" || role === "teaching_assistant_cover") return "/teach/dashboard";
+  // A SENCo account works in the Teaching area; its home opens the SEND register.
+  if (role === "teacher" || role === "teaching_assistant_cover" || role === "senco") return "/teach/dashboard";
   if (role === "parent") return "/family/dashboard";
   if (role === "student") return "/student/dashboard";
   return "/admin/dashboard";

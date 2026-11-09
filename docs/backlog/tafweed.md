@@ -32,8 +32,8 @@ Statuses: **Not started** · **In progress** · **Done** · **Needs decision** �
 - **Owner's note:** "Classwork: we only need it under classes, as appropriate and actionable." (screenshot: Teaching › Classes › *All classwork*)
 - **Reading:** remove *All classwork* as a hub tab for teachers/admin, or turn it into a short "needs action" view (late/missing, to mark) that links into each class's Classwork tab. Setting and marking work happens in the class.
 - **Files:** `src/lib/learn/nav.ts` (admin "Classes" hub tabs: `/admin/homework`; teach hub), `src/app/learn/admin/homework/page.tsx`, `src/app/learn/teach/homework/`, class page Classwork tab under `src/components/learn/class/`.
-- **Done when:** [ ] no duplicate place to set work; [ ] whatever remains outside the class is only actions (late, missing, to mark) with one-click links into the class; [ ] no broken links to the old route.
-- **Status:** Not started
+- **Done when:** [x] no duplicate place to set work; [x] whatever remains outside the class is only actions (late, missing, to mark) with one-click links into the class; [x] no broken links to the old route (same `/admin/homework` and `/teach/homework` routes, now "Classwork to action").
+- **Status:** Done (awaiting owner check)
 
 ### T2. Revision pack page: clearer structure, plus generated action and question packs
 - **Owner's note:** "Improve structure of this and generate your own action pack, Q pack." (screenshot: Curriculum › unit › *Revision pack*)
@@ -55,15 +55,15 @@ Statuses: **Not started** · **In progress** · **Done** · **Needs decision** �
 - **Owner's note:** "Anti-cheating isn't working for the assessments, I changed tabs easily."
 - **Reading:** a browser can't block tab switching, so leaving must be made visible and costly: cover the questions as soon as the page loses focus, make the pupil press "Return to my assessment" (back to full screen), and show the count. Staff already see away/blur counts in the report.
 - **Files:** `src/components/learn/assess/AssessmentSitting.tsx` (fair-sitting effect and overlays), `supabase/functions/entry-assessment/index.ts` (`CLIENT_EVENTS`), `src/components/learn/assess/EntryReport.tsx` (counts).
-- **Done when:** [x] questions hidden behind a "You left the assessment" screen on tab/window switch; [x] count shown to the pupil; [ ] staff report headline shows "Left the assessment N times" prominently (check `EntryReport.tsx`); [ ] optional: staff setting to end the part after N leaves.
-- **Status:** In progress
+- **Done when:** [x] questions hidden behind a "You left the assessment" screen on tab/window switch; [x] count shown to the pupil; [x] staff report headline shows "Left the assessment N times" prominently (top of the Summary card, with time away and a chip if a part was ended; it counts tab/app switches plus another window in front, the same rule as the pupil's own count); [x] optional: staff setting to end the part after N leaves ("End a part if the child leaves it": Never / 3 / 5 / 10 times, off by default; enforced by the `entry-assessment` function, the pupil is warned on screen, and the report notes which part ended).
+- **Status:** Done (awaiting owner check)
 
 ### T5. Printing an assessment report looks like a screenshot
 - **Owner's note:** "When I try to print, it shouldn't come out as a screenshot of the page; the format should be good."
 - **Reading:** Print should output only the report, full width, paginated, not the drawer and page behind it.
 - **Files:** `src/components/learn/assess/EntryAssessmentsAdmin.tsx` (Detail drawer, Print button), `src/components/learn/printScope.tsx`, `src/components/learn/print.ts(x)` (`PRINT_CSS`), `EntryReport.tsx` print classes.
-- **Done when:** [x] Print uses `printElement()` scoped to the report; [ ] checked in Chrome print preview: no drawer chrome, no cut-off right edge, charts readable, sensible page breaks.
-- **Status:** In progress
+- **Done when:** [x] Print uses `printElement()` scoped to the report; [x] checked with Chrome's PDF output (Playwright): no drawer chrome, no cut-off right edge, charts readable, sensible page breaks. It was printing a **blank page**: the print rules hid every dialog, including the drawer the report sits in. Fixed in `PRINT_CSS` (the marked element and its ancestors are put back into the page flow), plus a letterhead, year labels under the strand chart on paper, and long cards allowed to run on to the next page. 3 A4 pages for a full Year 5 report.
+- **Status:** Done (awaiting owner check)
 
 ### T6. Sign-in: each tab (Parent, Student, Staff) only accepts its own accounts
 - **Owner's note:** "Improve the efficiency and standardisation of transitioning between staff / student."
@@ -109,8 +109,8 @@ Statuses: **Not started** · **In progress** · **Done** · **Needs decision** �
 - **Owner's note:** "Ensure the website is smooth; avoid chunkiness."
 - **Reading:** reduce layout jumps and heavy blocks: consistent section spacing, no content shift as things load (reserve space for live widgets), lighter page transitions, respect `prefers-reduced-motion`.
 - **Files:** `src/app/globals.css` (`.section-pad`, `.hero-pad`), live components (`OpenEveningLive`, `CareersLive`, `FitCheck`).
-- **Done when:** [x] spacing scale consistent (`.section-pad` clamp(3rem,6vw,5rem), new `.section-pad-tight`); [x] smooth scrolling and short cross-page view transitions, only when motion isn't reduced; [ ] Lighthouse CLS < 0.1 on key pages.
-- **Status:** In progress (CLS check outstanding)
+- **Done when:** [x] spacing scale consistent (`.section-pad` clamp(3rem,6vw,5rem), new `.section-pad-tight`); [x] smooth scrolling and short cross-page view transitions, only when motion isn't reduced; [x] CLS < 0.1 on key pages: measured with Playwright (layout-shift entries, phone 360 px and desktop) on 15 public pages after `npm run build`, with the live widgets' data answered after a 0.9 s delay. All pages 0 to 0.03, except opening `/open-evening/#book` and `/careers/#vacancies` directly (0.55 and 0.28 on phones): those now show placeholders the size of the list while it loads (`OpenEveningLive.tsx`, `CareersLive.tsx`), giving 0.07 and 0.
+- **Status:** Done
 
 ### T12. Open evenings vs taster morning: same page, is one redundant? Testimonials CTA
 - **Owner's note:** "When I press 'Open evenings' and 'taster evening' it goes to the same page. Is one useless? Have a CTA directly on testimonials? Or restructure so it works well."
@@ -170,15 +170,16 @@ Statuses: **Not started** · **In progress** · **Done** · **Needs decision** �
 - **Owner's note:** "Review for security audit."
 - **Reading:** a written review, then fixes. Check: every table has RLS and the policies match roles (`supabase/migrations`, `supabase/tests`); Edge Functions check the caller's role server-side and rate-limit public endpoints (`_shared/rateLimit.ts`, `booking_attempts`); no service-role key or secrets in client code (`grep -r SERVICE_ROLE src/`); storage buckets private with signed URLs; Supabase advisors (`get_advisors` security) clean; headers/CSP on the static host; dependency audit (`npm audit` in CI); recruitment data retention (6 months, policy 30) actually enforced.
 - **Files:** `supabase/migrations/*`, `supabase/functions/*`, `supabase/tests/*`, `next.config.*`, `.github/workflows/*`.
-- **Done when:** [ ] `docs/security-audit-2026-11.md` written with findings ranked; [ ] high findings fixed with pgTAP tests; [ ] advisors clean.
-- **Status:** Not started
+- **Done when:** [x] `docs/security-audit-2026-11.md` written with findings ranked; [x] high findings fixed with pgTAP tests; [ ] advisors clean (run "Advisors, Security" in the TGA Supabase dashboard; not reachable from the agent).
+- **Status:** Done (owner: change the leaked demo and support passwords and delete two old run logs, see audit H1)
 
 ### T21. Policies: a side outline like Google Docs ("1. Intent", "2. …")
 - **Owner's note:** "Have a nice navigation side bar for policies, '1. Intent of…', '2. …' just like Google Docs."
 - **Reading:** on each policy page, a sticky left outline built from the policy's `##` headings, numbered, highlighting the current section as you scroll; collapses to a "Contents" button on phones. Same pattern as the FAQ sidebar (T13).
 - **Files:** `src/app/(marketing)/policies/[slug]/page.tsx` (or wherever policy markdown renders), `src/components/FaqAccordion.tsx` (reuse the scroll-spy), the portal policy reader under `src/components/learn/policies/`.
-- **Done when:** [ ] outline on public and portal policy pages; [ ] current section highlighted; [ ] works at 360 px and by keyboard.
-- **Status:** Not started
+- **Done when:** [x] outline on public and portal policy pages (portal: the Preview tab of Documents › Policies › Edit text, the only place the portal shows a policy's sections; the signing screen shows plain text from Word files, which has no headings); [x] current section highlighted (`aria-current="location"`); [x] works at 360 px and by keyboard (links, Escape closes the phone panel, focus moves to the section heading).
+- **What was built:** `src/lib/policyOutline.ts` gives each `##` heading an id and builds the numbered list; `src/components/PolicyOutline.tsx` shows it as a sticky left column on wide screens and a sticky "Contents" button (with the section you are reading) under the header on phones and tablets.
+- **Status:** Done (awaiting owner check)
 
 ### T22. LADO equivalent for an online school, and who is involved
 - **Owner's note:** "Check equivalent of LADO and who's involved."
@@ -198,15 +199,15 @@ Statuses: **Not started** · **In progress** · **Done** · **Needs decision** �
 - **Owner's note:** "Ensure we can scroll on the portal, especially the calendar: there are 9 items, I see 3 or 4 but can't scroll."
 - **Reading:** a fixed-height card with `overflow-hidden` (or a flex child missing `min-h-0`) clips the list. Fix at the source: scrollable panels get `min-h-0 overflow-y-auto` and a visible fade/"N more" hint.
 - **Files:** the home/dashboard calendar widget under `src/components/learn/` (grep `upcoming`, `Calendar`), `LearnLayoutShell.tsx`, `globals.css` `.portal` rules.
-- **Done when:** [ ] all 9 items reachable by scroll, wheel, touch and keyboard; [ ] same fix applied to other clipped panels.
-- **Status:** Not started
+- **Done when:** [x] all 9 items reachable by scroll, wheel, touch and keyboard; [x] same fix applied to other clipped panels.
+- **Status:** Done (awaiting owner check)
 
 ### T25. Action centre: categorised, one page, actions in place
 - **Owner's note:** "Action centre needs to be categorised and easier to navigate and action, for save as PDF etc. Structure everything better and not across two pages."
 - **Reading:** one page with category tabs or a side list (Safeguarding, Attendance, Admissions, Recruitment, Reports, Staff, System) with counts; each item has its action buttons inline (open, mark done, save as PDF/print with `printElement`); no second "more" page.
 - **Files:** grep `Action centre` under `src/app/learn/` and `src/components/learn/`, `src/lib/learn/nav.ts`.
-- **Done when:** [ ] one route; [ ] categories with counts; [ ] each item actionable in place, including Save as PDF; [ ] old second page redirects.
-- **Status:** Not started
+- **Done when:** [x] one route (`/<area>/actions`); [x] categories with counts; [x] each item actionable in place, including Save as PDF; [x] old second page: there was no separate route; the second place was the admin Home "Needs attention" tiles, now folded into the Action centre (Home keeps one "Needs you" panel that links into each category with `?cat=`).
+- **Status:** Done (awaiting owner check)
 
 ### T26. admin/pupils: less clutter, more per pupil; add and edit pupils
 - **Owner's note:** "admin/pupils too cluttered, not enough unique info for each student." "I should be able to add and edit students on Pupils; remove the emojis that are not appropriate."
@@ -226,8 +227,8 @@ Statuses: **Not started** · **In progress** · **Done** · **Needs decision** �
 - **Owner's note:** "SEND register needs to be editable and accessible, with the role of SENCO leader available as an account."
 - **Reading:** add a `senco` role (migration: role enum/check, RLS: SENCO reads/writes SEND records for all pupils; teachers read their classes' pupils' support notes only), assignable in staff accounts; register page with inline editing (need, provision, review date, documents) and an audit trail.
 - **Files:** SEND register page (grep `SEND` under `src/app/learn/admin/`), roles in `src/lib/learn/roles*.ts` and `LearnGate` `allowedRoles`, `src/lib/learn/nav.ts`, new migration + pgTAP tests.
-- **Done when:** [ ] SENCO role assignable; [ ] SENCO can edit, others per RLS; [ ] changes logged; [ ] tests pass.
-- **Status:** Not started
+- **Done when:** [x] SENCO role assignable; [x] SENCO can edit, others per RLS; [x] changes logged; [x] tests pass.
+- **Status:** Done (awaiting owner check). "SENCo" is now a staff role of its own (migration 0186), chosen when adding a member of staff or ticked in People › Staff by the Headteacher; the older SENCo switch stays for a teacher who also keeps the register. A SENCo-only account signs in on the Staff tab and lands on the SEND register.
 
 ### T29. Portal controls: custom dropdowns, no emojis, compartmentalised forms
 - **Owner's note:** "Options shouldn't be the native dropdown, make it unique; remove the emojis and make it more suitable for the system; compartmentalise things to make it easy."
@@ -240,8 +241,8 @@ Statuses: **Not started** · **In progress** · **Done** · **Needs decision** �
 - **Owner's note:** "Suggesting cover and recording absences is very basic."
 - **Reading:** record staff absence for a date range and part days; the system lists affected lessons and suggests cover ranked by subject match, free periods and recent cover load; one click to assign and notify; a cover log and simple report.
 - **Files:** grep `cover` under `src/components/learn/` and `supabase/migrations/`.
-- **Done when:** [ ] ranged absences; [ ] ranked suggestions with reasons; [ ] assign + notify; [ ] cover report.
-- **Status:** Not started
+- **Done when:** [x] ranged absences; [x] ranked suggestions with reasons; [x] assign + notify; [x] cover report.
+- **Status:** Done (awaiting owner check). Admin › Absences › Staff cover (migration 0187).
 
 ### T31. Pronouns come from the pupil's profile
 - **Owner's note:** "When filling in details from the profile, under pronoun we should have the pronoun of the child already linked."
@@ -279,3 +280,8 @@ Statuses: **Not started** · **In progress** · **Done** · **Needs decision** �
 - 2026-11-09: T32 fixed (branch `claude/tafweed-T32-ai-revision`). Root cause: `_shared/claude.ts` sent `temperature`, which Claude 5.x models (default `claude-haiku-5-5`) reject, so every AI draft failed; the key and deploy were fine. Now no sampling parameters, thinking off for drafts, plain-English errors (`claudeErrorMessage`), and a "Test the AI connection" button in Settings › AI helpers. Same fix in the entry-assessment writing marker.
 - 2026-11-09: T2 and T33 done (branch `claude/tafweed-T2-T33-revision-packs`, migration 0184 `revision_pack_drafts`, pgTAP `revision_pack_drafts.test.sql`). Revision pack tab rebuilt status-first (`RevisionPackPanel.tsx`) with AI-drafted questions held for teacher approval, a unit to-do list pupils tick off, and draft packs made automatically when every lesson in a unit is signed off, flagged in the Action centre.
 - 2026-11-09: T3, T26, T27 and T31 done (branch `claude/tafweed-T26-pupils`, migration 0185 `pupils_year_group_pronouns`, pgTAP `pupils_admin_edit.test.sql`). Pupils list (`AdminPupils.tsx`): click anywhere on a row (or the name link by keyboard) to open the record; filter chips with counts (missing details, medical alerts, support plan, above year group); "Remind N families" (one email to all, families in Bcc) and "Copy email addresses" when showing missing details; classes shown as "3 classes" that opens to the list; 30-day attendance and support plan columns; Add pupil and Edit on each row; no emojis. Pupil record: Edit pupil button and a "Working above year group" chip. Add and Edit (`PupilPlacement.tsx`, `EditPupilModal.tsx`, also used by People › Add student): year group suggested from date of birth by England's 1 Sept to 31 Aug rule (`src/lib/learn/yearGroup.ts`, tests in `yearGroup.test.ts`, run in CI), staff can override, a year above the suggestion ticks "Working above year group" (only Headteacher/Admin can set it, enforced by a trigger), classes offered for the chosen year with "Show all classes". New portal date picker (`src/components/learn/DatePicker.tsx`): Day, Month, Year boxes plus a keyboard calendar. Report comment and weekly note AI forms prefill the pronoun from the pupil record via `pupil_pronoun()` (staff who teach the pupil, or Headteacher/Admin), still changeable. `DataTable` gained an optional `onRowClick`.
+- 2026-11-09: T24, T25 and T1 done (branch `claude/tafweed-T25-action-centre`). T24: the calendar day panel (desktop side panel, phone sheet, day agenda) was cut off by a fixed-height card; new `ScrollArea.tsx` (shrinks in a flex column, focusable for keyboard, fade and "N more below" button) used there and in notifications, the marking list, the inbox and the new-message picker. T25: `ActionCentre.tsx` is one page with categories and counts (side list on wide screens, scrolling row on phones, `?cat=`), each item has Open, Mark done (this device, until it changes) and Print / Save as PDF, plus per-category and whole-list PDF; the admin Home "Needs attention" checks moved into `loadAdminItems()` in `actionCentre.ts` (registers, unexplained absences, overdue marking, signatures, flagged messages, safeguarding reviews, new applications, payment proofs, job applications, new pupils); shared loader `actions/useActionItems.ts` so Home and the Action centre agree. T1: `/admin/homework` and `/teach/homework` are now "Classwork to action" (`ClassworkToAction.tsx`): to mark, missing, late and resubmissions by class, each linking into the class's Classwork tab; setting work only happens in the class (`HomeworkWorkspace.tsx` and `LateMissingView.tsx` removed).
+- 2026-11-09: T20 security audit (branch `claude/tafweed-T20-security`, migration 0188 `security_audit_revokes`, pgTAP `security_audit_revokes.test.sql`), written up in `docs/security-audit-2026-11.md`. No critical findings. Fixed: passwords printed in clear in Actions logs (`seed-demo-accounts.yml`, `set-learn-password.yml`); `quiz-send-plan` now one email per fresh lead plus rate limit; scheduled functions (`notify-flagged-messages`, `safeguarding-review-check`, `purge-data-exports`, `send-reminders`) need the service-role key (`_shared/serviceCaller.ts`); login lockout per email and network; policy markdown through `src/lib/safeMarkdown.ts` (raw HTML escaped, unsafe links dropped); security headers in `public/.htaccess` and the portal's; rate limit on `register.php`/`apply.php`; read-only token on 45 workflows; third-party actions pinned to commits; `resync_lesson_teachers` revoked from public; npm audit summary in CI. Listed for later: dependency upgrades (Next 16.4.5+, Sanity), rate limits on direct public inserts, main-site script CSP, HSTS in Cloudflare.
+- 2026-11-09: T28 done (branch `claude/tafweed-T28-senco-cover`, migration 0186 `send_senco_role`, pgTAP `send_senco_role.test.sql`). New staff role `senco` ("SENCo"): set by the Headteacher in People › Staff or chosen in Add person, counts as staff, sees only the SEND register and the handbook in the Teaching area, and `send_can_manage()` admits it, so a SENCo reads and writes every pupil's SEND record. Teachers still read only active plans (support notes) for pupils they teach; parents never get the register, documents or the log. Register (`SendRegister.tsx`, `SendExtras.tsx`): an accessible table (cards on phones) where level, main need, status and next review save in place; "Add a pupil" for any pupil; a "Recent changes" tab. Each plan gains Documents (links to the EHC plan and reports in secure storage, new table `send_plan_documents`) and a Change history read from the audit log (`send_change_log()`, field names only). `learn-invite` accepts the new role.
+- 2026-11-09: T30 done (branch `claude/tafweed-T30-cover`, migration 0187 `cover_part_days_log`, pgTAP `cover_part_days.test.sql`, unit tests `src/lib/learn/cover.test.ts`). Admin › Absences › Staff cover (`CoverSuggestions.tsx`, logic in `src/lib/learn/cover.ts`): record an absence for a range of days or part of a day (away from a time on the first day, back at a time on the last), with a type (sickness, medical, training, school business, leave, other); every affected lesson from the published timetable is listed, covered or not; free staff are ranked by subject match (teaches the subject, already teaches the class, cover staff), then free periods that day, then cover done in the last four weeks, with the reasons shown as chips; "Assign and notify" assigns the cover and emails the covering teacher (new in `cover-notify`, `teacher_notified_at`) as well as the families. The absence note is never sent to anyone. New Cover log (search, CSV, "Email again", Remove, which hands the lesson back via `timetable-cover` `action: remove`) and Cover report (absences by type, lessons affected and % covered, covers given and received per person, CSV) for the last 30 days, 90 days or 12 months.
+- 2026-11-09: T21, T4, T5, T11 done (branch `claude/tafweed-T21-policy-outline`). T21: policy pages and the portal policy preview have a numbered side outline ("Contents" button on phones) that highlights the section being read (`PolicyOutline.tsx`, `policyOutline.ts`). T4: the assessment report leads with "Left the assessment N times"; staff can choose to end a part after 3, 5 or 10 leaves (`entry-assessment` `access.leaveLimit`, `countLeaves` in `_shared/assess/integrity.ts`). T5: printing a report no longer comes out blank (`print.tsx` `PRINT_CSS`), with letterhead and chart labels. T11: CLS measured on 15 public pages (all under 0.1); loading placeholders for the open-evening and vacancy lists.
