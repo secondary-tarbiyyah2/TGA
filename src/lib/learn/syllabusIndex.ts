@@ -1,7 +1,9 @@
 import raw from "./syllabusIndex.json";
 
 /** pl: for each point, the ids ("y10/12") of the lessons that teach it; lessons: every lesson id mapped to the unit. */
-export type SpecUnit = { ref: string; title: string; paper: string; year: string; points: string[]; pl: string[][]; lessons: string[] };
+/** A week of a unit's medium-term plan (set in the Curriculum planner). */
+export type IndexWeek = { week: number; lessons: string[]; vocabulary: string[]; home: string };
+export type SpecUnit = { ref: string; title: string; paper: string; year: string; term?: string; keyTerms?: string[]; weeks?: IndexWeek[]; points: string[]; pl: string[][]; lessons: string[] };
 export type Paper = { paper: string; title: string; duration: string; marks: number | string; weight: string; content: string; format: string };
 /** Set when the course is taught from a UK GCSE spec but pupils are entered for an International GCSE. */
 export type ExamEntry = {
@@ -33,17 +35,48 @@ export type SpecInfo = {
   gaps: string[];
   units: SpecUnit[];
 };
-export type SyllabusUnit = { unit: string; focus: string[]; skills: string[]; keyTerms: string[]; assess: string };
-export type SyllabusInfo = { subject: string; framework: string; status: string; statusNote: string; years: Record<string, SyllabusUnit[]> };
+export type SyllabusUnit = {
+  unit: string;
+  focus: string[];
+  skills: string[];
+  keyTerms: string[];
+  assess: string;
+  halfTerm?: string;
+  prereq?: string;
+  leadsTo?: string;
+  weeks?: IndexWeek[];
+  resources?: string;
+  foundingYear?: string;
+};
+export type SyllabusInfo = {
+  subject: string;
+  framework: string;
+  status: string;
+  statusNote: string;
+  purpose?: string[];
+  toKS4?: string;
+  years: Record<string, SyllabusUnit[]>;
+  progression?: { thread: string; steps: Record<string, string> }[];
+};
 export type HubNode = { subject: string; ref: string; note: string };
 export type Hub = { id: string; title: string; hook: string; nodes: HubNode[] };
 
-const data = raw as unknown as { specs: Record<string, SpecInfo>; syllabi: Record<string, SyllabusInfo>; hubs: Hub[] };
+const data = raw as unknown as {
+  specs: Record<string, SpecInfo>;
+  syllabi: Record<string, SyllabusInfo>;
+  hubs: Hub[];
+  /** Lesson library units per subject and year: [unit name, number of lessons]. */
+  lessonUnits?: Record<string, Record<string, [string, number][]>>;
+  /** KS4 lesson id ("y10/12") to its Lesson library unit. */
+  lessonUnitOf?: Record<string, Record<string, string>>;
+};
 
 export const specFor = (slug: string): SpecInfo | undefined => data.specs[slug];
 export const syllabusFor = (slug: string): SyllabusInfo | undefined => data.syllabi[slug];
 export const specStatus = (slug: string): string | undefined => data.specs[slug]?.status ?? data.syllabi[slug]?.status;
 export const allHubs = (): Hub[] => data.hubs;
+export const lessonUnitsFor = (slug: string, year: string): [string, number][] => data.lessonUnits?.[slug]?.[year] || [];
+export const lessonUnitOfLesson = (slug: string, id: string): string | undefined => data.lessonUnitOf?.[slug]?.[id];
 
 /** Syllabus units for a year whose name overlaps the library unit's name (Year 1 to Year 9). */
 export function matchSyllabusUnits(slug: string, year: string, unitName: string, max = 3): SyllabusUnit[] {

@@ -3,7 +3,7 @@
 import { LearnGate } from "@/components/learn/LearnGate";
 import { LearnShell } from "@/components/learn/LearnShell";
 import { PageHeader } from "@/components/learn/PageHeader";
-import { SyllabusPack } from "@/components/learn/curriculum/SyllabusPack";
+import { SyllabusBrowser } from "@/components/learn/curriculum/SyllabusBrowser";
 
 export default function TeachSyllabusPage() {
   return (
@@ -12,9 +12,9 @@ export default function TeachSyllabusPage() {
         <LearnShell role="teach">
           <PageHeader
             title="Syllabus and specifications"
-            subtitle="Our specification for each subject, built from the official exam board documents, with the syllabus for Year 1 to Year 9 and the cross-curricular links. Pick a subject."
+            subtitle="What each subject teaches from Year 1 to Year 11: the long-term plan half term by half term, every unit with its week-by-week plan, and the curriculum document to print or download."
           />
-          <SyllabusPack />
+          <SyllabusBrowser area="teach" />
         </LearnShell>
       </LearnGate>
     </section>
