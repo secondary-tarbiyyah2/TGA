@@ -392,7 +392,8 @@ export function makeV3(h) {
   function topicKeywordsSlide(pptx, ctx, lesson, unitKeywords, pics) {
     const s = pptx.addSlide({ masterName: "TGA_CONTENT" });
     const early = ctx.band === "early";
-    header(s, ctx, early ? "All our topic words" : "Topic key words", clean(lesson.unit), null);
+    const unitShort = clean(lesson.unit).split(/[:(]/)[0].trim().slice(0, 40);
+    header(s, ctx, early ? "All our topic words" : "Topic key words", `${unitShort} · every lesson's key words`, null);
     const today = new Set((lesson.keywords || []).map((k) => clean(k.term).toLowerCase()));
     const words = unitKeywords.slice(0, early ? 12 : 20);
     const picW = pics.length ? 3.0 : 0;
@@ -402,16 +403,17 @@ export function makeV3(h) {
     const gap = 0.14;
     const w = (areaW - gap * (cols - 1)) / cols;
     const hh = Math.min(1.25, (4.7 - gap * (rows - 1)) / rows);
-    const termPt = Math.min(...words.map((k) => fitSize(k.term, w - 1.1, hh * 0.4, early ? 26 : 20, 11)));
-    const defPt = Math.max(10, Math.min(...words.map((k) => fitSize(k.def, w - 0.3, hh * 0.56, early ? 20 : 16, 10))));
+    // Terms on one line (sized by width); definitions take the rest of the card.
+    const termPt = Math.min(early ? 20 : 18, ...words.map((k) => Math.floor((w - 1.15) * 72 / Math.max(4, clean(k.term).length * 0.55))));
+    const defPt = Math.max(11, Math.min(...words.map((k) => fitSize(k.def, w - 0.3, hh - 0.4, early ? 20 : 16, 11))));
     words.forEach((k, i) => {
       const x = 0.8 + (i % cols) * (w + gap);
       const y = 2.12 + Math.floor(i / cols) * (hh + gap);
       const on = today.has(clean(k.term).toLowerCase());
       s.addShape("roundRect", { x, y, w, h: hh, rectRadius: 0.08, fill: { color: on ? ctx.theme.soft : "FFFFFF" }, line: { color: on ? ctx.accent : LINE, width: on ? 1.75 : 0.75 } });
-      s.addText(clean(k.term), { x: x + 0.2, y: y + 0.04, w: w - (on ? 1.1 : 0.4), h: hh * 0.42, fontFace: FONT, fontSize: termPt, bold: true, color: on ? ctx.accent : INK, valign: "middle", margin: 0 });
+      s.addText(clean(k.term), { x: x + 0.15, y: y + 0.05, w: w - (on ? 1.1 : 0.3), h: 0.34, fontFace: FONT, fontSize: termPt, bold: true, color: on ? ctx.accent : INK, valign: "middle", margin: 0 });
       if (on) s.addText("TODAY", { x: x + w - 0.85, y: y + 0.08, w: 0.7, h: 0.24, fontFace: FONT, fontSize: 8, bold: true, color: "FFFFFF", align: "center", valign: "middle", fill: { color: ctx.accent }, margin: 0 });
-      s.addText(clean(k.def), { x: x + 0.15, y: y + hh * 0.42, w: w - 0.3, h: hh * 0.56, fontFace: FONT, fontSize: defPt, color: on ? INK : MUTED, valign: "top", margin: 0, fit: "shrink" });
+      s.addText(clean(k.def), { x: x + 0.15, y: y + 0.38, w: w - 0.3, h: hh - 0.42, fontFace: FONT, fontSize: defPt, color: on ? INK : MUTED, valign: "top", margin: 0, fit: "shrink" });
     });
     if (picW) {
       const ph = Math.min(2.3, (4.7 - 0.15 * (pics.length - 1)) / pics.length);
@@ -444,7 +446,7 @@ export function makeV3(h) {
       ["Exit ticket", lesson.exit],
     ];
     const LINE_GAP = 0.44;
-    const top = 2.1;
+    const top = 1.3;
     const bottom = 6.85;
     let s = null;
     let y = bottom;
@@ -452,8 +454,11 @@ export function makeV3(h) {
     const newPage = () => {
       s = pptx.addSlide({ masterName: "TGA_CONTENT" });
       page++;
-      header(s, ctx, page === 1 ? "My worksheet" : "My worksheet (continued)", `${ctx.subjectLabel} · Lesson ${lesson.n}`, null);
-      s.addText("Write your answers here, on paper or on a drawing tablet.", { x: 0.8, y: 1.88, w: 11.8, h: 0.22, fontFace: FONT, fontSize: 11, italic: true, color: MUTED, margin: 0 });
+      // A compact heading (not the slide header) so the page is mostly space to write.
+      s.addShape("rect", { x: 0, y: 0, w: 0.28, h: 7.05, fill: { color: ctx.accent }, line: { color: ctx.accent, width: 0 } });
+      s.addText(page === 1 ? "My worksheet" : "My worksheet (continued)", { x: 0.8, y: 0.3, w: 6.5, h: 0.55, fontFace: ctx.band === "early" ? FONT : ctx.theme.head, fontSize: 26, bold: true, color: INK, valign: "middle", margin: 0 });
+      s.addText("Write your answers here, on paper or on a drawing tablet.", { x: 7.3, y: 0.3, w: 5.3, h: 0.55, fontFace: FONT, fontSize: 12, italic: true, color: MUTED, align: "right", valign: "middle", margin: 0 });
+      s.addShape("line", { x: 0.8, y: 0.98, w: 1.2, h: 0, line: { color: GOLD, width: 3 } });
       y = top;
     };
     let n = 0;

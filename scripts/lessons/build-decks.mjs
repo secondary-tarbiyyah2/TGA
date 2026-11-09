@@ -939,7 +939,7 @@ function buildDeck(file, lesson, nextLesson, nav = null, opts = {}) {
       const pw = pic ? Math.min(w * 0.42, (h - 0.2) * 1.5) : 0;
       if (pic) v3.keywordCardPicture(s, pic, x + w - pw - 0.12, y + 0.1, pw, h - 0.2);
       w -= pw ? pw + 0.15 : 0;
-      s.addText(clean(k.term), { x: x + 0.35, y: y + 0.12, w: w - 0.6, h: termH, fontFace: FONT, fontSize: fitSize(k.term, w - 0.6, termH, band === "early" ? 44 : 28, 16), bold: true, color: band === "early" ? INK : ctx.accent, valign: "middle" });
+      s.addText(clean(k.term), { x: x + 0.35, y: y + 0.12, w: w - 0.6, h: termH, fontFace: FONT, fontSize: fitSize(k.term, w - 0.6, termH, band === "early" ? 44 : 28, 11), bold: true, color: band === "early" ? INK : ctx.accent, valign: "middle" });
       s.addText(clean(k.def), { x: x + 0.35, y: y + 0.12 + termH, w: w - 0.6, h: h - termH - 0.25, fontFace: FONT, fontSize: fitSize(k.def, w - 0.6, h - termH - 0.25, band === "early" ? 24 : 20, 12), color: band === "early" ? MUTED : INK, valign: "top" });
     });
     s.addNotes(band === "early" ? "Say each word slowly, clap the syllables, and have the children say it back three times." : band === "junior" ? "Read each word aloud. Ask pupils to use one of them in a sentence during the lesson." : "Pupils should use this vocabulary precisely in written answers. Check pronunciation and spelling.");
