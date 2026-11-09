@@ -5,6 +5,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { btn, ui } from "@/components/learn/ui";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 type RuleRow = {
   id: number;
   category: string;
@@ -67,7 +68,7 @@ function RuleCard({ rule, due, onChanged }: { rule: RuleRow; due: PreviewRow[]; 
   async function run() {
     if (!supabase) return;
     const verb = rule.action === "delete" ? "permanently delete" : "anonymise";
-    if (!confirm(`This will ${verb} ${runnable.length} record(s) under "${rule.label}". It cannot be undone. Continue?`)) return;
+    if (!(await askConfirm(`This will ${verb} ${runnable.length} record(s) under "${rule.label}". It cannot be undone. Continue?`))) return;
     setBusy(true);
     setMessage(null);
     const { data, error } = await supabase.rpc("retention_run", { p_category: rule.category, p_expected: runnable.length });

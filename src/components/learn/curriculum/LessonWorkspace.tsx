@@ -16,6 +16,7 @@ import { FeedbackDialog } from "@/components/learn/curriculum/LessonFeedback";
 import { HistoryDialog, ReplaceDialog, ShareDialog } from "@/components/learn/curriculum/CurriculumLibrary";
 import { ReviewPanel } from "@/components/learn/curriculum/ReviewPanel";
 import { rememberLesson } from "@/components/learn/curriculum/RecentLessons";
+import { useLessonPins } from "@/lib/learn/pins";
 
 type Sibling = Pick<CurriculumLesson, "id" | "lesson_no" | "title">;
 type Full = CurriculumLesson & { content?: LessonContent | null; content_updated_at?: string | null; content_updated_by_name?: string | null; pupil_pdf_path?: string | null };
@@ -94,6 +95,7 @@ export function LessonWorkspace({ id, area }: { id: string; area: "teach" | "adm
   const [viewer, setViewer] = useState<{ title: string; url: string | null } | null>(null);
   const [dialog, setDialog] = useState<"studio" | "form" | "share" | "feedback" | "history" | "replace" | null>(null);
   const [busy, setBusy] = useState<string | null>(null);
+  const { pinned, toggle: togglePin } = useLessonPins();
 
   const load = useCallback(async () => {
     if (!supabase) return;
@@ -173,6 +175,7 @@ export function LessonWorkspace({ id, area }: { id: string; area: "teach" | "adm
   const menu: MenuAction[] = [
     ...((files.length ? [{ section: "Download", label: "" }, ...files.map((k) => ({ label: busy === k ? "Downloading…" : FILE_LABEL[k], icon: "download", onSelect: () => download(k) }))] : []) as MenuAction[]),
     { section: "Lesson", label: "" },
+    { label: pinned.has(lesson.id) ? "Unpin from my dashboard" : "Pin to my dashboard", icon: "star", onSelect: () => void togglePin(lesson.id) },
     { label: "Share to a class", icon: "send", onSelect: () => setDialog("share"), disabled: !lesson.deck_path },
     { label: "Give feedback", icon: "messageSquarePlus", onSelect: () => setDialog("feedback") },
     { label: "Version history", icon: "refresh", onSelect: () => setDialog("history") },
@@ -188,7 +191,12 @@ export function LessonWorkspace({ id, area }: { id: string; area: "teach" | "adm
           { label: `Lesson ${String(lesson.lesson_no).padStart(2, "0")}` },
         ]}
         title={lesson.title}
-        status={<WorkflowBadge status={review?.status} />}
+        status={
+          <>
+            <WorkflowBadge status={review?.status} />
+            {pinned.has(lesson.id) && <span className="text-xs font-medium text-gold-700">Pinned</span>}
+          </>
+        }
         meta={
           <>
             {yearLabel(lesson.year)} · {lesson.subject}

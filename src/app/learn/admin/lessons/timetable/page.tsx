@@ -17,6 +17,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import type { TimetableSlot } from "@/lib/learn/timetable";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 type View = "all" | "class" | "teacher" | "session";
 const VIEWS: { id: View; label: string }[] = [
   { id: "all", label: "Everyone" },
@@ -152,7 +153,7 @@ function TimetableContent() {
     if (blocker) return setMessage(blocker);
     const live = runs.find((r) => r.status === "published" && r.academic_year_id === run.academic_year_id);
     const warn = warningCount > 0 ? ` It still has ${warningCount} warning${warningCount === 1 ? "" : "s"}.` : "";
-    if (!window.confirm(`Publish "${run.label}"?${live ? ` It replaces "${live.label}" as the live timetable` : " It becomes the live timetable"} for every teacher, pupil and family.${warn}`)) return;
+    if (!(await askConfirm(`Publish "${run.label}"?${live ? ` It replaces "${live.label}" as the live timetable` : " It becomes the live timetable"} for every teacher, pupil and family.${warn}`))) return;
     const result = await callFunction("timetable-publish", { action: "publish", run_id: runId });
     setMessage(result.ok ? "Published." : `Could not publish: ${edgeErrorMessage(result)}`);
     if (result.ok) await reload();

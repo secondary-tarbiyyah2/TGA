@@ -10,6 +10,7 @@ import { fetchAllClasses, type ClassSummary } from "@/lib/learn/classes";
 import { btn, ui } from "@/components/learn/ui";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 // Headteacher/Admin tools for houses (0073): define houses (name, colour),
 // assign children, and award bonus points. Merits add house points
 // automatically, so nothing here has to be re-entered when merits are logged.
@@ -155,8 +156,8 @@ export function HousesAdmin() {
       return error ? (error.code === "23505" ? "A house with that name already exists." : "Couldn't save that house.") : null;
     }, "House saved.");
 
-  const deleteHouse = (h: House) => {
-    if (!window.confirm(`Delete ${h.name}? Its children become unassigned and its bonus points are removed.`)) return;
+  const deleteHouse = async (h: House) => {
+    if (!(await askConfirm(`Delete ${h.name}? Its children become unassigned and its bonus points are removed.`))) return;
     return run(async () => {
       const supabase = getSupabaseClient();
       if (!supabase) return "Not connected.";
@@ -180,12 +181,12 @@ export function HousesAdmin() {
     }, childIds.length === 1 ? "House updated." : `${childIds.length} children moved.`);
 
   // Siblings go to the same house; each family joins the smallest active house.
-  const autoAssign = () => {
+  const autoAssign = async () => {
     const active = (houses || []).filter((h) => h.active);
     if (active.length === 0) return setMsg({ tone: "error", text: "Add at least one active house first." });
     const unassigned = children.filter((c) => !members.has(c.id));
     if (unassigned.length === 0) return setMsg({ tone: "ok", text: "Every child already has a house." });
-    if (!window.confirm(`Assign ${unassigned.length} children evenly across ${active.length} houses (siblings together)?`)) return;
+    if (!(await askConfirm(`Assign ${unassigned.length} children evenly across ${active.length} houses (siblings together)?`))) return;
     return run(async () => {
       const supabase = getSupabaseClient();
       if (!supabase) return "Not connected.";
@@ -242,8 +243,8 @@ export function HousesAdmin() {
       return null;
     }, awardTarget === "house" ? "Bonus points awarded." : "Bonus points awarded to the class's houses.");
 
-  const voidAward = (a: Award) => {
-    if (!window.confirm("Void this award? It stops counting.")) return;
+  const voidAward = async (a: Award) => {
+    if (!(await askConfirm("Void this award? It stops counting."))) return;
     return run(async () => {
       const supabase = getSupabaseClient();
       if (!supabase) return "Not connected.";

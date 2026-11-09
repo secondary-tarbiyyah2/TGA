@@ -258,10 +258,45 @@ export function ConfirmDialog({ title, description, confirmLabel = "Confirm", ca
 
 const ConfirmContext = createContext<((o: ConfirmOptions) => Promise<boolean>) | null>(null);
 
+// The mounted provider's ask(), for askConfirm() in plain event handlers.
+let activeAsk: ((o: ConfirmOptions) => Promise<boolean>) | null = null;
+
+const DANGER_VERBS = /^(delete|remove|void|cancel|reject|recall|withdraw|close|stop|reset|take|clock|mark .* as (left|unsuccessful|withdrawn))\b/i;
+
+/**
+ * `if (!(await askConfirm("Delete this item? Pupils will no longer see it."))) return;`
+ * The portal's own dialog in place of window.confirm (docs/portal-redesign.md):
+ * the first sentence (up to the first "?") is the title, the rest the
+ * explanation; "Delete…", "Remove…", "Void…" and the like get a red button
+ * named after the verb. Outside the portal shell it falls back to the browser.
+ */
+export function askConfirm(message: string, opts: Partial<ConfirmOptions> = {}): Promise<boolean> {
+  const cut = message.indexOf("?");
+  const title = cut > 0 && cut < message.length - 1 ? message.slice(0, cut + 1) : message;
+  const rest = cut > 0 && cut < message.length - 1 ? message.slice(cut + 1).trim() : "";
+  const verb = /^(\w+)/.exec(title)?.[1] || "";
+  const danger = DANGER_VERBS.test(title);
+  const o: ConfirmOptions = {
+    title,
+    description: rest || undefined,
+    danger,
+    confirmLabel: verb && verb.length <= 12 && /^[A-Z]/.test(verb) ? verb : "Confirm",
+    ...opts,
+  };
+  if (activeAsk) return activeAsk(o);
+  return Promise.resolve(typeof window !== "undefined" && window.confirm(message));
+}
+
 /** Mounted once by the portal shell; pages call useConfirm(). */
 export function ConfirmProvider({ children }: { children: ReactNode }) {
   const [pending, setPending] = useState<(ConfirmOptions & { resolve: (ok: boolean) => void }) | null>(null);
   const ask = useCallback((o: ConfirmOptions) => new Promise<boolean>((resolve) => setPending({ ...o, resolve })), []);
+  useEffect(() => {
+    activeAsk = ask;
+    return () => {
+      if (activeAsk === ask) activeAsk = null;
+    };
+  }, [ask]);
   const done = (ok: boolean) => {
     pending?.resolve(ok);
     setPending(null);

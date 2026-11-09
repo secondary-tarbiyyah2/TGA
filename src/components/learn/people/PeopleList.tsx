@@ -9,6 +9,7 @@ import { CHIP_STYLES, GOLD_BUTTON, INPUT_CLASS, friendlyError, initials, invite,
 import { Tabs } from "@/components/learn/Tabs";
 import { btn as btnClass, ui } from "@/components/learn/ui";
 
+import { askConfirm } from "@/components/learn/kit";
 type Tab = "staff" | "families";
 type Chip = { id: string; label: string; roles: LearnRole[] };
 
@@ -82,7 +83,7 @@ function PersonRow({ person, onAddChild, onChanged }: { person: Person; onAddChi
   // Username login: no email needed. The password is shown once here and emailed to the parent.
   const issueUsernameLogin = async (action: "create" | "reset") => {
     if (!person.childId) return;
-    if (action === "reset" && !window.confirm(`Generate a new temporary password for ${person.name}? The old one stops working.`)) return;
+    if (action === "reset" && !(await askConfirm(`Generate a new temporary password for ${person.name}? The old one stops working.`))) return;
     setBusy(true);
     setMsg(null);
     try {

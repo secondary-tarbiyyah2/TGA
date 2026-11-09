@@ -2,102 +2,230 @@
   "subject": "Islamic Studies",
   "year": "y4",
   "board": "TGA Islamic Studies scheme (aqeedah, fiqh, seerah, hadith, akhlaq)",
-  "source": "Adapted from TGA Drive RE/Islamic Studies folder (Al-Baseerah Salah quiz KS2: salah, nafs, sincerity; Edexcel International GCSE Islamic Studies SOW, Theme 1 (life of the Prophet ﷺ) to shape the seerah sequence); National Curriculum RE (KS2)",
+  "source": "Adapted from TGA Drive RE/Islamic Studies folder (Al-Baseerah Salah quiz KS2: salah, nafs, sincerity; Edexcel International GCSE Islamic Studies SOW, Theme 1 (life of the Prophet ﷺ) to shape the seerah sequence); National Curriculum RE (KS2) | Spring 1 2027 (lessons 1, 4, 5, 6 upgraded, 13 new): Year 4 pack Islamic Studies Spring 1 (weeks 1 and 2 Autumn bridge: Islam, Iman, Ihsan and the six articles; weeks 3 to 5 the Makkan years condensed); hadith of Jibril (Muslim 8), the first revelation (Bukhari 3) and Mount Safa (Bukhari, Book of Tafsir) described; reliable children's seerah TO CONFIRM",
   "lessons": [
     {
-      "unit": "Unit 1: Aqeedah: Islam, Iman and Ihsan",
+      "unit": "Spring 1: The Makkan years (1)",
       "n": 1,
-      "title": "The hadith of Jibril: Islam, Iman, Ihsan",
-      "duration": 45,
+      "title": "Bridge: Islam, Iman and Ihsan (the hadith of Jibril)",
+      "bigQuestion": "Would you do your homework differently if you knew someone important was watching? Why?",
       "objectives": [
-        "Retell the hadith of Jibril",
-        "Define Islam, Iman and Ihsan",
-        "Link each level to examples"
+        "To understand the three levels of the religion taught in the hadith of Jibril: Islam, Iman and Ihsan"
       ],
+      "successCriteria": [
+        "All: retell the hadith of Jibril in four steps",
+        "Most: define Islam, Iman and Ihsan",
+        "Some: give an everyday example of ihsan"
+      ],
+      "smsc": "Spiritual: excellence and sincerity in worship",
       "keywords": [
         {
-          "term": "Islam",
-          "def": "submission through the five pillars"
+          "term": "Islam (إِسْلَام)",
+          "def": "submitting to Allah through the five pillars"
         },
         {
-          "term": "Iman",
-          "def": "belief in the six pillars"
+          "term": "Iman (إِيمَان)",
+          "def": "belief in the heart in the six articles"
         },
         {
-          "term": "Ihsan",
-          "def": "to worship Allah as if you see Him; if not, He sees you"
+          "term": "Ihsan (إِحْسَان)",
+          "def": "worshipping Allah as though you see Him"
+        },
+        {
+          "term": "Jibril (جِبْرِيل)",
+          "def": "the angel who brings Allah's revelation"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Would you do your homework differently if you knew someone important was watching? Why?",
+        "a": "Yes. Ihsan is remembering Allah always sees us, so we always do our best."
+      },
+      "islamicLink": {
+        "text": "The hadith of Jibril (Muslim 8): the Prophet ﷺ explained Islam, Iman and Ihsan, then said Jibril had come to teach the people their religion.",
+        "at": "start"
+      },
       "starter": [
-        "Name the five pillars of Islam.",
-        "Name the six pillars of iman.",
-        "What does Shahadah mean?",
-        "What does sincerity mean?"
+        {
+          "q": "How many pillars of Islam are there?",
+          "a": "Five",
+          "mins": 1,
+          "options": [
+            "Five",
+            "Six",
+            "Four"
+          ]
+        },
+        {
+          "q": "How many articles of iman are there?",
+          "a": "Six",
+          "mins": 1,
+          "options": [
+            "Six",
+            "Five",
+            "Seven"
+          ]
+        },
+        {
+          "q": "Name the pillar that is fasting.",
+          "a": "Sawm",
+          "mins": 1
+        },
+        {
+          "q": "Which city was the Prophet ﷺ born in?",
+          "a": "Makkah",
+          "mins": 1,
+          "options": [
+            "Makkah",
+            "Madinah"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "The visitor",
+          "heading": "A visitor in white",
           "bullets": [
-            "A man with very white clothes came",
-            "No traces of travel and nobody knew him",
-            "He sat before the Prophet ﷺ"
+            "A man with very white clothes",
+            "Very black hair, no sign of travel",
+            "He sat knee to knee with the Prophet ﷺ"
           ],
-          "note": "Bismillah. Tell the opening of the hadith (Muslim, Umar ibn al-Khattab). Ask: why did the Companions feel surprised? Build curiosity. Say 'radiyAllahu anhu'."
+          "note": "Retell the hadith of Jibril from Umar (Muslim 8) in your own words. Nobody knew the visitor. No picture of the angel is ever shown."
         },
         {
-          "heading": "Islam",
-          "bullets": [
-            "Testify that none is worthy of worship but Allah",
-            "Establish salah",
-            "Give zakah, fast Ramadan, perform Hajj if able"
-          ],
-          "note": "Read the Prophet's ﷺ answer. Link to the five pillars. The man said 'you have spoken the truth', which surprised them. Explain this is a deep teaching."
+          "heading": "Three questions",
+          "bullets": [],
+          "note": "Pupils copy the table into their books.",
+          "table": {
+            "head": [
+              "He asked about",
+              "The answer in short"
+            ],
+            "rows": [
+              [
+                "Islam (إِسْلَام)",
+                "The five pillars"
+              ],
+              [
+                "Iman (إِيمَان)",
+                "Belief in Allah, angels, books, messengers, the Last Day, qadar"
+              ],
+              [
+                "Ihsan (إِحْسَان)",
+                "Worship Allah as if you see Him; He sees you"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Iman",
+          "heading": "Who was the visitor?",
           "bullets": [
-            "Believe in Allah, His angels, His books",
-            "His messengers and the Last Day",
-            "And in qadar: its good and its bad"
+            "The Prophet ﷺ said: it was Jibril",
+            "He came to teach you your religion",
+            "Good questions help us learn"
           ],
-          "note": "List the six. Ask: which of these can we see? None directly: it is belief in the unseen. Write on board as a column with Islam. Show Islam as actions and Iman as belief."
-        },
-        {
-          "heading": "Ihsan",
-          "bullets": [
-            "Worship Allah as if you see Him",
-            "If you do not see Him, He sees you",
-            "Excellence in worship"
-          ],
-          "note": "Explain ihsan as doing everything beautifully, aware that Allah sees. Ask children when they would do better work: when a teacher is watching, or always? Link to As-Sami' and Al-Basir."
-        },
-        {
-          "heading": "The Prophet ﷺ explains",
-          "bullets": [
-            "The questioner was Jibril",
-            "He came to teach us our religion",
-            "Islam, Iman, Ihsan make our deen"
-          ],
-          "note": "The Prophet ﷺ said it was Jibril who came to teach you your religion. Summarise the three levels. Check understanding with a quick quiz."
+          "note": "Point out the adab of learning: Jibril sat close, asked clearly, listened. Link to how we behave in class.",
+          "check": {
+            "q": "What is ihsan?",
+            "options": [
+              "Worshipping Allah as if you see Him",
+              "Fasting in Ramadan",
+              "Believing in angels"
+            ],
+            "answer": 0,
+            "why": "Fasting is a pillar of Islam and angels are part of iman. Ihsan is the highest level: excellence."
+          }
         }
       ],
       "practice": [
-        "Name 3 pillars of Islam.",
-        "Name 3 pillars of iman.",
-        "Who is Jibril?",
-        "What is the shahadah?"
+        {
+          "q": "Define Islam, Iman and Ihsan in one line each.",
+          "a": "Islam: the five pillars. Iman: belief in the six articles. Ihsan: worshipping Allah as if you see Him.",
+          "mins": 4,
+          "model": "Islam is what I do: the five pillars. Iman is what I believe: six articles. Ihsan is how well I do it: as if I see Allah."
+        },
+        {
+          "q": "Who was the visitor in the hadith?",
+          "a": "Jibril",
+          "mins": 1,
+          "options": [
+            "Jibril",
+            "Abu Bakr"
+          ]
+        },
+        {
+          "q": "Give one example of ihsan in prayer.",
+          "a": "For example: praying slowly and calmly, not rushing.",
+          "mins": 2
+        }
       ],
       "independent": [
-        "Create a three-column table: Islam / Iman / Ihsan with details",
-        "Write an example of ihsan at school",
-        "Retell the hadith in six sentences"
+        {
+          "q": "Draw three steps labelled Islam, Iman, Ihsan, with one example for each.",
+          "a": "Islam: praying five times. Iman: believing in angels. Ihsan: praying with full focus.",
+          "mins": 7,
+          "model": "Teacher draws the bottom step, labels it Islam, and writes 'I pray Fajr'."
+        },
+        {
+          "q": "Extend: how did Jibril show good manners of learning?",
+          "a": "He sat close, asked clearly and listened.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why is ihsan the highest level?",
+          "a": "It needs Islam and iman, and doing them with the best effort and sincerity.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Name the three levels of the deen.",
-        "Define ihsan."
+        {
+          "q": "Believing in the six articles is called ...",
+          "a": "Iman",
+          "mins": 1,
+          "options": [
+            "Iman",
+            "Islam",
+            "Ihsan"
+          ]
+        },
+        {
+          "q": "Back to our ponder: how does ihsan change the way we work?",
+          "a": "We do our best because Allah always sees us.",
+          "mins": 2
+        }
       ],
-      "homework": "Ask someone at home to retell the hadith to you and compare to your notes.",
-      "send": "SEND/EAL: three-column table with pictures. Stretch: explain how Ihsan improves ordinary tasks."
+      "homework": "Do one task at home with ihsan (your very best, even if no one checks) and write what you did.",
+      "send": "SEND: three-step picture card. EAL: word bank with meanings. Stretch: write how ihsan applies to being kind to others.",
+      "resources": [
+        "Slides",
+        "Reliable children's seerah book (TO CONFIRM title with the Islamic Studies lead)",
+        "Display: Islam, Iman, Ihsan steps",
+        "Pupil PDF worksheet: three steps of the religion",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "stone staircase steps",
+          "alt": "Steps going up, like the levels of the religion",
+          "for": "teach:2"
+        },
+        {
+          "find": "Masjid an-Nabawi courtyard",
+          "alt": "The Prophet's masjid, where the hadith happened",
+          "for": "hook"
+        },
+        {
+          "find": "white cloth fabric",
+          "alt": "White cloth like the visitor's clothes",
+          "for": "teach:1"
+        }
+      ]
     },
     {
       "unit": "Unit 1: Aqeedah: Islam, Iman and Ihsan",
@@ -290,289 +418,676 @@
       "send": "SEND/EAL: prophet cards with pictures of symbols (no faces). Stretch: explain the importance of following the Sunnah."
     },
     {
-      "unit": "Unit 2: Seerah: the Prophet's ﷺ life in Makkah",
+      "unit": "Spring 1: The Makkan years (1)",
       "n": 4,
-      "title": "Before prophethood: the youth of Muhammad ﷺ",
-      "duration": 45,
+      "title": "Arabia before Islam, the birth and childhood of the Prophet ﷺ",
+      "bigQuestion": "What do you think it would be like to grow up without your parents? Who would you need?",
       "objectives": [
-        "Describe his childhood and youth",
-        "Explain how he earned the title Al-Amin",
-        "Describe his marriage to Khadijah"
+        "To understand what Makkah was like before Islam and how Allah cared for the Prophet ﷺ as an orphan"
       ],
+      "successCriteria": [
+        "All: describe Makkah before Islam in three facts",
+        "Most: order four events of his early childhood",
+        "Some: explain how Allah cared for him"
+      ],
+      "smsc": "Moral: caring for orphans",
       "keywords": [
         {
-          "term": "orphan",
-          "def": "child who lost parents"
+          "term": "Makkah (مَكَّة)",
+          "def": "the city of the Ka'bah where the Prophet ﷺ was born"
         },
         {
-          "term": "trustworthy",
-          "def": "can be trusted"
+          "term": "Quraysh (قُرَيْش)",
+          "def": "the tribe that led Makkah"
         },
         {
-          "term": "trade",
-          "def": "buying and selling"
+          "term": "orphan (يَتِيم)",
+          "def": "a child whose parent has died"
+        },
+        {
+          "term": "Year of the Elephant (عَامُ الفِيل)",
+          "def": "the year an army with elephants tried to destroy the Ka'bah"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "What do you think it would be like to grow up without your parents? Who would you need?",
+        "a": "Loving family and Allah's care. The Prophet ﷺ had both."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Did He not find you an orphan and give you refuge?' (ad-Duha 93:6).",
+        "at": "start"
+      },
       "starter": [
-        "Where was he born?",
-        "Who were his parents?",
-        "What does Al-Amin mean?",
-        "Who cared for him after his grandfather?"
+        {
+          "q": "How many articles of iman are there?",
+          "a": "Six",
+          "mins": 1,
+          "options": [
+            "Six",
+            "Five",
+            "Eight"
+          ]
+        },
+        {
+          "q": "Who was the visitor in the hadith of Jibril?",
+          "a": "Jibril",
+          "mins": 1,
+          "options": [
+            "Jibril",
+            "Umar"
+          ]
+        },
+        {
+          "q": "What is ihsan?",
+          "a": "Worshipping Allah as if you see Him",
+          "mins": 1
+        },
+        {
+          "q": "Which book came to Musa?",
+          "a": "The Tawrah",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Childhood",
+          "heading": "Makkah before Islam",
           "bullets": [
-            "Born in Makkah",
-            "Fed by Halimah in the desert",
-            "His mother died when he was young"
+            "The Ka'bah was full of idols",
+            "Traders crossed the desert",
+            "Some girls were wronged; the weak were not protected"
           ],
-          "note": "Bismillah. Recap Year 1. His grandfather Abdul-Muttalib cared for him; after his death his uncle Abu Talib did. Be gentle with children who have lost relatives."
+          "note": "Describe it simply: the house Ibrahim built for Allah alone was filled with idols. Allah mentions the Quraysh trade journeys in winter and summer (Quraysh 106:1-2)."
         },
         {
-          "heading": "Work and character",
+          "heading": "The Year of the Elephant",
           "bullets": [
-            "Shepherd as a boy",
-            "Trader as a youth",
-            "Honest and trusted"
+            "An army with an elephant came",
+            "They wanted to destroy the Ka'bah",
+            "Allah sent birds with stones"
           ],
-          "note": "The Prophet ﷺ said every prophet shepherded sheep (Bukhari). Link to patience and care. In trade he was known for honesty; Makkah called him al-Amin."
+          "note": "Surah al-Fil (105) tells the story. The Prophet ﷺ was born in this same year, in Makkah. No pictures of the Prophet ﷺ."
         },
         {
-          "heading": "Rebuilding the Kaaba",
-          "bullets": [
-            "The Quraysh rebuilt the Kaaba",
-            "They argued about who would place the Black Stone",
-            "He solved it with a cloak"
-          ],
-          "note": "Reported in the seerah (Ahmad, Ibn Ishaq). The leaders agreed to accept his judgement. He placed the stone on a cloak and the leaders lifted it together. Present as reported, not Qur'an or hadith. Ask: what does it show? Fairness and wisdom."
+          "heading": "A childhood in Allah's care",
+          "bullets": [],
+          "note": "Build the timeline strip with the class.",
+          "timeline": [
+            {
+              "label": "Before birth",
+              "text": "His father Abdullah died"
+            },
+            {
+              "label": "Baby",
+              "text": "Cared for by Halimah in the desert"
+            },
+            {
+              "label": "Age 6",
+              "text": "His mother Aminah died"
+            },
+            {
+              "label": "Age 8",
+              "text": "Grandfather Abd al-Muttalib died; uncle Abu Talib cared for him"
+            }
+          ]
         },
         {
-          "heading": "Marriage to Khadijah",
+          "heading": "Quick check",
           "bullets": [
-            "Khadijah was a respected businesswoman",
-            "He traded for her",
-            "They married and had a happy home"
+            "Think, then vote"
           ],
-          "note": "She noticed his honesty and proposed through a friend. Keep it respectful. They remained devoted. He was about 25 years old (reported). Do not give disputed details."
-        },
-        {
-          "heading": "His worship",
-          "bullets": [
-            "He disliked idols",
-            "He went to Cave Hira to think",
-            "He was waiting for guidance"
-          ],
-          "note": "Link to Cave Hira. He never worshipped idols or took part in their ceremonies. Ask: how did Allah prepare him? Character first."
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Who looked after him from the age of eight?",
+            "options": [
+              "His uncle Abu Talib",
+              "His mother Aminah",
+              "Halimah"
+            ],
+            "answer": 0,
+            "why": "His mother died when he was six; Halimah cared for him as a baby; Abu Talib from age eight."
+          }
         }
       ],
       "practice": [
-        "Where is Cave Hira?",
-        "What did Jibril say first?",
-        "Who was Khadijah?",
-        "What is a trustworthy person?"
+        {
+          "q": "Order: Abu Talib, Halimah, Abd al-Muttalib, Aminah dies.",
+          "a": "Halimah, Aminah dies, Abd al-Muttalib, Abu Talib",
+          "mins": 3,
+          "model": "As a baby: Halimah. At six: his mother Aminah died. Then grandfather Abd al-Muttalib. At eight: Abu Talib."
+        },
+        {
+          "q": "Which surah tells the story of the elephant?",
+          "a": "Surah al-Fil",
+          "mins": 1,
+          "options": [
+            "Surah al-Fil",
+            "Surah an-Nas"
+          ]
+        },
+        {
+          "q": "Give one fact about Makkah before Islam.",
+          "a": "For example: the Ka'bah was full of idols.",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Create a timeline of his early life with 6 events",
-        "Write a paragraph: how did the youth of Muhammad ﷺ prepare him?",
-        "Retell the Black Stone story in your own words"
+        {
+          "q": "Add four events to your seerah timeline strip, each with a short caption.",
+          "a": "Birth in the Year of the Elephant; Halimah; mother dies at 6; Abu Talib from 8.",
+          "mins": 6,
+          "model": "Teacher writes the first box: 'Year of the Elephant: born in Makkah.'"
+        },
+        {
+          "q": "Extend: how did Allah care for the young orphan?",
+          "a": "He gave him loving carers: Halimah, his grandfather and his uncle.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Allah asks, 'Did He not find you an orphan and give you refuge?' (ad-Duha 93:6). What does this teach us about orphans?",
+          "a": "Allah cares for orphans, so we must care for them too.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Why was he called Al-Amin?",
-        "What did he do at the Black Stone?"
+        {
+          "q": "The Prophet ﷺ was born in ...",
+          "a": "Makkah",
+          "mins": 1,
+          "options": [
+            "Makkah",
+            "Madinah",
+            "Ta'if"
+          ]
+        },
+        {
+          "q": "Back to our ponder: who did he need, and who did Allah give him?",
+          "a": "Loving carers: Halimah, his grandfather and his uncle Abu Talib.",
+          "mins": 2
+        }
       ],
-      "homework": "Write three things you can copy from his youth.",
-      "send": "SEND/EAL: timeline cards with key words. Stretch: explain why character matters before a role."
+      "homework": "Tell your family the story of the Year of the Elephant from Surah al-Fil in your own words.",
+      "send": "SEND: picture cards for the four carers. EAL: timeline word bank. Stretch: explain why the Ka'bah mattered to Quraysh.",
+      "resources": [
+        "Slides",
+        "Reliable children's seerah book (TO CONFIRM title with the Islamic Studies lead)",
+        "Seerah timeline strip (printable, built up across the unit)",
+        "Pupil PDF worksheet: early-life timeline",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Arabian desert dunes",
+          "alt": "The desert of Arabia",
+          "for": "teach:1"
+        },
+        {
+          "find": "camel caravan desert",
+          "alt": "Camels crossing the desert, like trade caravans",
+          "for": "hook"
+        },
+        {
+          "find": "Kaaba Masjid al-Haram aerial",
+          "alt": "The Ka'bah in Makkah today",
+          "for": "keywords"
+        }
+      ]
     },
     {
-      "unit": "Unit 2: Seerah: the Prophet's ﷺ life in Makkah",
+      "unit": "Spring 1: The Makkan years (1)",
       "n": 5,
-      "title": "The first revelation and the early call",
-      "duration": 45,
+      "title": "The honest trader, Khadijah and the Cave of Hira",
+      "bigQuestion": "What makes you trust someone? Can trust be bought?",
       "objectives": [
-        "Retell the first revelation from authentic accounts",
-        "Explain Khadijah's response",
-        "Describe the first years of the call"
+        "To understand how the Prophet's ﷺ honesty earned trust and how the first revelation came in the Cave of Hira"
       ],
+      "successCriteria": [
+        "All: explain why he was called al-Amin",
+        "Most: describe his work for Khadijah",
+        "Some: retell the first revelation and the first words revealed"
+      ],
+      "smsc": "Moral: honesty in work and trade",
       "keywords": [
         {
-          "term": "revelation",
-          "def": "message from Allah"
+          "term": "al-Amin (الأَمِين)",
+          "def": "the trustworthy one"
         },
         {
-          "term": "Iqra",
-          "def": "read or recite"
+          "term": "Khadijah (خَدِيجَة)",
+          "def": "a respected businesswoman who became his wife"
         },
         {
-          "term": "secret call",
-          "def": "inviting people privately"
+          "term": "Hira (حِرَاء)",
+          "def": "a cave on a mountain near Makkah"
+        },
+        {
+          "term": "wahy (الوَحْي)",
+          "def": "revelation: Allah's message to a prophet"
+        },
+        {
+          "term": "Iqra (اِقْرَأْ)",
+          "def": "Read! The first word revealed"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "What makes you trust someone? Can trust be bought?",
+        "a": "Honesty over a long time. It cannot be bought: it is earned."
+      },
+      "islamicLink": {
+        "text": "Allah describes the Prophet ﷺ: 'And indeed, you are of a great moral character' (al-Qalam 68:4).",
+        "at": "start"
+      },
       "starter": [
-        "Who is Jibril?",
-        "How old was the Prophet ﷺ?",
-        "Where is Cave Hira?",
-        "What did he do there?"
+        {
+          "q": "Who cared for the Prophet ﷺ from age eight?",
+          "a": "Abu Talib",
+          "mins": 1,
+          "options": [
+            "Abu Talib",
+            "Halimah"
+          ]
+        },
+        {
+          "q": "Which surah tells of the elephant army?",
+          "a": "Al-Fil",
+          "mins": 1,
+          "options": [
+            "Al-Fil",
+            "Al-Ikhlas"
+          ]
+        },
+        {
+          "q": "In which city was he born?",
+          "a": "Makkah",
+          "mins": 1
+        },
+        {
+          "q": "What does orphan mean?",
+          "a": "A child whose parent has died",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "In the cave",
+          "heading": "Al-Amin",
           "bullets": [
-            "Jibril came and said: Read",
-            "He said: I cannot read",
-            "Jibril pressed him three times"
+            "He never lied or cheated",
+            "People left valuables with him",
+            "Even his enemies trusted him"
           ],
-          "note": "Bismillah. Bukhari and Muslim (Aisha). Tell it carefully: he returned to Khadijah trembling and said cover me. Then Jibril returned with 96:1-5."
+          "note": "Explain that Quraysh called him al-Amin long before prophethood. He also shepherded sheep as a young man (Bukhari)."
         },
         {
-          "heading": "Surah al-Alaq",
+          "heading": "Trading for Khadijah",
           "bullets": [
-            "Read in the name of your Lord who created",
-            "Created man from a clinging substance",
-            "Your Lord is the Most Generous"
+            "Khadijah hired him to trade",
+            "He was honest and made good profit",
+            "She admired his character; they married"
           ],
-          "note": "Qur'an 96:1-5. Present the meaning. Stress the value of reading and learning in Islam. Ask: what does it tell us about school?"
+          "note": "Commonly reported in the seerah: he led her caravan to Syria and was honest in every deal. Their marriage was full of love and respect."
         },
         {
-          "heading": "Khadijah's words",
+          "heading": "The Cave of Hira",
           "bullets": [
-            "She comforted him",
-            "She said Allah will never disgrace you",
-            "You keep family ties and help the needy"
+            "He went to Hira to think and worship",
+            "At forty, Jibril came",
+            "'Read in the name of your Lord'"
           ],
-          "note": "Khadijah said, by Allah, He will never disgrace you; you keep ties of kinship, bear the burdens of the weak, give to the poor, honour guests and help in hardship (Bukhari). Ask: why is her support important?"
+          "note": "Retell from Bukhari 3 simply: Jibril said Iqra; the Prophet ﷺ said he could not read; then the first ayat (al-Alaq 96:1-5) were revealed. He returned home shaking.",
+          "quote": {
+            "text": "Read in the name of your Lord who created. Created man from a clinging substance. Read, and your Lord is the most Generous, who taught by the pen, taught man that which he knew not.",
+            "source": "al-Alaq 96:1-5"
+          }
         },
         {
-          "heading": "The first Muslims",
+          "heading": "Khadijah comforts him",
           "bullets": [
-            "Khadijah, Abu Bakr, Ali, Zayd",
-            "Three years of private call",
-            "Then the public call"
+            "She covered him and calmed him",
+            "She said Allah would never disgrace him",
+            "Because he was kind and helped others"
           ],
-          "note": "Qur'an 15:94: proclaim what you are commanded. Keep the order simple: private first, then public from Mount Safa (Bukhari and Muslim). Link to Hijrah."
-        },
-        {
-          "heading": "Lessons",
-          "bullets": [
-            "Learn",
-            "Support others",
-            "Trust Allah"
-          ],
-          "note": "Pairs write one lesson each, then share."
+          "note": "Bukhari 3 reports she listed his good deeds: keeping ties with family, helping the weak, honouring guests.",
+          "check": {
+            "q": "What was the first word revealed?",
+            "options": [
+              "Iqra (Read)",
+              "Salam (Peace)",
+              "Sabr (Patience)"
+            ],
+            "answer": 0,
+            "why": "Jibril said 'Iqra' in the Cave of Hira (al-Alaq 96:1)."
+          }
         }
       ],
       "practice": [
-        "Name the first word of revelation.",
-        "Who was the first to believe?",
-        "What did Jibril do?",
-        "Where was the cave?"
+        {
+          "q": "Why was he called al-Amin?",
+          "a": "Because he was always honest and trustworthy",
+          "mins": 2,
+          "model": "People left their valuables with him. He never lied or cheated. So they named him al-Amin: the trustworthy."
+        },
+        {
+          "q": "Where did the first revelation come?",
+          "a": "The Cave of Hira",
+          "mins": 1,
+          "options": [
+            "The Cave of Hira",
+            "The Ka'bah"
+          ]
+        },
+        {
+          "q": "How old was he at the first revelation?",
+          "a": "Forty",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Write the story in 8 sentences using authentic details",
-        "List Khadijah's qualities from her words",
-        "Make a poster for Surah al-Alaq with meaning"
+        {
+          "q": "Add the trader years, marriage and Hira to your timeline strip with captions.",
+          "a": "Trader for Khadijah; married Khadijah; age 40: first revelation in Hira.",
+          "mins": 5,
+          "model": "Teacher writes: 'Age 25: married Khadijah (commonly reported).'"
+        },
+        {
+          "q": "Extend: list two good deeds Khadijah reminded him of.",
+          "a": "He kept ties with family and helped the weak.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: why did his honesty help people believe him later?",
+          "a": "They knew he had never lied, so they had reason to trust his message.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "What was the first command?",
-        "What did Khadijah say?"
+        {
+          "q": "Al-Amin means ...",
+          "a": "The trustworthy one",
+          "mins": 1,
+          "options": [
+            "The trustworthy one",
+            "The trader",
+            "The orphan"
+          ]
+        },
+        {
+          "q": "Back to our ponder: how did the Prophet ﷺ earn trust?",
+          "a": "By always being honest, over many years.",
+          "mins": 2
+        }
       ],
-      "homework": "Learn the meaning of Surah al-Alaq 1-5 and share with family.",
-      "send": "SEND/EAL: story strip; keywords on board. Stretch: compare the roles of Khadijah and Abu Bakr."
+      "homework": "Learn al-Alaq 96:1-5 with its meaning and recite it to your family.",
+      "send": "SEND: picture timeline cards. EAL: key word cards with Arabic. Stretch: explain why the first word was about reading and learning.",
+      "resources": [
+        "Slides",
+        "Reliable children's seerah book (TO CONFIRM title with the Islamic Studies lead)",
+        "Seerah timeline strip (printable, built up across the unit)",
+        "Pupil PDF worksheet: Hira story frame",
+        "Mushaf or printed al-Alaq 96:1-5"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Jabal al-Nour mountain Mecca",
+          "alt": "Jabal an-Nur, the mountain of the Cave of Hira",
+          "for": "teach:3"
+        },
+        {
+          "find": "Cave of Hira entrance",
+          "alt": "The entrance to the Cave of Hira",
+          "for": "keywords"
+        },
+        {
+          "find": "old balance scale market",
+          "alt": "Scales used by traders",
+          "for": "teach:2"
+        }
+      ]
     },
     {
-      "unit": "Unit 2: Seerah: the Prophet's ﷺ life in Makkah",
+      "unit": "Spring 1: The Makkan years (1)",
       "n": 6,
-      "title": "The public call, persecution and Abyssinia",
-      "duration": 45,
+      "title": "The first Muslims and the public call",
+      "bigQuestion": "If everyone laughed at you for telling the truth, would you keep telling it?",
       "objectives": [
-        "Describe the public call at Mount Safa",
-        "Explain the Muslims' suffering and patience",
-        "Explain the migration to Abyssinia"
+        "To understand who the first Muslims were and how the call to Islam became public"
       ],
+      "successCriteria": [
+        "All: name four of the first Muslims",
+        "Most: retell the call from Mount Safa",
+        "Some: explain why patience was needed"
+      ],
+      "smsc": "Moral: courage to tell the truth with patience",
       "keywords": [
         {
-          "term": "Safa",
-          "def": "a hill in Makkah"
+          "term": "da'wah (دَعْوَة)",
+          "def": "inviting people to Islam"
         },
         {
-          "term": "persecution",
-          "def": "unfair treatment because of belief"
+          "term": "Safa (الصَّفَا)",
+          "def": "a small hill in Makkah"
         },
         {
-          "term": "Najashi",
-          "def": "the fair king of Abyssinia"
+          "term": "Quraysh (قُرَيْش)",
+          "def": "the leading tribe of Makkah"
+        },
+        {
+          "term": "patience (صَبْر)",
+          "def": "staying calm and keeping going through hardship"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "If everyone laughed at you for telling the truth, would you keep telling it?",
+        "a": "The first Muslims did, with patience and trust in Allah."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And warn your closest kindred' (ash-Shu'ara 26:214).",
+        "at": "start"
+      },
       "starter": [
-        "What is sabr?",
-        "Who was Bilal?",
-        "Who was the first to believe?",
-        "What is Hijrah?"
+        {
+          "q": "What was the first word revealed?",
+          "a": "Iqra",
+          "mins": 1,
+          "options": [
+            "Iqra",
+            "Salam",
+            "Allahu akbar"
+          ]
+        },
+        {
+          "q": "Where did the first revelation come?",
+          "a": "The Cave of Hira",
+          "mins": 1,
+          "options": [
+            "The Cave of Hira",
+            "Madinah"
+          ]
+        },
+        {
+          "q": "What does al-Amin mean?",
+          "a": "The trustworthy one",
+          "mins": 1
+        },
+        {
+          "q": "Who comforted him after Hira?",
+          "a": "Khadijah",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "At Mount Safa",
-          "bullets": [
-            "He called Quraysh to Safa",
-            "He asked: would you believe me?",
-            "They said yes, you are truthful"
-          ],
-          "note": "Bukhari and Muslim (Ibn Abbas). He asked if they would believe him if he said an army was behind the mountain. They said yes. He told them to worship Allah alone. Abu Lahab's reaction led to Surah al-Masad. Keep it simple."
+          "heading": "The first believers",
+          "bullets": [],
+          "note": "Point out the variety: a woman, a friend, a boy, a freed servant.",
+          "table": {
+            "head": [
+              "First Muslim",
+              "Who they were"
+            ],
+            "rows": [
+              [
+                "Khadijah",
+                "His wife: the first to believe"
+              ],
+              [
+                "Abu Bakr",
+                "His closest friend"
+              ],
+              [
+                "Ali",
+                "His young cousin"
+              ],
+              [
+                "Zayd ibn Harithah",
+                "Freed servant, raised in his home"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Hard times",
+          "heading": "Quiet then public",
           "bullets": [
-            "Some Muslims were harmed",
-            "Bilal, Sumayyah and Yasir",
-            "They stayed firm"
+            "About three years of quiet da'wah",
+            "Then Allah: 'warn your closest kindred'",
+            "He called from Mount Safa"
           ],
-          "note": "Keep it age-appropriate. Say the Quraysh opposed Islam because it challenged their idols and status. Allah reminds: Do people think they will be left alone to say 'we believe' and not be tested? (29:2)."
+          "note": "Allah revealed 'And warn your closest kindred' (ash-Shu'ara 26:214). Bukhari reports the event on Safa."
         },
         {
-          "heading": "To Abyssinia",
+          "heading": "On Mount Safa",
           "bullets": [
-            "Some Muslims migrated to Abyssinia",
-            "The king was fair",
-            "Ja'far spoke for them"
+            "'Would you believe me if ...?'",
+            "'We have never known you to lie'",
+            "He warned them about worshipping idols"
           ],
-          "note": "The Prophet ﷺ said there is a king there with whom none is wronged (reported in the Seerah). Ja'far ibn Abi Talib spoke before the Najashi and recited from Surah Maryam; the king protected them (Ahmad). Present as reported."
+          "note": "Retell: he asked if they would believe him if he warned of an army behind the hill; they said they had never known him lie. Abu Lahab rejected him; Surah al-Masad was revealed.",
+          "check": {
+            "q": "What did the people on Safa say about him?",
+            "options": [
+              "They had never known him to lie",
+              "He was a trader",
+              "He was too young"
+            ],
+            "answer": 0,
+            "why": "They admitted his honesty, even those who then rejected his message."
+          }
         },
         {
-          "heading": "Year of Sorrow",
+          "heading": "Patience",
           "bullets": [
-            "Khadijah and Abu Talib died",
-            "The Prophet ﷺ was sad",
-            "He trusted Allah"
+            "Many in Quraysh mocked the Muslims",
+            "The Muslims stayed patient",
+            "They trusted Allah's help"
           ],
-          "note": "Summary: in the tenth year of prophethood he lost his wife and his uncle who protected him. Link to patience. Leave Ta'if for Year 5."
-        },
-        {
-          "heading": "Class discussion",
-          "bullets": [
-            "What helps you stay firm?",
-            "Who helps you?",
-            "What dua?"
-          ],
-          "note": "Open discussion: be sensitive to children facing difficulties. Link to dua and friendship."
+          "note": "Link to sabr. Keep stories gentle for Year 4; persecution is taught in more detail later."
         }
       ],
       "practice": [
-        "What is sabr?",
-        "Where is Abyssinia?",
-        "Who was Ja'far?",
-        "What is the Hijrah?"
+        {
+          "q": "Name the first woman, man, boy and freed servant to believe.",
+          "a": "Khadijah, Abu Bakr, Ali, Zayd ibn Harithah",
+          "mins": 3,
+          "model": "First woman: Khadijah. First man (friend): Abu Bakr. First boy: Ali. First freed servant: Zayd."
+        },
+        {
+          "q": "Which ayah told him to warn his family?",
+          "a": "26:214",
+          "mins": 1,
+          "options": [
+            "26:214",
+            "112:1"
+          ]
+        },
+        {
+          "q": "Why did people on Safa trust his words?",
+          "a": "They had never known him to lie.",
+          "mins": 2
+        }
       ],
       "independent": [
-        "Write a diary entry of a Muslim in Makkah (respectful)",
-        "Explain why Abyssinia was a safe place",
-        "Create a timeline: Safa / persecution / Abyssinia / Year of Sorrow"
+        {
+          "q": "Write a short news report: 'The call from Mount Safa'. Use who, where, what, how people reacted.",
+          "a": "Who: the Prophet ﷺ; where: Mount Safa; what: he warned them to worship Allah alone; reaction: some agreed he was honest, Abu Lahab rejected.",
+          "mins": 7,
+          "model": "Teacher writes the headline and first line: 'Makkah: Today Muhammad ﷺ climbed Mount Safa and called the tribes.'"
+        },
+        {
+          "q": "Extend: add the public call to your timeline strip.",
+          "a": "About age 43: public call from Mount Safa.",
+          "mins": 1
+        },
+        {
+          "q": "Stretch: why do you think the call began quietly?",
+          "a": "To build a strong group of believers first and protect them.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Why did Muslims go to Abyssinia?",
-        "What happened at Safa?"
+        {
+          "q": "The first person to believe was ...",
+          "a": "Khadijah",
+          "mins": 1,
+          "options": [
+            "Khadijah",
+            "Abu Lahab",
+            "Abu Talib"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what kept the first Muslims going?",
+          "a": "Patience and trust in Allah.",
+          "mins": 2
+        }
       ],
-      "homework": "Research the map from Makkah to Abyssinia and write two facts.",
-      "send": "SEND/EAL: map and cards. Stretch: explain the value of patience in hard times."
+      "homework": "Ask your family to name the first four Muslims, then teach them any they missed.",
+      "send": "SEND: four name cards with pictures of places (no people). EAL: report frame with headings. Stretch: explain the lesson of Surah al-Masad.",
+      "resources": [
+        "Slides",
+        "Reliable children's seerah book (TO CONFIRM title with the Islamic Studies lead)",
+        "Seerah timeline strip (printable, built up across the unit)",
+        "Pupil PDF worksheet: news report frame",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Safa Marwa hill Mecca",
+          "alt": "The hill of Safa in Makkah",
+          "for": "teach:3"
+        },
+        {
+          "find": "Mecca old photograph 19th century",
+          "alt": "Makkah in an old photograph",
+          "for": "hook"
+        },
+        {
+          "find": "scroll parchment",
+          "alt": "A scroll, like a message being delivered",
+          "for": "keywords"
+        }
+      ]
     },
     {
       "unit": "Unit 3: Fiqh: purity, the pillars of salah and congregation",
@@ -1143,6 +1658,237 @@
       ],
       "homework": "Greet a neighbour with salam and do a small kindness (with an adult).",
       "send": "SEND/EAL: scenario cards with images. Stretch: write a short speech on hospitality in Islam."
+    },
+    {
+      "unit": "Spring 1: The Makkan years (1)",
+      "n": 13,
+      "title": "Bridge: Iman and the six articles",
+      "bigQuestion": "Which of these would change how you act tomorrow: believing angels write your deeds, or believing in the Last Day?",
+      "objectives": [
+        "To understand what Muslims believe in each of the six articles of iman"
+      ],
+      "successCriteria": [
+        "All: name the six articles in order",
+        "Most: say one thing we believe about each",
+        "Some: explain how one article changes how we act"
+      ],
+      "smsc": "Spiritual: how belief shapes behaviour",
+      "keywords": [
+        {
+          "term": "angels (مَلَائِكَة)",
+          "def": "beings made from light who obey Allah"
+        },
+        {
+          "term": "books (كُتُب)",
+          "def": "Allah's revealed messages"
+        },
+        {
+          "term": "messengers (رُسُل)",
+          "def": "people chosen by Allah to deliver His message"
+        },
+        {
+          "term": "al-Yawm al-Akhir (اليَوْمُ الآخِر)",
+          "def": "the Last Day"
+        },
+        {
+          "term": "qadar (قَدَر)",
+          "def": "Allah's knowledge and plan for everything"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which of these would change how you act tomorrow: believing angels write your deeds, or believing in the Last Day?",
+        "a": "Both. Iman is not only in the heart: it changes what we do."
+      },
+      "islamicLink": {
+        "text": "Allah says the believers 'all believe in Allah, His angels, His books and His messengers' (al-Baqarah 2:285).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "What did Jibril ask about first?",
+          "a": "Islam",
+          "mins": 1,
+          "options": [
+            "Islam",
+            "Ihsan",
+            "The Hour"
+          ]
+        },
+        {
+          "q": "What is ihsan?",
+          "a": "Worshipping Allah as if you see Him",
+          "mins": 1,
+          "options": [
+            "Worshipping Allah as if you see Him",
+            "Giving zakah"
+          ]
+        },
+        {
+          "q": "Name the five pillars of Islam.",
+          "a": "Shahadah, salah, zakah, sawm, Hajj",
+          "mins": 2
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The six articles",
+          "bullets": [],
+          "note": "Count on fingers. Allah mentions these together in al-Baqarah 2:285 and an-Nisa 4:136.",
+          "cycle": [
+            "Allah",
+            "Angels",
+            "Books",
+            "Messengers",
+            "The Last Day",
+            "Qadar"
+          ]
+        },
+        {
+          "heading": "Angels and books",
+          "bullets": [
+            "Angels are made from light",
+            "Jibril brought revelation",
+            "Books: Tawrah, Zabur, Injil, Qur'an",
+            "Allah protects the Qur'an"
+          ],
+          "note": "Keep it brief: this is a bridge. Name the prophets: Musa, Dawud, Isa, Muhammad ﷺ."
+        },
+        {
+          "heading": "Messengers, the Last Day, qadar",
+          "bullets": [
+            "Messengers taught: worship Allah alone",
+            "Everyone will be judged fairly",
+            "Allah knows and plans all; we still choose"
+          ],
+          "note": "Muhammad ﷺ is the last messenger. On the Last Day each deed is weighed. Qadar: trust Allah and try your best.",
+          "check": {
+            "q": "Which article means Allah knows and plans everything?",
+            "options": [
+              "Qadar",
+              "Angels",
+              "Books"
+            ],
+            "answer": 0,
+            "why": "Qadar is Allah's decree. Angels and books are other articles."
+          }
+        },
+        {
+          "heading": "Iman in action",
+          "bullets": [],
+          "note": "Ask pupils to match each belief to an action.",
+          "sort": {
+            "columns": [
+              "Belief",
+              "Action it leads to"
+            ],
+            "cards": [
+              "Angels write my deeds",
+              "I speak kindly",
+              "The Last Day is real",
+              "I try to do good every day",
+              "Qadar",
+              "I stay calm when plans change",
+              "The Qur'an is Allah's word",
+              "I read it with respect"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ]
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write one sentence about each of the six articles.",
+          "a": "For example: I believe Allah is One; angels obey Allah; ...",
+          "mins": 4,
+          "model": "I believe in Allah, the One. I believe angels are made of light and obey Him. I believe in His books, including the Qur'an."
+        },
+        {
+          "q": "Which book came to Isa?",
+          "a": "The Injil",
+          "mins": 1,
+          "options": [
+            "The Injil",
+            "The Zabur"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Make a six-section 'iman wheel': each section names an article and gives one action it leads to.",
+          "a": "Six sections, each with an article and a matching action.",
+          "mins": 7,
+          "model": "Teacher fills the first section: Allah: I pray to Him alone."
+        },
+        {
+          "q": "Extend: why do Muslims say in sha Allah?",
+          "a": "Because of belief in qadar: only Allah knows what will happen.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: choose one article and explain how it helps a person who is sad.",
+          "a": "For example: qadar helps because Allah's plan is wise and He rewards patience.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which is NOT one of the six articles?",
+          "a": "Fasting",
+          "mins": 1,
+          "options": [
+            "Fasting",
+            "Angels",
+            "Qadar"
+          ]
+        },
+        {
+          "q": "Back to our ponder: which belief will change how you act tomorrow, and how?",
+          "a": "For example: angels write my deeds, so I will speak kindly.",
+          "mins": 2
+        }
+      ],
+      "homework": "Teach the six articles to someone at home using the iman wheel.",
+      "send": "SEND: wheel template with pictures. EAL: sentence starter 'I believe in ...'. Stretch: link two articles together.",
+      "resources": [
+        "Slides",
+        "Reliable children's seerah book (TO CONFIRM title with the Islamic Studies lead)",
+        "Pupil PDF worksheet: iman wheel template",
+        "Colouring pencils"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "wheel spokes wooden",
+          "alt": "A wheel with spokes, like the six articles",
+          "for": "teach:1"
+        },
+        {
+          "find": "Quran manuscript page",
+          "alt": "An old page of the Qur'an",
+          "for": "teach:2"
+        },
+        {
+          "find": "balance scale brass",
+          "alt": "A balance: deeds are weighed on the Last Day",
+          "for": "keywords"
+        }
+      ]
     }
   ]
 }

@@ -5,6 +5,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { btn, ui } from "@/components/learn/ui";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 type ChecklistItem = { key: string; label: string; done: boolean };
 type ReviewStatus = "required" | "in_progress" | "completed";
 type ReviewRow = {
@@ -62,7 +63,7 @@ function ReviewCard({ review, onChanged }: { review: ReviewRow; onChanged: () =>
 
   async function save(complete: boolean) {
     if (!supabase) return;
-    if (complete && !window.confirm("Complete this review? It is locked once completed and your name is recorded as the reviewer.")) return;
+    if (complete && !(await askConfirm("Complete this review? It is locked once completed and your name is recorded as the reviewer."))) return;
     setBusy(true);
     setError(null);
     const { error: err } = await supabase

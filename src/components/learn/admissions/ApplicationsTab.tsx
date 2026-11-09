@@ -27,6 +27,7 @@ import { saveCsv } from "@/lib/learn/csv";
 import { btn, ui } from "@/components/learn/ui";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 const FORM_URL = `${MAIN_SITE_ORIGIN}/admissions/apply`;
 
 type Load = "loading" | "error" | "ready";
@@ -222,7 +223,7 @@ export function ApplicationsTab() {
   async function toggleAccepting(next: boolean) {
     const supabase = getSupabaseClient();
     if (!supabase) return;
-    if (!next && !window.confirm("Close the application form? Families will see an \u201capplications are closed\u201d message until you open it again.")) return;
+    if (!next && !(await askConfirm("Close the application form? Families will see an \u201capplications are closed\u201d message until you open it again."))) return;
     setToggling(true);
     setActionError(null);
     const { error } = await supabase.from("site_settings").update({ accepting_applications: next }).eq("id", true);
@@ -273,7 +274,7 @@ export function ApplicationsTab() {
       const previous = current.status;
       if (status === "declined" || status === "withdrawn") {
         const nm = `${current.child_first_name} ${current.child_last_name}`.trim();
-        if (!window.confirm(`Mark ${nm}'s application as ${STATUS_LABELS[status].toLowerCase()}? The family is not notified automatically, and you can move it back later from the ${STATUS_LABELS[status]} column.`)) return false;
+        if (!(await askConfirm(`Mark ${nm}'s application as ${STATUS_LABELS[status].toLowerCase()}? The family is not notified automatically, and you can move it back later from the ${STATUS_LABELS[status]} column.`))) return false;
       }
       if (status === "accepted") {
         // Fees policy: the first fee payment is the condition of acceptance (no registration fee).
@@ -284,7 +285,7 @@ export function ApplicationsTab() {
             window.alert(`Can't accept yet: the ${list} ${blockers.length > 1 ? "have" : "has"} not been marked as received. Mark ${blockers.length > 1 ? "them" : "it"} received in the Process tab, or ask the Headteacher to override.`);
             return false;
           }
-          if (!window.confirm(`The ${list} ${blockers.length > 1 ? "are" : "is"} not marked as received. As Headteacher you can override. Move to Accepted anyway?`)) return false;
+          if (!(await askConfirm(`The ${list} ${blockers.length > 1 ? "are" : "is"} not marked as received. As Headteacher you can override. Move to Accepted anyway?`))) return false;
         }
         // Proofs of payment awaiting staff review (0061): they must be verified or rejected first.
         const { count: pendingProofs } = await supabase
@@ -297,9 +298,9 @@ export function ApplicationsTab() {
             window.alert(`Can't accept yet: ${pendingProofs} proof${pendingProofs === 1 ? "" : "s"} of payment ${pendingProofs === 1 ? "is" : "are"} waiting to be verified. Review them in the Payments tab, or ask the Headteacher to override.`);
             return false;
           }
-          if (!window.confirm(`${pendingProofs} proof${pendingProofs === 1 ? "" : "s"} of payment ${pendingProofs === 1 ? "is" : "are"} still unverified. As Headteacher you can override. Move to Accepted anyway?`)) return false;
+          if (!(await askConfirm(`${pendingProofs} proof${pendingProofs === 1 ? "" : "s"} of payment ${pendingProofs === 1 ? "is" : "are"} still unverified. As Headteacher you can override. Move to Accepted anyway?`))) return false;
         }
-        if (!current.id_documents_received && !window.confirm("ID documents and proof of address are not marked as received yet. Move to Accepted anyway?")) return false;
+        if (!current.id_documents_received && !(await askConfirm("ID documents and proof of address are not marked as received yet. Move to Accepted anyway?"))) return false;
       }
       setActionError(null);
       setNotice(null);

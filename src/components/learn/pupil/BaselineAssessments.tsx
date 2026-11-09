@@ -5,6 +5,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { ui } from "@/components/learn/ui";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 export type BaselineRow = {
   id: string;
   child_id: string;
@@ -141,7 +142,7 @@ export function BaselineAssessments({ childId, canEdit }: { childId: string; can
   }
 
   async function remove(r: BaselineRow) {
-    if (!supabase || !confirm("Remove this result? The change is recorded in the audit log.")) return;
+    if (!supabase || !(await askConfirm("Remove this result? The change is recorded in the audit log."))) return;
     await supabase.from("baseline_assessments").delete().eq("id", r.id);
     await load();
   }

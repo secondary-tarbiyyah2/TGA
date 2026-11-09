@@ -22,6 +22,7 @@ import {
 import { Group, fieldCls, ghostBtn, primaryBtn } from "@/components/learn/admissions/ui";
 import { TokenEditor, VariablePicker, unknownTokensIn, type TokenEditorHandle } from "@/components/learn/admissions/TokenEditor";
 
+import { askConfirm } from "@/components/learn/kit";
 /** Templates a person always sends by hand. Everything else can be switched to send automatically. */
 const MANUAL_ONLY: TemplateKey[] = ["waitlist", "decline", "request_documents"];
 const AUTOMATED_KEYS = TEMPLATE_KEYS.filter((k) => !MANUAL_ONLY.includes(k));
@@ -239,7 +240,7 @@ export function EmailTemplatesPanel() {
             <button
               type="button"
               disabled={isDefault}
-              onClick={() => { if (window.confirm("Replace this template's subject and message with the built-in default? Nothing is saved until you press Save.")) set({ subject: DEFAULT_TEMPLATES[selected].subject, body: DEFAULT_TEMPLATES[selected].body }); }}
+              onClick={async () => { if (await askConfirm("Replace this template's subject and message with the built-in default? Nothing is saved until you press Save.")) set({ subject: DEFAULT_TEMPLATES[selected].subject, body: DEFAULT_TEMPLATES[selected].body }); }}
               className={ghostBtn}
             >
               Reset to default
