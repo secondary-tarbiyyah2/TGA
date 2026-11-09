@@ -32,8 +32,8 @@ Statuses: **Not started** · **In progress** · **Done** · **Needs decision** �
 - **Owner's note:** "Classwork: we only need it under classes, as appropriate and actionable." (screenshot: Teaching › Classes › *All classwork*)
 - **Reading:** remove *All classwork* as a hub tab for teachers/admin, or turn it into a short "needs action" view (late/missing, to mark) that links into each class's Classwork tab. Setting and marking work happens in the class.
 - **Files:** `src/lib/learn/nav.ts` (admin "Classes" hub tabs: `/admin/homework`; teach hub), `src/app/learn/admin/homework/page.tsx`, `src/app/learn/teach/homework/`, class page Classwork tab under `src/components/learn/class/`.
-- **Done when:** [ ] no duplicate place to set work; [ ] whatever remains outside the class is only actions (late, missing, to mark) with one-click links into the class; [ ] no broken links to the old route.
-- **Status:** Not started
+- **Done when:** [x] no duplicate place to set work; [x] whatever remains outside the class is only actions (late, missing, to mark) with one-click links into the class; [x] no broken links to the old route (same `/admin/homework` and `/teach/homework` routes, now "Classwork to action").
+- **Status:** Done (awaiting owner check)
 
 ### T2. Revision pack page: clearer structure, plus generated action and question packs
 - **Owner's note:** "Improve structure of this and generate your own action pack, Q pack." (screenshot: Curriculum › unit › *Revision pack*)
@@ -198,15 +198,15 @@ Statuses: **Not started** · **In progress** · **Done** · **Needs decision** �
 - **Owner's note:** "Ensure we can scroll on the portal, especially the calendar: there are 9 items, I see 3 or 4 but can't scroll."
 - **Reading:** a fixed-height card with `overflow-hidden` (or a flex child missing `min-h-0`) clips the list. Fix at the source: scrollable panels get `min-h-0 overflow-y-auto` and a visible fade/"N more" hint.
 - **Files:** the home/dashboard calendar widget under `src/components/learn/` (grep `upcoming`, `Calendar`), `LearnLayoutShell.tsx`, `globals.css` `.portal` rules.
-- **Done when:** [ ] all 9 items reachable by scroll, wheel, touch and keyboard; [ ] same fix applied to other clipped panels.
-- **Status:** Not started
+- **Done when:** [x] all 9 items reachable by scroll, wheel, touch and keyboard; [x] same fix applied to other clipped panels.
+- **Status:** Done (awaiting owner check)
 
 ### T25. Action centre: categorised, one page, actions in place
 - **Owner's note:** "Action centre needs to be categorised and easier to navigate and action, for save as PDF etc. Structure everything better and not across two pages."
 - **Reading:** one page with category tabs or a side list (Safeguarding, Attendance, Admissions, Recruitment, Reports, Staff, System) with counts; each item has its action buttons inline (open, mark done, save as PDF/print with `printElement`); no second "more" page.
 - **Files:** grep `Action centre` under `src/app/learn/` and `src/components/learn/`, `src/lib/learn/nav.ts`.
-- **Done when:** [ ] one route; [ ] categories with counts; [ ] each item actionable in place, including Save as PDF; [ ] old second page redirects.
-- **Status:** Not started
+- **Done when:** [x] one route (`/<area>/actions`); [x] categories with counts; [x] each item actionable in place, including Save as PDF; [x] old second page: there was no separate route; the second place was the admin Home "Needs attention" tiles, now folded into the Action centre (Home keeps one "Needs you" panel that links into each category with `?cat=`).
+- **Status:** Done (awaiting owner check)
 
 ### T26. admin/pupils: less clutter, more per pupil; add and edit pupils
 - **Owner's note:** "admin/pupils too cluttered, not enough unique info for each student." "I should be able to add and edit students on Pupils; remove the emojis that are not appropriate."
@@ -278,3 +278,4 @@ Statuses: **Not started** · **In progress** · **Done** · **Needs decision** �
 - 2026-11-09: Website batch (branch `claude/tafweed-website`): T7 booking wizard (`BookingCalendar.tsx`: Day → Time → Your details in one fixed panel with a summary column); T8 renamed RECIPE to **The Tarbiyyah Compass** (site, portal, lessons, policies, migration 0183); T10 accessibility menu visible from `lg` with a new links/focus option; T11 spacing scale and smooth transitions; T12 separate open-evening and taster sections and links, testimonials CTAs; T14 sticky header/footer and side-by-side children; T15 short/full email; T16 tighter curriculum pages; T17 fees calculator button. Also new policies 11 (Risk Assessment) and 30 (Safer Recruitment). Second batch added as T20–T33.
 - 2026-11-09: T32 fixed (branch `claude/tafweed-T32-ai-revision`). Root cause: `_shared/claude.ts` sent `temperature`, which Claude 5.x models (default `claude-haiku-5-5`) reject, so every AI draft failed; the key and deploy were fine. Now no sampling parameters, thinking off for drafts, plain-English errors (`claudeErrorMessage`), and a "Test the AI connection" button in Settings › AI helpers. Same fix in the entry-assessment writing marker.
 - 2026-11-09: T2 and T33 done (branch `claude/tafweed-T2-T33-revision-packs`, migration 0184 `revision_pack_drafts`, pgTAP `revision_pack_drafts.test.sql`). Revision pack tab rebuilt status-first (`RevisionPackPanel.tsx`) with AI-drafted questions held for teacher approval, a unit to-do list pupils tick off, and draft packs made automatically when every lesson in a unit is signed off, flagged in the Action centre.
+- 2026-11-09: T24, T25 and T1 done (branch `claude/tafweed-T25-action-centre`). T24: the calendar day panel (desktop side panel, phone sheet, day agenda) was cut off by a fixed-height card; new `ScrollArea.tsx` (shrinks in a flex column, focusable for keyboard, fade and "N more below" button) used there and in notifications, the marking list, the inbox and the new-message picker. T25: `ActionCentre.tsx` is one page with categories and counts (side list on wide screens, scrolling row on phones, `?cat=`), each item has Open, Mark done (this device, until it changes) and Print / Save as PDF, plus per-category and whole-list PDF; the admin Home "Needs attention" checks moved into `loadAdminItems()` in `actionCentre.ts` (registers, unexplained absences, overdue marking, signatures, flagged messages, safeguarding reviews, new applications, payment proofs, job applications, new pupils); shared loader `actions/useActionItems.ts` so Home and the Action centre agree. T1: `/admin/homework` and `/teach/homework` are now "Classwork to action" (`ClassworkToAction.tsx`): to mark, missing, late and resubmissions by class, each linking into the class's Classwork tab; setting work only happens in the class (`HomeworkWorkspace.tsx` and `LateMissingView.tsx` removed).
