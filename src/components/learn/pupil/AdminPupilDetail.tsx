@@ -7,7 +7,7 @@ import { BaselineAssessments } from "./BaselineAssessments";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { PrintScope, findPrintScope, printElement } from "@/components/learn/printScope";
 import { Tabs } from "@/components/learn/Tabs";
-import { Notice, StatusChip, ui } from "@/components/learn/ui";
+import { Button, Notice, StatusChip, ui } from "@/components/learn/ui";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { ukDaysAgo } from "@/lib/learn/ukTime";
 import { LeaderboardPrivacy } from "@/components/learn/behaviour/LeaderboardPrivacy";
@@ -16,6 +16,7 @@ import { PupilOverview } from "./PupilOverview";
 import { RecordSections, usePupilRecordData, type RecordChild } from "./PupilRecord";
 import { Fig, PupilAttendanceTab, PupilBehaviourTab, PupilReportsTab, attendanceFigures } from "./ProfileTabs";
 import { SupportPlanEditor } from "@/components/learn/send/SupportPlanEditor";
+import { EditPupilModal } from "./EditPupilModal";
 
 type ChildRaw = { id: string; name: string; dob: string | null; parent_user_id: string | null; year_groups?: { name: string } | null };
 type EnrolRaw = { classes?: { name: string } | null };
@@ -30,6 +31,12 @@ const TABS: Tab[] = ["overview", "details", "medical", "send", "attendance", "be
  * rewards, reports and entry assessment. Opening it is logged (medical data).
  */
 export function AdminPupilDetail({ id }: { id: string }) {
+  // Saving an edit reloads the whole profile (details, record and tabs).
+  const [version, setVersion] = useState(0);
+  return <PupilProfile key={version} id={id} onEdited={() => setVersion((v) => v + 1)} />;
+}
+
+function PupilProfile({ id, onEdited }: { id: string; onEdited: () => void }) {
   const params = useSearchParams();
   const router = useRouter();
   const rawTab = params.get("tab") as Tab | null;
@@ -39,6 +46,8 @@ export function AdminPupilDetail({ id }: { id: string }) {
   const [state, setState] = useState<"loading" | "ready" | "missing">("loading");
   const [att30, setAtt30] = useState<ReturnType<typeof attendanceFigures> | null>(null);
   const printRef = useRef<HTMLDivElement>(null);
+  const [editing, setEditing] = useState(false);
+  const [above, setAbove] = useState(false);
 
   useEffect(() => {
     const supabase = getSupabaseClient();
@@ -47,10 +56,12 @@ export function AdminPupilDetail({ id }: { id: string }) {
     (async () => {
       // The last 30 UK days, today included.
       const since = ukDaysAgo(29);
-      const [c, e, a] = await Promise.all([
+      const [c, e, a, f] = await Promise.all([
         supabase.from("children").select("id, name, dob, parent_user_id, year_groups(name)").eq("id", id).maybeSingle(),
         supabase.from("enrolments").select("classes(name)").eq("child_id", id),
         supabase.from("attendance_records").select("status, lesson_instances!inner(date)").eq("child_id", id).gte("lesson_instances.date", since).limit(1000),
+        // Separate, so the profile still loads before migration 0185 is applied.
+        supabase.from("children").select("working_above_year_group").eq("id", id).maybeSingle(),
       ]);
       if (cancelled) return;
       const row = c.data as unknown as ChildRaw | null;
@@ -63,6 +74,7 @@ export function AdminPupilDetail({ id }: { id: string }) {
         classes: ((e.data as unknown as EnrolRaw[]) || []).map((x) => x.classes?.name || "").filter(Boolean),
       });
       setAtt30(attendanceFigures((a.data as { status: string }[]) || []));
+      setAbove(!!(f.data as { working_above_year_group?: boolean } | null)?.working_above_year_group);
       setState("ready");
       if (row.parent_user_id) {
         const { data: p } = await supabase.from("profiles").select("full_name, email").eq("id", row.parent_user_id).maybeSingle();
@@ -143,6 +155,13 @@ export function AdminPupilDetail({ id }: { id: string }) {
               Print record
             </button>
           }
+          action={
+            state === "ready" ? (
+              <Button variant="primary" icon="pencil" onClick={() => setEditing(true)}>
+                Edit pupil
+              </Button>
+            ) : undefined
+          }
         />
       </div>
 
@@ -159,6 +178,7 @@ export function AdminPupilDetail({ id }: { id: string }) {
                 {parent && <p className="text-sm text-ink/70">Parent: {parent.full_name || parent.email}</p>}
               </div>
               <div className="flex flex-wrap gap-1.5">
+                {above && <StatusChip tone="info">Working above year group</StatusChip>}
                 {alerts.map((a) => (
                   <StatusChip key={a} tone="bad">
                     {a}
@@ -225,6 +245,13 @@ export function AdminPupilDetail({ id }: { id: string }) {
             </PrintScope>
           </div>
         </div>
+      )}
+      {editing && (
+        <EditPupilModal
+          childId={id}
+          onClose={() => setEditing(false)}
+          onSaved={onEdited}
+        />
       )}
     </>
   );

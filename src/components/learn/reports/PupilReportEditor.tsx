@@ -382,6 +382,7 @@ export function PupilReportEditor({
                 {canEdit && (
                   <ReportAiDraft
                     key={childId}
+                    childId={childId}
                     firstName={firstName(pupil.name)}
                     yearGroup={cls.group}
                     subject={cls.name}

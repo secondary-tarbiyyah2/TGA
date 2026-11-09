@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { AiDisclaimer, AiSpark } from "@/components/learn/AiBits";
 import { aiAssist, aiErrorMessage, useAiStatus } from "@/lib/learn/aiAssist";
+import { usePronounField } from "@/lib/learn/pronoun";
 
 type Entry = { id: string; week_of: string; note: string; recorded_at: string };
 
@@ -37,7 +38,8 @@ export function WeeklyTarbiyahNoteForm({ childId, classId, childName }: { childI
   const [aiError, setAiError] = useState<string | null>(null);
   // The tutor's own jottings, kept so they can go back to them, and whether the box now holds an AI draft.
   const [jottings, setJottings] = useState<string | null>(null);
-  const [pronoun, setPronoun] = useState("");
+  // Prefilled from the pupil's record; the tutor can still change it for this note.
+  const { value: pronoun, set: setPronoun, fromRecord: pronounFromRecord } = usePronounField(childId);
 
   async function draftWithAi(variant: "default" | "try_again" | "shorter") {
     if (!childName) return;
@@ -132,8 +134,8 @@ export function WeeklyTarbiyahNoteForm({ childId, classId, childName }: { childI
                 </button>
               </>
             )}
-            <label className="text-xs text-ink/70">
-              <span className="sr-only">Pronoun</span>
+            <label className="text-xs text-ink/70" title={pronounFromRecord ? "From the pupil's record" : undefined}>
+              <span className="sr-only">Pronoun{pronounFromRecord ? " (from the pupil's record)" : ""}</span>
               <select value={pronoun} onChange={(e) => setPronoun(e.target.value)} className="rounded-lg border border-gold-light/60 px-2 py-1.5 text-xs">
                 <option value="">Use their name</option>
                 <option value="he">he / him</option>
