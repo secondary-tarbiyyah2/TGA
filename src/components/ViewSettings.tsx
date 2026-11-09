@@ -360,7 +360,8 @@ export function ViewSettingsMenu({ variant = "site" }: { variant?: "site" | "por
   }, [open, close]);
 
   const changed = !isDefault(view, portal);
-  const name = "Accessibility and display options";
+  // The accessible name must contain the visible label (WCAG 2.5.3): "Display" in the portal, "Accessibility and display" elsewhere.
+  const name = portal ? "Display and accessibility options" : "Accessibility and display options";
   const label = changed ? `${name} (some are on)` : name;
 
   return (
@@ -387,7 +388,7 @@ export function ViewSettingsMenu({ variant = "site" }: { variant?: "site" | "por
             Display
           </span>
         )}
-        {footer && <span aria-hidden="true">Display and accessibility</span>}
+        {footer && <span aria-hidden="true">Accessibility and display</span>}
         {!portal && !footer && (
           <span aria-hidden="true" className="hidden 2xl:inline">
             Accessibility
