@@ -7,7 +7,7 @@
   "code": "4ET1",
   "specVersion": "Specification Issue 3, August 2025 (first teaching September 2016; first examination June 2018)",
   "status": "Verified",
-  "statusNote": "Checked 22 Oct 2026 against the raw text (pdftotext) of the official Pearson 4ET1 specification PDF, Issue 3, August 2025, downloaded directly: Qualification at a glance, set texts, Section 4 content, Section 5 assessment information and AO tables, non-examined assessment rules and grids, Appendices 1, 3 and 5 (the glossary covers assessment terms only; there is no command-word list). Verified: structure, durations, marks, weightings, AOs, AO mark splits, all text and poem lists. Not verified: question papers, mark schemes, grade boundaries, Appendix 3 editions beyond what is summarised. Question-style and timing notes come from the 4ET1/01 June 2025 examiners' report, read earlier via a summarising tool. Year and term placement is a recommended sequence. The school's lesson files follow 4ET1; the AQA 8702 lessons were retired (content/retired-lessons.json).",
+  "statusNote": "Checked 22 Oct 2026 against the raw text (pdftotext) of the official Pearson 4ET1 specification PDF, Issue 3, August 2025, downloaded directly: Qualification at a glance, set texts, Section 4 content, Section 5 assessment information and AO tables, non-examined assessment rules and grids, Appendices 1, 3 and 5 (the glossary covers assessment terms only; there is no command-word list). Verified: structure, durations, marks, weightings, AOs, AO mark splits, all text and poem lists. Not verified: question papers, mark schemes, grade boundaries, Appendix 3 editions beyond what is summarised. Question-style and timing notes come from the 4ET1/01 June 2025 examiners' report, read earlier via a summarising tool. Year and term placement is a recommended sequence. The school's lesson files follow 4ET1; the AQA 8702 lessons were retired (content/retired-lessons.json). November 2026: unit years and terms follow the school's 2026-27 Year 10 and Year 11 English overviews where the content is on 4ET1 (prose, drama and Macbeth in Year 10 Autumn to Spring 1, the anthology in Spring 2 and Summer 1, unseen poetry in Summer 2); school choices added for Of Mice and Men and An Inspector Calls.",
   "sources": [
     {
       "title": "Pearson Edexcel International GCSE English Literature (2016) qualification page",
@@ -82,7 +82,7 @@
       "title": "Component 1 Section A: Unseen poetry",
       "paper": "Component 1",
       "year": "Y10",
-      "term": "Spring",
+      "term": "Summer",
       "points": [
         "One 20-mark essay question on an unseen poem, assessed for AO2.",
         "Poem is printed in the question paper.",
@@ -102,7 +102,7 @@
       "title": "Component 1 Section B: Anthology poetry (16 poems)",
       "paper": "Component 1",
       "year": "Y10",
-      "term": "Autumn",
+      "term": "Spring",
       "points": [
         "Part 3 of the Pearson Edexcel International GCSE English Anthology; all 16 poems are studied.",
         "One 30-mark question from a choice of two, comparing two anthology poems.",
@@ -122,7 +122,7 @@
       "title": "Anthology poems 1 to 8",
       "paper": "Component 1",
       "year": "Y10",
-      "term": "Autumn",
+      "term": "Spring",
       "points": [
         "If- (Rudyard Kipling).",
         "Prayer Before Birth (Louis MacNeice).",
@@ -139,7 +139,7 @@
       "title": "Anthology poems 9 to 16",
       "paper": "Component 1",
       "year": "Y10",
-      "term": "Spring",
+      "term": "Summer",
       "points": [
         "La Belle Dame sans Merci (John Keats).",
         "Poem at Thirty-Nine (Alice Walker).",
@@ -156,7 +156,7 @@
       "title": "Component 1 Section C: Modern prose (choose one text)",
       "paper": "Component 1",
       "year": "Y10",
-      "term": "Summer",
+      "term": "Autumn",
       "points": [
         "One 40-mark question from a choice of two for each text.",
         "Marks split 20 for AO1 (knowledge, critical style, personal engagement) and 20 for AO4 (context).",
@@ -177,7 +177,7 @@
       "title": "Modern prose options listed by Pearson Edexcel",
       "paper": "Component 1",
       "year": "Y10",
-      "term": "Summer",
+      "term": "Autumn",
       "points": [
         "To Kill a Mockingbird (Harper Lee).",
         "Of Mice and Men (John Steinbeck).",
@@ -190,10 +190,30 @@
       ]
     },
     {
+      "ref": "1C-SCH",
+      "title": "SCHOOL CHOICE: Of Mice and Men (modern prose)",
+      "paper": "Component 1 (4ET1/01)",
+      "year": "Y10",
+      "term": "Autumn",
+      "points": [
+        "Of Mice and Men is on the Pearson Edexcel modern prose list, so the school's KS4 text is permitted.",
+        "The school's KS4 English Literature folder holds an Of Mice and Men scheme of work.",
+        "It takes Year 10 Autumn 1, the slot of the school's A Christmas Carol, which is not a 4ET1 text.",
+        "Closed book: pupils learn short quotations and context (1930s America, the American Dream).",
+        "TO CONFIRM: text suitability (racist slurs, references to a brothel, violence and a mercy killing)."
+      ],
+      "keyTerms": [
+        "American Dream",
+        "Great Depression",
+        "itinerant",
+        "loneliness"
+      ]
+    },
+    {
       "ref": "2A",
       "title": "Component 2 or 3 Section A / Assignment A: Modern drama (choose one)",
       "paper": "Component 2 or 3",
-      "year": "Y11",
+      "year": "Y10",
       "term": "Autumn",
       "points": [
         "Component 2: one 30-mark question from a choice of two, open book, assessed for AO1 and AO2.",
@@ -212,7 +232,7 @@
       "ref": "2A-OPT",
       "title": "Modern drama options listed by Pearson Edexcel",
       "paper": "Component 2 or 3",
-      "year": "Y11",
+      "year": "Y10",
       "term": "Autumn",
       "points": [
         "A View from the Bridge (Arthur Miller).",
@@ -224,10 +244,29 @@
       ]
     },
     {
+      "ref": "2A-SCH",
+      "title": "SCHOOL CHOICE: An Inspector Calls (modern drama)",
+      "paper": "Component 2 (4ET1/02)",
+      "year": "Y10",
+      "term": "Autumn",
+      "points": [
+        "An Inspector Calls is on the Pearson Edexcel modern drama list, so the school's text is permitted.",
+        "Taught in Year 10 Autumn 2 in the school's order (Year 10 HT2, seven weeks); revised in Year 11 Spring 1.",
+        "Open book: one 30-mark question from two, assessed for AO1 and AO2.",
+        "TO CONFIRM: text suitability (Eva Smith's pregnancy, Eric's drinking and his treatment of Eva)."
+      ],
+      "keyTerms": [
+        "social responsibility",
+        "dramatic irony",
+        "Inspector",
+        "class"
+      ]
+    },
+    {
       "ref": "2B",
       "title": "Component 2 or 3 Section B / Assignment B: Literary heritage texts (choose one)",
       "paper": "Component 2 or 3",
-      "year": "Y11",
+      "year": "Y10",
       "term": "Spring",
       "points": [
         "Component 2: one 30-mark question from a choice of two, open book, assessed for AO1, AO2 and AO4.",
@@ -247,7 +286,7 @@
       "ref": "2B-OPT",
       "title": "Literary heritage options listed by Pearson Edexcel",
       "paper": "Component 2 or 3",
-      "year": "Y11",
+      "year": "Y10",
       "term": "Spring",
       "points": [
         "Romeo and Juliet (William Shakespeare).",
@@ -263,14 +302,14 @@
       "ref": "2B-SCH",
       "title": "SCHOOL CHOICE: Macbeth (literary heritage text)",
       "paper": "Component 2 or 3",
-      "year": "Y11",
+      "year": "Y10",
       "term": "Spring",
       "points": [
         "Macbeth is on the Pearson Edexcel literary heritage list, so the school text is permitted.",
-        "Existing Y11 lessons teach it as context and witches, then tyranny, guilt and downfall.",
         "The AQA 8702 Macbeth lessons were retired; the 2B-SCH lessons teach it to the Pearson format.",
         "Open-book Component 2 allows the text to be used, so quotation recall matters less.",
-        "Marks differ: 30 marks on AO1, AO2 and AO4 rather than extract plus whole-text format."
+        "Marks differ: 30 marks on AO1, AO2 and AO4 rather than extract plus whole-text format.",
+        "The school teaches Macbeth in Year 9, then in Year 10 Spring 1 and Year 11 Spring 1."
       ],
       "keyTerms": [
         "Macbeth",
@@ -400,6 +439,9 @@
     "Timing guidance (about 40 minutes anthology, 45 prose) comes from the earlier examiners' report read, not the spec.",
     "A separate modular specification (code YET01) was mentioned only in earlier notes; not documented here and not mentioned in the spec text.",
     "School lessons: Macbeth is on the Pearson list; A Christmas Carol is NOT. The AQA 8702 lessons (A Christmas Carol, and Macbeth in the AQA format) were retired; y10.json and y11.json now follow 4ET1.",
-    "Which of Component 2 or Component 3 the school will enter is not decided; also which prose and drama texts are chosen."
+    "Which of Component 2 or Component 3 the school will enter is not decided (Component 2 is the working route).",
+    "Not adopted from the school's 2026-27 KS4 files: A Christmas Carol (not a 4ET1 text; Christmas content) and the UK GCSE conflict anthology (not the 4ET1 anthology). Their comparison and essay methods are kept.",
+    "The school's poem War Photographer is by Carole Satyamurti; the 4ET1 anthology poem of that title is by Carol Ann Duffy.",
+    "Portal Literature lessons (y10, y11) were written to the earlier order; Year 10 now starts with prose and drama (lessons are a later stage)."
   ]
 }
