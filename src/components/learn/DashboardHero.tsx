@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { useLearnSession } from "@/lib/learn/session";
+import { StatStrip, StatTile } from "@/components/learn/kit";
 
-export type HeroChip = { label: string; value: string | number; tone?: "pink" | "yellow" | "white" };
+export type HeroChip = { label: string; value: string | number; tone?: "pink" | "yellow" | "white"; href?: string; hint?: string };
 
 // "pink" marks a number that needs attention; the others are neutral.
 // (Names kept so existing callers don't change.)
@@ -13,10 +14,10 @@ function formatChipValue(v: string | number): string {
 }
 
 /**
- * The big welcome banner at the top of every dashboard: greeting, date and a
- * couple of headline numbers, on logo-gold-on-ink with a quiet eight-point-star
- * pattern. Fetches the signed-in user's first name itself, so any dashboard
- * can drop it in.
+ * The top of every dashboard (redesign, docs/portal-redesign.md): a quiet
+ * context line ("MONDAY · TEACHER WORKSPACE"), the greeting, one line on what
+ * the page is for, then the figures in a single strip. No banner: the page's
+ * content leads, not decoration. Fetches the user's first name itself.
  */
 /** "Ustadh Bilal Ahmed" → "Bilal": titles and honorifics are not first names. */
 export function firstNameOf(fullName: string): string | null {
@@ -26,7 +27,9 @@ export function firstNameOf(fullName: string): string | null {
   return parts[0] || null;
 }
 
-export function DashboardHero({ subtitle, chips = [] }: { subtitle?: string; chips?: HeroChip[] }) {
+const AREA_WORKSPACE: Record<string, string> = { admin: "School office", teach: "Teacher workspace", family: "Family", student: "Student" };
+
+export function DashboardHero({ subtitle, chips = [], area }: { subtitle?: string; chips?: HeroChip[]; area?: "admin" | "teach" | "family" | "student" }) {
   const { session } = useLearnSession();
   const [firstName, setFirstName] = useState<string | null>(null);
 
@@ -43,39 +46,27 @@ export function DashboardHero({ subtitle, chips = [] }: { subtitle?: string; chi
 
   const hour = new Date().getHours();
   const greeting = hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening";
-  const today = new Date().toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" });
+  const weekday = new Date().toLocaleDateString("en-GB", { weekday: "long" });
+  const date = new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long" });
 
   return (
-    <section className="relative overflow-hidden rounded-2xl portal-hero px-5 py-6 text-white sm:px-8 sm:py-7">
-      <svg aria-hidden="true" className="pointer-events-none absolute -right-6 -top-10 h-[130%] w-[46%] text-gold-500/[0.16]" viewBox="0 0 240 240" preserveAspectRatio="xMaxYMid slice">
-        <defs>
-          <pattern id="hero-star" width="60" height="60" patternUnits="userSpaceOnUse">
-            <path d="M30 4l5.5 13.2L48.8 11.2 42.8 24.5 56 30l-13.2 5.5 6 13.3-13.3-6L30 56l-5.5-13.2-13.3 6 6-13.3L4 30l13.2-5.5-6-13.3 13.3 6z" fill="currentColor" />
-          </pattern>
-        </defs>
-        <rect width="240" height="240" fill="url(#hero-star)" />
-      </svg>
-      <div className="relative">
-        <p className="text-sm font-medium tracking-wide text-gold-300">{today}</p>
-        <h1 className="mt-1 text-2xl font-semibold tracking-tight sm:text-[1.75rem]">
-          {greeting}
-          {firstName ? `, ${firstName}` : ""}
-        </h1>
-        {subtitle && <p className="mt-1 text-sm text-white/85">{subtitle}</p>}
-        {chips.length > 0 && (
-          <dl className="mt-5 grid grid-cols-2 gap-2.5 sm:flex sm:flex-wrap sm:gap-3">
-            {chips.map((c) => (
-              <div key={c.label} className="flex min-w-0 flex-col-reverse rounded-xl sm:min-w-[9rem] bg-white/10 px-4 py-2.5 ring-1 ring-inset ring-gold-500/40">
-                <dt className="text-xs font-medium text-white/85">{c.label}</dt>
-                <dd className="flex items-center gap-2 text-2xl font-semibold tabular-nums leading-tight">
-                  {formatChipValue(c.value)}
-                  {c.tone === "pink" && typeof c.value === "number" && c.value > 0 && <span aria-hidden="true" className="h-2 w-2 rounded-full bg-gold-300" />}
-                </dd>
-              </div>
-            ))}
-          </dl>
-        )}
-      </div>
+    <section aria-labelledby="dash-greeting" className="pt-1">
+      <p className="text-[0.75rem] font-semibold uppercase tracking-[0.08em] text-ink/55">
+        {weekday} {date}
+        {area ? <> · {AREA_WORKSPACE[area]}</> : null}
+      </p>
+      <h1 id="dash-greeting" className="mt-1 text-[1.625rem] font-semibold leading-tight tracking-tight text-ink">
+        {greeting}
+        {firstName ? `, ${firstName}` : ""}
+      </h1>
+      {subtitle && <p className="mt-1 text-sm text-ink/70">{subtitle}</p>}
+      {chips.length > 0 && (
+        <StatStrip className="mt-5">
+          {chips.map((c) => (
+            <StatTile key={c.label} value={formatChipValue(c.value)} label={c.label} hint={c.hint} href={c.href} tone={c.tone === "pink" && typeof c.value === "number" && c.value > 0 ? "warn" : "neutral"} />
+          ))}
+        </StatStrip>
+      )}
     </section>
   );
 }

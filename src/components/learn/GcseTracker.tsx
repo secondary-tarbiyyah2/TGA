@@ -23,6 +23,7 @@ import {
 } from "@/lib/learn/gcse";
 import { BoundaryCalculator, GcseStatusChip, GradeChip, TrendLine, gradeOptions } from "@/components/learn/gcse/GcseParts";
 import { GcsePupilDrawer, type PupilSubjectRow } from "@/components/learn/gcse/GcsePupilDrawer";
+import { Select } from "@/components/learn/Select";
 
 export { GcseStatusChip };
 
@@ -36,10 +37,10 @@ const sameEdit = (a: Edit | undefined, b: Edit | undefined) => !!a && !!b && a.t
 
 function GradeSelect({ value, onChange, label }: { value: string; onChange: (v: string) => void; label: string }) {
   return (
-    <select value={value} onChange={(e) => onChange(e.target.value)} aria-label={label} className="w-14 rounded-md border border-gold-light/60 bg-white px-1.5 py-1 text-sm">
+    <Select value={value} onChange={(e) => onChange(e.target.value)} aria-label={label} className="w-14 rounded-md border border-gold-light/60 bg-white px-1.5 py-1 text-sm">
       <option value="">–</option>
       {gradeOptions()}
-    </select>
+    </Select>
   );
 }
 
@@ -326,13 +327,13 @@ export function GcseClassPanel({ classId, onSaved }: { classId: string; onSaved?
               <span className="pb-1.5 font-medium text-ink">Fill down</span>
               <label>
                 <span className="sr-only">Column</span>
-                <select value={fillField} onChange={(e) => setFillField(e.target.value as Field)} className="rounded-md border border-gold-light/60 bg-white px-2 py-1.5 text-sm">
+                <Select value={fillField} onChange={(e) => setFillField(e.target.value as Field)} className="rounded-md border border-gold-light/60 bg-white px-2 py-1.5 text-sm">
                   {(Object.keys(FIELD_LABEL) as Field[]).map((f) => (
                     <option key={f} value={f}>
                       {FIELD_LABEL[f]}
                     </option>
                   ))}
-                </select>
+                </Select>
               </label>
               <GradeSelect value={fillValue} onChange={setFillValue} label="Grade to fill with" />
               <button type="button" onClick={() => fillDown(true)} className="rounded-lg border border-gold-light bg-white px-2.5 py-1.5 font-medium text-ink/80 hover:bg-cream">

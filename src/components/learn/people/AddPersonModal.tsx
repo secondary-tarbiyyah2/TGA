@@ -6,9 +6,10 @@ import type { LearnRole } from "@/lib/learn/session";
 import { CredentialsCard } from "./StudentCredentials";
 import { studentAccountAction, type IssuedCredentials } from "./studentAccounts";
 import { ui } from "@/components/learn/ui";
-import { Icon } from "@/components/learn/Icon";
+import { Icon, type IconName } from "@/components/learn/Icon";
 import { PupilPlacement } from "@/components/learn/pupil/PupilPlacement";
 import { GOLD_BUTTON, INPUT_CLASS, friendlyError, invite, type ClassOption, type InviteResult, type ParentOption, type YearGroup } from "./shared";
+import { Select } from "@/components/learn/Select";
 
 export type PersonType = "student" | "parent" | "teacher" | "staff";
 
@@ -16,11 +17,11 @@ type Outcome = { text: string; link?: string; code?: string; creds?: IssuedCrede
 
 type LoginMode = "username" | "email" | "none";
 
-const TILES: { type: PersonType; title: string; blurb: string; icon: string }[] = [
-  { type: "student", title: "Student", blurb: "A pupil, linked to a parent", icon: "🎓" },
-  { type: "parent", title: "Parent", blurb: "A family login, with children", icon: "👨‍👩‍👧" },
-  { type: "teacher", title: "Teacher", blurb: "Teacher or teaching assistant", icon: "📚" },
-  { type: "staff", title: "Headteacher / Admin", blurb: "Headteacher, Admin or Admissions", icon: "🛡️" },
+const TILES: { type: PersonType; title: string; blurb: string; icon: IconName }[] = [
+  { type: "student", title: "Student", blurb: "A pupil, linked to a parent", icon: "graduationCap" },
+  { type: "parent", title: "Parent", blurb: "A family login, with children", icon: "users" },
+  { type: "teacher", title: "Teacher", blurb: "Teacher or teaching assistant", icon: "bookOpen" },
+  { type: "staff", title: "Headteacher / Admin", blurb: "Headteacher, Admin or Admissions", icon: "shieldCheck" },
 ];
 
 function Field({ label, hint, children }: { label: string; hint?: string; children: React.ReactNode }) {
@@ -344,8 +345,8 @@ export function AddPersonModal({
                     onClick={() => pickType(t.type)}
                     className="flex items-center gap-3 rounded-2xl border border-gold-light bg-white p-4 text-left transition hover:border-gold-500 hover:bg-gold-50 hover:shadow-sm"
                   >
-                    <span aria-hidden="true" className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gold-100 text-2xl">
-                      {t.icon}
+                    <span aria-hidden="true" className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gold-100 text-gold-900">
+                      <Icon name={t.icon} size="lg" />
                     </span>
                     <span>
                       <span className="block text-base font-semibold text-ink">{t.title}</span>
@@ -377,7 +378,7 @@ export function AddPersonModal({
                     </div>
                     {parentMode === "existing" ? (
                       <Field label="Parent">
-                        <select value={parentId} onChange={(e) => setParentId(e.target.value)} className={INPUT_CLASS}>
+                        <Select value={parentId} onChange={(e) => setParentId(e.target.value)} className={INPUT_CLASS}>
                           <option value="">Choose a parent…</option>
                           {parents.map((p) => (
                             <option key={p.id} value={p.id}>
@@ -385,7 +386,7 @@ export function AddPersonModal({
                               {p.email ? ` (${p.email})` : ""}
                             </option>
                           ))}
-                        </select>
+                        </Select>
                       </Field>
                     ) : (
                       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -413,11 +414,11 @@ export function AddPersonModal({
                     setClassIds={setClassIds}
                   />
                   <Field label="Student's login" hint={loginMode === "username" ? "A username (firstname.lastname) and a temporary password are generated. The parent is emailed them, and you see them once. The student chooses their own password at first sign-in." : undefined}>
-                    <select value={loginMode} onChange={(e) => setLoginMode(e.target.value as LoginMode)} className={INPUT_CLASS}>
+                    <Select value={loginMode} onChange={(e) => setLoginMode(e.target.value as LoginMode)} className={INPUT_CLASS}>
                       <option value="username">Username and password (no email needed)</option>
                       <option value="email">Their own email address</option>
                       <option value="none">No login yet</option>
-                    </select>
+                    </Select>
                   </Field>
                   {loginMode === "email" && (
                     <Field label="Student's email">
@@ -458,22 +459,22 @@ export function AddPersonModal({
               {type === "teacher" && (
                 <>
                   <Field label="Role">
-                    <select value={teacherKind} onChange={(e) => setTeacherKind(e.target.value as LearnRole)} className={INPUT_CLASS}>
+                    <Select value={teacherKind} onChange={(e) => setTeacherKind(e.target.value as LearnRole)} className={INPUT_CLASS}>
                       <option value="teacher">Teacher</option>
                       <option value="teaching_assistant_cover">Teaching assistant / cover</option>
                       <option value="senco">SENCo (keeps the SEND register)</option>
-                    </select>
+                    </Select>
                   </Field>
                   {teacherKind !== "senco" && (
                     <Field label="Class (optional)" hint="You can assign more classes later from Academic → Classes.">
-                      <select value={classId} onChange={(e) => setClassId(e.target.value)} className={INPUT_CLASS}>
+                      <Select value={classId} onChange={(e) => setClassId(e.target.value)} className={INPUT_CLASS}>
                         <option value="">No class yet</option>
                         {classes.map((c) => (
                           <option key={c.id} value={c.id}>
                             {c.name}
                           </option>
                         ))}
-                      </select>
+                      </Select>
                     </Field>
                   )}
                 </>
@@ -481,11 +482,11 @@ export function AddPersonModal({
 
               {type === "staff" && (
                 <Field label="Role" hint="Only a Headteacher can add another Headteacher or an Admin.">
-                  <select value={staffRole} onChange={(e) => setStaffRole(e.target.value as LearnRole)} className={INPUT_CLASS}>
+                  <Select value={staffRole} onChange={(e) => setStaffRole(e.target.value as LearnRole)} className={INPUT_CLASS}>
                     <option value="admissions">Admissions</option>
                     <option value="admin">Admin</option>
                     <option value="head_teacher">Headteacher</option>
-                  </select>
+                  </Select>
                 </Field>
               )}
 

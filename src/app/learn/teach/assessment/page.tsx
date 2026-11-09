@@ -11,6 +11,7 @@ import { WeeklyTarbiyahNoteForm } from "@/components/learn/WeeklyTarbiyahNoteFor
 import { useMyClasses } from "@/lib/learn/useMyClasses";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { ClassGradebook } from "@/components/learn/assessment/ClassGradebook";
+import { Select } from "@/components/learn/Select";
 
 type Child = { id: string; name: string };
 
@@ -55,7 +56,7 @@ function AssessmentContent() {
         <div className="flex flex-wrap items-center gap-3">
           <label className="text-sm font-semibold text-ink">
             Class{" "}
-            <select
+            <Select
               value={classId}
               onChange={(e) => {
                 setClassId(e.target.value);
@@ -68,7 +69,7 @@ function AssessmentContent() {
                   {c.name}
                 </option>
               ))}
-            </select>
+            </Select>
           </label>
           {pupils && <span className="text-sm text-ink/65">{pupils.length} pupil{pupils.length === 1 ? "" : "s"}</span>}
         </div>

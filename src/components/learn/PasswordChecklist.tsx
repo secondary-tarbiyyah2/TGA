@@ -1,5 +1,6 @@
 "use client";
 
+import { Icon } from "@/components/learn/Icon";
 import { passwordChecks, passwordStrength } from "@/lib/learn/passwordRules";
 
 const BAR = ["bg-ink/15", "bg-red-500", "bg-amber-500", "bg-teal-500", "bg-teal-700"];
@@ -26,7 +27,7 @@ export function PasswordChecklist({ password, confirm }: { password: string; con
       <ul aria-label="Password requirements" className="space-y-1 text-sm">
         {checks.map((c) => (
           <li key={c.id} className={c.ok ? "text-teal-700" : touched ? "text-red-700" : "text-ink/65"}>
-            <span aria-hidden="true">{c.ok ? "✓" : touched ? "✗" : "•"}</span> {c.label}
+            <Icon name={c.ok ? "check" : touched ? "x" : "minus"} className="mr-1.5 inline h-4 w-4 align-[-3px]" strokeWidth={2.25} />{c.label}
             <span className="sr-only">{c.ok ? " (done)" : " (not yet)"}</span>
           </li>
         ))}

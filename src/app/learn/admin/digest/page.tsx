@@ -14,7 +14,7 @@ export default function AdminDigestPage() {
           title="Weekly parent digest"
           subtitle="The Friday afternoon email to families: when it goes, who gets it, how it went, and what it includes."
         />
-        <Suspense fallback={<div className="h-40 animate-pulse rounded-2xl bg-white" />}>
+        <Suspense fallback={<div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />}>
           <DigestAdmin />
         </Suspense>
       </LearnGate>

@@ -15,6 +15,7 @@ import { useTimetableData } from "@/components/learn/timetable/useTimetableData"
 import { edgeErrorMessage } from "@/lib/learn/edge";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import type { TimetableSlot } from "@/lib/learn/timetable";
+import { Select } from "@/components/learn/Select";
 
 type View = "all" | "class" | "teacher" | "session";
 const VIEWS: { id: View; label: string }[] = [
@@ -178,7 +179,7 @@ function TimetableContent() {
     <div>
       <LessonsHeader title="Timetable" subtitle="The weekly grid. Drag a lesson to move it; click it to edit; nothing goes live until you publish." actions={exportActions} />
       {!data.loaded ? (
-        <div className="h-40 animate-pulse rounded-2xl bg-white" aria-label="Loading" />
+        <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" aria-label="Loading" />
       ) : runs.length === 0 ? (
         <p className="rounded-xl border border-dashed border-gold-light bg-cream/60 px-4 py-4 text-sm text-ink/70">
           No timetable yet. <Link href="/admin/lessons/generate" className="font-semibold underline">Generate one</Link> or start a blank draft.
@@ -196,10 +197,10 @@ function TimetableContent() {
                 </button>
               ))}
               {runs.length > 4 && (
-                <select aria-label="Older versions" value={runs.slice(4).some((r) => r.id === runId) ? runId || "" : ""} onChange={(e) => e.target.value && setSelectedRun(e.target.value)} className="rounded-full border border-gold-light bg-white px-3 py-1 text-sm text-ink/70">
+                <Select aria-label="Older versions" value={runs.slice(4).some((r) => r.id === runId) ? runId || "" : ""} onChange={(e) => e.target.value && setSelectedRun(e.target.value)} className="rounded-full border border-gold-light bg-white px-3 py-1 text-sm text-ink/70">
                   <option value="">Older…</option>
                   {runs.slice(4).map((r) => <option key={r.id} value={r.id}>{r.label} · {r.status} · {ukShortDate(r.created_at)}</option>)}
-                </select>
+                </Select>
               )}
             </div>
             <div className="mt-3 flex flex-wrap items-center gap-2">

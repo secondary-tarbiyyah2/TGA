@@ -14,6 +14,7 @@ import { AUDIENCE_LABEL, audienceText, audienceToRoles, requestSignatures, roles
 import { Tabs } from "@/components/learn/Tabs";
 import { Button, EmptyState, Field, IconButton, StatusChip, SwitchKnob, btn, ui } from "@/components/learn/ui";
 import { csvEscape } from "@/components/learn/fees/shared";
+import { Select } from "@/components/learn/Select";
 
 type PolicyRow = { id: string; number: string; title: string; category: string; fileUrl: string; lastReviewed?: string; nextReview?: string };
 type SignableDoc = {
@@ -527,7 +528,7 @@ function DocumentsContent() {
             </Button>
           </div>
           {policies === null ? (
-            <div className="h-40 animate-pulse" />
+            <div className="h-40 motion-safe:animate-pulse" />
           ) : policies.length === 0 ? (
             <div className="p-4"><EmptyState title="No policies on the website yet" icon="fileText">Policies published on the public website appear here automatically.</EmptyState></div>
           ) : (
@@ -592,7 +593,7 @@ function DocumentsContent() {
       {tab === "signing" && (
         <div className="overflow-hidden rounded-2xl border border-gold-light bg-white">
           {docs === null ? (
-            <div className="h-40 animate-pulse" />
+            <div className="h-40 motion-safe:animate-pulse" />
           ) : signing.length === 0 ? (
             <div className="p-4">
               <EmptyState
@@ -667,14 +668,14 @@ function DocumentsContent() {
         <div className="rounded-2xl border border-gold-light bg-white">
           <div className="flex flex-wrap gap-3 border-b border-gold-light px-5 py-3">
             <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search by name or email…" aria-label="Search by name or email" className={`${ui.input} min-w-[200px] flex-1`} />
-            <select value={docFilter} onChange={(e) => setDocFilter(e.target.value)} className={`${ui.select} !w-auto max-w-full`} aria-label="Document">
+            <Select value={docFilter} onChange={(e) => setDocFilter(e.target.value)} className={`${ui.select} !w-auto max-w-full`} aria-label="Document">
               <option value="all">All documents</option>
               {[...new Set((outstanding || []).map((o) => o.title))].map((t) => (
                 <option key={t} value={t}>
                   {t}
                 </option>
               ))}
-            </select>
+            </Select>
           </div>
           {picked.size > 0 && (
             <div className="flex flex-wrap items-center gap-2 border-b border-gold-light bg-cream px-5 py-2 text-sm">
@@ -691,7 +692,7 @@ function DocumentsContent() {
             </div>
           )}
           {outstanding === null ? (
-            <div className="h-32 animate-pulse" />
+            <div className="h-32 motion-safe:animate-pulse" />
           ) : outstandingShown.length === 0 ? (
             <p className="px-5 py-10 text-center text-sm text-ink/65">{outstanding.length === 0 ? "Everyone is up to date." : "No one matches. Try clearing the search or document filter."}</p>
           ) : (

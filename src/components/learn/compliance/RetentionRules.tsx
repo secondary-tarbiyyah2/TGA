@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { btn, ui } from "@/components/learn/ui";
+import { Select } from "@/components/learn/Select";
 
 type RuleRow = {
   id: number;
@@ -102,13 +103,13 @@ function RuleCard({ rule, due, onChanged }: { rule: RuleRow; due: PreviewRow[]; 
         </label>
         <label className="text-xs text-ink/70">
           Then
-          <select value={action} onChange={(e) => setAction(e.target.value)} className={`${ui.select} mt-1`}>
+          <Select value={action} onChange={(e) => setAction(e.target.value)} className={`${ui.select} mt-1`}>
             {rule.allowed_actions.map((a) => (
               <option key={a} value={a}>
                 {a === "delete" ? "Delete" : "Anonymise"}
               </option>
             ))}
-          </select>
+          </Select>
         </label>
         <label className="flex items-end gap-2 pb-1.5 text-xs text-ink/70">
           <input type="checkbox" checked={enabled} onChange={(e) => setEnabled(e.target.checked)} /> Rule is on
@@ -210,7 +211,7 @@ export function RetentionRules() {
         Nothing is removed automatically from here. Review the list for a rule, tick the box, then run it. Every run is logged, and the audit history of removed records is redacted. Recordings, the sign-in log and (in part) messages are also handled by their own scheduled jobs; see the retention schedule on the Compliance page.
       </p>
       {error && <p role="alert" className="mt-2 text-sm text-red-700">{error}</p>}
-      {rules === null && <div className="mt-3 h-24 animate-pulse rounded-xl bg-cream" />}
+      {rules === null && <div className="mt-3 h-24 motion-safe:animate-pulse rounded-xl bg-cream" />}
       <ul className="mt-4 space-y-3">
         {(rules || []).map((r) => (
           <RuleCard key={`${r.id}-${r.retention_months}-${r.action}-${r.enabled}`} rule={r} due={preview.filter((p) => p.category === r.category)} onChanged={load} />

@@ -25,7 +25,7 @@ function Content() {
           ))}
         </div>
       )}
-      {children === null ? <div className="h-40 animate-pulse rounded-2xl bg-white" /> : children.length === 0 ? <EmptyState title="No children on your account yet." /> : <QuranPupilView childId={current} name={name} />}
+      {children === null ? <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" /> : children.length === 0 ? <EmptyState title="No children on your account yet." /> : <QuranPupilView childId={current} name={name} />}
     </>
   );
 }

@@ -22,6 +22,7 @@ import {
   type FeedbackStatus,
   type FeedbackTicket,
 } from "@/lib/learn/feedback";
+import { Select } from "@/components/learn/Select";
 
 type View = "new" | "in_progress" | "planned" | "closed" | "all";
 const KIND_ICON: Record<FeedbackKind, IconName> = { problem: "bug", idea: "lightbulb", question: "circleHelp" };
@@ -109,18 +110,18 @@ function FeedbackAdmin() {
       <div {...tabPanelProps("feedback", view)}>
         <div className="mb-3 flex flex-wrap gap-2">
           <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search title, name, page or FB-0001" aria-label="Search feedback" className={`${ui.input} min-w-0 flex-1 sm:max-w-sm`} />
-          <select value={kind} onChange={(e) => setKind(e.target.value as FeedbackKind | "")} aria-label="Type" className={`${ui.select} !w-auto`}>
+          <Select value={kind} onChange={(e) => setKind(e.target.value as FeedbackKind | "")} aria-label="Type" className={`${ui.select} !w-auto`}>
             <option value="">All types</option>
             {(Object.keys(KIND_LABEL) as FeedbackKind[]).map((k) => (
               <option key={k} value={k}>
                 {KIND_LABEL[k]}
               </option>
             ))}
-          </select>
+          </Select>
         </div>
 
         {tickets === null ? (
-          <div className="h-40 animate-pulse rounded-2xl bg-white" />
+          <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />
         ) : error ? null : shown.length === 0 ? (
           <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/70">
             {q.trim() || kind ? "No feedback matches your search." : view === "new" ? "Nothing new. You're all caught up." : "Nothing here yet."}
@@ -267,23 +268,23 @@ function TicketDrawer({ ticket, onClose, onSaved }: { ticket: FeedbackTicket; on
             <div className="grid gap-3 sm:grid-cols-2">
               <label className="text-xs font-medium text-ink/70">
                 Status
-                <select value={status} onChange={(e) => setStatus(e.target.value as FeedbackStatus)} className={`mt-1 ${ui.select}`}>
+                <Select value={status} onChange={(e) => setStatus(e.target.value as FeedbackStatus)} className={`mt-1 ${ui.select}`}>
                   {(Object.keys(STATUS_LABEL) as FeedbackStatus[]).map((s) => (
                     <option key={s} value={s}>
                       {STATUS_LABEL[s]}
                     </option>
                   ))}
-                </select>
+                </Select>
               </label>
               <label className="text-xs font-medium text-ink/70">
                 Priority
-                <select value={priority} onChange={(e) => setPriority(e.target.value as FeedbackPriority)} className={`mt-1 ${ui.select}`}>
+                <Select value={priority} onChange={(e) => setPriority(e.target.value as FeedbackPriority)} className={`mt-1 ${ui.select}`}>
                   {(Object.keys(PRIORITY_LABEL) as FeedbackPriority[]).map((p) => (
                     <option key={p} value={p}>
                       {PRIORITY_LABEL[p]}
                     </option>
                   ))}
-                </select>
+                </Select>
               </label>
             </div>
             <label className="block text-xs font-medium text-ink/70">

@@ -7,6 +7,7 @@ import { useLearnSession } from "@/lib/learn/session";
 import { ukTimeOf } from "@/lib/learn/ukTime";
 import { useSupportPlans } from "@/lib/learn/send";
 import { SupportAtAGlance, SupportBadge } from "@/components/learn/send/SupportAtAGlance";
+import { Select } from "@/components/learn/Select";
 
 export type Status = "present" | "late" | "absent" | "excused" | "not_engaged" | "technical";
 /** The four marks used every lesson, as one-tap buttons. */
@@ -223,7 +224,7 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
         </p>
       )}
       {Object.keys(teams).length > 0 && (
-        <p className="border-b border-gold-light/70 bg-indigo-50/50 px-5 py-2 text-xs text-indigo-900">
+        <p className="border-b border-gold-light/70 bg-teal-100/50 px-5 py-2 text-xs text-teal-900">
           &ldquo;Teams says&rdquo; tags come from the Microsoft Teams attendance report. They are suggestions only and are never saved as marks; pupils Teams couldn&apos;t match by email show no tag.
         </p>
       )}
@@ -241,7 +242,7 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
                 {didJoin ? <span className="ml-2 text-xs font-normal text-green-800">Joined {timeOf(joined[c.id])}</span> : anyJoins ? <span className="ml-2 text-xs font-normal text-amber-800">Has not joined</span> : null}
                 {teams[c.id] && (
                   <span
-                    className="ml-2 inline-block rounded-full bg-indigo-50 px-2 py-0.5 text-xs font-normal text-indigo-900"
+                    className="ml-2 inline-block rounded-full bg-teal-100 px-2 py-0.5 text-xs font-normal text-teal-900"
                     title={`Suggestion from the Microsoft Teams attendance report, matched by ${TEAMS_MATCH_LABEL[teams[c.id].matched_by] || "email"}. It is not saved as a mark: choose the mark yourself.`}
                   >
                     Teams says {teams[c.id].first_join_at ? `joined ${timeOf(teams[c.id].first_join_at!)}, ` : ""}
@@ -269,7 +270,7 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
                   );
                 })}
               </div>
-              <select
+              <Select
                 aria-label={`Other mark for ${c.name}`}
                 value={current === "not_engaged" || current === "technical" ? current : ""}
                 onChange={(e) => e.target.value && save([{ childId: c.id, status: e.target.value as Status }])}
@@ -281,7 +282,7 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
                     {o.label}
                   </option>
                 ))}
-              </select>
+              </Select>
               {current === "absent" && lessonDate && !canRecordReason && (
                 <p className="w-full text-xs text-ink/65">
                   Reason: {reasons[c.id] ? REASONS.find((r) => r.value === reasons[c.id])?.label || "Recorded" : "not given yet (the office follows this up)"}
@@ -290,14 +291,14 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
               {current === "absent" && lessonDate && canRecordReason && (
                 <label className="flex w-full items-center gap-2 text-xs text-ink/65">
                   Reason
-                  <select value={reasons[c.id] || ""} onChange={(e) => setReason(c.id, e.target.value)} className="rounded-lg border border-gold-light bg-white px-2 py-1 text-xs text-ink">
+                  <Select value={reasons[c.id] || ""} onChange={(e) => setReason(c.id, e.target.value)} className="rounded-lg border border-gold-light bg-white px-2 py-1 text-xs text-ink">
                     <option value="">Not recorded</option>
                     {REASONS.map((r) => (
                       <option key={r.value} value={r.value}>
                         {r.label}
                       </option>
                     ))}
-                  </select>
+                  </Select>
                 </label>
               )}
             </li>

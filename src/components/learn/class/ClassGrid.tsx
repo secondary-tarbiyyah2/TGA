@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { classBannerStyle, type ClassSummary, type ClassViewer } from "@/lib/learn/classes";
+import { Select } from "@/components/learn/Select";
 
 type Progress = { label: string; percent: number | null };
 
@@ -162,7 +163,7 @@ export function ClassGrid({
     return (
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {[0, 1, 2].map((i) => (
-          <div key={i} className="h-48 animate-pulse rounded-2xl border border-gold-light bg-white" />
+          <div key={i} className="h-48 motion-safe:animate-pulse rounded-2xl border border-gold-light bg-white" />
         ))}
       </div>
     );
@@ -184,11 +185,11 @@ export function ClassGrid({
             aria-label="Search classes"
             className="w-full max-w-xs border border-gold-light px-3 py-2 text-sm"
           />
-          <select value={sort} onChange={(e) => setSort(e.target.value as "name" | "subject" | "year")} aria-label="Sort classes" className="border border-gold-light px-3 py-2 text-sm">
+          <Select value={sort} onChange={(e) => setSort(e.target.value as "name" | "subject" | "year")} aria-label="Sort classes" className="border border-gold-light px-3 py-2 text-sm">
             <option value="name">Sort by class name</option>
             <option value="subject">Sort by subject</option>
             <option value="year">Sort by year group</option>
-          </select>
+          </Select>
           <div role="group" aria-label="View" className="ml-auto flex overflow-hidden rounded-lg border border-gold-light">
             {(["cards", "list"] as const).map((v) => (
               <button

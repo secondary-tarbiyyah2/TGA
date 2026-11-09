@@ -95,7 +95,7 @@ function FamilyBehaviourContent() {
       {children !== null && children.length === 0 ? (
         <p className="rounded-xl border border-dashed border-gold-light bg-cream/30 px-4 py-8 text-center text-sm text-ink/65">No children are linked to your account yet.</p>
       ) : records === null ? (
-        <div className="h-40 animate-pulse rounded-2xl bg-white" />
+        <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />
       ) : records.length === 0 && badges.length === 0 && upcoming.length === 0 ? (
         // Nothing yet: one friendly message instead of three zero tiles and two empty boxes.
         <EmptyState title="Nothing recorded yet" icon="heartHandshake">

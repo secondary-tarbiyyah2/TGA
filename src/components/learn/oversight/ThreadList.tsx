@@ -8,8 +8,8 @@ import { ui } from "@/components/learn/ui";
 type Tab = "all" | Category | "flagged";
 const TABS: { id: Tab; label: string }[] = [
   { id: "all", label: "All" },
-  { id: "staff_staff", label: "Staff↔Staff" },
-  { id: "staff_parent", label: "Staff↔Parent" },
+  { id: "staff_staff", label: "Staff and staff" },
+  { id: "staff_parent", label: "Staff and parent" },
   { id: "group", label: "Class/group" },
   { id: "flagged", label: "Flagged" },
 ];

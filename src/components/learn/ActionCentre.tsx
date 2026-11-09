@@ -120,7 +120,7 @@ export function ActionCentre({ role }: { role: Role }) {
     .filter((c) => c.list.length > 0);
   const catLabel = cat === "all" ? "Everything" : CATEGORIES.find((c) => c.key === cat)?.label || "";
 
-  if (items === null) return <div className="h-40 animate-pulse rounded-2xl bg-white" aria-label="Loading" />;
+  if (items === null) return <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" aria-label="Loading" />;
 
   const navButton = (key: CategoryKey | "all", label: string, count: number, urgent: number, icon: IconName | null) => {
     const on = cat === key;

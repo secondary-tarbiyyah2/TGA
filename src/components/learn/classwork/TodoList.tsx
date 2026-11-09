@@ -7,6 +7,7 @@ import { fetchChildClasses, useFamilyChildren, useStudentChildId, type ClassSumm
 import { Tabs } from "@/components/learn/Tabs";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { ui } from "@/components/learn/ui";
+import { Select } from "@/components/learn/Select";
 
 type StatusRow = { homework_id: string; class_id: string; due_at: string; status: "missing" | "late" | "on_time" | "not_yet_due"; submitted_at: string | null };
 type Hw = { id: string; title: string; archived_at: string | null };
@@ -93,14 +94,14 @@ function TodoBody({ childId, hwHref, heading, subtitle, childPicker }: { childId
         subtitle={subtitle}
         actions={
           classes.length > 1 ? (
-            <select value={classId} onChange={(e) => setClassId(e.target.value)} aria-label="Filter by class" className={`${ui.select} max-w-full sm:w-64`}>
+            <Select value={classId} onChange={(e) => setClassId(e.target.value)} aria-label="Filter by class" className={`${ui.select} max-w-full sm:w-64`}>
               <option value="">All classes</option>
               {classes.map((c) => (
                 <option key={c.id} value={c.id}>
                   {c.name}
                 </option>
               ))}
-            </select>
+            </Select>
           ) : undefined
         }
       />
@@ -108,7 +109,7 @@ function TodoBody({ childId, hwHref, heading, subtitle, childPicker }: { childId
       <div className="rounded-2xl border border-gold-light bg-white">
       <Tabs items={TABS.map((t) => ({ ...t, count: counts[t.key], countAlert: t.key === "missing" }))} value={tab} onChange={setTab} label="Homework status" className="px-3" />
       {items === null ? (
-        <div className="m-5 h-24 animate-pulse rounded-lg bg-cream" />
+        <div className="m-5 h-24 motion-safe:animate-pulse rounded-lg bg-cream" />
       ) : list.length === 0 ? (
         <p className="p-8 text-center text-sm text-ink/65">{empty[tab]}</p>
       ) : (
@@ -135,7 +136,7 @@ function TodoBody({ childId, hwHref, heading, subtitle, childPicker }: { childId
 /** Student "To do": their own homework in three tabs. Opening one goes to the Homework page to hand it in. */
 export function StudentTodo() {
   const childId = useStudentChildId();
-  if (childId === undefined) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
+  if (childId === undefined) return <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />;
   if (!childId) return <p className="text-sm text-ink/65">No pupil account is linked to this login yet.</p>;
   return <TodoBody childId={childId} hwHref={(hw) => `/student/homework?hw=${hw}`} heading="To do" subtitle="Your homework: what is set, what is missing and what you have handed in. Tap one to open it." />;
 }
@@ -146,7 +147,7 @@ export function FamilyTodo({ initialChild }: { initialChild?: string }) {
   const [selected, setSelected] = useState(initialChild || "");
   // A stale ?child= (not one of this parent's children) falls back to the first child.
   const childId = (kids?.some((k) => k.id === selected) ? selected : "") || kids?.[0]?.id || "";
-  if (kids === null) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
+  if (kids === null) return <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />;
   if (kids.length === 0)
     return (
       <p className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/65">

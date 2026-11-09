@@ -13,6 +13,7 @@ import { saveCsv, toCsv as buildCsv } from "@/lib/learn/csv";
 import { classBannerStyle } from "@/lib/learn/classes";
 import { Tabs, tabPanelProps } from "@/components/learn/Tabs";
 import { Button, StatusChip, btn, ui } from "@/components/learn/ui";
+import { Select } from "@/components/learn/Select";
 
 type Status = "present" | "late" | "absent" | "excused" | "not_engaged" | "technical";
 const STATUSES: { value: Status; label: string; dot: string }[] = [
@@ -331,7 +332,7 @@ function ReportsContent() {
             </label>
             <label className="text-xs font-medium text-ink/65">
               Year group
-              <select
+              <Select
                 value={yearGroupId}
                 onChange={(e) => {
                   setYearGroupId(e.target.value);
@@ -345,29 +346,29 @@ function ReportsContent() {
                     {y.name}
                   </option>
                 ))}
-              </select>
+              </Select>
             </label>
             <label className="text-xs font-medium text-ink/65">
               Class
-              <select value={classId} onChange={(e) => setClassId(e.target.value)} className={`mt-1 ${fieldCls}`}>
+              <Select value={classId} onChange={(e) => setClassId(e.target.value)} className={`mt-1 ${fieldCls}`}>
                 <option value="">{yearGroupId ? "All classes in year group" : "All classes"}</option>
                 {classOptions.map((c) => (
                   <option key={c.id} value={c.id}>
                     {c.name}
                   </option>
                 ))}
-              </select>
+              </Select>
             </label>
             <label className="text-xs font-medium text-ink/65">
               Status
-              <select value={status} onChange={(e) => setStatus(e.target.value as "" | Status)} className={`mt-1 ${fieldCls}`}>
+              <Select value={status} onChange={(e) => setStatus(e.target.value as "" | Status)} className={`mt-1 ${fieldCls}`}>
                 <option value="">Any status</option>
                 {STATUSES.map((s) => (
                   <option key={s.value} value={s.value}>
                     {s.label}
                   </option>
                 ))}
-              </select>
+              </Select>
             </label>
             <label className="text-xs font-medium text-ink/65">
               Student
@@ -653,7 +654,7 @@ function TakeRegister() {
       </div>
       {error && <p role="alert" className="mb-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">Could not load this day&apos;s lessons. Please refresh the page and try again.</p>}
       {lessons === null ? (
-        <div className="h-40 animate-pulse rounded-2xl bg-white" />
+        <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />
       ) : lessons.length === 0 ? (
         !error && (
           <div className="rounded-2xl border border-dashed border-gold-light bg-white p-8 text-center text-sm text-ink/65">

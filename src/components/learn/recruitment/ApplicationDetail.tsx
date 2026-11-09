@@ -1,5 +1,6 @@
 "use client";
 
+import { Icon } from "@/components/learn/Icon";
 import { useCallback, useEffect, useState, type ReactNode } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { callEdgeFunction, edgeErrorMessage } from "@/lib/learn/edge";
@@ -20,6 +21,7 @@ import {
 import { Button, StatusChip, btn, ui } from "@/components/learn/ui";
 import { FilePreview } from "@/components/learn/admissions/FilePreview";
 import { RECRUITMENT_BUCKET, ukDate, ukDateTime, type ApplicationEvent, type JobApplication } from "./types";
+import { Select } from "@/components/learn/Select";
 
 function Row({ label, children }: { label: string; children: ReactNode }) {
   const empty = children === null || children === undefined || children === "" || (Array.isArray(children) && children.length === 0);
@@ -170,7 +172,7 @@ export function ApplicationDetail({
         <div className="mt-5 grid gap-4 border-t border-gold-light/60 pt-4 sm:grid-cols-3">
           <label className="text-sm text-ink">
             Status
-            <select
+            <Select
               className={`mt-1 ${ui.select}`}
               value={app.status}
               disabled={busy}
@@ -183,7 +185,7 @@ export function ApplicationDetail({
               {APPLICATION_STATUSES.map((s) => (
                 <option key={s.value} value={s.value}>{s.label}</option>
               ))}
-            </select>
+            </Select>
           </label>
           <div className="text-sm text-ink">
             <span id="rating-label">Rating</span>
@@ -197,9 +199,9 @@ export function ApplicationDetail({
                   aria-label={`${n} out of 5`}
                   disabled={busy}
                   onClick={() => update({ rating: app.rating === n ? null : n }, app.rating === n ? "Rating cleared." : `Rated ${n} out of 5.`)}
-                  className={`h-10 w-10 rounded-lg border text-lg ${app.rating && n <= app.rating ? "border-gold-500 bg-gold-100 text-gold-900" : "border-gold-light bg-white text-ink/40 hover:bg-cream"}`}
+                  className={`inline-flex h-10 w-10 items-center justify-center rounded-lg border text-lg ${app.rating && n <= app.rating ? "border-gold-500 bg-gold-100 text-gold-900" : "border-gold-light bg-white text-ink/40 hover:bg-cream"}`}
                 >
-                  ★
+                  <Icon name="star" size="md" />
                 </button>
               ))}
             </div>

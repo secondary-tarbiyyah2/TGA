@@ -6,6 +6,7 @@ import { isDefaultRow, MAX_TEACHER_LESSONS_PER_WEEK, rowFor, teacherFor, teacher
 import { dangerBtn, ghostBtn, inputCls, Notice, primaryBtn } from "./shared";
 import type { ClassRow, ClassTeacher, Subject, Teacher, YearGroup } from "./shared";
 import { btn } from "@/components/learn/ui";
+import { Select } from "@/components/learn/Select";
 
 type Props = {
   classes: ClassRow[];
@@ -343,10 +344,10 @@ function CellDialog({ cls, subject, teachers, rows, load, legacyTeacher, onClose
           <div className="mt-3 grid gap-2 sm:grid-cols-2">
             <label className="block text-xs font-medium text-ink/70 sm:col-span-2">
               Covering teacher
-              <select className={`${inputCls} mt-1`} value={ovTeacher} onChange={(e) => setOvTeacher(e.target.value)}>
+              <Select className={`${inputCls} mt-1`} value={ovTeacher} onChange={(e) => setOvTeacher(e.target.value)}>
                 <option value="">Choose…</option>
                 {teachers.map((t) => <option key={t.id} value={t.id}>{t.full_name} ({load.get(t.id) || 0} lessons)</option>)}
-              </select>
+              </Select>
             </label>
             <label className="block text-xs font-medium text-ink/70">From<input type="date" className={`${inputCls} mt-1`} value={ovFrom} onChange={(e) => setOvFrom(e.target.value)} /></label>
             <label className="block text-xs font-medium text-ink/70">To (blank = until further notice)<input type="date" className={`${inputCls} mt-1`} value={ovTo} min={ovFrom} onChange={(e) => setOvTo(e.target.value)} /></label>

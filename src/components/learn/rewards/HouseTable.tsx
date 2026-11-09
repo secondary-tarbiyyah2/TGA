@@ -75,7 +75,7 @@ export function HouseTable({ title = "House points" }: { title?: string }) {
       </div>
       <div className="p-4" aria-live="polite">
         {rows === null ? (
-          <div className="h-24 animate-pulse rounded-xl bg-cream" />
+          <div className="h-24 motion-safe:animate-pulse rounded-xl bg-cream" />
         ) : (
           <ol className="space-y-3">
             {rows.map((r) => (

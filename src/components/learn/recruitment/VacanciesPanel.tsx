@@ -5,6 +5,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { MAIN_SITE_ORIGIN } from "@/lib/learn/origin";
 import { CONTRACT_LABELS, DEPARTMENTS, VACANCY_PUBLIC_COLUMNS, longDate, type ContractType, type Vacancy, type VacancyStatus } from "@/lib/careers";
 import { Button, EmptyState, StatusChip, btn, ui } from "@/components/learn/ui";
+import { Select } from "@/components/learn/Select";
 
 type Draft = Omit<Vacancy, "id" | "hours_text" | "salary_text" | "start_text" | "closing_date"> & {
   hours_text: string;
@@ -151,19 +152,19 @@ export function VacanciesPanel({ userId }: { userId: string | null }) {
         </label>
         <label className="text-sm text-ink">
           Department
-          <select value={draft.department} onChange={(e) => set("department", e.target.value)} className={inputCls}>
+          <Select value={draft.department} onChange={(e) => set("department", e.target.value)} className={inputCls}>
             {DEPARTMENTS.map((d) => (
               <option key={d} value={d}>{d}</option>
             ))}
-          </select>
+          </Select>
         </label>
         <label className="text-sm text-ink">
           Contract
-          <select value={draft.contract_type} onChange={(e) => set("contract_type", e.target.value as ContractType)} className={inputCls}>
+          <Select value={draft.contract_type} onChange={(e) => set("contract_type", e.target.value as ContractType)} className={inputCls}>
             {(Object.keys(CONTRACT_LABELS) as ContractType[]).map((c) => (
               <option key={c} value={c}>{CONTRACT_LABELS[c]}</option>
             ))}
-          </select>
+          </Select>
         </label>
         <label className="text-sm text-ink">
           Hours
@@ -218,11 +219,11 @@ export function VacanciesPanel({ userId }: { userId: string | null }) {
         </label>
         <label className="text-sm text-ink">
           Show on the website?
-          <select value={draft.status} onChange={(e) => set("status", e.target.value as VacancyStatus)} className={inputCls}>
+          <Select value={draft.status} onChange={(e) => set("status", e.target.value as VacancyStatus)} className={inputCls}>
             <option value="draft">Draft: hidden</option>
             <option value="open">Open: on the Careers page</option>
             <option value="closed">Closed</option>
-          </select>
+          </Select>
         </label>
       </div>
       <div className="flex gap-2">
@@ -244,7 +245,7 @@ export function VacanciesPanel({ userId }: { userId: string | null }) {
       {editingId === "new" && form}
 
       {roles === null ? (
-        <div className="h-40 animate-pulse rounded-2xl border border-gold-light bg-white" />
+        <div className="h-40 motion-safe:animate-pulse rounded-2xl border border-gold-light bg-white" />
       ) : roles.length === 0 && editingId !== "new" ? (
         <EmptyState title="No roles yet" icon="briefcase" action={<Button variant="primary" icon="plus" onClick={startNew}>New role</Button>}>
           Add a role, then open it to show it on the Careers page.

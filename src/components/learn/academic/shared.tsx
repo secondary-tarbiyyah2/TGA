@@ -1,5 +1,6 @@
 "use client";
 
+import { Icon } from "@/components/learn/Icon";
 import type { ReactNode } from "react";
 import { ui } from "@/components/learn/ui";
 
@@ -45,7 +46,7 @@ export function StepCard({ step, title, help, done, children, id }: { step: numb
           aria-hidden="true"
           className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-sm font-semibold ${done ? "bg-green-600 text-white" : "bg-gold-100 text-gold-900"}`}
         >
-          {done ? "✓" : step}
+          {done ? <Icon name="check" className="h-3.5 w-3.5" strokeWidth={2.5} /> : step}
         </span>
         <div className="min-w-0">
           <h2 className="font-serif text-h3 font-semibold text-ink">{title}</h2>

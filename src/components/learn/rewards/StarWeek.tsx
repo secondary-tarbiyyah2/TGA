@@ -1,5 +1,6 @@
 "use client";
 
+import { Icon } from "@/components/learn/Icon";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { EmptyState, Notice, StatusChip, ui } from "@/components/learn/ui";
@@ -157,7 +158,7 @@ export function StarWeek({ isHead, classId, className, weekStart, me, onChanged 
     }
   };
 
-  if (cands === null || star === undefined) return <div className="h-48 animate-pulse rounded-2xl bg-white" />;
+  if (cands === null || star === undefined) return <div className="h-48 motion-safe:animate-pulse rounded-2xl bg-white" />;
   if (cands.length === 0) return <EmptyState title="No pupils in this class yet" icon="star" tile="tile-gold" />;
 
   // ── This week's star is already chosen ──
@@ -236,7 +237,7 @@ export function StarWeek({ isHead, classId, className, weekStart, me, onChanged 
           className={`flex w-full flex-wrap items-center gap-x-3 gap-y-1 rounded-xl border px-3 py-2.5 text-left transition ${on ? "border-teal-700 bg-teal-100/40 ring-1 ring-teal-700" : "border-gold-light bg-white hover:bg-cream"}`}
         >
           <span className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border ${on ? "border-teal-700 bg-teal-700 text-white" : "border-ink/30"}`} aria-hidden="true">
-            {on ? "✓" : ""}
+            {on ? <Icon name="check" className="h-3.5 w-3.5" strokeWidth={2.5} /> : null}
           </span>
           <span className="min-w-0 flex-1">
             <span className="block text-sm font-medium text-ink">
@@ -279,7 +280,7 @@ export function StarWeek({ isHead, classId, className, weekStart, me, onChanged 
                 const on = draft.tags.includes(t);
                 return (
                   <button key={t} type="button" disabled={!draft.childId} aria-pressed={on} onClick={() => toggleTag(t)} className={`${on ? ui.chipOn : ui.chip} !py-1 !text-xs`}>
-                    {on ? "✓ " : "+ "}
+                    <Icon name={on ? "check" : "plus"} className="h-3.5 w-3.5" strokeWidth={2.25} />
                     {t}
                   </button>
                 );
@@ -340,7 +341,7 @@ function StepHead({ n, id, title, done }: { n: number; id: string; title: string
   return (
     <h2 id={id} className="flex items-center gap-2 text-sm font-semibold text-ink">
       <span aria-hidden="true" className={`flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold ${done ? "bg-green-600 text-white" : "bg-gold-700 text-white"}`}>
-        {done ? "✓" : n}
+        {done ? <Icon name="check" className="h-3.5 w-3.5" strokeWidth={2.5} /> : n}
       </span>
       {title}
     </h2>

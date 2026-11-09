@@ -1,5 +1,6 @@
 "use client";
 
+import { Icon } from "@/components/learn/Icon";
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { generateIcsToken, googleSubscribeUrl, hashIcsToken, icsFeedUrl, outlookSubscribeUrl, webcalUrl } from "@/lib/learn/timetable";
@@ -153,7 +154,7 @@ export function IcsFeedLink() {
             <div className="flex items-center justify-between">
               <h2 className="font-serif text-lg font-semibold text-ink">Add to my calendar</h2>
               <button type="button" onClick={() => setOpen(false)} aria-label="Close" className="rounded-lg px-2 py-1 text-ink/65 hover:bg-cream">
-                ✕
+                <Icon name="x" size="sm" />
               </button>
             </div>
 

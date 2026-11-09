@@ -1,5 +1,6 @@
 "use client";
 
+import { Icon } from "@/components/learn/Icon";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Tabs } from "@/components/learn/Tabs";
 import { downloadDeck } from "@/lib/learn/curriculum";
@@ -96,7 +97,7 @@ export function PupilRevision() {
           {error}
         </p>
       )}
-      {units === null && <div className="h-40 animate-pulse rounded-2xl bg-white" />}
+      {units === null && <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />}
       {units && units.length === 0 && !error && (
         <EmptyState title="No revision units yet" icon="bookOpenCheck" tile="tile-teal">Your teachers add a summary and a quiz for each unit as the year goes on. Check back after your first topics.</EmptyState>
       )}
@@ -177,7 +178,7 @@ function UnitView({ id, onBack }: { id: string; onBack: () => void }) {
           {error}
         </p>
       )}
-      {!unit && !error && <div className="h-40 animate-pulse rounded-2xl bg-white" />}
+      {!unit && !error && <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />}
       {unit && (
         <>
           <div>
@@ -358,7 +359,7 @@ function SummaryView({ unit, onQuiz }: { unit: PupilUnit; onQuiz: () => void }) 
                     <p className="font-serif text-xl font-semibold">{s?.title}</p>
                     <div className="flex flex-wrap justify-center gap-2">
                       <button type="button" onClick={() => playChapter(i)} className="rounded-full border border-white/40 px-4 py-2 text-sm font-semibold hover:bg-white/10">
-                        ↺ Watch again
+                        <Icon name="rotateCcw" className="inline h-3.5 w-3.5 align-[-2px]" /> Watch again
                       </button>
                       {i < slides.length - 1 ? (
                         <button
@@ -401,7 +402,7 @@ function SummaryView({ unit, onQuiz }: { unit: PupilUnit; onQuiz: () => void }) 
                     {lengthOf(i) ? ` · ${lengthOf(i)}` : ""} · {s?.title}
                   </span>
                   <button type="button" onClick={() => playChapter(i)} className="rounded-full bg-gold-100 px-2.5 py-1 font-semibold text-gold-900 hover:bg-gold-300">
-                    ▶ Play chapter {i + 1}
+                    <Icon name="play" className="inline h-3.5 w-3.5 align-[-2px]" /> Play chapter {i + 1}
                   </button>
                 </>
               ) : (
@@ -417,7 +418,7 @@ function SummaryView({ unit, onQuiz }: { unit: PupilUnit; onQuiz: () => void }) 
             </span>
             {!chaptered && s.time && unit.video_path && (
               <button type="button" onClick={() => seek(s.time)} className="rounded-full bg-gold-100 px-2.5 py-0.5 text-xs font-semibold text-gold-900 hover:bg-gold-300">
-                ▶ Watch from {s.time}
+                <Icon name="play" className="inline h-3.5 w-3.5 align-[-2px]" /> Watch from {s.time}
               </button>
             )}
           </div>

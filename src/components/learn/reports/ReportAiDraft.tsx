@@ -6,6 +6,7 @@ import { Notice, ui } from "@/components/learn/ui";
 import { aiAssist, aiErrorMessage, useAiStatus } from "@/lib/learn/aiAssist";
 import { usePronounField } from "@/lib/learn/pronoun";
 import type { ClassSummary, SubjectRating } from "./summary";
+import { Select } from "@/components/learn/Select";
 
 const RECIPE = ["Resilience", "Eeman", "Contentment", "Integrity", "Progress", "Excellence"];
 
@@ -100,21 +101,21 @@ export function ReportAiDraft({
           <div className="grid gap-2 sm:grid-cols-2">
             <label className={ui.label}>
               Pronoun
-              <select value={pronoun} onChange={(e) => setPronoun(e.target.value)} className={`mt-1 ${ui.select}`}>
+              <Select value={pronoun} onChange={(e) => setPronoun(e.target.value)} className={`mt-1 ${ui.select}`}>
                 <option value="">Use their name</option>
                 <option value="he">he / him</option>
                 <option value="she">she / her</option>
-              </select>
+              </Select>
               {fromRecord && <span className={`mt-1 block font-normal ${ui.hint}`}>From {firstName}&apos;s record. Change it here if needed.</span>}
             </label>
             <label className={ui.label}>
               Tarbiyyah Compass value this half term (optional)
-              <select value={recipe} onChange={(e) => setRecipe(e.target.value)} className={`mt-1 ${ui.select}`}>
+              <Select value={recipe} onChange={(e) => setRecipe(e.target.value)} className={`mt-1 ${ui.select}`}>
                 <option value="">None</option>
                 {RECIPE.map((r) => (
                   <option key={r}>{r}</option>
                 ))}
-              </select>
+              </Select>
             </label>
           </div>
           <p className={ui.hint}>Uses {firstName}&apos;s first name, your notes and the figures and judgements on this page. Nothing else is sent.</p>

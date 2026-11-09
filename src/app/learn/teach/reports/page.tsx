@@ -10,7 +10,7 @@ export default function TeachReportsPage() {
     <section className="app-pad">
       <LearnGate allowedRoles={["teacher", "teaching_assistant_cover"]}>
         <LearnShell role="teach">
-          <Suspense fallback={<div className="h-40 animate-pulse rounded-2xl bg-white" />}>
+          <Suspense fallback={<div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />}>
             <ReportsWorkspace mode="teach" />
           </Suspense>
         </LearnShell>

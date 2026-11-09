@@ -54,7 +54,7 @@ export function QuranPupilView({ childId, name }: { childId: string; name?: stri
   }, [childId]);
 
   const d = data && data.child === childId ? data : null;
-  if (!d) return <div className="h-40 animate-pulse rounded-2xl bg-white" />;
+  if (!d) return <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />;
   const who = name ? `${name} is` : "You are";
   const stats = pupilStats(d.marks);
   const rev = revisionRows(stats);

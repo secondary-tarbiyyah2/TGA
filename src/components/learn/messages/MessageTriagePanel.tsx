@@ -50,7 +50,7 @@ export function MessageTriagePanel({ threadId, latestIncomingId, onUseDraft, onT
   if (busy === "open" && !triage) {
     return (
       <div className="flex items-center gap-2 border-t border-gold-light/30 px-3 py-2 text-xs text-ink/65">
-        <AiSpark className="h-3.5 w-3.5 animate-pulse text-teal-700" /> Reading the latest message…
+        <AiSpark className="h-3.5 w-3.5 motion-safe:animate-pulse text-teal-700" /> Reading the latest message…
       </div>
     );
   }

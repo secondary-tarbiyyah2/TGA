@@ -11,6 +11,7 @@ import {
   type BehaviourKind,
   type StudentOption,
 } from "./data";
+import { Select } from "@/components/learn/Select";
 
 const keyOf = (s: StudentOption) => `${s.childId}:${s.classId || ""}`;
 
@@ -199,14 +200,14 @@ export function LogModal({
           {kind === "incident" ? (
             <label className="block text-sm">
               <span className="font-medium text-ink">Type of incident</span>
-              <select value={category} onChange={(e) => setCategory(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light px-3 py-2 text-sm">
+              <Select value={category} onChange={(e) => setCategory(e.target.value)} className="mt-1 w-full rounded-lg border border-gold-light px-3 py-2 text-sm">
                 <option value="">Choose…</option>
                 {INCIDENT_CATEGORIES.map((c) => (
                   <option key={c} value={c}>
                     {c}
                   </option>
                 ))}
-              </select>
+              </Select>
               <span className="mt-1 block text-xs text-ink/65">If a child may be at risk, use Raise a concern instead.</span>
             </label>
           ) : (

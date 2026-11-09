@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { btn, ui } from "@/components/learn/ui";
+import { Select } from "@/components/learn/Select";
 
 type ChecklistItem = { key: string; label: string; done: boolean };
 type ReviewStatus = "required" | "in_progress" | "completed";
@@ -123,14 +124,14 @@ function ReviewCard({ review, onChanged }: { review: ReviewRow; onChanged: () =>
         <div className="mt-3 grid gap-2 sm:grid-cols-2">
           <label className="text-xs text-ink/70">
             Decision
-            <select value={decision} onChange={(e) => setDecision(e.target.value)} className={`${ui.select} mt-1`}>
+            <Select value={decision} onChange={(e) => setDecision(e.target.value)} className={`${ui.select} mt-1`}>
               <option value="">Choose…</option>
               {DECISIONS.map((d) => (
                 <option key={d.value} value={d.value}>
                   {d.label}
                 </option>
               ))}
-            </select>
+            </Select>
           </label>
           <div className="text-xs text-ink/70">
             Reviewed by
@@ -217,7 +218,7 @@ export function SafeguardingReviews() {
         Opened automatically when concerns repeat (2+ about the same child in 30 days, 3+ in 90) or a serious concern stays open for 24 hours. Visible only to the Safeguarding Lead and Headteacher.
       </p>
 
-      {rows === null && <div className="mt-3 h-20 animate-pulse rounded-xl bg-cream" />}
+      {rows === null && <div className="mt-3 h-20 motion-safe:animate-pulse rounded-xl bg-cream" />}
       <ul className="mt-3 space-y-3">
         {open.map((r) => (
           <ReviewCard key={r.id} review={r} onChanged={load} />

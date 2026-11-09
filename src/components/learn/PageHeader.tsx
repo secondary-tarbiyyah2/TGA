@@ -110,7 +110,7 @@ export function PageHeader({
           </ol>
         </nav>
       )}
-      <div className={`flex flex-col gap-4 ${hasActions ? "sm:flex-row sm:items-end sm:justify-between sm:gap-6" : ""}`}>
+      <div className={`flex flex-col gap-4 ${hasActions ? "sm:flex-row sm:items-center sm:justify-between sm:gap-6" : ""}`}>
         <div className="flex min-w-0 items-center gap-4">
           {tileIcon && (
             <span className="hidden sm:block" aria-hidden="true">

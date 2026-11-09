@@ -1,5 +1,6 @@
 "use client";
 
+import { Icon } from "@/components/learn/Icon";
 import Link from "next/link";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { AdminShell } from "@/components/learn/AdminShell";
@@ -49,7 +50,7 @@ function AcademicHub() {
       />
       <SubPageNav label="Academic setup steps" items={ACADEMIC_STEPS} />
       {!data.loaded ? (
-        <div className="h-40 animate-pulse rounded-2xl bg-white" aria-label="Loading" />
+        <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" aria-label="Loading" />
       ) : (
         <div className="space-y-5">
           <Notice tone={next ? "info" : "good"}>
@@ -67,7 +68,7 @@ function AcademicHub() {
               <li key={c.href}>
                 <Link href={c.href} className="flex h-full flex-col rounded-2xl border border-gold-light bg-white p-4 transition hover:border-gold-500 hover:shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700">
                   <div className="flex items-center gap-3">
-                    <span aria-hidden="true" className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-sm font-semibold ${c.done ? "bg-green-600 text-white" : "bg-gold-100 text-gold-900"}`}>{c.done ? "✓" : i + 1}</span>
+                    <span aria-hidden="true" className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-sm font-semibold ${c.done ? "bg-green-600 text-white" : "bg-gold-100 text-gold-900"}`}>{c.done ? <Icon name="check" className="h-3.5 w-3.5" strokeWidth={2.5} /> : i + 1}</span>
                     <h2 className={ui.sectionTitle}>{c.title}</h2>
                   </div>
                   <p className="mt-2 flex-1 text-sm text-ink/65">{c.help}</p>

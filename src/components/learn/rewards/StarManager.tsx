@@ -12,6 +12,7 @@ import { StarApprovals } from "./StarApprovals";
 import { StarHistory } from "./StarHistory";
 import { StarWeek } from "./StarWeek";
 import { weekOptions } from "./starData";
+import { Select } from "@/components/learn/Select";
 
 export { STAR_QUICK_TAGS } from "./starData";
 
@@ -94,24 +95,24 @@ export function StarManager({ isHead, housesAdmin }: { isHead: boolean; housesAd
       <div className="flex flex-wrap items-center gap-3">
         <label className="flex items-center gap-2 text-sm text-ink/75">
           <span>Class</span>
-          <select value={classId} onChange={(e) => setClassId(e.target.value)} className={`${ui.input} !w-auto !py-1.5`}>
+          <Select value={classId} onChange={(e) => setClassId(e.target.value)} className={`${ui.input} !w-auto !py-1.5`}>
             {classes.map((c) => (
               <option key={c.id} value={c.id}>
                 {c.name}
               </option>
             ))}
-          </select>
+          </Select>
         </label>
         {withWeek && (
           <label className="flex items-center gap-2 text-sm text-ink/75">
             <span>Week</span>
-            <select value={weekStart} onChange={(e) => setWeekStart(e.target.value)} className={`${ui.input} !w-auto !py-1.5`}>
+            <Select value={weekStart} onChange={(e) => setWeekStart(e.target.value)} className={`${ui.input} !w-auto !py-1.5`}>
               {weeks.map((w) => (
                 <option key={w.value} value={w.value}>
                   {w.label}
                 </option>
               ))}
-            </select>
+            </Select>
           </label>
         )}
       </div>
@@ -122,7 +123,7 @@ export function StarManager({ isHead, housesAdmin }: { isHead: boolean; housesAd
       <Tabs variant="switch" label="Star of the Week sections" items={tabs} value={view} onChange={setView} />
 
       {classes === null ? (
-        <div className="h-40 animate-pulse rounded-2xl bg-white" />
+        <div className="h-40 motion-safe:animate-pulse rounded-2xl bg-white" />
       ) : view === "approvals" ? (
         <StarApprovals me={me} onChanged={changed} />
       ) : view === "houses" ? (

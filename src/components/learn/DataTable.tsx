@@ -2,8 +2,9 @@
 
 import { useMemo, useState, type MouseEvent, type ReactNode } from "react";
 import { Icon } from "@/components/learn/Icon";
-import { btn, ui } from "@/components/learn/ui";
+import { btn, LoadingState, ui } from "@/components/learn/ui";
 import { saveCsv, toCsv, type CsvCell } from "@/lib/learn/csv";
+import { Select } from "@/components/learn/Select";
 
 /**
  * The one way the portal shows a list of records (pupils, registers, staff
@@ -158,20 +159,21 @@ export function DataTable<T>({
       )}
 
       {rows === null ? (
-        <div role="status" aria-label="Loading" className="space-y-2 rounded-2xl border border-gold-light bg-white p-4">
-          {[0, 1, 2, 3].map((i) => (
-            <div key={i} className="h-5 rounded bg-cream motion-safe:animate-pulse" />
-          ))}
-        </div>
+        <LoadingState label={`Loading ${caption.toLowerCase()}`} />
       ) : shown.length === 0 ? (
-        <p className="rounded-2xl border border-gold-light bg-white p-4 text-sm text-ink/70">{rows.length === 0 ? empty : emptyFiltered}</p>
+        <div className="flex items-center gap-3 rounded-2xl border border-dashed border-gold-light bg-white px-4 py-6 text-sm text-ink/70 sm:px-5">
+          <span className="portal-tile tile-gold shrink-0" aria-hidden="true">
+            <Icon name={rows.length === 0 ? "inbox" : "search"} size="sm" />
+          </span>
+          <p className="min-w-0">{rows.length === 0 ? empty : emptyFiltered}</p>
+        </div>
       ) : (
         <>
           {/* Tablet and desktop: a real table. */}
           <div className="hidden overflow-x-auto rounded-2xl border border-gold-light bg-white sm:block">
             <table className="w-full text-sm">
               <caption className="sr-only">{caption}</caption>
-              <thead className="sticky top-0 z-[1] bg-white">
+              <thead className="sticky top-0 z-[1] bg-cream/70 backdrop-blur-sm">
                 <tr className="border-b border-gold-light">
                   {columns.map((c) => {
                     const active = sort?.key === c.key;
@@ -180,7 +182,7 @@ export function DataTable<T>({
                         key={c.key}
                         scope="col"
                         aria-sort={active ? (sort!.dir === "asc" ? "ascending" : "descending") : c.sort ? "none" : undefined}
-                        className={`px-4 py-2.5 text-xs font-semibold uppercase tracking-wide text-ink/70 ${alignCls(c.align)}`}
+                        className={`whitespace-nowrap px-4 py-2.5 text-xs font-semibold uppercase tracking-wide text-ink/70 ${alignCls(c.align)}`}
                       >
                         {c.sort ? (
                           <button type="button" onClick={() => toggleSort(c.key)} className={`-mx-1 inline-flex items-center gap-1 rounded px-1 uppercase tracking-wide hover:text-teal-700 ${active ? "text-teal-700" : ""}`}>
@@ -199,7 +201,7 @@ export function DataTable<T>({
                 {pageRows.map((r) => (
                   <tr key={rowKey(r)} onClick={rowClick(r)} className={`border-t border-gold-light/50 align-top hover:bg-cream/60 ${clickCls} ${rowClassName?.(r) || ""}`}>
                     {columns.map((c) => (
-                      <td key={c.key} className={`px-4 py-3 text-ink ${alignCls(c.align)} ${c.className || ""}`}>
+                      <td key={c.key} className={`px-4 py-2.5 text-ink ${alignCls(c.align)} ${c.align === "right" ? "tabular-nums" : ""} ${c.className || ""}`}>
                         {c.cell(r)}
                       </td>
                     ))}
@@ -230,14 +232,14 @@ export function DataTable<T>({
           </ul>
 
           <div className="flex flex-wrap items-center justify-between gap-2 text-sm text-ink/75">
-            <p aria-live="polite">
+            <p aria-live="polite" className="tabular-nums">
               Showing {from}–{to} of {shown.length}
               {rows.length !== shown.length ? ` (filtered from ${rows.length})` : ""}
             </p>
             <div className="flex flex-wrap items-center gap-2">
-              <label className="flex items-center gap-1.5">
+              <label className="flex items-center gap-1.5 whitespace-nowrap">
                 Per page
-                <select
+                <Select
                   value={size}
                   onChange={(e) => {
                     setSize(Number(e.target.value));
@@ -250,7 +252,7 @@ export function DataTable<T>({
                       {n || "All"}
                     </option>
                   ))}
-                </select>
+                </Select>
               </label>
               {pages > 1 && (
                 <nav aria-label="Pages" className="flex items-center gap-1">
