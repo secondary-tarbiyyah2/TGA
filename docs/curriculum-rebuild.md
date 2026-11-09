@@ -55,7 +55,7 @@ Y1-2: English and phonics 5, maths 4, topic 2, Qur'an with Qaidah 3, Islamic Stu
   ("Autumn 1: ..."). Art carries design and technology for now (there is no DT syllabus file yet).
 - Years 2-9 syllabus entries rewritten to the packs: yearMap.y2..y9 one unit per half term (placed in the planner).
 - Opening (owner, 9 Nov 2026; replaces the 8 Nov change): Fri 1 Jan 2027 is a bank holiday, so the first week is
-  induction week Mon 4 to Fri 8 Jan, first live lessons Mon 11 Jan, first fee payment Fri 8 Jan. Migration 0180 updates
+  induction week Mon 4 to Fri 8 Jan, first live lessons Mon 11 Jan, first fee payment Fri 8 Jan. Migration 0181 updates
   the database copies; code, policies, term-dates.ics and the prospectus PDF went back to the 26 Oct wording.
 - Secondary curriculum maps (Years 7-11, xlsx from the TSS drive) cleaned of trips/visits/speakers and the
   "Redstone Academy" heading; sent to the owner (not stored in the repo).
