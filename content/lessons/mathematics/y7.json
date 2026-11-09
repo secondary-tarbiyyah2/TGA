@@ -1361,16 +1361,14 @@
    "duration": 50,
    "bigQuestion": "When is a rounded number more useful than an exact one?",
    "objectives": [
-    "Round whole numbers to the nearest 10, 100, 1000 and million",
-    "Round decimals to the nearest whole number and to 1 decimal place",
-    "Estimate answers by rounding"
+    "To understand how and why we round numbers and use rounding to estimate"
    ],
    "successCriteria": [
     "All: round whole numbers to a given power of 10",
     "Most: round decimals to 1 decimal place and the nearest whole",
     "Some: use rounding to estimate and check a calculation"
    ],
-   "crossCurricular": "Science: rounding measurements; Geography: approximate populations",
+   "crossCurricular": "Science: rounding measurements",
    "smsc": "Moral: when an exact amount matters (zakah, a debt, a trade) and when an estimate is fair",
    "keywords": [
     {
@@ -1391,13 +1389,13 @@
     }
    ],
    "hook": {
-    "type": "question",
+    "type": "ponder",
     "text": "A news headline says '2 million people visited'. The exact number was 1,548,207. Is the headline honest? What should it say?",
     "a": "Rounded to the nearest million it is 2 million, but to the nearest hundred thousand it is 1.5 million, which is more useful. Rounding should not mislead."
    },
    "starter": [
     {
-     "q": "Bismillah. What is the value of the 7 in 3,762,140?",
+     "q": "What is the value of the 7 in 3,762,140?",
      "a": "700,000",
      "mins": 1
     },
@@ -1495,7 +1493,7 @@
       "Which digit decides?",
       "Round once only"
      ],
-     "note": "Show me on 3.",
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
      "check": {
       "q": "Round 27.649 to 1 decimal place.",
       "options": [
@@ -1513,7 +1511,8 @@
     {
      "q": "Round 48,350 to the nearest 1000.",
      "a": "48,000",
-     "mins": 1
+     "mins": 2,
+     "model": "48,350 lies between 48,000 and 49,000. The hundreds digit is 3, less than 5, so round down: 48,000."
     },
     {
      "q": "Round 7,509,000 to the nearest million.",
@@ -1535,7 +1534,8 @@
     {
      "q": "Core: Round 3,456,789 to the nearest (a) 10 (b) 1000 (c) 100,000 (d) million.",
      "a": "(a) 3,456,790 (b) 3,457,000 (c) 3,500,000 (d) 3,000,000",
-     "mins": 4
+     "mins": 4,
+     "model": "(a) Ones digit 9 rounds the tens up: 3,456,790. (b) Hundreds digit 7 rounds up: 3,457,000. (c) Ten thousands digit 5 rounds up: 3,500,000. (d) Hundred thousands digit 4 rounds down: 3,000,000."
     },
     {
      "q": "Extend: A number rounds to 2,400 to the nearest hundred. Write the smallest and largest whole numbers it could be.",
@@ -1575,11 +1575,24 @@
     "Exercise book"
    ],
    "routines": {
+    "hook": "chat-waterfall",
     "starter": "show-me",
-    "hinge": "show-me",
-    "practice": "cold-call",
+    "hinge": "teams-poll",
+    "practice": "show-me",
     "exit": "chat-waterfall"
-   }
+   },
+   "pictures": [
+    {
+     "find": "number line rounding to nearest hundred",
+     "alt": "A number line showing a number between two hundreds",
+     "for": "teach:1"
+    },
+    {
+     "find": "supermarket receipt total",
+     "alt": "A shop receipt with prices to round and estimate",
+     "for": "keywords"
+    }
+   ]
   },
   {
    "unit": "Spring 1: Calculation problems; fractions and percentages of amounts",
@@ -1588,16 +1601,14 @@
    "duration": 50,
    "bigQuestion": "Why does the column method for multiplication work?",
    "objectives": [
-    "Multiply up to 3-digit by 2-digit numbers using a written method",
-    "Estimate to check",
-    "Solve multiplication problems in context"
+    "To understand how the column method multiplies using place value"
    ],
    "successCriteria": [
     "All: multiply a 3-digit number by a 1-digit number",
     "Most: multiply 3-digit by 2-digit numbers with the column method",
     "Some: solve multi-step problems and find missing digits"
    ],
-   "crossCurricular": "Science: scaling quantities in practicals; Business: costing an order",
+   "crossCurricular": "Science: scaling quantities in practicals",
    "smsc": "Moral: accurate totals when buying for others, such as a masjid order, are a trust (amanah, أَمَانَة)",
    "keywords": [
     {
@@ -1618,8 +1629,8 @@
     }
    ],
    "hook": {
-    "type": "odd-one-out",
-    "text": "Which calculation is the odd one out?",
+    "type": "ponder",
+    "text": "Which calculation is the odd one out? Why?",
     "options": [
      "24 × 15",
      "12 × 30",
@@ -1630,7 +1641,7 @@
    },
    "starter": [
     {
-     "q": "Bismillah. Round 5,482 to the nearest 100.",
+     "q": "Round 5,482 to the nearest 100.",
      "a": "5,500",
      "mins": 1
     },
@@ -1705,7 +1716,7 @@
      "bullets": [
       "The tens row is multiplying by tens"
      ],
-     "note": "Show me on 3. Ask what the wrong answers forgot.",
+     "note": "Teams poll: launch it, give 30 seconds, then share the results. Ask what the wrong answers forgot.",
      "check": {
       "q": "Work out 23 × 14.",
       "options": [
@@ -1752,7 +1763,8 @@
     {
      "q": "Work out 254 × 6.",
      "a": "1,524",
-     "mins": 2
+     "mins": 2,
+     "model": "254 × 6: 4 × 6 = 24, write 4 carry 2; 5 × 6 = 30, + 2 = 32, write 2 carry 3; 2 × 6 = 12, + 3 = 15. Answer 1,524."
     },
     {
      "q": "Work out 38 × 46.",
@@ -1774,7 +1786,8 @@
     {
      "q": "Core: Work out (a) 367 × 8 (b) 63 × 47 (c) 425 × 36",
      "a": "(a) 2,936 (b) 2,961 (c) 15,300",
-     "mins": 5
+     "mins": 5,
+     "model": "(a) 367 × 8 = 2,936. (b) 63 × 7 = 441 and 63 × 40 = 2,520; 441 + 2,520 = 2,961. (c) 425 × 6 = 2,550 and 425 × 30 = 12,750; total 15,300."
     },
     {
      "q": "Extend: A printer prints 125 pages a minute. How many pages in 18 minutes? Is 2,000 pages in a quarter of an hour possible?",
@@ -1814,11 +1827,24 @@
     "Exercise book"
    ],
    "routines": {
+    "hook": "chat-waterfall",
     "starter": "show-me",
-    "hinge": "show-me",
-    "practice": "cold-call",
+    "hinge": "teams-poll",
+    "practice": "show-me",
     "exit": "chat-waterfall"
-   }
+   },
+   "pictures": [
+    {
+     "find": "long multiplication column method",
+     "alt": "A written long multiplication",
+     "for": "teach:2"
+    },
+    {
+     "find": "stack of chairs in a hall",
+     "alt": "Stacked chairs for an order",
+     "for": "teach:4"
+    }
+   ]
   },
   {
    "unit": "Spring 1: Calculation problems; fractions and percentages of amounts",
@@ -1827,17 +1853,15 @@
    "duration": 50,
    "bigQuestion": "How do we decide what to do with a remainder?",
    "objectives": [
-    "Divide using short division",
-    "Divide by a 2-digit number",
-    "Interpret remainders in context"
+    "To understand how to divide with written methods and interpret remainders"
    ],
    "successCriteria": [
     "All: use short division with a 1-digit divisor",
     "Most: divide by a 2-digit number and write the remainder",
     "Some: decide whether to round up, round down or give a fraction or decimal"
    ],
-   "crossCurricular": "Science: sharing equipment and measures; Business: packing and pricing",
-   "smsc": "Social: fair sharing; nobody is left out when we round up for everyone",
+   "crossCurricular": "Science: sharing equipment and measures",
+   "smsc": "Social: fair sharing",
    "keywords": [
     {
      "term": "quotient",
@@ -1857,13 +1881,13 @@
     }
    ],
    "hook": {
-    "type": "question",
+    "type": "ponder",
     "text": "193 books are packed in boxes of 16. Three pupils answer 12, 13 and 12.0625 boxes. Who is right?",
     "a": "13 boxes, because every book needs packing. The right answer depends on the question, not just the calculation."
    },
    "starter": [
     {
-     "q": "Bismillah. Work out 48 × 6.",
+     "q": "Work out 48 × 6.",
      "a": "288",
      "mins": 1
     },
@@ -1958,7 +1982,7 @@
      "bullets": [
       "Full bags only"
      ],
-     "note": "Show me on 3.",
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
      "check": {
       "q": "150 dates are packed in bags of 8. How many full bags are there?",
       "options": [
@@ -1988,7 +2012,8 @@
     {
      "q": "Work out 852 ÷ 4.",
      "a": "213",
-     "mins": 1
+     "mins": 2,
+     "model": "852 ÷ 4: 8 ÷ 4 = 2; 5 ÷ 4 = 1 r 1, carry 1; 12 ÷ 4 = 3. Answer 213."
     },
     {
      "q": "Work out 3,195 ÷ 5.",
@@ -2010,7 +2035,8 @@
     {
      "q": "Core: Work out (a) 5,184 ÷ 8 (b) 7,602 ÷ 7 (c) 1,288 ÷ 23",
      "a": "(a) 648 (b) 1,086 (c) 56",
-     "mins": 5
+     "mins": 5,
+     "model": "(a) 51 ÷ 8 = 6 r 3; 38 ÷ 8 = 4 r 6; 64 ÷ 8 = 8: 648. (b) 7 ÷ 7 = 1; 6 ÷ 7 = 0 r 6; 60 ÷ 7 = 8 r 4; 42 ÷ 7 = 6: 1,086. (c) 128 ÷ 23 = 5 r 13; 138 ÷ 23 = 6: 56."
     },
     {
      "q": "Extend: A charity packs 1,000 tins, 24 to a box. How many boxes are needed? How many tins are in the last box?",
@@ -2050,11 +2076,24 @@
     "Exercise book"
    ],
    "routines": {
+    "hook": "chat-waterfall",
     "starter": "show-me",
-    "hinge": "show-me",
-    "practice": "cold-call",
+    "hinge": "teams-poll",
+    "practice": "show-me",
     "exit": "chat-waterfall"
-   }
+   },
+   "pictures": [
+    {
+     "find": "short division bus stop method",
+     "alt": "A written short division",
+     "for": "teach:1"
+    },
+    {
+     "find": "cardboard boxes packed books",
+     "alt": "Books packed into boxes",
+     "for": "hook"
+    }
+   ]
   },
   {
    "unit": "Spring 1: Calculation problems; fractions and percentages of amounts",
@@ -2063,17 +2102,15 @@
    "duration": 50,
    "bigQuestion": "Why does time need different methods from money?",
    "objectives": [
-    "Add, subtract, multiply and divide money",
-    "Convert between hours and minutes",
-    "Find time intervals"
+    "To understand how to calculate with money and time accurately"
    ],
    "successCriteria": [
     "All: find totals and change in money",
     "Most: find time intervals across hours",
     "Some: solve multi-step problems with money and time together"
    ],
-   "crossCurricular": "Islamic Studies: salah times; PSHE: budgeting",
-   "smsc": "Spiritual: the five daily prayers are prescribed at set times (Qur'an 4:103); planning time well is part of worship",
+   "crossCurricular": "Islamic Studies: salah times",
+   "smsc": "Spiritual: the five daily prayers are prescribed at set times (Qur'an 4:103)",
    "keywords": [
     {
      "term": "interval",
@@ -2093,8 +2130,8 @@
     }
    ],
    "hook": {
-    "type": "odd-one-out",
-    "text": "Which is the odd one out?",
+    "type": "ponder",
+    "text": "Which is the odd one out? Why?",
     "options": [
      "2.5 hours",
      "150 minutes",
@@ -2105,7 +2142,7 @@
    },
    "starter": [
     {
-     "q": "Bismillah. Work out 1,288 ÷ 23.",
+     "q": "Work out 1,288 ÷ 23.",
      "a": "56",
      "mins": 2
     },
@@ -2191,7 +2228,7 @@
      "bullets": [
       "Count on to the next hour"
      ],
-     "note": "Show me on 3.",
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
      "check": {
       "q": "Zuhr is at 12:24 and Asr is at 15:07. How long is it from Zuhr to Asr?",
       "options": [
@@ -2226,7 +2263,8 @@
     {
      "q": "Work out £7.85 × 4.",
      "a": "£31.40",
-     "mins": 1
+     "mins": 2,
+     "model": "7.85 × 4: 7 × 4 = 28 and 0.85 × 4 = 3.40; 28 + 3.40 = £31.40."
     },
     {
      "q": "Find the change from £50 after spending £36.47.",
@@ -2248,7 +2286,8 @@
     {
      "q": "Core: Find the total cost of 3 Qur'an stands at £12.49 and 2 prayer mats at £8.75, and the change from £60.",
      "a": "£37.47 + £17.50 = £54.97; change £5.03",
-     "mins": 4
+     "mins": 4,
+     "model": "3 × £12.49 = £37.47; 2 × £8.75 = £17.50; total £54.97; change £60.00 − £54.97 = £5.03."
     },
     {
      "q": "Extend: Maghrib is at 16:18 and Isha at 17:52. A family reads Qur'an from 10 minutes after Maghrib until 15 minutes before Isha. For how long?",
@@ -2289,10 +2328,27 @@
     "Exercise book"
    ],
    "routines": {
+    "hook": "chat-waterfall",
     "starter": "show-me",
-    "hinge": "show-me",
-    "practice": "cold-call",
+    "hinge": "teams-poll",
+    "practice": "show-me",
     "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "masjid prayer timetable",
+     "alt": "A printed salah timetable",
+     "for": "teach:4"
+    },
+    {
+     "find": "analogue clock face",
+     "alt": "A clock face showing hours and minutes",
+     "for": "keywords"
+    }
+   ],
+   "islamicLink": {
+    "text": "Salah is prescribed at set times (Qur'an 4:103). Muslims plan each day around the prayer times, so working out time intervals is part of organising worship.",
+    "at": "start"
    }
   },
   {
@@ -2769,18 +2825,15 @@
    "duration": 50,
    "bigQuestion": "Why does the position of a digit change its value?",
    "objectives": [
-    "Read and write whole numbers to millions",
-    "Know the value of each digit in a decimal",
-    "Multiply and divide by 10, 100 and 1000",
-    "Order decimals"
+    "To understand how the position of a digit gives its value in whole numbers and decimals"
    ],
    "successCriteria": [
     "All: say the value of any digit to millions and to hundredths",
     "Most: multiply and divide by 10, 100 and 1000 without 'adding zeros'",
     "Some: order decimals with different numbers of places and explain why"
    ],
-   "crossCurricular": "Geography: reading populations and distances in an atlas; Science: measurements in millimetres and metres",
-   "smsc": "Spiritual: large numbers help us glimpse the vastness of Allah's creation; Moral: writing amounts accurately is part of honesty",
+   "crossCurricular": "Geography: reading populations and distances in an atlas",
+   "smsc": "Spiritual: large numbers help us glimpse the vastness of Allah's creation",
    "keywords": [
     {
      "term": "place value",
@@ -2804,8 +2857,8 @@
     }
    ],
    "hook": {
-    "type": "odd-one-out",
-    "text": "Which one is the odd one out?",
+    "type": "ponder",
+    "text": "Which one is the odd one out? Why?",
     "options": [
      "3 tenths",
      "0.3",
@@ -2816,7 +2869,7 @@
    },
    "starter": [
     {
-     "q": "Bismillah. Write 4,000 + 300 + 20 + 7 as one number.",
+     "q": "Write 4,000 + 300 + 20 + 7 as one number.",
      "a": "4,327",
      "mins": 1
     },
@@ -2932,7 +2985,7 @@
       "Compare tenths first, then hundredths",
       "0.5 = 0.50 = 0.500"
      ],
-     "note": "Show me on 3. Ask a pupil who chose the correct list to explain using tenths.",
+     "note": "Teams poll: launch it, give 30 seconds, then share the results. Ask a pupil who chose the correct list to explain using tenths.",
      "check": {
       "q": "Which list is in order, smallest first?",
       "options": [
@@ -2950,7 +3003,8 @@
     {
      "q": "Write 7,030,450 in words.",
      "a": "Seven million, thirty thousand, four hundred and fifty",
-     "mins": 2
+     "mins": 2,
+     "model": "Split into blocks of three from the ones: 7 | 030 | 450. 7 million; 030 thousand is thirty thousand; 450 is four hundred and fifty. Answer: seven million, thirty thousand, four hundred and fifty."
     },
     {
      "q": "What is the value of the 8 in 3,861,204?",
@@ -2972,7 +3026,8 @@
     {
      "q": "Core: Write in figures: (a) two million, five hundred thousand (b) twelve thousand and four (c) six and seven hundredths.",
      "a": "(a) 2,500,000 (b) 12,004 (c) 6.07",
-     "mins": 4
+     "mins": 4,
+     "model": "(a) Millions block 2, thousands block 500, ones block 000: 2,500,000. (b) 12 | 004: 12,004. (c) 6 ones, 0 tenths, 7 hundredths: 6.07."
     },
     {
      "q": "Extend: Fill the gaps: 4.7 × ___ = 470; 3,600 ÷ ___ = 3.6; ___ ÷ 100 = 0.08",
@@ -3012,11 +3067,24 @@
     "Exercise book"
    ],
    "routines": {
+    "hook": "chat-waterfall",
     "starter": "show-me",
-    "hinge": "show-me",
-    "practice": "cold-call",
+    "hinge": "teams-poll",
+    "practice": "show-me",
     "exit": "chat-waterfall"
-   }
+   },
+   "pictures": [
+    {
+     "find": "place value chart millions to hundredths",
+     "alt": "A place value chart with columns from millions to hundredths",
+     "for": "teach:1"
+    },
+    {
+     "find": "digital kitchen scale display decimal grams",
+     "alt": "A kitchen scale showing a decimal reading",
+     "for": "keywords"
+    }
+   ]
   },
   {
    "unit": "Autumn 2: Place value; fractions, decimals and percentages",
@@ -3025,16 +3093,14 @@
    "duration": 50,
    "bigQuestion": "How can one amount have three different names?",
    "objectives": [
-    "Know that per cent means 'out of 100'",
-    "Convert between tenths, hundredths, decimals and percentages",
-    "Recall key equivalences such as 1/4 = 0.25 = 25%"
+    "To understand how fractions, decimals and percentages can show the same amount"
    ],
    "successCriteria": [
     "All: write a shaded hundred square as a fraction, decimal and percentage",
     "Most: convert fractions with denominators 2, 4, 5, 10, 20, 25, 50 and 100",
     "Some: explain equivalences using a fraction bar or number line"
    ],
-   "crossCurricular": "Science: percentages in nutrition labels; PSHE: reading sale signs",
+   "crossCurricular": "Science: percentages in nutrition labels",
    "smsc": "Social: understanding shares and portions fairly, such as dividing food at an iftar",
    "keywords": [
     {
@@ -3059,8 +3125,8 @@
     }
    ],
    "hook": {
-    "type": "odd-one-out",
-    "text": "Which one is NOT equal to the others?",
+    "type": "ponder",
+    "text": "Which one is NOT equal to the others? Why?",
     "options": [
      "1/4",
      "0.25",
@@ -3071,7 +3137,7 @@
    },
    "starter": [
     {
-     "q": "Bismillah. Round 3.47 to 1 decimal place.",
+     "q": "Round 3.47 to 1 decimal place.",
      "a": "3.5",
      "mins": 1
     },
@@ -3186,7 +3252,7 @@
      "bullets": [
       "Think: out of 100"
      ],
-     "note": "Show me on 3.",
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
      "check": {
       "q": "Which is equal to 3/5?",
       "options": [
@@ -3204,7 +3270,8 @@
     {
      "q": "Write 0.09 as a percentage.",
      "a": "9%",
-     "mins": 1
+     "mins": 2,
+     "model": "0.09 is 9 hundredths. 9 hundredths = 9/100 = 9%."
     },
     {
      "q": "Write 65% as a fraction in its simplest form.",
@@ -3226,7 +3293,8 @@
     {
      "q": "Core: Copy and complete the table for 1/2, 2/5, 3/20, 0.8, 12%: fraction, decimal, percentage.",
      "a": "1/2 = 0.5 = 50%; 2/5 = 0.4 = 40%; 3/20 = 0.15 = 15%; 4/5 = 0.8 = 80%; 3/25 = 0.12 = 12%",
-     "mins": 5
+     "mins": 5,
+     "model": "1/2 = 50/100 = 0.5 = 50%; 2/5 = 40/100 = 0.4 = 40%; 3/20 = 15/100 = 0.15 = 15%; 0.8 = 80/100 = 4/5 = 80%; 12% = 12/100 = 3/25 = 0.12."
     },
     {
      "q": "Extend: Bilal scored 18/25 in a test and 70% in another. Which score is better?",
@@ -3266,11 +3334,24 @@
     "Exercise book"
    ],
    "routines": {
+    "hook": "chat-waterfall",
     "starter": "show-me",
-    "hinge": "show-me",
-    "practice": "cold-call",
+    "hinge": "teams-poll",
+    "practice": "show-me",
     "exit": "chat-waterfall"
-   }
+   },
+   "pictures": [
+    {
+     "find": "hundred square grid shaded",
+     "alt": "A 10 by 10 grid with some squares shaded",
+     "for": "teach:1"
+    },
+    {
+     "find": "food nutrition label percentage",
+     "alt": "A food label showing percentages",
+     "for": "keywords"
+    }
+   ]
   },
   {
    "unit": "Autumn 2: Place value; fractions, decimals and percentages",
@@ -3279,17 +3360,15 @@
    "duration": 50,
    "bigQuestion": "How do we compare amounts written in different forms?",
    "objectives": [
-    "Convert a fraction to a decimal by division",
-    "Order a mix of fractions, decimals and percentages",
-    "Solve simple comparison problems"
+    "To understand how to compare amounts written as fractions, decimals and percentages"
    ],
    "successCriteria": [
     "All: convert all values to one form before comparing",
     "Most: order lists with fractions, decimals and percentages",
     "Some: choose the best form for a comparison and justify it"
    ],
-   "crossCurricular": "Science: comparing results given in different forms; English: explaining a choice clearly",
-   "smsc": "Moral: comparing offers honestly; Social: sharing fairly",
+   "crossCurricular": "Science: comparing results given in different forms",
+   "smsc": "Moral: comparing offers honestly",
    "keywords": [
     {
      "term": "order",
@@ -3309,13 +3388,13 @@
     }
    ],
    "hook": {
-    "type": "question",
+    "type": "ponder",
     "text": "Which is the best score: 4/5 in Arabic, 0.78 in science or 81% in maths?",
     "a": "4/5 = 80%, 0.78 = 78%, so maths at 81% is best. Converting to one form makes it clear."
    },
    "starter": [
     {
-     "q": "Bismillah. Write 3/4 as a percentage.",
+     "q": "Write 3/4 as a percentage.",
      "a": "75%",
      "mins": 1
     },
@@ -3436,7 +3515,7 @@
      "bullets": [
       "Convert first"
      ],
-     "note": "Show me on 3.",
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
      "check": {
       "q": "Which is largest?",
       "options": [
@@ -3454,7 +3533,8 @@
     {
      "q": "Write 7/8 as a decimal.",
      "a": "0.875",
-     "mins": 2
+     "mins": 2,
+     "model": "7/8 means 7 ÷ 8. Write 7.000 and divide: 8 into 70 is 8 r 6, 8 into 60 is 7 r 4, 8 into 40 is 5. Answer 0.875."
     },
     {
      "q": "Which is bigger: 0.7 or 2/3?",
@@ -3476,7 +3556,8 @@
     {
      "q": "Core: Order from smallest: 0.65, 3/5, 62%, 13/20, 0.6.",
      "a": "3/5 = 0.6 (equal), then 62%, then 0.65 = 13/20 (equal). So 0.6 = 3/5, 62%, 0.65 = 13/20",
-     "mins": 5
+     "mins": 5,
+     "model": "Change all to percentages: 0.65 = 65%, 3/5 = 60%, 62%, 13/20 = 65%, 0.6 = 60%. Order: 0.6 = 3/5, then 62%, then 0.65 = 13/20."
     },
     {
      "q": "Extend: Yusuf saved 3/8 of his money and Maryam saved 35% of hers. They each had £40. Who saved more, and by how much?",
@@ -3510,11 +3591,24 @@
     "Exercise book"
    ],
    "routines": {
+    "hook": "chat-waterfall",
     "starter": "show-me",
-    "hinge": "show-me",
-    "practice": "cold-call",
+    "hinge": "teams-poll",
+    "practice": "show-me",
     "exit": "chat-waterfall"
-   }
+   },
+   "pictures": [
+    {
+     "find": "number line 0 to 1 tenths",
+     "alt": "A number line from 0 to 1 marked in tenths",
+     "for": "teach:3"
+    },
+    {
+     "find": "short division bus stop method",
+     "alt": "A written short division",
+     "for": "teach:2"
+    }
+   ]
   },
   {
    "unit": "Autumn 1: Sequences; algebraic notation; equality and equivalence",
@@ -3523,17 +3617,15 @@
    "duration": 50,
    "bigQuestion": "How can we predict what comes next without counting every step?",
    "objectives": [
-    "Continue number and shape sequences",
-    "Describe a sequence with a term-to-term rule",
-    "Tell linear from non-linear sequences"
+    "To understand how a rule generates a sequence and lets us predict its terms"
    ],
    "successCriteria": [
     "All: continue a sequence and say its rule",
     "Most: find missing terms and decide if a term is in a sequence",
     "Some: write rules for non-linear sequences such as doubling"
    ],
-   "crossCurricular": "Science: patterns in data; Islamic Studies: patterns in Allah's creation, such as the phases of the moon",
-   "smsc": "Spiritual: order and pattern in creation; the moon's phases repeat each month as Allah measured them",
+   "crossCurricular": "Science: patterns in data",
+   "smsc": "Spiritual: order and pattern in creation",
    "keywords": [
     {
      "term": "sequence",
@@ -3557,13 +3649,13 @@
     }
    ],
    "hook": {
-    "type": "puzzle",
+    "type": "ponder",
     "text": "Matchstick squares in a row: 1 square uses 4 sticks, 2 squares use 7, 3 squares use 10. How many sticks for 10 squares?",
     "a": "The rule is +3, so 4, 7, 10, 13, ... The 10th term is 31. Later we find a quicker way than counting on."
    },
    "starter": [
     {
-     "q": "Bismillah. What comes next: 5, 10, 15, 20, ...?",
+     "q": "What comes next: 5, 10, 15, 20, ...?",
      "a": "25",
      "mins": 1
     },
@@ -3685,7 +3777,7 @@
      "bullets": [
       "Find the rule first"
      ],
-     "note": "Show me on 3.",
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
      "check": {
       "q": "What is the next term in 81, 27, 9, 3, ...?",
       "options": [
@@ -3703,7 +3795,8 @@
     {
      "q": "Write the next two terms: 12, 19, 26, 33, ...",
      "a": "40, 47",
-     "mins": 1
+     "mins": 2,
+     "model": "Differences: 19 − 12 = 7, 26 − 19 = 7, 33 − 26 = 7, so the rule is +7. Next terms: 33 + 7 = 40, 40 + 7 = 47."
     },
     {
      "q": "Write the term-to-term rule: 90, 82, 74, 66.",
@@ -3725,7 +3818,8 @@
     {
      "q": "Core: First term 6, rule +5. Write the first five terms.",
      "a": "6, 11, 16, 21, 26",
-     "mins": 3
+     "mins": 3,
+     "model": "Start at 6 and add 5 each time: 6, 11, 16, 21, 26."
     },
     {
      "q": "Extend: In the matchstick pattern 4, 7, 10, ..., how many squares can you make with 40 sticks?",
@@ -3760,11 +3854,24 @@
     "Exercise book"
    ],
    "routines": {
+    "hook": "chat-waterfall",
     "starter": "show-me",
-    "hinge": "show-me",
-    "practice": "cold-call",
+    "hinge": "teams-poll",
+    "practice": "show-me",
     "exit": "chat-waterfall"
-   }
+   },
+   "pictures": [
+    {
+     "find": "matchstick squares pattern sequence",
+     "alt": "Matchsticks making a row of squares",
+     "for": "hook"
+    },
+    {
+     "find": "phases of the moon diagram",
+     "alt": "The phases of the moon in order",
+     "for": "keywords"
+    }
+   ]
   },
   {
    "unit": "Autumn 1: Sequences; algebraic notation; equality and equivalence",
@@ -3773,9 +3880,7 @@
    "duration": 50,
    "bigQuestion": "Why do mathematicians use letters for numbers?",
    "objectives": [
-    "Find outputs and inputs of one- and two-step function machines",
-    "Write expressions using algebraic notation",
-    "Know that 3n means 3 × n and n/2 means n ÷ 2"
+    "To understand how function machines and letters describe operations on any number"
    ],
    "successCriteria": [
     "All: find outputs of a function machine",
@@ -3807,13 +3912,13 @@
     }
    ],
    "hook": {
-    "type": "puzzle",
+    "type": "ponder",
     "text": "I think of a number, multiply it by 4 and subtract 3. I get 29. What was my number?",
     "a": "Work backwards: 29 + 3 = 32, 32 ÷ 4 = 8. Today we give the 'mystery number' a letter."
    },
    "starter": [
     {
-     "q": "Bismillah. Next term: 7, 11, 15, 19, ...",
+     "q": "Next term: 7, 11, 15, 19, ...",
      "a": "23",
      "mins": 1
     },
@@ -3923,7 +4028,7 @@
      "bullets": [
       "Order of operations in the machine"
      ],
-     "note": "Show me on 3.",
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
      "check": {
       "q": "Which expression is 'n, multiply by 2, then add 7'?",
       "options": [
@@ -3941,7 +4046,8 @@
     {
      "q": "Input 6 into × 5 then − 4. Output?",
      "a": "26",
-     "mins": 1
+     "mins": 2,
+     "model": "Input 6. Step 1: 6 × 5 = 30. Step 2: 30 − 4 = 26. Output 26."
     },
     {
      "q": "Write 'n divided by 3, then add 1' as an expression.",
@@ -3963,7 +4069,8 @@
     {
      "q": "Core: For the machine × 2 then + 9, find the outputs for inputs 3, 0, 1.5 and n.",
      "a": "15, 9, 12, 2n + 9",
-     "mins": 4
+     "mins": 4,
+     "model": "Input 3: 3 × 2 = 6, then + 9 = 15. Input 0: 0 + 9 = 9. Input 1.5: 3 + 9 = 12. Input n: 2n + 9."
     },
     {
      "q": "Extend: Write as expressions: (a) 7 more than y (b) y multiplied by 7 (c) 7 less than y (d) y shared between 7",
@@ -4002,10 +4109,27 @@
     "Exercise book"
    ],
    "routines": {
+    "hook": "chat-waterfall",
     "starter": "show-me",
-    "hinge": "show-me",
-    "practice": "cold-call",
+    "hinge": "teams-poll",
+    "practice": "show-me",
     "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "Kitab al-jabr wa-l-muqabala manuscript page",
+     "alt": "A page from al-Khwarizmi's book on algebra",
+     "for": "teach:2"
+    },
+    {
+     "find": "function machine input output diagram",
+     "alt": "A function machine diagram",
+     "for": "teach:1"
+    }
+   ],
+   "islamicLink": {
+    "text": "Algebra takes its name from al-jabr (الجبر) in the book of Muhammad ibn Musa al-Khwarizmi, a scholar who worked in Baghdad in the 9th century. Muslim scholars studied mathematics as a way to serve the community, for example in dividing inheritance.",
+    "at": "start"
    }
   },
   {
@@ -4015,16 +4139,14 @@
    "duration": 50,
    "bigQuestion": "How can a short expression replace a long sentence?",
    "objectives": [
-    "Collect like terms to simplify expressions",
-    "Form expressions from words and diagrams",
-    "Substitute positive whole numbers into expressions"
+    "To understand how to form, simplify and evaluate algebraic expressions"
    ],
    "successCriteria": [
     "All: collect like terms such as 3a + 2a",
     "Most: simplify expressions with two letters and form perimeter expressions",
     "Some: substitute into expressions with powers and brackets"
    ],
-   "crossCurricular": "Science: substituting into simple formulae; Computing: variables",
+   "crossCurricular": "Science: substituting into simple formulae",
    "smsc": "Moral: the value of being exact and clear in what we write",
    "keywords": [
     {
@@ -4049,8 +4171,8 @@
     }
    ],
    "hook": {
-    "type": "odd-one-out",
-    "text": "Which expression is the odd one out?",
+    "type": "ponder",
+    "text": "Which expression is the odd one out? Why?",
     "options": [
      "4x + 2x",
      "6x",
@@ -4061,7 +4183,7 @@
    },
    "starter": [
     {
-     "q": "Bismillah. Write 'n multiplied by 4 then add 1'.",
+     "q": "Write 'n multiplied by 4 then add 1'.",
      "a": "4n + 1",
      "mins": 1
     },
@@ -4169,7 +4291,7 @@
      "bullets": [
       "Like terms only"
      ],
-     "note": "Show me on 3.",
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
      "check": {
       "q": "Simplify 6p + 2q − 4p − 5q.",
       "options": [
@@ -4187,7 +4309,8 @@
     {
      "q": "Simplify 9m − 3m + m.",
      "a": "7m",
-     "mins": 1
+     "mins": 2,
+     "model": "All terms are m terms: 9m − 3m = 6m, then 6m + m = 7m."
     },
     {
      "q": "Simplify 4a + 3b + 2a − b.",
@@ -4209,7 +4332,8 @@
     {
      "q": "Core: Simplify (a) 8y + 2 − 3y + 7 (b) 2x + 5 + x − 1 (c) 3c + 4d − c − 4d",
      "a": "(a) 5y + 9 (b) 3x + 4 (c) 2c",
-     "mins": 4
+     "mins": 4,
+     "model": "(a) y terms: 8y − 3y = 5y; numbers: 2 + 7 = 9; answer 5y + 9. (b) 2x + x = 3x; 5 − 1 = 4; answer 3x + 4. (c) 3c − c = 2c; 4d − 4d = 0; answer 2c."
     },
     {
      "q": "Extend: A triangle has sides 2n, n + 4 and 3n − 1. Write and simplify an expression for the perimeter, then find it when n = 5.",
@@ -4249,11 +4373,24 @@
     "Exercise book"
    ],
    "routines": {
+    "hook": "chat-waterfall",
     "starter": "show-me",
-    "hinge": "show-me",
-    "practice": "cold-call",
+    "hinge": "teams-poll",
+    "practice": "show-me",
     "exit": "chat-waterfall"
-   }
+   },
+   "pictures": [
+    {
+     "find": "algebra tiles like terms",
+     "alt": "Algebra tiles grouped into like terms",
+     "for": "teach:1"
+    },
+    {
+     "find": "rectangle perimeter labelled sides diagram",
+     "alt": "A rectangle with algebraic side lengths",
+     "for": "teach:3"
+    }
+   ]
   },
   {
    "unit": "Autumn 1: Sequences; algebraic notation; equality and equivalence",
@@ -4262,16 +4399,14 @@
    "duration": 50,
    "bigQuestion": "What is the difference between 'equal for one value' and 'equal for every value'?",
    "objectives": [
-    "Understand = as 'has the same value as'",
-    "Know when two expressions are equivalent and use ≡",
-    "Solve one-step equations using inverse operations"
+    "To understand the difference between equality and equivalence"
    ],
    "successCriteria": [
     "All: say whether a number statement is true or false",
     "Most: tell an equation from an identity",
     "Some: solve one-step equations and check by substitution"
    ],
-   "crossCurricular": "Science: balancing in chemical equations (later); English: precise meanings of words",
+   "crossCurricular": "Science: balancing in chemical equations (later)",
    "smsc": "Moral: justice ('adl, عَدْل) as keeping both sides fair and balanced",
    "keywords": [
     {
@@ -4296,13 +4431,13 @@
     }
    ],
    "hook": {
-    "type": "question",
+    "type": "ponder",
     "text": "True or false: 3 + 4 = 7 + 2? Many pupils say 'true'. Why might they?",
     "a": "False: the left is 7 and the right is 9. Some read = as 'the answer is' instead of 'the same as'."
    },
    "starter": [
     {
-     "q": "Bismillah. Simplify 3x + 5x − x.",
+     "q": "Simplify 3x + 5x − x.",
      "a": "7x",
      "mins": 1
     },
@@ -4421,7 +4556,7 @@
      "bullets": [
       "Is it true for every value?"
      ],
-     "note": "Show me on 3.",
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
      "check": {
       "q": "Which is an identity?",
       "options": [
@@ -4439,7 +4574,8 @@
     {
      "q": "True or false: 6 × 4 = 30 − 6?",
      "a": "True: both are 24",
-     "mins": 1
+     "mins": 2,
+     "model": "Left: 6 × 4 = 24. Right: 30 − 6 = 24. Both sides are 24, so the statement is true."
     },
     {
      "q": "Fill the gap: 45 − 17 = __ + 20.",
@@ -4461,7 +4597,8 @@
     {
      "q": "Core: Solve (a) a + 12 = 30 (b) 7b = 63 (c) c − 4.5 = 2 (d) d/3 = 11",
      "a": "(a) 18 (b) 9 (c) 6.5 (d) 33",
-     "mins": 4
+     "mins": 4,
+     "model": "(a) Subtract 12 from both sides: a = 18. (b) Divide both sides by 7: b = 9. (c) Add 4.5: c = 6.5. (d) Multiply by 3: d = 33."
     },
     {
      "q": "Extend: Write = or ≡ in each gap: 2(x + 4) __ 2x + 8; 3x __ 12; x + x + x __ 3x",
@@ -4500,11 +4637,24 @@
     "Exercise book"
    ],
    "routines": {
+    "hook": "chat-waterfall",
     "starter": "show-me",
-    "hinge": "show-me",
-    "practice": "cold-call",
+    "hinge": "teams-poll",
+    "practice": "show-me",
     "exit": "chat-waterfall"
-   }
+   },
+   "pictures": [
+    {
+     "find": "balance scale weighing",
+     "alt": "A balance scale with equal sides",
+     "for": "teach:1"
+    },
+    {
+     "find": "equals sign identical to sign symbols",
+     "alt": "The = and ≡ symbols",
+     "for": "keywords"
+    }
+   ]
   },
   {
    "unit": "Spring 1: Calculation problems; fractions and percentages of amounts",
@@ -4513,17 +4663,15 @@
    "duration": 50,
    "bigQuestion": "Why does 'times as many' need multiplying, not adding?",
    "objectives": [
-    "Use bar models for 'times as many' problems",
-    "Scale quantities up and down",
-    "Solve sum and difference problems with multiplicative relationships"
+    "To understand how multiplication and division scale quantities"
    ],
    "successCriteria": [
     "All: draw a bar model for 'times as many'",
     "Most: scale a recipe or price by finding one unit first",
     "Some: solve problems given the total or the difference"
    ],
-   "crossCurricular": "Food: scaling recipes; Science: scaling solutions and measurements",
-   "smsc": "Social: cooking for guests (generosity to guests in Islam) needs scaling; Moral: fair prices",
+   "crossCurricular": "Food: scaling recipes",
+   "smsc": "Social: cooking for guests (generosity to guests in Islam) needs scaling",
    "keywords": [
     {
      "term": "scale",
@@ -4543,13 +4691,13 @@
     }
    ],
    "hook": {
-    "type": "question",
+    "type": "ponder",
     "text": "Rice for 4 people needs 300 g. Hamza says 10 people need 306 g because 4 + 6 = 10. What do you think?",
     "a": "He added instead of scaling. 300 ÷ 4 = 75 g each, so 10 people need 750 g."
    },
    "starter": [
     {
-     "q": "Bismillah. Work out 23 × 14.",
+     "q": "Work out 23 × 14.",
      "a": "322",
      "mins": 1
     },
@@ -4618,7 +4766,7 @@
      "bullets": [
       "Find one unit first"
      ],
-     "note": "Show me on 3.",
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
      "check": {
       "q": "A box of dates for 6 people has 18 dates. How many dates for 15 people?",
       "options": [
@@ -4653,7 +4801,8 @@
     {
      "q": "A recipe for 5 uses 250 ml of milk. How much for 8?",
      "a": "400 ml",
-     "mins": 2
+     "mins": 2,
+     "model": "One person: 250 ÷ 5 = 50 ml. Eight people: 50 × 8 = 400 ml."
     },
     {
      "q": "A is 7 times B. B = 13. Find A.",
@@ -4675,7 +4824,8 @@
     {
      "q": "Core: A recipe for 6 people uses 450 g flour, 3 eggs and 120 ml water. Write the amounts for 8 people.",
      "a": "600 g flour, 4 eggs, 160 ml water",
-     "mins": 4
+     "mins": 4,
+     "model": "One person: 450 ÷ 6 = 75 g flour, 3 ÷ 6 = 0.5 egg, 120 ÷ 6 = 20 ml water. Eight people: 600 g, 4 eggs, 160 ml."
     },
     {
      "q": "Extend: A library has 3 times as many Arabic books as English books, 248 books in total. How many Arabic books?",
@@ -4715,11 +4865,24 @@
     "Exercise book"
    ],
    "routines": {
+    "hook": "chat-waterfall",
     "starter": "show-me",
-    "hinge": "show-me",
-    "practice": "cold-call",
+    "hinge": "teams-poll",
+    "practice": "show-me",
     "exit": "chat-waterfall"
-   }
+   },
+   "pictures": [
+    {
+     "find": "bar model diagram ratio",
+     "alt": "A bar model split into equal parts",
+     "for": "teach:2"
+    },
+    {
+     "find": "measuring jug and bag of rice",
+     "alt": "Kitchen measuring jug and rice for a recipe",
+     "for": "hook"
+    }
+   ]
   },
   {
    "unit": "Spring 1: Calculation problems; fractions and percentages of amounts",
@@ -4728,16 +4891,14 @@
    "duration": 50,
    "bigQuestion": "Why is finding one fifth the same as dividing by five?",
    "objectives": [
-    "Find a unit fraction of an amount",
-    "Find unit fractions of measures",
-    "Compare unit fractions of amounts"
+    "To understand how to find a unit fraction of an amount"
    ],
    "successCriteria": [
     "All: find 1/2, 1/4, 1/5 and 1/10 of whole numbers",
     "Most: find unit fractions of measures, converting units",
     "Some: solve two-step unit fraction problems"
    ],
-   "crossCurricular": "Science: measuring parts of a quantity; Food: portions",
+   "crossCurricular": "Science: measuring parts of a quantity",
    "smsc": "Spiritual: the Qur'an names fractions such as 1/2, 1/4, 1/8, 1/6 and 2/3 for shares of inheritance (Surat an-Nisa 4:11 to 12), so fractions serve justice",
    "keywords": [
     {
@@ -4758,7 +4919,7 @@
     }
    ],
    "hook": {
-    "type": "question",
+    "type": "ponder",
     "text": "Would you rather have 1/3 of £36 or 1/4 of £44?",
     "options": [
      "1/3 of £36",
@@ -4768,7 +4929,7 @@
    },
    "starter": [
     {
-     "q": "Bismillah. Work out £3.45 × 6.",
+     "q": "Work out £3.45 × 6.",
      "a": "£20.70",
      "mins": 1
     },
@@ -4855,7 +5016,7 @@
      "bullets": [
       "Divide by the denominator"
      ],
-     "note": "Show me on 3.",
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
      "check": {
       "q": "What is 1/6 of 72?",
       "options": [
@@ -4873,7 +5034,8 @@
     {
      "q": "Find 1/8 of 56.",
      "a": "7",
-     "mins": 1
+     "mins": 2,
+     "model": "1/8 means one of 8 equal parts: 56 ÷ 8 = 7."
     },
     {
      "q": "Find 1/3 of 1.5 m.",
@@ -4895,7 +5057,8 @@
     {
      "q": "Core: Find (a) 1/5 of 85 (b) 1/9 of 108 (c) 1/4 of 3 kg (d) 1/12 of a day",
      "a": "(a) 17 (b) 12 (c) 750 g (d) 2 hours",
-     "mins": 4
+     "mins": 4,
+     "model": "(a) 85 ÷ 5 = 17. (b) 108 ÷ 9 = 12. (c) 3 kg = 3000 g; 3000 ÷ 4 = 750 g. (d) 1 day = 24 h; 24 ÷ 12 = 2 hours."
     },
     {
      "q": "Extend: Which is more, 1/6 of 84 or 1/7 of 105? By how much?",
@@ -4935,10 +5098,27 @@
     "Exercise book"
    ],
    "routines": {
+    "hook": "chat-waterfall",
     "starter": "show-me",
-    "hinge": "show-me",
-    "practice": "cold-call",
+    "hinge": "teams-poll",
+    "practice": "show-me",
     "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "fraction bar fifths",
+     "alt": "A bar split into five equal parts",
+     "for": "teach:1"
+    },
+    {
+     "find": "pizza cut into equal slices",
+     "alt": "A round food cut into equal parts",
+     "for": "keywords"
+    }
+   ],
+   "islamicLink": {
+    "text": "The Qur'an itself uses fractions: it names shares of inheritance such as 1/2, 1/4, 1/8, 1/6, 1/3 and 2/3 (Surat an-Nisa 4:11 to 12). Muslims have always needed exact fractions to divide fairly, as Allah commands.",
+    "at": "start"
    }
   },
   {
@@ -4948,16 +5128,14 @@
    "duration": 50,
    "bigQuestion": "How does knowing one part help us find several parts?",
    "objectives": [
-    "Find a non-unit fraction of an amount",
-    "Find fractions of measures",
-    "Compare fractions of different amounts"
+    "To understand how to find any fraction of an amount"
    ],
    "successCriteria": [
     "All: find 3/4 or 2/5 of a whole number",
     "Most: find fractions of measures and money",
     "Some: compare and solve problems with non-unit fractions"
    ],
-   "crossCurricular": "Science: fractions of measurements; Geography: fractions of land use",
+   "crossCurricular": "Science: fractions of measurements",
    "smsc": "Spiritual: the Qur'an names fractions such as 1/2, 1/4, 1/8, 1/6 and 2/3 for shares of inheritance (Surat an-Nisa 4:11 to 12), so fractions serve justice",
    "keywords": [
     {
@@ -4978,8 +5156,8 @@
     }
    ],
    "hook": {
-    "type": "odd-one-out",
-    "text": "Which is the odd one out?",
+    "type": "ponder",
+    "text": "Which is the odd one out? Why?",
     "options": [
      "3/4 of 40",
      "2/3 of 45",
@@ -4990,7 +5168,7 @@
    },
    "starter": [
     {
-     "q": "Bismillah. Find 1/8 of 56.",
+     "q": "Find 1/8 of 56.",
      "a": "7",
      "mins": 1
     },
@@ -5099,7 +5277,7 @@
      "bullets": [
       "Divide first, then multiply"
      ],
-     "note": "Show me on 3.",
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
      "check": {
       "q": "What is 2/3 of 45?",
       "options": [
@@ -5117,7 +5295,8 @@
     {
      "q": "Find 2/7 of 63.",
      "a": "18",
-     "mins": 1
+     "mins": 2,
+     "model": "1/7 of 63 = 63 ÷ 7 = 9. 2/7 = 2 × 9 = 18."
     },
     {
      "q": "Find 3/10 of 250.",
@@ -5139,7 +5318,8 @@
     {
      "q": "Core: Find (a) 3/8 of 96 (b) 7/10 of 4.5 (c) 2/3 of 1.2 m (d) 5/12 of 144",
      "a": "(a) 36 (b) 3.15 (c) 0.8 m (80 cm) (d) 60",
-     "mins": 5
+     "mins": 5,
+     "model": "(a) 96 ÷ 8 = 12, × 3 = 36. (b) 4.5 ÷ 10 = 0.45, × 7 = 3.15. (c) 1.2 m = 120 cm; ÷ 3 = 40; × 2 = 80 cm. (d) 144 ÷ 12 = 12; × 5 = 60."
     },
     {
      "q": "Extend: In a class of 15, 3/5 attend the after-school hifdh circle. How many do not?",
@@ -5178,10 +5358,27 @@
     "Exercise book"
    ],
    "routines": {
+    "hook": "chat-waterfall",
     "starter": "show-me",
-    "hinge": "show-me",
-    "practice": "cold-call",
+    "hinge": "teams-poll",
+    "practice": "show-me",
     "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "fraction bar three fifths shaded",
+     "alt": "A bar with three of five parts shaded",
+     "for": "teach:1"
+    },
+    {
+     "find": "measuring tape metres centimetres",
+     "alt": "A tape measure for fractions of a metre",
+     "for": "teach:4"
+    }
+   ],
+   "islamicLink": {
+    "text": "The Qur'an itself uses fractions: it names shares of inheritance such as 1/2, 1/4, 1/8, 1/6, 1/3 and 2/3 (Surat an-Nisa 4:11 to 12). Muslims have always needed exact fractions to divide fairly, as Allah commands.",
+    "at": "start"
    }
   },
   {
@@ -5191,16 +5388,14 @@
    "duration": 50,
    "bigQuestion": "How can knowing a part tell us the whole?",
    "objectives": [
-    "Find the whole when a unit fraction is known",
-    "Find the whole when a non-unit fraction is known",
-    "Solve reverse fraction problems in context"
+    "To understand how to find the whole from a known fraction of it"
    ],
    "successCriteria": [
     "All: find the whole when 1/n of it is known",
     "Most: find the whole when a non-unit fraction is known",
     "Some: solve multi-step problems that need working backwards"
    ],
-   "crossCurricular": "Science: working back from a sample; Geography: estimating totals",
+   "crossCurricular": "Science: working back from a sample",
    "smsc": "Moral: working back carefully to check we have been treated fairly, or treated others fairly",
    "keywords": [
     {
@@ -5221,13 +5416,13 @@
     }
    ],
    "hook": {
-    "type": "puzzle",
+    "type": "ponder",
     "text": "1/4 of my money is £12. How much do I have? 3/4 of my money is £12. How much now?",
     "a": "£48, then £16. In the second, 3 parts are £12, so 1 part is £4 and 4 parts are £16."
    },
    "starter": [
     {
-     "q": "Bismillah. Find 3/5 of 40.",
+     "q": "Find 3/5 of 40.",
      "a": "24",
      "mins": 1
     },
@@ -5295,7 +5490,7 @@
      "bullets": [
       "Find one part first"
      ],
-     "note": "Show me on 3.",
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
      "check": {
       "q": "2/7 of a number is 18. What is the number?",
       "options": [
@@ -5330,7 +5525,8 @@
     {
      "q": "1/6 of a number is 14. Find the number.",
      "a": "84",
-     "mins": 1
+     "mins": 2,
+     "model": "1/6 of the number is 14, so 6 sixths are 6 × 14 = 84."
     },
     {
      "q": "3/4 of a number is 27. Find the number.",
@@ -5352,7 +5548,8 @@
     {
      "q": "Core: Find the whole: (a) 1/9 is 7 (b) 3/10 is 24 (c) 4/7 is 28",
      "a": "(a) 63 (b) 80 (c) 49",
-     "mins": 4
+     "mins": 4,
+     "model": "(a) 1/9 is 7, so the whole is 9 × 7 = 63. (b) 3/10 is 24, so 1/10 is 8 and the whole is 80. (c) 4/7 is 28, so 1/7 is 7 and the whole is 49."
     },
     {
      "q": "Extend: After giving away 1/3 of her stickers, Safiyyah has 46 left. How many did she start with?",
@@ -5391,10 +5588,27 @@
     "Exercise book"
    ],
    "routines": {
+    "hook": "chat-waterfall",
     "starter": "show-me",
-    "hinge": "show-me",
-    "practice": "cold-call",
+    "hinge": "teams-poll",
+    "practice": "show-me",
     "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "bar model fraction whole part",
+     "alt": "A bar model showing a part and the whole",
+     "for": "teach:1"
+    },
+    {
+     "find": "open book pages",
+     "alt": "A book, for the pages-left problem",
+     "for": "teach:5"
+    }
+   ],
+   "islamicLink": {
+    "text": "The Qur'an itself uses fractions: it names shares of inheritance such as 1/2, 1/4, 1/8, 1/6, 1/3 and 2/3 (Surat an-Nisa 4:11 to 12). Muslims have always needed exact fractions to divide fairly, as Allah commands.",
+    "at": "start"
    }
   },
   {
@@ -5404,16 +5618,14 @@
    "duration": 50,
    "bigQuestion": "How do we combine parts of the same whole?",
    "objectives": [
-    "Add and subtract fractions with the same denominator",
-    "Add and subtract fractions where one denominator is a multiple of the other",
-    "Solve problems that combine fractions of amounts"
+    "To understand how to combine fractions of the same whole"
    ],
    "successCriteria": [
     "All: add and subtract fractions with the same denominator",
     "Most: add and subtract fractions using a common denominator",
     "Some: solve multi-step problems with fractions of amounts"
    ],
-   "crossCurricular": "PSHE: budgeting a family's money; Food: combining ingredients",
+   "crossCurricular": "PSHE: budgeting a family's money",
    "smsc": "Spiritual: the Qur'an names fractions such as 1/2, 1/4, 1/8, 1/6 and 2/3 for shares of inheritance (Surat an-Nisa 4:11 to 12), so fractions serve justice",
    "keywords": [
     {
@@ -5434,7 +5646,7 @@
     }
    ],
    "hook": {
-    "type": "question",
+    "type": "ponder",
     "text": "True or false: 1/3 + 1/4 = 2/7. Explain how you know.",
     "options": [
      "True",
@@ -5444,7 +5656,7 @@
    },
    "starter": [
     {
-     "q": "Bismillah. 3/5 of a number is 36. Find it.",
+     "q": "3/5 of a number is 36. Find it.",
      "a": "60",
      "mins": 1
     },
@@ -5525,7 +5737,7 @@
      "bullets": [
       "Same-size parts first"
      ],
-     "note": "Show me on 3.",
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
      "check": {
       "q": "Work out 1/2 + 1/3.",
       "options": [
@@ -5560,7 +5772,8 @@
     {
      "q": "Work out 3/9 + 4/9.",
      "a": "7/9",
-     "mins": 1
+     "mins": 2,
+     "model": "The denominators are the same (ninths), so add the numerators: 3 + 4 = 7. Answer 7/9."
     },
     {
      "q": "Work out 5/8 − 1/4.",
@@ -5582,7 +5795,8 @@
     {
      "q": "Core: Work out (a) 2/5 + 1/10 (b) 3/4 − 1/8 (c) 1/3 + 1/6, simplifying answers.",
      "a": "(a) 1/2 (b) 5/8 (c) 1/2",
-     "mins": 4
+     "mins": 4,
+     "model": "(a) 2/5 = 4/10; 4/10 + 1/10 = 5/10 = 1/2. (b) 3/4 = 6/8; 6/8 − 1/8 = 5/8. (c) 1/3 = 2/6; 2/6 + 1/6 = 3/6 = 1/2."
     },
     {
      "q": "Extend: From a 2 kg bag of rice, 3/8 is used on Monday and 1/4 on Tuesday. How many grams are left?",
@@ -5622,10 +5836,27 @@
     "Exercise book"
    ],
    "routines": {
+    "hook": "chat-waterfall",
     "starter": "show-me",
-    "hinge": "show-me",
-    "practice": "cold-call",
+    "hinge": "teams-poll",
+    "practice": "show-me",
     "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "fraction wall chart",
+     "alt": "A fraction wall showing equivalent fractions",
+     "for": "teach:2"
+    },
+    {
+     "find": "fraction bars halves quarters",
+     "alt": "Fraction bars for halves and quarters",
+     "for": "keywords"
+    }
+   ],
+   "islamicLink": {
+    "text": "The Qur'an itself uses fractions: it names shares of inheritance such as 1/2, 1/4, 1/8, 1/6, 1/3 and 2/3 (Surat an-Nisa 4:11 to 12). Muslims have always needed exact fractions to divide fairly, as Allah commands.",
+    "at": "start"
    }
   },
   {
@@ -5635,17 +5866,15 @@
    "duration": 50,
    "bigQuestion": "Why is 10% such a useful building block?",
    "objectives": [
-    "Find 50%, 25%, 10%, 5% and 1% of an amount",
-    "Link these percentages to fractions",
-    "Solve simple percentage problems"
+    "To understand how key percentages relate to fractions of an amount"
    ],
    "successCriteria": [
     "All: find 50%, 25% and 10% of amounts",
     "Most: find 5% and 1% and use them",
     "Some: find 2.5% and explain the method"
    ],
-   "crossCurricular": "Islamic Studies: zakah at 2.5%; PSHE: discounts and budgeting",
-   "smsc": "Spiritual and moral: zakah (زَكَاة) is 2.5% (one fortieth) of eligible savings held for a lunar year; it purifies wealth and helps those in need",
+   "crossCurricular": "Islamic Studies: zakah at 2.5%",
+   "smsc": "Spiritual and moral: zakah (زَكَاة) is 2.5% (one fortieth) of eligible savings held for a lunar year",
    "keywords": [
     {
      "term": "per cent",
@@ -5665,13 +5894,13 @@
     }
    ],
    "hook": {
-    "type": "question",
+    "type": "ponder",
     "text": "A shop sign says '10% off everything'. Your bag costs £45. Is the discount more or less than £5? How do you know without a calculator?",
     "a": "10% of £45 is £4.50, so less than £5. Dividing by 10 gives 10%."
    },
    "starter": [
     {
-     "q": "Bismillah. Work out 1/3 + 1/4.",
+     "q": "Work out 1/3 + 1/4.",
      "a": "7/12",
      "mins": 1
     },
@@ -5789,7 +6018,7 @@
      "bullets": [
       "Think: what fraction?"
      ],
-     "note": "Show me on 3.",
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
      "check": {
       "q": "What is 25% of 84?",
       "options": [
@@ -5807,7 +6036,8 @@
     {
      "q": "Find 10% of 560.",
      "a": "56",
-     "mins": 1
+     "mins": 2,
+     "model": "10% means 1/10, so divide by 10: 560 ÷ 10 = 56."
     },
     {
      "q": "Find 50% of 9.4.",
@@ -5829,7 +6059,8 @@
     {
      "q": "Core: For £180 find 50%, 25%, 10%, 5% and 1%.",
      "a": "£90, £45, £18, £9, £1.80",
-     "mins": 4
+     "mins": 4,
+     "model": "50%: 180 ÷ 2 = 90. 25%: 90 ÷ 2 = 45. 10%: 180 ÷ 10 = 18. 5%: 18 ÷ 2 = 9. 1%: 180 ÷ 100 = 1.80."
     },
     {
      "q": "Extend: Find 2.5% of £3,600 (the zakah due on £3,600 of eligible savings).",
@@ -5868,10 +6099,27 @@
     "Exercise book"
    ],
    "routines": {
+    "hook": "chat-waterfall",
     "starter": "show-me",
-    "hinge": "show-me",
-    "practice": "cold-call",
+    "hinge": "teams-poll",
+    "practice": "show-me",
     "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "percent sign sale sign shop",
+     "alt": "A shop sign showing a percentage discount",
+     "for": "hook"
+    },
+    {
+     "find": "hundred square 25 percent shaded",
+     "alt": "A hundred square with a quarter shaded",
+     "for": "teach:1"
+    }
+   ],
+   "islamicLink": {
+    "text": "Zakah (زَكَاة), one of the five pillars of Islam, is 2.5% (one fortieth) of eligible savings held for a lunar year above the nisab. Being able to find 2.5% is a skill every Muslim household uses.",
+    "at": "start"
    }
   },
   {
@@ -5881,16 +6129,14 @@
    "duration": 50,
    "bigQuestion": "How can a few simple percentages make any percentage?",
    "objectives": [
-    "Build percentages from 50%, 10%, 5% and 1%",
-    "Use a multiplier on a calculator",
-    "Choose an efficient method"
+    "To understand how to build any percentage from simple ones"
    ],
    "successCriteria": [
     "All: find multiples of 10% such as 30%",
     "Most: build percentages such as 35% and 17.5%",
     "Some: use 1% for awkward percentages and check with a multiplier"
    ],
-   "crossCurricular": "Science: percentage composition; PSHE: discounts",
+   "crossCurricular": "Science: percentage composition",
    "smsc": "Moral: understanding offers so we spend wisely and avoid waste (israf, إِسْرَاف)",
    "keywords": [
     {
@@ -5911,13 +6157,13 @@
     }
    ],
    "hook": {
-    "type": "puzzle",
+    "type": "ponder",
     "text": "Using only 10%, 5% and 1%, how many ways can you make 17%? Which is quickest?",
     "a": "For example 10% + 5% + 1% + 1%, or 17 × 1%. The quickest depends on the number."
    },
    "starter": [
     {
-     "q": "Bismillah. Find 25% of 84.",
+     "q": "Find 25% of 84.",
      "a": "21",
      "mins": 1
     },
@@ -6025,7 +6271,7 @@
      "bullets": [
       "50% + 10% + 5%"
      ],
-     "note": "Show me on 3.",
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
      "check": {
       "q": "Find 65% of 40.",
       "options": [
@@ -6043,7 +6289,8 @@
     {
      "q": "Find 20% of 75.",
      "a": "15",
-     "mins": 1
+     "mins": 2,
+     "model": "10% of 75 = 7.5. 20% = 2 × 7.5 = 15."
     },
     {
      "q": "Find 45% of 120.",
@@ -6065,7 +6312,8 @@
     {
      "q": "Core: Find (a) 30% of 90 (b) 15% of 340 (c) 95% of 60 (d) 2% of 850",
      "a": "(a) 27 (b) 51 (c) 57 (d) 17",
-     "mins": 5
+     "mins": 5,
+     "model": "(a) 10% = 9, so 30% = 27. (b) 10% = 34, 5% = 17, so 15% = 51. (c) 5% = 3, so 95% = 60 − 3 = 57. (d) 1% = 8.5, so 2% = 17."
     },
     {
      "q": "Extend: A coat costs £85. The shop takes 20% off. What is the sale price?",
@@ -6105,11 +6353,24 @@
     "Exercise book"
    ],
    "routines": {
+    "hook": "chat-waterfall",
     "starter": "show-me",
-    "hinge": "show-me",
-    "practice": "cold-call",
+    "hinge": "teams-poll",
+    "practice": "show-me",
     "exit": "chat-waterfall"
-   }
+   },
+   "pictures": [
+    {
+     "find": "scientific calculator",
+     "alt": "A scientific calculator for multipliers",
+     "for": "teach:4"
+    },
+    {
+     "find": "percentage bar model 10 percent parts",
+     "alt": "A bar split into ten 10% parts",
+     "for": "teach:1"
+    }
+   ]
   },
   {
    "unit": "Spring 1: Calculation problems; fractions and percentages of amounts",
@@ -6118,17 +6379,15 @@
    "duration": 50,
    "bigQuestion": "How do we choose the best deal?",
    "objectives": [
-    "Increase and decrease amounts by a percentage",
-    "Compare percentages and fractions of amounts",
-    "Solve multi-step percentage problems"
+    "To understand how to use percentages to compare and change amounts"
    ],
    "successCriteria": [
     "All: find a sale price after a percentage discount",
     "Most: compare offers given as percentages and fractions",
     "Some: explain why two 10% cuts are not a 20% cut"
    ],
-   "crossCurricular": "PSHE: spending wisely; Business: discounts and price rises",
-   "smsc": "Moral: honest trade; Islam forbids cheating in weights and measures (Surat al-Mutaffifin 83:1 to 3)",
+   "crossCurricular": "PSHE: spending wisely",
+   "smsc": "Moral: honest trade",
    "keywords": [
     {
      "term": "increase",
@@ -6148,13 +6407,13 @@
     }
    ],
    "hook": {
-    "type": "question",
+    "type": "ponder",
     "text": "Shop A: £60, 15% off. Shop B: £56, £4 off. Shop C: £62.50, 20% off. Which is cheapest?",
     "a": "A £51, B £52, C £50. C is cheapest, even though it started dearest."
    },
    "starter": [
     {
-     "q": "Bismillah. Find 35% of 260.",
+     "q": "Find 35% of 260.",
      "a": "91",
      "mins": 1
     },
@@ -6236,7 +6495,7 @@
      "bullets": [
       "Find the discount, then subtract"
      ],
-     "note": "Show me on 3.",
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
      "check": {
       "q": "A £40 book has 30% off. What is the new price?",
       "options": [
@@ -6265,7 +6524,8 @@
     {
      "q": "Increase 80 by 25%.",
      "a": "100",
-     "mins": 1
+     "mins": 2,
+     "model": "25% of 80 = 80 ÷ 4 = 20. Increase: 80 + 20 = 100."
     },
     {
      "q": "Decrease £250 by 10%.",
@@ -6287,7 +6547,8 @@
     {
      "q": "Core: Find the sale price: (a) £70, 20% off (b) £150, 35% off (c) £8.40, 50% off",
      "a": "(a) £56 (b) £97.50 (c) £4.20",
-     "mins": 4
+     "mins": 4,
+     "model": "(a) 20% of £70 = £14; £70 − £14 = £56. (b) 35% of £150: 10% = £15, 30% = £45, 5% = £7.50, total £52.50; £150 − £52.50 = £97.50. (c) Half of £8.40 = £4.20."
     },
     {
      "q": "Extend: A charity raised £2,400 last year and 15% more this year. 5% of this year's total paid for costs. How much reached the cause this year?",
@@ -6328,10 +6589,27 @@
     "Exercise book"
    ],
    "routines": {
+    "hook": "chat-waterfall",
     "starter": "show-me",
-    "hinge": "show-me",
-    "practice": "cold-call",
+    "hinge": "teams-poll",
+    "practice": "show-me",
     "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "sale price tag discount",
+     "alt": "A price tag with a discount",
+     "for": "hook"
+    },
+    {
+     "find": "bar chart comparing prices",
+     "alt": "A bar chart comparing three prices",
+     "for": "teach:2"
+    }
+   ],
+   "islamicLink": {
+    "text": "Islam commands honest trade: Surat al-Mutaffifin (83:1 to 3) warns those who give short measure. Understanding discounts and price changes helps us trade fairly and not be cheated.",
+    "at": "start"
    }
   },
   {
@@ -6341,9 +6619,7 @@
    "duration": 50,
    "bigQuestion": "Which method fits which problem?",
    "objectives": [
-    "Review written calculation, fractions of amounts and percentages of amounts",
-    "Choose efficient methods",
-    "Complete the unit quiz"
+    "To show secure understanding of calculation, fractions and percentages of amounts"
    ],
    "successCriteria": [
     "All: answer the core quiz questions with methods shown",
@@ -6371,8 +6647,8 @@
     }
    ],
    "hook": {
-    "type": "odd-one-out",
-    "text": "Which is the odd one out?",
+    "type": "ponder",
+    "text": "Which is the odd one out? Why?",
     "options": [
      "3/4 of 48",
      "75% of 48",
@@ -6383,7 +6659,7 @@
    },
    "starter": [
     {
-     "q": "Bismillah. Work out 23 × 15.",
+     "q": "Work out 23 × 15.",
      "a": "345",
      "mins": 1
     },
@@ -6444,7 +6720,7 @@
      "bullets": [
       "Find one part first"
      ],
-     "note": "Show me on 3.",
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
      "check": {
       "q": "3/5 of a number is 42. What is 1/5 of the number?",
       "options": [
@@ -6455,18 +6731,6 @@
       ],
       "answer": 0,
       "why": "42 ÷ 3 = 14. 70 is the whole; 25.2 is 3/5 of 42."
-     }
-    },
-    {
-     "heading": "Common errors to avoid",
-     "bullets": [
-      "Remainders: read the context",
-      "Fractions: ÷ denominator, × numerator"
-     ],
-     "note": "Ask pupils which error they make most and write it at the top of their quiz page.",
-     "misconception": {
-      "wrong": "5% of £60 = £60 ÷ 5 = £12",
-      "right": "10% = £6, so 5% = £3"
      }
     },
     {
@@ -6507,25 +6771,22 @@
     {
      "q": "Work out 318 × 7.",
      "a": "2,226",
-     "mins": 1
-    },
-    {
-     "q": "Work out 1,476 ÷ 6.",
-     "a": "246",
-     "mins": 1
-    },
-    {
-     "q": "Find 7/10 of 90.",
-     "a": "63",
-     "mins": 1
+     "mins": 2,
+     "model": "318 × 7: 8 × 7 = 56, 10 × 7 = 70, 300 × 7 = 2,100; 56 + 70 + 2,100 = 2,226."
     },
     {
      "q": "Find 35% of 120.",
      "a": "42",
-     "mins": 2
+     "mins": 1
     }
    ],
    "independent": [
+    {
+     "q": "Warm-up (teacher models first): work out 3/4 of 60 and 15% of 60.",
+     "a": "45 and 9",
+     "mins": 2,
+     "model": "3/4 of 60: 60 ÷ 4 = 15, × 3 = 45. 15% of 60: 10% = 6, 5% = 3, so 9."
+    },
     {
      "q": "Quiz 1: Work out 427 × 36.",
      "a": "15,372",
@@ -6590,11 +6851,24 @@
     "Exercise book"
    ],
    "routines": {
+    "hook": "chat-waterfall",
     "starter": "show-me",
-    "hinge": "show-me",
-    "practice": "cold-call",
+    "hinge": "teams-poll",
+    "practice": "show-me",
     "exit": "chat-waterfall"
-   }
+   },
+   "pictures": [
+    {
+     "find": "bar model fraction of amount",
+     "alt": "A bar model of a fraction of an amount",
+     "for": "teach:1"
+    },
+    {
+     "find": "short division bus stop method",
+     "alt": "A written short division",
+     "for": "keywords"
+    }
+   ]
   }
  ]
 }
