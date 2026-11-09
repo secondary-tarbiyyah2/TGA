@@ -33,16 +33,14 @@ on:
         required: false
         default: "false"
 
-permissions:
-  contents: write # to save the picture choices (content/lesson-pictures.json)
-
 concurrency:
   group: build-lesson-decks
   cancel-in-progress: false
 
-# Least privilege (security audit T20): this workflow only reads the repo.
+# Least privilege (security audit T20): the only write is saving the picture choices
+# (content/lesson-pictures.json, the last step).
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
