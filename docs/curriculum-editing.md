@@ -87,5 +87,8 @@ make your change on top of theirs.
 - Uploaded decks are never replaced: builds are recorded through `curriculum_store_generated_deck`, which refuses
   if a teacher uploaded slides during the build and never overwrites an uploaded version.
 - The first run after the migration fills the portal from the repo. It never overwrites portal edits.
+- If `main` moves while the sync is pushing (a rebase clash, often in the generated `syllabusIndex.json`), the sync
+  starts again from the latest `main`, re-runs the comparison and retries, up to five times
+  (`scripts/curriculum/commit-and-push.sh`). If it still cannot push, nothing is lost: the next run sends it.
 - New keys a unit may carry in `content/syllabus`: `halfTerm`, `weeks` (`[{ week, lessons[], vocabulary[], home }]`),
   `resources` and `foundingYear`. See `content/syllabus/README.md`.
