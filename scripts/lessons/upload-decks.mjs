@@ -138,6 +138,28 @@ async function uploadPlan(m) {
   return { plan_docx_path: docxPath, plan_pdf_path: pdfPath };
 }
 
+/** Delete stored deck files that no lesson or version row points at any more. Never throws. */
+async function removeUnused(paths) {
+  if (!paths.length) return;
+  try {
+    const used = new Set();
+    for (const [table, col] of [
+      ["curriculum_lesson_versions", "deck_path"],
+      ["curriculum_lesson_versions", "pdf_path"],
+      ["curriculum_lessons", "deck_path"],
+      ["curriculum_lessons", "pdf_path"],
+    ]) {
+      const { data, error } = await supabase.from(table).select(col).in(col, paths);
+      if (error) return; // if in doubt, keep the files
+      for (const r of data) used.add(r[col]);
+    }
+    const unused = paths.filter((p) => !used.has(p));
+    if (unused.length) await supabase.storage.from("lesson-decks").remove(unused);
+  } catch {
+    /* keep the files */
+  }
+}
+
 const same = (a, b) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null);
 /** Only the fields that really change, so a build does not touch (or audit-log) untouched lessons. */
 const changes = (row, patch) => Object.fromEntries(Object.entries(patch).filter(([k, v]) => !same(row?.[k], v)));
@@ -211,18 +233,26 @@ await pool(manifest, 6, async (m) => {
     const wantNew = !isNew && !!fresh.deck_path && !force && contentChanged(row, m);
     const version = wantNew || (cur && cur.source !== "generated") ? fresh.version + 1 : fresh.version;
     const base = path.basename(m.file, ".pptx");
-    const deckPath = `${m.subject_slug}/${m.year}/${m.lesson_no}/v${version}-${base}.pptx`;
+    // Every build goes to a new file: nothing that is current (or in the history) is ever written
+    // over, and the new file only becomes current once curriculum_store_generated_deck accepts it.
+    const stamp = `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`;
+    const deckPath = `${m.subject_slug}/${m.year}/${m.lesson_no}/v${version}-${stamp}-${base}.pptx`;
     const pdfLocal = path.join(dir, m.file.replace(/\.pptx$/, ".pdf"));
     const hasPdf = fs.existsSync(pdfLocal);
     const pdfPath = hasPdf ? deckPath.replace(/\.pptx$/, ".pdf") : null;
+    const ours = [deckPath, ...(pdfPath ? [pdfPath] : [])];
+    const discard = () => supabase.storage.from("lesson-decks").remove(ours).catch(() => {});
     const up = await supabase.storage.from("lesson-decks").upload(deckPath, fs.readFileSync(path.join(dir, m.file)), {
-      upsert: true,
+      upsert: false,
       contentType: "application/vnd.openxmlformats-officedocument.presentationml.presentation",
     });
     if (up.error) throw up.error;
     if (hasPdf) {
-      const up2 = await supabase.storage.from("lesson-decks").upload(pdfPath, fs.readFileSync(pdfLocal), { upsert: true, contentType: "application/pdf" });
-      if (up2.error) throw up2.error;
+      const up2 = await supabase.storage.from("lesson-decks").upload(pdfPath, fs.readFileSync(pdfLocal), { upsert: false, contentType: "application/pdf" });
+      if (up2.error) {
+        await discard();
+        throw up2.error;
+      }
     }
     // One transaction (migration 0179): refuses if a teacher's deck arrived or the version moved.
     const { data: stored, error: storeErr } = await supabase.rpc("curriculum_store_generated_deck", {
@@ -234,12 +264,21 @@ await pool(manifest, 6, async (m) => {
       p_built_hash: hash,
       p_note: fresh.version === 0 || isNew ? "Original" : wantNew ? "Rebuilt after the lesson was edited" : "Rebuilt from the lesson",
     });
-    if (storeErr) throw storeErr;
+    if (storeErr) {
+      await discard();
+      throw storeErr;
+    }
     if (stored == null) {
+      await discard(); // refused: the new files were never made current
       skipped++;
       console.log(`${m.file}: a teacher changed this lesson's slides during the build; their version is kept.`);
       return;
     }
+    // Re-rendered in place: the previous files of that version are no longer current. Remove them
+    // unless something still points at them (a restored version copies the paths it restored, and
+    // pupils' revision slides read curriculum_lessons.pdf_path), so a design refresh does not leave
+    // ~1,500 unused decks behind.
+    if (stored === fresh.version) await removeUnused([fresh.deck_path, fresh.pdf_path].filter((p) => p && !ours.includes(p)));
     row = { ...row, deck_path: deckPath, pdf_path: pdfPath, version: stored, built_hash: hash };
     await update({ ...meta, ...(planPaths || {}), ...(planPaths ? {} : row.plan_hash ? {} : { plan_hash: hash }) });
     await clearRequest();

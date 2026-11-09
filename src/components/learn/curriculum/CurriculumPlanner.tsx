@@ -12,7 +12,7 @@ import {
   deleteUnit,
   draftFromSnapshot,
   halfTermLabel,
-  lastSyncRun,
+  syncNotes,
   problemsFor,
   restoreRemovedUnit,
   loadUnits,
@@ -27,6 +27,9 @@ import {
   when,
   type CurriculumUnit,
   type HalfTerm,
+  openNotes as openOf,
+  realEditAt,
+  type SyncNote,
   type SyncRun,
   type UnitDraft,
   type UnitVersion,
@@ -65,6 +68,7 @@ export function CurriculumPlanner() {
   const [message, setMessage] = useState<string | null>(null);
   const [editing, setEditing] = useState<{ draft: UnitDraft; original?: CurriculumUnit } | null>(null);
   const [sync, setSync] = useState<SyncRun | null>(null);
+  const [notes, setNotes] = useState<SyncNote[]>([]);
   const [removed, setRemoved] = useState<UnitVersion[]>([]);
   const [busy, setBusy] = useState(false);
 
@@ -94,7 +98,10 @@ export function CurriculumPlanner() {
       setError("Couldn't load the curriculum. Refresh to try again.");
       setUnits([]);
     }
-    lastSyncRun().then(setSync);
+    syncNotes().then((r) => {
+      setSync(r.latest);
+      setNotes(r.notes);
+    });
   }, []);
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- initial data load
@@ -121,6 +128,26 @@ export function CurriculumPlanner() {
   const showUnplaced = forYear.some((u) => columnOf(u) === NOT_PLACED);
   const allColumns = showUnplaced ? [...columns, { key: NOT_PLACED, label: ks4 ? "Other" : "Not placed yet" }] : columns;
   const lastEdit = forYear.reduce<CurriculumUnit | null>((a, u) => (!a || u.updated_at > a.updated_at ? u : a), null);
+  // When a person last really edited a unit, or any unit of a whole year (the sync's own moves
+  // and repo imports do not count): a clash noted before then has been dealt with.
+  const editedAt = (scope: string): string | null => {
+    const all = units || [];
+    const hit = scope.startsWith("unit:")
+      ? all.filter((u) => `unit:${u.id}` === scope)
+      : all.filter((u) => (u.kind === "spec" ? `spec:${u.subject_slug}` : `syllabus:${u.subject_slug}:${u.year}`) === scope);
+    return (
+      hit
+        .map((u) => realEditAt(u.updated_by_name, u.updated_at))
+        .filter((x): x is string => !!x)
+        .sort()
+        .pop() || null
+    );
+  };
+  // Units and whole years only: lesson notes are shown in the lesson editor.
+  const openNotes = openOf(
+    notes.filter((n) => /^(unit|syllabus|spec):/.test(n.scope || "")),
+    editedAt,
+  );
   const pending = sync && lastEdit && lastEdit.updated_at > sync.started_at && lastEdit.updated_by_name && !/repository/i.test(lastEdit.updated_by_name);
 
   const newDraft = (slug: string, subject: string, col: string): UnitDraft => {
@@ -199,12 +226,12 @@ export function CurriculumPlanner() {
           {pending ? "Waiting to be copied to the syllabus pack. " : ""}
           {sync ? `Last copied to the syllabus pack and slides: ${when(sync.finished_at || sync.started_at)}${sync.ok ? "" : " (that run did not finish; it will try again)"}.` : "Not yet copied to the syllabus pack."}
         </p>
-        {sync && sync.problems.length > 0 && (
+        {openNotes.length > 0 && (
           <details className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-900">
-            <summary className="cursor-pointer font-semibold">{sync.problems.length} thing{sync.problems.length === 1 ? "" : "s"} could not be sent yet</summary>
+            <summary className="cursor-pointer font-semibold">{openNotes.length} thing{openNotes.length === 1 ? "" : "s"} to look at from recent copies to the syllabus pack and slides</summary>
             <ul className="mt-1 list-disc pl-5">
-              {sync.problems.slice(0, 12).map((p) => (
-                <li key={p.text}>{p.text}</li>
+              {openNotes.slice(0, 15).map((p) => (
+                <li key={`${p.scope}|${p.text}`}>{p.text}</li>
               ))}
             </ul>
           </details>
@@ -322,7 +349,7 @@ export function CurriculumPlanner() {
           initial={editing.draft}
           original={editing.original}
           canEdit={canEdit}
-          syncNotes={editing.original ? problemsFor(sync, [`unit:${editing.original.id}`, editing.original.kind === "spec" ? `spec:${editing.original.subject_slug}` : `syllabus:${editing.original.subject_slug}:${editing.original.year}`]) : []}
+          syncNotes={editing.original ? problemsFor(notes, [`unit:${editing.original.id}`, editing.original.kind === "spec" ? `spec:${editing.original.subject_slug}` : `syllabus:${editing.original.subject_slug}:${editing.original.year}`], editedAt) : []}
           onClose={() => setEditing(null)}
           onSaved={(msg) => {
             setEditing(null);
