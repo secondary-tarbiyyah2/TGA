@@ -95,6 +95,9 @@ export function renderSummaryEmail(summary: Obj, firstName: string): { html: str
   const verdict = obj(summary.verdict);
   const vKey = String(verdict.key ?? "sort");
   const vs = VERDICT_STYLE[vKey] ?? VERDICT_STYLE.sort;
+  // "short" (the default since November 2026: the answer, the times, the total
+  // and the next steps) or "full" (every section, as before).
+  const full = summary.detail === "full";
   const rows: string[] = [];
 
   // Greeting and verdict.
@@ -120,7 +123,7 @@ export function renderSummaryEmail(summary: Obj, firstName: string): { html: str
 
   // Why we say this.
   const reasons = list<Obj>(summary.reasons, 12);
-  if (reasons.length) {
+  if (full && reasons.length) {
     rows.push(
       section(
         heading(summary.reasonsTitle || "Why we say this") +
@@ -154,7 +157,7 @@ export function renderSummaryEmail(summary: Obj, firstName: string): { html: str
               }</tr>`,
             )
             .join("")}</table>` +
-          bullets(list(day.notes, 14)),
+          bullets(full ? list(day.notes, 14) : []),
       ),
     );
   }
@@ -162,7 +165,7 @@ export function renderSummaryEmail(summary: Obj, firstName: string): { html: str
   // What you'd need.
   const need = obj(summary.need);
   const needs = list<Obj>(need.items, 10);
-  if (needs.length) {
+  if (full && needs.length) {
     rows.push(
       section(
         heading(need.title || "What you would need") +
@@ -178,8 +181,9 @@ export function renderSummaryEmail(summary: Obj, firstName: string): { html: str
 
   // Cost.
   const cost = obj(summary.cost);
-  const costRows = list<Obj>(cost.rows, 10);
-  if (costRows.length) {
+  const allCostRows = list<Obj>(cost.rows, 10);
+  const costRows = full ? allCostRows : [];
+  if (allCostRows.length) {
     const link = obj(cost.link);
     const href = siteLink(link.href);
     rows.push(
@@ -197,7 +201,7 @@ export function renderSummaryEmail(summary: Obj, firstName: string): { html: str
               (pl) => `<tr><td style="padding:10px 14px;background:${C.goldSoft};border-radius:10px;font-family:${SANS};"><span style="font-size:12px;color:${C.muted};">${esc(pl.label, 40)}</span><br><span style="font-family:${FONT};font-size:16px;font-weight:bold;color:${C.ink};">${esc(pl.amount, 120)}</span>${pl.note ? `<br><span style="font-size:12px;color:${C.muted};">${esc(pl.note, 120)}</span>` : ""}</td></tr><tr><td style="height:6px;line-height:6px;font-size:0;">&nbsp;</td></tr>`,
             )
             .join("")}</table>` +
-          bullets(list(cost.notes, 6)) +
+          bullets(full ? list(cost.notes, 6) : []) +
           (href ? `<p style="font-family:${SANS};font-size:14px;margin:12px 0 0;"><a href="${esc(href, 1600)}" style="color:${C.goldDark};font-weight:bold;">${esc(link.label, 60)} &rarr;</a></p>` : ""),
       ),
     );
@@ -206,7 +210,7 @@ export function renderSummaryEmail(summary: Obj, firstName: string): { html: str
   // What we offer.
   const offer = obj(summary.offer);
   const offers = list<Obj>(offer.items, 8);
-  if (offers.length) {
+  if (full && offers.length) {
     rows.push(
       section(
         heading(offer.title || "What we offer") +
@@ -228,7 +232,7 @@ export function renderSummaryEmail(summary: Obj, firstName: string): { html: str
   const buttons = list<Obj>(next.buttons, 4)
     .map((b) => ({ label: b.label, href: siteLink(b.href) }))
     .filter((b): b is { label: unknown; href: string } => !!b.href);
-  const dates = list<Obj>(next.dates, 10);
+  const dates = list<Obj>(next.dates, full ? 10 : 3);
   rows.push(
     section(
       heading(next.title || "Next steps") +
@@ -251,6 +255,11 @@ export function renderSummaryEmail(summary: Obj, firstName: string): { html: str
     <p style="font-family:${SANS};font-size:12px;line-height:1.5;margin:0;color:${C.muted};">${esc(summary.disclaimer, 400)}</p>
   </td></tr>`);
 
+  if (!full) {
+    rows.push(
+      `<tr><td style="padding-top:22px;"><p style="font-family:${SANS};font-size:13px;line-height:1.55;color:${C.muted};margin:0;">This is the short version. For every detail (why we gave this answer, what you would need, the full fee breakdown and all the dates), take the check again at <a href="${SITE}/eligibility/" style="color:${C.goldDark};">${SITE.replace("https://", "")}/eligibility</a> and choose &ldquo;Full details&rdquo;, or simply reply to this email.</p></td></tr>`,
+    );
+  }
   const html = `<table role="presentation" width="100%" cellpadding="0" cellspacing="0">${rows.join("")}</table>`;
   const label = String(verdict.label ?? "").slice(0, 80);
   return {

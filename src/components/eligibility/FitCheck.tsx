@@ -210,8 +210,10 @@ export function FitCheck({ feeBands, fees }: { feeBands: FeeBand[]; fees: FeeSet
 
       {phase === "questions" && (
         <div className="mx-auto max-w-2xl">
-          <div className="relative overflow-hidden rounded-3xl border border-gold-light/50 bg-white shadow-warm">
-            <div className="border-b border-gold-light/40 px-5 pb-4 pt-5 sm:px-8">
+          {/* overflow-clip (not hidden) keeps the rounded corners without
+              breaking position: sticky on the progress bar and the buttons. */}
+          <div className="relative overflow-clip rounded-3xl border border-gold-light/50 bg-white shadow-warm">
+            <div className="sticky top-20 z-10 rounded-t-3xl border-b border-gold-light/40 bg-white/95 px-5 pb-4 pt-5 backdrop-blur sm:px-8">
               <div className="flex items-center justify-between gap-3">
                 <button type="button" onClick={goBack} className="inline-flex items-center gap-1.5 rounded-full px-2 py-1 -ml-2 text-sm font-medium text-ink/70 transition-colors hover:bg-gold-50 hover:text-ink">
                   <ArrowLeft /> {C.nav.back}
@@ -242,7 +244,7 @@ export function FitCheck({ feeBands, fees }: { feeBands: FeeBand[]; fees: FeeSet
               />
             </div>
 
-            <div className="flex flex-wrap items-center justify-between gap-3 border-t border-gold-light/40 bg-gold-50/60 px-5 py-4 sm:px-8">
+            <div className="sticky bottom-0 z-10 flex flex-wrap items-center justify-between gap-3 rounded-b-3xl border-t border-gold-light/40 bg-gold-50/95 px-5 py-4 backdrop-blur sm:px-8">
               <p className="hidden text-xs text-ink/60 sm:block">{C.nav.keyboardHint}</p>
               <button type="button" onClick={() => goNext(step, answers)} disabled={!complete} className={`${btnPrimary} ml-auto`}>
                 {stepIndex === steps.length - 1 ? C.nav.seeResult : C.nav.continue} <ArrowRight />
@@ -466,7 +468,9 @@ function ChildrenStep({
   return (
     <>
       <QuestionHeading title={q.title} subtitle={q.subtitle} headingRef={headingRef} />
-      <div className="space-y-6">
+      {/* Several children sit side by side on wider screens, so adding a
+          second child doesn't push the first off the screen. */}
+      <div className={many ? "grid gap-4 sm:grid-cols-2" : "space-y-6"}>
         {answers.children.map((value, i) => (
           <fieldset key={i} className={many ? "relative rounded-2xl border border-gold-light/50 bg-gold-50/40 p-4" : undefined}>
             <legend className={many ? "float-left mb-3 text-sm font-semibold text-ink" : "sr-only"}>{q.childLabel(i)}</legend>
@@ -476,7 +480,7 @@ function ChildrenStep({
                 <span className="sr-only"> {q.childLabel(i).toLowerCase()}</span>
               </button>
             )}
-            <div className="clear-both grid grid-cols-3 gap-2 sm:grid-cols-4 sm:gap-2.5" role="radiogroup" aria-label={q.childLabel(i)}>
+            <div className={`clear-both grid gap-2 ${many ? "grid-cols-4" : "grid-cols-3 sm:grid-cols-4 sm:gap-2.5"}`} role="radiogroup" aria-label={q.childLabel(i)}>
               {C.yearGroups.map((y) => {
                 const selected = value === y;
                 return (
@@ -486,7 +490,7 @@ function ChildrenStep({
                     role="radio"
                     aria-checked={selected}
                     onClick={() => setChild(i, y)}
-                    className={`flex min-h-[3.5rem] flex-col items-center justify-center rounded-2xl border-[1.5px] px-2 py-2 transition-all duration-150 ${
+                    className={`flex ${many ? "min-h-[3rem]" : "min-h-[3.5rem]"} flex-col items-center justify-center rounded-2xl border-[1.5px] px-2 py-2 transition-all duration-150 ${
                       selected ? "border-gold-500 bg-gold-500 text-ink-900" : "border-gold-light/60 bg-white text-ink hover:-translate-y-px hover:border-gold-500/70"
                     }`}
                   >
@@ -1136,6 +1140,8 @@ function EmailSummary({
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [consent, setConsent] = useState(false);
+  // Short by default (owner, Nov 2026: the full email was too much).
+  const [detail, setDetail] = useState<"short" | "full">("short");
   const [website, setWebsite] = useState(""); // honeypot
   const [state, setState] = useState<SendState>("idle");
   const [error, setError] = useState<string | null>(null);
@@ -1201,7 +1207,7 @@ function EmailSummary({
           ],
           // The full summary, laid out section by section like the page (read by quiz-send-plan v2;
           // the fields above stay for an older deployed function).
-          summary: buildEmailSummary({ answers, years, verdict, reasons, timing, family, nextKey, needs, fees, callHref, where, startLabel, zone }),
+          summary: { ...buildEmailSummary({ answers, years, verdict, reasons, timing, family, nextKey, needs, fees, callHref, where, startLabel, zone }), detail },
         }),
       });
       const result = await res.json().catch(() => ({ ok: false }));
@@ -1240,6 +1246,25 @@ function EmailSummary({
                 <input id="fc-email-input" type="email" required autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} className="mt-1 w-full rounded-xl border border-gold-light/70 bg-white px-3.5 py-2.5 focus:border-gold-500 focus:outline-none focus:ring-2 focus:ring-gold-300" />
               </div>
             </div>
+            <fieldset>
+              <legend className="text-sm font-medium text-ink">What should we send?</legend>
+              <div className="mt-1.5 grid gap-2 sm:grid-cols-2">
+                {(
+                  [
+                    { v: "short", title: "Short summary", note: "Our answer, your lesson times, the total and next steps" },
+                    { v: "full", title: "Full details", note: "Everything on this page, section by section" },
+                  ] as const
+                ).map((o) => (
+                  <label key={o.v} className={`flex cursor-pointer items-start gap-2.5 rounded-xl border px-3.5 py-2.5 text-sm ${detail === o.v ? "border-gold-500 bg-white" : "border-gold-light/70 bg-white/60"}`}>
+                    <input type="radio" name="fc-detail" value={o.v} checked={detail === o.v} onChange={() => setDetail(o.v)} className="mt-1 h-4 w-4 shrink-0 accent-[var(--color-gold-700)]" />
+                    <span>
+                      <span className="block font-semibold text-ink">{o.title}</span>
+                      <span className="block text-xs text-ink/70">{o.note}</span>
+                    </span>
+                  </label>
+                ))}
+              </div>
+            </fieldset>
             <label className="flex items-start gap-2.5 text-sm text-ink/80">
               <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} className="mt-1 h-4 w-4 shrink-0 accent-[var(--color-gold-700)]" />
               <span>{E.consent}</span>

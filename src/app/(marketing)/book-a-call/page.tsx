@@ -25,9 +25,9 @@ export default function BookACallPage() {
         </div>
 
         {/* The calendar is the point of this page, so it sits directly under
-            the heading (every "Book a call" link targets #book), with the
-            form appearing beside/under it as soon as a time is chosen. */}
-        <div id="book" className="mt-8 scroll-mt-24">
+            the heading (every "Book a call" link targets #book). It is a
+            three-step wizard (day, time, details) that fits on one screen. */}
+        <div id="book" className="mt-8 max-w-5xl scroll-mt-24">
           <Suspense fallback={<p className="text-ink/65">Loading booking calendar…</p>}>
             <BookingCalendar />
           </Suspense>

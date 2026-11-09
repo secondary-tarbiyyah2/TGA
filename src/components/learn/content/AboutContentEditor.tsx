@@ -86,11 +86,11 @@ export function AboutContentEditor() {
         <DefaultTextField label="Hero body" value={row.hero_body} def={D.hero_body} multiline rows={3} onChange={(v) => setRow({ ...row, hero_body: v })} />
         <DefaultTextField label="Mission body" value={row.mission_body} def={D.mission_body} multiline rows={3} onChange={(v) => setRow({ ...row, mission_body: v })} />
         <DefaultTextField label="Safeguarding body" value={row.safeguarding_body} def={D.safeguarding_body} multiline rows={3} onChange={(v) => setRow({ ...row, safeguarding_body: v })} />
-        <DefaultTextField label="RECIPE intro" value={row.recipe_intro} def={D.recipe_intro} multiline rows={2} onChange={(v) => setRow({ ...row, recipe_intro: v })} />
+        <DefaultTextField label="Tarbiyyah Compass intro" value={row.recipe_intro} def={D.recipe_intro} multiline rows={2} onChange={(v) => setRow({ ...row, recipe_intro: v })} />
 
         <div className="sm:col-span-2">
           <p className="text-sm font-medium text-ink">
-            RECIPE values
+            Tarbiyyah Compass values
             <DefaultBadge isDefault={JSON.stringify(items) === JSON.stringify(D.recipe_items)} />
             <ResetLink show={JSON.stringify(items) !== JSON.stringify(D.recipe_items)} onReset={() => setItems(D.recipe_items)} />
           </p>

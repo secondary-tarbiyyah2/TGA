@@ -16,7 +16,7 @@ export const metadata: Metadata = pageMetadata({
 const STRANDS = [
   { title: "Qur'an, Arabic and Islamic Studies", body: "Qur'an recitation, Tajweed and memorisation in groups set by ability; Arabic as the Academy's language so pupils connect with the texts directly; Islamic Studies covering aqeedah, fiqh, seerah and hadith. On the timetable every week, not an after-school extra." },
   { title: "The national curriculum, to GCSE", body: "English, Mathematics, Science, humanities and computing, sequenced from Year 1 to GCSE, taught live by qualified teachers in classes of no more than 15." },
-  { title: "Tarbiyyah and character", body: "Prayer built into the day, the RECIPE values taught by name, PSHE, and careers guidance from Year 7, so pupils grow in knowledge, character and faith together." },
+  { title: "Tarbiyyah and character", body: "Prayer built into the day, the Tarbiyyah Compass values taught by name, PSHE, and careers guidance from Year 7, so pupils grow in knowledge, character and faith together." },
 ];
 
 // Public subject listing only: no exam boards or specification codes (those
@@ -29,13 +29,13 @@ export default async function CurriculumPage() {
 
   return (
     <>
-      <section className="geo-texture bg-cream section-pad">
+      <section className="geo-texture bg-cream hero-pad">
         <Container>
           <Kicker>Curriculum</Kicker>
           <h1 className="font-serif text-4xl font-semibold text-ink sm:text-5xl">
             {content.heroHeading || "A specialist curriculum, academic and Islamic together."}
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-ink/75">
+          <p className="mt-4 max-w-2xl text-lg text-ink/75">
             {content.heroBody || (
               <>
                 Qur&apos;an, Arabic and Islamic Studies on the timetable every week, alongside the full national
@@ -47,11 +47,11 @@ export default async function CurriculumPage() {
       </section>
 
       {/* The three strands every pupil has every week, then the exam boards. */}
-      <section className="section-pad">
+      <section className="section-pad-tight">
         <Container>
           <Kicker>Every week, at every key stage</Kicker>
           <h2 className="text-h2 font-serif font-semibold text-ink">Three strands, one timetable.</h2>
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
             {STRANDS.map((st) => (
               <div key={st.title} className="rounded-2xl border border-gold-light/50 bg-white p-6 shadow-sm">
                 <p className="font-serif text-xl font-semibold text-ink">{st.title}</p>
@@ -65,11 +65,11 @@ export default async function CurriculumPage() {
       {/* One card per key stage: the figures come from src/content/curriculum.ts
           (or the key_stage_pages rows), and each card opens the full subject
           list and lessons-a-week table for that stage. */}
-      <section className="geo-texture bg-cream section-pad">
+      <section className="geo-texture bg-cream section-pad-tight">
         <Container>
           <Kicker>By key stage</Kicker>
           <h2 className="text-h2 font-serif font-semibold text-ink">Subjects and live lessons a week.</h2>
-          <ul className="mt-8 grid gap-5 sm:grid-cols-2">
+          <ul className="mt-6 grid gap-4 sm:grid-cols-2">
             {keyStages.map((ks) => (
               <li key={ks.slug}>
                 <Link href={`/curriculum/${ks.slug}`} className="group flex h-full flex-col rounded-2xl border border-gold-light/50 bg-white p-6 shadow-sm transition hover:border-gold-500 hover:shadow-md">
@@ -92,7 +92,7 @@ export default async function CurriculumPage() {
         </Container>
       </section>
 
-      <section className="section-pad">
+      <section className="section-pad-tight">
         <Container>
           <Kicker>Years 10 and 11</Kicker>
           <h2 className="text-h2 font-serif font-semibold text-ink">Recognised qualifications, sat as private candidates.</h2>
