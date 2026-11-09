@@ -16,6 +16,10 @@ on:
         description: "Password to test signing in with"
         required: true
 
+# Least privilege (security audit T20): this workflow only reads the repo.
+permissions:
+  contents: read
+
 jobs:
   diagnose:
     runs-on: ubuntu-latest

@@ -7,6 +7,10 @@ name: Set up Sanity auto-rebuild webhook
 on:
   workflow_dispatch:
 
+# Least privilege (security audit T20): this workflow only reads the repo.
+permissions:
+  contents: read
+
 jobs:
   setup:
     runs-on: ubuntu-latest
