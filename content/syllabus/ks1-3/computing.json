@@ -4,7 +4,7 @@
   "slug": "computing",
   "framework": "National Curriculum in England (2014): Computing programmes of study (Key Stages 1 to 3), with an early-years technology foundation for Reception",
   "status": "Verified",
-  "statusNote": "Key stage statements were read and paraphrased from the gov.uk National Curriculum computing programmes of study. The EYFS statutory framework (September 2026 version) has no technology-specific early learning goal, so the Reception year map is a recommended early-skills sequence, not statutory content. Statutory content is set by key stage, not by year; the year allocation is a recommended sequence aligned to the school's existing unit names. Year 1 was rebuilt in November 2026 to the TGA Year 1 Curriculum Pack: one unit per half term, following Tarbiyyah Primary's Cornerstones projects (2026-27 order), White Rose maths and Little Wandle phonics. Years 2 to 9 were rebuilt in November 2026 to the TGA curriculum packs (docs/curriculum-packs/y2.md to y9.md): one unit per half term, titled by half term so the portal planner places each one.",
+  "statusNote": "Key stage statements were read and paraphrased from the gov.uk National Curriculum computing programmes of study. The EYFS statutory framework (September 2026 version) has no technology-specific early learning goal, so the Reception year map is a recommended early-skills sequence, not statutory content. Statutory content is set by key stage, not by year; the year allocation is a recommended sequence aligned to the school's existing unit names. Year 1 was rebuilt in November 2026 to the TGA Year 1 Curriculum Pack: one unit per half term, following Tarbiyyah Primary's Cornerstones projects (2026-27 order), White Rose maths and Little Wandle phonics. Years 2 to 9 were rebuilt in November 2026 to the TGA curriculum packs (docs/curriculum-packs/y2.md to y9.md): one unit per half term, titled by half term so the portal planner places each one. November 2026 alignment with the school's own files: Years 7 to 9 follow the order and topics of the Tarbiyyah Secondary Computing and ICT Curriculum Intent (Year 7: accounts and safety, foundations of computing, thinking like a computer, Scratch, networks and web design, cyber security, spreadsheets, a Scratch calculator; Year 8: Scratch and how computers appear smart, networks and protocols, sorting, Python; Year 9: Python, searching, databases, ethics and AI, web design). No secondary computing scheme of work was supplied, so the alignment is to the intent only; binary, logic and computer systems stay in Year 8 and 9 Spring for the International GCSE.",
   "sources": [
     {
       "title": "National Curriculum in England: computing programmes of study (gov.uk)",
@@ -692,307 +692,348 @@
     ],
     "y7": [
       {
-        "unit": "Autumn 1: Hardware, software and how computers work",
+        "unit": "Autumn 1: Getting started: accounts, files and staying safe",
         "focus": [
-          "Inputs, outputs, processing and storage",
-          "Hardware versus software"
+          "Retrieval of KS2 basics; school accounts, email, documents and saving files; submitting work online; internet safety rules revisited and applied when collaborating online."
         ],
         "skills": [
-          "Describe how a computer works"
+          "Use school accounts, files and email safely"
         ],
         "keyTerms": [
+          "account",
+          "file",
+          "folder",
+          "email",
+          "password"
+        ],
+        "assess": "Practical checklist",
+        "prereq": "Year 6 Summer 1: Spreadsheets, secure passwords and 3D modelling",
+        "leadsTo": "Autumn 2: Foundations of computing: history and how a computer works",
+        "resources": "Order and topics: Tarbiyyah Secondary Computing and ICT Curriculum Intent (Year 7); no secondary computing scheme of work was supplied. Lessons to be written.",
+        "foundingYear": "Not taught as a unit in 2027: accounts, device checks and safety rules are covered in induction week (4 to 8 Jan); full unit in the Autumn 2027 review."
+      },
+      {
+        "unit": "Autumn 2: Foundations of computing: history and how a computer works",
+        "focus": [
+          "The history and purpose of computers; input, process, output and storage; hardware and software; how a computer follows instructions."
+        ],
+        "skills": [
+          "Explain input, process, output and storage"
+        ],
+        "keyTerms": [
+          "hardware",
+          "software",
           "input",
           "output",
-          "processing",
-          "storage",
-          "hardware",
-          "software"
+          "storage"
         ],
         "assess": "Unit quiz",
-        "prereq": "Year 6 Summer 1: spreadsheets",
-        "leadsTo": "Autumn 2"
+        "prereq": "Autumn 1: Getting started: accounts, files and staying safe",
+        "leadsTo": "Spring 1: Think like a computer: algorithms",
+        "resources": "Order and topics: Tarbiyyah Secondary Computing and ICT Curriculum Intent (Year 7); no secondary computing scheme of work was supplied. Lessons to be written.",
+        "foundingYear": "Skipped in 2027; reviewed in Autumn 2027."
       },
       {
-        "unit": "Autumn 2: Using technology safely",
+        "unit": "Spring 1: Think like a computer: algorithms",
         "focus": [
-          "Safe use of school systems",
-          "Passwords and e-safety"
-        ],
-        "skills": [
-          "Use systems safely"
-        ],
-        "keyTerms": [
-          "password",
-          "e-safety",
-          "privacy",
-          "report"
-        ],
-        "assess": "Unit quiz",
-        "prereq": "Autumn 1",
-        "leadsTo": "Spring 1"
-      },
-      {
-        "unit": "Spring 1: Algorithms",
-        "focus": [
-          "What an algorithm is; unplugged instructions",
-          "Sequence, selection and iteration",
+          "What is an algorithm? Unplugged instructions",
           "Decomposition and abstraction",
-          "Trace tables, testing and debugging"
+          "Sequence, selection and iteration",
+          "Flowcharts and pseudocode for an algorithm",
+          "Testing and debugging an algorithm; unit quiz",
+          "Algorithm challenge"
         ],
         "skills": [
-          "Write and trace algorithms",
-          "Debug"
+          "Decompose a problem",
+          "Write and test an algorithm"
         ],
         "keyTerms": [
           "algorithm",
-          "selection",
-          "iteration",
           "decompose",
-          "trace table"
+          "abstract",
+          "flowchart",
+          "debug"
         ],
-        "assess": "Unit quiz (week 6)",
-        "prereq": "Year 6 Spring 1: variables in games",
-        "leadsTo": "Spring 2"
+        "assess": "Unit quiz (week 5 in 2027)",
+        "prereq": "Autumn 2: Foundations of computing: history and how a computer works",
+        "leadsTo": "Spring 2: Programming with Scratch",
+        "resources": "Order and topics: Tarbiyyah Secondary Computing and ICT Curriculum Intent (Year 7); no secondary computing scheme of work was supplied. Lessons to be written.",
+        "foundingYear": "Rows 1 to 5 taught (11 Jan to 8 Feb), with the unit quiz in row 5; row 6 (algorithm challenge) is the least essential and is not timetabled."
       },
       {
-        "unit": "Spring 2: Flowcharts",
+        "unit": "Spring 2: Programming with Scratch",
         "focus": [
-          "Flowchart symbols",
-          "Sequences, decisions and loops in flowcharts",
-          "From flowchart to pseudocode"
+          "Sprites, movement and events (portal 1)",
+          "Variables and IF statements (portal 2)",
+          "Operators and expressions (portal 3)",
+          "Loops and repetition",
+          "End-of-unit Scratch project: plan and build",
+          "Test and debug the project; unit quiz"
         ],
         "skills": [
-          "Draw and read flowcharts"
-        ],
-        "keyTerms": [
-          "terminator",
-          "decision",
-          "loop",
-          "pseudocode"
-        ],
-        "assess": "Flowchart assessment; unit quiz",
-        "prereq": "Spring 1",
-        "leadsTo": "Summer 1"
-      },
-      {
-        "unit": "Summer 1: Introduction to Scratch",
-        "focus": [
-          "Sprites, movement and input",
-          "Variables and IF statements",
-          "Operators; the Scratch calculator and flowcharts",
-          "Plan a mini-project"
-        ],
-        "skills": [
-          "Use variables and selection",
-          "Plan a project"
+          "Write programs with variables, selection and loops"
         ],
         "keyTerms": [
           "sprite",
+          "event",
           "variable",
           "operator",
-          "storyboard"
+          "loop"
         ],
-        "assess": "Project plan (week 5)",
-        "prereq": "Spring 2",
-        "leadsTo": "Summer 2"
+        "assess": "Scratch project and unit quiz (week 6)",
+        "prereq": "Spring 1: Think like a computer: algorithms",
+        "leadsTo": "Summer 1: Networks, web design and cyber security",
+        "resources": "Order and topics: Tarbiyyah Secondary Computing and ICT Curriculum Intent (Year 7); no secondary computing scheme of work was supplied. Portal computing y7 lessons 1 to 3; the rest to be written. TO CONFIRM: Scratch editor (online or offline) and accounts.",
+        "foundingYear": "All six weeks taught (15 Mar to 19 Apr); in short weeks the project build continues as independent study."
       },
       {
-        "unit": "Summer 2: A Scratch project",
+        "unit": "Summer 1: Networks, web design and cyber security",
         "focus": [
-          "Build the project",
-          "Test and debug",
-          "Present and evaluate"
+          "Networks: what they are and how devices connect",
+          "How a web page reaches you; HTML basics",
+          "Designing a website front page",
+          "Cyber security: threats and how to stay safe",
+          "Publishing safely and peer review; unit quiz",
+          "Improving the page with images and styles"
         ],
         "skills": [
-          "Test and evaluate a program"
+          "Build a simple web page",
+          "Explain common cyber threats"
         ],
         "keyTerms": [
-          "prototype",
-          "debug",
-          "test",
-          "evaluate"
+          "network",
+          "HTML",
+          "browser",
+          "malware",
+          "phishing"
         ],
-        "assess": "End-of-year computing test",
-        "prereq": "Summer 1",
-        "leadsTo": "Year 8: Computing"
+        "assess": "Front page design and unit quiz (week 5)",
+        "prereq": "Spring 2: Programming with Scratch",
+        "leadsTo": "Summer 2: Spreadsheets and the Scratch calculator",
+        "resources": "Order and topics: Tarbiyyah Secondary Computing and ICT Curriculum Intent (Year 7); no secondary computing scheme of work was supplied. Lessons to be written; a free browser-based HTML editor (TO CONFIRM).",
+        "foundingYear": "Rows 1 to 5 taught; row 6 (EXT) dropped."
+      },
+      {
+        "unit": "Summer 2: Spreadsheets and the Scratch calculator",
+        "focus": [
+          "Spreadsheets: cells, data and simple formulae",
+          "The Scratch calculator: arithmetic logic (portal 4)",
+          "End-of-year test (week of 28 Jun)",
+          "Present and evaluate the calculator",
+          "Designing an interface for a handheld device",
+          "Peer testing"
+        ],
+        "skills": [
+          "Write simple spreadsheet formulae"
+        ],
+        "keyTerms": [
+          "cell",
+          "formula",
+          "interface",
+          "calculate"
+        ],
+        "assess": "End-of-year computing test (week of 28 Jun)",
+        "prereq": "Summer 1: Networks, web design and cyber security",
+        "leadsTo": "Year 8 Autumn 1: My digital world",
+        "resources": "Order and topics: Tarbiyyah Secondary Computing and ICT Curriculum Intent (Year 7); no secondary computing scheme of work was supplied. Portal computing y7 lesson 4; any free spreadsheet program.",
+        "foundingYear": "Rows 1 to 4 taught; rows 5 and 6 (EXT) dropped."
       }
     ],
     "y8": [
       {
         "unit": "Autumn 1: My digital world",
         "focus": [
-          "Searching smartly",
-          "Copyright",
-          "Staying safe online; cyber abuse and keeping evidence"
+          "Searching smart, copyright, staying safe online, cyber abuse and keeping evidence (portal computing y8 lessons 1 to 4)."
         ],
         "skills": [
-          "Search smartly",
-          "Keep evidence"
+          "Search effectively and respect copyright"
         ],
         "keyTerms": [
+          "search",
           "copyright",
           "evidence",
-          "report",
-          "privacy"
+          "report"
         ],
         "assess": "Unit quiz",
-        "prereq": "Year 7 Autumn 2: using technology safely",
-        "leadsTo": "Autumn 2"
+        "prereq": "Year 7 Summer 2: Spreadsheets and the Scratch calculator",
+        "leadsTo": "Autumn 2: Scratch revisited: how computers can appear smart",
+        "resources": "Order and topics: Tarbiyyah Secondary Computing and ICT Curriculum Intent (Year 8); no secondary computing scheme of work was supplied. Portal computing y8 lessons 1 to 4.",
+        "foundingYear": "Staying safe online is taught in Spring 1 week 1; the rest is revisited in Autumn 2027."
       },
       {
-        "unit": "Autumn 2: Binary and data representation",
+        "unit": "Autumn 2: Scratch revisited: how computers can appear smart",
         "focus": [
-          "Binary numbers and converting to and from denary",
-          "Text and images as data"
+          "Lists and more complex Scratch programs; a chatbot or quiz that responds to the user; how rules, patterns and data make a computer appear smart."
         ],
         "skills": [
-          "Convert binary"
+          "Use lists and conditions to make a program respond"
+        ],
+        "keyTerms": [
+          "list",
+          "condition",
+          "chatbot",
+          "rule"
+        ],
+        "assess": "Scratch project",
+        "prereq": "Autumn 1: My digital world",
+        "leadsTo": "Spring 1: Binary, safety and Boolean logic",
+        "resources": "Order and topics: Tarbiyyah Secondary Computing and ICT Curriculum Intent (Year 8); no secondary computing scheme of work was supplied. Lessons to be written.",
+        "foundingYear": "Skipped in 2027; revisited in Autumn 2027."
+      },
+      {
+        "unit": "Spring 1: Binary, safety and Boolean logic",
+        "focus": [
+          "Staying safe online; cyber abuse and keeping evidence (portal computing y8 lessons 3 and 4)",
+          "Binary: bits, bytes, converting small numbers",
+          "Boolean logic: true and false, AND, OR, NOT",
+          "Logic gates and truth tables",
+          "Combining gates; simple circuits on paper or in a free simulator; logic quiz",
+          "Review"
+        ],
+        "skills": [
+          "Convert small binary numbers",
+          "Complete truth tables"
         ],
         "keyTerms": [
           "binary",
-          "denary",
           "bit",
-          "byte"
-        ],
-        "assess": "Unit quiz",
-        "prereq": "Autumn 1",
-        "leadsTo": "Spring 1"
-      },
-      {
-        "unit": "Spring 1: Binary recap, safety and Boolean logic",
-        "focus": [
-          "Staying safe online; keeping evidence",
-          "Binary recap",
-          "Boolean logic: AND, OR and NOT",
-          "Logic gates and truth tables"
-        ],
-        "skills": [
-          "Build truth tables"
-        ],
-        "keyTerms": [
           "Boolean",
-          "AND",
-          "OR",
-          "NOT",
+          "logic gate",
           "truth table"
         ],
-        "assess": "Logic quiz",
-        "prereq": "Autumn 2",
-        "leadsTo": "Spring 2"
+        "assess": "Logic quiz in the portal",
+        "prereq": "Autumn 2: Scratch revisited: how computers can appear smart",
+        "leadsTo": "Spring 2: Networks and protocols",
+        "resources": "Order and topics: Tarbiyyah Secondary Computing and ICT Curriculum Intent (Year 8); no secondary computing scheme of work was supplied. Portal computing y8 lessons 3 and 4; the rest NEW.",
+        "foundingYear": "Weeks 1 to 5 taught (11 Jan to 8 Feb), with the logic quiz in week 5; week 6 (review) is not timetabled."
       },
       {
-        "unit": "Spring 2: Networks and the web",
+        "unit": "Spring 2: Networks and protocols",
         "focus": [
-          "LAN and WAN; how the internet works",
-          "The web: browsers and servers",
+          "What is a network? LAN, WAN, devices",
+          "Protocols: TCP/IP, HTTP and HTTPS",
+          "Packets and addresses: how data travels",
+          "The web: browsers, web servers and URLs",
           "Network security: passwords and threats",
-          "Design a home network on paper"
+          "Revision and assessment"
         ],
         "skills": [
-          "Design a network"
+          "Explain how data travels across a network"
         ],
         "keyTerms": [
           "network",
+          "protocol",
           "packet",
           "IP address",
-          "malware",
-          "phishing"
+          "URL"
         ],
-        "assess": "Quiz; project mark for the network design",
-        "prereq": "Spring 1",
-        "leadsTo": "Summer 1"
+        "assess": "Quiz in the portal",
+        "prereq": "Spring 1: Binary, safety and Boolean logic",
+        "leadsTo": "Summer 1: Python, first steps",
+        "resources": "Order and topics: Tarbiyyah Secondary Computing and ICT Curriculum Intent (Year 8); no secondary computing scheme of work was supplied. NEW lessons.",
+        "foundingYear": "Weeks 1 to 6 taught; short weeks in the weeks of 22 Mar, 31 Mar and 5 Apr."
       },
       {
         "unit": "Summer 1: Python, first steps",
         "focus": [
-          "From Scratch to text: print, input and variables",
-          "Data types and calculations",
-          "Selection: if, elif and else",
-          "Loops: for and while; a guessing game"
+          "Moving from Scratch to text: print, input, variables",
+          "Numbers and calculations; data types",
+          "Selection: if, elif, else",
+          "Loops: for and while",
+          "Combining: a small guessing game",
+          "Lists and string handling"
         ],
         "skills": [
-          "Write and debug Python"
+          "Write short Python programs with selection and loops"
         ],
         "keyTerms": [
           "variable",
-          "string",
+          "integer",
           "selection",
-          "loop",
-          "debug"
+          "loop"
         ],
         "assess": "Short programming task (week 5)",
-        "prereq": "Year 7 Summer 1: Scratch",
-        "leadsTo": "Summer 2"
+        "prereq": "Spring 2: Networks and protocols",
+        "leadsTo": "Summer 2: Sorting: algorithms and a Python sorting program",
+        "resources": "Order and topics: Tarbiyyah Secondary Computing and ICT Curriculum Intent (Year 8); no secondary computing scheme of work was supplied. NEW lessons.",
+        "foundingYear": "Weeks 1 to 5 taught; week 6 dropped. The Scratch project from the Year 7 portal is a good diagnostic."
       },
       {
-        "unit": "Summer 2: Python project and review",
+        "unit": "Summer 2: Sorting: algorithms and a Python sorting program",
         "focus": [
-          "Design a quiz program",
-          "Debugging, testing and presenting",
-          "Year review; functions"
+          "End-of-year test (theory and a short coding question)",
+          "Why order matters; bubble sort by hand",
+          "A sorting program in Python using a list",
+          "Year review: what we learned",
+          "Merge sort by hand",
+          "Comparing sorting algorithms"
         ],
         "skills": [
-          "Test and present a program"
+          "Trace a bubble sort",
+          "Write a program that sorts a list"
         ],
         "keyTerms": [
-          "design",
-          "test",
-          "bug",
-          "function"
+          "sort",
+          "bubble sort",
+          "list",
+          "swap"
         ],
-        "assess": "End-of-year test and project mark",
-        "prereq": "Summer 1",
-        "leadsTo": "Year 9: Computing"
+        "assess": "End-of-year test in the week of 14 Jun; sorting program",
+        "prereq": "Summer 1: Python, first steps",
+        "leadsTo": "Year 9 Autumn 1: Python programming revisited",
+        "resources": "Order and topics: Tarbiyyah Secondary Computing and ICT Curriculum Intent (Year 8); no secondary computing scheme of work was supplied. NEW lessons.",
+        "foundingYear": "Weeks 1 to 4 taught; weeks 5 and 6 dropped."
       }
     ],
     "y9": [
       {
         "unit": "Autumn 1: Python programming revisited",
         "focus": [
-          "Input, variables and arithmetic",
-          "Selection and iteration"
+          "Normal year: input, variables, arithmetic, selection, iteration (portal computing y9 lessons 1 to 4)."
         ],
         "skills": [
-          "Write Python programs"
+          "Write Python with selection and iteration"
         ],
         "keyTerms": [
-          "input",
           "variable",
-          "selection",
+          "DIV",
+          "MOD",
           "iteration"
         ],
         "assess": "Programming task",
-        "prereq": "Year 8 Summer 2: Python project",
-        "leadsTo": "Autumn 2"
+        "prereq": "Year 8 Summer 2: Sorting: algorithms and a Python sorting program",
+        "leadsTo": "Autumn 2: Searching algorithms",
+        "resources": "Order and topics: Tarbiyyah Secondary Computing and ICT Curriculum Intent (Year 9); no secondary computing scheme of work was supplied. Portal computing y9 lessons 1 to 4.",
+        "foundingYear": "Skipped in 2027; Python retrieval starters in Spring."
       },
       {
-        "unit": "Autumn 2: Searching and sorting algorithms",
+        "unit": "Autumn 2: Searching algorithms",
         "focus": [
-          "Linear and binary search",
-          "Bubble and merge sort",
-          "Tracing algorithms"
+          "Normal year: linear and binary search, tracing searches, searching a list in Python."
         ],
         "skills": [
-          "Trace algorithms"
+          "Trace linear and binary search"
         ],
         "keyTerms": [
           "linear search",
           "binary search",
-          "bubble sort",
-          "merge sort",
           "trace"
         ],
-        "assess": "Tracing task",
-        "prereq": "Autumn 1",
-        "leadsTo": "Spring 1"
+        "assess": "Unit quiz",
+        "prereq": "Autumn 1: Python programming revisited",
+        "leadsTo": "Spring 1: Computer systems and architecture",
+        "resources": "Order and topics: Tarbiyyah Secondary Computing and ICT Curriculum Intent (Year 9); no secondary computing scheme of work was supplied. Lessons to be written.",
+        "foundingYear": "Skipped in 2027; revisited in the Autumn 2027 review."
       },
       {
         "unit": "Spring 1: Computer systems and architecture",
         "focus": [
-          "Hardware, software and storage",
+          "Hardware and software; inputs, outputs, storage",
           "The CPU and the fetch-decode-execute cycle",
-          "RAM, ROM and secondary storage",
-          "Binary, data units and logic gates"
+          "Memory and storage: RAM, ROM, secondary storage",
+          "Binary, data units and logic gates",
+          "Operating systems and utility software",
+          "Review and quiz"
         ],
         "skills": [
           "Explain how a CPU works"
@@ -1004,75 +1045,89 @@
           "ROM",
           "logic gate"
         ],
-        "assess": "Review quiz",
-        "prereq": "Year 8 Spring 1: binary and logic",
-        "leadsTo": "Spring 2"
+        "assess": "Unit quiz",
+        "prereq": "Autumn 2: Searching algorithms",
+        "leadsTo": "Spring 2: Databases and spreadsheets",
+        "resources": "Order and topics: Tarbiyyah Secondary Computing and ICT Curriculum Intent (Year 9); no secondary computing scheme of work was supplied. New lessons to write; Python retrieval starter weekly.",
+        "foundingYear": "Weeks 1 to 5 taught from 11 Jan; week 6 (X) is not timetabled."
       },
       {
-        "unit": "Spring 2: Data and spreadsheets",
+        "unit": "Spring 2: Databases and spreadsheets",
         "focus": [
-          "Cells, formulas and functions",
-          "Sorting, filtering and conditional formatting",
-          "Charts; modelling with lookup and validation",
-          "Databases; a household budget model"
+          "Databases: fields, records and tables",
+          "Searching a database: simple queries",
+          "Spreadsheets: formulas and functions",
+          "Charts and modelling: what if",
+          "Validation and lookup",
+          "Project: a household budget model"
         ],
         "skills": [
-          "Model with a spreadsheet"
+          "Query a database",
+          "Model data in a spreadsheet"
         ],
         "keyTerms": [
+          "field",
+          "record",
+          "query",
           "formula",
-          "filter",
-          "lookup",
-          "validation",
-          "database"
+          "model"
         ],
-        "assess": "Household budget model project",
-        "prereq": "Year 6 Summer 1: spreadsheets",
-        "leadsTo": "Summer 1"
+        "assess": "Database and spreadsheet task marked against criteria",
+        "prereq": "Spring 1: Computer systems and architecture",
+        "leadsTo": "Summer 1: Ethics and impact of computing",
+        "resources": "Order and topics: Tarbiyyah Secondary Computing and ICT Curriculum Intent (Year 9); no secondary computing scheme of work was supplied. New lessons to write; any free database and spreadsheet program. Link to PSHE budgeting (Spring 1).",
+        "foundingYear": "All six weeks taught 15 Mar to 19 Apr; weeks 5 and 6 first to go if lessons are lost."
       },
       {
-        "unit": "Summer 1: Impact of technology",
+        "unit": "Summer 1: Ethics and impact of computing",
         "focus": [
-          "Benefits and harms of technology",
+          "Technology and society: advantages and disadvantages",
           "Ethical, legal and environmental issues",
-          "Privacy, data and the law; AI and automation",
-          "Screen time and wellbeing; a debate"
+          "Privacy, data and the law",
+          "Artificial intelligence and its impact",
+          "Screen time and wellbeing (link to PSHE)",
+          "Debate and review"
         ],
         "skills": [
-          "Evaluate impacts"
+          "Evaluate the impact of technology"
         ],
         "keyTerms": [
-          "impact",
-          "ethical",
+          "ethics",
           "privacy",
-          "automation",
-          "bias"
+          "AI",
+          "bias",
+          "e-waste"
         ],
-        "assess": "Debate and review",
-        "prereq": "Spring 2",
-        "leadsTo": "Summer 2"
+        "assess": "Short report on one issue",
+        "prereq": "Spring 2: Databases and spreadsheets",
+        "leadsTo": "Summer 2: Web design and deeper programming",
+        "resources": "Order and topics: Tarbiyyah Secondary Computing and ICT Curriculum Intent (Year 9); no secondary computing scheme of work was supplied. New lessons to write.",
+        "foundingYear": "Five dated weeks: week 6 not taught."
       },
       {
-        "unit": "Summer 2: Cyber security",
+        "unit": "Summer 2: Web design and deeper programming",
         "focus": [
-          "Threats: malware, phishing and hacking",
-          "Defences: passwords, firewalls and updates",
-          "Social engineering",
-          "Encryption and a simple cipher in Python"
+          "HTML structure revisited: headings, lists, links",
+          "CSS: styling and layout",
+          "Multi-page sites: navigation and images",
+          "Testing, evaluating and publishing safely",
+          "Python project: a program with functions",
+          "End-of-year review"
         ],
         "skills": [
-          "Explain threats and defences"
+          "Build a multi-page website with HTML and CSS"
         ],
         "keyTerms": [
-          "malware",
-          "phishing",
-          "firewall",
-          "encryption",
-          "cipher"
+          "HTML",
+          "CSS",
+          "navigation",
+          "layout"
         ],
-        "assess": "End-of-year review",
-        "prereq": "Year 8 Spring 2: network security",
-        "leadsTo": "Year 10: Computer Science"
+        "assess": "End-of-year test (June, assessment point 3) and the website",
+        "prereq": "Summer 1: Ethics and impact of computing",
+        "leadsTo": "Year 10: International GCSE Computer Science (4CP0) option",
+        "resources": "Order and topics: Tarbiyyah Secondary Computing and ICT Curriculum Intent (Year 9); no secondary computing scheme of work was supplied. New lessons to write; a free browser-based HTML editor (TO CONFIRM).",
+        "foundingYear": "Four dated weeks: weeks 1 to 4 taught; weeks 5 and 6 not taught."
       }
     ]
   },
@@ -1086,7 +1141,8 @@
         "Y4": "Selection",
         "Y5": "Variables and games",
         "Y7": "Scratch projects",
-        "Y9": "Python with functions and lists"
+        "Y9": "Python with functions and lists",
+        "Y8": "Smart Scratch programs; Python first steps; a sorting program"
       }
     },
     {
@@ -1104,8 +1160,8 @@
         "Y2": "Technology around us",
         "Y4": "Networks and the internet",
         "Y6": "How computers and networks work",
-        "Y7": "Hardware and software",
-        "Y8": "LANs, WANs, protocols",
+        "Y7": "History of computing; hardware and software",
+        "Y8": "LANs, WANs, protocols and packets",
         "Y9": "CPU, memory and translators"
       }
     },
@@ -1116,8 +1172,9 @@
         "Y2": "Collecting simple data",
         "Y5": "Spreadsheets",
         "Y6": "Collecting and presenting data",
-        "Y8": "Multi-application projects",
-        "Y9": "Spreadsheet functions and databases"
+        "Y8": "Searching smart and copyright",
+        "Y9": "Databases, spreadsheets and multi-page websites",
+        "Y7": "Spreadsheet formulae and a website front page"
       }
     },
     {
@@ -1127,8 +1184,8 @@
         "Y2": "Staying safe",
         "Y4": "Reliable sources, searching",
         "Y6": "Being responsible online",
-        "Y7": "Privacy and security",
-        "Y9": "Ethics, law and cybersecurity"
+        "Y7": "Safety rules, privacy and cyber security",
+        "Y9": "Ethics, law and the impact of AI"
       }
     }
   ],
@@ -1203,8 +1260,10 @@
   ],
   "gaps": [
     "The EYFS framework has no technology-specific early learning goal; the Reception year map is a recommended sequence and not statutory content.",
-    "Year-by-year allocation of units is a recommended sequence aligned to the school's existing unit names; the National Curriculum fixes content by key stage, not by year.",
     "Links to GCSE 1CP2 section numbers come from the Pearson getting started guide and a school-hosted copy of the specification; the Pearson specification PDF itself was not opened (see ks4/computing.json).",
-    "Hexadecimal and file-size work in Year 9 is a recommended extension beyond the statutory binary requirement."
+    "Hexadecimal and file-size work in Year 9 is a recommended extension beyond the statutory binary requirement.",
+    "Year-by-year allocation follows the Tarbiyyah Secondary Computing and ICT Curriculum Intent; the National Curriculum fixes content by key stage, not by year.",
+    "No Tarbiyyah secondary computing scheme of work was supplied; units align to the intent only.",
+    "TO CONFIRM: the intent names Google accounts and Google Classroom; TGA works in Microsoft Teams."
   ]
 }
