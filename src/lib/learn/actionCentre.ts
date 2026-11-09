@@ -8,11 +8,42 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { myTeachingClasses } from "@/lib/learn/classes";
 import { MARK_COLUMNS, nextSession, pupilStats, revisionRows, todayISO, type QuranMark, type Session } from "@/lib/learn/quranClassroom";
 import { reviewState, type RegisterRow } from "@/lib/learn/send";
+import { fetchAbsences, fetchNotes } from "@/components/learn/absences/data";
+import { shiftDateKey, ukNowHm, ukToday } from "@/lib/learn/ukTime";
 
 export type Urgency = "now" | "soon" | "info";
-export type ActionArea = "Homework" | "Qur'an" | "Absence" | "Signatures" | "Child details" | "SEND" | "Revision";
+export type ActionArea =
+  | "Homework"
+  | "Marking"
+  | "Qur'an"
+  | "Absence"
+  | "Registers"
+  | "Signatures"
+  | "Child details"
+  | "SEND"
+  | "Pupils"
+  | "Safeguarding"
+  | "Admissions"
+  | "Recruitment"
+  | "Revision";
 export type ActionItem = { id: string; area: ActionArea; urgency: Urgency; title: string; detail: string; href: string; cta: string; who?: string; people?: { id: string; name: string }[] };
 export type Role = "teach" | "admin" | "student" | "family";
+
+/** The Action centre's categories, in the order they are listed. Each item's
+ * `area` puts it in exactly one category. */
+export type CategoryKey = "safeguarding" | "attendance" | "classwork" | "pupils" | "quran" | "admissions" | "recruitment" | "documents";
+export type CategoryIcon = "shieldAlert" | "userCheck" | "notebookPen" | "backpack" | "bookMarked" | "userRoundPlus" | "briefcase" | "fileCheck";
+export const CATEGORIES: { key: CategoryKey; label: string; icon: CategoryIcon; areas: ActionArea[] }[] = [
+  { key: "safeguarding", label: "Safeguarding", icon: "shieldAlert", areas: ["Safeguarding"] },
+  { key: "attendance", label: "Attendance", icon: "userCheck", areas: ["Registers", "Absence"] },
+  { key: "classwork", label: "Classwork", icon: "notebookPen", areas: ["Homework", "Marking", "Revision"] },
+  { key: "pupils", label: "Pupils and SEND", icon: "backpack", areas: ["SEND", "Child details", "Pupils"] },
+  { key: "quran", label: "Qur'an", icon: "bookMarked", areas: ["Qur'an"] },
+  { key: "admissions", label: "Admissions", icon: "userRoundPlus", areas: ["Admissions"] },
+  { key: "recruitment", label: "Recruitment", icon: "briefcase", areas: ["Recruitment"] },
+  { key: "documents", label: "Documents", icon: "fileCheck", areas: ["Signatures"] },
+];
+export const categoryOf = (area: ActionArea): CategoryKey => CATEGORIES.find((c) => c.areas.includes(area))?.key || "classwork";
 
 const DAY = 86_400_000;
 const daysAgo = (iso: string) => Math.floor((Date.now() - new Date(iso).getTime()) / DAY);
@@ -56,8 +87,8 @@ export async function loadStaffItems(role: "teach" | "admin"): Promise<ActionIte
       detail: `${list[0].class_name || "Class"} · due ${over <= 0 ? "today" : `${plural(over, "day")} ago`} · ${st.label}: ${st.step}`,
       people: list.slice(0, 4).flatMap((l) => (l.child_name ? [{ id: l.child_id, name: l.child_name }] : [])),
       who: list.length > 4 ? `and ${list.length - 4} more` : undefined,
-      href: `${base}/homework`,
-      cta: "Open late and missing",
+      href: `${base}/class?id=${list[0].class_id}&tab=classwork`,
+      cta: "Open in the class",
     });
   }
 
@@ -94,7 +125,113 @@ export async function loadStaffItems(role: "teach" | "admin"): Promise<ActionIte
   items.push(...(await loadSendItems(base)));
   items.push(...(await loadRevisionItems(base)));
   if (role === "teach") items.push(...(await loadQuranTeacherItems()));
+  if (role === "admin") items.push(...(await loadAdminItems().catch(() => [] as ActionItem[])));
   return items;
+}
+
+/**
+ * The school-wide checks that used to sit as separate tiles on the admin Home
+ * page ("Needs attention"), so everything that needs the office is in one
+ * place: registers not taken today, absences with no reason, marking waiting
+ * over a week, signatures outstanding, flagged messages and safeguarding
+ * reviews (Safeguarding Lead / Headteacher only), new applications, payment
+ * proofs and job applications, and new pupils this week. Every query is
+ * RLS-scoped and fails quietly on its own: no item is better than a wrong one.
+ */
+async function loadAdminItems(): Promise<ActionItem[]> {
+  const supabase = getSupabaseClient();
+  if (!supabase) return [];
+  const out: ActionItem[] = [];
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return [];
+  const [perm, roles] = await Promise.all([
+    supabase.from("user_permissions").select("permission").eq("user_id", user.id).eq("permission", "safeguarding_lead"),
+    supabase.from("user_roles").select("role").eq("user_id", user.id),
+  ]);
+  const isLead = ((perm.data as unknown[]) || []).length > 0;
+  const isHeadTeacher = ((roles.data as { role: string }[]) || []).some((r) => r.role === "head_teacher");
+  const today = ukToday();
+  const now = ukNowHm();
+  const weekAgo = new Date(Date.now() - 7 * DAY).toISOString();
+  type Counted = { count: number | null; error: unknown };
+  const count = (r: Counted) => (r.error ? 0 : r.count || 0);
+  const none: Counted = { count: 0, error: null };
+
+  const [lessons, marking, sigs, flagged, reviews, apps, proofs, jobs, enrol] = await Promise.all([
+    supabase.from("lesson_instances").select("id, timetable_slots(start_time, class_id, classes(name), timetable_runs(status))").eq("date", today),
+    supabase.from("homework_submissions").select("id, homework_marks(marked_at)").not("submitted_at", "is", null).lt("submitted_at", weekAgo).order("submitted_at", { ascending: false }).limit(1000),
+    supabase.from("outstanding_signatures").select("user_id", { count: "exact", head: true }),
+    isLead ? supabase.from("message_thread_messages").select("id", { count: "exact", head: true }).eq("flagged", true) : Promise.resolve(none),
+    isLead || isHeadTeacher ? supabase.from("safeguarding_reviews").select("due_at").neq("status", "completed") : Promise.resolve({ data: [] as { due_at: string }[], error: null }),
+    supabase.from("admissions_applications").select("id", { count: "exact", head: true }).eq("status", "new"),
+    supabase.from("admissions_payment_proofs").select("id", { count: "exact", head: true }).eq("status", "pending"),
+    supabase.from("job_applications").select("id", { count: "exact", head: true }).eq("status", "new"),
+    supabase.from("enrolments").select("child_id").gte("created_at", weekAgo).limit(5000),
+  ]);
+
+  // Registers: published-timetable lessons that have started with no register yet.
+  if (!lessons.error) {
+    type L = { id: string; timetable_slots: { start_time: string; class_id: string; classes: { name: string } | null; timetable_runs: { status: string } | null } | null };
+    const started = ((lessons.data as unknown as L[]) || []).filter((l) => l.timetable_slots?.timetable_runs?.status === "published" && now >= l.timetable_slots.start_time.slice(0, 5));
+    if (started.length) {
+      const att = await supabase.from("attendance_records").select("lesson_instance_id").in("lesson_instance_id", started.map((l) => l.id));
+      if (!att.error) {
+        const taken = new Set(((att.data as { lesson_instance_id: string }[]) || []).map((a) => a.lesson_instance_id));
+        const missing = started.filter((l) => !taken.has(l.id));
+        if (missing.length) {
+          const names = [...new Set(missing.map((l) => l.timetable_slots?.classes?.name || "Class"))];
+          out.push({ id: "adm-registers", area: "Registers", urgency: "now", title: `${plural(missing.length, "register")} not taken today`, detail: `${names.slice(0, 4).join(", ")}${names.length > 4 ? ` and ${names.length - 4} more` : ""}. The lesson has started and no register has been taken.`, href: "/admin/attendance", cta: "Take registers" });
+        }
+      }
+    }
+  }
+
+  // Absences with no reason in the last 7 days, once per pupil per day (the Absences page's "To follow up").
+  const notes = await fetchNotes();
+  if (!notes.error) {
+    const abs = await fetchAbsences(shiftDateKey(today, -6), today, notes.notes);
+    if (!abs.error) {
+      const days = new Set(abs.absences.filter((a) => a.kind === "unexplained" && (!a.reasonCode || a.reasonCode === "unknown")).map((a) => `${a.childId}|${a.date}`));
+      if (days.size) out.push({ id: "adm-unexplained", area: "Absence", urgency: "soon", title: `${plural(days.size, "absence")} with no reason (last 7 days)`, detail: "Contact the family and record a reason.", href: "/admin/absences", cta: "Follow up" });
+    }
+  }
+
+  if (!marking.error) {
+    type M = { id: string; homework_marks: { marked_at: string | null }[] | { marked_at: string | null } | null };
+    const rows = (marking.data as unknown as M[]) || [];
+    const n = rows.filter((r) => {
+      const m = Array.isArray(r.homework_marks) ? r.homework_marks[0] : r.homework_marks;
+      return !m || !m.marked_at;
+    }).length;
+    if (n) out.push({ id: "adm-marking", area: "Marking", urgency: "soon", title: `${n}${rows.length >= 1000 ? "+" : ""} ${n === 1 ? "piece" : "pieces"} of work waiting over 7 days to be marked`, detail: "Each class's teacher marks it in the class. See which classes are behind.", href: "/admin/homework", cta: "See by class" });
+  }
+
+  const sigN = count(sigs);
+  if (sigN) out.push({ id: "adm-signatures", area: "Signatures", urgency: "soon", title: `${plural(sigN, "signature")} outstanding`, detail: "Policies and agreements that families or staff still need to sign.", href: "/admin/documents?tab=outstanding", cta: "See who" });
+
+  const flaggedN = count(flagged);
+  if (flaggedN) out.push({ id: "adm-flagged", area: "Safeguarding", urgency: "now", title: plural(flaggedN, "flagged message"), detail: "Messages flagged for a safeguarding check.", href: "/admin/compliance", cta: "Review" });
+
+  if (!reviews.error) {
+    const due = ((reviews.data as { due_at: string }[] | null) || []).map((r) => new Date(r.due_at).getTime());
+    const overdue = due.filter((t) => t < Date.now()).length;
+    if (due.length) out.push({ id: "adm-sg-reviews", area: "Safeguarding", urgency: overdue ? "now" : "soon", title: `${plural(due.length, "safeguarding review")} open`, detail: overdue ? `${overdue} overdue.` : "None overdue yet.", href: "/admin/compliance", cta: "Open reviews" });
+  }
+
+  const appsN = count(apps);
+  if (appsN) out.push({ id: "adm-apps", area: "Admissions", urgency: "soon", title: `${plural(appsN, "new application")} to review`, detail: "Read each one and move it to the next stage.", href: "/admin/admissions", cta: "Open applications" });
+  const proofsN = count(proofs);
+  if (proofsN) out.push({ id: "adm-proofs", area: "Admissions", urgency: "soon", title: `${plural(proofsN, "payment proof")} to check`, detail: "Uploaded by families. Check the amount and mark it verified.", href: "/admin/admissions", cta: "Check payments" });
+  const jobsN = count(jobs);
+  if (jobsN) out.push({ id: "adm-jobs", area: "Recruitment", urgency: "soon", title: plural(jobsN, "new job application"), detail: "Read and shortlist, or reply to the applicant.", href: "/admin/recruitment", cta: "Open applications" });
+
+  if (!enrol.error) {
+    const n = new Set(((enrol.data as { child_id: string }[]) || []).map((r) => r.child_id)).size;
+    if (n) out.push({ id: "adm-new-pupils", area: "Pupils", urgency: "info", title: `${plural(n, "new pupil")} this week`, detail: "Check their details are complete and they are in the right classes.", href: "/admin/pupils", cta: "Open pupils" });
+  }
+  return out;
 }
 
 /**

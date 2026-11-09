@@ -122,12 +122,12 @@ export function TeachNow({ slots }: { slots: (TimetableSlot & { classes?: { name
       icon: "notebookPen",
       tile: "tile-violet",
     },
-    { label: "Homework due soon", n: counts?.dueSoon ?? null, note: "Set by you, due in the next 7 days", href: "/teach/homework", urgent: false, icon: "listChecks", tile: "tile-blue" },
+    { label: "Homework due soon", n: counts?.dueSoon ?? null, note: "Set by you, due in the next 7 days", href: "/teach/calendar", urgent: false, icon: "listChecks", tile: "tile-blue" },
     { label: "Pupil records to read", n: toRead, note: toRead ? "Medical and emergency details" : "All read", href: "/teach/pupils", urgent: !!toRead, icon: "idCard", tile: "tile-rose" },
   ];
   const actions = [
     { label: "Take a register", href: "/teach/today" },
-    { label: "Set homework", href: "/teach/homework" },
+    { label: "Set work in a class", href: "/teach/classes" },
     { label: "Mark work", href: "/teach/review" },
     { label: "Enter results", href: "/teach/assessment" },
     { label: "Send a message", href: "/teach/messages" },

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { useLearnPermission } from "@/lib/learn/session";
 import { Icon } from "@/components/learn/Icon";
+import { ScrollArea } from "@/components/learn/ScrollArea";
 
 type Signal = { id: string; message: string; href: string; createdAt: string };
 
@@ -124,7 +125,8 @@ export function NotificationBell({ userId }: { userId: string }) {
           ) : signals.length === 0 ? (
             <p className="p-2 text-sm text-ink/65">Nothing needs your attention.</p>
           ) : (
-            <ul className="max-h-80 space-y-1 overflow-y-auto">
+            <ScrollArea label="Notifications" className="max-h-80">
+            <ul className="space-y-1">
               {signals.map((s) => (
                 <li key={s.id}>
                   <a href={s.href} className="block rounded-lg px-2 py-2 text-sm hover:bg-cream">
@@ -136,6 +138,7 @@ export function NotificationBell({ userId }: { userId: string }) {
                 </li>
               ))}
             </ul>
+            </ScrollArea>
           )}
         </div>
       )}
