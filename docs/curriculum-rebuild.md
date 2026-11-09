@@ -164,6 +164,7 @@ information.
 
 ### Lessons status
 - 9 Nov 2026, Maths Years 7-11 Spring 1 (branch `lessons-maths-ks34-s1`): 100 lessons for 11 Jan to 8 Feb 2027 (bridge + Spring 1), v3 rules applied. Y7 4 upgraded, 16 new; Y8 20 new; Y9 5 upgraded, 15 new; Y10 12 upgraded, 8 new (4MA1); Y11 20 new (revision cycle 1 and mock week, 4MA1). Y10 and Y11 files now labelled 4MA1 (taught and examined). Uses v3 fields (ponder hook, item `model`, `pictures`, `islamicLink`), so validation passes only once `lesson-builder-v3` merges.
+- 9 Nov 2026, Science Years 3-11 Spring 1 (branch `lessons-science-s1`): 130 lessons for 11 Jan to 8 Feb 2027, v3 rules (ponder, one objective, Teams polls, I do models, pictures, Islamic foundation where Islam speaks to the topic), home practicals with written safety guides. Y3 10 new; Y4 4 upgraded, 6 new; Y5 10 new; Y6 10 new; Y7 15 new; Y8 7 upgraded, 8 new; Y9 6 upgraded, 9 new; Y10 (4SD0) 20 upgraded (bridge weeks + S1 w1 to w3), 5 new; Y11 (4SD0) 20 new revision lessons with own exam-style questions (mock week of 8 Feb not written as lessons). Y9 lessons 11 (composites) and 14 (LCA) are independent reading.
 
 ### Work in flight (9 Nov 2026, 15:45), for whoever picks this up
 Branches pushed and unfinished (each is resumable; read its last commits):
