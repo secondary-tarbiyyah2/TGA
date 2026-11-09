@@ -177,7 +177,7 @@ export function ApplicationDetail({
               className={`mt-1 ${ui.select}`}
               value={app.status}
               disabled={busy}
-              onChange={(e) => {
+              onChange={async (e) => {
                 const next = e.target.value as ApplicationStatus;
                 if ((next === "unsuccessful" || next === "withdrawn") && !(await askConfirm(`Mark ${fullName} as ${statusLabel(next)}? The application, its notes and files are deleted automatically 6 months after this decision. The candidate is not emailed automatically.`))) return;
                 void update({ status: next }, `Moved to ${statusLabel(next)}.`);
