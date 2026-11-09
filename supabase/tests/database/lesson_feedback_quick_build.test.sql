@@ -1,4 +1,4 @@
--- Run via `supabase test db`. Covers Tafweed T34 and T35 (migration 0190):
+-- Run via `supabase test db`. Covers Tafweed T34 and T35 (migration 0191):
 --  * lesson feedback: staff create their own and read only their own; the Headteacher reads
 --    all and answers; a decline needs a reason; a note cannot be rewritten; every change is
 --    logged; parents and pupils see nothing;
