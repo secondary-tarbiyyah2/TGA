@@ -250,7 +250,8 @@ export function makeParts(h) {
     if (!bullets.length) return;
     panel(s, x, y, w, hh, CREAM, LINE, 0.75);
     label(s, title, x + 0.25, y + 0.2, w - 0.5, ctx.theme.accent);
-    const size = fitSize(bullets, w - 0.7, hh - 0.75, 20, 12, 8);
+    const early = ctx.band === "early";
+    const size = fitSize(bullets, w - 0.7, hh - 0.75, early ? 26 : 20, early ? 16 : 12, 8);
     s.addText(
       bullets.map((b) => ({ text: t(b), options: { bullet: { indent: 14 }, breakLine: true, paraSpaceAfter: 6 } })),
       { x: x + 0.2, y: y + 0.55, w: w - 0.4, h: hh - 0.7, fontFace: FONT, fontSize: size, color: INK, valign: "top" },
@@ -262,7 +263,7 @@ export function makeParts(h) {
     if (!bullets.length) return;
     const text = bullets.map(t).join("   ·   ");
     panel(s, 0.8, y, 11.8, hh, ctx.theme.soft);
-    s.addText([{ text: `${title}  `, options: { bold: true, color: ctx.theme.accent } }, { text, options: { color: INK } }], { x: 1.0, y, w: 11.4, h: hh, fontFace: FONT, fontSize: fitSize(`${title} ${text}`, 11.4, hh, 18, 11), valign: "middle" });
+    s.addText([{ text: `${title}  `, options: { bold: true, color: ctx.theme.accent } }, { text, options: { color: INK } }], { x: 1.0, y, w: 11.4, h: hh, fontFace: FONT, fontSize: fitSize(`${title} ${text}`, 11.4, hh, ctx.band === "early" ? 24 : 18, 11), valign: "middle" });
   }
 
   /** A straight line between two points (PowerPoint lines need a box plus a flip). */
@@ -316,7 +317,7 @@ export function makeParts(h) {
       const rows = Math.ceil(opts.length / cols);
       const oh = (area.h - qH - 0.3 - 0.55 - gap * (rows - 1)) / rows;
       const ow = (area.w - gap) / cols;
-      const size = Math.min(...opts.map((o) => fitSize(o, ow - 1.3, oh - 0.15, 24, 12)));
+      const size = Math.min(...opts.map((o) => fitSize(o, ow - 1.3, oh - 0.15, ctx.band === "early" ? 32 : 24, 12)));
       opts.forEach((o, i) => {
         const x = area.x + (i % cols) * (ow + gap);
         const y = area.y + qH + 0.3 + Math.floor(i / cols) * (oh + gap);
@@ -325,7 +326,7 @@ export function makeParts(h) {
         s.addText("ABCD"[i], { x: x + 0.2, y: y + oh / 2 - 0.35, w: 0.7, h: 0.7, fontFace: FONT, fontSize: 24, bold: true, color: "FFFFFF", align: "center", valign: "middle" });
         s.addText(t(o), { x: x + 1.1, y, w: ow - 1.25, h: oh, fontFace: ctx.mathy ? "Cambria" : FONT, fontSize: size, color: INK, valign: "middle" });
       });
-      s.addText([{ text: "HINGE QUESTION  ", options: { bold: true, color: th.accent, charSpacing: 2 } }, { text: HINGE_HOW[ctx.slideRoutine] || HINGE_HOW["show-me"], options: { color: MUTED } }], { x: area.x, y: area.y + area.h - 0.45, w: area.w, h: 0.45, fontFace: FONT, fontSize: 15, valign: "middle" });
+      s.addText([{ text: "HINGE QUESTION  ", options: { bold: true, color: th.accent, charSpacing: 2 } }, { text: HINGE_HOW[ctx.slideRoutine] || HINGE_HOW["show-me"], options: { color: MUTED } }], { x: area.x, y: area.y + area.h - 0.45, w: area.w, h: 0.45, fontFace: FONT, fontSize: ctx.band === "early" ? 18 : 15, valign: "middle" });
       void bullets;
     },
 
@@ -604,7 +605,7 @@ export function makeParts(h) {
       const stripH = bullets.length ? 0.75 : 0;
       const hh = area.h - (stripH ? stripH + 0.15 : 0);
       // Lay the cards out in rows, shrinking the type until they fit in about half the space.
-      let size = early ? 24 : 20;
+      let size = early ? 28 : 22;
       let rows;
       let chipH;
       const gap = 0.15;
@@ -645,6 +646,7 @@ export function makeParts(h) {
         const col = i % 2 ? th.dark : th.accent;
         s.addShape("roundRect", { x, y: top, w: cw, h: colH, rectRadius: 0.12, fill: { color: i % 2 ? "FFFFFF" : th.soft }, line: { color: col, width: 1.75, dashType: "dash" } });
         s.addShape("roundRect", { x, y: top, w: cw, h: 0.62, rectRadius: 0.12, fill: { color: col }, line: { color: col, width: 0 } });
+        if (colH > 1.4) s.addText(early ? "Sort the letters here" : "Letters go here", { x, y: top + 0.62, w: cw, h: colH - 0.62, fontFace: FONT, fontSize: early ? 20 : 16, italic: true, color: "B5AE9F", align: "center", valign: "middle" });
         s.addText([{ text: `${i + 1}  `, options: { color: "E3C98F" } }, { text: c, options: { color: "FFFFFF" } }], { x: x + 0.15, y: top, w: cw - 0.3, h: 0.62, fontFace: FONT, fontSize: fitSize(`${i + 1} ${c}`, cw - 0.3, 0.6, early ? 24 : 20, 11), bold: true, align: "center", valign: "middle" });
       });
       if (stripH) strip(s, ctx, bullets, area.y + area.h - stripH, stripH, "How:");

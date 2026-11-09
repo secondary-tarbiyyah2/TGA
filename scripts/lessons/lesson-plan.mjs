@@ -1,13 +1,17 @@
 // Teacher lesson plan (Word .docx) for one lesson, built from the same JSON
 // as the slides. Converted to PDF alongside the deck in the workflow.
 //
-// One or two A4 pages a teacher can print or edit: what the lesson is,
-// objectives and key words, a timed run-through with slide numbers, the
-// teacher script for every explanation slide, tasks with what to look for,
-// adaptations and homework.
+// A printable A4 plan of one to two pages (three for a full lesson with every
+// extra): the header, objectives and success criteria, prior and next
+// learning, resources, a timed run-through with routines and teacher actions,
+// key questions and the hinge question (what each wrong option reveals),
+// misconceptions, the full answer key, adaptations, assessment for learning,
+// homework and an "after the lesson" reflection box.
 import fs from "node:fs";
 import path from "node:path";
 import { createRequire } from "node:module";
+import { ROUTINES, itemA, itemQ, phaseMinutes, routineFor } from "../../src/lib/learn/lessonSchema.mjs";
+import { sortAnswer } from "./deck-parts.mjs";
 
 const require = createRequire(import.meta.url);
 const {
@@ -36,190 +40,322 @@ const LOGO_RATIO = 393 / 120;
 const INK = "1B1E21";
 const MUTED = "5B6168";
 const GOLD_DARK = "7D6428";
+const GOLD_SOFT = "F5ECD6";
 const CREAM = "FBF7EE";
 const LINE = "E3DED2";
+const TICK = "2E7D4F";
 const FONT = "Calibri";
 const PAGE_W = 11906; // A4 in twips
-const MARGIN = 850; // ~1.5 cm
+const MARGIN = 794; // 1.4 cm
 const CONTENT_W = PAGE_W - MARGIN * 2;
 
 const clean = (s) => String(s ?? "").replace(/\s+/g, " ").trim();
-const run = (text, o = {}) => new TextRun({ text: String(text ?? "").replace(/\s+/g, " "), font: FONT, size: o.size || 21, bold: o.bold, italics: o.italics, color: o.color || INK });
+const run = (text, o = {}) => new TextRun({ text: String(text ?? "").replace(/\s+/g, " "), font: FONT, size: o.size || 19, bold: o.bold, italics: o.italics, color: o.color || INK });
 const para = (children, o = {}) =>
-  new Paragraph({ children: Array.isArray(children) ? children : [children], spacing: { before: o.before ?? 0, after: o.after ?? 80, line: 264 }, alignment: o.align, numbering: o.numbering, keepNext: o.keepNext });
+  new Paragraph({ children: Array.isArray(children) ? children : [children], spacing: { before: o.before ?? 0, after: o.after ?? 50, line: 240 }, alignment: o.align, numbering: o.numbering, keepNext: o.keepNext, indent: o.indent });
 
 function heading(text, accent) {
   return new Paragraph({
-    children: [new TextRun({ text: text.toUpperCase(), font: FONT, size: 20, bold: true, color: accent, characterSpacing: 40 })],
-    spacing: { before: 220, after: 80 },
-    border: { bottom: { style: BorderStyle.SINGLE, size: 6, color: LINE, space: 3 } },
+    children: [new TextRun({ text: text.toUpperCase(), font: FONT, size: 19, bold: true, color: accent, characterSpacing: 40 })],
+    spacing: { before: 150, after: 60 },
+    border: { bottom: { style: BorderStyle.SINGLE, size: 6, color: LINE, space: 2 } },
     keepNext: true,
   });
 }
 
-const bullet = (text, o = {}) => para([run(text, o)], { numbering: { reference: "bullets", level: 0 }, after: 40 });
+const bullet = (children, o = {}) => para(Array.isArray(children) ? children : [run(children, o)], { numbering: { reference: "bullets", level: 0 }, after: 30 });
+const label = (text, color = GOLD_DARK) => para([run(text.toUpperCase(), { bold: true, color, size: 16 })], { after: 40 });
 
+const border = (color = LINE, size = 4) => ({ style: BorderStyle.SINGLE, size, color });
 function cell(children, o = {}) {
   return new TableCell({
-    children: (Array.isArray(children) ? children : [children]).map((c) => (typeof c === "string" ? para([run(c, o.text)], { after: 40 }) : c)),
+    children: (Array.isArray(children) ? children : [children]).map((c) => (typeof c === "string" ? para([run(c, o.text)], { after: 20 }) : c)),
     width: { size: o.w, type: WidthType.DXA },
     shading: o.fill ? { type: ShadingType.CLEAR, fill: o.fill, color: "auto" } : undefined,
-    margins: { top: 70, bottom: 70, left: 110, right: 110 },
-    borders: {
-      top: { style: BorderStyle.SINGLE, size: 4, color: LINE },
-      bottom: { style: BorderStyle.SINGLE, size: 4, color: LINE },
-      left: { style: BorderStyle.SINGLE, size: 4, color: LINE },
-      right: { style: BorderStyle.SINGLE, size: 4, color: LINE },
-    },
+    margins: { top: o.pad ?? 60, bottom: o.pad ?? 60, left: 100, right: 100 },
+    verticalAlign: o.valign,
+    columnSpan: o.span,
+    borders: o.borders || { top: border(), bottom: border(), left: border(), right: border() },
   });
 }
 
-function table(widths, rows) {
+function table(widths, rows, o = {}) {
   return new Table({
     width: { size: CONTENT_W, type: WidthType.DXA },
     columnWidths: widths,
     layout: TableLayoutType.FIXED,
-    rows: rows.map((r, i) => new TableRow({ children: r.map((c, j) => cell(c, { w: widths[j], fill: i === 0 && r.header !== false ? CREAM : undefined, text: i === 0 ? { bold: true, size: 19 } : undefined })), cantSplit: true })),
+    rows: rows.map(
+      (r, i) =>
+        new TableRow({
+          tableHeader: i === 0 && o.header !== false,
+          cantSplit: true,
+          children: r.map((c, j) => cell(c, { w: widths[j], fill: i === 0 && o.header !== false ? o.headFill || CREAM : o.zebra && i % 2 === 0 ? "FCFAF5" : undefined, text: i === 0 && o.header !== false ? { bold: true, size: 16, color: o.headColor } : { size: 17 } })),
+        }),
+    ),
   });
 }
 
-/** Minutes for each phase, adding up to the lesson length. */
-export function timings(duration, teachCount, breaks) {
-  const starter = duration <= 30 ? 4 : 5;
-  const exit = duration <= 30 ? 3 : 5;
+/** Minutes for each phase, adding up to the lesson length (task phases use the slides' timers). */
+export function timings(lesson, duration, teachCount, breaks) {
+  const hook = lesson.hook ? 1 : 0;
+  const starter = phaseMinutes("starter", lesson.starter, duration);
+  const guided = phaseMinutes("practice", lesson.practice, duration);
+  const independent = phaseMinutes("independent", lesson.independent, duration);
+  const exit = phaseMinutes("exit", lesson.exit, duration);
   const close = 2;
-  const rest = Math.max(10, duration - starter - exit - close);
-  const teach = Math.max(teachCount * 2, Math.round(rest * 0.42)) + breaks;
-  const guided = Math.round(rest * 0.2);
-  const independent = Math.max(5, duration - starter - exit - close - teach - guided);
-  return { starter, teach, guided, independent, exit, close };
+  const teach = Math.max(teachCount * 2, duration - hook - starter - guided - independent - exit - close);
+  return { hook, starter, teach, guided, independent, exit, close, breaks };
 }
 
 const range = (a, b) => (a === b ? `${a}` : `${a}–${b}`);
+const firstSentences = (s, n = 2) => {
+  const parts = clean(s).match(/[^.!?]+[.!?]+['"’”)]*(\s|$)/g) || [clean(s)];
+  const out = parts.slice(0, n).join("").trim();
+  return out.length < clean(s).length ? `${out} …` : out;
+};
+
+/** "SEND: … EAL: … Stretch: …" -> [[label, text]]. A line without labels is one entry. */
+function adaptations(send) {
+  const s = clean(send);
+  if (!s) return [];
+  const re = /\b(SEND|Support|EAL|Stretch|Challenge|More able|Most able)\s*:\s*/gi;
+  const marks = [...s.matchAll(re)];
+  if (!marks.length) return [["SEND, EAL and stretch", s]];
+  const out = [];
+  if (marks[0].index > 0) out.push(["Adapt", s.slice(0, marks[0].index).trim()]);
+  marks.forEach((m, i) => {
+    const end = i + 1 < marks.length ? marks[i + 1].index : s.length;
+    const name = m[1].toLowerCase() === "send" ? "SEND" : m[1].toUpperCase() === "EAL" ? "EAL" : m[1][0].toUpperCase() + m[1].slice(1).toLowerCase();
+    out.push([name, s.slice(m.index + m[0].length, end).trim().replace(/[.;]\s*$/, ".")]);
+  });
+  return out;
+}
+
+const routineText = (id) => (ROUTINES[id] ? ROUTINES[id].label : "");
 
 /**
- * @param file   { subject, year, board }
+ * @param file   { subject, year, board, exam… }
  * @param lesson the lesson JSON
- * @param meta   { yearLabel, accent, band, next, slides: { starter, teach:[n…], guided, independent, exit, close, total } }
+ * @param meta   { yearLabel, accent, band, prev, next, slides: { starter, teach:[n…], guided, independent, exit, close, total, …Answers }, breaks, keyQuestions }
  */
 export async function buildPlan(file, lesson, meta) {
   const accent = meta.accent;
-  const duration = lesson.duration || 45;
+  const duration = meta.duration || lesson.duration || 45;
   const teach = lesson.teach || [];
-  const t = timings(duration, teach.length, meta.breaks || 0);
+  const t = timings(lesson, duration, teach.length, meta.breaks || 0);
   const S = meta.slides;
   const kids = meta.band === "early" ? "children" : "pupils";
+  const senior = meta.band === "senior";
   const children = [];
+  const ks4 = /^y1[01]$/.test(file.year);
 
-  // Title block
-  children.push(
-    new Paragraph({
-      children: [new TextRun({ text: `${clean(file.subject).toUpperCase()}  ·  ${meta.yearLabel.toUpperCase()}${(lesson.board || file.board) && /^y1[01]$/.test(file.year) ? `  ·  ${clean(lesson.board || file.board).toUpperCase()}` : ""}${(file.examShort || file.exam) && /^y1[01]$/.test(file.year) ? `  ·  EXAM: ${clean(file.examShort || file.exam).toUpperCase()}` : ""}`, font: FONT, size: 19, bold: true, color: accent, characterSpacing: 30 })],
-      spacing: { after: 40 },
-    }),
-    para([run(`Lesson ${lesson.n}: ${lesson.title}`, { size: 36, bold: true })], { after: 40 }),
-    para([run(`${clean(lesson.unit)}  ·  ${duration} minutes  ·  ${S.total} slides`, { color: MUTED, size: 20 })], { after: 160 }),
-  );
-
-  // Objectives + key words side by side
-  const objs = (lesson.objectives || []).map((o) => para([run(`•  ${o}`)], { after: 50 }));
-  const kws = (lesson.keywords || []).length
-    ? lesson.keywords.slice(0, 8).map((k) => para([run(`${k.term}: `, { bold: true, color: accent }), run(k.def, { size: 19 })], { after: 40 }))
-    : [para([run("No new key words this lesson.", { color: MUTED, italics: true })])];
+  // ── Header banner ──────────────────────────────────────────────────────────
+  const chip = `${clean(file.subject).toUpperCase()}  ·  ${meta.yearLabel.toUpperCase()}${ks4 && (lesson.boardShort || file.boardShort || lesson.board || file.board) ? `  ·  ${clean(lesson.boardShort || file.boardShort || lesson.board || file.board).toUpperCase()}` : ""}${ks4 && (file.examShort || file.exam) ? `  ·  EXAM: ${clean(file.examShort || file.exam).toUpperCase()}` : ""}`;
   children.push(
     new Table({
       width: { size: CONTENT_W, type: WidthType.DXA },
-      columnWidths: [Math.round(CONTENT_W * 0.55), CONTENT_W - Math.round(CONTENT_W * 0.55)],
+      columnWidths: [CONTENT_W],
       layout: TableLayoutType.FIXED,
       rows: [
         new TableRow({
           children: [
-            cell([para([run("Objectives", { bold: true, color: GOLD_DARK, size: 19 })], { after: 60 }), ...objs], { w: Math.round(CONTENT_W * 0.55) }),
-            cell([para([run("Key words", { bold: true, color: GOLD_DARK, size: 19 })], { after: 60 }), ...kws], { w: CONTENT_W - Math.round(CONTENT_W * 0.55), fill: CREAM }),
+            cell(
+              [
+                para([run(chip, { bold: true, color: "E3C98F", size: 16 })], { after: 30 }),
+                para([run(`Lesson ${lesson.n}: ${clean(lesson.title)}`, { bold: true, color: "FFFFFF", size: 32 })], { after: 30 }),
+                para([run(`${clean(lesson.unit)}   ·   ${duration} minutes   ·   ${S.total} slides`, { color: "E8E4D8", size: 17 })], { after: 0 }),
+              ],
+              { w: CONTENT_W, fill: accent, pad: 140, borders: { top: border(accent), bottom: border(accent), left: border(accent), right: border(accent) } },
+            ),
           ],
         }),
       ],
     }),
   );
 
-  // Big question, success criteria, links (the school's planning format)
+  // ── Objectives + success criteria | key words ─────────────────────────────
   const sc = (lesson.successCriteria || []).map(clean).filter(Boolean);
-  if (lesson.bigQuestion || sc.length || lesson.crossCurricular || lesson.smsc) {
-    children.push(heading("Big question and success criteria", accent));
-    if (lesson.bigQuestion) children.push(para([run("Enquiry question: ", { bold: true }), run(lesson.bigQuestion, { italics: true })]));
-    sc.forEach((x, i) => children.push(para([run(`${["All", "Most", "Some"][i] || "•"} pupils: `, { bold: true, color: accent }), run(x)], { after: 40 })));
-    if (lesson.crossCurricular) children.push(para([run("Cross-curricular links: ", { bold: true }), run(lesson.crossCurricular)], { before: 60 }));
-    if (lesson.smsc) children.push(para([run("SMSC: ", { bold: true }), run(lesson.smsc)]));
+  const leftW = Math.round(CONTENT_W * 0.58);
+  const rightW = CONTENT_W - leftW;
+  const left = [label("Objectives"), ...(lesson.objectives || []).map((o) => bullet(clean(o)))];
+  if (sc.length) {
+    left.push(label("Success criteria"));
+    sc.forEach((x, i) => left.push(para([run(`${["All", "Most", "Some"][i] || "•"}: `, { bold: true, color: accent }), run(x)], { after: 30 })));
   }
+  if (lesson.bigQuestion) left.push(para([run("Big question: ", { bold: true }), run(clean(lesson.bigQuestion), { italics: true })], { before: 60, after: 20 }));
+  const kws = (lesson.keywords || []).slice(0, 8);
+  const right = [label("Key words"), ...(kws.length ? kws.map((k) => para([run(`${clean(k.term)}: `, { bold: true, color: accent }), run(clean(k.def), { size: 17 })], { after: 30 })) : [para([run("No new key words this lesson.", { color: MUTED, italics: true })])])];
+  children.push(para([], { after: 100 }));
+  children.push(new Table({ width: { size: CONTENT_W, type: WidthType.DXA }, columnWidths: [leftW, rightW], layout: TableLayoutType.FIXED, rows: [new TableRow({ children: [cell(left, { w: leftW }), cell(right, { w: rightW, fill: CREAM })] })] }));
 
-  // Run-through
+  // ── Prior learning | next lesson | resources ─────────────────────────────
+  const prev = meta.prev;
+  const sameUnit = prev && clean(prev.unit) === clean(lesson.unit);
+  const prior = prev
+    ? [para([run(`Lesson ${prev.n}: ${clean(prev.title)}`, { bold: true, size: 17 })], { after: 20 }), ...(prev.objectives || []).slice(0, 2).map((o) => para([run(`• ${clean(o)}`, { size: 16, color: MUTED })], { after: 10 })), ...(sameUnit ? [] : [para([run("(end of the previous unit)", { size: 16, italics: true, color: MUTED })])])]
+    : [para([run("First lesson of the unit. Check what pupils remember from earlier years with the starter.", { size: 17 })])];
+  const next = meta.next
+    ? [para([run(`Lesson ${meta.next.n}: ${clean(meta.next.title)}`, { bold: true, size: 17 })], { after: 20 }), ...(meta.next.objectives || []).slice(0, 2).map((o) => para([run(`• ${clean(o)}`, { size: 16, color: MUTED })], { after: 10 })), ...(clean(meta.next.unit) !== clean(lesson.unit) ? [para([run(`(starts ${clean(meta.next.unit)})`, { size: 16, italics: true, color: MUTED })])] : [])]
+    : [para([run("Last lesson in this sequence.", { size: 17 })])];
+  const res = (Array.isArray(lesson.resources) && lesson.resources.length ? lesson.resources : ["Slides", "Mini-whiteboard and pen", "Exercise book"]).map((r) => para([run(`• ${clean(r)}`, { size: 17 })], { after: 10 }));
+  const w3 = Math.floor(CONTENT_W / 3);
+  children.push(para([], { after: 80 }));
+  children.push(table([w3, w3, CONTENT_W - 2 * w3], [[[label("Prior learning"), ...prior], [label("Next lesson"), ...next], [label("Resources"), ...res]]], { header: false }));
+  const links = [lesson.crossCurricular ? ["Cross-curricular: ", lesson.crossCurricular] : null, lesson.smsc ? ["SMSC: ", lesson.smsc] : null].filter(Boolean);
+  if (links.length) children.push(para(links.flatMap(([a, b], i) => [run(`${i ? "   ·   " : ""}${a}`, { bold: true, size: 16 }), run(clean(b), { size: 16, color: MUTED })]), { before: 60 }));
+
+  // ── Run-through ────────────────────────────────────────────────────────────
   children.push(heading("Lesson run-through", accent));
-  const w = [1500, 1000, 1100, CONTENT_W - 3600];
+  const w = [1050, 750, 1700, CONTENT_W - 3500];
   let clock = 0;
   const at = (mins) => {
     const from = clock;
     clock += mins;
-    return `${from}–${clock} min`;
+    return `${from}–${clock}`;
   };
-  const list = (items) => (items || []).map((x, i) => para([run(`${i + 1}. ${x}`, { size: 19 })], { after: 30 }));
-  children.push(
-    table(w, [
-      ["Phase", "Time", "Slides", "What happens"],
-      ["Starter", at(t.starter), String(S.starter), [para([run(meta.band === "senior" ? "Do now: retrieval, in silence, from memory." : "Warm-up: settle, bismillah, quick recall.", { size: 19, italics: true, color: MUTED })], { after: 40 }), ...list(lesson.starter)]],
-      ["Explain", at(t.teach), range(S.teach[0], S.teach[S.teach.length - 1]), teach.map((x, i) => para([run(`${i + 1}. ${x.heading}`, { size: 19 })], { after: 30 }))],
-      ["Guided practice", at(t.guided), String(S.guided), [para([run("We do it together. Check every pupil before moving on.", { size: 19, italics: true, color: MUTED })], { after: 40 }), ...list(lesson.practice)]],
-      ["Independent", at(t.independent), String(S.independent), [para([run(meta.band === "early" ? "Children work on their own with adult support." : meta.band === "junior" ? "Bronze, silver, gold: pupils choose where to start." : "Core, extend, stretch: pupils start where they can.", { size: 19, italics: true, color: MUTED })], { after: 40 }), ...list(lesson.independent)]],
-      ["Exit ticket", at(t.exit), String(S.exit), [...list(lesson.exit), para([run("Then a 1-2-3 confidence check.", { size: 19, italics: true, color: MUTED })], { after: 30 })]],
-      ["Close", at(t.close), String(S.close), [para([run(`Homework: ${clean(lesson.homework)}`, { size: 19 })], { after: 30 }), ...(meta.next ? [para([run(`Next lesson: ${meta.next.title}`, { size: 19, color: MUTED })], { after: 30 })] : [])]],
-    ]),
-  );
-  if (meta.breaks) children.push(para([run(`Includes a one-minute ${meta.band === "early" ? "wiggle" : "brain"} break during the explanation (no music needed).`, { size: 18, italics: true, color: MUTED })], { before: 60 }));
+  const small = (text, o = {}) => para([run(text, { size: 16, ...o })], { after: 20 });
+  // Questions with answers are listed once, in the answer key; the rest are listed here.
+  const qList = (items) =>
+    (items || []).some(itemA) ? [small(`${items.length} question${items.length === 1 ? "" : "s"}: see the answer key.`, { color: MUTED })] : (items || []).map((x, i) => small(`${i + 1}. ${clean(itemQ(x))}`));
+  const phase = (name, routine) => [para([run(name, { bold: true, size: 17 })], { after: 20 }), ...(ROUTINES[routine] ? [small(routineText(routine), { color: accent, bold: true })] : [])];
+  const slideRef = (a, b) => (b ? `${a}, ${b}` : String(a));
+  const rows = [["Time (min)", "Slides", "Phase and routine", "Teacher actions"]];
+  if (lesson.hook) rows.push([at(t.hook), String(S.hook || 2), phase("Hook", routineFor(lesson, "hook", lesson.hook.type)), [small(clean(lesson.hook.text), { italics: true }), ...(lesson.hook.a ? [small(`Draw out: ${clean(lesson.hook.a)}`, { color: MUTED })] : [])]]);
+  rows.push([at(t.starter), slideRef(S.starter, S.starterAnswers), phase(senior ? "Do now" : "Warm-up", routineFor(lesson, "starter")), [small(senior ? "Retrieval, in silence, from memory. Bismillah to begin." : "Settle, bismillah, quick recall.", { italics: true, color: MUTED }), ...qList(lesson.starter), ...(S.starterAnswers ? [small("Reveal the answers (next slide); pupils self-mark.", { color: MUTED })] : [])]]);
+  rows.push([
+    at(t.teach),
+    range(S.teach[0], S.teach[S.teach.length - 1]),
+    [...phase("Explain", null), small("Full script: slide notes", { italics: true, color: MUTED })],
+    [
+      ...teach.map((x, i) => {
+        const r = ROUTINES[x.routine] ? x.routine : x.check ? routineFor(lesson, "hinge") : routineFor(lesson, "teach");
+        return para([run(`${S.teach[i]}. ${clean(x.heading)}${x.check ? " (hinge)" : ""}${ROUTINES[r] ? ` [${routineText(r)}]` : ""}: `, { bold: true, size: 16 }), run(x.note ? firstSentences(x.note, 1) : (x.bullets || []).map(clean).join("; "), { size: 16 })], { after: 30 });
+      }),
+      ...(meta.breaks ? [small(`Includes a one-minute ${meta.band === "early" ? "wiggle" : "brain"} break (no music).`, { italics: true, color: MUTED })] : []),
+    ],
+  ]);
+  rows.push([at(t.guided), slideRef(S.guided, S.guidedAnswers), phase(senior ? "Guided practice" : "We do", routineFor(lesson, "practice")), [small("Model your thinking aloud; check every pupil before moving on.", { italics: true, color: MUTED }), ...qList(lesson.practice)]]);
+  rows.push([at(t.independent), slideRef(S.independent, S.independentAnswers), phase(senior ? "Independent" : "You do", routineFor(lesson, "independent")), [small(meta.band === "senior" ? "Core, extend, stretch: pupils start where they can; circulate via chat and cameras." : "Bronze, silver, gold: children choose where to start.", { italics: true, color: MUTED }), ...qList(lesson.independent)]]);
+  rows.push([at(t.exit), String(S.exit), phase("Exit ticket", routineFor(lesson, "exit")), [...qList(lesson.exit), small("Then a 1-2-3 confidence check on fingers.", { italics: true, color: MUTED })]]);
+  rows.push([at(t.close), String(S.close), phase("Close", null), [small(`Homework: ${clean(Array.isArray(lesson.homework) ? lesson.homework.join(" ") : lesson.homework)}`), small("Close with du'a and jazakallahu khayran.", { color: MUTED })]]);
+  children.push(table(w, rows, { zebra: true }));
 
-  // Teacher script
-  children.push(heading("Teacher script for each explanation", accent));
-  teach.forEach((x, i) => {
-    children.push(para([run(`Slide ${S.teach[i]}  ·  ${x.heading}`, { bold: true, size: 22 })], { before: 100, after: 40, keepNext: true }));
-    (x.bullets || []).forEach((b) => children.push(bullet(b, { size: 19, color: MUTED })));
-    if (x.model) {
-      children.push(para([run("Worked example (I do): ", { bold: true, color: accent, size: 20 }), run(x.model.problem, { size: 20 })], { before: 40, after: 30 }));
-      (x.model.steps || []).forEach((st, k) => children.push(para([run(`${k + 1}. ${st}`, { size: 19 })], { after: 20 })));
-      if (x.model.answer) children.push(para([run("Answer: ", { bold: true, size: 19 }), run(x.model.answer, { size: 19 })], { after: 40 }));
+  // ── Key questions, the hinge, misconceptions ───────────────────────────────
+  const keyQs = (meta.keyQuestions || []).slice(0, 4);
+  const checks = teach.map((x, i) => [x, S.teach[i]]).filter(([x]) => x.check);
+  const mis = teach.filter((x) => x.misconception);
+  if (keyQs.length || checks.length || mis.length) {
+    children.push(heading(mis.length ? "Key questions, hinge and misconceptions" : "Key questions and the hinge question", accent));
+    if (keyQs.length || mis.length) {
+      const kq = keyQs.length ? keyQs.map((q) => bullet(q, { size: 17 })) : [para([run("See the teacher notes on each slide.", { size: 17, color: MUTED })])];
+      const ms = mis.length ? mis.map((x) => bullet([run(clean(x.misconception.wrong), { color: "B03A2E", size: 17 }), run("  →  ", { size: 17 }), run(clean(x.misconception.right), { bold: true, size: 17 })])) : [para([run("Listen for errors in the hinge and guided practice.", { size: 17, color: MUTED })])];
+      const lw = Math.round(CONTENT_W * 0.55);
+      children.push(new Table({ width: { size: CONTENT_W, type: WidthType.DXA }, columnWidths: [lw, CONTENT_W - lw], layout: TableLayoutType.FIXED, rows: [new TableRow({ cantSplit: true, children: [cell([label("Key questions to ask", accent), ...kq], { w: lw }), cell([label("Misconceptions to watch for", "B03A2E"), ...ms], { w: CONTENT_W - lw, fill: "FDF3F1" })] })] }));
     }
-    if (x.check) {
+    checks.forEach(([x, n]) => {
       const c = x.check;
-      children.push(para([run("Hinge question (mini-whiteboards): ", { bold: true, color: accent, size: 20 }), run(c.q, { size: 20 })], { before: 40, after: 30 }));
-      (c.options || []).forEach((o, k) => children.push(para([run(`${"ABCD"[k]}  ${o}`, { size: 19, bold: k === Number(c.answer) })], { after: 20 })));
-      children.push(para([run(`Answer: ${"ABCD"[Number(c.answer)] || "?"}. `, { bold: true, size: 19 }), run(c.why || "", { size: 19 }), run(" If fewer than about 80% are right, reteach before moving on.", { size: 19, color: MUTED })], { after: 40 }));
-    }
-    if (x.misconception) children.push(para([run("Misconception: ", { bold: true, color: "C0392B", size: 19 }), run(x.misconception.wrong, { size: 19 }), run("  →  ", { size: 19 }), run(x.misconception.right, { size: 19 })], { after: 40 }));
-    if (x.note) children.push(para([run("Say and ask: ", { bold: true, color: accent, size: 20 }), run(x.note, { size: 20 })], { before: 40, after: 60 }));
-  });
+      const ans = Number(c.answer);
+      const r = ROUTINES[x.routine] ? x.routine : routineFor(lesson, "hinge");
+      children.push(para([run(`Hinge (slide ${n}, ${routineText(r)}): `, { bold: true, color: accent }), run(clean(c.q), { bold: true })], { before: 80, after: 20, keepNext: true }));
+      children.push(para((c.options || []).flatMap((o, k) => [run(`${k ? "  ·  " : ""}${"ABCD"[k]} `, { bold: true, size: 17, color: k === ans ? TICK : MUTED }), run(`${clean(o)}${k === ans ? " ✓" : ""}`, { size: 17, bold: k === ans, color: k === ans ? TICK : INK })]), { after: 20, indent: { left: 280 } }));
+      children.push(para([run("What the wrong answers reveal: ", { bold: true, size: 17 }), run(clean(c.why), { size: 17 }), run(" Under about 80% right: reteach before moving on.", { size: 17, color: MUTED })], { after: 20 }));
+    });
+  }
 
-  // Adaptations + checks
-  children.push(heading("Adapt and check", accent));
-  if (lesson.send) children.push(para([run("SEND, EAL and stretch: ", { bold: true }), run(lesson.send)]));
+  // ── Answer key ─────────────────────────────────────────────────────────────
+  const keyRows = [["Question", "Answer"]];
+  const addSection = (name, items) => {
+    const list = items || [];
+    if (!list.some(itemA)) return;
+    keyRows.push({ section: name });
+    list.forEach((x, i) => keyRows.push([`${i + 1}. ${clean(itemQ(x))}`, [para([run(itemA(x) ? clean(itemA(x)) : "Answers will vary.", { size: 17, bold: !!itemA(x), italics: !itemA(x), color: itemA(x) ? INK : MUTED })], { after: 0 })]]));
+  };
+  addSection(senior ? "Do now" : "Warm-up", lesson.starter);
+  if (teach.some((x) => (x.model && x.model.answer) || x.check || (x.sort && Array.isArray(x.sort.answer)))) keyRows.push({ section: "Explanation slides" });
+  teach.forEach((x) => {
+    if (x.model && x.model.answer) keyRows.push([`Worked example: ${clean(x.model.problem)}`, [para([run(clean(x.model.answer), { bold: true, size: 17 })], { after: 0 })]]);
+    if (x.check) keyRows.push([`Hinge: ${clean(x.check.q)}`, [para([run(`${"ABCD"[Number(x.check.answer)] || "?"}: ${clean((x.check.options || [])[Number(x.check.answer)])}`, { bold: true, size: 17 })], { after: 0 })]]);
+    if (x.sort && Array.isArray(x.sort.answer)) keyRows.push([`Card sort: ${clean(x.heading)}`, [para([run(sortAnswer(x.sort), { size: 17 })], { after: 0 })]]);
+  });
+  addSection(senior ? "Guided practice" : "We do", lesson.practice);
+  addSection("Independent", lesson.independent);
+  addSection("Exit ticket", lesson.exit);
+  children.push(heading("Answer key", accent));
+  if (keyRows.length > 1) {
+    const kw = Math.round(CONTENT_W * 0.55);
+    children.push(
+      new Table({
+        width: { size: CONTENT_W, type: WidthType.DXA },
+        columnWidths: [kw, CONTENT_W - kw],
+        layout: TableLayoutType.FIXED,
+        rows: keyRows.map((r, i) =>
+          r.section
+            ? new TableRow({ cantSplit: true, children: [cell([para([run(r.section.toUpperCase(), { bold: true, size: 15, color: accent })], { after: 0 })], { w: CONTENT_W, span: 2, fill: "FCFAF5", pad: 15 })] })
+            : new TableRow({ tableHeader: i === 0, cantSplit: true, children: r.map((c, j) => cell(c, { w: j ? CONTENT_W - kw : kw, pad: 20, fill: i === 0 ? CREAM : undefined, text: i === 0 ? { bold: true, size: 16 } : { size: 17 } })) }),
+        ),
+      }),
+    );
+  } else children.push(para([run("No answers are recorded for this lesson's questions yet. Add them in the portal's lesson editor (an answer under each question) and they appear here and on the slides.", { italics: true, color: MUTED, size: 17 })]));
+
+  // ── Adaptations | assessment for learning ─────────────────────────────────
+  const ad = adaptations(lesson.send).map(([k, v]) => para([run(`${k}: `, { bold: true, color: accent, size: 17 }), run(v, { size: 17 })], { after: 30 }));
+  const ind = lesson.independent || [];
+  if (ind.length >= 3) ad.push(para([run("Stretch task: ", { bold: true, color: accent, size: 17 }), run(clean(itemQ(ind[ind.length - 1])).replace(/^(stretch|gold|challenge)\s*[:\-–]\s*/i, ""), { size: 17 })], { after: 30 }));
+  if (!ad.length) ad.push(para([run(`Start ${kids} who need support at the first task with a worked example to hand; move confident ${kids} straight to the last task.`, { size: 17 })]));
+  const sr = routineFor(lesson, "starter");
+  const afl = [
+    `Do now${ROUTINES[sr] ? ` (${routineText(sr)})` : ""}: note who cannot recall prior learning.`,
+    ...(checks.length ? [`Hinge question${ROUTINES[routineFor(lesson, "hinge")] ? ` (${routineText(routineFor(lesson, "hinge"))})` : ""}: at least 80% correct before moving on.`] : []),
+    `Guided practice${ROUTINES[routineFor(lesson, "practice")] ? ` (${routineText(routineFor(lesson, "practice"))})` : ""}: every ${kids === "pupils" ? "pupil" : "child"} answers before you continue.`,
+    `Exit ticket${ROUTINES[routineFor(lesson, "exit")] ? ` (${routineText(routineFor(lesson, "exit"))})` : ""} and 1-2-3 confidence: who meets each objective unaided? Plan the next starter around any "not yet".`,
+  ].map((x) => para([run(`• ${x}`, { size: 17 })], { after: 30 }));
+  const half = Math.round(CONTENT_W / 2);
+  children.push(para([], { after: 60 }));
   children.push(
-    para([run("Look for: ", { bold: true }), run(`can ${kids} meet each objective unaided at the exit ticket? Note anyone at 3 ("not yet") and start next lesson's warm-up with them in mind.`)]),
-    para([run("Notes after the lesson: ", { bold: true }), run("______________________________________________________________", { color: LINE })], { before: 120 }),
-    para([run("______________________________________________________________________________________", { color: LINE })], { before: 120 }),
+    new Table({
+      width: { size: CONTENT_W, type: WidthType.DXA },
+      columnWidths: [half, CONTENT_W - half],
+      layout: TableLayoutType.FIXED,
+      rows: [new TableRow({ cantSplit: true, children: [cell([label("Adaptations: SEND, EAL, stretch", accent), ...ad], { w: half }), cell([label("Assessment for learning", accent), ...afl], { w: CONTENT_W - half, fill: CREAM })] })],
+    }),
+  );
+
+  // ── After the lesson ───────────────────────────────────────────────────────
+  children.push(para([], { after: 80, keepNext: true }));
+  const lines = (n) => Array.from({ length: n }, () => para([run(" ", { size: 17 })], { after: 0 }));
+  const third = Math.floor(CONTENT_W / 3);
+  children.push(
+    new Table({
+      width: { size: CONTENT_W, type: WidthType.DXA },
+      columnWidths: [third, third, CONTENT_W - 2 * third],
+      layout: TableLayoutType.FIXED,
+      rows: [
+        new TableRow({
+          cantSplit: true,
+          children: ["After the lesson: what went well", "Even better if", `${kids === "pupils" ? "Pupils" : "Children"} to follow up`].map((h, i) =>
+            cell([para([run(h, { bold: true, size: 16, color: GOLD_DARK })], { after: 20 }), ...lines(2)], { w: i === 2 ? CONTENT_W - 2 * third : third, fill: GOLD_SOFT, borders: { top: border(GOLD_DARK, 6), bottom: border(GOLD_DARK, 6), left: border(GOLD_DARK, 6), right: border(GOLD_DARK, 6) } }),
+          ),
+        }),
+      ],
+    }),
   );
 
   const doc = new Document({
     creator: "Tarbiyyah Global Academy",
     title: `${file.subject} ${meta.yearLabel} – Lesson ${lesson.n} plan`,
     description: lesson.title,
-    styles: { default: { document: { run: { font: FONT, size: 21, color: INK } } } },
-    numbering: { config: [{ reference: "bullets", levels: [{ level: 0, format: LevelFormat.BULLET, text: "•", alignment: AlignmentType.LEFT, style: { paragraph: { indent: { left: 360, hanging: 220 } } } }] }] },
+    styles: { default: { document: { run: { font: FONT, size: 19, color: INK } } } },
+    numbering: { config: [{ reference: "bullets", levels: [{ level: 0, format: LevelFormat.BULLET, text: "•", alignment: AlignmentType.LEFT, style: { paragraph: { indent: { left: 300, hanging: 200 } } } }] }] },
     sections: [
       {
-        properties: { page: { size: { width: PAGE_W, height: 16838 }, margin: { top: 1000, bottom: 900, left: MARGIN, right: MARGIN, header: 450, footer: 400 } } },
+        properties: { page: { size: { width: PAGE_W, height: 16838 }, margin: { top: 780, bottom: 700, left: MARGIN, right: MARGIN, header: 400, footer: 360 } } },
         headers: {
           default: new Header({
             children: [
               new Paragraph({
                 children: [
-                  new ImageRun({ type: "png", data: LOGO, transformation: { width: Math.round(28 * LOGO_RATIO), height: 28 } }),
-                  new TextRun({ text: "\tLESSON PLAN", font: FONT, size: 17, bold: true, color: GOLD_DARK, characterSpacing: 40 }),
+                  new ImageRun({ type: "png", data: LOGO, transformation: { width: Math.round(26 * LOGO_RATIO), height: 26 } }),
+                  new TextRun({ text: `\tLESSON PLAN  ·  ${clean(file.subject).toUpperCase()}  ·  ${meta.yearLabel.toUpperCase()}  ·  LESSON ${lesson.n}`, font: FONT, size: 16, bold: true, color: GOLD_DARK, characterSpacing: 30 }),
                 ],
                 tabStops: [{ type: "right", position: CONTENT_W }],
               }),
@@ -231,8 +367,8 @@ export async function buildPlan(file, lesson, meta) {
             children: [
               new Paragraph({
                 children: [
-                  new TextRun({ text: `${file.subject} · ${meta.yearLabel} · Lesson ${lesson.n}\t`, font: FONT, size: 16, color: MUTED }),
-                  new TextRun({ children: ["Page ", PageNumber.CURRENT, " of ", PageNumber.TOTAL_PAGES], font: FONT, size: 16, color: MUTED }),
+                  new TextRun({ text: `Tarbiyyah Global Academy · ${clean(lesson.unit)}\t`, font: FONT, size: 15, color: MUTED }),
+                  new TextRun({ children: ["Page ", PageNumber.CURRENT, " of ", PageNumber.TOTAL_PAGES], font: FONT, size: 15, color: MUTED }),
                 ],
                 tabStops: [{ type: "right", position: CONTENT_W }],
               }),

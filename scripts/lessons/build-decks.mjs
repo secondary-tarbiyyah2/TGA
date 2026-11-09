@@ -644,11 +644,13 @@ function answersSlide(pptx, ctx, items, { kicker, stage, labels, teacherOnly, ti
   const avail = 4.25;
   const gap = 0.16;
   const h = Math.min(early ? 1.5 : 1.3, (avail - gap * (list.length - 1)) / list.length);
-  const qH = h * 0.4;
+  const qH = h * 0.42;
   const aH = h - qH - 0.08;
-  const qs = list.map((x, i) => `${labels && labels[i] ? `${labels[i]}: ` : ""}${unnumber(itemQ(x))}`);
+  const TIER = /^(core|extend|extension|stretch|challenge|bronze|silver|gold)\s*[:\-–]\s*/i;
+  const qs = list.map((x, i) => `${labels && labels[i] ? `${labels[i]}: ` : ""}${unnumber(itemQ(x)).replace(labels ? TIER : /^$/, "")}`);
   const as = list.map((x) => itemA(x) || "Answers will vary: take two or three and discuss.");
-  const qSize = Math.min(...qs.map((q) => fitSize(q, 10.3, qH, early ? 20 : 16, 10)));
+  // Each question line is sized on its own (they are prompts); the answers share one size.
+  const qSizes = qs.map((q) => fitSize(q, 10.3, qH, early ? 20 : 17, 10));
   const aSize = Math.min(...as.map((a) => fitSize(a, 10.3, aH, early ? 30 : 24, early ? 16 : 12)));
   list.forEach((x, i) => {
     const y = top + i * (h + gap);
@@ -658,7 +660,7 @@ function answersSlide(pptx, ctx, items, { kicker, stage, labels, teacherOnly, ti
     const d = Math.min(0.62, h - 0.3);
     s.addShape("ellipse", { x: 1.1, y: y + h / 2 - d / 2, w: d, h: d, fill: { color: has ? TICK : "C9C2B3" }, line: { color: "FFFFFF", width: 0 } });
     s.addText(has ? "✓" : String(i + 1), { x: 1.1, y: y + h / 2 - d / 2, w: d, h: d, fontFace: has ? "DejaVu Sans" : FONT, fontSize: has ? 22 : 16, bold: true, color: "FFFFFF", align: "center", valign: "middle", margin: 0 });
-    s.addText(`${i + 1}.  ${qs[i]}`, { x: 2.0, y: y + 0.06, w: 10.4, h: qH, fontFace: FONT, fontSize: qSize, color: MUTED, valign: "middle", margin: 0 });
+    s.addText(`${i + 1}.  ${qs[i]}`, { x: 2.0, y: y + 0.06, w: 10.4, h: qH, fontFace: FONT, fontSize: qSizes[i], color: MUTED, valign: "middle", margin: 0 });
     s.addText(as[i], { x: 2.0, y: y + 0.06 + qH, w: 10.4, h: aH, fontFace: ctx.mathy ? "Cambria" : FONT, fontSize: aSize, bold: has, italic: !has, color: has ? INK : MUTED, valign: "middle", margin: 0 });
   });
   if (!teacherOnly) {
@@ -772,7 +774,7 @@ function buildDeck(file, lesson, nextLesson, nav = null) {
   }
 
   // 1a. The hook: grabs attention in the first minute, before the lesson map.
-  if (lesson.hook && lesson.hook.text) hookSlide(pptx, ctx, lesson);
+  if (lesson.hook && lesson.hook.text) S.hook = (hookSlide(pptx, ctx, lesson), slideCount);
 
   // 1b. The big question: the lesson's enquiry, revisited at the exit ticket.
   if (lesson.bigQuestion && ctx.enquiry) {
@@ -1183,12 +1185,13 @@ for (const f of walk(LESSONS).sort()) {
     const dir = path.join(outDir, subjectSlug, year);
     fs.mkdirSync(dir, { recursive: true });
     const next = ordered[i + 1] || null; // the next lesson taught, even across a retired lesson's number
+    const prev = ordered[i - 1] || null;
     // Two passes: the first records where each stage starts, the second adds the links.
     const first = buildDeck(file, lesson, next);
     const { pptx, slides, breaks, ctx } = buildDeck(file, lesson, next, first.ctx.rec);
     await pptx.writeFile({ fileName: path.join(dir, name) });
     const planName = name.replace(/\.pptx$/, "-plan.docx");
-    fs.writeFileSync(path.join(dir, planName), await buildPlan(file, lesson, { yearLabel: YEAR_LABEL(year), accent: ctx.accent, band: ctx.band, next, slides, breaks }));
+    fs.writeFileSync(path.join(dir, planName), await buildPlan(file, lesson, { yearLabel: YEAR_LABEL(year), accent: ctx.accent, band: ctx.band, duration: ctx.duration, prev, next, slides, breaks, keyQuestions: (lesson.teach || []).map((x) => questionFrom(x.note)).filter(Boolean) }));
     built++;
     manifest.push({
       subject_slug: subjectSlug,
