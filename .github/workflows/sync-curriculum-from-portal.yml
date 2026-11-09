@@ -129,6 +129,8 @@ jobs:
           S=out/curriculum-sync/summary.json
           EDITORS=$(jq -r '.editors | join(", ")' "$S")
           TITLE="Curriculum: copy edits from the portal ($(jq -r '.sent_units' "$S") unit change(s), $(jq -r '.sent_lessons' "$S") lesson(s))"
+          # Only the site's syllabus index changed (content/ was edited in the repo): say so.
+          if [ "$(jq -r '.changedFiles | length' "$S")" = "0" ]; then TITLE="Curriculum: refresh the portal's syllabus index from content/syllabus"; fi
           BODY="Written by the \"Sync curriculum from the portal\" workflow from the portal's Curriculum planner and lesson editor."
           if [ -n "$EDITORS" ]; then BODY="$BODY Edited by: $EDITORS."; fi
           git config user.name "github-actions[bot]"
