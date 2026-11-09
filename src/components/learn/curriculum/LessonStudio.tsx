@@ -131,10 +131,18 @@ function Edit({
   useEffect(() => {
     const el = ref.current;
     if (el && document.activeElement !== el && el.innerText !== value) el.innerText = value;
-  }, [value]);
-  if (!canEdit) return <span className={`whitespace-pre-line ${className}`}>{value}</span>;
+  }, [value, canEdit]);
+  // Read-only (or while saving) the text is rendered by React; the keys keep the two apart, so the
+  // editable box is never emptied by React taking its own text back out.
+  if (!canEdit)
+    return (
+      <span key="ro" className={`whitespace-pre-line ${className}`}>
+        {value}
+      </span>
+    );
   return (
     <span
+      key="rw"
       ref={ref}
       role="textbox"
       aria-label={label}
