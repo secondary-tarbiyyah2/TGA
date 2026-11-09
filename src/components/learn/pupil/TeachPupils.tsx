@@ -13,6 +13,7 @@ import { localDateKey } from "@/lib/learn/calendar";
 import { reasonLabel } from "@/components/learn/absences/data";
 import { useSupportPlans } from "@/lib/learn/send";
 import { PupilSupportCard, SupportBadge } from "@/components/learn/send/SupportAtAGlance";
+import { Select } from "@/components/learn/Select";
 
 type Signals = { rate: number | null; lessons: number; awayToday: string | null };
 
@@ -150,14 +151,14 @@ export function TeachPupils() {
       <div className="space-y-4">
         <div className="flex flex-wrap gap-2">
           <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search by name" aria-label="Search by name" className={`${selectCls} min-w-[12rem] flex-1`} />
-          <select value={cls} onChange={(e) => setCls(e.target.value)} aria-label="Class" className={selectCls}>
+          <Select value={cls} onChange={(e) => setCls(e.target.value)} aria-label="Class" className={selectCls}>
             <option value="">All my classes</option>
             {classOptions.map((c) => (
               <option key={c.id} value={c.id}>
                 {c.name}
               </option>
             ))}
-          </select>
+          </Select>
         </div>
         <Tabs
           variant="switch"

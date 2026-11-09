@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { ui } from "@/components/learn/ui";
+import { Select } from "@/components/learn/Select";
 
 // Report settings (Headteacher/Admin): the comment bank teachers draw on,
 // assessment types and per-subject mark schemes / grade boundaries.
@@ -171,14 +172,14 @@ function MarkSchemesAdmin() {
       <h2 className="text-base font-semibold text-ink">Mark schemes &amp; grade boundaries</h2>
       <p className="mt-1 text-xs text-ink/65">Per-subject percentage bands, the single source of truth grades are resolved against, never hardcoded.</p>
       <div className="mt-3 flex flex-wrap gap-2">
-        <select value={subjectId} onChange={(e) => setSubjectId(e.target.value)} aria-label="Subject" className={`${ui.input} !w-auto`}>
+        <Select value={subjectId} onChange={(e) => setSubjectId(e.target.value)} aria-label="Subject" className={`${ui.input} !w-auto`}>
           <option value="">Select a subject…</option>
           {subjects.map((s) => (
             <option key={s.id} value={s.id}>
               {s.name}
             </option>
           ))}
-        </select>
+        </Select>
       </div>
       {subjectId && (
         <div className="mt-3 flex flex-wrap gap-2">
@@ -186,14 +187,14 @@ function MarkSchemesAdmin() {
           <button type="button" onClick={addScheme} className={ui.btnSecondary}>
             Add scale
           </button>
-          <select value={selectedScheme} onChange={(e) => setSelectedScheme(e.target.value)} aria-label="Mark scheme scale" className={`${ui.input} !w-auto`}>
+          <Select value={selectedScheme} onChange={(e) => setSelectedScheme(e.target.value)} aria-label="Mark scheme scale" className={`${ui.input} !w-auto`}>
             <option value="">Select a scale…</option>
             {schemes.map((s) => (
               <option key={s.id} value={s.id}>
                 {s.scale_name}
               </option>
             ))}
-          </select>
+          </Select>
         </div>
       )}
       {selectedScheme && (

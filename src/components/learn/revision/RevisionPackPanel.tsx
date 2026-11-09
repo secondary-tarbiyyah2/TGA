@@ -7,6 +7,7 @@ import { aiAssist, aiErrorMessage, useAiStatus } from "@/lib/learn/aiAssist";
 import { AiSpark } from "@/components/learn/AiBits";
 import { QuestionEditor } from "@/components/learn/revision/PackBuilder";
 import { Notice, StatusChip, ui } from "@/components/learn/ui";
+import { Select } from "@/components/learn/Select";
 
 // The unit's Revision pack tab (Curriculum › unit › Revision pack), Tafweed T2:
 // status and actions first, then anything waiting for the teacher (questions
@@ -453,13 +454,13 @@ export function RevisionPackPanel({
           {videos.length > 1 && (
             <label className="flex flex-wrap items-center gap-2 text-sm font-medium text-ink">
               Video
-              <select value={chapter} onChange={(e) => setChapter(Number(e.target.value))} className={`${ui.select} min-w-0 flex-1`}>
+              <Select value={chapter} onChange={(e) => setChapter(Number(e.target.value))} className={`${ui.select} min-w-0 flex-1`}>
                 {videos.map((v, k) => (
                   <option key={v.path} value={k}>
                     {v.label}
                   </option>
                 ))}
-              </select>
+              </Select>
             </label>
           )}
           {video ? (

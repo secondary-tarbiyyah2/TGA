@@ -8,6 +8,7 @@ import { Notice, StatusChip, ui, type Tone } from "@/components/learn/ui";
 import { fmtPct } from "./ReportDocument";
 import { asNarrative, buildClassSummaries, mergeNarrative, termRange, type ClassSummary, type TermOption } from "./summary";
 import { STATE_LABEL, loadEnrolments, loadIssuedChildren, loadTermReports, reportsHref, stateOf, type ClassInfo, type Mode, type Pupil, type PupilState, type ReportRow } from "./data";
+import { Select } from "@/components/learn/Select";
 
 const STATE_TONE: Record<PupilState, Tone> = { not_started: "neutral", draft: "info", returned: "warn", pending: "warn", released: "good" };
 type Filter = "all" | PupilState;
@@ -199,14 +200,14 @@ export function ClassReports({ mode, cls, term, termKey, me, onChanged }: { mode
         columns={columns}
         search={{ text: (r) => r.name, placeholder: "Search pupils" }}
         filters={
-          <select value={filter} onChange={(e) => setFilter(e.target.value as Filter)} aria-label="Show" className={`${ui.input} !w-auto`}>
+          <Select value={filter} onChange={(e) => setFilter(e.target.value as Filter)} aria-label="Show" className={`${ui.input} !w-auto`}>
             <option value="all">All pupils ({counts.all})</option>
             {(["not_started", "draft", "returned", "pending", "released"] as PupilState[]).map((k) => (
               <option key={k} value={k}>
                 {STATE_LABEL[k]} ({counts[k]})
               </option>
             ))}
-          </select>
+          </Select>
         }
         initialSort={{ key: "name", dir: "asc" }}
         csvName={`reports-${cls.name}`}

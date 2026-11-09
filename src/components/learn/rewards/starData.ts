@@ -142,7 +142,7 @@ export async function postShoutOut(star: Star, authorId: string): Promise<string
   const { error } = await supabase.from("announcements").insert({
     scope: "class",
     class_id: star.class_id,
-    title: `★ Star of the Week: ${name}`,
+    title: `Star of the Week: ${name}`,
     body: `Congratulations to ${name}, ${star.classes?.name ? `${star.classes.name}'s ` : "our "}Star of the Week for the week beginning ${longDay(star.week_start)}. ${star.reason}`,
     author_id: authorId,
   });

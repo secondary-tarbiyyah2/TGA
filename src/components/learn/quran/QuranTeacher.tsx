@@ -11,6 +11,7 @@ import {
   addDaysISO, avg, ayatLabel, bandFor, MARK_BANDS, HW_KINDS, MARK_COLUMNS, nextSession, pupilStats, revisionRows, shortLevel, todayISO,
   type Homework, type Level, type QuranMark, type Session,
 } from "@/lib/learn/quranClassroom";
+import { Select } from "@/components/learn/Select";
 
 type Pupil = { id: string; name: string; year: string | null };
 type ChildLevel = { child_id: string; track: "qaidah" | "quran"; level_id: string };
@@ -221,13 +222,13 @@ function MarkTab({ data, pupilsIn, lvName, onDone, onFail }: { data: Data; pupil
       <div className={`${ui.card} flex flex-wrap items-end gap-3`}>
         <label className="text-sm font-medium text-ink">
           Homework
-          <select className={`${ui.input} mt-1`} value={hw.id} onChange={(e) => setHwId(e.target.value)}>
+          <Select className={`${ui.input} mt-1`} value={hw.id} onChange={(e) => setHwId(e.target.value)}>
             {hws.map((h) => (
               <option key={h.id} value={h.id}>
                 {lvName(h.level_id)} · {HW_KINDS[h.kind]} · {surahName(h.surah as number)} {ayatLabel(h.surah, h.ayah_from, h.ayah_to)} · due {h.due_date}
               </option>
             ))}
-          </select>
+          </Select>
         </label>
       </div>
       {pupils.length === 0 ? (
@@ -316,25 +317,25 @@ function HomeworkTab({ data, pupilsIn, onDone, onFail }: { data: Data; pupilsIn:
         <div className="mt-3 grid gap-3 sm:grid-cols-2">
           <label className={ui.label}>
             Level group
-            <select className={`${ui.input} mt-1`} value={levelId} onChange={(e) => setLevelId(e.target.value)}>
+            <Select className={`${ui.input} mt-1`} value={levelId} onChange={(e) => setLevelId(e.target.value)}>
               {data.levels.map((l) => (
                 <option key={l.id} value={l.id}>{l.name}</option>
               ))}
-            </select>
+            </Select>
           </label>
           <label className={ui.label}>
             Type
-            <select className={`${ui.input} mt-1`} value={kind} onChange={(e) => setKind(e.target.value as Homework["kind"])}>
+            <Select className={`${ui.input} mt-1`} value={kind} onChange={(e) => setKind(e.target.value as Homework["kind"])}>
               {Object.entries(HW_KINDS).map(([k, t]) => (
                 <option key={k} value={k}>{t}</option>
               ))}
-            </select>
+            </Select>
           </label>
           {!qaidah && (
             <>
               <label className={`${ui.label} sm:col-span-2`}>
                 Surah
-                <select
+                <Select
                   className={`${ui.input} mt-1`}
                   value={surah}
                   onChange={(e) => {
@@ -347,7 +348,7 @@ function HomeworkTab({ data, pupilsIn, onDone, onFail }: { data: Data; pupilsIn:
                   {SURAH_OPTIONS.map((s) => (
                     <option key={s.n} value={s.n}>{s.label}</option>
                   ))}
-                </select>
+                </Select>
               </label>
               <label className={ui.label}>
                 From ayah (1 to {max})
@@ -436,12 +437,12 @@ function GroupsTab({ data, levelOf, pupilsIn, onDone, onFail }: { data: Data; le
                   <td className="py-1.5 pr-3">{p.name}{p.year ? ` (${p.year})` : ""}</td>
                   {(["qaidah", "quran"] as const).map((tr) => (
                     <td key={tr} className="py-1 pr-3">
-                      <select className={ui.input} aria-label={`${tr === "qaidah" ? "Qaidah" : "Qur'an"} level for ${p.name}`} value={levelOf(p.id, tr)} onChange={(e) => setLevel(p.id, tr, e.target.value)}>
+                      <Select className={ui.input} aria-label={`${tr === "qaidah" ? "Qaidah" : "Qur'an"} level for ${p.name}`} value={levelOf(p.id, tr)} onChange={(e) => setLevel(p.id, tr, e.target.value)}>
                         <option value="">{tr === "qaidah" ? "Not doing Qaidah" : "Not doing Qur'an"}</option>
                         {data.levels.filter((l) => l.track === tr).map((l) => (
                           <option key={l.id} value={l.id}>{l.name}</option>
                         ))}
-                      </select>
+                      </Select>
                     </td>
                   ))}
                 </tr>
@@ -527,11 +528,11 @@ function SessionsTab({ data, pupilLevels, onDone, onFail }: { data: Data; pupilL
         <div className="mt-3 grid gap-3 sm:grid-cols-4">
           <label className={`${ui.label} sm:col-span-2`}>
             Pupil
-            <select className={`${ui.input} mt-1`} value={pid} onChange={(e) => setPid(e.target.value)}>
+            <Select className={`${ui.input} mt-1`} value={pid} onChange={(e) => setPid(e.target.value)}>
               {data.pupils.map((p) => (
                 <option key={p.id} value={p.id}>{p.name} · {pupilLevels(p)}</option>
               ))}
-            </select>
+            </Select>
           </label>
           <label className={ui.label}>
             First date
@@ -583,11 +584,11 @@ function SessionsTab({ data, pupilLevels, onDone, onFail }: { data: Data; pupilL
                   <div className="grid gap-3 sm:grid-cols-3">
                     <label className={`${ui.label} sm:col-span-3`}>
                       Surah recited
-                      <select className={`${ui.input} mt-1`} value={surah} onChange={(e) => { const n = Number(e.target.value); setSurah(n); setFrom(1); setTo(surahAyat(n)); }}>
+                      <Select className={`${ui.input} mt-1`} value={surah} onChange={(e) => { const n = Number(e.target.value); setSurah(n); setFrom(1); setTo(surahAyat(n)); }}>
                         {SURAH_OPTIONS.map((x) => (
                           <option key={x.n} value={x.n}>{x.label}</option>
                         ))}
-                      </select>
+                      </Select>
                     </label>
                     <label className={ui.label}>
                       From ayah

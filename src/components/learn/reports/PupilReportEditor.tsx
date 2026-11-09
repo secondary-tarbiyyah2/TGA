@@ -21,6 +21,7 @@ import {
   type TermOption,
 } from "./summary";
 import { REPORT_COLS, STATE_LABEL, firstName, loadEnrolments, loadIssuedChildren, loadTermReports, reportsHref, stateOf, type ClassInfo, type Mode, type Pupil, type ReportRow } from "./data";
+import { Select } from "@/components/learn/Select";
 
 type Snippet = { id: string; text: string };
 type Version = { overall_comment: string | null; narrative: unknown; released_at: string | null; subject_comments: Record<string, string> | null };
@@ -339,21 +340,21 @@ export function PupilReportEditor({
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <label className={ui.label}>
                     Attainment
-                    <select disabled={!canEdit} value={rating.attainment || ""} onChange={(e) => { setRating((r) => ({ ...r, attainment: e.target.value || null })); setDirty(true); }} className={`mt-1 ${ui.input}`}>
+                    <Select disabled={!canEdit} value={rating.attainment || ""} onChange={(e) => { setRating((r) => ({ ...r, attainment: e.target.value || null })); setDirty(true); }} className={`mt-1 ${ui.input}`}>
                       <option value="">Not given</option>
                       {ATTAINMENT_OPTIONS.map((o) => (
                         <option key={o}>{o}</option>
                       ))}
-                    </select>
+                    </Select>
                   </label>
                   <label className={ui.label}>
                     Effort
-                    <select disabled={!canEdit} value={rating.effort || ""} onChange={(e) => { setRating((r) => ({ ...r, effort: e.target.value || null })); setDirty(true); }} className={`mt-1 ${ui.input}`}>
+                    <Select disabled={!canEdit} value={rating.effort || ""} onChange={(e) => { setRating((r) => ({ ...r, effort: e.target.value || null })); setDirty(true); }} className={`mt-1 ${ui.input}`}>
                       <option value="">Not given</option>
                       {EFFORT_OPTIONS.map((o) => (
                         <option key={o}>{o}</option>
                       ))}
-                    </select>
+                    </Select>
                   </label>
                 </div>
                 <label className={`mt-3 ${ui.label}`}>
