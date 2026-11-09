@@ -305,7 +305,7 @@ export function LessonStudio({
         setC(clone(d.content));
         setSavedJson(JSON.stringify(tidyContent(d.content)));
       }
-      // The database decides (subject rule, migration 0189); before it is deployed, the role decides.
+      // The database decides (subject rule, migration 0190); before it is deployed, the role decides.
       if (canEditRole) {
         const r = await supabase.rpc("curriculum_can_edit_lesson", { p_lesson: lesson.id });
         if (live && !r.error && r.data === false) setMayEdit(false);

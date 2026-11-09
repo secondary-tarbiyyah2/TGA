@@ -1,4 +1,4 @@
-// Lesson feedback (Tafweed T34, migration 0189): staff leave a note on a lesson or one part of
+// Lesson feedback (Tafweed T34, migration 0190): staff leave a note on a lesson or one part of
 // it; the Headteacher and Admin answer it. RLS does the scoping: staff read their own notes,
 // the Headteacher and Admin read every note. Pupils and parents have no access at all.
 import { getSupabaseClient } from "@/lib/supabase/client";

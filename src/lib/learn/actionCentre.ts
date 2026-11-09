@@ -285,9 +285,9 @@ async function loadRevisionItems(base: string): Promise<ActionItem[]> {
 }
 
 /**
- * Lesson feedback (Tafweed T34, migration 0189). The Headteacher and Admin get one item per note
+ * Lesson feedback (Tafweed T34, migration 0190). The Headteacher and Admin get one item per note
  * waiting for an answer (RLS returns every note only to them); whoever wrote a note sees the
- * answer for 14 days. Fails quietly before 0189 is deployed.
+ * answer for 14 days. Fails quietly before 0190 is deployed.
  */
 async function loadLessonFeedbackItems(base: string): Promise<ActionItem[]> {
   const supabase = getSupabaseClient();

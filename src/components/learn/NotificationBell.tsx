@@ -44,7 +44,7 @@ export function NotificationBell({ userId }: { userId: string }) {
           : Promise.resolve({ data: [] as { id: string; created_at: string }[] }),
         // New feedback tickets (0092). RLS returns rows only to head/admin.
         supabase.from("feedback_tickets").select("id, created_at, kind").eq("status", "new").order("created_at", { ascending: false }).limit(10),
-        // Lesson feedback from staff (0189, Tafweed T34). RLS returns every note only to head/admin.
+        // Lesson feedback from staff (0190, Tafweed T34). RLS returns every note only to head/admin.
         supabase.from("curriculum_lesson_feedback").select("id, created_at, author_id").eq("status", "open").neq("author_id", userId).order("created_at", { ascending: false }).limit(10),
       ]);
 
