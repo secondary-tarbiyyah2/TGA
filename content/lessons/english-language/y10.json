@@ -5,7 +5,7 @@
   "boardShort": "AQA 8700",
   "exam": "Pearson Edexcel International GCSE (9-1) English Language B (4EB1)",
   "examShort": "Edexcel IGCSE 4EB1",
-  "source": "AQA GCSE English Language 8700 specification and Paper 1 assessment structure (own knowledge); Drive English Language schemes of work reviewed but are Pearson International GCSE, so not adapted. All practice extracts are teacher-written originals. | AQA GCSE English Language 8700 specification and syllabus data file (content/syllabus/ks4/english-language.json). Supplements and does not duplicate the existing y10.json (which covers P1 Q1-Q5 well); these lessons add modelling lessons with new, original texts and cover the uncovered subject-content units SC-R and SC-W. Texts: original teacher-written extracts; the only quoted extracts are two sentences from Dickens, A Christmas Carol (1843, public domain). | Gap-fill against AQA 8700 specification",
+  "source": "AQA GCSE English Language 8700 specification and Paper 1 assessment structure (own knowledge); Drive English Language schemes of work reviewed but are Pearson International GCSE, so not adapted. All practice extracts are teacher-written originals. | AQA GCSE English Language 8700 specification and syllabus data file (content/syllabus/ks4/english-language.json). Supplements and does not duplicate the existing y10.json (which covers P1 Q1-Q5 well); these lessons add modelling lessons with new, original texts and cover the uncovered subject-content units SC-R and SC-W. Texts: original teacher-written extracts; the only quoted extracts are two sentences from Dickens, A Christmas Carol (1843, public domain). | Gap-fill against AQA 8700 specification | Spring 1 founding year (Nov 2026, lessons v3): lessons 16, 22 and 23 upgraded and 28 to 39 added for the bridge (11 and 18 Jan: reading core; language and structure core) and Spring 1 'Comparing writers' views' weeks 1 to 3, framed on Pearson Edexcel International GCSE English Language B (4EB1) Section A with no AQA question numbers, following the school's 2026-27 Year 10 English Language schemes and frameworks (PETZAAL, PESTAL, comparison method). Source texts A, B and C are teacher-written originals (Text B in a nineteenth-century style).",
   "lessons": [
     {
       "unit": "Unit 1: Paper 1 Section A - Reading literary fiction (Q1-Q3)",
@@ -1609,155 +1609,213 @@
       "boardShort": "AQA 8700"
     },
     {
-      "unit": "P1-A-Q3: Paper 1 Section A: Question 3, structure",
-      "title": "Question 3: modelling a whole-text structure answer",
+      "unit": "Autumn 2: Reading non-fiction: language and structure",
+      "n": 16,
+      "title": "Structure core: openings, shifts and endings in non-fiction",
       "duration": 50,
-      "bigQuestion": "How do writers control what we feel by deciding where things go?",
+      "bigQuestion": "How does the order of a text shape our response?",
       "objectives": [
-        "Describe the shape of an extract from opening to ending",
-        "Identify shifts of focus, changes in pace and the effect of an ending",
-        "Write structure comments that cover the whole text, not only single sentences"
+        "To understand how a non-fiction writer structures a text to guide the reader's response"
       ],
       "successCriteria": [
-        "All: say what happens at the beginning, middle and end",
-        "Most: explain the effect of two structural features such as a zoom or a shift of focus",
-        "Some: link structure to the reader's emotions across the whole extract"
+        "All: identify the opening focus, a shift and the ending",
+        "Most: name a structural feature with correct terminology",
+        "Some: write a PESTAL paragraph on the structure of a text"
       ],
-      "crossCurricular": "Drama: building tension with pace and silence",
-      "smsc": "Spiritual: patience, waiting and hope",
       "keywords": [
         {
           "term": "structure",
-          "def": "how the writer has organised the text"
+          "def": "how a text is organised"
         },
         {
-          "term": "shift of focus",
-          "def": "a change in what the reader is looking at"
+          "term": "shift",
+          "def": "a change in focus, time or tone"
         },
         {
-          "term": "pace",
-          "def": "how quickly or slowly events move"
+          "term": "cyclical",
+          "def": "ending where it began"
         },
         {
-          "term": "cliffhanger",
-          "def": "an ending that leaves the outcome unresolved"
-        },
-        {
-          "term": "zoom in/out",
-          "def": "moving from a wide view to a detail or back"
+          "term": "PESTAL",
+          "def": "Point, Evidence, Structural strategy, Terminology, Analysis, Audience impact, Link"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why do many speeches end with a short, memorable sentence?"
+      },
+      "pictures": [
+        {
+          "find": "road map journey",
+          "alt": "A road map showing a journey",
+          "for": "hook"
+        },
+        {
+          "find": "staircase spiral",
+          "alt": "A spiral staircase, a picture of structure",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 HT2 English Language scheme (structure analysis, PESTAL), mapped to 4EB1 Section A",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials (Section A)",
+        "Text C 'A Night in the Dunes' (teacher-written travel writing, pupil PDF)",
+        "PETZAAL and PESTAL scaffolds (school framework cards)"
+      ],
       "starter": [
-        "Bismillah. Retrieval: in Q2, what does Z stand for?",
-        "Describe how a film might begin on a village and end on a single window.",
-        "Define 'pace' using an example."
+        {
+          "q": "Effect should...",
+          "options": [
+            "lead",
+            "be left out"
+          ],
+          "a": "A) lead",
+          "mins": 1
+        },
+        {
+          "q": "A shift is...",
+          "options": [
+            "a change of focus",
+            "a quotation"
+          ],
+          "a": "A) a change of focus",
+          "mins": 1
+        },
+        {
+          "q": "PESTAL's S is...",
+          "options": [
+            "Structural strategy",
+            "Simile"
+          ],
+          "a": "A) Structural strategy",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "The extract",
-          "quote": {
-            "text": "1 Snow had buried the village of Tarn End overnight. From the hill, the roofs looked like loaves, the lanes had vanished, and not a single chimney was smoking.\n2 Down in the lane, one house, Number Nine, had a light in an upstairs window.\n3 In the room, Safiya pressed her forehead to the cold glass. She had been counting the minutes since six: the clock, the kettle, the creak of the stairs that did not come. Her brother's coat still hung on the hook by the door.\n4 Then, far off, a sound. A gate. Footsteps, slow, crunching.\n5 She did not breathe. The footsteps stopped outside the door.\n6 Nothing. Then, very quietly, the letterbox clicked.",
-            "source": "Original extract written for TGA"
-          },
-          "note": "Read the whole text aloud, slowly. Pupils number each paragraph. Cultural context: the story is set in a village in England where snow is rare; 'hook by the door' is a coat hook. Letterbox = the slot in a UK front door through which post is delivered. Original text."
-        },
-        {
-          "heading": "Spot the structure",
+          "heading": "Structural features in non-fiction",
+          "note": "Pupils add examples from Text C.",
           "table": {
             "head": [
-              "Paragraph",
-              "Focus",
-              "Pace / form"
+              "Feature",
+              "In Text C"
             ],
             "rows": [
               [
-                "1",
-                "Wide view of the village",
-                "slow, descriptive"
+                "Opening focus",
+                "arriving at the dunes"
               ],
               [
-                "2",
-                "One house, one window",
-                "narrowing"
+                "Shift",
+                "from the land to the sky"
               ],
               [
-                "3",
-                "Safiya and her thoughts",
-                "longest, slow, reflective"
+                "Delay",
+                "the colon before the reveal"
               ],
               [
-                "4",
-                "A sound outside",
-                "short sentences, speeding up"
-              ],
-              [
-                "5-6",
-                "The door, then the letterbox",
-                "very short, a cliffhanger"
+                "Ending",
+                "the writer's inner feeling"
               ]
             ]
-          },
-          "note": "Ask pupils to trace the 'camera'. Draw the funnel on the board. Point out that paragraph 3 is longer and slower, paragraphs 4 to 6 shorten, so tension builds through form and not only through content."
+          }
         },
         {
-          "heading": "Worked model: a Level 4 structure paragraph",
-          "model": {
-            "problem": "How has the writer structured the text to interest you as a reader? (8 marks)",
-            "steps": [
-              "Opening: a wide, still view of the village sets a quiet, eerie scene.",
-              "Zoom in: the focus narrows from the village to one house, one window and then to Safiya, so the reader is drawn inside her worry.",
-              "Shift of pace: the long paragraph 3 slows time down and lists her waiting; the later paragraphs shorten.",
-              "Ending: the final line is a cliffhanger, so the reader is left in suspense."
-            ],
-            "answer": "The writer begins with a wide, silent view of the snow-buried village, which establishes an eerie stillness. The focus then narrows to one house, one window and finally Safiya herself, drawing the reader inside her anxiety. The long third paragraph slows the pace as she counts the minutes, so the waiting feels endless; this contrasts with the short, sharp paragraphs that follow, where each sound makes time speed up. The text ends mid-moment with the letterbox clicking, a cliffhanger that leaves the reader desperate to know who is there."
-          },
-          "note": "Show how the model uses 'begins', 'then', 'shifts', 'finally'. Name the sequencing. Pupils label the structural features. Point out that a structure answer should not quote single words unless to explain wider organisation."
-        },
-        {
-          "heading": "Hinge question",
-          "check": {
-            "q": "Which comment is a structure point that deserves marks?",
-            "options": [
-              "The simile 'like loaves' is a baking image.",
-              "The focus narrows from the whole village to a single house and then to Safiya.",
-              "Safiya waits for her brother."
-            ],
-            "answer": 1,
-            "why": "B names a whole-text shift of focus. A is a language point; C only tells the story."
-          },
-          "note": "Mini-whiteboards. The answer is B. A is a sentence-level comment; C describes the plot only."
-        },
-        {
-          "heading": "Strong endings",
+          "heading": "Outside to inside",
           "bullets": [
-            "Does the ending answer or open a question?",
-            "Is the last line short? Why?",
-            "How does it link back to the opening silence?",
-            "Which moment would the reader remember?"
+            "Begins with the landscape",
+            "Moves to the guide's gesture",
+            "Ends inside the writer's mind"
           ],
-          "note": "Discuss with pupils how an ending that does not answer questions can create a lasting effect. Ask: why might the writer end with a small sound rather than a big event?"
+          "note": "A common structure in travel writing: the journey outward becomes a journey inward."
+        },
+        {
+          "heading": "Model: PESTAL",
+          "note": "Labelled.",
+          "model": {
+            "problem": "How does the writer structure Text C to interest the reader?",
+            "steps": [
+              "Point: the writer moves from the outer landscape to inner feeling.",
+              "Evidence: opens with 'the dunes', ends 'small and content'",
+              "Strategy and terminology: a shift of focus, outer to inner",
+              "Analysis: the place matters for what it does to the writer",
+              "Audience impact: readers reflect on their own sense of wonder",
+              "Link: structure turns description into reflection"
+            ],
+            "answer": "A PESTAL paragraph."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Why delay the description of the sky until after the colon?",
+            "options": [
+              "To build anticipation before the reveal",
+              "Because colons are formal",
+              "To save space"
+            ],
+            "answer": 0,
+            "why": "The pause makes the reader wait, so the reveal has more impact."
+          }
         }
       ],
       "practice": [
-        "Draw the structure of the Tarn End text as a funnel with a note on the pace beside each paragraph.",
-        "Write one sentence about the effect of the shift between paragraphs 3 and 4.",
-        "Original question: How has the writer structured the text to build tension?"
+        {
+          "q": "Name the shift in paragraph 2 and its effect.",
+          "a": "From the land to the sky; it lifts the reader's attention with the guide's gesture.",
+          "mins": 3,
+          "model": "Track the focus: sand, guide, sky. The guide's pointing moves the camera upward. Effect: a moment of revelation."
+        },
+        {
+          "q": "Why end on the writer's feelings?",
+          "a": "It leaves the reader with reflection, not just description.",
+          "mins": 3
+        }
       ],
       "independent": [
-        "Core: Write a four-sentence structure paragraph using the words 'begins', 'then', 'shifts' and 'finally'.",
-        "Extend: Write a 120-word answer that comments on three features and links each to the reader's emotions.",
-        "Stretch: Explain how the ending links back to the opening and why that matters."
+        {
+          "q": "Core: write a PESTAL paragraph in the portal response box: 'How does the writer structure Text C to interest the reader?' Starter: 'The writer structures the text by...'",
+          "a": "A full PESTAL paragraph.",
+          "mins": 12,
+          "model": "Point: The writer structures the text as a journey from outer landscape to inner feeling. | Evidence: it opens on 'the dunes' and ends with feeling 'small and content' | Structural strategy: a shift of focus from place to self | Terminology: shift, cyclical reflection | Analysis: the desert matters because of how it changes the writer | Audience impact: readers are invited to reflect on their own moments of wonder | Link: so the structure turns travel description into personal reflection."
+        },
+        {
+          "q": "Extend: comment on the colon as a structural pause.",
+          "a": "The colon delays the reveal, building anticipation.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: suggest an alternative ending and its effect.",
+          "a": "Ending on the guide would keep focus outward and less personal.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Name two structural features in the Tarn End extract.",
-        "Why is 'the writer uses a simile' not a structure comment?",
-        "Big question: how do writers control feelings by deciding where things go?"
+        {
+          "q": "A text that ends where it began is...",
+          "options": [
+            "cyclical",
+            "chronological"
+          ],
+          "a": "A) cyclical",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder.",
+          "a": "Short endings are memorable and leave the audience with one idea.",
+          "mins": 2
+        }
       ],
-      "homework": "Write a 100-word opening and ending for a story that begins with a wide view and ends in a single object, then annotate the structure.",
-      "send": "SEND: give a printed funnel diagram and the five paragraph sentence starters 'First ... Then ... Next ... Finally ...'. EAL/international: pre-teach 'cliffhanger', 'letterbox', 'creak', 'crunching', 'buried'; idiom 'to leave someone in suspense' = to make them wait anxiously; stems: 'The writer begins by ...', 'The focus shifts from ... to ...', 'This makes the reader ...'. Cultural note: snow is unusual in many UK villages, so the world feels hushed; British homes have letterboxes in the front door. Stretch: compare the structure with a film opening.",
-      "n": 16,
-      "board": "AQA GCSE English Language (9-1) 8700",
-      "boardShort": "AQA 8700"
+      "homework": "Map the structure (opening, shifts, ending) of a short article you choose.",
+      "send": "SEND: structure map template. EAL: terminology glossary. Stretch: compare structure with another text."
     },
     {
       "unit": "P1-A-Q4: Paper 1 Section A: Question 4, evaluation",
@@ -2476,283 +2534,402 @@
       "boardShort": "AQA 8700"
     },
     {
-      "unit": "P1-A-Q1: Paper 1 Section A: Question 1, retrieval",
-      "covers": [
-        "P1-A-Q1.2"
-      ],
-      "title": "Question 1: identifying and interpreting explicit information and ideas",
-      "bigQuestion": "What exactly does the text say, and how can I prove it in my own words?",
-      "objectives": [
-        "Define explicit information and distinguish it from implicit information",
-        "Select four true details from a stated range of lines",
-        "Express each detail briefly, by quotation or paraphrase"
-      ],
-      "successCriteria": [
-        "All: find four explicit details within the lines given",
-        "Most: paraphrase or quote briefly and accurately",
-        "Some: interpret an explicit idea in your own words without drifting into opinion"
-      ],
-      "crossCurricular": "Geography: describing a place precisely from evidence",
-      "smsc": "Moral: honesty and accuracy, reporting only what is really there",
-      "keywords": [
-        {
-          "term": "explicit information",
-          "def": "details stated directly in the text"
-        },
-        {
-          "term": "implicit information",
-          "def": "ideas suggested but not directly stated"
-        },
-        {
-          "term": "paraphrase",
-          "def": "saying the same idea in your own words"
-        },
-        {
-          "term": "AO1",
-          "def": "the assessment objective: identify and interpret explicit and implicit information and ideas"
-        }
-      ],
-      "starter": [
-        "Bismillah. In one sentence, what is the difference between a fact and an opinion?",
-        "Paraphrase: 'The old gate groaned on its rusty hinges.'",
-        "Retrieval: how many marks is Paper 1 Question 1 worth?"
-      ],
-      "teach": [
-        {
-          "heading": "Explicit means 'said outright'",
-          "bullets": [
-            "Explicit: written directly, so you can point to it",
-            "Implicit: hinted at, so the reader has to infer",
-            "Question 1 rewards explicit ideas first",
-            "Interpret means: understand and restate accurately"
-          ],
-          "note": "Q1 is 4 marks, one per correct point, using a stated range of lines. Say that AO1 includes both explicit and implicit, but Q1 mostly rewards what is clearly stated. Ask pupils for an everyday example: 'It is raining' (explicit) versus 'Everyone arrived with wet hair' (implicit). Point out that interpreting an explicit idea means reading it accurately, for example turning 'a fire that had been lit that morning' into 'the fire was lit earlier today'."
-        },
-        {
-          "heading": "The extract (lines 1 to 6)",
-          "quote": {
-            "text": "1 The cottage stood at the end of the lane, where the tarmac gave up and the grass began.\n2 Its slate roof was green with moss, and one shutter hung from a single hinge.\n3 Smoke rose from the chimney in a thin, steady line.\n4 Inside, a clock ticked on the mantelpiece above a fire that had been lit that morning.\n5 Nora kept her boots by the door, as her father always had.\n6 Outside, the sea breathed against the rocks below.",
-            "source": "Original extract written for TGA"
-          },
-          "note": "Read aloud. Pre-teach 'tarmac' (the black road surface), 'shutter' (a hinged wooden cover for a window), 'mantelpiece' (the shelf above a fireplace). Tell pupils the numbers are line numbers, as on the real paper. Ask: where would you underline?"
-        },
-        {
-          "heading": "Model: four true things about the cottage",
-          "model": {
-            "problem": "Read lines 1 to 4. List four things about the cottage. (4 marks)",
-            "steps": [
-              "Underline only information about the cottage, not about Nora or the sea.",
-              "Choose four separate details; do not repeat the same idea twice.",
-              "Keep each answer short: a quotation of a few words or a brief paraphrase.",
-              "Write one detail per line so the examiner can credit each one."
-            ],
-            "answer": "1. It stands where the lane stops and the grass begins. 2. The roof is made of slate and covered in moss. 3. One shutter hangs from a single hinge. 4. Smoke rises from the chimney (a fire had been lit that morning)."
-          },
-          "note": "Think aloud as you select. Stress: line 5 is about Nora, so it would not answer 'about the cottage' unless the question asked about her. Explain that long copying earns nothing, only the precise point does. Note the fourth answer combines a detail and its proof, but pupils should still pick one clear idea."
-        },
-        {
-          "heading": "Hinge question",
-          "check": {
-            "q": "Which is the best answer to 'List four things about the cottage'?",
-            "options": [
-              "The cottage is lonely and sad.",
-              "One shutter hangs from a single hinge.",
-              "The cottage must be haunted."
-            ],
-            "answer": 1,
-            "why": "B is stated directly in line 2. A is an opinion and C is invented: neither can be proved from the lines."
-          },
-          "note": "Mini-whiteboards. Pupils holding A often feel the cottage is 'lonely'. Say that is a fair inference for Question 2 or 4, but Question 1 wants proof from the words on the page."
-        },
-        {
-          "heading": "Common error",
-          "misconception": {
-            "wrong": "Copying out a whole sentence: 'Its slate roof was green with moss, and one shutter hung from a single hinge.'",
-            "right": "Splitting it into two precise points: 'The roof is slate and mossy' and 'One shutter hangs by one hinge.'"
-          },
-          "note": "A long quotation can bundle two ideas and waste the line. Use the pencil-underline strategy: tick each separate idea. Model turning one long sentence into two short marks."
-        }
-      ],
-      "practice": [
-        "Using lines 3 and 4 only, write two true statements about the inside or smoke, each in under ten words.",
-        "Paraphrase 'a fire that had been lit that morning' in your own words.",
-        "Using line 6, state one explicit fact about the sea or the rocks."
-      ],
-      "independent": [
-        "Core: List four things the text tells us about the cottage, one per line, each under twelve words.",
-        "Extend: Write a Question 1 for lines 5 and 6 about Nora, then answer it with four details or as many as the text supports.",
-        "Stretch: Explain the difference between 'explicit' and 'implicit' using the words 'smoke rose in a thin, steady line' as your example."
-      ],
-      "exit": [
-        "Define 'explicit information' in your own words.",
-        "Give one explicit detail from the extract about the cottage.",
-        "Big question: how can you prove an answer is really in the text?"
-      ],
-      "homework": "Choose a paragraph from any book you are reading; write four explicit points about it, then one implicit idea, and label each.",
-      "send": "SEND: give a highlighted copy of the extract with the line numbers and a template with four numbered boxes. EAL/international: pre-teach 'tarmac', 'shutter', 'hinge', 'mantelpiece', 'moss'; stems: 'The text says that ...', 'It is made of ...'; pupils may paraphrase in short plain sentences. Stretch: write a Question 1 for a different set of lines and a mark scheme.",
+      "unit": "Autumn 1: Reading non-fiction: meaning and evidence",
       "n": 22,
+      "title": "Reading core: explicit and implicit information in non-fiction",
       "duration": 50,
-      "board": "AQA GCSE English Language (9-1) 8700",
-      "boardShort": "AQA 8700"
-    },
-    {
-      "unit": "P1-A-Q2: Paper 1 Section A: Question 2, language",
-      "covers": [
-        "P1-A-Q2.4",
-        "P1-A-Q2.5"
-      ],
-      "title": "Question 2: using subject terminology so that effect leads the answer",
-      "bigQuestion": "How much terminology is enough, and why does effect matter more?",
+      "bigQuestion": "How do skilled readers read between the lines?",
       "objectives": [
-        "Use terminology from simple (verb, adjective) to sophisticated (semantic field, juxtaposition)",
-        "Always follow a term with an analysis of effect",
-        "Recognise that the same language skill is tested again in Paper 2 Question 3"
+        "To understand how to retrieve explicit information and infer implicit ideas precisely from an unseen non-fiction text"
       ],
       "successCriteria": [
-        "All: use at least one accurate term in a quoted sentence",
-        "Most: explain the effect on the reader after every term",
-        "Some: choose the most precise term and link it to the writer's purpose"
+        "All: retrieve four explicit details in your own words or brief quotation",
+        "Most: make two inferences, each tied to a specific word or phrase",
+        "Some: explain the difference between what a writer states and what a writer suggests"
       ],
-      "crossCurricular": "Science: precise vocabulary in explanations",
-      "smsc": "Social: communicating clearly with shared language",
+      "crossCurricular": "Science: light pollution and why stars are clearer in deserts",
+      "smsc": "Spiritual: wonder at creation and the night sky",
       "keywords": [
         {
-          "term": "terminology",
-          "def": "the specialist words used to name language features"
+          "term": "explicit",
+          "def": "stated directly in the text"
         },
         {
-          "term": "semantic field",
-          "def": "a group of words linked by one topic"
+          "term": "implicit",
+          "def": "suggested, not stated"
         },
         {
-          "term": "juxtaposition",
-          "def": "placing contrasting ideas side by side"
+          "term": "inference",
+          "def": "a conclusion drawn from clues"
         },
         {
-          "term": "sibilance",
-          "def": "repeated 's' sounds"
-        },
-        {
-          "term": "effect",
-          "def": "what the language makes the reader think or feel"
+          "term": "unseen text",
+          "def": "a text you have not studied before"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "What does a person's silence tell you about them? Can a writer 'say' something without saying it?"
+      },
+      "pictures": [
+        {
+          "find": "desert dunes at night stars",
+          "alt": "Desert dunes under a starry sky",
+          "for": "hook"
+        },
+        {
+          "find": "Milky Way over desert",
+          "alt": "The Milky Way over a desert",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 HT1 English Language scheme (understanding and analysing texts), reading skills mapped to 4EB1 Section A",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials (Section A)",
+        "Text C 'A Night in the Dunes' (teacher-written travel writing, pupil PDF)",
+        "Pupil PDF worksheet with the source texts (printable or for a drawing tablet)"
+      ],
       "starter": [
-        "Bismillah. Label: 'storm' (noun), 'screamed' (verb), 'bitter' (adjective).",
-        "Define a simile and give one of your own.",
-        "Retrieval: what are the marks for Paper 1 Question 2?"
+        {
+          "q": "Which is explicit?",
+          "options": [
+            "The sand was cool.",
+            "The traveller felt humbled."
+          ],
+          "a": "A) The sand was cool.",
+          "mins": 1
+        },
+        {
+          "q": "4EB1 Section A is worth...",
+          "options": [
+            "40 marks",
+            "20 marks"
+          ],
+          "a": "A) 40 marks",
+          "mins": 1
+        },
+        {
+          "q": "An inference is...",
+          "options": [
+            "a conclusion from clues",
+            "a copied quotation"
+          ],
+          "a": "A) a conclusion from clues",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "A ladder of terminology",
+          "heading": "The 4EB1 paper at a glance",
+          "note": "Pupils sit one 3-hour paper (Pearson Edexcel International GCSE English Language B).",
           "table": {
             "head": [
-              "Level",
-              "Examples",
-              "Use it to ..."
+              "Section",
+              "Task",
+              "Marks"
             ],
             "rows": [
               [
-                "Simple",
-                "noun, verb, adjective, adverb",
-                "name the word class of a key word"
+                "A",
+                "Reading: questions on two unseen extracts",
+                "40"
               ],
               [
-                "Secure",
-                "simile, metaphor, personification",
-                "name a technique, then explain it"
+                "B",
+                "Directed writing using ideas from the texts",
+                "30"
               ],
               [
-                "Sophisticated",
-                "semantic field, juxtaposition, sibilance, pathetic fallacy",
-                "link several choices to the writer's purpose"
+                "C",
+                "One discursive, narrative or descriptive piece from three",
+                "30"
               ]
             ]
-          },
-          "note": "Explain that terminology is credited from simple to sophisticated, but a very advanced word with no effect scores less than a simple word with a clear explanation. Say that the Question 2 prompt is 8 marks and examiners reward perceptive effect first. No marks are given for the number of terms."
+          }
         },
         {
-          "heading": "The extract",
+          "heading": "Text C: A Night in the Dunes",
+          "note": "Teacher-written travel writing. Read twice: once for meaning, once with a pen.",
           "quote": {
-            "text": "The storm had been brewing all afternoon. By evening the sea was a grey, grumbling animal, and the cliffs stood in silence, watching. Salt stung Maya's lips. Behind her the harbour lights shivered; ahead, the black water rose and fell and rose again.",
-            "source": "Original extract written for TGA"
-          },
-          "note": "Read aloud, slowly. Pre-teach 'brewing' (developing, as tea does). Ask pupils to underline two words they could name (e.g. 'grumbling', 'shivered'). Remind them the extract is original and teacher-written."
+            "text": "By the time we reached the dunes, the heat had drained from the sand like water from a basin. Our guide said nothing; he simply pointed upward. I have seen city skies and mountain skies, but nothing prepared me for this: a sky so crowded with stars that the darkness seemed the exception.",
+            "source": "Text C, teacher-written travel writing"
+          }
         },
         {
-          "heading": "Model: terminology serves the effect",
+          "heading": "Model: explicit then implicit",
+          "note": "Think aloud.",
           "model": {
-            "problem": "How does the writer use language to describe the sea and the harbour? (8 marks)",
+            "problem": "What does the guide's silence suggest?",
             "steps": [
-              "Quote: 'the sea was a grey, grumbling animal'. Name it: a metaphor with a semantic field of animal behaviour.",
-              "Effect: the sea seems alive and bad-tempered, so the reader senses danger before anything happens.",
-              "Zoom: 'grumbling' is a verb form that suggests a low, threatening growl, not a loud roar.",
-              "Second quote: the cliffs 'stood in silence, watching'. Name it: personification.",
-              "Effect: the cliffs seem to judge Maya, so she feels alone and exposed."
+              "Explicit: 'Our guide said nothing'",
+              "Clue: he 'simply pointed upward'",
+              "Inference: the view needs no words; he knows it is extraordinary",
+              "Write: Point + brief quotation + inference"
             ],
-            "answer": "The writer uses a metaphor, 'the sea was a grey, grumbling animal', to present the sea as alive and bad-tempered. The animal semantic field makes the reader sense danger before anything has happened, and the verb 'grumbling' suggests a low, threatening growl rather than a loud roar. The writer also personifies the cliffs, which 'stood in silence, watching', so they seem to judge Maya and she feels isolated and exposed. The repeated 'rose and fell and rose again' creates a relentless rhythm, making the water feel endless."
-          },
-          "note": "Underline the terms in one colour and the effect words in another. Ask pupils which colour dominates. Draw out that the terms are the signposts but the effect is the journey. Point out that 'rose and fell and rose again' repeats 'and' (polysyndeton) to build a relentless rhythm."
+            "answer": "The guide's silence ('said nothing') implies the sky is so remarkable that words would only diminish it."
+          }
         },
         {
-          "heading": "Hinge question",
+          "heading": "Hinge",
+          "note": "Poll.",
           "check": {
-            "q": "Which sentence uses terminology best?",
+            "q": "Which is an inference rather than retrieval?",
             "options": [
-              "'The writer uses sibilance, a metaphor and an adjective.'",
-              "'The metaphor \"grey, grumbling animal\" makes the sea seem alive and menacing, which unsettles the reader.'",
-              "'The sea is grey and grumbling.'"
+              "The heat drained from the sand.",
+              "The writer is used to busy, light-polluted places.",
+              "The guide pointed upward."
             ],
             "answer": 1,
-            "why": "B names the technique, quotes it and explains the effect. A is a list of terms with no effect; C only retells."
-          },
-          "note": "Mini-whiteboards. Discuss why A is tempting: it looks sophisticated, yet there is nothing to credit beyond naming."
-        },
-        {
-          "heading": "Same skill, Paper 2",
-          "compare": {
-            "left": {
-              "title": "Paper 1 Question 2",
-              "points": [
-                "8 marks",
-                "Fiction extract",
-                "Language: words, phrases, techniques"
-              ]
-            },
-            "right": {
-              "title": "Paper 2 Question 3",
-              "points": [
-                "12 marks",
-                "Non-fiction source",
-                "Same skill: language, effect, terminology"
-              ]
-            },
-            "label": "vs"
-          },
-          "note": "Say clearly: the skill is the same (AO2 language), only the text type and mark total change. Tell pupils that practice now pays off in Year 11. Check marks against your specimen paper (8 and 12 respectively)."
+            "why": "It is not stated; it is drawn from 'city skies' and 'the darkness seemed the exception'."
+          }
         }
       ],
       "practice": [
-        "Choose one sentence from the extract and write it as: term, quotation, effect.",
-        "Replace 'the writer uses an adjective' with a sentence that explains the effect of 'black' in 'black water'.",
-        "Give a simple term and a sophisticated term for the same phrase 'harbour lights shivered'."
+        {
+          "q": "Retrieve two things the writer has seen before.",
+          "a": "City skies and mountain skies.",
+          "mins": 3,
+          "model": "Find the sentence starting 'I have seen'. Copy only the two items: city skies, mountain skies."
+        },
+        {
+          "q": "Infer how the writer feels about this sky, with one word as evidence.",
+          "a": "Overwhelmed or amazed: 'nothing prepared me'.",
+          "mins": 3
+        }
       ],
       "independent": [
-        "Core: Write two sentences using a simple term and two effect explanations.",
-        "Extend: Write a six-sentence paragraph using at least three terms; underline each effect.",
-        "Stretch: Explain which of your terms is least necessary and why a paragraph might be better without it."
+        {
+          "q": "Core: answer the six questions on Text C on the pupil PDF (four retrieval, two inference with a short quotation each).",
+          "a": "Retrieval: dunes, heat drained, guide pointed, crowded with stars. Inference: guide's familiarity and respect; writer's sense of wonder.",
+          "mins": 12,
+          "model": "Inference question model: 'What does \"crowded with stars\" suggest?' Answer: It suggests an overwhelming number of stars, so many that the sky feels full, showing the writer's astonishment."
+        },
+        {
+          "q": "Extend: write one sentence explaining the difference between your retrieval and inference answers.",
+          "a": "Retrieval states what the text says; inference explains what it suggests.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: infer something about the writer's normal life.",
+          "a": "He or she usually lives in a city with light pollution and finds rare peace here.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Give one term from each level of the ladder.",
-        "Complete: 'The metaphor ... makes the reader feel ...'.",
-        "Big question: why does effect matter more than the term?"
+        {
+          "q": "'Said nothing' is...",
+          "options": [
+            "explicit",
+            "an inference"
+          ],
+          "a": "A) explicit",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder: how can a writer say something without saying it?",
+          "a": "Through actions, silences and word choices that the reader interprets.",
+          "mins": 2
+        }
       ],
-      "homework": "Read a paragraph from a novel you like. Write one analytical sentence using a simple term and one using a more sophisticated term, each with an effect.",
-      "send": "SEND: provide a terminology mat with definitions and examples, and a sentence frame 'The ... [term] ... makes the reader ...'. EAL/international: pre-teach 'brewing', 'grumbling', 'exposed'; allow terms to be written in first language alongside the English. Stretch: find a term not on the ladder, define it and use it accurately.",
+      "homework": "Read a short travel article and write two explicit details and one inference.",
+      "send": "SEND: Text C with key lines highlighted; answer frames. EAL: glossary (dunes, basin, exception). Stretch: infer the guide's attitude to the desert."
+    },
+    {
+      "unit": "Autumn 2: Reading non-fiction: language and structure",
       "n": 23,
+      "title": "Language core: effect leads, terminology supports",
       "duration": 50,
-      "board": "AQA GCSE English Language (9-1) 8700",
-      "boardShort": "AQA 8700"
+      "bigQuestion": "How do I explain the power of a writer's words?",
+      "objectives": [
+        "To understand how to analyse a writer's language so that the effect on the reader leads the analysis"
+      ],
+      "successCriteria": [
+        "All: identify a language method and its effect",
+        "Most: zoom in on the connotations of a single word",
+        "Some: write a PETZAAL paragraph where effect leads and terminology supports"
+      ],
+      "keywords": [
+        {
+          "term": "connotation",
+          "def": "ideas and feelings a word suggests"
+        },
+        {
+          "term": "simile",
+          "def": "a comparison using like or as"
+        },
+        {
+          "term": "effect",
+          "def": "how the language makes the reader think or feel"
+        },
+        {
+          "term": "subject terminology",
+          "def": "correct names for methods"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is it enough to say 'the writer uses a simile'? What would a reader actually want to know?"
+      },
+      "pictures": [
+        {
+          "find": "water draining from basin",
+          "alt": "Water draining from a basin",
+          "for": "hook"
+        },
+        {
+          "find": "starry sky long exposure",
+          "alt": "A star-filled sky",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 HT2 English Language scheme (language analysis), mapped to 4EB1 Section A",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials (Section A)",
+        "Text C 'A Night in the Dunes' (teacher-written travel writing, pupil PDF)",
+        "PETZAAL and PESTAL scaffolds (school framework cards)"
+      ],
+      "starter": [
+        {
+          "q": "A summary is...",
+          "options": [
+            "brief, own words",
+            "quotations"
+          ],
+          "a": "A) brief, own words",
+          "mins": 1
+        },
+        {
+          "q": "A simile uses...",
+          "options": [
+            "like or as",
+            "a question"
+          ],
+          "a": "A) like or as",
+          "mins": 1
+        },
+        {
+          "q": "Connotation means...",
+          "options": [
+            "suggested ideas",
+            "dictionary meaning"
+          ],
+          "a": "A) suggested ideas",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Effect first",
+          "note": "Compare the two.",
+          "misconception": {
+            "wrong": "The writer uses a simile, 'like water from a basin', which is effective.",
+            "right": "The heat vanishes suddenly and completely, 'like water from a basin', so the desert seems to change in an instant."
+          }
+        },
+        {
+          "heading": "Zooming in",
+          "bullets": [
+            "Choose one word: 'drained'",
+            "Connotations: emptied, gone, exhausted",
+            "Effect: the desert loses its fierce heat",
+            "Then name the method"
+          ],
+          "note": "Model on the mini-whiteboard."
+        },
+        {
+          "heading": "Model: PETZAAL with effect leading",
+          "note": "Labelled.",
+          "model": {
+            "problem": "How does the writer use language to show the desert at night?",
+            "steps": [
+              "Point: the writer presents the night as a sudden transformation.",
+              "Evidence: 'the heat had drained from the sand like water from a basin'",
+              "Technique: simile",
+              "Zoom: 'drained' suggests emptying completely",
+              "Analyse: the fierce day vanishes, leaving calm",
+              "Link: language makes the change feel instant"
+            ],
+            "answer": "A PETZAAL paragraph."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Which sentence lets effect lead?",
+            "options": [
+              "This is personification.",
+              "The sky seems alive and crowded, as if the stars are pushing the darkness aside.",
+              "The writer uses good words."
+            ],
+            "answer": 1,
+            "why": "It explains the reader's impression first; terminology can follow."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Zoom in on 'crowded': two connotations and the effect.",
+          "a": "Busy, full; the sky feels packed with stars, overwhelming the writer.",
+          "mins": 3,
+          "model": "Word: crowded. Connotations: full, busy, pushing. Effect: abundance, almost noisy, which contrasts with the silence."
+        },
+        {
+          "q": "Rewrite with effect first: 'The writer uses a colon.'",
+          "a": "The pause before 'a sky so crowded' builds anticipation, then reveals the view (colon).",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: write a PETZAAL paragraph in the portal response box: 'How does the writer use language to present the night sky?' Starter: 'The writer presents the night sky as...'",
+          "a": "A PETZAAL paragraph where effect leads and terminology supports.",
+          "mins": 12,
+          "model": "Point: The writer presents the night sky as overwhelming in its beauty. | Evidence: 'a sky so crowded with stars that the darkness seemed the exception' | Technique: hyperbole and inversion of expectation | Zoom in: 'exception' reverses the normal idea that night is dark. | Analyse: The reader shares the writer's astonishment at a sky where light, not dark, is normal. | Alternative: It could also suggest how much the writer has been missing in brightly lit cities. | Link: So language makes the sky feel like a revelation."
+        },
+        {
+          "q": "Extend: add a second short paragraph on the guide.",
+          "a": "Analysis of 'said nothing' or 'simply'.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: check that every method you name is followed by its effect.",
+          "a": "All methods explained.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "In strong analysis, effect...",
+          "options": [
+            "leads",
+            "is left out"
+          ],
+          "a": "A) leads",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder.",
+          "a": "No: readers want to know what the method does and why it matters.",
+          "mins": 2
+        }
+      ],
+      "homework": "Find one simile or metaphor in a news article and write an effect-led sentence about it.",
+      "send": "SEND: zoom-in grid. EAL: method glossary. Stretch: analyse sentence form too."
     },
     {
       "unit": "P1-A-Q4: Paper 1 Section A: Question 4, evaluation",
@@ -3351,6 +3528,2325 @@
       "duration": 50,
       "board": "AQA GCSE English Language (9-1) 8700",
       "boardShort": "AQA 8700"
+    },
+    {
+      "unit": "Autumn 1: Reading non-fiction: meaning and evidence",
+      "n": 28,
+      "title": "Reading core: selecting and embedding evidence",
+      "duration": 50,
+      "bigQuestion": "What makes evidence precise?",
+      "objectives": [
+        "To understand how to choose the most precise evidence and embed it fluently in an answer"
+      ],
+      "successCriteria": [
+        "All: choose the best of three quotations for a point",
+        "Most: embed a short quotation grammatically in a sentence",
+        "Some: write two evidence-led inferences on an unseen text"
+      ],
+      "keywords": [
+        {
+          "term": "evidence",
+          "def": "words from the text that support a point"
+        },
+        {
+          "term": "embed",
+          "def": "weave a quotation into your sentence"
+        },
+        {
+          "term": "precise",
+          "def": "exactly right for the purpose"
+        },
+        {
+          "term": "paraphrase",
+          "def": "put into your own words"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is a long quotation better evidence than a short one? Why might it be worse?"
+      },
+      "pictures": [
+        {
+          "find": "tweezers selecting gem",
+          "alt": "Tweezers holding a small gem",
+          "for": "hook"
+        },
+        {
+          "find": "highlighter pen on text",
+          "alt": "A highlighter on a page",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 HT1 English Language scheme (selecting evidence and inference), mapped to 4EB1 Section A",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials (Section A)",
+        "Text C 'A Night in the Dunes' (teacher-written travel writing, pupil PDF)",
+        "Pupil PDF worksheet with the source texts (printable or for a drawing tablet)"
+      ],
+      "starter": [
+        {
+          "q": "Implicit means...",
+          "options": [
+            "suggested",
+            "stated"
+          ],
+          "a": "A) suggested",
+          "mins": 1
+        },
+        {
+          "q": "Best length for a quotation?",
+          "options": [
+            "a few words",
+            "a whole paragraph"
+          ],
+          "a": "A) a few words",
+          "mins": 1
+        },
+        {
+          "q": "Text C is...",
+          "options": [
+            "travel writing",
+            "a speech"
+          ],
+          "a": "A) travel writing",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Choosing evidence",
+          "bullets": [
+            "Short: a word or phrase",
+            "Relevant: fits your exact point",
+            "Rich: has something to analyse"
+          ],
+          "note": "Show why 'crowded' beats the whole sentence."
+        },
+        {
+          "heading": "Embedding",
+          "note": "Compare.",
+          "misconception": {
+            "wrong": "The sky was full. 'a sky so crowded with stars that the darkness seemed the exception'.",
+            "right": "The writer presents a sky so 'crowded with stars' that darkness becomes 'the exception'."
+          }
+        },
+        {
+          "heading": "Model: choose, embed, infer",
+          "note": "Think aloud.",
+          "model": {
+            "problem": "How does the writer show the desert changes at night?",
+            "steps": [
+              "Options: 'reached the dunes' / 'heat had drained' / 'pointed upward'",
+              "Best: 'heat had drained' (directly about change)",
+              "Embed it in your sentence",
+              "Infer the effect"
+            ],
+            "answer": "The writer notes that the 'heat had drained' from the sand, suggesting a sudden, complete change from day to night."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Which answer embeds evidence best?",
+            "options": [
+              "Quote: 'like water from a basin'. This is a simile.",
+              "The heat vanishes 'like water from a basin', quickly and completely.",
+              "The writer uses lots of words."
+            ],
+            "answer": 1,
+            "why": "The quotation flows inside the explanation."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Pick the best evidence that the guide is experienced, and embed it.",
+          "a": "The guide 'simply pointed upward', calm and sure of what to show.",
+          "mins": 3,
+          "model": "Options: 'said nothing', 'simply pointed'. 'Simply' suggests ease and familiarity. Embed: 'The guide \"simply pointed upward\", calmly sure of what to show.'"
+        },
+        {
+          "q": "Paraphrase: 'the darkness seemed the exception'.",
+          "a": "There were so many stars that the dark parts seemed rare.",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: write two evidence-led inference paragraphs in the portal response box on how the writer presents the desert night. Starter: 'The writer presents the night as...'",
+          "a": "Two paragraphs, each with a short embedded quotation and an inference.",
+          "mins": 12,
+          "model": "The writer presents the night as overwhelming. The sky is 'so crowded with stars' that darkness becomes 'the exception', suggesting the writer has never seen such abundance and feels small before it."
+        },
+        {
+          "q": "Extend: underline your embedded quotations; check they are under eight words.",
+          "a": "All quotations short and embedded.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: replace one quotation with a better one and explain why.",
+          "a": "A justified improvement.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Embedding means...",
+          "options": [
+            "weaving a quotation into your sentence",
+            "copying a paragraph"
+          ],
+          "a": "A) weaving a quotation into your sentence",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder.",
+          "a": "Not usually: long quotations hide your point and leave less to analyse.",
+          "mins": 2
+        }
+      ],
+      "homework": "Practise: choose and embed three quotations from any article.",
+      "send": "SEND: quotation options pre-highlighted. EAL: embedding frames. Stretch: single-word quotations only."
+    },
+    {
+      "unit": "Autumn 1: Reading non-fiction: meaning and evidence",
+      "n": 29,
+      "title": "Reading core: summarising non-fiction concisely",
+      "duration": 50,
+      "bigQuestion": "How do I capture what matters most?",
+      "objectives": [
+        "To understand how to summarise the main ideas of a non-fiction text accurately and concisely"
+      ],
+      "successCriteria": [
+        "All: identify the main idea of each paragraph",
+        "Most: write a summary in your own words",
+        "Some: keep a summary within a word limit"
+      ],
+      "keywords": [
+        {
+          "term": "summarise",
+          "def": "give the main points briefly"
+        },
+        {
+          "term": "main idea",
+          "def": "the central point of a section"
+        },
+        {
+          "term": "concise",
+          "def": "brief and clear"
+        },
+        {
+          "term": "synthesise",
+          "def": "combine ideas into one account"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Can you summarise your whole week in one sentence? What did you leave out, and why?"
+      },
+      "pictures": [
+        {
+          "find": "notebook bullet list",
+          "alt": "A notebook with a short list",
+          "for": "hook"
+        },
+        {
+          "find": "funnel",
+          "alt": "A funnel, narrowing many ideas into a few",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 HT1 English Language scheme (summary skills), mapped to 4EB1 Section A",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials (Section A)",
+        "Text C 'A Night in the Dunes' (teacher-written travel writing, pupil PDF)",
+        "Pupil PDF worksheet with the source texts (printable or for a drawing tablet)"
+      ],
+      "starter": [
+        {
+          "q": "Embedding a quotation means...",
+          "options": [
+            "weaving it into your sentence",
+            "a long copy"
+          ],
+          "a": "A) weaving it into your sentence",
+          "mins": 1
+        },
+        {
+          "q": "A summary should be in...",
+          "options": [
+            "your own words",
+            "quotations"
+          ],
+          "a": "A) your own words",
+          "mins": 1
+        },
+        {
+          "q": "Concise means...",
+          "options": [
+            "brief and clear",
+            "detailed"
+          ],
+          "a": "A) brief and clear",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Summary rules",
+          "bullets": [
+            "Main ideas only",
+            "Own words",
+            "No opinion",
+            "Follow the order of the text"
+          ],
+          "note": "Use the full Text C on the pupil PDF (three paragraphs)."
+        },
+        {
+          "heading": "Model: one sentence per paragraph",
+          "note": "Labelled.",
+          "model": {
+            "problem": "Summarise Text C in three sentences",
+            "steps": [
+              "Paragraph 1: the travellers reach the dunes as night cools the sand",
+              "Paragraph 2: the silent guide shows them the sky",
+              "Paragraph 3: the writer feels small and content",
+              "Join into fluent prose"
+            ],
+            "answer": "As night falls, the travellers reach the cooling dunes. Their silent guide directs them to an extraordinary, star-filled sky. The experience leaves the writer feeling humble and at peace."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Which belongs in a summary?",
+            "options": [
+              "I loved this text.",
+              "The writer feels at peace under the stars.",
+              "'like water from a basin'"
+            ],
+            "answer": 1,
+            "why": "A main idea in your own words; no opinion or long quotation."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write the main idea of paragraph 1 in under 15 words.",
+          "a": "The travellers reach the dunes as the desert cools at night.",
+          "mins": 3,
+          "model": "Ask: what happens in this paragraph? Strip detail; keep the event and its key change."
+        },
+        {
+          "q": "Cut this to under 12 words: 'The writer goes on to say that they have seen lots of skies in cities and mountains.'",
+          "a": "The writer has seen many city and mountain skies.",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: summarise Text C in 60 to 80 words in the portal response box. Starter: 'The writer describes...'",
+          "a": "An accurate, concise summary in own words following the text's order.",
+          "mins": 11,
+          "model": "The writer describes arriving at desert dunes as the day's heat fades. A silent, experienced guide shows the travellers the night sky, which is so full of stars that darkness seems rare. Having seen many skies before, the writer is still unprepared, and finishes feeling both small and deeply content."
+        },
+        {
+          "q": "Extend: peer-check against the summary rules.",
+          "a": "Feedback against each rule.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: rewrite in 40 words.",
+          "a": "A tighter version keeping all main ideas.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A summary includes...",
+          "options": [
+            "main ideas",
+            "every detail"
+          ],
+          "a": "A) main ideas",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder.",
+          "a": "Answers vary; you keep what matters most.",
+          "mins": 2
+        }
+      ],
+      "homework": "Summarise a news article in 50 words.",
+      "send": "SEND: paragraph-by-paragraph frame. EAL: synonym bank. Stretch: 40-word limit."
+    },
+    {
+      "unit": "Autumn 2: Reading non-fiction: language and structure",
+      "n": 30,
+      "title": "Language and structure core: a timed analytical response",
+      "duration": 50,
+      "bigQuestion": "How do I analyse well under time?",
+      "objectives": [
+        "To understand how to plan and write a language and structure analysis on an unseen extract under time"
+      ],
+      "successCriteria": [
+        "All: plan an answer in three minutes",
+        "Most: write two analytical paragraphs in fifteen minutes",
+        "Some: self-assess against the success ladder and set a target"
+      ],
+      "keywords": [
+        {
+          "term": "timed",
+          "def": "written within a strict time"
+        },
+        {
+          "term": "plan",
+          "def": "a quick outline before writing"
+        },
+        {
+          "term": "success ladder",
+          "def": "steps from secure to excellent"
+        },
+        {
+          "term": "self-assessment",
+          "def": "judging your own work honestly"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What usually goes wrong when you write under time? How could a plan help?"
+      },
+      "pictures": [
+        {
+          "find": "stopwatch",
+          "alt": "A stopwatch",
+          "for": "hook"
+        },
+        {
+          "find": "old harbour wall fishing boats",
+          "alt": "A harbour wall with fishing boats",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "hands-down",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 HT2 English Language scheme (timed analysis), mapped to 4EB1 Section A",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials (Section A)",
+        "Text B 'Letter from the Harbour Wall' (teacher-written in a nineteenth-century style, pupil PDF)",
+        "Success ladder (pupil PDF)"
+      ],
+      "starter": [
+        {
+          "q": "PESTAL's T is...",
+          "options": [
+            "Terminology",
+            "Theme"
+          ],
+          "a": "A) Terminology",
+          "mins": 1
+        },
+        {
+          "q": "Effect should...",
+          "options": [
+            "lead",
+            "follow everything"
+          ],
+          "a": "A) lead",
+          "mins": 1
+        },
+        {
+          "q": "A shift is...",
+          "options": [
+            "a change of focus",
+            "a rhyme"
+          ],
+          "a": "A) a change of focus",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "A new extract",
+          "note": "Teacher-written nineteenth-century style letter (it returns in Spring 1).",
+          "quote": {
+            "text": "My dear Sister, I write from the harbour wall, where the fishermen land such silver harvests as would feed a city. The sea is a vast and generous storehouse, and I am persuaded that no labour of man could ever empty it.",
+            "source": "Text B, teacher-written in a nineteenth-century style"
+          }
+        },
+        {
+          "heading": "Three-minute plan",
+          "bullets": [
+            "Two language points",
+            "One structure point",
+            "Best quotation for each",
+            "Order: strongest first"
+          ],
+          "note": "Model the plan."
+        },
+        {
+          "heading": "Model: the plan",
+          "note": "Labelled.",
+          "model": {
+            "problem": "How does the writer present the sea?",
+            "steps": [
+              "Language 1: 'silver harvests', metaphor of wealth",
+              "Language 2: 'generous storehouse', the sea as giver",
+              "Structure: from harbour detail to a sweeping claim",
+              "Judgement: confident, admiring tone"
+            ],
+            "answer": "A plan in four lines."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Plan your answer in three minutes using the frame.",
+          "a": "A four-line plan.",
+          "mins": 3,
+          "model": "Teacher completes the plan live, as on the slide."
+        },
+        {
+          "q": "Share the strongest quotation you chose and why.",
+          "a": "For example 'silver harvests': fish as precious wealth.",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (timed, 15 minutes): in the portal response box, 'How does the writer use language and structure to present the sea?' Starter: 'The writer presents the sea as...'",
+          "a": "Two paragraphs: one language (PETZAAL), one structure (PESTAL).",
+          "mins": 15,
+          "model": "Point: The writer presents the sea as an endless source of wealth. | Evidence: 'silver harvests' | Technique: metaphor | Zoom in: 'harvests' turns fishing into farming: reliable, renewable. | Analyse: The reader senses abundance and security. | Alternative: A modern reader might find this confidence naive. | Link: So the language presents the sea as a gift that will never fail."
+        },
+        {
+          "q": "Self-assess against the success ladder; highlight the highest step you reached.",
+          "a": "One step highlighted.",
+          "mins": 2
+        },
+        {
+          "q": "Target: write one sentence for your next timed answer.",
+          "a": "For example: 'Name a structural shift every time.'",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Planning time should be about...",
+          "options": [
+            "3 minutes",
+            "15 minutes"
+          ],
+          "a": "A) 3 minutes",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder.",
+          "a": "Answers vary; a plan prevents running out of points or time.",
+          "mins": 2
+        }
+      ],
+      "homework": "Redraft one paragraph of the timed answer at home.",
+      "send": "SEND: planning frame; extra time per plan. EAL: glossary for Text B. Stretch: add a comment on tone."
+    },
+    {
+      "unit": "Spring 1: Comparing writers' views",
+      "n": 31,
+      "title": "Viewpoint: finding a writer's view and the evidence for it",
+      "duration": 50,
+      "bigQuestion": "How can we tell what a writer really thinks?",
+      "objectives": [
+        "To understand how to identify a writer's viewpoint and support it with precise evidence"
+      ],
+      "successCriteria": [
+        "All: state Text A's viewpoint in one sentence",
+        "Most: find three pieces of evidence for it",
+        "Some: explain how one phrase reveals the writer's attitude"
+      ],
+      "crossCurricular": "Geography: marine pollution and ocean ecosystems",
+      "smsc": "Moral: responsibility for the natural world",
+      "islamicLink": {
+        "text": "Islam teaches that people are trustees (khalifah, خَلِيفَة) on the earth, and the Qur'an describes Allah subjecting the sea so that people may eat fresh food from it (an-Nahl 16:14). A trust brings responsibility: Text A and Text B take very different views of that responsibility.",
+        "at": "start"
+      },
+      "keywords": [
+        {
+          "term": "viewpoint",
+          "def": "a writer's opinion on an issue"
+        },
+        {
+          "term": "perspective",
+          "def": "the position a writer sees from"
+        },
+        {
+          "term": "attitude",
+          "def": "a writer's feeling towards a subject"
+        },
+        {
+          "term": "bias",
+          "def": "favouring one side"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Can you tell what someone believes from how they describe something, even if they never say 'I think'?"
+      },
+      "pictures": [
+        {
+          "find": "plastic bags floating ocean",
+          "alt": "Plastic waste floating in the sea",
+          "for": "hook"
+        },
+        {
+          "find": "coral reef clear water",
+          "alt": "A coral reef in clear water",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 HT6 English Language scheme (non-fiction viewpoints), mapped to 4EB1 Section A",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials (Section A)",
+        "Text A 'We Are Treating the Sea as a Bin' (teacher-written modern article, pupil PDF)",
+        "PETZAAL and PESTAL scaffolds (school framework cards)"
+      ],
+      "starter": [
+        {
+          "q": "A summary uses...",
+          "options": [
+            "own words",
+            "quotations"
+          ],
+          "a": "A) own words",
+          "mins": 1
+        },
+        {
+          "q": "Bias means...",
+          "options": [
+            "favouring one side",
+            "balance"
+          ],
+          "a": "A) favouring one side",
+          "mins": 1
+        },
+        {
+          "q": "Text B presents the sea as...",
+          "options": [
+            "generous",
+            "dying"
+          ],
+          "a": "A) generous",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Text A",
+          "note": "Teacher-written modern article. Read aloud.",
+          "quote": {
+            "text": "I have dived in waters so clear you could read a newspaper on the seabed, and I have dived in waters choked with bags that drift like ghosts. We are not short of evidence; we are short of courage. If we keep treating the sea as a bin, we should not be surprised when it stops feeding us.",
+            "source": "Text A, teacher-written modern article"
+          }
+        },
+        {
+          "heading": "How viewpoint shows",
+          "bullets": [
+            "Direct statements of opinion",
+            "Loaded word choices",
+            "Contrasts and examples",
+            "The ending's warning"
+          ],
+          "note": "Viewpoint is often implied as much as stated."
+        },
+        {
+          "heading": "Model: viewpoint and evidence",
+          "note": "Labelled.",
+          "model": {
+            "problem": "What is the writer's viewpoint on ocean plastic?",
+            "steps": [
+              "Viewpoint: the sea is being destroyed by our inaction",
+              "Evidence 1: 'choked with bags'",
+              "Evidence 2: 'short of courage'",
+              "Evidence 3: 'treating the sea as a bin'",
+              "Attitude: urgent, frustrated, morally serious"
+            ],
+            "answer": "The writer believes we are destroying the sea through a lack of courage, not a lack of knowledge."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "'We are not short of evidence; we are short of courage' suggests...",
+            "options": [
+              "the problem is a lack of will, not knowledge",
+              "we need more research",
+              "divers are brave"
+            ],
+            "answer": 0,
+            "why": "The balanced sentence shifts the blame from knowledge to will."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "State the viewpoint in one sentence.",
+          "a": "The writer believes we are polluting the sea through cowardly inaction and must change.",
+          "mins": 3,
+          "model": "Ask: what does the writer want the reader to think? Combine the problem (plastic) with the cause (lack of courage)."
+        },
+        {
+          "q": "Find the most emotive phrase and explain it.",
+          "a": "'drift like ghosts': haunting, deathly, suggesting the sea is dying.",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: in the portal response box, write a PETZAAL paragraph: 'What is the writer's viewpoint in Text A and how is it shown?' Starter: 'The writer believes...'",
+          "a": "A paragraph with viewpoint, three pieces of evidence and attitude.",
+          "mins": 12,
+          "model": "Point: The writer believes the sea is being destroyed by human inaction. | Evidence: 'treating the sea as a bin' | Technique: metaphor | Zoom in: 'bin' reduces the ocean to a place for rubbish. | Analyse: The image shocks readers into seeing their own carelessness. | Alternative: Some readers may find the tone accusatory and resist it. | Link: So the writer's urgent viewpoint is clear: we must change before the sea 'stops feeding us'."
+        },
+        {
+          "q": "Extend: is the writer biased? Explain.",
+          "a": "Yes, deliberately: it is persuasive writing, but based on experience.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: identify the writer's perspective (who is speaking).",
+          "a": "A diver with first-hand experience, which adds authority.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Text A's attitude is...",
+          "options": [
+            "urgent",
+            "relaxed"
+          ],
+          "a": "A) urgent",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder.",
+          "a": "Yes: word choice, imagery and tone reveal belief.",
+          "mins": 2
+        }
+      ],
+      "homework": "Read an opinion column and write the writer's viewpoint in one sentence with two pieces of evidence.",
+      "send": "SEND: viewpoint frame. EAL: glossary. Stretch: analyse the final sentence's conditional."
+    },
+    {
+      "unit": "Spring 1: Comparing writers' views",
+      "n": 32,
+      "title": "Viewpoint: fact, opinion and implied attitude across centuries",
+      "duration": 50,
+      "bigQuestion": "How does a writer's time shape their view?",
+      "objectives": [
+        "To understand how fact, opinion and implied attitude shape a writer's viewpoint, in a modern and a nineteenth-century text"
+      ],
+      "successCriteria": [
+        "All: sort statements into fact and opinion",
+        "Most: infer Text B's attitude from its language",
+        "Some: explain how the period affects the writer's view"
+      ],
+      "crossCurricular": "History: fishing and industry in nineteenth-century Britain",
+      "smsc": "Cultural: how attitudes to nature change over time",
+      "islamicLink": {
+        "text": "Islam teaches that people are trustees (khalifah, خَلِيفَة) on the earth, and the Qur'an describes Allah subjecting the sea so that people may eat fresh food from it (an-Nahl 16:14). A trust brings responsibility: Text A and Text B take very different views of that responsibility.",
+        "at": "start"
+      },
+      "keywords": [
+        {
+          "term": "fact",
+          "def": "can be proved"
+        },
+        {
+          "term": "opinion",
+          "def": "a personal judgement"
+        },
+        {
+          "term": "implied attitude",
+          "def": "a feeling suggested, not stated"
+        },
+        {
+          "term": "context",
+          "def": "the time and place a text comes from"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Would someone 170 years ago have worried about the sea? Why or why not?"
+      },
+      "pictures": [
+        {
+          "find": "Victorian fishing harbour",
+          "alt": "A nineteenth-century fishing harbour",
+          "for": "hook"
+        },
+        {
+          "find": "herring catch fish crate",
+          "alt": "A crate of freshly caught fish",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 HT6 English Language scheme (non-fiction across centuries), mapped to 4EB1 Section A",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials (Section A)",
+        "Text B 'Letter from the Harbour Wall' (teacher-written in a nineteenth-century style, pupil PDF)",
+        "Text A 'We Are Treating the Sea as a Bin' (teacher-written modern article, pupil PDF)"
+      ],
+      "starter": [
+        {
+          "q": "Text A's viewpoint is...",
+          "options": [
+            "urgent concern",
+            "celebration"
+          ],
+          "a": "A) urgent concern",
+          "mins": 1
+        },
+        {
+          "q": "Which is a fact?",
+          "options": [
+            "The letter is addressed to a sister.",
+            "The sea is generous."
+          ],
+          "a": "A) The letter is addressed to a sister.",
+          "mins": 1
+        },
+        {
+          "q": "Implied attitude is...",
+          "options": [
+            "suggested",
+            "stated"
+          ],
+          "a": "A) suggested",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Text B",
+          "note": "Reread.",
+          "quote": {
+            "text": "My dear Sister, I write from the harbour wall, where the fishermen land such silver harvests as would feed a city. The sea is a vast and generous storehouse, and I am persuaded that no labour of man could ever empty it.",
+            "source": "Text B, teacher-written in a nineteenth-century style"
+          }
+        },
+        {
+          "heading": "Fact or opinion?",
+          "note": "Sort.",
+          "sort": {
+            "columns": [
+              "Fact",
+              "Opinion"
+            ],
+            "cards": [
+              "the writer is on the harbour wall",
+              "fishermen land fish",
+              "the sea is generous",
+              "no labour could empty it",
+              "the letter is to a sister",
+              "harvests that would feed a city"
+            ],
+            "answer": [
+              0,
+              0,
+              1,
+              1,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "heading": "Model: inferring attitude",
+          "note": "Labelled.",
+          "model": {
+            "problem": "What is Text B's attitude to the sea?",
+            "steps": [
+              "Find loaded words: 'generous', 'silver', 'vast'",
+              "Note certainty: 'I am persuaded'",
+              "Infer attitude: admiration and confidence",
+              "Context: a time before mass fishing and plastics"
+            ],
+            "answer": "The writer admires the sea and is confident it can never be exhausted, a view shaped by a time before industrial fishing."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "'I am persuaded that no labour of man could ever empty it' shows...",
+            "options": [
+              "confident certainty",
+              "doubt",
+              "anger"
+            ],
+            "answer": 0,
+            "why": "'Persuaded' and 'never' express certainty."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Find one opinion presented as if it were fact.",
+          "a": "'no labour of man could ever empty it'.",
+          "mins": 3,
+          "model": "Look for absolute words ('never', 'no'). This claim cannot be proved; it is belief stated confidently."
+        },
+        {
+          "q": "How might context explain the writer's confidence?",
+          "a": "Fishing was small-scale and the effects of overfishing were not understood.",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: in the portal response box, write a PETZAAL paragraph: 'What is the writer's attitude to the sea in Text B?' Starter: 'The writer of Text B regards the sea with...'",
+          "a": "A paragraph inferring attitude with evidence and context.",
+          "mins": 12,
+          "model": "Point: The writer of Text B regards the sea with confident admiration. | Evidence: 'a vast and generous storehouse' | Technique: metaphor and personification | Zoom in: 'generous' gives the sea a kind, giving character. | Analyse: The reader senses gratitude and complete security. | Alternative: Today's reader may see the certainty as dangerously naive. | Link: So the attitude is admiring, shaped by an age that thought nature endless."
+        },
+        {
+          "q": "Extend: compare in one sentence with Text A's attitude.",
+          "a": "Text B is confident the sea is endless, whereas Text A fears we are destroying it.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: is Text B's view an opinion or a mistaken belief?",
+          "a": "Both: an opinion based on the knowledge of its time.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Text B's attitude is...",
+          "options": [
+            "admiring confidence",
+            "fear"
+          ],
+          "a": "A) admiring confidence",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder.",
+          "a": "Probably not: fishing was small-scale and plastics did not exist.",
+          "mins": 2
+        }
+      ],
+      "homework": "Find three opinions disguised as facts in an advert or article.",
+      "send": "SEND: sorted card set. EAL: glossary of nineteenth-century words (persuaded, labour). Stretch: discuss the reliability of each writer."
+    },
+    {
+      "unit": "Spring 1: Comparing writers' views",
+      "n": 33,
+      "title": "Viewpoint: a timed viewpoint answer and DIRT",
+      "duration": 50,
+      "bigQuestion": "How do I explain a viewpoint under time?",
+      "objectives": [
+        "To understand how to explain a writer's viewpoint clearly and fully under time"
+      ],
+      "successCriteria": [
+        "All: plan a viewpoint answer in three minutes",
+        "Most: write a viewpoint answer in fifteen minutes",
+        "Some: improve one paragraph with DIRT"
+      ],
+      "keywords": [
+        {
+          "term": "viewpoint",
+          "def": "a writer's opinion"
+        },
+        {
+          "term": "timed",
+          "def": "within a strict time"
+        },
+        {
+          "term": "DIRT",
+          "def": "Directed Improvement and Reflection Time"
+        },
+        {
+          "term": "tone",
+          "def": "the writer's voice or mood"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which is harder: knowing what to say, or saying it quickly? Why?"
+      },
+      "pictures": [
+        {
+          "find": "stopwatch",
+          "alt": "A stopwatch",
+          "for": "hook"
+        },
+        {
+          "find": "green pen corrections",
+          "alt": "Green pen corrections",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "hands-down",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 HT6 English Language scheme (timed reading), mapped to 4EB1 Section A",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials (Section A)",
+        "Text A 'We Are Treating the Sea as a Bin' (teacher-written modern article, pupil PDF)",
+        "Green pen for DIRT"
+      ],
+      "starter": [
+        {
+          "q": "Text B is...",
+          "options": [
+            "confident",
+            "anxious"
+          ],
+          "a": "A) confident",
+          "mins": 1
+        },
+        {
+          "q": "An opinion...",
+          "options": [
+            "cannot be proved",
+            "can be proved"
+          ],
+          "a": "A) cannot be proved",
+          "mins": 1
+        },
+        {
+          "q": "Tone is...",
+          "options": [
+            "the writer's voice",
+            "the length"
+          ],
+          "a": "A) the writer's voice",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The task",
+          "bullets": [
+            "Question: How does the writer of Text A show their views about the sea?",
+            "3 minutes plan",
+            "15 minutes write",
+            "DIRT afterwards"
+          ],
+          "note": "Exam-style question written for TGA."
+        },
+        {
+          "heading": "Model: plan",
+          "note": "Labelled.",
+          "model": {
+            "problem": "Plan for Text A",
+            "steps": [
+              "View: inaction is destroying the sea",
+              "Method 1: contrast of clear and choked water",
+              "Method 2: balanced sentence on courage",
+              "Method 3: final conditional warning",
+              "Tone: urgent"
+            ],
+            "answer": "A four-line plan."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Which opening sentence is strongest?",
+            "options": [
+              "Text A is about the sea.",
+              "The writer believes the sea is being destroyed by our lack of courage, and uses contrast to make readers feel responsible.",
+              "I agree with the writer."
+            ],
+            "answer": 1,
+            "why": "It states the view and the method."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Plan your answer.",
+          "a": "A four-line plan.",
+          "mins": 3,
+          "model": "Teacher writes the plan live from the slide."
+        },
+        {
+          "q": "Choose your best quotation and say why.",
+          "a": "'drift like ghosts': haunting and memorable.",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (timed, 15 minutes): in the portal response box, 'How does the writer of Text A show their views about the sea?' Starter: 'The writer believes...'",
+          "a": "Two or three PETZAAL paragraphs on view and methods.",
+          "mins": 15,
+          "model": "Point: The writer believes we are destroying the sea and uses contrast to shame the reader. | Evidence: 'so clear you could read a newspaper' and 'choked with bags' | Technique: juxtaposition | Zoom in: 'choked' suggests the sea is being suffocated. | Analyse: The contrast makes the loss feel personal and recent. | Alternative: Some might see the diver's view as one-sided. | Link: So the writer shows the view through vivid, accusing contrasts."
+        },
+        {
+          "q": "DIRT: improve your weakest paragraph in green pen.",
+          "a": "One improved paragraph.",
+          "mins": 3
+        },
+        {
+          "q": "Target for the comparison weeks.",
+          "a": "One target.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "A plan helps you...",
+          "options": [
+            "keep focus",
+            "write less"
+          ],
+          "a": "A) keep focus",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder.",
+          "a": "Answers vary.",
+          "mins": 2
+        }
+      ],
+      "homework": "Redraft the timed answer's conclusion.",
+      "send": "SEND: planning frame; extra time per plan. EAL: sentence starters. Stretch: comment on the conditional ending."
+    },
+    {
+      "unit": "Spring 1: Comparing writers' views",
+      "n": 34,
+      "title": "Two texts, one theme: building a comparison grid",
+      "duration": 50,
+      "bigQuestion": "How do two writers see the same subject differently?",
+      "objectives": [
+        "To understand how to compare what two writers think about the same subject"
+      ],
+      "successCriteria": [
+        "All: fill a comparison grid for Texts A and B",
+        "Most: find one similarity and two differences in viewpoint",
+        "Some: write a comparative topic sentence"
+      ],
+      "smsc": "Moral: stewardship of the natural world",
+      "islamicLink": {
+        "text": "Islam teaches that people are trustees (khalifah, خَلِيفَة) on the earth, and the Qur'an describes Allah subjecting the sea so that people may eat fresh food from it (an-Nahl 16:14). A trust brings responsibility: Text A and Text B take very different views of that responsibility.",
+        "at": "start"
+      },
+      "keywords": [
+        {
+          "term": "compare",
+          "def": "show similarities and differences"
+        },
+        {
+          "term": "contrast",
+          "def": "show differences"
+        },
+        {
+          "term": "comparison grid",
+          "def": "a table to plan a comparison"
+        },
+        {
+          "term": "perspective",
+          "def": "where a writer stands"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two people look at the same sea. One sees a feast, one sees a graveyard. Can both be right?"
+      },
+      "pictures": [
+        {
+          "find": "ocean waves seascape",
+          "alt": "Ocean waves",
+          "for": "hook"
+        },
+        {
+          "find": "two paths in a wood",
+          "alt": "Two paths diverging",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 HT6 English Language scheme (comparing viewpoints; TAPS and PEMACS comparison method)",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials (Section A)",
+        "Text A 'We Are Treating the Sea as a Bin' (teacher-written modern article, pupil PDF)",
+        "Text B 'Letter from the Harbour Wall' (teacher-written in a nineteenth-century style, pupil PDF)",
+        "Comparison grid (pupil PDF)"
+      ],
+      "starter": [
+        {
+          "q": "Text A sees the sea as...",
+          "options": [
+            "under threat",
+            "endless"
+          ],
+          "a": "A) under threat",
+          "mins": 1
+        },
+        {
+          "q": "Text B is written to...",
+          "options": [
+            "a sister",
+            "a newspaper"
+          ],
+          "a": "A) a sister",
+          "mins": 1
+        },
+        {
+          "q": "Contrast means...",
+          "options": [
+            "differences",
+            "agreement"
+          ],
+          "a": "A) differences",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The comparison grid",
+          "note": "Complete together.",
+          "table": {
+            "head": [
+              "Focus",
+              "Text A (modern)",
+              "Text B (19th century)"
+            ],
+            "rows": [
+              [
+                "View of the sea",
+                "threatened, dying",
+                "endless, generous"
+              ],
+              [
+                "Attitude",
+                "urgent, frustrated",
+                "admiring, confident"
+              ],
+              [
+                "Human role",
+                "destroyers",
+                "grateful harvesters"
+              ],
+              [
+                "Form and audience",
+                "article, the public",
+                "letter, a sister"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Similarity too",
+          "bullets": [
+            "Both value the sea",
+            "Both see it as a source of food",
+            "Both write from first-hand experience"
+          ],
+          "note": "Strong comparisons find similarity within difference."
+        },
+        {
+          "heading": "Model: a comparative topic sentence",
+          "note": "Labelled.",
+          "model": {
+            "problem": "Compare the writers' views of the sea",
+            "steps": [
+              "Shared: both value the sea as a source of food",
+              "Difference: B is confident it is endless; A fears it is dying",
+              "Reason: different times and knowledge",
+              "Combine with a connective"
+            ],
+            "answer": "Both writers value the sea as a provider of food; however, while Text B celebrates it as endless, Text A warns that our carelessness is killing it."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Which is a valid similarity?",
+            "options": [
+              "Both writers fear the sea",
+              "Both writers see the sea as a source of food",
+              "Both write to a sister"
+            ],
+            "answer": 1,
+            "why": "Text A says the sea 'feeds us'; Text B speaks of 'harvests'."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Add one row to the grid: tone.",
+          "a": "A: accusing, urgent; B: warm, wondering.",
+          "mins": 3,
+          "model": "Tone = the voice. Read a line of each aloud: A is sharp and urgent; B is gentle and admiring."
+        },
+        {
+          "q": "Find one similarity with evidence from both.",
+          "a": "Both see the sea as food: 'stops feeding us' and 'silver harvests'.",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: in the portal response box, write a comparative paragraph on the writers' views of the sea, using the grid. Starter: 'Both writers...; however,...'",
+          "a": "A paragraph with a similarity, two differences and evidence from both.",
+          "mins": 12,
+          "model": "Both writers value the sea as a source of food; however, their views of its future differ sharply. Text B's 'silver harvests' present a 'generous storehouse' that 'no labour of man could ever empty', whereas Text A warns that if we keep 'treating the sea as a bin', it will stop 'feeding us'."
+        },
+        {
+          "q": "Extend: add a sentence explaining why the views differ (context).",
+          "a": "Text B was written before industrial fishing and plastics.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: which writer do you find more convincing and why?",
+          "a": "Answers vary; strong answers weigh evidence and tone.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A comparison grid helps you...",
+          "options": [
+            "plan",
+            "summarise one text"
+          ],
+          "a": "A) plan",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder.",
+          "a": "Both may be right for their times; the sea has changed.",
+          "mins": 2
+        }
+      ],
+      "homework": "Make a comparison grid for two articles on the same topic.",
+      "send": "SEND: partially filled grid. EAL: comparison phrases. Stretch: compare purpose and audience."
+    },
+    {
+      "unit": "Spring 1: Comparing writers' views",
+      "n": 35,
+      "title": "Two texts, one theme: connectives and sentences of comparison",
+      "duration": 50,
+      "bigQuestion": "How do I compare fluently?",
+      "objectives": [
+        "To understand how comparative connectives and sentence structures make a comparison fluent"
+      ],
+      "successCriteria": [
+        "All: use six comparative connectives accurately",
+        "Most: write sentences that compare within one sentence",
+        "Some: avoid 'Text A... Text B...' list writing"
+      ],
+      "keywords": [
+        {
+          "term": "whereas",
+          "def": "a connective that contrasts within one sentence"
+        },
+        {
+          "term": "similarly",
+          "def": "showing likeness"
+        },
+        {
+          "term": "conversely",
+          "def": "showing the opposite"
+        },
+        {
+          "term": "integrated comparison",
+          "def": "comparing both texts throughout"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why is a comparison that talks about Text A, then Text B, weaker than one that weaves them together?"
+      },
+      "pictures": [
+        {
+          "find": "woven fabric close up",
+          "alt": "Woven fabric",
+          "for": "hook"
+        },
+        {
+          "find": "scales balance",
+          "alt": "A balance",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 HT6 English Language scheme (constructing fluent comparative analysis)",
+        "Grammar Booklet: comparative connectives",
+        "Text A 'We Are Treating the Sea as a Bin' (teacher-written modern article, pupil PDF)",
+        "Text B 'Letter from the Harbour Wall' (teacher-written in a nineteenth-century style, pupil PDF)",
+        "Pupil PDF worksheet with the source texts (printable or for a drawing tablet)"
+      ],
+      "starter": [
+        {
+          "q": "Both texts see the sea as...",
+          "options": [
+            "food",
+            "a bin"
+          ],
+          "a": "A) food",
+          "mins": 1
+        },
+        {
+          "q": "Which connective contrasts?",
+          "options": [
+            "whereas",
+            "similarly"
+          ],
+          "a": "A) whereas",
+          "mins": 1
+        },
+        {
+          "q": "A comparison grid helps you...",
+          "options": [
+            "plan",
+            "proofread"
+          ],
+          "a": "A) plan",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Connectives of comparison",
+          "note": "Pupils add one example for each.",
+          "table": {
+            "head": [
+              "Purpose",
+              "Connectives"
+            ],
+            "rows": [
+              [
+                "Similarity",
+                "similarly, likewise, both, equally"
+              ],
+              [
+                "Difference",
+                "whereas, while, however, in contrast, conversely"
+              ],
+              [
+                "Degree",
+                "more urgently, less certainly"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "List versus weave",
+          "note": "Compare.",
+          "misconception": {
+            "wrong": "Text A is worried. Text B is happy.",
+            "right": "While Text B rejoices in the sea's 'silver harvests', Text A mourns waters 'choked with bags'."
+          }
+        },
+        {
+          "heading": "Model: three comparative sentence shapes",
+          "note": "Labelled.",
+          "model": {
+            "problem": "Three shapes",
+            "steps": [
+              "While A..., B...",
+              "Both writers..., but...",
+              "Where A..., B instead..."
+            ],
+            "answer": "While Text B rejoices in plenty, Text A mourns loss. Both writers value the sea, but only one fears for it. Where Text A accuses, Text B instead admires."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Rewrite as one comparative sentence: 'Text A is urgent. Text B is calm.'",
+          "a": "Text A's urgency contrasts with Text B's calm confidence.",
+          "mins": 3,
+          "model": "Choose a shape: 'While...'. Result: 'While Text A is urgent, Text B is calm and confident.' Then upgrade with evidence."
+        },
+        {
+          "q": "Use 'conversely' accurately in a sentence.",
+          "a": "Text B trusts the sea's endless supply; conversely, Text A predicts it will run out.",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: rewrite the teacher-written 'list' comparison on the pupil PDF as a woven comparison in the portal response box, using five different connectives.",
+          "a": "A fluent paragraph with five connectives and evidence from both texts.",
+          "mins": 13,
+          "model": "'Text A uses a metaphor. Text B uses a metaphor.' becomes 'Both writers use metaphor, but to opposite ends: Text B's \"storehouse\" suggests endless supply, whereas Text A's \"bin\" suggests careless waste.'"
+        },
+        {
+          "q": "Extend: highlight each connective and label its purpose.",
+          "a": "All five labelled.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: write one sentence comparing degree (more or less).",
+          "a": "Text A argues more urgently than Text B, which barely imagines a problem.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "'Likewise' shows...",
+          "options": [
+            "similarity",
+            "contrast"
+          ],
+          "a": "A) similarity",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder.",
+          "a": "Weaving keeps both texts in view and shows the relationship.",
+          "mins": 2
+        }
+      ],
+      "homework": "Grammar Booklet: comparative connectives; write five woven comparison sentences.",
+      "send": "SEND: connective mat. EAL: sentence shape frames. Stretch: no connective repeated."
+    },
+    {
+      "unit": "Spring 1: Comparing writers' views",
+      "n": 36,
+      "title": "Two texts, one theme: writing a comparison of ideas",
+      "duration": 50,
+      "bigQuestion": "How do I write a full comparison?",
+      "objectives": [
+        "To understand how to write an integrated comparison of two writers' ideas with evidence from both"
+      ],
+      "successCriteria": [
+        "All: write a comparative introduction",
+        "Most: write one integrated comparison paragraph",
+        "Some: conclude with a judgement about the difference"
+      ],
+      "keywords": [
+        {
+          "term": "introduction",
+          "def": "the opening that sets out the comparison"
+        },
+        {
+          "term": "integrated",
+          "def": "both texts in every paragraph"
+        },
+        {
+          "term": "judgement",
+          "def": "a reasoned conclusion"
+        },
+        {
+          "term": "synthesis",
+          "def": "bringing ideas together"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you had to sum up the difference between Text A and Text B in one word each, what would they be?"
+      },
+      "pictures": [
+        {
+          "find": "seashore at dawn",
+          "alt": "The sea at dawn",
+          "for": "hook"
+        },
+        {
+          "find": "open book two pages",
+          "alt": "An open book",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 HT6 English Language scheme (comparison of viewpoints)",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials (Section A)",
+        "Text A 'We Are Treating the Sea as a Bin' (teacher-written modern article, pupil PDF)",
+        "Text B 'Letter from the Harbour Wall' (teacher-written in a nineteenth-century style, pupil PDF)",
+        "Comparison grid (pupil PDF)"
+      ],
+      "starter": [
+        {
+          "q": "'Whereas' is used to...",
+          "options": [
+            "contrast",
+            "add"
+          ],
+          "a": "A) contrast",
+          "mins": 1
+        },
+        {
+          "q": "Integrated comparison means...",
+          "options": [
+            "both texts throughout",
+            "one then the other"
+          ],
+          "a": "A) both texts throughout",
+          "mins": 1
+        },
+        {
+          "q": "Text B's writer is...",
+          "options": [
+            "confident",
+            "anxious"
+          ],
+          "a": "A) confident",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Structure of a comparison",
+          "bullets": [
+            "Introduction: both views in one sentence",
+            "Paragraph: one idea, both texts",
+            "Conclusion: why they differ"
+          ],
+          "note": "The school's comparison method (TAPS introduction, PEMACS paragraphs) adapted for non-fiction."
+        },
+        {
+          "heading": "Model: introduction and paragraph",
+          "note": "Labelled.",
+          "model": {
+            "problem": "Compare the writers' ideas about the sea",
+            "steps": [
+              "Introduction: Both value the sea, but B sees an endless gift, A a dying victim.",
+              "Point: they disagree about human power over the sea.",
+              "Evidence A: 'treating the sea as a bin'",
+              "Evidence B: 'no labour of man could ever empty it'",
+              "Comparison: B thinks humans are too small to harm it; A thinks we are harming it already"
+            ],
+            "answer": "An integrated paragraph."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Which conclusion is strongest?",
+            "options": [
+              "Both texts are about the sea.",
+              "Their views differ because Text B wrote before industrial fishing and plastic, whereas Text A sees the results.",
+              "I liked Text A more."
+            ],
+            "answer": 1,
+            "why": "It synthesises and explains the difference."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write your introduction in two sentences.",
+          "a": "Both writers value the sea; however, Text B sees an inexhaustible gift, whereas Text A sees a victim of human carelessness.",
+          "mins": 3,
+          "model": "Sentence 1: what they share. Sentence 2: the central difference, with 'whereas'."
+        },
+        {
+          "q": "Plan one integrated paragraph on 'human power over the sea'.",
+          "a": "Point, evidence from both, comparison.",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: in the portal response box, write the introduction, two integrated paragraphs and a conclusion: 'Compare how the writers present their ideas about the sea.' Starter: 'Both writers...'",
+          "a": "A full integrated comparison with evidence from both texts.",
+          "mins": 15,
+          "model": "Both writers value the sea, yet they see its future very differently. Text B believes humans are too small to harm it, as 'no labour of man could ever empty it', whereas Text A argues we are already doing so by 'treating the sea as a bin'. Ultimately, the difference reflects their times: one writes before industrial fishing and plastic, the other amid their consequences."
+        },
+        {
+          "q": "Extend: check each paragraph names both texts.",
+          "a": "All paragraphs integrated.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: comment on the difference in form (letter and article).",
+          "a": "The private letter is reflective; the public article persuades.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A conclusion should...",
+          "options": [
+            "explain the difference",
+            "repeat the introduction"
+          ],
+          "a": "A) explain the difference",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder.",
+          "a": "For example: Text A 'warning', Text B 'wonder'.",
+          "mins": 1
+        }
+      ],
+      "homework": "Redraft your conclusion to include context.",
+      "send": "SEND: paragraph frame. EAL: connective bank. Stretch: add a third paragraph on tone."
+    },
+    {
+      "unit": "Spring 1: Comparing writers' views",
+      "n": 37,
+      "title": "Methods compared: how language conveys each writer's view",
+      "duration": 50,
+      "bigQuestion": "How do writers' methods carry their views?",
+      "objectives": [
+        "To understand how to compare the language methods two writers use to convey their views"
+      ],
+      "successCriteria": [
+        "All: identify one language method in each text",
+        "Most: explain how each method conveys the writer's view",
+        "Some: write a comparative paragraph on methods"
+      ],
+      "keywords": [
+        {
+          "term": "method",
+          "def": "a technique a writer uses"
+        },
+        {
+          "term": "register",
+          "def": "level of formality"
+        },
+        {
+          "term": "metaphor",
+          "def": "describing something as if it were something else"
+        },
+        {
+          "term": "tone",
+          "def": "the writer's voice"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is a metaphor more persuasive than a fact? When?"
+      },
+      "pictures": [
+        {
+          "find": "rubbish bin overflowing",
+          "alt": "An overflowing bin",
+          "for": "hook"
+        },
+        {
+          "find": "silver fish scales close up",
+          "alt": "Silver fish scales",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 HT6 English Language scheme (methods and perspectives)",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials (Section A)",
+        "Text A 'We Are Treating the Sea as a Bin' (teacher-written modern article, pupil PDF)",
+        "Text B 'Letter from the Harbour Wall' (teacher-written in a nineteenth-century style, pupil PDF)",
+        "PETZAAL and PESTAL scaffolds (school framework cards)"
+      ],
+      "starter": [
+        {
+          "q": "Integrated comparison means...",
+          "options": [
+            "both texts together",
+            "one at a time"
+          ],
+          "a": "A) both texts together",
+          "mins": 1
+        },
+        {
+          "q": "Register is...",
+          "options": [
+            "formality",
+            "speed"
+          ],
+          "a": "A) formality",
+          "mins": 1
+        },
+        {
+          "q": "'Treating the sea as a bin' is...",
+          "options": [
+            "a metaphor",
+            "a fact"
+          ],
+          "a": "A) a metaphor",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Two metaphors, two worlds",
+          "note": "Compare.",
+          "compare": {
+            "left": {
+              "title": "Text A",
+              "points": [
+                "'a bin': waste, contempt",
+                "plain, modern register"
+              ]
+            },
+            "right": {
+              "title": "Text B",
+              "points": [
+                "'a storehouse': plenty, order",
+                "formal, elaborate register"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Methods table",
+          "note": "Fill together.",
+          "table": {
+            "head": [
+              "Method",
+              "Text A",
+              "Text B"
+            ],
+            "rows": [
+              [
+                "Imagery",
+                "'drift like ghosts'",
+                "'silver harvests'"
+              ],
+              [
+                "Sentence form",
+                "balanced 'evidence... courage'",
+                "long, flowing clauses"
+              ],
+              [
+                "Voice",
+                "first person plural 'we'",
+                "first person singular 'I'"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Model: a methods comparison",
+          "note": "Labelled.",
+          "model": {
+            "problem": "Compare how the writers use imagery",
+            "steps": [
+              "A: 'drift like ghosts', death and haunting",
+              "B: 'silver harvests', wealth and plenty",
+              "Comparison: death against life",
+              "Effect on view: A mourns, B celebrates"
+            ],
+            "answer": "Text A's simile of bags that 'drift like ghosts' makes the sea a place of death, whereas Text B's 'silver harvests' make it a source of wealth, so their imagery mirrors opposite views."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Text A's 'we' (rather than 'I' or 'you') makes the reader...",
+            "options": [
+              "share responsibility",
+              "feel blamed alone",
+              "feel left out"
+            ],
+            "answer": 0,
+            "why": "Inclusive 'we' draws the reader into shared guilt and action."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain Text A's choice of 'we'.",
+          "a": "It includes the reader in the problem and the solution.",
+          "mins": 3,
+          "model": "Pronoun: we. Effect: shared responsibility, harder to deny. Purpose: persuade to act."
+        },
+        {
+          "q": "Explain Text B's choice of 'I am persuaded'.",
+          "a": "Personal certainty; the voice of private conviction.",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: in the portal response box, write a comparative paragraph: 'Compare how the writers use language to convey their views.' Starter: 'Both writers use imagery, but...'",
+          "a": "An integrated paragraph comparing two methods with evidence and effect.",
+          "mins": 13,
+          "model": "Both writers use imagery, but to opposite ends. Text B's metaphor of a 'generous storehouse' presents the sea as orderly and endless, whereas Text A's 'bin' reduces it to a dump for waste. Where Text B's formal register expresses calm wonder, Text A's plain, inclusive 'we' presses the reader to act."
+        },
+        {
+          "q": "Extend: add a sentence on register.",
+          "a": "Formal and elaborate versus plain and direct.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: which method is most persuasive and why?",
+          "a": "Answers vary.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "'Silver harvests' suggests...",
+          "options": [
+            "wealth",
+            "death"
+          ],
+          "a": "A) wealth",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder.",
+          "a": "A metaphor can be more persuasive when it creates a strong, memorable picture.",
+          "mins": 2
+        }
+      ],
+      "homework": "Find one metaphor in an article and explain how it conveys a view.",
+      "send": "SEND: methods table partly filled. EAL: method glossary. Stretch: compare sentence forms."
+    },
+    {
+      "unit": "Spring 1: Comparing writers' views",
+      "n": 38,
+      "title": "Methods compared: how structure conveys each writer's view",
+      "duration": 50,
+      "bigQuestion": "How does structure carry a writer's view?",
+      "objectives": [
+        "To understand how to compare the ways two writers structure their texts to convey their views"
+      ],
+      "successCriteria": [
+        "All: identify the opening and ending of each text",
+        "Most: compare one structural choice in each",
+        "Some: write a comparative PESTAL-style paragraph"
+      ],
+      "keywords": [
+        {
+          "term": "opening",
+          "def": "how a text begins"
+        },
+        {
+          "term": "ending",
+          "def": "how a text closes"
+        },
+        {
+          "term": "conditional",
+          "def": "an 'if... then' structure"
+        },
+        {
+          "term": "juxtaposition",
+          "def": "placing contrasts side by side"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why might a persuasive article end with a warning, while a letter ends with a feeling?"
+      },
+      "pictures": [
+        {
+          "find": "clear water underwater sunlight",
+          "alt": "Sunlight through clear sea water",
+          "for": "hook"
+        },
+        {
+          "find": "letter and envelope old",
+          "alt": "An old letter and envelope",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 HT6 English Language scheme (methods and perspectives)",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials (Section A)",
+        "Text A 'We Are Treating the Sea as a Bin' (teacher-written modern article, pupil PDF)",
+        "Text B 'Letter from the Harbour Wall' (teacher-written in a nineteenth-century style, pupil PDF)",
+        "PETZAAL and PESTAL scaffolds (school framework cards)"
+      ],
+      "starter": [
+        {
+          "q": "Text A uses 'we' to...",
+          "options": [
+            "share responsibility",
+            "exclude"
+          ],
+          "a": "A) share responsibility",
+          "mins": 1
+        },
+        {
+          "q": "A conditional is...",
+          "options": [
+            "if... then",
+            "a list"
+          ],
+          "a": "A) if... then",
+          "mins": 1
+        },
+        {
+          "q": "Juxtaposition places...",
+          "options": [
+            "contrasts side by side",
+            "facts in order"
+          ],
+          "a": "A) contrasts side by side",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Two structures",
+          "note": "Compare.",
+          "compare": {
+            "left": {
+              "title": "Text A",
+              "points": [
+                "opens with a juxtaposition of clear and choked waters",
+                "ends with a conditional warning"
+              ]
+            },
+            "right": {
+              "title": "Text B",
+              "points": [
+                "opens with a personal address and place",
+                "ends with a sweeping, confident claim"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Why endings matter",
+          "bullets": [
+            "The last line stays with the reader",
+            "A warning pushes to action",
+            "A claim confirms a belief"
+          ],
+          "note": "Endings reveal purpose."
+        },
+        {
+          "heading": "Model: comparing structure",
+          "note": "Labelled.",
+          "model": {
+            "problem": "Compare how the writers end",
+            "steps": [
+              "A ends: 'we should not be surprised when it stops feeding us'",
+              "Structure: a conditional warning",
+              "B ends: 'no labour of man could ever empty it'",
+              "Structure: a confident generalisation",
+              "Comparison: A looks to a feared future; B rests in present certainty"
+            ],
+            "answer": "Text A closes with a conditional warning that points to a dangerous future, whereas Text B ends on a confident generalisation that settles the reader in present security."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "Why does Text A open with two contrasting dives?",
+            "options": [
+              "To show loss through a before-and-after juxtaposition",
+              "To describe diving equipment",
+              "To entertain only"
+            ],
+            "answer": 0,
+            "why": "The juxtaposition sets up the argument."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Name Text A's ending structure and its effect.",
+          "a": "Conditional warning: it makes the reader imagine consequences.",
+          "mins": 3,
+          "model": "'If we keep..., we should not be surprised...': if-then. Effect: a consequence the reader must avoid."
+        },
+        {
+          "q": "How does Text B's opening address shape tone?",
+          "a": "'My dear Sister' creates intimacy and warmth.",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: in the portal response box, write a comparative paragraph: 'Compare how the writers structure their texts to convey their views.' Starter: 'The writers structure their texts very differently:...'",
+          "a": "An integrated paragraph comparing openings and endings with effect.",
+          "mins": 13,
+          "model": "The writers structure their texts very differently: Text A opens by juxtaposing clear and 'choked' waters, then builds to a conditional warning, whereas Text B begins with an intimate address and flows towards a confident claim. Where Text A's structure pushes readers towards action, Text B's settles them in admiration."
+        },
+        {
+          "q": "Extend: comment on sentence length at the end of each.",
+          "a": "Text A's measured, final warning; Text B's long, rolling sentence.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: how does form (article and letter) shape structure?",
+          "a": "Articles argue towards action; letters share feelings with one reader.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Text B's ending is...",
+          "options": [
+            "a confident claim",
+            "a warning"
+          ],
+          "a": "A) a confident claim",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder.",
+          "a": "Purpose: the article persuades, the letter shares.",
+          "mins": 2
+        }
+      ],
+      "homework": "Compare the openings of two articles on the same topic.",
+      "send": "SEND: structure map. EAL: structural glossary. Stretch: add audience impact."
+    },
+    {
+      "unit": "Spring 1: Comparing writers' views",
+      "n": 39,
+      "title": "Methods compared: timed comparative paragraphs and unit check",
+      "duration": 50,
+      "bigQuestion": "What can I now do as a comparative reader?",
+      "objectives": [
+        "To understand how to compare views and methods in short, timed paragraphs, and where to improve next"
+      ],
+      "successCriteria": [
+        "All: complete the unit check",
+        "Most: write two timed comparative paragraphs",
+        "Some: set a target for the independent study weeks"
+      ],
+      "keywords": [
+        {
+          "term": "unit check",
+          "def": "a short test of the unit"
+        },
+        {
+          "term": "comparative paragraph",
+          "def": "one idea, both texts"
+        },
+        {
+          "term": "timed",
+          "def": "within a strict time"
+        },
+        {
+          "term": "target",
+          "def": "a specific next step"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What one comparison skill do you now have that you did not have three weeks ago?"
+      },
+      "pictures": [
+        {
+          "find": "stopwatch",
+          "alt": "A stopwatch",
+          "for": "hook"
+        },
+        {
+          "find": "ocean horizon",
+          "alt": "The ocean horizon",
+          "for": "keywords"
+        }
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "hands-down",
+        "exit": "teams-poll"
+      },
+      "resources": [
+        "Tarbiyyah Secondary English scheme of work 2026-27, Year 10 HT6 English Language scheme (assessment and DIRT); unit quiz in the portal",
+        "Pearson Edexcel International GCSE English Language B (4EB1) specification and sample assessment materials (Section A)",
+        "Text A 'We Are Treating the Sea as a Bin' (teacher-written modern article, pupil PDF)",
+        "Text B 'Letter from the Harbour Wall' (teacher-written in a nineteenth-century style, pupil PDF)",
+        "Success ladder (pupil PDF)"
+      ],
+      "starter": [
+        {
+          "q": "Text A ends with...",
+          "options": [
+            "a conditional warning",
+            "a greeting"
+          ],
+          "a": "A) a conditional warning",
+          "mins": 1
+        },
+        {
+          "q": "'Whereas' is used for...",
+          "options": [
+            "contrast",
+            "time"
+          ],
+          "a": "A) contrast",
+          "mins": 1
+        },
+        {
+          "q": "Integrated means...",
+          "options": [
+            "both texts together",
+            "separately"
+          ],
+          "a": "A) both texts together",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Today",
+          "bullets": [
+            "Unit check (portal quiz)",
+            "Two timed paragraphs",
+            "Self-assess",
+            "Independent study plan"
+          ],
+          "note": "Week 4 to 6 are independent study in the founding year."
+        },
+        {
+          "heading": "Model: one comparative paragraph in 7 minutes",
+          "note": "Live.",
+          "model": {
+            "problem": "Compare the writers' attitudes to humanity's role",
+            "steps": [
+              "Shared: both see humans as dependent on the sea",
+              "B: humans as grateful receivers",
+              "A: humans as careless destroyers",
+              "Evidence from each",
+              "Judgement"
+            ],
+            "answer": "Both writers see humans as dependent on the sea; however, Text B casts us as grateful receivers of 'silver harvests', whereas Text A condemns us for 'treating the sea as a bin'."
+          }
+        },
+        {
+          "heading": "Hinge",
+          "note": "Poll.",
+          "check": {
+            "q": "In 7 minutes, the priority is...",
+            "options": [
+              "one clear point with evidence from both",
+              "every method in both texts",
+              "a long introduction"
+            ],
+            "answer": 0,
+            "why": "Depth on one point beats a rushed list."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Unit check (10 questions in the portal).",
+          "a": "See answer key.",
+          "mins": 6,
+          "model": "Teacher answers question 1: 'What is a viewpoint?' A writer's opinion on an issue."
+        },
+        {
+          "q": "Self-mark.",
+          "a": "Score noted.",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (timed, 2 x 7 minutes): in the portal response box, write two comparative paragraphs: (1) views of the sea; (2) one method each. Starter: 'Both writers...'",
+          "a": "Two integrated paragraphs with evidence from both texts.",
+          "mins": 14,
+          "model": "Paragraph 2 model: 'Text A's inclusive \"we\" draws the reader into shared guilt, whereas Text B's private \"I am persuaded\" expresses calm personal certainty.'"
+        },
+        {
+          "q": "Self-assess against the success ladder.",
+          "a": "Highest step identified.",
+          "mins": 2
+        },
+        {
+          "q": "Independent study plan: choose one of across centuries, synthesis or redrafting.",
+          "a": "A chosen focus.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Confidence comparing texts?",
+          "options": [
+            "high",
+            "medium",
+            "low"
+          ],
+          "a": "A) high",
+          "mins": 1
+        },
+        {
+          "q": "Answer the ponder.",
+          "a": "Answers vary.",
+          "mins": 2
+        }
+      ],
+      "homework": "Independent study (weeks 4 to 6): read one nineteenth-century and one modern article on the same topic and write a comparison grid.",
+      "send": "SEND: frames; extra time. EAL: glossary. Stretch: third paragraph on tone."
     }
   ]
 }
