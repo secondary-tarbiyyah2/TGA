@@ -40,7 +40,9 @@ export function claudeModel(): string {
   return env("AI_MODEL") || DEFAULT_CLAUDE_MODEL;
 }
 
-export type ClaudeMessage = { role: "user" | "assistant"; content: string };
+/** Plain text, or content blocks (e.g. a PDF: { type: "document", source: { type: "base64", media_type: "application/pdf", data } }). */
+export type ClaudeContent = string | Record<string, unknown>[];
+export type ClaudeMessage = { role: "user" | "assistant"; content: ClaudeContent };
 
 export type ClaudeRequest = {
   system?: string;

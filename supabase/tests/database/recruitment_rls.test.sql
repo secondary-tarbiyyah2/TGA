@@ -3,7 +3,7 @@
 -- Headteacher/Admin can read applications, staff can change the review
 -- fields but not what the candidate wrote, and every status change is logged.
 begin;
-select plan(11);
+select plan(13);
 
 insert into auth.users (id, email) values
   ('e1820000-0000-0000-0000-000000000001', 'ht-recruit@example.com'),
@@ -31,7 +31,7 @@ insert into public.job_applications (
   'qts', 'PGCE', '2_5', 'some', 'part_time',
   repeat('I would love to teach. ', 10),
   '[{"name":"Ref One","email":"one@example.com"},{"name":"Ref Two","email":"two@example.com"}]'::jsonb,
-  'willing', 'Test Candidate', true, true
+  'not_available', 'Test Candidate', true, true
 );
 
 select matches((select reference from public.job_applications where id = 'e1820000-0000-0000-0000-0000000000b1'), '^TGA-J-\d+$', 'applications get a TGA-J reference');
@@ -68,6 +68,14 @@ select is(
 select throws_ok(
   $$update public.job_applications set statement = 'changed' where id = 'e1820000-0000-0000-0000-0000000000b1'$$,
   '42501', null, 'staff cannot change what the candidate wrote'
+);
+select throws_ok(
+  $$update public.job_applications set ai_score = 99, ai_recommendation = 'strong' where id = 'e1820000-0000-0000-0000-0000000000b1'$$,
+  '42501', null, 'staff cannot write the AI screening themselves'
+);
+select lives_ok(
+  $$update public.recruitment_settings set auto_screen = false, screening_criteria = 'TEST criteria' where id$$,
+  'the headteacher can change the AI screening settings'
 );
 select throws_ok(
   $$insert into public.job_application_events (application_id, kind, to_status, created_by) values ('e1820000-0000-0000-0000-0000000000b1', 'status', 'hired', 'e1820000-0000-0000-0000-000000000001')$$,

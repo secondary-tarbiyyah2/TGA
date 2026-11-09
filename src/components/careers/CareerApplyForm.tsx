@@ -189,7 +189,7 @@ function validateStep(step: number, v: Values, cv: File | null, docs: File[]): E
     else if (docs.some((d) => d.size > MAX_FILE_BYTES)) e.documents = "Each document must be 10 MB or less.";
   }
   if (step === 5) {
-    req("dbsStatus", "Please tell us about your DBS check.");
+    req("dbsStatus", "Please tell us about your criminal record check.");
     if (!v.declarationTrue) e.declarationTrue = "Please confirm the declaration.";
     if (!v.consentData) e.consentData = "Please agree to how we use your information.";
     if (v.declarationName.trim().length < 2) e.declarationName = "Please type your full name to sign.";
@@ -407,7 +407,13 @@ export function CareerApplyForm({ email: schoolEmail }: { email: string }) {
         setRoles(list);
         const match = wanted === "general" ? "general" : list.find((r) => r.slug === wanted)?.id;
         if (match) setValues((v) => ({ ...v, vacancyId: match }));
-        else setValues((v) => (v.vacancyId && v.vacancyId !== "general" && !list.some((r) => r.id === v.vacancyId) ? { ...v, vacancyId: "" } : v));
+        else
+          setValues((v) => {
+            const stale = v.vacancyId && v.vacancyId !== "general" && !list.some((r) => r.id === v.vacancyId);
+            const current = stale ? "" : v.vacancyId;
+            // With a single advertised role (e.g. one "all subjects" vacancy), choose it for them.
+            return { ...v, vacancyId: current || (list.length === 1 ? list[0].id : "") };
+          });
       });
   }, []);
 
@@ -734,7 +740,7 @@ export function CareerApplyForm({ email: schoolEmail }: { email: string }) {
             <Radios id="teacherStatus" legend="Your teacher status" options={TEACHER_STATUS} value={v.teacherStatus} onChange={(x) => set("teacherStatus", x)} error={errors.teacherStatus} />
             <TextInput id="highestQualification" label="Your highest qualification" required value={v.highestQualification} onChange={(x) => set("highestQualification", x)} error={errors.highestQualification} maxLength={300} placeholder="e.g. BSc Mathematics (2:1), PGCE Secondary" />
             <TextArea id="qualifications" label="Other qualifications and training" value={v.qualifications} onChange={(x) => set("qualifications", x)} hint="Degrees, teaching qualifications and recent training, with the institution and year." rows={4} />
-            <TextArea id="islamicQualifications" label="Islamic qualifications, ijazah or study" value={v.islamicQualifications} onChange={(x) => set("islamicQualifications", x)} hint="For example an ijazah in Hafs, an alimiyyah course, or Arabic study, with where and with whom." rows={4} />
+            <TextArea id="islamicQualifications" label="Islamic qualifications, ijazah or study" value={v.islamicQualifications} onChange={(x) => set("islamicQualifications", x)} hint="For example Qur'an study, an ijazah, an alimiyyah course or Arabic study, with where and with whom. An ijazah is welcome but not required." rows={4} />
             <Checks id="subjects" legend="Subjects or areas you can teach" options={SUBJECTS} value={v.subjects} onChange={(x) => set("subjects", x)} error={errors.subjects} hint="Choose all that apply." />
             <Checks id="yearGroups" legend="Year groups you have taught" options={YEAR_GROUPS} value={v.yearGroups} onChange={(x) => set("yearGroups", x)} required={false} />
             <TextInput id="languages" label="Languages you speak" value={v.languages} onChange={(x) => set("languages", x)} maxLength={300} placeholder="e.g. English, Arabic, Urdu" />
@@ -911,7 +917,7 @@ export function CareerApplyForm({ email: schoolEmail }: { email: string }) {
 
         {step === 5 && (
           <>
-            <Radios id="dbsStatus" legend="DBS (criminal record) check" options={DBS_STATUS} value={v.dbsStatus} onChange={(x) => set("dbsStatus", x)} error={errors.dbsStatus} hint="Every post works with children, so every appointment needs an enhanced DBS check with a barred list check (or an overseas check)." />
+            <Radios id="dbsStatus" legend="Criminal record check" options={DBS_STATUS} value={v.dbsStatus} onChange={(x) => set("dbsStatus", x)} error={errors.dbsStatus} hint="We recruit internationally, so we know many teachers don't have a UK DBS. Just tell us what applies to you; if you are shortlisted we agree the right checks for where you live." />
             <div>
               <label htmlFor="f-howHeard" className="block text-sm font-medium text-ink">
                 Where did you hear about this role? <span className="font-normal text-ink/60">(optional)</span>
@@ -949,7 +955,7 @@ export function CareerApplyForm({ email: schoolEmail }: { email: string }) {
             <div className="rounded-xl border border-gold-light/60 p-4 text-sm text-ink/85">
               <h3 className="font-semibold text-ink">Our commitment to safeguarding</h3>
               <p className="mt-1">
-                Tarbiyyah Global Academy is committed to safeguarding and promoting the welfare of children and expects all staff to share this commitment. We follow safer recruitment practice: shortlisted candidates are asked to complete a self-disclosure, we take up references before interview where you allow it, verify identity and qualifications, and carry out an enhanced DBS check with a barred list check (or an overseas check). We may also carry out online searches on shortlisted candidates.
+                Tarbiyyah Global Academy is committed to safeguarding and promoting the welfare of children and expects all staff to share this commitment. If you are shortlisted, we ask you to complete a self-disclosure, take up references (before interview where you allow it), verify your identity and qualifications, and carry out the criminal record checks that fit where you live: an enhanced DBS in the UK, or a police certificate or equivalent from your country. Where no such check exists, we agree alternative checks with you. We may also carry out online searches on shortlisted candidates.
               </p>
             </div>
 

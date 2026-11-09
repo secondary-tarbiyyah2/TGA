@@ -39,7 +39,7 @@ export default async function CareersPage() {
             <Kicker>Careers</Kicker>
             <h1 className="text-h1 font-serif font-semibold text-ink">Teach with purpose.</h1>
             <p className="mt-5 max-w-xl text-lg text-ink/75">
-              Tarbiyyah Global Academy is a live online Islamic school for Year 1 to Year 11, opening in January 2027. We are looking for teachers who love their subject, care about every child, and want to teach pupils wherever home is.
+              Tarbiyyah Global Academy is a live online Islamic school for Year 1 to Year 11, opening in January 2027. We are looking for teachers in every subject, in any country, who love what they teach, care about every child, and want to teach pupils wherever home is.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a href="#vacancies" className="inline-flex min-h-11 items-center justify-center rounded-full bg-gold-500 px-6 py-3 text-sm font-semibold text-ink-900 transition-all hover:brightness-95">
@@ -93,7 +93,7 @@ export default async function CareersPage() {
         <Container className="max-w-3xl">
           <h2 id="safeguarding-heading" className="font-serif text-xl font-semibold text-ink">Our commitment to safeguarding</h2>
           <p className="mt-3 text-ink/80">
-            Tarbiyyah Global Academy is committed to safeguarding and promoting the welfare of children and expects all staff to share this commitment. All posts are subject to safer recruitment checks, including references, identity and qualification checks, and an enhanced DBS check with a barred list check (or an overseas criminal record check for candidates outside the UK).
+            Tarbiyyah Global Academy is committed to safeguarding and promoting the welfare of children and expects all staff to share this commitment. We recruit internationally. Every appointment is subject to safer recruitment checks: references, identity and qualification checks, and the criminal record checks that fit where you live (an enhanced DBS in the UK, or a police certificate or equivalent from your country). Where no such check exists, we agree alternative checks with you.
           </p>
           <p className="mt-3 text-ink/80">
             Questions about a role? Email{" "}

@@ -2,8 +2,10 @@
 
 import { useCallback, useEffect, useState, type ReactNode } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { callEdgeFunction, edgeErrorMessage } from "@/lib/learn/edge";
 import { isoToUkLocal, ukLocalToIso } from "@/lib/learn/openEvening";
 import {
+  AI_RECOMMENDATIONS,
   APPLICATION_STATUSES,
   DBS_STATUS,
   HOURS_PREFERENCE,
@@ -53,6 +55,7 @@ export function ApplicationDetail({
   staffNames: Map<string, string>;
   userId: string | null;
 }) {
+  const [screening, setScreening] = useState(false);
   const supabase = getSupabaseClient();
   const [events, setEvents] = useState<ApplicationEvent[]>([]);
   const [note, setNote] = useState("");
@@ -80,6 +83,27 @@ export function ApplicationDetail({
     if (error) return setMessage({ text: "Couldn't save that change. Please try again.", error: true });
     onChanged(patch);
     setMessage({ text: done });
+    await loadEvents();
+  }
+
+  async function runScreening() {
+    setScreening(true);
+    setMessage(null);
+    const res = await callEdgeFunction("recruitment-screen", { action: "screen", ids: [app.id] });
+    setScreening(false);
+    const one = (res.results as Record<string, { ok: boolean; error?: string }> | undefined)?.[app.id];
+    if (!res.ok || !one?.ok || res.stopped) {
+      const code = res.stopped ? "ai_daily_limit" : one?.error || res.error;
+      return setMessage({
+        text: code === "ai_not_configured" ? "AI isn't set up yet: add an ANTHROPIC_API_KEY to the Supabase secrets." : code === "ai_daily_limit" ? "Today's AI limit has been reached. Please try again tomorrow." : res.ok ? "The AI couldn't read this application just now. Please try again." : edgeErrorMessage(res),
+        error: true,
+      });
+    }
+    if (supabase) {
+      const { data } = await supabase.from("job_applications").select("ai_score, ai_recommendation, ai_screening, ai_screened_at").eq("id", app.id).maybeSingle();
+      if (data) onChanged(data as Partial<JobApplication>);
+    }
+    setMessage({ text: "AI screening updated." });
     await loadEvents();
   }
 
@@ -217,6 +241,8 @@ export function ApplicationDetail({
         </section>
       )}
 
+      <AiPanel app={app} busy={screening} onRun={runScreening} />
+
       <div className="grid gap-5 xl:grid-cols-[1fr_22rem]">
         <div className="space-y-5">
           <Block title="1. Personal details">
@@ -338,7 +364,7 @@ export function ApplicationDetail({
                 <li key={e.id} className="text-sm">
                   <p className="text-xs text-ink/65">
                     {ukDateTime(e.created_at)}
-                    {e.created_by ? ` · ${staffNames.get(e.created_by) || "Staff"}` : e.kind === "email" ? " · automatic" : ""}
+                    {e.created_by ? ` · ${staffNames.get(e.created_by) || "Staff"}` : e.kind === "email" || e.kind === "ai" ? " · automatic" : ""}
                   </p>
                   {e.kind === "status" ? (
                     <p className="text-ink">Moved from <strong>{statusLabel(e.from_status)}</strong> to <strong>{statusLabel(e.to_status)}</strong></p>
@@ -363,5 +389,83 @@ export function ApplicationDetail({
         </aside>
       </div>
     </div>
+  );
+}
+
+const MET_TONE = { yes: "good", partly: "warn", no: "bad", unclear: "neutral" } as const;
+const MET_LABEL = { yes: "Met", partly: "Partly", no: "Not shown", unclear: "Unclear" } as const;
+
+function AiList({ title, items }: { title: string; items: string[] }) {
+  if (!items.length) return null;
+  return (
+    <div>
+      <h4 className="text-sm font-semibold text-ink">{title}</h4>
+      <ul className="mt-1 list-disc space-y-1 pl-5 text-sm text-ink/85">
+        {items.map((x) => (
+          <li key={x}>{x}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+/** The AI's first read. Advisory only: shown to the panel, never acted on automatically. */
+function AiPanel({ app, busy, onRun }: { app: JobApplication; busy: boolean; onRun: () => void }) {
+  const ai = app.ai_screening;
+  const rec = AI_RECOMMENDATIONS.find((r) => r.value === app.ai_recommendation);
+  return (
+    <section className={`${ui.card} border-gold-500/60`}>
+      <div className={ui.cardHead}>
+        <div>
+          <h3 className={ui.sectionTitle}>AI first read</h3>
+          <p className={ui.hint}>Advisory only. It doesn&apos;t see the candidate&apos;s name, contact details, location or check answers. A person makes every decision.</p>
+        </div>
+        <Button size="sm" onClick={onRun} disabled={busy}>{busy ? "Reading the application…" : ai ? "Run again" : "Screen with AI"}</Button>
+      </div>
+      {!ai ? (
+        <p className="text-sm text-ink/70">Not screened yet. New applications are screened automatically when that is switched on in Email settings.</p>
+      ) : (
+        <div className="space-y-4">
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="text-3xl font-semibold tabular-nums text-ink">{ai.score}<span className="text-base font-normal text-ink/60">/100</span></span>
+            {rec && <StatusChip tone={rec.tone}>{rec.label}</StatusChip>}
+            <span className="text-xs text-ink/65">
+              {app.ai_screened_at ? `Screened ${ukDateTime(app.ai_screened_at)}` : ""}
+              {ai.cv_read ? " · CV read" : " · CV not read"}
+            </span>
+          </div>
+          <p className="text-sm leading-relaxed text-ink">{ai.summary}</p>
+          {ai.subjects_fit && <p className="text-sm text-ink/85"><strong>Subjects:</strong> {ai.subjects_fit}</p>}
+          {ai.requirements.length > 0 && (
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[520px] text-left text-sm">
+                <thead>
+                  <tr className="border-b border-gold-light/60 text-xs uppercase tracking-wide text-ink/65">
+                    <th className="py-2 pr-3 font-medium">Requirement</th>
+                    <th className="py-2 pr-3 font-medium">Shown?</th>
+                    <th className="py-2 font-medium">Evidence</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gold-light/40">
+                  {ai.requirements.map((r, i) => (
+                    <tr key={i}>
+                      <td className="py-2 pr-3 align-top">{r.requirement}</td>
+                      <td className="py-2 pr-3 align-top"><StatusChip tone={MET_TONE[r.met]}>{MET_LABEL[r.met]}</StatusChip></td>
+                      <td className="py-2 align-top text-ink/80">{r.evidence}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+          <div className="grid gap-4 md:grid-cols-2">
+            <AiList title="Strengths" items={ai.strengths} />
+            <AiList title="Concerns" items={ai.concerns} />
+            <AiList title="To check" items={ai.checks} />
+            <AiList title="Suggested interview questions" items={ai.interview_questions} />
+          </div>
+        </div>
+      )}
+    </section>
   );
 }

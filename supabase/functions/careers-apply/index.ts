@@ -21,6 +21,7 @@ import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders, jsonResponse } from "../_shared/cors.ts";
 import { emailShell, sendEmail } from "../_shared/resend.ts";
 import { hashIp, isRateLimited, recordAttempt } from "../_shared/spam.ts";
+import { screenApplication, screeningConfigured, type AiScreening } from "../_shared/recruitmentScreen.ts";
 
 const supabase = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
 const FALLBACK_INBOX = Deno.env.get("ADMISSIONS_EMAIL") || "globalacademy@tarbiyyah.co.uk";
@@ -41,7 +42,7 @@ const TEACHER_STATUS = ["qts", "qtls", "overseas", "training", "none"];
 const YEARS_EXPERIENCE = ["none", "under_2", "2_5", "5_10", "over_10"];
 const ONLINE_EXPERIENCE = ["regular", "some", "none"];
 const HOURS = ["full_time", "part_time", "either"];
-const DBS = ["enhanced_update_service", "enhanced", "willing", "overseas_check"];
+const DBS = ["enhanced_update_service", "enhanced", "willing", "overseas_check", "overseas_willing", "not_available"];
 const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
 const LABELS: Record<string, Record<string, string>> = {
@@ -50,7 +51,14 @@ const LABELS: Record<string, Record<string, string>> = {
   yearsExperience: { none: "None yet", under_2: "Less than 2 years", "2_5": "2 to 5 years", "5_10": "5 to 10 years", over_10: "More than 10 years" },
   onlineExperience: { regular: "Teaches online regularly", some: "Some online teaching", none: "No online teaching yet" },
   hours: { full_time: "Full-time", part_time: "Part-time", either: "Either" },
-  dbs: { enhanced_update_service: "Enhanced DBS on the Update Service", enhanced: "Enhanced DBS (not on the Update Service)", willing: "Will apply for an Enhanced DBS", overseas_check: "Lives outside the UK: will provide an overseas criminal record check" },
+  dbs: {
+    enhanced_update_service: "UK: Enhanced DBS on the Update Service",
+    enhanced: "UK: Enhanced DBS (not on the Update Service)",
+    willing: "UK: no DBS yet, happy to apply",
+    overseas_check: "Outside the UK: has a police / criminal record certificate",
+    overseas_willing: "Outside the UK: can get a police / criminal record certificate",
+    not_available: "No such check available where they live, or not sure: agree alternative checks",
+  },
 };
 
 type Job = { employer: string; role: string; from: string; to: string; current: boolean; reason: string };
@@ -291,12 +299,9 @@ Deno.serve(async (req) => {
   const reference = (saved as { reference: string }).reference;
 
   // ── emails (best effort: the application is already safe) ──
-  const { data: settingsRow } = await supabase.from("recruitment_settings").select("notify_email, attach_cv, auto_acknowledge").eq("id", true).maybeSingle();
-  const settings = (settingsRow as { notify_email: string; attach_cv: boolean; auto_acknowledge: boolean } | null) || { notify_email: FALLBACK_INBOX, attach_cv: true, auto_acknowledge: true };
+  const { data: settingsRow } = await supabase.from("recruitment_settings").select("notify_email, attach_cv, auto_acknowledge, auto_screen").eq("id", true).maybeSingle();
+  const settings = (settingsRow as { notify_email: string; attach_cv: boolean; auto_acknowledge: boolean; auto_screen: boolean } | null) || { notify_email: FALLBACK_INBOX, attach_cv: true, auto_acknowledge: true, auto_screen: true };
   const fullName = `${firstName} ${lastName}`;
-
-  const inbox = await notifyInbox(settings, { ...row, reference }, cvBytes && settings.attach_cv && cvBytes.length <= MAX_ATTACH_BYTES ? { bytes: cvBytes, filename: `${reference} CV ${safeName(fullName)}.${cvType}` } : null);
-  await logEmail(id, inbox.ok ? `Application summary emailed to ${settings.notify_email}.` : `Could not email the application summary to ${settings.notify_email}: ${inbox.detail.slice(0, 300)}`);
 
   let emailSent = false;
   if (settings.auto_acknowledge) {
@@ -304,6 +309,22 @@ Deno.serve(async (req) => {
     emailSent = ack.ok;
     await logEmail(id, ack.ok ? `Acknowledgement sent to ${email}.` : `Could not send the acknowledgement to ${email}: ${ack.detail.slice(0, 300)}`);
   }
+
+  // The AI screening (if on) runs first so the inbox email can include it.
+  // It takes a little while, so it runs after the candidate has their answer.
+  const attachment = cvBytes && settings.attach_cv && cvBytes.length <= MAX_ATTACH_BYTES ? { bytes: cvBytes, filename: `${reference} CV ${safeName(fullName)}.${cvType}` } : null;
+  const afterResponse = async () => {
+    let ai: AiScreening | null = null;
+    if (settings.auto_screen && screeningConfigured()) {
+      const r = await screenApplication(supabase, id, null).catch(() => null);
+      if (r && r.ok) ai = r.screening;
+    }
+    const inbox = await notifyInbox(settings, { ...row, reference }, attachment, ai);
+    await logEmail(id, inbox.ok ? `Application summary emailed to ${settings.notify_email}.` : `Could not email the application summary to ${settings.notify_email}: ${inbox.detail.slice(0, 300)}`);
+  };
+  const runtime = (globalThis as { EdgeRuntime?: { waitUntil?: (p: Promise<unknown>) => void } }).EdgeRuntime;
+  if (runtime?.waitUntil) runtime.waitUntil(afterResponse().catch((e) => console.error("careers-apply background", e)));
+  else await afterResponse().catch((e) => console.error("careers-apply background", e));
 
   return jsonResponse({ ok: true, reference, emailSent });
 });
@@ -322,7 +343,7 @@ async function acknowledge(to: string, fullName: string, callName: string, refer
       `<ol style="margin:0 0 14px;padding-left:20px;line-height:1.55;">` +
       `<li>We read every application carefully against the role.</li>` +
       `<li>If you are shortlisted, we will invite you to an online interview and, for teaching roles, a short sample lesson.</li>` +
-      `<li>For shortlisted candidates we take up references and carry out the safer recruitment checks every school must make, including an enhanced DBS check (or an overseas check) and online searches.</li>` +
+      `<li>For shortlisted candidates we take up references and carry out the safer recruitment checks every school must make. We agree the right criminal record checks for where you live, as we recruit internationally.</li>` +
       `</ol>` +
       `<p style="margin:0 0 14px;line-height:1.55;">If you have any questions, reply to this email or write to <a href="mailto:${esc(replyInbox)}" style="color:#5E4B1E;">${esc(replyInbox)}</a>.</p>` +
       `<p style="margin:0;line-height:1.55;">JazakAllahu khayran,<br>Tarbiyyah Global Academy</p>`,
@@ -345,7 +366,7 @@ type SavedRow = Record<string, unknown> & {
   documents: { name: string }[];
 };
 
-async function notifyInbox(settings: { notify_email: string }, a: SavedRow, attachment: { bytes: Uint8Array; filename: string } | null) {
+async function notifyInbox(settings: { notify_email: string }, a: SavedRow, attachment: { bytes: Uint8Array; filename: string } | null, ai: AiScreening | null) {
   const v = (x: unknown) => (x === null || x === undefined || x === "" ? `<span style="color:#888;">Not given</span>` : esc(String(x)).replace(/\n/g, "<br>"));
   const row = (label: string, value: string) =>
     `<tr><td style="padding:5px 12px 5px 0;vertical-align:top;color:#6b6b6b;width:38%;">${esc(label)}</td><td style="padding:5px 0;vertical-align:top;">${value}</td></tr>`;
@@ -365,11 +386,25 @@ async function notifyInbox(settings: { notify_email: string }, a: SavedRow, atta
     )
     .join("");
 
+  const REC: Record<string, string> = { strong: "Strong match", possible: "Possible", unlikely: "Unlikely" };
+  const bullets = (xs: string[]) => (xs.length ? `<ul style="margin:4px 0 0;padding-left:20px;">${xs.map((x) => `<li style="margin:0 0 4px;">${esc(x)}</li>`).join("")}</ul>` : `<span style="color:#888;">None noted</span>`);
+  const aiBlock = ai
+    ? `<div style="margin:18px 0 0;padding:14px 16px;border:1px solid #E3C98F;border-radius:10px;background:#FBF7EE;">` +
+      `<p style="margin:0 0 6px;font-size:13px;color:#5E4B1E;"><strong>AI first read: ${ai.score}/100 · ${esc(REC[ai.recommendation] || ai.recommendation)}</strong>${ai.cv_read ? "" : " (CV not read)"}</p>` +
+      `<p style="margin:0 0 8px;line-height:1.5;">${esc(ai.summary)}</p>` +
+      (ai.subjects_fit ? `<p style="margin:0 0 8px;line-height:1.5;"><strong>Subjects:</strong> ${esc(ai.subjects_fit)}</p>` : "") +
+      `<p style="margin:8px 0 0;"><strong>Strengths</strong></p>${bullets(ai.strengths)}` +
+      `<p style="margin:8px 0 0;"><strong>Concerns</strong></p>${bullets(ai.concerns)}` +
+      `<p style="margin:8px 0 0;"><strong>To check</strong></p>${bullets(ai.checks)}` +
+      `<p style="margin:10px 0 0;font-size:12px;color:#6b6b6b;">Advisory only: it doesn't see the candidate's name, contact details or location, and a person makes every decision. Interview questions are in the portal.</p>` +
+      `</div>`
+    : "";
   const html = emailShell(
     `<p style="margin:0 0 4px;font-size:13px;color:#6b6b6b;">New job application · ${esc(a.reference)}</p>` +
       `<h1 style="font-size:22px;margin:0 0 4px;">${esc(`${a.first_name} ${a.last_name}`)}</h1>` +
       `<p style="margin:0 0 16px;font-size:15px;">for <strong>${esc(a.vacancy_title)}</strong></p>` +
-      `<p style="margin:0 0 8px;"><a href="${LEARN_SITE_URL}/admin/recruitment/?app=${encodeURIComponent(String(a.id))}" style="display:inline-block;background:#B08E45;color:#1B1E21;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:bold;">Open in the portal</a></p>` +
+      aiBlock +
+      `<p style="margin:16px 0 8px;"><a href="${LEARN_SITE_URL}/admin/recruitment/?app=${encodeURIComponent(String(a.id))}" style="display:inline-block;background:#B08E45;color:#1B1E21;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:bold;">Open in the portal</a></p>` +
       section(
         "1. Personal details",
         row("Name", v(`${a.title ? `${a.title} ` : ""}${a.first_name} ${a.last_name}${a.preferred_name ? ` (known as ${a.preferred_name})` : ""}`)) +
@@ -407,7 +442,7 @@ async function notifyInbox(settings: { notify_email: string }, a: SavedRow, atta
       section("6. References", `<tr><td style="padding:6px 0;"><ul style="margin:0;padding-left:20px;">${refs}</ul></td></tr>`) +
       section(
         "7. Checks and declarations",
-        row("DBS", v(LABELS.dbs[String(a.dbs_status)])) +
+        row("Criminal record check", v(LABELS.dbs[String(a.dbs_status)])) +
           row("Heard about us", v(a.how_heard)) +
           row("Declaration signed by", v(a.declaration_name)) +
           row("Documents", `CV: ${attachment ? "attached to this email" : "in the portal"}${a.documents.length ? `<br>Supporting: ${a.documents.map((d) => esc(d.name)).join(", ")} (in the portal)` : ""}`),
@@ -418,7 +453,7 @@ async function notifyInbox(settings: { notify_email: string }, a: SavedRow, atta
   try {
     return await sendEmail({
       to: settings.notify_email,
-      subject: `New job application: ${a.reference} · ${a.first_name} ${a.last_name} · ${a.vacancy_title}`,
+      subject: `New job application: ${a.reference} · ${a.first_name} ${a.last_name} · ${a.vacancy_title}${ai ? ` · AI ${ai.score}/100` : ""}`,
       html,
       attachments: attachment ? [{ filename: attachment.filename, content: toBase64(attachment.bytes) }] : undefined,
     });

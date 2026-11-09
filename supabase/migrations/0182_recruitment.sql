@@ -166,7 +166,10 @@ create table if not exists public.job_applications (
   referees jsonb not null check (jsonb_typeof(referees) = 'array' and jsonb_array_length(referees) between 2 and 3),
 
   -- 7. Declarations
-  dbs_status text not null check (dbs_status in ('enhanced_update_service', 'enhanced', 'willing', 'overseas_check')),
+  -- We recruit internationally: many candidates have no DBS, and some live
+  -- where no police certificate exists. 'not_available' is a valid answer;
+  -- the school then agrees alternative checks at shortlisting.
+  dbs_status text not null check (dbs_status in ('enhanced_update_service', 'enhanced', 'willing', 'overseas_check', 'overseas_willing', 'not_available')),
   how_heard text check (how_heard is null or char_length(how_heard) <= 200),
   declaration_name text not null check (char_length(declaration_name) between 2 and 160),
   declaration_true boolean not null check (declaration_true),
@@ -176,6 +179,12 @@ create table if not exists public.job_applications (
   cv_path text,
   cv_filename text,
   documents jsonb not null default '[]'::jsonb check (jsonb_typeof(documents) = 'array'),
+
+  -- AI screening (advisory only; written by the service role, never by staff)
+  ai_score smallint check (ai_score is null or ai_score between 0 and 100),
+  ai_recommendation text check (ai_recommendation is null or ai_recommendation in ('strong', 'possible', 'unlikely')),
+  ai_screening jsonb,
+  ai_screened_at timestamptz,
 
   -- Review
   rating smallint check (rating is null or rating between 1 and 5),
@@ -187,6 +196,7 @@ create table if not exists public.job_applications (
 
 create index if not exists job_applications_status_idx on public.job_applications (status, created_at desc);
 create index if not exists job_applications_vacancy_idx on public.job_applications (vacancy_id, created_at desc);
+create index if not exists job_applications_ai_idx on public.job_applications (ai_score desc nulls last);
 create index if not exists job_applications_email_idx on public.job_applications (lower(email));
 
 alter table public.job_applications enable row level security;
@@ -246,7 +256,7 @@ create trigger job_applications_guard_trg
 create table if not exists public.job_application_events (
   id uuid primary key default gen_random_uuid(),
   application_id uuid not null references public.job_applications(id) on delete cascade,
-  kind text not null check (kind in ('note', 'status', 'email')),
+  kind text not null check (kind in ('note', 'status', 'email', 'ai')),
   body text check (body is null or char_length(body) <= 4000),
   from_status text,
   to_status text,
@@ -298,6 +308,16 @@ create table if not exists public.recruitment_settings (
   notify_email text not null default 'globalacademy@tarbiyyah.co.uk' check (notify_email ~* '^[^\s@]+@[^\s@]+\.[^\s@]+$'),
   attach_cv boolean not null default true,
   auto_acknowledge boolean not null default true,
+  -- AI screening: run automatically on every new application (when an
+  -- ANTHROPIC_API_KEY is set), and the school's own guidance for it.
+  auto_screen boolean not null default true,
+  screening_criteria text not null default
+    'We recruit internationally for live online lessons taught in UK school hours (UK time).' || chr(10) ||
+    'Do not mark anyone down for living outside the UK, for not having a UK DBS, or for having no UK teaching qualification (QTS): we agree suitable checks with shortlisted candidates.' || chr(10) ||
+    'For Qur''an teaching, an ijazah is a bonus, not a requirement: strong recitation, tajweed and experience teaching children matter most.' || chr(10) ||
+    'Value clear evidence of teaching children well, subject knowledge, online teaching experience and a thoughtful statement.' || chr(10) ||
+    'Flag unexplained gaps in employment, missing or weak referees, and availability that does not fit UK school hours.'
+    check (char_length(screening_criteria) <= 4000),
   updated_at timestamptz not null default now()
 );
 
@@ -357,34 +377,20 @@ values (
 )
 on conflict (data_type) do nothing;
 
--- ── starter roles (DRAFTS: not on the website until staff open them) ────
-insert into public.job_vacancies (slug, title, department, summary, description, responsibilities, requirements, desirable, contract_type, hours_text, status, sort_order) values
-  ('primary-class-teacher', 'Primary Class Teacher (Years 1 to 6)', 'Teaching',
-   'Teach a small primary class of no more than 15 pupils, live online, across the national curriculum.',
-   'DRAFT: please review before opening. You will teach a primary class live online, delivering the national curriculum with tarbiyyah (nurturing character and faith) at its heart.',
-   'Plan and teach engaging live lessons on Microsoft Teams.' || chr(10) || 'Set and mark classwork and homework, and track progress.' || chr(10) || 'Work in partnership with parents and the pastoral team.',
-   'Qualified Teacher Status (QTS) or equivalent.' || chr(10) || 'Recent primary teaching experience in the UK national curriculum.' || chr(10) || 'Commitment to Islamic values and to safeguarding children.',
-   'Experience of teaching online.' || chr(10) || 'Experience in an Islamic school setting.',
-   'part_time', null, 'draft', 10),
-  ('secondary-subject-teacher', 'Secondary Subject Teacher (Years 7 to 11)', 'Teaching',
-   'Teach your specialist subject to small secondary classes, live online, up to International GCSE.',
-   'DRAFT: please review before opening. Subjects we may recruit for include Maths, English and Science. Tell us your specialism in your application.',
-   'Plan and teach live lessons in your subject on Microsoft Teams.' || chr(10) || 'Prepare pupils for International GCSE where relevant.' || chr(10) || 'Assess, give feedback and report on progress.',
-   'Qualified Teacher Status (QTS) or equivalent, with a relevant degree.' || chr(10) || 'Secondary teaching experience in your subject.' || chr(10) || 'Commitment to Islamic values and to safeguarding children.',
-   'Experience of examination classes.' || chr(10) || 'Experience of teaching online.',
-   'part_time', null, 'draft', 20),
-  ('quran-teacher', 'Qur''an Teacher', 'Qur''an and Islamic Studies',
-   'Teach recitation, tajweed and memorisation to pupils from Year 1 to Year 11.',
-   'DRAFT: please review before opening. Qur''an is taught every week at every year group. You will help pupils build a lifelong relationship with the Qur''an.',
-   'Teach recitation and tajweed in small live groups.' || chr(10) || 'Track each pupil''s progress in reading and memorisation.' || chr(10) || 'Keep parents informed about progress.',
-   'Excellent recitation with sound knowledge of tajweed.' || chr(10) || 'Experience of teaching Qur''an to children.' || chr(10) || 'Commitment to safeguarding children.',
-   'An ijazah.' || chr(10) || 'Experience of teaching online.',
-   'part_time', null, 'draft', 30),
-  ('arabic-islamic-studies-teacher', 'Arabic and Islamic Studies Teacher', 'Qur''an and Islamic Studies',
-   'Teach Arabic language and Islamic Studies in weekly live lessons across the school.',
-   'DRAFT: please review before opening. Arabic and Islamic Studies are taught every week alongside the national curriculum.',
-   'Plan and teach structured Arabic and Islamic Studies lessons.' || chr(10) || 'Assess pupils and adapt teaching to their level.' || chr(10) || 'Contribute to the character and faith life of the school.',
-   'Strong Arabic and a sound grounding in Islamic Studies.' || chr(10) || 'Experience of teaching children.' || chr(10) || 'Commitment to safeguarding children.',
-   'A relevant degree or ijazah.' || chr(10) || 'Experience of teaching online.',
-   'part_time', null, 'draft', 40)
+-- ── AI usage: allow the recruitment task (cap shared with ai-assist) ─────
+alter table public.ai_usage drop constraint if exists ai_usage_task_check;
+alter table public.ai_usage add constraint ai_usage_task_check
+  check (task in ('report_comment', 'tarbiyah_note', 'message_triage', 'recruitment_screen'));
+
+-- ── the starter role (a draft: not on the website until staff open it) ──
+-- One role covering every subject: candidates choose their subjects on the
+-- form, and the portal filters applications by subject.
+insert into public.job_vacancies (slug, title, department, summary, description, responsibilities, requirements, desirable, contract_type, hours_text, location_text, start_text, status, sort_order) values
+  ('teacher', 'Teacher (all subjects, Year 1 to Year 11)', 'Teaching',
+   'Teach your subject live online to small classes of no more than 15 pupils, from anywhere in the world.',
+   'We are building the founding teaching team for a live online Islamic school, opening in January 2027. We are recruiting across every subject: primary class teaching, Qur''an and tajweed, Arabic, Islamic Studies, English, Maths, Science and other secondary subjects up to International GCSE. Tell us which subjects and year groups you teach when you apply. We welcome applications from teachers in any country, as long as you can teach in UK school hours.',
+   'Plan and teach engaging live lessons on Microsoft Teams.' || chr(10) || 'Set and mark classwork and homework, and track each pupil''s progress.' || chr(10) || 'Nurture good character and love of the deen alongside learning.' || chr(10) || 'Work with parents and colleagues to support every pupil.',
+   'Experience of teaching children, in a school, madrasah or online.' || chr(10) || 'Strong knowledge of the subjects you teach.' || chr(10) || 'Able to teach live in UK school hours (UK time).' || chr(10) || 'A computer with a camera and microphone, and reliable internet.' || chr(10) || 'Commitment to Islamic values and to keeping children safe.',
+   'A teaching qualification (QTS or one from your own country).' || chr(10) || 'An ijazah, for Qur''an teachers.' || chr(10) || 'Experience of teaching online.' || chr(10) || 'Experience of the UK national curriculum or International GCSE.',
+   'flexible', null, 'Remote: live online, from any country', 'January 2027', 'draft', 10)
 on conflict (slug) do nothing;

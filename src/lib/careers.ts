@@ -74,10 +74,12 @@ export const HOURS_PREFERENCE: Option[] = [
 ];
 
 export const DBS_STATUS: Option[] = [
-  { value: "enhanced_update_service", label: "I have an Enhanced DBS and I'm on the Update Service" },
-  { value: "enhanced", label: "I have an Enhanced DBS, not on the Update Service" },
-  { value: "willing", label: "I don't have one yet and I'm happy to apply" },
-  { value: "overseas_check", label: "I live outside the UK and can get an overseas criminal record check" },
+  { value: "enhanced_update_service", label: "I live in the UK and have an Enhanced DBS on the Update Service" },
+  { value: "enhanced", label: "I live in the UK and have an Enhanced DBS (not on the Update Service)" },
+  { value: "willing", label: "I live in the UK and don't have a DBS yet, but I'm happy to apply" },
+  { value: "overseas_check", label: "I live outside the UK and have a police or criminal record certificate from my country" },
+  { value: "overseas_willing", label: "I live outside the UK and can get a police or criminal record certificate" },
+  { value: "not_available", label: "No such check is available where I live, or I'm not sure" },
 ];
 
 export const SUBJECTS = [
@@ -108,6 +110,29 @@ export const YEAR_GROUPS = ["Years 1 to 2", "Years 3 to 6", "Years 7 to 9", "Yea
 export const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] as const;
 
 export const HOW_HEARD = ["Our website", "A flyer or poster", "Social media", "A job board", "A friend or colleague", "A masjid or community group", "Other"] as const;
+
+export type AiRecommendation = "strong" | "possible" | "unlikely";
+
+export const AI_RECOMMENDATIONS: { value: AiRecommendation; label: string; tone: "good" | "warn" | "bad" }[] = [
+  { value: "strong", label: "Strong match", tone: "good" },
+  { value: "possible", label: "Possible", tone: "warn" },
+  { value: "unlikely", label: "Unlikely", tone: "bad" },
+];
+
+/** What the AI screening returns (stored in job_applications.ai_screening). */
+export type AiScreening = {
+  score: number;
+  recommendation: AiRecommendation;
+  summary: string;
+  subjects_fit: string;
+  requirements: { requirement: string; met: "yes" | "partly" | "no" | "unclear"; evidence: string }[];
+  strengths: string[];
+  concerns: string[];
+  checks: string[];
+  interview_questions: string[];
+  cv_read: boolean;
+  model: string;
+};
 
 export type ApplicationStatus = "new" | "reviewing" | "shortlisted" | "interview" | "offered" | "hired" | "unsuccessful" | "withdrawn";
 

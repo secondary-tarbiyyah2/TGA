@@ -1,4 +1,4 @@
-import type { ApplicationStatus, EmploymentEntry, Referee } from "@/lib/careers";
+import type { AiRecommendation, AiScreening, ApplicationStatus, EmploymentEntry, Referee } from "@/lib/careers";
 
 export const RECRUITMENT_BUCKET = "recruitment-documents";
 
@@ -45,16 +45,20 @@ export type JobApplication = {
   documents: { path: string; name: string; size: number; type: string }[];
   rating: number | null;
   interview_at: string | null;
+  ai_score: number | null;
+  ai_recommendation: AiRecommendation | null;
+  ai_screening: AiScreening | null;
+  ai_screened_at: string | null;
   created_at: string;
 };
 
 export const APPLICATION_COLUMNS =
-  "id, reference, vacancy_id, vacancy_title, status, status_changed_at, title, first_name, last_name, preferred_name, email, phone, country, town, right_to_work, teacher_status, highest_qualification, qualifications, islamic_qualifications, subjects, year_groups, languages, years_experience, online_experience, employment, employment_gaps, hours_preference, available_days, earliest_start, notice_period, has_equipment, statement, why_tga, referees, dbs_status, how_heard, declaration_name, cv_path, cv_filename, documents, rating, interview_at, created_at";
+  "id, reference, vacancy_id, vacancy_title, status, status_changed_at, title, first_name, last_name, preferred_name, email, phone, country, town, right_to_work, teacher_status, highest_qualification, qualifications, islamic_qualifications, subjects, year_groups, languages, years_experience, online_experience, employment, employment_gaps, hours_preference, available_days, earliest_start, notice_period, has_equipment, statement, why_tga, referees, dbs_status, how_heard, declaration_name, cv_path, cv_filename, documents, rating, interview_at, ai_score, ai_recommendation, ai_screening, ai_screened_at, created_at";
 
 export type ApplicationEvent = {
   id: string;
   application_id: string;
-  kind: "note" | "status" | "email";
+  kind: "note" | "status" | "email" | "ai";
   body: string | null;
   from_status: string | null;
   to_status: string | null;

@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { Button, Switch, ui } from "@/components/learn/ui";
 
-type Settings = { notify_email: string; attach_cv: boolean; auto_acknowledge: boolean };
+type Settings = { notify_email: string; attach_cv: boolean; auto_acknowledge: boolean; auto_screen: boolean; screening_criteria: string };
 
 export function RecruitmentSettingsPanel() {
   const supabase = getSupabaseClient();
@@ -14,9 +14,9 @@ export function RecruitmentSettingsPanel() {
 
   const load = useCallback(async () => {
     if (!supabase) return;
-    const { data, error } = await supabase.from("recruitment_settings").select("notify_email, attach_cv, auto_acknowledge").eq("id", true).maybeSingle();
+    const { data, error } = await supabase.from("recruitment_settings").select("notify_email, attach_cv, auto_acknowledge, auto_screen, screening_criteria").eq("id", true).maybeSingle();
     if (error) setMessage({ text: "Couldn't load the settings.", error: true });
-    setS((data as Settings | null) || { notify_email: "globalacademy@tarbiyyah.co.uk", attach_cv: true, auto_acknowledge: true });
+    setS((data as Settings | null) || { notify_email: "globalacademy@tarbiyyah.co.uk", attach_cv: true, auto_acknowledge: true, auto_screen: true, screening_criteria: "" });
   }, [supabase]);
 
   useEffect(() => {
@@ -45,7 +45,13 @@ export function RecruitmentSettingsPanel() {
       <div className="-mx-3">
         <Switch checked={s.attach_cv} onChange={(v) => setS({ ...s, attach_cv: v })} label="Attach the CV to the email" hint="CVs over 6 MB are never attached; they are always in the portal." />
         <Switch checked={s.auto_acknowledge} onChange={(v) => setS({ ...s, auto_acknowledge: v })} label="Email candidates a confirmation with their reference" />
+        <Switch checked={s.auto_screen} onChange={(v) => setS({ ...s, auto_screen: v })} label="Ask the AI for a first read of every new application" hint="Its score and summary go in the email and the portal. Advisory only: it never changes a status or contacts a candidate." />
       </div>
+      <label className="block text-sm text-ink">
+        What the AI should look for
+        <textarea rows={7} maxLength={4000} value={s.screening_criteria} onChange={(e) => setS({ ...s, screening_criteria: e.target.value })} className={`mt-1 ${ui.textarea}`} />
+        <span className={ui.hint}>Plain guidance in your own words, one point per line. The AI also reads each role&apos;s essential and desirable points. It never sees names, contact details, location or check answers.</span>
+      </label>
       {message && <p role={message.error ? "alert" : "status"} className={`rounded-lg border px-4 py-2 text-sm ${message.error ? "border-red-200 bg-red-50 text-red-800" : "border-green-200 bg-green-50 text-green-900"}`}>{message.text}</p>}
       <Button variant="primary" onClick={save} disabled={busy}>{busy ? "Saving…" : "Save settings"}</Button>
     </div>
