@@ -26,6 +26,7 @@ import type { FeeBand } from "@/content/seed";
 import { Tabs } from "@/components/learn/Tabs";
 import { WithdrawalNoticesAdmin } from "@/components/learn/fees/WithdrawalNoticesAdmin";
 import { Button, EmptyState, btn, ui } from "@/components/learn/ui";
+import { Select } from "@/components/learn/Select";
 
 type Row = {
   charge: FeeCharge;
@@ -267,25 +268,25 @@ function FeesContent() {
 
       <div className="mb-4 flex flex-wrap items-center gap-2">
         <input type="search" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search family, child, description" aria-label="Search charges" className={`${ui.input} min-w-0 flex-1 sm:max-w-xs`} />
-        <select value={statusFilter} onChange={(e) => setStatusFilter(e.target.value as "all" | ChargeStatus)} className={inputCls} aria-label="Status">
+        <Select value={statusFilter} onChange={(e) => setStatusFilter(e.target.value as "all" | ChargeStatus)} className={inputCls} aria-label="Status">
           <option value="all">All statuses</option>
           <option value="outstanding">Outstanding</option>
           <option value="overdue">Overdue</option>
           <option value="paid">Paid</option>
           <option value="void">Void</option>
-        </select>
-        <select value={yearFilter} onChange={(e) => setYearFilter(e.target.value)} className={inputCls} aria-label="Year group">
+        </Select>
+        <Select value={yearFilter} onChange={(e) => setYearFilter(e.target.value)} className={inputCls} aria-label="Year group">
           <option value="all">All year groups</option>
           {yearOptions.map((y) => (
             <option key={y} value={y}>{y}</option>
           ))}
-        </select>
+        </Select>
         {view === "charges" && (
-          <select value={sort} onChange={(e) => setSort(e.target.value as typeof sort)} className={inputCls} aria-label="Sort charges">
+          <Select value={sort} onChange={(e) => setSort(e.target.value as typeof sort)} className={inputCls} aria-label="Sort charges">
             <option value="due_desc">Newest due date first</option>
             <option value="due_asc">Oldest due date first</option>
             <option value="balance">Largest balance first</option>
-          </select>
+          </Select>
         )}
         <Tabs
           variant="switch"

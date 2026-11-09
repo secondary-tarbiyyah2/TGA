@@ -1,5 +1,6 @@
 "use client";
 
+import { Icon } from "@/components/learn/Icon";
 import { useCallback, useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { MAIN_SITE_ORIGIN } from "@/lib/learn/origin";
@@ -144,7 +145,7 @@ export function KeyStagePagesEditor() {
                           </td>
                           <td className="py-1 text-right">
                             <button type="button" aria-label={`Move ${w.subject || "row"} up`} disabled={i === 0} onClick={() => { const wk = [...r.weekly]; [wk[i - 1], wk[i]] = [wk[i], wk[i - 1]]; update(r.slug, { weekly: wk }); }} className="px-1 text-xs text-ink/70 disabled:opacity-30">↑</button>
-                            <button type="button" aria-label={`Remove ${w.subject || "row"}`} onClick={() => update(r.slug, { weekly: r.weekly.filter((_, j) => j !== i) })} className="px-1 text-xs text-red-700">✕</button>
+                            <button type="button" aria-label={`Remove ${w.subject || "row"}`} onClick={() => update(r.slug, { weekly: r.weekly.filter((_, j) => j !== i) })} className="px-1 text-xs text-red-700"><Icon name="x" size="sm" /></button>
                           </td>
                         </tr>
                       ))}

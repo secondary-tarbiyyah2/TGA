@@ -1,5 +1,6 @@
 "use client";
 
+import { Icon } from "@/components/learn/Icon";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
@@ -49,7 +50,7 @@ export function ThreadViewer({ thread }: { thread: OversightThread }) {
         <div className="min-w-0">
           <p className="truncate text-sm font-semibold text-ink">{threadTitle(thread)}</p>
           <p className="truncate text-xs text-ink/65">
-            {roleName(thread.role_a)} ↔ {roleName(thread.role_b)}
+            {roleName(thread.role_a)} <Icon name="arrowLeftRight" className="inline h-3.5 w-3.5 align-[-2px]" /><span className="sr-only">and</span> {roleName(thread.role_b)}
             {thread.child_name ? ` · about ${thread.child_name}` : ""}
           </p>
         </div>

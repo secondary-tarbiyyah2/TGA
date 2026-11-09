@@ -1,5 +1,6 @@
 "use client";
 
+import { Icon } from "@/components/learn/Icon";
 import { useEffect, useRef, useState } from "react";
 
 /** Arabic-Indic / Persian digits (e.g. from an Arabic keyboard) as 0-9. */
@@ -82,7 +83,7 @@ export function PinPad({
         {keys.map((k) =>
           k === "del" ? (
             <button key={k} type="button" aria-label="Delete" onClick={() => update(pin.slice(0, -1))} className="h-14 rounded-xl bg-cream text-lg text-ink hover:bg-gold-light/50">
-              ⌫
+              <Icon name="delete" className="mx-auto h-6 w-6" />
             </button>
           ) : k === "go" ? (
             <button key={k} type="submit" disabled={busy || pin.length !== 6} className="h-14 rounded-xl bg-gold-700 text-sm font-semibold text-white hover:bg-gold-900 disabled:opacity-50">

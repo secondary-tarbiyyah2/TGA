@@ -8,6 +8,7 @@ import { buildTemplate, type TemplateContext } from "@/components/learn/admissio
 import { OUTCOME_LABELS, fmtLondon, fromLondonInput, toLondonInput, type InterviewOutcome, type StageDetails } from "@/components/learn/admissions/stageTypes";
 import type { AdmissionsContext } from "@/components/learn/admissions/useAdmissionsContext";
 import { Group, Pill, fieldCls, ghostBtn, primaryBtn } from "@/components/learn/admissions/ui";
+import { Select } from "@/components/learn/Select";
 
 type Draft = { at: string; interviewer: string; link: string; notes: string; outcome: string; autoEmail: boolean };
 const nz = (s: string) => (s.trim() === "" ? null : s.trim());
@@ -131,12 +132,12 @@ export function InterviewPanel({
         </label>
         <label className="mt-3 block text-sm font-medium text-ink">
           Outcome
-          <select value={d.outcome} onChange={(e) => set("outcome", e.target.value)} className={fieldCls}>
+          <Select value={d.outcome} onChange={(e) => set("outcome", e.target.value)} className={fieldCls}>
             <option value="">Not recorded</option>
             {(Object.keys(OUTCOME_LABELS) as InterviewOutcome[]).map((o) => (
               <option key={o} value={o}>{OUTCOME_LABELS[o]}</option>
             ))}
-          </select>
+          </Select>
         </label>
       </Group>
 

@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { GCSE_HISTORY_COLUMNS, downloadCsv, toCsv, type GcseHistoryRow } from "@/lib/learn/gcse";
 import { GradeChip } from "@/components/learn/gcse/GcseParts";
+import { Select } from "@/components/learn/Select";
 
 type MockRow = GcseHistoryRow & { children: { name: string } | null; subjects: { name: string } | null; classes: { name: string } | null };
 
@@ -102,25 +103,25 @@ export function GcseMocks() {
       <div className="mt-3 flex flex-wrap items-end gap-3 text-xs font-medium text-ink/70">
         <label>
           Subject
-          <select value={subjectId} onChange={(e) => setSubjectId(e.target.value)} className={`${SELECT} mt-1 block`}>
+          <Select value={subjectId} onChange={(e) => setSubjectId(e.target.value)} className={`${SELECT} mt-1 block`}>
             <option value="">All</option>
             {subjects.map(([id, n]) => (
               <option key={id} value={id}>
                 {n}
               </option>
             ))}
-          </select>
+          </Select>
         </label>
         <label>
           Paper
-          <select value={paper} onChange={(e) => setPaper(e.target.value)} className={`${SELECT} mt-1 block`}>
+          <Select value={paper} onChange={(e) => setPaper(e.target.value)} className={`${SELECT} mt-1 block`}>
             <option value="">All</option>
             {papers.map((p) => (
               <option key={p} value={p}>
                 {p}
               </option>
             ))}
-          </select>
+          </Select>
         </label>
         <label>
           Pupil

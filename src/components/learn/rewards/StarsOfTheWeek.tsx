@@ -1,5 +1,6 @@
 "use client";
 
+import { Icon } from "@/components/learn/Icon";
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 
@@ -38,7 +39,7 @@ export function StarShoutOuts() {
     <section aria-labelledby="stars-heading" className="rounded-2xl border border-gold-light bg-white">
       <div className="border-b border-gold-light px-4 py-3">
         <h2 id="stars-heading" className="text-sm font-semibold text-ink">
-          <span aria-hidden="true">★ </span>Stars of the week
+          <Icon name="star" className="mr-1.5 inline h-4 w-4 align-[-2px] text-gold-700" />Stars of the week
         </h2>
         <p className="text-[11px] text-ink/65">Week beginning {longDate(rows[0].week_start)}</p>
       </div>
@@ -112,7 +113,7 @@ export function MyCertificates({ childIds }: { childIds: string[] }) {
     <section aria-labelledby="certs-heading" className="rounded-2xl border border-gold-light bg-white">
       <div className="border-b border-gold-light px-4 py-3">
         <h2 id="certs-heading" className="text-sm font-semibold text-ink">
-          <span aria-hidden="true">★ </span>Star of the Week certificates
+          <Icon name="star" className="mr-1.5 inline h-4 w-4 align-[-2px] text-gold-700" />Star of the Week certificates
         </h2>
       </div>
       <ul className="divide-y divide-gold-light/60">

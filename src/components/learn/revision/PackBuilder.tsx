@@ -1,9 +1,11 @@
 "use client";
 
+import { Icon } from "@/components/learn/Icon";
 import { useEffect, useRef, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { MEDIA_BUCKET, chapterEnd, clock, mediaUrl, toSeconds, type SummarySlide } from "@/lib/learn/revision";
 import { ui } from "@/components/learn/ui";
+import { Select } from "@/components/learn/Select";
 
 /**
  * Make (or edit) a revision pack in the portal, the way Aqeedah 1 was made:
@@ -296,7 +298,7 @@ export function PackBuilder({
 
   const step = (n: number, t: string, done: boolean) => (
     <h3 className="flex items-center gap-2 font-semibold text-ink">
-      <span className={`flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold ${done ? "bg-teal-700 text-white" : "bg-gold-100 text-gold-900"}`}>{done ? "✓" : n}</span>
+      <span className={`flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold ${done ? "bg-teal-700 text-white" : "bg-gold-100 text-gold-900"}`}>{done ? <Icon name="check" className="h-3.5 w-3.5" strokeWidth={2.5} /> : n}</span>
       {t}
     </h3>
   );
@@ -330,14 +332,14 @@ export function PackBuilder({
         <div className="grid gap-3 sm:grid-cols-3">
           <label className="text-sm font-medium text-ink">
             Subject
-            <select className={input} value={subjectSlug} disabled={!!id} onChange={(e) => setSubjectSlug(e.target.value)}>
+            <Select className={input} value={subjectSlug} disabled={!!id} onChange={(e) => setSubjectSlug(e.target.value)}>
               {subjects.map((s) => (
                 <option key={s.slug} value={s.slug}>
                   {s.name}
                 </option>
               ))}
               <option value="__new">Another subject…</option>
-            </select>
+            </Select>
           </label>
           {subjectSlug === "__new" && (
             <label className="text-sm font-medium text-ink">
@@ -472,10 +474,10 @@ export function PackBuilder({
                       <div className="space-y-3 border-t border-gold-light/60 p-3">
                         <div className="flex flex-wrap gap-2">
                           <button type="button" className={btn} onClick={() => playFrom(c.start)}>
-                            ▶ From start
+                            <Icon name="play" className="inline h-3.5 w-3.5 align-[-2px]" /> From start
                           </button>
                           <button type="button" className={btn} onClick={() => previewEnding(k)}>
-                            ▶ Check the ending
+                            <Icon name="play" className="inline h-3.5 w-3.5 align-[-2px]" /> Check the ending
                           </button>
                           <button type="button" className={btn} onClick={() => setCh(c.key, { start: Math.round(now * 10) / 10 })}>
                             Start here ({clock(now)})
@@ -766,11 +768,11 @@ export function QuestionEditor({
         <label className="block text-sm font-medium text-ink">
           Chapter
           {topics.length ? (
-            <select className={input} value={draft.topic} onChange={(e) => setDraft({ ...draft, topic: e.target.value })}>
+            <Select className={input} value={draft.topic} onChange={(e) => setDraft({ ...draft, topic: e.target.value })}>
               {topics.map((t) => (
                 <option key={t}>{t}</option>
               ))}
-            </select>
+            </Select>
           ) : (
             <input className={input} value={draft.topic} onChange={(e) => setDraft({ ...draft, topic: e.target.value })} placeholder="Topic" />
           )}

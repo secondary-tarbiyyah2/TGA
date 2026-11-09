@@ -15,6 +15,7 @@ import {
   type GcseRow,
 } from "@/lib/learn/gcse";
 import { BoundaryEditor, GcseStatusChip, GradeChip, TrendLine, gradeOptions, useBoundaries } from "@/components/learn/gcse/GcseParts";
+import { Select } from "@/components/learn/Select";
 
 export type PupilSubjectRow = GcseRow & { subject_name: string };
 
@@ -155,10 +156,10 @@ export function GcsePupilDrawer({ childId, childName, rows, canEdit, onClose, on
         </span>
         <label className="flex items-center gap-1 text-xs text-ink/70">
           Grade
-          <select value={gradeOverride} onChange={(e) => setGradeOverride(e.target.value)} className="rounded-md border border-gold-light/60 bg-white px-2 py-1 text-sm">
+          <Select value={gradeOverride} onChange={(e) => setGradeOverride(e.target.value)} className="rounded-md border border-gold-light/60 bg-white px-2 py-1 text-sm">
             <option value="">{suggested ? `Suggested (${suggested})` : "Choose…"}</option>
             {gradeOptions()}
-          </select>
+          </Select>
         </label>
       </div>
       <label className="mt-3 flex items-center gap-2 text-xs text-ink/75">

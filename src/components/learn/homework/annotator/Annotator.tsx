@@ -21,6 +21,7 @@ import {
   type SizeKey,
 } from "@/lib/learn/annotatorShapes";
 import { categoryOfMime, downloadFileBlob, safeObjectName, uploadWithProgress } from "@/lib/learn/homeworkFiles";
+import { Select } from "@/components/learn/Select";
 
 export type AnnotatorFile = { path: string; name: string; mime: string };
 
@@ -543,10 +544,10 @@ export function Annotator({
           {kind === "image" && (
             <label className="flex items-center gap-1 text-xs text-ink/70">
               Save as
-              <select value={exportAs} onChange={(e) => setExportAs(e.target.value === "pdf" ? "pdf" : "png")} className="rounded-md border border-gold-light/60 bg-white px-1.5 py-1 text-xs">
+              <Select value={exportAs} onChange={(e) => setExportAs(e.target.value === "pdf" ? "pdf" : "png")} className="rounded-md border border-gold-light/60 bg-white px-1.5 py-1 text-xs">
                 <option value="png">PNG</option>
                 <option value="pdf">PDF</option>
-              </select>
+              </Select>
             </label>
           )}
           {marking && (

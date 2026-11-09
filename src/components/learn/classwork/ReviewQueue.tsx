@@ -1,5 +1,6 @@
 "use client";
 
+import { Icon } from "@/components/learn/Icon";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { useNow } from "@/lib/learn/useNow";
@@ -8,6 +9,7 @@ import { Tabs } from "@/components/learn/Tabs";
 import { ui } from "@/components/learn/ui";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { ScrollArea } from "@/components/learn/ScrollArea";
+import { Select } from "@/components/learn/Select";
 
 type Item = {
   submission_id: string;
@@ -152,7 +154,7 @@ export function ReviewQueue({ classId: fixedClass, homeworkId, embedded = false,
                       aria-current={k === marking.index ? "true" : undefined}
                       className={`flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-left text-sm ${k === marking.index ? "bg-teal-100 font-semibold text-teal-900" : "text-ink hover:bg-cream"}`}
                     >
-                      <span className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px] ${returned ? "bg-teal-700 text-white" : "bg-cream text-ink/65"}`}>{returned ? "✓" : k + 1}</span>
+                      <span className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px] ${returned ? "bg-teal-700 text-white" : "bg-cream text-ink/65"}`}>{returned ? <Icon name="check" className="h-3.5 w-3.5" strokeWidth={2.5} /> : k + 1}</span>
                       <span className="min-w-0 flex-1 truncate">{i.child_name || "Pupil"}</span>
                       {i.is_late && <span className="text-[11px] font-medium text-amber-800">late</span>}
                     </button>
@@ -221,14 +223,14 @@ export function ReviewQueue({ classId: fixedClass, homeworkId, embedded = false,
           {/* Classes: a list with counts on wide screens, a drop-down on phones. */}
           <label className="block text-sm font-semibold text-ink lg:hidden">
             Class
-            <select value={classId} onChange={(e) => setClassId(e.target.value)} className="mt-1 block w-full rounded-lg border border-gold-light bg-white px-3 py-2 text-sm font-normal">
+            <Select value={classId} onChange={(e) => setClassId(e.target.value)} className="mt-1 block w-full rounded-lg border border-gold-light bg-white px-3 py-2 text-sm font-normal">
               <option value="">All classes ({items.length})</option>
               {classCounts.map((c) => (
                 <option key={c.id} value={c.id}>
                   {c.name} ({c.n})
                 </option>
               ))}
-            </select>
+            </Select>
           </label>
           <nav aria-label="Classes" className="hidden self-start rounded-2xl border border-gold-light bg-white p-2 lg:sticky lg:top-[76px] lg:block">
             <ul className="space-y-0.5">

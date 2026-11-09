@@ -9,6 +9,7 @@ import { EmptyState, Notice, StatusChip, ui, type Tone } from "@/components/lear
 import { Tabs } from "@/components/learn/Tabs";
 import { Modal, ReasonModal, modalFieldCls } from "./ReasonModal";
 import { formatDay, type Absence } from "./data";
+import { Select } from "@/components/learn/Select";
 
 type FStatus = "open" | "contacted" | "explained" | "escalated" | "closed";
 type Method = "call" | "sms" | "email";
@@ -514,21 +515,21 @@ function ContactModal({ row, ensure, onClose, onSaved }: { row: Row; ensure: (r:
         <p className="text-sm text-ink/65">Absent {formatDay(row.abs.date)}</p>
         <label className="block text-sm font-medium text-ink">
           Method
-          <select value={method} onChange={(e) => setMethod(e.target.value as Method)} className={modalFieldCls}>
+          <Select value={method} onChange={(e) => setMethod(e.target.value as Method)} className={modalFieldCls}>
             <option value="call">Phone call</option>
             <option value="sms">Text message</option>
             <option value="email">Email</option>
-          </select>
+          </Select>
         </label>
         <label className="block text-sm font-medium text-ink">
           Outcome
-          <select value={outcome} onChange={(e) => setOutcome(e.target.value)} className={modalFieldCls}>
+          <Select value={outcome} onChange={(e) => setOutcome(e.target.value)} className={modalFieldCls}>
             {OUTCOMES.map((o) => (
               <option key={o.value} value={o.value}>
                 {o.label}
               </option>
             ))}
-          </select>
+          </Select>
         </label>
         <label className="block text-sm font-medium text-ink">
           Note

@@ -1,8 +1,10 @@
 "use client";
 
+import { Icon } from "@/components/learn/Icon";
 import { useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { ukToday } from "@/lib/learn/ukTime";
+import { Select } from "@/components/learn/Select";
 
 // Celebratory but tasteful: positive merits only, first names + surname
 // initial, top few. All data comes from merit_leaderboard() (0068), which
@@ -21,9 +23,9 @@ const PERIODS: { id: Period; label: string }[] = [
 ];
 
 const PLACE: Record<number, { medal: string; word: string; height: string; tone: string }> = {
-  1: { medal: "🥇", word: "1st", height: "h-24", tone: "bg-gold-100 border-gold-500" },
-  2: { medal: "🥈", word: "2nd", height: "h-16", tone: "bg-cream border-gold-300" },
-  3: { medal: "🥉", word: "3rd", height: "h-12", tone: "bg-cream border-gold-300" },
+  1: { medal: "text-gold-700", word: "1st", height: "h-24", tone: "bg-gold-100 border-gold-500" },
+  2: { medal: "text-ink/55", word: "2nd", height: "h-16", tone: "bg-cream border-gold-300" },
+  3: { medal: "text-amber-800", word: "3rd", height: "h-12", tone: "bg-cream border-gold-300" },
 };
 
 function nameOf(r: Row): string {
@@ -106,13 +108,13 @@ export function MeritLeaderboard({
         </h2>
         <div className="flex flex-wrap items-center gap-2">
           {choices.length > 1 && (
-            <select aria-label="Leaderboard group" value={Math.min(choiceIdx, choices.length - 1)} onChange={(e) => setChoiceIdx(Number(e.target.value))} className="rounded-lg border border-gold-light bg-white px-2 py-1 text-xs text-ink">
+            <Select aria-label="Leaderboard group" value={Math.min(choiceIdx, choices.length - 1)} onChange={(e) => setChoiceIdx(Number(e.target.value))} className="rounded-lg border border-gold-light bg-white px-2 py-1 text-xs text-ink">
               {choices.map((c, i) => (
                 <option key={`${c.scope}:${c.scopeId || ""}`} value={i}>
                   {c.label}
                 </option>
               ))}
-            </select>
+            </Select>
           )}
           <div role="group" aria-label="Time period" className="flex gap-0.5 rounded-lg bg-cream p-0.5">
             {PERIODS.map((p) => (
@@ -144,8 +146,8 @@ export function MeritLeaderboard({
                 const place = PLACE[r.rank] || PLACE[3];
                 return (
                   <li key={`${r.first_name}-${r.surname_initial}-${i}`} className={`flex w-28 flex-col items-center text-center sm:w-32 ${visualOrder(i)}`}>
-                    <span aria-hidden="true" className="text-2xl">
-                      {place.medal}
+                    <span aria-hidden="true" className={`flex h-8 w-8 items-center justify-center ${place.medal}`}>
+                      <Icon name="medal" className="h-7 w-7" />
                     </span>
                     <span className="mt-0.5 max-w-full truncate text-sm font-semibold text-ink">{nameOf(r)}</span>
                     {r.is_mine && <span className="mt-0.5 rounded-full bg-teal-100 px-2 py-0.5 text-[11px] font-semibold text-teal-900">{mineLabel}</span>}

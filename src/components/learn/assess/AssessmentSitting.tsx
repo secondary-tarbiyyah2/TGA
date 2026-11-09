@@ -1,5 +1,6 @@
 "use client";
 
+import { Icon } from "@/components/learn/Icon";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import { getEdgeFunctionUrl } from "@/lib/supabase/client";
@@ -209,7 +210,7 @@ export function AssessmentSitting() {
   if (st.finished) {
     return shell(
       <div className="mx-auto max-w-xl py-16 text-center">
-        <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gold-100 text-4xl" aria-hidden="true">✓</div>
+        <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gold-100 text-gold-900" aria-hidden="true"><Icon name="check" className="h-10 w-10" strokeWidth={2.25} /></div>
         <h1 className="mt-6 text-3xl font-semibold text-ink">Well done, {first}!</h1>
         <p className="mt-3 text-lg text-ink/75">You have finished every part. Thank you for working so hard. Your teachers will look at your answers, and the school will be in touch with your family.</p>
         <p className="mt-6 text-sm text-ink/60">You can close this page now.</p>
@@ -263,7 +264,7 @@ export function AssessmentSitting() {
           {st.sections.map((s, i) => (
             <li key={s.key} className={`flex items-center justify-between rounded-2xl border px-5 py-4 ${s.key === cur.key ? "border-gold-500 bg-white shadow-sm" : "border-gold-light/70 bg-white/60"}`}>
               <span className="flex items-center gap-3">
-                <span className={`flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold ${s.done ? "bg-green-100 text-green-800" : s.key === cur.key ? "bg-gold-700 text-white" : "bg-cream text-ink/60"}`}>{s.done ? "✓" : i + 1}</span>
+                <span className={`flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold ${s.done ? "bg-green-100 text-green-800" : s.key === cur.key ? "bg-gold-700 text-white" : "bg-cream text-ink/60"}`}>{s.done ? <Icon name="check" className="h-3.5 w-3.5" strokeWidth={2.5} /> : i + 1}</span>
                 <span className="font-medium text-ink">{s.title}</span>
               </span>
               <span className="text-sm text-ink/65">{s.questions} {s.questions === 1 ? "task" : "questions"} · {s.minutes} min</span>

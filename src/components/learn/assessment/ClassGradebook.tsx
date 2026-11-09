@@ -5,6 +5,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { ui } from "@/components/learn/ui";
 import { accessList, useSupportPlans } from "@/lib/learn/send";
 import { SupportAtAGlance } from "@/components/learn/send/SupportAtAGlance";
+import { Select } from "@/components/learn/Select";
 
 export type GbPupil = { id: string; name: string };
 type Type = { id: string; name: string };
@@ -258,14 +259,14 @@ export function ClassGradebook({
           </label>
           <label className="text-sm font-medium text-ink">
             Type
-            <select className={`${input} mt-1 block w-full`} value={editing.typeId} onChange={(e) => set({ typeId: e.target.value })}>
+            <Select className={`${input} mt-1 block w-full`} value={editing.typeId} onChange={(e) => set({ typeId: e.target.value })}>
               <option value="">Choose…</option>
               {types.map((t) => (
                 <option key={t.id} value={t.id}>
                   {t.name}
                 </option>
               ))}
-            </select>
+            </Select>
           </label>
           <label className="text-sm font-medium text-ink">
             Date
@@ -278,14 +279,14 @@ export function ClassGradebook({
           {schemes.length > 0 && (
             <label className="text-sm font-medium text-ink lg:col-span-2">
               Mark scheme (turns scores into grades)
-              <select className={`${input} mt-1 block w-full`} value={editing.schemeId} onChange={(e) => set({ schemeId: e.target.value })}>
+              <Select className={`${input} mt-1 block w-full`} value={editing.schemeId} onChange={(e) => set({ schemeId: e.target.value })}>
                 <option value="">None, just scores</option>
                 {schemes.map((s) => (
                   <option key={s.id} value={s.id}>
                     {s.scale_name}
                   </option>
                 ))}
-              </select>
+              </Select>
             </label>
           )}
         </div>
@@ -324,7 +325,7 @@ export function ClassGradebook({
                     />
                   </td>
                   <td className="py-1.5">
-                    <select
+                    <Select
                       aria-label={`${p.name}: status`}
                       className={input}
                       value={v.score.trim() ? "marked" : v.status}
@@ -337,7 +338,7 @@ export function ClassGradebook({
                       <option value="absent">Absent</option>
                       <option value="exempt">Exempt</option>
                       <option value="not_submitted">Not handed in</option>
-                    </select>
+                    </Select>
                   </td>
                 </tr>
               );

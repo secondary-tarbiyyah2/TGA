@@ -1,3 +1,4 @@
+import { Icon } from "@/components/learn/Icon";
 import { firstName, longDay } from "./starData";
 
 /**
@@ -12,9 +13,7 @@ export function StarCertificatePreview({ name, reason, message, className, weekS
       <div className="rounded-lg border-[3px] border-gold-500 p-1">
         <div className="flex aspect-[1.414] flex-col items-center justify-center rounded border border-gold-500/70 px-4 py-3 text-center sm:px-8">
           <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-gold-700">Tarbiyyah Global Academy</p>
-          <span aria-hidden="true" className="mt-1 text-lg leading-none text-gold-500">
-            ★
-          </span>
+          <span aria-hidden="true" className="mt-1 text-gold-500"><Icon name="star" size="md" /></span>
           <p className="mt-1 font-serif text-xl font-semibold text-ink sm:text-2xl">Star of the Week</p>
           <p className="mt-1 font-serif text-xs italic text-ink/60">This certificate is proudly presented to</p>
           <p className="mt-1 border-b border-gold-500 px-4 font-serif text-lg font-semibold text-gold-900 sm:text-xl">{name || "Choose a pupil"}</p>

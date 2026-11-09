@@ -5,6 +5,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { safeHttpUrl } from "@/lib/learn/markup";
 import { fetchClassSettings, type ClassSettings, type GradeCalculation, type GradeCategory } from "@/lib/learn/classSettings";
 import { Switch } from "@/components/learn/class/AnnouncementComposer";
+import { Select } from "@/components/learn/Select";
 
 type AssessmentType = { id: string; name: string };
 
@@ -211,10 +212,10 @@ export function ClassSettingsTab({ classId, className, subject, canRename }: { c
         <Switch checked={s.showOverallGrade} onChange={(v) => toggle({ showOverallGrade: v })} label="Show overall grade to pupils" hint="Pupils and parents see one overall percentage on the Grades tab." />
         <label className="block text-sm font-medium text-ink">
           Overall grade calculation
-          <select value={s.gradeCalculation} onChange={(e) => toggle({ gradeCalculation: e.target.value as GradeCalculation })} className="ml-3 rounded-lg border border-gold-light/70 px-3 py-1.5 text-sm font-normal">
+          <Select value={s.gradeCalculation} onChange={(e) => toggle({ gradeCalculation: e.target.value as GradeCalculation })} className="ml-3 rounded-lg border border-gold-light/70 px-3 py-1.5 text-sm font-normal">
             <option value="average">Average of all results</option>
             <option value="weighted">Weighted by category</option>
-          </select>
+          </Select>
         </label>
 
         <div>
@@ -225,14 +226,14 @@ export function ClassSettingsTab({ classId, className, subject, canRename }: { c
             {cats.map((c) => (
               <li key={c.id} className="flex flex-wrap items-center gap-3 py-2">
                 <span className="min-w-[8rem] flex-1 text-sm font-medium text-ink">{c.name}</span>
-                <select aria-label={`Assessment type for ${c.name}`} value={c.assessmentTypeId ?? ""} onChange={(e) => updateCat(c, { assessment_type_id: e.target.value || null })} className="rounded-lg border border-gold-light/70 px-2 py-1 text-sm">
+                <Select aria-label={`Assessment type for ${c.name}`} value={c.assessmentTypeId ?? ""} onChange={(e) => updateCat(c, { assessment_type_id: e.target.value || null })} className="rounded-lg border border-gold-light/70 px-2 py-1 text-sm">
                   <option value="">Not linked</option>
                   {types.map((t) => (
                     <option key={t.id} value={t.id}>
                       {t.name}
                     </option>
                   ))}
-                </select>
+                </Select>
                 <label className="flex items-center gap-1 text-sm text-ink/70">
                   <input
                     type="text" inputMode="decimal"

@@ -12,6 +12,7 @@ import {
   type QuranTarget,
   type TargetKind,
 } from "@/lib/learn/quran";
+import { Select } from "@/components/learn/Select";
 
 /** A child's Qur'an targets (RLS-scoped), soonest deadline first. */
 export function useQuranTargets(childId: string) {
@@ -148,11 +149,11 @@ export function QuranTargetsPanel({ childId, classId, entries, canEdit }: { chil
       {canEdit && (
         <div className="mt-2 grid gap-3 sm:grid-cols-2">
           <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} maxLength={120} placeholder="Target, e.g. Finish Juz Amma" aria-label="Target title" className="rounded-md border border-gold-light/60 px-3 py-2 text-sm sm:col-span-2" />
-          <select value={kind} onChange={(e) => setKind(e.target.value as TargetKind)} aria-label="Target type" className="rounded-md border border-gold-light/60 px-3 py-2 text-sm">
+          <Select value={kind} onChange={(e) => setKind(e.target.value as TargetKind)} aria-label="Target type" className="rounded-md border border-gold-light/60 px-3 py-2 text-sm">
             <option value="pages">Pages memorised</option>
             <option value="juz">Juz secure</option>
             <option value="surah">Surahs secure</option>
-          </select>
+          </Select>
           <input type="text" inputMode="decimal" min={1} max={max} value={amount} onChange={(e) => setAmount(e.target.value)} placeholder={`How many (1-${max})`} aria-label="Target amount" className="rounded-md border border-gold-light/60 px-3 py-2 text-sm" />
           <div className="sm:col-span-2">
             <label className="block text-xs font-medium text-ink/70" htmlFor={`quran-target-due-${childId}`}>

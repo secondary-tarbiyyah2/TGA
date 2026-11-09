@@ -7,6 +7,7 @@ import { useLearnSession } from "@/lib/learn/session";
 import { ukTimeOf } from "@/lib/learn/ukTime";
 import { useSupportPlans } from "@/lib/learn/send";
 import { SupportAtAGlance, SupportBadge } from "@/components/learn/send/SupportAtAGlance";
+import { Select } from "@/components/learn/Select";
 
 export type Status = "present" | "late" | "absent" | "excused" | "not_engaged" | "technical";
 /** The four marks used every lesson, as one-tap buttons. */
@@ -269,7 +270,7 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
                   );
                 })}
               </div>
-              <select
+              <Select
                 aria-label={`Other mark for ${c.name}`}
                 value={current === "not_engaged" || current === "technical" ? current : ""}
                 onChange={(e) => e.target.value && save([{ childId: c.id, status: e.target.value as Status }])}
@@ -281,7 +282,7 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
                     {o.label}
                   </option>
                 ))}
-              </select>
+              </Select>
               {current === "absent" && lessonDate && !canRecordReason && (
                 <p className="w-full text-xs text-ink/65">
                   Reason: {reasons[c.id] ? REASONS.find((r) => r.value === reasons[c.id])?.label || "Recorded" : "not given yet (the office follows this up)"}
@@ -290,14 +291,14 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
               {current === "absent" && lessonDate && canRecordReason && (
                 <label className="flex w-full items-center gap-2 text-xs text-ink/65">
                   Reason
-                  <select value={reasons[c.id] || ""} onChange={(e) => setReason(c.id, e.target.value)} className="rounded-lg border border-gold-light bg-white px-2 py-1 text-xs text-ink">
+                  <Select value={reasons[c.id] || ""} onChange={(e) => setReason(c.id, e.target.value)} className="rounded-lg border border-gold-light bg-white px-2 py-1 text-xs text-ink">
                     <option value="">Not recorded</option>
                     {REASONS.map((r) => (
                       <option key={r.value} value={r.value}>
                         {r.label}
                       </option>
                     ))}
-                  </select>
+                  </Select>
                 </label>
               )}
             </li>

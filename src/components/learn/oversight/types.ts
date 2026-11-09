@@ -31,7 +31,7 @@ export type OversightMessage = {
 };
 
 export function threadTitle(t: OversightThread): string {
-  return `${t.name_a || "Unknown"} ↔ ${t.name_b || "Unknown"}`;
+  return `${t.name_a || "Unknown"} and ${t.name_b || "Unknown"}`;
 }
 
 export function shortTime(iso: string | null): string {

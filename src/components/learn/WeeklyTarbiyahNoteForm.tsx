@@ -5,6 +5,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { AiDisclaimer, AiSpark } from "@/components/learn/AiBits";
 import { aiAssist, aiErrorMessage, useAiStatus } from "@/lib/learn/aiAssist";
 import { usePronounField } from "@/lib/learn/pronoun";
+import { Select } from "@/components/learn/Select";
 
 type Entry = { id: string; week_of: string; note: string; recorded_at: string };
 
@@ -136,11 +137,11 @@ export function WeeklyTarbiyahNoteForm({ childId, classId, childName }: { childI
             )}
             <label className="text-xs text-ink/70" title={pronounFromRecord ? "From the pupil's record" : undefined}>
               <span className="sr-only">Pronoun{pronounFromRecord ? " (from the pupil's record)" : ""}</span>
-              <select value={pronoun} onChange={(e) => setPronoun(e.target.value)} className="rounded-lg border border-gold-light/60 px-2 py-1.5 text-xs">
+              <Select value={pronoun} onChange={(e) => setPronoun(e.target.value)} className="rounded-lg border border-gold-light/60 px-2 py-1.5 text-xs">
                 <option value="">Use their name</option>
                 <option value="he">he / him</option>
                 <option value="she">she / her</option>
-              </select>
+              </Select>
             </label>
           </div>
           {jottings === null ? <p className="text-xs text-ink/65">Jot a few fragments (e.g. &ldquo;helped a classmate, late twice, lovely tajweed&rdquo;) and the AI writes a short, kind note to parents.</p> : <AiDisclaimer />}

@@ -10,6 +10,7 @@ import { Tabs } from "@/components/learn/Tabs";
 import { EmptyState, Notice, StatusChip, Switch, ui } from "@/components/learn/ui";
 import { DigestPreview } from "./DigestPreview";
 import { STATUS_TEXT, digestHref, nextSendLabel, stampLabel, weekLabel, type DigestFamily, type DigestView } from "./digestData";
+import { Select } from "@/components/learn/Select";
 
 // Headteacher/Admin tools for the Friday weekly digest (weekly-digest Edge
 // Function), as separate views rather than one long page:
@@ -273,22 +274,22 @@ function Families({ families }: { families: DigestFamily[] | null }) {
         search={{ text: (f) => `${f.parent_name} ${f.parent_email} ${f.children.join(" ")}`, placeholder: "Search parent or child" }}
         filters={
           <>
-            <select value={show} onChange={(e) => setShow(e.target.value as Show)} aria-label="Show" className={`${ui.input} !w-auto`}>
+            <Select value={show} onChange={(e) => setShow(e.target.value as Show)} aria-label="Show" className={`${ui.input} !w-auto`}>
               <option value="all">All families</option>
               <option value="receiving">Receiving it</option>
               <option value="opted_out">Opted out</option>
               <option value="failed">Failed this week</option>
               <option value="test">Test families</option>
-            </select>
+            </Select>
             {years.length > 0 && (
-              <select value={year} onChange={(e) => setYear(e.target.value)} aria-label="Year group" className={`${ui.input} !w-auto`}>
+              <Select value={year} onChange={(e) => setYear(e.target.value)} aria-label="Year group" className={`${ui.input} !w-auto`}>
                 <option value="">All year groups</option>
                 {years.map((y) => (
                   <option key={y} value={y}>
                     {y}
                   </option>
                 ))}
-              </select>
+              </Select>
             )}
           </>
         }

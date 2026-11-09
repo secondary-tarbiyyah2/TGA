@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { downloadCsv, toCsv } from "@/lib/learn/gcse";
+import { Select } from "@/components/learn/Select";
 
 type Status = "open" | "in_progress" | "resolved";
 
@@ -57,14 +58,14 @@ function NextStepEditor({ item, staff, onSave, onCancel }: { item: Intervention;
       {staff.length > 0 && (
         <label>
           Owner
-          <select value={owner} onChange={(e) => setOwner(e.target.value)} className={`${FIELD} mt-1 block`}>
+          <Select value={owner} onChange={(e) => setOwner(e.target.value)} className={`${FIELD} mt-1 block`}>
             <option value="">Nobody</option>
             {staff.map((s) => (
               <option key={s.id} value={s.id}>
                 {s.name}
               </option>
             ))}
-          </select>
+          </Select>
         </label>
       )}
       <div className="flex gap-2 sm:col-span-3">
@@ -286,7 +287,7 @@ export function GcseInterventions() {
           <label className="sm:col-span-2">
             Pupil and subject
             <input value={pupilSearch} onChange={(e) => setPupilSearch(e.target.value)} placeholder="Type to search" aria-label="Search pupils" className={`${FIELD} mb-1 mt-1 block w-full`} />
-            <select value={pick} onChange={(e) => setPick(e.target.value)} className={`${FIELD} block w-full`}>
+            <Select value={pick} onChange={(e) => setPick(e.target.value)} className={`${FIELD} block w-full`}>
               <option value="">Choose…</option>
               {pupilMatches.map((o) => (
                 <option key={`${o.child_id}|${o.subject_id}`} value={`${o.child_id}|${o.subject_id}`}>
@@ -294,15 +295,15 @@ export function GcseInterventions() {
                   {o.cls ? ` (${o.cls})` : ""}
                 </option>
               ))}
-            </select>
+            </Select>
           </label>
           <label>
             Why
-            <select value={reasonChoice} onChange={(e) => setReasonChoice(e.target.value)} className={`${FIELD} mt-1 block w-full`}>
+            <Select value={reasonChoice} onChange={(e) => setReasonChoice(e.target.value)} className={`${FIELD} mt-1 block w-full`}>
               {REASONS.map((r) => (
                 <option key={r}>{r}</option>
               ))}
-            </select>
+            </Select>
           </label>
           {reasonChoice === "Other" ? (
             <label>
@@ -314,14 +315,14 @@ export function GcseInterventions() {
           )}
           <label>
             Owner
-            <select value={owner} onChange={(e) => setOwner(e.target.value)} className={`${FIELD} mt-1 block w-full`}>
+            <Select value={owner} onChange={(e) => setOwner(e.target.value)} className={`${FIELD} mt-1 block w-full`}>
               {staffOptions.length === 0 && <option value="">Me</option>}
               {staffOptions.map((s) => (
                 <option key={s.id} value={s.id}>
                   {s.id === me?.id ? `${s.name} (me)` : s.name}
                 </option>
               ))}
-            </select>
+            </Select>
           </label>
           <label>
             Next step due (optional)
@@ -383,11 +384,11 @@ export function GcseInterventions() {
                   <label className="flex items-center gap-2 text-xs text-ink/65">
                     <span className="sr-only">Status</span>
                     <span className={`rounded-full px-2 py-0.5 ${STATUS_CLASS[i.status]}`}>{STATUS_LABEL[i.status]}</span>
-                    <select value={i.status} onChange={(e) => void patch(i, { status: e.target.value as Status })} aria-label={`Status for ${i.children?.name || "pupil"}`} className="rounded-md border border-gold-light/60 bg-white px-1.5 py-1 text-xs">
+                    <Select value={i.status} onChange={(e) => void patch(i, { status: e.target.value as Status })} aria-label={`Status for ${i.children?.name || "pupil"}`} className="rounded-md border border-gold-light/60 bg-white px-1.5 py-1 text-xs">
                       <option value="open">Open</option>
                       <option value="in_progress">In progress</option>
                       <option value="resolved">Resolved</option>
-                    </select>
+                    </Select>
                   </label>
                 </div>
                 <dl className="mt-2 grid gap-x-4 gap-y-1 text-xs sm:grid-cols-[auto_1fr]">

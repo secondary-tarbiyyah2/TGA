@@ -87,6 +87,12 @@ their section names. Our identity = gold, ink, cream, 8-point geometric star, "t
   `Select` / `Dropdown` from `src/components/ui/Dropdown.tsx` (drop-in for `<select>`,
   same `<option>` children, keyboard and screen-reader support, search for long lists) or
   `Combobox` (`src/components/admissions/Combobox.tsx`) for free-text-with-suggestions.
+  In the portal use `Select` from `src/components/learn/Select.tsx` (the same dropdown,
+  behaving exactly like a native `<select>`). A unit test and an ESLint rule stop new bare
+  `<select>`s.
+- **No emojis** in the portal or website UI: use `Icon` (`src/components/learn/Icon.tsx`,
+  Lucide outlines; add a name there rather than drawing a new path). Checked by
+  `src/lib/learn/uiControls.test.ts`.
 - **Times for families:** pages that show times ask "Where are you joining from?" with
   `PlacePicker` (`src/components/booking/PlacePicker.tsx`): country first, then the region
   for countries with several time zones. The choice is saved in the browser

@@ -12,6 +12,7 @@ import {
   computeFeeSchedule, describePlan, sanitiseFeeSettings, sumPounds,
 } from "@/lib/fees";
 import { btn } from "@/components/learn/ui";
+import { Select } from "@/components/learn/Select";
 
 type BandDraft = { key: string; id?: string; year_group_range: string; annual_fee: string; notes: string };
 
@@ -287,10 +288,10 @@ export function FeesEditor() {
                 <div className="grid grid-cols-2 gap-3">
                   <label className="text-sm text-ink">
                     Type
-                    <select value={d.type} onChange={(e) => patchD({ type: e.target.value as DiscountDraft["type"] })} className={input}>
+                    <Select value={d.type} onChange={(e) => patchD({ type: e.target.value as DiscountDraft["type"] })} className={input}>
                       <option value="percent">Percent (%)</option>
                       <option value="fixedAmount">Fixed amount (£)</option>
-                    </select>
+                    </Select>
                   </label>
                   <label className="text-sm text-ink">
                     {d.type === "percent" ? "Percent" : "Amount (£)"}

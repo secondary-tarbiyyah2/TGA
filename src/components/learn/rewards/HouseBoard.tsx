@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState, type DragEvent } from "react";
+import { Select } from "@/components/learn/Select";
 
 // Kanban-style house assignment: one card per house (plus "No house"), each
 // pupil a small tile. Drag a tile (or the whole ticked selection) onto
@@ -124,14 +125,14 @@ export function HouseBoard({
       <div className="mt-3 flex flex-wrap items-center gap-3 text-sm">
         <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search by name" aria-label="Search children" className="rounded-lg border border-gold-light px-3 py-1.5" />
         {years.length > 1 && (
-          <select value={year} onChange={(e) => setYear(e.target.value)} aria-label="Year group" className="rounded-lg border border-gold-light bg-white px-2 py-1.5">
+          <Select value={year} onChange={(e) => setYear(e.target.value)} aria-label="Year group" className="rounded-lg border border-gold-light bg-white px-2 py-1.5">
             <option value="">All year groups</option>
             {years.map((y) => (
               <option key={y} value={y}>
                 {y}
               </option>
             ))}
-          </select>
+          </Select>
         )}
         <span className="text-xs text-ink/65">{columns[0].total > 0 ? `${columns[0].total} without a house` : "Everyone has a house"}</span>
       </div>
@@ -141,7 +142,7 @@ export function HouseBoard({
           <strong className="text-teal-900">{selected.size} selected</strong>
           <label className="flex items-center gap-1.5 text-xs text-ink/70">
             Move selected to
-            <select value={target ?? "__"} onChange={(e) => setTarget(e.target.value === "__" ? null : e.target.value)} className="rounded-lg border border-gold-light bg-white px-2 py-1 text-sm">
+            <Select value={target ?? "__"} onChange={(e) => setTarget(e.target.value === "__" ? null : e.target.value)} className="rounded-lg border border-gold-light bg-white px-2 py-1 text-sm">
               <option value="__">Choose…</option>
               {activeHouses.map((h) => (
                 <option key={h.id} value={h.id}>
@@ -149,7 +150,7 @@ export function HouseBoard({
                 </option>
               ))}
               <option value={NONE}>No house</option>
-            </select>
+            </Select>
           </label>
           <button type="button" disabled={busy || target === null} onClick={moveSelected} className="rounded-lg bg-gold-700 px-3 py-1 text-xs font-semibold text-white hover:bg-gold-900 disabled:opacity-50">
             Move

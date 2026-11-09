@@ -5,6 +5,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { formatHijri, toHijri } from "@/lib/learn/hijri";
 import { CLOSURE_LABEL, type ClosureKind, type ClosureRow, type TermRow, type YearRow } from "./useCalendarTerms";
 import { ui } from "@/components/learn/ui";
+import { Select } from "@/components/learn/Select";
 
 const GREG = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
 
@@ -358,7 +359,7 @@ export function TermsManager({
           <div className="space-y-4 border-b border-gold-light bg-cream/40 px-4 py-4">
             <div className="flex flex-wrap items-end gap-3">
               <Lbl text="Academic year starting September">
-                <select
+                <Select
                   className={field}
                   value={wizard.year}
                   onChange={(e) => {
@@ -371,7 +372,7 @@ export function TermsManager({
                       {yearLabel(y)}
                     </option>
                   ))}
-                </select>
+                </Select>
               </Lbl>
               <p className="pb-2 text-xs text-ink/65">
                 {wizard.year === FOUNDING_YEAR
@@ -399,14 +400,14 @@ export function TermsManager({
           <div className="space-y-3 border-b border-gold-light bg-cream/40 px-4 py-4">
             <h4 className="text-sm font-semibold text-ink">{editing.id ? "Edit term" : "New term"}</h4>
             <Lbl text="Academic year">
-              <select className={`${field} sm:w-64`} value={editing.yearId} onChange={(e) => setEditing({ ...editing, yearId: e.target.value })}>
+              <Select className={`${field} sm:w-64`} value={editing.yearId} onChange={(e) => setEditing({ ...editing, yearId: e.target.value })}>
                 <option value="">Choose…</option>
                 {years.map((y) => (
                   <option key={y.id} value={y.id}>
                     {y.label}
                   </option>
                 ))}
-              </select>
+              </Select>
             </Lbl>
             <TermFields d={editing.draft} onChange={(draft) => setEditing({ ...editing, draft })} />
             <div className="flex gap-2">
@@ -435,14 +436,14 @@ export function TermsManager({
                     <li key={t.id} className="space-y-3 bg-cream/40 px-4 py-4">
                       <h4 className="text-sm font-semibold text-ink">Edit {t.name}</h4>
                       <Lbl text="Academic year">
-                        <select className={`${field} sm:w-64`} value={editing.yearId} onChange={(e) => setEditing({ ...editing, yearId: e.target.value })}>
+                        <Select className={`${field} sm:w-64`} value={editing.yearId} onChange={(e) => setEditing({ ...editing, yearId: e.target.value })}>
                           <option value="">Choose…</option>
                           {years.map((y) => (
                             <option key={y.id} value={y.id}>
                               {y.label}
                             </option>
                           ))}
-                        </select>
+                        </Select>
                       </Lbl>
                       <TermFields d={editing.draft} onChange={(draft) => setEditing({ ...editing, draft })} />
                       <div className="flex gap-2">
@@ -498,13 +499,13 @@ export function TermsManager({
           <div className="space-y-3 border-b border-gold-light bg-cream/40 px-4 py-4">
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               <Lbl text="Type">
-                <select className={field} value={cf.kind} onChange={(e) => setCf(withKind(cf, e.target.value as ClosureKind))}>
+                <Select className={field} value={cf.kind} onChange={(e) => setCf(withKind(cf, e.target.value as ClosureKind))}>
                   {(Object.keys(CLOSURE_LABEL) as ClosureKind[]).map((k) => (
                     <option key={k} value={k}>
                       {CLOSURE_LABEL[k]}
                     </option>
                   ))}
-                </select>
+                </Select>
               </Lbl>
               <Lbl text="Name">
                 <input className={field} value={cf.name} onChange={(e) => setCf({ ...cf, name: e.target.value })} />
@@ -538,13 +539,13 @@ export function TermsManager({
                 <li key={c.id} className="space-y-3 bg-cream/40 px-4 py-4">
                   <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                     <Lbl text="Type">
-                      <select className={field} value={cf.kind} onChange={(e) => setCf(withKind(cf, e.target.value as ClosureKind))}>
+                      <Select className={field} value={cf.kind} onChange={(e) => setCf(withKind(cf, e.target.value as ClosureKind))}>
                         {(Object.keys(CLOSURE_LABEL) as ClosureKind[]).map((k) => (
                           <option key={k} value={k}>
                             {CLOSURE_LABEL[k]}
                           </option>
                         ))}
-                      </select>
+                      </Select>
                     </Lbl>
                     <Lbl text="Name">
                       <input className={field} value={cf.name} onChange={(e) => setCf({ ...cf, name: e.target.value })} />

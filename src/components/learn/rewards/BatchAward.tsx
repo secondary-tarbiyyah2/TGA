@@ -3,6 +3,8 @@
 import { useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { BADGE_TYPES, MERIT_CATEGORIES, todayIso, type StudentOption } from "@/components/learn/behaviour/data";
+import { Select } from "@/components/learn/Select";
+import { Icon } from "@/components/learn/Icon";
 
 // Reward several pupils, or the whole class, in one go.
 //  * Merits: every merit adds house points to the pupil's house automatically
@@ -64,7 +66,7 @@ export function BatchAward({ classId, roster, onAwarded }: { classId: string; ro
     void award(pupils.map((p) => p.childId));
   };
 
-  const chip = (active: boolean) => `rounded-full border px-3 py-1 text-xs font-medium ${active ? "border-teal-600 bg-teal-50 text-teal-900" : "border-gold-light bg-white text-ink/80 hover:bg-cream"}`;
+  const chip = (active: boolean) => `inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium ${active ? "border-teal-600 bg-teal-50 text-teal-900" : "border-gold-light bg-white text-ink/80 hover:bg-cream"}`;
 
   return (
     <section className="rounded-2xl border border-gold-light/50 bg-white p-4" aria-labelledby="batch-award-h">
@@ -126,13 +128,13 @@ export function BatchAward({ classId, roster, onAwarded }: { classId: string; ro
                 </div>
                 <label className="flex items-center gap-2 text-xs font-medium text-ink/70">
                   Points each
-                  <select value={points} onChange={(e) => setPoints(Number(e.target.value))} className="rounded-lg border border-gold-light bg-white px-2 py-1 text-sm">
+                  <Select value={points} onChange={(e) => setPoints(Number(e.target.value))} className="rounded-lg border border-gold-light bg-white px-2 py-1 text-sm">
                     {[1, 2, 3, 4, 5].map((n) => (
                       <option key={n} value={n}>
                         {n}
                       </option>
                     ))}
-                  </select>
+                  </Select>
                 </label>
                 <label className="block text-xs font-medium text-ink/70">
                   Note (optional)
@@ -143,7 +145,7 @@ export function BatchAward({ classId, roster, onAwarded }: { classId: string; ro
               <div className="flex flex-wrap gap-2" role="group" aria-label="Badge">
                 {BADGE_TYPES.map((b) => (
                   <button key={b.name} type="button" aria-pressed={badge === b.name} onClick={() => setBadge(b.name)} className={chip(badge === b.name)}>
-                    <span aria-hidden="true">{b.emoji} </span>
+                    <Icon name={b.icon} size="sm" />
                     {b.name}
                   </button>
                 ))}

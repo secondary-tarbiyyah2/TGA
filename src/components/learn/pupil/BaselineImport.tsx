@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { ui } from "@/components/learn/ui";
 import { TESTS, sasBand, type BaselineRow } from "./BaselineAssessments";
+import { Select } from "@/components/learn/Select";
 
 type Child = { id: string; name: string; dob: string | null; year: string | null };
 type Parsed = { name: string; match: Child | null; test: BaselineRow["test"]; level: string; taken: string; v: Record<string, number | null>; raw: Record<string, string> };
@@ -110,9 +111,9 @@ export function BaselineImport() {
         <h2 className="text-base font-semibold text-ink">Import a GL CSV export</h2>
         <div className="mt-3 grid gap-3 sm:grid-cols-[16rem_1fr]">
           <label className="text-sm text-ink">Test in this file
-            <select value={test} onChange={(e) => setTest(e.target.value as BaselineRow["test"])} className={`mt-1 ${ui.input}`}>
+            <Select value={test} onChange={(e) => setTest(e.target.value as BaselineRow["test"])} className={`mt-1 ${ui.input}`}>
               {TESTS.map((t) => <option key={t.key} value={t.key}>{t.label}</option>)}
-            </select>
+            </Select>
           </label>
           <label className="text-sm text-ink">Paste the CSV (first line = column headings)
             <textarea value={csv} onChange={(e) => setCsv(e.target.value)} rows={6} className={`mt-1 ${ui.input} font-mono text-xs`} placeholder={"Pupil name,Date of test,Level,Verbal SAS,Quantitative SAS,Non-verbal SAS,Spatial SAS,Mean SAS\nAisha Khan,12/11/2026,D,108,115,101,97,105"} />

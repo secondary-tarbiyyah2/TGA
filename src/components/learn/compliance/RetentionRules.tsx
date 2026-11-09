@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { btn, ui } from "@/components/learn/ui";
+import { Select } from "@/components/learn/Select";
 
 type RuleRow = {
   id: number;
@@ -102,13 +103,13 @@ function RuleCard({ rule, due, onChanged }: { rule: RuleRow; due: PreviewRow[]; 
         </label>
         <label className="text-xs text-ink/70">
           Then
-          <select value={action} onChange={(e) => setAction(e.target.value)} className={`${ui.select} mt-1`}>
+          <Select value={action} onChange={(e) => setAction(e.target.value)} className={`${ui.select} mt-1`}>
             {rule.allowed_actions.map((a) => (
               <option key={a} value={a}>
                 {a === "delete" ? "Delete" : "Anonymise"}
               </option>
             ))}
-          </select>
+          </Select>
         </label>
         <label className="flex items-end gap-2 pb-1.5 text-xs text-ink/70">
           <input type="checkbox" checked={enabled} onChange={(e) => setEnabled(e.target.checked)} /> Rule is on

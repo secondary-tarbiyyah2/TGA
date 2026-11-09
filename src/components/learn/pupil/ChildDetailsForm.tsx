@@ -1,5 +1,6 @@
 "use client";
 
+import { Icon } from "@/components/learn/Icon";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { getSupabaseClient } from "@/lib/supabase/client";
@@ -421,7 +422,7 @@ export function ChildDetailsForm() {
                   <ul className="mt-2 grid gap-x-4 gap-y-1 text-xs sm:grid-cols-2" aria-label="Required items">
                     {progress.items.map((i) => (
                       <li key={i.label} className={i.ok ? "text-green-700" : "text-red-700"}>
-                        <span aria-hidden="true">{i.ok ? "✓" : "○"}</span> {i.label}
+                        <Icon name={i.ok ? "check" : "minus"} className="mr-1 inline h-3.5 w-3.5 align-[-2px]" strokeWidth={2.25} />{i.label}
                         <span className="sr-only">{i.ok ? " done" : " still required"}</span>
                       </li>
                     ))}
@@ -449,7 +450,7 @@ export function ChildDetailsForm() {
               >
                 {i + 1}. {s.label}
                 {stepOk(s.key) && details ? (
-                  <span aria-label="done">✓</span>
+                  <span role="img" aria-label="done" className="inline-flex"><Icon name="check" size="sm" strokeWidth={2.25} /></span>
                 ) : (
                   <>
                     <span aria-hidden="true" className={`h-2 w-2 rounded-full ${step === s.key ? "bg-white" : "bg-red-600"}`} />
@@ -471,7 +472,7 @@ export function ChildDetailsForm() {
                 <div className="space-y-4">
                   <div className="text-sm">
                     <p className="font-medium text-ink">
-                      Date of birth <span className="ml-1 text-xs font-semibold text-green-700">{childDob ? "✓ on record" : ""}</span>
+                      Date of birth <span className="ml-1 text-xs font-semibold text-green-700">{childDob ? <><Icon name="check" className="inline h-3.5 w-3.5 align-[-2px]" strokeWidth={2.5} /> on record</> : ""}</span>
                     </p>
                     <p className="mt-1 text-ink/75">{childDob ? formatDob(childDob) : "Not on record. Please ask the school office to add your child's date of birth."}</p>
                   </div>
