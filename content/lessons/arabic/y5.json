@@ -2,7 +2,7 @@
   "subject": "Arabic",
   "year": "y5",
   "board": "School curriculum (Madinah-style progression)",
-  "source": "Drive: Curriculum/Arabic folder and Secondary Lesson Plan - Arabic - Y8 (format and approach); Madinah-style progression (pronouns, nominal sentences); National Curriculum KS2 languages",
+  "source": "Drive: Curriculum/Arabic folder and Secondary Lesson Plan - Arabic - Y8 (format and approach); Madinah-style progression (pronouns, nominal sentences); National Curriculum KS2 languages | Spring 1 2027 (lessons 2, 3, 5 to 7): founding-year bridge (11 and 18 Jan) and Spring 1 weeks 1 to 3 (my new home, my room and furniture, where is it? with the oral check), order from the Tarbiyyah Primary Year 5 curriculum map (2023-24); Kitabi pages to be checked (CHECK IN KITABI); lessons v3",
   "lessons": [
     {
       "unit": "Unit 1: About me",
@@ -115,220 +115,487 @@
       "send": "SEND: pronoun cards with picture clues, sentence frames. EAL: compare with home-language pronouns. Stretch: add the adjectives كَبِيرٌ/صَغِيرٌ to describe a person."
     },
     {
-      "unit": "Unit 1: About me",
+      "unit": "Spring 1: My new home; my room and furniture; describing my appearance and clothes",
       "n": 2,
-      "title": "Introducing myself",
-      "duration": 45,
+      "title": "Bridge: back to school; where are you from?",
+      "bigQuestion": "How do I greet someone and say where I am from in Arabic?",
       "objectives": [
-        "Say name, nationality, religion and where you live in Arabic",
-        "Ask someone to introduce themselves",
-        "Write a short introduction"
+        "To understand how to greet people, introduce myself and say where I am from"
       ],
+      "successCriteria": [
+        "All: greet with صَبَاحُ الخَيْرِ and reply صَبَاحُ النُّورِ",
+        "Most: ask مِنْ أَيْنَ أَنْتَ؟ and answer أَنَا مِنْ ...",
+        "Some: say where someone else is from with هُوَ or هِيَ"
+      ],
+      "crossCurricular": "Geography: finding the countries our families come from on a world map",
+      "smsc": "Cultural: the Muslim ummah comes from many countries but greets with one salam",
       "keywords": [
         {
-          "term": "مِنْ",
-          "def": "from"
+          "term": "صَبَاحُ الخَيْرِ (sabah al-khayr)",
+          "def": "good morning"
         },
         {
-          "term": "أَسْكُنُ فِي",
-          "def": "I live in"
+          "term": "كَيْفَ حَالُكَ؟ (kayfa haluka?)",
+          "def": "how are you? (to a boy)"
         },
         {
-          "term": "بِرِيطَانِيٌّ / بِرِيطَانِيَّةٌ",
-          "def": "British (m / f)"
-        },
-        {
-          "term": "مُسْلِمٌ / مُسْلِمَةٌ",
-          "def": "Muslim (m / f)"
-        },
-        {
-          "term": "تَشَرَّفْنَا",
-          "def": "pleased to meet you"
-        },
-        {
-          "term": "مِنْ أَيْنَ أَنْتَ؟",
+          "term": "مِنْ أَيْنَ أَنْتَ؟ (min ayna anta?)",
           "def": "where are you from? (to a boy)"
+        },
+        {
+          "term": "أَنَا مِنْ (ana min)",
+          "def": "I am from"
+        },
+        {
+          "term": "هُوَ / هِيَ (huwa / hiya)",
+          "def": "he / she"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Our class may have families from many countries. How many countries do you think are in our class? How could we ask in Arabic?",
+        "a": "We can ask مِنْ أَيْنَ أَنْتَ؟ (min ayna anta?) and answer أَنَا مِنْ ..."
+      },
+      "islamicLink": {
+        "text": "Allah says He made us into nations and tribes so that we may know one another, and the most noble with Allah is the most God-fearing (al-Hujurat 49:13). Asking where someone is from helps us know one another.",
+        "at": "start"
+      },
       "starter": [
-        "Say the five pronouns in Arabic.",
-        "Say 'she is a student' in Arabic.",
-        "What do we say to answer 'kayfa haaluk?'"
+        {
+          "q": "Bismillah. Reply to اَلسَّلَامُ عَلَيْكُمْ. A) وَعَلَيْكُمُ السَّلَامُ B) صَبَاحُ الخَيْرِ",
+          "a": "A) وَعَلَيْكُمُ السَّلَامُ",
+          "mins": 1,
+          "options": [
+            "وَعَلَيْكُمُ السَّلَامُ",
+            "صَبَاحُ الخَيْرِ"
+          ]
+        },
+        {
+          "q": "Say 'my name is ...'.",
+          "a": "اِسْمِي ... (ismi ...)",
+          "mins": 1
+        },
+        {
+          "q": "What does أَنَا mean?",
+          "a": "I",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Greeting and name",
-          "bullets": [
-            "السَّلَامُ عَلَيْكُمْ",
-            "اِسْمِي أَحْمَدُ",
-            "مَا اسْمُكَ؟"
-          ],
-          "note": "Revise the greeting and name. Model a short self-introduction: as-salaamu alaykum, ismee Ahmad. Pupils replace Ahmad with their names. Ask: what comes next in an introduction?"
+          "heading": "Back to school greetings",
+          "table": {
+            "head": [
+              "Say",
+              "Reply"
+            ],
+            "rows": [
+              [
+                "صَبَاحُ الخَيْرِ (sabah al-khayr) good morning",
+                "صَبَاحُ النُّورِ (sabah an-nur)"
+              ],
+              [
+                "كَيْفَ حَالُكَ؟ (kayfa haluka?)",
+                "بِخَيْرٍ، وَالحَمْدُ لِلّٰهِ (bi-khayr, wal-hamdu lillah)"
+              ]
+            ]
+          },
+          "note": "Begin with bismillah. Pupils greet the next pupil by name. To a girl: كَيْفَ حَالُكِ؟ (kayfa haluki?)."
+        },
+        {
+          "heading": "I, you, he, she",
+          "table": {
+            "head": [
+              "Arabic",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "أَنَا",
+                "ana",
+                "I"
+              ],
+              [
+                "أَنْتَ",
+                "anta",
+                "you (boy)"
+              ],
+              [
+                "أَنْتِ",
+                "anti",
+                "you (girl)"
+              ],
+              [
+                "هُوَ",
+                "huwa",
+                "he"
+              ],
+              [
+                "هِيَ",
+                "hiya",
+                "she"
+              ]
+            ]
+          },
+          "note": "Point to yourself, a boy, a girl on screen. Pupils say the pronoun."
         },
         {
           "heading": "Where are you from?",
           "bullets": [
-            "مِنْ أَيْنَ أَنْتَ؟",
-            "أَنَا مِنْ لَنْدَن",
-            "I am from London"
+            "مِنْ أَيْنَ أَنْتَ؟ (min ayna anta?) to a boy",
+            "مِنْ أَيْنَ أَنْتِ؟ (min ayna anti?) to a girl",
+            "أَنَا مِنْ بِرِيطَانِيَا (ana min Britaniya)"
           ],
-          "note": "Teach min = from and ayna = where. Pupils answer with their city or country. Provide city names in Arabic: لَنْدَن، مَانْشَسْتَر، بَرْمِنْغْهَام. Clarify the sound of the nasal 'ng' in birmingham in Arabic spelling."
+          "note": "Other countries: مِصْرَ (Misr) Egypt, تُرْكِيَا (Turkiya), بَاكِسْتَان (Bakistan). Pupils give their own."
         },
         {
-          "heading": "Nationality and religion",
+          "heading": "He is from, she is from",
           "bullets": [
-            "أَنَا بِرِيطَانِيٌّ",
-            "أَنَا بِرِيطَانِيَّةٌ",
-            "أَنَا مُسْلِمٌ / مُسْلِمَةٌ"
+            "هُوَ مِنْ مِصْرَ (huwa min Misr)",
+            "هِيَ مِنْ تُرْكِيَا (hiya min Turkiya)",
+            "No word for 'is' in Arabic here"
           ],
-          "note": "Boys use -iyy, girls use -iyya. Provide other nationalities: مِصْرِيٌّ (Egyptian), صُومَالِيٌّ (Somali), بَاكِسْتَانِيٌّ (Pakistani). Allow pupils to choose their own. Point out the shadda."
+          "note": "Arabic needs no 'is' in these sentences: huwa min Misr = he (is) from Egypt."
         },
         {
-          "heading": "Where I live",
+          "heading": "Check",
           "bullets": [
-            "أَسْكُنُ فِي لَنْدَن",
-            "أَسْكُنُ فِي مَدِينَةٍ كَبِيرَةٍ",
-            "I live in London"
+            "Vote in the Teams poll"
           ],
-          "note": "Introduce askunu = 'I live'. Pupils practise 'askunu fee ...'. Use maps to show city names. Reinforce the preposition fee."
-        },
-        {
-          "heading": "Putting it together",
-          "bullets": [
-            "السَّلَامُ عَلَيْكُمْ",
-            "اِسْمِي مَرْيَمُ، أَنَا بِرِيطَانِيَّةٌ",
-            "أَسْكُنُ فِي لَنْدَن"
-          ],
-          "note": "Model a four-line speech. Pupils produce their own. Encourage use of bismillah and polite phrases like tasharrafna. Record a short speech as a class."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "How do you ask a girl where she is from?",
+            "options": [
+              "مِنْ أَيْنَ أَنْتَ؟",
+              "مِنْ أَيْنَ أَنْتِ؟",
+              "كَيْفَ حَالُكَ؟"
+            ],
+            "answer": 1,
+            "why": "أَنْتِ (anti) with a kasrah is 'you' to a girl."
+          }
         }
       ],
       "practice": [
-        "Say the five pronouns.",
-        "Say 'he is a teacher' in Arabic.",
-        "Say a four-line introduction.",
-        "Ask your partner مِنْ أَيْنَ أَنْتَ؟ / مِنْ أَيْنَ أَنْتِ؟ and answer."
-      ],
-      "independent": [
-        "Write a four-sentence introduction with greeting, name, nationality and where you live.",
-        "Interview a partner and record their answers in Arabic.",
-        "Make a passport card for yourself with Arabic details (no photo or drawing of a face)."
-      ],
-      "exit": [
-        "Say 'I live in London' in Arabic.",
-        "What does 'min' mean?"
-      ],
-      "homework": "Write and learn by heart a five-sentence introduction.",
-      "send": "SEND: sentence strips and word bank. EAL: translate details from the home language. Stretch: add 'I like ...' to the introduction with أُحِبُّ."
-    },
-    {
-      "unit": "Unit 2: Numbers and what I like",
-      "n": 3,
-      "title": "Numbers 1 to 10 and my age",
-      "duration": 45,
-      "objectives": [
-        "Count from 1 to 10 in Arabic",
-        "Read the numbers in Arabic script",
-        "Say how old you are"
-      ],
-      "keywords": [
         {
-          "term": "عُمْرِي",
-          "def": "my age (my age is...)"
+          "q": "Answer: مِنْ أَيْنَ أَنْتَ؟ (say you are from Britain)",
+          "a": "أَنَا مِنْ بِرِيطَانِيَا (ana min Britaniya)",
+          "mins": 2,
+          "model": "Start with أَنَا (I).\nAdd مِنْ (from).\nAdd the country: بِرِيطَانِيَا."
         },
         {
-          "term": "سَنَةٌ",
-          "def": "year"
+          "q": "Say 'she is from Egypt'.",
+          "a": "هِيَ مِنْ مِصْرَ (hiya min Misr)",
+          "mins": 1
         },
         {
-          "term": "سِتَّةٌ",
-          "def": "six"
-        },
-        {
-          "term": "سَبْعَةٌ",
-          "def": "seven"
-        },
-        {
-          "term": "ثَمَانِيَةٌ",
-          "def": "eight"
-        },
-        {
-          "term": "تِسْعَةٌ",
-          "def": "nine"
-        },
-        {
-          "term": "عَشَرَةٌ",
-          "def": "ten"
+          "q": "Reply to صَبَاحُ الخَيْرِ.",
+          "a": "صَبَاحُ النُّورِ (sabah an-nur)",
+          "mins": 1
         }
       ],
+      "independent": [
+        {
+          "q": "Core: Write a short introduction: greeting, name, where you are from.",
+          "a": "For example: اَلسَّلَامُ عَلَيْكُمْ. اِسْمِي مَرْيَمُ. أَنَا مِنْ بِرِيطَانِيَا.",
+          "mins": 6,
+          "model": "Teacher writes their own three lines on the whiteboard, reading each aloud."
+        },
+        {
+          "q": "Extend: Write two lines about a classmate with هُوَ or هِيَ, e.g. اِسْمُهُ آدَمُ. هُوَ مِنْ ...",
+          "a": "For example: اِسْمُهَا سَارَةُ. هِيَ مِنْ تُرْكِيَا.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Write a short dialogue of four lines between two pupils meeting for the first time.",
+          "a": "For example: صَبَاحُ الخَيْرِ. صَبَاحُ النُّورِ. مِنْ أَيْنَ أَنْتَ؟ أَنَا مِنْ مِصْرَ.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "What does مِنْ أَيْنَ mean? A) where from? B) how are you? C) what is your name?",
+          "a": "A) where from?",
+          "mins": 1,
+          "options": [
+            "where from?",
+            "how are you?",
+            "what is your name?"
+          ]
+        },
+        {
+          "q": "Big question: greet me and tell me where you are from.",
+          "a": "For example: صَبَاحُ الخَيْرِ. أَنَا مِنْ بِرِيطَانِيَا.",
+          "mins": 2
+        }
+      ],
+      "homework": "Ask two family members مِنْ أَيْنَ أَنْتَ؟ / أَنْتِ؟ and write their answers in Arabic.",
+      "send": "SEND: sentence frames: أَنَا مِنْ ___. EAL: flags with country names. Stretch: use اِسْمُهُ (his name) and اِسْمُهَا (her name).",
+      "resources": [
+        "Tarbiyyah Primary Year 5 Arabic curriculum map (2023-24), Autumn 1 essentials (bridge)",
+        "Portal arabic y5 lessons 1 and 2 (pronouns, introducing myself); lesson 2 upgraded",
+        "Kitabi: back to school (CHECK IN KITABI)",
+        "World map and sentence frame sheet (portal worksheet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "world map political",
+          "alt": "A map of the world",
+          "for": "hook"
+        },
+        {
+          "find": "map of Egypt",
+          "alt": "A map of Egypt (Misr)",
+          "for": "teach:4"
+        }
+      ],
+      "duration": 45
+    },
+    {
+      "unit": "Spring 1: My new home; my room and furniture; describing my appearance and clothes",
+      "n": 3,
+      "title": "Bridge: how much is it? Buying food; my body",
+      "bigQuestion": "How do I ask for something and its price in Arabic?",
+      "objectives": [
+        "To understand how to ask how much something costs and name parts of my body"
+      ],
+      "successCriteria": [
+        "All: ask بِكَمْ هٰذَا؟ (bikam hadha?)",
+        "Most: say what I want: أُرِيدُ خُبْزًا (uridu khubzan)",
+        "Some: answer with a price, e.g. بِخَمْسَةِ جُنَيْهَاتٍ"
+      ],
+      "crossCurricular": "Maths: money and adding prices",
+      "smsc": "Moral: honesty in buying and selling",
+      "keywords": [
+        {
+          "term": "كَمْ؟ (kam?)",
+          "def": "how many? how much?"
+        },
+        {
+          "term": "بِكَمْ هٰذَا؟ (bikam hadha?)",
+          "def": "how much is this?"
+        },
+        {
+          "term": "أُرِيدُ (uridu)",
+          "def": "I want"
+        },
+        {
+          "term": "جُنَيْه (junayh)",
+          "def": "a pound (money)"
+        },
+        {
+          "term": "رَأْس (ra's)",
+          "def": "head"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You are in a shop in an Arabic-speaking country. You want bread and need to know the price. What two things must you be able to say?",
+        "a": "What I want (أُرِيدُ) and how much is it (بِكَمْ هٰذَا؟)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Give full measure and weight in justice' (al-An'am 6:152). Muslims buy and sell honestly, with fair prices and fair weights.",
+        "at": "start"
+      },
       "starter": [
-        "Say 'I live in London' in Arabic.",
-        "Say 'I am British' in Arabic.",
-        "Count from one to five in Arabic."
+        {
+          "q": "Bismillah. How do you ask a boy where he is from? A) مِنْ أَيْنَ أَنْتَ؟ B) كَيْفَ حَالُكَ؟",
+          "a": "A) مِنْ أَيْنَ أَنْتَ؟",
+          "mins": 1,
+          "options": [
+            "مِنْ أَيْنَ أَنْتَ؟",
+            "كَيْفَ حَالُكَ؟"
+          ]
+        },
+        {
+          "q": "Count from ١ to ٥ in Arabic.",
+          "a": "وَاحِد، اِثْنَان، ثَلَاثَة، أَرْبَعَة، خَمْسَة",
+          "mins": 1
+        },
+        {
+          "q": "What is هِيَ?",
+          "a": "she",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Numbers 1 to 5",
-          "bullets": [
-            "١ وَاحِدٌ",
-            "٢ اثْنَانِ",
-            "٣ ثَلَاثَةٌ"
-          ],
-          "note": "Revise numerals ١ ٢ ٣ ٤ ٥. Remind pupils that Arabic numerals look different but are used with the same value. Point out ٥ looks like a circle, and ٠ is a dot. Practise reading numerals from the board."
+          "heading": "In the shop",
+          "table": {
+            "head": [
+              "Arabic",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "خُبْز",
+                "khubz",
+                "bread"
+              ],
+              [
+                "تُفَّاح",
+                "tuffah",
+                "apples"
+              ],
+              [
+                "حَلِيب",
+                "halib",
+                "milk"
+              ],
+              [
+                "أُرِيدُ خُبْزًا",
+                "uridu khubzan",
+                "I want bread"
+              ]
+            ]
+          },
+          "note": "Begin with bismillah. After أُرِيدُ the noun ends in -an: خُبْزًا, حَلِيبًا."
         },
         {
-          "heading": "Numbers 6 to 10",
+          "heading": "How much is it?",
           "bullets": [
-            "٦ سِتَّةٌ",
-            "٧ سَبْعَةٌ",
-            "٨ ثَمَانِيَةٌ"
+            "بِكَمْ هٰذَا؟ (bikam hadha?)",
+            "هٰذَا بِخَمْسَةِ جُنَيْهَاتٍ (bi-khamsati junayhat)",
+            "This is five pounds"
           ],
-          "note": "Introduce ٦ ٧ ٨ ٩ ١٠ with their words. Pupils write the numeral and word. Note ٧ looks like a V and ٨ looks like an inverted V. Use chanting and clapping."
+          "note": "جُنَيْه is a pound; for 3 to 10 we use the plural جُنَيْهَات. Pupils ask and answer with prices from ٣ to ١٠."
         },
         {
-          "heading": "More numbers",
+          "heading": "How many?",
           "bullets": [
-            "٩ تِسْعَةٌ",
-            "١٠ عَشَرَةٌ",
-            "Count to ten"
+            "كَمْ تُفَّاحَةً؟ (kam tuffahatan?) how many apples?",
+            "أُرِيدُ ثَلَاثَ تُفَّاحَاتٍ",
+            "I want three apples"
           ],
-          "note": "Play 'count and clap': class counts to ten; clap on the even numbers. Then count backwards. Check for the difficult sound in thamaniya (th)."
+          "note": "After كَمْ the noun is singular. This is a stretch point: most pupils just need كَمْ?"
         },
         {
-          "heading": "How old are you?",
-          "bullets": [
-            "كَمْ عُمْرُكَ؟",
-            "عُمْرِي تِسْعُ سَنَوَاتٍ",
-            "I am nine years old"
-          ],
-          "note": "Explain kam = how many, 'umr = age. Teach these ages as set phrases: سَبْعُ سَنَوَاتٍ، ثَمَانِي سَنَوَاتٍ، تِسْعُ سَنَوَاتٍ، عَشْرُ سَنَوَاتٍ. Do not explain the number-gender rule at this stage. Pupils say their own age."
+          "heading": "My body",
+          "diagram": {
+            "centre": "جِسْمِي (jismi) my body",
+            "items": [
+              "رَأْس (ra's) head",
+              "عَيْن ('ayn) eye",
+              "فَم (fam) mouth",
+              "يَد (yad) hand",
+              "رِجْل (rijl) leg"
+            ]
+          },
+          "note": "Pupils point to each part on themselves as they say it. Add my: رَأْسِي (ra'si), يَدِي (yadi)."
         },
         {
-          "heading": "Family ages",
+          "heading": "Check",
           "bullets": [
-            "عُمْرُ أَخِي سَبْعُ سَنَوَاتٍ",
-            "عُمْرُ أُخْتِي عَشْرُ سَنَوَاتٍ",
-            "Say a family member's age"
+            "Vote in the Teams poll"
           ],
-          "note": "Pupils use the pattern 'umru ... + family word to talk about relatives. Model with ukhtee. Practise in pairs. Offer a word bank for family members from earlier years."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "How do you ask the price?",
+            "options": [
+              "أُرِيدُ خُبْزًا",
+              "بِكَمْ هٰذَا؟",
+              "مِنْ أَيْنَ أَنْتَ؟"
+            ],
+            "answer": 1,
+            "why": "بِكَمْ هٰذَا؟ means 'how much is this?'."
+          }
         }
       ],
       "practice": [
-        "Count from one to five in Arabic.",
-        "What is 'akhee' in English?",
-        "Read the numerals aloud from ١ to ١٠.",
-        "Ask and answer كَمْ عُمْرُكَ؟ with a partner."
+        {
+          "q": "Say: I want milk. How much is this?",
+          "a": "أُرِيدُ حَلِيبًا. بِكَمْ هٰذَا؟",
+          "mins": 2,
+          "model": "Start with أُرِيدُ (I want).\nAdd the food with -an: حَلِيبًا.\nThen ask: بِكَمْ هٰذَا؟"
+        },
+        {
+          "q": "What is يَد?",
+          "a": "hand",
+          "mins": 1
+        },
+        {
+          "q": "Say 'This is three pounds'.",
+          "a": "هٰذَا بِثَلَاثَةِ جُنَيْهَاتٍ",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Write the numerals and words for 1-10.",
-        "Solve: ٣ + ٤ = ؟ (say the answer in Arabic).",
-        "Write three sentences about the ages of family members."
+        {
+          "q": "Core: Write a shop dialogue of four lines: greeting, I want ..., how much?, the price.",
+          "a": "For example: صَبَاحُ الخَيْرِ. أُرِيدُ خُبْزًا. بِكَمْ هٰذَا؟ هٰذَا بِخَمْسَةِ جُنَيْهَاتٍ.",
+          "mins": 6,
+          "model": "Teacher writes the dialogue line by line, reading both parts."
+        },
+        {
+          "q": "Extend: Write five body words with their English meaning, then read them to the class, pointing to each part as you say it.",
+          "a": "رَأْس، عَيْن، فَم، يَد، رِجْل",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Ask how many: كَمْ ...؟ for apples and answer with a number.",
+          "a": "كَمْ تُفَّاحَةً؟ أُرِيدُ أَرْبَعَ تُفَّاحَاتٍ.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "How do you say 'seven' in Arabic?",
-        "How do you ask 'How old are you?' in Arabic?"
+        {
+          "q": "What does أُرِيدُ mean? A) I want B) I have C) I go",
+          "a": "A) I want",
+          "mins": 1,
+          "options": [
+            "I want",
+            "I have",
+            "I go"
+          ]
+        },
+        {
+          "q": "Big question: ask for bread and its price in Arabic.",
+          "a": "أُرِيدُ خُبْزًا. بِكَمْ هٰذَا؟",
+          "mins": 2
+        }
       ],
-      "homework": "Write your age and the ages of three family members in Arabic sentences.",
-      "send": "SEND: number line with words and numerals. EAL: compare numeral shapes with home-language numerals. Stretch: say addition sums aloud in Arabic using وَ and يُسَاوِي."
+      "homework": "Play shop at home: ask for three foods in Arabic and say their prices.",
+      "send": "SEND: shop cards with pictures and prices. EAL: phrase card with English. Stretch: use the plural of يَد: يَدَانِ (yadani), two hands.",
+      "resources": [
+        "Tarbiyyah Primary Year 5 Arabic curriculum map (2023-24), Autumn 2 essentials (bridge)",
+        "Portal arabic y5 lessons 3 and 4 (numbers and my age; food I like); lesson 3 upgraded",
+        "Kitabi: buying my food and things; parts of my body (CHECK IN KITABI)",
+        "Shop price cards (portal worksheet)",
+        "Real food packets for the camera"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "loaf of bread",
+          "alt": "A loaf of bread (khubz)",
+          "for": "teach:1"
+        },
+        {
+          "find": "red apples in a basket",
+          "alt": "Apples (tuffah)",
+          "for": "keywords"
+        },
+        {
+          "find": "British pound coins",
+          "alt": "Pound coins",
+          "for": "teach:2"
+        }
+      ],
+      "duration": 45
     },
     {
       "unit": "Unit 2: Numbers and what I like",
@@ -443,6 +710,723 @@
       ],
       "homework": "Write a short paragraph about three foods you like and one you do not like.",
       "send": "SEND: picture menu with Arabic labels, sentence frames. EAL: share foods from home language and culture. Stretch: add 'because it is tasty' with لِأَنَّهُ لَذِيذٌ."
+    },
+    {
+      "unit": "Spring 1: My new home; my room and furniture; describing my appearance and clothes",
+      "n": 5,
+      "title": "My new home: the rooms",
+      "bigQuestion": "How can I describe my home in Arabic?",
+      "objectives": [
+        "To understand how to name the rooms of a home and describe it in simple sentences"
+      ],
+      "successCriteria": [
+        "All: name five rooms",
+        "Most: say فِي بَيْتِي ... (in my house there is ...)",
+        "Some: count rooms: فِي بَيْتِي ثَلَاثُ غُرَفٍ"
+      ],
+      "crossCurricular": "Design and technology: floor plans and how rooms are used",
+      "smsc": "Spiritual: thanking Allah for a home that gives rest and safety",
+      "keywords": [
+        {
+          "term": "بَيْت (bayt)",
+          "def": "a house or home"
+        },
+        {
+          "term": "غُرْفَة (ghurfah)",
+          "def": "a room"
+        },
+        {
+          "term": "مَطْبَخ (matbakh)",
+          "def": "kitchen"
+        },
+        {
+          "term": "حَمَّام (hammam)",
+          "def": "bathroom"
+        },
+        {
+          "term": "غُرْفَةُ النَّوْمِ (ghurfat an-nawm)",
+          "def": "bedroom"
+        },
+        {
+          "term": "حَدِيقَة (hadiqah)",
+          "def": "garden"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you moved to a new home, which room would you want to see first, and why?",
+        "a": "Any answer with a reason; today we name every room in Arabic."
+      },
+      "islamicLink": {
+        "text": "Allah says He has made our homes a place of rest for us (an-Nahl 16:80). A home is a blessing to thank Allah for.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. What is بِكَمْ هٰذَا؟ A) How much is this? B) Where are you from?",
+          "a": "A) How much is this?",
+          "mins": 1,
+          "options": [
+            "How much is this?",
+            "Where are you from?"
+          ]
+        },
+        {
+          "q": "Say 'I want bread'.",
+          "a": "أُرِيدُ خُبْزًا",
+          "mins": 1
+        },
+        {
+          "q": "What is رَأْس?",
+          "a": "head",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Rooms in a home",
+          "table": {
+            "head": [
+              "Arabic",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "مَطْبَخ",
+                "matbakh",
+                "kitchen"
+              ],
+              [
+                "حَمَّام",
+                "hammam",
+                "bathroom"
+              ],
+              [
+                "غُرْفَةُ النَّوْمِ",
+                "ghurfat an-nawm",
+                "bedroom"
+              ],
+              [
+                "غُرْفَةُ الجُلُوسِ",
+                "ghurfat al-julus",
+                "living room"
+              ],
+              [
+                "حَدِيقَة",
+                "hadiqah",
+                "garden"
+              ]
+            ]
+          },
+          "note": "Begin with bismillah. Room = غُرْفَة; bedroom is 'room of sleep', living room is 'room of sitting'."
+        },
+        {
+          "heading": "In my house there is",
+          "bullets": [
+            "فِي بَيْتِي مَطْبَخٌ (fi bayti matbakhun)",
+            "In my house there is a kitchen",
+            "فِي بَيْتِي حَدِيقَةٌ صَغِيرَةٌ"
+          ],
+          "note": "No word for 'there is' is needed: fi bayti + the room."
+        },
+        {
+          "heading": "My new home",
+          "bullets": [
+            "بَيْتِي جَدِيدٌ (bayti jadidun) my house is new",
+            "بَيْتِي كَبِيرٌ / صَغِيرٌ",
+            "big / small"
+          ],
+          "note": "Revise adjectives from Year 3 and 4. Pupils describe their home with one adjective."
+        },
+        {
+          "heading": "How many rooms?",
+          "bullets": [
+            "غُرْفَة → غُرَف (ghuraf) rooms",
+            "فِي بَيْتِي ثَلَاثُ غُرَفٍ",
+            "In my house there are three rooms"
+          ],
+          "note": "Stretch point: with a girl word like غُرْفَة, the number has no ة: ثَلَاثُ, أَرْبَعُ."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which room is مَطْبَخ?",
+            "options": [
+              "bathroom",
+              "kitchen",
+              "garden"
+            ],
+            "answer": 1,
+            "why": "مَطْبَخ comes from طَبَخَ, to cook: the kitchen."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say: In my house there is a garden.",
+          "a": "فِي بَيْتِي حَدِيقَةٌ (fi bayti hadiqatun)",
+          "mins": 2,
+          "model": "Start with فِي بَيْتِي (in my house).\nAdd the room: حَدِيقَةٌ.\nRead it: fi bayti hadiqatun."
+        },
+        {
+          "q": "What is غُرْفَةُ النَّوْمِ?",
+          "a": "bedroom",
+          "mins": 1
+        },
+        {
+          "q": "Say 'my house is big'.",
+          "a": "بَيْتِي كَبِيرٌ (bayti kabirun)",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw a simple floor plan of a home (boxes) and label each room in Arabic.",
+          "a": "Plan labelled with مَطْبَخ، حَمَّام، غُرْفَةُ النَّوْمِ، غُرْفَةُ الجُلُوسِ، حَدِيقَة",
+          "mins": 6,
+          "model": "Teacher draws three boxes on the whiteboard and labels them مَطْبَخ، حَمَّام، غُرْفَةُ النَّوْمِ."
+        },
+        {
+          "q": "Extend: Write three sentences: فِي بَيْتِي ...",
+          "a": "For example: فِي بَيْتِي مَطْبَخٌ. فِي بَيْتِي حَمَّامٌ. فِي بَيْتِي حَدِيقَةٌ.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Write how many rooms your home has, e.g. فِي بَيْتِي أَرْبَعُ غُرَفٍ.",
+          "a": "For example: فِي بَيْتِي أَرْبَعُ غُرَفٍ.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "What is حَدِيقَة? A) garden B) kitchen C) room",
+          "a": "A) garden",
+          "mins": 1,
+          "options": [
+            "garden",
+            "kitchen",
+            "room"
+          ]
+        },
+        {
+          "q": "Big question: describe your home in one Arabic sentence.",
+          "a": "For example: بَيْتِي كَبِيرٌ وَفِيهِ حَدِيقَةٌ.",
+          "mins": 2
+        }
+      ],
+      "homework": "Walk round your home and say the Arabic name of each room; write labels for three doors.",
+      "send": "SEND: picture cards of rooms (furniture only, no people). EAL: floor plan with English and Arabic. Stretch: add وَ (and) to join two rooms in one sentence.",
+      "resources": [
+        "Tarbiyyah Primary Year 5 Arabic curriculum map (2023-24), Spring 1 week 1",
+        "Kitabi: my new home (CHECK IN KITABI)",
+        "Floor plan template and room labels (portal worksheet)",
+        "Ruler and pencil"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "kitchen interior empty",
+          "alt": "A kitchen (matbakh)",
+          "for": "keywords"
+        },
+        {
+          "find": "house floor plan",
+          "alt": "A floor plan of a home",
+          "for": "hook"
+        },
+        {
+          "find": "small garden with flowers",
+          "alt": "A small garden (hadiqah)",
+          "for": "teach:2"
+        }
+      ],
+      "duration": 45
+    },
+    {
+      "unit": "Spring 1: My new home; my room and furniture; describing my appearance and clothes",
+      "n": 6,
+      "title": "My room and its furniture",
+      "bigQuestion": "What is in my room, and how can I describe it in Arabic?",
+      "objectives": [
+        "To understand how to name furniture and describe my room with adjectives"
+      ],
+      "successCriteria": [
+        "All: name five pieces of furniture",
+        "Most: say فِي غُرْفَتِي سَرِيرٌ (in my room there is a bed)",
+        "Some: add an adjective that agrees: طَاوِلَةٌ صَغِيرَةٌ"
+      ],
+      "crossCurricular": "English: adjectives that describe nouns",
+      "smsc": "Moral: keeping my room tidy and sharing it kindly",
+      "keywords": [
+        {
+          "term": "سَرِير (sarir)",
+          "def": "bed"
+        },
+        {
+          "term": "طَاوِلَة (tawilah)",
+          "def": "table"
+        },
+        {
+          "term": "كُرْسِيّ (kursiyy)",
+          "def": "chair"
+        },
+        {
+          "term": "خِزَانَة (khizanah)",
+          "def": "wardrobe, cupboard"
+        },
+        {
+          "term": "نَافِذَة (nafidhah)",
+          "def": "window"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "The word for 'chair' in Arabic is in a famous ayah many Muslims read every night. Can you guess which one?",
+        "a": "Ayat al-Kursi: كُرْسِيّ (kursiyy)."
+      },
+      "islamicLink": {
+        "text": "In Ayat al-Kursi (al-Baqarah 2:255) Allah tells us His Kursi extends over the heavens and the earth. The same word, كُرْسِيّ, is used for a chair, but nothing is like Allah.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. What is مَطْبَخ? A) kitchen B) bathroom",
+          "a": "A) kitchen",
+          "mins": 1,
+          "options": [
+            "kitchen",
+            "bathroom"
+          ]
+        },
+        {
+          "q": "Say 'in my house there is a garden'.",
+          "a": "فِي بَيْتِي حَدِيقَةٌ",
+          "mins": 1
+        },
+        {
+          "q": "What is غُرْفَة?",
+          "a": "a room",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "In my room",
+          "table": {
+            "head": [
+              "Arabic",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "سَرِير",
+                "sarir",
+                "bed"
+              ],
+              [
+                "طَاوِلَة",
+                "tawilah",
+                "table"
+              ],
+              [
+                "كُرْسِيّ",
+                "kursiyy",
+                "chair"
+              ],
+              [
+                "خِزَانَة",
+                "khizanah",
+                "wardrobe"
+              ],
+              [
+                "مَكْتَب",
+                "maktab",
+                "desk"
+              ],
+              [
+                "نَافِذَة",
+                "nafidhah",
+                "window"
+              ]
+            ]
+          },
+          "note": "Begin with bismillah. Pupils turn their camera to show one item and say its name."
+        },
+        {
+          "heading": "There is",
+          "bullets": [
+            "فِي غُرْفَتِي سَرِيرٌ (fi ghurfati sarirun)",
+            "In my room there is a bed",
+            "غُرْفَة → غُرْفَتِي: ة becomes ت"
+          ],
+          "note": "Revise 'my' with girl words from Year 3."
+        },
+        {
+          "heading": "Adjectives agree",
+          "compare": {
+            "left": {
+              "title": "Boy word",
+              "points": [
+                "سَرِيرٌ كَبِيرٌ (a big bed)",
+                "كُرْسِيٌّ جَدِيدٌ (a new chair)"
+              ]
+            },
+            "right": {
+              "title": "Girl word",
+              "points": [
+                "طَاوِلَةٌ صَغِيرَةٌ (a small table)",
+                "خِزَانَةٌ كَبِيرَةٌ (a big wardrobe)"
+              ]
+            },
+            "label": "add ة"
+          },
+          "note": "The adjective comes after the noun and takes ة for a girl word."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which is correct for 'a small table'?",
+            "options": [
+              "طَاوِلَةٌ صَغِيرٌ",
+              "طَاوِلَةٌ صَغِيرَةٌ",
+              "صَغِيرَةٌ طَاوِلَةٌ"
+            ],
+            "answer": 1,
+            "why": "طَاوِلَة is a girl word, so the adjective also takes ة, and it comes after the noun."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say: In my room there is a big wardrobe.",
+          "a": "فِي غُرْفَتِي خِزَانَةٌ كَبِيرَةٌ",
+          "mins": 2,
+          "model": "Start: فِي غُرْفَتِي.\nThe thing: خِزَانَةٌ (a girl word).\nAdjective with ة: كَبِيرَةٌ."
+        },
+        {
+          "q": "Boy word or girl word: نَافِذَة?",
+          "a": "Girl word",
+          "mins": 1
+        },
+        {
+          "q": "Say 'a new chair'.",
+          "a": "كُرْسِيٌّ جَدِيدٌ",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write four sentences about your room: فِي غُرْفَتِي ...",
+          "a": "For example: فِي غُرْفَتِي سَرِيرٌ. فِي غُرْفَتِي كُرْسِيٌّ. فِي غُرْفَتِي نَافِذَةٌ. فِي غُرْفَتِي مَكْتَبٌ.",
+          "mins": 6,
+          "model": "Teacher writes two sentences about a room, then reads them aloud."
+        },
+        {
+          "q": "Extend: Add an adjective to two of your sentences, with ة for girl words.",
+          "a": "For example: فِي غُرْفَتِي سَرِيرٌ كَبِيرٌ وَطَاوِلَةٌ صَغِيرَةٌ.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Write the plural: chair, كُرْسِيّ → كَرَاسِيّ, and use it: فِي غُرْفَتِي كَرَاسِيُّ.",
+          "a": "فِي غُرْفَتِي كَرَاسِيُّ (there are chairs in my room)",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "What is سَرِير? A) bed B) chair C) window",
+          "a": "A) bed",
+          "mins": 1,
+          "options": [
+            "bed",
+            "chair",
+            "window"
+          ]
+        },
+        {
+          "q": "Big question: describe your room in one Arabic sentence with an adjective.",
+          "a": "For example: فِي غُرْفَتِي سَرِيرٌ كَبِيرٌ.",
+          "mins": 2
+        }
+      ],
+      "homework": "Stick Arabic labels on five things in your room (with permission) and read them each day.",
+      "send": "SEND: furniture picture cards. EAL: label sheet with English. Stretch: use two adjectives: غُرْفَتِي كَبِيرَةٌ وَجَمِيلَةٌ.",
+      "resources": [
+        "Tarbiyyah Primary Year 5 Arabic curriculum map (2023-24), Spring 1 week 2",
+        "Kitabi: my room and furniture (CHECK IN KITABI)",
+        "Furniture labels to cut out (portal worksheet)",
+        "Scissors and sticky tape"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "wooden chair",
+          "alt": "A chair (kursiyy)",
+          "for": "keywords"
+        },
+        {
+          "find": "bed in a bedroom",
+          "alt": "A bed (sarir)",
+          "for": "teach:1"
+        },
+        {
+          "find": "wooden wardrobe",
+          "alt": "A wardrobe (khizanah)",
+          "for": "teach:3"
+        }
+      ],
+      "duration": 45
+    },
+    {
+      "unit": "Spring 1: My new home; my room and furniture; describing my appearance and clothes",
+      "n": 7,
+      "title": "Where is it? In, on, under; oral check",
+      "bigQuestion": "How can I say exactly where something is in Arabic?",
+      "objectives": [
+        "To understand how to say where things are using فِي، عَلَى and تَحْتَ"
+      ],
+      "successCriteria": [
+        "All: say فِي (in), عَلَى (on), تَحْتَ (under)",
+        "Most: answer أَيْنَ ...؟ with a full sentence",
+        "Some: describe my room aloud in three sentences for the oral check"
+      ],
+      "crossCurricular": "Maths: position and direction words",
+      "smsc": "Social: helping someone find a lost thing by describing where it is",
+      "keywords": [
+        {
+          "term": "أَيْنَ؟ (ayna?)",
+          "def": "where?"
+        },
+        {
+          "term": "فِي (fi)",
+          "def": "in"
+        },
+        {
+          "term": "عَلَى ('ala)",
+          "def": "on"
+        },
+        {
+          "term": "تَحْتَ (tahta)",
+          "def": "under"
+        },
+        {
+          "term": "بِجَانِبِ (bi-janibi)",
+          "def": "next to"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You lost your pencil case. Your mum says 'It is on the table'. Which tiny word tells you exactly where to look?",
+        "a": "On. In Arabic: عَلَى ('ala)."
+      },
+      "islamicLink": {
+        "text": "Allah knows where everything is: not a leaf falls but He knows it (al-An'am 6:59). We use these small words to describe where things are.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. What is طَاوِلَة? A) table B) chair",
+          "a": "A) table",
+          "mins": 1,
+          "options": [
+            "table",
+            "chair"
+          ]
+        },
+        {
+          "q": "Say 'in my room there is a bed'.",
+          "a": "فِي غُرْفَتِي سَرِيرٌ",
+          "mins": 1
+        },
+        {
+          "q": "Make it agree: طَاوِلَةٌ (كَبِير)",
+          "a": "طَاوِلَةٌ كَبِيرَةٌ",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Where words",
+          "table": {
+            "head": [
+              "Arabic",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "فِي",
+                "fi",
+                "in"
+              ],
+              [
+                "عَلَى",
+                "'ala",
+                "on"
+              ],
+              [
+                "تَحْتَ",
+                "tahta",
+                "under"
+              ],
+              [
+                "بِجَانِبِ",
+                "bi-janibi",
+                "next to"
+              ]
+            ]
+          },
+          "note": "Begin with bismillah. Pupils move a pen in, on, under and next to a cup on camera and say the word."
+        },
+        {
+          "heading": "Where is the book?",
+          "bullets": [
+            "أَيْنَ الكِتَابُ؟ (ayna l-kitabu?)",
+            "الكِتَابُ عَلَى الطَّاوِلَةِ",
+            "The book is on the table"
+          ],
+          "note": "After فِي، عَلَى، تَحْتَ the next word ends in -i (kasrah): الطَّاوِلَةِ."
+        },
+        {
+          "heading": "More examples",
+          "bullets": [
+            "الحَقِيبَةُ تَحْتَ السَّرِيرِ: the bag is under the bed",
+            "الثِّيَابُ فِي الخِزَانَةِ: the clothes are in the wardrobe",
+            "الكُرْسِيُّ بِجَانِبِ المَكْتَبِ: the chair is next to the desk"
+          ],
+          "note": "Pupils read each and act it with real objects."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "الحَقِيبَةُ تَحْتَ السَّرِيرِ means:",
+            "options": [
+              "The bag is on the bed",
+              "The bag is under the bed",
+              "The bag is in the bed"
+            ],
+            "answer": 1,
+            "why": "تَحْتَ (tahta) means under."
+          }
+        },
+        {
+          "heading": "Oral check: describe a room",
+          "bullets": [
+            "فِي غُرْفَتِي ... (what is there)",
+            "... عَلَى / تَحْتَ / فِي ... (where it is)",
+            "غُرْفَتِي ... (an adjective)"
+          ],
+          "note": "Each pupil speaks for 30 seconds while others work. Record: names rooms and furniture; uses a position word; adjective agrees."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Answer: أَيْنَ الكِتَابُ؟ (it is in the bag)",
+          "a": "الكِتَابُ فِي الحَقِيبَةِ",
+          "mins": 2,
+          "model": "Start with the thing: الكِتَابُ.\nAdd where: فِي (in).\nAdd the place with -i: الحَقِيبَةِ."
+        },
+        {
+          "q": "What does عَلَى mean?",
+          "a": "on",
+          "mins": 1
+        },
+        {
+          "q": "Say 'the chair is next to the window'.",
+          "a": "الكُرْسِيُّ بِجَانِبِ النَّافِذَةِ",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Look at a picture of a room (portal worksheet) and write four 'where' sentences.",
+          "a": "For example: السَّرِيرُ بِجَانِبِ النَّافِذَةِ. الكِتَابُ عَلَى الطَّاوِلَةِ. الحَقِيبَةُ تَحْتَ الكُرْسِيِّ. الثِّيَابُ فِي الخِزَانَةِ.",
+          "mins": 6,
+          "model": "Teacher writes the first: السَّرِيرُ بِجَانِبِ النَّافِذَةِ, pointing to the bed and window on the picture."
+        },
+        {
+          "q": "Extend: Prepare your oral check: three sentences about your own room using one position word.",
+          "a": "For example: فِي غُرْفَتِي سَرِيرٌ. السَّرِيرُ بِجَانِبِ النَّافِذَةِ. غُرْفَتِي صَغِيرَةٌ.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Ask a partner three أَيْنَ؟ questions and write their answers.",
+          "a": "Questions with أَيْنَ and full answers with فِي، عَلَى، تَحْتَ",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which word means 'under'? A) فِي B) عَلَى C) تَحْتَ",
+          "a": "C) تَحْتَ",
+          "mins": 1,
+          "options": [
+            "فِي",
+            "عَلَى",
+            "تَحْتَ"
+          ]
+        },
+        {
+          "q": "Big question: say exactly where your pencil is now.",
+          "a": "For example: القَلَمُ عَلَى الطَّاوِلَةِ.",
+          "mins": 1
+        }
+      ],
+      "homework": "Hide three things at home and write Arabic clues to find them, e.g. القَلَمُ تَحْتَ الكُرْسِيِّ.",
+      "send": "SEND: position cards with arrows. EAL: act it out with real objects first. Stretch: add أَمَامَ (amama, in front of) and خَلْفَ (khalfa, behind).",
+      "resources": [
+        "Tarbiyyah Primary Year 5 Arabic curriculum map (2023-24), Spring 1 week 3 and the review (row 6 oral check)",
+        "Portal arabic y4 lesson 4 (in, on, under) for pupils who need it",
+        "Kitabi: where is it? (CHECK IN KITABI)",
+        "Room picture and oral check record sheet (portal worksheet)",
+        "A cup and a pen for the camera"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "book on a wooden table",
+          "alt": "A book on a table",
+          "for": "teach:2"
+        },
+        {
+          "find": "bedroom with bed desk and window",
+          "alt": "A bedroom with furniture",
+          "for": "keywords"
+        }
+      ],
+      "duration": 45
     }
   ]
 }

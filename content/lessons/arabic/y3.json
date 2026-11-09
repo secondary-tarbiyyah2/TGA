@@ -2,113 +2,209 @@
   "subject": "Arabic",
   "year": "y3",
   "board": "School curriculum (Madinah-style progression)",
-  "source": "Drive: Curriculum/Arabic folder and Secondary Lesson Plan - Arabic - Y8 (format and approach); Madinah-style progression (haadhaa/dhaalika, adjectives, possessives); National Curriculum KS2 languages",
+  "source": "Drive: Curriculum/Arabic folder and Secondary Lesson Plan - Arabic - Y8 (format and approach); Madinah-style progression (haadhaa/dhaalika, adjectives, possessives); National Curriculum KS2 languages | Spring 1 2027 (lessons 1, 4 to 7): founding-year bridge (11 and 18 Jan) and Spring 1 weeks 1 to 3 (25 Jan to 8 Feb), topics and order from the Tarbiyyah Primary Year 3 curriculum map (2023-24); Kitabi pages to be checked (CHECK IN KITABI); lessons v3",
   "lessons": [
     {
-      "unit": "Unit 1: Near, far and describing",
+      "unit": "Spring 1: Special days, summer and numbers",
       "n": 1,
-      "title": "This and that: haadhaa and dhaalika",
-      "duration": 45,
+      "title": "Bridge: my name, and this and that",
+      "bigQuestion": "How do I tell someone who I am in Arabic?",
       "objectives": [
-        "Use haadhaa (this) for near things and dhaalika (that) for far things",
-        "Use haadhihi and tilka for feminine words",
-        "Read and say sentences with short vowels"
+        "To understand how to introduce myself and point to things in Arabic"
       ],
+      "successCriteria": [
+        "All: say اِسْمِي (ismi) and my name",
+        "Most: ask مَا اسْمُكَ؟ (ma smuka?) and answer",
+        "Some: use هٰذَا (hadha) for near and ذٰلِكَ (dhalika) for far"
+      ],
+      "crossCurricular": "English: a sentence needs a naming word, just like هٰذَا كِتَابٌ (This is a book)",
+      "smsc": "Social: greeting others with salam and learning their names",
       "keywords": [
         {
-          "term": "هَذَا (haadhaa)",
-          "def": "this (masculine, near)"
+          "term": "اِسْمِي (ismi)",
+          "def": "my name is"
         },
         {
-          "term": "ذَلِكَ (dhaalika)",
-          "def": "that (masculine, far)"
+          "term": "مَا اسْمُكَ؟ (ma smuka?)",
+          "def": "what is your name? (to a boy)"
         },
         {
-          "term": "هَذِهِ (haadhihi)",
-          "def": "this (feminine, near)"
+          "term": "هٰذَا (hadha)",
+          "def": "this (near, for boy words)"
         },
         {
-          "term": "تِلْكَ (tilka)",
-          "def": "that (feminine, far)"
+          "term": "ذٰلِكَ (dhalika)",
+          "def": "that (far, for boy words)"
         },
         {
-          "term": "بَيْتٌ (bayt)",
-          "def": "house"
-        },
-        {
-          "term": "مَسْجِدٌ (masjid)",
-          "def": "mosque"
+          "term": "كِتَابٌ (kitabun)",
+          "def": "a book"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "When you meet a new friend, what is the first thing you say? How could you say it in Arabic?",
+        "a": "As-salamu 'alaykum, then my name: اِسْمِي ... (ismi ...)."
+      },
+      "islamicLink": {
+        "text": "Allah says that He sent the Qur'an down in Arabic so that we may understand (Yusuf 12:2). Every Arabic word we learn helps us understand the Qur'an a little more.",
+        "at": "start"
+      },
       "starter": [
-        "Say 'This is a book' and 'This is a ruler' in Arabic.",
-        "Ask 'What is this?' in Arabic.",
-        "Which word means 'door': baab or bayt?"
+        {
+          "q": "Bismillah. Which letter is this: ب? A) ba B) ta C) tha",
+          "a": "A) ba",
+          "mins": 1,
+          "options": [
+            "ba",
+            "ta",
+            "tha"
+          ]
+        },
+        {
+          "q": "How many dots does ت (ta) have?",
+          "a": "Two, on top",
+          "mins": 1
+        },
+        {
+          "q": "Reply to: اَلسَّلَامُ عَلَيْكُمْ (as-salamu 'alaykum)",
+          "a": "وَعَلَيْكُمُ السَّلَامُ (wa 'alaykumu s-salam)",
+          "mins": 2
+        }
       ],
       "teach": [
         {
-          "heading": "Bismillah and Arabic revision",
+          "heading": "Saying my name",
           "bullets": [
-            "Say Bismillah together",
-            "Revise: هَذَا كِتَابٌ",
-            "Revise: هَذِهِ حَقِيبَةٌ"
+            "اِسْمِي (ismi) = my name is",
+            "اِسْمِي آدَمُ (ismi Adam)",
+            "اِسْمِي مَرْيَمُ (ismi Maryam)"
           ],
-          "note": "Begin with bismillah and a quick revision of haadhaa/haadhihi. Pupils say the sentence for objects held up. Establish that today they learn how to point to things that are far away."
+          "note": "Begin with bismillah. Say ismi and your name, then pupils say theirs one by one, cameras on. Point out that ismi is one word in Arabic."
         },
         {
-          "heading": "Near and far",
+          "heading": "Asking a name",
           "bullets": [
-            "هَذَا - near, masculine",
-            "ذَلِكَ - far, masculine",
-            "Point close, point far"
+            "مَا اسْمُكَ؟ (ma smuka?) to a boy",
+            "مَا اسْمُكِ؟ (ma smuki?) to a girl",
+            "Answer: اِسْمِي ... (ismi ...)"
           ],
-          "note": "Use a physical action: point to something close (haadhaa) then reach out and point at something far (dhaalika). Say haadhaa kitaab (close) and dhaalika bayt (far). Show a picture where the house is far away. Pupils echo."
+          "note": "Model a short talk: salam, ma smuka?, ismi ... Show that the ending changes for a boy (-ka) and a girl (-ki). Pupils ask the pupil after them."
         },
         {
-          "heading": "Feminine near and far",
+          "heading": "This and that",
           "bullets": [
-            "هَذِهِ - near, feminine",
-            "تِلْكَ - far, feminine",
-            "هَذِهِ سَيَّارَةٌ، تِلْكَ طَاوِلَةٌ"
+            "هٰذَا كِتَابٌ (hadha kitabun) = this is a book",
+            "ذٰلِكَ بَابٌ (dhalika babun) = that is a door",
+            "Near: هٰذَا. Far: ذٰلِكَ"
           ],
-          "note": "Teach tilka as the far word for girl words. Misconception: pupils say dhaalika for all far things. Use colour coding: blue for masculine, pink for feminine. Pupils practise with pairs of cards."
+          "note": "Hold a book close to the camera: hadha. Point far to the door: dhalika. Pupils copy the action and say the word."
         },
         {
-          "heading": "Mosque and house",
+          "heading": "Check",
           "bullets": [
-            "هَذَا مَسْجِدٌ",
-            "ذَلِكَ بَيْتٌ",
-            "Which is near? Which is far?"
+            "Vote in the Teams poll"
           ],
-          "note": "Show a picture with a mosque near and a house far. Ask pupils to say the sentence. Then reverse. Use the context of the local masjid to connect to their lives. Encourage clear pronunciation of the long 'ee' in masjid and the soft 'dh' in dhaalika."
-        },
-        {
-          "heading": "Sentence practice",
-          "bullets": [
-            "هَذِهِ حَقِيبَةٌ",
-            "تِلْكَ سَيَّارَةٌ",
-            "ذَلِكَ قَلَمٌ"
-          ],
-          "note": "Have pupils read the three sentences aloud as a class, then in pairs. Ask them to translate each into English. Praise accurate vowels and ending sounds. Pupils copy one sentence in neat Arabic handwriting."
+          "note": "Give 30 seconds, then share the results.",
+          "check": {
+            "q": "The book is far away. Which word do we use?",
+            "options": [
+              "هٰذَا (hadha)",
+              "ذٰلِكَ (dhalika)",
+              "اِسْمِي (ismi)"
+            ],
+            "answer": 1,
+            "why": "ذٰلِكَ (dhalika) points to something far away; هٰذَا (hadha) is for near."
+          }
         }
       ],
       "practice": [
-        "Point to near and far pictures; class says haadhaa/dhaalika.",
-        "Choose haadhihi or tilka for a pencil case that is far away.",
-        "Describe pictures: near or far, masculine or feminine.",
-        "Say a sentence with the right word for each picture."
+        {
+          "q": "Say: My name is Yusuf.",
+          "a": "اِسْمِي يُوسُفُ (ismi Yusuf)",
+          "mins": 2,
+          "model": "Start with اِسْمِي (ismi).\nAdd the name: يُوسُفُ.\nSay it all: ismi Yusuf."
+        },
+        {
+          "q": "Ask a boy his name.",
+          "a": "مَا اسْمُكَ؟ (ma smuka?)",
+          "mins": 1
+        },
+        {
+          "q": "A pen is near you. Say: This is a pen.",
+          "a": "هٰذَا قَلَمٌ (hadha qalamun)",
+          "mins": 2
+        }
       ],
       "independent": [
-        "Complete the sentences with هَذَا / ذَلِكَ / هَذِهِ / تِلْكَ: ___ مَسْجِدٌ (far); ___ حَقِيبَةٌ (near).",
-        "Draw a picture with one near thing and one far thing and write two sentences.",
-        "Practise reading sentences aloud with a partner."
+        {
+          "q": "Core: Write اِسْمِي (ismi) and your name in Arabic letters, three times neatly.",
+          "a": "For example: اِسْمِي آدَمُ",
+          "mins": 5,
+          "model": "Teacher writes اِسْمِي on the whiteboard, joining س and م, then writes their own name after it."
+        },
+        {
+          "q": "Extend: Write هٰذَا كِتَابٌ and ذٰلِكَ بَابٌ and say what each means.",
+          "a": "This is a book. That is a door.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Write a short talk: salam, ask a name, give your name.",
+          "a": "اَلسَّلَامُ عَلَيْكُمْ. مَا اسْمُكَ؟ اِسْمِي ...",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Which word means 'that' for a masculine word?",
-        "Say 'That is a house' in Arabic."
+        {
+          "q": "What does اِسْمِي (ismi) mean? A) my name is B) this is C) that is",
+          "a": "A) my name is",
+          "mins": 1,
+          "options": [
+            "my name is",
+            "this is",
+            "that is"
+          ]
+        },
+        {
+          "q": "Big question: how do I tell someone who I am in Arabic?",
+          "a": "Say salam, then اِسْمِي (ismi) and my name.",
+          "mins": 2
+        }
       ],
-      "homework": "Look around your home and write three sentences using haadhaa/haadhihi (near) and dhaalika/tilka (far).",
-      "send": "SEND: colour-coded cards and sentence strips, pair with a buddy. EAL: provide a bilingual word bank. Stretch: add a colour word, e.g. ذَلِكَ بَيْتٌ أَبْيَضُ."
+      "homework": "Introduce yourself in Arabic to someone at home: salam, ismi and your name.",
+      "send": "SEND: name card with اِسْمِي already written, pupil adds their name. EAL: picture cards for book and door. Stretch: use مَا اسْمُكِ؟ (ma smuki?) for a girl.",
+      "resources": [
+        "Tarbiyyah Primary Year 3 Arabic curriculum map (2023-24), Spring 1: special days, summer and numbers (Autumn 1 essentials)",
+        "Portal arabic y3 lesson 1 (this and that), reused for the bridge",
+        "Kitabi: introducing myself (CHECK IN KITABI)",
+        "Name card template (portal worksheet)",
+        "A book and mini-whiteboard and pen"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "open book on a table",
+          "alt": "An open book",
+          "for": "keywords"
+        },
+        {
+          "find": "wooden door",
+          "alt": "A wooden door",
+          "for": "teach:3"
+        },
+        {
+          "find": "Arabic calligraphy bismillah",
+          "alt": "Bismillah written in Arabic calligraphy",
+          "for": "hook"
+        }
+      ],
+      "duration": 45
     },
     {
       "unit": "Unit 1: Near, far and describing",
@@ -323,110 +419,939 @@
       "send": "SEND: use sentence frames with the two options highlighted. EAL: read sentences aloud in pairs with a buddy. Stretch: write a short description of your room using at least three adjectives."
     },
     {
-      "unit": "Unit 2: Feminine words and 'my'",
+      "unit": "Spring 1: Special days, summer and numbers",
       "n": 4,
-      "title": "My book, your book: possessives",
-      "duration": 45,
+      "title": "Bridge: boy words, girl words and my",
+      "bigQuestion": "How can I tell if an Arabic word is a girl word?",
       "objectives": [
-        "Say 'my' with nouns using the ending -ee",
-        "Say 'your' for a boy and for a girl",
-        "Make short sentences about belongings"
+        "To understand that Arabic words are masculine or feminine and how to say 'my'"
       ],
+      "successCriteria": [
+        "All: spot ة (ta marbutah) at the end of a feminine word",
+        "Most: choose هٰذَا (hadha) or هٰذِهِ (hadhihi)",
+        "Some: add ـِي (-i) to say my, as in حَقِيبَتِي (haqibati)"
+      ],
+      "crossCurricular": "English: 'my' is a possessive word, like كِتَابِي (kitabi) my book",
+      "smsc": "Moral: looking after my own things and other people's things",
       "keywords": [
         {
-          "term": "كِتَابِي (kitaabee)",
+          "term": "هٰذِهِ (hadhihi)",
+          "def": "this (for girl words)"
+        },
+        {
+          "term": "ة (ta marbutah)",
+          "def": "the round ta at the end of most girl words"
+        },
+        {
+          "term": "حَقِيبَةٌ (haqibatun)",
+          "def": "a bag"
+        },
+        {
+          "term": "كِتَابِي (kitabi)",
           "def": "my book"
         },
         {
-          "term": "كِتَابُكَ (kitaabuka)",
-          "def": "your book (to a boy)"
-        },
-        {
-          "term": "كِتَابُكِ (kitaabuki)",
-          "def": "your book (to a girl)"
-        },
-        {
-          "term": "حَقِيبَتِي (haqeebatee)",
+          "term": "حَقِيبَتِي (haqibati)",
           "def": "my bag"
-        },
-        {
-          "term": "قَلَمُكَ (qalamuka)",
-          "def": "your pen (to a boy)"
-        },
-        {
-          "term": "لِمَنْ؟ (liman?)",
-          "def": "whose? / to whom?"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "In Arabic, a bag is a girl word and a book is a boy word. How do you think we can tell?",
+        "a": "Most girl words end in ة (ta marbutah)."
+      },
+      "islamicLink": {
+        "text": "Arabic is the language of the Qur'an (Yusuf 12:2). In the Qur'an, words change for boys and girls too, so learning this now helps us read it well.",
+        "at": "start"
+      },
       "starter": [
-        "Say 'a beautiful garden' in Arabic.",
-        "Make 'sagheer' feminine.",
-        "Say 'this is a small room' in Arabic."
+        {
+          "q": "Bismillah. What does هٰذَا (hadha) mean? A) this B) that C) my",
+          "a": "A) this",
+          "mins": 1,
+          "options": [
+            "this",
+            "that",
+            "my"
+          ]
+        },
+        {
+          "q": "Say: My name is ... in Arabic.",
+          "a": "اِسْمِي ... (ismi ...)",
+          "mins": 1
+        },
+        {
+          "q": "Which is far: هٰذَا or ذٰلِكَ?",
+          "a": "ذٰلِكَ (dhalika)",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "My things",
+          "heading": "Boy words and girl words",
+          "sort": {
+            "columns": [
+              "Boy word (masculine)",
+              "Girl word (feminine)"
+            ],
+            "cards": [
+              "كِتَابٌ (kitab) book",
+              "حَقِيبَةٌ (haqibah) bag",
+              "قَلَمٌ (qalam) pen",
+              "مَدْرَسَةٌ (madrasah) school",
+              "بَابٌ (bab) door",
+              "سَيَّارَةٌ (sayyarah) car"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ]
+          },
           "bullets": [
-            "كِتَابِي - kitaabee - my book",
-            "قَلَمِي - qalamee - my pen",
-            "The ending -ee means 'my'"
+            "Look at the last letter",
+            "ة means a girl word"
           ],
-          "note": "Explain: adding -ee to the end of a noun makes it 'my'. Hold up your own book: kitaabee. Pupils hold up theirs. Spell out the Arabic ending ـِي."
+          "note": "Read each card. Pupils show 1 or 2 fingers. Circle the ة on each girl word."
         },
         {
-          "heading": "Girl words and my",
+          "heading": "This for girl words",
           "bullets": [
-            "حَقِيبَةٌ → حَقِيبَتِي",
-            "مِسْطَرَةٌ → مِسْطَرَتِي",
-            "ة becomes ت before -ee"
+            "هٰذَا كِتَابٌ (hadha kitabun) this is a book",
+            "هٰذِهِ حَقِيبَةٌ (hadhihi haqibatun) this is a bag",
+            "Girl word: use هٰذِهِ"
           ],
-          "note": "Show that the round ة changes to ت before ـِي. Say haqeebatee and mistaratee. This is a common point of confusion; keep to a few examples and do repeated drills."
+          "note": "Hold up a book, then a bag. Pupils say the right sentence."
         },
         {
-          "heading": "Your things",
+          "heading": "Saying my",
           "bullets": [
-            "كِتَابُكَ - kitaabuka (to a boy)",
-            "كِتَابُكِ - kitaabuki (to a girl)",
-            "Look at who you talk to"
+            "كِتَابٌ → كِتَابِي (kitabi) my book",
+            "قَلَمٌ → قَلَمِي (qalami) my pen",
+            "Add ـِي (-i) at the end"
           ],
-          "note": "Use two name cards: a boy's name and a girl's name, each beside a book. Point to each book: kitaabuka / kitaabuki. Explain -ka for a boy and -ki for a girl; we met these in maa ismuka/ismuki."
+          "note": "Show that -i means my. Pupils hold up their own pen: qalami."
         },
         {
-          "heading": "Whose is it?",
+          "heading": "My with girl words",
           "bullets": [
-            "لِمَنْ هَذَا الْكِتَابُ؟",
-            "هَذَا كِتَابِي",
-            "Whose is this book?"
+            "حَقِيبَةٌ → حَقِيبَتِي (haqibati) my bag",
+            "ة turns into ت",
+            "مَدْرَسَتِي (madrasati) my school"
           ],
-          "note": "Introduce the question 'liman haadhaa l-kitaab?' Practise a short dialogue with props. Pupils say: haadhaa kitaabee. If it is a girl word: haadhihi haqeebatee."
+          "note": "Write the change slowly. The round ta opens out to an ordinary ta before -i.",
+          "misconception": {
+            "wrong": "حَقِيبَةِي",
+            "right": "حَقِيبَتِي (haqibati): ة becomes ت before ـِي"
+          }
         },
         {
-          "heading": "Class sentences",
+          "heading": "Check",
           "bullets": [
-            "هَذَا قَلَمِي",
-            "هَذِهِ حَقِيبَتِي",
-            "هَذَا كِتَابُكَ"
+            "Vote in the Teams poll"
           ],
-          "note": "Practise in a circle: pupils pass items and say the sentence. Pay attention to haadhaa/haadhihi. Praise for correct changes of ة to ت."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which means 'my bag'?",
+            "options": [
+              "حَقِيبَةٌ",
+              "حَقِيبَتِي",
+              "كِتَابِي"
+            ],
+            "answer": 1,
+            "why": "حَقِيبَتِي: the ة of حَقِيبَةٌ becomes ت and ـِي (my) is added."
+          }
         }
       ],
       "practice": [
-        "Describe three pictures with a noun and an adjective.",
-        "Which adjective ending do we add to a girl word?",
-        "Say 'my book' and 'my bag' in Arabic with objects.",
-        "Role-play: ask 'liman haadhaa?' and answer."
+        {
+          "q": "Say 'this is a car' (سَيَّارَةٌ).",
+          "a": "هٰذِهِ سَيَّارَةٌ (hadhihi sayyaratun)",
+          "mins": 2,
+          "model": "Look at the end: ة, so it is a girl word.\nGirl word, so use هٰذِهِ.\nSay: hadhihi sayyaratun."
+        },
+        {
+          "q": "Boy or girl word: مَدْرَسَةٌ?",
+          "a": "Girl word (it ends in ة)",
+          "mins": 1
+        },
+        {
+          "q": "Write 'my pen'.",
+          "a": "قَلَمِي (qalami)",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Write six phrases: kitaabee, qalamee, haqeebatee, mistaratee, kitaabuka, kitaabuki (in Arabic script).",
-        "Draw your school bag and label five things 'my ...' in Arabic.",
-        "Complete: هَذِهِ ___ (حَقِيبَة + ي)"
+        {
+          "q": "Core: Copy and finish with هٰذَا or هٰذِهِ: ___ بَابٌ / ___ مَدْرَسَةٌ / ___ قَلَمٌ / ___ سَيَّارَةٌ",
+          "a": "هٰذَا بَابٌ / هٰذِهِ مَدْرَسَةٌ / هٰذَا قَلَمٌ / هٰذِهِ سَيَّارَةٌ",
+          "mins": 5,
+          "model": "Teacher does the first: بَابٌ has no ة, so هٰذَا بَابٌ."
+        },
+        {
+          "q": "Extend: Write 'my' for: كِتَابٌ، حَقِيبَةٌ، مَدْرَسَةٌ",
+          "a": "كِتَابِي، حَقِيبَتِي، مَدْرَسَتِي",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Write one sentence: هٰذِهِ ... with 'my', e.g. this is my bag.",
+          "a": "هٰذِهِ حَقِيبَتِي (hadhihi haqibati)",
+          "mins": 3
+        }
       ],
       "exit": [
-        "How do you say 'my pen' in Arabic?",
-        "What happens to the ة in 'haqeeba' when we say 'my bag'?"
+        {
+          "q": "Which word is a girl word? A) قَلَمٌ B) مَدْرَسَةٌ C) بَابٌ",
+          "a": "B) مَدْرَسَةٌ",
+          "mins": 1,
+          "options": [
+            "قَلَمٌ",
+            "مَدْرَسَةٌ",
+            "بَابٌ"
+          ]
+        },
+        {
+          "q": "Big question: how can I tell if an Arabic word is a girl word?",
+          "a": "It usually ends in ة (ta marbutah).",
+          "mins": 2
+        }
       ],
-      "homework": "Make a poster of five things you own labelled in Arabic with 'my'.",
-      "send": "SEND: use picture cards and fewer words, reinforce with objects. EAL: compare with home-language possessives. Stretch: write dialogues with 'your' for a boy and a girl."
+      "homework": "Find three things at home, say هٰذَا or هٰذِهِ for each, then say 'my' for one of them.",
+      "send": "SEND: blue and pink cards for boy and girl words. EAL: picture beside each word. Stretch: try 'your' to a boy: كِتَابُكَ (kitabuka).",
+      "resources": [
+        "Tarbiyyah Primary Year 3 Arabic curriculum map (2023-24), Spring 1: special days, summer and numbers (Autumn 1 essentials)",
+        "Portal arabic y3 lesson 4 (my book, your book), reused for the bridge",
+        "Kitabi: masculine and feminine (CHECK IN KITABI)",
+        "Sort cards: boy and girl words (portal worksheet)",
+        "A book, a pen and a bag for the camera"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "school bag backpack",
+          "alt": "A school bag",
+          "for": "keywords"
+        },
+        {
+          "find": "red car parked",
+          "alt": "A car",
+          "for": "teach:2"
+        },
+        {
+          "find": "pencil case with pens",
+          "alt": "Pens in a pencil case",
+          "for": "teach:3"
+        }
+      ],
+      "duration": 45
+    },
+    {
+      "unit": "Spring 1: Special days, summer and numbers",
+      "n": 5,
+      "title": "Special days: Friday and the two Eids",
+      "bigQuestion": "Which days are special for Muslims, and how do we name them in Arabic?",
+      "objectives": [
+        "To understand how to name Friday and the two Eids in Arabic"
+      ],
+      "successCriteria": [
+        "All: say يَوْمُ الجُمُعَةِ (yawm al-jumu'ah)",
+        "Most: name عِيدُ الفِطْرِ and عِيدُ الأَضْحَى",
+        "Some: say a sentence: اليَوْمُ يَوْمُ الجُمُعَةِ (al-yawm yawm al-jumu'ah)"
+      ],
+      "crossCurricular": "Islamic Studies: Friday prayer and the two Eids",
+      "smsc": "Spiritual: Friday and the Eids as gifts from Allah to the Muslims",
+      "keywords": [
+        {
+          "term": "يَوْمُ الجُمُعَةِ (yawm al-jumu'ah)",
+          "def": "Friday, the day of Jumu'ah prayer"
+        },
+        {
+          "term": "عِيدُ الفِطْرِ ('id al-fitr)",
+          "def": "the Eid after Ramadan"
+        },
+        {
+          "term": "عِيدُ الأَضْحَى ('id al-adha)",
+          "def": "the Eid of the sacrifice, at Hajj time"
+        },
+        {
+          "term": "مَسْجِدٌ (masjid)",
+          "def": "a mosque"
+        },
+        {
+          "term": "عِيدٌ مُبَارَكٌ ('id mubarak)",
+          "def": "a blessed Eid (a greeting)"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What makes a day special? Which day of the week is special for Muslims?",
+        "a": "Friday, the day of Jumu'ah. Also the two Eids each year."
+      },
+      "islamicLink": {
+        "text": "Allah tells the believers that when the call to prayer is made on Friday, they should hurry to remember Allah (al-Jumu'ah 62:9). The surah is even named after Friday: al-Jumu'ah.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Is مَدْرَسَةٌ a boy word or a girl word? A) boy B) girl",
+          "a": "B) girl (it ends in ة)",
+          "mins": 1,
+          "options": [
+            "boy",
+            "girl"
+          ]
+        },
+        {
+          "q": "Say 'my book'.",
+          "a": "كِتَابِي (kitabi)",
+          "mins": 1
+        },
+        {
+          "q": "Say 'this is a bag'.",
+          "a": "هٰذِهِ حَقِيبَةٌ (hadhihi haqibatun)",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Friday",
+          "bullets": [
+            "يَوْمٌ (yawm) = day",
+            "يَوْمُ الجُمُعَةِ (yawm al-jumu'ah) = Friday",
+            "We go to the مَسْجِد (masjid)"
+          ],
+          "note": "Begin with bismillah. Say each word, pupils echo three times. Ask who goes to the masjid on Friday with family."
+        },
+        {
+          "heading": "The two Eids",
+          "table": {
+            "head": [
+              "Arabic",
+              "Say it",
+              "When"
+            ],
+            "rows": [
+              [
+                "عِيدُ الفِطْرِ",
+                "'id al-fitr",
+                "after Ramadan"
+              ],
+              [
+                "عِيدُ الأَضْحَى",
+                "'id al-adha",
+                "at Hajj time"
+              ],
+              [
+                "عِيدٌ مُبَارَكٌ",
+                "'id mubarak",
+                "a blessed Eid"
+              ]
+            ]
+          },
+          "note": "Muslims have two Eids each year. Ramadan begins soon after this half term, so 'id al-fitr is coming."
+        },
+        {
+          "heading": "A sentence",
+          "bullets": [
+            "اليَوْمُ يَوْمُ الجُمُعَةِ",
+            "(al-yawm yawm al-jumu'ah)",
+            "Today is Friday"
+          ],
+          "note": "Build it word by word: al-yawm (today), yawm al-jumu'ah (Friday). Pupils say it as a chant (spoken, no tune)."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which Eid comes after Ramadan?",
+            "options": [
+              "عِيدُ الأَضْحَى ('id al-adha)",
+              "عِيدُ الفِطْرِ ('id al-fitr)",
+              "يَوْمُ الجُمُعَةِ (yawm al-jumu'ah)"
+            ],
+            "answer": 1,
+            "why": "'Id al-fitr is the Eid of breaking the fast, after Ramadan. 'Id al-adha is at Hajj time."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say 'Friday' in Arabic.",
+          "a": "يَوْمُ الجُمُعَةِ (yawm al-jumu'ah)",
+          "mins": 2,
+          "model": "Start with يَوْمُ (yawm), day.\nAdd الجُمُعَةِ (al-jumu'ah).\nSay it together: yawm al-jumu'ah."
+        },
+        {
+          "q": "What do we say to someone on Eid?",
+          "a": "عِيدٌ مُبَارَكٌ ('id mubarak)",
+          "mins": 1
+        },
+        {
+          "q": "Which Eid is at Hajj time?",
+          "a": "عِيدُ الأَضْحَى ('id al-adha)",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Copy and match: يَوْمُ الجُمُعَةِ / عِيدُ الفِطْرِ / عِيدُ الأَضْحَى with Friday / Eid after Ramadan / Eid at Hajj time.",
+          "a": "يَوْمُ الجُمُعَةِ = Friday; عِيدُ الفِطْرِ = Eid after Ramadan; عِيدُ الأَضْحَى = Eid at Hajj time",
+          "mins": 5,
+          "model": "Teacher matches the first: يَوْمُ الجُمُعَةِ has يَوْمُ, day, so it is Friday."
+        },
+        {
+          "q": "Extend: Make an Eid card (shapes and patterns, no people) and write عِيدٌ مُبَارَكٌ on it.",
+          "a": "Card with عِيدٌ مُبَارَكٌ written neatly",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Write: اليَوْمُ يَوْمُ الجُمُعَةِ and say what it means.",
+          "a": "Today is Friday.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "What is Friday in Arabic? A) يَوْمُ الجُمُعَةِ B) عِيدُ الفِطْرِ C) مَسْجِد",
+          "a": "A) يَوْمُ الجُمُعَةِ",
+          "mins": 1,
+          "options": [
+            "يَوْمُ الجُمُعَةِ",
+            "عِيدُ الفِطْرِ",
+            "مَسْجِد"
+          ]
+        },
+        {
+          "q": "Big question: which days are special for Muslims, and what are they called in Arabic?",
+          "a": "Friday يَوْمُ الجُمُعَةِ, and the two Eids: عِيدُ الفِطْرِ and عِيدُ الأَضْحَى.",
+          "mins": 2
+        }
+      ],
+      "homework": "On Friday, say اليَوْمُ يَوْمُ الجُمُعَةِ to someone at home and tell them what it means.",
+      "send": "SEND: three picture cards (masjid, dates, Ka'bah photo) to match. EAL: word mat with Arabic, sound and English. Stretch: say 'I go to the masjid': أَذْهَبُ إِلَى المَسْجِدِ (adhhabu ila l-masjid).",
+      "resources": [
+        "Tarbiyyah Primary Year 3 Arabic curriculum map (2023-24), Spring 1: special days, summer and numbers, week 1",
+        "Kitabi: special days (CHECK IN KITABI)",
+        "Flashcards: Friday and the two Eids (portal worksheet)",
+        "Card, colouring pencils and a ruler for the Eid card"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "mosque minaret against blue sky",
+          "alt": "A masjid minaret",
+          "for": "keywords"
+        },
+        {
+          "find": "crescent moon in the night sky",
+          "alt": "A new crescent moon",
+          "for": "teach:2"
+        },
+        {
+          "find": "bowl of dates fruit",
+          "alt": "A bowl of dates",
+          "for": "hook"
+        }
+      ],
+      "duration": 45
+    },
+    {
+      "unit": "Spring 1: Special days, summer and numbers",
+      "n": 6,
+      "title": "Summer: the weather and what we do",
+      "bigQuestion": "How can I talk about summer weather in Arabic?",
+      "objectives": [
+        "To understand how to describe summer weather and say what I do in summer"
+      ],
+      "successCriteria": [
+        "All: say الصَّيْفُ (as-sayf) and شَمْسٌ (shams)",
+        "Most: say الجَوُّ حَارٌّ (al-jawwu harrun)",
+        "Some: say what I do: فِي الصَّيْفِ أَسْبَحُ (fi s-sayf asbahu)"
+      ],
+      "crossCurricular": "Geography: hot and cold places and the seasons",
+      "smsc": "Spiritual: thanking Allah for the sun and the changing seasons",
+      "keywords": [
+        {
+          "term": "الصَّيْفُ (as-sayf)",
+          "def": "summer"
+        },
+        {
+          "term": "شَمْسٌ (shams)",
+          "def": "sun"
+        },
+        {
+          "term": "حَارٌّ (harr)",
+          "def": "hot"
+        },
+        {
+          "term": "بَارِدٌ (barid)",
+          "def": "cold"
+        },
+        {
+          "term": "أَسْبَحُ (asbahu)",
+          "def": "I swim"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "It is cold January now. What will be different in summer? Think of the sun, the sky and what you do.",
+        "a": "Hot, sunny, long days; we swim, play outside and drink lots of water."
+      },
+      "islamicLink": {
+        "text": "Allah made the sun and the moon run to a fixed measure (ar-Rahman 55:5). The sun brings us summer, light and warmth by His command.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. What is Friday in Arabic? A) يَوْمُ الجُمُعَةِ B) عِيدُ الأَضْحَى",
+          "a": "A) يَوْمُ الجُمُعَةِ",
+          "mins": 1,
+          "options": [
+            "يَوْمُ الجُمُعَةِ",
+            "عِيدُ الأَضْحَى"
+          ]
+        },
+        {
+          "q": "What do we say on Eid?",
+          "a": "عِيدٌ مُبَارَكٌ ('id mubarak)",
+          "mins": 1
+        },
+        {
+          "q": "Winter word from Autumn: الشِّتَاءُ means ...?",
+          "a": "winter (ash-shita')",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Summer words",
+          "bullets": [
+            "الصَّيْفُ (as-sayf) summer",
+            "شَمْسٌ (shams) sun",
+            "حَارٌّ (harr) hot"
+          ],
+          "note": "Begin with bismillah. Show the sun photo. Pupils echo each word, then point to the sun and say shams."
+        },
+        {
+          "heading": "What is the weather?",
+          "compare": {
+            "left": {
+              "title": "الصَّيْفُ (summer)",
+              "points": [
+                "الجَوُّ حَارٌّ (al-jawwu harrun)",
+                "the weather is hot"
+              ]
+            },
+            "right": {
+              "title": "الشِّتَاءُ (winter)",
+              "points": [
+                "الجَوُّ بَارِدٌ (al-jawwu baridun)",
+                "the weather is cold"
+              ]
+            },
+            "label": "or"
+          },
+          "note": "al-jaww is the weather. Pupils fan themselves for harr and shiver for barid as they say it."
+        },
+        {
+          "heading": "What I do in summer",
+          "bullets": [
+            "فِي الصَّيْفِ (fi s-sayf) = in summer",
+            "أَسْبَحُ (asbahu) I swim; أَلْعَبُ (al'abu) I play",
+            "أَشْرَبُ مَاءً (ashrabu ma'an) I drink water"
+          ],
+          "note": "Act each verb. All three start with أَ, which means I."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "What does الجَوُّ حَارٌّ mean?",
+            "options": [
+              "The weather is cold",
+              "The weather is hot",
+              "I swim"
+            ],
+            "answer": 1,
+            "why": "حَارٌّ (harr) is hot; بَارِدٌ (barid) is cold."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say 'In summer I play.'",
+          "a": "فِي الصَّيْفِ أَلْعَبُ (fi s-sayf al'abu)",
+          "mins": 2,
+          "model": "Start with when: فِي الصَّيْفِ.\nThen what I do: أَلْعَبُ.\nTogether: fi s-sayf al'abu."
+        },
+        {
+          "q": "Hot or cold: بَارِدٌ?",
+          "a": "cold",
+          "mins": 1
+        },
+        {
+          "q": "Say 'the sun' word.",
+          "a": "شَمْسٌ (shams)",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw a sun and a pool (no people) and label them شَمْسٌ and الصَّيْفُ. Write الجَوُّ حَارٌّ underneath.",
+          "a": "Labelled picture with الجَوُّ حَارٌّ",
+          "mins": 5,
+          "model": "Teacher draws a quick sun, writes شَمْسٌ beside it, then writes الجَوُّ حَارٌّ under the picture."
+        },
+        {
+          "q": "Extend: Write two things you do in summer, starting فِي الصَّيْفِ.",
+          "a": "For example: فِي الصَّيْفِ أَسْبَحُ. فِي الصَّيْفِ أَشْرَبُ مَاءً.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Write one sentence about winter: الجَوُّ بَارِدٌ فِي الشِّتَاءِ.",
+          "a": "The weather is cold in winter.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "What is 'summer' in Arabic? A) الشِّتَاءُ B) الصَّيْفُ C) شَمْسٌ",
+          "a": "B) الصَّيْفُ",
+          "mins": 1,
+          "options": [
+            "الشِّتَاءُ",
+            "الصَّيْفُ",
+            "شَمْسٌ"
+          ]
+        },
+        {
+          "q": "Big question: describe summer weather in Arabic.",
+          "a": "الجَوُّ حَارٌّ (the weather is hot); there is شَمْسٌ (sun).",
+          "mins": 2
+        }
+      ],
+      "homework": "Look out of the window each day this week and say الجَوُّ حَارٌّ or الجَوُّ بَارِدٌ.",
+      "send": "SEND: hot and cold picture cards with the words. EAL: actions for each verb. Stretch: add أَيْضًا (aydan, also): فِي الصَّيْفِ أَسْبَحُ وَأَلْعَبُ أَيْضًا.",
+      "resources": [
+        "Tarbiyyah Primary Year 3 Arabic curriculum map (2023-24), Spring 1: special days, summer and numbers, week 2",
+        "Kitabi: summer (CHECK IN KITABI)",
+        "Weather flashcards (portal worksheet)",
+        "Paper and colouring pencils"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "sun in clear blue sky",
+          "alt": "The sun in a blue sky",
+          "for": "keywords"
+        },
+        {
+          "find": "swimming pool water",
+          "alt": "A swimming pool",
+          "for": "teach:3"
+        },
+        {
+          "find": "snow covered trees winter",
+          "alt": "Snowy trees in winter",
+          "for": "teach:2"
+        }
+      ],
+      "duration": 45
+    },
+    {
+      "unit": "Spring 1: Special days, summer and numbers",
+      "n": 7,
+      "title": "Numbers 1 to 10, read and written; unit check",
+      "bigQuestion": "How do Arabic numbers look and sound?",
+      "objectives": [
+        "To understand how to read, say and write the numbers 1 to 10 in Arabic"
+      ],
+      "successCriteria": [
+        "All: count from وَاحِد (wahid) to عَشَرَة ('asharah)",
+        "Most: read the digits ١ to ١٠",
+        "Some: write a number sum in Arabic digits, e.g. ٣ + ٢ = ٥"
+      ],
+      "crossCurricular": "Maths: the digits we use in English came to Europe through Muslim mathematicians",
+      "smsc": "Cultural: Arabic digits and the Muslim scholars who spread them",
+      "keywords": [
+        {
+          "term": "وَاحِد (wahid)",
+          "def": "one, ١"
+        },
+        {
+          "term": "خَمْسَة (khamsah)",
+          "def": "five, ٥"
+        },
+        {
+          "term": "عَشَرَة ('asharah)",
+          "def": "ten, ١٠"
+        },
+        {
+          "term": "رَقْم (raqm)",
+          "def": "a number or digit"
+        },
+        {
+          "term": "مُرَاجَعَة (muraja'ah)",
+          "def": "review, going over what we learnt"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Look at this: ٥. What number do you think it is? Why might it look like that?",
+        "a": "It is 5 (khamsah). Arabic digits look different, but we use them the same way."
+      },
+      "islamicLink": {
+        "text": "Allah made the night and day signs so that we may know the number of years and the counting of time (al-Isra 17:12). Counting is part of how we plan our prayers, fasts and days.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. What is 'summer'? A) الصَّيْفُ B) الشِّتَاءُ",
+          "a": "A) الصَّيْفُ",
+          "mins": 1,
+          "options": [
+            "الصَّيْفُ",
+            "الشِّتَاءُ"
+          ]
+        },
+        {
+          "q": "Say 'the weather is hot'.",
+          "a": "الجَوُّ حَارٌّ (al-jawwu harrun)",
+          "mins": 1
+        },
+        {
+          "q": "Name one of the two Eids.",
+          "a": "عِيدُ الفِطْرِ or عِيدُ الأَضْحَى",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Count 1 to 5",
+          "table": {
+            "head": [
+              "Digit",
+              "Arabic",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "١",
+                "وَاحِد",
+                "wahid"
+              ],
+              [
+                "٢",
+                "اِثْنَان",
+                "ithnan"
+              ],
+              [
+                "٣",
+                "ثَلَاثَة",
+                "thalathah"
+              ],
+              [
+                "٤",
+                "أَرْبَعَة",
+                "arba'ah"
+              ],
+              [
+                "٥",
+                "خَمْسَة",
+                "khamsah"
+              ]
+            ]
+          },
+          "note": "Begin with bismillah. Count on fingers, pupils echo. Then count backwards."
+        },
+        {
+          "heading": "Count 6 to 10",
+          "table": {
+            "head": [
+              "Digit",
+              "Arabic",
+              "Say it"
+            ],
+            "rows": [
+              [
+                "٦",
+                "سِتَّة",
+                "sittah"
+              ],
+              [
+                "٧",
+                "سَبْعَة",
+                "sab'ah"
+              ],
+              [
+                "٨",
+                "ثَمَانِيَة",
+                "thamaniyah"
+              ],
+              [
+                "٩",
+                "تِسْعَة",
+                "tis'ah"
+              ],
+              [
+                "١٠",
+                "عَشَرَة",
+                "'asharah"
+              ]
+            ]
+          },
+          "note": "Point out that ١٠ is written ١ then ٠, just like 10. Numbers are written left to right even in Arabic."
+        },
+        {
+          "heading": "Spot the digit",
+          "misconception": {
+            "wrong": "٦ is 7 and ٧ is 6",
+            "right": "٦ is six (sittah); ٧ is seven (sab'ah): ٧ looks like a V"
+          },
+          "note": "Many pupils mix ٦ and ٧, and ٢ and ٣. Show them side by side."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which digit is خَمْسَة (five)?",
+            "options": [
+              "٤",
+              "٥",
+              "٦"
+            ],
+            "answer": 1,
+            "why": "٥ is five; ٤ is four and ٦ is six."
+          }
+        },
+        {
+          "heading": "Unit check: our words",
+          "diagram": {
+            "centre": "Spring 1",
+            "items": [
+              "يَوْمُ الجُمُعَةِ Friday",
+              "عِيدُ الفِطْرِ",
+              "عِيدُ الأَضْحَى",
+              "الصَّيْفُ summer",
+              "شَمْسٌ sun",
+              "حَارٌّ hot",
+              "١ to ١٠"
+            ]
+          },
+          "note": "Quick review before the check. Pupils say each word as you point."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Read: ٣ + ٢ = ٥ and say it in Arabic.",
+          "a": "ثَلَاثَة + اِثْنَان = خَمْسَة (thalathah wa ithnan: khamsah)",
+          "mins": 2,
+          "model": "Read each digit: ٣ thalathah, ٢ ithnan, ٥ khamsah.\nSay: thalathah wa ithnan, khamsah."
+        },
+        {
+          "q": "Write eight in Arabic digits.",
+          "a": "٨",
+          "mins": 1
+        },
+        {
+          "q": "Say the number ٩.",
+          "a": "تِسْعَة (tis'ah)",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (unit check, portal response box or paper): 1) Write ١ to ١٠ in order. 2) Match: الصَّيْفُ / شَمْسٌ / يَوْمُ الجُمُعَةِ with summer / sun / Friday.",
+          "a": "1) ١ ٢ ٣ ٤ ٥ ٦ ٧ ٨ ٩ ١٠ 2) الصَّيْفُ summer; شَمْسٌ sun; يَوْمُ الجُمُعَةِ Friday",
+          "mins": 6,
+          "model": "Teacher writes ١ and ٢ first, saying wahid, ithnan, then matches الصَّيْفُ with summer."
+        },
+        {
+          "q": "Extend: Write the sums in Arabic digits: 4 + 4 = 8; 6 + 3 = 9.",
+          "a": "٤ + ٤ = ٨؛ ٦ + ٣ = ٩",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Write الجَوُّ حَارٌّ and عِيدٌ مُبَارَكٌ and say when you would say each.",
+          "a": "On a hot day; on Eid.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which is ten? A) ١٠ B) ٧ C) ٦",
+          "a": "A) ١٠",
+          "mins": 1,
+          "options": [
+            "١٠",
+            "٧",
+            "٦"
+          ]
+        },
+        {
+          "q": "Big question: how do Arabic numbers look and sound? Write ٥ and say it.",
+          "a": "٥ is خَمْسَة (khamsah).",
+          "mins": 1
+        }
+      ],
+      "homework": "Count ten things at home in Arabic, and find one place where you see Arabic digits (a clock, a book, a calendar).",
+      "send": "SEND: number line ١ to ١٠ with the words. EAL: count real objects. Stretch: try 11 أَحَدَ عَشَرَ (ahada 'ashar).",
+      "resources": [
+        "Tarbiyyah Primary Year 3 Arabic curriculum map (2023-24), Spring 1: special days, summer and numbers, week 3 and the review (row 6 check)",
+        "Kitabi: numbers 1 to 10 (CHECK IN KITABI)",
+        "Number line ١ to ١٠ and unit check sheet (portal worksheet)",
+        "Ten small objects to count"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Eastern Arabic numerals",
+          "alt": "Arabic digits ١ to ٩",
+          "for": "hook"
+        },
+        {
+          "find": "clock face with Arabic numerals",
+          "alt": "A clock with Arabic digits",
+          "for": "keywords"
+        }
+      ],
+      "duration": 45
     }
   ]
 }

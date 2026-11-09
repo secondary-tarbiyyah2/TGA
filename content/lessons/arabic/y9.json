@@ -2,223 +2,467 @@
   "subject": "Arabic",
   "year": "y9",
   "board": "TGA Arabic scheme (KS3)",
-  "source": "Drive: Curriculum/Arabic folder and Schemes of work/Arabic (GCSE-Arabic-2017 Scheme of Work, Pearson, for KS3-to-GCSE progression: school, daily life, plans, shopping); continuity from TGA Y7-Y8 Arabic files",
+  "source": "Drive: Curriculum/Arabic folder and Schemes of work/Arabic (GCSE-Arabic-2017 Scheme of Work, Pearson, for KS3-to-GCSE progression: school, daily life, plans, shopping); continuity from TGA Y7-Y8 Arabic files | Spring 1 2027 (lessons 1, 2, 4, 13 to 19): founding-year bridge (11 Jan describing people and participles; 18 Jan my town, directions and weather with the future) and Spring 1 weeks 1 to 3 (school subjects; opinions and connectives; my school day in three tenses, informal email and unit quiz), order from the Tarbiyyah Secondary KS3 Arabic scheme of work and Arabic Curriculum Intent; lessons v3",
   "lessons": [
     {
-      "unit": "Unit 1: My school and my opinions",
+      "unit": "Spring 1: At school",
       "n": 1,
       "title": "My school and my subjects",
-      "duration": 50,
+      "bigQuestion": "How can I talk about the subjects I study in Arabic?",
       "objectives": [
-        "Name school subjects and school places in Arabic",
-        "Say which subjects you like and dislike",
-        "Give a reason using لِأَنَّ"
+        "To understand how to name school subjects and say which I study and like"
       ],
+      "successCriteria": [
+        "All: name eight school subjects",
+        "Most: say what I study and like: أَدْرُسُ ... وَأُحِبُّ ...",
+        "Some: give a reason with لِأَنَّ"
+      ],
+      "crossCurricular": "PSHE: thinking about strengths and future choices",
+      "smsc": "Spiritual: seeking knowledge is an act of worship",
       "keywords": [
         {
-          "term": "الْمَادَّةُ",
-          "def": "subject (al-mādda)"
+          "term": "مَادَّة (maddah)",
+          "def": "a school subject"
         },
         {
-          "term": "الرِّيَاضِيَّاتُ",
-          "def": "mathematics"
+          "term": "رِيَاضِيَّات (riyadiyyat)",
+          "def": "maths"
         },
         {
-          "term": "الْعُلُومُ",
-          "def": "sciences"
+          "term": "عُلُوم ('ulum)",
+          "def": "science"
         },
         {
-          "term": "الْحَاسُوبُ",
-          "def": "computing (al-ḥāsūb)"
+          "term": "تَارِيخ (tarikh)",
+          "def": "history"
         },
         {
-          "term": "أُحِبُّ",
-          "def": "I like / love (uḥibbu)"
-        },
-        {
-          "term": "لِأَنَّهُ / لِأَنَّهَا",
-          "def": "because it (m) / because it (f)"
+          "term": "أَدْرُسُ (adrusu)",
+          "def": "I study"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you could only study three subjects, which would you choose and why?",
+        "a": "Any answer with reasons; today we say it in Arabic."
+      },
+      "islamicLink": {
+        "text": "Allah taught us the du'a: رَبِّ زِدْنِي عِلْمًا, 'My Lord, increase me in knowledge' (Ta Ha 20:114). Every subject can be studied with this intention.",
+        "at": "start"
+      },
       "starter": [
-        "Say the time 7:30 and 9:15 in Arabic.",
-        "Write 'I visited my grandfather yesterday' in Arabic.",
-        "Name four days of the week in Arabic."
+        {
+          "q": "Bismillah. 'I will go': A) سَأَذْهَبُ B) ذَهَبْتُ",
+          "a": "A) سَأَذْهَبُ",
+          "mins": 1,
+          "options": [
+            "سَأَذْهَبُ",
+            "ذَهَبْتُ"
+          ]
+        },
+        {
+          "q": "Say 'it is cold'.",
+          "a": "الجَوُّ بَارِدٌ",
+          "mins": 1
+        },
+        {
+          "q": "Active participle of د ر س?",
+          "a": "دَارِس",
+          "mins": 1
+        }
       ],
       "teach": [
         {
           "heading": "School subjects",
-          "bullets": [
-            "الرِّيَاضِيَّاتُ - ar-riyāḍiyyāt - maths",
-            "الْعُلُومُ - al-ʿulūm - science",
-            "التَّارِيخُ - at-tārīkh - history",
-            "الْجُغْرَافِيَا - al-jughrāfiyā - geography",
-            "الْحَاسُوبُ - al-ḥāsūb - computing"
-          ],
-          "note": "Begin with bismillah and, if appropriate, a reminder that Allah praised those who know (Qur'an 39:9: 'Are those who know equal to those who do not know?'). Show pictures for each subject and add الْفَنُّ (art), التَّرْبِيَةُ الْبَدَنِيَّةُ (PE) and اللُّغَةُ الْعَرَبِيَّةُ (Arabic). Pupils rank their subjects. Check the pronunciation of ح in الْحَاسُوبُ."
+          "table": {
+            "head": [
+              "Arabic",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "الرِّيَاضِيَّاتُ",
+                "ar-riyadiyyat",
+                "maths"
+              ],
+              [
+                "العُلُومُ",
+                "al-'ulum",
+                "science"
+              ],
+              [
+                "التَّارِيخُ",
+                "at-tarikh",
+                "history"
+              ],
+              [
+                "الجُغْرَافِيَا",
+                "al-jughrafiya",
+                "geography"
+              ],
+              [
+                "اللُّغَةُ العَرَبِيَّةُ",
+                "al-lughah al-'arabiyyah",
+                "Arabic"
+              ],
+              [
+                "اللُّغَةُ الإِنْجِلِيزِيَّةُ",
+                "al-lughah al-injliziyyah",
+                "English"
+              ],
+              [
+                "الحَاسُوبُ",
+                "al-hasub",
+                "computing"
+              ],
+              [
+                "الدِّرَاسَاتُ الإِسْلَامِيَّةُ",
+                "ad-dirasat al-islamiyyah",
+                "Islamic Studies"
+              ]
+            ]
+          },
+          "note": "Begin with bismillah. Spot the sun letters: ar-, at-, ad-."
         },
         {
-          "heading": "I like and I do not like",
+          "heading": "I study, I like",
           "bullets": [
-            "أُحِبُّ الْعُلُومَ - uḥibbu l-ʿulūm - I like science",
-            "لَا أُحِبُّ التَّارِيخَ - lā uḥibbu t-tārīkh - I do not like history",
-            "أُحِبُّ الْفَنَّ كَثِيرًا - uḥibbu l-fanna kathīran - I like art a lot"
+            "أَدْرُسُ العُلُومَ وَالتَّارِيخَ: I study science and history",
+            "أُحِبُّ الرِّيَاضِيَّاتِ: I like maths",
+            "لَا أُحِبُّ ...: I do not like ..."
           ],
-          "note": "Teach لَا + present for the negative. Note the object takes a fatha: الْعُلُومَ, التَّارِيخَ, الْفَنَّ. Misconception: forgetting the object ending. Say a subject and ask pupils to say whether they like it, using the correct word order."
+          "note": "After أَدْرُسُ / أُحِبُّ the subject is the object: fathah (or kasrah for ـَات plurals: الرِّيَاضِيَّاتِ)."
         },
         {
-          "heading": "Giving a reason: لِأَنَّ",
+          "heading": "Giving a reason",
           "bullets": [
-            "أُحِبُّ الْعُلُومَ لِأَنَّهَا مُمْتِعَةٌ - because it is enjoyable",
-            "أُحِبُّ الْحَاسُوبَ لِأَنَّهُ مُفِيدٌ - because it is useful",
-            "لَا أُحِبُّ التَّارِيخَ لِأَنَّهُ صَعْبٌ - because it is hard"
+            "أُحِبُّ الحَاسُوبَ لِأَنَّهُ مُفِيدٌ",
+            "أُحِبُّ العُلُومَ لِأَنَّهَا مُمْتِعَةٌ",
+            "لِأَنَّهُ (m) / لِأَنَّهَا (f and non-human plurals)"
           ],
-          "note": "لِأَنَّ + pronoun ending -hu (masc) or -hā (fem). Note that الْعُلُومُ is a plural of things, so we use the feminine singular: لِأَنَّهَا مُمْتِعَةٌ. This is a high-level point; praise those who notice it. Pupils create their own sentence with a reason."
+          "note": "العُلُوم is a non-human plural, so it is treated as feminine singular: لِأَنَّهَا."
         },
         {
-          "heading": "Opinion words",
+          "heading": "Check",
           "bullets": [
-            "مُمْتِعٌ - mumtiʿun - enjoyable",
-            "مُفِيدٌ - mufīdun - useful",
-            "صَعْبٌ - ṣaʿbun - difficult",
-            "سَهْلٌ - sahlun - easy",
-            "مُمِلٌّ - mumillun - boring"
+            "Vote in the Teams poll"
           ],
-          "note": "Model each adjective in a sentence and ask pupils to choose a subject for each. For the feminine, the adjectives add ة. Check the spelling of مُمِلٌّ with the shadda. Ask pupils which opinion words they could use in an exam answer."
-        },
-        {
-          "heading": "My school online",
-          "bullets": [
-            "مَدْرَسَتِي عَبْرَ الْإِنْتَرْنِتِ - madrasatī ʿabra l-intarnit - my school is online",
-            "أَدْرُسُ فِي الْبَيْتِ - I study at home",
-            "مُعَلِّمِي لَطِيفٌ - muʿallimī laṭīfun - my teacher is kind"
-          ],
-          "note": "TGA is an online school, so pupils can talk about their own context. Teach مُعَلِّمِي (my teacher, m) and مُعَلِّمَتِي (my teacher, f). Ask pupils to give one positive about learning online. Encourage respectful language about teachers and classmates."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'I like history because it is interesting':",
+            "options": [
+              "أُحِبُّ التَّارِيخَ لِأَنَّهَا مُمْتِعَةٌ",
+              "أُحِبُّ التَّارِيخَ لِأَنَّهُ مُمْتِعٌ",
+              "أُحِبُّ التَّارِيخُ لِأَنَّ مُمْتِعٌ"
+            ],
+            "answer": 1,
+            "why": "التَّارِيخ is masculine singular: لِأَنَّهُ مُمْتِعٌ."
+          }
         }
       ],
       "practice": [
-        "Say that you like computing because it is useful.",
-        "Say that you do not like history because it is boring.",
-        "Complete: أُحِبُّ الْعُلُومَ لِأَنَّ___ مُمْتِعَةٌ.",
-        "Ask a partner: 'Which subject do you like?'"
-      ],
-      "independent": [
-        "Write six sentences giving your opinion of six subjects, with reasons.",
-        "Survey three classmates and report: 'Ali likes maths because it is easy'.",
-        "Write a short paragraph (50 words) about your favourite subject."
-      ],
-      "exit": [
-        "Write: 'I like geography because it is enjoyable'.",
-        "What does لِأَنَّ mean?"
-      ],
-      "homework": "Write eight sentences about your school subjects with reasons, using at least five different opinion adjectives.",
-      "send": "SEND: sentence builder with subject + opinion + reason. EAL: bilingual opinion vocabulary list. Stretch: add أُفَضِّلُ (I prefer) and compare two subjects."
-    },
-    {
-      "unit": "Unit 1: My school and my opinions",
-      "n": 2,
-      "title": "Giving opinions and comparing subjects",
-      "duration": 50,
-      "objectives": [
-        "Use أُفَضِّلُ and أَعْتَقِدُ أَنَّ to give fuller opinions",
-        "Link opinions with وَلَكِنْ and لِأَنَّ",
-        "Ask and answer opinion questions"
-      ],
-      "keywords": [
         {
-          "term": "أُفَضِّلُ",
-          "def": "I prefer (ufaḍḍilu)"
+          "q": "Say: I study Arabic and I like it because it is useful.",
+          "a": "أَدْرُسُ اللُّغَةَ العَرَبِيَّةَ وَأُحِبُّهَا لِأَنَّهَا مُفِيدَةٌ.",
+          "mins": 2,
+          "model": "أَدْرُسُ اللُّغَةَ العَرَبِيَّةَ (object).\nوَأُحِبُّهَا: 'and I like it' (ـهَا for a feminine noun).\nلِأَنَّهَا مُفِيدَةٌ."
         },
         {
-          "term": "أَعْتَقِدُ أَنَّ",
-          "def": "I think that (aʿtaqidu anna)"
+          "q": "What is الجُغْرَافِيَا?",
+          "a": "geography",
+          "mins": 1
         },
         {
-          "term": "فِي رَأْيِي",
-          "def": "in my opinion (fī ra'yī)"
-        },
-        {
-          "term": "مُهِمٌّ",
-          "def": "important (muhimmun)"
-        },
-        {
-          "term": "وَلَكِنْ",
-          "def": "but (walākin)"
-        },
-        {
-          "term": "أَيْضًا",
-          "def": "also"
+          "q": "Say 'I do not like maths'.",
+          "a": "لَا أُحِبُّ الرِّيَاضِيَّاتِ",
+          "mins": 1
         }
       ],
+      "independent": [
+        {
+          "q": "Core: Write five sentences about the subjects you study, with likes and dislikes.",
+          "a": "For example: أَدْرُسُ ثَمَانِيَ مَوَادَّ. أُحِبُّ العُلُومَ. أُحِبُّ اللُّغَةَ العَرَبِيَّةَ كَثِيرًا. لَا أُحِبُّ الجُغْرَافِيَا. مَادَّتِي المُفَضَّلَةُ الحَاسُوبُ.",
+          "mins": 8,
+          "model": "Teacher writes two sentences about their own school days."
+        },
+        {
+          "q": "Extend: Add a reason to three sentences with لِأَنَّهُ or لِأَنَّهَا.",
+          "a": "For example: أُحِبُّ العُلُومَ لِأَنَّهَا مُمْتِعَةٌ.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Say which is your favourite subject: مَادَّتِي المُفَضَّلَةُ ... لِأَنَّ ...",
+          "a": "For example: مَادَّتِي المُفَضَّلَةُ التَّارِيخُ لِأَنَّ المُعَلِّمَ يَشْرَحُ جَيِّدًا.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "What does مَادَّة mean? A) subject B) school C) teacher",
+          "a": "A) subject",
+          "mins": 1,
+          "options": [
+            "subject",
+            "school",
+            "teacher"
+          ]
+        },
+        {
+          "q": "Big question: say what you study and one subject you like, with a reason.",
+          "a": "For example: أَدْرُسُ العُلُومَ وَأُحِبُّهَا لِأَنَّهَا مُمْتِعَةٌ.",
+          "mins": 2
+        }
+      ],
+      "homework": "Write your weekly timetable in Arabic (days and subjects) and mark your favourite subject.",
+      "send": "SEND: subject cards with icons (objects only). EAL: subject list with English. Stretch: use أُفَضِّلُ (I prefer) ... عَلَى ....",
+      "resources": [
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Spring 1 week 1",
+        "Portal arabic y9 lesson 1, upgraded",
+        "Subject vocabulary sheet and timetable frame (portal worksheet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "school timetable",
+          "alt": "A school timetable",
+          "for": "keywords"
+        },
+        {
+          "find": "science lab glassware",
+          "alt": "Science equipment ('ulum)",
+          "for": "teach:1"
+        },
+        {
+          "find": "globe on a desk",
+          "alt": "A globe (jughrafiya)",
+          "for": "teach:2"
+        }
+      ],
+      "duration": 50
+    },
+    {
+      "unit": "Spring 1: At school",
+      "n": 2,
+      "title": "Giving opinions about subjects with reasons",
+      "bigQuestion": "How do I give and justify an opinion in Arabic?",
+      "objectives": [
+        "To understand how to give, ask for and justify opinions about school subjects"
+      ],
+      "successCriteria": [
+        "All: give an opinion with فِي رَأْيِي",
+        "Most: compare with أُفَضِّلُ ... عَلَى ...",
+        "Some: ask for and answer an opinion question: مَا رَأْيُكَ فِي ...؟"
+      ],
+      "crossCurricular": "English: persuasive and discursive language",
+      "smsc": "Social: disagreeing politely and respecting other views",
+      "keywords": [
+        {
+          "term": "رَأْي (ra'y)",
+          "def": "opinion"
+        },
+        {
+          "term": "فِي رَأْيِي (fi ra'yi)",
+          "def": "in my opinion"
+        },
+        {
+          "term": "أُفَضِّلُ (ufaddilu)",
+          "def": "I prefer"
+        },
+        {
+          "term": "أَعْتَقِدُ أَنَّ (a'taqidu anna)",
+          "def": "I believe that"
+        },
+        {
+          "term": "مَا رَأْيُكَ فِي ...؟ (ma ra'yuka fi?)",
+          "def": "what do you think of ...?"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is it possible for two people to disagree about a subject and both be right? How should we disagree politely?",
+        "a": "Yes, opinions differ; listen, give reasons, speak kindly."
+      },
+      "islamicLink": {
+        "text": "Allah tells us to speak good words to people (al-Baqarah 2:83) and to argue in the best way (an-Nahl 16:125). Giving opinions with reasons, politely, is part of good adab.",
+        "at": "start"
+      },
       "starter": [
-        "Say two subjects you like with reasons.",
-        "Say 'I do not like maths because it is difficult'.",
-        "Give an Arabic adjective for each: enjoyable, useful."
+        {
+          "q": "Bismillah. 'The subjects are useful': A) المَوَادُّ مُفِيدَةٌ B) المَوَادُّ مُفِيدُونَ",
+          "a": "A) المَوَادُّ مُفِيدَةٌ",
+          "mins": 1,
+          "options": [
+            "المَوَادُّ مُفِيدَةٌ",
+            "المَوَادُّ مُفِيدُونَ"
+          ]
+        },
+        {
+          "q": "Say 'maths is hard'.",
+          "a": "الرِّيَاضِيَّاتُ صَعْبَةٌ",
+          "mins": 1
+        },
+        {
+          "q": "What is لِأَنَّ?",
+          "a": "because",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "I prefer",
-          "bullets": [
-            "أُفَضِّلُ الْعُلُومَ - ufaḍḍilu l-ʿulūm - I prefer science",
-            "أُفَضِّلُ التَّارِيخَ عَلَى الْجُغْرَافِيَا - history to geography",
-            "هَلْ تُفَضِّلُ الْفَنَّ؟ - do you prefer art?"
-          ],
-          "note": "Begin with bismillah. أُفَضِّلُ X عَلَى Y means 'I prefer X to Y'. The shadda on the ض shows a doubled letter. Practise with pairs of subjects. Note that after عَلَى the noun takes a kasra, for example عَلَى الرِّيَاضِيَّاتِ."
+          "heading": "Opinion starters",
+          "table": {
+            "head": [
+              "Arabic",
+              "English"
+            ],
+            "rows": [
+              [
+                "فِي رَأْيِي ...",
+                "in my opinion ..."
+              ],
+              [
+                "أَعْتَقِدُ أَنَّ ...",
+                "I believe that ..."
+              ],
+              [
+                "أَظُنُّ أَنَّ ...",
+                "I think that ..."
+              ],
+              [
+                "أُفَضِّلُ ... عَلَى ...",
+                "I prefer ... to ..."
+              ]
+            ]
+          },
+          "note": "Begin with bismillah. After أَنَّ the noun takes fathah: أَعْتَقِدُ أَنَّ التَّارِيخَ مُفِيدٌ."
         },
         {
-          "heading": "In my opinion",
-          "bullets": [
-            "فِي رَأْيِي الْعُلُومُ مُمْتِعَةٌ - fī ra'yī l-ʿulūm mumtiʿa",
-            "أَعْتَقِدُ أَنَّ الرِّيَاضِيَّاتِ مُهِمَّةٌ - I think maths is important",
-            "أَظُنُّ أَنَّ التَّارِيخَ مُفِيدٌ - I think history is useful"
-          ],
-          "note": "Two ways to give an opinion: فِي رَأْيِي + a normal sentence, or أَعْتَقِدُ أَنَّ + noun with accusative (fatḥa; the sound feminine plural has kasra: الرِّيَاضِيَّاتِ). Present the second as a chunk for stronger pupils. Praise the use of different phrases to avoid repetition."
+          "heading": "Model: a justified opinion",
+          "model": {
+            "problem": "Give an opinion about science with a reason.",
+            "steps": [
+              "فِي رَأْيِي العُلُومُ مُمْتِعَةٌ",
+              "لِأَنَّنَا نَتَعَلَّمُ عَنْ خَلْقِ اللّٰهِ",
+              "لٰكِنَّهَا صَعْبَةٌ أَحْيَانًا"
+            ],
+            "answer": "In my opinion science is interesting because we learn about Allah's creation, but it is sometimes hard."
+          },
+          "note": "Opinion, reason, balancing point: the shape of a strong answer."
         },
         {
-          "heading": "Balanced opinions",
+          "heading": "Asking for opinions",
           "bullets": [
-            "الْعُلُومُ مُمْتِعَةٌ وَلَكِنَّهَا صَعْبَةٌ - interesting but hard",
-            "أُحِبُّ الْفَنَّ وَأُحِبُّ الرِّيَاضَةَ أَيْضًا - I also like sport",
-            "أُفَضِّلُ الْحَاسُوبَ لِأَنَّهُ مُفِيدٌ - I prefer computing because it is useful"
+            "مَا رَأْيُكَ فِي العُلُومِ؟: what do you think of science?",
+            "لِمَاذَا؟: why?",
+            "أَيُّ مَادَّةٍ تُفَضِّلُ؟: which subject do you prefer?"
           ],
-          "note": "Show how to give a balanced answer: a positive, a negative and a reason. Link to Islamic adab of speaking fairly: Qur'an 5:8 says be just, even to those you dislike. We try to be fair when giving opinions about people and subjects. Pupils write two balanced sentences."
+          "note": "To a girl: رَأْيُكِ، تُفَضِّلِينَ."
         },
         {
-          "heading": "Asking opinion questions",
+          "heading": "Check",
           "bullets": [
-            "مَا رَأْيُكَ فِي الْعُلُومِ؟ - mā ra'yuka? - your view of science?",
-            "لِمَاذَا تُحِبُّ التَّارِيخَ؟ - limādhā tuḥibbu t-tārīkh? - why do you like history?",
-            "أَيُّ مَادَّةٍ تُفَضِّلُ؟ - ayyu māddatin tufaḍḍilu? - which subject do you prefer?"
+            "Vote in the Teams poll"
           ],
-          "note": "Teach three questions with a model answer for each. Remember -ka for boys and -ki for girls: رَأْيُكِ. Practise in pairs; ask pupils to record their partner's answers in Arabic notes."
-        },
-        {
-          "heading": "Exam-style speaking",
-          "bullets": [
-            "Say your opinion",
-            "Give a reason",
-            "Add a second opinion"
-          ],
-          "note": "Show how to build a three-part answer for a speaking task: a statement, a reason with لِأَنَّ, then a contrast. Example: أُحِبُّ الْعُلُومَ لِأَنَّهَا مُمْتِعَةٌ وَلَكِنْ أَجِدُ الْكِيمْيَاءَ صَعْبَةً. Pupils prepare their own three-part answer."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'I prefer history to geography':",
+            "options": [
+              "أُفَضِّلُ التَّارِيخَ عَلَى الجُغْرَافِيَا",
+              "أُحِبُّ التَّارِيخَ مِنَ الجُغْرَافِيَا",
+              "أُفَضِّلُ الجُغْرَافِيَا عَلَى التَّارِيخِ"
+            ],
+            "answer": 0,
+            "why": "أُفَضِّلُ A عَلَى B = I prefer A to B."
+          }
         }
       ],
       "practice": [
-        "Say: 'I prefer maths to history'.",
-        "Ask: 'Why do you like Arabic?'",
-        "Change the opinion: الرِّيَاضِيَّاتُ مُمْتِعَةٌ → difficult.",
-        "Add a contrast with وَلَكِنْ to: أُحِبُّ الْعُلُومَ."
+        {
+          "q": "Answer: مَا رَأْيُكَ فِي الحَاسُوبِ؟",
+          "a": "For example: فِي رَأْيِي الحَاسُوبُ مُفِيدٌ لِأَنَّهُ مُهِمٌّ لِلْمُسْتَقْبَلِ.",
+          "mins": 2,
+          "model": "Start with فِي رَأْيِي.\nSubject + adjective: الحَاسُوبُ مُفِيدٌ.\nReason: لِأَنَّهُ مُهِمٌّ لِلْمُسْتَقْبَلِ."
+        },
+        {
+          "q": "Say 'I prefer Arabic to English'.",
+          "a": "أُفَضِّلُ اللُّغَةَ العَرَبِيَّةَ عَلَى اللُّغَةِ الإِنْجِلِيزِيَّةِ",
+          "mins": 2
+        },
+        {
+          "q": "Ask a girl which subject she prefers.",
+          "a": "أَيُّ مَادَّةٍ تُفَضِّلِينَ؟",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Write a paragraph of 60 words giving opinions on five subjects.",
-        "Interview a partner with three opinion questions and write their answers.",
-        "Record a 30-second speaking answer on your favourite and least favourite subject."
+        {
+          "q": "Core: Write opinions on three subjects, each with a reason (portal response box). Starter: فِي رَأْيِي ...",
+          "a": "For example: فِي رَأْيِي الرِّيَاضِيَّاتُ مُهِمَّةٌ لِأَنَّهَا مُفِيدَةٌ فِي الحَيَاةِ. أُفَضِّلُ العُلُومَ عَلَى التَّارِيخِ لِأَنَّهَا مُمْتِعَةٌ. أَعْتَقِدُ أَنَّ الفَنَّ سَهْلٌ.",
+          "mins": 8,
+          "model": "Teacher writes one full opinion with a reason and a balancing point."
+        },
+        {
+          "q": "Extend: In a breakout pair, ask each other مَا رَأْيُكَ فِي ...؟ about two subjects and note the answers.",
+          "a": "Two questions and two justified answers each",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Write a balanced opinion: positive, negative and conclusion.",
+          "a": "For example: التَّارِيخُ مُمْتِعٌ، لٰكِنَّ فِيهِ تَوَارِيخَ كَثِيرَةً، وَمَعَ ذٰلِكَ أُحِبُّهُ.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Write: 'In my opinion, geography is useful'.",
-        "Write one question using لِمَاذَا."
+        {
+          "q": "What does أُفَضِّلُ mean? A) I prefer B) I study C) I think",
+          "a": "A) I prefer",
+          "mins": 1,
+          "options": [
+            "I prefer",
+            "I study",
+            "I think"
+          ]
+        },
+        {
+          "q": "Big question: give and justify one opinion in Arabic.",
+          "a": "For example: فِي رَأْيِي العُلُومُ مُمْتِعَةٌ لِأَنَّنَا نَتَعَلَّمُ عَنِ الطَّبِيعَةِ.",
+          "mins": 2
+        }
       ],
-      "homework": "Write a 70-word paragraph on 'My school and my opinions', using at least three opinion phrases.",
-      "send": "SEND: opinion phrase cards with pictures. EAL: bilingual phrase bank. Stretch: add أَجِدُ ... (I find ...) with an accusative adjective."
+      "homework": "Ask two family members their opinion of a school subject in Arabic (or translate for them) and write their answers.",
+      "send": "SEND: opinion frame: فِي رَأْيِي ___ ___ لِأَنَّ ___. EAL: phrase card with English. Stretch: use أَعْتَقِدُ أَنَّ with correct fathah.",
+      "resources": [
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Spring 1 week 2 (opinions with reasons)",
+        "Portal arabic y9 lesson 2, upgraded",
+        "Opinion frame (portal worksheet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "speech bubbles icon",
+          "alt": "Speech bubbles for opinions",
+          "for": "keywords"
+        },
+        {
+          "find": "scales balance",
+          "alt": "A balance scale: weighing opinions",
+          "for": "teach:2"
+        }
+      ],
+      "duration": 50
     },
     {
       "unit": "Unit 1: My school and my opinions",
@@ -330,113 +574,226 @@
       "send": "SEND: plural pattern cards with pictures. EAL: table with English. Stretch: use the dual of verbs (يَذْهَبَانِ - they two go)."
     },
     {
-      "unit": "Unit 1: My school and my opinions",
+      "unit": "Spring 1: At school",
       "n": 4,
-      "title": "My school day: present and past",
-      "duration": 50,
+      "title": "My school day in the past, present and future",
+      "bigQuestion": "How do I talk about yesterday, today and tomorrow at school in Arabic?",
       "objectives": [
-        "Describe a school day using present and past tense",
-        "Use time expressions and sequence words",
-        "Write 80 words about a school day"
+        "To understand how to describe a school day in the past, present and future"
       ],
+      "successCriteria": [
+        "All: say one sentence in each time frame",
+        "Most: change a verb between past, present and future: ذَهَبْتُ، أَذْهَبُ، سَأَذْهَبُ",
+        "Some: use time words and attached pronouns in a three-tense paragraph"
+      ],
+      "crossCurricular": "English: verb tenses and time adverbials",
+      "smsc": "Spiritual: reflecting on yesterday and planning tomorrow with in sha' Allah",
       "keywords": [
         {
-          "term": "بَدَأَ / يَبْدَأُ",
-          "def": "he began / begins (bada'a / yabda'u)"
+          "term": "أَمْسِ (amsi)",
+          "def": "yesterday"
         },
         {
-          "term": "اِنْتَهَى / يَنْتَهِي",
-          "def": "he finished / finishes"
+          "term": "اليَوْمَ (al-yawma)",
+          "def": "today"
         },
         {
-          "term": "اِسْتِرَاحَةٌ",
-          "def": "break (istirāḥa)"
+          "term": "غَدًا (ghadan)",
+          "def": "tomorrow"
         },
         {
-          "term": "غَدَاءٌ",
-          "def": "lunch (ghadā')"
+          "term": "ذَهَبْتُ (dhahabtu)",
+          "def": "I went"
         },
         {
-          "term": "وَاجِبٌ",
-          "def": "homework (wājib)"
-        },
-        {
-          "term": "بَعْدَ الظُّهْرِ",
-          "def": "in the afternoon"
+          "term": "سَأَدْرُسُ (sa-adrusu)",
+          "def": "I will study"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Examiners love answers that use three time frames. Why do you think using past, present and future shows more skill?",
+        "a": "It shows control of different verb forms and time words, not just one pattern."
+      },
+      "islamicLink": {
+        "text": "Allah swears by time: 'By time, mankind is in loss, except those who believe and do good deeds' (al-'Asr 103:1-3). We use our past, present and future well.",
+        "at": "start"
+      },
       "starter": [
-        "Name six school subjects in Arabic.",
-        "Make the dual and plural of كِتَابٌ.",
-        "Say 'I like history because it is interesting'."
+        {
+          "q": "Bismillah. 'Therefore': A) لِذٰلِكَ B) لٰكِنَّ",
+          "a": "A) لِذٰلِكَ",
+          "mins": 1,
+          "options": [
+            "لِذٰلِكَ",
+            "لٰكِنَّ"
+          ]
+        },
+        {
+          "q": "Make future: أَدْرُسُ.",
+          "a": "سَأَدْرُسُ / سَوْفَ أَدْرُسُ",
+          "mins": 1
+        },
+        {
+          "q": "Say 'I went'.",
+          "a": "ذَهَبْتُ",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "The day begins",
-          "bullets": [
-            "يَبْدَأُ الدَّرْسُ الْأَوَّلُ فِي السَّاعَةِ التَّاسِعَةِ - lesson one begins at nine",
-            "نَدْرُسُ عَبْرَ الْإِنْتَرْنِتِ - we study online",
-            "أَدْخُلُ الدَّرْسَ - I join the lesson"
-          ],
-          "note": "Begin with bismillah. Revise the verb يَبْدَأُ with the time work from Year 8. Note that the lesson starts with the teacher's greeting. Ask: how does your day begin at TGA? Pupils say the first lesson of the day and the time."
+          "heading": "One verb, three times",
+          "table": {
+            "head": [
+              "Past (أَمْسِ)",
+              "Present (اليَوْمَ)",
+              "Future (غَدًا)"
+            ],
+            "rows": [
+              [
+                "ذَهَبْتُ",
+                "أَذْهَبُ",
+                "سَأَذْهَبُ"
+              ],
+              [
+                "دَرَسْتُ",
+                "أَدْرُسُ",
+                "سَأَدْرُسُ"
+              ],
+              [
+                "كَتَبْتُ",
+                "أَكْتُبُ",
+                "سَأَكْتُبُ"
+              ],
+              [
+                "صَلَّيْتُ",
+                "أُصَلِّي",
+                "سَأُصَلِّي"
+              ]
+            ]
+          },
+          "note": "Begin with bismillah. Past 'I' ends in ـتُ; present 'I' starts with أَ; future adds سَـ."
         },
         {
-          "heading": "During the day",
+          "heading": "My online school day",
           "bullets": [
-            "نَسْتَرِيحُ فِي السَّاعَةِ الْحَادِيَةَ عَشْرَةَ - we rest at eleven",
-            "نُصَلِّي الظُّهْرَ - we pray Dhuhr",
-            "نَتَنَاوَلُ الْغَدَاءَ - we have lunch",
-            "نَعْمَلُ مَعًا - we work together"
+            "يَبْدَأُ الدَّرْسُ الأَوَّلُ فِي السَّاعَةِ التَّاسِعَةِ",
+            "نُصَلِّي الظُّهْرَ ثُمَّ نَتَنَاوَلُ الغَدَاءَ",
+            "أَدْرُسُ عَبْرَ الإِنْتَرْنِتِ مِنَ البَيْتِ"
           ],
-          "note": "Introduce the 'we' forms of present verbs. Note the long vowel: نَسْتَرِيحُ. Ask: what do you do in the break? Mention that the Prophet (peace be upon him) said that the one who walks to seek knowledge, Allah makes easy for him a path to Paradise (Sahih Muslim). Link to the value of learning."
+          "note": "Present: the usual day."
         },
         {
-          "heading": "What I did",
-          "bullets": [
-            "أَمْسِ دَرَسْتُ الْعُلُومَ - yesterday I studied science",
-            "كَتَبْتُ الْوَاجِبَ - katabtu l-wājib - I wrote the homework",
-            "ثُمَّ ذَهَبْتُ إِلَى الْمَسْجِدِ - then I went to the mosque",
-            "ثُمَّ نِمْتُ مُبَكِّرًا - then I slept early"
-          ],
-          "note": "Combine past and present. Pupils compare 'every day' (present) with 'yesterday' (past). Introduce نِمْتُ (I slept, from نَامَ) as a chunk. Ask pupils to underline all past tense verbs in the sentences."
+          "heading": "Model: a three-tense paragraph",
+          "model": {
+            "problem": "Yesterday, today, tomorrow.",
+            "steps": [
+              "أَمْسِ دَرَسْتُ العُلُومَ وَكَانَ الدَّرْسُ مُمْتِعًا.",
+              "اليَوْمَ أَدْرُسُ العَرَبِيَّةَ وَأُحِبُّهَا لِأَنَّهَا لُغَةُ القُرْآنِ.",
+              "غَدًا سَأَكْتُبُ اخْتِبَارَ الرِّيَاضِيَّاتِ، إِنْ شَاءَ اللّٰهُ."
+            ],
+            "answer": "Three sentences, three time frames, one opinion with an attached pronoun"
+          },
+          "note": "كَانَ + accusative: كَانَ الدَّرْسُ مُمْتِعًا (the lesson was interesting). Note أُحِبُّهَا and لِأَنَّهَا agree with العَرَبِيَّة."
         },
         {
-          "heading": "Time and sequence",
+          "heading": "Check",
           "bullets": [
-            "أَوَّلًا - awwalan - first",
-            "بَعْدَ ذَلِكَ - baʿda dhālika - after that",
-            "قَبْلَ الْغَدَاءِ - qabla l-ghadā' - before lunch",
-            "أَخِيرًا - akhīran - finally"
+            "Vote in the Teams poll"
           ],
-          "note": "Use قَبْلَ (before) and بَعْدَ (after) with a noun in the genitive. Example: بَعْدَ الدَّرْسِ أَلْعَبُ (after the lesson I play). Pupils write two sentences with قَبْلَ and بَعْدَ."
-        },
-        {
-          "heading": "Writing a school day",
-          "bullets": [
-            "Present tense for usual days",
-            "Past tense for yesterday",
-            "Opinions with لِأَنَّ"
-          ],
-          "note": "Plan: a good text includes habits (present), a specific day (past) and an opinion. Show a plan on screen and brainstorm vocabulary. Pupils start writing. Remind them to check the endings and vowels. Offer to read drafts in the breakout room."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which sentence is in the future?",
+            "options": [
+              "كَتَبْتُ الوَاجِبَ",
+              "أَكْتُبُ الوَاجِبَ",
+              "سَأَكْتُبُ الوَاجِبَ"
+            ],
+            "answer": 2,
+            "why": "سَـ + present = future: I will write the homework."
+          }
         }
       ],
       "practice": [
-        "Say what time your first lesson begins.",
-        "Change to the past: أَدْرُسُ الْعُلُومَ → I studied science.",
-        "Say 'before lunch I pray Dhuhr'.",
-        "Translate: 'We rest at eleven'."
+        {
+          "q": "Make past and future: أُصَلِّي الظُّهْرَ فِي المَسْجِدِ.",
+          "a": "Past: صَلَّيْتُ الظُّهْرَ فِي المَسْجِدِ. Future: سَأُصَلِّي الظُّهْرَ فِي المَسْجِدِ.",
+          "mins": 2,
+          "model": "Present: أُصَلِّي.\nPast I-form: صَلَّيْتُ.\nFuture: سَأُصَلِّي."
+        },
+        {
+          "q": "Translate: Yesterday the lesson was long.",
+          "a": "أَمْسِ كَانَ الدَّرْسُ طَوِيلًا.",
+          "mins": 2
+        },
+        {
+          "q": "What does غَدًا mean?",
+          "a": "tomorrow",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Write 80 words about your school day using present and past tense.",
-        "Include at least four time expressions and two opinions.",
-        "Peer-edit a partner's text for verb endings and vowels."
+        {
+          "q": "Core: Write a paragraph about your school day with two sentences in each time frame (portal response box). Starter: أَمْسِ ...",
+          "a": "For example: أَمْسِ دَرَسْتُ التَّارِيخَ. كَانَ الدَّرْسُ مُمْتِعًا. اليَوْمَ أَدْرُسُ الرِّيَاضِيَّاتِ. أُحِبُّهَا لٰكِنَّهَا صَعْبَةٌ. غَدًا سَأَدْرُسُ العُلُومَ. سَأَكْتُبُ تَقْرِيرًا، إِنْ شَاءَ اللّٰهُ.",
+          "mins": 9,
+          "model": "Teacher writes the yesterday pair, then pupils continue."
+        },
+        {
+          "q": "Extend: Add one opinion with لِأَنَّهُ or لِأَنَّهَا in each time frame.",
+          "a": "For example: ... لِأَنَّهُ كَانَ مُفِيدًا.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Translate: Yesterday I studied science, today I am studying Arabic and tomorrow I will write an essay.",
+          "a": "أَمْسِ دَرَسْتُ العُلُومَ، وَاليَوْمَ أَدْرُسُ العَرَبِيَّةَ، وَغَدًا سَأَكْتُبُ مَقَالًا.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Write: 'After the lesson I play in the garden'.",
-        "Give one present tense and one past tense verb about school."
+        {
+          "q": "Past 'I' verbs end in: A) ـتُ B) سَـ C) أَـ",
+          "a": "A) ـتُ",
+          "mins": 1,
+          "options": [
+            "ـتُ",
+            "سَـ",
+            "أَـ"
+          ]
+        },
+        {
+          "q": "Big question: say one sentence about yesterday, today and tomorrow at school.",
+          "a": "For example: أَمْسِ دَرَسْتُ، اليَوْمَ أَدْرُسُ، غَدًا سَأَدْرُسُ.",
+          "mins": 1
+        }
       ],
-      "homework": "Complete your 80-word text neatly and record yourself reading it.",
-      "send": "SEND: sentence frames for present/past. EAL: model text with audio. Stretch: add a comparison with the school of a relative (مَدْرَسَةُ جَدِّي)."
+      "homework": "Prepare for the unit quiz: learn the verb table (past, present, future for four verbs) and the connectives toolkit.",
+      "send": "SEND: three-column verb table to complete. EAL: time line card (أَمْسِ، اليَوْمَ، غَدًا). Stretch: past with 'we': دَرَسْنَا، ذَهَبْنَا.",
+      "resources": [
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Spring 1 week 3 (my school day in past, present and future; attached pronoun agreement)",
+        "Portal arabic y9 lesson 4, upgraded",
+        "Three-tense verb table (portal worksheet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "calendar page with dates",
+          "alt": "A calendar: yesterday, today, tomorrow",
+          "for": "keywords"
+        },
+        {
+          "find": "laptop on desk at home",
+          "alt": "A laptop for online school",
+          "for": "teach:2"
+        }
+      ],
+      "duration": 50
     },
     {
       "unit": "Unit 2: Plans for the future",
@@ -1306,6 +1663,1600 @@
       ],
       "homework": "Learn 15 words from Phase 1 and read your text aloud twice.",
       "send": "SEND: speaking prompts with sentence starters. EAL: bilingual checklist. Stretch: add a paragraph about the future of schools in 2040."
+    },
+    {
+      "unit": "Spring 1: At school",
+      "n": 13,
+      "title": "Bridge: what does he look like? Describing people",
+      "bigQuestion": "How can I describe what someone looks like and what they are like, kindly and accurately?",
+      "objectives": [
+        "To understand how to describe appearance and character with adjectives that agree"
+      ],
+      "successCriteria": [
+        "All: describe hair and height: لَهُ شَعْرٌ قَصِيرٌ، هُوَ طَوِيلٌ",
+        "Most: make adjectives agree for a male and a female",
+        "Some: add character and a link word: هِيَ قَصِيرَةٌ لٰكِنَّهَا قَوِيَّةٌ"
+      ],
+      "crossCurricular": "English: descriptive writing with precise adjectives",
+      "smsc": "Moral: describing others without mocking; character matters more than looks",
+      "keywords": [
+        {
+          "term": "شَعْر (sha'r)",
+          "def": "hair"
+        },
+        {
+          "term": "عَيْنَانِ ('aynani)",
+          "def": "two eyes"
+        },
+        {
+          "term": "طَوِيل / قَصِير (tawil / qasir)",
+          "def": "tall / short"
+        },
+        {
+          "term": "لَطِيف (latif)",
+          "def": "kind, gentle"
+        },
+        {
+          "term": "لَهُ / لَهَا (lahu / laha)",
+          "def": "he has / she has (for features)"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "When you describe a friend, what matters more: what they look like or what they are like? Why?",
+        "a": "Character matters more; the Prophet ﷺ taught that Allah looks at our hearts and deeds (Sahih Muslim)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'We have certainly created man in the best of forms' (at-Tin 95:4). The Prophet ﷺ taught that Allah does not look at our bodies and forms but at our hearts and deeds (Sahih Muslim). We describe people with respect.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Feminine of أَسْوَد? A) سَوْدَاء B) أَسْوَدَة",
+          "a": "A) سَوْدَاء",
+          "mins": 1,
+          "options": [
+            "سَوْدَاء",
+            "أَسْوَدَة"
+          ]
+        },
+        {
+          "q": "Comparative of كَبِير?",
+          "a": "أَكْبَرُ",
+          "mins": 1
+        },
+        {
+          "q": "Say 'my sister is older than me'.",
+          "a": "أُخْتِي أَكْبَرُ مِنِّي",
+          "mins": 2
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Appearance",
+          "table": {
+            "head": [
+              "Arabic",
+              "English"
+            ],
+            "rows": [
+              [
+                "هُوَ طَوِيلٌ / هِيَ طَوِيلَةٌ",
+                "he / she is tall"
+              ],
+              [
+                "هُوَ قَصِيرٌ / هِيَ قَصِيرَةٌ",
+                "he / she is short"
+              ],
+              [
+                "لَهُ شَعْرٌ أَسْوَدُ قَصِيرٌ",
+                "he has short black hair"
+              ],
+              [
+                "لَهَا عَيْنَانِ بُنِّيَّتَانِ",
+                "she has brown eyes"
+              ],
+              [
+                "يَلْبَسُ نَظَّارَةً",
+                "he wears glasses"
+              ]
+            ]
+          },
+          "note": "Begin with bismillah. لَهُ / لَهَا (to him / to her) is how Arabic says 'has' for features. No pictures of people are used; describe in words only."
+        },
+        {
+          "heading": "Character",
+          "bullets": [
+            "لَطِيف (kind), كَرِيم (generous)",
+            "صَبُور (patient), مُجْتَهِد (hard-working)",
+            "هِيَ لَطِيفَةٌ وَمُجْتَهِدَةٌ"
+          ],
+          "note": "Add ة for a female; the same rule as nationality and colour (except أَفْعَل colours)."
+        },
+        {
+          "heading": "Model: a description",
+          "model": {
+            "problem": "Describe my uncle in three sentences.",
+            "steps": [
+              "عَمِّي طَوِيلٌ.",
+              "لَهُ شَعْرٌ بُنِّيٌّ وَلِحْيَةٌ قَصِيرَةٌ.",
+              "هُوَ كَرِيمٌ وَصَبُورٌ."
+            ],
+            "answer": "My uncle is tall. He has brown hair and a short beard. He is generous and patient."
+          },
+          "note": "Height, features, then character."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'She is tall and kind':",
+            "options": [
+              "هِيَ طَوِيلٌ وَلَطِيفٌ",
+              "هِيَ طَوِيلَةٌ وَلَطِيفَةٌ",
+              "هُوَ طَوِيلَةٌ وَلَطِيفَةٌ"
+            ],
+            "answer": 1,
+            "why": "Both adjectives agree with هِيَ: ـَة."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Describe a woman with long black hair who is patient.",
+          "a": "لَهَا شَعْرٌ أَسْوَدُ طَوِيلٌ، وَهِيَ صَبُورَةٌ.",
+          "mins": 2,
+          "model": "Features with لَهَا: لَهَا شَعْرٌ.\nColour then length: أَسْوَدُ طَوِيلٌ (شَعْر is masculine).\nCharacter, feminine: وَهِيَ صَبُورَةٌ."
+        },
+        {
+          "q": "Make feminine: هُوَ مُجْتَهِدٌ.",
+          "a": "هِيَ مُجْتَهِدَةٌ.",
+          "mins": 1
+        },
+        {
+          "q": "What does كَرِيم mean?",
+          "a": "generous",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Describe a real or imagined person you admire in four sentences: height, hair, eyes, character (portal response box).",
+          "a": "For example: جَدِّي قَصِيرٌ. لَهُ شَعْرٌ أَبْيَضُ. لَهُ عَيْنَانِ بُنِّيَّتَانِ. هُوَ كَرِيمٌ وَلَطِيفٌ.",
+          "mins": 8,
+          "model": "Teacher describes an imagined teacher in four sentences, labelling each part."
+        },
+        {
+          "q": "Extend: Rewrite your description for a female (or male) person, changing every agreement.",
+          "a": "Correct ة endings and لَهَا / هِيَ throughout",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Join two ideas with لٰكِنَّ + pronoun: لٰكِنَّهُ / لٰكِنَّهَا.",
+          "a": "For example: هِيَ قَصِيرَةٌ لٰكِنَّهَا قَوِيَّةٌ.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "'He has' (for features) is: A) لَهُ B) لَهَا C) عِنْدِي",
+          "a": "A) لَهُ",
+          "mins": 1,
+          "options": [
+            "لَهُ",
+            "لَهَا",
+            "عِنْدِي"
+          ]
+        },
+        {
+          "q": "Big question: describe someone kindly in one Arabic sentence.",
+          "a": "For example: هُوَ طَوِيلٌ وَلَطِيفٌ.",
+          "mins": 2
+        }
+      ],
+      "homework": "Write a five-sentence description of a person you admire (no photo), including at least two character words.",
+      "send": "SEND: description frame with word bank. EAL: adjective cards with English. Stretch: use the dual: لَهَا عَيْنَانِ وَاسِعَتَانِ.",
+      "resources": [
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Autumn 1 essentials (bridge): What does he look like?",
+        "Description frame and adjective bank (portal worksheet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "pair of reading glasses",
+          "alt": "A pair of glasses (nazzarah)",
+          "for": "keywords"
+        },
+        {
+          "find": "Arabic word kindness calligraphy",
+          "alt": "Arabic calligraphy",
+          "for": "hook"
+        }
+      ],
+      "duration": 50
+    },
+    {
+      "unit": "Spring 1: At school",
+      "n": 14,
+      "title": "Bridge: the active and passive participle",
+      "bigQuestion": "How can one Arabic root give us 'writer' and 'written'?",
+      "objectives": [
+        "To understand how the active participle (اِسْمُ الفَاعِلِ) and passive participle (اِسْمُ المَفْعُولِ) are formed from a root"
+      ],
+      "successCriteria": [
+        "All: recognise كَاتِب (writer) and مَكْتُوب (written) from ك ت ب",
+        "Most: form فَاعِل and مَفْعُول from three new roots",
+        "Some: use a participle as an adjective in a sentence: البَابُ مَفْتُوحٌ"
+      ],
+      "crossCurricular": "English: suffixes -er and -ed (writer, written)",
+      "smsc": "Cultural: the root system that makes Arabic a language of patterns",
+      "keywords": [
+        {
+          "term": "جَذْر (jadhr)",
+          "def": "a root: usually three letters"
+        },
+        {
+          "term": "اِسْمُ الفَاعِلِ (ism al-fa'il)",
+          "def": "active participle: the doer"
+        },
+        {
+          "term": "اِسْمُ المَفْعُولِ (ism al-maf'ul)",
+          "def": "passive participle: the thing done to"
+        },
+        {
+          "term": "كَاتِب (katib)",
+          "def": "writer"
+        },
+        {
+          "term": "مَكْتُوب (maktub)",
+          "def": "written"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "كِتَاب (book), كَاتِب (writer), مَكْتُوب (written), مَكْتَبَة (library). What do these words share, and what does that tell you about Arabic?",
+        "a": "The root ك ت ب (writing); Arabic builds families of words from roots."
+      },
+      "islamicLink": {
+        "text": "The Qur'an describes the Prophet ﷺ as one whom the People of the Book find mentioned, مَكْتُوبًا, written, in their scriptures (al-A'raf 7:157). The same pattern مَفْعُول gives us مَكْتُوب.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'She has' (for features): A) لَهَا B) لَهُ",
+          "a": "A) لَهَا",
+          "mins": 1,
+          "options": [
+            "لَهَا",
+            "لَهُ"
+          ]
+        },
+        {
+          "q": "Make feminine: هُوَ لَطِيفٌ.",
+          "a": "هِيَ لَطِيفَةٌ",
+          "mins": 1
+        },
+        {
+          "q": "What is the root of كِتَاب?",
+          "a": "ك ت ب",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Two patterns",
+          "compare": {
+            "left": {
+              "title": "فَاعِل (the doer)",
+              "points": [
+                "كَاتِب: writer",
+                "فَاتِح: opener, conqueror",
+                "دَارِس: one who studies"
+              ]
+            },
+            "right": {
+              "title": "مَفْعُول (done to)",
+              "points": [
+                "مَكْتُوب: written",
+                "مَفْتُوح: open(ed)",
+                "مَدْرُوس: studied"
+              ]
+            },
+            "label": "root"
+          },
+          "note": "Begin with bismillah. Put the three root letters into the ف ع ل slots."
+        },
+        {
+          "heading": "Model: from root to participles",
+          "model": {
+            "problem": "Root ش ر ب (drinking).",
+            "steps": [
+              "Active: ف→ش، ع→ر، ل→ب in فَاعِل: شَارِب (drinker)",
+              "Passive in مَفْعُول: مَشْرُوب (a drink, drunk)",
+              "Use it: المَشْرُوبُ بَارِدٌ (the drink is cold)"
+            ],
+            "answer": "شَارِب، مَشْرُوب"
+          },
+          "note": "مَشْرُوب is used every day for 'a drink'."
+        },
+        {
+          "heading": "Participles as adjectives",
+          "bullets": [
+            "البَابُ مَفْتُوحٌ: the door is open",
+            "الكُرْسِيُّ مَكْسُورٌ: the chair is broken",
+            "الطَّالِبُ جَالِسٌ: the student is sitting"
+          ],
+          "note": "Participles take ة for feminine: النَّافِذَةُ مَفْتُوحَةٌ."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "From ف ت ح, which means 'opened'?",
+            "options": [
+              "فَاتِح",
+              "مَفْتُوح",
+              "فَتْح"
+            ],
+            "answer": 1,
+            "why": "مَفْعُول pattern = passive participle: مَفْتُوح."
+          }
+        },
+        {
+          "heading": "Beyond three letters",
+          "bullets": [
+            "عَلَّمَ (to teach) → مُعَلِّم (teacher)",
+            "Longer verbs start with مُـ",
+            "مُعَلِّم is a participle too"
+          ],
+          "note": "Most able only: forms with مُـ."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Make both participles from س ك ن (living).",
+          "a": "سَاكِن (resident), مَسْكُون (inhabited)",
+          "mins": 2,
+          "model": "فَاعِل: سَاكِن.\nمَفْعُول: مَسْكُون.\nMeaning: a resident; inhabited."
+        },
+        {
+          "q": "Translate: الكِتَابُ مَكْتُوبٌ بِالعَرَبِيَّةِ.",
+          "a": "The book is written in Arabic.",
+          "mins": 1
+        },
+        {
+          "q": "Active participle of ك ت ب?",
+          "a": "كَاتِب",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Complete the table for the roots د ر س، ف ت ح، ع ر ف، ح ف ظ: active participle, passive participle, meaning.",
+          "a": "دَارِس / مَدْرُوس (studier / studied); فَاتِح / مَفْتُوح (opener / open); عَارِف / مَعْرُوف (knower / known, good deed); حَافِظ / مَحْفُوظ (one who memorises, a hafidh / memorised, preserved)",
+          "mins": 8,
+          "model": "Teacher completes د ر س: دَارِس, مَدْرُوس, explaining the slots."
+        },
+        {
+          "q": "Extend: Write three sentences using a passive participle as an adjective.",
+          "a": "For example: البَابُ مَفْتُوحٌ. الدَّرْسُ مَفْهُومٌ. الكَاتِبُ مَشْهُورٌ.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Find a word on the مَفْعُول pattern in Surah al-Fatihah.",
+          "a": "المَغْضُوبِ (those who earned anger) in غَيْرِ المَغْضُوبِ عَلَيْهِمْ",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "What does اِسْمُ الفَاعِلِ name? A) the doer B) the thing done C) the place",
+          "a": "A) the doer",
+          "mins": 1,
+          "options": [
+            "the doer",
+            "the thing done",
+            "the place"
+          ]
+        },
+        {
+          "q": "Big question: how does one root give 'writer' and 'written'?",
+          "a": "The root ك ت ب goes into the patterns فَاعِل (كَاتِب) and مَفْعُول (مَكْتُوب).",
+          "mins": 2
+        }
+      ],
+      "homework": "Find five words from one root (e.g. ع ل م: عِلْم، عَالِم، مَعْلُوم، مُعَلِّم، تَعْلِيم) and write their meanings.",
+      "send": "SEND: root slot card (ف ع ل) to place letters in. EAL: English -er and -ed beside each. Stretch: place nouns on مَفْعَل: مَكْتَب, مَسْجِد.",
+      "resources": [
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Autumn 1 essentials (bridge): the active and passive participle",
+        "Root and pattern table (portal worksheet)",
+        "Mushaf for the stretch task"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "open door",
+          "alt": "An open door (maftuh)",
+          "for": "keywords"
+        },
+        {
+          "find": "Arabic manuscript writing",
+          "alt": "Handwritten Arabic (maktub)",
+          "for": "hook"
+        }
+      ],
+      "duration": 50
+    },
+    {
+      "unit": "Spring 1: At school",
+      "n": 15,
+      "title": "Bridge: my town and giving directions",
+      "bigQuestion": "How do I help a visitor find their way in my town in Arabic?",
+      "objectives": [
+        "To understand how to name places in a town and give directions with the imperative"
+      ],
+      "successCriteria": [
+        "All: name six places in a town",
+        "Most: give a direction with اِذْهَبْ، اِمْشِ، خُذْ",
+        "Some: change the imperative for a female: اِذْهَبِي"
+      ],
+      "crossCurricular": "Geography: reading a map and following a route",
+      "smsc": "Social: helping strangers and travellers is part of good character",
+      "keywords": [
+        {
+          "term": "مَدِينَة (madinah)",
+          "def": "town, city"
+        },
+        {
+          "term": "اِذْهَبْ (idhhab)",
+          "def": "go! (to a male)"
+        },
+        {
+          "term": "عَلَى اليَمِينِ ('ala l-yamin)",
+          "def": "on the right"
+        },
+        {
+          "term": "عَلَى اليَسَارِ ('ala l-yasar)",
+          "def": "on the left"
+        },
+        {
+          "term": "مُسْتَقِيمًا (mustaqiman)",
+          "def": "straight on"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A visitor stops you outside the masjid and asks for the library. What exact words would you need to help them?",
+        "a": "Go straight on, take the first street, turn right, it is on the left."
+      },
+      "islamicLink": {
+        "text": "Allah lists the wayfarer, ابْنَ السَّبِيلِ, among those we should help (al-Baqarah 2:177). Giving clear directions is a small act of kindness.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Passive participle of ف ت ح: A) مَفْتُوح B) فَاتِح",
+          "a": "A) مَفْتُوح",
+          "mins": 1,
+          "options": [
+            "مَفْتُوح",
+            "فَاتِح"
+          ]
+        },
+        {
+          "q": "Translate: البَابُ مَفْتُوحٌ.",
+          "a": "The door is open.",
+          "mins": 1
+        },
+        {
+          "q": "Say 'on the right' if you know it, or 'masjid' in Arabic.",
+          "a": "عَلَى اليَمِينِ / مَسْجِد",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Places in town",
+          "table": {
+            "head": [
+              "Arabic",
+              "Say it",
+              "English"
+            ],
+            "rows": [
+              [
+                "مَسْجِد",
+                "masjid",
+                "mosque"
+              ],
+              [
+                "مَكْتَبَة",
+                "maktabah",
+                "library, bookshop"
+              ],
+              [
+                "حَدِيقَة",
+                "hadiqah",
+                "park, garden"
+              ],
+              [
+                "مَحَطَّة",
+                "mahattah",
+                "station"
+              ],
+              [
+                "مُسْتَشْفَى",
+                "mustashfa",
+                "hospital"
+              ],
+              [
+                "سُوق",
+                "suq",
+                "market"
+              ]
+            ]
+          },
+          "note": "Begin with bismillah. مَكْتَبَة is a place of books: root ك ت ب again."
+        },
+        {
+          "heading": "Directions",
+          "table": {
+            "head": [
+              "Arabic",
+              "English"
+            ],
+            "rows": [
+              [
+                "اِذْهَبْ مُسْتَقِيمًا",
+                "go straight on"
+              ],
+              [
+                "خُذِ الشَّارِعَ الأَوَّلَ",
+                "take the first street"
+              ],
+              [
+                "اِنْعَطِفْ يَمِينًا / يَسَارًا",
+                "turn right / left"
+              ],
+              [
+                "المَسْجِدُ عَلَى اليَمِينِ",
+                "the masjid is on the right"
+              ]
+            ]
+          },
+          "note": "The imperative gives an order or instruction. خُذْ becomes خُذِ before al- to help pronunciation."
+        },
+        {
+          "heading": "Model: a route",
+          "model": {
+            "problem": "From the station to the library.",
+            "steps": [
+              "اِذْهَبْ مُسْتَقِيمًا.",
+              "خُذِ الشَّارِعَ الثَّانِيَ.",
+              "اِنْعَطِفْ يَسَارًا.",
+              "المَكْتَبَةُ عَلَى اليَمِينِ، بِجَانِبِ الحَدِيقَةِ."
+            ],
+            "answer": "Four clear steps"
+          },
+          "note": "Trace it on a simple map on screen."
+        },
+        {
+          "heading": "To a female",
+          "bullets": [
+            "اِذْهَبْ → اِذْهَبِي",
+            "اِنْعَطِفْ → اِنْعَطِفِي",
+            "خُذْ → خُذِي"
+          ],
+          "note": "Add ـِي for a female listener."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'Turn left' (to a male):",
+            "options": [
+              "اِنْعَطِفْ يَمِينًا",
+              "اِنْعَطِفْ يَسَارًا",
+              "اِذْهَبْ مُسْتَقِيمًا"
+            ],
+            "answer": 1,
+            "why": "يَسَار = left; يَمِين = right."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Direct a boy: go straight on, then turn right.",
+          "a": "اِذْهَبْ مُسْتَقِيمًا، ثُمَّ اِنْعَطِفْ يَمِينًا.",
+          "mins": 2,
+          "model": "اِذْهَبْ مُسْتَقِيمًا.\nثُمَّ (then).\nاِنْعَطِفْ يَمِينًا."
+        },
+        {
+          "q": "Same to a girl.",
+          "a": "اِذْهَبِي مُسْتَقِيمًا، ثُمَّ اِنْعَطِفِي يَمِينًا.",
+          "mins": 1
+        },
+        {
+          "q": "What is مَحَطَّة?",
+          "a": "station",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Use the map on the worksheet. Write directions from the masjid to the park and from the station to the hospital.",
+          "a": "For example: اِذْهَبْ مُسْتَقِيمًا، خُذِ الشَّارِعَ الأَوَّلَ، اِنْعَطِفْ يَمِينًا، الحَدِيقَةُ عَلَى اليَسَارِ.",
+          "mins": 8,
+          "model": "Teacher writes the first route on the shared map, saying each step."
+        },
+        {
+          "q": "Extend: Write three sentences about your own town: فِي مَدِينَتِي ...",
+          "a": "For example: فِي مَدِينَتِي مَسْجِدٌ كَبِيرٌ وَمَكْتَبَةٌ. المَحَطَّةُ قَرِيبَةٌ مِنْ بَيْتِي.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Write the directions to a female visitor.",
+          "a": "اِذْهَبِي مُسْتَقِيمًا، خُذِي الشَّارِعَ الأَوَّلَ، اِنْعَطِفِي يَمِينًا.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "What does اِذْهَبْ mean? A) go! B) take! C) turn!",
+          "a": "A) go!",
+          "mins": 1,
+          "options": [
+            "go!",
+            "take!",
+            "turn!"
+          ]
+        },
+        {
+          "q": "Big question: give a visitor a two-step direction in Arabic.",
+          "a": "For example: اِذْهَبْ مُسْتَقِيمًا ثُمَّ اِنْعَطِفْ يَسَارًا.",
+          "mins": 2
+        }
+      ],
+      "homework": "Draw a simple map of your street (places only) and write directions from your home to the nearest masjid or park.",
+      "send": "SEND: arrow cards with the direction phrases. EAL: map with English labels too. Stretch: add distances: بَعْدَ مِئَةِ مِتْرٍ (after 100 metres).",
+      "resources": [
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Autumn 2 essentials (bridge): My town",
+        "Portal arabic y10 lesson 32 (directions) as extra reading for the most able",
+        "Town map and direction cards (portal worksheet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "street map of a town",
+          "alt": "A town street map",
+          "for": "teach:3"
+        },
+        {
+          "find": "mosque in a British town",
+          "alt": "A masjid in a town",
+          "for": "keywords"
+        },
+        {
+          "find": "railway station building",
+          "alt": "A railway station (mahattah)",
+          "for": "teach:1"
+        }
+      ],
+      "duration": 50
+    },
+    {
+      "unit": "Spring 1: At school",
+      "n": 16,
+      "title": "Bridge: weather and the future with سَـ and سَوْفَ",
+      "bigQuestion": "How do I say what the weather will be like and what I will do?",
+      "objectives": [
+        "To understand how to describe the weather and talk about the future with سَـ and سَوْفَ"
+      ],
+      "successCriteria": [
+        "All: describe today's weather in two ways",
+        "Most: make a present verb future with سَـ or سَوْفَ",
+        "Some: link weather and plans: إِذَا كَانَ الجَوُّ مُشْمِسًا سَأَذْهَبُ إِلَى الحَدِيقَةِ"
+      ],
+      "crossCurricular": "Geography: weather forecasts and the seasons",
+      "smsc": "Spiritual: saying in sha' Allah about the future",
+      "keywords": [
+        {
+          "term": "طَقْس / جَوّ (taqs / jaww)",
+          "def": "weather"
+        },
+        {
+          "term": "مُشْمِس (mushmis)",
+          "def": "sunny"
+        },
+        {
+          "term": "مُمْطِر (mumtir)",
+          "def": "rainy"
+        },
+        {
+          "term": "سَـ / سَوْفَ (sa- / sawfa)",
+          "def": "will (future)"
+        },
+        {
+          "term": "غَدًا (ghadan)",
+          "def": "tomorrow"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "When Muslims talk about tomorrow they say 'in sha' Allah'. Why?",
+        "a": "Because only Allah knows the future; Allah tells us to say it (al-Kahf 18:23-24)."
+      },
+      "islamicLink": {
+        "text": "Allah tells us: 'Never say of anything, \"I will do that tomorrow\", except (adding) \"if Allah wills\"' (al-Kahf 18:23-24). We add إِنْ شَاءَ اللّٰهُ to future plans.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'Turn right': A) اِنْعَطِفْ يَمِينًا B) اِنْعَطِفْ يَسَارًا",
+          "a": "A) اِنْعَطِفْ يَمِينًا",
+          "mins": 1,
+          "options": [
+            "اِنْعَطِفْ يَمِينًا",
+            "اِنْعَطِفْ يَسَارًا"
+          ]
+        },
+        {
+          "q": "What is مَكْتَبَة?",
+          "a": "library / bookshop",
+          "mins": 1
+        },
+        {
+          "q": "Say 'go straight on' to a girl.",
+          "a": "اِذْهَبِي مُسْتَقِيمًا",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The weather",
+          "table": {
+            "head": [
+              "Arabic",
+              "English"
+            ],
+            "rows": [
+              [
+                "الجَوُّ مُشْمِسٌ",
+                "it is sunny"
+              ],
+              [
+                "الجَوُّ غَائِمٌ",
+                "it is cloudy"
+              ],
+              [
+                "الجَوُّ مُمْطِرٌ / تُمْطِرُ",
+                "it is rainy / it is raining"
+              ],
+              [
+                "الجَوُّ بَارِدٌ / حَارٌّ",
+                "it is cold / hot"
+              ],
+              [
+                "الجَوُّ عَاصِفٌ",
+                "it is windy"
+              ]
+            ]
+          },
+          "note": "Begin with bismillah. Look outside and describe today's weather."
+        },
+        {
+          "heading": "The future",
+          "compare": {
+            "left": {
+              "title": "Present",
+              "points": [
+                "أَذْهَبُ: I go",
+                "نَزُورُ: we visit"
+              ]
+            },
+            "right": {
+              "title": "Future",
+              "points": [
+                "سَأَذْهَبُ / سَوْفَ أَذْهَبُ: I will go",
+                "سَنَزُورُ: we will visit"
+              ]
+            },
+            "label": "+ سَـ"
+          },
+          "note": "سَـ joins the verb; سَوْفَ is a separate word, often for further in the future."
+        },
+        {
+          "heading": "Tomorrow's weather",
+          "bullets": [
+            "سَيَكُونُ الجَوُّ بَارِدًا غَدًا",
+            "Tomorrow the weather will be cold",
+            "After سَيَكُونُ the adjective ends in -an"
+          ],
+          "note": "كَانَ / يَكُونُ makes the describing word accusative: بَارِدًا."
+        },
+        {
+          "heading": "Model: weather and plans",
+          "model": {
+            "problem": "If it is sunny, I will go to the park.",
+            "steps": [
+              "إِذَا (if) + كَانَ (was, used for 'is' after if)",
+              "الجَوُّ مُشْمِسًا (accusative after كَانَ)",
+              "سَأَذْهَبُ إِلَى الحَدِيقَةِ",
+              "End: إِنْ شَاءَ اللّٰهُ"
+            ],
+            "answer": "إِذَا كَانَ الجَوُّ مُشْمِسًا سَأَذْهَبُ إِلَى الحَدِيقَةِ، إِنْ شَاءَ اللّٰهُ."
+          },
+          "note": "Most able structure; all pupils can copy it as a phrase."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'I will read' is:",
+            "options": [
+              "قَرَأْتُ",
+              "أَقْرَأُ",
+              "سَأَقْرَأُ"
+            ],
+            "answer": 2,
+            "why": "سَـ + present verb = future."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Make future: أَلْعَبُ فِي الحَدِيقَةِ.",
+          "a": "سَأَلْعَبُ فِي الحَدِيقَةِ / سَوْفَ أَلْعَبُ فِي الحَدِيقَةِ.",
+          "mins": 2,
+          "model": "Find the present verb: أَلْعَبُ.\nAdd سَـ to its front: سَأَلْعَبُ.\nOr put سَوْفَ before it: سَوْفَ أَلْعَبُ."
+        },
+        {
+          "q": "Say: It is raining today.",
+          "a": "تُمْطِرُ اليَوْمَ / الجَوُّ مُمْطِرٌ اليَوْمَ.",
+          "mins": 1
+        },
+        {
+          "q": "Translate: سَيَكُونُ الجَوُّ حَارًّا.",
+          "a": "The weather will be hot.",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write a forecast for three days (اليَوْم، غَدًا، بَعْدَ غَدٍ) and one plan for each day.",
+          "a": "For example: اليَوْمَ الجَوُّ بَارِدٌ، سَأَقْرَأُ فِي البَيْتِ. غَدًا سَيَكُونُ الجَوُّ مُشْمِسًا، سَأَذْهَبُ إِلَى الحَدِيقَةِ. بَعْدَ غَدٍ سَتُمْطِرُ، سَوْفَ أَزُورُ جَدَّتِي.",
+          "mins": 8,
+          "model": "Teacher writes the first day: اليَوْمَ الجَوُّ بَارِدٌ، سَأَقْرَأُ فِي البَيْتِ."
+        },
+        {
+          "q": "Extend: Add إِنْ شَاءَ اللّٰهُ to each plan and one sentence with إِذَا.",
+          "a": "For example: إِذَا كَانَ الجَوُّ مُمْطِرًا سَأَبْقَى فِي البَيْتِ، إِنْ شَاءَ اللّٰهُ.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Compare the weather in Britain and Saudi Arabia in January in two sentences.",
+          "a": "For example: فِي بِرِيطَانِيَا الجَوُّ بَارِدٌ فِي يَنَايِر، لٰكِنَّهُ أَدْفَأُ فِي السُّعُودِيَّةِ.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "What does غَدًا mean? A) tomorrow B) today C) yesterday",
+          "a": "A) tomorrow",
+          "mins": 1,
+          "options": [
+            "tomorrow",
+            "today",
+            "yesterday"
+          ]
+        },
+        {
+          "q": "Big question: say tomorrow's weather and one plan in Arabic.",
+          "a": "For example: سَيَكُونُ الجَوُّ مُشْمِسًا غَدًا، وَسَأَزُورُ جَدِّي، إِنْ شَاءَ اللّٰهُ.",
+          "mins": 2
+        }
+      ],
+      "homework": "Keep a weather diary in Arabic for five days, with one future plan each day.",
+      "send": "SEND: weather symbol cards. EAL: weather word mat with English. Stretch: use لَنْ + subjunctive for 'will not': لَنْ أَذْهَبَ.",
+      "resources": [
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Autumn 2 essentials (bridge): weather and the future",
+        "Portal arabic y9 lessons 5 to 8 (future plans) and y10 lesson 34 (weather) as extra reading",
+        "Weather diary sheet (portal worksheet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "rain clouds over city",
+          "alt": "Rain clouds",
+          "for": "keywords"
+        },
+        {
+          "find": "sunny park with trees",
+          "alt": "A park on a sunny day",
+          "for": "teach:4"
+        }
+      ],
+      "duration": 50
+    },
+    {
+      "unit": "Spring 1: At school",
+      "n": 17,
+      "title": "Describing subjects and teachers: plurals that take the feminine",
+      "bigQuestion": "Why do we say المَوَادُّ مُفِيدَةٌ and not مُفِيدُونَ?",
+      "objectives": [
+        "To understand how adjectives agree with non-human plurals and with people when describing school"
+      ],
+      "successCriteria": [
+        "All: describe a subject with an adjective",
+        "Most: describe several subjects with a feminine singular adjective",
+        "Some: describe teachers (human plurals) with a plural adjective"
+      ],
+      "crossCurricular": "English: subject and adjective agreement",
+      "smsc": "Moral: respect for teachers and gratitude for learning",
+      "keywords": [
+        {
+          "term": "مَوَادّ (mawadd)",
+          "def": "subjects (plural of مَادَّة)"
+        },
+        {
+          "term": "مُفِيد (mufid)",
+          "def": "useful"
+        },
+        {
+          "term": "صَعْب / سَهْل (sa'b / sahl)",
+          "def": "hard / easy"
+        },
+        {
+          "term": "مُمْتِع (mumti')",
+          "def": "enjoyable, interesting"
+        },
+        {
+          "term": "جَمْعُ غَيْرِ العَاقِلِ (jam' ghayr al-'aqil)",
+          "def": "a plural of things (non-human)"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "In Arabic, 'the books are new' is الكُتُبُ جَدِيدَةٌ: the adjective is feminine singular. Why might Arabic treat a group of things like one feminine word?",
+        "a": "Arabic grammar treats non-human plurals as feminine singular; only people take plural adjectives."
+      },
+      "islamicLink": {
+        "text": "Allah raises in rank those who believe and those given knowledge (al-Mujadilah 58:11). We describe our studies and our teachers with respect.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'Because it is useful' (for العُلُوم): A) لِأَنَّهَا مُفِيدَةٌ B) لِأَنَّهُ مُفِيدٌ",
+          "a": "A) لِأَنَّهَا مُفِيدَةٌ",
+          "mins": 1,
+          "options": [
+            "لِأَنَّهَا مُفِيدَةٌ",
+            "لِأَنَّهُ مُفِيدٌ"
+          ]
+        },
+        {
+          "q": "Name four subjects in Arabic.",
+          "a": "For example: الرِّيَاضِيَّات، العُلُوم، التَّارِيخ، الحَاسُوب",
+          "mins": 2
+        },
+        {
+          "q": "What is صَعْب?",
+          "a": "hard, difficult",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "One subject",
+          "bullets": [
+            "الرِّيَاضِيَّاتُ صَعْبَةٌ: maths is hard",
+            "التَّارِيخُ مُمْتِعٌ: history is interesting",
+            "الحَاسُوبُ مُفِيدٌ: computing is useful"
+          ],
+          "note": "Begin with bismillah. Subjects ending in ـَات (riyadiyyat) and non-human plurals (العُلُوم) take a feminine adjective."
+        },
+        {
+          "heading": "Things in the plural",
+          "compare": {
+            "left": {
+              "title": "Things (non-human)",
+              "points": [
+                "المَوَادُّ مُفِيدَةٌ",
+                "الكُتُبُ جَدِيدَةٌ"
+              ]
+            },
+            "right": {
+              "title": "People (human)",
+              "points": [
+                "المُعَلِّمُونَ لُطَفَاءُ",
+                "الطُّلَّابُ مُجْتَهِدُونَ"
+              ]
+            },
+            "label": "agree"
+          },
+          "note": "Things: feminine singular. People: plural adjective."
+        },
+        {
+          "heading": "Model: describing my school",
+          "model": {
+            "problem": "Describe the subjects and the teachers.",
+            "steps": [
+              "أَدْرُسُ ثَمَانِيَ مَوَادَّ.",
+              "المَوَادُّ مُمْتِعَةٌ لٰكِنَّ بَعْضَهَا صَعْبٌ.",
+              "المُعَلِّمُونَ لُطَفَاءُ وَصَبُورُونَ."
+            ],
+            "answer": "I study eight subjects. The subjects are interesting but some are hard. The teachers are kind and patient."
+          },
+          "note": "بَعْضُهَا = some of them."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'The lessons are long' (الدُّرُوس):",
+            "options": [
+              "الدُّرُوسُ طَوِيلُونَ",
+              "الدُّرُوسُ طَوِيلَةٌ",
+              "الدُّرُوسُ طَوِيلٌ"
+            ],
+            "answer": 1,
+            "why": "الدُّرُوس is a non-human plural: feminine singular طَوِيلَةٌ."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say: The exercise books (الدَّفَاتِر) are new.",
+          "a": "الدَّفَاتِرُ جَدِيدَةٌ",
+          "mins": 2,
+          "model": "الدَّفَاتِر: things, not people.\nNon-human plural: feminine singular adjective.\nجَدِيدَةٌ."
+        },
+        {
+          "q": "Say: The students are hard-working.",
+          "a": "الطُّلَّابُ مُجْتَهِدُونَ",
+          "mins": 1
+        },
+        {
+          "q": "Say: Science is enjoyable.",
+          "a": "العُلُومُ مُمْتِعَةٌ",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Describe five subjects with an adjective each, and the teachers with one plural adjective.",
+          "a": "For example: الرِّيَاضِيَّاتُ صَعْبَةٌ. العُلُومُ مُمْتِعَةٌ. التَّارِيخُ مُفِيدٌ. الحَاسُوبُ سَهْلٌ. اللُّغَةُ العَرَبِيَّةُ جَمِيلَةٌ. المُعَلِّمُونَ لُطَفَاءُ.",
+          "mins": 8,
+          "model": "Teacher writes two: الرِّيَاضِيَّاتُ صَعْبَةٌ; المُعَلِّمُونَ صَبُورُونَ, explaining each agreement."
+        },
+        {
+          "q": "Extend: Correct the mistakes: الكُتُبُ جَدِيدُونَ. الطَّالِبَاتُ مُجْتَهِدَةٌ.",
+          "a": "الكُتُبُ جَدِيدَةٌ. الطَّالِبَاتُ مُجْتَهِدَاتٌ.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Write a short paragraph on your online school: lessons, subjects and teachers (portal response box).",
+          "a": "For example: مَدْرَسَتِي عَبْرَ الإِنْتَرْنِتِ. الدُّرُوسُ قَصِيرَةٌ وَمُمْتِعَةٌ. المَوَادُّ مُفِيدَةٌ. المُعَلِّمُونَ لُطَفَاءُ.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Non-human plurals take: A) a feminine singular adjective B) a masculine plural adjective",
+          "a": "A) a feminine singular adjective",
+          "mins": 1,
+          "options": [
+            "a feminine singular adjective",
+            "a masculine plural adjective"
+          ]
+        },
+        {
+          "q": "Big question: why do we say المَوَادُّ مُفِيدَةٌ?",
+          "a": "مَوَادّ is a non-human plural, which takes a feminine singular adjective.",
+          "mins": 1
+        }
+      ],
+      "homework": "Write six sentences describing your school things (books, pens, lessons) and people (teachers, pupils) with correct agreement.",
+      "send": "SEND: two-column card: things / people. EAL: English labels. Stretch: broken plurals of adjectives: لُطَفَاءُ، كِرَامٌ.",
+      "resources": [
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Spring 1 week 1 (naming and describing school subjects)",
+        "Agreement sort and correction sheet (portal worksheet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "stack of school textbooks",
+          "alt": "School textbooks (kutub)",
+          "for": "keywords"
+        },
+        {
+          "find": "classroom desks empty",
+          "alt": "A classroom",
+          "for": "hook"
+        }
+      ],
+      "duration": 50
+    },
+    {
+      "unit": "Spring 1: At school",
+      "n": 18,
+      "title": "Connectives for longer answers",
+      "bigQuestion": "How do connectives turn short sentences into a strong Arabic paragraph?",
+      "objectives": [
+        "To understand how connectives link and develop ideas in spoken and written Arabic"
+      ],
+      "successCriteria": [
+        "All: use وَ، لٰكِنَّ، لِأَنَّ",
+        "Most: add أَيْضًا، ثُمَّ، مَعَ ذٰلِكَ",
+        "Some: use بِالإِضَافَةِ إِلَى ذٰلِكَ and لِذٰلِكَ in a paragraph"
+      ],
+      "crossCurricular": "English: cohesive devices in paragraphs",
+      "smsc": "Cultural: the eloquence (balaghah) of Arabic prose",
+      "keywords": [
+        {
+          "term": "أَدَوَاتُ الرَّبْطِ (adawat ar-rabt)",
+          "def": "connectives, linking words"
+        },
+        {
+          "term": "لٰكِنَّ (lakinna)",
+          "def": "but"
+        },
+        {
+          "term": "مَعَ ذٰلِكَ (ma'a dhalika)",
+          "def": "however, even so"
+        },
+        {
+          "term": "بِالإِضَافَةِ إِلَى ذٰلِكَ (bil-idafati ila dhalika)",
+          "def": "in addition"
+        },
+        {
+          "term": "لِذٰلِكَ (li-dhalika)",
+          "def": "therefore, so"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Read: 'I like science. It is hard. I study it.' Now: 'I like science, but it is hard; therefore I study it every day.' What made the second better?",
+        "a": "Connectives: but, therefore. They show how ideas link."
+      },
+      "islamicLink": {
+        "text": "Allah describes the Qur'an as a Book whose verses are perfected and then explained in detail (Hud 11:1). Clear, linked speech helps others understand.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'In my opinion': A) فِي رَأْيِي B) مَا رَأْيُكَ",
+          "a": "A) فِي رَأْيِي",
+          "mins": 1,
+          "options": [
+            "فِي رَأْيِي",
+            "مَا رَأْيُكَ"
+          ]
+        },
+        {
+          "q": "Say 'I prefer maths to history'.",
+          "a": "أُفَضِّلُ الرِّيَاضِيَّاتِ عَلَى التَّارِيخِ",
+          "mins": 2
+        },
+        {
+          "q": "Ask 'why?' in Arabic.",
+          "a": "لِمَاذَا؟",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Connectives toolkit",
+          "table": {
+            "head": [
+              "Arabic",
+              "English",
+              "Job"
+            ],
+            "rows": [
+              [
+                "وَ / أَيْضًا",
+                "and / also",
+                "add"
+              ],
+              [
+                "لٰكِنَّ / مَعَ ذٰلِكَ",
+                "but / however",
+                "contrast"
+              ],
+              [
+                "لِأَنَّ",
+                "because",
+                "reason"
+              ],
+              [
+                "لِذٰلِكَ",
+                "therefore",
+                "result"
+              ],
+              [
+                "ثُمَّ / بَعْدَ ذٰلِكَ",
+                "then / after that",
+                "order"
+              ],
+              [
+                "بِالإِضَافَةِ إِلَى ذٰلِكَ",
+                "in addition",
+                "add (formal)"
+              ]
+            ]
+          },
+          "note": "Begin with bismillah. لٰكِنَّ and لِأَنَّ need a noun or pronoun after them: لٰكِنَّهَا، لِأَنَّهُ."
+        },
+        {
+          "heading": "Model: building a paragraph",
+          "model": {
+            "problem": "Link: I like science. It is hard. I study it every day.",
+            "steps": [
+              "أُحِبُّ العُلُومَ",
+              "لٰكِنَّهَا صَعْبَةٌ",
+              "لِذٰلِكَ أَدْرُسُهَا كُلَّ يَوْمٍ",
+              "بِالإِضَافَةِ إِلَى ذٰلِكَ، أَقْرَأُ كُتُبًا عَنِ الفَضَاءِ"
+            ],
+            "answer": "أُحِبُّ العُلُومَ لٰكِنَّهَا صَعْبَةٌ، لِذٰلِكَ أَدْرُسُهَا كُلَّ يَوْمٍ. بِالإِضَافَةِ إِلَى ذٰلِكَ، أَقْرَأُ كُتُبًا عَنِ الفَضَاءِ."
+          },
+          "note": "Label: opinion, contrast, result, addition."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which connective shows a result?",
+            "options": [
+              "لٰكِنَّ",
+              "لِذٰلِكَ",
+              "أَيْضًا"
+            ],
+            "answer": 1,
+            "why": "لِذٰلِكَ = therefore, so."
+          }
+        },
+        {
+          "heading": "Common error",
+          "misconception": {
+            "wrong": "لٰكِنَّ صَعْبَةٌ",
+            "right": "لٰكِنَّهَا صَعْبَةٌ: لٰكِنَّ needs a noun or attached pronoun after it"
+          },
+          "note": "Same for لِأَنَّ: لِأَنَّهُ مُفِيدٌ."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Link with لِذٰلِكَ: الحَاسُوبُ مُفِيدٌ. أَدْرُسُهُ.",
+          "a": "الحَاسُوبُ مُفِيدٌ، لِذٰلِكَ أَدْرُسُهُ.",
+          "mins": 2,
+          "model": "First idea: الحَاسُوبُ مُفِيدٌ.\nResult connective: لِذٰلِكَ.\nResult: أَدْرُسُهُ."
+        },
+        {
+          "q": "Link with لٰكِنَّ: التَّارِيخُ مُمْتِعٌ. هُوَ طَوِيلٌ.",
+          "a": "التَّارِيخُ مُمْتِعٌ لٰكِنَّهُ طَوِيلٌ.",
+          "mins": 2
+        },
+        {
+          "q": "What does أَيْضًا mean?",
+          "a": "also",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write a paragraph of 5 sentences about your subjects using at least four different connectives (portal response box).",
+          "a": "For example: أُحِبُّ اللُّغَةَ العَرَبِيَّةَ لِأَنَّهَا لُغَةُ القُرْآنِ. الرِّيَاضِيَّاتُ مُهِمَّةٌ لٰكِنَّهَا صَعْبَةٌ، لِذٰلِكَ أَتَدَرَّبُ كُلَّ يَوْمٍ. أُحِبُّ العُلُومَ أَيْضًا. بِالإِضَافَةِ إِلَى ذٰلِكَ، أَدْرُسُ الحَاسُوبَ.",
+          "mins": 9,
+          "model": "Teacher writes the first two sentences, circling each connective."
+        },
+        {
+          "q": "Extend: Swap a partner's paragraph in a breakout room and underline every connective; suggest one more.",
+          "a": "Peer feedback with one EBI (even better if) suggestion",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Rewrite your paragraph for a friend's school ('his/her subjects') with ـهُ / ـهَا.",
+          "a": "For example: يُحِبُّ أَخِي العُلُومَ لِأَنَّهَا مُمْتِعَةٌ، لٰكِنَّهُ لَا يُحِبُّ التَّارِيخَ.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "'However' is: A) مَعَ ذٰلِكَ B) لِذٰلِكَ C) ثُمَّ",
+          "a": "A) مَعَ ذٰلِكَ",
+          "mins": 1,
+          "options": [
+            "مَعَ ذٰلِكَ",
+            "لِذٰلِكَ",
+            "ثُمَّ"
+          ]
+        },
+        {
+          "q": "Big question: how do connectives make a stronger paragraph?",
+          "a": "They link ideas: adding, contrasting, giving reasons and results.",
+          "mins": 1
+        }
+      ],
+      "homework": "Learn the six connectives in the toolkit and use each in one sentence about your week.",
+      "send": "SEND: connective cards colour-coded by job. EAL: English equivalents. Stretch: start a sentence with عَلَى الرَّغْمِ مِنْ أَنَّ (although).",
+      "resources": [
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Spring 1 week 2 (connectives)",
+        "Connectives toolkit card (portal worksheet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "chain links",
+          "alt": "Chain links: connectives join ideas",
+          "for": "keywords"
+        },
+        {
+          "find": "bridge over river",
+          "alt": "A bridge linking two sides",
+          "for": "hook"
+        }
+      ],
+      "duration": 50
+    },
+    {
+      "unit": "Spring 1: At school",
+      "n": 19,
+      "title": "An informal email about my school; unit quiz",
+      "bigQuestion": "How do I write an informal email that shows everything I have learnt this half term?",
+      "objectives": [
+        "To understand how to structure an informal Arabic email using subjects, opinions, connectives and three time frames"
+      ],
+      "successCriteria": [
+        "All: write an email with a greeting, three sentences and a sign-off",
+        "Most: include opinions with reasons and connectives",
+        "Some: use past, present and future in one email"
+      ],
+      "crossCurricular": "English: writing for audience and purpose (informal letters and emails)",
+      "smsc": "Social: keeping in touch with friends and family by writing kindly",
+      "keywords": [
+        {
+          "term": "رِسَالَة (risalah)",
+          "def": "a letter, message"
+        },
+        {
+          "term": "بَرِيد إِلِكْتُرُونِيّ (barid iliktruniyy)",
+          "def": "email"
+        },
+        {
+          "term": "عَزِيزِي / عَزِيزَتِي ('azizi / 'azizati)",
+          "def": "dear (m / f)"
+        },
+        {
+          "term": "مَعَ تَحِيَّاتِي (ma'a tahiyyati)",
+          "def": "with my greetings (sign-off)"
+        },
+        {
+          "term": "اِخْتِبَار (ikhtibar)",
+          "def": "a test, quiz"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A cousin in another country asks 'What is your new school like?' What would you tell them first?",
+        "a": "Greeting, that it is online, favourite subjects and why, what you did and will do."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ sent letters to rulers that began with Bismillah (recorded in Sahih al-Bukhari). We begin our letters and emails with Bismillah and salam.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'I will write': A) سَأَكْتُبُ B) كَتَبْتُ",
+          "a": "A) سَأَكْتُبُ",
+          "mins": 1,
+          "options": [
+            "سَأَكْتُبُ",
+            "كَتَبْتُ"
+          ]
+        },
+        {
+          "q": "Give a connective for 'but'.",
+          "a": "لٰكِنَّ",
+          "mins": 1
+        },
+        {
+          "q": "'The teachers are kind' in Arabic?",
+          "a": "المُعَلِّمُونَ لُطَفَاءُ",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Email structure",
+          "timeline": [
+            {
+              "label": "1",
+              "text": "بِسْمِ اللّٰهِ; عَزِيزِي أَحْمَدُ / عَزِيزَتِي مَرْيَمُ"
+            },
+            {
+              "label": "2",
+              "text": "اَلسَّلَامُ عَلَيْكُمْ، كَيْفَ حَالُكَ؟"
+            },
+            {
+              "label": "3",
+              "text": "My school and subjects, with opinions"
+            },
+            {
+              "label": "4",
+              "text": "Yesterday and tomorrow"
+            },
+            {
+              "label": "5",
+              "text": "مَعَ تَحِيَّاتِي، + name"
+            }
+          ],
+          "note": "Begin with bismillah. The school's Arabic intent sets an informal email as this unit's writing assessment."
+        },
+        {
+          "heading": "Model email",
+          "quote": {
+            "text": "عَزِيزِي يُوسُفُ، اَلسَّلَامُ عَلَيْكُمْ، كَيْفَ حَالُكَ؟ مَدْرَسَتِي الجَدِيدَةُ عَبْرَ الإِنْتَرْنِتِ. أَدْرُسُ ثَمَانِيَ مَوَادَّ، وَمَادَّتِي المُفَضَّلَةُ العُلُومُ لِأَنَّهَا مُمْتِعَةٌ، لٰكِنَّ الرِّيَاضِيَّاتِ صَعْبَةٌ. أَمْسِ كَتَبْتُ تَقْرِيرًا عَنِ المَاءِ، وَغَدًا سَأَقْرَأُ سُورَةَ المُلْكِ فِي دَرْسِ القُرْآنِ. مَعَ تَحِيَّاتِي، آدَمُ",
+            "source": "Model email written for this lesson"
+          },
+          "note": "Pupils find: two opinions, two connectives, three time frames."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "How do you begin an email to a girl?",
+            "options": [
+              "عَزِيزِي مَرْيَمُ",
+              "عَزِيزَتِي مَرْيَمُ",
+              "مَعَ تَحِيَّاتِي مَرْيَمُ"
+            ],
+            "answer": 1,
+            "why": "عَزِيزَتِي is the feminine 'dear'."
+          }
+        },
+        {
+          "heading": "Success checklist",
+          "bullets": [
+            "Greeting and sign-off",
+            "Subjects with opinions and لِأَنَّ",
+            "Connectives; past, present and future"
+          ],
+          "note": "Pupils tick the checklist before submitting."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write the opening two lines to a friend called Bilal.",
+          "a": "عَزِيزِي بِلَالُ، اَلسَّلَامُ عَلَيْكُمْ، كَيْفَ حَالُكَ؟",
+          "mins": 2,
+          "model": "Dear (m): عَزِيزِي + name.\nSalam.\nHow are you? كَيْفَ حَالُكَ؟"
+        },
+        {
+          "q": "Write a sign-off.",
+          "a": "مَعَ تَحِيَّاتِي، + your name",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (portal response box): Write an informal email of 60 to 90 words to a cousin about your school: subjects, opinions with reasons, something you did and something you will do.",
+          "a": "Model as on the slide; assessed on content, range of language (connectives, three time frames) and accuracy (agreement, verb forms).",
+          "mins": 14,
+          "model": "Teacher plans the email aloud with the five-part structure and writes the first two lines."
+        },
+        {
+          "q": "Extend (unit quiz, Forms): 1) 'science' 2) 'in my opinion' 3) feminine plural agreement: المَوَادُّ (مُفِيد) 4) past of أَكْتُبُ (I) 5) 'therefore'.",
+          "a": "1) العُلُوم 2) فِي رَأْيِي 3) المَوَادُّ مُفِيدَةٌ 4) كَتَبْتُ 5) لِذٰلِكَ",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: Add a sentence comparing two subjects with أَفْعَل مِنْ.",
+          "a": "For example: العُلُومُ أَصْعَبُ مِنَ التَّارِيخِ.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "What is بَرِيد إِلِكْتُرُونِيّ? A) email B) letter box C) website",
+          "a": "A) email",
+          "mins": 1,
+          "options": [
+            "email",
+            "letter box",
+            "website"
+          ]
+        },
+        {
+          "q": "Big question: what did you include in your email to show your learning?",
+          "a": "Opinions with reasons, connectives and past, present and future verbs.",
+          "mins": 1
+        }
+      ],
+      "homework": "Redraft your email (Draft 2) using the teacher's EBI comment, and learn the quiz words you got wrong.",
+      "send": "SEND: email frame with gaps and word bank; 40 words. EAL: English plan beside the frame. Stretch: 120 words with a comparison and a question to the cousin.",
+      "resources": [
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Spring 1 week 6 (informal email about my school; unit quiz), taught in week 3",
+        "Arabic Curriculum Intent: longer writing and unit quiz each half term",
+        "Email frame, checklist and unit quiz (portal worksheet and Forms quiz)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "envelope email icon",
+          "alt": "An email envelope icon",
+          "for": "keywords"
+        },
+        {
+          "find": "laptop keyboard typing",
+          "alt": "A laptop keyboard",
+          "for": "hook"
+        }
+      ],
+      "duration": 50
     }
   ]
 }

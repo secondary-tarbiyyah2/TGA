@@ -5,229 +5,489 @@
   "boardShort": "Edexcel GCSE 1AA0",
   "exam": "Pearson Edexcel International GCSE (9-1) Arabic (First Language) (4AA1)",
   "examShort": "Edexcel IGCSE 4AA1",
-  "source": "Drive: Curriculum/Arabic folder and Schemes of work/Arabic (GCSE-Arabic-2017 Scheme of Work, Pearson 2-year plan: Y10 Autumn = Identity and culture: Who am I? and Daily life, Cultural life); Edexcel GCSE Arabic (1AA0) specification themes | Edexcel spec data file (content/syllabus/ks4/arabic.json): units 1.1-1.3 and 2.1-2.3 as placed for Year 10. The existing Year 10 lessons already cover introductions, appearance and character, friends, routine, food and healthy eating, technology and social media, free time and sport, Ramadan and Eid, customs, listening skills and assessment, so those topics are not repeated; these lessons add the unit points they do not cover (childhood and past tense, role models, Arabic-speaking communities, shopping, reading/music/film/TV) and all of Theme 2 (holidays, travel, directions and problems, eating out, weather, town, picture task, reading skills). The Pearson grammar list (Appendix 2) and vocabulary list (Appendix 3) were not read: structures follow well-established Modern Standard Arabic and the themes; teacher to cross-check against Appendices 2 and 3. | Gap-fill against Pearson Edexcel GCSE Arabic 1AA0 specification",
+  "source": "Drive: Curriculum/Arabic folder and Schemes of work/Arabic (GCSE-Arabic-2017 Scheme of Work, Pearson 2-year plan: Y10 Autumn = Identity and culture: Who am I? and Daily life, Cultural life); Edexcel GCSE Arabic (1AA0) specification themes | Edexcel spec data file (content/syllabus/ks4/arabic.json): units 1.1-1.3 and 2.1-2.3 as placed for Year 10. The existing Year 10 lessons already cover introductions, appearance and character, friends, routine, food and healthy eating, technology and social media, free time and sport, Ramadan and Eid, customs, listening skills and assessment, so those topics are not repeated; these lessons add the unit points they do not cover (childhood and past tense, role models, Arabic-speaking communities, shopping, reading/music/film/TV) and all of Theme 2 (holidays, travel, directions and problems, eating out, weather, town, picture task, reading skills). The Pearson grammar list (Appendix 2) and vocabulary list (Appendix 3) were not read: structures follow well-established Modern Standard Arabic and the themes; teacher to cross-check against Appendices 2 and 3. | Gap-fill against Pearson Edexcel GCSE Arabic 1AA0 specification | Spring 1 2027 (lessons 1, 2, 5, 9, 24, 32, 34, 36 to 38): founding-year bridge (A1 core 11 Jan: Who am I?, adjectives, I have; A2 core 18 Jan: daily and cultural life, present tense) and Spring 1 w1, w2 and w4 (town and region; directions and the imperative; problems of my town, weather and unit quiz), order from the school's Pearson GCSE Arabic scheme of work and the Year 10 pack; Group A (4AA1) grammar with Arabic terms and Group B (1AA0) speaking tasks in the same lessons; lessons v3",
   "lessons": [
     {
-      "unit": "Unit 1: Identity and culture - Who am I?",
+      "unit": "Spring 1: Local area, holiday and travel: town, region and country; holidays (2.3, 2.1)",
       "n": 1,
-      "title": "Introducing myself and my family",
-      "duration": 50,
+      "title": "Bridge: who am I? Personal details, family and 'I have'",
+      "bigQuestion": "How do I introduce myself fully and accurately for a GCSE speaking or writing task?",
       "objectives": [
-        "Give personal details and describe your family in Arabic",
-        "Answer personal questions confidently in a speaking task",
-        "Use correct number agreement for age and family size"
+        "To understand how to give developed personal details using عِنْدِي / لَدَيَّ, numbers and agreement"
       ],
+      "successCriteria": [
+        "All: give name, age, home and family in full sentences",
+        "Most: use عِنْدِي and لَدَيَّ with correct number agreement",
+        "Some: develop each answer with a reason, opinion or second time frame"
+      ],
+      "crossCurricular": "English: developing spoken answers (point, detail, opinion)",
+      "smsc": "Social: speaking about family with respect and privacy",
       "keywords": [
         {
-          "term": "عُمْرِي",
-          "def": "my age (ʿumrī)"
+          "term": "عِنْدِي / لَدَيَّ ('indi / ladayya)",
+          "def": "I have"
         },
         {
-          "term": "أَسْكُنُ فِي",
-          "def": "I live in (askunu fī)"
+          "term": "أُسْرَة / عَائِلَة (usrah / 'a'ilah)",
+          "def": "family"
         },
         {
-          "term": "أَفْرَادُ عَائِلَتِي",
-          "def": "members of my family (afrādu ʿā'ilatī)"
+          "term": "أَسْكُنُ فِي (askunu fi)",
+          "def": "I live in"
         },
         {
-          "term": "وَحِيدٌ / وَحِيدَةٌ",
-          "def": "only child (m/f) (waḥīdun)"
+          "term": "عُمْرِي ('umri)",
+          "def": "my age is"
         },
         {
-          "term": "أَنَا مِنْ",
-          "def": "I am from (anā min)"
-        },
-        {
-          "term": "لِي",
-          "def": "I have (lī)"
+          "term": "أَخَوَانِ / أُخْتَانِ (akhawani / ukhtani)",
+          "def": "two brothers / two sisters (dual)"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "An examiner asks: حَدِّثْنِي عَنْ نَفْسِكَ (Tell me about yourself). What makes a Grade 4 answer different from a Grade 8 answer?",
+        "a": "Range (connectives, tenses, opinions) and accuracy, not just length."
+      },
+      "islamicLink": {
+        "text": "Allah made us peoples and tribes so that we may know one another (al-Hujurat 49:13). Introducing ourselves well is the first step in that.",
+        "at": "start"
+      },
       "starter": [
-        "Say your name, age and where you live in Arabic.",
-        "Give four family members in Arabic with the correct form of 'my'.",
-        "Say what you do on Friday in two sentences."
+        {
+          "q": "Bismillah. 'I live in London': A) أَسْكُنُ فِي لَنْدَنَ B) أَنَا لَنْدَنُ",
+          "a": "A) أَسْكُنُ فِي لَنْدَنَ",
+          "mins": 1,
+          "options": [
+            "أَسْكُنُ فِي لَنْدَنَ",
+            "أَنَا لَنْدَنُ"
+          ]
+        },
+        {
+          "q": "Say your age in Arabic.",
+          "a": "For example: عُمْرِي خَمْسَ عَشْرَةَ سَنَةً",
+          "mins": 1
+        },
+        {
+          "q": "Dual of أُخْت?",
+          "a": "أُخْتَانِ",
+          "mins": 1
+        }
       ],
       "teach": [
         {
           "heading": "Personal details",
-          "bullets": [
-            "اسْمِي يُوسُفُ - ismī Yūsuf - my name is Yusuf",
-            "عُمْرِي خَمْسَ عَشْرَةَ سَنَةً - ʿumrī khamsa ʿashrata sanatan - I am 15",
-            "أَنَا بَرِيطَانِيٌّ - anā barīṭāniyyun - I am British (m)",
-            "أَسْكُنُ فِي لَنْدَنَ - askunu fī landana - I live in London"
-          ],
-          "note": "Begin with bismillah. This is the first lesson of GCSE Theme 1 (Identity and culture), sub-theme Who am I? Model the chunks. Notice agreement: سَنَةً is feminine, so the number is خَمْسَ عَشْرَةَ (the feminine form). A girl says بَرِيطَانِيَّةٌ. Place names like لَنْدَنَ do not take tanween. Pupils write their own details."
+          "table": {
+            "head": [
+              "Question",
+              "Answer"
+            ],
+            "rows": [
+              [
+                "مَا اسْمُكَ؟",
+                "اِسْمِي ..."
+              ],
+              [
+                "كَمْ عُمْرُكَ؟",
+                "عُمْرِي أَرْبَعَ عَشْرَةَ / خَمْسَ عَشْرَةَ سَنَةً"
+              ],
+              [
+                "أَيْنَ تَسْكُنُ؟",
+                "أَسْكُنُ فِي ... فِي شَمَالِ / جَنُوبِ إِنْجِلْتِرَا"
+              ],
+              [
+                "كَمْ شَخْصًا فِي أُسْرَتِكَ؟",
+                "فِي أُسْرَتِي خَمْسَةُ أَشْخَاصٍ"
+              ]
+            ]
+          },
+          "note": "Begin with bismillah. Teach in Arabic where possible (about 70% this year). Pupils may describe a real or made-up family."
         },
         {
-          "heading": "My family",
-          "bullets": [
-            "فِي عَائِلَتِي سِتَّةُ أَفْرَادٍ - fī ʿā'ilatī sittatu afrādin - six members",
-            "لِي أَخٌ وَاحِدٌ وَأُخْتَانِ - lī akhun wāḥidun wa-ukhtāni",
-            "أَبِي مُهَنْدِسٌ - abī muhandisun - my father is an engineer",
-            "أُمِّي مُعَلِّمَةٌ - ummī muʿallimatun - my mother is a teacher"
-          ],
-          "note": "Teach the structure: فِي عَائِلَتِي + number + أَفْرَادٍ. Note that 3–10 take the plural genitive: سِتَّةُ أَفْرَادٍ. 'Two sisters' uses the dual: أُخْتَانِ. Only-child pupils can say أَنَا وَحِيدٌ / وَحِيدَةٌ. Be sensitive to different family structures: use 'my family' broadly (including carers or step-family)."
+          "heading": "Two ways to say 'I have'",
+          "compare": {
+            "left": {
+              "title": "عِنْدِي",
+              "points": [
+                "عِنْدِي أَخٌ وَاحِدٌ",
+                "everyday, very common"
+              ]
+            },
+            "right": {
+              "title": "لَدَيَّ",
+              "points": [
+                "لَدَيَّ أُخْتَانِ",
+                "more formal, good in writing"
+              ]
+            },
+            "label": "or"
+          },
+          "note": "Both take the owned thing in the nominative. Negative: لَيْسَ عِنْدِي / لَيْسَ لَدَيَّ."
         },
         {
-          "heading": "Answering questions",
+          "heading": "Numbers and family",
           "bullets": [
-            "مَا اسْمُكَ؟ - mā ismuka? - what is your name?",
-            "كَمْ عُمْرُكَ؟ - kam ʿumruka? - how old are you?",
-            "مِنْ أَيْنَ أَنْتَ؟ - min ayna anta? - where are you from?",
-            "كَمْ فَرْدًا فِي عَائِلَتِكَ؟ - how many in your family?"
+            "1, 2: noun alone or dual: أَخٌ، أَخَوَانِ",
+            "3 to 10: plural, number flips gender: ثَلَاثَةُ إِخْوَةٍ، ثَلَاثُ أَخَوَاتٍ",
+            "11+: singular accusative: أَحَدَ عَشَرَ ابْنَ عَمٍّ"
           ],
-          "note": "Practise questions with -ka and -ki. Pupils work in pairs, answer in full sentences, and then swap. In a speaking task they should not give one-word answers: encourage adding a reason or a detail. Model a strong answer."
+          "note": "Group A: name the rule in Arabic: العَدَدُ يُخَالِفُ المَعْدُودَ (3 to 10 take the opposite gender)."
         },
         {
-          "heading": "Speaking skills",
-          "bullets": [
-            "Answer in full sentences",
-            "Add a detail: لِأَنَّ or وَلَكِنْ",
-            "Use a time or opinion phrase"
-          ],
-          "note": "Exam skills: Edexcel speaking tasks include a role play, a picture-based task and a conversation (check the current specification). Use time and opinion phrases to extend answers: فِي رَأْيِي, أَحْيَانًا. Model a question and a sentence-long answer extended with a detail. Pupils evaluate which answer is better and why."
+          "heading": "Model: a developed answer",
+          "model": {
+            "problem": "حَدِّثْنِي عَنْ أُسْرَتِكَ.",
+            "steps": [
+              "Point: فِي أُسْرَتِي خَمْسَةُ أَشْخَاصٍ.",
+              "Detail: لَدَيَّ أَخَوَانِ وَأُخْتٌ وَاحِدَةٌ.",
+              "Opinion and reason: أَنَا قَرِيبٌ مِنْ أَخِي الكَبِيرِ لِأَنَّهُ يُسَاعِدُنِي.",
+              "Second time frame: عِنْدَمَا كُنْتُ صَغِيرًا، كُنَّا نَلْعَبُ مَعًا."
+            ],
+            "answer": "Four linked sentences with range"
+          },
+          "note": "This is the shape for the 1AA0 conversation and for 4AA1 writing."
         },
         {
-          "heading": "Adab in introductions",
+          "heading": "Check",
           "bullets": [
-            "أَهْلًا وَسَهْلًا - welcome",
-            "تَشَرَّفْنَا - pleased to meet you",
-            "السَّلَامُ عَلَيْكُمْ - peace be upon you"
+            "Vote in the Teams poll"
           ],
-          "note": "Introductions begin with salaam. Qur'an 49:13 says that Allah made us into peoples and tribes so that we may know one another. Link to getting to know people with respect. Pupils prepare a 45-second introduction."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'I have three sisters':",
+            "options": [
+              "لَدَيَّ ثَلَاثَةُ أَخَوَاتٍ",
+              "لَدَيَّ ثَلَاثُ أَخَوَاتٍ",
+              "لَدَيَّ ثَلَاثُ أُخْتٌ"
+            ],
+            "answer": 1,
+            "why": "أُخْت is feminine, so 3 takes the masculine form ثَلَاثُ, with a plural noun."
+          }
         }
       ],
       "practice": [
-        "Say your name, age and where you live.",
-        "Describe your family with a number and two relatives.",
-        "Ask a partner three personal questions, with the correct -ka/-ki.",
-        "Translate: 'I have one brother and two sisters'."
-      ],
-      "independent": [
-        "Write a paragraph of 60 words introducing yourself and your family.",
-        "Prepare a 45-second spoken introduction and record it.",
-        "Peer-assess pronunciation and accuracy using a checklist."
-      ],
-      "exit": [
-        "Write: 'My name is ... and I am 15 years old'.",
-        "Ask a girl 'How old are you?' in Arabic."
-      ],
-      "homework": "Write a 70-word paragraph introducing yourself and your family and learn it for a speaking practice.",
-      "send": "SEND: sentence frames with a family tree. EAL: bilingual vocabulary table with audio. Stretch: add a second paragraph about your wider family and where they live.",
-      "board": "Pearson Edexcel GCSE (9-1) Arabic (1AA0)",
-      "boardShort": "Edexcel GCSE 1AA0"
-    },
-    {
-      "unit": "Unit 1: Identity and culture - Who am I?",
-      "n": 2,
-      "title": "Describing people: appearance and character",
-      "duration": 50,
-      "objectives": [
-        "Describe appearance and personality",
-        "Make adjectives agree with the noun",
-        "Use qualifiers and comparisons"
-      ],
-      "keywords": [
         {
-          "term": "طَوِيلٌ / قَصِيرٌ",
-          "def": "tall / short"
+          "q": "Answer in two developed sentences: أَيْنَ تَسْكُنُ؟",
+          "a": "For example: أَسْكُنُ فِي مَدِينَةِ لِيسْتَر فِي وَسَطِ إِنْجِلْتِرَا. أُحِبُّ مَدِينَتِي لِأَنَّهَا هَادِئَةٌ وَفِيهَا مَسَاجِدُ كَثِيرَةٌ.",
+          "mins": 3,
+          "model": "Point: أَسْكُنُ فِي ...\nDetail: where it is (فِي وَسَطِ إِنْجِلْتِرَا).\nOpinion + reason: أُحِبُّ مَدِينَتِي لِأَنَّهَا ..."
         },
         {
-          "term": "شَعْرُهُ أَسْوَدُ",
-          "def": "his hair is black"
+          "q": "Translate: I have two brothers but I do not have a sister.",
+          "a": "لَدَيَّ أَخَوَانِ لٰكِنْ لَيْسَ لَدَيَّ أُخْتٌ.",
+          "mins": 2
         },
         {
-          "term": "عَيْنَاهُ بُنِّيَّتَانِ",
-          "def": "his eyes are brown"
-        },
-        {
-          "term": "كَرِيمٌ",
-          "def": "generous (karīmun)"
-        },
-        {
-          "term": "صَبُورٌ",
-          "def": "patient (ṣabūrun)"
-        },
-        {
-          "term": "مَرِحٌ",
-          "def": "cheerful (mariḥun)"
+          "q": "Say: there are four people in my family.",
+          "a": "فِي أُسْرَتِي أَرْبَعَةُ أَشْخَاصٍ",
+          "mins": 1
         }
       ],
+      "independent": [
+        {
+          "q": "Core: Write 80 words (portal response box) answering: حَدِّثْنِي عَنْ نَفْسِكَ وَعَنْ أُسْرَتِكَ. Use عِنْدِي or لَدَيَّ, a number 3 to 10, an opinion and a reason.",
+          "a": "Marked for: personal details; family with correct number agreement; opinion with لِأَنَّ; connectives; accuracy.",
+          "mins": 12,
+          "model": "Teacher writes the first three sentences live, saying why each number form is chosen."
+        },
+        {
+          "q": "Extend (Group B, 1AA0 conversation): answer aloud for one minute in a breakout room; partner notes connectives used.",
+          "a": "One-minute developed answer with at least three connectives",
+          "mins": 4
+        },
+        {
+          "q": "Stretch (Group A, 4AA1 grammar): give the i'rab of أَخَوَانِ in لَدَيَّ أَخَوَانِ.",
+          "a": "مُبْتَدَأٌ مُؤَخَّرٌ مَرْفُوعٌ وَعَلَامَةُ رَفْعِهِ الأَلِفُ لِأَنَّهُ مُثَنًّى (delayed subject, nominative, marked by alif because it is dual)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "'I have' (formal) is: A) لَدَيَّ B) لِي C) أَنَا",
+          "a": "A) لَدَيَّ",
+          "mins": 1,
+          "options": [
+            "لَدَيَّ",
+            "لِي",
+            "أَنَا"
+          ]
+        },
+        {
+          "q": "Big question: what makes an introduction score highly?",
+          "a": "Developed answers with opinions, reasons, connectives, more than one time frame and accurate agreement.",
+          "mins": 2
+        }
+      ],
+      "homework": "Learn your 80-word answer for the conversation (Group B) or redraft it to 120 words with one more time frame (Group A).",
+      "send": "SEND: answer frame with sentence starters. EAL: key phrase card. Stretch: add the past habit كُنْتُ + present verb.",
+      "resources": [
+        "School's Pearson GCSE Arabic 2-year scheme of work, Theme 1 Identity and culture 1.1 (A1 core, bridge)",
+        "Portal arabic y10 lesson 1, upgraded; lessons 2 to 4 for revision",
+        "School's 1AA0 Speaking and Writing revision booklet: conversation, Theme 1 (Group B)",
+        "Answer frame (portal worksheet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "map of England regions",
+          "alt": "A map of England's regions",
+          "for": "teach:1"
+        },
+        {
+          "find": "house in an English street",
+          "alt": "A house in an English street",
+          "for": "keywords"
+        }
+      ],
+      "duration": 50
+    },
+    {
+      "unit": "Spring 1: Local area, holiday and travel: town, region and country; holidays (2.3, 2.1)",
+      "n": 2,
+      "title": "Bridge: describing people: agreement, the dual and qualifiers",
+      "bigQuestion": "How can I make a description of a person precise and accurate?",
+      "objectives": [
+        "To understand how adjectives agree in gender and number, including the dual, and how qualifiers make descriptions precise"
+      ],
+      "successCriteria": [
+        "All: describe appearance and character with agreeing adjectives",
+        "Most: use the dual correctly: لَهُ عَيْنَانِ بُنِّيَّتَانِ",
+        "Some: use qualifiers and a comparison in a paragraph"
+      ],
+      "crossCurricular": "English: precise vocabulary and modifiers (very, quite, rather)",
+      "smsc": "Moral: good character (akhlaq) matters more than appearance",
+      "keywords": [
+        {
+          "term": "صِفَة (sifah)",
+          "def": "adjective"
+        },
+        {
+          "term": "مُثَنًّى (muthanna)",
+          "def": "dual: exactly two"
+        },
+        {
+          "term": "جِدًّا (jiddan)",
+          "def": "very"
+        },
+        {
+          "term": "إِلَى حَدٍّ مَا (ila haddin ma)",
+          "def": "fairly, to some extent"
+        },
+        {
+          "term": "شَخْصِيَّة (shakhsiyyah)",
+          "def": "personality"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Describe your best friend in three words. Did you choose looks or character? Which tells us more?",
+        "a": "Character tells us more about who someone is."
+      },
+      "islamicLink": {
+        "text": "Allah praised the Prophet ﷺ: 'And indeed you are of a great moral character' (al-Qalam 68:4). In Islam, character is the best description of a person.",
+        "at": "start"
+      },
       "starter": [
-        "Introduce yourself in three sentences.",
-        "Name four members of your family.",
-        "Say 'my sister is tall' in Arabic."
+        {
+          "q": "Bismillah. 'I have two brothers': A) لَدَيَّ أَخَوَانِ B) لَدَيَّ اِثْنَانِ أَخٌ",
+          "a": "A) لَدَيَّ أَخَوَانِ",
+          "mins": 1,
+          "options": [
+            "لَدَيَّ أَخَوَانِ",
+            "لَدَيَّ اِثْنَانِ أَخٌ"
+          ]
+        },
+        {
+          "q": "Feminine of طَوِيل?",
+          "a": "طَوِيلَة",
+          "mins": 1
+        },
+        {
+          "q": "Comparative of صَغِير?",
+          "a": "أَصْغَرُ",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Appearance",
-          "bullets": [
-            "أَخِي طَوِيلٌ - akhī ṭawīlun - my brother is tall",
-            "أُخْتِي قَصِيرَةٌ - ukhtī qaṣīratun - my sister is short",
-            "شَعْرُهُ أَسْوَدُ - shaʿruhu aswadu - his hair is black",
-            "شَعْرُهَا طَوِيلٌ - shaʿruhā ṭawīlun - her hair is long"
-          ],
-          "note": "Begin with bismillah. Remind pupils that adjectives agree in gender. Contrast هُ (his) and هَا (her). Colours: أَسْوَدُ (black), أَبْيَضُ (white), بُنِّيٌّ (brown), أَشْقَرُ (blond). The masculine colours follow the أَفْعَلُ pattern and the feminine is فَعْلَاءُ: سَوْدَاءُ. Give examples."
+          "heading": "Appearance and character",
+          "table": {
+            "head": [
+              "Appearance",
+              "Character"
+            ],
+            "rows": [
+              [
+                "طَوِيل / قَصِير",
+                "كَرِيم (generous)"
+              ],
+              [
+                "شَعْر أَسْوَد / أَشْقَر",
+                "صَبُور (patient)"
+              ],
+              [
+                "يَلْبَسُ نَظَّارَةً",
+                "مَرِح (cheerful)"
+              ],
+              [
+                "لِحْيَة (beard)",
+                "خَجُول (shy)"
+              ]
+            ]
+          },
+          "note": "Begin with bismillah. Describe in words only; no pictures of people."
         },
         {
-          "heading": "Eyes: the dual",
+          "heading": "The dual",
           "bullets": [
-            "عَيْنَاهُ بُنِّيَّتَانِ - ʿaynāhu bunniyyatāni - his eyes are brown",
-            "عَيْنَاهَا خَضْرَاوَانِ - ʿaynāhā khaḍrāwāni - her eyes are green",
-            "عَيْنَانِ زَرْقَاوَانِ - blue eyes"
+            "عَيْن → عَيْنَانِ (two eyes)",
+            "لَهَا عَيْنَانِ خَضْرَاوَانِ",
+            "لَهُ أُخْتَانِ لَطِيفَتَانِ"
           ],
-          "note": "Eyes are a pair, so Arabic uses the dual. Adjectives agree in the dual: بُنِّيَّتَانِ. This is a good opportunity to revise the dual from Year 9. Pupils practise describing a partner's eyes. Be careful that comments about appearance are kind and respectful."
+          "note": "Adjectives in the dual agree too: ـَانِ for both noun and adjective. Colours: خَضْرَاء → خَضْرَاوَانِ."
         },
         {
-          "heading": "Character",
-          "bullets": [
-            "أَبِي كَرِيمٌ وَصَبُورٌ - abī karīmun wa-ṣabūrun",
-            "أُمِّي لَطِيفَةٌ وَمَرِحَةٌ - ummī laṭīfatun wa-mariḥatun",
-            "صَدِيقِي صَادِقٌ - ṣadīqī ṣādiqun - my friend is honest",
-            "هُوَ خَجُولٌ - huwa khajūlun - he is shy"
-          ],
-          "note": "Qualities of character link to the Prophet's (peace be upon him) teaching: the best of you are those with the best character (Sahih al-Bukhari). Teach each adjective with an example. Ask pupils which quality they value most and why. The feminine adds ة."
+          "heading": "Qualifiers",
+          "table": {
+            "head": [
+              "Qualifier",
+              "Example"
+            ],
+            "rows": [
+              [
+                "جِدًّا",
+                "هُوَ كَرِيمٌ جِدًّا: very generous"
+              ],
+              [
+                "قَلِيلًا",
+                "هِيَ خَجُولَةٌ قَلِيلًا: a little shy"
+              ],
+              [
+                "إِلَى حَدٍّ مَا",
+                "أَخِي طَوِيلٌ إِلَى حَدٍّ مَا: fairly tall"
+              ]
+            ]
+          },
+          "note": "Qualifiers come after the adjective."
         },
         {
-          "heading": "Using qualifiers",
-          "bullets": [
-            "جِدًّا - jiddan - very",
-            "نَوْعًا مَا - nawʿan mā - quite, somewhat",
-            "يُشْبِهُ أَبِي - yushbihu abī - he resembles my father",
-            "لَا يُشْبِهُنِي - he does not resemble me"
-          ],
-          "note": "Show how qualifiers add detail: أَخِي طَوِيلٌ جِدًّا. Jiddan follows the adjective. Ask pupils to describe a famous person without naming them for a partner to guess. Check the correct use of يُشْبِهُ."
+          "heading": "Model: a paragraph",
+          "model": {
+            "problem": "صِفْ صَدِيقًا لَكَ (describe a friend).",
+            "steps": [
+              "صَدِيقِي عُمَرُ طَوِيلٌ إِلَى حَدٍّ مَا وَلَهُ شَعْرٌ أَسْوَدُ قَصِيرٌ.",
+              "هُوَ مَرِحٌ جِدًّا وَكَرِيمٌ.",
+              "هُوَ أَطْوَلُ مِنِّي لٰكِنَّهُ أَصْغَرُ مِنِّي.",
+              "أُحِبُّهُ لِأَنَّهُ يُسَاعِدُ الآخَرِينَ دَائِمًا."
+            ],
+            "answer": "Appearance, character, comparison, opinion"
+          },
+          "note": "Mark each feature: qualifier, comparison, reason."
         },
         {
-          "heading": "Describe a person in a paragraph",
+          "heading": "Check",
           "bullets": [
-            "Who they are",
-            "What they look like",
-            "What they are like and why you like them"
+            "Vote in the Teams poll"
           ],
-          "note": "Show a model: 'هَذِهِ أُخْتِي. اسْمُهَا مَرْيَمُ. هِيَ طَوِيلَةٌ وَشَعْرُهَا أَسْوَدُ. هِيَ لَطِيفَةٌ جِدًّا.' Gloss it. Pupils evaluate the structure and write a similar paragraph about someone they admire."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'She has two kind sisters':",
+            "options": [
+              "لَهَا أُخْتَانِ لَطِيفَتَانِ",
+              "لَهَا أُخْتَانِ لَطِيفَةٌ",
+              "لَهَا أُخْتٌ لَطِيفَتَانِ"
+            ],
+            "answer": 0,
+            "why": "Dual noun, dual adjective: أُخْتَانِ لَطِيفَتَانِ."
+          }
         }
       ],
       "practice": [
-        "Describe your best friend in two sentences.",
-        "Translate: 'She has long black hair'.",
-        "Choose the correct form: أُمِّي (كَرِيمٌ / كَرِيمَةٌ).",
-        "Say 'his eyes are green' in Arabic."
+        {
+          "q": "Describe a cheerful, fairly tall female cousin.",
+          "a": "بِنْتُ عَمِّي مَرِحَةٌ وَطَوِيلَةٌ إِلَى حَدٍّ مَا.",
+          "mins": 2,
+          "model": "Noun: بِنْتُ عَمِّي (feminine).\nAdjectives with ة: مَرِحَةٌ، طَوِيلَةٌ.\nQualifier after: إِلَى حَدٍّ مَا."
+        },
+        {
+          "q": "Make dual: لَهُ عَيْنٌ زَرْقَاءُ.",
+          "a": "لَهُ عَيْنَانِ زَرْقَاوَانِ.",
+          "mins": 2
+        },
+        {
+          "q": "What does خَجُول mean?",
+          "a": "shy",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Write six sentences describing two family members, using at least six adjectives.",
-        "Describe a famous person for a partner to guess.",
-        "Write a 60-word paragraph on 'The person I admire most'."
+        {
+          "q": "Core: Write 70 to 90 words (portal response box): صِفْ شَخْصًا تُعْجَبُ بِهِ (describe someone you admire), with appearance, character, a qualifier, a comparison and a reason.",
+          "a": "Marked for agreement (gender, dual), qualifiers, comparison with أَفْعَل مِنْ, opinion with reason.",
+          "mins": 12,
+          "model": "Teacher writes the first two sentences about an imaginary teacher."
+        },
+        {
+          "q": "Extend (Group B): prepare a 30-second spoken description for the picture-based task style: يَبْدُو ... (he seems ...).",
+          "a": "For example: يَبْدُو سَعِيدًا وَمَرِحًا.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch (Group A): give the i'rab of طَوِيلٌ in صَدِيقِي طَوِيلٌ.",
+          "a": "خَبَرٌ مَرْفُوعٌ وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ (predicate, nominative, marked by dammah)",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Write the Arabic for 'my mother is kind and patient'.",
-        "What is the dual of عَيْنٌ?"
+        {
+          "q": "What does إِلَى حَدٍّ مَا mean? A) fairly B) very C) never",
+          "a": "A) fairly",
+          "mins": 1,
+          "options": [
+            "fairly",
+            "very",
+            "never"
+          ]
+        },
+        {
+          "q": "Big question: what makes a description precise?",
+          "a": "Agreeing adjectives (including dual), qualifiers and comparisons.",
+          "mins": 2
+        }
       ],
-      "homework": "Write a 70-word description of a family member's appearance and character.",
-      "send": "SEND: adjective cards with pictures. EAL: bilingual adjective list. Stretch: use comparisons: هُوَ أَطْوَلُ مِنِّي (he is taller than me).",
-      "board": "Pearson Edexcel GCSE (9-1) Arabic (1AA0)",
-      "boardShort": "Edexcel GCSE 1AA0"
+      "homework": "Write a description of two people (dual) you know, e.g. two cousins, with qualifiers.",
+      "send": "SEND: adjective bank with m / f / dual forms. EAL: English beside each. Stretch: the plural of adjectives for people: طِوَالٌ، كِرَامٌ.",
+      "resources": [
+        "School's Pearson GCSE Arabic 2-year scheme of work, Theme 1 1.1 (A1 core, bridge)",
+        "Portal arabic y10 lesson 2, upgraded",
+        "Adjective and qualifier bank (portal worksheet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "pair of glasses on a book",
+          "alt": "Glasses on a book",
+          "for": "keywords"
+        },
+        {
+          "find": "two matching cups",
+          "alt": "Two cups: the dual",
+          "for": "teach:2"
+        }
+      ],
+      "duration": 50
     },
     {
       "unit": "Unit 1: Identity and culture - Who am I?",
@@ -452,115 +712,275 @@
       "boardShort": "Edexcel GCSE 1AA0"
     },
     {
-      "unit": "Unit 2: Identity and culture - Daily life",
+      "unit": "Spring 1: Local area, holiday and travel: town, region and country; holidays (2.3, 2.1)",
       "n": 5,
-      "title": "Daily routine and time expressions",
-      "duration": 50,
+      "title": "Bridge: daily life in the present tense",
+      "bigQuestion": "How do I describe daily life for me and for others in the present tense?",
       "objectives": [
-        "Describe a daily routine in the present tense",
-        "Use frequency adverbs and time phrases",
-        "Compare weekday and weekend routines"
+        "To understand how the present tense changes for each person and how to describe routines with frequency words"
       ],
+      "successCriteria": [
+        "All: describe my routine with five present-tense verbs",
+        "Most: conjugate a verb for I, you, he, she, we and they",
+        "Some: compare my routine with someone else's using frequency words"
+      ],
+      "crossCurricular": "PSHE: healthy routines, sleep and screen time",
+      "smsc": "Spiritual: a Muslim day organised around the five prayers",
       "keywords": [
         {
-          "term": "دَائِمًا",
-          "def": "always (dā'iman)"
+          "term": "الفِعْلُ المُضَارِعُ (al-fi'l al-mudari')",
+          "def": "the present tense verb"
         },
         {
-          "term": "غَالِبًا",
-          "def": "often (ghāliban)"
+          "term": "عَادَةً ('adatan)",
+          "def": "usually"
         },
         {
-          "term": "أَحْيَانًا",
-          "def": "sometimes (aḥyānan)"
+          "term": "أَحْيَانًا (ahyanan)",
+          "def": "sometimes"
         },
         {
-          "term": "نَادِرًا",
-          "def": "rarely (nādiran)"
+          "term": "دَائِمًا (da'iman)",
+          "def": "always"
         },
         {
-          "term": "عَادَةً",
-          "def": "usually (ʿādatan)"
-        },
-        {
-          "term": "كُلَّ يَوْمٍ",
-          "def": "every day"
+          "term": "لَا ... أَبَدًا (la ... abadan)",
+          "def": "never"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "How is a Muslim teenager's day shaped differently from that of someone who does not pray? Think of the times.",
+        "a": "Fajr before school, Dhuhr and Asr in the day, Maghrib and Isha in the evening shape the routine."
+      },
+      "islamicLink": {
+        "text": "Allah says prayer is prescribed at fixed times (an-Nisa' 4:103). The five prayers give a Muslim's day its shape.",
+        "at": "start"
+      },
       "starter": [
-        "Write three sentences describing a friend.",
-        "Say how old you are and where you live.",
-        "Name three adjectives for personality."
+        {
+          "q": "Bismillah. 'Very' is: A) جِدًّا B) قَلِيلًا",
+          "a": "A) جِدًّا",
+          "mins": 1,
+          "options": [
+            "جِدًّا",
+            "قَلِيلًا"
+          ]
+        },
+        {
+          "q": "Say 'I wake up at six'.",
+          "a": "أَسْتَيْقِظُ فِي السَّاعَةِ السَّادِسَةِ",
+          "mins": 2
+        },
+        {
+          "q": "Make past: أَذْهَبُ.",
+          "a": "ذَهَبْتُ",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Frequency",
-          "bullets": [
-            "دَائِمًا أَسْتَيْقِظُ مُبَكِّرًا - I always wake early",
-            "غَالِبًا أَتَنَاوَلُ الْفُطُورَ فِي الْمَطْبَخِ - often",
-            "أَحْيَانًا أَذْهَبُ إِلَى الْمَكْتَبَةِ - sometimes",
-            "نَادِرًا أَسْهَرُ - nādiran asharu - I rarely stay up"
-          ],
-          "note": "Begin with bismillah. Place the adverb at the start. Pupils make their own sentences about habits. Link to good routines: the Prophet (peace be upon him) taught that the most beloved deeds to Allah are those done consistently, even if small (Bukhari and Muslim). Discuss consistency."
+          "heading": "One verb, all persons",
+          "table": {
+            "head": [
+              "Pronoun",
+              "يَدْرُسُ (to study)",
+              "English"
+            ],
+            "rows": [
+              [
+                "أَنَا",
+                "أَدْرُسُ",
+                "I study"
+              ],
+              [
+                "أَنْتَ",
+                "تَدْرُسُ",
+                "you (m) study"
+              ],
+              [
+                "أَنْتِ",
+                "تَدْرُسِينَ",
+                "you (f) study"
+              ],
+              [
+                "هُوَ",
+                "يَدْرُسُ",
+                "he studies"
+              ],
+              [
+                "هِيَ",
+                "تَدْرُسُ",
+                "she studies"
+              ],
+              [
+                "نَحْنُ",
+                "نَدْرُسُ",
+                "we study"
+              ],
+              [
+                "أَنْتُمْ",
+                "تَدْرُسُونَ",
+                "you (pl) study"
+              ],
+              [
+                "هُمْ",
+                "يَدْرُسُونَ",
+                "they study"
+              ]
+            ]
+          },
+          "note": "Begin with bismillah. Prefixes أَ، تَ، يَ، نَ; suffixes ـِينَ and ـُونَ. Group A: the term حُرُوفُ المُضَارَعَةِ (أَنَيْتُ)."
         },
         {
-          "heading": "Weekday routine",
+          "heading": "My routine",
           "bullets": [
-            "فِي الصَّبَاحِ أُصَلِّي الْفَجْرَ - in the morning I pray Fajr",
-            "بَعْدَ الظُّهْرِ أَدْرُسُ - in the afternoon I study",
-            "فِي الْمَسَاءِ أَقْرَأُ الْقُرْآنَ - in the evening I read Qur'an",
-            "قَبْلَ النَّوْمِ أَقْرَأُ - qabla n-nawm - before sleep"
+            "أَسْتَيْقِظُ قَبْلَ الفَجْرِ وَأُصَلِّي",
+            "أَتَنَاوَلُ الفَطُورَ ثُمَّ أَبْدَأُ دُرُوسِي عَبْرَ الإِنْتَرْنِتِ",
+            "فِي المَسَاءِ أُرَاجِعُ القُرْآنَ وَأَنَامُ مُبَكِّرًا"
           ],
-          "note": "Time phrases: فِي الصَّبَاحِ, بَعْدَ الظُّهْرِ, فِي الْمَسَاءِ, قَبْلَ النَّوْمِ. Revise verbs from earlier years. Ask pupils to give a verb for each time period. Practise 'before' and 'after' with nouns."
+          "note": "Add time phrases: فِي الصَّبَاحِ، بَعْدَ الظُّهْرِ، فِي المَسَاءِ."
         },
         {
-          "heading": "Weekend",
-          "bullets": [
-            "فِي نِهَايَةِ الْأُسْبُوعِ أَنَامُ مُتَأَخِّرًا - I sleep late",
-            "يَوْمَ السَّبْتِ أَزُورُ جَدِّي - on Saturday I visit",
-            "يَوْمَ الْجُمُعَةِ أَذْهَبُ إِلَى الْمَسْجِدِ - on Friday",
-            "أَلْعَبُ مَعَ أَصْدِقَائِي - I play with my friends"
-          ],
-          "note": "Compare weekdays and weekends: أَسْتَيْقِظُ مُبَكِّرًا لَكِنْ فِي الْعُطْلَةِ أَنَامُ مُتَأَخِّرًا. Introduce مُتَأَخِّرًا (late). Pupils write a contrast using بَيْنَمَا (while) or لَكِنْ."
+          "heading": "How often?",
+          "table": {
+            "head": [
+              "Word",
+              "Example"
+            ],
+            "rows": [
+              [
+                "دَائِمًا",
+                "أُصَلِّي الفَجْرَ دَائِمًا فِي وَقْتِهِ"
+              ],
+              [
+                "عَادَةً",
+                "عَادَةً أَنَامُ فِي السَّاعَةِ العَاشِرَةِ"
+              ],
+              [
+                "أَحْيَانًا",
+                "أَحْيَانًا أَلْعَبُ كُرَةَ القَدَمِ"
+              ],
+              [
+                "لَا ... أَبَدًا",
+                "لَا أَتَأَخَّرُ أَبَدًا"
+              ]
+            ]
+          },
+          "note": "أَبَدًا needs a negative before the verb."
         },
         {
-          "heading": "Compare routines",
-          "bullets": [
-            "نِظَامِي فِي الْعُطْلَةِ مُخْتَلِفٌ - my holiday routine is different",
-            "بَيْنَمَا أَدْرُسُ فِي الْأُسْبُوعِ أَرْتَاحُ فِي الْعُطْلَةِ",
-            "مُخْتَلِفٌ عَنْ - different from"
-          ],
-          "note": "Introduce بَيْنَمَا (while/whereas). Pupils make three contrast sentences. Teach نِظَامِي الْيَوْمِيُّ (my daily routine) rather than the borrowed word 'routine'. Check meaning with dictionaries if needed."
+          "heading": "Model: comparing routines",
+          "model": {
+            "problem": "Compare my routine and my brother's.",
+            "steps": [
+              "أَنَا أَسْتَيْقِظُ مُبَكِّرًا عَادَةً،",
+              "لٰكِنَّ أَخِي يَسْتَيْقِظُ مُتَأَخِّرًا أَحْيَانًا.",
+              "نَحْنُ نُصَلِّي الفَجْرَ مَعًا دَائِمًا.",
+              "هُمْ (my cousins) يَدْرُسُونَ فِي مَدْرَسَةٍ قَرِيبَةٍ."
+            ],
+            "answer": "Four persons, three frequency words"
+          },
+          "note": "Range of persons = higher marks."
         },
         {
-          "heading": "Speaking practice",
+          "heading": "Check",
           "bullets": [
-            "صِفْ يَوْمَكَ - describe your day",
-            "مَاذَا تَفْعَلُ بَعْدَ الْمَدْرَسَةِ؟ - what do you do after school?",
-            "هَلْ تُحِبُّ نِظَامَكَ الْيَوْمِيَّ؟ - do you like your routine?"
+            "Vote in the Teams poll"
           ],
-          "note": "Pupils work in pairs on a role-play of an interview. Model strong answers: use frequency, time, a verb and a reason. Collect feedback and note common mistakes."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'You (f) study':",
+            "options": [
+              "تَدْرُسُ",
+              "تَدْرُسِينَ",
+              "يَدْرُسُونَ"
+            ],
+            "answer": 1,
+            "why": "أَنْتِ takes تَـ ... ـِينَ: تَدْرُسِينَ."
+          }
         }
       ],
       "practice": [
-        "Say three habits using دَائِمًا, أَحْيَانًا, نَادِرًا.",
-        "Translate: 'In the evening I read the Qur'an'.",
-        "Contrast: weekday morning vs weekend morning.",
-        "Ask a partner what they do after school."
+        {
+          "q": "Conjugate يَكْتُبُ for نَحْنُ and هُمْ.",
+          "a": "نَكْتُبُ؛ يَكْتُبُونَ",
+          "mins": 2,
+          "model": "نَحْنُ takes نَـ: نَكْتُبُ.\nهُمْ takes يَـ ... ـُونَ: يَكْتُبُونَ."
+        },
+        {
+          "q": "Translate: I usually go to bed at ten.",
+          "a": "عَادَةً أَنَامُ فِي السَّاعَةِ العَاشِرَةِ.",
+          "mins": 2
+        },
+        {
+          "q": "Say 'I never arrive late'.",
+          "a": "لَا أَتَأَخَّرُ أَبَدًا",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Write a 80-word text on your daily routine with frequency and time words.",
-        "Compare weekdays and weekends in six sentences.",
-        "Record yourself answering three interview questions."
+        {
+          "q": "Core: Write 80 words on a typical weekday (portal response box), with five verbs, three frequency words and the prayers.",
+          "a": "Marked for range of verbs, frequency words, time phrases and accuracy.",
+          "mins": 11,
+          "model": "Teacher writes the morning part live: أَسْتَيْقِظُ قَبْلَ الفَجْرِ ..."
+        },
+        {
+          "q": "Extend: Add three sentences about another person (أَخِي، أُمِّي، أَصْدِقَائِي) with the right verb forms.",
+          "a": "For example: أُمِّي تَطْبُخُ الغَدَاءَ. أَصْدِقَائِي يَلْعَبُونَ بَعْدَ المَدْرَسَةِ.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch (Group A): identify the حَرْفُ المُضَارَعَةِ in four verbs from your answer and name the person each shows.",
+          "a": "For example: نَـ in نُصَلِّي (we); يَـ in يَلْعَبُونَ (they)",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Write a sentence with عَادَةً.",
-        "Write a contrast sentence with لَكِنْ."
+        {
+          "q": "'They study': A) يَدْرُسُونَ B) نَدْرُسُ C) تَدْرُسُ",
+          "a": "A) يَدْرُسُونَ",
+          "mins": 1,
+          "options": [
+            "يَدْرُسُونَ",
+            "نَدْرُسُ",
+            "تَدْرُسُ"
+          ]
+        },
+        {
+          "q": "Big question: how does the present tense change for different people?",
+          "a": "Prefixes (أَ، تَ، يَ، نَ) and suffixes (ـِينَ، ـُونَ) show who does the action.",
+          "mins": 1
+        }
       ],
-      "homework": "Write a diary of one day in Arabic (90 words) with at least eight verbs and four time phrases.",
-      "send": "SEND: routine strip pictures. EAL: bilingual adverbs list. Stretch: add the past tense to describe yesterday's routine.",
-      "board": "Pearson Edexcel GCSE (9-1) Arabic (1AA0)",
-      "boardShort": "Edexcel GCSE 1AA0"
+      "homework": "Conjugate يَشْرَبُ and يَلْعَبُ for all eight persons; write five sentences about your family's routine.",
+      "send": "SEND: conjugation grid with prefixes highlighted. EAL: routine pictures (objects and clocks). Stretch: verbs with weak letters: يَنَامُ، يَمْشِي.",
+      "resources": [
+        "School's Pearson GCSE Arabic 2-year scheme of work, Theme 1 1.2 Daily life (A2 core, bridge)",
+        "Portal arabic y10 lesson 5, upgraded",
+        "Present tense conjugation grid (portal worksheet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "alarm clock morning",
+          "alt": "An alarm clock",
+          "for": "keywords"
+        },
+        {
+          "find": "prayer times board mosque",
+          "alt": "A masjid prayer times board",
+          "for": "hook"
+        }
+      ],
+      "duration": 50
     },
     {
       "unit": "Unit 2: Identity and culture - Daily life",
@@ -892,116 +1312,236 @@
       "boardShort": "Edexcel GCSE 1AA0"
     },
     {
-      "unit": "Unit 3: Identity and culture - Cultural life and exam skills",
+      "unit": "Spring 1: Local area, holiday and travel: town, region and country; holidays (2.3, 2.1)",
       "n": 9,
-      "title": "Festivals and celebrations: Ramadan and Eid",
-      "duration": 50,
+      "title": "Bridge: cultural life: Ramadan and Eid in three time frames",
+      "bigQuestion": "How can I describe Ramadan and Eid using past, present and future?",
       "objectives": [
-        "Describe Ramadan and Eid in Arabic",
-        "Use past, present and future when describing celebrations",
-        "Greet others on Eid appropriately"
+        "To understand how to describe Ramadan and Eid using past, present and future verbs accurately"
       ],
+      "successCriteria": [
+        "All: describe Ramadan in the present: نَصُومُ مِنَ الفَجْرِ إِلَى المَغْرِبِ",
+        "Most: say what I did last Eid and will do this Ramadan",
+        "Some: use three time frames and an opinion in one paragraph"
+      ],
+      "crossCurricular": "Science: the lunar calendar and moon sighting",
+      "smsc": "Spiritual: the purpose of fasting is taqwa",
       "keywords": [
         {
-          "term": "رَمَضَانُ",
-          "def": "Ramadan"
+          "term": "صَوْم / صِيَام (sawm / siyam)",
+          "def": "fasting"
         },
         {
-          "term": "الصِّيَامُ",
-          "def": "fasting (aṣ-ṣiyām)"
+          "term": "سُحُور (suhur)",
+          "def": "the pre-dawn meal"
         },
         {
-          "term": "الْإِفْطَارُ",
-          "def": "breaking the fast (al-iftār)"
+          "term": "إِفْطَار (iftar)",
+          "def": "breaking the fast"
         },
         {
-          "term": "السُّحُورُ",
-          "def": "pre-dawn meal (as-suḥūr)"
+          "term": "صُمْتُ (sumtu)",
+          "def": "I fasted"
         },
         {
-          "term": "عِيدُ الْفِطْرِ",
-          "def": "Eid al-Fitr"
-        },
-        {
-          "term": "عِيدُ الْأَضْحَى",
-          "def": "Eid al-Adha"
+          "term": "سَأَصُومُ (sa-asumu)",
+          "def": "I will fast"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Ramadan starts in about three weeks. What will be the same as last year, and what do you want to do differently?",
+        "a": "Pupils' own; the goal of fasting is taqwa (al-Baqarah 2:183)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'O you who believe, fasting is prescribed for you as it was prescribed for those before you, so that you may attain taqwa' (al-Baqarah 2:183). Ramadan is the month in which the Qur'an was sent down (al-Baqarah 2:185).",
+        "at": "start"
+      },
       "starter": [
-        "Say what you do in your free time.",
-        "Say 'yesterday I played, tomorrow I will swim'.",
-        "Give a reason why sport is good."
+        {
+          "q": "Bismillah. 'We study': A) نَدْرُسُ B) يَدْرُسُونَ",
+          "a": "A) نَدْرُسُ",
+          "mins": 1,
+          "options": [
+            "نَدْرُسُ",
+            "يَدْرُسُونَ"
+          ]
+        },
+        {
+          "q": "Say 'sometimes'.",
+          "a": "أَحْيَانًا",
+          "mins": 1
+        },
+        {
+          "q": "Name the two Eids in Arabic.",
+          "a": "عِيدُ الفِطْرِ، عِيدُ الأَضْحَى",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Ramadan",
+          "heading": "Ramadan now (present)",
           "bullets": [
-            "رَمَضَانُ شَهْرُ الصِّيَامِ - Ramadan is the month of fasting",
-            "نَصُومُ مِنَ الْفَجْرِ إِلَى الْمَغْرِبِ - from dawn to sunset",
-            "نَتَنَاوَلُ السُّحُورَ قَبْلَ الْفَجْرِ - we eat suhoor",
-            "نُفْطِرُ عِنْدَ الْمَغْرِبِ - we break fast at Maghrib"
+            "نَصُومُ مِنَ الفَجْرِ إِلَى المَغْرِبِ",
+            "نَتَسَحَّرُ قَبْلَ الفَجْرِ وَنُفْطِرُ عَلَى التَّمْرِ",
+            "نُصَلِّي التَّرَاوِيحَ وَنَقْرَأُ القُرْآنَ"
           ],
-          "note": "Begin with bismillah. Qur'an 2:185 tells us that the month of Ramadan is the one in which the Qur'an was revealed. Describe fasting in Arabic. Be sensitive to pupils: some may be fasting, others may not, e.g. due to age or health. Ask: what is the purpose of fasting? (taqwa, 2:183)."
+          "note": "Begin with bismillah. Hollow verb صَامَ / يَصُومُ: watch the long vowel."
         },
         {
-          "heading": "In Ramadan we...",
-          "bullets": [
-            "نُصَلِّي التَّرَاوِيحَ - nuṣallī t-tarāwīḥ - we pray taraweeh",
-            "نَقْرَأُ الْقُرْآنَ كَثِيرًا - we read Qur'an a lot",
-            "نُعْطِي الصَّدَقَةَ - nuʿṭī ṣ-ṣadaqa - we give charity",
-            "نَزُورُ الْأَقَارِبَ - we visit relatives"
-          ],
-          "note": "Use 'we' present tense verbs. Explain that charity increases in Ramadan. Ask pupils what their family does for iftar. Compare traditions in different countries but avoid assumptions about what each family does. Ask for volunteers to share."
+          "heading": "Three time frames",
+          "table": {
+            "head": [
+              "Past",
+              "Present",
+              "Future"
+            ],
+            "rows": [
+              [
+                "صُمْتُ (I fasted)",
+                "أَصُومُ",
+                "سَأَصُومُ"
+              ],
+              [
+                "زُرْنَا (we visited)",
+                "نَزُورُ",
+                "سَنَزُورُ"
+              ],
+              [
+                "كَانَ العِيدُ رَائِعًا",
+                "العِيدُ رَائِعٌ",
+                "سَيَكُونُ العِيدُ رَائِعًا"
+              ]
+            ]
+          },
+          "note": "Hollow verbs shorten the long vowel in the past with ـتُ: صَامَ → صُمْتُ, زَارَ → زُرْتُ."
         },
         {
           "heading": "Eid",
           "bullets": [
-            "عِيدُ الْفِطْرِ بَعْدَ رَمَضَانَ - Eid al-Fitr is after Ramadan",
-            "نُصَلِّي صَلَاةَ الْعِيدِ - we pray the Eid prayer",
-            "نَلْبَسُ ثِيَابًا جَدِيدَةً - we wear new clothes",
-            "نَأْكُلُ الْحَلْوَى - we eat sweets"
+            "فِي العِيدِ نُصَلِّي صَلَاةَ العِيدِ وَنَلْبَسُ مَلَابِسَ جَدِيدَةً",
+            "نَزُورُ الأَقَارِبَ وَنَقُولُ: عِيدٌ مُبَارَكٌ",
+            "نُعْطِي زَكَاةَ الفِطْرِ قَبْلَ الصَّلَاةِ"
           ],
-          "note": "Differentiate Eid al-Fitr and Eid al-Adha. Eid al-Adha is after Hajj and recalls the sacrifice of Ibrahim (peace be upon him) and the Qur'an 37 narrative. Teach the verb نَلْبَسُ (we wear). Pupils compare the two Eids in a table."
+          "note": "Spec 1.3 festivals are taught through Ramadan and the two Eids."
         },
         {
-          "heading": "Greetings",
-          "bullets": [
-            "عِيدٌ مُبَارَكٌ - ʿīdun mubārakun - blessed Eid",
-            "كُلُّ عَامٍ وَأَنْتُمْ بِخَيْرٍ - every year and you are well",
-            "تَقَبَّلَ اللَّهُ مِنَّا وَمِنْكُمْ - may Allah accept from us and you",
-            "رَمَضَانُ كَرِيمٌ - Ramadan karīm"
-          ],
-          "note": "Teach the common greetings. The phrase تَقَبَّلَ اللَّهُ مِنَّا وَمِنْكُمْ is widely used by Muslims. Role-play greetings between friends and elders. Remember to respond appropriately."
+          "heading": "Model: a three-tense paragraph",
+          "model": {
+            "problem": "صِفْ رَمَضَانَ وَالعِيدَ فِي أُسْرَتِكَ.",
+            "steps": [
+              "Present: فِي رَمَضَانَ نَصُومُ وَنُفْطِرُ مَعًا كُلَّ يَوْمٍ.",
+              "Past: فِي العِيدِ المَاضِي زُرْنَا جَدَّتِي وَكَانَ يَوْمًا رَائِعًا.",
+              "Future: هٰذِهِ السَّنَةَ سَأَقْرَأُ القُرْآنَ كُلَّهُ إِنْ شَاءَ اللّٰهُ.",
+              "Opinion: أُحِبُّ رَمَضَانَ لِأَنَّهُ شَهْرُ القُرْآنِ."
+            ],
+            "answer": "Three time frames plus opinion"
+          },
+          "note": "This is a typical 1AA0 Paper 4 and 4AA1 Paper 2 topic."
         },
         {
-          "heading": "Describe a celebration",
+          "heading": "Check",
           "bullets": [
-            "فِي الْعِيدِ الْمَاضِي زُرْنَا جَدِّي - last Eid we visited",
-            "سَنَحْتَفِلُ بِالْعِيدِ فِي الْحَدِيقَةِ - we will celebrate",
-            "كَانَ يَوْمًا سَعِيدًا - it was a happy day"
+            "Vote in the Teams poll"
           ],
-          "note": "Combine tenses in a description of Eid: past (last Eid), present (usually), future (next Eid). Teach يَحْتَفِلُ بِ (celebrate). Model a paragraph; pupils write theirs. Check the verb forms and ending."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'I fasted':",
+            "options": [
+              "صَامْتُ",
+              "صُمْتُ",
+              "أَصُومُ"
+            ],
+            "answer": 1,
+            "why": "Hollow verb: the long ا drops and the first vowel becomes u: صُمْتُ."
+          }
         }
       ],
       "practice": [
-        "Say what we do in Ramadan using four verbs.",
-        "Translate: 'Eid Mubarak, may Allah accept from us and you'.",
-        "Describe last Eid in two sentences.",
-        "Say what you will do next Ramadan."
+        {
+          "q": "Translate: Last Eid we visited my grandparents.",
+          "a": "فِي العِيدِ المَاضِي زُرْنَا جَدِّي وَجَدَّتِي.",
+          "mins": 2,
+          "model": "Time phrase: فِي العِيدِ المَاضِي.\nPast 'we' of زَارَ: زُرْنَا.\nObject: جَدِّي وَجَدَّتِي."
+        },
+        {
+          "q": "Make future: نُصَلِّي التَّرَاوِيحَ.",
+          "a": "سَنُصَلِّي التَّرَاوِيحَ",
+          "mins": 1
+        },
+        {
+          "q": "What is سُحُور?",
+          "a": "the pre-dawn meal",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Write a 90-word text on Ramadan or Eid in your family, using three tenses.",
-        "Compare Eid al-Fitr and Eid al-Adha in six sentences.",
-        "Prepare to talk for one minute about a festival."
+        {
+          "q": "Core: Write 90 words (portal response box): كَيْفَ تَقْضِي رَمَضَانَ وَالعِيدَ؟ Use three time frames and two opinions.",
+          "a": "Marked for three time frames (including hollow verbs), festival vocabulary, opinions with reasons and accuracy.",
+          "mins": 12,
+          "model": "Teacher writes the present-tense opening, then the past sentence."
+        },
+        {
+          "q": "Extend (Group B): answer aloud: مَاذَا فَعَلْتَ فِي العِيدِ المَاضِي؟ (unexpected question practice).",
+          "a": "Developed past-tense answer",
+          "mins": 3
+        },
+        {
+          "q": "Stretch (Group A): give the i'rab of رَائِعًا in كَانَ العِيدُ رَائِعًا.",
+          "a": "خَبَرُ كَانَ مَنْصُوبٌ وَعَلَامَةُ نَصْبِهِ الفَتْحَةُ (predicate of kana, accusative, marked by fathah)",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Write one sentence about fasting.",
-        "Write the Eid greeting in Arabic."
+        {
+          "q": "What is إِفْطَار? A) breaking the fast B) the night prayer C) charity",
+          "a": "A) breaking the fast",
+          "mins": 1,
+          "options": [
+            "breaking the fast",
+            "the night prayer",
+            "charity"
+          ]
+        },
+        {
+          "q": "Big question: write one sentence about Ramadan in each time frame.",
+          "a": "For example: صُمْتُ ... / أَصُومُ ... / سَأَصُومُ ...",
+          "mins": 2
+        }
       ],
-      "homework": "Write a letter to a pen-friend explaining Ramadan and Eid in Arabic (100 words).",
-      "send": "SEND: festival vocabulary cards. EAL: bilingual text on Ramadan and Eid. Stretch: compare Eid al-Fitr with Eid al-Adha: when each falls, why it is celebrated and how families mark it.",
-      "board": "Pearson Edexcel GCSE (9-1) Arabic (1AA0)",
-      "boardShort": "Edexcel GCSE 1AA0"
+      "homework": "Write a Ramadan goals list in Arabic in the future tense (five goals with إِنْ شَاءَ اللّٰهُ).",
+      "send": "SEND: three-column verb card. EAL: festival word mat. Stretch: use كُنَّا + present for past habits: كُنَّا نُفْطِرُ مَعًا.",
+      "resources": [
+        "School's Pearson GCSE Arabic 2-year scheme of work, Theme 1 1.3 Cultural life (A2 core, bridge): festivals through Ramadan and the two Eids",
+        "Portal arabic y10 lesson 9, upgraded",
+        "Three-tense frame (portal worksheet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "dates and water iftar",
+          "alt": "Dates and water for iftar",
+          "for": "keywords"
+        },
+        {
+          "find": "Ramadan lantern fanous",
+          "alt": "A Ramadan lantern",
+          "for": "hook"
+        },
+        {
+          "find": "crescent moon over mosque",
+          "alt": "A crescent moon over a masjid",
+          "for": "teach:1"
+        }
+      ],
+      "duration": 50
     },
     {
       "unit": "Unit 3: Identity and culture - Cultural life and exam skills",
@@ -3532,178 +4072,226 @@
       "boardShort": "Edexcel GCSE 1AA0"
     },
     {
-      "unit": "Unit 2.3: Town, region and country",
+      "unit": "Spring 1: Local area, holiday and travel: town, region and country; holidays (2.3, 2.1)",
       "n": 24,
       "title": "My town: places to see and things to do",
-      "duration": 50,
-      "bigQuestion": "How do I describe my town and persuade a visitor to come?",
+      "bigQuestion": "How do I tell a visitor what there is, what there is not and what they can do?",
       "objectives": [
-        "Name places in a town and region",
-        "Say what there is and what there is not",
-        "Suggest things to do using يُمْكِنُكَ أَنْ"
+        "To understand how to say what there is and is not in a town and suggest activities with يُمْكِنُكَ أَنْ"
       ],
       "successCriteria": [
-        "All: say three things in your town",
-        "Most: use لَيْسَ فِي ... and يُمْكِنُكَ أَنْ تَزُورَ correctly",
-        "Some: write a balanced description with advantages and disadvantages"
+        "All: say يُوجَدُ / فِيهَا and لَا يُوجَدُ",
+        "Most: suggest three activities with يُمْكِنُكَ أَنْ + verb",
+        "Some: use the subjunctive ending correctly after أَنْ"
       ],
-      "crossCurricular": "Geography: settlement and tourism; PSHE: community",
-      "smsc": "Cultural: pride in one's town and welcoming visitors with generosity (karam)",
+      "crossCurricular": "Geography: services and amenities in settlements",
+      "smsc": "Social: welcoming visitors and showing them the good in our area",
       "keywords": [
         {
-          "term": "يُوجَدُ",
-          "def": "there is (yūjadu)"
+          "term": "يُوجَدُ (yujadu)",
+          "def": "there is"
         },
         {
-          "term": "لَيْسَ فِي",
-          "def": "there is no ... in (laysa fī)"
+          "term": "لَا يُوجَدُ (la yujadu)",
+          "def": "there is not"
         },
         {
-          "term": "يُمْكِنُكَ أَنْ",
-          "def": "you can (yumkinuka an)"
+          "term": "يُمْكِنُكَ أَنْ (yumkinuka an)",
+          "def": "you can"
         },
         {
-          "term": "مَتْحَفٌ",
-          "def": "museum (matḥaf)"
+          "term": "مَعَالِم (ma'alim)",
+          "def": "landmarks, sights"
         },
         {
-          "term": "مَزَايَا / عُيُوبٌ",
-          "def": "advantages / disadvantages (mazāyā / ʿuyūb)"
+          "term": "زِيَارَة (ziyarah)",
+          "def": "a visit"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your town has a tourism website in Arabic. What three places would you put on its front page?",
+        "a": "The masjid, a park, a museum or market; any with reasons."
+      },
+      "islamicLink": {
+        "text": "Honouring a guest is part of faith; the Prophet ﷺ linked believing in Allah and the Last Day with honouring one's guest (Sahih al-Bukhari and Sahih Muslim). Helping visitors enjoy our town is part of that.",
+        "at": "start"
+      },
       "starter": [
-        "Retrieval: compare summer and winter in Britain.",
-        "Say 'it will be rainy tomorrow'.",
-        "Write the Arabic for 'bigger than'."
+        {
+          "q": "Bismillah. 'Quieter': A) أَهْدَأُ B) هَادِئَةٌ",
+          "a": "A) أَهْدَأُ",
+          "mins": 1,
+          "options": [
+            "أَهْدَأُ",
+            "هَادِئَةٌ"
+          ]
+        },
+        {
+          "q": "Say 'my town is in the north of England'.",
+          "a": "تَقَعُ مَدِينَتِي فِي شَمَالِ إِنْجِلْتِرَا",
+          "mins": 2
+        },
+        {
+          "q": "What is رِيف?",
+          "a": "countryside",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Places in a town",
+          "heading": "There is, there is not",
           "table": {
             "head": [
               "Arabic",
-              "Transliteration",
               "English"
             ],
             "rows": [
               [
-                "مَتْحَفٌ",
-                "matḥafun",
-                "museum"
+                "يُوجَدُ فِي مَدِينَتِي مَتْحَفٌ",
+                "there is a museum in my town"
               ],
               [
-                "قَلْعَةٌ",
-                "qalʿatun",
-                "castle"
+                "فِيهَا حَدَائِقُ جَمِيلَةٌ",
+                "it has beautiful parks"
               ],
               [
-                "حَدِيقَةٌ عَامَّةٌ",
-                "ḥadīqatun ʿāmmatun",
-                "public park"
+                "لَا يُوجَدُ فِيهَا مَسْبَحٌ",
+                "there is no swimming pool"
               ],
               [
-                "مَلْعَبٌ",
-                "malʿabun",
-                "sports ground"
-              ],
-              [
-                "مَسْجِدٌ",
-                "masjidun",
-                "mosque"
-              ],
-              [
-                "مَكْتَبَةٌ",
-                "maktabatun",
-                "library"
-              ],
-              [
-                "سُوقٌ",
-                "sūqun",
-                "market"
-              ],
-              [
-                "شَاطِئٌ",
-                "shāṭiʾun",
-                "beach"
+                "لَيْسَ فِيهَا مَطَارٌ",
+                "it does not have an airport"
               ]
             ]
           },
-          "note": "Pupils tick the places in their own town. Point out that فِي ... تُوجَدُ uses the feminine verb for a feminine noun: تُوجَدُ حَدِيقَةٌ, يُوجَدُ مَتْحَفٌ. The verb يُوجَدُ is passive in form and means 'is found / there is'. Ask pupils to say one place that exists and one that does not."
+          "note": "Begin with bismillah. فِيهَا (in it) refers back to مَدِينَة."
         },
         {
-          "heading": "What there is and what there is not",
-          "compare": {
-            "left": {
-              "title": "There is / there is not",
-              "points": [
-                "يُوجَدُ فِي مَدِينَتِي مَتْحَفٌ كَبِيرٌ",
-                "There is a big museum in my town",
-                "لَيْسَ فِي مَدِينَتِي سِينَمَا",
-                "There is no cinema in my town"
-              ]
-            },
-            "right": {
-              "title": "You can ...",
-              "points": [
-                "يُمْكِنُكَ أَنْ تَزُورَ الْقَلْعَةَ",
-                "You can visit the castle",
-                "يُمْكِنُكَ أَنْ تَتَنَزَّهَ فِي الْحَدِيقَةِ",
-                "You can walk in the park"
-              ]
-            },
-            "label": "and"
-          },
-          "note": "Give both structures. For 'there is no ...' use لَيْسَ followed by the place phrase and an indefinite NOMINATIVE noun: لَيْسَ فِي مَدِينَتِي سِينَمَا. For suggestions use يُمْكِنُكَ أَنْ + subjunctive (to a male reader; يُمْكِنُكِ for a woman; يُمْكِنُكُمْ for a group). Remind pupils the verb after أَنْ ends in -a (أَنْ تَزُورَ)."
+          "heading": "Places to see",
+          "bullets": [
+            "المَسْجِدُ الكَبِيرُ، المَتْحَفُ، القَلْعَةُ (castle)",
+            "السُّوقُ، المَكْتَبَةُ العَامَّةُ، الحَدِيقَةُ",
+            "مَعَالِمُ مَدِينَتِي: the sights of my town"
+          ],
+          "note": "Pupils name real places in their own towns."
         },
         {
-          "heading": "Model: a description for a visitor",
+          "heading": "You can ...",
           "model": {
-            "problem": "Write: 'I live in Manchester. It is a big city. There is a big park and a museum, but there is no beach. You can visit the old museum.'",
+            "problem": "Suggest three things to do.",
             "steps": [
-              "'I live in Manchester' = أَسْكُنُ فِي مَانْشِسْتَرَ",
-              "'It is a big city' = هِيَ مَدِينَةٌ كَبِيرَةٌ",
-              "'There is a big park and a museum' = تُوجَدُ فِيهَا حَدِيقَةٌ كَبِيرَةٌ وَمَتْحَفٌ",
-              "'but there is no beach' = وَلَكِنْ لَيْسَ فِيهَا شَاطِئٌ",
-              "'You can visit the old museum' = يُمْكِنُكَ أَنْ تَزُورَ الْمَتْحَفَ الْقَدِيمَ"
+              "يُمْكِنُكَ أَنْ تَزُورَ المَسْجِدَ الكَبِيرَ",
+              "يُمْكِنُكَ أَنْ تَتَجَوَّلَ فِي السُّوقِ",
+              "يُمْكِنُكَ أَنْ تَقْرَأَ فِي المَكْتَبَةِ"
             ],
-            "answer": "أَسْكُنُ فِي مَانْشِسْتَرَ. هِيَ مَدِينَةٌ كَبِيرَةٌ. تُوجَدُ فِيهَا حَدِيقَةٌ كَبِيرَةٌ وَمَتْحَفٌ، وَلَكِنْ لَيْسَ فِيهَا شَاطِئٌ. يُمْكِنُكَ أَنْ تَزُورَ الْمَتْحَفَ الْقَدِيمَ."
+            "answer": "After أَنْ the verb ends in fathah: تَزُورَ، تَتَجَوَّلَ، تَقْرَأَ"
           },
-          "note": "Highlight the order: where, size, what there is, what there is not, what to do. This is the structure for a writing task of about 80 to 100 words. Notice تُوجَدُ with a feminine noun and the contrast with وَلَكِنْ."
+          "note": "Group A: أَنْ is a حَرْفُ نَصْبٍ: the verb is مَنْصُوب. To a female: يُمْكِنُكِ أَنْ تَزُورِي (the ن drops)."
         },
         {
-          "heading": "Hinge question",
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
           "check": {
-            "q": "Which means 'There is no cinema in my town'?",
+            "q": "'You can visit the castle':",
             "options": [
-              "لَيْسَ فِي مَدِينَتِي سِينَمَا",
-              "لَا فِي مَدِينَتِي سِينَمَا",
-              "مَا مَدِينَتِي سِينَمَا",
-              "غَيْرُ فِي مَدِينَتِي سِينَمَا"
+              "يُمْكِنُكَ أَنْ تَزُورُ القَلْعَةَ",
+              "يُمْكِنُكَ أَنْ تَزُورَ القَلْعَةَ",
+              "يُمْكِنُكَ زُرْتَ القَلْعَةَ"
             ],
-            "answer": 0,
-            "why": "لَيْسَ + prepositional phrase + indefinite noun is the standard way to say 'there is no ...'. The others are not grammatical in this meaning."
-          },
-          "note": "Mini-whiteboards. The distractors use particles that cannot negate existence in this pattern. If pupils choose D, show why غَيْرُ cannot be used before a preposition phrase here."
+            "answer": 1,
+            "why": "After أَنْ the present verb takes fathah: تَزُورَ."
+          }
         }
       ],
       "practice": [
-        "Say three things there are and two things there are not in your town.",
-        "Say what a visitor can do, to a man and then to a woman.",
-        "Translate: 'There is a library and a market but there is no stadium.'"
+        {
+          "q": "Say: There is a big park in my town, but there is no cinema.",
+          "a": "يُوجَدُ فِي مَدِينَتِي حَدِيقَةٌ كَبِيرَةٌ، لٰكِنْ لَا يُوجَدُ فِيهَا سِينَمَا.",
+          "mins": 2,
+          "model": "يُوجَدُ فِي مَدِينَتِي + the place.\nلٰكِنْ (but).\nلَا يُوجَدُ فِيهَا + the missing place."
+        },
+        {
+          "q": "Suggest to a female visitor: you can visit the museum.",
+          "a": "يُمْكِنُكِ أَنْ تَزُورِي المَتْحَفَ.",
+          "mins": 2
+        },
+        {
+          "q": "What is قَلْعَة?",
+          "a": "castle",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Core: write 6 sentences about your town (what there is, what there is not).",
-        "Extend: add advantages and disadvantages (مِنَ الْمَزَايَا ... مِنَ الْعُيُوبِ ...).",
-        "Stretch: write 100 words persuading a visitor to come, with a comparison to another town."
+        {
+          "q": "Core: Write a 90-word guide for an Arabic-speaking visitor (portal response box): what there is, what there is not, three suggestions with يُمْكِنُكَ أَنْ, and your favourite place with a reason.",
+          "a": "Marked for يُوجَدُ / لَا يُوجَدُ, subjunctive after أَنْ, places, opinion with reason.",
+          "mins": 12,
+          "model": "Teacher writes the opening: أَهْلًا وَسَهْلًا فِي مَدِينَتِي ... and one suggestion."
+        },
+        {
+          "q": "Extend (Group B): prepare the role play line: 'Excuse me, what is there to do here?' and two answers.",
+          "a": "عَفْوًا، مَاذَا يُمْكِنُ أَنْ أَفْعَلَ هُنَا؟ يُمْكِنُكَ أَنْ تَزُورَ ... / يُمْكِنُكَ أَنْ تَتَسَوَّقَ ...",
+          "mins": 3
+        },
+        {
+          "q": "Stretch (Group A): give the i'rab of تَزُورَ in يُمْكِنُكَ أَنْ تَزُورَ.",
+          "a": "فِعْلٌ مُضَارِعٌ مَنْصُوبٌ بِأَنْ وَعَلَامَةُ نَصْبِهِ الفَتْحَةُ",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Write: 'There is a castle in my town.'",
-        "Write: 'You can walk in the park.'"
+        {
+          "q": "'There is not': A) لَا يُوجَدُ B) يُوجَدُ C) يُمْكِنُ",
+          "a": "A) لَا يُوجَدُ",
+          "mins": 1,
+          "options": [
+            "لَا يُوجَدُ",
+            "يُوجَدُ",
+            "يُمْكِنُ"
+          ]
+        },
+        {
+          "q": "Big question: suggest one thing a visitor can do in your town.",
+          "a": "For example: يُمْكِنُكَ أَنْ تَزُورَ المَسْجِدَ الكَبِيرَ.",
+          "mins": 1
+        }
       ],
-      "homework": "Write 80 words in Arabic about your town for a tourist leaflet. Include one thing there is not and two things to do.",
-      "send": "EAL/SEND: give the sentence frames and the places table with images. Stretch: use the passive form of the verb of attractions and a relative clause with الَّذِي.",
-      "board": "Pearson Edexcel GCSE (9-1) Arabic (1AA0)",
-      "boardShort": "Edexcel GCSE 1AA0"
+      "homework": "Turn your guide into a short leaflet (text only or with photos of buildings and places, no people).",
+      "send": "SEND: guide frame and place bank. EAL: picture cards of places. Stretch: يَجِبُ أَنْ تَزُورَ (you must visit) and لَا تَنْسَ أَنْ (do not forget to).",
+      "resources": [
+        "School's Pearson GCSE Arabic 2-year scheme of work, Theme 2 2.3, Spring 1 w1",
+        "Portal arabic y10 lesson 24, upgraded; lesson 35 for extension reading",
+        "Visitor guide frame (portal worksheet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "castle in England",
+          "alt": "A castle (qal'ah)",
+          "for": "teach:2"
+        },
+        {
+          "find": "museum building exterior",
+          "alt": "A museum (mathaf)",
+          "for": "keywords"
+        },
+        {
+          "find": "market stalls fruit",
+          "alt": "A market (suq)",
+          "for": "hook"
+        }
+      ],
+      "duration": 50
     },
     {
       "unit": "Unit 2.3: Town, region and country",
@@ -4864,177 +5452,251 @@
       "boardShort": "Edexcel GCSE 1AA0"
     },
     {
-      "unit": "Unit 2.2: Travel and tourist transactions",
+      "unit": "Spring 1: Local area, holiday and travel: town, region and country; holidays (2.3, 2.1)",
       "n": 32,
-      "title": "Directions: following and giving a route",
-      "duration": 50,
-      "bigQuestion": "How can I find my way, and help someone else find theirs?",
+      "title": "Directions: the imperative and asking the way",
+      "bigQuestion": "How do I ask for and give clear directions to a man, a woman or a group?",
       "objectives": [
-        "Ask for and understand directions",
-        "Give directions using commands and place words",
-        "Describe distance and time on foot"
+        "To understand how to ask the way and give directions with the imperative for different listeners"
       ],
       "successCriteria": [
-        "All: ask where a place is",
-        "Most: give a route with two instructions",
-        "Some: give a full route with landmarks and distance"
+        "All: ask كَيْفَ أَصِلُ إِلَى ...؟ and understand the reply",
+        "Most: give three-step directions with the imperative",
+        "Some: change the imperative for a woman and a group"
       ],
-      "crossCurricular": "Geography: maps and navigation",
-      "smsc": "Social: helping a stranger with kindness",
+      "crossCurricular": "Geography: reading maps and giving routes",
+      "smsc": "Social: helping travellers; the rights of the wayfarer",
       "keywords": [
         {
-          "term": "اِذْهَبْ مُبَاشَرَةً",
-          "def": "go straight on (idhhab mubāsharatan)"
+          "term": "فِعْلُ الأَمْرِ (fi'l al-amr)",
+          "def": "the imperative"
         },
         {
-          "term": "اِنْعَطِفْ يَمِينًا / يَسَارًا",
-          "def": "turn right / left (inʿaṭif yamīnan / yasāran)"
+          "term": "كَيْفَ أَصِلُ إِلَى ...؟ (kayfa asilu ila?)",
+          "def": "how do I get to ...?"
         },
         {
-          "term": "اِعْبُرِ الشَّارِعَ",
-          "def": "cross the road (iʿburi sh-shāriʿ)"
+          "term": "اِنْعَطِفْ (in'atif)",
+          "def": "turn"
         },
         {
-          "term": "إِشَارَةُ الْمُرُورِ",
-          "def": "traffic lights (ishāratu l-murūr)"
+          "term": "إِشَارَةُ المُرُورِ (isharat al-murur)",
+          "def": "traffic lights"
         },
         {
-          "term": "بِجَانِبِ / أَمَامَ / خَلْفَ",
-          "def": "next to / in front of / behind"
-        },
-        {
-          "term": "بَعِيدٌ / قَرِيبٌ",
-          "def": "far / near (baʿīd / qarīb)"
+          "term": "عَلَى بُعْدِ (ala bu'di)",
+          "def": "at a distance of"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "You are in Madinah and need to find the masjid of Quba'. What questions would you ask, and what words would you listen for?",
+        "a": "Ask how to get there and how far; listen for right, left, straight on and distances."
+      },
+      "islamicLink": {
+        "text": "Allah names the traveller (ابْنُ السَّبِيلِ) among those owed help (al-Baqarah 2:177). Giving directions kindly helps a traveller.",
+        "at": "start"
+      },
       "starter": [
-        "Retrieval: name five places in a town in Arabic.",
-        "Retrieval: say 'there is a museum in my town'.",
-        "Retrieval: say 'you can visit the castle'."
+        {
+          "q": "Bismillah. 'There is not': A) لَا يُوجَدُ B) يُوجَدُ",
+          "a": "A) لَا يُوجَدُ",
+          "mins": 1,
+          "options": [
+            "لَا يُوجَدُ",
+            "يُوجَدُ"
+          ]
+        },
+        {
+          "q": "Say 'you can visit the museum'.",
+          "a": "يُمْكِنُكَ أَنْ تَزُورَ المَتْحَفَ",
+          "mins": 2
+        },
+        {
+          "q": "What is يَمِين?",
+          "a": "right",
+          "mins": 1
+        }
       ],
       "teach": [
         {
           "heading": "Asking the way",
-          "bullets": [
-            "عَفْوًا، أَيْنَ الْمَحَطَّةُ؟ - excuse me, where is the station?",
-            "كَيْفَ أَذْهَبُ إِلَى الْمَتْحَفِ؟ - how do I get to the museum?",
-            "هَلْ هُوَ بَعِيدٌ؟ - is it far?"
-          ],
-          "note": "Arabic specialist to check: all Arabic, vowelling and transliteration in this lesson before delivery. Begin with bismillah. Practise politeness: عَفْوًا, مِنْ فَضْلِكَ. Note أَيْنَ + noun with no verb. For a woman being asked, use مِنْ فَضْلِكِ. Pupils ask the way to three places on a simple map."
-        },
-        {
-          "heading": "Giving directions",
           "table": {
             "head": [
               "Arabic",
-              "Transliteration",
               "English"
             ],
             "rows": [
               [
-                "اِذْهَبْ مُبَاشَرَةً",
-                "idhhab mubāsharatan",
-                "go straight on"
+                "عَفْوًا، كَيْفَ أَصِلُ إِلَى المَحَطَّةِ؟",
+                "excuse me, how do I get to the station?"
               ],
               [
-                "اِنْعَطِفْ يَمِينًا",
-                "inʿaṭif yamīnan",
-                "turn right"
+                "أَيْنَ أَقْرَبُ صَيْدَلِيَّةٍ؟",
+                "where is the nearest pharmacy?"
               ],
               [
-                "اِنْعَطِفْ يَسَارًا",
-                "inʿaṭif yasāran",
-                "turn left"
+                "هَلْ هِيَ بَعِيدَةٌ؟",
+                "is it far?"
               ],
               [
-                "اِعْبُرِ الشَّارِعَ",
-                "iʿburi sh-shāriʿa",
-                "cross the road"
-              ],
-              [
-                "خُذِ الشَّارِعَ الثَّانِيَ",
-                "khudhi sh-shāriʿa th-thāniya",
-                "take the second street"
+                "عَلَى بُعْدِ خَمْسِ دَقَائِقَ مَشْيًا",
+                "five minutes' walk away"
               ]
             ]
           },
-          "note": "These are commands to one man. For one woman: اِذْهَبِي، اِنْعَطِفِي. For a group: اِذْهَبُوا، اِنْعَطِفُوا. The commands اِعْبُرِ and خُذِ take a short kasra because the next word starts with al-: do not over-teach, treat it as a chunk. Practise in pairs with a map."
+          "note": "Begin with bismillah. أَقْرَبُ + indefinite noun = the nearest ... ."
         },
         {
-          "heading": "Where exactly?",
-          "compare": {
-            "left": {
-              "title": "Position words",
-              "points": [
-                "بِجَانِبِ الْبَنْكِ - next to the bank",
-                "أَمَامَ الْمَسْجِدِ - in front of the mosque",
-                "خَلْفَ الْمَدْرَسَةِ - behind the school"
+          "heading": "The imperative for three listeners",
+          "table": {
+            "head": [
+              "To a man",
+              "To a woman",
+              "To a group"
+            ],
+            "rows": [
+              [
+                "اِذْهَبْ",
+                "اِذْهَبِي",
+                "اِذْهَبُوا"
+              ],
+              [
+                "اِنْعَطِفْ",
+                "اِنْعَطِفِي",
+                "اِنْعَطِفُوا"
+              ],
+              [
+                "خُذْ",
+                "خُذِي",
+                "خُذُوا"
+              ],
+              [
+                "اِمْشِ",
+                "اِمْشِي",
+                "اِمْشُوا"
               ]
-            },
-            "right": {
-              "title": "Distance",
-              "points": [
-                "قَرِيبٌ مِنْ هُنَا - near here",
-                "بَعِيدٌ عَنْ هُنَا - far from here",
-                "عَلَى بُعْدِ خَمْسِ دَقَائِقَ مَشْيًا - five minutes away on foot"
-              ]
-            },
-            "label": "and"
+            ]
           },
-          "note": "All position words take the genitive. Note قَرِيبٌ مِنْ but بَعِيدٌ عَنْ: the preposition changes. Numbers 3 to 10 take the opposite gender: دَقِيقَةٌ is feminine, so the number is خَمْسُ, here in the genitive after عَلَى بُعْدِ."
+          "note": "Woman: ـِي; group: ـُوا (with a silent alif)."
         },
         {
           "heading": "Model: a route",
           "model": {
-            "problem": "Give directions: 'Go straight on, then turn left at the traffic lights. The library is next to the bank, five minutes on foot.'",
+            "problem": "From the station to the masjid (to a woman).",
             "steps": [
-              "'Go straight on' = اِذْهَبْ مُبَاشَرَةً",
-              "'then turn left' = ثُمَّ اِنْعَطِفْ يَسَارًا",
-              "'at the traffic lights' = عِنْدَ إِشَارَةِ الْمُرُورِ",
-              "'The library is next to the bank' = الْمَكْتَبَةُ بِجَانِبِ الْبَنْكِ",
-              "'five minutes on foot' = عَلَى بُعْدِ خَمْسِ دَقَائِقَ مَشْيًا"
+              "اُخْرُجِي مِنَ المَحَطَّةِ وَاِمْشِي مُسْتَقِيمًا.",
+              "عِنْدَ إِشَارَةِ المُرُورِ اِنْعَطِفِي يَسَارًا.",
+              "خُذِي الشَّارِعَ الثَّانِيَ عَلَى اليَمِينِ.",
+              "المَسْجِدُ أَمَامَ الحَدِيقَةِ."
             ],
-            "answer": "اِذْهَبْ مُبَاشَرَةً ثُمَّ اِنْعَطِفْ يَسَارًا عِنْدَ إِشَارَةِ الْمُرُورِ. الْمَكْتَبَةُ بِجَانِبِ الْبَنْكِ، عَلَى بُعْدِ خَمْسِ دَقَائِقَ مَشْيًا."
+            "answer": "Four steps, feminine imperative"
           },
-          "note": "Use ثُمَّ for sequence. Ask pupils to draw the route as you read the Arabic. Note إِشَارَةُ الْمُرُورِ is an idāfa. Check that pupils hear the order: command, turn, landmark, distance."
+          "note": "أَمَامَ (in front of), خَلْفَ (behind), بَيْنَ (between), مُقَابِلَ (opposite)."
         },
         {
-          "heading": "Hinge question",
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
           "check": {
-            "q": "Which instruction means 'turn right'?",
+            "q": "'Turn right' to a group:",
             "options": [
               "اِنْعَطِفْ يَمِينًا",
-              "اِنْعَطِفْ يَسَارًا",
-              "اِذْهَبْ مُبَاشَرَةً",
-              "اِعْبُرِ الشَّارِعَ"
+              "اِنْعَطِفِي يَمِينًا",
+              "اِنْعَطِفُوا يَمِينًا"
             ],
-            "answer": 0,
-            "why": "يَمِينًا is right and يَسَارًا is left. C is go straight on and D is cross the road."
-          },
-          "note": "Mini-whiteboards. Left and right are the classic listening trap: ask pupils to point as they answer."
+            "answer": 2,
+            "why": "Group: ـُوا: اِنْعَطِفُوا."
+          }
         }
       ],
       "practice": [
-        "Ask where the bank is and say thank you.",
-        "Give a route from school to the mosque with two instructions.",
-        "Translate: 'The market is far from here, behind the library.'"
+        {
+          "q": "Give a man directions: go straight on, then take the first street on the left.",
+          "a": "اِذْهَبْ مُسْتَقِيمًا، ثُمَّ خُذِ الشَّارِعَ الأَوَّلَ عَلَى اليَسَارِ.",
+          "mins": 2,
+          "model": "Man: اِذْهَبْ مُسْتَقِيمًا.\nثُمَّ.\nخُذْ → خُذِ before al-: خُذِ الشَّارِعَ الأَوَّلَ عَلَى اليَسَارِ."
+        },
+        {
+          "q": "Ask: Where is the nearest masjid?",
+          "a": "أَيْنَ أَقْرَبُ مَسْجِدٍ؟",
+          "mins": 1
+        },
+        {
+          "q": "Translate: It is ten minutes' walk away.",
+          "a": "عَلَى بُعْدِ عَشْرِ دَقَائِقَ مَشْيًا.",
+          "mins": 2
+        }
       ],
       "independent": [
-        "Core: write directions from your home to the shop in 4 sentences.",
-        "Extend: add landmarks and the time on foot.",
-        "Stretch: write a 100-word email to a visitor explaining how to reach your house from the station."
+        {
+          "q": "Core: Using the town map (worksheet), write directions for three routes: one to a man, one to a woman, one to a group.",
+          "a": "Marked for correct imperative forms, place words and prepositions.",
+          "mins": 11,
+          "model": "Teacher writes the first route to a man, tracing it on the map."
+        },
+        {
+          "q": "Extend: Write a four-line dialogue: a visitor asks the way and how far; you answer.",
+          "a": "For example: عَفْوًا، كَيْفَ أَصِلُ إِلَى المَكْتَبَةِ؟ اِذْهَبْ مُسْتَقِيمًا ثُمَّ اِنْعَطِفْ يَمِينًا. هَلْ هِيَ بَعِيدَةٌ؟ لَا، عَلَى بُعْدِ خَمْسِ دَقَائِقَ.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Say 'do not turn left' (to a man) with لَا النَّاهِيَة.",
+          "a": "لَا تَنْعَطِفْ يَسَارًا.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Write how to say 'turn left' and 'go straight on'.",
-        "Write how to ask 'where is the station?'"
+        {
+          "q": "'Take' to a woman: A) خُذِي B) خُذْ C) خُذُوا",
+          "a": "A) خُذِي",
+          "mins": 1,
+          "options": [
+            "خُذِي",
+            "خُذْ",
+            "خُذُوا"
+          ]
+        },
+        {
+          "q": "Big question: ask the way and give one direction in Arabic.",
+          "a": "For example: كَيْفَ أَصِلُ إِلَى المَحَطَّةِ؟ اِذْهَبْ مُسْتَقِيمًا.",
+          "mins": 2
+        }
       ],
-      "homework": "Draw a simple map and write six directions in Arabic.",
-      "send": "SEND/EAL: colour-coded arrows with Arabic labels. Stretch: add feminine and plural command forms.",
-      "covers": [
-        "2.2.3"
+      "homework": "Write directions from your home to your nearest masjid for a female visitor (feminine imperative throughout).",
+      "send": "SEND: imperative table and arrow cards. EAL: map with English labels too. Stretch: polite requests: مِنْ فَضْلِكَ، هَلْ يُمْكِنُكَ أَنْ تُسَاعِدَنِي؟",
+      "resources": [
+        "School's Pearson GCSE Arabic 2-year scheme of work, Theme 2 2.2 Travel and tourist transactions: directions, Spring 1 w2",
+        "Portal arabic y10 lesson 32, upgraded",
+        "Town map and directions sheet (portal worksheet)"
       ],
-      "board": "Pearson Edexcel GCSE (9-1) Arabic (1AA0)",
-      "boardShort": "Edexcel GCSE 1AA0"
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Quba mosque Madinah exterior",
+          "alt": "Masjid Quba' in Madinah",
+          "for": "hook"
+        },
+        {
+          "find": "traffic lights",
+          "alt": "Traffic lights (isharat al-murur)",
+          "for": "keywords"
+        },
+        {
+          "find": "street signs junction",
+          "alt": "Street signs at a junction",
+          "for": "teach:3"
+        }
+      ],
+      "duration": 50
     },
     {
       "unit": "Unit 2.2: Travel and tourist transactions",
@@ -5192,101 +5854,113 @@
       "boardShort": "Edexcel GCSE 1AA0"
     },
     {
-      "unit": "Unit 2.3: Town, region and country",
+      "unit": "Spring 1: Local area, holiday and travel: town, region and country; holidays (2.3, 2.1)",
       "n": 34,
-      "title": "Weather: forecasts, seasons and plans",
-      "duration": 50,
-      "bigQuestion": "How does the weather affect what we do, and how can I describe it in Arabic?",
+      "title": "Weather and plans; unit quiz",
+      "bigQuestion": "How does the weather change what we do, and how much of this half term's Arabic can I now use?",
       "objectives": [
-        "Describe the weather and temperature",
-        "Understand a simple forecast",
-        "Link weather to plans using إِذَا and the future"
+        "To understand how to describe weather and forecasts and link them to plans, then show the unit's learning in a quiz"
       ],
       "successCriteria": [
-        "All: say two types of weather",
-        "Most: give a forecast for tomorrow",
-        "Some: say what you will do if the weather is good or bad"
+        "All: describe the weather and the temperature",
+        "Most: give a forecast with سَيَكُونُ + accusative",
+        "Some: link weather to plans with إِذَا كَانَ ... فَسَـ ..."
       ],
       "crossCurricular": "Geography: weather and climate",
-      "smsc": "Spiritual: gratitude for rain as a mercy",
+      "smsc": "Spiritual: rain as a mercy; gratitude whatever the weather",
       "keywords": [
         {
-          "term": "الْجَوُّ",
-          "def": "the weather (al-jaww)"
+          "term": "الجَوّ / الطَّقْس (al-jaww / at-taqs)",
+          "def": "the weather"
         },
         {
-          "term": "مُشْمِسٌ",
-          "def": "sunny (mushmis)"
+          "term": "دَرَجَةُ الحَرَارَةِ (darajat al-hararah)",
+          "def": "temperature"
         },
         {
-          "term": "مُمْطِرٌ",
-          "def": "rainy (mumṭir)"
+          "term": "النَّشْرَةُ الجَوِّيَّةُ (an-nashrah al-jawwiyyah)",
+          "def": "weather forecast"
         },
         {
-          "term": "غَائِمٌ",
-          "def": "cloudy (ghāʾim)"
+          "term": "مُتَقَلِّب (mutaqallib)",
+          "def": "changeable"
         },
         {
-          "term": "دَرَجَةُ الْحَرَارَةِ",
-          "def": "temperature (darajatu l-ḥarāra)"
-        },
-        {
-          "term": "النَّشْرَةُ الْجَوِّيَّةُ",
-          "def": "weather forecast (an-nashra l-jawwiyya)"
+          "term": "إِذَا (idha)",
+          "def": "if"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "British weather is famous for being changeable. How do you plan a weekend when you cannot be sure of the weather?",
+        "a": "Make plans for both: if sunny ..., if rainy ...; and say in sha' Allah."
+      },
+      "islamicLink": {
+        "text": "Allah sends down rain from the sky as a blessing and brings life to the earth with it (Qaf 50:9). Muslims thank Allah for rain and every kind of weather.",
+        "at": "start"
+      },
       "starter": [
-        "Retrieval: say the four seasons.",
-        "Retrieval: say 'tomorrow I will swim'.",
-        "Retrieval: say 'there is a big park in my town'."
+        {
+          "q": "Bismillah. 'On the other hand': A) مِنْ نَاحِيَةٍ أُخْرَى B) بِالرَّغْمِ مِنْ",
+          "a": "A) مِنْ نَاحِيَةٍ أُخْرَى",
+          "mins": 1,
+          "options": [
+            "مِنْ نَاحِيَةٍ أُخْرَى",
+            "بِالرَّغْمِ مِنْ"
+          ]
+        },
+        {
+          "q": "What is اِزْدِحَام?",
+          "a": "congestion",
+          "mins": 1
+        },
+        {
+          "q": "'You must visit' with يَجِبُ أَنْ?",
+          "a": "يَجِبُ أَنْ تَزُورَ",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Describing the weather",
+          "heading": "Weather",
           "table": {
             "head": [
               "Arabic",
-              "Transliteration",
               "English"
             ],
             "rows": [
               [
-                "الْجَوُّ مُشْمِسٌ",
-                "al-jawwu mushmisun",
-                "it is sunny"
-              ],
-              [
-                "الْجَوُّ غَائِمٌ",
-                "al-jawwu ghāʾimun",
-                "it is cloudy"
-              ],
-              [
-                "الْجَوُّ بَارِدٌ",
-                "al-jawwu bāridun",
-                "it is cold"
+                "الجَوُّ مُشْمِسٌ / غَائِمٌ",
+                "sunny / cloudy"
               ],
               [
                 "تُمْطِرُ السَّمَاءُ",
-                "tumṭiru s-samāʾu",
                 "it is raining"
               ],
               [
-                "تَسْقُطُ الثُّلُوجُ",
-                "tasquṭu th-thulūju",
-                "snow falls"
+                "تَهُبُّ الرِّيَاحُ",
+                "it is windy"
+              ],
+              [
+                "دَرَجَةُ الحَرَارَةِ خَمْسُ دَرَجَاتٍ",
+                "the temperature is five degrees"
+              ],
+              [
+                "الجَوُّ فِي بِرِيطَانِيَا مُتَقَلِّبٌ",
+                "the weather in Britain is changeable"
               ]
             ]
           },
-          "note": "Arabic specialist to check: all Arabic, vowelling and transliteration in this lesson before delivery. Begin with bismillah. In Arabic the weather is described with الْجَوُّ plus an adjective. Note تَسْقُطُ with a feminine verb for الثُّلُوجُ (plural of a non-human). When it rains, the Prophet (peace be upon him) used to pray for beneficial rain (Bukhari; verify wording before quoting). Check before use: Stretch: write 100 words comparing the weather in Britain with an Arabic-speaking country (use facts you can verify)."
+          "note": "Begin with bismillah. دَرَجَة is feminine: خَمْسُ دَرَجَاتٍ; 11 and above: عِشْرُونَ دَرَجَةً."
         },
         {
-          "heading": "Temperature and forecast",
+          "heading": "Forecasts",
           "bullets": [
-            "دَرَجَةُ الْحَرَارَةِ عِشْرُونَ دَرَجَةً - the temperature is twenty degrees",
-            "سَيَكُونُ الْجَوُّ مُمْطِرًا غَدًا - it will be rainy tomorrow",
-            "الْجَوُّ فِي بَرِيطَانِيَا مُتَقَلِّبٌ - the weather in Britain is changeable"
+            "سَيَكُونُ الجَوُّ مُمْطِرًا غَدًا",
+            "سَتَنْخَفِضُ دَرَجَةُ الحَرَارَةِ",
+            "the temperature will fall"
           ],
-          "note": "Numbers 11 to 99 take a singular accusative noun (عِشْرُونَ دَرَجَةً). Future: سَيَكُونُ + accusative predicate (مُمْطِرًا). This is the standard structure in forecasts. Pupils read a short forecast for three cities and give each one sentence."
+          "note": "سَيَكُونُ + accusative predicate (مُمْطِرًا)."
         },
         {
           "heading": "Weather and plans",
@@ -5294,72 +5968,114 @@
             "left": {
               "title": "If good",
               "points": [
-                "إِذَا كَانَ الْجَوُّ مُشْمِسًا - if it is sunny",
-                "فَسَنَلْعَبُ فِي الْحَدِيقَةِ - we will play in the park"
+                "إِذَا كَانَ الجَوُّ مُشْمِسًا",
+                "فَسَنَذْهَبُ إِلَى الحَدِيقَةِ"
               ]
             },
             "right": {
               "title": "If bad",
               "points": [
-                "إِذَا كَانَ الْجَوُّ مُمْطِرًا - if it is rainy",
-                "فَسَنَبْقَى فِي الْبَيْتِ - we will stay at home"
+                "إِذَا كَانَ الجَوُّ مُمْطِرًا",
+                "فَسَنَبْقَى فِي البَيْتِ"
               ]
             },
             "label": "or"
           },
-          "note": "Teach إِذَا + past verb كَانَ (future meaning) + فَ + future. The فَ before the result clause is typical. Pupils make up two sentences about their own weekend plans. This structure shows range at Higher level."
+          "note": "إِذَا + past verb (future meaning) + فَـ + future."
         },
         {
-          "heading": "Model: a weather paragraph",
-          "model": {
-            "problem": "Write: 'In summer the weather is hot and sunny. The temperature is thirty degrees. If it is hot I will swim.'",
-            "steps": [
-              "'In summer' = فِي الصَّيْفِ",
-              "'the weather is hot and sunny' = الْجَوُّ حَارٌّ وَمُشْمِسٌ",
-              "'the temperature is thirty degrees' = دَرَجَةُ الْحَرَارَةِ ثَلَاثُونَ دَرَجَةً",
-              "'If it is hot I will swim' = إِذَا كَانَ الْجَوُّ حَارًّا فَسَأَسْبَحُ"
-            ],
-            "answer": "فِي الصَّيْفِ الْجَوُّ حَارٌّ وَمُشْمِسٌ. دَرَجَةُ الْحَرَارَةِ ثَلَاثُونَ دَرَجَةً. إِذَا كَانَ الْجَوُّ حَارًّا فَسَأَسْبَحُ."
-          },
-          "note": "Notice the change from حَارٌّ (nominative, after الْجَوُّ) to حَارًّا (accusative, after كَانَ). Ask pupils to find the case change. Arabic specialist to check the case endings and the shadda."
-        },
-        {
-          "heading": "Hinge question",
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
           "check": {
-            "q": "What does سَيَكُونُ الْجَوُّ مُمْطِرًا غَدًا mean?",
+            "q": "'It will be cold tomorrow':",
             "options": [
-              "It will be rainy tomorrow",
-              "It was rainy yesterday",
-              "It is rainy today",
-              "It is always rainy"
+              "سَيَكُونُ الجَوُّ بَارِدٌ غَدًا",
+              "سَيَكُونُ الجَوُّ بَارِدًا غَدًا",
+              "كَانَ الجَوُّ بَارِدًا غَدًا"
             ],
-            "answer": 0,
-            "why": "سَـ marks the future, غَدًا is tomorrow and مُمْطِرًا is rainy. B uses the past, C present, D has no time word."
-          },
-          "note": "Mini-whiteboards. Ask which word is the time clue."
+            "answer": 1,
+            "why": "The predicate of كَانَ / يَكُونُ is accusative: بَارِدًا."
+          }
         }
       ],
       "practice": [
-        "Say the weather in your town today.",
-        "Say tomorrow's forecast in Arabic.",
-        "Translate: 'If it is rainy, we will stay at home.'"
+        {
+          "q": "Write a plan: if it is windy, we will read at home.",
+          "a": "إِذَا كَانَتِ الرِّيَاحُ قَوِيَّةً فَسَنَقْرَأُ فِي البَيْتِ.",
+          "mins": 2,
+          "model": "إِذَا كَانَتِ (feminine for الرِّيَاحُ).\nالرِّيَاحُ قَوِيَّةً (accusative predicate).\nفَسَنَقْرَأُ فِي البَيْتِ."
+        },
+        {
+          "q": "Translate: The temperature is twenty degrees.",
+          "a": "دَرَجَةُ الحَرَارَةِ عِشْرُونَ دَرَجَةً.",
+          "mins": 2
+        }
       ],
       "independent": [
-        "Core: write 5 sentences about the weather in your area in each season.",
-        "Extend: add temperatures and plans with إِذَا.",
-        "Stretch: write 100 words comparing the weather in Britain with an Arabic-speaking country."
+        {
+          "q": "Core (unit quiz, Forms): 1) Translate: my town is in the north of England. 2) 'There is no airport in my town'. 3) Imperative to a woman: تَنْعَطِفُ. 4) 'It will be rainy tomorrow'. 5) Correct the error: يُمْكِنُكَ أَنْ تَزُورُ المَتْحَفَ. 6) Write two sentences giving a balanced view of your town.",
+          "a": "1) تَقَعُ مَدِينَتِي فِي شَمَالِ إِنْجِلْتِرَا. 2) لَا يُوجَدُ مَطَارٌ فِي مَدِينَتِي. 3) اِنْعَطِفِي 4) سَيَكُونُ الجَوُّ مُمْطِرًا غَدًا. 5) تَزُورَ 6) For example: مِنْ نَاحِيَةٍ، مَدِينَتِي جَمِيلَةٌ، وَمِنْ نَاحِيَةٍ أُخْرَى، فِيهَا اِزْدِحَامٌ.",
+          "mins": 14,
+          "model": "Teacher does question 3 aloud: woman, so ـِي: اِنْعَطِفِي."
+        },
+        {
+          "q": "Extend: Write a weekend weather forecast for your town with two plans using إِذَا.",
+          "a": "For example: سَيَكُونُ الجَوُّ غَائِمًا يَوْمَ السَّبْتِ. إِذَا أَمْطَرَتِ السَّمَاءُ فَسَأَزُورُ المَكْتَبَةَ.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch (Group A): give the i'rab of مُمْطِرًا in سَيَكُونُ الجَوُّ مُمْطِرًا.",
+          "a": "خَبَرُ يَكُونُ مَنْصُوبٌ وَعَلَامَةُ نَصْبِهِ الفَتْحَةُ",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Write the Arabic for 'it is cold'.",
-        "Write one weather-dependent plan."
+        {
+          "q": "What is النَّشْرَةُ الجَوِّيَّةُ? A) weather forecast B) temperature C) rain",
+          "a": "A) weather forecast",
+          "mins": 1,
+          "options": [
+            "weather forecast",
+            "temperature",
+            "rain"
+          ]
+        },
+        {
+          "q": "Big question: which skill from this half term are you most confident with, and which needs work? Write one target.",
+          "a": "Pupils' own target (for example: the subjunctive after أَنْ).",
+          "mins": 2
+        }
       ],
-      "homework": "Write a 70-word weather forecast in Arabic for your region.",
-      "send": "SEND/EAL: weather symbol cards with Arabic labels. Stretch: use two conditional sentences.",
-      "covers": [
-        "2.3.1"
+      "homework": "Correct your quiz in green pen and write three new sentences using the point you got wrong.",
+      "send": "SEND: quiz with word bank and multiple choice for questions 2 and 4. EAL: weather pictures. Stretch: compare the climate of Britain and an Arab country in 60 words.",
+      "resources": [
+        "School's Pearson GCSE Arabic 2-year scheme of work, Theme 2 2.3, Spring 1 w4 (weather; unit quiz)",
+        "Portal arabic y10 lesson 34, upgraded; lesson 23 for extension reading",
+        "Unit quiz (Forms) and forecast frame (portal worksheet)"
       ],
-      "board": "Pearson Edexcel GCSE (9-1) Arabic (1AA0)",
-      "boardShort": "Edexcel GCSE 1AA0"
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "rain clouds over fields",
+          "alt": "Rain clouds over fields",
+          "for": "keywords"
+        },
+        {
+          "find": "thermometer outdoor",
+          "alt": "A thermometer (temperature)",
+          "for": "teach:1"
+        }
+      ],
+      "duration": 50
     },
     {
       "unit": "Unit 2.3: Town, region and country",
@@ -5520,6 +6236,710 @@
       ],
       "board": "Pearson Edexcel GCSE (9-1) Arabic (1AA0)",
       "boardShort": "Edexcel GCSE 1AA0"
+    },
+    {
+      "unit": "Spring 1: Local area, holiday and travel: town, region and country; holidays (2.3, 2.1)",
+      "n": 36,
+      "title": "My town and region: where it is and what it is like",
+      "bigQuestion": "How can I describe where I live so that a reader can picture it?",
+      "objectives": [
+        "To understand how to describe the location and character of a town and region in Arabic"
+      ],
+      "successCriteria": [
+        "All: say where my town is: تَقَعُ مَدِينَتِي فِي ...",
+        "Most: describe it with three adjectives and a reason",
+        "Some: compare town and region with a comparative"
+      ],
+      "crossCurricular": "Geography: location, compass points and settlement types",
+      "smsc": "Social: belonging to a local community and its masjid",
+      "keywords": [
+        {
+          "term": "مَدِينَة (madinah)",
+          "def": "town, city"
+        },
+        {
+          "term": "مِنْطَقَة (mintaqah)",
+          "def": "region, area"
+        },
+        {
+          "term": "بَلَد (balad)",
+          "def": "country"
+        },
+        {
+          "term": "تَقَعُ فِي (taqa'u fi)",
+          "def": "is located in (feminine)"
+        },
+        {
+          "term": "رِيف (rif)",
+          "def": "countryside"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If a visitor from Egypt asked what your town is like, which three words would you choose and why?",
+        "a": "Any three adjectives with reasons; today we build them in Arabic."
+      },
+      "islamicLink": {
+        "text": "Allah tells us to travel through the land and observe (al-'Ankabut 29:20). Describing places carefully is part of reflecting on His creation and human life.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'I fasted': A) صُمْتُ B) صَامْتُ",
+          "a": "A) صُمْتُ",
+          "mins": 1,
+          "options": [
+            "صُمْتُ",
+            "صَامْتُ"
+          ]
+        },
+        {
+          "q": "Say 'we visit'.",
+          "a": "نَزُورُ",
+          "mins": 1
+        },
+        {
+          "q": "Name three places in a town in Arabic.",
+          "a": "For example: مَسْجِد، مَكْتَبَة، سُوق",
+          "mins": 2
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Where is it?",
+          "table": {
+            "head": [
+              "Arabic",
+              "English"
+            ],
+            "rows": [
+              [
+                "تَقَعُ مَدِينَتِي فِي شَمَالِ إِنْجِلْتِرَا",
+                "my town is in the north of England"
+              ],
+              [
+                "فِي جَنُوبِ / شَرْقِ / غَرْبِ / وَسَطِ ...",
+                "in the south / east / west / centre of ..."
+              ],
+              [
+                "قَرِيبَةٌ مِنْ / بَعِيدَةٌ عَنْ ...",
+                "near to / far from ..."
+              ],
+              [
+                "عَاصِمَةُ بِرِيطَانِيَا لَنْدَنُ",
+                "the capital of Britain is London"
+              ]
+            ]
+          },
+          "note": "Begin with bismillah. مَدِينَة is feminine: تَقَعُ. For a masculine place (بَلَد): يَقَعُ."
+        },
+        {
+          "heading": "What is it like?",
+          "bullets": [
+            "هَادِئَة (quiet), مُزْدَحِمَة (crowded)",
+            "تَارِيخِيَّة (historic), حَدِيثَة (modern)",
+            "صِنَاعِيَّة (industrial), سِيَاحِيَّة (touristy)"
+          ],
+          "note": "All in the feminine to agree with مَدِينَة."
+        },
+        {
+          "heading": "Town and countryside",
+          "compare": {
+            "left": {
+              "title": "المَدِينَة",
+              "points": [
+                "أَكْثَرُ ازْدِحَامًا",
+                "فِيهَا مَحَلَّاتٌ كَثِيرَةٌ"
+              ]
+            },
+            "right": {
+              "title": "الرِّيف",
+              "points": [
+                "أَهْدَأُ وَأَنْظَفُ",
+                "فِيهِ حُقُولٌ وَمَزَارِعُ"
+              ]
+            },
+            "label": "compare"
+          },
+          "note": "Comparatives from Year 8: أَهْدَأُ (quieter), أَنْظَفُ (cleaner); أَكْثَرُ + noun for longer adjectives."
+        },
+        {
+          "heading": "Model: a description",
+          "model": {
+            "problem": "صِفْ مَدِينَتَكَ.",
+            "steps": [
+              "أَسْكُنُ فِي بِرْمِنْغْهَام، وَهِيَ مَدِينَةٌ كَبِيرَةٌ تَقَعُ فِي وَسَطِ إِنْجِلْتِرَا.",
+              "مَدِينَتِي حَدِيثَةٌ وَمُزْدَحِمَةٌ، وَفِيهَا مَسَاجِدُ كَثِيرَةٌ.",
+              "الرِّيفُ أَهْدَأُ مِنَ المَدِينَةِ، لٰكِنِّي أُفَضِّلُ المَدِينَةَ لِأَنَّ كُلَّ شَيْءٍ قَرِيبٌ."
+            ],
+            "answer": "Location, character, comparison and preference"
+          },
+          "note": "Note وَهِيَ to add information."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'My town is quiet':",
+            "options": [
+              "مَدِينَتِي هَادِئٌ",
+              "مَدِينَتِي هَادِئَةٌ",
+              "مَدِينَتِي أَهْدَأُ"
+            ],
+            "answer": 1,
+            "why": "مَدِينَة is feminine: هَادِئَةٌ. أَهْدَأُ means quieter."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say: Leeds is in the north of England and it is a historic city.",
+          "a": "تَقَعُ لِيدْز فِي شَمَالِ إِنْجِلْتِرَا، وَهِيَ مَدِينَةٌ تَارِيخِيَّةٌ.",
+          "mins": 2,
+          "model": "تَقَعُ (feminine, a city).\nلِيدْز فِي شَمَالِ إِنْجِلْتِرَا.\nAdd: وَهِيَ مَدِينَةٌ تَارِيخِيَّةٌ."
+        },
+        {
+          "q": "Comparative of نَظِيف?",
+          "a": "أَنْظَفُ",
+          "mins": 1
+        },
+        {
+          "q": "What is مِنْطَقَة?",
+          "a": "region, area",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write 80 words (portal response box) describing your town or region: location, three adjectives, places, a comparison with the countryside and your preference.",
+          "a": "Marked for location phrases, feminine agreement, comparison, preference with reason.",
+          "mins": 12,
+          "model": "Teacher writes a location sentence and one description sentence for a different town."
+        },
+        {
+          "q": "Extend: Translate into Arabic: My region is beautiful but the town centre is crowded at the weekend.",
+          "a": "مِنْطَقَتِي جَمِيلَةٌ لٰكِنَّ وَسَطَ المَدِينَةِ مُزْدَحِمٌ فِي نِهَايَةِ الأُسْبُوعِ.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch (Group A): explain why وَسَطَ is accusative in your translation.",
+          "a": "اِسْمُ لٰكِنَّ مَنْصُوبٌ (the noun after لٰكِنَّ is accusative)",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "'Is located in' (for a city): A) تَقَعُ فِي B) يَقَعُ فِي",
+          "a": "A) تَقَعُ فِي",
+          "mins": 1,
+          "options": [
+            "تَقَعُ فِي",
+            "يَقَعُ فِي"
+          ]
+        },
+        {
+          "q": "Big question: describe your town in one developed sentence.",
+          "a": "For example: أَسْكُنُ فِي مَدِينَةٍ هَادِئَةٍ تَقَعُ فِي جَنُوبِ إِنْجِلْتِرَا.",
+          "mins": 2
+        }
+      ],
+      "homework": "Find three facts about your town (location, population or a famous place) and write them in Arabic.",
+      "send": "SEND: compass rose with Arabic labels and adjective bank. EAL: map of the UK with English and Arabic. Stretch: use يُعْتَبَرُ (is considered): تُعْتَبَرُ مَدِينَتِي مِنْ أَجْمَلِ المُدُنِ.",
+      "resources": [
+        "School's Pearson GCSE Arabic 2-year scheme of work, Theme 2 2.3 Town, region and country, Spring 1 w1",
+        "Map of the UK and adjective bank (portal worksheet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "compass rose",
+          "alt": "A compass rose",
+          "for": "teach:1"
+        },
+        {
+          "find": "English countryside fields",
+          "alt": "The English countryside (rif)",
+          "for": "teach:3"
+        },
+        {
+          "find": "Birmingham city centre skyline",
+          "alt": "A city skyline",
+          "for": "keywords"
+        }
+      ],
+      "duration": 50
+    },
+    {
+      "unit": "Spring 1: Local area, holiday and travel: town, region and country; holidays (2.3, 2.1)",
+      "n": 37,
+      "title": "Directions in the exam: role play and the imperative explained",
+      "bigQuestion": "How is the imperative formed, and how do I use it under exam conditions?",
+      "objectives": [
+        "To understand how the imperative is formed from the present tense and use it in exam-style tasks"
+      ],
+      "successCriteria": [
+        "All: complete a 1AA0-style role play on directions",
+        "Most: form the imperative from a present verb in three steps",
+        "Some: give the grammatical ruling (بِنَاء) of an imperative using Arabic terms"
+      ],
+      "crossCurricular": "English: grammar terminology (imperative, mood)",
+      "smsc": "Cultural: the Arabic grammatical tradition and its terms",
+      "keywords": [
+        {
+          "term": "مَبْنِيّ عَلَى السُّكُونِ (mabni 'ala s-sukun)",
+          "def": "fixed with sukun (e.g. اِذْهَبْ)"
+        },
+        {
+          "term": "مَبْنِيّ عَلَى حَذْفِ النُّونِ",
+          "def": "fixed by dropping the nun (e.g. اِذْهَبُوا)"
+        },
+        {
+          "term": "هَمْزَةُ الوَصْلِ (hamzat al-wasl)",
+          "def": "the joining alif at the start of اِذْهَبْ"
+        },
+        {
+          "term": "لَا النَّاهِيَة (la n-nahiyah)",
+          "def": "the 'do not' la"
+        },
+        {
+          "term": "لَعِبُ الأَدْوَارِ (la'ib al-adwar)",
+          "def": "role play"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "تَذْهَبُ means 'you go'. How could you turn it into the order 'Go!' by removing and adding letters?",
+        "a": "Drop تَـ, the end becomes sukun, add a joining alif: اِذْهَبْ."
+      },
+      "islamicLink": {
+        "text": "The first word revealed to the Prophet ﷺ was an imperative: اِقْرَأْ, 'Read!' (al-'Alaq 96:1). It is formed exactly as we learn today.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'Go' to a woman: A) اِذْهَبِي B) اِذْهَبُوا",
+          "a": "A) اِذْهَبِي",
+          "mins": 1,
+          "options": [
+            "اِذْهَبِي",
+            "اِذْهَبُوا"
+          ]
+        },
+        {
+          "q": "Ask 'how do I get to the station?'",
+          "a": "كَيْفَ أَصِلُ إِلَى المَحَطَّةِ؟",
+          "mins": 2
+        },
+        {
+          "q": "'In front of' in Arabic?",
+          "a": "أَمَامَ",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Forming the imperative",
+          "model": {
+            "problem": "From تَذْهَبُ to اِذْهَبْ",
+            "steps": [
+              "Start with 'you' present: تَذْهَبُ",
+              "Make it jussive (sukun): تَذْهَبْ",
+              "Drop the تَـ: ذْهَبْ",
+              "Cannot start with sukun: add hamzat al-wasl: اِذْهَبْ"
+            ],
+            "answer": "اِذْهَبْ"
+          },
+          "note": "Begin with bismillah. Same steps: تَكْتُبُ → اُكْتُبْ (a dammah verb takes اُ), تَقْرَأُ → اِقْرَأْ."
+        },
+        {
+          "heading": "Its ruling (for Group A)",
+          "table": {
+            "head": [
+              "Imperative",
+              "Ruling (بِنَاء)"
+            ],
+            "rows": [
+              [
+                "اِذْهَبْ",
+                "مَبْنِيٌّ عَلَى السُّكُونِ"
+              ],
+              [
+                "اِذْهَبِي / اِذْهَبُوا",
+                "مَبْنِيٌّ عَلَى حَذْفِ النُّونِ"
+              ],
+              [
+                "اِمْشِ",
+                "مَبْنِيٌّ عَلَى حَذْفِ حَرْفِ العِلَّةِ"
+              ]
+            ]
+          },
+          "note": "The imperative is always مَبْنِيّ (fixed), never مُعْرَب. 4AA1 Paper 1 grammar questions use these terms."
+        },
+        {
+          "heading": "'Do not': لَا النَّاهِيَة",
+          "bullets": [
+            "لَا + jussive: لَا تَذْهَبْ (do not go)",
+            "لَا تَنْعَطِفِي يَمِينًا (to a woman)",
+            "لَا تَتَأَخَّرُوا (do not be late, to a group)"
+          ],
+          "note": "The verb is مَجْزُوم after لَا النَّاهِيَة."
+        },
+        {
+          "heading": "Role play (Group B, 1AA0 style)",
+          "bullets": [
+            "You are a tourist. Ask: the way to the museum",
+            "Ask: how far it is",
+            "Respond to the unexpected question (!) and say thank you"
+          ],
+          "note": "Teacher plays the local. Unexpected question: مَاذَا سَتَفْعَلُ فِي المَتْحَفِ؟ Pupils answer in the future."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "The imperative of تَكْتُبُ is:",
+            "options": [
+              "اِكْتُبْ",
+              "اُكْتُبْ",
+              "كْتُبْ"
+            ],
+            "answer": 1,
+            "why": "The middle vowel of يَكْتُبُ is dammah, so the joining alif takes dammah: اُكْتُبْ."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Form the imperative (to a man) of تَجْلِسُ.",
+          "a": "اِجْلِسْ",
+          "mins": 2,
+          "model": "تَجْلِسُ → jussive تَجْلِسْ.\nDrop تَـ: جْلِسْ.\nAdd hamzat al-wasl with kasrah: اِجْلِسْ."
+        },
+        {
+          "q": "Say 'do not cross the road' (تَعْبُرُ) to a man.",
+          "a": "لَا تَعْبُرِ الشَّارِعَ.",
+          "mins": 2
+        },
+        {
+          "q": "Ruling of اِنْعَطِفُوا?",
+          "a": "مَبْنِيٌّ عَلَى حَذْفِ النُّونِ",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Exam-style grammar (portal quiz): form the imperative to a man and a woman of تَدْخُلُ، تَفْتَحُ، تَقْرَأُ، تَمْشِي.",
+          "a": "اُدْخُلْ / اُدْخُلِي؛ اِفْتَحْ / اِفْتَحِي؛ اِقْرَأْ / اِقْرَئِي؛ اِمْشِ / اِمْشِي",
+          "mins": 8,
+          "model": "Teacher does تَدْخُلُ: dammah verb, so اُدْخُلْ; feminine اُدْخُلِي."
+        },
+        {
+          "q": "Extend (Group B): perform the role play in a breakout pair, then swap roles; record (audio only) for teacher feedback.",
+          "a": "Role play with all bullet points covered and the unexpected question answered",
+          "mins": 6
+        },
+        {
+          "q": "Stretch (Group A): give the full i'rab of اِقْرَأْ in اِقْرَأِ النَّصَّ.",
+          "a": "فِعْلُ أَمْرٍ مَبْنِيٌّ عَلَى السُّكُونِ، وَحُرِّكَ بِالكَسْرِ لِالْتِقَاءِ السَّاكِنَيْنِ؛ وَالفَاعِلُ ضَمِيرٌ مُسْتَتِرٌ تَقْدِيرُهُ أَنْتَ",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "The imperative is always: A) مَبْنِيّ B) مُعْرَب",
+          "a": "A) مَبْنِيّ",
+          "mins": 1,
+          "options": [
+            "مَبْنِيّ",
+            "مُعْرَب"
+          ]
+        },
+        {
+          "q": "Big question: how is the imperative formed?",
+          "a": "From the jussive 'you' present: drop the تَـ and add a joining alif if the word starts with sukun.",
+          "mins": 2
+        }
+      ],
+      "homework": "Group A: form and give the ruling of ten imperatives from a list. Group B: learn your role play answers.",
+      "send": "SEND: four-step imperative strip. EAL: English command examples. Stretch: imperative of hollow verbs: قُلْ، زُرْ، نَمْ.",
+      "resources": [
+        "School's Pearson GCSE Arabic 2-year scheme of work, Theme 2 2.2, Spring 1 w2; Arabic exam rubrics",
+        "School's 1AA0 Speaking and Writing revision booklet: role play (Group B)",
+        "Imperative grammar sheet and role play card (portal worksheet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Iqra calligraphy",
+          "alt": "Iqra' in Arabic calligraphy",
+          "for": "hook"
+        },
+        {
+          "find": "museum entrance",
+          "alt": "A museum entrance",
+          "for": "teach:4"
+        }
+      ],
+      "duration": 50
+    },
+    {
+      "unit": "Spring 1: Local area, holiday and travel: town, region and country; holidays (2.3, 2.1)",
+      "n": 38,
+      "title": "My town: good points and problems; a balanced view",
+      "bigQuestion": "How do I write a balanced argument about where I live and suggest improvements?",
+      "objectives": [
+        "To understand how to present advantages, problems and solutions about a town in a balanced paragraph"
+      ],
+      "successCriteria": [
+        "All: name three advantages and three problems",
+        "Most: link them with مِنْ نَاحِيَةٍ ... وَمِنْ نَاحِيَةٍ أُخْرَى",
+        "Some: suggest a solution with يَجِبُ أَنْ / عَلَى ... أَنْ"
+      ],
+      "crossCurricular": "Geography: urban problems: congestion, pollution and housing",
+      "smsc": "Moral: responsibility for our community and environment",
+      "keywords": [
+        {
+          "term": "مُشْكِلَة (mushkilah)",
+          "def": "a problem"
+        },
+        {
+          "term": "اِزْدِحَام (izdiham)",
+          "def": "congestion, crowding"
+        },
+        {
+          "term": "تَلَوُّث (talawwuth)",
+          "def": "pollution"
+        },
+        {
+          "term": "مِنْ نَاحِيَةٍ أُخْرَى (min nahiyatin ukhra)",
+          "def": "on the other hand"
+        },
+        {
+          "term": "يَجِبُ أَنْ (yajibu an)",
+          "def": "it is necessary to, should"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What one change would make your town better for young people? Who should make it happen?",
+        "a": "Any answer with a reason; today we argue it in Arabic."
+      },
+      "islamicLink": {
+        "text": "Allah warns that corruption has appeared on land and sea because of what people's hands have earned (ar-Rum 30:41). Caring for our towns and environment is part of being khalifah on earth.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'Do not go': A) لَا تَذْهَبْ B) لَا تَذْهَبُ",
+          "a": "A) لَا تَذْهَبْ",
+          "mins": 1,
+          "options": [
+            "لَا تَذْهَبْ",
+            "لَا تَذْهَبُ"
+          ]
+        },
+        {
+          "q": "Imperative of تَكْتُبُ (to a man)?",
+          "a": "اُكْتُبْ",
+          "mins": 1
+        },
+        {
+          "q": "'There is a museum in my town'?",
+          "a": "يُوجَدُ فِي مَدِينَتِي مَتْحَفٌ",
+          "mins": 2
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Good points and problems",
+          "compare": {
+            "left": {
+              "title": "إِيجَابِيَّات (positives)",
+              "points": [
+                "المَوَاصَلَاتُ جَيِّدَةٌ",
+                "فِيهَا مَسَاجِدُ وَمَدَارِسُ كَثِيرَةٌ",
+                "النَّاسُ لُطَفَاءُ"
+              ]
+            },
+            "right": {
+              "title": "سَلْبِيَّات (negatives)",
+              "points": [
+                "الاِزْدِحَامُ فِي الشَّوَارِعِ",
+                "التَّلَوُّثُ وَالضَّوْضَاءُ",
+                "غَلَاءُ الأَسْعَارِ"
+              ]
+            },
+            "label": "but"
+          },
+          "note": "Begin with bismillah. Pupils add one of each for their own town."
+        },
+        {
+          "heading": "Balancing phrases",
+          "table": {
+            "head": [
+              "Arabic",
+              "English"
+            ],
+            "rows": [
+              [
+                "مِنْ نَاحِيَةٍ ...",
+                "on the one hand ..."
+              ],
+              [
+                "وَمِنْ نَاحِيَةٍ أُخْرَى ...",
+                "on the other hand ..."
+              ],
+              [
+                "بِالرَّغْمِ مِنْ ...",
+                "despite ..."
+              ],
+              [
+                "فِي رَأْيِي، يَجِبُ أَنْ ...",
+                "in my opinion, ... should ..."
+              ]
+            ]
+          },
+          "note": "These phrases score for range in 1AA0 Paper 4 and 4AA1 Paper 2."
+        },
+        {
+          "heading": "Suggesting solutions",
+          "bullets": [
+            "يَجِبُ أَنْ نَسْتَخْدِمَ المَوَاصَلَاتِ العَامَّةَ",
+            "عَلَى البَلَدِيَّةِ أَنْ تَبْنِيَ مَرَاكِزَ لِلشَّبَابِ",
+            "مِنَ المُهِمِّ أَنْ نُحَافِظَ عَلَى نَظَافَةِ الشَّوَارِعِ"
+          ],
+          "note": "All followed by أَنْ + subjunctive (fathah)."
+        },
+        {
+          "heading": "Model: a balanced paragraph",
+          "model": {
+            "problem": "مَا رَأْيُكَ فِي مَدِينَتِكَ؟",
+            "steps": [
+              "مِنْ نَاحِيَةٍ، مَدِينَتِي حَيَوِيَّةٌ وَالمَوَاصَلَاتُ فِيهَا جَيِّدَةٌ.",
+              "وَمِنْ نَاحِيَةٍ أُخْرَى، هُنَاكَ اِزْدِحَامٌ وَتَلَوُّثٌ فِي وَسَطِ المَدِينَةِ.",
+              "فِي رَأْيِي، يَجِبُ عَلَى البَلَدِيَّةِ أَنْ تَزْرَعَ أَشْجَارًا أَكْثَرَ.",
+              "بِالرَّغْمِ مِنْ ذٰلِكَ، أُحِبُّ مَدِينَتِي لِأَنَّ أُسْرَتِي هُنَا."
+            ],
+            "answer": "Positive, negative, solution, conclusion"
+          },
+          "note": "Label the four moves."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'On the other hand':",
+            "options": [
+              "مِنْ نَاحِيَةٍ أُخْرَى",
+              "بِالرَّغْمِ مِنْ",
+              "يَجِبُ أَنْ"
+            ],
+            "answer": 0,
+            "why": "مِنْ نَاحِيَةٍ أُخْرَى = on the other hand."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write a solution to traffic congestion with يَجِبُ أَنْ.",
+          "a": "For example: يَجِبُ أَنْ نَمْشِيَ أَوْ نَرْكَبَ الدَّرَّاجَاتِ بَدَلًا مِنَ السَّيَّارَاتِ.",
+          "mins": 2,
+          "model": "Start: يَجِبُ أَنْ.\nVerb in the subjunctive: نَمْشِيَ (fathah).\nAlternative: بَدَلًا مِنَ السَّيَّارَاتِ."
+        },
+        {
+          "q": "Translate: Despite the noise, I like my town.",
+          "a": "بِالرَّغْمِ مِنَ الضَّوْضَاءِ، أُحِبُّ مَدِينَتِي.",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write 100 to 120 words (portal response box): مَدِينَتِي: إِيجَابِيَّاتٌ وَسَلْبِيَّاتٌ. Include two positives, two problems, a solution and a conclusion.",
+          "a": "Marked as a Paper 4 / Paper 2 style task: content, range (balancing phrases, subjunctive), accuracy.",
+          "mins": 13,
+          "model": "Teacher plans aloud with the four moves and writes the opening sentence."
+        },
+        {
+          "q": "Extend (Group A, 4AA1 summary skill): read the model paragraph and summarise it in 25 Arabic words in your own words.",
+          "a": "For example: يَرَى الكَاتِبُ أَنَّ مَدِينَتَهُ حَيَوِيَّةٌ لٰكِنَّ فِيهَا اِزْدِحَامًا وَتَلَوُّثًا، وَيَقْتَرِحُ زِرَاعَةَ الأَشْجَارِ، وَيُحِبُّهَا لِأَنَّ أُسْرَتَهُ هُنَاكَ.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Add a sentence in the future about how your town will be in ten years.",
+          "a": "For example: بَعْدَ عَشْرِ سَنَوَاتٍ سَتَكُونُ مَدِينَتِي أَنْظَفَ إِنْ شَاءَ اللّٰهُ.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "What is تَلَوُّث? A) pollution B) congestion C) noise",
+          "a": "A) pollution",
+          "mins": 1,
+          "options": [
+            "pollution",
+            "congestion",
+            "noise"
+          ]
+        },
+        {
+          "q": "Big question: what makes an argument balanced?",
+          "a": "Both positives and negatives, linked with balancing phrases, then a reasoned conclusion or solution.",
+          "mins": 1
+        }
+      ],
+      "homework": "Redraft your balanced paragraph (Draft 2) using the feedback; underline every subjunctive verb.",
+      "send": "SEND: four-box writing frame. EAL: positives and negatives word bank. Stretch: add a conditional: لَوْ كُنْتُ رَئِيسَ البَلَدِيَّةِ لَبَنَيْتُ ...",
+      "resources": [
+        "School's Pearson GCSE Arabic 2-year scheme of work, Theme 2 2.3, Spring 1 w4 (positive aspects and problems of my town)",
+        "Balanced writing frame (portal worksheet)",
+        "Year 10 pack: Group A summary practice (w6 extension)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "traffic jam city",
+          "alt": "A traffic jam (izdiham)",
+          "for": "keywords"
+        },
+        {
+          "find": "cyclists bike lane",
+          "alt": "A bike lane",
+          "for": "teach:3"
+        },
+        {
+          "find": "trees planted on city street",
+          "alt": "Trees on a city street",
+          "for": "hook"
+        }
+      ],
+      "duration": 50
     }
   ]
 }
