@@ -72,6 +72,10 @@ verify_jwt = false
 [functions.open-evening-book]
 verify_jwt = false
 
+# Public job application (Careers page): candidates are not signed in.
+[functions.careers-apply]
+verify_jwt = false
+
 [functions.open-evening-reminders]
 verify_jwt = false
 

@@ -7,7 +7,7 @@
   "code": "1AA0",
   "specVersion": "Issue 5, October 2022 (read from the Pearson PDF)",
   "status": "Provisional",
-  "statusNote": "Papers, durations, marks, weightings, tiers and the five themes with all sub-topics were read from Pearson's Issue 5 specification PDF. Assessment-objective weightings, the grammar list (Appendix 2) and vocabulary list (Appendix 3) could not be read, and no end date was found on the pages opened, so status is Provisional. Year placement is a recommended sequence.",
+  "statusNote": "Papers, durations, marks, weightings, tiers, assessment objectives, the five themes with all sub-topics and the grammar list (Appendix 2) were read from Pearson's Issue 5 specification PDF. The vocabulary list (Appendix 3) was not read in full, so status is Provisional. Teaching order and year placement follow the school's Pearson GCSE Arabic 2-year scheme of work: Year 10 Theme 1 (Autumn), Theme 2 starting with Town, region and country (Spring), Theme 3 School (Summer); Year 11 Theme 4 (Autumn 1), Theme 5 (Autumn 2 to Spring 1), then revision.",
   "sources": [
     {
       "title": "Pearson Edexcel GCSE Arabic (2017): qualification page",
@@ -20,6 +20,10 @@
     {
       "title": "Pearson GCSE Arabic sample assessment materials, Issue 3 (2022)",
       "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/Arabic/2017/specification-and-sample-assessments/sams-gcse-arabic-2022-issue-3.pdf"
+    },
+    {
+      "title": "Pearson Edexcel GCSE Summer 2027 examination timetable (final), copy hosted by Welland Park Academy",
+      "url": "https://www.wellandparkacademy.co.uk/assets/Documents/Exams/Pearson-gcse-summer-2027-final.pdf"
     }
   ],
   "years": "Years 10 to 11",
@@ -64,7 +68,7 @@
   ],
   "nonExam": "Speaking (Paper 2) is conducted in the centre by teachers, recorded and marked externally. No coursework.",
   "examEntry": {
-    "summary": "Taught from the UK GCSE specification above; pupils are entered for Pearson Edexcel International GCSE (9-1) Arabic (First Language) (4AA1).",
+    "summary": "Taught from the UK GCSE specification above. Default entry: Pearson Edexcel International GCSE Arabic (First Language) 4AA1. Some pupils sit GCSE 1AA0 itself, as Tarbiyyah Secondary's boys do in 2027 with the school's Speaking and Writing revision booklet.",
     "board": "Pearson Edexcel",
     "qualification": "International GCSE (9-1) Arabic (First Language)",
     "code": "4AA1",
@@ -78,7 +82,9 @@
       "It asks more than 1AA0 in reading and grammar: longer authentic texts, a summary task, and grammar questions that use grammatical terminology. Add explicit grammar teaching (with the Arabic terms), summary writing and extended writing to the 1AA0 course from Year 10.",
       "1AA0 listening, speaking and translation are not examined in 4AA1. Keep them in lessons for language development, but weight Year 11 towards reading, grammar and writing.",
       "The 4AA1 topics (youth, education, media, culture, sport and leisure, travel and tourism, work, environment, health, technology) overlap with the 1AA0 themes.",
-      "Confirm the entry for each pupil by the end of Year 10: a pupil far from first-language level may do better in 1AA0, if a centre will run its speaking test."
+      "Both groups follow the same Year 10 to 11 theme order from the school's GCSE scheme of work; 4AA1 entrants add summary and grammar work, 1AA0 entrants add listening and speaking practice.",
+      "1AA0 summer 2027 (Pearson final timetable): Paper 2 speaking in the centre's April to May window; Papers 1 and 3 Mon 24 May (afternoon); Paper 4 Mon 7 Jun (afternoon).",
+      "TO CONFIRM: which TGA pupils are entered for 1AA0 and at which tier, and the centre for each 1AA0 speaking test."
     ],
     "regulation": "International GCSEs are not regulated by Ofqual. Pearson describes them as generally equivalent to GCSEs; sixth forms and universities set their own entry rules.",
     "checked": "Codes, papers and series checked on 25 October 2026 against the Pearson specification PDFs listed in sources.",
@@ -99,28 +105,29 @@
         "title": "British Council: school exams for private candidates (Pearson Edexcel International GCSEs)",
         "url": "https://internationalschools.britishcouncil.org/students/private-candidates"
       }
-    ]
+    ],
+    "choice": "Group A (default): 4AA1, written papers only, January and June series. Group B: GCSE 1AA0 (four skills, Foundation or Higher), which suits pupils whose Arabic is not at first-language level and needs a centre that conducts the speaking test; entry is decided per pupil by July of Year 10."
   },
   "aos": [
     {
-      "code": "Listening",
-      "desc": "Understand and respond to spoken Arabic (Paper 1). AO codes and weightings were not read.",
-      "weight": "Paper weighting 25%"
+      "code": "AO1",
+      "desc": "Listening: understand and respond to different types of spoken language (Paper 1).",
+      "weight": "25%"
     },
     {
-      "code": "Speaking",
-      "desc": "Communicate and interact in spoken Arabic (Paper 2). AO codes and weightings were not read.",
-      "weight": "Paper weighting 25%"
+      "code": "AO2",
+      "desc": "Speaking: communicate and interact effectively in speech (Paper 2).",
+      "weight": "25%"
     },
     {
-      "code": "Reading",
-      "desc": "Understand written Arabic, including translation into English (Paper 3). AO codes and weightings were not read.",
-      "weight": "Paper weighting 25%"
+      "code": "AO3",
+      "desc": "Reading: understand and respond to different types of written language (Paper 3).",
+      "weight": "25%"
     },
     {
-      "code": "Writing",
-      "desc": "Write accurately in Arabic, including translation into Arabic (Paper 4). AO codes and weightings were not read.",
-      "weight": "Paper weighting 25%"
+      "code": "AO4",
+      "desc": "Writing: communicate in writing (Paper 4).",
+      "weight": "25%"
     }
   ],
   "units": [
@@ -138,10 +145,14 @@
         "Study in the context of both the home country and Arabic-speaking communities."
       ],
       "keyTerms": [
-        "أنا (I)",
-        "صديق (friend)",
-        "عائلة (family)"
-      ]
+        "أَنَا (ana, I)",
+        "صَدِيق (sadiq, friend)",
+        "عَائِلَة ('a'ilah, family)",
+        "عِنْدِي ('indi, I have)",
+        "لَدَيَّ (ladayya, I have)"
+      ],
+      "halfTerm": "autumn1",
+      "foundingYear": "Year 10 Autumn 1 (school GCSE scheme). 2027 Year 10: essentials in the bridge week of 4 Jan; rest in Autumn 2027."
     },
     {
       "ref": "1.2",
@@ -156,10 +167,13 @@
         "Social media and technology: use, advantages and disadvantages."
       ],
       "keyTerms": [
-        "طعام (food)",
-        "تسوق (shopping)",
-        "تكنولوجيا (technology)"
-      ]
+        "طَعَام (ta'am, food)",
+        "تَسَوُّق (tasawwuq, shopping)",
+        "تِكْنُولُوجْيَا (tiknulujya, technology)",
+        "كُلَّ يَوْمٍ (kulla yawm, every day)"
+      ],
+      "halfTerm": "autumn1",
+      "foundingYear": "Year 10 Autumn 1 to 2. 2027 Year 10: essentials in the bridge week of 11 Jan; rest in Autumn 2027."
     },
     {
       "ref": "1.3",
@@ -174,10 +188,13 @@
         "Film and television."
       ],
       "keyTerms": [
-        "عيد (festival, Eid)",
-        "رياضة (sport)",
-        "موسيقى (music)"
-      ]
+        "عِيدُ الفِطْرِ ('id al-fitr)",
+        "عِيدُ الأَضْحَى ('id al-adha)",
+        "رِيَاضَة (riyadah, sport)",
+        "قِرَاءَة (qira'ah, reading)"
+      ],
+      "halfTerm": "autumn2",
+      "foundingYear": "Year 10 Autumn 2. 2027 Year 10: Eid and reading essentials in the bridge week of 11 Jan; rest in Autumn 2027."
     },
     {
       "ref": "2.1",
@@ -191,9 +208,12 @@
         "Holiday destinations."
       ],
       "keyTerms": [
-        "عطلة (holiday)",
-        "سفر (travel)"
-      ]
+        "عُطْلَة ('utlah, holiday)",
+        "سَافَرْتُ (safartu, I travelled)",
+        "عُمْرَة ('umrah)"
+      ],
+      "halfTerm": "spring1",
+      "foundingYear": "Year 10 Spring 1 to 2, after 2.3. Taught in 2027 (Spring 2)."
     },
     {
       "ref": "2.2",
@@ -208,32 +228,40 @@
         "Eating out and shopping."
       ],
       "keyTerms": [
-        "فندق (hotel)",
-        "مطعم (restaurant)"
-      ]
+        "فُنْدُق (funduq, hotel)",
+        "مَطْعَم (mat'am, restaurant)",
+        "شَكْوَى (shakwa, complaint)",
+        "اِذْهَبْ (idhhab, go!)"
+      ],
+      "halfTerm": "spring1",
+      "foundingYear": "Year 10 Spring 1 to 2. Taught in 2027 (Spring 1 directions, Spring 2 travel)."
     },
     {
       "ref": "2.3",
       "title": "Town, region and country",
       "paper": "Papers 1 to 4, Theme 2: Local area, holiday and travel",
       "year": "Y10",
-      "term": "Summer",
+      "term": "Spring",
       "points": [
         "Weather.",
         "Places to see.",
         "Things to do."
       ],
       "keyTerms": [
-        "مدينة (city, town)",
-        "طقس (weather)"
-      ]
+        "مَدِينَة (madinah, town)",
+        "مِنْطَقَة (mintaqah, region)",
+        "طَقْس (taqs, weather)",
+        "رِيف (rif, countryside)"
+      ],
+      "halfTerm": "spring1",
+      "foundingYear": "Year 10 Spring 1, first unit of Theme 2. Taught in 2027 (18 Jan to 12 Feb)."
     },
     {
       "ref": "3.1",
       "title": "What school is like",
       "paper": "Papers 1 to 4, Theme 3: School",
-      "year": "Y11",
-      "term": "Autumn",
+      "year": "Y10",
+      "term": "Summer",
       "points": [
         "School types and the school day.",
         "Subjects.",
@@ -241,100 +269,127 @@
         "Celebrating success."
       ],
       "keyTerms": [
-        "مدرسة (school)",
-        "مادة (subject)"
-      ]
+        "مَدْرَسَة (madrasah, school)",
+        "مَادَّة (maddah, subject)",
+        "زِيّ مَدْرَسِيّ (ziyy madrasiyy, uniform)",
+        "نَجَاح (najah, success)"
+      ],
+      "halfTerm": "summer1",
+      "foundingYear": "Year 10 Summer 1 to 2. Taught in 2027 (26 Apr to 21 Jun)."
     },
     {
       "ref": "3.2",
       "title": "School activities",
       "paper": "Papers 1 to 4, Theme 3: School",
-      "year": "Y11",
-      "term": "Autumn",
+      "year": "Y10",
+      "term": "Summer",
       "points": [
         "School trips.",
         "Events and exchanges."
       ],
       "keyTerms": [
-        "رحلة (trip)",
-        "نشاط (activity)"
-      ]
+        "نَشَاط (nashat, activity)",
+        "رِحْلَة (rihlah, trip)",
+        "مُسَابَقَة (musabaqah, competition)",
+        "تَبَادُل (tabadul, exchange)"
+      ],
+      "halfTerm": "summer2",
+      "foundingYear": "Year 10 Summer 2. Taught in 2027 (14 and 21 Jun); exchanges as reading vocabulary only."
     },
     {
       "ref": "4.1",
       "title": "Using languages beyond the classroom",
       "paper": "Papers 1 to 4, Theme 4: Future aspirations, study and work",
       "year": "Y11",
-      "term": "Spring",
+      "term": "Autumn",
       "points": [
         "Forming relationships through language.",
         "Travel.",
         "Employment."
       ],
       "keyTerms": [
-        "لغة (language)"
-      ]
+        "لُغَة (lughah, language)",
+        "سَفَر (safar, travel)",
+        "تَوْظِيف (tawzif, employment)"
+      ],
+      "halfTerm": "autumn1",
+      "foundingYear": "Year 11 Autumn 1. 2027 Year 11: revised 22 Mar."
     },
     {
       "ref": "4.2",
       "title": "Ambitions",
       "paper": "Papers 1 to 4, Theme 4: Future aspirations, study and work",
       "year": "Y11",
-      "term": "Spring",
+      "term": "Autumn",
       "points": [
         "Further study.",
         "Volunteering.",
         "Training."
       ],
       "keyTerms": [
-        "طموح (ambition)",
-        "تطوع (volunteering)"
-      ]
+        "طُمُوح (tumuh, ambition)",
+        "تَطَوُّع (tatawwu', volunteering)",
+        "تَدْرِيب (tadrib, training)"
+      ],
+      "halfTerm": "autumn1",
+      "foundingYear": "Year 11 Autumn 1. 2027 Year 11: revised 22 Mar."
     },
     {
       "ref": "4.3",
       "title": "Work",
       "paper": "Papers 1 to 4, Theme 4: Future aspirations, study and work",
       "year": "Y11",
-      "term": "Spring",
+      "term": "Autumn",
       "points": [
         "Jobs.",
         "Careers and professions."
       ],
       "keyTerms": [
-        "مهنة (profession)",
-        "عمل (work)"
-      ]
+        "مِهْنَة (mihnah, profession)",
+        "عَمَل ('amal, work)",
+        "سِيرَة ذَاتِيَّة (sirah dhatiyyah, CV)",
+        "رِسَالَة رَسْمِيَّة (risalah rasmiyyah, formal letter)"
+      ],
+      "halfTerm": "autumn1",
+      "foundingYear": "Year 11 Autumn 1, first unit of Theme 4. 2027 Year 11: revised 22 Mar."
     },
     {
       "ref": "5.1",
       "title": "Bringing the world together",
       "paper": "Papers 1 to 4, Theme 5: International and global dimension",
       "year": "Y11",
-      "term": "Summer",
+      "term": "Autumn",
       "points": [
         "Sports events.",
         "Music events.",
         "Campaigns and good causes."
       ],
       "keyTerms": [
-        "حملة (campaign)"
-      ]
+        "حَمْلَة (hamlah, campaign)",
+        "صَدَقَة (sadaqah, charity)",
+        "جَمْعِيَّة خَيْرِيَّة (jam'iyyah khayriyyah, charity organisation)"
+      ],
+      "halfTerm": "autumn2",
+      "foundingYear": "Year 11 Autumn 2 to Spring 1. 2027 Year 11: revised 31 Mar; music events as reading vocabulary only."
     },
     {
       "ref": "5.2",
       "title": "Environmental issues",
       "paper": "Papers 1 to 4, Theme 5: International and global dimension",
       "year": "Y11",
-      "term": "Summer",
+      "term": "Autumn",
       "points": [
         "Being 'green'.",
         "Access to natural resources."
       ],
       "keyTerms": [
-        "بيئة (environment)",
-        "موارد (resources)"
-      ]
+        "بِيئَة (bi'ah, environment)",
+        "تَلَوُّث (talawwuth, pollution)",
+        "إِعَادَةُ التَّدْوِيرِ (i'adat at-tadwir, recycling)",
+        "مَوَارِد (mawarid, resources)"
+      ],
+      "halfTerm": "autumn2",
+      "foundingYear": "Year 11 Autumn 2. 2027 Year 11: revised 31 Mar."
     }
   ],
   "commandWords": [
@@ -350,36 +405,38 @@
     "Writing to specified word counts and translating into Arabic",
     "Using present, past and (Higher) more complex structures accurately",
     "Working without dictionaries in every paper",
-    "Preparing for an unpredictable question in speaking tasks"
+    "Preparing for an unpredictable question in speaking tasks",
+    "Understanding the Arabic rubrics (instructions) used on the exam papers",
+    "Summary of a third text and discrete grammar with Arabic terms (for 4AA1 entrants)"
   ],
   "prerequisites": [
     {
-      "from": "KS3 Arabic Y7: meeting people, my family, free time",
+      "from": "KS3 Arabic Y8 About me, My family; Y9 What does he look like?",
       "to": "1.1"
     },
     {
-      "from": "KS3 Arabic Y8: home, time, daily routine, past tense",
+      "from": "KS3 Arabic Y8 At home; Y9 Food; Y9 Clothes (shopping)",
       "to": "1.2"
     },
     {
-      "from": "KS3 Arabic Y9: future tense with sa- and sawfa, plans, invitations",
-      "to": "2.1"
+      "from": "KS3 Arabic Y8 Hobbies (likes, opinions with because)",
+      "to": "1.3"
     },
     {
-      "from": "KS3 Arabic Y9: food and shopping, prices",
+      "from": "KS3 Arabic Y9 My town (directions, imperative, weather)",
+      "to": "2.3"
+    },
+    {
+      "from": "KS3 Arabic Y9 Transport (bi-, comparatives, plurals)",
       "to": "2.2"
     },
     {
-      "from": "KS3 Arabic Y9: my school and opinions",
+      "from": "KS3 Arabic Y9 At school (opinions, informal email)",
       "to": "3.1"
     },
     {
-      "from": "KS3 Arabic Y9: plans for the future",
-      "to": "4.2"
-    },
-    {
-      "from": "KS3 Arabic Y8 to Y9: prepositions, adjectives, plurals and the dual",
-      "to": "2.3"
+      "from": "KS3 Arabic Y8 My job (jobs, workplaces, future aspirations)",
+      "to": "4.3"
     }
   ],
   "links": [
@@ -435,16 +492,14 @@
       "with": "English and media studies",
       "topic": "Film, media and performance",
       "unitRef": "1.3",
-      "how": "Listening to Arabic news, documentaries and drama builds listening skills and cultural knowledge; music vocabulary is learned for recognition in exam texts only."
+      "how": "Film and television vocabulary is learned for recognition in exam texts and for giving opinions; no films or music are used in lessons."
     }
   ],
   "gaps": [
-    "Assessment objective codes and weightings were not read (the spec contents page places them near page 62).",
-    "Grammar list (Appendix 2) and vocabulary list (Appendix 3) were not read. The spec says the vocabulary lists are a non-exhaustive guide; no word count was seen.",
-    "Whether the qualification is still current for teaching in 2026-27 is unconfirmed. The pages opened give no end or withdrawal date, and Pearson exam materials dated August 2025 appeared in search results. Check with Pearson.",
-    "Papers 1 to 4 detail for the Higher tier was read from the specification only; sample assessment materials were read only for Foundation Papers 1 and 2.",
-    "The school's Drive holds a Pearson 2017 GCSE Arabic scheme of work. It was not opened for this file.",
-    "Year placement follows the school's Year 10 lesson content (Theme 1 in Y10) and is otherwise a recommended sequence; the school has no Year 11 Arabic lesson file yet.",
-    "Command-word taxonomy, mark grids for Paper 4 and the dialect policy were not recorded. The spec refers only to standard Arabic."
-  ]
+    "The vocabulary list (Appendix 3) was not read in full; the specification says it is a non-exhaustive guide.",
+    "The exact 1AA0 speaking window dates for 2027 are set by each centre within April to May; TO CONFIRM per centre.",
+    "The 2027 1AA0 written paper dates were read from a school-hosted copy of Pearson's final GCSE timetable; Pearson's own copy could not be downloaded.",
+    "Command-word taxonomy and the Paper 4 mark grids were not recorded. The spec refers only to standard Arabic."
+  ],
+  "contextNote": "The specification names topics that the house rules do not teach as activities: music, film and television (1.3), school trips, events and exchanges (3.2) and music events (5.1). They are taught as vocabulary for reading and listening texts and for stating a preference; festivals (1.3) are taught through Ramadan, Eid al-Fitr and Eid al-Adha, and relationships (1.1) through family and friends only. TO CONFIRM: this treatment of the spec topics with the Headteacher."
 }

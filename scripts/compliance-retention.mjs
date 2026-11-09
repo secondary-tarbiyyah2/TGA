@@ -143,6 +143,42 @@ const summary = [];
   }
 }
 
+// job_applications (0182): unsuccessful and withdrawn applications, their
+// review timeline (cascade) and their files go 6 months after the decision.
+// Applications still in progress, offered or hired are never touched.
+{
+  const cutoff = new Date(Date.now() - 183 * 86400000).toISOString();
+  const { data: old, error: listError } = await supabase
+    .from("job_applications")
+    .select("id, cv_path, documents")
+    .in("status", ["unsuccessful", "withdrawn"])
+    .lt("status_changed_at", cutoff);
+  if (listError) {
+    console.error("job_applications listing failed:", listError.message);
+  } else if (old && old.length > 0) {
+    const paths = old.flatMap((a) => [a.cv_path, ...(Array.isArray(a.documents) ? a.documents.map((d) => d?.path) : [])].filter(Boolean));
+    if (paths.length > 0) {
+      const { error: rmError } = await supabase.storage.from("recruitment-documents").remove(paths);
+      if (rmError) console.error("recruitment-documents cleanup failed:", rmError.message);
+    }
+    const { error, count } = await supabase
+      .from("job_applications")
+      .delete({ count: "exact" })
+      .in(
+        "id",
+        old.map((a) => a.id),
+      );
+    if (error) {
+      console.error("job_applications cleanup failed:", error.message);
+    } else {
+      await logRun("Unsuccessful job applications", "delete", count || 0, `${paths.length} file(s) removed`);
+      summary.push(`Unsuccessful job applications: deleted ${count || 0} application(s) decided more than 6 months ago, with ${paths.length} file(s).`);
+    }
+  } else {
+    await logRun("Unsuccessful job applications", "delete", 0, null);
+  }
+}
+
 console.log(summary.join("\n") || "Nothing to report.");
 if (process.env.GITHUB_STEP_SUMMARY) {
   await import("node:fs/promises").then((fs) =>

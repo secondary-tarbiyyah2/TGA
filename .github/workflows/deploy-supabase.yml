@@ -387,6 +387,12 @@ jobs:
           # reminders: hourly scheduled job, requires the service-role key.
           supabase functions deploy policy-file --yes --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
           supabase functions deploy open-evening-book --yes --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          # careers-apply: the public job application form (honeypot, minimum
+          # fill-in time, rate limit and file checks inside).
+          supabase functions deploy careers-apply --yes --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
+          # recruitment-screen: staff-only AI screening of job applications
+          # (Headteacher/Admin, re-checked inside; JWT verified).
+          supabase functions deploy recruitment-screen --yes --project-ref "${{ steps.project.outputs.ref }}"
           supabase functions deploy entry-assessment --yes --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
           supabase functions deploy open-evening-reminders --yes --project-ref "${{ steps.project.outputs.ref }}" --no-verify-jwt
           # teams-sync: Microsoft Teams meetings + attendance for lessons. No
