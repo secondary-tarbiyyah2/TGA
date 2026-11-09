@@ -25,18 +25,20 @@ export type ActionArea =
   | "Safeguarding"
   | "Admissions"
   | "Recruitment"
-  | "Revision";
+  | "Revision"
+  | "Curriculum";
 export type ActionItem = { id: string; area: ActionArea; urgency: Urgency; title: string; detail: string; href: string; cta: string; who?: string; people?: { id: string; name: string }[] };
 export type Role = "teach" | "admin" | "student" | "family";
 
 /** The Action centre's categories, in the order they are listed. Each item's
  * `area` puts it in exactly one category. */
-export type CategoryKey = "safeguarding" | "attendance" | "classwork" | "pupils" | "quran" | "admissions" | "recruitment" | "documents";
-export type CategoryIcon = "shieldAlert" | "userCheck" | "notebookPen" | "backpack" | "bookMarked" | "userRoundPlus" | "briefcase" | "fileCheck";
+export type CategoryKey = "safeguarding" | "attendance" | "classwork" | "curriculum" | "pupils" | "quran" | "admissions" | "recruitment" | "documents";
+export type CategoryIcon = "shieldAlert" | "userCheck" | "notebookPen" | "backpack" | "bookMarked" | "userRoundPlus" | "briefcase" | "fileCheck" | "bookOpen";
 export const CATEGORIES: { key: CategoryKey; label: string; icon: CategoryIcon; areas: ActionArea[] }[] = [
   { key: "safeguarding", label: "Safeguarding", icon: "shieldAlert", areas: ["Safeguarding"] },
   { key: "attendance", label: "Attendance", icon: "userCheck", areas: ["Registers", "Absence"] },
   { key: "classwork", label: "Classwork", icon: "notebookPen", areas: ["Homework", "Marking", "Revision"] },
+  { key: "curriculum", label: "Curriculum", icon: "bookOpen", areas: ["Curriculum"] },
   { key: "pupils", label: "Pupils and SEND", icon: "backpack", areas: ["SEND", "Child details", "Pupils"] },
   { key: "quran", label: "Qur'an", icon: "bookMarked", areas: ["Qur'an"] },
   { key: "admissions", label: "Admissions", icon: "userRoundPlus", areas: ["Admissions"] },
@@ -124,6 +126,7 @@ export async function loadStaffItems(role: "teach" | "admin"): Promise<ActionIte
 
   items.push(...(await loadSendItems(base)));
   items.push(...(await loadRevisionItems(base)));
+  items.push(...(await loadLessonFeedbackItems(base).catch(() => [] as ActionItem[])));
   if (role === "teach") items.push(...(await loadQuranTeacherItems()));
   if (role === "admin") items.push(...(await loadAdminItems().catch(() => [] as ActionItem[])));
   return items;
@@ -277,6 +280,56 @@ async function loadRevisionItems(base: string): Promise<ActionItem[]> {
       href: link(u),
       cta: "Check questions",
     });
+  }
+  return out;
+}
+
+/**
+ * Lesson feedback (Tafweed T34, migration 0191). The Headteacher and Admin get one item per note
+ * waiting for an answer (RLS returns every note only to them); whoever wrote a note sees the
+ * answer for 14 days. Fails quietly before 0191 is deployed.
+ */
+async function loadLessonFeedbackItems(base: string): Promise<ActionItem[]> {
+  const supabase = getSupabaseClient();
+  if (!supabase) return [];
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  const since = new Date(Date.now() - 14 * DAY).toISOString();
+  const { data, error } = await supabase
+    .from("curriculum_lesson_feedback")
+    .select("id, part_label, body, status, response, author_id, author_name, created_at, handled_at, handled_by_name, lesson:curriculum_lessons(subject, year, lesson_no, title)")
+    .or(`status.in.(open,accepted),handled_at.gte.${since}`)
+    .order("created_at", { ascending: false })
+    .limit(100);
+  if (error || !data) return [];
+  type Row = { id: string; part_label: string | null; body: string; status: string; response: string | null; author_id: string; author_name: string | null; created_at: string; handled_by_name: string | null; lesson: { subject: string; year: string; lesson_no: number; title: string } | null };
+  const label = (l: Row["lesson"]) => (l ? `${l.subject} ${l.year.replace(/^y/, "Y")}, lesson ${l.lesson_no}: ${l.title}` : "a lesson");
+  const short = (t: string) => (t.length > 140 ? `${t.slice(0, 137)}...` : t);
+  const out: ActionItem[] = [];
+  for (const r of data as unknown as Row[]) {
+    const mine = r.author_id === user?.id;
+    if ((r.status === "open" || r.status === "accepted") && !mine) {
+      out.push({
+        id: `lfb-${r.id}`,
+        area: "Curriculum",
+        urgency: r.status === "open" && daysAgo(r.created_at) >= 7 ? "now" : "soon",
+        title: `Lesson feedback: ${label(r.lesson)}`,
+        detail: `${r.part_label || "The whole lesson"}: "${short(r.body)}" (${r.author_name || "a member of staff"}${r.status === "accepted" ? "; accepted, waiting for the change" : ""})`,
+        href: `${base}/curriculum?feedback=${r.id}`,
+        cta: "Open the lesson",
+      });
+    } else if (mine && (r.status === "done" || r.status === "declined")) {
+      out.push({
+        id: `lfb-answer-${r.id}-${r.status}`,
+        area: "Curriculum",
+        urgency: "info",
+        title: `Your lesson feedback was ${r.status === "done" ? "acted on" : "declined"}: ${label(r.lesson)}`,
+        detail: `You wrote: "${short(r.body)}"${r.response ? `. ${r.handled_by_name || "The Headteacher"} replied: ${short(r.response)}` : ""}`,
+        href: `${base}/curriculum?feedback=${r.id}`,
+        cta: "See the lesson",
+      });
+    }
   }
   return out;
 }

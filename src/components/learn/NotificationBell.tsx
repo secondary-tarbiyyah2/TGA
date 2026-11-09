@@ -30,7 +30,7 @@ export function NotificationBell({ userId }: { userId: string }) {
       const { data: readRow } = await supabase.from("notification_reads").select("last_read_at").eq("user_id", userId).maybeSingle();
       setLastReadAt(readRow?.last_read_at ?? "1970-01-01T00:00:00Z");
 
-      const [{ data: absences }, { data: outstanding }, flaggedResult, { data: feedback }] = await Promise.all([
+      const [{ data: absences }, { data: outstanding }, flaggedResult, { data: feedback }, lessonFeedback] = await Promise.all([
         supabase.from("audit_log").select("id, created_at").eq("action", "ABSENCE_ALERT_SENT").order("created_at", { ascending: false }).limit(10),
         // outstanding_signatures is current STATE (who hasn't signed right
         // now), not an event log, it has no created_at to know "when this
@@ -44,6 +44,8 @@ export function NotificationBell({ userId }: { userId: string }) {
           : Promise.resolve({ data: [] as { id: string; created_at: string }[] }),
         // New feedback tickets (0092). RLS returns rows only to head/admin.
         supabase.from("feedback_tickets").select("id, created_at, kind").eq("status", "new").order("created_at", { ascending: false }).limit(10),
+        // Lesson feedback from staff (0191, Tafweed T34). RLS returns every note only to head/admin.
+        supabase.from("curriculum_lesson_feedback").select("id, created_at, author_id").eq("status", "open").neq("author_id", userId).order("created_at", { ascending: false }).limit(10),
       ]);
 
       const timestamped: Signal[] = [
@@ -58,6 +60,12 @@ export function NotificationBell({ userId }: { userId: string }) {
           id: `feedback-${f.id}`,
           message: f.kind === "problem" ? "New problem reported through Feedback." : f.kind === "idea" ? "New improvement idea sent through Feedback." : "New question sent through Feedback.",
           href: "/admin/feedback",
+          createdAt: f.created_at,
+        })),
+        ...(((lessonFeedback.error ? [] : lessonFeedback.data) || []) as { id: string; created_at: string }[]).map((f) => ({
+          id: `lesson-feedback-${f.id}`,
+          message: "New feedback on a lesson from a member of staff.",
+          href: `/admin/curriculum?feedback=${f.id}`,
           createdAt: f.created_at,
         })),
       ].sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
