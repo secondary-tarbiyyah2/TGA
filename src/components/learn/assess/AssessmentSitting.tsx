@@ -14,9 +14,13 @@ import { isSpeechAvailable, loadVoices, speak, stopSpeaking } from "@/components
  * answer as it is given, and asks the server how much time is left, so
  * reloading the page or changing the clock changes nothing.
  *
- * Fair-sitting measures (all noted for staff, none shown to the child as a
- * warning): full screen, leaving the window, copy/paste/right-click and
- * shortcuts blocked on the questions, one window at a time. Breaks are
+ * Fair-sitting measures (all noted for staff): full screen, copy/paste/
+ * right-click and shortcuts blocked on the questions, one window at a time.
+ * A browser can't stop a child switching tab or window, so leaving is made
+ * visible instead: the questions are covered the moment the page loses
+ * focus, and the child must press "Return to my assessment" (which puts
+ * full screen back) to carry on. Each time is counted on screen; the
+ * hidden/blur events are already logged and counted in the staff report. Breaks are
  * allowed: the clock pauses and the questions are hidden until the child
  * carries on.
  */
@@ -417,6 +421,9 @@ function Section({ api, st, cur, large, voice, rate, start, onPosition, onLarge,
   const [confirming, setConfirming] = useState(false);
   const [showText, setShowText] = useState(false);
   const [fsLost, setFsLost] = useState(false);
+  // Times the child left this page (tab, window or app switch) in this part.
+  const [away, setAway] = useState(false);
+  const [awayCount, setAwayCount] = useState(0);
   const [breakPrompt, setBreakPrompt] = useState<"no" | "show" | "dismissed">("no");
   const shownAt = useRef(0);
   const textTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -470,8 +477,21 @@ function Section({ api, st, cur, large, voice, rate, start, onPosition, onLarge,
       api({ action: "event", type, detail });
     };
     const inText = (t: EventTarget | null) => t instanceof HTMLElement && (t.tagName === "TEXTAREA" || t.tagName === "INPUT");
-    const onVis = () => log(document.hidden ? "hidden" : "visible");
-    const onBlur = () => log("blur");
+    const leave = () => {
+      setAway((was) => {
+        if (!was) setAwayCount((n) => n + 1);
+        return true;
+      });
+    };
+    const onVis = () => {
+      log(document.hidden ? "hidden" : "visible");
+      if (document.hidden) leave();
+    };
+    const onBlur = () => {
+      log("blur");
+      // Opening the browser's own print dialog also blurs; that is logged as "print" already.
+      leave();
+    };
     const onFocus = () => log("focus");
     const onFs = () => { if (inFullscreen()) { setFsLost(false); log("fullscreen_enter"); } else { setFsLost(true); log("fullscreen_exit"); } };
     const onCopy = (e: ClipboardEvent) => { if (inText(e.target) && e.type !== "paste") return; e.preventDefault(); log(e.type); };
@@ -676,7 +696,29 @@ function Section({ api, st, cur, large, voice, rate, start, onPosition, onLarge,
         ) : null}
       </div>
 
-      {fsLost && !confirming && (
+      {away && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-ink p-4" role="alertdialog" aria-modal="true" aria-labelledby="away-title" aria-describedby="away-body">
+          <div className="w-full max-w-md rounded-3xl bg-white p-6 text-center shadow-xl">
+            <h2 id="away-title" className="text-xl font-semibold text-ink">You left the assessment</h2>
+            <p id="away-body" className="mt-2 text-ink/75">
+              Please stay on this page until you have finished. Your teacher can see each time you leave{awayCount > 0 ? ` (${awayCount} ${awayCount === 1 ? "time" : "times"} so far)` : ""}.
+            </p>
+            <button
+              type="button"
+              autoFocus
+              onClick={() => {
+                setAway(false);
+                enterFullscreen();
+              }}
+              className="mt-5 rounded-full bg-gold-700 px-6 py-3 text-lg font-semibold text-white"
+            >
+              Return to my assessment
+            </button>
+          </div>
+        </div>
+      )}
+
+      {fsLost && !confirming && !away && (
         <div className="fixed inset-0 z-40 flex items-center justify-center bg-ink/60 p-4" role="dialog" aria-modal="true" aria-labelledby="fs-title">
           <div className="w-full max-w-md rounded-3xl bg-white p-6 text-center shadow-xl">
             <h2 id="fs-title" className="text-xl font-semibold text-ink">Back to full screen</h2>
