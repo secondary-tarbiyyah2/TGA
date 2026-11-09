@@ -6,6 +6,7 @@ import type { LearnRole } from "@/lib/learn/session";
 import { CredentialsCard } from "./StudentCredentials";
 import { studentAccountAction, type IssuedCredentials } from "./studentAccounts";
 import { ui } from "@/components/learn/ui";
+import { PupilPlacement } from "@/components/learn/pupil/PupilPlacement";
 import { GOLD_BUTTON, INPUT_CLASS, friendlyError, invite, type ClassOption, type InviteResult, type ParentOption, type YearGroup } from "./shared";
 
 export type PersonType = "student" | "parent" | "teacher" | "staff";
@@ -72,6 +73,8 @@ export function AddPersonModal({
   // student / child fields
   const [dob, setDob] = useState("");
   const [yearGroupId, setYearGroupId] = useState("");
+  // Placed in or working at a year above their age (T27); staff only (0184).
+  const [above, setAbove] = useState(false);
   const [classId, setClassId] = useState("");
   const [studentEmail, setStudentEmail] = useState("");
   // A pupil can sign in with a username and temporary password (no email), or with their own email.
@@ -90,13 +93,6 @@ export function AddPersonModal({
   // carried across retries so a failed second step never duplicates the first
   const [createdParentId, setCreatedParentId] = useState<string | null>(null);
   const [createdChildId, setCreatedChildId] = useState<string | null>(null);
-
-  // Same-year classes first, but every class stays selectable: a pupil can be in one class per subject.
-  const orderedClasses = [...classes].sort((a, b) => {
-    const am = yearGroupId && a.yearGroupId === yearGroupId ? 0 : 1;
-    const bm = yearGroupId && b.yearGroupId === yearGroupId ? 0 : 1;
-    return am - bm || a.name.localeCompare(b.name);
-  });
 
   const pickType = (t: PersonType) => {
     setType(t);
@@ -122,7 +118,7 @@ export function AddPersonModal({
     if (!childId) {
       const { data, error: insErr } = await supabase
         .from("children")
-        .insert({ parent_user_id: parent, name: cname, dob, year_group_id: yearGroupId || null })
+        .insert({ parent_user_id: parent, name: cname, dob, year_group_id: yearGroupId || null, ...(above ? { working_above_year_group: true } : {}) })
         .select("id")
         .single();
       const row = data as { id: string } | null;
@@ -312,6 +308,8 @@ export function AddPersonModal({
                     setName("");
                     setEmail("");
                     setDob("");
+                    setYearGroupId("");
+                    setAbove(false);
                     setStudentEmail("");
                     setNewParentName("");
                     setNewParentEmail("");
@@ -364,22 +362,6 @@ export function AddPersonModal({
                   <Field label="Student's full name">
                     <input value={name} onChange={(e) => setName(e.target.value)} className={INPUT_CLASS} autoComplete="off" />
                   </Field>
-                  <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                    <Field label="Date of birth">
-                      <input type="date" value={dob} onChange={(e) => setDob(e.target.value)} className={INPUT_CLASS} />
-                    </Field>
-                    <Field label="Year group">
-                      <select value={yearGroupId} onChange={(e) => setYearGroupId(e.target.value)} className={INPUT_CLASS}>
-                        <option value="">Not set</option>
-                        {yearGroups.map((y) => (
-                          <option key={y.id} value={y.id}>
-                            {y.name}
-                          </option>
-                        ))}
-                      </select>
-                    </Field>
-                  </div>
-
                   <div className="rounded-xl bg-gold-50 p-3">
                     <div className="mb-2 flex gap-2 text-xs font-semibold">
                       {parents.length > 0 && (
@@ -415,29 +397,19 @@ export function AddPersonModal({
                     )}
                   </div>
 
-                  <fieldset>
-                    <legend className="mb-1 text-sm font-medium text-ink">Classes (optional)</legend>
-                    <p className="mb-1 text-xs text-ink/65">Choose as many as needed, for example one per subject.</p>
-                    {classes.length === 0 ? (
-                      <p className="text-xs text-ink/65">No classes have been set up yet.</p>
-                    ) : (
-                      <ul className="grid max-h-44 gap-1 overflow-y-auto rounded-lg border border-gold-light/70 p-2 sm:grid-cols-2">
-                        {orderedClasses.map((c) => (
-                          <li key={c.id}>
-                            <label className="flex items-center gap-2 text-sm text-ink">
-                              <input
-                                type="checkbox"
-                                className="h-4 w-4"
-                                checked={classIds.includes(c.id)}
-                                onChange={(e) => setClassIds((ids) => (e.target.checked ? [...ids, c.id] : ids.filter((x) => x !== c.id)))}
-                              />
-                              <span className="min-w-0 break-words">{c.name}</span>
-                            </label>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </fieldset>
+                  <PupilPlacement
+                    idPrefix="add-pupil"
+                    dob={dob}
+                    setDob={setDob}
+                    yearGroupId={yearGroupId}
+                    setYearGroupId={setYearGroupId}
+                    above={above}
+                    setAbove={setAbove}
+                    yearGroups={yearGroups}
+                    classes={classes}
+                    classIds={classIds}
+                    setClassIds={setClassIds}
+                  />
                   <Field label="Student's login" hint={loginMode === "username" ? "A username (firstname.lastname) and a temporary password are generated. The parent is emailed them, and you see them once. The student chooses their own password at first sign-in." : undefined}>
                     <select value={loginMode} onChange={(e) => setLoginMode(e.target.value as LoginMode)} className={INPUT_CLASS}>
                       <option value="username">Username and password (no email needed)</option>
@@ -475,21 +447,7 @@ export function AddPersonModal({
                       <Field label="Child's full name">
                         <input value={childName} onChange={(e) => setChildName(e.target.value)} className={INPUT_CLASS} autoComplete="off" />
                       </Field>
-                      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                        <Field label="Date of birth">
-                          <input type="date" value={dob} onChange={(e) => setDob(e.target.value)} className={INPUT_CLASS} />
-                        </Field>
-                        <Field label="Year group">
-                          <select value={yearGroupId} onChange={(e) => setYearGroupId(e.target.value)} className={INPUT_CLASS}>
-                            <option value="">Not set</option>
-                            {yearGroups.map((y) => (
-                              <option key={y.id} value={y.id}>
-                                {y.name}
-                              </option>
-                            ))}
-                          </select>
-                        </Field>
-                      </div>
+                      <PupilPlacement idPrefix="add-child" dob={dob} setDob={setDob} yearGroupId={yearGroupId} setYearGroupId={setYearGroupId} above={above} setAbove={setAbove} yearGroups={yearGroups} />
                     </div>
                   )}
                 </div>

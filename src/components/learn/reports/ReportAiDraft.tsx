@@ -4,6 +4,7 @@ import { useState } from "react";
 import { AiDisclaimer, AiSpark } from "@/components/learn/AiBits";
 import { Notice, ui } from "@/components/learn/ui";
 import { aiAssist, aiErrorMessage, useAiStatus } from "@/lib/learn/aiAssist";
+import { usePronounField } from "@/lib/learn/pronoun";
 import type { ClassSummary, SubjectRating } from "./summary";
 
 const RECIPE = ["Resilience", "Eeman", "Contentment", "Integrity", "Progress", "Excellence"];
@@ -16,6 +17,7 @@ const RECIPE = ["Resilience", "Eeman", "Contentment", "Integrity", "Progress", "
  * box now, so their own edits are kept. Hidden when AI isn't set up.
  */
 export function ReportAiDraft({
+  childId,
   firstName,
   yearGroup,
   subject,
@@ -24,6 +26,8 @@ export function ReportAiDraft({
   comment,
   onUse,
 }: {
+  /** Prefills the pronoun from the pupil's record (still editable). */
+  childId?: string;
   firstName: string;
   yearGroup: string;
   subject: string;
@@ -35,7 +39,7 @@ export function ReportAiDraft({
   const status = useAiStatus();
   const [open, setOpen] = useState(false);
   const [notes, setNotes] = useState("");
-  const [pronoun, setPronoun] = useState("");
+  const { value: pronoun, set: setPronoun, fromRecord } = usePronounField(childId);
   const [recipe, setRecipe] = useState("");
   const [draft, setDraft] = useState<string | null>(null);
   const [recipeLine, setRecipeLine] = useState<string | null>(null);
@@ -101,6 +105,7 @@ export function ReportAiDraft({
                 <option value="he">he / him</option>
                 <option value="she">she / her</option>
               </select>
+              {fromRecord && <span className={`mt-1 block font-normal ${ui.hint}`}>From {firstName}&apos;s record. Change it here if needed.</span>}
             </label>
             <label className={ui.label}>
               RECIPE value this half term (optional)
