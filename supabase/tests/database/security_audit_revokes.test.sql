@@ -1,4 +1,4 @@
--- Run via `supabase test db`. Covers 0186 (Tafweed T20 security audit):
+-- Run via `supabase test db`. Covers 0188 (Tafweed T20 security audit):
 -- resync_lesson_teachers can no longer be called by visitors or signed-in
 -- users, while the class_subject_teachers trigger that uses it still works.
 begin;

@@ -1,7 +1,7 @@
 # Security audit, November 2026 (Tafweed T20)
 
 Audited 9 November 2026 on branch `claude/tafweed-T20-security`, against `main` at
-migration 0185. Scope: the Supabase database (190 tables, 265 functions, views, storage),
+migration 0187. Scope: the Supabase database (190 tables, 265 functions, views, storage),
 47 Edge Functions, the static website and portal (Next.js export, `.htaccess`, PHP form
 handlers), and 47 GitHub Actions workflows.
 
@@ -128,7 +128,7 @@ None found.
 - **Fix:** `::add-mask::` added as soon as the key is fetched.
 
 ### M9. Anyone could call `resync_lesson_teachers` (Fixed)
-- **File:** new `supabase/migrations/0186_security_audit_revokes.sql`, test
+- **File:** new `supabase/migrations/0188_security_audit_revokes.sql`, test
   `supabase/tests/database/security_audit_revokes.test.sql`
 - **Why it matters:** a SECURITY DEFINER function that rewrites future lessons' teacher.
   Postgres lets everyone execute functions unless revoked, so anon could call it through
@@ -190,7 +190,9 @@ None found.
   `curriculum_sync_state`). Safeguarding tables: safeguarding lead or Headteacher only,
   with a sign-in in the last 15 minutes. SEND plans: SENCO/managers manage; parents see
   active/closed plans for their own child; teachers see active plans for children they
-  teach. Pupil medical details: parent of the child, Headteacher/Admin, and teachers of the
+  teach. The SENCo role added by T28 (0186) is included in `send_can_manage()` and only the
+  Headteacher can grant it (`admin_set_staff_roles`); new `send_plan_documents` is
+  managers only. Pupil medical details: parent of the child, Headteacher/Admin, and teachers of the
   child through `teacher_pupil_health()`. Admissions, payment proofs, job applications and
   recruitment: Headteacher/Admin (and Admissions where relevant). The public application
   insert policy blocks every staff-only column. Users cannot change their own role

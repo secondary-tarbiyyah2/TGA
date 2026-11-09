@@ -90,7 +90,7 @@ export function ComplianceDashboard({ isHeadTeacher, alertsExtra, topExtra, reco
       supabase.from("outstanding_signatures").select("user_id, full_name, email, title, document_id"),
       supabase.from("signable_documents").select("id, synced_at").eq("requires_signature", true),
       supabase.from("signature_requests").select("document_id, user_id, requested_at").order("requested_at", { ascending: true }).limit(2000),
-      supabase.from("user_roles").select("user_id, profiles(full_name)").in("role", ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover"]),
+      supabase.from("user_roles").select("user_id, profiles(full_name)").in("role", ["head_teacher", "admin", "admissions", "teacher", "teaching_assistant_cover", "senco"]),
       supabase.from("staff_vetting_records").select("user_id, dbs_check_date, dbs_renewal_due"),
     ]);
 

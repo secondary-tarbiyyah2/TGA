@@ -22,7 +22,7 @@ const TABS: { key: Tab; label: string }[] = [
   { key: "notes", label: "Parent notes" },
   { key: "emails", label: "Emails" },
   { key: "reports", label: "Reports" },
-  { key: "cover", label: "Suggest cover" },
+  { key: "cover", label: "Staff cover" },
 ];
 type Period = "30" | "60" | "90" | "term";
 const PERIODS: { key: Period; label: string }[] = [

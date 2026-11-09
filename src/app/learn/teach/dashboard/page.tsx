@@ -7,6 +7,8 @@ import { DashboardHero } from "@/components/learn/DashboardHero";
 import { ActionCentreWidget } from "@/components/learn/ActionCentreWidget";
 import { myTeachingClasses } from "@/lib/learn/classes";
 import { LearnGate } from "@/components/learn/LearnGate";
+import { useLearnSession } from "@/lib/learn/session";
+import { isSencoOnly } from "@/lib/learn/nav";
 import { LearnShell } from "@/components/learn/LearnShell";
 import { TeachNow } from "@/components/learn/teach/TeachNow";
 import { EnrichmentSupervisorLink } from "@/components/learn/enrichment/SupervisorLink";
@@ -112,13 +114,25 @@ function TeachContent() {
   );
 }
 
+/** A SENCo-only account has no classes: its home is the SEND register. */
+function SencoHome({ children }: { children: React.ReactNode }) {
+  const { roles } = useLearnSession();
+  const sencoOnly = isSencoOnly(roles.map((r) => r.role));
+  useEffect(() => {
+    if (sencoOnly) window.location.replace("/teach/send");
+  }, [sencoOnly]);
+  return sencoOnly ? <p className="text-ink/65">Opening the SEND register…</p> : <>{children}</>;
+}
+
 export default function TeachDashboardPage() {
   return (
     <section className="app-pad">
-      <LearnGate allowedRoles={["teacher", "teaching_assistant_cover"]}>
-        <LearnShell role="teach">
-          <TeachContent />
-        </LearnShell>
+      <LearnGate allowedRoles={["teacher", "teaching_assistant_cover", "senco"]}>
+        <SencoHome>
+          <LearnShell role="teach">
+            <TeachContent />
+          </LearnShell>
+        </SencoHome>
       </LearnGate>
     </section>
   );

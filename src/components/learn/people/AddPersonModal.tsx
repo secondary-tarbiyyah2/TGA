@@ -206,7 +206,7 @@ export function AddPersonModal({
       } else {
         const role: LearnRole = type === "teacher" ? teacherKind : staffRole;
         const body: Record<string, unknown> = { email: email.trim(), fullName: name.trim(), role };
-        if (type === "teacher" && classId) {
+        if (type === "teacher" && classId && teacherKind !== "senco") {
           body.scopeType = "class";
           body.scopeId = classId;
         }
@@ -461,18 +461,21 @@ export function AddPersonModal({
                     <select value={teacherKind} onChange={(e) => setTeacherKind(e.target.value as LearnRole)} className={INPUT_CLASS}>
                       <option value="teacher">Teacher</option>
                       <option value="teaching_assistant_cover">Teaching assistant / cover</option>
+                      <option value="senco">SENCo (keeps the SEND register)</option>
                     </select>
                   </Field>
-                  <Field label="Class (optional)" hint="You can assign more classes later from Academic → Classes.">
-                    <select value={classId} onChange={(e) => setClassId(e.target.value)} className={INPUT_CLASS}>
-                      <option value="">No class yet</option>
-                      {classes.map((c) => (
-                        <option key={c.id} value={c.id}>
-                          {c.name}
-                        </option>
-                      ))}
-                    </select>
-                  </Field>
+                  {teacherKind !== "senco" && (
+                    <Field label="Class (optional)" hint="You can assign more classes later from Academic → Classes.">
+                      <select value={classId} onChange={(e) => setClassId(e.target.value)} className={INPUT_CLASS}>
+                        <option value="">No class yet</option>
+                        {classes.map((c) => (
+                          <option key={c.id} value={c.id}>
+                            {c.name}
+                          </option>
+                        ))}
+                      </select>
+                    </Field>
+                  )}
                 </>
               )}
 
