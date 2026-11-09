@@ -69,18 +69,16 @@ on-slide editing in the portal (#59); Tafweed website batch, pupils pages, Actio
 SENCo and SEND register, cover, security audit, policy outline, device requirement.
 
 Lessons written to v3 for Spring 1 (11 Jan to 8 Feb 2027) and merged: Maths Y1-11, English Y1-11, Science Y3-11,
-Islamic Studies Y1-11.
+Islamic Studies Y1-11, Arabic Y3-11.
 
 Portal redesign (owner brief, 9 Nov 2026, evening): done first, before more lessons. PR #66 merged: design system,
 navigation, dashboards, lesson workspaces, review workflow (migration 0192), curriculum map, search. The plan, rules and
 what's left are in docs/portal-redesign.md; follow its design rules for every new page.
 
 Next, in this order (each one agent; briefs in docs/agent-briefs/):
-1. Spring 1 lessons still to write. Paused for the portal redesign, half done and pushed (finish these first, on the same
-   branch): Arabic Y3-11 (branch `lessons-is-arabic-s1`; its Islamic Studies Y1-11 half is done and merged).
-   (English Y7-11 is done: branch `lessons-english-ks34-s1`.) Then: Year 1-2 Topic and
-   Year 1-2 science; History, Geography, Computing, Art and DT, PSHE (Y1-11); Qur'an, Arabic (Y1-11);
-   Business and Computer Science options (Y10-11).
+1. Spring 1 lessons still to write: Year 1-2 Topic and Year 1-2 science; History, Geography, Computing, Art and DT,
+   PSHE (Y1-11); Qur'an (Y1-11); Business and Computer Science options (Y10-11). (English Y7-11, Islamic Studies
+   Y1-11 and Arabic Y3-11 are done and merged.)
 2. Then Spring 2, Summer 1, Summer 2 the same way, subject by subject.
 3. Term resource lists (owner: "make those resources for everything"): for each term, list every resource the lessons
    name; mark which come from the school's files, which the builder makes (pupil PDF/worksheet), and write the rest
@@ -210,4 +208,5 @@ information.
 - 9 Nov 2026, Maths Years 7-11 Spring 1 (branch `lessons-maths-ks34-s1`): 100 lessons for 11 Jan to 8 Feb 2027 (bridge + Spring 1), v3 rules applied. Y7 4 upgraded, 16 new; Y8 20 new; Y9 5 upgraded, 15 new; Y10 12 upgraded, 8 new (4MA1); Y11 20 new (revision cycle 1 and mock week, 4MA1). Y10 and Y11 files now labelled 4MA1 (taught and examined). Uses v3 fields (ponder hook, item `model`, `pictures`, `islamicLink`), so validation passes only once `lesson-builder-v3` merges.
 - 9 Nov 2026, Science Years 3-11 Spring 1 (branch `lessons-science-s1`): 130 lessons for 11 Jan to 8 Feb 2027, v3 rules (ponder, one objective, Teams polls, I do models, pictures, Islamic foundation where Islam speaks to the topic), home practicals with written safety guides. Y3 10 new; Y4 4 upgraded, 6 new; Y5 10 new; Y6 10 new; Y7 15 new; Y8 7 upgraded, 8 new; Y9 6 upgraded, 9 new; Y10 (4SD0) 20 upgraded (bridge weeks + S1 w1 to w3), 5 new; Y11 (4SD0) 20 new revision lessons with own exam-style questions (mock week of 8 Feb not written as lessons). Y9 lessons 11 (composites) and 14 (LCA) are independent reading.
 - 9 Nov 2026, Islamic Studies Years 1-11 Spring 1 (branch `lessons-is-arabic-s1`): 74 lessons for 11 Jan to 8 Feb 2027 (bridge weeks included), v3 rules (ponder, one objective, Teams polls, I do models, pictures, islamicLink, set passages and 12-mark practice at KS4). Upgraded / new: Y1-2 3/3; Y3 3/2; Y4 4/1; Y5 3/2; Y6 1/4; Y7 3/7 (hadith and the Sunnah, unit quiz); Y8 8/2 (iman and the road to Madinah, zakah, unit quiz; week 5 sources of Shari'ah not timetabled); Y9 3/7 (Hudaybiyyah, conquest of Makkah, leadership, sawm); Y10 (4IS1) 5/5 (bridge 1.1 to 1.4, then 1.5 and 1.6 with a 12-mark lesson); Y11 (4IS1) 0/8 (fast-teach of Section B and 3.6 to 3.9 with portal lessons 8 to 34 as independent study; mock week of 8 Feb not written as lessons). Hadith cited only from Bukhari and Muslim or named collections without numbers; seerah-only reports are labelled as such; Shia content taught factually. TO CONFIRM: approved seerah and hadith texts; approved resources for Shia content; what the January Year 11 cohort has already covered.
+- 9 Nov 2026, Arabic Years 3-11 Spring 1 (branch `lessons-arabic-s1`): 70 lessons for 11 Jan to 8 Feb 2027 (bridge weeks included), v3 rules (ponder, one objective, Teams polls, I do models, pictures, islamicLink, Bismillah in starters). Upgraded / new: Y3 2/3; Y4 2/3; Y5 2/3; Y6 1/4 (one lesson a week); Y7 2/8 (bridge letters, vowels, greetings, days and months; numbers, colours, clothes, dictation and unit quiz); Y8 0/10 (bridge basics and About me; family, possessives, demonstratives, comparative, family paragraph and quiz); Y9 3/7 (bridge describing people, participles, town, weather; subjects, opinions, connectives, three tenses, informal email and quiz); Y10 7/3 (A1 and A2 core bridge, then 2.3 town and region, directions with the imperative, problems of my town, weather and unit quiz; Group A 4AA1 i'rab and summary tasks beside Group B 1AA0 speaking); Y11 3/7 (revision in theme order, 4AA1 summary and i'rab, 1AA0 conversation, role play and picture task, extended writing, mock week technique and review). Transliteration follows the syllabus style (hadha, ismi, 'id al-fitr). Kitabi readings for Years 4 and 6 (Basem in the village, the dialogues, the heater) are our own short texts until the Kitabi pages are checked; all KS4 texts are our own exam-style texts. TO CONFIRM: an Arabic specialist checks vowelling before delivery; Kitabi page references (CHECK IN KITABI); 4AA1 summary word limits against the current specification.
 
