@@ -28,7 +28,8 @@ const SHORT = { "Qur'an and Tajweed": "Qur'an", "Islamic Studies": "Islamic St."
 const short = (g) => SHORT[g] || g;
 
 export function loadPack() {
-  const base = path.join(ROOT, "content/syllabus");
+  // SYLLABUS_DIR: build from another copy of content/syllabus (used to preview changes).
+  const base = process.env.SYLLABUS_DIR ? path.resolve(process.env.SYLLABUS_DIR) : path.join(ROOT, "content/syllabus");
   const read = (d) => fs.existsSync(path.join(base, d)) ? fs.readdirSync(path.join(base, d)).filter((f) => f.endsWith(".json")).sort().map((f) => ({ file: f, ...JSON.parse(fs.readFileSync(path.join(base, d, f), "utf8")) })) : [];
   const hubs = JSON.parse(fs.readFileSync(path.join(base, "matrices/hubs.json"), "utf8")).hubs;
   return { ks4: read("ks4"), ks13: read("ks1-3"), hubs };
