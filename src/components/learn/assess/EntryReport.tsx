@@ -21,7 +21,7 @@ export type ReportData = {
   narrative: string[];
   recommendations: { area: string; subject?: string; text: string }[];
   integrity: {
-    notes: string[]; tabHides: number; fastAnswers: number; answered: number; unanswered: number;
+    notes: string[]; tabHides: number; fastAnswers: number; answered: number; unanswered: number; endedForLeaving?: string[];
     rating?: "No concerns" | "Some concerns" | "Review needed";
     counts?: { away: number; awaySeconds: number; blur: number; fullscreenExits: number; copy: number; paste: number; rightClick: number; shortcuts: number; otherSessions: number; breaks: number; breakSeconds: number; rapid: number; timed: number; longestSameLetter: number };
     timeline?: { t: string; section?: string; text: string; kind: "info" | "note" | "break" }[];
@@ -107,6 +107,11 @@ export function EntryReport({ report, name }: { report: ReportData; name: string
   const access = r.access || {};
   const accessList = [access.extraTimePct ? `${access.extraTimePct}% extra time` : "", access.readAloud ? "questions read aloud" : "", access.largeText ? "larger text" : "", access.breaks ? `up to ${access.breaks.perSection} break${access.breaks.perSection === 1 ? "" : "s"} of ${access.breaks.minutes} min in each part` : "", access.other || ""].filter(Boolean);
   const w = r.writing;
+  // Times the pupil left the assessment during timed parts: another tab or app
+  // (away) plus another window in front (blur). Same rule as the pupil's own count.
+  const leaves = integ.counts ? integ.counts.away + integ.counts.blur : integ.tabHides;
+  const leaveTone: Tone = leaves === 0 ? "good" : leaves === 1 ? "neutral" : leaves < 4 ? "warn" : "bad";
+  const ended = integ.endedForLeaving || [];
 
   return (
     <article className="space-y-4 print:space-y-3 print:text-[11pt]" aria-label={`Entry assessment report for ${name}`}>
@@ -116,6 +121,14 @@ export function EntryReport({ report, name }: { report: ReportData; name: string
 
       {/* 1. Summary */}
       <Card title={`Summary for ${first}`} icon="clipboardCheck" tile="tile-gold" aside={rating && <StatusChip tone={rating.tone}>How it was sat: {integ.rating}</StatusChip>}>
+        <div className={`mb-3 flex flex-wrap items-center gap-x-4 gap-y-1 rounded-xl border px-4 py-3 print:bg-transparent ${leaves === 0 ? "border-gold-light/70 bg-white" : leaves < 4 ? "border-amber-200 bg-amber-50" : "border-red-200 bg-red-50"}`}>
+          <p className="text-lg font-semibold text-ink">
+            {leaves === 0 ? "Did not leave the assessment" : `Left the assessment ${leaves} ${leaves === 1 ? "time" : "times"}`}
+          </p>
+          {leaves > 0 && integ.counts && integ.counts.awaySeconds > 0 && <span className="text-sm text-ink/75">about {dur(integ.counts.awaySeconds)} away in all</span>}
+          {ended.length > 0 && <StatusChip tone="bad">{ended.join(", ")} ended early for leaving</StatusChip>}
+          <span className="ml-auto print:hidden"><StatusChip tone={leaveTone}>{leaves === 0 ? "Stayed on the page" : leaves === 1 ? "Once" : leaves < 4 ? "A few times" : "Many times"}</StatusChip></span>
+        </div>
         {r.placement && <p className="rounded-xl bg-cream px-4 py-3 font-semibold text-ink print:bg-transparent print:px-0">{r.placement}</p>}
         <table className="mt-3 w-full text-sm">
           <caption className="sr-only">Each area against the expectation for Year {r.year}</caption>
@@ -206,7 +219,7 @@ export function EntryReport({ report, name }: { report: ReportData; name: string
         {integ.counts && (
           <dl className="mt-3 grid grid-cols-2 gap-2 text-sm sm:grid-cols-4">
             {[
-              ["Left the window", `${integ.counts.away}${integ.counts.away ? ` (${dur(integ.counts.awaySeconds)})` : ""}`],
+              ["Switched tab or app", `${integ.counts.away}${integ.counts.away ? ` (${dur(integ.counts.awaySeconds)})` : ""}`],
               ["Breaks (allowed)", `${integ.counts.breaks}${integ.counts.breaks ? ` (${dur(integ.counts.breakSeconds)})` : ""}`],
               ["Very quick answers", `${integ.counts.rapid} of ${integ.counts.timed}`],
               ["Second window", String(integ.counts.otherSessions)],
