@@ -22,7 +22,7 @@ developer picking up this work starts here.**
    Where the meaning is unclear, the **Reading** line says how it has been
    understood so far; if that looks wrong, ask.
 
-Statuses: **Not started** · **In progress** · **Done** · **Needs decision** · **Won't do**
+Statuses: **Not started** · **In progress** · **Done** · **Needs decision** · **Later** · **Won't do**
 
 ---
 
@@ -40,7 +40,8 @@ Statuses: **Not started** · **In progress** · **Done** · **Needs decision** �
 - **Reading:** reorder the pack page so staff see status and actions first (visible to pupils? what's in it? add questions), with the long explainer collapsed. "Generate your own action pack / Q pack": let staff generate an extra question pack and an action plan for the unit from the teacher-checked lesson content. DESIGN.md: **no AI with pupils**; generated questions must be teacher-reviewed before pupils see them.
 - **Files:** `src/components/learn/revision/PackBuilder.tsx`, `src/components/learn/curriculum/CurriculumLibrary.tsx`, revision data (migration 0094 and later), `supabase/functions/ai-assist/` (only if AI drafting is used, staff-side only).
 - **Done when:** [ ] page leads with status and actions; [ ] explainer collapsible; [ ] staff can create a question pack and an action pack in a few clicks; [ ] nothing generated reaches pupils without a teacher approving it.
-- **Status:** Needs decision: confirm "action pack" means a revision action plan for pupils (what to do next), and whether AI may draft questions for teacher review.
+- **Owner's answers (9 Nov):** the "action pack" is a **to-do list** for the unit (what each pupil should do next). **Yes**, AI may draft questions, staff-side only, for a teacher to check before pupils see them.
+- **Status:** Not started
 
 ### T3. Pupils list: actionable, and open a pupil for their full record
 - **Owner's note:** "Improve this and make it actionable; allow me to zoom into students to access full data." (screenshot: *Pupils*, "44 with missing details", long class lists)
@@ -63,12 +64,14 @@ Statuses: **Not started** · **In progress** · **Done** · **Needs decision** �
 - **Done when:** [x] Print uses `printElement()` scoped to the report; [ ] checked in Chrome print preview: no drawer chrome, no cut-off right edge, charts readable, sensible page breaks.
 - **Status:** In progress
 
-### T6. Faster, consistent switching between staff and student views
+### T6. Sign-in: each tab (Parent, Student, Staff) only accepts its own accounts
 - **Owner's note:** "Improve the efficiency and standardisation of transitioning between staff / student."
 - **Reading:** unclear. Probably moving between the staff area and the student (or parent) view: one consistent switcher in the account menu, same place on every page, remembering the last area.
 - **Files:** `src/components/learn/LearnAccountMenu.tsx`, `src/components/learn/LearnLayoutShell.tsx`, `src/lib/learn/nav.ts` (`portalAreaFor`).
-- **Done when:** [ ] owner confirms the meaning; [ ] one switcher, always in the same place.
-- **Status:** Needs decision: what transition exactly (a staff member previewing as a student? switching areas? handing a device over?)
+- **Owner's answer (9 Nov):** it's the portal sign-in page (Parent / Student / Staff). Signing in as staff on the Parent tab must not work.
+- **Files:** `src/app/learn/login/page.tsx`.
+- **Done when:** [x] an account without a role for the chosen tab is signed straight out with a message naming the right tab and a "Switch to … sign-in" button; [x] someone with several roles (e.g. teacher and parent) lands on the area of the tab they chose; [ ] owner checks: staff on Parent, parent on Staff, student on Staff are all refused.
+- **Status:** Done (awaiting owner check)
 
 ---
 
@@ -91,7 +94,7 @@ Statuses: **Not started** · **In progress** · **Done** · **Needs decision** �
 - **Owner's note:** "Al-Banaat ethos? Is it the same as secondary?"
 - **Files:** `src/app/(marketing)/about/page.tsx` (sister schools paragraph), `src/components/Footer.tsx`, `src/components/prelaunch/PrelaunchHome.tsx`, `public/brand/school-*.png`.
 - **Done when:** [ ] owner confirms each sister school's description; [ ] copy updated.
-- **Status:** Needs decision: content question for the owner (don't invent).
+- **Status:** Won't do (owner, 9 Nov: "don't worry about it").
 
 ### T10. Accessibility display options
 - **Owner's note:** "Display: improve accessibility features?"
@@ -116,8 +119,8 @@ Statuses: **Not started** · **In progress** · **Done** · **Needs decision** �
 ### T13. FAQ page: wasted space on the right; sticky search and topics
 - **Owner's note:** "Blank space on the FAQ far right; ensure optimal use of space. The 'search questions' and navigation menu: when I scroll down, the navigation goes; it needs to be sticky under the header for constant access."
 - **Files:** `src/app/(marketing)/faqs/page.tsx`, `src/components/FaqAccordion.tsx`, `src/components/FaqPreview.tsx`, `src/components/Header.tsx` (header height for `top-*` offset).
-- **Done when:** [ ] layout uses the width (e.g. topic sidebar + answers); [ ] search and topic menu stay visible under the sticky header while scrolling; [ ] fine at 360 px.
-- **Status:** Not started
+- **Done when:** [x] layout uses the width (topic sidebar + answers on wide screens); [x] search and topic menu stay visible under the sticky header while scrolling (sidebar on desktop, compact bar on phones); [ ] owner checks it on a phone (360 px) and desktop after deploy.
+- **Status:** Done (awaiting owner check)
 
 ### T14. Eligibility ("Is it right for us?"): structure, sticky progress, second child
 - **Owner's note:** "On the eligibility form I need optimal structure, and scrolling down shouldn't remove it [the navigation]. Adding a second child should maybe pop up across? Better use of space and ease of navigation. 'Where next' shouldn't be at the bottom of the eligibility page."
@@ -147,10 +150,20 @@ Statuses: **Not started** · **In progress** · **Done** · **Needs decision** �
 - **Owner's note:** "UPDATE PROSPECTUS."
 - **Files:** `public/prospectus/TGA-Prospectus-2026-27.pdf` (linked from the menu, footer and open-evening page).
 - **Done when:** [ ] owner says what has changed (launch January 2027, Year 1 to Year 11, fees, dates, careers?); [ ] new PDF replaces the old one at the same path.
-- **Status:** Needs decision: what should change, and is there an editable source (Canva, Word, a Design artifact)?
+- **Status:** Later (owner, 9 Nov). Still needs: what should change, and an editable source.
+
+### T19. Make the whole learning portal look more professional
+- **Owner's note (9 Nov, with T2):** "I want the whole learning portal to look more professional."
+- **Reading:** a portal-wide polish pass, not one page: consistent page headers, spacing and type scale; tables with sticky headers, aligned numbers and compact rows; fewer competing colours and chips; empty and loading states that look finished; clear primary action per page; consistent icons. Use the existing tokens and components (`src/components/learn/ui.tsx`, `PageHeader.tsx`, `DataTable.tsx`, `globals.css` `.portal` rules) and fix them at the source so every page benefits.
+- **Approach:** (1) audit the most-used pages with screenshots (`scripts/capture-portal-screenshots.mjs` / the "Update portal screenshots" workflow) and list the inconsistencies; (2) fix shared components first; (3) then page by page, starting with Home, Classes, Pupils (T3), Classwork (T1), Curriculum (T2), Assessments.
+- **Files:** `src/components/learn/ui.tsx`, `src/components/learn/PageHeader.tsx`, `src/components/learn/DataTable.tsx`, `src/components/learn/LearnLayoutShell.tsx`, `src/app/globals.css` (`.portal …`).
+- **Done when:** [ ] audit list written here; [ ] shared components updated; [ ] top 6 pages reviewed against the list; [ ] owner signs off on before/after screenshots.
+- **Status:** Not started
 
 ---
 
 ## Log
 
 - 2026-11-09: Backlog created from the owner's notes. T4 started: questions are now covered as soon as the pupil leaves the page, with a "Return to my assessment" button and a visible count (`AssessmentSitting.tsx`). T5 started: Print in the entry-assessment drawer now prints only the report (`EntryAssessmentsAdmin.tsx`, `printElement`).
+- 2026-11-09: T13 done. `FaqAccordion.tsx`: wide screens get a sticky left sidebar (search, topics with counts that jump to each section, "Still have a question?"), answers use the rest of the width; phones and tablets get a compact sticky bar under the header with search and a single scrolling row of topics. The current topic is highlighted as you scroll. Topics now jump to their section instead of filtering; search still filters. `faqs/page.tsx`: list no longer limited to `max-w-3xl`.
+- 2026-11-09: Owner answered: T2 action pack = a to-do list, AI-drafted questions OK for teacher review; T6 = sign-in tabs; T9 won't do; T18 later. New item T19 (portal-wide professional look). T6 done: `src/app/learn/login/page.tsx` now refuses an account on a tab it holds no role for (signs it out, names the right tab, offers to switch), and lands multi-role users on the chosen area.
