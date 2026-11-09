@@ -9,7 +9,9 @@ type Related = { href: string; label: string; body: string };
 // "Where next" links at the foot of the main section pages, following the
 // order a prospective parent works through: understand → check the fit →
 // cost it → see the school → apply. Rendered once from the marketing layout
-// so every page gets the same treatment; pages not listed get nothing.
+// so every page gets the same treatment; pages not listed get nothing. The
+// eligibility check is deliberately not listed: its result already ends with
+// the next steps, and a second block underneath was clutter (owner, Nov 2026).
 const RELATED: Record<string, Related[]> = {
   "/about": [
     { href: "/learning", label: "How learning works", body: "Live lessons, the portals and the school day." },
@@ -25,11 +27,6 @@ const RELATED: Record<string, Related[]> = {
     { href: "/learning", label: "How learning works", body: "Live lessons, the portals and the school day." },
     { href: "/eligibility", label: "Is it right for us?", body: "An honest two-minute check before you apply." },
     { href: "/fees", label: "Fees", body: "Published fees and payment plans." },
-  ],
-  "/eligibility": [
-    { href: "/open-evening", label: "Open evenings & taster morning", body: "See a live lesson before you decide." },
-    { href: "/fees", label: "Fees", body: "Published fees and payment plans." },
-    { href: "/admissions", label: "How to apply", body: "The steps, the dates and what you need." },
   ],
   "/fees": [
     { href: "/book-a-call#book", label: "Book a free call", body: "Talk fees and payment plans through with admissions." },

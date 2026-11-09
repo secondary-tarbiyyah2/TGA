@@ -7,7 +7,7 @@
   "code": "Biology 4BI1; Chemistry 4CH1; Physics 4PH1; Science (Double Award) 4SD0 (linear). No 4SD1 code was found.",
   "specVersion": "Biology Issue 3, September 2024; Chemistry Issue 3, September 2024 (its front matter still says Issue 2 in one sentence); Physics Issue 4, September 2024; Science (Double Award) Issue 4, September 2024. First teaching September 2017, first assessment June 2019, first certification August 2019.",
   "status": "Verified",
-  "statusNote": "Re-read on 22 October 2026 as raw text (pdftotext) from the four official Pearson specification PDFs: Biology 4BI1, Chemistry 4CH1, Physics 4PH1 and Science (Double Award) 4SD0. Papers, codes, durations, marks, weightings, assessment objectives, command words, practical approach, grading, forbidden combinations, the maths skills table (read from the page image) and every numbered point in all 17 units were compared with the raw text: 176 Biology, 182 Chemistry and 195 Physics points, each paraphrased in this file with its spec number. A trailing B, C or P marks a bold statement: Paper 2 only and not in the Double Award; these match the Double Award PDF's own exclusion lists exactly. Year and term placement is a recommended sequence, not set by the board. The modular 2024 specifications were not read.",
+  "statusNote": "Re-read on 22 October 2026 as raw text (pdftotext) from the four official Pearson specification PDFs: Biology 4BI1, Chemistry 4CH1, Physics 4PH1 and Science (Double Award) 4SD0. Papers, codes, durations, marks, weightings, assessment objectives, command words, practical approach, grading, forbidden combinations, the maths skills table (read from the page image) and every numbered point in all 17 units were compared with the raw text: 176 Biology, 182 Chemistry and 195 Physics points, each paraphrased in this file with its spec number. A trailing B, C or P marks a bold statement: Paper 2 only and not in the Double Award; these match the Double Award PDF's own exclusion lists exactly. Year and term placement is a recommended sequence, not set by the board. The modular 2024 specifications were not read. November 2026 alignment with the school's files: the Year 10 and Year 11 order follows the school's KS4 Biology, Chemistry and Physics intents (Biology 4 ecology before Biology 3 inheritance in Year 11; Physics 8 points 8.1 to 8.10 taught in Year 11). The school's scheme files are generic: Pearson five-year schemes for Edexcel GCSE (9-1) sciences and Oxford's AQA five-year schemes (Kerboodle); each unit's resources name the matching lessons and chapters and list the scheme content that is not on 4SD0 and is not taught.",
   "sources": [
     {
       "title": "Pearson Edexcel International GCSE Biology (4BI1, Issue 3) specification PDF, read as raw text",
@@ -148,7 +148,9 @@
         "pathogen",
         "protoctist",
         "virus"
-      ]
+      ],
+      "resources": "School's Pearson five-year Biology scheme (generic, for Edexcel GCSE 1BI0; content matched to 4SD0 only): SB1d Inside bacteria, SB4d Classification, SB5d Pathogens. Oxford AQA GCSE Biology (Kerboodle, generic): B1 Cell structure and transport (prokaryotes), B5 Communicable disease (pathogens).",
+      "foundingYear": "Year 10 Autumn 1; 2027 Year 10: core in the week of 11 Jan, the rest by independent study."
     },
     {
       "ref": "Biology 2",
@@ -263,14 +265,16 @@
         "homeostasis",
         "reflex arc",
         "nephron"
-      ]
+      ],
+      "resources": "Pearson five-year Biology scheme: SB1a to SB1c and SB1e to SB1i (cells, enzymes, food tests, transport), SB6a to SB6d (photosynthesis, transpiration), SB8a to SB8e (exchange, circulation, heart, respiration), SB2g to SB2i (nervous system, eye), SB7a, SB7e, SB7g (hormones, blood glucose, thermoregulation), SB5j (immune system). Oxford AQA Biology B1 to B4, B8 to B11. Not taught (off 4SD0): SB2e, SB2f (the brain), SB5g, SB5h, SB5l, SB5m, SB7h, SB7i (kidneys, B-only), stem cells (B-only) and vaccination (B-only).",
+      "foundingYear": "Year 10 Autumn 1 to Summer 1 (school Biology KS4 units 1 to 3); 2027 Year 10: Spring 1 to Summer 1 weeks live."
     },
     {
       "ref": "Biology 3",
       "title": "Reproduction and inheritance",
       "paper": "Biology Paper 1 and Paper 2; Science (Double Award) Biology Paper 1",
       "year": "Y11",
-      "term": "Autumn",
+      "term": "Autumn 2",
       "points": [
         "3.1 Sexual and asexual reproduction compared.",
         "3.2 Fertilisation fuses male and female gametes to form a zygote that develops into an embryo.",
@@ -321,14 +325,16 @@
         "mutation",
         "natural selection",
         "antibiotic resistance"
-      ]
+      ],
+      "resources": "Pearson five-year Biology scheme: SB3a to SB3c and SB3e to SB3k (reproduction, meiosis, DNA, inheritance, variation, mutation), CB2a Mitosis, SB4b Darwin's theory, SB5k Antibiotics (resistance). Oxford AQA Biology B12 to B15. Not taught (off 4SD0): SB3d protein synthesis (B-only), CB4a evidence for human evolution, and FSH and LH in SB7d (B-only); SB7c and SB7d are used only for oestrogen and progesterone (3.9).",
+      "foundingYear": "Year 11 Autumn 2 (school Biology KS4 unit 5, variation and selection, after ecology). TO CONFIRM: how the school frames human origins; how human reproduction is delivered."
     },
     {
       "ref": "Biology 4",
       "title": "Ecology and the environment",
       "paper": "Biology Paper 1 and Paper 2; Science (Double Award) Biology Paper 1",
       "year": "Y11",
-      "term": "Spring",
+      "term": "Autumn 1",
       "points": [
         "4.1 Meaning of population, community, habitat and ecosystem.",
         "4.2 Practical: compare population size of an organism in two areas using quadrats.",
@@ -357,14 +363,16 @@
         "carbon cycle",
         "eutrophication",
         "greenhouse gas"
-      ]
+      ],
+      "resources": "Pearson five-year Biology scheme: SB9a to SB9g, SB9i, SB9j (ecosystems, energy transfer, pollution, biodiversity, carbon cycle). Oxford AQA Biology B16 to B18. Not taught (off 4SD0): the nitrogen cycle detail (B-only 4.11) and SB9l decomposition rates practical. Quadrat work at home or in a local park.",
+      "foundingYear": "Year 11 Autumn 1 (school Biology KS4 unit 4, ecology, comes before variation)."
     },
     {
       "ref": "Biology 5",
       "title": "Use of biological resources",
       "paper": "Biology Paper 1 and Paper 2; Science (Double Award) Biology Paper 1",
       "year": "Y11",
-      "term": "Summer",
+      "term": "Autumn 2",
       "points": [
         "5.1 Glasshouses and polythene tunnels can raise crop yield.",
         "5.2 Effects of extra carbon dioxide and temperature on glasshouse crop yield.",
@@ -394,14 +402,16 @@
         "vector",
         "transgenic",
         "micropropagation"
-      ]
+      ],
+      "resources": "Pearson five-year Biology scheme: SB4e Breeds and varieties, SB4g, SB4h (genes in agriculture and medicine, GM), SB4i Fertilisers and biological control. Oxford AQA Biology B13 and B15 (selective breeding, genetic engineering). Not taught (off 4SD0): SB4f Tissue culture (B-only). Yeast practical at home with sugar, warm water and a balloon.",
+      "foundingYear": "Year 11 Autumn 2 (school Biology KS4 unit 6, microorganisms and genetic modification)."
     },
     {
       "ref": "Chemistry 1",
       "title": "Principles of chemistry",
       "paper": "Chemistry Paper 1 and Paper 2; Science (Double Award) Chemistry Paper 1",
       "year": "Y10",
-      "term": "Autumn to Summer",
+      "term": "Autumn to Spring",
       "points": [
         "1.1 States of matter in terms of particle arrangement, movement and energy.",
         "1.2 Interconversions between states: names, how achieved, particle changes.",
@@ -473,7 +483,9 @@
         "lattice",
         "electrolysis",
         "Rf value"
-      ]
+      ],
+      "resources": "School's Pearson five-year Chemistry scheme (generic, for Edexcel GCSE 1CH0; content matched to 4SD0 only): SC1a, SC2a to SC2d, SC3a to SC3c, SC4a to SC4c, SC5a to SC5c, SC6a, CC7a, CC7b, SC8a to SC8c, SC9d, SC14a. Oxford AQA GCSE Chemistry (Kerboodle, generic): C1 to C4. Not taught (off 4SD0): CC7c metallic bonding, SC10 electrolysis, SC14c, SC14d concentration and titration, SC15c molar volume (all Chemistry-only), SC14b atom economy (not in the specification).",
+      "foundingYear": "Year 10 Autumn 1 to Spring 1 (school Chemistry intent: principles of chemistry first); 2027 Year 10: core in the weeks of 11 and 18 Jan, Spring 1 weeks live."
     },
     {
       "ref": "Chemistry 2",
@@ -541,14 +553,16 @@
         "titration",
         "salt",
         "flame test"
-      ]
+      ],
+      "resources": "Pearson five-year Chemistry scheme: SC17a to SC17d (Groups 1, 7, 0), SC21a to SC21c (atmosphere), SC11a, SC11c (reactivity, redox), SC13b Corrosion, SC9a to SC9g (acids, bases, salts), SC22a, SC22b (ion tests). Oxford AQA Chemistry C5, C12, C13. Not taught (off 4SD0): SC11b ores and extraction, SC13d alloying (Chemistry-only), SC13a, SC13c transition metals and electroplating, SC22c instrumental analysis (not in the specification). Salt preparation and gas tests by written guide with a teacher demonstration on screen.",
+      "foundingYear": "Year 10 Spring 2 to Summer 1 (school Chemistry intent: inorganic chemistry after principles)."
     },
     {
       "ref": "Chemistry 3",
       "title": "Physical chemistry",
       "paper": "Chemistry Paper 1 and Paper 2; Science (Double Award) Chemistry Paper 1",
       "year": "Y11",
-      "term": "Autumn",
+      "term": "Autumn 1",
       "points": [
         "3.1 Exothermic reactions give out heat; endothermic reactions take heat in.",
         "3.2 Simple calorimetry for combustion, displacement, dissolving and neutralisation.",
@@ -580,14 +594,16 @@
         "activation energy",
         "catalyst",
         "dynamic equilibrium"
-      ]
+      ],
+      "resources": "Pearson five-year Chemistry scheme: SC19a, SC19b (energy changes), SC18a to SC18c (rates, catalysts), SC12a (reversible reactions only). Oxford AQA Chemistry C7, C8. Not taught (off 4SD0): bond energies, reaction profiles, dynamic equilibrium and its position (Chemistry-only).",
+      "foundingYear": "Year 11 Autumn 1 (school Chemistry intent: energetics and rates begin Year 11)."
     },
     {
       "ref": "Chemistry 4",
       "title": "Organic chemistry",
       "paper": "Chemistry Paper 1 and Paper 2; Science (Double Award) Chemistry Paper 1",
       "year": "Y11",
-      "term": "Spring to Summer",
+      "term": "Autumn 2",
       "points": [
         "4.1 A hydrocarbon contains only hydrogen and carbon.",
         "4.2 Representing organic molecules: empirical, molecular, general, structural and displayed formulae.",
@@ -647,7 +663,9 @@
         "alkene",
         "polymer",
         "fraction"
-      ]
+      ],
+      "resources": "Pearson five-year Chemistry scheme: SC20a to SC20f (crude oil, alkanes, combustion, cracking), SC23a, SC23b (alkanes and alkenes), SC24a, SC24b, SC24d (addition polymers and their problems). Oxford AQA Chemistry C9, C10, C11. Not taught (off 4SD0): SC25 alcohols and carboxylic acids, esters and SC24c condensation polymers (Chemistry-only), SC26 materials and nanoparticles.",
+      "foundingYear": "Year 11 Autumn 2 (school Chemistry intent: organic chemistry last)."
     },
     {
       "ref": "Physics 1",
@@ -697,14 +715,16 @@
         "Hooke's law",
         "momentum",
         "moment"
-      ]
+      ],
+      "resources": "School's Pearson five-year Physics scheme (generic, for Edexcel GCSE 1PH0; content matched to 4SD0 only): SP1a to SP1d (vectors, distance-time, acceleration, velocity-time), SP2a to SP2d, SP2g, SP2h (resultant forces, Newton's first and second laws, weight, stopping distances). Oxford AQA GCSE Physics (Kerboodle, generic): P8 to P10. Not taught (off 4SD0): SP2e Newton's third law, SP2f momentum, moments (Physics-only).",
+      "foundingYear": "Year 10 Autumn 1 and 2 (school Physics intent: forces and motion first); 2027 Year 10: core in the weeks of 11 and 18 Jan."
     },
     {
       "ref": "Physics 2",
       "title": "Electricity",
       "paper": "Physics Paper 1 and Paper 2; Science (Double Award) Physics Paper 1",
       "year": "Y10",
-      "term": "Autumn to Spring",
+      "term": "Spring 1",
       "points": [
         "2.1 Units: A, C, J, ohm, s, V and W.",
         "2.2 Insulation, double insulation, earthing, fuses and circuit breakers protect device or user.",
@@ -743,14 +763,16 @@
         "LDR",
         "thermistor",
         "static charge"
-      ]
+      ],
+      "resources": "Oxford AQA GCSE Physics P4 Electric circuits, P5 Electricity in the home. The Pearson five-year Physics scheme's later electricity lessons are untitled in the school's copy. Not taught (off 4SD0): static electricity (Physics-only 2.22 to 2.28). Circuit work with an on-screen simulator.",
+      "foundingYear": "Year 10 Spring 1 (school Physics intent: electricity second)."
     },
     {
       "ref": "Physics 3",
       "title": "Waves",
       "paper": "Physics Paper 1 and Paper 2; Science (Double Award) Physics Paper 1",
       "year": "Y10",
-      "term": "Spring",
+      "term": "Spring 2",
       "points": [
         "3.1 Units: degree, Hz, m, m/s and s.",
         "3.2 Difference between longitudinal and transverse waves.",
@@ -789,14 +811,16 @@
         "critical angle",
         "electromagnetic spectrum",
         "Doppler effect"
-      ]
+      ],
+      "resources": "Pearson five-year Physics scheme: SP4a, SP4c, CP4d (describing waves, wave velocity, refraction). Oxford AQA Physics P12 Wave properties, P13 The electromagnetic spectrum, P14 Light (reflection and refraction only). Not taught (off 4SD0): lenses and ultrasound (not in the specification), hearing range, oscilloscopes, pitch and loudness (Physics-only).",
+      "foundingYear": "Year 10 Spring 2 (school Physics intent: waves third)."
     },
     {
       "ref": "Physics 4",
       "title": "Energy resources and energy transfers",
       "paper": "Physics Paper 1 and Paper 2; Science (Double Award) Physics Paper 1",
       "year": "Y10",
-      "term": "Summer",
+      "term": "Summer 1",
       "points": [
         "4.1 Units: kg, J, m, m/s, m/s2, N, s and W.",
         "4.2 Energy stores (chemical to nuclear) and transfers: mechanical, electrical, heating, radiation.",
@@ -825,14 +849,16 @@
         "work done",
         "power",
         "renewable"
-      ]
+      ],
+      "resources": "Pearson five-year Physics scheme: SP3a, SP3b, SP3d (energy stores and transfers, efficiency, keeping warm). Oxford AQA Physics P1 Conservation and dissipation of energy, P2 Energy transfer by heating. Not taught (off 4SD0): SP3c, SP3e, SP3f and P3 Energy resources (generating electricity is Physics-only 4.18 and 4.19).",
+      "foundingYear": "Year 10 Summer 1 (school Physics intent: energy transfers fourth)."
     },
     {
       "ref": "Physics 5",
       "title": "Solids, liquids and gases",
       "paper": "Physics Paper 1 and Paper 2; Science (Double Award) Physics Paper 1",
       "year": "Y11",
-      "term": "Autumn",
+      "term": "Autumn 1",
       "points": [
         "5.1 Units: °C, K, J, kg, kg/m3, m, m2, m3, m/s, m/s2, N and Pa.",
         "5.2P Unit: joules per kilogram degree Celsius (J/kg °C).",
@@ -863,14 +889,16 @@
         "specific heat capacity",
         "absolute zero",
         "kelvin"
-      ]
+      ],
+      "resources": "Oxford AQA Physics P6 Molecules and matter, P11 Force and pressure. Not taught (off 4SD0): specific heat capacity and changes of state (Physics-only 5.8 to 5.14). Density practical at home with a kitchen scale and a measuring jug.",
+      "foundingYear": "Year 11 Autumn 1 (school Physics intent: particle theory begins Year 11)."
     },
     {
       "ref": "Physics 6",
       "title": "Magnetism and electromagnetism",
       "paper": "Physics Paper 1 and Paper 2; Science (Double Award) Physics Paper 1",
       "year": "Y11",
-      "term": "Autumn to Spring",
+      "term": "Autumn 1",
       "points": [
         "6.1 Units: A, V and W.",
         "6.2 Magnets attract and repel magnets and attract magnetic substances.",
@@ -899,14 +927,16 @@
         "motor effect",
         "electromagnetic induction",
         "transformer"
-      ]
+      ],
+      "resources": "Oxford AQA Physics P15 Electromagnetism. Not taught (off 4SD0): electromagnet construction, field patterns of coils, force on moving charges and transformers (Physics-only).",
+      "foundingYear": "Year 11 Autumn 1 (school Physics intent: magnets and electromagnetism second)."
     },
     {
       "ref": "Physics 7",
       "title": "Radioactivity and particles",
       "paper": "Physics Paper 1 and Paper 2; Science (Double Award) Physics Paper 1",
       "year": "Y11",
-      "term": "Spring",
+      "term": "Autumn 2",
       "points": [
         "7.1 Units: becquerel (Bq), cm, hour, minute and second.",
         "7.2 Atom structure of protons, neutrons, electrons; nuclide symbols such as carbon-14.",
@@ -942,14 +972,16 @@
         "fission",
         "fusion",
         "background radiation"
-      ]
+      ],
+      "resources": "Oxford AQA Physics P7 Radioactivity. Penetration practical by simulation only.",
+      "foundingYear": "Year 11 Autumn 2 (school Physics intent: radiation third)."
     },
     {
       "ref": "Physics 8",
       "title": "Astrophysics",
       "paper": "Physics Paper 1 and Paper 2; Science (Double Award) Physics Paper 1",
       "year": "Y11",
-      "term": "Summer",
+      "term": "Autumn 2",
       "points": [
         "8.1 Units: kg, m, m/s, m/s2, N, s and N/kg.",
         "8.2 Universe holds billions of galaxies; a galaxy holds billions of stars; Milky Way.",
@@ -977,7 +1009,9 @@
         "red-shift",
         "cosmic microwave background",
         "Big Bang"
-      ]
+      ],
+      "resources": "Oxford AQA Physics P16 Space (8.1 to 8.10 only). Not taught (off 4SD0): absolute magnitude, the Hertzsprung-Russell diagram, red-shift and the Big Bang (Physics-only 8.11 to 8.18).",
+      "foundingYear": "Year 11 Autumn 2. Points 8.1 to 8.10 are in the Double Award (the specification data marks 8.11 to 8.18 Physics-only)."
     }
   ],
   "commandWords": [

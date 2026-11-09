@@ -16,7 +16,7 @@ availability: Published on the Academy website and Parent Portal. Available in l
 
 ## 1. Introduction and Ethos
 
-Tarbiyyah Global Academy welcomes families who are seeking a specialist education rooted in Islamic values, delivered live wherever they live. We look for pupils who will engage fully with online learning and with our RECIPE values, and for families who will partner with us in their child's education. The admissions process is where that partnership begins.
+Tarbiyyah Global Academy welcomes families who are seeking a specialist education rooted in Islamic values, delivered live wherever they live. We look for pupils who will engage fully with online learning and with our Tarbiyyah Compass values, and for families who will partner with us in their child's education. The admissions process is where that partnership begins.
 
 ## 2. Legal Framework and Equality Statement
 
@@ -73,7 +73,7 @@ If information provided is later found to be materially inaccurate, the Academy 
 
 ## 8. Induction
 
-New pupils attend an online induction covering: the Academy's live-lesson platform (currently Microsoft Teams), joined from the Student Portal, and the Student Portal itself; the Live Lesson Protocols; the RECIPE values; merits and consequences; how to report a worry; and a practice live lesson. Parents attend a separate onboarding session on the Parent Portal, attendance, communication and online safety at home.
+New pupils attend an online induction covering: the Academy's live-lesson platform (currently Microsoft Teams), joined from the Student Portal, and the Student Portal itself; the Live Lesson Protocols; the Tarbiyyah Compass values; merits and consequences; how to report a worry; and a practice live lesson. Parents attend a separate onboarding session on the Parent Portal, attendance, communication and online safety at home.
 
 ## 9. The Probationary Period
 
