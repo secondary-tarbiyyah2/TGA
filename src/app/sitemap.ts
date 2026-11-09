@@ -8,7 +8,7 @@ const siteUrl = "https://globalacademy.tarbiyyah.co.uk";
 
 const routes = [
   "", "about", "curriculum", "admissions", "eligibility", "fees", "pastoral-care",
-  "testimonials", "faqs", "contact", "term-dates", "open-evening", "policies", "safeguarding", "book-a-call", "learning", "parents", "admissions/apply",
+  "testimonials", "faqs", "contact", "term-dates", "open-evening", "policies", "safeguarding", "book-a-call", "learning", "parents", "admissions/apply", "careers", "careers/apply",
   "legal/privacy", "legal/cookies", "legal/terms", "accessibility",
 ];
 

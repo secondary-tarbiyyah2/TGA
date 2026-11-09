@@ -20,11 +20,12 @@ export function isNavGroup(entry: NavEntry): entry is NavGroup {
 export const primaryNav: NavEntry[] = [
   {
     label: "Our School",
-    blurb: "About us, team, testimonials, FAQs",
+    blurb: "About us, team, testimonials, FAQs, careers",
     items: [
       { href: "/about", label: "About us" },
       { href: "/testimonials", label: "Testimonials" },
       { href: "/faqs", label: "FAQs" },
+      { href: "/careers", label: "Careers" },
     ],
   },
   {
@@ -94,6 +95,7 @@ export const footerColumns: { heading: string; links: NavLink[] }[] = [
       { href: "/testimonials", label: "Testimonials" },
       { href: "/learning", label: "How learning works" },
       { href: "/curriculum", label: "Curriculum" },
+      { href: "/careers", label: "Careers" },
     ],
   },
   {
