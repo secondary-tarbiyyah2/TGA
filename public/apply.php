@@ -55,6 +55,12 @@ if ($errors) {
     exit;
 }
 
+if (mailer_rate_limited($email)) {
+    http_response_code(429);
+    echo json_encode(['ok' => false, 'error' => 'rate_limited']);
+    exit;
+}
+
 $subject = 'New application' . $childName . ' (' . $yeargroup . ')';
 $text = implode("\n", [
     'A new application was submitted on Tarbiyyah Global Academy.',

@@ -10,7 +10,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { createRequire } from "node:module";
-import { ROUTINES, itemA, itemQ, phaseMinutes, routineFor } from "../../src/lib/learn/lessonSchema.mjs";
+import { ISLAMIC_SUBJECTS, ROUTINES, itemA, itemQ, itemModel, phaseMinutes, routineFor } from "../../src/lib/learn/lessonSchema.mjs";
 import { sortAnswer } from "./deck-parts.mjs";
 
 const require = createRequire(import.meta.url);
@@ -57,7 +57,7 @@ const para = (children, o = {}) =>
 function heading(text, accent) {
   return new Paragraph({
     children: [new TextRun({ text: text.toUpperCase(), font: FONT, size: 19, bold: true, color: accent, characterSpacing: 40 })],
-    spacing: { before: 150, after: 60 },
+    spacing: { before: 110, after: 50 },
     border: { bottom: { style: BorderStyle.SINGLE, size: 6, color: LINE, space: 2 } },
     keepNext: true,
   });
@@ -88,23 +88,31 @@ function table(widths, rows, o = {}) {
       (r, i) =>
         new TableRow({
           tableHeader: i === 0 && o.header !== false,
-          cantSplit: true,
+          cantSplit: !o.split,
           children: r.map((c, j) => cell(c, { w: widths[j], fill: i === 0 && o.header !== false ? o.headFill || CREAM : o.zebra && i % 2 === 0 ? "FCFAF5" : undefined, text: i === 0 && o.header !== false ? { bold: true, size: 16, color: o.headColor } : { size: 17 } })),
         }),
     ),
   });
 }
 
-/** Minutes for each phase, adding up to the lesson length (task phases use the slides' timers). */
+/**
+ * Minutes for each phase, adding up to the lesson length (task phases use the slides' timers; the
+ * explanation takes what is left). A ponder question is on screen before the start, so it takes no
+ * lesson time; an Islamic link takes 2 minutes. `total` is the sum, which can only pass the lesson
+ * length when the items' own minutes leave too little for the explanation.
+ */
 export function timings(lesson, duration, teachCount, breaks) {
-  const hook = lesson.hook ? 1 : 0;
+  const ponder = lesson.hook && lesson.hook.type === "ponder";
+  const hook = lesson.hook && !ponder ? 1 : 0;
+  const islamic = lesson.islamicLink && lesson.islamicLink.text ? 2 : 0;
   const starter = phaseMinutes("starter", lesson.starter, duration);
   const guided = phaseMinutes("practice", lesson.practice, duration);
   const independent = phaseMinutes("independent", lesson.independent, duration);
   const exit = phaseMinutes("exit", lesson.exit, duration);
   const close = 2;
-  const teach = Math.max(teachCount * 2, duration - hook - starter - guided - independent - exit - close);
-  return { hook, starter, teach, guided, independent, exit, close, breaks };
+  const teach = Math.max(teachCount * 2, duration - hook - islamic - starter - guided - independent - exit - close);
+  const total = hook + islamic + starter + teach + guided + independent + exit + close;
+  return { hook, islamic, starter, teach, guided, independent, exit, close, breaks, total };
 }
 
 const range = (a, b) => (a === b ? `${a}` : `${a}–${b}`);
@@ -174,15 +182,19 @@ export async function buildPlan(file, lesson, meta) {
   );
 
   // ── Objectives + success criteria | key words ─────────────────────────────
-  const sc = (lesson.successCriteria || []).map(clean).filter(Boolean);
+  const sc = (lesson.successCriteria || []).map((x) => clean(x).replace(/^(all|most|some)\s*[:\-–]\s*/i, "")).filter(Boolean).slice(0, 3);
   const leftW = Math.round(CONTENT_W * 0.58);
   const rightW = CONTENT_W - leftW;
-  const left = [label("Objectives"), ...(lesson.objectives || []).map((o) => bullet(clean(o)))];
+  const objs = (lesson.objectives || []).map(clean).filter(Boolean);
+  const left = [label(objs.length === 1 ? "Objective (the destination)" : "Objectives"), ...objs.map((o) => (objs.length === 1 ? para([run(o, { bold: true })], { after: 40 }) : bullet(o)))];
   if (sc.length) {
-    left.push(label("Success criteria"));
-    sc.forEach((x, i) => left.push(para([run(`${["All", "Most", "Some"][i] || "•"}: `, { bold: true, color: accent }), run(x)], { after: 30 })));
+    left.push(label("Success criteria (the steps)"));
+    sc.forEach((x, i) => left.push(para([run(`${["All", "Most", "Some"][i]}: `, { bold: true, color: accent }), run(x)], { after: 30 })));
   }
-  if (lesson.bigQuestion) left.push(para([run("Big question: ", { bold: true }), run(clean(lesson.bigQuestion), { italics: true })], { before: 60, after: 20 }));
+  const ponder = lesson.hook && lesson.hook.type === "ponder" ? lesson.hook : null;
+  if (ponder) left.push(para([run(`Ponder (slide ${S.ponder || 1}, while pupils join): `, { bold: true }), run(clean(ponder.text), { italics: true })], { before: 60, after: 20 }));
+  if (lesson.bigQuestion) left.push(para([run("Big question: ", { bold: true }), run(clean(lesson.bigQuestion), { italics: true })], { before: ponder ? 0 : 60, after: 20 }));
+
   const kws = (lesson.keywords || []).slice(0, 8);
   const right = [label("Key words"), ...(kws.length ? kws.map((k) => para([run(`${clean(k.term)}: `, { bold: true, color: accent }), run(clean(k.def), { size: 17 })], { after: 30 })) : [para([run("No new key words this lesson.", { color: MUTED, italics: true })])])];
   children.push(para([], { after: 100 }));
@@ -198,6 +210,7 @@ export async function buildPlan(file, lesson, meta) {
     ? [para([run(`Lesson ${meta.next.n}: ${clean(meta.next.title)}`, { bold: true, size: 17 })], { after: 20 }), ...(meta.next.objectives || []).slice(0, 2).map((o) => para([run(`• ${clean(o)}`, { size: 16, color: MUTED })], { after: 10 })), ...(clean(meta.next.unit) !== clean(lesson.unit) ? [para([run(`(starts ${clean(meta.next.unit)})`, { size: 16, italics: true, color: MUTED })])] : [])]
     : [para([run("Last lesson in this sequence.", { size: 17 })])];
   const res = (Array.isArray(lesson.resources) && lesson.resources.length ? lesson.resources : ["Slides", "Mini-whiteboard and pen", "Exercise book"]).map((r) => para([run(`• ${clean(r)}`, { size: 17 })], { after: 10 }));
+  if (meta.pupilUrl) res.push(para([run("• Lesson PDF for pupils: slides and worksheet (link on slide 1)", { size: 17 })], { after: 10 }));
   const w3 = Math.floor(CONTENT_W / 3);
   children.push(para([], { after: 80 }));
   children.push(table([w3, w3, CONTENT_W - 2 * w3], [[[label("Prior learning"), ...prior], [label("Next lesson"), ...next], [label("Resources"), ...res]]], { header: false }));
@@ -215,13 +228,23 @@ export async function buildPlan(file, lesson, meta) {
   };
   const small = (text, o = {}) => para([run(text, { size: 16, ...o })], { after: 20 });
   // Questions with answers are listed once, in the answer key; the rest are listed here.
-  const qList = (items) =>
-    (items || []).some(itemA) ? [small(`${items.length} question${items.length === 1 ? "" : "s"}: see the answer key.`, { color: MUTED })] : (items || []).map((x, i) => small(`${i + 1}. ${clean(itemQ(x))}`));
+  // Questions with an answer are listed in the answer key; the others (open answers) here.
+  const qList = (items) => {
+    const list = items || [];
+    const keyed = list.filter(itemA).length;
+    return [...list.map((x, i) => (itemA(x) ? null : small(`${i + 1}. ${clean(itemQ(x))}`))).filter(Boolean), ...(keyed ? [small(`${keyed === list.length ? "All" : keyed} question${keyed === 1 ? "" : "s"} with answers: see the answer key.`, { color: MUTED })] : [])];
+  };
   const phase = (name, routine) => [para([run(name, { bold: true, size: 17 })], { after: 20 }), ...(ROUTINES[routine] ? [small(routineText(routine), { color: accent, bold: true })] : [])];
   const slideRef = (a, b) => (b ? `${a}, ${b}` : String(a));
   const rows = [["Time (min)", "Slides", "Phase and routine", "Teacher actions"]];
-  if (lesson.hook) rows.push([at(t.hook), String(S.hook || 2), phase("Hook", routineFor(lesson, "hook", lesson.hook.type)), [small(clean(lesson.hook.text), { italics: true }), ...(lesson.hook.a ? [small(`Draw out: ${clean(lesson.hook.a)}`, { color: MUTED })] : [])]]);
-  rows.push([at(t.starter), slideRef(S.starter, S.starterAnswers), phase(senior ? "Do now" : "Warm-up", routineFor(lesson, "starter")), [small(senior ? "Retrieval, in silence, from memory. Bismillah to begin." : "Settle, bismillah, quick recall.", { italics: true, color: MUTED }), ...qList(lesson.starter), ...(S.starterAnswers ? [small("Reveal the answers (next slide); pupils self-mark.", { color: MUTED })] : [])]]);
+  const polls = (S.polls || []).filter((p) => p.section !== "hinge");
+  const pollNote = (section) => polls.filter((p) => p.section === section).map((p) => small(`Teams poll (slide ${p.slide}${p.answerSlide ? `, answer ${p.answerSlide}` : ""}): ${clean(p.q)}`, { color: accent }));
+  if (ponder) rows.push(["Before", String(S.ponder || 1), phase("Ponder", null), [small(clean(ponder.text), { italics: true }), small("On screen as pupils join; take two or three ideas at the start.", { color: MUTED })]]);
+  else if (lesson.hook) rows.push([at(t.hook), String(S.hook || 2), phase("Hook", routineFor(lesson, "hook", lesson.hook.type)), [small(clean(lesson.hook.text), { italics: true }), ...(lesson.hook.a ? [small(`Draw out: ${clean(lesson.hook.a)}`, { color: MUTED })] : [])]]);
+  if (S.islamicStart) rows.push([at(t.islamic), String(S.islamicStart), phase("Islamic foundation", null), [small(clean(lesson.islamicLink.text), { italics: true })]]);
+  // Bismillah belongs in Qur'an, Islamic Studies and Arabic starters only (lessons v3).
+  const bism = ISLAMIC_SUBJECTS.includes(meta.subjectSlug);
+  rows.push([at(t.starter), slideRef(S.starter, S.starterAnswers), phase(senior ? "Do now" : "Warm-up", routineFor(lesson, "starter")), [small(senior ? `Retrieval, in silence, from memory.${bism ? " Bismillah to begin." : ""}` : `Settle${bism ? ", bismillah" : ""}, quick recall.`, { italics: true, color: MUTED }), ...qList(lesson.starter), ...pollNote("starter"), ...(S.starterAnswers ? [small("Reveal the answers (next slide); pupils self-mark.", { color: MUTED })] : [])]]);
   rows.push([
     at(t.teach),
     range(S.teach[0], S.teach[S.teach.length - 1]),
@@ -234,11 +257,30 @@ export async function buildPlan(file, lesson, meta) {
       ...(meta.breaks ? [small(`Includes a one-minute ${meta.band === "early" ? "wiggle" : "brain"} break (no music).`, { italics: true, color: MUTED })] : []),
     ],
   ]);
-  rows.push([at(t.guided), slideRef(S.guided, S.guidedAnswers), phase(senior ? "Guided practice" : "We do", routineFor(lesson, "practice")), [small("Model your thinking aloud; check every pupil before moving on.", { italics: true, color: MUTED }), ...qList(lesson.practice)]]);
-  rows.push([at(t.independent), slideRef(S.independent, S.independentAnswers), phase(senior ? "Independent" : "You do", routineFor(lesson, "independent")), [small(meta.band === "senior" ? "Core, extend, stretch: pupils start where they can; circulate via chat and cameras." : "Bronze, silver, gold: children choose where to start.", { italics: true, color: MUTED }), ...qList(lesson.independent)]]);
-  rows.push([at(t.exit), String(S.exit), phase("Exit ticket", routineFor(lesson, "exit")), [...qList(lesson.exit), small("Then a 1-2-3 confidence check on fingers.", { italics: true, color: MUTED })]]);
-  rows.push([at(t.close), String(S.close), phase("Close", null), [small(`Homework: ${clean(Array.isArray(lesson.homework) ? lesson.homework.join(" ") : lesson.homework)}`), small("Close with du'a and jazakallahu khayran.", { color: MUTED })]]);
-  children.push(table(w, rows, { zebra: true }));
+  rows.push([at(t.guided), slideRef(S.iDo || S.guided, S.guidedAnswers), phase(S.iDo ? "I do, then we do" : senior ? "Guided practice" : "We do", routineFor(lesson, "practice")), [small(S.iDo ? `I do (slide ${S.iDo}): go through the model of question 1 (see Models below), then we do the rest together.` : "Model your thinking aloud; check every pupil before moving on.", { italics: true, color: MUTED }), ...qList(lesson.practice)]]);
+  rows.push([at(t.independent), slideRef(S.indModel || S.independent, S.independentAnswers), phase(senior ? "Independent" : "You do", routineFor(lesson, "independent")), [...(S.indModel ? [small(`Go through task 1 first (slide ${S.indModel}).`, { color: accent })] : []), small(meta.band === "senior" ? "Core, extend, stretch: pupils start where they can; circulate via chat and cameras." : "Bronze, silver, gold: children choose where to start.", { italics: true, color: MUTED }), ...qList(lesson.independent)]]);
+  rows.push([at(t.exit), String(S.exit), phase("Exit ticket", routineFor(lesson, "exit")), [...qList(lesson.exit), ...pollNote("exit"), small("Then a 1-2-3 confidence check on fingers.", { italics: true, color: MUTED })]]);
+  if (S.islamicEnd) rows.push([at(t.islamic), String(S.islamicEnd), phase("Islamic position", null), [small(clean(lesson.islamicLink.text), { italics: true })]]);
+  rows.push([at(t.close), S.topicKeywords ? `${S.topicKeywords}, ${S.close}` : String(S.close), phase("Close", null), [small(`Homework: ${clean(Array.isArray(lesson.homework) ? lesson.homework.join(" ") : lesson.homework)}`), ...(S.topicKeywords ? [small(`Topic key words for revision (slide ${S.topicKeywords}).`, { color: MUTED })] : []), small("Close with du'a and jazakallahu khayran.", { color: MUTED })]]);
+  rows.push([para([run(`${t.total}`, { bold: true, size: 17, color: t.total > duration ? "B03A2E" : INK })], { after: 0 }), "", para([run("Total", { bold: true, size: 17 })], { after: 0 }), [small(t.total > duration ? `The timings add up to ${t.total} minutes, more than the ${duration}-minute lesson: cut an item's minutes.` : `Adds up to the ${duration}-minute lesson.`, { color: t.total > duration ? "B03A2E" : MUTED })]]);
+  children.push(table(w, rows, { zebra: true, split: true }));
+
+  // ── Models, polls and pictures (lessons v3) ───────────────────────────────
+  const models = [["practice", "We do, question 1", S.iDo], ["independent", "Independent, task 1", S.indModel]].map(([k, name, slide]) => [name, slide, (lesson[k] || [])[0]]).filter(([, , x]) => itemModel(x));
+  const pics = meta.pics || [];
+  if (models.length || polls.length || pics.length || (S.polls || []).length) {
+    children.push(heading("Models, Teams polls and pictures", accent));
+    const mrows = [];
+    models.forEach(([name, slide, x]) => mrows.push([`Model: ${name}${slide ? ` (slide ${slide})` : ""}`, [small(clean(itemQ(x)), { bold: true }), ...String(itemModel(x)).split(/\n+/).map((l) => small(clean(l)))]]));
+    // Polls: one line (each poll's question is in the run-through or the hinge, its answer in the answer key).
+    if ((S.polls || []).length) mrows.push(["Teams polls", [small(`${(S.polls || []).map((p) => `${p.section} slide ${p.slide}${p.answerSlide ? ` (answer ${p.answerSlide})` : ""}`).join("; ")}. To run one: Polls (Forms) in the meeting, + New poll, type it, Launch, share the results.`)]]);
+    // Credits are on the slides (and in their notes); the plan lists what and where.
+    if (pics.length) mrows.push(["Pictures", [small(`${pics.map((p) => `${clean(p.alt)} (${p.for === "hook" ? "first slide" : p.for === "keywords" ? "key words" : `teaching slide ${p.for.slice(6)}`})`).join("; ")}. From Wikimedia Commons; credits on the slides.`)]]);
+    else if ((lesson.pictures || []).length) mrows.push(["Pictures", [small(`${lesson.pictures.length} picture(s) are listed but none was found yet on Wikimedia Commons (they are added when the slides are next built).`, { color: MUTED })]]);
+    const mw = 2100;
+    children.push(table([mw, CONTENT_W - mw], mrows.map((r) => [[para([run(r[0], { bold: true, size: 16, color: accent })], { after: 0 })], r[1]]), { header: false }));
+
+  }
 
   // ── Key questions, the hinge, misconceptions ───────────────────────────────
   const keyQs = (meta.keyQuestions || []).slice(0, 4);
@@ -246,7 +288,8 @@ export async function buildPlan(file, lesson, meta) {
   const mis = teach.filter((x) => x.misconception);
   if (keyQs.length || checks.length || mis.length) {
     children.push(heading(mis.length ? "Key questions, hinge and misconceptions" : "Key questions and the hinge question", accent));
-    if (keyQs.length || mis.length) {
+    if (!keyQs.length && mis.length) mis.forEach((x) => children.push(para([run("Misconception: ", { bold: true, size: 17, color: "B03A2E" }), run(clean(x.misconception.wrong), { color: "B03A2E", size: 17 }), run("  →  ", { size: 17 }), run(clean(x.misconception.right), { bold: true, size: 17 })], { after: 30 })));
+    else if (keyQs.length || mis.length) {
       const kq = keyQs.length ? keyQs.map((q) => bullet(q, { size: 17 })) : [para([run("See the teacher notes on each slide.", { size: 17, color: MUTED })])];
       const ms = mis.length ? mis.map((x) => bullet([run(clean(x.misconception.wrong), { color: "B03A2E", size: 17 }), run("  →  ", { size: 17 }), run(clean(x.misconception.right), { bold: true, size: 17 })])) : [para([run("Listen for errors in the hinge and guided practice.", { size: 17, color: MUTED })])];
       const lw = Math.round(CONTENT_W * 0.55);
@@ -268,7 +311,7 @@ export async function buildPlan(file, lesson, meta) {
     const list = items || [];
     if (!list.some(itemA)) return;
     keyRows.push({ section: name });
-    list.forEach((x, i) => keyRows.push([`${i + 1}. ${clean(itemQ(x))}`, [para([run(itemA(x) ? clean(itemA(x)) : "Answers will vary.", { size: 17, bold: !!itemA(x), italics: !itemA(x), color: itemA(x) ? INK : MUTED })], { after: 0 })]]));
+    list.forEach((x, i) => itemA(x) && keyRows.push([`${i + 1}. ${clean(itemQ(x))}`, [para([run(itemA(x) ? clean(itemA(x)) : "Answers will vary.", { size: 17, bold: !!itemA(x), italics: !itemA(x), color: itemA(x) ? INK : MUTED })], { after: 0 })]]));
   };
   addSection(senior ? "Do now" : "Warm-up", lesson.starter);
   if (teach.some((x) => (x.model && x.model.answer) || x.check || (x.sort && Array.isArray(x.sort.answer)))) keyRows.push({ section: "Explanation slides" });
@@ -291,7 +334,7 @@ export async function buildPlan(file, lesson, meta) {
         rows: keyRows.map((r, i) =>
           r.section
             ? new TableRow({ cantSplit: true, children: [cell([para([run(r.section.toUpperCase(), { bold: true, size: 15, color: accent })], { after: 0 })], { w: CONTENT_W, span: 2, fill: "FCFAF5", pad: 15 })] })
-            : new TableRow({ tableHeader: i === 0, cantSplit: true, children: r.map((c, j) => cell(c, { w: j ? CONTENT_W - kw : kw, pad: 20, fill: i === 0 ? CREAM : undefined, text: i === 0 ? { bold: true, size: 16 } : { size: 17 } })) }),
+            : new TableRow({ tableHeader: i === 0, cantSplit: true, children: r.map((c, j) => cell(c, { w: j ? CONTENT_W - kw : kw, pad: 12, fill: i === 0 ? CREAM : undefined, text: i === 0 ? { bold: true, size: 16 } : { size: 17 } })) }),
         ),
       }),
     );
@@ -310,7 +353,7 @@ export async function buildPlan(file, lesson, meta) {
     `Exit ticket${ROUTINES[routineFor(lesson, "exit")] ? ` (${routineText(routineFor(lesson, "exit"))})` : ""} and 1-2-3 confidence: who meets each objective unaided? Plan the next starter around any "not yet".`,
   ].map((x) => para([run(`• ${x}`, { size: 17 })], { after: 30 }));
   const half = Math.round(CONTENT_W / 2);
-  children.push(para([], { after: 60 }));
+  children.push(para([], { after: 40 }));
   children.push(
     new Table({
       width: { size: CONTENT_W, type: WidthType.DXA },
@@ -321,7 +364,7 @@ export async function buildPlan(file, lesson, meta) {
   );
 
   // ── After the lesson ───────────────────────────────────────────────────────
-  children.push(para([], { after: 80, keepNext: true }));
+  children.push(para([], { after: 40, keepNext: true }));
   const lines = (n) => Array.from({ length: n }, () => para([run(" ", { size: 17 })], { after: 0 }));
   const third = Math.floor(CONTENT_W / 3);
   children.push(
@@ -333,7 +376,7 @@ export async function buildPlan(file, lesson, meta) {
         new TableRow({
           cantSplit: true,
           children: ["After the lesson: what went well", "Even better if", `${kids === "pupils" ? "Pupils" : "Children"} to follow up`].map((h, i) =>
-            cell([para([run(h, { bold: true, size: 16, color: GOLD_DARK })], { after: 20 }), ...lines(2)], { w: i === 2 ? CONTENT_W - 2 * third : third, fill: GOLD_SOFT, borders: { top: border(GOLD_DARK, 6), bottom: border(GOLD_DARK, 6), left: border(GOLD_DARK, 6), right: border(GOLD_DARK, 6) } }),
+            cell([para([run(h, { bold: true, size: 16, color: GOLD_DARK })], { after: 20 }), ...lines(1)], { w: i === 2 ? CONTENT_W - 2 * third : third, fill: GOLD_SOFT, borders: { top: border(GOLD_DARK, 6), bottom: border(GOLD_DARK, 6), left: border(GOLD_DARK, 6), right: border(GOLD_DARK, 6) } }),
           ),
         }),
       ],

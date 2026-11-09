@@ -157,6 +157,9 @@ directly in the portal with instant download (T-item), a per-term list of every 
 ready, and a device requirement (drawing tablet recommended; otherwise a printer) on the website and in the admissions
 information.
 
+### Lessons status
+- 9 Nov 2026, Maths Years 7-11 Spring 1 (branch `lessons-maths-ks34-s1`): 100 lessons for 11 Jan to 8 Feb 2027 (bridge + Spring 1), v3 rules applied. Y7 4 upgraded, 16 new; Y8 20 new; Y9 5 upgraded, 15 new; Y10 12 upgraded, 8 new (4MA1); Y11 20 new (revision cycle 1 and mock week, 4MA1). Y10 and Y11 files now labelled 4MA1 (taught and examined). Uses v3 fields (ponder hook, item `model`, `pictures`, `islamicLink`), so validation passes only once `lesson-builder-v3` merges.
+
 ### Work in flight (9 Nov 2026, 15:45), for whoever picks this up
 Branches pushed and unfinished (each is resumable; read its last commits):
 - `lesson-builder-v3`: slide builder v3 (owner feedback above). Not merged; needs owner sign-off of sample slides.

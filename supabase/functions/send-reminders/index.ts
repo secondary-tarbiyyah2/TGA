@@ -4,6 +4,7 @@
 // if this runs slightly early/late relative to the exact 24h/1h mark.
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { jsonResponse } from "../_shared/cors.ts";
+import { isServiceRequest } from "../_shared/serviceCaller.ts";
 import { emailShell, sendEmail } from "../_shared/resend.ts";
 import { bookingWhenText } from "../_shared/bookingTime.ts";
 
@@ -48,7 +49,8 @@ async function sendWindowReminders(hoursBefore: number, column: "reminder_24h_se
   return sent;
 }
 
-Deno.serve(async () => {
+Deno.serve(async (req) => {
+  if (!(await isServiceRequest(req))) return jsonResponse({ ok: false, error: "forbidden" }, 403);
   const sent24h = await sendWindowReminders(24, "reminder_24h_sent_at");
   const sent1h = await sendWindowReminders(1, "reminder_1h_sent_at");
   return jsonResponse({ ok: true, sent24h, sent1h });

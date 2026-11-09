@@ -6,7 +6,7 @@ import { ui } from "@/components/learn/ui";
 import { LinesField, Modal, TextField } from "@/components/learn/curriculum/Modal";
 import { problemsFor, realEditAt, syncNotes, triggerCurriculumSync, when, type SyncNote } from "@/lib/learn/curriculumUnits";
 import type { CurriculumLesson } from "@/lib/learn/curriculum";
-import { BLOCKS, HOOK_TYPES, ROUTINES, ROUTINE_SECTIONS, blockProblems, extrasProblems } from "@/lib/learn/lessonSchema.mjs";
+import { BLOCKS, HOOK_TYPES, ROUTINES, ROUTINE_SECTIONS, blockProblems, extrasProblems, lessonWarnings } from "@/lib/learn/lessonSchema.mjs";
 
 // The lesson as stored in curriculum_lessons.content: the lesson object from
 // content/lessons/<subject>/<year>.json (content/lessons/README.md). Fields this form does not
@@ -17,11 +17,15 @@ type Slide = { heading?: string; bullets?: string[]; note?: string; routine?: st
 let keySeq = 0;
 const newKey = () => `slide-${++keySeq}`;
 type Keyword = { term: string; def: string };
-/** A question or task: plain text, or with an answer and minutes ({ q, a, mins }). */
-type Item = string | { q: string; a?: string; mins?: number };
-/** The form's copy of an item, always with all three fields. */
-type ItemRow = { q: string; a: string; mins: string };
+/** A question or task: plain text, or with an answer, minutes, the teacher's model and poll options. */
+type Item = string | { q: string; a?: string; mins?: number; model?: string; options?: string[] };
+/** The form's copy of an item, always with every field (options one per line). */
+type ItemRow = { q: string; a: string; mins: string; model: string; options: string };
 type Hook = { type: string; text: string; options?: string[]; a?: string };
+/** Lessons v3: the Islamic foundation (start) or the Islamic position (end). */
+type IslamicLink = { text: string; at: string };
+/** Lessons v3: a picture found on Wikimedia Commons (scripts/lessons/pictures.mjs). */
+type Picture = { find: string; alt: string; for: string; file?: string; credit?: string; licence?: string };
 /** Everything in a lesson except its question lists. */
 type LessonBase = {
   unit: string;
@@ -40,6 +44,8 @@ type LessonBase = {
   hook?: Hook;
   routines?: Record<string, string>;
   resources?: string[];
+  islamicLink?: IslamicLink;
+  pictures?: Picture[];
   [key: string]: unknown;
 };
 export type LessonContent = LessonBase & { starter: Item[]; practice: Item[]; independent: Item[]; exit: Item[] };
@@ -85,18 +91,21 @@ const BLOCK_TEMPLATE: Record<string, unknown> = {
 const ROUTINE_SECTION_LABEL: Record<string, string> = { hook: "Hook", starter: "Starter", teach: "Teaching slides", hinge: "Hinge question", practice: "Guided practice", independent: "Independent", exit: "Exit ticket" };
 const toRow = (x: unknown): ItemRow => {
   if (x && typeof x === "object") {
-    const o = x as { q?: unknown; a?: unknown; mins?: unknown };
-    return { q: String(o.q ?? ""), a: o.a == null ? "" : String(o.a), mins: o.mins == null ? "" : String(o.mins) };
+    const o = x as { q?: unknown; a?: unknown; mins?: unknown; model?: unknown; options?: unknown };
+    return { q: String(o.q ?? ""), a: o.a == null ? "" : String(o.a), mins: o.mins == null ? "" : String(o.mins), model: o.model == null ? "" : String(o.model), options: Array.isArray(o.options) ? o.options.map(String).join("\n") : "" };
   }
-  return { q: String(x ?? ""), a: "", mins: "" };
+  return { q: String(x ?? ""), a: "", mins: "", model: "", options: "" };
 };
-/** A row back to the lesson format: plain text unless it has an answer or minutes. */
+const EMPTY_ROW: ItemRow = { q: "", a: "", mins: "", model: "", options: "" };
+/** A row back to the lesson format: plain text unless it has an answer, minutes, a model or options. */
 const fromRow = (r: ItemRow): Item => {
   const q = r.q.trim();
   const a = r.a.trim();
+  const model = r.model.trim();
+  const options = clean(r.options.split("\n"));
   const mins = r.mins.trim() ? Number(r.mins) : undefined;
-  if (!a && mins == null) return q;
-  return { q, ...(a ? { a } : {}), ...(mins != null ? { mins } : {}) };
+  if (!a && mins == null && !model && !options.length) return q;
+  return { q, ...(a ? { a } : {}), ...(mins != null ? { mins } : {}), ...(model ? { model } : {}), ...(options.length ? { options } : {}) };
 };
 /** The slide with its block replaced (kind null: no block). */
 function withBlock(t: Slide, kind: string | null, value: unknown): Slide {
@@ -145,6 +154,17 @@ function tidy(c: FormContent): LessonContent {
     const opts = clean(c.hook.options || []);
     out.hook = { type: c.hook.type, text: c.hook.text.trim(), ...(opts.length ? { options: opts } : {}), ...(c.hook.a?.trim() ? { a: c.hook.a.trim() } : {}) };
   } else delete out.hook;
+  if (c.islamicLink && c.islamicLink.text.trim()) out.islamicLink = { text: c.islamicLink.text.trim(), at: c.islamicLink.at === "end" ? "end" : "start" };
+  else delete out.islamicLink;
+  const pics = (c.pictures || [])
+    .map((x) => {
+      const p: Picture = { find: x.find.trim(), alt: x.alt.trim(), for: x.for.trim() };
+      for (const k of ["file", "credit", "licence"] as const) if (x[k]?.trim()) p[k] = x[k]!.trim();
+      return p;
+    })
+    .filter((x) => x.find);
+  if (pics.length) out.pictures = pics;
+  else delete out.pictures;
   out.teach = out.teach.map((t) => {
     const x = { ...t };
     if (!x.routine) delete x.routine;
@@ -169,7 +189,6 @@ function problemsOf(c: LessonContent): string[] {
   if (!c.independent.length) p.push("Add at least one independent task.");
   if (!c.exit.length) p.push("Add at least one exit ticket question.");
   if (!(Array.isArray(c.homework) ? c.homework.length : c.homework)) p.push("Add the homework.");
-  if ((c.successCriteria || []).length > 3) p.push("Success criteria are at most three lines (all, most, some).");
   return [...p, ...extra];
 }
 
@@ -349,6 +368,8 @@ export function LessonEditor({ lesson, canEdit, onClose, onSaved }: { lesson: Cu
             </fieldset>
 
             <HookField hook={c.hook} disabled={dis} onChange={(h) => set("hook", h)} />
+            <IslamicLinkField value={c.islamicLink} disabled={dis} onChange={(v) => set("islamicLink", v)} />
+            <PicturesField value={c.pictures || []} teachCount={c.teach.length} disabled={dis} onChange={(v) => set("pictures", v)} />
             <ItemsField label="Starter" hint="Retrieval questions. Add the answer to show a “Check your answers” slide; minutes set the slide timer." rows={c.starter} disabled={dis} onChange={(v) => set("starter", v)} />
 
             <section aria-labelledby="kw-h" className="space-y-2">
@@ -466,6 +487,20 @@ export function LessonEditor({ lesson, canEdit, onClose, onSaved }: { lesson: Cu
                 )}
               </div>
             )}
+            {(() => {
+              // Lessons v3 advice: never blocks saving.
+              const advice = lessonWarnings(tidy(c), lesson.subject_slug, c.duration) as string[];
+              return advice.length > 0 ? (
+                <div className="rounded-lg border border-gold-light bg-cream px-3 py-2 text-sm text-ink/80">
+                  <p className="font-semibold">Advice (you can still save)</p>
+                  <ul className="list-disc space-y-0.5 pl-5">
+                    {advice.map((a) => (
+                      <li key={a}>This lesson {a}.</li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null;
+            })()}
             {problems.length > 0 && (
               <ul role="alert" className="list-disc space-y-0.5 rounded-lg border border-red-200 bg-red-50 py-2 pl-8 pr-3 text-sm text-red-800">
                 {problems.map((p) => (
@@ -526,10 +561,12 @@ function ItemsField({ label, hint, rows, onChange, disabled }: { label: string; 
             <button type="button" className={ui.btnLinkDanger} onClick={() => onChange(rows.filter((_, k) => k !== i))}>
               Remove
             </button>
+            <textarea aria-label={`${label} ${i + 1}: teacher's model`} value={r.model} onChange={(e) => setRow(i, { model: e.target.value })} rows={2} className={`sm:col-span-2 ${ui.textarea}`} placeholder="Teacher's worked model, gone through first (optional)" />
+            <textarea aria-label={`${label} ${i + 1}: poll options`} value={r.options} onChange={(e) => setRow(i, { options: e.target.value })} rows={2} className={`sm:col-span-2 ${ui.textarea}`} placeholder="Teams poll options, 2 to 4, one per line (optional)" />
           </li>
         ))}
       </ol>
-      <button type="button" className={btn} onClick={() => onChange([...rows, { q: "", a: "", mins: "" }])}>
+      <button type="button" className={btn} onClick={() => onChange([...rows, EMPTY_ROW])}>
         + Add a question
       </button>
     </fieldset>
@@ -552,7 +589,7 @@ function RoutineSelect({ label, value, onChange, disabled }: { label: string; va
   );
 }
 
-const HOOK_LABEL: Record<string, string> = { question: "A big question", "image-prompt": "Picture this (imagine a scene)", story: "A short story", puzzle: "A puzzle", "odd-one-out": "Odd one out" };
+const HOOK_LABEL: Record<string, string> = { ponder: "Ponder (first slide, while pupils join)", question: "A big question", "image-prompt": "Picture this (imagine a scene)", story: "A short story", puzzle: "A puzzle", "odd-one-out": "Odd one out" };
 
 /** The optional hook: a striking first slide straight after the title. */
 function HookField({ hook, onChange, disabled }: { hook?: Hook; onChange: (h: Hook | undefined) => void; disabled?: boolean }) {
@@ -579,6 +616,60 @@ function HookField({ hook, onChange, disabled }: { hook?: Hook; onChange: (h: Ho
           <LinesField label="Options (optional)" hint="2 to 5, one per line. An odd-one-out needs 3 to 5." value={h.options || []} onChange={(v) => up({ options: v })} />
           <TextField label="Answer or what to draw out (optional)" hint="Goes in the notes and the lesson plan, not on the slide." value={h.a || ""} onChange={(v) => up({ a: v })} multiline />
         </>
+      )}
+    </fieldset>
+  );
+}
+
+/** Lessons v3: the Islamic foundation at the start, or the Islamic position at the end. */
+function IslamicLinkField({ value, onChange, disabled }: { value?: IslamicLink; onChange: (v: IslamicLink | undefined) => void; disabled?: boolean }) {
+  const v = value || { text: "", at: "start" };
+  return (
+    <fieldset disabled={disabled} className="grid gap-3 rounded-xl border border-gold-light p-3 sm:grid-cols-[minmax(0,1fr)_14rem]">
+      <legend className={`${ui.sectionTitle} px-1`}>Islamic link (optional)</legend>
+      <TextField label="What it says" hint="Cite only ayat you are certain of (surah:ayah). Leave empty for none." value={v.text} onChange={(text) => onChange(text.trim() || v.text ? { ...v, text } : undefined)} multiline />
+      <label className="block">
+        <span className={ui.label}>Where</span>
+        <select value={v.at} onChange={(e) => onChange({ ...v, at: e.target.value })} className={`mt-1 ${ui.select}`}>
+          <option value="start">At the start: the foundation</option>
+          <option value="end">At the end: the Islamic position</option>
+        </select>
+      </label>
+    </fieldset>
+  );
+}
+
+/** Lessons v3: pictures found on Wikimedia Commons when the slides are built (never of people). */
+function PicturesField({ value, teachCount, onChange, disabled }: { value: Picture[]; teachCount: number; onChange: (v: Picture[]) => void; disabled?: boolean }) {
+  const setRow = (i: number, r: Partial<Picture>) => onChange(value.map((x, k) => (k === i ? { ...x, ...r } : x)));
+  const places = ["hook", "keywords", ...Array.from({ length: teachCount }, (_, i) => `teach:${i + 1}`)];
+  return (
+    <fieldset disabled={disabled} className="space-y-2 rounded-xl border border-gold-light p-3">
+      <legend className={`${ui.sectionTitle} px-1`}>Pictures (optional)</legend>
+      <p className={ui.hint}>2 to 4 real photos, maps or diagrams of the topic, found on Wikimedia Commons when the slides are built. Never people or drawn living beings. To choose a picture yourself, put its Commons file name (File:…) in File.</p>
+      <ol className="space-y-2">
+        {value.map((r, i) => (
+          <li key={i} className="grid gap-2 rounded-lg border border-gold-light/70 p-2 sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_9rem_auto]">
+            <input aria-label={`Picture ${i + 1}: search for`} value={r.find} onChange={(e) => setRow(i, { find: e.target.value })} className={ui.input} placeholder="Search for, e.g. Viking longship replica" />
+            <input aria-label={`Picture ${i + 1}: what it shows`} value={r.alt} onChange={(e) => setRow(i, { alt: e.target.value })} className={ui.input} placeholder="What it shows" />
+            <select aria-label={`Picture ${i + 1}: slide`} value={r.for} onChange={(e) => setRow(i, { for: e.target.value })} className={ui.select}>
+              {places.map((p) => (
+                <option key={p} value={p}>
+                  {p === "hook" ? "First slide" : p === "keywords" ? "Key words" : `Teaching slide ${p.slice(6)}`}
+                </option>
+              ))}
+            </select>
+            <button type="button" className={ui.btnLinkDanger} onClick={() => onChange(value.filter((_, k) => k !== i))}>
+              Remove
+            </button>
+            <input aria-label={`Picture ${i + 1}: Commons file`} value={r.file || ""} onChange={(e) => setRow(i, { file: e.target.value })} className={`sm:col-span-2 ${ui.input}`} placeholder="File (optional), e.g. File:Leaf cross section.svg" />
+          </li>
+        ))}
+      </ol>
+      {value.length < 8 && (
+        <button type="button" className={btn} onClick={() => onChange([...value, { find: "", alt: "", for: "keywords" }])}>
+          + Add a picture
+        </button>
       )}
     </fieldset>
   );

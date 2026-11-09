@@ -878,6 +878,12 @@ html[data-dark] .portal {
 .policy-body table td:first-child { font-weight: 500; color: var(--color-ink-900); }
 .policy-body .table-wrap { margin: 0.5rem 0 1.25rem; }
 .policy-body .table-wrap table { margin: 0; }
+/* Policy side outline (components/PolicyOutline.tsx): a section opened by
+   its #address lands under the header and the phone Contents bar. */
+.policy-outlined .policy-body h2[id] { scroll-margin-top: calc(var(--outline-top, 80px) + 4.5rem); }
+@media (min-width: 1024px) {
+  .policy-outlined .policy-body h2[id] { scroll-margin-top: calc(var(--outline-top, 80px) + 1.5rem); }
+}
 @media (max-width: 639px) {
   /* Stacked rows on phones: each cell shows its column heading first. */
   .policy-body .table-wrap table, .policy-body .table-wrap tbody, .policy-body .table-wrap tr, .policy-body .table-wrap td { display: block; width: 100%; }
