@@ -12,8 +12,10 @@ import type { IconName } from "@/components/learn/Icon";
 //
 // Teaching work lives in the class (Stream · Classwork · Lessons · People ·
 // Attendance · Grades · Insights), like Google Classroom and Teams for
-// Education. The cross-class pages (All homework, To review, Gradebook) are
-// overviews reached from the class hub, not separate top-level entries.
+// Education. The cross-class pages (Classwork to action, To review, Gradebook)
+// are overviews reached from the class hub, not separate top-level entries.
+// Work is only set inside a class: "Classwork to action" lists what needs
+// marking or chasing and links into each class's Classwork tab.
 
 export type PortalArea = "admin" | "teach" | "family" | "student";
 // headOnly: the page's LearnGate only admits head_teacher/admin, so the
@@ -159,7 +161,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       matchPrefixes: ["/admin/class"],
       tabs: [
         { href: "/admin/classes", label: "Classes", hint: "Every class: stream, classwork, people and grades", headOnly: true, matchPrefixes: ["/admin/class"] },
-        { href: "/admin/homework", label: "Classwork", hint: "Work set across every class, late and missing work", icon: "notebookPen", headOnly: true },
+        { href: "/admin/homework", label: "Classwork to action", hint: "To mark, missing and late, with links into each class", icon: "notebookPen", headOnly: true },
         { href: "/admin/lessons", label: "Timetable", hint: "Timetable, live lessons and recordings", icon: "layoutDashboard", headOnly: true },
       ],
     },
@@ -252,7 +254,7 @@ export const SIDEBAR_NAV: Record<PortalArea, SidebarItem[]> = {
       matchPrefixes: ["/teach/class", "/teach/lessons"],
       tabs: [
         { href: "/teach/classes", label: "My classes", hint: "Stream, classwork, people and grades for each class", matchPrefixes: ["/teach/class", "/teach/lessons"] },
-        { href: "/teach/homework", label: "All homework", hint: "Homework across your classes, late and missing work", icon: "notebookPen" },
+        { href: "/teach/homework", label: "Classwork to action", hint: "To mark, missing and late, with links into each class", icon: "notebookPen" },
         { href: "/teach/assessment", label: "Gradebook", hint: "Enter a whole class's results at once", icon: "award" },
       ],
     },
