@@ -3,7 +3,7 @@
   "year": "y11",
   "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
   "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0",
-  "source": "Lessons 1 to 20: first written from the school Science curriculum journey 2026-27 (Organic chemistry; Astrophysics) and Pearson Edexcel GCSE schemes, re-mapped to 4BI1 Biology 4, 4CH1 Chemistry 4 and 4PH1 Physics 8 (early-atmosphere lesson 9 retired as not on the International GCSE); orbital speed, red-shift and the HR diagram are 4PH1 content (red-shift, absolute magnitude and the HR diagram are Physics only, not Double Award) | Edexcel IGCSE 4BI1/4CH1 specification summary (content/syllabus/ks4/gcse-science.json), Y11 units Biology 3, Biology 4, Biology 5, Chemistry 3, Chemistry 4. Drive material not used. Not re-taught because covered by the existing lessons in content/lessons/gcse-science/y11.json: population, community, habitat, ecosystem and quadrats; biotic and abiotic factors; food chains, webs and pyramids and 10% energy transfer; carbon cycle; nitrogen cycle with named bacteria; pollution (sulfur dioxide, carbon monoxide, greenhouse gases, sewage and eutrophication) and deforestation (Biology 4 points 1, 3-7); hydrocarbons, formulae and homologous series, crude oil and fractional distillation, complete and incomplete combustion and acid rain, catalytic cracking, alkane and alkene reactions with the bromine water test, addition polymers (Chemistry 4 points 1 partly, 2-6, 8). Biology 4 biodiversity and distribution (point 2) and Chemistry 4 naming and isomers (point 1) are taught here. | Edexcel IGCSE Physics 4PH1 specification (units Physics 5-8, Y11). Existing UK-GCSE lessons in content/lessons/gcse-science/y11.json already cover Physics 8 gravity and the Solar System, g on other bodies, orbital speed (v = 2 pi r / T), life cycles of stars, colour and temperature, absolute magnitude and the HR diagram, red-shift and the CMB, so Physics 8 here adds orbits of comets and satellites and one consolidation lesson in exam terms. | Gap-fill against Pearson Edexcel International GCSE Biology 4BI1 / Double Award 4SD0 specification | Gap-fill against Pearson Edexcel International GCSE Chemistry 4CH1 and Physics 4PH1 (and Science Double Award 4SD0) specification",
+  "source": "Lessons 1 to 20: first written from the school Science curriculum journey 2026-27 (Organic chemistry; Astrophysics) and Pearson Edexcel GCSE schemes, re-mapped to 4BI1 Biology 4, 4CH1 Chemistry 4 and 4PH1 Physics 8 (early-atmosphere lesson 9 retired as not on the International GCSE); orbital speed, red-shift and the HR diagram are 4PH1 content (red-shift, absolute magnitude and the HR diagram are Physics only, not Double Award) | Edexcel IGCSE 4BI1/4CH1 specification summary (content/syllabus/ks4/gcse-science.json), Y11 units Biology 3, Biology 4, Biology 5, Chemistry 3, Chemistry 4. Drive material not used. Not re-taught because covered by the existing lessons in content/lessons/gcse-science/y11.json: population, community, habitat, ecosystem and quadrats; biotic and abiotic factors; food chains, webs and pyramids and 10% energy transfer; carbon cycle; nitrogen cycle with named bacteria; pollution (sulfur dioxide, carbon monoxide, greenhouse gases, sewage and eutrophication) and deforestation (Biology 4 points 1, 3-7); hydrocarbons, formulae and homologous series, crude oil and fractional distillation, complete and incomplete combustion and acid rain, catalytic cracking, alkane and alkene reactions with the bromine water test, addition polymers (Chemistry 4 points 1 partly, 2-6, 8). Biology 4 biodiversity and distribution (point 2) and Chemistry 4 naming and isomers (point 1) are taught here. | Edexcel IGCSE Physics 4PH1 specification (units Physics 5-8, Y11). Existing UK-GCSE lessons in content/lessons/gcse-science/y11.json already cover Physics 8 gravity and the Solar System, g on other bodies, orbital speed (v = 2 pi r / T), life cycles of stars, colour and temperature, absolute magnitude and the HR diagram, red-shift and the CMB, so Physics 8 here adds orbits of comets and satellites and one consolidation lesson in exam terms. | Gap-fill against Pearson Edexcel International GCSE Biology 4BI1 / Double Award 4SD0 specification | Gap-fill against Pearson Edexcel International GCSE Chemistry 4CH1 and Physics 4PH1 (and Science Double Award 4SD0) specification | Spring 1 2027 revision cycle 1 (lessons 86 to 105, weeks of 11 Jan to 1 Feb): Pearson Edexcel International GCSE Science (Double Award) 4SD0 Biology 1 to 2, Chemistry 1 to 2, Physics 1 to 4, with exam-style questions and mark schemes written for these lessons; the mock week (8 Feb) uses the school's mock papers",
   "lessons": [
     {
       "unit": "Biology 4: Ecology and the environment",
@@ -12887,6 +12887,4927 @@
       ],
       "homework": "Write a balanced paragraph: 'the Big Bang theory is well supported by evidence'. Use at least two pieces of evidence.",
       "send": "SEND/EAL: use the balloon model and a word bank. Stretch: discuss alternative theories and why they fell out of favour.",
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Biology 1 to 2, Chemistry 1 to 2, Physics 1 to 4",
+      "n": 86,
+      "title": "Revision: living organisms, cells and enzymes; command words",
+      "duration": 50,
+      "bigQuestion": "What exactly does an examiner want when a question says 'explain'?",
+      "objectives": [
+        "To understand how to answer 4SD0 questions on living organisms, cells and enzymes using the command words correctly"
+      ],
+      "successCriteria": [
+        "All: recall the eight characteristics of living organisms and cell structures",
+        "Most: answer 'describe' and 'explain' questions to the mark scheme",
+        "Some: analyse enzyme data and justify conclusions in full"
+      ],
+      "crossCurricular": "English: precise vocabulary and command words",
+      "smsc": "Moral: honest self-assessment and responding to feedback",
+      "keywords": [
+        {
+          "term": "state",
+          "def": "give a short answer with no explanation"
+        },
+        {
+          "term": "describe",
+          "def": "say what happens or what something is like"
+        },
+        {
+          "term": "explain",
+          "def": "give reasons: say why or how, using 'because'"
+        },
+        {
+          "term": "eukaryote",
+          "def": "organism whose cells have a nucleus"
+        },
+        {
+          "term": "denatured",
+          "def": "enzyme active site changed so substrate no longer fits"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two answers to 'Explain why enzymes stop working at 70 °C': 'They die' and 'The active site changes shape so the substrate no longer fits'. Which gets the marks, and why?",
+        "a": "The second: it gives the mechanism; enzymes are molecules and are not alive, so they do not die."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'We have certainly created the human being in the best of forms' (at-Tin 95:4). Revising how cells and enzymes work is also a reminder of that design.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Name the eight characteristics of living organisms (MRS GREN style).",
+          "a": "Nutrition, respiration, excretion, response, movement, control of internal conditions, reproduction, growth.",
+          "mins": 1
+        },
+        {
+          "q": "Which kingdom: yeast?",
+          "a": "Fungi",
+          "mins": 1,
+          "options": [
+            "Plants",
+            "Fungi",
+            "Protoctists"
+          ]
+        },
+        {
+          "q": "Function of ribosomes?",
+          "a": "Protein synthesis",
+          "mins": 1
+        },
+        {
+          "q": "Name a prokaryote on the specification.",
+          "a": "Lactobacillus (or Pneumococcus)",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Command words",
+          "bullets": [
+            "State, name, give: short facts",
+            "Describe: what happens",
+            "Explain: why, with 'because'",
+            "Evaluate: both sides and a judgement"
+          ],
+          "note": "Show how each command word changes the answer.",
+          "table": {
+            "head": [
+              "Command word",
+              "What to do",
+              "Typical marks"
+            ],
+            "rows": [
+              [
+                "State",
+                "a fact",
+                "1"
+              ],
+              [
+                "Describe",
+                "what happens or a pattern with data",
+                "2 to 3"
+              ],
+              [
+                "Explain",
+                "reasons using science",
+                "2 to 4"
+              ],
+              [
+                "Calculate",
+                "show working and unit",
+                "2 to 3"
+              ],
+              [
+                "Evaluate",
+                "both sides and a conclusion",
+                "4 to 6"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Key content",
+          "bullets": [
+            "Eukaryotes: plants, animals, fungi, protoctists",
+            "Prokaryotes: bacteria, no nucleus, plasmids",
+            "Viruses: protein coat, not living"
+          ],
+          "note": "Quick-fire recap with the knowledge organiser.",
+          "diagram": {
+            "centre": "Biology 1 and 2 cells",
+            "items": [
+              "eight characteristics",
+              "eukaryotes",
+              "prokaryotes",
+              "viruses",
+              "cell structures",
+              "enzymes"
+            ]
+          }
+        },
+        {
+          "heading": "Model answer",
+          "bullets": [
+            "Describe the trend, then explain it"
+          ],
+          "note": "Model a 4-mark answer.",
+          "model": {
+            "problem": "Describe and explain the effect of temperature on amylase activity. [4 marks]",
+            "steps": [
+              "Describe: activity increases to an optimum of about 40 °C, then falls",
+              "Explain rise: more kinetic energy, more successful collisions",
+              "Explain fall: active site changes shape, enzyme denatured",
+              "Substrate no longer fits, so rate falls to zero"
+            ],
+            "answer": "One descriptive point and three explanatory points"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds.",
+          "check": {
+            "q": "Which is a feature of ALL viruses?",
+            "options": [
+              "A nucleus",
+              "A cell wall",
+              "A protein coat",
+              "Chloroplasts"
+            ],
+            "answer": 2,
+            "why": "Viruses are particles with a protein coat around genetic material; they are not cells."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "State two features of bacterial cells. [2 marks]",
+          "a": "Any two: no nucleus; circular chromosomal DNA; plasmids; cell wall; cell membrane; cytoplasm; ribosomes.",
+          "mins": 2,
+          "model": "'State' means short facts, one mark each.\nFact 1: no nucleus.\nFact 2: plasmids present.\nNo explanation needed."
+        },
+        {
+          "q": "Explain why pepsin works in the stomach but amylase does not. [2 marks]",
+          "a": "The stomach is acidic (about pH 2) (1); pepsin's optimum is acidic, while amylase's active site is denatured at low pH (1).",
+          "mins": 2
+        },
+        {
+          "q": "Give two differences between plant and fungal cells. [2 marks]",
+          "a": "Fungal cell walls are made of chitin, not cellulose (1); fungi have no chloroplasts (1).",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 6 marks): Compare the structure of a palisade cell, a yeast cell and a bacterial cell. Write in the portal response box.",
+          "a": "Marks for: all have membrane, cytoplasm, ribosomes (1); palisade and yeast have nuclei and mitochondria (1); palisade has chloroplasts, cellulose wall, large vacuole (1); yeast has a wall (chitin) and no chloroplasts (1); bacterium has no nucleus, circular DNA (1) and plasmids, no mitochondria (1).",
+          "mins": 8,
+          "model": "Teacher plans it first as a three-column table, then turns each row into a comparison sentence: 'All three have a cell membrane, cytoplasm and ribosomes, but only the bacterium lacks a nucleus...'"
+        },
+        {
+          "q": "Extend (exam-style, 3 marks): Starch and amylase at 37 °C: the iodine colour stays blue-black for 20 minutes when the solution is boiled first. Explain.",
+          "a": "Boiling denatured the amylase (1); active site changed shape (1); starch not digested so iodine stays blue-black (1).",
+          "mins": 6
+        },
+        {
+          "q": "Stretch (exam-style, 2 marks): Explain why viruses are not classed as living organisms.",
+          "a": "They show none of the characteristics on their own (1); they can only reproduce inside host cells (1).",
+          "mins": 5
+        }
+      ],
+      "exit": [
+        {
+          "q": "'Explain' means...",
+          "a": "Give reasons",
+          "mins": 1,
+          "options": [
+            "Give a fact",
+            "Give reasons",
+            "Draw a graph"
+          ]
+        },
+        {
+          "q": "Big question: what does an examiner want when a question says 'explain'?",
+          "a": "Reasons using correct science (how or why), linked with 'because' or 'so'.",
+          "mins": 2
+        }
+      ],
+      "homework": "Complete the Biology 1 and 2.1 to 2.14 retrieval quiz on the portal and mark it with the scheme.",
+      "send": "SEND: command word card; answer frames. EAL: command words with examples. Stretch: write your own 4-mark question and mark scheme.",
+      "resources": [
+        "Pearson Edexcel International GCSE Science (Double Award) 4SD0 specification: Biology 1.1 to 1.4, 2.1 to 2.14",
+        "4SD0 exam-style questions written for this lesson (portal question sheet with mark scheme)",
+        "Year 10 knowledge organiser for this topic (portal revision page)",
+        "Command words card (portal worksheet)",
+        "Revision exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "bacterial cell diagram",
+          "alt": "A labelled bacterial cell",
+          "for": "teach:2"
+        },
+        {
+          "find": "enzyme lock and key model",
+          "alt": "The lock and key model",
+          "for": "teach:3"
+        },
+        {
+          "find": "exam hall desks",
+          "alt": "An empty exam hall",
+          "for": "hook"
+        }
+      ],
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Biology 1 to 2, Chemistry 1 to 2, Physics 1 to 4",
+      "n": 87,
+      "title": "Revision: movement of substances and transport in plants and humans",
+      "duration": 50,
+      "bigQuestion": "Why does a whale need a heart but an amoeba does not?",
+      "objectives": [
+        "To understand how diffusion, osmosis and transport systems move substances in organisms, and how to answer exam questions on them"
+      ],
+      "successCriteria": [
+        "All: define diffusion, osmosis and active transport",
+        "Most: describe xylem, phloem, blood and the heart",
+        "Some: explain why multicellular organisms need transport systems using surface area to volume ratio"
+      ],
+      "crossCurricular": "Maths: surface area to volume ratio calculations",
+      "smsc": "Spiritual: reflecting on the heart, physically and spiritually",
+      "keywords": [
+        {
+          "term": "surface area to volume ratio",
+          "def": "surface area divided by volume; smaller in bigger organisms"
+        },
+        {
+          "term": "xylem",
+          "def": "carries water and mineral ions from the roots"
+        },
+        {
+          "term": "phloem",
+          "def": "carries sucrose and amino acids"
+        },
+        {
+          "term": "haemoglobin",
+          "def": "protein in red blood cells that carries oxygen"
+        },
+        {
+          "term": "phagocyte",
+          "def": "white blood cell that ingests pathogens"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "An amoeba takes in oxygen through its surface. Why can't a whale do the same?",
+        "a": "Its surface area to volume ratio is far too small and distances too great, so it needs lungs, blood and a heart."
+      },
+      "islamicLink": {
+        "text": "The Prophet (peace be upon him) said: 'In the body there is a piece of flesh which, if it is sound, the whole body is sound... it is the heart' (Sahih al-Bukhari and Sahih Muslim). The physical heart is the centre of the transport system.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Osmosis is the movement of...",
+          "a": "Water",
+          "mins": 1,
+          "options": [
+            "Water",
+            "Glucose",
+            "Ions"
+          ]
+        },
+        {
+          "q": "Which process needs energy from respiration?",
+          "a": "Active transport",
+          "mins": 1
+        },
+        {
+          "q": "Which vessel carries blood away from the heart?",
+          "a": "Artery",
+          "mins": 1
+        },
+        {
+          "q": "Which plant tissue carries sucrose?",
+          "a": "Phloem",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "SA:V ratio",
+          "bullets": [
+            "Small organisms: large SA:V, diffusion enough",
+            "Large organisms: small SA:V, need transport systems"
+          ],
+          "note": "Model the cube calculation.",
+          "table": {
+            "head": [
+              "Cube side (cm)",
+              "Surface area (cm²)",
+              "Volume (cm³)",
+              "SA:V"
+            ],
+            "rows": [
+              [
+                "1",
+                "6",
+                "1",
+                "6:1"
+              ],
+              [
+                "2",
+                "24",
+                "8",
+                "3:1"
+              ],
+              [
+                "4",
+                "96",
+                "64",
+                "1.5:1"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Blood and the heart",
+          "bullets": [
+            "Red cells: haemoglobin, no nucleus, biconcave",
+            "Phagocytes ingest; lymphocytes make antibodies",
+            "Plasma carries CO₂, urea, glucose, hormones, heat"
+          ],
+          "note": "Heart: right side to lungs, left side to body; adrenaline raises heart rate."
+        },
+        {
+          "heading": "Model answer",
+          "bullets": [
+            "Structure linked to function"
+          ],
+          "note": "Model a 3-mark answer.",
+          "model": {
+            "problem": "Explain how red blood cells are adapted to carry oxygen. [3 marks]",
+            "steps": [
+              "Contain haemoglobin, which binds oxygen",
+              "No nucleus: more room for haemoglobin",
+              "Biconcave shape: large surface area for diffusion"
+            ],
+            "answer": "Each feature linked to its function"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds.",
+          "check": {
+            "q": "A 3 cm cube has SA:V of...",
+            "options": [
+              "1:1",
+              "2:1",
+              "3:1",
+              "9:1"
+            ],
+            "answer": 1,
+            "why": "SA = 54 cm², V = 27 cm³, ratio 2:1."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Describe the role of the xylem and phloem. [2 marks]",
+          "a": "Xylem carries water and mineral ions from roots to the rest of the plant (1); phloem carries sucrose and amino acids between leaves and other parts (1).",
+          "mins": 2,
+          "model": "Two tissues, one mark each.\nXylem: what (water and mineral ions) and where (from roots upwards).\nPhloem: what (sucrose and amino acids) and where (leaves to other parts)."
+        },
+        {
+          "q": "State the function of lymphocytes. [1 mark]",
+          "a": "Produce antibodies.",
+          "mins": 1
+        },
+        {
+          "q": "Explain why arteries have thick, elastic walls. [2 marks]",
+          "a": "Blood leaves the heart at high pressure (1); thick elastic walls withstand and even out the pressure (1).",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 6 marks): Describe the path of blood from the vena cava to the aorta, naming chambers, valves and vessels. Portal response box.",
+          "a": "Vena cava, right atrium (1), valve, right ventricle (1), pulmonary artery to lungs (1), pulmonary vein (1), left atrium, valve, left ventricle (1), aorta (1).",
+          "mins": 8,
+          "model": "Teacher writes the first two marking points: 'Deoxygenated blood enters the right atrium from the vena cava, then passes through a valve into the right ventricle.'"
+        },
+        {
+          "q": "Extend (exam-style, 4 marks): Potato cylinders: in water +10%, in 0.5 M sucrose -8%. Explain both results.",
+          "a": "Water: higher water concentration outside (1), water enters by osmosis (1); 0.5 M: lower water concentration outside (1), water leaves by osmosis (1).",
+          "mins": 6
+        },
+        {
+          "q": "Stretch (exam-style, 3 marks): Explain how heart rate changes during exercise and why.",
+          "a": "Heart rate increases (1); muscles respire faster and need more oxygen and glucose (1) and CO₂ must be removed faster (1). Adrenaline also raises heart rate.",
+          "mins": 5
+        }
+      ],
+      "exit": [
+        {
+          "q": "Large organisms need transport systems because their SA:V is...",
+          "a": "Small",
+          "mins": 1,
+          "options": [
+            "Large",
+            "Small"
+          ]
+        },
+        {
+          "q": "Big question: why does a whale need a heart but an amoeba does not?",
+          "a": "The whale's small SA:V and long distances mean diffusion alone is too slow, so it needs a pumped transport system.",
+          "mins": 2
+        }
+      ],
+      "homework": "Complete the transport retrieval quiz on the portal; correct answers in green.",
+      "send": "SEND: heart diagram with the route numbered. EAL: atrium, ventricle, xylem, phloem. Stretch: compare transport in plants and humans in a table.",
+      "resources": [
+        "Pearson Edexcel International GCSE Science (Double Award) 4SD0 specification: Biology 2.15 to 2.17, 2.51 to 2.54, 2.59 to 2.62, 2.65 to 2.69",
+        "4SD0 exam-style questions written for this lesson (portal question sheet with mark scheme)",
+        "Year 10 knowledge organiser for this topic (portal revision page)",
+        "Scientific calculator",
+        "Revision exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "heart diagram",
+          "alt": "A diagram of the human heart",
+          "for": "teach:2"
+        },
+        {
+          "find": "xylem phloem cross section stem",
+          "alt": "Xylem and phloem in a plant stem",
+          "for": "keywords"
+        },
+        {
+          "find": "amoeba microscope",
+          "alt": "An amoeba under a microscope",
+          "for": "hook"
+        }
+      ],
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Biology 1 to 2, Chemistry 1 to 2, Physics 1 to 4",
+      "n": 88,
+      "title": "Revision: Chemistry 1 principles: states, separation, atoms and bonding",
+      "duration": 50,
+      "bigQuestion": "Why does diamond not conduct electricity but graphite does?",
+      "objectives": [
+        "To understand how particle and bonding ideas explain properties, and how to answer Chemistry 1 exam questions"
+      ],
+      "successCriteria": [
+        "All: recall atomic structure and electronic configurations",
+        "Most: choose the right separation method and calculate Rf values",
+        "Some: explain properties of ionic, simple molecular and giant covalent substances"
+      ],
+      "crossCurricular": "Physics: particle model and states of matter",
+      "smsc": "Spiritual: precise measure in all things (al-Qamar 54:49)",
+      "keywords": [
+        {
+          "term": "Rf value",
+          "def": "distance moved by spot ÷ distance moved by solvent"
+        },
+        {
+          "term": "electronic configuration",
+          "def": "arrangement of electrons in shells, e.g. 2.8.1"
+        },
+        {
+          "term": "intermolecular forces",
+          "def": "weak forces between molecules"
+        },
+        {
+          "term": "giant covalent",
+          "def": "lattice of atoms all joined by covalent bonds"
+        },
+        {
+          "term": "delocalised electrons",
+          "def": "electrons free to move through a structure"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Diamond and graphite are both pure carbon. One is the hardest natural substance, the other is used in pencils. How?",
+        "a": "Different structures: diamond has four bonds per atom in 3D; graphite has layers with delocalised electrons."
+      },
+      "starter": [
+        {
+          "q": "Electronic configuration of potassium (19)?",
+          "a": "2.8.8.1",
+          "mins": 1,
+          "options": [
+            "2.8.9",
+            "2.8.8.1",
+            "2.9.8"
+          ]
+        },
+        {
+          "q": "Separation method for salt from salt solution?",
+          "a": "Crystallisation (evaporation)",
+          "mins": 1
+        },
+        {
+          "q": "Isotopes differ in the number of...",
+          "a": "Neutrons",
+          "mins": 1
+        },
+        {
+          "q": "Why are noble gases unreactive?",
+          "a": "Full outer shells",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Separation",
+          "bullets": [
+            "Filtration: insoluble solid from liquid",
+            "Crystallisation: soluble solid from solution",
+            "Distillation: liquid from solution; fractional for mixtures of liquids",
+            "Chromatography: dyes"
+          ],
+          "note": "Rf = spot distance ÷ solvent front distance.",
+          "table": {
+            "head": [
+              "Mixture",
+              "Method"
+            ],
+            "rows": [
+              [
+                "Sand and water",
+                "filtration"
+              ],
+              [
+                "Copper sulfate from solution",
+                "crystallisation"
+              ],
+              [
+                "Water from sea water",
+                "simple distillation"
+              ],
+              [
+                "Ethanol from water",
+                "fractional distillation"
+              ],
+              [
+                "Food dyes",
+                "paper chromatography"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Structure and properties",
+          "bullets": [
+            "Ionic: high mp, conduct molten or dissolved",
+            "Simple molecular: low mp, do not conduct",
+            "Giant covalent: very high mp; graphite conducts"
+          ],
+          "note": "Use the compare block.",
+          "compare": {
+            "left": {
+              "title": "Diamond",
+              "points": [
+                "each C bonded to 4 others",
+                "very hard, very high mp",
+                "no delocalised electrons: does not conduct"
+              ]
+            },
+            "right": {
+              "title": "Graphite",
+              "points": [
+                "each C bonded to 3 others in layers",
+                "layers slide: soft",
+                "delocalised electrons: conducts"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Model answer",
+          "bullets": [
+            "Simple molecules: forces between molecules"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "Explain why methane has a low boiling point. [2 marks]",
+            "steps": [
+              "Methane is a simple molecular substance",
+              "Weak intermolecular forces between molecules",
+              "Little energy needed to overcome them (not the covalent bonds)"
+            ],
+            "answer": "Weak intermolecular forces need little energy to overcome"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds.",
+          "check": {
+            "q": "A spot moves 3.6 cm; solvent front 9.0 cm. Rf?",
+            "options": [
+              "0.4",
+              "2.5",
+              "5.4",
+              "12.6"
+            ],
+            "answer": 0,
+            "why": "Rf = 3.6 ÷ 9.0 = 0.4."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why sodium chloride conducts when molten but not when solid. [2 marks]",
+          "a": "Solid: ions fixed in the lattice (1); molten: ions free to move and carry charge (1).",
+          "mins": 2,
+          "model": "Solid state: where are the ions?\nFixed in the lattice, so they cannot move.\nMolten: ions free to move, so they carry charge through the liquid."
+        },
+        {
+          "q": "A pure substance melts at a sharp temperature. What does a mixture do? [1 mark]",
+          "a": "Melts over a range of temperatures.",
+          "mins": 1
+        },
+        {
+          "q": "Draw (describe) the dot-and-cross diagram for HCl. [2 marks]",
+          "a": "One shared pair between H and Cl (1); Cl has three non-bonding pairs, outer shells shown (1).",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 5 marks): A chromatogram of a food colouring shows three spots; one matches E133 (Rf 0.62). Describe how to carry out the experiment and how to identify E133.",
+          "a": "Pencil start line (1); spots above solvent level (1); lid on, solvent rises (1); measure spot and front distances, Rf = spot ÷ front (1); matching Rf (and position) to a known sample identifies E133 (1).",
+          "mins": 8,
+          "model": "Teacher writes the first two points: 'Draw a pencil line 1 cm from the bottom (pencil does not dissolve).\nSpot the colouring on the line and stand the paper in solvent below the line.'"
+        },
+        {
+          "q": "Extend (exam-style, 3 marks): Explain why graphite is used for electrodes and as a lubricant.",
+          "a": "Delocalised electrons carry charge (1); layers held by weak forces (1) slide over each other (1).",
+          "mins": 6
+        },
+        {
+          "q": "Stretch (exam-style, 2 marks): Explain why the boiling points of simple molecules increase with relative molecular mass.",
+          "a": "Larger molecules have stronger intermolecular forces (1), so more energy is needed to separate them (1).",
+          "mins": 5
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which conducts electricity as a solid?",
+          "a": "Graphite",
+          "mins": 1,
+          "options": [
+            "Diamond",
+            "Graphite",
+            "Sodium chloride"
+          ]
+        },
+        {
+          "q": "Big question: why does diamond not conduct but graphite does?",
+          "a": "Graphite has delocalised electrons between layers; in diamond all outer electrons are in bonds.",
+          "mins": 2
+        }
+      ],
+      "homework": "Complete the Chemistry 1 structure and bonding quiz on the portal.",
+      "send": "SEND: structure-property table to complete. EAL: lattice, intermolecular, delocalised. Stretch: explain C60 fullerene's properties.",
+      "resources": [
+        "Pearson Edexcel International GCSE Science (Double Award) 4SD0 specification: Chemistry 1.1 to 1.24, 1.37 to 1.51",
+        "4SD0 exam-style questions written for this lesson (portal question sheet with mark scheme)",
+        "Year 10 knowledge organiser for this topic (portal revision page)",
+        "Periodic Table (portal printable)",
+        "Scientific calculator",
+        "Revision exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "diamond structure model",
+          "alt": "The structure of diamond",
+          "for": "teach:2"
+        },
+        {
+          "find": "graphite structure layers",
+          "alt": "The layered structure of graphite",
+          "for": "keywords"
+        },
+        {
+          "find": "paper chromatography",
+          "alt": "A paper chromatogram",
+          "for": "teach:1"
+        }
+      ],
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Biology 1 to 2, Chemistry 1 to 2, Physics 1 to 4",
+      "n": 89,
+      "title": "Revision: Physics 1 motion: graphs and equations",
+      "duration": 50,
+      "bigQuestion": "How much can one graph tell you about a journey?",
+      "objectives": [
+        "To understand how to interpret motion graphs and use the motion equations in exam questions"
+      ],
+      "successCriteria": [
+        "All: calculate speed and acceleration with units",
+        "Most: find acceleration and distance from velocity-time graphs",
+        "Some: use v² = u² + 2as and choose the right equation"
+      ],
+      "crossCurricular": "Maths: gradients and areas under graphs",
+      "smsc": "Moral: safe speeds on roads",
+      "keywords": [
+        {
+          "term": "speed",
+          "def": "distance ÷ time"
+        },
+        {
+          "term": "acceleration",
+          "def": "change in velocity ÷ time"
+        },
+        {
+          "term": "gradient",
+          "def": "steepness of a graph"
+        },
+        {
+          "term": "area under graph",
+          "def": "distance on a velocity-time graph"
+        },
+        {
+          "term": "velocity",
+          "def": "speed in a given direction"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A distance-time graph and a velocity-time graph both have a flat line. Do they mean the same thing?",
+        "a": "No: flat on distance-time means stationary; flat on velocity-time means constant velocity."
+      },
+      "starter": [
+        {
+          "q": "Unit of acceleration?",
+          "a": "m/s²",
+          "mins": 1,
+          "options": [
+            "m/s",
+            "m/s²",
+            "N"
+          ]
+        },
+        {
+          "q": "Area of a trapezium?",
+          "a": "½ (a + b) h",
+          "mins": 1
+        },
+        {
+          "q": "Speed of 400 m in 50 s?",
+          "a": "8 m/s",
+          "mins": 1
+        },
+        {
+          "q": "Gradient of a distance-time graph gives...",
+          "a": "Speed",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Which equation?",
+          "bullets": [
+            "Speed = distance ÷ time",
+            "a = (v - u) ÷ t",
+            "v² = u² + 2as (no time given)"
+          ],
+          "note": "Choose by what is given and what is asked."
+        },
+        {
+          "heading": "Reading v-t graphs",
+          "bullets": [
+            "Gradient = acceleration",
+            "Area = distance",
+            "Negative gradient: deceleration"
+          ],
+          "note": "Model on a three-stage journey.",
+          "table": {
+            "head": [
+              "Stage",
+              "Motion",
+              "Calculation"
+            ],
+            "rows": [
+              [
+                "0 to 5 s: 0 to 15 m/s",
+                "accelerating",
+                "a = 3 m/s²; d = 37.5 m"
+              ],
+              [
+                "5 to 15 s: 15 m/s",
+                "constant velocity",
+                "d = 150 m"
+              ],
+              [
+                "15 to 18 s: 15 to 0 m/s",
+                "decelerating",
+                "a = -5 m/s²; d = 22.5 m"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Model answer",
+          "bullets": [
+            "Write the equation, substitute, answer with unit"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "A cyclist at 5 m/s accelerates at 2 m/s² over 24 m. Find the final velocity. [3 marks]",
+            "steps": [
+              "v² = u² + 2as",
+              "v² = 5² + 2 × 2 × 24 = 25 + 96 = 121",
+              "v = 11 m/s"
+            ],
+            "answer": "11 m/s"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds.",
+          "check": {
+            "q": "Total distance for the three-stage journey?",
+            "options": [
+              "150 m",
+              "187.5 m",
+              "210 m",
+              "270 m"
+            ],
+            "answer": 2,
+            "why": "37.5 + 150 + 22.5 = 210 m."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "A car goes from 30 m/s to 10 m/s in 4 s. Acceleration? [2 marks]",
+          "a": "a = (10 - 30) ÷ 4 (1) = -5 m/s² (1)",
+          "mins": 2,
+          "model": "Formula: a = (v - u) ÷ t.\nSubstitute: (10 - 30) ÷ 4 = -20 ÷ 4.\nAnswer: -5 m/s² (a deceleration of 5 m/s²)."
+        },
+        {
+          "q": "Describe how to find speed from a curved distance-time graph at a given time. [2 marks]",
+          "a": "Draw a tangent (1); find its gradient (1).",
+          "mins": 2
+        },
+        {
+          "q": "A ball dropped from rest falls 45 m (a = 10 m/s²). Speed on landing?",
+          "a": "v² = 0 + 2 × 10 × 45 = 900, v = 30 m/s",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 6 marks): A train's v-t graph: 0 to 20 m/s in 40 s, constant for 60 s, stops in 20 s. Calculate the acceleration in each stage and the total distance.",
+          "a": "0.5 m/s² (1), 0 (1), -1 m/s² (1); distances 400 m (1), 1200 m (1), 200 m; total 1800 m (1).",
+          "mins": 8,
+          "model": "Teacher works stage 1: a = 20 ÷ 40 = 0.5 m/s²; distance = ½ × 40 × 20 = 400 m."
+        },
+        {
+          "q": "Extend (exam-style, 2 marks): Calculate the average speed of the train for the whole journey.",
+          "a": "1800 ÷ 120 (1) = 15 m/s (1)",
+          "mins": 6
+        },
+        {
+          "q": "Stretch (exam-style, 3 marks): Describe a practical to investigate the motion of a toy car down a ramp (4SD0 1.5).",
+          "a": "Mark distances on the ramp (1); time with a stopwatch or light gates at each mark (1); calculate speed = distance ÷ time; repeat and average (1).",
+          "mins": 5
+        }
+      ],
+      "exit": [
+        {
+          "q": "The area under a velocity-time graph is the...",
+          "a": "Distance",
+          "mins": 1,
+          "options": [
+            "Acceleration",
+            "Distance",
+            "Speed"
+          ]
+        },
+        {
+          "q": "Big question: how much can one graph tell you about a journey?",
+          "a": "A velocity-time graph gives acceleration (gradient), distance (area) and when the object is speeding up, steady or slowing.",
+          "mins": 2
+        }
+      ],
+      "homework": "Complete the motion graphs exam question set on the portal (timed: 20 minutes).",
+      "send": "SEND: equation card with units; graph templates. EAL: gradient, area, decelerate. Stretch: derive v² = u² + 2as.",
+      "resources": [
+        "Pearson Edexcel International GCSE Science (Double Award) 4SD0 specification: Physics 1.1, 1.3 to 1.10",
+        "4SD0 exam-style questions written for this lesson (portal question sheet with mark scheme)",
+        "Year 10 knowledge organiser for this topic (portal revision page)",
+        "Scientific calculator",
+        "Ruler",
+        "Revision exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "velocity time graph",
+          "alt": "A velocity-time graph",
+          "for": "teach:2"
+        },
+        {
+          "find": "train station platform",
+          "alt": "A train at a station",
+          "for": "hook"
+        },
+        {
+          "find": "stopwatch",
+          "alt": "A stopwatch",
+          "for": "keywords"
+        }
+      ],
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Biology 1 to 2, Chemistry 1 to 2, Physics 1 to 4",
+      "n": 90,
+      "title": "Revision: Physics 1 forces: F = ma, weight, stopping and springs",
+      "duration": 50,
+      "bigQuestion": "Why do motorway speed limits matter so much in the rain?",
+      "objectives": [
+        "To understand how forces affect motion and how to answer exam questions on F = ma, stopping distance and Hooke's law"
+      ],
+      "successCriteria": [
+        "All: calculate resultant force, F = ma and W = mg",
+        "Most: explain factors affecting thinking and braking distance",
+        "Some: describe the spring practical and interpret force-extension graphs"
+      ],
+      "crossCurricular": "PSHE: road safety",
+      "smsc": "Moral: driving and cycling safely to protect others",
+      "keywords": [
+        {
+          "term": "resultant force",
+          "def": "single force with the same effect as all the forces"
+        },
+        {
+          "term": "thinking distance",
+          "def": "distance travelled during reaction time"
+        },
+        {
+          "term": "braking distance",
+          "def": "distance travelled while braking"
+        },
+        {
+          "term": "Hooke's law",
+          "def": "extension is proportional to force up to the limit of proportionality"
+        },
+        {
+          "term": "terminal velocity",
+          "def": "constant velocity when resultant force is zero"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Rain doubles braking distance but not thinking distance. Why only one?",
+        "a": "Wet roads reduce friction between tyres and road; thinking distance depends on reaction time and speed."
+      },
+      "starter": [
+        {
+          "q": "F = ma: 800 kg at 2 m/s²?",
+          "a": "1600 N",
+          "mins": 1,
+          "options": [
+            "400 N",
+            "802 N",
+            "1600 N"
+          ]
+        },
+        {
+          "q": "g on Earth (4SD0)?",
+          "a": "10 N/kg",
+          "mins": 1
+        },
+        {
+          "q": "Stopping distance = ?",
+          "a": "Thinking distance + braking distance",
+          "mins": 1
+        },
+        {
+          "q": "Is force a scalar or a vector?",
+          "a": "Vector",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Forces and motion",
+          "bullets": [
+            "Resultant zero: constant velocity or at rest",
+            "Resultant non-zero: acceleration",
+            "F = ma; W = mg"
+          ],
+          "note": "Terminal velocity: weight equals drag."
+        },
+        {
+          "heading": "Stopping distance",
+          "bullets": [
+            "Thinking: speed, reaction time (tiredness, alcohol, drugs, distraction)",
+            "Braking: speed, mass, road and tyre condition, brakes"
+          ],
+          "note": "Data from a typical stopping chart.",
+          "chart": {
+            "kind": "bar",
+            "title": "Stopping distance at 20 m/s (example)",
+            "labels": [
+              "Thinking",
+              "Braking (dry)",
+              "Braking (wet)"
+            ],
+            "values": [
+              14,
+              24,
+              48
+            ],
+            "unit": "m"
+          }
+        },
+        {
+          "heading": "Springs",
+          "bullets": [
+            "Extension = new length - original length",
+            "Straight line through origin: Hooke's law",
+            "Beyond the limit: curve; may not return"
+          ],
+          "note": "Model the graph reading.",
+          "model": {
+            "problem": "A spring extends 4 cm with 2 N. Assuming Hooke's law, what is the extension with 5 N? [2 marks]",
+            "steps": [
+              "Extension per newton = 4 ÷ 2 = 2 cm/N",
+              "5 N × 2 cm/N = 10 cm"
+            ],
+            "answer": "10 cm (if within the limit of proportionality)"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds.",
+          "check": {
+            "q": "Which increases thinking distance?",
+            "options": [
+              "Wet road",
+              "Worn tyres",
+              "Tiredness",
+              "Heavier car"
+            ],
+            "answer": 2,
+            "why": "Tiredness increases reaction time; the others affect braking distance."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "A 1500 kg car: driving force 4000 N, resistive force 1000 N. Acceleration? [3 marks]",
+          "a": "Resultant = 3000 N (1); a = 3000 ÷ 1500 (1) = 2 m/s² (1)",
+          "mins": 2,
+          "model": "Step 1: resultant = 4000 - 1000 = 3000 N. Step 2: a = F ÷ m = 3000 ÷ 1500. Step 3: a = 2 m/s²."
+        },
+        {
+          "q": "Weight of a 75 kg astronaut on the Moon (g = 1.6 N/kg)?",
+          "a": "120 N",
+          "mins": 1
+        },
+        {
+          "q": "Give two factors that increase braking distance. [2 marks]",
+          "a": "Any two: higher speed, greater mass, wet or icy road, worn tyres, worn brakes.",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 6 marks): Describe how to investigate the extension of a spring with force, including how to make results accurate. Portal response box.",
+          "a": "Clamp spring and ruler (1); measure original length (1); add masses 100 g at a time, W = mg (1); measure new length at eye level, calculate extension (1); repeat and average (1); plot force against extension (1).",
+          "mins": 8,
+          "model": "Teacher writes the first two points: 'Hang the spring from a clamp next to a vertical ruler.\nRecord its original length with a pointer, reading at eye level.'"
+        },
+        {
+          "q": "Extend (exam-style, 3 marks): Explain why a skydiver reaches terminal velocity.",
+          "a": "Weight constant; air resistance increases with speed (1); eventually equals weight (1); resultant force zero so velocity constant (1).",
+          "mins": 6
+        },
+        {
+          "q": "Stretch (exam-style, 2 marks): Explain what is meant by elastic behaviour.",
+          "a": "The material returns to its original shape (1) when the force is removed (1).",
+          "mins": 5
+        }
+      ],
+      "exit": [
+        {
+          "q": "Hooke's law: extension is proportional to...",
+          "a": "Force",
+          "mins": 1,
+          "options": [
+            "Mass only",
+            "Force",
+            "Length"
+          ]
+        },
+        {
+          "q": "Big question: why do speed limits matter so much in the rain?",
+          "a": "Wet roads reduce friction, so braking distance increases; at higher speed both thinking and braking distance rise.",
+          "mins": 2
+        }
+      ],
+      "homework": "Complete the forces exam question set on the portal (timed: 20 minutes).",
+      "send": "SEND: formula sheet; graph-reading prompts. EAL: resultant, braking, extension. Stretch: explain why braking distance increases with the square of speed.",
+      "resources": [
+        "Pearson Edexcel International GCSE Science (Double Award) 4SD0 specification: Physics 1.11 to 1.24",
+        "4SD0 exam-style questions written for this lesson (portal question sheet with mark scheme)",
+        "Year 10 knowledge organiser for this topic (portal revision page)",
+        "Scientific calculator",
+        "Revision exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "wet road car headlights",
+          "alt": "A wet road at night",
+          "for": "hook"
+        },
+        {
+          "find": "spring extension experiment",
+          "alt": "A spring with masses for the Hooke's law practical",
+          "for": "teach:3"
+        },
+        {
+          "find": "stopping distance chart",
+          "alt": "A stopping distances chart",
+          "for": "teach:2"
+        }
+      ],
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Biology 1 to 2, Chemistry 1 to 2, Physics 1 to 4",
+      "n": 91,
+      "title": "Revision: photosynthesis and human nutrition",
+      "duration": 50,
+      "bigQuestion": "Where does the energy in your breakfast originally come from?",
+      "objectives": [
+        "To understand photosynthesis, limiting factors and human nutrition well enough to answer 4SD0 exam questions"
+      ],
+      "successCriteria": [
+        "All: write the word and balanced equations for photosynthesis",
+        "Most: explain limiting factors and the starch test",
+        "Some: link digestion, enzymes and absorption in extended answers"
+      ],
+      "crossCurricular": "Chemistry: endothermic reactions and balanced equations",
+      "smsc": "Spiritual: Allah sends down rain and brings out plants (al-An'am 6:99)",
+      "keywords": [
+        {
+          "term": "photosynthesis",
+          "def": "plants make glucose from CO₂ and water using light"
+        },
+        {
+          "term": "limiting factor",
+          "def": "the factor in shortest supply that limits the rate"
+        },
+        {
+          "term": "chlorophyll",
+          "def": "green pigment that absorbs light"
+        },
+        {
+          "term": "emulsify",
+          "def": "break fats into small droplets"
+        },
+        {
+          "term": "villi",
+          "def": "projections that increase surface area for absorption"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Every meal you eat can be traced back to a plant capturing sunlight. Can you think of one that cannot?",
+        "a": "Almost none: even meat and milk come from animals that ate plants; salt and water are exceptions."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'It is He who sends down rain from the sky, and We produce thereby the growth of all things, and We produce from it greenery' (al-An'am 6:99). Photosynthesis is how that greenery turns light into food.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Gas released in photosynthesis?",
+          "a": "Oxygen",
+          "mins": 1,
+          "options": [
+            "Carbon dioxide",
+            "Oxygen",
+            "Nitrogen"
+          ]
+        },
+        {
+          "q": "Mineral ion needed for chlorophyll?",
+          "a": "Magnesium",
+          "mins": 1
+        },
+        {
+          "q": "Where is bile made?",
+          "a": "Liver",
+          "mins": 1
+        },
+        {
+          "q": "Name the enzyme that digests lipids.",
+          "a": "Lipase",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Photosynthesis",
+          "bullets": [
+            "6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂",
+            "Light energy to chemical energy",
+            "Limiting factors: light, CO₂, temperature"
+          ],
+          "note": "Use the limiting factor graph.",
+          "chart": {
+            "kind": "line",
+            "title": "Rate against light intensity (example)",
+            "labels": [
+              "0",
+              "2",
+              "4",
+              "6",
+              "8",
+              "10"
+            ],
+            "values": [
+              0,
+              20,
+              38,
+              50,
+              52,
+              52
+            ],
+            "unit": "bubbles per min"
+          }
+        },
+        {
+          "heading": "Human nutrition",
+          "bullets": [
+            "Balanced diet: seven components",
+            "Enzymes: amylase, maltase, protease, lipase",
+            "Bile: neutralises acid, emulsifies fat",
+            "Villi: absorption"
+          ],
+          "note": "Quick recall grid."
+        },
+        {
+          "heading": "Model answer",
+          "bullets": [
+            "Interpret the plateau"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "Explain the shape of the graph above 6 units of light. [2 marks]",
+            "steps": [
+              "Rate stops increasing (plateau)",
+              "Light is no longer the limiting factor",
+              "Another factor, such as CO₂ concentration or temperature, now limits the rate"
+            ],
+            "answer": "Plateau because another factor limits"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds.",
+          "check": {
+            "q": "In the starch test on a leaf, why is the leaf boiled in ethanol?",
+            "options": [
+              "To kill it",
+              "To remove chlorophyll",
+              "To add starch",
+              "To soften the iodine"
+            ],
+            "answer": 1,
+            "why": "Removing the green chlorophyll lets the iodine colour be seen."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Describe how to test a leaf for starch. [4 marks]",
+          "a": "Boil in water to kill and soften (1); in ethanol (in a hot water bath, no flame) to remove chlorophyll (1); rinse in water (1); add iodine: blue-black shows starch (1).",
+          "mins": 2,
+          "model": "Four steps, four marks: boil in water, warm in ethanol in a water bath, rinse, add iodine and look for blue-black."
+        },
+        {
+          "q": "State the function of fibre in the diet. [1 mark]",
+          "a": "Helps food move through the gut by peristalsis (prevents constipation).",
+          "mins": 2
+        },
+        {
+          "q": "Explain why bile helps lipase. [2 marks]",
+          "a": "Bile emulsifies fat into small droplets (1), giving a larger surface area for lipase (1).",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 6 marks): Explain how a leaf is adapted for photosynthesis. Portal response box.",
+          "a": "Large surface area (1); thin, short diffusion distance (1); many chloroplasts in palisade layer near the top (1); stomata let CO₂ in (1); air spaces in spongy layer (1); veins (xylem) bring water (1).",
+          "mins": 8,
+          "model": "Teacher plans with a feature-reason table: 'Broad and flat: large surface area to absorb light.'"
+        },
+        {
+          "q": "Extend (exam-style, 3 marks): A variegated leaf (green and white) is tested for starch. Only the green parts turn blue-black. Explain.",
+          "a": "Only green parts have chlorophyll (1); chlorophyll absorbs light for photosynthesis (1); so only they made glucose stored as starch (1).",
+          "mins": 6
+        },
+        {
+          "q": "Stretch (exam-style, 2 marks): Explain why a pregnant woman needs more iron and calcium.",
+          "a": "Iron for extra haemoglobin for her and the fetus (1); calcium for the fetus's bones and teeth (1).",
+          "mins": 5
+        }
+      ],
+      "exit": [
+        {
+          "q": "The factor in shortest supply is the...",
+          "a": "Limiting factor",
+          "mins": 1,
+          "options": [
+            "Optimum",
+            "Limiting factor",
+            "Control"
+          ]
+        },
+        {
+          "q": "Big question: where does the energy in your breakfast originally come from?",
+          "a": "Light from the Sun, captured by plants in photosynthesis.",
+          "mins": 2
+        }
+      ],
+      "homework": "Complete the nutrition exam question set on the portal (timed: 20 minutes).",
+      "send": "SEND: leaf diagram with labels; equation card. EAL: limiting, chlorophyll, emulsify. Stretch: interpret a graph with two limiting factors.",
+      "resources": [
+        "Pearson Edexcel International GCSE Science (Double Award) 4SD0 specification: Biology 2.18 to 2.32",
+        "4SD0 exam-style questions written for this lesson (portal question sheet with mark scheme)",
+        "Year 10 knowledge organiser for this topic (portal revision page)",
+        "Revision exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "leaf cross section diagram",
+          "alt": "A cross-section of a leaf",
+          "for": "hook"
+        },
+        {
+          "find": "chloroplasts in leaf cells microscope",
+          "alt": "Chloroplasts in leaf cells",
+          "for": "keywords"
+        },
+        {
+          "find": "variegated leaf",
+          "alt": "A variegated leaf",
+          "for": "teach:4"
+        }
+      ],
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Biology 1 to 2, Chemistry 1 to 2, Physics 1 to 4",
+      "n": 92,
+      "title": "Revision: respiration and human gas exchange",
+      "duration": 50,
+      "bigQuestion": "How are breathing, gas exchange and respiration linked, and how are they different?",
+      "objectives": [
+        "To understand respiration and the gas exchange system well enough to write precise exam answers"
+      ],
+      "successCriteria": [
+        "All: write the equations for aerobic and anaerobic respiration",
+        "Most: explain ventilation and alveolar adaptations",
+        "Some: explain the effects of smoking and evaluate practical data"
+      ],
+      "crossCurricular": "Physics: pressure and volume in ventilation",
+      "smsc": "Moral: avoiding harm to the body (al-Baqarah 2:195)",
+      "keywords": [
+        {
+          "term": "aerobic respiration",
+          "def": "releases energy from glucose using oxygen"
+        },
+        {
+          "term": "anaerobic respiration",
+          "def": "releases energy without oxygen"
+        },
+        {
+          "term": "ventilation",
+          "def": "movement of air into and out of the lungs"
+        },
+        {
+          "term": "alveoli",
+          "def": "air sacs adapted for gas exchange"
+        },
+        {
+          "term": "ATP",
+          "def": "molecule that provides energy for cells"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A student writes: 'Plants photosynthesise during the day and respire at night.' What is wrong?",
+        "a": "Plants respire all the time, day and night; they also photosynthesise when there is light."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Do not throw yourselves with your own hands into destruction' (al-Baqarah 2:195). Knowing how smoking damages the gas exchange system helps us protect the trust of our bodies.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Products of anaerobic respiration in muscles?",
+          "a": "Lactic acid",
+          "mins": 1,
+          "options": [
+            "Ethanol and CO₂",
+            "Lactic acid",
+            "CO₂ and water"
+          ]
+        },
+        {
+          "q": "Where does aerobic respiration happen?",
+          "a": "Mitochondria",
+          "mins": 1
+        },
+        {
+          "q": "Name the muscles between the ribs.",
+          "a": "Intercostal muscles",
+          "mins": 1
+        },
+        {
+          "q": "Gas that binds haemoglobin from smoke?",
+          "a": "Carbon monoxide",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Respiration",
+          "bullets": [
+            "Aerobic: C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O",
+            "Animals anaerobic: glucose → lactic acid",
+            "Plants and yeast anaerobic: glucose → ethanol + CO₂"
+          ],
+          "note": "Aerobic releases much more energy (more ATP).",
+          "compare": {
+            "left": {
+              "title": "Aerobic",
+              "points": [
+                "needs oxygen",
+                "CO₂ and water",
+                "lots of energy"
+              ]
+            },
+            "right": {
+              "title": "Anaerobic",
+              "points": [
+                "no oxygen",
+                "lactic acid or ethanol + CO₂",
+                "little energy"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Gas exchange",
+          "bullets": [
+            "Ventilation: intercostals and diaphragm",
+            "Alveoli: large SA, thin walls, capillaries, moist",
+            "Smoking: tar, nicotine, CO; CHD"
+          ],
+          "note": "Quick recall."
+        },
+        {
+          "heading": "Model answer",
+          "bullets": [
+            "Practical: respiring seeds"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "Explain why boiled seeds are used in the respiring seeds experiment. [2 marks]",
+            "steps": [
+              "Boiled seeds are dead and do not respire",
+              "They act as a control to show any temperature rise is due to respiration"
+            ],
+            "answer": "Control; dead seeds do not respire"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds.",
+          "check": {
+            "q": "Breathing in: thorax volume and pressure...",
+            "options": [
+              "increase, increase",
+              "increase, decrease",
+              "decrease, increase",
+              "decrease, decrease"
+            ],
+            "answer": 1,
+            "why": "Volume increases so pressure falls below atmospheric; air flows in."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write the balanced symbol equation for aerobic respiration. [2 marks]",
+          "a": "C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O",
+          "mins": 2,
+          "model": "Correct formulae for glucose, oxygen, carbon dioxide and water (1).\nBalance carbon (6CO₂), hydrogen (6H₂O), then oxygen (6O₂) (1)."
+        },
+        {
+          "q": "State two adaptations of alveoli. [2 marks]",
+          "a": "Large surface area; walls one cell thick (or good blood supply; moist).",
+          "mins": 2
+        },
+        {
+          "q": "Explain how tar damages the airways. [2 marks]",
+          "a": "Tar damages cilia (1) so mucus is not cleared, causing infections and bronchitis (1). (Tar also contains carcinogens.)",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 6 marks): Describe how breathing in and out happens. Portal response box.",
+          "a": "In: intercostals contract, ribs up and out (1); diaphragm contracts and flattens (1); volume increases, pressure falls, air in (1). Out: intercostals relax, ribs down and in (1); diaphragm relaxes and domes (1); volume decreases, pressure rises, air out (1).",
+          "mins": 8,
+          "model": "Teacher writes breathing in as three linked points, then pupils write breathing out in the same structure."
+        },
+        {
+          "q": "Extend (exam-style, 4 marks): Describe an experiment to show that exhaled air contains more CO₂ than inhaled air.",
+          "a": "Two tubes of limewater (or hydrogencarbonate indicator) (1); breathe in through one, out through the other (1); exhaled tube turns milky (or yellow) faster (1); same volume and time (1).",
+          "mins": 6
+        },
+        {
+          "q": "Stretch (exam-style, 3 marks): Explain why a sprinter keeps breathing deeply after a race.",
+          "a": "Anaerobic respiration made lactic acid (1); oxygen is needed to break it down (oxygen debt) (1); so breathing rate and depth stay high (1).",
+          "mins": 5
+        }
+      ],
+      "exit": [
+        {
+          "q": "Yeast anaerobic respiration produces...",
+          "a": "Ethanol and carbon dioxide",
+          "mins": 1,
+          "options": [
+            "Lactic acid",
+            "Ethanol and carbon dioxide",
+            "Oxygen"
+          ]
+        },
+        {
+          "q": "Big question: how are breathing, gas exchange and respiration linked and different?",
+          "a": "Breathing moves air; gas exchange moves O₂ into and CO₂ out of blood at the alveoli; respiration is the reaction in cells that uses O₂ and makes CO₂.",
+          "mins": 2
+        }
+      ],
+      "homework": "Complete the respiration and gas exchange exam question set on the portal (timed: 20 minutes).",
+      "send": "SEND: sequence cards for ventilation. EAL: inhale, exhale, aerobic. Stretch: compare respiration in plants and animals.",
+      "resources": [
+        "Pearson Edexcel International GCSE Science (Double Award) 4SD0 specification: Biology 2.34 to 2.39, 2.46 to 2.50",
+        "4SD0 exam-style questions written for this lesson (portal question sheet with mark scheme)",
+        "Year 10 knowledge organiser for this topic (portal revision page)",
+        "Revision exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "lungs diagram",
+          "alt": "The human lungs",
+          "for": "hook"
+        },
+        {
+          "find": "limewater test exhaled air",
+          "alt": "Limewater testing exhaled air",
+          "for": "teach:3"
+        },
+        {
+          "find": "mitochondrion",
+          "alt": "A mitochondrion",
+          "for": "keywords"
+        }
+      ],
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Biology 1 to 2, Chemistry 1 to 2, Physics 1 to 4",
+      "n": 93,
+      "title": "Revision: Chemistry 2 groups, air and the reactivity series",
+      "duration": 50,
+      "bigQuestion": "Why is potassium stored under oil but gold found as a shiny metal in the ground?",
+      "objectives": [
+        "To understand the trends in Groups 1 and 7, the gases in air and the reactivity series well enough to predict and explain in exams"
+      ],
+      "successCriteria": [
+        "All: describe the trends in Group 1 and Group 7",
+        "Most: use displacement results to order reactivity",
+        "Some: explain rusting and its prevention and identify oxidation and reduction"
+      ],
+      "crossCurricular": "Geography: metal ores and mining",
+      "smsc": "Spiritual: iron sent down 'with great strength and benefits for people' (al-Hadid 57:25)",
+      "keywords": [
+        {
+          "term": "reactivity series",
+          "def": "metals listed from most to least reactive"
+        },
+        {
+          "term": "displacement",
+          "def": "a more reactive element takes the place of a less reactive one"
+        },
+        {
+          "term": "oxidation",
+          "def": "gain of oxygen or loss of electrons"
+        },
+        {
+          "term": "reduction",
+          "def": "loss of oxygen or gain of electrons"
+        },
+        {
+          "term": "sacrificial protection",
+          "def": "a more reactive metal corrodes instead of iron"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Zinc blocks are fixed to steel ship hulls and slowly disappear. Why would anyone want that?",
+        "a": "Zinc is more reactive, so it corrodes instead of the iron: sacrificial protection."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We sent down iron, in which is great strength and benefits for people' (al-Hadid 57:25). Knowing why iron rusts and how to protect it is part of using that benefit wisely.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Percentage of oxygen in dry air?",
+          "a": "About 21%",
+          "mins": 1,
+          "options": [
+            "About 21%",
+            "About 78%",
+            "About 1%"
+          ]
+        },
+        {
+          "q": "Colour of bromine at room temperature?",
+          "a": "Red-brown liquid",
+          "mins": 1
+        },
+        {
+          "q": "Two conditions for rusting?",
+          "a": "Oxygen (air) and water",
+          "mins": 1
+        },
+        {
+          "q": "Gas made when a metal reacts with dilute acid?",
+          "a": "Hydrogen",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Group trends",
+          "bullets": [
+            "Group 1: reactivity increases down the group",
+            "Group 7: reactivity decreases down the group",
+            "Group 7: colours darken, melting points rise"
+          ],
+          "note": "Predict for unfamiliar elements.",
+          "compare": {
+            "left": {
+              "title": "Group 1",
+              "points": [
+                "lithium < sodium < potassium",
+                "react with water: hydroxide + hydrogen",
+                "more vigorous down the group"
+              ]
+            },
+            "right": {
+              "title": "Group 7",
+              "points": [
+                "chlorine > bromine > iodine",
+                "a more reactive halogen displaces a less reactive one",
+                "darker and higher mp down the group"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Reactivity series",
+          "bullets": [
+            "K, Na, Li, Ca, Mg, Al, Zn, Fe, Cu, Ag, Au",
+            "Order from reactions with water, acid and displacement"
+          ],
+          "note": "Displacement grid example.",
+          "table": {
+            "head": [
+              "Metal added",
+              "to CuSO₄",
+              "to ZnSO₄",
+              "to MgSO₄"
+            ],
+            "rows": [
+              [
+                "Mg",
+                "reaction",
+                "reaction",
+                "-"
+              ],
+              [
+                "Zn",
+                "reaction",
+                "-",
+                "no reaction"
+              ],
+              [
+                "Cu",
+                "-",
+                "no reaction",
+                "no reaction"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Model answer",
+          "bullets": [
+            "Redox in displacement"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "Mg + CuSO₄ → MgSO₄ + Cu. Identify what is oxidised and reduced. [2 marks]",
+            "steps": [
+              "Mg loses electrons to form Mg²⁺: oxidised",
+              "Cu²⁺ gains electrons to form Cu: reduced"
+            ],
+            "answer": "Magnesium oxidised; copper ions reduced"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds.",
+          "check": {
+            "q": "Chlorine water is added to potassium iodide solution. What forms?",
+            "options": [
+              "No reaction",
+              "Iodine (brown solution)",
+              "Chlorine gas",
+              "Potassium"
+            ],
+            "answer": 1,
+            "why": "Chlorine is more reactive and displaces iodine: solution turns brown."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Predict how rubidium reacts with water. [2 marks]",
+          "a": "Very vigorously, more than potassium (1); forms rubidium hydroxide and hydrogen (1).",
+          "mins": 2,
+          "model": "Trend: reactivity increases down Group 1.\nRubidium is below potassium, so it reacts even more violently.\nProducts: metal hydroxide and hydrogen."
+        },
+        {
+          "q": "Use the grid to put Mg, Zn and Cu in order of reactivity.",
+          "a": "Mg > Zn > Cu",
+          "mins": 1
+        },
+        {
+          "q": "Explain how galvanising protects iron. [2 marks]",
+          "a": "Zinc coating is a barrier to air and water (1); zinc is more reactive so corrodes first even if scratched (1).",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 6 marks): Describe how to find the percentage of oxygen in air using iron wool (or copper and syringes), and explain the result. Portal response box.",
+          "a": "Known volume of air (1); iron wool in a measuring cylinder over water (1); leave several days (1); iron rusts, using oxygen (1); water rises; measure volume change (1); about 21% (1).",
+          "mins": 8,
+          "model": "Teacher writes the first two points: 'Push damp iron wool to the bottom of a measuring cylinder and invert it in water.\nRecord the starting volume of air.'"
+        },
+        {
+          "q": "Extend (exam-style, 3 marks): Explain why aluminium does not seem as reactive as its position suggests.",
+          "a": "Aluminium has a protective oxide layer (1) that stops air and water reaching the metal (1), so it reacts slowly (1).",
+          "mins": 6
+        },
+        {
+          "q": "Stretch (exam-style, 2 marks): Write a balanced equation for sodium reacting with water.",
+          "a": "2Na + 2H₂O → 2NaOH + H₂",
+          "mins": 5
+        }
+      ],
+      "exit": [
+        {
+          "q": "Most reactive of these?",
+          "a": "Potassium",
+          "mins": 1,
+          "options": [
+            "Zinc",
+            "Potassium",
+            "Iron"
+          ]
+        },
+        {
+          "q": "Big question: why is potassium stored under oil but gold found as metal?",
+          "a": "Potassium is very reactive and would react with air and water; gold is unreactive so it stays uncombined.",
+          "mins": 2
+        }
+      ],
+      "homework": "Complete the Chemistry 2 groups and reactivity exam question set on the portal (timed: 20 minutes).",
+      "send": "SEND: reactivity series mnemonic card. EAL: displace, oxidise, reduce. Stretch: explain redox in terms of electrons for a halogen displacement.",
+      "resources": [
+        "Pearson Edexcel International GCSE Science (Double Award) 4SD0 specification: Chemistry 2.1 to 2.3, 2.5 to 2.7, 2.9 to 2.21",
+        "4SD0 exam-style questions written for this lesson (portal question sheet with mark scheme)",
+        "Year 10 knowledge organiser for this topic (portal revision page)",
+        "Revision exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "potassium reacting with water",
+          "alt": "Potassium reacting with water",
+          "for": "hook"
+        },
+        {
+          "find": "gold nugget",
+          "alt": "A gold nugget",
+          "for": "keywords"
+        },
+        {
+          "find": "galvanised steel",
+          "alt": "Galvanised steel",
+          "for": "teach:3"
+        }
+      ],
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Biology 1 to 2, Chemistry 1 to 2, Physics 1 to 4",
+      "n": 94,
+      "title": "Revision: acids, salts and chemical tests",
+      "duration": 50,
+      "bigQuestion": "How can you prove what is in an unlabelled white powder?",
+      "objectives": [
+        "To understand acid reactions, salt preparation and the tests for gases and ions well enough to identify unknowns in exams"
+      ],
+      "successCriteria": [
+        "All: recall indicator colours and the pH scale",
+        "Most: recall the tests for gases and ions with results",
+        "Some: describe preparing a pure, dry soluble salt and identify substances from test results"
+      ],
+      "crossCurricular": "Biology: pH in digestion and enzymes",
+      "smsc": "Moral: honest analysis: following the evidence",
+      "keywords": [
+        {
+          "term": "salt",
+          "def": "compound formed when the hydrogen of an acid is replaced by a metal"
+        },
+        {
+          "term": "precipitate",
+          "def": "insoluble solid formed in a solution"
+        },
+        {
+          "term": "flame test",
+          "def": "test that identifies metal ions by flame colour"
+        },
+        {
+          "term": "proton donor",
+          "def": "an acid in terms of proton transfer"
+        },
+        {
+          "term": "neutralisation",
+          "def": "acid + base → salt + water"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A white powder gives a lilac flame and a white precipitate with acidified barium chloride. What is it?",
+        "a": "Potassium sulfate."
+      },
+      "starter": [
+        {
+          "q": "Colour of litmus in acid?",
+          "a": "Red",
+          "mins": 1,
+          "options": [
+            "Red",
+            "Blue",
+            "Purple"
+          ]
+        },
+        {
+          "q": "Test for hydrogen?",
+          "a": "Lighted splint: squeaky pop",
+          "mins": 1
+        },
+        {
+          "q": "Acids produce which ions in water?",
+          "a": "Hydrogen ions (H⁺)",
+          "mins": 1
+        },
+        {
+          "q": "Salt from sulfuric acid?",
+          "a": "A sulfate",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Tests for ions",
+          "bullets": [
+            "Flame tests: Li⁺ red, Na⁺ yellow, K⁺ lilac, Ca²⁺ orange-red, Cu²⁺ blue-green",
+            "NaOH: Cu²⁺ blue, Fe²⁺ green, Fe³⁺ brown precipitates",
+            "NH₄⁺: warm with NaOH, gas turns damp red litmus blue"
+          ],
+          "note": "Learn as a table.",
+          "table": {
+            "head": [
+              "Anion",
+              "Test",
+              "Positive result"
+            ],
+            "rows": [
+              [
+                "Cl⁻",
+                "dilute HNO₃ then AgNO₃",
+                "white precipitate"
+              ],
+              [
+                "Br⁻",
+                "dilute HNO₃ then AgNO₃",
+                "cream precipitate"
+              ],
+              [
+                "I⁻",
+                "dilute HNO₃ then AgNO₃",
+                "yellow precipitate"
+              ],
+              [
+                "SO₄²⁻",
+                "dilute HCl then BaCl₂",
+                "white precipitate"
+              ],
+              [
+                "CO₃²⁻",
+                "add dilute acid",
+                "bubbles; CO₂ turns limewater milky"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tests for gases",
+          "bullets": [
+            "H₂: squeaky pop; O₂: relights glowing splint",
+            "CO₂: limewater milky; NH₃: damp red litmus blue",
+            "Cl₂: bleaches damp litmus paper"
+          ],
+          "note": "Water: anhydrous copper(II) sulfate white to blue; pure water boils at 100 °C."
+        },
+        {
+          "heading": "Making copper sulfate",
+          "bullets": [
+            "Warm acid, add excess copper(II) oxide",
+            "Filter off the excess",
+            "Heat to concentrate, leave to crystallise; dry"
+          ],
+          "note": "Model the 6-mark method.",
+          "model": {
+            "problem": "Describe how to make pure, dry copper(II) sulfate crystals from copper(II) oxide. [6 marks]",
+            "steps": [
+              "Warm dilute sulfuric acid in a beaker",
+              "Add copper(II) oxide until in excess (no more dissolves)",
+              "Filter to remove excess oxide",
+              "Heat the filtrate to evaporate some water",
+              "Leave to cool and crystallise",
+              "Pat crystals dry on filter paper"
+            ],
+            "answer": "Six steps in order"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds.",
+          "check": {
+            "q": "A solution gives a green precipitate with NaOH. It contains...",
+            "options": [
+              "Cu²⁺",
+              "Fe²⁺",
+              "Fe³⁺",
+              "NH₄⁺"
+            ],
+            "answer": 1,
+            "why": "Iron(II) hydroxide is green; iron(III) is brown; copper(II) is blue."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Why is the copper(II) oxide added in excess? [1 mark]",
+          "a": "To make sure all the acid has reacted.",
+          "mins": 2,
+          "model": "If oxide is left over, all the acid has been used up.\nSo the salt solution has no acid left in it."
+        },
+        {
+          "q": "A substance gives a yellow flame and a cream precipitate with silver nitrate. Name it. [2 marks]",
+          "a": "Sodium (1) bromide (1).",
+          "mins": 2
+        },
+        {
+          "q": "Universal indicator turns purple. pH and type?",
+          "a": "About 13 to 14: strong alkali.",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 6 marks): Three unlabelled solutions: sodium chloride, iron(III) sulfate, ammonium carbonate. Describe tests to identify each, with results. Portal response box.",
+          "a": "Flame test: Na⁺ yellow (1); AgNO₃ with HNO₃: white precipitate for Cl⁻ (1); NaOH: brown precipitate for Fe³⁺ (1); BaCl₂ with HCl: white precipitate for sulfate (1); warm with NaOH: ammonia turns damp red litmus blue (1); acid: CO₂ turns limewater milky for carbonate (1).",
+          "mins": 8,
+          "model": "Teacher does sodium chloride first: 'Flame test: yellow flame shows Na⁺.\nAdd dilute nitric acid then silver nitrate: white precipitate shows Cl⁻.'"
+        },
+        {
+          "q": "Extend (exam-style, 2 marks): Explain, in terms of protons, why ammonia acts as a base.",
+          "a": "A base is a proton acceptor (1); ammonia accepts H⁺ to form NH₄⁺ (1).",
+          "mins": 6
+        },
+        {
+          "q": "Stretch (exam-style, 2 marks): Write a balanced equation for copper(II) oxide reacting with sulfuric acid.",
+          "a": "CuO + H₂SO₄ → CuSO₄ + H₂O",
+          "mins": 5
+        }
+      ],
+      "exit": [
+        {
+          "q": "Test for chloride ions?",
+          "a": "Nitric acid then silver nitrate: white precipitate",
+          "mins": 1,
+          "options": [
+            "Barium chloride: white precipitate",
+            "Nitric acid then silver nitrate: white precipitate",
+            "Flame test: lilac"
+          ]
+        },
+        {
+          "q": "Big question: how can you prove what is in an unlabelled powder?",
+          "a": "Dissolve it and do flame and precipitate tests for the cation and anion, comparing with known results.",
+          "mins": 2
+        }
+      ],
+      "homework": "Learn the tests table; complete the chemical tests quiz on the portal.",
+      "send": "SEND: colour-coded tests table. EAL: precipitate, flame, indicator. Stretch: solubility rules for predicting precipitates.",
+      "resources": [
+        "Pearson Edexcel International GCSE Science (Double Award) 4SD0 specification: Chemistry 2.28 to 2.32, 2.34 to 2.39, 2.42, 2.44 to 2.50",
+        "4SD0 exam-style questions written for this lesson (portal question sheet with mark scheme)",
+        "Year 10 knowledge organiser for this topic (portal revision page)",
+        "Chemical tests summary table (portal worksheet)",
+        "Teacher demonstration video of flame tests and precipitates (no music)",
+        "Revision exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "flame test colours",
+          "alt": "Flame test colours of metal ions",
+          "for": "teach:1"
+        },
+        {
+          "find": "copper sulfate crystals",
+          "alt": "Copper(II) sulfate crystals",
+          "for": "keywords"
+        },
+        {
+          "find": "silver halide precipitates",
+          "alt": "Silver halide precipitates",
+          "for": "hook"
+        }
+      ],
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Biology 1 to 2, Chemistry 1 to 2, Physics 1 to 4",
+      "n": 95,
+      "title": "Revision: Physics 2 electricity",
+      "duration": 50,
+      "bigQuestion": "Why does a kettle need a 13 A fuse but a lamp only 3 A?",
+      "objectives": [
+        "To understand the electricity equations and safety features well enough to answer 4SD0 calculation and explanation questions"
+      ],
+      "successCriteria": [
+        "All: use V = IR, P = IV, Q = It and E = QV",
+        "Most: choose a fuse and explain earthing",
+        "Some: solve multi-step series and parallel circuit problems"
+      ],
+      "crossCurricular": "Maths: multi-step calculations and rearranging",
+      "smsc": "Moral: electrical safety in the home",
+      "keywords": [
+        {
+          "term": "fuse",
+          "def": "thin wire that melts when current is too high"
+        },
+        {
+          "term": "earth wire",
+          "def": "safety wire connecting a metal case to earth"
+        },
+        {
+          "term": "alternating current",
+          "def": "current that changes direction (mains)"
+        },
+        {
+          "term": "power",
+          "def": "energy per second, P = IV"
+        },
+        {
+          "term": "potential difference",
+          "def": "energy per unit charge"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A metal toaster has a loose live wire touching its case. Why does the earth wire stop you getting a shock?",
+        "a": "Current flows down the low-resistance earth wire; the large current melts the fuse and cuts off the supply."
+      },
+      "starter": [
+        {
+          "q": "P = IV: 2 A at 230 V?",
+          "a": "460 W",
+          "mins": 1,
+          "options": [
+            "115 W",
+            "232 W",
+            "460 W"
+          ]
+        },
+        {
+          "q": "Mains in the UK is a.c. or d.c.?",
+          "a": "a.c.",
+          "mins": 1
+        },
+        {
+          "q": "Q = It: 3 A for 1 minute?",
+          "a": "180 C",
+          "mins": 1
+        },
+        {
+          "q": "Voltmeter connected in...",
+          "a": "Parallel",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Equations",
+          "bullets": [
+            "V = IR; P = IV; E = IVt",
+            "Q = It; E = QV"
+          ],
+          "note": "Equation sheet check.",
+          "table": {
+            "head": [
+              "Quantity",
+              "Unit",
+              "Equation"
+            ],
+            "rows": [
+              [
+                "Current I",
+                "A",
+                "I = Q ÷ t"
+              ],
+              [
+                "Potential difference V",
+                "V",
+                "V = IR; V = E ÷ Q"
+              ],
+              [
+                "Resistance R",
+                "Ω",
+                "R = V ÷ I"
+              ],
+              [
+                "Power P",
+                "W",
+                "P = IV"
+              ],
+              [
+                "Energy E",
+                "J",
+                "E = IVt = QV"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Safety",
+          "bullets": [
+            "Fuse in the live wire melts if current too high",
+            "Earth wire: metal cases",
+            "Double insulation: plastic cases, no earth needed",
+            "Circuit breakers reset"
+          ],
+          "note": "Choose fuse just above the normal current."
+        },
+        {
+          "heading": "Model answer",
+          "bullets": [
+            "Choosing a fuse"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "A 2.3 kW kettle on 230 V. Which fuse: 3 A, 5 A or 13 A? [3 marks]",
+            "steps": [
+              "I = P ÷ V = 2300 ÷ 230",
+              "I = 10 A",
+              "Choose the next fuse above: 13 A"
+            ],
+            "answer": "13 A"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds.",
+          "check": {
+            "q": "A 1.2 kW hairdryer on 230 V. Best fuse?",
+            "options": [
+              "3 A",
+              "5 A",
+              "13 A",
+              "30 A"
+            ],
+            "answer": 2,
+            "why": "I = 1200 ÷ 230 = 5.2 A, so 5 A would melt; choose 13 A."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "A heater draws 8 A from 230 V for 30 minutes. Energy transferred? [3 marks]",
+          "a": "t = 1800 s (1); E = 230 × 8 × 1800 (1) = 3 312 000 J (1)",
+          "mins": 2,
+          "model": "Convert time: 30 × 60 = 1800 s.\nE = IVt = 8 × 230 × 1800 = 3 312 000 J (3.3 MJ)."
+        },
+        {
+          "q": "Explain why the fuse is in the live wire. [2 marks]",
+          "a": "So when it melts the appliance is disconnected from the high voltage (1); the appliance is safe to touch (1).",
+          "mins": 2
+        },
+        {
+          "q": "A 6 Ω and 12 Ω resistor in series on 9 V. Current?",
+          "a": "R = 18 Ω; I = 0.5 A",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 6 marks): Explain how the earth wire and fuse work together to protect a person using a metal kettle with a fault. Portal response box.",
+          "a": "Live wire touches the metal case (1); earth wire connects case to ground with low resistance (1); large current flows to earth (1); current exceeds fuse rating (1); fuse melts, breaking the live connection (1); case is no longer live, so no shock (1).",
+          "mins": 8,
+          "model": "Teacher writes the first link: 'If a fault makes the live wire touch the metal case, a large current flows through the low-resistance earth wire rather than through a person.'"
+        },
+        {
+          "q": "Extend (exam-style, 3 marks): In parallel: lamp A (12 Ω) and lamp B (6 Ω) on 6 V. Find each current and the supply current.",
+          "a": "A: 0.5 A (1); B: 1.0 A (1); supply 1.5 A (1).",
+          "mins": 6
+        },
+        {
+          "q": "Stretch (exam-style, 3 marks): 120 C of charge passes through a lamp in 1 minute, transferring 720 J. Find current and voltage.",
+          "a": "I = 120 ÷ 60 = 2 A (1); V = E ÷ Q = 720 ÷ 120 (1) = 6 V (1).",
+          "mins": 5
+        }
+      ],
+      "exit": [
+        {
+          "q": "The earth wire is connected to the...",
+          "a": "Metal case",
+          "mins": 1,
+          "options": [
+            "Plastic case",
+            "Metal case",
+            "Neutral wire"
+          ]
+        },
+        {
+          "q": "Big question: why does a kettle need a 13 A fuse but a lamp only 3 A?",
+          "a": "The kettle has a much higher power, so it draws a larger current (about 10 A); the lamp draws well under 3 A.",
+          "mins": 2
+        }
+      ],
+      "homework": "Complete the electricity exam question set on the portal (timed: 25 minutes).",
+      "send": "SEND: equation card with units. EAL: live, neutral, earth, fuse. Stretch: I-V characteristics of lamps, diodes, LDRs and thermistors.",
+      "resources": [
+        "Pearson Edexcel International GCSE Science (Double Award) 4SD0 specification: Physics 2.1 to 2.21",
+        "4SD0 exam-style questions written for this lesson (portal question sheet with mark scheme)",
+        "Year 10 knowledge organiser for this topic (portal revision page)",
+        "Scientific calculator",
+        "Revision exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "UK three pin plug wiring",
+          "alt": "The inside of a three-pin plug",
+          "for": "teach:2"
+        },
+        {
+          "find": "cartridge fuse",
+          "alt": "A cartridge fuse",
+          "for": "keywords"
+        },
+        {
+          "find": "electric kettle",
+          "alt": "An electric kettle",
+          "for": "hook"
+        }
+      ],
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Biology 1 to 2, Chemistry 1 to 2, Physics 1 to 4",
+      "n": 96,
+      "title": "Revision: coordination: nerves, the eye and plant responses",
+      "duration": 50,
+      "bigQuestion": "How does your hand move away from a hot pan before you even feel pain?",
+      "objectives": [
+        "To understand nervous coordination, the eye and plant tropisms well enough to answer 4SD0 exam questions"
+      ],
+      "successCriteria": [
+        "All: describe the reflex arc in order",
+        "Most: explain how the eye focuses and responds to light",
+        "Some: explain phototropism using auxin"
+      ],
+      "crossCurricular": "Physics: refraction by the lens",
+      "smsc": "Spiritual: Allah gave us hearing and sight that we may be grateful (an-Nahl 16:78)",
+      "keywords": [
+        {
+          "term": "stimulus",
+          "def": "a change in the environment"
+        },
+        {
+          "term": "receptor",
+          "def": "detects a stimulus"
+        },
+        {
+          "term": "effector",
+          "def": "a muscle or gland that responds"
+        },
+        {
+          "term": "synapse",
+          "def": "gap between neurones crossed by neurotransmitters"
+        },
+        {
+          "term": "auxin",
+          "def": "plant hormone that causes cell elongation"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Plants have no nerves, yet a seedling on a windowsill bends towards the light. How?",
+        "a": "Auxin collects on the shaded side and makes those cells elongate, so the stem bends towards the light."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And Allah brought you out of your mothers' wombs knowing nothing, and gave you hearing and sight and hearts, that perhaps you would be grateful' (an-Nahl 16:78).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "The CNS is made of...",
+          "a": "Brain and spinal cord",
+          "mins": 1,
+          "options": [
+            "Brain and spinal cord",
+            "Nerves and muscles",
+            "Heart and lungs"
+          ]
+        },
+        {
+          "q": "Part of the eye that detects light?",
+          "a": "Retina",
+          "mins": 1
+        },
+        {
+          "q": "Name an effector.",
+          "a": "A muscle or gland",
+          "mins": 1
+        },
+        {
+          "q": "Roots grow towards gravity. Name the response.",
+          "a": "Positive geotropism (gravitropism)",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Reflex arc",
+          "bullets": [
+            "Fast, automatic, protective"
+          ],
+          "note": "Use the cycle.",
+          "cycle": [
+            "Stimulus (heat)",
+            "Receptor (skin)",
+            "Sensory neurone",
+            "Relay neurone (spinal cord)",
+            "Motor neurone",
+            "Effector (muscle contracts)"
+          ]
+        },
+        {
+          "heading": "The eye",
+          "bullets": [
+            "Near object: ciliary muscles contract, ligaments slacken, lens fatter",
+            "Far object: ciliary muscles relax, ligaments tighten, lens thinner",
+            "Bright light: circular iris muscles contract, pupil smaller"
+          ],
+          "note": "Compare near and far.",
+          "compare": {
+            "left": {
+              "title": "Near object",
+              "points": [
+                "ciliary muscles contract",
+                "suspensory ligaments slacken",
+                "lens fatter, refracts more"
+              ]
+            },
+            "right": {
+              "title": "Distant object",
+              "points": [
+                "ciliary muscles relax",
+                "suspensory ligaments tighten",
+                "lens thinner, refracts less"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Model answer",
+          "bullets": [
+            "Phototropism"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "Explain why a shoot bends towards light from one side. [3 marks]",
+            "steps": [
+              "Auxin moves to the shaded side",
+              "Auxin causes cells there to elongate more",
+              "Shaded side grows faster, so the shoot bends towards light"
+            ],
+            "answer": "Uneven auxin causes uneven elongation"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds.",
+          "check": {
+            "q": "In a reflex arc, the relay neurone is in the...",
+            "options": [
+              "skin",
+              "muscle",
+              "spinal cord",
+              "eye"
+            ],
+            "answer": 2,
+            "why": "Relay neurones are in the CNS (spinal cord)."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Describe the pathway of a reflex arc when touching a hot object. [4 marks]",
+          "a": "Receptor in skin detects heat (1); impulse along sensory neurone (1); relay neurone in spinal cord, synapses (1); motor neurone to muscle (effector) which contracts (1).",
+          "mins": 2,
+          "model": "Follow the cycle: receptor, sensory neurone, relay neurone, motor neurone, effector.\nOne mark per correct linked step."
+        },
+        {
+          "q": "How is the impulse passed across a synapse? [2 marks]",
+          "a": "Neurotransmitter is released (1) and diffuses across the gap to the next neurone (1).",
+          "mins": 2
+        },
+        {
+          "q": "Compare nervous and hormonal responses. [2 marks]",
+          "a": "Nervous: electrical, fast, short-lived (1); hormonal: chemical in blood, slower, longer-lasting (1).",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 6 marks): Explain how the eye changes to focus on a book after looking out of a window. Portal response box.",
+          "a": "Light from near object diverges more (1); ciliary muscles contract (1); suspensory ligaments slacken (1); lens becomes fatter/more rounded (1); refracts light more (1); image focused on retina (1).",
+          "mins": 8,
+          "model": "Teacher writes the first two points: 'The book is near, so the lens must refract light more.\nThe ciliary muscles contract...'"
+        },
+        {
+          "q": "Extend (exam-style, 3 marks): Describe how to investigate the effect of light from one side on seedlings.",
+          "a": "Grow seedlings in two boxes, one with a slit on one side (1); same type, number, water, temperature (1); after several days observe direction of growth (1).",
+          "mins": 6
+        },
+        {
+          "q": "Stretch (exam-style, 2 marks): Explain why reflexes are important for survival.",
+          "a": "They are fast and automatic (1), protecting the body from harm before conscious thought (1).",
+          "mins": 5
+        }
+      ],
+      "exit": [
+        {
+          "q": "In bright light the pupil...",
+          "a": "Gets smaller",
+          "mins": 1,
+          "options": [
+            "Gets bigger",
+            "Gets smaller",
+            "Stays the same"
+          ]
+        },
+        {
+          "q": "Big question: how does your hand move before you feel pain?",
+          "a": "A reflex arc through the spinal cord sends an impulse to the muscle before the brain processes the pain.",
+          "mins": 2
+        }
+      ],
+      "homework": "Complete the coordination exam question set on the portal (timed: 20 minutes).",
+      "send": "SEND: reflex arc diagram with labels. EAL: receptor, effector, impulse. Stretch: geotropism in roots and auxin.",
+      "resources": [
+        "Pearson Edexcel International GCSE Science (Double Award) 4SD0 specification: Biology 2.80, 2.82 to 2.92",
+        "4SD0 exam-style questions written for this lesson (portal question sheet with mark scheme)",
+        "Year 10 knowledge organiser for this topic (portal revision page)",
+        "Revision exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "reflex arc diagram",
+          "alt": "A diagram of a reflex arc",
+          "for": "teach:1"
+        },
+        {
+          "find": "eye anatomy diagram",
+          "alt": "The structure of the eye",
+          "for": "teach:2"
+        },
+        {
+          "find": "seedlings bending towards light",
+          "alt": "Seedlings bending towards light",
+          "for": "hook"
+        }
+      ],
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Biology 1 to 2, Chemistry 1 to 2, Physics 1 to 4",
+      "n": 97,
+      "title": "Revision: homeostasis, hormones and excretion",
+      "duration": 50,
+      "bigQuestion": "How does your body keep its temperature near 37 °C in both summer and winter?",
+      "objectives": [
+        "To understand homeostasis, temperature control, hormones and excretion well enough to write precise exam answers"
+      ],
+      "successCriteria": [
+        "All: define homeostasis and name excretory organs and products",
+        "Most: explain temperature control by sweating, vasodilation and vasoconstriction",
+        "Some: link named hormones to their glands and effects"
+      ],
+      "crossCurricular": "Physics: evaporation and thermal energy transfer",
+      "smsc": "Spiritual: the balance Allah placed within the body",
+      "keywords": [
+        {
+          "term": "homeostasis",
+          "def": "keeping internal conditions constant"
+        },
+        {
+          "term": "vasodilation",
+          "def": "widening of blood vessels near the skin"
+        },
+        {
+          "term": "vasoconstriction",
+          "def": "narrowing of blood vessels near the skin"
+        },
+        {
+          "term": "hormone",
+          "def": "chemical messenger carried in the blood"
+        },
+        {
+          "term": "excretion",
+          "def": "removal of waste products of metabolism"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A common mistake is 'blood vessels move closer to the skin when hot'. What really happens?",
+        "a": "Arterioles supplying skin capillaries widen (vasodilation); vessels do not move."
+      },
+      "starter": [
+        {
+          "q": "Which hormone lowers blood glucose?",
+          "a": "Insulin",
+          "mins": 1,
+          "options": [
+            "Adrenaline",
+            "Insulin",
+            "Oestrogen"
+          ]
+        },
+        {
+          "q": "Which organ excretes urea?",
+          "a": "Kidneys",
+          "mins": 1
+        },
+        {
+          "q": "Excretory product of the lungs?",
+          "a": "Carbon dioxide",
+          "mins": 1
+        },
+        {
+          "q": "Where is adrenaline made?",
+          "a": "Adrenal glands",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Temperature control",
+          "bullets": [
+            "Too hot: sweating, vasodilation",
+            "Too cold: shivering, vasoconstriction"
+          ],
+          "note": "Skin's role.",
+          "compare": {
+            "left": {
+              "title": "Too hot",
+              "points": [
+                "sweat evaporates, transferring heat",
+                "vasodilation: more blood near skin",
+                "more heat lost by radiation"
+              ]
+            },
+            "right": {
+              "title": "Too cold",
+              "points": [
+                "vasoconstriction: less blood near skin",
+                "shivering: respiration releases heat",
+                "less sweating"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Hormones (4SD0 list)",
+          "bullets": [
+            "Know gland and effect"
+          ],
+          "note": "Learn the table.",
+          "table": {
+            "head": [
+              "Hormone",
+              "Gland",
+              "Effect"
+            ],
+            "rows": [
+              [
+                "Adrenaline",
+                "adrenal glands",
+                "raises heart rate, prepares for action"
+              ],
+              [
+                "Insulin",
+                "pancreas",
+                "lowers blood glucose"
+              ],
+              [
+                "Testosterone",
+                "testes",
+                "male secondary characteristics"
+              ],
+              [
+                "Oestrogen",
+                "ovaries",
+                "female secondary characteristics; menstrual cycle"
+              ],
+              [
+                "Progesterone",
+                "ovaries",
+                "maintains uterus lining"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Model answer",
+          "bullets": [
+            "Vasodilation without errors"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "Explain how vasodilation helps cool the body. [3 marks]",
+            "steps": [
+              "Arterioles near the skin surface widen",
+              "More blood flows through skin capillaries",
+              "More heat is lost from the skin by radiation"
+            ],
+            "answer": "Widened vessels carry more blood to the surface to lose heat"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds.",
+          "check": {
+            "q": "Sweating cools the body because...",
+            "options": [
+              "sweat is cold",
+              "evaporation of sweat transfers heat from the skin",
+              "it removes urea",
+              "it narrows vessels"
+            ],
+            "answer": 1,
+            "why": "Water evaporating from the skin takes thermal energy with it."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Define homeostasis. [1 mark]",
+          "a": "Maintaining a constant internal environment.",
+          "mins": 2,
+          "model": "One clear sentence with the key idea: keeping internal conditions (such as temperature and water content) constant."
+        },
+        {
+          "q": "Name two excretory products of the skin. [2 marks]",
+          "a": "Water and urea (and salts) in sweat.",
+          "mins": 2
+        },
+        {
+          "q": "Explain why shivering warms the body. [2 marks]",
+          "a": "Muscles contract rapidly (1), respiration increases releasing heat (1).",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 6 marks): Describe how the body responds when its temperature rises above 37 °C. Portal response box.",
+          "a": "Change detected by receptors/brain (1); sweat glands produce more sweat (1); evaporation transfers heat (1); arterioles to skin dilate (1); more blood near surface (1); more heat lost by radiation (1).",
+          "mins": 8,
+          "model": "Teacher starts: 'The rise in temperature is detected by the brain.\nSweat glands in the skin release more sweat...'"
+        },
+        {
+          "q": "Extend (exam-style, 2 marks): Compare the speed and duration of nervous and hormonal responses using adrenaline as an example.",
+          "a": "Nervous responses are faster but short-lived (1); adrenaline travels in the blood, acts more slowly but lasts longer (1).",
+          "mins": 6
+        },
+        {
+          "q": "Stretch (exam-style, 3 marks): After a meal, blood glucose rises. Describe the role of insulin.",
+          "a": "Pancreas detects the rise (1) and releases insulin into the blood (1); insulin causes glucose to be taken up by cells and stored (as glycogen in the liver), lowering blood glucose (1).",
+          "mins": 5
+        }
+      ],
+      "exit": [
+        {
+          "q": "When cold, blood vessels to the skin...",
+          "a": "Constrict",
+          "mins": 1,
+          "options": [
+            "Dilate",
+            "Constrict",
+            "Move deeper"
+          ]
+        },
+        {
+          "q": "Big question: how does your body keep its temperature near 37 °C?",
+          "a": "Sweating and vasodilation lose heat when hot; vasoconstriction and shivering keep heat when cold.",
+          "mins": 2
+        }
+      ],
+      "homework": "Complete the homeostasis exam question set on the portal (timed: 20 minutes).",
+      "send": "SEND: hot and cold cards to sort. EAL: dilate, constrict, hormone. Stretch: explain negative feedback.",
+      "resources": [
+        "Pearson Edexcel International GCSE Science (Double Award) 4SD0 specification: Biology 2.70, 2.71, 2.81, 2.86, 2.93, 2.94",
+        "4SD0 exam-style questions written for this lesson (portal question sheet with mark scheme)",
+        "Year 10 knowledge organiser for this topic (portal revision page)",
+        "Revision exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "skin cross section diagram sweat gland",
+          "alt": "A cross-section of skin with a sweat gland",
+          "for": "teach:1"
+        },
+        {
+          "find": "pancreas anatomy diagram",
+          "alt": "A diagram of the pancreas",
+          "for": "teach:2"
+        },
+        {
+          "find": "thermometer",
+          "alt": "A thermometer",
+          "for": "hook"
+        }
+      ],
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Biology 1 to 2, Chemistry 1 to 2, Physics 1 to 4",
+      "n": 98,
+      "title": "Revision: Chemistry 1 calculations",
+      "duration": 50,
+      "bigQuestion": "How do chemists know how much of each reactant to buy?",
+      "objectives": [
+        "To understand and confidently carry out 4SD0 chemical calculations"
+      ],
+      "successCriteria": [
+        "All: calculate Mr and convert mass to moles",
+        "Most: calculate reacting masses and percentage yield",
+        "Some: calculate empirical and molecular formulae and Ar from isotopes"
+      ],
+      "crossCurricular": "Maths: ratio and proportion",
+      "smsc": "Spiritual: precise measure in creation (al-Qamar 54:49)",
+      "keywords": [
+        {
+          "term": "Mr",
+          "def": "relative formula mass"
+        },
+        {
+          "term": "mole",
+          "def": "amount of substance; mass ÷ Mr"
+        },
+        {
+          "term": "theoretical yield",
+          "def": "maximum product calculated from the equation"
+        },
+        {
+          "term": "empirical formula",
+          "def": "simplest whole-number ratio of atoms"
+        },
+        {
+          "term": "molecular formula",
+          "def": "actual number of atoms in a molecule"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Glucose and methanal (CH₂O) have the same empirical formula. How can two different substances share one?",
+        "a": "Empirical formula is only the simplest ratio; glucose is C₆H₁₂O₆, six times CH₂O."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, all things We created with precise measure' (al-Qamar 54:49). Chemical calculations work because reactions follow exact ratios.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Mr of H₂SO₄ (H 1, S 32, O 16)?",
+          "a": "98",
+          "mins": 1,
+          "options": [
+            "49",
+            "98",
+            "130"
+          ]
+        },
+        {
+          "q": "Moles in 10 g of CaCO₃ (Mr 100)?",
+          "a": "0.1 mol",
+          "mins": 1
+        },
+        {
+          "q": "% yield formula?",
+          "a": "Actual ÷ theoretical × 100",
+          "mins": 1
+        },
+        {
+          "q": "Ar of chlorine to one decimal place?",
+          "a": "35.5",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The three-step method",
+          "bullets": [
+            "1 Mass to moles (÷ Mr)",
+            "2 Use the equation ratio",
+            "3 Moles to mass (× Mr)"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "2Na + Cl₂ → 2NaCl. What mass of NaCl forms from 4.6 g of Na? [3 marks]",
+            "steps": [
+              "Moles Na = 4.6 ÷ 23 = 0.2 mol",
+              "Ratio 2:2, so 0.2 mol NaCl",
+              "Mass = 0.2 × 58.5 = 11.7 g"
+            ],
+            "answer": "11.7 g"
+          }
+        },
+        {
+          "heading": "Empirical formulae",
+          "bullets": [
+            "Divide mass (or %) by Ar",
+            "Divide by the smallest",
+            "Whole-number ratio"
+          ],
+          "note": "Model with percentages.",
+          "table": {
+            "head": [
+              "Element",
+              "%",
+              "÷ Ar",
+              "÷ smallest"
+            ],
+            "rows": [
+              [
+                "C",
+                "40.0",
+                "3.33",
+                "1"
+              ],
+              [
+                "H",
+                "6.7",
+                "6.7",
+                "2"
+              ],
+              [
+                "O",
+                "53.3",
+                "3.33",
+                "1"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Common errors",
+          "bullets": [
+            "Use the equation ratio",
+            "Use Mr of the whole formula"
+          ],
+          "note": "Exam traps.",
+          "misconception": {
+            "wrong": "Mr of Al₂(SO₄)₃ = 27 + 32 + 16 × 4 = 123",
+            "right": "2 × 27 + 3 × (32 + 4 × 16) = 54 + 288 = 342"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds.",
+          "check": {
+            "q": "Empirical formula CH₂O, Mr 180. Molecular formula?",
+            "options": [
+              "CH₂O",
+              "C₃H₆O₃",
+              "C₆H₁₂O₆",
+              "C₁₂H₂₂O₁₁"
+            ],
+            "answer": 2,
+            "why": "Mr of CH₂O = 30; 180 ÷ 30 = 6; C₆H₁₂O₆."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Theoretical yield of NaCl was 11.7 g; actual 9.36 g. % yield? [2 marks]",
+          "a": "9.36 ÷ 11.7 × 100 (1) = 80% (1)",
+          "mins": 2,
+          "model": "% yield = actual ÷ theoretical × 100 = 9.36 ÷ 11.7 × 100 = 80%."
+        },
+        {
+          "q": "Calculate Mr of Mg(OH)₂ (Mg 24, O 16, H 1).",
+          "a": "58",
+          "mins": 2
+        },
+        {
+          "q": "Find the empirical formula of a compound with 2.8 g Fe and 1.2 g O (Fe 56).",
+          "a": "Fe 0.05, O 0.075; ratio 2:3; Fe₂O₃",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 6 marks): CaCO₃ → CaO + CO₂. (a) Calculate the mass of CaO from 25 g CaCO₃. (b) 11.2 g is collected; calculate % yield. (c) Give two reasons it is below 100%.",
+          "a": "(a) 0.25 mol × 56 = 14 g (3 marks); (b) 11.2 ÷ 14 × 100 = 80% (1); (c) incomplete decomposition; loss in transfer (2).",
+          "mins": 8,
+          "model": "Teacher works (a): moles CaCO₃ = 25 ÷ 100 = 0.25; ratio 1:1; mass CaO = 0.25 × 56 = 14 g."
+        },
+        {
+          "q": "Extend (exam-style, 3 marks): In the metal oxide practical 1.20 g Mg gave 2.00 g oxide. Find the empirical formula.",
+          "a": "O = 0.80 g (1); Mg 0.05, O 0.05 mol (1); MgO (1)",
+          "mins": 6
+        },
+        {
+          "q": "Stretch (exam-style, 2 marks): Boron is 20% ¹⁰B and 80% ¹¹B. Calculate Ar.",
+          "a": "(20 × 10 + 80 × 11) ÷ 100 = 10.8",
+          "mins": 5
+        }
+      ],
+      "exit": [
+        {
+          "q": "Moles = mass ÷ ...",
+          "a": "Mr",
+          "mins": 1,
+          "options": [
+            "Ar of oxygen",
+            "Mr",
+            "Volume"
+          ]
+        },
+        {
+          "q": "Big question: how do chemists know how much of each reactant to buy?",
+          "a": "They convert masses to moles, use the equation's ratio, and convert back to mass, allowing for yield.",
+          "mins": 2
+        }
+      ],
+      "homework": "Complete 15 chemical calculation questions on the portal (timed: 25 minutes).",
+      "send": "SEND: three-step frame and Mr worked examples. EAL: moles, ratio, yield. Stretch: molecular formula problems with larger Mr values.",
+      "resources": [
+        "Pearson Edexcel International GCSE Science (Double Award) 4SD0 specification: Chemistry 1.16, 1.17, 1.26 to 1.33, 1.36",
+        "4SD0 exam-style questions written for this lesson (portal question sheet with mark scheme)",
+        "Year 10 knowledge organiser for this topic (portal revision page)",
+        "Periodic Table with Ar values (portal printable)",
+        "Scientific calculator",
+        "Revision exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "digital balance",
+          "alt": "A digital balance",
+          "for": "hook"
+        },
+        {
+          "find": "glucose molecule model",
+          "alt": "A model of a glucose molecule",
+          "for": "teach:2"
+        },
+        {
+          "find": "calcium carbonate",
+          "alt": "Calcium carbonate",
+          "for": "keywords"
+        }
+      ],
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Biology 1 to 2, Chemistry 1 to 2, Physics 1 to 4",
+      "n": 99,
+      "title": "Revision: Physics 3 waves and the electromagnetic spectrum",
+      "duration": 50,
+      "bigQuestion": "What do radio, light and X-rays have in common, and how are they different?",
+      "objectives": [
+        "To understand wave properties, v = fλ and the electromagnetic spectrum well enough to answer 4SD0 exam questions"
+      ],
+      "successCriteria": [
+        "All: define amplitude, wavelength, frequency and period",
+        "Most: use v = fλ and f = 1/T",
+        "Some: explain uses and hazards across the EM spectrum"
+      ],
+      "crossCurricular": "Biology: UV and skin, the eye detecting visible light",
+      "smsc": "Moral: protecting ourselves from harmful radiation",
+      "keywords": [
+        {
+          "term": "transverse wave",
+          "def": "oscillations at right angles to the direction of travel"
+        },
+        {
+          "term": "longitudinal wave",
+          "def": "oscillations parallel to the direction of travel"
+        },
+        {
+          "term": "frequency",
+          "def": "waves per second, in hertz"
+        },
+        {
+          "term": "wavelength",
+          "def": "distance from one point on a wave to the same point on the next"
+        },
+        {
+          "term": "electromagnetic spectrum",
+          "def": "family of transverse waves all travelling at the speed of light in a vacuum"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Waves carry energy across the ocean, but a floating bottle just bobs up and down. What does that tell us?",
+        "a": "Waves transfer energy, not matter."
+      },
+      "starter": [
+        {
+          "q": "Unit of frequency?",
+          "a": "Hertz",
+          "mins": 1,
+          "options": [
+            "Metre",
+            "Hertz",
+            "Second"
+          ]
+        },
+        {
+          "q": "Sound is a ... wave.",
+          "a": "Longitudinal",
+          "mins": 1
+        },
+        {
+          "q": "Which EM wave has the longest wavelength?",
+          "a": "Radio waves",
+          "mins": 1
+        },
+        {
+          "q": "Speed of light in a vacuum?",
+          "a": "3 × 10⁸ m/s",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Wave terms",
+          "bullets": [
+            "v = f × λ",
+            "f = 1 ÷ T",
+            "Waves transfer energy and information, not matter"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "A sound of 500 Hz has a wavelength of 0.68 m. Find its speed. [2 marks]",
+            "steps": [
+              "v = f × λ",
+              "v = 500 × 0.68",
+              "v = 340 m/s"
+            ],
+            "answer": "340 m/s"
+          }
+        },
+        {
+          "heading": "EM spectrum",
+          "bullets": [
+            "Radio, microwaves, infrared, visible, UV, X-rays, gamma",
+            "Frequency increases from radio to gamma",
+            "All travel at the same speed in a vacuum"
+          ],
+          "note": "Order and uses.",
+          "table": {
+            "head": [
+              "Wave",
+              "Use",
+              "Hazard of excess"
+            ],
+            "rows": [
+              [
+                "Microwaves",
+                "cooking, communication",
+                "internal heating of tissue"
+              ],
+              [
+                "Infrared",
+                "heaters, remote controls",
+                "skin burns"
+              ],
+              [
+                "Ultraviolet",
+                "fluorescent lamps, security marking",
+                "skin cancer, eye damage"
+              ],
+              [
+                "Gamma",
+                "sterilising, treating cancer",
+                "cell damage, cancer"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Doppler effect",
+          "bullets": [
+            "Source moving towards you: higher frequency, shorter wavelength",
+            "Moving away: lower frequency, longer wavelength"
+          ],
+          "note": "A passing ambulance siren sounds higher then lower."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds.",
+          "check": {
+            "q": "A radio wave has f = 100 MHz. Wavelength? (c = 3 × 10⁸ m/s)",
+            "options": [
+              "0.3 m",
+              "3 m",
+              "30 m",
+              "300 m"
+            ],
+            "answer": 1,
+            "why": "λ = 3 × 10⁸ ÷ 1 × 10⁸ = 3 m."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "A wave has period 0.02 s. Frequency? [1 mark]",
+          "a": "f = 1 ÷ 0.02 = 50 Hz",
+          "mins": 2,
+          "model": "f = 1 ÷ T.\nT = 0.02 s.\n1 ÷ 0.02 = 50. f = 50 Hz."
+        },
+        {
+          "q": "Give one difference between transverse and longitudinal waves. [1 mark]",
+          "a": "Transverse oscillations are at right angles to energy transfer; longitudinal are parallel.",
+          "mins": 2
+        },
+        {
+          "q": "State one use and one danger of X-rays. [2 marks]",
+          "a": "Medical imaging of bones (1); can damage cells and cause cancer (1).",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 6 marks): Ultraviolet and infrared both come from the Sun. Compare their properties, uses and dangers. Portal response box.",
+          "a": "Both transverse EM waves at the same speed (1); UV higher frequency, shorter wavelength (1); UV use: security marking, sterilising (1); IR use: heating, remote controls (1); UV danger: skin cancer, eye damage (1); IR danger: burns (1).",
+          "mins": 8,
+          "model": "Teacher writes the similarity first: 'Both are electromagnetic waves, transverse, travelling at 3 × 10⁸ m/s in a vacuum.'"
+        },
+        {
+          "q": "Extend (exam-style, 3 marks): A water wave travels 12 m in 4 s; its wavelength is 1.5 m. Find its frequency.",
+          "a": "v = 3 m/s (1); f = 3 ÷ 1.5 (1) = 2 Hz (1)",
+          "mins": 6
+        },
+        {
+          "q": "Stretch (exam-style, 2 marks): Explain how people protect themselves from gamma radiation in hospitals.",
+          "a": "Lead or concrete shielding (1); limit exposure time and keep distance (1).",
+          "mins": 5
+        }
+      ],
+      "exit": [
+        {
+          "q": "Highest frequency EM wave?",
+          "a": "Gamma rays",
+          "mins": 1,
+          "options": [
+            "Radio",
+            "Visible light",
+            "Gamma rays"
+          ]
+        },
+        {
+          "q": "Big question: what do radio, light and X-rays have in common?",
+          "a": "All are transverse EM waves travelling at the speed of light in a vacuum; they differ in wavelength and frequency.",
+          "mins": 2
+        }
+      ],
+      "homework": "Learn the EM spectrum order with a mnemonic; complete the waves quiz on the portal.",
+      "send": "SEND: labelled wave diagram; spectrum strip. EAL: amplitude, wavelength, frequency. Stretch: Doppler effect calculations qualitatively.",
+      "resources": [
+        "Pearson Edexcel International GCSE Science (Double Award) 4SD0 specification: Physics 3.1 to 3.13",
+        "4SD0 exam-style questions written for this lesson (portal question sheet with mark scheme)",
+        "Year 10 knowledge organiser for this topic (portal revision page)",
+        "Scientific calculator",
+        "Revision exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "electromagnetic spectrum diagram",
+          "alt": "The electromagnetic spectrum",
+          "for": "teach:2"
+        },
+        {
+          "find": "transverse wave diagram labelled",
+          "alt": "A labelled transverse wave",
+          "for": "teach:1"
+        },
+        {
+          "find": "ocean waves",
+          "alt": "Ocean waves",
+          "for": "hook"
+        }
+      ],
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Biology 1 to 2, Chemistry 1 to 2, Physics 1 to 4",
+      "n": 100,
+      "title": "Revision: Physics 3 light and sound",
+      "duration": 50,
+      "bigQuestion": "How can light travel along a bent glass fibre?",
+      "objectives": [
+        "To understand reflection, refraction, total internal reflection and sound well enough to answer 4SD0 exam questions"
+      ],
+      "successCriteria": [
+        "All: state the law of reflection and draw ray diagrams",
+        "Most: calculate refractive index from angles",
+        "Some: explain total internal reflection and use sin c = 1/n"
+      ],
+      "crossCurricular": "Maths: sine and inverse sine",
+      "smsc": "Cultural: Ibn al-Haytham's work on refraction and the Book of Optics",
+      "keywords": [
+        {
+          "term": "refractive index",
+          "def": "n = sin i ÷ sin r"
+        },
+        {
+          "term": "critical angle",
+          "def": "angle of incidence giving a refraction angle of 90°"
+        },
+        {
+          "term": "total internal reflection",
+          "def": "all light reflected inside a denser medium beyond the critical angle"
+        },
+        {
+          "term": "normal",
+          "def": "line at 90° to a surface"
+        },
+        {
+          "term": "optical fibre",
+          "def": "thin glass fibre that carries light by total internal reflection"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A diamond sparkles more than glass cut the same shape. What property of diamond might explain this?",
+        "a": "Diamond has a higher refractive index and a smaller critical angle, so more light is totally internally reflected."
+      },
+      "starter": [
+        {
+          "q": "Law of reflection?",
+          "a": "Angle of incidence = angle of reflection",
+          "mins": 1,
+          "options": [
+            "i = r",
+            "i = 2r",
+            "i + r = 90°"
+          ]
+        },
+        {
+          "q": "Light entering glass bends... the normal.",
+          "a": "Towards",
+          "mins": 1
+        },
+        {
+          "q": "sin 30°?",
+          "a": "0.5",
+          "mins": 1
+        },
+        {
+          "q": "Sound is longitudinal or transverse?",
+          "a": "Longitudinal",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Refraction",
+          "bullets": [
+            "n = sin i ÷ sin r",
+            "Light slows in denser media",
+            "Practical: glass block, protractor, ray box"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "i = 45°, r = 28°. Find n. [2 marks]",
+            "steps": [
+              "n = sin i ÷ sin r",
+              "n = 0.707 ÷ 0.469",
+              "n = 1.51"
+            ],
+            "answer": "1.51"
+          }
+        },
+        {
+          "heading": "Total internal reflection",
+          "bullets": [
+            "From denser to less dense medium",
+            "Angle of incidence greater than the critical angle",
+            "sin c = 1 ÷ n"
+          ],
+          "note": "Uses: optical fibres, prisms in periscopes and binoculars.",
+          "compare": {
+            "left": {
+              "title": "i < c",
+              "points": [
+                "most light refracts out",
+                "some partial reflection"
+              ]
+            },
+            "right": {
+              "title": "i > c",
+              "points": [
+                "total internal reflection",
+                "no light escapes"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Sound",
+          "bullets": [
+            "Longitudinal; can be reflected (echo) and refracted",
+            "Needs a medium",
+            "Speed in air about 340 m/s"
+          ],
+          "note": "Echo method for speed of sound: distance there and back ÷ time."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds.",
+          "check": {
+            "q": "Glass with n = 1.5. Critical angle?",
+            "options": [
+              "30°",
+              "41.8°",
+              "48.6°",
+              "60°"
+            ],
+            "answer": 1,
+            "why": "sin c = 1 ÷ 1.5 = 0.667; c = 41.8°."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Calculate the critical angle for water (n = 1.33). [2 marks]",
+          "a": "sin c = 1 ÷ 1.33 = 0.752 (1); c = 48.8° (1)",
+          "mins": 2,
+          "model": "sin c = 1 ÷ n = 1 ÷ 1.33 = 0.752.\nInverse sine: c = 48.8°."
+        },
+        {
+          "q": "State two conditions for total internal reflection. [2 marks]",
+          "a": "Light travels from a denser to a less dense medium (1); angle of incidence greater than the critical angle (1).",
+          "mins": 2
+        },
+        {
+          "q": "Is sound reflected and refracted?",
+          "a": "Yes: both.",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 6 marks): Describe how to find the refractive index of a glass block. Portal response box.",
+          "a": "Draw round block, mark normal (1); ray box to shine ray at measured angle i (1); mark emerging ray, join to find refracted ray (1); measure r with protractor (1); repeat for several i (1); calculate sin i ÷ sin r and average, or plot sin i against sin r (1).",
+          "mins": 8,
+          "model": "Teacher writes the first two points: 'Place the block on paper and draw round it.\nDraw a normal at 90° to one face where the ray will enter.'"
+        },
+        {
+          "q": "Extend (exam-style, 3 marks): Explain how an optical fibre carries a signal round a bend.",
+          "a": "Light enters the fibre (1); hits the inside surface at more than the critical angle (1); is totally internally reflected repeatedly along the fibre (1).",
+          "mins": 6
+        },
+        {
+          "q": "Stretch (exam-style, 2 marks): A clap echoes from a wall 85 m away after 0.5 s. Calculate the speed of sound.",
+          "a": "Distance = 170 m (1); 170 ÷ 0.5 = 340 m/s (1)",
+          "mins": 5
+        }
+      ],
+      "exit": [
+        {
+          "q": "Refractive index formula?",
+          "a": "n = sin i ÷ sin r",
+          "mins": 1,
+          "options": [
+            "n = sin r ÷ sin i",
+            "n = sin i ÷ sin r",
+            "n = i ÷ r"
+          ]
+        },
+        {
+          "q": "Big question: how can light travel along a bent glass fibre?",
+          "a": "By total internal reflection: it hits the sides at more than the critical angle and reflects all the way along.",
+          "mins": 2
+        }
+      ],
+      "homework": "Complete the light and sound exam question set on the portal (timed: 20 minutes).",
+      "send": "SEND: ray diagram templates with normals; sine table. EAL: refract, critical, normal. Stretch: derive sin c = 1/n from Snell's law.",
+      "resources": [
+        "Pearson Edexcel International GCSE Science (Double Award) 4SD0 specification: Physics 3.14 to 3.23",
+        "4SD0 exam-style questions written for this lesson (portal question sheet with mark scheme)",
+        "Year 10 knowledge organiser for this topic (portal revision page)",
+        "Scientific calculator",
+        "Protractor and ruler",
+        "Revision exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "optical fibre light",
+          "alt": "Light in optical fibres",
+          "for": "hook"
+        },
+        {
+          "find": "total internal reflection prism",
+          "alt": "Total internal reflection in a prism",
+          "for": "teach:2"
+        },
+        {
+          "find": "glass block refraction",
+          "alt": "Refraction through a glass block",
+          "for": "teach:1"
+        }
+      ],
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Biology 1 to 2, Chemistry 1 to 2, Physics 1 to 4",
+      "n": 101,
+      "title": "Practical skills: planning investigations",
+      "duration": 50,
+      "bigQuestion": "What turns a good idea into a valid experiment?",
+      "objectives": [
+        "To understand how to plan valid investigations and write full-mark method answers"
+      ],
+      "successCriteria": [
+        "All: identify independent, dependent and control variables",
+        "Most: write a method with equipment, steps and measurements",
+        "Some: explain how to make results valid, repeatable and safe"
+      ],
+      "crossCurricular": "Maths: choosing ranges and intervals",
+      "smsc": "Moral: honesty and care in scientific work",
+      "keywords": [
+        {
+          "term": "independent variable",
+          "def": "the variable you change"
+        },
+        {
+          "term": "dependent variable",
+          "def": "the variable you measure"
+        },
+        {
+          "term": "control variable",
+          "def": "a variable kept the same"
+        },
+        {
+          "term": "valid",
+          "def": "the test measures what it is meant to"
+        },
+        {
+          "term": "repeatable",
+          "def": "the same person gets similar results when repeating"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A pupil tests five fertilisers on five different plant species. Can she say which fertiliser is best?",
+        "a": "No: she changed two variables (fertiliser and species), so the test is not valid."
+      },
+      "starter": [
+        {
+          "q": "The variable you change is the...",
+          "a": "Independent variable",
+          "mins": 1,
+          "options": [
+            "Dependent",
+            "Independent",
+            "Control"
+          ]
+        },
+        {
+          "q": "Name one control variable in the enzyme temperature practical.",
+          "a": "pH, concentrations, volumes",
+          "mins": 1
+        },
+        {
+          "q": "How do you make results more repeatable?",
+          "a": "Repeat and calculate a mean",
+          "mins": 1
+        },
+        {
+          "q": "Name one hazard in heating with a Bunsen burner.",
+          "a": "Burns (or fire)",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The planning checklist",
+          "bullets": [
+            "Variables: IV, DV, controls",
+            "Equipment and how to measure",
+            "Range and number of values",
+            "Repeats and mean",
+            "Risk and safety"
+          ],
+          "note": "Use the diagram as a checklist for 6-mark plans.",
+          "diagram": {
+            "centre": "a full-mark plan",
+            "items": [
+              "IV with range",
+              "DV and how measured",
+              "two or more controls",
+              "repeats and mean",
+              "safety",
+              "how to analyse"
+            ]
+          }
+        },
+        {
+          "heading": "Model plan",
+          "bullets": [
+            "One method, numbered steps"
+          ],
+          "note": "Model a 6-mark plan.",
+          "model": {
+            "problem": "Plan an investigation into how temperature affects the rate of osmosis in potato. [6 marks]",
+            "steps": [
+              "Cut equal potato cylinders with a borer; blot and weigh",
+              "Place in the same volume and concentration of sucrose solution",
+              "Use water baths at 20, 30, 40, 50 °C",
+              "Leave for the same time (30 min); blot and reweigh",
+              "Calculate % change in mass; repeat three times and find means",
+              "Control: cylinder size, solution concentration and volume, time"
+            ],
+            "answer": "IV, DV, controls, repeats and analysis all included"
+          }
+        },
+        {
+          "heading": "Validity and errors",
+          "bullets": [
+            "Random error: repeat and average",
+            "Systematic error: check zero, calibrate",
+            "Anomalies: identify and repeat"
+          ],
+          "note": "Use correct terms.",
+          "compare": {
+            "left": {
+              "title": "Random error",
+              "points": [
+                "scatter around the true value",
+                "reduced by repeats and means"
+              ]
+            },
+            "right": {
+              "title": "Systematic error",
+              "points": [
+                "all readings shifted the same way",
+                "fix the equipment or method"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds.",
+          "check": {
+            "q": "A balance reads 0.2 g with nothing on it. This causes...",
+            "options": [
+              "random error",
+              "systematic error",
+              "an anomaly",
+              "no error"
+            ],
+            "answer": 1,
+            "why": "Every reading is shifted by 0.2 g: a zero error, which is systematic."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Identify the IV, DV and two controls: 'How does light intensity affect the rate of photosynthesis in pondweed?' [3 marks]",
+          "a": "IV: light intensity (distance of lamp) (1); DV: bubbles of oxygen per minute (1); controls: temperature, CO₂ concentration, same pondweed (1).",
+          "mins": 2,
+          "model": "IV: the thing changed: light intensity (lamp distance).\nDV: the thing measured: oxygen bubbles per minute.\nControls: anything else that affects rate: temperature, CO₂."
+        },
+        {
+          "q": "Why use a water bath in enzyme practicals? [1 mark]",
+          "a": "To keep the temperature constant (control).",
+          "mins": 2
+        },
+        {
+          "q": "Suggest a suitable range for a temperature investigation on an enzyme.",
+          "a": "For example 20 to 60 °C in 10 °C steps.",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 6 marks): Plan an investigation into how the concentration of acid affects the rate of reaction with magnesium ribbon. Portal response box.",
+          "a": "IV: acid concentration (range of 5) (1); DV: time to stop fizzing or gas volume in a gas syringe (1); controls: length of Mg, volume of acid, temperature (1); method steps (1); repeat and mean (1); safety: eye protection, acid irritant (1).",
+          "mins": 8,
+          "model": "Teacher writes the variables first, then the first step: 'Measure 25 cm³ of 0.5 mol/dm³ hydrochloric acid into a conical flask using a measuring cylinder.'"
+        },
+        {
+          "q": "Extend (exam-style, 3 marks): Explain why a gas syringe gives more accurate results than counting bubbles.",
+          "a": "Bubbles vary in size (1); gas syringe measures volume directly (1); smaller resolution, all gas collected (1).",
+          "mins": 6
+        },
+        {
+          "q": "Stretch (exam-style, 2 marks): Explain the difference between repeatable and reproducible.",
+          "a": "Repeatable: same person, same method gets similar results (1); reproducible: different people or methods get similar results (1).",
+          "mins": 5
+        }
+      ],
+      "exit": [
+        {
+          "q": "The variable you measure is the...",
+          "a": "Dependent variable",
+          "mins": 1,
+          "options": [
+            "Dependent variable",
+            "Control variable"
+          ]
+        },
+        {
+          "q": "Big question: what turns a good idea into a valid experiment?",
+          "a": "Changing only one variable, measuring the right thing accurately, controlling others, repeating and acting safely.",
+          "mins": 2
+        }
+      ],
+      "homework": "Write a full plan for one 4SD0 practical of your choice (portal response box).",
+      "send": "SEND: planning frame with headings. EAL: variable, control, valid. Stretch: plan for the respiring seeds practical with improvements.",
+      "resources": [
+        "Pearson Edexcel International GCSE Science (Double Award) 4SD0 specification: practical skills across Biology, Chemistry and Physics (spec practical points)",
+        "4SD0 exam-style questions written for this lesson (portal question sheet with mark scheme)",
+        "4SD0 required practicals list (portal page)",
+        "Planning frame (portal worksheet)",
+        "Revision exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "laboratory equipment bench",
+          "alt": "Laboratory equipment on a bench",
+          "for": "hook"
+        },
+        {
+          "find": "water bath laboratory",
+          "alt": "A water bath",
+          "for": "teach:1"
+        },
+        {
+          "find": "gas syringe",
+          "alt": "A gas syringe",
+          "for": "keywords"
+        }
+      ],
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Biology 1 to 2, Chemistry 1 to 2, Physics 1 to 4",
+      "n": 102,
+      "title": "Data skills: tables, graphs and evaluation",
+      "duration": 50,
+      "bigQuestion": "How can you tell whether a conclusion is really supported by data?",
+      "objectives": [
+        "To understand how to present, analyse and evaluate data in 4SD0 exam questions"
+      ],
+      "successCriteria": [
+        "All: draw a results table and plot a graph correctly",
+        "Most: describe patterns with data and identify anomalies",
+        "Some: evaluate data, calculate gradients and justify conclusions"
+      ],
+      "crossCurricular": "Maths: graphs, means and gradients",
+      "smsc": "Moral: honest use of evidence",
+      "keywords": [
+        {
+          "term": "anomaly",
+          "def": "a result that does not fit the pattern"
+        },
+        {
+          "term": "mean",
+          "def": "sum of values ÷ number of values"
+        },
+        {
+          "term": "line of best fit",
+          "def": "line or curve showing the trend"
+        },
+        {
+          "term": "correlation",
+          "def": "a relationship between two variables"
+        },
+        {
+          "term": "resolution",
+          "def": "smallest change an instrument can show"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A graph of ice cream sales and sunburn cases goes up together. Does ice cream cause sunburn?",
+        "a": "No: both are caused by hot sunny weather. Correlation is not causation."
+      },
+      "starter": [
+        {
+          "q": "Mean of 12, 14, 13 and 25 (25 is an anomaly)?",
+          "a": "13",
+          "mins": 1,
+          "options": [
+            "13",
+            "16",
+            "64"
+          ]
+        },
+        {
+          "q": "Which axis for the independent variable?",
+          "a": "x-axis (horizontal)",
+          "mins": 1
+        },
+        {
+          "q": "Gradient = ?",
+          "a": "Change in y ÷ change in x",
+          "mins": 1
+        },
+        {
+          "q": "Units go in the table...",
+          "a": "Header (column heading)",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Tables and graphs",
+          "bullets": [
+            "Units in headings, not in cells",
+            "IV on the x-axis, DV on y",
+            "Use over half the grid; plot ±½ square"
+          ],
+          "note": "Model a full-mark graph.",
+          "table": {
+            "head": [
+              "Concentration (mol/dm³)",
+              "Time 1 (s)",
+              "Time 2 (s)",
+              "Mean time (s)"
+            ],
+            "rows": [
+              [
+                "0.2",
+                "84",
+                "88",
+                "86"
+              ],
+              [
+                "0.4",
+                "45",
+                "43",
+                "44"
+              ],
+              [
+                "0.6",
+                "30",
+                "52",
+                "30 (52 anomalous)"
+              ],
+              [
+                "0.8",
+                "22",
+                "24",
+                "23"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Describe, then explain",
+          "bullets": [
+            "Describe: trend with data",
+            "Explain: science reason",
+            "Never just 'it goes up'"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "Describe the trend in the table. [2 marks]",
+            "steps": [
+              "As concentration increases, the mean time decreases",
+              "Use data: from 86 s at 0.2 mol/dm³ to 23 s at 0.8 mol/dm³"
+            ],
+            "answer": "Trend plus data"
+          }
+        },
+        {
+          "heading": "Evaluate",
+          "bullets": [
+            "Are there anomalies?",
+            "How close are repeats?",
+            "Enough values and range?",
+            "Is the conclusion only for this range?"
+          ],
+          "note": "Evaluation vocabulary."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds.",
+          "check": {
+            "q": "Which value is anomalous?",
+            "options": [
+              "84",
+              "43",
+              "52",
+              "22"
+            ],
+            "answer": 2,
+            "why": "52 s is far from the other 0.6 mol/dm³ result (30 s) and breaks the trend."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Calculate the mean at 0.6 mol/dm³ excluding the anomaly. [1 mark]",
+          "a": "30 s",
+          "mins": 2,
+          "model": "Identify the anomaly: 52 s.\nExclude it.\nOnly 30 s remains (a third repeat would be needed), so mean = 30 s."
+        },
+        {
+          "q": "Explain the trend using collision theory. [2 marks]",
+          "a": "Higher concentration: more particles in the same volume (1), more frequent successful collisions so faster reaction (1).",
+          "mins": 2
+        },
+        {
+          "q": "A thermometer reads to 1 °C. What is its resolution?",
+          "a": "1 °C",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 6 marks): Plot the mean data (portal graph grid), draw a curve of best fit, describe the trend and identify the anomaly.",
+          "a": "Axes labelled with units (1); scale over half grid (1); points correct (1); smooth curve (1); trend: time decreases as concentration increases (1); 52 s anomaly identified (1).",
+          "mins": 8,
+          "model": "Teacher draws the axes first: x: concentration (mol/dm³), 0 to 1.0; y: mean time (s), 0 to 100; plots the first point (0.2, 86)."
+        },
+        {
+          "q": "Extend (exam-style, 2 marks): Calculate rate as 1000 ÷ mean time at 0.4 and 0.8 mol/dm³. What happens when concentration doubles?",
+          "a": "22.7 and 43.5 s⁻¹ (1); the rate roughly doubles (1).",
+          "mins": 6
+        },
+        {
+          "q": "Stretch (exam-style, 3 marks): Evaluate the conclusion 'Doubling concentration always doubles the rate'.",
+          "a": "Data roughly support it for this range (1); only two repeats, one anomaly (1); cannot extend beyond 0.8 mol/dm³ or other temperatures (1).",
+          "mins": 5
+        }
+      ],
+      "exit": [
+        {
+          "q": "A result that does not fit the pattern is...",
+          "a": "An anomaly",
+          "mins": 1,
+          "options": [
+            "A control",
+            "An anomaly",
+            "A mean"
+          ]
+        },
+        {
+          "q": "Big question: how can you tell whether a conclusion is supported?",
+          "a": "Check the trend is clear across the range, repeats agree, anomalies are dealt with, and the science explains it.",
+          "mins": 2
+        }
+      ],
+      "homework": "Complete the data analysis exam question set on the portal (timed: 20 minutes).",
+      "send": "SEND: graph with axes drawn. EAL: trend, anomaly, evaluate. Stretch: calculate a gradient from a tangent on a curve.",
+      "resources": [
+        "Pearson Edexcel International GCSE Science (Double Award) 4SD0 specification: practical and data skills across all papers",
+        "4SD0 exam-style questions written for this lesson (portal question sheet with mark scheme)",
+        "Graph grid (portal printable)",
+        "Scientific calculator",
+        "Ruler and sharp pencil",
+        "Revision exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "scientific graph line of best fit",
+          "alt": "A graph with a line of best fit",
+          "for": "teach:1"
+        },
+        {
+          "find": "graph paper",
+          "alt": "Graph paper",
+          "for": "keywords"
+        },
+        {
+          "find": "magnesium ribbon in acid",
+          "alt": "Magnesium reacting with acid",
+          "for": "hook"
+        }
+      ],
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Biology 1 to 2, Chemistry 1 to 2, Physics 1 to 4",
+      "n": 103,
+      "title": "Revision: chemistry practicals",
+      "duration": 50,
+      "bigQuestion": "What do examiners look for in a practical method answer?",
+      "objectives": [
+        "To understand the 4SD0 chemistry practicals well enough to describe and evaluate them in exams"
+      ],
+      "successCriteria": [
+        "All: name the practicals and their purpose",
+        "Most: describe the steps of chromatography, salt preparation and the metal oxide formula",
+        "Some: identify errors and improvements in each practical"
+      ],
+      "crossCurricular": "Biology: chromatography in food and medicine testing",
+      "smsc": "Moral: safety and care for others in practical work",
+      "keywords": [
+        {
+          "term": "chromatography",
+          "def": "separating dissolved substances by movement through paper"
+        },
+        {
+          "term": "crystallisation",
+          "def": "forming crystals from a saturated solution"
+        },
+        {
+          "term": "excess",
+          "def": "more than enough so all of the other reactant is used"
+        },
+        {
+          "term": "constant mass",
+          "def": "heating until mass stops changing"
+        },
+        {
+          "term": "eye protection",
+          "def": "safety glasses or goggles"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "When heating magnesium in a crucible, why lift the lid only a little and only now and then?",
+        "a": "To let oxygen in while stopping magnesium oxide smoke escaping and losing mass."
+      },
+      "starter": [
+        {
+          "q": "Rf = ? ÷ ?",
+          "a": "Distance moved by spot ÷ distance moved by solvent",
+          "mins": 1
+        },
+        {
+          "q": "Why use pencil for the chromatography start line?",
+          "a": "Pencil does not dissolve in the solvent",
+          "mins": 1,
+          "options": [
+            "Pencil does not dissolve in the solvent",
+            "Pencil is cheaper"
+          ]
+        },
+        {
+          "q": "Test for oxygen?",
+          "a": "Relights a glowing splint",
+          "mins": 1
+        },
+        {
+          "q": "Why add copper oxide in excess when making copper sulfate?",
+          "a": "To use up all the acid",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The practicals",
+          "bullets": [
+            "Chromatography of inks or food colourings",
+            "Pure dry hydrated copper(II) sulfate",
+            "Formula of a metal oxide",
+            "Oxygen in air; acids with metals"
+          ],
+          "note": "Spec practical list.",
+          "table": {
+            "head": [
+              "Practical",
+              "Key measurement",
+              "Key error to avoid"
+            ],
+            "rows": [
+              [
+                "Chromatography",
+                "spot and solvent distances",
+                "start line below solvent"
+              ],
+              [
+                "Copper sulfate",
+                "crystals obtained",
+                "boiling to dryness"
+              ],
+              [
+                "Metal oxide formula",
+                "mass before and after",
+                "oxide smoke lost"
+              ],
+              [
+                "Oxygen in air",
+                "volume decrease",
+                "not leaving long enough"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Heating to constant mass",
+          "bullets": [
+            "Heat, cool, weigh",
+            "Repeat until the mass stays the same",
+            "Shows the reaction is complete"
+          ],
+          "note": "Used in the metal oxide practical."
+        },
+        {
+          "heading": "Model answer",
+          "bullets": [
+            "Evaluate errors"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "A student's magnesium oxide formula came out as Mg₃O₂ (too little oxygen). Suggest two reasons. [2 marks]",
+            "steps": [
+              "Not all magnesium reacted: not heated to constant mass",
+              "Some magnesium oxide smoke escaped when the lid was lifted"
+            ],
+            "answer": "Incomplete reaction; loss of product"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds.",
+          "check": {
+            "q": "Why should copper sulfate solution not be boiled to dryness?",
+            "options": [
+              "It would explode",
+              "Hydrated crystals would lose their water of crystallisation",
+              "It turns green",
+              "It wastes acid"
+            ],
+            "answer": 1,
+            "why": "Boiling to dryness gives white anhydrous powder, not blue hydrated crystals."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Describe how to carry out paper chromatography of food colourings. [4 marks]",
+          "a": "Pencil line near the bottom (1); spots of colourings on the line (1); stand in solvent below the line, lid on (1); remove when solvent near top, mark solvent front, dry (1).",
+          "mins": 2,
+          "model": "Four steps, four marks: pencil line, spots, solvent below the line with a lid, mark the front and dry."
+        },
+        {
+          "q": "Why is the solvent level below the start line? [1 mark]",
+          "a": "So the spots do not dissolve into the solvent in the beaker.",
+          "mins": 2
+        },
+        {
+          "q": "State one safety precaution when heating magnesium. [1 mark]",
+          "a": "Eye protection; do not look directly at the flame; use tongs; heatproof mat.",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 6 marks): Describe how to find the empirical formula of magnesium oxide by experiment. Portal response box.",
+          "a": "Weigh crucible and lid (1); add Mg ribbon, weigh (1); heat strongly, lifting lid occasionally (1); heat to constant mass (1); cool and weigh (1); calculate masses of Mg and O and convert to moles (1).",
+          "mins": 8,
+          "model": "Teacher writes the first two points: 'Weigh an empty crucible and lid.\nAdd a coiled piece of cleaned magnesium ribbon and weigh again.'"
+        },
+        {
+          "q": "Extend (exam-style, 3 marks): Describe how to show that a sample of water is pure.",
+          "a": "Heat and measure the boiling point (1); pure water boils at exactly 100 °C (1) at standard pressure; (freezes at 0 °C) (1).",
+          "mins": 6
+        },
+        {
+          "q": "Stretch (exam-style, 2 marks): Explain why the volume of air decreases when iron wool rusts in an enclosed tube.",
+          "a": "Iron reacts with oxygen (1), removing it from the air, so the gas volume falls by about 21% (1).",
+          "mins": 5
+        }
+      ],
+      "exit": [
+        {
+          "q": "Heating to constant mass shows...",
+          "a": "The reaction is complete",
+          "mins": 1,
+          "options": [
+            "The reaction is complete",
+            "The crucible is clean"
+          ]
+        },
+        {
+          "q": "Big question: what do examiners look for in a practical method answer?",
+          "a": "Clear ordered steps, named equipment, what is measured and how, controls, and safety.",
+          "mins": 2
+        }
+      ],
+      "homework": "Complete the chemistry practicals exam question set on the portal (timed: 20 minutes).",
+      "send": "SEND: practical step cards to order. EAL: crucible, constant mass, solvent front. Stretch: write an evaluation for each practical.",
+      "resources": [
+        "Pearson Edexcel International GCSE Science (Double Award) 4SD0 specification: Chemistry 1.13, 1.36, 2.14, 2.21, 2.42 (practicals)",
+        "4SD0 exam-style questions written for this lesson (portal question sheet with mark scheme)",
+        "Teacher demonstration videos of the chemistry practicals (portal, no music)",
+        "Practical methods summary sheet (portal worksheet)",
+        "Revision exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "crucible heating magnesium",
+          "alt": "Heating magnesium in a crucible",
+          "for": "teach:3"
+        },
+        {
+          "find": "chromatography paper food colouring",
+          "alt": "A chromatogram of food colourings",
+          "for": "hook"
+        },
+        {
+          "find": "copper sulfate pentahydrate crystals",
+          "alt": "Blue copper(II) sulfate crystals",
+          "for": "keywords"
+        }
+      ],
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Biology 1 to 2, Chemistry 1 to 2, Physics 1 to 4",
+      "n": 104,
+      "title": "Revision: Physics 4 energy stores, efficiency and thermal transfer",
+      "duration": 50,
+      "bigQuestion": "Why does a vacuum flask keep tea hot for hours?",
+      "objectives": [
+        "To understand energy transfers, efficiency and thermal energy transfer well enough to answer 4SD0 exam questions"
+      ],
+      "successCriteria": [
+        "All: describe energy transfers and draw Sankey diagrams",
+        "Most: calculate efficiency",
+        "Some: explain conduction, convection and radiation and how insulation reduces them"
+      ],
+      "crossCurricular": "Geography: home energy use and insulation",
+      "smsc": "Moral: avoiding waste of energy",
+      "keywords": [
+        {
+          "term": "efficiency",
+          "def": "useful energy output ÷ total energy output × 100%"
+        },
+        {
+          "term": "conduction",
+          "def": "transfer through a solid by particle vibrations (and free electrons in metals)"
+        },
+        {
+          "term": "convection",
+          "def": "transfer by movement of a fluid as warmer, less dense fluid rises"
+        },
+        {
+          "term": "radiation",
+          "def": "transfer by infrared waves; no medium needed"
+        },
+        {
+          "term": "Sankey diagram",
+          "def": "diagram showing energy transfers with arrow widths"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A shiny silver survival blanket keeps a person warm though it is very thin. How?",
+        "a": "It reflects infrared radiation back and reduces convection."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Do not squander wastefully' (al-Isra 17:26). Efficiency and insulation are scientific ways of reducing waste.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Efficiency of a lamp: 20 J light from 100 J?",
+          "a": "20%",
+          "mins": 1,
+          "options": [
+            "20%",
+            "80%",
+            "120%"
+          ]
+        },
+        {
+          "q": "Name the energy store in food.",
+          "a": "Chemical",
+          "mins": 1
+        },
+        {
+          "q": "Which transfer needs no medium?",
+          "a": "Radiation",
+          "mins": 1
+        },
+        {
+          "q": "Hot air rises because it is...",
+          "a": "Less dense",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Efficiency",
+          "bullets": [
+            "Efficiency = useful output ÷ total output × 100%",
+            "Wasted energy is usually dissipated as heat"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "A motor is supplied with 200 J and does 150 J of useful work. Efficiency? [2 marks]",
+            "steps": [
+              "Efficiency = useful ÷ total × 100",
+              "= 150 ÷ 200 × 100",
+              "= 75%"
+            ],
+            "answer": "75%"
+          }
+        },
+        {
+          "heading": "Thermal transfer",
+          "bullets": [
+            "Conduction: solids, metals best",
+            "Convection: liquids and gases, currents",
+            "Radiation: infrared, dark matt surfaces emit and absorb best"
+          ],
+          "note": "Vacuum flask.",
+          "table": {
+            "head": [
+              "Feature of vacuum flask",
+              "Reduces"
+            ],
+            "rows": [
+              [
+                "Vacuum between walls",
+                "conduction and convection"
+              ],
+              [
+                "Silvered surfaces",
+                "radiation"
+              ],
+              [
+                "Stopper",
+                "convection and evaporation"
+              ],
+              [
+                "Plastic case",
+                "conduction"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Common error",
+          "bullets": [
+            "Heat does not 'rise'"
+          ],
+          "note": "Exam trap.",
+          "misconception": {
+            "wrong": "Heat rises",
+            "right": "Warmer fluid expands, becomes less dense and rises; this is convection"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds.",
+          "check": {
+            "q": "Best emitter of infrared radiation?",
+            "options": [
+              "Shiny silver",
+              "Matt black",
+              "Shiny white",
+              "Transparent"
+            ],
+            "answer": 1,
+            "why": "Dark matt surfaces are the best emitters and absorbers."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "A TV uses 120 J; 30 J is light and sound. Efficiency? [2 marks]",
+          "a": "30 ÷ 120 × 100 (1) = 25% (1)",
+          "mins": 2,
+          "model": "Useful output: 30 J.\nTotal: 120 J.\nEfficiency = 30 ÷ 120 × 100 = 25%."
+        },
+        {
+          "q": "Explain why radiators are near the floor. [2 marks]",
+          "a": "Air near the radiator warms, becomes less dense and rises (1), setting up a convection current that heats the room (1).",
+          "mins": 2
+        },
+        {
+          "q": "Why do pans have copper bases? [1 mark]",
+          "a": "Copper is a good thermal conductor.",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 6 marks): Explain how a vacuum flask reduces energy transfer by conduction, convection and radiation. Portal response box.",
+          "a": "Vacuum: no particles, so no conduction (1) or convection (1) across the gap; silvered walls reflect infrared (1), reducing radiation (1); stopper reduces convection and evaporation from the top (1); plastic is an insulator (1).",
+          "mins": 8,
+          "model": "Teacher writes the first point: 'The vacuum between the walls has no particles, so energy cannot be transferred across it by conduction.'"
+        },
+        {
+          "q": "Extend (exam-style, 3 marks): Describe an experiment to compare the infrared emitted by different surfaces (Leslie cube or cans of hot water).",
+          "a": "Cans painted different colours, same volume of hot water (1); measure temperature drop over the same time (1); fastest cooling is the best emitter (matt black) (1).",
+          "mins": 6
+        },
+        {
+          "q": "Stretch (exam-style, 2 marks): A device is 40% efficient and wastes 300 J. What was the total input?",
+          "a": "Wasted energy is 60% of the input (1); input = 300 ÷ 0.6 = 500 J (1)",
+          "mins": 5
+        }
+      ],
+      "exit": [
+        {
+          "q": "Efficiency can never be more than...",
+          "a": "100%",
+          "mins": 1,
+          "options": [
+            "50%",
+            "100%",
+            "200%"
+          ]
+        },
+        {
+          "q": "Big question: why does a vacuum flask keep tea hot for hours?",
+          "a": "The vacuum stops conduction and convection and the silvered walls reduce radiation.",
+          "mins": 2
+        }
+      ],
+      "homework": "Complete the energy and thermal transfer exam question set on the portal (timed: 20 minutes).",
+      "send": "SEND: transfer type cards; efficiency formula card. EAL: conduction, convection, radiation. Stretch: Sankey diagram drawing to scale.",
+      "resources": [
+        "Pearson Edexcel International GCSE Science (Double Award) 4SD0 specification: Physics 4.1 to 4.10",
+        "4SD0 exam-style questions written for this lesson (portal question sheet with mark scheme)",
+        "Year 10 knowledge organiser for this topic (portal revision page)",
+        "Scientific calculator",
+        "Revision exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "vacuum flask cutaway diagram",
+          "alt": "A cutaway diagram of a vacuum flask",
+          "for": "teach:2"
+        },
+        {
+          "find": "thermal image house heat loss",
+          "alt": "A thermal image showing heat loss from a house",
+          "for": "hook"
+        },
+        {
+          "find": "Sankey diagram",
+          "alt": "A Sankey diagram",
+          "for": "keywords"
+        }
+      ],
+      "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
+      "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Biology 1 to 2, Chemistry 1 to 2, Physics 1 to 4",
+      "n": 105,
+      "title": "Revision: Physics 4 work, energy and power",
+      "duration": 50,
+      "bigQuestion": "Where does the energy go when a roller coaster car goes down a slope?",
+      "objectives": [
+        "To understand work done, GPE, KE and power and how to solve multi-step energy problems in the exam"
+      ],
+      "successCriteria": [
+        "All: calculate work done, GPE and KE",
+        "Most: use conservation of energy to link GPE and KE",
+        "Some: calculate power and solve multi-step problems with energy losses"
+      ],
+      "crossCurricular": "Maths: rearranging equations with squares and square roots",
+      "smsc": "Spiritual: precise measure in creation (al-Qamar 54:49)",
+      "keywords": [
+        {
+          "term": "work done",
+          "def": "force × distance moved in the direction of the force"
+        },
+        {
+          "term": "gravitational potential energy",
+          "def": "GPE = m × g × h"
+        },
+        {
+          "term": "kinetic energy",
+          "def": "KE = ½ × m × v²"
+        },
+        {
+          "term": "power",
+          "def": "work done ÷ time"
+        },
+        {
+          "term": "conservation of energy",
+          "def": "energy is transferred, not created or destroyed"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A ball dropped from 5 m hits the ground. If no energy is lost to air, how fast is it going? Does its mass matter?",
+        "a": "10 m/s; mass cancels out (mgh = ½mv²)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, all things We created with precise measure' (al-Qamar 54:49). The exact balance between gravitational and kinetic energy is one example of that measure.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Work done: 50 N over 4 m?",
+          "a": "200 J",
+          "mins": 1,
+          "options": [
+            "12.5 J",
+            "54 J",
+            "200 J"
+          ]
+        },
+        {
+          "q": "Unit of power?",
+          "a": "Watt",
+          "mins": 1
+        },
+        {
+          "q": "GPE formula?",
+          "a": "m × g × h",
+          "mins": 1
+        },
+        {
+          "q": "KE formula?",
+          "a": "½ m v²",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Energy equations",
+          "bullets": [
+            "W = F × d; work done = energy transferred",
+            "GPE = mgh; KE = ½mv²",
+            "P = W ÷ t"
+          ],
+          "note": "Equation sheet check."
+        },
+        {
+          "heading": "Model: falling object",
+          "bullets": [
+            "GPE lost = KE gained (no losses)"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "A 2 kg ball falls 5 m (g = 10 N/kg). Find its speed just before landing. [3 marks]",
+            "steps": [
+              "GPE lost = 2 × 10 × 5 = 100 J",
+              "KE gained = 100 J = ½ × 2 × v²",
+              "v² = 100, so v = 10 m/s"
+            ],
+            "answer": "10 m/s"
+          }
+        },
+        {
+          "heading": "Power",
+          "bullets": [
+            "Same work faster: more power",
+            "P = W ÷ t"
+          ],
+          "note": "Example: lifting.",
+          "table": {
+            "head": [
+              "Task",
+              "Work (J)",
+              "Time (s)",
+              "Power (W)"
+            ],
+            "rows": [
+              [
+                "Lift 10 kg box 1.2 m",
+                "120",
+                "2",
+                "60"
+              ],
+              [
+                "Same box, 1 s",
+                "120",
+                "1",
+                "120"
+              ],
+              [
+                "Climb stairs (600 N, 3 m)",
+                "1800",
+                "6",
+                "300"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds.",
+          "check": {
+            "q": "A 60 kg pupil climbs 4 m in 8 s. Power? (g = 10 N/kg)",
+            "options": [
+              "30 W",
+              "300 W",
+              "2400 W",
+              "19 200 W"
+            ],
+            "answer": 1,
+            "why": "Work = 600 × 4 = 2400 J; P = 2400 ÷ 8 = 300 W."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Calculate the KE of a 1200 kg car at 20 m/s. [2 marks]",
+          "a": "½ × 1200 × 400 (1) = 240 000 J (1)",
+          "mins": 2,
+          "model": "KE = ½ m v².\nSquare speed: 20² = 400. ½ × 1200 × 400 = 240 000 J."
+        },
+        {
+          "q": "A crane lifts 500 kg by 12 m. GPE gained?",
+          "a": "500 × 10 × 12 = 60 000 J",
+          "mins": 2
+        },
+        {
+          "q": "Power of a motor doing 1200 J of work in 4 s?",
+          "a": "300 W",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 6 marks): A 500 kg roller coaster car starts at rest 20 m up. (a) Calculate its GPE. (b) Calculate its maximum speed at the bottom (no losses). (c) Explain why the real speed is lower.",
+          "a": "(a) 500 × 10 × 20 = 100 000 J (2); (b) ½ × 500 × v² = 100 000, v² = 400, v = 20 m/s (2); (c) energy dissipated by friction and air resistance as heat and sound (2).",
+          "mins": 8,
+          "model": "Teacher works (a): GPE = mgh = 500 × 10 × 20 = 100 000 J."
+        },
+        {
+          "q": "Extend (exam-style, 3 marks): A cyclist does 6000 J of work in 20 s against a resistive force of 50 N. Find the power and the distance travelled.",
+          "a": "P = 6000 ÷ 20 = 300 W (1); d = W ÷ F = 6000 ÷ 50 (1) = 120 m (1)",
+          "mins": 6
+        },
+        {
+          "q": "Stretch (exam-style, 3 marks): A 0.5 kg ball thrown upwards at 8 m/s. Calculate the maximum height (no air resistance).",
+          "a": "KE = ½ × 0.5 × 64 = 16 J (1); mgh = 16, h = 16 ÷ (0.5 × 10) (1) = 3.2 m (1)",
+          "mins": 5
+        }
+      ],
+      "exit": [
+        {
+          "q": "Work done is measured in...",
+          "a": "Joules",
+          "mins": 1,
+          "options": [
+            "Watts",
+            "Newtons",
+            "Joules"
+          ]
+        },
+        {
+          "q": "Big question: where does the energy go when a roller coaster goes down?",
+          "a": "GPE is transferred to KE; some is dissipated as heat and sound by friction and air resistance.",
+          "mins": 2
+        }
+      ],
+      "homework": "Complete the energy and power exam question set on the portal (timed: 25 minutes); revise all of Physics 1 to 4 for the mock in the week of 8 Feb.",
+      "send": "SEND: equation card; step frames. EAL: work, power, potential, kinetic. Stretch: problems with efficiency and energy losses combined.",
+      "resources": [
+        "Pearson Edexcel International GCSE Science (Double Award) 4SD0 specification: Physics 4.11 to 4.17",
+        "4SD0 exam-style questions written for this lesson (portal question sheet with mark scheme)",
+        "Year 10 knowledge organiser for this topic (portal revision page)",
+        "Scientific calculator",
+        "Revision exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "roller coaster",
+          "alt": "A roller coaster track",
+          "for": "hook"
+        },
+        {
+          "find": "crane lifting load",
+          "alt": "A crane lifting a load",
+          "for": "keywords"
+        },
+        {
+          "find": "staircase",
+          "alt": "A staircase",
+          "for": "teach:3"
+        }
+      ],
       "board": "Pearson Edexcel International GCSE (9-1) Biology 4BI1, Chemistry 4CH1 and Physics 4PH1; Science (Double Award) 4SD0",
       "boardShort": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0"
     }
