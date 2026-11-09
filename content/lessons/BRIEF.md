@@ -51,7 +51,10 @@ Record in each file a top-level `"source"` string: which Drive material was adap
 ## Quality bar
 Professional, teachable-as-is lessons. Accurate subject knowledge. Worked examples with real numbers/text.
 Each lesson follows: retrieval starter → short explanation (4-6 teach slides) → guided practice →
-independent practice → exit ticket → homework. Include a teacher `note` on every teach slide (what to say, what to
+independent practice → exit ticket → homework. Give every starter, practice, independent and exit item an answer
+(`{ "q": "...", "a": "..." }`, see README.md) so the decks get "Check your answers" slides and the plan an
+answer key; add a `hook` and, where they help, the visual blocks (`chart`, `numberline`, `fraction`,
+`diagram`, `sort`). Include a teacher `note` on every teach slide (what to say, what to
 ask, likely misconceptions). Keep bullets short (they go on slides). Keep JSON valid (no trailing commas, no comments).
 Islamic ethos: begin lessons naturally with bismillah/adab where fitting; never invent hadith, ayat or scholarly
 quotes, only include Qur'an/hadith references you are certain are authentic and cite them plainly.

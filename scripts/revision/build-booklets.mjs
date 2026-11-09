@@ -8,6 +8,8 @@ import path from "node:path";
 import { createRequire } from "node:module";
 import { themeFor } from "../lessons/deck-parts.mjs";
 import { retiredChecker } from "../lessons/retired.mjs";
+// Lesson questions may be strings or { q, a, mins } (content/lessons/README.md).
+import { itemA, itemQ } from "../../src/lib/learn/lessonSchema.mjs";
 
 const require = createRequire(import.meta.url);
 const { AlignmentType, BorderStyle, Document, Footer, Header, ImageRun, LevelFormat, Packer, PageBreak, PageNumber, Paragraph, ShadingType, Table, TableCell, TableLayoutType, TableRow, TextRun, WidthType } = require("docx");
@@ -140,7 +142,7 @@ function build(subjectSlug, file, year, unit, lessons) {
   // Retrieval practice
   kids.push(new Paragraph({ children: [new PageBreak()] }), h1("Recall it", accent), para([run("Cover the notes. Write everything you remember about each lesson. Then check.", { italics: true, color: MUTED })], { after: 100 }));
   for (const l of lessons) {
-    kids.push(box([para([run(`Lesson ${l.n}: ${l.title}`, { bold: true })], { after: 30 }), ...(l.practice || []).slice(0, 3).map((q) => para([run(`•  ${q}`, { size: 20 })], { after: 20 })), para([run(" ")], { after: 0 }), para([run(" ")], { after: 0 }), para([run(" ")], { after: 0 })], "FFFFFF", LINE), para([run("")], { after: 60 }));
+    kids.push(box([para([run(`Lesson ${l.n}: ${l.title}`, { bold: true })], { after: 30 }), ...(l.practice || []).slice(0, 3).map((q) => para([run(`•  ${itemQ(q)}`, { size: 20 })], { after: 20 })), para([run(" ")], { after: 0 }), para([run(" ")], { after: 0 }), para([run(" ")], { after: 0 })], "FFFFFF", LINE), para([run("")], { after: 60 }));
   }
 
   // Quiz + answers
@@ -153,11 +155,12 @@ function build(subjectSlug, file, year, unit, lessons) {
       if (q.c) {
         kids.push(para([run(`${i + 1}.  `, { bold: true, color: accent }), run(q.c.q, { bold: true })], { before: 100, after: 40, keepNext: true }));
         q.c.options.forEach((o, j) => kids.push(para([run(`${LETTERS[j]}   ${o}`)], { after: 20, indent: { left: 360 }, keepNext: j < q.c.options.length - 1 })));
-      } else kids.push(para([run(`${i + 1}.  `, { bold: true, color: accent }), run(q.open, { bold: true })], { before: 100, after: 40, keepNext: true }), para([run("_______________________________________________________________")], { after: 20, indent: { left: 360 } }));
+      } else kids.push(para([run(`${i + 1}.  `, { bold: true, color: accent }), run(itemQ(q.open), { bold: true })], { before: 100, after: 40, keepNext: true }), para([run("_______________________________________________________________")], { after: 20, indent: { left: 360 } }));
     });
     kids.push(new Paragraph({ children: [new PageBreak()] }), h1("Answers", accent));
     qs.forEach((q, i) => {
       if (q.c) kids.push(para([run(`${i + 1}.  ${LETTERS[q.c.answer]}  `, { bold: true, color: accent }), run(q.c.options[q.c.answer], { bold: true }), run(q.c.why ? `  ${q.c.why}` : "", { size: 20 })], { after: 50 }));
+      else if (itemA(q.open)) kids.push(para([run(`${i + 1}.  `, { bold: true, color: accent }), run(itemA(q.open), { bold: true })], { after: 50 }));
       else kids.push(para([run(`${i + 1}.  `, { bold: true, color: accent }), run(`Open question: check your answer against Lesson ${q.l.n} (${q.l.title}).`, { size: 20, color: MUTED })], { after: 50 }));
     });
   }
