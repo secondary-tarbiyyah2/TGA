@@ -2,247 +2,2276 @@
   "subject": "Science",
   "year": "y4",
   "board": "National Curriculum (KS2, lower)",
-  "source": "National Curriculum KS2 Science (States of matter; Animals including humans); Drive Science 'Science lower school' (3.5 matter) and KS3 SOW particle theory progression",
+  "source": "National Curriculum KS2 Science (States of matter; Animals including humans); Drive Science 'Science lower school' (3.5 matter) and KS3 SOW particle theory progression | Spring 1 2027 (lessons 1 to 4 upgraded, 9 to 14 new): Tarbiyyah Primary Year 4 Science Long Term Plan 2023-24 (Cornerstones Marvellous Medicine and How Far Can Sound Travel?), home practicals with household items",
   "lessons": [
     {
-      "unit": "States of matter",
+      "unit": "Spring 1: States of matter (Marvellous Medicine and How Far Can Sound Travel?)",
       "n": 1,
       "title": "Solids, liquids and gases",
       "duration": 45,
+      "bigQuestion": "How can we tell if something is a solid, a liquid or a gas?",
       "objectives": [
-        "Compare and group materials as solids, liquids or gases",
-        "Describe the properties of each state",
-        "Identify examples that are hard to classify"
+        "To understand how solids, liquids and gases are different"
       ],
+      "successCriteria": [
+        "All: sort materials into solids, liquids and gases",
+        "Most: describe one property of each state",
+        "Some: explain where tricky materials such as sand belong"
+      ],
+      "crossCurricular": "English: using 'because' to justify a choice",
+      "smsc": "Spiritual: wonder at how one substance, water, can take three forms",
       "keywords": [
-        { "term": "solid", "def": "has a fixed shape and a fixed volume" },
-        { "term": "liquid", "def": "flows and takes the shape of its container" },
-        { "term": "gas", "def": "spreads out to fill any container" },
-        { "term": "volume", "def": "the amount of space something takes up" }
+        {
+          "term": "solid",
+          "def": "keeps its own shape and does not flow"
+        },
+        {
+          "term": "liquid",
+          "def": "flows and takes the shape of its container"
+        },
+        {
+          "term": "gas",
+          "def": "spreads out to fill any space"
+        },
+        {
+          "term": "state",
+          "def": "whether something is a solid, liquid or gas"
+        },
+        {
+          "term": "volume",
+          "def": "the amount of space something takes up"
+        }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is sand a solid or a liquid? It pours like water. What do you think, and why?",
+        "a": "A solid: each grain keeps its shape. It pours because the grains are tiny."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'We made from water every living thing' (al-Anbiya 21:30). Water is the only substance we meet every day as a solid, a liquid and a gas, and every living thing needs it.",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. Name something that is a solid in your home.",
-        "What happens to water when it freezes?",
-        "Is air a material? How do you know?"
+        {
+          "q": "Is wood a solid or a liquid?",
+          "a": "A solid",
+          "mins": 1,
+          "options": [
+            "Solid",
+            "Liquid"
+          ]
+        },
+        {
+          "q": "Name a liquid you drink.",
+          "a": "For example: water or milk.",
+          "mins": 1
+        },
+        {
+          "q": "What do we breathe in?",
+          "a": "Air (a gas, containing oxygen).",
+          "mins": 1
+        }
       ],
       "teach": [
         {
           "heading": "Three states",
-          "bullets": ["Solid, liquid and gas", "Every material can be in a state", "State depends on temperature"],
-          "note": "Use water as the main example: ice, water, steam. Ask what is the same about all three (the material is still water)."
+          "bullets": [
+            "Materials can be solid, liquid or gas",
+            "Water can be all three",
+            "Ice, water and steam"
+          ],
+          "note": "Show an ice cube and a cup of water. Ask: what is the same? Both are water.",
+          "diagram": {
+            "centre": "states of matter",
+            "items": [
+              "solid: keeps its shape",
+              "liquid: flows",
+              "gas: spreads out",
+              "water is all three"
+            ]
+          }
         },
         {
-          "heading": "Solids",
-          "bullets": ["Keep their shape", "Cannot be poured", "Hold a fixed volume"],
-          "note": "Hold up a spoon or toy. Misconception: powders and sand are liquids because they pour. Each grain is a tiny solid."
+          "heading": "Solids and liquids",
+          "bullets": [
+            "Solids keep their shape",
+            "Liquids flow and can be poured",
+            "Liquids take the shape of the container"
+          ],
+          "note": "Pour water into a tall glass and a bowl on camera: the shape changes, the amount stays the same.",
+          "compare": {
+            "left": {
+              "title": "Solid",
+              "points": [
+                "keeps its shape",
+                "can be held",
+                "cannot be poured (as a whole)"
+              ]
+            },
+            "right": {
+              "title": "Liquid",
+              "points": [
+                "flows",
+                "takes the container's shape",
+                "can be poured"
+              ]
+            },
+            "label": "vs"
+          }
         },
         {
-          "heading": "Liquids and gases",
-          "bullets": ["Liquids flow and take the container shape", "Gases spread out everywhere", "Gases can be squashed"],
-          "note": "Safe demo: pour water into cups of different shapes (volume stays the same). Use a plastic bag with air to show gas fills a space and can be squashed."
+          "heading": "Gases",
+          "bullets": [
+            "Gases spread to fill any space",
+            "Most are invisible",
+            "Gases can be squashed"
+          ],
+          "note": "Squash an air-filled plastic bag: it pushes back. Smell from cooking spreads through the house: a gas spreading."
         },
         {
-          "heading": "Tricky materials",
-          "bullets": ["Sand pours but is a solid", "Foam has gas trapped in it", "Toothpaste is hard to place"],
-          "note": "Discuss and justify decisions. Encourage 'I think ... because ...'. There is no need to give a final answer to every tricky case."
+          "heading": "Sort them",
+          "bullets": [
+            "Solid, liquid or gas?"
+          ],
+          "note": "Read each card; pupils hold up 1, 2 or 3 fingers.",
+          "sort": {
+            "columns": [
+              "Solid",
+              "Liquid",
+              "Gas"
+            ],
+            "cards": [
+              "brick",
+              "milk",
+              "steam",
+              "sand",
+              "honey",
+              "air in a balloon",
+              "ice",
+              "oil"
+            ],
+            "answer": [
+              0,
+              1,
+              2,
+              0,
+              1,
+              2,
+              0,
+              1
+            ]
+          }
         }
       ],
       "practice": [
-        "Sort into solid, liquid or gas: milk, brick, oxygen, juice, wood, steam.",
-        "Why is sand a solid even though it pours?",
-        "Which state can be squashed easily?"
+        {
+          "q": "Is honey a solid or a liquid?",
+          "a": "A liquid: it flows (slowly) and takes the shape of its container.",
+          "mins": 2,
+          "model": "Ask: does it keep its shape?\nNo.\nDoes it flow?\nYes, slowly.\nThings that flow are liquids.\nSo honey is a liquid."
+        },
+        {
+          "q": "Why is sand a solid even though it pours?",
+          "a": "Each grain is a tiny solid that keeps its own shape.",
+          "mins": 2
+        },
+        {
+          "q": "Which state can be squashed easily?",
+          "a": "A gas.",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Make a table of three columns: solid, liquid, gas. Add four examples to each from your home.",
-        "Write a paragraph to explain the properties of solids, liquids and gases.",
-        "Choose one tricky material and explain which group it fits and why."
+        {
+          "q": "Core: Make a three-column table (solid, liquid, gas). Add four things from your home to each column.",
+          "a": "For example: solid: spoon, table, rice, soap; liquid: water, oil, juice, vinegar; gas: air, steam, the air in a ball, cooking smells.",
+          "mins": 7,
+          "model": "Teacher does one of each first: spoon (solid, keeps its shape), oil (liquid, pours), air in a balloon (gas, fills the space)."
+        },
+        {
+          "q": "Extend: Write one sentence for each state starting 'A ... is ... because ...'",
+          "a": "For example: A spoon is a solid because it keeps its shape.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Is toothpaste a solid or a liquid? Give your reasons.",
+          "a": "Accept a reasoned answer: it flows when squeezed (like a liquid) but holds its shape on the brush (like a solid).",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Which state has a fixed shape?",
-        "Name one gas that is all around us."
+        {
+          "q": "Which state spreads out to fill any space?",
+          "a": "Gas",
+          "mins": 1,
+          "options": [
+            "Solid",
+            "Liquid",
+            "Gas"
+          ]
+        },
+        {
+          "q": "Big question: how can we tell if something is a solid, a liquid or a gas?",
+          "a": "Solids keep their shape; liquids flow and take the container's shape; gases spread out to fill any space.",
+          "mins": 2
+        }
       ],
-      "homework": "Find ten materials around your home and sort them into solid, liquid or gas.",
-      "send": "SEND/EAL: provide picture cards to sort; allow pointing. Stretch: explain why air in a balloon is a gas."
+      "homework": "Find ten materials around your home and sort them into solid, liquid or gas in a table.",
+      "send": "SEND: picture cards to sort; allow pointing. EAL: solid, liquid, gas with pictures. Stretch: explain why a balloon gets bigger when you blow into it.",
+      "resources": [
+        "Tarbiyyah Primary Science Long Term Plan 2023-24, Year 4 Spring (Cornerstones Marvellous Medicine)",
+        "Solid, liquid, gas sorting table (portal worksheet)",
+        "An ice cube, a cup of water, a clear plastic bag",
+        "Science exercise book and pencil"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "ice cubes",
+          "alt": "Ice cubes (solid water)",
+          "for": "keywords"
+        },
+        {
+          "find": "water pouring into glass",
+          "alt": "Water being poured (a liquid)",
+          "for": "keywords"
+        },
+        {
+          "find": "steam from boiling kettle spout",
+          "alt": "Steam from a kettle",
+          "for": "hook"
+        }
+      ]
     },
     {
-      "unit": "States of matter",
+      "unit": "Spring 1: States of matter (Marvellous Medicine and How Far Can Sound Travel?)",
+      "n": 9,
+      "title": "Water in three states: observing ice, water and steam",
+      "duration": 45,
+      "bigQuestion": "Is ice still water?",
+      "objectives": [
+        "To understand that water can change between solid, liquid and gas and stay the same substance"
+      ],
+      "successCriteria": [
+        "All: name ice, water and water vapour as the three states of water",
+        "Most: describe what we see as ice melts and water boils",
+        "Some: explain that steam we see is tiny water droplets and water vapour is invisible"
+      ],
+      "crossCurricular": "Geography: water in rivers, ice at the poles and clouds",
+      "smsc": "Spiritual: gratitude for water, a mercy from Allah",
+      "keywords": [
+        {
+          "term": "ice",
+          "def": "water as a solid"
+        },
+        {
+          "term": "water vapour",
+          "def": "water as a gas; it is invisible"
+        },
+        {
+          "term": "steam",
+          "def": "the mist of tiny water drops above boiling water"
+        },
+        {
+          "term": "observe",
+          "def": "look carefully and notice"
+        },
+        {
+          "term": "change of state",
+          "def": "when a material turns from one state to another"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You see a white cloud above a boiling kettle. Is that cloud a gas?",
+        "a": "Not quite: the cloud is tiny water drops. The gas (water vapour) is invisible, just at the spout."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Have you seen the water that you drink? Is it you who brought it down from the clouds, or are We the One who sends it down?' (al-Waqi'ah 56:68-69). The same water moves between ice, liquid and vapour, and Allah sends it back to us as rain.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Is milk a solid, liquid or gas?",
+          "a": "Liquid",
+          "mins": 1,
+          "options": [
+            "Solid",
+            "Liquid",
+            "Gas"
+          ]
+        },
+        {
+          "q": "Name one property of a gas.",
+          "a": "For example: it spreads to fill a space; it can be squashed.",
+          "mins": 1
+        },
+        {
+          "q": "Why is sand a solid?",
+          "a": "Each grain keeps its shape.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "One substance, three states",
+          "bullets": [
+            "Solid: ice",
+            "Liquid: water",
+            "Gas: water vapour"
+          ],
+          "note": "Show an ice cube melting on a plate on camera.",
+          "cycle": [
+            "Ice (solid)",
+            "melts",
+            "Water (liquid)",
+            "evaporates or boils",
+            "Water vapour (gas)",
+            "condenses back"
+          ]
+        },
+        {
+          "heading": "Watch a kettle (teacher only)",
+          "bullets": [
+            "Only an adult boils water",
+            "Never touch steam: it burns",
+            "Watch from a safe distance"
+          ],
+          "note": "Teacher demonstrates on camera. Point out the clear gap at the spout: invisible water vapour."
+        },
+        {
+          "heading": "What we observe",
+          "bullets": [
+            "Ice: hard, cold, keeps its shape",
+            "Water: flows, takes the cup's shape",
+            "Vapour: invisible, spreads out"
+          ],
+          "note": "Model good observation words: 'I notice...'",
+          "table": {
+            "head": [
+              "State",
+              "What we see",
+              "Shape"
+            ],
+            "rows": [
+              [
+                "Ice",
+                "hard, clear or white",
+                "keeps its own shape"
+              ],
+              [
+                "Water",
+                "clear, runny",
+                "takes the container's shape"
+              ],
+              [
+                "Water vapour",
+                "invisible",
+                "spreads to fill the room"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds.",
+          "check": {
+            "q": "Water vapour is...",
+            "options": [
+              "a solid",
+              "a liquid",
+              "an invisible gas",
+              "the white cloud we see"
+            ],
+            "answer": 2,
+            "why": "Water vapour is invisible. The white cloud is tiny liquid drops that have cooled."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "What state is ice?",
+          "a": "Solid.",
+          "mins": 2,
+          "model": "Ask: does ice keep its shape?\nYes.\nThings that keep their shape are solids.\nSo ice is a solid."
+        },
+        {
+          "q": "What happens to an ice cube left on a warm plate?",
+          "a": "It melts into liquid water.",
+          "mins": 1
+        },
+        {
+          "q": "Is the steam cloud we see a gas?",
+          "a": "No, it is tiny drops of liquid water; the gas is invisible.",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Put an ice cube on a saucer. Observe it every 5 minutes for 15 minutes. Write what you notice each time.",
+          "a": "For example: 0 min hard and dry; 5 min a puddle forming; 10 min smaller and rounder; 15 min mostly water.",
+          "mins": 8,
+          "model": "Teacher shows the first observation: 'At 0 minutes the ice is hard, cold and has sharp edges.\nThere is no water on the saucer.'"
+        },
+        {
+          "q": "Extend: Draw the three states of water and label each one.",
+          "a": "Ice (solid), water (liquid), water vapour (gas).",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Where in nature do we find water as a solid, a liquid and a gas?",
+          "a": "Solid: glaciers, snow; liquid: rivers, sea, rain; gas: water vapour in the air.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Ice is water as a...",
+          "a": "A) solid",
+          "mins": 1,
+          "options": [
+            "Solid",
+            "Liquid",
+            "Gas"
+          ]
+        },
+        {
+          "q": "Big question: is ice still water?",
+          "a": "Yes: it is the same substance in a different state.",
+          "mins": 2
+        }
+      ],
+      "homework": "With an adult, find water in all three states at home (ice in the freezer, water from a tap, vapour from a kettle or a hot bath) and write one sentence about each.",
+      "send": "SEND: observation sheet with picture prompts. EAL: melt, ice, vapour with gestures. Stretch: explain why ice melts faster in a warm room.",
+      "resources": [
+        "Tarbiyyah Primary Science Long Term Plan 2023-24, Year 4 Spring (Cornerstones Marvellous Medicine)",
+        "Home practical guide and safety card: ice observation (portal worksheet; adult boils water, never touch steam)",
+        "Ice cubes and a saucer",
+        "A timer",
+        "Observation table (portal worksheet)",
+        "Science exercise book and pencil"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "melting ice cube on plate",
+          "alt": "An ice cube melting on a plate",
+          "for": "hook"
+        },
+        {
+          "find": "glacier ice",
+          "alt": "A glacier: water as a solid",
+          "for": "keywords"
+        },
+        {
+          "find": "kettle steam",
+          "alt": "Steam above a kettle",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: States of matter (Marvellous Medicine and How Far Can Sound Travel?)",
       "n": 2,
       "title": "Changes of state: melting and freezing",
       "duration": 45,
+      "bigQuestion": "Why does chocolate melt in your hand but not in the fridge?",
       "objectives": [
-        "Describe melting and freezing",
-        "Measure temperature accurately",
-        "Know the melting and freezing point of water is 0 degrees Celsius"
+        "To understand that heating melts solids and cooling freezes liquids"
       ],
+      "successCriteria": [
+        "All: sort changes into melting or freezing",
+        "Most: give the melting point of ice as 0 °C",
+        "Some: explain why different materials melt at different temperatures"
+      ],
+      "crossCurricular": "Design and technology: melting chocolate and setting jelly in cooking",
+      "smsc": "Moral: taking care around hot things and helping adults safely in the kitchen",
       "keywords": [
-        { "term": "melting", "def": "when a solid turns into a liquid" },
-        { "term": "freezing", "def": "when a liquid turns into a solid" },
-        { "term": "melting point", "def": "the temperature at which a solid melts" },
-        { "term": "thermometer", "def": "a tool for measuring temperature" }
+        {
+          "term": "melt",
+          "def": "change from a solid to a liquid by heating"
+        },
+        {
+          "term": "freeze",
+          "def": "change from a liquid to a solid by cooling"
+        },
+        {
+          "term": "heat",
+          "def": "warm something up"
+        },
+        {
+          "term": "melting point",
+          "def": "the temperature at which a solid melts"
+        },
+        {
+          "term": "degrees Celsius",
+          "def": "the unit for temperature, written °C"
+        }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Butter, chocolate and ice all melt. Which do you think melts first on a warm day, and why?",
+        "a": "Ice and butter melt at lower temperatures than most chocolate; each material has its own melting point."
+      },
       "starter": [
-        "Bismillah. Name the three states of matter.",
-        "Give an example of each.",
-        "What happens to ice on a warm day?"
+        {
+          "q": "Name the three states of water.",
+          "a": "Ice, water and water vapour.",
+          "mins": 1
+        },
+        {
+          "q": "Ice is a...",
+          "a": "Solid",
+          "mins": 1,
+          "options": [
+            "Solid",
+            "Liquid"
+          ]
+        },
+        {
+          "q": "Which state flows?",
+          "a": "Liquid",
+          "mins": 1
+        }
       ],
       "teach": [
         {
           "heading": "Melting",
-          "bullets": ["Heating turns solids to liquids", "Ice melts into water", "Chocolate also melts"],
-          "note": "Show an ice cube video or let children place a safe ice cube on a plate at home. Melting needs heat energy."
+          "bullets": [
+            "Heating a solid can melt it",
+            "It becomes a liquid",
+            "Ice melts at 0 °C"
+          ],
+          "note": "Ask: what makes ice melt faster? Warmth."
         },
         {
           "heading": "Freezing",
-          "bullets": ["Cooling turns liquids to solids", "Water freezes into ice", "It is the reverse of melting"],
-          "note": "Freezing and melting are reversible. Many materials can be reversed (not all changes can; for example, baking a cake)."
+          "bullets": [
+            "Cooling a liquid can freeze it",
+            "It becomes a solid",
+            "Water freezes at 0 °C"
+          ],
+          "note": "Ice lollies and ice cubes: liquid put in a freezer.",
+          "cycle": [
+            "Solid",
+            "heat it: melts",
+            "Liquid",
+            "cool it: freezes",
+            "Solid again"
+          ]
         },
         {
-          "heading": "Temperature",
-          "bullets": ["Measured in degrees Celsius", "Water melts and freezes at 0 °C", "Different materials have different melting points"],
-          "note": "Show how to read a thermometer. Chocolate melts at a little below body temperature, which is why it melts in your hand. Different materials have different melting points."
+          "heading": "Melting points differ",
+          "bullets": [
+            "Each material melts at its own temperature"
+          ],
+          "note": "These are approximate values.",
+          "chart": {
+            "kind": "bar",
+            "title": "Melting points (approximate)",
+            "labels": [
+              "Ice",
+              "Butter",
+              "Chocolate",
+              "Candle wax"
+            ],
+            "values": [
+              0,
+              32,
+              34,
+              60
+            ],
+            "unit": "°C"
+          }
         },
         {
-          "heading": "Safe investigation",
-          "bullets": ["Predict which ice cube melts first", "Time it", "Record in a table"],
-          "note": "Safe at-home practical: put one ice cube on a metal spoon and one on a plastic spoon; time which melts first. Stay away from hot water; no kettles for children."
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds.",
+          "check": {
+            "q": "Liquid water is put in a freezer. What happens?",
+            "options": [
+              "It melts",
+              "It freezes",
+              "It evaporates",
+              "Nothing"
+            ],
+            "answer": 1,
+            "why": "Cooling a liquid makes it freeze into a solid."
+          }
         }
       ],
       "practice": [
-        "At what temperature does water freeze?",
-        "Name something that melts when heated.",
-        "If ice melts, can it change back to ice? How?"
+        {
+          "q": "Chocolate in a warm hand. Melting or freezing?",
+          "a": "Melting: the hand heats it.",
+          "mins": 2,
+          "model": "Is it being heated or cooled?\nThe hand is warm, so heated.\nHeating a solid makes it melt.\nSo it is melting."
+        },
+        {
+          "q": "Juice put in a freezer. What happens?",
+          "a": "It freezes into a solid (ice lolly).",
+          "mins": 1
+        },
+        {
+          "q": "At what temperature does ice melt?",
+          "a": "0 °C",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Record results of the ice cube race in a table and draw a bar chart.",
-        "Explain in two sentences why an ice cube melts faster on a metal spoon.",
-        "Draw a diagram: solid to liquid (melting) and liquid to solid (freezing), with arrows."
+        {
+          "q": "Core: Put a small piece of butter, chocolate and ice on three saucers in the same warm place. Which melts first? Record your order.",
+          "a": "Usually ice first, then butter, then chocolate; accept pupils' own careful observations.",
+          "mins": 7,
+          "model": "Teacher sets up all three on camera: same size pieces, same place, start the timer together."
+        },
+        {
+          "q": "Extend: Use the chart to explain your order.",
+          "a": "Materials with lower melting points melt first at the same temperature.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why does a candle melt near the flame but stay solid at the bottom?",
+          "a": "Only the wax near the flame reaches its melting point (about 60 °C).",
+          "mins": 2
+        }
       ],
       "exit": [
-        "What is melting?",
-        "What temperature is the freezing point of water?"
+        {
+          "q": "Heating a solid can make it...",
+          "a": "B) melt",
+          "mins": 1,
+          "options": [
+            "Freeze",
+            "Melt"
+          ]
+        },
+        {
+          "q": "Big question: why does chocolate melt in your hand but not in the fridge?",
+          "a": "Your hand is warmer than its melting point; the fridge is colder.",
+          "mins": 2
+        }
       ],
-      "homework": "Put water in a small container in the freezer (ask a grown-up). Check it after a few hours and record what happens.",
-      "send": "SEND/EAL: use a timeline with pictures and the words melting and freezing. Stretch: explain why salt on icy roads helps (it lowers freezing point)."
+      "homework": "Make a list of three things in your kitchen that melt and three that freeze.",
+      "send": "SEND: real ice and chocolate, picture word mat. EAL: melt, freeze, heat, cool. Stretch: find out the melting point of another material and add it to the chart.",
+      "resources": [
+        "Tarbiyyah Primary Science Long Term Plan 2023-24, Year 4 Spring (Cornerstones Marvellous Medicine)",
+        "Home practical guide and safety card: melting race (portal worksheet; no cooker, no hot water)",
+        "Small pieces of butter, chocolate and ice; three saucers",
+        "A timer",
+        "Science exercise book and pencil"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "melted chocolate",
+          "alt": "Melted chocolate",
+          "for": "hook"
+        },
+        {
+          "find": "ice lolly",
+          "alt": "An ice lolly (frozen juice)",
+          "for": "keywords"
+        },
+        {
+          "find": "candle wax melting",
+          "alt": "Candle wax melting near the flame",
+          "for": "teach:3"
+        }
+      ]
     },
     {
-      "unit": "States of matter",
-      "n": 3,
-      "title": "Evaporation and condensation",
+      "unit": "Spring 1: States of matter (Marvellous Medicine and How Far Can Sound Travel?)",
+      "n": 10,
+      "title": "Measuring temperature: where does ice melt fastest?",
       "duration": 45,
+      "bigQuestion": "Where in your home would an ice cube melt fastest?",
       "objectives": [
-        "Describe evaporation and condensation",
-        "Explain that temperature affects the speed of evaporation",
-        "Observe condensation and explain what is happening"
+        "To understand how to measure temperature and use it to explain how fast ice melts"
       ],
+      "successCriteria": [
+        "All: read a thermometer in degrees Celsius",
+        "Most: run a fair test of ice melting in different places",
+        "Some: explain the link between temperature and melting time"
+      ],
+      "crossCurricular": "Maths: reading scales and negative numbers",
+      "smsc": "Social: sharing results fairly and listening to other groups",
       "keywords": [
-        { "term": "evaporation", "def": "when a liquid turns into a gas" },
-        { "term": "condensation", "def": "when a gas turns into a liquid" },
-        { "term": "water vapour", "def": "water as a gas in the air" },
-        { "term": "boiling", "def": "when a liquid turns into a gas quickly, with bubbles" }
+        {
+          "term": "temperature",
+          "def": "how hot or cold something is"
+        },
+        {
+          "term": "thermometer",
+          "def": "a tool that measures temperature"
+        },
+        {
+          "term": "degrees Celsius",
+          "def": "the unit for temperature, written °C"
+        },
+        {
+          "term": "fair test",
+          "def": "a test where we change only one thing"
+        },
+        {
+          "term": "predict",
+          "def": "say what you think will happen"
+        }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "A freezer, a fridge and a sunny windowsill. Put them in order from coldest to warmest. How could you check?",
+        "a": "Freezer, fridge, windowsill. Check with a thermometer."
+      },
       "starter": [
-        "Bismillah. What is melting?",
-        "What is the melting point of ice?",
-        "Where does a puddle go on a sunny day?"
+        {
+          "q": "What does melting mean?",
+          "a": "Changing from a solid to a liquid by heating.",
+          "mins": 1
+        },
+        {
+          "q": "Water freezes at...",
+          "a": "0 °C",
+          "mins": 1,
+          "options": [
+            "0 °C",
+            "100 °C"
+          ]
+        },
+        {
+          "q": "In a fair test, how many things do we change?",
+          "a": "One",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Reading a thermometer",
+          "bullets": [
+            "Read the number by the top of the liquid or on the screen",
+            "Say the number and °C"
+          ],
+          "note": "Show a kitchen thermometer on camera. Model reading 21 °C.",
+          "numberline": {
+            "min": -20,
+            "max": 40,
+            "step": 5,
+            "marks": [
+              {
+                "at": -18,
+                "label": "freezer"
+              },
+              {
+                "at": 4,
+                "label": "fridge"
+              },
+              {
+                "at": 20,
+                "label": "room"
+              },
+              {
+                "at": 37,
+                "label": "body"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "Our fair test",
+          "bullets": [
+            "Change: where the ice is",
+            "Same: size of ice cube, same saucer",
+            "Measure: time to melt"
+          ],
+          "note": "Ask: what must stay the same?"
+        },
+        {
+          "heading": "Example results",
+          "bullets": [
+            "Warmer place, faster melting"
+          ],
+          "note": "Discuss the pattern.",
+          "table": {
+            "head": [
+              "Place",
+              "Temperature (°C)",
+              "Time to melt (min)"
+            ],
+            "rows": [
+              [
+                "Fridge",
+                "4",
+                "95"
+              ],
+              [
+                "Kitchen table",
+                "20",
+                "40"
+              ],
+              [
+                "Sunny windowsill",
+                "28",
+                "25"
+              ],
+              [
+                "Near a radiator",
+                "35",
+                "15"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds.",
+          "check": {
+            "q": "Which place melted ice fastest?",
+            "options": [
+              "Fridge",
+              "Kitchen table",
+              "Sunny windowsill",
+              "Near a radiator"
+            ],
+            "answer": 3,
+            "why": "It was warmest near the radiator (35 °C), so the ice melted in 15 minutes."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Read the table: how long did ice take to melt on the kitchen table?",
+          "a": "40 minutes.",
+          "mins": 2,
+          "model": "Find the row 'Kitchen table'.\nLook across to the column 'Time to melt'.\nIt says 40.\nSo 40 minutes."
+        },
+        {
+          "q": "What is the pattern?",
+          "a": "The higher the temperature, the shorter the melting time.",
+          "mins": 1
+        },
+        {
+          "q": "Normal body temperature is about...",
+          "a": "37 °C",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Place three equal ice cubes on saucers in three places at home (one in the fridge). Check every 10 minutes. Record which melts first.",
+          "a": "Pupils' own; the warmest place melts first.",
+          "mins": 7,
+          "model": "Teacher shows the setup: same tray of ice cubes, label each saucer, write the start time."
+        },
+        {
+          "q": "Extend: Write a conclusion: 'The ice melted fastest ... because ...'",
+          "a": "For example: The ice melted fastest by the window because it was the warmest place.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why is the temperature in a fridge useful for keeping food fresh?",
+          "a": "It is cold (about 4 °C), which slows down the growth of germs.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Temperature is measured in...",
+          "a": "B) degrees Celsius",
+          "mins": 1,
+          "options": [
+            "Centimetres",
+            "Degrees Celsius"
+          ]
+        },
+        {
+          "q": "Big question: where in your home would an ice cube melt fastest?",
+          "a": "The warmest place, because a higher temperature melts ice faster.",
+          "mins": 2
+        }
+      ],
+      "homework": "Finish your ice test and write your conclusion. If you have a thermometer, record the temperature of each place.",
+      "send": "SEND: a big-print number line for reading temperatures. EAL: hot, warm, cold, temperature. Stretch: plot the example results as a bar chart.",
+      "resources": [
+        "Tarbiyyah Primary Science Long Term Plan 2023-24, Year 4 Spring (Cornerstones Marvellous Medicine)",
+        "Home practical guide and safety card: ice melting test (portal worksheet; never touch radiators)",
+        "Ice cubes, three saucers, a timer",
+        "A kitchen thermometer if available",
+        "Results table (portal worksheet)",
+        "Science exercise book and pencil"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "thermometer celsius scale",
+          "alt": "A thermometer showing degrees Celsius",
+          "for": "keywords"
+        },
+        {
+          "find": "digital kitchen thermometer",
+          "alt": "A digital kitchen thermometer",
+          "for": "teach:1"
+        },
+        {
+          "find": "ice cube on saucer",
+          "alt": "An ice cube on a saucer",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: States of matter (Marvellous Medicine and How Far Can Sound Travel?)",
+      "n": 3,
+      "title": "Evaporation: where does the water go?",
+      "duration": 45,
+      "bigQuestion": "Where does a puddle go on a sunny day?",
+      "objectives": [
+        "To understand that evaporation turns liquid water into water vapour"
+      ],
+      "successCriteria": [
+        "All: say that water evaporates and becomes water vapour",
+        "Most: name things that make evaporation faster",
+        "Some: explain why washing dries faster on a warm, windy day"
+      ],
+      "crossCurricular": "Geography: drying of rivers and lakes in hot countries",
+      "smsc": "Moral: not wasting water, which Allah gives us",
+      "keywords": [
+        {
+          "term": "evaporation",
+          "def": "when a liquid turns into a gas"
+        },
+        {
+          "term": "water vapour",
+          "def": "water as an invisible gas"
+        },
+        {
+          "term": "dry",
+          "def": "with no water left"
+        },
+        {
+          "term": "rate",
+          "def": "how fast something happens"
+        },
+        {
+          "term": "heat",
+          "def": "warm something up"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Wet washing on a line slowly dries. The water does not drip onto the ground. Where does it go?",
+        "a": "It evaporates into the air as invisible water vapour."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We sent down from the sky water in due measure and settled it in the earth' (al-Mu'minun 23:18). Evaporation is part of how Allah moves water from the ground and sea back up to the clouds.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "What is melting?",
+          "a": "A solid changing to a liquid when heated.",
+          "mins": 1
+        },
+        {
+          "q": "Water vapour is a...",
+          "a": "Gas",
+          "mins": 1,
+          "options": [
+            "Solid",
+            "Liquid",
+            "Gas"
+          ]
+        },
+        {
+          "q": "At what temperature does ice melt?",
+          "a": "0 °C",
+          "mins": 1
+        }
       ],
       "teach": [
         {
           "heading": "Evaporation",
-          "bullets": ["Liquid turns to gas", "Happens faster when warm", "Wet washing dries"],
-          "note": "Ask: where did the puddle go? It evaporated into the air as water vapour. Misconception: evaporation only happens at boiling point; it happens at any temperature."
+          "bullets": [
+            "Liquid water turns into water vapour",
+            "It happens at the surface",
+            "It does not need boiling"
+          ],
+          "note": "Wipe a wet cloth on a board on camera; watch the mark disappear."
         },
         {
-          "heading": "Condensation",
-          "bullets": ["Gas turns to liquid", "Happens when warm air meets a cold surface", "Mirrors mist up in bathrooms"],
-          "note": "Safe demo: a cold glass of water on a warm day gets droplets on the outside. The droplets come from water vapour in the air, not from inside the glass. Common misconception."
+          "heading": "What speeds it up?",
+          "bullets": [
+            "Warmth",
+            "Wind or moving air",
+            "A bigger surface area"
+          ],
+          "note": "Ask: why do we spread washing out instead of leaving it in a pile?",
+          "diagram": {
+            "centre": "faster evaporation",
+            "items": [
+              "warmer",
+              "windier",
+              "spread out (big surface)",
+              "drier air"
+            ]
+          }
         },
         {
-          "heading": "Boiling",
-          "bullets": ["Boiling is fast evaporation", "Water boils at 100 °C", "Never touch boiling water"],
-          "note": "Show a video of a kettle or saucepan. Children must not handle boiling water. Steam is hot water vapour; the white cloud is tiny droplets."
+          "heading": "Everyday evaporation",
+          "bullets": [
+            "Puddles drying",
+            "Washing drying",
+            "Wet hair drying"
+          ],
+          "note": "Ask pupils for examples from home."
         },
         {
-          "heading": "Fair test on drying",
-          "bullets": ["Wet cloths in different places", "Same size, same water", "Measure how long they take to dry"],
-          "note": "Safe at-home practical: two wet cloths of the same size, one in sunlight and one in shade. Link to the variables: only change location."
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds.",
+          "check": {
+            "q": "Which washing dries fastest?",
+            "options": [
+              "Folded in a cold room",
+              "Spread out on a warm, windy day",
+              "In a closed bag",
+              "Rolled up in a towel"
+            ],
+            "answer": 1,
+            "why": "Warmth, wind and a big surface all speed up evaporation."
+          }
         }
       ],
       "practice": [
-        "Which is evaporation: ice to water or water to water vapour?",
-        "Why do bathroom mirrors steam up?",
-        "Why does washing dry faster on a warm, windy day?"
+        {
+          "q": "Why does a puddle dry faster on a sunny day?",
+          "a": "The Sun warms the water, so it evaporates faster.",
+          "mins": 2,
+          "model": "What is different?\nSunny means warmer.\nWarmth speeds up evaporation.\nSo the puddle dries faster."
+        },
+        {
+          "q": "What does water become when it evaporates?",
+          "a": "Water vapour (a gas).",
+          "mins": 1
+        },
+        {
+          "q": "Name one thing other than heat that speeds up drying.",
+          "a": "Wind or spreading it out.",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Draw a diagram showing evaporation and condensation with arrows and labels.",
-        "Write a prediction for the wet cloth test and explain it.",
-        "Explain why drops appear on the outside of a cold glass."
+        {
+          "q": "Core: Make two wet patches with a damp cloth on a plate: one by a window, one in a shady corner. Which dries first?",
+          "a": "Usually the warmer place dries first.",
+          "mins": 6,
+          "model": "Teacher shows it: same cloth, same number of wipes, note the time."
+        },
+        {
+          "q": "Extend: Explain your result using the word 'evaporation'.",
+          "a": "The patch in the warmer place dried first because water evaporates faster when it is warmer.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why do clothes take longer to dry on a cold, still day?",
+          "a": "Low temperature and no wind mean water evaporates slowly.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "What is condensation?",
-        "Does water evaporate only when it boils? Explain."
+        {
+          "q": "Evaporation turns a liquid into a...",
+          "a": "B) gas",
+          "mins": 1,
+          "options": [
+            "Solid",
+            "Gas"
+          ]
+        },
+        {
+          "q": "Big question: where does a puddle go on a sunny day?",
+          "a": "It evaporates into the air as water vapour.",
+          "mins": 2
+        }
       ],
-      "homework": "Put a small amount of water in a saucer on a windowsill and mark the level. Check after two days. What happened?",
-      "send": "SEND/EAL: use arrows and key word cards. Stretch: explain why a lid on a pan stops water vapour escaping."
+      "homework": "Notice three things drying at home (washing, dishes, wet hair). Write which dried fastest and why.",
+      "send": "SEND: picture sequence of a drying puddle. EAL: evaporate, vapour, dry. Stretch: suggest how to test whether wind speeds up drying.",
+      "resources": [
+        "Tarbiyyah Primary Science Long Term Plan 2023-24, Year 4 Spring (Cornerstones Marvellous Medicine)",
+        "Home practical guide and safety card: evaporation patches (portal worksheet)",
+        "A damp cloth and two plates",
+        "Science exercise book and pencil"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "puddle drying sun",
+          "alt": "A puddle drying in the sun",
+          "for": "hook"
+        },
+        {
+          "find": "washing line clothes drying",
+          "alt": "Washing drying on a line",
+          "for": "keywords"
+        },
+        {
+          "find": "salt pan evaporation",
+          "alt": "Salt pans where sea water evaporates",
+          "for": "teach:3"
+        }
+      ]
     },
     {
-      "unit": "States of matter",
-      "n": 4,
-      "title": "The water cycle",
+      "unit": "Spring 1: States of matter (Marvellous Medicine and How Far Can Sound Travel?)",
+      "n": 11,
+      "title": "Fair test: what affects how fast washing dries?",
       "duration": 45,
+      "bigQuestion": "Does a tea towel dry faster spread out or folded up?",
       "objectives": [
-        "Describe the stages of the water cycle",
-        "Link evaporation and condensation to the water cycle",
-        "Explain why rain is important"
+        "To understand how to plan and carry out a fair test about evaporation"
       ],
+      "successCriteria": [
+        "All: make a prediction about drying",
+        "Most: keep all but one thing the same",
+        "Some: use results to say whether the prediction was right and why"
+      ],
+      "crossCurricular": "Maths: reading time in minutes and comparing results",
+      "smsc": "Moral: honesty in recording results",
       "keywords": [
-        { "term": "water cycle", "def": "the continuous movement of water around the Earth" },
-        { "term": "precipitation", "def": "water falling from clouds as rain, snow or hail" },
-        { "term": "collection", "def": "water gathering in rivers, lakes and seas" },
-        { "term": "cloud", "def": "a mass of tiny water droplets in the sky" }
+        {
+          "term": "fair test",
+          "def": "a test where we change only one thing"
+        },
+        {
+          "term": "prediction",
+          "def": "what we think will happen"
+        },
+        {
+          "term": "variable",
+          "def": "something that can change in a test"
+        },
+        {
+          "term": "evaporation",
+          "def": "when a liquid turns into a gas"
+        },
+        {
+          "term": "conclusion",
+          "def": "what the results tell us"
+        }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two identical wet tea towels: one spread flat, one folded into a small square. Which dries first?",
+        "a": "The spread one: more surface for water to evaporate from."
+      },
       "starter": [
-        "Bismillah. What is evaporation?",
-        "What is condensation?",
-        "Where does rain come from?"
+        {
+          "q": "What is evaporation?",
+          "a": "When a liquid turns into a gas.",
+          "mins": 1
+        },
+        {
+          "q": "Does warmth speed up or slow down drying?",
+          "a": "Speeds it up",
+          "mins": 1,
+          "options": [
+            "Speeds it up",
+            "Slows it down"
+          ]
+        },
+        {
+          "q": "In a fair test, how many things do we change?",
+          "a": "One",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Evaporation from the sea",
-          "bullets": ["The Sun heats water", "Water evaporates", "Water vapour rises"],
-          "note": "Start with the Sun's energy. The salt stays behind when seawater evaporates. Ask 'Where does the water go?'"
+          "heading": "Our question",
+          "bullets": [
+            "Does spreading out make drying faster?",
+            "Change: spread or folded",
+            "Same: cloth, wetness, place"
+          ],
+          "note": "Write the question, then a prediction with 'because'."
         },
         {
-          "heading": "Clouds form",
-          "bullets": ["Rising air cools", "Water vapour condenses", "Tiny droplets form clouds"],
-          "note": "Link to condensation on the cold glass. Clouds are not water vapour; they are tiny liquid droplets."
+          "heading": "Plan it fairly",
+          "bullets": [
+            "Two identical cloths",
+            "Wet each with the same water",
+            "Same room, same time"
+          ],
+          "note": "Ask pupils to spot the unfair version: one cloth near a heater.",
+          "diagram": {
+            "centre": "fair test",
+            "items": [
+              "change: spread or folded",
+              "same: cloth size",
+              "same: amount of water",
+              "same: place",
+              "measure: time to dry"
+            ]
+          }
         },
         {
-          "heading": "Precipitation and collection",
-          "bullets": ["Droplets join and fall as rain", "Rain runs into rivers and seas", "The cycle repeats"],
-          "note": "Rain, snow, sleet, hail. Water runs off and soaks into the ground. Ask 'Is the water new?' (it is the same water recycled over millions of years)."
+          "heading": "Example results",
+          "bullets": [
+            "Check each cloth every 30 minutes"
+          ],
+          "note": "Read the table together.",
+          "table": {
+            "head": [
+              "Cloth",
+              "30 min",
+              "60 min",
+              "90 min"
+            ],
+            "rows": [
+              [
+                "Spread out",
+                "damp",
+                "nearly dry",
+                "dry"
+              ],
+              [
+                "Folded",
+                "wet",
+                "wet",
+                "damp"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Why it matters",
-          "bullets": ["Rain gives fresh water", "Plants and animals need it", "We should not waste water"],
-          "note": "Link to Qur'an 21:30 (Allah made every living thing from water) and to the Islamic teaching to use water carefully and not to waste it (Qur'an 7:31 forbids wastefulness)."
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds.",
+          "check": {
+            "q": "Which makes the test UNFAIR?",
+            "options": [
+              "Both cloths the same size",
+              "Same amount of water",
+              "One cloth by a heater",
+              "Both checked every 30 minutes"
+            ],
+            "answer": 2,
+            "why": "The heater changes a second thing (temperature), so we cannot tell what caused the difference."
+          }
         }
       ],
       "practice": [
-        "Put in order: rain falls, water evaporates, clouds form, water collects in the sea.",
-        "What does the Sun do in the water cycle?",
-        "How does a cloud form?"
+        {
+          "q": "Which cloth dried first in the table?",
+          "a": "The spread-out cloth (dry at 90 minutes).",
+          "mins": 2,
+          "model": "Read across each row to find 'dry'.\nSpread out: dry at 90 minutes.\nFolded: still damp at 90 minutes.\nSo the spread-out cloth dried first."
+        },
+        {
+          "q": "Why did it dry faster?",
+          "a": "More of it was open to the air, so water evaporated faster.",
+          "mins": 1
+        },
+        {
+          "q": "Name one thing kept the same.",
+          "a": "For example: cloth size, amount of water, place.",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Draw and label the water cycle with arrows, using the words evaporation, condensation, precipitation and collection.",
-        "Write a story from a drop of water travelling around the cycle.",
-        "Explain why we call it a cycle."
+        {
+          "q": "Core: Do the test at home with two small cloths (one spread, one folded). Check every 30 minutes and record in your table.",
+          "a": "Pupils' own; the spread cloth usually dries first.",
+          "mins": 7,
+          "model": "Teacher shows the start: wet both cloths with one cup of water each, squeeze gently, place side by side."
+        },
+        {
+          "q": "Extend: Write your conclusion: 'My prediction was ... because ...'",
+          "a": "For example: My prediction was right: the spread cloth dried first because more surface was open to the air.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Plan a second test to find out if wind matters. What would you change and keep the same?",
+          "a": "Change: wind (a fan or not); keep the same: cloth, water, how it is laid out, the room.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Name the stage when water vapour turns into droplets.",
-        "Where does rainwater go after it falls?"
+        {
+          "q": "A prediction is...",
+          "a": "A) what we think will happen",
+          "mins": 1,
+          "options": [
+            "What we think will happen",
+            "What did happen"
+          ]
+        },
+        {
+          "q": "Big question: does a tea towel dry faster spread out or folded up?",
+          "a": "Spread out: a bigger surface lets water evaporate faster.",
+          "mins": 2
+        }
       ],
-      "homework": "Make a water cycle in a bag: with a grown-up, put a little water in a clear zip bag, tape to a sunny window and watch for a few days. Draw what you see.",
-      "send": "SEND/EAL: provide a cut-and-stick diagram. Stretch: explain what would happen if there were no Sun."
+      "homework": "Finish your drying test and write your conclusion in full sentences.",
+      "send": "SEND: a planning frame with 'I will change / keep the same / measure'. EAL: change, same, measure. Stretch: plan the wind test.",
+      "resources": [
+        "Tarbiyyah Primary Science Long Term Plan 2023-24, Year 4 Spring (Cornerstones Marvellous Medicine)",
+        "Home practical guide and safety card: drying test (portal worksheet)",
+        "Fair test planning frame (portal worksheet, printable or on a drawing tablet)",
+        "Two identical small cloths, a cup of water, a timer",
+        "Science exercise book and pencil"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "tea towel drying",
+          "alt": "A tea towel hanging to dry",
+          "for": "hook"
+        },
+        {
+          "find": "clothes drying rack",
+          "alt": "A clothes drying rack",
+          "for": "keywords"
+        },
+        {
+          "find": "wet cloth",
+          "alt": "A wet cloth",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: States of matter (Marvellous Medicine and How Far Can Sound Travel?)",
+      "n": 12,
+      "title": "Condensation: making water appear",
+      "duration": 45,
+      "bigQuestion": "Why does a cold can of juice get wet on the outside?",
+      "objectives": [
+        "To understand that condensation is water vapour cooling and turning back into liquid water"
+      ],
+      "successCriteria": [
+        "All: say that condensation makes water droplets",
+        "Most: explain that the droplets come from water vapour in the air",
+        "Some: model evaporation and condensation with a cup and cling film"
+      ],
+      "crossCurricular": "Design and technology: why bathroom mirrors steam up and how fans help",
+      "smsc": "Spiritual: noticing Allah's signs in everyday things such as dew",
+      "keywords": [
+        {
+          "term": "condensation",
+          "def": "when a gas cools and turns into a liquid"
+        },
+        {
+          "term": "water vapour",
+          "def": "water as an invisible gas"
+        },
+        {
+          "term": "droplet",
+          "def": "a tiny drop of liquid"
+        },
+        {
+          "term": "cool",
+          "def": "make colder"
+        },
+        {
+          "term": "model",
+          "def": "a small copy that shows how something works"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "The outside of a cold glass of water gets wet. The water is not leaking through. Where does it come from?",
+        "a": "From the air: water vapour cools on the cold glass and condenses into droplets."
+      },
+      "starter": [
+        {
+          "q": "Evaporation turns liquid into...",
+          "a": "Gas (water vapour)",
+          "mins": 1,
+          "options": [
+            "Solid",
+            "Gas"
+          ]
+        },
+        {
+          "q": "Name one thing that speeds up drying.",
+          "a": "Warmth, wind or spreading out.",
+          "mins": 1
+        },
+        {
+          "q": "What is a fair test?",
+          "a": "A test where we change only one thing.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Condensation",
+          "bullets": [
+            "Water vapour meets a cold surface",
+            "It cools and becomes liquid",
+            "Droplets appear"
+          ],
+          "note": "Breathe on a cold mirror (or spoon from the fridge) on camera: mist appears."
+        },
+        {
+          "heading": "Opposite of evaporation",
+          "bullets": [
+            "Evaporation: liquid to gas (warming)",
+            "Condensation: gas to liquid (cooling)"
+          ],
+          "note": "Link to the water cycle next lesson.",
+          "compare": {
+            "left": {
+              "title": "Evaporation",
+              "points": [
+                "liquid to gas",
+                "needs warming",
+                "puddles drying"
+              ]
+            },
+            "right": {
+              "title": "Condensation",
+              "points": [
+                "gas to liquid",
+                "needs cooling",
+                "steamy windows"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Cup and cling film model",
+          "bullets": [
+            "Warm (not hot) water in a clear cup",
+            "Cling film on top, an ice cube on the film",
+            "Watch droplets form under the film"
+          ],
+          "note": "Adult pours warm tap water. Droplets under the film: evaporation then condensation.",
+          "cycle": [
+            "Warm water evaporates",
+            "Vapour rises",
+            "Meets the cold film",
+            "Condenses into droplets",
+            "Drips back down"
+          ]
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds.",
+          "check": {
+            "q": "Where do the drops on a cold can come from?",
+            "options": [
+              "Through the can",
+              "Water vapour in the air",
+              "The juice leaking",
+              "Rain"
+            ],
+            "answer": 1,
+            "why": "Water vapour in the air cools on the cold can and condenses."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Why does a bathroom mirror steam up after a shower?",
+          "a": "Water vapour from the shower condenses on the cold mirror.",
+          "mins": 2,
+          "model": "Where is the water vapour from?\nThe warm shower.\nWhat does it meet?\nThe cold mirror.\nCooling makes vapour condense.\nSo droplets cover the mirror."
+        },
+        {
+          "q": "Is condensation warming or cooling?",
+          "a": "Cooling.",
+          "mins": 1
+        },
+        {
+          "q": "What is the opposite of condensation?",
+          "a": "Evaporation.",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Make the cup and cling film model. After 10 minutes, draw what you see and label 'evaporation' and 'condensation'.",
+          "a": "Droplets under the cling film; arrows up from the water (evaporation), droplets on the film (condensation).",
+          "mins": 7,
+          "model": "Teacher shows it first: warm tap water in the cup, cover tightly, ice cube on top, wait."
+        },
+        {
+          "q": "Extend: Write 3 sentences explaining what happened in your cup.",
+          "a": "The warm water evaporated. The vapour rose and touched the cold film. It cooled and condensed into droplets.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why do car windows mist up on the inside on a cold morning?",
+          "a": "Warm, damp air from people's breath condenses on the cold glass.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Condensation turns a gas into a...",
+          "a": "A) liquid",
+          "mins": 1,
+          "options": [
+            "Liquid",
+            "Solid"
+          ]
+        },
+        {
+          "q": "Big question: why does a cold can of juice get wet on the outside?",
+          "a": "Water vapour in the air cools on the can and condenses into droplets.",
+          "mins": 2
+        }
+      ],
+      "homework": "Find two places at home where condensation happens. Draw and label one.",
+      "send": "SEND: a ready-labelled cup diagram to complete. EAL: condense, droplet, cool. Stretch: explain where dew on grass comes from in the morning.",
+      "resources": [
+        "Tarbiyyah Primary Science Long Term Plan 2023-24, Year 4 Spring (Cornerstones Marvellous Medicine)",
+        "Home practical guide and safety card: cup and cling film model (portal worksheet; warm tap water only, adult pours)",
+        "A clear cup, cling film, warm tap water, an ice cube",
+        "Labelled diagram frame (portal worksheet)",
+        "Science exercise book and pencil"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "condensation on cold glass",
+          "alt": "Water droplets on a cold glass",
+          "for": "hook"
+        },
+        {
+          "find": "misty bathroom mirror condensation",
+          "alt": "Condensation on a mirror",
+          "for": "keywords"
+        },
+        {
+          "find": "dew drops on grass",
+          "alt": "Dew drops on grass",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: States of matter (Marvellous Medicine and How Far Can Sound Travel?)",
+      "n": 4,
+      "title": "The water cycle",
+      "duration": 45,
+      "bigQuestion": "Is the water we drink today the same water that fell as rain long ago?",
+      "objectives": [
+        "To understand how evaporation and condensation move water around the water cycle"
+      ],
+      "successCriteria": [
+        "All: put the stages of the water cycle in order",
+        "Most: name evaporation, condensation, precipitation and collection",
+        "Some: explain the role of temperature at each stage"
+      ],
+      "crossCurricular": "Geography: rivers, seas and rainfall",
+      "smsc": "Spiritual: the water cycle as a sign of Allah's care and wisdom",
+      "keywords": [
+        {
+          "term": "water cycle",
+          "def": "the journey of water from land and sea to clouds and back"
+        },
+        {
+          "term": "evaporation",
+          "def": "liquid water turning into vapour"
+        },
+        {
+          "term": "condensation",
+          "def": "vapour cooling into tiny droplets"
+        },
+        {
+          "term": "precipitation",
+          "def": "water falling as rain, snow or hail"
+        },
+        {
+          "term": "collection",
+          "def": "water gathering in seas, rivers and lakes"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Rain falls on mountains, runs into rivers and reaches the sea. So why does the sea not overflow?",
+        "a": "Water keeps evaporating from the sea, so it is always moving round the water cycle."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Do you not see that Allah drives the clouds, then joins them together, then piles them up, and you see rain come out from within them?' (an-Nur 24:43). The water cycle is Allah's way of giving fresh water to the whole earth.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "What is condensation?",
+          "a": "A gas cooling into a liquid.",
+          "mins": 1
+        },
+        {
+          "q": "Evaporation needs...",
+          "a": "Warming",
+          "mins": 1,
+          "options": [
+            "Warming",
+            "Cooling"
+          ]
+        },
+        {
+          "q": "What did you see under the cling film?",
+          "a": "Water droplets.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The cycle",
+          "bullets": [
+            "Water moves in a never-ending loop",
+            "Powered by the Sun's heat"
+          ],
+          "note": "Point to each stage in turn.",
+          "cycle": [
+            "Evaporation: the Sun warms the sea",
+            "Condensation: vapour cools into clouds",
+            "Precipitation: rain, snow or hail",
+            "Collection: rivers, lakes and seas"
+          ]
+        },
+        {
+          "heading": "Up and down",
+          "bullets": [
+            "Warm air rises with vapour",
+            "High up it is colder",
+            "Vapour condenses into clouds"
+          ],
+          "note": "Link to the cup model: the cold cling film is like the cold air high up."
+        },
+        {
+          "heading": "Order the stages",
+          "bullets": [
+            "Number the cards"
+          ],
+          "note": "Pupils show the order on fingers.",
+          "sort": {
+            "columns": [
+              "Goes up",
+              "Comes down or collects"
+            ],
+            "cards": [
+              "evaporation",
+              "rain falling",
+              "vapour rising",
+              "rivers flowing to the sea",
+              "snow",
+              "steam from a lake"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              1,
+              0
+            ]
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds.",
+          "check": {
+            "q": "Clouds form by...",
+            "options": [
+              "evaporation",
+              "condensation",
+              "melting",
+              "freezing"
+            ],
+            "answer": 1,
+            "why": "Water vapour cools high up and condenses into tiny droplets: clouds."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Put in order: condensation, collection, evaporation, precipitation.",
+          "a": "Evaporation, condensation, precipitation, collection.",
+          "mins": 2,
+          "model": "Start where the Sun warms the sea: evaporation.\nVapour cools into clouds: condensation.\nRain falls: precipitation.\nIt gathers in rivers and seas: collection."
+        },
+        {
+          "q": "What is precipitation?",
+          "a": "Water falling from clouds as rain, snow or hail.",
+          "mins": 1
+        },
+        {
+          "q": "What powers the water cycle?",
+          "a": "The Sun's heat.",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw the water cycle as a circle with 4 labelled arrows. Use all four key words.",
+          "a": "A labelled loop: evaporation (sea to sky), condensation (clouds), precipitation (rain), collection (rivers and sea).",
+          "mins": 7,
+          "model": "Teacher draws the first arrow: from the sea up to the sky, labelled 'evaporation: the Sun warms the water'."
+        },
+        {
+          "q": "Extend: Write a short story of a water drop's journey round the cycle in 5 sentences.",
+          "a": "Accept a correct sequence using the four stages.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Explain why clouds form high in the sky and not near the ground.",
+          "a": "It is colder high up, so water vapour cools and condenses there.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Rain is called...",
+          "a": "A) precipitation",
+          "mins": 1,
+          "options": [
+            "Precipitation",
+            "Evaporation"
+          ]
+        },
+        {
+          "q": "Big question: is the water we drink today the same water that fell as rain long ago?",
+          "a": "Yes: water keeps moving round the water cycle again and again.",
+          "mins": 2
+        }
+      ],
+      "homework": "Explain the water cycle to someone at home using your drawing. Ask them one question about it.",
+      "send": "SEND: a ready-made cycle diagram with word cards to stick. EAL: rain, cloud, sea with pictures. Stretch: add how a mountain makes rain more likely.",
+      "resources": [
+        "Tarbiyyah Primary Science Long Term Plan 2023-24, Year 4 Spring (Cornerstones Marvellous Medicine)",
+        "Water cycle diagram frame (portal worksheet, printable or on a drawing tablet)",
+        "Your cup and cling film model from last lesson",
+        "Science exercise book and pencil"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "water cycle diagram",
+          "alt": "A diagram of the water cycle",
+          "for": "teach:1"
+        },
+        {
+          "find": "rain clouds over sea",
+          "alt": "Rain clouds over the sea",
+          "for": "hook"
+        },
+        {
+          "find": "river flowing to sea estuary",
+          "alt": "A river flowing into the sea",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: States of matter (Marvellous Medicine and How Far Can Sound Travel?)",
+      "n": 13,
+      "title": "Sound: sources and vibrations",
+      "duration": 45,
+      "bigQuestion": "What is happening when something makes a sound?",
+      "objectives": [
+        "To understand that sounds are made when objects vibrate"
+      ],
+      "successCriteria": [
+        "All: name sources of sound",
+        "Most: say that sound is made by vibrations",
+        "Some: explain how a bigger vibration makes a louder sound"
+      ],
+      "crossCurricular": "Islamic Studies: lowering our voices and good manners in speech",
+      "smsc": "Moral: speaking gently and respecting others with our voices",
+      "keywords": [
+        {
+          "term": "sound",
+          "def": "something we hear"
+        },
+        {
+          "term": "source",
+          "def": "where a sound comes from"
+        },
+        {
+          "term": "vibrate",
+          "def": "move quickly back and forth"
+        },
+        {
+          "term": "vibration",
+          "def": "a quick back and forth movement"
+        },
+        {
+          "term": "loud",
+          "def": "a sound with a lot of energy"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Put your fingers gently on your throat and hum. What can you feel? What might that tell us about sound?",
+        "a": "A buzzing: your voice box vibrates. All sounds come from vibrations."
+      },
+      "islamicLink": {
+        "text": "Luqman advised his son: 'Lower your voice; indeed the most disagreeable of sounds is the voice of donkeys' (Luqman 31:19). Allah gave us voices that vibrate to make sound, and the Qur'an teaches us to use them gently.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Rain falling is called...",
+          "a": "Precipitation",
+          "mins": 1,
+          "options": [
+            "Precipitation",
+            "Condensation"
+          ]
+        },
+        {
+          "q": "What is evaporation?",
+          "a": "A liquid turning into a gas.",
+          "mins": 1
+        },
+        {
+          "q": "Name something in your home that makes a sound.",
+          "a": "For example: a doorbell, a kettle, a clock.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Sources of sound",
+          "bullets": [
+            "A source is where a sound starts",
+            "A clock, a voice, a drum, a bell"
+          ],
+          "note": "Ask pupils to listen for 20 seconds and list sounds at home."
+        },
+        {
+          "heading": "Vibrations",
+          "bullets": [
+            "All sounds come from vibrations",
+            "Vibrate means move quickly back and forth"
+          ],
+          "note": "Twang a ruler held on a table edge on camera. You can see it and hear it.",
+          "cycle": [
+            "Something vibrates",
+            "The air next to it vibrates",
+            "The vibrations travel",
+            "They reach our ears",
+            "We hear a sound"
+          ]
+        },
+        {
+          "heading": "Loud and quiet",
+          "bullets": [
+            "Big vibration: loud sound",
+            "Small vibration: quiet sound"
+          ],
+          "note": "Twang the ruler gently, then harder. Rice on a drum (a bowl with cling film) jumps higher when you tap harder.",
+          "compare": {
+            "left": {
+              "title": "Loud",
+              "points": [
+                "big vibrations",
+                "more energy",
+                "rice jumps high"
+              ]
+            },
+            "right": {
+              "title": "Quiet",
+              "points": [
+                "small vibrations",
+                "less energy",
+                "rice barely moves"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds.",
+          "check": {
+            "q": "What do all sounds come from?",
+            "options": [
+              "Light",
+              "Vibrations",
+              "Heat",
+              "Magnets"
+            ],
+            "answer": 1,
+            "why": "Every sound starts with something vibrating."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "When you pluck a stretched rubber band, what vibrates?",
+          "a": "The rubber band.",
+          "mins": 2,
+          "model": "Find what moves when the sound is made.\nThe band moves back and forth quickly.\nSo the rubber band vibrates."
+        },
+        {
+          "q": "How can you make the ruler sound louder?",
+          "a": "Twang it harder, making a bigger vibration.",
+          "mins": 1
+        },
+        {
+          "q": "What does 'source' mean?",
+          "a": "Where a sound comes from.",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Make a 'drum': cling film stretched over a bowl, a few grains of rice on top. Tap gently, then harder. Record what the rice does.",
+          "a": "Gentle tap: rice moves a little, quiet sound; harder tap: rice jumps higher, louder sound.",
+          "mins": 7,
+          "model": "Teacher shows it first: one gentle tap, watch the rice, then one harder tap."
+        },
+        {
+          "q": "Extend: Explain the link between the rice and the sound.",
+          "a": "The rice shows the film vibrating; bigger vibrations make the rice jump higher and the sound louder.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why can't you see the vibrations of a clock's tick?",
+          "a": "They are too small and fast to see, but they still make the air vibrate.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A bigger vibration makes a...",
+          "a": "A) louder sound",
+          "mins": 1,
+          "options": [
+            "Louder sound",
+            "Quieter sound"
+          ]
+        },
+        {
+          "q": "Big question: what is happening when something makes a sound?",
+          "a": "Something is vibrating, and the vibrations travel to our ears.",
+          "mins": 2
+        }
+      ],
+      "homework": "List five sounds you hear at home and what is vibrating to make each one.",
+      "send": "SEND: feel vibrations on the throat and on a ruler with an adult. EAL: vibrate, loud, quiet with actions. Stretch: test whether a longer or shorter ruler overhang changes the sound.",
+      "resources": [
+        "Tarbiyyah Primary Science Long Term Plan 2023-24, Year 4 Spring (Cornerstones companion project: How Far Can Sound Travel?)",
+        "Home practical guide and safety card: rice drum and ruler (portal worksheet)",
+        "A bowl, cling film, a few grains of rice",
+        "A ruler and a table edge",
+        "Science exercise book and pencil"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "drum skin close up",
+          "alt": "A drum skin that vibrates when hit",
+          "for": "keywords"
+        },
+        {
+          "find": "tuning fork",
+          "alt": "A tuning fork",
+          "for": "teach:2"
+        },
+        {
+          "find": "bell",
+          "alt": "A metal bell",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: States of matter (Marvellous Medicine and How Far Can Sound Travel?)",
+      "n": 14,
+      "title": "How far can sound travel?",
+      "duration": 45,
+      "bigQuestion": "Why does a sound get quieter the further away you are?",
+      "objectives": [
+        "To understand that sound gets fainter as it travels further from the source"
+      ],
+      "successCriteria": [
+        "All: say that sounds get quieter further away",
+        "Most: carry out a fair test of how far a sound can be heard",
+        "Some: explain why vibrations spread out and get weaker"
+      ],
+      "crossCurricular": "Maths: measuring distances in metres and steps",
+      "smsc": "Social: considerate noise levels at home and in the masjid",
+      "keywords": [
+        {
+          "term": "distance",
+          "def": "how far apart two places are"
+        },
+        {
+          "term": "faint",
+          "def": "quiet and hard to hear"
+        },
+        {
+          "term": "travel",
+          "def": "move from one place to another"
+        },
+        {
+          "term": "volume",
+          "def": "how loud or quiet a sound is"
+        },
+        {
+          "term": "ear",
+          "def": "the body part that collects sound"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You whisper to a friend in the same room. Could someone in the next room hear you? Why not?",
+        "a": "The vibrations spread out and get weaker with distance, and walls block some of the sound."
+      },
+      "starter": [
+        {
+          "q": "Sound is made by...",
+          "a": "Vibrations",
+          "mins": 1,
+          "options": [
+            "Vibrations",
+            "Light"
+          ]
+        },
+        {
+          "q": "Bigger vibrations make a... sound.",
+          "a": "Louder",
+          "mins": 1
+        },
+        {
+          "q": "Name a source of sound.",
+          "a": "For example: a bell, a voice, a clock.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Sound travels",
+          "bullets": [
+            "Vibrations pass through the air",
+            "They reach our ears",
+            "Our ears pass the signal to the brain"
+          ],
+          "note": "Show a picture of the outer ear: it collects sound."
+        },
+        {
+          "heading": "Further means fainter",
+          "bullets": [
+            "Vibrations spread out",
+            "They get weaker with distance",
+            "Far away, we cannot hear them"
+          ],
+          "note": "Example results: a ticking kitchen timer.",
+          "chart": {
+            "kind": "bar",
+            "title": "Loudness of a timer tick (1 to 5)",
+            "labels": [
+              "1 step",
+              "3 steps",
+              "6 steps",
+              "9 steps"
+            ],
+            "values": [
+              5,
+              4,
+              2,
+              1
+            ],
+            "unit": "score"
+          }
+        },
+        {
+          "heading": "Our fair test",
+          "bullets": [
+            "Same sound each time",
+            "Walk away one step at a time",
+            "Stop when you cannot hear it"
+          ],
+          "note": "Use a ticking timer or a gentle tapping spoon on a cup. No music. An adult makes the sound."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds.",
+          "check": {
+            "q": "Why is a sound fainter far away?",
+            "options": [
+              "The sound gets slower",
+              "The vibrations spread out and get weaker",
+              "Sound turns into light",
+              "Ears stop working"
+            ],
+            "answer": 1,
+            "why": "Vibrations spread out and lose energy as they travel."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "From the chart, at what distance was the timer quietest?",
+          "a": "9 steps (score 1).",
+          "mins": 2,
+          "model": "Find the shortest bar.\nIt is at 9 steps, score 1.\nSo the sound was quietest at 9 steps."
+        },
+        {
+          "q": "What is the pattern in the chart?",
+          "a": "The further away, the quieter the sound.",
+          "mins": 1
+        },
+        {
+          "q": "What must stay the same in our test?",
+          "a": "The sound (same timer or same tap).",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: An adult taps a spoon on a cup at the same strength. Walk away one step at a time. Count how many steps until you cannot hear it.",
+          "a": "Pupils' own; the sound fades with distance.",
+          "mins": 7,
+          "model": "Teacher shows the first step on camera: tap, step back, listen, score loudness 1 to 5."
+        },
+        {
+          "q": "Extend: Repeat with a door half closed. What changed?",
+          "a": "The sound faded sooner because the door blocks some sound.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why do people cup a hand behind their ear to hear better?",
+          "a": "The hand collects more of the sound vibrations and directs them into the ear.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Moving away from a sound makes it...",
+          "a": "A) quieter",
+          "mins": 1,
+          "options": [
+            "Quieter",
+            "Louder"
+          ]
+        },
+        {
+          "q": "Big question: why does a sound get quieter the further away you are?",
+          "a": "The vibrations spread out and get weaker as they travel.",
+          "mins": 2
+        }
+      ],
+      "homework": "Ask an adult to help you find the quietest place in your home. Explain why it is quiet.",
+      "send": "SEND: a loudness scale with faces. EAL: near, far, quiet, loud. Stretch: predict how many steps for a louder sound and test it.",
+      "resources": [
+        "Tarbiyyah Primary Science Long Term Plan 2023-24, Year 4 Spring (Cornerstones companion project: How Far Can Sound Travel?)",
+        "Home practical guide and safety card: how far can sound travel (portal worksheet; no music, keep sounds gentle)",
+        "A metal spoon and a cup, or a ticking kitchen timer",
+        "Results table (portal worksheet)",
+        "Science exercise book and pencil"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "ear anatomy diagram",
+          "alt": "A labelled diagram of the parts of the ear",
+          "for": "keywords"
+        },
+        {
+          "find": "kitchen timer",
+          "alt": "A kitchen timer",
+          "for": "hook"
+        },
+        {
+          "find": "sound waves diagram",
+          "alt": "A diagram of sound spreading out from a source",
+          "for": "teach:2"
+        }
+      ]
     },
     {
       "unit": "Animals including humans",
@@ -255,10 +2284,22 @@
         "Order the journey of food through the body"
       ],
       "keywords": [
-        { "term": "digestion", "def": "breaking down food so the body can use it" },
-        { "term": "oesophagus", "def": "the tube that carries food from the mouth to the stomach" },
-        { "term": "stomach", "def": "a muscular bag that churns food with acid" },
-        { "term": "small intestine", "def": "the long tube where nutrients pass into the blood" }
+        {
+          "term": "digestion",
+          "def": "breaking down food so the body can use it"
+        },
+        {
+          "term": "oesophagus",
+          "def": "the tube that carries food from the mouth to the stomach"
+        },
+        {
+          "term": "stomach",
+          "def": "a muscular bag that churns food with acid"
+        },
+        {
+          "term": "small intestine",
+          "def": "the long tube where nutrients pass into the blood"
+        }
       ],
       "starter": [
         "Bismillah. Name the three states of matter.",
@@ -268,22 +2309,38 @@
       "teach": [
         {
           "heading": "Why digest food?",
-          "bullets": ["Food is in big pieces", "The body needs tiny nutrients", "Digestion breaks food down"],
+          "bullets": [
+            "Food is in big pieces",
+            "The body needs tiny nutrients",
+            "Digestion breaks food down"
+          ],
           "note": "Use a bread-chewing analogy: bread becomes mush. Digestion is partly physical (chewing) and partly chemical (enzymes), but keep to physical at this level."
         },
         {
           "heading": "Mouth to stomach",
-          "bullets": ["Mouth: teeth chew, saliva wets", "Oesophagus: squeezes food down", "Stomach: churns food"],
+          "bullets": [
+            "Mouth: teeth chew, saliva wets",
+            "Oesophagus: squeezes food down",
+            "Stomach: churns food"
+          ],
           "note": "Swallowing: muscles squeeze food down even if you are upside down. Misconception: food falls down. Use a video or diagram."
         },
         {
           "heading": "Intestines",
-          "bullets": ["Small intestine: nutrients absorbed", "Large intestine: water absorbed", "Waste leaves the body"],
+          "bullets": [
+            "Small intestine: nutrients absorbed",
+            "Large intestine: water absorbed",
+            "Waste leaves the body"
+          ],
           "note": "Small intestine is about 6 m long in adults (accurate at around 5 to 7 m). Large intestine is shorter but wider (about 1.5 m)."
         },
         {
           "heading": "Model digestion",
-          "bullets": ["Crackers in a bag: squash", "Add water: mix", "Squeeze through tights: nutrients and waste"],
+          "bullets": [
+            "Crackers in a bag: squash",
+            "Add water: mix",
+            "Squeeze through tights: nutrients and waste"
+          ],
           "note": "Safe at-home demo: crackers in a sealed zip bag with a little water (mush = stomach) squeezed gently into a clean sock or tights. Use only clean household items; do not eat the result."
         }
       ],
@@ -315,10 +2372,22 @@
         "Compare teeth of omnivores, herbivores and carnivores"
       ],
       "keywords": [
-        { "term": "incisor", "def": "a flat, sharp front tooth for cutting" },
-        { "term": "canine", "def": "a pointed tooth for tearing" },
-        { "term": "molar", "def": "a wide back tooth for grinding" },
-        { "term": "enamel", "def": "the hard outer coating of a tooth" }
+        {
+          "term": "incisor",
+          "def": "a flat, sharp front tooth for cutting"
+        },
+        {
+          "term": "canine",
+          "def": "a pointed tooth for tearing"
+        },
+        {
+          "term": "molar",
+          "def": "a wide back tooth for grinding"
+        },
+        {
+          "term": "enamel",
+          "def": "the hard outer coating of a tooth"
+        }
       ],
       "starter": [
         "Bismillah. Name two parts of the digestive system.",
@@ -328,22 +2397,38 @@
       "teach": [
         {
           "heading": "Types of teeth",
-          "bullets": ["Incisors cut", "Canines tear", "Molars and premolars grind"],
+          "bullets": [
+            "Incisors cut",
+            "Canines tear",
+            "Molars and premolars grind"
+          ],
           "note": "Children look at their teeth in a mirror or camera. Adults have 32 teeth; children have 20 baby teeth."
         },
         {
           "heading": "Inside a tooth",
-          "bullets": ["Enamel is the hard outer layer", "Dentine is underneath", "The pulp has nerves"],
+          "bullets": [
+            "Enamel is the hard outer layer",
+            "Dentine is underneath",
+            "The pulp has nerves"
+          ],
           "note": "Enamel is the hardest substance in the body. Simple labelled diagram."
         },
         {
           "heading": "Animal teeth",
-          "bullets": ["Carnivores have large canines", "Herbivores have flat molars", "Omnivores have both"],
+          "bullets": [
+            "Carnivores have large canines",
+            "Herbivores have flat molars",
+            "Omnivores have both"
+          ],
           "note": "Compare a lion, a cow and a human using photos. Link teeth shape to diet."
         },
         {
           "heading": "Caring for teeth",
-          "bullets": ["Brush twice a day", "Limit sugary foods", "Visit the dentist"],
+          "bullets": [
+            "Brush twice a day",
+            "Limit sugary foods",
+            "Visit the dentist"
+          ],
           "note": "Link to the Sunnah of using the miswak and cleanliness as part of faith (Sahih Muslim). Safe demo: put an eggshell in a cup of vinegar and one in water overnight (vinegar is household and safe if not drunk) to model acid and enamel. Use a grown-up."
         }
       ],
@@ -375,10 +2460,22 @@
         "Use arrows correctly"
       ],
       "keywords": [
-        { "term": "producer", "def": "a plant that makes its own food using sunlight" },
-        { "term": "consumer", "def": "an animal that eats other living things" },
-        { "term": "predator", "def": "an animal that hunts other animals for food" },
-        { "term": "prey", "def": "an animal that is hunted by predators" }
+        {
+          "term": "producer",
+          "def": "a plant that makes its own food using sunlight"
+        },
+        {
+          "term": "consumer",
+          "def": "an animal that eats other living things"
+        },
+        {
+          "term": "predator",
+          "def": "an animal that hunts other animals for food"
+        },
+        {
+          "term": "prey",
+          "def": "an animal that is hunted by predators"
+        }
       ],
       "starter": [
         "Bismillah. Name the four types of teeth.",
@@ -388,22 +2485,38 @@
       "teach": [
         {
           "heading": "Start with the Sun",
-          "bullets": ["Plants use sunlight", "They make food", "They are producers"],
+          "bullets": [
+            "Plants use sunlight",
+            "They make food",
+            "They are producers"
+          ],
           "note": "All food chains start with a producer. Energy comes from the Sun. Misconception: food chains start with the Sun; the first living thing is the producer."
         },
         {
           "heading": "Consumers",
-          "bullets": ["Primary consumers eat plants", "Secondary consumers eat animals", "Top predators have no predators"],
+          "bullets": [
+            "Primary consumers eat plants",
+            "Secondary consumers eat animals",
+            "Top predators have no predators"
+          ],
           "note": "Example: grass, grasshopper, frog, snake, hawk. Draw on the board and read with 'is eaten by'."
         },
         {
           "heading": "When one link changes",
-          "bullets": ["Fewer rabbits: foxes go hungry", "No foxes: rabbits increase", "Everything is connected"],
+          "bullets": [
+            "Fewer rabbits: foxes go hungry",
+            "No foxes: rabbits increase",
+            "Everything is connected"
+          ],
           "note": "Discuss a pond: if snails die, fish lose food. Link to caring for the environment: Allah has trusted us to look after His creation."
         },
         {
           "heading": "Build chains",
-          "bullets": ["Woodland: oak, caterpillar, blue tit", "Pond: algae, tadpole, fish", "Add arrows"],
+          "bullets": [
+            "Woodland: oak, caterpillar, blue tit",
+            "Pond: algae, tadpole, fish",
+            "Add arrows"
+          ],
           "note": "Children build chains using picture cards. Check arrow direction and that chains begin with a producer."
         }
       ],
@@ -435,10 +2548,22 @@
         "Present results in a table or chart"
       ],
       "keywords": [
-        { "term": "investigation", "def": "a test or survey to find something out" },
-        { "term": "data", "def": "information collected, such as numbers" },
-        { "term": "conclusion", "def": "what the results tell us" },
-        { "term": "survey", "def": "asking people questions to collect data" }
+        {
+          "term": "investigation",
+          "def": "a test or survey to find something out"
+        },
+        {
+          "term": "data",
+          "def": "information collected, such as numbers"
+        },
+        {
+          "term": "conclusion",
+          "def": "what the results tell us"
+        },
+        {
+          "term": "survey",
+          "def": "asking people questions to collect data"
+        }
       ],
       "starter": [
         "Bismillah. Name three parts of the digestive system.",
@@ -448,22 +2573,38 @@
       "teach": [
         {
           "heading": "Revision map",
-          "bullets": ["Digestion breaks food down", "Teeth cut, tear and grind", "Food chains start with plants"],
+          "bullets": [
+            "Digestion breaks food down",
+            "Teeth cut, tear and grind",
+            "Food chains start with plants"
+          ],
           "note": "Quick recap using a concept map. Ask children to add one fact each. Correct misconceptions from earlier lessons."
         },
         {
           "heading": "Planning a survey",
-          "bullets": ["Question: how many fruit and vegetable portions do we eat?", "Ask five people", "Record a tally"],
+          "bullets": [
+            "Question: how many fruit and vegetable portions do we eat?",
+            "Ask five people",
+            "Record a tally"
+          ],
           "note": "Children ask five family members, or use the class. Model a clear survey question. Sensitive: do not compare children's family food; keep anonymous."
         },
         {
           "heading": "Presenting data",
-          "bullets": ["Use a tally table", "Draw a bar chart", "Label axes"],
+          "bullets": [
+            "Use a tally table",
+            "Draw a bar chart",
+            "Label axes"
+          ],
           "note": "Model how to draw a bar chart with a title, labelled axes and equal intervals. Common error: bars touching or uneven scales."
         },
         {
           "heading": "Drawing conclusions",
-          "bullets": ["What do the data show?", "Most people eat ...", "Suggest an improvement"],
+          "bullets": [
+            "What do the data show?",
+            "Most people eat ...",
+            "Suggest an improvement"
+          ],
           "note": "Use sentence starters. Encourage tentative language: 'The data suggest ...'. Link to the Islamic teaching to eat what is good (tayyib) and to thank Allah for food."
         }
       ],
