@@ -5,7 +5,7 @@
 // voice, no em dashes, no invented facts, and it is always a DRAFT a member
 // of staff edits and sends themselves.
 
-export type Task = "report_comment" | "tarbiyah_note" | "message_triage";
+export type Task = "report_comment" | "tarbiyah_note" | "message_triage" | "revision_questions";
 export type Pronoun = "he" | "she" | "they";
 export type Variant = "default" | "shorter" | "more_formal" | "try_again";
 
