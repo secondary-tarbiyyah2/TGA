@@ -13,6 +13,7 @@ import { saveCsv, toCsv as buildCsv } from "@/lib/learn/csv";
 import { classBannerStyle } from "@/lib/learn/classes";
 import { Tabs, tabPanelProps } from "@/components/learn/Tabs";
 import { Button, StatusChip, btn, ui } from "@/components/learn/ui";
+import { Select } from "@/components/learn/Select";
 
 type Status = "present" | "late" | "absent" | "excused" | "not_engaged" | "technical";
 const STATUSES: { value: Status; label: string; dot: string }[] = [
@@ -331,7 +332,7 @@ function ReportsContent() {
             </label>
             <label className="text-xs font-medium text-ink/65">
               Year group
-              <select
+              <Select
                 value={yearGroupId}
                 onChange={(e) => {
                   setYearGroupId(e.target.value);
@@ -345,29 +346,29 @@ function ReportsContent() {
                     {y.name}
                   </option>
                 ))}
-              </select>
+              </Select>
             </label>
             <label className="text-xs font-medium text-ink/65">
               Class
-              <select value={classId} onChange={(e) => setClassId(e.target.value)} className={`mt-1 ${fieldCls}`}>
+              <Select value={classId} onChange={(e) => setClassId(e.target.value)} className={`mt-1 ${fieldCls}`}>
                 <option value="">{yearGroupId ? "All classes in year group" : "All classes"}</option>
                 {classOptions.map((c) => (
                   <option key={c.id} value={c.id}>
                     {c.name}
                   </option>
                 ))}
-              </select>
+              </Select>
             </label>
             <label className="text-xs font-medium text-ink/65">
               Status
-              <select value={status} onChange={(e) => setStatus(e.target.value as "" | Status)} className={`mt-1 ${fieldCls}`}>
+              <Select value={status} onChange={(e) => setStatus(e.target.value as "" | Status)} className={`mt-1 ${fieldCls}`}>
                 <option value="">Any status</option>
                 {STATUSES.map((s) => (
                   <option key={s.value} value={s.value}>
                     {s.label}
                   </option>
                 ))}
-              </select>
+              </Select>
             </label>
             <label className="text-xs font-medium text-ink/65">
               Student

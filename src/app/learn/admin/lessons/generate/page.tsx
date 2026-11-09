@@ -1,5 +1,6 @@
 "use client";
 
+import { Icon } from "@/components/learn/Icon";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { LessonsFrame, LessonsHeader } from "@/components/learn/timetable/LessonsFrame";
@@ -18,7 +19,7 @@ function Step({ n, title, help, active, done, children }: { n: number; title: st
   return (
     <section aria-labelledby={`step-${n}-title`} className={`rounded-2xl border bg-white p-4 sm:p-6 ${active ? "border-teal-500/60" : "border-gold-light"}`}>
       <div className="flex items-start gap-3">
-        <span aria-hidden="true" className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-sm font-semibold ${done ? "bg-green-100 text-green-900" : "bg-gold-100 text-gold-900"}`}>{done ? "✓" : n}</span>
+        <span aria-hidden="true" className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-sm font-semibold ${done ? "bg-green-100 text-green-900" : "bg-gold-100 text-gold-900"}`}>{done ? <Icon name="check" className="h-3.5 w-3.5" strokeWidth={2.5} /> : n}</span>
         <div className="min-w-0">
           <h2 id={`step-${n}-title`} className="font-serif text-h3 font-semibold text-ink">{title}</h2>
           <p className="mt-0.5 text-sm text-ink/65">{help}</p>
@@ -32,7 +33,7 @@ function Step({ n, title, help, active, done, children }: { n: number; title: st
 function Check({ ok, children, fix }: { ok: boolean; children: React.ReactNode; fix?: React.ReactNode }) {
   return (
     <li className={`flex flex-wrap items-center justify-between gap-2 rounded-xl border px-3 py-2 text-sm ${ok ? "border-green-200 bg-green-50/60 text-green-900" : "border-amber-200 bg-amber-50 text-amber-900"}`}>
-      <span><span aria-hidden="true" className="mr-2 font-bold">{ok ? "✓" : "!"}</span>{children}</span>
+      <span className="inline-flex items-start gap-2"><Icon name={ok ? "check" : "circleAlert"} className="mt-0.5 h-4 w-4" strokeWidth={2.25} /><span>{children}</span></span>
       {!ok && fix}
     </li>
   );
@@ -150,7 +151,7 @@ function GenerateContent() {
       <ol aria-label="Progress" className="mb-5 grid grid-cols-2 gap-2 sm:grid-cols-4">
         {STEPS.map((s, i) => (
           <li key={s} aria-current={stepDone.findIndex((d) => !d) === i ? "step" : undefined} className="flex items-center gap-2 rounded-xl border border-gold-light bg-white px-3 py-2 text-xs font-medium text-ink/75">
-            <span aria-hidden="true" className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px] font-semibold ${stepDone[i] ? "bg-green-100 text-green-900" : "bg-gold-100 text-gold-900"}`}>{stepDone[i] ? "✓" : i + 1}</span>
+            <span aria-hidden="true" className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px] font-semibold ${stepDone[i] ? "bg-green-100 text-green-900" : "bg-gold-100 text-gold-900"}`}>{stepDone[i] ? <Icon name="check" className="h-3.5 w-3.5" strokeWidth={2.5} /> : i + 1}</span>
             {s}
             <span className="sr-only">{stepDone[i] ? "(done)" : "(to do)"}</span>
           </li>

@@ -14,6 +14,7 @@ import { AUDIENCE_LABEL, audienceText, audienceToRoles, requestSignatures, roles
 import { Tabs } from "@/components/learn/Tabs";
 import { Button, EmptyState, Field, IconButton, StatusChip, SwitchKnob, btn, ui } from "@/components/learn/ui";
 import { csvEscape } from "@/components/learn/fees/shared";
+import { Select } from "@/components/learn/Select";
 
 type PolicyRow = { id: string; number: string; title: string; category: string; fileUrl: string; lastReviewed?: string; nextReview?: string };
 type SignableDoc = {
@@ -667,14 +668,14 @@ function DocumentsContent() {
         <div className="rounded-2xl border border-gold-light bg-white">
           <div className="flex flex-wrap gap-3 border-b border-gold-light px-5 py-3">
             <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search by name or email…" aria-label="Search by name or email" className={`${ui.input} min-w-[200px] flex-1`} />
-            <select value={docFilter} onChange={(e) => setDocFilter(e.target.value)} className={`${ui.select} !w-auto max-w-full`} aria-label="Document">
+            <Select value={docFilter} onChange={(e) => setDocFilter(e.target.value)} className={`${ui.select} !w-auto max-w-full`} aria-label="Document">
               <option value="all">All documents</option>
               {[...new Set((outstanding || []).map((o) => o.title))].map((t) => (
                 <option key={t} value={t}>
                   {t}
                 </option>
               ))}
-            </select>
+            </Select>
           </div>
           {picked.size > 0 && (
             <div className="flex flex-wrap items-center gap-2 border-b border-gold-light bg-cream px-5 py-2 text-sm">

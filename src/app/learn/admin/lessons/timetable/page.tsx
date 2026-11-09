@@ -15,6 +15,7 @@ import { useTimetableData } from "@/components/learn/timetable/useTimetableData"
 import { edgeErrorMessage } from "@/lib/learn/edge";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import type { TimetableSlot } from "@/lib/learn/timetable";
+import { Select } from "@/components/learn/Select";
 
 type View = "all" | "class" | "teacher" | "session";
 const VIEWS: { id: View; label: string }[] = [
@@ -196,10 +197,10 @@ function TimetableContent() {
                 </button>
               ))}
               {runs.length > 4 && (
-                <select aria-label="Older versions" value={runs.slice(4).some((r) => r.id === runId) ? runId || "" : ""} onChange={(e) => e.target.value && setSelectedRun(e.target.value)} className="rounded-full border border-gold-light bg-white px-3 py-1 text-sm text-ink/70">
+                <Select aria-label="Older versions" value={runs.slice(4).some((r) => r.id === runId) ? runId || "" : ""} onChange={(e) => e.target.value && setSelectedRun(e.target.value)} className="rounded-full border border-gold-light bg-white px-3 py-1 text-sm text-ink/70">
                   <option value="">Older…</option>
                   {runs.slice(4).map((r) => <option key={r.id} value={r.id}>{r.label} · {r.status} · {ukShortDate(r.created_at)}</option>)}
-                </select>
+                </Select>
               )}
             </div>
             <div className="mt-3 flex flex-wrap items-center gap-2">

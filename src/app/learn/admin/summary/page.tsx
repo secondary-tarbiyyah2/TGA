@@ -1,5 +1,6 @@
 "use client";
 
+import { Icon } from "@/components/learn/Icon";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { PageHeader } from "@/components/learn/PageHeader";
@@ -12,6 +13,7 @@ import { formatGBP } from "@/lib/format";
 import { saveCsv } from "@/lib/learn/csv";
 import { formatDateKey, shiftDateKey, ukDaysAgo, ukToday, ukWallToDate } from "@/lib/learn/ukTime";
 import { Button, EmptyState, ui } from "@/components/learn/ui";
+import { Select } from "@/components/learn/Select";
 
 const shortDate = (key: string) => formatDateKey(key, { day: "numeric", month: "short", year: "numeric" });
 
@@ -395,7 +397,7 @@ function SummaryContent() {
       <button type="button" onClick={() => sortBy(k)} className="inline-flex items-center gap-1 font-semibold hover:text-ink">
         {label}
         <span aria-hidden="true" className={sortKey === k ? "text-teal-700" : "text-ink/25"}>
-          {sortKey === k ? (sortDir === 1 ? "▲" : "▼") : "↕"}
+          <Icon name={sortKey === k ? (sortDir === 1 ? "chevronUp" : "chevronDown") : "chevronDown"} size="sm" />
         </span>
       </button>
     </th>
@@ -427,23 +429,23 @@ function SummaryContent() {
       <div className="no-print mb-5 flex flex-wrap items-end gap-3">
         <label className="text-sm font-medium text-ink/70">
           <span className="mb-1 block">Period</span>
-          <select value={period} onChange={(e) => setPeriod(e.target.value as PeriodKey)} className={field}>
+          <Select value={period} onChange={(e) => setPeriod(e.target.value as PeriodKey)} className={field}>
             {hasTerms && <option value="term">Term</option>}
             <option value="30">Last 30 days</option>
             <option value="90">Last 90 days</option>
             <option value="all">All time</option>
-          </select>
+          </Select>
         </label>
         {period === "term" && hasTerms && (
           <label className="text-sm font-medium text-ink/70">
             <span className="mb-1 block">Term</span>
-            <select value={termId} onChange={(e) => setTermId(e.target.value)} className={field}>
+            <Select value={termId} onChange={(e) => setTermId(e.target.value)} className={field}>
               {base?.terms.map((t) => (
                 <option key={t.id} value={t.id}>
                   {t.name} ({shortDate(t.starts_on)} to {shortDate(t.ends_on)})
                 </option>
               ))}
-            </select>
+            </Select>
           </label>
         )}
       </div>
@@ -473,7 +475,7 @@ function SummaryContent() {
             <h2 className={ui.sectionTitle}>{groupBy === "class" ? "By class" : "By year group"}</h2>
             <label className="no-print flex shrink-0 items-center gap-2 text-sm font-medium text-ink/70">
               Group by
-              <select
+              <Select
                 value={groupBy}
                 onChange={(e) => {
                   setGroupBy(e.target.value as GroupBy);
@@ -483,7 +485,7 @@ function SummaryContent() {
               >
                 <option value="class">Class</option>
                 <option value="year">Year group</option>
-              </select>
+              </Select>
             </label>
           </div>
 
