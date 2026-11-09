@@ -1,11 +1,9 @@
 {
   "subject": "Mathematics",
   "year": "y11",
-  "board": "Pearson Edexcel GCSE (9-1) Mathematics (1MA1), Higher tier",
-  "boardShort": "Edexcel GCSE 1MA1 Higher",
-  "exam": "Pearson Edexcel International GCSE (9-1) Mathematics A (4MA1), Higher tier",
-  "examShort": "Edexcel IGCSE 4MA1",
-  "source": "School Maths folder: Edexcel GCSE (9–1) Mathematics content, sequenced using the school's two-year scheme order (harder graphs and transformations of graphs, then simultaneous equations); Edexcel 1MA1 Higher exam style; INSET lesson standard. | Pearson Edexcel 1MA1 specification as recorded in content/syllabus/ks4/mathematics.json (units N and A only), Higher tier with Foundation-accessible starts; Edexcel 1MA1 Higher exam style; INSET lesson standard. Skipped as already taught well in the school's existing mathematics lessons: N4 primes/HCF/LCM, N7 fractional and negative indices, N8 surds, N10 recurring decimals (existing Year 10 lessons 1-5); A4 binomials and quadratic factorising, A5 subject appearing twice, A6 identities and proof, A17 linear equations, A21 forming equations, A22 linear inequalities (existing Year 10 lessons 6-16); A11/A12 quadratic, cubic and reciprocal graphs, A13 translations and reflections of graphs, A17 solving by graphs, A19 algebraic simultaneous equations (existing Year 11 lessons 1-8). | Edexcel GCSE (9–1) Mathematics 1MA1 specification (Issue 2, June 2015) via content/syllabus/ks4/mathematics.json, units R13-R16, G9-G14, G20-G25 and S1-S6 (Year 11 placement); Higher tier with Foundation-accessible starts. Original lessons and questions. The school's existing Year 11 lessons cover Unit 16 (quadratic, cubic and reciprocal graphs, graph transformations) and Unit 17 (simultaneous equations), which are algebra units outside this spec subset, so no point was skipped; reciprocal graphs are only recognised here for R14. | Gap-fill against Pearson Edexcel 1MA1 specification",
+  "board": "Pearson Edexcel International GCSE (9-1) Mathematics A (4MA1), Higher tier",
+  "boardShort": "Edexcel IGCSE 4MA1 Higher",
+  "source": "School Maths folder: Edexcel GCSE (9–1) Mathematics content, sequenced using the school's two-year scheme order (harder graphs and transformations of graphs, then simultaneous equations); Edexcel 1MA1 Higher exam style; INSET lesson standard. | Pearson Edexcel 1MA1 specification as recorded in content/syllabus/ks4/mathematics.json (units N and A only), Higher tier with Foundation-accessible starts; Edexcel 1MA1 Higher exam style; INSET lesson standard. Skipped as already taught well in the school's existing mathematics lessons: N4 primes/HCF/LCM, N7 fractional and negative indices, N8 surds, N10 recurring decimals (existing Year 10 lessons 1-5); A4 binomials and quadratic factorising, A5 subject appearing twice, A6 identities and proof, A17 linear equations, A21 forming equations, A22 linear inequalities (existing Year 10 lessons 6-16); A11/A12 quadratic, cubic and reciprocal graphs, A13 translations and reflections of graphs, A17 solving by graphs, A19 algebraic simultaneous equations (existing Year 11 lessons 1-8). | Edexcel GCSE (9–1) Mathematics 1MA1 specification (Issue 2, June 2015) via content/syllabus/ks4/mathematics.json, units R13-R16, G9-G14, G20-G25 and S1-S6 (Year 11 placement); Higher tier with Foundation-accessible starts. Original lessons and questions. The school's existing Year 11 lessons cover Unit 16 (quadratic, cubic and reciprocal graphs, graph transformations) and Unit 17 (simultaneous equations), which are algebra units outside this spec subset, so no point was skipped; reciprocal graphs are only recognised here for R14. | Gap-fill against Pearson Edexcel 1MA1 specification | Founding year 2027 Spring 1 (revision cycle 1 and mock week): taught from Pearson Edexcel International GCSE Mathematics A (4MA1) Issue 2; original exam-style questions with mark-scheme style answers (no past-paper questions copied).",
   "lessons": [
     {
       "unit": "Unit 16: Harder graphs and transformations of graphs",
@@ -7177,6 +7175,4478 @@
       ],
       "board": "Pearson Edexcel GCSE (9-1) Mathematics (1MA1), Higher tier",
       "boardShort": "Edexcel GCSE 1MA1 Higher"
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Number, algebra, sequences, graphs",
+      "n": 54,
+      "title": "Revision: fractions, recurring decimals and surds",
+      "duration": 50,
+      "bigQuestion": "Which number skills must be secure without leaning on a calculator?",
+      "objectives": [
+        "To understand how to calculate exactly with fractions, recurring decimals and surds in exam questions"
+      ],
+      "successCriteria": [
+        "All: calculate with mixed numbers and convert a recurring decimal to a fraction",
+        "Most: simplify, expand and rationalise surds",
+        "Some: answer 'show that' surd questions with every step shown"
+      ],
+      "crossCurricular": "Science: the same algebra and number skills are used in International GCSE Physics and Chemistry calculations",
+      "smsc": "Moral: preparing thoroughly for exams is part of ihsan (إِحْسَان), doing a task as well as possible",
+      "keywords": [
+        {
+          "term": "surd",
+          "def": "an exact root such as √5"
+        },
+        {
+          "term": "rationalise",
+          "def": "remove a surd from the denominator"
+        },
+        {
+          "term": "recurring decimal",
+          "def": "a decimal that repeats for ever"
+        },
+        {
+          "term": "show that",
+          "def": "give every step to reach the stated answer"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your calculator gives 1.732050808 for √3. Why might an examiner prefer the answer √3, and when would a decimal be fine?",
+        "a": "√3 is exact; any decimal is rounded. Questions saying 'exact' or 'show that' need surds; 'give your answer to 3 s.f.' wants a decimal."
+      },
+      "starter": [
+        {
+          "q": "Work out 2/3 + 3/4.",
+          "a": "17/12 (1 5/12)",
+          "mins": 1
+        },
+        {
+          "q": "Simplify √50.",
+          "a": "5√2",
+          "mins": 1
+        },
+        {
+          "q": "Write 0.333... as a fraction.",
+          "a": "1/3",
+          "mins": 1
+        },
+        {
+          "q": "Work out 2/5 ÷ 4/15.",
+          "a": "3/2",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Mixed numbers and recurring decimals",
+          "bullets": [
+            "Mixed numbers: improper fractions first",
+            "Recurring: multiply to match the repeating tails"
+          ],
+          "note": "Show both models briefly; pupils then do the practice.",
+          "model": {
+            "problem": "Write 0.3666... as a fraction in its simplest form.",
+            "steps": [
+              "x = 0.3666...",
+              "10x = 3.666..., 100x = 36.666...",
+              "90x = 33",
+              "x = 33/90 = 11/30"
+            ],
+            "answer": "11/30"
+          }
+        },
+        {
+          "heading": "Surds",
+          "bullets": [
+            "(a + √b)(a − √b) = a² − b",
+            "(2 + √3)² = 4 + 4√3 + 3 = 7 + 4√3"
+          ],
+          "note": "Rationalise a ± √b denominators with the conjugate.",
+          "model": {
+            "problem": "Rationalise 5/(√7 − 2).",
+            "steps": [
+              "× (√7 + 2)/(√7 + 2)",
+              "Denominator: 7 − 4 = 3",
+              "5(√7 + 2)/3"
+            ],
+            "answer": "(5√7 + 10)/3"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Difference of two squares"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "Work out (√5 + 1)(√5 − 1).",
+            "options": [
+              "4",
+              "6",
+              "5",
+              "4√5"
+            ],
+            "answer": 0,
+            "why": "5 − 1 = 4. 6 adds instead of subtracting."
+          }
+        },
+        {
+          "heading": "Exam technique",
+          "bullets": [
+            "'Show that': every step, no calculator jumps",
+            "Give exact answers unless told to round"
+          ],
+          "note": "Mark scheme: M1 for a correct method, A1 for the stated answer reached with working.",
+          "table": {
+            "head": [
+              "Command",
+              "What earns the marks"
+            ],
+            "rows": [
+              [
+                "Show that",
+                "Every step written; final line equals the given answer"
+              ],
+              [
+                "Give your answer in its simplest form",
+                "Fully simplified fraction or surd"
+              ],
+              [
+                "Exact",
+                "Fractions, surds or π, not rounded decimals"
+              ]
+            ]
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Show that 1 3/5 × 2 1/12 = 3 1/3. (3 marks)",
+          "a": "8/5 × 25/12 = 200/60 (M1 M1) = 10/3 = 3 1/3 (A1)",
+          "mins": 3,
+          "model": "1 3/5 = 8/5 and 2 1/12 = 25/12. 8/5 × 25/12 = 200/60. Simplify: 200/60 = 10/3 = 3 1/3."
+        },
+        {
+          "q": "Write 0.2151515... as a fraction in its simplest form. (3 marks)",
+          "a": "10x = 2.1515..., 1000x = 215.1515... (M1); 990x = 213 (M1); x = 71/330 (A1)",
+          "mins": 3
+        },
+        {
+          "q": "Expand and simplify (5 − √3)².",
+          "a": "28 − 10√3",
+          "mins": 2
+        },
+        {
+          "q": "Rationalise 14/√7.",
+          "a": "2√7",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: (a) 3 1/3 − 1 3/4 (b) 0.818181... as a fraction (c) √12 + √75 (d) (√2 + √8)²",
+          "a": "(a) 1 7/12 (b) 9/11 (c) 7√3 (d) 18",
+          "mins": 6,
+          "model": "(a) 10/3 − 7/4 = 40/12 − 21/12 = 19/12 = 1 7/12. (b) 100x − x = 81, x = 81/99 = 9/11. (c) 2√3 + 5√3 = 7√3. (d) √2 + 2√2 = 3√2; (3√2)² = 18."
+        },
+        {
+          "q": "Extend (2 marks): Show that (√18 + √2)/√2 = 4.",
+          "a": "√18 = 3√2, so (3√2 + √2)/√2 = 4√2/√2 = 4",
+          "mins": 3
+        },
+        {
+          "q": "Stretch (3 marks): Rationalise and simplify (3 + √5)/(3 − √5).",
+          "a": "× (3 + √5): (9 + 6√5 + 5)/(9 − 5) = (14 + 6√5)/4 = (7 + 3√5)/2",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Write 0.444... as a fraction.",
+          "a": "4/9",
+          "mins": 1
+        },
+        {
+          "q": "Work out √27 × √3.",
+          "a": "9",
+          "mins": 1
+        }
+      ],
+      "homework": "Complete the portal's 10-question non-calculator set on fractions, recurring decimals and surds; mark it with the mark scheme and log errors in your repair list.",
+      "send": "Support: method cards for each skill. EAL: 'exact', 'simplest form'. Stretch: prove 0.1999... = 1/5.",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Units 1, 2, 3 (4MA1 1.2, 1.3A, 1.4A, 1.4B)",
+        "Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers)",
+        "Personal repair list (portal)",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book",
+        "Scientific calculator",
+        "4MA1 Higher formulae sheet"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "scientific calculator surd display",
+          "alt": "A calculator showing a surd answer",
+          "for": "hook"
+        },
+        {
+          "find": "square root symbol",
+          "alt": "The square root symbol",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Number, algebra, sequences, graphs",
+      "n": 55,
+      "title": "Revision: indices and standard form",
+      "duration": 50,
+      "bigQuestion": "How do the index laws unlock both algebra and standard form?",
+      "objectives": [
+        "To understand how to use the index laws with numbers, algebra and standard form in exam questions"
+      ],
+      "successCriteria": [
+        "All: evaluate negative and fractional indices",
+        "Most: simplify algebraic powers and calculate in standard form",
+        "Some: solve equations by writing both sides with the same base"
+      ],
+      "crossCurricular": "Chemistry: the mass of atoms and the Avogadro constant are written in standard form",
+      "smsc": "Spiritual: from atoms to galaxies, standard form lets us describe the scale of creation",
+      "keywords": [
+        {
+          "term": "index",
+          "def": "a power"
+        },
+        {
+          "term": "standard form",
+          "def": "A × 10ⁿ with 1 ≤ A < 10"
+        },
+        {
+          "term": "reciprocal",
+          "def": "1 ÷ the number"
+        },
+        {
+          "term": "base",
+          "def": "the number being raised to a power"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A hydrogen atom has a mass of about 1.67 × 10⁻²⁷ kg. How could you estimate how many atoms are in 1 kg of hydrogen?",
+        "a": "1 ÷ (1.67 × 10⁻²⁷) ≈ 6 × 10²⁶ atoms."
+      },
+      "starter": [
+        {
+          "q": "Write 2⁻³ as a fraction.",
+          "a": "1/8",
+          "mins": 1
+        },
+        {
+          "q": "Write 4.5 × 10⁻³ as an ordinary number.",
+          "a": "0.0045",
+          "mins": 1
+        },
+        {
+          "q": "Evaluate 27^(1/3).",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "Evaluate (3²)³.",
+          "a": "729",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Index laws with algebra",
+          "bullets": [
+            "Powers of letters follow the same laws",
+            "Apply the power to every factor in the bracket"
+          ],
+          "note": "4MA1 2.1A.",
+          "model": {
+            "problem": "Simplify (8x⁶)^(2/3).",
+            "steps": [
+              "8^(2/3) = (∛8)² = 4",
+              "(x⁶)^(2/3) = x⁴"
+            ],
+            "answer": "4x⁴"
+          }
+        },
+        {
+          "heading": "Standard form without a calculator",
+          "bullets": [
+            "Divide the numbers, subtract the powers",
+            "Adjust so 1 ≤ A < 10"
+          ],
+          "note": "Paper 1H and 2H both allow calculators, but setting work out shows the method.",
+          "model": {
+            "problem": "Work out (6 × 10⁵) ÷ (1.5 × 10⁻²).",
+            "steps": [
+              "6 ÷ 1.5 = 4",
+              "10⁵ ÷ 10⁻² = 10⁷"
+            ],
+            "answer": "4 × 10⁷"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Then adjust A"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "Work out (3 × 10⁴) × (5 × 10⁻⁷).",
+            "options": [
+              "1.5 × 10⁻²",
+              "15 × 10⁻³",
+              "1.5 × 10⁻³",
+              "1.5 × 10⁻²⁸"
+            ],
+            "answer": 0,
+            "why": "15 × 10⁻³ = 1.5 × 10⁻². 15 × 10⁻³ is equal but not in standard form."
+          }
+        },
+        {
+          "heading": "Same base equations",
+          "bullets": [
+            "Write both sides as powers of the same number",
+            "Then equate the indices"
+          ],
+          "note": "3^(2x) = 81 = 3⁴, so 2x = 4.",
+          "misconception": {
+            "wrong": "(2x³)⁴ = 2x¹²",
+            "right": "The 2 is raised to the power too: 16x¹²"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Evaluate (16/81)^(−3/4). (2 marks)",
+          "a": "(81/16)^(3/4) (M1) = (3/2)³ = 27/8 (A1)",
+          "mins": 3,
+          "model": "Negative index: flip the fraction: (81/16)^(3/4). Fourth root: 3/2. Cube: 27/8."
+        },
+        {
+          "q": "Simplify (5x²y³)² ÷ xy.",
+          "a": "25x³y⁵",
+          "mins": 1
+        },
+        {
+          "q": "Work out (2.4 × 10⁶) ÷ (8 × 10⁻³) in standard form.",
+          "a": "3 × 10⁸",
+          "mins": 1
+        },
+        {
+          "q": "Solve 3^(2x) = 81.",
+          "a": "x = 2",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: (a) Evaluate 125^(−2/3) (b) Simplify (3a⁴b)³ (c) Work out (4.2 × 10⁵) + (3 × 10⁴) in standard form (d) Simplify √(9x⁸)",
+          "a": "(a) 1/25 (b) 27a¹²b³ (c) 4.5 × 10⁵ (d) 3x⁴",
+          "mins": 6,
+          "model": "(a) 1/(∛125)² = 1/25. (b) 3³a¹²b³ = 27a¹²b³. (c) 4.2 × 10⁵ + 0.3 × 10⁵ = 4.5 × 10⁵. (d) √9 = 3 and √x⁸ = x⁴: 3x⁴."
+        },
+        {
+          "q": "Extend (2 marks): The mass of a hydrogen atom is 1.67 × 10⁻²⁷ kg. How many hydrogen atoms are in 1 kg? Give your answer in standard form to 3 s.f.",
+          "a": "1 ÷ (1.67 × 10⁻²⁷) (M1) = 5.99 × 10²⁶ (A1)",
+          "mins": 3
+        },
+        {
+          "q": "Stretch (4 marks): 2ᵃ × 4ᵇ = 64 and 3ᵃ ÷ 9ᵇ = 1. Find a and b.",
+          "a": "a + 2b = 6 and a − 2b = 0, so a = 3, b = 1.5",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Evaluate 64^(−1/2).",
+          "a": "1/8",
+          "mins": 1
+        },
+        {
+          "q": "Work out (2 × 10³)².",
+          "a": "4 × 10⁶",
+          "mins": 1
+        }
+      ],
+      "homework": "Complete the portal's indices and standard form set (8 questions) and update your repair list.",
+      "send": "Support: index laws card. EAL: 'reciprocal', 'standard form'. Stretch: simplify (27x⁹y⁻³)^(−2/3).",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Units 2, 6, 9 (4MA1 1.4C, 1.9A, 2.1A)",
+        "Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers)",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book",
+        "Scientific calculator",
+        "4MA1 Higher formulae sheet"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "hydrogen atom model diagram",
+          "alt": "A diagram of a hydrogen atom",
+          "for": "hook"
+        },
+        {
+          "find": "exponent rules chart",
+          "alt": "A chart of the laws of indices",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Number, algebra, sequences, graphs",
+      "n": 56,
+      "title": "Revision: upper and lower bounds",
+      "duration": 50,
+      "bigQuestion": "How wrong could an answer be when the measurements are rounded?",
+      "objectives": [
+        "To understand how to find and use upper and lower bounds in calculations"
+      ],
+      "successCriteria": [
+        "All: write the bounds of a rounded measurement",
+        "Most: find the maximum or minimum of a sum, difference, product or quotient",
+        "Some: give an answer to a suitable degree of accuracy using the bounds"
+      ],
+      "crossCurricular": "Physics: every measurement has an uncertainty, which limits the accuracy of calculated results",
+      "smsc": "Moral: honest reporting of how accurate a result really is",
+      "keywords": [
+        {
+          "term": "upper bound",
+          "def": "the largest value that rounds to the measurement"
+        },
+        {
+          "term": "lower bound",
+          "def": "the smallest value that rounds to the measurement"
+        },
+        {
+          "term": "error interval",
+          "def": "LB ≤ x < UB"
+        },
+        {
+          "term": "degree of accuracy",
+          "def": "how precisely a value is given"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A car travels 245 km (to the nearest 5 km) in 3.5 hours (to the nearest 0.1 hour). How fast could it have gone at most? How sure can we be of its speed?",
+        "a": "Max speed = 247.5 ÷ 3.45 ≈ 71.7 km/h; min = 242.5 ÷ 3.55 ≈ 68.3 km/h. Both round to 70 km/h to 1 s.f."
+      },
+      "starter": [
+        {
+          "q": "Round 3.456 to 2 significant figures.",
+          "a": "3.5",
+          "mins": 1
+        },
+        {
+          "q": "Work out 7.25 × 2.",
+          "a": "14.5",
+          "mins": 1
+        },
+        {
+          "q": "Work out 12 ÷ 0.4.",
+          "a": "30",
+          "mins": 1
+        },
+        {
+          "q": "Write the error interval for 6 rounded to the nearest whole number.",
+          "a": "5.5 ≤ x < 6.5",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Which bounds give the maximum?",
+          "bullets": [
+            "Add and multiply: both upper",
+            "Subtract and divide: upper with lower"
+          ],
+          "note": "4MA1 1.8A (Higher).",
+          "table": {
+            "head": [
+              "Calculation",
+              "Maximum",
+              "Minimum"
+            ],
+            "rows": [
+              [
+                "a + b",
+                "UB + UB",
+                "LB + LB"
+              ],
+              [
+                "a − b",
+                "UB − LB",
+                "LB − UB"
+              ],
+              [
+                "a × b",
+                "UB × UB",
+                "LB × LB"
+              ],
+              [
+                "a ÷ b",
+                "UB ÷ LB",
+                "LB ÷ UB"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Model",
+          "bullets": [
+            "Write the bounds first, then calculate"
+          ],
+          "note": "Area of a 7.4 cm by 3.2 cm rectangle (both to 1 d.p.).",
+          "model": {
+            "problem": "Find the bounds of the area of a 7.4 cm by 3.2 cm rectangle (1 d.p.).",
+            "steps": [
+              "7.4: 7.35 to 7.45; 3.2: 3.15 to 3.25",
+              "UB: 7.45 × 3.25 = 24.2125",
+              "LB: 7.35 × 3.15 = 23.1525"
+            ],
+            "answer": "23.1525 cm² ≤ A < 24.2125 cm²"
+          }
+        },
+        {
+          "heading": "Common error",
+          "bullets": [
+            "Divide by the lower bound for a maximum"
+          ],
+          "note": "Ask: does dividing by a smaller number give more or less?",
+          "misconception": {
+            "wrong": "Max speed = UB distance ÷ UB time",
+            "right": "Max speed = UB distance ÷ LB time"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Half the unit either side"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "x = 4.6 to 1 decimal place. What is the upper bound?",
+            "options": [
+              "4.65",
+              "4.69",
+              "4.7",
+              "4.64"
+            ],
+            "answer": 0,
+            "why": "Half of 0.1 above: 4.65. 4.69 is not the bound; 4.7 rounds to 4.7."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write the bounds of 250 g to the nearest 10 g.",
+          "a": "245 g and 255 g",
+          "mins": 2,
+          "model": "Nearest 10 g: half of 10 is 5. Lower bound 250 − 5 = 245 g; upper bound 250 + 5 = 255 g."
+        },
+        {
+          "q": "Find the lower bound of 12.6 + 4.3 (each 1 d.p.).",
+          "a": "12.55 + 4.25 = 16.8",
+          "mins": 1
+        },
+        {
+          "q": "Find the maximum of 8.4 − 2.7 (each 1 d.p.).",
+          "a": "8.45 − 2.65 = 5.8",
+          "mins": 1
+        },
+        {
+          "q": "Find the upper bound of 24 ÷ 1.5 (24 to the nearest whole, 1.5 to 1 d.p.).",
+          "a": "24.5 ÷ 1.45 = 16.9 (3 s.f.)",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: A square has side 8.6 cm to 1 d.p. Find the bounds of its perimeter and its area.",
+          "a": "Perimeter 34.2 to 34.6 cm; area 73.1025 to 74.8225 cm²",
+          "mins": 5,
+          "model": "Side 8.55 to 8.65. Perimeter: 4 × 8.55 = 34.2 to 4 × 8.65 = 34.6. Area: 8.55² = 73.1025 to 8.65² = 74.8225."
+        },
+        {
+          "q": "Extend (3 marks): d = 245 km to the nearest 5 km and t = 3.5 h to the nearest 0.1 h. Find the upper bound of the average speed.",
+          "a": "247.5 (B1) ÷ 3.45 (M1) = 71.7 km/h (A1)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch (2 marks): Find the lower bound of the speed and use both bounds to give the speed to a suitable degree of accuracy.",
+          "a": "242.5 ÷ 3.55 = 68.3; both bounds round to 70 km/h to 1 s.f., so 70 km/h",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Write the lower bound of 3.7 m to 1 d.p.",
+          "a": "3.65 m",
+          "mins": 1
+        },
+        {
+          "q": "Which bounds give the maximum of a − b?",
+          "a": "Upper bound of a minus lower bound of b",
+          "mins": 1
+        }
+      ],
+      "homework": "Complete the portal's bounds set (6 questions) and add any errors to your repair list.",
+      "send": "Support: bounds table card. EAL: 'upper', 'lower', 'bound'. Stretch: bounds of a value from a formula such as density = mass ÷ volume.",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Unit 7 (4MA1 1.8A, 1.8C)",
+        "Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers)",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book",
+        "Scientific calculator",
+        "4MA1 Higher formulae sheet"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "ruler measuring to nearest millimetre",
+          "alt": "A ruler measuring a length",
+          "for": "keywords"
+        },
+        {
+          "find": "car speedometer",
+          "alt": "A speedometer, for the speed bounds problem",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Number, algebra, sequences, graphs",
+      "n": 57,
+      "title": "Revision: percentages, growth and ratio",
+      "duration": 50,
+      "bigQuestion": "Which multiplier solves which percentage question?",
+      "objectives": [
+        "To understand how to choose and use multipliers and ratio methods in exam questions"
+      ],
+      "successCriteria": [
+        "All: use multipliers for percentage change and reverse percentages",
+        "Most: solve repeated change and ratio problems",
+        "Some: find a rate from repeated change and combine ratios"
+      ],
+      "crossCurricular": "Business: International GCSE Business uses percentage change and ratio in finance questions",
+      "smsc": "Moral: understanding how interest grows explains one wisdom behind the prohibition of riba",
+      "keywords": [
+        {
+          "term": "multiplier",
+          "def": "the decimal for a percentage change"
+        },
+        {
+          "term": "reverse percentage",
+          "def": "finding the original"
+        },
+        {
+          "term": "depreciation",
+          "def": "fall in value over time"
+        },
+        {
+          "term": "ratio",
+          "def": "a comparison of parts"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A price goes up 20% and then down 20%. Has it returned to the start? What single multiplier describes both changes?",
+        "a": "No: 1.2 × 0.8 = 0.96, a 4% fall overall."
+      },
+      "starter": [
+        {
+          "q": "Write the multiplier for a 4% decrease.",
+          "a": "0.96",
+          "mins": 1
+        },
+        {
+          "q": "After 15% off, a price is £76.50. Find the original.",
+          "a": "£90",
+          "mins": 1
+        },
+        {
+          "q": "Share 84 in the ratio 3 : 4.",
+          "a": "36 and 48",
+          "mins": 1
+        },
+        {
+          "q": "y is proportional to x and y = 12 when x = 3. Write y in terms of x.",
+          "a": "y = 4x",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Choosing the method",
+          "bullets": [
+            "Change: × multiplier",
+            "Original: ÷ multiplier",
+            "Repeated: × multiplierⁿ"
+          ],
+          "note": "Pupils sort question types on whiteboards.",
+          "table": {
+            "head": [
+              "Question asks",
+              "Method",
+              "Example"
+            ],
+            "rows": [
+              [
+                "New value",
+                "× multiplier",
+                "£360 up 17.5%: × 1.175"
+              ],
+              [
+                "Original value",
+                "÷ multiplier",
+                "£50.40 after 12% rise: ÷ 1.12"
+              ],
+              [
+                "After n years",
+                "× multiplierⁿ",
+                "× 0.92⁴"
+              ],
+              [
+                "Percentage change",
+                "change ÷ original",
+                "48 → 60: 25%"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Islamic note: riba",
+          "bullets": [
+            "Riba (رِبَا) is forbidden in Islam",
+            "Islamic finance uses partnership and cost-plus sale"
+          ],
+          "note": "Islamic note: riba (رِبَا) is forbidden (Qur'an 2:275: Allah has permitted trade and forbidden riba). Islamic finance uses partnership (mushārakah, مُشَارَكَة) and cost-plus sale (murābaḥah, مُرَابَحَة) instead. Compound interest is examined (1.6), so we answer it accurately as knowledge, never as something to take.",
+          "quote": {
+            "text": "Allah has permitted trade and forbidden riba.",
+            "source": "Qur'an 2:275"
+          }
+        },
+        {
+          "heading": "Ratio model",
+          "bullets": [
+            "Make the shared part the same",
+            "Then use the total"
+          ],
+          "note": "A : B = 2 : 3 and B : C = 4 : 5.",
+          "model": {
+            "problem": "A : B = 2 : 3 and B : C = 4 : 5. A + B + C = 175. Find C.",
+            "steps": [
+              "Make B 12: A : B = 8 : 12, B : C = 12 : 15",
+              "A : B : C = 8 : 12 : 15, 35 parts",
+              "1 part = 175 ÷ 35 = 5",
+              "C = 15 × 5"
+            ],
+            "answer": "C = 75"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Multiply twice"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "£800 depreciates by 10% a year. What is it worth after 2 years?",
+            "options": [
+              "£648",
+              "£640",
+              "£720",
+              "£600"
+            ],
+            "answer": 0,
+            "why": "800 × 0.9² = 648. £640 takes 20% off once."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "After a 12% increase, a price is £50.40. Find the original price. (2 marks)",
+          "a": "50.40 ÷ 1.12 (M1) = £45 (A1)",
+          "mins": 3,
+          "model": "New = original × 1.12, so original = 50.40 ÷ 1.12 = £45. Check: 45 × 1.12 = 50.40."
+        },
+        {
+          "q": "Share £540 in the ratio 2 : 3 : 4.",
+          "a": "£120, £180, £240",
+          "mins": 1
+        },
+        {
+          "q": "A population of 8,000 falls by 2.5% a year. Find it after 3 years, to the nearest whole number.",
+          "a": "8000 × 0.975³ = 7414.9, so 7415",
+          "mins": 2
+        },
+        {
+          "q": "a : b = 3 : 7 and b − a = 28. Find a + b.",
+          "a": "4 parts = 28, so 10 parts = 70",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: (a) Increase £360 by 17.5% (b) Write 48 as a percentage of 320 (c) A van worth £12,000 depreciates by 15% a year. Find its value after 3 years.",
+          "a": "(a) £423 (b) 15% (c) £7,369.50",
+          "mins": 5,
+          "model": "(a) 360 × 1.175 = £423. (b) 48 ÷ 320 = 0.15 = 15%. (c) 12 000 × 0.85³ = 12 000 × 0.614125 = £7,369.50."
+        },
+        {
+          "q": "Extend (3 marks): In the wider economy, an amount grows by r% compound interest each year, from £5,000 to £5,624.32 in 3 years. Find r.",
+          "a": "5624.32 ÷ 5000 = 1.124864 (M1); cube root = 1.04 (M1); r = 4 (A1)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch (3 marks): A bag has red and green sweets in the ratio 5 : 3, 64 sweets in all. Some green sweets are added and the ratio becomes 5 : 4. How many were added?",
+          "a": "Red 40, green 24. 5 : 4 with red 40 gives green 32, so 8 added",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "£2,000 grows by 3% a year for 2 years. Find the final amount.",
+          "a": "£2,121.80",
+          "mins": 1
+        },
+        {
+          "q": "Share 63 in the ratio 4 : 5.",
+          "a": "28 and 35",
+          "mins": 1
+        }
+      ],
+      "homework": "Complete the portal's percentages and ratio set (8 questions) and log any errors in your repair list.",
+      "send": "Support: method table card. EAL: 'original', 'depreciation'. Stretch: find how many years until a value halves at 9% depreciation.",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Units 4, 5 (4MA1 1.6, 1.7)",
+        "Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers)",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book",
+        "Scientific calculator",
+        "4MA1 Higher formulae sheet"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "percentage multiplier bar model",
+          "alt": "A bar model showing a percentage change",
+          "for": "teach:1"
+        },
+        {
+          "find": "Islamic bank branch exterior",
+          "alt": "An Islamic bank",
+          "for": "keywords"
+        }
+      ],
+      "islamicLink": {
+        "text": "Islamic note: riba (رِبَا) is forbidden (Qur'an 2:275: Allah has permitted trade and forbidden riba). Islamic finance uses partnership (mushārakah, مُشَارَكَة) and cost-plus sale (murābaḥah, مُرَابَحَة) instead. We learn how interest works as knowledge of the wider economy, never as something to take.",
+        "at": "start"
+      }
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Number, algebra, sequences, graphs",
+      "n": 58,
+      "title": "Revision: linear equations and rearranging formulae",
+      "duration": 50,
+      "bigQuestion": "How do we keep an equation balanced however complicated it looks?",
+      "objectives": [
+        "To understand how to solve linear equations and rearrange formulae, including when the subject appears twice"
+      ],
+      "successCriteria": [
+        "All: solve equations with brackets and fractions",
+        "Most: change the subject of formulae with powers and roots",
+        "Some: rearrange when the subject appears twice, in exam style"
+      ],
+      "crossCurricular": "Science: the same algebra and number skills are used in International GCSE Physics and Chemistry calculations",
+      "smsc": "Moral: balance in equations mirrors justice ('adl, عَدْل): fairness to both sides",
+      "keywords": [
+        {
+          "term": "linear equation",
+          "def": "an equation where the unknown has power 1"
+        },
+        {
+          "term": "subject",
+          "def": "the letter on its own"
+        },
+        {
+          "term": "factorise",
+          "def": "take out a common factor"
+        },
+        {
+          "term": "LCM",
+          "def": "lowest common multiple"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "In the formula y = (x + 2)/x, x appears twice. How can we ever get x on its own?",
+        "a": "Multiply out, collect the x terms on one side and factorise: x = 2/(y − 1)."
+      },
+      "starter": [
+        {
+          "q": "Solve 3(x − 2) = 2x + 5.",
+          "a": "x = 11",
+          "mins": 1
+        },
+        {
+          "q": "Expand −2(3 − x).",
+          "a": "−6 + 2x",
+          "mins": 1
+        },
+        {
+          "q": "Factorise 3x − xy.",
+          "a": "x(3 − y)",
+          "mins": 1
+        },
+        {
+          "q": "Make t the subject of v = u + at.",
+          "a": "t = (v − u)/a",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Equations with fractions",
+          "bullets": [
+            "Multiply every term by the LCM"
+          ],
+          "note": "Pupils then do a practice question.",
+          "model": {
+            "problem": "Solve (x + 3)/2 − (x − 1)/3 = 3.",
+            "steps": [
+              "× 6: 3(x + 3) − 2(x − 1) = 18",
+              "3x + 9 − 2x + 2 = 18",
+              "x + 11 = 18"
+            ],
+            "answer": "x = 7"
+          }
+        },
+        {
+          "heading": "Subject appears twice",
+          "bullets": [
+            "Collect subject terms",
+            "Factorise, then divide"
+          ],
+          "note": "4MA1 2.3A Higher.",
+          "model": {
+            "problem": "Make a the subject of 3a + b = ac − 2.",
+            "steps": [
+              "3a − ac = −2 − b",
+              "a(3 − c) = −(2 + b)",
+              "a = (2 + b)/(c − 3)"
+            ],
+            "answer": "a = (2 + b)/(c − 3)"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Collect, factorise"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "Make x the subject of y = (x + 2)/x.",
+            "options": [
+              "x = 2/(y − 1)",
+              "x = (2 − y)/y",
+              "x = y − 2",
+              "x = 2/(1 − y)"
+            ],
+            "answer": 0,
+            "why": "xy = x + 2, xy − x = 2, x(y − 1) = 2. 2/(1 − y) has the sign wrong."
+          }
+        },
+        {
+          "heading": "Common error",
+          "bullets": [
+            "Undo the power last"
+          ],
+          "note": "V = (4/3)πr³: isolate r³ first.",
+          "misconception": {
+            "wrong": "V = (4/3)πr³ gives r = 3V/(4π)",
+            "right": "r³ = 3V/(4π), so r = ∛(3V/(4π))"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Solve 5 − 2(x − 3) = 3x − 4. (3 marks)",
+          "a": "5 − 2x + 6 = 3x − 4 (M1); 15 = 5x (M1); x = 3 (A1)",
+          "mins": 3,
+          "model": "Expand: 5 − 2x + 6 = 3x − 4. Simplify: 11 − 2x = 3x − 4. Add 2x and 4: 15 = 5x. x = 3."
+        },
+        {
+          "q": "Make h the subject of A = 2πr² + 2πrh.",
+          "a": "h = (A − 2πr²)/(2πr)",
+          "mins": 1
+        },
+        {
+          "q": "Solve (3x + 1)/4 = (x − 2)/2 + 1.",
+          "a": "x = −1",
+          "mins": 2
+        },
+        {
+          "q": "Make y the subject of x = (2y + 3)/(y − 1).",
+          "a": "y = (x + 3)/(x − 2)",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: (a) Solve 4(2x + 1) − 3(x − 2) = 25 (b) Solve x/3 + x/4 = 14 (c) Make u the subject of v² = u² + 2as",
+          "a": "(a) 3 (b) 24 (c) u = √(v² − 2as)",
+          "mins": 5,
+          "model": "(a) 8x + 4 − 3x + 6 = 25, 5x + 10 = 25, x = 3. (b) × 12: 4x + 3x = 168, x = 24. (c) u² = v² − 2as, u = √(v² − 2as)."
+        },
+        {
+          "q": "Extend (4 marks): Make t the subject of k = (3t − 2)/(t + 4).",
+          "a": "kt + 4k = 3t − 2 (M1); kt − 3t = −2 − 4k (M1); t(k − 3) = −(2 + 4k) (M1); t = (2 + 4k)/(3 − k) (A1)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch (3 marks): A triangle has sides x + 3, 2x − 1 and (x + 10)/2. Its perimeter is 28. Find the lengths of the sides.",
+          "a": "× 2: 2x + 6 + 4x − 2 + x + 10 = 56, 7x = 42, x = 6: sides 9, 11, 8",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Solve 7 − 3x = 2(x + 1).",
+          "a": "x = 1",
+          "mins": 1
+        },
+        {
+          "q": "Make x the subject of ax − b = cx.",
+          "a": "x = b/(a − c)",
+          "mins": 1
+        }
+      ],
+      "homework": "Complete the portal's equations and formulae set (8 questions) and update your repair list.",
+      "send": "Support: rearranging flowchart. EAL: 'subject', 'collect'. Stretch: make l the subject of T = 2π√(l/g).",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Units 10, 11 (4MA1 2.3A, 2.4A)",
+        "Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers)",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book",
+        "Scientific calculator",
+        "4MA1 Higher formulae sheet"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "balance scale",
+          "alt": "A balance scale",
+          "for": "keywords"
+        },
+        {
+          "find": "sphere volume formula diagram",
+          "alt": "A sphere with its radius labelled",
+          "for": "teach:4"
+        }
+      ],
+      "islamicLink": {
+        "text": "Algebra takes its name from al-jabr (الجبر) in the book of Muhammad ibn Musa al-Khwarizmi, written in Baghdad in the 9th century, where he solved equations, including quadratics, by completing and balancing.",
+        "at": "start"
+      }
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Number, algebra, sequences, graphs",
+      "n": 59,
+      "title": "Revision: quadratic equations",
+      "duration": 50,
+      "bigQuestion": "How do you choose the best method for a quadratic?",
+      "objectives": [
+        "To understand how to choose and use factorising, the formula and completing the square to solve quadratics"
+      ],
+      "successCriteria": [
+        "All: solve quadratics by factorising",
+        "Most: use the quadratic formula and give answers to the required accuracy",
+        "Some: complete the square for exact answers and form quadratics from contexts"
+      ],
+      "crossCurricular": "Science: the same algebra and number skills are used in International GCSE Physics and Chemistry calculations",
+      "smsc": "Spiritual: al-Khwarizmi solved quadratics by completing the square with geometric squares over a thousand years ago",
+      "keywords": [
+        {
+          "term": "quadratic",
+          "def": "an equation with x² as the highest power"
+        },
+        {
+          "term": "root",
+          "def": "a solution"
+        },
+        {
+          "term": "quadratic formula",
+          "def": "x = (−b ± √(b² − 4ac)) ÷ 2a"
+        },
+        {
+          "term": "completing the square",
+          "def": "writing x² + bx + c as (x + p)² + q"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "x² − 6x + 2 = 0 will not factorise with whole numbers. Does that mean it has no solutions?",
+        "a": "No: it has two, 3 ± √7. The formula or completing the square finds them."
+      },
+      "starter": [
+        {
+          "q": "Factorise x² − 7x + 12.",
+          "a": "(x − 3)(x − 4)",
+          "mins": 1
+        },
+        {
+          "q": "Expand (x + 3)².",
+          "a": "x² + 6x + 9",
+          "mins": 1
+        },
+        {
+          "q": "Work out √(49 − 24).",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "Complete: x² + 6x = (x + 3)² − ?",
+          "a": "9",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Choosing a method",
+          "bullets": [
+            "Factorise if it factorises",
+            "Formula for decimals",
+            "Complete the square for exact answers"
+          ],
+          "note": "4MA1 2.7A, 2.7B, 2.7C.",
+          "table": {
+            "head": [
+              "Equation",
+              "Best method",
+              "Solutions"
+            ],
+            "rows": [
+              [
+                "2x² + 5x − 3 = 0",
+                "Factorise: (2x − 1)(x + 3)",
+                "1/2, −3"
+              ],
+              [
+                "3x² − 4x − 2 = 0",
+                "Formula",
+                "1.72, −0.387"
+              ],
+              [
+                "x² − 8x + 3 = 0",
+                "Complete the square",
+                "4 ± √13"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Forming from a context",
+          "bullets": [
+            "Write an expression, set equal, rearrange to = 0"
+          ],
+          "note": "Reject answers that make no sense (negative lengths).",
+          "model": {
+            "problem": "A rectangle is (x + 3) cm by (x − 1) cm with area 32 cm². Find x.",
+            "steps": [
+              "(x + 3)(x − 1) = 32",
+              "x² + 2x − 35 = 0",
+              "(x + 7)(x − 5) = 0",
+              "x = 5 (x = −7 gives negative lengths)"
+            ],
+            "answer": "x = 5"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Do not divide by x"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "Solve x² = 5x.",
+            "options": [
+              "x = 0 or x = 5",
+              "x = 5",
+              "x = √5",
+              "x = ±5"
+            ],
+            "answer": 0,
+            "why": "x² − 5x = 0, x(x − 5) = 0. Dividing by x loses x = 0."
+          }
+        },
+        {
+          "heading": "Common error",
+          "bullets": [
+            "The ± gives two answers"
+          ],
+          "note": "Write both answers every time.",
+          "misconception": {
+            "wrong": "(x − 3)² = 7, so x = 3 + √7",
+            "right": "x − 3 = ±√7, so x = 3 + √7 or x = 3 − √7"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Solve 2x² − 7x + 3 = 0. (3 marks)",
+          "a": "(2x − 1)(x − 3) = 0 (M1 A1); x = 1/2 or x = 3 (A1)",
+          "mins": 3,
+          "model": "Product ac = 6, sum −7: −6 and −1. 2x² − 6x − x + 3 = 2x(x − 3) − 1(x − 3) = (2x − 1)(x − 3). So x = 1/2 or 3."
+        },
+        {
+          "q": "Solve x² + 2x − 24 = 0.",
+          "a": "x = 4 or x = −6",
+          "mins": 1
+        },
+        {
+          "q": "Solve x² − 6x + 2 = 0, giving exact answers.",
+          "a": "x = 3 ± √7",
+          "mins": 2
+        },
+        {
+          "q": "Solve x² + 3x − 5 = 0, to 2 d.p.",
+          "a": "x = 1.19 or x = −4.19",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Solve (a) 3x² − 10x − 8 = 0 (b) 2x² + 3x − 7 = 0 (2 d.p.) (c) x² + 10x + 18 = 0 (exact)",
+          "a": "(a) −2/3, 4 (b) 1.27, −2.77 (c) −5 ± √7",
+          "mins": 6,
+          "model": "(a) (3x + 2)(x − 4) = 0: x = −2/3 or 4. (b) x = (−3 ± √(9 + 56))/4 = (−3 ± √65)/4: 1.27 or −2.77. (c) (x + 5)² − 25 + 18 = 0, (x + 5)² = 7, x = −5 ± √7."
+        },
+        {
+          "q": "Extend (4 marks): A right-angled triangle has sides x cm and (x + 7) cm and hypotenuse (x + 8) cm. Find x.",
+          "a": "x² + (x + 7)² = (x + 8)² (M1); x² − 2x − 15 = 0 (M1); (x − 5)(x + 3) = 0 (M1); x = 5 (A1)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch (4 marks): Solve 3/(x − 1) + 2/(x + 2) = 1, giving answers to 2 d.p.",
+          "a": "3(x + 2) + 2(x − 1) = (x − 1)(x + 2); x² − 4x − 6 = 0; x = 2 ± √10: 5.16, −1.16",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Solve x² − 9x + 20 = 0.",
+          "a": "x = 4 or x = 5",
+          "mins": 1
+        },
+        {
+          "q": "Write x² + 4x − 1 in the form (x + p)² + q.",
+          "a": "(x + 2)² − 5",
+          "mins": 1
+        }
+      ],
+      "homework": "Complete the portal's quadratics set (8 questions, mixed methods) and update your repair list.",
+      "send": "Support: method choice flowchart and the formula on the formulae sheet. EAL: 'root', 'exact'. Stretch: use the discriminant to decide how many roots.",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Units 9, 15 (4MA1 2.2D, 2.7A to 2.7C)",
+        "Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers)",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book",
+        "Scientific calculator",
+        "4MA1 Higher formulae sheet"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "completing the square geometric diagram",
+          "alt": "A geometric diagram of completing the square",
+          "for": "teach:1"
+        },
+        {
+          "find": "Kitab al-jabr wa-l-muqabala manuscript page",
+          "alt": "A page from al-Khwarizmi's book on algebra",
+          "for": "keywords"
+        }
+      ],
+      "islamicLink": {
+        "text": "Algebra takes its name from al-jabr (الجبر) in the book of Muhammad ibn Musa al-Khwarizmi, written in Baghdad in the 9th century, where he solved equations, including quadratics, by completing and balancing.",
+        "at": "start"
+      }
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Number, algebra, sequences, graphs",
+      "n": 60,
+      "title": "Revision: simultaneous equations",
+      "duration": 50,
+      "bigQuestion": "What does the solution of two equations look like on a graph?",
+      "objectives": [
+        "To understand how to solve linear and linear-quadratic simultaneous equations and interpret the solutions"
+      ],
+      "successCriteria": [
+        "All: solve linear simultaneous equations by elimination",
+        "Most: solve linear-quadratic pairs by substitution",
+        "Some: interpret solutions as intersections and show a line is a tangent"
+      ],
+      "crossCurricular": "Business: break-even points are where cost and revenue lines meet",
+      "smsc": "Moral: two conditions both being met is like keeping two promises at once",
+      "keywords": [
+        {
+          "term": "simultaneous",
+          "def": "true at the same time"
+        },
+        {
+          "term": "elimination",
+          "def": "adding or subtracting equations to remove a letter"
+        },
+        {
+          "term": "substitution",
+          "def": "replacing a letter with an expression"
+        },
+        {
+          "term": "intersection",
+          "def": "where graphs cross"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A line and a circle can meet in two points, one point or none. How would the algebra show which?",
+        "a": "Substituting gives a quadratic: two roots, one repeated root (a tangent) or no real roots."
+      },
+      "starter": [
+        {
+          "q": "Solve 2x + 3 = 11.",
+          "a": "x = 4",
+          "mins": 1
+        },
+        {
+          "q": "Substitute y = 2x − 1 into x + y = 8 and simplify.",
+          "a": "3x − 1 = 8",
+          "mins": 1
+        },
+        {
+          "q": "Expand (2x − 1)².",
+          "a": "4x² − 4x + 1",
+          "mins": 1
+        },
+        {
+          "q": "Factorise x² − x − 6.",
+          "a": "(x − 3)(x + 2)",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Elimination",
+          "bullets": [
+            "Make one coefficient match",
+            "Add or subtract to remove it"
+          ],
+          "note": "4MA1 2.6A.",
+          "model": {
+            "problem": "Solve 2x + 3y = 12 and 5x − 2y = 11.",
+            "steps": [
+              "× 2 and × 3: 4x + 6y = 24, 15x − 6y = 33",
+              "Add: 19x = 57, x = 3",
+              "6 + 3y = 12, y = 2"
+            ],
+            "answer": "x = 3, y = 2"
+          }
+        },
+        {
+          "heading": "Linear and quadratic",
+          "bullets": [
+            "Substitute the linear into the quadratic",
+            "Solve; find both pairs"
+          ],
+          "note": "4MA1 2.7D.",
+          "model": {
+            "problem": "Solve y = x + 1 and x² + y² = 13.",
+            "steps": [
+              "x² + (x + 1)² = 13",
+              "2x² + 2x − 12 = 0, x² + x − 6 = 0",
+              "x = 2 or −3",
+              "y = 3 or −2"
+            ],
+            "answer": "(2, 3) and (−3, −2)"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Add to eliminate y"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "Solve x + y = 10 and x − y = 4.",
+            "options": [
+              "(7, 3)",
+              "(3, 7)",
+              "(6, 4)",
+              "(14, −4)"
+            ],
+            "answer": 0,
+            "why": "Add: 2x = 14, x = 7, y = 3. (3, 7) swaps x and y."
+          }
+        },
+        {
+          "heading": "Common error",
+          "bullets": [
+            "Pair each x with its own y"
+          ],
+          "note": "Substitute back into the linear equation.",
+          "misconception": {
+            "wrong": "x = 2 or −3, y = 3 or −2, so four solutions",
+            "right": "Two solutions: (2, 3) and (−3, −2)"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Solve 4x + y = 11 and 2x − y = 1. (3 marks)",
+          "a": "Add: 6x = 12 (M1); x = 2 (A1); y = 3 (A1)",
+          "mins": 3,
+          "model": "Add the equations: 6x = 12, so x = 2. Substitute: 8 + y = 11, so y = 3. Check: 2(2) − 3 = 1."
+        },
+        {
+          "q": "Solve 3x + 4y = 5 and 2x − 3y = 9.",
+          "a": "x = 3, y = −1",
+          "mins": 2
+        },
+        {
+          "q": "Solve y = 2x − 3 and y = x² − 3x + 3.",
+          "a": "(2, 1) and (3, 3)",
+          "mins": 2
+        },
+        {
+          "q": "3 pens and 2 rulers cost £3.40; 5 pens and 2 rulers cost £4.60. Find each price.",
+          "a": "Pen 60p, ruler 80p",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Solve (a) 5x + 3y = 21 and 2x + 3y = 12 (b) 4x − 3y = 1 and 3x + 2y = 22",
+          "a": "(a) x = 3, y = 2 (b) x = 4, y = 5",
+          "mins": 5,
+          "model": "(a) Subtract: 3x = 9, x = 3; 15 + 3y = 21, y = 2. (b) × 2 and × 3: 8x − 6y = 2, 9x + 6y = 66; add: 17x = 68, x = 4; 16 − 3y = 1, y = 5."
+        },
+        {
+          "q": "Extend (5 marks): Solve y = 2x + 1 and x² + y² = 34.",
+          "a": "x² + (2x + 1)² = 34 (M1); 5x² + 4x − 33 = 0 (A1); (5x − 11)(x + 3) = 0 (M1); x = 2.2, y = 5.4 or x = −3, y = −5 (A1 A1)",
+          "mins": 5
+        },
+        {
+          "q": "Stretch (4 marks): Show that y = 3x − 10 is a tangent to x² + y² = 10 and find the point of contact.",
+          "a": "x² + (3x − 10)² = 10 gives 10x² − 60x + 90 = 0, (x − 3)² = 0: one point, (3, −1)",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Solve x + 2y = 7 and 3x − 2y = 5.",
+          "a": "x = 3, y = 2",
+          "mins": 1
+        },
+        {
+          "q": "What does a repeated root tell you about a line and a curve?",
+          "a": "The line touches the curve once: it is a tangent",
+          "mins": 1
+        }
+      ],
+      "homework": "Complete the portal's simultaneous equations set (6 questions) and update your repair list.",
+      "send": "Support: elimination steps card. EAL: 'eliminate', 'substitute'. Stretch: when do two lines have no solution?",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Unit 17 (4MA1 2.6A, 2.6B, 2.7D)",
+        "Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers)",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book",
+        "Scientific calculator",
+        "4MA1 Higher formulae sheet"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "two straight lines intersecting graph",
+          "alt": "Two lines crossing at a point",
+          "for": "keywords"
+        },
+        {
+          "find": "line and circle intersection diagram",
+          "alt": "A line crossing a circle at two points",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Number, algebra, sequences, graphs",
+      "n": 61,
+      "title": "Revision: inequalities",
+      "duration": 50,
+      "bigQuestion": "How is solving an inequality like solving an equation, and how is it different?",
+      "objectives": [
+        "To understand how to solve linear and quadratic inequalities and describe regions"
+      ],
+      "successCriteria": [
+        "All: solve linear inequalities and show them on a number line",
+        "Most: solve quadratic inequalities using a sketch",
+        "Some: find integer points in a region defined by several inequalities"
+      ],
+      "crossCurricular": "Science: the same algebra and number skills are used in International GCSE Physics and Chemistry calculations",
+      "smsc": "Moral: limits and boundaries, like inequalities, help keep things fair and safe",
+      "keywords": [
+        {
+          "term": "inequality",
+          "def": "a statement using <, >, ≤ or ≥"
+        },
+        {
+          "term": "solution set",
+          "def": "all values that satisfy an inequality"
+        },
+        {
+          "term": "critical values",
+          "def": "where the quadratic equals zero"
+        },
+        {
+          "term": "region",
+          "def": "an area on a graph satisfying inequalities"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If x² > 9, is x > 3 the whole answer? What else could x be?",
+        "a": "No: x < −3 also works, since (−4)² = 16 > 9. Quadratic inequalities often have two parts."
+      },
+      "starter": [
+        {
+          "q": "Solve 3x − 4 = 11.",
+          "a": "x = 5",
+          "mins": 1
+        },
+        {
+          "q": "Factorise x² − x − 12.",
+          "a": "(x − 4)(x + 3)",
+          "mins": 1
+        },
+        {
+          "q": "List the integers n with −2 < n ≤ 3.",
+          "a": "−1, 0, 1, 2, 3",
+          "mins": 1
+        },
+        {
+          "q": "Is −3 < −5?",
+          "a": "No",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Linear inequalities",
+          "bullets": [
+            "Solve like an equation",
+            "Dividing or multiplying by a negative reverses the sign"
+          ],
+          "note": "5 − 2x < 11: −2x < 6, so x > −3. Open circle at −3.",
+          "numberline": {
+            "min": -5,
+            "max": 5,
+            "step": 1,
+            "marks": [
+              {
+                "at": -3,
+                "label": "x > −3 (open circle)"
+              }
+            ]
+          }
+        },
+        {
+          "heading": "Quadratic inequalities",
+          "bullets": [
+            "Find the critical values",
+            "Sketch the parabola; read where it is below or above 0"
+          ],
+          "note": "4MA1 2.8A.",
+          "model": {
+            "problem": "Solve x² − x − 12 ≤ 0.",
+            "steps": [
+              "(x − 4)(x + 3) = 0 at x = 4 and x = −3",
+              "U-shaped curve is below 0 between the roots",
+              "Include the ends (≤)"
+            ],
+            "answer": "−3 ≤ x ≤ 4"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Sketch first"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "Solve x² − 4x < 0.",
+            "options": [
+              "0 < x < 4",
+              "x < 0 or x > 4",
+              "x < 4",
+              "−2 < x < 2"
+            ],
+            "answer": 0,
+            "why": "x(x − 4) < 0: below the axis between the roots 0 and 4."
+          }
+        },
+        {
+          "heading": "Common error",
+          "bullets": [
+            "Two parts outside the roots"
+          ],
+          "note": "Sketch y = x² − 9.",
+          "misconception": {
+            "wrong": "x² > 9, so x > 3",
+            "right": "x < −3 or x > 3"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Solve 3(x + 2) ≤ 2x + 9. (2 marks)",
+          "a": "3x + 6 ≤ 2x + 9 (M1); x ≤ 3 (A1)",
+          "mins": 3,
+          "model": "Expand: 3x + 6 ≤ 2x + 9. Subtract 2x and 6: x ≤ 3."
+        },
+        {
+          "q": "List the integers satisfying −4 < 2x ≤ 6.",
+          "a": "−1, 0, 1, 2, 3",
+          "mins": 1
+        },
+        {
+          "q": "Solve x² + 2x − 15 > 0.",
+          "a": "x < −5 or x > 3",
+          "mins": 2
+        },
+        {
+          "q": "Is (2, 3) in the region y > 2x − 1 and x + y ≤ 6?",
+          "a": "No: 3 > 3 is false (it is on the boundary of a strict inequality)",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Solve (a) 7 − 3x ≥ 1 (b) 2x² − 5x − 3 < 0 (c) list the integers n with n² < 20",
+          "a": "(a) x ≤ 2 (b) −1/2 < x < 3 (c) −4, −3, −2, −1, 0, 1, 2, 3, 4",
+          "mins": 5,
+          "model": "(a) −3x ≥ −6, divide by −3 and reverse: x ≤ 2. (b) (2x + 1)(x − 3) < 0, roots −1/2 and 3, below the axis between: −1/2 < x < 3. (c) n² < 20 for −4 ≤ n ≤ 4."
+        },
+        {
+          "q": "Extend (3 marks): Find the integers x that satisfy both 3x + 2 > 5 and x² < 16.",
+          "a": "x > 1 (B1) and −4 < x < 4 (M1): x = 2, 3 (A1)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch (3 marks): Region R satisfies y ≥ 1, x + y ≤ 5 and y ≤ 2x. List all points with integer coordinates in R.",
+          "a": "(1, 1), (2, 1), (3, 1), (4, 1), (1, 2), (2, 2), (3, 2), (2, 3)",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Solve −2x > 8.",
+          "a": "x < −4",
+          "mins": 1
+        },
+        {
+          "q": "Solve x² ≤ 25.",
+          "a": "−5 ≤ x ≤ 5",
+          "mins": 1
+        }
+      ],
+      "homework": "Complete the portal's inequalities set (6 questions, including set notation answers) and update your repair list.",
+      "send": "Support: sketch template for quadratic inequalities. EAL: 'at least', 'at most', 'strict'. Stretch: write answers in set notation, such as {x : −3 ≤ x ≤ 4}.",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Units 11, 14, 15 (4MA1 2.8A to 2.8E)",
+        "Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers)",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book",
+        "Scientific calculator",
+        "4MA1 Higher formulae sheet"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "number line inequality open closed circle",
+          "alt": "A number line showing an inequality",
+          "for": "teach:1"
+        },
+        {
+          "find": "parabola below x axis between roots",
+          "alt": "A parabola dipping below the x-axis",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Number, algebra, sequences, graphs",
+      "n": 62,
+      "title": "Revision: arithmetic sequences and series",
+      "duration": 50,
+      "bigQuestion": "How can two formulas answer any question about an arithmetic sequence?",
+      "objectives": [
+        "To understand how to use the nth term and sum formulas for arithmetic sequences in exam questions"
+      ],
+      "successCriteria": [
+        "All: find and use the nth term a + (n − 1)d",
+        "Most: find a and d from two terms and use Sn",
+        "Some: prove results with the series formula"
+      ],
+      "crossCurricular": "Computing: a loop adding a constant each time produces an arithmetic sequence",
+      "smsc": "Spiritual: small, steady daily deeds add up to something great, like a series",
+      "keywords": [
+        {
+          "term": "arithmetic sequence",
+          "def": "constant difference d between terms"
+        },
+        {
+          "term": "first term a",
+          "def": "the first term"
+        },
+        {
+          "term": "Sn",
+          "def": "the sum of the first n terms"
+        },
+        {
+          "term": "series",
+          "def": "the sum of terms"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What is the sum of all the multiples of 7 from 7 to 700? Is there a way that avoids adding 100 numbers?",
+        "a": "Pair first and last: 100 terms, average (7 + 700) ÷ 2, so 50 × 707 = 35 350."
+      },
+      "starter": [
+        {
+          "q": "Find the nth term of 4, 9, 14, ...",
+          "a": "5n − 1",
+          "mins": 1
+        },
+        {
+          "q": "Find the 10th term of 2, 5, 8, ...",
+          "a": "29",
+          "mins": 1
+        },
+        {
+          "q": "Solve 3n + 1 > 100.",
+          "a": "n > 33",
+          "mins": 1
+        },
+        {
+          "q": "Work out 50 × 707.",
+          "a": "35 350",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The formulas",
+          "bullets": [
+            "uₙ = a + (n − 1)d",
+            "Sₙ = n/2[2a + (n − 1)d]"
+          ],
+          "note": "Sₙ is on the 4MA1 Higher formulae sheet.",
+          "model": {
+            "problem": "The 3rd term is 14 and the 7th term is 30. Find the sum of the first 12 terms.",
+            "steps": [
+              "4d = 16, d = 4",
+              "a + 2d = 14, a = 6",
+              "S12 = 6(12 + 11 × 4) = 6 × 56"
+            ],
+            "answer": "336"
+          }
+        },
+        {
+          "heading": "Proof with Sₙ",
+          "bullets": [
+            "Substitute a and d",
+            "Simplify to the required form"
+          ],
+          "note": "Exam 'show that' questions.",
+          "model": {
+            "problem": "Show that the sum of the first n terms of 3, 7, 11, ... is n(2n + 1).",
+            "steps": [
+              "a = 3, d = 4",
+              "Sₙ = n/2[6 + 4(n − 1)]",
+              "= n/2(4n + 2)",
+              "= n(2n + 1)"
+            ],
+            "answer": "n(2n + 1)"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Sₙ formula"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "Find the sum of the first 10 terms of 5, 8, 11, ...",
+            "options": [
+              "185",
+              "370",
+              "32",
+              "160"
+            ],
+            "answer": 0,
+            "why": "5 × (10 + 27) = 185. 370 forgets the n/2."
+          }
+        },
+        {
+          "heading": "Common error",
+          "bullets": [
+            "n − 1 differences"
+          ],
+          "note": "Check with the 1st term.",
+          "misconception": {
+            "wrong": "uₙ = a + nd",
+            "right": "uₙ = a + (n − 1)d: the first term has no differences added"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Find the nth term of 11, 8, 5, ... and its 25th term. (2 marks)",
+          "a": "14 − 3n (B1); −61 (B1)",
+          "mins": 3,
+          "model": "d = −3, a = 11. uₙ = 11 − 3(n − 1) = 14 − 3n. u25 = 14 − 75 = −61."
+        },
+        {
+          "q": "Find the sum of the first 20 terms of 4, 10, 16, ...",
+          "a": "1220",
+          "mins": 1
+        },
+        {
+          "q": "How many terms of 2, 5, 8, ... are less than 200?",
+          "a": "3n − 1 < 200, n < 67: 66 terms",
+          "mins": 2
+        },
+        {
+          "q": "Is 301 a term of 3n + 4?",
+          "a": "Yes: n = 99",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: For 7, 10, 13, ... find (a) the 40th term (b) the sum of the first 40 terms (c) whether 301 is a term",
+          "a": "(a) 124 (b) 2620 (c) yes, the 99th term",
+          "mins": 5,
+          "model": "(a) 7 + 39 × 3 = 124. (b) S40 = 20(14 + 39 × 3) = 20 × 131 = 2620. (c) 3n + 4 = 301 gives n = 99, a whole number: yes."
+        },
+        {
+          "q": "Extend (3 marks): An arithmetic series has first term 5 and the sum of its first 10 terms is 230. Find d.",
+          "a": "230 = 10/2(10 + 9d) (M1); 46 = 10 + 9d (M1); d = 4 (A1)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch (3 marks): Prove that the sum of the first n odd numbers is n².",
+          "a": "a = 1, d = 2: Sₙ = n/2(2 + 2(n − 1)) = n/2 × 2n = n²",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Find the sum of the first 6 terms of 2, 9, 16, ...",
+          "a": "117",
+          "mins": 1
+        },
+        {
+          "q": "Write the formula for the nth term of an arithmetic sequence.",
+          "a": "a + (n − 1)d",
+          "mins": 1
+        }
+      ],
+      "homework": "Complete the portal's sequences set (6 questions) and update your repair list.",
+      "send": "Support: a, d, n labelled card. EAL: 'series', 'term'. Stretch: find n when Sₙ first exceeds 5000 for 3, 7, 11, ...",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Unit 12 (4MA1 3.1A to 3.1C)",
+        "Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers)",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book",
+        "Scientific calculator",
+        "4MA1 Higher formulae sheet"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "stacked logs pyramid rows",
+          "alt": "Logs stacked in rows decreasing by one",
+          "for": "teach:1"
+        },
+        {
+          "find": "arithmetic sequence number line equal steps",
+          "alt": "Equal steps along a number line",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Number, algebra, sequences, graphs",
+      "n": 63,
+      "title": "Revision: functions",
+      "duration": 50,
+      "bigQuestion": "How do functions combine and undo each other?",
+      "objectives": [
+        "To understand how to use function notation, composite functions and inverse functions in exam questions"
+      ],
+      "successCriteria": [
+        "All: evaluate f(x) and find composite values",
+        "Most: find composite and inverse functions algebraically",
+        "Some: state domain restrictions and solve equations involving functions"
+      ],
+      "crossCurricular": "Computing: functions in programs take inputs and return outputs, and can be combined",
+      "smsc": "Spiritual: precise rules that always give the same output reflect the order in mathematics",
+      "keywords": [
+        {
+          "term": "function",
+          "def": "a rule mapping each input to one output"
+        },
+        {
+          "term": "composite function",
+          "def": "fg(x) = f(g(x)): do g first"
+        },
+        {
+          "term": "inverse function",
+          "def": "f⁻¹ undoes f"
+        },
+        {
+          "term": "domain",
+          "def": "the allowed input values"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If f doubles a number and g adds 3, is 'double then add 3' the same as 'add 3 then double'? Why does the order matter?",
+        "a": "No: gf(x) = 2x + 3 but fg(x) = 2x + 6. In fg we do g first."
+      },
+      "starter": [
+        {
+          "q": "f(x) = 3x − 1. Find f(4).",
+          "a": "11",
+          "mins": 1
+        },
+        {
+          "q": "Solve 3x − 1 = 8.",
+          "a": "x = 3",
+          "mins": 1
+        },
+        {
+          "q": "Find x² + 1 when x = −2.",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "Make x the subject of y = (x + 4)/2.",
+          "a": "x = 2y − 4",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Composite and inverse",
+          "bullets": [
+            "fg(x): put g(x) into f",
+            "f⁻¹: swap, then rearrange"
+          ],
+          "note": "4MA1 3.2A to 3.2D.",
+          "model": {
+            "problem": "f(x) = (3x − 1)/4. Find f⁻¹(x).",
+            "steps": [
+              "y = (3x − 1)/4",
+              "4y = 3x − 1",
+              "x = (4y + 1)/3"
+            ],
+            "answer": "f⁻¹(x) = (4x + 1)/3"
+          }
+        },
+        {
+          "heading": "Domain",
+          "bullets": [
+            "Exclude values that divide by 0",
+            "Square roots need values ≥ 0"
+          ],
+          "note": "h(x) = 1/(x − 2): x ≠ 2. k(x) = √(x − 3): x ≥ 3.",
+          "table": {
+            "head": [
+              "Function",
+              "Excluded or required"
+            ],
+            "rows": [
+              [
+                "1/(x − 2)",
+                "x ≠ 2"
+              ],
+              [
+                "4/(2x + 1)",
+                "x ≠ −1/2"
+              ],
+              [
+                "√(x − 3)",
+                "x ≥ 3"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Inside function first"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "f(x) = x + 5 and g(x) = 3x. Find gf(2).",
+            "options": [
+              "21",
+              "11",
+              "17",
+              "30"
+            ],
+            "answer": 0,
+            "why": "f(2) = 7, then g(7) = 21. 11 is fg(2)."
+          }
+        },
+        {
+          "heading": "Common error",
+          "bullets": [
+            "fg means g first"
+          ],
+          "note": "Read from the right.",
+          "misconception": {
+            "wrong": "fg(x) = f(x) × g(x)",
+            "right": "fg(x) = f(g(x)): the output of g goes into f"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "f(x) = 5 − 2x. Find f(−3) and f⁻¹(x). (3 marks)",
+          "a": "f(−3) = 11 (B1); y = 5 − 2x, x = (5 − y)/2 (M1); f⁻¹(x) = (5 − x)/2 (A1)",
+          "mins": 3,
+          "model": "f(−3) = 5 − 2(−3) = 11. Inverse: y = 5 − 2x, so 2x = 5 − y, x = (5 − y)/2. f⁻¹(x) = (5 − x)/2."
+        },
+        {
+          "q": "f(x) = x² − 1, g(x) = x + 3. Find fg(x) in simplest form.",
+          "a": "x² + 6x + 8",
+          "mins": 2
+        },
+        {
+          "q": "Which value is excluded from the domain of 4/(2x + 1)?",
+          "a": "x = −1/2",
+          "mins": 1
+        },
+        {
+          "q": "f(x) = 4x − 3. Solve f(x) = 13.",
+          "a": "x = 4",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: f(x) = 3x + 2, g(x) = x² − 1. Find (a) f(−4) (b) gf(1) (c) f⁻¹(x) (d) solve f(x) = g(x), to 2 d.p.",
+          "a": "(a) −10 (b) 24 (c) (x − 2)/3 (d) 3.79, −0.79",
+          "mins": 6,
+          "model": "(a) 3(−4) + 2 = −10. (b) f(1) = 5, g(5) = 24. (c) y = 3x + 2, x = (y − 2)/3. (d) x² − 3x − 3 = 0, x = (3 ± √21)/2 = 3.79 or −0.79."
+        },
+        {
+          "q": "Extend (4 marks): f(x) = 2x − 5 and g(x) = (x + 1)/2. Show that gf(x) = x − 2 and explain why fg(x) = gf(x) has no solution.",
+          "a": "gf(x) = (2x − 5 + 1)/2 = x − 2; fg(x) = x + 1 − 5 = x − 4. x − 4 = x − 2 is never true",
+          "mins": 4
+        },
+        {
+          "q": "Stretch (3 marks): f(x) = (x + 3)/(x − 1), x ≠ 1. Show that ff(x) = x. What does this tell you about f⁻¹?",
+          "a": "ff(x) = 4x/4 = x, so f is its own inverse: f⁻¹ = f",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "f(x) = 4x − 3. Find f⁻¹(x).",
+          "a": "(x + 3)/4",
+          "mins": 1
+        },
+        {
+          "q": "f(x) = x², g(x) = x − 2. Find fg(5).",
+          "a": "9",
+          "mins": 1
+        }
+      ],
+      "homework": "Complete the portal's functions set (6 questions) and update your repair list.",
+      "send": "Support: function machine diagrams for fg. EAL: 'composite', 'inverse', 'domain'. Stretch: find the range of f(x) = x² + 2 for all real x.",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Unit 18 (4MA1 3.2A to 3.2D)",
+        "Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers)",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book",
+        "Scientific calculator",
+        "4MA1 Higher formulae sheet"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "function machine input output diagram",
+          "alt": "A function machine",
+          "for": "teach:1"
+        },
+        {
+          "find": "mapping diagram domain range",
+          "alt": "A mapping diagram from a domain to a range",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Number, algebra, sequences, graphs",
+      "n": 64,
+      "title": "Revision: straight-line graphs",
+      "duration": 50,
+      "bigQuestion": "How do gradients tell us when lines are parallel or perpendicular?",
+      "objectives": [
+        "To understand how to find and use equations of straight lines, including parallel and perpendicular lines"
+      ],
+      "successCriteria": [
+        "All: find the gradient, midpoint and equation of a line through two points",
+        "Most: find equations of parallel and perpendicular lines",
+        "Some: solve multi-step coordinate geometry problems in exam style"
+      ],
+      "crossCurricular": "Geography: gradients of slopes on maps use the same rise over run",
+      "smsc": "Spiritual: perpendicular lines and right angles underlie the geometry of Islamic architecture",
+      "keywords": [
+        {
+          "term": "gradient",
+          "def": "change in y ÷ change in x"
+        },
+        {
+          "term": "perpendicular",
+          "def": "at right angles; gradients multiply to −1"
+        },
+        {
+          "term": "parallel",
+          "def": "same gradient"
+        },
+        {
+          "term": "midpoint",
+          "def": "the mean of the coordinates"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two lines have gradients 2/3 and −3/2. Without drawing them, what can you say about how they cross?",
+        "a": "2/3 × −3/2 = −1, so they are perpendicular: they cross at right angles."
+      },
+      "starter": [
+        {
+          "q": "Find the gradient through (1, 3) and (4, 12).",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "Find the midpoint of (−2, 5) and (6, 1).",
+          "a": "(2, 3)",
+          "mins": 1
+        },
+        {
+          "q": "Rearrange 2y − 6x = 8 into y = mx + c.",
+          "a": "y = 3x + 4",
+          "mins": 1
+        },
+        {
+          "q": "What is the negative reciprocal of 2/3?",
+          "a": "−3/2",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Perpendicular lines",
+          "bullets": [
+            "m₁ × m₂ = −1",
+            "Perpendicular gradient: negative reciprocal"
+          ],
+          "note": "4MA1 3.3G (Higher).",
+          "model": {
+            "problem": "Find the line through (2, 5) perpendicular to y = 2x − 1.",
+            "steps": [
+              "Perpendicular gradient −1/2",
+              "5 = −1/2 × 2 + c, c = 6"
+            ],
+            "answer": "y = −x/2 + 6"
+          }
+        },
+        {
+          "heading": "Perpendicular bisector",
+          "bullets": [
+            "Midpoint, then perpendicular gradient"
+          ],
+          "note": "A(−1, 2), B(5, 6).",
+          "model": {
+            "problem": "Find the perpendicular bisector of A(−1, 2) and B(5, 6).",
+            "steps": [
+              "Midpoint (2, 4)",
+              "Gradient AB = 4/6 = 2/3; perpendicular −3/2",
+              "4 = −3/2 × 2 + c, c = 7"
+            ],
+            "answer": "y = −1.5x + 7"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Negative reciprocal"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "What is the gradient of a line perpendicular to y = −4x + 1?",
+            "options": [
+              "1/4",
+              "−1/4",
+              "4",
+              "−4"
+            ],
+            "answer": 0,
+            "why": "Negative reciprocal of −4 is 1/4. −4 would be parallel."
+          }
+        },
+        {
+          "heading": "Common error",
+          "bullets": [
+            "Flip and change the sign"
+          ],
+          "note": "Check: the product must be −1.",
+          "misconception": {
+            "wrong": "Perpendicular to gradient 3 has gradient −3",
+            "right": "Perpendicular gradient is −1/3, since 3 × −1/3 = −1"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Find the line through (−1, 4) and (3, −4). (3 marks)",
+          "a": "m = −8/4 = −2 (M1); 4 = 2 + c (M1); y = −2x + 2 (A1)",
+          "mins": 3,
+          "model": "Gradient = (−4 − 4)/(3 − (−1)) = −8/4 = −2. Substitute (−1, 4): 4 = 2 + c, so c = 2. y = −2x + 2."
+        },
+        {
+          "q": "Find the line parallel to 3x + y = 7 through (2, 1).",
+          "a": "y = −3x + 7",
+          "mins": 1
+        },
+        {
+          "q": "Is y = 0.5x + 2 perpendicular to 2y + 4x = 1?",
+          "a": "Yes: the gradients 0.5 and −2 multiply to −1",
+          "mins": 1
+        },
+        {
+          "q": "Where does y = 3x − 6 cross the x-axis?",
+          "a": "(2, 0)",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: A(1, 1), B(7, 5). Find (a) the midpoint (b) the gradient of AB (c) the equation of AB (d) the line through B perpendicular to AB",
+          "a": "(a) (4, 3) (b) 2/3 (c) y = (2/3)x + 1/3 (d) y = −1.5x + 15.5",
+          "mins": 6,
+          "model": "(a) ((1 + 7)/2, (1 + 5)/2) = (4, 3). (b) 4/6 = 2/3. (c) 1 = 2/3 + c, c = 1/3. (d) gradient −3/2: 5 = −10.5 + c, c = 15.5."
+        },
+        {
+          "q": "Extend (4 marks): L1 is y = 2x − 2. L2 is perpendicular to L1 and passes through (4, 1). Find where L2 crosses the x-axis.",
+          "a": "m = −1/2 (B1); 1 = −2 + c, c = 3 (M1); y = −0.5x + 3 (A1); (6, 0) (A1)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch (4 marks): Find the area of the triangle formed by L1, L2 and the y-axis.",
+          "a": "Lines meet where 2x − 2 = −0.5x + 3, x = 2; y-intercepts −2 and 3, base 5; area = ½ × 5 × 2 = 5",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Give the gradient perpendicular to 3/4.",
+          "a": "−4/3",
+          "mins": 1
+        },
+        {
+          "q": "Find the midpoint of (3, −2) and (−1, 6).",
+          "a": "(1, 2)",
+          "mins": 1
+        }
+      ],
+      "homework": "Complete the portal's straight-line graphs set (6 questions) and update your repair list.",
+      "send": "Support: gradient and midpoint formula card. EAL: 'perpendicular', 'parallel', 'bisector'. Stretch: find the distance AB using Pythagoras.",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Unit 14 (4MA1 3.3E to 3.3I)",
+        "Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers)",
+        "Graph paper",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book",
+        "Scientific calculator",
+        "4MA1 Higher formulae sheet"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "perpendicular lines on coordinate grid",
+          "alt": "Two perpendicular lines on a grid",
+          "for": "teach:1"
+        },
+        {
+          "find": "Islamic geometric pattern right angles",
+          "alt": "A geometric pattern with right angles",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Number, algebra, sequences, graphs",
+      "n": 65,
+      "title": "Revision: quadratic graphs and turning points",
+      "duration": 50,
+      "bigQuestion": "What does completing the square tell us about a parabola?",
+      "objectives": [
+        "To understand how to find the key features of quadratic graphs and use them to solve equations"
+      ],
+      "successCriteria": [
+        "All: find roots and the y-intercept of a quadratic graph",
+        "Most: find the turning point by completing the square and sketch the graph",
+        "Some: use the turning point to show an equation has no real roots"
+      ],
+      "crossCurricular": "Physics: the path of a thrown object is a parabola",
+      "smsc": "Spiritual: the symmetry of the parabola, seen in arches and fountains, reflects balance in creation",
+      "keywords": [
+        {
+          "term": "parabola",
+          "def": "the U or n shaped graph of a quadratic"
+        },
+        {
+          "term": "turning point",
+          "def": "the minimum or maximum point"
+        },
+        {
+          "term": "line of symmetry",
+          "def": "the vertical line through the turning point"
+        },
+        {
+          "term": "root",
+          "def": "where the graph crosses the x-axis"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "The graph of y = x² − 6x + 5 is a U shape. Where is its lowest point? Can you find it without plotting any points?",
+        "a": "Complete the square: (x − 3)² − 4, so the lowest point is (3, −4)."
+      },
+      "starter": [
+        {
+          "q": "Complete the square: x² − 6x + 5.",
+          "a": "(x − 3)² − 4",
+          "mins": 1
+        },
+        {
+          "q": "Solve x² − 6x + 5 = 0.",
+          "a": "x = 1 or 5",
+          "mins": 1
+        },
+        {
+          "q": "Find the y-intercept of y = x² − 6x + 5.",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "Find x² + x when x = −2.",
+          "a": "2",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Key features",
+          "bullets": [
+            "Roots: solve y = 0",
+            "y-intercept: x = 0",
+            "Turning point: from (x − p)² + q"
+          ],
+          "note": "y = x² − 6x + 5 plotted from its table of values.",
+          "chart": {
+            "kind": "line",
+            "title": "y = x² − 6x + 5",
+            "labels": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6"
+            ],
+            "values": [
+              5,
+              0,
+              -3,
+              -4,
+              -3,
+              0,
+              5
+            ]
+          }
+        },
+        {
+          "heading": "Model",
+          "bullets": [
+            "Complete the square, then read the turning point"
+          ],
+          "note": "4MA1 3.3I and 2.2D.",
+          "model": {
+            "problem": "Write 2x² − 12x + 23 in the form a(x − b)² + c and give the turning point.",
+            "steps": [
+              "2(x² − 6x) + 23",
+              "2[(x − 3)² − 9] + 23",
+              "2(x − 3)² + 5"
+            ],
+            "answer": "Minimum point (3, 5)"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Signs inside the bracket"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "What is the turning point of y = (x + 2)² + 5?",
+            "options": [
+              "(−2, 5)",
+              "(2, 5)",
+              "(−2, −5)",
+              "(5, −2)"
+            ],
+            "answer": 0,
+            "why": "(x + 2)² is least at x = −2, giving y = 5."
+          }
+        },
+        {
+          "heading": "Solving from a graph",
+          "bullets": [
+            "Draw y = k and read the x values"
+          ],
+          "note": "x² − 6x + 5 = 2: (x − 3)² = 6, x = 3 ± √6, about 0.55 and 5.45.",
+          "misconception": {
+            "wrong": "The turning point of (x − 3)² − 4 is (−3, −4)",
+            "right": "(x − 3)² is 0 when x = 3: turning point (3, −4)"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "For y = x² + 4x − 5, find the roots, y-intercept and turning point. (4 marks)",
+          "a": "Roots −5, 1 (B1); y-intercept −5 (B1); (x + 2)² − 9 (M1), turning point (−2, −9) (A1)",
+          "mins": 3,
+          "model": "Roots: (x + 5)(x − 1) = 0, x = −5 or 1. y-intercept: −5. Complete the square: (x + 2)² − 4 − 5 = (x + 2)² − 9, turning point (−2, −9)."
+        },
+        {
+          "q": "Find the turning point of y = x² − 2x − 8.",
+          "a": "(1, −9)",
+          "mins": 1
+        },
+        {
+          "q": "Use the graph of y = x² − 6x + 5 to solve x² − 6x + 5 = −3.",
+          "a": "x = 2 or x = 4",
+          "mins": 1
+        },
+        {
+          "q": "Give the line of symmetry of y = 2x² − 8x + 1.",
+          "a": "x = 2",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: For y = x² − 4x − 12, find (a) the roots (b) the y-intercept (c) the turning point, then sketch it",
+          "a": "(a) −2, 6 (b) −12 (c) (2, −16)",
+          "mins": 6,
+          "model": "(a) (x − 6)(x + 2) = 0: x = −2 or 6. (b) x = 0 gives −12. (c) (x − 2)² − 4 − 12 = (x − 2)² − 16: turning point (2, −16)."
+        },
+        {
+          "q": "Extend (3 marks): Write 2x² − 12x + 23 in the form a(x − b)² + c and state the turning point.",
+          "a": "2(x − 3)² + 5 (M1 A1); (3, 5) (A1)",
+          "mins": 3
+        },
+        {
+          "q": "Stretch (2 marks): Use your answer to show that 2x² − 12x + 23 = 0 has no real roots.",
+          "a": "The minimum value is 5 > 0, so the graph never reaches the x-axis",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Turning point of y = (x − 4)² − 1?",
+          "a": "(4, −1)",
+          "mins": 1
+        },
+        {
+          "q": "Roots of y = (x − 4)² − 1?",
+          "a": "x = 3 or x = 5",
+          "mins": 1
+        }
+      ],
+      "homework": "Complete the portal's quadratic graphs set (6 questions) and update your repair list.",
+      "send": "Support: feature checklist for sketches. EAL: 'turning point', 'symmetry'. Stretch: find the equation of a parabola from its roots and one point.",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Unit 15 (4MA1 3.3I, 2.2D)",
+        "Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers)",
+        "Graph paper",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book",
+        "Scientific calculator",
+        "4MA1 Higher formulae sheet"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "parabola graph turning point",
+          "alt": "A U-shaped quadratic graph with its turning point",
+          "for": "teach:1"
+        },
+        {
+          "find": "water fountain parabola arc",
+          "alt": "Water from a fountain in a parabolic arc",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Number, algebra, sequences, graphs",
+      "n": 66,
+      "title": "Revision: graph shapes and transformations of graphs",
+      "duration": 50,
+      "bigQuestion": "How can we recognise a graph from its equation, and move it with algebra?",
+      "objectives": [
+        "To understand how to recognise linear, quadratic, cubic, reciprocal and trigonometric graphs and apply transformations"
+      ],
+      "successCriteria": [
+        "All: match equations to graph shapes",
+        "Most: describe and apply translations and reflections of y = f(x)",
+        "Some: apply stretches y = af(x) and y = f(ax), including to sine and cosine graphs"
+      ],
+      "crossCurricular": "Physics: wave graphs of y = sin x are stretched and translated to model sound and light",
+      "smsc": "Spiritual: the repeating sine wave is like the regular cycles of day, night and the seasons",
+      "keywords": [
+        {
+          "term": "cubic",
+          "def": "a graph of y = ax³ + ..."
+        },
+        {
+          "term": "reciprocal",
+          "def": "a graph of y = k/x with asymptotes"
+        },
+        {
+          "term": "translation",
+          "def": "a slide of the whole graph"
+        },
+        {
+          "term": "asymptote",
+          "def": "a line a graph approaches but never meets"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you know the graph of y = x², how could you draw y = (x − 3)² + 2 without a table of values?",
+        "a": "Slide the U shape 3 right and 2 up: the turning point moves from (0, 0) to (3, 2)."
+      },
+      "starter": [
+        {
+          "q": "f(x) = x². Find f(x + 2) when x = 1.",
+          "a": "9",
+          "mins": 1
+        },
+        {
+          "q": "What is sin 30°?",
+          "a": "0.5",
+          "mins": 1
+        },
+        {
+          "q": "What is the reciprocal of 4?",
+          "a": "0.25",
+          "mins": 1
+        },
+        {
+          "q": "Find the y-intercept of y = x³ − 8.",
+          "a": "−8",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Which shape?",
+          "bullets": [
+            "Look at the highest power, or x in the denominator"
+          ],
+          "note": "Sort the cards into four columns.",
+          "sort": {
+            "columns": [
+              "Linear",
+              "Quadratic",
+              "Cubic",
+              "Reciprocal"
+            ],
+            "cards": [
+              "y = 2x − 1",
+              "y = x² − 3",
+              "y = x³ + 1",
+              "y = 4/x",
+              "y = 3 − x",
+              "y = −x²",
+              "y = x³ − 4x",
+              "y = −2/x"
+            ],
+            "answer": [
+              0,
+              1,
+              2,
+              3,
+              0,
+              1,
+              2,
+              3
+            ]
+          }
+        },
+        {
+          "heading": "Transformations",
+          "bullets": [
+            "Outside the bracket acts on y",
+            "Inside acts on x, the opposite way"
+          ],
+          "note": "4MA1 3.3B, 3.3C.",
+          "table": {
+            "head": [
+              "Equation",
+              "Effect on y = f(x)"
+            ],
+            "rows": [
+              [
+                "y = f(x) + a",
+                "translate up a"
+              ],
+              [
+                "y = f(x + a)",
+                "translate left a"
+              ],
+              [
+                "y = −f(x)",
+                "reflect in the x-axis"
+              ],
+              [
+                "y = f(−x)",
+                "reflect in the y-axis"
+              ],
+              [
+                "y = af(x)",
+                "stretch vertically, factor a"
+              ],
+              [
+                "y = f(ax)",
+                "stretch horizontally, factor 1/a"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Model",
+          "bullets": [
+            "Track one key point through each change"
+          ],
+          "note": "Use the turning point as the tracker.",
+          "model": {
+            "problem": "y = x² has its turning point at (0, 0). Find the turning point of y = (x − 3)² + 2.",
+            "steps": [
+              "(x − 3)²: f(x − 3) moves right 3: (3, 0)",
+              "+ 2 moves up 2: (3, 2)"
+            ],
+            "answer": "(3, 2), a minimum"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Outside: up or down"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "y = f(x) has a maximum at (2, 5). Where is the maximum of y = f(x) − 3?",
+            "options": [
+              "(2, 2)",
+              "(−1, 5)",
+              "(5, 5)",
+              "(2, 8)"
+            ],
+            "answer": 0,
+            "why": "Subtracting 3 moves the graph down 3. (5, 5) moves it sideways."
+          }
+        },
+        {
+          "heading": "Common error",
+          "bullets": [
+            "Inside the bracket goes the opposite way"
+          ],
+          "note": "Test: f(x + 3) at x = −3 gives f(0).",
+          "misconception": {
+            "wrong": "y = f(x + 3) moves the graph 3 to the right",
+            "right": "It moves 3 to the left: the point at x = 0 is now at x = −3"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "(4, 1) is on y = f(x). Give its image on y = f(x + 2), y = −f(x), y = 3f(x) and y = f(2x). (4 marks)",
+          "a": "(2, 1); (4, −1); (4, 3); (2, 1)",
+          "mins": 3,
+          "model": "f(x + 2): x moves 2 left: (2, 1). −f(x): y changes sign: (4, −1). 3f(x): y × 3: (4, 3). f(2x): x halves: (2, 1)."
+        },
+        {
+          "q": "Name the shape of y = x³ − 4x.",
+          "a": "Cubic",
+          "mins": 1
+        },
+        {
+          "q": "Describe y = cos x + 2 from y = cos x.",
+          "a": "Translation 2 up",
+          "mins": 1
+        },
+        {
+          "q": "Where is the maximum of y = sin 2x for 0° ≤ x ≤ 180°?",
+          "a": "(45°, 1)",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: f(x) = x² − 4. Give the turning point of (a) y = f(x) + 3 (b) y = f(x − 1) (c) y = −f(x)",
+          "a": "(a) (0, −1) (b) (1, −4) (c) (0, 4), a maximum",
+          "mins": 5,
+          "model": "(a) Up 3: (0, −4) becomes (0, −1). (b) Right 1: (1, −4). (c) Reflect in the x-axis: (0, 4), now a maximum."
+        },
+        {
+          "q": "Extend (3 marks): Describe how y = cos x maps to y = cos(x − 90°). Where is the maximum of y = cos(x − 90°) for 0° ≤ x ≤ 360°?",
+          "a": "Translation 90° to the right (B1 B1); maximum at (90°, 1) (B1)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch (3 marks): Describe the single transformation that maps y = x² onto y = x² + 6x + 4.",
+          "a": "x² + 6x + 4 = (x + 3)² − 5: translation 3 left and 5 down",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which way does y = f(x − 5) move the graph?",
+          "a": "5 to the right",
+          "mins": 1
+        },
+        {
+          "q": "Name the shape of y = 3/x.",
+          "a": "Reciprocal",
+          "mins": 1
+        }
+      ],
+      "homework": "Complete the portal's graphs and transformations set (6 questions) and update your repair list.",
+      "send": "Support: transformations card. EAL: 'translate', 'reflect', 'stretch'. Stretch: sketch y = 2sin(x) + 1 and give its range.",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Unit 16 (4MA1 3.3A to 3.3C)",
+        "Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers)",
+        "Graph paper",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book",
+        "Scientific calculator",
+        "4MA1 Higher formulae sheet"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "cubic function graph",
+          "alt": "The graph of a cubic function",
+          "for": "teach:1"
+        },
+        {
+          "find": "sine wave graph",
+          "alt": "The graph of y = sin x",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Number, algebra, sequences, graphs",
+      "n": 67,
+      "title": "Revision: real-life graphs: distance-time and speed-time",
+      "duration": 50,
+      "bigQuestion": "What do the gradient and the area of a graph mean in real life?",
+      "objectives": [
+        "To understand how to interpret gradients and areas on distance-time and speed-time graphs"
+      ],
+      "successCriteria": [
+        "All: find speed from a distance-time graph",
+        "Most: find acceleration and distance from a speed-time graph",
+        "Some: solve multi-stage journey problems with an unknown in exam style"
+      ],
+      "crossCurricular": "Physics: International GCSE Physics uses the same distance-time and velocity-time graphs",
+      "smsc": "Moral: understanding stopping distances supports road safety and care for life",
+      "keywords": [
+        {
+          "term": "gradient",
+          "def": "rate of change: speed or acceleration"
+        },
+        {
+          "term": "area under a graph",
+          "def": "on a speed-time graph, the distance travelled"
+        },
+        {
+          "term": "acceleration",
+          "def": "rate of change of speed (m/s²)"
+        },
+        {
+          "term": "deceleration",
+          "def": "slowing down"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A car's speed-time graph has a sloping line, a flat line and another slope. What story does it tell, and how far did the car go?",
+        "a": "Speeding up, steady speed, slowing down. The distance is the area under the graph."
+      },
+      "starter": [
+        {
+          "q": "Find the average speed for 150 km in 2.5 h.",
+          "a": "60 km/h",
+          "mins": 1
+        },
+        {
+          "q": "Area of a trapezium with parallel sides 4 and 10, height 6?",
+          "a": "42",
+          "mins": 1
+        },
+        {
+          "q": "Gradient from (0, 0) to (10, 25)?",
+          "a": "2.5",
+          "mins": 1
+        },
+        {
+          "q": "Convert 72 km/h to m/s.",
+          "a": "20 m/s",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Two kinds of graph",
+          "bullets": [
+            "Distance-time: gradient = speed",
+            "Speed-time: gradient = acceleration, area = distance"
+          ],
+          "note": "4MA1 3.3A, and 3.4E later with calculus.",
+          "compare": {
+            "left": {
+              "title": "Distance-time",
+              "points": [
+                "gradient = speed",
+                "flat = stopped",
+                "steeper = faster"
+              ]
+            },
+            "right": {
+              "title": "Speed-time",
+              "points": [
+                "gradient = acceleration",
+                "flat = constant speed",
+                "area = distance"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Model",
+          "bullets": [
+            "Split the area into triangles and rectangles"
+          ],
+          "note": "0 to 20 m/s in 8 s, 20 m/s for 12 s, then to 0 in 5 s.",
+          "model": {
+            "problem": "Find the acceleration and the total distance.",
+            "steps": [
+              "Acceleration: 20 ÷ 8 = 2.5 m/s²",
+              "Areas: ½ × 8 × 20 = 80; 12 × 20 = 240; ½ × 5 × 20 = 50",
+              "80 + 240 + 50"
+            ],
+            "answer": "2.5 m/s²; 370 m"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Area or gradient?"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "The area under a speed-time graph gives the...",
+            "options": [
+              "distance travelled",
+              "acceleration",
+              "speed",
+              "time taken"
+            ],
+            "answer": 0,
+            "why": "Speed × time = distance. The gradient gives acceleration."
+          }
+        },
+        {
+          "heading": "Common error",
+          "bullets": [
+            "Distance is the area, not the height"
+          ],
+          "note": "Ask: what are the units of the area?",
+          "misconception": {
+            "wrong": "Distance = the highest speed on the graph",
+            "right": "Distance = area under the speed-time graph"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "A train accelerates from 4 m/s to 16 m/s in 6 s. Find the acceleration and the distance. (3 marks)",
+          "a": "12 ÷ 6 = 2 m/s² (B1); ½(4 + 16) × 6 (M1) = 60 m (A1)",
+          "mins": 3,
+          "model": "Acceleration = change in speed ÷ time = 12 ÷ 6 = 2 m/s². Distance = area of trapezium = ½ × (4 + 16) × 6 = 60 m."
+        },
+        {
+          "q": "Find the average speed for 40 km in 50 minutes, in km/h.",
+          "a": "48 km/h",
+          "mins": 1
+        },
+        {
+          "q": "A car slows from 20 m/s to rest in 5 s. Find the deceleration.",
+          "a": "4 m/s²",
+          "mins": 1
+        },
+        {
+          "q": "Distance travelled in 10 s at a constant 15 m/s?",
+          "a": "150 m",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 0 to 12 m/s in 4 s, constant 12 m/s for 10 s, then to rest in 6 s. Find (a) the first acceleration (b) the total distance (c) the average speed",
+          "a": "(a) 3 m/s² (b) 24 + 120 + 36 = 180 m (c) 9 m/s",
+          "mins": 6,
+          "model": "(a) 12 ÷ 4 = 3 m/s². (b) ½ × 4 × 12 = 24; 10 × 12 = 120; ½ × 6 × 12 = 36; total 180 m. (c) 180 ÷ 20 = 9 m/s."
+        },
+        {
+          "q": "Extend (4 marks): A train accelerates uniformly from rest for T seconds to 25 m/s, travels at 25 m/s for 40 s, then decelerates uniformly to rest in 10 s. The total distance is 1500 m. Find T.",
+          "a": "½ × T × 25 + 1000 + 125 = 1500 (M1 M1); 12.5T = 375 (M1); T = 30 (A1)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A distance-time graph is curved. Explain how to estimate the speed at one moment.",
+          "a": "Draw a tangent at that point and find its gradient",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A speed-time triangle has base 6 s and height 18 m/s. Distance?",
+          "a": "54 m",
+          "mins": 1
+        },
+        {
+          "q": "What is its acceleration?",
+          "a": "3 m/s²",
+          "mins": 1
+        }
+      ],
+      "homework": "Complete the portal's real-life graphs set (6 questions) and update your repair list.",
+      "send": "Support: gradient and area reminders on the graph. EAL: 'accelerate', 'decelerate', 'constant'. Stretch: average speed for a journey with two stages at different speeds.",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Unit 13 (4MA1 3.3A)",
+        "Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers)",
+        "Graph paper",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book",
+        "Scientific calculator",
+        "4MA1 Higher formulae sheet"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "speed time graph trapezium area",
+          "alt": "A speed-time graph with the area shaded",
+          "for": "teach:2"
+        },
+        {
+          "find": "train on railway track",
+          "alt": "A train, for the journey problem",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Number, algebra, sequences, graphs",
+      "n": 68,
+      "title": "Revision: direct and inverse proportion",
+      "duration": 50,
+      "bigQuestion": "How can one known pair of values give a whole formula?",
+      "objectives": [
+        "To understand how to form and use equations for direct and inverse proportion"
+      ],
+      "successCriteria": [
+        "All: form y = kx and y = k/x from one pair of values",
+        "Most: work with y ∝ x², y ∝ √x and y ∝ 1/x²",
+        "Some: describe the effect of a change in x on y"
+      ],
+      "crossCurricular": "Physics: inverse square laws, such as the intensity of light from a source",
+      "smsc": "Spiritual: the sun's light weakens with distance in a precise law, a sign of the measured order in creation",
+      "keywords": [
+        {
+          "term": "directly proportional",
+          "def": "y = kx: as x doubles, y doubles"
+        },
+        {
+          "term": "inversely proportional",
+          "def": "y = k/x: as x doubles, y halves"
+        },
+        {
+          "term": "constant of proportionality",
+          "def": "the value of k"
+        },
+        {
+          "term": "∝",
+          "def": "the symbol for 'is proportional to'"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you move twice as far from a lamp, does the light reaching you halve? What else might happen?",
+        "a": "It falls to a quarter: intensity is inversely proportional to the square of the distance."
+      },
+      "starter": [
+        {
+          "q": "y = kx and y = 12 when x = 3. Find k.",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "y = k/x and y = 5 when x = 4. Find k.",
+          "a": "20",
+          "mins": 1
+        },
+        {
+          "q": "Work out 2³.",
+          "a": "8",
+          "mins": 1
+        },
+        {
+          "q": "Work out √3600.",
+          "a": "60",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The method",
+          "bullets": [
+            "Write the relationship with k",
+            "Use the given pair to find k",
+            "Write the formula, then use it"
+          ],
+          "note": "4MA1 2.5A.",
+          "model": {
+            "problem": "y ∝ x² and y = 45 when x = 3. Find y when x = 4, and x when y = 125 (x > 0).",
+            "steps": [
+              "y = kx²; 45 = 9k, k = 5",
+              "y = 5 × 16 = 80",
+              "125 = 5x², x² = 25, x = 5"
+            ],
+            "answer": "80 and 5"
+          }
+        },
+        {
+          "heading": "Types of proportion",
+          "bullets": [
+            "Learn the forms"
+          ],
+          "note": "Graph shapes help recognise them.",
+          "table": {
+            "head": [
+              "Words",
+              "Formula",
+              "If x doubles, y..."
+            ],
+            "rows": [
+              [
+                "y ∝ x",
+                "y = kx",
+                "doubles"
+              ],
+              [
+                "y ∝ x²",
+                "y = kx²",
+                "× 4"
+              ],
+              [
+                "y ∝ √x",
+                "y = k√x",
+                "× √2"
+              ],
+              [
+                "y ∝ 1/x",
+                "y = k/x",
+                "halves"
+              ],
+              [
+                "y ∝ 1/x²",
+                "y = k/x²",
+                "÷ 4"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Inverse: opposite way"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "y ∝ 1/x. When x doubles, y...",
+            "options": [
+              "halves",
+              "doubles",
+              "quarters",
+              "stays the same"
+            ],
+            "answer": 0,
+            "why": "y = k/x: doubling x halves y."
+          }
+        },
+        {
+          "heading": "Common error",
+          "bullets": [
+            "Inverse is not subtraction"
+          ],
+          "note": "Write the k first.",
+          "misconception": {
+            "wrong": "y is inversely proportional to x means y = k − x",
+            "right": "y = k/x: the product xy stays constant"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "F is inversely proportional to d². F = 20 when d = 3. Find F when d = 6. (3 marks)",
+          "a": "F = k/d² (M1); k = 180 (A1); F = 5 (A1)",
+          "mins": 3,
+          "model": "F = k/d². 20 = k/9, so k = 180. When d = 6: F = 180/36 = 5."
+        },
+        {
+          "q": "p ∝ √q and p = 12 when q = 16. Find p when q = 49.",
+          "a": "21",
+          "mins": 1
+        },
+        {
+          "q": "6 workers take 10 days. How long would 4 workers take at the same rate?",
+          "a": "15 days",
+          "mins": 1
+        },
+        {
+          "q": "y ∝ x³. What happens to y when x doubles?",
+          "a": "It is multiplied by 8",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: d ∝ t² and d = 20 when t = 2. (a) Write d in terms of t (b) Find d when t = 3 (c) Find t when d = 125 (t > 0)",
+          "a": "(a) d = 5t² (b) 45 (c) 5",
+          "mins": 5,
+          "model": "(a) d = kt²; 20 = 4k, k = 5: d = 5t². (b) 5 × 9 = 45. (c) 125 = 5t², t² = 25, t = 5."
+        },
+        {
+          "q": "Extend (4 marks): Light intensity I is inversely proportional to the square of the distance d. I = 36 when d = 2. Find I when d = 3, and d when I = 4.",
+          "a": "I = k/d² (M1); k = 144 (A1); I = 16 (A1); d = 6 (A1)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: y ∝ 1/√x. x is multiplied by 4. What happens to y?",
+          "a": "y = k/√x: √x doubles, so y halves (a 50% decrease)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "y ∝ x² and y = 12 when x = 2. Write the formula.",
+          "a": "y = 3x²",
+          "mins": 1
+        },
+        {
+          "q": "Find y when x = 5.",
+          "a": "75",
+          "mins": 1
+        }
+      ],
+      "homework": "Complete the portal's proportion set (6 questions) and update your repair list.",
+      "send": "Support: proportion types table. EAL: 'directly', 'inversely', 'constant'. Stretch: sketch y = k/x² and describe its asymptotes.",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Unit 10 (4MA1 2.5A)",
+        "Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers)",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book",
+        "Scientific calculator",
+        "4MA1 Higher formulae sheet"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "inverse square law light diagram",
+          "alt": "A diagram of light spreading with distance",
+          "for": "hook"
+        },
+        {
+          "find": "graph of y equals k over x",
+          "alt": "A reciprocal graph",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Number, algebra, sequences, graphs",
+      "n": 69,
+      "title": "Revision: solving equations with graphs; gradients of curves",
+      "duration": 50,
+      "bigQuestion": "How can a graph solve equations we cannot easily solve with algebra?",
+      "objectives": [
+        "To understand how intersections of graphs solve equations and how tangents estimate gradients of curves"
+      ],
+      "successCriteria": [
+        "All: read solutions where a graph crosses a line",
+        "Most: find the line to draw to solve a new equation from a given graph",
+        "Some: estimate the gradient of a curve with a tangent or chord"
+      ],
+      "crossCurricular": "Physics: the gradient of a curved distance-time graph gives speed at an instant",
+      "smsc": "Spiritual: the same answer found by algebra and by a graph shows the consistency of mathematics",
+      "keywords": [
+        {
+          "term": "intersection",
+          "def": "where two graphs meet"
+        },
+        {
+          "term": "tangent",
+          "def": "a line touching a curve at one point"
+        },
+        {
+          "term": "rate of change",
+          "def": "the gradient at a point"
+        },
+        {
+          "term": "chord",
+          "def": "a line joining two points on a curve"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You have an accurate graph of y = x² − 2x − 3. Could it help you solve x² − 4x − 1 = 0 without the formula? How?",
+        "a": "Yes: rearrange to x² − 2x − 3 = 2x − 2, draw y = 2x − 2 and read where it crosses the curve."
+      },
+      "starter": [
+        {
+          "q": "Solve x² − 2x − 3 = 0.",
+          "a": "x = −1 or 3",
+          "mins": 1
+        },
+        {
+          "q": "Gradient through (1, 2) and (3, 8)?",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "Rearrange x² − 3x = 1 so it equals zero.",
+          "a": "x² − 3x − 1 = 0",
+          "mins": 1
+        },
+        {
+          "q": "What is a tangent to a curve?",
+          "a": "A line touching the curve at one point",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The curve",
+          "bullets": [
+            "y = x² − 2x − 3",
+            "Solutions of x² − 2x − 3 = k: draw y = k"
+          ],
+          "note": "4MA1 3.3E.",
+          "chart": {
+            "kind": "line",
+            "title": "y = x² − 2x − 3",
+            "labels": [
+              "−2",
+              "−1",
+              "0",
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "values": [
+              5,
+              0,
+              -3,
+              -4,
+              -3,
+              0,
+              5
+            ]
+          }
+        },
+        {
+          "heading": "Which line to draw?",
+          "bullets": [
+            "Make one side the drawn curve",
+            "The other side is the line"
+          ],
+          "note": "x² − 4x − 1 = 0 becomes x² − 2x − 3 = 2x − 2.",
+          "model": {
+            "problem": "Which line solves x² − 3x − 5 = 0 using the graph of y = x² − 2x − 3?",
+            "steps": [
+              "Add x + 2 to both sides",
+              "x² − 2x − 3 = x + 2"
+            ],
+            "answer": "Draw y = x + 2"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Draw y = the other side"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "To solve x² − 2x − 3 = 2 from the graph of y = x² − 2x − 3, which line do you draw?",
+            "options": [
+              "y = 2",
+              "y = 2x",
+              "x = 2",
+              "y = −3"
+            ],
+            "answer": 0,
+            "why": "Read where the curve has height 2."
+          }
+        },
+        {
+          "heading": "Gradient of a curve",
+          "bullets": [
+            "Draw a tangent and find its gradient",
+            "Or use a short chord either side"
+          ],
+          "note": "y = x² at x = 3: chord from 2.9 to 3.1 gives (9.61 − 8.41) ÷ 0.2 = 6.",
+          "misconception": {
+            "wrong": "The gradient of y = x² at x = 3 is 9 (the y value)",
+            "right": "It is the gradient of the tangent at (3, 9), which is 6"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Find where y = 2x meets y = x² − 3. (3 marks)",
+          "a": "x² − 2x − 3 = 0 (M1); x = 3 or −1 (A1); (3, 6) and (−1, −2) (A1)",
+          "mins": 3,
+          "model": "Set equal: x² − 3 = 2x, so x² − 2x − 3 = 0, (x − 3)(x + 1) = 0, x = 3 or −1. y = 2x gives (3, 6) and (−1, −2)."
+        },
+        {
+          "q": "Solve x² − 2x − 3 = 5.",
+          "a": "x = −2 or 4",
+          "mins": 1
+        },
+        {
+          "q": "Which line solves x² − 3x − 5 = 0 using y = x² − 2x − 3?",
+          "a": "y = x + 2",
+          "mins": 1
+        },
+        {
+          "q": "Read the solutions of x² − 2x − 3 = 0 from the graph.",
+          "a": "x = −1 and x = 3",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Find the points where y = x² − 4 meets y = 3x.",
+          "a": "x² − 3x − 4 = 0: (4, 12) and (−1, −3)",
+          "mins": 4,
+          "model": "x² − 4 = 3x, so x² − 3x − 4 = 0, (x − 4)(x + 1) = 0. x = 4: y = 12; x = −1: y = −3."
+        },
+        {
+          "q": "Extend (2 marks): The graph of y = x³ − 3x is drawn. Find the line to draw to solve x³ − 5x + 1 = 0.",
+          "a": "x³ − 3x = 2x − 1, so y = 2x − 1",
+          "mins": 3
+        },
+        {
+          "q": "Stretch (3 marks): Estimate the gradient of y = x² at x = 3 using the chord from x = 2.9 to x = 3.1. Explain why it is a good estimate.",
+          "a": "(9.61 − 8.41) ÷ 0.2 = 6; the chord is very short and centred on x = 3, so it is close to the tangent",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which line solves x² − 2x − 3 = −2?",
+          "a": "y = −2",
+          "mins": 1
+        },
+        {
+          "q": "Where do y = x² and y = x + 2 meet?",
+          "a": "(2, 4) and (−1, 1)",
+          "mins": 1
+        }
+      ],
+      "homework": "Complete the portal's graphical solutions set (6 questions, with a printable curve) and update your repair list.",
+      "send": "Support: printed curve and ruler. EAL: 'intersection', 'tangent', 'chord'. Stretch: preview calculus: the gradient of y = x² at x = a is 2a.",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Unit 16 (4MA1 3.3D, 3.3E)",
+        "Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers)",
+        "Printed curve y = x² − 2x − 3 (portal worksheet)",
+        "Ruler",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book",
+        "Scientific calculator",
+        "4MA1 Higher formulae sheet"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "tangent to a curve diagram",
+          "alt": "A tangent touching a curve",
+          "for": "teach:4"
+        },
+        {
+          "find": "line and parabola intersection graph",
+          "alt": "A line crossing a parabola twice",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Number, algebra, sequences, graphs",
+      "n": 70,
+      "title": "Mock week: exam technique and timing",
+      "duration": 50,
+      "bigQuestion": "How can technique earn marks, as well as knowledge?",
+      "objectives": [
+        "To understand how 4MA1 papers are marked and how to plan time and show working to earn every mark"
+      ],
+      "successCriteria": [
+        "All: know the paper format and what the command words ask",
+        "Most: show method so that M marks are earned even if the answer is wrong",
+        "Some: plan timing and checks across a 2-hour paper"
+      ],
+      "crossCurricular": "English: reading questions closely uses the same skills as reading unseen texts",
+      "smsc": "Moral: preparing thoroughly for exams is part of ihsan (إِحْسَان), doing a task as well as possible",
+      "keywords": [
+        {
+          "term": "M mark",
+          "def": "a method mark: earned for a correct method"
+        },
+        {
+          "term": "A mark",
+          "def": "an accuracy mark: needs the correct answer after a correct method"
+        },
+        {
+          "term": "B mark",
+          "def": "an independent mark for a correct answer or statement"
+        },
+        {
+          "term": "command word",
+          "def": "the instruction word, such as 'show that' or 'solve'"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two pupils both get the final answer wrong. One scores 3 out of 4 and the other 0. How can that be?",
+        "a": "The first showed a correct method and earned the method marks; the second wrote only a wrong answer."
+      },
+      "starter": [
+        {
+          "q": "Solve x² − 5x + 6 = 0.",
+          "a": "x = 2 or 3",
+          "mins": 1
+        },
+        {
+          "q": "Write 0.000 48 in standard form.",
+          "a": "4.8 × 10⁻⁴",
+          "mins": 1
+        },
+        {
+          "q": "Find 15% of 260.",
+          "a": "39",
+          "mins": 1
+        },
+        {
+          "q": "Make x the subject of y = 3x − 4.",
+          "a": "x = (y + 4)/3",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The papers",
+          "bullets": [
+            "Paper 1H and Paper 2H: 2 hours, 100 marks each",
+            "Calculator allowed; formulae sheet supplied"
+          ],
+          "note": "Both papers cover all Higher content and are worth 50% each. About 1.2 minutes per mark.",
+          "table": {
+            "head": [
+              "Paper",
+              "Time",
+              "Marks",
+              "Calculator"
+            ],
+            "rows": [
+              [
+                "1H",
+                "2 hours",
+                "100",
+                "Yes"
+              ],
+              [
+                "2H",
+                "2 hours",
+                "100",
+                "Yes"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Command words",
+          "bullets": [
+            "The command word tells you what earns the marks"
+          ],
+          "note": "From the 4MA1 command words list.",
+          "table": {
+            "head": [
+              "Command",
+              "What to do"
+            ],
+            "rows": [
+              [
+                "Work out / Calculate",
+                "Find the answer, showing method"
+              ],
+              [
+                "Show that",
+                "Every step to the stated answer"
+              ],
+              [
+                "Prove",
+                "A logical argument, justified steps"
+              ],
+              [
+                "Solve",
+                "Find all values of the unknown"
+              ],
+              [
+                "Give your answer to 3 s.f.",
+                "Round only at the end"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Model answer with marks",
+          "bullets": [
+            "Write each step; label nothing, just show it"
+          ],
+          "note": "Annotate which line earns each mark.",
+          "model": {
+            "problem": "A price after a 20% increase is £84. Find the original price. (3 marks)",
+            "steps": [
+              "84 ÷ 1.2 (M1: correct multiplier, dividing)",
+              "= 70 (A1)",
+              "Check: 70 × 1.2 = 84 (good practice)"
+            ],
+            "answer": "£70 (3 marks)"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Method earns marks"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "A question says 'Show that x = 2.5'. What must you write?",
+            "options": [
+              "Every step leading to x = 2.5",
+              "Just x = 2.5",
+              "A decimal check only",
+              "The answer to 3 s.f."
+            ],
+            "answer": 0,
+            "why": "'Show that' gives the answer; the marks are for the working."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Timed (4 minutes, 3 marks): Solve 4(x − 2) = x + 7, showing each step.",
+          "a": "4x − 8 = x + 7 (M1); 3x = 15 (M1); x = 5 (A1)",
+          "mins": 4,
+          "model": "Expand: 4x − 8 = x + 7 (show it). Subtract x and add 8: 3x = 15. Divide: x = 5. Each line is a separate mark."
+        },
+        {
+          "q": "Timed (3 minutes, 2 marks): Show that 2 1/4 × 1 1/3 = 3.",
+          "a": "9/4 × 4/3 (M1) = 36/12 = 3 (A1)",
+          "mins": 3
+        }
+      ],
+      "independent": [
+        {
+          "q": "Timed mini-set Q1 (3 marks): Express 0.5333... as a fraction in its simplest form.",
+          "a": "10x = 5.333..., 100x = 53.333..., 90x = 48 (M1 M1); 8/15 (A1)",
+          "mins": 4,
+          "model": "x = 0.5333...; 10x = 5.333...; 100x = 53.333...; subtract: 90x = 48; x = 48/90 = 8/15."
+        },
+        {
+          "q": "Q2 (3 marks): Solve x² + 4x − 21 = 0.",
+          "a": "(x + 7)(x − 3) = 0 (M1 A1); x = −7 or 3 (A1)",
+          "mins": 3
+        },
+        {
+          "q": "Q3 (3 marks): A car worth £16,000 loses 20% of its value each year. Find its value after 3 years.",
+          "a": "16 000 × 0.8³ (M1 M1) = £8,192 (A1)",
+          "mins": 3
+        },
+        {
+          "q": "Q4 (4 marks): Solve 3x + 2y = 12 and x − y = −1.",
+          "a": "From x = y − 1: 3y − 3 + 2y = 12 (M1); 5y = 15 (M1); y = 3 (A1); x = 2 (A1)",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "What is the difference between an M mark and an A mark?",
+          "a": "M is for a correct method; A is for the correct answer following that method",
+          "mins": 1
+        },
+        {
+          "q": "Roughly how long should a 5-mark question take in a 2-hour, 100-mark paper?",
+          "a": "About 6 minutes",
+          "mins": 1
+        }
+      ],
+      "homework": "Plan your mock: write your timing plan for a 2-hour paper (check points at 30, 60 and 90 minutes) and pack your equipment list.",
+      "send": "Support: command words card. EAL: key command words with examples. Stretch: write a mark scheme for one of your own questions.",
+      "resources": [
+        "4MA1 command words list (content/syllabus/ks4/mathematics.json, printable)",
+        "Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers)",
+        "Timing plan template (portal worksheet)",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book",
+        "Scientific calculator",
+        "4MA1 Higher formulae sheet"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "exam hall desks",
+          "alt": "An empty exam hall",
+          "for": "hook"
+        },
+        {
+          "find": "analogue clock",
+          "alt": "A clock for timing an exam",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Number, algebra, sequences, graphs",
+      "n": 71,
+      "title": "Mock section: Paper 1H style (number and algebra)",
+      "duration": 50,
+      "bigQuestion": "Can I apply my revision under timed conditions?",
+      "objectives": [
+        "To show secure understanding of number and algebra under exam conditions"
+      ],
+      "successCriteria": [
+        "All: attempt every question, showing method",
+        "Most: complete the section in the time, checking answers",
+        "Some: earn full marks on the multi-step questions"
+      ],
+      "smsc": "Moral: preparing thoroughly for exams is part of ihsan (إِحْسَان), doing a task as well as possible",
+      "keywords": [
+        {
+          "term": "M mark",
+          "def": "method mark"
+        },
+        {
+          "term": "A mark",
+          "def": "accuracy mark"
+        },
+        {
+          "term": "B mark",
+          "def": "independent mark"
+        },
+        {
+          "term": "check",
+          "def": "an estimate or substitution to confirm an answer"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which question type do you most want to see today, and which do you least want to see? Why?",
+        "a": "Pupils name strengths and weaknesses; the least-wanted type goes at the top of the repair list after the mock."
+      },
+      "starter": [
+        {
+          "q": "Write the quadratic formula.",
+          "a": "x = (−b ± √(b² − 4ac)) ÷ 2a",
+          "mins": 1
+        },
+        {
+          "q": "What is 1.2 × 0.8?",
+          "a": "0.96",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Section rules",
+          "bullets": [
+            "Work alone in silence, camera on",
+            "Show working on paper; photograph and upload at the end",
+            "32 minutes for 30 marks"
+          ],
+          "note": "The section runs in the portal in secure mode; pupils off camera use the printable paper.",
+          "table": {
+            "head": [
+              "Questions",
+              "Marks",
+              "Suggested time"
+            ],
+            "rows": [
+              [
+                "1 to 5",
+                "12",
+                "13 minutes"
+              ],
+              [
+                "6 to 8",
+                "11",
+                "12 minutes"
+              ],
+              [
+                "9 to 10",
+                "7",
+                "7 minutes"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Before you start",
+          "bullets": [
+            "Read every question once",
+            "Do the ones you are sure of first"
+          ],
+          "note": "Remind pupils to round only at the end.",
+          "model": {
+            "problem": "A reminder: 'Give your answer to 3 significant figures.'",
+            "steps": [
+              "Keep full calculator values",
+              "Round once, at the end",
+              "Write the unrounded value too"
+            ],
+            "answer": "Full marks need the correct rounding"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Which comes first?"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "You are stuck on question 4. What should you do?",
+            "options": [
+              "Mark it and move on, then return",
+              "Keep trying until it works",
+              "Leave the paper",
+              "Guess and never return"
+            ],
+            "answer": 0,
+            "why": "Moving on protects time for questions you can do; return at the end."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Warm-up (teacher models first): Factorise x² − 9.",
+          "a": "(x + 3)(x − 3)",
+          "mins": 2,
+          "model": "x² − 9 is a difference of two squares: x² − 3² = (x + 3)(x − 3)."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Warm-up (teacher models first): Solve 2x + 7 = 15.",
+          "a": "x = 4",
+          "mins": 2,
+          "model": "Subtract 7: 2x = 8. Divide by 2: x = 4. Check: 2(4) + 7 = 15."
+        },
+        {
+          "q": "Q1 (2 marks): Work out 2 2/3 × 1 1/8, giving your answer in its simplest form.",
+          "a": "8/3 × 9/8 (M1) = 3 (A1)",
+          "mins": 2
+        },
+        {
+          "q": "Q2 (2 marks): Express 0.040404... as a fraction.",
+          "a": "100x − x = 4 (M1); 4/99 (A1)",
+          "mins": 2
+        },
+        {
+          "q": "Q3 (2 marks): Simplify (27x⁶)^(2/3).",
+          "a": "9x⁴ (B1 B1)",
+          "mins": 2
+        },
+        {
+          "q": "Q4 (3 marks): A price is reduced by 15% to £61.20. Find the original price.",
+          "a": "61.20 ÷ 0.85 (M1 M1) = £72 (A1)",
+          "mins": 3
+        },
+        {
+          "q": "Q5 (3 marks): Solve 5x − 3 = 2(x + 6).",
+          "a": "5x − 3 = 2x + 12 (M1); 3x = 15 (M1); x = 5 (A1)",
+          "mins": 3
+        },
+        {
+          "q": "Q6 (4 marks): Solve 2x + 5y = 11 and 3x − 2y = 7.",
+          "a": "4x + 10y = 22, 15x − 10y = 35 (M1); 19x = 57 (M1); x = 3 (A1); y = 1 (A1)",
+          "mins": 3
+        },
+        {
+          "q": "Q7 (4 marks): For 8, 13, 18, ... find the nth term and the sum of the first 30 terms.",
+          "a": "5n + 3 (B1); S30 = 15(16 + 29 × 5) (M1 M1) = 2415 (A1)",
+          "mins": 4
+        },
+        {
+          "q": "Q8 (3 marks): Solve 2x² − 3x − 9 ≥ 0.",
+          "a": "(2x + 3)(x − 3) (M1); critical values −1.5, 3 (A1); x ≤ −1.5 or x ≥ 3 (A1)",
+          "mins": 3
+        },
+        {
+          "q": "Q9 (4 marks): L passes through (2, −1) and (6, 7). Find the line perpendicular to L through (6, 7).",
+          "a": "Gradient L = 2 (M1); perpendicular −1/2 (M1); 7 = −3 + c (M1); y = −x/2 + 10 (A1)",
+          "mins": 4
+        },
+        {
+          "q": "Q10 (3 marks): y is inversely proportional to x². y = 10 when x = 3. Find y when x = 5.",
+          "a": "y = k/x² (M1); k = 90 (A1); y = 3.6 (A1)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which question do you think you lost most marks on?",
+          "a": "For example: 'Q8: I was not sure which region to choose.'",
+          "mins": 1
+        }
+      ],
+      "homework": "Without looking at answers, rework any question you did not finish; next lesson we mark together.",
+      "send": "Support: 25% extra time where agreed (access arrangements); reader if agreed. EAL: glossary of command words allowed only if an access arrangement allows it. Stretch: finish early and write a check for each answer.",
+      "resources": [
+        "Mock section paper (portal, printable; original 4MA1-style questions with a mark scheme): Paper 1H style section, 10 questions, 30 marks",
+        "Portal secure test mode",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book",
+        "Scientific calculator",
+        "4MA1 Higher formulae sheet"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "exam paper and pen on desk",
+          "alt": "An exam paper and pen",
+          "for": "hook"
+        },
+        {
+          "find": "scientific calculator",
+          "alt": "A scientific calculator",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Number, algebra, sequences, graphs",
+      "n": 72,
+      "title": "Mock section: Paper 2H style (number, algebra and graphs)",
+      "duration": 50,
+      "bigQuestion": "Can I keep accuracy and timing through a full section?",
+      "objectives": [
+        "To show secure understanding of number, algebra, functions and graphs under exam conditions"
+      ],
+      "successCriteria": [
+        "All: attempt every question, showing method",
+        "Most: complete the section in time with checks",
+        "Some: earn full marks on functions and graph questions"
+      ],
+      "smsc": "Moral: preparing thoroughly for exams is part of ihsan (إِحْسَان), doing a task as well as possible",
+      "keywords": [
+        {
+          "term": "M mark",
+          "def": "method mark"
+        },
+        {
+          "term": "A mark",
+          "def": "accuracy mark"
+        },
+        {
+          "term": "significant figures",
+          "def": "digits counted from the first non-zero digit"
+        },
+        {
+          "term": "formulae sheet",
+          "def": "the sheet of formulae supplied in the exam"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Yesterday's section is done. What one change to your technique will you make today?",
+        "a": "For example: write the formula before substituting, or check each answer by substitution."
+      },
+      "starter": [
+        {
+          "q": "Write Sₙ for an arithmetic series.",
+          "a": "n/2[2a + (n − 1)d]",
+          "mins": 1
+        },
+        {
+          "q": "Upper bound of 4.2 to 1 d.p.?",
+          "a": "4.25",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Section rules",
+          "bullets": [
+            "Work alone in silence, camera on",
+            "Show working; upload at the end",
+            "32 minutes for 31 marks"
+          ],
+          "note": "Secure mode in the portal; printable paper for anyone off camera.",
+          "table": {
+            "head": [
+              "Questions",
+              "Marks",
+              "Suggested time"
+            ],
+            "rows": [
+              [
+                "1 to 4",
+                "9",
+                "9 minutes"
+              ],
+              [
+                "5 to 7",
+                "12",
+                "12 minutes"
+              ],
+              [
+                "8 to 10",
+                "10",
+                "11 minutes"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Accuracy",
+          "bullets": [
+            "Keep full values in the calculator",
+            "Round at the end; state units"
+          ],
+          "note": "A1 marks are lost by early rounding.",
+          "model": {
+            "problem": "Solve 3x² + 5x − 4 = 0 to 2 d.p.",
+            "steps": [
+              "x = (−5 ± √73) ÷ 6",
+              "√73 = 8.5440...",
+              "x = 0.5907... or −2.2573..."
+            ],
+            "answer": "x = 0.59 or x = −2.26"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Lower bounds multiply"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "A length is 8.6 cm and a width 4.2 cm, both to 1 d.p. Which gives the lower bound of the area?",
+            "options": [
+              "8.55 × 4.15",
+              "8.65 × 4.25",
+              "8.6 × 4.2",
+              "8.55 × 4.25"
+            ],
+            "answer": 0,
+            "why": "Smallest × smallest gives the lower bound."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Warm-up (teacher models first): Write x² + 6x + 1 in the form (x + a)² + b.",
+          "a": "(x + 3)² − 8",
+          "mins": 2,
+          "model": "x² + 6x = (x + 3)² − 9. So x² + 6x + 1 = (x + 3)² − 9 + 1 = (x + 3)² − 8."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Warm-up (teacher models first): Work out 10% depreciation for 2 years on £500.",
+          "a": "£405",
+          "mins": 2,
+          "model": "Multiplier 0.9. 500 × 0.9² = 500 × 0.81 = £405."
+        },
+        {
+          "q": "Q1 (2 marks): Rationalise and simplify 12/√6.",
+          "a": "12√6/6 (M1) = 2√6 (A1)",
+          "mins": 2
+        },
+        {
+          "q": "Q2 (2 marks): Work out (6.4 × 10⁷) ÷ (1.6 × 10⁻³) in standard form.",
+          "a": "4 × 10¹⁰ (B1 B1)",
+          "mins": 2
+        },
+        {
+          "q": "Q3 (2 marks): A length is 8.6 cm and a width 4.2 cm, both to 1 d.p. Find the lower bound of the area.",
+          "a": "8.55 × 4.15 (M1) = 35.4825 cm² (A1)",
+          "mins": 2
+        },
+        {
+          "q": "Q4 (3 marks): A machine worth £15,000 depreciates by 18% a year. Find its value after 4 years, to the nearest pound.",
+          "a": "15 000 × 0.82⁴ (M1 M1) = £6,782 (A1)",
+          "mins": 3
+        },
+        {
+          "q": "Q5 (4 marks): Make w the subject of P = (2w + 3)/(w − 1).",
+          "a": "Pw − P = 2w + 3 (M1); Pw − 2w = P + 3 (M1); w(P − 2) = P + 3 (M1); w = (P + 3)/(P − 2) (A1)",
+          "mins": 3
+        },
+        {
+          "q": "Q6 (3 marks): Solve 3x² + 5x − 4 = 0, giving your answers to 2 d.p.",
+          "a": "(−5 ± √73)/6 (M1 M1); 0.59 and −2.26 (A1)",
+          "mins": 3
+        },
+        {
+          "q": "Q7 (5 marks): f(x) = 2x − 1 and g(x) = x² + 3. (a) Find fg(2). (b) Find f⁻¹(x). (c) Solve gf(x) = 12.",
+          "a": "(a) 13 (B1) (b) (x + 1)/2 (M1 A1) (c) (2x − 1)² = 9, x = 2 or −1 (M1 A1)",
+          "mins": 4
+        },
+        {
+          "q": "Q8 (4 marks): Solve y = x + 2 and y = x² − 4.",
+          "a": "x² − x − 6 = 0 (M1); (x − 3)(x + 2) (M1); (3, 5) and (−2, 0) (A1 A1)",
+          "mins": 4
+        },
+        {
+          "q": "Q9 (3 marks): A car accelerates uniformly from 6 m/s to 24 m/s in 9 s. Find the acceleration and the distance travelled.",
+          "a": "2 m/s² (B1); ½(6 + 24) × 9 (M1) = 135 m (A1)",
+          "mins": 3
+        },
+        {
+          "q": "Q10 (3 marks): Write x² + 8x + 11 in the form (x + a)² + b and state the minimum value of x² + 8x + 11.",
+          "a": "(x + 4)² − 5 (M1 A1); minimum −5 (A1)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which question type was strongest for you today?",
+          "a": "For example: 'Simultaneous equations: full marks.'",
+          "mins": 1
+        }
+      ],
+      "homework": "Rework any unfinished question; bring both mock sections to the review lesson.",
+      "send": "Support: access arrangements as agreed (extra time, reader). EAL: as allowed by access arrangements. Stretch: write a check beside every answer.",
+      "resources": [
+        "Mock section paper (portal, printable; original 4MA1-style questions with a mark scheme): Paper 2H style section, 10 questions, 31 marks",
+        "Portal secure test mode",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book",
+        "Scientific calculator",
+        "4MA1 Higher formulae sheet"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "exam paper and pen on desk",
+          "alt": "An exam paper and pen",
+          "for": "hook"
+        },
+        {
+          "find": "formula sheet mathematics",
+          "alt": "A mathematics formulae sheet",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Revision cycle 1: Number, algebra, sequences, graphs",
+      "n": 73,
+      "title": "Mock review: mark schemes, common errors and repair lists",
+      "duration": 50,
+      "bigQuestion": "What exactly will I do differently before the next paper?",
+      "objectives": [
+        "To understand where marks were lost in the mock and plan targeted repair"
+      ],
+      "successCriteria": [
+        "All: mark your sections with the mark scheme and find lost marks",
+        "Most: correct errors and redo similar questions",
+        "Some: write a precise, timed repair plan for Spring 2"
+      ],
+      "smsc": "Spiritual: reflecting honestly on mistakes (muhasabah, مُحَاسَبَة) and renewing intention to improve",
+      "keywords": [
+        {
+          "term": "repair list",
+          "def": "your own list of topics to fix, in priority order"
+        },
+        {
+          "term": "method mark",
+          "def": "marks for correct working"
+        },
+        {
+          "term": "common error",
+          "def": "a mistake many pupils make"
+        },
+        {
+          "term": "muhasabah",
+          "def": "مُحَاسَبَة: honest self-review"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you could fix only three topics before the real exam, how would you choose them?",
+        "a": "Choose by marks lost and by how often the topic appears: high marks lost on common topics first."
+      },
+      "starter": [
+        {
+          "q": "Solve x² − 2x − 8 = 0.",
+          "a": "x = 4 or −2",
+          "mins": 1
+        },
+        {
+          "q": "Perpendicular gradient to 2?",
+          "a": "−1/2",
+          "mins": 1
+        },
+        {
+          "q": "Original price if £84 is after a 20% rise?",
+          "a": "£70",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Common errors seen",
+          "bullets": [
+            "Early rounding loses A marks",
+            "Missing ± or second solution",
+            "Wrong region in inequalities"
+          ],
+          "note": "Share anonymised examples from the class.",
+          "table": {
+            "head": [
+              "Question",
+              "Common error",
+              "Fix"
+            ],
+            "rows": [
+              [
+                "Q8 (1H)",
+                "Gave −1.5 < x < 3",
+                "Sketch: ≥ 0 is outside the roots"
+              ],
+              [
+                "Q4 (1H)",
+                "61.20 × 1.15",
+                "Divide by 0.85"
+              ],
+              [
+                "Q6 (2H)",
+                "Rounded √73 early",
+                "Round only at the end"
+              ],
+              [
+                "Q7c (2H)",
+                "Only x = 2",
+                "± gives x = −1 too"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Model correction",
+          "bullets": [
+            "Write the error, the fix and a new similar question"
+          ],
+          "note": "This is the repair list format.",
+          "model": {
+            "problem": "Repair: 'Solve 2x² − 3x − 9 ≥ 0' (I gave −1.5 < x < 3).",
+            "steps": [
+              "Error: chose the inside region",
+              "Fix: U-shape is above 0 outside the roots",
+              "New: solve 2x² − 5x − 12 ≥ 0",
+              "(2x + 3)(x − 4) ≥ 0: x ≤ −1.5 or x ≥ 4"
+            ],
+            "answer": "x ≤ −1.5 or x ≥ 4"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Outside the roots for ≥ 0"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "Solve x² − x − 6 > 0.",
+            "options": [
+              "x < −2 or x > 3",
+              "−2 < x < 3",
+              "x > 3",
+              "x < −2"
+            ],
+            "answer": 0,
+            "why": "(x − 3)(x + 2) > 0: above the axis outside the roots."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Repair 1: After a 12% increase a price is £84. Find the original.",
+          "a": "84 ÷ 1.12 = £75",
+          "mins": 2,
+          "model": "New = original × 1.12, so original = 84 ÷ 1.12 = £75. Check: 75 × 1.12 = 84."
+        },
+        {
+          "q": "Repair 2: Find the line perpendicular to y = 3x + 1 through (3, 2).",
+          "a": "y = −x/3 + 3",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Repair 3: Solve 4x² − 7x − 1 = 0, giving answers to 2 d.p.",
+          "a": "(7 ± √65)/8: 1.88 or −0.13",
+          "mins": 4,
+          "model": "a = 4, b = −7, c = −1: x = (7 ± √(49 + 16))/8 = (7 ± √65)/8. √65 = 8.0622...: x = 1.8828 or −0.1328, so 1.88 or −0.13."
+        },
+        {
+          "q": "Repair 4: Solve 2x² − 5x − 12 ≥ 0.",
+          "a": "x ≤ −1.5 or x ≥ 4",
+          "mins": 3
+        },
+        {
+          "q": "Write your personal repair list: three topics, the mark lost, the fix and the date you will practise each (portal response box).",
+          "a": "For example: '1. Quadratic inequalities, 2 marks, sketch first, practise 20 Mar; 2. ...'",
+          "mins": 8
+        }
+      ],
+      "exit": [
+        {
+          "q": "Name your top repair topic and the first thing you will do.",
+          "a": "For example: 'Bounds: learn the max/min table and do 5 questions on Monday.'",
+          "mins": 2
+        }
+      ],
+      "homework": "Complete the first item on your repair list using the portal's matching question set; mark it and tick it off.",
+      "send": "Support: repair list frame with examples. EAL: 'repair', 'priority'. Stretch: write a mark scheme for one mock question in your own words.",
+      "resources": [
+        "Mock sections 1H and 2H with mark schemes (portal)",
+        "Personal repair list template (portal response box)",
+        "Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers)",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book",
+        "Scientific calculator",
+        "4MA1 Higher formulae sheet"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "checklist with ticks",
+          "alt": "A checklist with items ticked off",
+          "for": "keywords"
+        },
+        {
+          "find": "marked exam script red pen",
+          "alt": "A marked script with corrections",
+          "for": "hook"
+        }
+      ]
     }
   ]
 }
