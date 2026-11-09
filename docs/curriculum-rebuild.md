@@ -70,8 +70,14 @@ SENCo and SEND register, cover, security audit, policy outline, device requireme
 
 Lessons written to v3 for Spring 1 (11 Jan to 8 Feb 2027) and merged: Maths Y1-11, English Y1-6, Science Y3-11.
 
+Portal redesign (owner brief, 9 Nov 2026, evening): done first, before more lessons. PR #66 merged: design system,
+navigation, dashboards, lesson workspaces, review workflow (migration 0192), curriculum map, search. The plan, rules and
+what's left are in docs/portal-redesign.md; follow its design rules for every new page.
+
 Next, in this order (each one agent; briefs in docs/agent-briefs/):
-1. Spring 1 lessons still to write: English Y7-11 (running 9 Nov, branch `lessons-english-ks34-s1`); Year 1-2 Topic and
+1. Spring 1 lessons still to write. Paused for the portal redesign, half done and pushed (finish these first, on the same
+   branches): English Y7-10 written, Y11 (4EB1/4ET1) still to do (branch `lessons-english-ks34-s1`); Islamic Studies
+   Y1-5 written, Y6-11 still to do, then Arabic Y3-11 (branch `lessons-is-arabic-s1`). Then: Year 1-2 Topic and
    Year 1-2 science; History, Geography, Computing, Art and DT, PSHE (Y1-11); Qur'an, Arabic, Islamic Studies (Y1-11);
    Business and Computer Science options (Y10-11).
 2. Then Spring 2, Summer 1, Summer 2 the same way, subject by subject.
@@ -81,8 +87,7 @@ Next, in this order (each one agent; briefs in docs/agent-briefs/):
    uploaded to the portal and linked from the lessons. Start with Spring 1.
 4. Consolidation pass (owner agreed): every old SOW, map and lesson marked keep / adapt / retire; retired lessons recorded in
    content/retired-lessons.json and moved to an "Archive - do not teach from" area; renumber lessons into teaching order.
-5. Backlog docs/backlog/tafweed.md: T29 dropdowns and icons (running 9 Nov, branch `claude/tafweed-T29-dropdowns-icons`),
-   T19 portal polish, T22 LADO (owner must say which local authority), T23 safeguarding mailbox (owner must create it in
+5. Backlog docs/backlog/tafweed.md: T19 portal polish is folded into the redesign (docs/portal-redesign.md "Next"), T22 LADO (owner must say which local authority), T23 safeguarding mailbox (owner must create it in
    Microsoft 365). Prospectus PDF still needs the tablet-or-printer line (tools: the prospectus patch script approach in
    git history of public/prospectus).
 6. Small fixes: arrows (→) in poll options render as dashes (branch `builder-arrows-fix` may exist); make the website use

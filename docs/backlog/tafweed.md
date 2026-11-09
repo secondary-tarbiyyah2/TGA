@@ -160,7 +160,7 @@ Statuses: **Not started** · **In progress** · **Done** · **Needs decision** �
 - **Approach:** (1) audit the most-used pages with screenshots (`scripts/capture-portal-screenshots.mjs` / the "Update portal screenshots" workflow) and list the inconsistencies; (2) fix shared components first; (3) then page by page, starting with Home, Classes, Pupils (T3), Classwork (T1), Curriculum (T2), Assessments.
 - **Files:** `src/components/learn/ui.tsx`, `src/components/learn/PageHeader.tsx`, `src/components/learn/DataTable.tsx`, `src/components/learn/LearnLayoutShell.tsx`, `src/app/globals.css` (`.portal …`).
 - **Done when:** [ ] audit list written here; [ ] shared components updated; [ ] top 6 pages reviewed against the list; [ ] owner signs off on before/after screenshots.
-- **Status:** Not started
+- **Status:** Superseded by the portal redesign (owner, 9 Nov evening). Shared polish merged with PR #66; the rest is tracked in `docs/portal-redesign.md`.
 
 ---
 
