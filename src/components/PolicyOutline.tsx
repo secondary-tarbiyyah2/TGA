@@ -37,11 +37,15 @@ export function PolicyOutline({
 
   // How far down the viewport a heading counts as "being read": under the
   // header, under the phone Contents bar when it shows, plus a little room.
-  const readLine = useCallback(() => {
+  // A heading in the top quarter of what is visible counts as the section being read.
+  const barHeight = useCallback(() => {
     const b = bar.current;
-    const barH = b && b.offsetParent !== null ? b.offsetHeight : 0;
-    return top + barH + 24;
-  }, [top]);
+    return b && b.offsetParent !== null ? b.offsetHeight : 0;
+  }, []);
+  const readLine = useCallback(() => {
+    const above = top + barHeight();
+    return above + Math.max(24, (window.innerHeight - above) * 0.25);
+  }, [top, barHeight]);
 
   // Highlight the section being read. Listens in the capture phase so it
   // works whichever element scrolls (the window on the site, the page in the portal).
@@ -127,7 +131,7 @@ export function PolicyOutline({
     const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches || document.documentElement.hasAttribute("data-reduce-motion");
     // Measure after the phone panel has closed, so the offset is the bar's closed height.
     window.requestAnimationFrame(() => {
-      const y = el.getBoundingClientRect().top + window.scrollY - readLine() + 16;
+      const y = el.getBoundingClientRect().top + window.scrollY - (top + barHeight() + 16);
       window.scrollTo({ top: Math.max(0, y), behavior: reduce ? "instant" : "smooth" });
       el.focus({ preventScroll: true });
       setActive(id);
