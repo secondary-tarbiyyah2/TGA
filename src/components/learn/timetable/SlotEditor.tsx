@@ -9,6 +9,7 @@ import { insertSlotLocked, updateSlotLocked } from "./api";
 import type { Availability, ClassOpt, ClassTeacherLink, Protected, Teacher } from "./types";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 const field = "mt-1 w-full rounded-lg border border-gold-light/70 bg-white px-3 py-2 text-sm text-ink";
 
 /**
@@ -120,7 +121,7 @@ export function SlotEditor({
   };
 
   const remove = async () => {
-    if (!supabase || !slot || !window.confirm("Delete this lesson from the timetable?")) return;
+    if (!supabase || !slot || !(await askConfirm("Delete this lesson from the timetable?"))) return;
     setBusy(true);
     setError(null);
     try {

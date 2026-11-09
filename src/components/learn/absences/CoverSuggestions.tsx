@@ -25,6 +25,7 @@ import {
   type SubjectLink,
 } from "@/lib/learn/cover";
 
+import { askConfirm } from "@/components/learn/kit";
 type LogRow = CoverRow & {
   original_teacher_user_id: string;
   reason: string | null;
@@ -138,7 +139,7 @@ export function CoverSuggestions() {
   };
 
   const unassign = async (c: LogRow) => {
-    if (!window.confirm(`Remove ${nameOf(c.covering_teacher_user_id)}'s cover on ${dateLabel(c.cover_date)}? The lesson goes back to ${nameOf(c.original_teacher_user_id)}. Anyone already emailed is not told automatically.`)) return;
+    if (!(await askConfirm(`Remove ${nameOf(c.covering_teacher_user_id)}'s cover on ${dateLabel(c.cover_date)}? The lesson goes back to ${nameOf(c.original_teacher_user_id)}. Anyone already emailed is not told automatically.`))) return;
     setBusy(c.id);
     const result = await callEdgeFunction("timetable-cover", { action: "remove", cover_id: c.id });
     setBusy(null);
@@ -159,7 +160,7 @@ export function CoverSuggestions() {
   const removeAbsence = async (a: StaffAbsence) => {
     const supabase = getSupabaseClient();
     if (!supabase) return;
-    if (!window.confirm("Remove this absence? Cover already assigned stays in place (remove it from the cover log if it's no longer needed).")) return;
+    if (!(await askConfirm("Remove this absence? Cover already assigned stays in place (remove it from the cover log if it's no longer needed)."))) return;
     setBusy(a.id);
     const { error: err } = await supabase.from("teacher_absences").delete().eq("id", a.id);
     setBusy(null);

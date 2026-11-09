@@ -35,6 +35,7 @@ import {
   type CurriculumVersion,
 } from "@/lib/learn/curriculum";
 import { StatusChip, ui } from "@/components/learn/ui";
+import { useLessonPins } from "@/lib/learn/pins";
 import { ActionsMenu, WorkflowBadge, WorkspaceHeader, type MenuAction, type WorkflowStatus } from "@/components/learn/kit";
 import { allHubs, boardLabel, hubNodeLessons, matchSpecUnits, matchSyllabusUnits, sameSubject, specFor, syllabusFor } from "@/lib/learn/syllabusIndex";
 import { Select } from "@/components/learn/Select";
@@ -151,6 +152,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
   const supabase = getSupabaseClient();
   const { roles } = useLearnSession();
   const canEditLessons = roles.some((r) => r.role === "teacher" || r.role === "head_teacher" || r.role === "admin");
+  const { pinned, toggle: togglePin } = useLessonPins();
   const [editingLesson, setEditingLesson] = useState<CurriculumLesson | null>(null);
   // T34/T35: the click-to-edit lesson (optionally opened from a feedback note), feedback, and the Headteacher's queue.
   const isHead = roles.some((r) => r.role === "head_teacher" || r.role === "admin");
@@ -454,6 +456,7 @@ export function CurriculumLibrary({ area }: { area: "teach" | "admin" }) {
     const menu: MenuAction[] = [
       ...((files.length ? [{ section: "Download", label: "" }, ...files.map((k) => ({ label: busyId === l.id + k ? "Downloading…" : KIND_LABEL[k], icon: "download", onSelect: () => download(l, k) }))] : []) as MenuAction[]),
       { section: "Lesson", label: "" },
+      { label: pinned.has(l.id) ? "Unpin from my dashboard" : "Pin to my dashboard", icon: "star", onSelect: () => void togglePin(l.id) },
       { label: "Share to a class", icon: "send", onSelect: () => setSharing(l), disabled: !l.deck_path },
       { label: canEditLessons ? "Edit lesson" : "Look inside", icon: "pencil", onSelect: () => setStudio({ lesson: l }) },
       { label: "Give feedback", icon: "messageSquarePlus", onSelect: () => setFeedbackFor({ lesson: l, part: "lesson" }) },

@@ -17,6 +17,7 @@ import {
 import { useNow } from "@/lib/learn/useNow";
 import { Button, EmptyState, StatusChip, Switch, btn, ui } from "@/components/learn/ui";
 
+import { askConfirm } from "@/components/learn/kit";
 type Draft = {
   title: string;
   description: string;
@@ -121,7 +122,7 @@ function OpenEveningContent() {
 
   async function setCancelled(s: OpenEveningSession, cancel: boolean) {
     if (!supabase) return;
-    if (cancel && !confirm(`Cancel "${s.title}" on ${ukDateTime(s.starts_at)}? It stops being offered on the website. People who have already booked are not emailed automatically; use "Email everyone booked" to tell them.`)) return;
+    if (cancel && !(await askConfirm(`Cancel "${s.title}" on ${ukDateTime(s.starts_at)}? It stops being offered on the website. People who have already booked are not emailed automatically; use "Email everyone booked" to tell them.`))) return;
     setBusy(true);
     const { error } = await supabase.from("open_evening_sessions").update({ cancelled_at: cancel ? new Date().toISOString() : null }).eq("id", s.id);
     setBusy(false);
@@ -132,7 +133,7 @@ function OpenEveningContent() {
 
   async function cancelBooking(b: OpenEveningBooking) {
     if (!supabase) return;
-    if (!confirm(`Cancel the booking for ${b.parent_name} (${b.attendees} ${b.attendees === 1 ? "place" : "places"})? The places are released straight away. They are not emailed automatically.`)) return;
+    if (!(await askConfirm(`Cancel the booking for ${b.parent_name} (${b.attendees} ${b.attendees === 1 ? "place" : "places"})? The places are released straight away. They are not emailed automatically.`))) return;
     setBusy(true);
     const { error } = await supabase.from("open_evening_bookings").update({ status: "cancelled", cancelled_at: new Date().toISOString() }).eq("id", b.id);
     setBusy(false);

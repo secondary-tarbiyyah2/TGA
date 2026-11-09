@@ -11,6 +11,7 @@ import { AdminLeaderboard } from "@/components/learn/behaviour/LeaderboardCards"
 import { WithdrawalNoticesAdmin } from "@/components/learn/fees/WithdrawalNoticesAdmin";
 import { DashboardHero } from "@/components/learn/DashboardHero";
 import { CurriculumHealth, useCurriculumFigures } from "@/components/learn/curriculum/CurriculumHealth";
+import { RecentLessons } from "@/components/learn/curriculum/RecentLessons";
 import { ActionCentreWidget } from "@/components/learn/ActionCentreWidget";
 import { useLearnSession, learnRoleLabel } from "@/lib/learn/session";
 import { useActionItems } from "@/components/learn/actions/useActionItems";
@@ -237,6 +238,8 @@ function DashboardContent() {
       <TodayLessons lessons={lessons} />
 
       <CurriculumHealth figures={curriculum} />
+
+      <RecentLessons area="admin" />
 
       <WithdrawalNoticesAdmin compact />
 

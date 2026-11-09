@@ -7,6 +7,7 @@ import { formatDate } from "@/components/learn/fees/shared";
 import { Notice, StatusChip, ui } from "@/components/learn/ui";
 import { NOTICE_COLUMNS, NOTICE_DAYS, NOTICE_STATUS_LABEL, addDays, destinationLabel, type WithdrawalNotice } from "@/components/learn/fees/withdrawal";
 
+import { askConfirm } from "@/components/learn/kit";
 type Row = WithdrawalNotice & { children?: { name: string } | null };
 type Edit = { eligible: string; fees: string; invoice: string; notes: string };
 
@@ -65,7 +66,7 @@ export function WithdrawalNoticesAdmin({ compact = false }: { compact?: boolean 
 
   const save = async (r: Row, status?: "acknowledged" | "completed") => {
     if (!supabase) return;
-    if (status === "completed" && !window.confirm(`Mark ${r.children?.name || "this pupil"} as having left? The notice is closed and moves to the finished list.`)) return;
+    if (status === "completed" && !(await askConfirm(`Mark ${r.children?.name || "this pupil"} as having left? The notice is closed and moves to the finished list.`))) return;
     const fees = edit.fees.trim() === "" ? null : Number(edit.fees.replace(/[£,\s]/g, ""));
     if (fees !== null && Number.isNaN(fees)) return setMsg({ tone: "bad", text: "Fees outstanding must be a number." });
     const { error } = await supabase

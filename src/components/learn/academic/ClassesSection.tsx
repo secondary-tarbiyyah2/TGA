@@ -9,6 +9,7 @@ import type { AcademicYear, Child, ClassRow, ClassTeacher, Enrolment, Subject, T
 import { ui } from "@/components/learn/ui";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 type Props = {
   classes: ClassRow[];
   yearGroups: YearGroup[];
@@ -137,7 +138,7 @@ export function ClassesSection(props: Props) {
     await write(id, () => supabase.from("classes").update(p.row).eq("id", id), () => setEditId(null));
   };
   const remove = async (c: ClassRow) => {
-    if (!supabase || !window.confirm(`Delete ${c.name}? Its enrolments and timetable slots are deleted too.`)) return;
+    if (!supabase || !(await askConfirm(`Delete ${c.name}? Its enrolments and timetable slots are deleted too.`))) return;
     await write(c.id, () => supabase.from("classes").delete().eq("id", c.id));
   };
   const enrol = async (classId: string) => {
@@ -147,13 +148,13 @@ export function ClassesSection(props: Props) {
   /** Enrol every pupil in the class's year group who isn't in it yet. */
   const enrolYearGroup = async (c: ClassRow, missing: { id: string }[], ygName: string) => {
     if (!supabase || missing.length === 0) return;
-    if (!window.confirm(`Enrol ${missing.length} pupil${missing.length === 1 ? "" : "s"} from ${ygName} into ${c.name}?`)) return;
+    if (!(await askConfirm(`Enrol ${missing.length} pupil${missing.length === 1 ? "" : "s"} from ${ygName} into ${c.name}?`))) return;
     await write(c.id, () => supabase.from("enrolments").insert(missing.map((k) => ({ class_id: c.id, child_id: k.id }))), () => setNotice(`${missing.length} pupil${missing.length === 1 ? "" : "s"} enrolled into ${c.name}.`));
   };
   const unenrol = async (c: ClassRow, e: { id: string; child_id: string }) => {
     if (!supabase) return;
     const who = kids.find((k) => k.id === e.child_id)?.name || "this pupil";
-    if (!window.confirm(`Take ${who} out of ${c.name}? Their past attendance and work are kept.`)) return;
+    if (!(await askConfirm(`Take ${who} out of ${c.name}? Their past attendance and work are kept.`))) return;
     await write(c.id, () => supabase.from("enrolments").delete().eq("id", e.id));
   };
   const errFor = (at: string) => (error && errorAt === at ? <div className="mt-2"><Notice tone="error">{error}</Notice></div> : null);

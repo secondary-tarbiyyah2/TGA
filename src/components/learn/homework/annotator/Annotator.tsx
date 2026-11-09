@@ -23,6 +23,7 @@ import {
 import { categoryOfMime, downloadFileBlob, safeObjectName, uploadWithProgress } from "@/lib/learn/homeworkFiles";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 export type AnnotatorFile = { path: string; name: string; mime: string };
 
 /** Lets the annotator show the mark box and "Return to student" owned by the marking form behind it. */
@@ -518,8 +519,8 @@ export function Annotator({
     else onClose();
   };
 
-  const requestClose = () => {
-    if (dirty && !window.confirm("You have unsaved marks. Close without saving?")) return;
+  const requestClose = async () => {
+    if (dirty && !(await askConfirm("You have unsaved marks. Close without saving?"))) return;
     onClose();
   };
 

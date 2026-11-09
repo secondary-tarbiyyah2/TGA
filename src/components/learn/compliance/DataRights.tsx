@@ -6,6 +6,7 @@ import { useLearnPermission } from "@/lib/learn/session";
 import { btn, ui } from "@/components/learn/ui";
 import { Select } from "@/components/learn/Select";
 
+import { askConfirm } from "@/components/learn/kit";
 type Request = {
   id: string;
   request_type: string;
@@ -69,7 +70,7 @@ export function DataRights() {
 
   const setStatus = async (r: Request, status: string) => {
     if (!supabase) return;
-    if (status === "rejected" && !window.confirm(`Reject the ${TYPE_LABEL[r.request_type] || r.request_type} request from ${r.requester_name}? Record your reason with the requester in writing.`)) return;
+    if (status === "rejected" && !(await askConfirm(`Reject the ${TYPE_LABEL[r.request_type] || r.request_type} request from ${r.requester_name}? Record your reason with the requester in writing.`))) return;
     setError(null);
     const { error: err } = await supabase.from("data_rights_requests").update({ status, completed_at: status === "completed" ? new Date().toISOString() : null }).eq("id", r.id);
     if (err) setError("Couldn't update the request. Only the Headteacher or an Admin can.");

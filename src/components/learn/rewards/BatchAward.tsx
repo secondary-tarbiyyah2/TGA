@@ -6,6 +6,7 @@ import { BADGE_TYPES, MERIT_CATEGORIES, todayIso, type StudentOption } from "@/c
 import { Select } from "@/components/learn/Select";
 import { Icon } from "@/components/learn/Icon";
 
+import { askConfirm } from "@/components/learn/kit";
 // Reward several pupils, or the whole class, in one go.
 //  * Merits: every merit adds house points to the pupil's house automatically
 //    (behaviour_records, 0039/0073), so this is how a class earns house points.
@@ -61,8 +62,8 @@ export function BatchAward({ classId, roster, onAwarded }: { classId: string; ro
     }
   }
 
-  const everyone = () => {
-    if (!window.confirm(`Reward all ${pupils.length} pupils in this class?`)) return;
+  const everyone = async () => {
+    if (!(await askConfirm(`Reward all ${pupils.length} pupils in this class?`))) return;
     void award(pupils.map((p) => p.childId));
   };
 
