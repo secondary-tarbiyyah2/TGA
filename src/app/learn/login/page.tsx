@@ -6,14 +6,27 @@ import { useRouter } from "next/navigation";
 import { getSupabaseClient, getEdgeFunctionUrl } from "@/lib/supabase/client";
 import { PasswordInput } from "@/components/learn/PasswordInput";
 import { loginEmailFor } from "@/lib/learn/studentLogin";
-import { useLearnSession, dashboardPathForRole } from "@/lib/learn/session";
+import { useLearnSession, dashboardPathForRole, STAFF_ROLES, type LearnRole } from "@/lib/learn/session";
 import { StarMark } from "@/components/StarMark";
 import { MAIN_SITE_ORIGIN } from "@/lib/learn/origin";
 
-// Who is signing in. This only changes the wording and hints on the form:
-// every role uses the same field and the same sign-in call (a student's
-// username is mapped to their login email by loginEmailFor either way).
+// Who is signing in. Every role uses the same field and the same sign-in
+// call (a student's username is mapped to their login email by loginEmailFor
+// either way), but the choice is enforced: an account that holds none of the
+// chosen tab's roles is signed straight out again with a message naming the
+// right tab (a staff account can't sign in on the Parent tab). Someone with
+// several roles (a teacher who is also a parent) lands on the area they chose.
+// This is about clarity, not security: RLS on every table is the boundary.
 type Audience = "parent" | "student" | "staff";
+
+const AUDIENCE_ROLES: Record<Audience, LearnRole[]> = {
+  parent: ["parent"],
+  student: ["student"],
+  staff: STAFF_ROLES,
+};
+
+const audienceFor = (roles: string[]): Audience | null =>
+  (Object.keys(AUDIENCE_ROLES) as Audience[]).find((a) => roles.some((r) => (AUDIENCE_ROLES[a] as string[]).includes(r))) ?? null;
 
 const AUDIENCES: { id: Audience; label: string; field: string; placeholder: string; hint: string }[] = [
   {
@@ -66,6 +79,7 @@ export default function LearnLoginPage() {
   // already-signed-in redirect below cannot jump ahead of it.
   const [finishing, setFinishing] = useState(false);
   const [audience, setAudience] = useState<Audience>("parent");
+  const [wrongTab, setWrongTab] = useState<Audience | null>(null);
   // Links can pre-select a tab, e.g. the website footer's "Staff sign-in"
   // goes to /login/?as=staff. Read after mount (static export, no server).
   useEffect(() => {
@@ -82,7 +96,8 @@ export default function LearnLoginPage() {
   // Already signed in with a known role, send them straight to their
   // dashboard rather than showing the login form again.
   if (!finishing && session && session !== "loading" && rolesLoaded && roles.length > 0) {
-    router.replace(dashboardPathForRole(roles[0].role));
+    const preferred = roles.find((r) => AUDIENCE_ROLES[audience].includes(r.role)) ?? roles[0];
+    router.replace(dashboardPathForRole(preferred.role));
     return <p className="text-ink/65">Redirecting…</p>;
   }
 
@@ -130,6 +145,33 @@ export default function LearnLoginPage() {
       );
       return;
     }
+    // The account must hold a role for the tab they chose.
+    let landing = "/";
+    try {
+      const { data: userData } = await supabase.auth.getUser();
+      const uid = userData.user?.id;
+      if (uid) {
+        const { data: roleRows } = await supabase.from("user_roles").select("role").eq("user_id", uid);
+        const held = ((roleRows as { role: string }[] | null) || []).map((r) => r.role);
+        const match = held.find((r) => (AUDIENCE_ROLES[audience] as string[]).includes(r));
+        if (held.length > 0 && !match) {
+          await supabase.auth.signOut();
+          setFinishing(false);
+          const right = audienceFor(held);
+          const label = AUDIENCES.find((a) => a.id === right)?.label;
+          setWrongTab(right);
+          setError(
+            label
+              ? `This is a ${label.toLowerCase()} account, so it can't sign in here as a ${current.label.toLowerCase()}. Choose "${label}" above, then sign in again.`
+              : "This account can't sign in here. Contact the school office.",
+          );
+          return;
+        }
+        if (match) landing = dashboardPathForRole(match as LearnRole);
+      }
+    } catch {
+      // Fall through: the portal's own role checks still apply on every page.
+    }
     // A pupil with a temporary password has to choose their own before anything else.
     try {
       const { data: userData } = await supabase.auth.getUser();
@@ -145,7 +187,7 @@ export default function LearnLoginPage() {
       // Fall through: the change-password page is also reachable by hand and the check repeats at next sign-in.
     }
     setFinishing(false);
-    router.replace("/");
+    router.replace(landing);
   }
 
   return (
@@ -186,7 +228,11 @@ export default function LearnLoginPage() {
                 type="button"
                 role="radio"
                 aria-checked={audience === a.id}
-                onClick={() => setAudience(a.id)}
+                onClick={() => {
+                  setAudience(a.id);
+                  setWrongTab(null);
+                  setError(null);
+                }}
                 className={`rounded-lg px-3 py-2 text-sm font-semibold transition-colors ${
                   audience === a.id ? "bg-white text-ink shadow-sm ring-1 ring-gold-300" : "text-ink/70 hover:text-ink"
                 }`}
@@ -214,7 +260,24 @@ export default function LearnLoginPage() {
               />
             </label>
             <PasswordInput label="Password" required autoComplete="current-password" value={password} onChange={(e) => setPassword(e.target.value)} />
-            {error && <p role="alert" className="text-sm text-red-700">{error}</p>}
+            {error && (
+              <div role="alert" className="text-sm text-red-700">
+                <p>{error}</p>
+                {wrongTab && wrongTab !== audience && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setAudience(wrongTab);
+                      setWrongTab(null);
+                      setError(null);
+                    }}
+                    className="mt-1 font-semibold text-gold-700 underline underline-offset-2"
+                  >
+                    Switch to {AUDIENCES.find((a) => a.id === wrongTab)?.label} sign-in
+                  </button>
+                )}
+              </div>
+            )}
             <button type="submit" disabled={busy} className="w-full rounded-lg bg-gold-700 px-6 py-2.5 text-sm font-semibold disabled:opacity-60 text-white hover:bg-gold-900 transition-colors">
               {busy ? "Signing in…" : "Sign in"}
             </button>
