@@ -8,6 +8,7 @@
 // Every strand is marked 0–4 RELATIVE TO THE YEAR GROUP:
 // 0 well below, 1 below, 2 expected, 3 above, 4 well above.
 import type { BandName } from "./score.ts";
+import { buildClaudeBody } from "../claude.ts";
 
 export const WRITING_STRANDS: { key: string; label: string; hint: string }[] = [
   { key: "composition", label: "Composition and effect", hint: "Ideas fit the task, purpose and reader" },
@@ -145,7 +146,8 @@ export async function aiMarkWriting(opts: { apiKey: string; model: string; year:
       method: "POST",
       signal: ctl.signal,
       headers: { "content-type": "application/json", "x-api-key": opts.apiKey, "anthropic-version": "2023-06-01" },
-      body: JSON.stringify({ model: opts.model, max_tokens: 1500, temperature: 0, system, messages: [{ role: "user", content: user }] }),
+      // No temperature (Claude 5.x rejects it) and thinking off: see _shared/claude.ts.
+      body: JSON.stringify(buildClaudeBody(opts.model, { system, maxTokens: 1500 }, [{ role: "user", content: user }])),
     });
     const body = (await res.json().catch(() => null)) as { content?: { type: string; text?: string }[]; error?: { message?: string } } | null;
     if (!res.ok) return { mark: null, error: `api_${res.status}: ${body?.error?.message || "error"}`.slice(0, 300) };
