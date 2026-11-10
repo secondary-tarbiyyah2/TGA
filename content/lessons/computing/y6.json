@@ -5,89 +5,198 @@
   "source": "National Curriculum KS2 Computing (safe, respectful and responsible use of technology; collecting, analysing and presenting data); links forward to the Year 7 Computing Overview in the school's Drive | Spring 1 2027 (lessons 2, 5 to 8, v3): Tarbiyyah Primary computing long-term plan 2023-24 Year 6 Spring 1 (Variables in Games with its online-safety lesson), NCCE Teach Computing based",
   "lessons": [
     {
-      "unit": "Unit 1: Being responsible online",
+      "unit": "Summer 1: Spreadsheets, secure passwords and 3D modelling",
       "n": 1,
-      "title": "Digital footprint and strong passwords",
+      "title": "Secure passwords: strong, secret and who to tell",
       "duration": 45,
+      "bigQuestion": "Which is stronger: 'Ahmed2015' or 'cactus-lantern-river'? Why?",
       "objectives": [
-        "Explain what a digital footprint is and how it is made",
-        "Describe what makes a password strong",
-        "Make decisions about what is safe to share online"
+        "To understand how to make strong passwords, keep them secret and what to do if an account is at risk"
       ],
+      "successCriteria": [
+        "All: say three rules for strong passwords",
+        "Most: make a strong passphrase from three random words",
+        "Some: explain what to do if a password is shared or an account is hacked"
+      ],
+      "smsc": "Moral: responsibility for our accounts",
       "keywords": [
         {
-          "term": "digital footprint",
-          "def": "the trail of information about you left online"
-        },
-        {
           "term": "password",
-          "def": "a secret code that proves it is really you"
+          "def": "a secret word that protects an account"
         },
         {
-          "term": "privacy settings",
-          "def": "choices that control who can see your information"
+          "term": "passphrase",
+          "def": "a password made of several random words"
+        },
+        {
+          "term": "two-step verification",
+          "def": "a second check, such as a code"
+        },
+        {
+          "term": "hacked",
+          "def": "someone getting into your account without permission"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which is stronger: 'Ahmed2015' or 'cactus-lantern-river'? Why?",
+        "a": "'cactus-lantern-river': it's longer and not linked to you, so it's much harder to guess."
+      },
+      "islamicLink": {
+        "text": "An account is an amanah (trust); keeping it safe protects you and others.",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. Name three pieces of personal information you should keep private.",
-        "What would you do if a stranger sent you a message online?",
-        "Is everything you post online gone when you delete it? What do you think?"
+        {
+          "q": "Best chart for change over time is ...",
+          "a": "a line chart",
+          "mins": 1,
+          "options": [
+            "a line chart",
+            "a bar chart"
+          ]
+        },
+        {
+          "q": "What is an axis?",
+          "a": "The line along the side or bottom of a chart.",
+          "mins": 1
+        },
+        {
+          "q": "A trend is ...",
+          "a": "the general direction of data",
+          "mins": 1,
+          "options": [
+            "the general direction of data",
+            "a font"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "Your digital footprint",
+          "heading": "Strong password rules",
           "bullets": [
-            "Photos, comments and likes leave a trail.",
-            "Some of it stays online for a long time.",
-            "Others can copy and share it."
+            "Long: three random words (NCSC advice)",
+            "Not your name, birthday or pet",
+            "Different for important accounts",
+            "Never shared, except with a parent"
           ],
-          "note": "Use the footprints in sand analogy: you leave marks as you walk. Ask what footprints they might have left already (a game username, a school website photo). Misconception: 'delete means gone'; screenshots and copies may remain."
+          "note": ""
         },
         {
-          "heading": "Think before you post",
-          "bullets": [
-            "Is it kind?",
-            "Is it true?",
-            "Would I be happy if my family saw it?"
-          ],
-          "note": "Connect to adab: the Prophet (peace be upon him) said that whoever believes in Allah and the Last Day should speak good or remain silent (Bukhari and Muslim). Apply this to typing as well as speaking. Run quick scenarios and ask pupils to decide: post or not?"
+          "heading": "Strong or weak?",
+          "bullets": [],
+          "note": "",
+          "sort": {
+            "columns": [
+              "Strong",
+              "Weak"
+            ],
+            "cards": [
+              "123456",
+              "teapot-orbit-maple",
+              "Fatima2016",
+              "violin-desert-cloud"
+            ],
+            "answer": [
+              1,
+              0,
+              1,
+              0
+            ]
+          }
         },
         {
-          "heading": "Strong passwords",
-          "bullets": [
-            "Long: at least 12 characters.",
-            "Three random words work well.",
-            "Different password for each account.",
-            "Never share it except with a parent."
-          ],
-          "note": "Compare 'ahmed2014' with 'purple-tractor-sandwich'. Explain why the second is stronger: it is longer and not guessable from personal information. Do not ask pupils to share their real passwords at any point."
+          "heading": "If something goes wrong",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Tell a parent",
+            "Change the password",
+            "Turn on two-step verification",
+            "Tell your teacher if it's a school account",
+            "Check for strange messages sent"
+          ]
         },
         {
-          "heading": "Privacy settings",
-          "bullets": [
-            "Set accounts to private.",
-            "Only accept people you know in real life.",
-            "Ask a trusted adult for help."
-          ],
-          "note": "Remind pupils that most social media platforms have a minimum age (often 13). Note that the settings differ by app; the principle is to limit who sees information. Encourage a family conversation."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "A friend asks for your password 'just to help'. You ...",
+            "options": [
+              "say no and tell a parent",
+              "share it",
+              "post it in the chat"
+            ],
+            "answer": 0,
+            "why": "Passwords are private."
+          }
         }
       ],
       "practice": [
-        "Which is the stronger password: 'mohammed10' or 'green-lamp-river-hat'? Explain why.",
-        "Should you post a photo showing your school badge and street name? Why not?",
-        "Give one example of a digital footprint you leave when playing an online game."
+        {
+          "q": "Make a passphrase from three random words (don't use a real one you use!).",
+          "a": "For example: 'kettle-planet-shoelace'.",
+          "mins": 4,
+          "model": "I do: 'lantern-oyster-bicycle': three unrelated words."
+        }
       ],
       "independent": [
-        "Design a poster 'Five rules for a safe digital footprint' with a rule for each of: posting, passwords, sharing photos, privacy settings, telling an adult.",
-        "Create three strong passwords from random words, but do not use them for any real account.",
-        "Write a short script for what you would say to a younger sibling who wants to post their address on a gaming chat."
+        {
+          "q": "Pupil PDF: rate eight example passwords, fix the weak ones, and write your family's 'if hacked' plan.",
+          "a": "Ratings, fixes and a plan.",
+          "mins": 12,
+          "model": "The teacher rates the first."
+        },
+        {
+          "q": "Extend: with a parent, turn on two-step verification on one family account.",
+          "a": "Enabled.",
+          "mins": 4
+        }
       ],
       "exit": [
-        "What is a digital footprint?",
-        "Give two features of a strong password."
+        {
+          "q": "The safest password here is ...",
+          "a": "kettle-orbit-meadow",
+          "mins": 1,
+          "options": [
+            "kettle-orbit-meadow",
+            "password1"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Which is stronger: 'Ahmed2015' or 'cactus-lantern-river'? Why?",
+          "a": "'cactus-lantern-river': it's longer and not linked to you, so it's much harder to guess.",
+          "mins": 2
+        }
       ],
-      "homework": "With a parent or carer, check the privacy settings on one app or game you use at home. Tell the class one change you made.",
-      "send": "SEND/EAL: provide a sorting activity with pictures of safe/unsafe posts and a password checklist. Stretch: explain how a company might use data from a person's footprint."
+      "homework": "Check with a parent that your accounts use strong passwords.",
+      "send": "SEND: sentence starters, key word card and a partner to talk with first. EAL: key words with pictures and simple definitions. Stretch: give a reason and an example for every answer.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Primary computing scheme of work and long-term plan (Year 6: Introduction to Spreadsheets and 3D Modelling, with online safety), built on the NCCE Teach Computing Curriculum (publisher's generic scheme, titles only)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Help slide: trusted adults, the portal's 'Report a concern'"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Padlock",
+          "alt": "A padlock",
+          "for": "hook"
+        },
+        {
+          "find": "Key",
+          "alt": "A key",
+          "for": "teach:1"
+        }
+      ]
     },
     {
       "unit": "Spring 1: Variables in games and e-bullying",
@@ -296,176 +405,416 @@
       ]
     },
     {
-      "unit": "Unit 2: Collecting and presenting data",
+      "unit": "Summer 1: Spreadsheets, secure passwords and 3D modelling",
       "n": 3,
-      "title": "Collecting data and using a spreadsheet",
+      "title": "Spreadsheets: cells, rows, columns and data",
       "duration": 45,
+      "bigQuestion": "Your class collects 200 survey answers. Would you rather count them on paper or in a spreadsheet? Why?",
       "objectives": [
-        "Plan a simple survey and collect data",
-        "Enter data into a spreadsheet using rows and columns",
-        "Use a formula to calculate a total"
+        "To understand how a spreadsheet organises data into cells, rows and columns"
       ],
+      "successCriteria": [
+        "All: name a cell by its column letter and row number",
+        "Most: enter data neatly with headings",
+        "Some: explain why spreadsheets are better than paper for changing data"
+      ],
+      "crossCurricular": "Maths: coordinates and tables",
+      "smsc": "Social: organising information to help others decide",
       "keywords": [
         {
-          "term": "data",
-          "def": "facts and figures that can be collected and studied"
-        },
-        {
-          "term": "spreadsheet",
-          "def": "a grid of cells for storing and working out data"
-        },
-        {
           "term": "cell",
-          "def": "one box in a spreadsheet, such as B2"
+          "def": "one box in a spreadsheet, like B3"
         },
         {
-          "term": "formula",
-          "def": "an instruction in a cell to calculate something"
+          "term": "row",
+          "def": "a line of cells across, numbered"
+        },
+        {
+          "term": "column",
+          "def": "a line of cells down, lettered"
+        },
+        {
+          "term": "data",
+          "def": "facts and numbers"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your class collects 200 survey answers. Would you rather count them on paper or in a spreadsheet? Why?",
+        "a": "A spreadsheet: it can total, sort and chart instantly, and update when data changes."
+      },
       "starter": [
-        "Bismillah. What does 'report' mean when we talk about online safety?",
-        "How could you find out which fruit is the class favourite?",
-        "What is a table? Draw one in the air with your hands."
+        {
+          "q": "A digital footprint is ...",
+          "a": "the trail you leave online",
+          "mins": 1,
+          "options": [
+            "the trail you leave online",
+            "a shoe size"
+          ]
+        },
+        {
+          "q": "Name a part of a computer.",
+          "a": "For example: the processor.",
+          "mins": 1
+        },
+        {
+          "q": "Data means ...",
+          "a": "facts and numbers",
+          "mins": 1,
+          "options": [
+            "facts and numbers",
+            "a game"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "Collecting data",
-          "bullets": [
-            "Ask a clear question.",
-            "Give choices to pick from.",
-            "Record each answer with a tally."
-          ],
-          "note": "Choose a question: What is your favourite fruit: dates, mango, banana or grapes? Run a quick poll in the chat using hands up or emojis. Record a tally on screen. Ask why choices help (they make data easier to count)."
+          "heading": "The grid",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Row",
+              "A",
+              "B",
+              "C"
+            ],
+            "rows": [
+              [
+                "1",
+                "Fruit",
+                "Votes",
+                ""
+              ],
+              [
+                "2",
+                "Dates",
+                "12",
+                ""
+              ],
+              [
+                "3",
+                "Apples",
+                "8",
+                ""
+              ],
+              [
+                "4",
+                "Mangoes",
+                "10",
+                ""
+              ]
+            ]
+          }
         },
         {
-          "heading": "Spreadsheet layout",
+          "heading": "Naming cells",
           "bullets": [
-            "Columns have letters.",
-            "Rows have numbers.",
-            "A cell is named by both: B3."
+            "Column letter, then row number",
+            "B2 = 12",
+            "A4 = Mangoes"
           ],
-          "note": "Open a spreadsheet and enter Fruit in A1 and Votes in B1. Enter the poll data. Ask pupils which cell contains the votes for mango. Misconception: pupils write the number before the letter; the letter comes first."
+          "note": "Like map coordinates."
         },
         {
-          "heading": "Formulas",
+          "heading": "Why spreadsheets?",
           "bullets": [
-            "A formula starts with =.",
-            "=SUM(B2:B5) adds the cells.",
-            "The total changes if data changes."
+            "Calculate instantly",
+            "Change data and totals update",
+            "Sort and chart"
           ],
-          "note": "Type =SUM(B2:B5) in B6. Change one vote and show the total updating. Explain that spreadsheets calculate for us. Link back to variables: the cell holds a value that can change."
+          "note": ""
         },
         {
-          "heading": "Keep data accurate",
-          "bullets": [
-            "Check each number you type.",
-            "Use clear headings.",
-            "Save the file with a good name."
-          ],
-          "note": "Talk about the amanah (trust) of recording data accurately: if we record results, they should be honest and careful. Show an example with a typing mistake (a 50 instead of a 5) and how it changes the total."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "In the table, cell B3 contains ...",
+            "options": [
+              "8",
+              "12",
+              "Apples"
+            ],
+            "answer": 0,
+            "why": "Column B, row 3."
+          }
         }
       ],
       "practice": [
-        "Which cell is in column C, row 4? (C4)",
-        "A spreadsheet shows dates 6, mango 9, banana 4, grapes 5. Write a formula to add the votes if they are in B2 to B5. (=SUM(B2:B5))",
-        "What is the total number of votes? (24)"
+        {
+          "q": "Which cell contains 'Dates'?",
+          "a": "A2.",
+          "mins": 4,
+          "model": "I do: 'Votes' is in column B, row 1: B1."
+        }
       ],
       "independent": [
-        "Create a survey question with four choices and collect answers from 10 people (family or class).",
-        "Enter the data in a spreadsheet with headings and use SUM to find the total.",
-        "Write one sentence saying what the data shows."
+        {
+          "q": "In the spreadsheet: run a quick class survey in the chat (favourite fruit) and enter the results with headings; save to the portal.",
+          "a": "Tidy data with headings in columns A and B.",
+          "mins": 12,
+          "model": "The teacher enters the headings."
+        },
+        {
+          "q": "Extend: make the headings bold and widen the columns.",
+          "a": "Formatted.",
+          "mins": 4
+        }
       ],
       "exit": [
-        "What does a formula always start with?",
-        "Which cell is in column B, row 2?"
+        {
+          "q": "Columns are labelled with ...",
+          "a": "letters",
+          "mins": 1,
+          "options": [
+            "letters",
+            "numbers"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Your class collects 200 survey answers. Would you rather count them on paper or in a spreadsheet? Why?",
+          "a": "A spreadsheet: it can total, sort and chart instantly, and update when data changes.",
+          "mins": 2
+        }
       ],
-      "homework": "Ask 10 people in your family or friends which season they like best and record the answers in a table.",
-      "send": "SEND/EAL: provide a spreadsheet already set up with headings and colour-coded cells. Stretch: use =AVERAGE or =MAX on a column of numbers."
+      "homework": "Ask your family their favourite fruit and add the answers to your sheet.",
+      "send": "SEND: sentence starters, key word card and a partner to talk with first. EAL: key words with pictures and simple definitions. Stretch: give a reason and an example for every answer.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Primary computing scheme of work and long-term plan (Year 6: Introduction to Spreadsheets and 3D Modelling, with online safety), built on the NCCE Teach Computing Curriculum (publisher's generic scheme, titles only)",
+        "A free online spreadsheet through the school account (Excel online or Google Sheets; TO CONFIRM)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Spreadsheet grid",
+          "alt": "A spreadsheet grid",
+          "for": "teach:1"
+        },
+        {
+          "find": "Survey clipboard tally",
+          "alt": "A survey",
+          "for": "hook"
+        }
+      ]
     },
     {
-      "unit": "Unit 2: Collecting and presenting data",
+      "unit": "Summer 1: Spreadsheets, secure passwords and 3D modelling",
       "n": 4,
-      "title": "Charts: presenting and explaining data",
+      "title": "Charts from spreadsheet data",
       "duration": 45,
+      "bigQuestion": "Which shows change over time better: a bar chart or a line chart?",
       "objectives": [
-        "Create a bar chart from spreadsheet data",
-        "Label a chart with a title and axes",
-        "Write a conclusion that matches the data"
+        "To understand how to make and interpret bar and line charts from spreadsheet data"
       ],
+      "successCriteria": [
+        "All: make a bar chart with a title",
+        "Most: label axes and choose bar or line correctly",
+        "Some: write a conclusion supported by the chart"
+      ],
+      "crossCurricular": "Maths: statistics (bar and line graphs)",
+      "smsc": "Social: presenting information honestly",
       "keywords": [
         {
-          "term": "bar chart",
-          "def": "a chart with bars whose height shows how many"
+          "term": "chart",
+          "def": "a picture of data"
         },
         {
           "term": "axis",
-          "def": "the horizontal or vertical line of a chart"
+          "def": "the line along the side or bottom of a chart"
+        },
+        {
+          "term": "trend",
+          "def": "the general direction data moves in"
         },
         {
           "term": "conclusion",
-          "def": "what the data tells us"
+          "def": "what the data shows"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which shows change over time better: a bar chart or a line chart?",
+        "a": "A line chart shows change over time; a bar chart compares categories."
+      },
       "starter": [
-        "Bismillah. What is a cell reference? Give an example.",
-        "Which formula adds cells A1 to A5? (=SUM(A1:A5))",
-        "Which is easier to read: a list of numbers or a picture? Why?"
+        {
+          "q": "=SUM(B2:B4) ...",
+          "a": "adds B2 to B4",
+          "mins": 1,
+          "options": [
+            "adds B2 to B4",
+            "multiplies"
+          ]
+        },
+        {
+          "q": "Write a formula to multiply B2 by C2.",
+          "a": "=B2*C2",
+          "mins": 1
+        },
+        {
+          "q": "A formula starts with ...",
+          "a": "=",
+          "mins": 1,
+          "options": [
+            "=",
+            "?"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "Why use charts?",
-          "bullets": [
-            "Charts show patterns quickly.",
-            "They help us compare.",
-            "A good chart is clear and labelled."
-          ],
-          "note": "Show the same data as a table and as a bar chart. Ask which one shows the favourite fruit fastest. Explain that charts present data in a form people understand quickly."
+          "heading": "Bar or line?",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Data",
+              "Best chart"
+            ],
+            "rows": [
+              [
+                "Favourite fruits",
+                "Bar"
+              ],
+              [
+                "Temperature each day",
+                "Line"
+              ],
+              [
+                "Votes per house",
+                "Bar"
+              ],
+              [
+                "Plant height each week",
+                "Line"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Making a bar chart",
-          "bullets": [
-            "Select the data.",
-            "Insert a chart.",
-            "Choose column or bar chart."
-          ],
-          "note": "Demonstrate in the spreadsheet. Highlight A1:B5, then insert a chart. Point out that the categories go on the horizontal axis and the counts on the vertical axis."
+          "heading": "Example",
+          "bullets": [],
+          "note": "Example data.",
+          "chart": {
+            "kind": "bar",
+            "title": "Favourite fruit (example data)",
+            "unit": "votes",
+            "labels": [
+              "Dates",
+              "Apples",
+              "Mangoes",
+              "Bananas"
+            ],
+            "values": [
+              12,
+              8,
+              10,
+              5
+            ]
+          }
         },
         {
-          "heading": "Label your chart",
-          "bullets": [
-            "Add a title.",
-            "Label the axes.",
-            "Make bars easy to read."
-          ],
-          "note": "Compare an unlabelled chart with a labelled one. Ask what is missing from the first one. Misconception: pupils skip labels because they know their own data; others do not."
+          "heading": "Make a chart",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Select the data with headings",
+            "Insert chart",
+            "Choose bar or line",
+            "Add title and axis labels",
+            "Write a conclusion"
+          ]
         },
         {
-          "heading": "Write a conclusion",
-          "bullets": [
-            "Mango was the most popular fruit.",
-            "Grapes were the least popular.",
-            "Use numbers to back it up."
-          ],
-          "note": "Model a conclusion sentence: 'Mango was the most popular with 9 votes, and bananas were the least popular with 4 votes.' Encourage pupils to use numbers from the chart and to be honest about what the data shows, not what they hoped it would show."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Best chart for 'plant height each week'?",
+            "options": [
+              "Line",
+              "Bar",
+              "Pie"
+            ],
+            "answer": 0,
+            "why": "Change over time."
+          }
         }
       ],
       "practice": [
-        "Which axis shows the categories (fruits) in a column chart? (horizontal)",
-        "Write a title for a chart about favourite seasons.",
-        "A bar for summer is 12 tall and a bar for winter is 5 tall. Which season is more popular? By how much? (summer, by 7)"
+        {
+          "q": "From the example chart: which fruit is most popular and by how many votes over mangoes?",
+          "a": "Dates, by 2 votes (12 - 10).",
+          "mins": 4,
+          "model": "I do: least popular is bananas with 5."
+        }
       ],
       "independent": [
-        "Turn your survey data from last lesson into a bar chart with a title and labelled axes.",
-        "Write a 2-sentence conclusion using numbers from the chart.",
-        "Swap with a partner and give feedback using: what is clear, what could be clearer."
+        {
+          "q": "Make a chart from your survey data with a title and axis labels, and write a two-sentence conclusion; save to the portal.",
+          "a": "A labelled chart with an accurate conclusion.",
+          "mins": 12,
+          "model": "The teacher makes the example chart live."
+        },
+        {
+          "q": "Extend: make a line chart of example temperature data from the pupil PDF.",
+          "a": "Correct line chart.",
+          "mins": 4
+        }
       ],
       "exit": [
-        "What three things should every chart have?",
-        "Write a conclusion for a chart showing 10 votes for football and 4 for cricket."
+        {
+          "q": "A conclusion should be ...",
+          "a": "supported by the data",
+          "mins": 1,
+          "options": [
+            "supported by the data",
+            "a guess"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Which shows change over time better: a bar chart or a line chart?",
+          "a": "A line chart shows change over time; a bar chart compares categories.",
+          "mins": 2
+        }
       ],
-      "homework": "Find a chart in a newspaper, app or website and say what it shows in two sentences.",
-      "send": "SEND/EAL: provide a chart template with title and axes already labelled to complete. Stretch: compare a bar chart with a pictogram and explain which is better for the data."
+      "homework": "Find a chart in a newspaper or online with a grown-up and say what it shows.",
+      "send": "SEND: sentence starters, key word card and a partner to talk with first. EAL: key words with pictures and simple definitions. Stretch: give a reason and an example for every answer.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Primary computing scheme of work and long-term plan (Year 6: Introduction to Spreadsheets and 3D Modelling, with online safety), built on the NCCE Teach Computing Curriculum (publisher's generic scheme, titles only)",
+        "A free online spreadsheet through the school account (Excel online or Google Sheets; TO CONFIRM)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Bar chart",
+          "alt": "A bar chart",
+          "for": "teach:2"
+        },
+        {
+          "find": "Line graph",
+          "alt": "A line graph",
+          "for": "hook"
+        }
+      ]
     },
     {
       "unit": "Spring 1: Variables in games and e-bullying",
@@ -1344,6 +1693,393 @@
           "find": "stopwatch",
           "alt": "A stopwatch",
           "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Spreadsheets, secure passwords and 3D modelling",
+      "n": 9,
+      "title": "Formulas: add and multiply; a class event budget",
+      "duration": 45,
+      "bigQuestion": "If the price of juice goes up, how could the total update by itself?",
+      "objectives": [
+        "To understand how formulas calculate with cell references and update automatically"
+      ],
+      "successCriteria": [
+        "All: write a formula that adds two cells",
+        "Most: use SUM and multiplication to cost a budget",
+        "Some: copy a formula down and explain why the references change"
+      ],
+      "crossCurricular": "Maths: multiplication and totals",
+      "smsc": "Moral: careful planning of money",
+      "keywords": [
+        {
+          "term": "formula",
+          "def": "a calculation in a cell, starting with ="
+        },
+        {
+          "term": "cell reference",
+          "def": "the address of a cell, like B2"
+        },
+        {
+          "term": "SUM",
+          "def": "a function that adds a range of cells"
+        },
+        {
+          "term": "budget",
+          "def": "a plan for money"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If the price of juice goes up, how could the total update by itself?",
+        "a": "If the total is a formula using cell references, it recalculates automatically."
+      },
+      "starter": [
+        {
+          "q": "B3 means ...",
+          "a": "column B, row 3",
+          "mins": 1,
+          "options": [
+            "column B, row 3",
+            "row B, column 3"
+          ]
+        },
+        {
+          "q": "Name the cell in column C, row 5.",
+          "a": "C5.",
+          "mins": 1
+        },
+        {
+          "q": "Rows are labelled with ...",
+          "a": "numbers",
+          "mins": 1,
+          "options": [
+            "numbers",
+            "letters"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Formulas",
+          "bullets": [
+            "Start with =",
+            "Use cell references, not typed numbers",
+            "=B2*C2 multiplies",
+            "=SUM(D2:D4) adds a range"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "A class event budget",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Item (A)",
+              "Price £ (B)",
+              "Quantity (C)",
+              "Cost £ (D)"
+            ],
+            "rows": [
+              [
+                "Juice",
+                "1.50",
+                "10",
+                "=B2*C2 → 15.00"
+              ],
+              [
+                "Dates (box)",
+                "4.00",
+                "3",
+                "=B3*C3 → 12.00"
+              ],
+              [
+                "Cups (pack)",
+                "2.00",
+                "2",
+                "=B4*C4 → 4.00"
+              ],
+              [
+                "Total",
+                "",
+                "",
+                "=SUM(D2:D4) → 31.00"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Copy a formula down",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Write =B2*C2 in D2",
+            "Drag the fill handle down",
+            "It becomes =B3*C3",
+            "Then =B4*C4",
+            "Check one answer by hand"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "=SUM(D2:D4) ...",
+            "options": [
+              "adds D2, D3 and D4",
+              "multiplies them",
+              "only shows D2"
+            ],
+            "answer": 0,
+            "why": "A range from D2 to D4."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "If juice becomes £2.00, what is the new total?",
+          "a": "Juice 20.00 + 12.00 + 4.00 = £36.00.",
+          "mins": 4,
+          "model": "I do: 2.00 × 10 = 20.00; 20 + 12 + 4 = 36."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Build the event budget with formulas, then add two items of your own; save to the portal.",
+          "a": "Correct formulas; total updates when prices change.",
+          "mins": 12,
+          "model": "The teacher builds row 2."
+        },
+        {
+          "q": "Extend: add a 'budget left' cell: =50-D5.",
+          "a": "Correct remaining budget.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "A formula must start with ...",
+          "a": "=",
+          "mins": 1,
+          "options": [
+            "=",
+            "+",
+            "#"
+          ]
+        },
+        {
+          "q": "Back to our ponder: If the price of juice goes up, how could the total update by itself?",
+          "a": "If the total is a formula using cell references, it recalculates automatically.",
+          "mins": 2
+        }
+      ],
+      "homework": "Explain to a grown-up why =B2*C2 is better than typing 15.",
+      "send": "SEND: sentence starters, key word card and a partner to talk with first. EAL: key words with pictures and simple definitions. Stretch: give a reason and an example for every answer.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Primary computing scheme of work and long-term plan (Year 6: Introduction to Spreadsheets and 3D Modelling, with online safety), built on the NCCE Teach Computing Curriculum (publisher's generic scheme, titles only)",
+        "A free online spreadsheet through the school account (Excel online or Google Sheets; TO CONFIRM)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Calculator and receipt",
+          "alt": "Costs and totals",
+          "for": "hook"
+        },
+        {
+          "find": "Spreadsheet formula bar",
+          "alt": "A formula bar",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Spreadsheets, secure passwords and 3D modelling",
+      "n": 10,
+      "title": "3D modelling basics: a Victorian building",
+      "duration": 45,
+      "bigQuestion": "How could you make a chimney or a window using only simple shapes like boxes and cylinders?",
+      "objectives": [
+        "To understand how 3D models are built from shapes that can be moved, resized and grouped"
+      ],
+      "successCriteria": [
+        "All: place and resize a 3D shape",
+        "Most: combine shapes to make a simple building",
+        "Some: use a hole shape and grouping to add windows"
+      ],
+      "crossCurricular": "History: Victorian Britain (factories, terraced houses, railways)",
+      "smsc": "Cultural: Victorian buildings in our history topic",
+      "keywords": [
+        {
+          "term": "3D",
+          "def": "having length, width and height"
+        },
+        {
+          "term": "model",
+          "def": "a representation of a real object"
+        },
+        {
+          "term": "workplane",
+          "def": "the flat surface you build on"
+        },
+        {
+          "term": "group",
+          "def": "join shapes into one object"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How could you make a chimney or a window using only simple shapes like boxes and cylinders?",
+        "a": "A tall box or cylinder for the chimney; a 'hole' box cut into the wall for a window."
+      },
+      "starter": [
+        {
+          "q": "A strong password is ...",
+          "a": "three random words",
+          "mins": 1,
+          "options": [
+            "three random words",
+            "your birthday"
+          ]
+        },
+        {
+          "q": "What do you do if your account is hacked?",
+          "a": "Tell a parent and change the password.",
+          "mins": 1
+        },
+        {
+          "q": "Two-step verification adds ...",
+          "a": "a second check",
+          "mins": 1,
+          "options": [
+            "a second check",
+            "a second password hint"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The 3D workspace",
+          "bullets": [
+            "Workplane: the floor",
+            "Drag shapes on",
+            "Handles to resize",
+            "Rotate arrows",
+            "Camera to look around"
+          ],
+          "note": "Free browser 3D tool through a teacher class code (TO CONFIRM)."
+        },
+        {
+          "heading": "Build steps",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Box for the walls",
+            "Roof shape on top",
+            "Cylinder chimney",
+            "Hole boxes for windows",
+            "Group"
+          ]
+        },
+        {
+          "heading": "Victorian features",
+          "bullets": [
+            "Terraced houses in rows",
+            "Chimneys for coal fires",
+            "Sash windows",
+            "Brick walls"
+          ],
+          "note": "Photos of Victorian terraces and factories (no people)."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "To cut a window into a wall, use ...",
+            "options": [
+              "a hole shape and group",
+              "a bigger box",
+              "a sphere"
+            ],
+            "answer": 0,
+            "why": "Hole shapes subtract."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Place a box, resize it to 40 by 20 by 30, and add a roof.",
+          "a": "A box with a roof aligned on top.",
+          "mins": 4,
+          "model": "I do: drag a box, type dimensions, add a roof, lift it to sit on the box."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Build a Victorian house or factory with walls, roof, chimney and at least two windows; save and share a screenshot to the portal.",
+          "a": "A recognisable model with grouped windows.",
+          "mins": 12,
+          "model": "The teacher builds the walls and chimney."
+        },
+        {
+          "q": "Extend: copy the house to make a terrace of three.",
+          "a": "A terrace.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "3D shapes have length, width and ...",
+          "a": "height",
+          "mins": 1,
+          "options": [
+            "height",
+            "colour"
+          ]
+        },
+        {
+          "q": "Back to our ponder: How could you make a chimney or a window using only simple shapes like boxes and cylinders?",
+          "a": "A tall box or cylinder for the chimney; a 'hole' box cut into the wall for a window.",
+          "mins": 2
+        }
+      ],
+      "homework": "Look for a building near you with Victorian features (photo with a parent, no people).",
+      "send": "SEND: sentence starters, key word card and a partner to talk with first. EAL: key words with pictures and simple definitions. Stretch: give a reason and an example for every answer.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Primary computing scheme of work and long-term plan (Year 6: Introduction to Spreadsheets and 3D Modelling, with online safety), built on the NCCE Teach Computing Curriculum (publisher's generic scheme, titles only)",
+        "A free browser 3D modelling tool with a teacher class code (for example Tinkercad; TO CONFIRM)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Victorian terraced houses",
+          "alt": "Victorian terraced houses",
+          "for": "hook"
+        },
+        {
+          "find": "3D model house wireframe",
+          "alt": "A 3D model",
+          "for": "teach:2"
         }
       ]
     }

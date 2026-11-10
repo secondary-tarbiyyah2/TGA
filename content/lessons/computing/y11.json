@@ -8740,6 +8740,1560 @@
         "5.1",
         "6.1"
       ]
+    },
+    {
+      "unit": "Summer 1: Final preparation",
+      "n": 50,
+      "title": "Paper 1 final recall: data representation and algorithms",
+      "duration": 50,
+      "bigQuestion": "Paper 1 is on Monday 10 May. Which topic would cost you the most marks if you skipped it?",
+      "objectives": [
+        "To understand how to answer Paper 1 questions on data representation and algorithms quickly and accurately"
+      ],
+      "successCriteria": [
+        "All: convert between binary, denary and hexadecimal",
+        "Most: complete binary addition, shifts and file-size calculations",
+        "Some: explain overflow and two's complement"
+      ],
+      "smsc": "Moral: steady preparation",
+      "keywords": [
+        {
+          "term": "overflow",
+          "def": "a result too large for the bits available"
+        },
+        {
+          "term": "two's complement",
+          "def": "a way of storing negative binary numbers"
+        },
+        {
+          "term": "logical shift",
+          "def": "moving bits left or right, filling with 0"
+        },
+        {
+          "term": "colour depth",
+          "def": "bits used for each pixel"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Paper 1 is on Monday 10 May. Which topic would cost you the most marks if you skipped it?",
+        "a": "Calculations: they're quick marks if you practise the methods."
+      },
+      "starter": [
+        {
+          "q": "Hex B = ...",
+          "a": "11",
+          "mins": 1,
+          "options": [
+            "11",
+            "12",
+            "10"
+          ]
+        },
+        {
+          "q": "8 bits = ?",
+          "a": "1 byte.",
+          "mins": 1
+        },
+        {
+          "q": "1 KiB = ...",
+          "a": "1,024 bytes",
+          "mins": 1,
+          "options": [
+            "1,024 bytes",
+            "100 bytes"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Quick methods",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Task",
+              "Worked example"
+            ],
+            "rows": [
+              [
+                "Binary to denary",
+                "10110110 = 128 + 32 + 16 + 4 + 2 = 182"
+              ],
+              [
+                "Denary to hex",
+                "182 = 11 × 16 + 6 = B6"
+              ],
+              [
+                "Binary addition",
+                "01101100 + 01011010 = 11000110 (198)"
+              ],
+              [
+                "Left shift by 2",
+                "00010110 (22) → 01011000 (88): × 4"
+              ],
+              [
+                "Two's complement -5",
+                "00000101 → invert 11111010 → + 1 = 11111011"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Overflow",
+          "bullets": [
+            "200 + 100 = 300 needs 9 bits",
+            "In 8 bits the result is 00101100 (44)",
+            "The carry is lost: overflow"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "File size",
+          "bullets": [
+            "Image: width × height × colour depth (bits)",
+            "800 × 600 × 24 = 11,520,000 bits",
+            "÷ 8 = 1,440,000 bytes ÷ 1,024 = 1,406.25 KiB"
+          ],
+          "note": "Using 1,024 as in our lessons (TO CONFIRM the convention Pearson expects)."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Shifting a binary number left by 1 ...",
+            "options": [
+              "multiplies it by 2",
+              "divides it by 2",
+              "adds 1"
+            ],
+            "answer": 0,
+            "why": "Each place is worth double."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Convert 01011101 to denary and to hex.",
+          "a": "64 + 16 + 8 + 4 + 1 = 93; 93 = 5 × 16 + 13 = 5D.",
+          "mins": 4,
+          "model": "I do: 10110110 = 182 = B6."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Timed recall set (pupil PDF, 15 minutes): ten Paper 1 style questions on data and algorithms; mark with the mark scheme.",
+          "a": "Score and two topics to repair.",
+          "mins": 12,
+          "model": "The teacher does question 1."
+        },
+        {
+          "q": "Extend: what is -12 in 8-bit two's complement?",
+          "a": "12 = 00001100 → 11110011 → 11110100.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "200 + 100 in 8 bits causes ...",
+          "a": "overflow",
+          "mins": 1,
+          "options": [
+            "overflow",
+            "underflow"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Paper 1 is on Monday 10 May. Which topic would cost you the most marks if you skipped it?",
+          "a": "Calculations: they're quick marks if you practise the methods.",
+          "mins": 2
+        }
+      ],
+      "homework": "Repair your two weakest topics with the recall set answers.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Computer Science (4CP0): Paper 1 Principles of Computer Science (written, 2 hours, 80 marks); Paper 2 Application of Computational Thinking (Python, on screen, 3 hours, 80 marks); exam dates: Paper 1 Mon 10 May 2027 (am); Paper 2 window Mon 7 to Wed 9 Jun",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Recall set with mark scheme (teacher-written)",
+        "Conversions and binary arithmetic practised by hand, as in the written paper"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Binary code screen",
+          "alt": "Binary",
+          "for": "hook"
+        },
+        {
+          "find": "Pixel grid image",
+          "alt": "Pixels",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Final preparation",
+      "n": 51,
+      "title": "Paper 1 final recall: computers, networks, issues and the 6-mark answer",
+      "duration": 50,
+      "bigQuestion": "A 6-mark question asks you to 'discuss'. What does the examiner want that a list of facts doesn't give?",
+      "objectives": [
+        "To understand how to recall computers, networks and impact topics and write a top-band 6-mark answer"
+      ],
+      "successCriteria": [
+        "All: recall key facts on the CPU, networks and security",
+        "Most: write a structured 6-mark discuss answer",
+        "Some: balance technical, ethical and legal points"
+      ],
+      "smsc": "Moral: balanced judgement about technology",
+      "keywords": [
+        {
+          "term": "fetch-decode-execute",
+          "def": "the cycle the CPU uses to run instructions"
+        },
+        {
+          "term": "protocol",
+          "def": "a set of rules for communication"
+        },
+        {
+          "term": "encryption",
+          "def": "scrambling data so only authorised people can read it"
+        },
+        {
+          "term": "discuss",
+          "def": "consider different points and reach a conclusion"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A 6-mark question asks you to 'discuss'. What does the examiner want that a list of facts doesn't give?",
+        "a": "Developed points from different angles, linked to the scenario, with a conclusion."
+      },
+      "starter": [
+        {
+          "q": "Two's complement stores ...",
+          "a": "negative numbers",
+          "mins": 1,
+          "options": [
+            "negative numbers",
+            "images"
+          ]
+        },
+        {
+          "q": "Overflow happens when ...",
+          "a": "a result needs more bits than available.",
+          "mins": 1
+        },
+        {
+          "q": "TCP/IP is ...",
+          "a": "a protocol stack",
+          "mins": 1,
+          "options": [
+            "a protocol stack",
+            "a CPU"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Recall grid",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Topic",
+              "Must know"
+            ],
+            "rows": [
+              [
+                "CPU",
+                "Fetch-decode-execute; registers; clock speed"
+              ],
+              [
+                "Memory and storage",
+                "RAM, ROM, magnetic, optical, solid state"
+              ],
+              [
+                "Networks",
+                "LAN/WAN, topologies, protocols, layers"
+              ],
+              [
+                "Security",
+                "Threats, encryption, firewalls, authentication"
+              ],
+              [
+                "Issues",
+                "Environmental, ethical, legal, privacy"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "6-mark structure",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Read the scenario",
+            "Point 1 + development",
+            "Point 2 + development",
+            "Point 3 (another angle)",
+            "Conclusion"
+          ]
+        },
+        {
+          "heading": "Sample question",
+          "bullets": [
+            "'A hospital plans to store patient records in the cloud. Discuss the issues.' (6 marks)"
+          ],
+          "note": "Angles: security, availability, cost, legal (data protection), ethics."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "A top-band 6-mark answer ...",
+            "options": [
+              "develops points from different angles and concludes",
+              "lists six facts",
+              "repeats the question"
+            ],
+            "answer": 0,
+            "why": "Development and balance."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Develop: 'Cloud storage can be accessed anywhere.'",
+          "a": "Doctors in different hospitals can view records quickly, improving care, but only with a reliable internet connection.",
+          "mins": 4,
+          "model": "I do: 'Encryption protects data' → patient records are scrambled, so stolen data is unreadable, helping meet data protection law."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Timed (8 minutes): answer the hospital cloud question in the portal; then self-mark with the levels mark scheme.",
+          "a": "Developed, balanced points with a conclusion.",
+          "mins": 12,
+          "model": "The teacher plans the answer aloud."
+        },
+        {
+          "q": "Extend: a 10-question rapid recall quiz on computers and networks (portal).",
+          "a": "Quiz completed.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Encryption ...",
+          "a": "scrambles data for authorised readers only",
+          "mins": 1,
+          "options": [
+            "scrambles data for authorised readers only",
+            "deletes data"
+          ]
+        },
+        {
+          "q": "Back to our ponder: A 6-mark question asks you to 'discuss'. What does the examiner want that a list of facts doesn't give?",
+          "a": "Developed points from different angles, linked to the scenario, with a conclusion.",
+          "mins": 2
+        }
+      ],
+      "homework": "One more teacher-written 6-mark question before Paper 1.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Computer Science (4CP0): Paper 1 Principles of Computer Science (written, 2 hours, 80 marks); Paper 2 Application of Computational Thinking (Python, on screen, 3 hours, 80 marks); exam dates: Paper 1 Mon 10 May 2027 (am); Paper 2 window Mon 7 to Wed 9 Jun",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Levels mark scheme (teacher-written)",
+        "Rapid recall quiz (portal)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "CPU chip",
+          "alt": "A CPU",
+          "for": "hook"
+        },
+        {
+          "find": "Hospital server room",
+          "alt": "Servers",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Final preparation",
+      "n": 52,
+      "title": "Paper 2 skills: debugging and testing technique",
+      "duration": 50,
+      "bigQuestion": "A program runs without crashing. Does that mean it works?",
+      "objectives": [
+        "To understand how to find and fix syntax, logic and runtime errors and test programs with normal, boundary and erroneous data"
+      ],
+      "successCriteria": [
+        "All: name and spot the three error types",
+        "Most: fix errors in a given Python program",
+        "Some: write a test plan that would catch each error"
+      ],
+      "smsc": "Moral: honesty about mistakes and fixing them",
+      "keywords": [
+        {
+          "term": "syntax error",
+          "def": "breaks the rules of the language, so it won't run"
+        },
+        {
+          "term": "logic error",
+          "def": "runs but gives the wrong result"
+        },
+        {
+          "term": "runtime error",
+          "def": "crashes while running, e.g. dividing by zero"
+        },
+        {
+          "term": "boundary data",
+          "def": "values at the edge of the valid range"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A program runs without crashing. Does that mean it works?",
+        "a": "No: logic errors give wrong answers silently; only testing reveals them."
+      },
+      "starter": [
+        {
+          "q": "A 6-mark discuss answer needs ...",
+          "a": "developed points and a conclusion",
+          "mins": 1,
+          "options": [
+            "developed points and a conclusion",
+            "a list"
+          ]
+        },
+        {
+          "q": "Name one network protocol.",
+          "a": "HTTPS.",
+          "mins": 1
+        },
+        {
+          "q": "Paper 2 is ...",
+          "a": "a practical Python paper",
+          "mins": 1,
+          "options": [
+            "a practical Python paper",
+            "written only"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Spot the errors",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "python",
+            "text": "marks = [55, 72, 40]\ntotal = 0\nfor m in marks\n    total = total + m\naverage = total / len(mark)\nif average > 50:\n    print(\"Pass\")",
+            "output": "Line 3: syntax (missing colon). Line 5: runtime (mark should be marks). Line 6: logic if a pass is 50 or more (should be >=)."
+          }
+        },
+        {
+          "heading": "Test plan",
+          "bullets": [],
+          "note": "Valid range for a mark: 0 to 100.",
+          "table": {
+            "head": [
+              "Type",
+              "Input",
+              "Expected"
+            ],
+            "rows": [
+              [
+                "Normal",
+                "65",
+                "Accepted"
+              ],
+              [
+                "Boundary",
+                "0 and 100",
+                "Accepted"
+              ],
+              [
+                "Erroneous",
+                "-5, 101, 'abc'",
+                "Rejected with a message"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Debugging method",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Read the error message and line",
+            "Print variables to check values",
+            "Test one part at a time",
+            "Fix one thing",
+            "Re-run the tests"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Dividing by zero during running is a ...",
+            "options": [
+              "runtime error",
+              "syntax error",
+              "logic error"
+            ],
+            "answer": 0,
+            "why": "It crashes while running."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Fix the three errors in the slide's program.",
+          "a": "for m in marks:   len(marks)   if average >= 50:",
+          "mins": 4,
+          "model": "I do: line 3 needs a colon at the end of the for statement."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Debugging set (Python files in the portal): fix five programs, each with one error of each type, and write a test plan for one of them.",
+          "a": "All programs run correctly; a full test plan.",
+          "mins": 12,
+          "model": "The teacher fixes program 1 live."
+        },
+        {
+          "q": "Extend: add validation with a while loop so erroneous marks are re-entered.",
+          "a": "while mark < 0 or mark > 100: ...",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "100 is ... data for the range 0 to 100",
+          "a": "boundary",
+          "mins": 1,
+          "options": [
+            "boundary",
+            "erroneous"
+          ]
+        },
+        {
+          "q": "Back to our ponder: A program runs without crashing. Does that mean it works?",
+          "a": "No: logic errors give wrong answers silently; only testing reveals them.",
+          "mins": 2
+        }
+      ],
+      "homework": "Fix the two remaining programs in the debugging set.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Computer Science (4CP0): Paper 1 Principles of Computer Science (written, 2 hours, 80 marks); Paper 2 Application of Computational Thinking (Python, on screen, 3 hours, 80 marks); exam dates: Paper 1 Mon 10 May 2027 (am); Paper 2 window Mon 7 to Wed 9 Jun",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "A free Python 3 editor (IDLE or a browser editor through the school; TO CONFIRM)",
+        "Debugging set Python files (teacher-written, portal)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Bug magnifying glass",
+          "alt": "Debugging",
+          "for": "hook"
+        },
+        {
+          "find": "Checklist test plan",
+          "alt": "A test plan",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Final preparation",
+      "n": 53,
+      "title": "Paper 2 skills: reading the task and planning a 3-hour practical",
+      "duration": 50,
+      "bigQuestion": "Three hours sounds long. Where do most candidates actually lose time?",
+      "objectives": [
+        "To understand how to read a Paper 2 scenario, decompose it and manage time across the 3 hours"
+      ],
+      "successCriteria": [
+        "All: underline inputs, processes and outputs in a task",
+        "Most: decompose a task into subprograms",
+        "Some: plan timings and a checking routine"
+      ],
+      "smsc": "Moral: planning and self-discipline",
+      "keywords": [
+        {
+          "term": "decompose",
+          "def": "break a problem into smaller parts"
+        },
+        {
+          "term": "subprogram",
+          "def": "a named block of code: a function or procedure"
+        },
+        {
+          "term": "PLS",
+          "def": "Pearson's Programming Language Subset for Python"
+        },
+        {
+          "term": "comment",
+          "def": "a note in code explaining what it does"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Three hours sounds long. Where do most candidates actually lose time?",
+        "a": "Reading too quickly, then debugging a misunderstanding; and not saving and testing as they go."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Take advantage of five before five', including your free time before you are busy (al-Hakim, graded sahih). Use exam time wisely.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "A logic error ...",
+          "a": "gives the wrong result",
+          "mins": 1,
+          "options": [
+            "gives the wrong result",
+            "won't run"
+          ]
+        },
+        {
+          "q": "Give a boundary value for 1 to 10.",
+          "a": "1 or 10.",
+          "mins": 1
+        },
+        {
+          "q": "Erroneous data should be ...",
+          "a": "rejected",
+          "mins": 1,
+          "options": [
+            "rejected",
+            "accepted"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Read the task",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Read twice",
+            "Underline inputs, processes, outputs",
+            "Note required file names",
+            "List subprograms needed",
+            "Check the marking points"
+          ]
+        },
+        {
+          "heading": "Timing plan",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Phase",
+              "Time"
+            ],
+            "rows": [
+              [
+                "Read and plan",
+                "15 minutes"
+              ],
+              [
+                "Tasks in order, saving often",
+                "2 hours 15"
+              ],
+              [
+                "Test with planned data",
+                "20 minutes"
+              ],
+              [
+                "Comments and final check",
+                "10 minutes"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Good habits",
+          "bullets": [
+            "Use only the PLS features you know well",
+            "Meaningful names and comments",
+            "Save and test after each subprogram",
+            "Don't delete working code: comment it out"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Decomposition means ...",
+            "options": [
+              "breaking a problem into smaller parts",
+              "deleting code",
+              "adding comments"
+            ],
+            "answer": 0,
+            "why": "Smaller, manageable parts."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Decompose: 'Read a CSV of pupils and marks, validate marks, output the average and the top pupil.'",
+          "a": "Subprograms: read_file, validate_mark, calculate_average, find_top, display_results.",
+          "mins": 4,
+          "model": "I do: 'A quiz program' → load_questions, ask_question, check_answer, show_score."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Plan (not code) a teacher-written Paper 2 style task: inputs, processes, outputs, subprograms, test data and timings; save to the portal.",
+          "a": "A complete plan with subprograms and test data.",
+          "mins": 12,
+          "model": "The teacher plans the first part."
+        },
+        {
+          "q": "Extend: code the first subprogram and test it.",
+          "a": "A working, tested subprogram.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "During the practical you should save ...",
+          "a": "often",
+          "mins": 1,
+          "options": [
+            "often",
+            "only at the end"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Three hours sounds long. Where do most candidates actually lose time?",
+          "a": "Reading too quickly, then debugging a misunderstanding; and not saving and testing as they go.",
+          "mins": 2
+        }
+      ],
+      "homework": "Code the next two subprograms of your plan.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Computer Science (4CP0): Paper 1 Principles of Computer Science (written, 2 hours, 80 marks); Paper 2 Application of Computational Thinking (Python, on screen, 3 hours, 80 marks); exam dates: Paper 1 Mon 10 May 2027 (am); Paper 2 window Mon 7 to Wed 9 Jun",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "A free Python 3 editor (IDLE or a browser editor through the school; TO CONFIRM)",
+        "Teacher-written Paper 2 style task (portal)",
+        "Pearson Programming Language Subset (PLS) for Python, from the specification"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Clock timer",
+          "alt": "Time management",
+          "for": "hook"
+        },
+        {
+          "find": "Flow diagram tasks decomposition",
+          "alt": "Decomposition",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Final preparation",
+      "n": 54,
+      "title": "Paper 2 clinic: strings, lists and files",
+      "duration": 50,
+      "bigQuestion": "Most Paper 2 tasks start by loading data from a file. Why is that a common source of lost marks?",
+      "objectives": [
+        "To understand how to handle strings, lists and text or CSV files in Python as Paper 2 requires"
+      ],
+      "successCriteria": [
+        "All: read lines from a file into a list",
+        "Most: split CSV lines and convert types",
+        "Some: write results back to a file"
+      ],
+      "smsc": "Moral: precision",
+      "keywords": [
+        {
+          "term": "CSV",
+          "def": "comma-separated values: a text file of table data"
+        },
+        {
+          "term": "split()",
+          "def": "breaks a string into a list"
+        },
+        {
+          "term": "strip()",
+          "def": "removes spaces and newlines from the ends"
+        },
+        {
+          "term": "file handle",
+          "def": "the variable used to work with an open file"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Most Paper 2 tasks start by loading data from a file. Why is that a common source of lost marks?",
+        "a": "Missing strip(), forgetting to convert numbers, or wrong file names."
+      },
+      "starter": [
+        {
+          "q": "Decompose means ...",
+          "a": "break into smaller parts",
+          "mins": 1,
+          "options": [
+            "break into smaller parts",
+            "delete"
+          ]
+        },
+        {
+          "q": "Name the three error types.",
+          "a": "Syntax, logic, runtime.",
+          "mins": 1
+        },
+        {
+          "q": "Save your work ...",
+          "a": "often",
+          "mins": 1,
+          "options": [
+            "often",
+            "never"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Reading a CSV",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "python",
+            "text": "pupils = []\nwith open(\"marks.csv\", \"r\") as f:\n    for line in f:\n        parts = line.strip().split(\",\")\n        pupils.append([parts[0], int(parts[1])])\nprint(pupils)",
+            "output": "[['Amina', 72], ['Bilal', 65], ...]"
+          }
+        },
+        {
+          "heading": "Writing a file",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "python",
+            "text": "with open(\"report.txt\", \"w\") as f:\n    for p in pupils:\n        f.write(p[0] + \": \" + str(p[1]) + \"\\n\")",
+            "output": "One line per pupil in report.txt"
+          }
+        },
+        {
+          "heading": "Common mistakes",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "Forgetting int() so marks are compared as text",
+            "right": "Convert with int() or float(); strip() before split()"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "split(\",\") on 'Amina,72' gives ...",
+            "options": [
+              "['Amina', '72']",
+              "['Amina,72']",
+              "72"
+            ],
+            "answer": 0,
+            "why": "Two strings."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write code that prints the name of the highest mark from pupils.",
+          "a": "best = pupils[0]; loop; if p[1] > best[1]: best = p; print(best[0]).",
+          "mins": 4,
+          "model": "I do: total = sum of p[1] for each p; average = total / len(pupils)."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Clinic task: load the provided CSV, calculate the average and top pupil, write a report file; test with the provided data.",
+          "a": "Correct average, top pupil and report file.",
+          "mins": 12,
+          "model": "The teacher codes the reading loop."
+        },
+        {
+          "q": "Extend: skip any line where the mark is not a valid number.",
+          "a": "try/except or isdigit() check.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "strip() removes ...",
+          "a": "spaces and newlines at the ends",
+          "mins": 1,
+          "options": [
+            "spaces and newlines at the ends",
+            "all commas"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Most Paper 2 tasks start by loading data from a file. Why is that a common source of lost marks?",
+          "a": "Missing strip(), forgetting to convert numbers, or wrong file names.",
+          "mins": 2
+        }
+      ],
+      "homework": "Finish the clinic task and note one question for the next clinic.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Computer Science (4CP0): Paper 1 Principles of Computer Science (written, 2 hours, 80 marks); Paper 2 Application of Computational Thinking (Python, on screen, 3 hours, 80 marks); exam dates: Paper 1 Mon 10 May 2027 (am); Paper 2 window Mon 7 to Wed 9 Jun",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "A free Python 3 editor (IDLE or a browser editor through the school; TO CONFIRM)",
+        "marks.csv (example data, portal)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "CSV file spreadsheet",
+          "alt": "A CSV file",
+          "for": "teach:1"
+        },
+        {
+          "find": "Python code on screen",
+          "alt": "Python",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Final preparation",
+      "n": 55,
+      "title": "Paper 2 clinic: subprograms, validation and authentication",
+      "duration": 50,
+      "bigQuestion": "Why do programmers break programs into functions instead of one long script?",
+      "objectives": [
+        "To understand how to write functions and procedures with parameters, validation and a simple authentication routine"
+      ],
+      "successCriteria": [
+        "All: write a function that returns a value",
+        "Most: validate input with a while loop",
+        "Some: write an authentication routine with limited attempts"
+      ],
+      "smsc": "Moral: responsibility for security",
+      "keywords": [
+        {
+          "term": "function",
+          "def": "a subprogram that returns a value"
+        },
+        {
+          "term": "procedure",
+          "def": "a subprogram that does a task without returning a value"
+        },
+        {
+          "term": "parameter",
+          "def": "a value passed into a subprogram"
+        },
+        {
+          "term": "authentication",
+          "def": "checking who a user is, such as with a password"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why do programmers break programs into functions instead of one long script?",
+        "a": "Functions are reusable, easier to test and easier to read."
+      },
+      "starter": [
+        {
+          "q": "split() returns ...",
+          "a": "a list",
+          "mins": 1,
+          "options": [
+            "a list",
+            "an integer"
+          ]
+        },
+        {
+          "q": "How do you convert '72' to a number?",
+          "a": "int('72').",
+          "mins": 1
+        },
+        {
+          "q": "Opening a file with 'w' ...",
+          "a": "writes (and replaces)",
+          "mins": 1,
+          "options": [
+            "writes (and replaces)",
+            "only reads"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Function with validation",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "python",
+            "text": "def get_mark():\n    mark = int(input(\"Mark 0-100: \"))\n    while mark < 0 or mark > 100:\n        mark = int(input(\"Invalid. Mark 0-100: \"))\n    return mark\n\nscore = get_mark()",
+            "output": "Keeps asking until a valid mark is entered"
+          }
+        },
+        {
+          "heading": "Authentication",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "python",
+            "text": "def login(stored):\n    attempts = 0\n    while attempts < 3:\n        if input(\"Password: \") == stored:\n            return True\n        attempts = attempts + 1\n    return False",
+            "output": "True if correct within three attempts"
+          }
+        },
+        {
+          "heading": "Function or procedure?",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Subprogram",
+              "Type"
+            ],
+            "rows": [
+              [
+                "calculate_average(marks) returns a number",
+                "Function"
+              ],
+              [
+                "display_report(pupils) prints",
+                "Procedure"
+              ],
+              [
+                "login(stored) returns True/False",
+                "Function"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "A subprogram that returns a value is a ...",
+            "options": [
+              "function",
+              "procedure",
+              "parameter"
+            ],
+            "answer": 0,
+            "why": "It hands a value back."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write a function is_valid_id(text) that returns True if the ID is exactly 6 characters.",
+          "a": "def is_valid_id(text): return len(text) == 6",
+          "mins": 4,
+          "model": "I do: def is_even(n): return n % 2 == 0"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Clinic task: refactor yesterday's program into functions with parameters, add validation and a login; test normal, boundary and erroneous data.",
+          "a": "Working functions, validation and a tested login.",
+          "mins": 12,
+          "model": "The teacher refactors one function."
+        },
+        {
+          "q": "Extend: lock the account after three failures and print a message.",
+          "a": "A lock message after three attempts.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A parameter is ...",
+          "a": "a value passed into a subprogram",
+          "mins": 1,
+          "options": [
+            "a value passed into a subprogram",
+            "a file"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Why do programmers break programs into functions instead of one long script?",
+          "a": "Functions are reusable, easier to test and easier to read.",
+          "mins": 2
+        }
+      ],
+      "homework": "Complete the refactor and test plan.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Computer Science (4CP0): Paper 1 Principles of Computer Science (written, 2 hours, 80 marks); Paper 2 Application of Computational Thinking (Python, on screen, 3 hours, 80 marks); exam dates: Paper 1 Mon 10 May 2027 (am); Paper 2 window Mon 7 to Wed 9 Jun",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "A free Python 3 editor (IDLE or a browser editor through the school; TO CONFIRM)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Padlock login screen",
+          "alt": "Authentication",
+          "for": "hook"
+        },
+        {
+          "find": "Function machine diagram",
+          "alt": "A function machine",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Final preparation",
+      "n": 56,
+      "title": "Paper 2 clinic: timed practical, part 1",
+      "duration": 50,
+      "bigQuestion": "If you get stuck on task 2 for 20 minutes, what should you do?",
+      "objectives": [
+        "To understand how to work under timed conditions on a Paper 2 style task, planning and coding the first half"
+      ],
+      "successCriteria": [
+        "All: complete the first two tasks",
+        "Most: keep to the timing plan and save often",
+        "Some: test each part with planned data before moving on"
+      ],
+      "smsc": "Moral: perseverance and calm under pressure",
+      "keywords": [
+        {
+          "term": "timed conditions",
+          "def": "working within a fixed time, as in the exam"
+        },
+        {
+          "term": "incremental testing",
+          "def": "testing each part as you build it"
+        },
+        {
+          "term": "readability",
+          "def": "how easy code is to understand"
+        },
+        {
+          "term": "evidence",
+          "def": "screenshots or output showing tests"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you get stuck on task 2 for 20 minutes, what should you do?",
+        "a": "Move on, leave a comment, and come back: marks are spread across tasks."
+      },
+      "starter": [
+        {
+          "q": "A function ...",
+          "a": "returns a value",
+          "mins": 1,
+          "options": [
+            "returns a value",
+            "never returns"
+          ]
+        },
+        {
+          "q": "Write a while condition for 0 to 100 validation.",
+          "a": "while mark < 0 or mark > 100:",
+          "mins": 1
+        },
+        {
+          "q": "Incremental testing means ...",
+          "a": "testing each part as you build",
+          "mins": 1,
+          "options": [
+            "testing each part as you build",
+            "testing at the end only"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Today's task (teacher-written, Paper 2 style)",
+          "bullets": [
+            "A masjid charity sale: read item prices from a file",
+            "Validate quantities",
+            "Calculate totals and sadaqah raised",
+            "Write a summary file"
+          ],
+          "note": "Full brief in the portal."
+        },
+        {
+          "heading": "Timing for today",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Minutes",
+              "Do"
+            ],
+            "rows": [
+              [
+                "0 to 5",
+                "Read and plan"
+              ],
+              [
+                "5 to 35",
+                "Tasks 1 and 2"
+              ],
+              [
+                "35 to 40",
+                "Test and save"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Stuck routine",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Read the error",
+            "Print the values",
+            "Try a smaller test",
+            "Comment and move on",
+            "Return later"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Stuck for 20 minutes on one task, you should ...",
+            "options": [
+              "move on and return later",
+              "keep trying until time ends",
+              "delete everything"
+            ],
+            "answer": 0,
+            "why": "Protect marks on other tasks."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Plan the subprograms for the charity task in two minutes.",
+          "a": "load_prices, get_quantity, calculate_total, write_summary.",
+          "mins": 4,
+          "model": "I do: I list inputs (file, quantities), processes (validate, total) and outputs (summary file)."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Timed: complete tasks 1 and 2 of the charity sale practical in Python; save the file to the portal at the end.",
+          "a": "Tasks 1 and 2 working with tests.",
+          "mins": 12,
+          "model": "The teacher reads the brief aloud."
+        },
+        {
+          "q": "Extend: add comments to every subprogram.",
+          "a": "Commented code.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "You should save your work ...",
+          "a": "after each task",
+          "mins": 1,
+          "options": [
+            "after each task",
+            "only once"
+          ]
+        },
+        {
+          "q": "Back to our ponder: If you get stuck on task 2 for 20 minutes, what should you do?",
+          "a": "Move on, leave a comment, and come back: marks are spread across tasks.",
+          "mins": 2
+        }
+      ],
+      "homework": "Optional: finish task 2 if incomplete (no more than 30 minutes).",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Computer Science (4CP0): Paper 1 Principles of Computer Science (written, 2 hours, 80 marks); Paper 2 Application of Computational Thinking (Python, on screen, 3 hours, 80 marks); exam dates: Paper 1 Mon 10 May 2027 (am); Paper 2 window Mon 7 to Wed 9 Jun",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "A free Python 3 editor (IDLE or a browser editor through the school; TO CONFIRM)",
+        "Charity sale practical brief and data files (teacher-written, example data, portal)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Stopwatch",
+          "alt": "Timed conditions",
+          "for": "hook"
+        },
+        {
+          "find": "Charity sale table",
+          "alt": "A charity sale",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Final preparation",
+      "n": 57,
+      "title": "Paper 2 clinic: timed practical, part 2, and final checklist",
+      "duration": 50,
+      "bigQuestion": "The Paper 2 window is 7 to 9 June. What three things will you check the day before?",
+      "objectives": [
+        "To understand how to complete, test and check a Paper 2 style task and prepare for the exam window"
+      ],
+      "successCriteria": [
+        "All: complete the remaining tasks",
+        "Most: test with normal, boundary and erroneous data",
+        "Some: improve readability and check against the marking points"
+      ],
+      "smsc": "Spiritual: effort with tawakkul",
+      "keywords": [
+        {
+          "term": "marking points",
+          "def": "what the examiner rewards"
+        },
+        {
+          "term": "final check",
+          "def": "a last review before submitting"
+        },
+        {
+          "term": "exam window",
+          "def": "the dates Paper 2 can be sat: 7 to 9 June"
+        },
+        {
+          "term": "centre",
+          "def": "where you sit the exam"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "The Paper 2 window is 7 to 9 June. What three things will you check the day before?",
+        "a": "The centre's time and place, ID, and that I've practised the PLS features; then rest."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Tie it, and then trust in Allah' (Tirmidhi, graded hasan).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "When stuck, you should ...",
+          "a": "move on and return",
+          "mins": 1,
+          "options": [
+            "move on and return",
+            "give up"
+          ]
+        },
+        {
+          "q": "Name one Paper 2 habit.",
+          "a": "Save often.",
+          "mins": 1
+        },
+        {
+          "q": "Erroneous data should be ...",
+          "a": "rejected",
+          "mins": 1,
+          "options": [
+            "rejected",
+            "accepted"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Finish the task",
+          "bullets": [
+            "Task 3: totals and sadaqah raised",
+            "Task 4: write the summary file",
+            "Test every task"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Final check",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "All tasks attempted",
+            "Tests run and evidence kept",
+            "Names and comments clear",
+            "Files saved with the right names",
+            "Code matches the brief"
+          ]
+        },
+        {
+          "heading": "Exam week checklist",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Check",
+              "Done?"
+            ],
+            "rows": [
+              [
+                "Centre date and time (7 to 9 June)",
+                ""
+              ],
+              [
+                "ID and candidate number",
+                ""
+              ],
+              [
+                "PLS features practised",
+                ""
+              ],
+              [
+                "Sleep, salah, a calm morning",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "The Paper 2 window is ...",
+            "options": [
+              "Mon 7 to Wed 9 June",
+              "Mon 10 May",
+              "Fri 21 May"
+            ],
+            "answer": 0,
+            "why": "The centre sets the day."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write the test plan for task 3 (quantity range 1 to 20).",
+          "a": "Normal 5; boundary 1 and 20; erroneous 0, 21, 'two'.",
+          "mins": 4,
+          "model": "I do: for prices 0.50 to 50.00: normal 3.00; boundary 0.50, 50.00; erroneous -1, 'abc'."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Timed: complete tasks 3 and 4, run your test plan and save the final file to the portal for feedback.",
+          "a": "A complete, tested program.",
+          "mins": 12,
+          "model": "The teacher checks one test live."
+        },
+        {
+          "q": "Extend: list your three most useful Python patterns for the exam.",
+          "a": "For example: file reading loop, validation loop, finding a maximum.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Before submitting you should ...",
+          "a": "run your tests and check file names",
+          "mins": 1,
+          "options": [
+            "run your tests and check file names",
+            "delete comments"
+          ]
+        },
+        {
+          "q": "Back to our ponder: The Paper 2 window is 7 to 9 June. What three things will you check the day before?",
+          "a": "The centre's time and place, ID, and that I've practised the PLS features; then rest.",
+          "mins": 2
+        }
+      ],
+      "homework": "Follow the exam week checklist; no live lessons after the Paper 2 window.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Computer Science (4CP0): Paper 1 Principles of Computer Science (written, 2 hours, 80 marks); Paper 2 Application of Computational Thinking (Python, on screen, 3 hours, 80 marks); exam dates: Paper 1 Mon 10 May 2027 (am); Paper 2 window Mon 7 to Wed 9 Jun",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "A free Python 3 editor (IDLE or a browser editor through the school; TO CONFIRM)",
+        "Charity sale practical brief and data files (teacher-written, example data, portal)",
+        "Help slide: Childline 0800 1111; TGA's DSL through 'Report a concern'"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Checklist tick",
+          "alt": "A final checklist",
+          "for": "teach:2"
+        },
+        {
+          "find": "Calendar June",
+          "alt": "The exam window",
+          "for": "hook"
+        }
+      ]
     }
   ]
 }

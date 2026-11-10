@@ -2418,6 +2418,982 @@
           "for": "teach:2"
         }
       ]
+    },
+    {
+      "unit": "Summer 1: Dear diary",
+      "n": 15,
+      "title": "Knowing where to go for help",
+      "duration": 45,
+      "bigQuestion": "A friend tells you something worrying and says 'Promise you won't tell.' What should you do?",
+      "objectives": [
+        "To understand the people and services that can help me, and how to ask in a way that gets help"
+      ],
+      "successCriteria": [
+        "All: name four sources of help",
+        "Most: explain which help fits which problem",
+        "Some: explain why it is right to tell even when asked to keep a secret"
+      ],
+      "smsc": "Moral: telling to keep others safe",
+      "keywords": [
+        {
+          "term": "support network",
+          "def": "the people and services who can help you"
+        },
+        {
+          "term": "confidential",
+          "def": "kept private unless someone is at risk"
+        },
+        {
+          "term": "safeguarding",
+          "def": "keeping children safe from harm"
+        },
+        {
+          "term": "DSL",
+          "def": "the Designated Safeguarding Lead: the person at school in charge of keeping children safe"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A friend tells you something worrying and says 'Promise you won't tell.' What should you do?",
+        "a": "Never promise to keep an unsafe secret: tell a trusted adult, because keeping your friend safe matters more."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And cooperate in righteousness and piety, but do not cooperate in sin and aggression' (Al-Ma'idah 5:2).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Hajj is in the month of ...",
+          "a": "Dhul-Hijjah",
+          "mins": 1,
+          "options": [
+            "Dhul-Hijjah",
+            "Ramadan"
+          ]
+        },
+        {
+          "q": "Name one trusted adult.",
+          "a": "For example: my form teacher.",
+          "mins": 1
+        },
+        {
+          "q": "Childline's number is ...",
+          "a": "0800 1111",
+          "mins": 1,
+          "options": [
+            "0800 1111",
+            "999"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Sources of help",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Who",
+              "How"
+            ],
+            "rows": [
+              [
+                "Parents and family",
+                "Talk at home"
+              ],
+              [
+                "TGA teachers",
+                "After the lesson or by message"
+              ],
+              [
+                "TGA's DSL",
+                "The portal's 'Report a concern' page"
+              ],
+              [
+                "Childline",
+                "0800 1111 or childline.org.uk"
+              ],
+              [
+                "Emergency",
+                "999"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Good secrets and unsafe secrets",
+          "bullets": [],
+          "note": "",
+          "compare": {
+            "left": {
+              "title": "Good surprise",
+              "points": [
+                "A present for Mum",
+                "Shared soon, makes people happy"
+              ]
+            },
+            "right": {
+              "title": "Unsafe secret",
+              "points": [
+                "Someone is hurting you",
+                "Someone online says 'don't tell'"
+              ]
+            },
+            "label": "tell an adult"
+          }
+        },
+        {
+          "heading": "How to ask",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Choose a trusted adult",
+            "Say 'I need to talk'",
+            "Say what happened",
+            "If nothing changes, tell another"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Which secret must be told?",
+            "options": [
+              "Someone online asked you to keep chats secret from parents",
+              "A surprise party",
+              "A present for Dad"
+            ],
+            "answer": 0,
+            "why": "Secrets that make you unsafe must be told."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write the words you would use to tell a teacher you are worried about a friend.",
+          "a": "'Can I talk to you? I'm worried about my friend because ...'",
+          "mins": 4,
+          "model": "I do: 'Excuse me, can I talk to you privately? I'm worried about ...'"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: build your support network map with at least five names or services and when you would use each.",
+          "a": "A map with five sources and uses.",
+          "mins": 10,
+          "model": "The teacher adds 'Childline: if I can't talk to anyone else'."
+        },
+        {
+          "q": "Extend: find the 'Report a concern' page in the portal with a parent.",
+          "a": "Page found.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "If someone asks you to keep an unsafe secret, you ...",
+          "a": "tell a trusted adult",
+          "mins": 1,
+          "options": [
+            "tell a trusted adult",
+            "promise not to tell"
+          ]
+        },
+        {
+          "q": "Back to our ponder: A friend tells you something worrying and says 'Promise you won't tell.' What should you do?",
+          "a": "Never promise to keep an unsafe secret: tell a trusted adult, because keeping your friend safe matters more.",
+          "mins": 2
+        }
+      ],
+      "homework": "Show your support network map to a parent.",
+      "send": "SEND: sentence starters, key word card and a partner to talk with first. EAL: key words with pictures and simple definitions. Stretch: give a reason and an example for every answer.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Primary PSHE scheme (Ealing LA PSHE, Citizenship and SEAL spiral scheme, Year A), 'Dear diary' strand; RSE lessons left out",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Help slide: trusted adults at home, any TGA teacher, the portal's 'Report a concern' page (goes to the Designated Safeguarding Lead), Childline 0800 1111"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Network of connected dots",
+          "alt": "A support network",
+          "for": "teach:1"
+        },
+        {
+          "find": "Telephone handset",
+          "alt": "A phone",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Dear diary",
+      "n": 16,
+      "title": "Managing uncomfortable feelings: embarrassment",
+      "duration": 45,
+      "bigQuestion": "Have you ever said the wrong answer in front of everyone? Is that the end of the world?",
+      "objectives": [
+        "To understand what embarrassment feels like and how to cope with it and help others"
+      ],
+      "successCriteria": [
+        "All: describe what embarrassment feels like",
+        "Most: name two ways to cope",
+        "Some: explain how to help someone else who is embarrassed"
+      ],
+      "smsc": "Social: kindness when others make mistakes",
+      "keywords": [
+        {
+          "term": "embarrassed",
+          "def": "feeling awkward or silly in front of others"
+        },
+        {
+          "term": "cope",
+          "def": "manage a difficult feeling"
+        },
+        {
+          "term": "empathy",
+          "def": "understanding how someone else feels"
+        },
+        {
+          "term": "haya'",
+          "def": "modesty: a good feeling that keeps us from wrong"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Have you ever said the wrong answer in front of everyone? Is that the end of the world?",
+        "a": "No: everyone makes mistakes; it shows we are trying and learning."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said that haya' (modesty) brings nothing but good (Bukhari and Muslim). Healthy shyness keeps us from wrong; embarrassment over small mistakes we can let go.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "DSL stands for ...",
+          "a": "Designated Safeguarding Lead",
+          "mins": 1,
+          "options": [
+            "Designated Safeguarding Lead",
+            "Daily School Lesson"
+          ]
+        },
+        {
+          "q": "Name a source of help.",
+          "a": "For example: Childline.",
+          "mins": 1
+        },
+        {
+          "q": "An unsafe secret should be ...",
+          "a": "told to a trusted adult",
+          "mins": 1,
+          "options": [
+            "told to a trusted adult",
+            "kept"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "What it feels like",
+          "bullets": [
+            "Hot face",
+            "Want to hide",
+            "Thinking everyone is looking"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Ways to cope",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Strategy",
+              "Example"
+            ],
+            "rows": [
+              [
+                "Laugh it off kindly",
+                "'Oops! Let me try again.'"
+              ],
+              [
+                "Remember everyone makes mistakes",
+                "Teachers too"
+              ],
+              [
+                "Breathe and move on",
+                "In 4, out 4"
+              ],
+              [
+                "Talk later",
+                "To a parent"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Helping others",
+          "bullets": [
+            "Don't laugh at them",
+            "Say something kind",
+            "Change the subject"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "A classmate's mic is on and their little brother is shouting. What is kind?",
+            "options": [
+              "Ignore it kindly and carry on",
+              "Laugh in the chat",
+              "Screenshot it"
+            ],
+            "answer": 0,
+            "why": "Protect each other's dignity."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write a kind chat message for a classmate who got an answer wrong.",
+          "a": "'Good try! I wasn't sure either.'",
+          "mins": 4,
+          "model": "I do: 'Nice try! It's a tricky one.'"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: three embarrassing moments; write how to cope and how a friend could help.",
+          "a": "Three coping plans with kind actions.",
+          "mins": 10,
+          "model": "The teacher does the first."
+        },
+        {
+          "q": "Extend: write one thing you learned from a mistake.",
+          "a": "A sentence.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "When someone is embarrassed, a good friend ...",
+          "a": "says something kind",
+          "mins": 1,
+          "options": [
+            "says something kind",
+            "laughs"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Have you ever said the wrong answer in front of everyone? Is that the end of the world?",
+          "a": "No: everyone makes mistakes; it shows we are trying and learning.",
+          "mins": 2
+        }
+      ],
+      "homework": "Write a diary entry about a time you coped well with a mistake.",
+      "send": "SEND: sentence starters, key word card and a partner to talk with first. EAL: key words with pictures and simple definitions. Stretch: give a reason and an example for every answer.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Primary PSHE scheme (Ealing LA PSHE, Citizenship and SEAL spiral scheme, Year A), 'Dear diary' strand; RSE lessons left out",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Pencil eraser",
+          "alt": "An eraser: we can fix mistakes",
+          "for": "hook"
+        },
+        {
+          "find": "Calm breathing illustration lungs",
+          "alt": "Breathing calmly",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Dear diary",
+      "n": 17,
+      "title": "Put-downs and boost-ups",
+      "duration": 45,
+      "bigQuestion": "Can words hurt more than a push? Why?",
+      "objectives": [
+        "To understand how put-downs hurt and how boost-ups build a kind class"
+      ],
+      "successCriteria": [
+        "All: tell a put-down from a boost-up",
+        "Most: turn a put-down into a boost-up",
+        "Some: explain why Islam forbids mocking"
+      ],
+      "smsc": "Moral: guarding the tongue",
+      "keywords": [
+        {
+          "term": "put-down",
+          "def": "words that make someone feel small"
+        },
+        {
+          "term": "boost-up",
+          "def": "words that make someone feel valued"
+        },
+        {
+          "term": "mocking",
+          "def": "making fun of someone"
+        },
+        {
+          "term": "kind speech",
+          "def": "words that are true, helpful and gentle"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Can words hurt more than a push? Why?",
+        "a": "Yes: words can be remembered for years. Kind words can heal too."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'O you who have believed, let not a people ridicule [another] people; perhaps they may be better than them' (Al-Hujurat 49:11).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Embarrassment feels like ...",
+          "a": "a hot face and wanting to hide",
+          "mins": 1,
+          "options": [
+            "a hot face and wanting to hide",
+            "being proud"
+          ]
+        },
+        {
+          "q": "Name a way to cope with embarrassment.",
+          "a": "For example: 'Oops, let me try again.'",
+          "mins": 1
+        },
+        {
+          "q": "Haya' means ...",
+          "a": "modesty",
+          "mins": 1,
+          "options": [
+            "modesty",
+            "anger"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Put-down or boost-up?",
+          "bullets": [],
+          "note": "",
+          "sort": {
+            "columns": [
+              "Put-down",
+              "Boost-up"
+            ],
+            "cards": [
+              "'You're so slow'",
+              "'Great idea!'",
+              "'Nobody wants you here'",
+              "'Thanks for helping'"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "heading": "Turn it round",
+          "bullets": [],
+          "note": "",
+          "compare": {
+            "left": {
+              "title": "Put-down",
+              "points": [
+                "'Your drawing is rubbish'"
+              ]
+            },
+            "right": {
+              "title": "Boost-up",
+              "points": [
+                "'I like your colours; maybe add more detail?'"
+              ]
+            },
+            "label": "change it"
+          }
+        },
+        {
+          "heading": "The tongue in Islam",
+          "bullets": [
+            "Speak good or stay silent (Bukhari and Muslim)",
+            "No mocking (49:11)",
+            "Kind words are charity"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Which is a boost-up?",
+            "options": [
+              "'You worked really hard on that'",
+              "'Is that the best you can do?'",
+              "'Loser'"
+            ],
+            "answer": 0,
+            "why": "It values the person."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Turn round: 'You can't even read Arabic properly.'",
+          "a": "'You're improving at Arabic, keep going!'",
+          "mins": 4,
+          "model": "I do: 'You're slow at maths' becomes 'You're getting faster at your tables.'"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: write five boost-ups for different classmates' strengths (names optional).",
+          "a": "Five specific boost-ups.",
+          "mins": 10,
+          "model": "The teacher writes 'You always include others in games.'"
+        },
+        {
+          "q": "Extend: post one boost-up in the class chat for a named classmate.",
+          "a": "Boost-up posted kindly.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "The Prophet ﷺ taught: speak good or ...",
+          "a": "stay silent",
+          "mins": 1,
+          "options": [
+            "stay silent",
+            "shout"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Can words hurt more than a push? Why?",
+          "a": "Yes: words can be remembered for years. Kind words can heal too.",
+          "mins": 2
+        }
+      ],
+      "homework": "Give three boost-ups at home this week and write them in your diary.",
+      "send": "SEND: sentence starters, key word card and a partner to talk with first. EAL: key words with pictures and simple definitions. Stretch: give a reason and an example for every answer.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Primary PSHE scheme (Ealing LA PSHE, Citizenship and SEAL spiral scheme, Year A), 'Dear diary' strand; RSE lessons left out",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Speech bubble icon",
+          "alt": "A speech bubble",
+          "for": "hook"
+        },
+        {
+          "find": "Plant sprouting",
+          "alt": "Kind words help people grow",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Dear diary",
+      "n": 18,
+      "title": "Breaking friends and making up",
+      "duration": 45,
+      "bigQuestion": "Is the person who says sorry first the loser or the winner?",
+      "objectives": [
+        "To understand why friends fall out and the steps to make up fairly"
+      ],
+      "successCriteria": [
+        "All: name reasons friends fall out",
+        "Most: use the make-up steps",
+        "Some: explain the Islamic limit on staying angry with a Muslim brother or sister"
+      ],
+      "smsc": "Moral: reconciliation and forgiveness",
+      "keywords": [
+        {
+          "term": "conflict",
+          "def": "a disagreement"
+        },
+        {
+          "term": "apologise",
+          "def": "say sorry and mean it"
+        },
+        {
+          "term": "reconcile",
+          "def": "become friends again"
+        },
+        {
+          "term": "forgive",
+          "def": "let go of anger"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is the person who says sorry first the loser or the winner?",
+        "a": "The winner: the Prophet ﷺ said the best of the two is the one who greets first."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said it is not lawful for a Muslim to cut off his brother for more than three days, and the better of the two is the one who greets first (Bukhari and Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "A boost-up ...",
+          "a": "makes someone feel valued",
+          "mins": 1,
+          "options": [
+            "makes someone feel valued",
+            "makes someone small"
+          ]
+        },
+        {
+          "q": "Give a boost-up for a friend.",
+          "a": "For example: 'You're a great listener.'",
+          "mins": 1
+        },
+        {
+          "q": "49:11 forbids ...",
+          "a": "mocking others",
+          "mins": 1,
+          "options": [
+            "mocking others",
+            "helping"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Why friends fall out",
+          "bullets": [
+            "Misunderstandings",
+            "Leaving someone out",
+            "Unkind words",
+            "Competition"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Make-up steps",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Calm down",
+            "Listen to each other",
+            "Say sorry for your part",
+            "Agree what happens next",
+            "Move on"
+          ]
+        },
+        {
+          "heading": "Fair apologies",
+          "bullets": [],
+          "note": "",
+          "compare": {
+            "left": {
+              "title": "Not a real sorry",
+              "points": [
+                "'Sorry, but you started it'"
+              ]
+            },
+            "right": {
+              "title": "Real sorry",
+              "points": [
+                "'I'm sorry I said that. It was unkind.'"
+              ]
+            },
+            "label": "change it"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Who is better when two friends fall out?",
+            "options": [
+              "The one who greets first",
+              "The one who waits longest",
+              "The one who wins the argument"
+            ],
+            "answer": 0,
+            "why": "Bukhari and Muslim."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write a real apology for leaving a friend out of a game.",
+          "a": "'I'm sorry I left you out. That wasn't fair. Want to play tomorrow?'",
+          "mins": 4,
+          "model": "I do: 'I'm sorry I laughed at you. It was unkind. I won't do it again.'"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: a falling-out story; write each friend's side and how they make up using the steps.",
+          "a": "Both sides and the steps used.",
+          "mins": 10,
+          "model": "The teacher does the first step."
+        },
+        {
+          "q": "Extend: role-play the make-up with a partner in a breakout room.",
+          "a": "Role-play done.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A real apology ...",
+          "a": "has no 'but'",
+          "mins": 1,
+          "options": [
+            "has no 'but'",
+            "blames the other"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Is the person who says sorry first the loser or the winner?",
+          "a": "The winner: the Prophet ﷺ said the best of the two is the one who greets first.",
+          "mins": 2
+        }
+      ],
+      "homework": "Diary: write about a time you made up with someone.",
+      "send": "SEND: sentence starters, key word card and a partner to talk with first. EAL: key words with pictures and simple definitions. Stretch: give a reason and an example for every answer.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Primary PSHE scheme (Ealing LA PSHE, Citizenship and SEAL spiral scheme, Year A), 'Dear diary' strand; RSE lessons left out",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Handshake silhouette two hands",
+          "alt": "Making up (hands only)",
+          "for": "hook"
+        },
+        {
+          "find": "Bridge over river",
+          "alt": "Building a bridge back",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Dear diary",
+      "n": 19,
+      "title": "Forgiveness",
+      "duration": 45,
+      "bigQuestion": "If someone hurts you and says sorry, do you have to be best friends again straight away?",
+      "objectives": [
+        "To understand what forgiveness is and is not, and why Islam encourages it"
+      ],
+      "successCriteria": [
+        "All: say what forgiving means",
+        "Most: explain that forgiving is not the same as pretending it didn't happen",
+        "Some: explain 24:22 and its link to Allah's forgiveness"
+      ],
+      "smsc": "Spiritual: forgiving as we hope Allah forgives us",
+      "keywords": [
+        {
+          "term": "forgive",
+          "def": "let go of anger towards someone"
+        },
+        {
+          "term": "grudge",
+          "def": "anger kept for a long time"
+        },
+        {
+          "term": "mercy",
+          "def": "kindness and forgiveness"
+        },
+        {
+          "term": "boundary",
+          "def": "a limit that keeps you safe"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If someone hurts you and says sorry, do you have to be best friends again straight away?",
+        "a": "You can forgive and let go of anger, while still keeping safe; trust can rebuild over time."
+      },
+      "islamicLink": {
+        "text": "Allah says: '... and let them pardon and overlook. Would you not like that Allah should forgive you? And Allah is Forgiving and Merciful' (An-Nur 24:22).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "The make-up steps start with ...",
+          "a": "calm down",
+          "mins": 1,
+          "options": [
+            "calm down",
+            "shout"
+          ]
+        },
+        {
+          "q": "Write a real apology in five words.",
+          "a": "'I'm sorry, that was unkind.'",
+          "mins": 1
+        },
+        {
+          "q": "The better friend is the one who ...",
+          "a": "greets first",
+          "mins": 1,
+          "options": [
+            "greets first",
+            "waits"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "What forgiveness is",
+          "bullets": [
+            "Letting go of anger",
+            "Not taking revenge",
+            "Hoping good for them"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "What it is not",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "Forgiving means it was OK, and you must keep quiet",
+            "right": "Forgiving lets go of anger; if something was unsafe, you still tell a trusted adult"
+          }
+        },
+        {
+          "heading": "Why forgive?",
+          "bullets": [
+            "Allah loves those who pardon",
+            "It frees your heart",
+            "We hope Allah forgives us"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Forgiving someone who hurt you means ...",
+            "options": [
+              "letting go of anger, while still staying safe",
+              "pretending it never happened",
+              "letting them do it again"
+            ],
+            "answer": 0,
+            "why": "Forgive and stay safe."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write how a forgiving person might reply to: 'I'm sorry I broke your pencil.'",
+          "a": "'Thanks for saying sorry. It's OK; be careful next time.'",
+          "mins": 4,
+          "model": "I do: 'I forgive you. Let's both be more careful.'"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: reflection: 'Why is forgiving hard, and how does Islam help?' Write five sentences.",
+          "a": "Five sentences with one Islamic reason.",
+          "mins": 10,
+          "model": "The teacher writes the first sentence."
+        },
+        {
+          "q": "Extend: make du'a for someone you have forgiven.",
+          "a": "Du'a made.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "24:22 asks: would you not like that Allah should ...",
+          "a": "forgive you",
+          "mins": 1,
+          "options": [
+            "forgive you",
+            "forget you"
+          ]
+        },
+        {
+          "q": "Back to our ponder: If someone hurts you and says sorry, do you have to be best friends again straight away?",
+          "a": "You can forgive and let go of anger, while still keeping safe; trust can rebuild over time.",
+          "mins": 2
+        }
+      ],
+      "homework": "Diary: write about forgiveness and one person you will forgive.",
+      "send": "SEND: sentence starters, key word card and a partner to talk with first. EAL: key words with pictures and simple definitions. Stretch: give a reason and an example for every answer.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Primary PSHE scheme (Ealing LA PSHE, Citizenship and SEAL spiral scheme, Year A), 'Dear diary' strand; RSE lessons left out",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Help slide: trusted adults at home, any TGA teacher, the portal's 'Report a concern' page (goes to the Designated Safeguarding Lead), Childline 0800 1111"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Bird flying blue sky",
+          "alt": "A bird flying free: letting go of anger",
+          "for": "hook"
+        },
+        {
+          "find": "Sunrise",
+          "alt": "A fresh start",
+          "for": "teach:3"
+        }
+      ]
     }
   ]
 }

@@ -5,7 +5,7 @@
   "source": "Continues the school Drive Quran folder progression (TPS Quran Tracker tajweed rules Years 1-6) into KS3/KS4; classical tajweed (Hafs 'an 'Asim) and tadabbur method; Qur'an text per the Madinah mushaf",
   "lessons": [
     {
-      "unit": "Spring 1: Madd and An-Nazi'at",
+      "unit": "Spring 1: 'Abasa with makharij and sifat",
       "n": 1,
       "title": "Starting Key Stage 3: goals, the rubric and the revision log",
       "duration": 50,
@@ -258,7 +258,7 @@
       ]
     },
     {
-      "unit": "Spring 1: Madd and An-Nazi'at",
+      "unit": "Spring 1: 'Abasa with makharij and sifat",
       "n": 2,
       "title": "Makharij 1: the jawf and the throat",
       "duration": 50,
@@ -534,7 +534,7 @@
       ]
     },
     {
-      "unit": "Spring 1: Madd and An-Nazi'at",
+      "unit": "Spring 1: 'Abasa with makharij and sifat",
       "n": 3,
       "title": "Makharij 2: the tongue",
       "duration": 50,
@@ -806,7 +806,7 @@
       ]
     },
     {
-      "unit": "Spring 1: Madd and An-Nazi'at",
+      "unit": "Spring 1: 'Abasa with makharij and sifat",
       "n": 4,
       "title": "Makharij 3: the lips, the nose and putting it together",
       "duration": 50,
@@ -1046,7 +1046,7 @@
       ]
     },
     {
-      "unit": "Spring 1: Madd and An-Nazi'at",
+      "unit": "Spring 1: 'Abasa with makharij and sifat",
       "n": 5,
       "title": "Sifat 1: pairs of opposite qualities",
       "duration": 50,
@@ -1325,7 +1325,7 @@
       ]
     },
     {
-      "unit": "Spring 1: Madd and An-Nazi'at",
+      "unit": "Spring 1: 'Abasa with makharij and sifat",
       "n": 6,
       "title": "Sifat 2: special qualities of the letters",
       "duration": 50,
@@ -1614,7 +1614,7 @@
       ]
     },
     {
-      "unit": "Spring 1: Madd and An-Nazi'at",
+      "unit": "Spring 1: 'Abasa with makharij and sifat",
       "n": 7,
       "title": "Raa and laam: heavy or light?",
       "duration": 50,
@@ -1852,7 +1852,7 @@
       ]
     },
     {
-      "unit": "Spring 2: An-Naba'",
+      "unit": "Spring 2: Madd and An-Nazi'at",
       "n": 8,
       "title": "Madd 1: the two families",
       "duration": 50,
@@ -2100,7 +2100,7 @@
       ]
     },
     {
-      "unit": "Spring 2: An-Naba'",
+      "unit": "Spring 2: Madd and An-Nazi'at",
       "n": 9,
       "title": "Madd 2: madd lazim in detail",
       "duration": 50,
@@ -2353,253 +2353,663 @@
       ]
     },
     {
-      "unit": "Unit 4: Surat Al-Qadr and memorisation",
+      "unit": "Summer 1: An-Naba' and Al-Qadr as a model",
       "n": 10,
-      "title": "Surat Al-Qadr: reading and rules",
+      "title": "Surat Al-Qadr as a model: reading and rules",
       "duration": 50,
+      "bigQuestion": "Al-Qadr has only five ayat. How many tajweed rules do you think you can find in it?",
       "objectives": [
-        "Recite Al-Qadr accurately",
-        "Apply makharij, sifat and madd",
-        "Begin to memorise the surah"
+        "To understand how every rule studied this year appears in one short surah, using Al-Qadr as a model for recitation"
       ],
+      "successCriteria": [
+        "All: recite Al-Qadr with clear makharij",
+        "Most: name the madd, ghunnah and heavy letters in Al-Qadr",
+        "Some: explain how sifat change the sound of «ٱلْقَدْرِ» and «مَطْلَعِ»"
+      ],
+      "smsc": "Spiritual: the virtue of Laylat al-Qadr",
       "keywords": [
         {
-          "term": "Al-Qadr",
-          "def": "surah 97: the Night of Decree"
+          "term": "Al-Qadr (القدر)",
+          "def": "the Decree, the Night of Decree"
         },
         {
-          "term": "qadr",
-          "def": "power, decree, honour"
+          "term": "sifat (صفات)",
+          "def": "the qualities of letters"
+        },
+        {
+          "term": "makharij (مخارج)",
+          "def": "where letters come from"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Al-Qadr has only five ayat. How many tajweed rules do you think you can find in it?",
+        "a": "More than ten: ghunnah, several madd families, heavy letters, qalqalah, ikhfa' and idgham."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And recite the Qur'an with measured recitation' (Al-Muzzammil 73:4).",
+        "at": "start"
+      },
       "starter": [
-        "Recite the isti'adha and basmalah.",
-        "Name the four types of madd lazim.",
-        "Describe ط using sifat."
+        {
+          "q": "Recite An-Naba' 78:5 in your head. How does the next ayah begin?",
+          "a": "أَلَمْ نَجْعَلِ",
+          "mins": 1,
+          "options": [
+            "لَّٰبِثِينَ فِيهَآ",
+            "أَلَمْ نَجْعَلِ",
+            "إِلَّا حَمِيمًۭا"
+          ]
+        },
+        {
+          "q": "«عَمَّ» has ...",
+          "a": "ghunnah",
+          "mins": 1,
+          "options": [
+            "ghunnah",
+            "qalqalah"
+          ]
+        },
+        {
+          "q": "Madd lazim lasts ...",
+          "a": "six counts",
+          "mins": 1,
+          "options": [
+            "six counts",
+            "two counts"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "The surah",
+          "heading": "Al-Qadr",
           "bullets": [
-            "Surah 97, five ayat",
-            "إِنَّا أَنزَلْنَاهُ فِي لَيْلَةِ الْقَدْرِ",
-            "وَمَا أَدْرَاكَ مَا لَيْلَةُ الْقَدْرِ"
+            "Recite with me"
           ],
-          "note": "Introduce the surah: Allah sent down the Qur'an on the Night of Decree. Chunk and echo. Rules: ghunnah in إِنَّا; ikhfa in أَنزَلْنَاهُ; laam qamariyyah in الْقَدْرِ."
+          "note": "Bismillah. Recite slowly; pupils follow on the shared page.",
+          "quote": {
+            "text": "إِنَّآ أَنزَلْنَٰهُ فِى لَيْلَةِ ٱلْقَدْرِ (١) وَمَآ أَدْرَىٰكَ مَا لَيْلَةُ ٱلْقَدْرِ (٢) لَيْلَةُ ٱلْقَدْرِ خَيْرٌۭ مِّنْ أَلْفِ شَهْرٍۢ (٣) تَنَزَّلُ ٱلْمَلَٰٓئِكَةُ وَٱلرُّوحُ فِيهَا بِإِذْنِ رَبِّهِم مِّن كُلِّ أَمْرٍۢ (٤) سَلَٰمٌ هِىَ حَتَّىٰ مَطْلَعِ ٱلْفَجْرِ (٥)",
+            "source": "Surat Al-Qadr, 97:1-5"
+          }
         },
         {
-          "heading": "Ayat 3-5",
-          "bullets": [
-            "لَيْلَةُ الْقَدْرِ خَيْرٌ مِّنْ أَلْفِ شَهْرٍ",
-            "تَنَزَّلُ الْمَلَائِكَةُ وَالرُّوحُ فِيهَا بِإِذْنِ رَبِّهِم مِّن كُلِّ أَمْرٍ",
-            "سَلَامٌ هِيَ حَتَّىٰ مَطْلَعِ الْفَجْرِ"
-          ],
-          "note": "Meaning: the Night of Decree is better than a thousand months; angels and the Spirit descend by their Lord's permission with every decree; peace it is until the rise of dawn. Chunk and echo."
+          "heading": "Rules in Al-Qadr",
+          "bullets": [],
+          "note": "Pupils call the rule before the teacher reveals it.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "إِنَّآ أَنزَلْنَٰهُ",
+                "97:1",
+                "Ghunnah; madd munfasil; ikhfa' (noon before ز)",
+                "in-naaa anzalnaahu"
+              ],
+              [
+                "ٱلْقَدْرِ",
+                "97:1",
+                "Qalqalah on د at the stop; ق heavy",
+                "al-qadr(d)"
+              ],
+              [
+                "شَهْرٍۢ",
+                "97:3",
+                "ر at the stop after sukoon: heavy (fathah before)",
+                "shahr"
+              ],
+              [
+                "ٱلْمَلَٰٓئِكَةُ",
+                "97:4",
+                "Madd muttasil",
+                "Four or five counts"
+              ],
+              [
+                "مِّن كُلِّ",
+                "97:4",
+                "Ikhfa': noon before ك",
+                "Light hum"
+              ],
+              [
+                "سَلَٰمٌ هِىَ",
+                "97:5",
+                "Izhar: tanween before ه",
+                "salaamun hiya"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Tajweed",
+          "heading": "Sifat in action",
           "bullets": [
-            "خَيْرٌ مِّنْ - idgham with ghunnah",
-            "رَبِّهِم مِّن - idgham shafawi",
-            "مِن كُلِّ - ikhfa"
+            "ق: isti'la, shiddah, qalqalah",
+            "ط in «مَطْلَعِ»: isti'la, itbaq, qalqalah (sakin)",
+            "ه in «هِىَ»: hams, from the deepest throat"
           ],
-          "note": "Check: tanween in خَيْرٌ meets meem: idgham with ghunnah. The noon of مِن meets kaaf in كُلِّ: ikhfa. The meem sakinah of رَبِّهِم meets meem: idgham shafawi. The madd in الْمَلَائِكَةُ is muttasil. Pupils label rules on a printed text."
+          "note": "Model each letter alone, then in its word."
         },
         {
-          "heading": "Learn it",
-          "bullets": [
-            "Hear it five times",
-            "Read it five times",
-            "Say it without looking",
-            "Link ayat together"
-          ],
-          "note": "Memorise ayat 1-2 now; 3 at home. Use chaining and test aloud. Praise accuracy of rules as well as memory."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "In «مَطْلَعِ» (97:5), the ط has ...",
+            "options": [
+              "qalqalah, because it is sakin",
+              "ghunnah",
+              "no sifat"
+            ],
+            "answer": 0,
+            "why": "ط is a qalqalah letter; here it has sukoon."
+          }
         }
       ],
       "practice": [
-        "Recite Al-Qadr ayah 1.",
-        "Which rule is in خَيْرٌ مِّنْ؟"
+        {
+          "q": "Recite 97:1 and name three rules in it.",
+          "a": "Ghunnah on «إِنَّآ», madd munfasil, ikhfa' in «أَنزَلْنَٰهُ», qalqalah at «ٱلْقَدْرِ».",
+          "mins": 4,
+          "model": "I do: I recite 97:1 slowly, pausing after each rule: in-naa (ghunnah, two counts) ... aaa (munfasil) anzalnaahu (ikhfa') ... al-qadr (qalqalah at the stop)."
+        }
       ],
       "independent": [
-        "Read Al-Qadr in pairs; label rules",
-        "Memorise ayat 1-2 with chaining",
-        "Recite individually"
+        {
+          "q": "Tajweed map (pupil PDF): label every rule in Al-Qadr. Today's rota group recites An-Naba' 1 to 8.",
+          "a": "At least ten rules labelled, as on the slide plus «سَلَٰمٌ هِىَ» izhar and «مَطْلَعِ» qalqalah.",
+          "mins": 12,
+          "model": "The teacher labels 97:1 first."
+        },
+        {
+          "q": "Extend: recite Al-Qadr to a partner who ticks each rule on your map.",
+          "a": "Map ticked.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: why is Al-Qadr a good 'model surah' for checking tajweed?",
+          "a": "It is short but contains most of the rules; a teacher can hear many rules in one minute.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "What is better than a thousand months?",
-        "Name one tajweed rule in ayah 3."
+        {
+          "q": "«سَلَٰمٌ هِىَ» is read with ...",
+          "a": "izhar",
+          "mins": 1,
+          "options": [
+            "izhar",
+            "ikhfa'",
+            "idgham"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Al-Qadr has only five ayat. How many tajweed rules do you think you can find in it?",
+          "a": "More than ten: ghunnah, several madd families, heavy letters, qalqalah, ikhfa' and idgham.",
+          "mins": 2
+        }
       ],
-      "homework": "Recite Al-Qadr daily and learn ayat 1-3 by heart.",
-      "send": "SEND/EAL: chunked audio and text with rules highlighted. Stretch: learn the whole surah."
+      "homework": "Recite Al-Qadr to a parent using your tajweed map; recite An-Naba' 1 to 8; log revision.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Surat Al-Qadr as a model rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Night sky Milky Way desert",
+          "alt": "The night sky over the desert",
+          "for": "hook"
+        },
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "teach:1"
+        }
+      ]
     },
     {
-      "unit": "Unit 4: Surat Al-Qadr and memorisation",
+      "unit": "Summer 1: An-Naba' and Al-Qadr as a model",
       "n": 11,
       "title": "Surat Al-Qadr: meaning and reflection",
       "duration": 50,
+      "bigQuestion": "One night better than a thousand months: that is more than 83 years. What would you do if you knew tonight was that night?",
       "objectives": [
-        "Explain the main message of Al-Qadr",
-        "Use a simple method for tadabbur",
-        "Recite the whole surah from memory"
+        "To understand what Al-Qadr teaches about the Night of Decree and how a Muslim prepares for it"
       ],
+      "successCriteria": [
+        "All: say what happened on Laylat al-Qadr",
+        "Most: explain 'better than a thousand months'",
+        "Some: plan three actions for the last ten nights of Ramadan"
+      ],
+      "crossCurricular": "Maths: converting 1,000 months to years",
+      "smsc": "Spiritual: valuing time and worship",
       "keywords": [
         {
-          "term": "tadabbur",
-          "def": "reflecting deeply on the meaning of the Qur'an"
+          "term": "Laylat al-Qadr (ليلة القدر)",
+          "def": "the Night of Decree"
         },
         {
-          "term": "laylat al-qadr",
-          "def": "the Night of Decree, in Ramadan"
+          "term": "tadabbur (تدبر)",
+          "def": "reflecting deeply on the Qur'an"
+        },
+        {
+          "term": "ruh (الروح)",
+          "def": "the Spirit: here Jibril"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "One night better than a thousand months: that is more than 83 years. What would you do if you knew tonight was that night?",
+        "a": "Pray, recite the Qur'an, make du'a and seek forgiveness, sincerely."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, We sent the Qur'an down during the Night of Decree. The Night of Decree is better than a thousand months.' (Al-Qadr 97:1 and 97:3).",
+        "at": "start"
+      },
       "starter": [
-        "Recite Al-Qadr ayat 1-3.",
-        "What does tadabbur mean?",
-        "Name the madd in الْمَلَائِكَةُ."
+        {
+          "q": "Recite Al-Qadr 97:3 in your head. How does the next ayah begin?",
+          "a": "تَنَزَّلُ ٱلْمَلَٰٓئِكَةُ",
+          "mins": 1,
+          "options": [
+            "وَمَآ أَدْرَىٰكَ",
+            "إِنَّآ أَنزَلْنَٰهُ",
+            "تَنَزَّلُ ٱلْمَلَٰٓئِكَةُ"
+          ]
+        },
+        {
+          "q": "«سَلَٰمٌ هِىَ» is ...",
+          "a": "izhar",
+          "mins": 1,
+          "options": [
+            "izhar",
+            "ikhfa'"
+          ]
+        },
+        {
+          "q": "An-Naba' 78:9: «وَجَعَلْنَا ...» Which word comes next?",
+          "a": "نَوْمَكُمْ",
+          "mins": 1,
+          "options": [
+            "نَوْمَكُمْ",
+            "ٱلْأَرْضَ",
+            "أَزْوَٰجًۭا"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "The message",
+          "heading": "What the ayat mean",
           "bullets": [
-            "The Qur'an was revealed on a blessed night",
-            "The night is better than a thousand months",
-            "Angels descend with peace"
+            "A translation of the meaning, not the Qur'an itself"
           ],
-          "note": "Ask the class what makes a time special. Explain that Allah has honoured this night, and that the sources indicate it is in Ramadan, in the last ten nights. Keep to what is established."
+          "note": "Bismillah. Read slowly.",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "97:1",
+                "Indeed, We sent the Qur'an down during the Night of Decree."
+              ],
+              [
+                "97:2",
+                "And what can make you know what is the Night of Decree?"
+              ],
+              [
+                "97:3",
+                "The Night of Decree is better than a thousand months."
+              ],
+              [
+                "97:4",
+                "The angels and the Spirit descend therein by permission of their Lord for every matter."
+              ],
+              [
+                "97:5",
+                "Peace it is until the emergence of dawn."
+              ]
+            ]
+          }
         },
         {
-          "heading": "Questions to ask",
+          "heading": "1,000 months",
           "bullets": [
-            "Who is speaking? Allah",
-            "What is said? The night is special",
-            "Why? The Qur'an was revealed",
-            "What should I do?"
+            "1,000 months ÷ 12 = about 83 years",
+            "A whole lifetime in one night",
+            "The Qur'an was sent down on this night"
           ],
-          "note": "Model a simple tadabbur method with these four questions. Use them on ayat 3-5. Ask for personal responses and acceptable answers."
+          "note": "Work out the number with the class."
         },
         {
-          "heading": "Thinking about the Qur'an",
-          "bullets": [
-            "أَفَلَا يَتَدَبَّرُونَ الْقُرْآنَ (47:24)",
-            "كِتَابٌ أَنزَلْنَاهُ إِلَيْكَ مُبَارَكٌ لِّيَدَّبَّرُوا آيَاتِهِ (38:29)",
-            "We recite and we reflect"
-          ],
-          "note": "Read these two ayat in meaning: do they not reflect upon the Qur'an; a blessed Book We sent down so they may ponder its verses. Link the two parts of the Qur'an's purpose: recite and think."
+          "heading": "Preparing",
+          "bullets": [],
+          "note": "Pupils sort actions.",
+          "sort": {
+            "columns": [
+              "Fits the Night of Decree",
+              "Does not fit"
+            ],
+            "cards": [
+              "Night prayer",
+              "Reciting the Qur'an",
+              "Gaming all night",
+              "Du'a and asking forgiveness",
+              "Arguing"
+            ],
+            "answer": [
+              0,
+              0,
+              1,
+              0,
+              1
+            ]
+          }
         },
         {
-          "heading": "Putting it together",
-          "bullets": [
-            "Recite the surah",
-            "Say one thing it teaches",
-            "Say one action",
-            "Make dua"
-          ],
-          "note": "Pupils recite Al-Qadr and complete a sentence: This surah teaches me ... so I will ... Share a few. Conclude with dua for the Night of Decree."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Who descend on that night (97:4)?",
+            "options": [
+              "The angels and the Spirit",
+              "The stars",
+              "The prophets"
+            ],
+            "answer": 0,
+            "why": "97:4."
+          }
         }
       ],
       "practice": [
-        "Recite Al-Qadr.",
-        "Which ayah mentions the angels?"
+        {
+          "q": "In one sentence, explain 97:3.",
+          "a": "That one night of worship is better than a thousand months: more reward than a lifetime.",
+          "mins": 4,
+          "model": "I do: Point (the claim), then evidence (97:3), then explain (83 years)."
+        }
       ],
       "independent": [
-        "Write answers to the four tadabbur questions",
-        "Recite Al-Qadr to a partner",
-        "Write a short reflection of 5 sentences on Al-Qadr"
+        {
+          "q": "Reflection (portal response box): 'What does Al-Qadr teach me about time and worship?' Use Point, Evidence (an ayah), Explain. Today's rota group recites An-Naba' 1 to 16.",
+          "a": "A paragraph with an ayah cited and explained.",
+          "mins": 12,
+          "model": "The teacher writes the first sentence."
+        },
+        {
+          "q": "Extend: plan three actions for the last ten nights.",
+          "a": "For example: tahajjud, a juz' of recitation, a daily du'a list.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "What does the surah say about the Night of Decree?",
-        "Why do we reflect on the Qur'an?"
+        {
+          "q": "1,000 months is about ...",
+          "a": "83 years",
+          "mins": 1,
+          "options": [
+            "83 years",
+            "10 years",
+            "1,000 years"
+          ]
+        },
+        {
+          "q": "Back to our ponder: One night better than a thousand months: that is more than 83 years. What would you do if you knew tonight was that night?",
+          "a": "Pray, recite the Qur'an, make du'a and seek forgiveness, sincerely.",
+          "mins": 2
+        }
       ],
-      "homework": "Write a half-page reflection on Al-Qadr and recite it every day.",
-      "send": "SEND/EAL: sentence frames for tadabbur. Stretch: compare Al-Qadr with the ayah 2:185."
+      "homework": "Write your three-action plan; recite An-Naba' 1 to 16; log revision.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Surat Al-Qadr rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Night sky Milky Way desert",
+          "alt": "The night sky over the desert",
+          "for": "hook"
+        },
+        {
+          "find": "Crescent moon dusk",
+          "alt": "A crescent moon",
+          "for": "teach:2"
+        }
+      ]
     },
     {
-      "unit": "Unit 4: Surat Al-Qadr and memorisation",
+      "unit": "Summer 1: An-Naba' and Al-Qadr as a model",
       "n": 12,
-      "title": "Memorisation technique and recital assessment",
+      "title": "Memorisation technique: sabaq, sabqi and manzil",
       "duration": 50,
+      "bigQuestion": "Some people memorise fast but forget fast. What do you think they are missing?",
       "objectives": [
-        "Describe a good memorisation routine",
-        "Revise Al-Qadr, Ad-Duha and Ash-Sharh",
-        "Complete a recital with the rubric"
+        "To understand how to plan new memorisation and revision so that An-Naba' is learned and nothing earlier is lost"
       ],
+      "successCriteria": [
+        "All: describe the 3-3-link method",
+        "Most: write a weekly sabaq, sabqi, manzil plan",
+        "Some: explain why spaced revision protects long-term hifdh"
+      ],
+      "smsc": "Moral: discipline and consistency",
       "keywords": [
         {
-          "term": "sabaq",
-          "def": "new lesson"
+          "term": "sabaq (سبق)",
+          "def": "the new lesson of hifdh"
         },
         {
-          "term": "sabqi",
-          "def": "recent lessons"
+          "term": "sabqi (سبقي)",
+          "def": "recent hifdh revised"
         },
         {
-          "term": "manzil",
-          "def": "older lessons"
+          "term": "manzil (منزل)",
+          "def": "older hifdh revised"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Some people memorise fast but forget fast. What do you think they are missing?",
+        "a": "Regular, spaced revision (muraja'ah) and reciting in salah."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We have certainly made the Qur'an easy for remembrance, so is there any who will remember?' (Al-Qamar 54:17).",
+        "at": "start"
+      },
       "starter": [
-        "Recite Al-Qadr from memory.",
-        "Name three ways to memorise.",
-        "Name the three parts of a revision plan."
+        {
+          "q": "Recite An-Naba' 78:18 in your head. How does the next ayah begin?",
+          "a": "وَفُتِحَتِ ٱلسَّمَآءُ",
+          "mins": 1,
+          "options": [
+            "وَٱلْجِبَالَ أَوْتَادًۭا",
+            "جَزَآءًۭ مِّن",
+            "وَفُتِحَتِ ٱلسَّمَآءُ"
+          ]
+        },
+        {
+          "q": "Sabqi means ...",
+          "a": "recent hifdh revised",
+          "mins": 1,
+          "options": [
+            "recent hifdh revised",
+            "new ayat"
+          ]
+        },
+        {
+          "q": "«بَرْدًۭا» has qalqalah on ...",
+          "a": "د",
+          "mins": 1,
+          "options": [
+            "د",
+            "ر"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "A good routine",
+          "heading": "Three parts every day",
           "bullets": [
-            "Choose a small amount",
-            "Repeat many times",
-            "Recite from memory",
-            "Revise regularly"
+            "Sabaq: new ayat (3-3-link)",
+            "Sabqi: the last one or two weeks",
+            "Manzil: older surahs on a rota"
           ],
-          "note": "Explain that memory improves through short, regular practice. Show a small weekly plan. Ask: what time of day is best for you?"
+          "note": "Bismillah."
         },
         {
-          "heading": "Three layers",
-          "bullets": [
-            "Sabaq: new lesson",
-            "Sabqi: last few lessons",
-            "Manzil: older lessons"
-          ],
-          "note": "Pupils plan a week using three layers. Show a sample. Notice that older surahs are revised weekly. Pupils may use a check-list."
+          "heading": "The 3-3-link",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Read the ayah 3 times looking",
+            "Say it 3 times without looking",
+            "Link it to the ayah before",
+            "Recite the chunk once",
+            "Tick the log"
+          ]
         },
         {
-          "heading": "Dealing with mistakes",
-          "bullets": [
-            "Note the error",
-            "Say the correct ayah five times",
-            "Test later in the day"
-          ],
-          "note": "Tell pupils that everyone forgets. Keep a list of difficult ayat. Do not give up. Encourage dua for strong memory and humility."
+          "heading": "Spacing",
+          "bullets": [],
+          "note": "Example data: how much a pupil recalls.",
+          "chart": {
+            "kind": "bar",
+            "title": "Ayat recalled after two weeks (example data)",
+            "unit": "%",
+            "labels": [
+              "Learned, never revised",
+              "Revised once",
+              "Revised on a rota"
+            ],
+            "values": [
+              25,
+              45,
+              90
+            ]
+          }
         },
         {
-          "heading": "Recital",
-          "bullets": [
-            "Recite Al-Qadr or another surah",
-            "Use tarteel",
-            "Aim for accuracy",
-            "Say Alhamdulillah"
-          ],
-          "note": "Assess with the rubric from lesson 1. Provide one strength and one target. Compare with the baseline and celebrate progress."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Which plan keeps An-Nazi'at secure while learning An-Naba'?",
+            "options": [
+              "Daily sabaq, sabqi and a manzil rota",
+              "Only new ayat each day",
+              "Revising once at the end of term"
+            ],
+            "answer": 0,
+            "why": "All three parts every day."
+          }
         }
       ],
       "practice": [
-        "Recite Al-Qadr ayat 4-5.",
-        "Name one of your goals from September."
+        {
+          "q": "Use the 3-3-link on 78:21 with the class.",
+          "a": "78:21 recited from memory and linked to 78:20.",
+          "mins": 4,
+          "model": "I do: chunk 78:20-21. Ayah 20: 3 times looking, 3 times without looking. Then ayah 21 the same way. Then link: recite 20 and 21 together twice. Finish by reciting the whole chunk once without the mushaf."
+        }
       ],
       "independent": [
-        "Complete a revision plan for the next four weeks",
-        "Recite your chosen surah for the rubric",
-        "Write a reflection comparing baseline and now"
+        {
+          "q": "Planner (pupil PDF): write your own week of sabaq, sabqi and manzil, 10 to 15 minutes a day. Today's rota group recites An-Naba' 1 to 24.",
+          "a": "A realistic plan naming ayat and surahs for each day.",
+          "mins": 12,
+          "model": "The teacher fills Monday."
+        },
+        {
+          "q": "Extend: add when you will recite each new part in salah.",
+          "a": "For example: Fajr sunnah: 78:17 to 24.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: explain the chart in two sentences.",
+          "a": "Without revision recall falls quickly; spaced revision keeps it high.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Name two layers of a revision plan.",
-        "What is one target for next term?"
+        {
+          "q": "Manzil means ...",
+          "a": "older hifdh on a rota",
+          "mins": 1,
+          "options": [
+            "older hifdh on a rota",
+            "new ayat"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Some people memorise fast but forget fast. What do you think they are missing?",
+          "a": "Regular, spaced revision (muraja'ah) and reciting in salah.",
+          "mins": 2
+        }
       ],
-      "homework": "Follow your revision plan daily for a week and note how it goes.",
-      "send": "SEND/EAL: revision planner with visual cues. Stretch: coach a partner in memorisation."
+      "homework": "Follow your plan this week; recite An-Naba' 1 to 24; log revision.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: weekly hifdh planner",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Planner notebook pen",
+          "alt": "A planner",
+          "for": "hook"
+        },
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        }
+      ]
     },
     {
-      "unit": "Spring 1: Madd and An-Nazi'at",
+      "unit": "Spring 1: 'Abasa with makharij and sifat",
       "n": 13,
       "title": "Surat 'Abasa 80:1-8: hear, understand and memorise",
       "duration": 50,
@@ -2893,7 +3303,7 @@
       ]
     },
     {
-      "unit": "Spring 1: Madd and An-Nazi'at",
+      "unit": "Spring 1: 'Abasa with makharij and sifat",
       "n": 14,
       "title": "Surat 'Abasa 80:9-16: hear, understand and memorise",
       "duration": 50,
@@ -3187,7 +3597,7 @@
       ]
     },
     {
-      "unit": "Spring 1: Madd and An-Nazi'at",
+      "unit": "Spring 1: 'Abasa with makharij and sifat",
       "n": 15,
       "title": "Muraja'ah: the Juz' 'Amma rota and 'Abasa 1 to 16",
       "duration": 50,
@@ -3445,7 +3855,7 @@
       ]
     },
     {
-      "unit": "Spring 1: Madd and An-Nazi'at",
+      "unit": "Spring 1: 'Abasa with makharij and sifat",
       "n": 16,
       "title": "Surat 'Abasa 80:17-24: hear, understand and memorise",
       "duration": 50,
@@ -3739,7 +4149,7 @@
       ]
     },
     {
-      "unit": "Spring 1: Madd and An-Nazi'at",
+      "unit": "Spring 1: 'Abasa with makharij and sifat",
       "n": 17,
       "title": "Muraja'ah: 'Abasa 1 to 24 with makharij in recitation",
       "duration": 50,
@@ -3993,7 +4403,7 @@
       ]
     },
     {
-      "unit": "Spring 1: Madd and An-Nazi'at",
+      "unit": "Spring 1: 'Abasa with makharij and sifat",
       "n": 18,
       "title": "Surat 'Abasa 80:25-33: hear, understand and memorise",
       "duration": 50,
@@ -4276,7 +4686,7 @@
       ]
     },
     {
-      "unit": "Spring 1: Madd and An-Nazi'at",
+      "unit": "Spring 1: 'Abasa with makharij and sifat",
       "n": 19,
       "title": "Surat 'Abasa 80:34-42: hear, understand and memorise",
       "duration": 50,
@@ -4556,7 +4966,7 @@
       ]
     },
     {
-      "unit": "Spring 1: Madd and An-Nazi'at",
+      "unit": "Spring 1: 'Abasa with makharij and sifat",
       "n": 20,
       "title": "Half-term hifdh check: 'Abasa against the rubric",
       "duration": 50,
@@ -4800,7 +5210,7 @@
       ]
     },
     {
-      "unit": "Spring 2: An-Naba'",
+      "unit": "Spring 2: Madd and An-Nazi'at",
       "n": 21,
       "title": "Surat An-Nazi'at 79:1-8: hear, understand and memorise",
       "duration": 50,
@@ -5083,7 +5493,7 @@
       ]
     },
     {
-      "unit": "Spring 2: An-Naba'",
+      "unit": "Spring 2: Madd and An-Nazi'at",
       "n": 22,
       "title": "Muraja'ah: 'Abasa and An-Nazi'at 1 to 8 with madd",
       "duration": 50,
@@ -5303,7 +5713,7 @@
       ]
     },
     {
-      "unit": "Spring 2: An-Naba'",
+      "unit": "Spring 2: Madd and An-Nazi'at",
       "n": 23,
       "title": "Surat An-Nazi'at 79:9-16: hear, understand and memorise",
       "duration": 50,
@@ -5586,7 +5996,7 @@
       ]
     },
     {
-      "unit": "Spring 2: An-Naba'",
+      "unit": "Spring 2: Madd and An-Nazi'at",
       "n": 24,
       "title": "Muraja'ah: An-Nazi'at 1 to 16 with muttasil and munfasil",
       "duration": 50,
@@ -5802,7 +6212,7 @@
       ]
     },
     {
-      "unit": "Spring 2: An-Naba'",
+      "unit": "Spring 2: Madd and An-Nazi'at",
       "n": 25,
       "title": "Stopping and starting: waqf and ibtida'",
       "duration": 50,
@@ -6061,7 +6471,7 @@
       ]
     },
     {
-      "unit": "Spring 2: An-Naba'",
+      "unit": "Spring 2: Madd and An-Nazi'at",
       "n": 26,
       "title": "Surat An-Nazi'at 79:17-24: hear, understand and memorise",
       "duration": 50,
@@ -6344,7 +6754,7 @@
       ]
     },
     {
-      "unit": "Spring 2: An-Naba'",
+      "unit": "Spring 2: Madd and An-Nazi'at",
       "n": 27,
       "title": "Muraja'ah: An-Nazi'at 1 to 24 with clean stops",
       "duration": 50,
@@ -6564,7 +6974,7 @@
       ]
     },
     {
-      "unit": "Spring 2: An-Naba'",
+      "unit": "Spring 2: Madd and An-Nazi'at",
       "n": 28,
       "title": "Applying the rules in An-Nazi'at 25 to 32",
       "duration": 50,
@@ -6797,7 +7207,7 @@
       ]
     },
     {
-      "unit": "Spring 2: An-Naba'",
+      "unit": "Spring 2: Madd and An-Nazi'at",
       "n": 29,
       "title": "Surat An-Nazi'at 79:25-32: hear, understand and memorise",
       "duration": 50,
@@ -7080,7 +7490,7 @@
       ]
     },
     {
-      "unit": "Spring 2: An-Naba'",
+      "unit": "Spring 2: Madd and An-Nazi'at",
       "n": 30,
       "title": "Muraja'ah: 'Abasa whole and An-Nazi'at 1 to 32",
       "duration": 50,
@@ -7296,7 +7706,7 @@
       ]
     },
     {
-      "unit": "Spring 2: An-Naba'",
+      "unit": "Spring 2: Madd and An-Nazi'at",
       "n": 31,
       "title": "Recitation practice: peer listening with the rubric",
       "duration": 50,
@@ -7526,7 +7936,7 @@
       ]
     },
     {
-      "unit": "Spring 2: An-Naba'",
+      "unit": "Spring 2: Madd and An-Nazi'at",
       "n": 32,
       "title": "Surat An-Nazi'at 79:33-40: hear, understand and memorise",
       "duration": 50,
@@ -7809,7 +8219,7 @@
       ]
     },
     {
-      "unit": "Spring 2: An-Naba'",
+      "unit": "Spring 2: Madd and An-Nazi'at",
       "n": 33,
       "title": "Muraja'ah: An-Nazi'at 1 to 40",
       "duration": 50,
@@ -8025,7 +8435,7 @@
       ]
     },
     {
-      "unit": "Spring 2: An-Naba'",
+      "unit": "Spring 2: Madd and An-Nazi'at",
       "n": 34,
       "title": "Surat An-Nazi'at 79:41-46: hear, understand and memorise",
       "duration": 50,
@@ -8300,7 +8710,7 @@
       ]
     },
     {
-      "unit": "Spring 2: An-Naba'",
+      "unit": "Spring 2: Madd and An-Nazi'at",
       "n": 35,
       "title": "An-Nazi'at as a whole: meaning and tadabbur",
       "duration": 50,
@@ -8515,7 +8925,7 @@
       ]
     },
     {
-      "unit": "Spring 2: An-Naba'",
+      "unit": "Spring 2: Madd and An-Nazi'at",
       "n": 36,
       "title": "Half-term hifdh check: An-Nazi'at against the rubric",
       "duration": 50,
@@ -8764,6 +9174,2558 @@
         {
           "find": "Check list clipboard",
           "alt": "A checklist",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: An-Naba' and Al-Qadr as a model",
+      "n": 37,
+      "title": "Surat An-Naba' 78:1-8: hear, understand and memorise",
+      "duration": 50,
+      "bigQuestion": "People argue about many 'big questions'. What is 'the great news' (an-naba' al-'azim) that An-Naba' begins with?",
+      "objectives": [
+        "To memorise An-Naba' 78:1-8 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 78:1-8 after the teacher, word for word",
+        "Most: recite 78:1-8 from memory with no more than one prompt",
+        "Some: link 78:1-8 to the ayat before and name the tajweed rules in them"
+      ],
+      "crossCurricular": "Geography: mountain roots and the structure of the Earth (Year 9 inside the Earth links here)",
+      "smsc": "Spiritual: reflecting on Allah's signs in creation",
+      "keywords": [
+        {
+          "term": "an-naba' (النبأ)",
+          "def": "the news, the great announcement"
+        },
+        {
+          "term": "mihad (مهاد)",
+          "def": "a resting place, a bed"
+        },
+        {
+          "term": "awtad (أوتاد)",
+          "def": "stakes, pegs"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "People argue about many 'big questions'. What is 'the great news' (an-naba' al-'azim) that An-Naba' begins with?",
+        "a": "The news of the Resurrection and the Day of Judgement, which people disputed; Allah says they will come to know (78:4 to 5)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Have We not made the earth a resting place? And the mountains as stakes?' (An-Naba' 78:6 to 7). The surah begins with signs in creation that point to the Creator.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which surah begins «عَمَّ يَتَسَآءَلُونَ ...»?",
+          "a": "An-Naba'",
+          "mins": 1,
+          "options": [
+            "An-Nazi'at",
+            "'Abasa",
+            "An-Naba'"
+          ]
+        },
+        {
+          "q": "Recite An-Nazi'at 79:40 in your head. How does the next ayah begin?",
+          "a": "فَإِنَّ ٱلْجَنَّةَ",
+          "mins": 1,
+          "options": [
+            "فَٱلْمُدَبِّرَٰتِ أَمْرًۭا",
+            "إِنَّمَآ أَنتَ",
+            "فَإِنَّ ٱلْجَنَّةَ"
+          ]
+        },
+        {
+          "q": "«ٱلطَّآمَّةُ» (79:34) has madd ...",
+          "a": "lazim",
+          "mins": 1,
+          "options": [
+            "lazim",
+            "munfasil",
+            "badal"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: An-Naba' 78:1-5",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 78:1-5 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "عَمَّ يَتَسَآءَلُونَ (١) عَنِ ٱلنَّبَإِ ٱلْعَظِيمِ (٢) ٱلَّذِى هُمْ فِيهِ مُخْتَلِفُونَ (٣) كَلَّا سَيَعْلَمُونَ (٤) ثُمَّ كَلَّا سَيَعْلَمُونَ (٥)",
+            "source": "Surat An-Naba', 78:1-5"
+          }
+        },
+        {
+          "heading": "New ayat: An-Naba' 78:6-8",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 78:6-8 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "أَلَمْ نَجْعَلِ ٱلْأَرْضَ مِهَٰدًۭا (٦) وَٱلْجِبَالَ أَوْتَادًۭا (٧) وَخَلَقْنَٰكُمْ أَزْوَٰجًۭا (٨)",
+            "source": "Surat An-Naba', 78:6-8"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "78:1",
+                "About what are they asking one another?"
+              ],
+              [
+                "78:2",
+                "About the great news -"
+              ],
+              [
+                "78:3",
+                "That over which they are in disagreement."
+              ],
+              [
+                "78:4",
+                "No! They are going to know."
+              ],
+              [
+                "78:5",
+                "Then, no! They are going to know."
+              ],
+              [
+                "78:6",
+                "Have We not made the earth a resting place?"
+              ],
+              [
+                "78:7",
+                "And the mountains as stakes?"
+              ],
+              [
+                "78:8",
+                "And We created you in pairs"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "عَمَّ",
+                "An-Naba' 78:1",
+                "Ghunnah: meem with shaddah",
+                "Two counts"
+              ],
+              [
+                "يَتَسَآءَلُونَ",
+                "An-Naba' 78:1",
+                "Madd muttasil, then 'aarid at the stop",
+                "Four or five; then 2, 4 or 6"
+              ],
+              [
+                "هُمْ فِيهِ",
+                "An-Naba' 78:3",
+                "Izhar shafawi before ف (take care)",
+                "Clear meem"
+              ],
+              [
+                "أَلَمْ نَجْعَلِ",
+                "An-Naba' 78:6",
+                "Izhar shafawi; qalqalah on ج",
+                "Clear meem; small bounce"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 78:1-8 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Which signs of creation are named in 78:6 to 8?",
+            "options": [
+              "The earth as a resting place, the mountains as stakes, people in pairs",
+              "Rain, rivers and seas",
+              "The sun, the moon and the stars"
+            ],
+            "answer": 0,
+            "why": "78:6 to 8."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link An-Naba' 78:1-8 together, ayah by ayah.",
+          "a": "The class recites 78:1-8 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 78:1-8. Ayah 1: 3 times looking, 3 times without looking. Then ayah 2 the same way. Then link: recite 1 and 2 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "«هُمْ فِيهِ»: meem before ف is ...",
+          "a": "izhar shafawi",
+          "mins": 1,
+          "options": [
+            "izhar shafawi",
+            "ikhfa' shafawi",
+            "idgham shafawi"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 78:1-8 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 8,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "Explain in one sentence how mountains are 'stakes' (78:7).",
+          "a": "Like tent pegs, they are fixed deep and give stability to the earth's surface.",
+          "mins": 2
+        },
+        {
+          "q": "Why does 78:4 to 5 repeat 'No! They are going to know'?",
+          "a": "Repetition gives emphasis and warning: the truth will certainly become clear.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "An-Naba' 78:2: «عَنِ ...» Which word comes next?",
+          "a": "ٱلنَّبَإِ",
+          "mins": 1,
+          "options": [
+            "حَمِيمًۭا",
+            "أَحْقَابًۭا",
+            "ٱلنَّبَإِ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: People argue about many 'big questions'. What is 'the great news' (an-naba' al-'azim) that An-Naba' begins with?",
+          "a": "The news of the Resurrection and the Day of Judgement, which people disputed; Allah says they will come to know (78:4 to 5).",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite An-Naba' 78:1-8 to a parent three times a day and revise An-Nazi'at 1 to 16 (today's rota group); tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: An-Naba' 78:1-8 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Night sky Milky Way desert",
+          "alt": "The night sky over the desert",
+          "for": "hook"
+        },
+        {
+          "find": "Mountain range peaks",
+          "alt": "Mountains: 'and the mountains as stakes' (78:7)",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: An-Naba' and Al-Qadr as a model",
+      "n": 38,
+      "title": "Muraja'ah: An-Nazi'at and An-Naba' 1 to 8",
+      "duration": 50,
+      "bigQuestion": "When you learn a new surah, which old surah is most at risk of slipping, and why?",
+      "objectives": [
+        "To understand how to keep An-Nazi'at secure while adding An-Naba', using a revision rota"
+      ],
+      "successCriteria": [
+        "All: recite An-Naba' 1 to 8 alone",
+        "Most: recite An-Nazi'at 1 to 26 with two prompts or fewer",
+        "Some: recite An-Nazi'at 27 to 46 straight into An-Naba' 1 to 8"
+      ],
+      "smsc": "Moral: steady effort and honesty about gaps",
+      "keywords": [
+        {
+          "term": "muraja'ah (مراجعة)",
+          "def": "revising what has been memorised"
+        },
+        {
+          "term": "sabqi (سبقي)",
+          "def": "recent hifdh revised"
+        },
+        {
+          "term": "manzil (منزل)",
+          "def": "older hifdh revised"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "When you learn a new surah, which old surah is most at risk of slipping, and why?",
+        "a": "The one just before it, because we stop revising it once it feels finished."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We have certainly made the Qur'an easy for remembrance, so is there any who will remember?' (Al-Qamar 54:17).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite An-Nazi'at 79:20 in your head. How does the next ayah begin?",
+          "a": "فَكَذَّبَ وَعَصَىٰ",
+          "mins": 1,
+          "options": [
+            "وَبُرِّزَتِ ٱلْجَحِيمُ",
+            "فَكَذَّبَ وَعَصَىٰ",
+            "فَإِذَا هُم"
+          ]
+        },
+        {
+          "q": "Recite An-Nazi'at 79:36 in your head. How does the next ayah begin?",
+          "a": "فَأَمَّا مَن",
+          "mins": 1,
+          "options": [
+            "فَأَمَّا مَن",
+            "مَتَٰعًۭا لَّكُمْ",
+            "إِنَّ فِى"
+          ]
+        },
+        {
+          "q": "Recite An-Naba' 78:6 in your head. How does the next ayah begin?",
+          "a": "وَٱلْجِبَالَ أَوْتَادًۭا",
+          "mins": 1,
+          "options": [
+            "وَكُلَّ شَىْءٍ",
+            "وَٱلْجِبَالَ أَوْتَادًۭا",
+            "وَجَنَّٰتٍ أَلْفَافًا"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The rota",
+          "bullets": [],
+          "note": "Bismillah.",
+          "table": {
+            "head": [
+              "Day",
+              "New (sabaq)",
+              "Recent (sabqi)",
+              "Older (manzil)"
+            ],
+            "rows": [
+              [
+                "Mon",
+                "An-Naba' new ayat",
+                "An-Nazi'at 1 to 23",
+                "'Abasa"
+              ],
+              [
+                "Wed",
+                "An-Naba' new ayat",
+                "An-Nazi'at 24 to 46",
+                "Juz' 'Amma 81 to 90"
+              ],
+              [
+                "Fri",
+                "An-Naba' so far",
+                "An-Nazi'at whole",
+                "Juz' 'Amma 91 to 114"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "An-Nazi'at 79:34 to 41",
+          "bullets": [
+            "Recite with me"
+          ],
+          "note": "The weakest part for many pupils after the break.",
+          "quote": {
+            "text": "فَإِذَا جَآءَتِ ٱلطَّآمَّةُ ٱلْكُبْرَىٰ (٣٤) يَوْمَ يَتَذَكَّرُ ٱلْإِنسَٰنُ مَا سَعَىٰ (٣٥) وَبُرِّزَتِ ٱلْجَحِيمُ لِمَن يَرَىٰ (٣٦) فَأَمَّا مَن طَغَىٰ (٣٧) وَءَاثَرَ ٱلْحَيَوٰةَ ٱلدُّنْيَا (٣٨) فَإِنَّ ٱلْجَحِيمَ هِىَ ٱلْمَأْوَىٰ (٣٩) وَأَمَّا مَنْ خَافَ مَقَامَ رَبِّهِۦ وَنَهَى ٱلنَّفْسَ عَنِ ٱلْهَوَىٰ (٤٠) فَإِنَّ ٱلْجَنَّةَ هِىَ ٱلْمَأْوَىٰ (٤١)",
+            "source": "Surat An-Nazi'at, 79:34-41"
+          }
+        },
+        {
+          "heading": "How you will be marked",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Criterion",
+              "4 Secure",
+              "2 Developing"
+            ],
+            "rows": [
+              [
+                "Hifdh (memory)",
+                "No mistakes, no prompts",
+                "Two or more prompts"
+              ],
+              [
+                "Makharij and harakat",
+                "Every letter and vowel clear",
+                "Some letters or vowels changed"
+              ],
+              [
+                "Tajweed rules",
+                "Rules applied every time",
+                "Rules missed in places"
+              ],
+              [
+                "Fluency and waqf",
+                "Steady pace, sensible stops",
+                "Pauses mid-word or rushes"
+              ],
+              [
+                "Adab",
+                "Isti'adhah, Bismillah, calm and respectful",
+                "Needs reminders"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Sabqi means revising ...",
+            "options": [
+              "what was learned recently",
+              "new ayat",
+              "the whole Qur'an"
+            ],
+            "answer": 0,
+            "why": "Sabaq is new, sabqi recent, manzil older."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chain recitation: An-Nazi'at 27 to 46, one ayah per pupil, then An-Naba' 1 to 8.",
+          "a": "Recited in order.",
+          "mins": 4,
+          "model": "I do: I recite 79:27; the first name continues."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Rota: today's group recites An-Nazi'at 27 to 46 and An-Naba' 1 to 8 to the teacher. Everyone else: 3-3-link weak ayat and fill the rota.",
+          "a": "Rubric marked; rota filled.",
+          "mins": 15,
+          "model": "The teacher shows a filled rota."
+        },
+        {
+          "q": "Extend: write your three weakest ayat in the portal log.",
+          "a": "Three ayat listed with a plan.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Recite An-Nazi'at 79:42 in your head. How does the next ayah begin?",
+          "a": "فِيمَ أَنتَ",
+          "mins": 1,
+          "options": [
+            "وَءَاثَرَ ٱلْحَيَوٰةَ",
+            "فِيمَ أَنتَ",
+            "قُلُوبٌۭ يَوْمَئِذٍۢ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: When you learn a new surah, which old surah is most at risk of slipping, and why?",
+          "a": "The one just before it, because we stop revising it once it feels finished.",
+          "mins": 2
+        }
+      ],
+      "homework": "Follow the rota every day; recite An-Naba' 1 to 8 three times; log revision.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Muraja'ah rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Weekly calendar chart",
+          "alt": "A weekly rota",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: An-Naba' and Al-Qadr as a model",
+      "n": 39,
+      "title": "Surat An-Naba' 78:9-16: hear, understand and memorise",
+      "duration": 50,
+      "bigQuestion": "Sleep, night, day, rain, crops: An-Naba' lists daily blessings. Which one would you miss most if it stopped tomorrow?",
+      "objectives": [
+        "To memorise An-Naba' 78:9-16 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 78:9-16 after the teacher, word for word",
+        "Most: recite 78:9-16 from memory with no more than one prompt",
+        "Some: link 78:9-16 to the ayat before and name the tajweed rules in them"
+      ],
+      "crossCurricular": "Geography: the water cycle (Year 7 Spring 2 rivers unit)",
+      "smsc": "Spiritual: gratitude for daily blessings",
+      "keywords": [
+        {
+          "term": "subat (سبات)",
+          "def": "rest"
+        },
+        {
+          "term": "siraj (سراج)",
+          "def": "a lamp"
+        },
+        {
+          "term": "thajjaj (ثجاج)",
+          "def": "pouring abundantly"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Sleep, night, day, rain, crops: An-Naba' lists daily blessings. Which one would you miss most if it stopped tomorrow?",
+        "a": "Each pupil chooses; the point of 78:9 to 16 is that every one is a gift and a sign."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And made your sleep [a means for] rest And made the night as clothing And made the day for livelihood' (An-Naba' 78:9 to 11).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite An-Naba' 78:4 in your head. How does the next ayah begin?",
+          "a": "ثُمَّ كَلَّا",
+          "mins": 1,
+          "options": [
+            "وَسُيِّرَتِ ٱلْجِبَالُ",
+            "وَجَعَلْنَا سِرَاجًۭا",
+            "ثُمَّ كَلَّا"
+          ]
+        },
+        {
+          "q": "Recite Al-Qadr 97:2 in your head. How does the next ayah begin?",
+          "a": "لَيْلَةُ ٱلْقَدْرِ",
+          "mins": 1,
+          "options": [
+            "سَلَٰمٌ هِىَ",
+            "إِنَّآ أَنزَلْنَٰهُ",
+            "لَيْلَةُ ٱلْقَدْرِ"
+          ]
+        },
+        {
+          "q": "An-Naba' 78:8: «وَخَلَقْنَٰكُمْ ...» Which word comes next?",
+          "a": "أَزْوَٰجًۭا",
+          "mins": 1,
+          "options": [
+            "نَوْمَكُمْ",
+            "أَزْوَٰجًۭا",
+            "شِدَادًۭا"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: An-Naba' 78:9-16",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 78:9-16 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "وَجَعَلْنَا نَوْمَكُمْ سُبَاتًۭا (٩) وَجَعَلْنَا ٱلَّيْلَ لِبَاسًۭا (١٠) وَجَعَلْنَا ٱلنَّهَارَ مَعَاشًۭا (١١) وَبَنَيْنَا فَوْقَكُمْ سَبْعًۭا شِدَادًۭا (١٢) وَجَعَلْنَا سِرَاجًۭا وَهَّاجًۭا (١٣) وَأَنزَلْنَا مِنَ ٱلْمُعْصِرَٰتِ مَآءًۭ ثَجَّاجًۭا (١٤) لِّنُخْرِجَ بِهِۦ حَبًّۭا وَنَبَاتًۭا (١٥) وَجَنَّٰتٍ أَلْفَافًا (١٦)",
+            "source": "Surat An-Naba', 78:9-16"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "78:9",
+                "And made your sleep [a means for] rest"
+              ],
+              [
+                "78:10",
+                "And made the night as clothing"
+              ],
+              [
+                "78:11",
+                "And made the day for livelihood"
+              ],
+              [
+                "78:12",
+                "And constructed above you seven strong [heavens]"
+              ],
+              [
+                "78:13",
+                "And made [therein] a burning lamp"
+              ],
+              [
+                "78:14",
+                "And sent down, from the rain clouds, pouring water"
+              ],
+              [
+                "78:15",
+                "That We may bring forth thereby grain and vegetation"
+              ],
+              [
+                "78:16",
+                "And gardens of entwined growth."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "سَبْعًۭا شِدَادًۭا",
+                "An-Naba' 78:12",
+                "Ikhfa': tanween before ش",
+                "Light hum"
+              ],
+              [
+                "سِرَاجًۭا وَهَّاجًۭا",
+                "An-Naba' 78:13",
+                "Idgham with ghunnah: tanween into و",
+                "siraajaw-wahhaajaa"
+              ],
+              [
+                "مَآءًۭ ثَجَّاجًۭا",
+                "An-Naba' 78:14",
+                "Madd muttasil; ikhfa' (tanween before ث)",
+                "Four or five; light hum"
+              ],
+              [
+                "حَبًّۭا وَنَبَاتًۭا",
+                "An-Naba' 78:15",
+                "Idgham with ghunnah: tanween into و",
+                "habbaw-wa nabaataa"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 78:9-16 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "What is 'a burning lamp' (78:13)?",
+            "options": [
+              "The sun",
+              "A candle",
+              "The moon"
+            ],
+            "answer": 0,
+            "why": "Allah made the sun a blazing lamp."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link An-Naba' 78:9-16 together, ayah by ayah.",
+          "a": "The class recites 78:9-16 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 78:9-16. Ayah 9: 3 times looking, 3 times without looking. Then ayah 10 the same way. Then link: recite 9 and 10 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "«سَبْعًۭا شِدَادًۭا»: tanween before ش is ...",
+          "a": "ikhfa'",
+          "mins": 1,
+          "options": [
+            "ikhfa'",
+            "izhar",
+            "idgham"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 78:9-16 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 10,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "List six blessings in 78:9 to 16.",
+          "a": "Sleep for rest, night as clothing, day for living, seven strong heavens, the sun, rain for grain, plants and gardens.",
+          "mins": 2
+        },
+        {
+          "q": "Link 78:14 to the water cycle: what are 'the rain clouds' doing?",
+          "a": "Clouds hold water vapour that condenses and falls as heavy rain.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "An-Naba' 78:13: «وَجَعَلْنَا ...» Which word comes next?",
+          "a": "سِرَاجًۭا",
+          "mins": 1,
+          "options": [
+            "سِرَاجًۭا",
+            "ٱلْجِبَالُ",
+            "بَيْنَهُمَا"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Sleep, night, day, rain, crops: An-Naba' lists daily blessings. Which one would you miss most if it stopped tomorrow?",
+          "a": "Each pupil chooses; the point of 78:9 to 16 is that every one is a gift and a sign.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite An-Naba' 78:9-16 to a parent three times a day and revise An-Naba' 1 to 8; tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: An-Naba' 78:9-16 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Heavy rain clouds",
+          "alt": "Rain clouds pouring",
+          "for": "hook"
+        },
+        {
+          "find": "Wheat field",
+          "alt": "Grain and plants (78:15)",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: An-Naba' and Al-Qadr as a model",
+      "n": 40,
+      "title": "Surat An-Naba' 78:17-24: hear, understand and memorise",
+      "duration": 50,
+      "bigQuestion": "'The Day of Judgement is an appointed time' (78:17). Why do you think Allah has not told us when it is?",
+      "objectives": [
+        "To memorise An-Naba' 78:17-24 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 78:17-24 after the teacher, word for word",
+        "Most: recite 78:17-24 from memory with no more than one prompt",
+        "Some: link 78:17-24 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Spiritual: readiness for the Day of Judgement",
+      "keywords": [
+        {
+          "term": "yawm al-fasl (يوم الفصل)",
+          "def": "the Day of Judgement, the Day of separation"
+        },
+        {
+          "term": "as-sur (الصور)",
+          "def": "the Horn"
+        },
+        {
+          "term": "mirsad (مرصاد)",
+          "def": "a place lying in wait"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "'The Day of Judgement is an appointed time' (78:17). Why do you think Allah has not told us when it is?",
+        "a": "So that we are always ready and keep doing good, never delaying repentance."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, the Day of Judgement is an appointed time -' (An-Naba' 78:17).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite An-Naba' 78:10 in your head. How does the next ayah begin?",
+          "a": "وَجَعَلْنَا ٱلنَّهَارَ",
+          "mins": 1,
+          "options": [
+            "وَجَعَلْنَا ٱلنَّهَارَ",
+            "يَوْمَ يَقُومُ",
+            "يَوْمَ يُنفَخُ"
+          ]
+        },
+        {
+          "q": "«سِرَاجًۭا وَهَّاجًۭا» is ...",
+          "a": "idgham with ghunnah",
+          "mins": 1,
+          "options": [
+            "idgham with ghunnah",
+            "izhar"
+          ]
+        },
+        {
+          "q": "An-Naba' 78:16: «وَجَنَّٰتٍ ...» Which word comes next?",
+          "a": "أَلْفَافًا",
+          "mins": 1,
+          "options": [
+            "عَذَابًا",
+            "وَلَا",
+            "أَلْفَافًا"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: An-Naba' 78:17-24",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 78:17-24 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "إِنَّ يَوْمَ ٱلْفَصْلِ كَانَ مِيقَٰتًۭا (١٧) يَوْمَ يُنفَخُ فِى ٱلصُّورِ فَتَأْتُونَ أَفْوَاجًۭا (١٨) وَفُتِحَتِ ٱلسَّمَآءُ فَكَانَتْ أَبْوَٰبًۭا (١٩) وَسُيِّرَتِ ٱلْجِبَالُ فَكَانَتْ سَرَابًا (٢٠) إِنَّ جَهَنَّمَ كَانَتْ مِرْصَادًۭا (٢١) لِّلطَّٰغِينَ مَـَٔابًۭا (٢٢) لَّٰبِثِينَ فِيهَآ أَحْقَابًۭا (٢٣) لَّا يَذُوقُونَ فِيهَا بَرْدًۭا وَلَا شَرَابًا (٢٤)",
+            "source": "Surat An-Naba', 78:17-24"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "78:17",
+                "Indeed, the Day of Judgement is an appointed time -"
+              ],
+              [
+                "78:18",
+                "The Day the Horn is blown and you will come forth in multitudes"
+              ],
+              [
+                "78:19",
+                "And the heaven is opened and will become gateways"
+              ],
+              [
+                "78:20",
+                "And the mountains are removed and will be [but] a mirage."
+              ],
+              [
+                "78:21",
+                "Indeed, Hell has been lying in wait"
+              ],
+              [
+                "78:22",
+                "For the transgressors, a place of return,"
+              ],
+              [
+                "78:23",
+                "In which they will remain for ages [unending]."
+              ],
+              [
+                "78:24",
+                "They will not taste therein [any] coolness or drink"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "إِنَّ يَوْمَ",
+                "An-Naba' 78:17",
+                "Ghunnah: noon with shaddah",
+                "Two counts"
+              ],
+              [
+                "يُنفَخُ",
+                "An-Naba' 78:18",
+                "Ikhfa': noon before ف",
+                "Light hum"
+              ],
+              [
+                "فِيهَآ أَحْقَابًۭا",
+                "An-Naba' 78:23",
+                "Madd munfasil",
+                "Four or five counts"
+              ],
+              [
+                "بَرْدًۭا",
+                "An-Naba' 78:24",
+                "Qalqalah on د (sakin, mid-word)",
+                "Small bounce"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 78:17-24 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "What happens to the mountains (78:20)?",
+            "options": [
+              "They are moved and become like a mirage",
+              "They grow taller",
+              "They turn to gold"
+            ],
+            "answer": 0,
+            "why": "78:20."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link An-Naba' 78:17-24 together, ayah by ayah.",
+          "a": "The class recites 78:17-24 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 78:17-24. Ayah 17: 3 times looking, 3 times without looking. Then ayah 18 the same way. Then link: recite 17 and 18 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "«يُنفَخُ» is read with ...",
+          "a": "ikhfa'",
+          "mins": 1,
+          "options": [
+            "ikhfa'",
+            "izhar",
+            "iqlab"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 78:17-24 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 10,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "List three things that happen on that Day in 78:18 to 20.",
+          "a": "The Horn is blown; people come in crowds; the heaven opens like gateways; the mountains become a mirage.",
+          "mins": 2
+        },
+        {
+          "q": "Explain «جَهَنَّمَ كَانَتْ مِرْصَادًۭا»: what is a 'place of ambush'?",
+          "a": "A place lying in wait: Hell awaits the transgressors.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "An-Naba' 78:18: «يَوْمَ يُنفَخُ فِى ...» Which word comes next?",
+          "a": "ٱلصُّورِ",
+          "mins": 1,
+          "options": [
+            "ٱلصُّورِ",
+            "وَجَعَلْنَا",
+            "يُنفَخُ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: 'The Day of Judgement is an appointed time' (78:17). Why do you think Allah has not told us when it is?",
+          "a": "So that we are always ready and keep doing good, never delaying repentance.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite An-Naba' 78:17-24 to a parent three times a day and revise An-Naba' 1 to 16; tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: An-Naba' 78:17-24 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mirage desert heat",
+          "alt": "A desert mirage (78:20)",
+          "for": "hook"
+        },
+        {
+          "find": "Mountain range peaks",
+          "alt": "Mountains: 'and the mountains as stakes' (78:7)",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: An-Naba' and Al-Qadr as a model",
+      "n": 41,
+      "title": "Muraja'ah: An-Naba' 1 to 24 with madd",
+      "duration": 50,
+      "bigQuestion": "Many ayat of An-Naba' end in '-aa'. How can that help or trip up your memory?",
+      "objectives": [
+        "To understand how to recite An-Naba' 1 to 24 from memory with every madd held to its count"
+      ],
+      "successCriteria": [
+        "All: recite 78:1 to 16 alone",
+        "Most: recite 78:1 to 24 with two prompts or fewer",
+        "Some: name the madd family of any word the teacher points to"
+      ],
+      "smsc": "Social: encouraging each other",
+      "keywords": [
+        {
+          "term": "muraja'ah (مراجعة)",
+          "def": "revising what has been memorised"
+        },
+        {
+          "term": "madd (مد)",
+          "def": "lengthening a vowel by set counts"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Many ayat of An-Naba' end in '-aa'. How can that help or trip up your memory?",
+        "a": "The rhyme helps the flow, but similar endings can make you jump to the wrong ayah: link each ayah to its meaning."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And recite the Qur'an with measured recitation' (Al-Muzzammil 73:4).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite An-Naba' 78:12 in your head. How does the next ayah begin?",
+          "a": "وَجَعَلْنَا سِرَاجًۭا",
+          "mins": 1,
+          "options": [
+            "يَوْمَ يُنفَخُ",
+            "وَجَعَلْنَا ٱلنَّهَارَ",
+            "وَجَعَلْنَا سِرَاجًۭا"
+          ]
+        },
+        {
+          "q": "Recite An-Naba' 78:19 in your head. How does the next ayah begin?",
+          "a": "وَسُيِّرَتِ ٱلْجِبَالُ",
+          "mins": 1,
+          "options": [
+            "ٱلَّذِى هُمْ",
+            "وَسُيِّرَتِ ٱلْجِبَالُ",
+            "جَزَآءًۭ مِّن"
+          ]
+        },
+        {
+          "q": "«فِيهَآ أَحْقَابًۭا» has madd ...",
+          "a": "munfasil",
+          "mins": 1,
+          "options": [
+            "munfasil",
+            "muttasil"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "78:17 to 24",
+          "bullets": [
+            "Recite with me"
+          ],
+          "note": "Bismillah.",
+          "quote": {
+            "text": "إِنَّ يَوْمَ ٱلْفَصْلِ كَانَ مِيقَٰتًۭا (١٧) يَوْمَ يُنفَخُ فِى ٱلصُّورِ فَتَأْتُونَ أَفْوَاجًۭا (١٨) وَفُتِحَتِ ٱلسَّمَآءُ فَكَانَتْ أَبْوَٰبًۭا (١٩) وَسُيِّرَتِ ٱلْجِبَالُ فَكَانَتْ سَرَابًا (٢٠) إِنَّ جَهَنَّمَ كَانَتْ مِرْصَادًۭا (٢١) لِّلطَّٰغِينَ مَـَٔابًۭا (٢٢) لَّٰبِثِينَ فِيهَآ أَحْقَابًۭا (٢٣) لَّا يَذُوقُونَ فِيهَا بَرْدًۭا وَلَا شَرَابًا (٢٤)",
+            "source": "Surat An-Naba', 78:17-24"
+          }
+        },
+        {
+          "heading": "Madd in 78:1 to 24",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Word",
+              "Family",
+              "Counts"
+            ],
+            "rows": [
+              [
+                "يَتَسَآءَلُونَ",
+                "Muttasil",
+                "4 or 5"
+              ],
+              [
+                "مَآءًۭ",
+                "Muttasil",
+                "4 or 5"
+              ],
+              [
+                "فِيهَآ",
+                "Munfasil",
+                "4 or 5"
+              ],
+              [
+                "ٱلْعَظِيمِ",
+                "'Aarid at the stop",
+                "2, 4 or 6"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "How you will be marked",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Criterion",
+              "4 Secure",
+              "2 Developing"
+            ],
+            "rows": [
+              [
+                "Hifdh (memory)",
+                "No mistakes, no prompts",
+                "Two or more prompts"
+              ],
+              [
+                "Makharij and harakat",
+                "Every letter and vowel clear",
+                "Some letters or vowels changed"
+              ],
+              [
+                "Tajweed rules",
+                "Rules applied every time",
+                "Rules missed in places"
+              ],
+              [
+                "Fluency and waqf",
+                "Steady pace, sensible stops",
+                "Pauses mid-word or rushes"
+              ],
+              [
+                "Adab",
+                "Isti'adhah, Bismillah, calm and respectful",
+                "Needs reminders"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "«مَآءً» is madd ...",
+            "options": [
+              "muttasil",
+              "munfasil",
+              "lazim"
+            ],
+            "answer": 0,
+            "why": "Madd and hamza in the same word."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chain recitation of 78:1 to 24, one ayah per pupil.",
+          "a": "Recited in order.",
+          "mins": 4,
+          "model": "I do: I recite 78:1; the first name continues."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Rota: today's group recites 78:1 to 24 to the teacher. Everyone else: 3-3-link their weakest ayat and log them.",
+          "a": "Rubric marked; gaps logged.",
+          "mins": 15,
+          "model": "The teacher shows the log."
+        },
+        {
+          "q": "Extend: recite 78:17 to 24 at a steady pace with even madd.",
+          "a": "Recited.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Recite An-Naba' 78:21 in your head. How does the next ayah begin?",
+          "a": "لِّلطَّٰغِينَ مَـَٔابًۭا",
+          "mins": 1,
+          "options": [
+            "لِّنُخْرِجَ بِهِۦ",
+            "وَبَنَيْنَا فَوْقَكُمْ",
+            "لِّلطَّٰغِينَ مَـَٔابًۭا"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Many ayat of An-Naba' end in '-aa'. How can that help or trip up your memory?",
+          "a": "The rhyme helps the flow, but similar endings can make you jump to the wrong ayah: link each ayah to its meaning.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite An-Naba' 1 to 24 daily; follow your planner; log revision.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Muraja'ah rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Ruler measuring length",
+          "alt": "Each madd has its count",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: An-Naba' and Al-Qadr as a model",
+      "n": 42,
+      "title": "Surat An-Naba' 78:25-32: hear, understand and memorise",
+      "duration": 50,
+      "bigQuestion": "'Everything We have enumerated in writing' (78:29). How does knowing that every deed is recorded change how you spend a day?",
+      "objectives": [
+        "To memorise An-Naba' 78:25-32 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 78:25-32 after the teacher, word for word",
+        "Most: recite 78:25-32 from memory with no more than one prompt",
+        "Some: link 78:25-32 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Spiritual: balancing fear and hope",
+      "keywords": [
+        {
+          "term": "wifaq (وفاق)",
+          "def": "fitting, appropriate"
+        },
+        {
+          "term": "ahsaynahu (أحصيناه)",
+          "def": "We have counted it all"
+        },
+        {
+          "term": "mafaz (مفاز)",
+          "def": "success, attainment"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "'Everything We have enumerated in writing' (78:29). How does knowing that every deed is recorded change how you spend a day?",
+        "a": "It makes us careful with small things too: words, time and how we treat people."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'But all things We have enumerated in writing.' (An-Naba' 78:29) and 'Indeed, for the righteous is attainment -' (78:31).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite An-Naba' 78:20 in your head. How does the next ayah begin?",
+          "a": "إِنَّ جَهَنَّمَ",
+          "mins": 1,
+          "options": [
+            "وَأَنزَلْنَا مِنَ",
+            "إِنَّ جَهَنَّمَ",
+            "جَزَآءًۭ وِفَاقًا"
+          ]
+        },
+        {
+          "q": "«يُنفَخُ» is ...",
+          "a": "ikhfa'",
+          "mins": 1,
+          "options": [
+            "ikhfa'",
+            "iqlab"
+          ]
+        },
+        {
+          "q": "An-Naba' 78:24: «لَّا يَذُوقُونَ فِيهَا ...» Which word comes next?",
+          "a": "بَرْدًۭا",
+          "mins": 1,
+          "options": [
+            "بَرْدًۭا",
+            "مَعَاشًۭا",
+            "أَبْوَٰبًۭا"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: An-Naba' 78:25-32",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 78:25-32 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "إِلَّا حَمِيمًۭا وَغَسَّاقًۭا (٢٥) جَزَآءًۭ وِفَاقًا (٢٦) إِنَّهُمْ كَانُوا۟ لَا يَرْجُونَ حِسَابًۭا (٢٧) وَكَذَّبُوا۟ بِـَٔايَٰتِنَا كِذَّابًۭا (٢٨) وَكُلَّ شَىْءٍ أَحْصَيْنَٰهُ كِتَٰبًۭا (٢٩) فَذُوقُوا۟ فَلَن نَّزِيدَكُمْ إِلَّا عَذَابًا (٣٠) إِنَّ لِلْمُتَّقِينَ مَفَازًا (٣١) حَدَآئِقَ وَأَعْنَٰبًۭا (٣٢)",
+            "source": "Surat An-Naba', 78:25-32"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "78:25",
+                "Except scalding water and [foul] purulence -"
+              ],
+              [
+                "78:26",
+                "An appropriate recompense."
+              ],
+              [
+                "78:27",
+                "Indeed, they were not expecting an account"
+              ],
+              [
+                "78:28",
+                "And denied Our verses with [emphatic] denial."
+              ],
+              [
+                "78:29",
+                "But all things We have enumerated in writing."
+              ],
+              [
+                "78:30",
+                "\"So taste [the penalty], and never will We increase you except in torment.\""
+              ],
+              [
+                "78:31",
+                "Indeed, for the righteous is attainment -"
+              ],
+              [
+                "78:32",
+                "Gardens and grapevines"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "حَمِيمًۭا وَغَسَّاقًۭا",
+                "An-Naba' 78:25",
+                "Idgham with ghunnah: tanween into و",
+                "hameemaw-wa ghassaaqaa"
+              ],
+              [
+                "جَزَآءًۭ وِفَاقًا",
+                "An-Naba' 78:26",
+                "Madd muttasil; idgham with ghunnah",
+                "Four or five; merge and hum"
+              ],
+              [
+                "فَلَن نَّزِيدَكُمْ",
+                "An-Naba' 78:30",
+                "Idgham with ghunnah: noon into ن",
+                "falan-nazeedakum"
+              ],
+              [
+                "حَدَآئِقَ",
+                "An-Naba' 78:32",
+                "Madd muttasil",
+                "Four or five counts"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 78:25-32 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "What is promised to the righteous in 78:31 to 32?",
+            "options": [
+              "Attainment: gardens and grapevines",
+              "Gold coins",
+              "A long life on earth"
+            ],
+            "answer": 0,
+            "why": "78:31 to 32."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link An-Naba' 78:25-32 together, ayah by ayah.",
+          "a": "The class recites 78:25-32 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 78:25-32. Ayah 25: 3 times looking, 3 times without looking. Then ayah 26 the same way. Then link: recite 25 and 26 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "«فَلَن نَّزِيدَكُمْ» is ...",
+          "a": "idgham with ghunnah",
+          "mins": 1,
+          "options": [
+            "idgham with ghunnah",
+            "ikhfa'",
+            "izhar"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 78:25-32 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 10,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "Explain «جَزَآءًۭ وِفَاقًا» (78:26).",
+          "a": "A fitting recompense: the punishment matches what they did.",
+          "mins": 2
+        },
+        {
+          "q": "Why does the surah move from punishment (78:21 to 30) to reward (78:31)?",
+          "a": "To balance fear and hope, which a believer holds together.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "An-Naba' 78:27: «إِنَّهُمْ كَانُوا۟ ...» Which word comes next?",
+          "a": "لَا",
+          "mins": 1,
+          "options": [
+            "رَّبِّكَ",
+            "لَا",
+            "ثُمَّ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: 'Everything We have enumerated in writing' (78:29). How does knowing that every deed is recorded change how you spend a day?",
+          "a": "It makes us careful with small things too: words, time and how we treat people.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite An-Naba' 78:25-32 to a parent three times a day and revise An-Naba' 1 to 24; tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: An-Naba' 78:25-32 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Grapevine with grapes",
+          "alt": "Grapevines (78:32)",
+          "for": "hook"
+        },
+        {
+          "find": "Ledger book pages",
+          "alt": "A record book: everything is counted",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: An-Naba' and Al-Qadr as a model",
+      "n": 43,
+      "title": "Waqf in An-Naba': stopping on fathatan and the ayah ends",
+      "duration": 50,
+      "bigQuestion": "Almost every ayah of An-Naba' ends in -aa. What would go wrong if you said '-an' at each stop?",
+      "objectives": [
+        "To understand how to stop correctly on the many fathatan endings of An-Naba' and restart cleanly"
+      ],
+      "successCriteria": [
+        "All: stop on fathatan endings as a long aa",
+        "Most: keep each stop the same length (madd 'iwad, two counts)",
+        "Some: choose a sound breath point in a long ayah and restart correctly"
+      ],
+      "smsc": "Spiritual: care for the meaning of Allah's words",
+      "keywords": [
+        {
+          "term": "waqf (وقف)",
+          "def": "stopping on a word, with a breath"
+        },
+        {
+          "term": "madd 'iwad (مد العوض)",
+          "def": "the long aa that replaces fathatan at a stop"
+        },
+        {
+          "term": "ibtida' (ابتداء)",
+          "def": "starting again after a stop"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Almost every ayah of An-Naba' ends in -aa. What would go wrong if you said '-an' at each stop?",
+        "a": "That is the joined form; at a stop the tanween on fathah becomes a two-count aa (madd 'iwad)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And recite the Qur'an with measured recitation' (Al-Muzzammil 73:4).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite An-Naba' 78:26 in your head. How does the next ayah begin?",
+          "a": "إِنَّهُمْ كَانُوا۟",
+          "mins": 1,
+          "options": [
+            "وَجَعَلْنَا نَوْمَكُمْ",
+            "وَٱلْجِبَالَ أَوْتَادًۭا",
+            "إِنَّهُمْ كَانُوا۟"
+          ]
+        },
+        {
+          "q": "«فَلَن نَّزِيدَكُمْ» is ...",
+          "a": "idgham with ghunnah",
+          "mins": 1,
+          "options": [
+            "idgham with ghunnah",
+            "izhar"
+          ]
+        },
+        {
+          "q": "An-Naba' 78:30: «فَذُوقُوا۟ فَلَن نَّزِيدَكُمْ ...» Which word comes next?",
+          "a": "إِلَّا",
+          "mins": 1,
+          "options": [
+            "يَرْجُونَ",
+            "إِلَّا",
+            "حَبًّۭا"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Madd 'iwad",
+          "bullets": [
+            "Fathatan at a stop becomes aa",
+            "Two counts, every time",
+            "Dammatan and kasratan: drop the vowel at a stop"
+          ],
+          "note": "Bismillah."
+        },
+        {
+          "heading": "Endings in An-Naba'",
+          "bullets": [],
+          "note": "Read joined, then stopping.",
+          "table": {
+            "head": [
+              "Word",
+              "Joined",
+              "At the stop"
+            ],
+            "rows": [
+              [
+                "مِهَٰدًۭا",
+                "mihaadan",
+                "mihaadaa"
+              ],
+              [
+                "مِرْصَادًۭا",
+                "mirsaadan",
+                "mirsaadaa"
+              ],
+              [
+                "ٱلْعَظِيمِ",
+                "al-'adheemi",
+                "al-'adheem"
+              ],
+              [
+                "عَذَابًا",
+                "'adhaaban",
+                "'adhaabaa"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Breath in a long ayah",
+          "bullets": [
+            "Breathe at a sign or an ayah end",
+            "In an emergency, stop on a whole word",
+            "Restart from the start of the phrase"
+          ],
+          "note": "Practise with 78:24.",
+          "quote": {
+            "text": "لَّا يَذُوقُونَ فِيهَا بَرْدًۭا وَلَا شَرَابًا (٢٤)",
+            "source": "Surat An-Naba', 78:24"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Stopping on «أَوْتَادًۭا» we say ...",
+            "options": [
+              "awtaadaa",
+              "awtaadan",
+              "awtaad"
+            ],
+            "answer": 0,
+            "why": "Fathatan at a stop: madd 'iwad, two counts."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Recite 78:6 to 11 stopping at every ayah end with madd 'iwad.",
+          "a": "mihaadaa, awtaadaa, azwaajaa, subaataa, libaasaa, ma'aashaa.",
+          "mins": 4,
+          "model": "I do: «مِهَٰدًۭا» (stop) mihaadaa: two counts; the same at every stop."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: write the stopped form of ten ayah endings from 78:1 to 32. Today's rota group recites 78:1 to 32.",
+          "a": "Fathatan endings as -aa; 78:2 al-'adheem; 78:3 mukhtalifoon.",
+          "mins": 12,
+          "model": "The teacher writes 78:1 first."
+        },
+        {
+          "q": "Extend: recite 78:24 with an emergency stop after «بَرْدًۭا» and a correct restart.",
+          "a": "Restart at «وَلَا شَرَابًا».",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: why is madd 'iwad two counts and not six?",
+          "a": "It replaces the tanween with a natural alif: a natural madd of two counts.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Madd 'iwad lasts ...",
+          "a": "two counts",
+          "mins": 1,
+          "options": [
+            "two counts",
+            "six counts"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Almost every ayah of An-Naba' ends in -aa. What would go wrong if you said '-an' at each stop?",
+          "a": "That is the joined form; at a stop the tanween on fathah becomes a two-count aa (madd 'iwad).",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite An-Naba' 1 to 32 with correct stops; log revision.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Waqf in An-Naba' rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Pause button symbol",
+          "alt": "A pause sign",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: An-Naba' and Al-Qadr as a model",
+      "n": 44,
+      "title": "Surat An-Naba' 78:33-40: hear, understand and memorise",
+      "duration": 50,
+      "bigQuestion": "An-Naba' ends with someone wishing 'I were dust' (78:40). Why would anyone wish that?",
+      "objectives": [
+        "To memorise An-Naba' 78:33-40 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 78:33-40 after the teacher, word for word",
+        "Most: recite 78:33-40 from memory with no more than one prompt",
+        "Some: link 78:33-40 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Moral: responsibility for our choices",
+      "keywords": [
+        {
+          "term": "al-haqq (الحق)",
+          "def": "the true, certain"
+        },
+        {
+          "term": "ma'ab (مآب)",
+          "def": "a place of return"
+        },
+        {
+          "term": "turab (تراب)",
+          "def": "dust"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "An-Naba' ends with someone wishing 'I were dust' (78:40). Why would anyone wish that?",
+        "a": "Out of regret on the Day of Judgement; the surah warns us now so that we never feel that regret."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'That is the True Day; so he who wills may take to his Lord a [way of] return. Indeed, We have warned you of a near punishment on the Day when a man will observe what his hands have put forth and the disbeliever will say, \"Oh, I wish that I were dust!\"' (An-Naba' 78:39 to 40).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite An-Naba' 78:28 in your head. How does the next ayah begin?",
+          "a": "وَكُلَّ شَىْءٍ",
+          "mins": 1,
+          "options": [
+            "ثُمَّ كَلَّا",
+            "وَبَنَيْنَا فَوْقَكُمْ",
+            "وَكُلَّ شَىْءٍ"
+          ]
+        },
+        {
+          "q": "Madd 'iwad lasts ...",
+          "a": "two counts",
+          "mins": 1,
+          "options": [
+            "two counts",
+            "four counts"
+          ]
+        },
+        {
+          "q": "An-Naba' 78:32: «حَدَآئِقَ ...» Which word comes next?",
+          "a": "وَأَعْنَٰبًۭا",
+          "mins": 1,
+          "options": [
+            "وَأَعْنَٰبًۭا",
+            "كَانَ",
+            "بَرْدًۭا"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: An-Naba' 78:33-37",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 78:33-37 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "وَكَوَاعِبَ أَتْرَابًۭا (٣٣) وَكَأْسًۭا دِهَاقًۭا (٣٤) لَّا يَسْمَعُونَ فِيهَا لَغْوًۭا وَلَا كِذَّٰبًۭا (٣٥) جَزَآءًۭ مِّن رَّبِّكَ عَطَآءً حِسَابًۭا (٣٦) رَّبِّ ٱلسَّمَٰوَٰتِ وَٱلْأَرْضِ وَمَا بَيْنَهُمَا ٱلرَّحْمَٰنِ ۖ لَا يَمْلِكُونَ مِنْهُ خِطَابًۭا (٣٧)",
+            "source": "Surat An-Naba', 78:33-37"
+          }
+        },
+        {
+          "heading": "New ayat: An-Naba' 78:38-40",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 78:38-40 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "يَوْمَ يَقُومُ ٱلرُّوحُ وَٱلْمَلَٰٓئِكَةُ صَفًّۭا ۖ لَّا يَتَكَلَّمُونَ إِلَّا مَنْ أَذِنَ لَهُ ٱلرَّحْمَٰنُ وَقَالَ صَوَابًۭا (٣٨) ذَٰلِكَ ٱلْيَوْمُ ٱلْحَقُّ ۖ فَمَن شَآءَ ٱتَّخَذَ إِلَىٰ رَبِّهِۦ مَـَٔابًا (٣٩) إِنَّآ أَنذَرْنَٰكُمْ عَذَابًۭا قَرِيبًۭا يَوْمَ يَنظُرُ ٱلْمَرْءُ مَا قَدَّمَتْ يَدَاهُ وَيَقُولُ ٱلْكَافِرُ يَٰلَيْتَنِى كُنتُ تُرَٰبًۢا (٤٠)",
+            "source": "Surat An-Naba', 78:38-40"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "A translation of the meaning, not the Qur'an itself",
+            "78:33 is abridged here for the class"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "78:33",
+                "And [companions] of equal age (abridged)."
+              ],
+              [
+                "78:34",
+                "And a full cup."
+              ],
+              [
+                "78:35",
+                "No ill speech will they hear therein or any falsehood -"
+              ],
+              [
+                "78:36",
+                "[As] reward from your Lord, [a generous] gift [made due by] account,"
+              ],
+              [
+                "78:37",
+                "[From] the Lord of the heavens and the earth and whatever is between them, the Most Merciful. They possess not from Him [authority for] speech."
+              ],
+              [
+                "78:38",
+                "The Day that the Spirit and the angels will stand in rows, they will not speak except for one whom the Most Merciful permits, and he will say what is correct."
+              ],
+              [
+                "78:39",
+                "That is the True Day; so he who wills may take to his Lord a [way of] return."
+              ],
+              [
+                "78:40",
+                "Indeed, We have warned you of a near punishment on the Day when a man will observe what his hands have put forth and the disbeliever will say, \"Oh, I wish that I were dust!\""
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "جَزَآءًۭ مِّن رَّبِّكَ",
+                "An-Naba' 78:36",
+                "Idgham with ghunnah; then idgham without ghunnah (noon into ر)",
+                "jazaa'am-mir-rabbika"
+              ],
+              [
+                "ٱلرَّحْمَٰنِ",
+                "An-Naba' 78:37",
+                "Sign ۖ: continuing is better",
+                "Join if you have breath"
+              ],
+              [
+                "فَمَن شَآءَ",
+                "An-Naba' 78:39",
+                "Ikhfa': noon before ش; madd muttasil",
+                "Light hum; four or five"
+              ],
+              [
+                "إِنَّآ أَنذَرْنَٰكُمْ",
+                "An-Naba' 78:40",
+                "Ghunnah; munfasil; ikhfa'",
+                "in-naaa andharnaakum"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 78:33-40 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Who may speak on that Day (78:38)?",
+            "options": [
+              "Only one whom the Most Merciful permits, and he says what is right",
+              "Everyone at once",
+              "No one ever"
+            ],
+            "answer": 0,
+            "why": "78:38."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link An-Naba' 78:33-40 together, ayah by ayah.",
+          "a": "The class recites 78:33-40 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 78:33-40. Ayah 33: 3 times looking, 3 times without looking. Then ayah 34 the same way. Then link: recite 33 and 34 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "«فَمَن شَآءَ» is ...",
+          "a": "ikhfa'",
+          "mins": 1,
+          "options": [
+            "ikhfa'",
+            "idgham"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 78:33-40 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 8,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "Recite all of An-Naba' to a partner.",
+          "a": "Forty ayat recited.",
+          "mins": 2
+        },
+        {
+          "q": "78:39 says 'whoever wills may take to his Lord a way of return'. What does that teach about choice?",
+          "a": "Allah has made the way clear; each person is responsible for choosing it.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "An-Naba' 78:38: «يَوْمَ يَقُومُ ٱلرُّوحُ ...» Which word comes next?",
+          "a": "وَٱلْمَلَٰٓئِكَةُ",
+          "mins": 1,
+          "options": [
+            "ٱلْكَافِرُ",
+            "وَٱلْمَلَٰٓئِكَةُ",
+            "حِسَابًۭا"
+          ]
+        },
+        {
+          "q": "Back to our ponder: An-Naba' ends with someone wishing 'I were dust' (78:40). Why would anyone wish that?",
+          "a": "Out of regret on the Day of Judgement; the surah warns us now so that we never feel that regret.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite An-Naba' 78:33-40 to a parent three times a day and revise An-Naba' 1 to 32; tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: An-Naba' 78:33-40 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Desert dust sand",
+          "alt": "Dust and sand (78:40)",
+          "for": "hook"
+        },
+        {
+          "find": "Quran manuscript page",
+          "alt": "A page of the Qur'an",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: An-Naba' and Al-Qadr as a model",
+      "n": 45,
+      "title": "An-Naba' as a whole: meaning and tadabbur",
+      "duration": 50,
+      "bigQuestion": "An-Naba' starts with people asking questions and ends with a person full of regret. What happens in between to change everything?",
+      "objectives": [
+        "To understand the structure and main message of An-Naba' and reflect on what it asks of me"
+      ],
+      "successCriteria": [
+        "All: name the four parts of An-Naba'",
+        "Most: explain how the signs in 78:6 to 16 prove the Resurrection",
+        "Some: write a reflection that links one ayah to my own actions"
+      ],
+      "smsc": "Spiritual: reflection that leads to action",
+      "keywords": [
+        {
+          "term": "tadabbur (تدبر)",
+          "def": "reflecting deeply on the Qur'an"
+        },
+        {
+          "term": "ba'th (بعث)",
+          "def": "resurrection"
+        },
+        {
+          "term": "an-naba' (النبأ)",
+          "def": "the great news"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "An-Naba' starts with people asking questions and ends with a person full of regret. What happens in between to change everything?",
+        "a": "Allah shows His signs, describes the Day of Judgement, its punishment and reward, and calls us to choose the way back to Him."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'That is the True Day; so he who wills may take to his Lord a [way of] return.' (An-Naba' 78:39).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite An-Naba' 78:35 in your head. How does the next ayah begin?",
+          "a": "جَزَآءًۭ مِّن",
+          "mins": 1,
+          "options": [
+            "وَكَذَّبُوا۟ بِـَٔايَٰتِنَا",
+            "جَزَآءًۭ مِّن",
+            "لَّٰبِثِينَ فِيهَآ"
+          ]
+        },
+        {
+          "q": "Recite An-Naba' 78:38 in your head. How does the next ayah begin?",
+          "a": "ذَٰلِكَ ٱلْيَوْمُ",
+          "mins": 1,
+          "options": [
+            "ذَٰلِكَ ٱلْيَوْمُ",
+            "إِنَّآ أَنذَرْنَٰكُمْ",
+            "يَوْمَ يُنفَخُ"
+          ]
+        },
+        {
+          "q": "78:40 ends with a wish to be ...",
+          "a": "dust",
+          "mins": 1,
+          "options": [
+            "dust",
+            "a king",
+            "a bird"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The four parts",
+          "bullets": [],
+          "note": "Bismillah.",
+          "table": {
+            "head": [
+              "Ayat",
+              "Theme"
+            ],
+            "rows": [
+              [
+                "78:1 to 5",
+                "The great news people dispute"
+              ],
+              [
+                "78:6 to 16",
+                "Signs in creation: the One who made this can raise the dead"
+              ],
+              [
+                "78:17 to 30",
+                "The Day of Judgement and the punishment of transgressors"
+              ],
+              [
+                "78:31 to 40",
+                "The reward of the righteous; the Day of truth; the choice"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "An argument from creation",
+          "bullets": [
+            "Allah made the earth, mountains, sleep, night and day",
+            "He brings dead land to life with rain",
+            "So raising people again is easy for Him"
+          ],
+          "note": "This is how the surah answers the doubt in 78:1 to 3."
+        },
+        {
+          "heading": "Tadabbur steps",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Read the ayah and its meaning",
+            "Ask: what does Allah tell me here?",
+            "Ask: what does it ask me to do?",
+            "Write one action",
+            "Make du'a"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "How do 78:6 to 16 answer people who doubt the Resurrection?",
+            "options": [
+              "The One who created all this can easily recreate",
+              "They describe Paradise",
+              "They tell a story of a prophet"
+            ],
+            "answer": 0,
+            "why": "Signs in creation point to Allah's power to resurrect."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Model tadabbur on 78:9 together.",
+          "a": "Sleep is rest from Allah; action: sleep on time, say the sleeping du'a and wake for Fajr.",
+          "mins": 4,
+          "model": "I do: read 78:9 and its meaning; what Allah tells me (sleep is His gift); what it asks (gratitude); one action (sleep early for Fajr)."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Tadabbur (portal response box): choose one ayah of An-Naba'; write what it tells you and one action, using the steps. Today's rota group recites An-Naba' whole.",
+          "a": "A short reflection with the ayah cited and a realistic action.",
+          "mins": 12,
+          "model": "The teacher's 78:9 model stays on screen."
+        },
+        {
+          "q": "Extend: draw the surah's structure as a flow diagram (no living beings).",
+          "a": "Four boxes linked by arrows.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "78:31 to 40 is mainly about ...",
+          "a": "the reward and the Day of truth",
+          "mins": 1,
+          "options": [
+            "the reward and the Day of truth",
+            "the creation of mountains"
+          ]
+        },
+        {
+          "q": "Back to our ponder: An-Naba' starts with people asking questions and ends with a person full of regret. What happens in between to change everything?",
+          "a": "Allah shows His signs, describes the Day of Judgement, its punishment and reward, and calls us to choose the way back to Him.",
+          "mins": 2
+        }
+      ],
+      "homework": "Act on your tadabbur action this week; recite An-Naba' whole; log revision.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: An-Naba' as a whole rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Night sky Milky Way desert",
+          "alt": "The night sky over the desert",
+          "for": "hook"
+        },
+        {
+          "find": "Mountain range peaks",
+          "alt": "Mountains: 'and the mountains as stakes' (78:7)",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: An-Naba' and Al-Qadr as a model",
+      "n": 46,
+      "title": "Half-term hifdh check: An-Naba' against the rubric",
+      "duration": 50,
+      "bigQuestion": "Juz' 'Amma is now almost complete. What will help you keep 37 surahs for life?",
+      "objectives": [
+        "To understand how secure An-Naba' is against the rubric and set targets for the summer"
+      ],
+      "successCriteria": [
+        "All: recite 78:1 to 20 alone",
+        "Most: recite all 40 ayat with two prompts or fewer",
+        "Some: recite with every rule and stop correct"
+      ],
+      "smsc": "Spiritual: thankfulness for the hifdh achieved",
+      "keywords": [
+        {
+          "term": "rubric",
+          "def": "the criteria for marking recitation"
+        },
+        {
+          "term": "muraja'ah (مراجعة)",
+          "def": "revising what has been memorised"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Juz' 'Amma is now almost complete. What will help you keep 37 surahs for life?",
+        "a": "A manzil rota, reciting in salah, and teaching younger siblings."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We have certainly made the Qur'an easy for remembrance, so is there any who will remember?' (Al-Qamar 54:17).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite An-Naba' 78:15 in your head. How does the next ayah begin?",
+          "a": "وَجَنَّٰتٍ أَلْفَافًا",
+          "mins": 1,
+          "options": [
+            "فَذُوقُوا۟ فَلَن",
+            "حَدَآئِقَ وَأَعْنَٰبًۭا",
+            "وَجَنَّٰتٍ أَلْفَافًا"
+          ]
+        },
+        {
+          "q": "Recite An-Naba' 78:29 in your head. How does the next ayah begin?",
+          "a": "فَذُوقُوا۟ فَلَن",
+          "mins": 1,
+          "options": [
+            "ذَٰلِكَ ٱلْيَوْمُ",
+            "لَّٰبِثِينَ فِيهَآ",
+            "فَذُوقُوا۟ فَلَن"
+          ]
+        },
+        {
+          "q": "Recite An-Naba' 78:36 in your head. How does the next ayah begin?",
+          "a": "رَّبِّ ٱلسَّمَٰوَٰتِ",
+          "mins": 1,
+          "options": [
+            "وَجَعَلْنَا ٱلنَّهَارَ",
+            "وَفُتِحَتِ ٱلسَّمَآءُ",
+            "رَّبِّ ٱلسَّمَٰوَٰتِ"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "How you will be marked",
+          "bullets": [],
+          "note": "Bismillah.",
+          "table": {
+            "head": [
+              "Criterion",
+              "4 Secure",
+              "2 Developing"
+            ],
+            "rows": [
+              [
+                "Hifdh (memory)",
+                "No mistakes, no prompts",
+                "Two or more prompts"
+              ],
+              [
+                "Makharij and harakat",
+                "Every letter and vowel clear",
+                "Some letters or vowels changed"
+              ],
+              [
+                "Tajweed rules",
+                "Rules applied every time",
+                "Rules missed in places"
+              ],
+              [
+                "Fluency and waqf",
+                "Steady pace, sensible stops",
+                "Pauses mid-word or rushes"
+              ],
+              [
+                "Adab",
+                "Isti'adhah, Bismillah, calm and respectful",
+                "Needs reminders"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "An-Naba' 78:31 to 40",
+          "bullets": [
+            "Recite with me"
+          ],
+          "note": "Recite together before the turns.",
+          "quote": {
+            "text": "رَّبِّ ٱلسَّمَٰوَٰتِ وَٱلْأَرْضِ وَمَا بَيْنَهُمَا ٱلرَّحْمَٰنِ ۖ لَا يَمْلِكُونَ مِنْهُ خِطَابًۭا (٣٧) يَوْمَ يَقُومُ ٱلرُّوحُ وَٱلْمَلَٰٓئِكَةُ صَفًّۭا ۖ لَّا يَتَكَلَّمُونَ إِلَّا مَنْ أَذِنَ لَهُ ٱلرَّحْمَٰنُ وَقَالَ صَوَابًۭا (٣٨) ذَٰلِكَ ٱلْيَوْمُ ٱلْحَقُّ ۖ فَمَن شَآءَ ٱتَّخَذَ إِلَىٰ رَبِّهِۦ مَـَٔابًا (٣٩) إِنَّآ أَنذَرْنَٰكُمْ عَذَابًۭا قَرِيبًۭا يَوْمَ يَنظُرُ ٱلْمَرْءُ مَا قَدَّمَتْ يَدَاهُ وَيَقُولُ ٱلْكَافِرُ يَٰلَيْتَنِى كُنتُ تُرَٰبًۢا (٤٠)",
+            "source": "Surat An-Naba', 78:37-40"
+          }
+        },
+        {
+          "heading": "My targets",
+          "bullets": [
+            "One hifdh target",
+            "One tajweed target",
+            "One adab target"
+          ],
+          "note": "Pupils write targets in the portal after their turn."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "How many ayat in An-Naba'?",
+            "options": [
+              "40",
+              "46",
+              "42"
+            ],
+            "answer": 0,
+            "why": "An-Naba' has 40 ayat."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Whole class recites 78:31 to 40 together.",
+          "a": "Recited together.",
+          "mins": 4,
+          "model": "I do: I lead, with ۖ signs and madd held evenly."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Hifdh check: today's group recites An-Naba' to the teacher against the rubric. Everyone else: manzil rota and targets in the log.",
+          "a": "Rubric marks and targets recorded.",
+          "mins": 15,
+          "model": "The teacher shows one turn."
+        },
+        {
+          "q": "Extend: recite 'Abasa 1 to 16 from the manzil rota.",
+          "a": "Recited.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Juz' 'Amma begins with ...",
+          "a": "An-Naba'",
+          "mins": 1,
+          "options": [
+            "An-Naba'",
+            "An-Nas",
+            "Al-Mulk"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Juz' 'Amma is now almost complete. What will help you keep 37 surahs for life?",
+          "a": "A manzil rota, reciting in salah, and teaching younger siblings.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite An-Naba' daily; keep the manzil rota; log revision.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Half-term hifdh check rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Gold star sticker",
+          "alt": "A star for the hifdh check",
           "for": "teach:1"
         }
       ]
