@@ -2,7 +2,7 @@
   "subject": "Arabic",
   "year": "y7",
   "board": "Pearson Edexcel (KS3 aligned to GCSE Arabic 1AA0)",
-  "source": "Drive: Curriculum/Arabic folder (GCSE-Arabic Scheme of Work, Pearson) and Secondary Lesson Plan - Arabic - Y8 (format, vocabulary approach and misconceptions); Edexcel GCSE Arabic (1AA0) themes as KS3 preparation | Spring 1 2027 (lessons 1, 2, 9 to 16): founding-year bridge (11 Jan letters, vowels and signs; 18 Jan long vowels, greetings, days and months) and Spring 1 weeks 1 to 3 (numbers 1 to 20 and how many; colours; clothes, dictation and unit quiz), order from the Tarbiyyah Secondary KS3 Arabic scheme of work and Arabic Curriculum Intent; lessons v3",
+  "source": "Drive: Curriculum/Arabic folder (GCSE-Arabic Scheme of Work, Pearson) and Secondary Lesson Plan - Arabic - Y8 (format, vocabulary approach and misconceptions); Edexcel GCSE Arabic (1AA0) themes as KS3 preparation | Spring 1 2027 (lessons 1, 2, 9 to 16): founding-year bridge (11 Jan letters, vowels and signs; 18 Jan long vowels, greetings, days and months) and Spring 1 weeks 1 to 3 (numbers 1 to 20 and how many; colours; clothes, dictation and unit quiz), order from the Tarbiyyah Secondary KS3 Arabic scheme of work and Arabic Curriculum Intent; lessons v3 | Spring 2 2027 (lessons 3 to 6 upgraded, 17 to 23 new): Year 7 pack Arabic Spring 2 weeks 1 to 6 (pronouns; family and extended family; adjectives; moods and reasons; I have; my, your and iḍāfah; speaking task; unit quiz), two lessons a week scaled to the short weeks (2, 2, 1, 2, 2, 2); our own dialogues; full harakat on vocabulary; lessons v3",
   "lessons": [
     {
       "unit": "Spring 1: Common vocabulary: numbers, colours, clothes and shapes",
@@ -518,428 +518,880 @@
       "duration": 50
     },
     {
-      "unit": "Unit 2: My family and me",
+      "unit": "Spring 2: Common vocabulary: personal pronouns, my family, adjectives and moods",
       "n": 3,
       "title": "My family: relatives in Arabic",
       "duration": 50,
+      "bigQuestion": "What is the most important thing a family gives each other?",
       "objectives": [
-        "Name close and extended family members",
-        "Say 'my ...' using the suffix ـِي",
-        "Explain the difference between 'amm, khal, 'amma and khala"
+        "To understand and use the core family words to introduce my family"
       ],
+      "successCriteria": [
+        "All: name six family members",
+        "Most: say هٰذَا أَبِي / هٰذِهِ أُمِّي",
+        "Some: describe a family of five in three sentences"
+      ],
+      "smsc": "Moral: respect for family",
       "keywords": [
         {
-          "term": "أُسْرَتِي",
-          "def": "my family"
+          "term": "عَائِلَة ('a'ilah)",
+          "def": "family"
         },
         {
-          "term": "عَمِّي",
-          "def": "my paternal uncle"
+          "term": "أَب / أَبِي (ab / abi)",
+          "def": "father / my father"
         },
         {
-          "term": "خَالِي",
-          "def": "my maternal uncle"
+          "term": "أُمّ / أُمِّي (umm / ummi)",
+          "def": "mother / my mother"
         },
         {
-          "term": "عَمَّتِي",
-          "def": "my paternal aunt"
+          "term": "أَخ / أُخْت (akh / ukht)",
+          "def": "brother / sister"
         },
         {
-          "term": "خَالَتِي",
-          "def": "my maternal aunt"
-        },
-        {
-          "term": "ابْنُ عَمِّي",
-          "def": "my cousin (son of paternal uncle)"
+          "term": "جَدّ / جَدَّة (jadd / jaddah)",
+          "def": "grandfather / grandmother"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "What is the most important thing a family gives each other?",
+        "a": "Love, care and respect: Islam honours parents greatly."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We have enjoined upon man goodness to his parents' (al-'Ankabut 29:8).",
+        "at": "start"
+      },
       "starter": [
-        "Say your age in Arabic.",
-        "Give two pieces of personal information in Arabic.",
-        "Count from 11 to 15 in Arabic."
+        {
+          "q": "Bismillah. 'We' is ...",
+          "a": "نَحْنُ",
+          "mins": 1,
+          "options": [
+            "نَحْنُ",
+            "هُمْ"
+          ]
+        },
+        {
+          "q": "أَنْتُمْ means ...",
+          "a": "You (all)",
+          "mins": 1,
+          "options": [
+            "You (all)",
+            "They"
+          ]
+        },
+        {
+          "q": "Say 'she is a student'.",
+          "a": "هِيَ طَالِبَةٌ",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Close family",
-          "bullets": [
-            "أَبِي وَأُمِّي",
-            "أَخِي وَأُخْتِي",
-            "جَدِّي وَجَدَّتِي"
-          ],
-          "note": "Quick recap: pupils label a family tree. Remind about -ee meaning 'my'. Check pronunciation of ukhtee. Pupils say 'This is my ...' for each member."
+          "heading": "Family words",
+          "bullets": [],
+          "note": "Begin with Bismillah. No pictures of people: use a family tree with boxes and words.",
+          "table": {
+            "head": [
+              "Arabic",
+              "English"
+            ],
+            "rows": [
+              [
+                "أَب",
+                "father"
+              ],
+              [
+                "أُمّ",
+                "mother"
+              ],
+              [
+                "أَخ",
+                "brother"
+              ],
+              [
+                "أُخْت",
+                "sister"
+              ],
+              [
+                "جَدّ",
+                "grandfather"
+              ],
+              [
+                "جَدَّة",
+                "grandmother"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Aunts and uncles",
+          "heading": "This is my ...",
           "bullets": [
-            "عَمِّي - father's brother",
-            "خَالِي - mother's brother",
-            "عَمَّتِي، خَالَتِي - aunts"
+            "هٰذَا أَبِي: this is my father",
+            "هٰذِهِ أُمِّي: this is my mother",
+            "ـِي = my"
           ],
-          "note": "Arabic distinguishes father's and mother's side. Show a tree to illustrate. Ask pupils to compare to English. This is a key cultural point. Misconception: confusing 'amm and khal; use colour coding."
+          "note": "Note: أَب → أَبِي, أَخ → أَخِي."
         },
         {
-          "heading": "Cousins",
-          "bullets": [
-            "ابْنُ عَمِّي - cousin (male)",
-            "بِنْتُ خَالِي - cousin (female)",
-            "Each cousin has a long name"
-          ],
-          "note": "Explain that cousins are described by their parent. Draw a short chain on the screen. Pupils say the term for a cousin on mother's side or father's side."
+          "heading": "Family tree",
+          "bullets": [],
+          "note": "Boxes and words only.",
+          "diagram": {
+            "centre": "عَائِلَتِي (my family)",
+            "items": [
+              "أَبِي",
+              "أُمِّي",
+              "أَخِي",
+              "أُخْتِي",
+              "جَدِّي",
+              "جَدَّتِي"
+            ]
+          }
         },
         {
-          "heading": "Respect for family",
+          "heading": "Quick check",
           "bullets": [
-            "Be kind to parents",
-            "Respect elders",
-            "Keep family ties"
+            "Vote in the Teams poll"
           ],
-          "note": "Qur'an 17:23 commands good treatment of parents. Hadith: 'He is not one of us who does not have mercy on our young or respect our elders' (Tirmidhi). Ask for examples of showing respect. Keep inclusive: some pupils have different family structures."
-        },
-        {
-          "heading": "Family sentences",
-          "bullets": [
-            "هَذَا عَمِّي، وَهَذِهِ خَالَتِي",
-            "أُحِبُّ جَدَّتِي كَثِيرًا",
-            "أُسْرَتِي كَبِيرَةٌ"
-          ],
-          "note": "Read the sentences and translate. Pupils write their own three sentences about family members. Check the change of ة to ت in khalatee and 'ammatee."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'My sister' is ...",
+            "options": [
+              "أُخْتِي",
+              "أَخِي",
+              "أُمِّي"
+            ],
+            "answer": 0,
+            "why": "أُخْت + ـِي = أُخْتِي."
+          }
         }
       ],
       "practice": [
-        "Label the family tree with Arabic words.",
-        "Say 'my uncle' and 'my aunt' (mother's side) in Arabic.",
-        "Describe your family tree to your partner using 'This is my ...'.",
-        "Spot and correct mistakes in sentences."
+        {
+          "q": "Say: this is my brother.",
+          "a": "هٰذَا أَخِي",
+          "mins": 2,
+          "model": "Teacher: brother is a boy word: هٰذَا. أَخ + ـِي = أَخِي. Together: هٰذَا أَخِي."
+        },
+        {
+          "q": "جَدَّة is ...",
+          "a": "Grandmother",
+          "mins": 1,
+          "options": [
+            "Grandmother",
+            "Grandfather"
+          ]
+        },
+        {
+          "q": "Say 'this is my mother'.",
+          "a": "هٰذِهِ أُمِّي",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Draw a family tree and label at least eight members in Arabic.",
-        "Write five sentences about your family.",
-        "Quiz your partner on relatives."
+        {
+          "q": "Family tree on the pupil PDF (boxes and words, no drawings of people): label your family (or an example family), then write four 'this is my ...' sentences.",
+          "a": "For example: هٰذَا أَبِي. هٰذِهِ أُمِّي. هٰذَا أَخِي. هٰذِهِ جَدَّتِي.",
+          "mins": 14,
+          "model": "Teacher fills the first two boxes and writes هٰذَا أَبِي."
+        },
+        {
+          "q": "Extend: say how many brothers and sisters: عِنْدِي أَخَوَانِ وَأُخْتٌ وَاحِدَةٌ.",
+          "a": "Pupils' own with numbers",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: write 'my family is big' / 'small'.",
+          "a": "عَائِلَتِي كَبِيرَةٌ / صَغِيرَةٌ",
+          "mins": 2
+        }
       ],
       "exit": [
-        "What is the Arabic for 'my maternal aunt'?",
-        "What changes when we add ـِي to ـَة?"
+        {
+          "q": "عَائِلَة is ...",
+          "a": "Family",
+          "mins": 1,
+          "options": [
+            "Family",
+            "House"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what does a family give?",
+          "a": "Love, care and respect.",
+          "mins": 2
+        }
       ],
-      "homework": "Write a paragraph (6 sentences) about your family.",
-      "send": "SEND: pre-labelled family tree. EAL: add home-language relatives. Stretch: include cousins and compare Arabic and English kinship words."
+      "homework": "Teach a family member five family words in Arabic.",
+      "send": "SEND: family tree boxes with words to drag. EAL: word grid. Stretch: add عَمّ and خَال (next lesson).",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Spring 2 week 2",
+        "Portal arabic y7 lesson 3 (this lesson)",
+        "Pupil PDF worksheet: my family tree (boxes and words)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "family tree diagram",
+          "alt": "A family tree diagram (boxes only)",
+          "for": "teach:3"
+        },
+        {
+          "find": "house front door",
+          "alt": "A family home",
+          "for": "hook"
+        }
+      ]
     },
     {
-      "unit": "Unit 2: My family and me",
+      "unit": "Spring 2: Common vocabulary: personal pronouns, my family, adjectives and moods",
       "n": 4,
       "title": "Describing people: looks and character",
       "duration": 50,
+      "bigQuestion": "Is it more important to describe what someone looks like or what they are like inside? Why?",
       "objectives": [
-        "Describe appearance with adjectives",
-        "Make adjectives agree with masculine and feminine nouns",
-        "Describe character with Islamic virtues"
+        "To understand how to describe people's looks and character with adjectives that agree"
       ],
+      "successCriteria": [
+        "All: use four adjectives of looks and character",
+        "Most: make adjectives agree with boys and girls",
+        "Some: describe a family member with three linked adjectives"
+      ],
+      "smsc": "Moral: valuing good character",
       "keywords": [
         {
-          "term": "طَوِيلٌ / طَوِيلَةٌ",
-          "def": "tall (m / f)"
+          "term": "صِفَة (sifah)",
+          "def": "adjective"
         },
         {
-          "term": "قَصِيرٌ / قَصِيرَةٌ",
-          "def": "short (m / f)"
+          "term": "طَوِيل / قَصِير (tawil / qasir)",
+          "def": "tall / short"
         },
         {
-          "term": "كَرِيمٌ / كَرِيمَةٌ",
+          "term": "كَرِيم (karim)",
           "def": "generous"
         },
         {
-          "term": "لَطِيفٌ / لَطِيفَةٌ",
-          "def": "kind"
+          "term": "ذَكِيّ (dhakiyy)",
+          "def": "clever"
         },
         {
-          "term": "صَادِقٌ / صَادِقَةٌ",
-          "def": "honest"
-        },
-        {
-          "term": "مُجْتَهِدٌ / مُجْتَهِدَةٌ",
-          "def": "hard-working"
+          "term": "لَطِيف (latif)",
+          "def": "kind, gentle"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is it more important to describe what someone looks like or what they are like inside? Why?",
+        "a": "Inside: Allah looks at hearts and deeds, not appearances (Muslim)."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Allah does not look at your appearance or wealth, but He looks at your hearts and deeds' (Muslim).",
+        "at": "start"
+      },
       "starter": [
-        "Name five relatives in Arabic.",
-        "Say 'my aunt is kind' in Arabic.",
-        "What is the feminine of كَبِير?"
+        {
+          "q": "Bismillah. Mother's sister is ...",
+          "a": "خَالَة",
+          "mins": 1,
+          "options": [
+            "خَالَة",
+            "عَمَّة"
+          ]
+        },
+        {
+          "q": "'My uncle' (father's side) is ...",
+          "a": "عَمِّي",
+          "mins": 1,
+          "options": [
+            "عَمِّي",
+            "خَالِي"
+          ]
+        },
+        {
+          "q": "Say 'this is my grandfather'.",
+          "a": "هٰذَا جَدِّي",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Appearance",
-          "bullets": [
-            "طَوِيلٌ - tall",
-            "قَصِيرٌ - short",
-            "شَعْرٌ أَسْوَدُ - black hair"
-          ],
-          "note": "Show pictures. Add colours of hair and eyes: عُيُونٌ بُنِّيَّةٌ (brown eyes), شَعْرٌ بُنِّيٌّ. Pupils describe. Alert: for plural non-human nouns Arabic uses a feminine singular adjective, save for later years."
+          "heading": "Looks and character",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "table": {
+            "head": [
+              "Looks",
+              "Character"
+            ],
+            "rows": [
+              [
+                "طَوِيل: tall",
+                "كَرِيم: generous"
+              ],
+              [
+                "قَصِير: short",
+                "ذَكِيّ: clever"
+              ],
+              [
+                "كَبِير: big, old",
+                "لَطِيف: kind"
+              ],
+              [
+                "صَغِير: small, young",
+                "صَبُور: patient"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Adjective agreement",
+          "heading": "Agreement",
           "bullets": [
-            "رَجُلٌ طَوِيلٌ",
-            "امْرَأَةٌ طَوِيلَةٌ",
-            "Adjective matches noun"
-          ],
-          "note": "Reinforce: adjective follows the noun, matches gender and definiteness. Show colour coding of endings. Misconception: placing the adjective first (English order). Practise sorting."
+            "أَخِي طَوِيلٌ",
+            "أُخْتِي طَوِيلَةٌ",
+            "ذَكِيّ → ذَكِيَّة"
+          ]
         },
         {
-          "heading": "Definite agreement",
+          "heading": "Linking with وَ",
           "bullets": [
-            "الرَّجُلُ الطَّوِيلُ - the tall man",
-            "الْمَرْأَةُ الطَّوِيلَةُ - the tall woman",
-            "الرَّجُلُ طَوِيلٌ - the man is tall"
-          ],
-          "note": "Contrast noun phrase and sentence: with al- on both words it is a phrase ('the tall man'); with al- only on the noun it is a sentence. A key skill for GCSE. Pupils transform examples."
+            "أَبِي طَوِيلٌ وَكَرِيمٌ",
+            "جَدَّتِي لَطِيفَةٌ وَصَبُورَةٌ",
+            "Use وَ to join adjectives"
+          ]
         },
         {
-          "heading": "Character",
+          "heading": "Quick check",
           "bullets": [
-            "كَرِيمٌ - generous",
-            "لَطِيفٌ - kind",
-            "صَادِقٌ - honest"
+            "Vote in the Teams poll"
           ],
-          "note": "Teach character adjectives. Hadith: 'The best of you are those with the best character' (Sahih al-Bukhari). Discuss how to show these traits. Pupils describe a family member."
-        },
-        {
-          "heading": "Describe a person",
-          "bullets": [
-            "أَخِي طَوِيلٌ وَكَرِيمٌ",
-            "أُخْتِي قَصِيرَةٌ وَلَطِيفَةٌ",
-            "جَدِّي صَادِقٌ"
-          ],
-          "note": "Pupils write and speak two-sentence descriptions of three relatives. Support with a word bank. Peer check agreement."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'My grandmother is kind' is ...",
+            "options": [
+              "جَدَّتِي لَطِيفَةٌ",
+              "جَدَّتِي لَطِيفٌ",
+              "جَدِّي لَطِيفَةٌ"
+            ],
+            "answer": 0,
+            "why": "جَدَّة is feminine: لَطِيفَةٌ."
+          }
         }
       ],
       "practice": [
-        "Make these feminine: لَطِيف، مُجْتَهِد.",
-        "Translate: هَذِهِ جَدَّتِي.",
-        "Describe the people in three pictures.",
-        "Transform: رَجُلٌ طَوِيلٌ → الرَّجُلُ طَوِيلٌ."
+        {
+          "q": "Say: my brother is clever and generous.",
+          "a": "أَخِي ذَكِيٌّ وَكَرِيمٌ",
+          "mins": 2,
+          "model": "Teacher: أَخِي (boy) → ذَكِيٌّ and كَرِيمٌ, joined with وَ."
+        },
+        {
+          "q": "صَبُور means ...",
+          "a": "Patient",
+          "mins": 1,
+          "options": [
+            "Patient",
+            "Tall"
+          ]
+        },
+        {
+          "q": "'My sister is short' is ...",
+          "a": "أُخْتِي قَصِيرَةٌ",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Write a description of two family members (appearance and character).",
-        "Fill the gaps with correct adjective forms.",
-        "Present your description to a partner."
+        {
+          "q": "Describe three family members on the pupil PDF (or in the portal response box): one look and one character adjective each, joined with وَ.",
+          "a": "For example: أَبِي طَوِيلٌ وَكَرِيمٌ. أُمِّي لَطِيفَةٌ وَذَكِيَّةٌ. أَخِي صَغِيرٌ وَمَرِحٌ.",
+          "mins": 14,
+          "model": "Teacher writes: أَبِي طَوِيلٌ وَكَرِيمٌ."
+        },
+        {
+          "q": "Extend: add جِدًّا (very): أُمِّي لَطِيفَةٌ جِدًّا.",
+          "a": "Sentence with جِدًّا",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: why does Islam value character more than looks?",
+          "a": "Allah looks at our hearts and deeds (Muslim).",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Make 'honest' feminine.",
-        "Translate: الْبِنْتُ كَرِيمَةٌ."
+        {
+          "q": "كَرِيم means ...",
+          "a": "Generous",
+          "mins": 1,
+          "options": [
+            "Generous",
+            "Clever"
+          ]
+        },
+        {
+          "q": "Back to our ponder: looks or inside?",
+          "a": "Inside: Allah looks at hearts and deeds.",
+          "mins": 2
+        }
       ],
-      "homework": "Write a paragraph describing your best friend or a relative (6-8 sentences).",
-      "send": "SEND: adjective cards with pictures; sentence frames. EAL: highlight endings in colour. Stretch: add reasons with لِأَنَّ and connect sentences with وَ."
+      "homework": "Write four sentences describing your family's character.",
+      "send": "SEND: adjective cards in two colours (boy / girl). EAL: adjective grid. Stretch: use جِدًّا and وَلٰكِنْ.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Spring 2 week 3",
+        "Portal arabic y7 lesson 4 (this lesson)",
+        "Pupil PDF worksheet: describing my family"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "tall tree short tree",
+          "alt": "Tall and short: طَوِيل وَقَصِير",
+          "for": "keywords"
+        },
+        {
+          "find": "gift box",
+          "alt": "A gift: كَرِيم (generous)",
+          "for": "teach:1"
+        }
+      ]
     },
     {
-      "unit": "Unit 2: My family and me",
+      "unit": "Spring 2: Common vocabulary: personal pronouns, my family, adjectives and moods",
       "n": 5,
       "title": "I have: عِنْدِي",
       "duration": 50,
+      "bigQuestion": "Arabic says 'with me is a brother' instead of 'I have a brother'. What does that show about how languages think?",
       "objectives": [
-        "Use عِنْدِي، عِنْدَكَ، عِنْدَهُ، عِنْدَهَا",
-        "Say what you and others have",
-        "Use هَلْ عِنْدَكَ ...؟ in questions"
+        "To understand how to say what I have and what others have using عِنْدَ with endings"
+      ],
+      "successCriteria": [
+        "All: say عِنْدِي with a family word",
+        "Most: change عِنْدِي to عِنْدَكَ، عِنْدَهُ، عِنْدَهَا",
+        "Some: answer هَلْ عِنْدَكَ ...؟ with نَعَمْ / لَا"
       ],
       "keywords": [
         {
-          "term": "عِنْدِي",
+          "term": "عِنْدِي ('indi)",
           "def": "I have"
         },
         {
-          "term": "عِنْدَكَ",
-          "def": "you (m) have"
+          "term": "عِنْدَكَ / عِنْدَكِ ('indaka / 'indaki)",
+          "def": "you have (boy / girl)"
         },
         {
-          "term": "عِنْدَهُ",
-          "def": "he has"
+          "term": "عِنْدَهُ / عِنْدَهَا ('indahu / 'indaha)",
+          "def": "he has / she has"
         },
         {
-          "term": "عِنْدَهَا",
-          "def": "she has"
+          "term": "هَلْ (hal)",
+          "def": "question word for yes/no"
         },
         {
-          "term": "لَيْسَ عِنْدِي",
+          "term": "لَيْسَ عِنْدِي (laysa 'indi)",
           "def": "I do not have"
-        },
-        {
-          "term": "هَلْ عِنْدَكَ ...؟",
-          "def": "do you have ...?"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Arabic says 'with me is a brother' instead of 'I have a brother'. What does that show about how languages think?",
+        "a": "Languages can say the same idea in different ways: عِنْدِي أَخٌ."
+      },
       "starter": [
-        "Describe a friend using two adjectives.",
-        "Say 'my sister is kind' in Arabic.",
-        "Make 'tall' feminine."
+        {
+          "q": "Bismillah. لِأَنَّ means ...",
+          "a": "Because",
+          "mins": 1,
+          "options": [
+            "Because",
+            "But"
+          ]
+        },
+        {
+          "q": "'Worried' is ...",
+          "a": "قَلِق",
+          "mins": 1,
+          "options": [
+            "قَلِق",
+            "فَرْحَان"
+          ]
+        },
+        {
+          "q": "Say 'I am happy'.",
+          "a": "أَنَا سَعِيدٌ / سَعِيدَةٌ",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Having things",
-          "bullets": [
-            "عِنْدِي كِتَابٌ - I have a book",
-            "عِنْدِي أَخٌ - I have a brother",
-            "Arabic has no verb 'to have' here"
-          ],
-          "note": "Explain that Arabic uses 'with me' ('indee) to say 'I have'. Mime 'to have'. The noun that follows is indefinite. Pupils say what they have in their bags."
+          "heading": "I have, you have ...",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "table": {
+            "head": [
+              "Arabic",
+              "English"
+            ],
+            "rows": [
+              [
+                "عِنْدِي",
+                "I have"
+              ],
+              [
+                "عِنْدَكَ / عِنْدَكِ",
+                "you have (boy / girl)"
+              ],
+              [
+                "عِنْدَهُ",
+                "he has"
+              ],
+              [
+                "عِنْدَهَا",
+                "she has"
+              ],
+              [
+                "عِنْدَنَا",
+                "we have"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Different people",
+          "heading": "Questions",
           "bullets": [
-            "عِنْدَكَ - you (m)",
-            "عِنْدَهُ - he",
-            "عِنْدَهَا - she"
-          ],
-          "note": "Show pronoun endings on 'inda: -ka, -hu, -haa. Model sentences about people in photos. Pupils choose the right form. Misconception: adding a separate pronoun as well as the ending; the ending already shows the person."
+            "هَلْ عِنْدَكَ أَخٌ؟ Do you have a brother?",
+            "نَعَمْ، عِنْدِي أَخٌ.",
+            "لَا، لَيْسَ عِنْدِي أَخٌ."
+          ]
         },
         {
-          "heading": "Family numbers",
+          "heading": "With numbers",
           "bullets": [
             "عِنْدِي أَخٌ وَاحِدٌ",
-            "عِنْدِي أُخْتَانِ",
+            "عِنْدِي أُخْتَانِ (two sisters)",
             "عِنْدِي ثَلَاثَةُ إِخْوَةٍ"
           ],
-          "note": "Teach: one brother, two sisters (dual ending -aani), three brothers (plural إِخْوَة). Practise with pictures. Note: 'brothers' in Arabic is إِخْوَةٌ, and 'sisters' is أَخَوَاتٌ."
+          "note": "Two: the dual ending ـَانِ."
         },
         {
-          "heading": "Questions and negative",
+          "heading": "Quick check",
           "bullets": [
-            "هَلْ عِنْدَكَ أَخٌ؟",
-            "نَعَمْ، عِنْدِي أَخٌ",
-            "لَا، لَيْسَ عِنْدِي أَخٌ"
+            "Vote in the Teams poll"
           ],
-          "note": "Practise questions and answers. Teach لَيْسَ عِنْدِي for 'I don't have'. Pupils make full dialogues about siblings."
-        },
-        {
-          "heading": "Class survey",
-          "bullets": [
-            "Ask 3 classmates",
-            "Record their answers",
-            "Report: عِنْدَهُ ..."
-          ],
-          "note": "Run a survey in pairs: do you have siblings? Pets? Report using 'indahu/'indahaa. Check that pupils use the correct pronoun ending."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'She has a cat' is ...",
+            "options": [
+              "عِنْدَهَا قِطَّةٌ",
+              "عِنْدَهُ قِطَّةٌ",
+              "عِنْدِي قِطَّةٌ"
+            ],
+            "answer": 0,
+            "why": "ـهَا = her: عِنْدَهَا."
+          }
         }
       ],
       "practice": [
-        "Say 'I have a pen' in Arabic.",
-        "Say 'she has a sister' in Arabic.",
-        "Ask a partner what they have and answer.",
-        "Translate sentences with 'indee and 'indahu."
-      ],
-      "independent": [
-        "Write 8 sentences about what you and other people have.",
-        "Make a questionnaire with five questions and answers.",
-        "Write a dialogue between two friends."
-      ],
-      "exit": [
-        "How do you say 'he has a brother' in Arabic?",
-        "How do you say 'I do not have a sister'?"
-      ],
-      "homework": "Write a paragraph: what you have in your bag and what your family members have.",
-      "send": "SEND: sentence strips with endings highlighted. EAL: bilingual explanation of the structure. Stretch: use 'indee with numbers up to 10 and the correct plural."
-    },
-    {
-      "unit": "Unit 2: My family and me",
-      "n": 6,
-      "title": "Whose is it? The possessive construct",
-      "duration": 50,
-      "objectives": [
-        "Form the idafa such as كِتَابُ الطَّالِبِ",
-        "Apply the rule: first word has no al-",
-        "Use the construct to talk about people and things"
-      ],
-      "keywords": [
         {
-          "term": "الْإِضَافَةُ",
-          "def": "the possessive construct"
+          "q": "Answer: هَلْ عِنْدَكِ أُخْتٌ؟ (yes, two)",
+          "a": "نَعَمْ، عِنْدِي أُخْتَانِ",
+          "mins": 2,
+          "model": "Teacher: yes = نَعَمْ; I have = عِنْدِي; two sisters = أُخْتَانِ. Together: نَعَمْ، عِنْدِي أُخْتَانِ."
         },
         {
-          "term": "بَيْتُ الْمُعَلِّمِ",
-          "def": "the teacher's house"
+          "q": "'We have' is ...",
+          "a": "عِنْدَنَا",
+          "mins": 1,
+          "options": [
+            "عِنْدَنَا",
+            "عِنْدَهُمْ"
+          ]
         },
         {
-          "term": "كِتَابُ الطَّالِبِ",
-          "def": "the student's book"
-        },
-        {
-          "term": "سَيَّارَةُ أَبِي",
-          "def": "my father's car"
-        },
-        {
-          "term": "اِسْمُ الْمَدْرَسَةِ",
-          "def": "the name of the school"
-        },
-        {
-          "term": "لِمَنْ؟",
-          "def": "whose?"
+          "q": "Say 'I do not have a brother'.",
+          "a": "لَيْسَ عِنْدِي أَخٌ",
+          "mins": 1
         }
       ],
+      "independent": [
+        {
+          "q": "Survey grid on the pupil PDF: ask a partner (breakout) four هَلْ عِنْدَكَ ...؟ questions (brother, sister, cat, bicycle), record answers, then write four sentences about them with عِنْدَهُ / عِنْدَهَا.",
+          "a": "Questions asked; e.g. عِنْدَهُ أَخَوَانِ؛ لَيْسَ عِنْدَهَا قِطَّةٌ",
+          "mins": 15,
+          "model": "Teacher asks a pupil: هَلْ عِنْدَكَ دَرَّاجَةٌ؟ and writes the answer as عِنْدَهُ دَرَّاجَةٌ."
+        },
+        {
+          "q": "Extend: write three sentences about what your family has.",
+          "a": "For example: عِنْدَنَا بَيْتٌ صَغِيرٌ.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "عِنْدَهُ means ...",
+          "a": "He has",
+          "mins": 1,
+          "options": [
+            "He has",
+            "She has"
+          ]
+        },
+        {
+          "q": "Back to our ponder: 'with me is a brother': what does it show?",
+          "a": "Languages express the same idea differently.",
+          "mins": 2
+        }
+      ],
+      "homework": "Write five عِنْدِي sentences about your family and home.",
+      "send": "SEND: ending cards. EAL: survey frame. Stretch: use the dual and plural correctly.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Spring 2 week 5",
+        "Portal arabic y7 lesson 5 (this lesson)",
+        "Pupil PDF worksheet: survey grid"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "bicycle",
+          "alt": "A bicycle: دَرَّاجَة",
+          "for": "keywords"
+        },
+        {
+          "find": "cat",
+          "alt": "A cat: قِطَّة",
+          "for": "teach:4"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Common vocabulary: personal pronouns, my family, adjectives and moods",
+      "n": 6,
+      "title": "My and your: endings and the possessive construct",
+      "duration": 50,
+      "bigQuestion": "How would you say 'the house of my grandfather' in two words?",
+      "objectives": [
+        "To understand how to show possession with endings and with two nouns together (iḍāfah)"
+      ],
+      "successCriteria": [
+        "All: use ـِي، ـكَ، ـكِ، ـهُ، ـهَا on family nouns",
+        "Most: make iḍāfah phrases like بَيْتُ جَدِّي",
+        "Some: write sentences combining endings and iḍāfah"
+      ],
+      "crossCurricular": "English: possessive apostrophe compared with Arabic iḍāfah",
+      "keywords": [
+        {
+          "term": "إِضَافَة (idafah)",
+          "def": "possessive construct: two nouns together, 'X of Y'"
+        },
+        {
+          "term": "بَيْتُ جَدِّي (baytu jaddi)",
+          "def": "my grandfather's house"
+        },
+        {
+          "term": "كِتَابُ أَخِي (kitabu akhi)",
+          "def": "my brother's book"
+        },
+        {
+          "term": "ضَمِيرٌ مُتَّصِلٌ (damir muttasil)",
+          "def": "attached pronoun"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How would you say 'the house of my grandfather' in two words?",
+        "a": "بَيْتُ جَدِّي: the first noun loses ال, the second shows whose."
+      },
       "starter": [
-        "Say 'I have two sisters' in Arabic.",
-        "Say 'he has a car' in Arabic.",
-        "Translate: الْبَيْتُ كَبِيرٌ."
+        {
+          "q": "Bismillah. 'She has' is ...",
+          "a": "عِنْدَهَا",
+          "mins": 1,
+          "options": [
+            "عِنْدَهَا",
+            "عِنْدَهُ"
+          ]
+        },
+        {
+          "q": "هَلْ is used for ...",
+          "a": "Yes/no questions",
+          "mins": 1,
+          "options": [
+            "Yes/no questions",
+            "Because"
+          ]
+        },
+        {
+          "q": "Say 'I have two sisters'.",
+          "a": "عِنْدِي أُخْتَانِ",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Two nouns together",
-          "bullets": [
-            "كِتَابٌ + الطَّالِبُ",
-            "كِتَابُ الطَّالِبِ",
-            "the student's book"
-          ],
-          "note": "Place two nouns side by side. The first loses its tanween and al-; the second takes al- and ends with kasra. Show the transformation on screen. Explain it is like 'of'."
+          "heading": "Endings",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "table": {
+            "head": [
+              "Ending",
+              "Example",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "ـِي",
+                "أُمِّي",
+                "my mother"
+              ],
+              [
+                "ـُكَ / ـُكِ",
+                "بَيْتُكَ / بَيْتُكِ",
+                "your house (boy / girl)"
+              ],
+              [
+                "ـُهُ",
+                "بَيْتُهُ",
+                "his house"
+              ],
+              [
+                "ـُهَا",
+                "بَيْتُهَا",
+                "her house"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Rules",
+          "heading": "Two nouns: iḍāfah",
           "bullets": [
-            "The first noun has no al-",
-            "The first noun ends with -u",
-            "The second noun has -i (kasra)"
-          ],
-          "note": "List the three rules. Pupils copy into notes. Misconception: adding al- to the first noun. Give a quick-fire task: mark each phrase correct or incorrect."
+            "بَيْتُ جَدِّي: my grandfather's house",
+            "سَيَّارَةُ عَمِّي: my uncle's car",
+            "First noun: no ال, no tanwin"
+          ]
         },
         {
-          "heading": "With people",
-          "bullets": [
-            "بَيْتُ أَحْمَدَ",
-            "سَيَّارَةُ أَبِي",
-            "أُسْرَةُ عَمِّي"
-          ],
-          "note": "Names and family words as the second noun. When the second noun is a name, there is no al-. Pupils translate. Highlight that 'abee' (my father) already shows possession."
+          "heading": "Spot the mistake",
+          "bullets": [],
+          "note": "Common error.",
+          "misconception": {
+            "wrong": "البَيْتُ جَدِّي for 'my grandfather's house'",
+            "right": "بَيْتُ جَدِّي: the first noun drops ال"
+          }
         },
         {
-          "heading": "Ta marbuta in the construct",
+          "heading": "Quick check",
           "bullets": [
-            "مَدْرَسَةُ الْبَنَاتِ",
-            "حَقِيبَةُ الطَّالِبَةِ",
-            "ة is pronounced -tu in construct"
+            "Vote in the Teams poll"
           ],
-          "note": "For feminine first nouns the ة is pronounced ت when the noun is in a construct and followed by the next word. Model pronounced forms: madrasatu l-banaat. This is a pronunciation point to practise."
-        },
-        {
-          "heading": "Whose?",
-          "bullets": [
-            "لِمَنْ هَذَا الْكِتَابُ؟",
-            "هَذَا كِتَابُ أُخْتِي",
-            "هَذِهِ سَيَّارَةُ جَدِّي"
-          ],
-          "note": "Practise 'liman' questions. Pupils bring or show objects and answer. Quick game: pass an object and ask whose it is."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'My brother's book' is ...",
+            "options": [
+              "كِتَابُ أَخِي",
+              "الكِتَابُ أَخِي",
+              "كِتَابٌ أَخِي"
+            ],
+            "answer": 0,
+            "why": "Iḍāfah: no ال and no tanwin on the first noun."
+          }
         }
       ],
       "practice": [
-        "Make 'the teacher's pen' in Arabic.",
-        "Complete: ___ الْمُعَلِّمِ (كِتَابٌ / كِتَابُ).",
-        "Translate five phrases into Arabic.",
-        "Correct the incorrect constructs."
+        {
+          "q": "Say: my aunt's (mother's sister) house.",
+          "a": "بَيْتُ خَالَتِي",
+          "mins": 2,
+          "model": "Teacher: house = بَيْت, no ال: بَيْتُ. My aunt = خَالَتِي (ة → ت). Together: بَيْتُ خَالَتِي."
+        },
+        {
+          "q": "بَيْتُهَا means ...",
+          "a": "Her house",
+          "mins": 1,
+          "options": [
+            "Her house",
+            "His house"
+          ]
+        }
       ],
       "independent": [
-        "Write six idafa phrases about your school.",
-        "Write 5 sentences using 'liman' and answers.",
-        "Draw a map of the school with labels using idafa."
+        {
+          "q": "Possession task on the pupil PDF: write eight phrases (four with endings, four with iḍāfah) about your family's things, then use three in full sentences (e.g. سَيَّارَةُ أَبِي بَيْضَاءُ).",
+          "a": "Correct phrases and agreement",
+          "mins": 16,
+          "model": "Teacher writes سَيَّارَةُ أَبِي and the sentence سَيَّارَةُ أَبِي بَيْضَاءُ."
+        },
+        {
+          "q": "Extend: correct three wrong iḍāfah phrases.",
+          "a": "Drop ال and tanwin from the first noun",
+          "mins": 3
+        }
       ],
       "exit": [
-        "How do you say 'the student's bag'?",
-        "What happens to ة in a construct?"
+        {
+          "q": "In iḍāfah the first noun has ...",
+          "a": "No ال",
+          "mins": 1,
+          "options": [
+            "No ال",
+            "Always ال"
+          ]
+        },
+        {
+          "q": "Back to our ponder: 'the house of my grandfather' in two words?",
+          "a": "بَيْتُ جَدِّي",
+          "mins": 2
+        }
       ],
-      "homework": "Write ten idafa phrases with objects at home (e.g. بَابُ الْبَيْتِ).",
-      "send": "SEND: colour-coded noun cards. EAL: parallel structure with 'of' in English. Stretch: build three-noun constructs like مَفْتَاحُ بَابِ الْبَيْتِ."
+      "homework": "Label five family items at home with iḍāfah phrases (e.g. كِتَابُ أُخْتِي).",
+      "send": "SEND: noun + noun cards. EAL: pattern table. Stretch: three-word iḍāfah: بَيْتُ عَمِّ أَبِي.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Spring 2 week 5",
+        "Portal arabic y7 lesson 6 (this lesson)",
+        "Pupil PDF worksheet: possession task"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "front door house",
+          "alt": "A house: بَيْت",
+          "for": "teach:2"
+        },
+        {
+          "find": "car white",
+          "alt": "A white car",
+          "for": "keywords"
+        }
+      ]
     },
     {
       "unit": "Unit 3: Free time and my profile",
@@ -3143,6 +3595,1422 @@
         }
       ],
       "duration": 50
+    },
+    {
+      "unit": "Spring 2: Common vocabulary: personal pronouns, my family, adjectives and moods",
+      "n": 17,
+      "title": "Personal pronouns: I, you, he, she",
+      "duration": 50,
+      "bigQuestion": "English has one word for 'you'. Arabic has different words for a boy and a girl. Why might that be useful?",
+      "objectives": [
+        "To understand the Arabic singular personal pronouns and use them in simple sentences"
+      ],
+      "successCriteria": [
+        "All: say أَنَا، أَنْتَ، أَنْتِ، هُوَ، هِيَ with their meanings",
+        "Most: choose أَنْتَ or أَنْتِ correctly",
+        "Some: build sentences with a pronoun and an adjective that agrees"
+      ],
+      "crossCurricular": "English: personal pronouns and agreement",
+      "keywords": [
+        {
+          "term": "ضَمِير (damir)",
+          "def": "pronoun"
+        },
+        {
+          "term": "أَنَا (ana)",
+          "def": "I"
+        },
+        {
+          "term": "أَنْتَ / أَنْتِ (anta / anti)",
+          "def": "you (boy / girl)"
+        },
+        {
+          "term": "هُوَ (huwa)",
+          "def": "he"
+        },
+        {
+          "term": "هِيَ (hiya)",
+          "def": "she"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "English has one word for 'you'. Arabic has different words for a boy and a girl. Why might that be useful?",
+        "a": "It is clearer who you are speaking to: أَنْتَ for a boy, أَنْتِ for a girl."
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'Red' (masculine) is ...",
+          "a": "أَحْمَرُ",
+          "mins": 1,
+          "options": [
+            "أَحْمَرُ",
+            "حَمْرَاءُ"
+          ]
+        },
+        {
+          "q": "What is مُثَلَّث?",
+          "a": "A triangle",
+          "mins": 1,
+          "options": [
+            "A triangle",
+            "A circle"
+          ]
+        },
+        {
+          "q": "Write the number 15 in Arabic words.",
+          "a": "خَمْسَةَ عَشَرَ",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Five pronouns",
+          "bullets": [],
+          "note": "Begin with Bismillah. Point to yourself, a boy, a girl as you say each.",
+          "table": {
+            "head": [
+              "Arabic",
+              "English"
+            ],
+            "rows": [
+              [
+                "أَنَا",
+                "I"
+              ],
+              [
+                "أَنْتَ",
+                "you (to a boy)"
+              ],
+              [
+                "أَنْتِ",
+                "you (to a girl)"
+              ],
+              [
+                "هُوَ",
+                "he"
+              ],
+              [
+                "هِيَ",
+                "she"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "No 'am / is / are'",
+          "bullets": [
+            "أَنَا طَالِبٌ: I (am) a student",
+            "هِيَ طَالِبَةٌ: she (is) a student",
+            "Arabic leaves out 'is'"
+          ]
+        },
+        {
+          "heading": "Agreement",
+          "bullets": [],
+          "note": "Girl pronoun → girl adjective.",
+          "compare": {
+            "left": {
+              "title": "Boy",
+              "points": [
+                "هُوَ طَوِيلٌ",
+                "أَنْتَ ذَكِيٌّ"
+              ]
+            },
+            "right": {
+              "title": "Girl",
+              "points": [
+                "هِيَ طَوِيلَةٌ",
+                "أَنْتِ ذَكِيَّةٌ"
+              ]
+            },
+            "label": "+ة"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "You are speaking to Maryam. 'You are kind' is ...",
+            "options": [
+              "أَنْتِ لَطِيفَةٌ",
+              "أَنْتَ لَطِيفٌ",
+              "هِيَ لَطِيفَةٌ"
+            ],
+            "answer": 0,
+            "why": "To a girl: أَنْتِ with a feminine adjective."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say: he is a student; she is a student.",
+          "a": "هُوَ طَالِبٌ. هِيَ طَالِبَةٌ.",
+          "mins": 2,
+          "model": "Teacher: هُوَ + طَالِبٌ. For a girl, هِيَ and add ة: طَالِبَةٌ."
+        },
+        {
+          "q": "'I' is ...",
+          "a": "أَنَا",
+          "mins": 1,
+          "options": [
+            "أَنَا",
+            "أَنْتَ"
+          ]
+        },
+        {
+          "q": "Say 'you are tall' to a boy.",
+          "a": "أَنْتَ طَوِيلٌ",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pronoun sentences on the pupil PDF: complete eight sentences with the right pronoun and adjective form, then write three about people you know (no names needed: هُوَ / هِيَ).",
+          "a": "For example: أَنَا طَالِبٌ/طَالِبَةٌ؛ هُوَ قَصِيرٌ؛ هِيَ ذَكِيَّةٌ",
+          "mins": 14,
+          "model": "Teacher completes sentence 1: ___ طَوِيلَةٌ (she) → هِيَ طَوِيلَةٌ."
+        },
+        {
+          "q": "Extend: say three sentences about yourself with أَنَا.",
+          "a": "For example: أَنَا طَالِبٌ. أَنَا مِنْ لَنْدَن. أَنَا سَعِيدٌ.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: why does أَنَا stay the same for boys and girls?",
+          "a": "'I' is the same; only the adjective changes: أَنَا طَالِبٌ / أَنَا طَالِبَةٌ.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "'She' is ...",
+          "a": "هِيَ",
+          "mins": 1,
+          "options": [
+            "هِيَ",
+            "هُوَ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: why two words for 'you'?",
+          "a": "It shows clearly whether you speak to a boy or a girl.",
+          "mins": 2
+        }
+      ],
+      "homework": "Write five sentences, one with each pronoun.",
+      "send": "SEND: pronoun cards with symbols. EAL: English-Arabic grid. Stretch: add a colour or number to each sentence.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Spring 2 week 1",
+        "Pupil PDF worksheet: pronoun sentences"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Arabic calligraphy letters",
+          "alt": "Arabic letters",
+          "for": "keywords"
+        },
+        {
+          "find": "classroom desks",
+          "alt": "A classroom: أَنَا طَالِبٌ",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Common vocabulary: personal pronouns, my family, adjectives and moods",
+      "n": 18,
+      "title": "Personal pronouns: we, you all, they",
+      "duration": 50,
+      "bigQuestion": "The Qur'an often says يَا أَيُّهَا الَّذِينَ آمَنُوا (O you who believe). Who is it talking to?",
+      "objectives": [
+        "To understand the plural pronouns and use the full set to talk about people"
+      ],
+      "successCriteria": [
+        "All: say نَحْنُ، أَنْتُمْ، هُمْ",
+        "Most: match pronouns to pictures and sentences",
+        "Some: write sentences with plural pronouns and plural adjectives"
+      ],
+      "keywords": [
+        {
+          "term": "نَحْنُ (nahnu)",
+          "def": "we"
+        },
+        {
+          "term": "أَنْتُمْ (antum)",
+          "def": "you (all)"
+        },
+        {
+          "term": "هُمْ (hum)",
+          "def": "they"
+        },
+        {
+          "term": "طُلَّاب (tullab)",
+          "def": "students"
+        },
+        {
+          "term": "مُسْلِمُونَ (muslimun)",
+          "def": "Muslims"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "The Qur'an often says يَا أَيُّهَا الَّذِينَ آمَنُوا (O you who believe). Who is it talking to?",
+        "a": "All the believers together: a plural 'you'."
+      },
+      "islamicLink": {
+        "text": "Many ayat begin يَا أَيُّهَا الَّذِينَ آمَنُوا, 'O you who believe', for example al-Baqarah 2:183, using a plural 'you'.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'He' is ...",
+          "a": "هُوَ",
+          "mins": 1,
+          "options": [
+            "هُوَ",
+            "هِيَ"
+          ]
+        },
+        {
+          "q": "Say 'you are kind' to a girl.",
+          "a": "أَنْتِ لَطِيفَةٌ",
+          "mins": 1,
+          "options": [
+            "أَنْتِ لَطِيفَةٌ",
+            "أَنْتَ لَطِيفٌ"
+          ]
+        },
+        {
+          "q": "Translate أَنَا طَالِبَةٌ.",
+          "a": "I am a (female) student.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Plural pronouns",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "table": {
+            "head": [
+              "Arabic",
+              "English"
+            ],
+            "rows": [
+              [
+                "نَحْنُ",
+                "we"
+              ],
+              [
+                "أَنْتُمْ",
+                "you (all)"
+              ],
+              [
+                "هُمْ",
+                "they"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Sentences",
+          "bullets": [
+            "نَحْنُ مُسْلِمُونَ: we are Muslims",
+            "أَنْتُمْ طُلَّابٌ: you are students",
+            "هُمْ فِي المَسْجِدِ: they are in the masjid"
+          ],
+          "note": "Plural adjectives for people: ـُونَ."
+        },
+        {
+          "heading": "All eight",
+          "bullets": [],
+          "note": "Pupils show the number for each picture.",
+          "diagram": {
+            "centre": "ضَمَائِر (pronouns)",
+            "items": [
+              "أَنَا",
+              "أَنْتَ",
+              "أَنْتِ",
+              "هُوَ",
+              "هِيَ",
+              "نَحْنُ",
+              "أَنْتُمْ",
+              "هُمْ"
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'We are in the class' is ...",
+            "options": [
+              "نَحْنُ فِي الفَصْلِ",
+              "هُمْ فِي الفَصْلِ",
+              "أَنْتُمْ فِي الفَصْلِ"
+            ],
+            "answer": 0,
+            "why": "نَحْنُ = we."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say: they are in the masjid.",
+          "a": "هُمْ فِي المَسْجِدِ",
+          "mins": 2,
+          "model": "Teacher: they = هُمْ; in the masjid = فِي المَسْجِدِ. Together: هُمْ فِي المَسْجِدِ."
+        },
+        {
+          "q": "أَنْتُمْ means ...",
+          "a": "You (all)",
+          "mins": 1,
+          "options": [
+            "You (all)",
+            "They"
+          ]
+        },
+        {
+          "q": "Say 'we are students'.",
+          "a": "نَحْنُ طُلَّابٌ",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pronoun swap on the pupil PDF: rewrite six sentences changing the pronoun (e.g. هُوَ فِي البَيْتِ → هُمْ فِي البَيْتِ), then write two sentences about your class with نَحْنُ.",
+          "a": "Correct swaps; e.g. نَحْنُ طُلَّابٌ، نَحْنُ فِي الفَصْلِ",
+          "mins": 14,
+          "model": "Teacher swaps sentence 1: أَنَا فِي البَيْتِ → نَحْنُ فِي البَيْتِ."
+        },
+        {
+          "q": "Extend: dictation of five pronouns.",
+          "a": "أَنَا، أَنْتِ، هُوَ، نَحْنُ، هُمْ",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: find the pronoun in يَا أَيُّهَا الَّذِينَ آمَنُوا and who it addresses.",
+          "a": "It addresses all believers (plural).",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "'They' is ...",
+          "a": "هُمْ",
+          "mins": 1,
+          "options": [
+            "هُمْ",
+            "نَحْنُ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: who does يَا أَيُّهَا الَّذِينَ آمَنُوا talk to?",
+          "a": "All the believers: plural.",
+          "mins": 2
+        }
+      ],
+      "homework": "Learn all eight pronouns; test yourself by covering the English.",
+      "send": "SEND: pronoun cards. EAL: pronoun grid. Stretch: add هُنَّ (they, girls) and أَنْتُنَّ.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Spring 2 week 1",
+        "Pupil PDF worksheet: pronoun swap"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "mosque prayer hall",
+          "alt": "A masjid: هُمْ فِي المَسْجِدِ",
+          "for": "teach:2"
+        },
+        {
+          "find": "classroom",
+          "alt": "A class: نَحْنُ طُلَّابٌ",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Common vocabulary: personal pronouns, my family, adjectives and moods",
+      "n": 19,
+      "title": "My extended family: uncles, aunts and cousins",
+      "duration": 50,
+      "bigQuestion": "English has one word 'uncle'. Arabic has two. Which is more useful, and why?",
+      "objectives": [
+        "To understand the Arabic words for extended family, including the difference between father's and mother's side"
+      ],
+      "successCriteria": [
+        "All: name four extended family members",
+        "Most: tell apart عَمّ and خَال, عَمَّة and خَالَة",
+        "Some: describe my extended family in three sentences"
+      ],
+      "smsc": "Moral: keeping family ties",
+      "keywords": [
+        {
+          "term": "عَمّ / عَمَّة ('amm / 'ammah)",
+          "def": "father's brother / father's sister"
+        },
+        {
+          "term": "خَال / خَالَة (khal / khalah)",
+          "def": "mother's brother / mother's sister"
+        },
+        {
+          "term": "اِبْنُ العَمِّ (ibn al-'amm)",
+          "def": "cousin (son of father's brother)"
+        },
+        {
+          "term": "أَقَارِب (aqarib)",
+          "def": "relatives"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "English has one word 'uncle'. Arabic has two. Which is more useful, and why?",
+        "a": "Arabic tells you which side of the family: عَمّ (father's side), خَال (mother's side)."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Whoever would like his provision to be increased and his life extended should keep the ties of kinship' (Bukhari and Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'My father' is ...",
+          "a": "أَبِي",
+          "mins": 1,
+          "options": [
+            "أَبِي",
+            "أَخِي"
+          ]
+        },
+        {
+          "q": "جَدَّة is ...",
+          "a": "Grandmother",
+          "mins": 1,
+          "options": [
+            "Grandmother",
+            "Aunt"
+          ]
+        },
+        {
+          "q": "Say 'this is my sister'.",
+          "a": "هٰذِهِ أُخْتِي",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Two sides of the family",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "compare": {
+            "left": {
+              "title": "Father's side",
+              "points": [
+                "عَمّ: uncle",
+                "عَمَّة: aunt"
+              ]
+            },
+            "right": {
+              "title": "Mother's side",
+              "points": [
+                "خَال: uncle",
+                "خَالَة: aunt"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Cousins",
+          "bullets": [
+            "اِبْنُ عَمِّي: my cousin (son of my father's brother)",
+            "بِنْتُ خَالَتِي: my cousin (daughter of my mother's sister)",
+            "Arabic says exactly how"
+          ]
+        },
+        {
+          "heading": "Keeping ties",
+          "bullets": [
+            "Islam teaches keeping family ties (صِلَةُ الرَّحِمِ)",
+            "Visit, call and help relatives",
+            "Allah loves those who keep ties"
+          ],
+          "note": "Whoever wants his provision increased should keep family ties (Bukhari and Muslim)."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Your mother's sister is your ...",
+            "options": [
+              "خَالَة",
+              "عَمَّة",
+              "جَدَّة"
+            ],
+            "answer": 0,
+            "why": "Mother's side: خَال / خَالَة."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say: my father's brother is a doctor.",
+          "a": "عَمِّي طَبِيبٌ",
+          "mins": 2,
+          "model": "Teacher: father's brother = عَمّ; my = ـِي: عَمِّي. Doctor = طَبِيب. Sentence: عَمِّي طَبِيبٌ."
+        },
+        {
+          "q": "عَمَّة is ...",
+          "a": "Father's sister",
+          "mins": 1,
+          "options": [
+            "Father's sister",
+            "Mother's sister"
+          ]
+        },
+        {
+          "q": "أَقَارِب means ...",
+          "a": "Relatives",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Extended family tree on the pupil PDF (boxes and words): add عَمّ، عَمَّة، خَال، خَالَة and two cousins, then write four sentences (e.g. عِنْدِي خَالَانِ).",
+          "a": "Correct labels and sentences",
+          "mins": 14,
+          "model": "Teacher adds خَالِي to the mother's side and writes: هٰذَا خَالِي."
+        },
+        {
+          "q": "Extend: one sentence on how you keep family ties.",
+          "a": "For example: أَزُورُ جَدَّتِي كُلَّ أُسْبُوعٍ.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: say 'my cousin' (daughter of my father's brother).",
+          "a": "بِنْتُ عَمِّي",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Mother's brother is ...",
+          "a": "خَال",
+          "mins": 1,
+          "options": [
+            "خَال",
+            "عَمّ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: one word or two for uncle?",
+          "a": "Two is clearer: it shows which side of the family.",
+          "mins": 2
+        }
+      ],
+      "homework": "Call or visit a relative this week (صِلَةُ الرَّحِمِ) and name them in Arabic in your book.",
+      "send": "SEND: two-colour family tree (father's / mother's side). EAL: word grid. Stretch: write a paragraph about your extended family.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Spring 2 week 2",
+        "Pupil PDF worksheet: extended family tree"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "family tree diagram",
+          "alt": "A family tree (boxes only)",
+          "for": "teach:1"
+        },
+        {
+          "find": "telephone",
+          "alt": "A phone: keeping in touch",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Common vocabulary: personal pronouns, my family, adjectives and moods",
+      "n": 20,
+      "title": "Moods and feelings: how are you?",
+      "duration": 50,
+      "bigQuestion": "What should a Muslim say first when asked 'How are you?', even on a hard day?",
+      "objectives": [
+        "To understand how to ask and answer 'How are you?' and name feelings"
+      ],
+      "successCriteria": [
+        "All: ask كَيْفَ حَالُكَ؟ and answer",
+        "Most: name five feelings with the right gender",
+        "Some: ask about someone else's feelings (كَيْفَ حَالُهُ؟)"
+      ],
+      "crossCurricular": "PSHE: recognising and talking about feelings",
+      "smsc": "Personal: naming feelings honestly",
+      "keywords": [
+        {
+          "term": "كَيْفَ حَالُكَ؟ (kayfa haluka)",
+          "def": "how are you? (to a boy)"
+        },
+        {
+          "term": "سَعِيد (sa'id)",
+          "def": "happy"
+        },
+        {
+          "term": "حَزِين (hazin)",
+          "def": "sad"
+        },
+        {
+          "term": "مُتْعَب (mut'ab)",
+          "def": "tired"
+        },
+        {
+          "term": "غَاضِب (ghadib)",
+          "def": "angry"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What should a Muslim say first when asked 'How are you?', even on a hard day?",
+        "a": "الحَمْدُ لِلّٰهِ: praise Allah in every state, then say how you feel honestly."
+      },
+      "islamicLink": {
+        "text": "When asked how they are, Muslims often begin with الحَمْدُ لِلّٰهِ, thanking Allah in every state.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'Clever' is ...",
+          "a": "ذَكِيّ",
+          "mins": 1,
+          "options": [
+            "ذَكِيّ",
+            "كَرِيم"
+          ]
+        },
+        {
+          "q": "'My mother is kind' is ...",
+          "a": "أُمِّي لَطِيفَةٌ",
+          "mins": 1,
+          "options": [
+            "أُمِّي لَطِيفَةٌ",
+            "أُمِّي لَطِيفٌ"
+          ]
+        },
+        {
+          "q": "Say 'patient'.",
+          "a": "صَبُور",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "How are you?",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "table": {
+            "head": [
+              "Question",
+              "To whom"
+            ],
+            "rows": [
+              [
+                "كَيْفَ حَالُكَ؟",
+                "a boy"
+              ],
+              [
+                "كَيْفَ حَالُكِ؟",
+                "a girl"
+              ],
+              [
+                "كَيْفَ حَالُكُمْ؟",
+                "a group"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Feelings",
+          "bullets": [
+            "أَنَا سَعِيدٌ / سَعِيدَةٌ",
+            "أَنَا حَزِينٌ / مُتْعَبٌ / غَاضِبٌ",
+            "بِخَيْرٍ وَالحَمْدُ لِلّٰهِ: fine, praise be to Allah"
+          ]
+        },
+        {
+          "heading": "Dialogue",
+          "bullets": [],
+          "note": "Two pupils read.",
+          "quote": {
+            "text": "- السَّلَامُ عَلَيْكُمْ، كَيْفَ حَالُكَ؟\n- وَعَلَيْكُمُ السَّلَامُ، بِخَيْرٍ وَالحَمْدُ لِلّٰهِ. وَأَنْتِ؟\n- أَنَا مُتْعَبَةٌ قَلِيلًا، وَالحَمْدُ لِلّٰهِ.",
+            "source": "Our own dialogue"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "A girl says she is happy: ...",
+            "options": [
+              "أَنَا سَعِيدَةٌ",
+              "أَنَا سَعِيدٌ",
+              "هُوَ سَعِيدٌ"
+            ],
+            "answer": 0,
+            "why": "Girl → سَعِيدَةٌ."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Ask a girl how she is, then answer as her (tired).",
+          "a": "كَيْفَ حَالُكِ؟ أَنَا مُتْعَبَةٌ.",
+          "mins": 2,
+          "model": "Teacher: to a girl: حَالُكِ (kasrah). Answer: أَنَا مُتْعَبَةٌ, feminine ة."
+        },
+        {
+          "q": "حَزِين means ...",
+          "a": "Sad",
+          "mins": 1,
+          "options": [
+            "Sad",
+            "Angry"
+          ]
+        },
+        {
+          "q": "Say 'fine, praise be to Allah'.",
+          "a": "بِخَيْرٍ وَالحَمْدُ لِلّٰهِ",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Feelings dialogue on the pupil PDF: write a six-line dialogue between two friends with greetings, كَيْفَ حَالُكَ / حَالُكِ؟ and two feelings, then perform it in a breakout pair.",
+          "a": "Dialogue with correct forms; performed",
+          "mins": 14,
+          "model": "Teacher writes the first two lines and reads them."
+        },
+        {
+          "q": "Extend: ask about a third person: كَيْفَ حَالُ أَخِيكَ؟",
+          "a": "Answer: هُوَ بِخَيْرٍ",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: what does the Sunnah teach to say when angry?",
+          "a": "Seek refuge in Allah from Shaytan (Bukhari and Muslim): أَعُوذُ بِاللهِ مِنَ الشَّيْطَانِ الرَّجِيمِ.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "كَيْفَ حَالُكِ؟ is asked to ...",
+          "a": "A girl",
+          "mins": 1,
+          "options": [
+            "A girl",
+            "A boy"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what to say first?",
+          "a": "الحَمْدُ لِلّٰهِ, then how you feel.",
+          "mins": 2
+        }
+      ],
+      "homework": "Ask three family members how they are in Arabic and note their answers.",
+      "send": "SEND: feelings cards with emoji-free symbols (sun, cloud, rain). EAL: dialogue with English. Stretch: add a reason with لِأَنَّ (next lesson).",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Spring 2 week 4",
+        "Pupil PDF worksheet: feelings dialogue"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "sunny sky",
+          "alt": "A sunny sky: happy",
+          "for": "keywords"
+        },
+        {
+          "find": "rain clouds",
+          "alt": "Rain clouds: sad",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Common vocabulary: personal pronouns, my family, adjectives and moods",
+      "n": 21,
+      "title": "Feelings with reasons: لِأَنَّ",
+      "duration": 50,
+      "bigQuestion": "Does knowing why you feel something help you deal with it? How?",
+      "objectives": [
+        "To understand how to explain why I feel something using لِأَنَّ (because)"
+      ],
+      "successCriteria": [
+        "All: say a feeling with لِأَنَّ",
+        "Most: give reasons with a pronoun after لِأَنَّ (لِأَنَّنِي، لِأَنَّهُ)",
+        "Some: write a short paragraph about feelings in a week"
+      ],
+      "crossCurricular": "PSHE: managing worry",
+      "smsc": "Spiritual: calm through remembrance of Allah",
+      "keywords": [
+        {
+          "term": "لِأَنَّ (li-anna)",
+          "def": "because"
+        },
+        {
+          "term": "لِأَنَّنِي (li-annani)",
+          "def": "because I"
+        },
+        {
+          "term": "قَلِق (qaliq)",
+          "def": "worried"
+        },
+        {
+          "term": "فَرْحَان (farhan)",
+          "def": "glad, joyful"
+        },
+        {
+          "term": "اِمْتِحَان (imtihan)",
+          "def": "exam"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Does knowing why you feel something help you deal with it? How?",
+        "a": "Yes: naming the reason helps you act, make du'a or ask for help."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Verily, in the remembrance of Allah do hearts find rest' (ar-Ra'd 13:28).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'Tired' (girl) is ...",
+          "a": "مُتْعَبَةٌ",
+          "mins": 1,
+          "options": [
+            "مُتْعَبَةٌ",
+            "مُتْعَبٌ"
+          ]
+        },
+        {
+          "q": "كَيْفَ حَالُكُمْ؟ is to ...",
+          "a": "A group",
+          "mins": 1,
+          "options": [
+            "A group",
+            "A boy"
+          ]
+        },
+        {
+          "q": "Say 'I am sad'.",
+          "a": "أَنَا حَزِينٌ / حَزِينَةٌ",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Because",
+          "bullets": [
+            "أَنَا سَعِيدٌ لِأَنَّ اليَوْمَ الجُمُعَةُ",
+            "أَنَا مُتْعَبٌ لِأَنَّنِي نِمْتُ مُتَأَخِّرًا",
+            "لِأَنَّ + noun / لِأَنَّنِي + verb"
+          ],
+          "note": "Begin with Bismillah."
+        },
+        {
+          "heading": "Model",
+          "bullets": [],
+          "note": "Build a sentence.",
+          "model": {
+            "problem": "Say: I am worried because I have an exam.",
+            "steps": [
+              "Feeling: أَنَا قَلِقٌ",
+              "Because: لِأَنَّ",
+              "I have: عِنْدِي",
+              "An exam (accusative after لِأَنَّ): اِمْتِحَانًا"
+            ],
+            "answer": "أَنَا قَلِقٌ لِأَنَّ عِنْدِي اِمْتِحَانًا"
+          }
+        },
+        {
+          "heading": "Calm in worry",
+          "bullets": [
+            "Make du'a and trust Allah",
+            "'Verily, in the remembrance of Allah do hearts find rest' (13:28)",
+            "Talk to a trusted adult"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "لِأَنَّ means ...",
+            "options": [
+              "Because",
+              "But",
+              "And"
+            ],
+            "answer": 0,
+            "why": "لِأَنَّ = because."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say: I am happy because my grandmother is visiting (تَزُورُنَا).",
+          "a": "أَنَا سَعِيدٌ لِأَنَّ جَدَّتِي تَزُورُنَا",
+          "mins": 2,
+          "model": "Teacher: feeling + لِأَنَّ + the reason: أَنَا سَعِيدٌ لِأَنَّ جَدَّتِي تَزُورُنَا."
+        },
+        {
+          "q": "قَلِق means ...",
+          "a": "Worried",
+          "mins": 1,
+          "options": [
+            "Worried",
+            "Glad"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Feelings diary in the portal response box: five sentences about this week, each with a feeling and لِأَنَّ. Start: 'يَوْمَ الإِثْنَيْنِ كُنْتُ ...' or 'أَنَا ... لِأَنَّ ...'",
+          "a": "Five correct sentences with feelings and reasons",
+          "mins": 15,
+          "model": "Teacher writes: أَنَا فَرْحَانُ لِأَنَّ اليَوْمَ الجُمُعَةُ."
+        },
+        {
+          "q": "Extend: add a sentence with لٰكِنْ (but).",
+          "a": "For example: أَنَا مُتْعَبٌ لٰكِنْ سَعِيدٌ.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: translate 13:28's key phrase: أَلَا بِذِكْرِ اللهِ تَطْمَئِنُّ القُلُوبُ.",
+          "a": "Verily, in the remembrance of Allah do hearts find rest.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "'Because I' is ...",
+          "a": "لِأَنَّنِي",
+          "mins": 1,
+          "options": [
+            "لِأَنَّنِي",
+            "لِأَنَّهُ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: does knowing why help?",
+          "a": "Yes: you can act, make du'a or ask for help.",
+          "mins": 2
+        }
+      ],
+      "homework": "Keep a three-day feelings diary in Arabic with لِأَنَّ.",
+      "send": "SEND: feeling + reason sentence strips. EAL: reason bank. Stretch: use كُنْتُ (I was) for past feelings.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Spring 2 week 4",
+        "Pupil PDF worksheet: feelings diary"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "calm lake",
+          "alt": "A calm lake: peace of heart",
+          "for": "teach:3"
+        },
+        {
+          "find": "calendar week",
+          "alt": "A week planner",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Common vocabulary: personal pronouns, my family, adjectives and moods",
+      "n": 22,
+      "title": "Speaking task: introducing my family",
+      "duration": 50,
+      "bigQuestion": "What makes a spoken presentation easy to follow?",
+      "objectives": [
+        "To understand how to plan and give a short spoken introduction to my family"
+      ],
+      "successCriteria": [
+        "All: say four sentences about my family",
+        "Most: include adjectives, عِنْدِي and a feeling with لِأَنَّ",
+        "Some: answer two unexpected questions"
+      ],
+      "keywords": [
+        {
+          "term": "أُسْرَة (usrah)",
+          "def": "family (household)"
+        },
+        {
+          "term": "أُقَدِّمُ (uqaddimu)",
+          "def": "I introduce"
+        },
+        {
+          "term": "مُحَادَثَة (muhadathah)",
+          "def": "conversation"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What makes a spoken presentation easy to follow?",
+        "a": "Short clear sentences, a logical order and a confident voice."
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'My grandfather's house' is ...",
+          "a": "بَيْتُ جَدِّي",
+          "mins": 1,
+          "options": [
+            "بَيْتُ جَدِّي",
+            "البَيْتُ جَدِّي"
+          ]
+        },
+        {
+          "q": "'I have' is ...",
+          "a": "عِنْدِي",
+          "mins": 1,
+          "options": [
+            "عِنْدِي",
+            "عِنْدَكَ"
+          ]
+        },
+        {
+          "q": "Say 'my father is generous'.",
+          "a": "أَبِي كَرِيمٌ",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Plan in four parts",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "cycle": [
+            "Greeting and name",
+            "How many in my family (عِنْدِي)",
+            "Describe two people",
+            "A feeling with لِأَنَّ"
+          ]
+        },
+        {
+          "heading": "Model talk",
+          "bullets": [],
+          "note": "Teacher's model (example family).",
+          "quote": {
+            "text": "السَّلَامُ عَلَيْكُمْ. اِسْمِي آدَمُ.\nفِي أُسْرَتِي خَمْسَةُ أَشْخَاصٍ. عِنْدِي أَخٌ وَأُخْتَانِ.\nأَبِي طَوِيلٌ وَكَرِيمٌ، وَأُمِّي لَطِيفَةٌ جِدًّا.\nأَنَا سَعِيدٌ لِأَنَّ جَدَّتِي تَسْكُنُ مَعَنَا.",
+            "source": "Teacher's model (example family)"
+          }
+        },
+        {
+          "heading": "Possible questions",
+          "bullets": [
+            "كَمْ أَخًا عِنْدَكَ؟",
+            "كَيْفَ أُمُّكَ؟",
+            "مَنْ هُوَ عَمُّكَ؟"
+          ],
+          "note": "Practise answering in full sentences."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "كَمْ أَخًا عِنْدَكَ؟ asks ...",
+            "options": [
+              "How many brothers do you have?",
+              "Where is your brother?",
+              "Who is your brother?"
+            ],
+            "answer": 0,
+            "why": "كَمْ = how many."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Answer: كَيْفَ أُمُّكَ؟",
+          "a": "For example: أُمِّي لَطِيفَةٌ وَصَبُورَةٌ",
+          "mins": 2,
+          "model": "Teacher answers about the example family: أُمِّي لَطِيفَةٌ جِدًّا."
+        },
+        {
+          "q": "كَمْ means ...",
+          "a": "How many",
+          "mins": 1,
+          "options": [
+            "How many",
+            "How"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Write your four-part talk in the portal response box (or on the pupil PDF), practise it, then present it to the teacher on camera (about 45 seconds) and answer one question.",
+          "a": "A clear talk covering the four parts; one question answered",
+          "mins": 18,
+          "model": "Teacher presents the model talk aloud first."
+        },
+        {
+          "q": "Extend: add a sentence with an extended family word.",
+          "a": "For example: خَالِي يَسْكُنُ فِي بِرْمِنْغْهَام.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which part of your talk was strongest?",
+          "a": "Pupils' own",
+          "mins": 1
+        },
+        {
+          "q": "Back to our ponder: what makes a talk easy to follow?",
+          "a": "Clear sentences in order, spoken confidently.",
+          "mins": 1
+        }
+      ],
+      "homework": "Revise for the unit quiz: pronouns, family, adjectives, feelings, عِنْدِي and iḍāfah.",
+      "send": "SEND: talk frame with gaps. EAL: written prompts during the talk. Stretch: talk without notes.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Spring 2 week 6 (speaking task)",
+        "Pupil PDF worksheet: talk planner",
+        "Speaking task record sheet (teacher)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "microphone",
+          "alt": "Speaking aloud",
+          "for": "keywords"
+        },
+        {
+          "find": "family tree diagram",
+          "alt": "A family tree (boxes only)",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Common vocabulary: personal pronouns, my family, adjectives and moods",
+      "n": 23,
+      "title": "Unit quiz: pronouns, family, adjectives and moods",
+      "duration": 50,
+      "bigQuestion": "How can you check your own Arabic for gender mistakes before you hand it in?",
+      "objectives": [
+        "To understand how well I know this unit's vocabulary and grammar"
+      ],
+      "successCriteria": [
+        "All: complete the unit quiz",
+        "Most: score 70% or more",
+        "Some: write a five-sentence paragraph with no gender errors"
+      ],
+      "keywords": [
+        {
+          "term": "اِخْتِبَار (ikhtibar)",
+          "def": "test"
+        },
+        {
+          "term": "مُرَاجَعَة (muraja'ah)",
+          "def": "review"
+        },
+        {
+          "term": "تَصْحِيح (tashih)",
+          "def": "correction"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How can you check your own Arabic for gender mistakes before you hand it in?",
+        "a": "Find each noun, check if it ends in ة or is a girl, then check the adjective matches."
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'They' is ...",
+          "a": "هُمْ",
+          "mins": 1,
+          "options": [
+            "هُمْ",
+            "نَحْنُ"
+          ]
+        },
+        {
+          "q": "Mother's brother is ...",
+          "a": "خَال",
+          "mins": 1,
+          "options": [
+            "خَال",
+            "عَمّ"
+          ]
+        },
+        {
+          "q": "'Because' is ...",
+          "a": "لِأَنَّ",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The quiz",
+          "bullets": [
+            "Part A: 20 short questions (20 marks)",
+            "Part B: dictation of five words (5 marks)",
+            "Part C: a paragraph about my family (10 marks)"
+          ],
+          "note": "Begin with Bismillah. Quiz in the portal; cameras on."
+        },
+        {
+          "heading": "Gender check routine",
+          "bullets": [],
+          "note": "Show the routine.",
+          "cycle": [
+            "Find the noun",
+            "Boy or girl? (ة)",
+            "Check the adjective",
+            "Check the pronoun"
+          ]
+        },
+        {
+          "heading": "Model paragraph opening",
+          "bullets": [],
+          "note": "Teacher's model.",
+          "model": {
+            "problem": "Part C start",
+            "steps": [
+              "فِي أُسْرَتِي أَرْبَعَةُ أَشْخَاصٍ.",
+              "أُمِّي ذَكِيَّةٌ وَلَطِيفَةٌ.",
+              "عِنْدِي أُخْتٌ صَغِيرَةٌ.",
+              "أَنَا سَعِيدٌ لِأَنَّ ..."
+            ],
+            "answer": "Five sentences, genders checked"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Correct: أُخْتِي طَوِيلٌ.",
+          "a": "أُخْتِي طَوِيلَةٌ",
+          "mins": 2,
+          "model": "Teacher: أُخْت is feminine, so the adjective takes ة: طَوِيلَةٌ."
+        },
+        {
+          "q": "عِنْدَهَا means ...",
+          "a": "She has",
+          "mins": 1,
+          "options": [
+            "She has",
+            "He has"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Unit quiz in the portal: Parts A and B, then Part C paragraph in the response box.",
+          "a": "Answers from the unit; paragraph with five correct sentences",
+          "mins": 28,
+          "model": "Teacher reads question 1 aloud and does the first dictation word slowly."
+        },
+        {
+          "q": "Extend: check your paragraph with the gender routine.",
+          "a": "Pupils' own checking",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which part will you revise?",
+          "a": "Pupils' own",
+          "mins": 1
+        }
+      ],
+      "homework": "Correct the quiz in green using the feedback.",
+      "send": "SEND: quiz read aloud, extra time. EAL: word bank for Part C. Stretch: use iḍāfah and لِأَنَّ in Part C.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Spring 2 week 6 (unit quiz)",
+        "Portal unit quiz (Parts A to C)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "pen and paper test",
+          "alt": "Quiz paper",
+          "for": "teach:1"
+        },
+        {
+          "find": "green pen",
+          "alt": "Corrections",
+          "for": "keywords"
+        }
+      ]
     }
   ]
 }
