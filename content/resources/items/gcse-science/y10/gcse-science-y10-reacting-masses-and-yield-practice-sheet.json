@@ -1,0 +1,126 @@
+{
+ "id": "gcse-science-y10-reacting-masses-and-yield-practice-sheet",
+ "title": "Reacting masses and yield practice sheet",
+ "type": "worksheet",
+ "subject": "Science (GCSE Biology, Chemistry, Physics)",
+ "subjectSlug": "gcse-science",
+ "year": "y10",
+ "board": "Edexcel IGCSE 4BI1 · 4CH1 · 4PH1 · 4SD0",
+ "unit": "Spring 1: Respiration, moles and electricity",
+ "lessons": [
+  37
+ ],
+ "source": "Seeded from gcse-science/y10 lesson 37 (Reacting masses and yield practice sheet (portal worksheet))",
+ "intro": "Lesson 37: Reacting masses and percentage yield. To understand how to calculate reacting masses and percentage yield, and why yields are below 100%",
+ "blocks": [
+  {
+   "h": "Worked examples"
+  },
+  {
+   "model": {
+    "title": "25.0 g of CaCO₃ is heated and 11.2 g of CaO is collected. Calculate the percentage yield. (CaCO₃ → CaO + CO₂; Mr CaCO₃ = 100, CaO = 56)",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "n(CaCO₃) = 25.0 ÷ 100 = 0.25 mol"
+     },
+     {
+      "label": "Step 2",
+      "text": "n(CaO) = 0.25 mol, theoretical mass = 0.25 × 56 = 14.0 g"
+     },
+     {
+      "label": "Step 3",
+      "text": "% yield = 11.2 ÷ 14.0 × 100"
+     },
+     {
+      "label": "Answer",
+      "text": "80%"
+     }
+    ]
+   }
+  },
+  {
+   "model": {
+    "title": "An iron oxide contains 11.2 g of iron and 4.8 g of oxygen. Find its empirical formula. (Ar: Fe 56, O 16)",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Moles Fe = 11.2 ÷ 56 = 0.20"
+     },
+     {
+      "label": "Step 2",
+      "text": "Moles O = 4.8 ÷ 16 = 0.30"
+     },
+     {
+      "label": "Step 3",
+      "text": "Ratio Fe : O = 0.20 : 0.30 = 2 : 3"
+     },
+     {
+      "label": "Answer",
+      "text": "Fe₂O₃"
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Theoretical yield 25 g, actual 20 g. Percentage yield? [2 marks]",
+     "a": "20 ÷ 25 × 100 (1) = 80% (1)",
+     "model": "Formula: % yield = actual ÷ theoretical × 100. Substitute: 20 ÷ 25 × 100. Calculate: 80%."
+    },
+    {
+     "q": "Give two reasons why yield is less than 100%.",
+     "a": "Reaction incomplete; product lost in transfer or filtering (also side reactions)."
+    },
+    {
+     "q": "Empirical formula of a compound with 2.4 g Mg and 1.6 g O?",
+     "a": "Mg 0.1 mol, O 0.1 mol: MgO"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: CaCO₃ → CaO + CO₂. 50 g CaCO₃ is heated. Calculate the theoretical mass of CaO, then the % yield if 22.4 g is obtained.",
+     "a": "0.5 mol CaCO₃ → 0.5 mol CaO = 28 g; 22.4 ÷ 28 × 100 = 80%.",
+     "model": "Teacher works the first step: moles CaCO₃ = 50 ÷ 100 = 0.5 mol; ratio 1:1 so 0.5 mol CaO; mass = 0.5 × 56 = 28 g."
+    },
+    {
+     "q": "Extend: 4.8 g of Mg burns to give 8.0 g of oxide. Find the empirical formula. [3 marks]",
+     "a": "Mass of O = 3.2 g (1); moles Mg = 4.8 ÷ 24 = 0.2, moles O = 3.2 ÷ 16 = 0.2 (1); ratio 1:1 so MgO (1)."
+    },
+    {
+     "q": "Stretch: In the metal oxide practical, why is the lid lifted from time to time?",
+     "a": "To let oxygen in so the magnesium can react, while stopping magnesium oxide smoke escaping."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "% yield = actual ÷ theoretical × ...",
+     "a": "100",
+     "options": [
+      "10",
+      "100",
+      "Mr"
+     ]
+    },
+    {
+     "q": "Big question: why do factories never get 100% of the expected product?",
+     "a": "Reactions may be incomplete, product is lost during separation and transfer, and side reactions make other products."
+    }
+   ]
+  }
+ ]
+}

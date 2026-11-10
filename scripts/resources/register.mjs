@@ -63,7 +63,8 @@ export function buildRegister() {
       const item = source === "generated" ? itemPath(u.subjectSlug, u.year, id) : null;
       const made = !!item && fs.existsSync(item);
       // A made resource is listed as what it turned out to be (its item's type).
-      const type = (made && readJson(item, {}).type) || o.type || c.type;
+      const itemData = made ? readJson(item, {}) : {};
+      const type = itemData.type || o.type || c.type;
       const lessons = [...new Map(list.map((x) => [x.n, x])).values()].sort((a, b) => a.n - b.n);
       const terms = [...new Set(lessons.map((x) => x.term))];
       for (const term of terms) {
@@ -71,7 +72,7 @@ export function buildRegister() {
         entries.push({
           term,
           id,
-          title: clean(o.title || title).slice(0, 220),
+          title: clean(o.title || itemData.title || title).slice(0, 220),
           type,
           subject: u.subject,
           subjectSlug: u.subjectSlug,

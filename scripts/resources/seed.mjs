@@ -35,7 +35,13 @@ const marksIn = (q) => {
   const m = /\((\d{1,2}) marks?\)|\[(\d{1,2}) marks?\]|\b(\d{1,2})[- ]mark\b/i.exec(q);
   return m ? Number(m[1] || m[2] || m[3]) : null;
 };
-const stripMarks = (q) => q.replace(/^Q\d+\s*\((\d{1,2}) marks?\)\s*:\s*/i, "").replace(/\s*\((\d{1,2}) marks?\)\s*/i, " ").trim();
+const stripMarks = (q) =>
+  q
+    .replace(/^Q\d+\s*\((\d{1,2}) marks?\)\s*:\s*/i, "")
+    .replace(/^(core|extend|stretch|support|challenge)\s*(\([^)]*\))?\s*:\s*/i, "")
+    .replace(/\s*[([](?:exam-style,\s*|timed,\s*)?\d{1,2} marks?[)\]]\s*/gi, " ")
+    .replace(/\s+([.?])(?=\s*$)/, "$1")
+    .trim();
 /** Marks for a question with none written: 1 for a poll or a one-word answer, more for longer answers. */
 function guessMarks(q, a, opts) {
   if (opts) return 1;
@@ -133,6 +139,7 @@ function gridFromTitle(title, year) {
     const dec = /decimal|tenths|hundredths/.test(t) ? ["Tths", "Hths"] : [];
     return [{ grid: { kind: "placevalue", cols: [...cols, ...dec], rows: 5, decimals: dec.length } }, { text: "Key: " + [...cols, ...dec].map((c) => `${c} = ${{ TM: "ten millions", M: "millions", HTh: "hundred thousands", TTh: "ten thousands", Th: "thousands", H: "hundreds", T: "tens", O: "ones", Tths: "tenths", Hths: "hundredths" }[c]}`).join(", ") + "." }];
   }
+  if (/8-bit|binary place|bit place/.test(t)) return [{ h: "8-bit place-value grid" }, { grid: { kind: "placevalue", cols: ["128", "64", "32", "16", "8", "4", "2", "1"], rows: 8 } }];
   if (/times[- ]tables? grid|multiplication (grid|square)|times[- ]table (square|chart)/.test(t)) return [{ h: "Times tables grid" }, { grid: { kind: "times", size: 12 } }, { pagebreak: true }, { h: "Fill it in yourself" }, { grid: { kind: "times", size: 12, blank: true } }];
   if (/fraction wall|fraction strips/.test(t)) return [{ grid: { kind: "fractionwall" } }, { text: "Cut along the rows to make fraction strips, or compare fractions by lining up the pieces." }];
   if (/ten frame/.test(t)) return [{ grid: { kind: "tenframe", count: 4 } }];
@@ -159,7 +166,7 @@ function base(entry, lessons) {
   const file = fileBy.get(`${entry.subjectSlug}/${entry.year}`);
   return {
     id: entry.id,
-    title: entry.title.replace(/^pupil pdf( worksheet)?:\s*/i, "").replace(/^[a-z]/, (c) => c.toUpperCase()).replace(/\s*\((?:portal[^)]*|pupil pdf[^)]*|printable[^)]*)\)\s*/gi, " ").replace(/\s+([:,.;])/g, "$1").replace(/\s+/g, " ").trim(),
+    title: entry.title.replace(/^pupil pdf( worksheet)?:\s*/i, "").replace(/^[a-z]/, (c) => c.toUpperCase()).replace(/\s*\((?:portal[^)]*|pupil pdf[^)]*|printable[^)]*)\)\s*/gi, " ").replace(/\s+([,;]|[.](?![.]))(?=\s|$)/g, "$1").replace(/\s+/g, " ").trim(),
     type: entry.type,
     subject: entry.subject,
     subjectSlug: entry.subjectSlug,

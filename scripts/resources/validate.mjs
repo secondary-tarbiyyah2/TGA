@@ -90,6 +90,23 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     }
   };
   walk(ITEMS_DIR);
-  console.log(`${n} resource items checked, ${bad} with problems`);
+  // Items no register lists any more (a lesson's wording changed, so the resource's id changed): warn only.
+  const ids = new Set();
+  for (const t of ["spring-1", "spring-2", "summer-1", "summer-2"]) {
+    const f = path.join(ROOT, "content/resources", `${t}.json`);
+    if (fs.existsSync(f)) for (const r of JSON.parse(fs.readFileSync(f, "utf8")).resources) ids.add(r.id);
+  }
+  const orphans = [];
+  const walkIds = (d) => {
+    if (!fs.existsSync(d)) return;
+    for (const f of fs.readdirSync(d)) {
+      const p = path.join(d, f);
+      if (fs.statSync(p).isDirectory()) walkIds(p);
+      else if (f.endsWith(".json") && ids.size && !ids.has(path.basename(f, ".json"))) orphans.push(path.relative(ROOT, p));
+    }
+  };
+  walkIds(ITEMS_DIR);
+  for (const o of orphans) console.log(`::warning::${o}: no register lists this resource any more (did the lesson's wording change?). Rename it to the new id or delete it.`);
+  console.log(`${n} resource items checked, ${bad} with problems${orphans.length ? `, ${orphans.length} not in any register` : ""}`);
   if (bad) process.exit(1);
 }

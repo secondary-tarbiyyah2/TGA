@@ -39,8 +39,13 @@ grid?, picture? }`), `keywords` (`[{term, def}]`, `blank: true` to leave definit
 (`[{title, points?|text?|arabic?}]`, `cols` 1-3), `table` (`{head, rows, blankRows?, tall?}`), `frame`
 (`[{label, prompt?, starters?, lines?}]`), `starters` (word bank or sentence starters, `title`), `arabic`
 (`{text, ref?, translation?, spaced?, quran?, size?}`: Qur'an and Arabic text exactly as in the lesson), `grid`
-(`{kind: squared|dot|isometric|graph|numberline|hundred|times|placevalue|fractionwall|tenframe|clock|barchart|periodic, ...}`,
-see `grids.mjs`), `cards` (cut-out cards, `answer` for the mark scheme), `picture` (`{find|file, alt, labels?, draw?}`:
+(`{kind: squared|dot|isometric|graph|numberline|hundred|times|placevalue|fractionwall|tenframe|clock|barchart|periodic|
+wheel|boxes|perspective|star8|schematic|gridmap|worldmap, ...}`, see `grids.mjs`; `worldmap` draws outline maps from Natural
+Earth (public domain, modern borders) for regions world, europe, uk (with `ukBorders`), british-isles, mediterranean,
+middle-east, south-asia, china, western-front, arctic, antarctica, with `lines` (equator, tropics, polar circles),
+`graticule`, `points`, `labels`, `rivers`, `highlight`; `gridmap` draws a four-figure grid-reference map from rows of
+features), `trace` (`{items, trace?: false, copy?: false, cols?}`: big Arabic letters or words, pale to trace or dark to
+read and colour, with boxes to copy into), `cards` (cut-out cards, `answer` for the mark scheme), `picture` (`{find|file, alt, labels?, draw?}`:
 a Wikimedia Commons picture, chosen as for lessons; a dashed drawing box if none), `practical` (`{aim, equipment,
 safety, method, adult?}`), `passage` (`{title, paras, byline?, source?}`), `model` (`{title?, parts: [{label?, text}]}`),
 `box` (`{title, lines?|height?}`), `timeline`, `checklist`, `tracker` (`{cols, rows, corner?}`), `note` (teacher
@@ -50,6 +55,34 @@ Rules: questions and answers come from the lesson wherever it fixes them (answer
 every maths answer; own exam-style questions only (never copy past papers); Arabic and Qur'an text exactly as in
 the lesson; no pictures of people or faces; British spelling, no em dashes; tests and mocks have marks on every
 question and an answer for every question.
+
+## State (10 Nov 2026)
+
+Spring 1 is complete: all 969 resources the Spring 1 lessons ask TGA to make are items (`content/resources/items`)
+and build into PDFs (see the "Term resources" log in `docs/curriculum-rebuild.md` for what each subject PR added).
+Spring 2, Summer 1 and Summer 2 have registers but no items yet (about 996, 856 and 814 to make; the numbers move
+as lessons change).
+
+What the seeder does well on its own: printable grids from the name (number lines, place value charts, times tables,
+fraction walls, squared, dot, graph paper, periodic table, clocks, bar chart axes), checklists (from the list in the
+name, or a genre default), word mats, writing frames (boxes from the name or from the lesson's labelled model), the
+lesson's own questions with answers, unit knowledge organisers, flashcards from key words, card sorts, Qur'an ayat
+spaced with the meaning table, reading texts from the lesson's quotes.
+
+What always needs a person (or an agent) to write it, as Spring 1 did:
+- homework "sets" with a number of questions ("the portal's bounds set (6 questions)"): new questions with worked
+  answers, not the lesson's own;
+- full reading texts when the lesson quotes only an extract (teacher-written articles, model stories and reports);
+- case studies "on the pupil PDF" (business): write the case and its data so the lesson's model answer still fits;
+- mocks and end-of-term tests: a real paper with marks per question and a mark scheme (follow the paper structure the
+  lessons teach; note on the mark scheme anything staff should check against the board's materials);
+- home practical guides: a real method (5 to 7 steps), the kit, the safety lines from the name, and a results table;
+- maps of the past (alliances, empires): a modern outline with the places marked, or a Commons `picture`;
+- Ordnance Survey extracts cannot be printed (Crown copyright): make a worksheet that uses an online OS map instead.
+
+Hand edits are kept: the seeder never overwrites an item unless `--overwrite`. Spring 1 used small throwaway scripts
+that call the same idea as `seed.mjs` (find the register entry by subject, year and wording, then write the item); any
+approach is fine as long as the item's `id` matches the register.
 
 ## How to continue (Spring 2, Summer 1, Summer 2)
 
@@ -63,7 +96,10 @@ question and an answer for every question.
    questions with worked answers; a mock needs a full paper; a reading text needs the full text; a labelling
    sheet needs the right diagram).
 6. `node scripts/resources/validate.mjs` (0 problems), then build and look at 3 PDFs per subject as PNGs:
-   `NODE_PATH=<dir with playwright and docx> node scripts/resources/build.mjs <scratch>/out --only=<subject>`
-   and `pdftoppm -r 50 -png <file>.pdf <scratch>/p`. Delete the previews afterwards (disk is limited).
+   install the generator's tools in a scratch folder (`npm install docx@9.5.1 world-atlas@2.0.2 topojson-client@3.1.0`;
+   Playwright with Chromium is usually preinstalled), then
+   `NODE_PATH=<scratch>/node_modules:<playwright's node_modules> node scripts/resources/build.mjs <scratch>/out --only=<subject>`
+   and `pdftoppm -r 50 -png <file>.pdf <scratch>/p`. Delete the previews afterwards (disk is limited). Pictures from
+   Wikimedia Commons are usually blocked from a sandbox (a dashed drawing box shows instead); the workflow resolves them.
 7. `node scripts/resources/register.mjs` again (status becomes "made"), commit, PR (2-3 subjects a PR), merge when
    green. Add a dated line to `docs/curriculum-rebuild.md` ("Term resources").

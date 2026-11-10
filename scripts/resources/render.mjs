@@ -45,6 +45,7 @@ const t = (s) =>
   esc(s)
     .replace(/([؀-ۿݐ-ݿࢠ-ࣿﭐ-﷿ﹰ-﻿][؀-ۿݐ-ݿࢠ-ࣿﭐ-﷿ﹰ-﻿\sً-ْـ،؛؟]*)/g, '<span class="ar" dir="rtl" lang="ar">$1</span>')
     .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+    .replace(/\uFDFA/g, '<span class="sws">\uFDFA</span>')
     .replace(/\n/g, "<br>");
 
 const marksOf = (q) => Number(q.marks) || 0;
@@ -249,6 +250,7 @@ td.blank{height:10mm;background:#fff!important}
 .check li{display:flex;gap:3mm;align-items:flex-start;margin-bottom:2mm}
 .tick{width:4.5mm;height:4.5mm;border:.7pt solid #1B1E21;border-radius:1mm;flex:none;margin-top:.5mm}
 .pb{break-after:page}
+.sws{font-family:"Noto Naskh Arabic","Scheherazade New","Noto Sans Arabic",serif;font-size:1.15em}
 table.trace{border-collapse:separate;border-spacing:2mm;margin:0 0 3mm}
 .tr-cell{border:.6pt dashed #B9B3A5!important;background:#fff!important;text-align:center;height:30mm;width:25%}
 .tr-cell .ar{font-size:44pt;color:#D2CCBE;line-height:1.3}
