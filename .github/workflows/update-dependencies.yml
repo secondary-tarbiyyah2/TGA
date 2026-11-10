@@ -36,6 +36,29 @@ jobs:
           npm install --save-exact next@16 eslint-config-next@16
           npm update
           npm audit fix || true
+      - name: React to the latest 19.x (Sanity's editor asks for 19.3 or later)
+        run: npm install --save-exact react@19 react-dom@19 || true
+      - name: Patch what is left inside Sanity's own tooling
+        # npm audit fix can only fix these by moving Sanity back a major
+        # version, so pin the patched versions instead. Each override is kept
+        # only if npm can install it; otherwise it is dropped and listed.
+        run: |
+          try_override () {
+            name="$1"; range="$2"
+            cp package.json /tmp/pkg.bak; cp package-lock.json /tmp/lock.bak
+            npm pkg set "overrides.$name=$range"
+            if npm install --no-audit --no-fund; then
+              echo "override kept: $name $range"
+            else
+              echo "override dropped: $name $range"
+              cp /tmp/pkg.bak package.json; cp /tmp/lock.bak package-lock.json
+              npm install --no-audit --no-fund
+            fi
+          }
+          try_override smol-toml "^1.8.1"
+          try_override undici "^7.30.1"
+          try_override js-yaml "^3.15.2"
+          try_override minimatch "^11.0.1"
       - name: Audit after
         run: npm audit --omit=dev || true
       - name: Commit the new lock file
