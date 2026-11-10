@@ -2,7 +2,7 @@
   "subject": "History",
   "year": "y7",
   "board": "National Curriculum KS3 (History is not offered at KS4)",
-  "source": "National Curriculum KS3 (the development of Church, state and society in medieval Britain, 1066-1509); no school Drive history material for this unit, written from scratch | Spring 1 2027 (lessons 5 to 9): Tarbiyyah Secondary History Curriculum Intent; Hodder Understanding History KS3 scheme of work, Unit 2 (2.4A to 2.4C); Salahuddin and source enquiry from the intent",
+  "source": "National Curriculum KS3 (the development of Church, state and society in medieval Britain, 1066-1509); no school Drive history material for this unit, written from scratch | Spring 1 2027 (lessons 5 to 9): Tarbiyyah Secondary History Curriculum Intent; Hodder Understanding History KS3 scheme of work, Unit 2 (2.4A to 2.4C); Salahuddin and source enquiry from the intent | Spring 2 2027 (lesson 4 upgraded): Hodder Understanding History KS3 Unit 2 (2.6A to 2.7) and the school intent; TGA Year 7 pack",
   "lessons": [
     {
       "unit": "Unit 1: 1066 and the Norman Conquest",
@@ -278,91 +278,249 @@
       "send": "SEND/EAL: castle labelling diagram with word bank. Stretch: compare control by fear with control by law and fairness."
     },
     {
-      "unit": "Unit 1: 1066 and the Norman Conquest",
+      "unit": "Spring 2: Medieval monarchs: Magna Carta and Edward I",
       "n": 4,
-      "title": "Magna Carta and limiting the power of the king",
-      "duration": 50,
+      "title": "King John and Magna Carta, 1215",
+      "bigQuestion": "Can a piece of parchment from 1215 still protect you today?",
       "objectives": [
-        "Explain why the barons rebelled against King John",
-        "Describe the main ideas in Magna Carta of 1215"
+        "To understand why the barons forced King John to agree to Magna Carta and why it still matters"
       ],
+      "successCriteria": [
+        "All: give two reasons the barons rebelled",
+        "Most: explain what clauses 39 and 40 promised",
+        "Some: judge how significant Magna Carta was then and now"
+      ],
+      "crossCurricular": "Citizenship and PSHE: the rule of law and rights in Britain",
+      "smsc": "Moral: justice and limits on power",
       "keywords": [
         {
-          "term": "Magna Carta",
-          "def": "the Great Charter that limited the king's power in 1215"
-        },
-        {
-          "term": "tax",
-          "def": "money collected by a ruler or government"
-        },
-        {
           "term": "charter",
-          "def": "a written document that grants rights"
+          "def": "a written grant of rights"
         },
         {
-          "term": "justice",
-          "def": "fair treatment under the law"
+          "term": "baron",
+          "def": "a powerful noble who held land from the king"
+        },
+        {
+          "term": "tyranny",
+          "def": "cruel and unfair rule"
+        },
+        {
+          "term": "clause",
+          "def": "one section of a document"
+        },
+        {
+          "term": "rule of law",
+          "def": "everyone, even the ruler, must obey the law"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Should a ruler ever be above the law? Why or why not?"
+      },
+      "islamicLink": {
+        "text": "Islam teaches that rulers are under the law of Allah and must judge with justice: Allah commands that when you judge between people, you judge with justice (An-Nisa 4:58). Magna Carta raised a similar question in England: is the king under the law?",
+        "at": "start"
+      },
       "starter": [
-        "What was the feudal system?",
-        "Why was Domesday Book created?",
-        "Why do rulers need to be fair?"
+        {
+          "q": "Salahuddin recaptured Jerusalem in:",
+          "a": "1187",
+          "mins": 1,
+          "options": [
+            "1187",
+            "1066"
+          ]
+        },
+        {
+          "q": "The Norman king who won at Hastings was:",
+          "a": "William",
+          "mins": 1,
+          "options": [
+            "William",
+            "John"
+          ]
+        },
+        {
+          "q": "What did the Domesday Book record?",
+          "a": "Land, people, animals and their value, for tax",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "King John",
+          "heading": "John's problems",
           "bullets": [
-            "John became king in 1199",
-            "He lost land in France",
-            "He demanded high taxes to pay for war"
+            "Lost Normandy to France, 1204",
+            "Quarrel with the Pope",
+            "Heavy taxes and harsh fines"
           ],
-          "note": "John lost Normandy in 1204. Ask pupils how people react when taxes go up but a king is losing wars. Begin with bismillah and note that Islam teaches rulers are accountable for how they treat their people."
+          "note": "John reigned 1199 to 1216. Defeat at Bouvines in 1214 ended his hopes of winning back his French lands."
         },
         {
-          "heading": "Rebellion of the barons",
+          "heading": "The barons rebel",
           "bullets": [
-            "John argued with the Pope and the barons",
-            "He imprisoned people without fair trials",
-            "Barons rebelled in 1215 and took London"
+            "Captured London, May 1215",
+            "Met John at Runnymede",
+            "Sealed 15 June 1215"
           ],
-          "note": "Explain it in layers: money, justice, loyalty. The barons were mainly protecting their own interests, not fairness for everyone."
+          "note": "John had to agree terms or lose his throne.",
+          "timeline": [
+            {
+              "label": "1204",
+              "text": "Normandy lost"
+            },
+            {
+              "label": "1214",
+              "text": "Defeat at Bouvines"
+            },
+            {
+              "label": "May 1215",
+              "text": "Barons take London"
+            },
+            {
+              "label": "15 June 1215",
+              "text": "Magna Carta sealed at Runnymede"
+            },
+            {
+              "label": "1225",
+              "text": "Reissued; becomes part of English law"
+            }
+          ]
         },
         {
-          "heading": "Magna Carta, June 1215",
+          "heading": "What did it say?",
           "bullets": [
-            "John agreed at Runnymede",
-            "The king must obey the law",
-            "No free man to be punished without lawful judgement"
+            "63 clauses",
+            "Clause 39: no imprisonment without lawful judgement",
+            "Clause 40: justice not sold, denied or delayed"
           ],
-          "note": "Sealed 15 June 1215. Clauses 39 and 40 are most famous. Misconception: Magna Carta gave rights to everyone; it applied mainly to free men."
+          "note": "Read the clauses in modern English.",
+          "quote": {
+            "text": "To no one will we sell, to no one deny or delay right or justice.",
+            "source": "Magna Carta, 1215, clause 40 (translation, British Library)"
+          }
         },
         {
-          "heading": "What happened next?",
+          "heading": "Significance",
           "bullets": [
-            "The Pope cancelled the charter",
-            "Civil war followed",
-            "It was reissued after John died in 1216"
+            "Then: soon cancelled by the Pope",
+            "Reissued in 1216, 1217 and 1225",
+            "Now: a symbol of the rule of law"
           ],
-          "note": "Magna Carta failed at first. It was reissued in 1216, 1217 and 1225. Its importance is its idea that even the king is under the law, which influenced later ideas about rights. Compare with Islamic principles of justice carefully."
+          "note": "Model a significance judgement.",
+          "model": {
+            "problem": "How significant was Magna Carta?",
+            "steps": [
+              "Short term: failed; civil war followed",
+              "Long term: reissued and became law",
+              "Today: ideas in later rights documents"
+            ],
+            "answer": "Limited at first, hugely significant over time"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Clause 39 means:",
+            "options": [
+              "The king can imprison anyone",
+              "No free man is imprisoned without lawful judgement",
+              "Barons pay no tax"
+            ],
+            "answer": 1,
+            "why": "It limits the king: punishment must follow the law."
+          }
         }
       ],
       "practice": [
-        "Why were the barons unhappy with John?",
-        "What did the barons force the king to agree?",
-        "Was Magna Carta a success in 1215? Give a reason."
+        {
+          "q": "Explain one reason the barons rebelled in 1215. (2 marks)",
+          "a": "Heavy taxes and fines (1) after losing Normandy and wars in France, which the barons paid for (1)",
+          "mins": 3,
+          "model": "Point: John taxed the barons heavily.\nExplain: they paid for his failed wars in France.\nSo they felt cheated and rebelled."
+        },
+        {
+          "q": "Where was Magna Carta sealed?",
+          "a": "Runnymede, near Windsor",
+          "mins": 1
+        },
+        {
+          "q": "What happened to Magna Carta a few months later?",
+          "a": "The Pope cancelled it and civil war began",
+          "mins": 2
+        }
       ],
       "independent": [
-        "Create a cause-and-consequence chart for Magna Carta",
-        "Explain in a paragraph why Magna Carta is still remembered today",
-        "Write: 'The most important clause was ... because ...'"
+        {
+          "q": "Core: In the portal response box, write a PEEL paragraph: 'Why did King John agree to Magna Carta?' Starter: 'One reason John agreed was ...'",
+          "a": "Reasons: barons' rebellion and London captured; John's weakness after defeat; need to keep his throne",
+          "mins": 12,
+          "model": "Teacher writes the point and evidence with the class."
+        },
+        {
+          "q": "Extend: Rank three reasons (taxes, defeat in France, quarrel with the Pope) for the rebellion and justify the top one.",
+          "a": "A justified ranking",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: 'Magna Carta was a failure.' How far do you agree?",
+          "a": "Short-term failure, long-term success; balanced conclusion",
+          "mins": 5
+        }
       ],
       "exit": [
-        "Where was Magna Carta sealed and in which year?",
-        "Name one thing Magna Carta said the king could not do."
+        {
+          "q": "Magna Carta was sealed in:",
+          "a": "1215",
+          "mins": 1,
+          "options": [
+            "1215",
+            "1265"
+          ]
+        },
+        {
+          "q": "Big question: can a parchment from 1215 still protect you?",
+          "a": "Its ideas of the rule of law and fair trials still shape law today, though most clauses are gone",
+          "mins": 2
+        }
       ],
-      "homework": "Find out one modern right in Britain linked to the idea of fair trial and write 3 sentences about it.",
-      "send": "SEND/EAL: simplified version of clauses with vocabulary support. Stretch: evaluate whether Magna Carta mattered more in 1215 or later."
+      "homework": "Read the British Library's online Magna Carta translation and choose one more clause; explain it in two sentences.",
+      "send": "SEND: PEEL frame and clause cards in plain English. EAL: key-term glossary. Stretch: compare clause 39 with the idea of justice in Islam.",
+      "resources": [
+        "Tarbiyyah Secondary History Curriculum Intent (KS3 programme overview); TGA Year 7 pack, History, Spring 2; Magna Carta and Parliament follow the school intent",
+        "British Library Magna Carta translation (free online)",
+        "Portal response box",
+        "PEEL writing frame (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Magna Carta 1215 British Library",
+          "alt": "A 1215 copy of Magna Carta",
+          "for": "hook"
+        },
+        {
+          "find": "Runnymede meadow",
+          "alt": "The meadow at Runnymede",
+          "for": "teach:2"
+        },
+        {
+          "find": "medieval seal wax",
+          "alt": "A medieval wax seal",
+          "for": "keywords"
+        }
+      ]
     },
     {
       "unit": "Spring 1: The Crusades and Christendom",
@@ -1625,6 +1783,1165 @@
         {
           "find": "old Arabic manuscript",
           "alt": "An old Arabic manuscript",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Medieval monarchs: Magna Carta and Edward I",
+      "n": 10,
+      "title": "Why kings needed Parliament",
+      "bigQuestion": "Why would a powerful king agree to share power?",
+      "objectives": [
+        "To understand how arguments over taxes led to the first English Parliaments"
+      ],
+      "successCriteria": [
+        "All: say what Parliament was",
+        "Most: explain why kings called Parliaments",
+        "Some: explain why 1265 and 1295 were turning points"
+      ],
+      "crossCurricular": "Citizenship: Parliament and democracy today",
+      "smsc": "Social: representation and consent",
+      "keywords": [
+        {
+          "term": "parliament",
+          "def": "a meeting of the king with nobles, churchmen and representatives"
+        },
+        {
+          "term": "tax",
+          "def": "money paid to the ruler"
+        },
+        {
+          "term": "consent",
+          "def": "agreement"
+        },
+        {
+          "term": "representative",
+          "def": "someone who speaks for others"
+        },
+        {
+          "term": "burgess",
+          "def": "a representative of a town"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If someone asked you for money, what would you want in return?"
+      },
+      "islamicLink": {
+        "text": "Islam praises those who conduct their affairs by consultation (shura) among themselves (Ash-Shura 42:38). Medieval Parliaments were another way of asking whether rulers should consult the people they govern.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Magna Carta was sealed at:",
+          "a": "Runnymede",
+          "mins": 1,
+          "options": [
+            "Runnymede",
+            "Hastings"
+          ]
+        },
+        {
+          "q": "Clause 40 promised justice would not be:",
+          "a": "Sold, denied or delayed",
+          "mins": 1,
+          "options": [
+            "Sold, denied or delayed",
+            "Free"
+          ]
+        },
+        {
+          "q": "Which king lost Normandy in 1204?",
+          "a": "John",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Kings needed money",
+          "bullets": [
+            "Wars cost huge sums",
+            "Taxes needed the barons' agreement",
+            "Magna Carta: 'common counsel' for taxes"
+          ],
+          "note": "Grants of tax were agreed at big councils."
+        },
+        {
+          "heading": "Henry III and the barons",
+          "bullets": [
+            "Henry III ruled 1216 to 1272",
+            "Barons angry at his spending",
+            "Civil war: the Battle of Lewes, 1264"
+          ],
+          "note": "Simon de Montfort led the barons."
+        },
+        {
+          "heading": "1265: de Montfort's Parliament",
+          "bullets": [
+            "Knights from each county",
+            "Burgesses from towns",
+            "Ordinary representatives for the first time"
+          ],
+          "note": "De Montfort was killed at Evesham in 1265, but the idea lasted.",
+          "timeline": [
+            {
+              "label": "1215",
+              "text": "Magna Carta"
+            },
+            {
+              "label": "1264",
+              "text": "Battle of Lewes"
+            },
+            {
+              "label": "January 1265",
+              "text": "De Montfort's Parliament"
+            },
+            {
+              "label": "1295",
+              "text": "Edward I's 'Model Parliament'"
+            }
+          ]
+        },
+        {
+          "heading": "Why share power?",
+          "bullets": [
+            "Point, evidence, explain"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "Why did kings call Parliaments?",
+            "steps": [
+              "Point: to get taxes for wars",
+              "Evidence: Edward I called the 1295 Parliament during wars with France, Scotland and Wales",
+              "Explain: taxes paid more willingly when representatives agreed"
+            ],
+            "answer": "Money for war needed consent"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Who were burgesses?",
+            "options": [
+              "Bishops",
+              "Town representatives",
+              "Knights of the king's household"
+            ],
+            "answer": 1,
+            "why": "Burgesses represented towns; knights represented counties."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why the 1265 Parliament was different. (2 marks)",
+          "a": "It included knights and burgesses (1), so ordinary landholders and towns were represented for the first time (1)",
+          "mins": 3,
+          "model": "Point: new groups were invited.\nEvidence: knights and burgesses.\nExplain: not just barons and bishops."
+        },
+        {
+          "q": "Who led the barons in the 1260s?",
+          "a": "Simon de Montfort",
+          "mins": 1
+        },
+        {
+          "q": "What did kings mainly want from Parliament?",
+          "a": "Taxes (money)",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Complete the Parliament flow chart (money, wars, consent, representatives), then answer in the portal response box: 'Why did Parliament develop?' Starter: 'Parliament developed mainly because ...'",
+          "a": "Links between war, tax and consent with 1265 and 1295 as evidence",
+          "mins": 14,
+          "model": "Teacher fills in the first two boxes."
+        },
+        {
+          "q": "Extend: Compare Parliament in 1295 with Parliament today: one similarity, one difference.",
+          "a": "Similar: agrees taxes; different: elected by all adults today, women included",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: Was money or ideas about rights more important? Explain.",
+          "a": "A justified view: mainly money, but Magna Carta ideas mattered",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Edward I's 'Model Parliament' met in:",
+          "a": "1295",
+          "mins": 1,
+          "options": [
+            "1295",
+            "1066"
+          ]
+        },
+        {
+          "q": "Big question: why would a king share power?",
+          "a": "He needed money for wars, and taxes were easier to collect with the agreement of representatives",
+          "mins": 2
+        }
+      ],
+      "homework": "Find out who your local MP is and one thing Parliament debated this week (UK Parliament website).",
+      "send": "SEND: flow chart with word bank. EAL: tax, consent, represent glossary. Stretch: research the Provisions of Oxford (1258).",
+      "resources": [
+        "Tarbiyyah Secondary History Curriculum Intent (KS3 programme overview); TGA Year 7 pack, History, Spring 2",
+        "UK Parliament website, Living Heritage pages (free online)",
+        "Parliament flow chart sheet (portal printable)",
+        "Portal response box"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Palace of Westminster",
+          "alt": "The Palace of Westminster",
+          "for": "hook"
+        },
+        {
+          "find": "Westminster Hall interior",
+          "alt": "Westminster Hall",
+          "for": "teach:4"
+        },
+        {
+          "find": "Lewes Castle",
+          "alt": "Lewes, site of the 1264 battle",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Medieval monarchs: Magna Carta and Edward I",
+      "n": 11,
+      "title": "What did Edward I achieve?",
+      "bigQuestion": "What makes a medieval king 'successful'?",
+      "objectives": [
+        "To understand the problems Edward I faced and how historians judge his reign"
+      ],
+      "successCriteria": [
+        "All: name three problems Edward inherited",
+        "Most: set criteria for a successful king",
+        "Some: write a clear essay introduction"
+      ],
+      "crossCurricular": "English: essay introductions and argument",
+      "smsc": "Moral: judging rulers by justice to all subjects",
+      "keywords": [
+        {
+          "term": "reign",
+          "def": "the time a king rules"
+        },
+        {
+          "term": "coronation",
+          "def": "the ceremony of crowning a king"
+        },
+        {
+          "term": "reputation",
+          "def": "what people think of someone"
+        },
+        {
+          "term": "interpretation",
+          "def": "a historian's view of the past"
+        },
+        {
+          "term": "criteria",
+          "def": "a set of tests to judge something"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What would you expect a good ruler to do in their first year?"
+      },
+      "starter": [
+        {
+          "q": "Simon de Montfort's Parliament met in:",
+          "a": "1265",
+          "mins": 1,
+          "options": [
+            "1265",
+            "1215"
+          ]
+        },
+        {
+          "q": "Burgesses represented:",
+          "a": "Towns",
+          "mins": 1,
+          "options": [
+            "Towns",
+            "Bishops"
+          ]
+        },
+        {
+          "q": "Which crusade leader recaptured Jerusalem in 1187?",
+          "a": "Salahuddin (Saladin)",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Edward before he was king",
+          "bullets": [
+            "Born 1239, son of Henry III",
+            "Fought de Montfort; won at Evesham, 1265",
+            "On crusade when his father died, 1272"
+          ],
+          "note": "Link to Spring 1: Edward went to Acre on crusade in 1271."
+        },
+        {
+          "heading": "Problems he inherited",
+          "bullets": [
+            "Powerful barons after civil war",
+            "Royal debts",
+            "Wales and Scotland on the borders"
+          ],
+          "note": "Use the Hodder 2.6A worksheet.",
+          "timeline": [
+            {
+              "label": "1272",
+              "text": "Edward I becomes king"
+            },
+            {
+              "label": "1275",
+              "text": "First Statute of Westminster"
+            },
+            {
+              "label": "1282 to 1283",
+              "text": "Conquest of Wales"
+            },
+            {
+              "label": "1290",
+              "text": "Expulsion of the Jews from England"
+            },
+            {
+              "label": "1295",
+              "text": "The 'Model Parliament'"
+            },
+            {
+              "label": "1307",
+              "text": "Edward dies on campaign against Scotland"
+            }
+          ]
+        },
+        {
+          "heading": "Criteria for success",
+          "bullets": [
+            "Law and order",
+            "Control of barons",
+            "Wars won",
+            "Treatment of all subjects"
+          ],
+          "note": "Agree criteria as a class.",
+          "diagram": {
+            "centre": "A successful medieval king",
+            "items": [
+              "law and order",
+              "money",
+              "control of barons",
+              "winning wars",
+              "justice for all subjects",
+              "lasting achievements"
+            ]
+          }
+        },
+        {
+          "heading": "Writing the introduction",
+          "bullets": [
+            "Name the question",
+            "Give dates and context",
+            "Hint at your argument"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "Introduction: how successful was Edward I?",
+            "steps": [
+              "Edward I ruled England from 1272 to 1307",
+              "He inherited debts, rebellious barons and border wars",
+              "He had real achievements, but also failures and cruelty"
+            ],
+            "answer": "A two-sentence introduction with context and argument"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Edward I became king in:",
+            "options": [
+              "1066",
+              "1272",
+              "1215"
+            ],
+            "answer": 1,
+            "why": "His father Henry III died in 1272 while Edward was returning from crusade."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write two criteria you will use to judge Edward.",
+          "a": "For example: law and order; justice for all subjects",
+          "mins": 2,
+          "model": "A criterion is a test.\nTest 1: did he keep law and order?\nTest 2: was he just to all his subjects?"
+        },
+        {
+          "q": "What happened to England's Jews in 1290?",
+          "a": "Edward expelled them from England",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: In the portal response box, write the introduction to your essay 'How successful was Edward I?' (2 to 3 sentences) and list your criteria.",
+          "a": "Introduction with dates, context, argument; at least three criteria",
+          "mins": 12,
+          "model": "Teacher writes the model introduction on screen first."
+        },
+        {
+          "q": "Extend: Read two short interpretations (portal sheet) and say how they differ.",
+          "a": "One praises his laws and Parliaments; one stresses his cruelty, the 1290 expulsion and costly wars",
+          "mins": 6
+        },
+        {
+          "q": "Stretch: Why might Welsh, Scottish and English historians judge him differently?",
+          "a": "Different experiences: conquest of Wales and Scotland versus English law reforms",
+          "mins": 5
+        }
+      ],
+      "exit": [
+        {
+          "q": "Edward expelled the Jews from England in:",
+          "a": "1290",
+          "mins": 1,
+          "options": [
+            "1290",
+            "1215"
+          ]
+        },
+        {
+          "q": "Big question: what makes a medieval king successful?",
+          "a": "Criteria such as law and order, control of nobles, wars, money and justice to all subjects",
+          "mins": 2
+        }
+      ],
+      "homework": "Make a revision card of Edward's timeline (1272 to 1307) with five events.",
+      "send": "SEND: introduction frame. EAL: glossary of reign, reputation, interpretation. Stretch: research the Statute of Jewry (1275).",
+      "resources": [
+        "Understanding History: Key Stage 3 (Hodder, 2019) scheme of work, Unit 2, lesson 2.6A (What did King Edward I achieve?), worksheets 2.6A.1 and 2.6A.2",
+        "Tarbiyyah Secondary History Curriculum Intent (KS3 programme overview); TGA Year 7 pack, History, Spring 2",
+        "Two interpretations of Edward I (portal printable; teacher-written summaries, not quotations)",
+        "Portal response box"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Westminster Abbey Edward I tomb",
+          "alt": "Edward I's tomb in Westminster Abbey",
+          "for": "keywords"
+        },
+        {
+          "find": "Acre old city walls",
+          "alt": "The walls of Acre, where Edward went on crusade",
+          "for": "teach:1"
+        },
+        {
+          "find": "Coronation Chair Westminster",
+          "alt": "The Coronation Chair made for Edward I",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Medieval monarchs: Magna Carta and Edward I",
+      "n": 12,
+      "title": "Ruling England: law and government under Edward I",
+      "bigQuestion": "Do new laws make a country fairer?",
+      "objectives": [
+        "To understand how Edward I changed law and government and increased royal control"
+      ],
+      "successCriteria": [
+        "All: name two of Edward's legal changes",
+        "Most: explain how they increased his control",
+        "Some: write an essay paragraph judging their success"
+      ],
+      "crossCurricular": "Citizenship: how laws are made today",
+      "smsc": "Moral: justice, law and power",
+      "keywords": [
+        {
+          "term": "statute",
+          "def": "a law made by the king in Parliament"
+        },
+        {
+          "term": "Quo Warranto",
+          "def": "inquiries asking 'by what warrant' lords held their rights"
+        },
+        {
+          "term": "petition",
+          "def": "a written request to the king"
+        },
+        {
+          "term": "sheriff",
+          "def": "the king's officer in a county"
+        },
+        {
+          "term": "government",
+          "def": "the people and system that run a country"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you were a medieval king, how would you find out if your lords were cheating you?"
+      },
+      "starter": [
+        {
+          "q": "Edward I became king in:",
+          "a": "1272",
+          "mins": 1,
+          "options": [
+            "1272",
+            "1307"
+          ]
+        },
+        {
+          "q": "Edward expelled England's Jews in:",
+          "a": "1290",
+          "mins": 1,
+          "options": [
+            "1290",
+            "1265"
+          ]
+        },
+        {
+          "q": "Give one criterion for a successful king.",
+          "a": "For example: law and order, winning wars, justice",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Finding out",
+          "bullets": [
+            "Hundred Rolls inquiries, 1274 to 1275",
+            "Who held land and rights?",
+            "Were officials corrupt?"
+          ],
+          "note": "Officials toured England asking questions."
+        },
+        {
+          "heading": "New statutes",
+          "bullets": [
+            "Statute of Westminster, 1275",
+            "Quo Warranto: 'by what warrant?'",
+            "Statute of Winchester, 1285: local policing"
+          ],
+          "note": "Barons had to prove their rights or lose them.",
+          "table": {
+            "head": [
+              "Change",
+              "What it did",
+              "Effect on royal power"
+            ],
+            "rows": [
+              [
+                "Statute of Westminster, 1275",
+                "reformed many areas of law",
+                "the king's law reached further"
+              ],
+              [
+                "Quo Warranto inquiries",
+                "lords proved their rights",
+                "fewer rights taken illegally"
+              ],
+              [
+                "Statute of Winchester, 1285",
+                "local watch and hue and cry",
+                "better order in counties"
+              ],
+              [
+                "Regular Parliaments",
+                "petitions and taxes",
+                "money and consent for the king"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Symbols of power",
+          "bullets": [
+            "The royal seal",
+            "Orb and sceptre",
+            "Messages of authority"
+          ],
+          "note": "Hodder 2.6B: examine the seal of Edward I."
+        },
+        {
+          "heading": "The essay paragraph",
+          "bullets": [
+            "Point, evidence, explain, judge"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "Paragraph: law and order",
+            "steps": [
+              "Point: Edward improved law and order",
+              "Evidence: Statutes of Westminster (1275) and Winchester (1285)",
+              "Explain: the king's courts and local policing reached more people",
+              "Judge: a clear success by my criteria"
+            ],
+            "answer": "A PEEJ paragraph"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Quo Warranto asked lords:",
+            "options": [
+              "To pay a fine",
+              "By what right they held their privileges",
+              "To join a crusade"
+            ],
+            "answer": 1,
+            "why": "Quo warranto is Latin for 'by what warrant'."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain how Quo Warranto increased Edward's control. (2 marks)",
+          "a": "Lords had to prove their rights (1), so rights taken without permission returned to the Crown (1)",
+          "mins": 3,
+          "model": "Point: lords were questioned.\nExplain: they had to show proof.\nResult: the king got back lost rights."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: In the portal response box, write paragraph 2 of your Edward I essay: law and government. Use PEEJ. Starter: 'One way Edward was successful was ...'",
+          "a": "Accurate evidence and a judgement against the criteria",
+          "mins": 15,
+          "model": "Teacher writes the model paragraph on screen first."
+        },
+        {
+          "q": "Extend: Write paragraph 3: how Edward controlled the barons.",
+          "a": "Quo Warranto, Parliaments, seal and authority",
+          "mins": 6
+        },
+        {
+          "q": "Stretch: Did these changes help ordinary people or mainly the king? Explain.",
+          "a": "Both: better order and courts, but mainly strengthened royal power",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "A statute is:",
+          "a": "A law made by the king in Parliament",
+          "mins": 1,
+          "options": [
+            "A law made by the king in Parliament",
+            "A tax"
+          ]
+        },
+        {
+          "q": "Big question: do new laws make a country fairer?",
+          "a": "Only if they are just and enforced fairly; Edward's laws improved order but also served royal power",
+          "mins": 2
+        }
+      ],
+      "homework": "Revise your essay paragraphs: highlight point, evidence, explain and judgement in four colours.",
+      "send": "SEND: PEEJ frame with evidence bank. EAL: glossary. Stretch: research the 1275 Statute of Jewry and how it affected Jewish communities.",
+      "resources": [
+        "Understanding History: Key Stage 3 (Hodder, 2019) scheme of work, Unit 2, lesson 2.6B (Ruling England), worksheet 2.6B",
+        "Tarbiyyah Secondary History Curriculum Intent (KS3 programme overview); TGA Year 7 pack, History, Spring 2",
+        "Portal response box",
+        "PEEJ writing frame (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Great Seal of England medieval",
+          "alt": "A medieval royal seal",
+          "for": "teach:3"
+        },
+        {
+          "find": "Palace of Westminster",
+          "alt": "The Palace of Westminster",
+          "for": "hook"
+        },
+        {
+          "find": "medieval parchment scroll",
+          "alt": "A medieval parchment roll",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Medieval monarchs: Magna Carta and Edward I",
+      "n": 13,
+      "title": "Edward's wars in Wales and Scotland",
+      "bigQuestion": "Can a conqueror be called successful if the people he conquered never accepted him?",
+      "objectives": [
+        "To understand Edward I's wars in Wales and Scotland and judge how successful they were"
+      ],
+      "successCriteria": [
+        "All: describe one event in each war",
+        "Most: compare success in Wales and Scotland",
+        "Some: write a conclusion judging Edward's whole reign"
+      ],
+      "crossCurricular": "Geography: the landscapes of Wales and Scotland",
+      "smsc": "Moral: the cost of conquest and the right to resist injustice",
+      "keywords": [
+        {
+          "term": "conquest",
+          "def": "taking control of a land by force"
+        },
+        {
+          "term": "castle",
+          "def": "a fortified building"
+        },
+        {
+          "term": "rebellion",
+          "def": "rising up against a ruler"
+        },
+        {
+          "term": "overlord",
+          "def": "a ruler who claims power over other rulers"
+        },
+        {
+          "term": "resistance",
+          "def": "fighting back against control"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What would make a defeated people keep resisting for years?"
+      },
+      "starter": [
+        {
+          "q": "Quo Warranto asked lords:",
+          "a": "By what right they held privileges",
+          "mins": 1,
+          "options": [
+            "By what right they held privileges",
+            "To fight"
+          ]
+        },
+        {
+          "q": "The Statute of Westminster was in:",
+          "a": "1275",
+          "mins": 1,
+          "options": [
+            "1275",
+            "1215"
+          ]
+        },
+        {
+          "q": "Who led the barons in 1264 to 1265?",
+          "a": "Simon de Montfort",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Wales",
+          "bullets": [
+            "Llywelyn ap Gruffudd, Prince of Wales",
+            "Wars of 1277 and 1282 to 1283",
+            "Llywelyn killed in December 1282"
+          ],
+          "note": "Statute of Rhuddlan (1284) brought Wales under English rule."
+        },
+        {
+          "heading": "The castles",
+          "bullets": [
+            "Conwy, Caernarfon, Harlech, Beaumaris",
+            "Master James of St George",
+            "Built to hold the land"
+          ],
+          "note": "Today they are a UNESCO World Heritage Site."
+        },
+        {
+          "heading": "Scotland",
+          "bullets": [
+            "1296: invasion; Stone of Scone taken",
+            "1297: Wallace wins at Stirling Bridge",
+            "1298: Edward wins at Falkirk"
+          ],
+          "note": "Robert the Bruce was crowned in 1306. Edward died in 1307 marching north.",
+          "compare": {
+            "left": {
+              "title": "Wales",
+              "points": [
+                "conquered by 1283",
+                "castles held it",
+                "English rule lasted"
+              ]
+            },
+            "right": {
+              "title": "Scotland",
+              "points": [
+                "conquered then lost",
+                "Wallace and Bruce resisted",
+                "independence won after Edward's death"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Judging the wars",
+          "bullets": [
+            "Success in Wales",
+            "Failure in Scotland",
+            "Huge cost and suffering"
+          ],
+          "note": "Model a conclusion.",
+          "model": {
+            "problem": "Conclusion: how successful was Edward I?",
+            "steps": [
+              "Weigh: laws and Parliament were lasting successes",
+              "Weigh: Wales conquered, Scotland lost, huge debts",
+              "Weigh: the 1290 expulsion of the Jews was a grave injustice",
+              "Judge: successful in power, not in justice to all"
+            ],
+            "answer": "A balanced, justified judgement"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Who won the Battle of Stirling Bridge (1297)?",
+            "options": [
+              "Edward I",
+              "William Wallace",
+              "Llywelyn"
+            ],
+            "answer": 1,
+            "why": "Wallace and Andrew Moray defeated the English army."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why Edward was more successful in Wales than Scotland. (4 marks)",
+          "a": "Wales: Llywelyn killed, castles built, statute imposed (2). Scotland: larger, strong resistance from Wallace and Bruce, Edward died before finishing (2)",
+          "mins": 4,
+          "model": "Wales: leader killed + castles = control.\nScotland: bigger + leaders kept resisting.\nSo: control lasted in Wales, not Scotland."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (assessed): In the portal response box, write paragraphs 4 and 5 (Wales; Scotland) and your conclusion: 'How successful was Edward I?'",
+          "a": "End-of-unit essay assessed: knowledge, explanation, judgement against criteria",
+          "mins": 18,
+          "model": "Teacher models the conclusion on screen."
+        },
+        {
+          "q": "Extend: Add one interpretation and say whether you agree.",
+          "a": "Engages with an interpretation using evidence",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Edward died in:",
+          "a": "1307",
+          "mins": 1,
+          "options": [
+            "1307",
+            "1290"
+          ]
+        },
+        {
+          "q": "Big question: can a conqueror be successful if never accepted?",
+          "a": "Militarily perhaps, but lasting success needs acceptance; Scotland shows force alone failed",
+          "mins": 2
+        }
+      ],
+      "homework": "Proofread your whole Edward I essay and improve one paragraph using your teacher's feedback code.",
+      "send": "SEND: essay frame with paragraph starters. EAL: glossary. Stretch: compare Edward's castles with Norman motte and bailey castles.",
+      "resources": [
+        "Understanding History: Key Stage 3 (Hodder, 2019) scheme of work, Unit 2, lesson 2.6C (Edward's wars), worksheet 2.6C",
+        "Tarbiyyah Secondary History Curriculum Intent (KS3 programme overview); TGA Year 7 pack, History, Spring 2",
+        "Edward I essay success criteria (portal printable; assessed)",
+        "Portal response box"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Caernarfon Castle",
+          "alt": "Caernarfon Castle",
+          "for": "teach:2"
+        },
+        {
+          "find": "Conwy Castle walls",
+          "alt": "Conwy Castle and town walls",
+          "for": "hook"
+        },
+        {
+          "find": "Stirling Bridge Wallace Monument",
+          "alt": "Stirling, where the 1297 battle took place",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Medieval monarchs: Magna Carta and Edward I",
+      "n": 14,
+      "title": "Site study: the Tower of London",
+      "bigQuestion": "Why would a castle keep changing for 1,000 years?",
+      "objectives": [
+        "To understand how and why the Tower of London changed between 1078 and 1300"
+      ],
+      "successCriteria": [
+        "All: label three changes on a plan",
+        "Most: explain why each change was made",
+        "Some: link changes to the wider history of the period"
+      ],
+      "crossCurricular": "Geography: London's site by the Thames",
+      "smsc": "Cultural: Britain's heritage sites",
+      "keywords": [
+        {
+          "term": "site study",
+          "def": "investigating a real place and its history"
+        },
+        {
+          "term": "keep",
+          "def": "the main strong tower of a castle"
+        },
+        {
+          "term": "curtain wall",
+          "def": "a wall around a castle"
+        },
+        {
+          "term": "concentric castle",
+          "def": "a castle with walls inside walls"
+        },
+        {
+          "term": "moat",
+          "def": "a water-filled ditch"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you were designing a castle to protect London, what would you include?"
+      },
+      "starter": [
+        {
+          "q": "Who won the Battle of Stirling Bridge?",
+          "a": "William Wallace (and Andrew Moray)",
+          "mins": 1,
+          "options": [
+            "William Wallace",
+            "Edward I"
+          ]
+        },
+        {
+          "q": "Name one castle Edward built in Wales.",
+          "a": "Conwy, Caernarfon, Harlech or Beaumaris",
+          "mins": 1
+        },
+        {
+          "q": "Who began the White Tower?",
+          "a": "William the Conqueror",
+          "mins": 1,
+          "options": [
+            "William the Conqueror",
+            "Edward I"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Virtual tour guide",
+          "bullets": [
+            "Historic Royal Palaces website",
+            "Use the plans of 1200 and 1300",
+            "Note what changed"
+          ],
+          "note": "Written guide: follow the online tour route; record on the worksheet. No trips."
+        },
+        {
+          "heading": "Norman beginnings",
+          "bullets": [
+            "White Tower begun about 1078",
+            "Showed Norman power over London",
+            "Inside the old Roman wall"
+          ],
+          "note": "A stone keep to control the city.",
+          "timeline": [
+            {
+              "label": "About 1078",
+              "text": "White Tower begun"
+            },
+            {
+              "label": "1200s",
+              "text": "Henry III adds walls and towers"
+            },
+            {
+              "label": "1275 to 1285",
+              "text": "Edward I adds an outer wall and new moat"
+            },
+            {
+              "label": "Today",
+              "text": "Historic site and home of the Crown Jewels"
+            }
+          ]
+        },
+        {
+          "heading": "Becoming concentric",
+          "bullets": [
+            "Henry III: inner curtain wall",
+            "Edward I: outer curtain wall, wider moat",
+            "A new river gate (St Thomas's Tower)"
+          ],
+          "note": "Walls within walls: attackers trapped between them."
+        },
+        {
+          "heading": "Why change?",
+          "bullets": [
+            "New threats: rebellions and sieges",
+            "Kings' wealth and status",
+            "Lessons from crusader castles"
+          ],
+          "note": "Model linking a change to a cause.",
+          "model": {
+            "problem": "Why did Edward I add an outer wall?",
+            "steps": [
+              "Change: a second wall around the first",
+              "Cause: Henry III had faced rebel barons in London",
+              "Effect: a much stronger, concentric fortress"
+            ],
+            "answer": "Rebellion showed the need for stronger defences"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "A concentric castle has:",
+            "options": [
+              "One tall tower",
+              "Walls inside walls",
+              "No moat"
+            ],
+            "answer": 1,
+            "why": "Concentric means circles within circles: an inner and outer wall."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Label two changes between the 1200 and 1300 plans.",
+          "a": "Outer curtain wall and wider moat (also the river gate)",
+          "mins": 3,
+          "model": "Look at the 1200 plan.\nLook at the 1300 plan.\nWhat is new? An outer wall and a wider moat."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Complete the site study worksheet: label the 1200 and 1300 plans and explain three changes with causes.",
+          "a": "Accurate labels; three changes linked to causes",
+          "mins": 14,
+          "model": "Teacher explains the White Tower first."
+        },
+        {
+          "q": "Extend: Half-term check: answer the 8 unit questions on the portal (Magna Carta to Edward I).",
+          "a": "Answers on the portal quiz key",
+          "mins": 8
+        },
+        {
+          "q": "Stretch: How does the Tower show change and continuity across 1,000 years?",
+          "a": "Changed: walls, uses; continuity: royal power, symbol of London",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Edward I added:",
+          "a": "An outer curtain wall",
+          "mins": 1,
+          "options": [
+            "An outer curtain wall",
+            "The White Tower"
+          ]
+        },
+        {
+          "q": "Big question: why would a castle keep changing?",
+          "a": "New threats, new technology, and rulers wanting to show power",
+          "mins": 2
+        }
+      ],
+      "homework": "Explore the Historic Royal Palaces Tower of London pages and find one more change after 1300.",
+      "send": "SEND: plans with labels to place. EAL: glossary. Stretch: compare the Tower with Edward's Welsh castles.",
+      "resources": [
+        "Understanding History: Key Stage 3 (Hodder, 2019) scheme of work, Unit 2, lesson 2.7 (Site study: the Tower of London), worksheet 2.7",
+        "Tarbiyyah Secondary History Curriculum Intent (KS3 programme overview); TGA Year 7 pack, History, Spring 2; virtual site study (no trips)",
+        "Historic Royal Palaces: Tower of London website (free online)",
+        "Tower of London virtual tour written guide (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Tower of London aerial",
+          "alt": "The Tower of London from the air",
+          "for": "hook"
+        },
+        {
+          "find": "White Tower Tower of London",
+          "alt": "The White Tower",
+          "for": "teach:2"
+        },
+        {
+          "find": "Traitors Gate Tower of London",
+          "alt": "St Thomas's Tower and the river gate",
           "for": "keywords"
         }
       ]
