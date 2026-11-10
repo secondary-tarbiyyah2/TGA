@@ -21,7 +21,8 @@ set local role authenticated;
 set local "request.jwt.claims" to '{"sub": "a2000000-0000-0000-0000-000000000001"}';
 select is((select count(*)::int from public.curriculum_resources where id = 'test-res-200'), 1, 'a teacher sees the register');
 select throws_ok($$insert into public.curriculum_resources (id, title, type, subject_slug, year, source, status) values ('x-200', 'x', 'worksheet', 's', 'y7', 'generated', 'made')$$, '42501', null, 'a teacher cannot add to the register');
-select is((with u as (update public.curriculum_resources set title = 'changed' where id = 'test-res-200' returning 1) select count(*)::int from u), 0, 'a teacher cannot change the register');
+update public.curriculum_resources set title = 'changed' where id = 'test-res-200';
+select is((select title from public.curriculum_resources where id = 'test-res-200'), 'Test worksheet', 'a teacher cannot change the register');
 
 set local "request.jwt.claims" to '{"sub": "a2000000-0000-0000-0000-000000000002"}';
 select is((select count(*)::int from public.curriculum_resources), 0, 'a pupil does not see the register');
