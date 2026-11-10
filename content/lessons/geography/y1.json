@@ -2,7 +2,7 @@
   "subject": "Geography",
   "year": "y1",
   "board": "National Curriculum (KS1-3), aligned to AQA GCSE 9-1",
-  "source": "National Curriculum (KS1 geography: local area, UK countries, weather, simple maps); school Geography resources reviewed for ethos and stewardship links | Spring 1 2027 (lesson 5): Tarbiyyah Primary Year 1 curriculum map and Geography Long Term Plan 2023-24 (Cornerstones Moon Zoom!), TGA Year 1 Curriculum Pack (Topic) | Summer 1 2027 (lesson 2 upgraded; 6, 7 new): TGA Year 1 Curriculum Pack, Topic, Bright Lights, Big City; school's Our Wonderful World unit; window survey fieldwork at home",
+  "source": "National Curriculum (KS1 geography: local area, UK countries, weather, simple maps); school Geography resources reviewed for ethos and stewardship links | Spring 1 2027 (lesson 5): Tarbiyyah Primary Year 1 curriculum map and Geography Long Term Plan 2023-24 (Cornerstones Moon Zoom!), TGA Year 1 Curriculum Pack (Topic) | Summer 1 2027 (lesson 2 upgraded; 6, 7 new): TGA Year 1 Curriculum Pack, Topic, Bright Lights, Big City; school's Our Wonderful World unit; window survey fieldwork at home | Summer 2 2027 (lesson 3 upgraded; 8 new): TGA Year 1 Curriculum Pack, Topic, Splendid Skies; school's Our Wonderful World unit; home weather chart fieldwork from a window",
   "lessons": [
     {
       "unit": "Unit 1: My place in the world",
@@ -92,91 +92,224 @@
       "send": "Use real photos and word cards with pictures; allow children to point or draw answers. EAL: say each place name together and show the picture. Stretch: ask children to explain why a place is useful."
     },
     {
-      "unit": "Unit 1: My place in the world",
+      "unit": "Summer 2: Weather and seasons in the UK (Splendid Skies)",
       "n": 3,
-      "title": "Weather and the four seasons in the UK",
-      "duration": 30,
+      "title": "Weather symbols and my weather chart",
+      "bigQuestion": "How could you tell a friend tomorrow's weather without using any words?",
       "objectives": [
-        "Name different types of weather",
-        "Name the four seasons in order",
-        "Say what the weather is often like in autumn and winter"
+        "To understand how weather symbols help us record and share the weather"
       ],
+      "successCriteria": [
+        "All: name four kinds of weather",
+        "Most: match a weather symbol to its weather",
+        "Some: record the weather on a chart"
+      ],
+      "crossCurricular": "Maths: recording in a table day by day",
+      "smsc": "Social: sharing useful information to help others plan their day",
       "keywords": [
         {
           "term": "weather",
-          "def": "what the sky and air are like outside today"
+          "def": "what the air outside is like: sun, rain, wind, cloud"
         },
         {
-          "term": "season",
-          "def": "one of four parts of the year: spring, summer, autumn, winter"
+          "term": "symbol",
+          "def": "a small picture that stands for something"
         },
         {
-          "term": "autumn",
-          "def": "the season when leaves fall and days get shorter"
+          "term": "forecast",
+          "def": "saying what the weather will be like soon"
+        },
+        {
+          "term": "chart",
+          "def": "a table to record things day by day"
         },
         {
           "term": "temperature",
-          "def": "how hot or cold it is"
+          "def": "how hot or cold something is"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "What is the weather like outside your window right now? How do you know?"
+      },
       "starter": [
-        "Say Bismillah. Name the four countries of the UK.",
-        "What is the capital city of England?",
-        "What is the weather like outside today? Tell your partner."
+        {
+          "q": "The warmest season is:",
+          "a": "Summer",
+          "mins": 1,
+          "options": [
+            "Summer",
+            "Winter"
+          ]
+        },
+        {
+          "q": "Which season comes after spring?",
+          "a": "Summer",
+          "mins": 1,
+          "options": [
+            "Summer",
+            "Autumn"
+          ]
+        },
+        {
+          "q": "Say one thing a tree has in summer.",
+          "a": "Green leaves, flowers or fruit",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "What is weather?",
+          "heading": "Kinds of weather",
           "bullets": [
-            "Weather is what it is like outside.",
-            "It can be sunny, cloudy, rainy, windy, snowy or foggy.",
-            "Weather can change in one day."
+            "Sunny",
+            "Cloudy",
+            "Rainy",
+            "Windy",
+            "Snowy"
           ],
-          "note": "Show weather symbols one by one and ask children to act out each (shiver for cold, flap hands for wind). Ask: what did you wear today and why? This links weather to everyday life."
+          "note": "Ask pupils to look out of the window and say which ones they see now.",
+          "diagram": {
+            "centre": "Weather",
+            "items": [
+              "sunny",
+              "cloudy",
+              "rainy",
+              "windy",
+              "snowy"
+            ]
+          }
         },
         {
-          "heading": "The four seasons",
+          "heading": "Weather symbols",
           "bullets": [
-            "The year has four seasons.",
-            "They are spring, summer, autumn and winter.",
-            "They come round in the same order every year."
+            "A sun means sunny",
+            "A cloud means cloudy",
+            "A cloud with drops means rain",
+            "Lines blowing means windy"
           ],
-          "note": "Show a season wheel. Say the seasons in order and count on fingers. We are in autumn now (November). Ask: what is the next season? Many children will name a time such as Ramadan or Eid - gently bring them back to 'winter'."
+          "note": "These are the symbols weather forecasters use on maps. Draw each one on the board as you say it."
         },
         {
-          "heading": "Autumn and winter in the UK",
+          "heading": "A weather chart",
           "bullets": [
-            "In autumn leaves change colour and fall.",
-            "In winter it is cold. Days are short.",
-            "We wear coats, hats and scarves."
+            "One row for each day",
+            "Draw the symbol for that day",
+            "Look at the same time each day"
           ],
-          "note": "Show photographs of the same park in each season. Ask: what is different? Encourage descriptive words (brown, bare, frosty). Mention that daylight is shorter in winter, so it gets dark early, which affects the times of prayer."
+          "note": "Model filling in Monday from today's weather. Use the chart from the pupil PDF.",
+          "model": {
+            "problem": "Fill in today on the weather chart",
+            "steps": [
+              "Look out of the window",
+              "Is it sunny, cloudy or rainy?",
+              "Is it windy?",
+              "Draw the symbol in today's box"
+            ],
+            "answer": "For example: a sun and a cloud for sunny spells"
+          }
         },
         {
-          "heading": "Spring and summer in the UK",
+          "heading": "Check",
           "bullets": [
-            "In spring flowers grow and it gets warmer.",
-            "In summer it is warm and the days are long.",
-            "We wear T-shirts and sun hats."
+            "Vote in the Teams poll"
           ],
-          "note": "Link to the idea that the sun is higher in the sky in summer. Do not go into the reasons why seasons happen; just notice and describe. Ask who has a favourite season and why."
+          "note": "Share the results.",
+          "check": {
+            "q": "A cloud with drops under it means:",
+            "options": [
+              "Sunny",
+              "Rainy",
+              "Snowy"
+            ],
+            "answer": 1,
+            "why": "The drops are rain falling from the cloud."
+          }
         }
       ],
       "practice": [
-        "Look at four photographs. Say which season each picture shows and how you know.",
-        "Choose the right clothes for a rainy autumn day. Explain your choice."
+        {
+          "q": "Draw the symbol for sunny.",
+          "a": "A circle with lines (a sun)",
+          "mins": 1,
+          "model": "The sun is round.\nI draw a circle.\nI add short lines all round for sunshine."
+        },
+        {
+          "q": "What does a cloud with drops mean?",
+          "a": "Rain",
+          "mins": 1
+        },
+        {
+          "q": "What does a forecast tell us?",
+          "a": "What the weather will be like soon",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Draw a picture of an autumn day. Add three weather or season words.",
-        "Cut and stick the four seasons in the right order.",
-        "Stretch: write one sentence about your favourite season."
+        {
+          "q": "Core: Fill in today's box on your weather chart with a symbol and a word.",
+          "a": "A correct symbol and word for today's weather",
+          "mins": 5,
+          "model": "Teacher fills in today's box from the classroom window first."
+        },
+        {
+          "q": "Extend: Draw the symbols for windy and snowy.",
+          "a": "Wind lines; snowflakes",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Is today's weather usual for summer? Say why.",
+          "a": "For example: yes, it is warm and sunny, which is usual in summer",
+          "mins": 1
+        }
       ],
       "exit": [
-        "Name the four seasons.",
-        "What is the weather often like in winter in the UK?"
+        {
+          "q": "A forecast tells us the weather:",
+          "a": "That is coming soon",
+          "mins": 1,
+          "options": [
+            "That is coming soon",
+            "From last year"
+          ]
+        },
+        {
+          "q": "Big question: how can you share the weather without words?",
+          "a": "Draw a weather symbol, like a sun or a rain cloud",
+          "mins": 1
+        }
       ],
-      "homework": "Look outside for three days and draw the weather symbol for each day.",
-      "send": "Give a word bank with pictures. EAL: practise weather words with actions. Stretch: ask children to compare summer and winter using the word 'but'."
+      "homework": "Fieldwork at home: fill in your weather chart at the same time each day for one week, looking from a window with an adult.",
+      "send": "SEND: symbol stickers or cut-out symbols to stick on the chart. EAL: weather words with symbols. Stretch: add a temperature word (hot, warm, cool, cold) each day.",
+      "resources": [
+        "Tarbiyyah Primary Year 1 curriculum map and long-term plans 2023-24; TGA Year 1 Curriculum Pack, Topic, Summer 2 Splendid Skies (companion: Chop, Slice & Mash) (Cornerstones Maestro: CHECK IN MAESTRO)",
+        "Our Wonderful World (school geography unit): weather, seasons and hot and cold places pages and knowledge organiser",
+        "One-week weather chart with symbols (portal printable, written fieldwork guide on the back)",
+        "Pencil and coloured pencils"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "weather map symbols",
+          "alt": "Weather symbols on a map",
+          "for": "hook"
+        },
+        {
+          "find": "rain cloud",
+          "alt": "A grey rain cloud",
+          "for": "keywords"
+        },
+        {
+          "find": "cumulus clouds blue sky",
+          "alt": "White clouds on a sunny day",
+          "for": "teach:1"
+        }
+      ]
     },
     {
       "unit": "Unit 1: My place in the world",
@@ -1171,6 +1304,222 @@
           "find": "suburban street houses UK",
           "alt": "A street of houses",
           "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Weather and seasons in the UK (Splendid Skies)",
+      "n": 8,
+      "title": "Hot and cold places: UK summer and a place near the Equator",
+      "bigQuestion": "Is it summer everywhere in the world in June?",
+      "objectives": [
+        "To understand how the weather near the Equator is different from the UK"
+      ],
+      "successCriteria": [
+        "All: find the Equator and the North and South Poles on a globe",
+        "Most: say that places near the Equator are hot all year",
+        "Some: compare UK summer with Singapore"
+      ],
+      "crossCurricular": "Science: weather and day length in different places",
+      "smsc": "Cultural: places around the world have very different weather",
+      "keywords": [
+        {
+          "term": "Equator",
+          "def": "an imaginary line round the middle of the Earth"
+        },
+        {
+          "term": "North Pole",
+          "def": "the most northern point of the Earth"
+        },
+        {
+          "term": "South Pole",
+          "def": "the most southern point of the Earth"
+        },
+        {
+          "term": "hot",
+          "def": "very warm"
+        },
+        {
+          "term": "compare",
+          "def": "say what is the same and what is different"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you could visit one place, a hot place or a cold place, which would you choose and why?"
+      },
+      "starter": [
+        {
+          "q": "Summer days in the UK are:",
+          "a": "Long",
+          "mins": 1,
+          "options": [
+            "Long",
+            "Short"
+          ]
+        },
+        {
+          "q": "Sunset is when the sun:",
+          "a": "Goes down",
+          "mins": 1,
+          "options": [
+            "Goes down",
+            "Comes up"
+          ]
+        },
+        {
+          "q": "Name one continent.",
+          "a": "For example: Europe, Asia or Africa",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The Equator and the Poles",
+          "bullets": [
+            "The Equator goes round the middle",
+            "The North Pole is at the top",
+            "The South Pole is at the bottom"
+          ],
+          "note": "Show a globe or a world map. The Equator is not a real line on the ground."
+        },
+        {
+          "heading": "Hot and cold",
+          "bullets": [
+            "Near the Equator: hot all year",
+            "Near the Poles: cold all year",
+            "The UK is in between"
+          ],
+          "note": "The sun shines most strongly near the Equator."
+        },
+        {
+          "heading": "UK summer and Singapore",
+          "bullets": [
+            "London in July: about 23 °C in the afternoon",
+            "Singapore: about 31 °C in the afternoon, all year",
+            "Singapore has rain all year"
+          ],
+          "note": "Find Singapore on the map: a small island very near the Equator. Temperatures are rounded average afternoon highs.",
+          "compare": {
+            "left": {
+              "title": "UK in summer",
+              "points": [
+                "Warm",
+                "Long days",
+                "Cold winters too"
+              ]
+            },
+            "right": {
+              "title": "Singapore",
+              "points": [
+                "Hot all year",
+                "Days about 12 hours",
+                "Lots of rain"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Places near the Equator are:",
+            "options": [
+              "Hot all year",
+              "Cold all year",
+              "Snowy in summer"
+            ],
+            "answer": 0,
+            "why": "The sun is strongest near the Equator, so it is hot all year."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Point to the Equator on the map. Is it at the top, middle or bottom?",
+          "a": "The middle",
+          "mins": 1,
+          "model": "I look for the line round the middle of the Earth.\nIt is half way between the top and the bottom.\nThat is the Equator."
+        },
+        {
+          "q": "Is it hot or cold near the North Pole?",
+          "a": "Cold",
+          "mins": 1
+        },
+        {
+          "q": "Is Singapore near the Equator or near a Pole?",
+          "a": "Near the Equator",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw a line to match each place to its weather: Singapore, North Pole, UK in summer.",
+          "a": "Singapore: hot all year; North Pole: cold all year; UK in summer: warm",
+          "mins": 5,
+          "model": "Teacher matches the North Pole to 'cold all year' first."
+        },
+        {
+          "q": "Extend: Say one thing that is the same about the UK and Singapore in June.",
+          "a": "For example: both are warm in June",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: What clothes would you pack for Singapore? Why?",
+          "a": "Light clothes and an umbrella, because it is hot and rainy",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "The UK is:",
+          "a": "Between the Equator and the North Pole",
+          "mins": 1,
+          "options": [
+            "Between the Equator and the North Pole",
+            "On the Equator"
+          ]
+        },
+        {
+          "q": "Big question: is it summer everywhere in June?",
+          "a": "No: near the Equator it is hot all year, and near the Poles it is cold",
+          "mins": 1
+        }
+      ],
+      "homework": "Find the Equator on a globe, map or atlas at home and name one hot country on it.",
+      "send": "SEND: map with the Equator already drawn. EAL: hot, cold, Equator, Pole with pictures. Stretch: name the continent at the South Pole (Antarctica).",
+      "resources": [
+        "Tarbiyyah Primary Year 1 curriculum map and long-term plans 2023-24; TGA Year 1 Curriculum Pack, Topic, Summer 2 Splendid Skies (companion: Chop, Slice & Mash) (Cornerstones Maestro: CHECK IN MAESTRO)",
+        "Our Wonderful World (school geography unit): weather, seasons and hot and cold places pages and knowledge organiser",
+        "World map with the Equator and the Poles (portal printable)",
+        "Globe or atlas if you have one"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "world map Equator line",
+          "alt": "A world map with the Equator",
+          "for": "teach:1"
+        },
+        {
+          "find": "Singapore skyline Marina Bay",
+          "alt": "Singapore, a city near the Equator",
+          "for": "teach:3"
+        },
+        {
+          "find": "Arctic sea ice",
+          "alt": "Sea ice near the North Pole",
+          "for": "keywords"
         }
       ]
     }

@@ -8354,6 +8354,1607 @@
         "1.2.7",
         "1.2.4"
       ]
+    },
+    {
+      "unit": "Summer 2: Practice and mock",
+      "n": 42,
+      "title": "Programming practice 1: from problem to program in a time limit",
+      "duration": 50,
+      "bigQuestion": "Paper 2 gives you three hours to solve problems in Python. What should you do in the first five minutes of each task?",
+      "objectives": [
+        "To understand how to turn a written problem into a working, tested Python program within a time limit"
+      ],
+      "successCriteria": [
+        "All: decompose a problem into inputs, processes and outputs",
+        "Most: write a program with validation and a loop",
+        "Some: test with normal, boundary and erroneous data"
+      ],
+      "crossCurricular": "Maths: averages",
+      "smsc": "Moral: perseverance under time pressure",
+      "keywords": [
+        {
+          "term": "decomposition",
+          "def": "breaking a problem into smaller parts"
+        },
+        {
+          "term": "validation",
+          "def": "checking input is sensible before using it"
+        },
+        {
+          "term": "boundary data",
+          "def": "values at the edge of the valid range"
+        },
+        {
+          "term": "erroneous data",
+          "def": "data that should be rejected"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Paper 2 gives you three hours to solve problems in Python. What should you do in the first five minutes of each task?",
+        "a": "Read carefully, decompose into inputs, processes and outputs, and plan tests."
+      },
+      "starter": [
+        {
+          "q": "Binary search needs ...",
+          "a": "sorted data",
+          "mins": 1,
+          "options": [
+            "sorted data",
+            "unsorted data"
+          ]
+        },
+        {
+          "q": "NOT 1 = ?",
+          "a": "0",
+          "mins": 1
+        },
+        {
+          "q": "Bubble sort compares ...",
+          "a": "neighbouring items",
+          "mins": 1,
+          "options": [
+            "neighbouring items",
+            "first and last"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The task",
+          "bullets": [
+            "A charity counts donated items each day for 7 days",
+            "Each count must be 0 to 500",
+            "Output the total, the average and the best day"
+          ],
+          "note": "Example task written for TGA."
+        },
+        {
+          "heading": "Decompose",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Inputs",
+              "Processes",
+              "Outputs"
+            ],
+            "rows": [
+              [
+                "7 daily counts",
+                "Validate 0 to 500; running total; track maximum",
+                "Total, average (1 d.p.), best day number"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "A solution",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "python",
+            "text": "total = 0\nbest_day = 1\nbest = -1\nfor day in range(1, 8):\n    count = int(input(f\"Day {day} count: \"))\n    while count < 0 or count > 500:\n        count = int(input(\"0 to 500 only: \"))\n    total = total + count\n    if count > best:\n        best = count\n        best_day = day\nprint(\"Total:\", total)\nprint(\"Average:\", round(total / 7, 1))\nprint(\"Best day:\", best_day)",
+            "output": "Validated input; total, average and best day"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Which is boundary data for 0 to 500?",
+            "options": [
+              "500",
+              "250",
+              "-7"
+            ],
+            "answer": 0,
+            "why": "The edge of the valid range."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write a test plan with one normal, two boundary and one erroneous value.",
+          "a": "Normal 120; boundary 0 and 500; erroneous 501 (or -1).",
+          "mins": 4,
+          "model": "I do: for 1 to 10: normal 5, boundary 1 and 10, erroneous 11."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Timed (20 minutes): a shop records 5 sales values (£0.01 to £1,000.00); validate, then output the total, the mean and how many were over £100. Save and upload.",
+          "a": "A working, validated program with correct outputs on the test plan.",
+          "mins": 13,
+          "model": "The teacher decomposes the task with the class."
+        },
+        {
+          "q": "Extend: also output the lowest sale.",
+          "a": "Track a minimum starting from the first value.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Validation ...",
+          "a": "checks input before it is used",
+          "mins": 1,
+          "options": [
+            "checks input before it is used",
+            "deletes errors"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Paper 2 gives you three hours to solve problems in Python. What should you do in the first five minutes of each task?",
+          "a": "Read carefully, decompose into inputs, processes and outputs, and plan tests.",
+          "mins": 2
+        }
+      ],
+      "homework": "Finish the timed task and run your test plan.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Computer Science (4CP0): Paper 1 Principles of Computer Science (written, 2 hours, 80 marks); Paper 2 Application of Computational Thinking (Python, on screen, 3 hours, 80 marks)",
+        "Pearson pseudocode command set (as printed in the specification) for written algorithms",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "A free Python 3 editor (IDLE or a browser editor through the school; TO CONFIRM)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Python code on screen",
+          "alt": "Python code",
+          "for": "hook"
+        },
+        {
+          "find": "Stopwatch",
+          "alt": "Working to a time limit",
+          "for": "teach:1"
+        }
+      ],
+      "covers": [
+        "6.1.1",
+        "6.2.2",
+        "6.4.1",
+        "6.4.3"
+      ]
+    },
+    {
+      "unit": "Summer 2: Practice and mock",
+      "n": 43,
+      "title": "Programming practice 2: reading files and processing records",
+      "duration": 50,
+      "bigQuestion": "Paper 2 often gives you a data file. Why read data from a file rather than typing it in?",
+      "objectives": [
+        "To understand how to read a text or CSV file in Python and process each record to answer a question"
+      ],
+      "successCriteria": [
+        "All: open and read a file line by line",
+        "Most: split a CSV line into fields and convert types",
+        "Some: filter and summarise records with a function"
+      ],
+      "smsc": "Moral: accuracy with data",
+      "keywords": [
+        {
+          "term": "CSV",
+          "def": "comma-separated values: each line is a record"
+        },
+        {
+          "term": "record",
+          "def": "one line of related data"
+        },
+        {
+          "term": "field",
+          "def": "one item of data in a record"
+        },
+        {
+          "term": "subprogram",
+          "def": "a named block of code, such as a function"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Paper 2 often gives you a data file. Why read data from a file rather than typing it in?",
+        "a": "Files hold lots of data, are reusable and avoid typing errors."
+      },
+      "starter": [
+        {
+          "q": "Boundary data is ...",
+          "a": "at the edge of the range",
+          "mins": 1,
+          "options": [
+            "at the edge of the range",
+            "always wrong"
+          ]
+        },
+        {
+          "q": "What does len(\"Hello\") return?",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "int(\"42\") gives ...",
+          "a": "the integer 42",
+          "mins": 1,
+          "options": [
+            "the integer 42",
+            "the string 42"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The file",
+          "bullets": [],
+          "note": "Example data file written for TGA.",
+          "table": {
+            "head": [
+              "Line",
+              "scores.csv"
+            ],
+            "rows": [
+              [
+                "1",
+                "Amira,72"
+              ],
+              [
+                "2",
+                "Bilal,58"
+              ],
+              [
+                "3",
+                "Dawud,91"
+              ],
+              [
+                "4",
+                "Hana,64"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Reading and summarising",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "python",
+            "text": "def read_scores(name):\n    data = []\n    with open(name, \"r\") as f:\n        for line in f:\n            parts = line.strip().split(\",\")\n            data.append([parts[0], int(parts[1])])\n    return data\n\nscores = read_scores(\"scores.csv\")\nhigh = [s for s in scores if s[1] >= 70]\nprint(len(high), \"scored 70 or more\")",
+            "output": "2 scored 70 or more"
+          }
+        },
+        {
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "Comparing \"91\" >= 70: a string, not a number (TypeError)",
+            "right": "Convert with int() after splitting"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "line.strip().split(\",\") on 'Dawud,91\\n' gives ...",
+            "options": [
+              "['Dawud', '91']",
+              "['Dawud,91']",
+              "91"
+            ],
+            "answer": 0,
+            "why": "strip removes the newline; split separates fields."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "What is the mean of the four scores?",
+          "a": "(72 + 58 + 91 + 64) ÷ 4 = 285 ÷ 4 = 71.25",
+          "mins": 4,
+          "model": "I do: total = 72 + 58 = 130 for the first two."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Timed (20 minutes): write a function that returns the mean score and another that returns the name with the highest score; output both. Save and upload.",
+          "a": "Mean 71.25; highest Dawud.",
+          "mins": 13,
+          "model": "The teacher writes the function header live."
+        },
+        {
+          "q": "Extend: write the names of pupils under 60 to a new file 'support.txt'.",
+          "a": "Open with 'w' and write 'Bilal'.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A CSV record is ...",
+          "a": "one line of data",
+          "mins": 1,
+          "options": [
+            "one line of data",
+            "one column"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Paper 2 often gives you a data file. Why read data from a file rather than typing it in?",
+          "a": "Files hold lots of data, are reusable and avoid typing errors.",
+          "mins": 2
+        }
+      ],
+      "homework": "Revise the Paper 1 topics list for next lesson.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Computer Science (4CP0): Paper 1 Principles of Computer Science (written, 2 hours, 80 marks); Paper 2 Application of Computational Thinking (Python, on screen, 3 hours, 80 marks)",
+        "Pearson pseudocode command set (as printed in the specification) for written algorithms",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "A free Python 3 editor (IDLE or a browser editor through the school; TO CONFIRM)",
+        "Example data file scores.csv (portal)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Spreadsheet data rows",
+          "alt": "Records in a file",
+          "for": "hook"
+        },
+        {
+          "find": "Folder of files",
+          "alt": "Files",
+          "for": "teach:1"
+        }
+      ],
+      "covers": [
+        "6.4.2",
+        "6.6.2",
+        "6.3.3"
+      ]
+    },
+    {
+      "unit": "Summer 2: Practice and mock",
+      "n": 44,
+      "title": "Paper 1 practice: data and algorithm questions",
+      "duration": 50,
+      "bigQuestion": "Why do examiners give marks for working, not just the answer?",
+      "objectives": [
+        "To understand how to answer Paper 1 data representation and algorithm questions accurately, showing working"
+      ],
+      "successCriteria": [
+        "All: convert between binary, denary and hexadecimal",
+        "Most: trace an algorithm with a trace table",
+        "Some: calculate file sizes with the right units"
+      ],
+      "smsc": "Moral: precision and honesty in working",
+      "keywords": [
+        {
+          "term": "two's complement",
+          "def": "a way of representing negative binary numbers"
+        },
+        {
+          "term": "hexadecimal",
+          "def": "base 16, digits 0 to 9 and A to F"
+        },
+        {
+          "term": "trace table",
+          "def": "a table that records variable values as an algorithm runs"
+        },
+        {
+          "term": "kibibyte",
+          "def": "1,024 bytes (the units used in our lessons)"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why do examiners give marks for working, not just the answer?",
+        "a": "Working shows method; you can earn marks even with a slip at the end."
+      },
+      "starter": [
+        {
+          "q": "Hex F in denary is ...",
+          "a": "15",
+          "mins": 1,
+          "options": [
+            "15",
+            "16",
+            "14"
+          ]
+        },
+        {
+          "q": "8-bit binary for 10?",
+          "a": "00001010",
+          "mins": 1
+        },
+        {
+          "q": "1 byte is ...",
+          "a": "8 bits",
+          "mins": 1,
+          "options": [
+            "8 bits",
+            "4 bits"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Worked: two's complement",
+          "bullets": [],
+          "note": "",
+          "model": {
+            "problem": "Represent -6 in 8-bit two's complement.",
+            "steps": [
+              "+6 = 00000110",
+              "Invert the bits: 11111001",
+              "Add 1: 11111010"
+            ],
+            "answer": "11111010"
+          }
+        },
+        {
+          "heading": "Worked: trace table",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "pseudocode",
+            "text": "SET total TO 0\nFOR i FROM 1 TO 4 DO\n    SET total TO total + i * 2\nEND FOR\nSEND total TO DISPLAY",
+            "output": "i: 1, 2, 3, 4; total: 2, 6, 12, 20; output 20"
+          }
+        },
+        {
+          "heading": "Worked: image file size",
+          "bullets": [],
+          "note": "",
+          "model": {
+            "problem": "An image is 800 × 600 pixels with 24-bit colour. Size in kibibytes?",
+            "steps": [
+              "Pixels = 800 × 600 = 480,000",
+              "Bits = 480,000 × 24 = 11,520,000",
+              "Bytes = 11,520,000 ÷ 8 = 1,440,000",
+              "KiB = 1,440,000 ÷ 1,024"
+            ],
+            "answer": "1,406.25 KiB"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "B7 in hex is ... in denary",
+            "options": [
+              "183",
+              "117",
+              "187"
+            ],
+            "answer": 0,
+            "why": "11 × 16 + 7 = 183."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Convert 45 to 8-bit binary.",
+          "a": "00101101 (32 + 8 + 4 + 1).",
+          "mins": 4,
+          "model": "I do: 37 = 32 + 4 + 1 = 00100101."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF practice set (12 questions: conversions, two's complement, binary addition with overflow, a trace table, file sizes, a 6-mark 'discuss lossy and lossless compression'). Mark with the answer slide.",
+          "a": "Most answers correct with working shown.",
+          "mins": 13,
+          "model": "The teacher completes question 1."
+        },
+        {
+          "q": "Extend: what is -128 in 8-bit two's complement?",
+          "a": "10000000",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Two's complement of +1 in 8 bits gives -1 as ...",
+          "a": "11111111",
+          "mins": 1,
+          "options": [
+            "11111111",
+            "10000001",
+            "00000001"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Why do examiners give marks for working, not just the answer?",
+          "a": "Working shows method; you can earn marks even with a slip at the end.",
+          "mins": 2
+        }
+      ],
+      "homework": "Revise for the mock in the week of 28 June: the weeks of 21 and 28 June include independent study on a Paper 2 style task and coding style.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Computer Science (4CP0): Paper 1 Principles of Computer Science (written, 2 hours, 80 marks); Paper 2 Application of Computational Thinking (Python, on screen, 3 hours, 80 marks)",
+        "Pearson pseudocode command set (as printed in the specification) for written algorithms",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Paper 1 practice set with answers (pupil PDF)",
+        "Independent study pack: part of a Paper 2 style task and coding efficiency (weeks 3 and 4, pupil PDF)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Binary code",
+          "alt": "Binary",
+          "for": "hook"
+        },
+        {
+          "find": "Hexadecimal digits",
+          "alt": "Hexadecimal",
+          "for": "teach:2"
+        }
+      ],
+      "covers": [
+        "2.1.2",
+        "2.1.3",
+        "2.1.6",
+        "2.3.1",
+        "1.2.4"
+      ]
+    },
+    {
+      "unit": "Summer 2: Practice and mock",
+      "n": 45,
+      "title": "Paper 1 practice: 6-mark explain and discuss answers",
+      "duration": 50,
+      "bigQuestion": "Two answers both list six facts. Why might one score 2 and the other 6?",
+      "objectives": [
+        "To understand how to structure 6-mark explain and discuss answers in Paper 1"
+      ],
+      "successCriteria": [
+        "All: identify the command word",
+        "Most: write three developed points",
+        "Some: discuss both sides with a balanced conclusion"
+      ],
+      "smsc": "Moral: clear, honest reasoning",
+      "keywords": [
+        {
+          "term": "explain",
+          "def": "give reasons why or how"
+        },
+        {
+          "term": "discuss",
+          "def": "consider different aspects, with reasons, and reach a view"
+        },
+        {
+          "term": "developed point",
+          "def": "a point with a reason and an example or consequence"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two answers both list six facts. Why might one score 2 and the other 6?",
+        "a": "The 6-mark answer develops each point with reasons and links to the question."
+      },
+      "starter": [
+        {
+          "q": "-6 in 8-bit two's complement is ...",
+          "a": "11111010",
+          "mins": 1,
+          "options": [
+            "11111010",
+            "10000110",
+            "00000110"
+          ]
+        },
+        {
+          "q": "45 in 8-bit binary?",
+          "a": "00101101",
+          "mins": 1
+        },
+        {
+          "q": "Lossy compression ...",
+          "a": "removes some data permanently",
+          "mins": 1,
+          "options": [
+            "removes some data permanently",
+            "keeps all data"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Structure",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Read the command word",
+            "Point",
+            "Reason (because...)",
+            "Example or consequence",
+            "Repeat; conclude if 'discuss'"
+          ]
+        },
+        {
+          "heading": "Model: discuss lossy vs lossless for a photo website (6)",
+          "bullets": [],
+          "note": "",
+          "compare": {
+            "left": {
+              "title": "Lossy",
+              "points": [
+                "Much smaller files, so pages load faster",
+                "Some detail lost, often not noticeable on screen"
+              ]
+            },
+            "right": {
+              "title": "Lossless",
+              "points": [
+                "Original restored exactly",
+                "Larger files, slower to load and more storage"
+              ]
+            },
+            "label": "conclusion: lossy for display, keep lossless originals"
+          }
+        },
+        {
+          "heading": "Topics to practise",
+          "bullets": [
+            "Compression",
+            "Search and sort efficiency",
+            "Validation and authentication",
+            "Data representation choices"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "'Discuss' needs ...",
+            "options": [
+              "both sides and a view",
+              "one fact",
+              "a definition only"
+            ],
+            "answer": 0,
+            "why": "Balanced with a conclusion."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Develop this point: 'Binary search is faster.'",
+          "a": "'Binary search halves the list each step, so for 1,000 items it needs at most 10 comparisons, while linear search may need 1,000; but the list must be sorted first.'",
+          "mins": 4,
+          "model": "I do: 'Bubble sort is simple to code because it only compares neighbours, but it is slow for large lists.'"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Portal response box, two 6-mark answers: (1) 'Discuss using a linear or a binary search for a school library catalogue.' (2) 'Explain why validation is used in programs.' Self-mark with the levels.",
+          "a": "Developed, linked points with a conclusion for (1).",
+          "mins": 15,
+          "model": "The teacher plans answer (1) with the class."
+        }
+      ],
+      "exit": [
+        {
+          "q": "A developed point has ...",
+          "a": "a reason and a consequence",
+          "mins": 1,
+          "options": [
+            "a reason and a consequence",
+            "only a keyword"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Two answers both list six facts. Why might one score 2 and the other 6?",
+          "a": "The 6-mark answer develops each point with reasons and links to the question.",
+          "mins": 2
+        }
+      ],
+      "homework": "Revise for the mock; use the practice set answers to check weak areas.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Computer Science (4CP0): Paper 1 Principles of Computer Science (written, 2 hours, 80 marks); Paper 2 Application of Computational Thinking (Python, on screen, 3 hours, 80 marks)",
+        "Pearson pseudocode command set (as printed in the specification) for written algorithms",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Notebook with pen writing",
+          "alt": "Extended writing",
+          "for": "hook"
+        },
+        {
+          "find": "Balance scales",
+          "alt": "Weighing both sides",
+          "for": "teach:2"
+        }
+      ],
+      "covers": [
+        "2.3.2",
+        "1.2.6",
+        "6.4.3"
+      ]
+    },
+    {
+      "unit": "Summer 2: Practice and mock",
+      "n": 46,
+      "title": "Year 10 mock: Paper 1 style questions",
+      "duration": 50,
+      "bigQuestion": "What will you do if you meet a question you can't answer at first?",
+      "objectives": [
+        "To understand how well I can answer Paper 1 style questions on Year 10 content under timed conditions"
+      ],
+      "successCriteria": [
+        "All: answer the short questions accurately",
+        "Most: show full working in calculations and traces",
+        "Some: write developed 6-mark answers"
+      ],
+      "smsc": "Moral: honest work under exam conditions",
+      "keywords": [
+        {
+          "term": "mock exam",
+          "def": "a practice exam in real conditions"
+        },
+        {
+          "term": "working",
+          "def": "steps shown to reach an answer"
+        },
+        {
+          "term": "command word",
+          "def": "the instruction word, such as state or explain"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What will you do if you meet a question you can't answer at first?",
+        "a": "Mark it, move on, come back later: never leave it blank."
+      },
+      "starter": [
+        {
+          "q": "'State' needs ...",
+          "a": "a short answer",
+          "mins": 1,
+          "options": [
+            "a short answer",
+            "an essay"
+          ]
+        },
+        {
+          "q": "How many bits in a byte?",
+          "a": "8",
+          "mins": 1
+        },
+        {
+          "q": "A trace table records ...",
+          "a": "variable values",
+          "mins": 1,
+          "options": [
+            "variable values",
+            "colours"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Mock: Section A (40 marks; finish at home within 60 minutes in total)",
+          "bullets": [],
+          "note": "Questions written for TGA.",
+          "table": {
+            "head": [
+              "Q",
+              "Question",
+              "Marks"
+            ],
+            "rows": [
+              [
+                "1",
+                "Convert denary 45 to 8-bit binary.",
+                "1"
+              ],
+              [
+                "2",
+                "Convert hexadecimal B7 to denary.",
+                "1"
+              ],
+              [
+                "3",
+                "Represent -6 in 8-bit two's complement.",
+                "2"
+              ],
+              [
+                "4",
+                "An image is 800 × 600 pixels with 24-bit colour depth. Calculate its size in kibibytes.",
+                "3"
+              ],
+              [
+                "5",
+                "Complete the truth table for P = (A AND B) OR NOT C.",
+                "4"
+              ],
+              [
+                "6",
+                "Show the steps of a binary search for 31 in [3, 8, 12, 19, 24, 31, 40].",
+                "3"
+              ],
+              [
+                "7",
+                "Show the list after one pass of bubble sort on 7 3 9 2 (ascending).",
+                "2"
+              ],
+              [
+                "8",
+                "Discuss the use of lossy and lossless compression for a website of recorded spoken talks.",
+                "6"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Section A continued",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Q",
+              "Question",
+              "Marks"
+            ],
+            "rows": [
+              [
+                "9",
+                "Trace: total 0; FOR i FROM 1 TO 4: total = total + i * 2. Give the output.",
+                "3"
+              ],
+              [
+                "10",
+                "Explain two methods of validation with examples.",
+                "4"
+              ],
+              [
+                "11",
+                "Write an algorithm in pseudocode that counts how many of 10 entered marks are 50 or more.",
+                "5"
+              ],
+              [
+                "12",
+                "Explain why decomposition helps programmers.",
+                "6"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Timing",
+          "bullets": [
+            "About 1.5 minutes per mark",
+            "Show working",
+            "Leave 5 minutes to check"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "In a binary search, the list must be ...",
+            "options": [
+              "sorted",
+              "short",
+              "unsorted"
+            ],
+            "answer": 0,
+            "why": "Required."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Warm-up: 1 + 1 in binary?",
+          "a": "10",
+          "mins": 3,
+          "model": "I do: 1 + 0 = 1."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Mock Section A on the pupil PDF or portal, timed.",
+          "a": "Mark scheme: Q1 00101101. Q2 183. Q3 11111010 (1 for method). Q4 480,000 × 24 ÷ 8 ÷ 1,024 = 1,406.25 KiB (method marks). Q5 P = 1 whenever C = 0, or when A = B = 1. Q6 mid 19 < 31, discard left; mid 31 found (2 comparisons). Q7 3 7 2 9. Q8 developed points both sides with a conclusion. Q9 20. Q10 e.g. range check, presence check, type check with examples. Q11 counter, loop of 10, IF mark >= 50, output. Q12 developed points on smaller tasks, teamwork, testing, reuse.",
+          "mins": 22,
+          "model": "The teacher reads the instructions."
+        }
+      ],
+      "exit": [
+        {
+          "q": "If stuck, you should ...",
+          "a": "mark it and come back",
+          "mins": 1,
+          "options": [
+            "mark it and come back",
+            "stop the paper"
+          ]
+        },
+        {
+          "q": "Back to our ponder: What will you do if you meet a question you can't answer at first?",
+          "a": "Mark it, move on, come back later: never leave it blank.",
+          "mins": 2
+        }
+      ],
+      "homework": "Revise Python file reading and validation for the practical section next lesson.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Computer Science (4CP0): Paper 1 Principles of Computer Science (written, 2 hours, 80 marks); Paper 2 Application of Computational Thinking (Python, on screen, 3 hours, 80 marks)",
+        "Pearson pseudocode command set (as printed in the specification) for written algorithms",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Year 10 Computer Science mock: Paper 1 style questions and a Python task with mark scheme (written for TGA, in the lesson and as a pupil PDF)",
+        "Help slide: Childline 0800 1111; TGA's DSL through 'Report a concern'"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Exam hall desk paper",
+          "alt": "An exam",
+          "for": "hook"
+        },
+        {
+          "find": "Truth table logic gates",
+          "alt": "A truth table",
+          "for": "teach:1"
+        }
+      ],
+      "covers": [
+        "2.1.3",
+        "2.1.6",
+        "2.3.1",
+        "1.2.6",
+        "1.3.1",
+        "1.2.4"
+      ]
+    },
+    {
+      "unit": "Summer 2: Practice and mock",
+      "n": 47,
+      "title": "Year 10 mock: Python practical task",
+      "duration": 50,
+      "bigQuestion": "Paper 2 marks working code, but also readable code. Why does readability matter?",
+      "objectives": [
+        "To understand how well I can solve a Paper 2 style problem in Python under timed conditions"
+      ],
+      "successCriteria": [
+        "All: write a program that runs and meets part of the brief",
+        "Most: validate input and process all records correctly",
+        "Some: produce clean, commented, fully tested code"
+      ],
+      "smsc": "Moral: honest, careful work",
+      "keywords": [
+        {
+          "term": "brief",
+          "def": "the description of what a program must do"
+        },
+        {
+          "term": "test evidence",
+          "def": "proof that a program works for chosen inputs"
+        },
+        {
+          "term": "comment",
+          "def": "a note in code starting with #"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Paper 2 marks working code, but also readable code. Why does readability matter?",
+        "a": "Others (and you, later) must understand and maintain it; examiners reward clear structure."
+      },
+      "starter": [
+        {
+          "q": "A comment in Python starts with ...",
+          "a": "#",
+          "mins": 1,
+          "options": [
+            "#",
+            "//",
+            "--"
+          ]
+        },
+        {
+          "q": "What does .strip() remove?",
+          "a": "Spaces and newlines at the ends.",
+          "mins": 1
+        },
+        {
+          "q": "int() converts ...",
+          "a": "text to a whole number",
+          "mins": 1,
+          "options": [
+            "text to a whole number",
+            "a number to text"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The brief",
+          "bullets": [
+            "A sadaqah drive records donations in donations.csv (name,amount)",
+            "Task 1: read the file and output the total raised",
+            "Task 2: output the largest donation and the donor's name",
+            "Task 3: ask for a minimum amount (1 to 100, validated) and output how many donations are at least that amount"
+          ],
+          "note": "Example data file written for TGA; amounts are whole pounds."
+        },
+        {
+          "heading": "Mark scheme focus",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Area",
+              "Marks for"
+            ],
+            "rows": [
+              [
+                "Functionality",
+                "Each task works"
+              ],
+              [
+                "Validation",
+                "Rejects 0, 101 and text"
+              ],
+              [
+                "Structure",
+                "Functions, sensible names"
+              ],
+              [
+                "Readability",
+                "Comments, layout"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Exam routine",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Read the brief twice",
+            "Decompose",
+            "Write and run in small steps",
+            "Test each task",
+            "Tidy and comment"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Which input should task 3 reject?",
+            "options": [
+              "0",
+              "1",
+              "100"
+            ],
+            "answer": 0,
+            "why": "The range is 1 to 100."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write the first three lines: open the file and loop through its lines.",
+          "a": "with open(\"donations.csv\") as f:\n    for line in f:\n        name, amount = line.strip().split(\",\")",
+          "mins": 3,
+          "model": "I do: total = 0 before the loop."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Mock practical: complete tasks 1 to 3 in Python, timed (finish at home within 60 minutes in total); upload your .py file and test evidence (screenshots of output only).",
+          "a": "Mark scheme: total correct; maximum and name correct; validated count correct; functions, comments and tests reward the higher marks.",
+          "mins": 22,
+          "model": "The teacher reads the brief."
+        }
+      ],
+      "exit": [
+        {
+          "q": "Test evidence shows ...",
+          "a": "the program works for chosen inputs",
+          "mins": 1,
+          "options": [
+            "the program works for chosen inputs",
+            "how long you spent"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Paper 2 marks working code, but also readable code. Why does readability matter?",
+          "a": "Others (and you, later) must understand and maintain it; examiners reward clear structure.",
+          "mins": 2
+        }
+      ],
+      "homework": "Rest; bring questions to the feedback lesson.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Computer Science (4CP0): Paper 1 Principles of Computer Science (written, 2 hours, 80 marks); Paper 2 Application of Computational Thinking (Python, on screen, 3 hours, 80 marks)",
+        "Pearson pseudocode command set (as printed in the specification) for written algorithms",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "A free Python 3 editor (IDLE or a browser editor through the school; TO CONFIRM)",
+        "Year 10 Computer Science mock: Paper 1 style questions and a Python task with mark scheme (written for TGA, in the lesson and as a pupil PDF)",
+        "Example data file donations.csv (portal)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Laptop with code",
+          "alt": "Coding",
+          "for": "hook"
+        },
+        {
+          "find": "Charity donation box",
+          "alt": "A sadaqah drive",
+          "for": "teach:1"
+        }
+      ],
+      "covers": [
+        "6.4.2",
+        "6.4.3",
+        "6.6.2",
+        "6.1.4"
+      ]
+    },
+    {
+      "unit": "Summer 2: Practice and mock",
+      "n": 48,
+      "title": "Mock feedback: fixing errors and improving code",
+      "duration": 50,
+      "bigQuestion": "Your program runs but gives the wrong total. What kind of error is that, and how do you find it?",
+      "objectives": [
+        "To understand my mock results and how to fix the errors that cost the most marks"
+      ],
+      "successCriteria": [
+        "All: identify my strongest and weakest areas",
+        "Most: correct two Paper 1 answers and one programming task",
+        "Some: refactor my code for readability and efficiency"
+      ],
+      "smsc": "Moral: perseverance and humility",
+      "keywords": [
+        {
+          "term": "refactor",
+          "def": "improve code without changing what it does"
+        },
+        {
+          "term": "logic error",
+          "def": "the program runs but gives the wrong result"
+        },
+        {
+          "term": "syntax error",
+          "def": "code that breaks the language rules"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your program runs but gives the wrong total. What kind of error is that, and how do you find it?",
+        "a": "A logic error: trace with test data and print values to find where it goes wrong."
+      },
+      "starter": [
+        {
+          "q": "Q9 output was ...",
+          "a": "20",
+          "mins": 1,
+          "options": [
+            "20",
+            "10",
+            "8"
+          ]
+        },
+        {
+          "q": "Q2: B7 in denary?",
+          "a": "183",
+          "mins": 1
+        },
+        {
+          "q": "A logic error ...",
+          "a": "runs but gives a wrong result",
+          "mins": 1,
+          "options": [
+            "runs but gives a wrong result",
+            "stops the program"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Common Paper 1 errors",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Error",
+              "Fix"
+            ],
+            "rows": [
+              [
+                "Forgot to add 1 in two's complement",
+                "Invert, then +1"
+              ],
+              [
+                "Bits not divided by 8",
+                "Bits → bytes ÷ 8"
+              ],
+              [
+                "One-sided 'discuss'",
+                "Both sides and a conclusion"
+              ],
+              [
+                "Pseudocode missing END FOR",
+                "Close every block"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Common Python errors",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "python",
+            "text": "# Bug: amount is still text\nif amount > largest:\n# Fix: convert first\namount = int(amount)\nif amount > largest:",
+            "output": "TypeError fixed by int()"
+          }
+        },
+        {
+          "heading": "Refactor",
+          "bullets": [
+            "Meaningful names",
+            "Functions for repeated code",
+            "Comments explain why, not what"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "A program crashes with a TypeError when comparing '50' > 20. The fix is ...",
+            "options": [
+              "convert '50' with int()",
+              "delete the line",
+              "add a comment"
+            ],
+            "answer": 0,
+            "why": "Compare numbers, not text."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Fix: for i in range(len(nums)): if nums[i] > nums[i + 1]: ...",
+          "a": "range(len(nums) - 1) so i + 1 stays in range.",
+          "mins": 4,
+          "model": "I do: total = total + amount needs total = 0 before the loop."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Read your marked mock in the portal; correct two Paper 1 answers and refactor your practical code; upload the improved file.",
+          "a": "Corrections made and improved code uploaded.",
+          "mins": 15,
+          "model": "The teacher refactors a sample solution live."
+        }
+      ],
+      "exit": [
+        {
+          "q": "Refactoring changes ...",
+          "a": "how code is written, not what it does",
+          "mins": 1,
+          "options": [
+            "how code is written, not what it does",
+            "the output"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Your program runs but gives the wrong total. What kind of error is that, and how do you find it?",
+          "a": "A logic error: trace with test data and print values to find where it goes wrong.",
+          "mins": 2
+        }
+      ],
+      "homework": "Fix one more weak area from the mock.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Computer Science (4CP0): Paper 1 Principles of Computer Science (written, 2 hours, 80 marks); Paper 2 Application of Computational Thinking (Python, on screen, 3 hours, 80 marks)",
+        "Pearson pseudocode command set (as printed in the specification) for written algorithms",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "A free Python 3 editor (IDLE or a browser editor through the school; TO CONFIRM)",
+        "Year 10 Computer Science mock: Paper 1 style questions and a Python task with mark scheme (written for TGA, in the lesson and as a pupil PDF)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Bug magnifying glass code",
+          "alt": "Debugging",
+          "for": "hook"
+        },
+        {
+          "find": "Clean code editor",
+          "alt": "Refactored code",
+          "for": "teach:3"
+        }
+      ],
+      "covers": [
+        "6.1.4",
+        "6.1.5",
+        "1.2.5"
+      ]
+    },
+    {
+      "unit": "Summer 2: Practice and mock",
+      "n": 49,
+      "title": "Bridge to Year 11: computers and networks",
+      "duration": 50,
+      "bigQuestion": "Everything you coded this year ran on a CPU. What happens inside it when your program runs?",
+      "objectives": [
+        "To understand what Year 11 Computer Science covers and how Year 10 skills support it"
+      ],
+      "successCriteria": [
+        "All: name the Year 11 topics",
+        "Most: link binary and logic to how the CPU works",
+        "Some: plan summer practice for Paper 1 and Paper 2"
+      ],
+      "smsc": "Social: responsible use of technology",
+      "keywords": [
+        {
+          "term": "CPU",
+          "def": "central processing unit: carries out instructions"
+        },
+        {
+          "term": "network",
+          "def": "connected devices sharing data"
+        },
+        {
+          "term": "protocol",
+          "def": "rules for communication"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Everything you coded this year ran on a CPU. What happens inside it when your program runs?",
+        "a": "It fetches, decodes and executes each instruction billions of times a second, all in binary."
+      },
+      "starter": [
+        {
+          "q": "Refactoring changes ...",
+          "a": "how code is written",
+          "mins": 1,
+          "options": [
+            "how code is written",
+            "the output"
+          ]
+        },
+        {
+          "q": "Name a Python data structure.",
+          "a": "A list.",
+          "mins": 1
+        },
+        {
+          "q": "A protocol is ...",
+          "a": "a set of communication rules",
+          "mins": 1,
+          "options": [
+            "a set of communication rules",
+            "a cable"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Year 11 topics",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Topic",
+              "Spec"
+            ],
+            "rows": [
+              [
+                "Hardware: CPU, memory, storage",
+                "3.1"
+              ],
+              [
+                "Software and programming languages",
+                "3.2, 3.3"
+              ],
+              [
+                "Networks and network security",
+                "4.1, 4.2"
+              ],
+              [
+                "Issues and impact: environment, ethics, law, cyber security",
+                "5.1 to 5.3"
+              ],
+              [
+                "Paper 2 practice: 3-hour tasks",
+                "6.1 to 6.6"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Fetch-decode-execute",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Fetch the instruction from memory",
+            "Decode it",
+            "Execute it",
+            "Store results",
+            "Repeat"
+          ]
+        },
+        {
+          "heading": "Summer plan",
+          "bullets": [
+            "One Python challenge a week",
+            "Flashcards for Paper 1 terms",
+            "Read about networks at home"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "The CPU's cycle is ...",
+            "options": [
+              "fetch, decode, execute",
+              "save, load, print",
+              "input, wait, output"
+            ],
+            "answer": 0,
+            "why": "The core cycle."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain how binary links to the CPU. (2 marks)",
+          "a": "The CPU processes instructions and data as binary (1) because its circuits have two states, on and off (1).",
+          "mins": 4,
+          "model": "I do: logic gates in the CPU combine binary inputs to make decisions."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Build your summer practice plan in the portal (Python challenges, flashcards, dates) and answer: 'Explain why programs must be translated before the CPU can run them.' (3 marks)",
+          "a": "A realistic plan; machine code is binary instructions the CPU understands; high-level code must be compiled or interpreted.",
+          "mins": 15,
+          "model": "The teacher shows a model plan."
+        }
+      ],
+      "exit": [
+        {
+          "q": "Year 11 includes ...",
+          "a": "networks and security",
+          "mins": 1,
+          "options": [
+            "networks and security",
+            "only Scratch"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Everything you coded this year ran on a CPU. What happens inside it when your program runs?",
+          "a": "It fetches, decodes and executes each instruction billions of times a second, all in binary.",
+          "mins": 2
+        }
+      ],
+      "homework": "Start your summer plan: one Python challenge this week.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE Computer Science (4CP0): Paper 1 Principles of Computer Science (written, 2 hours, 80 marks); Paper 2 Application of Computational Thinking (Python, on screen, 3 hours, 80 marks)",
+        "Pearson pseudocode command set (as printed in the specification) for written algorithms",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "A free Python 3 editor (IDLE or a browser editor through the school; TO CONFIRM)",
+        "Portal computing y11 lessons 1 to 13 previewed"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "CPU chip close up",
+          "alt": "A CPU",
+          "for": "hook"
+        },
+        {
+          "find": "Network cables switch",
+          "alt": "A network",
+          "for": "teach:1"
+        }
+      ],
+      "covers": [
+        "3.1.1",
+        "3.3.2",
+        "4.1.1"
+      ]
     }
   ]
 }

@@ -1641,97 +1641,219 @@
       "send": "SEND/EAL: picture-supported translation. Stretch: compare Al-Fil with another surah on divine protection."
     },
     {
-      "unit": "Unit 6: Recital and reflection",
+      "unit": "Summer 2: Al-Mursalat, recital and reflection",
       "n": 12,
-      "title": "Recital assessment and reflection",
+      "title": "Recital assessment 1: Juz' Tabarak (Al-Mulk to Al-Jinn)",
       "duration": 50,
+      "bigQuestion": "The teacher may start you anywhere in the juz'. How do you prepare for that?",
       "objectives": [
-        "Recite one chosen surah from the half term with accuracy",
-        "Self-assess and peer-assess against the rubric",
-        "Set targets for Year 10"
+        "To understand how well I can recite the first half of Juz' Tabarak from memory against the rubric"
       ],
+      "successCriteria": [
+        "All: recite a passage to the teacher",
+        "Most: recite with few prompts and madd and waqf correct",
+        "Some: recite fluently from any starting point the teacher chooses"
+      ],
+      "smsc": "Spiritual: reciting Allah's words with care and calm",
       "keywords": [
         {
+          "term": "tasmi' (تسميع)",
+          "def": "reciting from memory to a listener who checks"
+        },
+        {
           "term": "rubric",
-          "def": "a set of criteria for judging quality"
+          "def": "the criteria and levels the teacher uses to mark recitation"
         },
         {
-          "term": "fluency",
-          "def": "reading smoothly without hesitation"
-        },
-        {
-          "term": "target",
-          "def": "a clear goal for improvement"
+          "term": "Juz' Tabarak (جزء تبارك)",
+          "def": "the 29th part of the Qur'an"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "The teacher may start you anywhere in the juz'. How do you prepare for that?",
+        "a": "Know each surah's sections and openings, not just the start of the surah."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We have certainly made the Qur'an easy for remembrance, so is there any who will remember?' (Al-Qamar 54:17).",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. Recite the isti'adha and the basmalah.",
-        "Recite Al-Fatihah.",
-        "Which surah will you recite today and why?"
+        {
+          "q": "Which surah begins «تَبَٰرَكَ ٱلَّذِى ...»?",
+          "a": "Al-Mulk",
+          "mins": 1,
+          "options": [
+            "Al-Qalam",
+            "Al-Haqqah",
+            "Al-Mulk"
+          ]
+        },
+        {
+          "q": "Recite Al-Ma'arij 70:1 in your head. How does the next ayah begin?",
+          "a": "لِّلْكَٰفِرِينَ لَيْسَ",
+          "mins": 1,
+          "options": [
+            "وَصَٰحِبَتِهِۦ وَأَخِيهِ",
+            "وَٱلَّذِينَ هُم",
+            "لِّلْكَٰفِرِينَ لَيْسَ"
+          ]
+        },
+        {
+          "q": "Madd laazim is ...",
+          "a": "6 counts",
+          "mins": 1,
+          "options": [
+            "6 counts",
+            "2 counts",
+            "4 counts"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "Prepare",
-          "bullets": [
-            "Pick Al-'Asr, Al-Humazah or Al-Fil",
-            "Check noon, meem and madd rules",
-            "Take a calm breath and begin"
-          ],
-          "note": "Give pupils five minutes to prepare quietly. Remind them of adab: calm, clean place, a dua. Reduce nerves with encouragement and remind them of the hadith narrated by A'ishah that the one who struggles in recitation has a double reward."
+          "heading": "How you will be marked",
+          "bullets": [],
+          "note": "Show the rubric. Pupils choose the row they most want to improve and note it.",
+          "table": {
+            "head": [
+              "Criterion",
+              "4 Secure",
+              "2 Developing"
+            ],
+            "rows": [
+              [
+                "Hifdh (memory)",
+                "No mistakes, no prompts",
+                "Two or more prompts"
+              ],
+              [
+                "Makharij and harakat",
+                "Every letter and vowel clear",
+                "Some letters or vowels changed"
+              ],
+              [
+                "Tajweed rules",
+                "Rules applied every time",
+                "Rules missed in places"
+              ],
+              [
+                "Fluency and waqf",
+                "Steady pace, sensible stops",
+                "Pauses mid-word or rushes"
+              ],
+              [
+                "Adab",
+                "Isti'adhah, Bismillah, calm and respectful",
+                "Needs reminders"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Rubric",
-          "bullets": [
-            "Accuracy of letters",
-            "Rules of tajweed",
-            "Madd lengths and stops",
-            "Fluency and calm voice"
-          ],
-          "note": "Share the rubric with levels. Pupils recite individually in breakout rooms or in the main room. Mark with the rubric. Stress that the teacher gives one strength, one target and one action."
+          "heading": "Order of turns",
+          "bullets": [],
+          "note": "First half of the register; the teacher names a starting ayah in Al-Mulk, Al-Qalam, Al-Haqqah, Al-Ma'arij, Nuh or Al-Jinn (about 3 minutes each).",
+          "cycle": [
+            "Teacher calls your name",
+            "Mic on: isti'adhah",
+            "Recite from the ayah the teacher names",
+            "Teacher marks the rubric",
+            "Target in the portal"
+          ]
         },
         {
-          "heading": "Recite and listen",
+          "heading": "While you wait",
           "bullets": [
-            "Recite with tarteel",
-            "Listen and note one strength",
-            "Give one kind target"
+            "Mic muted, mushaf closed",
+            "Revise your next passage silently",
+            "No chat during turns: respect the reciter"
           ],
-          "note": "In pairs, pupils recite, then listen. Use sentence stems: 'One strength was...', 'One target is...'. Keep the atmosphere supportive."
+          "note": "The rota is on screen. Pupils not reciting revise, then complete the self-assessment on the pupil PDF."
         },
         {
-          "heading": "Revision plan",
-          "bullets": [
-            "Fresh: recite today's new surah",
-            "Recent: last week's surahs",
-            "Older: Al-Ma'un, At-Takathur"
-          ],
-          "note": "Show a simple revision cycle: new, recent, old. Pupils write a plan for the next two weeks. Link this with Year 8's long-term memorisation work."
-        },
-        {
-          "heading": "Reflect",
-          "bullets": [
-            "What improved since September?",
-            "What is still difficult?",
-            "What is my next goal?"
-          ],
-          "note": "Pupils write a short reflection. Share one thing aloud. Close with a dua for sincerity, steadfastness and love of the Qur'an."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Starting mid-surah, you should begin with ...",
+            "options": [
+              "isti'adhah (no Bismillah needed mid-surah)",
+              "nothing",
+              "Al-Fatihah"
+            ],
+            "answer": 0,
+            "why": "Mid-surah, isti'adhah; Bismillah is optional."
+          }
         }
       ],
       "practice": [
-        "Which rule is most secure for you?",
-        "Which rule needs more work?"
+        {
+          "q": "Warm-up: recite Al-Mulk 67:1 to 4 together.",
+          "a": "Recited together.",
+          "mins": 4,
+          "model": "I do: I recite 67:1 slowly and you echo."
+        }
       ],
       "independent": [
-        "Recite your chosen surah for assessment",
-        "Complete peer feedback with the rubric",
-        "Write a reflection and three targets"
+        {
+          "q": "Assessment turns (first half of the register). Everyone else revises silently and completes the self-assessment on the pupil PDF.",
+          "a": "Rubric marks recorded in the portal.",
+          "mins": 18,
+          "model": "The teacher reads out the order of names and models the first 20 seconds of a turn."
+        },
+        {
+          "q": "Extend: write your target from the self-assessment.",
+          "a": "A specific target.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Name one strength.",
-        "Name one target for Year 10."
+        {
+          "q": "My target is recorded ...",
+          "a": "in the portal",
+          "mins": 1,
+          "options": [
+            "in the portal",
+            "nowhere",
+            "in the chat"
+          ]
+        },
+        {
+          "q": "Back to our ponder: The teacher may start you anywhere in the juz'. How do you prepare for that?",
+          "a": "Know each surah's sections and openings, not just the start of the surah.",
+          "mins": 2
+        }
       ],
-      "homework": "Practise your targets daily and record a new recitation next week.",
-      "send": "SEND/EAL: simplified rubric with sentence stems. Stretch: coach another pupil on one rule."
+      "homework": "Practise your target; revise the surahs for the second recital; tick the revision log.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Recitation rubric and self-assessment (pupil PDF)",
+        "Portal assessment record",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Gold star sticker",
+          "alt": "A mark of careful reciting",
+          "for": "teach:1"
+        }
+      ]
     },
     {
       "unit": "Spring 1: Al-Muddaththir and madd in recitation",
@@ -11265,6 +11387,2716 @@
           "find": "Gold star sticker",
           "alt": "A star for the hifdh check",
           "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Al-Mursalat, recital and reflection",
+      "n": 52,
+      "title": "Surat Al-Mursalat 77:1-7: hear, understand and memorise",
+      "duration": 50,
+      "bigQuestion": "Al-Mursalat opens by swearing by the winds. Why might Allah swear by something we feel but cannot see?",
+      "objectives": [
+        "To memorise Al-Mursalat 77:1-7 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 77:1-7 after the teacher, word for word",
+        "Most: recite 77:1-7 from memory with no more than one prompt",
+        "Some: link 77:1-7 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Spiritual: certainty about the promised Day",
+      "keywords": [
+        {
+          "term": "Al-Mursalat (المرسلات)",
+          "def": "those sent forth"
+        },
+        {
+          "term": "dhikr (ذكر)",
+          "def": "a reminder, a message"
+        },
+        {
+          "term": "waqi' (واقع)",
+          "def": "certain to happen"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Al-Mursalat opens by swearing by the winds. Why might Allah swear by something we feel but cannot see?",
+        "a": "The winds are powerful signs: unseen yet real, like the Day that is promised (77:7)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, what you are promised is to occur.' (Al-Mursalat 77:7).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which surah begins «هَلْ أَتَىٰ ...»?",
+          "a": "Al-Insan",
+          "mins": 1,
+          "options": [
+            "Al-Insan",
+            "Al-Muddaththir",
+            "Al-Qiyamah"
+          ]
+        },
+        {
+          "q": "Recite Al-Insan 76:1 in your head. How does the next ayah begin?",
+          "a": "إِنَّا خَلَقْنَا",
+          "mins": 1,
+          "options": [
+            "وَيُسْقَوْنَ فِيهَا",
+            "عَيْنًۭا يَشْرَبُ",
+            "إِنَّا خَلَقْنَا"
+          ]
+        },
+        {
+          "q": "Al-Mursalat is surah number ...",
+          "a": "77",
+          "mins": 1,
+          "options": [
+            "77",
+            "76",
+            "78"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-Mursalat 77:1-7",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 77:1-7 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "وَٱلْمُرْسَلَٰتِ عُرْفًۭا (١) فَٱلْعَٰصِفَٰتِ عَصْفًۭا (٢) وَٱلنَّٰشِرَٰتِ نَشْرًۭا (٣) فَٱلْفَٰرِقَٰتِ فَرْقًۭا (٤) فَٱلْمُلْقِيَٰتِ ذِكْرًا (٥) عُذْرًا أَوْ نُذْرًا (٦) إِنَّمَا تُوعَدُونَ لَوَٰقِعٌۭ (٧)",
+            "source": "Surat Al-Mursalat, 77:1-7"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "77:1",
+                "By those [winds] sent forth in gusts"
+              ],
+              [
+                "77:2",
+                "And the winds that blow violently"
+              ],
+              [
+                "77:3",
+                "And [by] the winds that spread [clouds]"
+              ],
+              [
+                "77:4",
+                "And those [angels] who bring criterion"
+              ],
+              [
+                "77:5",
+                "And those [angels] who deliver a message"
+              ],
+              [
+                "77:6",
+                "As justification or warning,"
+              ],
+              [
+                "77:7",
+                "Indeed, what you are promised is to occur."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "عُرْفًۭا",
+                "Al-Mursalat 77:1",
+                "Stop on fathatain: madd 'iwad",
+                "'urfaa"
+              ],
+              [
+                "ذِكْرًا",
+                "Al-Mursalat 77:5",
+                "Heavy raa (fathah); stop as dhikraa",
+                "dhikraa"
+              ],
+              [
+                "إِنَّمَا",
+                "Al-Mursalat 77:7",
+                "Ghunnah on نّ",
+                "in-namaa"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 77:1-7 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "77:7 says that what we are promised ...",
+            "options": [
+              "will certainly happen",
+              "may not happen",
+              "has already happened"
+            ],
+            "answer": 0,
+            "why": "'Indeed, what you are promised is to occur.'"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-Mursalat 77:1-7 together, ayah by ayah.",
+          "a": "The class recites 77:1-7 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 77:1-7. Ayah 1: 3 times looking, 3 times without looking. Then ayah 2 the same way. Then link: recite 1 and 2 together twice. Finish by reciting the whole chunk once without the mushaf."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 77:1-7 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 10,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "What do 77:1 to 4 swear by?",
+          "a": "Winds sent forth, violent winds, winds that spread clouds, and those (angels) who bring the criterion.",
+          "mins": 2
+        },
+        {
+          "q": "How do we stop on «عُذْرًا أَوْ نُذْرًا» (77:6)?",
+          "a": "Stop on «نُذْرًا» as nudhraa (madd 'iwad); «عُذْرًا أَوْ» joined has tanween before hamza: izhar.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-Mursalat 77:5: «فَٱلْمُلْقِيَٰتِ ...» Which word comes next?",
+          "a": "ذِكْرًا",
+          "mins": 1,
+          "options": [
+            "لَهُمْ",
+            "ذِكْرًا",
+            "ٱلْأَرْضَ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Al-Mursalat opens by swearing by the winds. Why might Allah swear by something we feel but cannot see?",
+          "a": "The winds are powerful signs: unseen yet real, like the Day that is promised (77:7).",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-Mursalat 77:1-7 to a parent three times a day and revise Al-Insan; tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-Mursalat 77:1-7 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Wind blowing through trees storm",
+          "alt": "Strong winds (77:1 to 3)",
+          "for": "hook"
+        },
+        {
+          "find": "Clouds spreading in sky",
+          "alt": "Clouds spread by the wind (77:3)",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Al-Mursalat, recital and reflection",
+      "n": 53,
+      "title": "Surat Al-Mursalat 77:8-19: hear, understand and memorise",
+      "duration": 50,
+      "bigQuestion": "The ayah «وَيْلٌۭ يَوْمَئِذٍۢ لِّلْمُكَذِّبِينَ» is repeated ten times in this surah. Why repeat a warning so often?",
+      "objectives": [
+        "To memorise Al-Mursalat 77:8-19 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 77:8-19 after the teacher, word for word",
+        "Most: recite 77:8-19 from memory with no more than one prompt",
+        "Some: link 77:8-19 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Moral: taking warnings seriously",
+      "keywords": [
+        {
+          "term": "yawm al-fasl (يوم الفصل)",
+          "def": "the Day of Judgement, the Day of Sorting"
+        },
+        {
+          "term": "mukadhdhibin (مكذبين)",
+          "def": "those who deny the truth"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "The ayah «وَيْلٌۭ يَوْمَئِذٍۢ لِّلْمُكَذِّبِينَ» is repeated ten times in this surah. Why repeat a warning so often?",
+        "a": "Each repeat follows a new proof; the refrain drives the warning home after every argument."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Woe, that Day, to the deniers.' (Al-Mursalat 77:15), the refrain repeated ten times in the surah.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Mursalat 77:3 in your head. How does the next ayah begin?",
+          "a": "فَٱلْفَٰرِقَٰتِ فَرْقًۭا",
+          "mins": 1,
+          "options": [
+            "فَٱلْفَٰرِقَٰتِ فَرْقًۭا",
+            "أَلَمْ نُهْلِكِ",
+            "وَيْلٌۭ يَوْمَئِذٍۢ"
+          ]
+        },
+        {
+          "q": "Stopping on «عُرْفًۭا» we say ...",
+          "a": "'urfaa",
+          "mins": 1,
+          "options": [
+            "'urfaa",
+            "'urfan",
+            "'urf"
+          ]
+        },
+        {
+          "q": "77:7 says the promise is ...",
+          "a": "certain",
+          "mins": 1,
+          "options": [
+            "certain",
+            "uncertain"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-Mursalat 77:8-14",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 77:8-14 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "فَإِذَا ٱلنُّجُومُ طُمِسَتْ (٨) وَإِذَا ٱلسَّمَآءُ فُرِجَتْ (٩) وَإِذَا ٱلْجِبَالُ نُسِفَتْ (١٠) وَإِذَا ٱلرُّسُلُ أُقِّتَتْ (١١) لِأَىِّ يَوْمٍ أُجِّلَتْ (١٢) لِيَوْمِ ٱلْفَصْلِ (١٣) وَمَآ أَدْرَىٰكَ مَا يَوْمُ ٱلْفَصْلِ (١٤)",
+            "source": "Surat Al-Mursalat, 77:8-14"
+          }
+        },
+        {
+          "heading": "New ayat: Al-Mursalat 77:15-19",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 77:15-19 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "وَيْلٌۭ يَوْمَئِذٍۢ لِّلْمُكَذِّبِينَ (١٥) أَلَمْ نُهْلِكِ ٱلْأَوَّلِينَ (١٦) ثُمَّ نُتْبِعُهُمُ ٱلْءَاخِرِينَ (١٧) كَذَٰلِكَ نَفْعَلُ بِٱلْمُجْرِمِينَ (١٨) وَيْلٌۭ يَوْمَئِذٍۢ لِّلْمُكَذِّبِينَ (١٩)",
+            "source": "Surat Al-Mursalat, 77:15-19"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "77:8-9",
+                "So when the stars are obliterated And when the heaven is opened"
+              ],
+              [
+                "77:10-11",
+                "And when the mountains are blown away And when the messengers' time has come..."
+              ],
+              [
+                "77:12-13",
+                "For what Day was it postponed? For the Day of Judgement."
+              ],
+              [
+                "77:14-15",
+                "And what can make you know what is the Day of Judgement? Woe, that Day, to the deniers."
+              ],
+              [
+                "77:16-17",
+                "Did We not destroy the former peoples? Then We will follow them with the later ones."
+              ],
+              [
+                "77:18-19",
+                "Thus do We deal with the criminals. Woe, that Day, to the deniers."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "وَيْلٌۭ يَوْمَئِذٍۢ لِّلْمُكَذِّبِينَ",
+                "Al-Mursalat 77:15",
+                "Idgham with ghunnah (tanween into ي); idgham without ghunnah (tanween into ل)",
+                "waylun-yawma'idhil-lil-mukadh-dhibeen"
+              ],
+              [
+                "أُقِّتَتْ",
+                "Al-Mursalat 77:11",
+                "Shaddah on ق then ت; ق heavy",
+                "uq-qitat"
+              ],
+              [
+                "أَلَمْ نُهْلِكِ",
+                "Al-Mursalat 77:16",
+                "Izhar shafawi: meem before ن",
+                "alam nuhliki"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 77:8-19 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "The refrain warns ...",
+            "options": [
+              "the deniers",
+              "the believers",
+              "the angels"
+            ],
+            "answer": 0,
+            "why": "Woe that Day to the deniers."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-Mursalat 77:8-19 together, ayah by ayah.",
+          "a": "The class recites 77:8-19 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 77:8-19. Ayah 8: 3 times looking, 3 times without looking. Then ayah 9 the same way. Then link: recite 8 and 9 together twice. Finish by reciting the whole chunk once without the mushaf."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 77:8-19 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 9,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "Which events of the Day are listed in 77:8 to 11?",
+          "a": "Stars obliterated, sky opened, mountains blown away, messengers' time appointed.",
+          "mins": 2
+        },
+        {
+          "q": "Explain the two idghams in the refrain.",
+          "a": "«وَيْلٌۭ يَوْمَئِذٍۢ»: tanween into ي with ghunnah; «يَوْمَئِذٍۢ لِّلْمُكَذِّبِينَ»: tanween into ل without ghunnah.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-Mursalat 77:13: «لِيَوْمِ ...» Which word comes next?",
+          "a": "ٱلْفَصْلِ",
+          "mins": 1,
+          "options": [
+            "ٱلْفَصْلِ",
+            "مَّهِينٍۢ",
+            "وَعُيُونٍۢ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: The ayah «وَيْلٌۭ يَوْمَئِذٍۢ لِّلْمُكَذِّبِينَ» is repeated ten times in this surah. Why repeat a warning so often?",
+          "a": "Each repeat follows a new proof; the refrain drives the warning home after every argument.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-Mursalat 77:8-19 to a parent three times a day and revise Al-Mursalat 1 to 7; tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-Mursalat 77:8-19 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Wind blowing through trees storm",
+          "alt": "Strong winds (77:1 to 3)",
+          "for": "hook"
+        },
+        {
+          "find": "Mountains landscape",
+          "alt": "Mountains, which will be blown away (77:10)",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Al-Mursalat, recital and reflection",
+      "n": 54,
+      "title": "Surat Al-Mursalat 77:20-28: hear, understand and memorise",
+      "duration": 50,
+      "bigQuestion": "77:25 to 27 describe the earth as a container for the living and the dead, with mountains and sweet water. What does that show about Allah's care?",
+      "objectives": [
+        "To memorise Al-Mursalat 77:20-28 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 77:20-28 after the teacher, word for word",
+        "Most: recite 77:20-28 from memory with no more than one prompt",
+        "Some: link 77:20-28 to the ayat before and name the tajweed rules in them"
+      ],
+      "crossCurricular": "Geography: the role of mountains and fresh water on the earth",
+      "smsc": "Spiritual: gratitude for the earth's provision",
+      "keywords": [
+        {
+          "term": "kifat (كفات)",
+          "def": "a container that holds"
+        },
+        {
+          "term": "rawasi (رواسي)",
+          "def": "firmly set mountains"
+        },
+        {
+          "term": "furat (فرات)",
+          "def": "sweet, fresh water"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "77:25 to 27 describe the earth as a container for the living and the dead, with mountains and sweet water. What does that show about Allah's care?",
+        "a": "He provides a home, stability and drink for every creature; denying Him after these blessings is ingratitude."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We placed therein lofty, firmly set mountains and have given you to drink sweet water.' (Al-Mursalat 77:27).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Mursalat 77:16 in your head. How does the next ayah begin?",
+          "a": "ثُمَّ نُتْبِعُهُمُ",
+          "mins": 1,
+          "options": [
+            "كَذَٰلِكَ نَفْعَلُ",
+            "ثُمَّ نُتْبِعُهُمُ",
+            "ٱنطَلِقُوٓا۟ إِلَىٰ"
+          ]
+        },
+        {
+          "q": "The refrain appears ... times",
+          "a": "10",
+          "mins": 1,
+          "options": [
+            "10",
+            "3",
+            "7"
+          ]
+        },
+        {
+          "q": "«وَيْلٌۭ يَوْمَئِذٍۢ» has ...",
+          "a": "idgham with ghunnah",
+          "mins": 1,
+          "options": [
+            "idgham with ghunnah",
+            "ikhfa'",
+            "izhar"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-Mursalat 77:20-24",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 77:20-24 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "أَلَمْ نَخْلُقكُّم مِّن مَّآءٍۢ مَّهِينٍۢ (٢٠) فَجَعَلْنَٰهُ فِى قَرَارٍۢ مَّكِينٍ (٢١) إِلَىٰ قَدَرٍۢ مَّعْلُومٍۢ (٢٢) فَقَدَرْنَا فَنِعْمَ ٱلْقَٰدِرُونَ (٢٣) وَيْلٌۭ يَوْمَئِذٍۢ لِّلْمُكَذِّبِينَ (٢٤)",
+            "source": "Surat Al-Mursalat, 77:20-24"
+          }
+        },
+        {
+          "heading": "New ayat: Al-Mursalat 77:25-28",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 77:25-28 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "أَلَمْ نَجْعَلِ ٱلْأَرْضَ كِفَاتًا (٢٥) أَحْيَآءًۭ وَأَمْوَٰتًۭا (٢٦) وَجَعَلْنَا فِيهَا رَوَٰسِىَ شَٰمِخَٰتٍۢ وَأَسْقَيْنَٰكُم مَّآءًۭ فُرَاتًۭا (٢٧) وَيْلٌۭ يَوْمَئِذٍۢ لِّلْمُكَذِّبِينَ (٢٨)",
+            "source": "Surat Al-Mursalat, 77:25-28"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "77:20-21",
+                "Did We not create you from a liquid disdained? And We placed it in a firm lodging"
+              ],
+              [
+                "77:22-23",
+                "For a known extent. And We determined [it], and excellent [are We] to determine."
+              ],
+              [
+                "77:24-25",
+                "Woe, that Day, to the deniers. Have We not made the earth a container"
+              ],
+              [
+                "77:26-27",
+                "Of the living and the dead? And We placed therein lofty, firmly set mountains and have given you to drink sweet water."
+              ],
+              [
+                "77:28",
+                "Woe, that Day, to the deniers."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "نَخْلُقكُّم",
+                "Al-Mursalat 77:20",
+                "Idgham of ق into ك: complete merging is preferred in Hafs",
+                "nakhlukkum"
+              ],
+              [
+                "قَدَرٍۢ مَّعْلُومٍۢ",
+                "Al-Mursalat 77:22",
+                "Idgham with ghunnah: tanween before م",
+                "qadarim-ma'loom"
+              ],
+              [
+                "مَّآءًۭ فُرَاتًۭا",
+                "Al-Mursalat 77:27",
+                "Madd muttasil; ikhfa' (tanween before ف)",
+                "maa'an furaataa"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 77:20-28 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "In Hafs, «نَخْلُقكُّم» is read with ...",
+            "options": [
+              "the ق merged fully into the ك",
+              "a clear ق then ك",
+              "a qalqalah on ق"
+            ],
+            "answer": 0,
+            "why": "Complete merging (nakhlukkum) is the preferred reading in Hafs."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-Mursalat 77:20-28 together, ayah by ayah.",
+          "a": "The class recites 77:20-28 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 77:20-28. Ayah 20: 3 times looking, 3 times without looking. Then ayah 21 the same way. Then link: recite 20 and 21 together twice. Finish by reciting the whole chunk once without the mushaf."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 77:20-28 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 9,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "Name two blessings of the earth in 77:25 to 27.",
+          "a": "Firm, lofty mountains and sweet water to drink.",
+          "mins": 2
+        },
+        {
+          "q": "Why is there ikhfa' in «مَّآءًۭ فُرَاتًۭا»?",
+          "a": "Tanween before ف, one of the 15 ikhfa' letters.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-Mursalat 77:25: «أَلَمْ نَجْعَلِ ...» Which word comes next?",
+          "a": "ٱلْأَرْضَ",
+          "mins": 1,
+          "options": [
+            "ٱلْأَرْضَ",
+            "وَتَمَتَّعُوا۟",
+            "وَٱلْأَوَّلِينَ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: 77:25 to 27 describe the earth as a container for the living and the dead, with mountains and sweet water. What does that show about Allah's care?",
+          "a": "He provides a home, stability and drink for every creature; denying Him after these blessings is ingratitude.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-Mursalat 77:20-28 to a parent three times a day and revise Al-Mursalat 1 to 19; tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-Mursalat 77:20-28 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mountain river fresh water",
+          "alt": "Fresh water from the mountains (77:27)",
+          "for": "hook"
+        },
+        {
+          "find": "Earth from space",
+          "alt": "The earth (77:25)",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Al-Mursalat, recital and reflection",
+      "n": 55,
+      "title": "Surat Al-Mursalat 77:29-37: hear, understand and memorise",
+      "duration": 50,
+      "bigQuestion": "77:35 says 'This is a Day they will not speak'. When might silence be the hardest punishment?",
+      "objectives": [
+        "To memorise Al-Mursalat 77:29-37 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 77:29-37 after the teacher, word for word",
+        "Most: recite 77:29-37 from memory with no more than one prompt",
+        "Some: link 77:29-37 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Moral: owning our actions now, while excuses are still possible",
+      "keywords": [
+        {
+          "term": "intaliqu (انطلقوا)",
+          "def": "go forth, proceed"
+        },
+        {
+          "term": "lahab (لهب)",
+          "def": "flame"
+        },
+        {
+          "term": "i'tidhar (اعتذار)",
+          "def": "making an excuse"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "77:35 says 'This is a Day they will not speak'. When might silence be the hardest punishment?",
+        "a": "When there is no excuse left to give: on that Day the deniers have nothing to say."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'This is a Day they will not speak, Nor will it be permitted for them to make an excuse.' (Al-Mursalat 77:35 to 36).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Mursalat 77:23 in your head. How does the next ayah begin?",
+          "a": "وَيْلٌۭ يَوْمَئِذٍۢ",
+          "mins": 1,
+          "options": [
+            "إِنَّمَا تُوعَدُونَ",
+            "فَجَعَلْنَٰهُ فِى",
+            "وَيْلٌۭ يَوْمَئِذٍۢ"
+          ]
+        },
+        {
+          "q": "«مَّآءً» has madd ...",
+          "a": "muttasil",
+          "mins": 1,
+          "options": [
+            "muttasil",
+            "munfasil",
+            "laazim"
+          ]
+        },
+        {
+          "q": "«نَخْلُقكُّم» is read ...",
+          "a": "nakhlukkum",
+          "mins": 1,
+          "options": [
+            "nakhlukkum",
+            "nakhluq kum"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-Mursalat 77:29-33",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 77:29-33 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "ٱنطَلِقُوٓا۟ إِلَىٰ مَا كُنتُم بِهِۦ تُكَذِّبُونَ (٢٩) ٱنطَلِقُوٓا۟ إِلَىٰ ظِلٍّۢ ذِى ثَلَٰثِ شُعَبٍۢ (٣٠) لَّا ظَلِيلٍۢ وَلَا يُغْنِى مِنَ ٱللَّهَبِ (٣١) إِنَّهَا تَرْمِى بِشَرَرٍۢ كَٱلْقَصْرِ (٣٢) كَأَنَّهُۥ جِمَٰلَتٌۭ صُفْرٌۭ (٣٣)",
+            "source": "Surat Al-Mursalat, 77:29-33"
+          }
+        },
+        {
+          "heading": "New ayat: Al-Mursalat 77:34-37",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 77:34-37 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "وَيْلٌۭ يَوْمَئِذٍۢ لِّلْمُكَذِّبِينَ (٣٤) هَٰذَا يَوْمُ لَا يَنطِقُونَ (٣٥) وَلَا يُؤْذَنُ لَهُمْ فَيَعْتَذِرُونَ (٣٦) وَيْلٌۭ يَوْمَئِذٍۢ لِّلْمُكَذِّبِينَ (٣٧)",
+            "source": "Surat Al-Mursalat, 77:34-37"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "77:29-30",
+                "[They will be told], \"Proceed to that which you used to deny. Proceed to a shadow [of smoke] having three columns"
+              ],
+              [
+                "77:31-32",
+                "[But having] no cool shade and availing not against the flame.\" Indeed, it throws sparks [as huge] as a fortress,"
+              ],
+              [
+                "77:33-34",
+                "As if they were yellowish [black] camels. Woe, that Day, to the deniers."
+              ],
+              [
+                "77:35-36",
+                "This is a Day they will not speak, Nor will it be permitted for them to make an excuse."
+              ],
+              [
+                "77:37",
+                "Woe, that Day, to the deniers."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "ٱنطَلِقُوٓا۟",
+                "Al-Mursalat 77:29",
+                "Ikhfa': noon before ط; heavy ط",
+                "intaliqoo"
+              ],
+              [
+                "ظِلٍّۢ ذِى",
+                "Al-Mursalat 77:30",
+                "Ikhfa': tanween before ذ",
+                "zillin-dhee"
+              ],
+              [
+                "لَا يَنطِقُونَ",
+                "Al-Mursalat 77:35",
+                "Ikhfa': noon before ط",
+                "laa yantiqoon"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 77:29-37 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "77:36 says they will not be permitted to ...",
+            "options": [
+              "make an excuse",
+              "be silent",
+              "stand"
+            ],
+            "answer": 0,
+            "why": "'Nor will it be permitted for them to make an excuse.'"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-Mursalat 77:29-37 together, ayah by ayah.",
+          "a": "The class recites 77:29-37 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 77:29-37. Ayah 29: 3 times looking, 3 times without looking. Then ayah 30 the same way. Then link: recite 29 and 30 together twice. Finish by reciting the whole chunk once without the mushaf."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 77:29-37 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 9,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "Describe the shadow in 77:30 to 31.",
+          "a": "Three columns, giving no cool shade and no protection from the flame.",
+          "mins": 2
+        },
+        {
+          "q": "Count the ikhfa's in 77:29 to 30.",
+          "a": "Four: «ٱنطَلِقُوٓا۟» (twice), «كُنتُم» and «ظِلٍّۢ ذِى», plus an ikhfa' shafawi in «كُنتُم بِهِۦ».",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-Mursalat 77:32: «إِنَّهَا تَرْمِى ...» Which word comes next?",
+          "a": "بِشَرَرٍۢ",
+          "mins": 1,
+          "options": [
+            "مَا",
+            "ٱلْءَاخِرِينَ",
+            "بِشَرَرٍۢ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: 77:35 says 'This is a Day they will not speak'. When might silence be the hardest punishment?",
+          "a": "When there is no excuse left to give: on that Day the deniers have nothing to say.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-Mursalat 77:29-37 to a parent three times a day and revise Al-Mursalat 1 to 28; tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-Mursalat 77:29-37 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Dark smoke columns",
+          "alt": "Columns of smoke (77:30)",
+          "for": "hook"
+        },
+        {
+          "find": "Quran manuscript page",
+          "alt": "A page of the Qur'an",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Al-Mursalat, recital and reflection",
+      "n": 56,
+      "title": "Surat Al-Mursalat 77:38-45: hear, understand and memorise",
+      "duration": 50,
+      "bigQuestion": "After warnings, 77:41 to 44 describe shade, springs and fruit for the righteous. Why place hope right after warning?",
+      "objectives": [
+        "To memorise Al-Mursalat 77:38-45 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 77:38-45 after the teacher, word for word",
+        "Most: recite 77:38-45 from memory with no more than one prompt",
+        "Some: link 77:38-45 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Spiritual: hope and the reward of good deeds",
+      "keywords": [
+        {
+          "term": "muttaqin (متقين)",
+          "def": "the righteous, mindful of Allah"
+        },
+        {
+          "term": "muhsinin (محسنين)",
+          "def": "those who do good with excellence"
+        },
+        {
+          "term": "iqlab (إقلاب)",
+          "def": "turning noon or tanween into a hidden meem before ب"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "After warnings, 77:41 to 44 describe shade, springs and fruit for the righteous. Why place hope right after warning?",
+        "a": "To balance fear with hope: the door of reward is open to everyone who chooses righteousness."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, the righteous will be among shades and springs Indeed, We thus reward the doers of good.' (Al-Mursalat 77:41, 44).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Mursalat 77:30 in your head. How does the next ayah begin?",
+          "a": "لَّا ظَلِيلٍۢ",
+          "mins": 1,
+          "options": [
+            "وَيْلٌۭ يَوْمَئِذٍۢ",
+            "لَّا ظَلِيلٍۢ",
+            "وَيْلٌۭ يَوْمَئِذٍۢ"
+          ]
+        },
+        {
+          "q": "«ٱنطَلِقُوٓا۟» has ...",
+          "a": "ikhfa'",
+          "mins": 1,
+          "options": [
+            "ikhfa'",
+            "izhar",
+            "iqlab"
+          ]
+        },
+        {
+          "q": "77:35 says they will not ...",
+          "a": "speak",
+          "mins": 1,
+          "options": [
+            "speak",
+            "sleep"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-Mursalat 77:38-45",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 77:38-45 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "هَٰذَا يَوْمُ ٱلْفَصْلِ ۖ جَمَعْنَٰكُمْ وَٱلْأَوَّلِينَ (٣٨) فَإِن كَانَ لَكُمْ كَيْدٌۭ فَكِيدُونِ (٣٩) وَيْلٌۭ يَوْمَئِذٍۢ لِّلْمُكَذِّبِينَ (٤٠) إِنَّ ٱلْمُتَّقِينَ فِى ظِلَٰلٍۢ وَعُيُونٍۢ (٤١) وَفَوَٰكِهَ مِمَّا يَشْتَهُونَ (٤٢) كُلُوا۟ وَٱشْرَبُوا۟ هَنِيٓـًٔۢا بِمَا كُنتُمْ تَعْمَلُونَ (٤٣) إِنَّا كَذَٰلِكَ نَجْزِى ٱلْمُحْسِنِينَ (٤٤) وَيْلٌۭ يَوْمَئِذٍۢ لِّلْمُكَذِّبِينَ (٤٥)",
+            "source": "Surat Al-Mursalat, 77:38-45"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "77:38",
+                "This is the Day of Judgement; We will have assembled you and the former peoples."
+              ],
+              [
+                "77:39",
+                "So if you have a plan, then plan against Me."
+              ],
+              [
+                "77:40",
+                "Woe, that Day, to the deniers."
+              ],
+              [
+                "77:41",
+                "Indeed, the righteous will be among shades and springs"
+              ],
+              [
+                "77:42",
+                "And fruits from whatever they desire,"
+              ],
+              [
+                "77:43",
+                "[Being told], \"Eat and drink in satisfaction for what you used to do.\""
+              ],
+              [
+                "77:44",
+                "Indeed, We thus reward the doers of good."
+              ],
+              [
+                "77:45",
+                "Woe, that Day, to the deniers."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "ٱلْفَصْلِ ۖ جَمَعْنَٰكُمْ",
+                "Al-Mursalat 77:38",
+                "The ۖ sign: pausing is allowed, joining preferred",
+                "Pause or join at «ٱلْفَصْلِ»"
+              ],
+              [
+                "ظِلَٰلٍۢ وَعُيُونٍۢ",
+                "Al-Mursalat 77:41",
+                "Idgham with ghunnah: tanween before و",
+                "zilaaliw-wa'uyoon"
+              ],
+              [
+                "هَنِيٓـًٔۢا بِمَا",
+                "Al-Mursalat 77:43",
+                "Iqlab: tanween before ب",
+                "hanee'am-bimaa"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 77:38-45 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Who is in 'shades and springs' (77:41)?",
+            "options": [
+              "the righteous (al-muttaqin)",
+              "the deniers",
+              "the soldiers"
+            ],
+            "answer": 0,
+            "why": "77:41."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-Mursalat 77:38-45 together, ayah by ayah.",
+          "a": "The class recites 77:38-45 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 77:38-45. Ayah 38: 3 times looking, 3 times without looking. Then ayah 39 the same way. Then link: recite 38 and 39 together twice. Finish by reciting the whole chunk once without the mushaf."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 77:38-45 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 10,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "What are the righteous told in 77:43?",
+          "a": "Eat and drink in satisfaction for what you used to do.",
+          "mins": 2
+        },
+        {
+          "q": "Explain the iqlab in «هَنِيٓـًٔۢا بِمَا».",
+          "a": "Tanween before ب turns into a hidden meem with ghunnah.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-Mursalat 77:42: «وَفَوَٰكِهَ ...» Which word comes next?",
+          "a": "مِمَّا",
+          "mins": 1,
+          "options": [
+            "صُفْرٌۭ",
+            "مِمَّا",
+            "نَجْزِى"
+          ]
+        },
+        {
+          "q": "Back to our ponder: After warnings, 77:41 to 44 describe shade, springs and fruit for the righteous. Why place hope right after warning?",
+          "a": "To balance fear with hope: the door of reward is open to everyone who chooses righteousness.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-Mursalat 77:38-45 to a parent three times a day and revise Al-Mursalat 1 to 37; tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-Mursalat 77:38-45 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Spring water in shaded garden",
+          "alt": "Shade and springs (77:41)",
+          "for": "hook"
+        },
+        {
+          "find": "Bowl of fresh fruit",
+          "alt": "Fruits (77:42)",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Al-Mursalat, recital and reflection",
+      "n": 57,
+      "title": "Surat Al-Mursalat 77:46-50: hear, understand and memorise",
+      "duration": 50,
+      "bigQuestion": "The surah ends: 'Then in what statement after the Qur'an will they believe?' What does this question ask of you?",
+      "objectives": [
+        "To memorise Al-Mursalat 77:46-50 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 77:46-50 after the teacher, word for word",
+        "Most: recite 77:46-50 from memory with no more than one prompt",
+        "Some: link 77:46-50 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Spiritual: responding to the Qur'an with action",
+      "keywords": [
+        {
+          "term": "ruku' (ركوع)",
+          "def": "bowing in prayer"
+        },
+        {
+          "term": "hadith (حديث)",
+          "def": "a statement or account (here: a message after the Qur'an)"
+        },
+        {
+          "term": "hamzat al-wasl (همزة الوصل)",
+          "def": "a joining hamza, silent when joined to the word before"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "The surah ends: 'Then in what statement after the Qur'an will they believe?' What does this question ask of you?",
+        "a": "If the Qur'an, the clearest message, does not move us, nothing will: so we act on it."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Then in what statement after the Qur'an will they believe?' (Al-Mursalat 77:50).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Mursalat 77:41 in your head. How does the next ayah begin?",
+          "a": "وَفَوَٰكِهَ مِمَّا",
+          "mins": 1,
+          "options": [
+            "إِنَّهَا تَرْمِى",
+            "إِنَّمَا تُوعَدُونَ",
+            "وَفَوَٰكِهَ مِمَّا"
+          ]
+        },
+        {
+          "q": "«هَنِيٓـًٔۢا بِمَا» has ...",
+          "a": "iqlab",
+          "mins": 1,
+          "options": [
+            "iqlab",
+            "ikhfa'",
+            "izhar"
+          ]
+        },
+        {
+          "q": "Al-Mursalat has ... ayat",
+          "a": "50",
+          "mins": 1,
+          "options": [
+            "50",
+            "40",
+            "31"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-Mursalat 77:46-50",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 77:46-50 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "كُلُوا۟ وَتَمَتَّعُوا۟ قَلِيلًا إِنَّكُم مُّجْرِمُونَ (٤٦) وَيْلٌۭ يَوْمَئِذٍۢ لِّلْمُكَذِّبِينَ (٤٧) وَإِذَا قِيلَ لَهُمُ ٱرْكَعُوا۟ لَا يَرْكَعُونَ (٤٨) وَيْلٌۭ يَوْمَئِذٍۢ لِّلْمُكَذِّبِينَ (٤٩) فَبِأَىِّ حَدِيثٍۭ بَعْدَهُۥ يُؤْمِنُونَ (٥٠)",
+            "source": "Surat Al-Mursalat, 77:46-50"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "77:46",
+                "[O disbelievers], eat and enjoy yourselves a little; indeed, you are criminals."
+              ],
+              [
+                "77:47",
+                "Woe, that Day, to the deniers."
+              ],
+              [
+                "77:48",
+                "And when it is said to them, \"Bow [in prayer],\" they do not bow."
+              ],
+              [
+                "77:49",
+                "Woe, that Day, to the deniers."
+              ],
+              [
+                "77:50",
+                "Then in what statement after the Qur'an will they believe?"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "إِنَّكُم مُّجْرِمُونَ",
+                "Al-Mursalat 77:46",
+                "Idgham shafawi: meem before م",
+                "innakum-mujrimoon"
+              ],
+              [
+                "لَهُمُ ٱرْكَعُوا۟",
+                "Al-Mursalat 77:48",
+                "Hamzat al-wasl after a sakin: «لَهُمُ» takes a dammah to join",
+                "lahumur-ka'oo"
+              ],
+              [
+                "حَدِيثٍۭ بَعْدَهُۥ",
+                "Al-Mursalat 77:50",
+                "Iqlab: tanween before ب",
+                "hadeethim-ba'dahu"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 77:46-50 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "77:48 says when told to bow in prayer, they ...",
+            "options": [
+              "do not bow",
+              "bow at once",
+              "ask why"
+            ],
+            "answer": 0,
+            "why": "'... they do not bow.'"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-Mursalat 77:46-50 together, ayah by ayah.",
+          "a": "The class recites 77:46-50 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 77:46-50. Ayah 46: 3 times looking, 3 times without looking. Then ayah 47 the same way. Then link: recite 46 and 47 together twice. Finish by reciting the whole chunk once without the mushaf."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 77:46-50 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 10,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "Recite all of Al-Mursalat to a partner.",
+          "a": "All 50 ayat recited.",
+          "mins": 2
+        },
+        {
+          "q": "Why does the meem of «لَهُمُ» take a dammah in 77:48?",
+          "a": "To join to the hamzat al-wasl of «ٱرْكَعُوا۟», a sukoon meem is given a dammah to avoid two sakins meeting.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-Mursalat 77:50: «فَبِأَىِّ حَدِيثٍۭ ...» Which word comes next?",
+          "a": "بَعْدَهُۥ",
+          "mins": 1,
+          "options": [
+            "إِنَّمَا",
+            "بَعْدَهُۥ",
+            "مِّن"
+          ]
+        },
+        {
+          "q": "Back to our ponder: The surah ends: 'Then in what statement after the Qur'an will they believe?' What does this question ask of you?",
+          "a": "If the Qur'an, the clearest message, does not move us, nothing will: so we act on it.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-Mursalat 77:46-50 to a parent three times a day and revise Al-Mursalat 1 to 45; tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Al-Mursalat 77:46-50 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Prayer mat",
+          "alt": "Bowing in prayer (77:48)",
+          "for": "hook"
+        },
+        {
+          "find": "Quran manuscript page",
+          "alt": "A page of the Qur'an",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Al-Mursalat, recital and reflection",
+      "n": 58,
+      "title": "Al-Mursalat complete: the ten refrains and linking the sections",
+      "duration": 50,
+      "bigQuestion": "The same refrain comes ten times. How can you remember which section comes next each time?",
+      "objectives": [
+        "To understand how the ten refrains divide Al-Mursalat into sections and use them to recite the whole surah in order"
+      ],
+      "successCriteria": [
+        "All: recite Al-Mursalat with the class",
+        "Most: name what each section between refrains is about",
+        "Some: recite all 50 ayat alone without mixing sections"
+      ],
+      "smsc": "Spiritual: the Qur'an's structure serves its message",
+      "keywords": [
+        {
+          "term": "tadabbur (تدبر)",
+          "def": "reflecting deeply on the meaning of the Qur'an"
+        },
+        {
+          "term": "lazimah (لازمة)",
+          "def": "a refrain: a repeated line"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        },
+        {
+          "term": "muraja'ah (مراجعة)",
+          "def": "revising memorised Qur'an so it stays firm"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "The same refrain comes ten times. How can you remember which section comes next each time?",
+        "a": "Learn each section's theme in order: the Day, past nations, our creation, the earth, the Fire, silence, the gathering, the righteous, the deniers' brief enjoyment, refusing to bow."
+      },
+      "islamicLink": {
+        "text": "Allah says: '[This is] a blessed Book which We have revealed to you, that they might reflect upon its verses and that those of understanding would be reminded' (Sad 38:29).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Mursalat 77:46 in your head. How does the next ayah begin?",
+          "a": "وَيْلٌۭ يَوْمَئِذٍۢ",
+          "mins": 1,
+          "options": [
+            "هَٰذَا يَوْمُ",
+            "كُلُوا۟ وَٱشْرَبُوا۟",
+            "وَيْلٌۭ يَوْمَئِذٍۢ"
+          ]
+        },
+        {
+          "q": "The refrain is ...",
+          "a": "Woe that Day to the deniers",
+          "mins": 1,
+          "options": [
+            "Woe that Day to the deniers",
+            "By the winds"
+          ]
+        },
+        {
+          "q": "77:41 describes ...",
+          "a": "the righteous in shade and springs",
+          "mins": 1,
+          "options": [
+            "the righteous in shade and springs",
+            "the Fire"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Sections between the refrains",
+          "bullets": [],
+          "note": "Bismillah. Pupils chant the themes in order.",
+          "table": {
+            "head": [
+              "Ayat",
+              "Theme",
+              "Refrain"
+            ],
+            "rows": [
+              [
+                "1 to 14",
+                "Oaths; the Day of Judgement",
+                "15"
+              ],
+              [
+                "16 to 18",
+                "Past and later nations",
+                "19"
+              ],
+              [
+                "20 to 23",
+                "Our creation and its stages",
+                "24"
+              ],
+              [
+                "25 to 27",
+                "The earth, mountains, sweet water",
+                "28"
+              ],
+              [
+                "29 to 33",
+                "The shadow and the sparks",
+                "34"
+              ],
+              [
+                "35 to 39",
+                "Silence; no excuse; the gathering",
+                "37, 40"
+              ],
+              [
+                "41 to 46",
+                "The righteous; the deniers' short enjoyment",
+                "45, 47"
+              ],
+              [
+                "48 to 50",
+                "Refusing to bow; the final question",
+                "49"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Refrain mix-ups",
+          "bullets": [
+            "After each refrain: a new theme",
+            "Say the theme in your head first",
+            "Then start the next section"
+          ],
+          "note": "",
+          "misconception": {
+            "wrong": "After a refrain, jumping back to an earlier section",
+            "right": "Anchor each refrain to the theme that follows it"
+          }
+        },
+        {
+          "heading": "Recite as a chain",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Section",
+            "Refrain",
+            "Think: next theme",
+            "Next section",
+            "Repeat to 77:50"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "After the refrain at 77:24 comes the section about ...",
+            "options": [
+              "the earth, mountains and sweet water",
+              "the righteous",
+              "refusing to bow"
+            ],
+            "answer": 0,
+            "why": "77:25 to 27."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Recite 77:20 to 28 together, saying the theme before each section.",
+          "a": "Creation (20 to 23), refrain, the earth (25 to 27), refrain.",
+          "mins": 4,
+          "model": "I do: 'Creation': «أَلَمْ نَخْلُقكُّم...»; refrain; 'Earth': «أَلَمْ نَجْعَلِ ٱلْأَرْضَ كِفَاتًا»."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 77:1-50 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log. Then fill in the section map on the pupil PDF from memory.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 13,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "Extend: recite 77:29 to 50 alone.",
+          "a": "Recited with one prompt or fewer.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: how does the structure help the message?",
+          "a": "Each proof is followed by the same warning, so the listener cannot miss it.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "How many times does the refrain appear?",
+          "a": "10",
+          "mins": 1,
+          "options": [
+            "10",
+            "8",
+            "12"
+          ]
+        },
+        {
+          "q": "Back to our ponder: The same refrain comes ten times. How can you remember which section comes next each time?",
+          "a": "Learn each section's theme in order: the Day, past nations, our creation, the earth, the Fire, silence, the gathering, the righteous, the deniers' brief enjoyment, refusing to bow.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Al-Mursalat once a day using the section map; tick the revision log.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Section map of Al-Mursalat (pupil PDF)",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Wind blowing through trees storm",
+          "alt": "Strong winds (77:1 to 3)",
+          "for": "hook"
+        },
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Al-Mursalat, recital and reflection",
+      "n": 59,
+      "title": "Muraja'ah: Al-Muddaththir and Al-Qiyamah",
+      "duration": 50,
+      "bigQuestion": "Al-Muddaththir begins 'O you who covers himself, arise and warn'. What does 'arise' ask of a young Muslim today?",
+      "objectives": [
+        "To understand how to revise Al-Muddaththir and Al-Qiyamah so they are firm for the Juz' Tabarak recital"
+      ],
+      "successCriteria": [
+        "All: recite the opening of both surahs with the class",
+        "Most: recite one surah alone with up to two prompts",
+        "Some: recite both with madd and hamzat al-wasl correct"
+      ],
+      "smsc": "Spiritual: patience and care in learning the Qur'an (75:16 to 19)",
+      "keywords": [
+        {
+          "term": "muraja'ah (مراجعة)",
+          "def": "revising memorised Qur'an so it stays firm"
+        },
+        {
+          "term": "hamzat al-wasl (همزة الوصل)",
+          "def": "a joining hamza, silent when joined"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Al-Muddaththir begins 'O you who covers himself, arise and warn'. What does 'arise' ask of a young Muslim today?",
+        "a": "Get up and do good: pray, learn, call to good with wisdom; not to stay comfortable and silent."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'O you who covers himself [with a garment], Arise and warn' (Al-Muddaththir 74:1 to 2).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which surah begins «يَٰٓأَيُّهَا ٱلْمُدَّثِّرُ ...»?",
+          "a": "Al-Muddaththir",
+          "mins": 1,
+          "options": [
+            "Al-Qiyamah",
+            "Al-Muddaththir",
+            "Al-Muzzammil"
+          ]
+        },
+        {
+          "q": "Which surah begins «لَآ أُقْسِمُ ...»?",
+          "a": "Al-Qiyamah",
+          "mins": 1,
+          "options": [
+            "Al-Qiyamah",
+            "Al-Insan",
+            "Al-Muddaththir"
+          ]
+        },
+        {
+          "q": "Al-Qiyamah has ... ayat",
+          "a": "40",
+          "mins": 1,
+          "options": [
+            "40",
+            "56",
+            "31"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Al-Muddaththir: sections",
+          "bullets": [],
+          "note": "Bismillah.",
+          "table": {
+            "head": [
+              "Ayat",
+              "Theme"
+            ],
+            "rows": [
+              [
+                "1 to 7",
+                "Arise and warn"
+              ],
+              [
+                "8 to 30",
+                "The Day; the man who called the Qur'an magic"
+              ],
+              [
+                "31 to 37",
+                "The number of the keepers; a reminder"
+              ],
+              [
+                "38 to 56",
+                "Every soul is held by its deeds"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Al-Qiyamah: sections",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Ayat",
+              "Theme"
+            ],
+            "rows": [
+              [
+                "1 to 15",
+                "Oaths; man will be told what he did"
+              ],
+              [
+                "16 to 19",
+                "Do not hurry your tongue with the Qur'an"
+              ],
+              [
+                "20 to 30",
+                "Bright faces and gloomy faces; death"
+              ],
+              [
+                "31 to 40",
+                "He did not believe or pray; can He not raise the dead?"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Revision loop",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Recite a section",
+            "Check the mushaf",
+            "Log the slip",
+            "Fix and repeat",
+            "Link to the next section"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "75:16 tells the Prophet ﷺ not to ...",
+            "options": [
+              "move his tongue hastily with the Qur'an",
+              "recite at night",
+              "stop reciting"
+            ],
+            "answer": 0,
+            "why": "Allah promised to collect and recite it."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Recite 75:16 to 19 together and say what they teach about learning the Qur'an.",
+          "a": "Allah gathers it and makes it clear; we listen first, then follow.",
+          "mins": 4,
+          "model": "I do: I recite 75:16 to 19, then: 'Listen fully before repeating; Allah makes it clear.'"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 74:1-56 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log. Half the group recites Al-Muddaththir, half Al-Qiyamah; everyone else uses the error log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 13,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "Extend: recite 74:38 to 48 alone.",
+          "a": "Recited with one prompt or fewer.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: link 75:16 to 19 to how you revise.",
+          "a": "Calm listening and repetition, not rushing.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "«يَٰٓأَيُّهَا ٱلْمُدَّثِّرُ» opens Surah ...",
+          "a": "Al-Muddaththir",
+          "mins": 1,
+          "options": [
+            "Al-Muddaththir",
+            "Al-Muzzammil",
+            "Al-Qiyamah"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Al-Muddaththir begins 'O you who covers himself, arise and warn'. What does 'arise' ask of a young Muslim today?",
+          "a": "Get up and do good: pray, learn, call to good with wisdom; not to stay comfortable and silent.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite both surahs on alternate days with the error log; tick the revision log.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Muraja'ah rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Sunrise morning",
+          "alt": "Arise (74:2)",
+          "for": "teach:1"
+        },
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Al-Mursalat, recital and reflection",
+      "n": 60,
+      "title": "Muraja'ah: Al-Insan and Juz' Tabarak in order",
+      "duration": 50,
+      "bigQuestion": "Juz' Tabarak has eleven surahs. Which one has changed you most this year, and how?",
+      "objectives": [
+        "To understand how to recite Juz' Tabarak in order from Al-Mulk to Al-Mursalat, with Al-Insan firm"
+      ],
+      "successCriteria": [
+        "All: name the eleven surahs of Juz' Tabarak in order",
+        "Most: recite Al-Insan alone with up to two prompts",
+        "Some: recite the openings of all eleven in order"
+      ],
+      "smsc": "Moral: giving for Allah's sake without seeking thanks",
+      "keywords": [
+        {
+          "term": "muraja'ah (مراجعة)",
+          "def": "revising memorised Qur'an so it stays firm"
+        },
+        {
+          "term": "Juz' Tabarak (جزء تبارك)",
+          "def": "the 29th part of the Qur'an, Al-Mulk to Al-Mursalat"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Juz' Tabarak has eleven surahs. Which one has changed you most this year, and how?",
+        "a": "Any honest answer: for example Al-Insan's description of feeding the poor for Allah's sake (76:8 to 9)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And they give food in spite of love for it to the needy, the orphan, and the captive, [Saying], \"We feed you only for the countenance of Allah. We wish not from you reward or gratitude.' (Al-Insan 76:8 to 9).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which surah begins «هَلْ أَتَىٰ ...»?",
+          "a": "Al-Insan",
+          "mins": 1,
+          "options": [
+            "Al-Insan",
+            "Al-Qiyamah",
+            "Al-Mursalat"
+          ]
+        },
+        {
+          "q": "Recite Al-Insan 76:8 in your head. How does the next ayah begin?",
+          "a": "إِنَّمَا نُطْعِمُكُمْ",
+          "mins": 1,
+          "options": [
+            "وَٱذْكُرِ ٱسْمَ",
+            "وَجَزَىٰهُم بِمَا",
+            "إِنَّمَا نُطْعِمُكُمْ"
+          ]
+        },
+        {
+          "q": "Juz' Tabarak begins with ...",
+          "a": "Al-Mulk",
+          "mins": 1,
+          "options": [
+            "Al-Mulk",
+            "Al-Jinn",
+            "An-Naba'"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Juz' Tabarak in order",
+          "bullets": [],
+          "note": "Bismillah. Pupils recite the first ayah of each in order.",
+          "table": {
+            "head": [
+              "No.",
+              "Surah",
+              "Opening"
+            ],
+            "rows": [
+              [
+                "67",
+                "Al-Mulk",
+                "تَبَٰرَكَ ٱلَّذِى"
+              ],
+              [
+                "68",
+                "Al-Qalam",
+                "وَٱلْقَلَمِ"
+              ],
+              [
+                "69",
+                "Al-Haqqah",
+                "ٱلْحَآقَّةُ"
+              ],
+              [
+                "70",
+                "Al-Ma'arij",
+                "سَأَلَ سَآئِلٌۢ"
+              ],
+              [
+                "71 to 73",
+                "Nuh, Al-Jinn, Al-Muzzammil",
+                "إِنَّآ أَرْسَلْنَا نُوحًا"
+              ],
+              [
+                "74 to 77",
+                "Al-Muddaththir, Al-Qiyamah, Al-Insan, Al-Mursalat",
+                "هَلْ أَتَىٰ"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Al-Insan 8 to 12",
+          "bullets": [
+            "Feeding for Allah's sake",
+            "No reward or thanks wanted"
+          ],
+          "note": "",
+          "quote": {
+            "text": "وَيُطْعِمُونَ ٱلطَّعَامَ عَلَىٰ حُبِّهِۦ مِسْكِينًۭا وَيَتِيمًۭا وَأَسِيرًا (٨) إِنَّمَا نُطْعِمُكُمْ لِوَجْهِ ٱللَّهِ لَا نُرِيدُ مِنكُمْ جَزَآءًۭ وَلَا شُكُورًا (٩) إِنَّا نَخَافُ مِن رَّبِّنَا يَوْمًا عَبُوسًۭا قَمْطَرِيرًۭا (١٠) فَوَقَىٰهُمُ ٱللَّهُ شَرَّ ذَٰلِكَ ٱلْيَوْمِ وَلَقَّىٰهُمْ نَضْرَةًۭ وَسُرُورًۭا (١١) وَجَزَىٰهُم بِمَا صَبَرُوا۟ جَنَّةًۭ وَحَرِيرًۭا (١٢)",
+            "source": "Surat Al-Insan, 76:8-12"
+          }
+        },
+        {
+          "heading": "Chain recital",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "First pupil: Al-Mulk 1 to 3",
+            "Next: Al-Qalam 1 to 3",
+            "And on through the juz'",
+            "Teacher notes slips",
+            "Weak openings practised"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Which surah comes between Al-Qiyamah and Al-Mursalat?",
+            "options": [
+              "Al-Insan",
+              "Al-Jinn",
+              "Nuh"
+            ],
+            "answer": 0,
+            "why": "75, 76, 77."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chain: recite the first ayah of each surah of Juz' Tabarak in order, one pupil each.",
+          "a": "All eleven openings in order.",
+          "mins": 4,
+          "model": "I do: I recite 67:1, then call the next pupil for 68:1."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 76:1-31 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log. Everyone else revises their weakest surah of the juz' with the error log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 13,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "Extend: recite Al-Insan 76:1 to 12 alone.",
+          "a": "Recited with one prompt or fewer.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: explain the link between Al-Insan 76:8 and Al-Ma'un.",
+          "a": "Both make feeding the needy a sign of true faith.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Juz' Tabarak ends with ...",
+          "a": "Al-Mursalat",
+          "mins": 1,
+          "options": [
+            "Al-Mursalat",
+            "An-Naba'",
+            "Al-Insan"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Juz' Tabarak has eleven surahs. Which one has changed you most this year, and how?",
+          "a": "Any honest answer: for example Al-Insan's description of feeding the poor for Allah's sake (76:8 to 9).",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite two surahs of Juz' Tabarak each day so the whole juz' is covered before the recital; tick the revision log.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Muraja'ah rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Bowl of food being shared",
+          "alt": "Feeding others for Allah's sake (76:8)",
+          "for": "teach:2"
+        },
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Al-Mursalat, recital and reflection",
+      "n": 61,
+      "title": "Recital assessment 2: Juz' Tabarak (Al-Muzzammil to Al-Mursalat)",
+      "duration": 50,
+      "bigQuestion": "Juz' Tabarak is now complete. What will help you keep it as firmly as Juz' 'Amma?",
+      "objectives": [
+        "To understand how well I can recite the second half of Juz' Tabarak, including Al-Mursalat, against the rubric"
+      ],
+      "successCriteria": [
+        "All: recite a passage to the teacher",
+        "Most: recite with few prompts and the rules applied",
+        "Some: recite Al-Mursalat fluently without mixing the refrain sections"
+      ],
+      "smsc": "Spiritual: reciting Allah's words with care and calm",
+      "keywords": [
+        {
+          "term": "tasmi' (تسميع)",
+          "def": "reciting from memory to a listener who checks"
+        },
+        {
+          "term": "rubric",
+          "def": "the criteria and levels the teacher uses to mark recitation"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Juz' Tabarak is now complete. What will help you keep it as firmly as Juz' 'Amma?",
+        "a": "A daily manzil, reciting it in salah and regular listener checks."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We have certainly made the Qur'an easy for remembrance, so is there any who will remember?' (Al-Qamar 54:17).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which surah begins «وَٱلْمُرْسَلَٰتِ عُرْفًۭا ...»?",
+          "a": "Al-Mursalat",
+          "mins": 1,
+          "options": [
+            "Al-Mursalat",
+            "Al-Qiyamah",
+            "Al-Insan"
+          ]
+        },
+        {
+          "q": "Recite Al-Mursalat 77:24 in your head. How does the next ayah begin?",
+          "a": "أَلَمْ نَجْعَلِ",
+          "mins": 1,
+          "options": [
+            "وَٱلنَّٰشِرَٰتِ نَشْرًۭا",
+            "وَيْلٌۭ يَوْمَئِذٍۢ",
+            "أَلَمْ نَجْعَلِ"
+          ]
+        },
+        {
+          "q": "Al-Muzzammil is surah ...",
+          "a": "73",
+          "mins": 1,
+          "options": [
+            "73",
+            "74",
+            "72"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "How you will be marked",
+          "bullets": [],
+          "note": "Show the rubric. Pupils choose the row they most want to improve and note it.",
+          "table": {
+            "head": [
+              "Criterion",
+              "4 Secure",
+              "2 Developing"
+            ],
+            "rows": [
+              [
+                "Hifdh (memory)",
+                "No mistakes, no prompts",
+                "Two or more prompts"
+              ],
+              [
+                "Makharij and harakat",
+                "Every letter and vowel clear",
+                "Some letters or vowels changed"
+              ],
+              [
+                "Tajweed rules",
+                "Rules applied every time",
+                "Rules missed in places"
+              ],
+              [
+                "Fluency and waqf",
+                "Steady pace, sensible stops",
+                "Pauses mid-word or rushes"
+              ],
+              [
+                "Adab",
+                "Isti'adhah, Bismillah, calm and respectful",
+                "Needs reminders"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Order of turns",
+          "bullets": [],
+          "note": "Second half of the register; starting ayat in Al-Muzzammil, Al-Muddaththir, Al-Qiyamah, Al-Insan or Al-Mursalat. Pupils assessed last lesson recite a short Al-Mursalat passage if time allows.",
+          "cycle": [
+            "Teacher calls your name",
+            "Mic on: isti'adhah",
+            "Recite from the ayah the teacher names",
+            "Teacher marks the rubric",
+            "Target in the portal"
+          ]
+        },
+        {
+          "heading": "While you wait",
+          "bullets": [
+            "Mic muted, mushaf closed",
+            "Revise your next passage silently",
+            "No chat during turns: respect the reciter"
+          ],
+          "note": "The rota is on screen. Pupils not reciting revise, then complete the self-assessment on the pupil PDF."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "In Al-Mursalat, after a refrain comes ...",
+            "options": [
+              "a new section",
+              "the start of the surah",
+              "the end"
+            ],
+            "answer": 0,
+            "why": "Each refrain closes a section."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Warm-up: recite Al-Mursalat 77:41 to 45 together.",
+          "a": "Recited together.",
+          "mins": 4,
+          "model": "I do: I recite 77:41 with idgham with ghunnah in «ظِلَٰلٍۢ وَعُيُونٍۢ»."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Assessment turns (second half of the register). Everyone else revises silently and completes the self-assessment.",
+          "a": "Rubric marks recorded in the portal.",
+          "mins": 18,
+          "model": "The teacher reads out the order of names and models the first 20 seconds of a turn."
+        },
+        {
+          "q": "Extend: write your target from the self-assessment.",
+          "a": "A specific target.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "My target is recorded ...",
+          "a": "in the portal",
+          "mins": 1,
+          "options": [
+            "in the portal",
+            "nowhere",
+            "in the chat"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Juz' Tabarak is now complete. What will help you keep it as firmly as Juz' 'Amma?",
+          "a": "A daily manzil, reciting it in salah and regular listener checks.",
+          "mins": 2
+        }
+      ],
+      "homework": "Practise your target; tick the revision log.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Recitation rubric and self-assessment (pupil PDF)",
+        "Portal assessment record",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Wind blowing through trees storm",
+          "alt": "Strong winds (77:1 to 3)",
+          "for": "hook"
+        },
+        {
+          "find": "Gold star sticker",
+          "alt": "A mark of careful reciting",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Al-Mursalat, recital and reflection",
+      "n": 62,
+      "title": "Reflection on Key Stage 3 Qur'an and looking to Year 10",
+      "duration": 50,
+      "bigQuestion": "Three years ago Juz' 'Amma was your goal. Now you carry two juz'. What has made the difference?",
+      "objectives": [
+        "To understand how far my Qur'an has come in Key Stage 3 and set targets for Year 10"
+      ],
+      "successCriteria": [
+        "All: name what I have memorised in Key Stage 3",
+        "Most: set two specific Year 10 targets",
+        "Some: plan a lifelong revision habit for Juz' 29 and 30"
+      ],
+      "smsc": "Spiritual: gratitude and muhasabah at the end of Key Stage 3",
+      "keywords": [
+        {
+          "term": "muraja'ah (مراجعة)",
+          "def": "revising memorised Qur'an so it stays firm"
+        },
+        {
+          "term": "manzil (منزل)",
+          "def": "a fixed daily portion of revision"
+        },
+        {
+          "term": "muhasabah (محاسبة)",
+          "def": "honest self-review"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Three years ago Juz' 'Amma was your goal. Now you carry two juz'. What has made the difference?",
+        "a": "Daily revision, good habits, teachers and family, and Allah's help: 'We have made the Qur'an easy for remembrance'."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And [remember] when your Lord proclaimed, 'If you are grateful, I will surely increase you [in favor]; but if you deny, indeed, My punishment is severe.' \"' (Ibrahim 14:7).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Juz' 'Amma is juz' ...",
+          "a": "30",
+          "mins": 1,
+          "options": [
+            "30",
+            "29",
+            "1"
+          ]
+        },
+        {
+          "q": "Year 10 begins Surah ...",
+          "a": "Ya-Sin",
+          "mins": 1,
+          "options": [
+            "Ya-Sin",
+            "Al-Baqarah",
+            "Al-Kahf"
+          ]
+        },
+        {
+          "q": "Recite Al-Mursalat 77:49 in your head. How does the next ayah begin?",
+          "a": "فَبِأَىِّ حَدِيثٍۭ",
+          "mins": 1,
+          "options": [
+            "فَبِأَىِّ حَدِيثٍۭ",
+            "إِلَىٰ قَدَرٍۢ",
+            "لَّا ظَلِيلٍۢ"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Key Stage 3 at a glance",
+          "bullets": [],
+          "note": "Bismillah.",
+          "table": {
+            "head": [
+              "Year",
+              "Hifdh",
+              "Tajweed"
+            ],
+            "rows": [
+              [
+                "Year 7",
+                "'Abasa to An-Naba': Juz' 'Amma complete",
+                "Makharij, sifat, madd, waqf"
+              ],
+              [
+                "Year 8",
+                "Al-Mulk to Nuh",
+                "Noon and meem in depth; meeting letters"
+              ],
+              [
+                "Year 9",
+                "Al-Jinn to Al-Mursalat: Juz' Tabarak complete",
+                "Madd in recitation; hamzat al-wasl"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Year 10 preview",
+          "bullets": [
+            "Ya-Sin (يس)",
+            "Saktah and advanced waqf",
+            "Recital assessments each half term"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "A lifelong habit",
+          "bullets": [
+            "A manzil every day",
+            "Juz' 29 and 30 in salah",
+            "A listener once a week"
+          ],
+          "note": "The teacher closes with du'a for the class."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Which habit keeps hifdh firm for life?",
+            "options": [
+              "a daily manzil and reciting in salah",
+              "only revising before tests",
+              "never reviewing"
+            ],
+            "answer": 0,
+            "why": "Consistency."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write one Year 10 target that is specific and checkable.",
+          "a": "For example: 'Memorise Ya-Sin 1 to 12 with saktah correct by October.'",
+          "mins": 4,
+          "model": "I do: 'Recite Juz' Tabarak in salah over each week of the summer.'"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Reflection in the portal response box: what I have memorised, my strongest and weakest areas (from my report), two Year 10 targets, and my summer manzil. Start: 'In Key Stage 3 I ...'.",
+          "a": "A complete, honest reflection with targets and a plan.",
+          "mins": 14,
+          "model": "The teacher models the first two sentences."
+        },
+        {
+          "q": "Extend: read the meaning of Ya-Sin 1 to 12 over the summer.",
+          "a": "A plan to read it.",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: plan to recite all of Juz' 29 and 30 once every two weeks.",
+          "a": "A two-week rota.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Reports and marks are ...",
+          "a": "private to me and my family",
+          "mins": 1,
+          "options": [
+            "private to me and my family",
+            "shared in the chat"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Three years ago Juz' 'Amma was your goal. Now you carry two juz'. What has made the difference?",
+          "a": "Daily revision, good habits, teachers and family, and Allah's help: 'We have made the Qur'an easy for remembrance'.",
+          "mins": 2
+        }
+      ],
+      "homework": "Share your reflection with your parents and start your summer manzil.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "End-of-year report (portal)",
+        "Reflection sheet (pupil PDF)",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mountain summit view",
+          "alt": "Looking back from the summit",
+          "for": "teach:1"
+        },
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
         }
       ]
     }

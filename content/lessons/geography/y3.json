@@ -2,7 +2,7 @@
   "subject": "Geography",
   "year": "y3",
   "board": "National Curriculum (KS1-3), aligned to AQA GCSE 9-1",
-  "source": "National Curriculum (KS2 geography: rivers, the water cycle, UK physical geography, human use of rivers) | Spring 1 2027 (lessons 5 to 9): Tarbiyyah Primary Year 3 curriculum map and Geography Long Term Plan 2023-24 (Cornerstones Mighty Metals: rainforests); TGA Year 3 pack | Spring 2 2027: TGA Year 3 pack, History and geography, Tribal Tales (map skills and fieldwork) | Summer 1 2027 (lessons 1 to 4 upgraded; 15 new): TGA Year 3 pack, History and geography, Flow (+ One Planet, Our World); water-use tally fieldwork at home",
+  "source": "National Curriculum (KS2 geography: rivers, the water cycle, UK physical geography, human use of rivers) | Spring 1 2027 (lessons 5 to 9): Tarbiyyah Primary Year 3 curriculum map and Geography Long Term Plan 2023-24 (Cornerstones Mighty Metals: rainforests); TGA Year 3 pack | Spring 2 2027: TGA Year 3 pack, History and geography, Tribal Tales (map skills and fieldwork) | Summer 1 2027 (lessons 1 to 4 upgraded; 15 new): TGA Year 3 pack, History and geography, Flow (+ One Planet, Our World); water-use tally fieldwork at home | Summer 2 2027 (lessons 16 to 19): TGA Year 3 pack, History and geography, Tremors (Earth's layers, volcanoes, earthquakes, Ring of Fire and living near Vesuvius)",
   "lessons": [
     {
       "unit": "Spring 1: Rainforests (Mighty Metals)",
@@ -3462,6 +3462,946 @@
           "find": "kitchen tap running water",
           "alt": "A kitchen tap",
           "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Volcanoes and earthquakes (Tremors)",
+      "n": 16,
+      "title": "Inside the Earth: crust, mantle and core",
+      "bigQuestion": "If you could dig a hole straight down through the Earth, what would you find on the way?",
+      "objectives": [
+        "To understand the layers that make up the inside of the Earth"
+      ],
+      "successCriteria": [
+        "All: name the crust, mantle, outer core and inner core",
+        "Most: describe one fact about each layer",
+        "Some: explain why we live on the crust"
+      ],
+      "crossCurricular": "Science: rocks and soils",
+      "smsc": "Spiritual: wonder at the Earth beneath our feet",
+      "keywords": [
+        {
+          "term": "crust",
+          "def": "the thin, rocky outer layer of the Earth"
+        },
+        {
+          "term": "mantle",
+          "def": "the thick layer of very hot rock under the crust"
+        },
+        {
+          "term": "outer core",
+          "def": "a layer of liquid metal around the inner core"
+        },
+        {
+          "term": "inner core",
+          "def": "the solid metal ball at the centre of the Earth"
+        },
+        {
+          "term": "layer",
+          "def": "one part lying on top of another"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "The deepest hole people have ever dug is about 12 km. The centre of the Earth is about 6,370 km down. Why can we not dig there?"
+      },
+      "islamicLink": {
+        "text": "Allah asks us to look at the mountains, how they are set up, and the earth, how it is spread out (Al-Ghashiyah 88:19-20). The Earth He made has layers we cannot see, and geographers study them.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Water vapour turning into drops is:",
+          "a": "Condensation",
+          "mins": 1,
+          "options": [
+            "Condensation",
+            "Evaporation"
+          ]
+        },
+        {
+          "q": "A river starts at its:",
+          "a": "Source",
+          "mins": 1,
+          "options": [
+            "Source",
+            "Mouth"
+          ]
+        },
+        {
+          "q": "Name one way Romans changed Britain.",
+          "a": "Roads, towns, baths or Latin words",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The Earth has layers",
+          "bullets": [
+            "Crust, mantle, outer core, inner core",
+            "Like a peach: skin, flesh, stone",
+            "The deeper you go, the hotter it gets"
+          ],
+          "note": "Cut a peach or show a photo: skin = crust, flesh = mantle, stone = core.",
+          "diagram": {
+            "centre": "Earth's layers",
+            "items": [
+              "crust (outside)",
+              "mantle",
+              "outer core",
+              "inner core (centre)"
+            ]
+          }
+        },
+        {
+          "heading": "The crust",
+          "bullets": [
+            "The thin outer layer we live on",
+            "About 5 to 70 km thick",
+            "Thinnest under the oceans"
+          ],
+          "note": "Compared with the whole Earth, the crust is thinner than an apple's skin."
+        },
+        {
+          "heading": "The mantle",
+          "bullets": [
+            "Very hot rock, about 2,900 km thick",
+            "It moves very slowly, like thick toffee",
+            "Some melts to make magma"
+          ],
+          "note": "Magma is melted rock under the ground. When it comes out it is called lava."
+        },
+        {
+          "heading": "The core",
+          "bullets": [
+            "Outer core: liquid iron and nickel",
+            "Inner core: solid iron and nickel",
+            "About as hot as the surface of the Sun"
+          ],
+          "note": "The inner core is around 5,000 °C or more. It stays solid because it is squeezed so hard."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Which layer do we live on?",
+            "options": [
+              "Mantle",
+              "Crust",
+              "Inner core"
+            ],
+            "answer": 1,
+            "why": "We live on the crust, the thin rocky outer layer."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Put the layers in order from the outside in.",
+          "a": "Crust, mantle, outer core, inner core",
+          "mins": 1,
+          "model": "I start where I am standing: the crust.\nUnder it is the thick hot mantle.\nThen the liquid outer core.\nIn the middle is the solid inner core."
+        },
+        {
+          "q": "Which layer is liquid metal?",
+          "a": "The outer core",
+          "mins": 1
+        },
+        {
+          "q": "What is magma?",
+          "a": "Melted rock under the ground",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw and label a cut-away Earth with the four layers and one fact for each.",
+          "a": "Four labelled layers with a correct fact each",
+          "mins": 12,
+          "model": "Teacher draws the outer circle and labels 'crust: thin, rocky, we live here'."
+        },
+        {
+          "q": "Extend: Make a layer model with four colours of play dough or paper circles.",
+          "a": "A model with layers in the right order",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why is the crust thinner under the oceans than under the land?",
+          "a": "Oceanic crust is thinner (about 5 to 10 km) than continental crust (about 30 to 70 km)",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "The hottest layer is the:",
+          "a": "Inner core",
+          "mins": 1,
+          "options": [
+            "Inner core",
+            "Crust"
+          ]
+        },
+        {
+          "q": "The mantle is made of:",
+          "a": "Very hot rock",
+          "mins": 1,
+          "options": [
+            "Very hot rock",
+            "Water"
+          ]
+        },
+        {
+          "q": "Big question: what would you pass through on the way to the centre?",
+          "a": "The crust, the hot mantle, the liquid outer core, then the solid inner core",
+          "mins": 1
+        }
+      ],
+      "homework": "Cut an apple or a peach in half with an adult and label the 'layers' to match the Earth's.",
+      "send": "SEND: layer labels to cut and stick. EAL: crust, mantle, core with a diagram. Stretch: find out how scientists know about the layers (they study earthquake waves).",
+      "resources": [
+        "Tarbiyyah Primary Year 3 curriculum map and history and geography long-term plans 2023-24; TGA Year 3 pack, History and geography, Summer 2 Tremors (Cornerstones Maestro Tremors: CHECK IN MAESTRO)",
+        "Earth's layers diagram sheet (portal printable)",
+        "Coloured pencils; optional play dough in four colours"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Earth layers cross section diagram",
+          "alt": "A diagram of the Earth's layers",
+          "for": "teach:1"
+        },
+        {
+          "find": "peach cut in half stone",
+          "alt": "A peach cut in half",
+          "for": "hook"
+        },
+        {
+          "find": "basalt rock oceanic crust",
+          "alt": "Rock from the Earth's crust",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Volcanoes and earthquakes (Tremors)",
+      "n": 17,
+      "title": "How volcanoes form and erupt",
+      "bigQuestion": "What makes a mountain suddenly explode after sleeping for hundreds of years?",
+      "objectives": [
+        "To understand how volcanoes form and why they erupt"
+      ],
+      "successCriteria": [
+        "All: label the parts of a volcano",
+        "Most: explain how magma rises and erupts",
+        "Some: describe composite and shield volcanoes"
+      ],
+      "crossCurricular": "Science: rocks: igneous rock forms when lava cools",
+      "smsc": "Spiritual: awe at the power of the natural world",
+      "keywords": [
+        {
+          "term": "magma",
+          "def": "melted rock under the ground"
+        },
+        {
+          "term": "lava",
+          "def": "melted rock that has come out of a volcano"
+        },
+        {
+          "term": "vent",
+          "def": "the opening that magma comes up through"
+        },
+        {
+          "term": "crater",
+          "def": "the bowl-shaped hole at the top of a volcano"
+        },
+        {
+          "term": "ash",
+          "def": "tiny bits of rock blasted into the air"
+        },
+        {
+          "term": "erupt",
+          "def": "burst out"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Have you ever shaken a fizzy drink and opened it? What happened, and why?"
+      },
+      "starter": [
+        {
+          "q": "The layer under the crust is the:",
+          "a": "Mantle",
+          "mins": 1,
+          "options": [
+            "Mantle",
+            "Inner core"
+          ]
+        },
+        {
+          "q": "Pompeii's main square was the:",
+          "a": "Forum",
+          "mins": 1,
+          "options": [
+            "Forum",
+            "Vent"
+          ]
+        },
+        {
+          "q": "What is magma?",
+          "a": "Melted rock under the ground",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Parts of a volcano",
+          "bullets": [
+            "Magma chamber deep below",
+            "Vent: the pipe to the top",
+            "Crater, lava and ash cloud"
+          ],
+          "note": "Draw the cross-section as you name each part.",
+          "diagram": {
+            "centre": "Volcano",
+            "items": [
+              "magma chamber",
+              "vent",
+              "crater",
+              "lava",
+              "ash cloud"
+            ]
+          }
+        },
+        {
+          "heading": "Why it erupts",
+          "bullets": [
+            "Hot magma is lighter, so it rises",
+            "Gas builds up pressure",
+            "The pressure bursts out"
+          ],
+          "note": "Like the fizzy drink: gas in the magma pushes out when the pressure is released.",
+          "cycle": [
+            "magma rises",
+            "gas pressure builds",
+            "eruption",
+            "lava and ash cool",
+            "volcano grows"
+          ]
+        },
+        {
+          "heading": "Two types",
+          "bullets": [
+            "Composite: steep, layers of ash and lava",
+            "Shield: wide, gentle slopes, runny lava",
+            "Vesuvius is composite; Mauna Loa is shield"
+          ],
+          "note": "Mauna Loa is in Hawaii.",
+          "compare": {
+            "left": {
+              "title": "Composite",
+              "points": [
+                "Steep cone",
+                "Explosive",
+                "Example: Vesuvius"
+              ]
+            },
+            "right": {
+              "title": "Shield",
+              "points": [
+                "Wide, gentle",
+                "Runny lava flows",
+                "Example: Mauna Loa"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Active, dormant, extinct",
+          "bullets": [
+            "Active: erupted recently",
+            "Dormant: sleeping, could erupt",
+            "Extinct: will not erupt again"
+          ],
+          "note": "Arthur's Seat in Edinburgh is an extinct volcano."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Melted rock that has come out of a volcano is:",
+            "options": [
+              "Magma",
+              "Lava",
+              "Ash"
+            ],
+            "answer": 1,
+            "why": "Underground it is magma; once it erupts it is called lava."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Label the vent and the crater on the diagram.",
+          "a": "Vent: the central pipe; crater: the hollow at the top",
+          "mins": 1,
+          "model": "I follow the magma up from the chamber.\nThe pipe it travels up is the vent.\nThe bowl at the top where it comes out is the crater."
+        },
+        {
+          "q": "What builds up and makes a volcano erupt?",
+          "a": "Gas pressure",
+          "mins": 1
+        },
+        {
+          "q": "Which type of volcano has gentle slopes?",
+          "a": "Shield",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw a labelled cross-section of a composite volcano and write three sentences explaining an eruption, using magma, vent and pressure.",
+          "a": "Correct labels; magma rises, gas pressure builds, it erupts through the vent",
+          "mins": 12,
+          "model": "Teacher writes sentence 1: 'Hot magma rises from the magma chamber because it is lighter than the rock around it.'"
+        },
+        {
+          "q": "Extend: Sort these volcanoes: Vesuvius (active), Arthur's Seat (extinct). Which is safe to climb?",
+          "a": "Arthur's Seat, because it is extinct",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Why are composite volcanoes more explosive than shield volcanoes?",
+          "a": "Their magma is thick and sticky, so gas cannot escape easily and pressure builds",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A dormant volcano is:",
+          "a": "Sleeping but could erupt",
+          "mins": 1,
+          "options": [
+            "Sleeping but could erupt",
+            "Never going to erupt"
+          ]
+        },
+        {
+          "q": "Vesuvius is a:",
+          "a": "Composite volcano",
+          "mins": 1,
+          "options": [
+            "Composite volcano",
+            "Shield volcano"
+          ]
+        },
+        {
+          "q": "Big question: why can a sleeping mountain suddenly erupt?",
+          "a": "Magma and gas build up pressure under it until it bursts out",
+          "mins": 1
+        }
+      ],
+      "homework": "With an adult, make a fizz volcano on a tray: bicarbonate of soda in a cup, add vinegar, and say which part is the vent.",
+      "send": "SEND: labelled diagram to complete with a word bank. EAL: volcano words with a diagram. Stretch: research one active volcano today.",
+      "resources": [
+        "Tarbiyyah Primary Year 3 curriculum map and history and geography long-term plans 2023-24; TGA Year 3 pack, History and geography, Summer 2 Tremors (Cornerstones Maestro Tremors: CHECK IN MAESTRO)",
+        "Volcano cross-section sheet (portal printable)",
+        "Household items for the model (with an adult, on a tray): bicarbonate of soda, vinegar, a cup, washing-up liquid"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "composite volcano cross section diagram",
+          "alt": "A cross-section of a composite volcano",
+          "for": "teach:1"
+        },
+        {
+          "find": "Mount Vesuvius from Naples",
+          "alt": "Mount Vesuvius seen from Naples",
+          "for": "teach:3"
+        },
+        {
+          "find": "Mauna Loa shield volcano",
+          "alt": "Mauna Loa, a shield volcano",
+          "for": "keywords"
+        },
+        {
+          "find": "Arthur's Seat Edinburgh",
+          "alt": "Arthur's Seat, an extinct volcano",
+          "for": "teach:4"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Volcanoes and earthquakes (Tremors)",
+      "n": 18,
+      "title": "Earthquakes: tectonic plates and how we measure them",
+      "bigQuestion": "The ground under your feet is moving right now. Why can you not feel it?",
+      "objectives": [
+        "To understand what causes earthquakes and how they are measured"
+      ],
+      "successCriteria": [
+        "All: explain that the crust is broken into tectonic plates",
+        "Most: describe how plates sticking and slipping cause an earthquake",
+        "Some: say how earthquakes are measured and how to stay safe"
+      ],
+      "crossCurricular": "Science: forces: pushes and pulls",
+      "smsc": "Social: helping each other stay safe in an emergency",
+      "keywords": [
+        {
+          "term": "tectonic plate",
+          "def": "a giant piece of the Earth's crust"
+        },
+        {
+          "term": "fault",
+          "def": "a crack where rocks move past each other"
+        },
+        {
+          "term": "earthquake",
+          "def": "sudden shaking of the ground"
+        },
+        {
+          "term": "seismometer",
+          "def": "a machine that measures shaking"
+        },
+        {
+          "term": "scale",
+          "def": "a set of numbers to measure something"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If two people push their hands together hard and one hand suddenly slips, what happens?"
+      },
+      "starter": [
+        {
+          "q": "Melted rock that comes out of a volcano is:",
+          "a": "Lava",
+          "mins": 1,
+          "options": [
+            "Lava",
+            "Magma"
+          ]
+        },
+        {
+          "q": "The eyewitness to Vesuvius was:",
+          "a": "Pliny the Younger",
+          "mins": 1,
+          "options": [
+            "Pliny the Younger",
+            "Julius Caesar"
+          ]
+        },
+        {
+          "q": "Name the layer under the crust.",
+          "a": "Mantle",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "A cracked crust",
+          "bullets": [
+            "The crust is broken into pieces",
+            "The pieces are tectonic plates",
+            "They move a few centimetres a year"
+          ],
+          "note": "About as fast as your fingernails grow. Show a world map of the plates."
+        },
+        {
+          "heading": "Stick, then slip",
+          "bullets": [
+            "Plates push or slide past each other",
+            "They stick and pressure builds",
+            "They suddenly slip: an earthquake"
+          ],
+          "note": "Do the hands demo: press palms together and slide. The jerk is the earthquake.",
+          "cycle": [
+            "plates move",
+            "rocks stick",
+            "pressure builds",
+            "rocks slip",
+            "ground shakes"
+          ]
+        },
+        {
+          "heading": "Measuring earthquakes",
+          "bullets": [
+            "A seismometer records the shaking",
+            "A magnitude scale gives it a number",
+            "Each step up is much stronger"
+          ],
+          "note": "A magnitude 7 is far stronger than a magnitude 6: about 32 times more energy."
+        },
+        {
+          "heading": "Staying safe",
+          "bullets": [
+            "Drop to the ground",
+            "Cover under a sturdy table",
+            "Hold on until it stops"
+          ],
+          "note": "This is the advice used in many earthquake countries."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "An earthquake happens when plates:",
+            "options": [
+              "Suddenly slip",
+              "Melt",
+              "Stop moving forever"
+            ],
+            "answer": 0,
+            "why": "Pressure builds while the plates are stuck, then they slip and the ground shakes."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "What is a tectonic plate?",
+          "a": "A giant piece of the Earth's crust",
+          "mins": 1,
+          "model": "The crust is not one piece.\nIt is cracked into giant pieces.\nEach piece is a tectonic plate."
+        },
+        {
+          "q": "What machine measures earthquakes?",
+          "a": "A seismometer",
+          "mins": 1
+        },
+        {
+          "q": "What are the three safety steps?",
+          "a": "Drop, cover, hold on",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw a three-step diagram showing two plates sticking, pressure building and slipping, with a caption for each.",
+          "a": "Three frames: plates push, stick, slip; captions use plate, pressure, earthquake",
+          "mins": 12,
+          "model": "Teacher draws frame 1: two blocks pushing, caption 'The plates push but stick.'"
+        },
+        {
+          "q": "Extend: Which is stronger, magnitude 5 or magnitude 7?",
+          "a": "Magnitude 7",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Why do buildings in earthquake zones need special designs?",
+          "a": "So they bend or stay standing when the ground shakes, keeping people safe",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A crack where rocks move is a:",
+          "a": "Fault",
+          "mins": 1,
+          "options": [
+            "Fault",
+            "Crater"
+          ]
+        },
+        {
+          "q": "In an earthquake you should:",
+          "a": "Drop, cover, hold on",
+          "mins": 1,
+          "options": [
+            "Drop, cover, hold on",
+            "Run outside at once"
+          ]
+        },
+        {
+          "q": "Big question: why can you not feel the plates moving?",
+          "a": "They move only a few centimetres a year, very slowly",
+          "mins": 1
+        }
+      ],
+      "homework": "Show an adult the hands demo and explain why earthquakes happen, using the words plate, stick, pressure and slip.",
+      "send": "SEND: three-step frame with pictures and a word bank. EAL: plate, fault, shake with actions. Stretch: find out the biggest earthquake ever recorded (Chile, 1960).",
+      "resources": [
+        "Tarbiyyah Primary Year 3 curriculum map and history and geography long-term plans 2023-24; TGA Year 3 pack, History and geography, Summer 2 Tremors (Cornerstones Maestro Tremors: CHECK IN MAESTRO)",
+        "Tectonic plates world map and three-step frame (portal printable)",
+        "Pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "tectonic plates world map",
+          "alt": "A map of the Earth's tectonic plates",
+          "for": "teach:1"
+        },
+        {
+          "find": "San Andreas fault aerial",
+          "alt": "The San Andreas Fault from the air",
+          "for": "keywords"
+        },
+        {
+          "find": "seismometer seismograph",
+          "alt": "A seismograph recording shaking",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Volcanoes and earthquakes (Tremors)",
+      "n": 19,
+      "title": "Where volcanoes and earthquakes happen; living near a volcano",
+      "bigQuestion": "Why would anyone choose to live right next to an active volcano?",
+      "objectives": [
+        "To understand where volcanoes and earthquakes happen and why people live near them"
+      ],
+      "successCriteria": [
+        "All: describe the pattern of volcanoes and earthquakes on a world map",
+        "Most: name the Ring of Fire",
+        "Some: give benefits and risks of living near a volcano"
+      ],
+      "crossCurricular": "Science: rocks: volcanic soil",
+      "smsc": "Moral: weighing benefits and risks when making choices",
+      "keywords": [
+        {
+          "term": "Ring of Fire",
+          "def": "a ring of volcanoes and earthquakes around the Pacific Ocean"
+        },
+        {
+          "term": "plate boundary",
+          "def": "where two tectonic plates meet"
+        },
+        {
+          "term": "fertile",
+          "def": "good for growing crops"
+        },
+        {
+          "term": "risk",
+          "def": "the chance of something harmful happening"
+        },
+        {
+          "term": "evacuate",
+          "def": "leave a dangerous place to be safe"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Would you live near a volcano if it meant your farm grew the best food in the country?"
+      },
+      "starter": [
+        {
+          "q": "Earthquakes happen when plates:",
+          "a": "Suddenly slip",
+          "mins": 1,
+          "options": [
+            "Suddenly slip",
+            "Melt"
+          ]
+        },
+        {
+          "q": "Digging at Pompeii began in:",
+          "a": "1748",
+          "mins": 1,
+          "options": [
+            "1748",
+            "AD 79"
+          ]
+        },
+        {
+          "q": "Name a shield volcano.",
+          "a": "Mauna Loa",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "A pattern on the map",
+          "bullets": [
+            "Volcanoes and earthquakes are in lines",
+            "The lines follow plate boundaries",
+            "Few happen in the middle of plates"
+          ],
+          "note": "Show the map of volcanoes and the plate map side by side: the lines match."
+        },
+        {
+          "heading": "The Ring of Fire",
+          "bullets": [
+            "Round the edge of the Pacific Ocean",
+            "Japan, Indonesia, Chile, the USA",
+            "Most of the world's volcanoes"
+          ],
+          "note": "Trace the ring with the pointer on the map."
+        },
+        {
+          "heading": "Why live near a volcano?",
+          "bullets": [
+            "Fertile soil for farming",
+            "Hot water and energy from underground",
+            "Visitors bring jobs"
+          ],
+          "note": "Iceland uses heat from under the ground to warm homes.",
+          "compare": {
+            "left": {
+              "title": "Benefits",
+              "points": [
+                "Fertile soil",
+                "Geothermal energy",
+                "Tourism jobs"
+              ]
+            },
+            "right": {
+              "title": "Risks",
+              "points": [
+                "Eruptions",
+                "Earthquakes",
+                "Ash in the air"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Staying safe near Vesuvius",
+          "bullets": [
+            "Hundreds of thousands live nearby",
+            "Scientists watch it every day",
+            "There are plans to evacuate"
+          ],
+          "note": "Today we can warn people; in AD 79 they had no warning."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Most volcanoes are found:",
+            "options": [
+              "Along plate boundaries",
+              "In the middle of plates",
+              "Only in the UK"
+            ],
+            "answer": 0,
+            "why": "Magma comes up where plates meet, so volcanoes line the boundaries."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Where is the Ring of Fire?",
+          "a": "Around the Pacific Ocean",
+          "mins": 1,
+          "model": "I look for the biggest ocean.\nThe red dots go all round its edge.\nSo the Ring of Fire is around the Pacific."
+        },
+        {
+          "q": "Give one benefit of living near a volcano.",
+          "a": "Fertile soil, geothermal energy or tourism",
+          "mins": 1
+        },
+        {
+          "q": "Why are there few volcanoes in the UK today?",
+          "a": "The UK is not on a plate boundary",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: On the world map, shade the Ring of Fire and mark four volcanoes from the list (Vesuvius, Mount Fuji, Mauna Loa, Mount St Helens). Then write two benefits and two risks of living near a volcano.",
+          "a": "Ring of Fire shaded; four volcanoes marked; two benefits and two risks",
+          "mins": 12,
+          "model": "Teacher marks Vesuvius in Italy first."
+        },
+        {
+          "q": "Extend: Would you live near Vesuvius? Give a reason for and against.",
+          "a": "For: fertile farms and jobs; against: it could erupt",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: How is life near Vesuvius safer now than in AD 79?",
+          "a": "Scientists monitor it and there are evacuation plans and warnings",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "The Ring of Fire surrounds the:",
+          "a": "Pacific Ocean",
+          "mins": 1,
+          "options": [
+            "Pacific Ocean",
+            "Atlantic Ocean"
+          ]
+        },
+        {
+          "q": "Soil near volcanoes is often:",
+          "a": "Fertile",
+          "mins": 1,
+          "options": [
+            "Fertile",
+            "Frozen"
+          ]
+        },
+        {
+          "q": "Big question: why live near an active volcano?",
+          "a": "Fertile soil, energy and jobs, with warnings and evacuation plans to manage the risk",
+          "mins": 1
+        }
+      ],
+      "homework": "Ask an adult which they would choose: a farm near a volcano or a farm far away, and explain both sides to them.",
+      "send": "SEND: map with volcano names to match. EAL: benefit and risk cards with pictures. Stretch: find out about Mount Fuji in Japan.",
+      "resources": [
+        "Tarbiyyah Primary Year 3 curriculum map and history and geography long-term plans 2023-24; TGA Year 3 pack, History and geography, Summer 2 Tremors (Cornerstones Maestro Tremors: CHECK IN MAESTRO)",
+        "World map of volcanoes and plate boundaries (portal printable)",
+        "Atlas or online map"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Ring of Fire map",
+          "alt": "A map of the Ring of Fire",
+          "for": "teach:2"
+        },
+        {
+          "find": "farmland near Vesuvius",
+          "alt": "Farmland near Vesuvius",
+          "for": "teach:3"
+        },
+        {
+          "find": "geothermal power station Iceland",
+          "alt": "A geothermal power station in Iceland",
+          "for": "keywords"
         }
       ]
     }
