@@ -2,7 +2,7 @@
   "subject": "Arabic",
   "year": "y6",
   "board": "School curriculum (Madinah-style progression)",
-  "source": "Drive: Curriculum/Arabic folder and Secondary Lesson Plan - Arabic - Y8 (format and approach); Madinah-style progression (present tense verbs, question words); National Curriculum KS2 languages | Spring 1 2027 (lessons 2, 5 to 8): founding-year bridge (11 and 18 Jan) and Spring 1 weeks 1 to 3 (dialogues: a school event, getting to know each other; text: the heater, with the reading check), order from the Tarbiyyah Primary Year 6 curriculum map (2023-24); the dialogues and text on the slides are our own until the Kitabi texts are checked (CHECK IN KITABI); lessons v3 | Spring 2 2027 (lessons 9 to 14 new): Year 6 pack Arabic Spring 2 weeks 1 to 6 (Ali Baba parts 1 and 2 as our own simplified retelling with an honest ending; present-tense verbs; occasions dialogue on Ramadan and the two Eids; retelling; review), until the Kitabi text is checked; lessons v3",
+  "source": "Drive: Curriculum/Arabic folder and Secondary Lesson Plan - Arabic - Y8 (format and approach); Madinah-style progression (present tense verbs, question words); National Curriculum KS2 languages | Spring 1 2027 (lessons 2, 5 to 8): founding-year bridge (11 and 18 Jan) and Spring 1 weeks 1 to 3 (dialogues: a school event, getting to know each other; text: the heater, with the reading check), order from the Tarbiyyah Primary Year 6 curriculum map (2023-24); the dialogues and text on the slides are our own until the Kitabi texts are checked (CHECK IN KITABI); lessons v3 | Spring 2 2027 (lessons 9 to 14 new): Year 6 pack Arabic Spring 2 weeks 1 to 6 (Ali Baba parts 1 and 2 as our own simplified retelling with an honest ending; present-tense verbs; occasions dialogue on Ramadan and the two Eids; retelling; review), until the Kitabi text is checked; lessons v3 | Summer 1 2027 (lessons 3 and 4 upgraded, 15 to 17 new): Year 6 pack Arabic Summer 1 weeks 1 to 5 (our own 'my mother' dialogue until the Kitabi dialogue is checked; she-verbs; pronouns attached to verbs; asking questions (portal y6 3); writing about my day (portal y6 4)), one lesson a week; full harakat; lessons v3",
   "lessons": [
     {
       "unit": "Unit 1: Verbs in the present",
@@ -363,220 +363,438 @@
       "duration": 45
     },
     {
-      "unit": "Unit 2: My day and asking questions",
+      "unit": "Summer 1: Reading dialogue: my mother",
       "n": 3,
-      "title": "Asking questions in Arabic",
+      "title": "Asking questions: مَاذَا، لِمَاذَا، كَيْفَ",
       "duration": 45,
+      "bigQuestion": "Which question word helps you learn the most: what, why or how? Why?",
       "objectives": [
-        "Use question words مَنْ، مَاذَا، أَيْنَ، مَتَى، كَيْفَ، لِمَاذَا",
-        "Ask and answer simple questions",
-        "Use لِأَنَّ to give a reason"
+        "To understand how to ask and answer questions with what, why and how"
       ],
+      "successCriteria": [
+        "All: say what مَاذَا، لِمَاذَا، كَيْفَ mean",
+        "Most: answer a لِمَاذَا question with لِأَنَّ",
+        "Some: write three questions about the dialogue for a partner"
+      ],
+      "smsc": "Spiritual: curiosity and asking to learn",
       "keywords": [
         {
-          "term": "مَنْ؟",
-          "def": "who?"
+          "term": "مَاذَا (madha)",
+          "def": "what? (with a verb)"
         },
         {
-          "term": "مَاذَا؟",
-          "def": "what?"
-        },
-        {
-          "term": "أَيْنَ؟",
-          "def": "where?"
-        },
-        {
-          "term": "مَتَى؟",
-          "def": "when?"
-        },
-        {
-          "term": "كَيْفَ؟",
-          "def": "how?"
-        },
-        {
-          "term": "لِمَاذَا؟",
+          "term": "لِمَاذَا (limadha)",
           "def": "why?"
         },
         {
-          "term": "لِأَنَّ",
+          "term": "كَيْفَ (kayfa)",
+          "def": "how?"
+        },
+        {
+          "term": "لِأَنَّ (li'anna)",
           "def": "because"
+        },
+        {
+          "term": "هَلْ (hal)",
+          "def": "a yes or no question word"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which question word helps you learn the most: what, why or how? Why?",
+        "a": "Often 'why?': it leads to reasons. Arabic answers لِمَاذَا with لِأَنَّ."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'So ask the people of knowledge if you do not know' (an-Nahl 16:43).",
+        "at": "start"
+      },
       "starter": [
-        "Say 'I wake up in the morning' in Arabic.",
-        "Say 'I return to the house' in Arabic.",
-        "What does ثُمَّ mean?"
+        {
+          "q": "Bismillah. أُسَاعِدُهَا means ...",
+          "a": "I help her",
+          "mins": 1,
+          "options": [
+            "I help her",
+            "I help him"
+          ]
+        },
+        {
+          "q": "ـنِي on a verb means ...",
+          "a": "Me",
+          "mins": 1,
+          "options": [
+            "Me",
+            "Her"
+          ]
+        },
+        {
+          "q": "Replace the noun: أُحِبُّ أُمِّي",
+          "a": "أُحِبُّهَا",
+          "mins": 1
+        }
       ],
       "teach": [
         {
           "heading": "Question words",
-          "bullets": [
-            "مَنْ؟ - who?",
-            "مَاذَا؟ - what?",
-            "أَيْنَ؟ - where?"
-          ],
-          "note": "Show a poster with the words. Pupils say each word with a gesture. Ask simple questions: مَنْ هَذَا؟ (who is this?) and مَاذَا تَقْرَأُ؟ (what do you read?). Clarify that مَاذَا is mostly used with verbs, while مَا is used in مَا هَذَا؟."
+          "bullets": [],
+          "note": "Begin with Bismillah. Spoken practice only; no songs or music.",
+          "table": {
+            "head": [
+              "Arabic",
+              "English",
+              "Example"
+            ],
+            "rows": [
+              [
+                "مَاذَا",
+                "what?",
+                "مَاذَا تَفْعَلُ؟"
+              ],
+              [
+                "لِمَاذَا",
+                "why?",
+                "لِمَاذَا تُحِبُّ أُمَّكَ؟"
+              ],
+              [
+                "كَيْفَ",
+                "how?",
+                "كَيْفَ تُسَاعِدُهَا؟"
+              ],
+              [
+                "هَلْ",
+                "yes or no?",
+                "هَلْ تُسَاعِدُهَا؟"
+              ]
+            ]
+          }
         },
         {
-          "heading": "When, how and why",
+          "heading": "Why? Because",
           "bullets": [
-            "مَتَى؟ - when?",
-            "كَيْفَ؟ - how?",
-            "لِمَاذَا؟ - why?"
+            "لِمَاذَا تُحِبُّ أُمَّكَ؟",
+            "أُحِبُّهَا لِأَنَّهَا تُسَاعِدُنِي",
+            "لِأَنَّ + her: لِأَنَّهَا"
           ],
-          "note": "Practise with questions: مَتَى تَذْهَبُ إِلَى الْمَدْرَسَةِ؟ كَيْفَ حَالُكَ؟ لِمَاذَا تَقْرَأُ؟ Pupils answer in simple Arabic. Note the pattern for 'you' (to a boy): ta- at the start."
+          "note": "Pupils give their own reason."
         },
         {
-          "heading": "Because",
+          "heading": "Quick check",
           "bullets": [
-            "لِأَنَّ - because",
-            "أَقْرَأُ لِأَنَّ الْقِرَاءَةَ مُفِيدَةٌ",
-            "I read because reading is useful"
+            "Vote in the Teams poll"
           ],
-          "note": "Explain that li'anna introduces a reason. Model with a simple sentence. Link to the Qur'an: the first command was 'Iqra' (read) in Surah al-Alaq 96:1."
-        },
-        {
-          "heading": "Question and answer",
-          "bullets": [
-            "مَاذَا تَقْرَأُ؟ أَقْرَأُ الْقُرْآنَ",
-            "أَيْنَ تَذْهَبُ؟ أَذْهَبُ إِلَى الْمَسْجِدِ",
-            "مَتَى تَنَامُ؟ أَنَامُ فِي اللَّيْلِ"
-          ],
-          "note": "Present question + answer pairs. Pupils read them in pairs, then swap. Highlight that the answer repeats the verb. For a girl 'you', mention تَقْرَئِينَ as an extension."
-        },
-        {
-          "heading": "Interview",
-          "bullets": [
-            "Ask three questions",
-            "Use different question words",
-            "Note the answers"
-          ],
-          "note": "Pupils interview a partner with three questions from the poster, then report back. Teacher listens for correct question words. Provide model answers for support."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "The best answer to لِمَاذَا ...؟ starts with ...",
+            "options": [
+              "لِأَنَّ",
+              "نَعَمْ",
+              "فِي"
+            ],
+            "answer": 0,
+            "why": "لِمَاذَا (why?) is answered with لِأَنَّ (because)."
+          }
         }
       ],
       "practice": [
-        "Say 'I go to the mosque' in Arabic.",
-        "Translate: ثُمَّ أَذْهَبُ إِلَى الْمَدْرَسَةِ.",
-        "Match question words to English meanings.",
-        "Ask a partner مَتَى تَنَامُ؟ and answer."
+        {
+          "q": "Answer: كَيْفَ تُسَاعِدُ أُمَّكَ؟",
+          "a": "For example: أُسَاعِدُهَا فِي المَطْبَخِ / أُنَظِّفُ غُرْفَتِي",
+          "mins": 2,
+          "model": "Teacher: كَيْفَ asks how. Answer with what you do: أُسَاعِدُهَا فِي المَطْبَخِ (I help her in the kitchen)."
+        },
+        {
+          "q": "لِمَاذَا means ...",
+          "a": "Why?",
+          "mins": 1,
+          "options": [
+            "Why?",
+            "How?"
+          ]
+        },
+        {
+          "q": "هَلْ asks a ... question.",
+          "a": "Yes or no",
+          "mins": 1,
+          "options": [
+            "Yes or no",
+            "Where"
+          ]
+        }
       ],
       "independent": [
-        "Write five questions with different question words.",
-        "Write answers to your questions.",
-        "Complete: أَقْرَأُ ___ الْقِرَاءَةَ مُفِيدَةٌ (لِأَنَّ)"
+        {
+          "q": "Question cards on the pupil PDF: write three questions about the dialogue (one each with مَاذَا، لِمَاذَا، كَيْفَ); swap with a partner in a breakout and answer each other's in Arabic.",
+          "a": "Three well-formed questions and full-sentence answers, the why answer with لِأَنَّ",
+          "mins": 12,
+          "model": "Teacher writes: مَاذَا تَطْبُخُ أُمُّ يُوسُفَ؟ تَطْبُخُ الفَطُورَ."
+        },
+        {
+          "q": "Extend: answer هَلْ تُسَاعِدُ أُمَّكَ؟ with a full sentence.",
+          "a": "نَعَمْ، أُسَاعِدُهَا ...",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: ask a question with كَيْفَ about school.",
+          "a": "For example: كَيْفَ تَذْهَبُ إِلَى المَدْرَسَةِ؟",
+          "mins": 1
+        }
       ],
       "exit": [
-        "Which question word means 'why'?",
-        "How do you say 'where do you go?' in Arabic?"
+        {
+          "q": "كَيْفَ means ...",
+          "a": "How?",
+          "mins": 1,
+          "options": [
+            "How?",
+            "What?"
+          ]
+        },
+        {
+          "q": "Back to our ponder: which question word teaches the most?",
+          "a": "Pupils' own, often لِمَاذَا",
+          "mins": 2
+        }
       ],
-      "homework": "Write a mini-interview with five questions and answers.",
-      "send": "SEND: question word cards and sentence frames. EAL: write English meaning beside each question. Stretch: write a dialogue of eight lines with reasons."
+      "homework": "Ask your mother or carer two questions in Arabic (teach her the words) and write her answers.",
+      "send": "SEND: question frames with the question word given. EAL: question word cards. Stretch: write a five-line interview.",
+      "resources": [
+        "Slides",
+        "Kitabi Arabic (CHECK IN KITABI for the matching unit and page)",
+        "Pupil PDF worksheet: question cards"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "question mark sign",
+          "alt": "Asking questions",
+          "for": "hook"
+        },
+        {
+          "find": "speech bubbles",
+          "alt": "Speech bubbles: questions and answers",
+          "for": "keywords"
+        }
+      ]
     },
     {
-      "unit": "Unit 2: My day and asking questions",
+      "unit": "Summer 1: Reading dialogue: my mother",
       "n": 4,
-      "title": "Writing about my day",
+      "title": "Writing about my day: يَوْمِي",
       "duration": 45,
+      "bigQuestion": "If your whole day were written in five sentences, which five moments would you choose?",
       "objectives": [
-        "Plan a short paragraph in Arabic",
-        "Join sentences using وَ، ثُمَّ، بَعْدَ ذَلِكَ",
-        "Check spelling and verb forms"
+        "To understand how to write a short text about my day in order, with time words and joiners"
       ],
+      "successCriteria": [
+        "All: write four sentences about my day",
+        "Most: put them in order with ثُمَّ and بَعْدَ ذٰلِكَ",
+        "Some: include a 'she' verb and an attached pronoun"
+      ],
+      "crossCurricular": "English: chronological writing with time connectives",
+      "smsc": "Spiritual: a day built around salah",
       "keywords": [
         {
-          "term": "فِقْرَة",
-          "def": "paragraph"
+          "term": "يَوْمِي (yawmi)",
+          "def": "my day"
         },
         {
-          "term": "جُمْلَة",
-          "def": "sentence"
+          "term": "أَسْتَيْقِظُ (astayqizu)",
+          "def": "I wake up"
         },
         {
-          "term": "أَوَّلًا",
-          "def": "first"
+          "term": "بَعْدَ ذٰلِكَ (ba'da dhalika)",
+          "def": "after that"
         },
         {
-          "term": "ثُمَّ",
-          "def": "then"
-        },
-        {
-          "term": "أَخِيرًا",
+          "term": "أَخِيرًا (akhiran)",
           "def": "finally"
         },
         {
-          "term": "يَوْمِي",
-          "def": "my day"
+          "term": "أَنَامُ (anamu)",
+          "def": "I sleep"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "If your whole day were written in five sentences, which five moments would you choose?",
+        "a": "Pupils' own: often waking for Fajr, school, helping at home, family time and sleep."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'By the morning brightness, and by the night when it covers with darkness' (ad-Duha 93:1-2).",
+        "at": "start"
+      },
       "starter": [
-        "Say three question words in Arabic.",
-        "Ask 'when do you sleep?' in Arabic.",
-        "Say 'I read because it is useful' in Arabic."
+        {
+          "q": "Bismillah. لِمَاذَا means ...",
+          "a": "Why?",
+          "mins": 1,
+          "options": [
+            "Why?",
+            "When?"
+          ]
+        },
+        {
+          "q": "Answer لِمَاذَا with ...",
+          "a": "لِأَنَّ",
+          "mins": 1,
+          "options": [
+            "لِأَنَّ",
+            "هَلْ"
+          ]
+        },
+        {
+          "q": "Ask 'how do you help her?'",
+          "a": "كَيْفَ تُسَاعِدُهَا؟",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Plan the paragraph",
-          "bullets": [
-            "Title: يَوْمِي",
-            "Start: أَوَّلًا ...",
-            "End: أَخِيرًا ..."
-          ],
-          "note": "Show a paragraph plan: opening, three actions, closing. Explain that good writing has order. Use a model: يَوْمِي: أَوَّلًا أَسْتَيْقِظُ ..."
+          "heading": "My day in order",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "timeline": [
+            {
+              "label": "١",
+              "text": "أَسْتَيْقِظُ لِصَلَاةِ الفَجْرِ"
+            },
+            {
+              "label": "٢",
+              "text": "آكُلُ الفَطُورَ"
+            },
+            {
+              "label": "٣",
+              "text": "أَدْرُسُ فِي المَدْرَسَةِ"
+            },
+            {
+              "label": "٤",
+              "text": "أُسَاعِدُ أُمِّي"
+            },
+            {
+              "label": "٥",
+              "text": "أَنَامُ بَعْدَ العِشَاءِ"
+            }
+          ]
         },
         {
-          "heading": "Model paragraph",
+          "heading": "Order words",
           "bullets": [
-            "أَسْتَيْقِظُ فِي الصَّبَاحِ وَأُصَلِّي",
-            "ثُمَّ آكُلُ الْفَطُورَ",
-            "أَخِيرًا أَنَامُ فِي اللَّيْلِ"
+            "أَوَّلًا: first",
+            "ثُمَّ / بَعْدَ ذٰلِكَ: then / after that",
+            "أَخِيرًا: finally"
           ],
-          "note": "Read the paragraph twice. Ask pupils to underline verbs and connective words. Translate together. Identify first-person verbs beginning with أ."
+          "note": "Recall from the retelling lesson in Spring 2."
         },
         {
-          "heading": "Add detail",
-          "bullets": [
-            "أَذْهَبُ إِلَى الْمَدْرَسَةِ مَعَ أَخِي",
-            "أُحِبُّ الْمَدْرَسَةَ لِأَنَّهَا جَمِيلَةٌ",
-            "Add who, where, why"
-          ],
-          "note": "Show how to expand sentences: add a person (مَعَ أَخِي), a place, a reason. Model expansions. Pupils add one detail to each sentence."
+          "heading": "Model text",
+          "bullets": [],
+          "note": "Labelled: order word, action, time, extra detail.",
+          "quote": {
+            "text": "أَوَّلًا أَسْتَيْقِظُ لِصَلَاةِ الفَجْرِ.\nثُمَّ آكُلُ الفَطُورَ مَعَ أُسْرَتِي.\nبَعْدَ ذٰلِكَ أَدْرُسُ، وَأُمِّي تُسَاعِدُنِي.\nأَخِيرًا أَنَامُ بَعْدَ العِشَاءِ.",
+            "source": "Teacher's model (our own text)"
+          }
         },
         {
-          "heading": "Check your writing",
+          "heading": "Quick check",
           "bullets": [
-            "Do the verbs start with أ?",
-            "Do adjectives match nouns?",
-            "Check your connectives"
+            "Vote in the Teams poll"
           ],
-          "note": "Give a checklist. Pupils swap and peer-check. Common errors: missing hamza, wrong adjective ending, wrong direction when writing. Reinforce proofreading."
-        },
-        {
-          "heading": "Write and share",
-          "bullets": [
-            "Write 6 sentences",
-            "Read aloud to the class",
-            "Celebrate good effort"
-          ],
-          "note": "Allow 10 minutes to write. Pupils read aloud. Praise effort and accuracy. Collect writing for assessment of progress in Arabic script and grammar."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "أَخِيرًا means ...",
+            "options": [
+              "Finally",
+              "First",
+              "Then"
+            ],
+            "answer": 0,
+            "why": "أَخِيرًا = finally."
+          }
         }
       ],
       "practice": [
-        "Translate: مَاذَا تَقْرَأُ؟",
-        "Write the Arabic for 'I go to school'.",
-        "Underline the verbs in the model paragraph.",
-        "Add details to one sentence."
+        {
+          "q": "Put in order: أَنَامُ / أَسْتَيْقِظُ / آكُلُ الفَطُورَ",
+          "a": "أَسْتَيْقِظُ، ثُمَّ آكُلُ الفَطُورَ، وَأَخِيرًا أَنَامُ",
+          "mins": 2,
+          "model": "Teacher: morning first: أَسْتَيْقِظُ. Then breakfast: ثُمَّ آكُلُ الفَطُورَ. Last, sleep: أَخِيرًا أَنَامُ."
+        },
+        {
+          "q": "أَسْتَيْقِظُ means ...",
+          "a": "I wake up",
+          "mins": 1,
+          "options": [
+            "I wake up",
+            "I sleep"
+          ]
+        },
+        {
+          "q": "بَعْدَ ذٰلِكَ means ...",
+          "a": "After that",
+          "mins": 1,
+          "options": [
+            "After that",
+            "Before that"
+          ]
+        }
       ],
       "independent": [
-        "Write a six-sentence paragraph about your day using أَوَّلًا، ثُمَّ، أَخِيرًا.",
-        "Swap with a partner and check against the checklist.",
-        "Rewrite with corrections and add a reason with لِأَنَّ."
+        {
+          "q": "Write 'يَوْمِي' in the portal response box or on the pupil PDF: five or six sentences in order with أَوَّلًا، ثُمَّ، بَعْدَ ذٰلِكَ، أَخِيرًا, one 'she' verb and one attached pronoun. Start: أَوَّلًا ...",
+          "a": "An ordered text with order words, a 'she' verb (for example تُسَاعِدُنِي) and an attached pronoun",
+          "mins": 12,
+          "model": "Teacher writes sentence 3 and highlights the 'she' verb تُسَاعِدُنِي and the ending ـنِي."
+        },
+        {
+          "q": "Extend: read your text to a partner, who asks one مَتَى question.",
+          "a": "Correct question and answer",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: unit check: write two sentences about your mother using a question word and لِأَنَّ.",
+          "a": "For example: لِمَاذَا أُحِبُّ أُمِّي؟ لِأَنَّهَا تُسَاعِدُنِي",
+          "mins": 1
+        }
       ],
       "exit": [
-        "Write one sentence with ثُمَّ.",
-        "What does أَخِيرًا mean?"
+        {
+          "q": "Back to our ponder: which five moments did you choose?",
+          "a": "Pupils' own",
+          "mins": 2
+        }
       ],
-      "homework": "Write a final copy of your paragraph neatly and bring a copy to share.",
-      "send": "SEND: structured paragraph frame with gaps. EAL: bilingual checklist. Stretch: write a second paragraph about the weekend."
+      "homework": "Read your 'my day' text to your family and add one sentence about how you help at home.",
+      "send": "SEND: writing frame with order words and a word bank. EAL: model text with English. Stretch: add a sentence in the past about yesterday.",
+      "resources": [
+        "Slides",
+        "Kitabi Arabic (CHECK IN KITABI for the matching unit and page)",
+        "Pupil PDF worksheet: my day writing frame"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "sunrise over horizon",
+          "alt": "Morning: waking for Fajr",
+          "for": "teach:1"
+        },
+        {
+          "find": "pencil writing notebook",
+          "alt": "Writing about my day",
+          "for": "keywords"
+        }
+      ]
     },
     {
       "unit": "Spring 1: Reading dialogues: a school event; getting to know each other; the heater",
@@ -2748,6 +2966,703 @@
         {
           "find": "checklist",
           "alt": "A checklist",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Reading dialogue: my mother",
+      "n": 15,
+      "title": "Reading dialogue: my mother",
+      "duration": 45,
+      "bigQuestion": "What is one thing your mother or carer does every morning that you might not notice?",
+      "objectives": [
+        "To understand a short dialogue about a mother and read it aloud fluently with the harakat"
+      ],
+      "successCriteria": [
+        "All: read my part of the dialogue aloud",
+        "Most: answer two questions about it in Arabic",
+        "Some: explain how the dialogue shows birr al-walidayn"
+      ],
+      "smsc": "Moral: kindness to parents",
+      "keywords": [
+        {
+          "term": "حِوَار (hiwar)",
+          "def": "a dialogue"
+        },
+        {
+          "term": "أُمِّي (ummi)",
+          "def": "my mother"
+        },
+        {
+          "term": "تُوقِظُنَا (tuqizuna)",
+          "def": "she wakes us"
+        },
+        {
+          "term": "الفَطُور (al-futur)",
+          "def": "breakfast"
+        },
+        {
+          "term": "أَدْعُو لِـ (ad'u li)",
+          "def": "I make du'a for"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What is one thing your mother or carer does every morning that you might not notice?",
+        "a": "Pupils' own: waking us for Fajr, making breakfast; the dialogue shows the same."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We have enjoined upon man goodness to his parents' (al-Ahqaf 46:15).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. عِيدٌ مُبَارَكٌ means ...",
+          "a": "A blessed Eid",
+          "mins": 1,
+          "options": [
+            "A blessed Eid",
+            "Ramadan is generous"
+          ]
+        },
+        {
+          "q": "يَفْتَحُ means ...",
+          "a": "He opens",
+          "mins": 1,
+          "options": [
+            "He opens",
+            "He goes"
+          ]
+        },
+        {
+          "q": "Give a present-tense verb from the Ali Baba story.",
+          "a": "يَفْتَحُ، يَدْخُلُ، يَخْرُجُ",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Our dialogue",
+          "bullets": [],
+          "note": "Begin with Bismillah. Teacher reads; then pupils read in two parts.",
+          "quote": {
+            "text": "أَحْمَدُ: مَاذَا تَفْعَلُ أُمُّكَ فِي الصَّبَاحِ؟\nيُوسُفُ: أُمِّي تُوقِظُنَا لِلصَّلَاةِ، ثُمَّ تَطْبُخُ الفَطُورَ.\nأَحْمَدُ: هَلْ تُسَاعِدُهَا؟\nيُوسُفُ: نَعَمْ، أُسَاعِدُهَا فِي المَطْبَخِ، وَأُحِبُّهَا كَثِيرًا.\nأَحْمَدُ: وَأَنَا أَدْعُو لِأُمِّي بَعْدَ كُلِّ صَلَاةٍ.",
+            "source": "Our own dialogue (Kitabi 'my mother' dialogue to be checked)"
+          }
+        },
+        {
+          "heading": "Key words",
+          "bullets": [],
+          "note": "Pupils find each word in the dialogue.",
+          "table": {
+            "head": [
+              "Arabic",
+              "English"
+            ],
+            "rows": [
+              [
+                "مَاذَا تَفْعَلُ؟",
+                "what does she do?"
+              ],
+              [
+                "تُوقِظُنَا",
+                "she wakes us"
+              ],
+              [
+                "تَطْبُخُ الفَطُورَ",
+                "she cooks breakfast"
+              ],
+              [
+                "المَطْبَخ",
+                "the kitchen"
+              ],
+              [
+                "كَثِيرًا",
+                "a lot"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Reading well",
+          "bullets": [
+            "Read the harakat on every word",
+            "Pause at the commas",
+            "Raise your voice for questions"
+          ],
+          "note": "Model fluent reading of the first line."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "What does Yusuf's mother do first?",
+            "options": [
+              "Wakes them for salah",
+              "Cooks dinner",
+              "Goes to work"
+            ],
+            "answer": 0,
+            "why": "أُمِّي تُوقِظُنَا لِلصَّلَاةِ"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Read Yusuf's second line and translate it.",
+          "a": "Yes, I help her in the kitchen, and I love her a lot.",
+          "mins": 2,
+          "model": "Teacher reads نَعَمْ (yes), أُسَاعِدُهَا (I help her) فِي المَطْبَخِ (in the kitchen), وَأُحِبُّهَا (and I love her) كَثِيرًا (a lot), translating each part."
+        },
+        {
+          "q": "المَطْبَخ is ...",
+          "a": "The kitchen",
+          "mins": 1,
+          "options": [
+            "The kitchen",
+            "The masjid"
+          ]
+        },
+        {
+          "q": "When does Ahmad make du'a for his mother?",
+          "a": "After every salah",
+          "mins": 1,
+          "options": [
+            "After every salah",
+            "On Fridays only"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Reading pairs in breakouts: read the dialogue twice, swapping parts; then answer in Arabic on the pupil PDF: مَاذَا تَفْعَلُ أُمُّ يُوسُفَ فِي الصَّبَاحِ؟ أَيْنَ يُسَاعِدُهَا؟ مَتَى يَدْعُو أَحْمَدُ لِأُمِّهِ؟",
+          "a": "تُوقِظُهُمْ لِلصَّلَاةِ ثُمَّ تَطْبُخُ الفَطُورَ؛ فِي المَطْبَخِ؛ بَعْدَ كُلِّ صَلَاةٍ",
+          "mins": 12,
+          "model": "Teacher answers question 2: أَيْنَ يُسَاعِدُهَا؟ فِي المَطْبَخِ."
+        },
+        {
+          "q": "Extend: add a line for Ahmad about what his mother does.",
+          "a": "For example: أُمِّي تُعَلِّمُنِي القُرْآنَ",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: how does the dialogue show birr al-walidayn?",
+          "a": "Helping, loving and making du'a for the mother",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "حِوَار means ...",
+          "a": "A dialogue",
+          "mins": 1,
+          "options": [
+            "A dialogue",
+            "A story"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what does your mother do each morning?",
+          "a": "Pupils' own, in Arabic if possible",
+          "mins": 2
+        }
+      ],
+      "homework": "Read the dialogue aloud to your family and translate it for them.",
+      "send": "SEND: dialogue with English under each line. EAL: key word cards. Stretch: learn Yusuf's part by heart.",
+      "resources": [
+        "Slides",
+        "Kitabi Arabic (CHECK IN KITABI for the matching unit and page)",
+        "Pupil PDF worksheet: my mother dialogue and questions"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "breakfast table bread tea",
+          "alt": "Breakfast: الفَطُور",
+          "for": "teach:2"
+        },
+        {
+          "find": "kitchen cooking pot stove",
+          "alt": "The kitchen: المَطْبَخ",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Reading dialogue: my mother",
+      "n": 16,
+      "title": "Vocabulary from the dialogue: what she does",
+      "duration": 45,
+      "bigQuestion": "How can you tell in Arabic whether a verb is about a man or a woman, even without a name?",
+      "objectives": [
+        "To understand and use present-tense verbs for 'she' from the dialogue"
+      ],
+      "successCriteria": [
+        "All: say five 'she' verbs",
+        "Most: spot the تَـ at the start of a 'she' verb",
+        "Some: change 'he' verbs into 'she' verbs"
+      ],
+      "crossCurricular": "English: verb agreement",
+      "smsc": "Social: valuing the work of women in the family",
+      "keywords": [
+        {
+          "term": "تُسَاعِدُ (tusa'idu)",
+          "def": "she helps"
+        },
+        {
+          "term": "تَطْبُخُ (tatbukhu)",
+          "def": "she cooks"
+        },
+        {
+          "term": "تُنَظِّفُ (tunazzifu)",
+          "def": "she cleans"
+        },
+        {
+          "term": "تَقْرَأُ (taqra'u)",
+          "def": "she reads"
+        },
+        {
+          "term": "تَعْمَلُ (ta'malu)",
+          "def": "she works"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How can you tell in Arabic whether a verb is about a man or a woman, even without a name?",
+        "a": "The start of the verb: يَـ for he, تَـ for she."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And their Lord responded to them: Never will I allow to be lost the work of any worker among you, whether male or female' (Al 'Imran 3:195).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. تُوقِظُنَا means ...",
+          "a": "She wakes us",
+          "mins": 1,
+          "options": [
+            "She wakes us",
+            "She cooks"
+          ]
+        },
+        {
+          "q": "المَطْبَخ is ...",
+          "a": "The kitchen",
+          "mins": 1,
+          "options": [
+            "The kitchen",
+            "The garden"
+          ]
+        },
+        {
+          "q": "Read the first line of the dialogue.",
+          "a": "أَحْمَدُ: مَاذَا تَفْعَلُ أُمُّكَ فِي الصَّبَاحِ؟",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "She verbs",
+          "bullets": [],
+          "note": "Begin with Bismillah. Mime each. Spoken practice only; no songs or music.",
+          "table": {
+            "head": [
+              "He",
+              "She",
+              "English"
+            ],
+            "rows": [
+              [
+                "يُسَاعِدُ",
+                "تُسَاعِدُ",
+                "helps"
+              ],
+              [
+                "يَطْبُخُ",
+                "تَطْبُخُ",
+                "cooks"
+              ],
+              [
+                "يُنَظِّفُ",
+                "تُنَظِّفُ",
+                "cleans"
+              ],
+              [
+                "يَقْرَأُ",
+                "تَقْرَأُ",
+                "reads"
+              ],
+              [
+                "يَعْمَلُ",
+                "تَعْمَلُ",
+                "works"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "The rule",
+          "bullets": [
+            "يَـ at the start: he",
+            "تَـ at the start: she",
+            "The rest of the verb stays the same"
+          ],
+          "note": "Pupils hold up a boy or girl card (letters only) for each verb they hear."
+        },
+        {
+          "heading": "In sentences",
+          "bullets": [
+            "أُمِّي تَعْمَلُ فِي مُسْتَشْفًى",
+            "My mother works in a hospital",
+            "خَالَتِي تَقْرَأُ القُرْآنَ"
+          ],
+          "note": "Pupils make one sentence about a female relative."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which verb means 'she cleans'?",
+            "options": [
+              "تُنَظِّفُ",
+              "يُنَظِّفُ",
+              "نُنَظِّفُ"
+            ],
+            "answer": 0,
+            "why": "تَـ / تُـ at the start shows 'she'."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Change to 'she': يَطْبُخُ",
+          "a": "تَطْبُخُ",
+          "mins": 2,
+          "model": "Teacher: يَطْبُخُ is 'he cooks'. Swap the ي for ت: تَطْبُخُ, 'she cooks'."
+        },
+        {
+          "q": "تَعْمَلُ means ...",
+          "a": "She works",
+          "mins": 1,
+          "options": [
+            "She works",
+            "He works"
+          ]
+        },
+        {
+          "q": "تَقْرَأُ means ...",
+          "a": "She reads",
+          "mins": 1,
+          "options": [
+            "She reads",
+            "She helps"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Verb sort and write on the pupil PDF: sort ten verbs into 'he' and 'she', then write four sentences about women in your family using 'she' verbs. Start: أُمِّي ...",
+          "a": "Correct sort and four sentences with correct 'she' verbs",
+          "mins": 11,
+          "model": "Teacher writes: جَدَّتِي تَقْرَأُ القُرْآنَ كُلَّ يَوْمٍ."
+        },
+        {
+          "q": "Extend: write the 'he' form of تُنَظِّفُ.",
+          "a": "يُنَظِّفُ",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: write a sentence with one 'he' and one 'she' verb.",
+          "a": "For example: أَبِي يَعْمَلُ وَأُمِّي تَطْبُخُ",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A 'she' verb starts with ...",
+          "a": "تَـ",
+          "mins": 1,
+          "options": [
+            "تَـ",
+            "يَـ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: how do you tell he or she from the verb?",
+          "a": "يَـ for he, تَـ for she",
+          "mins": 2
+        }
+      ],
+      "homework": "Write three sentences about what a female relative does, with 'she' verbs.",
+      "send": "SEND: verb cards with he and she forms side by side. EAL: verb picture cards. Stretch: add نَحْنُ (we) forms with نَـ.",
+      "resources": [
+        "Slides",
+        "Kitabi Arabic (CHECK IN KITABI for the matching unit and page)",
+        "Pupil PDF worksheet: he and she verb sort"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "broom cleaning floor",
+          "alt": "Cleaning: تُنَظِّفُ",
+          "for": "teach:1"
+        },
+        {
+          "find": "open book reading",
+          "alt": "Reading: تَقْرَأُ",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Reading dialogue: my mother",
+      "n": 17,
+      "title": "Pronouns attached to verbs: أُسَاعِدُهَا، أُحِبُّهَا",
+      "duration": 45,
+      "bigQuestion": "English says 'I help her' in three words. Arabic can say it in one. How might that work?",
+      "objectives": [
+        "To understand how object pronouns attach to the end of verbs in Arabic"
+      ],
+      "successCriteria": [
+        "All: say أُسَاعِدُهَا and أُحِبُّهَا with their meanings",
+        "Most: add ـهُ، ـهَا، ـنِي، ـنَا to verbs",
+        "Some: rewrite sentences replacing the noun with an attached pronoun"
+      ],
+      "smsc": "Moral: love and help in the family",
+      "keywords": [
+        {
+          "term": "ـهَا (-ha)",
+          "def": "her (on a verb)"
+        },
+        {
+          "term": "ـهُ (-hu)",
+          "def": "him (on a verb)"
+        },
+        {
+          "term": "ـنِي (-ni)",
+          "def": "me (on a verb)"
+        },
+        {
+          "term": "ـنَا (-na)",
+          "def": "us (on a verb)"
+        },
+        {
+          "term": "ضَمِير (damir)",
+          "def": "a pronoun"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "English says 'I help her' in three words. Arabic can say it in one. How might that work?",
+        "a": "The pronoun joins the verb: أُسَاعِدُهَا = I help her."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And worship Allah and associate nothing with Him, and to parents do good' (an-Nisa' 4:36).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. تَطْبُخُ means ...",
+          "a": "She cooks",
+          "mins": 1,
+          "options": [
+            "She cooks",
+            "He cooks"
+          ]
+        },
+        {
+          "q": "A 'she' verb starts with ...",
+          "a": "تَـ",
+          "mins": 1,
+          "options": [
+            "تَـ",
+            "يَـ"
+          ]
+        },
+        {
+          "q": "Change يُسَاعِدُ to 'she'.",
+          "a": "تُسَاعِدُ",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "One word, three meanings",
+          "bullets": [],
+          "note": "Begin with Bismillah. Break the word up.",
+          "table": {
+            "head": [
+              "Verb",
+              "+ ending",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "أُسَاعِدُ",
+                "ـهَا",
+                "أُسَاعِدُهَا: I help her"
+              ],
+              [
+                "أُسَاعِدُ",
+                "ـهُ",
+                "أُسَاعِدُهُ: I help him"
+              ],
+              [
+                "تُسَاعِدُ",
+                "ـنِي",
+                "تُسَاعِدُنِي: she helps me"
+              ],
+              [
+                "تُوقِظُ",
+                "ـنَا",
+                "تُوقِظُنَا: she wakes us"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "From the dialogue",
+          "bullets": [
+            "أُسَاعِدُهَا: I help her",
+            "أُحِبُّهَا: I love her",
+            "تُوقِظُنَا: she wakes us"
+          ],
+          "note": "Pupils find each in the dialogue from lesson 15."
+        },
+        {
+          "heading": "Replace the noun",
+          "bullets": [],
+          "note": "Watch the noun disappear into the ending.",
+          "model": {
+            "problem": "أُحِبُّ أُمِّي → ?",
+            "steps": [
+              "أُمِّي is a woman: use ـهَا",
+              "Join it to the verb",
+              "أُحِبُّ + هَا = أُحِبُّهَا"
+            ],
+            "answer": "أُحِبُّهَا (I love her)"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "أُحِبُّهُ means ...",
+            "options": [
+              "I love him",
+              "I love her",
+              "He loves me"
+            ],
+            "answer": 0,
+            "why": "ـهُ = him."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Replace the noun: أُسَاعِدُ أَبِي",
+          "a": "أُسَاعِدُهُ (I help him)",
+          "mins": 2,
+          "model": "Teacher: أَبِي is a man, so use ـهُ. أُسَاعِدُ + هُ = أُسَاعِدُهُ."
+        },
+        {
+          "q": "ـنِي means ...",
+          "a": "Me",
+          "mins": 1,
+          "options": [
+            "Me",
+            "Us"
+          ]
+        },
+        {
+          "q": "تُسَاعِدُنِي means ...",
+          "a": "She helps me",
+          "mins": 1,
+          "options": [
+            "She helps me",
+            "I help her"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "On the pupil PDF: rewrite eight sentences replacing the person with an attached pronoun (for example: أَزُورُ جَدَّتِي → أَزُورُهَا), then write two of your own about your family.",
+          "a": "Correct endings: ـهُ for males, ـهَا for females, ـنِي and ـنَا where needed; two own sentences",
+          "mins": 11,
+          "model": "Teacher does sentence 1: أَزُورُ جَدَّتِي → أَزُورُهَا."
+        },
+        {
+          "q": "Extend: what does يُحِبُّنَا mean?",
+          "a": "He loves us",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: write 'my mother teaches me': أُمِّي تُعَلِّمُنِي.",
+          "a": "أُمِّي تُعَلِّمُنِي",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "أُسَاعِدُهَا means ...",
+          "a": "I help her",
+          "mins": 1,
+          "options": [
+            "I help her",
+            "She helps me"
+          ]
+        },
+        {
+          "q": "Back to our ponder: how does Arabic say 'I help her' in one word?",
+          "a": "The pronoun attaches to the verb",
+          "mins": 2
+        }
+      ],
+      "homework": "Say three sentences at home with أُسَاعِدُهُ، أُسَاعِدُهَا or أُحِبُّهُمْ about your family.",
+      "send": "SEND: ending cards to stick onto verb cards. EAL: table of endings. Stretch: learn ـكَ and ـكِ (you) on verbs.",
+      "resources": [
+        "Slides",
+        "Kitabi Arabic (CHECK IN KITABI for the matching unit and page)",
+        "Pupil PDF worksheet: replace the noun with an attached pronoun"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "puzzle pieces joined",
+          "alt": "Pieces joining: the pronoun joins the verb",
+          "for": "teach:1"
+        },
+        {
+          "find": "helping hands",
+          "alt": "Hands helping",
           "for": "keywords"
         }
       ]
