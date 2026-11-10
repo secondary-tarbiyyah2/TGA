@@ -2,7 +2,7 @@
   "subject": "PSHE",
   "year": "y9",
   "board": "National Curriculum / PSHE Association",
-  "source": "National Curriculum / statutory RSHE guidance (Relationships Education, Relationships and Sex Education, Health Education); PSHE Association programme of study themes and KS3 mental health lessons (Drive PSHE folder); TGA RSHE Policy 2026-27, Careers Education and Guidance Policy and Tarbiyyah Compass Character Framework 2026-27 (Drive); existing TGA PSHE Y5 lesson style. Qur'an and hadith references limited to well-known authenticated sources and cited plainly. RSE is taught from an Islamic perspective, to boys and girls separately; parents can see all RSE materials.",
+  "source": "National Curriculum / statutory RSHE guidance (Relationships Education, Relationships and Sex Education, Health Education); PSHE Association programme of study themes and KS3 mental health lessons (Drive PSHE folder); TGA RSHE Policy 2026-27, Careers Education and Guidance Policy and Tarbiyyah Compass Character Framework 2026-27 (Drive); existing TGA PSHE Y5 lesson style. Qur'an and hadith references limited to well-known authenticated sources and cited plainly. RSE is taught from an Islamic perspective, to boys and girls separately; parents can see all RSE materials. | Spring 1 2027 (lessons 3 to 7, v3): Tarbiyyah Secondary PSHE Curriculum Intent, Year 9 (Money, careers and choices), checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE). Islamic note: riba (رِبَا) is forbidden (Qur'an 2:275: Allah has permitted trade and forbidden riba). Islamic finance uses partnership (mushārakah, مُشَارَكَة) and cost-plus sale (murābaḥah, مُرَابَحَة) instead.",
   "lessons": [
     {
       "unit": "Unit 1: Respectful relationships and online safety",
@@ -217,216 +217,1125 @@
       "send": "SEND: provide flowchart templates and visual steps. EAL: pre-teach legal vocabulary. Stretch: research how the Online Safety Act 2023 requires platforms to protect children."
     },
     {
-      "unit": "Unit 2: Money, careers and choices",
+      "unit": "Spring 1: Money, careers and choices",
       "n": 3,
-      "title": "Money matters: earning, budgeting and saving",
+      "title": "Earning and income: payslips, tax and National Insurance",
       "duration": 50,
+      "bigQuestion": "A job advert says £24,000 a year. Will you actually receive £24,000?",
       "objectives": [
-        "Distinguish between needs and wants and create a simple budget",
-        "Explain saving, interest and the Islamic principle of avoiding riba",
-        "Recognise common scams and risks of debt"
+        "To understand how earnings become take-home pay after tax and National Insurance"
       ],
+      "successCriteria": [
+        "All: explain gross pay, net pay and deductions",
+        "Most: read a payslip and find the deductions",
+        "Some: calculate basic-rate income tax and National Insurance on a salary"
+      ],
+      "crossCurricular": "Maths: percentages and subtraction",
+      "smsc": "Social: how taxes fund public services we all use",
       "keywords": [
         {
-          "term": "income",
-          "def": "money coming in"
+          "term": "gross pay",
+          "def": "pay before deductions"
         },
         {
-          "term": "expenditure",
-          "def": "money going out"
+          "term": "net pay",
+          "def": "take-home pay after deductions"
         },
+        {
+          "term": "income tax",
+          "def": "tax on earnings above the personal allowance"
+        },
+        {
+          "term": "National Insurance",
+          "def": "a payment from earnings that funds the state pension and benefits"
+        },
+        {
+          "term": "personal allowance",
+          "def": "the amount you can earn before paying income tax"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A job advert says £24,000 a year. Will you actually receive £24,000?",
+        "a": "No: income tax and National Insurance are taken first; take-home pay is less."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ praised earning by one's own hands (al-Bukhari) and Allah commands fulfilling contracts (al-Ma'idah 5:1). Honest work, honest pay and paying what the law requires are part of a Muslim's integrity.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "10% of £3,000?",
+          "a": "£300",
+          "mins": 1,
+          "options": [
+            "£30",
+            "£300",
+            "£3,000"
+          ]
+        },
+        {
+          "q": "20% of £500?",
+          "a": "£100",
+          "mins": 1
+        },
+        {
+          "q": "Name one thing taxes pay for.",
+          "a": "NHS, schools, roads, police.",
+          "mins": 1
+        },
+        {
+          "q": "What is riba?",
+          "a": "Interest on loans, forbidden in Islam.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Gross and net",
+          "bullets": [
+            "Gross: before deductions",
+            "Deductions: income tax, National Insurance, pension",
+            "Net: what you take home"
+          ],
+          "note": "Payslip picture with no names."
+        },
+        {
+          "heading": "Income tax and NI (2026-27, check gov.uk)",
+          "bullets": [
+            "Personal allowance £12,570: no income tax",
+            "Basic rate: 20% above that",
+            "Employee NI: 8% above about £12,570"
+          ],
+          "note": "Higher rates exist for higher earners; keep to basic rate here.",
+          "table": {
+            "head": [
+              "Item",
+              "Rate"
+            ],
+            "rows": [
+              [
+                "Personal allowance",
+                "£12,570 tax-free"
+              ],
+              [
+                "Basic rate income tax",
+                "20% on the next band"
+              ],
+              [
+                "Employee National Insurance",
+                "8% above the threshold"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Model: take-home pay",
+          "bullets": [
+            "Taxable = salary - allowance",
+            "Tax and NI on the taxable part",
+            "Net = gross - deductions"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "Salary £24,000. Estimate yearly take-home pay.",
+            "steps": [
+              "Taxable: £24,000 - £12,570 = £11,430",
+              "Income tax: 20% of £11,430 = £2,286",
+              "NI: 8% of £11,430 = £914.40",
+              "Net: £24,000 - £2,286 - £914.40 = £20,799.60"
+            ],
+            "answer": "About £20,800 a year (about £1,733 a month)"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Net pay is...",
+            "options": [
+              "Pay before deductions",
+              "Take-home pay after deductions",
+              "Only the tax",
+              "A bonus"
+            ],
+            "answer": 1,
+            "why": "Net is what is left after tax, NI and other deductions."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Salary £18,000: how much is taxable?",
+          "a": "£18,000 - £12,570 = £5,430",
+          "mins": 2,
+          "model": "Teacher subtracts the personal allowance and explains no tax is paid on the first £12,570."
+        },
+        {
+          "q": "Tax on £5,430 at 20%?",
+          "a": "£1,086",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Payslip sheet (pupil PDF): find gross, each deduction and net pay on two payslips.",
+          "a": "Values read correctly from both payslips.",
+          "mins": 8,
+          "model": "Teacher reads payslip 1 aloud."
+        },
+        {
+          "q": "Extend: Calculate take-home pay for a £30,000 salary (basic rate only).",
+          "a": "Taxable £17,430; tax £3,486; NI £1,394.40; net £25,119.60.",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: In the portal response box, explain why the tax system is called 'progressive'.",
+          "a": "People pay a higher share as income rises: allowance, then 20%, then higher rates.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "The personal allowance is... A) a bonus B) earnings you can receive before income tax C) a pension",
+          "a": "B) earnings you can receive before income tax",
+          "mins": 1,
+          "options": [
+            "A bonus",
+            "Earnings before income tax",
+            "A pension"
+          ]
+        },
+        {
+          "q": "Big question: will a £24,000 job pay you £24,000?",
+          "a": "No: about £20,800 after income tax and NI.",
+          "mins": 2
+        }
+      ],
+      "homework": "With a parent's permission, look at a real or sample payslip and identify gross pay, deductions and net pay.",
+      "send": "SEND: calculator and a partly worked example. EAL: gross, net, deduction. Stretch: research student loan repayments as a deduction.",
+      "resources": [
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Year 9 (Money, careers and choices), checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules",
+        "UK tax and National Insurance rates for 2026-27 (gov.uk: check the current figures before teaching; the slides use a £12,570 personal allowance, 20% basic rate income tax and 8% employee National Insurance)",
+        "Portal pshe y9 lesson 3 (upgraded to v3)",
+        "Sample payslips (pupil PDF, invented)",
+        "Calculator"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "payslip document",
+          "alt": "A sample payslip",
+          "for": "teach:1"
+        },
+        {
+          "find": "calculator",
+          "alt": "A calculator",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Money, careers and choices",
+      "n": 4,
+      "title": "Strengths and careers",
+      "duration": 50,
+      "bigQuestion": "Should you choose a career for money, for passion, or for helping people? Can you have all three?",
+      "objectives": [
+        "To understand how strengths, interests and values connect to future careers and Year 10 choices"
+      ],
+      "successCriteria": [
+        "All: name three personal strengths and interests",
+        "Most: link them to suitable careers and subjects",
+        "Some: research one career's route, training and how it serves the community"
+      ],
+      "crossCurricular": "All subjects: Year 10 option choices (two of Arabic, Business, Computer Science and Geography)",
+      "smsc": "Spiritual: intention (niyyah) in choosing work",
+      "keywords": [
+        {
+          "term": "strength",
+          "def": "something you are good at"
+        },
+        {
+          "term": "skill",
+          "def": "an ability you can learn and improve"
+        },
+        {
+          "term": "career",
+          "def": "the work a person does over their life"
+        },
+        {
+          "term": "labour market information",
+          "def": "facts about jobs: demand, pay and growth"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Should you choose a career for money, for passion, or for helping people? Can you have all three?"
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'The best of people are those most beneficial to people' (at-Tabarani, graded hasan by al-Albani). Muslims seek halal work that benefits others, and every honest job done with good intention can be worship.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Report scam texts to...",
+          "a": "7726",
+          "mins": 1,
+          "options": [
+            "999",
+            "7726"
+          ]
+        },
+        {
+          "q": "What is a money mule?",
+          "a": "Someone who lets criminals move money through their account.",
+          "mins": 1
+        },
+        {
+          "q": "What is net pay?",
+          "a": "Take-home pay.",
+          "mins": 1
+        },
+        {
+          "q": "Name a halal job.",
+          "a": "For example: nurse, engineer, teacher.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Strengths and skills",
+          "bullets": [
+            "Strengths: what comes naturally",
+            "Skills: what we can learn",
+            "Values: what matters to us"
+          ],
+          "note": "Examples: problem solving, communication, creativity, patience."
+        },
+        {
+          "heading": "From strengths to careers",
+          "bullets": [
+            "Match strengths to job families",
+            "Check the subjects needed",
+            "Check labour market information"
+          ],
+          "note": "Use the National Careers Service website (free, no login needed).",
+          "table": {
+            "head": [
+              "Strength",
+              "Possible careers"
+            ],
+            "rows": [
+              [
+                "Problem solving",
+                "Engineer, software developer, accountant"
+              ],
+              [
+                "Caring for others",
+                "Nurse, pharmacist, teacher, social worker"
+              ],
+              [
+                "Creativity",
+                "Architect, designer, chef"
+              ],
+              [
+                "Languages",
+                "Translator, Arabic teacher, diplomat"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Model: researching a career",
+          "bullets": [
+            "What do they do?",
+            "Qualifications and route",
+            "Pay range and demand",
+            "How does it benefit people?"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "Research: pharmacist.",
+            "steps": [
+              "Role: prepares and advises on medicines",
+              "Route: A levels (chemistry), MPharm degree, foundation year",
+              "Pay and demand: check the National Careers Service profile",
+              "Benefit: keeps people safe and well"
+            ],
+            "answer": "A clear career profile"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Which is a skill rather than an interest?",
+            "options": [
+              "Liking football",
+              "Touch typing",
+              "Enjoying travel",
+              "Loving animals"
+            ],
+            "answer": 1,
+            "why": "Typing is an ability that can be learned; the others are interests."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Name one strength and one career it suits.",
+          "a": "For example: patience: teacher.",
+          "mins": 2,
+          "model": "Teacher shares their own strength and how it fits teaching."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Strengths audit (pupil PDF): list five strengths with evidence, then match three careers.",
+          "a": "Five evidenced strengths and three matched careers.",
+          "mins": 8,
+          "model": "Teacher completes the first strength with evidence."
+        },
+        {
+          "q": "Extend: Research one career on the National Careers Service site and write a profile in the portal response box.",
+          "a": "Role, route, pay range, benefit to people.",
+          "mins": 6
+        },
+        {
+          "q": "Stretch: Which two Year 10 options would help your chosen career? Explain.",
+          "a": "Options linked to the career with reasons.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A skill is... A) something you can learn and improve B) only a hobby C) a salary",
+          "a": "A) something you can learn and improve",
+          "mins": 1,
+          "options": [
+            "Something you can learn and improve",
+            "Only a hobby",
+            "A salary"
+          ]
+        },
+        {
+          "q": "Big question: money, passion or helping people: can you have all three?",
+          "a": "Often yes: choose halal work that uses your strengths and benefits others.",
+          "mins": 2
+        }
+      ],
+      "homework": "Talk to an adult about their career: what strengths it needs and how they got there.",
+      "send": "SEND: strengths word bank. EAL: strength, skill, career. Stretch: compare two career routes (degree and apprenticeship).",
+      "resources": [
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Year 9 (Money, careers and choices), checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules",
+        "Portal pshe y9 lesson 4 (upgraded to v3)",
+        "Strengths audit (pupil PDF)",
+        "National Careers Service website (free, no login)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "stethoscope",
+          "alt": "A stethoscope",
+          "for": "teach:2"
+        },
+        {
+          "find": "engineering drawing tools",
+          "alt": "Engineering tools",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Money, careers and choices",
+      "n": 5,
+      "title": "Budgeting",
+      "duration": 50,
+      "bigQuestion": "Two people earn the same. One always runs out of money, one saves. What is the difference?",
+      "objectives": [
+        "To understand how to build a monthly budget that covers needs, saving and giving"
+      ],
+      "successCriteria": [
+        "All: list fixed and variable costs",
+        "Most: build a balanced monthly budget",
+        "Some: adjust a budget after an unexpected cost and justify the choices"
+      ],
+      "crossCurricular": "Maths: percentages and balancing totals; Computing: spreadsheets (Spring 2)",
+      "smsc": "Moral: balance and responsibility",
+      "keywords": [
         {
           "term": "budget",
           "def": "a plan for income and spending"
         },
         {
-          "term": "riba",
-          "def": "interest or increase on loans, forbidden in Islam"
+          "term": "fixed cost",
+          "def": "a cost that stays the same each month, like rent"
         },
         {
-          "term": "scam",
-          "def": "a trick to take your money or details"
+          "term": "variable cost",
+          "def": "a cost that changes, like food"
+        },
+        {
+          "term": "surplus",
+          "def": "money left over"
+        },
+        {
+          "term": "deficit",
+          "def": "spending more than income"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two people earn the same. One always runs out of money, one saves. What is the difference?",
+        "a": "Usually planning: a budget."
+      },
+      "islamicLink": {
+        "text": "Allah praises those who, when they spend, are 'neither wasteful nor stingy, but in between' (al-Furqan 25:67), and warns that wasteful spenders are brothers of the devils (al-Isra 17:27). A budget puts this balance into practice, with zakah and sadaqah planned in.",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. Name two ways people earn money.",
-        "What is the difference between a need and a want?",
-        "Why do people save?"
+        {
+          "q": "Net pay is...",
+          "a": "Take-home pay after deductions",
+          "mins": 1,
+          "options": [
+            "Pay before deductions",
+            "Take-home pay after deductions"
+          ]
+        },
+        {
+          "q": "£24,000 salary: taxable amount?",
+          "a": "£11,430",
+          "mins": 1
+        },
+        {
+          "q": "Name a household bill.",
+          "a": "Rent, energy, water, council tax.",
+          "mins": 1
+        },
+        {
+          "q": "What does al-Furqan 25:67 teach about spending?",
+          "a": "Not wasteful nor stingy, in between.",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Where money comes from",
+          "heading": "Fixed and variable",
           "bullets": [
-            "Pocket money, gifts and part-time work",
-            "Wages, salaries and self-employment",
-            "Benefits and student support",
-            "Earning halal income: Bukhari"
+            "Fixed: rent, council tax, phone contract",
+            "Variable: food, travel, clothes",
+            "Occasional: gifts, repairs"
           ],
-          "note": "Say bismillah. Ask: ‘How do people earn money?’ Explain that at 13 young people may do light part-time work, with limits on hours and types of work. Cite the hadith that no one has eaten better food than that which he eats from the work of his own hands (Bukhari). Link to the Tarbiyyah Compass values of Integrity and Excellence. Ground rules: right to pass, no personal stories, kindness. Anonymous questions can go to the teacher's question box. If a pupil says anything that worries you, stay calm, do not promise secrecy and follow the Child Protection and Safeguarding Policy: tell the DSL the same day."
+          "note": "Sort.",
+          "sort": {
+            "columns": [
+              "Fixed",
+              "Variable"
+            ],
+            "cards": [
+              "Rent",
+              "Food shopping",
+              "Council tax",
+              "Bus fares",
+              "Phone contract",
+              "Clothes"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ]
+          }
         },
         {
-          "heading": "Needs, wants and budgeting",
+          "heading": "A simple budget",
           "bullets": [
-            "Needs: food, shelter, clothing, safety",
-            "Wants: games, brands, treats",
-            "Budget: income minus spending",
-            "Save first, then spend"
+            "Income",
+            "Minus needs",
+            "Saving and giving",
+            "Then wants"
           ],
-          "note": "Worked example: Zayd earns £30 a month from a weekend job. He saves £10, gives £3 as sadaqah and spends £17 on snacks and gaming credit. Ask: ‘What would you change?’ Show a budget table with income, savings, charity and spending. Misconception: a budget stops you having fun; it helps you plan for what matters. Link to the Tarbiyyah Compass values of Contentment and Progress."
+          "note": "Model.",
+          "model": {
+            "problem": "Net income £1,700 a month. Rent £750, bills £250, food £300, travel £100.",
+            "steps": [
+              "Needs total: £750 + £250 + £300 + £100 = £1,400",
+              "Left: £1,700 - £1,400 = £300",
+              "Sadaqah £30, saving £150",
+              "Wants: £120; surplus £0, balanced"
+            ],
+            "answer": "Balanced budget with giving and saving"
+          }
         },
         {
-          "heading": "Saving and interest",
+          "heading": "When things change",
           "bullets": [
-            "Save for goals: short, medium, long term",
-            "Banks pay interest on savings",
-            "Interest on loans costs more over time",
-            "Qur'an 2:275: trade is lawful, riba forbidden"
+            "Unexpected cost: a repair",
+            "Cut wants first",
+            "Use the emergency fund, not riba debt"
           ],
-          "note": "Worked example: £100 at 5% simple interest earns £5 in a year. Borrowing £100 at 20% costs £20 in a year. Cite plainly: Qur'an 2:275, that Allah has permitted trade and forbidden riba. Explain that Muslims seek halal ways of saving and borrowing. Islamic banks offer accounts and finance based on profit-sharing or buying and selling rather than interest. Pupils should discuss specific questions with family or a qualified scholar."
+          "note": "This is why an emergency fund matters."
         },
         {
-          "heading": "Giving and spending wisely",
+          "heading": "Check",
           "bullets": [
-            "Zakat and sadaqah purify wealth",
-            "Qur'an 25:67: spend with moderation",
-            "Qur'an 17:26-27: do not waste",
-            "Hadith: we will be asked how we earned and spent"
+            "Vote in the Teams poll"
           ],
-          "note": "Cite plainly: Qur'an 25:67 describes the servants of the Most Merciful as those who are neither extravagant nor stingy when they spend. Cite Qur'an 17:26-27 on waste. Cite the hadith that a person will be asked on the Day of Judgement about his wealth, how he earned it and how he spent it (Tirmidhi). Link to the Tarbiyyah Compass value of Contentment."
-        },
-        {
-          "heading": "Scams and risks",
-          "bullets": [
-            "Too good to be true usually is",
-            "Never share bank details or codes",
-            "Beware of ‘get rich quick’ and gambling-style games",
-            "Ask an adult before spending online"
-          ],
-          "note": "Show invented examples: a text offering a prize for a small fee; a social media post promising to double money; loot boxes in games. Teach the pause-and-check habit. Explain that debt can grow quickly. Mention Qur'an 83:1-3 as a warning against cheating in measure, relevant to fraud and fair dealing. Ask: ‘Who can you check with before spending or sharing details?’"
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Income £1,500, spending £1,650. This is a...",
+            "options": [
+              "Surplus",
+              "Deficit",
+              "Balance",
+              "Profit"
+            ],
+            "answer": 1,
+            "why": "Spending more than income is a deficit of £150."
+          }
         }
       ],
       "practice": [
-        "Zayd earns £30 a month. He saves £8, gives £2 to charity and spends the rest. How much does he spend?",
-        "£200 is saved at 3% simple interest for one year. How much interest is earned?",
-        "Which is a scam sign? (a) a prize you did not enter for (b) a bank letter you expected (c) a request to ‘act now’ and pay a small fee."
+        {
+          "q": "Income £1,200, needs £950. How much is left for saving, giving and wants?",
+          "a": "£250",
+          "mins": 1,
+          "model": "Teacher subtracts and suggests a split."
+        }
       ],
       "independent": [
-        "Create your own monthly budget for £40 income including savings, charity and spending.",
-        "Write a leaflet: ‘Five tips for staying safe from scams’.",
-        "Explain in a paragraph how moderation and charity can be part of managing money."
+        {
+          "q": "Core: Budget task (pupil PDF): a young adult's monthly budget, balance it with saving and sadaqah.",
+          "a": "A balanced budget with needs first.",
+          "mins": 10,
+          "model": "Teacher enters income and rent."
+        },
+        {
+          "q": "Extend: A £200 car repair arrives. Adjust the budget and explain in the portal response box.",
+          "a": "Cut wants, use savings, avoid riba borrowing.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Explain why an emergency fund helps a Muslim avoid riba.",
+          "a": "Savings cover surprises, so there is no need to borrow with interest.",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Define budget in one sentence.",
-        "Name two signs of a scam."
+        {
+          "q": "A fixed cost is... A) food B) rent C) a treat",
+          "a": "B) rent",
+          "mins": 1,
+          "options": [
+            "Food",
+            "Rent",
+            "A treat"
+          ]
+        },
+        {
+          "q": "Big question: same income, one saves and one runs out: why?",
+          "a": "Planning with a budget and spending wisely.",
+          "mins": 2
+        }
       ],
-      "homework": "Make a savings plan for a goal costing £60: how much to save a week and for how long?",
-      "send": "SEND: provide a pre-drawn budget table and use calculators. EAL: pre-teach finance vocabulary. Stretch: research how Islamic finance products such as murabaha work and summarise in your own words."
+      "homework": "List your own monthly spending (pocket money or imagined) as fixed and variable costs.",
+      "send": "SEND: budget template with categories filled. EAL: fixed, variable, surplus, deficit. Stretch: build the budget in Excel (school Microsoft 365).",
+      "resources": [
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Year 9 (Money, careers and choices), checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules",
+        "Monthly budget task (pupil PDF)",
+        "Excel in the school Microsoft 365 account (optional)",
+        "Calculator"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "household budget notebook calculator",
+          "alt": "A notebook and calculator",
+          "for": "teach:2"
+        },
+        {
+          "find": "rent house terraced street",
+          "alt": "A terraced street",
+          "for": "hook"
+        }
+      ]
     },
     {
-      "unit": "Unit 2: Money, careers and choices",
-      "n": 4,
-      "title": "Careers and choices: strengths, options and pathways",
+      "unit": "Spring 1: Money, careers and choices",
+      "n": 6,
+      "title": "Saving, riba and halal ways to save",
       "duration": 50,
+      "bigQuestion": "If a bank offers you 4% interest on savings, is that a gift?",
       "objectives": [
-        "Link strengths, interests and values to career sectors",
-        "Explain how choices at 14 and 16 affect later pathways",
-        "Challenge stereotypes and use reliable sources to research careers"
+        "To understand why saving matters, why riba is forbidden, and how Muslims can save and grow money in halal ways"
       ],
+      "successCriteria": [
+        "All: give three reasons to save",
+        "Most: explain how interest works and why Islam forbids riba",
+        "Some: compare halal options such as profit-sharing accounts and ethical investment"
+      ],
+      "crossCurricular": "Maths: percentages and compound growth (taught as knowledge of the wider economy)",
+      "smsc": "Moral and spiritual: obeying Allah in money matters",
       "keywords": [
         {
-          "term": "sector",
-          "def": "a group of related jobs, such as health or technology"
+          "term": "saving",
+          "def": "keeping money for the future"
         },
         {
-          "term": "pathway",
-          "def": "a route through education, training or work"
+          "term": "interest",
+          "def": "money paid for lending or borrowing money"
         },
         {
-          "term": "apprenticeship",
-          "def": "a job with training that leads to a qualification"
+          "term": "riba",
+          "def": "interest, forbidden in Islam (رِبَا)"
         },
         {
-          "term": "stereotype",
-          "def": "a fixed idea about a type of person"
+          "term": "profit-sharing",
+          "def": "sharing real business profit and risk, as in mudarabah"
         },
         {
-          "term": "labour market information",
-          "def": "facts about jobs, pay and demand"
+          "term": "emergency fund",
+          "def": "savings kept for unexpected costs"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "If a bank offers you 4% interest on savings, is that a gift?",
+        "a": "In Islam it is riba; Muslims choose halal alternatives that share real profit and risk."
+      },
+      "islamicLink": {
+        "text": "Islamic note: riba (رِبَا) is forbidden (Qur'an 2:275: Allah has permitted trade and forbidden riba). Islamic finance uses partnership (mushārakah, مُشَارَكَة) and cost-plus sale (murābaḥah, مُرَابَحَة) instead. Allah says: 'Allah destroys riba and gives increase for charities' (al-Baqarah 2:276).",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. Name one job you would like to learn more about.",
-        "What is a SMART goal?",
-        "What does ‘ihsan’ mean?"
+        {
+          "q": "Spending more than income is a...",
+          "a": "Deficit",
+          "mins": 1,
+          "options": [
+            "Surplus",
+            "Deficit"
+          ]
+        },
+        {
+          "q": "Name a fixed cost.",
+          "a": "Rent, council tax.",
+          "mins": 1
+        },
+        {
+          "q": "Why keep an emergency fund?",
+          "a": "To cover surprises without debt.",
+          "mins": 1
+        },
+        {
+          "q": "4% of £1,000?",
+          "a": "£40",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "The world of work",
+          "heading": "Why save?",
           "bullets": [
-            "Hundreds of careers across many sectors",
-            "Health, tech, law, engineering, education, creative",
-            "New jobs appear as technology changes",
-            "Skills matter: communication, problem-solving, teamwork"
+            "Emergencies",
+            "Big goals: hajj, a car, a home",
+            "Helping family; zakah on savings"
           ],
-          "note": "Say bismillah. Refer to the TGA Careers Education and Guidance Policy. Ask pupils to name jobs in each sector and note that they probably know only a small share of what exists. Mention that the National Careers Service website has job profiles. Link to the Tarbiyyah Compass values of Progress and Excellence. Ground rules: right to pass, no personal stories, kindness. Anonymous questions can go to the teacher's question box. If a pupil says anything that worries you, stay calm, do not promise secrecy and follow the Child Protection and Safeguarding Policy: tell the DSL the same day."
+          "note": "Zakah is due on savings above nisab held for a lunar year."
         },
         {
-          "heading": "Strengths, interests and values",
+          "heading": "How interest works",
           "bullets": [
-            "What are you good at?",
-            "What do you enjoy?",
-            "What matters to you: service, faith, creativity?",
-            "Look for careers that match all three"
+            "Savers: the bank pays interest",
+            "Borrowers: the bank charges interest",
+            "Compound interest grows on itself"
           ],
-          "note": "Ask pupils to draw a three-circle diagram with strengths, interests and values, and write one example in each. Discuss that work can be a way to serve others and earn halal provision. Cite plainly: Qur'an 62:10, which tells believers, after the prayer, to disperse in the land and seek Allah's bounty. Also cite the hadith that actions are judged by intentions (Bukhari and Muslim). Ask: ‘How can your future work benefit others?’"
+          "note": "Knowledge of how the wider economy works, never as something to take.",
+          "table": {
+            "head": [
+              "Year",
+              "£1,000 at 4% compound (for understanding only)"
+            ],
+            "rows": [
+              [
+                "0",
+                "£1,000.00"
+              ],
+              [
+                "1",
+                "£1,040.00"
+              ],
+              [
+                "2",
+                "£1,081.60"
+              ],
+              [
+                "3",
+                "£1,124.86"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Choices at 14 and 16",
+          "heading": "Halal ways to save and grow",
           "bullets": [
-            "GCSE choices keep doors open",
-            "Core subjects plus options",
-            "At 16: A levels, T levels, apprenticeships, college",
-            "In England you stay in education or training until 18"
+            "Current account or safe saving (no interest)",
+            "Islamic profit-sharing savings (mudarabah)",
+            "Halal investment in real businesses (sharia-screened)",
+            "Partnership (musharakah) and cost-plus sale (murabahah) for buying"
           ],
-          "note": "Explain the pathways simply: A levels (academic), T levels (technical with industry placement), apprenticeships (earn while learning), and college courses. Point out that choices at 14 do not close every door but some careers need certain subjects, such as sciences for medicine. Encourage pupils to speak to subject teachers and the careers lead. Tell pupils that decisions can be changed."
+          "note": "Profit and risk are shared in real trade; no guaranteed return on money.",
+          "compare": {
+            "left": {
+              "title": "Conventional savings",
+              "points": [
+                "Fixed interest on money",
+                "Riba: forbidden"
+              ]
+            },
+            "right": {
+              "title": "Islamic savings",
+              "points": [
+                "Expected profit from real trade",
+                "Profit and risk shared"
+              ]
+            },
+            "label": "vs"
+          }
         },
         {
-          "heading": "Challenging stereotypes and barriers",
+          "heading": "Check",
           "bullets": [
-            "Anyone can enter any career",
-            "Role models can inspire",
-            "Barriers: money, confidence, discrimination",
-            "Support: mentors, bursaries, advice"
+            "Vote in the Teams poll"
           ],
-          "note": "Discuss gender and cultural stereotypes in careers, and examples of Muslim professionals in many fields. Avoid naming real people unless well known and appropriate. Ask: ‘What barriers might exist and how can we overcome them?’ Explain that discrimination in employment is unlawful under the Equality Act 2010. Link to the Tarbiyyah Compass values of Resilience and Integrity: working with halal income and fairness."
-        },
-        {
-          "heading": "Researching careers reliably",
-          "bullets": [
-            "Use National Careers Service and gov.uk",
-            "Check pay and demand: labour market information",
-            "Talk to people in the job",
-            "Cross-check sources"
-          ],
-          "note": "Show how to search for a job profile and what to look for: tasks, entry routes, hours, average pay, outlook. Teach pupils to compare at least two sources. Remind them that social media may glamorise or misrepresent jobs. Set the independent task. Close with a du'a to ask Allah for guidance and beneficial knowledge."
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Which is a halal way to grow savings?",
+            "options": [
+              "A fixed-interest bond",
+              "A profit-sharing account based on real trade",
+              "A payday loan",
+              "A credit card"
+            ],
+            "answer": 1,
+            "why": "Profit-sharing in real trade avoids riba; the others involve interest."
+          }
         }
       ],
       "practice": [
-        "Match the pathway: (a) learn on the job and earn (b) academic study in sixth form (c) technical course with work placement.",
-        "Name three strengths you have and one job where they might be useful.",
-        "Why is it important to check more than one source when researching a job?"
+        {
+          "q": "Zakah on £8,000 savings held a lunar year above nisab?",
+          "a": "2.5% = £200",
+          "mins": 2,
+          "model": "Teacher: 1% of £8,000 = £80; 2.5% = £200."
+        }
       ],
       "independent": [
-        "Research one career using the National Careers Service and complete a profile: tasks, qualifications, skills, pay, outlook.",
-        "Create a mind map of your strengths, interests and values with three possible careers.",
-        "Write a paragraph on how a halal career can be a way of serving others."
+        {
+          "q": "Core: Savings plan (pupil PDF): a goal, a monthly amount, and a halal place to keep it; include zakah if due.",
+          "a": "A realistic halal plan.",
+          "mins": 9,
+          "model": "Teacher plans saving for a laptop."
+        },
+        {
+          "q": "Extend: In the portal response box, explain why Islam forbids riba. Start: 'Riba is forbidden because...'",
+          "a": "Riba is forbidden because Allah forbade it (2:275); it guarantees gain without shared risk and can trap the poor in debt.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Compare a profit-sharing account with an interest account: who carries the risk?",
+          "a": "Interest: the borrower; profit-sharing: shared between the bank and saver.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Name two post-16 pathways.",
-        "Give one way to challenge a stereotype about careers."
+        {
+          "q": "Riba is... A) charity B) interest, forbidden in Islam C) zakah",
+          "a": "B) interest, forbidden in Islam",
+          "mins": 1,
+          "options": [
+            "Charity",
+            "Interest, forbidden in Islam",
+            "Zakah"
+          ]
+        },
+        {
+          "q": "Big question: is 4% interest a gift? What could a Muslim do instead?",
+          "a": "No, it is riba; use halal profit-sharing or keep savings safely.",
+          "mins": 2
+        }
       ],
-      "homework": "Interview someone about their job and write six sentences about what they do, what they enjoy and the skills needed.",
-      "send": "SEND: provide a profile template and careers cards. EAL: use pictures for sectors. Stretch: compare two career pathways to the same job in detail."
+      "homework": "Ask a parent how your family saves and whether they use an Islamic bank account.",
+      "send": "SEND: definitions card. EAL: saving, interest, profit. Stretch: research a UK Islamic bank's savings product.",
+      "resources": [
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Year 9 (Money, careers and choices), checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules",
+        "Savings plan (pupil PDF)",
+        "Standard riba note (school owner decision, 9 Nov 2026)",
+        "Calculator"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "glass jar coins savings",
+          "alt": "A savings jar",
+          "for": "teach:1"
+        },
+        {
+          "find": "bank vault door",
+          "alt": "A bank vault",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Money, careers and choices",
+      "n": 7,
+      "title": "Scams and staying safe with money",
+      "duration": 50,
+      "bigQuestion": "Why would a scammer want to use a teenager's bank account?",
+      "objectives": [
+        "To understand how money scams work and how to protect ourselves and our families"
+      ],
+      "successCriteria": [
+        "All: name three common scams",
+        "Most: spot the warning signs in a message or offer",
+        "Some: explain how to report a scam and help a vulnerable relative"
+      ],
+      "crossCurricular": "Computing: phishing and online security",
+      "smsc": "Moral: honesty and protecting the vulnerable",
+      "keywords": [
+        {
+          "term": "scam",
+          "def": "a trick to steal money or information"
+        },
+        {
+          "term": "fraud",
+          "def": "a crime of deceiving people for money"
+        },
+        {
+          "term": "money mule",
+          "def": "someone who lets criminals move money through their account (a crime)"
+        },
+        {
+          "term": "Action Fraud",
+          "def": "the UK's national reporting centre for fraud"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why would a scammer want to use a teenager's bank account?",
+        "a": "To move stolen money (money mule). It is a crime, even if you only 'help'."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Whoever cheats us is not one of us' (Muslim). Allah says: 'Do not consume one another's wealth unjustly' (an-Nisa 4:29). Protecting ourselves and others from fraud is part of justice.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Halal way to grow savings?",
+          "a": "Profit-sharing in real trade",
+          "mins": 1,
+          "options": [
+            "Fixed interest",
+            "Profit-sharing in real trade"
+          ]
+        },
+        {
+          "q": "Zakah rate on savings?",
+          "a": "2.5%",
+          "mins": 1
+        },
+        {
+          "q": "Name a phishing warning sign.",
+          "a": "Urgency, odd links, asks for passwords.",
+          "mins": 1
+        },
+        {
+          "q": "What is fraud?",
+          "a": "Deceiving people for money.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Common scams",
+          "bullets": [
+            "Phishing texts and emails",
+            "Fake online shops and too-good deals",
+            "'Easy money' jobs: money mules",
+            "Fake prizes and investment 'tips'"
+          ],
+          "note": "Use invented examples."
+        },
+        {
+          "heading": "Warning signs",
+          "bullets": [
+            "Too good to be true",
+            "Pressure to act now",
+            "Asks for bank details or codes",
+            "Pay by bank transfer or gift card only"
+          ],
+          "note": "Banks never ask for your full PIN or one-time code.",
+          "diagram": {
+            "centre": "Scam warning signs",
+            "items": [
+              "Urgent",
+              "Too good to be true",
+              "Asks for codes or PIN",
+              "Unusual payment method",
+              "Secret: don't tell anyone",
+              "Spelling errors"
+            ]
+          }
+        },
+        {
+          "heading": "Money mules",
+          "bullets": [
+            "'Earn £500 just by receiving money'",
+            "It is laundering criminal money",
+            "Can mean a criminal record and losing your bank account"
+          ],
+          "note": "Serious and common among young people."
+        },
+        {
+          "heading": "What to do",
+          "bullets": [
+            "Stop: don't reply or pay",
+            "Check with a trusted adult",
+            "Report: Action Fraud (actionfraud.police.uk) or 7726 for scam texts",
+            "Tell your bank at once if money is lost"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "Text: 'Your parcel is held. Pay £1.45 here: bit.ly/xyz'",
+            "steps": [
+              "Stop: unexpected and urgent",
+              "Check: no parcel expected; the link is not the courier's site",
+              "Do not click; forward to 7726",
+              "Delete and tell a parent"
+            ],
+            "answer": "A scam: report and delete"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Someone online offers £300 to 'receive and send on' money through your account. This is...",
+            "options": [
+              "A good part-time job",
+              "Money muling, a crime",
+              "A gift",
+              "Banking practice"
+            ],
+            "answer": 1,
+            "why": "It moves criminal money; the account holder can be prosecuted."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Spot three warning signs: 'Congrats! You've won an iPhone. Pay £2 delivery in the next 10 minutes.'",
+          "a": "Unexpected prize, pressure (10 minutes), payment for a 'free' prize.",
+          "mins": 2,
+          "model": "Teacher underlines each sign."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Scam or safe? (pupil PDF): judge eight messages and give a reason for each.",
+          "a": "Correct judgements with reasons.",
+          "mins": 8,
+          "model": "Teacher does message 1."
+        },
+        {
+          "q": "Extend: In the portal response box, write advice for an older relative about phone scams.",
+          "a": "Banks never ask for PINs; hang up and call the bank on a known number; tell family.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "To report a scam text in the UK, forward it to... A) 999 B) 7726 C) 111",
+          "a": "B) 7726",
+          "mins": 1,
+          "options": [
+            "999",
+            "7726",
+            "111"
+          ]
+        },
+        {
+          "q": "Big question: why would a scammer want a teenager's bank account?",
+          "a": "To move stolen money (money mule), which is a crime.",
+          "mins": 2
+        }
+      ],
+      "homework": "Show a family member the scam warning signs and the 7726 number.",
+      "send": "SEND: warning signs checklist. EAL: scam, fraud, report. Stretch: research how banks refund authorised push payment fraud.",
+      "resources": [
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Year 9 (Money, careers and choices), checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules",
+        "Scam or safe message cards (pupil PDF, invented)",
+        "Action Fraud and 7726 information (on slides)",
+        "Help list on the final slide: parents, form tutor, the school's designated safeguarding lead (contact in the portal), Childline 0800 1111"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "smartphone text message",
+          "alt": "A phone showing a text message",
+          "for": "teach:5"
+        },
+        {
+          "find": "padlock bank card",
+          "alt": "A bank card and padlock",
+          "for": "keywords"
+        }
+      ]
     }
   ]
 }
