@@ -46,7 +46,7 @@ jobs:
           try_override () {
             name="$1"; range="$2"
             cp package.json /tmp/pkg.bak; cp package-lock.json /tmp/lock.bak
-            npm pkg set "overrides.$name=$range"
+            node -e 'const f="package.json",p=JSON.parse(require("fs").readFileSync(f));p.overrides={...(p.overrides||{}),[process.argv[1]]:process.argv[2]};require("fs").writeFileSync(f,JSON.stringify(p,null,2)+"\n")' "$name" "$range"
             if npm install --no-audit --no-fund; then
               echo "override kept: $name $range"
             else
@@ -55,10 +55,11 @@ jobs:
               npm install --no-audit --no-fund
             fi
           }
-          try_override smol-toml "^1.8.1"
-          try_override undici "^7.30.1"
-          try_override js-yaml "^3.15.2"
-          try_override minimatch "^11.0.1"
+          # Keyed by the vulnerable range, so copies of these packages outside
+          # that range (e.g. ESLint's js-yaml 4) are left alone.
+          try_override "smol-toml@<=1.8.0" "^1.8.1"
+          try_override "undici@>=7.0.0 <=7.30.0" "^7.30.1"
+          try_override "js-yaml@<=3.15.1" "^3.15.2"
       - name: Audit after
         run: npm audit --omit=dev || true
       - name: Commit the new lock file
