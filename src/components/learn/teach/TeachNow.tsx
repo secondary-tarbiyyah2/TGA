@@ -7,7 +7,8 @@ import { callEdgeFunction, edgeErrorMessage } from "@/lib/learn/edge";
 import { localDateKey } from "@/lib/learn/calendar";
 import type { TimetableSlot } from "@/lib/learn/timetable";
 import { ackState, usePupils } from "@/components/learn/pupil/usePupils";
-import { Icon, type IconName } from "@/components/learn/Icon";
+import { type IconName } from "@/components/learn/Icon";
+import { StatStrip, StatTile } from "@/components/learn/kit";
 
 type Lesson = { id: string; classId: string; className: string; start: string; end: string; live: boolean; registerTaken: boolean };
 type Counts = { toMark: number; oldestDays: number; unread: number; dueSoon: number };
@@ -135,20 +136,11 @@ export function TeachNow({ slots }: { slots: (TimetableSlot & { classes?: { name
 
   return (
     <div className="space-y-4">
-      <ul className="grid grid-cols-2 gap-3 lg:grid-cols-4" aria-label="What needs doing">
+      <StatStrip>
         {stats.map((st) => (
-          <li key={st.label}>
-            <Link href={st.href} className={`group flex h-full items-start gap-3 rounded-2xl border bg-white p-4 transition hover:-translate-y-0.5 hover:shadow-md ${st.urgent ? "border-amber-300 bg-amber-50/40" : "border-gold-light"}`}>
-              <span className={`portal-tile ${st.tile} mt-0.5`} aria-hidden="true"><Icon name={st.icon} /></span>
-              <span className="min-w-0">
-                <span className={`block text-3xl font-semibold leading-none tabular-nums ${st.urgent ? "text-amber-800" : "text-ink"}`}>{st.n === null ? "…" : st.n}</span>
-                <span className="mt-1.5 block text-sm font-semibold text-ink">{st.label}</span>
-                <span className="block text-xs text-ink/65">{st.note}</span>
-              </span>
-            </Link>
-          </li>
+          <StatTile key={st.label} value={st.n === null ? "…" : st.n} label={st.label} hint={st.note} href={st.href} tone={st.urgent ? "warn" : "neutral"} />
         ))}
-      </ul>
+      </StatStrip>
 
       <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_16rem]">
         <section className="rounded-2xl border border-gold-light bg-white" aria-labelledby="today-heading">
