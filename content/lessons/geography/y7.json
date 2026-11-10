@@ -2,7 +2,7 @@
   "subject": "Geography",
   "year": "y7",
   "board": "National Curriculum (KS1-3), aligned to AQA GCSE 9-1",
-  "source": "Adapted from school Geography lesson plans in Drive: 'Geo - Y7 - Interconnected UK' (All about London), 'Geo - Y7 - 4.7 More about the Lake District' (OS maps, land uses, stewardship link); National Curriculum KS3; AQA GCSE OS map skills progression | Spring 1 2027 (lessons 9 to 13): Tarbiyyah Geography Curriculum Intent; Oxford Geog.1 chapter 4 (Glaciers); Hodder Progress in Geography KS3 unit 13 (Ice) | Spring 2 2027: Geog.1 chapter 5 (Rivers); Progress in Geography unit 6; TGA Year 7 pack | Summer 1 2027 (lessons 20 to 24): Geog.1 chapter 6 (Africa) and Progress in Geography unit 12; school Geography Curriculum Intent; TGA Year 7 pack",
+  "source": "Adapted from school Geography lesson plans in Drive: 'Geo - Y7 - Interconnected UK' (All about London), 'Geo - Y7 - 4.7 More about the Lake District' (OS maps, land uses, stewardship link); National Curriculum KS3; AQA GCSE OS map skills progression | Spring 1 2027 (lessons 9 to 13): Tarbiyyah Geography Curriculum Intent; Oxford Geog.1 chapter 4 (Glaciers); Hodder Progress in Geography KS3 unit 13 (Ice) | Spring 2 2027: Geog.1 chapter 5 (Rivers); Progress in Geography unit 6; TGA Year 7 pack | Summer 1 2027 (lessons 20 to 24): Geog.1 chapter 6 (Africa) and Progress in Geography unit 12; school Geography Curriculum Intent; TGA Year 7 pack | Summer 2 2027 (lessons 25 to 28): Geog.1 (OUP) chapter 7, Kenya (7.1 to 7.3, 7.5 to 7.8, 7.10); end-of-year test with own questions in the week of 28 Jun; figures rounded from census and World Bank data",
   "lessons": [
     {
       "unit": "Unit 1: The UK and its connections",
@@ -4590,6 +4590,940 @@
           "find": "Congo rainforest aerial",
           "alt": "The Congo rainforest",
           "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Kenya; review",
+      "n": 25,
+      "title": "Hello Kenya: location, physical features and climate",
+      "bigQuestion": "How can a country on the Equator have snow on its highest mountain?",
+      "objectives": [
+        "To understand where Kenya is and how its physical features affect its climate"
+      ],
+      "successCriteria": [
+        "All: locate Kenya and its neighbours",
+        "Most: describe Kenya's main physical features",
+        "Some: use a climate graph to describe Nairobi's two rainy seasons"
+      ],
+      "crossCurricular": "Maths: reading bar charts",
+      "smsc": "Cultural: seeing Kenya beyond stereotypes",
+      "keywords": [
+        {
+          "term": "Rift Valley",
+          "def": "a long valley formed where the Earth's crust is pulling apart"
+        },
+        {
+          "term": "highlands",
+          "def": "high land, often cooler and wetter"
+        },
+        {
+          "term": "savanna",
+          "def": "tropical grassland with scattered trees"
+        },
+        {
+          "term": "climate graph",
+          "def": "a graph of average temperature and rainfall each month"
+        },
+        {
+          "term": "altitude",
+          "def": "height above sea level"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Nairobi is almost on the Equator, yet its July afternoons are cooler than London's. How can that be?"
+      },
+      "islamicLink": {
+        "text": "Allah tells us that He sends down rain from the sky and brings out fruits of many colours, and in the mountains are tracts of white and red (Fatir 35:27). Kenya's mountains, valleys and rains are among these signs.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Africa has how many countries?",
+          "a": "54",
+          "mins": 1,
+          "options": [
+            "54",
+            "27"
+          ]
+        },
+        {
+          "q": "The Sahara is a:",
+          "a": "Hot desert",
+          "mins": 1,
+          "options": [
+            "Hot desert",
+            "Rainforest"
+          ]
+        },
+        {
+          "q": "Name a biome found in Africa.",
+          "a": "Rainforest, savanna or hot desert",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Where is Kenya?",
+          "bullets": [
+            "East Africa, on the Equator",
+            "Borders Ethiopia, Somalia, Tanzania, Uganda, South Sudan",
+            "Coast on the Indian Ocean"
+          ],
+          "note": "Capital: Nairobi. Main port: Mombasa."
+        },
+        {
+          "heading": "Physical features",
+          "bullets": [
+            "Mount Kenya: 5,199 m, glaciers at the top",
+            "The Great Rift Valley",
+            "Lake Victoria and Lake Turkana"
+          ],
+          "note": "The Rift Valley runs north to south through western Kenya."
+        },
+        {
+          "heading": "Why is Nairobi mild?",
+          "bullets": [
+            "About 1,800 m above sea level",
+            "Temperature falls with altitude",
+            "Mombasa on the coast is hotter"
+          ],
+          "note": "Roughly 6 °C cooler for every 1,000 m of height."
+        },
+        {
+          "heading": "Two rainy seasons",
+          "bullets": [
+            "Long rains: March to May",
+            "Short rains: October to December",
+            "Dry: June to September"
+          ],
+          "note": "Nairobi average monthly rainfall, rounded.",
+          "chart": {
+            "kind": "bar",
+            "title": "Nairobi average rainfall, rounded",
+            "labels": [
+              "Jan",
+              "Mar",
+              "Apr",
+              "May",
+              "Jul",
+              "Oct",
+              "Nov",
+              "Dec"
+            ],
+            "values": [
+              60,
+              85,
+              200,
+              160,
+              20,
+              50,
+              140,
+              85
+            ],
+            "unit": "mm"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Why does Mount Kenya have glaciers on the Equator?",
+            "options": [
+              "Its great height makes it cold",
+              "It is near the sea",
+              "It is a desert"
+            ],
+            "answer": 0,
+            "why": "Temperature falls with altitude, so at over 5,000 m it is cold enough for ice."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Describe Nairobi's rainfall pattern. (3 marks)",
+          "a": "Two rainy seasons (1): wettest in April, about 200 mm (1); driest in July, about 20 mm (1)",
+          "mins": 3,
+          "model": "I find the highest bar: April, about 200 mm.\nI find the lowest: July, about 20 mm.\nI spot the pattern: two wet peaks, March to May and October to December.\nSo: Nairobi has two rainy seasons, wettest in April and driest in July."
+        },
+        {
+          "q": "Name the capital of Kenya.",
+          "a": "Nairobi",
+          "mins": 1
+        },
+        {
+          "q": "Which ocean is on Kenya's coast?",
+          "a": "The Indian Ocean",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw a sketch map of Kenya with its neighbours, Nairobi, Mombasa, Mount Kenya, the Rift Valley, Lake Victoria, the Equator and the Indian Ocean.",
+          "a": "All features correctly placed and labelled",
+          "mins": 13,
+          "model": "Teacher draws the Equator line first and places Nairobi just south of it."
+        },
+        {
+          "q": "Extend: Explain why Nairobi is cooler than Mombasa. (3)",
+          "a": "Nairobi is at about 1,800 m (1); temperature falls with altitude (1); Mombasa is at sea level on the hot coast (1)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: How might two rainy seasons help farmers?",
+          "a": "Two growing seasons, so two harvests a year are possible",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Kenya is in:",
+          "a": "East Africa",
+          "mins": 1,
+          "options": [
+            "East Africa",
+            "West Africa"
+          ]
+        },
+        {
+          "q": "The long rains fall in:",
+          "a": "March to May",
+          "mins": 1,
+          "options": [
+            "March to May",
+            "June to September"
+          ]
+        },
+        {
+          "q": "Big question: how can there be snow on the Equator?",
+          "a": "Mount Kenya is so high that it is cold enough for ice",
+          "mins": 1
+        }
+      ],
+      "homework": "Read Geog.1 7.1 to 7.3 and answer two 'Your turn' questions.",
+      "send": "SEND: outline map with dots to label. EAL: physical feature word mat with photos. Stretch: compare Nairobi's climate graph with London's.",
+      "resources": [
+        "Geog.1 (Oxford University Press) Student Book and scheme of work, chapter 7 (Kenya), units 7.1 to 7.3",
+        "Kenya outline map and Nairobi climate graph (portal printable)",
+        "Atlas"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mount Kenya glacier peak",
+          "alt": "Mount Kenya with its glaciers",
+          "for": "teach:2"
+        },
+        {
+          "find": "Great Rift Valley Kenya viewpoint",
+          "alt": "The Great Rift Valley in Kenya",
+          "for": "keywords"
+        },
+        {
+          "find": "savanna Maasai Mara acacia",
+          "alt": "Savanna with acacia trees",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Kenya; review",
+      "n": 26,
+      "title": "Kenya's people and how Kenya earns a living: the flower trade",
+      "bigQuestion": "When you buy a rose in a UK shop in winter, who might have grown it, and where?",
+      "objectives": [
+        "To understand how people in Kenya earn a living and the benefits and problems of the flower trade"
+      ],
+      "successCriteria": [
+        "All: describe Kenya's population and the growth of Nairobi",
+        "Most: classify jobs into sectors",
+        "Some: weigh the benefits and problems of flower farming"
+      ],
+      "crossCurricular": "Economics: trade and exports",
+      "smsc": "Moral: fair pay and care for the environment in what we buy",
+      "keywords": [
+        {
+          "term": "rural-urban migration",
+          "def": "people moving from the countryside to towns and cities"
+        },
+        {
+          "term": "informal economy",
+          "def": "work that is not officially registered or taxed"
+        },
+        {
+          "term": "export",
+          "def": "goods sold to another country"
+        },
+        {
+          "term": "cash crop",
+          "def": "a crop grown to sell, not to eat"
+        },
+        {
+          "term": "primary sector",
+          "def": "jobs that take raw materials from the land or sea"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why might a young person leave a farm to look for work in a big city?"
+      },
+      "starter": [
+        {
+          "q": "Nairobi is about how high above sea level?",
+          "a": "1,800 m",
+          "mins": 1,
+          "options": [
+            "1,800 m",
+            "18 m"
+          ]
+        },
+        {
+          "q": "Kenya's long rains fall in:",
+          "a": "March to May",
+          "mins": 1,
+          "options": [
+            "March to May",
+            "July to August"
+          ]
+        },
+        {
+          "q": "Name Kenya's highest mountain.",
+          "a": "Mount Kenya",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Kenya's people",
+          "bullets": [
+            "About 48 million at the 2019 census",
+            "A young population",
+            "More than 40 ethnic groups"
+          ],
+          "note": "Most Kenyans still live in rural areas, but towns are growing fast."
+        },
+        {
+          "heading": "Nairobi grows",
+          "bullets": [
+            "About 4.4 million people in 2019",
+            "Rural-urban migration",
+            "Informal settlements such as Kibera"
+          ],
+          "note": "People come for jobs, schools and services. Many work in the informal economy, called jua kali ('hot sun')."
+        },
+        {
+          "heading": "How Kenyans earn a living",
+          "bullets": [
+            "Farming: tea, coffee, maize",
+            "Manufacturing and building",
+            "Services: tourism, banking, mobile money"
+          ],
+          "note": "M-Pesa, mobile phone money, was launched in Kenya in 2007.",
+          "sort": {
+            "columns": [
+              "Primary",
+              "Secondary",
+              "Tertiary"
+            ],
+            "cards": [
+              "tea picker",
+              "cement factory worker",
+              "safari guide",
+              "fisher",
+              "bank clerk",
+              "flower packer"
+            ],
+            "answer": [
+              0,
+              1,
+              2,
+              0,
+              2,
+              1
+            ]
+          }
+        },
+        {
+          "heading": "The flower trade",
+          "bullets": [
+            "Kenya is a leading exporter of cut roses",
+            "Many farms near Lake Naivasha",
+            "Flown to Europe overnight"
+          ],
+          "note": "Flowers bring jobs and foreign money, but raise questions about water and workers' pay.",
+          "compare": {
+            "left": {
+              "title": "Benefits",
+              "points": [
+                "Jobs, many for women",
+                "Foreign income",
+                "Roads and airports improved"
+              ]
+            },
+            "right": {
+              "title": "Problems",
+              "points": [
+                "Water taken from Lake Naivasha",
+                "Pesticides",
+                "Low pay; air miles"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Packing roses in a cold store is which sector?",
+            "options": [
+              "Primary",
+              "Secondary",
+              "Tertiary"
+            ],
+            "answer": 1,
+            "why": "Processing and packing products is secondary; growing them is primary."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain one benefit of the flower trade to Kenya. (2 marks)",
+          "a": "It creates jobs (1), many for women in rural areas, giving families a steady income (1)",
+          "mins": 2,
+          "model": "Point: it creates jobs.\nDevelop: thousands work on farms near Lake Naivasha, many of them women, so families gain a regular wage."
+        },
+        {
+          "q": "What is rural-urban migration?",
+          "a": "People moving from the countryside to towns and cities",
+          "mins": 1
+        },
+        {
+          "q": "Is a safari guide primary, secondary or tertiary?",
+          "a": "Tertiary",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: In the portal response box, answer: 'Is the flower trade good for Kenya?' (6 marks). Give two benefits, two problems and a judgement.",
+          "a": "Benefits: jobs, income, infrastructure; problems: water use at Naivasha, pesticides, pay; a supported judgement",
+          "mins": 13,
+          "model": "Teacher models the first benefit paragraph using Point, Evidence, Explain."
+        },
+        {
+          "q": "Extend: Why might Kenya want to sell more processed goods rather than raw crops?",
+          "a": "Processed goods sell for more money and create more jobs at home",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Is it fairer to buy Kenyan roses or UK roses grown in heated greenhouses? Consider carbon.",
+          "a": "Kenyan roses are flown in, but UK winter roses need heated greenhouses, which can use more energy; a reasoned judgement",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A cash crop is grown to:",
+          "a": "Sell",
+          "mins": 1,
+          "options": [
+            "Sell",
+            "Feed the family"
+          ]
+        },
+        {
+          "q": "Kenya's flower farms are mainly near:",
+          "a": "Lake Naivasha",
+          "mins": 1,
+          "options": [
+            "Lake Naivasha",
+            "Mombasa"
+          ]
+        },
+        {
+          "q": "Big question: who grew your rose, and where?",
+          "a": "Probably workers on a flower farm near Lake Naivasha, Kenya, for export to Europe",
+          "mins": 1
+        }
+      ],
+      "homework": "Revise for the end-of-year geography test: make a one-page mind map of each topic since January.",
+      "send": "SEND: benefits and problems cards to sort before writing. EAL: sector word mat. Stretch: research Fairtrade flowers.",
+      "resources": [
+        "Geog.1 (Oxford University Press) Student Book and scheme of work, chapter 7 (Kenya), units 7.5 to 7.8",
+        "Sector sort cards and flower trade judgement frame (portal printable)",
+        "Year 7 revision mind map template (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Kenya rose farm greenhouse Naivasha",
+          "alt": "A rose farm greenhouse near Lake Naivasha",
+          "for": "teach:4"
+        },
+        {
+          "find": "Nairobi skyline",
+          "alt": "Nairobi from above",
+          "for": "teach:2"
+        },
+        {
+          "find": "Kenya tea plantation Kericho",
+          "alt": "Tea growing in the Kenyan highlands",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Kenya; review",
+      "n": 27,
+      "title": "End-of-year geography test",
+      "bigQuestion": "You have 30 minutes for 30 marks. Which question will you check twice?",
+      "objectives": [
+        "To understand what I can do in geography under test conditions across this year"
+      ],
+      "successCriteria": [
+        "All: answer map and data questions accurately",
+        "Most: explain processes with linked points",
+        "Some: write a supported judgement"
+      ],
+      "crossCurricular": "Maths: reading data from graphs",
+      "smsc": "Moral: honesty and integrity in tests",
+      "keywords": [
+        {
+          "term": "command word",
+          "def": "the instruction in a question, such as describe or explain"
+        },
+        {
+          "term": "describe",
+          "def": "say what is there or what the pattern is"
+        },
+        {
+          "term": "explain",
+          "def": "give reasons why or how"
+        },
+        {
+          "term": "grid reference",
+          "def": "numbers that locate a square or point on a map"
+        },
+        {
+          "term": "judgement",
+          "def": "a decision backed by evidence"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You have 30 minutes for 30 marks. Which question will you check twice?"
+      },
+      "starter": [
+        {
+          "q": "A six-figure grid reference reads:",
+          "a": "Eastings then northings",
+          "mins": 1,
+          "options": [
+            "Eastings then northings",
+            "Northings then eastings"
+          ]
+        },
+        {
+          "q": "Nairobi's wettest month is:",
+          "a": "April",
+          "mins": 1,
+          "options": [
+            "April",
+            "July"
+          ]
+        },
+        {
+          "q": "Describe means:",
+          "a": "Say what is there, without reasons",
+          "mins": 1,
+          "options": [
+            "Say what is there, without reasons",
+            "Give reasons why"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The test",
+          "bullets": [
+            "30 marks, 30 minutes",
+            "Glaciers, rivers, Africa and Kenya",
+            "Portal test window, camera on, work alone"
+          ],
+          "note": "Read the front page together."
+        },
+        {
+          "heading": "Data questions",
+          "bullets": [
+            "Quote numbers with units",
+            "Describe the pattern, then the exception",
+            "Use the resource in your answer"
+          ],
+          "note": "Most marks are lost by not using the figures."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "To describe a graph you should:",
+            "options": [
+              "Give the pattern with figures",
+              "Explain the causes only",
+              "Copy the title"
+            ],
+            "answer": 0,
+            "why": "Describe = pattern plus data; explain = reasons."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Model: describe a rainfall graph (2).",
+          "a": "Wettest in April at about 200 mm (1); driest in July at about 20 mm (1)",
+          "mins": 1,
+          "model": "Pattern: highest and lowest month with figures and units."
+        },
+        {
+          "q": "What do you do if stuck?",
+          "a": "Move on and come back",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Q1 (3): Name a landform of glacial erosion, a landform of glacial deposition, and the process where ice breaks rock by freezing and thawing.",
+          "a": "For example: corrie or arete (1); moraine or drumlin (1); freeze-thaw weathering (1)",
+          "mins": 3,
+          "model": "Teacher reads Q1 aloud and shows how 3 marks means three answers."
+        },
+        {
+          "q": "Q2 (4): Explain how a meander becomes an ox-bow lake.",
+          "a": "Erosion on the outer bends (1) narrows the neck (1); a flood breaks through the neck (1); deposition seals the old loop (1)",
+          "mins": 4
+        },
+        {
+          "q": "Q3 (2): Give two causes of river flooding.",
+          "a": "Heavy or long rainfall; impermeable surfaces, deforestation or saturated ground (any two)",
+          "mins": 2
+        },
+        {
+          "q": "Q4 (3): Describe the location of Kenya.",
+          "a": "East Africa (1); on the Equator (1); borders such as Tanzania, Uganda, Ethiopia, or the Indian Ocean coast (1)",
+          "mins": 3
+        },
+        {
+          "q": "Q5 (4): Explain why population density in Africa is uneven.",
+          "a": "Dense where there is water, fertile soil and cities, e.g. the Nile valley (2); sparse in deserts like the Sahara (2)",
+          "mins": 4
+        },
+        {
+          "q": "Q6 (4): Using the climate graph (Nairobi), describe two features of the climate.",
+          "a": "Two rainy seasons with figures (2); mild temperatures all year, about 17 to 20 °C (2)",
+          "mins": 4
+        },
+        {
+          "q": "Q7 (8): 'The flower trade does more good than harm for Kenya.' Do you agree? Write in the response box.",
+          "a": "Level answer: jobs, income and infrastructure against water use, pesticides and pay, with a supported judgement",
+          "mins": 8
+        }
+      ],
+      "exit": [
+        {
+          "q": "Explain answers need:",
+          "a": "Linked reasons",
+          "mins": 1,
+          "options": [
+            "Linked reasons",
+            "Only facts"
+          ]
+        },
+        {
+          "q": "Big question: which question did you check twice, and why?",
+          "a": "For example: the data question, to check figures and units",
+          "mins": 1
+        }
+      ],
+      "homework": "Write down two topics from the test you found hardest; we will repair them next lesson.",
+      "send": "SEND: extra time and a reader as agreed in the SEND register; enlarged resources. EAL: command word mat. Stretch: plan Q7 with a counter-argument.",
+      "resources": [
+        "Year 7 end-of-year geography test: 7 questions, 28 marks above plus 2 for spelling and accuracy, with mark scheme and resource sheet (own questions; portal test)",
+        "Geog.1 chapters on glaciers, rivers, Africa and Kenya",
+        "Command word mat (portal)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "exam paper and pen",
+          "alt": "A test paper and pen",
+          "for": "hook"
+        },
+        {
+          "find": "ox-bow lake aerial",
+          "alt": "An ox-bow lake from the air",
+          "for": "keywords"
+        },
+        {
+          "find": "corrie lake glacial",
+          "alt": "A corrie formed by a glacier",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Kenya; review",
+      "n": 28,
+      "title": "Test feedback; so how is Kenya doing?",
+      "bigQuestion": "Is Kenya a developing success story, or are its challenges bigger than its progress?",
+      "objectives": [
+        "To understand how to improve from feedback and judge Kenya's development using data"
+      ],
+      "successCriteria": [
+        "All: correct and improve one test answer",
+        "Most: use a table of data to describe Kenya's progress",
+        "Some: write a balanced judgement"
+      ],
+      "crossCurricular": "Maths: calculating change from data",
+      "smsc": "Moral: judging fairly with evidence, not stereotypes",
+      "keywords": [
+        {
+          "term": "development",
+          "def": "improving people's lives: health, wealth and education"
+        },
+        {
+          "term": "indicator",
+          "def": "a measure used to compare development"
+        },
+        {
+          "term": "life expectancy",
+          "def": "how long a person can expect to live on average"
+        },
+        {
+          "term": "literacy rate",
+          "def": "the percentage of adults who can read and write"
+        },
+        {
+          "term": "feedback",
+          "def": "information on what went well and what to improve"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What would you measure to decide if a country's people are better off than 20 years ago?"
+      },
+      "starter": [
+        {
+          "q": "Kenya's capital is:",
+          "a": "Nairobi",
+          "mins": 1,
+          "options": [
+            "Nairobi",
+            "Mombasa"
+          ]
+        },
+        {
+          "q": "A leading Kenyan export is:",
+          "a": "Cut flowers",
+          "mins": 1,
+          "options": [
+            "Cut flowers",
+            "Oil"
+          ]
+        },
+        {
+          "q": "Name one problem of the flower trade.",
+          "a": "Water use at Lake Naivasha, pesticides or low pay",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "What went well",
+          "bullets": [
+            "Map and place knowledge",
+            "Using figures in describe questions",
+            "Most attempted Q7"
+          ],
+          "note": "Share class strengths; no names."
+        },
+        {
+          "heading": "Repairing an explain answer",
+          "bullets": [
+            "Point",
+            "Develop with 'because' or 'so'",
+            "Link back to the question"
+          ],
+          "note": "Model the repair of Q2.",
+          "model": {
+            "problem": "Improve: 'The river erodes and makes an ox-bow lake.'",
+            "steps": [
+              "Name the process: erosion on the outer bend",
+              "Develop: the neck narrows",
+              "Add the event: a flood cuts through",
+              "Finish: deposition seals the old meander"
+            ],
+            "answer": "A four-step chain that scores 4 marks"
+          }
+        },
+        {
+          "heading": "How is Kenya doing?",
+          "bullets": [
+            "Life expectancy has risen",
+            "More children in school",
+            "Mobile banking reaches millions"
+          ],
+          "note": "Figures rounded from World Bank data.",
+          "table": {
+            "head": [
+              "Indicator",
+              "About 2000",
+              "About 2020"
+            ],
+            "rows": [
+              [
+                "Life expectancy",
+                "about 52 years",
+                "about 62 years"
+              ],
+              [
+                "Population",
+                "about 31 million",
+                "about 52 million"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Challenges",
+          "bullets": [
+            "Many still in poverty",
+            "Drought in the north",
+            "Fast-growing informal settlements"
+          ],
+          "note": "A balanced judgement weighs progress against challenges."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Life expectancy rising suggests:",
+            "options": [
+              "Better health care and living conditions",
+              "Fewer people",
+              "More drought"
+            ],
+            "answer": 0,
+            "why": "People living longer is a sign of better health, food and water."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Describe the change in life expectancy using the table. (2)",
+          "a": "It rose (1) from about 52 to about 62 years, an increase of about 10 years (1)",
+          "mins": 2,
+          "model": "Direction: it went up.\nData: from about 52 to about 62.\nCalculate: about 10 years longer."
+        },
+        {
+          "q": "Correct your weakest short answer from the test.",
+          "a": "The correct answer from the mark scheme",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Rewrite one weak test answer using the repair steps, then write a balanced paragraph in the portal response box: 'So how is Kenya doing?' Use two figures.",
+          "a": "An improved test answer; a paragraph with progress, challenges, two figures and a judgement",
+          "mins": 14,
+          "model": "Teacher shows the opening: 'Kenya has made progress: life expectancy rose from about 52 to about 62 years.'"
+        },
+        {
+          "q": "Extend: Which one indicator best shows development? Justify.",
+          "a": "Any reasoned choice, for example: life expectancy, because it reflects health, food and water",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Suggest how Kenya could reduce the effect of drought.",
+          "a": "Water storage, drought-resistant crops, early warning and insurance schemes",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "An indicator is:",
+          "a": "A measure used to compare",
+          "mins": 1,
+          "options": [
+            "A measure used to compare",
+            "A map symbol"
+          ]
+        },
+        {
+          "q": "Big question: is Kenya a success story?",
+          "a": "A judgement weighing progress (life expectancy, schools, mobile money) against poverty, drought and informal settlements",
+          "mins": 1
+        }
+      ],
+      "homework": "Choose your favourite Year 7 geography topic and write three questions about it to test a Year 8 pupil in September.",
+      "send": "SEND: repair checklist; table with key figures highlighted. EAL: development word mat. Stretch: compare Kenya with Malawi or the UK using the same indicators.",
+      "resources": [
+        "Geog.1 (Oxford University Press) Student Book and scheme of work, chapter 7 (Kenya), unit 7.10",
+        "Marked end-of-year geography test and mark scheme",
+        "Kenya indicators table, rounded World Bank data (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Nairobi expressway",
+          "alt": "A new road in Nairobi",
+          "for": "teach:3"
+        },
+        {
+          "find": "Kenya school classroom building",
+          "alt": "A school building in Kenya",
+          "for": "keywords"
+        },
+        {
+          "find": "drought dry riverbed Kenya",
+          "alt": "A dry riverbed in northern Kenya",
+          "for": "teach:4"
         }
       ]
     }
