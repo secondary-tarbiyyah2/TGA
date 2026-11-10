@@ -213,7 +213,25 @@ in `portal_prefs` (migration 0200, own row only) with a browser copy. The phone 
 Search (Ctrl K) lists Pinned, Recent and common jobs when empty, and matches every word typed against names,
 descriptions and plain-word keywords.
 
+### The guided tour (`src/lib/learn/tours.ts`, `src/components/learn/tour/`)
+- One tour per role, 5 to 8 steps of one sentence each, each pointing at the real thing on screen (it dims the page
+  and outlines the target). Head teacher: categories, pins, search, Waiting for you, notifications, pupil records,
+  Report a concern, how to see it again. Teacher: categories, My teaching, Waiting for you, pins, search, Report a
+  concern, again. Parent: Today, Homework, Messages, My children, search, Report a concern, again. Pupil: Today,
+  Homework, My classes, Revise, search, again. Phones get phone wording and point at the bottom bar and Menu.
+- Shown once, the first time someone signs in to an area; "Skip tour", Esc, or Done all count as seen. Saved in
+  `portal_prefs.tours_seen` (migration 0202, own row only), so it does not come back on another device.
+- Again at any time: "Take the tour" at the bottom of the menu (phones: in Menu), or search "tour" / "help".
+- Keyboard: focus moves to Next and stays in the card (Tab cycles), Esc closes, arrow keys move; focus goes back where
+  it was afterwards. Reduced motion: no movement. Built in-house: no third-party script, nothing tracked.
+- Page tips, only on the two complex pages, once each and never on top of the first tour: the lesson editor (Slides or
+  plan, edit in place, Save) and the planner (pick a year, open a unit, saved for everyone).
+- To change a tour, edit `tours.ts` and bump `VERSION` if everyone should see it again; `tours.test.ts` keeps each tour
+  5 to 8 steps, one short sentence a step, no dashes, British spelling.
+
 ## Log
+- 2026-11-10: Guided tour (T38, PR "Portal: a short guided tour for every role"): role tours, page tips on the lesson
+  editor and planner, "Take the tour" in the menu and search, migration 0202 `tours_seen`.
 - 2026-11-10: Navigation rebuilt round categories (T38, PR "Portal navigation: categories, pins and search"): staff
   sidebar is Pinned, Home, then category dropdowns remembered per person (`portal_prefs`, migration 0200); families
   and pupils keep a short flat menu with Homework at the top level; search finds every page, sub-page and common job by

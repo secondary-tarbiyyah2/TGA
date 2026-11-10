@@ -7,6 +7,7 @@ import { getSupabaseClient } from "@/lib/supabase/client";
 import { fetchAllClasses, fetchChildClasses, fetchTeacherClasses, readRecentPages, type ClassSummary } from "@/lib/learn/classes";
 import { isGroupedArea, navPageFor, visiblePages, type PortalArea } from "@/lib/learn/nav";
 import { togglePin, usePortalPrefs } from "@/lib/learn/portalPrefs";
+import { startTour } from "@/lib/learn/tours";
 import { Icon, type IconName } from "@/components/learn/Icon";
 
 type Item = { id: string; group: "Pinned" | "Recent" | "Actions" | "Pages" | "Classes" | "Lessons" | "Pupils" | "People"; label: string; hint?: string; href?: string; run?: () => void; keywords?: string; icon: IconName };
@@ -255,6 +256,7 @@ export function CommandPalette({ area, roles }: { area: PortalArea; roles: strin
         ? [{ id: "action:pin", group: "Actions", label: herePinned ? `Unpin "${here.label}"` : `Pin "${here.label}" to the menu`, keywords: "pin favourite bookmark star shortcut unpin", icon: herePinned ? "pinOff" : "pin", run: () => togglePin(here.href) } as Item]
         : []),
       ...COMMON_ACTIONS.map((a): Item => ({ id: `action:${a.label}`, group: "Actions", label: a.label, href: a.href, keywords: a.keywords, icon: a.icon })),
+      { id: "action:tour", group: "Actions", label: "Take the tour", keywords: "help guide how to use where is show me around getting started", icon: "compass", run: () => startTour() },
     ];
     const pinned: Item[] = grouped ? prefs.pinned.flatMap((h) => pages.filter((p) => p.href === h).map((p) => ({ ...p, id: `pinned:${h}`, group: "Pinned" as const, icon: "pin" as IconName }))) : [];
     const cls: Item[] = (classes || []).map((c) => ({
