@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Container } from "./Container";
 import { Icon } from "@/components/learn/Icon";
+import { JOURNEY, journeyIndex } from "@/lib/siteJourney";
 
 type Related = { href: string; label: string; body: string };
 
@@ -61,6 +62,9 @@ export function RelatedLinks() {
   const path = raw.length > 1 ? raw.replace(/\/$/, "") : raw;
   const links = RELATED[path];
   if (!links) return null;
+  // Journey pages already end with the "Next step" card (JourneyNext); one closing block, not two.
+  const step = journeyIndex(path);
+  if (step !== -1 && step < JOURNEY.length - 1) return null;
 
   return (
     <section aria-labelledby="related-heading" className="border-t border-gold-light/30 bg-cream">

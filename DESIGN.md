@@ -8,7 +8,7 @@ changes; if a task conflicts with it, flag the conflict rather than silently pic
 Tarbiyyah Global Academy (TGA) — an online British school (Reception to Year 11) under the
 Tarbiyyah Education Trust (10+ years running Tarbiyyah Primary, Tarbiyyah Secondary Boys,
 Tarbiyyah Al-Banaat). Live, timetabled lessons with qualified UK teachers; British curriculum
-taught with *tarbiyyah* (nurturing character and faith). Live lessons launch 7 December 2026.
+taught with *tarbiyyah* (nurturing character and faith). Induction week 4 to 8 January 2027; first live lessons Monday 11 January 2027.
 Audience: Muslim families in the UK and abroad — "wherever home is."
 
 ## Architecture
@@ -32,11 +32,13 @@ Audience: Muslim families in the UK and abroad — "wherever home is."
 - Logins (staff, parents, students): email magic link / one-time code via Supabase Auth,
   sent through Resend SMTP (Supabase's default email sending is too rate-limited for real use).
 - **Row Level Security on every table, no exceptions. Default deny.**
-- **No Moodle.** Microsoft Teams for Education (already licensed) is the classroom: live
-  lessons, Assignments & Grades, Forms quizzes, OneNote Class Notebook, Insights. Portals here
-  are the branded front door that link into each class's Team — never rebuild an LMS. Each
-  class stores a `teams_class_url`. Structure code so Teams data could later be pulled in via
-  Microsoft Graph without a rebuild — don't build that integration yet.
+- **The portal is the school (owner's decision, 10 November 2026: "Option B").** Everything
+  except the live lesson happens in the portal: timetable, classwork and homework (set, submitted,
+  marked and returned), grades, registers, reports, messages, revision, Qur'an progress, fees and
+  admissions. Microsoft Teams for Education is used only for the live lessons themselves (and their
+  recordings); each class stores a `teams_class_url` and the timetable's Join button opens it.
+  Never tell families or pupils to look in Teams for work or grades. No Moodle. Keep Microsoft Graph
+  integration possible (pulling meeting links and recordings) but don't build it yet.
 - **Exception (owner's decision, October 2026): Unit revision.** Revision quizzes and the
   practice coach run in the portal (`/student/revision`, migration 0094), because results feed
   the Lesson library's "Pupil results" and the "Revision results" page. Formal assessments stay
