@@ -4,7 +4,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { retiredChecker } from "./retired.mjs";
-import { BLOCKS, ITEM_SECTIONS, blockProblems, extrasProblems, hasAnswers, lessonWarnings } from "../../src/lib/learn/lessonSchema.mjs";
+import { BLOCKS, ITEM_SECTIONS, assessmentModeOf, blockProblems, detectAssessment, extrasProblems, hasAnswers, lessonWarnings } from "../../src/lib/learn/lessonSchema.mjs";
 const root = process.env.LESSONS_DIR ? new URL(process.env.LESSONS_DIR.replace(/\/?$/, "/"), "file://" + process.cwd() + "/").pathname : new URL("../../content/lessons/", import.meta.url).pathname;
 // Year 1 to Year 11 only: the Academy does not run Reception.
 const YEARS = Array.from({ length: 11 }, (_, i) => `y${i + 1}`);
@@ -12,7 +12,7 @@ const YEARS = Array.from({ length: 11 }, (_, i) => `y${i + 1}`);
 const NOT_TAUGHT = { history: ["y10", "y11"] };
 let bad = 0, files = 0, lessons = 0;
 const blockCount = Object.fromEntries(BLOCKS.map((k) => [k, 0]));
-const extraCount = { answers: 0, hook: 0, routines: 0, resources: 0, ponder: 0, pictures: 0, islamicLink: 0, models: 0 };
+const extraCount = { answers: 0, hook: 0, routines: 0, resources: 0, ponder: 0, pictures: 0, islamicLink: 0, models: 0, assessments: 0 };
 // Lessons v3 advice (one objective, up to 3 criteria, no cold calls…): warnings, never errors,
 // so older lessons still build. --warnings lists every one; otherwise the first 25 and a count.
 const showAll = process.argv.includes("--warnings");
@@ -109,6 +109,10 @@ for (const f of walk(root)) {
     if (ITEM_SECTIONS.some((k) => hasAnswers(l[k]))) extraCount.answers++;
     for (const k of ["hook", "routines", "resources", "pictures", "islamicLink"]) if (l[k] != null) extraCount[k]++;
     if (l.hook && l.hook.type === "ponder") extraCount.ponder++;
+    if (assessmentModeOf(l)) extraCount.assessments++;
+    // A test, mock or quiz should say so (assessmentMode), so the build does not rely on the title.
+    const found = detectAssessment(l);
+    if (found && l.assessmentMode == null) warnings.push(`${id}: looks like a ${found.mode} ("${found.matched}"): set "assessmentMode": "${found.mode}" (or false if it is not one)`);
     if (ITEM_SECTIONS.some((k) => (l[k] || []).some((x) => x && typeof x === "object" && x.model))) extraCount.models++;
     lessonWarnings(l, subjectSlug, l.duration || DEFAULT_LEN(j.year)).forEach((m) => warnings.push(`${id}: ${m}`));
     if (!l.homework) err(id, "homework");
