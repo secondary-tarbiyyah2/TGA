@@ -2,26 +2,35 @@
   "subject": "Geography",
   "year": "y3",
   "board": "National Curriculum (KS1-3), aligned to AQA GCSE 9-1",
-  "source": "National Curriculum (KS2 geography: rivers, the water cycle, UK physical geography, human use of rivers) | Spring 1 2027 (lessons 5 to 9): Tarbiyyah Primary Year 3 curriculum map and Geography Long Term Plan 2023-24 (Cornerstones Mighty Metals: rainforests); TGA Year 3 pack | Spring 2 2027: TGA Year 3 pack, History and geography, Tribal Tales (map skills and fieldwork)",
+  "source": "National Curriculum (KS2 geography: rivers, the water cycle, UK physical geography, human use of rivers) | Spring 1 2027 (lessons 5 to 9): Tarbiyyah Primary Year 3 curriculum map and Geography Long Term Plan 2023-24 (Cornerstones Mighty Metals: rainforests); TGA Year 3 pack | Spring 2 2027: TGA Year 3 pack, History and geography, Tribal Tales (map skills and fieldwork) | Summer 1 2027 (lessons 1 to 4 upgraded; 15 new): TGA Year 3 pack, History and geography, Flow (+ One Planet, Our World); water-use tally fieldwork at home",
   "lessons": [
     {
-      "unit": "Unit 1: Rivers and the water cycle",
+      "unit": "Summer 1: Rivers and the water cycle (Flow and One Planet, Our World)",
       "n": 1,
       "title": "The water cycle",
-      "duration": 45,
+      "bigQuestion": "Could the water in your glass today once have been part of a cloud over the sea?",
       "objectives": [
-        "Describe the four stages of the water cycle",
-        "Explain how water moves between the sea, the air and the land",
-        "Use key words: evaporation, condensation, precipitation, collection"
+        "To understand how water moves around the Earth in the water cycle"
       ],
+      "successCriteria": [
+        "All: name the four stages of the water cycle",
+        "Most: explain evaporation and condensation",
+        "Some: use the water cycle to explain where rain comes from"
+      ],
+      "crossCurricular": "Science: states of matter (liquid and gas)",
+      "smsc": "Spiritual: wonder at how rain is sent down in measure",
       "keywords": [
         {
           "term": "evaporation",
-          "def": "when the sun heats water and turns it into water vapour"
+          "def": "water heated by the Sun turns into water vapour"
+        },
+        {
+          "term": "water vapour",
+          "def": "water as an invisible gas in the air"
         },
         {
           "term": "condensation",
-          "def": "when water vapour cools and turns back into tiny drops of water"
+          "def": "water vapour cools and turns back into tiny drops"
         },
         {
           "term": "precipitation",
@@ -29,363 +38,905 @@
         },
         {
           "term": "collection",
-          "def": "water gathering in rivers, lakes and seas"
-        },
-        {
-          "term": "water vapour",
-          "def": "water as an invisible gas in the air"
+          "def": "water gathering in seas, rivers, lakes and the ground"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Puddles disappear on a sunny day. Where does the water go?"
+      },
+      "islamicLink": {
+        "text": "Allah says He sends down water from the sky in due measure and settles it in the earth (Al-Mu'minun 23:18). The water cycle is part of how He provides for every living thing.",
+        "at": "start"
+      },
       "starter": [
-        "Say Bismillah. Name the four compass points.",
-        "What is a continent? Name one.",
-        "Where does rain come from? Write down what you think."
+        {
+          "q": "A grid reference is read:",
+          "a": "Along, then up",
+          "mins": 1,
+          "options": [
+            "Along, then up",
+            "Up, then along"
+          ]
+        },
+        {
+          "q": "Stonehenge is a:",
+          "a": "Human feature",
+          "mins": 1,
+          "options": [
+            "Human feature",
+            "Physical feature"
+          ]
+        },
+        {
+          "q": "Name one thing the Iron Age Britons built.",
+          "a": "For example: hill forts or roundhouses",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Water is always moving",
+          "heading": "Water keeps moving",
           "bullets": [
-            "The same water has been on Earth for millions of years.",
-            "It moves around in a never-ending cycle.",
-            "Allah says He made every living thing from water (Qur'an 21:30)."
+            "The same water is used again and again",
+            "It moves between sea, sky and land",
+            "This is the water cycle"
           ],
-          "note": "Begin by showing a glass of water and asking: where has this water been before? Children may say a river or even a dinosaur's drink. The idea that water is recycled is surprising and exciting. The ayah is al-Anbiya 21:30: 'and We made from water every living thing'. Cite it plainly and move on."
+          "note": "There is no new water: it goes round and round."
         },
         {
-          "heading": "Evaporation",
+          "heading": "Up into the sky",
           "bullets": [
-            "The sun heats water in seas, rivers and puddles.",
-            "The water turns into water vapour, a gas.",
-            "The vapour rises into the air. We cannot see it."
+            "The Sun heats seas and lakes",
+            "Water evaporates into water vapour",
+            "Vapour rises and cools",
+            "It condenses into clouds"
           ],
-          "note": "Demonstrate with a damp cloth in sunshine or a shallow dish of warm water. Ask where a puddle goes on a hot day. Misconception: children often think the water disappears or soaks into the ground. It rises into the air as an invisible gas."
+          "note": "Breath on a cold window makes condensation: the same idea."
         },
         {
-          "heading": "Condensation and clouds",
+          "heading": "Back down to Earth",
           "bullets": [
-            "High up the air is cold.",
-            "Water vapour cools and turns into tiny drops.",
-            "Millions of drops join together to make clouds."
+            "Drops in clouds join and grow heavy",
+            "They fall as precipitation",
+            "Water collects in rivers, lakes and seas"
           ],
-          "note": "Show a cold glass with droplets on the outside or a bathroom mirror that has steamed up. Ask where the droplets came from. They came from vapour in the air. Link to the cloud: the same thing happens high in the sky."
+          "note": "Rivers carry the water back to the sea, and the cycle starts again.",
+          "cycle": [
+            "evaporation",
+            "condensation",
+            "precipitation",
+            "collection"
+          ]
         },
         {
-          "heading": "Precipitation and collection",
+          "heading": "Water cycle in a bowl",
           "bullets": [
-            "When the drops get heavy they fall as rain.",
-            "Cold air can make snow, sleet or hail.",
-            "Water runs into rivers, then to lakes and seas."
+            "Warm water in a bowl",
+            "Cling film on top, ice on the film",
+            "Watch drops form and fall"
           ],
-          "note": "Draw the whole cycle on the board as a circle with arrows. Ask children to retell it using the four key words. Point out that rain on high land runs down into streams, then into rivers and finally the sea, where it can evaporate again."
+          "note": "Model the home demo. An adult pours the warm (not boiling) water.",
+          "model": {
+            "problem": "Make a water cycle in a bowl",
+            "steps": [
+              "Adult pours warm water into a bowl",
+              "Cover tightly with cling film",
+              "Put ice cubes on top",
+              "Wait 10 minutes and look under the film"
+            ],
+            "answer": "Drops condense under the cold film and drip back down"
+          }
         },
         {
-          "heading": "The water cycle diagram",
+          "heading": "Check",
           "bullets": [
-            "Evaporation, condensation, precipitation, collection.",
-            "The cycle has no start or end.",
-            "The sun gives the energy to power the cycle."
+            "Vote in the Teams poll"
           ],
-          "note": "Show a labelled diagram and ask children to explain it in pairs, taking turns to be the water droplet 'telling its story'. Check for the language of sequence: first, next, then, finally. Notice who can explain why the cycle continues."
+          "note": "Share the results.",
+          "check": {
+            "q": "Water vapour turning back into drops is:",
+            "options": [
+              "Evaporation",
+              "Condensation",
+              "Collection"
+            ],
+            "answer": 1,
+            "why": "Condensation is cooling vapour into drops; evaporation is the opposite."
+          }
         }
       ],
       "practice": [
-        "Match each key word to its meaning: evaporation, condensation, precipitation, collection.",
-        "Put four pictures of the water cycle in the right order and say what is happening in each."
+        {
+          "q": "What turns water into water vapour?",
+          "a": "Heat from the Sun (evaporation)",
+          "mins": 1,
+          "model": "The Sun shines on the sea.\nThe water gets warm.\nIt turns into vapour and rises.\nThis is evaporation."
+        },
+        {
+          "q": "Name two kinds of precipitation.",
+          "a": "Rain, snow, sleet or hail",
+          "mins": 2
+        },
+        {
+          "q": "Where does river water go?",
+          "a": "Into the sea (or a lake)",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Draw and label your own water cycle diagram with all four key words.",
-        "Write three sentences explaining what happens to a puddle on a sunny day.",
-        "Stretch: explain why rain falls from clouds, using the words condensation and precipitation."
+        {
+          "q": "Core: Draw and label the water cycle diagram: sea, Sun, clouds, rain, mountain, river, with the four stages and arrows.",
+          "a": "A labelled cycle with evaporation, condensation, precipitation and collection in the right places",
+          "mins": 12,
+          "model": "Teacher draws the sea and the first arrow for evaporation."
+        },
+        {
+          "q": "Extend: Write what happened in the bowl demo using two key words.",
+          "a": "Warm water evaporated; the vapour condensed on the cold film and dripped back down",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why does it rain more over mountains?",
+          "a": "Air rises over mountains and cools, so vapour condenses and rain falls",
+          "mins": 2
+        }
       ],
       "exit": [
-        "What happens in evaporation?",
-        "Which stage makes clouds?"
+        {
+          "q": "Clouds form by:",
+          "a": "Condensation",
+          "mins": 1,
+          "options": [
+            "Condensation",
+            "Evaporation"
+          ]
+        },
+        {
+          "q": "Big question: could your water have been in a cloud?",
+          "a": "Yes: the same water goes round the cycle from sea to cloud to rain to river",
+          "mins": 2
+        }
       ],
-      "homework": "Put a little water in a clear cup, mark the level and leave it somewhere warm for two days. Write what you notice.",
-      "send": "Provide a diagram with arrows already drawn and word cards to place. EAL: use picture cards for each stage. Stretch: ask why the cycle never runs out of water."
+      "homework": "Try the water cycle in a bowl (or a sealed bag of water taped to a sunny window) and draw what you see after one hour.",
+      "send": "SEND: diagram with labels to cut and stick. EAL: four stage words with pictures. Stretch: add groundwater and plants to the diagram.",
+      "resources": [
+        "Tarbiyyah Primary Year 3 curriculum map and history and geography long-term plans 2023-24; TGA Year 3 pack, History and geography, Summer 1 Flow (+ One Planet, Our World) (Cornerstones Maestro Flow and Emperors and Empires: CHECK IN MAESTRO)",
+        "Water cycle diagram sheet (portal printable)",
+        "Household items: bowl, warm water (adult pours), cling film, ice cubes"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "water cycle diagram",
+          "alt": "A diagram of the water cycle",
+          "for": "teach:3"
+        },
+        {
+          "find": "cumulus clouds blue sky",
+          "alt": "Clouds formed by condensation",
+          "for": "keywords"
+        },
+        {
+          "find": "puddle after rain",
+          "alt": "A puddle that will evaporate",
+          "for": "hook"
+        }
+      ]
     },
     {
-      "unit": "Unit 1: Rivers and the water cycle",
+      "unit": "Summer 1: Rivers and the water cycle (Flow and One Planet, Our World)",
       "n": 2,
-      "title": "The journey of a river",
-      "duration": 45,
+      "title": "A river's journey from source to mouth",
+      "bigQuestion": "Why does a river always flow downhill to the sea and never back up?",
       "objectives": [
-        "Name and describe the main features of a river",
-        "Describe the journey of a river from source to mouth",
-        "Explain how rivers change as they flow downhill"
+        "To understand how a river changes on its journey from source to mouth"
       ],
+      "successCriteria": [
+        "All: label source, tributary, meander and mouth",
+        "Most: describe how a river changes downstream",
+        "Some: explain why rivers make meanders"
+      ],
+      "crossCurricular": "Science: gravity pulls water downhill",
+      "smsc": "Spiritual: rivers as a sign of Allah's mercy, bringing water to land",
       "keywords": [
         {
           "term": "source",
-          "def": "where a river begins, often high up in hills or mountains"
+          "def": "where a river begins"
         },
         {
           "term": "tributary",
-          "def": "a smaller river that joins a larger river"
+          "def": "a smaller river that joins a bigger one"
         },
         {
           "term": "meander",
-          "def": "a bend or curve in a river"
+          "def": "a big bend in a river"
         },
         {
           "term": "mouth",
-          "def": "the place where a river meets the sea"
-        },
-        {
-          "term": "channel",
-          "def": "the path the river water flows along"
-        }
-      ],
-      "starter": [
-        "Say Bismillah. Name the four stages of the water cycle.",
-        "What is evaporation?",
-        "Where does the water in a river end up?"
-      ],
-      "teach": [
-        {
-          "heading": "Where do rivers begin?",
-          "bullets": [
-            "A river begins at its source.",
-            "The source is often high in hills or mountains.",
-            "Rain and springs feed the river."
-          ],
-          "note": "Link to the last lesson: precipitation falls on high ground and begins to flow downhill. Show a photograph of a small stream or spring on a hillside. Ask: why does water flow downhill? Because of gravity."
-        },
-        {
-          "heading": "Flowing downhill",
-          "bullets": [
-            "The river flows downhill towards the sea.",
-            "Small streams join to make bigger rivers.",
-            "A tributary is a smaller river joining a bigger one."
-          ],
-          "note": "Draw a tree-like picture of streams joining. Add the words tributary and confluence (where two rivers meet). Ask why a river gets wider as it goes. Many children think the river gets narrower when it is far from the source. The river grows because more water joins it."
-        },
-        {
-          "heading": "Changes along the river",
-          "bullets": [
-            "At the start it is narrow, steep and fast.",
-            "In the middle it widens and begins to bend.",
-            "Near the end it is wide, slow and flat."
-          ],
-          "note": "Show three photographs of one river: upper, middle and lower. Ask children to compare using adjectives. Introduce meanders as bends in the middle and lower parts of the river, where the land is flatter. Mention that rivers also pick up stones and soil and carry them downstream."
-        },
-        {
-          "heading": "The mouth of the river",
-          "bullets": [
-            "The mouth is where the river meets the sea.",
-            "Wide rivers often have an estuary at the mouth.",
-            "Fresh river water mixes with salty sea water."
-          ],
-          "note": "Show an aerial photo of an estuary. Estuary is a new word, so say it a few times. Ask what children think happens when fresh water meets salt water. Many creatures such as seabirds and fish feed in estuaries."
-        },
-        {
-          "heading": "A river diagram",
-          "bullets": [
-            "Source, tributary, meander, confluence, mouth.",
-            "A diagram helps us follow the river's journey.",
-            "Use arrows to show the way the water flows."
-          ],
-          "note": "Model drawing and labelling a simple river diagram on the board. Check that the arrows point downstream. Ask a child to be the 'water drop' and describe the journey in the first person."
-        }
-      ],
-      "practice": [
-        "Label a river diagram with source, tributary, meander and mouth.",
-        "Tell your partner: describe the river at the start and at the end."
-      ],
-      "independent": [
-        "Draw a river from source to mouth and add five labels.",
-        "Write a short story called 'The journey of a raindrop' using at least four key words.",
-        "Stretch: explain why a river gets wider as it flows towards the sea."
-      ],
-      "exit": [
-        "Where does a river begin?",
-        "What is a tributary?"
-      ],
-      "homework": "Find a river near you or in the news and write down its name and one fact about it.",
-      "send": "Provide a partly labelled river diagram. EAL: use gestures for each term. Stretch: add the words confluence and estuary and explain their meaning."
-    },
-    {
-      "unit": "Unit 1: Rivers and the water cycle",
-      "n": 3,
-      "title": "The River Thames",
-      "duration": 45,
-      "objectives": [
-        "Locate the River Thames on a map of the UK",
-        "Describe the Thames from source to mouth",
-        "Name some important places on the Thames"
-      ],
-      "keywords": [
-        {
-          "term": "River Thames",
-          "def": "the longest river in England, flowing through London"
+          "def": "where a river meets the sea"
         },
         {
           "term": "estuary",
-          "def": "the wide part of a river where it meets the sea"
-        },
-        {
-          "term": "flood barrier",
-          "def": "a structure built to stop a river or sea flooding a city"
-        },
-        {
-          "term": "bridge",
-          "def": "a structure that lets people cross a river"
+          "def": "the wide end of a river where it meets the tide"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you dropped a leaf in a stream on a hill, where might it end up?"
+      },
+      "islamicLink": {
+        "text": "Allah tells us He made from water every living thing (Al-Anbiya 21:30). Rivers carry this water across the land to people, animals and plants.",
+        "at": "start"
+      },
       "starter": [
-        "Say Bismillah. What is the source of a river?",
-        "What is a meander?",
-        "Name the capital city of England."
+        {
+          "q": "Water vapour cools to make clouds by:",
+          "a": "Condensation",
+          "mins": 1,
+          "options": [
+            "Condensation",
+            "Evaporation"
+          ]
+        },
+        {
+          "q": "Rome is on the River:",
+          "a": "Tiber",
+          "mins": 1,
+          "options": [
+            "Tiber",
+            "Thames"
+          ]
+        },
+        {
+          "q": "Name the four stages of the water cycle.",
+          "a": "Evaporation, condensation, precipitation, collection",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "The Thames on the map",
+          "heading": "Where rivers start",
           "bullets": [
-            "The Thames is about 346 kilometres long.",
-            "It is the longest river that is only in England.",
-            "It flows east through London to the North Sea."
+            "Rain falls on hills and mountains",
+            "A spring or stream is the source",
+            "Water flows downhill"
           ],
-          "note": "Show a map of southern England with the Thames highlighted. The Severn is the longest river in the UK (about 354 km) but it flows through both Wales and England. Say 'the longest river entirely in England'. Ask children where the river begins and ends."
+          "note": "Link to the water cycle: rivers are the collection stage."
         },
         {
-          "heading": "Source to mouth",
+          "heading": "Growing bigger",
           "bullets": [
-            "The source is in Gloucestershire, in the Cotswolds.",
-            "It flows past Oxford, Reading, Windsor and London.",
-            "The mouth is the Thames Estuary at the North Sea."
+            "Tributaries join the river",
+            "The river gets wider and deeper",
+            "It carries more water"
           ],
-          "note": "Use a simple route map. The usual source is at Thames Head near Kemble, though in dry weather the river may start further downstream. Point out how the river gets wider as it flows past each town. Ask: is the Thames wider in Oxford or in London? London."
+          "note": "Where two rivers meet is a confluence (extra word for the keen)."
         },
         {
-          "heading": "London and the Thames",
+          "heading": "Bends and the sea",
           "bullets": [
-            "London grew up beside the Thames.",
-            "The Romans built a bridge here about 2,000 years ago.",
-            "Famous places: Tower Bridge, the London Eye, Big Ben."
+            "Meanders are big bends",
+            "Lower down the river is slow and wide",
+            "It ends at the mouth or estuary"
           ],
-          "note": "Show a photograph of the river through London. Ask why a city might grow next to a river (water for drinking, food, transport, trade). Many children in London will have crossed the river. Invite them to share a bridge they know."
+          "note": "Show an aerial photo of a meander.",
+          "compare": {
+            "left": {
+              "title": "Near the source",
+              "points": [
+                "steep",
+                "fast",
+                "narrow"
+              ]
+            },
+            "right": {
+              "title": "Near the mouth",
+              "points": [
+                "flat",
+                "slow",
+                "wide"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Label a river",
+          "bullets": [
+            "Source at the top of the hill",
+            "Tributaries join from the side",
+            "Meanders lower down",
+            "Mouth at the sea"
+          ],
+          "note": "Model labelling the river diagram.",
+          "model": {
+            "problem": "Label the river diagram",
+            "steps": [
+              "Find the highest point: source",
+              "Find a small river joining: tributary",
+              "Find the bend: meander",
+              "Find the sea: mouth"
+            ],
+            "answer": "Source, tributary, meander, mouth labelled"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "A smaller river that joins a bigger one is a:",
+            "options": [
+              "Meander",
+              "Tributary",
+              "Mouth"
+            ],
+            "answer": 1,
+            "why": "A tributary joins the main river; a meander is a bend; the mouth is the end."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Where does a river begin?",
+          "a": "At its source",
+          "mins": 1,
+          "model": "I follow the river uphill.\nIt gets smaller and smaller.\nWhere it starts is the source."
+        },
+        {
+          "q": "Is a river faster near the source or the mouth?",
+          "a": "Near the source (it is steeper)",
+          "mins": 1
+        },
+        {
+          "q": "What is a big bend in a river called?",
+          "a": "A meander",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Label the river diagram with source, tributary, meander, estuary and mouth, and add arrows to show the flow.",
+          "a": "All five labels correct; arrows flow from source to mouth",
+          "mins": 12,
+          "model": "Teacher labels the source first and draws the first arrow."
+        },
+        {
+          "q": "Extend: Write three sentences describing the river from source to mouth.",
+          "a": "For example: It starts as a small fast stream in the hills. Tributaries join it. It meanders slowly to the sea.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why does a river always flow downhill?",
+          "a": "Gravity pulls the water down towards lower land and the sea",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Where a river meets the sea is the:",
+          "a": "Mouth",
+          "mins": 1,
+          "options": [
+            "Mouth",
+            "Source"
+          ]
+        },
+        {
+          "q": "Big question: why does a river flow downhill?",
+          "a": "Gravity pulls water from high land down to the sea",
+          "mins": 2
+        }
+      ],
+      "homework": "Find a river near you on an online map with an adult. Follow it: where is its mouth?",
+      "send": "SEND: labels to cut and stick. EAL: river words with pictures. Stretch: find a river with an estuary in the UK.",
+      "resources": [
+        "Tarbiyyah Primary Year 3 curriculum map and history and geography long-term plans 2023-24; TGA Year 3 pack, History and geography, Summer 1 Flow (+ One Planet, Our World) (Cornerstones Maestro Flow and Emperors and Empires: CHECK IN MAESTRO)",
+        "River journey diagram (portal printable)",
+        "Online map with an adult"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "river meander aerial",
+          "alt": "A meandering river from above",
+          "for": "teach:3"
+        },
+        {
+          "find": "mountain spring stream source",
+          "alt": "A small stream near a river's source",
+          "for": "teach:1"
+        },
+        {
+          "find": "river estuary mudflats",
+          "alt": "A river estuary",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Rivers and the water cycle (Flow and One Planet, Our World)",
+      "n": 3,
+      "title": "UK counties and cities: London and the River Thames",
+      "bigQuestion": "How can one river flow past fields, villages and a capital city on the same journey?",
+      "objectives": [
+        "To understand how the UK is divided into counties and cities, using the River Thames as an example"
+      ],
+      "successCriteria": [
+        "All: name some counties the Thames flows through",
+        "Most: find cities on the Thames",
+        "Some: explain how the Thames Barrier protects London"
+      ],
+      "crossCurricular": "History: Londinium was built on the Thames",
+      "smsc": "Social: protecting a city where millions of people live",
+      "keywords": [
+        {
+          "term": "county",
+          "def": "an area of a country with its own name and council"
+        },
+        {
+          "term": "city",
+          "def": "a large, important town"
+        },
+        {
+          "term": "River Thames",
+          "def": "the river that flows through London to the North Sea"
+        },
+        {
+          "term": "flood",
+          "def": "water covering land that is usually dry"
+        },
+        {
+          "term": "Thames Barrier",
+          "def": "giant gates that protect London from floods"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you could follow the Thames from its source, what would you see first and last?"
+      },
+      "starter": [
+        {
+          "q": "The Romans invaded Britain in:",
+          "a": "AD 43",
+          "mins": 1,
+          "options": [
+            "AD 43",
+            "AD 410"
+          ]
+        },
+        {
+          "q": "A tributary is a:",
+          "a": "River joining a bigger river",
+          "mins": 1,
+          "options": [
+            "River joining a bigger river",
+            "Bend in a river"
+          ]
+        },
+        {
+          "q": "Name one of the four countries of the UK.",
+          "a": "England, Scotland, Wales or Northern Ireland",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Counties",
+          "bullets": [
+            "Countries are split into counties",
+            "Kent, Essex, Oxfordshire, Gloucestershire",
+            "Each has towns, villages and countryside"
+          ],
+          "note": "Show a county map of England."
+        },
+        {
+          "heading": "The Thames' journey",
+          "bullets": [
+            "Source in Gloucestershire",
+            "Through Oxford and Reading",
+            "Through London to the North Sea"
+          ],
+          "note": "About 346 km long. Follow it on the map with your finger.",
+          "timeline": [
+            {
+              "label": "Source",
+              "text": "Thames Head, Gloucestershire"
+            },
+            {
+              "label": "Oxford",
+              "text": "A university city"
+            },
+            {
+              "label": "Reading",
+              "text": "A large town in Berkshire"
+            },
+            {
+              "label": "London",
+              "text": "The capital city"
+            },
+            {
+              "label": "Mouth",
+              "text": "The Thames Estuary and North Sea"
+            }
+          ]
+        },
+        {
+          "heading": "London and the river",
+          "bullets": [
+            "Romans built Londinium by the Thames",
+            "Ships brought goods to its docks",
+            "Many bridges cross it today"
+          ],
+          "note": "Link to history: a river crossing made London a good place for a city."
         },
         {
           "heading": "Keeping London safe",
           "bullets": [
-            "The Thames is tidal in London. The sea pushes in.",
-            "The Thames Barrier opened in 1984.",
-            "It has gates that rise to stop floods."
+            "High tides can flood London",
+            "The Thames Barrier closes its gates",
+            "It opened in 1984"
           ],
-          "note": "Explain that sea tides come up the river and a storm surge could flood parts of London. The Thames Barrier is a set of movable gates across the river at Woolwich. Show a photograph. Ask children what might happen if there were no barrier."
+          "note": "Model how the barrier works.",
+          "model": {
+            "problem": "How does the barrier stop a flood?",
+            "steps": [
+              "A very high tide comes up from the sea",
+              "The gates rise up from the river bed",
+              "The sea water is held back",
+              "London stays dry"
+            ],
+            "answer": "The gates block the tide"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "The Thames flows into the:",
+            "options": [
+              "Irish Sea",
+              "North Sea",
+              "Atlantic Ocean"
+            ],
+            "answer": 1,
+            "why": "The Thames reaches the sea in the east, at the Thames Estuary on the North Sea."
+          }
         }
       ],
       "practice": [
-        "On an outline map, trace the Thames from the Cotswolds to the North Sea.",
-        "Match these places to their pictures: Oxford, Windsor, London, Thames Barrier."
-      ],
-      "independent": [
-        "Make a fact file about the River Thames with at least five facts.",
-        "Draw a map of the Thames and add three towns, the source and the mouth.",
-        "Stretch: explain two reasons why a big city grew beside a river."
-      ],
-      "exit": [
-        "Is the Thames the longest river in the UK? Explain.",
-        "What does the Thames Barrier do?"
-      ],
-      "homework": "Draw your favourite bridge or landmark by a river and write two sentences about it.",
-      "send": "Provide a fact-file template with sentence starters. EAL: pre-teach place names with photos. Stretch: compare the Thames with another river, such as the Nile."
-    },
-    {
-      "unit": "Unit 1: Rivers and the water cycle",
-      "n": 4,
-      "title": "How people use rivers and stay safe",
-      "duration": 45,
-      "objectives": [
-        "Describe different ways people use rivers",
-        "Explain why clean river water is important",
-        "Say how to stay safe near rivers and how to look after water"
-      ],
-      "keywords": [
         {
-          "term": "reservoir",
-          "def": "a large lake where water is stored for people to use"
+          "q": "Which county is the Thames' source in?",
+          "a": "Gloucestershire",
+          "mins": 1,
+          "model": "I go to the start of the river on the map.\nIt is in the west.\nThe county there is Gloucestershire."
         },
         {
-          "term": "irrigation",
-          "def": "bringing water to crops to help them grow"
+          "q": "Name a city on the Thames apart from London.",
+          "a": "Oxford",
+          "mins": 1
         },
         {
-          "term": "pollution",
-          "def": "something harmful added to air, land or water"
-        },
-        {
-          "term": "transport",
-          "def": "moving people or goods from place to place"
+          "q": "What protects London from high tides?",
+          "a": "The Thames Barrier",
+          "mins": 1
         }
       ],
+      "independent": [
+        {
+          "q": "Core: On the map, follow the Thames and label: its source, Oxford, Reading, London, the Thames Barrier, the estuary, and two counties.",
+          "a": "Correct labels in order from west to east",
+          "mins": 11,
+          "model": "Teacher labels the source in Gloucestershire first."
+        },
+        {
+          "q": "Extend: Name your own county or the nearest city to you.",
+          "a": "The pupil's county or city",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Why might the Thames Barrier be needed more in the future?",
+          "a": "Sea levels are rising, so high tides may get higher",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Oxford is a:",
+          "a": "City on the Thames",
+          "mins": 1,
+          "options": [
+            "City on the Thames",
+            "County in Wales"
+          ]
+        },
+        {
+          "q": "Big question: what does the Thames pass on its journey?",
+          "a": "Countryside and villages, then towns like Reading and cities like Oxford and London, then the sea",
+          "mins": 2
+        }
+      ],
+      "homework": "Find your county on a map with an adult and list three towns or cities in it.",
+      "send": "SEND: map with places numbered to label. EAL: county, city, river, flood with pictures. Stretch: find two tributaries of the Thames.",
+      "resources": [
+        "Tarbiyyah Primary Year 3 curriculum map and history and geography long-term plans 2023-24; TGA Year 3 pack, History and geography, Summer 1 Flow (+ One Planet, Our World) (Cornerstones Maestro Flow and Emperors and Empires: CHECK IN MAESTRO)",
+        "Map of the River Thames and southern England counties (portal printable)",
+        "Atlas or online map"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Thames Barrier",
+          "alt": "The Thames Barrier in London",
+          "for": "teach:4"
+        },
+        {
+          "find": "Thames Head source",
+          "alt": "The source of the Thames",
+          "for": "hook"
+        },
+        {
+          "find": "River Thames Oxford",
+          "alt": "The Thames in Oxford",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Rivers and the water cycle (Flow and One Planet, Our World)",
+      "n": 4,
+      "title": "One planet: how people use and share water",
+      "bigQuestion": "Is it fair that some people have more water than they need while others have too little?",
+      "objectives": [
+        "To understand how people around the world use water and why it must be shared and saved"
+      ],
+      "successCriteria": [
+        "All: name the seven continents and five oceans",
+        "Most: record how my home uses water in a day",
+        "Some: suggest ways to share and save water"
+      ],
+      "crossCurricular": "Maths: tally charts and bar charts",
+      "smsc": "Moral: sharing a gift fairly and not wasting it",
+      "keywords": [
+        {
+          "term": "continent",
+          "def": "one of seven very large areas of land"
+        },
+        {
+          "term": "ocean",
+          "def": "one of five huge areas of salt water"
+        },
+        {
+          "term": "drought",
+          "def": "a long time with too little rain"
+        },
+        {
+          "term": "conserve",
+          "def": "use carefully so it lasts"
+        },
+        {
+          "term": "community",
+          "def": "people who live and share things together"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How many times do you think your family turns on a tap in one day?"
+      },
+      "islamicLink": {
+        "text": "Allah tells us to eat and drink but not to waste (Al-A'raf 7:31). The Prophet ﷺ made wudu with very little water (Bukhari and Muslim), even when water was plentiful. Saving water is part of thanking Allah.",
+        "at": "start"
+      },
       "starter": [
-        "Say Bismillah. Name two places the Thames flows through.",
-        "Where is the mouth of a river?",
-        "What do you use water for every day? List three things."
+        {
+          "q": "An aqueduct carries:",
+          "a": "Water",
+          "mins": 1,
+          "options": [
+            "Water",
+            "Soldiers"
+          ]
+        },
+        {
+          "q": "The Thames Barrier protects:",
+          "a": "London",
+          "mins": 1,
+          "options": [
+            "London",
+            "Oxford"
+          ]
+        },
+        {
+          "q": "Name the four stages of the water cycle.",
+          "a": "Evaporation, condensation, precipitation, collection",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Why rivers matter",
+          "heading": "Seven continents, five oceans",
           "bullets": [
-            "Rivers give us water to drink and wash with.",
-            "Farmers use river water for crops and animals.",
-            "People travel and carry goods by boat."
+            "Africa, Antarctica, Asia, Australia (Oceania)",
+            "Europe, North America, South America",
+            "Pacific, Atlantic, Indian, Southern, Arctic"
           ],
-          "note": "Ask children to think about the last time they used water today. Point out that most tap water in the UK comes from rivers and reservoirs. Show photographs of a river boat, a farm and a water treatment works."
+          "note": "Show the world map. Most of Earth's water is salty sea water."
         },
         {
-          "heading": "Rivers across the world",
+          "heading": "How we use water",
           "bullets": [
-            "The River Nile flows through Egypt.",
-            "Farming in Egypt depends on the Nile.",
-            "Many cities and civilisations grew beside rivers."
+            "Drinking, cooking and washing",
+            "Wudu before prayer",
+            "Farms and factories use the most"
           ],
-          "note": "Show the Nile on a map. Egypt is mostly desert, so most people live close to the river. Ask children why. The Nile is one of the longest rivers on Earth (about 6,650 km). Check pupils' understanding with a quick map question."
+          "note": "In the UK each person uses about 140 litres a day at home.",
+          "diagram": {
+            "centre": "Water",
+            "items": [
+              "drinking",
+              "cooking",
+              "washing",
+              "wudu",
+              "farming",
+              "factories"
+            ]
+          }
         },
         {
-          "heading": "Fun and energy from rivers",
+          "heading": "Not everywhere has enough",
           "bullets": [
-            "People fish, kayak and walk beside rivers.",
-            "Moving water can make electricity in hydroelectric dams.",
-            "Rivers are homes for fish, birds and plants."
+            "Droughts dry up rivers",
+            "Some walk far to fetch water",
+            "Clean water keeps people healthy"
           ],
-          "note": "Link to the work on the water cycle: fast-moving water carries energy. A dam can use that energy to turn turbines. Ask which uses of rivers keep the river clean and which might harm it. Allow disagreement and reasons."
+          "note": "Water is shared by communities and countries along a river."
         },
         {
-          "heading": "Keeping water clean",
+          "heading": "Home fieldwork: a water tally",
           "bullets": [
-            "Litter and chemicals pollute rivers.",
-            "Polluted water can harm animals and people.",
-            "We must not waste water. Islam teaches us to avoid waste."
+            "Pick one day",
+            "Tally every tap, flush and wash",
+            "Add up the totals"
           ],
-          "note": "Show photographs of a clean river and a polluted river. Ask: how can you tell? Link to stewardship: water is a blessing from Allah. Muslims are told not to be wasteful in eating and drinking (Qur'an 7:31). Invite children to suggest simple ways to save water at home, like turning off taps while brushing teeth."
+          "note": "Model a tally for the morning.",
+          "model": {
+            "problem": "Tally the morning",
+            "steps": [
+              "Tap for teeth: I",
+              "Wudu: I",
+              "Toilet flush: II",
+              "Kettle: I",
+              "Total the marks"
+            ],
+            "answer": "5 uses before school"
+          }
         },
         {
-          "heading": "Staying safe near water",
+          "heading": "Check",
           "bullets": [
-            "Never go near a river alone.",
-            "Stay behind barriers and keep away from the edge.",
-            "Rivers can be cold, deep and fast."
+            "Vote in the Teams poll"
           ],
-          "note": "This is an important safety message. Many river drownings happen in summer because of cold water shock. Teach that if someone falls in, children should shout for help and call an adult, not jump in. Ask children to say a safety rule in their own words."
+          "note": "Share the results.",
+          "check": {
+            "q": "A long time with too little rain is a:",
+            "options": [
+              "Flood",
+              "Drought",
+              "Tide"
+            ],
+            "answer": 1,
+            "why": "A drought means too little rain; a flood means too much water."
+          }
         }
       ],
       "practice": [
-        "Sort uses of rivers into: drinking, farming, travel, fun, energy.",
-        "Look at a photograph of a polluted river. Say two things that are wrong and one way to fix it."
+        {
+          "q": "Which ocean is the largest?",
+          "a": "The Pacific Ocean",
+          "mins": 1,
+          "model": "I look at the world map.\nThe ocean between Asia and America is huge.\nIt is the Pacific."
+        },
+        {
+          "q": "Name two ways your family uses water.",
+          "a": "For example: cooking and wudu",
+          "mins": 1
+        },
+        {
+          "q": "Name one way to save water.",
+          "a": "Turn off the tap while brushing teeth, shorter showers, fix drips",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Make a poster: 'Look after our rivers' with three tips.",
-        "Write four sentences about how people use the River Nile or the Thames.",
-        "Stretch: explain how pollution in a river could harm people living far downstream."
+        {
+          "q": "Core: Use your water tally (from home or the sample tally sheet) to make a bar chart of how your family uses water.",
+          "a": "A bar chart with labelled uses and correct bar heights",
+          "mins": 11,
+          "model": "Teacher draws the first bar from the model tally."
+        },
+        {
+          "q": "Extend: Write three ways your family could conserve water.",
+          "a": "For example: fill a cup for teeth, a full washing machine only, a bowl for washing fruit",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why might countries sharing one river disagree?",
+          "a": "If one country takes more water upstream, less reaches people downstream",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Give two ways people use rivers.",
-        "Give one rule for staying safe near water."
+        {
+          "q": "There are how many continents?",
+          "a": "Seven",
+          "mins": 1,
+          "options": [
+            "Seven",
+            "Five"
+          ]
+        },
+        {
+          "q": "Big question: is it fair? What should we do?",
+          "a": "No; we should use water carefully and share it, as Islam teaches",
+          "mins": 2
+        }
       ],
-      "homework": "Make a list of three ways your family could use less water this week and try one.",
-      "send": "Provide sentence starters for the poster. EAL: use picture cards for uses of rivers. Stretch: ask pupils to evaluate whether dams are good or bad for people and nature."
+      "homework": "Keep the water tally for a whole day with your family and bring the totals for the end-of-unit quiz.",
+      "send": "SEND: tally sheet with pictures. EAL: continent and ocean names with a map. Stretch: compare UK water use with a country in drought.",
+      "resources": [
+        "Tarbiyyah Primary Year 3 curriculum map and history and geography long-term plans 2023-24; TGA Year 3 pack, History and geography, Summer 1 Flow (+ One Planet, Our World) (Cornerstones Maestro Flow and Emperors and Empires: CHECK IN MAESTRO)",
+        "Home water-use tally sheet with a sample tally (portal printable)",
+        "Squared paper for the bar chart",
+        "Flow end-of-unit quiz and labelled river diagram (portal quiz; assessed)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "world map continents oceans",
+          "alt": "A map of the continents and oceans",
+          "for": "teach:1"
+        },
+        {
+          "find": "dry cracked earth drought",
+          "alt": "Dry ground in a drought",
+          "for": "keywords"
+        },
+        {
+          "find": "kitchen tap running water",
+          "alt": "A kitchen tap",
+          "for": "hook"
+        }
+      ]
     },
     {
       "unit": "Spring 1: Rainforests (Mighty Metals)",
@@ -2678,6 +3229,239 @@
           "find": "view from window street",
           "alt": "A street seen from a window",
           "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Rivers and the water cycle (Flow and One Planet, Our World)",
+      "n": 15,
+      "title": "Great rivers of the world",
+      "bigQuestion": "Which do you think matters more to people: a long river or a wide one?",
+      "objectives": [
+        "To understand where some of the world's great rivers are and why people live beside them"
+      ],
+      "successCriteria": [
+        "All: find the Nile, Amazon, Thames, Tigris and Euphrates on a map",
+        "Most: compare the lengths of rivers",
+        "Some: explain why cities grow beside rivers"
+      ],
+      "crossCurricular": "Maths: reading a bar chart and subtracting large numbers",
+      "smsc": "Cultural: great cities of Muslim history such as Baghdad grew by rivers",
+      "keywords": [
+        {
+          "term": "continent",
+          "def": "one of seven very large areas of land"
+        },
+        {
+          "term": "Nile",
+          "def": "the world's longest river, in Africa"
+        },
+        {
+          "term": "Amazon",
+          "def": "the river carrying the most water, in South America"
+        },
+        {
+          "term": "Tigris and Euphrates",
+          "def": "two rivers in Iraq, where early cities grew"
+        },
+        {
+          "term": "fertile",
+          "def": "good for growing crops"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why do you think so many great cities are built beside rivers?"
+      },
+      "starter": [
+        {
+          "q": "Where a river begins is its:",
+          "a": "Source",
+          "mins": 1,
+          "options": [
+            "Source",
+            "Mouth"
+          ]
+        },
+        {
+          "q": "Augustus was the first:",
+          "a": "Emperor",
+          "mins": 1,
+          "options": [
+            "Emperor",
+            "Centurion"
+          ]
+        },
+        {
+          "q": "Name a smaller river that joins a bigger one.",
+          "a": "A tributary",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Five great rivers",
+          "bullets": [
+            "Nile: Africa",
+            "Amazon: South America",
+            "Thames: England",
+            "Tigris and Euphrates: Iraq"
+          ],
+          "note": "Find each on the world map. Name the continent each time."
+        },
+        {
+          "heading": "Long and mighty",
+          "bullets": [
+            "The Nile is about 6,650 km long",
+            "The Amazon carries the most water",
+            "The Thames is about 346 km"
+          ],
+          "note": "Lengths are approximate; measuring a river is hard.",
+          "chart": {
+            "kind": "bar",
+            "title": "River lengths (approximate)",
+            "labels": [
+              "Nile",
+              "Amazon",
+              "Euphrates",
+              "Thames"
+            ],
+            "values": [
+              6650,
+              6400,
+              2800,
+              346
+            ],
+            "unit": "km"
+          }
+        },
+        {
+          "heading": "Why live by a river?",
+          "bullets": [
+            "Water to drink and wash",
+            "Fertile soil for crops",
+            "Boats for travel and trade"
+          ],
+          "note": "Baghdad grew on the Tigris; London grew on the Thames; Cairo on the Nile."
+        },
+        {
+          "heading": "Reading the chart",
+          "bullets": [
+            "Find the tallest bar",
+            "Read across to the scale",
+            "Compare two bars"
+          ],
+          "note": "Model reading the chart.",
+          "model": {
+            "problem": "How much longer is the Nile than the Thames?",
+            "steps": [
+              "Nile is about 6,650 km",
+              "Thames is about 346 km",
+              "6,650 minus 346",
+              "About 6,304 km longer"
+            ],
+            "answer": "About 6,300 km longer"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "The longest river in the world is the:",
+            "options": [
+              "Thames",
+              "Nile",
+              "Tigris"
+            ],
+            "answer": 1,
+            "why": "The Nile is about 6,650 km; the Amazon is close but carries more water."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Which continent is the Amazon in?",
+          "a": "South America",
+          "mins": 1,
+          "model": "I find the Amazon on the map.\nIt is in the north of the continent below North America.\nThat is South America."
+        },
+        {
+          "q": "Which city grew on the Tigris?",
+          "a": "Baghdad",
+          "mins": 1
+        },
+        {
+          "q": "Give one reason people live by rivers.",
+          "a": "Water, fertile soil, travel or trade",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: On the world map, mark and label the Nile, Amazon, Thames, Tigris and Euphrates, and write the continent beside each.",
+          "a": "All five rivers and continents correct",
+          "mins": 11,
+          "model": "Teacher marks the Thames in Europe first."
+        },
+        {
+          "q": "Extend: Write a sentence comparing the Nile and the Thames.",
+          "a": "The Nile is much longer than the Thames: about 6,650 km compared with about 346 km.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why did the first cities grow by the Tigris, Euphrates and Nile?",
+          "a": "Fertile soil from floods and water for farming meant enough food for many people",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "The Tigris and Euphrates are in:",
+          "a": "Iraq",
+          "mins": 1,
+          "options": [
+            "Iraq",
+            "Brazil"
+          ]
+        },
+        {
+          "q": "Big question: a long river or a wide one: which matters more?",
+          "a": "Either, with a reason: what matters most is water, soil and travel for people",
+          "mins": 2
+        }
+      ],
+      "homework": "Find out which river your parents' or grandparents' home town is on, and find it on a map.",
+      "send": "SEND: map with first letters of rivers. EAL: river names with pictures. Stretch: find the Yangtze and say which continent it is in.",
+      "resources": [
+        "Tarbiyyah Primary Year 3 curriculum map and history and geography long-term plans 2023-24; TGA Year 3 pack, History and geography, Summer 1 Flow (+ One Planet, Our World) (Cornerstones Maestro Flow and Emperors and Empires: CHECK IN MAESTRO)",
+        "World outline map with rivers (portal printable)",
+        "Atlas or online map"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Nile River from space",
+          "alt": "The River Nile seen from space",
+          "for": "hook"
+        },
+        {
+          "find": "Amazon River aerial",
+          "alt": "The Amazon River from the air",
+          "for": "teach:1"
+        },
+        {
+          "find": "Tigris River Baghdad",
+          "alt": "The River Tigris in Baghdad",
+          "for": "teach:3"
         }
       ]
     }
