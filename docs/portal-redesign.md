@@ -127,7 +127,97 @@ In the portal the old `teal-*` utilities now mean forest green, so existing page
 5. [x] Phone pass at 360px (lesson workspace, curriculum map, lesson review queue and the pages above): `WorkspaceHeader` puts its actions under the title on narrow screens instead of squeezing the title to a few words a line; review queue rows wrap their status line; the top bar shows the square mark below 420px so every button (search, clock, display, feedback, report a concern, notifications) fits instead of being cut off. No sideways scrolling found.
 6. Later: curriculum analytics, connections visualiser.
 
+## Navigation and tour (owner, 10 Nov 2026)
+
+Owner: "the TGA portal, I need it better and just easier to navigate; add a really good tour on it and make the tour
+very concise and useful; categorise things better and maybe make it dropdown; look at SIMS and Arbor and Moodle."
+Tracked as T38 in `docs/backlog/tafweed.md`.
+
+### How the big systems organise it (researched 10 Nov 2026)
+| System | Top level | Inside an area | Search | Favourites | Help |
+| --- | --- | --- | --- | --- | --- |
+| **Arbor** | Fixed top menu: My Items, Students, School, System; "My Homepage" first | Left-hand menu for the pages of the area, collapsible; breadcrumbs | One box for pages, students, guardians, staff, courses | Star a page in the left menu: "Custom Favourites" on My Homepage, per person, renameable | Help Centre link opens guidance for the current page |
+| **SIMS** (classic and Next Gen) | Role-based homepage; menus by job (registers, markbook, profiles) | Home page panels: My Timeline, Messages, Reminders, Missing Registers, Favourites | Quick search for pupils and staff | Favourites panel learns the areas, reports, pupils and marksheets you use | Separate help site |
+| **Bromcom** | Left main menu by module (MAT: Analysis, Reporting, Admin), dashboard for quick tasks | Hover-out sub-menus | Global search: classes, students, staff, rooms | Not a feature | Documentation centre |
+| **Moodle 4** | Primary navigation: Home, Dashboard, My courses, Site admin; a drawer on phones | Secondary tabs (at most 5, the rest under "More"); course index drawer | Global search | Starred courses | **User tours**: short step-by-step tours shown once on first visit to a page, filtered by role, "Reset user tour on this page" in the footer |
+
+Sources: Arbor "How to navigate and get around Arbor" and "Custom Favourites on My Homepage" (support.arbor-education.com);
+SIMS home page guide (Buckinghamshire schools web); Bromcom MIS/MAT quick guide; Moodle "Moodle 4.0 navigation
+improvements" (docs.moodle.org) and Moodle User tours documentation.
+
+**What TGA adopts.**
+- Arbor/SIMS: a **Home** set of everyday pages always visible, then **categories named after the job** (school MIS
+  style), each a dropdown in the sidebar, with the category's pages as a tab strip at the top of each page (Moodle's
+  secondary navigation).
+- Arbor's star: **Pinned** pages per person at the top of the staff menu (the pin beside every page, or "Pin" in search).
+- Arbor/Bromcom global search: **one search** that finds every page, sub-page and common job by plain words ("take a
+  register", "pay fees", "gdpr"), plus classes, lessons and pupils.
+- Moodle user tours: a **short role tour**, shown once, relaunchable from the menu (see "Take the tour").
+- Families and pupils: a short flat menu (Moodle's student view), not the staff categories.
+
+### Audit before the change (10 Nov 2026)
+| Role | Sidebar entries | Pages | Phone bar |
+| --- | --- | --- | --- |
+| head_teacher / admin | 10 hubs | 47 | Today, Messages, Pupils, Classes |
+| admissions | 6 | 13 | Today, Pupils, Admissions |
+| teacher / teaching_assistant_cover | 6 | 27 | Today, My classes, Messages, Pupils |
+| senco | 2 | 2 | Support plans, Staff handbook |
+| parent | 6 | 17 | Today, Messages, My children, Progress |
+| student | 5 | 11 | Today, My classes, Revise, My progress |
+
+Problems found:
+- **Wrong place / odd names.** Admin "Pupils" hub held seven different jobs (records, registers, absences, SEND,
+  behaviour, house points, enrichment). "Office" held Policies, Accounts, Website, Academic setup and Settings. The
+  "Safeguarding" hub's first page was called "Compliance". Parent evenings sat under Today; portal Feedback under
+  Messages. Teachers' Gradebook and Reports sat under "My classes"; pupils' "My teachers" under Calendar.
+- **Hidden work.** "Waiting for you" (the Action centre) was a tab inside Today, so its count showed on Today instead;
+  families' and pupils' Homework was also a tab inside Today.
+- **Duplicates.** Hub and first tab with the same name (Classes > Classes, Staff > Staff, Today > Today, Calendar >
+  Calendar); "Absences" in two hubs' worth of meaning (pupil absences and staff cover on one page, named only "Absences").
+- **Phone menu.** The drawer left out the tab-bar pages, so a group could show a single orphan link (Pupils > Progress).
+- **Search** matched only names and descriptions: "attendance" did not find Registers; jobs ("take a register") and
+  sub-pages (Subjects, Teacher availability) were not found; no way to save favourites.
+
+### The new structure (nav.ts `NAV_CATEGORIES`)
+Every address is unchanged; only the menu moved. `src/lib/learn/nav.test.ts` checks every page under
+`src/app/learn/<area>` is in the menu, a sub-page or a detail page, that nothing is listed twice, and that search finds
+every menu page.
+
+- **Head teacher / admin** (55 pages): Pinned; **Home** (Today, Waiting for you, Messages, Calendar); **Pupils and
+  admissions** (All pupils, Applications, Entry assessments, Open evenings); **Classes and timetable** (Classes,
+  Timetable, Make the timetable, Teams links, Classwork to action); **Curriculum** (Curriculum map, Lesson library,
+  Lesson review, Planner, Syllabus); **Assessment and reports** (Term reports, GCSE grades, Revision results, School at
+  a glance); **Attendance and behaviour** (Registers, Absences and cover, Behaviour, House points, Enrichment);
+  **Safeguarding and SEND** (Safeguarding, SEND register, Message oversight, Data protection, Audit log);
+  **Communication** (Announcements, Weekly digest, Parent evenings, Portal feedback); **Staff** (Staff, Staff hours,
+  Job applications, Staff handbook); **School office** (Fees, Policies to sign, Accounts and sign-ins, Website pages);
+  **Settings** (Academic setup, School settings). Phone bar: Today, Messages, Pupils, Classes, Menu.
+- **Admissions staff**: the same categories, cut to what they can open (Today, Calendar, Pupils and admissions,
+  Safeguarding, Staff handbook, Accounts, Website, Settings). Phone bar: Today, Pupils, Applications, Calendar, Menu.
+- **Teacher / cover** (28 pages): Pinned; **Home** (Today, Waiting for you, Messages, Calendar); **My teaching** (My
+  classes, Lessons and registers, To mark, Classwork to action); **Pupils** (My pupils, Qur'an and Qaidah);
+  **Curriculum** (map, library, review, planner, syllabus); **Assessment and reports** (Gradebook, Term reports,
+  Revision results); **Attendance and behaviour** (Absences, Behaviour, House points); **Safeguarding and SEND**
+  (Support plans, Report a concern); **Communication** (Announcements, Parent evenings); **My staff area** (My
+  profile, My hours, Staff handbook). Phone bar: Today, Classes, To mark, Messages, Menu.
+- **SENCo only**: Safeguarding and SEND (Support plans, Report a concern), My staff area (Staff handbook).
+- **Parent** (flat, 7): Today (Today, Waiting for you), Homework, Messages (Inbox, Announcements), My children
+  (Classes and timetable, Teachers, Child details, Support plan, Report an absence), Progress (Reports, Qur'an,
+  Behaviour, Revision), Calendar (Calendar, Parent evenings), Fees. Phone bar: Today, Homework, Messages, Children, Menu.
+- **Pupil** (flat, 6): Today (Today, Waiting for you, Announcements), Homework, My classes (My classes, My teachers),
+  Revise (Unit revision, Qur'an and Qaidah), My progress (Reports, Merits), Calendar. Phone bar: Today, Homework,
+  Classes, Revise, Menu.
+
+Behaviour: categories start closed except the one you are in; opening or closing one, and pins, are saved per person
+in `portal_prefs` (migration 0200, own row only) with a browser copy. The phone drawer shows the same categories.
+Search (Ctrl K) lists Pinned, Recent and common jobs when empty, and matches every word typed against names,
+descriptions and plain-word keywords.
+
 ## Log
+- 2026-11-10: Navigation rebuilt round categories (T38, PR "Portal navigation: categories, pins and search"): staff
+  sidebar is Pinned, Home, then category dropdowns remembered per person (`portal_prefs`, migration 0200); families
+  and pupils keep a short flat menu with Homework at the top level; search finds every page, sub-page and common job by
+  plain words; phone bar is the four most-used places plus Menu with the same categories. Research and audit above.
 - 2026-11-10: Rest of the canvas built (PR "Portal redesign: the rest"): staff edit a pupil's Home, Health, Support needs, Emergency contacts and Consents on one page with a section list and one Save bar (`PupilDetailsEditor`, `/admin/pupils?id=…&edit=details`; consents are Given / Refused / Not asked); "Fill in from application" on a pupil record re-runs `admissions-create-accounts` (no login, no email) to fill empty fields; teacher Today shows "Your day" as cards with register status, Take register and Start on Teams; Today's "Waiting for you" filters by category in place with a button per row.
 - 2026-11-10: Redesign canvas (https://claude.ai/artifact/5xxUxFxTLMmFfoGSi4izku) built in part (PR "Portal redesign: build"): child switcher as cards with initials and year; country-code phone picker on pupil contacts, GP and staff phone; a "Live lessons on Teams" box at the top of Class settings (Test link, Save link); Classes hub gains "Make the timetable" and "Teams links" tabs, Staff hub's Recruitment tab is "Job applications"; hub tabs pick the most specific match; Curriculum map opens on One subject (subjects with approved/written counts, the subject's half terms as one list with one button each), Whole year keeps the old grid. 
 - 2026-11-10: Push notifications for new messages (PR #111, migration 0199 `push_subscriptions`, edge function `push-notify`). Opt-in per device: a card on the family, teacher and admin Today pages and a row in Your account. The notification says who it's from, never the message. Hidden until the owner adds `VAPID_PUBLIC_KEY` (variable) and `VAPID_PRIVATE_KEY` (secret). Next candidates: absences, homework due, reports published.

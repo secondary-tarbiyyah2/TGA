@@ -6,28 +6,8 @@ import { useRouter } from "next/navigation";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { PageHeader } from "@/components/learn/PageHeader";
 import { useLearnSession } from "@/lib/learn/session";
-import { visibleAdminSections, type PortalNavItem } from "@/lib/learn/nav";
+import { SUB_PAGES, visibleAdminSections } from "@/lib/learn/nav";
 import { ui } from "@/components/learn/ui";
-
-/** Pages that live one level below a sidebar page (a section's own steps or
- * sub-pages). The sidebar doesn't list them, but this index should, so a
- * search for "availability" or "subjects" finds them. Keyed by the parent's href. */
-const SUB_PAGES: Record<string, PortalNavItem[]> = {
-  "/admin/lessons": [
-    { href: "/admin/lessons/timetable", label: "Weekly timetable", hint: "Move, edit, print and publish the timetable" },
-    { href: "/admin/lessons/generate", label: "Generate a timetable", hint: "Build a new draft in four guided steps" },
-    { href: "/admin/lessons/availability", label: "Teacher availability", hint: "When each teacher can teach" },
-    { href: "/admin/lessons/day", label: "School day", hint: "Lesson periods, protected breaks and sessions" },
-    { href: "/admin/lessons/list", label: "Upcoming lessons", hint: "Dated lessons, join links and cover" },
-  ],
-  "/admin/academic": [
-    { href: "/admin/academic/years", label: "Years and terms", hint: "Academic years and their term dates" },
-    { href: "/admin/academic/year-groups", label: "Year groups", hint: "The year groups pupils are placed in" },
-    { href: "/admin/academic/subjects", label: "Subjects", hint: "Everything the school teaches" },
-    { href: "/admin/academic/classes", label: "Classes and teachers", hint: "Create classes, enrol pupils, choose teachers" },
-    { href: "/admin/academic/meeting-links", label: "Meeting links", hint: "A recurring lesson link for each class" },
-  ],
-};
 
 /**
  * Moodle's "Site administration" page: one place listing every admin

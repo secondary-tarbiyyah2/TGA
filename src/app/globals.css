@@ -469,6 +469,121 @@ html[data-readable-font] .portal .portal-display {
 .portal-nav-panel[data-open] > ul {
   padding-top: 0.125rem;
 }
+/* Staff menu categories (nav.ts NAV_CATEGORIES): a heading row that opens like
+   a dropdown, its pages underneath as plain text rows on a hairline. */
+.portal-nav-cat {
+  display: flex;
+  width: 100%;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 0.625rem;
+  padding: 0.25rem 0.5rem 0.25rem 0.625rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: color-mix(in oklab, var(--color-ink) 80%, transparent);
+  transition: background 120ms, color 120ms;
+}
+@media (min-width: 1024px) {
+  .portal-nav-cat {
+    min-height: 2.5rem;
+  }
+}
+.portal-nav-cat:hover {
+  background: var(--portal-hover);
+  color: var(--color-ink-900);
+}
+.portal-nav-cat .portal-tile {
+  background: transparent;
+  color: color-mix(in oklab, var(--color-ink) 55%, transparent);
+}
+.portal-nav-cat--here {
+  color: var(--color-forest-900);
+  font-weight: 600;
+}
+.portal-nav-cat--here .portal-tile {
+  color: var(--color-forest-700);
+}
+.portal-nav-tree {
+  margin-left: 1.625rem;
+  border-left: 1px solid var(--color-gold-light);
+  padding-left: 0.375rem;
+}
+.portal-nav-panel[data-open] > .portal-nav-tree {
+  padding-bottom: 0.25rem;
+}
+.portal-nav-leaf {
+  display: flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.625rem;
+  font-size: 0.875rem;
+  color: color-mix(in oklab, var(--color-ink) 75%, transparent);
+  transition: background 120ms, color 120ms;
+}
+@media (min-width: 1024px) {
+  .portal-nav-leaf {
+    min-height: 2.125rem;
+  }
+}
+.portal-nav-leaf:hover {
+  background: var(--portal-hover);
+  color: var(--color-ink-900);
+}
+.portal-nav-leaf--active,
+.portal-nav-leaf--active:hover {
+  position: relative;
+  background: var(--color-forest-100);
+  color: var(--color-forest-900);
+  font-weight: 600;
+}
+.portal-nav-leaf--active::before {
+  content: "";
+  position: absolute;
+  left: -0.5rem;
+  top: 0.4rem;
+  bottom: 0.4rem;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: var(--portal-accent);
+}
+/* Pin a page to the top of the menu: shown on hover or keyboard focus, always on touch screens. */
+.portal-nav-pin {
+  position: absolute;
+  right: 0.25rem;
+  top: 50%;
+  display: flex;
+  height: 2rem;
+  width: 2rem;
+  transform: translateY(-50%);
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  color: color-mix(in oklab, var(--color-ink) 60%, transparent);
+  opacity: 0;
+  transition: opacity 120ms, background 120ms, color 120ms;
+}
+.portal-nav-item:hover .portal-nav-pin,
+.portal-nav-item:focus-within .portal-nav-pin,
+.portal-nav-pin:focus-visible {
+  opacity: 1;
+}
+.portal-nav-pin:hover {
+  background: var(--portal-hover);
+  color: var(--color-ink-900);
+}
+@media (hover: none) {
+  .portal-nav-pin {
+    opacity: 0.7;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .portal-nav-pin {
+    transition: none;
+  }
+}
 /* Plain text links (the "Switch portal" list). */
 .portal-nav-sub {
   display: flex;
