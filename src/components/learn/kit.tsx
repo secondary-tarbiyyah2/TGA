@@ -473,7 +473,7 @@ export function WorkspaceHeader({
     <header className="border-b border-gold-light pb-5">
       {eyebrow && <Eyebrow parts={eyebrow} />}
       <div className="mt-1.5 flex flex-wrap items-start justify-between gap-x-6 gap-y-3">
-        <div className="min-w-0 flex-1">
+        <div className="min-w-[min(100%,18rem)] flex-1">
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
             <h1 className="text-[1.5rem] font-semibold leading-tight tracking-tight text-ink">{title}</h1>
             {status}
