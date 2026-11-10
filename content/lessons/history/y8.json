@@ -2,98 +2,256 @@
   "subject": "History",
   "year": "y8",
   "board": "National Curriculum KS3 (History is not offered at KS4)",
-  "source": "National Curriculum KS3 (the Industrial Revolution and its effects on the lives of people, 18th to 19th centuries); no school Drive history material for this unit, written from scratch | Spring 1 2027 (lessons 5 to 9): Tarbiyyah Secondary History Curriculum Intent; Hodder Understanding History KS3 scheme of work, Unit 4 (4.10A to 4.10C, 4.12) | Spring 2 2027: Hodder Understanding History KS3 Unit 5 (5A to 5F, sugar, empire and slavery); TGA Year 8 pack",
+  "source": "National Curriculum KS3 (the Industrial Revolution and its effects on the lives of people, 18th to 19th centuries); no school Drive history material for this unit, written from scratch | Spring 1 2027 (lessons 5 to 9): Tarbiyyah Secondary History Curriculum Intent; Hodder Understanding History KS3 scheme of work, Unit 4 (4.10A to 4.10C, 4.12) | Spring 2 2027: Hodder Understanding History KS3 Unit 5 (5A to 5F, sugar, empire and slavery); TGA Year 8 pack | Summer 1 2027 (lessons 1 and 3 upgraded; 16 to 18 new): Hodder Understanding History KS3 Unit 6 (6.1 to 6.4, 6.7, 6.8; Ancoats virtual site study); TGA Year 8 pack",
   "lessons": [
     {
-      "unit": "Unit 1: The Industrial Revolution",
+      "unit": "Summer 1: Industry and empire, 1750 to 1900: the Industrial Revolution",
       "n": 1,
-      "title": "Britain before the Industrial Revolution",
-      "duration": 50,
+      "title": "The big picture, 1750 to 1900: what was the Industrial Revolution?",
+      "bigQuestion": "Was the Industrial Revolution really a 'revolution' if it took 150 years?",
       "objectives": [
-        "Describe life in Britain around 1750",
-        "Explain why Britain was ready to industrialise"
+        "To understand what the Industrial Revolution was and the main ways Britain changed between 1750 and 1900"
       ],
+      "successCriteria": [
+        "All: describe Britain in 1750 and in 1900",
+        "Most: identify five key changes",
+        "Some: judge whether 'revolution' is the right word"
+      ],
+      "crossCurricular": "Geography: urbanisation and population change",
+      "smsc": "Moral: who benefits from progress and who pays the cost",
       "keywords": [
         {
           "term": "Industrial Revolution",
-          "def": "the rapid change from hand-made goods and farming to machines and factories"
+          "def": "the change to making goods by machine in factories, about 1750 to 1900"
+        },
+        {
+          "term": "revolution",
+          "def": "a big, fundamental change"
         },
         {
           "term": "domestic system",
-          "def": "making goods by hand in workers' own homes"
+          "def": "making goods by hand at home"
         },
         {
-          "term": "agriculture",
-          "def": "farming"
+          "term": "factory system",
+          "def": "making goods by machine in large buildings"
         },
         {
-          "term": "enclosure",
-          "def": "fencing off common land into private fields"
-        },
-        {
-          "term": "raw materials",
-          "def": "natural resources used to make products"
+          "term": "raw material",
+          "def": "a natural substance used to make goods, like cotton"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Can a change that takes 150 years still be called a revolution?"
+      },
       "starter": [
-        "Name one effect of Magna Carta.",
-        "What was the feudal system?",
-        "What makes a country rich: land, people or ideas? Why?"
+        {
+          "q": "Britain abolished the slave trade in:",
+          "a": "1807",
+          "mins": 1,
+          "options": [
+            "1807",
+            "1750"
+          ]
+        },
+        {
+          "q": "The Taj Mahal was built for:",
+          "a": "Shah Jahan's wife Mumtaz Mahal",
+          "mins": 1,
+          "options": [
+            "Shah Jahan's wife Mumtaz Mahal",
+            "Akbar's army"
+          ]
+        },
+        {
+          "q": "Name one crop grown by enslaved people in the Caribbean.",
+          "a": "Sugar (also cotton, tobacco)",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Bismillah: a country of villages",
+          "heading": "Britain in 1750",
           "bullets": [
-            "In 1750 most people lived in the countryside",
-            "Most worked in farming",
-            "Goods were made by hand"
+            "Most people lived in villages",
+            "Goods made by hand at home",
+            "Travel by horse, cart and river"
           ],
-          "note": "Begin with bismillah. Ask pupils to imagine a world with no electricity or factories. What would you do for work? About 3 out of 4 people lived in rural areas c. 1750 (say 'most')."
+          "note": "Hodder 6.1. The domestic system: spinning and weaving at home."
         },
         {
-          "heading": "The domestic system",
+          "heading": "Britain in 1900",
           "bullets": [
-            "Families spun and wove cloth at home",
-            "Merchants brought wool and collected cloth",
-            "Work was slow and output was small"
+            "Most people lived in towns",
+            "Factories, mines and steam power",
+            "Railways and steamships"
           ],
-          "note": "Show a picture of a hand loom in a cottage. Ask: why was this slow? Demand for cloth was growing from Britain's trading empire, so a faster way was wanted."
+          "note": "Population of England and Wales was about 32.5 million in 1901.",
+          "compare": {
+            "left": {
+              "title": "1750",
+              "points": [
+                "rural",
+                "hand tools",
+                "water and horse power",
+                "small workshops"
+              ]
+            },
+            "right": {
+              "title": "1900",
+              "points": [
+                "urban",
+                "machines",
+                "steam and coal",
+                "huge factories"
+              ]
+            },
+            "label": "vs"
+          }
         },
         {
-          "heading": "Changes in farming",
+          "heading": "Five key changes",
           "bullets": [
-            "Enclosure created larger fields",
-            "New crops and crop rotation boosted yields",
-            "Fewer farm workers were needed"
+            "Power: water to steam",
+            "Work: home to factory",
+            "Transport: canals then railways",
+            "Towns: rapid growth",
+            "Empire: raw materials and markets"
           ],
-          "note": "Link to the Agricultural Revolution. Charles Townshend and Jethro Tull are often named; avoid over-simplifying credit. Some people lost access to common land and moved to towns."
+          "note": "Hodder 6.2A. Cotton came from India and from slave plantations in the American South: link to Spring 2.",
+          "diagram": {
+            "centre": "Industrial Revolution",
+            "items": [
+              "steam power",
+              "factories",
+              "railways",
+              "growing towns",
+              "empire and trade",
+              "new laws"
+            ]
+          }
         },
         {
-          "heading": "Why Britain?",
+          "heading": "Is 'revolution' the right word?",
           "bullets": [
-            "Britain had coal and iron ore",
-            "It had rivers, ports and a large navy",
-            "Wealthy investors paid for new machines"
+            "Revolution: huge change",
+            "But: slow, over 150 years",
+            "So: historians debate the word"
           ],
-          "note": "Ask pupils to rank the reasons in importance. Mention that Britain's trade and colonies, including the cotton trade involving enslaved labour in the Americas, provided raw materials and markets."
+          "note": "Model an argued judgement.",
+          "model": {
+            "problem": "Was it a revolution?",
+            "steps": [
+              "Point: yes, in scale of change",
+              "Evidence: rural to urban, hand to machine",
+              "Counter: it was gradual, over 150 years",
+              "Judgement: a revolution in results, an evolution in speed"
+            ],
+            "answer": "A balanced judgement with evidence and a counter-argument"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "The domestic system meant goods were made:",
+            "options": [
+              "In factories by machine",
+              "At home by hand",
+              "Abroad"
+            ],
+            "answer": 1,
+            "why": "Before factories, families spun and wove at home: the domestic system."
+          }
         }
       ],
       "practice": [
-        "Where did most people live in 1750?",
-        "Describe the domestic system in your own words.",
-        "Give two reasons why Britain industrialised first."
+        {
+          "q": "What powered most factories by 1850?",
+          "a": "Steam engines burning coal",
+          "mins": 1,
+          "model": "Early mills used water wheels.\nWatt's improved engine made steam cheaper.\nBy 1850 most ran on steam from coal."
+        },
+        {
+          "q": "Give two differences between 1750 and 1900.",
+          "a": "Rural to urban; hand to machine; horse to railway",
+          "mins": 2
+        },
+        {
+          "q": "How did empire help British industry?",
+          "a": "Raw materials such as cotton, and markets to sell goods",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Create a spider diagram: why did the Industrial Revolution start in Britain?",
-        "Draw a cottage workroom showing the domestic system (spinning wheel, loom, raw wool, finished cloth) with labels",
-        "Write a paragraph comparing farm life and factory life"
+        {
+          "q": "Core: In the portal response box, answer: 'How far did Britain change between 1750 and 1900?' (two PEE paragraphs and a judgement).",
+          "a": "Two paragraphs with specific changes and evidence; a judgement on extent",
+          "mins": 15,
+          "model": "Point: Britain changed hugely in where people lived. Evidence: in 1750 most lived in villages; by 1900 most lived in towns. Explain: work moved to factories, so people moved to find it."
+        },
+        {
+          "q": "Extend: Name one thing that did NOT change much.",
+          "a": "For example: the monarchy, many rural jobs, the power of landowners for much of the period",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: Who gained and who lost from the Industrial Revolution?",
+          "a": "Gained: owners, merchants, later workers; lost: handloom weavers, enslaved people producing cotton, children in mills",
+          "mins": 4
+        }
       ],
       "exit": [
-        "What was the domestic system?",
-        "Give one natural resource that helped Britain industrialise."
+        {
+          "q": "By 1900 most British people lived in:",
+          "a": "Towns",
+          "mins": 1,
+          "options": [
+            "Towns",
+            "Villages"
+          ]
+        },
+        {
+          "q": "Big question: revolution or not?",
+          "a": "A reasoned judgement on scale versus speed",
+          "mins": 2
+        }
       ],
-      "homework": "Ask someone at home how their grandparents' jobs differed from jobs today and note one change.",
-      "send": "SEND/EAL: pre-made spider diagram with prompts. Stretch: evaluate which reason mattered most with a justification."
+      "homework": "Make a 1750 to 1900 timeline with eight key events (Hodder 6.1 big picture).",
+      "send": "SEND: PEE frame. EAL: glossary. Stretch: research the term 'Industrial Revolution' and who first used it.",
+      "resources": [
+        "Understanding History: Key Stage 3 (Hodder, 2019) scheme of work, Unit 6, lessons 6.1 and 6.2A (big picture; what was the Industrial Revolution?), worksheets",
+        "Tarbiyyah Secondary History Curriculum Intent (KS3 programme overview); TGA Year 8 pack, History, Summer 1",
+        "Portal response box"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Masson Mill Derwent Valley",
+          "alt": "A mill in the Derwent Valley",
+          "for": "teach:2"
+        },
+        {
+          "find": "spinning wheel antique",
+          "alt": "A spinning wheel from the domestic system",
+          "for": "teach:1"
+        },
+        {
+          "find": "steam locomotive museum",
+          "alt": "A steam locomotive",
+          "for": "hook"
+        }
+      ]
     },
     {
       "unit": "Unit 1: The Industrial Revolution",
@@ -187,95 +345,242 @@
       "send": "SEND/EAL: inventions table with a picture bank. Stretch: explain how one invention caused another change."
     },
     {
-      "unit": "Unit 1: The Industrial Revolution",
+      "unit": "Summer 1: Industry and empire, 1750 to 1900: the Industrial Revolution",
       "n": 3,
-      "title": "Life in the new industrial towns and factories",
-      "duration": 50,
+      "title": "Working lives: men, women and children",
+      "bigQuestion": "Was a job in a factory better or worse than working on the land?",
       "objectives": [
-        "Describe living and working conditions in industrial towns",
-        "Evaluate the case for and against child labour in factories"
+        "To understand how industrialisation changed working lives for men, women and children"
       ],
+      "successCriteria": [
+        "All: describe factory, mine and domestic work",
+        "Most: compare experiences of men, women and children",
+        "Some: evaluate sources about working conditions"
+      ],
+      "crossCurricular": "English: evaluating sources and viewpoint",
+      "smsc": "Moral: fair treatment of workers",
       "keywords": [
         {
-          "term": "urbanisation",
-          "def": "the growth of towns and cities"
-        },
-        {
-          "term": "slum",
-          "def": "a crowded, poor area of housing"
+          "term": "factory system",
+          "def": "work done by machines in large buildings under supervision"
         },
         {
           "term": "child labour",
-          "def": "children working in jobs, often in dangerous conditions"
+          "def": "children doing paid work"
+        },
+        {
+          "term": "domestic service",
+          "def": "working as a servant in someone's home"
         },
         {
           "term": "Factory Act",
-          "def": "a law setting rules for factory working conditions"
+          "def": "a law controlling working conditions in factories"
         },
         {
-          "term": "reform",
-          "def": "a change to make something better"
+          "term": "reliability",
+          "def": "how far a source can be trusted"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Was a job in a factory better or worse than working on the land? Who would you ask?"
+      },
+      "islamicLink": {
+        "text": "Allah commands justice and kindness (An-Nahl 16:90) and forbids taking people's wealth unjustly (Al-Baqarah 2:188). Islam teaches that workers must be treated fairly and paid what they are owed.",
+        "at": "start"
+      },
       "starter": [
-        "Who developed the water frame?",
-        "Why did factories change the way people worked?",
-        "What does urbanisation mean?"
+        {
+          "q": "The domestic system meant making goods:",
+          "a": "At home by hand",
+          "mins": 1,
+          "options": [
+            "At home by hand",
+            "In factories"
+          ]
+        },
+        {
+          "q": "By 1900 most people lived in:",
+          "a": "Towns",
+          "mins": 1,
+          "options": [
+            "Towns",
+            "Villages"
+          ]
+        },
+        {
+          "q": "Name one key change of the Industrial Revolution.",
+          "a": "Steam power, factories, railways, towns, empire trade",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Growing towns",
+          "heading": "Men's work",
           "bullets": [
-            "People moved to towns for work",
-            "Manchester grew very quickly",
-            "Houses were crowded and built cheaply"
+            "Mills, mines, iron works and docks",
+            "Skilled jobs: engineers, mechanics",
+            "Long hours, dangerous machines"
           ],
-          "note": "Manchester's population grew from about 25,000 in 1772 to over 300,000 by 1850. Use approximate. Show a picture of back-to-back houses and ask what problems they might cause."
+          "note": "Hodder 6.2B."
         },
         {
-          "heading": "Health and housing",
+          "heading": "Women's work",
           "bullets": [
-            "Homes often had no clean water or toilets",
-            "Diseases such as cholera spread fast",
-            "Smoke polluted the air"
+            "Textile mills employed many women",
+            "Domestic service: the largest single job for women",
+            "Paid less than men"
           ],
-          "note": "Cholera struck British towns in 1831-32 and 1848-49. Link to Islamic teaching on cleanliness and the importance of clean water and care for the sick."
+          "note": "Hodder 6.2C."
         },
         {
-          "heading": "Working in a mill",
+          "heading": "Children's work",
           "bullets": [
-            "Days were 12 to 14 hours long",
-            "Children worked, as they were small and cheap",
-            "Accidents were common"
+            "Mills: piecers and scavengers",
+            "Mines: trappers opening doors underground",
+            "Reports to Parliament exposed conditions"
           ],
-          "note": "Use evidence from Parliamentary reports, e.g. the Sadler Report of 1832, but warn pupils it is a source with an agenda. Ask pupils what a historian should ask of a report."
+          "note": "Hodder 6.2D. Taught without graphic detail.",
+          "timeline": [
+            {
+              "label": "1833",
+              "text": "Factory Act: no under-9s in textile mills"
+            },
+            {
+              "label": "1842",
+              "text": "Mines Act: no women or boys under 10 underground"
+            },
+            {
+              "label": "1847",
+              "text": "Ten Hours Act"
+            },
+            {
+              "label": "1870",
+              "text": "Education Act"
+            }
+          ]
         },
         {
-          "heading": "Reform begins",
+          "heading": "Evaluating a source",
           "bullets": [
-            "The Factory Act of 1833 limited children's hours",
-            "Children under 9 could not work in textile mills",
-            "Inspectors began to check factories"
+            "Content: what does it say?",
+            "Origin: who, when, why?",
+            "Use: how far can we trust it?"
           ],
-          "note": "The 1833 Act is a milestone but was weak. Four inspectors covered thousands of mills. Ask why laws are not enough without enforcement."
+          "note": "Model with a teacher-written summary of evidence given to an 1832 parliamentary committee.",
+          "model": {
+            "problem": "How useful is evidence given to the 1832 committee?",
+            "steps": [
+              "Content: long hours and beatings described",
+              "Origin: collected by reformers who wanted a new law",
+              "So it may select the worst cases",
+              "Use: useful for conditions, check with other sources"
+            ],
+            "answer": "Useful but possibly one-sided; needs cross-checking"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "The 1842 Mines Act banned underground work for:",
+            "options": [
+              "All men",
+              "Women and boys under 10",
+              "Engineers"
+            ],
+            "answer": 1,
+            "why": "It stopped women and girls, and boys under 10, working underground."
+          }
         }
       ],
       "practice": [
-        "Why did people move to the towns?",
-        "Name two problems in industrial towns.",
-        "What did the 1833 Factory Act do?"
+        {
+          "q": "Why might a mill owner's account differ from a worker's?",
+          "a": "Owners wanted to avoid laws and protect profits; workers felt the hardship",
+          "mins": 1,
+          "model": "An owner had reasons to say things were fine.\nA worker felt the long hours.\nSo their accounts differ because of their purpose."
+        },
+        {
+          "q": "What was a trapper?",
+          "a": "A child who opened and closed ventilation doors in a mine",
+          "mins": 1
+        },
+        {
+          "q": "What was the largest single job for women?",
+          "a": "Domestic service",
+          "mins": 2
+        }
       ],
       "independent": [
-        "Write a diary entry of a 10-year-old mill worker in 1830",
-        "Create a table of positive and negative effects of industrialisation",
-        "Answer in a paragraph: Was the Factory Act of 1833 enough?"
+        {
+          "q": "Core: In the portal response box: 'How useful are the two sources for studying child labour?' Use content, origin and use for each.",
+          "a": "Evaluates both sources using content, origin and purpose; reaches a judgement",
+          "mins": 15,
+          "model": "Source A is useful because it describes twelve-hour shifts. However, it was collected by reformers, so it may focus on the worst cases."
+        },
+        {
+          "q": "Extend: Compare men's and women's experiences of industrial work.",
+          "a": "Similar long hours and danger; women paid less and often also ran homes",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: Why did reform take so long?",
+          "a": "Owners' influence in Parliament, belief in free markets, families needing wages",
+          "mins": 4
+        }
       ],
       "exit": [
-        "Why were children used as factory workers?",
-        "Name one law that improved conditions."
+        {
+          "q": "The 1833 Factory Act applied to:",
+          "a": "Textile mills",
+          "mins": 1,
+          "options": [
+            "Textile mills",
+            "Mines"
+          ]
+        },
+        {
+          "q": "Big question: better or worse than the land?",
+          "a": "Mixed: regular wages and town life, but longer hours, danger and less freedom",
+          "mins": 2
+        }
       ],
-      "homework": "Research a modern case of child labour and compare it briefly with the 1830s.",
-      "send": "SEND/EAL: diary template with sentence starters. Stretch: assess the reliability of the Sadler Report as a source."
+      "homework": "Read the Hodder 6.2 summary and add three facts on women's and children's work to your notes.",
+      "send": "SEND: source evaluation frame. EAL: glossary. Stretch: research Lord Shaftesbury's role.",
+      "resources": [
+        "Understanding History: Key Stage 3 (Hodder, 2019) scheme of work, Unit 6, lessons 6.2B to 6.2D (working lives), worksheets",
+        "Tarbiyyah Secondary History Curriculum Intent (KS3 programme overview); TGA Year 8 pack, History, Summer 1",
+        "Two sources on child labour (portal printable; teacher-written summaries of parliamentary evidence, not quotations)",
+        "Portal response box"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "cotton mill interior machinery museum",
+          "alt": "Machines inside a cotton mill",
+          "for": "hook"
+        },
+        {
+          "find": "coal mine trapdoor museum",
+          "alt": "A mine ventilation door",
+          "for": "teach:3"
+        },
+        {
+          "find": "Victorian servants bells kitchen",
+          "alt": "Servants' bells in a Victorian house",
+          "for": "teach:2"
+        }
+      ]
     },
     {
       "unit": "Unit 1: The Industrial Revolution",
@@ -2922,6 +3227,717 @@
           "find": "nutrition label sugars",
           "alt": "A food label showing sugars",
           "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Industry and empire, 1750 to 1900: the Industrial Revolution",
+      "n": 16,
+      "title": "Site study: Ancoats, Manchester, an industrial landscape",
+      "bigQuestion": "What can old mill buildings tell us that written sources cannot?",
+      "objectives": [
+        "To understand what Ancoats reveals about the industrial city and how to use a site as evidence"
+      ],
+      "successCriteria": [
+        "All: describe the features of Ancoats",
+        "Most: use buildings and maps as evidence",
+        "Some: explain what life was like there"
+      ],
+      "crossCurricular": "Geography: industrial location and urban change",
+      "smsc": "Moral: remembering both progress and suffering",
+      "keywords": [
+        {
+          "term": "industrial suburb",
+          "def": "an area built around factories and workers' homes"
+        },
+        {
+          "term": "cotton mill",
+          "def": "a factory that spins cotton"
+        },
+        {
+          "term": "Cottonopolis",
+          "def": "a nickname for Manchester, centre of the cotton trade"
+        },
+        {
+          "term": "canal",
+          "def": "a man-made waterway"
+        },
+        {
+          "term": "site study",
+          "def": "using a real place as historical evidence"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What can old mill buildings tell us that written sources cannot?"
+      },
+      "starter": [
+        {
+          "q": "Domestic service was the largest job for:",
+          "a": "Women",
+          "mins": 1,
+          "options": [
+            "Women",
+            "Children"
+          ]
+        },
+        {
+          "q": "The Mines Act was in:",
+          "a": "1842",
+          "mins": 1,
+          "options": [
+            "1842",
+            "1833"
+          ]
+        },
+        {
+          "q": "Give one reason sources about child labour might be one-sided.",
+          "a": "Collected by reformers, or given by owners with something to protect",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Cottonopolis",
+          "bullets": [
+            "Manchester led the world in cotton",
+            "Raw cotton came via Liverpool",
+            "Much of it grown by enslaved people in America"
+          ],
+          "note": "Hodder 6.3. Virtual tour with the written guide; link to Spring 2 sugar and slavery."
+        },
+        {
+          "heading": "Ancoats",
+          "bullets": [
+            "Called the world's first industrial suburb",
+            "Murrays' Mills built 1798 to 1806",
+            "Rochdale Canal opened in 1804"
+          ],
+          "note": "Mills, canal wharves and workers' terraces packed together."
+        },
+        {
+          "heading": "Reading the landscape",
+          "bullets": [
+            "Tall mills: steam power, many workers",
+            "Canal: coal in, cotton out",
+            "Tight terraces: crowded housing"
+          ],
+          "note": "Model reading the site.",
+          "model": {
+            "problem": "What does the canal beside the mills tell us?",
+            "steps": [
+              "Mills needed coal for steam",
+              "Coal is heavy: canals carried it cheaply",
+              "Finished cotton left the same way",
+              "So location was chosen for transport"
+            ],
+            "answer": "Mills were placed on the canal to move coal and cotton cheaply"
+          }
+        },
+        {
+          "heading": "Life in Ancoats",
+          "bullets": [
+            "Crowded, smoky streets",
+            "Disease such as cholera",
+            "Friedrich Engels wrote about it in 1845"
+          ],
+          "note": "Engels' account is a famous, critical description of Manchester's workers' districts.",
+          "compare": {
+            "left": {
+              "title": "What the site shows",
+              "points": [
+                "size of mills",
+                "canal links",
+                "street layout"
+              ]
+            },
+            "right": {
+              "title": "What it cannot show",
+              "points": [
+                "people's feelings",
+                "wages",
+                "daily routines"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Why were mills built beside the Rochdale Canal?",
+            "options": [
+              "For the view",
+              "To move coal and cotton cheaply",
+              "For fishing"
+            ],
+            "answer": 1,
+            "why": "Canals carried heavy coal in and goods out cheaply."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "What was Manchester's nickname?",
+          "a": "Cottonopolis",
+          "mins": 1,
+          "model": "Manchester spun more cotton than anywhere.\nPeople joined 'cotton' and 'polis', city.\nCottonopolis."
+        },
+        {
+          "q": "When did the Rochdale Canal open?",
+          "a": "1804",
+          "mins": 1
+        },
+        {
+          "q": "Give one limit of a site as evidence.",
+          "a": "It cannot show feelings, wages or daily life",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Using the virtual tour guide and the 1849 map extract, write a site report in the portal response box: what Ancoats tells us about industry, transport and living conditions.",
+          "a": "Three sections with site evidence and explanation; mentions limits",
+          "mins": 15,
+          "model": "Industry: the six-storey mills show steam power drove large-scale production with hundreds of workers."
+        },
+        {
+          "q": "Extend: How does Ancoats link to slavery and empire?",
+          "a": "Its cotton came largely from slave plantations in the American South",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: How should a site like Ancoats be remembered today?",
+          "a": "As both an achievement and a place of hardship and links to slavery",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Ancoats is in:",
+          "a": "Manchester",
+          "mins": 1,
+          "options": [
+            "Manchester",
+            "Birmingham"
+          ]
+        },
+        {
+          "q": "Big question: what can buildings tell us?",
+          "a": "Scale, layout, transport and crowding, but not feelings or wages",
+          "mins": 2
+        }
+      ],
+      "homework": "Look at Ancoats on a modern map and list two old features still there.",
+      "send": "SEND: report frame with headings. EAL: glossary. Stretch: research how Ancoats has been regenerated.",
+      "resources": [
+        "Understanding History: Key Stage 3 (Hodder, 2019) scheme of work, Unit 6, lesson 6.3 (site study, virtual tour)",
+        "Ancoats virtual tour written guide and map extract (portal printable; archive map and site photographs)",
+        "Tarbiyyah Secondary History Curriculum Intent (KS3 programme overview); TGA Year 8 pack, History, Summer 1",
+        "Portal response box"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Murrays Mills Ancoats",
+          "alt": "Murrays' Mills, Ancoats",
+          "for": "hook"
+        },
+        {
+          "find": "Rochdale Canal Ancoats",
+          "alt": "The Rochdale Canal in Ancoats",
+          "for": "teach:2"
+        },
+        {
+          "find": "Manchester 1849 map Ancoats",
+          "alt": "An old map of Ancoats",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Industry and empire, 1750 to 1900: the Industrial Revolution",
+      "n": 17,
+      "title": "Peterloo, 1819: protest and the vote",
+      "bigQuestion": "Why did a peaceful meeting in Manchester end in bloodshed, and what changed because of it?",
+      "objectives": [
+        "To understand the causes, events and consequences of the Peterloo Massacre"
+      ],
+      "successCriteria": [
+        "All: explain why people wanted the vote",
+        "Most: describe what happened on 16 August 1819",
+        "Some: assess the consequences of Peterloo"
+      ],
+      "crossCurricular": "Citizenship: democracy, voting and peaceful protest",
+      "smsc": "Moral: standing up for justice peacefully",
+      "keywords": [
+        {
+          "term": "suffrage",
+          "def": "the right to vote"
+        },
+        {
+          "term": "reform",
+          "def": "a change to improve something"
+        },
+        {
+          "term": "yeomanry",
+          "def": "local volunteer cavalry"
+        },
+        {
+          "term": "massacre",
+          "def": "the killing of many people who cannot defend themselves"
+        },
+        {
+          "term": "Chartists",
+          "def": "a later movement demanding votes for all men"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you had no vote and no say, how would you try to change things?"
+      },
+      "islamicLink": {
+        "text": "Allah commands believers to stand firm for justice, even against themselves (An-Nisa 4:135). Peterloo raises questions about rulers' duty of justice and people's right to speak.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Ancoats was called the world's first:",
+          "a": "Industrial suburb",
+          "mins": 1,
+          "options": [
+            "Industrial suburb",
+            "Railway town"
+          ]
+        },
+        {
+          "q": "Manchester's nickname was:",
+          "a": "Cottonopolis",
+          "mins": 1,
+          "options": [
+            "Cottonopolis",
+            "Steamtown"
+          ]
+        },
+        {
+          "q": "Give one limit of a site as evidence.",
+          "a": "No feelings, wages or daily life",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Why protest?",
+          "bullets": [
+            "Few men could vote; no women",
+            "New cities like Manchester had no MP",
+            "Hard times after 1815: high bread prices"
+          ],
+          "note": "Hodder 6.4A. The Corn Laws (1815) kept bread prices high."
+        },
+        {
+          "heading": "16 August 1819",
+          "bullets": [
+            "About 60,000 gathered at St Peter's Field",
+            "Henry Hunt came to speak",
+            "Yeomanry and soldiers charged the crowd"
+          ],
+          "note": "Hodder 6.4B. About 18 people died and hundreds were injured. No graphic detail.",
+          "timeline": [
+            {
+              "label": "1815",
+              "text": "Corn Laws; end of the war with France"
+            },
+            {
+              "label": "16 Aug 1819",
+              "text": "Peterloo"
+            },
+            {
+              "label": "1819",
+              "text": "The Six Acts restrict meetings"
+            },
+            {
+              "label": "1832",
+              "text": "Great Reform Act"
+            },
+            {
+              "label": "1838",
+              "text": "Chartist movement begins"
+            }
+          ]
+        },
+        {
+          "heading": "Why 'Peterloo'?",
+          "bullets": [
+            "A bitter joke on Waterloo (1815)",
+            "Soldiers used against their own people",
+            "The name spread the story"
+          ],
+          "note": "The Manchester Guardian newspaper was founded in 1821, partly in response."
+        },
+        {
+          "heading": "Consequences",
+          "bullets": [
+            "Short term: the Six Acts restricted protest",
+            "Long term: pressure for reform grew",
+            "1832 Reform Act gave new cities MPs"
+          ],
+          "note": "Model a consequences judgement.",
+          "model": {
+            "problem": "Was Peterloo a turning point?",
+            "steps": [
+              "Short term: the government cracked down",
+              "But: public anger and press coverage grew",
+              "Long term: 1832 Reform Act and the Chartists",
+              "Judgement: a step towards reform, not an instant change"
+            ],
+            "answer": "A judgement weighing short and long term consequences"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Peterloo took place in:",
+            "options": [
+              "London, 1832",
+              "Manchester, 1819",
+              "Birmingham, 1851"
+            ],
+            "answer": 1,
+            "why": "It happened at St Peter's Field, Manchester, on 16 August 1819."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Why was it called Peterloo?",
+          "a": "St Peter's Field plus a bitter reference to the Battle of Waterloo",
+          "mins": 1,
+          "model": "The meeting was at St Peter's Field.\nWaterloo was a famous recent battle.\nSoldiers charging civilians made people mock: Peterloo."
+        },
+        {
+          "q": "What were the Six Acts?",
+          "a": "Laws in 1819 restricting meetings and the press",
+          "mins": 2
+        },
+        {
+          "q": "Which act in 1832 gave Manchester MPs?",
+          "a": "The Great Reform Act",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: In the portal response box: 'How significant was Peterloo?' (two PEE paragraphs: short-term and long-term consequences, then a judgement).",
+          "a": "Short-term repression; long-term reform pressure; justified judgement",
+          "mins": 15,
+          "model": "Point: in the short term Peterloo led to repression. Evidence: the Six Acts of 1819 restricted meetings. Explain: the government feared revolution."
+        },
+        {
+          "q": "Extend: Why might a magistrate in 1819 and a mill worker remember Peterloo differently?",
+          "a": "Magistrates feared riot and defended order; workers saw peaceful people attacked",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: How did the 1832 Reform Act fall short of what Peterloo protesters wanted?",
+          "a": "Most working men still could not vote; no secret ballot; no women",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "About how many people gathered at Peterloo?",
+          "a": "60,000",
+          "mins": 1,
+          "options": [
+            "60,000",
+            "600"
+          ]
+        },
+        {
+          "q": "Big question: what changed because of Peterloo?",
+          "a": "Not much at once; but it fuelled demands that led to 1832 and later reforms",
+          "mins": 2
+        }
+      ],
+      "homework": "Make a revision card on Peterloo: causes, events, consequences.",
+      "send": "SEND: PEE frame. EAL: glossary of vote, reform, protest. Stretch: research the Chartists' six points.",
+      "resources": [
+        "Understanding History: Key Stage 3 (Hodder, 2019) scheme of work, Unit 6, lessons 6.4A to 6.4C (Peterloo), worksheets",
+        "Tarbiyyah Secondary History Curriculum Intent (KS3 programme overview); TGA Year 8 pack, History, Summer 1",
+        "Portal response box"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Peterloo Memorial Manchester",
+          "alt": "The Peterloo Memorial in Manchester",
+          "for": "hook"
+        },
+        {
+          "find": "Free Trade Hall Manchester",
+          "alt": "The site of St Peter's Field today",
+          "for": "teach:2"
+        },
+        {
+          "find": "ballot box",
+          "alt": "A ballot box",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Industry and empire, 1750 to 1900: the Industrial Revolution",
+      "n": 18,
+      "title": "Families in industrial Britain and the Great Exhibition, 1851; unit quiz",
+      "bigQuestion": "Was the Great Exhibition a celebration of Britain, or of the whole world's work?",
+      "objectives": [
+        "To understand family life in industrial Britain and what the Great Exhibition showed about the age"
+      ],
+      "successCriteria": [
+        "All: describe how family life changed",
+        "Most: explain the purpose of the Great Exhibition",
+        "Some: complete the unit quiz"
+      ],
+      "crossCurricular": "Design and technology: prefabrication and iron and glass building",
+      "smsc": "Cultural: whose work and whose wealth is celebrated",
+      "keywords": [
+        {
+          "term": "Great Exhibition",
+          "def": "a show of industry from around the world, Hyde Park, 1851"
+        },
+        {
+          "term": "Crystal Palace",
+          "def": "the glass and iron building for the Exhibition"
+        },
+        {
+          "term": "middle class",
+          "def": "families of professionals, managers and shop owners"
+        },
+        {
+          "term": "working class",
+          "def": "families who did manual work for wages"
+        },
+        {
+          "term": "legacy",
+          "def": "what something leaves for the future"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If Britain held an exhibition today to show off, what would you put in it?"
+      },
+      "starter": [
+        {
+          "q": "Peterloo was in:",
+          "a": "1819",
+          "mins": 1,
+          "options": [
+            "1819",
+            "1851"
+          ]
+        },
+        {
+          "q": "The Great Reform Act was in:",
+          "a": "1832",
+          "mins": 1,
+          "options": [
+            "1832",
+            "1819"
+          ]
+        },
+        {
+          "q": "Name one consequence of Peterloo.",
+          "a": "Six Acts, press anger, pressure for reform",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Family life",
+          "bullets": [
+            "Working-class families: several earners",
+            "Middle-class families grew in towns",
+            "Homes, schools and churches built"
+          ],
+          "note": "Hodder 6.7."
+        },
+        {
+          "heading": "The Great Exhibition",
+          "bullets": [
+            "Hyde Park, 1851",
+            "Crystal Palace by Joseph Paxton",
+            "About 6 million visits"
+          ],
+          "note": "Hodder 6.8. Cheap railway tickets let working families visit.",
+          "table": {
+            "head": [
+              "Exhibits",
+              "From"
+            ],
+            "rows": [
+              [
+                "steam engines and machines",
+                "Britain"
+              ],
+              [
+                "textiles and carpets",
+                "India and Turkey"
+              ],
+              [
+                "porcelain",
+                "China and France"
+              ],
+              [
+                "inventions and tools",
+                "the USA"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "What did it show?",
+          "bullets": [
+            "Britain's industrial lead",
+            "Goods from the empire and the world",
+            "Profits built South Kensington museums"
+          ],
+          "note": "The Science Museum, the V&A and the Natural History Museum grew from its profits."
+        },
+        {
+          "heading": "Interpreting the Exhibition",
+          "bullets": [
+            "Pride in invention",
+            "Display of empire's wealth",
+            "Whose labour made the goods?"
+          ],
+          "note": "Model an interpretation answer.",
+          "model": {
+            "problem": "A celebration of Britain or the world?",
+            "steps": [
+              "Britain: half the space for British goods",
+              "World: exhibits from many countries",
+              "But: empire goods shown as British wealth",
+              "Judgement: mainly a showcase of British power"
+            ],
+            "answer": "A judgement with evidence for both sides"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "The Crystal Palace was mainly made of:",
+            "options": [
+              "Brick and stone",
+              "Glass and iron",
+              "Wood"
+            ],
+            "answer": 1,
+            "why": "Paxton's design used prefabricated iron and glass panels."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Who designed the Crystal Palace?",
+          "a": "Joseph Paxton",
+          "mins": 1,
+          "model": "The Exhibition needed a huge building fast.\nPaxton, a gardener who built glasshouses, designed it.\nIt was made of glass and iron."
+        },
+        {
+          "q": "How did working families get there?",
+          "a": "Cheap railway excursion tickets",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Unit quiz in the portal (20 questions: big picture, working lives, Ancoats, Peterloo, families and the Great Exhibition).",
+          "a": "Answers on the quiz mark scheme",
+          "mins": 15,
+          "model": "Teacher reads question 1 and shows the answer format."
+        },
+        {
+          "q": "Core: In the portal response box: 'Was the Great Exhibition a celebration of Britain or the world?' (one paragraph).",
+          "a": "A judgement with evidence for both sides",
+          "mins": 8
+        },
+        {
+          "q": "Stretch: What is the Exhibition's legacy today?",
+          "a": "Museums in South Kensington; ideas of world fairs; pride in science",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "The Great Exhibition was in:",
+          "a": "1851",
+          "mins": 1,
+          "options": [
+            "1851",
+            "1801"
+          ]
+        },
+        {
+          "q": "Big question: Britain or the world?",
+          "a": "Reasoned judgement; most argue it showcased British industry and empire",
+          "mins": 1
+        }
+      ],
+      "homework": "Correct your quiz with the feedback; next half term: the British Empire.",
+      "send": "SEND: quiz read aloud; paragraph frame. EAL: glossary. Stretch: research one non-British exhibit.",
+      "resources": [
+        "Understanding History: Key Stage 3 (Hodder, 2019) scheme of work, Unit 6, lessons 6.7 and 6.8 (families; the Great Exhibition), worksheets",
+        "Tarbiyyah Secondary History Curriculum Intent (KS3 programme overview); TGA Year 8 pack, History, Summer 1",
+        "Industry and empire unit quiz (portal quiz; assessed)",
+        "Portal response box"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Crystal Palace 1851 interior",
+          "alt": "Inside the Crystal Palace",
+          "for": "teach:2"
+        },
+        {
+          "find": "Victoria and Albert Museum exterior",
+          "alt": "The Victoria and Albert Museum",
+          "for": "teach:3"
+        },
+        {
+          "find": "Hyde Park London",
+          "alt": "Hyde Park, London",
+          "for": "hook"
         }
       ]
     }
