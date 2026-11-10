@@ -3755,6 +3755,750 @@
           "for": "teach:3"
         }
       ]
+    },
+    {
+      "unit": "Summer 2: Sorting: algorithms and a Python sorting program",
+      "n": 20,
+      "title": "End-of-year computing test",
+      "assessmentMode": "test",
+      "duration": 50,
+      "bigQuestion": "Which Year 8 topic surprised you most?",
+      "objectives": [
+        "To understand how well I know Year 8 computing, so I can set targets for Year 9"
+      ],
+      "successCriteria": [
+        "All: answer knowledge questions on binary, logic and networks",
+        "Most: trace a short Python program",
+        "Some: write a short Python program to solve a problem"
+      ],
+      "smsc": "Moral: honest effort under test conditions",
+      "keywords": [
+        {
+          "term": "binary",
+          "def": "base 2: numbers made of 0s and 1s"
+        },
+        {
+          "term": "logic gate",
+          "def": "a component that gives an output from inputs, such as AND"
+        },
+        {
+          "term": "protocol",
+          "def": "a set of rules for communication"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which Year 8 topic surprised you most?",
+        "a": "Any honest answer: binary, logic gates, how packets travel, Python."
+      },
+      "starter": [
+        {
+          "q": "Binary 101 is ...",
+          "a": "5",
+          "mins": 1,
+          "options": [
+            "5",
+            "3",
+            "101"
+          ]
+        },
+        {
+          "q": "What does AND output for 1 and 0?",
+          "a": "0",
+          "mins": 1
+        },
+        {
+          "q": "HTTPS is ...",
+          "a": "secure",
+          "mins": 1,
+          "options": [
+            "secure",
+            "slower only"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The test",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Section",
+              "Marks",
+              "Time"
+            ],
+            "rows": [
+              [
+                "A: knowledge",
+                "20",
+                "15 min"
+              ],
+              [
+                "B: trace Python",
+                "10",
+                "10 min"
+              ],
+              [
+                "C: short coding question",
+                "10",
+                "10 min"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Year 8 recap",
+          "bullets": [],
+          "note": "",
+          "diagram": {
+            "centre": "Year 8 computing",
+            "items": [
+              "Searching and copyright",
+              "Binary and logic",
+              "Networks and protocols",
+              "Python: variables, selection, loops"
+            ]
+          }
+        },
+        {
+          "heading": "Tips",
+          "bullets": [
+            "Use a trace table",
+            "Check indentation in Python",
+            "Test your code with two inputs"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "In Python, a for loop ...",
+            "options": [
+              "repeats a set number of times",
+              "chooses a path",
+              "stores text"
+            ],
+            "answer": 0,
+            "why": "Count-controlled iteration."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Warm-up: what does print(7 // 2) output?",
+          "a": "3",
+          "mins": 3,
+          "model": "I do: 7 % 2 gives 1."
+        }
+      ],
+      "independent": [
+        {
+          "q": "End-of-year computing test (portal quiz with a short Python task), timed.",
+          "a": "Completed test marked against the mark scheme.",
+          "mins": 22,
+          "model": "The teacher reads the instructions."
+        }
+      ],
+      "exit": [
+        {
+          "q": "After the test, the next step is ...",
+          "a": "set targets from the feedback",
+          "mins": 1,
+          "options": [
+            "set targets from the feedback",
+            "forget it"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Which Year 8 topic surprised you most?",
+          "a": "Any honest answer: binary, logic gates, how packets travel, Python.",
+          "mins": 2
+        }
+      ],
+      "homework": "Note one topic to revise from the test.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 8 (sorting algorithms and a Python sorting program; no secondary scheme of work supplied)",
+        "A free browser Python editor (for example Trinket or replit through the school; TO CONFIRM)",
+        "End-of-year computing test and mark scheme (teacher-written, portal; to be made in the term resource pass)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Exam paper desk pencil",
+          "alt": "A test",
+          "for": "hook"
+        },
+        {
+          "find": "Binary code screen",
+          "alt": "Binary",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Sorting: algorithms and a Python sorting program",
+      "n": 21,
+      "title": "Why order matters: bubble sort by hand",
+      "duration": 50,
+      "bigQuestion": "Why is a dictionary in alphabetical order?",
+      "objectives": [
+        "To understand why sorted data is useful and how the bubble sort algorithm works"
+      ],
+      "successCriteria": [
+        "All: give two reasons for sorting data",
+        "Most: carry out one pass of bubble sort by hand",
+        "Some: count the passes and comparisons needed"
+      ],
+      "crossCurricular": "Maths: ordering numbers",
+      "smsc": "Moral: patience and precision",
+      "keywords": [
+        {
+          "term": "sort",
+          "def": "to arrange data in order"
+        },
+        {
+          "term": "bubble sort",
+          "def": "compares neighbouring items and swaps them if out of order, repeating until sorted"
+        },
+        {
+          "term": "pass",
+          "def": "one trip through the list"
+        },
+        {
+          "term": "swap",
+          "def": "exchange two items' positions"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why is a dictionary in alphabetical order?",
+        "a": "So we can find words quickly: sorted data makes searching faster."
+      },
+      "islamicLink": {
+        "text": "The Qur'an is arranged in a fixed order of surahs, and the mushaf has numbered pages and juz': order helps us find and memorise.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Binary search needs ...",
+          "a": "sorted data",
+          "mins": 1,
+          "options": [
+            "sorted data",
+            "unsorted data"
+          ]
+        },
+        {
+          "q": "Name a Python loop.",
+          "a": "for",
+          "mins": 1
+        },
+        {
+          "q": "Ascending order is ...",
+          "a": "smallest to largest",
+          "mins": 1,
+          "options": [
+            "smallest to largest",
+            "largest to smallest"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Why sort?",
+          "bullets": [
+            "Faster searching (binary search)",
+            "Leaderboards and rankings",
+            "Finding the largest or smallest"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "One pass of bubble sort",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Step",
+              "List",
+              "Compare"
+            ],
+            "rows": [
+              [
+                "Start",
+                "5 2 4 1",
+                ""
+              ],
+              [
+                "1",
+                "2 5 4 1",
+                "5 > 2: swap"
+              ],
+              [
+                "2",
+                "2 4 5 1",
+                "5 > 4: swap"
+              ],
+              [
+                "3",
+                "2 4 1 5",
+                "5 > 1: swap"
+              ],
+              [
+                "End of pass 1",
+                "2 4 1 5",
+                "Largest is at the end"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Keep going",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Compare neighbours",
+            "Swap if out of order",
+            "Reach the end: one pass done",
+            "Repeat passes",
+            "Stop when a pass makes no swaps"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "After one pass of bubble sort in ascending order ...",
+            "options": [
+              "the largest item is at the end",
+              "the list is sorted",
+              "the smallest is at the end"
+            ],
+            "answer": 0,
+            "why": "The largest bubbles to the end."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Do pass 2 on 2 4 1 5.",
+          "a": "2 4 → no swap; 4 1 → swap: 2 1 4 5; 4 5 → no swap. Result 2 1 4 5.",
+          "mins": 4,
+          "model": "I do: pass 1 on 5 2 4 1 (above)."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: bubble sort 6 3 8 1 9 2 by hand, showing every pass and swap; count passes and comparisons.",
+          "a": "Sorted 1 2 3 6 8 9 with all passes shown.",
+          "mins": 12,
+          "model": "The teacher does pass 1."
+        },
+        {
+          "q": "Extend: why is bubble sort slow for large lists?",
+          "a": "It compares neighbours many times; work grows roughly with the square of the list size.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Bubble sort stops when ...",
+          "a": "a pass makes no swaps",
+          "mins": 1,
+          "options": [
+            "a pass makes no swaps",
+            "after one pass"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Why is a dictionary in alphabetical order?",
+          "a": "So we can find words quickly: sorted data makes searching faster.",
+          "mins": 2
+        }
+      ],
+      "homework": "Sort five family members' heights (or ages) by hand using bubble sort.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 8 (sorting algorithms and a Python sorting program; no secondary scheme of work supplied)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Number cards cut from paper (optional)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Bubbles rising water",
+          "alt": "Bubbles rising, like large items moving up",
+          "for": "hook"
+        },
+        {
+          "find": "Sorted books on shelf",
+          "alt": "Sorted books",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Sorting: algorithms and a Python sorting program",
+      "n": 22,
+      "title": "A sorting program in Python using a list",
+      "duration": 50,
+      "bigQuestion": "How would you tell a computer to 'swap two items' when it only follows exact steps?",
+      "objectives": [
+        "To understand how to implement bubble sort in Python with a list, nested loops and a swap"
+      ],
+      "successCriteria": [
+        "All: create and print a list in Python",
+        "Most: write the swap and the inner loop",
+        "Some: add a flag to stop early when no swaps happen"
+      ],
+      "crossCurricular": "Maths: ordering and counting",
+      "smsc": "Moral: persistence when debugging",
+      "keywords": [
+        {
+          "term": "list",
+          "def": "an ordered collection of items in Python, e.g. [5, 2, 4]"
+        },
+        {
+          "term": "index",
+          "def": "the position of an item; Python starts at 0"
+        },
+        {
+          "term": "nested loop",
+          "def": "a loop inside another loop"
+        },
+        {
+          "term": "flag",
+          "def": "a variable that records whether something happened"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How would you tell a computer to 'swap two items' when it only follows exact steps?",
+        "a": "Store one in a temporary variable, or use Python's a, b = b, a."
+      },
+      "starter": [
+        {
+          "q": "After one pass, the largest is ...",
+          "a": "at the end",
+          "mins": 1,
+          "options": [
+            "at the end",
+            "at the start"
+          ]
+        },
+        {
+          "q": "Python lists start at index ...",
+          "a": "0",
+          "mins": 1
+        },
+        {
+          "q": "A nested loop is ...",
+          "a": "a loop inside a loop",
+          "mins": 1,
+          "options": [
+            "a loop inside a loop",
+            "two separate loops"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Lists and indexes",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "python",
+            "text": "marks = [5, 2, 4, 1]\nprint(marks[0])\nprint(len(marks))",
+            "output": "5\n4"
+          }
+        },
+        {
+          "heading": "Bubble sort in Python",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "python",
+            "text": "nums = [5, 2, 4, 1]\nn = len(nums)\nfor p in range(n - 1):\n    swapped = False\n    for i in range(n - 1 - p):\n        if nums[i] > nums[i + 1]:\n            nums[i], nums[i + 1] = nums[i + 1], nums[i]\n            swapped = True\n    if not swapped:\n        break\nprint(nums)",
+            "output": "[1, 2, 4, 5]"
+          }
+        },
+        {
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "for i in range(n): nums[i + 1] goes past the end (IndexError)",
+            "right": "Stop at n - 1 so i + 1 is always a valid index"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "What does nums[i], nums[i + 1] = nums[i + 1], nums[i] do?",
+            "options": [
+              "Swaps the two items",
+              "Deletes both",
+              "Adds them"
+            ],
+            "answer": 0,
+            "why": "Python's tuple swap."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Trace the first pass on [3, 1, 2].",
+          "a": "[1, 3, 2] then [1, 2, 3].",
+          "mins": 4,
+          "model": "I do: [5, 2, 4, 1] → [2, 5, 4, 1] → [2, 4, 5, 1] → [2, 4, 1, 5]."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Type and run the bubble sort; test it with three lists (already sorted, reversed, with repeats); save and share the link in the portal.",
+          "a": "A working program passing all three tests.",
+          "mins": 12,
+          "model": "The teacher types the outer loop live."
+        },
+        {
+          "q": "Extend: sort a list of names alphabetically.",
+          "a": "Works the same: Python compares strings alphabetically.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Python list indexes start at ...",
+          "a": "0",
+          "mins": 1,
+          "options": [
+            "0",
+            "1"
+          ]
+        },
+        {
+          "q": "Back to our ponder: How would you tell a computer to 'swap two items' when it only follows exact steps?",
+          "a": "Store one in a temporary variable, or use Python's a, b = b, a.",
+          "mins": 2
+        }
+      ],
+      "homework": "Change your program to sort in descending order (hint: flip > to <).",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 8 (sorting algorithms and a Python sorting program; no secondary scheme of work supplied)",
+        "A free browser Python editor (for example Trinket or replit through the school; TO CONFIRM)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Python code on screen",
+          "alt": "Python code",
+          "for": "hook"
+        },
+        {
+          "find": "Numbered boxes in a row",
+          "alt": "A list with indexes",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Sorting: algorithms and a Python sorting program",
+      "n": 23,
+      "title": "Year 8 review: what we learned",
+      "duration": 50,
+      "bigQuestion": "How does binary connect to Python programs and to networks?",
+      "objectives": [
+        "To understand how the topics of Year 8 computing connect and set targets for Year 9"
+      ],
+      "successCriteria": [
+        "All: name the Year 8 topics",
+        "Most: explain one link between topics",
+        "Some: set a specific Year 9 target from my test feedback"
+      ],
+      "smsc": "Moral: honest self-review",
+      "keywords": [
+        {
+          "term": "abstraction",
+          "def": "removing unnecessary detail"
+        },
+        {
+          "term": "decomposition",
+          "def": "breaking a problem into smaller parts"
+        },
+        {
+          "term": "target",
+          "def": "a specific next step"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How does binary connect to Python programs and to networks?",
+        "a": "Everything a program stores and every packet sent is binary underneath."
+      },
+      "starter": [
+        {
+          "q": "Bubble sort swaps ...",
+          "a": "neighbours",
+          "mins": 1,
+          "options": [
+            "neighbours",
+            "the first and last"
+          ]
+        },
+        {
+          "q": "What does len([3, 4, 5]) return?",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "A flag records ...",
+          "a": "whether something happened",
+          "mins": 1,
+          "options": [
+            "whether something happened",
+            "a colour"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Year 8 connections",
+          "bullets": [],
+          "note": "",
+          "diagram": {
+            "centre": "Year 8",
+            "items": [
+              "Binary underpins data",
+              "Logic gates make decisions",
+              "Networks send packets",
+              "Python uses selection and loops",
+              "Sorting needs loops and lists"
+            ]
+          }
+        },
+        {
+          "heading": "Test feedback",
+          "bullets": [
+            "Read your marked test in the portal",
+            "Find your weakest section",
+            "Choose one target"
+          ],
+          "note": "Marks are private."
+        },
+        {
+          "heading": "Year 9 preview",
+          "bullets": [
+            "Python revisited",
+            "Computer systems",
+            "Databases and web design"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Which is a specific target?",
+            "options": [
+              "'Practise five Python for-loop tasks by September'",
+              "'Do better'",
+              "'Revise'"
+            ],
+            "answer": 0,
+            "why": "Specific and checkable."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Turn 'improve at binary' into a specific target.",
+          "a": "'Convert ten 8-bit numbers each week until confident.'",
+          "mins": 4,
+          "model": "I do: 'Trace two Python programs a week with a trace table.'"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Year 8 reflection in the portal response box: three things learned, one link between topics, one target from test feedback, and a summer practice plan.",
+          "a": "A specific, honest reflection.",
+          "mins": 15,
+          "model": "The teacher models a reflection."
+        }
+      ],
+      "exit": [
+        {
+          "q": "Decomposition means ...",
+          "a": "breaking a problem into parts",
+          "mins": 1,
+          "options": [
+            "breaking a problem into parts",
+            "removing detail"
+          ]
+        },
+        {
+          "q": "Back to our ponder: How does binary connect to Python programs and to networks?",
+          "a": "Everything a program stores and every packet sent is binary underneath.",
+          "mins": 2
+        }
+      ],
+      "homework": "Try one Python challenge over the summer.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 8 (sorting algorithms and a Python sorting program; no secondary scheme of work supplied)",
+        "A free browser Python editor (for example Trinket or replit through the school; TO CONFIRM)",
+        "End-of-year test feedback (portal)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Puzzle pieces connected",
+          "alt": "Connections",
+          "for": "teach:1"
+        },
+        {
+          "find": "Road ahead",
+          "alt": "Year 9 ahead",
+          "for": "hook"
+        }
+      ]
     }
   ]
 }
