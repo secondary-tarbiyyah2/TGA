@@ -2,7 +2,7 @@
   "subject": "Geography",
   "year": "y4",
   "board": "National Curriculum (KS1-3), aligned to AQA GCSE 9-1",
-  "source": "National Curriculum (KS2 geography: volcanoes, earthquakes, structure of the Earth, Europe case study); school AQA tectonics sequence used for subject knowledge | Spring 1 2027 (lessons 5 to 6): Tarbiyyah Primary Year 4 curriculum map and Geography Long Term Plan 2023-24 (Marvellous Medicine: UK physical features); TGA Year 4 pack | Spring 2 2027: TGA Year 4 pack, History and geography, Misty Mountain, Sierra (mountains, map skills) | Summer 1 2027 (lessons 12 to 18 and 19): TGA Year 4 pack, History and geography, Blue Abyss (oceans, ocean floor, zones and currents, Great Barrier Reef, review, assessed enquiry)",
+  "source": "National Curriculum (KS2 geography: volcanoes, earthquakes, structure of the Earth, Europe case study); school AQA tectonics sequence used for subject knowledge | Spring 1 2027 (lessons 5 to 6): Tarbiyyah Primary Year 4 curriculum map and Geography Long Term Plan 2023-24 (Marvellous Medicine: UK physical features); TGA Year 4 pack | Spring 2 2027: TGA Year 4 pack, History and geography, Misty Mountain, Sierra (mountains, map skills) | Summer 1 2027 (lessons 12 to 18 and 19): TGA Year 4 pack, History and geography, Blue Abyss (oceans, ocean floor, zones and currents, Great Barrier Reef, review, assessed enquiry) | Summer 2 2027 (lessons 20 to 24): TGA Year 4 pack, History and geography, Road Trip USA (states and regions, route planning with a local route fieldwork option, landscapes, climate compared with the UK, review with the end-of-year geography quiz); real figures rounded",
   "lessons": [
     {
       "unit": "Unit 1: Restless Earth",
@@ -3843,6 +3843,1153 @@
           "find": "sugar cane fields Queensland",
           "alt": "Farmland in Queensland",
           "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: The USA (Road Trip USA)",
+      "n": 20,
+      "title": "The USA on a map: states, capital and regions",
+      "bigQuestion": "How can one country have 50 different states and still be one country?",
+      "objectives": [
+        "To understand where the USA is and how it is divided into states and regions"
+      ],
+      "successCriteria": [
+        "All: locate the USA, its neighbours and its oceans",
+        "Most: name the capital and three states",
+        "Some: describe the four regions of the USA"
+      ],
+      "crossCurricular": "Maths: reading a map key and comparing sizes",
+      "smsc": "Social: how people with different ways can live as one nation",
+      "keywords": [
+        {
+          "term": "state",
+          "def": "one of the 50 parts of the USA, each with its own government"
+        },
+        {
+          "term": "capital",
+          "def": "the city where a country is governed from"
+        },
+        {
+          "term": "region",
+          "def": "a large area with things in common"
+        },
+        {
+          "term": "border",
+          "def": "the line where one country or state meets another"
+        },
+        {
+          "term": "continent",
+          "def": "a very large area of land"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What do you already know about the USA? Where did you learn it?"
+      },
+      "starter": [
+        {
+          "q": "The Great Barrier Reef is off the coast of:",
+          "a": "Australia",
+          "mins": 1,
+          "options": [
+            "Australia",
+            "Brazil"
+          ]
+        },
+        {
+          "q": "The deepest part of the ocean is the:",
+          "a": "Mariana Trench",
+          "mins": 1,
+          "options": [
+            "Mariana Trench",
+            "Thames Estuary"
+          ]
+        },
+        {
+          "q": "Name the five oceans.",
+          "a": "Pacific, Atlantic, Indian, Southern, Arctic",
+          "mins": 2
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Where is the USA?",
+          "bullets": [
+            "In the continent of North America",
+            "Canada to the north, Mexico to the south",
+            "Pacific to the west, Atlantic to the east"
+          ],
+          "note": "Find North America on the world map, then the USA in the middle of it."
+        },
+        {
+          "heading": "50 states",
+          "bullets": [
+            "48 states joined together",
+            "Alaska in the far north-west",
+            "Hawaii: islands in the Pacific"
+          ],
+          "note": "Alaska is the largest state. Texas and California are also very big."
+        },
+        {
+          "heading": "The capital",
+          "bullets": [
+            "Washington, D.C. is the capital",
+            "It is not part of any state",
+            "The biggest city is New York City"
+          ],
+          "note": "Many people think New York is the capital. It is not."
+        },
+        {
+          "heading": "Four regions",
+          "bullets": [
+            "Northeast and Midwest",
+            "South and West",
+            "Each region has its own landscapes and climate"
+          ],
+          "note": "These are the four regions the US government uses for its statistics.",
+          "diagram": {
+            "centre": "USA regions",
+            "items": [
+              "Northeast",
+              "Midwest",
+              "South",
+              "West"
+            ]
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "The capital of the USA is:",
+            "options": [
+              "New York City",
+              "Washington, D.C.",
+              "Los Angeles"
+            ],
+            "answer": 1,
+            "why": "Washington, D.C. is the capital; New York City is the largest city."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Which country borders the USA to the south?",
+          "a": "Mexico",
+          "mins": 1,
+          "model": "I find the USA on the map.\nI look below it, to the south.\nThe country there is Mexico."
+        },
+        {
+          "q": "Which state is made of islands in the Pacific?",
+          "a": "Hawaii",
+          "mins": 1
+        },
+        {
+          "q": "Which ocean is on the east coast?",
+          "a": "The Atlantic Ocean",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: On the outline map, label Canada, Mexico, the Pacific and Atlantic oceans, Washington, D.C., Alaska, Hawaii and three more states; shade the four regions.",
+          "a": "All features labelled correctly; four regions shaded",
+          "mins": 13,
+          "model": "Teacher labels Canada and the Pacific Ocean first and shows how to use the atlas index."
+        },
+        {
+          "q": "Extend: Write three facts about the USA using the words state, border and capital.",
+          "a": "For example: The USA has 50 states. It borders Canada and Mexico. Its capital is Washington, D.C.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why might Alaska and Hawaii feel very different from the rest of the USA?",
+          "a": "They are separated from the other 48 states; Alaska is cold and northern, Hawaii is tropical islands",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "How many states does the USA have?",
+          "a": "50",
+          "mins": 1,
+          "options": [
+            "50",
+            "4"
+          ]
+        },
+        {
+          "q": "The USA is in:",
+          "a": "North America",
+          "mins": 1,
+          "options": [
+            "North America",
+            "South America"
+          ]
+        },
+        {
+          "q": "Big question: how can 50 states be one country?",
+          "a": "They each run some things themselves but share one national government in Washington, D.C.",
+          "mins": 1
+        }
+      ],
+      "homework": "Find the state of Texas on an atlas or online map and name the country it borders.",
+      "send": "SEND: labels to cut and stick on the map. EAL: compass and place-name word mat. Stretch: find the state capital of Texas (Austin).",
+      "resources": [
+        "Tarbiyyah Primary Year 4 curriculum map and history and geography long-term plans 2023-24; TGA Year 4 pack, History and geography, Summer 2 Road Trip USA and The Ancient City of Baghdad (Cornerstones Maestro: CHECK IN MAESTRO)",
+        "Outline map of the USA with states and regions (portal printable)",
+        "Atlas or online map"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "map of the United States states",
+          "alt": "A map of the 50 states",
+          "for": "teach:2"
+        },
+        {
+          "find": "United States Capitol building Washington",
+          "alt": "The Capitol building in Washington, D.C.",
+          "for": "teach:3"
+        },
+        {
+          "find": "North America relief map",
+          "alt": "North America on a relief map",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: The USA (Road Trip USA)",
+      "n": 21,
+      "title": "Planning a road trip route",
+      "bigQuestion": "If you had two weeks to drive across the USA, which places would you choose and why?",
+      "objectives": [
+        "To understand how to plan a route using a map, a scale and compass directions"
+      ],
+      "successCriteria": [
+        "All: use eight compass points to give directions",
+        "Most: use a scale bar to estimate a distance",
+        "Some: plan and explain a route that links three places"
+      ],
+      "crossCurricular": "Maths: scale, multiplying and measuring in centimetres",
+      "smsc": "Social: planning a journey that suits everyone travelling",
+      "keywords": [
+        {
+          "term": "route",
+          "def": "the way you travel from one place to another"
+        },
+        {
+          "term": "scale bar",
+          "def": "a line on a map that shows real distance"
+        },
+        {
+          "term": "compass point",
+          "def": "a direction such as north or south-east"
+        },
+        {
+          "term": "interstate",
+          "def": "a big main road that crosses state borders"
+        },
+        {
+          "term": "estimate",
+          "def": "a careful guess using what you know"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What would you need to know before setting off on a very long journey?"
+      },
+      "starter": [
+        {
+          "q": "The capital of the USA is:",
+          "a": "Washington, D.C.",
+          "mins": 1,
+          "options": [
+            "Washington, D.C.",
+            "New York City"
+          ]
+        },
+        {
+          "q": "Hawaii is in the:",
+          "a": "Pacific Ocean",
+          "mins": 1,
+          "options": [
+            "Pacific Ocean",
+            "Atlantic Ocean"
+          ]
+        },
+        {
+          "q": "Name the country north of the USA.",
+          "a": "Canada",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Eight compass points",
+          "bullets": [
+            "N, NE, E, SE",
+            "S, SW, W, NW",
+            "Never Eat Shredded Wheat"
+          ],
+          "note": "Say the points round the compass rose."
+        },
+        {
+          "heading": "Using a scale bar",
+          "bullets": [
+            "Measure on the map with a ruler or string",
+            "Compare with the scale bar",
+            "Turn map length into real distance"
+          ],
+          "note": "Model: 2 cm on the map with a scale of 1 cm = 500 km means 1,000 km.",
+          "model": {
+            "problem": "On the map 1 cm = 500 km. New York to Chicago measures about 2.3 cm. How far?",
+            "steps": [
+              "Measure the straight line: 2.3 cm",
+              "Multiply by 500",
+              "2 x 500 = 1,000; 0.3 x 500 = 150",
+              "Add: 1,150 km"
+            ],
+            "answer": "About 1,150 km in a straight line"
+          }
+        },
+        {
+          "heading": "A famous road",
+          "bullets": [
+            "Route 66 ran from Chicago to Los Angeles",
+            "About 3,900 km long",
+            "Today interstates are faster"
+          ],
+          "note": "Roads are longer than straight lines, because they bend round hills and rivers."
+        },
+        {
+          "heading": "Plan a route",
+          "bullets": [
+            "Choose a start and end",
+            "Pick three stops",
+            "Give directions and distances"
+          ],
+          "note": "A good plan says why each stop was chosen."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Going from Los Angeles to New York you travel mostly:",
+            "options": [
+              "West",
+              "East",
+              "South"
+            ],
+            "answer": 1,
+            "why": "New York is on the east coast; Los Angeles is on the west coast."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Which direction is Chicago from New York?",
+          "a": "West (a little north)",
+          "mins": 1,
+          "model": "I put my finger on New York.\nI move it to Chicago.\nI moved left, so that is west, and a little up, so slightly north."
+        },
+        {
+          "q": "1 cm = 500 km. How far is 4 cm?",
+          "a": "2,000 km",
+          "mins": 1
+        },
+        {
+          "q": "Why is a road distance longer than a straight line?",
+          "a": "Roads bend round hills, rivers and towns",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Plan a road trip on the USA map: start in New York City, visit three places of your choice, end in Los Angeles. For each leg, write the direction and estimated straight-line distance using the scale bar.",
+          "a": "A route with three stops, correct directions and sensible estimates from the scale bar",
+          "mins": 13,
+          "model": "Teacher plans leg 1: New York City to Washington, D.C., south-west, measured with the scale bar."
+        },
+        {
+          "q": "Extend: Explain why you chose one stop.",
+          "a": "For example: the Grand Canyon, to see a famous landform",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Local fieldwork with an adult: plan the route from your home to a local shop or masjid on an online map and write the directions.",
+          "a": "Directions with compass points and turns, plus distance from the online map",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A scale bar tells us:",
+          "a": "Real distance",
+          "mins": 1,
+          "options": [
+            "Real distance",
+            "Height of mountains"
+          ]
+        },
+        {
+          "q": "The opposite of north-east is:",
+          "a": "South-west",
+          "mins": 1,
+          "options": [
+            "South-west",
+            "North-west"
+          ]
+        },
+        {
+          "q": "Big question: which places did you choose and why?",
+          "a": "Any three places with a reason, a direction and a distance",
+          "mins": 1
+        }
+      ],
+      "homework": "Fieldwork: with an adult, use an online map to plan a walking route from your home to a place you already visit; note two compass directions and the distance.",
+      "send": "SEND: map with a 1 cm grid and a scale strip to lay along the route. EAL: direction words with arrows. Stretch: work out the total distance of your trip.",
+      "resources": [
+        "Tarbiyyah Primary Year 4 curriculum map and history and geography long-term plans 2023-24; TGA Year 4 pack, History and geography, Summer 2 Road Trip USA and The Ancient City of Baghdad (Cornerstones Maestro: CHECK IN MAESTRO)",
+        "USA road trip map with scale bar and route planner (portal printable)",
+        "Ruler or a piece of string",
+        "Online map with an adult for the local route"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Route 66 road sign",
+          "alt": "A Route 66 road sign",
+          "for": "teach:3"
+        },
+        {
+          "find": "compass rose eight points",
+          "alt": "A compass rose with eight points",
+          "for": "teach:1"
+        },
+        {
+          "find": "interstate highway desert",
+          "alt": "A US interstate road crossing a desert",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: The USA (Road Trip USA)",
+      "n": 22,
+      "title": "US landscapes: the Rockies, the Mississippi and the Grand Canyon",
+      "bigQuestion": "How can a river carve a canyon deeper than four Shard towers stacked on top of each other?",
+      "objectives": [
+        "To understand the main physical features of the USA and how they were formed"
+      ],
+      "successCriteria": [
+        "All: locate the Rocky Mountains, the Great Plains, the Mississippi and the Grand Canyon",
+        "Most: describe each feature",
+        "Some: explain how a river can form a canyon"
+      ],
+      "crossCurricular": "Science: rocks and erosion",
+      "smsc": "Spiritual: awe at landscapes shaped over millions of years",
+      "keywords": [
+        {
+          "term": "mountain range",
+          "def": "a line of mountains joined together"
+        },
+        {
+          "term": "plain",
+          "def": "a large area of flat land"
+        },
+        {
+          "term": "canyon",
+          "def": "a deep valley with steep sides, cut by a river"
+        },
+        {
+          "term": "erosion",
+          "def": "wearing away of rock by water, wind or ice"
+        },
+        {
+          "term": "source",
+          "def": "where a river begins"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which would you rather see: tall mountains, a huge flat plain or a deep canyon? Why?"
+      },
+      "islamicLink": {
+        "text": "Allah tells us He spread out the earth and placed firm mountains and rivers in it (Ar-Ra'd 13:3). Geographers study these mountains and rivers to understand how the land was shaped.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Going from Los Angeles to New York you travel:",
+          "a": "East",
+          "mins": 1,
+          "options": [
+            "East",
+            "West"
+          ]
+        },
+        {
+          "q": "A scale bar tells us:",
+          "a": "Real distance",
+          "mins": 1,
+          "options": [
+            "Real distance",
+            "Temperature"
+          ]
+        },
+        {
+          "q": "Name a US state.",
+          "a": "For example: Texas, California or Alaska",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The Rocky Mountains",
+          "bullets": [
+            "A long mountain range in the west",
+            "From Canada to New Mexico, about 4,800 km",
+            "Highest peak: Mount Elbert, 4,401 m"
+          ],
+          "note": "Recall Spring 2: mountains form where plates push together."
+        },
+        {
+          "heading": "The Great Plains",
+          "bullets": [
+            "Flat grassland east of the Rockies",
+            "Huge farms of wheat and maize",
+            "Cattle ranches"
+          ],
+          "note": "Plains are flat land. Here the USA grows much of its food."
+        },
+        {
+          "heading": "The Mississippi",
+          "bullets": [
+            "Source: Lake Itasca, Minnesota",
+            "Flows south to the Gulf of Mexico",
+            "About 3,700 km long"
+          ],
+          "note": "With its tributary, the Missouri, it is one of the longest river systems in the world."
+        },
+        {
+          "heading": "The Grand Canyon",
+          "bullets": [
+            "In Arizona, cut by the Colorado River",
+            "About 1,800 m deep in places",
+            "About 446 km long"
+          ],
+          "note": "The river has worn the rock away over millions of years. The Shard in London is about 310 m tall.",
+          "cycle": [
+            "river flows fast",
+            "carries sand and stones",
+            "rubs the riverbed (erosion)",
+            "valley gets deeper",
+            "canyon forms"
+          ]
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "The Grand Canyon was carved by the:",
+            "options": [
+              "Mississippi River",
+              "Colorado River",
+              "Thames"
+            ],
+            "answer": 1,
+            "why": "The Colorado River cut the Grand Canyon by erosion."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Where does the Mississippi end?",
+          "a": "The Gulf of Mexico",
+          "mins": 1,
+          "model": "I find the source in Minnesota at the top.\nI follow the blue line down the map.\nIt flows south into the Gulf of Mexico."
+        },
+        {
+          "q": "What is a plain?",
+          "a": "A large area of flat land",
+          "mins": 1
+        },
+        {
+          "q": "Which mountain range is in the west of the USA?",
+          "a": "The Rocky Mountains",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: On the physical map, label the Rockies, the Great Plains, the Mississippi, the Colorado River, the Grand Canyon and the Gulf of Mexico. Then write a fact file (three facts) for one feature.",
+          "a": "Six features labelled; three accurate facts",
+          "mins": 13,
+          "model": "Teacher labels the Rocky Mountains and writes the first fact: 'They run for about 4,800 km.'"
+        },
+        {
+          "q": "Extend: Explain how the Grand Canyon formed in three sentences using erosion.",
+          "a": "The Colorado River flowed fast, carrying stones that wore away the rock; over millions of years the valley grew deeper; this erosion made the canyon",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: How many Shards (about 310 m) stacked up would equal 1,800 m?",
+          "a": "About 6 (1,800 ÷ 310 is about 5.8)",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Flat grassland in the USA is the:",
+          "a": "Great Plains",
+          "mins": 1,
+          "options": [
+            "Great Plains",
+            "Rockies"
+          ]
+        },
+        {
+          "q": "Wearing away of rock is:",
+          "a": "Erosion",
+          "mins": 1,
+          "options": [
+            "Erosion",
+            "Deposition"
+          ]
+        },
+        {
+          "q": "Big question: how can a river carve such a deep canyon?",
+          "a": "By erosion over millions of years, carrying stones that wear away the rock",
+          "mins": 1
+        }
+      ],
+      "homework": "Draw a cross-section of the Grand Canyon showing the river at the bottom and label it with three facts.",
+      "send": "SEND: physical map with first letters. EAL: mountain, plain, river, canyon picture cards. Stretch: compare the Mississippi with the River Thames (about 346 km).",
+      "resources": [
+        "Tarbiyyah Primary Year 4 curriculum map and history and geography long-term plans 2023-24; TGA Year 4 pack, History and geography, Summer 2 Road Trip USA and The Ancient City of Baghdad (Cornerstones Maestro: CHECK IN MAESTRO)",
+        "Physical map of the USA (portal printable)",
+        "Fact file frame (portal printable)",
+        "Atlas or online map"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Grand Canyon Colorado River",
+          "alt": "The Grand Canyon and the Colorado River",
+          "for": "teach:4"
+        },
+        {
+          "find": "Rocky Mountains Colorado peaks",
+          "alt": "Peaks of the Rocky Mountains",
+          "for": "teach:1"
+        },
+        {
+          "find": "Mississippi River aerial",
+          "alt": "The Mississippi River from the air",
+          "for": "teach:3"
+        },
+        {
+          "find": "Great Plains wheat field",
+          "alt": "Wheat on the Great Plains",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: The USA (Road Trip USA)",
+      "n": 23,
+      "title": "Climate in the USA compared with the UK",
+      "bigQuestion": "Could you wear the same clothes all year in every part of the USA?",
+      "objectives": [
+        "To understand how the climate varies across the USA and how it compares with the UK"
+      ],
+      "successCriteria": [
+        "All: describe three different climates in the USA",
+        "Most: read temperatures from a bar chart",
+        "Some: compare a US climate with the UK's"
+      ],
+      "crossCurricular": "Maths: reading bar charts and finding differences",
+      "smsc": "Cultural: how climate shapes the way people live",
+      "keywords": [
+        {
+          "term": "climate",
+          "def": "the usual weather of a place over many years"
+        },
+        {
+          "term": "weather",
+          "def": "what the air is like on one day"
+        },
+        {
+          "term": "desert",
+          "def": "a place with very little rain"
+        },
+        {
+          "term": "temperate",
+          "def": "mild, not too hot and not too cold"
+        },
+        {
+          "term": "compare",
+          "def": "say what is the same and what is different"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is the weather the same as the climate? What is the difference?"
+      },
+      "starter": [
+        {
+          "q": "The Grand Canyon was cut by the:",
+          "a": "Colorado River",
+          "mins": 1,
+          "options": [
+            "Colorado River",
+            "Mississippi River"
+          ]
+        },
+        {
+          "q": "The Mississippi flows into the:",
+          "a": "Gulf of Mexico",
+          "mins": 1,
+          "options": [
+            "Gulf of Mexico",
+            "Pacific Ocean"
+          ]
+        },
+        {
+          "q": "What is a plain?",
+          "a": "A large area of flat land",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Weather or climate?",
+          "bullets": [
+            "Weather: one day",
+            "Climate: the usual pattern over many years",
+            "Climate helps us plan"
+          ],
+          "note": "'It rained today' is weather. 'London has rain in every month' is climate."
+        },
+        {
+          "heading": "Many US climates",
+          "bullets": [
+            "Alaska: very cold winters",
+            "Arizona: hot, dry desert",
+            "Florida: hot and wet",
+            "Midwest: hot summers, freezing winters"
+          ],
+          "note": "The USA is so big that it has many climates."
+        },
+        {
+          "heading": "July afternoons compared",
+          "bullets": [
+            "Phoenix is the hottest",
+            "London is mild",
+            "Chicago is hot in summer"
+          ],
+          "note": "Average July afternoon highs, rounded. Chicago winters are well below London's.",
+          "chart": {
+            "kind": "bar",
+            "title": "Average July afternoon temperature (about)",
+            "labels": [
+              "London",
+              "Chicago",
+              "Miami",
+              "Phoenix"
+            ],
+            "values": [
+              23,
+              29,
+              33,
+              41
+            ],
+            "unit": "°C"
+          }
+        },
+        {
+          "heading": "The UK's climate",
+          "bullets": [
+            "Temperate: mild all year",
+            "Rain in every month",
+            "No very hot or very cold season"
+          ],
+          "note": "The Atlantic Ocean keeps the UK mild."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "Which city is hottest in July?",
+            "options": [
+              "London",
+              "Phoenix",
+              "Chicago"
+            ],
+            "answer": 1,
+            "why": "Phoenix is in the Arizona desert; its July afternoons average about 41 °C."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "How much hotter is Phoenix than London in July?",
+          "a": "About 18 °C (41 - 23)",
+          "mins": 1,
+          "model": "I read Phoenix: 41.\nI read London: 23.\nI subtract: 41 - 23 = 18 degrees."
+        },
+        {
+          "q": "What is the UK's climate called?",
+          "a": "Temperate",
+          "mins": 1
+        },
+        {
+          "q": "Which US state has very cold winters?",
+          "a": "Alaska (or the Midwest states)",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write a comparison of London and Phoenix in the portal response box, using the chart: one similarity, two differences and the word climate. Start: 'London and Phoenix both ... but ...'.",
+          "a": "For example: both are warmest in July, but Phoenix is about 18 °C hotter and very dry, while London is mild with rain all year",
+          "mins": 12,
+          "model": "Teacher writes the first sentence: 'London and Phoenix are both warmest in July.'"
+        },
+        {
+          "q": "Extend: Pack a suitcase list for a July trip to Phoenix and explain two items.",
+          "a": "For example: sun hat and water bottle, because it is very hot and dry",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why is Miami wet but Phoenix dry, when both are hot?",
+          "a": "Miami is next to warm sea that gives moist air and rain; Phoenix is far inland in a desert",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Climate means:",
+          "a": "The usual weather over many years",
+          "mins": 1,
+          "options": [
+            "The usual weather over many years",
+            "Today's weather"
+          ]
+        },
+        {
+          "q": "The UK climate is:",
+          "a": "Temperate",
+          "mins": 1,
+          "options": [
+            "Temperate",
+            "Desert"
+          ]
+        },
+        {
+          "q": "Big question: could you wear the same clothes all year everywhere in the USA?",
+          "a": "No: Alaska is very cold, Arizona very hot and dry, and the Midwest has hot summers and freezing winters",
+          "mins": 1
+        }
+      ],
+      "homework": "Look at a weather app or the news with an adult and compare today's weather in your town with one US city.",
+      "send": "SEND: comparison frame with sentence starters. EAL: hot, cold, wet, dry picture cards. Stretch: explain why the Atlantic keeps the UK mild.",
+      "resources": [
+        "Tarbiyyah Primary Year 4 curriculum map and history and geography long-term plans 2023-24; TGA Year 4 pack, History and geography, Summer 2 Road Trip USA and The Ancient City of Baghdad (Cornerstones Maestro: CHECK IN MAESTRO)",
+        "July temperature chart and comparison frame (portal printable)",
+        "Weather app or newspaper weather page with an adult"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Saguaro cactus Arizona desert",
+          "alt": "The desert near Phoenix, Arizona",
+          "for": "teach:2"
+        },
+        {
+          "find": "Alaska snow mountains winter",
+          "alt": "Snow in Alaska",
+          "for": "keywords"
+        },
+        {
+          "find": "Florida Everglades wetland",
+          "alt": "Hot, wet wetland in Florida",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: The USA (Road Trip USA)",
+      "n": 24,
+      "title": "Review: the USA and the UK compared; end-of-year geography quiz",
+      "bigQuestion": "If a friend from the USA visited the UK, what would feel different and what would feel the same?",
+      "objectives": [
+        "To understand how to compare two countries and show what I have learned in geography this year"
+      ],
+      "successCriteria": [
+        "All: compare the USA and the UK using size, population, capital and climate",
+        "Most: use evidence from maps and data",
+        "Some: answer the end-of-year geography quiz"
+      ],
+      "crossCurricular": "Maths: comparing large numbers",
+      "smsc": "Cultural: understanding another country without stereotypes",
+      "keywords": [
+        {
+          "term": "compare",
+          "def": "say what is the same and what is different"
+        },
+        {
+          "term": "population",
+          "def": "the number of people living in a place"
+        },
+        {
+          "term": "area",
+          "def": "how much land a place covers"
+        },
+        {
+          "term": "evidence",
+          "def": "facts that support an answer"
+        },
+        {
+          "term": "summary",
+          "def": "a short account of the main points"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which is bigger, the USA or the UK? How many times bigger, do you think?"
+      },
+      "starter": [
+        {
+          "q": "Baghdad's paper mill was working by the:",
+          "a": "790s",
+          "mins": 1,
+          "options": [
+            "790s",
+            "1790s"
+          ]
+        },
+        {
+          "q": "The hottest city on our chart was:",
+          "a": "Phoenix",
+          "mins": 1,
+          "options": [
+            "Phoenix",
+            "London"
+          ]
+        },
+        {
+          "q": "Name the mountain range in the west of the USA.",
+          "a": "The Rocky Mountains",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Size and people",
+          "bullets": [
+            "USA: about 9.8 million km²",
+            "UK: about 243,000 km²",
+            "The USA is about 40 times bigger"
+          ],
+          "note": "Population: USA about 335 million; UK about 68 million (rounded recent figures).",
+          "table": {
+            "head": [
+              "",
+              "USA",
+              "UK"
+            ],
+            "rows": [
+              [
+                "Area",
+                "about 9.8 million km²",
+                "about 243,000 km²"
+              ],
+              [
+                "People",
+                "about 335 million",
+                "about 68 million"
+              ],
+              [
+                "Capital",
+                "Washington, D.C.",
+                "London"
+              ],
+              [
+                "Climate",
+                "many: desert to polar",
+                "temperate"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Landscapes",
+          "bullets": [
+            "Both have mountains and long rivers",
+            "The USA has deserts and huge plains",
+            "The UK has no desert"
+          ],
+          "note": "Compare the Rockies with UK mountains: Ben Nevis is 1,345 m; Mount Elbert is 4,401 m."
+        },
+        {
+          "heading": "How to compare",
+          "bullets": [
+            "Use 'both' for the same",
+            "Use 'whereas' for a difference",
+            "Give a number as evidence"
+          ],
+          "note": "Model one sentence for each.",
+          "model": {
+            "problem": "Compare the capitals",
+            "steps": [
+              "Find both capitals",
+              "Say what is the same",
+              "Say what is different with 'whereas'",
+              "Add evidence"
+            ],
+            "answer": "Both countries are governed from their capital, whereas London is also the UK's biggest city and Washington, D.C. is not the USA's"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share the results.",
+          "check": {
+            "q": "The UK's climate is:",
+            "options": [
+              "Temperate",
+              "Desert",
+              "Polar"
+            ],
+            "answer": 0,
+            "why": "The UK is mild with rain all year: a temperate climate."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write a 'both' sentence about the USA and the UK.",
+          "a": "For example: Both countries have mountains and long rivers",
+          "mins": 1,
+          "model": "I look for something the same.\nBoth have mountains.\nSo: Both the USA and the UK have mountains."
+        },
+        {
+          "q": "How many times bigger is the USA than the UK, roughly?",
+          "a": "About 40 times",
+          "mins": 1
+        },
+        {
+          "q": "Which is taller: Ben Nevis or Mount Elbert?",
+          "a": "Mount Elbert (4,401 m)",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Do the end-of-year geography quiz in the portal (12 questions): UK mountains and rivers, mountains of the world, contours and grid references, the oceans and the Great Barrier Reef, the USA and climate.",
+          "a": "Marked against the quiz answer key; for example: Ben Nevis is the UK's highest mountain; six-figure grid references; the Pacific is the largest ocean",
+          "mins": 15,
+          "model": "Teacher reads question 1 aloud and shows how to read a grid reference before the quiz starts."
+        },
+        {
+          "q": "Extend: Write a comparison paragraph of the USA and the UK with 'both', 'whereas' and two numbers.",
+          "a": "A paragraph with a similarity, a difference and two figures from the table",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Which country would you rather live in, using climate as your reason?",
+          "a": "Any choice supported with climate evidence",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "The capital of the UK is:",
+          "a": "London",
+          "mins": 1,
+          "options": [
+            "London",
+            "Edinburgh"
+          ]
+        },
+        {
+          "q": "Big question: what would feel different to a visitor from the USA?",
+          "a": "For example: a smaller country, a milder climate, no deserts; but both have cities, mountains and rivers",
+          "mins": 1
+        }
+      ],
+      "homework": "Choose one geography topic from Year 4 and make a one-page fact sheet to keep for Year 5.",
+      "send": "SEND: quiz read aloud with picture options; comparison frame. EAL: comparison word mat (both, whereas, bigger, smaller). Stretch: compare population density (people per km²).",
+      "resources": [
+        "Tarbiyyah Primary Year 4 curriculum map and history and geography long-term plans 2023-24; TGA Year 4 pack, History and geography, Summer 2 Road Trip USA and The Ancient City of Baghdad (Cornerstones Maestro: CHECK IN MAESTRO)",
+        "Year 4 end-of-year geography quiz (portal Forms quiz with answer key)",
+        "USA and UK comparison table (portal printable)",
+        "Atlas"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "United Kingdom satellite image",
+          "alt": "The UK from space",
+          "for": "teach:1"
+        },
+        {
+          "find": "Ben Nevis summit",
+          "alt": "Ben Nevis, the UK's highest mountain",
+          "for": "teach:2"
+        },
+        {
+          "find": "United States satellite image",
+          "alt": "The USA from space",
+          "for": "hook"
         }
       ]
     }
