@@ -2,7 +2,7 @@
   "subject": "Mathematics",
   "year": "y3",
   "board": "National Curriculum (KS2)",
-  "source": "National Curriculum (KS2 Year 3: place value to 1000; addition and subtraction; 3, 4 and 8 times tables); Spring 1 founding year: White Rose Maths Year 3 small-step titles (bridge from Autumn blocks 1-3, then Spring blocks 1 Multiplication and division B and 2 Length and perimeter), Tarbiyyah Primary Maths Policy and Maths Long Term Plan 2023-24; Spring 2 founding year: White Rose Maths Year 3 Spring blocks 3 Fractions A and 4 Mass and capacity (small-step titles only); Summer 1 founding year: White Rose Maths Year 3 Summer blocks Fractions B, Money and Time (small-step titles only)",
+  "source": "National Curriculum (KS2 Year 3: place value to 1000; addition and subtraction; 3, 4 and 8 times tables); Spring 1 founding year: White Rose Maths Year 3 small-step titles (bridge from Autumn blocks 1-3, then Spring blocks 1 Multiplication and division B and 2 Length and perimeter), Tarbiyyah Primary Maths Policy and Maths Long Term Plan 2023-24; Spring 2 founding year: White Rose Maths Year 3 Spring blocks 3 Fractions A and 4 Mass and capacity (small-step titles only); Summer 1 founding year: White Rose Maths Year 3 Summer blocks Fractions B, Money and Time (small-step titles only) | Summer 2 founding year (14 Jun to 9 Jul 2027): White Rose Maths Year 3 Summer blocks Time, Shape and Statistics (small-step titles only), unit weeks 1, 2, 4 and 6 as the Year 3 plan says, with the end-of-year review, arithmetic and reasoning papers, feedback and the times tables recall check",
   "lessons": [
     {
       "unit": "Spring 1: Multiplication and division B; length and perimeter",
@@ -16290,6 +16290,4207 @@
         "Printed Summer 1 check (school White Rose account)",
         "Mini-whiteboard and pen",
         "Printable worksheet (or drawing tablet): Year 3 maths lesson 84 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Time; shape; statistics",
+      "n": 85,
+      "title": "Compare durations",
+      "duration": 45,
+      "bigQuestion": "How can we tell which activity took longer?",
+      "objectives": [
+        "To understand how to work out and compare durations in minutes"
+      ],
+      "successCriteria": [
+        "All: find a duration within one hour",
+        "Most: compare two durations",
+        "Some: find the difference between two durations"
+      ],
+      "keywords": [
+        {
+          "term": "duration",
+          "def": "how long something lasts"
+        },
+        {
+          "term": "start time",
+          "def": "when it begins"
+        },
+        {
+          "term": "end time",
+          "def": "when it finishes"
+        },
+        {
+          "term": "difference",
+          "def": "how much longer or shorter"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Reading Qur'an from 5:10 to 5:35, or homework from 6:00 to 6:30: which took longer?",
+        "a": "Homework: 30 minutes; reading took 25 minutes."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "analogue clock face",
+          "alt": "A clock face",
+          "for": "teach:1"
+        },
+        {
+          "find": "sand timer",
+          "alt": "A sand timer",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Minutes in an hour?",
+          "a": "60",
+          "mins": 1
+        },
+        {
+          "q": "Time 20 minutes after 3:15?",
+          "a": "3:35",
+          "mins": 1
+        },
+        {
+          "q": "8 × 4 = ?",
+          "a": "32",
+          "mins": 1
+        },
+        {
+          "q": "60 - 35 = ?",
+          "a": "25",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Count on in minutes",
+          "bullets": [
+            "Count on from the start to the end.",
+            "Jump to the next 5 or 10."
+          ],
+          "numberline": {
+            "min": 10,
+            "max": 35,
+            "step": 5,
+            "marks": [
+              {
+                "at": 10,
+                "label": "5:10"
+              },
+              {
+                "at": 35,
+                "label": "5:35"
+              }
+            ]
+          },
+          "note": "Use a time number line."
+        },
+        {
+          "heading": "Work it out",
+          "bullets": [
+            "Start 9:15, end 9:50.",
+            "Jump 9:15 to 9:50."
+          ],
+          "model": {
+            "problem": "How long from 9:15 to 9:50?",
+            "steps": [
+              "9:15 to 9:45 is 30 minutes.",
+              "9:45 to 9:50 is 5 minutes.",
+              "30 + 5 = 35."
+            ],
+            "answer": "35 minutes"
+          },
+          "note": "Model the jumps."
+        },
+        {
+          "heading": "Compare",
+          "bullets": [
+            "Work out both durations.",
+            "Then compare the minutes."
+          ],
+          "table": {
+            "head": [
+              "Activity",
+              "Start",
+              "End",
+              "Duration"
+            ],
+            "rows": [
+              [
+                "Reading",
+                "9:15",
+                "9:50",
+                "35 min"
+              ],
+              [
+                "Maths",
+                "10:05",
+                "10:45",
+                "40 min"
+              ]
+            ]
+          },
+          "note": "Compare 35 minutes with 40 minutes."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is longer: 10:05 to 10:45 or 1:20 to 1:55?",
+            "options": [
+              "10:05 to 10:45",
+              "1:20 to 1:55",
+              "They are equal"
+            ],
+            "answer": 0,
+            "why": "40 minutes against 35 minutes."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "How long from 4:20 to 4:55?",
+          "a": "35 minutes",
+          "mins": 2,
+          "model": "Teacher: 4:20 to 4:50 is 30, then 5 more: 35 minutes."
+        },
+        {
+          "q": "How long from 11:05 to 11:40?",
+          "a": "35 minutes",
+          "mins": 2
+        },
+        {
+          "q": "Which is longer: 25 or 35 minutes? By how much?",
+          "a": "35 minutes, by 10 minutes",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Find each duration: 2:10 to 2:45; 7:30 to 7:55; 12:05 to 12:50.",
+          "a": "35 min; 25 min; 45 min",
+          "mins": 4,
+          "model": "Teacher does 2:10 to 2:45 with jumps."
+        },
+        {
+          "q": "Extend: Order the three durations from shortest to longest.",
+          "a": "25 min, 35 min, 45 min",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A walk lasts 20 minutes longer than 25 minutes. It starts at 4:50. When does it end?",
+          "a": "45 minutes later: 5:35",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "How long from 3:05 to 3:30?",
+          "a": "A) 25 minutes",
+          "mins": 2,
+          "options": [
+            "25 minutes",
+            "35 minutes",
+            "30 minutes"
+          ]
+        },
+        {
+          "q": "Big question: how can we tell which took longer?",
+          "a": "Find each duration in minutes, then compare.",
+          "mins": 3
+        }
+      ],
+      "homework": "Time two jobs at home (for example making wudu and tidying up) and compare them.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: a lesson runs 1:15 to 2:00 and another 2:10 to 2:50. Which is longer and by how much? (the first: 45 against 40 minutes, by 5)",
+      "resources": [
+        "White Rose Maths Year 3, Time block: small step 'Compare durations' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper plate clock with a split pin (made at home)",
+        "A clock or phone timer",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 85 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Time; shape; statistics",
+      "n": 86,
+      "title": "Units of time: compare and convert",
+      "duration": 45,
+      "bigQuestion": "Is 100 minutes more or less than 2 hours?",
+      "objectives": [
+        "To understand how seconds, minutes, hours and days are related"
+      ],
+      "successCriteria": [
+        "All: recall 60 seconds = 1 minute and 60 minutes = 1 hour",
+        "Most: convert between hours and minutes",
+        "Some: compare times given in different units"
+      ],
+      "keywords": [
+        {
+          "term": "second",
+          "def": "the shortest unit we use often"
+        },
+        {
+          "term": "minute",
+          "def": "60 seconds"
+        },
+        {
+          "term": "hour",
+          "def": "60 minutes"
+        },
+        {
+          "term": "convert",
+          "def": "change to a different unit"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is 100 minutes more or less than 2 hours? How could you be sure?",
+        "a": "Less: 2 hours is 120 minutes."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "stopwatch",
+          "alt": "A stopwatch",
+          "for": "teach:1"
+        },
+        {
+          "find": "wall calendar",
+          "alt": "A calendar",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "60 + 60 = ?",
+          "a": "120",
+          "mins": 1
+        },
+        {
+          "q": "Days in a week?",
+          "a": "7",
+          "mins": 1
+        },
+        {
+          "q": "How long from 2:20 to 2:55?",
+          "a": "35 minutes",
+          "mins": 1
+        },
+        {
+          "q": "6 × 4 = ?",
+          "a": "24",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Time facts",
+          "bullets": [
+            "60 seconds = 1 minute.",
+            "60 minutes = 1 hour.",
+            "24 hours = 1 day."
+          ],
+          "table": {
+            "head": [
+              "From",
+              "To"
+            ],
+            "rows": [
+              [
+                "1 minute",
+                "60 seconds"
+              ],
+              [
+                "1 hour",
+                "60 minutes"
+              ],
+              [
+                "1 day",
+                "24 hours"
+              ],
+              [
+                "1 week",
+                "7 days"
+              ]
+            ]
+          },
+          "note": "Spoken chant together."
+        },
+        {
+          "heading": "Hours to minutes",
+          "bullets": [
+            "Add 60 for each hour."
+          ],
+          "model": {
+            "problem": "Write 2 hours 15 minutes in minutes.",
+            "steps": [
+              "2 hours = 60 + 60 = 120 minutes.",
+              "120 + 15 = 135."
+            ],
+            "answer": "135 minutes"
+          },
+          "note": "Model 2 hours 15 minutes."
+        },
+        {
+          "heading": "Compare in one unit",
+          "bullets": [
+            "Change both to the same unit.",
+            "Then compare."
+          ],
+          "misconception": {
+            "wrong": "100 minutes is more than 2 hours because 100 > 2.",
+            "right": "2 hours = 120 minutes, so 100 minutes is less."
+          },
+          "note": "100 minutes or 2 hours?"
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is longest?",
+            "options": [
+              "1 minute 30 seconds",
+              "80 seconds",
+              "1 minute"
+            ],
+            "answer": 0,
+            "why": "90 seconds is more than 80 and 60."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write 1 hour 20 minutes in minutes.",
+          "a": "80 minutes",
+          "mins": 2,
+          "model": "Teacher: 1 hour = 60, 60 + 20 = 80."
+        },
+        {
+          "q": "Write 90 minutes in hours and minutes.",
+          "a": "1 hour 30 minutes",
+          "mins": 2
+        },
+        {
+          "q": "How many hours in 2 days?",
+          "a": "48",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Convert: 3 hours to minutes; 75 minutes to hours and minutes; 2 minutes to seconds.",
+          "a": "180 min; 1 h 15 min; 120 s",
+          "mins": 4,
+          "model": "Teacher converts 3 hours: 60 + 60 + 60 = 180."
+        },
+        {
+          "q": "Extend: Circle the longer: 150 minutes or 2 hours 20 minutes.",
+          "a": "150 minutes (140 for 2 h 20 min)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Fasting from 3:00 am to 9:20 pm: how many hours and minutes?",
+          "a": "18 hours 20 minutes",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "How many minutes in 2 hours?",
+          "a": "A) 120",
+          "mins": 2,
+          "options": [
+            "120",
+            "200",
+            "100"
+          ]
+        },
+        {
+          "q": "Big question: is 100 minutes more or less than 2 hours?",
+          "a": "Less: 2 hours is 120 minutes.",
+          "mins": 3
+        }
+      ],
+      "homework": "Find 3 things that take about a minute, an hour and a day.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: how many seconds in 5 minutes? (300)",
+      "resources": [
+        "White Rose Maths Year 3, Time block: small steps 'Units of time' and 'Compare durations' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "A clock or phone timer",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 86 guided, independent and homework tasks"
+      ],
+      "islamicLink": {
+        "text": "In Ramadan Muslims fast from Fajr to Maghrib. In a UK summer that is a long day: knowing hours and minutes helps us plan suhur and iftar.",
+        "at": "start"
+      }
+    },
+    {
+      "unit": "Summer 2: Time; shape; statistics",
+      "n": 87,
+      "title": "Find durations",
+      "duration": 45,
+      "bigQuestion": "How long is the journey to the masjid?",
+      "objectives": [
+        "To understand how to find a duration across the hour"
+      ],
+      "successCriteria": [
+        "All: find a duration within the hour",
+        "Most: count on to the next o'clock, then add the minutes after it",
+        "Some: find durations in hours and minutes"
+      ],
+      "keywords": [
+        {
+          "term": "duration",
+          "def": "how long something lasts"
+        },
+        {
+          "term": "across the hour",
+          "def": "from one hour into the next"
+        },
+        {
+          "term": "o'clock",
+          "def": "a whole hour, like 3:00"
+        },
+        {
+          "term": "time line",
+          "def": "a line to count on in time"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A bus leaves at 2:40 and arrives at 3:25. Is that more or less than an hour?",
+        "a": "Less: 45 minutes."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "bus at a bus stop",
+          "alt": "A bus at a stop",
+          "for": "hook"
+        },
+        {
+          "find": "digital clock display",
+          "alt": "A digital clock",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Minutes from 2:40 to 3:00?",
+          "a": "20",
+          "mins": 1
+        },
+        {
+          "q": "20 + 25 = ?",
+          "a": "45",
+          "mins": 1
+        },
+        {
+          "q": "Write 1 hour 10 minutes in minutes.",
+          "a": "70",
+          "mins": 1
+        },
+        {
+          "q": "7 × 8 = ?",
+          "a": "56",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Jump to the hour",
+          "bullets": [
+            "Count to the next o'clock first.",
+            "Then add the rest."
+          ],
+          "numberline": {
+            "min": 0,
+            "max": 60,
+            "step": 5,
+            "marks": [
+              {
+                "at": 40,
+                "label": "2:40"
+              },
+              {
+                "at": 60,
+                "label": "3:00"
+              }
+            ]
+          },
+          "note": "Use a time line."
+        },
+        {
+          "heading": "Across the hour",
+          "bullets": [
+            "2:40 to 3:00 is 20 min.",
+            "3:00 to 3:25 is 25 min."
+          ],
+          "model": {
+            "problem": "How long from 2:40 to 3:25?",
+            "steps": [
+              "2:40 to 3:00: 20 minutes.",
+              "3:00 to 3:25: 25 minutes.",
+              "20 + 25 = 45."
+            ],
+            "answer": "45 minutes"
+          },
+          "note": "Add the jumps."
+        },
+        {
+          "heading": "Longer durations",
+          "bullets": [
+            "Count whole hours first.",
+            "Then the minutes."
+          ],
+          "model": {
+            "problem": "How long from 9:30 to 12:15?",
+            "steps": [
+              "9:30 to 11:30: 2 hours.",
+              "11:30 to 12:00: 30 minutes.",
+              "12:00 to 12:15: 15 minutes."
+            ],
+            "answer": "2 hours 45 minutes"
+          },
+          "note": "Model 9:30 to 12:15."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "How long from 5:50 to 6:20?",
+            "options": [
+              "30 minutes",
+              "70 minutes",
+              "1 hour 30 minutes"
+            ],
+            "answer": 0,
+            "why": "10 minutes to 6:00, then 20: 30."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "How long from 7:45 to 8:10?",
+          "a": "25 minutes",
+          "mins": 2,
+          "model": "Teacher: 15 minutes to 8:00, then 10: 25."
+        },
+        {
+          "q": "How long from 1:35 to 2:05?",
+          "a": "30 minutes",
+          "mins": 2
+        },
+        {
+          "q": "How long from 10:20 to 11:50?",
+          "a": "1 hour 30 minutes",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Find: 4:50 to 5:15; 8:35 to 9:20; 11:40 to 12:30.",
+          "a": "25 min; 45 min; 50 min",
+          "mins": 4,
+          "model": "Teacher does 4:50 to 5:15: 10 + 15 = 25."
+        },
+        {
+          "q": "Extend: The walk to the masjid is 3:45 pm to 4:05 pm and back 5:10 pm to 5:35 pm. Total walking time?",
+          "a": "20 + 25 = 45 minutes",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: How long from 10:25 am to 1:10 pm?",
+          "a": "2 hours 45 minutes",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "How long from 3:50 to 4:15?",
+          "a": "A) 25 minutes",
+          "mins": 2,
+          "options": [
+            "25 minutes",
+            "35 minutes",
+            "65 minutes"
+          ]
+        },
+        {
+          "q": "Big question: how long is the journey?",
+          "a": "Count on to the hour, then add the minutes after.",
+          "mins": 3
+        }
+      ],
+      "homework": "Find how long a family trip or a meal takes: write the start and end times.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: a train leaves at 11:48 and arrives at 1:05. How long? (1 hour 17 minutes)",
+      "resources": [
+        "White Rose Maths Year 3, Time block: small step 'Find durations of time' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper plate clock with a split pin",
+        "Printable time line strips",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 87 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Time; shape; statistics",
+      "n": 88,
+      "title": "Find start and end times",
+      "duration": 45,
+      "bigQuestion": "If we know how long something lasts, can we find when it ends?",
+      "objectives": [
+        "To understand how to find an end time or a start time from a duration"
+      ],
+      "successCriteria": [
+        "All: find an end time within the hour",
+        "Most: find an end time across the hour",
+        "Some: work back to find a start time"
+      ],
+      "keywords": [
+        {
+          "term": "start time",
+          "def": "when something begins"
+        },
+        {
+          "term": "end time",
+          "def": "when it finishes"
+        },
+        {
+          "term": "count on",
+          "def": "move forwards in time"
+        },
+        {
+          "term": "count back",
+          "def": "move backwards in time"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Maghrib is at 9:20 pm. You need 35 minutes to cook. When must you start?",
+        "a": "8:45 pm: count back 35 minutes."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "kitchen timer",
+          "alt": "A kitchen timer",
+          "for": "hook"
+        },
+        {
+          "find": "clock showing time",
+          "alt": "A clock",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "What time is 20 minutes after 4:30?",
+          "a": "4:50",
+          "mins": 1
+        },
+        {
+          "q": "60 - 35 = ?",
+          "a": "25",
+          "mins": 1
+        },
+        {
+          "q": "How long from 2:50 to 3:10?",
+          "a": "20 minutes",
+          "mins": 1
+        },
+        {
+          "q": "9 × 3 = ?",
+          "a": "27",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "End time",
+          "bullets": [
+            "Start, then count on the duration."
+          ],
+          "model": {
+            "problem": "A lesson starts at 10:35 and lasts 50 minutes. When does it end?",
+            "steps": [
+              "10:35 + 25 minutes = 11:00.",
+              "50 - 25 = 25 left.",
+              "11:00 + 25 = 11:25."
+            ],
+            "answer": "11:25"
+          },
+          "note": "Model on a time line."
+        },
+        {
+          "heading": "Start time",
+          "bullets": [
+            "End, then count back the duration."
+          ],
+          "model": {
+            "problem": "A game ended at 4:10 and lasted 25 minutes. When did it start?",
+            "steps": [
+              "4:10 back 10 minutes = 4:00.",
+              "Back 15 more = 3:45."
+            ],
+            "answer": "3:45"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Count on from your start time.",
+            "Do you reach the end time?"
+          ],
+          "misconception": {
+            "wrong": "4:10 - 25 = 3:85",
+            "right": "Time is in 60s: back to 4:00, then to 3:45."
+          },
+          "note": "3:45 + 25 minutes = 4:10."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Starts 2:50, lasts 30 minutes. Ends at...",
+            "options": [
+              "3:20",
+              "2:80",
+              "3:30"
+            ],
+            "answer": 0,
+            "why": "10 minutes to 3:00, then 20 more."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Starts 6:40, lasts 35 minutes. End?",
+          "a": "7:15",
+          "mins": 2,
+          "model": "Teacher: 20 minutes to 7:00, 15 more: 7:15."
+        },
+        {
+          "q": "Ends 9:05, lasted 20 minutes. Start?",
+          "a": "8:45",
+          "mins": 2
+        },
+        {
+          "q": "Starts 1:15, lasts 1 hour 20 minutes. End?",
+          "a": "2:35",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Find the end: 3:25 + 40 min; 11:50 + 25 min; 5:10 + 1 h 35 min.",
+          "a": "4:05; 12:15; 6:45",
+          "mins": 4,
+          "model": "Teacher does 3:25 + 40: 35 to 4:00, 5 more: 4:05."
+        },
+        {
+          "q": "Extend: Find the start: ends 6:10 after 45 min; ends 12:20 after 35 min.",
+          "a": "5:25; 11:45",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Maghrib is 9:20 pm. Cooking takes 35 minutes and laying the table 10 minutes. Latest start?",
+          "a": "8:35 pm",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Ends 5:00, lasted 15 minutes. Started at...",
+          "a": "A) 4:45",
+          "mins": 2,
+          "options": [
+            "4:45",
+            "5:15",
+            "4:15"
+          ]
+        },
+        {
+          "q": "Big question: can we find the end time?",
+          "a": "Yes: count on the duration from the start; count back to find a start.",
+          "mins": 3
+        }
+      ],
+      "homework": "Choose a TV-free activity, note its start time and length, and work out its end time.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: a film-free family quiz starts at 7:48 pm and lasts 47 minutes. When does it end? (8:35 pm)",
+      "resources": [
+        "White Rose Maths Year 3, Time block: small step 'Start and end times' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper plate clock with a split pin",
+        "Printable time line strips",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 88 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Time; shape; statistics",
+      "n": 89,
+      "title": "Time word problems",
+      "duration": 45,
+      "bigQuestion": "What do we look for in a time word problem?",
+      "objectives": [
+        "To understand how to solve problems about time, durations and timetables"
+      ],
+      "successCriteria": [
+        "All: find what the question asks",
+        "Most: use a time line to solve one-step problems",
+        "Some: solve two-step problems and timetables"
+      ],
+      "crossCurricular": "Geography: reading a timetable for a journey",
+      "keywords": [
+        {
+          "term": "timetable",
+          "def": "a table of times"
+        },
+        {
+          "term": "depart",
+          "def": "leave"
+        },
+        {
+          "term": "arrive",
+          "def": "get there"
+        },
+        {
+          "term": "two-step",
+          "def": "needs two calculations"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A bus timetable says 4:05, 4:35, 5:05. What do you notice? When is the next bus?",
+        "a": "Every 30 minutes; the next is 5:35."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "bus timetable board",
+          "alt": "A bus timetable",
+          "for": "teach:3"
+        },
+        {
+          "find": "railway station clock",
+          "alt": "A station clock",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Starts 3:40, lasts 30 minutes: end?",
+          "a": "4:10",
+          "mins": 1
+        },
+        {
+          "q": "How long from 9:45 to 10:20?",
+          "a": "35 minutes",
+          "mins": 1
+        },
+        {
+          "q": "Minutes in 1 hour 15 minutes?",
+          "a": "75",
+          "mins": 1
+        },
+        {
+          "q": "4 × 8 = ?",
+          "a": "32",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Read the problem",
+          "bullets": [
+            "Underline the times.",
+            "What is asked: start, end or duration?"
+          ],
+          "note": "Model with a problem on screen."
+        },
+        {
+          "heading": "Two steps",
+          "bullets": [
+            "Solve one part at a time."
+          ],
+          "model": {
+            "problem": "Huda reads from 4:15 to 4:40 and then does maths for 25 minutes. When does she finish?",
+            "steps": [
+              "Reading ends 4:40.",
+              "4:40 + 25 minutes: 20 to 5:00, then 5.",
+              "Finish 5:05."
+            ],
+            "answer": "5:05"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Timetables",
+          "bullets": [
+            "Read across a row, down a column."
+          ],
+          "table": {
+            "head": [
+              "Stop",
+              "Bus 1",
+              "Bus 2",
+              "Bus 3"
+            ],
+            "rows": [
+              [
+                "Station",
+                "4:05",
+                "4:35",
+                "5:05"
+              ],
+              [
+                "Library",
+                "4:20",
+                "4:50",
+                "5:20"
+              ],
+              [
+                "Masjid",
+                "4:32",
+                "5:02",
+                "5:32"
+              ]
+            ]
+          },
+          "note": "Departures every 30 minutes."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "How long from the station to the masjid on bus 1?",
+            "options": [
+              "27 minutes",
+              "32 minutes",
+              "15 minutes"
+            ],
+            "answer": 0,
+            "why": "4:05 to 4:32: 27 minutes."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Bus 2 leaves the station at 4:35. When does it reach the library?",
+          "a": "4:50",
+          "mins": 2,
+          "model": "Teacher reads down the Bus 2 column: 4:50."
+        },
+        {
+          "q": "How long from the library to the masjid?",
+          "a": "12 minutes",
+          "mins": 2
+        },
+        {
+          "q": "To reach the masjid by 5:15, which bus?",
+          "a": "Bus 2 (arrives 5:02)",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: A cake goes in at 2:45 and bakes for 35 minutes. When does it come out? It cools for 20 minutes: when is it ready?",
+          "a": "3:20; 3:40",
+          "mins": 4,
+          "model": "Teacher solves the first step with a time line."
+        },
+        {
+          "q": "Extend: Asr is at 6:10 pm. Zayd needs 25 minutes to walk and 10 to make wudu. Latest time to start?",
+          "a": "5:35 pm",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A Qur'an class runs 4:30 to 5:15 four days a week. Total time a week?",
+          "a": "4 × 45 = 180 minutes = 3 hours",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Bus 3 reaches the library at...",
+          "a": "A) 5:20",
+          "mins": 2,
+          "options": [
+            "5:20",
+            "5:05",
+            "5:32"
+          ]
+        },
+        {
+          "q": "Big question: what do we look for?",
+          "a": "The times given, and whether we need a start, an end or a duration.",
+          "mins": 3
+        }
+      ],
+      "homework": "Write a time word problem about your day and solve it.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: a bus comes every 30 minutes from 4:05. How many buses leave between 4:00 and 6:00? (4: 4:05, 4:35, 5:05, 5:35)",
+      "resources": [
+        "White Rose Maths Year 3, Time block: small step 'Problem solving: time' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable bus timetable (example data)",
+        "Paper plate clock",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 89 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Time; shape; statistics",
+      "n": 90,
+      "title": "Turns and angles",
+      "duration": 45,
+      "bigQuestion": "What is an angle?",
+      "objectives": [
+        "To understand that an angle is a measure of turn"
+      ],
+      "successCriteria": [
+        "All: make quarter, half, three-quarter and whole turns",
+        "Most: know that a quarter turn makes a right angle",
+        "Some: count right angles in a turn"
+      ],
+      "keywords": [
+        {
+          "term": "angle",
+          "def": "the amount of turn"
+        },
+        {
+          "term": "right angle",
+          "def": "a quarter turn"
+        },
+        {
+          "term": "clockwise",
+          "def": "the way a clock's hands go"
+        },
+        {
+          "term": "anticlockwise",
+          "def": "the opposite way"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "When you turn to face the qiblah, how much do you turn? Does it depend on where you start?",
+        "a": "It depends on where you start: the turn is the angle between where you face and the qiblah."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "compass rose",
+          "alt": "A compass",
+          "for": "teach:2"
+        },
+        {
+          "find": "door hinge open",
+          "alt": "An open door: a turn",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Arrow up, half turn: faces?",
+          "a": "down",
+          "mins": 1
+        },
+        {
+          "q": "How many quarters in a whole?",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "How long from 3:45 to 4:10?",
+          "a": "25 minutes",
+          "mins": 1
+        },
+        {
+          "q": "3 × 8 = ?",
+          "a": "24",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "An angle is a turn",
+          "bullets": [
+            "Open a door: it turns.",
+            "The bigger the turn, the bigger the angle."
+          ],
+          "note": "Open a book slowly."
+        },
+        {
+          "heading": "Quarter turns",
+          "bullets": [
+            "A quarter turn is a right angle.",
+            "4 right angles make a whole turn."
+          ],
+          "fraction": [
+            {
+              "parts": 4,
+              "shaded": 1,
+              "label": "1 right angle"
+            },
+            {
+              "parts": 4,
+              "shaded": 2,
+              "label": "2 right angles"
+            },
+            {
+              "parts": 4,
+              "shaded": 4,
+              "label": "whole turn"
+            }
+          ],
+          "note": "Turn on camera."
+        },
+        {
+          "heading": "Compass turns",
+          "bullets": [
+            "N, E, S, W.",
+            "N to E clockwise is a right angle."
+          ],
+          "model": {
+            "problem": "Face north. Turn clockwise to south. How many right angles?",
+            "steps": [
+              "North to east: 1.",
+              "East to south: 2."
+            ],
+            "answer": "2 right angles (a half turn)"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "A three-quarter turn is how many right angles?",
+            "options": [
+              "3",
+              "4",
+              "2"
+            ],
+            "answer": 0,
+            "why": "Each quarter turn is a right angle."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Face east, turn a quarter turn clockwise. Face?",
+          "a": "south",
+          "mins": 2,
+          "model": "Teacher turns: east, then clockwise to south."
+        },
+        {
+          "q": "How many right angles in a whole turn?",
+          "a": "4",
+          "mins": 2
+        },
+        {
+          "q": "Face west, half turn. Face?",
+          "a": "east",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write the direction after each turn from north: quarter clockwise; half; three-quarter clockwise.",
+          "a": "east; south; west",
+          "mins": 4,
+          "model": "Teacher does the quarter turn."
+        },
+        {
+          "q": "Extend: Face south. Turn 3 right angles anticlockwise. Face?",
+          "a": "west",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: How many right angles do the clock's minute hand turn in 45 minutes?",
+          "a": "3",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A quarter turn is...",
+          "a": "A) a right angle",
+          "mins": 2,
+          "options": [
+            "a right angle",
+            "a whole turn",
+            "2 right angles"
+          ]
+        },
+        {
+          "q": "Big question: what is an angle?",
+          "a": "A measure of turn.",
+          "mins": 3
+        }
+      ],
+      "homework": "Stand in a room, face a window and make right-angle turns. Say what you see each time.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: how many right angles does the minute hand turn in 2 hours? (8)",
+      "resources": [
+        "White Rose Maths Year 3, Shape block: small step 'Turns and angles' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "A compass or a paper compass card (N, E, S, W)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 90 guided, independent and homework tasks"
+      ],
+      "islamicLink": {
+        "text": "Muslims face the qiblah, the direction of the Ka'bah in Makkah, in salah. Turning to face it is a turn, and the amount of turn is an angle.",
+        "at": "start"
+      }
+    },
+    {
+      "unit": "Summer 2: Time; shape; statistics",
+      "n": 91,
+      "title": "Right angles in shapes",
+      "duration": 45,
+      "bigQuestion": "Where can we find right angles around us?",
+      "objectives": [
+        "To understand how to find right angles in shapes and around us"
+      ],
+      "successCriteria": [
+        "All: make a right-angle checker",
+        "Most: find right angles in shapes",
+        "Some: count right angles in a shape"
+      ],
+      "keywords": [
+        {
+          "term": "right angle",
+          "def": "a square corner"
+        },
+        {
+          "term": "right-angle checker",
+          "def": "a folded paper corner"
+        },
+        {
+          "term": "vertex",
+          "def": "a corner of a shape"
+        },
+        {
+          "term": "square corner",
+          "def": "another name for a right angle"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Look at your room. How many square corners can you see?",
+        "a": "Many: doors, windows, books, the screen."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "window frame",
+          "alt": "A window frame with square corners",
+          "for": "hook"
+        },
+        {
+          "find": "set square",
+          "alt": "A set square",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "A quarter turn is a...",
+          "a": "right angle",
+          "mins": 1
+        },
+        {
+          "q": "Right angles in a whole turn?",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "Sides on a hexagon?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "6 × 8 = ?",
+          "a": "48",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Make a checker",
+          "bullets": [
+            "Fold paper in half.",
+            "Fold again: a square corner."
+          ],
+          "note": "Make it live."
+        },
+        {
+          "heading": "Check corners",
+          "bullets": [
+            "Put the checker in the corner.",
+            "Do both edges match?"
+          ],
+          "note": "Check a book and a triangle."
+        },
+        {
+          "heading": "Count them",
+          "bullets": [
+            "Mark each right angle with a square."
+          ],
+          "model": {
+            "problem": "How many right angles in a rectangle?",
+            "steps": [
+              "Check each corner with the checker.",
+              "All 4 match."
+            ],
+            "answer": "4 right angles"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "How many right angles in a square?",
+            "options": [
+              "4",
+              "2",
+              "0"
+            ],
+            "answer": 0,
+            "why": "All four corners are square corners."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Right angles in this right-angled triangle?",
+          "a": "1",
+          "mins": 2,
+          "model": "Teacher checks each corner: only 1 matches."
+        },
+        {
+          "q": "Does a regular hexagon have a right angle?",
+          "a": "No",
+          "mins": 2
+        },
+        {
+          "q": "Right angles in a rectangle?",
+          "a": "4",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Check each shape on the sheet and mark the right angles.",
+          "a": "Answers on the sheet key",
+          "mins": 4,
+          "model": "Teacher checks the first shape."
+        },
+        {
+          "q": "Extend: Find 5 right angles at home.",
+          "a": "For example: a book, a door, a tile",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Draw a shape with exactly 2 right angles.",
+          "a": "For example a right-angled trapezium",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which has 4 right angles?",
+          "a": "A) rectangle",
+          "mins": 2,
+          "options": [
+            "rectangle",
+            "triangle",
+            "circle"
+          ]
+        },
+        {
+          "q": "Big question: where can we find right angles?",
+          "a": "Doors, windows, books, tiles: square corners.",
+          "mins": 3
+        }
+      ],
+      "homework": "Right-angle hunt: list 10 right angles you find at home.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: can a triangle have 2 right angles? Why? (no: the two sides from the right angles would be parallel and never meet)",
+      "resources": [
+        "White Rose Maths Year 3, Shape block: small step 'Right angles in shapes' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper to fold a right-angle checker",
+        "Printable shapes sheet",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 91 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Time; shape; statistics",
+      "n": 92,
+      "title": "Compare angles",
+      "duration": 45,
+      "bigQuestion": "Is this angle bigger or smaller than a right angle?",
+      "objectives": [
+        "To understand how to compare angles with a right angle"
+      ],
+      "successCriteria": [
+        "All: say if an angle is greater or less than a right angle",
+        "Most: use acute and obtuse",
+        "Some: order angles from smallest to largest"
+      ],
+      "keywords": [
+        {
+          "term": "acute",
+          "def": "less than a right angle"
+        },
+        {
+          "term": "obtuse",
+          "def": "more than a right angle but less than a straight line"
+        },
+        {
+          "term": "right angle",
+          "def": "a square corner"
+        },
+        {
+          "term": "compare",
+          "def": "say which is bigger"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Open a book a little, then a lot. Which makes a bigger angle?",
+        "a": "Opening it a lot: a bigger turn makes a bigger angle."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "open book",
+          "alt": "An open book",
+          "for": "hook"
+        },
+        {
+          "find": "clock hands at three",
+          "alt": "Clock hands at a right angle",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Right angles in a rectangle?",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "Is a quarter turn a right angle?",
+          "a": "yes",
+          "mins": 1
+        },
+        {
+          "q": "12 × 3 = ?",
+          "a": "36",
+          "mins": 1
+        },
+        {
+          "q": "Starts 2:50, lasts 25 minutes: end?",
+          "a": "3:15",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Greater or less?",
+          "bullets": [
+            "Use your checker.",
+            "Inside the checker: less (acute).",
+            "Outside: more (obtuse)."
+          ],
+          "note": "Model with the checker."
+        },
+        {
+          "heading": "Clock angles",
+          "bullets": [
+            "3 o'clock: right angle.",
+            "1 o'clock: acute.",
+            "5 o'clock: obtuse."
+          ],
+          "sort": {
+            "columns": [
+              "Acute",
+              "Right angle",
+              "Obtuse"
+            ],
+            "cards": [
+              "1 o'clock",
+              "3 o'clock",
+              "5 o'clock",
+              "2 o'clock",
+              "9 o'clock",
+              "4 o'clock"
+            ],
+            "answer": [
+              0,
+              1,
+              2,
+              0,
+              1,
+              2
+            ]
+          },
+          "note": "Show on the paper plate clock."
+        },
+        {
+          "heading": "Order angles",
+          "bullets": [
+            "Smallest turn first."
+          ],
+          "model": {
+            "problem": "Order: obtuse, acute, right angle.",
+            "steps": [
+              "Acute is less than a right angle.",
+              "Obtuse is more."
+            ],
+            "answer": "acute, right angle, obtuse"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "An angle is bigger than a right angle. It is...",
+            "options": [
+              "obtuse",
+              "acute",
+              "a right angle"
+            ],
+            "answer": 0,
+            "why": "Obtuse means more than a right angle."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Clock at 2 o'clock: which angle?",
+          "a": "acute",
+          "mins": 2,
+          "model": "Teacher shows it inside the checker: acute."
+        },
+        {
+          "q": "Clock at 4 o'clock?",
+          "a": "obtuse",
+          "mins": 2
+        },
+        {
+          "q": "Clock at 9 o'clock?",
+          "a": "right angle",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Label each angle on the sheet acute, right or obtuse.",
+          "a": "Answers on the sheet key",
+          "mins": 4,
+          "model": "Teacher labels the first angle."
+        },
+        {
+          "q": "Extend: Order the 5 angles on the sheet, smallest first.",
+          "a": "Answers on the sheet key",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Draw a triangle with one obtuse angle.",
+          "a": "Any obtuse-angled triangle",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "At 1 o'clock the hands make...",
+          "a": "A) an acute angle",
+          "mins": 2,
+          "options": [
+            "an acute angle",
+            "an obtuse angle",
+            "a right angle"
+          ]
+        },
+        {
+          "q": "Big question: bigger or smaller than a right angle?",
+          "a": "Check with a right-angle checker: inside is acute, outside is obtuse.",
+          "mins": 3
+        }
+      ],
+      "homework": "Find an acute, a right and an obtuse angle at home and sketch them.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: at what o'clock times do the hands make a right angle? (3 o'clock and 9 o'clock)",
+      "resources": [
+        "White Rose Maths Year 3, Shape block: small step 'Compare angles' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Right-angle checker (folded paper)",
+        "Paper plate clock",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 92 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Time; shape; statistics",
+      "n": 93,
+      "title": "Horizontal, vertical, parallel and perpendicular lines",
+      "duration": 45,
+      "bigQuestion": "Why do builders need straight and square lines?",
+      "objectives": [
+        "To understand how to recognise horizontal, vertical, parallel and perpendicular lines"
+      ],
+      "successCriteria": [
+        "All: find horizontal and vertical lines",
+        "Most: find parallel lines",
+        "Some: find perpendicular lines"
+      ],
+      "smsc": "Cultural: straight lines and arches in the architecture of masjids",
+      "keywords": [
+        {
+          "term": "horizontal",
+          "def": "flat, like the horizon"
+        },
+        {
+          "term": "vertical",
+          "def": "straight up and down"
+        },
+        {
+          "term": "parallel",
+          "def": "always the same distance apart; never meet"
+        },
+        {
+          "term": "perpendicular",
+          "def": "meet at a right angle"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Look at a window. Which lines never meet? Which meet at a square corner?",
+        "a": "Opposite sides never meet (parallel); sides at a corner are perpendicular."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "railway tracks straight",
+          "alt": "Railway tracks: parallel lines",
+          "for": "teach:3"
+        },
+        {
+          "find": "mosque arches columns",
+          "alt": "Columns in a masjid: vertical lines",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Acute or obtuse: 5 o'clock?",
+          "a": "obtuse",
+          "mins": 1
+        },
+        {
+          "q": "Right angles in a square?",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "8 × 8 = ?",
+          "a": "64",
+          "mins": 1
+        },
+        {
+          "q": "How long from 4:40 to 5:15?",
+          "a": "35 minutes",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Horizontal and vertical",
+          "bullets": [
+            "Horizontal: like the horizon.",
+            "Vertical: like a standing pole."
+          ],
+          "note": "Hold a pencil each way."
+        },
+        {
+          "heading": "Perpendicular",
+          "bullets": [
+            "Meet at a right angle.",
+            "Check with your checker."
+          ],
+          "note": "The edge of a door and the floor."
+        },
+        {
+          "heading": "Parallel",
+          "bullets": [
+            "Same distance apart.",
+            "They never meet."
+          ],
+          "note": "Railway tracks."
+        },
+        {
+          "heading": "Sort the lines",
+          "bullets": [
+            "Look at pairs of lines."
+          ],
+          "sort": {
+            "columns": [
+              "Parallel",
+              "Perpendicular"
+            ],
+            "cards": [
+              "opposite sides of a book",
+              "rungs of a ladder",
+              "corner of a page",
+              "the + sign",
+              "railway tracks",
+              "a wall and the floor"
+            ],
+            "answer": [
+              0,
+              0,
+              1,
+              1,
+              0,
+              1
+            ]
+          },
+          "note": "Sort."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "The letter T has lines that are...",
+            "options": [
+              "perpendicular",
+              "parallel",
+              "neither"
+            ],
+            "answer": 0,
+            "why": "They meet at a right angle."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Is the letter H parallel or perpendicular?",
+          "a": "Both: two parallel uprights, and the bar is perpendicular to them",
+          "mins": 2,
+          "model": "Teacher points: the uprights never meet; the bar meets them at right angles."
+        },
+        {
+          "q": "The letter E: how many horizontal lines?",
+          "a": "3",
+          "mins": 2
+        },
+        {
+          "q": "Is the letter L perpendicular?",
+          "a": "Yes",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Mark parallel and perpendicular pairs on the shapes sheet.",
+          "a": "Answers on the sheet key",
+          "mins": 4,
+          "model": "Teacher marks a rectangle: 2 pairs parallel, 4 perpendicular corners."
+        },
+        {
+          "q": "Extend: Which capital letters have parallel lines? Find 4.",
+          "a": "For example E, F, H, N",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Draw a shape with 2 pairs of parallel sides and no right angles.",
+          "a": "A parallelogram (or rhombus)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Parallel lines...",
+          "a": "A) never meet",
+          "mins": 2,
+          "options": [
+            "never meet",
+            "meet at a right angle",
+            "cross twice"
+          ]
+        },
+        {
+          "q": "Big question: why do builders need these lines?",
+          "a": "Walls must be vertical and floors horizontal so buildings are strong and safe.",
+          "mins": 3
+        }
+      ],
+      "homework": "Photograph or sketch parallel and perpendicular lines in your home.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: how many pairs of parallel sides does a regular hexagon have? (3)",
+      "resources": [
+        "White Rose Maths Year 3, Shape block: small steps 'Horizontal and vertical lines' and 'Parallel and perpendicular lines' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Ruler and right-angle checker",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 93 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Time; shape; statistics",
+      "n": 94,
+      "title": "Recognise and describe 2-D and 3-D shapes",
+      "duration": 45,
+      "bigQuestion": "How can we describe a shape so a friend can guess it?",
+      "objectives": [
+        "To understand how to describe 2-D and 3-D shapes using their properties"
+      ],
+      "successCriteria": [
+        "All: name 2-D shapes and their sides and angles",
+        "Most: name 3-D shapes and their faces, edges and vertices",
+        "Some: describe a shape for a friend to guess"
+      ],
+      "keywords": [
+        {
+          "term": "polygon",
+          "def": "a flat shape with straight sides"
+        },
+        {
+          "term": "face",
+          "def": "a flat surface of a 3-D shape"
+        },
+        {
+          "term": "edge",
+          "def": "where two faces meet"
+        },
+        {
+          "term": "prism",
+          "def": "a 3-D shape with the same shape all through"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "I have 6 square faces, 12 edges and 8 vertices. What am I?",
+        "a": "A cube."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "triangular prism toblerone box",
+          "alt": "A triangular prism box",
+          "for": "teach:2"
+        },
+        {
+          "find": "dice",
+          "alt": "A dice: a cube",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Parallel lines never...",
+          "a": "meet",
+          "mins": 1
+        },
+        {
+          "q": "Faces on a cuboid?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "Is 4 o'clock acute or obtuse?",
+          "a": "obtuse",
+          "mins": 1
+        },
+        {
+          "q": "7 × 4 = ?",
+          "a": "28",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "2-D shapes",
+          "bullets": [
+            "Count sides and right angles.",
+            "Look for parallel sides."
+          ],
+          "table": {
+            "head": [
+              "Shape",
+              "Sides",
+              "Right angles"
+            ],
+            "rows": [
+              [
+                "square",
+                "4",
+                "4"
+              ],
+              [
+                "rectangle",
+                "4",
+                "4"
+              ],
+              [
+                "triangle",
+                "3",
+                "0 or 1"
+              ],
+              [
+                "pentagon",
+                "5",
+                "usually 0"
+              ]
+            ]
+          },
+          "note": "Describe a rectangle."
+        },
+        {
+          "heading": "3-D shapes",
+          "bullets": [
+            "Cube, cuboid, cylinder.",
+            "Cone, sphere, pyramid, prism."
+          ],
+          "table": {
+            "head": [
+              "Shape",
+              "Faces",
+              "Edges",
+              "Vertices"
+            ],
+            "rows": [
+              [
+                "cube",
+                "6",
+                "12",
+                "8"
+              ],
+              [
+                "triangular prism",
+                "5",
+                "9",
+                "6"
+              ],
+              [
+                "square-based pyramid",
+                "5",
+                "8",
+                "5"
+              ]
+            ]
+          },
+          "note": "Hold up household objects."
+        },
+        {
+          "heading": "Describe it",
+          "bullets": [
+            "Faces, edges, vertices.",
+            "Curved or flat?"
+          ],
+          "model": {
+            "problem": "Describe a triangular prism.",
+            "steps": [
+              "2 triangle faces at the ends.",
+              "3 rectangle faces.",
+              "9 edges, 6 vertices."
+            ],
+            "answer": "5 faces, 9 edges, 6 vertices"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which has a curved face?",
+            "options": [
+              "cylinder",
+              "cube",
+              "pyramid"
+            ],
+            "answer": 0,
+            "why": "A cylinder has one curved face."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "I have 3 sides and 3 vertices. What am I?",
+          "a": "triangle",
+          "mins": 2,
+          "model": "Teacher counts the sides on a triangle: 3."
+        },
+        {
+          "q": "Faces on a square-based pyramid?",
+          "a": "5",
+          "mins": 2
+        },
+        {
+          "q": "Which 3-D shape has no edges?",
+          "a": "sphere",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write the faces, edges and vertices of a cube, cuboid and triangular prism.",
+          "a": "6, 12, 8; 6, 12, 8; 5, 9, 6",
+          "mins": 4,
+          "model": "Teacher counts a cube's faces with a dice."
+        },
+        {
+          "q": "Extend: Write a 'guess my shape' clue for a cylinder.",
+          "a": "For example: 2 flat circle faces and 1 curved face",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: How is a cube like a square? How is it different?",
+          "a": "Its faces are squares; a cube is 3-D and a square is flat",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which has 5 faces?",
+          "a": "A) square-based pyramid",
+          "mins": 2,
+          "options": [
+            "square-based pyramid",
+            "cube",
+            "sphere"
+          ]
+        },
+        {
+          "q": "Big question: how can we describe a shape?",
+          "a": "Say its sides and angles, or its faces, edges and vertices.",
+          "mins": 3
+        }
+      ],
+      "homework": "Play 'guess my shape' with a grown-up using 3 household objects.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: a 3-D shape has 1 more face than a triangular prism. Name two shapes it could be. (a cube or a cuboid: 6 faces)",
+      "resources": [
+        "White Rose Maths Year 3, Shape block: small steps 'Recognise and describe 2-D shapes' and 'Recognise and describe 3-D shapes' (3-D names taught briefly, as the Year 3 plan says) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Household 3-D objects: dice, cereal box, tin, triangular box",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 94 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Time; shape; statistics",
+      "n": 95,
+      "title": "Interpret pictograms",
+      "duration": 45,
+      "bigQuestion": "What does each picture really mean?",
+      "objectives": [
+        "To understand how to read pictograms where one picture stands for more than one"
+      ],
+      "successCriteria": [
+        "All: read a pictogram with a key",
+        "Most: read part pictures",
+        "Some: answer how many more and how many altogether"
+      ],
+      "keywords": [
+        {
+          "term": "pictogram",
+          "def": "a chart that uses pictures"
+        },
+        {
+          "term": "key",
+          "def": "what one picture stands for"
+        },
+        {
+          "term": "interpret",
+          "def": "read and understand"
+        },
+        {
+          "term": "data",
+          "def": "information we collect"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "In a pictogram, one book picture means 4 books. What might half a book picture mean?",
+        "a": "2 books."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "books on a shelf",
+          "alt": "Books on a shelf",
+          "for": "hook"
+        },
+        {
+          "find": "pictogram with key",
+          "alt": "A pictogram with a key",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Half of 4?",
+          "a": "2",
+          "mins": 1
+        },
+        {
+          "q": "4 × 6 = ?",
+          "a": "24",
+          "mins": 1
+        },
+        {
+          "q": "How long from 3:20 to 3:55?",
+          "a": "35 minutes",
+          "mins": 1
+        },
+        {
+          "q": "Faces on a cube?",
+          "a": "6",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The key",
+          "bullets": [
+            "1 picture = 4 books.",
+            "Count in 4s."
+          ],
+          "table": {
+            "head": [
+              "Class",
+              "Pictures",
+              "Books"
+            ],
+            "rows": [
+              [
+                "3A",
+                "5",
+                "20"
+              ],
+              [
+                "3B",
+                "3 and a half",
+                "14"
+              ],
+              [
+                "3C",
+                "6",
+                "24"
+              ]
+            ]
+          },
+          "note": "Example data: books read by each class."
+        },
+        {
+          "heading": "Part pictures",
+          "bullets": [
+            "Half a picture = 2.",
+            "A quarter picture = 1."
+          ],
+          "fraction": [
+            {
+              "parts": 4,
+              "shaded": 2,
+              "label": "half: 2 books"
+            },
+            {
+              "parts": 4,
+              "shaded": 1,
+              "label": "quarter: 1 book"
+            }
+          ],
+          "note": "Show half and quarter pictures."
+        },
+        {
+          "heading": "Answer questions",
+          "bullets": [
+            "How many more? Subtract.",
+            "Altogether? Add."
+          ],
+          "model": {
+            "problem": "How many more did 3C read than 3B?",
+            "steps": [
+              "3C 24, 3B 14.",
+              "24 - 14 = 10."
+            ],
+            "answer": "10 more books"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Key: 1 picture = 4. A row has 2 and a quarter pictures. How many?",
+            "options": [
+              "9",
+              "8",
+              "10"
+            ],
+            "answer": 0,
+            "why": "4 + 4 + 1 = 9."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "How many books altogether?",
+          "a": "58",
+          "mins": 2,
+          "model": "Teacher adds: 20 + 14 + 24 = 58."
+        },
+        {
+          "q": "Which class read the fewest?",
+          "a": "3B",
+          "mins": 2
+        },
+        {
+          "q": "Key 1 = 4. Three quarters of a picture?",
+          "a": "3",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Key 1 picture = 4. Rows: 4 pictures; 2 and a half pictures; 6 and a quarter pictures. How many in each?",
+          "a": "16; 10; 25",
+          "mins": 4,
+          "model": "Teacher counts 4 pictures in 4s: 4, 8, 12, 16."
+        },
+        {
+          "q": "Extend: How many more in the biggest row than the smallest?",
+          "a": "25 - 10 = 15",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Draw 18 with this key.",
+          "a": "4 and a half pictures",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Key 1 picture = 4. 3 pictures =",
+          "a": "A) 12",
+          "mins": 2,
+          "options": [
+            "12",
+            "7",
+            "3"
+          ]
+        },
+        {
+          "q": "Big question: what does each picture mean?",
+          "a": "What the key says; count in that step.",
+          "mins": 3
+        }
+      ],
+      "homework": "Find a pictogram in a book or online and write 3 questions about it.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: key 1 picture = 4. How many pictures show 30? (7 and a half)",
+      "resources": [
+        "White Rose Maths Year 3, Statistics block: small step 'Interpret pictograms' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable pictogram sheet (example data)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 95 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Time; shape; statistics",
+      "n": 96,
+      "title": "Draw pictograms",
+      "duration": 45,
+      "bigQuestion": "How do we choose a good key?",
+      "objectives": [
+        "To understand how to draw a pictogram with a key that suits the data"
+      ],
+      "successCriteria": [
+        "All: draw a pictogram with a given key",
+        "Most: use half pictures",
+        "Some: choose a sensible key for the data"
+      ],
+      "smsc": "Spiritual: keeping a record of daily Qur'an reading",
+      "keywords": [
+        {
+          "term": "key",
+          "def": "what one picture stands for"
+        },
+        {
+          "term": "symbol",
+          "def": "the picture we use"
+        },
+        {
+          "term": "title",
+          "def": "what the chart is about"
+        },
+        {
+          "term": "represent",
+          "def": "stand for"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You read 10, 6, 8 and 5 pages of Qur'an on four days. Would 1 picture = 1 page be a good key? Why?",
+        "a": "It works but needs 29 pictures; 1 picture = 2 pages is quicker."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "open Quran mushaf on stand",
+          "alt": "A mushaf on a stand",
+          "for": "hook"
+        },
+        {
+          "find": "pictogram chart",
+          "alt": "A pictogram",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Key 1 = 2. Three pictures?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "Half of 10?",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "10 + 6 + 8 + 5 = ?",
+          "a": "29",
+          "mins": 1
+        },
+        {
+          "q": "3 × 8 = ?",
+          "a": "24",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Choose a key",
+          "bullets": [
+            "All even numbers: try 2.",
+            "Odd numbers: use half pictures."
+          ],
+          "table": {
+            "head": [
+              "Day",
+              "Mon",
+              "Tue",
+              "Wed",
+              "Thu"
+            ],
+            "rows": [
+              [
+                "Pages",
+                "10",
+                "6",
+                "8",
+                "5"
+              ]
+            ]
+          },
+          "note": "Example data: pages read."
+        },
+        {
+          "heading": "Draw it",
+          "bullets": [
+            "Key 1 circle = 2 pages."
+          ],
+          "model": {
+            "problem": "Draw Monday (10) and Thursday (5).",
+            "steps": [
+              "10 ÷ 2 = 5 circles.",
+              "5 = 2 + 2 + 1: 2 and a half circles."
+            ],
+            "answer": "5 circles; 2 and a half circles"
+          },
+          "note": "Draw the rows neatly in a grid."
+        },
+        {
+          "heading": "Title and key",
+          "bullets": [
+            "Title: Pages read this week.",
+            "Key: one circle = 2 pages."
+          ],
+          "misconception": {
+            "wrong": "Drawing 5 circles for 5 pages with key 2.",
+            "right": "5 pages is 2 and a half circles."
+          },
+          "note": "Every pictogram needs both."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Key 1 picture = 2. How many pictures for 8?",
+            "options": [
+              "4",
+              "8",
+              "16"
+            ],
+            "answer": 0,
+            "why": "8 ÷ 2 = 4."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Key 1 = 2. Pictures for Tuesday (6)?",
+          "a": "3",
+          "mins": 2,
+          "model": "Teacher: 6 ÷ 2 = 3 circles."
+        },
+        {
+          "q": "Pictures for Wednesday (8)?",
+          "a": "4",
+          "mins": 2
+        },
+        {
+          "q": "Key 1 = 5. Pictures for 15?",
+          "a": "3",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw the pictogram of pages read (key 1 circle = 2 pages).",
+          "a": "Mon 5, Tue 3, Wed 4, Thu 2 and a half circles; title and key",
+          "mins": 4,
+          "model": "Teacher draws Monday's row."
+        },
+        {
+          "q": "Extend: Draw 20, 35, 15, 30 with key 1 = 5.",
+          "a": "4, 7, 3, 6 pictures",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Which key would you use for 40, 70, 60, 50? Why?",
+          "a": "1 = 10: all are multiples of 10, so 4, 7, 6, 5 pictures",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A good pictogram has...",
+          "a": "A) a title and a key",
+          "mins": 2,
+          "options": [
+            "a title and a key",
+            "only colours",
+            "no key"
+          ]
+        },
+        {
+          "q": "Big question: how do we choose a key?",
+          "a": "Pick a key the numbers divide by, so the rows are short and clear.",
+          "mins": 3
+        }
+      ],
+      "homework": "Record pages or minutes of reading for 5 days and draw a pictogram with a key.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: with key 1 = 4, how do you draw 10? (2 and a half pictures)",
+      "resources": [
+        "White Rose Maths Year 3, Statistics block: small step 'Draw pictograms' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Squared paper or the printable pictogram grid",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 96 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Time; shape; statistics",
+      "n": 97,
+      "title": "Interpret bar charts",
+      "duration": 45,
+      "bigQuestion": "How do we read a bar that stops between two lines?",
+      "objectives": [
+        "To understand how to read bar charts with scales of 2, 5 and 10"
+      ],
+      "successCriteria": [
+        "All: read the scale on a bar chart",
+        "Most: read bars between the lines",
+        "Some: answer comparison and total questions"
+      ],
+      "crossCurricular": "Science: reading results from a bar chart",
+      "keywords": [
+        {
+          "term": "bar chart",
+          "def": "a chart with bars to show amounts"
+        },
+        {
+          "term": "axis",
+          "def": "the line with labels or numbers"
+        },
+        {
+          "term": "scale",
+          "def": "the numbers up the side and the steps they go up in"
+        },
+        {
+          "term": "interval",
+          "def": "the gap between two numbers on the scale"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A bar stops halfway between 8 and 10. What number could it show?",
+        "a": "9."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "bar chart graph",
+          "alt": "A bar chart",
+          "for": "teach:1"
+        },
+        {
+          "find": "bowl of fresh fruit",
+          "alt": "Fruit",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Count in 2s from 8.",
+          "a": "8, 10, 12, 14",
+          "mins": 1
+        },
+        {
+          "q": "Halfway between 10 and 20?",
+          "a": "15",
+          "mins": 1
+        },
+        {
+          "q": "Key 1 = 4. Half a picture?",
+          "a": "2",
+          "mins": 1
+        },
+        {
+          "q": "4 × 7 = ?",
+          "a": "28",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Read the scale",
+          "bullets": [
+            "Look at the steps: 2s here.",
+            "Find the top of each bar."
+          ],
+          "chart": {
+            "kind": "bar",
+            "labels": [
+              "Apples",
+              "Bananas",
+              "Dates",
+              "Grapes"
+            ],
+            "values": [
+              14,
+              9,
+              18,
+              12
+            ],
+            "title": "Favourite fruit (example data)",
+            "unit": "children"
+          },
+          "note": "Example data: favourite fruit."
+        },
+        {
+          "heading": "Between the lines",
+          "bullets": [
+            "Bananas stop between 8 and 10.",
+            "Halfway is 9."
+          ],
+          "numberline": {
+            "min": 8,
+            "max": 10,
+            "step": 1,
+            "marks": [
+              {
+                "at": 9,
+                "label": "9"
+              }
+            ]
+          },
+          "note": "Zoom in."
+        },
+        {
+          "heading": "Compare and total",
+          "bullets": [
+            "How many more? Subtract.",
+            "How many altogether? Add."
+          ],
+          "model": {
+            "problem": "How many more chose dates than bananas?",
+            "steps": [
+              "Dates 18, bananas 9.",
+              "18 - 9 = 9."
+            ],
+            "answer": "9 more"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "How many chose grapes?",
+            "options": [
+              "12",
+              "6",
+              "14"
+            ],
+            "answer": 0,
+            "why": "The bar reaches 12 on the scale."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "How many chose apples?",
+          "a": "14",
+          "mins": 2,
+          "model": "Teacher follows the top of the apples bar across to 14."
+        },
+        {
+          "q": "How many children in total?",
+          "a": "53",
+          "mins": 2
+        },
+        {
+          "q": "How many fewer chose grapes than dates?",
+          "a": "6",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Read the bar chart on the sheet (scale 5): how many in each bar?",
+          "a": "Answers on the sheet key",
+          "mins": 4,
+          "model": "Teacher reads the first bar."
+        },
+        {
+          "q": "Extend: Write two 'how many more' questions and answer them.",
+          "a": "Answers will vary",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: 4 more children choose bananas. Which fruit is now second?",
+          "a": "Bananas: 13 > 12",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "The scale goes up in 2s. A bar is halfway between 14 and 16. It shows...",
+          "a": "A) 15",
+          "mins": 2,
+          "options": [
+            "15",
+            "14",
+            "16"
+          ]
+        },
+        {
+          "q": "Big question: how do we read a bar between lines?",
+          "a": "Work out the step, then find the halfway or part value.",
+          "mins": 3
+        }
+      ],
+      "homework": "Find a bar chart in a newspaper or book and write what it shows.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: on a scale of 10, a bar is halfway between 40 and 50. What does it show? (45)",
+      "resources": [
+        "White Rose Maths Year 3, Statistics block: small step 'Interpret bar charts' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable bar chart sheet (example data)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 97 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Time; shape; statistics",
+      "n": 98,
+      "title": "Draw bar charts",
+      "duration": 45,
+      "bigQuestion": "What makes a bar chart easy to read?",
+      "objectives": [
+        "To understand how to draw an accurate bar chart with a scale"
+      ],
+      "successCriteria": [
+        "All: label the axes and give a title",
+        "Most: choose a sensible scale",
+        "Some: draw bars to the correct height"
+      ],
+      "crossCurricular": "Science: presenting results from an investigation",
+      "keywords": [
+        {
+          "term": "axis",
+          "def": "the line along the bottom or side"
+        },
+        {
+          "term": "label",
+          "def": "words to say what each axis shows"
+        },
+        {
+          "term": "scale",
+          "def": "the numbers on the axis"
+        },
+        {
+          "term": "gap",
+          "def": "space between bars"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your data is 25, 10, 15 and 20. Should your scale go up in 1s, 5s or 10s?",
+        "a": "5s: every number is a multiple of 5 and the chart fits on the page."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "bird on a garden fence",
+          "alt": "A bird in a garden",
+          "for": "hook"
+        },
+        {
+          "find": "squared paper",
+          "alt": "Squared paper",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Count in 5s to 30.",
+          "a": "5, 10, 15, 20, 25, 30",
+          "mins": 1
+        },
+        {
+          "q": "Halfway between 20 and 30?",
+          "a": "25",
+          "mins": 1
+        },
+        {
+          "q": "25 + 10 + 15 + 20 = ?",
+          "a": "70",
+          "mins": 1
+        },
+        {
+          "q": "8 × 6 = ?",
+          "a": "48",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The checklist",
+          "bullets": [
+            "Title.",
+            "Label both axes.",
+            "Equal steps on the scale.",
+            "Equal width bars with gaps."
+          ],
+          "note": "Show a good chart and a poor one."
+        },
+        {
+          "heading": "Choose a scale",
+          "bullets": [
+            "Biggest number is 25.",
+            "Steps of 5 up to 25 or 30."
+          ],
+          "table": {
+            "head": [
+              "Bird",
+              "Pigeon",
+              "Robin",
+              "Magpie",
+              "Blackbird"
+            ],
+            "rows": [
+              [
+                "Seen",
+                "25",
+                "10",
+                "15",
+                "20"
+              ]
+            ]
+          },
+          "note": "Example data: birds seen."
+        },
+        {
+          "heading": "Draw it",
+          "bullets": [
+            "Use a ruler.",
+            "Check each height."
+          ],
+          "chart": {
+            "kind": "bar",
+            "labels": [
+              "Pigeon",
+              "Robin",
+              "Magpie",
+              "Blackbird"
+            ],
+            "values": [
+              25,
+              10,
+              15,
+              20
+            ],
+            "title": "Birds seen in a garden (example data)",
+            "unit": "birds"
+          },
+          "note": "Draw live."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "The scale goes 0, 5, 10, 20. What is wrong?",
+            "options": [
+              "The steps are not equal",
+              "It starts at 0",
+              "It has numbers"
+            ],
+            "answer": 0,
+            "why": "10 to 20 is a step of 10; the others are 5."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Where does the robin bar stop?",
+          "a": "At 10",
+          "mins": 2,
+          "model": "Teacher draws the robin bar to the 10 line with a ruler."
+        },
+        {
+          "q": "How many more pigeons than robins?",
+          "a": "15",
+          "mins": 2
+        },
+        {
+          "q": "Total birds?",
+          "a": "70",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw a bar chart on the grid: tea 8, water 14, milk 6, juice 10 (scale 2).",
+          "a": "Bars 8, 14, 6, 10; title and labels",
+          "mins": 4,
+          "model": "Teacher draws the scale and the tea bar."
+        },
+        {
+          "q": "Extend: Write 2 questions about your chart and answer them.",
+          "a": "For example water - milk = 8",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Your numbers are 35, 70, 55, 40. Choose a scale and say why.",
+          "a": "5s: every number is a multiple of 5, so each bar ends on a line (10s would need half steps for 35 and 55)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A bar chart needs...",
+          "a": "A) a title and labelled axes",
+          "mins": 2,
+          "options": [
+            "a title and labelled axes",
+            "pictures",
+            "a key of 1"
+          ]
+        },
+        {
+          "q": "Big question: what makes a bar chart easy to read?",
+          "a": "A title, labels, an equal scale and neat bars.",
+          "mins": 3
+        }
+      ],
+      "homework": "Count the birds or cars you see for 10 minutes and draw a bar chart.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: draw a bar for 23 on a scale of 5. Where does it stop? (between 20 and 25, closer to 25)",
+      "resources": [
+        "White Rose Maths Year 3, Statistics block: small step 'Draw bar charts' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Squared paper or the printable bar chart grid",
+        "Ruler",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 98 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Time; shape; statistics",
+      "n": 99,
+      "title": "Collect and present data in tables",
+      "duration": 45,
+      "bigQuestion": "How can a table answer questions quickly?",
+      "objectives": [
+        "To understand how to read and make tables, including two-way tables"
+      ],
+      "successCriteria": [
+        "All: read a simple table",
+        "Most: read a two-way table",
+        "Some: complete totals in a table"
+      ],
+      "crossCurricular": "Computing: data in rows and columns, as in a spreadsheet",
+      "keywords": [
+        {
+          "term": "table",
+          "def": "data in rows and columns"
+        },
+        {
+          "term": "row",
+          "def": "goes across"
+        },
+        {
+          "term": "column",
+          "def": "goes down"
+        },
+        {
+          "term": "two-way table",
+          "def": "a table that sorts by two things at once"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How could you show which device each pupil in two classes uses, all in one place?",
+        "a": "A two-way table: classes in rows, devices in columns."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "laptop and tablet on desk",
+          "alt": "A laptop and a tablet",
+          "for": "hook"
+        },
+        {
+          "find": "spreadsheet table",
+          "alt": "A table of data",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Rows go...",
+          "a": "across",
+          "mins": 1
+        },
+        {
+          "q": "Columns go...",
+          "a": "down",
+          "mins": 1
+        },
+        {
+          "q": "6 + 5 + 3 = ?",
+          "a": "14",
+          "mins": 1
+        },
+        {
+          "q": "9 × 4 = ?",
+          "a": "36",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Rows and columns",
+          "bullets": [
+            "Find the row.",
+            "Find the column.",
+            "Read where they meet."
+          ],
+          "note": "Model with a finger."
+        },
+        {
+          "heading": "Two-way table",
+          "bullets": [
+            "Devices used in class (example data)."
+          ],
+          "table": {
+            "head": [
+              "Class",
+              "Laptop",
+              "Tablet",
+              "Desktop",
+              "Total"
+            ],
+            "rows": [
+              [
+                "3A",
+                "6",
+                "5",
+                "3",
+                "14"
+              ],
+              [
+                "3B",
+                "7",
+                "4",
+                "4",
+                "15"
+              ],
+              [
+                "Total",
+                "13",
+                "9",
+                "7",
+                "29"
+              ]
+            ]
+          },
+          "note": "Read across and down."
+        },
+        {
+          "heading": "Totals",
+          "bullets": [
+            "Add each row.",
+            "Add each column.",
+            "Both ways give the same grand total."
+          ],
+          "model": {
+            "problem": "Check the grand total.",
+            "steps": [
+              "Rows: 14 + 15 = 29.",
+              "Columns: 13 + 9 + 7 = 29."
+            ],
+            "answer": "29 both ways"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "How many in 3B use a tablet?",
+            "options": [
+              "4",
+              "5",
+              "9"
+            ],
+            "answer": 0,
+            "why": "Row 3B, column Tablet: 4."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "How many use a desktop altogether?",
+          "a": "7",
+          "mins": 2,
+          "model": "Teacher reads the Desktop column total: 3 + 4 = 7."
+        },
+        {
+          "q": "How many in 3A use a laptop?",
+          "a": "6",
+          "mins": 2
+        },
+        {
+          "q": "Which device is used most?",
+          "a": "Laptop (13)",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Complete the totals in the two-way table on the sheet.",
+          "a": "Answers on the sheet key",
+          "mins": 4,
+          "model": "Teacher completes the first row total."
+        },
+        {
+          "q": "Extend: How many more laptops than tablets in total?",
+          "a": "13 - 9 = 4",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Make your own two-way table: days of the week against the five prayers, ticking each prayer prayed on time.",
+          "a": "Answers will vary",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A two-way table sorts by...",
+          "a": "A) two things",
+          "mins": 2,
+          "options": [
+            "two things",
+            "one thing",
+            "colour only"
+          ]
+        },
+        {
+          "q": "Big question: how can a table answer questions quickly?",
+          "a": "Find the row and column; read where they meet.",
+          "mins": 3
+        }
+      ],
+      "homework": "Make a table of the weather each day for a week (sunny, cloudy, rain).",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: if 3 pupils in 3A switch from tablet to laptop, what are the new 3A numbers? (laptop 9, tablet 2, desktop 3)",
+      "resources": [
+        "White Rose Maths Year 3, Statistics block: small step 'Collect and represent data' (tables), with two-way tables from unit week 5 in brief (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable two-way table sheet (example data)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 99 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Time; shape; statistics",
+      "n": 100,
+      "title": "Review: place value and written methods",
+      "duration": 45,
+      "bigQuestion": "Which method is quickest and most reliable?",
+      "objectives": [
+        "To understand how well I can use place value and column methods for 3-digit numbers"
+      ],
+      "successCriteria": [
+        "All: partition and compare 3-digit numbers",
+        "Most: add with column addition and exchange",
+        "Some: subtract with column subtraction and exchange"
+      ],
+      "keywords": [
+        {
+          "term": "hundreds",
+          "def": "groups of 100"
+        },
+        {
+          "term": "exchange",
+          "def": "swap 10 of one place for 1 of the next"
+        },
+        {
+          "term": "column method",
+          "def": "lining up digits by place value"
+        },
+        {
+          "term": "inverse",
+          "def": "the opposite operation, used to check"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "456 + 278. Would you work it out in your head, with jottings or in columns? Why?",
+        "a": "Columns: there are exchanges in the ones and tens."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "base ten blocks hundreds tens ones",
+          "alt": "Hundreds, tens and ones blocks",
+          "for": "teach:1"
+        },
+        {
+          "find": "abacus",
+          "alt": "An abacus",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "What is the value of 7 in 472?",
+          "a": "70",
+          "mins": 1
+        },
+        {
+          "q": "100 more than 856?",
+          "a": "956",
+          "mins": 1
+        },
+        {
+          "q": "8 × 7 = ?",
+          "a": "56",
+          "mins": 1
+        },
+        {
+          "q": "1/4 of 20?",
+          "a": "5",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Place value",
+          "bullets": [
+            "Hundreds, tens, ones.",
+            "Compare from the left."
+          ],
+          "table": {
+            "head": [
+              "H",
+              "T",
+              "O",
+              "Number"
+            ],
+            "rows": [
+              [
+                "5",
+                "0",
+                "8",
+                "508"
+              ],
+              [
+                "5",
+                "8",
+                "0",
+                "580"
+              ]
+            ]
+          },
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Column addition",
+          "bullets": [
+            "Line up the places.",
+            "Exchange when a column is 10 or more."
+          ],
+          "model": {
+            "problem": "456 + 278",
+            "steps": [
+              "Ones: 6 + 8 = 14: write 4, exchange 1 ten.",
+              "Tens: 5 + 7 + 1 = 13: write 3, exchange 1 hundred.",
+              "Hundreds: 4 + 2 + 1 = 7."
+            ],
+            "answer": "734"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Column subtraction",
+          "bullets": [
+            "Exchange from the next place.",
+            "Check with addition."
+          ],
+          "model": {
+            "problem": "602 - 347",
+            "steps": [
+              "Ones: 2 - 7 needs an exchange; there are 0 tens, so exchange a hundred first.",
+              "Now 5 hundreds, 9 tens, 12 ones.",
+              "12 - 7 = 5; 9 - 4 = 5; 5 - 3 = 2."
+            ],
+            "answer": "255"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Check: 255 + 347 = ?",
+            "options": [
+              "602",
+              "592",
+              "612"
+            ],
+            "answer": 0,
+            "why": "Inverse check: 255 + 347 = 602."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "365 + 248",
+          "a": "613",
+          "mins": 2,
+          "model": "Teacher: 5 + 8 = 13, write 3 carry 1; 6 + 4 + 1 = 11, write 1 carry 1; 3 + 2 + 1 = 6: 613."
+        },
+        {
+          "q": "524 - 186",
+          "a": "338",
+          "mins": 2
+        },
+        {
+          "q": "Order: 508, 580, 85",
+          "a": "85, 508, 580",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 437 + 285; 702 - 456; 389 + 147",
+          "a": "722; 246; 536",
+          "mins": 4,
+          "model": "Teacher works 437 + 285 in columns: 7 + 5 = 12, 3 + 8 + 1 = 12, 4 + 2 + 1 = 7: 722."
+        },
+        {
+          "q": "Extend: A library has 463 books and buys 278 more. Then 195 are given away. How many now?",
+          "a": "463 + 278 = 741; 741 - 195 = 546",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Find missing tens digits: 4_6 + 2_7 = 713",
+          "a": "The tens digits add to 10: for example 456 + 257 = 713",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "456 + 278 =",
+          "a": "A) 734",
+          "mins": 2,
+          "options": [
+            "734",
+            "624",
+            "724"
+          ]
+        },
+        {
+          "q": "Big question: which method is most reliable?",
+          "a": "Column methods when there are exchanges; check with the inverse.",
+          "mins": 3
+        }
+      ],
+      "homework": "Do the 6 column calculations on the review sheet and check each one with the inverse.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: use the digits 1 to 6 once each to make two 3-digit numbers with the biggest total. (for example 642 + 531 = 1,173)",
+      "resources": [
+        "White Rose Maths Year 3 end-of-year review: place value and addition and subtraction (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable review sheet",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 100 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Time; shape; statistics",
+      "n": 101,
+      "title": "Review: times tables, fractions and measures",
+      "duration": 45,
+      "bigQuestion": "How do times tables help with fractions and measures?",
+      "objectives": [
+        "To understand how secure my times tables, fractions and measures are before the assessment"
+      ],
+      "successCriteria": [
+        "All: recall the 3, 4 and 8 times tables",
+        "Most: multiply and divide 2-digit numbers by 1-digit numbers",
+        "Some: find fractions of amounts and convert measures"
+      ],
+      "keywords": [
+        {
+          "term": "multiple",
+          "def": "a number in a times table"
+        },
+        {
+          "term": "fraction",
+          "def": "an equal part of a whole"
+        },
+        {
+          "term": "denominator",
+          "def": "how many equal parts"
+        },
+        {
+          "term": "convert",
+          "def": "change to another unit"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you know 8 × 4 = 32, how does it help you find 1/4 of 32?",
+        "a": "Sharing 32 into 4 equal parts gives 8, the same fact."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "kitchen scales",
+          "alt": "Kitchen scales",
+          "for": "teach:3"
+        },
+        {
+          "find": "measuring tape",
+          "alt": "A tape measure",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "8 × 4 = ?",
+          "a": "32",
+          "mins": 1
+        },
+        {
+          "q": "36 ÷ 3 = ?",
+          "a": "12",
+          "mins": 1
+        },
+        {
+          "q": "1/4 of 32?",
+          "a": "8",
+          "mins": 1
+        },
+        {
+          "q": "100 cm = ? m",
+          "a": "1",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Times tables",
+          "bullets": [
+            "3s, 4s and 8s.",
+            "8s are double the 4s."
+          ],
+          "table": {
+            "head": [
+              "× 3",
+              "× 4",
+              "× 8"
+            ],
+            "rows": [
+              [
+                "3 × 7 = 21",
+                "4 × 7 = 28",
+                "8 × 7 = 56"
+              ],
+              [
+                "3 × 9 = 27",
+                "4 × 9 = 36",
+                "8 × 9 = 72"
+              ]
+            ]
+          },
+          "note": "Quick-fire, spoken."
+        },
+        {
+          "heading": "Multiply and divide",
+          "bullets": [
+            "Partition the 2-digit number."
+          ],
+          "model": {
+            "problem": "24 × 3",
+            "steps": [
+              "20 × 3 = 60.",
+              "4 × 3 = 12.",
+              "60 + 12 = 72."
+            ],
+            "answer": "72"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Fractions and measures",
+          "bullets": [
+            "1/4 of 32 = 32 ÷ 4 = 8.",
+            "1 m = 100 cm; 1 kg = 1,000 g."
+          ],
+          "fraction": {
+            "parts": 4,
+            "shaded": 3,
+            "label": "3/4"
+          },
+          "note": "Model 3/4 of 32 = 24."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "3/4 of 32 =",
+            "options": [
+              "24",
+              "8",
+              "12"
+            ],
+            "answer": 0,
+            "why": "1/4 is 8, so 3/4 is 3 × 8 = 24."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "96 ÷ 4",
+          "a": "24",
+          "mins": 2,
+          "model": "Teacher partitions: 80 ÷ 4 = 20, 16 ÷ 4 = 4, total 24."
+        },
+        {
+          "q": "3/8 + 2/8",
+          "a": "5/8",
+          "mins": 2
+        },
+        {
+          "q": "1 m 35 cm in cm?",
+          "a": "135 cm",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 34 × 4; 84 ÷ 3; 2/5 of 30; 2 kg 300 g in g",
+          "a": "136; 28; 12; 2,300 g",
+          "mins": 4,
+          "model": "Teacher works 34 × 4: 30 × 4 = 120, 4 × 4 = 16, 136."
+        },
+        {
+          "q": "Extend: 7/8 - 3/8; 1/3 of 27; 4 l 50 ml in ml",
+          "a": "4/8 (= 1/2); 9; 4,050 ml",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A 96 cm ribbon is cut into 8 equal pieces. 3 pieces are used. How long is the rest?",
+          "a": "96 ÷ 8 = 12; 5 × 12 = 60 cm",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "8 × 6 =",
+          "a": "A) 48",
+          "mins": 2,
+          "options": [
+            "48",
+            "46",
+            "54"
+          ]
+        },
+        {
+          "q": "Big question: how do tables help?",
+          "a": "A fraction of an amount is a division fact, and measures use multiples of 10 and 100.",
+          "mins": 3
+        }
+      ],
+      "homework": "Practise the 3, 4 and 8 times tables for 10 minutes before the assessment.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: what is 3/4 of 1 m in cm? (75 cm)",
+      "resources": [
+        "White Rose Maths Year 3 end-of-year review: multiplication and division, fractions and measures (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable review sheet",
+        "Ruler and kitchen scales (to look at the scales)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 101 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Time; shape; statistics",
+      "n": 102,
+      "title": "End-of-year assessment: arithmetic",
+      "duration": 45,
+      "bigQuestion": "How accurately can I calculate on my own?",
+      "objectives": [
+        "To understand how accurately I can use Year 3 calculation methods on my own"
+      ],
+      "successCriteria": [
+        "All: answer mental and written addition and subtraction",
+        "Most: answer multiplication, division and times tables",
+        "Some: add and subtract fractions with the same denominator"
+      ],
+      "smsc": "Moral: honesty (amanah, أَمَانَة): our own work only",
+      "keywords": [
+        {
+          "term": "arithmetic",
+          "def": "calculating with numbers"
+        },
+        {
+          "term": "accurate",
+          "def": "correct"
+        },
+        {
+          "term": "method",
+          "def": "the steps you use"
+        },
+        {
+          "term": "check",
+          "def": "make sure with the inverse"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What will you do if you finish early?",
+        "a": "Check every answer, using the inverse where I can."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "pencil and eraser",
+          "alt": "A pencil and eraser",
+          "for": "hook"
+        },
+        {
+          "find": "stopwatch",
+          "alt": "A stopwatch",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "7 × 8 = ?",
+          "a": "56",
+          "mins": 1
+        },
+        {
+          "q": "500 - 1 = ?",
+          "a": "499",
+          "mins": 1
+        },
+        {
+          "q": "1/5 + 2/5 = ?",
+          "a": "3/5",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Before we start",
+          "bullets": [
+            "Read each question carefully.",
+            "Show working in columns.",
+            "Check with the inverse."
+          ],
+          "note": "Printable paper from the portal; secure portal quiz for those using a tablet."
+        },
+        {
+          "heading": "Timing",
+          "bullets": [
+            "25 minutes, 20 questions.",
+            "Skip and come back if stuck."
+          ],
+          "note": "Teacher keeps time on screen."
+        },
+        {
+          "heading": "Model of checking",
+          "bullets": [
+            "Inverse operations."
+          ],
+          "model": {
+            "problem": "345 + 236 = 581. Check.",
+            "steps": [
+              "581 - 236 = ?",
+              "581 - 200 = 381; 381 - 36 = 345."
+            ],
+            "answer": "345: correct"
+          },
+          "note": "Model."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Warm-up: 703 - 258",
+          "a": "445",
+          "mins": 2,
+          "model": "Teacher works it in columns: exchange to 6 hundreds, 9 tens, 13 ones; 13 - 8 = 5, 9 - 5 = 4, 6 - 2 = 4: 445."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: End-of-year arithmetic paper (portal or printed, 25 minutes, 20 questions). Sample: (a) 345 + 236 (b) 703 - 258 (c) 8 × 7 (d) 36 ÷ 4 (e) 23 × 4 (f) 96 ÷ 3 (g) 1/5 + 2/5 (h) 7/8 - 3/8 (i) 1/3 of 24 (j) 400 + 350",
+          "a": "Sample answers: (a) 581 (b) 445 (c) 56 (d) 9 (e) 92 (f) 32 (g) 3/5 (h) 4/8 (= 1/2) (i) 8 (j) 750",
+          "mins": 25,
+          "model": "Teacher models (a) in columns: 5 + 6 = 11, write 1 carry 1; 4 + 3 + 1 = 8; 3 + 2 = 5: 581. Then pupils work alone."
+        },
+        {
+          "q": "Extend: When finished, check three answers with the inverse.",
+          "a": "For example 92 ÷ 4 = 23 checks (e)",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "1/3 of 24 =",
+          "a": "A) 8",
+          "mins": 1,
+          "options": [
+            "8",
+            "6",
+            "12"
+          ]
+        },
+        {
+          "q": "Big question: how accurate was I?",
+          "a": "Answers will vary: I checked with the inverse",
+          "mins": 2
+        }
+      ],
+      "homework": "No homework: rest well before the reasoning paper.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: what number is 99 more than 456? (555: add 100, then take away 1)",
+      "resources": [
+        "White Rose Maths Year 3 end-of-year assessment: arithmetic paper (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed arithmetic paper or portal quiz (secure mode)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 102 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Time; shape; statistics",
+      "n": 103,
+      "title": "End-of-year assessment: reasoning",
+      "duration": 45,
+      "bigQuestion": "Can I show and explain my thinking?",
+      "objectives": [
+        "To understand how well I can reason and solve problems with Year 3 maths"
+      ],
+      "successCriteria": [
+        "All: answer one-step problems on number, time and shape",
+        "Most: solve two-step problems",
+        "Some: explain an answer with 'because'"
+      ],
+      "smsc": "Moral: honesty (amanah, أَمَانَة): our own work only",
+      "keywords": [
+        {
+          "term": "reasoning",
+          "def": "explaining how you know"
+        },
+        {
+          "term": "problem",
+          "def": "a question in words"
+        },
+        {
+          "term": "two-step",
+          "def": "needs two calculations"
+        },
+        {
+          "term": "explain",
+          "def": "say why"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A question looks long. What is your first step?",
+        "a": "Read it twice and underline the numbers and what it asks."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "magnifying glass",
+          "alt": "A magnifying glass",
+          "for": "hook"
+        },
+        {
+          "find": "ruler and pencil",
+          "alt": "A ruler and pencil",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "How long from 2:40 to 3:15?",
+          "a": "35 minutes",
+          "mins": 1
+        },
+        {
+          "q": "Right angles in a square?",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "1/4 of 28?",
+          "a": "7",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Read, think, solve",
+          "bullets": [
+            "Underline the numbers.",
+            "What does it ask?",
+            "Draw a bar model if it helps."
+          ],
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Explain",
+          "bullets": [
+            "'I know ... because ...'"
+          ],
+          "model": {
+            "problem": "Pencils cost 25p each. Ali buys 3 and pays with £1. Change?",
+            "steps": [
+              "3 × 25p = 75p.",
+              "£1 = 100p; 100 - 75 = 25."
+            ],
+            "answer": "25p"
+          },
+          "note": "Model a two-step problem."
+        },
+        {
+          "heading": "Paper rules",
+          "bullets": [
+            "26 minutes.",
+            "Show your working.",
+            "Check units: cm, g, minutes, p."
+          ],
+          "note": "Printed paper or portal quiz."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Warm-up: Tea is 45 ml, milk 30 ml. How much in the cup?",
+          "a": "75 ml",
+          "mins": 2,
+          "model": "Teacher adds: 45 + 30 = 75 ml."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Reasoning paper (26 minutes). Sample: (a) a family quiz starts at 4:35 and lasts 40 minutes: end time (b) how many right angles in a rectangle (c) 3 boxes of 8 dates and 5 loose dates: total (d) bar chart: apples 14, pears 9: how many more apples (e) Sami says 3/4 is smaller than 2/4: is he right? Explain (f) a 1 m ribbon has 35 cm cut off: how much is left",
+          "a": "Sample answers: (a) 5:15 (b) 4 (c) 29 (d) 5 (e) No: 3 parts of 4 is more than 2 parts of 4 (f) 65 cm",
+          "mins": 26,
+          "model": "Teacher reads (a): 4:35 + 25 minutes = 5:00, then 15 more = 5:15. Pupils then work alone."
+        }
+      ],
+      "exit": [
+        {
+          "q": "3 × 8 + 5 =",
+          "a": "A) 29",
+          "mins": 1,
+          "options": [
+            "29",
+            "40",
+            "24"
+          ]
+        },
+        {
+          "q": "Big question: can I explain my thinking?",
+          "a": "Answers will vary: 'I know ... because ...'",
+          "mins": 2
+        }
+      ],
+      "homework": "No homework: rest. Feedback and the times tables check are next lesson.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: a box holds 8 dates. How many boxes are needed for 50 dates? (7: 6 boxes hold only 48)",
+      "resources": [
+        "White Rose Maths Year 3 end-of-year assessment: reasoning paper (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed reasoning paper or portal quiz (secure mode)",
+        "Ruler",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 103 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Time; shape; statistics",
+      "n": 104,
+      "title": "Feedback and times tables recall check",
+      "duration": 45,
+      "bigQuestion": "What have I mastered this year, and what is next?",
+      "objectives": [
+        "To understand my strengths and next steps from the end-of-year assessment"
+      ],
+      "successCriteria": [
+        "All: correct two questions from my papers",
+        "Most: complete the times tables recall check",
+        "Some: write one target for Year 4"
+      ],
+      "smsc": "Spiritual: shukr for a year of learning; niyyah for Year 4",
+      "keywords": [
+        {
+          "term": "feedback",
+          "def": "comments that help us improve"
+        },
+        {
+          "term": "target",
+          "def": "what to practise next"
+        },
+        {
+          "term": "recall",
+          "def": "remember quickly"
+        },
+        {
+          "term": "strength",
+          "def": "something you do well"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Since January, which maths skill have you improved most?",
+        "a": "Answers will vary: for example column subtraction or telling the time."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "green pen",
+          "alt": "A green pen",
+          "for": "hook"
+        },
+        {
+          "find": "multiplication table chart",
+          "alt": "A multiplication table",
+          "for": "teach:3"
+        }
+      ],
+      "starter": [
+        {
+          "q": "6 × 4 = ?",
+          "a": "24",
+          "mins": 1
+        },
+        {
+          "q": "8 × 3 = ?",
+          "a": "24",
+          "mins": 1
+        },
+        {
+          "q": "702 - 456 = ?",
+          "a": "246",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "What went well",
+          "bullets": [
+            "Celebrate the class strengths.",
+            "Name the skills most pupils secured."
+          ],
+          "note": "Teacher shares class strengths from the marking."
+        },
+        {
+          "heading": "Common slips",
+          "bullets": [
+            "Exchanging across a zero.",
+            "Half pictures in pictograms."
+          ],
+          "model": {
+            "problem": "Fix: 604 - 278",
+            "steps": [
+              "Exchange: 5 hundreds, 9 tens, 14 ones.",
+              "14 - 8 = 6; 9 - 7 = 2; 5 - 2 = 3."
+            ],
+            "answer": "326"
+          },
+          "note": "Model a correction."
+        },
+        {
+          "heading": "Times tables check",
+          "bullets": [
+            "3, 4 and 8 tables, plus 2, 5, 10.",
+            "25 questions, 6 seconds each."
+          ],
+          "note": "Portal check; scores go home in the report."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "8 × 7 =",
+            "options": [
+              "56",
+              "54",
+              "64"
+            ],
+            "answer": 0,
+            "why": "8 × 7 = 56; 64 is 8 × 8."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Correct: 500 - 163",
+          "a": "337",
+          "mins": 2,
+          "model": "Teacher exchanges: 4 hundreds, 9 tens, 10 ones; 10 - 3 = 7, 9 - 6 = 3, 4 - 1 = 3: 337."
+        },
+        {
+          "q": "4 × 9 = ?",
+          "a": "36",
+          "mins": 2
+        },
+        {
+          "q": "1/8 of 40?",
+          "a": "5",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Correct two questions from your papers in green pen.",
+          "a": "Corrections checked by the teacher",
+          "mins": 4,
+          "model": "Teacher corrects one paper question with the class."
+        },
+        {
+          "q": "Extend: Times tables recall check (portal, 25 questions).",
+          "a": "Score recorded",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Write your Year 4 maths target in the response box with a plan.",
+          "a": "Answers will vary",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "4 × 8 =",
+          "a": "A) 32",
+          "mins": 2,
+          "options": [
+            "32",
+            "36",
+            "28"
+          ]
+        },
+        {
+          "q": "Big question: what have I mastered, and what is next?",
+          "a": "Answers will vary: one strength and one target",
+          "mins": 3
+        }
+      ],
+      "homework": "Summer: 5 minutes of times tables a day; practise your target.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: what is 8 × 12? (96: 8 × 10 + 8 × 2)",
+      "resources": [
+        "White Rose Maths Year 3 end-of-year assessment: marked papers and question-level analysis (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Times tables recall check (portal quiz)",
+        "Green pen",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 3 maths lesson 104 guided, independent and homework tasks"
       ]
     }
   ]
