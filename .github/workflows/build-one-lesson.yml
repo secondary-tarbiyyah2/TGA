@@ -62,12 +62,12 @@ jobs:
           packages: libreoffice-impress libreoffice-writer fonts-liberation fonts-crosextra-carlito fonts-dejavu-core fonts-noto-core
           version: "2"
 
-      # Amiri Quran (OFL) for Qur'an text; Noto Naskh Arabic (other Arabic) comes with fonts-noto-core.
+      # Scheherazade New (OFL) for Qur'an text; Noto Naskh Arabic (other Arabic) comes with fonts-noto-core.
       - name: Cache the Qur'an font
         uses: actions/cache@v4
         with:
-          path: ~/.local/share/fonts/amiri-quran
-          key: amiri-quran-${{ hashFiles('scripts/lessons/install-quran-font.sh') }}
+          path: ~/.local/share/fonts/quran
+          key: quran-font-${{ hashFiles('scripts/lessons/install-quran-font.sh') }}
 
       - name: Install the Qur'an font
         run: bash scripts/lessons/install-quran-font.sh
