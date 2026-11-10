@@ -3,7 +3,7 @@
   "year": "y7",
   "board": "KS3 National Curriculum via Pearson Exploring Science, building to Edexcel International GCSE Biology, Chemistry and Physics",
   "boardShort": "KS3 Exploring Science",
-  "source": "School Science curriculum journey 2026–27 (Year 7 Term 1: 7A Cells, tissues, organs and systems; 7E Mixtures and separation) and the school's Pearson 5-year Biology and Chemistry schemes (Exploring Science topics 7Aa–7Ae, 7Ea–7Ee) and 7E assessments; practicals adapted for live online lessons; INSET lesson standard. | Spring 1 2027 (lessons 17 to 31): Pearson Exploring Science 7C and 7G (school's Pearson five-year scheme) and Kerboodle Activate 1; home practicals with written safety guides | Spring 2 2027 (lessons 32 to 49): Pearson Exploring Science 7J and 7K, Kerboodle Activate (Electromagnets; Forces), circuit simulator, The Highway Code stopping distances; home practicals with household items and written safety guides; no mains work",
+  "source": "School Science curriculum journey 2026–27 (Year 7 Term 1: 7A Cells, tissues, organs and systems; 7E Mixtures and separation) and the school's Pearson 5-year Biology and Chemistry schemes (Exploring Science topics 7Aa–7Ae, 7Ea–7Ee) and 7E assessments; practicals adapted for live online lessons; INSET lesson standard. | Spring 1 2027 (lessons 17 to 31): Pearson Exploring Science 7C and 7G (school's Pearson five-year scheme) and Kerboodle Activate 1; home practicals with written safety guides | Spring 2 2027 (lessons 32 to 49): Pearson Exploring Science 7J and 7K, Kerboodle Activate (Electromagnets; Forces), circuit simulator, The Highway Code stopping distances; home practicals with household items and written safety guides; no mains work | Summer 1 2027 (lessons 50 to 64): Pearson Exploring Science 7D and 7H, Kerboodle Activate (Ecosystem; Matter; Reactions); home practicals with household items and written safety guides; burning magnesium as a teacher demonstration only",
   "lessons": [
     {
       "unit": "7A: Cells, tissues, organs and systems",
@@ -10118,6 +10118,3572 @@
           "find": "coil spring",
           "alt": "A spring",
           "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Ecosystems (7D); atoms, elements and molecules (7H)",
+      "n": 50,
+      "title": "Variation",
+      "duration": 50,
+      "bigQuestion": "Two brothers have the same parents but look different and grow to different heights. What could cause the differences?",
+      "objectives": [
+        "To understand why living things of the same species differ and how to show variation with data"
+      ],
+      "successCriteria": [
+        "All: sort features into continuous and discontinuous variation",
+        "Most: decide whether a feature is inherited, environmental or both",
+        "Some: choose the right graph for each type"
+      ],
+      "crossCurricular": "Maths: grouping data and drawing histograms",
+      "smsc": "Spiritual: every person is created different",
+      "keywords": [
+        {
+          "term": "species",
+          "def": "a group of organisms that can breed to produce fertile young"
+        },
+        {
+          "term": "variation",
+          "def": "differences between living things"
+        },
+        {
+          "term": "continuous variation",
+          "def": "can be any value in a range, such as height"
+        },
+        {
+          "term": "discontinuous variation",
+          "def": "falls into separate groups, such as blood group"
+        },
+        {
+          "term": "inherited",
+          "def": "passed on from parents in genes"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two brothers have the same parents but look different and grow to different heights. What could cause the differences?",
+        "a": "Each inherits a different mix of features from the parents, and the environment (food, exercise, illness) also has an effect."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And of His signs is the creation of the heavens and the earth and the diversity of your languages and your colours. Indeed in that are signs for those of knowledge' (Ar-Rum 30:22). Variation is one of the signs of Allah's creation.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "The particles in a gas are...",
+          "a": "Far apart and moving quickly",
+          "mins": 1,
+          "options": [
+            "Far apart and moving quickly",
+            "Close together in rows"
+          ]
+        },
+        {
+          "q": "Current in a series circuit is...",
+          "a": "The same everywhere",
+          "mins": 1,
+          "options": [
+            "The same everywhere",
+            "Used up by each lamp"
+          ]
+        },
+        {
+          "q": "The unit of force is the...",
+          "a": "Newton",
+          "mins": 1
+        },
+        {
+          "q": "Name a characteristic of living things.",
+          "a": "For example: movement, respiration, growth",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Same species, different features",
+          "bullets": [
+            "A species can breed to make fertile young",
+            "Members still vary",
+            "Variation within and between species"
+          ],
+          "note": "Dogs vary greatly but are one species."
+        },
+        {
+          "heading": "Two kinds of variation",
+          "bullets": [
+            "Continuous or discontinuous"
+          ],
+          "note": "Sort in the chat.",
+          "compare": {
+            "left": {
+              "title": "Continuous",
+              "points": [
+                "Any value in a range",
+                "Height, mass, hand span",
+                "Shown as a histogram"
+              ]
+            },
+            "right": {
+              "title": "Discontinuous",
+              "points": [
+                "Separate groups",
+                "Blood group, eye colour",
+                "Shown as a bar chart"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "What causes variation?",
+          "bullets": [
+            "Inherited: blood group, natural eye colour",
+            "Environmental: scars, language spoken",
+            "Both: height, mass"
+          ],
+          "note": "Height depends on genes and on food."
+        },
+        {
+          "heading": "Example data: hand span",
+          "bullets": [
+            "Continuous data grouped into classes"
+          ],
+          "note": "Example class data.",
+          "chart": {
+            "kind": "bar",
+            "title": "Hand span of 30 pupils",
+            "labels": [
+              "14-15 cm",
+              "15-16 cm",
+              "16-17 cm",
+              "17-18 cm",
+              "18-19 cm"
+            ],
+            "values": [
+              3,
+              7,
+              11,
+              6,
+              3
+            ],
+            "unit": "pupils"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Blood group is an example of...",
+            "options": [
+              "Continuous, environmental",
+              "Discontinuous, inherited",
+              "Continuous, inherited"
+            ],
+            "answer": 1,
+            "why": "Blood group has fixed groups (A, B, AB, O) and comes from parents."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Is mass continuous or discontinuous? Inherited, environmental or both?",
+          "a": "Continuous; both",
+          "mins": 2,
+          "model": "Can mass be any value in a range? Yes: continuous. Do genes affect it? Yes. Does diet? Yes. So both."
+        },
+        {
+          "q": "A scar is...",
+          "a": "Environmental variation",
+          "mins": 1
+        },
+        {
+          "q": "Which graph for shoe sizes in a class?",
+          "a": "Bar chart (sizes are separate groups)",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Sort 12 features on the sheet into continuous or discontinuous, and inherited, environmental or both.",
+          "a": "Correct sort as on the answer sheet (e.g. height: continuous, both; blood group: discontinuous, inherited)",
+          "mins": 10,
+          "model": "Teacher sorts 'height' first: 'any value, so continuous; genes and diet, so both'."
+        },
+        {
+          "q": "Extend: Measure the hand span of everyone at home and group the results into classes.",
+          "a": "A tally table with 1 cm classes",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why do identical twins still show some differences?",
+          "a": "They share genes, so differences must come from the environment",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Height is...",
+          "a": "Continuous",
+          "mins": 1,
+          "options": [
+            "Continuous",
+            "Discontinuous"
+          ]
+        },
+        {
+          "q": "Big question: why do two brothers look different?",
+          "a": "Different mixes of inherited features plus environmental effects such as diet.",
+          "mins": 2
+        }
+      ],
+      "homework": "Survey 10 people (with permission) for one discontinuous feature and draw a bar chart.",
+      "send": "SEND: feature cards with pictures. EAL: continuous, discontinuous, inherited. Stretch: research why some features are controlled by many genes.",
+      "resources": [
+        "Pearson Exploring Science 7D Ecosystems (the school's KS3 course): 7Da",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Ecosystem (interdependence)",
+        "Variation sorting sheet with answers (portal worksheet)",
+        "Ruler or tape measure",
+        "Mini-whiteboard and pen",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "dog breeds",
+          "alt": "Dogs of different breeds (one species)",
+          "for": "teach:1"
+        },
+        {
+          "find": "hand span measuring ruler",
+          "alt": "Measuring a hand span with a ruler",
+          "for": "teach:4"
+        },
+        {
+          "find": "leaves of one tree varying size",
+          "alt": "Leaves from one tree, all slightly different",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Ecosystems (7D); atoms, elements and molecules (7H)",
+      "n": 51,
+      "title": "Adaptations",
+      "duration": 50,
+      "bigQuestion": "A cactus has spines instead of leaves. What problem do you think the spines solve?",
+      "objectives": [
+        "To understand how features of organisms help them survive in their environment"
+      ],
+      "successCriteria": [
+        "All: name physical and behavioural adaptations",
+        "Most: explain three adaptations of a polar animal and a desert plant",
+        "Some: predict features for a given environment"
+      ],
+      "crossCurricular": "Geography: hot deserts and polar regions",
+      "smsc": "Spiritual: design and purpose in creation",
+      "keywords": [
+        {
+          "term": "adaptation",
+          "def": "a feature that helps an organism survive in its environment"
+        },
+        {
+          "term": "environment",
+          "def": "the conditions where an organism lives"
+        },
+        {
+          "term": "habitat",
+          "def": "the place an organism lives"
+        },
+        {
+          "term": "behavioural",
+          "def": "about how an organism acts"
+        },
+        {
+          "term": "physical",
+          "def": "about the body's structure"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A cactus has spines instead of leaves. What problem do you think the spines solve?",
+        "a": "Less water is lost than from broad leaves, and spines protect the stored water from animals."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Our Lord is He who gave each thing its form and then guided it' (Ta-Ha 20:50). Every creature has the features it needs for the place it lives.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Height is continuous or discontinuous?",
+          "a": "Continuous",
+          "mins": 1,
+          "options": [
+            "Continuous",
+            "Discontinuous"
+          ]
+        },
+        {
+          "q": "A scar is ... variation.",
+          "a": "Environmental",
+          "mins": 1,
+          "options": [
+            "Environmental",
+            "Inherited"
+          ]
+        },
+        {
+          "q": "What is a species?",
+          "a": "Organisms that can breed to make fertile young",
+          "mins": 1
+        },
+        {
+          "q": "Which graph for blood groups?",
+          "a": "Bar chart",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Adapted to survive",
+          "bullets": [
+            "Physical: body features",
+            "Behavioural: what it does",
+            "Each matches the environment"
+          ],
+          "note": "Habitat sets the problems; adaptations solve them."
+        },
+        {
+          "heading": "Polar bear",
+          "bullets": [
+            "Polar bears in the Arctic"
+          ],
+          "note": "Show the photo.",
+          "table": {
+            "head": [
+              "Feature",
+              "How it helps"
+            ],
+            "rows": [
+              [
+                "Thick white fur",
+                "Insulation and camouflage on snow"
+              ],
+              [
+                "Thick layer of fat",
+                "Keeps heat in; energy store"
+              ],
+              [
+                "Large feet",
+                "Spread weight on ice; paddle when swimming"
+              ],
+              [
+                "Small ears",
+                "Less heat lost"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Cactus in the desert",
+          "bullets": [
+            "Spines: less water loss, protection",
+            "Thick stem stores water",
+            "Wide shallow roots catch rain fast",
+            "Waxy surface"
+          ],
+          "note": "Desert: hot days, cold nights, little rain."
+        },
+        {
+          "heading": "Behavioural adaptations",
+          "bullets": [
+            "Camels rest in shade in the heat",
+            "Desert animals come out at night",
+            "Penguins huddle to keep warm"
+          ],
+          "note": "Behaviour can save water and energy."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Small ears on an Arctic fox help it...",
+            "options": [
+              "Hear better",
+              "Lose less heat",
+              "Run faster"
+            ],
+            "answer": 1,
+            "why": "Smaller surface area means less heat lost."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "A fennec fox lives in a hot desert and has huge ears. Explain why.",
+          "a": "Large ears give a big surface area to lose heat (and to hear prey)",
+          "mins": 2,
+          "model": "Compare with the Arctic fox: small ears keep heat in. The desert is hot, so the fox needs to lose heat. Large ears lose more heat."
+        },
+        {
+          "q": "Name a behavioural adaptation.",
+          "a": "For example: hunting at night",
+          "mins": 1
+        },
+        {
+          "q": "Why does a cactus have wide shallow roots?",
+          "a": "To collect rainwater quickly before it evaporates or drains",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Choose a camel, a fish or a water lily. Draw it and label four adaptations with how each helps.",
+          "a": "Four correct adaptations with reasons, e.g. camel: hump of fat, wide feet, long eyelashes, can go days without drinking",
+          "mins": 10,
+          "model": "Teacher labels the camel's long eyelashes: 'keep sand out of the eyes in sandstorms'."
+        },
+        {
+          "q": "Extend: Design a plant for a dark rainforest floor. Give three adaptations.",
+          "a": "e.g. large leaves to catch dim light, drip tips, shallow roots",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why might an animal well adapted to one place struggle if the climate changes?",
+          "a": "Its features suit the old conditions; it may not survive the new ones",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A cactus stores water in its...",
+          "a": "Stem",
+          "mins": 1,
+          "options": [
+            "Stem",
+            "Spines"
+          ]
+        },
+        {
+          "q": "Big question: what problem do cactus spines solve?",
+          "a": "They lose less water than leaves and protect the cactus from animals.",
+          "mins": 2
+        }
+      ],
+      "homework": "Find an animal from a habitat near you. List two physical and one behavioural adaptation.",
+      "send": "SEND: labelled photo with word bank. EAL: adaptation, physical, behavioural. Stretch: research the camel's red blood cells.",
+      "resources": [
+        "Pearson Exploring Science 7D Ecosystems (the school's KS3 course): 7Db",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Ecosystem (interdependence)",
+        "Adaptation labelling sheet (portal worksheet)",
+        "Mini-whiteboard and pen",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "polar bear on ice",
+          "alt": "A polar bear on ice",
+          "for": "teach:2"
+        },
+        {
+          "find": "saguaro cactus",
+          "alt": "A cactus in the desert",
+          "for": "hook"
+        },
+        {
+          "find": "fennec fox",
+          "alt": "A fennec fox",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Ecosystems (7D); atoms, elements and molecules (7H)",
+      "n": 52,
+      "title": "Adapting to daily and seasonal change",
+      "duration": 50,
+      "bigQuestion": "Swallows leave Britain every autumn and fly thousands of miles. Why go to all that effort?",
+      "objectives": [
+        "To understand how organisms cope with changes in their environment over a day and a year"
+      ],
+      "successCriteria": [
+        "All: give examples of nocturnal and diurnal animals",
+        "Most: describe migration and hibernation",
+        "Some: explain why deciduous trees lose their leaves"
+      ],
+      "crossCurricular": "Geography: seasons and world maps",
+      "smsc": "Spiritual: the cycle of seasons as a sign",
+      "keywords": [
+        {
+          "term": "nocturnal",
+          "def": "active at night"
+        },
+        {
+          "term": "diurnal",
+          "def": "active in the day"
+        },
+        {
+          "term": "migration",
+          "def": "moving to another place for part of the year"
+        },
+        {
+          "term": "hibernation",
+          "def": "a deep sleep through winter to save energy"
+        },
+        {
+          "term": "deciduous",
+          "def": "loses its leaves each autumn"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Swallows leave Britain every autumn and fly thousands of miles. Why go to all that effort?",
+        "a": "Insects they eat become scarce in a British winter; Africa has food. They return in spring to breed."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Do they not see the birds controlled in the atmosphere of the sky? None holds them up except Allah' (An-Nahl 16:79). Migrating birds cross the world guided by the instincts Allah gave them.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Thick fur on a polar bear is a ... adaptation.",
+          "a": "Physical",
+          "mins": 1,
+          "options": [
+            "Physical",
+            "Behavioural"
+          ]
+        },
+        {
+          "q": "Large ears help a desert fox...",
+          "a": "Lose heat",
+          "mins": 1,
+          "options": [
+            "Lose heat",
+            "Keep warm"
+          ]
+        },
+        {
+          "q": "What is an adaptation?",
+          "a": "A feature that helps survival",
+          "mins": 1
+        },
+        {
+          "q": "Name a desert plant.",
+          "a": "Cactus",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Daily changes",
+          "bullets": [
+            "Light, temperature, tides",
+            "Nocturnal: owls, bats, hedgehogs",
+            "Diurnal: most birds, bees"
+          ],
+          "note": "Night hunters have big eyes or sharp hearing."
+        },
+        {
+          "heading": "Seasonal changes",
+          "bullets": [
+            "Winter: cold, less light, less food",
+            "Animals: migrate, hibernate, grow thick coats",
+            "Plants: drop leaves, survive as seeds"
+          ],
+          "note": "Pupils add examples."
+        },
+        {
+          "heading": "Seasonal strategies",
+          "bullets": [
+            "Match the organism to its strategy"
+          ],
+          "note": "Vote in the chat.",
+          "sort": {
+            "columns": [
+              "Migrate",
+              "Hibernate",
+              "Lose leaves"
+            ],
+            "cards": [
+              "Swallow",
+              "Hedgehog",
+              "Oak tree",
+              "Arctic tern",
+              "Dormouse",
+              "Horse chestnut"
+            ],
+            "answer": [
+              0,
+              1,
+              2,
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        {
+          "heading": "Why deciduous trees drop leaves",
+          "bullets": [
+            "Less light in winter for photosynthesis",
+            "Frozen ground: hard to get water",
+            "Leaves would lose water and be damaged"
+          ],
+          "note": "Evergreens have needle leaves with a waxy coat."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "A hedgehog sleeps through winter. This is...",
+            "options": [
+              "Migration",
+              "Hibernation",
+              "Camouflage"
+            ],
+            "answer": 1,
+            "why": "Hibernation saves energy when food is scarce."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why bats are nocturnal.",
+          "a": "Their prey (moths) fly at night and there is less competition and fewer predators",
+          "mins": 2,
+          "model": "Ask: what does the bat eat, and when is it about? Moths at night. Being nocturnal lets it catch them with less competition."
+        },
+        {
+          "q": "What is migration?",
+          "a": "Moving to another place for part of the year",
+          "mins": 1
+        },
+        {
+          "q": "Give one reason an oak drops its leaves.",
+          "a": "Less light in winter / water hard to get",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Make a 'year in the life' table for a hedgehog and an oak tree: spring, summer, autumn, winter.",
+          "a": "Seasonal changes correct, e.g. hedgehog fattens in autumn, hibernates in winter; oak leaves fall in autumn, buds in spring",
+          "mins": 10,
+          "model": "Teacher fills the hedgehog's autumn box: 'eats lots to build fat stores'."
+        },
+        {
+          "q": "Extend: Keep a 3-day log of a living thing you can see from home (morning and evening).",
+          "a": "Dated observations of activity",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: How might warmer winters affect hibernating animals?",
+          "a": "They may wake early when food is still scarce",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Active at night means...",
+          "a": "Nocturnal",
+          "mins": 1,
+          "options": [
+            "Nocturnal",
+            "Diurnal"
+          ]
+        },
+        {
+          "q": "Big question: why do swallows migrate?",
+          "a": "Their insect food is scarce in a British winter, so they go where food is.",
+          "mins": 2
+        }
+      ],
+      "homework": "Find out where one migrating bird spends the winter. Mark its route on a world map.",
+      "send": "SEND: picture sort cards. EAL: nocturnal, migration, hibernation. Stretch: research how birds navigate.",
+      "resources": [
+        "Pearson Exploring Science 7D Ecosystems (the school's KS3 course): 7Dc",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Ecosystem (interdependence)",
+        "Seasonal change table (portal worksheet)",
+        "World map outline (portal worksheet)",
+        "Mini-whiteboard and pen",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "barn swallow perched",
+          "alt": "A swallow",
+          "for": "hook"
+        },
+        {
+          "find": "hedgehog",
+          "alt": "A hedgehog",
+          "for": "keywords"
+        },
+        {
+          "find": "oak tree in winter",
+          "alt": "An oak tree in winter",
+          "for": "teach:4"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Ecosystems (7D); atoms, elements and molecules (7H)",
+      "n": 53,
+      "title": "Competition and interdependence",
+      "duration": 50,
+      "bigQuestion": "Bluebells flower in woods in spring, before the trees have leaves. Why do you think that is?",
+      "objectives": [
+        "To understand how organisms in an ecosystem compete for resources and depend on each other"
+      ],
+      "successCriteria": [
+        "All: list what plants and animals compete for",
+        "Most: describe two ways organisms depend on each other",
+        "Some: predict the effect of removing one organism"
+      ],
+      "crossCurricular": "Geography: ecosystems",
+      "smsc": "Social: communities depend on one another too",
+      "keywords": [
+        {
+          "term": "ecosystem",
+          "def": "all the living things in an area and their environment"
+        },
+        {
+          "term": "competition",
+          "def": "when organisms need the same limited resource"
+        },
+        {
+          "term": "resource",
+          "def": "something an organism needs, such as food or light"
+        },
+        {
+          "term": "interdependence",
+          "def": "organisms depending on each other"
+        },
+        {
+          "term": "population",
+          "def": "the number of one species in an area"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Bluebells flower in woods in spring, before the trees have leaves. Why do you think that is?",
+        "a": "They get light before the tree leaves shade the ground: avoiding competition for light."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, all things We created with predestination' (Al-Qamar 54:49). Every ecosystem is held in a balance that Allah decreed.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Active at night is...",
+          "a": "Nocturnal",
+          "mins": 1,
+          "options": [
+            "Nocturnal",
+            "Diurnal"
+          ]
+        },
+        {
+          "q": "A hedgehog in winter...",
+          "a": "Hibernates",
+          "mins": 1,
+          "options": [
+            "Hibernates",
+            "Migrates"
+          ]
+        },
+        {
+          "q": "Deciduous trees lose their...",
+          "a": "Leaves",
+          "mins": 1
+        },
+        {
+          "q": "Name a physical adaptation of a camel.",
+          "a": "e.g. long eyelashes or wide feet",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "What do they compete for?",
+          "bullets": [
+            "Plants: light, water, minerals, space",
+            "Animals: food, water, territory, mates"
+          ],
+          "note": "Resources are limited.",
+          "diagram": {
+            "centre": "Competition",
+            "items": [
+              "light",
+              "water",
+              "minerals",
+              "space",
+              "food",
+              "territory"
+            ]
+          }
+        },
+        {
+          "heading": "Interdependence",
+          "bullets": [
+            "Bees pollinate flowers; flowers feed bees",
+            "Plants make oxygen; animals use it",
+            "Animals spread seeds"
+          ],
+          "note": "Remove one and others are affected."
+        },
+        {
+          "heading": "Predicting a change",
+          "note": "I do: talk through each step.",
+          "model": {
+            "problem": "In a wood, a disease kills most rabbits. Foxes eat rabbits; rabbits eat grass.",
+            "steps": [
+              "Foxes lose food: fox numbers fall",
+              "Grass is eaten less: grass grows more",
+              "Foxes may eat more of other prey"
+            ],
+            "answer": "One change spreads through the ecosystem."
+          }
+        },
+        {
+          "heading": "Predator and prey numbers",
+          "bullets": [
+            "More prey: predators thrive",
+            "More predators: prey fall",
+            "Then predators fall"
+          ],
+          "note": "Numbers rise and fall in turn.",
+          "chart": {
+            "kind": "line",
+            "title": "Example: rabbits and foxes over 6 years",
+            "labels": [
+              "Y1",
+              "Y2",
+              "Y3",
+              "Y4",
+              "Y5",
+              "Y6"
+            ],
+            "values": [
+              400,
+              650,
+              500,
+              300,
+              420,
+              600
+            ],
+            "unit": "rabbits"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Two plant species grow close together. They compete for...",
+            "options": [
+              "Light and water",
+              "Territory and mates",
+              "Oxygen only"
+            ],
+            "answer": 0,
+            "why": "Plants need light and water; territory and mates are animal resources."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "If all the bees in an orchard died, what would happen to the apple crop? Why?",
+          "a": "It would fall: fewer flowers pollinated, so fewer fruits",
+          "mins": 2,
+          "model": "Link the steps: bees pollinate apple flowers; pollinated flowers become fruit; no bees, little pollination, so fewer apples."
+        },
+        {
+          "q": "Name two things animals compete for.",
+          "a": "Food and territory (also water, mates)",
+          "mins": 1
+        },
+        {
+          "q": "What is interdependence?",
+          "a": "Organisms depending on each other",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: For the pond ecosystem on the sheet, answer: what would happen if (a) the pike were removed, (b) the pondweed died, (c) a new frog species arrived?",
+          "a": "Sensible chains of effects for each (as on the answer sheet)",
+          "mins": 10,
+          "model": "Teacher talks through (a): 'pike eat perch; remove pike, perch increase, then perch eat more water fleas'."
+        },
+        {
+          "q": "Extend: Explain why bluebells flower early in spring.",
+          "a": "To get light before tree leaves grow and shade the woodland floor",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why is it hard to predict exactly what happens when one species is removed?",
+          "a": "Organisms are linked in many ways; effects spread in a web",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Organisms depending on each other is...",
+          "a": "Interdependence",
+          "mins": 1,
+          "options": [
+            "Interdependence",
+            "Hibernation"
+          ]
+        },
+        {
+          "q": "Big question: why do bluebells flower before trees have leaves?",
+          "a": "To get light before the tree leaves shade them.",
+          "mins": 2
+        }
+      ],
+      "homework": "Find two examples of competition in a garden or park near you.",
+      "send": "SEND: picture chain cards. EAL: competition, resource, interdependence. Stretch: research the reintroduction of wolves to Yellowstone.",
+      "resources": [
+        "Pearson Exploring Science 7D Ecosystems (the school's KS3 course): 7Dc",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Ecosystem (interdependence)",
+        "Pond ecosystem question sheet with answers (portal worksheet)",
+        "Mini-whiteboard and pen",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "bluebell wood",
+          "alt": "Bluebells in a wood",
+          "for": "hook"
+        },
+        {
+          "find": "honey bee on flower",
+          "alt": "A bee on a flower",
+          "for": "teach:2"
+        },
+        {
+          "find": "red fox",
+          "alt": "A fox",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Ecosystems (7D); atoms, elements and molecules (7H)",
+      "n": 54,
+      "title": "Effects on the environment: our impact",
+      "duration": 50,
+      "bigQuestion": "Grey squirrels were brought to Britain from America. Why are there now far fewer red squirrels?",
+      "objectives": [
+        "To understand how human activity affects ecosystems and how we can protect them"
+      ],
+      "successCriteria": [
+        "All: describe three ways humans harm ecosystems",
+        "Most: explain how an invasive species causes problems",
+        "Some: suggest actions that conserve habitats"
+      ],
+      "crossCurricular": "Geography: human impact on the environment",
+      "smsc": "Moral: our duty as stewards of the earth",
+      "keywords": [
+        {
+          "term": "pollution",
+          "def": "harmful substances added to the environment"
+        },
+        {
+          "term": "habitat destruction",
+          "def": "removing the places organisms live"
+        },
+        {
+          "term": "invasive species",
+          "def": "a species brought to a new place that spreads and harms others"
+        },
+        {
+          "term": "conservation",
+          "def": "protecting living things and habitats"
+        },
+        {
+          "term": "biodiversity",
+          "def": "the variety of living things in an area"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Grey squirrels were brought to Britain from America. Why are there now far fewer red squirrels?",
+        "a": "Greys compete better for food and carry a disease that kills reds: an invasive species."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Corruption has appeared throughout the land and sea by what the hands of people have earned' (Ar-Rum 30:41). Muslims are trustees of the earth and should not spoil it.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Plants compete for...",
+          "a": "Light, water, minerals",
+          "mins": 1,
+          "options": [
+            "Light, water, minerals",
+            "Mates"
+          ]
+        },
+        {
+          "q": "Bees and flowers depend on each other: this is...",
+          "a": "Interdependence",
+          "mins": 1,
+          "options": [
+            "Interdependence",
+            "Migration"
+          ]
+        },
+        {
+          "q": "What is an ecosystem?",
+          "a": "Living things and their environment",
+          "mins": 1
+        },
+        {
+          "q": "Remove a predator: its prey numbers...",
+          "a": "Rise",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Human impacts",
+          "bullets": [
+            "Pollution: plastics, chemicals, air pollution",
+            "Habitat destruction: building, farming",
+            "Overhunting and overfishing",
+            "Invasive species"
+          ],
+          "note": "Each lowers biodiversity."
+        },
+        {
+          "heading": "Invasive species",
+          "bullets": [
+            "No natural predators in the new place",
+            "Out-compete native species",
+            "Can spread disease"
+          ],
+          "note": "Grey squirrels, Japanese knotweed."
+        },
+        {
+          "heading": "Plastic in the sea",
+          "bullets": [
+            "Animals mistake plastic for food",
+            "Entanglement",
+            "Breaks into microplastics"
+          ],
+          "note": "Picture: plastic on a beach, no people."
+        },
+        {
+          "heading": "Conservation",
+          "bullets": [
+            "Protected areas and reserves",
+            "Seed banks and breeding programmes",
+            "Reduce, reuse, recycle"
+          ],
+          "note": "What can a family do?"
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Grey squirrels harm red squirrels mainly by...",
+            "options": [
+              "Eating them",
+              "Competing for food and spreading disease",
+              "Building nests in their trees"
+            ],
+            "answer": 1,
+            "why": "They out-compete reds and carry squirrelpox."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain how cutting down a hedgerow can reduce biodiversity.",
+          "a": "It destroys the habitat and food of many species, so they leave or die",
+          "mins": 2,
+          "model": "Habitat gives food and shelter. Remove it: birds, insects and small mammals lose both. Fewer species: less biodiversity."
+        },
+        {
+          "q": "What is an invasive species?",
+          "a": "A species brought to a new area that spreads and harms native ones",
+          "mins": 1
+        },
+        {
+          "q": "Give one way to conserve a habitat.",
+          "a": "e.g. a nature reserve or planting hedges",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write a short report in the portal response box on one human impact: what it is, how it harms an ecosystem, and two solutions. Starter: 'One way humans harm ecosystems is ...'",
+          "a": "A paragraph with impact, effect and two realistic solutions",
+          "mins": 10,
+          "model": "Teacher models the first sentence: 'One way humans harm ecosystems is plastic pollution in the sea, which animals mistake for food.'"
+        },
+        {
+          "q": "Extend: Do a 1-week home plastic audit plan: what will you count and how will you reduce it?",
+          "a": "A sensible plan with a tally table",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why is high biodiversity good for an ecosystem?",
+          "a": "More species and links mean it copes better with change",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Protecting habitats is...",
+          "a": "Conservation",
+          "mins": 1,
+          "options": [
+            "Conservation",
+            "Pollution"
+          ]
+        },
+        {
+          "q": "Big question: why are there fewer red squirrels now?",
+          "a": "Grey squirrels out-compete them for food and spread a disease that kills them.",
+          "mins": 2
+        }
+      ],
+      "homework": "Carry out your home plastic audit for one week and record it.",
+      "send": "SEND: report frame with sentence starters. EAL: pollution, invasive, conservation. Stretch: research a UK nature reserve and what it protects.",
+      "resources": [
+        "Pearson Exploring Science 7D Ecosystems (the school's KS3 course): 7Dd",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Ecosystem (interdependence)",
+        "Report writing frame: human impact (portal worksheet)",
+        "Plastic audit tally sheet (portal worksheet)",
+        "Mini-whiteboard and pen",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "red squirrel",
+          "alt": "A red squirrel",
+          "for": "hook"
+        },
+        {
+          "find": "plastic waste on beach",
+          "alt": "Plastic waste on a beach",
+          "for": "teach:3"
+        },
+        {
+          "find": "Japanese knotweed",
+          "alt": "Japanese knotweed",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Ecosystems (7D); atoms, elements and molecules (7H)",
+      "n": 55,
+      "title": "Food chains and food webs",
+      "duration": 50,
+      "bigQuestion": "Every bit of energy in your breakfast can be traced back to one place. Where?",
+      "objectives": [
+        "To understand how energy is transferred through food chains and webs"
+      ],
+      "successCriteria": [
+        "All: label producers and primary, secondary and tertiary consumers",
+        "Most: draw arrows that show energy transfer",
+        "Some: explain why a change in one population affects a web"
+      ],
+      "crossCurricular": "Geography: ecosystems and energy",
+      "smsc": "Spiritual: Allah provides for every creature",
+      "keywords": [
+        {
+          "term": "producer",
+          "def": "an organism that makes its own food, usually a green plant"
+        },
+        {
+          "term": "consumer",
+          "def": "an organism that eats other organisms"
+        },
+        {
+          "term": "herbivore",
+          "def": "an animal that eats only plants"
+        },
+        {
+          "term": "carnivore",
+          "def": "an animal that eats only animals"
+        },
+        {
+          "term": "food web",
+          "def": "linked food chains in an ecosystem"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Every bit of energy in your breakfast can be traced back to one place. Where?",
+        "a": "The Sun: plants trap its light energy, and everything else eats plants or animals that ate plants."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And there is no creature on earth but that upon Allah is its provision' (Hud 11:6). Food chains show that provision passed from creature to creature.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Grey squirrels in Britain are...",
+          "a": "An invasive species",
+          "mins": 1,
+          "options": [
+            "An invasive species",
+            "A producer"
+          ]
+        },
+        {
+          "q": "Variety of living things is...",
+          "a": "Biodiversity",
+          "mins": 1,
+          "options": [
+            "Biodiversity",
+            "Pollution"
+          ]
+        },
+        {
+          "q": "Name one human impact on ecosystems.",
+          "a": "e.g. pollution",
+          "mins": 1
+        },
+        {
+          "q": "Interdependence means...",
+          "a": "Organisms depend on each other",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Energy from the Sun",
+          "bullets": [
+            "Producers trap light energy",
+            "Consumers get energy by eating",
+            "Arrows show energy moving"
+          ],
+          "note": "The arrow means 'is eaten by'."
+        },
+        {
+          "heading": "Feeding levels",
+          "bullets": [
+            "One chain, four levels"
+          ],
+          "note": "Read it aloud.",
+          "cycle": [
+            "Grass (producer)",
+            "Rabbit (primary consumer)",
+            "Fox (secondary consumer)",
+            "Eagle (tertiary consumer)"
+          ]
+        },
+        {
+          "heading": "Food webs",
+          "bullets": [
+            "Most animals eat several foods",
+            "Chains link into webs",
+            "Show the real ecosystem better"
+          ],
+          "note": "Build a woodland web on screen.",
+          "diagram": {
+            "centre": "Woodland web",
+            "items": [
+              "oak leaves",
+              "caterpillars",
+              "blue tits",
+              "sparrowhawks",
+              "mice",
+              "owls"
+            ]
+          }
+        },
+        {
+          "heading": "Change in a web",
+          "note": "I do: talk through each step.",
+          "model": {
+            "problem": "Caterpillars are eaten by blue tits. A pesticide kills most caterpillars.",
+            "steps": [
+              "Blue tits lose food: their numbers fall",
+              "Sparrowhawks that eat blue tits also fall",
+              "Oak leaves are eaten less"
+            ],
+            "answer": "One change spreads through the web."
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "In 'grass → rabbit → fox', the fox is the...",
+            "options": [
+              "Producer",
+              "Primary consumer",
+              "Secondary consumer"
+            ],
+            "answer": 2,
+            "why": "The fox eats the primary consumer (rabbit)."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Lettuce → slug → thrush → cat. Name the primary consumer and the carnivores.",
+          "a": "Primary consumer: slug. Carnivores: thrush and cat",
+          "mins": 2,
+          "model": "Count from the producer: lettuce is the producer, slug eats it (primary consumer). Thrush and cat eat animals: carnivores."
+        },
+        {
+          "q": "Which way do the arrows point?",
+          "a": "From the eaten to the eater (the way energy moves)",
+          "mins": 1
+        },
+        {
+          "q": "Where does the energy start?",
+          "a": "The Sun",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Build a food web from 8 woodland organisms on the sheet. Label each as producer, herbivore or carnivore.",
+          "a": "Correct web with producers at the bottom and arrows towards eaters",
+          "mins": 10,
+          "model": "Teacher places oak and grass at the bottom and adds the first arrow: oak leaves → caterpillar."
+        },
+        {
+          "q": "Extend: Choose one organism. Predict what happens to two others if it disappears.",
+          "a": "A chain of reasoning using the web",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why are top predators often the first to suffer when an ecosystem is damaged?",
+          "a": "They depend on many levels below; less energy reaches them",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "An animal that eats only plants is a...",
+          "a": "Herbivore",
+          "mins": 1,
+          "options": [
+            "Herbivore",
+            "Carnivore"
+          ]
+        },
+        {
+          "q": "Big question: where does all the energy in your breakfast come from?",
+          "a": "The Sun, trapped by plants.",
+          "mins": 2
+        }
+      ],
+      "homework": "Write down everything you eat in one meal. Trace each back to a producer.",
+      "send": "SEND: organism cards with arrows. EAL: producer, consumer, herbivore. Stretch: find an omnivore in your web and explain its position.",
+      "resources": [
+        "Pearson Exploring Science 7D Ecosystems (the school's KS3 course): 7De",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Ecosystem (interdependence)",
+        "Woodland food web card sort (portal worksheet)",
+        "Mini-whiteboard and pen",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "blue tit",
+          "alt": "A blue tit",
+          "for": "keywords"
+        },
+        {
+          "find": "oak leaves caterpillar",
+          "alt": "A caterpillar on an oak leaf",
+          "for": "teach:3"
+        },
+        {
+          "find": "barn owl",
+          "alt": "A barn owl",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Ecosystems (7D); atoms, elements and molecules (7H)",
+      "n": 56,
+      "title": "Pyramids of numbers and bioaccumulation",
+      "duration": 50,
+      "bigQuestion": "A farmer sprays a tiny amount of pesticide on crops. Years later, birds of prey are dying. How could the two be linked?",
+      "objectives": [
+        "To understand how pyramids of numbers show feeding relationships and how toxins build up along a food chain"
+      ],
+      "successCriteria": [
+        "All: draw a pyramid of numbers to scale",
+        "Most: explain why some pyramids are not pyramid-shaped",
+        "Some: describe how a pesticide builds up in top predators"
+      ],
+      "crossCurricular": "Maths: multiplication and scale",
+      "smsc": "Moral: responsible use of chemicals in farming",
+      "keywords": [
+        {
+          "term": "pyramid of numbers",
+          "def": "a diagram showing how many organisms are at each level"
+        },
+        {
+          "term": "trophic level",
+          "def": "a feeding level in a food chain"
+        },
+        {
+          "term": "toxin",
+          "def": "a poisonous substance"
+        },
+        {
+          "term": "bioaccumulation",
+          "def": "a toxin building up in organisms higher up a food chain"
+        },
+        {
+          "term": "pesticide",
+          "def": "a chemical used to kill pests"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A farmer sprays a tiny amount of pesticide on crops. Years later, birds of prey are dying. How could the two be linked?",
+        "a": "The pesticide passes up the food chain and builds up in top predators: bioaccumulation."
+      },
+      "starter": [
+        {
+          "q": "In grass → rabbit → fox, the fox is a...",
+          "a": "Secondary consumer",
+          "mins": 1,
+          "options": [
+            "Secondary consumer",
+            "Producer"
+          ]
+        },
+        {
+          "q": "Arrows in a food chain show...",
+          "a": "Energy moving",
+          "mins": 1,
+          "options": [
+            "Energy moving",
+            "Who is bigger"
+          ]
+        },
+        {
+          "q": "A herbivore eats...",
+          "a": "Plants only",
+          "mins": 1
+        },
+        {
+          "q": "Where does the energy start?",
+          "a": "The Sun",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Pyramid of numbers",
+          "bullets": [
+            "Bars stacked by level",
+            "Producers at the bottom",
+            "Width shows how many"
+          ],
+          "note": "Usually fewer organisms higher up."
+        },
+        {
+          "heading": "Example numbers",
+          "bullets": [
+            "Grass → rabbit → fox"
+          ],
+          "note": "Example field data.",
+          "chart": {
+            "kind": "bar",
+            "title": "Numbers at each level (example field)",
+            "labels": [
+              "Grass plants",
+              "Rabbits",
+              "Foxes"
+            ],
+            "values": [
+              5000,
+              100,
+              2
+            ],
+            "unit": "organisms"
+          }
+        },
+        {
+          "heading": "Odd shapes",
+          "bullets": [
+            "One oak tree feeds thousands of caterpillars",
+            "Base bar is narrow",
+            "Numbers do not show size"
+          ],
+          "note": "Oak → caterpillars → blue tits gives an odd shape."
+        },
+        {
+          "heading": "Bioaccumulation",
+          "bullets": [
+            "Pesticide sprayed on crops",
+            "Small animals eat a little each",
+            "Predators eat many: toxin builds up"
+          ],
+          "note": "DDT harmed birds of prey in the 1950s and 60s."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Why do top predators carry the most pesticide?",
+            "options": [
+              "They are oldest",
+              "They eat many animals that each contain some",
+              "They drink polluted water only"
+            ],
+            "answer": 1,
+            "why": "Each meal adds more toxin, which is not broken down."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "A pond has 1 heron, 50 fish, 2,000 water fleas and lots of algae. Which level is widest?",
+          "a": "The algae (producers)",
+          "mins": 2,
+          "model": "Pyramids put producers at the base. There are far more algae than anything else, so the bottom bar is the widest."
+        },
+        {
+          "q": "Why is an oak-caterpillar pyramid not a true pyramid?",
+          "a": "One big oak feeds many caterpillars, so the base is narrow",
+          "mins": 1
+        },
+        {
+          "q": "What is bioaccumulation?",
+          "a": "A toxin building up higher in a food chain",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw pyramids of numbers for two food chains on the sheet and explain why one is an odd shape.",
+          "a": "Correct bars; oak chain explained by one large producer",
+          "mins": 10,
+          "model": "Teacher draws the grass → rabbit → fox pyramid with a wide base bar."
+        },
+        {
+          "q": "Extend: A mouse eats 10 seeds each with 1 unit of pesticide; an owl eats 20 mice. How many units in the owl?",
+          "a": "200 units (10 × 20)",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why might banning a pesticide take years to help birds of prey recover?",
+          "a": "Toxins stay in the environment and bodies; breeding numbers take time to rise",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Toxins build up in...",
+          "a": "Top predators",
+          "mins": 1,
+          "options": [
+            "Top predators",
+            "Producers"
+          ]
+        },
+        {
+          "q": "Big question: how is the pesticide linked to dying birds of prey?",
+          "a": "It passes up the food chain and builds up in the top predators.",
+          "mins": 2
+        }
+      ],
+      "homework": "Revise 7D for the quiz: variation, adaptations, competition, impacts, food webs.",
+      "send": "SEND: pre-drawn pyramid outlines. EAL: pyramid, toxin, bioaccumulation. Stretch: research Rachel Carson and the effects of DDT.",
+      "resources": [
+        "Pearson Exploring Science 7D Ecosystems (the school's KS3 course): 7De",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Ecosystem (interdependence)",
+        "Pyramid of numbers sheet (portal worksheet)",
+        "Calculator",
+        "Mini-whiteboard and pen",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "peregrine falcon",
+          "alt": "A peregrine falcon",
+          "for": "hook"
+        },
+        {
+          "find": "crop sprayer field",
+          "alt": "A crop sprayer in a field",
+          "for": "teach:4"
+        },
+        {
+          "find": "pyramid of numbers diagram",
+          "alt": "A pyramid of numbers",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Ecosystems (7D); atoms, elements and molecules (7H)",
+      "n": 64,
+      "title": "Ecosystems in action: a home habitat survey",
+      "duration": 50,
+      "bigQuestion": "How could you work out roughly how many daisies are on a whole field without counting every one?",
+      "objectives": [
+        "To understand how to sample a habitat and use the data to describe an ecosystem"
+      ],
+      "successCriteria": [
+        "All: use a home-made quadrat to count plants",
+        "Most: estimate a population from samples",
+        "Some: link what I find to food webs and competition"
+      ],
+      "crossCurricular": "Maths: mean, area and scaling",
+      "smsc": "Social: working safely outdoors with an adult",
+      "keywords": [
+        {
+          "term": "quadrat",
+          "def": "a square frame used to sample plants or slow animals"
+        },
+        {
+          "term": "sample",
+          "def": "a small part that represents the whole"
+        },
+        {
+          "term": "estimate",
+          "def": "a careful guess using data"
+        },
+        {
+          "term": "population",
+          "def": "the number of one species in an area"
+        },
+        {
+          "term": "random",
+          "def": "chosen by chance, not picked"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How could you work out roughly how many daisies are on a whole field without counting every one?",
+        "a": "Count daisies in a few small squares picked at random, find the mean and scale up to the field's area."
+      },
+      "starter": [
+        {
+          "q": "A pyramid of numbers starts with...",
+          "a": "Producers",
+          "mins": 1,
+          "options": [
+            "Producers",
+            "Top predators"
+          ]
+        },
+        {
+          "q": "Toxins build up in...",
+          "a": "Top predators",
+          "mins": 1,
+          "options": [
+            "Top predators",
+            "Plants"
+          ]
+        },
+        {
+          "q": "What is interdependence?",
+          "a": "Organisms depending on each other",
+          "mins": 1
+        },
+        {
+          "q": "Name a primary consumer.",
+          "a": "e.g. a rabbit or caterpillar",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Sampling",
+          "bullets": [
+            "Too many to count them all",
+            "Count small areas at random",
+            "Scale up"
+          ],
+          "note": "Scientists sample, not count everything."
+        },
+        {
+          "heading": "A home-made quadrat",
+          "bullets": [
+            "Four rulers or sticks, or string",
+            "Make a 50 cm square (0.25 m²)",
+            "Drop it at random spots"
+          ],
+          "note": "Lawn, park or verge with an adult."
+        },
+        {
+          "heading": "Estimating a population",
+          "note": "I do: talk through each step.",
+          "model": {
+            "problem": "Five 0.25 m² quadrats contain 3, 5, 4, 2 and 6 daisies. The lawn is 20 m².",
+            "steps": [
+              "Mean per quadrat: (3+5+4+2+6) ÷ 5 = 4",
+              "Quadrats per m²: 4 (each is 0.25 m²)",
+              "Daisies per m²: 4 × 4 = 16",
+              "Whole lawn: 16 × 20 = 320"
+            ],
+            "answer": "About 320 daisies"
+          }
+        },
+        {
+          "heading": "Safety guide: the habitat survey",
+          "bullets": [
+            "An adult is with you outside",
+            "Stay away from roads and water",
+            "Do not touch nettles, fungi or animal waste",
+            "Wash hands after"
+          ],
+          "note": "Read the written guide aloud together; pupils tick each rule on the portal sheet before they start."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Why place quadrats at random?",
+            "options": [
+              "It is quicker",
+              "To avoid choosing only the best spots",
+              "It is more fun"
+            ],
+            "answer": 1,
+            "why": "Random sampling avoids bias."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Four 0.25 m² quadrats contain 2, 6, 4 and 4 dandelions. Mean per quadrat?",
+          "a": "4",
+          "mins": 2,
+          "model": "Add: 2 + 6 + 4 + 4 = 16. Divide by the number of quadrats: 16 ÷ 4 = 4."
+        },
+        {
+          "q": "Why use more quadrats?",
+          "a": "The estimate is more reliable",
+          "mins": 1
+        },
+        {
+          "q": "What is a quadrat?",
+          "a": "A square frame for sampling",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: With an adult, place your quadrat 5 times at random on grass and count one plant species. Record and estimate its population (or use the sample data on the sheet).",
+          "a": "Table of counts, a mean and a scaled estimate",
+          "mins": 10,
+          "model": "Teacher works the sample data on screen: mean 4 per quadrat, 16 per m²."
+        },
+        {
+          "q": "Extend: List the animals you saw and build a food chain from them.",
+          "a": "A correct chain from the survey",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why are quadrats no use for counting birds?",
+          "a": "Birds move; quadrats suit plants and slow animals",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A square frame for sampling is a...",
+          "a": "Quadrat",
+          "mins": 1,
+          "options": [
+            "Quadrat",
+            "Pyramid"
+          ]
+        },
+        {
+          "q": "Big question: how could you estimate daisies on a field?",
+          "a": "Count in random quadrats, find the mean and scale up to the area.",
+          "mins": 2
+        }
+      ],
+      "homework": "Write up your survey: method, results table, estimate and one improvement.",
+      "send": "SEND: survey sheet with boxes for each step. EAL: quadrat, sample, estimate. Stretch: compare two areas (sunny and shady) and explain the difference.",
+      "resources": [
+        "Pearson Exploring Science 7D Ecosystems (the school's KS3 course): 7D working scientifically (sampling)",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Ecosystem (interdependence)",
+        "Home practical guide and safety card: quadrat survey (portal worksheet)",
+        "Four rulers or sticks, or string and a tape measure; a pencil and clipboard",
+        "Survey results sheet with sample data (portal worksheet)",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "quadrat on grass",
+          "alt": "A quadrat on grass",
+          "for": "teach:2"
+        },
+        {
+          "find": "daisies in lawn",
+          "alt": "Daisies in a lawn",
+          "for": "hook"
+        },
+        {
+          "find": "dandelion",
+          "alt": "A dandelion",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Ecosystems (7D); atoms, elements and molecules (7H)",
+      "n": 57,
+      "title": "7D review and quiz",
+      "duration": 50,
+      "bigQuestion": "If you were in charge of a nature reserve, which one idea from 7D would help you most?",
+      "objectives": [
+        "To understand how well I know ecosystems and which topics to repair"
+      ],
+      "successCriteria": [
+        "All: answer the 7D quiz",
+        "Most: correct my errors using the mark scheme",
+        "Some: write two repair targets"
+      ],
+      "crossCurricular": "English: writing precise explanations",
+      "smsc": "Moral: honest self-assessment",
+      "keywords": [
+        {
+          "term": "variation",
+          "def": "differences between living things"
+        },
+        {
+          "term": "adaptation",
+          "def": "a feature that helps survival"
+        },
+        {
+          "term": "interdependence",
+          "def": "organisms depending on each other"
+        },
+        {
+          "term": "food web",
+          "def": "linked food chains"
+        },
+        {
+          "term": "bioaccumulation",
+          "def": "toxins building up along a food chain"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you were in charge of a nature reserve, which one idea from 7D would help you most?",
+        "a": "Pupils' own: e.g. food webs to predict effects, invasive species, conservation."
+      },
+      "starter": [
+        {
+          "q": "Blood group is ... variation.",
+          "a": "Discontinuous",
+          "mins": 1,
+          "options": [
+            "Discontinuous",
+            "Continuous"
+          ]
+        },
+        {
+          "q": "Hibernation is ... adaptation.",
+          "a": "Behavioural",
+          "mins": 1,
+          "options": [
+            "Behavioural",
+            "Physical"
+          ]
+        },
+        {
+          "q": "The fox in grass → rabbit → fox is...",
+          "a": "A secondary consumer",
+          "mins": 1
+        },
+        {
+          "q": "Toxins build up in...",
+          "a": "Top predators",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "7D in one map",
+          "bullets": [
+            "Five big ideas"
+          ],
+          "note": "Recap.",
+          "diagram": {
+            "centre": "7D Ecosystems",
+            "items": [
+              "variation",
+              "adaptations",
+              "daily and seasonal change",
+              "competition and interdependence",
+              "human impact",
+              "food webs and pyramids"
+            ]
+          }
+        },
+        {
+          "heading": "Exam habits",
+          "bullets": [
+            "Read the command word",
+            "Use key terms",
+            "Explain with 'because' or 'so'"
+          ],
+          "note": "Model a 2-mark answer."
+        },
+        {
+          "heading": "A 3-mark answer",
+          "note": "I do: talk through each step.",
+          "model": {
+            "problem": "Explain why removing foxes could lead to less grass. (3)",
+            "steps": [
+              "Foxes eat rabbits, so rabbit numbers rise (1)",
+              "More rabbits eat more grass (1)",
+              "So grass decreases (1)"
+            ],
+            "answer": "Three linked steps = 3 marks"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Which is an adaptation of a cactus?",
+            "options": [
+              "Large thin leaves",
+              "Spines instead of leaves",
+              "Shallow water roots only in winter"
+            ],
+            "answer": 1,
+            "why": "Spines reduce water loss."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why polar bears have small ears. (2)",
+          "a": "Smaller surface area (1) so less heat is lost (1)",
+          "mins": 2,
+          "model": "Two marks: the feature's effect, then why it helps: small ears mean less surface area, so less heat lost in the cold."
+        },
+        {
+          "q": "Name two resources animals compete for.",
+          "a": "Food and territory (also water, mates)",
+          "mins": 1
+        },
+        {
+          "q": "Give one human impact on ecosystems.",
+          "a": "e.g. pollution or habitat destruction",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Complete the 7D quiz (25 marks) in the portal under time.",
+          "a": "Marked against the 7D mark scheme in the portal",
+          "mins": 16,
+          "model": "Teacher reads question 1 and shows how to use the marks to plan the answer."
+        },
+        {
+          "q": "Extend: Correct two wrong answers using the mark scheme in green pen.",
+          "a": "Corrections match the mark scheme",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Write a new 3-mark question with its mark scheme.",
+          "a": "A fair question with three markable points",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "My weakest 7D topic is...",
+          "a": "Pupils' own",
+          "mins": 1
+        },
+        {
+          "q": "Big question: which 7D idea would help you run a reserve?",
+          "a": "Pupils' own with a reason.",
+          "mins": 2
+        }
+      ],
+      "homework": "Repair your weakest 7D topic for 20 minutes using your book and Kerboodle.",
+      "send": "SEND: quiz read aloud; reduced options. EAL: key word mat. Stretch: answer the challenge question on bioaccumulation.",
+      "resources": [
+        "Pearson Exploring Science 7D Ecosystems (the school's KS3 course): 7D review and end-of-unit test",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Ecosystem (interdependence)",
+        "7D quiz (25 marks) and mark scheme (portal)",
+        "Mini-whiteboard and pen",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "nature reserve wetland",
+          "alt": "A nature reserve",
+          "for": "hook"
+        },
+        {
+          "find": "food web diagram",
+          "alt": "A food web",
+          "for": "teach:1"
+        },
+        {
+          "find": "polar bear",
+          "alt": "A polar bear",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Ecosystems (7D); atoms, elements and molecules (7H)",
+      "n": 58,
+      "title": "The air we breathe",
+      "duration": 50,
+      "bigQuestion": "Each breath you take is mostly not oxygen. What do you think most of the air is made of?",
+      "objectives": [
+        "To understand that air is a mixture of elements and compounds in fixed proportions"
+      ],
+      "successCriteria": [
+        "All: state the percentages of nitrogen and oxygen in air",
+        "Most: sort gases in air into elements and compounds",
+        "Some: explain why air is a mixture"
+      ],
+      "crossCurricular": "Maths: percentages and pie charts",
+      "smsc": "Spiritual: gratitude for the air we breathe",
+      "keywords": [
+        {
+          "term": "element",
+          "def": "a substance made of only one type of atom"
+        },
+        {
+          "term": "compound",
+          "def": "two or more elements chemically joined"
+        },
+        {
+          "term": "mixture",
+          "def": "substances mixed but not chemically joined"
+        },
+        {
+          "term": "nitrogen",
+          "def": "the gas that makes up about 78% of air"
+        },
+        {
+          "term": "oxygen",
+          "def": "the gas we need for respiration, about 21% of air"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Each breath you take is mostly not oxygen. What do you think most of the air is made of?",
+        "a": "Nitrogen: about 78%. Oxygen is about 21%."
+      },
+      "starter": [
+        {
+          "q": "A producer makes its own food using...",
+          "a": "Light",
+          "mins": 1,
+          "options": [
+            "Light",
+            "Meat"
+          ]
+        },
+        {
+          "q": "Particles in a gas are...",
+          "a": "Far apart, moving fast",
+          "mins": 1,
+          "options": [
+            "Far apart, moving fast",
+            "In fixed rows"
+          ]
+        },
+        {
+          "q": "What is a mixture?",
+          "a": "Substances mixed but not joined",
+          "mins": 1
+        },
+        {
+          "q": "Name a gas we breathe out more of.",
+          "a": "Carbon dioxide",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "What is in air?",
+          "bullets": [
+            "Mostly nitrogen",
+            "About a fifth oxygen",
+            "Small amounts of others"
+          ],
+          "note": "Pupils copy the chart.",
+          "chart": {
+            "kind": "pie",
+            "title": "Gases in dry air",
+            "labels": [
+              "Nitrogen",
+              "Oxygen",
+              "Argon",
+              "Carbon dioxide and others"
+            ],
+            "values": [
+              78,
+              21,
+              0.9,
+              0.1
+            ],
+            "unit": "%"
+          }
+        },
+        {
+          "heading": "Elements and compounds in air",
+          "bullets": [
+            "Elements: nitrogen, oxygen, argon",
+            "Compounds: carbon dioxide, water vapour"
+          ],
+          "note": "Sort in the chat.",
+          "sort": {
+            "columns": [
+              "Element",
+              "Compound"
+            ],
+            "cards": [
+              "Nitrogen",
+              "Oxygen",
+              "Argon",
+              "Carbon dioxide",
+              "Water vapour",
+              "Neon"
+            ],
+            "answer": [
+              0,
+              0,
+              0,
+              1,
+              1,
+              0
+            ]
+          }
+        },
+        {
+          "heading": "Air is a mixture",
+          "bullets": [
+            "Gases are not joined to each other",
+            "Can be separated (by cooling air until it is liquid)",
+            "Each gas keeps its own properties"
+          ],
+          "note": "Industry separates air for oxygen tanks."
+        },
+        {
+          "heading": "Uses of gases from air",
+          "bullets": [
+            "Oxygen: hospitals",
+            "Nitrogen: keeps crisps fresh",
+            "Argon: inside light bulbs"
+          ],
+          "note": "No lab tests needed: real-world uses."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "About what percentage of air is oxygen?",
+            "options": [
+              "78%",
+              "21%",
+              "1%"
+            ],
+            "answer": 1,
+            "why": "Nitrogen is 78%; oxygen is about 21%."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Out of 100 litres of air, how many litres are nitrogen?",
+          "a": "About 78 litres",
+          "mins": 2,
+          "model": "Nitrogen is 78% of air. 78% of 100 = 78. So about 78 litres."
+        },
+        {
+          "q": "Is carbon dioxide an element or a compound?",
+          "a": "A compound (carbon and oxygen joined)",
+          "mins": 1
+        },
+        {
+          "q": "Why is air a mixture, not a compound?",
+          "a": "The gases are not chemically joined",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw and label a pie chart of the gases in air. Under it, list each gas as element or compound and give one use.",
+          "a": "Correct chart and labels; nitrogen, oxygen, argon elements; CO2 and water vapour compounds",
+          "mins": 10,
+          "model": "Teacher draws the nitrogen sector (just over three quarters) and labels it '78%: element'."
+        },
+        {
+          "q": "Extend: How many litres of oxygen are in 500 litres of air?",
+          "a": "105 litres (21% of 500)",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why might a sealed room feel stuffy after many hours?",
+          "a": "Oxygen is used and carbon dioxide and water vapour build up",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Most of the air is...",
+          "a": "Nitrogen",
+          "mins": 1,
+          "options": [
+            "Nitrogen",
+            "Oxygen"
+          ]
+        },
+        {
+          "q": "Big question: what is most of each breath made of?",
+          "a": "Nitrogen, about 78%.",
+          "mins": 2
+        }
+      ],
+      "homework": "Find two products at home that use a gas from air (for example a crisp packet). Explain each.",
+      "send": "SEND: labelled pie chart to complete. EAL: element, compound, mixture. Stretch: research how liquid air is separated by fractional distillation.",
+      "resources": [
+        "Pearson Exploring Science 7H Atoms, elements and molecules (the school's KS3 course): 7Ha",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Matter (elements); Reactions (types of reaction)",
+        "Gases in air sheet (portal worksheet)",
+        "Calculator",
+        "Mini-whiteboard and pen",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "crisp packet",
+          "alt": "A crisp packet (filled with nitrogen)",
+          "for": "teach:4"
+        },
+        {
+          "find": "oxygen cylinder hospital",
+          "alt": "An oxygen cylinder",
+          "for": "keywords"
+        },
+        {
+          "find": "blue sky clouds",
+          "alt": "The sky",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Ecosystems (7D); atoms, elements and molecules (7H)",
+      "n": 59,
+      "title": "Elements, atoms and symbols",
+      "duration": 50,
+      "bigQuestion": "Everything around you, your desk, the air, your body, is made from about 90 natural building blocks. How can so few make so much?",
+      "objectives": [
+        "To understand that elements are made of one type of atom and are shown by chemical symbols"
+      ],
+      "successCriteria": [
+        "All: define atom and element",
+        "Most: write the symbols of ten common elements",
+        "Some: find elements on the periodic table"
+      ],
+      "crossCurricular": "History and languages: Latin roots of symbols",
+      "smsc": "Spiritual: the order in the building blocks of creation",
+      "keywords": [
+        {
+          "term": "atom",
+          "def": "the smallest particle of an element"
+        },
+        {
+          "term": "element",
+          "def": "a substance made of one type of atom"
+        },
+        {
+          "term": "symbol",
+          "def": "one or two letters that stand for an element"
+        },
+        {
+          "term": "periodic table",
+          "def": "a chart of all the elements in order"
+        },
+        {
+          "term": "Latin name",
+          "def": "an old name some symbols come from, like ferrum for iron"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Everything around you, your desk, the air, your body, is made from about 90 natural building blocks. How can so few make so much?",
+        "a": "Elements combine in countless ways to make compounds, just as 26 letters make every word."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Not absent from Him is an atom's weight within the heavens or within the earth, or what is smaller than that or greater' (Saba 34:3). Nothing is too small for Allah's knowledge.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Air is a...",
+          "a": "Mixture",
+          "mins": 1,
+          "options": [
+            "Mixture",
+            "Compound"
+          ]
+        },
+        {
+          "q": "Carbon dioxide is...",
+          "a": "A compound",
+          "mins": 1,
+          "options": [
+            "A compound",
+            "An element"
+          ]
+        },
+        {
+          "q": "About what % of air is nitrogen?",
+          "a": "78%",
+          "mins": 1
+        },
+        {
+          "q": "Name an element in air.",
+          "a": "Nitrogen, oxygen or argon",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Atoms and elements",
+          "bullets": [
+            "Atom: the smallest particle of an element",
+            "Element: only one type of atom",
+            "118 elements known; about 90 natural"
+          ],
+          "note": "Gold contains only gold atoms."
+        },
+        {
+          "heading": "Chemical symbols",
+          "bullets": [
+            "One or two letters",
+            "First letter capital, second small",
+            "Used everywhere in the world"
+          ],
+          "note": "Pupils copy.",
+          "table": {
+            "head": [
+              "Element",
+              "Symbol",
+              "Element",
+              "Symbol"
+            ],
+            "rows": [
+              [
+                "Hydrogen",
+                "H",
+                "Sodium",
+                "Na"
+              ],
+              [
+                "Carbon",
+                "C",
+                "Iron",
+                "Fe"
+              ],
+              [
+                "Oxygen",
+                "O",
+                "Copper",
+                "Cu"
+              ],
+              [
+                "Nitrogen",
+                "N",
+                "Gold",
+                "Au"
+              ],
+              [
+                "Chlorine",
+                "Cl",
+                "Silver",
+                "Ag"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Odd symbols",
+          "bullets": [
+            "Na from natrium",
+            "Fe from ferrum",
+            "Cu from cuprum, Au from aurum"
+          ],
+          "note": "Latin names from long ago."
+        },
+        {
+          "heading": "The periodic table",
+          "bullets": [
+            "Elements in order",
+            "Metals on the left, non-metals on the right",
+            "Groups are columns"
+          ],
+          "note": "Show the table; find Fe, Au and O."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Which is written correctly?",
+            "options": [
+              "CO for cobalt",
+              "Co for cobalt",
+              "co for cobalt"
+            ],
+            "answer": 1,
+            "why": "Capital first letter, small second letter. CO would mean carbon and oxygen."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "What is the difference between Co and CO?",
+          "a": "Co is cobalt (one element); CO is carbon and oxygen joined (carbon monoxide)",
+          "mins": 2,
+          "model": "Look at the capitals. Each capital starts a new element. Co: one capital, one element, cobalt. CO: two capitals, carbon and oxygen."
+        },
+        {
+          "q": "Symbol for iron?",
+          "a": "Fe",
+          "mins": 1
+        },
+        {
+          "q": "What is an atom?",
+          "a": "The smallest particle of an element",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Element hunt: use the periodic table to write the symbols of 15 elements on the sheet, then mark each as metal or non-metal.",
+          "a": "Correct symbols with metal or non-metal (as on the answer sheet)",
+          "mins": 10,
+          "model": "Teacher finds the first on screen: 'magnesium: Mg, left side, metal'."
+        },
+        {
+          "q": "Extend: Find five elements named after places or scientists.",
+          "a": "e.g. polonium, americium, einsteinium, curium, germanium",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Why do scientists worldwide use the same symbols?",
+          "a": "So everyone understands each other whatever their language",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "The smallest particle of an element is an...",
+          "a": "Atom",
+          "mins": 1,
+          "options": [
+            "Atom",
+            "Molecule"
+          ]
+        },
+        {
+          "q": "Big question: how can about 90 elements make everything?",
+          "a": "They combine in countless ways to make compounds.",
+          "mins": 2
+        }
+      ],
+      "homework": "Learn 10 element symbols for a quick test next lesson.",
+      "send": "SEND: symbol flash cards. EAL: atom, element, symbol. Stretch: research which element is most common in the Earth's crust (oxygen).",
+      "resources": [
+        "Pearson Exploring Science 7H Atoms, elements and molecules (the school's KS3 course): 7Hb",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Matter (elements); Reactions (types of reaction)",
+        "Periodic table (portal printable)",
+        "Element hunt sheet with answers (portal worksheet)",
+        "Mini-whiteboard and pen",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "periodic table of elements",
+          "alt": "The periodic table",
+          "for": "teach:4"
+        },
+        {
+          "find": "gold nugget",
+          "alt": "A gold nugget",
+          "for": "keywords"
+        },
+        {
+          "find": "copper wire",
+          "alt": "Copper wire",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Ecosystems (7D); atoms, elements and molecules (7H)",
+      "n": 60,
+      "title": "Metals and non-metals",
+      "duration": 50,
+      "bigQuestion": "Why are saucepans made of metal but their handles often plastic or wood?",
+      "objectives": [
+        "To understand how the properties of metals and non-metals differ and why that decides their uses"
+      ],
+      "successCriteria": [
+        "All: list five properties of metals",
+        "Most: compare metals and non-metals in a table",
+        "Some: explain the choice of material for an object"
+      ],
+      "crossCurricular": "DT: choosing materials by their properties",
+      "smsc": "Spiritual: the blessings of metals",
+      "keywords": [
+        {
+          "term": "conductor",
+          "def": "lets heat or electricity pass through easily"
+        },
+        {
+          "term": "malleable",
+          "def": "can be hammered into shape"
+        },
+        {
+          "term": "ductile",
+          "def": "can be pulled into wires"
+        },
+        {
+          "term": "sonorous",
+          "def": "rings when hit"
+        },
+        {
+          "term": "brittle",
+          "def": "breaks easily when hit"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why are saucepans made of metal but their handles often plastic or wood?",
+        "a": "Metal conducts heat to cook; plastic or wood is an insulator so the handle stays cool."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We sent down iron, in which is great strength and benefits for people' (Al-Hadid 57:25). The properties of metals are benefits Allah placed in creation for us to use well.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Symbol for iron?",
+          "a": "Fe",
+          "mins": 1,
+          "options": [
+            "Fe",
+            "Ir",
+            "I"
+          ]
+        },
+        {
+          "q": "An atom is...",
+          "a": "The smallest particle of an element",
+          "mins": 1,
+          "options": [
+            "The smallest particle of an element",
+            "A mixture"
+          ]
+        },
+        {
+          "q": "Where are metals on the periodic table?",
+          "a": "Left and middle",
+          "mins": 1
+        },
+        {
+          "q": "Symbol for oxygen?",
+          "a": "O",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Metals and non-metals",
+          "bullets": [
+            "Compare properties"
+          ],
+          "note": "Pupils copy.",
+          "compare": {
+            "left": {
+              "title": "Metals",
+              "points": [
+                "Shiny",
+                "Good conductors",
+                "Malleable and ductile",
+                "Sonorous",
+                "Mostly high melting points"
+              ]
+            },
+            "right": {
+              "title": "Non-metals",
+              "points": [
+                "Dull",
+                "Poor conductors (not graphite)",
+                "Brittle when solid",
+                "Not sonorous",
+                "Many are gases"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Magnetic metals",
+          "bullets": [
+            "Iron, nickel and cobalt",
+            "Steel (mostly iron) too",
+            "Most metals are not magnetic"
+          ],
+          "note": "Aluminium cans are not magnetic."
+        },
+        {
+          "heading": "Odd ones out",
+          "bullets": [
+            "Mercury: a liquid metal",
+            "Graphite (carbon) conducts electricity",
+            "Diamond (carbon) very hard"
+          ],
+          "note": "Rules have exceptions."
+        },
+        {
+          "heading": "Safety guide: the home property test",
+          "bullets": [
+            "Use only clean dry objects: spoon, foil, pencil, eraser",
+            "Magnet test only; no batteries or mains",
+            "Never put magnets near phones or cards",
+            "Tap objects gently"
+          ],
+          "note": "Read the written guide aloud together; pupils tick each rule on the portal sheet before they start."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Copper is used for wires because it is...",
+            "options": [
+              "Brittle and dull",
+              "Ductile and a good electrical conductor",
+              "Magnetic"
+            ],
+            "answer": 1,
+            "why": "Wires need a metal that can be drawn out and conducts well."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Why are electrical plugs covered in plastic?",
+          "a": "Plastic is an insulator, so it stops electric shocks",
+          "mins": 2,
+          "model": "What does plastic do with electricity? It does not conduct: an insulator. The pins are metal to conduct; the cover is plastic for safety."
+        },
+        {
+          "q": "Name a magnetic metal.",
+          "a": "Iron, nickel or cobalt",
+          "mins": 1
+        },
+        {
+          "q": "Which non-metal conducts electricity?",
+          "a": "Graphite (carbon)",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Test six household objects (steel spoon, foil, pencil lead, plastic ruler, coin, eraser) for shiny, magnetic and sonorous. Decide metal or non-metal.",
+          "a": "Table of observations; spoon, foil, coin metals; ruler, eraser non-metals; pencil lead (graphite) a non-metal that looks shiny",
+          "mins": 10,
+          "model": "Teacher tests the steel spoon on camera: shiny, attracted to the fridge magnet, rings when tapped: metal."
+        },
+        {
+          "q": "Extend: Explain why aluminium is used for drinks cans and aeroplane bodies.",
+          "a": "Light, malleable, does not rust easily",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Graphite conducts electricity. Why is it still classed as a non-metal?",
+          "a": "Its other properties are non-metal ones: it is brittle, not malleable or ductile, and carbon sits on the non-metal side of the periodic table",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Can be hammered into shape:",
+          "a": "Malleable",
+          "mins": 1,
+          "options": [
+            "Malleable",
+            "Brittle"
+          ]
+        },
+        {
+          "q": "Big question: why are pan handles plastic or wood?",
+          "a": "They are insulators, so they stay cool.",
+          "mins": 2
+        }
+      ],
+      "homework": "Find five objects at home made of metal and say which property makes the metal a good choice.",
+      "send": "SEND: property cards with pictures. EAL: malleable, ductile, sonorous. Stretch: research why gold is used in electronics.",
+      "resources": [
+        "Pearson Exploring Science 7H Atoms, elements and molecules (the school's KS3 course): 7Hc",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Matter (elements); Reactions (types of reaction)",
+        "Home practical guide and safety card: metal or non-metal (portal worksheet)",
+        "Fridge magnet, steel spoon, foil, pencil, plastic ruler, coin, eraser",
+        "Properties results table (portal worksheet)",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "copper saucepan",
+          "alt": "A metal saucepan",
+          "for": "hook"
+        },
+        {
+          "find": "mercury liquid metal",
+          "alt": "Mercury, a liquid metal",
+          "for": "teach:3"
+        },
+        {
+          "find": "graphite pencil lead",
+          "alt": "Graphite pencil lead",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Ecosystems (7D); atoms, elements and molecules (7H)",
+      "n": 61,
+      "title": "Compounds and molecules",
+      "duration": 50,
+      "bigQuestion": "Sodium is a metal that reacts violently with water. Chlorine is a poisonous gas. Together they make table salt. How can that be?",
+      "objectives": [
+        "To understand how elements join to make compounds and how formulae show them"
+      ],
+      "successCriteria": [
+        "All: tell elements, compounds and mixtures apart from particle diagrams",
+        "Most: count the atoms in a formula",
+        "Some: name simple compounds ending in -ide"
+      ],
+      "crossCurricular": "Maths: counting and multiplying",
+      "smsc": "Spiritual: wonder that simple elements make so many substances",
+      "keywords": [
+        {
+          "term": "compound",
+          "def": "two or more elements chemically joined"
+        },
+        {
+          "term": "molecule",
+          "def": "two or more atoms joined together"
+        },
+        {
+          "term": "formula",
+          "def": "symbols and numbers showing the atoms in a substance"
+        },
+        {
+          "term": "chemical bond",
+          "def": "the link holding atoms together"
+        },
+        {
+          "term": "-ide",
+          "def": "ending for a compound of two elements, such as sodium chloride"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Sodium is a metal that reacts violently with water. Chlorine is a poisonous gas. Together they make table salt. How can that be?",
+        "a": "A compound has new properties, completely different from its elements."
+      },
+      "starter": [
+        {
+          "q": "Copper wires: copper is...",
+          "a": "Ductile",
+          "mins": 1,
+          "options": [
+            "Ductile",
+            "Brittle"
+          ]
+        },
+        {
+          "q": "Which metal is liquid at room temperature?",
+          "a": "Mercury",
+          "mins": 1,
+          "options": [
+            "Mercury",
+            "Iron"
+          ]
+        },
+        {
+          "q": "Symbol for sodium?",
+          "a": "Na",
+          "mins": 1
+        },
+        {
+          "q": "Non-metals are often...",
+          "a": "Dull and brittle",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Elements, compounds, mixtures",
+          "bullets": [
+            "Use particle diagrams"
+          ],
+          "note": "Pupils match pictures.",
+          "table": {
+            "head": [
+              "Type",
+              "What the particles look like",
+              "Example"
+            ],
+            "rows": [
+              [
+                "Element",
+                "One kind of atom",
+                "Oxygen O₂"
+              ],
+              [
+                "Compound",
+                "Different atoms joined",
+                "Water H₂O"
+              ],
+              [
+                "Mixture",
+                "Different particles not joined",
+                "Air"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Counting atoms",
+          "note": "I do: talk through each step.",
+          "model": {
+            "problem": "How many atoms in one molecule of glucose, C₆H₁₂O₆?",
+            "steps": [
+              "Carbon: 6",
+              "Hydrogen: 12",
+              "Oxygen: 6",
+              "6 + 12 + 6"
+            ],
+            "answer": "24 atoms"
+          }
+        },
+        {
+          "heading": "Naming compounds",
+          "bullets": [
+            "Metal first, non-metal second",
+            "Two elements: -ide (sodium chloride)",
+            "With oxygen as well: -ate (copper sulfate)"
+          ],
+          "note": "Iron + sulfur: iron sulfide."
+        },
+        {
+          "heading": "New properties",
+          "bullets": [
+            "Sodium: reactive metal",
+            "Chlorine: toxic gas",
+            "Sodium chloride: safe salt"
+          ],
+          "note": "Compounds are not like their elements.",
+          "misconception": {
+            "wrong": "A compound has a mix of its elements' properties.",
+            "right": "A compound has new properties of its own."
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "How many atoms in CO₂?",
+            "options": [
+              "2",
+              "3",
+              "5"
+            ],
+            "answer": 1,
+            "why": "One carbon and two oxygen atoms."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Name the compound of magnesium and oxygen.",
+          "a": "Magnesium oxide",
+          "mins": 2,
+          "model": "Metal first: magnesium. Non-metal second, oxygen, ending changed to -ide: oxide. Magnesium oxide."
+        },
+        {
+          "q": "How many hydrogen atoms in CH₄?",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "Is O₂ an element or a compound?",
+          "a": "An element: only oxygen atoms",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: For 8 formulae on the sheet (H₂O, CO₂, NaCl, CH₄, O₂, NH₃, CaCO₃, H₂SO₄), name the elements, count the atoms and say element or compound.",
+          "a": "Correct answers (as on the answer sheet), e.g. NH₃: nitrogen and hydrogen, 4 atoms, compound",
+          "mins": 10,
+          "model": "Teacher does H₂O: 'hydrogen 2, oxygen 1: 3 atoms, compound'."
+        },
+        {
+          "q": "Extend: Name: (a) zinc + oxygen, (b) iron + sulfur, (c) potassium + chlorine.",
+          "a": "Zinc oxide, iron sulfide, potassium chloride",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: How many atoms in 3 molecules of water?",
+          "a": "9",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Two or more elements chemically joined is a...",
+          "a": "Compound",
+          "mins": 1,
+          "options": [
+            "Compound",
+            "Mixture"
+          ]
+        },
+        {
+          "q": "Big question: how can sodium and chlorine make safe salt?",
+          "a": "A compound has new properties, unlike its elements.",
+          "mins": 2
+        }
+      ],
+      "homework": "Find three chemical names on food or cleaning labels at home. Write their elements.",
+      "send": "SEND: formula cards with coloured atom counts. EAL: compound, molecule, formula. Stretch: research the formula of sugar (sucrose).",
+      "resources": [
+        "Pearson Exploring Science 7H Atoms, elements and molecules (the school's KS3 course): 7Hd",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Matter (elements); Reactions (types of reaction)",
+        "Formulae practice sheet with answers (portal worksheet)",
+        "Periodic table (portal printable)",
+        "Mini-whiteboard and pen",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "table salt crystals",
+          "alt": "Table salt",
+          "for": "hook"
+        },
+        {
+          "find": "water molecule model",
+          "alt": "A model of a water molecule",
+          "for": "teach:1"
+        },
+        {
+          "find": "sodium metal",
+          "alt": "Sodium metal stored in oil",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Ecosystems (7D); atoms, elements and molecules (7H)",
+      "n": 62,
+      "title": "Chemical reactions and word equations",
+      "duration": 50,
+      "bigQuestion": "When you mix bicarbonate of soda and vinegar it fizzes. Where does the gas come from, when you started with a powder and a liquid?",
+      "objectives": [
+        "To understand how to recognise a chemical reaction and describe it with a word equation"
+      ],
+      "successCriteria": [
+        "All: list the signs of a chemical reaction",
+        "Most: write word equations with reactants and products",
+        "Some: explain why mass is conserved"
+      ],
+      "crossCurricular": "DT and food: chemical changes in cooking",
+      "smsc": "Moral: safety when handling chemicals",
+      "keywords": [
+        {
+          "term": "chemical reaction",
+          "def": "a change that makes new substances"
+        },
+        {
+          "term": "reactant",
+          "def": "a substance you start with"
+        },
+        {
+          "term": "product",
+          "def": "a new substance made"
+        },
+        {
+          "term": "word equation",
+          "def": "names of reactants and products with an arrow"
+        },
+        {
+          "term": "conservation of mass",
+          "def": "total mass stays the same in a reaction"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "When you mix bicarbonate of soda and vinegar it fizzes. Where does the gas come from, when you started with a powder and a liquid?",
+        "a": "A chemical reaction makes a new substance: carbon dioxide gas."
+      },
+      "starter": [
+        {
+          "q": "H₂O has how many atoms?",
+          "a": "3",
+          "mins": 1,
+          "options": [
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "q": "Magnesium + oxygen makes...",
+          "a": "Magnesium oxide",
+          "mins": 1,
+          "options": [
+            "Magnesium oxide",
+            "Magnesium oxygen"
+          ]
+        },
+        {
+          "q": "A compound has ... properties.",
+          "a": "New",
+          "mins": 1
+        },
+        {
+          "q": "Is melting a chemical reaction?",
+          "a": "No: it is a physical change",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Signs of a reaction",
+          "bullets": [
+            "Fizzing (a gas)",
+            "Colour change",
+            "Temperature change",
+            "A solid forms in a liquid",
+            "Light or a flame"
+          ],
+          "note": "Not every sign appears each time."
+        },
+        {
+          "heading": "Teacher demonstration",
+          "bullets": [
+            "Magnesium ribbon burns in air",
+            "Bright white light, white powder forms",
+            "Never look straight at it"
+          ],
+          "note": "Done only by the teacher, on camera."
+        },
+        {
+          "heading": "Writing a word equation",
+          "note": "I do: talk through each step.",
+          "model": {
+            "problem": "Magnesium burns in oxygen to make magnesium oxide.",
+            "steps": [
+              "Reactants on the left: magnesium + oxygen",
+              "Arrow means 'makes'",
+              "Products on the right: magnesium oxide"
+            ],
+            "answer": "magnesium + oxygen → magnesium oxide"
+          }
+        },
+        {
+          "heading": "Mass is conserved",
+          "bullets": [
+            "Atoms are rearranged, not lost",
+            "A gas escaping makes it seem lighter",
+            "In a sealed bag, mass stays the same"
+          ],
+          "note": "Bicarbonate and vinegar in a sealed bag."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Which is a chemical reaction?",
+            "options": [
+              "Ice melting",
+              "Sugar dissolving",
+              "Wood burning"
+            ],
+            "answer": 2,
+            "why": "Burning makes new substances (ash, CO₂, water); the others are physical changes."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write the word equation: iron reacts with sulfur to make iron sulfide.",
+          "a": "iron + sulfur → iron sulfide",
+          "mins": 2,
+          "model": "Reactants first: iron + sulfur. Arrow. Product: iron sulfide."
+        },
+        {
+          "q": "Name two signs of a reaction.",
+          "a": "e.g. fizzing and colour change",
+          "mins": 1
+        },
+        {
+          "q": "Why does burning wood seem to lose mass?",
+          "a": "Gases (carbon dioxide, water vapour) escape into the air",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: For six reactions on the sheet, name the reactants and products and write each word equation.",
+          "a": "Correct word equations (as on the answer sheet)",
+          "mins": 10,
+          "model": "Teacher writes the first: 'copper + oxygen → copper oxide'."
+        },
+        {
+          "q": "Extend: Watch the teacher's bicarbonate and vinegar demonstration. List the signs and write the word equation.",
+          "a": "Fizzing, cooling; sodium hydrogencarbonate + ethanoic acid → sodium ethanoate + water + carbon dioxide",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: 2.4 g magnesium makes 4.0 g magnesium oxide. What mass of oxygen reacted?",
+          "a": "1.6 g",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "The substances you start with are...",
+          "a": "Reactants",
+          "mins": 1,
+          "options": [
+            "Reactants",
+            "Products"
+          ]
+        },
+        {
+          "q": "Big question: where does the gas come from when bicarbonate meets vinegar?",
+          "a": "A chemical reaction makes new carbon dioxide gas.",
+          "mins": 2
+        }
+      ],
+      "homework": "Find three chemical reactions in your kitchen (cooking, burning, rusting) and describe the signs.",
+      "send": "SEND: word equation frame with boxes. EAL: reactant, product, equation. Stretch: research balanced symbol equations.",
+      "resources": [
+        "Pearson Exploring Science 7H Atoms, elements and molecules (the school's KS3 course): 7He",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Matter (elements); Reactions (types of reaction)",
+        "Teacher demonstration on camera in the school laboratory, or a recorded demonstration with no music (magnesium burning; bicarbonate of soda and vinegar)",
+        "Word equations practice sheet with answers (portal worksheet)",
+        "Mini-whiteboard and pen",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "magnesium ribbon burning",
+          "alt": "Magnesium burning with a bright flame",
+          "for": "teach:2"
+        },
+        {
+          "find": "baking soda vinegar reaction fizz",
+          "alt": "Fizzing in a glass",
+          "for": "hook"
+        },
+        {
+          "find": "rusty chain",
+          "alt": "A rusty chain",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Ecosystems (7D); atoms, elements and molecules (7H)",
+      "n": 63,
+      "title": "7H review and quiz",
+      "duration": 50,
+      "bigQuestion": "If you could explain one idea from 7H to a Year 5 pupil, which would help them most and why?",
+      "objectives": [
+        "To understand how well I know atoms, elements and compounds and which topics to repair"
+      ],
+      "successCriteria": [
+        "All: answer the 7H quiz",
+        "Most: correct errors using the mark scheme",
+        "Some: write two repair targets"
+      ],
+      "crossCurricular": "English: writing precise explanations",
+      "smsc": "Moral: honest self-assessment",
+      "keywords": [
+        {
+          "term": "atom",
+          "def": "the smallest particle of an element"
+        },
+        {
+          "term": "element",
+          "def": "one type of atom only"
+        },
+        {
+          "term": "compound",
+          "def": "elements chemically joined"
+        },
+        {
+          "term": "mixture",
+          "def": "substances not chemically joined"
+        },
+        {
+          "term": "word equation",
+          "def": "reactants → products in words"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you could explain one idea from 7H to a Year 5 pupil, which would help them most and why?",
+        "a": "Pupils' own: e.g. atoms as building blocks, symbols, compounds having new properties."
+      },
+      "starter": [
+        {
+          "q": "Symbol for copper?",
+          "a": "Cu",
+          "mins": 1,
+          "options": [
+            "Co",
+            "Cu",
+            "C"
+          ]
+        },
+        {
+          "q": "Air is mostly...",
+          "a": "Nitrogen",
+          "mins": 1,
+          "options": [
+            "Nitrogen",
+            "Oxygen"
+          ]
+        },
+        {
+          "q": "How many atoms in NH₃?",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "Products of burning magnesium?",
+          "a": "Magnesium oxide",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "7H in one map",
+          "bullets": [
+            "Five big ideas"
+          ],
+          "note": "Recap.",
+          "diagram": {
+            "centre": "7H Atoms, elements, molecules",
+            "items": [
+              "air is a mixture",
+              "atoms and elements",
+              "symbols and the periodic table",
+              "metals and non-metals",
+              "compounds and formulae",
+              "reactions and word equations"
+            ]
+          }
+        },
+        {
+          "heading": "Sort the substances",
+          "bullets": [
+            "Element, compound or mixture?"
+          ],
+          "note": "Vote in the chat.",
+          "sort": {
+            "columns": [
+              "Element",
+              "Compound",
+              "Mixture"
+            ],
+            "cards": [
+              "Gold",
+              "Water",
+              "Air",
+              "Oxygen",
+              "Salt water",
+              "Carbon dioxide"
+            ],
+            "answer": [
+              0,
+              1,
+              2,
+              0,
+              2,
+              1
+            ]
+          }
+        },
+        {
+          "heading": "A 3-mark answer",
+          "note": "I do: talk through each step.",
+          "model": {
+            "problem": "Explain why water is a compound, not a mixture. (3)",
+            "steps": [
+              "Water contains hydrogen and oxygen (1)",
+              "The atoms are chemically joined/bonded (1)",
+              "It has different properties from hydrogen and oxygen (1)"
+            ],
+            "answer": "Three linked points = 3 marks"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds. Launch the Teams poll.",
+          "check": {
+            "q": "Which is a non-metal property?",
+            "options": [
+              "Malleable",
+              "Sonorous",
+              "Brittle"
+            ],
+            "answer": 2,
+            "why": "Solid non-metals tend to shatter."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write the word equation for carbon burning in oxygen.",
+          "a": "carbon + oxygen → carbon dioxide",
+          "mins": 2,
+          "model": "Reactants: carbon + oxygen. Arrow. Product: two elements with oxygen, one carbon: carbon dioxide."
+        },
+        {
+          "q": "Is salt water an element, compound or mixture?",
+          "a": "A mixture",
+          "mins": 1
+        },
+        {
+          "q": "Give two properties of metals.",
+          "a": "e.g. shiny, conduct electricity",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Complete the 7H quiz (25 marks) in the portal under time.",
+          "a": "Marked against the 7H mark scheme in the portal",
+          "mins": 16,
+          "model": "Teacher reads question 1 and models underlining the command word."
+        },
+        {
+          "q": "Extend: Correct two wrong answers using the mark scheme in green pen.",
+          "a": "Corrections match the mark scheme",
+          "mins": 2
+        },
+        {
+          "q": "Stretch: Write a 2-mark question on formulae with its mark scheme.",
+          "a": "A fair question with two markable points",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "My weakest 7H topic is...",
+          "a": "Pupils' own",
+          "mins": 1
+        },
+        {
+          "q": "Big question: which 7H idea would help a Year 5 pupil most?",
+          "a": "Pupils' own with a reason.",
+          "mins": 2
+        }
+      ],
+      "homework": "Repair your weakest 7H topic for 20 minutes and learn 20 element symbols.",
+      "send": "SEND: quiz read aloud; reduced options. EAL: key word mat. Stretch: answer the challenge question on conservation of mass.",
+      "resources": [
+        "Pearson Exploring Science 7H Atoms, elements and molecules (the school's KS3 course): 7H review and end-of-unit test",
+        "Kerboodle Activate for AQA KS3 (the school's Oxford scheme): Matter (elements); Reactions (types of reaction)",
+        "7H quiz (25 marks) and mark scheme (portal)",
+        "Periodic table (portal printable)",
+        "Mini-whiteboard and pen",
+        "Exercise book, pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "periodic table",
+          "alt": "The periodic table",
+          "for": "teach:1"
+        },
+        {
+          "find": "gold bar",
+          "alt": "A gold bar (element)",
+          "for": "keywords"
+        },
+        {
+          "find": "glass of water",
+          "alt": "Water (a compound)",
+          "for": "hook"
         }
       ]
     }
