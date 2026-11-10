@@ -2584,23 +2584,21 @@
       "boardShort": "Edexcel GCSE 1CP2"
     },
     {
-      "unit": "Unit 2.1: Data: binary and number representation",
+      "unit": "Spring 2: Data representation",
       "n": 17,
       "title": "Bits, states and unsigned binary",
       "duration": 50,
-      "bigQuestion": "How can a computer store anything at all using only on and off?",
+      "bigQuestion": "A light switch has two positions. How many different patterns can three switches make?",
       "objectives": [
-        "Explain that binary represents data and instructions and count the states for n bits (2.1.1)",
-        "Convert between denary and 8-bit unsigned binary, 0 to 255 (2.1.2, 2.1.3)",
-        "State the largest value for a given number of bits"
+        "To understand why computers use binary and how n bits give 2^n states"
       ],
       "successCriteria": [
-        "All: convert a small denary number to binary and back",
-        "Most: convert any value 0 to 255 in both directions",
-        "Some: work out the number of bits needed for a given number of values and justify it"
+        "All: state that a bit is 0 or 1 and a byte is 8 bits",
+        "Most: calculate the number of states for n bits",
+        "Some: work out how many bits are needed for a given number of values"
       ],
-      "crossCurricular": "Mathematics: powers of 2 and place value",
-      "smsc": "Cultural: the idea of simple, reliable building blocks combining into something vast",
+      "crossCurricular": "Mathematics: powers of 2",
+      "smsc": "Cultural: simple building blocks combining into something vast",
       "keywords": [
         {
           "term": "bit",
@@ -2611,68 +2609,91 @@
           "def": "8 bits"
         },
         {
-          "term": "denary",
-          "def": "base 10, the number system we normally use"
-        },
-        {
-          "term": "binary",
-          "def": "base 2, using only the digits 0 and 1"
-        },
-        {
           "term": "state",
           "def": "one possible pattern of a group of bits"
+        },
+        {
+          "term": "unsigned",
+          "def": "a whole number with no sign, 0 or above"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "A light switch has two positions. How many different patterns can three switches make?",
+        "a": "8 (2 × 2 × 2): every extra switch doubles the patterns."
+      },
       "starter": [
-        "Bismillah. Write the first eight powers of 2 (1, 2, 4 ...).",
-        "What is 2 x 2 x 2 x 2 x 2?",
-        "Convert 13 into a sum of 8, 4, 2 and 1 (for example 13 = 8 + 4 + 1)."
+        {
+          "q": "2 × 2 × 2 × 2 = ?",
+          "a": "16",
+          "mins": 1,
+          "options": [
+            "16",
+            "8",
+            "32"
+          ]
+        },
+        {
+          "q": "Write the first eight powers of 2, starting with 1.",
+          "a": "1, 2, 4, 8, 16, 32, 64, 128",
+          "mins": 2
+        },
+        {
+          "q": "13 = 8 + 4 + ...",
+          "a": "1",
+          "mins": 1,
+          "options": [
+            "1",
+            "2",
+            "3"
+          ]
+        }
       ],
       "teach": [
         {
           "heading": "Why binary?",
           "bullets": [
-            "Computers use switches that are on or off",
-            "Data and instructions are both stored as bits",
-            "A bit is 0 or 1; a byte is 8 bits"
+            "Circuits use switches (transistors) that are on or off",
+            "Two states are easy to tell apart and resist noise",
+            "Data and instructions are both stored as bits"
           ],
-          "note": "Explain that circuits are made of transistors with two reliable states; two states are easy to tell apart and resist noise. Stress that program instructions are stored as binary just as data is; the computer cannot tell which it is without context. Ask pupils what a pattern like 01000001 could mean (the number 65 or the letter A).",
+          "note": "Ask what 01000001 could mean: the number 65 or the letter A. The computer needs context."
+        },
+        {
+          "heading": "States",
+          "bullets": [],
+          "note": "Pupils often say 8 bits gives 255 states: 256 states, values 0 to 255.",
           "table": {
             "head": [
               "Bits",
-              "Patterns (states)",
-              "Calculation"
+              "States",
+              "Range (unsigned)"
             ],
             "rows": [
               [
                 "1",
                 "2",
-                "2"
+                "0 to 1"
               ],
               [
                 "2",
                 "4",
-                "2 x 2"
-              ],
-              [
-                "3",
-                "8",
-                "2 x 2 x 2"
+                "0 to 3"
               ],
               [
                 "4",
                 "16",
-                "2^4"
+                "0 to 15"
               ],
               [
                 "8",
                 "256",
-                "2^8"
+                "0 to 255"
               ],
               [
                 "n",
                 "2^n",
-                "n twos multiplied"
+                "0 to 2^n − 1"
               ]
             ]
           }
@@ -2680,11 +2701,10 @@
         {
           "heading": "Place values",
           "bullets": [
-            "Each place is double the place on its right",
-            "8 bits: 128 64 32 16 8 4 2 1",
-            "Largest 8-bit value is 255, not 256"
+            "Each place doubles the one to its right",
+            "01001101 = 64 + 8 + 4 + 1 = 77"
           ],
-          "note": "Draw the place-value headings on the board and keep them there all lesson. Note that 8 bits give 256 states but the values run from 0 to 255 because 0 is a state. Pupils often write 256 as the maximum.",
+          "note": "Keep the headings on the board all lesson.",
           "table": {
             "head": [
               "128",
@@ -2706,314 +2726,410 @@
                 "1",
                 "0",
                 "1"
-              ],
-              [
-                "1",
-                "0",
-                "1",
-                "1",
-                "0",
-                "0",
-                "1",
-                "0"
               ]
             ]
           }
         },
         {
-          "heading": "Worked example: denary to binary",
-          "note": "Model by subtracting place values from the left: if the place value fits, write 1 and subtract; if not, write 0. Check by adding the place values back. Say the check aloud so pupils see it as part of the method.",
-          "model": {
-            "problem": "Convert 77 to 8-bit binary.",
-            "steps": [
-              "128 does not fit (0). 64 fits: 77 - 64 = 13 (1)",
-              "32 no (0). 16 no (0). 8 fits: 13 - 8 = 5 (1)",
-              "4 fits: 5 - 4 = 1 (1). 2 no (0). 1 fits (1)",
-              "Write the bits in order: 0 1 0 0 1 1 0 1",
-              "Check: 64 + 8 + 4 + 1 = 77"
-            ],
-            "answer": "77 in binary is 01001101."
-          }
-        },
-        {
-          "heading": "Binary to denary, and the checker",
-          "bullets": [
-            "Add the place values where there is a 1",
-            "10110010 = 128 + 32 + 16 + 2 = 178",
-            "Python can check your working"
-          ],
-          "note": "Pupils should work out 10110010 first. Python's int(text, 2) and format() are only for checking; in the exam, conversions are done by hand. Ask why the leading zero in 01001101 must be kept when we say '8-bit'.",
-          "code": {
-            "lang": "python",
-            "text": "print(format(77, \"08b\"))\nprint(int(\"10110010\", 2))\nprint(2 ** 8, 2 ** 8 - 1)",
-            "output": "01001101\n178\n256 255"
-          }
-        },
-        {
-          "heading": "Check: how many values?",
-          "note": "Answer C. With n bits there are 2^n states: 2^6 = 64. A doubles instead of using the power. B is 6 x 6; D confuses the number of states with the largest value (63).",
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
           "check": {
-            "q": "A sensor sends a 6-bit binary pattern. How many different patterns can it send?",
+            "q": "How many states do 5 bits give?",
             "options": [
-              "12",
-              "36",
-              "64",
-              "63"
+              "32",
+              "10",
+              "31",
+              "25"
             ],
-            "answer": 2,
-            "why": "6 bits give 2^6 = 64 patterns (0 to 63). 12 is 6 x 2 (A), 36 is 6 x 6 (B) and 63 is the largest value, not the number of patterns (D)."
+            "answer": 0,
+            "why": "2^5 = 32; 31 is the largest value, not the number of states."
           }
         }
       ],
       "practice": [
-        "Convert 45 to 8-bit binary and show a check.",
-        "Convert 11001001 to denary.",
-        "How many bits are needed to give a different pattern to each of 100 pupils? Explain."
+        {
+          "q": "How many bits are needed to give each of 100 learners a different code?",
+          "a": "7 bits (2^7 = 128 ≥ 100; 6 bits give only 64).",
+          "mins": 4,
+          "model": "I do: for 20 codes, 2^4 = 16 is too few, 2^5 = 32 is enough, so 5 bits."
+        }
       ],
       "independent": [
-        "Core: Convert 19, 100 and 255 to 8-bit binary.",
-        "Extend: Convert 01101110, 10000001 and 11111110 to denary, and state the largest number that can be stored in 10 bits.",
-        "Stretch: A game has 300 different items. Work out the minimum number of bits to give each item its own code and say how many spare codes there are."
+        {
+          "q": "Pupil PDF: 12 questions on states, ranges and bits needed, then convert six 8-bit patterns to denary.",
+          "a": "Answers on the teacher sheet (e.g. 10110010 = 178).",
+          "mins": 14,
+          "model": "The teacher converts 00101100 = 32 + 8 + 4 = 44."
+        },
+        {
+          "q": "Extend: what is the largest unsigned value in 12 bits?",
+          "a": "4095 (2^12 − 1).",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: a camera labels 1,000 photos. Minimum bits per label? Justify.",
+          "a": "10 bits: 2^10 = 1024 ≥ 1000; 9 bits give 512.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "State the number of values that 5 bits can represent.",
-        "Convert 00010110 to denary."
+        {
+          "q": "8 bits can hold values from 0 to ...",
+          "a": "255",
+          "mins": 1,
+          "options": [
+            "255",
+            "256",
+            "128"
+          ]
+        },
+        {
+          "q": "Back to our ponder: A light switch has two positions. How many different patterns can three switches make?",
+          "a": "8 (2 × 2 × 2): every extra switch doubles the patterns.",
+          "mins": 2
+        }
       ],
-      "homework": "Write your age, your house number and the number of letters in your name in 8-bit binary. Show working for each.",
-      "send": "SEND/EAL: keep the place-value strip visible and provide a template with the 8 columns. Stretch: ask for conversions using 12-bit binary and the number of states.",
-      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE 1CP2"
+      "homework": "Knowledge organiser: learn the place values and the states table.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE (9-1) Computer Science Student Book (2020), Topic 2 (TO CONFIRM page numbers)",
+        "Knowledge organiser (pupil PDF)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Light switches panel",
+          "alt": "Light switches: on and off",
+          "for": "hook"
+        },
+        {
+          "find": "Computer chip circuit board",
+          "alt": "A circuit board",
+          "for": "teach:1"
+        }
+      ],
+      "covers": [
+        "2.1.1",
+        "2.1.2"
+      ]
     },
     {
-      "unit": "Unit 2.1: Data: binary and number representation",
+      "unit": "Spring 2: Data representation",
       "n": 18,
       "title": "Signed integers and two's complement",
       "duration": 50,
-      "bigQuestion": "How can a computer store negative numbers using only 0s and 1s?",
+      "bigQuestion": "A lift in a building with basements needs floor −2. How could 8 switches show a negative number?",
       "objectives": [
-        "Represent signed integers using two's complement (2.1.2)",
-        "Convert between denary and 8-bit two's complement, -128 to +127 (2.1.3)",
-        "Explain the range of signed and unsigned 8-bit integers"
+        "To understand how two's complement represents negative whole numbers in 8 bits"
       ],
       "successCriteria": [
-        "All: state the range of 8-bit signed integers",
-        "Most: convert positive and negative numbers in both directions",
-        "Some: explain why two's complement is useful and spot an invalid conversion"
+        "All: state that the leftmost bit is −128 in 8-bit two's complement",
+        "Most: convert between denary and two's complement",
+        "Some: explain the range −128 to 127"
       ],
-      "crossCurricular": "Mathematics: negative numbers and number lines",
-      "smsc": "Moral: fairness in treating negative values as seriously as positive ones",
+      "crossCurricular": "Mathematics: negative numbers",
+      "smsc": "Intellectual: elegant mathematical ideas",
       "keywords": [
         {
-          "term": "unsigned",
-          "def": "a binary number with no sign: all bits are used for the value"
-        },
-        {
-          "term": "signed",
-          "def": "a binary number that can be positive or negative"
+          "term": "signed integer",
+          "def": "a whole number that can be negative"
         },
         {
           "term": "two's complement",
-          "def": "a way of storing signed numbers where the leftmost bit has a negative place value"
+          "def": "a signed system where the most significant bit has a negative place value"
         },
         {
-          "term": "most significant bit",
-          "def": "the leftmost bit, with the largest place value"
+          "term": "sign bit",
+          "def": "the leftmost bit: 1 means negative"
+        },
+        {
+          "term": "range",
+          "def": "the smallest and largest values that can be stored"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "A lift in a building with basements needs floor −2. How could 8 switches show a negative number?",
+        "a": "Give the leftmost bit a negative value: that is two's complement."
+      },
       "starter": [
-        "Bismillah. Convert 52 to 8-bit binary.",
-        "What is the largest unsigned 8-bit value?",
-        "What is -128 + 64?"
+        {
+          "q": "150 in binary is ...",
+          "a": "10010110",
+          "mins": 1,
+          "options": [
+            "10010110",
+            "10100110",
+            "01101001"
+          ]
+        },
+        {
+          "q": "What is the largest 8-bit unsigned value?",
+          "a": "255",
+          "mins": 1
+        },
+        {
+          "q": "The leftmost bit is the ...",
+          "a": "most significant bit",
+          "mins": 1,
+          "options": [
+            "most significant bit",
+            "least significant bit",
+            "sign of the byte"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "The idea",
+          "heading": "Place values",
           "bullets": [
-            "Leftmost bit has a negative value: -128",
-            "Other bits keep their positive values",
-            "Range is -128 to +127"
+            "The leftmost place is −128",
+            "Range: −128 to 127"
           ],
-          "note": "The idea is the same place-value method with one change. Show that with a leading 1 the number starts at -128 and the other bits add back. The number is negative if and only if the leading bit is 1. Compare unsigned 255 with signed -1 for the same pattern.",
+          "note": "",
           "table": {
             "head": [
-              "Pattern",
-              "Unsigned",
-              "Signed (two's complement)"
+              "−128",
+              "64",
+              "32",
+              "16",
+              "8",
+              "4",
+              "2",
+              "1"
             ],
             "rows": [
               [
-                "00000001",
+                "1",
+                "1",
+                "0",
+                "1",
+                "0",
+                "0",
                 "1",
                 "1"
-              ],
-              [
-                "01111111",
-                "127",
-                "127"
-              ],
-              [
-                "10000000",
-                "128",
-                "-128"
-              ],
-              [
-                "11111111",
-                "255",
-                "-1"
               ]
             ]
           }
         },
         {
-          "heading": "Binary to denary",
-          "bullets": [
-            "Place values: -128 64 32 16 8 4 2 1",
-            "11110110 = -128 + 64 + 32 + 16 + 4 + 2",
-            "= -10"
-          ],
-          "note": "Work through the sum aloud: 64 + 32 + 16 + 4 + 2 = 118, and -128 + 118 = -10. Point out that a leading 1 means the answer is at most -1. Pupils like to ignore the first bit and read the rest; correct that now.",
-          "code": {
-            "lang": "python",
-            "text": "print(-128 + 64 + 32 + 16 + 4 + 2)\nprint(format(-10 & 255, \"08b\"))\nprint(format(-45 & 255, \"08b\"))",
-            "output": "-10\n11110110\n11010011"
-          }
-        },
-        {
-          "heading": "Worked example: negative to binary",
-          "note": "Model the method of 'write the positive number, flip the bits, add 1'. Then check using the place values. Both methods lead to the same answer; pupils may use either as long as they check. Emphasise that the number of bits must be fixed at 8 so the leading zeros matter.",
+          "heading": "Denary to two's complement",
+          "bullets": [],
+          "note": "Show the check: −128 + 64 + 16 + 2 + 1 = −45.",
           "model": {
-            "problem": "Write -45 as an 8-bit two's complement number.",
+            "problem": "Represent −45 in 8-bit two's complement",
             "steps": [
-              "Write +45 in 8 bits: 00101101",
+              "45 in binary: 00101101",
               "Flip every bit: 11010010",
               "Add 1: 11010011",
-              "Check: -128 + 64 + 16 + 2 + 1 = -45"
+              "Check: −128 + 64 + 16 + 2 + 1 = −45"
             ],
-            "answer": "-45 is 11010011."
+            "answer": "11010011"
           }
         },
         {
-          "heading": "Misconception: sign and magnitude",
-          "bullets": [
-            "Not just a minus sign bit",
-            "10000101 is -123, not -5",
-            "The leading bit is worth -128"
-          ],
-          "note": "Pupils often think the leading 1 just means 'negative' and the rest is the size. Test it: -128 + 4 + 1 = -123. Sign-and-magnitude is a different system and is not the one used in this course.",
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
           "misconception": {
-            "wrong": "In 8-bit two's complement, 10000101 is -5 (a minus sign then 0000101).",
-            "right": "The leading bit is worth -128, so 10000101 = -128 + 4 + 1 = -123."
+            "wrong": "Flip the bits and stop",
+            "right": "Flip the bits, then add 1 (or use the −128 place value and check)"
           }
         },
         {
-          "heading": "Check: convert",
-          "note": "Answer B. The leading 1 means the number is negative: -128 + 64 + 8 + 4 + 2 = -50. Option A is the unsigned value, 206. C comes from reading the other seven bits as 78 and just adding a minus sign. D has the right size but the wrong sign.",
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
           "check": {
-            "q": "What is 11001110 as an 8-bit two's complement number?",
+            "q": "11111111 in two's complement is ...",
             "options": [
-              "206",
-              "-50",
-              "-78",
-              "50"
+              "−1",
+              "255",
+              "−127",
+              "−128"
             ],
-            "answer": 1,
-            "why": "-128 + 64 + 8 + 4 + 2 = -50. The unsigned value is 206 (A). C wrongly treats the leading 1 as just a minus sign in front of 78; 50 has the wrong sign (D)."
+            "answer": 0,
+            "why": "−128 + 127 = −1."
           }
         }
       ],
       "practice": [
-        "State the smallest and largest 8-bit two's complement integers.",
-        "Write -1 and -128 in 8-bit two's complement.",
-        "Convert 10100000 to denary."
+        {
+          "q": "Convert −20 to 8-bit two's complement.",
+          "a": "11101100",
+          "mins": 4,
+          "model": "I do: 20 = 00010100; flip: 11101011; add 1: 11101100; check −128 + 64 + 32 + 8 + 4 = −20."
+        }
       ],
       "independent": [
-        "Core: Convert 00111100 and 11000100 to denary (two's complement).",
-        "Extend: Write -20, -75 and 99 in 8-bit two's complement.",
-        "Stretch: Explain why the range is -128 to +127 and not -127 to +128, using the number of patterns available for positive numbers, zero and negative numbers."
+        {
+          "q": "Pupil PDF: convert 8 negative numbers to two's complement and 6 patterns back to denary.",
+          "a": "Answers on the teacher sheet (e.g. 10000001 = −127).",
+          "mins": 15,
+          "model": "The teacher converts 10000001: −128 + 1 = −127."
+        },
+        {
+          "q": "Extend: why can 8-bit two's complement show −128 but not +128?",
+          "a": "Zero uses one of the 128 non-negative patterns, leaving 0 to 127.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: what is the range of 4-bit two's complement?",
+          "a": "−8 to 7.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Write -3 in 8-bit two's complement.",
-        "What is the smallest number that 8-bit two's complement can store?"
+        {
+          "q": "The range of 8-bit two's complement is ...",
+          "a": "−128 to 127",
+          "mins": 1,
+          "options": [
+            "−128 to 127",
+            "−127 to 128",
+            "0 to 255"
+          ]
+        },
+        {
+          "q": "Back to our ponder: A lift in a building with basements needs floor −2. How could 8 switches show a negative number?",
+          "a": "Give the leftmost bit a negative value: that is two's complement.",
+          "mins": 2
+        }
       ],
-      "homework": "Make a conversion chart for the numbers -8 to +7 in 4-bit two's complement (place values -8, 4, 2, 1).",
-      "send": "SEND/EAL: provide a place-value strip with -128 in a different colour. Stretch: ask for 16-bit extreme values (-32 768 to +32 767) with reasoning.",
-      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE 1CP2"
+      "homework": "Six two's complement conversions (pupil PDF).",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE (9-1) Computer Science Student Book (2020), Topic 2 (TO CONFIRM page numbers)",
+        "Knowledge organiser (pupil PDF)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Thermometer below zero",
+          "alt": "A thermometer showing negative temperatures",
+          "for": "hook"
+        },
+        {
+          "find": "Lift buttons basement",
+          "alt": "Lift buttons with basement floors",
+          "for": "teach:1"
+        }
+      ],
+      "covers": [
+        "2.1.2",
+        "2.1.3"
+      ]
     },
     {
-      "unit": "Unit 2.1: Data: binary and number representation",
+      "unit": "Spring 2: Data representation",
       "n": 19,
-      "title": "Binary addition, shifts and overflow",
+      "title": "Binary addition and overflow",
       "duration": 50,
-      "bigQuestion": "What happens when a calculation produces a number too big for the bits available?",
+      "bigQuestion": "A car's mileage counter shows 999999. What happens after one more mile?",
       "objectives": [
-        "Add positive binary numbers (2.1.4)",
-        "Apply logical and arithmetic shifts and state their effect (2.1.4)",
-        "Explain overflow when a result exceeds the available bits (2.1.5)"
+        "To understand how to add two 8-bit binary numbers and recognise overflow"
       ],
       "successCriteria": [
-        "All: add two small binary numbers using carries",
-        "Most: shift a pattern left or right and give the effect on its value",
-        "Some: identify overflow, give the stored result and explain the consequence"
+        "All: apply the four addition rules",
+        "Most: add two 8-bit numbers with carries",
+        "Some: explain overflow and its effect on the stored result"
       ],
-      "crossCurricular": "Mathematics: multiplying and dividing by powers of 2",
-      "smsc": "Moral: honesty about the limits of a system, reporting an error instead of hiding it",
+      "crossCurricular": "Mathematics: column addition",
+      "smsc": "Moral: systems failing safely; responsibility for errors",
       "keywords": [
         {
           "term": "carry",
-          "def": "the 1 moved to the next column when a column adds to more than 1"
-        },
-        {
-          "term": "logical shift",
-          "def": "moves all bits left or right and fills the gap with 0"
-        },
-        {
-          "term": "arithmetic shift",
-          "def": "a shift that keeps the sign bit, so signed numbers keep their sign"
+          "def": "a 1 passed to the next column"
         },
         {
           "term": "overflow",
-          "def": "a result too large for the number of bits available"
+          "def": "a result too large for the number of bits"
+        },
+        {
+          "term": "register",
+          "def": "a small, fixed-size store in the CPU"
+        },
+        {
+          "term": "binary addition",
+          "def": "adding column by column with carries"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "A car's mileage counter shows 999999. What happens after one more mile?",
+        "a": "It rolls over to 000000: the result is too large for the digits available. That is overflow."
+      },
       "starter": [
-        "Bismillah. Convert 00011010 to denary.",
-        "How many different values can 8 bits hold?",
-        "What is 6 x 2 and 6 x 4?"
+        {
+          "q": "11111111 in two's complement is ...",
+          "a": "−1",
+          "mins": 1,
+          "options": [
+            "−1",
+            "255",
+            "−128"
+          ]
+        },
+        {
+          "q": "Convert 54 to binary.",
+          "a": "00110110",
+          "mins": 2
+        },
+        {
+          "q": "1 + 1 in binary is ...",
+          "a": "10",
+          "mins": 1,
+          "options": [
+            "10",
+            "2",
+            "11"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "Adding binary",
-          "bullets": [
-            "0+0=0, 0+1=1, 1+1=10 (write 0, carry 1)",
-            "1+1+1=11 (write 1, carry 1)",
-            "Work from the right, column by column"
-          ],
-          "note": "Practise the four rules orally before any sums. Pupils must write the carries above the next column. Most errors come from forgetting the carry into a column with two 1s. Remind pupils that after adding they should convert to denary to check.",
+          "heading": "The rules",
+          "bullets": [],
+          "note": "",
           "table": {
             "head": [
-              "Column sum",
-              "Write",
+              "Sum",
+              "Result",
               "Carry"
             ],
             "rows": [
               [
-                "0",
+                "0 + 0",
                 "0",
                 "0"
               ],
               [
-                "1",
+                "0 + 1",
                 "1",
                 "0"
               ],
               [
-                "2 (1+1)",
+                "1 + 1",
                 "0",
                 "1"
               ],
               [
-                "3 (1+1+carry)",
+                "1 + 1 + 1",
                 "1",
                 "1"
               ]
@@ -3021,317 +3137,418 @@
           }
         },
         {
-          "heading": "Worked example: add two bytes",
-          "note": "Model column by column from the right with the carry written above. After finishing, convert both inputs and the answer to denary: 53 + 27 = 80. This builds the habit of checking.",
+          "heading": "Worked example",
+          "bullets": [],
+          "note": "Line up the columns; write carries above.",
           "model": {
-            "problem": "Add 00110101 and 00011011, giving the answer in 8 bits.",
+            "problem": "01101101 (109) + 00110110 (54)",
             "steps": [
-              "Rightmost: 1 + 1 = 10, write 0, carry 1",
-              "Next: 0 + 1 + 1 = 10, write 0, carry 1",
-              "Next: 1 + 0 + 1 = 10, write 0, carry 1. Next: 0 + 1 + 1 = 10, write 0, carry 1",
-              "Next: 1 + 1 + 1 = 11, write 1, carry 1. Next: 1 + 0 + 1 = 10, write 0, carry 1. Then 0 + 0 + 1 = 1, and 0 + 0 = 0",
-              "Check: 53 + 27 = 80 = 01010000"
+              "Add from the right, carrying 1 when a column makes 2 or 3",
+              "Result: 10100011",
+              "Check: 128 + 32 + 2 + 1 = 163 = 109 + 54"
             ],
-            "answer": "00110101 + 00011011 = 01010000 (80)."
-          }
-        },
-        {
-          "heading": "Shifts",
-          "bullets": [
-            "Left shift by 1 doubles the value",
-            "Right shift by 1 halves it, losing a remainder",
-            "Arithmetic right shift copies the sign bit"
-          ],
-          "note": "Show the Python output as confirmation: shifting left by 1 gives 44 (22 x 2) and shifting right by 2 gives 5 (22 divided by 4, remainder lost). The last line shifts 11 left by 3 places to give 88, a multiplication by 8. For a logical shift, the vacated bits are filled with zeros. For an arithmetic right shift on a signed number the sign bit is copied so that a negative number stays negative: 11110100 (-12) becomes 11111010 (-6). A logical right shift would give 01111010, which is 122 and wrong. Pupils should always state the effect as multiplying or dividing by a power of 2.",
-          "code": {
-            "lang": "python",
-            "text": "a = 22\nprint(format(a << 1, \"08b\"), a << 1)\nprint(format(a >> 2, \"08b\"), a >> 2)\nprint(format(11, \"08b\"), format((11 << 3) % 256, \"08b\"))",
-            "output": "00101100 44\n00000101 5\n00001011 01011000"
+            "answer": "10100011"
           }
         },
         {
           "heading": "Overflow",
           "bullets": [
-            "The result needs more than 8 bits",
-            "The extra bit is lost, so the stored value is wrong",
-            "Example: 150 + 110 = 260, stored as 4"
+            "11001000 (200) + 01100100 (100) = 300",
+            "300 needs 9 bits: the 9th bit is lost",
+            "Stored result: 00101100 = 44 (wrong)"
           ],
-          "note": "Run the code. Python integers are unbounded, so we simulate an 8-bit register with % 256. Consequences: wrong results, crashes or security holes. Emphasise that overflow is about the fixed number of bits, not about the computer being slow or broken.",
-          "code": {
-            "lang": "python",
-            "text": "total = 150 + 110\nprint(total)\nprint(total % 256)\nprint(format(total % 256, \"08b\"))",
-            "output": "260\n4\n00000100"
-          }
+          "note": "Overflow happens when a result does not fit the register; the error can go unnoticed unless checked."
         },
         {
-          "heading": "Check: shifts",
-          "note": "Answer D. A left shift of 2 multiplies by 4: 12 x 4 = 48 = 00110000. A is a right shift. B moves only one place. C is 00001100 shifted the wrong way and read incorrectly. Ask what would happen to 11000000 shifted left by 1: a 1 falls off the end, a logical overflow.",
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
           "check": {
-            "q": "The 8-bit pattern 00001100 (12) is shifted left by two places. What is the new value?",
+            "q": "Which sum overflows 8 bits (unsigned)?",
             "options": [
-              "3",
-              "24",
-              "12",
-              "48"
+              "180 + 90",
+              "100 + 100",
+              "127 + 1",
+              "0 + 255"
             ],
-            "answer": 3,
-            "why": "Each left shift doubles the value: 12 x 2 x 2 = 48 (00110000). A is a right shift by 2, B is a shift by one place, and C is unchanged."
+            "answer": 0,
+            "why": "180 + 90 = 270 > 255."
           }
         }
       ],
       "practice": [
-        "Add 00101101 and 00010110 and check in denary.",
-        "Shift 00010100 right by 2 and state the denary value before and after.",
-        "Add 11001000 and 01100100. Is there overflow? State the stored 8-bit result."
+        {
+          "q": "Add 00101011 and 00011110; check in denary.",
+          "a": "01001001 (43 + 30 = 73)",
+          "mins": 4,
+          "model": "I do: 00010111 + 00001001 = 00100000 (23 + 9 = 32), carries shown."
+        }
       ],
       "independent": [
-        "Core: Add 01000111 and 00101010; convert all three to denary to check.",
-        "Extend: A byte holds 00000110. Show the effect of left shifts by 1, 2 and 3 and relate each to multiplication.",
-        "Stretch: Explain why a logical right shift gives the wrong answer for a negative two's complement number and how an arithmetic shift fixes it, using -16 as the example."
+        {
+          "q": "Pupil PDF: 8 additions with carries; mark which overflow and give the stored (wrong) result.",
+          "a": "Answers on the teacher sheet.",
+          "mins": 14,
+          "model": "The teacher works sum 1 with the carries row."
+        },
+        {
+          "q": "Extend: why can overflow be dangerous in a real system?",
+          "a": "A wrong value is used silently, e.g. a counter or sensor reading resets.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: write Python that adds two values and prints 'Overflow' if the result is over 255.",
+          "a": "s = a + b; if s > 255: print('Overflow') else: print(format(s, '08b'))",
+          "mins": 3
+        }
       ],
       "exit": [
-        "What does a left shift of 3 places do to the value (if no 1 falls off)?",
-        "Define overflow in your own words and give one effect."
+        {
+          "q": "Overflow means ...",
+          "a": "the result is too big for the bits available",
+          "mins": 1,
+          "options": [
+            "the result is too big for the bits available",
+            "the answer is negative",
+            "there was a carry"
+          ]
+        },
+        {
+          "q": "Back to our ponder: A car's mileage counter shows 999999. What happens after one more mile?",
+          "a": "It rolls over to 000000: the result is too large for the digits available. That is overflow.",
+          "mins": 2
+        }
       ],
-      "homework": "Make a table of every addition from 100 + 100 to 100 + 160 (in steps of 20) and mark which ones overflow an 8-bit unsigned register.",
-      "send": "SEND/EAL: give a column-addition template with carry boxes. Stretch: ask for an arithmetic shift of a negative number.",
-      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE 1CP2"
+      "homework": "Five additions (pupil PDF).",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE (9-1) Computer Science Student Book (2020), Topic 2 (TO CONFIRM page numbers)",
+        "Knowledge organiser (pupil PDF)",
+        "Python 3 (IDLE or the school's online editor)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Car odometer",
+          "alt": "A mileage counter",
+          "for": "hook"
+        },
+        {
+          "find": "Calculator",
+          "alt": "A calculator",
+          "for": "teach:2"
+        }
+      ],
+      "covers": [
+        "2.1.4",
+        "2.1.5"
+      ]
     },
     {
-      "unit": "Unit 2.1: Data: binary and number representation",
+      "unit": "Spring 2: Data representation",
       "n": 20,
       "title": "Hexadecimal",
       "duration": 50,
-      "bigQuestion": "Why do programmers write 'FF' when the computer stores 11111111?",
+      "bigQuestion": "Which is easier to read aloud without a mistake: 10110111 or B7?",
       "objectives": [
-        "Explain why hexadecimal is used (2.1.6)",
-        "Convert between hexadecimal and binary",
-        "Convert between hexadecimal and denary"
+        "To understand why hexadecimal is used and how to convert between hexadecimal, binary and denary"
       ],
       "successCriteria": [
-        "All: state two reasons for using hexadecimal",
-        "Most: convert between binary and hex using nibbles",
-        "Some: convert denary to hex and justify use of hex in a given context"
+        "All: list the hex digits 0 to F",
+        "Most: convert between hex and binary using nibbles",
+        "Some: explain why programmers prefer hex to binary"
       ],
-      "crossCurricular": "Art and Design: web colour codes",
-      "smsc": "Cultural: people create notation that is easier for humans to read",
+      "crossCurricular": "Art: colour codes in digital design",
+      "smsc": "Intellectual: choosing notation that helps people",
       "keywords": [
         {
           "term": "hexadecimal",
-          "def": "base 16, using digits 0 to 9 and letters A to F"
+          "def": "base 16, digits 0 to 9 and A to F"
         },
         {
           "term": "nibble",
-          "def": "4 bits, which is one hexadecimal digit"
+          "def": "4 bits: one hex digit"
         },
         {
-          "term": "base",
-          "def": "the number of different digits a number system uses"
+          "term": "colour code",
+          "def": "a hex value for red, green and blue"
+        },
+        {
+          "term": "readability",
+          "def": "how easy something is for people to read"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which is easier to read aloud without a mistake: 10110111 or B7?",
+        "a": "B7: shorter and less error-prone, yet it means the same pattern."
+      },
       "starter": [
-        "Bismillah. Convert 11010110 to denary.",
-        "How many values can 4 bits hold?",
-        "What is 12 x 16?"
+        {
+          "q": "22 << 1 gives ...",
+          "a": "44",
+          "mins": 1,
+          "options": [
+            "44",
+            "11",
+            "23"
+          ]
+        },
+        {
+          "q": "How many bits in a nibble?",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "1111 in denary is ...",
+          "a": "15",
+          "mins": 1,
+          "options": [
+            "15",
+            "16",
+            "4"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "Why hex?",
-          "bullets": [
-            "Shorter: one hex digit for 4 bits",
-            "Easier to read, write and remember",
-            "Easier to spot mistakes than a string of 1s and 0s"
-          ],
-          "note": "Show a long binary string and its hex form side by side. Hexadecimal does not make computers faster; it is for people. Real uses: web colours, MAC addresses, memory addresses, error codes. Ask pupils why 'F' appears (15 needs one digit).",
+          "heading": "Hex digits",
+          "bullets": [],
+          "note": "",
           "table": {
             "head": [
-              "Hex",
               "Denary",
+              "Hex",
               "Binary"
             ],
             "rows": [
-              [
-                "0",
-                "0",
-                "0000"
-              ],
-              [
-                "5",
-                "5",
-                "0101"
-              ],
               [
                 "9",
                 "9",
                 "1001"
               ],
               [
-                "A",
                 "10",
+                "A",
                 "1010"
               ],
               [
-                "B",
                 "11",
+                "B",
                 "1011"
               ],
               [
-                "C",
                 "12",
+                "C",
                 "1100"
               ],
               [
-                "E",
-                "14",
-                "1110"
-              ],
-              [
-                "F",
                 "15",
+                "F",
                 "1111"
               ]
             ]
           }
         },
         {
-          "heading": "Binary to hex and back",
-          "bullets": [
-            "Split into nibbles from the right",
-            "Convert each nibble to one hex digit",
-            "Reverse the steps to go from hex to binary"
-          ],
-          "note": "Model 10111100: nibbles 1011 and 1100, which are B and C, so BC. Practise reading the table the other way. Stress writing out four bits for each digit, including leading zeros: hex 3 is 0011, not 11.",
-          "code": {
-            "lang": "python",
-            "text": "print(format(0b10111100, \"X\"))\nprint(format(0xC3, \"08b\"))\nprint(int(\"C3\", 16))",
-            "output": "BC\n11000011\n195"
-          }
-        },
-        {
-          "heading": "Worked example: hex to denary and denary to hex",
-          "note": "Model both directions and the check. For hex to denary: first digit x 16 plus second digit. For denary to hex: divide by 16; the quotient is the first digit and the remainder is the second. Pupils must remember that C is 12, not 3.",
+          "heading": "Converting",
+          "bullets": [],
+          "note": "",
           "model": {
-            "problem": "(a) Convert 3A to binary and denary. (b) Convert denary 200 to hex.",
+            "problem": "Convert B7 to binary and denary",
             "steps": [
-              "(a) 3 = 0011 and A = 1010, so 3A = 00111010",
-              "Denary: 3 x 16 + 10 = 58 (check 32 + 16 + 8 + 2 = 58)",
-              "(b) 200 / 16 = 12 remainder 8",
-              "12 is C, remainder 8, so the hex is C8 (check: 12 x 16 + 8 = 200)"
+              "B = 1011, 7 = 0111",
+              "Binary: 10110111",
+              "Denary: 11 × 16 + 7 = 183"
             ],
-            "answer": "3A = 00111010 = 58, and 200 = C8."
+            "answer": "10110111 = 183"
           }
         },
         {
-          "heading": "Misconception: adding the digits of FF",
+          "heading": "Why hex?",
           "bullets": [
-            "A to F stand for 10 to 15",
-            "FF is 255, not 30",
-            "Hex digits are worth 16s, not 10s"
+            "Shorter than binary",
+            "Easy to convert (one digit per nibble)",
+            "Fewer mistakes",
+            "Used for colours (#FF8800), memory addresses, error codes"
           ],
-          "note": "Pupils add F + F as 15 + 15 = 30. Show that FF = 15 x 16 + 15 = 255, the biggest byte. Link to the colour code #FF0000 (maximum red, no green or blue).",
-          "misconception": {
-            "wrong": "FF in hexadecimal is 30, because F + F = 15 + 15.",
-            "right": "FF = 15 x 16 + 15 = 255. The first digit is worth 16 times its value."
-          }
+          "note": "Hex is for people: the computer still stores binary."
         },
         {
-          "heading": "Check: bits in hex",
-          "note": "Answer A. Each hex digit stands for 4 bits so 2 digits stand for 8 bits, one byte. B would be 16 bits, 4 digits. C and D confuse digits and bits.",
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
           "check": {
-            "q": "How many bits are represented by the hexadecimal number 7F?",
+            "q": "01011100 in hex is ...",
             "options": [
-              "8",
-              "4",
-              "2",
-              "16"
+              "5C",
+              "92",
+              "C5",
+              "5B"
             ],
             "answer": 0,
-            "why": "Each hex digit represents a nibble of 4 bits, so two digits represent 8 bits. 4 bits is one digit (B), 2 is the number of digits (C) and 16 bits would need 4 digits (D)."
+            "why": "0101 = 5, 1100 = C."
           }
         }
       ],
       "practice": [
-        "Convert 11100101 to hexadecimal.",
-        "Convert 9D to 8-bit binary and to denary.",
-        "State two reasons for using hexadecimal rather than binary when displaying memory addresses."
+        {
+          "q": "Convert 3F to denary.",
+          "a": "63",
+          "mins": 4,
+          "model": "I do: 2A = 2 × 16 + 10 = 42."
+        }
       ],
       "independent": [
-        "Core: Convert 00101111, 11111110 and 10010001 to hexadecimal.",
-        "Extend: Convert 6B, F0 and A5 to denary; convert 100 and 255 to hexadecimal.",
-        "Stretch: The web colour #1E90FF has red 1E, green 90 and blue FF. Convert each part to denary and describe the colour in terms of how much of each primary there is."
+        {
+          "q": "Pupil PDF: 12 conversions across hex, binary and denary, then decode three web colour codes.",
+          "a": "Answers on the teacher sheet.",
+          "mins": 15,
+          "model": "The teacher converts 200 = 1100 1000 = C8."
+        },
+        {
+          "q": "Extend: what colour is #00FF00?",
+          "a": "Pure green.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: what is the largest value in 2 hex digits, and why?",
+          "a": "FF = 255: two nibbles are one byte.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Write 15 and 16 in hexadecimal.",
-        "Explain in one sentence why hex is more convenient than binary for humans."
+        {
+          "q": "Hex is used because ...",
+          "a": "it is easier for people to read than binary",
+          "mins": 1,
+          "options": [
+            "it is easier for people to read than binary",
+            "computers store hex",
+            "it uses less memory"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Which is easier to read aloud without a mistake: 10110111 or B7?",
+          "a": "B7: shorter and less error-prone, yet it means the same pattern.",
+          "mins": 2
+        }
       ],
-      "homework": "Find the hex colour codes of three colours used on a website you know. Convert each of the red, green and blue values to denary.",
-      "send": "SEND/EAL: give the table of 16 hex digits with binary as a reference card. Stretch: ask for a three-byte colour value to be written in binary.",
-      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE 1CP2"
+      "homework": "Hex conversions (pupil PDF).",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE (9-1) Computer Science Student Book (2020), Topic 2 (TO CONFIRM page numbers)",
+        "Knowledge organiser (pupil PDF)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Colour picker hex code",
+          "alt": "A colour picker with hex codes",
+          "for": "teach:3"
+        },
+        {
+          "find": "Paint colour swatches",
+          "alt": "Colour swatches",
+          "for": "hook"
+        }
+      ],
+      "covers": [
+        "2.1.6"
+      ]
     },
     {
-      "unit": "Unit 2.2: Data: representing text, images and sound",
+      "unit": "Spring 2: Data representation",
       "n": 21,
-      "title": "Representing text: ASCII and the limits of fixed bits",
+      "title": "Representing text: ASCII",
       "duration": 50,
-      "bigQuestion": "If every letter is a number, what happens when the alphabet does not fit?",
+      "bigQuestion": "When you type the letter A, what does the computer actually store?",
       "objectives": [
-        "Represent characters using 7-bit ASCII (2.2.1)",
-        "Work out the code for a character from its position in the alphabet",
-        "Explain the limits of binary representation when the number of bits is fixed (2.2.4)"
+        "To understand how 7-bit ASCII represents characters as binary codes"
       ],
       "successCriteria": [
-        "All: state how many characters 7-bit ASCII can represent",
-        "Most: find the ASCII code of a letter or word given one reference code",
-        "Some: explain how a fixed number of bits limits characters, numbers and quality"
+        "All: state that each character has a numeric code",
+        "Most: use an ASCII table to encode and decode text",
+        "Some: use the pattern of codes to work out codes not shown"
       ],
-      "crossCurricular": "Arabic and RE: why writing systems such as Arabic needed more than ASCII",
-      "smsc": "Spiritual and cultural: digital respect for the Arabic script; the Qur'an and other texts can be stored accurately using Unicode, which goes beyond ASCII",
+      "crossCurricular": "English: alphabet order",
+      "smsc": "Social: agreed standards let people communicate",
       "keywords": [
         {
           "term": "character set",
-          "def": "the list of characters a computer can represent and the code for each"
+          "def": "a defined list of characters and their codes"
         },
         {
           "term": "ASCII",
-          "def": "a 7-bit character set with 128 codes"
+          "def": "a 7-bit character set of 128 characters"
         },
         {
-          "term": "code",
-          "def": "the number given to a character"
+          "term": "encode",
+          "def": "turn characters into codes"
         },
         {
-          "term": "fixed number of bits",
-          "def": "the system uses the same number of bits each time, which limits what it can store"
+          "term": "decode",
+          "def": "turn codes back into characters"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "When you type the letter A, what does the computer actually store?",
+        "a": "A number (65) stored in binary (1000001)."
+      },
       "starter": [
-        "Bismillah. How many patterns can 7 bits give?",
-        "Convert 65 to binary.",
-        "What does the letter H have as the next letter in the alphabet?"
+        {
+          "q": "B7 in denary is ...",
+          "a": "183",
+          "mins": 1,
+          "options": [
+            "183",
+            "117",
+            "187"
+          ]
+        },
+        {
+          "q": "How many patterns do 7 bits give?",
+          "a": "128",
+          "mins": 1
+        },
+        {
+          "q": "Hex F is ...",
+          "a": "15",
+          "mins": 1,
+          "options": [
+            "15",
+            "16",
+            "14"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "ASCII",
-          "bullets": [
-            "Each character has a 7-bit code",
-            "128 characters: letters, digits, punctuation, control codes",
-            "Capital letters, small letters and digits are in order"
-          ],
-          "note": "Show the table. The codes are consecutive, so you can work out C from A. Note: capital A is 65 and small a is 97, a gap of 32; the digit '0' is code 48, not zero. Pupils often confuse the character '5' with the number 5.",
+          "heading": "ASCII codes",
+          "bullets": [],
+          "note": "",
           "table": {
             "head": [
               "Character",
-              "Denary code",
+              "Denary",
               "7-bit binary"
             ],
             "rows": [
-              [
-                "space",
-                "32",
-                "0100000"
-              ],
               [
                 "0",
                 "48",
@@ -3351,305 +3568,380 @@
                 "a",
                 "97",
                 "1100001"
+              ],
+              [
+                "space",
+                "32",
+                "0100000"
               ]
             ]
           }
         },
         {
-          "heading": "Working with codes",
+          "heading": "Patterns",
           "bullets": [
-            "Count along the alphabet from a known code",
-            "ord gives the code, chr gives the character",
-            "Each letter is stored in one 7-bit pattern"
+            "Letters are in order: C = 67",
+            "Lower case = upper case + 32",
+            "Digit characters are not numbers: '7' is 55"
           ],
-          "note": "Run the code and compare with the table. Pupils see that D is A + 3 and that the codes are stored as binary. Ask what 'Salam' looks like in memory (five 7-bit patterns). Point out that Python uses its own larger character set but the first 128 codes are the same.",
+          "note": ""
+        },
+        {
+          "heading": "In Python",
+          "bullets": [],
+          "note": "",
           "code": {
             "lang": "python",
-            "text": "word = \"Salam\"\nfor ch in word:\n    print(ch, ord(ch), format(ord(ch), \"07b\"))\nprint(chr(ord(\"A\") + 3))",
-            "output": "S 83 1010011\na 97 1100001\nl 108 1101100\na 97 1100001\nm 109 1101101\nD"
+            "text": "print(ord('C'))\nprint(chr(100))\nprint(format(ord('C'), '07b'))",
+            "output": "67\nd\n1000011"
           }
         },
         {
-          "heading": "Worked example: encode a word",
-          "note": "Model step by step: use the reference code and count. Then convert to 7-bit binary using place values 64 32 16 8 4 2 1. Check each against a known reference such as 'A is 1000001'. Ask what the code for 'i' would be if you only knew that 'a' is 97 (97 + 8 = 105).",
-          "model": {
-            "problem": "Given that A is 65, write the ASCII codes for the letters D and H in denary and 7-bit binary.",
-            "steps": [
-              "D is 3 after A: 65 + 3 = 68",
-              "H is 7 after A: 65 + 7 = 72",
-              "68 = 64 + 4 = 1000100",
-              "72 = 64 + 8 = 1001000"
-            ],
-            "answer": "D = 68 = 1000100 and H = 72 = 1001000."
-          }
-        },
-        {
-          "heading": "Limits of a fixed number of bits",
-          "bullets": [
-            "7 bits: only 128 characters, mostly English",
-            "Arabic letters and emoji do not fit in ASCII",
-            "8 bits: 0 to 255 only; 8-bit images: 256 colours"
-          ],
-          "note": "Draw the general rule: n bits give 2^n values, so a fixed n always has a limit. More bits means a wider range or more detail but more storage. Unicode is a larger character set that uses more bits and includes Arabic and many other scripts; knowing the name is useful, but the exam asks for the limits idea. Link to overflow and sound quality.",
-          "compare": {
-            "left": {
-              "title": "7-bit ASCII",
-              "points": [
-                "128 characters",
-                "English letters, digits, symbols",
-                "Small: 7 bits per character"
-              ]
-            },
-            "right": {
-              "title": "More bits per character",
-              "points": [
-                "Many more characters",
-                "Includes Arabic and other scripts",
-                "Larger files"
-              ]
-            },
-            "label": "Fixed bits"
-          }
-        },
-        {
-          "heading": "Check: how many?",
-          "note": "Answer B. 7 bits give 2^7 = 128 different codes. C is the 8-bit count. D is the largest 7-bit value. Link to the limit idea: the number of characters is fixed by the number of bits.",
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
           "check": {
-            "q": "How many different characters can 7-bit ASCII represent?",
+            "q": "If 'a' is 97, 'e' is ...",
             "options": [
-              "64",
-              "128",
-              "256",
-              "127"
+              "101",
+              "105",
+              "69",
+              "100"
             ],
-            "answer": 1,
-            "why": "2^7 = 128 codes (0 to 127). 256 would need 8 bits (C), 64 is 6 bits (A), and 127 is the largest code, not the number of characters (D)."
+            "answer": 0,
+            "why": "a, b, c, d, e: 97 + 4 = 101."
           }
         }
       ],
       "practice": [
-        "Given that a is 97, write the ASCII codes for c and f in denary.",
-        "Convert the word 'Hi' (H = 72, i = 105) into 7-bit binary.",
-        "Explain one limit of ASCII for a school with pupils who write in Arabic."
+        {
+          "q": "Encode 'CAB' in denary ASCII.",
+          "a": "67 65 66",
+          "mins": 4,
+          "model": "I do: 'BAD' = 66 65 68."
+        }
       ],
       "independent": [
-        "Core: Using A = 65, write the denary codes for the letters of 'FAITH' and the 7-bit binary for the first letter.",
-        "Extend: A text file has 250 characters in 7-bit ASCII. Calculate the number of bits and bytes needed.",
-        "Stretch: A system stores each character in 6 bits. State how many characters it can represent and what could go wrong if a new character is added."
+        {
+          "q": "Pupil PDF: encode and decode six words in denary and binary; work out codes from the pattern.",
+          "a": "Answers on the teacher sheet.",
+          "mins": 15,
+          "model": "The teacher decodes 72 105: 'Hi'."
+        },
+        {
+          "q": "Extend: write a Python loop that prints each letter of a word with its code.",
+          "a": "for ch in word: print(ch, ord(ch))",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: why is the string '7' different from the number 7?",
+          "a": "'7' is code 55; 7 is the value 7 in binary.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "State the number of ASCII characters and the number of bits for each.",
-        "Give one limit of using a fixed number of bits."
+        {
+          "q": "7-bit ASCII has ...",
+          "a": "128 characters",
+          "mins": 1,
+          "options": [
+            "128 characters",
+            "256 characters",
+            "26 characters"
+          ]
+        },
+        {
+          "q": "Back to our ponder: When you type the letter A, what does the computer actually store?",
+          "a": "A number (65) stored in binary (1000001).",
+          "mins": 2
+        }
       ],
-      "homework": "Write your first name and your mother's name in ASCII denary codes, with a short note on any characters that could not be shown.",
-      "send": "SEND/EAL: provide the ASCII reference table with codes for A, a and 0 marked. Stretch: build a short substitution cipher with chr and ord.",
-      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE 1CP2"
+      "homework": "Encode your first name in ASCII binary.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE (9-1) Computer Science Student Book (2020), Topic 2 (TO CONFIRM page numbers)",
+        "Knowledge organiser (pupil PDF)",
+        "Python 3 (IDLE or the school's online editor)",
+        "ASCII table (pupil PDF)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Computer keyboard keys",
+          "alt": "A keyboard",
+          "for": "hook"
+        },
+        {
+          "find": "Typewriter",
+          "alt": "A typewriter",
+          "for": "teach:1"
+        }
+      ],
+      "covers": [
+        "2.2.1"
+      ]
     },
     {
-      "unit": "Unit 2.2: Data: representing text, images and sound",
+      "unit": "Spring 2: Data representation",
       "n": 22,
       "title": "Representing images and sound",
       "duration": 50,
-      "bigQuestion": "How can a picture or a voice be turned into numbers and rebuilt later?",
+      "bigQuestion": "Why does a zoomed-in photo look like coloured squares?",
       "objectives": [
-        "Describe bitmap images using pixels, resolution and colour depth (2.2.2)",
-        "Describe sound sampling using amplitude, sample rate, bit depth and sample interval (2.2.3)",
-        "Explain how changing these properties changes quality and file size"
+        "To understand how bitmap images and sound are represented in binary and how resolution, colour depth and sampling affect quality"
       ],
       "successCriteria": [
-        "All: define pixel, resolution and colour depth",
-        "Most: calculate the number of colours and the sample interval",
-        "Some: explain the trade-off between quality and file size for both images and sound"
+        "All: define pixel, resolution, colour depth and sample rate",
+        "Most: explain how each affects quality and size",
+        "Some: explain the limits of representing analogue sound digitally"
       ],
-      "crossCurricular": "Physics: waves, amplitude and frequency",
-      "smsc": "Cultural: recording a recitation faithfully (amanah) so that it can be heard again clearly",
+      "crossCurricular": "Physics: sound waves",
+      "smsc": "Spiritual: wonder at the detail of creation compared with a digital copy",
       "keywords": [
         {
           "term": "pixel",
-          "def": "the smallest single dot of colour in a bitmap image"
-        },
-        {
-          "term": "resolution",
-          "def": "the number of pixels in the image (width x height)"
+          "def": "the smallest element of a bitmap image"
         },
         {
           "term": "colour depth",
-          "def": "the number of bits used for each pixel"
+          "def": "bits used for each pixel's colour"
         },
         {
           "term": "sample rate",
-          "def": "the number of sound samples taken each second, in hertz"
+          "def": "samples taken per second, in hertz"
         },
         {
           "term": "bit depth",
-          "def": "the number of bits used for each sound sample"
-        },
-        {
-          "term": "sample interval",
-          "def": "the time between samples, equal to 1 divided by the sample rate"
-        },
-        {
-          "term": "amplitude",
-          "def": "the height of a sound wave, which sets how loud it is"
+          "def": "bits used to store each sound sample"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why does a zoomed-in photo look like coloured squares?",
+        "a": "A bitmap is a grid of pixels; zooming shows each one."
+      },
       "starter": [
-        "Bismillah. How many colours can 3 bits represent?",
-        "Convert 10100 to denary.",
-        "Convert 2 minutes into seconds."
+        {
+          "q": "Unicode covers ...",
+          "a": "many writing systems",
+          "mins": 1,
+          "options": [
+            "many writing systems",
+            "only English",
+            "only numbers"
+          ]
+        },
+        {
+          "q": "How many colours can 2 bits show?",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "Hertz means ...",
+          "a": "per second",
+          "mins": 1,
+          "options": [
+            "per second",
+            "per minute",
+            "per byte"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "Bitmap images",
+          "heading": "Bitmaps",
           "bullets": [
-            "The image is a grid of pixels",
-            "Each pixel stores a binary colour code",
-            "Resolution = width x height of the grid"
+            "Resolution: width × height in pixels",
+            "Colour depth n bits → 2^n colours",
+            "More pixels or bits: better quality, larger file"
           ],
-          "note": "Show the 5 x 5 grid for the letter T. 1 means black and 0 means white, so one bit per pixel. Each row can be read out as a binary number. Pupils should write each row as binary. In exams, they must state that the image is stored as binary values for each pixel.",
+          "note": "",
           "table": {
             "head": [
+              "Colour depth",
+              "Colours"
+            ],
+            "rows": [
+              [
+                "1 bit",
+                "2"
+              ],
+              [
+                "8 bits",
+                "256"
+              ],
+              [
+                "24 bits",
+                "16,777,216"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Sound",
+          "bullets": [
+            "Sample the wave's height at intervals",
+            "Sample rate: samples per second (Hz)",
+            "Bit depth: bits per sample"
+          ],
+          "note": "Draw a wave and the stepped digital version.",
+          "chart": {
+            "kind": "line",
+            "title": "Sampled wave (illustration)",
+            "labels": [
               "1",
               "2",
               "3",
               "4",
-              "5"
+              "5",
+              "6",
+              "7",
+              "8"
             ],
-            "rows": [
-              [
-                "1",
-                "1",
-                "1",
-                "1",
-                "1"
-              ],
-              [
-                "0",
-                "0",
-                "1",
-                "0",
-                "0"
-              ],
-              [
-                "0",
-                "0",
-                "1",
-                "0",
-                "0"
-              ],
-              [
-                "0",
-                "0",
-                "1",
-                "0",
-                "0"
-              ],
-              [
-                "0",
-                "0",
-                "1",
-                "0",
-                "0"
-              ]
+            "values": [
+              4,
+              7,
+              8,
+              6,
+              3,
+              1,
+              2,
+              5
             ]
           }
         },
         {
-          "heading": "Colour depth",
-          "bullets": [
-            "More bits per pixel means more colours",
-            "Colours = 2 to the power of the colour depth",
-            "More pixels or more depth means a bigger file"
-          ],
-          "note": "Run the code. Show the colours doubling with each extra bit. 24-bit colour uses 8 bits each for red, green and blue. Link to hexadecimal colour codes from the previous lesson if pupils have studied it.",
-          "code": {
-            "lang": "python",
-            "text": "for depth in (1, 2, 8, 24):\n    print(depth, \"bit:\", 2 ** depth, \"colours\")",
-            "output": "1 bit: 2 colours\n2 bit: 4 colours\n8 bit: 256 colours\n24 bit: 16777216 colours"
+          "heading": "Limits",
+          "bullets": [],
+          "note": "",
+          "compare": {
+            "left": {
+              "title": "Higher settings",
+              "points": [
+                "Closer to the original",
+                "Larger files"
+              ]
+            },
+            "right": {
+              "title": "Lower settings",
+              "points": [
+                "Smaller files",
+                "Quantisation errors, blockiness"
+              ]
+            },
+            "label": "trade-off"
           }
         },
         {
-          "heading": "Sound sampling",
-          "bullets": [
-            "Analogue sound is a continuous wave",
-            "Measure the amplitude at regular intervals",
-            "Each measurement is stored as a binary number"
-          ],
-          "note": "Draw a wave and mark equal vertical lines: each is one sample. The sample rate in Hz is samples per second, and the interval is the gap between them. A higher sample rate or bit depth gives a closer copy but a larger file. Pupils confuse sample rate with bit depth: rate is how often, depth is how precisely.",
-          "code": {
-            "lang": "python",
-            "text": "rate = 8000\nprint(\"interval:\", 1 / rate, \"seconds\")\nprint(\"levels with 8 bits:\", 2 ** 8)\nprint(\"levels with 16 bits:\", 2 ** 16)",
-            "output": "interval: 0.000125 seconds\nlevels with 8 bits: 256\nlevels with 16 bits: 65536"
-          }
-        },
-        {
-          "heading": "Worked example: image and sound properties",
-          "note": "Model with a calculation of the colours first, then the stored size in bits and bytes. Link to the next unit on file sizes. Sound: the interval is the reciprocal of the sample rate. Make the point that both the resolution and the depth are chosen by the designer, balancing quality against file size.",
-          "model": {
-            "problem": "An image is 16 pixels wide and 16 pixels high with a colour depth of 4 bits. State the number of colours and the data needed for the image in bits and bytes.",
-            "steps": [
-              "Colours = 2^4 = 16",
-              "Number of pixels = 16 x 16 = 256",
-              "Bits = 256 x 4 = 1024",
-              "Bytes = 1024 / 8 = 128"
-            ],
-            "answer": "16 colours; 1024 bits, which is 128 bytes."
-          }
-        },
-        {
-          "heading": "Check: effect of changing a property",
-          "note": "Answer C. Doubling both width and height gives four times as many pixels, so four times the data. A is the double-width only. D forgets that file size follows from the number of pixels. Ask: what would doubling just the colour depth do?",
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
           "check": {
-            "q": "A bitmap's width and height are both doubled. The colour depth stays the same. What happens to the file size (before any compression)?",
+            "q": "Increasing the sample rate ...",
             "options": [
-              "It doubles",
-              "It stays the same",
-              "It becomes four times bigger",
-              "It halves"
+              "improves accuracy and increases file size",
+              "reduces file size",
+              "changes the colour depth",
+              "has no effect"
             ],
-            "answer": 2,
-            "why": "Doubling both width and height gives 2 x 2 = 4 times as many pixels, so 4 times the data. Doubling only one dimension would double it (A)."
+            "answer": 0,
+            "why": "More samples per second: closer to the wave, more data."
           }
         }
       ],
       "practice": [
-        "A 1-bit image has 8 x 8 pixels. How many bits does it need and how many colours can it show?",
-        "State the sample interval for a sample rate of 4000 Hz.",
-        "Explain two ways to make a recording of a recitation sound closer to the original."
+        {
+          "q": "How many colours with a 4-bit colour depth?",
+          "a": "16",
+          "mins": 4,
+          "model": "I do: 3 bits: 2^3 = 8 colours."
+        }
       ],
       "independent": [
-        "Core: A 32 x 32 image uses 8-bit colour depth. State the number of colours and the number of bytes needed.",
-        "Extend: Compare a sound recorded at 8000 Hz, 8 bits with one at 16 000 Hz, 16 bits. Explain the effect on quality and on file size.",
-        "Stretch: A designer wants to halve the file size of an image without changing its resolution. State what could be changed and what the cost would be."
+        {
+          "q": "Pupil PDF: a 6-mark question: 'Discuss the choice of sample rate and bit depth for recording a Qur'an recitation app.'",
+          "a": "Quality vs file size, download speed, storage; a reasoned conclusion.",
+          "mins": 15,
+          "model": "The teacher writes the first point on quality."
+        },
+        {
+          "q": "Extend: why does an image with 1-bit colour look black and white?",
+          "a": "1 bit gives only 2 colours.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Define colour depth.",
-        "What does a higher sample rate do to the sound and the file size?"
+        {
+          "q": "Colour depth is ...",
+          "a": "bits per pixel",
+          "mins": 1,
+          "options": [
+            "bits per pixel",
+            "pixels per inch",
+            "samples per second"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Why does a zoomed-in photo look like coloured squares?",
+          "a": "A bitmap is a grid of pixels; zooming shows each one.",
+          "mins": 2
+        }
       ],
-      "homework": "Make a 6 x 6 pixel image of a simple shape as a grid of 0s and 1s and write the binary for each row.",
-      "send": "SEND/EAL: provide a ready-drawn 5 x 5 grid and a labelled diagram of a sampled wave. Stretch: ask for the quality-size trade-off to be evaluated.",
-      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE 1CP2"
+      "homework": "Knowledge organiser: images and sound keywords.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE (9-1) Computer Science Student Book (2020), Topic 2 (TO CONFIRM page numbers)",
+        "Knowledge organiser (pupil PDF)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Pixelated image close up",
+          "alt": "Pixels close up",
+          "for": "hook"
+        },
+        {
+          "find": "Sound wave graph",
+          "alt": "A sound wave",
+          "for": "teach:2"
+        }
+      ],
+      "covers": [
+        "2.2.2",
+        "2.2.3",
+        "2.2.4"
+      ]
     },
     {
-      "unit": "Unit 2.3: Data: storage units and compression",
+      "unit": "Spring 2: Data representation",
       "n": 23,
-      "title": "Storage units and file sizes",
+      "title": "Storage units and capacity",
       "duration": 50,
-      "bigQuestion": "How big is a file, and will it fit on the device?",
+      "bigQuestion": "A 64 GB phone is full after a few thousand photos. Why so few?",
       "objectives": [
-        "Use binary storage units from bit to tebibyte (2.3.1)",
-        "Calculate image, sound and text file sizes",
-        "Calculate how many files fit in a given capacity"
+        "To understand binary storage units and how to calculate whether files fit on a device"
       ],
       "successCriteria": [
-        "All: order the storage units and state the factor between them",
-        "Most: calculate an image or a sound file size in bytes and KiB",
-        "Some: calculate capacities and choose the right unit with correct conversion"
+        "All: order the units from bit to tebibyte",
+        "Most: convert between units using 1024",
+        "Some: calculate how many files fit in a given capacity"
       ],
-      "crossCurricular": "Mathematics: powers, standard units and rates",
-      "smsc": "Moral: avoiding waste (israf) of resources by storing only what is needed",
+      "crossCurricular": "Mathematics: powers of 2",
+      "smsc": "Moral: avoiding waste (israf) of resources",
       "keywords": [
         {
           "term": "kibibyte (KiB)",
@@ -3657,321 +3949,396 @@
         },
         {
           "term": "mebibyte (MiB)",
-          "def": "1024 kibibytes"
+          "def": "1024 KiB"
         },
         {
           "term": "gibibyte (GiB)",
-          "def": "1024 mebibytes"
+          "def": "1024 MiB"
         },
         {
-          "term": "tebibyte (TiB)",
-          "def": "1024 gibibytes"
-        },
-        {
-          "term": "file size",
-          "def": "the amount of storage a file needs, measured in bits or bytes"
+          "term": "capacity",
+          "def": "how much a device can store"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "A 64 GB phone is full after a few thousand photos. Why so few?",
+        "a": "Each photo is several MiB; calculate the capacity divided by the file size."
+      },
       "starter": [
-        "Bismillah. What is 2 to the power of 10?",
-        "How many bits are in 6 bytes?",
-        "Calculate 16 x 1024."
+        {
+          "q": "Bits to bytes: ...",
+          "a": "divide by 8",
+          "mins": 1,
+          "options": [
+            "divide by 8",
+            "times 8",
+            "divide by 1000"
+          ]
+        },
+        {
+          "q": "What is 2^10?",
+          "a": "1024",
+          "mins": 1
+        },
+        {
+          "q": "A nibble is ...",
+          "a": "4 bits",
+          "mins": 1,
+          "options": [
+            "4 bits",
+            "8 bits",
+            "2 bytes"
+          ]
+        }
       ],
       "teach": [
         {
           "heading": "The units",
-          "bullets": [
-            "Nibble: 4 bits. Byte: 8 bits",
-            "Each unit is 1024 times the one before",
-            "Bit, byte, KiB, MiB, GiB, TiB"
-          ],
-          "note": "Say that 1024 is 2^10, so the binary units go up in powers of 2. Many devices and shops use kilobyte, megabyte and so on with factors of 1000, but this specification uses the binary names with factor 1024. Be ready for questions: always divide by 1024 when asked in KiB, MiB.",
+          "bullets": [],
+          "note": "This course uses the binary units (factor 1024), as the specification does; shops often use 1000.",
           "table": {
             "head": [
               "Unit",
-              "Size",
-              "Compared with the previous"
+              "Size"
             ],
             "rows": [
               [
                 "Nibble",
-                "4 bits",
-                "half a byte"
+                "4 bits"
               ],
               [
                 "Byte",
-                "8 bits",
-                "2 nibbles"
+                "8 bits"
               ],
               [
-                "Kibibyte (KiB)",
-                "1024 bytes",
-                "x 1024"
+                "KiB",
+                "1024 bytes"
               ],
               [
-                "Mebibyte (MiB)",
-                "1024 KiB",
-                "x 1024"
+                "MiB",
+                "1024 KiB"
               ],
               [
-                "Gibibyte (GiB)",
-                "1024 MiB",
-                "x 1024"
+                "GiB",
+                "1024 MiB"
               ],
               [
-                "Tebibyte (TiB)",
-                "1024 GiB",
-                "x 1024"
+                "TiB",
+                "1024 GiB"
               ]
             ]
           }
         },
         {
-          "heading": "File size formulae",
-          "bullets": [
-            "Image: width x height x colour depth (bits)",
-            "Sound: sample rate x bit depth x seconds (bits)",
-            "Divide bits by 8 for bytes; by 1024 for each larger unit"
-          ],
-          "note": "Write the three-step routine on the board: calculate bits, convert to bytes, then to the unit asked for. State that for a mono recording we ignore channels unless the question says otherwise. Check units at the end.",
-          "code": {
-            "lang": "python",
-            "text": "bits = 640 * 480 * 8\nprint(bits, \"bits\")\nprint(bits // 8, \"bytes\")\nprint(bits // 8 / 1024, \"KiB\")",
-            "output": "2457600 bits\n307200 bytes\n300.0 KiB"
-          }
-        },
-        {
-          "heading": "Worked example: sound file",
-          "note": "Model the calculation using seconds and the formula. Notice how the numbers are chosen so that the answer works out exactly at 1000 KiB. Then ask pupils what would happen to the size if the bit depth were halved.",
+          "heading": "Capacity",
+          "bullets": [],
+          "note": "",
           "model": {
-            "problem": "A mono sound is recorded for 32 seconds at 16 000 Hz with a bit depth of 16. Calculate the file size in KiB.",
+            "problem": "How many 4 MiB photos fit on 16 GiB?",
             "steps": [
-              "Bits = 16 000 x 16 x 32 = 8 192 000",
-              "Bytes = 8 192 000 / 8 = 1 024 000",
-              "KiB = 1 024 000 / 1024 = 1000"
+              "16 GiB = 16 × 1024 = 16,384 MiB",
+              "16,384 ÷ 4 = 4096",
+              "Round down if needed"
             ],
-            "answer": "The file is 1000 KiB (a little under 1 MiB)."
+            "answer": "4096 photos"
           }
         },
         {
-          "heading": "Capacity calculations",
-          "bullets": [
-            "Capacity divided by file size gives the number of files",
-            "Convert both to the same unit first",
-            "Round down: you cannot store part of a file"
-          ],
-          "note": "Work an example: how many 4 MiB photos fit in 16 GiB? Convert 16 GiB to MiB (16 x 1024 = 16 384) then divide by 4. Pupils often forget the conversion or round up.",
-          "code": {
-            "lang": "python",
-            "text": "capacity_mib = 16 * 1024\nphoto_mib = 4\nprint(capacity_mib // photo_mib, \"photos\")\nprint(2048 / 1024, \"MiB in 2048 KiB\")",
-            "output": "4096 photos\n2.0 MiB in 2048 KiB"
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "Dividing GiB by MiB without converting",
+            "right": "Convert both to the same unit first"
           }
         },
         {
-          "heading": "Check: units",
-          "note": "Answer D. 3 MiB = 3 x 1024 KiB = 3072 KiB. A uses 1000. B and C divide instead of multiplying: a larger unit is made of many of the smaller ones, so going to the smaller unit we multiply.",
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
           "check": {
-            "q": "How many kibibytes are in 3 mebibytes?",
+            "q": "How many MiB in 2 GiB?",
             "options": [
-              "3000",
-              "3",
-              "0.003",
-              "3072"
+              "2048",
+              "2000",
+              "1024",
+              "16"
             ],
-            "answer": 3,
-            "why": "1 MiB = 1024 KiB, so 3 MiB = 3 x 1024 = 3072 KiB. 3000 uses a factor of 1000 (A); dividing instead of multiplying gives B or C."
+            "answer": 0,
+            "why": "2 × 1024 = 2048."
           }
         }
       ],
       "practice": [
-        "State how many bytes are in 5 KiB.",
-        "A 1-bit image is 100 x 80 pixels. Calculate its size in bytes.",
-        "How many 2 MiB photos fit on a 1 GiB memory card?"
+        {
+          "q": "How many 500 KiB files fit in 1 MiB?",
+          "a": "2 (1024 ÷ 500 = 2.048, round down)",
+          "mins": 4,
+          "model": "I do: 1 MiB = 1024 KiB; 1024 ÷ 256 = 4 files of 256 KiB."
+        }
       ],
       "independent": [
-        "Core: A photo is 1024 x 768 pixels with 24-bit colour. Calculate its size in bytes and in KiB.",
-        "Extend: A mono recording lasts 3 minutes at 8000 Hz with 8-bit samples. Calculate the size in KiB.",
-        "Stretch: A phone has 128 GiB of storage and 14 GiB is used by the system. How many 5 MiB photos fit in the rest? Show every conversion."
+        {
+          "q": "Pupil PDF: 10 conversions and capacity questions.",
+          "a": "Answers on the teacher sheet.",
+          "mins": 15,
+          "model": "The teacher converts 3 GiB to KiB: 3 × 1024 × 1024 = 3,145,728."
+        },
+        {
+          "q": "Extend: a 1 TiB drive stores how many 6075 KiB photos?",
+          "a": "1,073,741,824 ÷ 6075 = 176,747 (rounded down).",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Convert 4 GiB to MiB.",
-        "State the formula for the size of an uncompressed image."
+        {
+          "q": "1 GiB = ...",
+          "a": "1024 MiB",
+          "mins": 1,
+          "options": [
+            "1024 MiB",
+            "1000 KiB",
+            "1024 KiB"
+          ]
+        },
+        {
+          "q": "Back to our ponder: A 64 GB phone is full after a few thousand photos. Why so few?",
+          "a": "Each photo is several MiB; calculate the capacity divided by the file size.",
+          "mins": 2
+        }
       ],
-      "homework": "Find the file sizes of three files on a device and find how many of each would fit on a 32 GiB drive. Show conversions.",
-      "send": "SEND/EAL: give a conversion ladder diagram (multiply down, divide up by 1024). Stretch: ask for calculations with several unit changes. Note: y11 lesson 2 of the existing set uses 1000 for unit steps; this lesson follows the specification's binary units.",
-      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE 1CP2"
+      "homework": "Revise Topic 2 for the unit quiz.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE (9-1) Computer Science Student Book (2020), Topic 2 (TO CONFIRM page numbers)",
+        "Knowledge organiser (pupil PDF)",
+        "Calculator"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "USB flash drive",
+          "alt": "A memory stick",
+          "for": "hook"
+        },
+        {
+          "find": "Hard drive",
+          "alt": "A hard drive",
+          "for": "teach:1"
+        }
+      ],
+      "covers": [
+        "2.3.1",
+        "2.3.2"
+      ]
     },
     {
-      "unit": "Unit 2.3: Data: storage units and compression",
+      "unit": "Spring 2: Data representation",
       "n": 24,
-      "title": "Compression: lossless and lossy",
+      "title": "Compression, and the data representation quiz",
       "duration": 50,
-      "bigQuestion": "How can we make a file smaller without ruining it?",
+      "bigQuestion": "Would you accept a slightly blurrier photo to send it twice as fast? Would you accept a program file with some bits missing?",
       "objectives": [
-        "Explain why compression is needed (2.3.2)",
-        "Compare lossless and lossy methods",
-        "Apply run-length encoding as an example of lossless compression"
+        "To understand why files are compressed and the difference between lossless and lossy compression"
       ],
       "successCriteria": [
-        "All: state two reasons for compressing data",
-        "Most: compare lossless and lossy with an example of each",
-        "Some: encode data with RLE and justify which type to use for a given file"
+        "All: state why compression is needed",
+        "Most: apply run-length encoding",
+        "Some: justify lossless or lossy for a given file"
       ],
-      "crossCurricular": "Mathematics: ratio, percentages and compression ratio",
-      "smsc": "Moral: fair use of shared bandwidth and storage; being careful not to lose information others rely on",
+      "crossCurricular": "English: summarising",
+      "smsc": "Moral: judging when 'good enough' is acceptable and when accuracy matters",
       "keywords": [
         {
           "term": "compression",
-          "def": "making a file smaller so it uses less storage or is quicker to send"
+          "def": "reducing file size"
         },
         {
           "term": "lossless",
-          "def": "compression where no data is lost and the original can be rebuilt exactly"
+          "def": "compression with no data lost; the original can be rebuilt"
         },
         {
           "term": "lossy",
-          "def": "compression that permanently removes some data to save more space"
+          "def": "compression that removes some data permanently"
         },
         {
-          "term": "run-length encoding (RLE)",
-          "def": "a lossless method that stores a repeated value once with a count"
+          "term": "run-length encoding",
+          "def": "storing a run of repeated values as a count and a value"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Would you accept a slightly blurrier photo to send it twice as fast? Would you accept a program file with some bits missing?",
+        "a": "The photo maybe (lossy); the program never (it must be lossless)."
+      },
       "starter": [
-        "Bismillah. Calculate the file size in bytes of a 100 x 100 image with an 8-bit colour depth.",
-        "Convert 5 MiB into KiB.",
-        "Name one file format you know that uses compression."
+        {
+          "q": "1 MiB = ...",
+          "a": "1024 KiB",
+          "mins": 1,
+          "options": [
+            "1024 KiB",
+            "1000 KiB",
+            "8 KiB"
+          ]
+        },
+        {
+          "q": "How many 2 MiB files fit in 1 GiB?",
+          "a": "512",
+          "mins": 2
+        },
+        {
+          "q": "Smaller files ...",
+          "a": "transfer faster",
+          "mins": 1,
+          "options": [
+            "transfer faster",
+            "transfer slower",
+            "have more pixels"
+          ]
+        }
       ],
       "teach": [
         {
           "heading": "Why compress?",
           "bullets": [
-            "Less storage space used",
-            "Quicker to upload, download and stream",
-            "Less bandwidth, so lower cost"
+            "Less storage",
+            "Faster transfer and streaming",
+            "Lower data costs"
           ],
-          "note": "Relate to everyday: a video call, a school email attachment, a streaming video. Pupils say 'it makes it better quality', which is wrong: compression makes files smaller. Note that compressed files must usually be decompressed before use.",
+          "note": ""
+        },
+        {
+          "heading": "Lossless or lossy",
+          "bullets": [],
+          "note": "",
           "compare": {
             "left": {
               "title": "Lossless",
               "points": [
-                "Nothing is lost",
                 "Original rebuilt exactly",
-                "Smaller files, but not very small"
+                "Text, programs, spreadsheets",
+                "e.g. RLE, ZIP"
               ]
             },
             "right": {
               "title": "Lossy",
               "points": [
-                "Some data is permanently removed",
-                "Cannot recover the original",
+                "Some data removed for good",
+                "Photos, music, video",
                 "Much smaller files"
               ]
             },
-            "label": "Two types"
-          }
-        },
-        {
-          "heading": "Which to use?",
-          "bullets": [
-            "Lossless: documents, program files, medical scans",
-            "Lossy: photos, audio, video for viewing or listening",
-            "Lossy quality drops if compressed too much"
-          ],
-          "note": "Ask: what happens if a spreadsheet is compressed with a lossy method? Numbers would change. Photos and sound recordings have detail that humans barely notice, so lossy methods remove that. Examples: ZIP and PNG are lossless; JPEG and MP3 are lossy. The exam asks for reasons, so link the method to the purpose.",
-          "table": {
-            "head": [
-              "File",
-              "Better choice",
-              "Reason"
-            ],
-            "rows": [
-              [
-                "Exam results spreadsheet",
-                "Lossless",
-                "Every digit must be exact"
-              ],
-              [
-                "Holiday photo for a web page",
-                "Lossy",
-                "Small size, minor detail not noticed"
-              ],
-              [
-                "Program installer",
-                "Lossless",
-                "A single changed bit can break it"
-              ],
-              [
-                "Streamed lecture video",
-                "Lossy",
-                "Needs to fit within the bandwidth"
-              ]
-            ]
+            "label": "vs"
           }
         },
         {
           "heading": "Run-length encoding",
-          "bullets": [
-            "Replace runs of the same value with count and value",
-            "Works best when there are long runs",
-            "Lossless: decode to get the original back"
-          ],
-          "note": "Trace the code: WWWWBBBWWW becomes 4W3B3W, 10 characters reduced to 6. For AAAABBBCCD the result 4A3B2C1D saves only two characters, and ABCD becomes 1A1B1C1D, which is twice as long. Make the point that RLE can make data bigger if there are few repeats. Confirm against the spec whether RLE is the named example for your cohort.",
-          "code": {
-            "lang": "python",
-            "text": "def rle(text):\n    result = \"\"\n    count = 1\n    for i in range(1, len(text)):\n        if text[i] == text[i - 1]:\n            count = count + 1\n        else:\n            result = result + str(count) + text[i - 1]\n            count = 1\n    return result + str(count) + text[-1]\n\nprint(rle(\"WWWWBBBWWW\"))\nprint(rle(\"AAAABBBCCD\"))\nprint(rle(\"ABCD\"))",
-            "output": "4W3B3W\n4A3B2C1D\n1A1B1C1D"
-          }
-        },
-        {
-          "heading": "Worked example: compression saving",
-          "note": "Model with a percentage saving. 6 MiB compressed to 1.5 MiB is a quarter of the size, so 4.5 MiB is saved, 75%. Remind pupils to say whether the method is lossy or lossless in the explanation, and give a reason for choosing it.",
+          "bullets": [],
+          "note": "",
           "model": {
-            "problem": "A 6 MiB photo is saved as a 1.5 MiB JPEG. Calculate the percentage saved and state the type of compression, with a reason it is suitable.",
+            "problem": "Compress AAAAABBBCCCCCCCC with RLE",
             "steps": [
-              "Saving = 6 - 1.5 = 4.5 MiB",
-              "Percentage saved = 4.5 / 6 x 100 = 75%",
-              "JPEG is lossy: some detail is permanently removed",
-              "Suitable because small loss of detail in a photo is hard to notice"
+              "5 A, 3 B, 8 C",
+              "Write as count and value: 5A3B8C",
+              "16 characters become 6"
             ],
-            "answer": "75% saved; lossy compression, suitable for a photo for viewing."
+            "answer": "5A3B8C"
           }
         },
         {
-          "heading": "Check: choosing the method",
-          "note": "Answer B. A medical scan must be recovered exactly, so lossless. A is wrong because lossy removes detail. C has the right idea but 'no compression at all' misses the point of the question. D mixes up the two terms.",
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
           "check": {
-            "q": "A hospital stores X-ray images. Which type of compression is most suitable and why?",
+            "q": "Which file must use lossless compression?",
             "options": [
-              "Lossy, because it gives the smallest files",
-              "Lossless, because no detail may be lost",
-              "None, because compression always loses detail",
-              "Lossy, because the images can be rebuilt exactly"
+              "A Python program",
+              "A holiday photo",
+              "A streamed video",
+              "A music track"
             ],
-            "answer": 1,
-            "why": "A medical image must be reproduced exactly, so lossless is the right choice. Lossy removes data permanently (A, D); compression need not lose detail (C)."
+            "answer": 0,
+            "why": "A program must be rebuilt exactly or it will not run."
           }
         }
       ],
       "practice": [
-        "Give two benefits of compressing a video before sending it.",
-        "Apply run-length encoding to AAAAABBBB and state the number of characters before and after.",
-        "Explain why a ZIP file of a document can be turned back into the exact document but a heavily compressed JPEG cannot be turned back into the original photo."
+        {
+          "q": "RLE: WWWWWWBBWWWW",
+          "a": "6W2B4W",
+          "mins": 4,
+          "model": "I do: XXXYY → 3X2Y."
+        }
       ],
       "independent": [
-        "Core: Compress a row of pixels BBBBBWWWWWWWWBB with RLE and decode 3R2G4R.",
-        "Extend: A 2.4 MiB MP3 was made from a 20 MiB recording. Calculate the percentage reduction and explain what has been lost.",
-        "Stretch: Describe a row of 12 pixels where RLE makes the data longer, and explain why this happens."
+        {
+          "q": "Unit quiz (portal, 20 questions on Topic 2), then a 6-mark question: 'Discuss the use of lossy compression for a school's online lesson videos.'",
+          "a": "Quiz score and a balanced 6-mark answer with a conclusion.",
+          "mins": 15,
+          "model": "The teacher plans the 6-mark answer with the class."
+        },
+        {
+          "q": "Extend: when does RLE make a file bigger?",
+          "a": "When there are few repeats (ABCD → 1A1B1C1D).",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Define lossless compression.",
-        "State one reason to use lossy compression for a streamed video."
+        {
+          "q": "Lossy compression ...",
+          "a": "removes some data permanently",
+          "mins": 1,
+          "options": [
+            "removes some data permanently",
+            "keeps everything",
+            "only works on text"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Would you accept a slightly blurrier photo to send it twice as fast? Would you accept a program file with some bits missing?",
+          "a": "The photo maybe (lossy); the program never (it must be lossless).",
+          "mins": 2
+        }
       ],
-      "homework": "Look at the file sizes of a photo as a PNG and as a JPEG (or find the sizes online). Write 100 words on which you would use for a website and why.",
-      "send": "SEND/EAL: give a decoding worksheet with RLE pairs boxed. Stretch: ask for an evaluation of RLE on text with few repeated characters.",
-      "board": "Pearson Edexcel GCSE (9-1) Computer Science (1CP2)",
-      "boardShort": "Edexcel GCSE 1CP2"
+      "homework": "Fix your three weakest quiz topics with the knowledge organiser.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE (9-1) Computer Science Student Book (2020), Topic 2 (TO CONFIRM page numbers)",
+        "Knowledge organiser (pupil PDF)",
+        "Portal unit quiz (Topic 2, 20 questions)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Vacuum storage bag compressed",
+          "alt": "Squashing things smaller",
+          "for": "hook"
+        },
+        {
+          "find": "Zip archive icon",
+          "alt": "A compressed folder",
+          "for": "teach:2"
+        }
+      ],
+      "covers": [
+        "2.3.3"
+      ]
     },
     {
       "unit": "Unit 6.1: Problem solving with programming: designing, reading and refining programs",
@@ -6008,6 +6375,858 @@
           "alt": "A timer",
           "for": "teach:3"
         }
+      ]
+    },
+    {
+      "unit": "Spring 2: Data representation",
+      "n": 36,
+      "title": "Converting between denary and binary fluently",
+      "duration": 50,
+      "bigQuestion": "Is 1000 a big number? It depends on which base you read it in.",
+      "objectives": [
+        "To understand how to convert between denary and 8-bit binary quickly and check the answer"
+      ],
+      "successCriteria": [
+        "All: convert binary to denary by adding place values",
+        "Most: convert denary to binary by subtracting place values",
+        "Some: check conversions and spot errors in others' working"
+      ],
+      "crossCurricular": "Mathematics: place value",
+      "smsc": "Moral: checking work carefully and honestly",
+      "keywords": [
+        {
+          "term": "denary",
+          "def": "base 10"
+        },
+        {
+          "term": "binary",
+          "def": "base 2"
+        },
+        {
+          "term": "place value",
+          "def": "the value of a digit's position"
+        },
+        {
+          "term": "most significant bit",
+          "def": "the leftmost bit, with the highest place value"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is 1000 a big number? It depends on which base you read it in.",
+        "a": "In denary it is one thousand; in binary it is 8."
+      },
+      "starter": [
+        {
+          "q": "How many states do 4 bits give?",
+          "a": "16",
+          "mins": 1,
+          "options": [
+            "16",
+            "15",
+            "8"
+          ]
+        },
+        {
+          "q": "A byte is ...",
+          "a": "8 bits",
+          "mins": 1,
+          "options": [
+            "8 bits",
+            "4 bits",
+            "1024 bits"
+          ]
+        },
+        {
+          "q": "What is 00010101 in denary?",
+          "a": "21",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Binary to denary",
+          "bullets": [
+            "Write the place values over the bits",
+            "Add the place values where there is a 1"
+          ],
+          "note": "",
+          "table": {
+            "head": [
+              "128",
+              "64",
+              "32",
+              "16",
+              "8",
+              "4",
+              "2",
+              "1"
+            ],
+            "rows": [
+              [
+                "1",
+                "0",
+                "1",
+                "1",
+                "0",
+                "0",
+                "1",
+                "0"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Denary to binary",
+          "bullets": [],
+          "note": "Say the check aloud each time.",
+          "model": {
+            "problem": "Convert 77 to 8-bit binary",
+            "steps": [
+              "128 no (0); 64 fits: 77 − 64 = 13 (1)",
+              "32 no (0); 16 no (0); 8 fits: 13 − 8 = 5 (1)",
+              "4 fits: 5 − 4 = 1 (1); 2 no (0); 1 fits (1)",
+              "Check: 64 + 8 + 4 + 1 = 77"
+            ],
+            "answer": "01001101"
+          }
+        },
+        {
+          "heading": "Check with Python",
+          "bullets": [],
+          "note": "Python checks working only; in the exam, show the method.",
+          "code": {
+            "lang": "python",
+            "text": "print(format(77, '08b'))\nprint(int('10110010', 2))",
+            "output": "01001101\n178"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "10110010 in denary is ...",
+            "options": [
+              "178",
+              "77",
+              "182",
+              "50"
+            ],
+            "answer": 0,
+            "why": "128 + 32 + 16 + 2 = 178."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Convert 150 to 8-bit binary.",
+          "a": "10010110",
+          "mins": 4,
+          "model": "I do: 150 − 128 = 22 (1); 64 no, 32 no (0, 0); 16 fits: 6 (1); 8 no (0); 4 fits: 2 (1); 2 fits: 0 (1); 1 no (0) → 10010110."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: 10 conversions each way, then find and correct the mistakes in three worked answers.",
+          "a": "Answers on the teacher sheet.",
+          "mins": 15,
+          "model": "The teacher converts 200 = 11001000."
+        },
+        {
+          "q": "Extend: write a Python loop that prints 0 to 15 in 4-bit binary.",
+          "a": "for i in range(16): print(format(i, '04b'))",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: why does an odd number always end in 1 in binary?",
+          "a": "Only the 1 place is odd; all other places are even.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "200 in binary is ...",
+          "a": "11001000",
+          "mins": 1,
+          "options": [
+            "11001000",
+            "11000100",
+            "10101000"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Is 1000 a big number? It depends on which base you read it in.",
+          "a": "In denary it is one thousand; in binary it is 8.",
+          "mins": 2
+        }
+      ],
+      "homework": "Ten conversions on the pupil PDF.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE (9-1) Computer Science Student Book (2020), Topic 2 (TO CONFIRM page numbers)",
+        "Knowledge organiser (pupil PDF)",
+        "Python 3 (IDLE or the school's online editor)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Binary code screen",
+          "alt": "Binary digits",
+          "for": "hook"
+        },
+        {
+          "find": "Abacus",
+          "alt": "An abacus: place value",
+          "for": "teach:1"
+        }
+      ],
+      "covers": [
+        "2.1.3"
+      ]
+    },
+    {
+      "unit": "Spring 2: Data representation",
+      "n": 37,
+      "title": "Binary shifts: logical and arithmetic",
+      "duration": 50,
+      "bigQuestion": "In denary, adding a 0 to the end multiplies by 10. What does it do in binary?",
+      "objectives": [
+        "To understand how logical and arithmetic shifts multiply and divide binary numbers"
+      ],
+      "successCriteria": [
+        "All: carry out a logical left shift",
+        "Most: explain the effect of left and right shifts",
+        "Some: use an arithmetic right shift on a negative number and explain the loss of precision"
+      ],
+      "crossCurricular": "Mathematics: multiplying and dividing by powers",
+      "smsc": "Intellectual: patterns across number bases",
+      "keywords": [
+        {
+          "term": "logical shift",
+          "def": "move bits left or right, filling with 0"
+        },
+        {
+          "term": "arithmetic shift",
+          "def": "a right shift that copies the sign bit"
+        },
+        {
+          "term": "multiply",
+          "def": "a left shift of 1 place doubles the value"
+        },
+        {
+          "term": "precision",
+          "def": "how exact a result is"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "In denary, adding a 0 to the end multiplies by 10. What does it do in binary?",
+        "a": "It multiplies by 2: a left shift."
+      },
+      "starter": [
+        {
+          "q": "Overflow happens when ...",
+          "a": "the result does not fit",
+          "mins": 1,
+          "options": [
+            "the result does not fit",
+            "you add 0",
+            "you carry 1"
+          ]
+        },
+        {
+          "q": "Add 00000110 and 00000011.",
+          "a": "00001001",
+          "mins": 2
+        },
+        {
+          "q": "2^3 = ?",
+          "a": "8",
+          "mins": 1,
+          "options": [
+            "8",
+            "6",
+            "9"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Logical shifts",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Shift",
+              "Before",
+              "After",
+              "Value"
+            ],
+            "rows": [
+              [
+                "Left 2",
+                "00010110 (22)",
+                "01011000",
+                "88 (× 4)"
+              ],
+              [
+                "Right 1",
+                "00010110 (22)",
+                "00001011",
+                "11 (÷ 2)"
+              ],
+              [
+                "Right 2",
+                "00001011 (11)",
+                "00000010",
+                "2 (precision lost)"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Arithmetic right shift",
+          "bullets": [],
+          "note": "A logical right shift would give 01110100 = 116: wrong sign.",
+          "model": {
+            "problem": "Arithmetic right shift 11101000 (−24) by 1",
+            "steps": [
+              "Move every bit right one place",
+              "Copy the sign bit into the left: 11110100",
+              "Check: −128 + 64 + 32 + 16 + 4 = −12"
+            ],
+            "answer": "11110100 = −12"
+          }
+        },
+        {
+          "heading": "Check in Python",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "python",
+            "text": "print(22 << 2)\nprint(22 >> 1)\nprint(-24 >> 1)",
+            "output": "88\n11\n-12"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "A logical right shift by 1 place ...",
+            "options": [
+              "halves the value (bits may be lost)",
+              "doubles the value",
+              "makes it negative",
+              "has no effect"
+            ],
+            "answer": 0,
+            "why": "Right shift divides by 2; the rightmost bit falls off."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Logical left shift 00001101 by 3 places. New value?",
+          "a": "01101000 = 104 (13 × 8)",
+          "mins": 4,
+          "model": "I do: 00000101 left 2 → 00010100 = 20 (5 × 4)."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: 10 shift questions (logical and arithmetic) with values before and after.",
+          "a": "Answers on the teacher sheet.",
+          "mins": 14,
+          "model": "The teacher shifts 01000000 left 1: 10000000 (overflow into the sign bit)."
+        },
+        {
+          "q": "Extend: why does 11 >> 1 give 5, not 5.5?",
+          "a": "The rightmost 1 is lost: shifts give whole numbers.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: what goes wrong if 01000000 (64) is shifted left by 2 in 8 bits?",
+          "a": "The 1 falls off: result 00000000; overflow.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A left shift of 2 places ...",
+          "a": "multiplies by 4",
+          "mins": 1,
+          "options": [
+            "multiplies by 4",
+            "multiplies by 2",
+            "divides by 4"
+          ]
+        },
+        {
+          "q": "Back to our ponder: In denary, adding a 0 to the end multiplies by 10. What does it do in binary?",
+          "a": "It multiplies by 2: a left shift.",
+          "mins": 2
+        }
+      ],
+      "homework": "Six shift questions (pupil PDF).",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE (9-1) Computer Science Student Book (2020), Topic 2 (TO CONFIRM page numbers)",
+        "Knowledge organiser (pupil PDF)",
+        "Python 3 (IDLE or the school's online editor)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Conveyor belt",
+          "alt": "Moving along: a shift",
+          "for": "hook"
+        },
+        {
+          "find": "Arrows pointing left",
+          "alt": "Arrows",
+          "for": "teach:1"
+        }
+      ],
+      "covers": [
+        "2.1.4"
+      ]
+    },
+    {
+      "unit": "Spring 2: Data representation",
+      "n": 38,
+      "title": "Beyond ASCII: Unicode and the limits of fixed bits",
+      "duration": 50,
+      "bigQuestion": "ASCII has no letters for Arabic. How does your phone show the Qur'an's text?",
+      "objectives": [
+        "To understand why 7-bit ASCII cannot represent all languages and how Unicode solves this"
+      ],
+      "successCriteria": [
+        "All: state one limitation of ASCII",
+        "Most: explain why more bits allow more characters",
+        "Some: compare the storage cost of ASCII and Unicode text"
+      ],
+      "crossCurricular": "Arabic: the script and its marks",
+      "smsc": "Cultural: respect for the world's languages and scripts",
+      "keywords": [
+        {
+          "term": "Unicode",
+          "def": "a character set covering the world's writing systems"
+        },
+        {
+          "term": "code point",
+          "def": "the number Unicode gives a character"
+        },
+        {
+          "term": "UTF-8",
+          "def": "a common way to store Unicode using 1 to 4 bytes per character"
+        },
+        {
+          "term": "limitation",
+          "def": "something a system cannot do"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "ASCII has no letters for Arabic. How does your phone show the Qur'an's text?",
+        "a": "It uses Unicode, which has codes for Arabic letters and marks."
+      },
+      "islamicLink": {
+        "text": "The Qur'an was revealed in clear Arabic (Yusuf 12:2). Unicode lets the Arabic script, with every vowel mark, appear correctly on screens worldwide, so the text can be read and shared accurately.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "'A' in ASCII is ...",
+          "a": "65",
+          "mins": 1,
+          "options": [
+            "65",
+            "97",
+            "1"
+          ]
+        },
+        {
+          "q": "How many characters does 7-bit ASCII hold?",
+          "a": "128",
+          "mins": 1
+        },
+        {
+          "q": "More bits per character means ...",
+          "a": "more possible characters",
+          "mins": 1,
+          "options": [
+            "more possible characters",
+            "fewer characters",
+            "smaller files"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "ASCII's limits",
+          "bullets": [
+            "Only 128 codes",
+            "English letters, digits, symbols",
+            "No Arabic, Urdu, Chinese or emoji"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Unicode",
+          "bullets": [],
+          "note": "This is a link beyond the specification's 7-bit ASCII; the exam asks about ASCII and the limits of fixed bits.",
+          "table": {
+            "head": [
+              "Character",
+              "Code point (hex)",
+              "Denary"
+            ],
+            "rows": [
+              [
+                "A",
+                "U+0041",
+                "65"
+              ],
+              [
+                "ب",
+                "U+0628",
+                "1576"
+              ],
+              [
+                "ع",
+                "U+0639",
+                "1593"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Storage cost",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "python",
+            "text": "print(ord('ب'))\nprint(len('salam'.encode('utf-8')))\nprint(len('سلام'.encode('utf-8')))",
+            "output": "1576\n5\n8"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Why can't 7-bit ASCII store Arabic letters?",
+            "options": [
+              "It has only 128 codes, all used",
+              "Arabic is written right to left",
+              "Arabic has no binary",
+              "ASCII is too new"
+            ],
+            "answer": 0,
+            "why": "Too few bits for more characters."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "U+0628 is a hex code point. Convert 628 hex to denary.",
+          "a": "6 × 256 + 2 × 16 + 8 = 1576",
+          "mins": 4,
+          "model": "I do: U+0041: 4 × 16 + 1 = 65."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: compare ASCII and Unicode in a table (characters, bits, uses), then answer a 4-mark 'explain' question on the limits of ASCII.",
+          "a": "A completed table and a 4-mark answer.",
+          "mins": 15,
+          "model": "The teacher writes the first row."
+        },
+        {
+          "q": "Extend: why does 'سلام' take 8 bytes in UTF-8 but 'salam' only 5?",
+          "a": "Arabic letters need 2 bytes each; English letters need 1.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: what would happen if a file saved in UTF-8 was opened as ASCII?",
+          "a": "Arabic characters show as wrong symbols (garbled text).",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Unicode exists to ...",
+          "a": "represent the world's writing systems",
+          "mins": 1,
+          "options": [
+            "represent the world's writing systems",
+            "compress files",
+            "replace binary"
+          ]
+        },
+        {
+          "q": "Back to our ponder: ASCII has no letters for Arabic. How does your phone show the Qur'an's text?",
+          "a": "It uses Unicode, which has codes for Arabic letters and marks.",
+          "mins": 2
+        }
+      ],
+      "homework": "Find the Unicode code point of two Arabic letters using Python's ord().",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE (9-1) Computer Science Student Book (2020), Topic 2 (TO CONFIRM page numbers)",
+        "Knowledge organiser (pupil PDF)",
+        "Python 3 (IDLE or the school's online editor)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Arabic calligraphy text",
+          "alt": "Arabic script",
+          "for": "hook"
+        },
+        {
+          "find": "Smartphone keyboard Arabic",
+          "alt": "A phone keyboard",
+          "for": "teach:1"
+        }
+      ],
+      "covers": [
+        "2.2.1",
+        "2.2.4"
+      ]
+    },
+    {
+      "unit": "Spring 2: Data representation",
+      "n": 39,
+      "title": "Calculating image, sound and text file sizes",
+      "duration": 50,
+      "bigQuestion": "A three-minute song and a high-quality photo: which is bigger?",
+      "objectives": [
+        "To understand how to construct and calculate expressions for file sizes"
+      ],
+      "successCriteria": [
+        "All: write the expression for an image file size",
+        "Most: calculate image, sound and text file sizes in bytes",
+        "Some: convert results to KiB or MiB correctly"
+      ],
+      "crossCurricular": "Mathematics: multiplying large numbers",
+      "smsc": "Moral: avoiding waste (israf) of storage",
+      "keywords": [
+        {
+          "term": "file size",
+          "def": "the storage a file needs"
+        },
+        {
+          "term": "expression",
+          "def": "a calculation written out before working it"
+        },
+        {
+          "term": "mono",
+          "def": "one sound channel"
+        },
+        {
+          "term": "metadata",
+          "def": "data about the data, such as size and date"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A three-minute song and a high-quality photo: which is bigger?",
+        "a": "Calculate it: it depends on the settings. That is today's skill."
+      },
+      "starter": [
+        {
+          "q": "8-bit colour gives ...",
+          "a": "256 colours",
+          "mins": 1,
+          "options": [
+            "256 colours",
+            "8 colours",
+            "16 colours"
+          ]
+        },
+        {
+          "q": "How many bits in a byte?",
+          "a": "8",
+          "mins": 1
+        },
+        {
+          "q": "Bit depth refers to ...",
+          "a": "bits per sound sample",
+          "mins": 1,
+          "options": [
+            "bits per sound sample",
+            "pixels per image",
+            "bytes per file"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Expressions",
+          "bullets": [],
+          "note": "Calculate bits, then ÷ 8 for bytes, then ÷ 1024 for each larger unit.",
+          "table": {
+            "head": [
+              "File",
+              "Expression (bits)"
+            ],
+            "rows": [
+              [
+                "Image",
+                "width × height × colour depth"
+              ],
+              [
+                "Sound (mono)",
+                "sample rate × bit depth × seconds"
+              ],
+              [
+                "Text",
+                "characters × bits per character"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Image example",
+          "bullets": [],
+          "note": "",
+          "model": {
+            "problem": "A 1920 × 1080 image with 24-bit colour. Size in KiB?",
+            "steps": [
+              "Bits = 1920 × 1080 × 24 = 49,766,400",
+              "Bytes = 49,766,400 ÷ 8 = 6,220,800",
+              "KiB = 6,220,800 ÷ 1024 = 6075"
+            ],
+            "answer": "6075 KiB (about 5.9 MiB)"
+          }
+        },
+        {
+          "heading": "Sound example",
+          "bullets": [],
+          "note": "",
+          "model": {
+            "problem": "Mono sound: 8000 Hz, 8-bit, 64 seconds. Size in KiB?",
+            "steps": [
+              "Bits = 8000 × 8 × 64 = 4,096,000",
+              "Bytes = 512,000",
+              "KiB = 512,000 ÷ 1024 = 500"
+            ],
+            "answer": "500 KiB"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "A 100 × 100 image with 8-bit colour is how many bytes?",
+            "options": [
+              "10,000",
+              "80,000",
+              "1,250",
+              "800"
+            ],
+            "answer": 0,
+            "why": "100 × 100 × 8 = 80,000 bits = 10,000 bytes."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Text of 2048 characters at 8 bits each. Size in KiB?",
+          "a": "2048 × 8 = 16,384 bits = 2048 bytes = 2 KiB",
+          "mins": 4,
+          "model": "I do: 1024 characters × 8 = 8192 bits = 1024 bytes = 1 KiB."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: 9 file-size questions (images, sound, text), writing the expression before calculating.",
+          "a": "Answers on the teacher sheet.",
+          "mins": 15,
+          "model": "The teacher writes the expression for question 1."
+        },
+        {
+          "q": "Extend: why is a real file slightly larger than your calculation?",
+          "a": "Metadata (headers, size, date) is stored too.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: what happens to the size if the sample rate doubles and the bit depth halves?",
+          "a": "It stays the same.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "To convert bits to bytes ...",
+          "a": "divide by 8",
+          "mins": 1,
+          "options": [
+            "divide by 8",
+            "multiply by 8",
+            "divide by 1024"
+          ]
+        },
+        {
+          "q": "Back to our ponder: A three-minute song and a high-quality photo: which is bigger?",
+          "a": "Calculate it: it depends on the settings. That is today's skill.",
+          "mins": 2
+        }
+      ],
+      "homework": "Five file-size questions (pupil PDF).",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Pearson Edexcel International GCSE (9-1) Computer Science Student Book (2020), Topic 2 (TO CONFIRM page numbers)",
+        "Knowledge organiser (pupil PDF)",
+        "Calculator"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Folder of files computer",
+          "alt": "Computer files",
+          "for": "hook"
+        },
+        {
+          "find": "Calculator",
+          "alt": "A calculator",
+          "for": "teach:2"
+        }
+      ],
+      "covers": [
+        "2.3.2"
       ]
     }
   ]
