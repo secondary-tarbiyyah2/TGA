@@ -16,6 +16,7 @@ import { ActionCentreWidget } from "@/components/learn/ActionCentreWidget";
 import { useLearnSession, learnRoleLabel } from "@/lib/learn/session";
 import { useActionItems } from "@/components/learn/actions/useActionItems";
 import { getSupabaseClient } from "@/lib/supabase/client";
+import { PushOptIn } from "@/components/learn/PushOptIn";
 
 const AUDIT_ACTION_LABELS: Record<string, string> = {
   BOOKING_CALL_JOIN: "started a call for a booking",
@@ -234,6 +235,7 @@ function DashboardContent() {
       />
 
       <ActionCentreWidget role="admin" />
+      <PushOptIn />
 
       <TodayLessons lessons={lessons} />
 

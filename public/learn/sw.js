@@ -21,3 +21,39 @@ self.addEventListener("fetch", (event) => {
   if (req.method !== "GET" || req.mode !== "navigate") return; // everything else goes straight to the network
   event.respondWith(fetch(req).catch(() => caches.match(OFFLINE)));
 });
+
+// Notifications (Web Push, migration 0199 and supabase/functions/push-notify).
+// The payload is { title, body, url, tag }; it never carries message text.
+self.addEventListener("push", (event) => {
+  let data = {};
+  try {
+    data = event.data ? event.data.json() : {};
+  } catch {
+    data = { title: "Tarbiyyah Global Academy", body: event.data ? event.data.text() : "" };
+  }
+  event.waitUntil(
+    self.registration.showNotification(data.title || "Tarbiyyah Global Academy", {
+      body: data.body || "",
+      icon: "/app-icon-192.png",
+      badge: "/app-icon-192.png",
+      tag: data.tag || undefined,
+      data: { url: data.url || "/" },
+    })
+  );
+});
+
+self.addEventListener("notificationclick", (event) => {
+  event.notification.close();
+  const url = new URL((event.notification.data && event.notification.data.url) || "/", self.location.origin).href;
+  event.waitUntil(
+    self.clients.matchAll({ type: "window", includeUncontrolled: true }).then((wins) => {
+      for (const w of wins) {
+        if ("focus" in w) {
+          w.navigate(url);
+          return w.focus();
+        }
+      }
+      return self.clients.openWindow(url);
+    })
+  );
+});

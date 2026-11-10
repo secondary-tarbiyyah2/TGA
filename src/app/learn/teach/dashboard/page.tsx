@@ -19,6 +19,7 @@ import { useNavBadges } from "@/lib/learn/navBadges";
 import { RecentLessons } from "@/components/learn/curriculum/RecentLessons";
 import { localDateKey } from "@/lib/learn/calendar";
 import type { TimetableSlot } from "@/lib/learn/timetable";
+import { PushOptIn } from "@/components/learn/PushOptIn";
 
 type Cover = {
   id: string;
@@ -91,6 +92,7 @@ function TeachContent() {
         />
 
         <ActionCentreWidget role="teach" />
+        <PushOptIn />
 
         <TeachNow slots={slots} />
 

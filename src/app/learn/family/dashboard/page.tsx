@@ -28,6 +28,7 @@ import { AnnouncementsFeed } from "@/components/learn/AnnouncementsFeed";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import type { TimetableSlot } from "@/lib/learn/timetable";
 import { ukToday } from "@/lib/learn/ukTime";
+import { PushOptIn } from "@/components/learn/PushOptIn";
 
 type Child = { id: string; name: string; year_group_id: string | null; year_groups?: { name: string } | null };
 
@@ -233,6 +234,7 @@ function FamilyContent() {
         )}
 
         <ActionCentreWidget role="family" />
+        <PushOptIn />
         <ChildDetailsBanner />
         <JoinLessonCard who={{ kind: "parent" }} />
 

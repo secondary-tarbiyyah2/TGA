@@ -162,6 +162,7 @@ jobs:
           NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ vars.NEXT_PUBLIC_SANITY_PROJECT_ID }}
           NEXT_PUBLIC_SANITY_DATASET: ${{ vars.NEXT_PUBLIC_SANITY_DATASET || 'production' }}
           NEXT_PUBLIC_LEARN_ORIGIN: ${{ vars.LEARN_SITE_URL || 'https://learn.tarbiyyah.co.uk' }}
+          NEXT_PUBLIC_VAPID_PUBLIC_KEY: ${{ vars.VAPID_PUBLIC_KEY }}
           # Address finder on the apply form: house-level suggestions from Google Places when set (repo variable), free OpenStreetMap otherwise.
           NEXT_PUBLIC_GOOGLE_MAPS_API_KEY: ${{ vars.GOOGLE_MAPS_API_KEY }}
         run: npm run build
