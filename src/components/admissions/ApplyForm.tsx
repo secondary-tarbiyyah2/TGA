@@ -83,7 +83,7 @@ type Errors = Record<string, string | undefined>;
 type Phase = "loading" | "closed" | "open" | "submitting" | "success";
 
 const MAX_CHILDREN = 6;
-const STEP_TITLES = ["About you", "Address and ID", "Your children", "Fees and declaration"] as const;
+const STEP_TITLES = ["About you", "Address and ID", "Your children", "Documents", "Fees and declaration"] as const;
 const CHILD_LIMITS: Record<ChildDocKind, number> = { report: MAX_REPORT_FILES, child_id: MAX_ID_FILES, guardian_id: MAX_ID_FILES };
 
 const INITIAL: Values = {
@@ -178,6 +178,11 @@ function validateStep(step: number, v: Values, kids: ChildForm[], parentIds: Fil
       put(`${p}dob`, dobError(k));
       put(`${p}gender`, k.gender === "Male" || k.gender === "Female" ? undefined : "Please choose Male or Female.");
       put(`${p}yearGroup`, k.yearGroup ? undefined : "Please choose the year group you are applying for.");
+    });
+  }
+  if (step === 3) {
+    kids.forEach((k, i) => {
+      const p = `c${i}-`;
       put(`${p}doc-child_id`, k.docs.child_id.length === 0 ? "Please upload your child's passport or birth certificate." : undefined);
       if (k.otherGuardian) {
         put(`${p}guardianName`, k.guardianName.trim() ? undefined : "Please enter the legal parent or guardian's full name.");
@@ -188,7 +193,7 @@ function validateStep(step: number, v: Values, kids: ChildForm[], parentIds: Fil
       }
     });
   }
-  if (step === 3) {
+  if (step === 4) {
     if (v.paymentPlan !== "annual" && v.paymentPlan !== "termly" && v.paymentPlan !== "monthly") put("paymentPlan", "Please choose the payment plan you expect to use. You can change it later.");
     put("consentContact", v.consentContact ? undefined : "Please tick the box to say we may contact you about this application.");
     put("consentData", v.consentData ? undefined : "Please tick the box to agree to us using your information for this application.");
@@ -492,6 +497,8 @@ export function ApplyForm({
   const [errors, setErrors] = useState<Errors>({});
   const [submitError, setSubmitError] = useState(false);
   const [step, setStep] = useState(0);
+  /** Which child's card is open on the children and documents steps. */
+  const [activeKid, setActiveKid] = useState(0);
   const [failedUploads, setFailedUploads] = useState<string[]>([]);
   const [submitted, setSubmitted] = useState<{ names: string[]; email: string } | null>(null);
   /** The family chose to type the address rather than look it up. */
@@ -586,10 +593,13 @@ export function ApplyForm({
     "aria-describedby": errors[`c${i}-${k}`] ? `e-f-c${i}-${k}` : undefined,
   });
   function addKid() {
+    if (kids.length >= MAX_CHILDREN) return;
     setKids((list) => (list.length >= MAX_CHILDREN ? list : [...list, blankChild(crypto.randomUUID())]));
+    setActiveKid(kids.length);
   }
   function removeKid(i: number) {
     setKids((list) => (list.length <= 1 ? list : list.filter((_, j) => j !== i)));
+    setActiveKid((a) => Math.max(0, a >= i ? a - 1 : a));
     // Error keys are positional, so drop the children's errors rather than show them against the wrong child.
     setErrors((er) => Object.fromEntries(Object.entries(er).filter(([key]) => !/^c\d+-/.test(key))));
   }
@@ -642,7 +652,11 @@ export function ApplyForm({
   // ── navigation and submit ──
   function focusFirst(found: Errors) {
     const first = Object.keys(found).find((k) => found[k]);
-    if (first) formRef.current?.querySelector<HTMLElement>(`#f-${first}`)?.focus();
+    if (!first) return;
+    const kid = /^c(\d+)-/.exec(first);
+    if (kid) setActiveKid(Number(kid[1]));
+    // Wait a frame so a newly opened step or child card is on screen.
+    requestAnimationFrame(() => formRef.current?.querySelector<HTMLElement>(`#f-${first}`)?.focus());
   }
 
   function goNext() {
@@ -664,7 +678,7 @@ export function ApplyForm({
       if (Object.keys(found).length > 0) {
         setErrors(found);
         if (s !== step) setStep(s);
-        else focusFirst(found);
+        focusFirst(found);
         return;
       }
     }
@@ -1016,16 +1030,48 @@ export function ApplyForm({
         </>
       )}
 
-      {step === 2 && (
+      {(step === 2 || step === 3) && (
         <>
           <p className="text-sm text-ink/70">
-            Add a card for each child. Each child becomes their own application, and we link them as one family. Your details, home address, photo ID and proof of address are shared, so you do not repeat them.
+            {step === 2
+              ? "Add each child. Each becomes their own application, linked as one family, so you don't repeat your own details."
+              : "Upload each child's documents. Files are private to admissions staff."}
           </p>
-          {kids.map((k, i) => (
-            <fieldset key={k.key} className="min-w-0 rounded-2xl border border-gold-light/50 bg-white p-6 sm:p-8">
+          {(kids.length > 1 || (step === 2 && kids.length < MAX_CHILDREN)) && (
+            <div role="group" aria-label="Children" className="flex flex-wrap items-center gap-2">
+              {kids.map((k, i) => {
+                const hasError = Object.keys(errors).some((key) => key.startsWith(`c${i}-`) && errors[key]);
+                return (
+                  <button
+                    key={k.key}
+                    type="button"
+                    aria-pressed={i === activeKid}
+                    onClick={() => setActiveKid(i)}
+                    className={`min-h-10 rounded-full px-4 text-sm font-semibold ${i === activeKid ? "bg-forest-700 text-white" : "bg-white text-ink ring-1 ring-gold-light/60 hover:bg-cream"}`}
+                  >
+                    {k.firstName.trim() || `Child ${i + 1}`}
+                    {hasError && <span className="ml-1.5 text-red-700"><span aria-hidden="true">&#9679;</span><span className="sr-only"> (needs attention)</span></span>}
+                  </button>
+                );
+              })}
+              {step === 2 && kids.length < MAX_CHILDREN && (
+                <button
+                  type="button"
+                  disabled={busy}
+                  onClick={addKid}
+                  className="min-h-10 rounded-full border border-dashed border-gold-500 bg-white px-4 text-sm font-semibold text-ink hover:bg-cream disabled:opacity-60"
+                >
+                  + Add another child
+                </button>
+              )}
+            </div>
+          )}
+          {kids.map((k, i) => i !== activeKid ? null : (
+            <fieldset key={k.key} className="min-w-0 rounded-2xl border border-gold-light/50 bg-white p-5 sm:p-6">
               {/* Floated so the heading sits inside the card, like the other sections. */}
               <legend className="float-left mb-1 w-full p-0 font-serif text-xl font-semibold text-ink">{kids.length > 1 ? `Child ${i + 1}${k.firstName.trim() ? `: ${k.firstName.trim()}` : ""}` : "Your child"}</legend>
               <div className="clear-left mt-4 grid gap-4 sm:grid-cols-2">
+                {step === 2 && (<>
                 <SubSection first title={k.firstName.trim() ? `About ${k.firstName.trim()}` : "About your child"} hint="Their legal name, as on their passport or birth certificate." />
                 <Field id={`f-c${i}-firstName`} label="First name" error={errors[`c${i}-firstName`]}>
                   <input {...kidProps(i, "firstName")} type="text" autoComplete="off" maxLength={80} className={inputCls} />
@@ -1121,7 +1167,9 @@ export function ApplyForm({
                   </Field>
                 </div>
 
-                <SubSection title="Documents" hint="Stored privately. Only admissions staff can open them." />
+                </>)}
+                {step === 3 && (<>
+                <SubSection first title="Documents" hint="Stored privately. Only admissions staff can open them." />
                 <div className="sm:col-span-2">
                   <DocPicker
                     id={`f-c${i}-doc-report`}
@@ -1204,8 +1252,9 @@ export function ApplyForm({
                     </div>
                   )}
                 </div>
+                </>)}
               </div>
-              {kids.length > 1 && (
+              {step === 2 && kids.length > 1 && (
                 <div className="mt-4 text-right">
                   <button type="button" disabled={busy} onClick={() => removeKid(i)} className="text-sm font-semibold text-red-700 underline">
                     Remove {k.firstName.trim() || `child ${i + 1}`}
@@ -1214,25 +1263,15 @@ export function ApplyForm({
               )}
             </fieldset>
           ))}
-          {kids.length < MAX_CHILDREN && (
-            <div>
-              <button
-                type="button"
-                disabled={busy}
-                onClick={addKid}
-                className="rounded-full border border-gold-500 bg-white px-5 py-2.5 text-sm font-semibold text-ink hover:bg-cream disabled:opacity-60"
-              >
-                Add another child
-              </button>
-              <p className="mt-1 text-xs text-ink/70">
-                {sibPct > 0 ? `Siblings get ${sibPct}% off from the second child onwards.` : "Siblings may qualify for a discount."} You can add up to {MAX_CHILDREN} children.
-              </p>
-            </div>
+          {step === 2 && (
+            <p className="text-xs text-ink/70">
+              {sibPct > 0 ? `Siblings get ${sibPct}% off from the second child onwards.` : "Siblings may qualify for a discount."} You can add up to {MAX_CHILDREN} children.
+            </p>
           )}
         </>
       )}
 
-      {step === 3 && (
+      {step === 4 && (
         <>
           <Section title="Fees and plan" intro={`Here is what ${childLabel} would cost, with any sibling discount already applied.`}>
             <FeeSummary estimate={estimate} kids={kids} plan={chosenPlan} siblingPercent={sibPct} siblingNote={siblingDiscountNote} terms={terms} instalments={instalments} />
