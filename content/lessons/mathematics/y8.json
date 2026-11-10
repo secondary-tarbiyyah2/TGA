@@ -3,7 +3,7 @@
  "year": "y8",
  "board": "Pearson Edexcel (KS3 Maths Progress, building to International GCSE Mathematics A 4MA1)",
  "boardShort": "KS3 Maths Progress",
- "source": "School scheme of work: Pearson KS3 Maths Progress (2nd ed.) (ks3_maths_a_p_sow3.xlsx), matched to the White Rose Secondary block order in content/syllabus/ks1-3/mathematics.json; founding-year bridge (11 and 18 Jan 2027: ratio, scale, multiplying fractions, Cartesian plane) and Spring 1 lessons (brackets, equations, sequences) written to the plan, building to Pearson Edexcel International GCSE Mathematics A (4MA1); INSET lesson standard.",
+ "source": "School scheme of work: Pearson KS3 Maths Progress (2nd ed.) (ks3_maths_a_p_sow3.xlsx), matched to the White Rose Secondary block order in content/syllabus/ks1-3/mathematics.json; founding-year bridge (11 and 18 Jan 2027: ratio, scale, multiplying fractions, Cartesian plane) and Spring 1 lessons (brackets, equations, sequences) written to the plan, building to Pearson Edexcel International GCSE Mathematics A (4MA1); INSET lesson standard. | Founding year 2027 Spring 2 (15 Mar to 23 Apr): Indices, fractions, percentages and standard form; number sense, written to the plan with Maths Progress Year 8 1.4, 1.5, Unit 10 and Year 9 1.1 to 1.4 as the school's resources.",
  "lessons": [
   {
    "unit": "Unit 1: Number",
@@ -579,289 +579,531 @@
    "send": "Support: sign-rule card and number line. Stretch: powers of negative numbers."
   },
   {
-   "unit": "Unit 1: Number",
+   "unit": "Spring 2: Indices, fractions, percentages and standard form; number sense",
    "n": 5,
    "title": "Powers and roots",
    "duration": 50,
-   "bigQuestion": "How quickly do numbers grow when we keep multiplying?",
+   "bigQuestion": "Why is 'squared' called squared and 'cubed' called cubed?",
    "objectives": [
-    "Calculate squares, cubes, square roots and cube roots",
-    "Know when a square root can be negative",
-    "Use a calculator for powers and roots"
+    "To understand how squares, cubes and their roots are linked as inverse operations"
    ],
    "successCriteria": [
-    "Recall squares to 15² and cubes of 1 to 5 and 10",
-    "Calculate with roots and powers on a calculator",
-    "Explain why √25 has two answers but ∛27 has only one real answer"
+    "All: recall square numbers to 15² and cube numbers to 5³",
+    "Most: find square roots and cube roots, including negative square roots",
+    "Some: estimate a square root between two whole numbers"
    ],
-   "crossCurricular": "Science: area and volume units; Computing: powers of 2 in binary",
-   "smsc": "Spiritual: wonder at fast growth, such as the story of rice on a chessboard",
+   "smsc": "Spiritual: the order and pattern in numbers as part of the order in Allah's creation",
    "keywords": [
     {
-     "term": "power",
-     "def": "how many times a number is multiplied by itself"
+     "term": "square number",
+     "def": "a number times itself, such as 7² = 49"
     },
     {
      "term": "cube number",
-     "def": "a number multiplied by itself three times"
+     "def": "a number times itself three times, such as 4³ = 64"
     },
     {
      "term": "square root",
-     "def": "a number that squares to give the original"
+     "def": "the number that squares to make it: √49 = 7"
     },
     {
      "term": "cube root",
-     "def": "a number that cubes to give the original"
+     "def": "the number that cubes to make it: ∛64 = 4"
+    },
+    {
+     "term": "inverse",
+     "def": "the opposite operation"
     }
    ],
+   "hook": {
+    "type": "ponder",
+    "text": "A square garden has an area of 50 m². Is its side more or less than 7 m? How could you tell without a calculator?",
+    "a": "More than 7 m: 7² = 49 is just under 50, so the side is a little over 7 m."
+   },
    "starter": [
-    "Work out −6 × −7",
-    "Work out 8²",
-    "Work out √81",
-    "Work out 2 × 2 × 2"
+    {
+     "q": "Work out -4 - (-9)",
+     "a": "5",
+     "mins": 1
+    },
+    {
+     "q": "Work out 3/4 + 1/6",
+     "a": "11/12",
+     "mins": 1
+    },
+    {
+     "q": "Work out 6 × 6 × 6",
+     "a": "216",
+     "mins": 1
+    },
+    {
+     "q": "What is 12 × 12?",
+     "a": "144",
+     "mins": 1
+    }
    ],
    "teach": [
     {
-     "heading": "Squares and cubes",
+     "heading": "Why 'squared'?",
      "bullets": [
-      "n² = n × n",
-      "n³ = n × n × n",
-      "Cubes: 1, 8, 27, 64, 125, …, 1000"
+      "7² is the area of a 7 by 7 square",
+      "4³ is the volume of a 4 by 4 by 4 cube"
      ],
-     "note": "Show a cube made of smaller cubes. 3³ = 27 small cubes.",
+     "note": "Show the square and cube pictures; the names come from shapes."
+    },
+    {
+     "heading": "Learn these",
+     "bullets": [
+      "Squares to 15², cubes to 5³"
+     ],
+     "note": "Pupils test each other in breakout pairs.",
      "table": {
       "head": [
        "n",
-       "1",
-       "2",
-       "3",
-       "4",
-       "5",
-       "10"
+       "n²",
+       "n³"
       ],
       "rows": [
        [
-        "n²",
         "1",
-        "4",
-        "9",
-        "16",
-        "25",
-        "100"
+        "1",
+        "1"
        ],
        [
-        "n³",
-        "1",
-        "8",
-        "27",
-        "64",
-        "125",
+        "2",
+        "4",
+        "8"
+       ],
+       [
+        "3",
+        "9",
+        "27"
+       ],
+       [
+        "4",
+        "16",
+        "64"
+       ],
+       [
+        "5",
+        "25",
+        "125"
+       ],
+       [
+        "10",
+        "100",
         "1000"
+       ],
+       [
+        "12",
+        "144",
+        "-"
+       ],
+       [
+        "15",
+        "225",
+        "-"
        ]
       ]
      }
     },
     {
-     "heading": "Roots",
+     "heading": "Roots undo powers",
      "bullets": [
-      "√ undoes squaring; ∛ undoes cubing",
-      "5² = 25 and (−5)² = 25",
-      "So 25 has two square roots: ±5"
+      "√81 = 9 because 9² = 81",
+      "∛125 = 5 because 5³ = 125",
+      "81 also has a negative square root: -9"
      ],
-     "note": "The √ sign means the positive root. Ask: 'What is ∛(−8)?' (−2, since −2 × −2 × −2 = −8.)",
-     "misconception": {
-      "wrong": "4³ = 12",
-      "right": "4³ = 4 × 4 × 4 = 64"
+     "note": "(-9)² = 81 too, so x² = 81 has two solutions."
+    },
+    {
+     "heading": "Estimating √50",
+     "bullets": [
+      "49 < 50 < 64",
+      "So 7 < √50 < 8, close to 7"
+     ],
+     "note": "√50 is just over 7 (about 7.07).",
+     "numberline": {
+      "min": 6,
+      "max": 9,
+      "step": 0.5,
+      "marks": [
+       {
+        "at": 7,
+        "label": "√49"
+       },
+       {
+        "at": 7.07,
+        "label": "√50"
+       },
+       {
+        "at": 8,
+        "label": "√64"
+       }
+      ]
      }
     },
     {
-     "heading": "Calculator skills",
+     "heading": "Check",
      "bullets": [
-      "x² and x³ keys",
-      "xʸ (or ^) for other powers",
-      "√ and ∛ keys"
+      "Use the inverse"
      ],
-     "note": "Model on an online scientific calculator on screen.",
-     "model": {
-      "problem": "Work out 2⁵ + ∛343",
-      "steps": [
-       "2⁵ = 2 × 2 × 2 × 2 × 2 = 32",
-       "∛343: 7 × 7 × 7 = 343, so 7",
-       "32 + 7 = 39"
-      ],
-      "answer": "39"
-     }
-    },
-    {
-     "heading": "Check: roots",
-     "bullets": [],
-     "note": "Show me on 3.",
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
      "check": {
-      "q": "Which number has two square roots, 6 and −6?",
+      "q": "Which is ∛-8?",
       "options": [
-       "12",
-       "36",
-       "−36",
-       "216"
+       "-2",
+       "2",
+       "-4",
+       "No answer"
       ],
-      "answer": 1,
-      "why": "6² = 36 and (−6)² = 36. −36 has no real square root; 216 = 6³."
+      "answer": 0,
+      "why": "(-2)³ = -8, so ∛-8 = -2. A cube root of a negative number exists; a square root of a negative does not (in real numbers)."
      }
     }
    ],
    "practice": [
-    "Work out 5³",
-    "Work out √144 and ∛64",
-    "Work out 3⁴",
-    "Write both square roots of 49"
+    {
+     "q": "Find √144 and ∛27",
+     "a": "12 and 3",
+     "mins": 2,
+     "model": "12² = 144 so √144 = 12.\n3³ = 27 so ∛27 = 3."
+    },
+    {
+     "q": "Work out 9² - 4³",
+     "a": "17",
+     "mins": 1
+    },
+    {
+     "q": "Between which two whole numbers is √90?",
+     "a": "9 and 10",
+     "mins": 1
+    },
+    {
+     "q": "Solve x² = 36",
+     "a": "x = 6 or x = -6",
+     "mins": 1
+    }
    ],
    "independent": [
-    "Core: (a) 7² + 2³ (b) √100 − ∛125 (c) 10³ ÷ 4² (d) 2⁶",
-    "Extend: A cube has a volume of 512 cm³. Find the length of one edge and the area of one face.",
-    "Stretch: Find a number that is both a square and a cube between 1 and 1000 (other than 1). Find all of them. What do you notice?"
+    {
+     "q": "Core: (a) 13² (b) √196 (c) 5³ (d) ∛1000 (e) √169 + ∛8",
+     "a": "(a) 169 (b) 14 (c) 125 (d) 10 (e) 15",
+     "mins": 5,
+     "model": "(a) 13 × 13 = 169.\n(b) 14² = 196.\n(c) 5 × 5 × 5 = 125.\n(d) 10³ = 1000.\n(e) 13 + 2 = 15."
+    },
+    {
+     "q": "Extend: Estimate √130 to 1 decimal place, then check with a calculator.",
+     "a": "11² = 121, 12² = 144, about 11.4 (calculator 11.40...)",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: A cube has a volume of 343 cm³. Find the area of one face.",
+     "a": "Side ∛343 = 7 cm, face 49 cm²",
+     "mins": 4
+    }
    ],
    "exit": [
-    "Work out 6³",
-    "Work out ∛1000",
-    "Give both square roots of 81"
+    {
+     "q": "What is √121?",
+     "a": "A) 11",
+     "mins": 1,
+     "options": [
+      "11",
+      "60.5",
+      "12"
+     ]
+    },
+    {
+     "q": "Between which two whole numbers is ∛30?",
+     "a": "3 and 4",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why is 4³ called '4 cubed'?",
+     "a": "It is the volume of a cube with edges of 4 units.",
+     "mins": 1
+    }
    ],
-   "homework": "One grain of rice on square 1 of a chessboard, 2 on square 2, 4 on square 3… Write the number on squares 1 to 12 as powers of 2 and work them out.",
-   "send": "Support: squares and cubes table on screen. Stretch: powers of 2 and binary."
+   "homework": "Squares and cubes recall: complete the portal grid of squares to 15² and cubes to 5³, then 8 root questions.",
+   "send": "Support: squares and cubes table. EAL: 'square', 'cube', 'root'. Stretch: estimate √200 to 1 d.p. without a calculator.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 1.4 Powers and roots (portal lesson upgraded)",
+    "Scientific calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "Rubik's cube 3x3",
+     "alt": "A cube made of 3 × 3 × 3 small cubes",
+     "for": "teach:1"
+    },
+    {
+     "find": "square garden plot",
+     "alt": "A square garden plot",
+     "for": "hook"
+    }
+   ]
   },
   {
-   "unit": "Unit 1: Number",
+   "unit": "Spring 2: Indices, fractions, percentages and standard form; number sense",
    "n": 6,
    "title": "Powers, roots and brackets",
    "duration": 50,
-   "bigQuestion": "How do calculators 'know' which part to do first?",
+   "bigQuestion": "Where do powers and roots go in the order of operations?",
    "objectives": [
-    "Calculate combinations of powers, roots and brackets",
-    "Use the priority of operations accurately",
-    "Enter calculations correctly into a calculator"
+    "To understand how powers and roots fit into the order of operations"
    ],
    "successCriteria": [
-    "Work out calculations with a power and one other operation",
-    "Work out multi-step calculations with roots, powers and brackets",
-    "Enter fractions and roots correctly into a calculator, using brackets"
+    "All: use BIDMAS with powers and roots",
+    "Most: use a calculator's power, root and bracket keys correctly",
+    "Some: insert brackets to make a calculation true"
    ],
-   "crossCurricular": "Computing: operator precedence in code; Science: formulae such as E = mc²",
-   "smsc": "Social: shared rules let us communicate clearly",
+   "smsc": "Social: agreeing a shared rule (BIDMAS) so everyone gets the same answer",
    "keywords": [
     {
-     "term": "index",
-     "def": "the small number showing the power"
-    },
-    {
-     "term": "priority of operations",
-     "def": "the order in which operations are done"
-    },
-    {
      "term": "BIDMAS",
-     "def": "Brackets, Indices, Division and Multiplication, Addition and Subtraction"
+     "def": "brackets, indices, division and multiplication, addition and subtraction"
     },
     {
-     "term": "root",
-     "def": "the inverse of a power"
+     "term": "indices",
+     "def": "powers, such as the 2 in 5²"
+    },
+    {
+     "term": "index",
+     "def": "the small raised number showing a power"
+    },
+    {
+     "term": "bracket",
+     "def": "groups part of a calculation to do first"
     }
    ],
+   "hook": {
+    "type": "ponder",
+    "text": "Two calculators give 3 + 4² = 19 and 3 + 4² = 49. Which one is right, and what did the other one do?",
+    "a": "19 is right: indices before adding, 3 + 16. The other added first: (3 + 4)² = 49."
+   },
    "starter": [
-    "Work out 4³",
-    "Work out ∛27",
-    "Work out 2 + 3 × 5",
-    "Work out (−4)²"
+    {
+     "q": "Work out 7²",
+     "a": "49",
+     "mins": 1
+    },
+    {
+     "q": "√64",
+     "a": "8",
+     "mins": 1
+    },
+    {
+     "q": "2³",
+     "a": "8",
+     "mins": 1
+    },
+    {
+     "q": "10 - 2 × 3",
+     "a": "4",
+     "mins": 1
+    }
    ],
    "teach": [
     {
-     "heading": "Roots count as indices",
+     "heading": "The order",
      "bullets": [
-      "√ and ∛ are done at the I stage",
-      "Work inside the root sign first, like a bracket"
+      "Indices come straight after brackets"
      ],
-     "note": "√(9 + 16) means add first: √25 = 5. Compare with √9 + √16 = 7.",
-     "misconception": {
-      "wrong": "√(9 + 16) = 3 + 4 = 7",
-      "right": "√(9 + 16) = √25 = 5"
+     "note": "Roots count as indices.",
+     "table": {
+      "head": [
+       "Step",
+       "Means",
+       "Example"
+      ],
+      "rows": [
+       [
+        "B",
+        "Brackets",
+        "(2 + 3)² = 25"
+       ],
+       [
+        "I",
+        "Indices and roots",
+        "2 + 3² = 11"
+       ],
+       [
+        "DM",
+        "Divide and multiply",
+        "4 × 3² = 36"
+       ],
+       [
+        "AS",
+        "Add and subtract",
+        "20 - √16 = 16"
+       ]
+      ]
      }
     },
     {
-     "heading": "A multi-step calculation",
+     "heading": "Model",
      "bullets": [
-      "Write one step per line",
-      "Keep the rest of the calculation"
+      "Indices before multiplying"
      ],
-     "note": "Model, writing each line.",
+     "note": "Work line by line.",
      "model": {
-      "problem": "Work out 5 + (12 − 2³) × √36",
+      "problem": "5 × 2³ - √49",
       "steps": [
-       "Inside the bracket: 2³ = 8, so 12 − 8 = 4",
-       "√36 = 6",
-       "4 × 6 = 24",
-       "5 + 24 = 29"
+       "Indices: 2³ = 8, √49 = 7",
+       "Multiply: 5 × 8 = 40",
+       "Subtract: 40 - 7 = 33"
       ],
-      "answer": "29"
+      "answer": "33"
      }
     },
     {
-     "heading": "Fractions on a calculator",
+     "heading": "Brackets change everything",
      "bullets": [
-      "The fraction line is a hidden bracket",
-      "Type (20 + 4) ÷ (2 × 3)"
+      "(3 + 4)² is not 3² + 4²"
      ],
-     "note": "Show (20 + 4)/(2 × 3) = 4 but typing 20 + 4 ÷ 2 × 3 gives 26.",
-     "compare": {
-      "left": {
-       "title": "Typed without brackets",
-       "points": [
-        "20 + 4 ÷ 2 × 3",
-        "= 20 + 6",
-        "= 26  ✗"
-       ]
-      },
-      "right": {
-       "title": "Typed with brackets",
-       "points": [
-        "(20 + 4) ÷ (2 × 3)",
-        "= 24 ÷ 6",
-        "= 4  ✓"
-       ]
-      }
+     "note": "Show both: 49 and 25.",
+     "misconception": {
+      "wrong": "(3 + 4)² = 3² + 4² = 25",
+      "right": "(3 + 4)² = 7² = 49"
      }
     },
     {
-     "heading": "Check: order",
-     "bullets": [],
-     "note": "Show me on 3.",
-     "check": {
-      "q": "Work out 3 × 2² + 1",
-      "options": [
-       "37",
-       "13",
-       "25",
-       "48"
+     "heading": "Calculator",
+     "bullets": [
+      "Use the bracket keys"
+     ],
+     "note": "Type it exactly; check with an estimate.",
+     "model": {
+      "problem": "(12² - 20) ÷ √16",
+      "steps": [
+       "12² - 20 = 144 - 20 = 124",
+       "√16 = 4",
+       "124 ÷ 4 = 31"
       ],
-      "answer": 1,
-      "why": "Indices first: 2² = 4, then 3 × 4 = 12, then + 1 = 13. A works out (3 × 2)² + 1 = 37, ignoring the order of operations."
+      "answer": "31"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Indices first"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Work out 2 × 3²",
+      "options": [
+       "18",
+       "36",
+       "12",
+       "11"
+      ],
+      "answer": 0,
+      "why": "3² = 9 first, then 2 × 9 = 18. 36 squares 6 by doing the multiplication first."
      }
     }
    ],
    "practice": [
-    "Work out 4 × 3²",
-    "Work out (4 × 3)²",
-    "Work out √(50 − 1) + 2³",
-    "Work out (5 + 3)² ÷ 4"
+    {
+     "q": "Work out 4 + 3 × 2²",
+     "a": "16",
+     "mins": 2,
+     "model": "Indices: 2² = 4.\nMultiply: 3 × 4 = 12.\nAdd: 4 + 12 = 16."
+    },
+    {
+     "q": "Work out (5 - 2)³",
+     "a": "27",
+     "mins": 1
+    },
+    {
+     "q": "Work out √(9 + 16)",
+     "a": "5",
+     "mins": 1
+    },
+    {
+     "q": "Work out 100 ÷ 5²",
+     "a": "4",
+     "mins": 1
+    }
    ],
    "independent": [
-    "Core: (a) 2³ × 5 (b) 100 − 4 × 3² (c) √64 ÷ (6 − 2) (d) (1 + 2)³ − 7",
-    "Extend: Use a calculator: (a) (3.2² + 4.1) ÷ (2.5 − 0.9) (b) √(7.8² − 3.6²) to 2 decimal places",
-    "Stretch: Using 2, 3 and 4 once each with powers, roots and brackets, make the largest and smallest positive numbers you can."
+    {
+     "q": "Core: (a) 3² + 4² (b) (6 - 4)⁴ (c) 2 × √36 + 1 (d) 50 - 3³ (e) (√81 + 1)²",
+     "a": "(a) 25 (b) 16 (c) 13 (d) 23 (e) 100",
+     "mins": 5,
+     "model": "(a) 9 + 16 = 25.\n(b) 2⁴ = 16.\n(c) 2 × 6 + 1 = 13.\n(d) 50 - 27 = 23.\n(e) (9 + 1)² = 100."
+    },
+    {
+     "q": "Extend: Insert brackets to make 2 + 3² × 2 = 50 true.",
+     "a": "(2 + 3)² × 2 = 25 × 2 = 50",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Use 2, 3 and 5 once each, with one of them as a power, to make 64.",
+     "a": "(5 + 3)² = 8² = 64, using 2 as the power",
+     "mins": 4
+    }
    ],
    "exit": [
-    "Work out 10 − 2³",
-    "Work out √(36 + 64)",
-    "How would you type (15 + 9) ÷ (2 + 4) into a calculator?"
+    {
+     "q": "Work out 1 + 2³.",
+     "a": "A) 9",
+     "mins": 1,
+     "options": [
+      "9",
+      "27",
+      "7"
+     ]
+    },
+    {
+     "q": "Work out (1 + 2)³",
+     "a": "27",
+     "mins": 1
+    },
+    {
+     "q": "Big question: answer the ponder question.",
+     "a": "19 is right: 4² = 16 first, then 3 + 16. The other did (3 + 4)² = 49.",
+     "mins": 1
+    }
    ],
-   "homework": "Write five calculations that use a power, a root and brackets with a final answer of 10.",
-   "send": "Support: BIDMAS step frame. Stretch: nested brackets and powers of fractions."
+   "homework": "BIDMAS with powers and roots: 10 portal questions, then write two of your own with answers.",
+   "send": "Support: BIDMAS card with indices highlighted. EAL: 'index', 'indices', 'bracket'. Stretch: (2³ - √9)² ÷ 5.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 1.5 Powers, roots and brackets (portal lesson upgraded)",
+    "Scientific calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "scientific calculator",
+     "alt": "A scientific calculator with power and root keys",
+     "for": "teach:4"
+    },
+    {
+     "find": "brackets symbols",
+     "alt": "Bracket symbols",
+     "for": "keywords"
+    }
+   ]
   },
   {
    "unit": "Unit 1: Number",
@@ -1124,145 +1366,229 @@
    "send": "Support: Venn diagram template. Stretch: three numbers in a three-circle Venn."
   },
   {
-   "unit": "Unit 1: Number",
+   "unit": "Spring 2: Indices, fractions, percentages and standard form; number sense",
    "n": 9,
    "title": "Estimation and checking",
    "duration": 50,
-   "bigQuestion": "How can you tell an answer is wrong without working it out?",
+   "bigQuestion": "How can you tell a calculator answer is wrong before you check it?",
    "objectives": [
-    "Round to 1 significant figure to estimate",
-    "Estimate calculations with several operations",
-    "Use estimates to check calculator answers"
+    "To understand how rounding to 1 significant figure gives an estimate that checks a calculation"
    ],
    "successCriteria": [
-    "Round numbers to 1 significant figure",
-    "Estimate multi-step calculations including division",
-    "Say whether an estimate is an over- or under-estimate and why"
+    "All: round each number to 1 s.f. to estimate",
+    "Most: estimate calculations with division, powers and roots",
+    "Some: use an estimate and inverse operations to spot errors"
    ],
-   "crossCurricular": "Science: checking experimental results; Geography: estimating populations",
-   "smsc": "Moral: checking our own work honestly before handing it in",
+   "smsc": "Moral: checking work carefully before handing it in is part of doing a job well (itqan, إِتْقَان)",
    "keywords": [
     {
-     "term": "significant figure",
-     "def": "a digit that tells you about the size of the number; the first non-zero digit is the first"
-    },
-    {
      "term": "estimate",
-     "def": "an approximate answer using rounded values"
+     "def": "an approximate answer from rounded numbers"
     },
     {
-     "term": "≈",
-     "def": "the symbol for 'approximately equal to'"
+     "term": "approximately equal",
+     "def": "the symbol ≈"
     },
     {
-     "term": "overestimate",
-     "def": "an estimate bigger than the exact answer"
+     "term": "inverse",
+     "def": "the opposite operation, used to check"
+    },
+    {
+     "term": "significant figure",
+     "def": "a digit from the first non-zero digit"
     }
    ],
+   "hook": {
+    "type": "ponder",
+    "text": "A pupil types 48.7 × 21.3 and gets 10 373.1. Is that believable? How do you know so fast?",
+    "a": "No: 48.7 × 21.3 ≈ 50 × 20 = 1000, so 10 373.1 is about ten times too big."
+   },
    "starter": [
-    "Find the HCF of 12 and 18",
-    "Round 4 682 to the nearest 1000",
-    "Work out 40 × 30",
-    "Work out 600 ÷ 20"
+    {
+     "q": "Round 48.7 to 1 s.f.",
+     "a": "50",
+     "mins": 1
+    },
+    {
+     "q": "Round 0.0382 to 1 s.f.",
+     "a": "0.04",
+     "mins": 1
+    },
+    {
+     "q": "Round 6.75 to 1 d.p.",
+     "a": "6.8",
+     "mins": 1
+    },
+    {
+     "q": "50 × 20",
+     "a": "1000",
+     "mins": 1
+    }
    ],
    "teach": [
     {
-     "heading": "1 significant figure",
+     "heading": "Estimate by rounding to 1 s.f.",
      "bullets": [
-      "Find the first non-zero digit",
-      "Round there",
-      "Keep place-holder zeros"
+      "Round every number first"
      ],
-     "note": "Examples: 4 682 → 5 000; 0.0371 → 0.04; 38.7 → 40.",
-     "table": {
-      "head": [
-       "Number",
-       "1 s.f."
-      ],
-      "rows": [
-       [
-        "4 682",
-        "5 000"
-       ],
-       [
-        "38.7",
-        "40"
-       ],
-       [
-        "0.0371",
-        "0.04"
-       ],
-       [
-        "951",
-        "1 000"
-       ]
-      ]
-     }
-    },
-    {
-     "heading": "Estimating a calculation",
-     "bullets": [
-      "Round every number to 1 s.f.",
-      "Calculate mentally",
-      "Use ≈"
-     ],
-     "note": "Model with a fraction calculation.",
+     "note": "The ponder: about 1000, so 10 373.1 is wrong (the true answer is 1037.31).",
      "model": {
-      "problem": "Estimate (48.7 × 6.2) ÷ 0.51",
+      "problem": "48.7 × 21.3",
       "steps": [
-       "Round: 50 × 6 ÷ 0.5",
-       "50 × 6 = 300",
-       "300 ÷ 0.5 = 600"
+       "≈ 50 × 20",
+       "= 1000"
       ],
-      "answer": "≈ 600 (exact: 592.0…)"
+      "answer": "≈ 1000"
      }
     },
     {
-     "heading": "Dividing by a decimal",
+     "heading": "Division and fractions",
      "bullets": [
-      "÷ 0.5 doubles",
-      "÷ 0.1 multiplies by 10"
+      "Round, then simplify"
      ],
-     "note": "Many pupils halve when dividing by 0.5.",
-     "misconception": {
-      "wrong": "300 ÷ 0.5 = 150",
-      "right": "300 ÷ 0.5 = 600 (how many halves in 300?)"
+     "note": "Choose friendly numbers.",
+     "model": {
+      "problem": "(312 × 4.89) ÷ 0.51",
+      "steps": [
+       "≈ (300 × 5) ÷ 0.5",
+       "1500 ÷ 0.5 = 3000"
+      ],
+      "answer": "≈ 3000"
      }
     },
     {
-     "heading": "Check: estimate",
-     "bullets": [],
-     "note": "Show me on 3.",
-     "check": {
-      "q": "Which is the best estimate of 31.6 × 0.48?",
-      "options": [
-       "1.5",
-       "15",
-       "150",
-       "60"
+     "heading": "Roots and powers",
+     "bullets": [
+      "Use nearby square numbers"
+     ],
+     "note": "For a root of a non-square, find the squares either side.",
+     "model": {
+      "problem": "√(8.9 × 10.2)",
+      "steps": [
+       "≈ √(9 × 10) = √90",
+       "≈ 9.5"
       ],
-      "answer": 1,
-      "why": "30 × 0.5 = 15. A and C have the point in the wrong place; D multiplies by 2 instead of halving."
+      "answer": "≈ 9.5"
+     }
+    },
+    {
+     "heading": "Checking",
+     "bullets": [
+      "Compare with the estimate",
+      "Use the inverse: 1037.31 ÷ 21.3 = 48.7"
+     ],
+     "note": "Both checks should be routine."
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Round to 1 s.f."
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Best estimate of 61.8 ÷ 2.9?",
+      "options": [
+       "20",
+       "30",
+       "2",
+       "180"
+      ],
+      "answer": 0,
+      "why": "60 ÷ 3 = 20. 180 multiplies instead of divides."
      }
     }
    ],
    "practice": [
-    "Round 0.00649 to 1 s.f.",
-    "Estimate 297 × 41",
-    "Estimate 8.9 × 3.1 ÷ 0.48"
+    {
+     "q": "Estimate 397 × 0.52",
+     "a": "≈ 200",
+     "mins": 2,
+     "model": "Round: 400 × 0.5 = 200."
+    },
+    {
+     "q": "Estimate 7.8²",
+     "a": "≈ 64",
+     "mins": 1
+    },
+    {
+     "q": "Estimate (19.6 + 41.2) ÷ 3.1",
+     "a": "≈ 20",
+     "mins": 1
+    },
+    {
+     "q": "Is 0.47 × 82 = 385.4 sensible?",
+     "a": "No: ≈ 0.5 × 80 = 40; the correct answer is 38.54",
+     "mins": 1
+    }
    ],
    "independent": [
-    "Core: Estimate (a) 612 ÷ 19 (b) 7.8² (c) (21.4 + 38.9) ÷ 5.8",
-    "Extend: A pupil's calculator says 47.3 × 0.92 = 435.16. Use an estimate to show this is wrong, and suggest what went wrong.",
-    "Stretch: Estimate (3.92 × 0.0517) ÷ 0.198. Is your estimate bigger or smaller than the exact value? Justify without a calculator."
+    {
+     "q": "Core: Estimate (a) 5.9 × 31.2 (b) 812 ÷ 39 (c) 0.48 × 610 (d) (9.7 × 4.1) ÷ 2.03 (e) √98.6",
+     "a": "(a) ≈ 180 (b) ≈ 20 (c) ≈ 300 (d) ≈ 20 (e) ≈ 10",
+     "mins": 5,
+     "model": "(a) 6 × 30 = 180.\n(b) 800 ÷ 40 = 20.\n(c) 0.5 × 600 = 300.\n(d) 10 × 4 ÷ 2 = 20.\n(e) √100 = 10."
+    },
+    {
+     "q": "Extend: A family car uses 6.8 litres per 100 km. Estimate the fuel for a 412 km trip.",
+     "a": "≈ 7 × 4 = 28 litres (exact 28.0 litres)",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Estimate (4.12 × 10³) × (2.96 × 10⁻²), then check on a calculator.",
+     "a": "≈ 4000 × 0.03 = 120; calculator 121.952",
+     "mins": 4
+    }
    ],
    "exit": [
-    "Round 0.0283 to 1 s.f.",
-    "Estimate 52 × 18.",
-    "Estimate 396 ÷ 0.21."
+    {
+     "q": "Best estimate for 29.4 × 9.8?",
+     "a": "A) 300",
+     "mins": 1,
+     "options": [
+      "300",
+      "270",
+      "3000"
+     ]
+    },
+    {
+     "q": "Estimate 0.31 × 49",
+     "a": "≈ 15",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how did you know 10 373.1 was wrong?",
+     "a": "48.7 × 21.3 ≈ 50 × 20 = 1000, and 10 373.1 is ten times too big.",
+     "mins": 1
+    }
    ],
-   "homework": "Estimate the total cost of a weekly shop of ten items, then compare with the exact total.",
-   "send": "Support: highlight the first significant digit. Stretch: estimating with powers and roots."
+   "homework": "Estimate first: 10 portal questions; estimate, then calculate, and comment on each.",
+   "send": "Support: rounding to 1 s.f. card. EAL: 'estimate', 'approximately'. Stretch: estimate π × 7.2² (≈ 150).",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 1.2 Calculations and estimates (portal lesson upgraded)",
+    "Scientific calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "fuel pump display",
+     "alt": "A fuel pump display in litres",
+     "for": "teach:4"
+    },
+    {
+     "find": "approximately equal symbol",
+     "alt": "The approximately equal symbol ≈",
+     "for": "keywords"
+    }
+   ]
   },
   {
    "unit": "Unit 1: Number",
@@ -7152,6 +7478,3852 @@
      "find": "Kitab al-jabr wa-l-muqabala manuscript page",
      "alt": "A page from al-Khwarizmi's book on algebra",
      "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Indices, fractions, percentages and standard form; number sense",
+   "n": 37,
+   "title": "Index laws: multiplying and dividing powers",
+   "duration": 50,
+   "bigQuestion": "Why do we add the indices when we multiply powers?",
+   "objectives": [
+    "To understand why the index laws for multiplying and dividing powers of the same base work"
+   ],
+   "successCriteria": [
+    "All: write repeated multiplication in index form",
+    "Most: multiply and divide powers of the same base by adding and subtracting indices",
+    "Some: explain why the laws only work for the same base"
+   ],
+   "crossCurricular": "Computing: data sizes grow in powers of 2",
+   "smsc": "Spiritual: patterns that always hold show the reliability of mathematical truth",
+   "keywords": [
+    {
+     "term": "base",
+     "def": "the number being multiplied, the 5 in 5³"
+    },
+    {
+     "term": "index",
+     "def": "the power, the 3 in 5³"
+    },
+    {
+     "term": "index form",
+     "def": "writing 5 × 5 × 5 as 5³"
+    },
+    {
+     "term": "index law",
+     "def": "a rule for combining powers"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "3⁴ × 3² has how many 3s multiplied together? Could you find a rule without writing them all out?",
+    "a": "Six 3s, 3⁶. The rule: add the indices, 4 + 2 = 6."
+   },
+   "starter": [
+    {
+     "q": "Work out 2⁵",
+     "a": "32",
+     "mins": 1
+    },
+    {
+     "q": "Work out 5 + 2 × 3²",
+     "a": "23",
+     "mins": 1
+    },
+    {
+     "q": "Write 7 × 7 × 7 × 7 in index form",
+     "a": "7⁴",
+     "mins": 1
+    },
+    {
+     "q": "√144",
+     "a": "12",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Count the factors",
+     "bullets": [
+      "3⁴ × 3² = (3 × 3 × 3 × 3) × (3 × 3)",
+      "Six 3s: 3⁶",
+      "4 + 2 = 6"
+     ],
+     "note": "Pupils count the factors before seeing the rule."
+    },
+    {
+     "heading": "Multiplying: add the indices",
+     "bullets": [
+      "aᵐ × aⁿ = aᵐ⁺ⁿ"
+     ],
+     "note": "Same base only.",
+     "model": {
+      "problem": "5³ × 5⁴",
+      "steps": [
+       "Same base 5",
+       "Add indices: 3 + 4 = 7"
+      ],
+      "answer": "5⁷"
+     }
+    },
+    {
+     "heading": "Dividing: subtract the indices",
+     "bullets": [
+      "aᵐ ÷ aⁿ = aᵐ⁻ⁿ"
+     ],
+     "note": "Show cancelling: (2×2×2×2×2)/(2×2) = 2×2×2.",
+     "model": {
+      "problem": "2⁵ ÷ 2²",
+      "steps": [
+       "Same base 2",
+       "Subtract: 5 - 2 = 3"
+      ],
+      "answer": "2³ = 8"
+     }
+    },
+    {
+     "heading": "Different bases",
+     "bullets": [
+      "The laws need the same base"
+     ],
+     "note": "2³ × 3² = 8 × 9 = 72, not 6⁵.",
+     "misconception": {
+      "wrong": "2³ × 3² = 6⁵",
+      "right": "2³ × 3² = 8 × 9 = 72"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Add or subtract?"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Simplify 7⁹ ÷ 7³",
+      "options": [
+       "7⁶",
+       "7³",
+       "1³",
+       "7¹²"
+      ],
+      "answer": 0,
+      "why": "Divide: subtract 9 - 3 = 6. 7³ divides the indices; 7¹² adds them."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Simplify 4² × 4⁵",
+     "a": "4⁷",
+     "mins": 2,
+     "model": "Same base 4, so add the indices: 2 + 5 = 7, giving 4⁷."
+    },
+    {
+     "q": "Simplify 9⁸ ÷ 9⁶",
+     "a": "9² = 81",
+     "mins": 1
+    },
+    {
+     "q": "Simplify 6 × 6⁴",
+     "a": "6⁵",
+     "mins": 1
+    },
+    {
+     "q": "Simplify 10⁶ ÷ 10",
+     "a": "10⁵",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Simplify, leaving in index form: (a) 3⁵ × 3⁴ (b) 8¹⁰ ÷ 8⁷ (c) 2³ × 2 × 2⁶ (d) 5⁷ ÷ 5⁷ (e) (4⁶ × 4²) ÷ 4⁵",
+     "a": "(a) 3⁹ (b) 8³ (c) 2¹⁰ (d) 5⁰ = 1 (e) 4³",
+     "mins": 5,
+     "model": "(a) 5 + 4 = 9.\n(b) 10 - 7 = 3.\n(c) 3 + 1 + 6 = 10.\n(d) 7 - 7 = 0, and anything divided by itself is 1.\n(e) 4⁸ ÷ 4⁵ = 4³."
+    },
+    {
+     "q": "Extend: Find n: 6ⁿ × 6³ = 6¹¹",
+     "a": "n = 8",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Write 8 × 2⁵ as a single power of 2.",
+     "a": "8 = 2³, so 2³ × 2⁵ = 2⁸",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Simplify 3⁴ × 3⁵.",
+     "a": "A) 3⁹",
+     "mins": 1,
+     "options": [
+      "3⁹",
+      "3²⁰",
+      "9⁹"
+     ]
+    },
+    {
+     "q": "Simplify 5⁸ ÷ 5²",
+     "a": "5⁶",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why do we add the indices when multiplying?",
+     "a": "Each index counts the factors; joining the multiplications adds the counts.",
+     "mins": 1
+    }
+   ],
+   "homework": "Index laws (multiply and divide): 12 portal questions, then explain one in a sentence.",
+   "send": "Support: expanded-form card to count factors. EAL: 'base', 'index', 'law'. Stretch: 27 × 3⁴ as a power of 3.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 1.1 Indices and 1.3 More indices",
+    "Scientific calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "powers of two chart",
+     "alt": "A chart of powers of 2",
+     "for": "keywords"
+    },
+    {
+     "find": "chessboard",
+     "alt": "A chessboard (64 squares = 2⁶)",
+     "for": "hook"
+    }
+   ],
+   "islamicLink": {
+    "text": "Muhammad ibn Musa al-Khwarizmi (محمد بن موسى الخوارزمي), working in Baghdad in the 9th century, wrote a book on Hindu-Arabic numerals that spread place value and zero to the world. Our powers of ten and standard form rest on that place value system.",
+    "at": "start"
+   }
+  },
+  {
+   "unit": "Spring 2: Indices, fractions, percentages and standard form; number sense",
+   "n": 38,
+   "title": "Powers of powers and the zero index",
+   "duration": 50,
+   "bigQuestion": "What could 5⁰ possibly mean?",
+   "objectives": [
+    "To understand how to raise a power to a power and why any number to the power 0 is 1"
+   ],
+   "successCriteria": [
+    "All: simplify a power of a power by multiplying the indices",
+    "Most: use the zero index: a⁰ = 1",
+    "Some: combine all three index laws in one calculation"
+   ],
+   "smsc": "Social: explaining a pattern clearly to a partner",
+   "keywords": [
+    {
+     "term": "power of a power",
+     "def": "a power raised to another power, such as (2³)²"
+    },
+    {
+     "term": "zero index",
+     "def": "a power of 0: always equals 1 (base not 0)"
+    },
+    {
+     "term": "simplify",
+     "def": "write in its simplest form"
+    },
+    {
+     "term": "base",
+     "def": "the number being raised to a power"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Continue the pattern: 2³ = 8, 2² = 4, 2¹ = 2, 2⁰ = ? What must it be?",
+    "a": "2⁰ = 1: each step down halves, so 2 ÷ 2 = 1."
+   },
+   "starter": [
+    {
+     "q": "Simplify 4³ × 4²",
+     "a": "4⁵",
+     "mins": 1
+    },
+    {
+     "q": "Simplify 9⁷ ÷ 9³",
+     "a": "9⁴",
+     "mins": 1
+    },
+    {
+     "q": "Work out 2³ × 2²",
+     "a": "32",
+     "mins": 1
+    },
+    {
+     "q": "Work out 3⁴",
+     "a": "81",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Power of a power",
+     "bullets": [
+      "(2³)² = 2³ × 2³ = 2⁶",
+      "Multiply the indices: 3 × 2 = 6"
+     ],
+     "note": "Write it out once, then use the rule."
+    },
+    {
+     "heading": "Model",
+     "bullets": [
+      "(aᵐ)ⁿ = aᵐⁿ"
+     ],
+     "note": "Then simplify.",
+     "model": {
+      "problem": "(5²)⁴",
+      "steps": [
+       "5² written 4 times: 5² × 5² × 5² × 5²",
+       "2 × 4 = 8"
+      ],
+      "answer": "5⁸"
+     }
+    },
+    {
+     "heading": "The zero index",
+     "bullets": [
+      "Each step down divides by 2",
+      "So 2⁰ = 2 ÷ 2 = 1"
+     ],
+     "note": "This answers the ponder question.",
+     "table": {
+      "head": [
+       "Power",
+       "Value"
+      ],
+      "rows": [
+       [
+        "2³",
+        "8"
+       ],
+       [
+        "2²",
+        "4"
+       ],
+       [
+        "2¹",
+        "2"
+       ],
+       [
+        "2⁰",
+        "1"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "All three laws",
+     "bullets": [
+      "Brackets first, then multiply, then divide"
+     ],
+     "note": "One step at a time.",
+     "model": {
+      "problem": "(3²)³ × 3⁴ ÷ 3⁸",
+      "steps": [
+       "(3²)³ = 3⁶",
+       "3⁶ × 3⁴ = 3¹⁰",
+       "3¹⁰ ÷ 3⁸ = 3²"
+      ],
+      "answer": "3² = 9"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Multiply the indices"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Simplify (7⁴)³",
+      "options": [
+       "7¹²",
+       "7⁷",
+       "21⁴",
+       "7⁶⁴"
+      ],
+      "answer": 0,
+      "why": "4 × 3 = 12. 7⁷ adds the indices instead."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Simplify (2⁴)³",
+     "a": "2¹²",
+     "mins": 2,
+     "model": "Power of a power: multiply 4 × 3 = 12, so 2¹²."
+    },
+    {
+     "q": "Work out 9⁰",
+     "a": "1",
+     "mins": 1
+    },
+    {
+     "q": "Simplify (6³)² ÷ 6⁵",
+     "a": "6",
+     "mins": 1
+    },
+    {
+     "q": "Simplify 4⁵ × 4⁰",
+     "a": "4⁵",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Simplify (a) (3⁵)² (b) (10²)⁴ (c) 8⁰ + 8¹ (d) (2³)³ ÷ 2⁴ (e) (5²)³ × 5 ÷ 5⁶",
+     "a": "(a) 3¹⁰ (b) 10⁸ (c) 9 (d) 2⁵ (e) 5",
+     "mins": 5,
+     "model": "(a) 5 × 2 = 10.\n(b) 2 × 4 = 8.\n(c) 1 + 8 = 9.\n(d) 2⁹ ÷ 2⁴ = 2⁵.\n(e) 5⁶ × 5¹ ÷ 5⁶ = 5¹ = 5."
+    },
+    {
+     "q": "Extend: Find n: (4ⁿ)³ = 4¹⁵",
+     "a": "n = 5",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Write 9⁴ as a power of 3, and 8² as a power of 2.",
+     "a": "9⁴ = (3²)⁴ = 3⁸; 8² = (2³)² = 2⁶",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "What is 12⁰?",
+     "a": "A) 1",
+     "mins": 1,
+     "options": [
+      "1",
+      "0",
+      "12"
+     ]
+    },
+    {
+     "q": "Simplify (2⁵)²",
+     "a": "2¹⁰",
+     "mins": 1
+    },
+    {
+     "q": "Big question: explain why 5⁰ = 1.",
+     "a": "5¹ ÷ 5¹ = 5⁰ by the division law, and any number divided by itself is 1.",
+     "mins": 1
+    }
+   ],
+   "homework": "Index laws mixed practice: 12 portal questions using all three laws.",
+   "send": "Support: index laws card. EAL: 'power of a power', 'zero'. Stretch: (2³ × 2⁴)² ÷ (2²)⁵.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 1.1 Indices and 1.3 More indices",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "stack of cubes",
+     "alt": "Cubes stacked to show growth by powers",
+     "for": "keywords"
+    },
+    {
+     "find": "staircase steps",
+     "alt": "A staircase: each step down divides by 2",
+     "for": "teach:3"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Indices, fractions, percentages and standard form; number sense",
+   "n": 39,
+   "title": "Percentages of amounts with and without a calculator",
+   "duration": 50,
+   "bigQuestion": "Which way of finding a percentage is quickest?",
+   "objectives": [
+    "To understand how to find any percentage of an amount mentally and with a multiplier"
+   ],
+   "successCriteria": [
+    "All: find percentages of amounts by building from 10%, 5% and 1%",
+    "Most: use a decimal multiplier on a calculator",
+    "Some: choose the quicker method for a given percentage"
+   ],
+   "crossCurricular": "Islamic Studies: calculating zakah",
+   "smsc": "Spiritual: zakah as a pillar of Islam that purifies wealth",
+   "keywords": [
+    {
+     "term": "percentage",
+     "def": "a number of parts out of 100"
+    },
+    {
+     "term": "multiplier",
+     "def": "the decimal equal to the percentage, such as 0.35 for 35%"
+    },
+    {
+     "term": "build up",
+     "def": "combine easy percentages to make harder ones"
+    },
+    {
+     "term": "of",
+     "def": "multiply"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Zakah is 2.5% of savings. How would you find 2.5% of £3600 in your head?",
+    "a": "10% = 360, so 2.5% (a quarter of 10%) = £90."
+   },
+   "starter": [
+    {
+     "q": "10% of 480",
+     "a": "48",
+     "mins": 1
+    },
+    {
+     "q": "1% of 650",
+     "a": "6.5",
+     "mins": 1
+    },
+    {
+     "q": "Write 35% as a decimal",
+     "a": "0.35",
+     "mins": 1
+    },
+    {
+     "q": "Simplify 2⁴ × 2³",
+     "a": "2⁷",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Build up",
+     "bullets": [
+      "10% ÷ 10",
+      "5% is half of 10%",
+      "1% ÷ 100"
+     ],
+     "note": "Find 35% of 180.",
+     "table": {
+      "head": [
+       "Part",
+       "Working",
+       "Value"
+      ],
+      "rows": [
+       [
+        "10%",
+        "180 ÷ 10",
+        "18"
+       ],
+       [
+        "30%",
+        "18 × 3",
+        "54"
+       ],
+       [
+        "5%",
+        "18 ÷ 2",
+        "9"
+       ],
+       [
+        "35%",
+        "54 + 9",
+        "63"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "2.5%",
+     "bullets": [
+      "10% ÷ 4 or 5% ÷ 2"
+     ],
+     "note": "Zakah example.",
+     "model": {
+      "problem": "Find 2.5% of £3600",
+      "steps": [
+       "10% = 360",
+       "5% = 180",
+       "2.5% = 90"
+      ],
+      "answer": "£90"
+     }
+    },
+    {
+     "heading": "Multiplier",
+     "bullets": [
+      "Percentage ÷ 100 = multiplier"
+     ],
+     "note": "Best for awkward percentages on a calculator.",
+     "model": {
+      "problem": "Find 17% of 64 kg",
+      "steps": [
+       "17% = 0.17",
+       "0.17 × 64 = 10.88"
+      ],
+      "answer": "10.88 kg"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Which multiplier?"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Which multiplier finds 8%?",
+      "options": [
+       "0.08",
+       "0.8",
+       "8",
+       "1.08"
+      ],
+      "answer": 0,
+      "why": "8% = 8/100 = 0.08. 0.8 is 80%."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Find 45% of 260 without a calculator",
+     "a": "117",
+     "mins": 2,
+     "model": "10% = 26, 40% = 104, 5% = 13, 45% = 117."
+    },
+    {
+     "q": "Find 2.5% of £8400",
+     "a": "£210",
+     "mins": 1
+    },
+    {
+     "q": "Find 23% of 75 with a calculator",
+     "a": "17.25",
+     "mins": 1
+    },
+    {
+     "q": "Find 120% of 35",
+     "a": "42",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) 15% of 340 (b) 65% of 80 (c) 2.5% of £12 000 (d) 7% of 350 (e) 37% of 240 (calculator)",
+     "a": "(a) 51 (b) 52 (c) £300 (d) 24.5 (e) 88.8",
+     "mins": 5,
+     "model": "(a) 34 + 17 = 51.\n(b) 50% = 40, 10% = 8, 5% = 4, total 52.\n(c) 10% = 1200, ÷ 4 = 300.\n(d) 1% = 3.5, × 7 = 24.5.\n(e) 0.37 × 240 = 88.8."
+    },
+    {
+     "q": "Extend: A family's savings of £5240 have been held a full lunar year above the nisab. Work out the zakah at 2.5%.",
+     "a": "£131",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: 15% of a number is 42. What is 35% of the same number?",
+     "a": "5% = 14, so 35% = 98",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "What is 30% of 70?",
+     "a": "A) 21",
+     "mins": 1,
+     "options": [
+      "21",
+      "2.1",
+      "210"
+     ]
+    },
+    {
+     "q": "Find 2.5% of 640",
+     "a": "16",
+     "mins": 1
+    },
+    {
+     "q": "Big question: which method is quickest for 2.5%, and which for 37%?",
+     "a": "Building from 10% (÷ 4) for 2.5%; a multiplier (0.37) for 37%.",
+     "mins": 1
+    }
+   ],
+   "homework": "Percentages of amounts: 10 portal questions, half without a calculator.",
+   "send": "Support: building-up table. EAL: 'multiplier', 'percent'. Stretch: 0.5% and 112.5% of 840.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 Unit 10 Percentages, decimals and fractions (10.1 to 10.4)",
+    "Scientific calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "charity collection box",
+     "alt": "A charity collection box",
+     "for": "hook"
+    },
+    {
+     "find": "hundred square grid",
+     "alt": "A hundred square for percentages",
+     "for": "keywords"
+    }
+   ],
+   "islamicLink": {
+    "text": "Zakah (زَكَاة) on savings held for a lunar year above the nisab is 2.5%. Finding 2.5% of an amount is a percentage of an amount, so this skill helps a Muslim pay exactly what is due.",
+    "at": "start"
+   }
+  },
+  {
+   "unit": "Spring 2: Indices, fractions, percentages and standard form; number sense",
+   "n": 40,
+   "title": "Percentage increase and decrease",
+   "duration": 50,
+   "bigQuestion": "If a price goes up 10% and then down 10%, is it back where it started?",
+   "objectives": [
+    "To understand how to increase and decrease amounts by a percentage"
+   ],
+   "successCriteria": [
+    "All: increase or decrease by finding the percentage and adding or subtracting",
+    "Most: use a single multiplier such as 1.15 or 0.85",
+    "Some: explain why up 10% then down 10% does not return to the start"
+   ],
+   "crossCurricular": "Business: mark-up and profit",
+   "smsc": "Moral: honest pricing in trade; the Muslim trader is truthful about prices",
+   "keywords": [
+    {
+     "term": "increase",
+     "def": "make bigger"
+    },
+    {
+     "term": "decrease",
+     "def": "make smaller"
+    },
+    {
+     "term": "multiplier",
+     "def": "the decimal you multiply by, such as 1.2 for a 20% increase"
+    },
+    {
+     "term": "original",
+     "def": "the amount before the change"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A £100 jacket goes up 10%, then the new price goes down 10%. Is it £100 again?",
+    "a": "No: 110 × 0.9 = £99. The second 10% is of a bigger amount."
+   },
+   "starter": [
+    {
+     "q": "20% of 45",
+     "a": "9",
+     "mins": 1
+    },
+    {
+     "q": "2.5% of 800",
+     "a": "20",
+     "mins": 1
+    },
+    {
+     "q": "100% + 15% = ?",
+     "a": "115%",
+     "mins": 1
+    },
+    {
+     "q": "Write 115% as a decimal",
+     "a": "1.15",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Two-step method",
+     "bullets": [
+      "Find the percentage, then add or subtract"
+     ],
+     "note": "Clear for non-calculator questions.",
+     "model": {
+      "problem": "Increase £60 by 15%",
+      "steps": [
+       "10% = 6, 5% = 3, 15% = 9",
+       "60 + 9 = 69"
+      ],
+      "answer": "£69"
+     }
+    },
+    {
+     "heading": "Single multiplier",
+     "bullets": [
+      "Increase: 100% + p%",
+      "Decrease: 100% - p%"
+     ],
+     "note": "Faster with a calculator.",
+     "model": {
+      "problem": "Decrease 240 kg by 35%",
+      "steps": [
+       "100% - 35% = 65% = 0.65",
+       "0.65 × 240 = 156"
+      ],
+      "answer": "156 kg"
+     }
+    },
+    {
+     "heading": "Multipliers",
+     "bullets": [
+      "Write the multiplier first"
+     ],
+     "note": "Pupils fill the last column before the reveal.",
+     "table": {
+      "head": [
+       "Change",
+       "Percentage left",
+       "Multiplier"
+      ],
+      "rows": [
+       [
+        "Up 20%",
+        "120%",
+        "1.2"
+       ],
+       [
+        "Down 20%",
+        "80%",
+        "0.8"
+       ],
+       [
+        "Up 3%",
+        "103%",
+        "1.03"
+       ],
+       [
+        "Down 7.5%",
+        "92.5%",
+        "0.925"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Do it in order"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "£100 up 10%, then down 10%. What is the final price?",
+      "options": [
+       "£99",
+       "£100",
+       "£101",
+       "£90"
+      ],
+      "answer": 0,
+      "why": "100 × 1.1 = 110, then 110 × 0.9 = 99. The 10% decrease is of the bigger amount."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Increase £80 by 25%",
+     "a": "£100",
+     "mins": 2,
+     "model": "25% of 80 = 20.\n80 + 20 = 100."
+    },
+    {
+     "q": "Decrease 450 by 10%",
+     "a": "405",
+     "mins": 1
+    },
+    {
+     "q": "Write the multiplier for a 6% decrease",
+     "a": "0.94",
+     "mins": 1
+    },
+    {
+     "q": "Increase 72 by 12.5% using a multiplier",
+     "a": "81",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) Increase £150 by 30% (b) Decrease 64 kg by 25% (c) Increase 820 by 4% (d) Decrease £2.40 by 15% (e) Increase 36 by 150%",
+     "a": "(a) £195 (b) 48 kg (c) 852.8 (d) £2.04 (e) 90",
+     "mins": 5,
+     "model": "(a) 1.3 × 150 = 195.\n(b) 0.75 × 64 = 48.\n(c) 1.04 × 820 = 852.8.\n(d) 0.85 × 2.40 = 2.04.\n(e) 2.5 × 36 = 90."
+    },
+    {
+     "q": "Extend: A shopkeeper buys a rug for £180 and sells it at 40% more. In a sale he takes 20% off the selling price. Does he still make a profit?",
+     "a": "Selling price £252; sale price £201.60; still £21.60 profit",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Show that a 20% increase followed by a 20% decrease is the same as a 4% decrease.",
+     "a": "1.2 × 0.8 = 0.96, and 0.96 = 100% - 4%",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Which multiplier increases by 8%?",
+     "a": "A) 1.08",
+     "mins": 1,
+     "options": [
+      "1.08",
+      "0.08",
+      "1.8"
+     ]
+    },
+    {
+     "q": "Decrease £90 by 30%",
+     "a": "£63",
+     "mins": 1
+    },
+    {
+     "q": "Big question: answer the ponder question.",
+     "a": "No: 100 × 1.1 × 0.9 = £99, because the 10% decrease is taken from £110.",
+     "mins": 1
+    }
+   ],
+   "homework": "Percentage change: 10 portal questions using multipliers.",
+   "send": "Support: multiplier table. EAL: 'increase', 'decrease', 'original'. Stretch: increase by 17.5% then decrease by 17.5%.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 Unit 10 Percentages, decimals and fractions (10.1 to 10.4)",
+    "Scientific calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "price label shop",
+     "alt": "A price label",
+     "for": "hook"
+    },
+    {
+     "find": "woven rug market",
+     "alt": "A woven rug on a market stall",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Indices, fractions, percentages and standard form; number sense",
+   "n": 41,
+   "title": "Percentage change",
+   "duration": 50,
+   "bigQuestion": "Did the price rise by more or did the wage?",
+   "objectives": [
+    "To understand how to express a change as a percentage of the original amount"
+   ],
+   "successCriteria": [
+    "All: find the actual change",
+    "Most: write the change as a percentage of the original",
+    "Some: compare two percentage changes and justify which is greater"
+   ],
+   "crossCurricular": "Business: profit and loss",
+   "smsc": "Moral: fair profit in trade, which Islam permits, unlike riba",
+   "keywords": [
+    {
+     "term": "percentage change",
+     "def": "change ÷ original × 100"
+    },
+    {
+     "term": "original",
+     "def": "the starting amount"
+    },
+    {
+     "term": "profit",
+     "def": "money gained when selling for more than cost"
+    },
+    {
+     "term": "loss",
+     "def": "money lost when selling for less than cost"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A cake's price goes from £4 to £5. A car's from £10 000 to £10 500. Which price went up more?",
+    "a": "The cake: up 25%. The car rose £500 but only 5%."
+   },
+   "starter": [
+    {
+     "q": "Increase 60 by 20%",
+     "a": "72",
+     "mins": 1
+    },
+    {
+     "q": "Decrease 50 by 8%",
+     "a": "46",
+     "mins": 1
+    },
+    {
+     "q": "Write 12/48 as a percentage",
+     "a": "25%",
+     "mins": 1
+    },
+    {
+     "q": "3/5 as a percentage",
+     "a": "60%",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "The formula",
+     "bullets": [
+      "Percentage change = change ÷ original × 100",
+      "Always divide by the ORIGINAL"
+     ],
+     "note": "Write the formula in books."
+    },
+    {
+     "heading": "Increase",
+     "bullets": [
+      "Find the change first"
+     ],
+     "note": "Cake example.",
+     "model": {
+      "problem": "£4 rises to £5. Percentage increase?",
+      "steps": [
+       "Change: 5 - 4 = 1",
+       "1 ÷ 4 = 0.25",
+       "× 100 = 25%"
+      ],
+      "answer": "25%"
+     }
+    },
+    {
+     "heading": "Decrease",
+     "bullets": [
+      "Same formula"
+     ],
+     "note": "A loss in trade.",
+     "model": {
+      "problem": "A trader buys at £80 and sells at £68. Percentage loss?",
+      "steps": [
+       "Change: 80 - 68 = 12",
+       "12 ÷ 80 = 0.15",
+       "15% loss"
+      ],
+      "answer": "15%"
+     }
+    },
+    {
+     "heading": "Divide by the original",
+     "bullets": [
+      "Not the new amount"
+     ],
+     "note": "Common error.",
+     "misconception": {
+      "wrong": "£4 to £5: 1 ÷ 5 = 20%",
+      "right": "1 ÷ 4 = 25% (divide by the original £4)"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Change ÷ original"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "A wage rises from £400 to £420. Percentage increase?",
+      "options": [
+       "5%",
+       "20%",
+       "4.76%",
+       "2%"
+      ],
+      "answer": 0,
+      "why": "20 ÷ 400 = 0.05 = 5%. 4.76% divides by the new wage."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "A plant grows from 20 cm to 26 cm. Percentage increase?",
+     "a": "30%",
+     "mins": 2,
+     "model": "Change 6.\n6 ÷ 20 = 0.3 = 30%."
+    },
+    {
+     "q": "Answer the ponder: the car from £10 000 to £10 500",
+     "a": "5% (the cake rose 25%)",
+     "mins": 1
+    },
+    {
+     "q": "A phone falls from £250 to £200. Percentage decrease?",
+     "a": "20%",
+     "mins": 1
+    },
+    {
+     "q": "Bought for £15, sold for £21. Percentage profit?",
+     "a": "40%",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Percentage change: (a) 50 to 65 (b) 120 to 90 (c) £2.50 to £3.00 (d) 800 g to 760 g (e) 36 to 63",
+     "a": "(a) 30% increase (b) 25% decrease (c) 20% increase (d) 5% decrease (e) 75% increase",
+     "mins": 5,
+     "model": "(a) 15/50 = 0.3.\n(b) 30/120 = 0.25.\n(c) 0.5/2.5 = 0.2.\n(d) 40/800 = 0.05.\n(e) 27/36 = 0.75."
+    },
+    {
+     "q": "Extend: Year 8 has 75 pupils in 2027 and 84 in 2028. Year 7 grows from 60 to 69. Which grew by the greater percentage?",
+     "a": "Year 7: 15% beats Year 8: 12%",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: A price rose by 25% to £45. What was the original price, and what percentage of the new price is the rise?",
+     "a": "£36; the rise of £9 is 20% of £45",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Price £20 to £23. Percentage increase?",
+     "a": "A) 15%",
+     "mins": 1,
+     "options": [
+      "15%",
+      "3%",
+      "13%"
+     ]
+    },
+    {
+     "q": "Mass 500 g to 450 g. Percentage decrease?",
+     "a": "10%",
+     "mins": 1
+    },
+    {
+     "q": "Big question: which went up more in the ponder question?",
+     "a": "The cake: 25% against 5%, even though the car rose by more pounds.",
+     "mins": 1
+    }
+   ],
+   "homework": "Percentage change: 8 portal questions, including two on profit and loss in trade.",
+   "send": "Support: formula card with a worked example. EAL: 'original', 'change', 'profit', 'loss'. Stretch: percentage change from 0.4 to 0.45.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 Unit 10 Percentages, decimals and fractions (10.1 to 10.4)",
+    "Scientific calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "market stall fruit",
+     "alt": "A market stall selling fruit",
+     "for": "teach:3"
+    },
+    {
+     "find": "growing plant seedling",
+     "alt": "A growing seedling",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Indices, fractions, percentages and standard form; number sense",
+   "n": 42,
+   "title": "Converting and ordering fractions, decimals and percentages",
+   "duration": 50,
+   "bigQuestion": "Why does 1/3 never stop as a decimal but 1/4 does?",
+   "objectives": [
+    "To understand which fractions give terminating or recurring decimals and how to order FDP"
+   ],
+   "successCriteria": [
+    "All: convert fractions to decimals by division, including recurring decimals",
+    "Most: order a mixed list of fractions, decimals and percentages",
+    "Some: predict whether a fraction terminates from its denominator"
+   ],
+   "smsc": "Spiritual: some patterns repeat forever, a reminder of the infinite, which only Allah encompasses",
+   "keywords": [
+    {
+     "term": "terminating decimal",
+     "def": "a decimal that ends, such as 0.25"
+    },
+    {
+     "term": "recurring decimal",
+     "def": "a decimal with a repeating pattern, such as 0.333..."
+    },
+    {
+     "term": "dot notation",
+     "def": "dots written over the digits that repeat"
+    },
+    {
+     "term": "equivalent",
+     "def": "equal in value"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Why does 1/3 never stop as a decimal but 1/4 does? Try 1/5, 1/6, 1/8 and 1/9 too.",
+    "a": "1/4 terminates because 4 = 2 × 2 divides 100. 1/3 leaves remainder 1 at every step, so the 3 repeats."
+   },
+   "starter": [
+    {
+     "q": "Write 3/8 as a decimal",
+     "a": "0.375",
+     "mins": 1
+    },
+    {
+     "q": "Write 0.45 as a fraction",
+     "a": "9/20",
+     "mins": 1
+    },
+    {
+     "q": "Percentage change 40 to 46",
+     "a": "15%",
+     "mins": 1
+    },
+    {
+     "q": "Simplify (3²)⁴",
+     "a": "3⁸",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Short division",
+     "bullets": [
+      "Divide numerator by denominator"
+     ],
+     "note": "1/3: the remainder 1 repeats forever. In books, write dots over the first and last repeating digits.",
+     "model": {
+      "problem": "Write 2/11 as a decimal",
+      "steps": [
+       "2 ÷ 11 = 0.181818...",
+       "The digits 18 repeat"
+      ],
+      "answer": "0.181818... (18 recurring)"
+     }
+    },
+    {
+     "heading": "Terminating or recurring?",
+     "bullets": [
+      "Denominators with only 2s and 5s terminate"
+     ],
+     "note": "Simplify first, then look at prime factors of the denominator.",
+     "table": {
+      "head": [
+       "Fraction",
+       "Denominator",
+       "Decimal"
+      ],
+      "rows": [
+       [
+        "1/4",
+        "2 × 2",
+        "0.25"
+       ],
+       [
+        "1/5",
+        "5",
+        "0.2"
+       ],
+       [
+        "1/8",
+        "2 × 2 × 2",
+        "0.125"
+       ],
+       [
+        "1/3",
+        "3",
+        "0.333..."
+       ],
+       [
+        "1/6",
+        "2 × 3",
+        "0.1666..."
+       ],
+       [
+        "1/9",
+        "3 × 3",
+        "0.111..."
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Ordering",
+     "bullets": [
+      "Change everything to decimals"
+     ],
+     "note": "Write recurring decimals to 3 or 4 d.p. to compare.",
+     "model": {
+      "problem": "Order 2/3, 0.67, 66%",
+      "steps": [
+       "2/3 = 0.6666...",
+       "0.67 = 0.6700",
+       "66% = 0.6600"
+      ],
+      "answer": "66%, 2/3, 0.67"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Look at the denominator"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Which gives a recurring decimal?",
+      "options": [
+       "7/12",
+       "3/20",
+       "9/40",
+       "5/16"
+      ],
+      "answer": 0,
+      "why": "12 = 2 × 2 × 3 has a factor 3, so 7/12 recurs. 20, 40 and 16 have only 2s and 5s."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Write 5/6 as a decimal",
+     "a": "0.8333... (3 recurring)",
+     "mins": 2,
+     "model": "5 ÷ 6: 50 ÷ 6 = 8 r 2, then 20 ÷ 6 = 3 r 2, and the 3 repeats: 0.8333..."
+    },
+    {
+     "q": "Order 0.3, 1/3, 33%",
+     "a": "0.3, 33%, 1/3",
+     "mins": 1
+    },
+    {
+     "q": "Will 7/25 terminate? Why?",
+     "a": "Yes: 25 = 5 × 5; 7/25 = 0.28",
+     "mins": 1
+    },
+    {
+     "q": "Write 4/9 as a decimal",
+     "a": "0.444... (4 recurring)",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) Write 7/8, 5/9, 3/11 as decimals (b) Order 0.71, 5/7, 70.5%, 0.777...",
+     "a": "(a) 0.875, 0.555..., 0.272727... (b) 70.5%, 0.71, 5/7, 0.777...",
+     "mins": 6,
+     "model": "(a) 7 ÷ 8 = 0.875; 5 ÷ 9 = 0.555...; 3 ÷ 11 = 0.2727....\n(b) 0.705, 0.71, 0.7142..., 0.7777...."
+    },
+    {
+     "q": "Extend: Without dividing, say which of 3/40, 4/15, 11/32 and 5/14 terminate.",
+     "a": "3/40 and 11/32 terminate; 4/15 and 5/14 recur",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: 1/7 = 0.142857 recurring. Use it to write 2/7 and 3/7 without dividing.",
+     "a": "2/7 = 0.285714..., 3/7 = 0.428571...",
+     "mins": 3
+    }
+   ],
+   "exit": [
+    {
+     "q": "Which is a recurring decimal?",
+     "a": "A) 2/3",
+     "mins": 1,
+     "options": [
+      "2/3",
+      "3/4",
+      "2/5"
+     ]
+    },
+    {
+     "q": "Order 0.45, 4/9, 44%",
+     "a": "44%, 4/9, 0.45",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why does 1/3 never stop but 1/4 does?",
+     "a": "Dividing by 3 always leaves remainder 1; 4 = 2 × 2 divides 100 exactly.",
+     "mins": 1
+    }
+   ],
+   "homework": "Terminating or recurring: classify 12 fractions, then convert them (portal).",
+   "send": "Support: short division frame. EAL: 'terminate', 'recur', 'repeat'. Stretch: why 0.999... = 1.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 10.1 Fractions and decimals and 10.2 Equivalent proportions",
+    "Scientific calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "short division written on paper",
+     "alt": "Short division set out on paper",
+     "for": "teach:1"
+    },
+    {
+     "find": "repeating pattern tiles",
+     "alt": "A repeating tile pattern",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Indices, fractions, percentages and standard form; number sense",
+   "n": 43,
+   "title": "Reverse percentages",
+   "duration": 50,
+   "bigQuestion": "If a sale price is £60 after 25% off, was the original £75?",
+   "objectives": [
+    "To understand how to find the original amount before a percentage change"
+   ],
+   "successCriteria": [
+    "All: say what percentage the final amount represents",
+    "Most: find 1% and then 100% from the final amount",
+    "Some: use division by a multiplier to find the original"
+   ],
+   "crossCurricular": "Business: prices before and after VAT",
+   "smsc": "Moral: checking claims about savings so we are not misled",
+   "keywords": [
+    {
+     "term": "reverse percentage",
+     "def": "working back to the original amount"
+    },
+    {
+     "term": "original",
+     "def": "the amount before the change"
+    },
+    {
+     "term": "multiplier",
+     "def": "the decimal for the percentage left, such as 0.75"
+    },
+    {
+     "term": "100%",
+     "def": "the whole original amount"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A coat is £60 in a 25% off sale. Ahmed says the original was £75. Is he right?",
+    "a": "No: £60 is 75% of the original, so it was £80."
+   },
+   "starter": [
+    {
+     "q": "Increase 40 by 25%",
+     "a": "50",
+     "mins": 1
+    },
+    {
+     "q": "Decrease 80 by 25%",
+     "a": "60",
+     "mins": 1
+    },
+    {
+     "q": "Multiplier for 15% off",
+     "a": "0.85",
+     "mins": 1
+    },
+    {
+     "q": "Write 5/6 as a decimal",
+     "a": "0.8333...",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Which percentage is it?",
+     "bullets": [
+      "After 25% off, £60 is 75% of the original",
+      "Not 100%!"
+     ],
+     "note": "Draw a bar of four 25% parts; three are shaded = £60."
+    },
+    {
+     "heading": "Unitary method",
+     "bullets": [
+      "Find 1%, then 100%"
+     ],
+     "note": "Bar model alongside.",
+     "model": {
+      "problem": "75% = £60. Find 100%.",
+      "steps": [
+       "1% = 60 ÷ 75 = 0.8",
+       "100% = 0.8 × 100 = 80"
+      ],
+      "answer": "£80, so Ahmed is wrong"
+     }
+    },
+    {
+     "heading": "Multiplier method",
+     "bullets": [
+      "Original × multiplier = new",
+      "So original = new ÷ multiplier"
+     ],
+     "note": "Faster with a calculator.",
+     "model": {
+      "problem": "After a 20% increase a rent is £720. Original?",
+      "steps": [
+       "Multiplier 1.2",
+       "720 ÷ 1.2 = 600"
+      ],
+      "answer": "£600"
+     }
+    },
+    {
+     "heading": "Do not take the percentage of the new amount",
+     "bullets": [
+      "The percentage is of the original"
+     ],
+     "note": "Show why £75 is wrong: 25% off £75 is £56.25.",
+     "misconception": {
+      "wrong": "£60 + 25% of £60 = £75",
+      "right": "£60 ÷ 0.75 = £80"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Divide by the multiplier"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "After 10% off, a book is £18. Original price?",
+      "options": [
+       "£20",
+       "£19.80",
+       "£16.20",
+       "£28"
+      ],
+      "answer": 0,
+      "why": "18 ÷ 0.9 = 20. £19.80 adds 10% of £18."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "After a 30% decrease a value is 140. Find the original.",
+     "a": "200",
+     "mins": 2,
+     "model": "140 is 70%.\n1% = 2, 100% = 200.\nOr 140 ÷ 0.7 = 200."
+    },
+    {
+     "q": "A price including 20% VAT is £96. Price before VAT?",
+     "a": "£80",
+     "mins": 1
+    },
+    {
+     "q": "After a 5% rise, a wage is £420. Original wage?",
+     "a": "£400",
+     "mins": 1
+    },
+    {
+     "q": "40% of a number is 28. Find the number.",
+     "a": "70",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Find the original: (a) 15% off, now £68 (b) up 25%, now 450 (c) 60% off, now £34 (d) up 8%, now £540",
+     "a": "(a) £80 (b) 360 (c) £85 (d) £500",
+     "mins": 5,
+     "model": "(a) 68 ÷ 0.85 = 80.\n(b) 450 ÷ 1.25 = 360.\n(c) 34 ÷ 0.4 = 85.\n(d) 540 ÷ 1.08 = 500."
+    },
+    {
+     "q": "Extend: A school's roll rose by 12% to 168 pupils. How many joined?",
+     "a": "Original 150, so 18 joined",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: A shop adds 40% to its cost, then has a 20% off sale. The sale price is £44.80. What was the cost?",
+     "a": "Overall multiplier 1.4 × 0.8 = 1.12; 44.80 ÷ 1.12 = £40",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "After 50% off, a price is £35. Original?",
+     "a": "A) £70",
+     "mins": 1,
+     "options": [
+      "£70",
+      "£52.50",
+      "£17.50"
+     ]
+    },
+    {
+     "q": "After a 10% increase, a value is 99. Original?",
+     "a": "90",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why is Ahmed wrong?",
+     "a": "£60 is 75% of the original, so 60 ÷ 0.75 = £80; he took 25% of the sale price instead.",
+     "mins": 1
+    }
+   ],
+   "homework": "Reverse percentages: 8 portal questions, show the multiplier each time.",
+   "send": "Support: bar model template. EAL: 'reverse', 'original'. Stretch: reverse a repeated change (two years of 10% growth gives 242).",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 10.4 Percentages of amounts (reverse problems)",
+    "Scientific calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "sale tag 25 percent off",
+     "alt": "A 25% off sale tag",
+     "for": "hook"
+    },
+    {
+     "find": "bar model percentages",
+     "alt": "A bar split into four 25% parts",
+     "for": "teach:1"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Indices, fractions, percentages and standard form; number sense",
+   "n": 44,
+   "title": "Standard form for large numbers",
+   "duration": 50,
+   "bigQuestion": "How do scientists write the distance to the Sun without a page of zeros?",
+   "objectives": [
+    "To understand how standard form writes large numbers as a number from 1 to 10 times a power of 10"
+   ],
+   "successCriteria": [
+    "All: write powers of 10 as ordinary numbers and back",
+    "Most: convert large numbers to and from standard form",
+    "Some: order large numbers written in standard form"
+   ],
+   "crossCurricular": "Science: distances in space and sizes of cells",
+   "smsc": "Spiritual: reflecting on the vastness of the heavens and the earth that Allah created",
+   "keywords": [
+    {
+     "term": "standard form",
+     "def": "A × 10ⁿ where 1 ≤ A < 10"
+    },
+    {
+     "term": "power of 10",
+     "def": "10, 100, 1000 written as 10¹, 10², 10³"
+    },
+    {
+     "term": "ordinary number",
+     "def": "a number written out in full"
+    },
+    {
+     "term": "order of magnitude",
+     "def": "the size shown by the power of 10"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "The Sun is about 150 000 000 km from Earth. How could you write that with far fewer zeros?",
+    "a": "1.5 × 10⁸ km: 1.5 times ten multiplied by itself 8 times."
+   },
+   "starter": [
+    {
+     "q": "10⁴ as a number",
+     "a": "10 000",
+     "mins": 1
+    },
+    {
+     "q": "Simplify 10³ × 10²",
+     "a": "10⁵",
+     "mins": 1
+    },
+    {
+     "q": "After 20% off, £48. Original?",
+     "a": "£60",
+     "mins": 1
+    },
+    {
+     "q": "4.5 × 100",
+     "a": "450",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Powers of 10",
+     "bullets": [
+      "Index = number of zeros (for whole numbers)"
+     ],
+     "note": "Link to place value.",
+     "table": {
+      "head": [
+       "Power",
+       "Number"
+      ],
+      "rows": [
+       [
+        "10¹",
+        "10"
+       ],
+       [
+        "10²",
+        "100"
+       ],
+       [
+        "10³",
+        "1000"
+       ],
+       [
+        "10⁶",
+        "1 000 000"
+       ],
+       [
+        "10⁹",
+        "1 000 000 000"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Writing in standard form",
+     "bullets": [
+      "Put the point after the first non-zero digit",
+      "Count the places moved"
+     ],
+     "note": "A must be from 1 up to, not including, 10.",
+     "model": {
+      "problem": "Write 150 000 000 in standard form",
+      "steps": [
+       "A = 1.5",
+       "The point moves 8 places",
+       "1.5 × 10⁸"
+      ],
+      "answer": "1.5 × 10⁸ km"
+     }
+    },
+    {
+     "heading": "A must be from 1 to 10",
+     "bullets": [
+      "15 × 10⁷ is not standard form"
+     ],
+     "note": "Common error.",
+     "misconception": {
+      "wrong": "150 000 000 = 15 × 10⁷",
+      "right": "150 000 000 = 1.5 × 10⁸"
+     }
+    },
+    {
+     "heading": "Back to an ordinary number",
+     "bullets": [
+      "Move the point n places right"
+     ],
+     "note": "Fill gaps with zeros.",
+     "model": {
+      "problem": "Write 3.07 × 10⁵ as an ordinary number",
+      "steps": [
+       "Move the point 5 places right",
+       "307 000"
+      ],
+      "answer": "307 000"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Is A between 1 and 10?"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Which is in standard form?",
+      "options": [
+       "4.2 × 10⁶",
+       "42 × 10⁵",
+       "0.42 × 10⁷",
+       "4.2 × 6¹⁰"
+      ],
+      "answer": 0,
+      "why": "Only 4.2 × 10⁶ has 1 ≤ A < 10 and a power of 10."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Write 6 400 000 in standard form",
+     "a": "6.4 × 10⁶",
+     "mins": 2,
+     "model": "Point after the 6: 6.4.\nIt moved 6 places, so 6.4 × 10⁶."
+    },
+    {
+     "q": "Write 9.1 × 10⁴ as an ordinary number",
+     "a": "91 000",
+     "mins": 1
+    },
+    {
+     "q": "Write 25 000 000 000 in standard form",
+     "a": "2.5 × 10¹⁰",
+     "mins": 1
+    },
+    {
+     "q": "Which is larger: 3.2 × 10⁷ or 8.9 × 10⁶?",
+     "a": "3.2 × 10⁷",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) Write in standard form: 7000, 480 000, 52 300 000 (b) Write as ordinary numbers: 2 × 10³, 6.05 × 10⁷, 1.234 × 10⁵",
+     "a": "(a) 7 × 10³, 4.8 × 10⁵, 5.23 × 10⁷ (b) 2000, 60 500 000, 123 400",
+     "mins": 5,
+     "model": "(a) 7000: 3 places.\n480 000: 4.8, 5 places.\n52 300 000: 5.23, 7 places.\n(b) move the point right 3, 7 and 5 places."
+    },
+    {
+     "q": "Extend: Order from smallest: 4.5 × 10⁶, 9 × 10⁵, 1.2 × 10⁷, 6.1 × 10⁶",
+     "a": "9 × 10⁵, 4.5 × 10⁶, 6.1 × 10⁶, 1.2 × 10⁷",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Write 34 × 10⁵ correctly in standard form.",
+     "a": "3.4 × 10⁶",
+     "mins": 3
+    }
+   ],
+   "exit": [
+    {
+     "q": "Write 50 000 in standard form.",
+     "a": "A) 5 × 10⁴",
+     "mins": 1,
+     "options": [
+      "5 × 10⁴",
+      "5 × 10⁵",
+      "50 × 10³"
+     ]
+    },
+    {
+     "q": "Write 7.3 × 10³ as an ordinary number",
+     "a": "7300",
+     "mins": 1
+    },
+    {
+     "q": "Big question: write the Earth to Sun distance in standard form.",
+     "a": "1.5 × 10⁸ km",
+     "mins": 1
+    }
+   ],
+   "homework": "Standard form (large numbers): 10 portal questions using real distances and populations.",
+   "send": "Support: place value grid. EAL: 'standard form', 'power of ten'. Stretch: write 3 × 10⁴ + 5 × 10³ in standard form.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 1.4 Standard form",
+    "Scientific calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "the Sun from space",
+     "alt": "The Sun photographed from space",
+     "for": "hook"
+    },
+    {
+     "find": "Earth from space",
+     "alt": "Earth seen from space",
+     "for": "keywords"
+    }
+   ],
+   "islamicLink": {
+    "text": "Muhammad ibn Musa al-Khwarizmi (محمد بن موسى الخوارزمي), working in Baghdad in the 9th century, wrote a book on Hindu-Arabic numerals that spread place value and zero to the world. Our powers of ten and standard form rest on that place value system.",
+    "at": "start"
+   }
+  },
+  {
+   "unit": "Spring 2: Indices, fractions, percentages and standard form; number sense",
+   "n": 45,
+   "title": "Standard form for small numbers",
+   "duration": 50,
+   "bigQuestion": "How do we write the width of a hair or a germ?",
+   "objectives": [
+    "To understand how negative powers of 10 write very small numbers in standard form"
+   ],
+   "successCriteria": [
+    "All: write negative powers of 10 as decimals",
+    "Most: convert small numbers to and from standard form",
+    "Some: order small and large numbers in standard form"
+   ],
+   "crossCurricular": "Science: cell sizes and microscopes",
+   "smsc": "Spiritual: wonder at the tiny details of creation that we cannot see without a microscope",
+   "keywords": [
+    {
+     "term": "negative power",
+     "def": "a power such as 10⁻³ = 0.001"
+    },
+    {
+     "term": "standard form",
+     "def": "A × 10ⁿ with 1 ≤ A < 10"
+    },
+    {
+     "term": "decimal place",
+     "def": "a position after the decimal point"
+    },
+    {
+     "term": "micrometre",
+     "def": "one millionth of a metre"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A human hair is about 0.00008 m wide. What would 10 to the power of a negative number mean?",
+    "a": "8 × 10⁻⁵ m: a negative power means dividing by 10 that many times."
+   },
+   "starter": [
+    {
+     "q": "Write 4 300 000 in standard form",
+     "a": "4.3 × 10⁶",
+     "mins": 1
+    },
+    {
+     "q": "Write 2.1 × 10⁵ as a number",
+     "a": "210 000",
+     "mins": 1
+    },
+    {
+     "q": "10³ ÷ 10⁵ as a power",
+     "a": "10⁻²",
+     "mins": 1
+    },
+    {
+     "q": "0.07 × 100",
+     "a": "7",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Continue the pattern",
+     "bullets": [
+      "Each step divides by 10"
+     ],
+     "note": "10⁰ = 1, then the powers go negative.",
+     "table": {
+      "head": [
+       "Power",
+       "Number"
+      ],
+      "rows": [
+       [
+        "10²",
+        "100"
+       ],
+       [
+        "10¹",
+        "10"
+       ],
+       [
+        "10⁰",
+        "1"
+       ],
+       [
+        "10⁻¹",
+        "0.1"
+       ],
+       [
+        "10⁻²",
+        "0.01"
+       ],
+       [
+        "10⁻³",
+        "0.001"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Writing small numbers",
+     "bullets": [
+      "Point after the first non-zero digit",
+      "Count places moved: the power is negative"
+     ],
+     "note": "Model the hair width.",
+     "model": {
+      "problem": "Write 0.00008 in standard form",
+      "steps": [
+       "A = 8",
+       "The point moves 5 places right",
+       "8 × 10⁻⁵"
+      ],
+      "answer": "8 × 10⁻⁵ m"
+     }
+    },
+    {
+     "heading": "Back to a decimal",
+     "bullets": [
+      "Move the point n places left"
+     ],
+     "note": "Fill with zeros.",
+     "model": {
+      "problem": "Write 3.6 × 10⁻⁴ as a decimal",
+      "steps": [
+       "Move the point 4 places left",
+       "0.00036"
+      ],
+      "answer": "0.00036"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Count carefully"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Write 0.0042 in standard form",
+      "options": [
+       "4.2 × 10⁻³",
+       "4.2 × 10⁻²",
+       "42 × 10⁻⁴",
+       "4.2 × 10³"
+      ],
+      "answer": 0,
+      "why": "The point moves 3 places: 4.2 × 10⁻³. 42 × 10⁻⁴ has A bigger than 10."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Write 0.0005 in standard form",
+     "a": "5 × 10⁻⁴",
+     "mins": 2,
+     "model": "A = 5; the point moves 4 places right, so 10⁻⁴."
+    },
+    {
+     "q": "Write 7.1 × 10⁻² as a decimal",
+     "a": "0.071",
+     "mins": 1
+    },
+    {
+     "q": "Write 0.000 093 in standard form",
+     "a": "9.3 × 10⁻⁵",
+     "mins": 1
+    },
+    {
+     "q": "Which is smaller: 2 × 10⁻³ or 9 × 10⁻⁴?",
+     "a": "9 × 10⁻⁴",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) Write in standard form: 0.06, 0.00072, 0.000 001 5 (b) Write as decimals: 4 × 10⁻³, 2.08 × 10⁻⁵, 9.9 × 10⁻¹",
+     "a": "(a) 6 × 10⁻², 7.2 × 10⁻⁴, 1.5 × 10⁻⁶ (b) 0.004, 0.0000208, 0.99",
+     "mins": 5,
+     "model": "(a) 0.06: 2 places.\n0.00072: 4 places.\n0.0000015: 6 places.\n(b) move the point left 3, 5 and 1 places."
+    },
+    {
+     "q": "Extend: Order from smallest: 3 × 10⁻⁴, 5 × 10⁻⁵, 1.1 × 10⁻³, 8 × 10⁻⁴",
+     "a": "5 × 10⁻⁵, 3 × 10⁻⁴, 8 × 10⁻⁴, 1.1 × 10⁻³",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: A bacterium is 2 × 10⁻⁶ m long. How many fit end to end in 1 cm?",
+     "a": "1 cm = 10⁻² m; 10⁻² ÷ (2 × 10⁻⁶) = 5000",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Write 0.003 in standard form.",
+     "a": "A) 3 × 10⁻³",
+     "mins": 1,
+     "options": [
+      "3 × 10⁻³",
+      "3 × 10³",
+      "3 × 10⁻²"
+     ]
+    },
+    {
+     "q": "Write 5.5 × 10⁻² as a decimal",
+     "a": "0.055",
+     "mins": 1
+    },
+    {
+     "q": "Big question: what does a negative power of 10 mean?",
+     "a": "Dividing by 10 that many times: 10⁻³ = 1 ÷ 1000 = 0.001.",
+     "mins": 1
+    }
+   ],
+   "homework": "Standard form (small numbers): 10 portal questions on sizes of cells, hair and atoms.",
+   "send": "Support: place value grid with decimals. EAL: 'negative power', 'decimal place'. Stretch: write 0.4 × 10⁻³ in correct standard form.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 1.4 Standard form",
+    "Scientific calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "human hair under microscope",
+     "alt": "A strand of hair under a microscope",
+     "for": "hook"
+    },
+    {
+     "find": "bacteria microscope",
+     "alt": "Bacteria under a microscope",
+     "for": "teach:2"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Indices, fractions, percentages and standard form; number sense",
+   "n": 46,
+   "title": "Calculating with standard form",
+   "duration": 50,
+   "bigQuestion": "How many times heavier is the Sun than the Earth?",
+   "objectives": [
+    "To understand how to multiply, divide, add and subtract numbers in standard form"
+   ],
+   "successCriteria": [
+    "All: multiply and divide in standard form using the index laws",
+    "Most: adjust an answer so that A is between 1 and 10",
+    "Some: use a calculator's ×10ˣ key and add or subtract in standard form"
+   ],
+   "crossCurricular": "Science: masses of planets and the speed of light",
+   "smsc": "Spiritual: reflecting on the scale of the heavens and the earth",
+   "keywords": [
+    {
+     "term": "standard form",
+     "def": "A × 10ⁿ with 1 ≤ A < 10"
+    },
+    {
+     "term": "index laws",
+     "def": "add indices to multiply, subtract to divide"
+    },
+    {
+     "term": "×10ˣ key",
+     "def": "the calculator key for entering standard form"
+    },
+    {
+     "term": "adjust",
+     "def": "rewrite so A is between 1 and 10"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "The Sun's mass is about 2 × 10³⁰ kg and Earth's about 6 × 10²⁴ kg. Roughly how many Earths would balance the Sun?",
+    "a": "(2 × 10³⁰) ÷ (6 × 10²⁴) ≈ 3.3 × 10⁵: about 330 000 Earths."
+   },
+   "starter": [
+    {
+     "q": "Simplify 10⁷ × 10³",
+     "a": "10¹⁰",
+     "mins": 1
+    },
+    {
+     "q": "Simplify 10⁵ ÷ 10⁸",
+     "a": "10⁻³",
+     "mins": 1
+    },
+    {
+     "q": "Write 0.0062 in standard form",
+     "a": "6.2 × 10⁻³",
+     "mins": 1
+    },
+    {
+     "q": "Write 45 × 10³ in standard form",
+     "a": "4.5 × 10⁴",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Multiplying",
+     "bullets": [
+      "Multiply the numbers, add the powers"
+     ],
+     "note": "Then check A.",
+     "model": {
+      "problem": "(3 × 10⁴) × (4 × 10⁵)",
+      "steps": [
+       "3 × 4 = 12",
+       "10⁴ × 10⁵ = 10⁹",
+       "12 × 10⁹ = 1.2 × 10¹⁰"
+      ],
+      "answer": "1.2 × 10¹⁰"
+     }
+    },
+    {
+     "heading": "Dividing",
+     "bullets": [
+      "Divide the numbers, subtract the powers"
+     ],
+     "note": "The ponder question.",
+     "model": {
+      "problem": "(2 × 10³⁰) ÷ (6 × 10²⁴)",
+      "steps": [
+       "2 ÷ 6 = 0.333...",
+       "10³⁰ ÷ 10²⁴ = 10⁶",
+       "0.333 × 10⁶ ≈ 3.3 × 10⁵"
+      ],
+      "answer": "About 330 000 Earths"
+     }
+    },
+    {
+     "heading": "Adding",
+     "bullets": [
+      "Change to ordinary numbers (or the same power)"
+     ],
+     "note": "Index laws do not work for adding.",
+     "model": {
+      "problem": "(4 × 10³) + (5 × 10²)",
+      "steps": [
+       "4000 + 500 = 4500",
+       "4.5 × 10³"
+      ],
+      "answer": "4.5 × 10³"
+     }
+    },
+    {
+     "heading": "On a calculator",
+     "bullets": [
+      "Use the ×10ˣ key",
+      "3 × 10⁴ is typed 3 ×10ˣ 4",
+      "Write the answer in standard form"
+     ],
+     "note": "Pupils try (3 × 10⁴) × (4 × 10⁵) and compare."
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Adjust A"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "(5 × 10³) × (6 × 10²) = ?",
+      "options": [
+       "3 × 10⁶",
+       "30 × 10⁵",
+       "3 × 10⁵",
+       "11 × 10⁵"
+      ],
+      "answer": 0,
+      "why": "30 × 10⁵ = 3 × 10⁶. 30 × 10⁵ is right in value but not in standard form."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Work out (2 × 10⁶) × (4 × 10³)",
+     "a": "8 × 10⁹",
+     "mins": 2,
+     "model": "2 × 4 = 8; 10⁶ × 10³ = 10⁹; 8 × 10⁹."
+    },
+    {
+     "q": "Work out (9 × 10⁸) ÷ (3 × 10²)",
+     "a": "3 × 10⁶",
+     "mins": 1
+    },
+    {
+     "q": "Work out (7 × 10⁵) × (5 × 10⁻²)",
+     "a": "3.5 × 10⁴",
+     "mins": 1
+    },
+    {
+     "q": "Work out (6 × 10⁴) + (3 × 10³)",
+     "a": "6.3 × 10⁴",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) (4 × 10⁷) × (2 × 10³) (b) (8 × 10⁹) ÷ (2 × 10⁴) (c) (6 × 10⁵) × (5 × 10⁴) (d) (1.5 × 10⁶) ÷ (3 × 10²) (e) (2.4 × 10⁴) - (6 × 10³)",
+     "a": "(a) 8 × 10¹⁰ (b) 4 × 10⁵ (c) 3 × 10¹⁰ (d) 5 × 10³ (e) 1.8 × 10⁴",
+     "mins": 5,
+     "model": "(a) 8 and 10¹⁰.\n(b) 4 and 10⁵.\n(c) 30 × 10⁹ = 3 × 10¹⁰.\n(d) 0.5 × 10⁴ = 5 × 10³.\n(e) 24 000 - 6000 = 18 000."
+    },
+    {
+     "q": "Extend: Light travels 3 × 10⁸ m each second. How far does it travel in 5 × 10² seconds?",
+     "a": "1.5 × 10¹¹ m",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: A grain of sand has mass 7 × 10⁻⁴ g. How many grains in 2.1 kg?",
+     "a": "2100 ÷ (7 × 10⁻⁴) = 3 × 10⁶ grains",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "(3 × 10⁴) × (2 × 10⁵) = ?",
+     "a": "A) 6 × 10⁹",
+     "mins": 1,
+     "options": [
+      "6 × 10⁹",
+      "6 × 10²⁰",
+      "5 × 10⁹"
+     ]
+    },
+    {
+     "q": "(8 × 10⁶) ÷ (4 × 10²)",
+     "a": "2 × 10⁴",
+     "mins": 1
+    },
+    {
+     "q": "Big question: about how many Earths would balance the Sun?",
+     "a": "About 3.3 × 10⁵, or 330 000.",
+     "mins": 1
+    }
+   ],
+   "homework": "Standard form calculations: 10 portal questions (5 without a calculator).",
+   "send": "Support: two-column method (numbers | powers). EAL: 'adjust', 'mass'. Stretch: (3 × 10⁴)².",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 1.4 Standard form",
+    "Scientific calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "solar system planets",
+     "alt": "The Sun and planets",
+     "for": "hook"
+    },
+    {
+     "find": "scientific calculator",
+     "alt": "A scientific calculator with the ×10ˣ key",
+     "for": "teach:4"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Indices, fractions, percentages and standard form; number sense",
+   "n": 47,
+   "title": "Rounding to decimal places and significant figures",
+   "duration": 50,
+   "bigQuestion": "Why might a newspaper round 2 718 431 to 3 million?",
+   "objectives": [
+    "To understand how to round to decimal places and significant figures and when each is useful"
+   ],
+   "successCriteria": [
+    "All: round to a given number of decimal places",
+    "Most: round to a given number of significant figures, including small numbers",
+    "Some: choose a sensible degree of accuracy in context"
+   ],
+   "smsc": "Moral: honest reporting of numbers without exaggeration",
+   "keywords": [
+    {
+     "term": "decimal place",
+     "def": "a digit after the decimal point"
+    },
+    {
+     "term": "significant figure",
+     "def": "a digit from the first non-zero digit onwards"
+    },
+    {
+     "term": "round",
+     "def": "write an approximate value"
+    },
+    {
+     "term": "degree of accuracy",
+     "def": "how precise an answer is"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A crowd of 52 347 is reported as 'over 50 000'. When is rounding helpful and when is it misleading?",
+    "a": "Helpful when the exact figure does not matter; misleading when it hides an important difference."
+   },
+   "starter": [
+    {
+     "q": "Round 3.462 to 1 d.p.",
+     "a": "3.5",
+     "mins": 1
+    },
+    {
+     "q": "Round 2780 to the nearest 100",
+     "a": "2800",
+     "mins": 1
+    },
+    {
+     "q": "Write 0.0045 in standard form",
+     "a": "4.5 × 10⁻³",
+     "mins": 1
+    },
+    {
+     "q": "(2 × 10³) × (3 × 10⁴)",
+     "a": "6 × 10⁷",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Decimal places",
+     "bullets": [
+      "Look at the next digit: 5 or more, round up"
+     ],
+     "note": "Count after the point.",
+     "model": {
+      "problem": "Round 7.4862 to 2 d.p.",
+      "steps": [
+       "Keep 7.48",
+       "Next digit 6: round up",
+       "7.49"
+      ],
+      "answer": "7.49"
+     }
+    },
+    {
+     "heading": "Significant figures",
+     "bullets": [
+      "Start counting at the first non-zero digit"
+     ],
+     "note": "Zeros keep the size.",
+     "model": {
+      "problem": "Round 52 347 to 2 s.f.",
+      "steps": [
+       "First two significant digits: 5, 2",
+       "Next digit 3: round down",
+       "52 000"
+      ],
+      "answer": "52 000"
+     }
+    },
+    {
+     "heading": "Small numbers",
+     "bullets": [
+      "Leading zeros are not significant"
+     ],
+     "note": "The first significant figure is 3.",
+     "model": {
+      "problem": "Round 0.003 846 to 2 s.f.",
+      "steps": [
+       "Significant digits start at 3",
+       "3, 8, next digit 4",
+       "0.0038"
+      ],
+      "answer": "0.0038"
+     }
+    },
+    {
+     "heading": "Keep the place value",
+     "bullets": [
+      "Fill with zeros"
+     ],
+     "note": "Common error.",
+     "misconception": {
+      "wrong": "52 347 to 2 s.f. = 52",
+      "right": "52 347 to 2 s.f. = 52 000"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "First non-zero digit"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Round 0.06072 to 3 s.f.",
+      "options": [
+       "0.0607",
+       "0.061",
+       "0.06",
+       "0.607"
+      ],
+      "answer": 0,
+      "why": "Significant figures 6, 0, 7, next 2: 0.0607. 0.061 is 2 s.f."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Round 18.0573 to 2 d.p.",
+     "a": "18.06",
+     "mins": 2,
+     "model": "Keep 18.05; next digit 7 rounds up; 18.06."
+    },
+    {
+     "q": "Round 6849 to 1 s.f.",
+     "a": "7000",
+     "mins": 1
+    },
+    {
+     "q": "Round 0.4972 to 2 s.f.",
+     "a": "0.50",
+     "mins": 1
+    },
+    {
+     "q": "Round 2 718 431 to 1 s.f.",
+     "a": "3 000 000",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) 4.736 to 1 d.p. (b) 0.0839 to 2 d.p. (c) 34 512 to 2 s.f. (d) 0.000 715 to 1 s.f. (e) 9.996 to 2 d.p.",
+     "a": "(a) 4.7 (b) 0.08 (c) 35 000 (d) 0.0007 (e) 10.00",
+     "mins": 5,
+     "model": "(a) next digit 3: 4.7.\n(b) next digit 3: 0.08.\n(c) next digit 5: 35 000.\n(d) first figure 7, next 1: 0.0007.\n(e) 9.996 rounds up to 10.00."
+    },
+    {
+     "q": "Extend: The area of a room is 14.3772 m². Give it to a sensible accuracy and explain.",
+     "a": "14.4 m² (1 d.p.): floor coverings are not cut to the nearest 0.0001 m²",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: A number rounded to 2 s.f. is 4.7. What is the smallest it could be? What value must it be less than?",
+     "a": "Smallest 4.65; it must be less than 4.75",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Round 0.0526 to 1 s.f.",
+     "a": "A) 0.05",
+     "mins": 1,
+     "options": [
+      "0.05",
+      "0.1",
+      "0.053"
+     ]
+    },
+    {
+     "q": "Round 3.149 to 2 d.p.",
+     "a": "3.15",
+     "mins": 1
+    },
+    {
+     "q": "Big question: when is rounding misleading?",
+     "a": "When the detail matters, for example a dose of medicine or the exact money owed.",
+     "mins": 1
+    }
+   ],
+   "homework": "Rounding: 12 portal questions, d.p. and s.f.",
+   "send": "Support: place value grid with significant figures highlighted. EAL: 'significant', 'round', 'accuracy'. Stretch: error intervals for 2 s.f.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 6.1 Ordering decimals and rounding",
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 1.2 Calculations and estimates",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "football stadium from above",
+     "alt": "A full stadium seen from far above",
+     "for": "hook"
+    },
+    {
+     "find": "ruler millimetres",
+     "alt": "A ruler marked in millimetres",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Indices, fractions, percentages and standard form; number sense",
+   "n": 48,
+   "title": "Using a calculator efficiently",
+   "duration": 50,
+   "bigQuestion": "Can a calculator give a wrong answer to a right question?",
+   "objectives": [
+    "To understand how to enter multi-step calculations correctly on a scientific calculator"
+   ],
+   "successCriteria": [
+    "All: use the bracket, power and root keys",
+    "Most: enter a fraction calculation as one input",
+    "Some: interpret and round a calculator display sensibly"
+   ],
+   "smsc": "Social: using tools responsibly and checking them rather than trusting them blindly",
+   "keywords": [
+    {
+     "term": "bracket key",
+     "def": "groups part of a calculation"
+    },
+    {
+     "term": "fraction key",
+     "def": "enters a fraction with a numerator and denominator"
+    },
+    {
+     "term": "display",
+     "def": "what the calculator shows"
+    },
+    {
+     "term": "interpret",
+     "def": "explain what a number means in context"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Type 12 + 8 ÷ 4 into a calculator. Is the answer 5 or 14? What would you type to get the other one?",
+    "a": "The calculator gives 14 (BIDMAS). For 5, type (12 + 8) ÷ 4."
+   },
+   "starter": [
+    {
+     "q": "Estimate 4.9 × 61",
+     "a": "≈ 300",
+     "mins": 1
+    },
+    {
+     "q": "Round 3.14159 to 3 s.f.",
+     "a": "3.14",
+     "mins": 1
+    },
+    {
+     "q": "(5 × 10³) ÷ (2 × 10⁵)",
+     "a": "2.5 × 10⁻²",
+     "mins": 1
+    },
+    {
+     "q": "3 + 4²",
+     "a": "19",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Fractions in one go",
+     "bullets": [
+      "Use the fraction key or brackets"
+     ],
+     "note": "Top and bottom are each bracketed.",
+     "model": {
+      "problem": "(12.5 + 7.3) ÷ (4.1 - 1.6)",
+      "steps": [
+       "Type: (12.5 + 7.3) ÷ (4.1 - 1.6)",
+       "19.8 ÷ 2.5 = 7.92"
+      ],
+      "answer": "7.92"
+     }
+    },
+    {
+     "heading": "Powers and roots",
+     "bullets": [
+      "x² and √ keys; ^ for other powers"
+     ],
+     "note": "Check with an estimate.",
+     "model": {
+      "problem": "√(6.2² + 3.8²)",
+      "steps": [
+       "6.2² = 38.44, 3.8² = 14.44",
+       "Sum 52.88",
+       "√52.88 = 7.2718..."
+      ],
+      "answer": "7.27 (3 s.f.)"
+     }
+    },
+    {
+     "heading": "Missing brackets",
+     "bullets": [
+      "The calculator follows BIDMAS"
+     ],
+     "note": "Common error with fraction lines.",
+     "misconception": {
+      "wrong": "(20 + 16)/4 typed as 20 + 16 ÷ 4 = 24",
+      "right": "With brackets: 36 ÷ 4 = 9"
+     }
+    },
+    {
+     "heading": "Interpret the display",
+     "bullets": [
+      "£4.5 means £4.50",
+      "Time 2.75 hours = 2 h 45 min",
+      "Round to a sensible accuracy"
+     ],
+     "note": "Discuss money and time displays."
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Brackets"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Which input gives (8 + 4)/(5 - 2)?",
+      "options": [
+       "(8 + 4) ÷ (5 - 2)",
+       "8 + 4 ÷ 5 - 2",
+       "(8 + 4) ÷ 5 - 2",
+       "8 + 4 ÷ (5 - 2)"
+      ],
+      "answer": 0,
+      "why": "Both the top and bottom need brackets. The others divide only part of the calculation."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Work out (17.4 - 3.9) ÷ (2.6 + 0.4)",
+     "a": "4.5",
+     "mins": 2,
+     "model": "Type (17.4 - 3.9) ÷ (2.6 + 0.4): 13.5 ÷ 3 = 4.5."
+    },
+    {
+     "q": "Work out 3.2³ - √40, to 2 d.p.",
+     "a": "26.44",
+     "mins": 1
+    },
+    {
+     "q": "Write 3.6 hours in hours and minutes",
+     "a": "3 h 36 min",
+     "mins": 1
+    },
+    {
+     "q": "Work out 2.4 × 10⁵ × 3.5 × 10⁻² on a calculator",
+     "a": "8400 = 8.4 × 10³",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Give answers to 3 s.f. (a) (6.4 + 2.9)/(1.7 × 2.2) (b) √(15.3 - 4.8) (c) 4.2² × 1.5³ (d) (8.1 × 10³)/(2.7 × 10⁻²)",
+     "a": "(a) 2.49 (b) 3.24 (c) 59.5 (d) 3.00 × 10⁵",
+     "mins": 5,
+     "model": "(a) 9.3 ÷ 3.74 = 2.4866...\n(b) √10.5 = 3.2403...\n(c) 17.64 × 3.375 = 59.535 (d) 300 000."
+    },
+    {
+     "q": "Extend: A tank holds 2.75 × 10³ litres and empties at 18.5 litres a minute. How long to empty? Give hours and minutes.",
+     "a": "148.6 minutes ≈ 2 h 29 min",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Use a calculator to show that (1 + 1/n)ⁿ gets closer to 2.718 as n gets larger (try n = 10, 100, 1000).",
+     "a": "2.594, 2.705, 2.717",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Which gives 9 for (20 + 16)/4?",
+     "a": "A) (20 + 16) ÷ 4",
+     "mins": 1,
+     "options": [
+      "(20 + 16) ÷ 4",
+      "20 + 16 ÷ 4"
+     ]
+    },
+    {
+     "q": "Write 1.25 hours in minutes",
+     "a": "75 minutes",
+     "mins": 1
+    },
+    {
+     "q": "Big question: can a calculator give a wrong answer to a right question?",
+     "a": "Yes, if we type it wrongly (missing brackets); estimate to catch it.",
+     "mins": 1
+    }
+   ],
+   "homework": "Calculator skills: 10 portal questions with an estimate for each.",
+   "send": "Support: calculator key guide. EAL: 'display', 'input'. Stretch: nested roots √(2 + √(2 + √2)).",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 1.2 Calculations and estimates",
+    "Scientific calculator",
+    "Calculator key guide (printable, in the pupil PDF)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "scientific calculator keys",
+     "alt": "Scientific calculator keys",
+     "for": "teach:1"
+    },
+    {
+     "find": "water tank",
+     "alt": "A water storage tank",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Indices, fractions, percentages and standard form; number sense",
+   "n": 49,
+   "title": "Number sense: estimation problems",
+   "duration": 50,
+   "bigQuestion": "How many grains of rice are in a 1 kg bag?",
+   "objectives": [
+    "To understand how to make sensible estimates for real problems using rounding and standard form"
+   ],
+   "successCriteria": [
+    "All: make and state sensible assumptions",
+    "Most: combine estimates to answer a question",
+    "Some: write a large estimate in standard form and judge if it is reasonable"
+   ],
+   "crossCurricular": "Science: estimating and measuring in practical work",
+   "smsc": "Moral: using water carefully in wudu without waste (israf, إِسْرَاف)",
+   "keywords": [
+    {
+     "term": "assumption",
+     "def": "something we decide is true to start a problem"
+    },
+    {
+     "term": "estimate",
+     "def": "an approximate answer"
+    },
+    {
+     "term": "order of magnitude",
+     "def": "the size to the nearest power of 10"
+    },
+    {
+     "term": "reasonable",
+     "def": "sensible in real life"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "How many grains of rice are in a 1 kg bag? Make a guess, then think how you could find out.",
+    "a": "About 50 000: if 100 grains weigh about 2 g, 1000 g holds about 500 × 100 grains."
+   },
+   "starter": [
+    {
+     "q": "Round 0.0237 to 1 s.f.",
+     "a": "0.02",
+     "mins": 1
+    },
+    {
+     "q": "Estimate 312 × 19",
+     "a": "≈ 6000",
+     "mins": 1
+    },
+    {
+     "q": "1 kg = ? g",
+     "a": "1000 g",
+     "mins": 1
+    },
+    {
+     "q": "Write 50 000 in standard form",
+     "a": "5 × 10⁴",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "A rice estimate",
+     "bullets": [
+      "Weigh a small count",
+      "Scale up"
+     ],
+     "note": "A home practical with kitchen scales: count 100 grains, weigh them.",
+     "model": {
+      "problem": "100 grains weigh about 2 g. How many in 1 kg?",
+      "steps": [
+       "1 kg = 1000 g",
+       "1000 ÷ 2 = 500 lots of 100",
+       "500 × 100 = 50 000"
+      ],
+      "answer": "About 5 × 10⁴ grains"
+     }
+    },
+    {
+     "heading": "Hours in a lifetime",
+     "bullets": [
+      "State assumptions"
+     ],
+     "note": "Assume 70 years. The exact figure is about 613 000.",
+     "model": {
+      "problem": "About how many hours in 70 years?",
+      "steps": [
+       "≈ 70 × 365 × 24",
+       "≈ 70 × 400 × 20 = 560 000",
+       "≈ 6 × 10⁵"
+      ],
+      "answer": "About 600 000 hours"
+     }
+    },
+    {
+     "heading": "Good estimating",
+     "bullets": [
+      "Say your assumptions"
+     ],
+     "note": "Discuss each point.",
+     "diagram": {
+      "centre": "Estimate well",
+      "items": [
+       "State assumptions",
+       "Round to 1 s.f.",
+       "Keep units",
+       "Check order of magnitude",
+       "Compare with real data"
+      ]
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Which is reasonable?"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Roughly how many words in a 300-page book?",
+      "options": [
+       "About 90 000",
+       "About 900",
+       "About 9 000 000",
+       "About 9"
+      ],
+      "answer": 0,
+      "why": "About 300 words a page × 300 pages ≈ 90 000. The others are wrong by powers of 10."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Estimate the number of seconds in a day.",
+     "a": "24 × 60 × 60 = 86 400 ≈ 9 × 10⁴",
+     "mins": 2,
+     "model": "Hours 24, minutes 60, seconds 60: 24 × 3600 = 86 400."
+    },
+    {
+     "q": "Estimate the number of breaths you take in a day (about 15 a minute).",
+     "a": "≈ 15 × 60 × 24 ≈ 2 × 10⁴",
+     "mins": 2
+    },
+    {
+     "q": "A bottle holds 500 ml. How many bottles fill a 2 m³ tank (1 m³ = 1000 litres)?",
+     "a": "2000 ÷ 0.5 = 4000 bottles",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Estimate, stating assumptions: (a) how many times your heart beats in a year (b) the mass of 1000 apples (c) how many lessons you have from Year 7 to Year 11",
+     "a": "For example (a) 70 a minute: about 4 × 10⁷ (b) 150 g each: 150 kg (c) 23 a week × 38 weeks × 5 years ≈ 4000",
+     "mins": 6,
+     "model": "(a) 70 × 60 = 4200 an hour, × 24 ≈ 100 000 a day, × 365 ≈ 3.7 × 10⁷.\n(b) 1000 × 0.15 kg = 150 kg.\n(c) 23 × 38 ≈ 870 a year, × 5 ≈ 4400."
+    },
+    {
+     "q": "Extend: The common Madinah print of the Qur'an has 604 pages. At 2 pages a day, how many pages a year, and about how long to read it once?",
+     "a": "730 pages a year; 302 days, about 10 months",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Estimate how many litres of water a family of 5 uses for wudu in a year, assuming about 1 litre a wudu and 5 a day each.",
+     "a": "5 × 5 × 365 ≈ 9000 litres (about 9 × 10³)",
+     "mins": 3
+    }
+   ],
+   "exit": [
+    {
+     "q": "About how many minutes in a week?",
+     "a": "A) 10 000",
+     "mins": 1,
+     "options": [
+      "10 000",
+      "1000",
+      "100 000"
+     ]
+    },
+    {
+     "q": "State one assumption you made today.",
+     "a": "For example: a heart beats about 70 times a minute.",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how many grains of rice in 1 kg?",
+     "a": "About 5 × 10⁴, if 100 grains weigh about 2 g.",
+     "mins": 1
+    }
+   ],
+   "homework": "Home investigation: count 100 grains of rice (or lentils), weigh them on kitchen scales, and estimate the grains in a 1 kg bag; write a short report.",
+   "send": "Support: estimation frame (assumption, calculation, answer). EAL: 'assume', 'reasonable'. Stretch: estimate the water used for wudu by a masjid congregation in a year.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 1.2 Calculations and estimates",
+    "Kitchen scales and a bag of rice or lentils (household)",
+    "Estimation frame (printable, in the pupil PDF)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "rice grains",
+     "alt": "Rice grains",
+     "for": "hook"
+    },
+    {
+     "find": "kitchen scales",
+     "alt": "Kitchen scales",
+     "for": "teach:1"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Indices, fractions, percentages and standard form; number sense",
+   "n": 50,
+   "title": "Problem solving: indices and percentages",
+   "duration": 50,
+   "bigQuestion": "Which tool from this half term do I need for this problem?",
+   "objectives": [
+    "To understand how to choose and combine number skills to solve unfamiliar problems"
+   ],
+   "successCriteria": [
+    "All: identify the skill a problem needs",
+    "Most: solve two-step problems with percentages and indices",
+    "Some: explain and check a solution in full sentences"
+   ],
+   "smsc": "Social: talking through a strategy with a partner before calculating",
+   "keywords": [
+    {
+     "term": "strategy",
+     "def": "a plan for solving a problem"
+    },
+    {
+     "term": "multiplier",
+     "def": "the decimal for a percentage change"
+    },
+    {
+     "term": "index law",
+     "def": "a rule for combining powers"
+    },
+    {
+     "term": "justify",
+     "def": "give a reason"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "2¹⁰ is about 1000. About how big is 2²⁰? 2³⁰? How do you know?",
+    "a": "2²⁰ = (2¹⁰)² ≈ 10⁶ and 2³⁰ ≈ 10⁹."
+   },
+   "starter": [
+    {
+     "q": "Simplify 2⁴ × 2⁶",
+     "a": "2¹⁰",
+     "mins": 1
+    },
+    {
+     "q": "Increase 80 by 15%",
+     "a": "92",
+     "mins": 1
+    },
+    {
+     "q": "After 20% off, £36. Original?",
+     "a": "£45",
+     "mins": 1
+    },
+    {
+     "q": "Write 0.00051 in standard form",
+     "a": "5.1 × 10⁻⁴",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Which tool?",
+     "bullets": [
+      "Read, then choose"
+     ],
+     "note": "Pupils match each clue to a tool.",
+     "diagram": {
+      "centre": "Problem clues",
+      "items": [
+       "'of' a percentage: multiplier",
+       "'original': reverse percentage",
+       "'times as big': divide",
+       "powers of the same base: index laws",
+       "very big or small: standard form"
+      ]
+     }
+    },
+    {
+     "heading": "Two-step percentage",
+     "bullets": [
+      "Find the overall multiplier, then work back"
+     ],
+     "note": "Use a bar if unsure.",
+     "model": {
+      "problem": "A price rises 10% then 20%. The final price is £66. Original?",
+      "steps": [
+       "Overall multiplier: 1.1 × 1.2 = 1.32",
+       "66 ÷ 1.32 = 50"
+      ],
+      "answer": "£50"
+     }
+    },
+    {
+     "heading": "Index reasoning",
+     "bullets": [
+      "Rewrite with the same base"
+     ],
+     "note": "The ponder question.",
+     "model": {
+      "problem": "Estimate 2²⁰ = (2¹⁰)²",
+      "steps": [
+       "2¹⁰ ≈ 1000 = 10³",
+       "(10³)² = 10⁶"
+      ],
+      "answer": "2²⁰ ≈ 1 000 000 (exactly 1 048 576)"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Which tool?"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "'After a 15% fall, a value is 85.' To find the value before the fall, which method?",
+      "options": [
+       "Reverse percentage",
+       "Percentage change",
+       "Percentage of an amount",
+       "Index laws"
+      ],
+      "answer": 0,
+      "why": "85 is after the change, so divide by 0.85 to find the original: 100."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "A bike costs £240. It is reduced by 15% then by a further 10%. Find the final price.",
+     "a": "£183.60",
+     "mins": 2,
+     "model": "240 × 0.85 = 204.\n204 × 0.9 = 183.60."
+    },
+    {
+     "q": "Write 4³ × 2⁴ as a power of 2.",
+     "a": "2¹⁰",
+     "mins": 1
+    },
+    {
+     "q": "A town of 12 000 grows by 5% one year and 5% the next. Find the population.",
+     "a": "13 230",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) 32 out of 40 as a percentage (b) A trader sells at £84 for a 40% profit. Cost price? (c) Simplify (3⁴)² ÷ 3⁵ (d) Increase 2.5 × 10⁴ by 20%, in standard form",
+     "a": "(a) 80% (b) £60 (c) 3³ = 27 (d) 3 × 10⁴",
+     "mins": 6,
+     "model": "(a) 32/40 = 0.8.\n(b) 84 ÷ 1.4 = 60.\n(c) 3⁸ ÷ 3⁵ = 3³.\n(d) 1.2 × 25 000 = 30 000."
+    },
+    {
+     "q": "Extend: Which is bigger: 2³⁰ or 3²⁰? Explain using index laws.",
+     "a": "2³⁰ = (2³)¹⁰ = 8¹⁰ and 3²⁰ = (3²)¹⁰ = 9¹⁰, so 3²⁰ is bigger",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: A value doubles every year. After how many years is it more than 1000 times the start?",
+     "a": "10 years (2¹⁰ = 1024)",
+     "mins": 3
+    }
+   ],
+   "exit": [
+    {
+     "q": "A £50 price rises 10%, then falls 10%.",
+     "a": "A) £49.50",
+     "mins": 1,
+     "options": [
+      "£49.50",
+      "£50",
+      "£45"
+     ]
+    },
+    {
+     "q": "Simplify 5³ × 5⁻¹",
+     "a": "5²",
+     "mins": 1
+    },
+    {
+     "q": "Big question: which tool did you use most today, and how did you spot it?",
+     "a": "For example multipliers: the words 'increase' and 'decrease' told me.",
+     "mins": 1
+    }
+   ],
+   "homework": "Mixed problem set: 6 questions; for each, write the tool you chose and why.",
+   "send": "Support: tool-choice card. EAL: 'strategy', 'justify'. Stretch: 2¹⁰⁰ as an approximate power of 10 (about 1.27 × 10³⁰).",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 Unit 10 Percentages, decimals and fractions (10.1 to 10.4)",
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 1.1 Indices and 1.3 More indices",
+    "Scientific calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "chessboard",
+     "alt": "A chessboard (doubling on each square)",
+     "for": "hook"
+    },
+    {
+     "find": "toolbox tools",
+     "alt": "A toolbox",
+     "for": "teach:1"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Indices, fractions, percentages and standard form; number sense",
+   "n": 51,
+   "title": "Revision: standard form, rounding and estimation",
+   "duration": 50,
+   "bigQuestion": "What do I need to remember for the end-of-term test?",
+   "objectives": [
+    "To understand which number skills from this half term are secure before the test"
+   ],
+   "successCriteria": [
+    "All: answer quick recall questions on indices, standard form and rounding",
+    "Most: complete exam-style questions with full working",
+    "Some: write a personal revision list from my mistakes"
+   ],
+   "smsc": "Moral: honest self-assessment and planning to improve",
+   "keywords": [
+    {
+     "term": "revision",
+     "def": "going over learning to remember it"
+    },
+    {
+     "term": "standard form",
+     "def": "A × 10ⁿ with 1 ≤ A < 10"
+    },
+    {
+     "term": "significant figure",
+     "def": "digits from the first non-zero digit"
+    },
+    {
+     "term": "estimate",
+     "def": "an approximate answer"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Which topic this half term would you most like a second explanation of? Write it in the chat.",
+    "a": "Personal answers; the teacher reviews the most common topic first."
+   },
+   "starter": [
+    {
+     "q": "Write 0.0009 in standard form",
+     "a": "9 × 10⁻⁴",
+     "mins": 1
+    },
+    {
+     "q": "Round 45 678 to 2 s.f.",
+     "a": "46 000",
+     "mins": 1
+    },
+    {
+     "q": "Simplify 7⁵ ÷ 7²",
+     "a": "7³",
+     "mins": 1
+    },
+    {
+     "q": "Decrease 60 by 35%",
+     "a": "39",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Half-term map",
+     "bullets": [
+      "Mark each topic green, amber or red"
+     ],
+     "note": "Pupils mark their books.",
+     "table": {
+      "head": [
+       "Topic",
+       "Key fact"
+      ],
+      "rows": [
+       [
+        "Index laws",
+        "add, subtract, multiply indices; a⁰ = 1"
+       ],
+       [
+        "Percentages",
+        "multipliers: 1 + p/100 or 1 - p/100"
+       ],
+       [
+        "Reverse %",
+        "new ÷ multiplier"
+       ],
+       [
+        "Recurring decimals",
+        "denominators with factors other than 2 and 5"
+       ],
+       [
+        "Standard form",
+        "1 ≤ A < 10"
+       ],
+       [
+        "Estimation",
+        "round to 1 s.f."
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Exam-style model",
+     "bullets": [
+      "Show each step"
+     ],
+     "note": "A full-marks answer.",
+     "model": {
+      "problem": "Work out (6 × 10⁴) × (7 × 10⁻²). Give your answer in standard form.",
+      "steps": [
+       "6 × 7 = 42",
+       "10⁴ × 10⁻² = 10²",
+       "42 × 10² = 4.2 × 10³"
+      ],
+      "answer": "4.2 × 10³"
+     }
+    },
+    {
+     "heading": "Estimate model",
+     "bullets": [
+      "Round to 1 s.f."
+     ],
+     "note": "Exam-style.",
+     "model": {
+      "problem": "Estimate (21.4 × 0.49) ÷ 5.2",
+      "steps": [
+       "≈ (20 × 0.5) ÷ 5",
+       "10 ÷ 5 = 2"
+      ],
+      "answer": "≈ 2"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Is it standard form?"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Which is NOT in standard form?",
+      "options": [
+       "10 × 10⁴",
+       "1 × 10⁵",
+       "9.99 × 10⁻²",
+       "3 × 10⁰"
+      ],
+      "answer": 0,
+      "why": "10 × 10⁴ has A = 10, which is too big; it should be 1 × 10⁵."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Write 37 000 000 in standard form",
+     "a": "3.7 × 10⁷",
+     "mins": 2,
+     "model": "Point after the 3; moved 7 places; 3.7 × 10⁷."
+    },
+    {
+     "q": "Write 3/11 as a recurring decimal",
+     "a": "0.272727... (27 recurring)",
+     "mins": 1
+    },
+    {
+     "q": "Find the original if a 25% increase gives 75",
+     "a": "60",
+     "mins": 1
+    },
+    {
+     "q": "Estimate √63.5 + 2.9²",
+     "a": "≈ 8 + 9 = 17",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core (exam-style, 12 marks): (a) Simplify (2³)⁴ ÷ 2⁵ [2] (b) Round 0.004 958 to 2 s.f. [1] (c) Work out (9 × 10⁷) ÷ (3 × 10⁻²) [2] (d) Increase £340 by 12% [2] (e) After a 30% decrease a value is 168. Find the original [2] (f) Estimate 598 × 0.21 ÷ 3.1 [3]",
+     "a": "(a) 2⁷ (b) 0.0050 (c) 3 × 10⁹ (d) £380.80 (e) 240 (f) ≈ 40",
+     "mins": 10,
+     "model": "(a) 2¹² ÷ 2⁵ = 2⁷.\n(b) 4, 9, next digit 5 rounds up: 0.0050.\n(c) 3 × 10⁹.\n(d) 340 × 1.12 = 380.80.\n(e) 168 ÷ 0.7 = 240.\n(f) 600 × 0.2 ÷ 3 = 40."
+    },
+    {
+     "q": "Extend: Write 6.3 × 10⁻³ + 4 × 10⁻⁴ in standard form.",
+     "a": "0.0063 + 0.0004 = 0.0067 = 6.7 × 10⁻³",
+     "mins": 3
+    }
+   ],
+   "exit": [
+    {
+     "q": "Round 0.07849 to 2 s.f.",
+     "a": "A) 0.078",
+     "mins": 1,
+     "options": [
+      "0.078",
+      "0.079",
+      "0.08"
+     ]
+    },
+    {
+     "q": "Write your two red topics as a revision list.",
+     "a": "Personal list, for example 'reverse percentages; recurring decimals'.",
+     "mins": 1
+    }
+   ],
+   "homework": "Revise your two red topics with the portal revision sets before the test.",
+   "send": "Support: half-term knowledge organiser. EAL: key words glossary. Stretch: the extend question and (4 × 10⁻³)².",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 1.4 Standard form",
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 1.2 Calculations and estimates",
+    "Spring 2 number knowledge organiser (printable, written for this unit)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "revision cards",
+     "alt": "Revision cards",
+     "for": "hook"
+    },
+    {
+     "find": "traffic light",
+     "alt": "Traffic light colours for self-assessment",
+     "for": "teach:1"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Indices, fractions, percentages and standard form; number sense",
+   "n": 52,
+   "title": "End-of-term test: number",
+   "duration": 50,
+   "bigQuestion": "How well can I use this half term's number skills on my own?",
+   "objectives": [
+    "To understand how well I can apply indices, percentages, standard form and estimation under test conditions"
+   ],
+   "successCriteria": [
+    "All: answer recall questions accurately",
+    "Most: show full working on multi-step questions",
+    "Some: check answers using estimation"
+   ],
+   "smsc": "Moral: honesty (amanah, أَمَانَة) in assessments",
+   "keywords": [
+    {
+     "term": "test conditions",
+     "def": "working alone, in silence, to time"
+    },
+    {
+     "term": "working",
+     "def": "the steps that show the method"
+    },
+    {
+     "term": "mark",
+     "def": "a point earned for a correct step or answer"
+    },
+    {
+     "term": "check",
+     "def": "test an answer another way"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "What is one exam habit that will earn you marks today, even if you get stuck?",
+    "a": "For example: always write the method, so a slip still earns method marks."
+   },
+   "starter": [
+    {
+     "q": "Simplify 3⁶ × 3²",
+     "a": "3⁸",
+     "mins": 1
+    },
+    {
+     "q": "Write 4.2 × 10⁻³ as a decimal",
+     "a": "0.0042",
+     "mins": 1
+    },
+    {
+     "q": "10% of 76",
+     "a": "7.6",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Test rules",
+     "bullets": [
+      "Portal test, secure mode, 30 minutes",
+      "Calculator allowed in Section B only",
+      "Show working in the response box"
+     ],
+     "note": "Cameras on; no other windows open."
+    },
+    {
+     "heading": "Mark-earning habits",
+     "bullets": [
+      "Write the method even if unsure",
+      "Give answers in the form asked (standard form, 2 s.f.)",
+      "Check with an estimate"
+     ],
+     "note": "These answer the ponder question."
+    },
+    {
+     "heading": "Model of full working",
+     "bullets": [
+      "Every step earns a mark"
+     ],
+     "note": "From the revision lesson.",
+     "model": {
+      "problem": "Increase £45 by 8%",
+      "steps": [
+       "Multiplier 1.08",
+       "45 × 1.08 = 48.60"
+      ],
+      "answer": "£48.60"
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Practice: write 0.000 36 in standard form",
+     "a": "3.6 × 10⁻⁴",
+     "mins": 1,
+     "model": "Point after the 3; moved 4 places right: 3.6 × 10⁻⁴."
+    }
+   ],
+   "independent": [
+    {
+     "q": "End-of-term test (portal, secure mode, 30 minutes): Section A non-calculator 15 marks, Section B calculator 15 marks. Sample: (a) (5²)³ ÷ 5⁴ (b) 2.5% of £6400 (c) (8 × 10⁵) × (4 × 10³) (d) After 15% off, £102: original? (e) Estimate 49.6 × 0.198",
+     "a": "Sample answers: (a) 5² = 25 (b) £160 (c) 3.2 × 10⁹ (d) £120 (e) ≈ 10",
+     "mins": 30,
+     "model": "(a) 5⁶ ÷ 5⁴ = 5².\n(b) 10% = 640, 2.5% = 160.\n(c) 32 × 10⁸ = 3.2 × 10⁹.\n(d) 102 ÷ 0.85 = 120.\n(e) 50 × 0.2 = 10."
+    }
+   ],
+   "exit": [
+    {
+     "q": "Which question was hardest, and why?",
+     "a": "Personal reflection.",
+     "mins": 2
+    },
+    {
+     "q": "Big question: name the habit that earned you marks today.",
+     "a": "For example: writing the multiplier before calculating.",
+     "mins": 1
+    }
+   ],
+   "homework": "No homework: rest well; feedback next lesson.",
+   "send": "Support: access arrangements as agreed (reader, extra time, larger font). EAL: glossary of key words allowed. Stretch: final challenge question in the test.",
+   "resources": [
+    "End-of-term number test (portal quiz, secure mode, written for this unit)",
+    "Scientific calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "stopwatch",
+     "alt": "A stopwatch for timing",
+     "for": "keywords"
+    },
+    {
+     "find": "pencil and calculator",
+     "alt": "A pencil and calculator on a desk",
+     "for": "hook"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Indices, fractions, percentages and standard form; number sense",
+   "n": 53,
+   "title": "Test feedback and next steps",
+   "duration": 50,
+   "bigQuestion": "What does my test tell me to do next?",
+   "objectives": [
+    "To understand my test results and correct my errors so the skills are secure for Year 9"
+   ],
+   "successCriteria": [
+    "All: read feedback and find the topic of each error",
+    "Most: correct errors using the right method",
+    "Some: set two targets for the Summer term"
+   ],
+   "smsc": "Spiritual: muhasabah (مُحَاسَبَة), honestly reviewing our own work to improve",
+   "keywords": [
+    {
+     "term": "feedback",
+     "def": "information on what went well and what to improve"
+    },
+    {
+     "term": "correction",
+     "def": "a fixed answer with the right method"
+    },
+    {
+     "term": "target",
+     "def": "a specific goal"
+    },
+    {
+     "term": "EBI",
+     "def": "even better if"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Which is more useful: knowing your score, or knowing why you lost marks? Why?",
+    "a": "Knowing why: it tells you exactly what to practise next."
+   },
+   "starter": [
+    {
+     "q": "Write 6.1 × 10⁵ as a number",
+     "a": "610 000",
+     "mins": 1
+    },
+    {
+     "q": "Decrease 120 by 15%",
+     "a": "102",
+     "mins": 1
+    },
+    {
+     "q": "Simplify (4³)²",
+     "a": "4⁶",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Common errors",
+     "bullets": [
+      "Find yours"
+     ],
+     "note": "Share the class's top errors from the test, without names.",
+     "table": {
+      "head": [
+       "Error",
+       "Fix"
+      ],
+      "rows": [
+       [
+        "(5²)³ = 5⁵",
+        "Multiply indices: 5⁶"
+       ],
+       [
+        "32 × 10⁸ left as the answer",
+        "Adjust: 3.2 × 10⁹"
+       ],
+       [
+        "Reverse %: 102 + 15% of 102",
+        "102 ÷ 0.85 = 120"
+       ],
+       [
+        "0.004958 to 2 s.f. = 0.00",
+        "Count from the first non-zero digit: 0.0050"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Correction format",
+     "bullets": [
+      "Error, reason, fix"
+     ],
+     "note": "Pupils use this layout.",
+     "model": {
+      "problem": "Correct: 2.5% of 6400 = 1600",
+      "steps": [
+       "Error: found 25%, not 2.5%",
+       "10% = 640, 2.5% = 640 ÷ 4",
+       "= 160"
+      ],
+      "answer": "£160"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Apply a fix"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Write 45 × 10⁻³ in standard form",
+      "options": [
+       "4.5 × 10⁻²",
+       "4.5 × 10⁻⁴",
+       "45 × 10⁻³",
+       "4.5 × 10²"
+      ],
+      "answer": 0,
+      "why": "45 = 4.5 × 10, so 4.5 × 10⁻². 10⁻⁴ moves the wrong way."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Correct: (3 × 10⁴) × (5 × 10²) = 15 × 10⁸",
+     "a": "1.5 × 10⁷",
+     "mins": 2,
+     "model": "Error: multiplied the indices 4 × 2.\n10⁴ × 10² = 10⁶, so 15 × 10⁶ = 1.5 × 10⁷."
+    },
+    {
+     "q": "Correct: 40 to 50 is a 20% increase",
+     "a": "10 ÷ 40 = 25%",
+     "mins": 1
+    },
+    {
+     "q": "Correct: 9⁰ = 0",
+     "a": "9⁰ = 1",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: redo every question you dropped marks on, using the correction format; then complete the matching portal strengthen set (8 questions).",
+     "a": "Answers in the portal strengthen set; for example (4 × 10³)² = 1.6 × 10⁷, 18 out of 24 = 75%",
+     "mins": 12,
+     "model": "Model: (4 × 10³)² = 16 × 10⁶ = 1.6 × 10⁷.\n18/24 = 0.75 = 75%."
+    },
+    {
+     "q": "Extend: A price rises 25% and then falls 20%. Prove it returns to the original price.",
+     "a": "1.25 × 0.8 = 1",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Which is the correct method for '30% off gives £70'?",
+     "a": "A) 70 ÷ 0.7",
+     "mins": 1,
+     "options": [
+      "70 ÷ 0.7",
+      "70 × 1.3",
+      "70 + 21"
+     ]
+    },
+    {
+     "q": "Write your two targets.",
+     "a": "For example: 'adjust standard form answers'; 'divide by the original in percentage change'.",
+     "mins": 1
+    }
+   ],
+   "homework": "Complete the portal strengthen set for your weakest topic.",
+   "send": "Support: correction format card and worked examples. EAL: 'feedback', 'target'. Stretch: extend problems from Maths Progress Year 9 1.4.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 Unit 10 and Year 9 Unit 1 Check, Strengthen and Extend lessons",
+    "End-of-term test results (portal)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "checklist",
+     "alt": "A checklist with ticks",
+     "for": "teach:2"
+    },
+    {
+     "find": "archery target",
+     "alt": "A target board",
+     "for": "hook"
     }
    ]
   }

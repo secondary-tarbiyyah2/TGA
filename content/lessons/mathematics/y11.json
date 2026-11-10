@@ -3,7 +3,7 @@
   "year": "y11",
   "board": "Pearson Edexcel International GCSE (9-1) Mathematics A (4MA1), Higher tier",
   "boardShort": "Edexcel IGCSE 4MA1 Higher",
-  "source": "School Maths folder: Edexcel GCSE (9–1) Mathematics content, sequenced using the school's two-year scheme order (harder graphs and transformations of graphs, then simultaneous equations); Edexcel 1MA1 Higher exam style; INSET lesson standard. | Pearson Edexcel 1MA1 specification as recorded in content/syllabus/ks4/mathematics.json (units N and A only), Higher tier with Foundation-accessible starts; Edexcel 1MA1 Higher exam style; INSET lesson standard. Skipped as already taught well in the school's existing mathematics lessons: N4 primes/HCF/LCM, N7 fractional and negative indices, N8 surds, N10 recurring decimals (existing Year 10 lessons 1-5); A4 binomials and quadratic factorising, A5 subject appearing twice, A6 identities and proof, A17 linear equations, A21 forming equations, A22 linear inequalities (existing Year 10 lessons 6-16); A11/A12 quadratic, cubic and reciprocal graphs, A13 translations and reflections of graphs, A17 solving by graphs, A19 algebraic simultaneous equations (existing Year 11 lessons 1-8). | Edexcel GCSE (9–1) Mathematics 1MA1 specification (Issue 2, June 2015) via content/syllabus/ks4/mathematics.json, units R13-R16, G9-G14, G20-G25 and S1-S6 (Year 11 placement); Higher tier with Foundation-accessible starts. Original lessons and questions. The school's existing Year 11 lessons cover Unit 16 (quadratic, cubic and reciprocal graphs, graph transformations) and Unit 17 (simultaneous equations), which are algebra units outside this spec subset, so no point was skipped; reciprocal graphs are only recognised here for R14. | Gap-fill against Pearson Edexcel 1MA1 specification | Founding year 2027 Spring 1 (revision cycle 1 and mock week): taught from Pearson Edexcel International GCSE Mathematics A (4MA1) Issue 2; original exam-style questions with mark-scheme style answers (no past-paper questions copied).",
+  "source": "School Maths folder: Edexcel GCSE (9–1) Mathematics content, sequenced using the school's two-year scheme order (harder graphs and transformations of graphs, then simultaneous equations); Edexcel 1MA1 Higher exam style; INSET lesson standard. | Pearson Edexcel 1MA1 specification as recorded in content/syllabus/ks4/mathematics.json (units N and A only), Higher tier with Foundation-accessible starts; Edexcel 1MA1 Higher exam style; INSET lesson standard. Skipped as already taught well in the school's existing mathematics lessons: N4 primes/HCF/LCM, N7 fractional and negative indices, N8 surds, N10 recurring decimals (existing Year 10 lessons 1-5); A4 binomials and quadratic factorising, A5 subject appearing twice, A6 identities and proof, A17 linear equations, A21 forming equations, A22 linear inequalities (existing Year 10 lessons 6-16); A11/A12 quadratic, cubic and reciprocal graphs, A13 translations and reflections of graphs, A17 solving by graphs, A19 algebraic simultaneous equations (existing Year 11 lessons 1-8). | Edexcel GCSE (9–1) Mathematics 1MA1 specification (Issue 2, June 2015) via content/syllabus/ks4/mathematics.json, units R13-R16, G9-G14, G20-G25 and S1-S6 (Year 11 placement); Higher tier with Foundation-accessible starts. Original lessons and questions. The school's existing Year 11 lessons cover Unit 16 (quadratic, cubic and reciprocal graphs, graph transformations) and Unit 17 (simultaneous equations), which are algebra units outside this spec subset, so no point was skipped; reciprocal graphs are only recognised here for R14. | Gap-fill against Pearson Edexcel 1MA1 specification | Founding year 2027 Spring 1 (revision cycle 1 and mock week): taught from Pearson Edexcel International GCSE Mathematics A (4MA1) Issue 2; original exam-style questions with mark-scheme style answers (no past-paper questions copied). | Founding year 2027 Spring 2 (15 Mar to 23 Apr): revision cycle 2 and exam technique towards Paper 1H (14 May) and Paper 2H (27 May), in the order geometry, trigonometry, vectors and transformations, statistics, probability and sets, calculus; original exam-style questions with mark-scheme style answers (no past-paper questions copied).",
   "lessons": [
     {
       "unit": "Unit 16: Harder graphs and transformations of graphs",
@@ -11645,6 +11645,4280 @@
           "find": "marked exam script red pen",
           "alt": "A marked script with corrections",
           "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2: Geometry, vectors, statistics, calculus",
+      "n": 74,
+      "title": "Mock feedback: reading the mark scheme and building a repair list",
+      "duration": 50,
+      "bigQuestion": "How can a mock that went badly become the most useful paper you sit?",
+      "objectives": [
+        "To understand how 4MA1 marks are awarded and how to turn mock errors into a personal repair list"
+      ],
+      "successCriteria": [
+        "All: read M, A and B marks on a mark scheme",
+        "Most: sort each lost mark by topic and by type of error",
+        "Some: write a repair list with three priority topics and a weekly plan"
+      ],
+      "smsc": "Spiritual: muhasabah (مُحَاسَبَة), honest review of our own work to improve",
+      "keywords": [
+        {
+          "term": "M1",
+          "def": "a method mark: a correct step towards the answer"
+        },
+        {
+          "term": "A1",
+          "def": "an accuracy mark, usually depending on a method mark"
+        },
+        {
+          "term": "B1",
+          "def": "a mark for a correct value or statement on its own"
+        },
+        {
+          "term": "repair list",
+          "def": "your ranked list of topics to fix"
+        },
+        {
+          "term": "ft",
+          "def": "follow through: credit for correct work after an earlier error"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which costs more marks across a whole paper: not knowing a topic, or careless slips? How could you find out?",
+        "a": "Count them: many pupils lose as many marks to slips and unfinished questions as to topics they did not know."
+      },
+      "starter": [
+        {
+          "q": "Interior angle of a regular 10-gon",
+          "a": "144°",
+          "mins": 1
+        },
+        {
+          "q": "Simplify (2x³)²",
+          "a": "4x⁶",
+          "mins": 1
+        },
+        {
+          "q": "Solve 3x - 7 = 11",
+          "a": "x = 6",
+          "mins": 1
+        },
+        {
+          "q": "Write 0.00045 in standard form",
+          "a": "4.5 × 10⁻⁴",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "How marks are given",
+          "bullets": [
+            "Method first, then accuracy"
+          ],
+          "note": "Show a real-style mark scheme row (original question).",
+          "table": {
+            "head": [
+              "Code",
+              "What it rewards",
+              "Example"
+            ],
+            "rows": [
+              [
+                "M1",
+                "a correct method",
+                "2x = 11 + 7"
+              ],
+              [
+                "A1",
+                "the correct answer after M1",
+                "x = 9"
+              ],
+              [
+                "B1",
+                "a stand-alone fact or value",
+                "interior angle 144°"
+              ],
+              [
+                "ft",
+                "correct use of a wrong earlier value",
+                "uses your wrong x correctly"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Mark a model answer",
+          "bullets": [
+            "Award marks line by line"
+          ],
+          "note": "Pupils mark a sample answer before seeing the scheme.",
+          "model": {
+            "problem": "Solve 5(x - 2) = 3x + 4 (3 marks). Answer: 5x - 10 = 3x + 4, 2x = 14, x = 7",
+            "steps": [
+              "5x - 10 = 3x + 4 (M1 expand)",
+              "2x = 14 (M1 collect)",
+              "x = 7 (A1)"
+            ],
+            "answer": "3 marks"
+          }
+        },
+        {
+          "heading": "Type of error",
+          "bullets": [
+            "Sort your lost marks"
+          ],
+          "note": "Pupils sort their own errors in the same columns.",
+          "sort": {
+            "columns": [
+              "Did not know",
+              "Slip",
+              "Did not finish"
+            ],
+            "cards": [
+              "Could not start the vectors question",
+              "Copied 63 as 36",
+              "Ran out of time on the last page",
+              "Forgot the cosine rule",
+              "Rounded too early",
+              "Left the histogram blank",
+              "Sign error expanding brackets",
+              "Missed out units"
+            ],
+            "answer": [
+              0,
+              1,
+              2,
+              0,
+              1,
+              2,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Read the scheme"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "A pupil writes the correct method but the wrong final number. Usually they get",
+            "options": [
+              "the M marks but not the A mark",
+              "no marks",
+              "full marks",
+              "only the A mark"
+            ],
+            "answer": 0,
+            "why": "Method marks are kept; the accuracy mark is lost. This is why working matters."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Mark this answer to 'Find 15% of £240' (2 marks): '0.15 × 240 = 32'",
+          "a": "M1 A0: correct method, wrong answer (it is £36)",
+          "mins": 2,
+          "model": "M1 for 0.15 × 240.\nA0: 0.15 × 240 = 36, not 32."
+        },
+        {
+          "q": "Mark: 'Expand (x + 3)(x - 5)' (2 marks): 'x² - 2x - 15'",
+          "a": "M1 A1 (2 marks)",
+          "mins": 1
+        },
+        {
+          "q": "Sort your three biggest losses from the mock into 'did not know', 'slip' or 'did not finish'.",
+          "a": "Personal answer",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: In the portal response box, complete your mock analysis grid: for every question, marks scored, marks available, topic, error type. Then rank your three repair topics.",
+          "a": "Personal grid; for example 'Repair 1: vectors (lost 7 marks, did not know)'.",
+          "mins": 15,
+          "model": "Model: Q14 vectors 0/5, did not know; Q9 bounds 1/3, slip (used 7.4 as the upper bound); Q21 histogram 2/4, did not finish.\nRepair order: vectors, histograms, bounds."
+        },
+        {
+          "q": "Extend: For your top repair topic, write one original exam-style question with a mark scheme.",
+          "a": "Personal question with M and A marks",
+          "mins": 5
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which mark is usually lost if you write a correct method but miscalculate?",
+          "a": "A) A1",
+          "mins": 1,
+          "options": [
+            "A1",
+            "M1",
+            "B1"
+          ]
+        },
+        {
+          "q": "Big question: how does a bad mock become useful?",
+          "a": "It shows exactly which topics and habits cost marks, so revision can target them.",
+          "mins": 1
+        }
+      ],
+      "homework": "Complete your repair list on the portal and book your first repair topic into this week's revision timetable.",
+      "send": "Support: pre-filled analysis grid. EAL: 'method', 'accuracy', 'follow through'. Stretch: the extend task.",
+      "resources": [
+        "Your marked Papers 1H and 2H style mocks (week of 8 Feb) and their mark schemes (school-written)",
+        "Mock analysis grid (printable, in the pupil PDF)",
+        "4MA1 Higher formulae sheet",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "marked exam paper red pen",
+          "alt": "A marked paper with ticks",
+          "for": "hook"
+        },
+        {
+          "find": "checklist clipboard",
+          "alt": "A checklist on a clipboard",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2: Geometry, vectors, statistics, calculus",
+      "n": 75,
+      "title": "Repair: number: bounds, surds, recurring decimals and growth",
+      "duration": 50,
+      "bigQuestion": "Which number topics cost the most marks in the mock, and why?",
+      "objectives": [
+        "To understand how to secure the number topics most often lost in 4MA1 mocks"
+      ],
+      "successCriteria": [
+        "All: find upper and lower bounds and use them in calculations",
+        "Most: simplify surds and rationalise denominators",
+        "Some: convert recurring decimals and use multipliers for repeated percentage change"
+      ],
+      "smsc": "Moral: knowledge of how interest works protects us from debt and riba",
+      "keywords": [
+        {
+          "term": "bound",
+          "def": "the smallest or largest value a rounded number could have"
+        },
+        {
+          "term": "surd",
+          "def": "a root that cannot be simplified to a whole number, such as √2"
+        },
+        {
+          "term": "rationalise",
+          "def": "remove a surd from the denominator"
+        },
+        {
+          "term": "multiplier",
+          "def": "the decimal for a percentage change, such as 1.03"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A length is 7.4 cm to 1 d.p. Is 7.45 cm possible? Is 7.449 cm? What is the upper bound?",
+        "a": "7.45 is the upper bound (not reached, but the limit); 7.449 rounds to 7.4, so it is possible."
+      },
+      "starter": [
+        {
+          "q": "Simplify √50",
+          "a": "5√2",
+          "mins": 1
+        },
+        {
+          "q": "Write 0.3 recurring as a fraction",
+          "a": "1/3",
+          "mins": 1
+        },
+        {
+          "q": "Increase 80 by 5%",
+          "a": "84",
+          "mins": 1
+        },
+        {
+          "q": "Lower bound of 20 to the nearest 10",
+          "a": "15",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Bounds in a calculation",
+          "bullets": [
+            "Max ÷ min for the largest quotient"
+          ],
+          "note": "4MA1 1.8.",
+          "model": {
+            "problem": "d = 100 m (nearest m), t = 12.3 s (1 d.p.). Upper bound of the speed?",
+            "steps": [
+              "UB d = 100.5, LB t = 12.25",
+              "100.5 ÷ 12.25 = 8.2040...",
+              "8.20 m/s (3 s.f.)"
+            ],
+            "answer": "8.20 m/s"
+          }
+        },
+        {
+          "heading": "Surds",
+          "bullets": [
+            "Simplify, then collect",
+            "Rationalise with the conjugate"
+          ],
+          "note": "4MA1 1.4A, 1.4B.",
+          "model": {
+            "problem": "Rationalise 4/(√5 - 1)",
+            "steps": [
+              "× (√5 + 1)/(√5 + 1)",
+              "4(√5 + 1)/(5 - 1)",
+              "= √5 + 1"
+            ],
+            "answer": "√5 + 1"
+          }
+        },
+        {
+          "heading": "Recurring decimals",
+          "bullets": [
+            "Multiply by a power of 10, subtract"
+          ],
+          "note": "4MA1 1.3A.",
+          "model": {
+            "problem": "Write 0.454545... as a fraction",
+            "steps": [
+              "x = 0.4545..., 100x = 45.4545...",
+              "99x = 45",
+              "x = 45/99 = 5/11"
+            ],
+            "answer": "5/11"
+          }
+        },
+        {
+          "heading": "Repeated change",
+          "bullets": [
+            "Original × multiplierⁿ"
+          ],
+          "note": "Compound interest and depreciation are examined: knowledge, not practice (see the Islamic note).",
+          "model": {
+            "problem": "£5000 grows at 3% a year compound for 4 years. Value?",
+            "steps": [
+              "Multiplier 1.03",
+              "5000 × 1.03⁴ = 5627.544..."
+            ],
+            "answer": "£5627.54"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Which bound?"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "a = 6 (nearest whole number), b = 2.5 (1 d.p.). Lower bound of a - b?",
+            "options": [
+              "2.95",
+              "3.5",
+              "3.05",
+              "3"
+            ],
+            "answer": 0,
+            "why": "Smallest a minus largest b: 5.5 - 2.55 = 2.95. 3.05 uses the wrong bound of b."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "A rectangle measures 7.4 cm by 3.2 cm, each to 1 d.p. Find the upper bound of its area.",
+          "a": "24.2125 cm²",
+          "mins": 2,
+          "model": "UB 7.45 and 3.25.\n7.45 × 3.25 = 24.2125 (M1 A1)."
+        },
+        {
+          "q": "Simplify √48 + √27",
+          "a": "7√3",
+          "mins": 1
+        },
+        {
+          "q": "Write 0.1666... as a fraction",
+          "a": "1/6",
+          "mins": 1
+        },
+        {
+          "q": "A car worth £18 000 loses 15% of its value each year. Value after 3 years?",
+          "a": "£11 054.25",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 12 marks): (a) Rationalise 6/√3 [2] (b) Expand and simplify (3 + √2)(3 - √2) [2] (c) Prove 0.272727... = 3/11 [2] (d) x = 12.6 (1 d.p.), y = 4 (1 s.f.). Find the upper bound of x/y [3] (e) A population of 12 000 falls by 4% a year. Find it after 5 years [3]",
+          "a": "(a) 2√3 (b) 7 (c) 100x - x = 27, x = 27/99 = 3/11 (d) 12.65 ÷ 3.5 = 3.614... (e) 9785",
+          "mins": 10,
+          "model": "(a) 6√3/3.\n(b) 9 - 2.\n(c) as shown.\n(d) UB x 12.65, LB y 3.5 (4 to 1 s.f.\nlies from 3.5 to 4.5).\n(e) 12 000 × 0.96⁵ = 9784.6."
+        },
+        {
+          "q": "Extend (3 marks): Rationalise (2 + √3)/(2 - √3), giving a + b√3.",
+          "a": "× (2 + √3): (4 + 4√3 + 3)/(4 - 3) = 7 + 4√3",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Upper bound of 7.4 (1 d.p.)?",
+          "a": "A) 7.45",
+          "mins": 1,
+          "options": [
+            "7.45",
+            "7.44",
+            "7.5"
+          ]
+        },
+        {
+          "q": "Simplify √72",
+          "a": "6√2",
+          "mins": 1
+        },
+        {
+          "q": "Big question: which number topic will you keep on your repair list?",
+          "a": "Personal answer, for example 'bounds of a division'.",
+          "mins": 1
+        }
+      ],
+      "homework": "Number repair set: 10 portal exam-style questions with mark schemes; self-mark and update your repair list.",
+      "send": "Support: bounds and surds method cards. EAL: 'bound', 'rationalise', 'recurring'. Stretch: the extend task and bounds of a compound measure.",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Units 1, 2, 4, 7 (4MA1 1.3A, 1.4A, 1.4B, 1.6, 1.8) for repair",
+        "Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers)",
+        "Scientific calculator",
+        "4MA1 Higher formulae sheet",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "ruler measuring length close up",
+          "alt": "A ruler measuring to 1 decimal place",
+          "for": "hook"
+        },
+        {
+          "find": "square root symbol",
+          "alt": "The square root symbol",
+          "for": "keywords"
+        }
+      ],
+      "islamicLink": {
+        "text": "Islamic note: riba (رِبَا) is forbidden (Qur'an 2:275: Allah has permitted trade and forbidden riba). Islamic finance uses partnership (mushārakah, مُشَارَكَة) and cost-plus sale (murābaḥah, مُرَابَحَة) instead. Compound interest is examined in 4MA1 (1.6), so we learn the mathematics as knowledge of how the wider economy works, never as something to take.",
+        "at": "start"
+      }
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2: Geometry, vectors, statistics, calculus",
+      "n": 76,
+      "title": "Repair: algebra: quadratics, simultaneous equations and algebraic fractions",
+      "duration": 50,
+      "bigQuestion": "Which algebra method do you reach for first, and is it the best one?",
+      "objectives": [
+        "To understand how to choose and apply the right method for quadratic, simultaneous and fractional equations"
+      ],
+      "successCriteria": [
+        "All: solve quadratics by factorising, the formula and completing the square",
+        "Most: solve linear and quadratic simultaneous equations",
+        "Some: add, simplify and solve with algebraic fractions"
+      ],
+      "smsc": "Spiritual: the order and logic of algebra, a science developed by Muslim scholars",
+      "keywords": [
+        {
+          "term": "quadratic formula",
+          "def": "x = (-b ± √(b² - 4ac)) / 2a, on the formulae sheet"
+        },
+        {
+          "term": "completing the square",
+          "def": "writing x² + bx + c as (x + p)² + q"
+        },
+        {
+          "term": "substitution",
+          "def": "replacing one variable using the other equation"
+        },
+        {
+          "term": "algebraic fraction",
+          "def": "a fraction with algebra in it"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "x² + x - 6 = 0 and 2x² - 5x - 4 = 0. Which would you factorise and which put into the formula? How do you decide quickly?",
+        "a": "Factorise x² + x - 6 = (x + 3)(x - 2). Use the formula for 2x² - 5x - 4 because b² - 4ac = 57 is not a square."
+      },
+      "starter": [
+        {
+          "q": "Factorise x² + x - 6",
+          "a": "(x + 3)(x - 2)",
+          "mins": 1
+        },
+        {
+          "q": "Expand (x - 3)²",
+          "a": "x² - 6x + 9",
+          "mins": 1
+        },
+        {
+          "q": "Solve 2x + y = 7, x - y = 2",
+          "a": "x = 3, y = 1",
+          "mins": 1
+        },
+        {
+          "q": "Simplify (x² - 4)/(x + 2)",
+          "a": "x - 2",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The formula",
+          "bullets": [
+            "Use when it will not factorise"
+          ],
+          "note": "4MA1 2.7. Check the discriminant: 57 is not square, so no factorising.",
+          "model": {
+            "problem": "Solve 2x² - 5x - 4 = 0 to 2 d.p.",
+            "steps": [
+              "a = 2, b = -5, c = -4",
+              "x = (5 ± √(25 + 32)) / 4 = (5 ± √57)/4",
+              "x = 3.14 or x = -0.64"
+            ],
+            "answer": "3.14, -0.64"
+          }
+        },
+        {
+          "heading": "Linear and quadratic",
+          "bullets": [
+            "Substitute the linear into the quadratic"
+          ],
+          "note": "4MA1 2.7D.",
+          "model": {
+            "problem": "Solve y = x + 1 and x² + y² = 13",
+            "steps": [
+              "x² + (x + 1)² = 13",
+              "2x² + 2x - 12 = 0, x² + x - 6 = 0",
+              "x = 2, y = 3 or x = -3, y = -2"
+            ],
+            "answer": "(2, 3) and (-3, -2)"
+          }
+        },
+        {
+          "heading": "Algebraic fractions",
+          "bullets": [
+            "Common denominator"
+          ],
+          "note": "4MA1 2.2.",
+          "model": {
+            "problem": "Write 3/(x + 2) + 2/(x - 1) as a single fraction",
+            "steps": [
+              "3(x - 1) + 2(x + 2) over (x + 2)(x - 1)",
+              "= (5x + 1) / ((x + 2)(x - 1))"
+            ],
+            "answer": "(5x + 1)/((x + 2)(x - 1))"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Choose the method"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "Best first method for x² - 10x + 21 = 0?",
+            "options": [
+              "factorise",
+              "formula",
+              "graph",
+              "trial and improvement"
+            ],
+            "answer": 0,
+            "why": "(x - 3)(x - 7) = 0 is quick: x = 3 or 7. The formula works but is slower."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Solve x² - 6x + 11 = 0 by completing the square, or show it has no real roots.",
+          "a": "(x - 3)² + 2 = 0 has no real roots",
+          "mins": 2,
+          "model": "x² - 6x + 11 = (x - 3)² - 9 + 11 = (x - 3)² + 2.\nA square plus 2 is never 0, so no real roots."
+        },
+        {
+          "q": "Simplify (x² - 9)/(x² + 5x + 6)",
+          "a": "(x - 3)/(x + 2)",
+          "mins": 1
+        },
+        {
+          "q": "Solve x² - x - 12 < 0",
+          "a": "-3 < x < 4",
+          "mins": 2
+        },
+        {
+          "q": "Solve 3x + 2y = 12 and 5x - 2y = 4",
+          "a": "x = 2, y = 3",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 14 marks): (a) Solve 3x² + 7x - 2 = 0 to 2 d.p. [3] (b) Solve y = 2x - 1 and y = x² - 4 [4] (c) Solve 3/(x - 1) + 2/(x + 1) = 2 [4] (d) Write x² + 8x + 5 in the form (x + p)² + q [3]",
+          "a": "(a) 0.26, -2.59 (b) (3, 5) and (-1, -3) (c) x = 3 or x = -1/2 (d) (x + 4)² - 11",
+          "mins": 12,
+          "model": "(a) x = (-7 ± √73)/6 = 0.257, -2.591.\n(b) x² - 4 = 2x - 1, x² - 2x - 3 = 0, x = 3 or -1.\n(c) 3(x + 1) + 2(x - 1) = 2(x + 1)(x - 1): 5x + 1 = 2x² - 2, 2x² - 5x - 3 = 0, (2x + 1)(x - 3) = 0.\n(d) (x + 4)² - 16 + 5."
+        },
+        {
+          "q": "Extend (3 marks): Show that the line y = 2x + 5 does not meet the curve y = x² + 2x + 9.",
+          "a": "x² + 9 = 5 gives x² = -4: no real solutions, so they do not meet",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which equation needs the formula?",
+          "a": "A) 2x² - 5x - 4 = 0",
+          "mins": 1,
+          "options": [
+            "2x² - 5x - 4 = 0",
+            "x² + x - 6 = 0",
+            "x² - 9 = 0"
+          ]
+        },
+        {
+          "q": "Big question: how do you choose a method for a quadratic quickly?",
+          "a": "Try to factorise (look for two numbers); if the discriminant is not a square, use the formula.",
+          "mins": 1
+        }
+      ],
+      "homework": "Algebra repair set: 10 portal exam-style questions with mark schemes.",
+      "send": "Support: method flowchart for quadratics. EAL: 'discriminant', 'substitute'. Stretch: the extend task and quadratic inequalities from graphs.",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Units 9, 15, 17 (4MA1 2.2, 2.7, 2.8) for repair",
+        "Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers)",
+        "Scientific calculator",
+        "4MA1 Higher formulae sheet",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "parabola graph",
+          "alt": "A parabola graph",
+          "for": "hook"
+        },
+        {
+          "find": "quadratic formula",
+          "alt": "The quadratic formula",
+          "for": "keywords"
+        }
+      ],
+      "islamicLink": {
+        "text": "Muhammad ibn Musa al-Khwarizmi worked in Baghdad in the 9th century; the word 'algorithm' comes from his name and 'algebra' from his book al-Jabr (الجبر). Accurate method, step by step, is the heart of the subject.",
+        "at": "start"
+      }
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2: Geometry, vectors, statistics, calculus",
+      "n": 77,
+      "title": "Repair: functions and transformations of graphs",
+      "duration": 50,
+      "bigQuestion": "What does f(x + 3) do to a graph, and why is it the 'wrong' way?",
+      "objectives": [
+        "To understand function notation, composite and inverse functions, and transformations of graphs"
+      ],
+      "successCriteria": [
+        "All: evaluate composite functions and find inverse functions",
+        "Most: state values excluded from a domain",
+        "Some: describe and apply y = f(x) + a, f(x + a), -f(x) and f(-x)"
+      ],
+      "smsc": "Social: clear notation lets everyone read mathematics the same way",
+      "keywords": [
+        {
+          "term": "function",
+          "def": "a rule that maps each input to one output"
+        },
+        {
+          "term": "composite function",
+          "def": "fg(x) means do g first, then f"
+        },
+        {
+          "term": "inverse function",
+          "def": "f⁻¹ undoes f"
+        },
+        {
+          "term": "domain",
+          "def": "the set of allowed inputs"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "y = f(x) has a minimum at (2, -5). Where is the minimum of y = f(x + 3)? Of y = f(x) + 3?",
+        "a": "f(x + 3): (-1, -5), moved 3 left. f(x) + 3: (2, -2), moved 3 up."
+      },
+      "starter": [
+        {
+          "q": "f(x) = 2x + 1; f(4)",
+          "a": "9",
+          "mins": 1
+        },
+        {
+          "q": "Solve 3x - 2 = 10",
+          "a": "x = 4",
+          "mins": 1
+        },
+        {
+          "q": "Make x the subject of y = 5x + 3",
+          "a": "x = (y - 3)/5",
+          "mins": 1
+        },
+        {
+          "q": "(x - 1)² + 4 minimum point",
+          "a": "(1, 4)",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Composite",
+          "bullets": [
+            "fg(x): g first"
+          ],
+          "note": "4MA1 3.2D.",
+          "model": {
+            "problem": "f(x) = 3x - 2, g(x) = x² + 1. Find fg(2) and fg(x).",
+            "steps": [
+              "g(2) = 5, f(5) = 13",
+              "fg(x) = 3(x² + 1) - 2 = 3x² + 1"
+            ],
+            "answer": "fg(2) = 13, fg(x) = 3x² + 1"
+          }
+        },
+        {
+          "heading": "Inverse",
+          "bullets": [
+            "Swap x and y, rearrange"
+          ],
+          "note": "Check: f(f⁻¹(x)) = x.",
+          "model": {
+            "problem": "h(x) = (x + 1)/(x - 2). Find h⁻¹(x).",
+            "steps": [
+              "y = (x + 1)/(x - 2), so y(x - 2) = x + 1",
+              "xy - x = 2y + 1, x(y - 1) = 2y + 1",
+              "h⁻¹(x) = (2x + 1)/(x - 1)"
+            ],
+            "answer": "(2x + 1)/(x - 1)"
+          }
+        },
+        {
+          "heading": "Graph transformations",
+          "bullets": [
+            "Inside the bracket: the opposite way"
+          ],
+          "note": "4MA1 3.3D, 3.3E.",
+          "table": {
+            "head": [
+              "Equation",
+              "Transformation"
+            ],
+            "rows": [
+              [
+                "y = f(x) + a",
+                "translation (0 / a): up a"
+              ],
+              [
+                "y = f(x + a)",
+                "translation (-a / 0): left a"
+              ],
+              [
+                "y = -f(x)",
+                "reflection in the x-axis"
+              ],
+              [
+                "y = f(-x)",
+                "reflection in the y-axis"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Inside means opposite"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "Minimum of y = f(x) at (2, -5). Minimum of y = f(x + 3)?",
+            "options": [
+              "(-1, -5)",
+              "(5, -5)",
+              "(2, -2)",
+              "(2, -8)"
+            ],
+            "answer": 0,
+            "why": "f(x + 3) moves the graph 3 left: (-1, -5). (5, -5) moves it the wrong way."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "f(x) = 5 - 2x. Find f⁻¹(x).",
+          "a": "f⁻¹(x) = (5 - x)/2",
+          "mins": 2,
+          "model": "y = 5 - 2x, so 2x = 5 - y, x = (5 - y)/2.\nf⁻¹(x) = (5 - x)/2."
+        },
+        {
+          "q": "g(x) = 2/(x - 3). Which value must be excluded from the domain?",
+          "a": "x = 3",
+          "mins": 1
+        },
+        {
+          "q": "f(x) = x², g(x) = x - 4. Find gf(3) and fg(3).",
+          "a": "5 and 1",
+          "mins": 1
+        },
+        {
+          "q": "Minimum at (2, -5). Minimum of y = f(x - 1) + 4?",
+          "a": "(3, -1)",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 12 marks): f(x) = 4x + 3 and g(x) = x² - 2. (a) f(-2) [1] (b) gf(1) [2] (c) fg(x) [2] (d) f⁻¹(x) [2] (e) Solve f(x) = g(x) [3] (f) y = f(x) is reflected in the y-axis: write its equation [2]",
+          "a": "(a) -5 (b) 47 (c) 4x² - 5 (d) (x - 3)/4 (e) x = 5 or x = -1 (f) y = -4x + 3",
+          "mins": 10,
+          "model": "(a) -8 + 3.\n(b) f(1) = 7, g(7) = 47.\n(c) 4(x² - 2) + 3.\n(d) swap and rearrange.\n(e) x² - 2 = 4x + 3, x² - 4x - 5 = 0, (x - 5)(x + 1) = 0.\n(f) f(-x) = 4(-x) + 3."
+        },
+        {
+          "q": "Extend (3 marks): f(x) = √(x - 4). State the domain and find f⁻¹(x), with its domain.",
+          "a": "Domain x ≥ 4; f⁻¹(x) = x² + 4 for x ≥ 0",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "y = f(x) - 3 is a translation by",
+          "a": "A) (0 / -3)",
+          "mins": 1,
+          "options": [
+            "(0 / -3)",
+            "(-3 / 0)",
+            "(3 / 0)"
+          ]
+        },
+        {
+          "q": "Big question: why does f(x + 3) move the graph left?",
+          "a": "The output f(x + 3) at x equals the old output at x + 3, so every point appears 3 units earlier, to the left.",
+          "mins": 1
+        }
+      ],
+      "homework": "Functions repair set: 8 portal exam-style questions with mark schemes.",
+      "send": "Support: transformation table card. EAL: 'composite', 'inverse', 'domain'. Stretch: the extend task.",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Units 16, 18 (4MA1 3.2, 3.3D, 3.3E) for repair",
+        "Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers)",
+        "Scientific calculator",
+        "4MA1 Higher formulae sheet",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "graph paper parabola",
+          "alt": "A parabola drawn on graph paper",
+          "for": "hook"
+        },
+        {
+          "find": "function machine diagram",
+          "alt": "A function machine",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2: Geometry, vectors, statistics, calculus",
+      "n": 78,
+      "title": "Geometry: angles, polygons and circle theorems",
+      "duration": 50,
+      "bigQuestion": "Which circle theorem is hiding in this diagram?",
+      "objectives": [
+        "To understand how to identify and apply circle theorems with angle facts, giving reasons"
+      ],
+      "successCriteria": [
+        "All: recall and name the circle theorems",
+        "Most: find angles using circle theorems with full reasons",
+        "Some: combine circle theorems with polygon and triangle facts"
+      ],
+      "smsc": "Spiritual: the perfection of the circle; Muslim astronomers modelled the heavens with circles",
+      "keywords": [
+        {
+          "term": "tangent",
+          "def": "a line touching a circle at one point"
+        },
+        {
+          "term": "chord",
+          "def": "a line joining two points on a circle"
+        },
+        {
+          "term": "cyclic quadrilateral",
+          "def": "a quadrilateral with all four vertices on a circle"
+        },
+        {
+          "term": "segment",
+          "def": "the region between a chord and the arc"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A triangle is drawn with one side as a diameter and its third corner on the circle. Whatever you do, one angle never changes. Which, and why?",
+        "a": "The angle at the point on the circle is always 90°: the angle in a semicircle."
+      },
+      "starter": [
+        {
+          "q": "Interior angle of a regular hexagon",
+          "a": "120°",
+          "mins": 1
+        },
+        {
+          "q": "Base angles of an isosceles triangle with top 40°",
+          "a": "70°",
+          "mins": 1
+        },
+        {
+          "q": "Co-interior with 115°",
+          "a": "65°",
+          "mins": 1
+        },
+        {
+          "q": "Exterior angle of a regular 12-gon",
+          "a": "30°",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The theorems",
+          "bullets": [
+            "Use these exact reasons"
+          ],
+          "note": "4MA1 4.6, 4.6C. Formal proofs are not required.",
+          "table": {
+            "head": [
+              "Theorem",
+              "Reason to write"
+            ],
+            "rows": [
+              [
+                "Angle at the centre is twice the angle at the circumference",
+                "angle at centre = 2 × angle at circumference"
+              ],
+              [
+                "Angle in a semicircle is 90°",
+                "angle in a semicircle is 90°"
+              ],
+              [
+                "Angles in the same segment are equal",
+                "angles in the same segment are equal"
+              ],
+              [
+                "Opposite angles of a cyclic quadrilateral add to 180°",
+                "opposite angles of a cyclic quadrilateral add up to 180°"
+              ],
+              [
+                "Tangent meets radius at 90°",
+                "a tangent is perpendicular to the radius"
+              ],
+              [
+                "Alternate segment theorem",
+                "alternate segment theorem"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Centre and circumference",
+          "bullets": [
+            "Find the arc both angles stand on"
+          ],
+          "note": "Isosceles triangles with radii are common.",
+          "model": {
+            "problem": "O is the centre. Angle AOB = 124°. C is on the major arc. Find angle ACB, then angle OAB.",
+            "steps": [
+              "ACB = 124 ÷ 2 = 62°: angle at centre = 2 × angle at circumference",
+              "OA = OB (radii), so OAB = (180 - 124) ÷ 2 = 28°: base angles of an isosceles triangle"
+            ],
+            "answer": "62° and 28°"
+          }
+        },
+        {
+          "heading": "Tangent",
+          "bullets": [
+            "Radius ⊥ tangent"
+          ],
+          "note": "Then angles in a triangle.",
+          "model": {
+            "problem": "A tangent at A meets a line through the centre O at T. Angle AOT = 58°. Find angle OTA.",
+            "steps": [
+              "OAT = 90°: tangent is perpendicular to the radius",
+              "OTA = 180 - 90 - 58 = 32°: angles in a triangle"
+            ],
+            "answer": "32°"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Name the theorem"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "ABCD is cyclic with angle ABC = 97°. Angle ADC =",
+            "options": [
+              "83°",
+              "97°",
+              "194°",
+              "48.5°"
+            ],
+            "answer": 0,
+            "why": "Opposite angles of a cyclic quadrilateral add up to 180°: 180 - 97 = 83."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "The angle between a tangent and a chord is 64°. Find the angle in the alternate segment, giving the reason.",
+          "a": "64°: alternate segment theorem",
+          "mins": 2,
+          "model": "The alternate segment theorem says the angle between the tangent and chord equals the angle in the alternate segment: 64°."
+        },
+        {
+          "q": "Angle ACB = 41° and angle ADB is in the same segment. Find ADB.",
+          "a": "41°: angles in the same segment are equal",
+          "mins": 1
+        },
+        {
+          "q": "AB is a diameter and C is on the circle. Angle CAB = 27°. Find angle CBA.",
+          "a": "63°",
+          "mins": 1
+        },
+        {
+          "q": "Angle at the circumference 38°. Angle at the centre on the same arc?",
+          "a": "76°",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 12 marks): (a) O centre, angle OAB = 22° where A, B on the circle: find angle AOB and the angle at the circumference on the major arc [3] (b) Cyclic quadrilateral with angles 2x, 3x (opposite) : find x [2] (c) Tangents from T touch at A and B; angle ATB = 48°: find angle AOB [3] (d) Each interior angle of a regular polygon is 165°: number of sides [2] (e) Give the reason: angle in a semicircle [2]",
+          "a": "(a) 136°, 68° (b) 36 (c) 132° (d) 24 (e) the angle in a semicircle is 90°",
+          "mins": 9,
+          "model": "(a) OB = OA so OBA = 22, AOB = 136; circumference 68.\n(b) 5x = 180.\n(c) OAT = OBT = 90 (tangent ⊥ radius), 360 - 90 - 90 - 48 = 132.\n(d) exterior 15, 360 ÷ 15.\n(e) standard reason."
+        },
+        {
+          "q": "Extend (4 marks): ABCD is cyclic, AB = AD and angle BCD = 70°. Find angle ABD with reasons.",
+          "a": "BAD = 110° (opposite angles of a cyclic quadrilateral); ABD = (180 - 110) ÷ 2 = 35° (base angles of isosceles triangle ABD)",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Angle in a semicircle?",
+          "a": "A) 90°",
+          "mins": 1,
+          "options": [
+            "90°",
+            "180°",
+            "45°"
+          ]
+        },
+        {
+          "q": "Answer the ponder question.",
+          "a": "The angle at the third corner: it is always 90° (angle in a semicircle).",
+          "mins": 1
+        }
+      ],
+      "homework": "Circle theorems and polygons: 8 portal exam-style questions with reasons.",
+      "send": "Support: theorem cards with diagrams. EAL: 'tangent', 'chord', 'segment', 'cyclic'. Stretch: the extend task and two-theorem problems.",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Units 21, 26 (4MA1 4.2, 4.6) for repair",
+        "Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers)",
+        "Geometry set: ruler, protractor, compasses",
+        "4MA1 Higher formulae sheet",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "circle theorem diagram",
+          "alt": "A circle with chords and a tangent",
+          "for": "teach:1"
+        },
+        {
+          "find": "wheel spokes circle",
+          "alt": "A wheel with spokes as radii",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2: Geometry, vectors, statistics, calculus",
+      "n": 79,
+      "title": "Geometry: arcs, sectors, surface area and volume",
+      "duration": 50,
+      "bigQuestion": "How much metal is in a hollow sphere, and how much paint covers it?",
+      "objectives": [
+        "To understand how to calculate arcs, sectors, surface areas and volumes of prisms, cylinders, cones and spheres"
+      ],
+      "successCriteria": [
+        "All: find arc length and sector area",
+        "Most: find volumes and surface areas of cylinders, cones and spheres using the formulae sheet",
+        "Some: solve composite and 'melting' problems"
+      ],
+      "smsc": "Moral: careful measurement in building and making (itqan, إِتْقَان)",
+      "keywords": [
+        {
+          "term": "arc",
+          "def": "part of the circumference"
+        },
+        {
+          "term": "sector",
+          "def": "a slice of a circle between two radii"
+        },
+        {
+          "term": "slant height",
+          "def": "the length l up the side of a cone"
+        },
+        {
+          "term": "composite solid",
+          "def": "a solid made of two or more shapes"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A cylinder of metal is melted into a sphere. What stays the same, and what changes?",
+        "a": "The volume stays the same; the shape and surface area change."
+      },
+      "starter": [
+        {
+          "q": "Area of a circle radius 5 (in terms of π)",
+          "a": "25π",
+          "mins": 1
+        },
+        {
+          "q": "Circumference of a circle radius 3 (in terms of π)",
+          "a": "6π",
+          "mins": 1
+        },
+        {
+          "q": "80/360 simplified",
+          "a": "2/9",
+          "mins": 1
+        },
+        {
+          "q": "Volume of a 3 × 4 × 5 cuboid",
+          "a": "60",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Sector",
+          "bullets": [
+            "Fraction of the circle: angle/360"
+          ],
+          "note": "4MA1 4.9A.",
+          "model": {
+            "problem": "Radius 9 cm, angle 80°. Arc length and area?",
+            "steps": [
+              "Arc = 80/360 × 2π × 9 = 4π = 12.6 cm",
+              "Area = 80/360 × π × 81 = 18π = 56.5 cm²"
+            ],
+            "answer": "12.6 cm, 56.5 cm²"
+          }
+        },
+        {
+          "heading": "Cone",
+          "bullets": [
+            "Use l for the curved surface"
+          ],
+          "note": "Formulae sheet: V = ⅓πr²h, curved area = πrl.",
+          "model": {
+            "problem": "Cone r = 6 cm, h = 8 cm. Volume and total surface area?",
+            "steps": [
+              "l = √(36 + 64) = 10",
+              "V = ⅓ × π × 36 × 8 = 96π = 301.6 cm³",
+              "SA = π × 6 × 10 + π × 36 = 96π = 301.6 cm²"
+            ],
+            "answer": "301.6 cm³ and 301.6 cm²"
+          }
+        },
+        {
+          "heading": "Melting",
+          "bullets": [
+            "Volume is unchanged"
+          ],
+          "note": "The ponder question: volume stays the same, surface area changes.",
+          "model": {
+            "problem": "A cylinder r = 4 cm, h = 9 cm is melted into a sphere. Find the radius.",
+            "steps": [
+              "Cylinder V = π × 16 × 9 = 144π",
+              "4/3 πr³ = 144π, r³ = 108",
+              "r = 4.76 cm"
+            ],
+            "answer": "4.76 cm"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Leave in terms of π"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "Volume of a sphere radius 3, in terms of π?",
+            "options": [
+              "36π",
+              "12π",
+              "27π",
+              "108π"
+            ],
+            "answer": 0,
+            "why": "4/3 × π × 27 = 36π. 108π forgets the 1/3."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Volume of a hemisphere radius 4.5 cm (3 s.f.)",
+          "a": "191 cm³",
+          "mins": 2,
+          "model": "Half of 4/3 π r³: 2/3 × π × 4.5³ = 190.85...\n= 191 cm³."
+        },
+        {
+          "q": "Sector radius 7 cm has arc length 11 cm. Find the angle.",
+          "a": "90° (to the nearest degree)",
+          "mins": 2
+        },
+        {
+          "q": "A sphere has surface area 144π cm². Find its radius.",
+          "a": "6 cm",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 14 marks): (a) Perimeter of a sector radius 9 cm, angle 80° [3] (b) A solid is a cylinder r = 3 cm, h = 10 cm with a hemisphere on top: volume in terms of π [3] (c) Cone r = 5 cm, h = 12 cm: volume and curved surface area [4] (d) A sphere has volume 500 cm³: radius [4]",
+          "a": "(a) 30.6 cm (b) 108π cm³ (c) 100π = 314 cm³, 65π = 204 cm² (d) 4.92 cm",
+          "mins": 12,
+          "model": "(a) 4π + 18 = 30.57.\n(b) 90π + 18π.\n(c) l = 13; ⅓π × 25 × 12; π × 5 × 13.\n(d) r³ = 375/π, r = 4.924."
+        },
+        {
+          "q": "Extend (4 marks): A cone and a sphere have the same radius r and the same volume. Find the cone's height in terms of r.",
+          "a": "⅓πr²h = 4/3 πr³, h = 4r",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Volume of a cone?",
+          "a": "A) ⅓πr²h",
+          "mins": 1,
+          "options": [
+            "⅓πr²h",
+            "πr²h",
+            "4/3πr³"
+          ]
+        },
+        {
+          "q": "Answer the ponder: what stays the same when melting?",
+          "a": "The volume; the surface area changes.",
+          "mins": 1
+        }
+      ],
+      "homework": "Mensuration repair set: 8 portal exam-style questions; use the formulae sheet.",
+      "send": "Support: formulae sheet highlighted. EAL: 'sector', 'slant height', 'hemisphere'. Stretch: frustum-free composite solids and the extend task.",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Unit 23 (4MA1 4.9, 4.10) for repair",
+        "Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers)",
+        "Scientific calculator",
+        "4MA1 Higher formulae sheet",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "ice cream cone",
+          "alt": "A cone",
+          "for": "keywords"
+        },
+        {
+          "find": "sector of pie chart",
+          "alt": "A sector of a circle",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2: Geometry, vectors, statistics, calculus",
+      "n": 80,
+      "title": "Geometry: similar shapes: length, area and volume",
+      "duration": 50,
+      "bigQuestion": "If a model is half the height, is it half the volume?",
+      "objectives": [
+        "To understand how lengths, areas and volumes of similar shapes are related by k, k² and k³"
+      ],
+      "successCriteria": [
+        "All: find a length scale factor and use it for missing lengths",
+        "Most: use k² for areas and k³ for volumes",
+        "Some: work backwards from an area or volume ratio to a length ratio"
+      ],
+      "smsc": "Spiritual: the same design at every size, reflecting order in creation",
+      "keywords": [
+        {
+          "term": "similar",
+          "def": "same shape, sizes in proportion; angles equal"
+        },
+        {
+          "term": "scale factor k",
+          "def": "the multiplier for lengths"
+        },
+        {
+          "term": "area factor",
+          "def": "k²"
+        },
+        {
+          "term": "volume factor",
+          "def": "k³"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A model masjid dome is half the height of the real one. Is it half the volume? What fraction is it?",
+        "a": "No: (1/2)³ = 1/8 of the volume."
+      },
+      "starter": [
+        {
+          "q": "Simplify 12 : 18",
+          "a": "2 : 3",
+          "mins": 1
+        },
+        {
+          "q": "(3/2)³",
+          "a": "27/8",
+          "mins": 1
+        },
+        {
+          "q": "√(16/49)",
+          "a": "4/7",
+          "mins": 1
+        },
+        {
+          "q": "Corresponding angles in similar triangles are",
+          "a": "equal",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The rules",
+          "bullets": [
+            "Lengths × k",
+            "Areas × k²",
+            "Volumes × k³"
+          ],
+          "note": "4MA1 4.11. The ponder: half the height gives (1/2)³ = 1/8 of the volume."
+        },
+        {
+          "heading": "Similar triangles",
+          "bullets": [
+            "Match corresponding sides"
+          ],
+          "note": "Parallel lines make similar triangles.",
+          "model": {
+            "problem": "DE is parallel to BC; AD = 4, AB = 10, DE = 6. Find BC.",
+            "steps": [
+              "k = 10 ÷ 4 = 2.5",
+              "BC = 6 × 2.5 = 15"
+            ],
+            "answer": "15"
+          }
+        },
+        {
+          "heading": "Volume from height",
+          "bullets": [
+            "k from lengths, then cube"
+          ],
+          "note": "Similar bottles.",
+          "model": {
+            "problem": "Similar bottles have heights 12 cm and 18 cm. The small one holds 400 ml. The large one?",
+            "steps": [
+              "k = 18 ÷ 12 = 1.5",
+              "Volume factor 1.5³ = 3.375",
+              "400 × 3.375 = 1350"
+            ],
+            "answer": "1350 ml"
+          }
+        },
+        {
+          "heading": "Backwards",
+          "bullets": [
+            "Square root or cube root first"
+          ],
+          "note": "Area ratio 16 : 49 means length ratio 4 : 7.",
+          "model": {
+            "problem": "Two similar solids have volumes 64 cm³ and 125 cm³. The small one has surface area 80 cm². The large one?",
+            "steps": [
+              "Length ratio ∛64 : ∛125 = 4 : 5",
+              "Area factor (5/4)² = 25/16",
+              "80 × 25/16 = 125"
+            ],
+            "answer": "125 cm²"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Which power?"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "Similar shapes with k = 3. Area of the small one is 10 cm². Large?",
+            "options": [
+              "90 cm²",
+              "30 cm²",
+              "270 cm²",
+              "13 cm²"
+            ],
+            "answer": 0,
+            "why": "Area factor 3² = 9: 90. 30 uses k; 270 uses k³."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Two similar cylinders have radii 4 cm and 6 cm. The small one has volume 128 cm³. Find the large volume.",
+          "a": "432 cm³",
+          "mins": 2,
+          "model": "k = 1.5, k³ = 3.375, 128 × 3.375 = 432."
+        },
+        {
+          "q": "Similar triangles have areas 18 cm² and 50 cm². A side of the small one is 6 cm. Find the matching side.",
+          "a": "10 cm",
+          "mins": 2
+        },
+        {
+          "q": "A map is 1 : 50 000. A lake is 3 cm² on the map. Real area in km²?",
+          "a": "0.75 km²",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 12 marks): (a) Similar cones: heights 6 cm and 9 cm; small volume 48 cm³: large volume [3] (b) Similar bottles: surface areas 150 cm² and 337.5 cm²: ratio of heights [3] (c) Similar solids: volumes 54 cm³ and 250 cm³; the large height is 15 cm: small height [3] (d) A triangle with sides 5, 7, 9 is enlarged so its area is 4 times as big: new longest side [3]",
+          "a": "(a) 162 cm³ (b) 2 : 3 (c) 9 cm (d) 18",
+          "mins": 10,
+          "model": "(a) k = 1.5, 48 × 3.375.\n(b) 337.5/150 = 2.25 = 1.5², so 2 : 3.\n(c) 250/54 = 125/27, k = 5/3, 15 ÷ 5/3 = 9.\n(d) k = 2, 9 × 2."
+        },
+        {
+          "q": "Extend (4 marks): A solid has mass 2.4 kg. A similar solid made of the same material has a surface area 9 times as large. Find its mass.",
+          "a": "Length factor 3, volume factor 27: 64.8 kg",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Length factor 2. Volume factor?",
+          "a": "A) 8",
+          "mins": 1,
+          "options": [
+            "8",
+            "4",
+            "6"
+          ]
+        },
+        {
+          "q": "Answer the ponder question.",
+          "a": "No: half the height gives 1/8 of the volume.",
+          "mins": 1
+        }
+      ],
+      "homework": "Similar shapes repair set: 8 portal exam-style questions.",
+      "send": "Support: k, k², k³ table. EAL: 'similar', 'scale factor'. Stretch: mass and capacity problems.",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Unit 28 (4MA1 4.11) for repair",
+        "Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers)",
+        "Scientific calculator",
+        "4MA1 Higher formulae sheet",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Russian nesting dolls",
+          "alt": "Nesting containers of similar shapes",
+          "for": "hook"
+        },
+        {
+          "find": "mosque dome model",
+          "alt": "A dome",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2: Geometry, vectors, statistics, calculus",
+      "n": 81,
+      "title": "Trigonometry: right-angled triangles, elevation and 3D",
+      "duration": 50,
+      "bigQuestion": "How can you measure the height of a minaret without climbing it?",
+      "objectives": [
+        "To understand how to use Pythagoras and SOH CAH TOA in 2D and 3D problems, including elevation and depression"
+      ],
+      "successCriteria": [
+        "All: choose sin, cos or tan to find a side or angle",
+        "Most: solve angle of elevation and depression problems",
+        "Some: find lengths and angles in 3D using right-angled triangles"
+      ],
+      "smsc": "Spiritual: Muslim astronomers used trigonometry to set prayer times and find the qiblah",
+      "keywords": [
+        {
+          "term": "SOH CAH TOA",
+          "def": "sin = opp/hyp, cos = adj/hyp, tan = opp/adj"
+        },
+        {
+          "term": "angle of elevation",
+          "def": "the angle looking up from horizontal"
+        },
+        {
+          "term": "angle of depression",
+          "def": "the angle looking down from horizontal"
+        },
+        {
+          "term": "plane",
+          "def": "a flat surface"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You stand 40 m from the foot of a minaret and look up to the top at 28°. How tall is it, roughly, before you calculate?",
+        "a": "About 21 m: 40 tan 28° ≈ 21.3 m."
+      },
+      "starter": [
+        {
+          "q": "Hypotenuse: 9 and 12",
+          "a": "15",
+          "mins": 1
+        },
+        {
+          "q": "sin 30°",
+          "a": "0.5",
+          "mins": 1
+        },
+        {
+          "q": "tan 45°",
+          "a": "1",
+          "mins": 1
+        },
+        {
+          "q": "Shorter side: hyp 13, side 12",
+          "a": "5",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Elevation",
+          "bullets": [
+            "Opposite and adjacent: tan"
+          ],
+          "note": "4MA1 4.8B.",
+          "model": {
+            "problem": "From 40 m away, the angle of elevation of the top is 28°. Height?",
+            "steps": [
+              "tan 28° = h/40",
+              "h = 40 tan 28° = 21.27"
+            ],
+            "answer": "21.3 m (eye level ignored)"
+          }
+        },
+        {
+          "heading": "Finding an angle",
+          "bullets": [
+            "Inverse function"
+          ],
+          "note": "Label sides from the angle.",
+          "model": {
+            "problem": "Opposite 5 cm, adjacent 8 cm. Find the angle.",
+            "steps": [
+              "tan x = 5/8",
+              "x = tan⁻¹(0.625) = 32.0°"
+            ],
+            "answer": "32.0°"
+          }
+        },
+        {
+          "heading": "3D",
+          "bullets": [
+            "Find a 2D triangle inside the solid"
+          ],
+          "note": "4MA1 4.8D, 4.8F.",
+          "model": {
+            "problem": "Cuboid 6 by 8 by 24 cm. Diagonal and its angle with the base?",
+            "steps": [
+              "Base diagonal √(36 + 64) = 10",
+              "Space diagonal √(100 + 576) = 26",
+              "Angle: tan⁻¹(24/10) = 67.4°"
+            ],
+            "answer": "26 cm, 67.4°"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Which ratio?"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "Hypotenuse 12, angle 35°, find the opposite side.",
+            "options": [
+              "12 sin 35°",
+              "12 cos 35°",
+              "12 tan 35°",
+              "12 ÷ sin 35°"
+            ],
+            "answer": 0,
+            "why": "Opposite and hypotenuse: sin. 12 sin 35° = 6.88."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Hypotenuse 15 cm, angle 52°. Find the adjacent side.",
+          "a": "9.23 cm",
+          "mins": 2,
+          "model": "cos 52° = adj/15, adj = 15 cos 52° = 9.235 = 9.23 cm."
+        },
+        {
+          "q": "Opposite 9, adjacent 14. Find the angle.",
+          "a": "32.7°",
+          "mins": 1
+        },
+        {
+          "q": "From the top of an 80 m cliff, the angle of depression of a boat is 15°. How far is the boat from the foot of the cliff?",
+          "a": "299 m",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 12 marks): (a) Find x = 20 tan 40° [2] (b) cos y = 7/11: find y [2] (c) Opposite 6.5 cm, angle 23°: hypotenuse [2] (d) Cuboid 3 by 4 by 12 cm: space diagonal and its angle with the base [4] (e) A 6 m ladder makes 72° with the ground: height reached [2]",
+          "a": "(a) 16.8 (b) 50.5° (c) 16.6 cm (d) 13 cm, 67.4° (e) 5.71 m",
+          "mins": 10,
+          "model": "(a) 16.78.\n(b) cos⁻¹(7/11) = 50.48.\n(c) 6.5 ÷ sin 23° = 16.64.\n(d) base 5, √(25 + 144) = 13, tan⁻¹(12/5) = 67.38.\n(e) 6 sin 72° = 5.706."
+        },
+        {
+          "q": "Extend (4 marks): A square-based pyramid has base 10 cm and vertical height 12 cm. Find the angle between a sloping edge and the base.",
+          "a": "Half diagonal 5√2 = 7.07; tan⁻¹(12/7.07) = 59.5°",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "To find an angle from opposite and adjacent, use",
+          "a": "A) tan⁻¹",
+          "mins": 1,
+          "options": [
+            "tan⁻¹",
+            "sin⁻¹",
+            "cos⁻¹"
+          ]
+        },
+        {
+          "q": "Answer the ponder question.",
+          "a": "40 tan 28° ≈ 21.3 m.",
+          "mins": 1
+        }
+      ],
+      "homework": "Trigonometry repair set: 8 portal exam-style questions including 3D.",
+      "send": "Support: SOH CAH TOA labelling card. EAL: 'elevation', 'depression', 'opposite', 'adjacent'. Stretch: the extend pyramid task.",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Units 24, 27 (4MA1 4.8A to 4.8F) for repair",
+        "Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers)",
+        "Scientific calculator",
+        "4MA1 Higher formulae sheet",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "minaret",
+          "alt": "A tall minaret",
+          "for": "hook"
+        },
+        {
+          "find": "clinometer",
+          "alt": "A clinometer for measuring angles of elevation",
+          "for": "teach:1"
+        }
+      ],
+      "islamicLink": {
+        "text": "Nasir al-Din al-Tusi (نصير الدين الطوسي), in 13th-century Maragha, wrote the first work to treat trigonometry as a subject in its own right, including the sine rule for triangles. Muslim astronomers needed trigonometry to find prayer times and the qiblah.",
+        "at": "start"
+      }
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2: Geometry, vectors, statistics, calculus",
+      "n": 82,
+      "title": "Trigonometry: sine rule, cosine rule and area of a triangle",
+      "duration": 50,
+      "bigQuestion": "How do you solve a triangle with no right angle?",
+      "objectives": [
+        "To understand when and how to use the sine rule, cosine rule and ½ab sin C"
+      ],
+      "successCriteria": [
+        "All: choose the sine or cosine rule from the information given",
+        "Most: find sides and angles in non-right-angled triangles",
+        "Some: find areas with ½ab sin C and solve bearing problems"
+      ],
+      "smsc": "Spiritual: trigonometry served Muslim astronomers in finding the qiblah from any city",
+      "keywords": [
+        {
+          "term": "sine rule",
+          "def": "a/sin A = b/sin B = c/sin C"
+        },
+        {
+          "term": "cosine rule",
+          "def": "a² = b² + c² - 2bc cos A"
+        },
+        {
+          "term": "included angle",
+          "def": "the angle between two given sides"
+        },
+        {
+          "term": "bearing",
+          "def": "an angle measured clockwise from north, three figures"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two ships leave port: one sails 12 km, the other 15 km, with 110° between their paths. How far apart are they? Which rule?",
+        "a": "Two sides and the included angle: the cosine rule, about 22.2 km."
+      },
+      "starter": [
+        {
+          "q": "sin 90°",
+          "a": "1",
+          "mins": 1
+        },
+        {
+          "q": "Opposite side to angle A is",
+          "a": "a",
+          "mins": 1
+        },
+        {
+          "q": "cos 120°",
+          "a": "-0.5",
+          "mins": 1
+        },
+        {
+          "q": "Area of a triangle base 8, height 5",
+          "a": "20",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Which rule?",
+          "bullets": [
+            "Look at what you know"
+          ],
+          "note": "4MA1 4.8C, 4.8E. All three are on the formulae sheet.",
+          "table": {
+            "head": [
+              "You know",
+              "Use"
+            ],
+            "rows": [
+              [
+                "Two angles and a side",
+                "sine rule"
+              ],
+              [
+                "A side and its opposite angle, plus one more",
+                "sine rule"
+              ],
+              [
+                "Two sides and the included angle",
+                "cosine rule (side) or ½ab sin C (area)"
+              ],
+              [
+                "Three sides",
+                "cosine rule (angle)"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Sine rule",
+          "bullets": [
+            "Pair each side with its opposite angle"
+          ],
+          "note": "Side form.",
+          "model": {
+            "problem": "A = 40°, B = 65°, a = 8 cm. Find b.",
+            "steps": [
+              "b/sin 65° = 8/sin 40°",
+              "b = 8 sin 65° / sin 40° = 11.28"
+            ],
+            "answer": "11.3 cm"
+          }
+        },
+        {
+          "heading": "Cosine rule for a side",
+          "bullets": [
+            "Two sides and the included angle"
+          ],
+          "note": "The ponder question.",
+          "model": {
+            "problem": "Sides 12 km and 15 km with 110° between them. Find the third side.",
+            "steps": [
+              "d² = 144 + 225 - 2 × 12 × 15 × cos 110°",
+              "d² = 369 + 123.1 = 492.1",
+              "d = 22.2"
+            ],
+            "answer": "22.2 km"
+          }
+        },
+        {
+          "heading": "Cosine rule for an angle",
+          "bullets": [
+            "Rearranged form"
+          ],
+          "note": "The largest angle is opposite the longest side.",
+          "model": {
+            "problem": "Sides 6, 8 and 11 cm. Find the largest angle.",
+            "steps": [
+              "cos C = (36 + 64 - 121) / (2 × 6 × 8)",
+              "cos C = -21/96",
+              "C = 102.6°"
+            ],
+            "answer": "102.6°"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Which rule?"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "Sides 7 and 9 with 50° between them. Area?",
+            "options": [
+              "½ × 7 × 9 × sin 50° = 24.1",
+              "½ × 7 × 9 = 31.5",
+              "7 × 9 × cos 50°",
+              "sine rule"
+            ],
+            "answer": 0,
+            "why": "Two sides and the included angle give area ½ab sin C = 24.13."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "A = 35°, a = 12, B = 72°. Find b.",
+          "a": "19.9",
+          "mins": 2,
+          "model": "b = 12 sin 72° / sin 35° = 19.897 = 19.9."
+        },
+        {
+          "q": "Sides 5 and 6 with an included angle of 120°. Find the third side.",
+          "a": "9.54",
+          "mins": 2
+        },
+        {
+          "q": "Sides 10 and 13 with an included angle of 72°. Area?",
+          "a": "61.8",
+          "mins": 1
+        },
+        {
+          "q": "a = 12, A = 48°, b = 10. Find angle B.",
+          "a": "38.3°",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 14 marks): (a) Sides 7 and 9, included angle 50°: find the third side [3] (b) Sides 5, 7, 9: largest angle [3] (c) A = 52°, B = 47°, c = 14 cm: find a [4] (d) Triangle with sides 8 and 11 and area 30 cm²: the acute included angle [4]",
+          "a": "(a) 7.00 (b) 95.7° (c) 11.1 cm (d) 43.0°",
+          "mins": 12,
+          "model": "(a) √(49 + 81 - 126 cos 50°) = 7.0006.\n(b) cos C = (25 + 49 - 81)/70 = -0.1, C = 95.74.\n(c) C = 81°, a = 14 sin 52° / sin 81° = 11.17.\n(d) sin C = 60/88, C = 42.99."
+        },
+        {
+          "q": "Extend (4 marks): A boat sails 8 km on a bearing of 060°, then 5 km on a bearing of 150°. How far is it from the start?",
+          "a": "The turn makes a 90° angle between the legs: √(64 + 25) = 9.43 km",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Three sides known, find an angle. Use",
+          "a": "A) cosine rule",
+          "mins": 1,
+          "options": [
+            "cosine rule",
+            "sine rule",
+            "SOH CAH TOA"
+          ]
+        },
+        {
+          "q": "Answer the ponder question.",
+          "a": "Cosine rule: about 22.2 km apart.",
+          "mins": 1
+        }
+      ],
+      "homework": "Non-right-angled trigonometry: 8 portal exam-style questions with mark schemes.",
+      "send": "Support: 'which rule' flowchart. EAL: 'included', 'opposite', 'bearing'. Stretch: bearings with the sine rule.",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Unit 27 (4MA1 4.8C, 4.8E) for repair",
+        "Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers)",
+        "Scientific calculator",
+        "4MA1 Higher formulae sheet",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "ship navigation compass",
+          "alt": "A ship's compass",
+          "for": "hook"
+        },
+        {
+          "find": "triangle surveying",
+          "alt": "A surveying instrument",
+          "for": "keywords"
+        }
+      ],
+      "islamicLink": {
+        "text": "Nasir al-Din al-Tusi (نصير الدين الطوسي), in 13th-century Maragha, wrote the first work to treat trigonometry as a subject in its own right, including the sine rule for triangles. Muslim astronomers needed trigonometry to find prayer times and the qiblah.",
+        "at": "start"
+      }
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2: Geometry, vectors, statistics, calculus",
+      "n": 83,
+      "title": "Vectors: notation, arithmetic and magnitude",
+      "duration": 50,
+      "bigQuestion": "How is a vector different from a number?",
+      "objectives": [
+        "To understand how vectors are written, added, multiplied by scalars and measured"
+      ],
+      "successCriteria": [
+        "All: add, subtract and multiply column vectors by scalars",
+        "Most: find the magnitude of a vector",
+        "Some: write vectors along paths in a diagram"
+      ],
+      "smsc": "Social: precise directions help others reach where they need to go",
+      "keywords": [
+        {
+          "term": "vector",
+          "def": "a quantity with size and direction"
+        },
+        {
+          "term": "scalar",
+          "def": "a number with size only"
+        },
+        {
+          "term": "magnitude",
+          "def": "the length of a vector, |a|"
+        },
+        {
+          "term": "resultant",
+          "def": "the single vector equal to two or more combined"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A plane flies 300 km/h north while the wind blows 40 km/h east. Where does it really go? Why is the answer not 340 km/h?",
+        "a": "It flies on a resultant about 303 km/h, slightly east of north; speeds in different directions do not simply add."
+      },
+      "starter": [
+        {
+          "q": "Translate (2, 5) by (3 / -4)",
+          "a": "(5, 1)",
+          "mins": 1
+        },
+        {
+          "q": "√(3² + 4²)",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "2 × (-3)",
+          "a": "-6",
+          "mins": 1
+        },
+        {
+          "q": "4 - (-2)",
+          "a": "6",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Arithmetic",
+          "bullets": [
+            "Work on each component"
+          ],
+          "note": "4MA1 5.1C, 5.1D.",
+          "model": {
+            "problem": "a = (3 / -2), b = (-1 / 4). Find a + b and 2a - 3b.",
+            "steps": [
+              "a + b = (2 / 2)",
+              "2a = (6 / -4), 3b = (-3 / 12)",
+              "2a - 3b = (9 / -16)"
+            ],
+            "answer": "(2 / 2) and (9 / -16)"
+          }
+        },
+        {
+          "heading": "Magnitude",
+          "bullets": [
+            "Pythagoras on the components"
+          ],
+          "note": "4MA1 5.1E.",
+          "model": {
+            "problem": "Find |2a - 3b| where 2a - 3b = (9 / -16).",
+            "steps": [
+              "√(81 + 256) = √337",
+              "= 18.4"
+            ],
+            "answer": "18.4"
+          }
+        },
+        {
+          "heading": "Paths in diagrams",
+          "bullets": [
+            "AB = AO + OB = -a + b",
+            "Going against an arrow: subtract",
+            "Parallel vectors are multiples of each other"
+          ],
+          "note": "Prepares for geometric proof next lesson."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Magnitude"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "|(-6 / 8)| =",
+            "options": [
+              "10",
+              "2",
+              "14",
+              "-10"
+            ],
+            "answer": 0,
+            "why": "√(36 + 64) = 10. Magnitude is never negative."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "p = (4 / 1), q = (-2 / 3). Find 3p + q.",
+          "a": "(10 / 6)",
+          "mins": 2,
+          "model": "3p = (12 / 3); add q: (12 - 2 / 3 + 3) = (10 / 6)."
+        },
+        {
+          "q": "Find |(5 / -12)|",
+          "a": "13",
+          "mins": 1
+        },
+        {
+          "q": "OA = a, OB = b. Write AB in terms of a and b.",
+          "a": "b - a",
+          "mins": 1
+        },
+        {
+          "q": "Is (6 / -9) parallel to (-2 / 3)? Explain.",
+          "a": "Yes: (6 / -9) = -3 × (-2 / 3)",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 10 marks): a = (2 / 5), b = (-3 / 1). (a) a - b [1] (b) 4a + 2b [2] (c) |a + b| [2] (d) Find k if a + kb = (11 / 2) [2] (e) OP = (1 / 2), OQ = (7 / 10): find PQ and |PQ| [3]",
+          "a": "(a) (5 / 4) (b) (2 / 22) (c) √37 = 6.08 (d) k = -3 (e) (6 / 8), 10",
+          "mins": 8,
+          "model": "(a) (2 + 3 / 5 - 1).\n(b) (8 - 6 / 20 + 2).\n(c) a + b = (-1 / 6), √37.\n(d) 2 - 3k = 11 so k = -3; check 5 + k = 2.\n(e) OQ - OP."
+        },
+        {
+          "q": "Extend (3 marks): Answer the ponder: resultant speed and bearing of the plane.",
+          "a": "√(300² + 40²) = 302.7 km/h; bearing tan⁻¹(40/300) = 007.6°",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "|(3 / 4)| = ?",
+          "a": "A) 5",
+          "mins": 1,
+          "options": [
+            "5",
+            "7",
+            "25"
+          ]
+        },
+        {
+          "q": "Big question: how is a vector different from a number?",
+          "a": "A vector has direction as well as size; it adds by components, not just by size.",
+          "mins": 1
+        }
+      ],
+      "homework": "Vectors arithmetic set: 8 portal exam-style questions.",
+      "send": "Support: component grid. EAL: 'vector', 'scalar', 'magnitude', 'resultant'. Stretch: the extend task.",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Unit 29 (4MA1 5.1A to 5.1F) for repair",
+        "Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers)",
+        "Scientific calculator",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "aircraft in flight",
+          "alt": "An aircraft in flight",
+          "for": "hook"
+        },
+        {
+          "find": "wind sock",
+          "alt": "A wind sock showing wind direction",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2: Geometry, vectors, statistics, calculus",
+      "n": 84,
+      "title": "Vectors: geometric proof",
+      "duration": 50,
+      "bigQuestion": "How can vectors prove two lines are parallel?",
+      "objectives": [
+        "To understand how to use vectors to prove that lines are parallel or points are collinear"
+      ],
+      "successCriteria": [
+        "All: write vectors for paths using midpoints and ratios",
+        "Most: prove two lines are parallel by showing one vector is a multiple of the other",
+        "Some: prove three points are collinear"
+      ],
+      "smsc": "Spiritual: certainty through proof (yaqin, يَقِين)",
+      "keywords": [
+        {
+          "term": "collinear",
+          "def": "lying on the same straight line"
+        },
+        {
+          "term": "parallel",
+          "def": "one vector is a scalar multiple of the other"
+        },
+        {
+          "term": "midpoint",
+          "def": "halfway between two points"
+        },
+        {
+          "term": "ratio on a line",
+          "def": "AP : PB tells you the fraction along"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "The line joining the midpoints of two sides of any triangle is parallel to the third side and half its length. Can you prove it for EVERY triangle?",
+        "a": "Yes, with vectors: MN = ½(b - a) = ½AB for any triangle."
+      },
+      "starter": [
+        {
+          "q": "OA = a, OB = b: AB",
+          "a": "b - a",
+          "mins": 1
+        },
+        {
+          "q": "Is (4 / 2) parallel to (2 / 1)?",
+          "a": "Yes",
+          "mins": 1
+        },
+        {
+          "q": "1/3 of (6 / -9)",
+          "a": "(2 / -3)",
+          "mins": 1
+        },
+        {
+          "q": "½(a + b) is the vector to the",
+          "a": "midpoint of AB (from O)",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Midpoint theorem",
+          "bullets": [
+            "Write each vector, compare"
+          ],
+          "note": "4MA1 5.1G: the ponder question.",
+          "model": {
+            "problem": "OA = a, OB = b. M is the midpoint of OA, N the midpoint of OB. Prove MN is parallel to AB.",
+            "steps": [
+              "MN = MO + ON = -½a + ½b = ½(b - a)",
+              "AB = b - a",
+              "MN = ½ AB"
+            ],
+            "answer": "MN is parallel to AB and half its length"
+          }
+        },
+        {
+          "heading": "Point dividing a line",
+          "bullets": [
+            "Start at A, go a fraction of AB"
+          ],
+          "note": "AP : PB = 1 : 2 means 1/3 of the way.",
+          "model": {
+            "problem": "AP : PB = 1 : 2. Find OP in terms of a and b.",
+            "steps": [
+              "AB = b - a",
+              "OP = a + ⅓(b - a)",
+              "= ⅔a + ⅓b"
+            ],
+            "answer": "⅔a + ⅓b"
+          }
+        },
+        {
+          "heading": "Collinear",
+          "bullets": [
+            "Show a multiple and a shared point"
+          ],
+          "note": "Both conditions are needed.",
+          "model": {
+            "problem": "OP = a + 2b and OQ = 3a + 6b. Prove O, P, Q are collinear.",
+            "steps": [
+              "OQ = 3(a + 2b) = 3 OP",
+              "OQ and OP are parallel and share the point O"
+            ],
+            "answer": "O, P and Q are collinear"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "What proves parallel?"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "Which shows XY is parallel to AB = b - a?",
+            "options": [
+              "XY = 2b - 2a",
+              "XY = 2b + 2a",
+              "XY = b - 2a",
+              "XY = a + b"
+            ],
+            "answer": 0,
+            "why": "2b - 2a = 2(b - a), a multiple of AB."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "OA = a, OB = b, M is the midpoint of AB. Find OM.",
+          "a": "½(a + b)",
+          "mins": 2,
+          "model": "OM = OA + ½AB = a + ½(b - a) = ½a + ½b."
+        },
+        {
+          "q": "Show that 6a - 9b is parallel to 2a - 3b.",
+          "a": "6a - 9b = 3(2a - 3b)",
+          "mins": 1
+        },
+        {
+          "q": "AB = 3a + b and BC = 6a + 2b. What can you say about A, B and C?",
+          "a": "BC = 2AB and they share B, so A, B, C are collinear",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 12 marks): OABC is a parallelogram with OA = a and OC = c. M is the midpoint of AB and N is on CB with CN : NB = 2 : 1. (a) Find AB, OM and ON in terms of a and c [4] (b) Find MN [2] (c) X is on OB with OX : XB = 3 : 1. Find OX [2] (d) P is the point with OP = 2a + c. Prove that O, M and P are collinear [4]",
+          "a": "(a) AB = c, OM = a + ½c, ON = c + ⅔a (b) MN = ½c - ⅓a (c) OB = a + c, OX = ¾(a + c) (d) OP = 2(a + ½c) = 2 OM, sharing O, so O, M, P are collinear",
+          "mins": 10,
+          "model": "(a) AB = OC = c; OM = a + ½c; ON = c + ⅔a (CB = a).\n(b) ON - OM = ⅔a + c - a - ½c = ½c - ⅓a.\n(c) ¾ of OB.\n(d) as shown."
+        },
+        {
+          "q": "Extend (4 marks): In triangle OAB, OA = a, OB = b. P divides OA in the ratio 1 : 2 and Q divides OB in the ratio 1 : 2. Prove PQ is parallel to AB and find the ratio PQ : AB.",
+          "a": "PQ = ⅓b - ⅓a = ⅓(b - a) = ⅓AB; parallel, ratio 1 : 3",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "To prove collinear you need a multiple AND",
+          "a": "A) a shared point",
+          "mins": 1,
+          "options": [
+            "a shared point",
+            "equal lengths",
+            "a right angle"
+          ]
+        },
+        {
+          "q": "Big question: how do vectors prove lines are parallel?",
+          "a": "If one vector is a scalar multiple of the other, the lines are parallel.",
+          "mins": 1
+        }
+      ],
+      "homework": "Vector proof set: 6 portal exam-style questions with mark schemes.",
+      "send": "Support: path-writing frame (start, route, end). EAL: 'collinear', 'midpoint', 'ratio'. Stretch: the extend task.",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Unit 29 (4MA1 5.1G) for repair",
+        "Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers)",
+        "4MA1 Higher formulae sheet",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "vector diagram arrows",
+          "alt": "A vector diagram with arrows",
+          "for": "teach:1"
+        },
+        {
+          "find": "straight line of trees",
+          "alt": "Trees planted in a straight line",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2: Geometry, vectors, statistics, calculus",
+      "n": 85,
+      "title": "Transformations: enlargement and combined transformations",
+      "duration": 50,
+      "bigQuestion": "What does a negative scale factor do?",
+      "objectives": [
+        "To understand how to enlarge with fractional and negative scale factors and describe transformations fully"
+      ],
+      "successCriteria": [
+        "All: enlarge a shape about a centre with positive, fractional and negative scale factors",
+        "Most: find the centre and scale factor of an enlargement",
+        "Some: describe single and combined transformations fully"
+      ],
+      "smsc": "Spiritual: patterns built by transformation in Islamic art",
+      "keywords": [
+        {
+          "term": "enlargement",
+          "def": "a transformation that changes size by a scale factor from a centre"
+        },
+        {
+          "term": "centre of enlargement",
+          "def": "the fixed point the shape is enlarged from"
+        },
+        {
+          "term": "negative scale factor",
+          "def": "the image is on the opposite side of the centre and upside down"
+        },
+        {
+          "term": "invariant",
+          "def": "unchanged by the transformation"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "An enlargement has scale factor -1. What other transformation does exactly the same thing?",
+        "a": "A rotation of 180° about the centre."
+      },
+      "starter": [
+        {
+          "q": "Reflect (3, 2) in y = x",
+          "a": "(2, 3)",
+          "mins": 1
+        },
+        {
+          "q": "Rotate (1, 4) 90° clockwise about (0, 0)",
+          "a": "(4, -1)",
+          "mins": 1
+        },
+        {
+          "q": "½ × (6, -4)",
+          "a": "(3, -2)",
+          "mins": 1
+        },
+        {
+          "q": "Area factor for k = 3",
+          "a": "9",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Negative and fractional",
+          "bullets": [
+            "Multiply the vector from the centre by k"
+          ],
+          "note": "4MA1 5.2J to 5.2L.",
+          "model": {
+            "problem": "Enlarge (2, 2), (4, 2), (2, 6) by scale factor -½ about (0, 0).",
+            "steps": [
+              "Multiply each coordinate by -½",
+              "(-1, -1), (-2, -1), (-1, -3)"
+            ],
+            "answer": "(-1, -1), (-2, -1), (-1, -3)"
+          }
+        },
+        {
+          "heading": "Centre not at the origin",
+          "bullets": [
+            "Image = centre + k × (point - centre)"
+          ],
+          "note": "Use vectors from the centre.",
+          "model": {
+            "problem": "Enlarge (2, 2) and (4, 2) by scale factor 3 about (1, 1).",
+            "steps": [
+              "(2, 2): (1, 1) + 3(1, 1) = (4, 4)",
+              "(4, 2): (1, 1) + 3(3, 1) = (10, 4)"
+            ],
+            "answer": "(4, 4) and (10, 4)"
+          }
+        },
+        {
+          "heading": "Finding the centre",
+          "bullets": [
+            "Join each point to its image",
+            "The lines meet at the centre",
+            "k = image length ÷ object length (negative if the centre lies between)"
+          ],
+          "note": "Rays through matching vertices."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Scale factor -1"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "Enlargement scale factor -1 about (0, 0) is the same as",
+            "options": [
+              "rotation 180° about (0, 0)",
+              "reflection in the x-axis",
+              "reflection in y = x",
+              "translation"
+            ],
+            "answer": 0,
+            "why": "(x, y) → (-x, -y), a half turn: the answer to the ponder question."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Enlarge (6, 4) by scale factor ½ about (0, 0).",
+          "a": "(3, 2)",
+          "mins": 2,
+          "model": "Multiply both coordinates by ½: (3, 2)."
+        },
+        {
+          "q": "Enlarge (3, 5) by scale factor -2 about (1, 1).",
+          "a": "(-3, -7)",
+          "mins": 1
+        },
+        {
+          "q": "A shape of area 12 cm² is enlarged by scale factor -3. New area?",
+          "a": "108 cm²",
+          "mins": 1
+        },
+        {
+          "q": "Describe fully: (x, y) → (y, x)",
+          "a": "Reflection in the line y = x",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 12 marks): (a) Enlarge triangle (1, 1), (3, 1), (1, 2) by scale factor -2 about (0, 0) [2] (b) A(2, 3) maps to A'(6, 9) and B(4, 3) to B'(12, 9): describe fully [3] (c) Reflect in y = x then rotate 90° clockwise about (0, 0): find the single transformation using (2, 1) and (5, 3) [4] (d) Enlargement scale factor ⅓ about (3, 0) of (9, 6) [3]",
+          "a": "(a) (-2, -2), (-6, -2), (-2, -4) (b) enlargement scale factor 3, centre (0, 0) (c) (2, 1) → (1, 2) → (2, -1); (5, 3) → (3, 5) → (5, -3): reflection in the x-axis (d) (5, 2)",
+          "mins": 10,
+          "model": "(a) multiply by -2.\n(b) each coordinate × 3 from the origin.\n(c) y = x swaps; 90° clockwise maps (x, y) to (y, -x); the result keeps x and negates y.\n(d) (3, 0) + ⅓(6, 6) = (5, 2)."
+        },
+        {
+          "q": "Extend (3 marks): Find the scale factor and centre of the enlargement that maps (1, 1) to (7, 4) and (3, 1) to (11, 4).",
+          "a": "k = (11 - 7) ÷ (3 - 1) = 2; centre (p, q): 7 = p + 2(1 - p) gives p = -5, 4 = q + 2(1 - q) gives q = -2: centre (-5, -2)",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Scale factor -1 about the origin equals",
+          "a": "A) rotation 180°",
+          "mins": 1,
+          "options": [
+            "rotation 180°",
+            "reflection in y-axis",
+            "no change"
+          ]
+        },
+        {
+          "q": "Big question: what does a negative scale factor do?",
+          "a": "It puts the image on the other side of the centre, upside down, with lengths × |k|.",
+          "mins": 1
+        }
+      ],
+      "homework": "Transformations repair set: 6 portal grid questions (printable grid).",
+      "send": "Support: grid and ray method card. EAL: 'enlargement', 'centre', 'invariant'. Stretch: the extend task.",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Unit 25 (4MA1 5.2) for repair",
+        "Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers)",
+        "Printable coordinate grid (in the pupil PDF)",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "projector light enlargement",
+          "alt": "Light projecting an enlarged image",
+          "for": "hook"
+        },
+        {
+          "find": "Islamic geometric pattern",
+          "alt": "An Islamic geometric pattern made by transformations",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2: Geometry, vectors, statistics, calculus",
+      "n": 86,
+      "title": "Statistics: histograms and cumulative frequency",
+      "duration": 50,
+      "bigQuestion": "Why does a histogram use area, not height?",
+      "objectives": [
+        "To understand how to draw and interpret histograms and cumulative frequency graphs"
+      ],
+      "successCriteria": [
+        "All: calculate frequency density and read frequencies from a histogram",
+        "Most: draw a cumulative frequency graph and estimate the median and quartiles",
+        "Some: compare distributions using median and interquartile range"
+      ],
+      "smsc": "Moral: presenting data honestly without misleading graphs",
+      "keywords": [
+        {
+          "term": "frequency density",
+          "def": "frequency ÷ class width"
+        },
+        {
+          "term": "cumulative frequency",
+          "def": "the running total of frequencies"
+        },
+        {
+          "term": "interquartile range",
+          "def": "upper quartile - lower quartile"
+        },
+        {
+          "term": "class width",
+          "def": "the size of a class interval"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A class 10 minutes wide holds 12 people; a class 20 minutes wide holds 16. Which bar should be taller?",
+        "a": "The 10-minute class (fd 1.2) is taller than the 20-minute class (fd 0.8)."
+      },
+      "starter": [
+        {
+          "q": "Mean of 4, 7, 9, 12",
+          "a": "8",
+          "mins": 1
+        },
+        {
+          "q": "12 ÷ 10",
+          "a": "1.2",
+          "mins": 1
+        },
+        {
+          "q": "Running totals of 3, 5, 8",
+          "a": "3, 8, 16",
+          "mins": 1
+        },
+        {
+          "q": "Median position of 75 values",
+          "a": "38th",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Frequency density",
+          "bullets": [
+            "fd = frequency ÷ class width"
+          ],
+          "note": "4MA1 6.1A. Times (minutes) for 76 pupils.",
+          "table": {
+            "head": [
+              "Time t (min)",
+              "Frequency",
+              "Width",
+              "fd"
+            ],
+            "rows": [
+              [
+                "0 < t ≤ 10",
+                "12",
+                "10",
+                "1.2"
+              ],
+              [
+                "10 < t ≤ 15",
+                "18",
+                "5",
+                "3.6"
+              ],
+              [
+                "15 < t ≤ 20",
+                "22",
+                "5",
+                "4.4"
+              ],
+              [
+                "20 < t ≤ 30",
+                "16",
+                "10",
+                "1.6"
+              ],
+              [
+                "30 < t ≤ 50",
+                "8",
+                "20",
+                "0.4"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Reading frequencies",
+          "bullets": [
+            "Frequency = fd × width (area)"
+          ],
+          "note": "Part classes too.",
+          "model": {
+            "problem": "Estimate how many took between 12 and 25 minutes.",
+            "steps": [
+              "12 to 15: 3 × 3.6 = 10.8",
+              "15 to 20: 22",
+              "20 to 25: 5 × 1.6 = 8",
+              "Total 40.8"
+            ],
+            "answer": "about 41 pupils"
+          }
+        },
+        {
+          "heading": "Cumulative frequency",
+          "bullets": [
+            "Plot at the upper class boundaries",
+            "Join with a smooth curve"
+          ],
+          "note": "4MA1 6.1B, 6.1C. Points (10, 12), (15, 30), (20, 52), (30, 68), (50, 76).",
+          "chart": {
+            "kind": "line",
+            "labels": [
+              "0",
+              "10",
+              "15",
+              "20",
+              "30",
+              "50"
+            ],
+            "values": [
+              0,
+              12,
+              30,
+              52,
+              68,
+              76
+            ],
+            "title": "Cumulative frequency",
+            "unit": "pupils"
+          }
+        },
+        {
+          "heading": "Median and IQR",
+          "bullets": [
+            "n = 76: median at 38, LQ at 19, UQ at 57"
+          ],
+          "note": "Read across then down.",
+          "model": {
+            "problem": "Estimate the median and IQR (straight-line estimates).",
+            "steps": [
+              "Median ≈ 15 + (38 - 30)/22 × 5 ≈ 16.8",
+              "LQ ≈ 10 + 7/18 × 5 ≈ 11.9, UQ ≈ 20 + 5/16 × 10 ≈ 23.1",
+              "IQR ≈ 11.2"
+            ],
+            "answer": "median ≈ 17 min, IQR ≈ 11 min"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "fd = f ÷ w"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "A class 20 < t ≤ 35 has frequency 9. Frequency density?",
+            "options": [
+              "0.6",
+              "1.8",
+              "135",
+              "0.45"
+            ],
+            "answer": 0,
+            "why": "9 ÷ 15 = 0.6. 0.45 divides by 20, the lower bound."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "A histogram bar for 40 < m ≤ 60 has height 2.5. Frequency?",
+          "a": "50",
+          "mins": 2,
+          "model": "Width 20.\nFrequency = 2.5 × 20 = 50."
+        },
+        {
+          "q": "From the table, which class contains the median?",
+          "a": "15 < t ≤ 20",
+          "mins": 1
+        },
+        {
+          "q": "Group A has median 17 min and IQR 11 min; group B median 21 min and IQR 6 min. Compare.",
+          "a": "B took longer on average; A's times were more spread out",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 12 marks): Masses (kg) of 60 parcels: 0 < m ≤ 2: 8; 2 < m ≤ 4: 14; 4 < m ≤ 5: 12; 5 < m ≤ 8: 18; 8 < m ≤ 12: 8. (a) Frequency densities [2] (b) Estimate how many are between 3 kg and 6 kg [3] (c) Cumulative frequencies [1] (d) Class containing the median [1] (e) Estimate the mean [3]",
+          "a": "(a) 4, 7, 12, 6, 2 (b) 25 (c) 8, 22, 34, 52, 60 (d) 4 < m ≤ 5 (e) 5.02 kg",
+          "mins": 10,
+          "model": "(a) 8/2, 14/2, 12/1, 18/3, 8/4.\n(b) 3 to 4: 1 × 7; 4 to 5: 12; 5 to 6: 1 × 6.\n(c) running totals.\n(d) 30th and 31st values lie in 22 to 34.\n(e) midpoints 1, 3, 4.5, 6.5, 10: (8 + 42 + 54 + 117 + 80) ÷ 60 = 301 ÷ 60 = 5.02 kg"
+        },
+        {
+          "q": "Extend (3 marks): Explain why the mean from grouped data is only an estimate.",
+          "a": "We use midpoints, not the actual values in each class",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "fd for frequency 18 in a class of width 5?",
+          "a": "A) 3.6",
+          "mins": 1,
+          "options": [
+            "3.6",
+            "90",
+            "13"
+          ]
+        },
+        {
+          "q": "Big question: why does a histogram use area?",
+          "a": "Classes have different widths; area makes each bar's size match its frequency.",
+          "mins": 1
+        }
+      ],
+      "homework": "Statistics repair set: 6 portal exam-style questions including a cumulative frequency graph to draw.",
+      "send": "Support: fd table template. EAL: 'density', 'cumulative', 'quartile'. Stretch: comparing two distributions in context.",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Units 30, 31 (4MA1 6.1, 6.2) for repair",
+        "Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers)",
+        "Scientific calculator",
+        "Graph paper or printable cumulative frequency grid (in the pupil PDF)",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "histogram example",
+          "alt": "A histogram with unequal class widths",
+          "for": "hook"
+        },
+        {
+          "find": "parcels on scale",
+          "alt": "Parcels being weighed",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2: Geometry, vectors, statistics, calculus",
+      "n": 87,
+      "title": "Probability: tree diagrams and conditional probability",
+      "duration": 50,
+      "bigQuestion": "Does taking a sweet out change the chance for the next one?",
+      "objectives": [
+        "To understand how to use tree diagrams for independent and dependent events"
+      ],
+      "successCriteria": [
+        "All: draw tree diagrams for two events",
+        "Most: find probabilities with and without replacement",
+        "Some: use 'at least one' and conditional probability"
+      ],
+      "smsc": "Moral: understanding chance helps us see why gambling (maysir, مَيْسِر), which Islam forbids, is a losing game",
+      "keywords": [
+        {
+          "term": "independent",
+          "def": "one event does not change the other's probability"
+        },
+        {
+          "term": "dependent",
+          "def": "the first outcome changes the second probability"
+        },
+        {
+          "term": "without replacement",
+          "def": "an item taken out is not put back"
+        },
+        {
+          "term": "conditional probability",
+          "def": "a probability given that something has happened"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A bag has 5 red and 3 blue counters. You take one and do not put it back. Is the chance the second is red still 5/8?",
+        "a": "No: if the first is red, the second is red with probability 4/7."
+      },
+      "starter": [
+        {
+          "q": "P(not A) if P(A) = 0.35",
+          "a": "0.65",
+          "mins": 1
+        },
+        {
+          "q": "3/8 × 2/7",
+          "a": "3/28",
+          "mins": 1
+        },
+        {
+          "q": "1 - 5/14",
+          "a": "9/14",
+          "mins": 1
+        },
+        {
+          "q": "0.3 × 0.7",
+          "a": "0.21",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Without replacement",
+          "bullets": [
+            "Second branches change"
+          ],
+          "note": "4MA1 6.3C, 6.3D.",
+          "model": {
+            "problem": "5 red, 3 blue; two taken without replacement. P(both red)?",
+            "steps": [
+              "P(R first) = 5/8",
+              "P(R second | R first) = 4/7",
+              "5/8 × 4/7 = 20/56 = 5/14"
+            ],
+            "answer": "5/14"
+          }
+        },
+        {
+          "heading": "Different colours",
+          "bullets": [
+            "Add the two paths"
+          ],
+          "note": "Multiply along, add between.",
+          "model": {
+            "problem": "P(one of each colour)?",
+            "steps": [
+              "RB: 5/8 × 3/7 = 15/56",
+              "BR: 3/8 × 5/7 = 15/56",
+              "15/56 + 15/56 = 30/56 = 15/28"
+            ],
+            "answer": "15/28"
+          }
+        },
+        {
+          "heading": "At least one",
+          "bullets": [
+            "1 - P(none)"
+          ],
+          "note": "Quicker than adding three paths.",
+          "model": {
+            "problem": "P(at least one blue)?",
+            "steps": [
+              "P(no blue) = P(both red) = 5/14",
+              "1 - 5/14 = 9/14"
+            ],
+            "answer": "9/14"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Independent events"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "P(rain) = 0.3 each day, independently. P(rain on exactly one of two days)?",
+            "options": [
+              "0.42",
+              "0.21",
+              "0.6",
+              "0.09"
+            ],
+            "answer": 0,
+            "why": "0.3 × 0.7 + 0.7 × 0.3 = 0.42. 0.21 counts only one order."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "A spinner gives 1 with probability 0.4. It is spun twice. P(both 1s)?",
+          "a": "0.16",
+          "mins": 2,
+          "model": "Independent: 0.4 × 0.4 = 0.16."
+        },
+        {
+          "q": "A box has 4 dates and 6 figs. Two are taken without replacement. P(both figs)?",
+          "a": "1/3",
+          "mins": 2
+        },
+        {
+          "q": "P(A) = 0.6, P(B | A) = 0.25. P(A and B)?",
+          "a": "0.15",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 12 marks): A bag has 7 green and 3 yellow beads. Two are taken without replacement. (a) Complete the tree diagram [2] (b) P(both yellow) [2] (c) P(same colour) [3] (d) P(at least one green) [2] (e) Given that the first is green, P(the second is yellow) [3]",
+          "a": "(a) first 7/10, 3/10; second 6/9, 3/9 after green and 7/9, 2/9 after yellow (b) 1/15 (c) 8/15 (d) 14/15 (e) 1/3",
+          "mins": 10,
+          "model": "(b) 3/10 × 2/9 = 6/90 = 1/15.\n(c) 7/10 × 6/9 + 1/15 = 42/90 + 6/90 = 48/90 = 8/15.\n(d) 1 - 1/15.\n(e) 3/9."
+        },
+        {
+          "q": "Extend (4 marks): A bag has n red and 4 blue balls. Two are taken without replacement and P(both blue) = 1/11. Find n.",
+          "a": "4/(n + 4) × 3/(n + 3) = 1/11, (n + 4)(n + 3) = 132, n² + 7n - 120 = 0, n = 8",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "With replacement, the second-draw probabilities",
+          "a": "A) stay the same",
+          "mins": 1,
+          "options": [
+            "stay the same",
+            "change",
+            "become 0"
+          ]
+        },
+        {
+          "q": "Answer the ponder question.",
+          "a": "No: after a red is taken it is 4/7; after a blue it is 5/7.",
+          "mins": 1
+        }
+      ],
+      "homework": "Probability repair set: 6 portal exam-style questions with tree diagrams.",
+      "send": "Support: blank tree diagram template. EAL: 'independent', 'replacement', 'given'. Stretch: the extend task.",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Unit 32 (4MA1 6.3) for repair",
+        "Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers)",
+        "Tree diagram template (printable, in the pupil PDF)",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "coloured counters in a bag",
+          "alt": "Coloured counters",
+          "for": "hook"
+        },
+        {
+          "find": "tree diagram probability",
+          "alt": "A probability tree diagram",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2: Geometry, vectors, statistics, calculus",
+      "n": 88,
+      "title": "Sets, Venn diagrams and probability",
+      "duration": 50,
+      "bigQuestion": "How can 25 + 18 + 7 pupils be only 40 people?",
+      "objectives": [
+        "To understand set notation and Venn diagrams, and use them to find probabilities"
+      ],
+      "successCriteria": [
+        "All: use set notation: ∈, ∪, ∩, A', ξ, ∅, n(A) and subsets",
+        "Most: complete Venn diagrams from given information",
+        "Some: find probabilities, including conditional ones, from Venn diagrams"
+      ],
+      "smsc": "Social: one person can belong to many groups; overlap is part of community",
+      "keywords": [
+        {
+          "term": "universal set ξ",
+          "def": "everything being considered"
+        },
+        {
+          "term": "intersection A ∩ B",
+          "def": "in both A and B"
+        },
+        {
+          "term": "union A ∪ B",
+          "def": "in A or B or both"
+        },
+        {
+          "term": "complement A'",
+          "def": "not in A"
+        },
+        {
+          "term": "subset",
+          "def": "a set inside another set"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "In a year group of 40, 25 study Arabic, 18 study Business and 7 study neither. How can that add up?",
+        "a": "10 pupils study both subjects and are counted twice."
+      },
+      "starter": [
+        {
+          "q": "Multiples of 3 up to 15",
+          "a": "3, 6, 9, 12, 15",
+          "mins": 1
+        },
+        {
+          "q": "Odd numbers up to 15",
+          "a": "8 numbers",
+          "mins": 1
+        },
+        {
+          "q": "25 + 18 + 7 - 40",
+          "a": "10",
+          "mins": 1
+        },
+        {
+          "q": "10/25 simplified",
+          "a": "2/5",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Notation",
+          "bullets": [
+            "Work through each symbol"
+          ],
+          "note": "4MA1 1.5.",
+          "model": {
+            "problem": "ξ = {1, 2, ..., 15}, A = multiples of 3, B = odd numbers. Find A ∩ B, n(A ∪ B), n(A' ∩ B).",
+            "steps": [
+              "A ∩ B = {3, 9, 15}",
+              "n(A ∪ B) = 5 + 8 - 3 = 10",
+              "A' ∩ B = {1, 5, 7, 11, 13}: 5 elements"
+            ],
+            "answer": "{3, 9, 15}, 10, 5"
+          }
+        },
+        {
+          "heading": "Venn from numbers",
+          "bullets": [
+            "Start in the middle"
+          ],
+          "note": "The ponder question.",
+          "model": {
+            "problem": "40 pupils: 25 Arabic, 18 Business, 7 neither. How many study both?",
+            "steps": [
+              "In A or B: 40 - 7 = 33",
+              "Both = 25 + 18 - 33 = 10",
+              "Arabic only 15, Business only 8"
+            ],
+            "answer": "10 study both"
+          }
+        },
+        {
+          "heading": "Probability from a Venn",
+          "bullets": [
+            "Given A: the denominator is n(A)"
+          ],
+          "note": "Conditional probability.",
+          "model": {
+            "problem": "A pupil studies Arabic. P(also Business)?",
+            "steps": [
+              "n(A) = 25, n(A ∩ B) = 10",
+              "10/25"
+            ],
+            "answer": "2/5"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Union or intersection?"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "A ∪ B means",
+            "options": [
+              "in A or B or both",
+              "in both only",
+              "in neither",
+              "in A but not B"
+            ],
+            "answer": 0,
+            "why": "Union is everything in either set, including the overlap."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "ξ = {1, ..., 10}, P = primes, E = even numbers. List P ∩ E and P'.",
+          "a": "P ∩ E = {2}; P' = {1, 4, 6, 8, 9, 10}",
+          "mins": 2,
+          "model": "Primes 2, 3, 5, 7; evens 2, 4, 6, 8, 10.\nBoth: 2.\nNot prime: 1, 4, 6, 8, 9, 10."
+        },
+        {
+          "q": "Using the Arabic and Business Venn: P(neither)?",
+          "a": "7/40",
+          "mins": 1
+        },
+        {
+          "q": "Is {2, 4} a subset of the even numbers? Write it with the symbol.",
+          "a": "Yes: {2, 4} ⊂ E",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 12 marks): In a group of 50, n(T) = 28 (tea), n(C) = 22 (coffee), n(T ∩ C) = 9. (a) Draw the Venn diagram [3] (b) n(T ∪ C)' [1] (c) P(coffee only) [2] (d) P(tea | coffee) [2] (e) ξ = {x : x is an integer, 1 ≤ x ≤ 20}, A = {x : x² < 30}: list A [2] (f) Shade (A ∪ B)' and A' ∩ B on two copies of a Venn diagram [2]",
+          "a": "(a) T only 19, both 9, C only 13, neither 9 (b) 9 (c) 13/50 (d) 9/22 (e) A = {1, 2, 3, 4, 5} (f) outside both circles; B without the overlap",
+          "mins": 10,
+          "model": "(a) 28 - 9 = 19, 22 - 9 = 13, 50 - 41 = 9.\n(b) outside both.\n(c) 13 of 50.\n(d) 9 of the 22 coffee drinkers.\n(e) 5² = 25 < 30 but 6² = 36.\n(f) shading as described."
+        },
+        {
+          "q": "Extend (4 marks): n(ξ) = 60, n(A) = 35, n(B) = 2x, n(A ∩ B) = x, n(A ∪ B)' = 10. Find x.",
+          "a": "35 + 2x - x + 10 = 60, x = 15",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "A ∩ B means",
+          "a": "A) in both",
+          "mins": 1,
+          "options": [
+            "in both",
+            "in either",
+            "in neither"
+          ]
+        },
+        {
+          "q": "Answer the ponder question.",
+          "a": "10 pupils study both, so they are counted twice: 25 + 18 + 7 - 10 = 40.",
+          "mins": 1
+        }
+      ],
+      "homework": "Sets and Venn diagrams: 6 portal exam-style questions.",
+      "send": "Support: symbol card with pictures of shaded regions. EAL: 'union', 'intersection', 'complement', 'subset'. Stretch: three-set Venn diagrams.",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Unit 8 (4MA1 1.5) and Unit 32 (6.3) for repair",
+        "Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers)",
+        "Venn diagram template (printable, in the pupil PDF)",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Venn diagram two sets",
+          "alt": "A Venn diagram with two sets",
+          "for": "teach:2"
+        },
+        {
+          "find": "cup of tea and coffee",
+          "alt": "Cups of tea and coffee",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2: Geometry, vectors, statistics, calculus",
+      "n": 89,
+      "title": "Statistics and probability: timed section",
+      "duration": 50,
+      "bigQuestion": "Can I do statistics and probability questions accurately at exam speed?",
+      "objectives": [
+        "To understand how to answer mixed statistics, probability and sets questions under timed conditions"
+      ],
+      "successCriteria": [
+        "All: recall the key methods quickly",
+        "Most: complete a timed section with full working",
+        "Some: mark with the mark scheme and add topics to the repair list"
+      ],
+      "smsc": "Moral: steady, honest work under pressure",
+      "keywords": [
+        {
+          "term": "estimate of the mean",
+          "def": "Σfx ÷ Σf using midpoints"
+        },
+        {
+          "term": "modal class",
+          "def": "the class with the highest frequency (or fd for unequal widths)"
+        },
+        {
+          "term": "tree diagram",
+          "def": "branches showing outcomes and probabilities"
+        },
+        {
+          "term": "mark scheme",
+          "def": "the guide to how marks are given"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which of today's topics would you choose to answer first in an exam, and why?",
+        "a": "Personal answers; many choose Venn diagrams or tree diagrams first because they are quick marks."
+      },
+      "starter": [
+        {
+          "q": "fd for frequency 24, width 8",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "P(both) from 0.5 and 0.4 independent",
+          "a": "0.2",
+          "mins": 1
+        },
+        {
+          "q": "n(A ∪ B) if n(A) = 12, n(B) = 9, n(A ∩ B) = 4",
+          "a": "17",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Quick methods",
+          "bullets": [
+            "One line each"
+          ],
+          "note": "Rapid recall before the section.",
+          "table": {
+            "head": [
+              "Topic",
+              "Method"
+            ],
+            "rows": [
+              [
+                "Histogram",
+                "frequency = fd × width"
+              ],
+              [
+                "Grouped mean",
+                "Σ(midpoint × f) ÷ Σf"
+              ],
+              [
+                "Without replacement",
+                "change the second branch"
+              ],
+              [
+                "At least one",
+                "1 - P(none)"
+              ],
+              [
+                "Venn",
+                "start in the overlap"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Model: grouped mean",
+          "bullets": [
+            "Midpoints, multiply, add, divide"
+          ],
+          "note": "Times data from lesson 86.",
+          "model": {
+            "problem": "Estimate the mean of the 76 times.",
+            "steps": [
+              "Σfx = 12 × 5 + 18 × 12.5 + 22 × 17.5 + 16 × 25 + 8 × 40 = 1390",
+              "1390 ÷ 76 = 18.29"
+            ],
+            "answer": "18.3 minutes"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Unequal widths"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "With unequal widths, the modal class has the highest",
+            "options": [
+              "frequency density",
+              "frequency",
+              "class width",
+              "midpoint"
+            ],
+            "answer": 0,
+            "why": "Bar height is frequency density, so the tallest bar shows the modal class."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Two dice are rolled. P(at least one six)?",
+          "a": "11/36",
+          "mins": 2,
+          "model": "P(no six) = 5/6 × 5/6 = 25/36.\n1 - 25/36 = 11/36."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Timed section (30 marks, 30 minutes, portal response box): original 4MA1-style questions. Sample: (a) Histogram: fd 1.8 for 10 < x ≤ 25: frequency [1] (b) Estimate the mean from a table: 0-10: 5, 10-20: 9, 20-40: 6 [3] (c) 6 red and 4 white, two without replacement: P(different colours) [3] (d) n(ξ) = 30, n(A) = 18, n(B) = 15, n(A ∩ B) = 8: P(A' ∩ B') [2]",
+          "a": "Sample answers: (a) 27 (b) 17 (c) 8/15 (d) 1/6",
+          "mins": 30,
+          "model": "(a) 1.8 × 15.\n(b) midpoints 5, 15, 30: (25 + 135 + 180) ÷ 20 = 340 ÷ 20 = 17.\n(c) 2 × 6/10 × 4/9 = 48/90 = 8/15.\n(d) n(A ∪ B) = 25, so 5 outside: 5/30 = 1/6."
+        }
+      ],
+      "exit": [
+        {
+          "q": "Mark your section and write the topic of each lost mark.",
+          "a": "Personal list",
+          "mins": 3
+        },
+        {
+          "q": "Big question: which topic will you repair this week?",
+          "a": "Personal target.",
+          "mins": 1
+        }
+      ],
+      "homework": "Complete the corrections for your timed section and update your repair list.",
+      "send": "Support: method card allowed for the first 10 minutes. EAL: command words card. Stretch: challenge questions at the end of the section.",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Units 8, 30, 31, 32 for repair",
+        "Timed statistics and probability section with mark scheme (portal, written for this unit; original questions)",
+        "Scientific calculator",
+        "4MA1 Higher formulae sheet",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "stopwatch",
+          "alt": "A stopwatch",
+          "for": "hook"
+        },
+        {
+          "find": "dice",
+          "alt": "A pair of dice",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2: Geometry, vectors, statistics, calculus",
+      "n": 90,
+      "title": "Calculus: differentiation and gradients",
+      "duration": 50,
+      "bigQuestion": "How can we find the steepness of a curve at a single point?",
+      "objectives": [
+        "To understand how differentiation gives the gradient of a curve at any point"
+      ],
+      "successCriteria": [
+        "All: differentiate integer powers of x, including negative powers",
+        "Most: find the gradient of a curve at a given point",
+        "Some: find where a curve has a given gradient"
+      ],
+      "smsc": "Spiritual: change is constant in creation; calculus describes it precisely",
+      "keywords": [
+        {
+          "term": "derivative dy/dx",
+          "def": "the gradient function of a curve"
+        },
+        {
+          "term": "differentiate",
+          "def": "find dy/dx"
+        },
+        {
+          "term": "gradient",
+          "def": "the steepness at a point"
+        },
+        {
+          "term": "rate of change",
+          "def": "how fast one quantity changes with another"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A straight line has the same gradient everywhere. A curve does not. How could you find the gradient at just one point?",
+        "a": "Use the tangent at that point; differentiation gives its gradient exactly."
+      },
+      "starter": [
+        {
+          "q": "Gradient of y = 3x - 2",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "Write 1/x² as a power of x",
+          "a": "x⁻²",
+          "mins": 1
+        },
+        {
+          "q": "Simplify 4 × x³ ÷ x",
+          "a": "4x²",
+          "mins": 1
+        },
+        {
+          "q": "Substitute x = 2 into 3x² - 4",
+          "a": "8",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The rule",
+          "bullets": [
+            "If y = axⁿ then dy/dx = naxⁿ⁻¹",
+            "Constants differentiate to 0",
+            "Differentiate term by term"
+          ],
+          "note": "4MA1 3.4B. Not on the formulae sheet: learn it."
+        },
+        {
+          "heading": "Polynomial",
+          "bullets": [
+            "Term by term"
+          ],
+          "note": "Bring the power down, reduce by 1.",
+          "model": {
+            "problem": "Differentiate y = 3x⁴ - 5x² + 2x - 7",
+            "steps": [
+              "3x⁴ → 12x³",
+              "-5x² → -10x, 2x → 2, -7 → 0"
+            ],
+            "answer": "dy/dx = 12x³ - 10x + 2"
+          }
+        },
+        {
+          "heading": "Gradient at a point",
+          "bullets": [
+            "Substitute x into dy/dx"
+          ],
+          "note": "4MA1 3.4C.",
+          "model": {
+            "problem": "Find the gradient of y = x³ - 6x² + 5 at x = 2.",
+            "steps": [
+              "dy/dx = 3x² - 12x",
+              "At x = 2: 12 - 24 = -12"
+            ],
+            "answer": "-12"
+          }
+        },
+        {
+          "heading": "Negative powers",
+          "bullets": [
+            "Rewrite as a power first"
+          ],
+          "note": "y = 4/x = 4x⁻¹.",
+          "model": {
+            "problem": "Find dy/dx for y = 4/x and the gradient at x = 2.",
+            "steps": [
+              "y = 4x⁻¹",
+              "dy/dx = -4x⁻² = -4/x²",
+              "At x = 2: -4/4 = -1"
+            ],
+            "answer": "-1"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "n × a, power - 1"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "Differentiate y = 5x³",
+            "options": [
+              "15x²",
+              "5x²",
+              "15x³",
+              "3x²"
+            ],
+            "answer": 0,
+            "why": "3 × 5 = 15, power 3 - 1 = 2. 5x² forgets to multiply by the power."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Differentiate y = 2x⁵ - 3x + 8",
+          "a": "10x⁴ - 3",
+          "mins": 2,
+          "model": "2x⁵ → 10x⁴; -3x → -3; 8 → 0."
+        },
+        {
+          "q": "Find the gradient of y = x² + 3x at x = -1",
+          "a": "1",
+          "mins": 1
+        },
+        {
+          "q": "Differentiate y = 6/x³",
+          "a": "-18x⁻⁴ = -18/x⁴",
+          "mins": 1
+        },
+        {
+          "q": "Where does y = x² - 4x have gradient 2?",
+          "a": "2x - 4 = 2, x = 3, point (3, -3)",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 12 marks): (a) Differentiate y = 4x³ - 7x² + x [2] (b) Gradient of y = 2x³ - x at x = 3 [2] (c) Differentiate y = x² + 8/x [2] (d) Find the points on y = x³ - 12x + 1 where the gradient is 0 [3] (e) A curve y = ax² + 3x has gradient 15 at x = 2: find a [3]",
+          "a": "(a) 12x² - 14x + 1 (b) 53 (c) 2x - 8/x² (d) (2, -15) and (-2, 17) (e) a = 3",
+          "mins": 10,
+          "model": "(a) term by term.\n(b) 6x² - 1 at x = 3: 54 - 1.\n(c) 8x⁻¹ → -8x⁻².\n(d) 3x² - 12 = 0, x = ±2; y = 8 - 24 + 1 = -15, y = -8 + 24 + 1 = 17.\n(e) 2ax + 3 = 15 at x = 2: 4a = 12."
+        },
+        {
+          "q": "Extend (3 marks): The volume of water in a tank is V = 2t³ - 3t² + 40 litres after t minutes. Find the rate of change of V when t = 4.",
+          "a": "dV/dt = 6t² - 6t = 96 - 24 = 72 litres per minute",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Differentiate y = x⁴.",
+          "a": "A) 4x³",
+          "mins": 1,
+          "options": [
+            "4x³",
+            "x³",
+            "4x⁴"
+          ]
+        },
+        {
+          "q": "Big question: how do we find the gradient of a curve at one point?",
+          "a": "Differentiate to get dy/dx, then substitute the x value.",
+          "mins": 1
+        }
+      ],
+      "homework": "Differentiation set: 10 portal exam-style questions.",
+      "send": "Support: rule card with a worked example. EAL: 'differentiate', 'derivative', 'rate of change'. Stretch: the extend task.",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Unit 19 (4MA1 3.4A to 3.4C)",
+        "Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers)",
+        "Scientific calculator",
+        "4MA1 Higher formulae sheet",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "tangent line to curve",
+          "alt": "A tangent touching a curve",
+          "for": "hook"
+        },
+        {
+          "find": "hill road gradient sign",
+          "alt": "A road sign showing a steep gradient",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2: Geometry, vectors, statistics, calculus",
+      "n": 91,
+      "title": "Calculus: turning points and kinematics",
+      "duration": 50,
+      "bigQuestion": "How does a farmer use calculus to fence the biggest field?",
+      "objectives": [
+        "To understand how to find and classify turning points and apply calculus to motion and practical problems"
+      ],
+      "successCriteria": [
+        "All: find turning points by solving dy/dx = 0",
+        "Most: decide maximum or minimum from the shape of the graph",
+        "Some: use v = ds/dt and a = dv/dt, and solve optimisation problems"
+      ],
+      "smsc": "Moral: using resources wisely; getting the most from what Allah has provided without waste",
+      "keywords": [
+        {
+          "term": "turning point",
+          "def": "where the gradient is 0: a maximum or minimum"
+        },
+        {
+          "term": "maximum",
+          "def": "a highest point locally"
+        },
+        {
+          "term": "velocity",
+          "def": "rate of change of displacement, v = ds/dt"
+        },
+        {
+          "term": "acceleration",
+          "def": "rate of change of velocity, a = dv/dt"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A farmer has 60 m of fence and a long wall for one side of a rectangular pen. What shape gives the biggest area?",
+        "a": "15 m by 30 m (the long side along the wall): 450 m²."
+      },
+      "starter": [
+        {
+          "q": "Differentiate 3x² - 12x",
+          "a": "6x - 12",
+          "mins": 1
+        },
+        {
+          "q": "Solve 3x² - 6x - 9 = 0",
+          "a": "x = 3 or x = -1",
+          "mins": 1
+        },
+        {
+          "q": "Shape of y = x² + ...",
+          "a": "U-shaped (minimum)",
+          "mins": 1
+        },
+        {
+          "q": "Area of a rectangle x by (60 - 2x)",
+          "a": "60x - 2x²",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Turning points",
+          "bullets": [
+            "Solve dy/dx = 0, then find y"
+          ],
+          "note": "4MA1 3.4C, 3.4D.",
+          "model": {
+            "problem": "Find the turning points of y = x³ - 3x² - 9x + 2.",
+            "steps": [
+              "dy/dx = 3x² - 6x - 9 = 3(x - 3)(x + 1)",
+              "x = 3: y = 27 - 27 - 27 + 2 = -25",
+              "x = -1: y = -1 - 3 + 9 + 2 = 7"
+            ],
+            "answer": "(-1, 7) maximum, (3, -25) minimum"
+          }
+        },
+        {
+          "heading": "Max or min?",
+          "bullets": [
+            "Positive cubic: rises, falls, rises",
+            "So the left turning point is a maximum",
+            "Positive quadratic: one minimum"
+          ],
+          "note": "4MA1 classifies by the shape of the graph."
+        },
+        {
+          "heading": "Optimisation",
+          "bullets": [
+            "Write the quantity, differentiate, set to 0"
+          ],
+          "note": "The ponder question.",
+          "model": {
+            "problem": "A = x(60 - 2x). Find the maximum area.",
+            "steps": [
+              "A = 60x - 2x²",
+              "dA/dx = 60 - 4x = 0, x = 15",
+              "A = 15 × 30 = 450"
+            ],
+            "answer": "450 m² (15 m by 30 m)"
+          }
+        },
+        {
+          "heading": "Kinematics",
+          "bullets": [
+            "v = ds/dt, a = dv/dt"
+          ],
+          "note": "4MA1 3.4E.",
+          "model": {
+            "problem": "s = t³ - 6t² + 9t. When is the particle at rest? Acceleration then?",
+            "steps": [
+              "v = 3t² - 12t + 9 = 3(t - 1)(t - 3)",
+              "At rest at t = 1 and t = 3",
+              "a = 6t - 12: a(1) = -6, a(3) = 6"
+            ],
+            "answer": "t = 1 (a = -6 m/s²), t = 3 (a = 6 m/s²)"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Gradient zero"
+          ],
+          "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+          "check": {
+            "q": "Turning point of y = x² - 8x + 3?",
+            "options": [
+              "(4, -13)",
+              "(8, 3)",
+              "(-4, 51)",
+              "(4, 3)"
+            ],
+            "answer": 0,
+            "why": "2x - 8 = 0, x = 4, y = 16 - 32 + 3 = -13."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Find the turning point of y = 5 + 6x - x² and say whether it is a maximum or minimum.",
+          "a": "(3, 14), maximum",
+          "mins": 2,
+          "model": "dy/dx = 6 - 2x = 0, x = 3, y = 5 + 18 - 9 = 14.\nNegative x² term: n-shaped, so a maximum."
+        },
+        {
+          "q": "s = 2t² - 8t + 3. Find v when t = 5.",
+          "a": "12 m/s",
+          "mins": 1
+        },
+        {
+          "q": "v = 20 - 4t². Find the acceleration at t = 2.",
+          "a": "-16 m/s²",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core (exam-style, 13 marks): (a) Turning points of y = 2x³ - 3x² - 12x + 5, with type [5] (b) s = t³ - 9t² + 24t: times at rest and acceleration at each [4] (c) An open box is made from a 12 cm square by cutting squares of side x from each corner. V = x(12 - 2x)². Find x for maximum volume and the volume [4]",
+          "a": "(a) (-1, 12) maximum, (2, -15) minimum (b) t = 2 (a = -6), t = 4 (a = 6) (c) x = 2, V = 128 cm³",
+          "mins": 11,
+          "model": "(a) 6x² - 6x - 12 = 6(x - 2)(x + 1); y(-1) = -2 - 3 + 12 + 5 = 12; y(2) = 16 - 12 - 24 + 5 = -15.\n(b) v = 3t² - 18t + 24 = 3(t - 2)(t - 4); a = 6t - 18.\n(c) V = 144x - 48x² + 4x³, dV/dx = 144 - 96x + 12x² = 12(x - 2)(x - 6); x = 6 gives no box, so x = 2, V = 2 × 8² = 128."
+        },
+        {
+          "q": "Extend (3 marks): Show that y = x³ + 3x has no turning points.",
+          "a": "dy/dx = 3x² + 3 > 0 for all x, never 0",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "At a turning point dy/dx =",
+          "a": "A) 0",
+          "mins": 1,
+          "options": [
+            "0",
+            "1",
+            "the y value"
+          ]
+        },
+        {
+          "q": "Answer the ponder question.",
+          "a": "15 m out from the wall and 30 m along it: 450 m².",
+          "mins": 1
+        }
+      ],
+      "homework": "Calculus applications set: 6 portal exam-style questions.",
+      "send": "Support: turning point steps card. EAL: 'turning point', 'velocity', 'acceleration'. Stretch: the box problem with a 30 cm sheet.",
+      "resources": [
+        "Pearson International GCSE Mathematics A (4MA1) two-year scheme of work, Higher (the school's KS4 scheme): Unit 19 (4MA1 3.4C to 3.4E)",
+        "Revision exam-style question set (portal worksheet written for this lesson; original questions with mark-scheme answers)",
+        "Scientific calculator",
+        "4MA1 Higher formulae sheet",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "fenced field farm",
+          "alt": "A fenced field beside a wall",
+          "for": "hook"
+        },
+        {
+          "find": "cardboard box open top",
+          "alt": "An open-topped box",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2: Geometry, vectors, statistics, calculus",
+      "n": 92,
+      "title": "Full calculator paper: timed practice",
+      "duration": 50,
+      "bigQuestion": "Can I keep accuracy high for a full paper?",
+      "objectives": [
+        "To understand how to manage a full 4MA1-style paper: pacing, method and checking"
+      ],
+      "successCriteria": [
+        "All: pace at just over a minute a mark",
+        "Most: attempt every question and show method",
+        "Some: check units, accuracy and the form of each answer"
+      ],
+      "smsc": "Moral: honest effort and trust in Allah (tawakkul, تَوَكُّل) after preparing well",
+      "keywords": [
+        {
+          "term": "pacing",
+          "def": "keeping to time through the paper"
+        },
+        {
+          "term": "form of answer",
+          "def": "standard form, 3 s.f., in terms of π, as asked"
+        },
+        {
+          "term": "show that",
+          "def": "the answer is given; the marks are for the method"
+        },
+        {
+          "term": "check",
+          "def": "re-read the question and the answer"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "In the last 10 minutes of a paper, is it better to check or to try the hardest unanswered question? Why?",
+        "a": "Usually return first to stuck questions to gain method marks, then check units and rounding."
+      },
+      "starter": [
+        {
+          "q": "Interior angle of a regular 18-gon",
+          "a": "160°",
+          "mins": 1
+        },
+        {
+          "q": "Differentiate x³ - 4x",
+          "a": "3x² - 4",
+          "mins": 1
+        },
+        {
+          "q": "Volume of a sphere radius 3 in terms of π",
+          "a": "36π",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Plan for the paper",
+          "bullets": [
+            "Questions get harder: bank early marks",
+            "Stuck for 2 minutes: mark it and move on",
+            "Last 10 minutes: return, then check"
+          ],
+          "note": "Answer the ponder: return to stuck questions with partial methods first; every M1 counts."
+        },
+        {
+          "heading": "Accuracy habits",
+          "bullets": [
+            "Keep full calculator values",
+            "Round only at the end, as asked",
+            "Units on every answer"
+          ],
+          "note": "From the mock analysis."
+        },
+        {
+          "heading": "Model a 'show that'",
+          "bullets": [
+            "Every step visible"
+          ],
+          "note": "Marks are for the method.",
+          "model": {
+            "problem": "Show that the area of a triangle with sides 8 cm and 11 cm and included angle 30° is 22 cm².",
+            "steps": [
+              "Area = ½ × 8 × 11 × sin 30°",
+              "= 44 × 0.5",
+              "= 22 cm²"
+            ],
+            "answer": "Shown"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Warm-up: Solve x² + 2x - 15 = 0",
+          "a": "x = 3 or x = -5",
+          "mins": 1,
+          "model": "(x + 5)(x - 3) = 0, so x = -5 or x = 3."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Full paper practice, part 1 (portal, 30 minutes, about 28 marks of an original 4MA1-style Paper 2H, calculator): number, algebra, geometry, statistics and calculus. Sample: (a) Upper bound of 4.6 ÷ 0.8 (both 1 d.p.) (b) Solve y = x² - 3, y = 2x (c) Arc length, radius 10 cm, angle 54° (d) Gradient of y = 2x³ - 5x at x = 1",
+          "a": "Sample answers: (a) 6.2 (b) (3, 6) and (-1, -2) (c) 9.42 cm (d) 1",
+          "mins": 30,
+          "model": "(a) UB = largest ÷ smallest = 4.65 ÷ 0.75 = 6.2.\n(b) x² - 3 = 2x, x² - 2x - 3 = 0, x = 3 or -1.\n(c) 54/360 × 20π = 3π = 9.42 cm.\n(d) dy/dx = 6x² - 5 = 1 at x = 1."
+        }
+      ],
+      "exit": [
+        {
+          "q": "Big question: what will you do in your last 10 minutes on the real paper?",
+          "a": "Return to stuck questions with a method, then check answers and units.",
+          "mins": 2
+        }
+      ],
+      "homework": "Complete part 2 of the practice paper at home in 40 minutes, in silence, then self-mark with the portal mark scheme.",
+      "send": "Support: access arrangements as agreed. EAL: command words card. Stretch: aim to finish with 10 minutes for checking.",
+      "resources": [
+        "Original 4MA1-style Paper 2H practice paper with mark scheme (portal, written for this unit; not a past paper)",
+        "Scientific calculator",
+        "4MA1 Higher formulae sheet",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "exam hall clock",
+          "alt": "A clock for timing",
+          "for": "hook"
+        },
+        {
+          "find": "calculator",
+          "alt": "A scientific calculator",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 2: Revision cycle 2: Geometry, vectors, statistics, calculus",
+      "n": 93,
+      "title": "Paper review and final revision plan",
+      "duration": 50,
+      "bigQuestion": "What will I do differently between now and 14 May?",
+      "objectives": [
+        "To understand my strengths and gaps after revision cycle 2 and plan the final weeks before Paper 1H and Paper 2H"
+      ],
+      "successCriteria": [
+        "All: mark the practice paper and sort lost marks by topic",
+        "Most: correct the three most costly errors",
+        "Some: write a dated revision plan to 14 and 27 May"
+      ],
+      "smsc": "Spiritual: planning well and then relying on Allah (tawakkul, تَوَكُّل); making dua for success alongside effort",
+      "keywords": [
+        {
+          "term": "revision plan",
+          "def": "a timetable of what to revise and when"
+        },
+        {
+          "term": "retrieval practice",
+          "def": "testing yourself from memory"
+        },
+        {
+          "term": "spaced practice",
+          "def": "revisiting topics several times with gaps"
+        },
+        {
+          "term": "formulae sheet",
+          "def": "the list of formulae given in the exam"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you had only 10 hours of maths revision left, how would you spend them?",
+        "a": "Most on repair-list topics, with timed sections, little on what is already secure."
+      },
+      "starter": [
+        {
+          "q": "Sine rule from the formulae sheet",
+          "a": "a/sin A = b/sin B = c/sin C",
+          "mins": 1
+        },
+        {
+          "q": "Formula you must learn: dy/dx of axⁿ",
+          "a": "naxⁿ⁻¹",
+          "mins": 1
+        },
+        {
+          "q": "Paper 1H date",
+          "a": "Friday 14 May 2027",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "On the formulae sheet, or learn it?",
+          "bullets": [
+            "Know what is given"
+          ],
+          "note": "4MA1 Higher formulae sheet.",
+          "table": {
+            "head": [
+              "Given on the sheet",
+              "Learn it yourself"
+            ],
+            "rows": [
+              [
+                "Quadratic formula",
+                "Circle area and circumference"
+              ],
+              [
+                "Sine and cosine rules, ½ab sin C",
+                "SOH CAH TOA and Pythagoras"
+              ],
+              [
+                "Volumes of cone and sphere",
+                "Differentiation rule"
+              ],
+              [
+                "Sum of an arithmetic series",
+                "Compound measure formulae"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Correcting a costly error",
+          "bullets": [
+            "Error, reason, fix"
+          ],
+          "note": "Model one from the class.",
+          "model": {
+            "problem": "Correct: 'Arc length = 54/360 × π × 10² = 47.1'",
+            "steps": [
+              "Error: used the area formula",
+              "Arc = 54/360 × 2π × 10",
+              "= 9.42 cm"
+            ],
+            "answer": "9.42 cm"
+          }
+        },
+        {
+          "heading": "A good plan",
+          "bullets": [
+            "Specific, dated, mixed"
+          ],
+          "note": "Pupils copy and fill in.",
+          "diagram": {
+            "centre": "Final revision",
+            "items": [
+              "Repair list topics first",
+              "One timed section each week",
+              "Formulae and facts by retrieval",
+              "Spaced: each topic twice",
+              "Rest and sleep before each paper"
+            ]
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Mark one question of part 2 with the mark scheme and write its M and A marks.",
+          "a": "Personal answer",
+          "mins": 2,
+          "model": "Model: Q4 (3 marks): M1 for x² - 2x - 3 = 0, M1 for factorising, A1 for both solutions."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Complete the paper analysis grid, correct your three most costly errors, then write your revision plan to 27 May in the portal (topic, date, resource, done).",
+          "a": "Personal plan; for example 'Mon 26 Apr: vectors proof set; Thu 29 Apr: timed statistics section'",
+          "mins": 25,
+          "model": "Model plan row: 'Week of 26 Apr: Mon vectors (portal lesson 84 set), Wed timed Paper 1H section, Fri retrieval quiz on formulae; week of 3 May: sine and cosine rules, histograms'."
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which formula is NOT given on the 4MA1 formulae sheet?",
+          "a": "A) the derivative of axⁿ",
+          "mins": 1,
+          "options": [
+            "the derivative of axⁿ",
+            "the cosine rule",
+            "the volume of a sphere"
+          ]
+        },
+        {
+          "q": "Big question: write the one change you will make before 14 May.",
+          "a": "Personal target, for example 'one timed section a week'.",
+          "mins": 1
+        }
+      ],
+      "homework": "Follow the first week of your revision plan; bring it to the next lesson.",
+      "send": "Support: pre-filled plan template. EAL: 'retrieval', 'spaced'. Stretch: add a full past-style paper under timed conditions each fortnight.",
+      "resources": [
+        "Original 4MA1-style practice paper and mark scheme (portal, part 1 and 2)",
+        "Revision plan template (printable, in the pupil PDF)",
+        "4MA1 Higher formulae sheet",
+        "Slides",
+        "Mini-whiteboard and pen",
+        "Exercise book"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "chat-waterfall"
+      },
+      "pictures": [
+        {
+          "find": "calendar planner",
+          "alt": "A calendar for planning",
+          "for": "hook"
+        },
+        {
+          "find": "formula sheet",
+          "alt": "A formulae sheet",
+          "for": "teach:1"
         }
       ]
     }

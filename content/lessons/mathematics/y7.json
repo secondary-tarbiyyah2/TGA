@@ -3,7 +3,7 @@
  "year": "y7",
  "board": "Pearson Edexcel (KS3 Maths Progress, building to International GCSE Mathematics A 4MA1)",
  "boardShort": "KS3 Maths Progress",
- "source": "School scheme of work: Pearson KS3 Maths Progress (2nd ed.) (ks3_maths_a_p_sow3.xlsx), matched to the White Rose Secondary block order in content/syllabus/ks1-3/mathematics.json; founding-year bridge (11 and 18 Jan 2027: Autumn 1 and 2 essentials) and Spring 1 lessons written to the plan, building to Pearson Edexcel International GCSE Mathematics A (4MA1); INSET lesson standard (10 steps, success criteria, AfL).",
+ "source": "School scheme of work: Pearson KS3 Maths Progress (2nd ed.) (ks3_maths_a_p_sow3.xlsx), matched to the White Rose Secondary block order in content/syllabus/ks1-3/mathematics.json; founding-year bridge (11 and 18 Jan 2027: Autumn 1 and 2 essentials) and Spring 1 lessons written to the plan, building to Pearson Edexcel International GCSE Mathematics A (4MA1); INSET lesson standard (10 steps, success criteria, AfL). | Founding year 2027 Spring 2 (15 Mar to 23 Apr): Directed numbers; adding fractions, written to the plan with Maths Progress Year 7 2.6, Year 8 1.3, 8.2, 8.5 and Year 7 Unit 5 as the school's resources.",
  "lessons": [
   {
    "unit": "Unit 1: Analysing and displaying data",
@@ -2352,159 +2352,249 @@
    }
   },
   {
-   "unit": "Unit 2: Number skills",
+   "unit": "Spring 2: Directed numbers; adding fractions",
    "n": 14,
-   "title": "Negative numbers",
+   "title": "Directed numbers on a number line: ordering",
    "duration": 50,
-   "bigQuestion": "Can a temperature fall below nothing?",
+   "bigQuestion": "How can a number be less than nothing?",
    "objectives": [
-    "Order positive and negative numbers",
-    "Add and subtract with negative numbers using a number line",
-    "Solve problems with temperature and money"
+    "To understand how negative numbers sit on the number line and how to order them"
    ],
    "successCriteria": [
-    "Order a list including negative numbers",
-    "Add and subtract with negatives, using a number line",
-    "Explain why subtracting a negative is the same as adding"
+    "All: place positive and negative integers on a number line",
+    "Most: order a set of directed numbers, including decimals",
+    "Some: explain why -8 is smaller than -3 using the number line"
    ],
-   "crossCurricular": "Geography: temperatures and sea level; Science: freezing points",
-   "smsc": "Cultural: climates of different countries, from Norway to Saudi Arabia",
+   "crossCurricular": "Geography: heights above and below sea level on maps",
+   "smsc": "Social: understanding weather warnings and temperatures to keep others safe in winter",
    "keywords": [
     {
-     "term": "negative number",
-     "def": "a number less than zero"
+     "term": "directed number",
+     "def": "a number with a sign: positive or negative"
+    },
+    {
+     "term": "negative",
+     "def": "less than zero, written with a minus sign"
+    },
+    {
+     "term": "positive",
+     "def": "greater than zero"
     },
     {
      "term": "integer",
      "def": "a whole number, positive, negative or zero"
-    },
-    {
-     "term": "number line",
-     "def": "a line with numbers in order, used to calculate"
-    },
-    {
-     "term": "difference",
-     "def": "how far apart two numbers are"
     }
    ],
+   "hook": {
+    "type": "ponder",
+    "text": "The lowest point on dry land is about 430 m below sea level. How could you write that height as a number?",
+    "a": "As -430 m: a negative number shows a height below sea level (the Dead Sea shore)."
+   },
    "starter": [
-    "Work out 15 − 9",
-    "How long from 14:50 to 16:05?",
-    "Which is bigger: 0 or 3?",
-    "Write 2.5 hours in hours and minutes"
+    {
+     "q": "Find 10% of 230.",
+     "a": "23",
+     "mins": 1
+    },
+    {
+     "q": "Find 3/4 of 36.",
+     "a": "27",
+     "mins": 1
+    },
+    {
+     "q": "Work out 1000 - 437.",
+     "a": "563",
+     "mins": 1
+    },
+    {
+     "q": "Round 3.68 to 1 decimal place.",
+     "a": "3.7",
+     "mins": 1
+    }
    ],
    "teach": [
     {
-     "heading": "Ordering negatives",
+     "heading": "The number line",
      "bullets": [
-      "Further left = smaller",
-      "−8 is smaller than −3",
-      "Zero is neither positive nor negative"
+      "Zero in the middle",
+      "Right is bigger, left is smaller",
+      "-3 is 3 steps left of 0"
      ],
-     "note": "Use a vertical thermometer. Ask: 'Which is colder, −8 °C or −3 °C?'",
-     "misconception": {
-      "wrong": "−8 is bigger than −3 because 8 > 3",
-      "right": "−8 < −3: it is further below zero"
-     }
-    },
-    {
-     "heading": "Adding and subtracting on a line",
-     "bullets": [
-      "Start at the first number",
-      "+ move right, − move left"
-     ],
-     "note": "Model on a number line.",
-     "model": {
-      "problem": "The temperature is −4 °C. It rises 9 °C, then falls 7 °C. What is it now?",
-      "steps": [
-       "Start at −4",
-       "Rise 9: −4 + 9 = 5",
-       "Fall 7: 5 − 7 = −2"
-      ],
-      "answer": "−2 °C"
-     }
-    },
-    {
-     "heading": "Subtracting a negative",
-     "bullets": [
-      "Taking away a debt makes you richer",
-      "5 − (−3) = 5 + 3 = 8",
-      "Two signs next to each other: same → +, different → −"
-     ],
-     "note": "Story: Yusuf owes £3 (−3). If that debt is cancelled (taken away), he is £3 better off. So subtracting −3 adds 3.",
-     "table": {
-      "head": [
-       "Calculation",
-       "Becomes",
-       "Answer"
-      ],
-      "rows": [
-       [
-        "6 + (−2)",
-        "6 − 2",
-        "4"
-       ],
-       [
-        "6 − (−2)",
-        "6 + 2",
-        "8"
-       ],
-       [
-        "−6 − 2",
-        "−6 − 2",
-        "−8"
-       ],
-       [
-        "−6 − (−2)",
-        "−6 + 2",
-        "−4"
-       ]
+     "note": "Ask: where would -3 go? Pupils point on their sheet. Stress that -3 is read 'negative three'.",
+     "numberline": {
+      "min": -10,
+      "max": 10,
+      "step": 1,
+      "marks": [
+       {
+        "at": -7,
+        "label": "-7"
+       },
+       {
+        "at": -3,
+        "label": "-3"
+       },
+       {
+        "at": 0,
+        "label": "0"
+       },
+       {
+        "at": 4,
+        "label": "4"
+       }
       ]
      }
     },
     {
-     "heading": "Finding a difference",
+     "heading": "Real negative numbers",
      "bullets": [
-      "Count the gap on the number line",
-      "Difference between −5 and 7 is 12"
+      "Temperature below 0 °C",
+      "Heights below sea level",
+      "Floors below ground: -1, -2"
      ],
-     "note": "Ask: 'The temperature in Moscow is −11 °C and in Riyadh 24 °C. What is the difference?' (35 °C)"
+     "note": "Use the thermometer picture: -5 °C is colder than -2 °C, so -5 is the smaller number."
     },
     {
-     "heading": "Check: negatives",
-     "bullets": [],
-     "note": "Show me on 3.",
-     "check": {
-      "q": "Work out −3 − (−8)",
-      "options": [
-       "−11",
-       "5",
-       "−5",
-       "11"
+     "heading": "Bigger digit, smaller number",
+     "bullets": [
+      "Compare by position, not the digit"
+     ],
+     "note": "Many pupils think -8 is bigger than -3 because 8 > 3.",
+     "misconception": {
+      "wrong": "-8 > -3 because 8 is bigger than 3",
+      "right": "-8 < -3 because -8 is further left on the number line"
+     }
+    },
+    {
+     "heading": "Ordering a list",
+     "bullets": [
+      "Positive numbers last, largest negative first"
+     ],
+     "note": "Sketch a number line and place each number before writing the order.",
+     "model": {
+      "problem": "Order from smallest: 4, -6, 0, -1, -10, 3",
+      "steps": [
+       "Negatives first: -10 is furthest left, then -6, then -1",
+       "Then 0",
+       "Then positives: 3, 4"
       ],
-      "answer": 1,
-      "why": "−3 − (−8) = −3 + 8 = 5. A ignores the double negative; C reverses the subtraction."
+      "answer": "-10, -6, -1, 0, 3, 4"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Which is smallest?"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Which is the smallest number?",
+      "options": [
+       "-2.5",
+       "-2",
+       "-3",
+       "1"
+      ],
+      "answer": 2,
+      "why": "-3 is furthest left. -2.5 is between -3 and -2, so it is bigger than -3."
      }
     }
    ],
    "practice": [
-    "Order: 4, −7, 0, −2, 9, −10",
-    "Work out −5 + 8 and 3 − 9",
-    "Work out 7 − (−4)",
-    "Find the difference between −6 and 5"
+    {
+     "q": "Order from smallest: 5, -2, -7, 1, 0",
+     "a": "-7, -2, 0, 1, 5",
+     "mins": 2,
+     "model": "Place each on the number line: -7 furthest left, then -2, 0, 1, 5."
+    },
+    {
+     "q": "Which is colder: -4 °C or -9 °C?",
+     "a": "-9 °C",
+     "mins": 1
+    },
+    {
+     "q": "Write a number between -5 and -6.",
+     "a": "For example -5.5",
+     "mins": 1
+    },
+    {
+     "q": "Order from largest: -1.5, -0.5, -3, 2",
+     "a": "2, -0.5, -1.5, -3",
+     "mins": 2
+    }
    ],
    "independent": [
-    "Core: Work out (a) −8 + 3 (b) −2 − 6 (c) 4 − (−5) (d) −7 + (−3)",
-    "Extend: A diver is at −18 m. She rises 7 m, then dives 12 m. Where is she? How far is she from a boat at +2 m?",
-    "Stretch: Fill in the missing numbers: ? − (−4) = −1; −6 + ? = −13; ? − 9 = −15. Make up a puzzle like this for a partner."
+    {
+     "q": "Core: Order from smallest (a) 3, -8, -1, 6, -4 (b) -12, -20, 0, -15 (c) -0.2, -2, 0.5, -1.2",
+     "a": "(a) -8, -4, -1, 3, 6 (b) -20, -15, -12, 0 (c) -2, -1.2, -0.2, 0.5",
+     "mins": 5,
+     "model": "(a) Most negative first: -8, then -4, -1, then the positives 3, 6.\n(b) -20 is furthest left.\n(c) -2 < -1.2 < -0.2 < 0.5."
+    },
+    {
+     "q": "Extend: The temperatures one night were Moscow -14 °C, Oslo -9 °C, London 2 °C, Ottawa -17 °C. List the cities from coldest to warmest.",
+     "a": "Ottawa, Moscow, Oslo, London",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Sami says 'the further a number is from zero, the bigger it is'. Give an example that proves him wrong and correct his rule.",
+     "a": "-10 is further from 0 than 2 but -10 < 2. Correct rule: the further right on the number line, the bigger the number.",
+     "mins": 4
+    }
    ],
    "exit": [
-    "Which is smaller, −9 or −4?",
-    "Work out −2 − 5.",
-    "Work out 3 − (−6)."
+    {
+     "q": "Which is bigger?",
+     "a": "A) -6",
+     "mins": 1,
+     "options": [
+      "-6",
+      "-11"
+     ]
+    },
+    {
+     "q": "Order from smallest: 2, -3, -7, 0",
+     "a": "-7, -3, 0, 2",
+     "mins": 1
+    },
+    {
+     "q": "Big question: explain how -5 can be less than zero.",
+     "a": "It is 5 steps to the left of zero on the number line, for example 5 degrees below freezing.",
+     "mins": 2
+    }
    ],
-   "homework": "Find the minimum temperatures of five cities around the world today, order them and find the difference between the warmest and coldest.",
-   "send": "Support: vertical number line on every question. Stretch: multiplying negatives (preview)."
+   "homework": "Order two lists of temperatures from a weather map (portal homework sheet, 8 questions).",
+   "send": "Support: printed number line -20 to 20 to point at. EAL: 'negative', 'below', 'above'. Stretch: order fractions such as -1/2, -3/4, -1/3.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 2.6 Negative numbers (Unit 2: Number skills)",
+    "Printable number line sheet, -20 to 20 (portal worksheet for this unit)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "thermometer showing negative temperature",
+     "alt": "A thermometer reading below 0 °C",
+     "for": "teach:2"
+    },
+    {
+     "find": "number line negative numbers",
+     "alt": "A number line from -10 to 10",
+     "for": "keywords"
+    },
+    {
+     "find": "Dead Sea shore salt",
+     "alt": "The shore of the Dead Sea, below sea level",
+     "for": "hook"
+    }
+   ]
   },
   {
    "unit": "Unit 2: Number skills",
@@ -6867,6 +6957,4492 @@
      "find": "short division bus stop method",
      "alt": "A written short division",
      "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Directed numbers; adding fractions",
+   "n": 33,
+   "title": "Comparing directed numbers and finding the difference",
+   "duration": 50,
+   "bigQuestion": "How far apart are two numbers when one is below zero?",
+   "objectives": [
+    "To understand how the number line shows the gap between two directed numbers"
+   ],
+   "successCriteria": [
+    "All: use < and > correctly with negative numbers",
+    "Most: find the difference between a positive and a negative number",
+    "Some: find the difference between two negative numbers in context"
+   ],
+   "crossCurricular": "Science: temperature changes when ice melts and water freezes",
+   "smsc": "Moral: precise use of numbers in reporting facts honestly",
+   "keywords": [
+    {
+     "term": "inequality",
+     "def": "a statement that one number is bigger or smaller, using < or >"
+    },
+    {
+     "term": "difference",
+     "def": "how far apart two numbers are"
+    },
+    {
+     "term": "less than",
+     "def": "the symbol <, the small end points at the smaller number"
+    },
+    {
+     "term": "greater than",
+     "def": "the symbol >"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "At 6 am it was -4 °C. At noon it was 7 °C. By how many degrees did it warm up? How do you know?",
+    "a": "11 degrees: 4 degrees up to zero, then 7 more."
+   },
+   "starter": [
+    {
+     "q": "Order from smallest: -3, 5, -9, 0",
+     "a": "-9, -3, 0, 5",
+     "mins": 1
+    },
+    {
+     "q": "Which is colder, -2 °C or -12 °C?",
+     "a": "-12 °C",
+     "mins": 1
+    },
+    {
+     "q": "Find 25% of 48.",
+     "a": "12",
+     "mins": 1
+    },
+    {
+     "q": "Simplify 12/18.",
+     "a": "2/3",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "The symbols",
+     "bullets": [
+      "< means less than",
+      "> means greater than",
+      "The open end faces the bigger number"
+     ],
+     "note": "Read aloud: -4 < 1 is 'negative four is less than one'."
+    },
+    {
+     "heading": "Counting the gap",
+     "bullets": [
+      "Count jumps from one number to the other",
+      "Go via zero: 4 then 7"
+     ],
+     "note": "From -4 to 7: 4 jumps to zero, then 7 more, 11 in all.",
+     "numberline": {
+      "min": -5,
+      "max": 10,
+      "step": 1,
+      "marks": [
+       {
+        "at": -4,
+        "label": "-4"
+       },
+       {
+        "at": 0,
+        "label": "0"
+       },
+       {
+        "at": 7,
+        "label": "7"
+       }
+      ]
+     }
+    },
+    {
+     "heading": "Two negative numbers",
+     "bullets": [
+      "Count the steps between them"
+     ],
+     "note": "Both below zero: no need to cross zero.",
+     "model": {
+      "problem": "A freezer is at -18 °C. A fridge is at 4 °C. How much colder is the freezer?",
+      "steps": [
+       "From -18 to 0 is 18 degrees",
+       "From 0 to 4 is 4 degrees",
+       "18 + 4 = 22"
+      ],
+      "answer": "22 degrees colder"
+     }
+    },
+    {
+     "heading": "Difference is never negative",
+     "bullets": [
+      "A gap is a distance"
+     ],
+     "note": "Pupils subtract the wrong way and give -11.",
+     "misconception": {
+      "wrong": "The difference between -4 and 7 is -11",
+      "right": "The difference is 11: it is a distance on the number line"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Use the number line"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "What is the difference between -6 and -2?",
+      "options": [
+       "4",
+       "8",
+       "-8",
+       "-4"
+      ],
+      "answer": 0,
+      "why": "From -6 to -2 is 4 steps. 8 comes from adding 6 and 2; the negatives give a sign error."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Find the difference between -3 and 5.",
+     "a": "8",
+     "mins": 2,
+     "model": "From -3 to 0 is 3, from 0 to 5 is 5, so 3 + 5 = 8."
+    },
+    {
+     "q": "Write < or > : -7 __ -2",
+     "a": "-7 < -2",
+     "mins": 1
+    },
+    {
+     "q": "Find the difference between -10 and -4.",
+     "a": "6",
+     "mins": 1
+    },
+    {
+     "q": "A diver is at -12 m. A bird is at 9 m. How far apart are they?",
+     "a": "21 m",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) Write < or >: -1 __ -5, 0 __ -3, -8 __ 2 (b) Find the difference between -6 and 9, -15 and -7, -20 and 13",
+     "a": "(a) -1 > -5, 0 > -3, -8 < 2 (b) 15, 8, 33",
+     "mins": 5,
+     "model": "(a) The one further right is bigger.\n(b) -6 to 0 is 6, 0 to 9 is 9: 15.\n-15 to -7 is 8.\n-20 to 0 is 20, 0 to 13 is 13: 33."
+    },
+    {
+     "q": "Extend: The lowest temperature in a town was -9 °C and the highest was 26 °C. What was the range of temperatures?",
+     "a": "35 °C",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Two numbers have a difference of 10. One of them is -3. What could the other be? Give both answers.",
+     "a": "7 or -13",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "What is the difference between -5 and 3?",
+     "a": "B) 8",
+     "mins": 1,
+     "options": [
+      "2",
+      "8",
+      "-8"
+     ]
+    },
+    {
+     "q": "Write < or >: -9 __ -10",
+     "a": "-9 > -10",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how far is it from -4 to 6? Show the jumps.",
+     "a": "10: 4 to zero, then 6 more",
+     "mins": 1
+    }
+   ],
+   "homework": "Temperature differences sheet: 8 pairs of cities (portal homework).",
+   "send": "Support: number line with zero highlighted for jumps. EAL: 'difference', 'less than', 'greater than'. Stretch: differences with decimals such as -2.5 and 4.3.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 2.6 Negative numbers",
+    "Printable number line sheet, -20 to 20 (portal worksheet for this unit)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "freezer thermometer",
+     "alt": "A freezer thermometer reading -18 °C",
+     "for": "teach:3"
+    },
+    {
+     "find": "inequality signs less than greater than",
+     "alt": "The symbols < and >",
+     "for": "keywords"
+    },
+    {
+     "find": "frost on grass morning",
+     "alt": "Frost on grass on a cold morning",
+     "for": "hook"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Directed numbers; adding fractions",
+   "n": 34,
+   "title": "Adding directed numbers",
+   "duration": 50,
+   "bigQuestion": "What happens when you add a negative?",
+   "objectives": [
+    "To understand how adding a positive or a negative number moves along the number line"
+   ],
+   "successCriteria": [
+    "All: add a positive number to a negative number using the number line",
+    "Most: add a negative number by moving left",
+    "Some: use zero pairs to explain why 5 + (-5) = 0"
+   ],
+   "smsc": "Social: working in a pair online to explain a method clearly",
+   "keywords": [
+    {
+     "term": "add",
+     "def": "combine; on the number line, start and move"
+    },
+    {
+     "term": "zero pair",
+     "def": "a +1 and a -1 that together make 0"
+    },
+    {
+     "term": "sign",
+     "def": "the + or - in front of a number"
+    },
+    {
+     "term": "directed number",
+     "def": "a number with a sign"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A lift is on floor -2. It goes up 5 floors. Where is it now? What if it had gone 'up -5' floors?",
+    "a": "Floor 3. 'Up -5' would be down 5 floors, to floor -7."
+   },
+   "starter": [
+    {
+     "q": "Order from smallest: -4, 2, -1",
+     "a": "-4, -1, 2",
+     "mins": 1
+    },
+    {
+     "q": "Difference between -3 and 6",
+     "a": "9",
+     "mins": 1
+    },
+    {
+     "q": "Work out 4.5 + 2.75",
+     "a": "7.25",
+     "mins": 1
+    },
+    {
+     "q": "Find 1/3 of 27",
+     "a": "9",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Adding a positive",
+     "bullets": [
+      "Start at the first number",
+      "Adding a positive: move right"
+     ],
+     "note": "-6 + 4: start at -6, move 4 right, land on -2.",
+     "numberline": {
+      "min": -10,
+      "max": 5,
+      "step": 1,
+      "marks": [
+       {
+        "at": -6,
+        "label": "start"
+       },
+       {
+        "at": -2,
+        "label": "end"
+       }
+      ]
+     }
+    },
+    {
+     "heading": "Adding a negative",
+     "bullets": [
+      "Adding a negative: move left",
+      "5 + (-8) means 5 then 8 left"
+     ],
+     "note": "5 + (-8): start at 5, move 8 left, land on -3.",
+     "numberline": {
+      "min": -5,
+      "max": 10,
+      "step": 1,
+      "marks": [
+       {
+        "at": 5,
+        "label": "start"
+       },
+       {
+        "at": -3,
+        "label": "end"
+       }
+      ]
+     }
+    },
+    {
+     "heading": "Zero pairs",
+     "bullets": [
+      "+1 and -1 cancel",
+      "3 + (-5): three pairs cancel, two -1s left",
+      "So 3 + (-5) = -2"
+     ],
+     "note": "Draw counters: 3 yellow (+1) and 5 red (-1). Circle the pairs."
+    },
+    {
+     "heading": "Two negatives",
+     "bullets": [
+      "Both left: the answer is more negative"
+     ],
+     "note": "Show on the line and with counters.",
+     "model": {
+      "problem": "-4 + (-7)",
+      "steps": [
+       "Start at -4",
+       "Adding -7 means move 7 left",
+       "Land on -11"
+      ],
+      "answer": "-11"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Move left or right?"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Work out -3 + 8",
+      "options": [
+       "5",
+       "-11",
+       "11",
+       "-5"
+      ],
+      "answer": 0,
+      "why": "Start at -3 and move 8 right to 5. -11 comes from moving left; 11 ignores the sign of -3."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Work out -9 + 4",
+     "a": "-5",
+     "mins": 2,
+     "model": "Start at -9, adding 4 moves 4 right: -8, -7, -6, -5."
+    },
+    {
+     "q": "Work out 6 + (-10)",
+     "a": "-4",
+     "mins": 1
+    },
+    {
+     "q": "Work out -5 + (-6)",
+     "a": "-11",
+     "mins": 1
+    },
+    {
+     "q": "Work out -12 + 12",
+     "a": "0",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) -7 + 3 (b) 2 + (-9) (c) -8 + (-4) (d) -15 + 20 (e) 4 + (-4) + (-3)",
+     "a": "(a) -4 (b) -7 (c) -12 (d) 5 (e) -3",
+     "mins": 5,
+     "model": "(a) -7, move 3 right: -4.\n(b) 2, move 9 left: -7.\n(c) -8, move 4 left: -12.\n(d) -15, move 20 right: 5.\n(e) 4 + (-4) = 0, then 0 + (-3) = -3."
+    },
+    {
+     "q": "Extend: In a magic square every row adds to 0. Complete the row: -5, 2, __",
+     "a": "3",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Find three different directed numbers that add to -10, using at least one positive number.",
+     "a": "For example 4 + (-6) + (-8)",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Work out -6 + (-2).",
+     "a": "A) -8",
+     "mins": 1,
+     "options": [
+      "-8",
+      "-4",
+      "8"
+     ]
+    },
+    {
+     "q": "Work out 3 + (-7)",
+     "a": "-4",
+     "mins": 1
+    },
+    {
+     "q": "Big question: what does adding a negative do on the number line?",
+     "a": "It moves you left, the same as subtracting the positive number.",
+     "mins": 1
+    }
+   ],
+   "homework": "Adding directed numbers: 12 questions on the portal (number line allowed).",
+   "send": "Support: two-colour counters (or coins: heads +1, tails -1) for zero pairs. EAL: 'add', 'move left', 'move right'. Stretch: -3.5 + (-1.25).",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 1.3 Calculating with negative integers",
+    "Printable number line sheet, -20 to 20 (portal worksheet for this unit)",
+    "Two-colour counters or 20 coins (household)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "lift buttons basement floors",
+     "alt": "Lift buttons including floors below ground",
+     "for": "hook"
+    },
+    {
+     "find": "two colour counters red yellow",
+     "alt": "Red and yellow counters for zero pairs",
+     "for": "teach:3"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Directed numbers; adding fractions",
+   "n": 35,
+   "title": "Directed numbers in context: temperature, height and money",
+   "duration": 50,
+   "bigQuestion": "Why do banks, thermometers and maps all need negative numbers?",
+   "objectives": [
+    "To understand how to use directed numbers to solve problems about real changes"
+   ],
+   "successCriteria": [
+    "All: write a real situation as a directed number calculation",
+    "Most: solve one-step temperature and height problems",
+    "Some: solve multi-step problems with rises and falls"
+   ],
+   "smsc": "Moral: debts must be repaid; Islam forbids riba and encourages clearing what is owed quickly",
+   "keywords": [
+    {
+     "term": "rise",
+     "def": "an increase: add a positive"
+    },
+    {
+     "term": "fall",
+     "def": "a decrease: add a negative"
+    },
+    {
+     "term": "balance",
+     "def": "the money in an account, which can go below zero"
+    },
+    {
+     "term": "sea level",
+     "def": "height 0 m on a map"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A shop owner's balance is -£40 (he owes £40). Is it better or worse if he 'adds' a bill of -£25? Why?",
+    "a": "Worse: -40 + (-25) = -65, so he owes £65."
+   },
+   "starter": [
+    {
+     "q": "-4 + 9",
+     "a": "5",
+     "mins": 1
+    },
+    {
+     "q": "3 + (-8)",
+     "a": "-5",
+     "mins": 1
+    },
+    {
+     "q": "-2 + (-6)",
+     "a": "-8",
+     "mins": 1
+    },
+    {
+     "q": "Difference between -7 and 2",
+     "a": "9",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Words into calculations",
+     "bullets": [
+      "Rise or deposit: add",
+      "Fall or bill: add a negative"
+     ],
+     "note": "Read each line and ask pupils to say the calculation.",
+     "table": {
+      "head": [
+       "Situation",
+       "Calculation",
+       "Answer"
+      ],
+      "rows": [
+       [
+        "-3 °C, rises 8 °C",
+        "-3 + 8",
+        "5 °C"
+       ],
+       [
+        "2 °C, falls 6 °C",
+        "2 + (-6)",
+        "-4 °C"
+       ],
+       [
+        "Balance -£15, pay in £40",
+        "-15 + 40",
+        "£25"
+       ],
+       [
+        "Diver at -10 m, goes down 4 m",
+        "-10 + (-4)",
+        "-14 m"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Multi-step temperatures",
+     "bullets": [
+      "One change at a time"
+     ],
+     "note": "Write each change, then add in order.",
+     "model": {
+      "problem": "At midnight it is -6 °C. It falls 3 °C, then rises 11 °C. What is the temperature now?",
+      "steps": [
+       "-6 + (-3) = -9",
+       "-9 + 11 = 2"
+      ],
+      "answer": "2 °C"
+     }
+    },
+    {
+     "heading": "Money and halal trade",
+     "bullets": [
+      "A negative balance means money is owed",
+      "Islam teaches that debts must be repaid"
+     ],
+     "note": "Keep the example to trade and bills; no interest is involved here."
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Write the calculation first"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "A submarine at -150 m rises 60 m. Where is it?",
+      "options": [
+       "-90 m",
+       "-210 m",
+       "90 m",
+       "-60 m"
+      ],
+      "answer": 0,
+      "why": "-150 + 60 = -90. -210 moves the wrong way; 90 m would be above the sea."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "The temperature is -5 °C and rises by 9 °C. What is the new temperature?",
+     "a": "4 °C",
+     "mins": 2,
+     "model": "-5 + 9: start at -5, move 9 right, 4 °C."
+    },
+    {
+     "q": "A climber is at 120 m. She descends 150 m into a valley below sea level. Where is she?",
+     "a": "-30 m",
+     "mins": 1
+    },
+    {
+     "q": "A balance of -£30 has £45 paid in. What is the balance?",
+     "a": "£15",
+     "mins": 1
+    },
+    {
+     "q": "At 9 pm it is 1 °C. By 3 am it has fallen 7 °C. What is the temperature?",
+     "a": "-6 °C",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) -8 °C rises 5 °C (b) 3 °C falls 10 °C (c) A lift at floor -3 goes up 7 floors (d) A balance of £12 has a £20 bill taken",
+     "a": "(a) -3 °C (b) -7 °C (c) floor 4 (d) -£8",
+     "mins": 5,
+     "model": "(a) -8 + 5 = -3.\n(b) 3 + (-10) = -7.\n(c) -3 + 7 = 4.\n(d) 12 + (-20) = -8."
+    },
+    {
+     "q": "Extend: A market stall starts the day at -£25. It sells goods for £60, then pays £18 for stock. What is the balance now?",
+     "a": "£17",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Over four nights the temperature changes by -3, +5, -6 and +2 degrees, ending at -4 °C. What was it at the start?",
+     "a": "-2 °C: total change is -2, so the start was -4 - (-2) = -2",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "-7 °C rises 4 °C.",
+     "a": "A) -3 °C",
+     "mins": 1,
+     "options": [
+      "-3 °C",
+      "-11 °C",
+      "3 °C"
+     ]
+    },
+    {
+     "q": "A diver at -6 m goes down another 5 m. Where is she?",
+     "a": "-11 m",
+     "mins": 1
+    },
+    {
+     "q": "Big question: give one real situation that needs a negative number.",
+     "a": "For example temperatures below freezing or a balance that is owed.",
+     "mins": 1
+    }
+   ],
+   "homework": "Write and solve four of your own directed number stories (temperature, height, lift, money) with answers.",
+   "send": "Support: vertical number line like a thermometer. EAL: 'rise', 'fall', 'balance', 'owe'. Stretch: average of -3, 5, -8, -2.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 1.3 Calculating with negative integers",
+    "Printable number line sheet, -20 to 20 (portal worksheet for this unit)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "submarine at sea",
+     "alt": "A submarine on the surface of the sea",
+     "for": "teach:4"
+    },
+    {
+     "find": "outdoor thermometer winter",
+     "alt": "An outdoor thermometer in winter",
+     "for": "keywords"
+    },
+    {
+     "find": "contour map sea level",
+     "alt": "A map with heights above sea level",
+     "for": "teach:1"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Directed numbers; adding fractions",
+   "n": 36,
+   "title": "Subtracting directed numbers",
+   "duration": 50,
+   "bigQuestion": "Why does taking away a negative make a number bigger?",
+   "objectives": [
+    "To understand why subtracting a negative number is the same as adding a positive"
+   ],
+   "successCriteria": [
+    "All: subtract a positive number from a negative number",
+    "Most: rewrite subtracting a negative as adding a positive",
+    "Some: explain the rule using the difference on a number line or counters"
+   ],
+   "smsc": "Moral: removing a wrong deed is like subtracting a negative: we hope Allah forgives and wipes away sins when we repent",
+   "keywords": [
+    {
+     "term": "subtract",
+     "def": "take away; find how far from one number to another"
+    },
+    {
+     "term": "inverse",
+     "def": "the opposite operation"
+    },
+    {
+     "term": "zero pair",
+     "def": "+1 and -1 that make 0"
+    },
+    {
+     "term": "sign",
+     "def": "+ or - in front of a number"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Your behaviour score is -3 after three bad marks. If the teacher takes away two bad marks, what is your score now? Did it go up or down?",
+    "a": "-1, so it went up: -3 - (-2) = -3 + 2 = -1. Taking away a negative raises the score."
+   },
+   "starter": [
+    {
+     "q": "-5 + 8",
+     "a": "3",
+     "mins": 1
+    },
+    {
+     "q": "4 + (-9)",
+     "a": "-5",
+     "mins": 1
+    },
+    {
+     "q": "-3 + (-3)",
+     "a": "-6",
+     "mins": 1
+    },
+    {
+     "q": "Difference between -4 and 6",
+     "a": "10",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Subtracting a positive",
+     "bullets": [
+      "Subtracting a positive: move left",
+      "-2 - 5 = -7"
+     ],
+     "note": "Same as adding -5.",
+     "numberline": {
+      "min": -10,
+      "max": 5,
+      "step": 1,
+      "marks": [
+       {
+        "at": -2,
+        "label": "start"
+       },
+       {
+        "at": -7,
+        "label": "end"
+       }
+      ]
+     }
+    },
+    {
+     "heading": "Spot the pattern",
+     "bullets": [
+      "Each line, the number taken away falls by 1",
+      "The answer rises by 1"
+     ],
+     "note": "Pupils predict the next lines before revealing.",
+     "table": {
+      "head": [
+       "Calculation",
+       "Answer"
+      ],
+      "rows": [
+       [
+        "3 - 2",
+        "1"
+       ],
+       [
+        "3 - 1",
+        "2"
+       ],
+       [
+        "3 - 0",
+        "3"
+       ],
+       [
+        "3 - (-1)",
+        "4"
+       ],
+       [
+        "3 - (-2)",
+        "5"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Counters",
+     "bullets": [
+      "-2 - (-5): take away five -1s",
+      "Only two there: add three zero pairs first",
+      "Remove five -1s: three +1s left, so 3"
+     ],
+     "note": "Model with counters or coins; this proves why the answer is 3."
+    },
+    {
+     "heading": "The rule",
+     "bullets": [
+      "Subtracting a negative = adding a positive"
+     ],
+     "note": "Two signs next to each other that are both minus become plus.",
+     "model": {
+      "problem": "-4 - (-9)",
+      "steps": [
+       "Rewrite: -4 + 9",
+       "Start at -4, move 9 right",
+       "Land on 5"
+      ],
+      "answer": "5"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Rewrite first"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Work out 6 - (-3)",
+      "options": [
+       "9",
+       "3",
+       "-9",
+       "-3"
+      ],
+      "answer": 0,
+      "why": "6 - (-3) = 6 + 3 = 9. 3 treats it as 6 - 3; the negatives show sign confusion."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Work out -6 - 4",
+     "a": "-10",
+     "mins": 2,
+     "model": "Subtracting a positive moves left: -6, then 4 left, -10."
+    },
+    {
+     "q": "Work out 2 - (-7)",
+     "a": "9",
+     "mins": 1
+    },
+    {
+     "q": "Work out -8 - (-3)",
+     "a": "-5",
+     "mins": 1
+    },
+    {
+     "q": "Work out -1 - 9",
+     "a": "-10",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) 5 - 8 (b) -3 - 6 (c) 4 - (-5) (d) -7 - (-2) (e) -10 - (-10)",
+     "a": "(a) -3 (b) -9 (c) 9 (d) -5 (e) 0",
+     "mins": 5,
+     "model": "(a) 5, move 8 left: -3.\n(b) -3, move 6 left: -9.\n(c) 4 + 5 = 9.\n(d) -7 + 2 = -5.\n(e) -10 + 10 = 0."
+    },
+    {
+     "q": "Extend: The temperature in Oslo is -6 °C and in Cairo 21 °C. Use a subtraction to find how much warmer Cairo is.",
+     "a": "21 - (-6) = 27 degrees",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Fill in the missing number: __ - (-4) = -9",
+     "a": "-13",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Work out -2 - (-6).",
+     "a": "A) 4",
+     "mins": 1,
+     "options": [
+      "4",
+      "-8",
+      "-4"
+     ]
+    },
+    {
+     "q": "Work out -5 - 3",
+     "a": "-8",
+     "mins": 1
+    },
+    {
+     "q": "Big question: explain in one sentence why 3 - (-2) = 5.",
+     "a": "Taking away a debt of 2 leaves you 2 better off; the difference from -2 up to 3 is 5.",
+     "mins": 1
+    }
+   ],
+   "homework": "Subtracting directed numbers: 12 questions on the portal, show the rewrite for each.",
+   "send": "Support: counters or coins and a number line. EAL: 'subtract', 'take away', 'rewrite'. Stretch: -2.5 - (-4.75).",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 1.3 Calculating with negative integers",
+    "Printable number line sheet, -20 to 20 (portal worksheet for this unit)",
+    "Two-colour counters or 20 coins (household)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "Cairo city view",
+     "alt": "A city with a hot climate",
+     "for": "keywords"
+    },
+    {
+     "find": "coins heads and tails",
+     "alt": "Coins used as positive and negative counters",
+     "for": "teach:3"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Directed numbers; adding fractions",
+   "n": 37,
+   "title": "Multiplying and dividing directed numbers",
+   "duration": 50,
+   "bigQuestion": "Why is a negative times a negative positive?",
+   "objectives": [
+    "To understand the sign rules for multiplying and dividing directed numbers"
+   ],
+   "successCriteria": [
+    "All: multiply a positive by a negative using repeated addition",
+    "Most: work out products and quotients such as (-6) × 4 and (-20) ÷ (-5)",
+    "Some: explain the rule for a negative times a negative from a pattern"
+   ],
+   "smsc": "Spiritual: wonder at how mathematical rules stay consistent, part of the order in Allah's creation",
+   "keywords": [
+    {
+     "term": "product",
+     "def": "the answer to a multiplication"
+    },
+    {
+     "term": "quotient",
+     "def": "the answer to a division"
+    },
+    {
+     "term": "sign rule",
+     "def": "same signs give positive; different signs give negative"
+    },
+    {
+     "term": "inverse",
+     "def": "division undoes multiplication"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A tap loses 3 litres an hour. How much has the tank changed after 4 hours? What about 2 hours AGO compared with now?",
+    "a": "After 4 hours: 4 × (-3) = -12 litres. Two hours ago the tank had 6 litres more: (-2) × (-3) = 6."
+   },
+   "starter": [
+    {
+     "q": "-3 + (-3) + (-3)",
+     "a": "-9",
+     "mins": 1
+    },
+    {
+     "q": "5 - (-4)",
+     "a": "9",
+     "mins": 1
+    },
+    {
+     "q": "-6 - 2",
+     "a": "-8",
+     "mins": 1
+    },
+    {
+     "q": "7 × 8",
+     "a": "56",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Repeated addition",
+     "bullets": [
+      "4 × (-3) = (-3) + (-3) + (-3) + (-3)",
+      "= -12"
+     ],
+     "note": "So a positive times a negative is negative."
+    },
+    {
+     "heading": "Pattern",
+     "bullets": [
+      "Each line multiplies by one less",
+      "The answers go up by 3"
+     ],
+     "note": "Pupils continue the pattern to see (-1) × (-3) = 3.",
+     "table": {
+      "head": [
+       "Calculation",
+       "Answer"
+      ],
+      "rows": [
+       [
+        "2 × (-3)",
+        "-6"
+       ],
+       [
+        "1 × (-3)",
+        "-3"
+       ],
+       [
+        "0 × (-3)",
+        "0"
+       ],
+       [
+        "(-1) × (-3)",
+        "3"
+       ],
+       [
+        "(-2) × (-3)",
+        "6"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Sign rules",
+     "bullets": [
+      "Same signs: positive",
+      "Different signs: negative",
+      "Division follows the same rules"
+     ],
+     "note": "Division is the inverse: -12 ÷ 4 = -3 because 4 × (-3) = -12.",
+     "table": {
+      "head": [
+       "Signs",
+       "Result",
+       "Example"
+      ],
+      "rows": [
+       [
+        "+ and +",
+        "+",
+        "6 × 2 = 12"
+       ],
+       [
+        "+ and -",
+        "-",
+        "6 × (-2) = -12"
+       ],
+       [
+        "- and +",
+        "-",
+        "-12 ÷ 2 = -6"
+       ],
+       [
+        "- and -",
+        "+",
+        "-12 ÷ (-2) = 6"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Two steps",
+     "bullets": [
+      "Sign first, then size"
+     ],
+     "note": "Decide the sign, then do the times table.",
+     "model": {
+      "problem": "(-6) × (-7) ÷ 3",
+      "steps": [
+       "(-6) × (-7): same signs, positive, 42",
+       "42 ÷ 3 = 14"
+      ],
+      "answer": "14"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Signs first"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Work out (-24) ÷ 6",
+      "options": [
+       "-4",
+       "4",
+       "-18",
+       "18"
+      ],
+      "answer": 0,
+      "why": "Different signs give a negative: -4. -18 subtracts instead of divides."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Work out (-5) × 4",
+     "a": "-20",
+     "mins": 2,
+     "model": "Different signs: negative.\n5 × 4 = 20, so -20."
+    },
+    {
+     "q": "Work out (-8) × (-3)",
+     "a": "24",
+     "mins": 1
+    },
+    {
+     "q": "Work out 36 ÷ (-9)",
+     "a": "-4",
+     "mins": 1
+    },
+    {
+     "q": "Work out (-45) ÷ (-5)",
+     "a": "9",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) 7 × (-6) (b) (-9) × (-9) (c) (-56) ÷ 8 (d) (-63) ÷ (-7) (e) (-2) × (-3) × (-4)",
+     "a": "(a) -42 (b) 81 (c) -7 (d) 9 (e) -24",
+     "mins": 5,
+     "model": "(a) different signs: -42.\n(b) same signs: 81.\n(c) different: -7.\n(d) same: 9.\n(e) (-2) × (-3) = 6, 6 × (-4) = -24."
+    },
+    {
+     "q": "Extend: Find two numbers that multiply to -36 and add to 5.",
+     "a": "9 and -4",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Is (-1) × (-1) × ... with 15 factors of -1 positive or negative? Explain.",
+     "a": "Negative: each pair makes +1, 7 pairs and one -1 left over",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Work out (-7) × (-5).",
+     "a": "A) 35",
+     "mins": 1,
+     "options": [
+      "35",
+      "-35",
+      "-12"
+     ]
+    },
+    {
+     "q": "Work out (-48) ÷ 6",
+     "a": "-8",
+     "mins": 1
+    },
+    {
+     "q": "Big question: use the pattern to explain why (-1) × (-3) = 3.",
+     "a": "Each step down the pattern adds 3: 0 × (-3) = 0, so (-1) × (-3) = 3.",
+     "mins": 1
+    }
+   ],
+   "homework": "Multiplication grid with negatives (portal worksheet): complete the 6 by 6 grid from -3 to 3.",
+   "send": "Support: sign rule card. EAL: 'product', 'quotient', 'same', 'different'. Stretch: (-2)³ and (-3)².",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 1.3 Calculating with negative integers",
+    "Sign rules card (printable, in the pupil PDF)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "dripping tap water",
+     "alt": "A dripping tap losing water",
+     "for": "hook"
+    },
+    {
+     "find": "multiplication table grid",
+     "alt": "A multiplication grid",
+     "for": "teach:3"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Directed numbers; adding fractions",
+   "n": 38,
+   "title": "Directed number problems and the order of operations",
+   "duration": 50,
+   "bigQuestion": "Does the order of operations still work with negative numbers?",
+   "objectives": [
+    "To understand how to combine the four operations with directed numbers in the right order"
+   ],
+   "successCriteria": [
+    "All: use BIDMAS with directed numbers",
+    "Most: square negative numbers correctly, including with brackets",
+    "Some: solve and check multi-step directed number problems"
+   ],
+   "smsc": "Social: checking each other's working kindly, without mocking mistakes",
+   "keywords": [
+    {
+     "term": "BIDMAS",
+     "def": "brackets, indices, division and multiplication, addition and subtraction"
+    },
+    {
+     "term": "square",
+     "def": "multiply a number by itself"
+    },
+    {
+     "term": "substitute",
+     "def": "put a number in place of a letter"
+    },
+    {
+     "term": "mean",
+     "def": "total divided by how many"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Is (-3)² the same as -3²? A calculator gives two different answers. Which is right?",
+    "a": "Both are right for what was typed: (-3)² = 9, but -3² = -9 because the square is done before the minus."
+   },
+   "starter": [
+    {
+     "q": "(-4) × 6",
+     "a": "-24",
+     "mins": 1
+    },
+    {
+     "q": "(-30) ÷ (-5)",
+     "a": "6",
+     "mins": 1
+    },
+    {
+     "q": "-3 - (-8)",
+     "a": "5",
+     "mins": 1
+    },
+    {
+     "q": "2 + 3 × 4",
+     "a": "14",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "BIDMAS with negatives",
+     "bullets": [
+      "Multiply first, then add"
+     ],
+     "note": "Underline the multiplication before working.",
+     "model": {
+      "problem": "-5 + 3 × (-4)",
+      "steps": [
+       "Multiplication first: 3 × (-4) = -12",
+       "Then -5 + (-12) = -17"
+      ],
+      "answer": "-17"
+     }
+    },
+    {
+     "heading": "Squares",
+     "bullets": [
+      "(-3)² = (-3) × (-3) = 9",
+      "-3² means -(3²) = -9"
+     ],
+     "note": "Show both on a scientific calculator: the brackets matter.",
+     "misconception": {
+      "wrong": "(-3)² = -9",
+      "right": "(-3)² = (-3) × (-3) = 9"
+     }
+    },
+    {
+     "heading": "Substitution",
+     "bullets": [
+      "Replace the letter with brackets"
+     ],
+     "note": "Brackets stop sign mistakes.",
+     "model": {
+      "problem": "Find 2a² - 3a when a = -2",
+      "steps": [
+       "2 × (-2)² - 3 × (-2)",
+       "2 × 4 - (-6)",
+       "8 + 6 = 14"
+      ],
+      "answer": "14"
+     }
+    },
+    {
+     "heading": "Mean temperature",
+     "bullets": [
+      "Add, then divide"
+     ],
+     "note": "Real context from a weather record.",
+     "model": {
+      "problem": "Find the mean of -4, 2, -7, -3",
+      "steps": [
+       "Total: -4 + 2 + (-7) + (-3) = -12",
+       "-12 ÷ 4 = -3"
+      ],
+      "answer": "-3 °C"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Indices first"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Work out 10 - (-2)²",
+      "options": [
+       "6",
+       "14",
+       "-6",
+       "16"
+      ],
+      "answer": 0,
+      "why": "(-2)² = 4 first, then 10 - 4 = 6. 14 squares then subtracts -4."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Work out 6 + (-2) × 5",
+     "a": "-4",
+     "mins": 2,
+     "model": "Multiply first: (-2) × 5 = -10.\nThen 6 + (-10) = -4."
+    },
+    {
+     "q": "Work out (-12) ÷ 3 - 4",
+     "a": "-8",
+     "mins": 1
+    },
+    {
+     "q": "Work out (-5)² - 10",
+     "a": "15",
+     "mins": 1
+    },
+    {
+     "q": "Find 3x - 7 when x = -4",
+     "a": "-19",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) -8 + 4 × 3 (b) (-6 + 2) × (-5) (c) 20 ÷ (-4) + (-1) (d) (-4)² + (-3)² (e) mean of -6, -1, 3, -4, -2",
+     "a": "(a) 4 (b) 20 (c) -6 (d) 25 (e) -2",
+     "mins": 6,
+     "model": "(a) 4 × 3 = 12, -8 + 12 = 4.\n(b) -4 × (-5) = 20.\n(c) -5 + (-1) = -6.\n(d) 16 + 9 = 25.\n(e) total -10, ÷ 5 = -2."
+    },
+    {
+     "q": "Extend: Find the value of p² - 5p when p = -3.",
+     "a": "9 + 15 = 24",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Insert brackets to make this true: -2 + 6 × -3 + 1 = -8",
+     "a": "(-2 + 6) × (-3 + 1) = 4 × (-2) = -8",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Work out -2 + 4 × (-3).",
+     "a": "A) -14",
+     "mins": 1,
+     "options": [
+      "-14",
+      "-6",
+      "10"
+     ]
+    },
+    {
+     "q": "Work out (-6)²",
+     "a": "36",
+     "mins": 1
+    },
+    {
+     "q": "Big question: does BIDMAS change when numbers are negative?",
+     "a": "No: the same order applies; take extra care with signs and brackets.",
+     "mins": 1
+    }
+   ],
+   "homework": "Directed number puzzles: 6 BIDMAS questions and a substitution table (portal homework).",
+   "send": "Support: BIDMAS card and sign rules card. EAL: 'square', 'substitute', 'mean'. Stretch: (-2)³ - 3(-2)² + 4.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 1.3 Calculating with negative integers",
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 1.5 Powers, roots and brackets (order of operations)",
+    "Scientific calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "scientific calculator",
+     "alt": "A scientific calculator with a bracket key",
+     "for": "hook"
+    },
+    {
+     "find": "weather station thermometer",
+     "alt": "A weather station recording temperatures",
+     "for": "teach:4"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Directed numbers; adding fractions",
+   "n": 39,
+   "title": "Adding and subtracting fractions with the same denominator",
+   "duration": 50,
+   "bigQuestion": "Why do we add the tops but not the bottoms?",
+   "objectives": [
+    "To understand why fractions with the same denominator are added by adding the numerators"
+   ],
+   "successCriteria": [
+    "All: add and subtract fractions with the same denominator using a bar model",
+    "Most: simplify the answer and write improper fractions as mixed numbers",
+    "Some: explain why 1/5 + 2/5 is not 3/10"
+   ],
+   "smsc": "Moral: sharing food fairly in equal portions, as the Sunnah teaches generosity with food",
+   "keywords": [
+    {
+     "term": "numerator",
+     "def": "the top number: how many parts"
+    },
+    {
+     "term": "denominator",
+     "def": "the bottom number: the size of each part"
+    },
+    {
+     "term": "simplify",
+     "def": "divide top and bottom by a common factor"
+    },
+    {
+     "term": "improper fraction",
+     "def": "a fraction bigger than 1, top bigger than bottom"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A pizza is cut into 8 equal slices. You eat 3 slices and your brother eats 2. What fraction is eaten? Why is it not 5/16?",
+    "a": "5/8: the slices are eighths and stay eighths. Adding the bottoms would make the slices smaller."
+   },
+   "starter": [
+    {
+     "q": "Simplify 6/9",
+     "a": "2/3",
+     "mins": 1
+    },
+    {
+     "q": "Write 3/4 as eighths",
+     "a": "6/8",
+     "mins": 1
+    },
+    {
+     "q": "Work out -3 - (-7)",
+     "a": "4",
+     "mins": 1
+    },
+    {
+     "q": "Find 2/5 of 30",
+     "a": "12",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Same size parts",
+     "bullets": [
+      "1/5 + 2/5 = 3/5",
+      "The parts stay fifths"
+     ],
+     "note": "The denominator names the size of the part; it does not change when we add.",
+     "fraction": [
+      {
+       "parts": 5,
+       "shaded": 1,
+       "label": "1/5"
+      },
+      {
+       "parts": 5,
+       "shaded": 2,
+       "label": "2/5"
+      },
+      {
+       "parts": 5,
+       "shaded": 3,
+       "label": "3/5"
+      }
+     ]
+    },
+    {
+     "heading": "The common error",
+     "bullets": [
+      "Add numerators only"
+     ],
+     "note": "Show 1/5 + 2/5 = 3/10 would make the total smaller than 2/5 alone.",
+     "misconception": {
+      "wrong": "1/5 + 2/5 = 3/10",
+      "right": "1/5 + 2/5 = 3/5: three parts, each a fifth"
+     }
+    },
+    {
+     "heading": "Simplify the answer",
+     "bullets": [
+      "Add, then simplify"
+     ],
+     "note": "Always check for a common factor.",
+     "model": {
+      "problem": "5/12 + 1/12",
+      "steps": [
+       "Same denominator: 5 + 1 = 6",
+       "6/12",
+       "Simplify: ÷ 6"
+      ],
+      "answer": "1/2"
+     }
+    },
+    {
+     "heading": "Answers bigger than 1",
+     "bullets": [
+      "Write as a mixed number"
+     ],
+     "note": "7/9 + 5/9 is more than one whole.",
+     "model": {
+      "problem": "7/9 + 5/9",
+      "steps": [
+       "7 + 5 = 12, so 12/9",
+       "12/9 = 1 3/9",
+       "Simplify: 1 1/3"
+      ],
+      "answer": "1 1/3"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Subtract the numerators"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Work out 7/10 - 3/10",
+      "options": [
+       "2/5",
+       "4/0",
+       "4/20",
+       "1/2"
+      ],
+      "answer": 0,
+      "why": "7/10 - 3/10 = 4/10 = 2/5. 4/0 subtracts the denominators, which makes no sense."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Work out 2/7 + 3/7",
+     "a": "5/7",
+     "mins": 2,
+     "model": "Same denominator: add the numerators, 2 + 3 = 5, so 5/7."
+    },
+    {
+     "q": "Work out 9/11 - 4/11",
+     "a": "5/11",
+     "mins": 1
+    },
+    {
+     "q": "Work out 3/8 + 1/8 and simplify",
+     "a": "1/2",
+     "mins": 1
+    },
+    {
+     "q": "Work out 5/6 + 5/6",
+     "a": "1 2/3",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) 4/9 + 2/9 (b) 11/15 - 2/15 (c) 3/10 + 9/10 (d) 1 - 5/8 (e) 7/12 + 1/12 + 2/12",
+     "a": "(a) 2/3 (b) 3/5 (c) 1 1/5 (d) 3/8 (e) 5/6",
+     "mins": 5,
+     "model": "(a) 6/9 = 2/3.\n(b) 9/15 = 3/5.\n(c) 12/10 = 1 2/10 = 1 1/5.\n(d) 1 = 8/8, 8/8 - 5/8 = 3/8.\n(e) 10/12 = 5/6."
+    },
+    {
+     "q": "Extend: A tank is 3/10 full. Ahmed adds 4/10 of a tank. How much more is needed to fill it?",
+     "a": "3/10",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Find two fractions with denominator 9 that add to 1 1/9. Find two that differ by 2/3.",
+     "a": "For example 5/9 + 5/9; 7/9 - 1/9",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Work out 3/7 + 2/7.",
+     "a": "A) 5/7",
+     "mins": 1,
+     "options": [
+      "5/7",
+      "5/14",
+      "6/7"
+     ]
+    },
+    {
+     "q": "Work out 11/12 - 5/12 and simplify",
+     "a": "1/2",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why is 1/5 + 2/5 not 3/10?",
+     "a": "The parts are fifths before and after adding; only the number of parts changes.",
+     "mins": 1
+    }
+   ],
+   "homework": "Fraction addition sheet: 10 questions, same denominators, simplify each answer.",
+   "send": "Support: fraction bars sheet. EAL: 'numerator', 'denominator', 'simplify'. Stretch: 5/6 - 1/6 + 7/6.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 8.2 Adding and subtracting fractions",
+    "Fraction bars sheet (printable, in the pupil PDF)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "pizza cut into eight slices",
+     "alt": "A pizza cut into 8 equal slices",
+     "for": "hook"
+    },
+    {
+     "find": "fraction bars",
+     "alt": "Fraction bars showing fifths",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Directed numbers; adding fractions",
+   "n": 40,
+   "title": "Adding and subtracting fractions with different denominators",
+   "duration": 50,
+   "bigQuestion": "How do we add parts that are different sizes?",
+   "objectives": [
+    "To understand how a common denominator lets us add and subtract any fractions"
+   ],
+   "successCriteria": [
+    "All: find a common denominator using the lowest common multiple",
+    "Most: add and subtract fractions with different denominators",
+    "Some: solve inheritance-style problems by adding fractions"
+   ],
+   "crossCurricular": "Islamic Studies: the shares of inheritance (fara'id) in Surah an-Nisa",
+   "smsc": "Moral: the justice of inheritance shares set by Allah, so every heir receives what is due",
+   "keywords": [
+    {
+     "term": "common denominator",
+     "def": "a denominator both fractions can share"
+    },
+    {
+     "term": "lowest common multiple",
+     "def": "the smallest number in both times tables"
+    },
+    {
+     "term": "equivalent fraction",
+     "def": "a fraction with the same value, such as 1/2 = 3/6"
+    },
+    {
+     "term": "simplify",
+     "def": "write with the smallest numbers"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Can you add 1/2 and 1/3 without changing them? What would the answer look like on a bar?",
+    "a": "Not directly: change both to sixths, 3/6 + 2/6 = 5/6."
+   },
+   "starter": [
+    {
+     "q": "Work out 2/9 + 5/9",
+     "a": "7/9",
+     "mins": 1
+    },
+    {
+     "q": "LCM of 4 and 6",
+     "a": "12",
+     "mins": 1
+    },
+    {
+     "q": "Write 2/3 as twelfths",
+     "a": "8/12",
+     "mins": 1
+    },
+    {
+     "q": "Simplify 10/15",
+     "a": "2/3",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Different sized parts",
+     "bullets": [
+      "1/2 = 3/6, 1/3 = 2/6",
+      "Now both are sixths: 5/6"
+     ],
+     "note": "The bars show why we need the same sized parts.",
+     "fraction": [
+      {
+       "parts": 2,
+       "shaded": 1,
+       "label": "1/2"
+      },
+      {
+       "parts": 3,
+       "shaded": 1,
+       "label": "1/3"
+      },
+      {
+       "parts": 6,
+       "shaded": 3,
+       "label": "3/6"
+      },
+      {
+       "parts": 6,
+       "shaded": 5,
+       "label": "5/6"
+      }
+     ]
+    },
+    {
+     "heading": "Using the LCM",
+     "bullets": [
+      "Find the LCM of the denominators",
+      "Change both fractions, then add"
+     ],
+     "note": "Model the steps aloud.",
+     "model": {
+      "problem": "3/4 + 1/6",
+      "steps": [
+       "LCM of 4 and 6 is 12",
+       "3/4 = 9/12, 1/6 = 2/12",
+       "9/12 + 2/12 = 11/12"
+      ],
+      "answer": "11/12"
+     }
+    },
+    {
+     "heading": "Subtracting",
+     "bullets": [
+      "Same method"
+     ],
+     "note": "Check by adding back.",
+     "model": {
+      "problem": "5/6 - 2/9",
+      "steps": [
+       "LCM of 6 and 9 is 18",
+       "5/6 = 15/18, 2/9 = 4/18",
+       "15/18 - 4/18 = 11/18"
+      ],
+      "answer": "11/18"
+     }
+    },
+    {
+     "heading": "Inheritance shares",
+     "bullets": [
+      "Add the shares, subtract from 1"
+     ],
+     "note": "A simplified case from the fara'id: the remainder goes to other heirs.",
+     "model": {
+      "problem": "Two heirs receive 1/6 and 1/2 of an estate. What fraction is left?",
+      "steps": [
+       "1/6 + 1/2 = 1/6 + 3/6 = 4/6 = 2/3",
+       "1 - 2/3 = 1/3"
+      ],
+      "answer": "1/3 is left"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Common denominator first"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Work out 1/3 + 1/4",
+      "options": [
+       "7/12",
+       "2/7",
+       "2/12",
+       "1/7"
+      ],
+      "answer": 0,
+      "why": "4/12 + 3/12 = 7/12. 2/7 adds tops and bottoms."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Work out 1/2 + 1/5",
+     "a": "7/10",
+     "mins": 2,
+     "model": "LCM of 2 and 5 is 10.\n1/2 = 5/10, 1/5 = 2/10.\n5/10 + 2/10 = 7/10."
+    },
+    {
+     "q": "Work out 2/3 - 1/4",
+     "a": "5/12",
+     "mins": 1
+    },
+    {
+     "q": "Work out 3/8 + 1/4",
+     "a": "5/8",
+     "mins": 1
+    },
+    {
+     "q": "Work out 5/6 + 3/4",
+     "a": "1 7/12",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) 1/3 + 2/5 (b) 7/8 - 1/2 (c) 3/10 + 1/4 (d) 4/5 - 2/3 (e) 1/2 + 1/3 + 1/6",
+     "a": "(a) 11/15 (b) 3/8 (c) 11/20 (d) 2/15 (e) 1",
+     "mins": 5,
+     "model": "(a) 5/15 + 6/15 = 11/15.\n(b) 7/8 - 4/8 = 3/8.\n(c) 6/20 + 5/20 = 11/20.\n(d) 12/15 - 10/15 = 2/15.\n(e) 3/6 + 2/6 + 1/6 = 6/6 = 1."
+    },
+    {
+     "q": "Extend: A wife inherits 1/8 of an estate and a mother 1/6. What fraction is that together, and what is left?",
+     "a": "1/8 + 1/6 = 3/24 + 4/24 = 7/24; left 17/24",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Find the missing fraction: 2/3 - ? = 1/4",
+     "a": "5/12",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Work out 1/2 + 1/4.",
+     "a": "A) 3/4",
+     "mins": 1,
+     "options": [
+      "3/4",
+      "2/6",
+      "2/4"
+     ]
+    },
+    {
+     "q": "Work out 5/6 - 1/3",
+     "a": "1/2",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why must the denominators match before we add?",
+     "a": "We can only count parts of the same size; a common denominator makes them the same size.",
+     "mins": 1
+    }
+   ],
+   "homework": "Ten fraction additions and subtractions with different denominators (portal), plus one inheritance-share question.",
+   "send": "Support: fraction wall. EAL: 'common', 'multiple', 'equivalent'. Stretch: 2/3 + 3/4 - 5/6.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 8.2 Adding and subtracting fractions",
+    "Fraction wall (printable, in the pupil PDF)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "fraction wall chart",
+     "alt": "A fraction wall showing halves, thirds and sixths",
+     "for": "teach:1"
+    },
+    {
+     "find": "measuring jugs kitchen",
+     "alt": "Measuring jugs with fraction markings",
+     "for": "keywords"
+    }
+   ],
+   "islamicLink": {
+    "text": "Fractions are part of the Shari'ah itself: Surah an-Nisa (4:11 to 12) sets the shares of inheritance as fractions such as a half, a quarter, an eighth, a third, two thirds and a sixth. Scholars of fara'id (فَرَائِض, inheritance) must add fractions with different denominators to share an estate fairly.",
+    "at": "start"
+   }
+  },
+  {
+   "unit": "Spring 2: Directed numbers; adding fractions",
+   "n": 41,
+   "title": "Mixed numbers and improper fractions",
+   "duration": 50,
+   "bigQuestion": "Is 7/4 a number or a sum?",
+   "objectives": [
+    "To understand how mixed numbers and improper fractions show the same amount"
+   ],
+   "successCriteria": [
+    "All: convert a mixed number to an improper fraction",
+    "Most: convert an improper fraction to a mixed number",
+    "Some: compare and order mixed numbers and improper fractions"
+   ],
+   "smsc": "Social: explaining a method clearly so a classmate can follow it",
+   "keywords": [
+    {
+     "term": "mixed number",
+     "def": "a whole number and a fraction, such as 2 1/3"
+    },
+    {
+     "term": "improper fraction",
+     "def": "a fraction where the top is bigger than the bottom"
+    },
+    {
+     "term": "whole",
+     "def": "one complete thing: 4/4 = 1"
+    },
+    {
+     "term": "convert",
+     "def": "change to another form with the same value"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "You have 7 quarter-cakes. How many whole cakes is that? Is there more than one way to write it?",
+    "a": "1 3/4 cakes, or 7/4: the same amount written two ways."
+   },
+   "starter": [
+    {
+     "q": "1/3 + 1/6",
+     "a": "1/2",
+     "mins": 1
+    },
+    {
+     "q": "3/4 - 2/3",
+     "a": "1/12",
+     "mins": 1
+    },
+    {
+     "q": "23 ÷ 5 = ? remainder ?",
+     "a": "4 remainder 3",
+     "mins": 1
+    },
+    {
+     "q": "6 × 7 + 2",
+     "a": "44",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Seeing 7/4",
+     "bullets": [
+      "4 quarters make 1 whole",
+      "7/4 = 1 3/4"
+     ],
+     "note": "Shade the bars to show 7 quarters.",
+     "fraction": [
+      {
+       "parts": 4,
+       "shaded": 4,
+       "label": "1"
+      },
+      {
+       "parts": 4,
+       "shaded": 3,
+       "label": "3/4"
+      }
+     ]
+    },
+    {
+     "heading": "Mixed to improper",
+     "bullets": [
+      "Wholes × denominator, add numerator"
+     ],
+     "note": "Each whole is 3 thirds.",
+     "model": {
+      "problem": "Write 2 2/3 as an improper fraction",
+      "steps": [
+       "2 wholes = 6/3",
+       "6/3 + 2/3 = 8/3"
+      ],
+      "answer": "8/3"
+     }
+    },
+    {
+     "heading": "Improper to mixed",
+     "bullets": [
+      "Divide; the remainder is the numerator"
+     ],
+     "note": "Link to the starter division.",
+     "model": {
+      "problem": "Write 23/5 as a mixed number",
+      "steps": [
+       "23 ÷ 5 = 4 remainder 3",
+       "4 wholes and 3/5"
+      ],
+      "answer": "4 3/5"
+     }
+    },
+    {
+     "heading": "On the number line",
+     "bullets": [
+      "5/2 = 2 1/2",
+      "11/4 = 2 3/4"
+     ],
+     "note": "Place both: 11/4 is bigger.",
+     "numberline": {
+      "min": 0,
+      "max": 4,
+      "step": 0.25,
+      "marks": [
+       {
+        "at": 2.5,
+        "label": "5/2"
+       },
+       {
+        "at": 2.75,
+        "label": "11/4"
+       }
+      ]
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Multiply then add"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Write 3 1/4 as an improper fraction",
+      "options": [
+       "13/4",
+       "7/4",
+       "31/4",
+       "12/4"
+      ],
+      "answer": 0,
+      "why": "3 × 4 + 1 = 13, so 13/4. 7/4 adds 3 + 4; 31/4 just writes the digits together."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Write 1 4/5 as an improper fraction",
+     "a": "9/5",
+     "mins": 2,
+     "model": "1 whole = 5/5; 5/5 + 4/5 = 9/5."
+    },
+    {
+     "q": "Write 17/6 as a mixed number",
+     "a": "2 5/6",
+     "mins": 1
+    },
+    {
+     "q": "Write 4 3/8 as an improper fraction",
+     "a": "35/8",
+     "mins": 1
+    },
+    {
+     "q": "Which is bigger: 9/4 or 2 1/3?",
+     "a": "2 1/3 (9/4 = 2 1/4)",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) Write as improper: 3 2/5, 5 1/6, 2 7/9 (b) Write as mixed: 19/4, 31/7, 40/6",
+     "a": "(a) 17/5, 31/6, 25/9 (b) 4 3/4, 4 3/7, 6 2/3",
+     "mins": 5,
+     "model": "(a) 3 × 5 + 2 = 17; 5 × 6 + 1 = 31; 2 × 9 + 7 = 25.\n(b) 19 ÷ 4 = 4 r 3; 31 ÷ 7 = 4 r 3; 40 ÷ 6 = 6 r 4, 4/6 = 2/3."
+    },
+    {
+     "q": "Extend: Order from smallest: 11/3, 3 1/2, 15/4, 3 5/6",
+     "a": "3 1/2, 11/3, 15/4, 3 5/6 (3.5, 3.67, 3.75, 3.83)",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Write a mixed number between 22/7 and 16/5.",
+     "a": "For example 3 3/16 (22/7 ≈ 3.143, 16/5 = 3.2)",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Write 2 3/5 as an improper fraction.",
+     "a": "A) 13/5",
+     "mins": 1,
+     "options": [
+      "13/5",
+      "6/5",
+      "23/5"
+     ]
+    },
+    {
+     "q": "Write 29/8 as a mixed number",
+     "a": "3 5/8",
+     "mins": 1
+    },
+    {
+     "q": "Big question: show that 7/4 and 1 3/4 are the same number.",
+     "a": "4/4 is one whole, so 7/4 = 4/4 + 3/4 = 1 3/4.",
+     "mins": 1
+    }
+   ],
+   "homework": "Matching cards: pair 12 improper fractions with their mixed numbers (portal sheet).",
+   "send": "Support: fraction bars to shade wholes. EAL: 'whole', 'mixed', 'improper'. Stretch: negative mixed numbers, -2 1/4 = -9/4.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 8.5 Calculating with mixed numbers",
+    "Fraction bars sheet (printable, in the pupil PDF)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "cake cut into quarters",
+     "alt": "A round cake cut into quarters",
+     "for": "hook"
+    },
+    {
+     "find": "fraction number line",
+     "alt": "A number line marked in quarters",
+     "for": "teach:4"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Directed numbers; adding fractions",
+   "n": 42,
+   "title": "Adding and subtracting mixed numbers",
+   "duration": 50,
+   "bigQuestion": "Should we split the wholes or make the fraction improper?",
+   "objectives": [
+    "To understand two methods for adding and subtracting mixed numbers and when each is best"
+   ],
+   "successCriteria": [
+    "All: add mixed numbers by adding wholes and fractions separately",
+    "Most: subtract mixed numbers using improper fractions",
+    "Some: choose an efficient method and check with an estimate"
+   ],
+   "crossCurricular": "Design and technology: measuring and cutting materials to length",
+   "smsc": "Moral: careful measuring avoids waste (israf, إِسْرَاف) in building and cooking",
+   "keywords": [
+    {
+     "term": "mixed number",
+     "def": "a whole number and a fraction"
+    },
+    {
+     "term": "improper fraction",
+     "def": "top bigger than bottom"
+    },
+    {
+     "term": "partition",
+     "def": "split into wholes and parts"
+    },
+    {
+     "term": "estimate",
+     "def": "a rough answer to check with"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "3 1/4 - 1 3/4: can you take 3/4 from 1/4? What could you do instead?",
+    "a": "Not directly. Convert: 13/4 - 7/4 = 6/4 = 1 1/2, or exchange a whole: 2 5/4 - 1 3/4."
+   },
+   "starter": [
+    {
+     "q": "Write 2 1/3 as an improper fraction",
+     "a": "7/3",
+     "mins": 1
+    },
+    {
+     "q": "Write 13/4 as a mixed number",
+     "a": "3 1/4",
+     "mins": 1
+    },
+    {
+     "q": "2/5 + 1/3",
+     "a": "11/15",
+     "mins": 1
+    },
+    {
+     "q": "5/6 - 1/4",
+     "a": "7/12",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Partition: add wholes, add fractions",
+     "bullets": [
+      "Wholes first, then fractions"
+     ],
+     "note": "Best for adding.",
+     "model": {
+      "problem": "2 1/3 + 1 1/4",
+      "steps": [
+       "Wholes: 2 + 1 = 3",
+       "Fractions: 1/3 + 1/4 = 4/12 + 3/12 = 7/12",
+       "3 + 7/12"
+      ],
+      "answer": "3 7/12"
+     }
+    },
+    {
+     "heading": "When the fractions pass 1",
+     "bullets": [
+      "Carry the extra whole"
+     ],
+     "note": "5/6 + 1/2 = 1 1/3.",
+     "model": {
+      "problem": "1 5/6 + 2 1/2",
+      "steps": [
+       "Wholes: 1 + 2 = 3",
+       "Fractions: 5/6 + 3/6 = 8/6 = 1 1/3",
+       "3 + 1 1/3"
+      ],
+      "answer": "4 1/3"
+     }
+    },
+    {
+     "heading": "Improper fractions for subtracting",
+     "bullets": [
+      "Convert both, then subtract"
+     ],
+     "note": "This avoids 'borrowing'.",
+     "model": {
+      "problem": "3 1/4 - 1 3/4",
+      "steps": [
+       "3 1/4 = 13/4, 1 3/4 = 7/4",
+       "13/4 - 7/4 = 6/4",
+       "6/4 = 1 1/2"
+      ],
+      "answer": "1 1/2"
+     }
+    },
+    {
+     "heading": "Estimate first",
+     "bullets": [
+      "3 1/4 - 1 3/4 is about 3 - 2 = 1",
+      "1 1/2 is close: sensible"
+     ],
+     "note": "Pupils estimate before every question."
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Convert or partition"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Work out 4 1/2 - 2 2/3",
+      "options": [
+       "1 5/6",
+       "2 1/6",
+       "2 1/3",
+       "1 1/6"
+      ],
+      "answer": 0,
+      "why": "9/2 - 8/3 = 27/6 - 16/6 = 11/6 = 1 5/6. 2 1/6 subtracts 2/3 - 1/2 the wrong way round."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Work out 1 2/5 + 2 1/5",
+     "a": "3 3/5",
+     "mins": 2,
+     "model": "Wholes 1 + 2 = 3, fractions 2/5 + 1/5 = 3/5, so 3 3/5."
+    },
+    {
+     "q": "Work out 3 1/2 + 1 1/3",
+     "a": "4 5/6",
+     "mins": 1
+    },
+    {
+     "q": "Work out 5 3/4 - 2 1/4",
+     "a": "3 1/2",
+     "mins": 1
+    },
+    {
+     "q": "Work out 4 1/3 - 1 5/6",
+     "a": "2 1/2",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) 2 1/2 + 3 1/4 (b) 1 2/3 + 2 3/4 (c) 6 7/8 - 2 3/8 (d) 5 1/5 - 2 1/2 (e) 3 - 1 2/7",
+     "a": "(a) 5 3/4 (b) 4 5/12 (c) 4 1/2 (d) 2 7/10 (e) 1 5/7",
+     "mins": 6,
+     "model": "(a) 5 + 2/4 + 1/4 = 5 3/4.\n(b) 3 + 8/12 + 9/12 = 3 + 17/12 = 4 5/12.\n(c) 4 + 4/8 = 4 1/2.\n(d) 26/5 - 5/2 = 52/10 - 25/10 = 27/10 = 2 7/10.\n(e) 21/7 - 9/7 = 12/7 = 1 5/7."
+    },
+    {
+     "q": "Extend: A plank is 4 1/2 m long. Pieces of 1 2/3 m and 1 3/4 m are cut off. How much is left?",
+     "a": "4 1/2 - 3 5/12 = 1 1/12 m",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: The perimeter of a rectangle is 12 1/2 cm. One side is 3 3/4 cm. Find the other side.",
+     "a": "12 1/2 ÷ 2 = 6 1/4; 6 1/4 - 3 3/4 = 2 1/2 cm",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Work out 1 1/2 + 2 1/4.",
+     "a": "A) 3 3/4",
+     "mins": 1,
+     "options": [
+      "3 3/4",
+      "3 2/6",
+      "3 1/4"
+     ]
+    },
+    {
+     "q": "Work out 3 1/3 - 1 2/3",
+     "a": "1 2/3",
+     "mins": 1
+    },
+    {
+     "q": "Big question: which method would you use for 5 1/8 - 2 7/8, and why?",
+     "a": "Improper fractions: 1/8 is smaller than 7/8, so partitioning needs exchanging; 41/8 - 23/8 = 18/8 = 2 1/4.",
+     "mins": 2
+    }
+   ],
+   "homework": "Mixed number calculations: 10 questions, estimate first (portal homework).",
+   "send": "Support: fraction bars and a method choice card. EAL: 'partition', 'convert', 'estimate'. Stretch: 2 1/3 + 1 3/4 - 2 5/6.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 8.5 Calculating with mixed numbers",
+    "Fraction bars sheet (printable, in the pupil PDF)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "tape measure wooden plank",
+     "alt": "A tape measure on a wooden plank",
+     "for": "keywords"
+    },
+    {
+     "find": "measuring cups baking",
+     "alt": "Measuring cups for recipes",
+     "for": "hook"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Directed numbers; adding fractions",
+   "n": 43,
+   "title": "Fraction problems in context",
+   "duration": 50,
+   "bigQuestion": "How can a bar model turn a word problem into a picture?",
+   "objectives": [
+    "To understand how to choose the right fraction calculation in a word problem"
+   ],
+   "successCriteria": [
+    "All: use a bar model to represent a fraction problem",
+    "Most: solve problems that add, subtract and find fractions of amounts",
+    "Some: solve 'what fraction is left' problems with two steps"
+   ],
+   "smsc": "Moral: giving sadaqah from what we have, planned carefully as part of the family budget",
+   "keywords": [
+    {
+     "term": "bar model",
+     "def": "a rectangle split into equal parts to show a problem"
+    },
+    {
+     "term": "remaining",
+     "def": "what is left"
+    },
+    {
+     "term": "of",
+     "def": "means multiply in fractions: 2/3 of 12 = 8"
+    },
+    {
+     "term": "whole",
+     "def": "the complete amount, 1"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Half a class walks to school, a third come by car and the rest by bus. Is the 'rest' bigger or smaller than a quarter?",
+    "a": "Smaller: 1 - 1/2 - 1/3 = 1/6, and 1/6 < 1/4."
+   },
+   "starter": [
+    {
+     "q": "1/2 + 1/3",
+     "a": "5/6",
+     "mins": 1
+    },
+    {
+     "q": "2 1/4 + 1 2/3",
+     "a": "3 11/12",
+     "mins": 1
+    },
+    {
+     "q": "3/5 of 40",
+     "a": "24",
+     "mins": 1
+    },
+    {
+     "q": "1 - 3/8",
+     "a": "5/8",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "What is left?",
+     "bullets": [
+      "Add the parts, subtract from 1"
+     ],
+     "note": "Draw a bar of 6 equal parts.",
+     "model": {
+      "problem": "1/2 of a class walk, 1/3 come by car. What fraction come by bus?",
+      "steps": [
+       "1/2 + 1/3 = 3/6 + 2/6 = 5/6",
+       "1 - 5/6 = 1/6"
+      ],
+      "answer": "1/6, smaller than a quarter"
+     }
+    },
+    {
+     "heading": "Fraction of what is left",
+     "bullets": [
+      "Two steps: find what is left, then the fraction of it"
+     ],
+     "note": "Underline 'of the rest'.",
+     "model": {
+      "problem": "Bilal spends 1/4 of £60 on books and 1/3 of the rest on food. How much is left?",
+      "steps": [
+       "1/4 of £60 = £15, rest £45",
+       "1/3 of £45 = £15",
+       "£45 - £15 = £30"
+      ],
+      "answer": "£30"
+     }
+    },
+    {
+     "heading": "Bar models",
+     "bullets": [
+      "Draw the whole",
+      "Split into equal parts",
+      "Label what you know and what you want"
+     ],
+     "note": "Pupils sketch the bar for every problem."
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Read carefully: of the whole or of the rest?"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "A tank holds 120 litres. 2/5 is used. How many litres are left?",
+      "options": [
+       "72",
+       "48",
+       "80",
+       "24"
+      ],
+      "answer": 0,
+      "why": "2/5 of 120 = 48 used, 120 - 48 = 72 left. 48 is the amount used, not left."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "A recipe uses 3/4 kg of flour and 1/3 kg of sugar. What is the total mass?",
+     "a": "1 1/12 kg",
+     "mins": 2,
+     "model": "3/4 + 1/3 = 9/12 + 4/12 = 13/12 = 1 1/12 kg."
+    },
+    {
+     "q": "A ribbon is 5 m. 2 3/4 m is cut off. How much is left?",
+     "a": "2 1/4 m",
+     "mins": 1
+    },
+    {
+     "q": "3/8 of a box of 64 dates are eaten. How many are left?",
+     "a": "40",
+     "mins": 2
+    },
+    {
+     "q": "In a madrasah 2/5 of pupils are in Year 7 and 1/4 in Year 8. What fraction are in other years?",
+     "a": "7/20",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) Add 1 1/2 litres and 2 2/3 litres (b) 5/9 of 81 kg (c) Saad reads 1/3 of a book on Monday and 2/5 on Tuesday. What fraction is left?",
+     "a": "(a) 4 1/6 litres (b) 45 kg (c) 4/15",
+     "mins": 5,
+     "model": "(a) 3 + 1/2 + 2/3 = 3 + 3/6 + 4/6 = 3 + 7/6 = 4 1/6.\n(b) 81 ÷ 9 = 9, × 5 = 45.\n(c) 1/3 + 2/5 = 5/15 + 6/15 = 11/15; 1 - 11/15 = 4/15."
+    },
+    {
+     "q": "Extend: Of £240, a family gives 1/8 in sadaqah and spends 2/3 of the rest on food. How much is left?",
+     "a": "Sadaqah £30, rest £210, food £140, left £70",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: After spending 3/5 of his money, Omar has £14 left. How much did he start with?",
+     "a": "2/5 = £14, so 1/5 = £7 and the whole is £35",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "A bag holds 40 sweets; 3/8 are red. How many are not red?",
+     "a": "A) 25",
+     "mins": 1,
+     "options": [
+      "25",
+      "15",
+      "37"
+     ]
+    },
+    {
+     "q": "1/2 + 1/5 of a field is planted. What fraction is not planted?",
+     "a": "3/10",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how did the bar model help in one problem today?",
+     "a": "For example it showed the 'rest' as the remaining parts of the bar, so I knew what to find a fraction of.",
+     "mins": 1
+    }
+   ],
+   "homework": "Six fraction word problems with bar models (portal homework).",
+   "send": "Support: blank bar model template. EAL: 'remaining', 'rest', 'total'. Stretch: the reverse problem in the stretch task with mixed numbers.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 8.5 Calculating with mixed numbers",
+    "Bar model template (printable, in the pupil PDF)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "box of dates fruit",
+     "alt": "A box of dates",
+     "for": "keywords"
+    },
+    {
+     "find": "bar model diagram fractions",
+     "alt": "A bar model split into equal parts",
+     "for": "teach:3"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Directed numbers; adding fractions",
+   "n": 44,
+   "title": "Converting between fractions, decimals and percentages",
+   "duration": 50,
+   "bigQuestion": "How can 1/4, 0.25 and 25% be the same number?",
+   "objectives": [
+    "To understand how fractions, decimals and percentages are three ways of writing the same proportion"
+   ],
+   "successCriteria": [
+    "All: convert common fractions, decimals and percentages",
+    "Most: convert any fraction to a decimal by dividing",
+    "Some: convert decimals and percentages to fractions in their simplest form"
+   ],
+   "crossCurricular": "Islamic Studies: zakah on savings at 2.5%",
+   "smsc": "Spiritual: zakah as a duty that purifies wealth, worked out with care",
+   "keywords": [
+    {
+     "term": "percentage",
+     "def": "a number of parts out of 100"
+    },
+    {
+     "term": "decimal",
+     "def": "a number using place value after the point"
+    },
+    {
+     "term": "equivalent",
+     "def": "equal in value"
+    },
+    {
+     "term": "convert",
+     "def": "change the form, not the value"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Zakah on savings is 2.5%. Can you write that as a fraction? Which form is easiest to use with a calculator?",
+    "a": "2.5% = 2.5/100 = 1/40 = 0.025. The decimal is easiest on a calculator: 0.025 × savings."
+   },
+   "starter": [
+    {
+     "q": "Write 3/4 as a percentage",
+     "a": "75%",
+     "mins": 1
+    },
+    {
+     "q": "0.6 as a fraction in simplest form",
+     "a": "3/5",
+     "mins": 1
+    },
+    {
+     "q": "3 1/2 - 1 3/4",
+     "a": "1 3/4",
+     "mins": 1
+    },
+    {
+     "q": "Find 10% of 85",
+     "a": "8.5",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Key facts",
+     "bullets": [
+      "Learn these by heart"
+     ],
+     "note": "Chant them as a class (spoken, no music).",
+     "table": {
+      "head": [
+       "Fraction",
+       "Decimal",
+       "Percentage"
+      ],
+      "rows": [
+       [
+        "1/2",
+        "0.5",
+        "50%"
+       ],
+       [
+        "1/4",
+        "0.25",
+        "25%"
+       ],
+       [
+        "3/4",
+        "0.75",
+        "75%"
+       ],
+       [
+        "1/5",
+        "0.2",
+        "20%"
+       ],
+       [
+        "1/10",
+        "0.1",
+        "10%"
+       ],
+       [
+        "1/8",
+        "0.125",
+        "12.5%"
+       ],
+       [
+        "1/3",
+        "0.333...",
+        "33.3...%"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Fraction to decimal",
+     "bullets": [
+      "Divide the numerator by the denominator"
+     ],
+     "note": "Use short division.",
+     "model": {
+      "problem": "Write 3/8 as a decimal and a percentage",
+      "steps": [
+       "3 ÷ 8 = 0.375",
+       "0.375 × 100 = 37.5%"
+      ],
+      "answer": "0.375 = 37.5%"
+     }
+    },
+    {
+     "heading": "Percentage to fraction",
+     "bullets": [
+      "Write over 100, then simplify"
+     ],
+     "note": "Use the HCF.",
+     "model": {
+      "problem": "Write 2.5% as a fraction",
+      "steps": [
+       "2.5/100",
+       "× 2: 5/200",
+       "÷ 5: 1/40"
+      ],
+      "answer": "1/40"
+     }
+    },
+    {
+     "heading": "Decimal to fraction",
+     "bullets": [
+      "Use place value"
+     ],
+     "note": "0.35 is 35 hundredths.",
+     "compare": {
+      "left": {
+       "title": "0.35",
+       "points": [
+        "35/100",
+        "÷ 5: 7/20"
+       ]
+      },
+      "right": {
+       "title": "0.125",
+       "points": [
+        "125/1000",
+        "÷ 125: 1/8"
+       ]
+      },
+      "label": "and"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Place value"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Write 0.4 as a percentage",
+      "options": [
+       "40%",
+       "4%",
+       "0.4%",
+       "400%"
+      ],
+      "answer": 0,
+      "why": "0.4 × 100 = 40%. 4% treats the digit as the percentage."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Write 7/20 as a decimal and a percentage",
+     "a": "0.35, 35%",
+     "mins": 2,
+     "model": "7/20 = 35/100 (× 5), so 0.35 and 35%."
+    },
+    {
+     "q": "Write 65% as a fraction in simplest form",
+     "a": "13/20",
+     "mins": 1
+    },
+    {
+     "q": "Write 0.08 as a percentage",
+     "a": "8%",
+     "mins": 1
+    },
+    {
+     "q": "Write 5/8 as a decimal",
+     "a": "0.625",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Copy and complete: (a) 3/5 = __ = __% (b) __ = 0.45 = __% (c) __ = __ = 12% (d) 7/8 = __ = __%",
+     "a": "(a) 0.6, 60% (b) 9/20, 45% (c) 3/25, 0.12 (d) 0.875, 87.5%",
+     "mins": 5,
+     "model": "(a) 3 ÷ 5 = 0.6 = 60%.\n(b) 45/100 = 9/20.\n(c) 12/100 = 3/25 = 0.12.\n(d) 7 ÷ 8 = 0.875 = 87.5%."
+    },
+    {
+     "q": "Extend: Write 2/3 as a decimal and as a percentage to 1 decimal place.",
+     "a": "0.666... = 0.667 (3 d.p.), 66.7%",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Ali says 1/40 = 0.4. Explain his mistake and give the correct decimal.",
+     "a": "1 ÷ 40 = 0.025, not 0.4; 1/4 is 0.25 and 1/40 is ten times smaller",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Which equals 3/4?",
+     "a": "B) 75%",
+     "mins": 1,
+     "options": [
+      "0.34",
+      "75%",
+      "0.43"
+     ]
+    },
+    {
+     "q": "Write 0.15 as a fraction in simplest form",
+     "a": "3/20",
+     "mins": 1
+    },
+    {
+     "q": "Big question: show that 1/4, 0.25 and 25% are the same.",
+     "a": "1 ÷ 4 = 0.25, and 0.25 = 25/100 = 25%.",
+     "mins": 1
+    }
+   ],
+   "homework": "FDP conversion table: complete 12 rows (portal worksheet).",
+   "send": "Support: FDP key facts card. EAL: 'convert', 'equivalent', 'per cent'. Stretch: 1/7 as a recurring decimal.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 5.4 Fractions and decimals and 5.5 Understanding percentages",
+    "FDP key facts card (printable, in the pupil PDF)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "hundred square grid shaded",
+     "alt": "A hundred square with 25 squares shaded",
+     "for": "teach:1"
+    },
+    {
+     "find": "coins and notes savings",
+     "alt": "Savings in coins and notes",
+     "for": "hook"
+    }
+   ],
+   "islamicLink": {
+    "text": "Zakah (زَكَاة) on savings held for a lunar year above the nisab is 2.5%, which is 1/40 or 0.025 of the amount. Converting between fractions, decimals and percentages helps a Muslim work out what is due accurately.",
+    "at": "start"
+   }
+  },
+  {
+   "unit": "Spring 2: Directed numbers; adding fractions",
+   "n": 45,
+   "title": "Ordering fractions, decimals and percentages",
+   "duration": 50,
+   "bigQuestion": "Which is bigger: 3/8, 0.4 or 35%?",
+   "objectives": [
+    "To understand how to compare numbers in different forms by changing them to one form"
+   ],
+   "successCriteria": [
+    "All: convert a mixed list into decimals",
+    "Most: order fractions, decimals and percentages",
+    "Some: decide which form is most efficient for a comparison"
+   ],
+   "smsc": "Moral: comparing offers honestly so that we spend wisely",
+   "keywords": [
+    {
+     "term": "order",
+     "def": "put in size order"
+    },
+    {
+     "term": "ascending",
+     "def": "from smallest to largest"
+    },
+    {
+     "term": "descending",
+     "def": "from largest to smallest"
+    },
+    {
+     "term": "common form",
+     "def": "the same type of number, for example all decimals"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Three shops offer 1/3 off, 30% off and 0.35 off. Which is the best deal?",
+    "a": "0.35 off: 1/3 = 0.333, 30% = 0.3, so 0.35 is the biggest discount."
+   },
+   "starter": [
+    {
+     "q": "Write 2/5 as a decimal",
+     "a": "0.4",
+     "mins": 1
+    },
+    {
+     "q": "Write 0.65 as a percentage",
+     "a": "65%",
+     "mins": 1
+    },
+    {
+     "q": "Write 3/8 as a percentage",
+     "a": "37.5%",
+     "mins": 1
+    },
+    {
+     "q": "Order: 0.3, 0.29, 0.31",
+     "a": "0.29, 0.3, 0.31",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Change to decimals",
+     "bullets": [
+      "Convert everything to decimals",
+      "Then compare place value"
+     ],
+     "note": "Decimals are usually quickest.",
+     "model": {
+      "problem": "Order 3/8, 0.4, 35%",
+      "steps": [
+       "3/8 = 0.375",
+       "0.4 = 0.400",
+       "35% = 0.350"
+      ],
+      "answer": "35%, 3/8, 0.4"
+     }
+    },
+    {
+     "heading": "See it on a line",
+     "bullets": [
+      "0.35, 0.375, 0.4"
+     ],
+     "note": "Place each value between 0.3 and 0.4.",
+     "numberline": {
+      "min": 0.3,
+      "max": 0.45,
+      "step": 0.01,
+      "marks": [
+       {
+        "at": 0.35,
+        "label": "35%"
+       },
+       {
+        "at": 0.375,
+        "label": "3/8"
+       },
+       {
+        "at": 0.4,
+        "label": "0.4"
+       }
+      ]
+     }
+    },
+    {
+     "heading": "Longer is not bigger",
+     "bullets": [
+      "Line up the decimal point"
+     ],
+     "note": "Fill with zeros: 0.400 and 0.375.",
+     "misconception": {
+      "wrong": "0.375 > 0.4 because it has more digits",
+      "right": "0.4 = 0.400 > 0.375"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Convert first"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Which is largest?",
+      "options": [
+       "0.7",
+       "2/3",
+       "68%",
+       "0.69"
+      ],
+      "answer": 0,
+      "why": "0.7 > 0.69 > 0.68 > 0.667. 2/3 = 0.667 is the smallest here."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Order from smallest: 0.6, 5/8, 61%",
+     "a": "0.6, 61%, 5/8",
+     "mins": 2,
+     "model": "0.6 = 0.600, 61% = 0.610, 5/8 = 0.625."
+    },
+    {
+     "q": "Which is bigger: 4/5 or 78%?",
+     "a": "4/5 (80%)",
+     "mins": 1
+    },
+    {
+     "q": "Order from largest: 1/4, 0.2, 22%",
+     "a": "1/4, 22%, 0.2",
+     "mins": 1
+    },
+    {
+     "q": "Write a fraction between 0.3 and 40%",
+     "a": "For example 7/20 = 0.35",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Order from smallest (a) 0.45, 2/5, 44% (b) 7/10, 0.07, 17% (c) 1/3, 0.3, 32%, 0.33",
+     "a": "(a) 2/5, 44%, 0.45 (b) 0.07, 17%, 7/10 (c) 0.3, 32%, 0.33, 1/3",
+     "mins": 5,
+     "model": "(a) 0.40, 0.44, 0.45.\n(b) 0.07, 0.17, 0.70.\n(c) 0.300, 0.320, 0.330, 0.333."
+    },
+    {
+     "q": "Extend: In a quiz Hamza scored 17/20, Musa 84% and Yusuf 0.86 of the marks. Who did best?",
+     "a": "Yusuf (0.86 > 0.85 > 0.84)",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Answer the hook. Then find a fraction off that beats all three offers but is under 40% off.",
+     "a": "0.35 off is best (0.35 > 0.333 > 0.3); for example 3/8 = 0.375 off",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Which is smallest?",
+     "a": "C) 58%",
+     "mins": 1,
+     "options": [
+      "0.6",
+      "3/5",
+      "58%"
+     ]
+    },
+    {
+     "q": "Order from smallest: 9/10, 0.89, 91%",
+     "a": "0.89, 9/10, 91%",
+     "mins": 1
+    },
+    {
+     "q": "Big question: which is bigger, 3/8, 0.4 or 35%?",
+     "a": "0.4, because 3/8 = 0.375 and 35% = 0.35.",
+     "mins": 1
+    }
+   ],
+   "homework": "Ordering FDP: 8 mixed lists (portal homework).",
+   "send": "Support: FDP key facts card and place value grid. EAL: 'ascending', 'descending'. Stretch: include negative numbers such as -0.3 and -1/4.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 5.4 Fractions and decimals and 5.5 Understanding percentages",
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 5.1 Comparing fractions",
+    "FDP key facts card (printable, in the pupil PDF)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "shop sale sign percent off",
+     "alt": "A shop sign offering a percentage off",
+     "for": "hook"
+    },
+    {
+     "find": "place value chart decimals",
+     "alt": "A place value chart for decimals",
+     "for": "teach:3"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Directed numbers; adding fractions",
+   "n": 46,
+   "title": "Percentages and fractions of amounts: comparing",
+   "duration": 50,
+   "bigQuestion": "Is 30% of 80 more or less than 2/5 of 60?",
+   "objectives": [
+    "To understand how to calculate and compare fractions and percentages of amounts"
+   ],
+   "successCriteria": [
+    "All: find fractions and percentages of amounts without a calculator",
+    "Most: compare two amounts given in different forms",
+    "Some: write one amount as a fraction and percentage of another"
+   ],
+   "smsc": "Moral: fairness ('adl, عَدْل) when sharing out amounts in different forms",
+   "keywords": [
+    {
+     "term": "of",
+     "def": "multiply: 30% of 80 = 0.3 × 80"
+    },
+    {
+     "term": "proportion",
+     "def": "a part compared with the whole"
+    },
+    {
+     "term": "percentage of",
+     "def": "a part out of 100 of an amount"
+    },
+    {
+     "term": "compare",
+     "def": "decide which is greater"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Would you rather have 30% of £80 or 2/5 of £60? Decide before you calculate.",
+    "a": "They are equal: both are £24."
+   },
+   "starter": [
+    {
+     "q": "Order: 0.3, 2/5, 35%",
+     "a": "0.3, 35%, 2/5",
+     "mins": 1
+    },
+    {
+     "q": "10% of 340",
+     "a": "34",
+     "mins": 1
+    },
+    {
+     "q": "1/5 of 45",
+     "a": "9",
+     "mins": 1
+    },
+    {
+     "q": "Write 12/20 as a percentage",
+     "a": "60%",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Compare by calculating",
+     "bullets": [
+      "Work out both, then compare"
+     ],
+     "note": "Use 10% for percentages and divide-then-multiply for fractions.",
+     "model": {
+      "problem": "30% of £80 or 2/5 of £60?",
+      "steps": [
+       "10% of 80 = 8, so 30% = £24",
+       "1/5 of 60 = 12, so 2/5 = £24"
+      ],
+      "answer": "They are equal: £24 each"
+     }
+    },
+    {
+     "heading": "One amount as a percentage of another",
+     "bullets": [
+      "Write as a fraction, convert"
+     ],
+     "note": "Out of 25: multiply by 4.",
+     "model": {
+      "problem": "Zayd scored 18 out of 25. What percentage is that?",
+      "steps": [
+       "18/25",
+       "× 4: 72/100"
+      ],
+      "answer": "72%"
+     }
+    },
+    {
+     "heading": "Building percentages",
+     "bullets": [
+      "5% = half of 10%",
+      "15% = 10% + 5%",
+      "1% = ÷ 100"
+     ],
+     "note": "Recall from Spring 1: building up percentages."
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Calculate both"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Which is larger: 25% of 64 or 3/4 of 20?",
+      "options": [
+       "25% of 64",
+       "3/4 of 20",
+       "They are equal"
+      ],
+      "answer": 0,
+      "why": "25% of 64 = 16, 3/4 of 20 = 15. 16 > 15."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Which is more: 40% of 45 or 3/8 of 48?",
+     "a": "They are equal: both are 18",
+     "mins": 2,
+     "model": "40% of 45: 10% = 4.5, × 4 = 18.\n3/8 of 48: 48 ÷ 8 = 6, × 3 = 18.\nThey are equal."
+    },
+    {
+     "q": "Write 14 out of 40 as a percentage",
+     "a": "35%",
+     "mins": 1
+    },
+    {
+     "q": "Find 15% of 260",
+     "a": "39",
+     "mins": 1
+    },
+    {
+     "q": "Which is less: 2/3 of 33 or 70% of 30?",
+     "a": "70% of 30 = 21 is less than 2/3 of 33 = 22",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Which is greater in each pair? (a) 20% of 75 or 1/3 of 48 (b) 3/5 of 85 or 55% of 90 (c) 12.5% of 64 or 1/6 of 54",
+     "a": "(a) 1/3 of 48 (16 > 15) (b) 3/5 of 85 (51 > 49.5) (c) 1/6 of 54 (9 > 8)",
+     "mins": 5,
+     "model": "(a) 20% of 75 = 15; 48 ÷ 3 = 16.\n(b) 85 ÷ 5 × 3 = 51; 10% of 90 = 9, 50% = 45, 5% = 4.5, 55% = 49.5.\n(c) 12.5% = 1/8, 64 ÷ 8 = 8; 54 ÷ 6 = 9."
+    },
+    {
+     "q": "Extend: In a test Ibrahim got 34/40 and in another 41/50. In which did he do better?",
+     "a": "34/40 = 85% beats 41/50 = 82%",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: 45% of a number is 27. Find 2/3 of the same number.",
+     "a": "1% = 0.6, so the number is 60; 2/3 of 60 = 40",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Which is more: 50% of 30 or 1/4 of 64?",
+     "a": "B) 1/4 of 64",
+     "mins": 1,
+     "options": [
+      "50% of 30",
+      "1/4 of 64",
+      "equal"
+     ]
+    },
+    {
+     "q": "Write 9 out of 20 as a percentage",
+     "a": "45%",
+     "mins": 1
+    },
+    {
+     "q": "Big question: answer the ponder question with working.",
+     "a": "30% of £80 = £24 and 2/5 of £60 = £24, so they are equal.",
+     "mins": 1
+    }
+   ],
+   "homework": "Six 'would you rather' comparisons with full working (portal homework).",
+   "send": "Support: percentage building table. EAL: 'compare', 'greater', 'of'. Stretch: write 7 out of 12 as a percentage to 1 d.p. (58.3%).",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 5.4 Fractions and decimals and 5.5 Understanding percentages",
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 5.6 Percentages of amounts and 5.3 Working with fractions",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "price tags shop",
+     "alt": "Price tags in a shop",
+     "for": "hook"
+    },
+    {
+     "find": "test paper marks score",
+     "alt": "A marked test paper score",
+     "for": "teach:2"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Directed numbers; adding fractions",
+   "n": 47,
+   "title": "Fractions, decimals and percentages problem solving",
+   "duration": 50,
+   "bigQuestion": "Which form should I use to solve this problem?",
+   "objectives": [
+    "To understand how to choose between fractions, decimals and percentages to solve multi-step problems"
+   ],
+   "successCriteria": [
+    "All: solve one-step problems in the most efficient form",
+    "Most: solve two-step problems such as discounts and remaining amounts",
+    "Some: justify the choice of method in words"
+   ],
+   "smsc": "Moral: charity and fair spending; knowing what an offer really saves",
+   "keywords": [
+    {
+     "term": "efficient",
+     "def": "using the fewest, simplest steps"
+    },
+    {
+     "term": "discount",
+     "def": "an amount taken off a price"
+    },
+    {
+     "term": "multiplier",
+     "def": "the decimal to multiply by, such as 0.8 for 80%"
+    },
+    {
+     "term": "justify",
+     "def": "give a reason"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A coat is 20% off, then a further 1/4 off the new price. Is that the same as 45% off?",
+    "a": "No: 20% off then 1/4 off leaves 0.8 × 0.75 = 0.6 of the price, which is 40% off."
+   },
+   "starter": [
+    {
+     "q": "Write 0.8 as a percentage",
+     "a": "80%",
+     "mins": 1
+    },
+    {
+     "q": "20% of £45",
+     "a": "£9",
+     "mins": 1
+    },
+    {
+     "q": "Order: 3/5, 0.62, 59%",
+     "a": "59%, 3/5, 0.62",
+     "mins": 1
+    },
+    {
+     "q": "1/4 of £36",
+     "a": "£9",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "A discount",
+     "bullets": [
+      "Find the discount, subtract"
+     ],
+     "note": "Or use the multiplier: 80% remains.",
+     "model": {
+      "problem": "A £45 coat has 20% off. What is the sale price?",
+      "steps": [
+       "20% of 45 = 9",
+       "45 - 9 = 36",
+       "Check: 0.8 × 45 = 36"
+      ],
+      "answer": "£36"
+     }
+    },
+    {
+     "heading": "Two discounts",
+     "bullets": [
+      "Do them one after another"
+     ],
+     "note": "The second discount is of the NEW price.",
+     "model": {
+      "problem": "Then a further 1/4 off £36",
+      "steps": [
+       "1/4 of 36 = 9",
+       "36 - 9 = 27",
+       "Total off: £18 of £45 = 40%"
+      ],
+      "answer": "£27; this is 40% off, not 45%"
+     }
+    },
+    {
+     "heading": "Which form?",
+     "bullets": [
+      "Pick the friendliest form"
+     ],
+     "note": "Discuss: each form is good for different jobs.",
+     "diagram": {
+      "centre": "Choose a form",
+      "items": [
+       "Fractions: easy with halves, thirds, quarters",
+       "Percentages: compare scores and offers",
+       "Decimals: calculators and multipliers",
+       "Mixed lists: change all to decimals"
+      ]
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Multiplier for 25% off"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "What do you multiply by to take 25% off?",
+      "options": [
+       "0.75",
+       "0.25",
+       "1.25",
+       "25"
+      ],
+      "answer": 0,
+      "why": "100% - 25% = 75% = 0.75. 0.25 gives the discount, not the new price."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "A £60 bag has 15% off. Find the sale price.",
+     "a": "£51",
+     "mins": 2,
+     "model": "10% = 6, 5% = 3, 15% = 9.\n60 - 9 = 51."
+    },
+    {
+     "q": "2/5 of a class of 30 walk. 50% of the rest cycle. How many cycle?",
+     "a": "9",
+     "mins": 2
+    },
+    {
+     "q": "A school raises £480; 0.35 goes to a well project. How much is that?",
+     "a": "£168",
+     "mins": 1
+    },
+    {
+     "q": "Which is the better test result: 27/30 or 88%?",
+     "a": "27/30 = 90%, better",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) A £120 tablet is reduced by 3/8. Find the new price. (b) 65% of 240 pupils have school dinners. How many do not? (c) Write 0.24 kg of a 1.2 kg bag as a percentage.",
+     "a": "(a) £75 (b) 84 (c) 20%",
+     "mins": 5,
+     "model": "(a) 120 ÷ 8 = 15, × 3 = 45 off, 120 - 45 = £75.\n(b) 35% do not: 10% = 24, 30% = 72, 5% = 12, 84.\n(c) 0.24/1.2 = 0.2 = 20%."
+    },
+    {
+     "q": "Extend: A charity gives 1/5 of its £2400 to orphans and 30% of the remainder to wells. How much is left?",
+     "a": "Orphans £480, remainder £1920, wells £576, left £1344",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: Answer the hook: is 20% off then 1/4 off the same as 45% off? Explain for any price.",
+     "a": "No: 0.8 × 0.75 = 0.6, so it is 40% off for every price",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "A £50 item has 30% off. What is the new price?",
+     "a": "A) £35",
+     "mins": 1,
+     "options": [
+      "£35",
+      "£15",
+      "£20"
+     ]
+    },
+    {
+     "q": "Write 18 out of 24 as a percentage",
+     "a": "75%",
+     "mins": 1
+    },
+    {
+     "q": "Big question: which form did you use for the two-discount problem and why?",
+     "a": "For example decimals: 0.8 × 0.75 = 0.6 shows the overall change in one step.",
+     "mins": 1
+    }
+   ],
+   "homework": "FDP problem set: 6 multi-step problems with a sentence explaining each method choice.",
+   "send": "Support: worked example card for discounts. EAL: 'discount', 'remainder', 'efficient'. Stretch: percentage increase on top of a fraction off.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 5.4 Fractions and decimals and 5.5 Understanding percentages",
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 Unit 5 Check, Strengthen and Extend lessons",
+    "Calculator (for checking only)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "water well project village",
+     "alt": "A village water well",
+     "for": "teach:4"
+    },
+    {
+     "find": "sale price label",
+     "alt": "A sale price label",
+     "for": "hook"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Directed numbers; adding fractions",
+   "n": 48,
+   "title": "Review: directed numbers",
+   "duration": 50,
+   "bigQuestion": "Which directed number rule do I trust most, and which do I need to fix?",
+   "objectives": [
+    "To understand where my directed number skills are secure and where I need practice"
+   ],
+   "successCriteria": [
+    "All: order, add and subtract directed numbers accurately",
+    "Most: multiply and divide with the sign rules",
+    "Some: solve mixed directed number problems and explain each step"
+   ],
+   "smsc": "Social: honest self-assessment and helping a partner with a skill they find hard",
+   "keywords": [
+    {
+     "term": "directed number",
+     "def": "a number with a sign"
+    },
+    {
+     "term": "sign rule",
+     "def": "same signs positive, different signs negative"
+    },
+    {
+     "term": "difference",
+     "def": "the gap between two numbers"
+    },
+    {
+     "term": "BIDMAS",
+     "def": "the order of operations"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Make the biggest and smallest answers you can using -3, 5 and -2 with any two operations.",
+    "a": "Largest: 5 × (-3) × (-2) = 30. Smallest: for example 5 × (-3) + (-2) = -17."
+   },
+   "starter": [
+    {
+     "q": "-4 - (-9)",
+     "a": "5",
+     "mins": 1
+    },
+    {
+     "q": "(-6) × (-7)",
+     "a": "42",
+     "mins": 1
+    },
+    {
+     "q": "-3 + (-8)",
+     "a": "-11",
+     "mins": 1
+    },
+    {
+     "q": "(-36) ÷ 4",
+     "a": "-9",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Sort the answers",
+     "bullets": [
+      "Positive or negative?",
+      "Decide without calculating"
+     ],
+     "note": "Pupils say a reason for each card.",
+     "sort": {
+      "columns": [
+       "Positive",
+       "Negative",
+       "Zero"
+      ],
+      "cards": [
+       "(-3) × (-4)",
+       "-5 + 2",
+       "7 - (-1)",
+       "(-8) ÷ 2",
+       "-6 - (-6)",
+       "(-2)²",
+       "3 × (-1) × (-1)",
+       "-10 + 10"
+      ],
+      "answer": [
+       0,
+       1,
+       0,
+       1,
+       2,
+       0,
+       0,
+       2
+      ]
+     }
+    },
+    {
+     "heading": "Rules summary",
+     "bullets": [
+      "Adding a negative: move left",
+      "Subtracting a negative: add"
+     ],
+     "note": "Recap all four operations.",
+     "table": {
+      "head": [
+       "Operation",
+       "Example",
+       "Answer"
+      ],
+      "rows": [
+       [
+        "Add a negative",
+        "4 + (-6)",
+        "-2"
+       ],
+       [
+        "Subtract a negative",
+        "-3 - (-5)",
+        "2"
+       ],
+       [
+        "Multiply",
+        "(-4) × 5",
+        "-20"
+       ],
+       [
+        "Divide",
+        "(-20) ÷ (-4)",
+        "5"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Mixed problem",
+     "bullets": [
+      "One step at a time"
+     ],
+     "note": "Model the full solution.",
+     "model": {
+      "problem": "Find the mean of -8, 3, -5, 6, -6",
+      "steps": [
+       "Total: -8 + 3 + (-5) + 6 + (-6) = -10",
+       "-10 ÷ 5 = -2"
+      ],
+      "answer": "-2"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Order of operations"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Work out -3 × 4 - (-2)",
+      "options": [
+       "-10",
+       "-14",
+       "-20",
+       "10"
+      ],
+      "answer": 0,
+      "why": "-12 - (-2) = -12 + 2 = -10. -14 subtracts 2 instead of adding."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Work out -7 + 3 × (-2)",
+     "a": "-13",
+     "mins": 2,
+     "model": "Multiply first: 3 × (-2) = -6.\n-7 + (-6) = -13."
+    },
+    {
+     "q": "Work out (-5)² - (-5)",
+     "a": "30",
+     "mins": 1
+    },
+    {
+     "q": "The temperature is -2 °C and falls 9 degrees. What is it now?",
+     "a": "-11 °C",
+     "mins": 1
+    },
+    {
+     "q": "Work out (-72) ÷ (-8)",
+     "a": "9",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) Order: -1.5, -5, 0.5, -0.5 (b) 6 - 13 (c) -9 - (-4) (d) (-3) × 8 ÷ (-6) (e) 2x² when x = -3",
+     "a": "(a) -5, -1.5, -0.5, 0.5 (b) -7 (c) -5 (d) 4 (e) 18",
+     "mins": 6,
+     "model": "(a) most negative first.\n(b) 6, move 13 left: -7.\n(c) -9 + 4 = -5.\n(d) -24 ÷ (-6) = 4.\n(e) 2 × 9 = 18."
+    },
+    {
+     "q": "Extend: The difference between two temperatures is 15 degrees. The higher is 4 °C. Find the lower one.",
+     "a": "-11 °C",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Answer the ponder question: using -3, 5 and -2 once each, find the largest value you can make with two operations.",
+     "a": "5 × (-3) × (-2) = 30 is the largest; for example 5 + (-3) + (-2) = 0 is much smaller",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Work out -6 - (-6).",
+     "a": "A) 0",
+     "mins": 1,
+     "options": [
+      "0",
+      "-12",
+      "12"
+     ]
+    },
+    {
+     "q": "Work out (-4) × (-2) × (-1)",
+     "a": "-8",
+     "mins": 1
+    },
+    {
+     "q": "Big question: write the rule you trust most and one thing to practise.",
+     "a": "For example: I trust the sign rules; I need to practise subtracting negatives.",
+     "mins": 1
+    }
+   ],
+   "homework": "Directed numbers review quiz on the portal (15 questions, self-marking).",
+   "send": "Support: rules summary card. EAL: key words list with examples. Stretch: directed number magic square with total -6.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 2.6 Negative numbers",
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 1.3 Calculating with negative integers",
+    "Printable number line sheet, -20 to 20 (portal worksheet for this unit)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "number line negative numbers",
+     "alt": "A number line with negative numbers",
+     "for": "keywords"
+    },
+    {
+     "find": "mountain and sea cross section",
+     "alt": "Heights above and below sea level",
+     "for": "teach:3"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Directed numbers; adding fractions",
+   "n": 49,
+   "title": "Review: adding and subtracting fractions",
+   "duration": 50,
+   "bigQuestion": "What mistakes do people make with fractions, and how do we avoid them?",
+   "objectives": [
+    "To understand where my fraction skills are secure and how to fix common errors"
+   ],
+   "successCriteria": [
+    "All: add and subtract fractions with the same and different denominators",
+    "Most: calculate with mixed numbers",
+    "Some: spot and correct common fraction mistakes"
+   ],
+   "smsc": "Social: learning from mistakes without embarrassment",
+   "keywords": [
+    {
+     "term": "common denominator",
+     "def": "the same denominator for both fractions"
+    },
+    {
+     "term": "mixed number",
+     "def": "a whole and a fraction"
+    },
+    {
+     "term": "improper fraction",
+     "def": "top bigger than bottom"
+    },
+    {
+     "term": "simplify",
+     "def": "divide top and bottom by a common factor"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Spot the mistake: 2/3 + 1/4 = 3/7. Can you prove it is wrong without working out the right answer?",
+    "a": "2/3 + 1/4 must be more than 2/3, but 3/7 is less than a half, so it is wrong (the answer is 11/12)."
+   },
+   "starter": [
+    {
+     "q": "3/5 + 1/5",
+     "a": "4/5",
+     "mins": 1
+    },
+    {
+     "q": "1/2 - 1/6",
+     "a": "1/3",
+     "mins": 1
+    },
+    {
+     "q": "Write 11/4 as a mixed number",
+     "a": "2 3/4",
+     "mins": 1
+    },
+    {
+     "q": "Write 0.35 as a fraction",
+     "a": "7/20",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Fix the error",
+     "bullets": [
+      "Each line has a mistake",
+      "Name it, then fix it"
+     ],
+     "note": "Pupils explain the error before the answer is revealed.",
+     "table": {
+      "head": [
+       "Wrong",
+       "Error",
+       "Right"
+      ],
+      "rows": [
+       [
+        "2/3 + 1/4 = 3/7",
+        "Added denominators",
+        "11/12"
+       ],
+       [
+        "5/6 - 1/2 = 4/4",
+        "Subtracted denominators",
+        "1/3"
+       ],
+       [
+        "2 1/3 = 21/3",
+        "Wrote digits together",
+        "7/3"
+       ],
+       [
+        "3/4 + 3/4 = 6/8",
+        "Doubled both",
+        "1 1/2"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Full method",
+     "bullets": [
+      "LCM, convert, add, simplify"
+     ],
+     "note": "Recap the method.",
+     "model": {
+      "problem": "1 3/4 + 2 5/6",
+      "steps": [
+       "Wholes: 1 + 2 = 3",
+       "3/4 + 5/6 = 9/12 + 10/12 = 19/12 = 1 7/12",
+       "3 + 1 7/12"
+      ],
+      "answer": "4 7/12"
+     }
+    },
+    {
+     "heading": "Estimate to check",
+     "bullets": [
+      "2/3 + 1/4 is more than 2/3",
+      "3/7 is less than 1/2, so it must be wrong"
+     ],
+     "note": "This answers the ponder question."
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Improper fractions"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Work out 2 1/5 - 1 1/2",
+      "options": [
+       "7/10",
+       "1 3/10",
+       "1 7/10",
+       "3/10"
+      ],
+      "answer": 0,
+      "why": "11/5 - 3/2 = 22/10 - 15/10 = 7/10. 1 3/10 comes from 1 + (1/2 - 1/5), subtracting the fractions the wrong way round."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Work out 3/4 - 2/5",
+     "a": "7/20",
+     "mins": 2,
+     "model": "LCM 20: 15/20 - 8/20 = 7/20."
+    },
+    {
+     "q": "Work out 2 2/3 + 1 1/2",
+     "a": "4 1/6",
+     "mins": 1
+    },
+    {
+     "q": "Work out 5 - 2 3/8",
+     "a": "2 5/8",
+     "mins": 1
+    },
+    {
+     "q": "Correct this: 1/2 + 1/3 = 2/5",
+     "a": "1/2 + 1/3 = 5/6 (2/5 is less than 1/2)",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) 5/8 + 1/8 (b) 2/3 + 1/5 (c) 7/9 - 1/3 (d) 3 1/4 + 1 2/3 (e) 4 1/6 - 2 3/4",
+     "a": "(a) 3/4 (b) 13/15 (c) 4/9 (d) 4 11/12 (e) 1 5/12",
+     "mins": 6,
+     "model": "(a) 6/8 = 3/4.\n(b) 10/15 + 3/15 = 13/15.\n(c) 7/9 - 3/9 = 4/9.\n(d) 4 + 3/12 + 8/12 = 4 11/12.\n(e) 25/6 - 11/4 = 50/12 - 33/12 = 17/12 = 1 5/12."
+    },
+    {
+     "q": "Extend: A cyclist rides 2 3/4 km, then 1 2/5 km, then walks 5/8 km. What is the total distance?",
+     "a": "2 3/4 + 1 2/5 + 5/8 = 4 31/40 km",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Find two different unit fractions that add to 5/6.",
+     "a": "1/2 + 1/3",
+     "mins": 3
+    }
+   ],
+   "exit": [
+    {
+     "q": "Work out 1/4 + 1/3.",
+     "a": "A) 7/12",
+     "mins": 1,
+     "options": [
+      "7/12",
+      "2/7",
+      "1/7"
+     ]
+    },
+    {
+     "q": "Work out 3 1/2 - 1 3/4",
+     "a": "1 3/4",
+     "mins": 1
+    },
+    {
+     "q": "Big question: name one common fraction mistake and how to avoid it.",
+     "a": "Adding the denominators; avoid it by making a common denominator and keeping the part size.",
+     "mins": 1
+    }
+   ],
+   "homework": "Fractions review quiz on the portal (15 questions, self-marking).",
+   "send": "Support: fraction wall and method card. EAL: error vocabulary ('added', 'subtracted', 'simplified'). Stretch: 1/2 + 1/4 + 1/8 + 1/16 and the pattern.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 8.2 Adding and subtracting fractions",
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 8.5 Calculating with mixed numbers",
+    "Fraction wall (printable, in the pupil PDF)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "fraction wall",
+     "alt": "A fraction wall",
+     "for": "teach:3"
+    },
+    {
+     "find": "bicycle road path",
+     "alt": "A cycle path",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Directed numbers; adding fractions",
+   "n": 50,
+   "title": "Unit quiz: directed numbers and fractions",
+   "duration": 50,
+   "bigQuestion": "What can I now do with directed numbers and fractions that I could not do in March?",
+   "objectives": [
+    "To understand how well I can use directed numbers, fractions, decimals and percentages under quiz conditions"
+   ],
+   "successCriteria": [
+    "All: answer one-step questions on all topics accurately",
+    "Most: show full working on two-step problems",
+    "Some: check answers with estimates and inverse operations"
+   ],
+   "smsc": "Moral: honesty (amanah, أَمَانَة) in quiz conditions: our own work only",
+   "keywords": [
+    {
+     "term": "quiz conditions",
+     "def": "working alone, in silence, in a set time"
+    },
+    {
+     "term": "working",
+     "def": "the steps you write to show your method"
+    },
+    {
+     "term": "check",
+     "def": "test an answer another way"
+    },
+    {
+     "term": "estimate",
+     "def": "a rough answer"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Before the quiz: which topic from this unit do you feel most sure of, and which least? Write one of each.",
+    "a": "Personal answers; the teacher notes the least sure topics for the next lesson."
+   },
+   "starter": [
+    {
+     "q": "-5 + 9",
+     "a": "4",
+     "mins": 1
+    },
+    {
+     "q": "1/3 + 1/2",
+     "a": "5/6",
+     "mins": 1
+    },
+    {
+     "q": "Write 3/5 as a percentage",
+     "a": "60%",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "How the quiz works",
+     "bullets": [
+      "Portal quiz in secure mode, 25 minutes",
+      "Show working in the response box",
+      "Calculator not allowed"
+     ],
+     "note": "Explain the online quiz rules; cameras on."
+    },
+    {
+     "heading": "Show working: model",
+     "bullets": [
+      "Write each step"
+     ],
+     "note": "A full-marks answer.",
+     "model": {
+      "problem": "Find 2 1/3 - 1 3/4",
+      "steps": [
+       "7/3 - 7/4",
+       "28/12 - 21/12",
+       "7/12"
+      ],
+      "answer": "7/12"
+     }
+    },
+    {
+     "heading": "Checking",
+     "bullets": [
+      "Estimate: 2 1/3 - 1 3/4 is about 2 - 2 = 0 to 1",
+      "Inverse: 7/12 + 1 3/4 = 2 1/3"
+     ],
+     "note": "Spend the last 3 minutes checking."
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Last practice"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Which is largest?",
+      "options": [
+       "0.62",
+       "5/8",
+       "61%",
+       "3/5"
+      ],
+      "answer": 1,
+      "why": "5/8 = 0.625, the largest. 0.62 is very close but smaller."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Practice: (-3) × (-5) - 4",
+     "a": "11",
+     "mins": 2,
+     "model": "(-3) × (-5) = 15, then 15 - 4 = 11."
+    }
+   ],
+   "independent": [
+    {
+     "q": "Unit quiz (portal, secure mode, 25 minutes): 20 questions on directed numbers, adding fractions, mixed numbers and FDP. Sample: (a) -8 - (-3) (b) 2/5 + 1/4 (c) 3 1/2 + 1 2/3 (d) Order 0.4, 3/8, 41%",
+     "a": "Sample answers: (a) -5 (b) 13/20 (c) 5 1/6 (d) 3/8, 0.4, 41%",
+     "mins": 25,
+     "model": "(a) -8 + 3 = -5.\n(b) 8/20 + 5/20 = 13/20.\n(c) 4 + 1/2 + 2/3 = 4 + 7/6 = 5 1/6.\n(d) 0.375, 0.4, 0.41."
+    }
+   ],
+   "exit": [
+    {
+     "q": "Write one question you found hard and why.",
+     "a": "Personal reflection, for example 'the mixed number subtraction: I forgot to convert'.",
+     "mins": 2
+    },
+    {
+     "q": "Big question: what can you do now that you could not do in March?",
+     "a": "For example: subtract negative numbers and add fractions with different denominators.",
+     "mins": 1
+    }
+   ],
+   "homework": "No new homework: finish any portal review quiz questions you missed.",
+   "send": "Support: access arrangements as agreed (reader, extra time, larger font). EAL: key words glossary allowed. Stretch: challenge question at the end of the quiz.",
+   "resources": [
+    "Unit quiz: directed numbers and fractions (portal quiz, secure mode, written for this unit)",
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 1.3 Calculating with negative integers",
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 8.2 Adding and subtracting fractions",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "chat-waterfall"
+   },
+   "pictures": [
+    {
+     "find": "stopwatch timer",
+     "alt": "A stopwatch for timed work",
+     "for": "keywords"
+    },
+    {
+     "find": "pencil and paper exam desk",
+     "alt": "A desk ready for a quiz",
+     "for": "hook"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Directed numbers; adding fractions",
+   "n": 51,
+   "title": "Quiz feedback: strengthen and extend",
+   "duration": 50,
+   "bigQuestion": "How do I turn a wrong answer into a strength?",
+   "objectives": [
+    "To understand my quiz mistakes and how to correct them with the right method"
+   ],
+   "successCriteria": [
+    "All: correct quiz errors using the method cards",
+    "Most: complete a strengthen task on the weakest topic",
+    "Some: attempt extend problems that combine directed numbers and fractions"
+   ],
+   "smsc": "Spiritual: patience (sabr, صَبْر) and steady effort when learning is hard",
+   "keywords": [
+    {
+     "term": "feedback",
+     "def": "information about how well you did and what to improve"
+    },
+    {
+     "term": "strengthen",
+     "def": "practise a skill to make it secure"
+    },
+    {
+     "term": "extend",
+     "def": "use a skill in a harder problem"
+    },
+    {
+     "term": "EBI",
+     "def": "even better if: one thing to improve"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Is a mistake you understand worth more than a right answer you guessed? Why?",
+    "a": "Yes: an understood mistake teaches a method you can use again; a guess teaches nothing."
+   },
+   "starter": [
+    {
+     "q": "-2 - 7",
+     "a": "-9",
+     "mins": 1
+    },
+    {
+     "q": "5/6 - 1/4",
+     "a": "7/12",
+     "mins": 1
+    },
+    {
+     "q": "Write 0.125 as a fraction",
+     "a": "1/8",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Most common errors",
+     "bullets": [
+      "Look for yours"
+     ],
+     "note": "Share the class's three most common errors from the quiz (no names).",
+     "table": {
+      "head": [
+       "Topic",
+       "Common error",
+       "Fix"
+      ],
+      "rows": [
+       [
+        "Subtracting negatives",
+        "-4 - (-3) = -7",
+        "-4 + 3 = -1"
+       ],
+       [
+        "Adding fractions",
+        "1/3 + 1/4 = 2/7",
+        "4/12 + 3/12 = 7/12"
+       ],
+       [
+        "Mixed numbers",
+        "3 1/4 - 1 1/2 = 2 1/4",
+        "13/4 - 6/4 = 7/4 = 1 3/4"
+       ],
+       [
+        "Ordering",
+        "0.375 > 0.4",
+        "0.400 > 0.375"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Model a correction",
+     "bullets": [
+      "Write the error, the reason, the fix"
+     ],
+     "note": "Show the correction format pupils will use.",
+     "model": {
+      "problem": "Correct -4 - (-3) = -7",
+      "steps": [
+       "Error: subtracted 3 instead of adding",
+       "Subtracting a negative means add",
+       "-4 + 3 = -1"
+      ],
+      "answer": "-1"
+     }
+    },
+    {
+     "heading": "Your next step",
+     "bullets": [
+      "Choose your path"
+     ],
+     "note": "Pupils pick from the teacher's feedback.",
+     "diagram": {
+      "centre": "After the quiz",
+      "items": [
+       "Strengthen: directed numbers card set",
+       "Strengthen: fractions card set",
+       "Extend: mixed problems",
+       "EBI target in your book"
+      ]
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Apply a fix"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Work out -6 - (-10)",
+      "options": [
+       "4",
+       "-16",
+       "16",
+       "-4"
+      ],
+      "answer": 0,
+      "why": "-6 + 10 = 4. -16 subtracts 10 instead of adding."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Correct: 2/5 + 1/3 = 3/8",
+     "a": "2/5 + 1/3 = 6/15 + 5/15 = 11/15",
+     "mins": 2,
+     "model": "Error: added tops and bottoms.\nLCM 15: 6/15 + 5/15 = 11/15."
+    },
+    {
+     "q": "Correct: (-2)² = -4",
+     "a": "(-2) × (-2) = 4",
+     "mins": 1
+    },
+    {
+     "q": "Correct: 2 3/4 = 23/4",
+     "a": "2 × 4 + 3 = 11, so 11/4",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Strengthen (choose your topic): (a) -3 - 8 (b) 7 - (-5) (c) (-9) × 4 (d) 3/4 + 1/6 (e) 2 1/2 - 1 2/3",
+     "a": "(a) -11 (b) 12 (c) -36 (d) 11/12 (e) 5/6",
+     "mins": 8,
+     "model": "(a) -3, 8 left: -11.\n(b) 7 + 5 = 12.\n(c) different signs: -36.\n(d) 9/12 + 2/12 = 11/12.\n(e) 5/2 - 5/3 = 15/6 - 10/6 = 5/6."
+    },
+    {
+     "q": "Extend: The temperature at dawn is -3 1/2 °C. It rises 5 3/4 degrees by noon. What is the noon temperature?",
+     "a": "2 1/4 °C",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: Find the mean of -1/2, 3/4 and -1 1/4.",
+     "a": "Total -1, mean -1/3",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Work out -1/2 + 3/4.",
+     "a": "A) 1/4",
+     "mins": 1,
+     "options": [
+      "1/4",
+      "-1/4",
+      "1 1/4"
+     ]
+    },
+    {
+     "q": "Big question: write your EBI target from the quiz.",
+     "a": "For example: 'EBI I convert mixed numbers before subtracting'.",
+     "mins": 1
+    }
+   ],
+   "homework": "Complete your strengthen card set on the portal and redo two quiz questions you got wrong.",
+   "send": "Support: method cards for every question type. EAL: 'error', 'fix', 'target'. Stretch: extend problems with negative fractions.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 Unit 2 and Year 8 Unit 8 Check, Strengthen and Extend lessons",
+    "Unit quiz results (portal)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "checklist clipboard",
+     "alt": "A checklist for targets",
+     "for": "teach:3"
+    },
+    {
+     "find": "notebook corrections pen",
+     "alt": "A notebook with corrections in a different colour",
+     "for": "hook"
     }
    ]
   }

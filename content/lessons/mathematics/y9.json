@@ -3,7 +3,7 @@
  "year": "y9",
  "board": "Pearson Edexcel (KS3 Maths Progress, building to International GCSE Mathematics A 4MA1)",
  "boardShort": "KS3 Maths Progress",
- "source": "School scheme of work: Pearson KS3 Maths Progress (2nd ed.) (ks3_maths_a_p_sow3.xlsx), matched to the White Rose Secondary block order in content/syllabus/ks1-3/mathematics.json; founding-year bridge (11 and 18 Jan 2027: straight-line graphs, forming and solving equations) and Spring 1 lessons (number, percentages, maths and money, with the riba note and halal finance) written to the plan, building to Pearson Edexcel International GCSE Mathematics A (4MA1); INSET lesson standard and lessons v3 rules.",
+ "source": "School scheme of work: Pearson KS3 Maths Progress (2nd ed.) (ks3_maths_a_p_sow3.xlsx), matched to the White Rose Secondary block order in content/syllabus/ks1-3/mathematics.json; founding-year bridge (11 and 18 Jan 2027: straight-line graphs, forming and solving equations) and Spring 1 lessons (number, percentages, maths and money, with the riba note and halal finance) written to the plan, building to Pearson Edexcel International GCSE Mathematics A (4MA1); INSET lesson standard and lessons v3 rules. | Founding year 2027 Spring 2 (15 Mar to 23 Apr): Deduction; rotation and translation; Pythagoras, written to the plan with Maths Progress Year 8 7.1 to 7.5, Year 7 10.3 to 10.5 and Year 9 7.3 as the school's resources.",
  "lessons": [
   {
    "unit": "Unit 1: Indices and standard form",
@@ -6327,6 +6327,4503 @@
      "find": "currency exchange rate board",
      "alt": "An exchange rate board",
      "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Deduction; rotation and translation; Pythagoras",
+   "n": 32,
+   "title": "Angle facts and geometric reasons",
+   "duration": 50,
+   "bigQuestion": "How can one angle tell you all the others?",
+   "objectives": [
+    "To understand how basic angle facts let us deduce unknown angles and justify them"
+   ],
+   "successCriteria": [
+    "All: use angles on a line, at a point and vertically opposite",
+    "Most: use the angle sum of a triangle",
+    "Some: write the correct reason for every step"
+   ],
+   "smsc": "Moral: justifying claims with evidence rather than guessing",
+   "keywords": [
+    {
+     "term": "deduce",
+     "def": "work out using facts and logic"
+    },
+    {
+     "term": "vertically opposite",
+     "def": "angles opposite each other where two lines cross; they are equal"
+    },
+    {
+     "term": "reason",
+     "def": "the fact that justifies a step"
+    },
+    {
+     "term": "angles at a point",
+     "def": "angles all the way round a point, adding to 360°"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Two straight lines cross. One angle is 70°. Can you find the other three angles without measuring?",
+    "a": "Yes: 70° (vertically opposite), and 110° twice (angles on a straight line)."
+   },
+   "starter": [
+    {
+     "q": "Simplify 3⁴ × 3²",
+     "a": "3⁶",
+     "mins": 1
+    },
+    {
+     "q": "Solve x + 65 = 180",
+     "a": "x = 115",
+     "mins": 1
+    },
+    {
+     "q": "Solve 2x + 40 = 360",
+     "a": "x = 160",
+     "mins": 1
+    },
+    {
+     "q": "Name an angle bigger than 90° but less than 180°",
+     "a": "Obtuse",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "The four facts",
+     "bullets": [
+      "Learn the reason wording"
+     ],
+     "note": "Pupils copy the reason column exactly.",
+     "table": {
+      "head": [
+       "Fact",
+       "Total",
+       "Reason to write"
+      ],
+      "rows": [
+       [
+        "Angles on a straight line",
+        "180°",
+        "angles on a straight line add up to 180°"
+       ],
+       [
+        "Angles at a point",
+        "360°",
+        "angles at a point add up to 360°"
+       ],
+       [
+        "Vertically opposite",
+        "equal",
+        "vertically opposite angles are equal"
+       ],
+       [
+        "Triangle",
+        "180°",
+        "angles in a triangle add up to 180°"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Crossing lines",
+     "bullets": [
+      "Each step has a reason"
+     ],
+     "note": "The ponder question.",
+     "model": {
+      "problem": "Two lines cross. One angle is 70°. Find the others.",
+      "steps": [
+       "Opposite angle = 70°: vertically opposite angles are equal",
+       "Next angle = 180° - 70° = 110°: angles on a straight line",
+       "Last angle = 110°: vertically opposite"
+      ],
+      "answer": "70°, 110°, 110°"
+     }
+    },
+    {
+     "heading": "Triangle",
+     "bullets": [
+      "Subtract from 180°"
+     ],
+     "note": "Write the reason.",
+     "model": {
+      "problem": "A triangle has angles 48° and 67°. Find the third.",
+      "steps": [
+       "48 + 67 = 115",
+       "180 - 115 = 65",
+       "Angles in a triangle add up to 180°"
+      ],
+      "answer": "65°"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Which reason?"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Angles of 125°, x and 90° meet at a point. Find x.",
+      "options": [
+       "145°",
+       "55°",
+       "35°",
+       "235°"
+      ],
+      "answer": 0,
+      "why": "360 - 125 - 90 = 145, angles at a point. 55° uses 180° by mistake."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Angles on a straight line are 3x and 2x. Find x and give the reason.",
+     "a": "x = 36: angles on a straight line add up to 180°",
+     "mins": 2,
+     "model": "3x + 2x = 180, 5x = 180, x = 36.\nReason: angles on a straight line add up to 180°."
+    },
+    {
+     "q": "A triangle has angles 90° and 34°. Find the third angle.",
+     "a": "56°",
+     "mins": 1
+    },
+    {
+     "q": "Four angles at a point are 80°, 95°, 110° and y. Find y.",
+     "a": "75°",
+     "mins": 1
+    },
+    {
+     "q": "Two lines cross; one angle is 143°. Find the other three.",
+     "a": "37°, 143°, 37°",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Find each angle, with a reason: (a) on a line with 112° (b) at a point with 90°, 150° (c) third angle of a triangle with 72° and 54° (d) vertically opposite 29°",
+     "a": "(a) 68°, angles on a line (b) 120°, angles at a point (c) 54°, angles in a triangle (d) 29°, vertically opposite",
+     "mins": 5,
+     "model": "(a) 180 - 112 = 68.\n(b) 360 - 90 - 150 = 120.\n(c) 180 - 72 - 54 = 54.\n(d) equal: 29."
+    },
+    {
+     "q": "Extend: A triangle's angles are x, 2x and 3x. Find each angle.",
+     "a": "6x = 180, x = 30: 30°, 60°, 90°",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Angles at a point are 2y, 3y, 4y and 90°. Find y and the largest angle, with reasons.",
+     "a": "9y + 90 = 360, y = 30; largest 120°: angles at a point add up to 360°",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Angles on a straight line: 47° and x.",
+     "a": "A) 133°",
+     "mins": 1,
+     "options": [
+      "133°",
+      "313°",
+      "43°"
+     ]
+    },
+    {
+     "q": "Give the reason that the opposite angles where two lines cross are equal.",
+     "a": "Vertically opposite angles are equal.",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how did one angle tell you all four in the ponder question?",
+     "a": "Vertically opposite gives one, angles on a line give the next, then vertically opposite again.",
+     "mins": 1
+    }
+   ],
+   "homework": "Angle facts: 10 portal questions, each with a written reason.",
+   "send": "Support: reasons card with the exact wording. EAL: 'deduce', 'reason', 'vertically opposite'. Stretch: algebraic angles at a point.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 7.1 Quadrilaterals and 7.3 Angles in parallel lines",
+    "Geometry set: ruler, protractor and pencil (household)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "crossing roads aerial view",
+     "alt": "Two straight roads crossing, seen from above",
+     "for": "hook"
+    },
+    {
+     "find": "protractor",
+     "alt": "A protractor",
+     "for": "keywords"
+    }
+   ],
+   "islamicLink": {
+    "text": "Muslim astronomers and builders used exact angle facts to find the qiblah and lay out masjids. Writing a reason for every step is like giving evidence for every claim, which Islam asks of us (al-Baqarah 2:111: 'Bring your proof, if you are truthful').",
+    "at": "start"
+   }
+  },
+  {
+   "unit": "Spring 2: Deduction; rotation and translation; Pythagoras",
+   "n": 33,
+   "title": "Angles in parallel lines",
+   "duration": 50,
+   "bigQuestion": "Why are the angles in a Z shape always equal?",
+   "objectives": [
+    "To understand how alternate, corresponding and co-interior angles let us find angles between parallel lines"
+   ],
+   "successCriteria": [
+    "All: identify alternate, corresponding and co-interior angles",
+    "Most: find unknown angles with parallel line facts and reasons",
+    "Some: solve multi-step parallel line problems"
+   ],
+   "smsc": "Moral: accuracy and clear language when explaining to others",
+   "keywords": [
+    {
+     "term": "parallel",
+     "def": "lines that never meet, always the same distance apart"
+    },
+    {
+     "term": "transversal",
+     "def": "a line crossing two or more parallel lines"
+    },
+    {
+     "term": "alternate angles",
+     "def": "equal angles on opposite sides of the transversal, inside the parallel lines (Z shape)"
+    },
+    {
+     "term": "corresponding angles",
+     "def": "equal angles in matching positions (F shape)"
+    },
+    {
+     "term": "co-interior angles",
+     "def": "angles between the parallel lines on the same side, adding to 180° (C shape)"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Railway tracks are parallel. A road crosses them at an angle. Which angles at the two crossings must be the same?",
+    "a": "The angles in matching positions (corresponding) and the Z-shaped pairs (alternate) are equal at both crossings."
+   },
+   "starter": [
+    {
+     "q": "Angle on a line with 74°",
+     "a": "106°",
+     "mins": 1
+    },
+    {
+     "q": "Third angle of a triangle: 50°, 60°",
+     "a": "70°",
+     "mins": 1
+    },
+    {
+     "q": "Vertically opposite 38°",
+     "a": "38°",
+     "mins": 1
+    },
+    {
+     "q": "Solve 2x + 30 = 180",
+     "a": "x = 75",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Three pairs",
+     "bullets": [
+      "Alternate: equal",
+      "Corresponding: equal",
+      "Co-interior: add to 180°"
+     ],
+     "note": "Draw two horizontal parallel lines with a slanting transversal and mark each pair.",
+     "table": {
+      "head": [
+       "Pair",
+       "Shape",
+       "Rule",
+       "Reason to write"
+      ],
+      "rows": [
+       [
+        "Alternate",
+        "Z",
+        "equal",
+        "alternate angles are equal"
+       ],
+       [
+        "Corresponding",
+        "F",
+        "equal",
+        "corresponding angles are equal"
+       ],
+       [
+        "Co-interior",
+        "C",
+        "add to 180°",
+        "co-interior angles add up to 180°"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "One step",
+     "bullets": [
+      "Name the pair, then the rule"
+     ],
+     "note": "In the exam, 'Z angles' is not accepted; write 'alternate'.",
+     "model": {
+      "problem": "A transversal makes 65° with one parallel line. Find the alternate angle and the co-interior angle.",
+      "steps": [
+       "Alternate angle = 65°: alternate angles are equal",
+       "Co-interior = 180° - 65° = 115°: co-interior angles add up to 180°"
+      ],
+      "answer": "65° and 115°"
+     }
+    },
+    {
+     "heading": "Use the full name",
+     "bullets": [
+      "Shapes help you see, names earn marks"
+     ],
+     "note": "Mark schemes need the words.",
+     "misconception": {
+      "wrong": "x = 65° because of Z angles",
+      "right": "x = 65° because alternate angles are equal"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Which pair?"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Two angles are in matching positions at each crossing. They are",
+      "options": [
+       "corresponding: equal",
+       "alternate: equal",
+       "co-interior: add to 180°",
+       "vertically opposite"
+      ],
+      "answer": 0,
+      "why": "Matching positions (F shape) are corresponding angles, which are equal."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Corresponding to 72°: find the angle and give the reason.",
+     "a": "72°: corresponding angles are equal",
+     "mins": 2,
+     "model": "Matching position at the other crossing, so equal: 72°.\nReason: corresponding angles are equal."
+    },
+    {
+     "q": "Co-interior with 98°: find the angle.",
+     "a": "82°",
+     "mins": 1
+    },
+    {
+     "q": "Alternate to 41°: find the angle.",
+     "a": "41°",
+     "mins": 1
+    },
+    {
+     "q": "Co-interior angles are 3x and x + 20. Find x.",
+     "a": "x = 40",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Find each lettered angle, naming the rule: (a) a corresponds to 118° (b) b is alternate to 54° (c) c is co-interior with 77° (d) d is on a straight line with an angle alternate to 62°",
+     "a": "(a) 118°, corresponding (b) 54°, alternate (c) 103°, co-interior (d) 118°, alternate then angles on a line",
+     "mins": 5,
+     "model": "(a) equal: 118.\n(b) equal: 54.\n(c) 180 - 77 = 103.\n(d) the alternate angle is 62, then 180 - 62 = 118."
+    },
+    {
+     "q": "Extend: Alternate angles are (5x - 20)° and (3x + 16)°. Find x and the angle.",
+     "a": "5x - 20 = 3x + 16, x = 18, angle 70°",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Explain why co-interior angles add to 180°, using alternate angles and angles on a line.",
+     "a": "One co-interior angle equals the alternate angle next to the other one; those two lie on a straight line, so they add to 180°",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Co-interior angle with 110°?",
+     "a": "A) 70°",
+     "mins": 1,
+     "options": [
+      "70°",
+      "110°",
+      "250°"
+     ]
+    },
+    {
+     "q": "Name the angle pair that makes a Z shape.",
+     "a": "Alternate angles",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why are alternate angles equal?",
+     "a": "The transversal crosses both parallel lines at the same slope, so the turns are equal; the parallel lines never meet.",
+     "mins": 1
+    }
+   ],
+   "homework": "Parallel lines: 10 portal questions, naming the rule each time.",
+   "send": "Support: Z, F and C card. EAL: 'parallel', 'transversal', 'alternate', 'corresponding'. Stretch: two transversals crossing parallel lines.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 7.1 Quadrilaterals and 7.3 Angles in parallel lines",
+    "Geometry set: ruler, protractor and pencil (household)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "railway tracks crossing road",
+     "alt": "A road crossing straight railway tracks",
+     "for": "hook"
+    },
+    {
+     "find": "parallel lines road markings",
+     "alt": "Parallel road markings",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Deduction; rotation and translation; Pythagoras",
+   "n": 34,
+   "title": "Angles in triangles and quadrilaterals",
+   "duration": 50,
+   "bigQuestion": "Why do the angles in any quadrilateral add to 360°?",
+   "objectives": [
+    "To understand how triangle facts explain the angle properties of special triangles and quadrilaterals"
+   ],
+   "successCriteria": [
+    "All: use isosceles and equilateral triangle facts",
+    "Most: use the angle sum of a quadrilateral and properties of special quadrilaterals",
+    "Some: explain why a quadrilateral's angles add to 360°"
+   ],
+   "smsc": "Spiritual: the same rules hold for every triangle, a sign of order in creation",
+   "keywords": [
+    {
+     "term": "isosceles",
+     "def": "a triangle with two equal sides and two equal base angles"
+    },
+    {
+     "term": "equilateral",
+     "def": "all sides equal, all angles 60°"
+    },
+    {
+     "term": "quadrilateral",
+     "def": "a four-sided polygon"
+    },
+    {
+     "term": "kite",
+     "def": "two pairs of equal adjacent sides; one pair of equal angles"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Draw any four-sided shape and one diagonal. What do you notice? What does it tell you about the angles?",
+    "a": "The diagonal makes two triangles, so the angles add to 2 × 180° = 360°."
+   },
+   "starter": [
+    {
+     "q": "Alternate to 58°",
+     "a": "58°",
+     "mins": 1
+    },
+    {
+     "q": "Co-interior with 64°",
+     "a": "116°",
+     "mins": 1
+    },
+    {
+     "q": "Third angle: 35°, 100°",
+     "a": "45°",
+     "mins": 1
+    },
+    {
+     "q": "Angle on a line with 3x where x = 40",
+     "a": "60°",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Split into triangles",
+     "bullets": [
+      "A diagonal makes two triangles",
+      "2 × 180° = 360°"
+     ],
+     "note": "This answers the ponder question."
+    },
+    {
+     "heading": "Isosceles triangle",
+     "bullets": [
+      "Base angles equal"
+     ],
+     "note": "Mark the equal sides.",
+     "model": {
+      "problem": "An isosceles triangle has a top angle of 40°. Find the base angles.",
+      "steps": [
+       "180 - 40 = 140",
+       "140 ÷ 2 = 70"
+      ],
+      "answer": "70° each"
+     }
+    },
+    {
+     "heading": "Special quadrilaterals",
+     "bullets": [
+      "Know their angle facts"
+     ],
+     "note": "Link to Maths Progress 7.1.",
+     "table": {
+      "head": [
+       "Shape",
+       "Angle facts"
+      ],
+      "rows": [
+       [
+        "Parallelogram",
+        "opposite angles equal; co-interior pairs add to 180°"
+       ],
+       [
+        "Rhombus",
+        "as parallelogram; diagonals cross at 90°"
+       ],
+       [
+        "Kite",
+        "one pair of opposite angles equal"
+       ],
+       [
+        "Trapezium",
+        "co-interior angles between the parallel sides add to 180°"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Quadrilateral",
+     "bullets": [
+      "Add the known angles, subtract from 360°"
+     ],
+     "note": "Write the reason.",
+     "model": {
+      "problem": "A quadrilateral has angles 85°, 110° and 95°. Find the fourth.",
+      "steps": [
+       "85 + 110 + 95 = 290",
+       "360 - 290 = 70"
+      ],
+      "answer": "70°: angles in a quadrilateral add up to 360°"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Isosceles facts"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "An isosceles triangle has a base angle of 52°. The top angle is",
+      "options": [
+       "76°",
+       "52°",
+       "128°",
+       "64°"
+      ],
+      "answer": 0,
+      "why": "Two base angles of 52°: 180 - 104 = 76."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "A parallelogram has an angle of 64°. Find the other three.",
+     "a": "116°, 64°, 116°",
+     "mins": 2,
+     "model": "Opposite angles are equal: 64°.\nCo-interior with 64° is 116°, so 116°, 64°, 116°."
+    },
+    {
+     "q": "An isosceles triangle has base angles of 38°. Find the top angle.",
+     "a": "104°",
+     "mins": 1
+    },
+    {
+     "q": "A kite has angles 120°, 70° and 70° (the equal pair). Find the fourth angle.",
+     "a": "100°",
+     "mins": 1
+    },
+    {
+     "q": "Find each angle of an equilateral triangle.",
+     "a": "60°",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) Fourth angle of a quadrilateral: 72°, 98°, 125° (b) Base angles of an isosceles triangle with top angle 34° (c) Angles of a rhombus with one angle 47° (d) Top angle of an isosceles triangle with base angles 71°",
+     "a": "(a) 65° (b) 73° each (c) 47°, 133°, 47°, 133° (d) 38°",
+     "mins": 5,
+     "model": "(a) 360 - 295 = 65.\n(b) 146 ÷ 2 = 73.\n(c) opposite equal; co-interior 180 - 47 = 133.\n(d) 180 - 142 = 38."
+    },
+    {
+     "q": "Extend: A trapezium has parallel sides. Two angles on one slanting side are x and 2x - 15. Find x.",
+     "a": "Co-interior: 3x - 15 = 180, x = 65",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Explain why a pentagon's angles add to 540°.",
+     "a": "Diagonals from one corner split it into 3 triangles: 3 × 180° = 540°",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Angles of a quadrilateral add to?",
+     "a": "A) 360°",
+     "mins": 1,
+     "options": [
+      "360°",
+      "180°",
+      "540°"
+     ]
+    },
+    {
+     "q": "Isosceles triangle, top angle 80°: base angles?",
+     "a": "50° each",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why do a quadrilateral's angles add to 360°?",
+     "a": "A diagonal splits it into two triangles, each 180°.",
+     "mins": 1
+    }
+   ],
+   "homework": "Triangles and quadrilaterals: 10 portal questions with reasons.",
+   "send": "Support: shape properties card. EAL: 'isosceles', 'parallelogram', 'kite'. Stretch: kite with algebraic angles.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 7.1 Quadrilaterals and 7.3 Angles in parallel lines",
+    "Geometry set: ruler, protractor and pencil (household)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "kite shape diagram",
+     "alt": "A kite shape (geometry)",
+     "for": "teach:3"
+    },
+    {
+     "find": "isosceles triangle roof gable",
+     "alt": "A roof gable shaped like an isosceles triangle",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Deduction; rotation and translation; Pythagoras",
+   "n": 35,
+   "title": "Interior and exterior angles of polygons",
+   "duration": 50,
+   "bigQuestion": "Why are the exterior angles of every polygon 360° in total?",
+   "objectives": [
+    "To understand how to find interior and exterior angle sums of polygons and use them"
+   ],
+   "successCriteria": [
+    "All: find the sum of interior angles with (n - 2) × 180°",
+    "Most: find each interior and exterior angle of a regular polygon",
+    "Some: find the number of sides from an exterior angle"
+   ],
+   "crossCurricular": "Art: Islamic geometric patterns built from regular polygons",
+   "smsc": "Spiritual: the bee's hexagonal comb shows perfect use of space; Surah an-Nahl is named after the bee",
+   "keywords": [
+    {
+     "term": "polygon",
+     "def": "a closed shape with straight sides"
+    },
+    {
+     "term": "regular",
+     "def": "all sides and all angles equal"
+    },
+    {
+     "term": "interior angle",
+     "def": "an angle inside a polygon at a corner"
+    },
+    {
+     "term": "exterior angle",
+     "def": "the angle between one side and the next side extended"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "If you walk all the way round a field shaped like a hexagon, how far have you turned in total when you face the way you started?",
+    "a": "One full turn, 360°: the exterior angles of any polygon add to 360°."
+   },
+   "starter": [
+    {
+     "q": "Fourth angle: 90°, 90°, 120°",
+     "a": "60°",
+     "mins": 1
+    },
+    {
+     "q": "Isosceles, base angles 65°: top?",
+     "a": "50°",
+     "mins": 1
+    },
+    {
+     "q": "360 ÷ 8",
+     "a": "45",
+     "mins": 1
+    },
+    {
+     "q": "Co-interior with 135°",
+     "a": "45°",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Interior angle sums",
+     "bullets": [
+      "Triangles from one corner: n - 2",
+      "Sum = (n - 2) × 180°"
+     ],
+     "note": "Complete the table together.",
+     "table": {
+      "head": [
+       "Polygon",
+       "Sides n",
+       "Triangles",
+       "Sum"
+      ],
+      "rows": [
+       [
+        "Triangle",
+        "3",
+        "1",
+        "180°"
+       ],
+       [
+        "Quadrilateral",
+        "4",
+        "2",
+        "360°"
+       ],
+       [
+        "Pentagon",
+        "5",
+        "3",
+        "540°"
+       ],
+       [
+        "Hexagon",
+        "6",
+        "4",
+        "720°"
+       ],
+       [
+        "Octagon",
+        "8",
+        "6",
+        "1080°"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Exterior angles",
+     "bullets": [
+      "Walk round: you turn one full circle",
+      "Exterior angles add up to 360°",
+      "Interior + exterior = 180°"
+     ],
+     "note": "This answers the ponder question."
+    },
+    {
+     "heading": "Regular polygon",
+     "bullets": [
+      "Exterior = 360° ÷ n"
+     ],
+     "note": "Then interior = 180° - exterior.",
+     "model": {
+      "problem": "Find the interior angle of a regular hexagon.",
+      "steps": [
+       "Exterior = 360 ÷ 6 = 60",
+       "Interior = 180 - 60 = 120"
+      ],
+      "answer": "120°"
+     }
+    },
+    {
+     "heading": "Number of sides",
+     "bullets": [
+      "n = 360° ÷ exterior"
+     ],
+     "note": "Work backwards.",
+     "model": {
+      "problem": "A regular polygon has interior angles of 156°. How many sides?",
+      "steps": [
+       "Exterior = 180 - 156 = 24",
+       "n = 360 ÷ 24 = 15"
+      ],
+      "answer": "15 sides"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Use (n - 2) × 180"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Sum of the interior angles of a decagon (10 sides)?",
+      "options": [
+       "1440°",
+       "1800°",
+       "1260°",
+       "360°"
+      ],
+      "answer": 0,
+      "why": "(10 - 2) × 180 = 1440. 1800 uses n × 180."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Find the interior angle of a regular octagon.",
+     "a": "135°",
+     "mins": 2,
+     "model": "Exterior = 360 ÷ 8 = 45.\nInterior = 180 - 45 = 135."
+    },
+    {
+     "q": "Find the sum of interior angles of a heptagon.",
+     "a": "900°",
+     "mins": 1
+    },
+    {
+     "q": "A regular polygon has exterior angles of 30°. How many sides?",
+     "a": "12",
+     "mins": 1
+    },
+    {
+     "q": "A pentagon has angles 100°, 120°, 95° and 115°. Find the fifth.",
+     "a": "110°",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) Interior sum of a 9-sided polygon (b) Each exterior angle of a regular 20-gon (c) Each interior angle of a regular pentagon (d) Sides of a regular polygon with exterior angle 40°",
+     "a": "(a) 1260° (b) 18° (c) 108° (d) 9",
+     "mins": 5,
+     "model": "(a) 7 × 180 = 1260.\n(b) 360 ÷ 20 = 18.\n(c) exterior 72, interior 108.\n(d) 360 ÷ 40 = 9."
+    },
+    {
+     "q": "Extend: Can a regular polygon have an interior angle of 130°? Explain.",
+     "a": "No: exterior 50°, 360 ÷ 50 = 7.2, not a whole number of sides",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Regular hexagons tessellate but regular pentagons do not. Explain with angles at a point.",
+     "a": "Three 120° angles make 360°; 108° does not divide 360 exactly (360 ÷ 108 = 3.33...)",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Exterior angle of a regular decagon?",
+     "a": "A) 36°",
+     "mins": 1,
+     "options": [
+      "36°",
+      "144°",
+      "18°"
+     ]
+    },
+    {
+     "q": "Interior angle sum of a hexagon?",
+     "a": "720°",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why do exterior angles add to 360°?",
+     "a": "Walking round the shape you turn through one full turn before facing the start direction.",
+     "mins": 1
+    }
+   ],
+   "homework": "Polygons: 10 portal questions, including two 'how many sides?'.",
+   "send": "Support: (n - 2) × 180 table. EAL: 'interior', 'exterior', 'regular'. Stretch: irregular polygon with algebraic angles.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 7.4 Exterior and interior angles",
+    "Geometry set: ruler, protractor and pencil (household)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "Islamic geometric tile octagon star",
+     "alt": "An Islamic geometric tile pattern of octagons and stars",
+     "for": "hook"
+    },
+    {
+     "find": "honeycomb hexagons",
+     "alt": "A honeycomb of regular hexagons",
+     "for": "teach:3"
+    }
+   ],
+   "islamicLink": {
+    "text": "Islamic geometric art, seen in masjids such as the Alhambra in Granada and the mosques of Isfahan, is built from regular polygons repeated by rotation, reflection and translation, because Muslim artists decorated places of worship with pattern and calligraphy rather than images of living beings.",
+    "at": "start"
+   }
+  },
+  {
+   "unit": "Spring 2: Deduction; rotation and translation; Pythagoras",
+   "n": 36,
+   "title": "Writing geometric reasons in multi-step problems",
+   "duration": 50,
+   "bigQuestion": "What makes a geometric answer complete?",
+   "objectives": [
+    "To understand how to chain angle facts into a clear, fully reasoned solution"
+   ],
+   "successCriteria": [
+    "All: plan a route from known to unknown angles",
+    "Most: write each step with a correct reason",
+    "Some: solve problems combining parallel lines, triangles and polygons"
+   ],
+   "smsc": "Moral: being clear and honest in showing how we reached an answer",
+   "keywords": [
+    {
+     "term": "chain",
+     "def": "a sequence of steps, each using the one before"
+    },
+    {
+     "term": "justify",
+     "def": "give a reason for a step"
+    },
+    {
+     "term": "given",
+     "def": "information stated in the question"
+    },
+    {
+     "term": "hence",
+     "def": "using what we just found"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Two pupils find the same angle. One writes only the answer; the other writes four steps with reasons. Who deserves more marks, and why?",
+    "a": "The one with reasons: marks are given for each justified step, and others can check the logic."
+   },
+   "starter": [
+    {
+     "q": "Interior angle of a regular pentagon",
+     "a": "108°",
+     "mins": 1
+    },
+    {
+     "q": "Co-interior with 47°",
+     "a": "133°",
+     "mins": 1
+    },
+    {
+     "q": "Isosceles, top 50°: base?",
+     "a": "65°",
+     "mins": 1
+    },
+    {
+     "q": "Name the F-shape pair",
+     "a": "Corresponding angles",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Plan first",
+     "bullets": [
+      "Mark the given angles",
+      "Find any angle you can, with a reason",
+      "Keep going until you reach the target"
+     ],
+     "note": "Model thinking aloud."
+    },
+    {
+     "heading": "Parallel lines and a triangle",
+     "bullets": [
+      "One reason per line"
+     ],
+     "note": "Draw: AB parallel to CD; a triangle with one side on CD and its top vertex on AB.",
+     "model": {
+      "problem": "AB is parallel to CD. Triangle PQR has P on AB, and Q and R on CD. Angle APQ = 50° and angle BPR = 60°. Find angle QPR.",
+      "steps": [
+       "Angle PQR = 50°: alternate angles are equal",
+       "Angle PRQ = 60°: alternate angles are equal",
+       "Angle QPR = 180° - 50° - 60° = 70°: angles in a triangle add up to 180°"
+      ],
+      "answer": "70°"
+     }
+    },
+    {
+     "heading": "A good write-up",
+     "bullets": [
+      "Statement then reason"
+     ],
+     "note": "Show the layout pupils should copy.",
+     "table": {
+      "head": [
+       "Statement",
+       "Reason"
+      ],
+      "rows": [
+       [
+        "Angle PQR = 50°",
+        "alternate angles are equal"
+       ],
+       [
+        "Angle PRQ = 60°",
+        "alternate angles are equal"
+       ],
+       [
+        "Angle QPR = 70°",
+        "angles in a triangle add up to 180°"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Is the reason right?"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Which reason is acceptable in an exam?",
+      "options": [
+       "co-interior angles add up to 180°",
+       "C angles",
+       "it looks like 90°",
+       "because of the diagram"
+      ],
+      "answer": 0,
+      "why": "Only the full fact earns the mark; shapes, looks and the diagram are not reasons."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "In triangle ABC, angle A = 40° and AB = AC. Line BC is extended to D. Find angle ACD with reasons.",
+     "a": "110°",
+     "mins": 3,
+     "model": "Angle B = angle C = (180 - 40) ÷ 2 = 70: base angles of an isosceles triangle are equal.\nAngle ACD = 180 - 70 = 110: angles on a straight line add up to 180°."
+    },
+    {
+     "q": "A regular hexagon has one side extended. Find the exterior angle and the interior angle, with reasons.",
+     "a": "60°: 360 ÷ 6; 120°: angles on a straight line",
+     "mins": 2
+    },
+    {
+     "q": "Parallel lines are cut by a transversal. One angle is 3x, its co-interior partner is 2x. Find both, with a reason.",
+     "a": "108° and 72°: co-interior angles add up to 180°",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core (write statement and reason for each step): (a) A triangle sits between parallel lines with base angles alternate to 35° and 75°. Find the top angle. (b) A kite has two equal angles of 110° and one of 80°. Find the fourth. (c) A regular octagon: find one exterior and one interior angle.",
+     "a": "(a) 70° (b) 60° (c) 45°, 135°",
+     "mins": 6,
+     "model": "(a) Base angles 35 and 75 (alternate angles are equal); top 180 - 110 = 70 (angles in a triangle).\n(b) 360 - 110 - 110 - 80 = 60 (angles in a quadrilateral).\n(c) 360 ÷ 8 = 45 (exterior angles add up to 360°); 180 - 45 = 135 (angles on a straight line)."
+    },
+    {
+     "q": "Extend: In a parallelogram ABCD, angle A = 2x + 10 and angle B = 3x - 5. Find all four angles with reasons.",
+     "a": "Co-interior: 5x + 5 = 180, x = 35; A = C = 80°, B = D = 100°",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: Write a three-step angle problem for a partner, with a full worked answer and reasons.",
+     "a": "Own problem; checked by the partner",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Which is a full reason?",
+     "a": "A) alternate angles are equal",
+     "mins": 1,
+     "options": [
+      "alternate angles are equal",
+      "Z angles",
+      "it is parallel"
+     ]
+    },
+    {
+     "q": "Big question: what makes a geometric answer complete?",
+     "a": "Every step is a statement with the correct angle fact as its reason, leading to the answer.",
+     "mins": 1
+    }
+   ],
+   "homework": "Two multi-step angle problems written up in statement and reason columns (portal response box).",
+   "send": "Support: statement and reason frame. EAL: 'given', 'hence', 'justify'. Stretch: problems needing an extra line drawn.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 7.2 Alternate angles and proof and 7.5 Solving geometric problems",
+    "Geometry set: ruler, protractor and pencil (household)",
+    "Statement and reason frame (printable, in the pupil PDF)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "architect drawing angles",
+     "alt": "An architectural drawing with marked angles",
+     "for": "hook"
+    },
+    {
+     "find": "parallelogram diagram",
+     "alt": "A parallelogram diagram",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Deduction; rotation and translation; Pythagoras",
+   "n": 37,
+   "title": "Proof with angles",
+   "duration": 50,
+   "bigQuestion": "Is checking 10 triangles enough to prove the angles always add to 180°?",
+   "objectives": [
+    "To understand the difference between showing examples and proving a result for every case"
+   ],
+   "successCriteria": [
+    "All: explain why examples are not a proof",
+    "Most: follow the proof that the angles in a triangle add to 180°",
+    "Some: prove that an exterior angle of a triangle equals the sum of the two opposite interior angles"
+   ],
+   "smsc": "Spiritual: the certainty of proof; Islam values certain knowledge (yaqin, يَقِين) over guesswork",
+   "keywords": [
+    {
+     "term": "proof",
+     "def": "an argument that shows something is true in every case"
+    },
+    {
+     "term": "demonstration",
+     "def": "showing it works for some examples"
+    },
+    {
+     "term": "exterior angle of a triangle",
+     "def": "the angle between one side and the next side extended"
+    },
+    {
+     "term": "general",
+     "def": "true for all cases"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Is checking 10 triangles enough to prove the angles always add to 180°? What would convince you for ALL triangles?",
+    "a": "No: examples only show those cases. A proof with general facts (parallel lines) covers every triangle."
+   },
+   "starter": [
+    {
+     "q": "Alternate to 64°",
+     "a": "64°",
+     "mins": 1
+    },
+    {
+     "q": "Angle on a line with 125°",
+     "a": "55°",
+     "mins": 1
+    },
+    {
+     "q": "Interior angle of a regular hexagon",
+     "a": "120°",
+     "mins": 1
+    },
+    {
+     "q": "Corresponding to 99°",
+     "a": "99°",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Demonstration or proof?",
+     "bullets": [
+      "Examples can suggest; only proof is certain"
+     ],
+     "note": "Discuss the ponder question.",
+     "compare": {
+      "left": {
+       "title": "Demonstration",
+       "points": [
+        "Measure some triangles",
+        "Shows it works for those",
+        "Cannot cover every triangle"
+       ]
+      },
+      "right": {
+       "title": "Proof",
+       "points": [
+        "Uses facts true for every triangle",
+        "Covers all cases",
+        "Each step has a reason"
+       ]
+      },
+      "label": "vs"
+     }
+    },
+    {
+     "heading": "Proof: angles in a triangle",
+     "bullets": [
+      "Draw a line through the top parallel to the base"
+     ],
+     "note": "Triangle with angles a, b, c; c at the top.",
+     "model": {
+      "problem": "Prove a + b + c = 180°",
+      "steps": [
+       "The angle left of c on the new line = a: alternate angles are equal",
+       "The angle right of c = b: alternate angles are equal",
+       "Those three angles lie on a straight line, so a + b + c = 180°"
+      ],
+      "answer": "Proved for every triangle"
+     }
+    },
+    {
+     "heading": "Proof: exterior angle",
+     "bullets": [
+      "Use the triangle fact and the straight line"
+     ],
+     "note": "Exterior angle d next to interior angle c.",
+     "model": {
+      "problem": "Prove d = a + b",
+      "steps": [
+       "a + b + c = 180°: angles in a triangle",
+       "c + d = 180°: angles on a straight line",
+       "So d = a + b"
+      ],
+      "answer": "Proved"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Which is a proof?"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Which shows a statement is true for EVERY triangle?",
+      "options": [
+       "A chain of reasoned steps using general facts",
+       "Measuring 100 triangles",
+       "A very accurate drawing",
+       "Asking the teacher"
+      ],
+      "answer": 0,
+      "why": "Only a general argument covers every case; measurement has errors and cannot cover infinitely many triangles."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Use the exterior angle fact: interior opposite angles 47° and 68°. Find the exterior angle.",
+     "a": "115°",
+     "mins": 2,
+     "model": "Exterior angle = sum of the two opposite interior angles: 47 + 68 = 115."
+    },
+    {
+     "q": "Prove that opposite angles of a parallelogram are equal (use co-interior angles).",
+     "a": "Angles A + B = 180 and B + C = 180 (co-interior), so A = C",
+     "mins": 3
+    },
+    {
+     "q": "Is 'I measured 5 triangles' a proof? Explain.",
+     "a": "No: it only shows those 5 cases",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) Exterior angle 130°, one opposite interior angle 55°: find the other (b) Write the proof that angles in a triangle add to 180° in your own words with a sketch (portal response box)",
+     "a": "(a) 75° (b) Proof as in the model: parallel line, two pairs of alternate angles, angles on a straight line",
+     "mins": 7,
+     "model": "(a) 130 - 55 = 75 (exterior angle of a triangle).\n(b) Draw a line through one vertex parallel to the opposite side; the two angles beside the vertex equal the base angles (alternate angles); the three angles lie on a straight line, so they add up to 180°."
+    },
+    {
+     "q": "Extend: Prove that the angles of a quadrilateral add to 360°.",
+     "a": "A diagonal makes two triangles; 2 × 180° = 360°, and the triangle angles together make the four corners",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Prove that the three exterior angles of a triangle (one at each corner) add up to 360°.",
+     "a": "Each exterior + interior = 180°, so three pairs = 540°; interior sum 180°, so exterior sum = 540 - 180 = 360°",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "A proof must",
+     "a": "A) work for every case",
+     "mins": 1,
+     "options": [
+      "work for every case",
+      "work for most cases",
+      "use accurate drawings"
+     ]
+    },
+    {
+     "q": "Big question: why is checking 10 triangles not a proof?",
+     "a": "There are infinitely many triangles; a proof uses general facts so it covers all of them.",
+     "mins": 1
+    }
+   ],
+   "homework": "Write a proof that the exterior angle of a triangle equals the sum of the opposite interior angles, with a labelled sketch.",
+   "send": "Support: proof frame with blanks. EAL: 'proof', 'demonstrate', 'general'. Stretch: proof that a pentagon's angles add to 540°.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 7.2 Alternate angles and proof and 7.5 Solving geometric problems",
+    "Geometry set: ruler, protractor and pencil (household)",
+    "Proof frame (printable, in the pupil PDF)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "protractor measuring triangle",
+     "alt": "A protractor on a triangle",
+     "for": "hook"
+    },
+    {
+     "find": "triangle exterior angle diagram",
+     "alt": "A triangle with one side extended",
+     "for": "teach:3"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Deduction; rotation and translation; Pythagoras",
+   "n": 38,
+   "title": "Angle problems with algebra",
+   "duration": 50,
+   "bigQuestion": "How do we find an angle we can only describe with x?",
+   "objectives": [
+    "To understand how to form and solve equations from angle facts"
+   ],
+   "successCriteria": [
+    "All: form an equation from an angle fact",
+    "Most: solve it and find each angle",
+    "Some: solve problems where angle facts must be combined first"
+   ],
+   "smsc": "Social: checking a partner's equation and explaining errors kindly",
+   "keywords": [
+    {
+     "term": "equation",
+     "def": "a statement that two expressions are equal"
+    },
+    {
+     "term": "expression",
+     "def": "a mix of numbers and letters such as 2x + 10"
+    },
+    {
+     "term": "solve",
+     "def": "find the value of the letter"
+    },
+    {
+     "term": "substitute",
+     "def": "put the value back to find the angles"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "The angles of a triangle are x, x + 20 and 2x. Before solving, which angle is biggest? How sure are you?",
+    "a": "2x is biggest: x = 40, so the angles are 40°, 60°, 80°."
+   },
+   "starter": [
+    {
+     "q": "Solve 4x = 180",
+     "a": "x = 45",
+     "mins": 1
+    },
+    {
+     "q": "Solve 3x + 30 = 180",
+     "a": "x = 50",
+     "mins": 1
+    },
+    {
+     "q": "Exterior angle: opposite interior 40° and 75°",
+     "a": "115°",
+     "mins": 1
+    },
+    {
+     "q": "Sum of angles in a pentagon",
+     "a": "540°",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Triangle with algebra",
+     "bullets": [
+      "Fact, equation, solve, substitute"
+     ],
+     "note": "The ponder question.",
+     "model": {
+      "problem": "Angles x, x + 20 and 2x in a triangle.",
+      "steps": [
+       "x + x + 20 + 2x = 180 (angles in a triangle)",
+       "4x + 20 = 180, 4x = 160, x = 40",
+       "Angles 40°, 60°, 80°"
+      ],
+      "answer": "40°, 60°, 80°"
+     }
+    },
+    {
+     "heading": "Equal angles",
+     "bullets": [
+      "Set the expressions equal"
+     ],
+     "note": "Alternate angles are equal.",
+     "model": {
+      "problem": "Alternate angles are 4x - 15 and 2x + 35.",
+      "steps": [
+       "4x - 15 = 2x + 35",
+       "2x = 50, x = 25",
+       "Angle = 4 × 25 - 15 = 85"
+      ],
+      "answer": "85°"
+     }
+    },
+    {
+     "heading": "Polygon",
+     "bullets": [
+      "Use the angle sum"
+     ],
+     "note": "Pentagon sum 540°.",
+     "model": {
+      "problem": "A pentagon has angles 2x, 2x, 3x, 3x and 90°.",
+      "steps": [
+       "10x + 90 = 540",
+       "10x = 450, x = 45",
+       "Angles 90°, 90°, 135°, 135°, 90°"
+      ],
+      "answer": "x = 45"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Which equation?"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Co-interior angles are 3x and x + 40. Which equation?",
+      "options": [
+       "3x + x + 40 = 180",
+       "3x = x + 40",
+       "3x + x + 40 = 360",
+       "3x = 180"
+      ],
+      "answer": 0,
+      "why": "Co-interior angles add to 180°. 3x = x + 40 would be for equal angles."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Angles on a line are 5x and 4x. Find each angle.",
+     "a": "100° and 80°",
+     "mins": 2,
+     "model": "5x + 4x = 180, 9x = 180, x = 20.\nAngles 100° and 80°."
+    },
+    {
+     "q": "Vertically opposite angles are 3x + 10 and 70. Find x.",
+     "a": "x = 20",
+     "mins": 1
+    },
+    {
+     "q": "A quadrilateral has angles x, 2x, 3x and 4x. Find x.",
+     "a": "x = 36",
+     "mins": 1
+    },
+    {
+     "q": "An isosceles triangle has top angle 2x and base angles x + 10 each. Find the angles.",
+     "a": "x = 40: 80°, 50°, 50°",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Form and solve: (a) angles at a point 3x, 4x, 5x (b) corresponding angles 7x - 20 and 5x + 16 (c) triangle angles x + 15, 2x - 5, 3x + 20",
+     "a": "(a) x = 30: 90°, 120°, 150° (b) x = 18: 106° (c) x = 25: 40°, 45°, 95°",
+     "mins": 6,
+     "model": "(a) 12x = 360.\n(b) 7x - 20 = 5x + 16, 2x = 36.\n(c) 6x + 30 = 180, 6x = 150."
+    },
+    {
+     "q": "Extend: The interior angle of a regular polygon is 4 times its exterior angle. How many sides?",
+     "a": "e + 4e = 180, e = 36, n = 10",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: In triangle ABC, angle B is twice angle A and angle C is 30° more than angle B. Find all three.",
+     "a": "A = 30°, B = 60°, C = 90°",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Angles on a line: 2x and 3x. x = ?",
+     "a": "A) 36",
+     "mins": 1,
+     "options": [
+      "36",
+      "72",
+      "30"
+     ]
+    },
+    {
+     "q": "Alternate angles 5x and 100. Find x.",
+     "a": "20",
+     "mins": 1
+    },
+    {
+     "q": "Big question: which angle was biggest in the ponder question?",
+     "a": "2x = 80°, the biggest (angles 40°, 60°, 80°).",
+     "mins": 1
+    }
+   ],
+   "homework": "Algebra and angles: 8 portal problems; write the angle fact before each equation.",
+   "send": "Support: equation-forming frame (fact, equation, solve, check). EAL: 'form', 'substitute'. Stretch: polygon problems with two unknown expressions.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 7.2 Alternate angles and proof and 7.5 Solving geometric problems",
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 2.1 Solving equations",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "balance scale",
+     "alt": "A balance scale for equations",
+     "for": "keywords"
+    },
+    {
+     "find": "triangle roof truss",
+     "alt": "A triangular roof truss",
+     "for": "hook"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Deduction; rotation and translation; Pythagoras",
+   "n": 39,
+   "title": "Translation with column vectors",
+   "duration": 50,
+   "bigQuestion": "How can two numbers describe any slide?",
+   "objectives": [
+    "To understand how a column vector describes a translation"
+   ],
+   "successCriteria": [
+    "All: translate a shape by a column vector on a grid",
+    "Most: write the column vector for a given translation",
+    "Some: use negative components and combine two translations"
+   ],
+   "crossCurricular": "Geography: grid references and directions on maps",
+   "smsc": "Social: giving precise directions so others can follow them",
+   "keywords": [
+    {
+     "term": "translation",
+     "def": "a slide: every point moves the same distance in the same direction"
+    },
+    {
+     "term": "column vector",
+     "def": "two numbers stacked: top = across, bottom = up or down"
+    },
+    {
+     "term": "object",
+     "def": "the shape before the transformation"
+    },
+    {
+     "term": "image",
+     "def": "the shape after the transformation"
+    },
+    {
+     "term": "congruent",
+     "def": "same shape and size"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A chess rook slides 3 squares right and 2 up. How could you write that move in the shortest possible way?",
+    "a": "As a column vector: 3 on top (right), 2 underneath (up)."
+   },
+   "starter": [
+    {
+     "q": "Solve 2x + 50 = 180",
+     "a": "65",
+     "mins": 1
+    },
+    {
+     "q": "Plot: which quadrant is (-3, 4)?",
+     "a": "Second (top left)",
+     "mins": 1
+    },
+    {
+     "q": "-2 + 5",
+     "a": "3",
+     "mins": 1
+    },
+    {
+     "q": "Interior angle of a regular octagon",
+     "a": "135°",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Column vectors",
+     "bullets": [
+      "Top number: right (+) or left (-)",
+      "Bottom number: up (+) or down (-)",
+      "Write (3 over 2) as (3, 2) in a column"
+     ],
+     "note": "On slides we write the column vector as (3 / 2); in books, stack them in brackets."
+    },
+    {
+     "heading": "Translate a point",
+     "bullets": [
+      "Add the vector to the coordinates"
+     ],
+     "note": "Every vertex moves the same way.",
+     "model": {
+      "problem": "Translate A(1, 2) by the vector (4 / -3).",
+      "steps": [
+       "x: 1 + 4 = 5",
+       "y: 2 + (-3) = -1"
+      ],
+      "answer": "A'(5, -1)"
+     }
+    },
+    {
+     "heading": "Find the vector",
+     "bullets": [
+      "Image minus object"
+     ],
+     "note": "Count across, then up or down.",
+     "model": {
+      "problem": "B(2, 5) moves to B'(-1, 7). Find the vector.",
+      "steps": [
+       "Across: -1 - 2 = -3",
+       "Up: 7 - 5 = 2"
+      ],
+      "answer": "(-3 / 2)"
+     }
+    },
+    {
+     "heading": "What stays the same",
+     "bullets": [
+      "The image is congruent",
+      "Same orientation: nothing turns or flips"
+     ],
+     "note": "Contrast with rotation and reflection next lesson."
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Top across, bottom up"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Which vector moves 2 left and 5 down?",
+      "options": [
+       "(-2 / -5)",
+       "(2 / -5)",
+       "(-5 / -2)",
+       "(-2 / 5)"
+      ],
+      "answer": 0,
+      "why": "Left is negative across, down is negative up: (-2 / -5). (-5 / -2) swaps the parts."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Translate triangle P(0, 0), Q(3, 0), R(0, 2) by (2 / 3). Give the new vertices.",
+     "a": "P'(2, 3), Q'(5, 3), R'(2, 5)",
+     "mins": 2,
+     "model": "Add 2 to each x and 3 to each y."
+    },
+    {
+     "q": "Write the vector from (4, -1) to (1, 2).",
+     "a": "(-3 / 3)",
+     "mins": 1
+    },
+    {
+     "q": "A shape moves by (5 / 0). Describe the move in words.",
+     "a": "5 squares right, no vertical movement",
+     "mins": 1
+    },
+    {
+     "q": "Translate (−2, 6) by (3 / -8).",
+     "a": "(1, -2)",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) Translate the square A(1, 1), B(3, 1), C(3, 3), D(1, 3) by (-4 / 2) and list the vertices (b) Find the vector that maps (5, -2) to (0, 3) (c) Find the vector that maps it back",
+     "a": "(a) (-3, 3), (-1, 3), (-1, 5), (-3, 5) (b) (-5 / 5) (c) (5 / -5)",
+     "mins": 6,
+     "model": "(a) subtract 4 from x, add 2 to y.\n(b) 0 - 5 = -5, 3 - (-2) = 5.\n(c) the opposite vector."
+    },
+    {
+     "q": "Extend: A shape is translated by (2 / -1) and then by (-5 / 4). What single vector does both?",
+     "a": "(-3 / 3)",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Translating by (a / b) twice gives (6 / -10). Find a and b.",
+     "a": "a = 3, b = -5",
+     "mins": 3
+    }
+   ],
+   "exit": [
+    {
+     "q": "Vector for 4 right, 1 down?",
+     "a": "A) (4 / -1)",
+     "mins": 1,
+     "options": [
+      "(4 / -1)",
+      "(-1 / 4)",
+      "(4 / 1)"
+     ]
+    },
+    {
+     "q": "Translate (3, -2) by (-1 / 5).",
+     "a": "(2, 3)",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how do two numbers describe any slide?",
+     "a": "The top gives the horizontal move and the bottom the vertical move.",
+     "mins": 1
+    }
+   ],
+   "homework": "Translations: 8 portal grid questions (printable grid in the pupil PDF).",
+   "send": "Support: grid with arrows for across and up. EAL: 'translate', 'vector', 'image'. Stretch: combining three vectors.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 10.3 Reflection, 10.4 Rotation and 10.5 Translations and combined transformations",
+    "Squared paper or printable coordinate grid (in the pupil PDF)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "chess rook on board",
+     "alt": "A chess rook on a chessboard",
+     "for": "hook"
+    },
+    {
+     "find": "tessellation translated tiles",
+     "alt": "Tiles repeated by translation",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Deduction; rotation and translation; Pythagoras",
+   "n": 40,
+   "title": "Rotation about a centre",
+   "duration": 50,
+   "bigQuestion": "What three facts do you need to describe a turn exactly?",
+   "objectives": [
+    "To understand how to rotate a shape and describe a rotation fully"
+   ],
+   "successCriteria": [
+    "All: rotate a shape 90° or 180° about a centre on a grid",
+    "Most: use tracing paper to check a rotation",
+    "Some: describe a rotation with centre, angle and direction"
+   ],
+   "smsc": "Spiritual: the tawaf around the Ka'bah is made anticlockwise, a rotation about a fixed centre",
+   "keywords": [
+    {
+     "term": "rotation",
+     "def": "a turn about a fixed point"
+    },
+    {
+     "term": "centre of rotation",
+     "def": "the point that stays still"
+    },
+    {
+     "term": "clockwise",
+     "def": "the direction clock hands turn"
+    },
+    {
+     "term": "anticlockwise",
+     "def": "the opposite direction to clock hands"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A door, a clock hand and a windmill all rotate. What is different about where each one turns from?",
+    "a": "The centre of rotation: a door turns about its hinge, a clock hand about the middle of the clock."
+   },
+   "starter": [
+    {
+     "q": "Translate (2, 3) by (-4 / 1)",
+     "a": "(-2, 4)",
+     "mins": 1
+    },
+    {
+     "q": "Vector from (0, 0) to (3, -2)",
+     "a": "(3 / -2)",
+     "mins": 1
+    },
+    {
+     "q": "How many degrees in a quarter turn?",
+     "a": "90°",
+     "mins": 1
+    },
+    {
+     "q": "Exterior angle of a square",
+     "a": "90°",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Describe fully",
+     "bullets": [
+      "Centre (a point)",
+      "Angle (90°, 180°, 270°)",
+      "Direction (clockwise or anticlockwise)"
+     ],
+     "note": "Without all three, the description is incomplete; 180° needs no direction."
+    },
+    {
+     "heading": "Rotate a point about the origin",
+     "bullets": [
+      "90° clockwise: (x, y) becomes (y, -x)"
+     ],
+     "note": "Check with tracing paper too.",
+     "model": {
+      "problem": "Rotate A(2, 3) 90° clockwise about (0, 0).",
+      "steps": [
+       "(x, y) → (y, -x)",
+       "(2, 3) → (3, -2)"
+      ],
+      "answer": "A'(3, -2)"
+     }
+    },
+    {
+     "heading": "Rotate 180°",
+     "bullets": [
+      "(x, y) becomes (-x, -y) about the origin"
+     ],
+     "note": "Half turn: direction does not matter.",
+     "model": {
+      "problem": "Rotate triangle (1, 1), (4, 1), (1, 3) by 180° about (0, 0).",
+      "steps": [
+       "Change the sign of each coordinate",
+       "(-1, -1), (-4, -1), (-1, -3)"
+      ],
+      "answer": "(-1, -1), (-4, -1), (-1, -3)"
+     }
+    },
+    {
+     "heading": "Tracing paper method",
+     "bullets": [
+      "Trace the shape and centre",
+      "Pin the centre with a pencil",
+      "Turn the paper; mark the image"
+     ],
+     "note": "Pupils try at home with baking paper and a pencil."
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Is it complete?"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Which is a full description?",
+      "options": [
+       "Rotation 90° anticlockwise about (1, 2)",
+       "Rotation 90°",
+       "Turned about (1, 2)",
+       "Rotation anticlockwise"
+      ],
+      "answer": 0,
+      "why": "It needs the centre, the angle and the direction."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Rotate (4, 1) by 90° anticlockwise about (0, 0).",
+     "a": "(-1, 4)",
+     "mins": 2,
+     "model": "90° anticlockwise: (x, y) → (-y, x).\nSo (4, 1) → (-1, 4)."
+    },
+    {
+     "q": "Rotate (-3, 2) by 180° about (0, 0).",
+     "a": "(3, -2)",
+     "mins": 1
+    },
+    {
+     "q": "Rotate (2, 5) by 90° clockwise about (0, 0).",
+     "a": "(5, -2)",
+     "mins": 1
+    },
+    {
+     "q": "A shape rotates 270° clockwise. What is the same rotation anticlockwise?",
+     "a": "90° anticlockwise",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Rotate the triangle (1, 2), (3, 2), (1, 5) about (0, 0): (a) 90° clockwise (b) 180° (c) 90° anticlockwise. List the images.",
+     "a": "(a) (2, -1), (2, -3), (5, -1) (b) (-1, -2), (-3, -2), (-1, -5) (c) (-2, 1), (-2, 3), (-5, 1)",
+     "mins": 6,
+     "model": "(a) (x, y) → (y, -x).\n(b) (x, y) → (-x, -y).\n(c) (x, y) → (-y, x)."
+    },
+    {
+     "q": "Extend: Rotate the point (5, 3) by 90° clockwise about (2, 1).",
+     "a": "Relative to the centre (3, 2) → (2, -3); add the centre: (4, -2)",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: A point P is rotated 180° about (1, 1) to give (4, -2). Find P.",
+     "a": "The centre is the midpoint: P = (-2, 4)",
+     "mins": 3
+    }
+   ],
+   "exit": [
+    {
+     "q": "Rotate (1, 0) by 90° anticlockwise about (0, 0).",
+     "a": "A) (0, 1)",
+     "mins": 1,
+     "options": [
+      "(0, 1)",
+      "(0, -1)",
+      "(-1, 0)"
+     ]
+    },
+    {
+     "q": "Name the three things needed to describe a rotation.",
+     "a": "Centre, angle, direction",
+     "mins": 1
+    },
+    {
+     "q": "Big question: what makes a door's rotation different from a clock hand's?",
+     "a": "The centre: the hinge for a door, the middle of the clock face for the hand.",
+     "mins": 1
+    }
+   ],
+   "homework": "Rotations: 8 portal grid questions; use tracing (or baking) paper at home.",
+   "send": "Support: tracing paper and a printed grid. EAL: 'clockwise', 'anticlockwise', 'centre'. Stretch: rotations about centres other than the origin.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 10.3 Reflection, 10.4 Rotation and 10.5 Translations and combined transformations",
+    "Squared paper or printable coordinate grid (in the pupil PDF)",
+    "Tracing paper or baking paper (household)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "windmill sails",
+     "alt": "Windmill sails turning about a centre",
+     "for": "hook"
+    },
+    {
+     "find": "clock face hands",
+     "alt": "A clock face",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Deduction; rotation and translation; Pythagoras",
+   "n": 41,
+   "title": "Reflection and describing transformations",
+   "duration": 50,
+   "bigQuestion": "How can you tell a reflection from a rotation just by looking?",
+   "objectives": [
+    "To understand how to reflect shapes in lines and tell reflections, rotations and translations apart"
+   ],
+   "successCriteria": [
+    "All: reflect in vertical, horizontal and diagonal lines",
+    "Most: find the equation of a mirror line",
+    "Some: identify and fully describe a reflection, rotation or translation"
+   ],
+   "smsc": "Spiritual: reflections in still water as signs of Allah's creation to reflect upon",
+   "keywords": [
+    {
+     "term": "reflection",
+     "def": "a flip in a mirror line"
+    },
+    {
+     "term": "mirror line",
+     "def": "the line a shape is reflected in"
+    },
+    {
+     "term": "orientation",
+     "def": "which way a shape faces"
+    },
+    {
+     "term": "equation of a line",
+     "def": "such as x = 2, y = -1, y = x"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Your right hand in a mirror looks like a left hand. What happens to a shape's 'handedness' in a rotation?",
+    "a": "A rotation keeps handedness; only a reflection turns a 'right hand' into a 'left hand'."
+   },
+   "starter": [
+    {
+     "q": "Rotate (2, 1) 180° about (0, 0)",
+     "a": "(-2, -1)",
+     "mins": 1
+    },
+    {
+     "q": "Vector from (1, 1) to (4, -1)",
+     "a": "(3 / -2)",
+     "mins": 1
+    },
+    {
+     "q": "Equation of the y-axis",
+     "a": "x = 0",
+     "mins": 1
+    },
+    {
+     "q": "Name a transformation that keeps orientation",
+     "a": "Translation (or rotation)",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Reflection rules",
+     "bullets": [
+      "About axes and y = x"
+     ],
+     "note": "Check each with a small sketch.",
+     "table": {
+      "head": [
+       "Mirror line",
+       "(x, y) becomes"
+      ],
+      "rows": [
+       [
+        "x-axis (y = 0)",
+        "(x, -y)"
+       ],
+       [
+        "y-axis (x = 0)",
+        "(-x, y)"
+       ],
+       [
+        "y = x",
+        "(y, x)"
+       ],
+       [
+        "y = -x",
+        "(-y, -x)"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Reflect in x = 2",
+     "bullets": [
+      "Each point the same distance on the other side"
+     ],
+     "note": "Count squares to the line.",
+     "model": {
+      "problem": "Reflect (5, 3) in the line x = 2.",
+      "steps": [
+       "(5, 3) is 3 to the right of x = 2",
+       "Image is 3 to the left: x = -1"
+      ],
+      "answer": "(-1, 3)"
+     }
+    },
+    {
+     "heading": "Tell them apart",
+     "bullets": [
+      "Look at orientation and position"
+     ],
+     "note": "Use the ponder question.",
+     "table": {
+      "head": [
+       "Transformation",
+       "Orientation",
+       "Describe with"
+      ],
+      "rows": [
+       [
+        "Translation",
+        "same",
+        "column vector"
+       ],
+       [
+        "Rotation",
+        "turned, same handedness",
+        "centre, angle, direction"
+       ],
+       [
+        "Reflection",
+        "flipped",
+        "equation of the mirror line"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Equation of the line"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "A shape is reflected so (1, 4) maps to (1, -2). The mirror line is",
+      "options": [
+       "y = 1",
+       "x = 1",
+       "y = 2",
+       "y = -1"
+      ],
+      "answer": 0,
+      "why": "The midpoint of y = 4 and y = -2 is y = 1, a horizontal line."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Reflect (3, -2) in the y-axis.",
+     "a": "(-3, -2)",
+     "mins": 2,
+     "model": "Reflecting in the y-axis changes the sign of x: (-3, -2)."
+    },
+    {
+     "q": "Reflect (4, 1) in y = x.",
+     "a": "(1, 4)",
+     "mins": 1
+    },
+    {
+     "q": "Reflect (2, 5) in y = 3.",
+     "a": "(2, 1)",
+     "mins": 1
+    },
+    {
+     "q": "(6, 2) maps to (0, 2). Find the mirror line.",
+     "a": "x = 3",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Describe fully the single transformation: (a) (1, 2), (3, 2), (1, 4) to (1, -2), (3, -2), (1, -4) (b) the same triangle to (4, 0), (6, 0), (4, 2) (c) the same triangle to (-1, -2), (-3, -2), (-1, -4)",
+     "a": "(a) Reflection in the x-axis (y = 0) (b) Translation by (3 / -2) (c) Rotation 180° about (0, 0)",
+     "mins": 6,
+     "model": "(a) y changes sign, x stays: reflection in y = 0.\n(b) every point +3 across, -2 up.\n(c) both signs change: half turn about the origin."
+    },
+    {
+     "q": "Extend: Reflect the triangle (1, 2), (3, 2), (1, 4) in y = x.",
+     "a": "(2, 1), (2, 3), (4, 1)",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: Reflect (5, 1) in the line y = -x.",
+     "a": "(-1, -5)",
+     "mins": 3
+    }
+   ],
+   "exit": [
+    {
+     "q": "Reflect (4, 3) in the x-axis.",
+     "a": "A) (4, -3)",
+     "mins": 1,
+     "options": [
+      "(4, -3)",
+      "(-4, 3)",
+      "(3, 4)"
+     ]
+    },
+    {
+     "q": "What do you need to describe a reflection fully?",
+     "a": "The equation of the mirror line",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how can you tell a reflection from a rotation?",
+     "a": "A reflection flips the shape (handedness changes); a rotation only turns it.",
+     "mins": 1
+    }
+   ],
+   "homework": "Describe 6 transformations fully (portal grid sheet).",
+   "send": "Support: mirror (or a phone camera mirror) for checking. EAL: 'reflect', 'orientation'. Stretch: reflections in y = -x and y = x + 1.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 10.3 Reflection, 10.4 Rotation and 10.5 Translations and combined transformations",
+    "Squared paper or printable coordinate grid (in the pupil PDF)",
+    "Small mirror (household)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "mountain reflection in lake",
+     "alt": "A mountain reflected in a still lake",
+     "for": "hook"
+    },
+    {
+     "find": "mosque reflection in pool",
+     "alt": "A masjid reflected in a pool",
+     "for": "teach:1"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Deduction; rotation and translation; Pythagoras",
+   "n": 42,
+   "title": "Combining transformations and invariant points",
+   "duration": 50,
+   "bigQuestion": "Can two transformations be replaced by one?",
+   "objectives": [
+    "To understand how to carry out two transformations in turn and describe the single equivalent transformation"
+   ],
+   "successCriteria": [
+    "All: carry out two transformations one after another",
+    "Most: describe a single transformation that has the same effect",
+    "Some: identify invariant points"
+   ],
+   "crossCurricular": "Art: Islamic geometric design",
+   "smsc": "Spiritual: beauty and order in patterns made from simple rules",
+   "keywords": [
+    {
+     "term": "combined transformation",
+     "def": "two or more transformations done in order"
+    },
+    {
+     "term": "invariant point",
+     "def": "a point that does not move"
+    },
+    {
+     "term": "equivalent",
+     "def": "having the same effect"
+    },
+    {
+     "term": "order",
+     "def": "which is done first"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Reflect a shape in the x-axis, then in the y-axis. Could one single move have done both?",
+    "a": "Yes: it equals a rotation of 180° about the origin."
+   },
+   "starter": [
+    {
+     "q": "Reflect (2, 5) in the y-axis",
+     "a": "(-2, 5)",
+     "mins": 1
+    },
+    {
+     "q": "Rotate (1, 3) 90° clockwise about (0, 0)",
+     "a": "(3, -1)",
+     "mins": 1
+    },
+    {
+     "q": "Translate (-1, 2) by (4 / -4)",
+     "a": "(3, -2)",
+     "mins": 1
+    },
+    {
+     "q": "Reflect (3, 1) in y = x",
+     "a": "(1, 3)",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Two reflections",
+     "bullets": [
+      "Do them in order"
+     ],
+     "note": "The ponder question.",
+     "model": {
+      "problem": "Reflect A(2, 1) in the x-axis, then in the y-axis.",
+      "steps": [
+       "x-axis: (2, -1)",
+       "y-axis: (-2, -1)",
+       "(2, 1) to (-2, -1): both signs changed"
+      ],
+      "answer": "Same as rotation 180° about (0, 0)"
+     }
+    },
+    {
+     "heading": "Two translations",
+     "bullets": [
+      "Add the vectors"
+     ],
+     "note": "Always a single translation.",
+     "model": {
+      "problem": "Translate by (3 / 1), then by (-5 / 2).",
+      "steps": [
+       "3 + (-5) = -2",
+       "1 + 2 = 3"
+      ],
+      "answer": "Single translation (-2 / 3)"
+     }
+    },
+    {
+     "heading": "Invariant points",
+     "bullets": [
+      "Points that stay still",
+      "In a reflection: points on the mirror line",
+      "In a rotation: the centre"
+     ],
+     "note": "A translation (not zero) has no invariant points."
+    },
+    {
+     "heading": "Order can matter",
+     "bullets": [
+      "Check by doing both orders"
+     ],
+     "note": "Reflection in y = x then rotation 90° clockwise may differ from the other order.",
+     "misconception": {
+      "wrong": "Order never matters",
+      "right": "Order can change the result: check by doing both"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Invariant point"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Which point is invariant when reflecting in y = 2?",
+      "options": [
+       "(5, 2)",
+       "(2, 5)",
+       "(2, 0)",
+       "(0, 0)"
+      ],
+      "answer": 0,
+      "why": "Points on the line y = 2 do not move; (5, 2) has y = 2."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Reflect (3, 4) in y = x, then reflect the image in the x-axis.",
+     "a": "(4, 3) then (4, -3)",
+     "mins": 2,
+     "model": "y = x swaps: (4, 3).\nx-axis changes the sign of y: (4, -3)."
+    },
+    {
+     "q": "Translate by (2 / -6) then (-2 / 6). Describe the result.",
+     "a": "Back to the start: no change (zero vector)",
+     "mins": 1
+    },
+    {
+     "q": "Name the invariant point of a rotation about (1, -1).",
+     "a": "(1, -1)",
+     "mins": 1
+    },
+    {
+     "q": "Rotate (2, 0) 90° anticlockwise about (0, 0), twice. Single equivalent?",
+     "a": "(0, 2) then (-2, 0): rotation 180°",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: The triangle T has vertices (1, 1), (4, 1), (1, 2). (a) Reflect T in the y-axis to give A, then reflect A in the x-axis to give B. List B. (b) Describe the single transformation from T to B. (c) Which points are invariant in the reflection in the y-axis?",
+     "a": "(a) A: (-1, 1), (-4, 1), (-1, 2); B: (-1, -1), (-4, -1), (-1, -2) (b) Rotation 180° about (0, 0) (c) Points on the y-axis (x = 0)",
+     "mins": 6,
+     "model": "(a) y-axis changes x's sign; x-axis changes y's sign.\n(b) both signs changed: a half turn about the origin.\n(c) the mirror line x = 0."
+    },
+    {
+     "q": "Extend: Reflect a shape in x = 1 then in x = 4. Show with the point (0, 2) that this is a translation, and find its vector.",
+     "a": "(0, 2) → (2, 2) → (6, 2): translation (6 / 0)",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: Are there invariant points when rotating by 360°? Explain.",
+     "a": "Every point is invariant: the shape returns to where it started",
+     "mins": 2
+    }
+   ],
+   "exit": [
+    {
+     "q": "Two translations combine into",
+     "a": "A) one translation",
+     "mins": 1,
+     "options": [
+      "one translation",
+      "a rotation",
+      "a reflection"
+     ]
+    },
+    {
+     "q": "Invariant points of a reflection lie where?",
+     "a": "On the mirror line",
+     "mins": 1
+    },
+    {
+     "q": "Big question: answer the ponder question.",
+     "a": "Yes: reflecting in the x-axis and then the y-axis is the same as a rotation of 180° about the origin.",
+     "mins": 1
+    }
+   ],
+   "homework": "Combined transformations: 6 portal grid questions.",
+   "send": "Support: grid with each step drawn in a different colour. EAL: 'combine', 'invariant', 'equivalent'. Stretch: show reflection in two parallel lines is a translation of twice the gap.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 10.3 Reflection, 10.4 Rotation and 10.5 Translations and combined transformations",
+    "Squared paper or printable coordinate grid (in the pupil PDF)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "Alhambra tile pattern",
+     "alt": "A tile pattern from the Alhambra built by repeated transformations",
+     "for": "hook"
+    },
+    {
+     "find": "kaleidoscope pattern",
+     "alt": "A kaleidoscope pattern made by reflections",
+     "for": "teach:1"
+    }
+   ],
+   "islamicLink": {
+    "text": "Islamic geometric art, seen in masjids such as the Alhambra in Granada and the mosques of Isfahan, is built from regular polygons repeated by rotation, reflection and translation, because Muslim artists decorated places of worship with pattern and calligraphy rather than images of living beings.",
+    "at": "start"
+   }
+  },
+  {
+   "unit": "Spring 2: Deduction; rotation and translation; Pythagoras",
+   "n": 43,
+   "title": "Transformations: describe fully and design",
+   "duration": 50,
+   "bigQuestion": "How do Islamic patterns use transformations to fill a whole wall?",
+   "objectives": [
+    "To understand how to describe any single transformation fully and use transformations to build a pattern"
+   ],
+   "successCriteria": [
+    "All: choose the correct type of transformation from two shapes",
+    "Most: describe it fully with all the details",
+    "Some: design a tessellating pattern using rotation, reflection and translation"
+   ],
+   "crossCurricular": "Art: Islamic geometric design",
+   "smsc": "Spiritual: beauty in geometry; Allah is beautiful and loves beauty (reported by Muslim)",
+   "keywords": [
+    {
+     "term": "tessellation",
+     "def": "shapes fitting together with no gaps or overlaps"
+    },
+    {
+     "term": "motif",
+     "def": "the basic shape that is repeated"
+    },
+    {
+     "term": "congruent",
+     "def": "same shape and size"
+    },
+    {
+     "term": "describe fully",
+     "def": "give the type and every detail"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Look at a tiled wall pattern. Find one tile that is a translation of another, one that is a rotation and one that is a reflection.",
+    "a": "Answers vary; in most patterns all three appear, and the whole wall is filled by translating a repeating block."
+   },
+   "starter": [
+    {
+     "q": "Single transformation equal to reflecting in both axes",
+     "a": "Rotation 180° about (0, 0)",
+     "mins": 1
+    },
+    {
+     "q": "Reflect (4, -1) in y = x",
+     "a": "(-1, 4)",
+     "mins": 1
+    },
+    {
+     "q": "Invariant point of a rotation",
+     "a": "The centre",
+     "mins": 1
+    },
+    {
+     "q": "Interior angle of a regular hexagon",
+     "a": "120°",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Full descriptions",
+     "bullets": [
+      "Every detail earns a mark"
+     ],
+     "note": "Mark scheme style: one mark for the type, one for the details.",
+     "table": {
+      "head": [
+       "Type",
+       "Details needed"
+      ],
+      "rows": [
+       [
+        "Translation",
+        "column vector"
+       ],
+       [
+        "Rotation",
+        "centre, angle, direction"
+       ],
+       [
+        "Reflection",
+        "equation of the mirror line"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Finding a centre of rotation",
+     "bullets": [
+      "Try points with tracing paper",
+      "The centre is the same distance from a point and its image"
+     ],
+     "note": "Use a 90° example.",
+     "model": {
+      "problem": "Triangle (1, 0), (3, 0), (1, 1) maps to (0, 1), (0, 3), (-1, 1).",
+      "steps": [
+       "Each (x, y) became (-y, x)",
+       "That is 90° anticlockwise about (0, 0)"
+      ],
+      "answer": "Rotation 90° anticlockwise, centre (0, 0)"
+     }
+    },
+    {
+     "heading": "Building a pattern",
+     "bullets": [
+      "Start with a motif",
+      "Rotate it about a corner to make a star",
+      "Translate the star to fill the plane"
+     ],
+     "note": "Pupils design on squared paper or a tablet; no living beings, only geometry."
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Which type?"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "A shape is turned upside down and its handedness is the same. It is a",
+      "options": [
+       "rotation",
+       "reflection",
+       "translation",
+       "enlargement"
+      ],
+      "answer": 0,
+      "why": "Handedness kept and turned: rotation. A reflection changes handedness."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "(2, 1), (4, 1), (2, 3) maps to (2, -1), (4, -1), (2, -3). Describe the transformation.",
+     "a": "Reflection in the x-axis",
+     "mins": 2,
+     "model": "x stays the same and y changes sign, so it is a reflection in y = 0, the x-axis."
+    },
+    {
+     "q": "(1, 1), (2, 1), (1, 3) maps to (4, -2), (5, -2), (4, 0). Describe.",
+     "a": "Translation by (3 / -3)",
+     "mins": 1
+    },
+    {
+     "q": "(1, 2) maps to (-1, -2) and (3, 0) maps to (-3, 0). Describe.",
+     "a": "Rotation 180° about (0, 0)",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Design a tessellating pattern (portal drawing tool or squared paper): (a) draw a motif in one square (b) rotate it 90°, 180° and 270° about a corner (c) translate the block of four to fill a 4 by 4 grid (d) write the three transformations you used in full",
+     "a": "Own design; descriptions such as 'rotation 90° clockwise about (2, 2)' and 'translation by (4 / 0)'",
+     "mins": 10,
+     "model": "Model: a motif in the square (0, 0) to (2, 2) is rotated 90°, 180° and 270° clockwise about (2, 2) to make a 4 by 4 block, then translated by (4 / 0) and (0 / 4)."
+    },
+    {
+     "q": "Extend: Explain why regular octagons alone cannot tessellate, but octagons and squares can.",
+     "a": "135 × 2 = 270, not 360; 135 + 135 + 90 = 360, so two octagons and a square fit at each point",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "To describe a reflection you need",
+     "a": "A) the mirror line",
+     "mins": 1,
+     "options": [
+      "the mirror line",
+      "a vector",
+      "a centre"
+     ]
+    },
+    {
+     "q": "Big question: name one transformation you saw in an Islamic pattern and describe it.",
+     "a": "For example a rotation of 45° about the centre of an eight-pointed star.",
+     "mins": 1
+    }
+   ],
+   "homework": "Finish your pattern and write a full description of every transformation you used.",
+   "send": "Support: motif template and grid. EAL: 'motif', 'tessellation'. Stretch: a pattern with rotational symmetry of order 8.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 10.3 Reflection, 10.4 Rotation and 10.5 Translations and combined transformations",
+    "Squared paper or printable coordinate grid (in the pupil PDF)",
+    "Coloured pencils (household)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "Islamic geometric pattern tiles",
+     "alt": "Islamic geometric tilework",
+     "for": "hook"
+    },
+    {
+     "find": "zellige tiles Morocco",
+     "alt": "Moroccan zellige tilework",
+     "for": "teach:3"
+    }
+   ],
+   "islamicLink": {
+    "text": "Islamic geometric art, seen in masjids such as the Alhambra in Granada and the mosques of Isfahan, is built from regular polygons repeated by rotation, reflection and translation, because Muslim artists decorated places of worship with pattern and calligraphy rather than images of living beings.",
+    "at": "start"
+   }
+  },
+  {
+   "unit": "Spring 2: Deduction; rotation and translation; Pythagoras",
+   "n": 44,
+   "title": "Discovering Pythagoras' theorem",
+   "duration": 50,
+   "bigQuestion": "Why does 3, 4, 5 make a perfect right angle?",
+   "objectives": [
+    "To understand the relationship between the sides of a right-angled triangle"
+   ],
+   "successCriteria": [
+    "All: identify the hypotenuse of a right-angled triangle",
+    "Most: show that the squares on the two shorter sides add to the square on the hypotenuse",
+    "Some: write Pythagoras' theorem as a² + b² = c²"
+   ],
+   "smsc": "Spiritual: a truth that holds for every right-angled triangle, discovered by people and preserved by Muslim scholars",
+   "keywords": [
+    {
+     "term": "hypotenuse",
+     "def": "the longest side, opposite the right angle"
+    },
+    {
+     "term": "right angle",
+     "def": "an angle of exactly 90°"
+    },
+    {
+     "term": "theorem",
+     "def": "a mathematical fact that has been proved"
+    },
+    {
+     "term": "square",
+     "def": "a number times itself; also the area of a square"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Builders have used a rope with knots in a 3, 4, 5 pattern to make a right angle. Why would that work?",
+    "a": "Because 3² + 4² = 5²: any triangle with sides in that pattern has a right angle opposite the longest side."
+   },
+   "starter": [
+    {
+     "q": "5²",
+     "a": "25",
+     "mins": 1
+    },
+    {
+     "q": "√64",
+     "a": "8",
+     "mins": 1
+    },
+    {
+     "q": "3² + 4²",
+     "a": "25",
+     "mins": 1
+    },
+    {
+     "q": "Describe fully: (x, y) to (-x, -y)",
+     "a": "Rotation 180° about (0, 0)",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "The hypotenuse",
+     "bullets": [
+      "Opposite the right angle",
+      "Always the longest side"
+     ],
+     "note": "Label it c; label the shorter sides a and b."
+    },
+    {
+     "heading": "Test the squares",
+     "bullets": [
+      "Square each side and compare"
+     ],
+     "note": "Pupils check each row with a calculator.",
+     "table": {
+      "head": [
+       "a",
+       "b",
+       "c",
+       "a² + b²",
+       "c²"
+      ],
+      "rows": [
+       [
+        "3",
+        "4",
+        "5",
+        "9 + 16 = 25",
+        "25"
+       ],
+       [
+        "5",
+        "12",
+        "13",
+        "25 + 144 = 169",
+        "169"
+       ],
+       [
+        "6",
+        "8",
+        "10",
+        "36 + 64 = 100",
+        "100"
+       ],
+       [
+        "8",
+        "15",
+        "17",
+        "64 + 225 = 289",
+        "289"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "Pythagoras' theorem",
+     "bullets": [
+      "a² + b² = c²",
+      "Only for right-angled triangles",
+      "c is the hypotenuse"
+     ],
+     "note": "Area picture: the square on the hypotenuse has the same area as the other two squares together."
+    },
+    {
+     "heading": "Use it to check",
+     "bullets": [
+      "Square, add, compare"
+     ],
+     "note": "The ponder question.",
+     "model": {
+      "problem": "Is a triangle with sides 3, 4 and 5 right-angled?",
+      "steps": [
+       "3² + 4² = 9 + 16 = 25",
+       "5² = 25",
+       "Equal, so yes"
+      ],
+      "answer": "Yes: it has a right angle"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Which is the hypotenuse?"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "A right-angled triangle has sides 7, 24, 25. The hypotenuse is",
+      "options": [
+       "25",
+       "24",
+       "7",
+       "31"
+      ],
+      "answer": 0,
+      "why": "The longest side, opposite the right angle: 25. Check: 49 + 576 = 625 = 25²."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Check whether 9, 12, 15 is right-angled.",
+     "a": "Yes: 81 + 144 = 225 = 15²",
+     "mins": 2,
+     "model": "9² + 12² = 81 + 144 = 225, and 15² = 225.\nEqual, so right-angled."
+    },
+    {
+     "q": "Check whether 4, 5, 6 is right-angled.",
+     "a": "No: 16 + 25 = 41, but 6² = 36",
+     "mins": 1
+    },
+    {
+     "q": "Which side is the hypotenuse in a triangle with sides 10, 26 and 24?",
+     "a": "26",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Which are right-angled? (a) 5, 12, 13 (b) 6, 7, 9 (c) 20, 21, 29 (d) 1.5, 2, 2.5",
+     "a": "(a) yes (b) no (c) yes (d) yes",
+     "mins": 5,
+     "model": "(a) 25 + 144 = 169.\n(b) 36 + 49 = 85, 81.\n(c) 400 + 441 = 841 = 29².\n(d) 2.25 + 4 = 6.25 = 2.5²."
+    },
+    {
+     "q": "Extend: At home, mark 30 cm and 40 cm along two edges of a table from one corner and measure the diagonal. Is the corner a right angle?",
+     "a": "If the diagonal is 50 cm, the corner is 90°",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: Show that if a, b, c is a Pythagorean triple then 2a, 2b, 2c is also one.",
+     "a": "(2a)² + (2b)² = 4(a² + b²) = 4c² = (2c)²",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "In a² + b² = c², c is",
+     "a": "A) the hypotenuse",
+     "mins": 1,
+     "options": [
+      "the hypotenuse",
+      "the shortest side",
+      "any side"
+     ]
+    },
+    {
+     "q": "Is 8, 15, 17 right-angled?",
+     "a": "Yes: 64 + 225 = 289 = 17²",
+     "mins": 1
+    },
+    {
+     "q": "Big question: why does 3, 4, 5 make a right angle?",
+     "a": "3² + 4² = 5², and any triangle whose sides fit a² + b² = c² has a right angle.",
+     "mins": 1
+    }
+   ],
+   "homework": "Home investigation: use a tape measure on a table or door frame to test for a right angle with 30, 40 and 50 cm; write what you found.",
+   "send": "Support: squares table to 20². EAL: 'hypotenuse', 'theorem'. Stretch: find a triple with hypotenuse 41.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 7.3 Pythagoras' theorem",
+    "Tape measure or ruler (household)",
+    "Scientific calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "Pythagoras theorem diagram squares on sides",
+     "alt": "Squares on the sides of a right-angled triangle",
+     "for": "teach:3"
+    },
+    {
+     "find": "knotted rope",
+     "alt": "A knotted rope",
+     "for": "hook"
+    }
+   ],
+   "islamicLink": {
+    "text": "Thabit ibn Qurra (ثابت بن قرة), a 9th-century mathematician in Baghdad, wrote a proof of Pythagoras' theorem and extended it to triangles that are not right-angled. Muslim scholars preserved, proved and built on the geometry of earlier peoples.",
+    "at": "start"
+   }
+  },
+  {
+   "unit": "Spring 2: Deduction; rotation and translation; Pythagoras",
+   "n": 45,
+   "title": "Finding the hypotenuse",
+   "duration": 50,
+   "bigQuestion": "How long is the diagonal of a rectangle?",
+   "objectives": [
+    "To understand how to use Pythagoras' theorem to calculate the hypotenuse"
+   ],
+   "successCriteria": [
+    "All: label the hypotenuse and shorter sides",
+    "Most: calculate the hypotenuse with c = √(a² + b²)",
+    "Some: round sensibly and give units"
+   ],
+   "smsc": "Moral: honesty in advertising: screen sizes quote the diagonal",
+   "keywords": [
+    {
+     "term": "hypotenuse",
+     "def": "the longest side, opposite the right angle"
+    },
+    {
+     "term": "square root",
+     "def": "the number that squares to make it"
+    },
+    {
+     "term": "diagonal",
+     "def": "a line joining opposite corners"
+    },
+    {
+     "term": "units",
+     "def": "cm, m, km and so on"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A phone screen is 7 cm by 15 cm. Shops quote the diagonal. Estimate it before calculating.",
+    "a": "About 16 or 17 cm: √(49 + 225) = √274 ≈ 16.6 cm."
+   },
+   "starter": [
+    {
+     "q": "√100",
+     "a": "10",
+     "mins": 1
+    },
+    {
+     "q": "Is 6, 8, 10 right-angled?",
+     "a": "Yes",
+     "mins": 1
+    },
+    {
+     "q": "Round 16.552 to 1 d.p.",
+     "a": "16.6",
+     "mins": 1
+    },
+    {
+     "q": "12² + 5²",
+     "a": "169",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Model",
+     "bullets": [
+      "Square, add, square root"
+     ],
+     "note": "Write every line.",
+     "model": {
+      "problem": "Find the hypotenuse when a = 6 cm and b = 8 cm.",
+      "steps": [
+       "c² = 6² + 8²",
+       "c² = 36 + 64 = 100",
+       "c = √100 = 10"
+      ],
+      "answer": "10 cm"
+     }
+    },
+    {
+     "heading": "Non-integer answer",
+     "bullets": [
+      "Round at the end"
+     ],
+     "note": "The ponder question.",
+     "model": {
+      "problem": "Find the diagonal of a 7 cm by 15 cm screen.",
+      "steps": [
+       "c² = 7² + 15² = 49 + 225 = 274",
+       "c = √274 = 16.552...",
+       "16.6 cm (1 d.p.)"
+      ],
+      "answer": "16.6 cm"
+     }
+    },
+    {
+     "heading": "Square before adding",
+     "bullets": [
+      "Adding the sides first is wrong"
+     ],
+     "note": "Common error.",
+     "misconception": {
+      "wrong": "c = 7 + 15 = 22",
+      "right": "c = √(7² + 15²) = 16.6"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Sense check"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "The hypotenuse with shorter sides 5 cm and 9 cm is about",
+      "options": [
+       "10.3 cm",
+       "14 cm",
+       "7.5 cm",
+       "106 cm"
+      ],
+      "answer": 0,
+      "why": "√(25 + 81) = √106 = 10.3. 106 forgets the square root; 14 adds the sides."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Find the hypotenuse: a = 9 cm, b = 12 cm",
+     "a": "15 cm",
+     "mins": 2,
+     "model": "c² = 81 + 144 = 225, c = 15 cm."
+    },
+    {
+     "q": "Find the hypotenuse: a = 4 m, b = 7 m (1 d.p.)",
+     "a": "8.1 m",
+     "mins": 1
+    },
+    {
+     "q": "Find the diagonal of a 10 cm by 24 cm rectangle",
+     "a": "26 cm",
+     "mins": 1
+    },
+    {
+     "q": "Find the hypotenuse: a = 2.5 cm, b = 6 cm",
+     "a": "6.5 cm",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Find the hypotenuse (1 d.p. where needed): (a) 8 and 15 (b) 3 and 5 (c) 11 and 6 (d) 1.2 and 3.5 (e) 20 and 21",
+     "a": "(a) 17 (b) 5.8 (c) 12.5 (d) 3.7 (e) 29",
+     "mins": 5,
+     "model": "(a) 64 + 225 = 289.\n(b) √34 = 5.83.\n(c) √157 = 12.53.\n(d) 1.44 + 12.25 = 13.69, √ = 3.7.\n(e) 400 + 441 = 841."
+    },
+    {
+     "q": "Extend: A prayer mat is 70 cm by 115 cm. Find the length of its diagonal.",
+     "a": "√(4900 + 13225) = √18125 = 134.6 cm",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: A square has a diagonal of 10 cm. Find the length of a side.",
+     "a": "2s² = 100, s² = 50, s = 7.07 cm",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Hypotenuse with sides 6 and 8?",
+     "a": "A) 10",
+     "mins": 1,
+     "options": [
+      "10",
+      "14",
+      "100"
+     ]
+    },
+    {
+     "q": "Hypotenuse with sides 5 and 7, to 1 d.p.",
+     "a": "8.6",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how long is the diagonal of the 7 cm by 15 cm screen?",
+     "a": "√274 = 16.6 cm",
+     "mins": 1
+    }
+   ],
+   "homework": "Hypotenuse practice: 10 portal questions, including 3 diagonals of real objects.",
+   "send": "Support: labelled triangle template. EAL: 'diagonal', 'hypotenuse'. Stretch: the diagonal of a cuboid (3D).",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 7.3 Pythagoras' theorem",
+    "Scientific calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "prayer mat",
+     "alt": "A prayer mat (rectangle)",
+     "for": "teach:4"
+    },
+    {
+     "find": "smartphone screen",
+     "alt": "A phone screen with a diagonal",
+     "for": "hook"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Deduction; rotation and translation; Pythagoras",
+   "n": 46,
+   "title": "Finding a shorter side",
+   "duration": 50,
+   "bigQuestion": "If you know the longest side, how do you find a shorter one?",
+   "objectives": [
+    "To understand how to rearrange Pythagoras' theorem to find a shorter side"
+   ],
+   "successCriteria": [
+    "All: decide whether the missing side is the hypotenuse or a shorter side",
+    "Most: calculate a shorter side with a = √(c² - b²)",
+    "Some: solve mixed problems choosing add or subtract"
+   ],
+   "smsc": "Moral: safety at home: ladders are set at a safe angle so they do not slip",
+   "keywords": [
+    {
+     "term": "shorter side",
+     "def": "either of the two sides next to the right angle"
+    },
+    {
+     "term": "rearrange",
+     "def": "change a formula to find a different letter"
+    },
+    {
+     "term": "hypotenuse",
+     "def": "the longest side"
+    },
+    {
+     "term": "subtract",
+     "def": "take away"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A ladder 5 m long leans against a wall with its foot 1.5 m from the wall. How high up the wall does it reach?",
+    "a": "√(25 - 2.25) = √22.75 ≈ 4.77 m."
+   },
+   "starter": [
+    {
+     "q": "Hypotenuse with 9 and 40",
+     "a": "41",
+     "mins": 1
+    },
+    {
+     "q": "13² - 5²",
+     "a": "144",
+     "mins": 1
+    },
+    {
+     "q": "√144",
+     "a": "12",
+     "mins": 1
+    },
+    {
+     "q": "Round √30 to 1 d.p.",
+     "a": "5.5",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Add or subtract?",
+     "bullets": [
+      "Finding the hypotenuse: add the squares",
+      "Finding a shorter side: subtract from the hypotenuse squared"
+     ],
+     "note": "Ask first: is the missing side opposite the right angle?"
+    },
+    {
+     "heading": "Model",
+     "bullets": [
+      "a² = c² - b²"
+     ],
+     "note": "Write every line.",
+     "model": {
+      "problem": "c = 13 cm, b = 5 cm. Find a.",
+      "steps": [
+       "a² = 13² - 5²",
+       "a² = 169 - 25 = 144",
+       "a = 12"
+      ],
+      "answer": "12 cm"
+     }
+    },
+    {
+     "heading": "The ladder",
+     "bullets": [
+      "Hypotenuse is the ladder"
+     ],
+     "note": "The ponder question.",
+     "model": {
+      "problem": "Ladder 5 m, foot 1.5 m from the wall. Height?",
+      "steps": [
+       "h² = 5² - 1.5²",
+       "h² = 25 - 2.25 = 22.75",
+       "h = 4.77 m"
+      ],
+      "answer": "4.77 m (3 s.f.)"
+     }
+    },
+    {
+     "heading": "Check the answer is shorter",
+     "bullets": [
+      "A shorter side must be less than the hypotenuse"
+     ],
+     "note": "Common error: adding by habit.",
+     "misconception": {
+      "wrong": "a = √(13² + 5²) = 13.9",
+      "right": "a = √(13² - 5²) = 12, less than 13"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Add or subtract?"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Hypotenuse 10, one side 6. The other side is",
+      "options": [
+       "8",
+       "11.7",
+       "4",
+       "64"
+      ],
+      "answer": 0,
+      "why": "√(100 - 36) = √64 = 8. 11.7 adds; 64 forgets the root."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Hypotenuse 25 cm, one side 7 cm. Find the other.",
+     "a": "24 cm",
+     "mins": 2,
+     "model": "a² = 625 - 49 = 576, a = 24."
+    },
+    {
+     "q": "Hypotenuse 9 m, one side 4 m. Find the other (1 d.p.).",
+     "a": "8.1 m",
+     "mins": 1
+    },
+    {
+     "q": "Find the missing side: sides 8 and 10, 10 is the hypotenuse.",
+     "a": "6",
+     "mins": 1
+    },
+    {
+     "q": "Find the missing side: shorter sides 8 and 10.",
+     "a": "12.8 (hypotenuse)",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core (1 d.p.): (a) c = 17, a = 8, find b (b) c = 12, a = 7, find b (c) c = 6.5, a = 2.5, find b (d) a = 5, b = 11, find c",
+     "a": "(a) 15 (b) 9.7 (c) 6 (d) 12.1",
+     "mins": 5,
+     "model": "(a) 289 - 64 = 225.\n(b) 144 - 49 = 95, √95 = 9.75.\n(c) 42.25 - 6.25 = 36.\n(d) 25 + 121 = 146, √146 = 12.08."
+    },
+    {
+     "q": "Extend: An isosceles triangle has sides 10, 10 and 12 cm. Find its height and area.",
+     "a": "Half base 6: height √(100 - 36) = 8 cm; area ½ × 12 × 8 = 48 cm²",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: A 6.5 m ladder reaches 6 m up a wall. How far is its foot from the wall? If the foot slides 1 m further out, how far down does the top slip?",
+     "a": "2.5 m; foot 3.5 m, height √(42.25 - 12.25) = √30 = 5.48 m, slips 0.52 m",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Hypotenuse 5, side 3. Other side?",
+     "a": "A) 4",
+     "mins": 1,
+     "options": [
+      "4",
+      "5.8",
+      "2"
+     ]
+    },
+    {
+     "q": "Hypotenuse 20, side 12. Other side?",
+     "a": "16",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how do you know whether to add or subtract?",
+     "a": "If the missing side is the hypotenuse, add the squares; otherwise subtract from the hypotenuse squared.",
+     "mins": 1
+    }
+   ],
+   "homework": "Mixed Pythagoras: 10 portal questions, half hypotenuse and half shorter side.",
+   "send": "Support: decision flowchart (is it opposite the right angle?). EAL: 'shorter', 'rearrange'. Stretch: the sliding ladder problem with other lengths.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 7.3 Pythagoras' theorem",
+    "Scientific calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "ladder leaning against wall",
+     "alt": "A ladder leaning against a wall",
+     "for": "hook"
+    },
+    {
+     "find": "isosceles triangle roof",
+     "alt": "A roof with an isosceles triangle end",
+     "for": "teach:4"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Deduction; rotation and translation; Pythagoras",
+   "n": 47,
+   "title": "Pythagorean triples and the converse",
+   "duration": 50,
+   "bigQuestion": "Can you prove a corner is square without a protractor?",
+   "objectives": [
+    "To understand how Pythagorean triples and the converse of Pythagoras' theorem test for right angles"
+   ],
+   "successCriteria": [
+    "All: recognise common Pythagorean triples and their multiples",
+    "Most: use the converse to decide whether a triangle is right-angled",
+    "Some: generate new triples"
+   ],
+   "smsc": "Moral: good workmanship (itqan, إِتْقَان) in building straight, square walls",
+   "keywords": [
+    {
+     "term": "Pythagorean triple",
+     "def": "three whole numbers with a² + b² = c²"
+    },
+    {
+     "term": "converse",
+     "def": "the theorem the other way round: if a² + b² = c², there is a right angle"
+    },
+    {
+     "term": "multiple",
+     "def": "the result of multiplying by a whole number"
+    },
+    {
+     "term": "acute",
+     "def": "less than 90°"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A builder measures the sides of a wall corner triangle: 60 cm, 80 cm, 100 cm. Is the corner square? What if the diagonal were 98 cm?",
+    "a": "Yes: 60² + 80² = 100². With 98 cm, 10 000 > 9604, so the corner is less than 90°: not square."
+   },
+   "starter": [
+    {
+     "q": "Shorter side: c = 13, a = 12",
+     "a": "5",
+     "mins": 1
+    },
+    {
+     "q": "Hypotenuse: 9 and 12",
+     "a": "15",
+     "mins": 1
+    },
+    {
+     "q": "Is 4, 7, 8 right-angled?",
+     "a": "No (16 + 49 = 65, 64)",
+     "mins": 1
+    },
+    {
+     "q": "15² ",
+     "a": "225",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Common triples",
+     "bullets": [
+      "Learn the first three"
+     ],
+     "note": "Multiples are also triples.",
+     "table": {
+      "head": [
+       "Triple",
+       "Check",
+       "Multiples"
+      ],
+      "rows": [
+       [
+        "3, 4, 5",
+        "9 + 16 = 25",
+        "6, 8, 10; 9, 12, 15"
+       ],
+       [
+        "5, 12, 13",
+        "25 + 144 = 169",
+        "10, 24, 26"
+       ],
+       [
+        "8, 15, 17",
+        "64 + 225 = 289",
+        "16, 30, 34"
+       ],
+       [
+        "7, 24, 25",
+        "49 + 576 = 625",
+        "14, 48, 50"
+       ]
+      ]
+     }
+    },
+    {
+     "heading": "The converse",
+     "bullets": [
+      "Compare a² + b² with c²"
+     ],
+     "note": "The ponder question.",
+     "model": {
+      "problem": "Sides 60, 80, 100: is the corner square?",
+      "steps": [
+       "60² + 80² = 3600 + 6400 = 10 000",
+       "100² = 10 000",
+       "Equal"
+      ],
+      "answer": "Yes, a right angle"
+     }
+    },
+    {
+     "heading": "Bigger or smaller?",
+     "bullets": [
+      "a² + b² > c²: the largest angle is acute",
+      "a² + b² < c²: the largest angle is obtuse"
+     ],
+     "note": "With 98 cm: 10 000 > 9604, so the corner angle is less than 90°."
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Multiples of triples"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Which is a Pythagorean triple?",
+      "options": [
+       "9, 40, 41",
+       "4, 5, 6",
+       "5, 10, 15",
+       "2, 3, 4"
+      ],
+      "answer": 0,
+      "why": "81 + 1600 = 1681 = 41². The others fail."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Is 12, 35, 37 a Pythagorean triple?",
+     "a": "Yes: 144 + 1225 = 1369 = 37²",
+     "mins": 2,
+     "model": "12² = 144, 35² = 1225, sum 1369; 37² = 1369.\nEqual, so yes."
+    },
+    {
+     "q": "Write a multiple of 5, 12, 13 with hypotenuse 39.",
+     "a": "15, 36, 39",
+     "mins": 1
+    },
+    {
+     "q": "Sides 7, 8, 11: is the largest angle acute, right or obtuse?",
+     "a": "Obtuse: 49 + 64 = 113 < 121",
+     "mins": 1
+    },
+    {
+     "q": "Sides 6, 9, 10: acute, right or obtuse?",
+     "a": "Acute: 36 + 81 = 117 > 100",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: Right-angled, acute or obtuse (largest angle)? (a) 10, 24, 26 (b) 7, 9, 12 (c) 11, 60, 61 (d) 8, 9, 10 (e) 2.4, 3.2, 4",
+     "a": "(a) right (b) obtuse (c) right (d) acute (e) right",
+     "mins": 5,
+     "model": "(a) 100 + 576 = 676.\n(b) 49 + 81 = 130 < 144.\n(c) 121 + 3600 = 3721 = 61².\n(d) 64 + 81 = 145 > 100.\n(e) 5.76 + 10.24 = 16."
+    },
+    {
+     "q": "Extend: For any whole number n > 1, the numbers n² - 1, 2n and n² + 1 form a triple. Check for n = 2, 3 and 4.",
+     "a": "3, 4, 5; 8, 6, 10; 15, 8, 17",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: Prove the rule in the extend task using algebra.",
+     "a": "(n² - 1)² + (2n)² = n⁴ - 2n² + 1 + 4n² = n⁴ + 2n² + 1 = (n² + 1)²",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Is 5, 12, 13 a triple?",
+     "a": "A) Yes",
+     "mins": 1,
+     "options": [
+      "Yes",
+      "No"
+     ]
+    },
+    {
+     "q": "Sides 4, 5, 7: acute, right or obtuse?",
+     "a": "Obtuse: 16 + 25 = 41 < 49",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how can you prove a corner is square without a protractor?",
+     "a": "Measure the sides; if a² + b² = c², the converse says the angle is 90°.",
+     "mins": 1
+    }
+   ],
+   "homework": "Triples hunt: find 5 triples with hypotenuse under 50 and check each (portal).",
+   "send": "Support: squares table to 50². EAL: 'converse', 'triple'. Stretch: the extend rule for n = 5 to 7.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 7.3 Pythagoras' theorem",
+    "Scientific calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "builder's square tool",
+     "alt": "A builder's square tool for right angles",
+     "for": "hook"
+    },
+    {
+     "find": "brick wall corner",
+     "alt": "A brick wall corner",
+     "for": "keywords"
+    }
+   ],
+   "islamicLink": {
+    "text": "Thabit ibn Qurra (ثابت بن قرة), a 9th-century mathematician in Baghdad, wrote a proof of Pythagoras' theorem and extended it to triangles that are not right-angled. Muslim scholars preserved, proved and built on the geometry of earlier peoples.",
+    "at": "start"
+   }
+  },
+  {
+   "unit": "Spring 2: Deduction; rotation and translation; Pythagoras",
+   "n": 48,
+   "title": "Pythagoras in context",
+   "duration": 50,
+   "bigQuestion": "How far is it as the crow flies?",
+   "objectives": [
+    "To understand how to spot right-angled triangles in real problems and solve them with Pythagoras"
+   ],
+   "successCriteria": [
+    "All: draw and label a right-angled triangle from a word problem",
+    "Most: solve distance, ladder and diagonal problems",
+    "Some: solve two-step problems, giving answers to a sensible accuracy"
+   ],
+   "crossCurricular": "Geography: straight-line distances on maps",
+   "smsc": "Social: access ramps make buildings, including masjids, open to everyone",
+   "keywords": [
+    {
+     "term": "as the crow flies",
+     "def": "the straight-line distance"
+    },
+    {
+     "term": "sketch",
+     "def": "a quick labelled diagram"
+    },
+    {
+     "term": "north, east",
+     "def": "compass directions at 90° to each other"
+    },
+    {
+     "term": "accuracy",
+     "def": "how many decimal places or significant figures"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "A walker goes 4 km north then 3 km east. How far is she from her start in a straight line? Does the order of the walk matter?",
+    "a": "5 km: 4² + 3² = 25. The order does not matter."
+   },
+   "starter": [
+    {
+     "q": "Hypotenuse: 6 and 8",
+     "a": "10",
+     "mins": 1
+    },
+    {
+     "q": "Shorter side: c = 10, a = 6",
+     "a": "8",
+     "mins": 1
+    },
+    {
+     "q": "Round 7.071 to 1 d.p.",
+     "a": "7.1",
+     "mins": 1
+    },
+    {
+     "q": "Is 9, 12, 15 right-angled?",
+     "a": "Yes",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Find the triangle",
+     "bullets": [
+      "Sketch it",
+      "Mark the right angle",
+      "Label known sides and the unknown"
+     ],
+     "note": "North and east make a right angle."
+    },
+    {
+     "heading": "Distance",
+     "bullets": [
+      "Hypotenuse = straight-line distance"
+     ],
+     "note": "The ponder question.",
+     "model": {
+      "problem": "4 km north then 3 km east. Distance from start?",
+      "steps": [
+       "d² = 4² + 3² = 25",
+       "d = 5"
+      ],
+      "answer": "5 km (the order does not matter)"
+     }
+    },
+    {
+     "heading": "Two-step: isosceles triangle",
+     "bullets": [
+      "Split into two right-angled triangles"
+     ],
+     "note": "Height first, then area.",
+     "model": {
+      "problem": "A tent end is an isosceles triangle with sloping sides 2.5 m and base 3 m. Find its height.",
+      "steps": [
+       "Half the base = 1.5 m",
+       "h² = 2.5² - 1.5² = 6.25 - 2.25 = 4",
+       "h = 2"
+      ],
+      "answer": "2 m"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Which side is missing?"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "A 13 m rope from the top of a pole is pegged 5 m from its base. The pole's height?",
+      "options": [
+       "12 m",
+       "13.9 m",
+       "8 m",
+       "18 m"
+      ],
+      "answer": 0,
+      "why": "The rope is the hypotenuse: √(169 - 25) = 12."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "A ship sails 9 km west and 12 km south. How far is it from port?",
+     "a": "15 km",
+     "mins": 2,
+     "model": "Sketch: right angle between west and south.\nd² = 81 + 144 = 225, d = 15 km."
+    },
+    {
+     "q": "A TV screen is 80 cm wide and 45 cm tall. Find the diagonal.",
+     "a": "91.8 cm",
+     "mins": 1
+    },
+    {
+     "q": "A 4 m ladder's foot is 1 m from a wall. How high does it reach?",
+     "a": "3.87 m",
+     "mins": 1
+    },
+    {
+     "q": "A rectangular field is 120 m by 50 m. How much shorter is the diagonal than walking two sides?",
+     "a": "Diagonal 130 m; 170 - 130 = 40 m shorter",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core: (a) A kite string is 50 m long; the kite is directly above a point 30 m away. How high is it? (b) A square courtyard has sides 18 m. Find the diagonal. (c) A ramp rises 0.8 m over a horizontal 6 m. How long is the ramp?",
+     "a": "(a) 40 m (b) 25.5 m (c) 6.05 m",
+     "mins": 6,
+     "model": "(a) √(2500 - 900) = 40.\n(b) √(324 + 324) = √648 = 25.46.\n(c) √(36 + 0.64) = √36.64 = 6.053."
+    },
+    {
+     "q": "Extend: A plane flies 120 km east, then 50 km north, then 40 km east. How far is it from its start?",
+     "a": "160 km east, 50 km north: √(25600 + 2500) = √28100 = 167.6 km",
+     "mins": 3
+    },
+    {
+     "q": "Stretch: A cuboid box is 30 cm by 40 cm by 120 cm. Will a 125 cm stick fit inside diagonally?",
+     "a": "Floor diagonal 50 cm; space diagonal √(2500 + 14400) = √16900 = 130 cm, so yes",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "3 km east then 4 km north. Distance from start?",
+     "a": "A) 5 km",
+     "mins": 1,
+     "options": [
+      "5 km",
+      "7 km",
+      "25 km"
+     ]
+    },
+    {
+     "q": "A 10 m ladder reaches 8 m up a wall. Foot from the wall?",
+     "a": "6 m",
+     "mins": 1
+    },
+    {
+     "q": "Big question: does the order of the walk matter?",
+     "a": "No: north then east or east then north gives the same right-angled triangle, so 5 km either way.",
+     "mins": 1
+    }
+   ],
+   "homework": "Pythagoras in context: 6 portal word problems, each with a sketch.",
+   "send": "Support: sketch frame with compass directions. EAL: 'as the crow flies', 'ramp'. Stretch: 3D diagonal of a room.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 7.3 Pythagoras' theorem",
+    "Scientific calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "ship at sea navigation",
+     "alt": "A ship at sea",
+     "for": "teach:1"
+    },
+    {
+     "find": "wheelchair ramp",
+     "alt": "A wheelchair access ramp",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Deduction; rotation and translation; Pythagoras",
+   "n": 49,
+   "title": "Pythagoras on a coordinate grid and in 2D shapes",
+   "duration": 50,
+   "bigQuestion": "How far apart are two points on a map grid?",
+   "objectives": [
+    "To understand how to use Pythagoras to find the distance between two points and lengths in 2D shapes"
+   ],
+   "successCriteria": [
+    "All: find the horizontal and vertical distances between two points",
+    "Most: calculate the straight-line distance between coordinates",
+    "Some: find lengths in rectangles, isosceles triangles and rhombuses"
+   ],
+   "crossCurricular": "Geography: grid references and straight-line distance",
+   "smsc": "Social: understanding maps and distances in our local community",
+   "keywords": [
+    {
+     "term": "coordinates",
+     "def": "a pair (x, y) giving a position"
+    },
+    {
+     "term": "horizontal distance",
+     "def": "the difference in x"
+    },
+    {
+     "term": "vertical distance",
+     "def": "the difference in y"
+    },
+    {
+     "term": "rhombus",
+     "def": "four equal sides; diagonals cross at right angles"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "On a map, a masjid is at (1, 2) and a school at (7, 10), in km. How far apart are they in a straight line?",
+    "a": "Across 6, up 8, so √(36 + 64) = 10 km."
+   },
+   "starter": [
+    {
+     "q": "10 - 2",
+     "a": "8",
+     "mins": 1
+    },
+    {
+     "q": "7 - 1",
+     "a": "6",
+     "mins": 1
+    },
+    {
+     "q": "Hypotenuse: 6 and 8",
+     "a": "10",
+     "mins": 1
+    },
+    {
+     "q": "-3 - 5",
+     "a": "-8",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Distance between points",
+     "bullets": [
+      "Across = change in x, up = change in y",
+      "Then Pythagoras"
+     ],
+     "note": "The ponder question.",
+     "model": {
+      "problem": "Distance from (1, 2) to (7, 10)",
+      "steps": [
+       "Across: 7 - 1 = 6",
+       "Up: 10 - 2 = 8",
+       "d = √(36 + 64) = 10"
+      ],
+      "answer": "10 km"
+     }
+    },
+    {
+     "heading": "With negatives",
+     "bullets": [
+      "Square, so the sign does not matter"
+     ],
+     "note": "Use directed numbers carefully.",
+     "model": {
+      "problem": "Distance from (-2, 3) to (4, -5)",
+      "steps": [
+       "Across: 4 - (-2) = 6",
+       "Down: -5 - 3 = -8",
+       "d = √(36 + 64) = 10"
+      ],
+      "answer": "10"
+     }
+    },
+    {
+     "heading": "Rhombus diagonals",
+     "bullets": [
+      "Diagonals bisect at 90°"
+     ],
+     "note": "Four right-angled triangles inside.",
+     "model": {
+      "problem": "A rhombus has diagonals 10 cm and 24 cm. Find a side.",
+      "steps": [
+       "Half diagonals: 5 and 12",
+       "side = √(25 + 144) = 13"
+      ],
+      "answer": "13 cm"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Differences, then Pythagoras"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "Distance from (0, 0) to (3, 4)?",
+      "options": [
+       "5",
+       "7",
+       "25",
+       "1"
+      ],
+      "answer": 0,
+      "why": "√(9 + 16) = 5. 7 adds the differences."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Find the distance from (2, 1) to (5, 5).",
+     "a": "5",
+     "mins": 2,
+     "model": "Across 3, up 4, √(9 + 16) = 5."
+    },
+    {
+     "q": "Find the distance from (-1, -1) to (4, 11).",
+     "a": "13",
+     "mins": 1
+    },
+    {
+     "q": "Find the distance from (0, 3) to (2, 0) to 1 d.p.",
+     "a": "3.6",
+     "mins": 1
+    },
+    {
+     "q": "A rectangle has vertices (1, 1) and (9, 7) at opposite corners. Find the diagonal.",
+     "a": "10",
+     "mins": 1
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core (1 d.p. where needed): distance between (a) (3, 2) and (11, 8) (b) (-4, 1) and (1, 13) (c) (2, -3) and (-1, 4) (d) (0, 0) and (7, 7)",
+     "a": "(a) 10 (b) 13 (c) 7.6 (d) 9.9",
+     "mins": 5,
+     "model": "(a) 8, 6: 10.\n(b) 5, 12: 13.\n(c) 3, 7: √58 = 7.62.\n(d) √98 = 9.90."
+    },
+    {
+     "q": "Extend: Triangle A(1, 1), B(7, 1), C(4, 5). Show it is isosceles and find its perimeter.",
+     "a": "AC = BC = √(9 + 16) = 5, AB = 6; perimeter 16",
+     "mins": 4
+    },
+    {
+     "q": "Stretch: Find the point on the x-axis that is 5 units from (3, 4). Find both answers.",
+     "a": "(0, 0) and (6, 0)",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Distance from (1, 1) to (4, 5)?",
+     "a": "A) 5",
+     "mins": 1,
+     "options": [
+      "5",
+      "7",
+      "3"
+     ]
+    },
+    {
+     "q": "Distance from (-2, 0) to (3, 12)?",
+     "a": "13",
+     "mins": 1
+    },
+    {
+     "q": "Big question: how far apart are the masjid and the school?",
+     "a": "10 km: across 6, up 8, √100.",
+     "mins": 1
+    }
+   ],
+   "homework": "Coordinate distances: 8 portal questions on a printable grid.",
+   "send": "Support: grid with the right-angled triangle drawn in. EAL: 'horizontal', 'vertical'. Stretch: distance between (a, b) and (c, d) as a formula.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 7.3 Pythagoras' theorem",
+    "Squared paper or printable coordinate grid (in the pupil PDF)",
+    "Scientific calculator",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "map grid squares",
+     "alt": "A map with grid squares",
+     "for": "hook"
+    },
+    {
+     "find": "rhombus diagonals",
+     "alt": "A rhombus with its diagonals",
+     "for": "teach:3"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Deduction; rotation and translation; Pythagoras",
+   "n": 50,
+   "title": "Review: deduction, transformations and Pythagoras",
+   "duration": 50,
+   "bigQuestion": "Which skill from this unit do I need to practise most before the quiz?",
+   "objectives": [
+    "To understand where my skills in angles, transformations and Pythagoras are secure"
+   ],
+   "successCriteria": [
+    "All: answer recall questions on all three topics",
+    "Most: solve mixed exam-style problems with reasons and working",
+    "Some: choose my strengthen task from my results"
+   ],
+   "smsc": "Moral: honest self-assessment and planning to improve",
+   "keywords": [
+    {
+     "term": "deduce",
+     "def": "work out using facts"
+    },
+    {
+     "term": "transformation",
+     "def": "a translation, rotation or reflection"
+    },
+    {
+     "term": "hypotenuse",
+     "def": "the longest side of a right-angled triangle"
+    },
+    {
+     "term": "reason",
+     "def": "the fact that justifies a step"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "Rank the three topics (angles, transformations, Pythagoras) from most to least confident. What would help your weakest?",
+    "a": "Personal answers; the teacher uses the class poll to choose the first revision focus."
+   },
+   "starter": [
+    {
+     "q": "Interior angle of a regular decagon",
+     "a": "144°",
+     "mins": 1
+    },
+    {
+     "q": "Reflect (2, -3) in the y-axis",
+     "a": "(-2, -3)",
+     "mins": 1
+    },
+    {
+     "q": "Hypotenuse: 5 and 12",
+     "a": "13",
+     "mins": 1
+    },
+    {
+     "q": "Co-interior with 72°",
+     "a": "108°",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Sort the question",
+     "bullets": [
+      "Which topic is it?"
+     ],
+     "note": "Pupils say the first step for each card.",
+     "sort": {
+      "columns": [
+       "Angles",
+       "Transformations",
+       "Pythagoras"
+      ],
+      "cards": [
+       "Find x: co-interior angles x and 2x",
+       "Describe (x, y) → (-y, x)",
+       "Diagonal of a 5 by 12 rectangle",
+       "Exterior angle of a 12-sided shape",
+       "Translate (1, 4) by (-3 / 2)",
+       "Distance from (0, 0) to (6, 8)",
+       "Find the mirror line from (2, 5) to (2, -1)",
+       "Third angle: 47° and 88°"
+      ],
+      "answer": [
+       0,
+       1,
+       2,
+       0,
+       1,
+       2,
+       1,
+       0
+      ]
+     }
+    },
+    {
+     "heading": "Mixed problem",
+     "bullets": [
+      "Choose the tool"
+     ],
+     "note": "Model a two-topic problem.",
+     "model": {
+      "problem": "Triangle A(0, 0), B(4, 0), C(4, 3) is rotated 180° about the origin. Find the length of the image of AC.",
+      "steps": [
+       "Rotation keeps lengths: image of AC = AC",
+       "AC = √(4² + 3²) = 5"
+      ],
+      "answer": "5"
+     }
+    },
+    {
+     "heading": "Check",
+     "bullets": [
+      "Which fact?"
+     ],
+     "note": "Teams poll: launch it, give 30 seconds, then share the results.",
+     "check": {
+      "q": "The angles of an isosceles triangle are x, x and 40°. x =",
+      "options": [
+       "70°",
+       "40°",
+       "140°",
+       "100°"
+      ],
+      "answer": 0,
+      "why": "2x + 40 = 180, x = 70. 40 assumes the wrong angle is repeated."
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Find the interior angle of a regular 12-sided polygon.",
+     "a": "150°",
+     "mins": 2,
+     "model": "Exterior = 360 ÷ 12 = 30.\nInterior = 180 - 30 = 150."
+    },
+    {
+     "q": "Describe fully: (3, 1) maps to (-1, 3) and (0, 0) stays put.",
+     "a": "Rotation 90° anticlockwise about (0, 0)",
+     "mins": 1
+    },
+    {
+     "q": "Find the height of an equilateral triangle with side 8 cm (1 d.p.).",
+     "a": "6.9 cm",
+     "mins": 2
+    }
+   ],
+   "independent": [
+    {
+     "q": "Core (exam-style, 15 marks): (a) Alternate angles 3x + 12 and 5x - 20: find x [2] (b) Sum of interior angles of an octagon [1] (c) Translate (5, -2) by (-6 / 4) [1] (d) Describe the transformation (1, 2) → (1, -2), (4, 2) → (4, -2) [2] (e) A 7.5 m ladder, foot 2.1 m from the wall: height [3] (f) Distance from (-3, 2) to (5, 17) [3] (g) Is 16, 30, 34 right-angled? Show working [3]",
+     "a": "(a) 16 (b) 1080° (c) (-1, 2) (d) reflection in the x-axis (e) 7.2 m (f) 17 (g) yes",
+     "mins": 12,
+     "model": "(a) 3x + 12 = 5x - 20, x = 16.\n(b) 6 × 180 = 1080.\n(c) (5 - 6, -2 + 4).\n(d) y changes sign.\n(e) √(56.25 - 4.41) = √51.84 = 7.2.\n(f) 8, 15: √289 = 17.\n(g) 256 + 900 = 1156 = 34²."
+    },
+    {
+     "q": "Extend: A rhombus has side 13 cm and one diagonal 24 cm. Find the other diagonal.",
+     "a": "Half diagonal √(169 - 144) = 5, so 10 cm",
+     "mins": 4
+    }
+   ],
+   "exit": [
+    {
+     "q": "Which describes a rotation fully?",
+     "a": "A) 90° clockwise about (0, 0)",
+     "mins": 1,
+     "options": [
+      "90° clockwise about (0, 0)",
+      "90° clockwise",
+      "about (0, 0)"
+     ]
+    },
+    {
+     "q": "Big question: which topic will you practise before the quiz?",
+     "a": "Personal answer with a plan, for example 'Pythagoras word problems: portal set 2'.",
+     "mins": 1
+    }
+   ],
+   "homework": "Revise your weakest topic with the portal revision set before the quiz.",
+   "send": "Support: unit knowledge organiser. EAL: key words glossary. Stretch: the extend task and a combined transformation problem.",
+   "resources": [
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 8 7.2 Alternate angles and proof and 7.5 Solving geometric problems",
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 7 10.3 Reflection, 10.4 Rotation and 10.5 Translations and combined transformations",
+    "Pearson KS3 Maths Progress (Second Edition), the school's KS3 scheme: Year 9 7.3 Pythagoras' theorem",
+    "Unit knowledge organiser: angles, transformations, Pythagoras (printable, written for this unit)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "Islamic geometric pattern",
+     "alt": "An Islamic geometric pattern",
+     "for": "hook"
+    },
+    {
+     "find": "right angled triangle set square",
+     "alt": "A set square with a right angle",
+     "for": "keywords"
+    }
+   ]
+  },
+  {
+   "unit": "Spring 2: Deduction; rotation and translation; Pythagoras",
+   "n": 51,
+   "title": "Unit quiz: deduction, transformations and Pythagoras",
+   "duration": 50,
+   "bigQuestion": "How well can I reason, transform and calculate on my own?",
+   "objectives": [
+    "To understand how well I can use angle reasoning, transformations and Pythagoras under quiz conditions"
+   ],
+   "successCriteria": [
+    "All: answer one-step questions accurately",
+    "Most: show reasons and working on multi-step questions",
+    "Some: check answers for sense"
+   ],
+   "smsc": "Moral: honesty (amanah, أَمَانَة) in assessments",
+   "keywords": [
+    {
+     "term": "quiz conditions",
+     "def": "working alone, in silence, to time"
+    },
+    {
+     "term": "reason",
+     "def": "the fact justifying a step"
+    },
+    {
+     "term": "working",
+     "def": "the steps that show a method"
+    },
+    {
+     "term": "check",
+     "def": "test an answer another way"
+    }
+   ],
+   "hook": {
+    "type": "ponder",
+    "text": "What is one check you can do on a Pythagoras answer in a few seconds?",
+    "a": "For example: the hypotenuse must be longer than both other sides."
+   },
+   "starter": [
+    {
+     "q": "Hypotenuse: 9 and 40",
+     "a": "41",
+     "mins": 1
+    },
+    {
+     "q": "Exterior angle of a regular hexagon",
+     "a": "60°",
+     "mins": 1
+    },
+    {
+     "q": "Rotate (0, 2) by 180° about (0, 0)",
+     "a": "(0, -2)",
+     "mins": 1
+    }
+   ],
+   "teach": [
+    {
+     "heading": "Quiz rules",
+     "bullets": [
+      "Portal quiz, secure mode, 30 minutes",
+      "Calculator allowed",
+      "Give reasons for angle answers"
+     ],
+     "note": "Cameras on; geometry equipment ready."
+    },
+    {
+     "heading": "Quick checks",
+     "bullets": [
+      "The hypotenuse is the longest side",
+      "Angles in a triangle total 180°",
+      "A transformation description has every detail"
+     ],
+     "note": "Answers the ponder question."
+    },
+    {
+     "heading": "Model of a reasoned answer",
+     "bullets": [
+      "Statement, reason"
+     ],
+     "note": "As in lesson 36.",
+     "model": {
+      "problem": "Co-interior angles are 2x and 70°. Find x.",
+      "steps": [
+       "2x + 70 = 180: co-interior angles add up to 180°",
+       "2x = 110, x = 55"
+      ],
+      "answer": "x = 55"
+     }
+    }
+   ],
+   "practice": [
+    {
+     "q": "Practice: shorter side when c = 26 and a = 10",
+     "a": "24",
+     "mins": 1,
+     "model": "b² = 676 - 100 = 576, b = 24."
+    }
+   ],
+   "independent": [
+    {
+     "q": "Unit quiz (portal, secure mode, 30 minutes, 30 marks). Sample: (a) Find x: angles x, 2x, 3x on a straight line (b) Interior angle of a regular nonagon (c) Describe the transformation (2, 3) → (-2, 3) (d) Hypotenuse with sides 1.6 and 6.3 (e) Distance from (1, -2) to (13, 3)",
+     "a": "Sample answers: (a) 30 (b) 140° (c) reflection in the y-axis (d) 6.5 (e) 13",
+     "mins": 30,
+     "model": "(a) 6x = 180.\n(b) exterior 40, interior 140.\n(c) x changes sign, so reflection in x = 0.\n(d) √(2.56 + 39.69) = √42.25 = 6.5.\n(e) 12 and 5: √169 = 13."
+    }
+   ],
+   "exit": [
+    {
+     "q": "Which question was hardest, and why?",
+     "a": "Personal reflection.",
+     "mins": 2
+    },
+    {
+     "q": "Big question: name one check you used today.",
+     "a": "For example: the hypotenuse was the longest side.",
+     "mins": 1
+    }
+   ],
+   "homework": "No homework: feedback next lesson.",
+   "send": "Support: access arrangements as agreed (reader, extra time, larger font). EAL: glossary of key words allowed. Stretch: final challenge question.",
+   "resources": [
+    "Unit quiz: deduction, transformations and Pythagoras (portal quiz, secure mode, written for this unit)",
+    "Scientific calculator",
+    "Geometry set: ruler, protractor and pencil (household)",
+    "Slides",
+    "Mini-whiteboard and pen",
+    "Exercise book"
+   ],
+   "routines": {
+    "hook": "chat-waterfall",
+    "starter": "show-me",
+    "hinge": "teams-poll",
+    "practice": "show-me",
+    "exit": "teams-poll"
+   },
+   "pictures": [
+    {
+     "find": "stopwatch",
+     "alt": "A stopwatch",
+     "for": "keywords"
+    },
+    {
+     "find": "geometry set",
+     "alt": "A geometry set",
+     "for": "hook"
     }
    ]
   }
