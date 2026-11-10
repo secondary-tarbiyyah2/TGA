@@ -1,0 +1,111 @@
+name: Build term resources
+
+# The term resource register (content/resources/<term>.json, every resource the lessons name) and the
+# printable resources TGA makes itself (content/resources/items/**: worksheets, quizzes, tests and mocks
+# with a separate mark scheme, knowledge organisers, writing frames, grids, practical guides), built
+# into branded A4 PDFs (and Word copies where staff edit) and loaded into the portal: storage bucket
+# lesson-decks under resources/, table curriculum_resources (migration 0201). Staff see them on each
+# lesson's page and on Curriculum > Resources; pupils get a resource when a teacher shares it to a class.
+# Only items whose content or the generator changed are rebuilt (built_hash).
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content/resources/**"
+      - "content/lessons/**"
+      - "scripts/resources/**"
+      - ".github/workflows/build-term-resources.yml"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Rebuild and re-upload every made resource"
+        required: false
+        default: "false"
+
+concurrency:
+  group: build-term-resources
+  cancel-in-progress: false
+
+# Least privilege (security audit T20): this workflow only reads the repo.
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+
+      # The registers are derived from the lessons: rebuilt here so the portal always matches the lessons on main,
+      # even when a lesson change did not refresh the committed copies.
+      - name: Refresh the registers and check the resource items
+        run: |
+          node scripts/resources/register.mjs
+          node scripts/resources/validate.mjs
+
+      # The generator's tools are not site dependencies, so they are installed here in ONE command.
+      - name: Install dependencies
+        run: |
+          npm ci
+          npm install --no-save --no-audit --no-fund docx@9.5.1 playwright@1.63.0
+          npx playwright install --with-deps chromium
+
+      - name: Install fonts (Carlito, as on the slides and pupil PDFs)
+        run: sudo apt-get install -y --no-install-recommends fonts-crosextra-carlito fonts-noto-core || true
+
+      - uses: supabase/setup-cli@1dedf2c611547ede7232d26866dd3c56ab903bbb # v1.7.3
+        with:
+          version: 2.122.1
+
+      - name: Find the project ref and service-role key
+        id: keys
+        run: |
+          set -euo pipefail
+          PROJECTS=$(supabase projects list -o json)
+          REF=$(echo "$PROJECTS" | jq -r ".[] | select(.name==\"secondary-tarbiyyah2's Project\") | .id" | head -n1)
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then
+            COUNT=$(echo "$PROJECTS" | jq 'length')
+            if [ "$COUNT" = "1" ]; then REF=$(echo "$PROJECTS" | jq -r '.[0].id'); fi
+          fi
+          if [ -z "$REF" ] || [ "$REF" = "null" ]; then
+            echo "::error::Could not find the Supabase project."
+            exit 1
+          fi
+          SERVICE_ROLE=$(supabase projects api-keys --project-ref "$REF" -o json | jq -r '.[] | select(.name=="service_role" or .name=="secret") | .api_key' | head -n1)
+          if [ -z "$SERVICE_ROLE" ] || [ "$SERVICE_ROLE" = "null" ]; then
+            echo "::error::Could not find a service_role/secret key."
+            exit 1
+          fi
+          echo "::add-mask::$SERVICE_ROLE"
+          echo "ref=$REF" >> "$GITHUB_OUTPUT"
+          echo "service_role_key=$SERVICE_ROLE" >> "$GITHUB_OUTPUT"
+
+      - name: Cache downloaded pictures
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        with:
+          path: .cache/resource-pictures
+          key: resource-pictures-${{ hashFiles('content/resources/resource-pictures.json', 'content/lesson-pictures.json') }}
+          restore-keys: resource-pictures-
+
+      - name: Work out which resources need building
+        env:
+          SUPABASE_URL: https://${{ steps.keys.outputs.ref }}.supabase.co
+          SUPABASE_SERVICE_ROLE_KEY: ${{ steps.keys.outputs.service_role_key }}
+          FORCE: ${{ github.event.inputs.force == 'true' && '1' || '0' }}
+        run: node scripts/resources/upload.mjs plan out/resources
+
+      - name: Build the PDFs and Word copies
+        run: node scripts/resources/build.mjs out/resources --needed=out/resources/needed.json
+
+      - name: Upload to the portal
+        env:
+          SUPABASE_URL: https://${{ steps.keys.outputs.ref }}.supabase.co
+          SUPABASE_SERVICE_ROLE_KEY: ${{ steps.keys.outputs.service_role_key }}
+        run: node scripts/resources/upload.mjs upload out/resources

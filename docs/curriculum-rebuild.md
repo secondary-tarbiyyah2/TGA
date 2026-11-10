@@ -88,10 +88,9 @@ Founding-year lessons: DONE for every subject, Spring 1 to Summer 2 (11 Jan to 9
 Next, in this order (each one agent; briefs in docs/agent-briefs/):
 1. (done) Founding-year lessons.
 2. (done) Spring 2, Summer 1, Summer 2.
-3. Term resource lists (owner: "make those resources for everything"): for each term, list every resource the lessons
-   name; mark which come from the school's files, which the builder makes (pupil PDF/worksheet), and write the rest
-   (worksheets, revision sets, mock papers, printable graphs, knowledge organisers, writing frames) as printable PDFs
-   uploaded to the portal and linked from the lessons. Start with Spring 1.
+3. Term resource lists (owner: "make those resources for everything"): pipeline and registers for all four terms are
+   built (see "Term resources" below); Spring 1's resources are being made subject by subject. Then Spring 2, Summer
+   1 and Summer 2 the same way (brief: docs/agent-briefs/BRIEF-RESOURCES.md).
 4. Consolidation pass (owner agreed; start only after the resources pipeline is merged, because renumbering must keep
    resource links working: use stable lesson ids or update the register in the same PR): every old SOW, map and lesson marked keep / adapt / retire; retired lessons recorded in
    content/retired-lessons.json and moved to an "Archive - do not teach from" area; renumber lessons into teaching order.
@@ -111,6 +110,19 @@ Working rules that matter: the owner is not a developer, wants plain English, no
 shipped (merge when checks pass, retry failures at once), small pushes, and this file kept current. Use GitHub REST via
 `gh api` (GraphQL is blocked). Migrations: take the next free number on origin/main just before merging. Run at most
 four or five agents at once (usage limits stop everything otherwise).
+
+## Term resources
+Every resource the lessons name, per term, in `content/resources/<term>.json` (built by `node scripts/resources/register.mjs`
+from each lesson's `resources` and `homework`; do not edit by hand). Each entry has a type, a source (school file,
+deck builder, external, household, or "generated" = TGA makes it) and a status. The resources TGA makes are data in
+`content/resources/items/<subject>/<year>/<id>.json` and are built into branded A4 PDFs (plus a staff-only mark scheme
+and a Word copy where staff edit) by the workflow "Build term resources", which uploads them to the portal (table
+`curriculum_resources`, migration 0201). Staff: Curriculum > Resources (filters by term, subject, year, type, status)
+and "Resources this lesson uses" on each lesson page; pupils get a resource only when a teacher shares it to a class.
+How to carry on: docs/agent-briefs/BRIEF-RESOURCES.md ("How to continue").
+
+Log:
+- 10 Nov 2026: pipeline, portal page and registers for all four terms (PR "Term resources: pipeline and registers").
 
 ## Status
 
