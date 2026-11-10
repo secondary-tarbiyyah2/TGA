@@ -592,9 +592,13 @@ export function makeV3(h) {
     groups.forEach((g, gi) => {
       const s = pptx.addSlide({ masterName: "TGA_CONTENT" });
       out.push(slideNo());
-      const first = g[0].label;
-      const last = g[g.length - 1].label;
-      const title = g.length === 1 ? first : /^Section/.test(first) && /^Section/.test(last) ? `Sections ${g[0].short} ${g.length === 2 ? "and" : "to"} ${g[g.length - 1].short}` : /^Question/.test(first) && /^Question/.test(last) ? `Questions ${g[0].short} ${g.length === 2 ? "and" : "to"} ${g[g.length - 1].short}` : `${first} to ${last}`;
+      // The title names the questions or sections; extras and warm-ups are added as words.
+      const main = g.filter((r) => r.label !== "Extra" && r.label !== "Warm-up");
+      const extras = g.length - main.length;
+      const first = (main[0] || g[0]).label;
+      const last = (main[main.length - 1] || g[g.length - 1]).label;
+      const span = main.length <= 1 ? first : /^Section/.test(first) && /^Section/.test(last) ? `Sections ${main[0].short} ${main.length === 2 ? "and" : "to"} ${main[main.length - 1].short}` : /^Question/.test(first) && /^Question/.test(last) ? `Questions ${main[0].short} ${main.length === 2 ? "and" : "to"} ${main[main.length - 1].short}` : `${first} to ${last}`;
+      const title = main.length && extras ? `${span} and ${g.some((r) => r.label === "Warm-up") && !g.some((r) => r.label === "Extra") ? "warm-up" : "extras"}` : span;
       const mins = g.map((r) => r.mins).filter((m) => m != null);
       header(s, ctx, title, `${a.label}${groups.length > 1 ? ` · part ${gi + 1} of ${groups.length}` : ""}`, 3, mins.length === g.length ? mins.reduce((x, y) => x + y, 0) : null, null);
       const top = 2.12;
@@ -641,7 +645,7 @@ export function makeV3(h) {
     s.addShape("roundRect", { x: 0.9, y: 1.2, w: 3.4, h: 0.7, rectRadius: 0.35, fill: { color: RED }, line: { color: RED, width: 0 } });
     s.addText("TEACHER ONLY", { x: 0.9, y: 1.2, w: 3.4, h: 0.7, fontFace: FONT, fontSize: 20, bold: true, color: "FFFFFF", align: "center", valign: "middle", charSpacing: 4, margin: 0 });
     s.addText("Teacher only: mark scheme (do not show)", { x: 0.9, y: 2.3, w: 11.4, h: 2.0, fontFace: ctx.band === "early" ? FONT : ctx.theme.head, fontSize: 44, bold: true, color: "FFFFFF", valign: "middle" });
-    s.addText(`${a.label}: answers and marks for every question in this lesson. Stop sharing your screen before you go past this slide.`, { x: 0.9, y: 4.5, w: 11.0, h: 1.0, fontFace: FONT, fontSize: 20, color: "F2D7D3", valign: "top" });
+    s.addText(`${a.label}: ${a.hideAll ? "answers and marks for every question in this lesson" : "answers and marks for the quiz questions, and the exit ticket answers"}. Stop sharing your screen before you go past this slide.`, { x: 0.9, y: 4.5, w: 11.0, h: 1.0, fontFace: FONT, fontSize: 20, color: "F2D7D3", valign: "top" });
     s.addNotes("TEACHER ONLY. Everything after this slide is the mark scheme and the answers. It sits after the end of the lesson so it is never shown by accident, and it is not in the pupils' PDF.");
     return s;
   }
