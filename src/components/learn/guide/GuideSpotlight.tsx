@@ -162,7 +162,24 @@ export function GuideSpotlight({
     <div className="portal tour-root fixed inset-0 z-[300]" onKeyDown={onKey}>
       <div className="absolute inset-0" aria-hidden="true" />
       {rect ? (
-        <div aria-hidden="true" className="tour-spotlight" style={{ top: rect.top - PAD, left: rect.left - PAD, width: rect.width + PAD * 2, height: rect.height + PAD * 2 }} />
+        <>
+          {/* Four dim panels round the target (more reliable than one huge shadow), then its outline. */}
+          {(() => {
+            const t = Math.max(0, rect.top - PAD);
+            const l = Math.max(0, rect.left - PAD);
+            const r = rect.left + rect.width + PAD;
+            const b = rect.top + rect.height + PAD;
+            return (
+              <>
+                <div aria-hidden="true" className="tour-dim absolute inset-x-0 top-0" style={{ height: t }} />
+                <div aria-hidden="true" className="tour-dim absolute inset-x-0 bottom-0" style={{ top: b }} />
+                <div aria-hidden="true" className="tour-dim absolute left-0" style={{ top: t, height: b - t, width: l }} />
+                <div aria-hidden="true" className="tour-dim absolute right-0" style={{ top: t, height: b - t, left: r }} />
+              </>
+            );
+          })()}
+          <div aria-hidden="true" className="tour-spotlight" style={{ top: rect.top - PAD, left: rect.left - PAD, width: rect.width + PAD * 2, height: rect.height + PAD * 2, boxShadow: "none" }} />
+        </>
       ) : (
         <div aria-hidden="true" className="tour-dim absolute inset-0" />
       )}
