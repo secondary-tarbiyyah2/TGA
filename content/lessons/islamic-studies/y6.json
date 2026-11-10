@@ -2,7 +2,7 @@
   "subject": "Islamic Studies",
   "year": "y6",
   "board": "TGA Islamic Studies scheme (aqeedah, fiqh, seerah, hadith, akhlaq)",
-  "source": "Drive: RE folder and Islamic Studies schemes folder checked (Edexcel Int. GCSE Islamic Studies spec and KS4 SOW only; no KS2 material) - adapted to the TGA Islamic Studies scheme from own knowledge, with Qur'an/hadith only from well-known authentic sources | Spring 1 2027 (lesson 6 upgraded, 13 to 16 new): Year 6 pack Islamic Studies Spring 1 weeks 1 to 5 (fiqh of sawm; messengers; the Last Day; qadar; iman and character with the unit quiz moved to week 5); fasting hadith (Bukhari and Muslim), the hadith of Jibril and the 'strive for what benefits you' hadith (Muslim), the camel hadith (at-Tirmidhi) described or cited; approved Islamic Studies texts TO CONFIRM | Spring 2 2027 (lessons 17 to 22 new): Year 6 pack Islamic Studies Spring 2 weeks 1 to 6 (the Rightly Guided Caliphs; Abu Bakr and the gathering of the Qur'an (Bukhari); Umar as caliph, justice, the diwan and the Hijri calendar; review quiz); 3:144, 15:9, 4:58, 9:36; history reports labelled as reports; lessons v3 | Summer 1 2027 (lessons 23 to 27 new): Year 6 pack Islamic Studies Summer 1 weeks 1 to 5 (Uthman becomes caliph and his generosity; the copies of the mushaf, with the first ten days of Dhul-Hijjah before the Eid al-Adha half term; Ali's knowledge and bravery; Ali's justice and character; review and quiz with the timeline); Bukhari for the shura of six, Hudhayfah and the copies, Umar on Ali as judge; Bukhari and Muslim for Khaybar and Abu Turab; 2:261, 15:9, 39:9, 16:90; lessons v3",
+  "source": "Drive: RE folder and Islamic Studies schemes folder checked (Edexcel Int. GCSE Islamic Studies spec and KS4 SOW only; no KS2 material) - adapted to the TGA Islamic Studies scheme from own knowledge, with Qur'an/hadith only from well-known authentic sources | Spring 1 2027 (lesson 6 upgraded, 13 to 16 new): Year 6 pack Islamic Studies Spring 1 weeks 1 to 5 (fiqh of sawm; messengers; the Last Day; qadar; iman and character with the unit quiz moved to week 5); fasting hadith (Bukhari and Muslim), the hadith of Jibril and the 'strive for what benefits you' hadith (Muslim), the camel hadith (at-Tirmidhi) described or cited; approved Islamic Studies texts TO CONFIRM | Spring 2 2027 (lessons 17 to 22 new): Year 6 pack Islamic Studies Spring 2 weeks 1 to 6 (the Rightly Guided Caliphs; Abu Bakr and the gathering of the Qur'an (Bukhari); Umar as caliph, justice, the diwan and the Hijri calendar; review quiz); 3:144, 15:9, 4:58, 9:36; history reports labelled as reports; lessons v3 | Summer 1 2027 (lessons 23 to 27 new): Year 6 pack Islamic Studies Summer 1 weeks 1 to 5 (Uthman becomes caliph and his generosity; the copies of the mushaf, with the first ten days of Dhul-Hijjah before the Eid al-Adha half term; Ali's knowledge and bravery; Ali's justice and character; review and quiz with the timeline); Bukhari for the shura of six, Hudhayfah and the copies, Umar on Ali as judge; Bukhari and Muslim for Khaybar and Abu Turab; 2:261, 15:9, 39:9, 16:90; lessons v3 | Summer 2 2027: Y6 pack weeks 1, 3, 5 and 6 (fiqh of purity and salah, akhlaq, adab and Year 7, quiz)",
   "lessons": [
     {
       "unit": "Unit 1: Knowing Allah (Aqeedah)",
@@ -1033,96 +1033,244 @@
       "send": "SEND/EAL: captioned sequencing template for the Black Stone story (words and places, no drawn people); stretch: link al-Amin to the Prophet’s later role as messenger."
     },
     {
-      "unit": "Unit 4: Fiqh and Akhlaq",
+      "unit": "Summer 2: Fiqh, akhlaq and preparing for secondary",
       "n": 10,
-      "title": "Taharah: how to make wudu",
+      "title": "Fiqh of purity and prayer: wudu, what breaks it and the conditions of salah",
       "duration": 45,
+      "bigQuestion": "If you build a perfect house on ground that is not yours, is it really your house? How is that like salah without wudu?",
       "objectives": [
-        "Explain why wudu is needed for salah",
-        "Perform and describe the steps of wudu in order",
-        "Name things that break wudu"
+        "To understand what makes wudu and salah valid, so that worship is done correctly"
       ],
+      "successCriteria": [
+        "All: list what breaks wudu",
+        "Most: name the conditions of salah",
+        "Some: explain the difference between a condition and a pillar of salah"
+      ],
+      "smsc": "Spiritual: worship done with care and knowledge",
       "keywords": [
         {
-          "term": "wudu",
-          "def": "the washing of certain body parts before prayer"
+          "term": "fiqh (فِقْه)",
+          "def": "understanding the rules of worship and life"
         },
         {
-          "term": "taharah",
-          "def": "purity and cleanliness"
+          "term": "shart (شَرْط)",
+          "def": "a condition: must be in place before the act"
         },
         {
-          "term": "najasah",
-          "def": "impurity such as urine or filth"
+          "term": "rukn (رُكْن)",
+          "def": "a pillar: a part of the act itself"
         },
         {
-          "term": "niyyah",
-          "def": "intention"
+          "term": "hadath (حَدَث)",
+          "def": "the state that needs wudu or ghusl"
+        },
+        {
+          "term": "'awrah (عَوْرَة)",
+          "def": "the parts of the body that must be covered"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you build a perfect house on ground that is not yours, is it really your house? How is that like salah without wudu?",
+        "a": "No: the foundation must be right first; salah needs its conditions, like wudu, before it starts."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Allah does not accept the prayer of one of you who has broken his wudu until he makes wudu' (Bukhari and Muslim).",
+        "at": "start"
+      },
       "starter": [
-        "Why did the Quraysh call Muhammad ﷺ al-Amin?",
-        "What is an amanah?",
-        "Say bismillah and explain why we start with it."
+        {
+          "q": "Bismillah. Who compiled the Qur'an into one mushaf for the whole Ummah?",
+          "a": "Uthman",
+          "mins": 1,
+          "options": [
+            "Uthman",
+            "Ali"
+          ]
+        },
+        {
+          "q": "Which caliph was known for knowledge and bravery?",
+          "a": "Ali",
+          "mins": 1,
+          "options": [
+            "Ali",
+            "Abu Bakr"
+          ]
+        },
+        {
+          "q": "Name one of the six pillars of iman.",
+          "a": "For example: belief in the angels",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Why wudu?",
+          "heading": "What breaks wudu",
           "bullets": [
-            "“O you who believe, when you rise for prayer, wash your faces and your hands to the elbows ... and your feet to the ankles” (5:6)",
-            "Wudu is needed before salah",
-            "Cleanliness is part of faith"
-          ],
-          "note": "Begin with bismillah. Read 5:6 in English and note the parts named. The hadith ‘Purification is half of faith’ is in Sahih Muslim (Abu Malik al-Ash’ari); you can quote it as ‘cleanliness is half of faith’, paraphrased. Ask: how do we feel after washing? Link to being ready to stand before Allah."
-        },
-        {
-          "heading": "The steps of wudu",
-          "bullets": [
-            "Intend in the heart and say bismillah",
-            "Wash hands three times",
-            "Rinse mouth and nose three times",
-            "Wash face three times, then arms to elbows",
-            "Wipe head and ears, then wash feet to ankles"
-          ],
-          "note": "Demonstrate on camera with water if possible or mime clearly. Pupils copy on mute. Common mistakes: forgetting heels, skipping elbows, wasting water. Mention that the Prophet ﷺ taught us not to waste water even when making wudu (general principle; do not quote exact wording)."
-        },
-        {
-          "heading": "What breaks wudu?",
-          "bullets": [
-            "Going to the toilet",
-            "Passing wind",
+            "Using the toilet; passing wind",
             "Deep sleep",
-            "Loss of consciousness"
+            "Losing consciousness"
           ],
-          "note": "Keep it factual and age-appropriate. Explain that if wudu is broken we repeat it before praying. Some details differ between the schools of fiqh; at Year 6 level teach the agreed basics above and tell pupils to ask their parents or teacher for their family’s school (madhhab) on other matters."
+          "note": "Begin with Bismillah. The Prophet ﷺ said: 'Allah does not accept the prayer of one of you who has broken his wudu until he makes wudu' (Bukhari and Muslim)."
         },
         {
-          "heading": "Du’a after wudu and etiquette",
+          "heading": "Conditions of salah (shurut)",
+          "bullets": [],
+          "note": "Conditions come before; pillars are inside the prayer.",
+          "table": {
+            "head": [
+              "Condition",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "Islam, sanity, age of understanding",
+                "Who prays"
+              ],
+              [
+                "Purity from hadath",
+                "Wudu (or ghusl)"
+              ],
+              [
+                "Clean body, clothes and place",
+                "No najasah"
+              ],
+              [
+                "Covering the 'awrah",
+                "Proper dress"
+              ],
+              [
+                "The time has begun",
+                "Prayer times"
+              ],
+              [
+                "Facing the qiblah",
+                "Towards the Ka'bah"
+              ],
+              [
+                "Intention",
+                "In the heart"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Condition or pillar?",
+          "bullets": [],
+          "note": "Pupils sort.",
+          "sort": {
+            "columns": [
+              "Condition (before)",
+              "Pillar (inside)"
+            ],
+            "cards": [
+              "Wudu",
+              "Reciting al-Fatihah",
+              "Facing the qiblah",
+              "Ruku'",
+              "Clean clothes",
+              "Sujud"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "heading": "Hinge",
           "bullets": [
-            "Say the shahadah after wudu",
-            "Use only the water you need",
-            "Dry your hands and be tidy",
-            "Make wudu with calm, not rushing"
+            "Vote in the Teams poll"
           ],
-          "note": "Teach the shahadah after wudu: ‘Ashhadu an la ilaha illallah wahdahu la sharika lah, wa ashhadu anna Muhammadan abduhu wa rasuluh.’ This is reported in Sahih Muslim (Umar). Practise slowly together."
+          "check": {
+            "q": "Ahmed falls fast asleep after wudu. Before praying he must ...",
+            "options": [
+              "Make wudu again",
+              "Just pray",
+              "Make ghusl"
+            ],
+            "answer": 0,
+            "why": "Deep sleep breaks wudu."
+          }
         }
       ],
       "practice": [
-        "Put the steps of wudu in the correct order (cards).",
-        "List three things that break wudu.",
-        "Why should we avoid wasting water during wudu?"
+        {
+          "q": "Explain the difference between a condition and a pillar.",
+          "a": "A condition must be in place before the prayer (wudu, time); a pillar is part of the prayer (ruku', sujud)",
+          "mins": 3,
+          "model": "Teacher: 'Wudu happens before salah, so it is a condition. Ruku' happens inside salah, so it is a pillar.'"
+        },
+        {
+          "q": "Does deep sleep break wudu?",
+          "a": "Yes",
+          "mins": 1,
+          "options": [
+            "Yes",
+            "No"
+          ]
+        }
       ],
       "independent": [
-        "Make a step-by-step wudu guide for a younger child with drawings.",
-        "Write a paragraph on the meaning of taharah.",
-        "Role-play: explain wudu to a new Muslim friend."
+        {
+          "q": "Fiqh case cards on the pupil PDF: for six short cases say whether the salah is valid and which rule applies.",
+          "a": "For example: praying Dhuhr at 11 am: not valid, time has not begun; praying on a clean towel on a park bench facing the qiblah: valid",
+          "mins": 15,
+          "model": "Teacher does case 1: 'Zayd prays on a rug with a dirty stain: not valid until he moves to a clean place; rule: clean place.'"
+        },
+        {
+          "q": "Extend: what can a person do if there is no water?",
+          "a": "Tayammum with clean earth",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Name the first three steps of wudu.",
-        "Name two things that break wudu."
+        {
+          "q": "Name two conditions of salah.",
+          "a": "For example: wudu and facing the qiblah",
+          "mins": 1
+        },
+        {
+          "q": "Back to our ponder: why do conditions come first?",
+          "a": "Like a foundation, the prayer is not valid without them",
+          "mins": 1
+        }
       ],
-      "homework": "Make wudu at home with a family member watching, and ask them to check each step.",
-      "send": "SEND/EAL: picture sequence; stretch: explain the wisdom behind washing the particular parts in wudu."
+      "homework": "Teach a family member the conditions of salah using your table.",
+      "send": "SEND: case cards with yes/no picture prompts. EAL: table with icons. Stretch: list the things that invalidate salah once started.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: conditions table and six fiqh cases",
+        "Prayer mat and compass or qiblah app shown by the teacher (household)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "qibla compass",
+          "alt": "Finding the qiblah",
+          "for": "teach:2"
+        },
+        {
+          "find": "water tap wudu",
+          "alt": "Water for wudu",
+          "for": "teach:1"
+        },
+        {
+          "find": "prayer mat clean",
+          "alt": "A clean place to pray",
+          "for": "keywords"
+        }
+      ]
     },
     {
       "unit": "Unit 4: Fiqh and Akhlaq",
@@ -1217,104 +1365,214 @@
       "send": "SEND/EAL: position cards; stretch: explain the meaning of al-Fatihah verse by verse."
     },
     {
-      "unit": "Unit 4: Fiqh and Akhlaq",
+      "unit": "Summer 2: Fiqh, akhlaq and preparing for secondary",
       "n": 12,
-      "title": "Akhlaq: truthfulness, kindness and good words",
+      "title": "Akhlaq: honesty, trust and respect for teachers, online too",
       "duration": 45,
+      "bigQuestion": "Is it still cheating if nobody, not even the teacher, could ever find out?",
       "objectives": [
-        "Recall and explain three hadith about good character",
-        "Apply them to school and home scenarios",
-        "Review the half-term’s learning"
+        "To understand how honesty, trust and respect for teachers are part of a Muslim's character, in class and online"
       ],
+      "successCriteria": [
+        "All: give an example of honesty and of respect for a teacher",
+        "Most: explain the hadith on truthfulness leading to Paradise",
+        "Some: apply akhlaq to a hard online situation"
+      ],
+      "smsc": "Moral: integrity in class and online",
       "keywords": [
         {
-          "term": "akhlaq",
+          "term": "akhlaq (أَخْلَاق)",
           "def": "character and manners"
         },
         {
-          "term": "sadaqah",
-          "def": "charity: any good deed given for Allah’s sake"
-        },
-        {
-          "term": "hadith",
-          "def": "a report of the words or actions of the Prophet ﷺ"
-        },
-        {
-          "term": "sidq",
+          "term": "sidq (صِدْق)",
           "def": "truthfulness"
+        },
+        {
+          "term": "amanah (أَمَانَة)",
+          "def": "trust"
+        },
+        {
+          "term": "ihtiram (اِحْتِرَام)",
+          "def": "respect"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is it still cheating if nobody, not even the teacher, could ever find out?",
+        "a": "Yes: Allah sees everything; honesty is for Allah, not only for people."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said that truthfulness leads to righteousness and righteousness leads to Paradise (Bukhari and Muslim).",
+        "at": "start"
+      },
       "starter": [
-        "Name the five prayers.",
-        "State two things that break wudu.",
-        "Recall one fact about Khadijah."
+        {
+          "q": "Bismillah. Deep sleep breaks wudu: true or false?",
+          "a": "True",
+          "mins": 1,
+          "options": [
+            "True",
+            "False"
+          ]
+        },
+        {
+          "q": "Name one condition of salah.",
+          "a": "For example: facing the qiblah",
+          "mins": 1
+        },
+        {
+          "q": "A condition comes before / inside the salah?",
+          "a": "Before",
+          "mins": 1,
+          "options": [
+            "Before",
+            "Inside"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "The best of character",
+          "heading": "Truthfulness leads to Paradise",
           "bullets": [
-            "The Prophet ﷺ was sent to perfect good character",
-            "“Indeed you are of a great character” (68:4)",
-            "Good manners are worship"
+            "Truth leads to righteousness",
+            "Righteousness leads to Paradise",
+            "Lying leads the other way"
           ],
-          "note": "Begin with bismillah. Qur’an 68:4 is addressed to the Prophet ﷺ. Ask: what does ‘character’ mean? Brainstorm good behaviours at school and home."
+          "note": "Begin with Bismillah. The hadith is in Bukhari and Muslim.",
+          "cycle": [
+            "Telling the truth",
+            "Righteousness (birr)",
+            "Paradise"
+          ]
         },
         {
-          "heading": "Smiling is charity",
+          "heading": "Respecting those who teach",
           "bullets": [
-            "“Your smiling in the face of your brother is charity” (Tirmidhi)",
-            "Small acts count as sadaqah",
-            "Greet people with salam",
-            "Be cheerful and kind"
+            "Allah raises people of knowledge",
+            "Listen, do not interrupt",
+            "Thank and make du'a for teachers"
           ],
-          "note": "This hadith is recorded by at-Tirmidhi and is graded hasan/sahih; you can use it safely with the attribution. Ask pupils for other small charity acts (clearing the table, helping with bags). Challenge: smile at someone who looks sad today."
+          "note": "Allah says He raises those who believe and those given knowledge by degrees (al-Mujadilah 58:11)."
         },
         {
-          "heading": "Love for others what you love for yourself",
-          "bullets": [
-            "“None of you truly believes until he loves for his brother what he loves for himself”",
-            "Narrated by Anas in Bukhari and Muslim",
-            "Share, include others, avoid jealousy"
-          ],
-          "note": "Ask: what do you love for yourself? (fair play, kindness, friends). Then: would you want others to have it too? Role-play a scene at playtime: a child is left out."
+          "heading": "Akhlaq online",
+          "bullets": [],
+          "note": "The same character online and offline.",
+          "compare": {
+            "left": {
+              "title": "Good akhlaq online",
+              "points": [
+                "Camera and mic used properly",
+                "Kind comments",
+                "Own work only"
+              ]
+            },
+            "right": {
+              "title": "Poor akhlaq online",
+              "points": [
+                "Typing rude jokes in chat",
+                "Copying answers",
+                "Sharing others' photos"
+              ]
+            },
+            "label": "vs"
+          }
         },
         {
-          "heading": "Say good or stay silent",
+          "heading": "Hinge",
           "bullets": [
-            "“Whoever believes in Allah and the Last Day, let him say good or keep silent”",
-            "Bukhari and Muslim",
-            "No lying, mocking or gossip",
-            "Think before you speak"
+            "Vote in the Teams poll"
           ],
-          "note": "Talk about online speech too: messages and group chats count. Use the THINK idea (is it true, helpful, kind?), as a school rule not a hadith. Ask pupils to give a rewording of a harsh sentence into a kind one."
-        },
-        {
-          "heading": "Review and reflection",
-          "bullets": [
-            "Tawhid and the six pillars",
-            "Early life of the Prophet ﷺ",
-            "Wudu and salah",
-            "What will you improve this month?"
-          ],
-          "note": "Use the final slide for a quick quiz and for each pupil to choose a personal akhlaq goal. Close with du’a: ‘O Allah, as You made my creation good, make my character good.’ (This du’a is reported by Imam Ahmad and graded sahih by many scholars.)"
+          "check": {
+            "q": "A friend messages you the answers to the online quiz. Best response?",
+            "options": [
+              "Do not use them and say you want to do your own work",
+              "Use them, nobody will know",
+              "Share them with others"
+            ],
+            "answer": 0,
+            "why": "Allah sees; your work is an amanah."
+          }
         }
       ],
       "practice": [
-        "Match each hadith to its message (smile, love for brother, good speech).",
-        "Rewrite a rude sentence into a kind one.",
-        "Give two examples of charity that cost no money."
+        {
+          "q": "Explain the hadith on truthfulness in your own words.",
+          "a": "Telling the truth keeps leading you to good deeds, which lead to Paradise",
+          "mins": 3,
+          "model": "Teacher: 'Truth is the first step; it leads to doing good; good leads to Jannah. Lies lead the opposite way.'"
+        },
+        {
+          "q": "Which ayah says Allah raises people of knowledge?",
+          "a": "Al-Mujadilah 58:11",
+          "mins": 1,
+          "options": [
+            "Al-Mujadilah 58:11",
+            "An-Nisa' 4:36"
+          ]
+        }
       ],
       "independent": [
-        "Write a short story where a child follows one of the hadith.",
-        "Create an ‘akhlaq action plan’ with three goals and how you will check them.",
-        "Make five quiz questions on this half-term’s lessons with answers."
+        {
+          "q": "Akhlaq dilemmas on the pupil PDF: for five situations (two online), write what good akhlaq looks like and why.",
+          "a": "Answers with reasons, for example: a teacher's mic is off: tell them politely in chat",
+          "mins": 15,
+          "model": "Teacher does dilemma 1: 'You broke a ruler at home: tell your mum the truth, because truth leads to birr.'"
+        },
+        {
+          "q": "Extend: write a thank-you message to a teacher this year.",
+          "a": "A sincere, specific message",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Say one hadith about character in your own words.",
-        "What akhlaq goal will you work on and how?"
+        {
+          "q": "Truthfulness leads to ...",
+          "a": "Righteousness, then Paradise",
+          "mins": 1,
+          "options": [
+            "Righteousness, then Paradise",
+            "Popularity"
+          ]
+        },
+        {
+          "q": "Back to our ponder: is it cheating if nobody finds out?",
+          "a": "Yes, Allah sees",
+          "mins": 1
+        }
       ],
-      "homework": "Carry out your akhlaq goal for five days and keep a short log.",
-      "send": "SEND/EAL: scenario cards with pictures; stretch: link each hadith to a verse or lesson from earlier in the unit."
+      "homework": "Send (with a parent) your thank-you message to a teacher.",
+      "send": "SEND: dilemmas with two choices each. EAL: frame 'Good akhlaq is ... because ...'. Stretch: explain the link between akhlaq and iman.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: akhlaq dilemmas",
+        "Portal message for the thank-you note"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "laptop video call screen",
+          "alt": "An online class",
+          "for": "teach:3"
+        },
+        {
+          "find": "stack of school books",
+          "alt": "Books: knowledge",
+          "for": "teach:2"
+        },
+        {
+          "find": "handshake hands",
+          "alt": "Trust",
+          "for": "keywords"
+        }
+      ]
     },
     {
       "unit": "Spring 1: Iman in depth: messengers, last day, qadar; fiqh of sawm",
@@ -4599,6 +4857,403 @@
         {
           "find": "timeline ruler",
           "alt": "A timeline",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Fiqh, akhlaq and preparing for secondary",
+      "n": 28,
+      "title": "The adab of seeking knowledge and preparing for secondary",
+      "duration": 45,
+      "bigQuestion": "What will be different about Year 7, and what will stay the same about the kind of learner you are?",
+      "objectives": [
+        "To understand the manners a Muslim brings to learning and how to prepare for Year 7"
+      ],
+      "successCriteria": [
+        "All: name three manners of a good student",
+        "Most: explain the hadith about the path to knowledge",
+        "Some: write a Year 7 plan that uses adab"
+      ],
+      "smsc": "Spiritual: learning as worship; Social: preparing for a new community",
+      "keywords": [
+        {
+          "term": "adab (أَدَب)",
+          "def": "good manners"
+        },
+        {
+          "term": "'ilm (عِلْم)",
+          "def": "knowledge"
+        },
+        {
+          "term": "talib al-'ilm (طَالِبُ العِلْمِ)",
+          "def": "a student of knowledge"
+        },
+        {
+          "term": "transition",
+          "def": "moving from one stage to the next"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What will be different about Year 7, and what will stay the same about the kind of learner you are?",
+        "a": "Subjects, teachers and lesson length change; your adab, effort and du'a can stay the same."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Whoever takes a path seeking knowledge, Allah makes easy for him a path to Paradise' (Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Truthfulness leads to ...",
+          "a": "Righteousness and Paradise",
+          "mins": 1,
+          "options": [
+            "Righteousness and Paradise",
+            "Fame"
+          ]
+        },
+        {
+          "q": "58:11 says Allah raises people of ...",
+          "a": "Knowledge (and iman)",
+          "mins": 1
+        },
+        {
+          "q": "Name one example of good akhlaq online.",
+          "a": "Kind comments; own work",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "A path to Paradise",
+          "bullets": [
+            "Seeking knowledge is worship",
+            "Allah makes the path easy",
+            "Begin with a sincere intention"
+          ],
+          "note": "Begin with Bismillah. The Prophet ﷺ said: 'Whoever takes a path seeking knowledge, Allah makes easy for him a path to Paradise' (Muslim)."
+        },
+        {
+          "heading": "Adab of a student",
+          "bullets": [],
+          "note": "Pupils add examples.",
+          "diagram": {
+            "centre": "Adab of learning",
+            "items": [
+              "Sincere intention",
+              "Listen and do not interrupt",
+              "Ask good questions",
+              "Respect teachers",
+              "Act on what you learn",
+              "Du'a: rabbi zidni 'ilma"
+            ]
+          }
+        },
+        {
+          "heading": "What changes in Year 7",
+          "bullets": [
+            "More subjects and teachers",
+            "50-minute lessons",
+            "More homework to organise"
+          ],
+          "note": "Year 7 lessons at TGA are 50 minutes. Use the portal timetable and homework list.",
+          "compare": {
+            "left": {
+              "title": "Changes",
+              "points": [
+                "Subject teachers",
+                "Longer lessons",
+                "Planner and deadlines"
+              ]
+            },
+            "right": {
+              "title": "Stays the same",
+              "points": [
+                "Salah and Qur'an",
+                "My adab",
+                "Asking for help"
+              ]
+            },
+            "label": "and"
+          }
+        },
+        {
+          "heading": "Hinge",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "check": {
+            "q": "Which is the best adab when you do not understand in class?",
+            "options": [
+              "Ask politely at the right time",
+              "Switch off the camera",
+              "Say nothing and guess"
+            ],
+            "answer": 0,
+            "why": "Asking well is part of seeking knowledge."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain the hadith about the path of knowledge.",
+          "a": "When we try to learn for Allah, He makes the way to Paradise easy for us",
+          "mins": 3,
+          "model": "Teacher: 'Path means effort: reading, listening, revising. Allah rewards that effort by easing the road to Jannah.'"
+        },
+        {
+          "q": "Which du'a asks for more knowledge?",
+          "a": "رَبِّ زِدْنِي عِلْمًا (Ta-Ha 20:114)",
+          "mins": 1,
+          "options": [
+            "رَبِّ زِدْنِي عِلْمًا",
+            "رَبَّنَا آتِنَا"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "My Year 7 plan (pupil PDF): my intention, three adab habits, how I will organise homework, two questions I have about Year 7, and my du'a.",
+          "a": "A complete, realistic plan with sincere intention",
+          "mins": 15,
+          "model": "Teacher fills the intention: 'I will learn to please Allah and to help my family and community.'"
+        },
+        {
+          "q": "Extend: write one way you will help a new pupil in Year 7.",
+          "a": "For example: show them how to find homework in the portal",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Name three manners of a good student.",
+          "a": "For example: sincere intention, listening, respecting teachers",
+          "mins": 1
+        },
+        {
+          "q": "Back to our ponder: what stays the same?",
+          "a": "My adab, my salah, my effort and du'a",
+          "mins": 1
+        }
+      ],
+      "homework": "Share your Year 7 plan with your parents and add their advice.",
+      "send": "SEND: plan with tick-box choices. EAL: sentence starters. Stretch: memorise the hadith of the path in Arabic with a teacher.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: My Year 7 plan",
+        "Year 7 information from TGA (portal; TO CONFIRM transition arrangements)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "pathway through garden",
+          "alt": "A path: the path of knowledge",
+          "for": "hook"
+        },
+        {
+          "find": "school planner diary",
+          "alt": "A planner for Year 7",
+          "for": "teach:3"
+        },
+        {
+          "find": "library shelves",
+          "alt": "Knowledge",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Fiqh, akhlaq and preparing for secondary",
+      "n": 29,
+      "title": "Review, personal goals and the fiqh and akhlaq quiz",
+      "duration": 45,
+      "bigQuestion": "Is it better to do a big good deed once, or a small good deed every single day? Why?",
+      "objectives": [
+        "To understand what I have learnt in primary Islamic Studies and set goals for my faith in Year 7"
+      ],
+      "successCriteria": [
+        "All: complete the fiqh and akhlaq quiz",
+        "Most: set two clear goals for worship and character",
+        "Some: explain how each goal links to an ayah or hadith"
+      ],
+      "smsc": "Spiritual: consistency in worship",
+      "keywords": [
+        {
+          "term": "goal",
+          "def": "something I plan to achieve"
+        },
+        {
+          "term": "istiqamah (اِسْتِقَامَة)",
+          "def": "staying firm and consistent"
+        },
+        {
+          "term": "fiqh (فِقْه)",
+          "def": "the rules of worship"
+        },
+        {
+          "term": "akhlaq (أَخْلَاق)",
+          "def": "character"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is it better to do a big good deed once, or a small good deed every single day? Why?",
+        "a": "The Prophet ﷺ said the most beloved deeds to Allah are the most regular, even if small (Bukhari and Muslim)."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said that the most beloved deeds to Allah are the most regular, even if small (Bukhari and Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'Whoever takes a path seeking knowledge ...' is in ...",
+          "a": "Muslim",
+          "mins": 1,
+          "options": [
+            "Muslim",
+            "Abu Dawud"
+          ]
+        },
+        {
+          "q": "Facing the qiblah is a ...",
+          "a": "Condition of salah",
+          "mins": 1,
+          "options": [
+            "Condition of salah",
+            "Pillar of salah"
+          ]
+        },
+        {
+          "q": "Name one manner of a good student.",
+          "a": "Sincere intention; listening",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "What we covered",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "timeline": [
+            {
+              "label": "Spring 1",
+              "text": "Iman in depth"
+            },
+            {
+              "label": "Spring 2",
+              "text": "Abu Bakr and Umar"
+            },
+            {
+              "label": "Summer 1",
+              "text": "Uthman and Ali"
+            },
+            {
+              "label": "Summer 2",
+              "text": "Fiqh, akhlaq, adab"
+            }
+          ]
+        },
+        {
+          "heading": "Small and steady",
+          "bullets": [
+            "Consistent deeds are most beloved",
+            "Choose goals you can keep",
+            "Check them every week"
+          ],
+          "note": "Hadith: the most beloved deeds to Allah are the most regular, even if small (Bukhari and Muslim).",
+          "check": {
+            "q": "Which is the best goal?",
+            "options": [
+              "Read one page of Qur'an after Fajr every day",
+              "Read the whole Qur'an tomorrow",
+              "Be perfect"
+            ],
+            "answer": 0,
+            "why": "Small, regular and specific."
+          }
+        },
+        {
+          "heading": "Quiz rules",
+          "bullets": [
+            "Camera on, work alone",
+            "Read each question twice",
+            "Check before submitting"
+          ],
+          "note": "Portal form; teacher invigilates."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Turn 'be better at salah' into a clear goal.",
+          "a": "For example: pray each salah within 30 minutes of the adhan and tick it in a chart",
+          "mins": 3,
+          "model": "Teacher: 'Vague: be better. Clear: pray Fajr on time five days a week, alarm at 4:30, tick the chart.'"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Fiqh and akhlaq quiz (portal form, our own questions): 12 questions on purity, conditions of salah, zakah and Hajj outlines, honesty, trust and adab.",
+          "a": "Marked automatically; teacher checks written answers",
+          "mins": 15,
+          "model": "Teacher reads question 1 aloud."
+        },
+        {
+          "q": "Goals card (pupil PDF): two goals, one for worship and one for character, each with when, how I will check it and an ayah or hadith.",
+          "a": "Two clear, realistic goals with evidence",
+          "mins": 7
+        }
+      ],
+      "exit": [
+        {
+          "q": "A good goal is ...",
+          "a": "Small, regular and clear",
+          "mins": 1,
+          "options": [
+            "Small, regular and clear",
+            "Huge and vague"
+          ]
+        },
+        {
+          "q": "Back to our ponder: big once or small every day?",
+          "a": "Small every day, as the hadith says",
+          "mins": 1
+        }
+      ],
+      "homework": "Put your goals card somewhere you will see it every day this summer.",
+      "send": "SEND: quiz read aloud; goal card with choices. EAL: key word mat. Stretch: add a third goal for helping others.",
+      "resources": [
+        "Slides",
+        "Fiqh and akhlaq quiz (portal form, our own questions)",
+        "Pupil PDF: goals card"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "drops of water stone",
+          "alt": "Small drops wear down stone: steady deeds",
+          "for": "hook"
+        },
+        {
+          "find": "checklist tick chart",
+          "alt": "A goals chart",
+          "for": "teach:2"
+        },
+        {
+          "find": "calendar summer",
+          "alt": "The summer ahead",
           "for": "keywords"
         }
       ]

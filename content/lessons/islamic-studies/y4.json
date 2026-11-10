@@ -2,7 +2,7 @@
   "subject": "Islamic Studies",
   "year": "y4",
   "board": "TGA Islamic Studies scheme (aqeedah, fiqh, seerah, hadith, akhlaq)",
-  "source": "Adapted from TGA Drive RE/Islamic Studies folder (Al-Baseerah Salah quiz KS2: salah, nafs, sincerity; Edexcel International GCSE Islamic Studies SOW, Theme 1 (life of the Prophet ﷺ) to shape the seerah sequence); National Curriculum RE (KS2) | Spring 1 2027 (lessons 1, 4, 5, 6 upgraded, 13 new): Year 4 pack Islamic Studies Spring 1 (weeks 1 and 2 Autumn bridge: Islam, Iman, Ihsan and the six articles; weeks 3 to 5 the Makkan years condensed); hadith of Jibril (Muslim 8), the first revelation (Bukhari 3) and Mount Safa (Bukhari, Book of Tafsir) described; reliable children's seerah TO CONFIRM | Spring 2 2027 (lessons 14 to 19 new): Year 4 pack Islamic Studies Spring 2 weeks 1 to 6 (Bilal and Sumayyah; Abyssinia; Umar; the boycott; the Year of Sorrow; Isra and Mi'raj); seerah reports labelled; 2:153, 16:90, 41:44, 94:5-6, 2:155, 17:1; hadith from Bukhari and Muslim; lessons v3 | Summer 1 2027 (lessons 8 and 9 upgraded, 20 to 22 new): Year 4 pack Islamic Studies Summer 1 weeks 1, 2, 3, 4 and 6 (week 5 masjid etiquette dropped): the gift of salah, pillars 1 and 2, congregation, review with the practical check; the first ten days of Dhul-Hijjah noted before the Eid al-Adha half term; 4:103, 2:238; hadith on al-Fatihah, the closest in sujud, the man who rushed, congregation, rows and following the imam (Bukhari and Muslim, Muslim); pillars list TO CONFIRM against the school's fiqh text; lessons v3",
+  "source": "Adapted from TGA Drive RE/Islamic Studies folder (Al-Baseerah Salah quiz KS2: salah, nafs, sincerity; Edexcel International GCSE Islamic Studies SOW, Theme 1 (life of the Prophet ﷺ) to shape the seerah sequence); National Curriculum RE (KS2) | Spring 1 2027 (lessons 1, 4, 5, 6 upgraded, 13 new): Year 4 pack Islamic Studies Spring 1 (weeks 1 and 2 Autumn bridge: Islam, Iman, Ihsan and the six articles; weeks 3 to 5 the Makkan years condensed); hadith of Jibril (Muslim 8), the first revelation (Bukhari 3) and Mount Safa (Bukhari, Book of Tafsir) described; reliable children's seerah TO CONFIRM | Spring 2 2027 (lessons 14 to 19 new): Year 4 pack Islamic Studies Spring 2 weeks 1 to 6 (Bilal and Sumayyah; Abyssinia; Umar; the boycott; the Year of Sorrow; Isra and Mi'raj); seerah reports labelled; 2:153, 16:90, 41:44, 94:5-6, 2:155, 17:1; hadith from Bukhari and Muslim; lessons v3 | Summer 1 2027 (lessons 8 and 9 upgraded, 20 to 22 new): Year 4 pack Islamic Studies Summer 1 weeks 1, 2, 3, 4 and 6 (week 5 masjid etiquette dropped): the gift of salah, pillars 1 and 2, congregation, review with the practical check; the first ten days of Dhul-Hijjah noted before the Eid al-Adha half term; 4:103, 2:238; hadith on al-Fatihah, the closest in sujud, the man who rushed, congregation, rows and following the imam (Bukhari and Muslim, Muslim); pillars list TO CONFIRM against the school's fiqh text; lessons v3 | Summer 2 2027: Y4 pack weeks 1, 2, 3 and 6 (amanah, parents 17:23, neighbours 4:36, year check)",
   "lessons": [
     {
       "unit": "Spring 1: The Makkan years (1)",
@@ -1571,289 +1571,627 @@
       ]
     },
     {
-      "unit": "Unit 4: Akhlaq and hadith: trust, family and neighbours",
+      "unit": "Summer 2: Trust, family and neighbours",
       "n": 10,
-      "title": "Truthfulness and trustworthiness",
+      "title": "Amanah: trust, returning what we are given and honesty",
       "duration": 45,
+      "bigQuestion": "Your friend lends you a book and forgets about it. Is it still a trust? Why?",
       "objectives": [
-        "Explain the hadith of truthfulness",
-        "Explain amanah",
-        "Apply truthfulness and trust in school"
+        "To understand what amanah is and why keeping a trust is a sign of true faith"
       ],
+      "successCriteria": [
+        "All: say what amanah means and give an example",
+        "Most: explain the three signs of the hypocrite",
+        "Some: explain why our time, body and words are also amanah"
+      ],
+      "smsc": "Moral: honesty and reliability",
       "keywords": [
         {
-          "term": "amanah",
-          "def": "a trust"
+          "term": "amanah (أَمَانَة)",
+          "def": "a trust: something we must look after and return"
         },
         {
-          "term": "truthfulness",
-          "def": "always telling the truth"
+          "term": "Al-Amin (الأَمِين)",
+          "def": "the trustworthy one, a name of the Prophet ﷺ before Islam"
         },
         {
-          "term": "betray",
-          "def": "break someone's trust"
+          "term": "munafiq (مُنَافِق)",
+          "def": "a hypocrite: someone who shows good but hides bad"
+        },
+        {
+          "term": "honest",
+          "def": "telling the truth and not cheating"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your friend lends you a book and forgets about it. Is it still a trust? Why?",
+        "a": "Yes: a trust stays a trust even if the owner forgets; Allah knows."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, Allah commands you to render trusts to whom they are due' (an-Nisa' 4:58).",
+        "at": "start"
+      },
       "starter": [
-        "Who was Al-Amin?",
-        "What is a hadith?",
-        "What does honesty mean?",
-        "Why do we say Bismillah?"
+        {
+          "q": "Bismillah. In congregation, who leads the prayer?",
+          "a": "The imam",
+          "mins": 1,
+          "options": [
+            "The imam",
+            "The youngest"
+          ]
+        },
+        {
+          "q": "What is the first pillar of salah you learnt?",
+          "a": "Intention (niyyah) / standing with takbir",
+          "mins": 1
+        },
+        {
+          "q": "Which name did Makkah give the Prophet ﷺ?",
+          "a": "Al-Amin",
+          "mins": 1,
+          "options": [
+            "Al-Amin",
+            "As-Siddiq"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "The hadith",
+          "heading": "What is amanah?",
           "bullets": [
-            "Truthfulness leads to righteousness",
-            "Righteousness leads to Paradise",
-            "Lying leads to wrongdoing and the Fire"
+            "A trust we must look after",
+            "Things others lend or give us",
+            "Promises, secrets and jobs too"
           ],
-          "note": "Bismillah. Bukhari and Muslim (Ibn Mas'ud). Read the full hadith. A person keeps telling the truth until recorded with Allah as truthful. Ask: how might this change a life?"
+          "note": "Begin with Bismillah. Allah says: 'Allah commands you to render trusts to whom they are due' (an-Nisa' 4:58)."
         },
         {
-          "heading": "Amanah",
-          "bullets": [
-            "Keep secrets that should be kept",
-            "Return things borrowed",
-            "Do your job well"
-          ],
-          "note": "Qur'an 4:58: Allah commands you to render trusts to whom they are due. Relate to school, borrowing a book. Ask for examples."
+          "heading": "Signs of the hypocrite",
+          "bullets": [],
+          "note": "The Prophet ﷺ said the signs of the hypocrite are three (Bukhari and Muslim).",
+          "table": {
+            "head": [
+              "The hypocrite ...",
+              "A believer ..."
+            ],
+            "rows": [
+              [
+                "lies when he speaks",
+                "tells the truth"
+              ],
+              [
+                "breaks a promise",
+                "keeps his word"
+              ],
+              [
+                "betrays a trust",
+                "returns the trust"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Signs of hypocrisy",
+          "heading": "Amanah all around us",
           "bullets": [
-            "Lies when he speaks",
-            "Breaks promises",
-            "Betrays when trusted"
+            "Our body and health",
+            "Our time in lessons",
+            "Our parents' money and things"
           ],
-          "note": "Bukhari and Muslim: the signs of the hypocrite are three. Use carefully; it is a warning and an encouragement to improve. Do not label peers."
+          "diagram": {
+            "centre": "Amanah",
+            "items": [
+              "Borrowed things",
+              "Secrets kept safe",
+              "My body",
+              "My time",
+              "My jobs at home",
+              "Online passwords"
+            ]
+          }
         },
         {
-          "heading": "Restore trust",
+          "heading": "Hinge",
           "bullets": [
-            "Admit mistakes",
-            "Say sorry",
-            "Make it right"
+            "Vote in the Teams poll"
           ],
-          "note": "Scenario: you lost a friend's book. What do you do? Role-play. Praise honesty."
-        },
-        {
-          "heading": "Trust poster",
-          "bullets": [
-            "Draw trust",
-            "Write rules",
-            "Display"
-          ],
-          "note": "Pairs make a poster 'Be a person of amanah'. Display."
+          "check": {
+            "q": "You find £5 your sister dropped. Amanah means ...",
+            "options": [
+              "Give it back to her",
+              "Keep it because she forgot",
+              "Spend half"
+            ],
+            "answer": 0,
+            "why": "What belongs to someone must be returned."
+          }
         }
       ],
       "practice": [
-        "Finish: Truthfulness leads to ______.",
-        "Who was Al-Amin?",
-        "What does amanah mean?",
-        "What is Ihsan?"
+        {
+          "q": "Explain the three signs of the hypocrite and the opposite for a believer.",
+          "a": "Lies, breaks promises, betrays trusts; a believer is truthful, keeps promises and returns trusts",
+          "mins": 3,
+          "model": "Teacher reads row 1: 'The hypocrite lies when he speaks, so a believer tells the truth.' Pupils do rows 2 and 3."
+        },
+        {
+          "q": "Is a secret a friend tells you an amanah?",
+          "a": "Yes (unless it is about someone being harmed: tell a trusted adult)",
+          "mins": 2,
+          "options": [
+            "Yes",
+            "No"
+          ]
+        }
       ],
       "independent": [
-        "Write a scenario about trust and explain the best choice",
-        "Explain the hadith in a paragraph",
-        "Create a rules chart for being trustworthy"
+        {
+          "q": "Scenario cards on the pupil PDF: for each of five situations write what keeping the amanah looks like (a borrowed pencil, a message from a teacher, a game password, money from a parent for shopping, a friend's secret).",
+          "a": "Return the pencil; pass on the message exactly; never share the password; bring the change back; keep the secret unless someone is in danger",
+          "mins": 14,
+          "model": "Teacher does the pencil: 'Look after it, do not chew it, give it back at the end of the lesson.'"
+        },
+        {
+          "q": "Extend: how did the Prophet ﷺ show amanah even to people who were against him?",
+          "a": "On the Hijrah he left Ali to return the trusts people had left with him",
+          "mins": 3
+        }
       ],
       "exit": [
-        "What does amanah mean?",
-        "Name one sign of hypocrisy."
+        {
+          "q": "Amanah means ...",
+          "a": "A trust to look after and return",
+          "mins": 1,
+          "options": [
+            "A trust to look after and return",
+            "A gift to keep"
+          ]
+        },
+        {
+          "q": "Back to our ponder: is the forgotten book still a trust?",
+          "a": "Yes, Allah knows; return it",
+          "mins": 1
+        }
       ],
-      "homework": "Return or fix something borrowed this week and tell us what you learned.",
-      "send": "SEND/EAL: scenario cards with sentence frames. Stretch: link the hadith to Al-Amin."
+      "homework": "Find one thing at home that is an amanah to you and look after it all week.",
+      "send": "SEND: scenario cards with pictures. EAL: sentence frame 'Keeping the amanah means ...'. Stretch: explain the danger-secret exception in your own words.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: amanah scenario cards",
+        "School-approved seerah book for children (TO CONFIRM title with the Islamic Studies lead)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "library books stack",
+          "alt": "Borrowed books: a trust",
+          "for": "teach:1"
+        },
+        {
+          "find": "padlock key",
+          "alt": "A lock: keeping something safe",
+          "for": "keywords"
+        },
+        {
+          "find": "coin purse",
+          "alt": "Money given for shopping",
+          "for": "teach:3"
+        }
+      ]
     },
     {
-      "unit": "Unit 4: Akhlaq and hadith: trust, family and neighbours",
+      "unit": "Summer 2: Trust, family and neighbours",
       "n": 11,
-      "title": "Honouring parents and family",
+      "title": "Kindness to parents: what Allah commands",
       "duration": 45,
+      "bigQuestion": "Your parents did thousands of things for you before you could even say thank you. What were some of them?",
       "objectives": [
-        "Explain Allah's command to honour parents",
-        "Explain the hadith about the mother",
-        "Describe ways to show respect"
+        "To understand why Islam gives parents such a high place and how to show them kindness every day"
       ],
+      "successCriteria": [
+        "All: say what Allah commands about parents in Surah al-Isra'",
+        "Most: explain why the mother is named three times in the hadith",
+        "Some: plan practical kindness for both parents"
+      ],
+      "smsc": "Moral: gratitude and respect within the family",
       "keywords": [
         {
-          "term": "birr al-walidayn",
-          "def": "kindness to parents"
+          "term": "al-walidan (الوَالِدَانِ)",
+          "def": "the two parents"
         },
         {
-          "term": "uffin",
-          "def": "a word of impatience"
+          "term": "birr (بِرّ)",
+          "def": "goodness and kindness to parents"
         },
         {
-          "term": "mercy",
-          "def": "kindness and care"
+          "term": "uff (أُفّ)",
+          "def": "a small word of annoyance; Allah forbids even this to parents"
+        },
+        {
+          "term": "respect",
+          "def": "showing someone they matter"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your parents did thousands of things for you before you could even say thank you. What were some of them?",
+        "a": "Feeding, carrying, cleaning, teaching, staying up at night: we can never fully repay them."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And your Lord has decreed that you not worship except Him, and to parents, good treatment' (al-Isra' 17:23).",
+        "at": "start"
+      },
       "starter": [
-        "Who does Allah tell us to be good to?",
-        "What is a dua?",
-        "What is shukr?",
-        "What is akhlaq?"
+        {
+          "q": "Bismillah. Amanah means ...",
+          "a": "A trust to look after and return",
+          "mins": 1,
+          "options": [
+            "A trust to look after and return",
+            "A prayer"
+          ]
+        },
+        {
+          "q": "Name one sign of the hypocrite.",
+          "a": "Lies, breaks promises or betrays trusts",
+          "mins": 1
+        },
+        {
+          "q": "Your time in lessons is an amanah: true or false?",
+          "a": "True",
+          "mins": 1,
+          "options": [
+            "True",
+            "False"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "Command in the Qur'an",
+          "heading": "Allah's command",
           "bullets": [
-            "Worship Allah alone and be good to parents",
-            "17:23",
-            "Do not say 'uff' to them"
+            "Worship Allah alone",
+            "Be good to your parents",
+            "Do not even say 'uff' to them"
           ],
-          "note": "Bismillah. Qur'an 17:23-24: your Lord has decreed that you worship none but Him and be good to parents; if one or both reach old age do not say 'uff' or scold. Speak a noble word. Explain 'uff' as the smallest sign of impatience."
+          "note": "Begin with Bismillah. Allah joins worship of Him with kindness to parents (al-Isra' 17:23).",
+          "quote": {
+            "text": "وَقَضَىٰ رَبُّكَ أَلَّا تَعْبُدُوا إِلَّا إِيَّاهُ وَبِالْوَالِدَيْنِ إِحْسَانًا",
+            "source": "al-Isra' 17:23"
+          }
         },
         {
-          "heading": "Mercy",
+          "heading": "Your mother, your mother, your mother",
           "bullets": [
-            "Lower the wing of humility",
-            "Say: Rabbi irhamhuma",
-            "as they raised me when I was small"
+            "A man asked who deserves his best company",
+            "'Your mother' three times",
+            "'Then your father'"
           ],
-          "note": "17:24. Teach the dua: Rabbir hamhuma kama rabbayani saghira. Link to Reception where children first heard it. Ask what parents do for us."
+          "note": "The hadith is in Bukhari and Muslim. Ask: why the mother three times? (pregnancy, birth, caring)."
         },
         {
-          "heading": "Who deserves my company most?",
-          "bullets": [
-            "A man asked: who is most deserving?",
-            "Prophet ﷺ: your mother, your mother, your mother",
-            "Then your father"
-          ],
-          "note": "Bukhari and Muslim (Abu Hurairah). Ask: what does the repetition teach? Be sensitive to different family situations: speak about 'those who raise you'."
+          "heading": "Kind words and kind actions",
+          "bullets": [],
+          "note": "Pupils suggest examples.",
+          "compare": {
+            "left": {
+              "title": "Kind words",
+              "points": [
+                "Speak gently",
+                "Say thank you",
+                "Make du'a for them"
+              ]
+            },
+            "right": {
+              "title": "Kind actions",
+              "points": [
+                "Help without being asked",
+                "Come when called",
+                "Look after younger siblings"
+              ]
+            },
+            "label": "and"
+          }
         },
         {
-          "heading": "Obedience and limits",
+          "heading": "Hinge",
           "bullets": [
-            "Obey in what is good",
-            "No obedience in disobeying Allah",
-            "Always be kind"
+            "Vote in the Teams poll"
           ],
-          "note": "Qur'an 31:15: if they strive to make you associate with Me, do not obey, but accompany them in this world with kindness. Mention gently for older children's understanding."
-        },
-        {
-          "heading": "Acts of kindness",
-          "bullets": [
-            "Help at home",
-            "Speak gently",
-            "Make dua"
-          ],
-          "note": "Make a family kindness chart. Share at least one achievable action. Praise sincere pledges."
+          "check": {
+            "q": "Mum asks you to tidy up during your game. Birr means ...",
+            "options": [
+              "Say 'yes, Mum' and tidy up",
+              "Sigh and say 'uff'",
+              "Pretend not to hear"
+            ],
+            "answer": 0,
+            "why": "Even 'uff' is forbidden in 17:23."
+          }
         }
       ],
       "practice": [
-        "What is the dua for parents?",
-        "What does uff mean?",
-        "Who is most deserving of kindness?",
-        "What is akhlaq?"
+        {
+          "q": "Why is the mother named three times?",
+          "a": "She carried, gave birth to and nursed the child: three great hardships",
+          "mins": 3,
+          "model": "Teacher counts: 'One, she carried me. Two, she gave birth to me. Three, she fed and cared for me. So she is named three times.'"
+        },
+        {
+          "q": "What is the smallest word of annoyance Allah forbids?",
+          "a": "Uff",
+          "mins": 1,
+          "options": [
+            "Uff",
+            "No"
+          ]
+        }
       ],
       "independent": [
-        "Write a thank-you letter to a parent or carer",
-        "List five ways to honour parents",
-        "Explain the hadith in your own words"
+        {
+          "q": "Write a birr plan on the pupil PDF: three kind words and three kind actions for each parent (or the adults who care for you), and the du'a رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا (17:24) copied with its meaning.",
+          "a": "Six realistic ideas per parent and the du'a: 'My Lord, have mercy on them as they brought me up when I was small'",
+          "mins": 14,
+          "model": "Teacher fills one: 'Kind action for Mum: lay the table before Maghrib without being asked.'"
+        },
+        {
+          "q": "Extend: how can you be kind to parents after they have died?",
+          "a": "Du'a for them, sadaqah for them, keeping ties with their friends and family",
+          "mins": 2
+        }
       ],
       "exit": [
-        "What does Allah say about parents?",
-        "What does 'uff' teach us?"
+        {
+          "q": "Which ayah commands kindness to parents?",
+          "a": "Al-Isra' 17:23",
+          "mins": 1,
+          "options": [
+            "Al-Isra' 17:23",
+            "Al-Ikhlas 112:1"
+          ]
+        },
+        {
+          "q": "Back to our ponder: can we ever fully repay our parents?",
+          "a": "No, but we can show birr and make du'a for them",
+          "mins": 1
+        }
       ],
-      "homework": "Do three kind acts for parents or carers this week and record them.",
-      "send": "SEND/EAL: dua card with transliteration. Stretch: explain 31:15."
+      "homework": "Do one kind action from your plan each day and say the du'a for your parents after salah.",
+      "send": "SEND: picture planner. EAL: phrase bank of kind words. Stretch: memorise 17:23-24 in Arabic with the meaning.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: birr plan and du'a",
+        "Qur'an with translation (al-Isra' 17:23-24)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "family dinner table set plates",
+          "alt": "A table laid for the family",
+          "for": "teach:3"
+        },
+        {
+          "find": "cup of tea served tray",
+          "alt": "Serving parents a drink",
+          "for": "keywords"
+        },
+        {
+          "find": "house front door home",
+          "alt": "Home",
+          "for": "hook"
+        }
+      ]
     },
     {
-      "unit": "Unit 4: Akhlaq and hadith: trust, family and neighbours",
+      "unit": "Summer 2: Trust, family and neighbours",
       "n": 12,
-      "title": "Neighbours, guests and kind speech",
+      "title": "The rights of neighbours",
       "duration": 45,
+      "bigQuestion": "Is the person who lives at the far end of your street your neighbour? What about the person next to you on a train?",
       "objectives": [
-        "State the hadith on neighbours, guests and speech",
-        "Describe how to honour guests",
-        "Describe how to treat neighbours well"
+        "To understand who counts as a neighbour in Islam and what rights neighbours have"
       ],
+      "successCriteria": [
+        "All: say what an-Nisa' 4:36 teaches about neighbours",
+        "Most: describe three rights of a neighbour",
+        "Some: explain why harming a neighbour damages a person's iman"
+      ],
+      "smsc": "Social: being a good member of the local community",
       "keywords": [
         {
-          "term": "neighbour",
-          "def": "person who lives or sits close to you"
+          "term": "jar (جَار)",
+          "def": "neighbour"
         },
         {
-          "term": "guest",
-          "def": "one who visits"
+          "term": "haqq (حَقّ)",
+          "def": "a right someone is owed"
         },
         {
-          "term": "hospitality",
-          "def": "looking after guests"
+          "term": "near neighbour",
+          "def": "someone living right next to us"
+        },
+        {
+          "term": "far neighbour",
+          "def": "someone further down the street or a stranger nearby"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is the person who lives at the far end of your street your neighbour? What about the person next to you on a train?",
+        "a": "In Islam, yes: the near neighbour, the far neighbour and even the companion at your side have rights."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Worship Allah and associate nothing with Him, and to parents do good ... and the near neighbour, the neighbour farther away' (an-Nisa' 4:36).",
+        "at": "start"
+      },
       "starter": [
-        "What is amanah?",
-        "What does uff mean?",
-        "What do we say when we meet?",
-        "Name a kind word."
+        {
+          "q": "Bismillah. 17:23 commands kindness to ...",
+          "a": "Parents",
+          "mins": 1,
+          "options": [
+            "Parents",
+            "Teachers"
+          ]
+        },
+        {
+          "q": "Who is named three times in the hadith about good company?",
+          "a": "The mother",
+          "mins": 1,
+          "options": [
+            "The mother",
+            "The father"
+          ]
+        },
+        {
+          "q": "Give one kind action for a parent.",
+          "a": "For example: help without being asked",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "The hadith",
+          "heading": "Neighbours in the Qur'an",
           "bullets": [
-            "Whoever believes in Allah and the Last Day",
-            "should speak good or be silent",
-            "honour his neighbour and guest"
+            "The near neighbour",
+            "The far neighbour",
+            "The companion at your side"
           ],
-          "note": "Bismillah. Bukhari and Muslim (Abu Hurairah). The Prophet ﷺ said these as signs of faith. Ask: how does faith show in daily life?"
+          "note": "Begin with Bismillah. Allah lists them in an-Nisa' 4:36 after worship and parents.",
+          "quote": {
+            "text": "Worship Allah and associate nothing with Him, and to parents do good, and to relatives, orphans, the needy, the near neighbour, the neighbour farther away, the companion at your side ...",
+            "source": "an-Nisa' 4:36"
+          }
         },
         {
-          "heading": "Neighbours",
+          "heading": "Rights of a neighbour",
           "bullets": [
-            "Jibril kept advising about neighbours",
-            "Share food",
-            "Do not harm them"
+            "Do not harm them",
+            "Share and give gifts",
+            "Help in need; visit when ill"
           ],
-          "note": "The Prophet ﷺ said Jibril kept advising him about the neighbour until I thought he would make him an heir (Bukhari and Muslim, Aisha). Also: share your food (Muslim, Abu Dharr). Discuss how to be a good neighbour as a child."
+          "note": "The Prophet ﷺ said: 'Whoever believes in Allah and the Last Day, let him be generous to his neighbour' (Bukhari and Muslim).",
+          "diagram": {
+            "centre": "My neighbour's rights",
+            "items": [
+              "Safety from harm",
+              "Salam",
+              "Gifts and food",
+              "Help in need",
+              "Quiet at night",
+              "Du'a"
+            ]
+          }
         },
         {
-          "heading": "Guests",
+          "heading": "Harm cancels good",
           "bullets": [
-            "Welcome them",
-            "Offer food and water",
-            "Be cheerful"
+            "Harming a neighbour is serious",
+            "Iman shows in how we treat them",
+            "Noise, rubbish and parking count too"
           ],
-          "note": "Welcome guests with a smile and salam. Teach manners as guest too: do not stay too long and be grateful. Role-play."
-        },
-        {
-          "heading": "Kind speech",
-          "bullets": [
-            "Good words are charity",
-            "Avoid backbiting",
-            "Say what is helpful"
-          ],
-          "note": "The Prophet ﷺ said a good word is charity (Bukhari and Muslim). Revisit Year 2 hadith. Ask: what is the difference between speaking good and silence?"
-        },
-        {
-          "heading": "Community project",
-          "bullets": [
-            "Plan a kind act",
-            "Write a card",
-            "Share with neighbours"
-          ],
-          "note": "Plan a small act for a neighbour, e.g. a card. Check safety rules and parental supervision."
+          "check": {
+            "q": "Which harms a neighbour?",
+            "options": [
+              "Banging a ball against their wall late at night",
+              "Saying salam",
+              "Taking in their parcel"
+            ],
+            "answer": 0,
+            "why": "Noise at night causes harm."
+          }
         }
       ],
       "practice": [
-        "Finish: speak good or be ______.",
-        "Who are neighbours?",
-        "Name a manner of a good guest.",
-        "Why is a smile charity?"
+        {
+          "q": "Describe three rights of a neighbour.",
+          "a": "Not to be harmed; to be given gifts or food; to be helped in need",
+          "mins": 3,
+          "model": "Teacher: 'Right one: they should be safe from my harm. That means I keep noise down and keep the path clear.'"
+        },
+        {
+          "q": "Is the companion at your side on a bus a kind of neighbour in 4:36?",
+          "a": "Yes",
+          "mins": 1,
+          "options": [
+            "Yes",
+            "No"
+          ]
+        }
       ],
       "independent": [
-        "Plan how to welcome a guest in your home",
-        "Write a note to a neighbour",
-        "Compare the two parts of the hadith"
+        {
+          "q": "Good neighbour charter (pupil PDF): write six rules for being a good neighbour, each with a reason from 4:36 or the hadith.",
+          "a": "Six rules with reasons, for example: 'Keep noise down after 'Isha' because a neighbour must be safe from harm'",
+          "mins": 15,
+          "model": "Teacher writes rule 1: 'Say salam when I see my neighbour, because spreading salam spreads love.'"
+        },
+        {
+          "q": "Extend: plan with a parent one way to help an elderly neighbour.",
+          "a": "For example: take in their bins with my dad",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Who deserves honour according to the hadith?",
-        "What does Jibril's advice about neighbours teach?"
+        {
+          "q": "Who counts as a neighbour in 4:36?",
+          "a": "Near, far and the companion at your side",
+          "mins": 1,
+          "options": [
+            "Near, far and the companion at your side",
+            "Only next door"
+          ]
+        },
+        {
+          "q": "Back to our ponder: is the far-end neighbour your neighbour?",
+          "a": "Yes, the far neighbour has rights too",
+          "mins": 1
+        }
       ],
-      "homework": "Greet a neighbour with salam and do a small kindness (with an adult).",
-      "send": "SEND/EAL: scenario cards with images. Stretch: write a short speech on hospitality in Islam."
+      "homework": "Share your charter with your family and do one rule this week.",
+      "send": "SEND: rules with picture prompts. EAL: frame 'A good neighbour ... because ...'. Stretch: explain 'generous to his neighbour' with an example.",
+      "resources": [
+        "Slides",
+        "Pupil PDF worksheet: good neighbour charter",
+        "Qur'an with translation (an-Nisa' 4:36)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "suburban street houses",
+          "alt": "A street of neighbours",
+          "for": "hook"
+        },
+        {
+          "find": "parcel on doorstep",
+          "alt": "Taking in a neighbour's parcel",
+          "for": "teach:2"
+        },
+        {
+          "find": "bus seats empty",
+          "alt": "The companion at your side",
+          "for": "teach:1"
+        }
+      ]
     },
     {
       "unit": "Spring 1: The Makkan years (1)",
@@ -3977,6 +4315,195 @@
           "find": "checklist clipboard",
           "alt": "A checklist",
           "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Trust, family and neighbours",
+      "n": 23,
+      "title": "Review of the year and end-of-year Islamic Studies check",
+      "duration": 45,
+      "bigQuestion": "If you could teach a younger child just one lesson from this year, which would it be?",
+      "objectives": [
+        "To understand how the year's topics fit together and show my learning in the end-of-year check"
+      ],
+      "successCriteria": [
+        "All: answer questions from every half term",
+        "Most: explain Islam, Iman and Ihsan with an example",
+        "Some: link the Makkan years to patience and trust in my own life"
+      ],
+      "smsc": "Spiritual: reflecting on a year of learning",
+      "keywords": [
+        {
+          "term": "Islam (إِسْلَام)",
+          "def": "submitting to Allah: the actions"
+        },
+        {
+          "term": "Iman (إِيمَان)",
+          "def": "belief in the heart"
+        },
+        {
+          "term": "Ihsan (إِحْسَان)",
+          "def": "worshipping Allah as if you see Him"
+        },
+        {
+          "term": "review",
+          "def": "looking back to remember"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you could teach a younger child just one lesson from this year, which would it be?",
+        "a": "Answers vary: the hadith of Jibril, patience in Makkah, the pillars of salah, amanah, kindness to parents."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And say: My Lord, increase me in knowledge' (Ta-Ha 20:114).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 4:36 mentions the near and the far ...",
+          "a": "Neighbour",
+          "mins": 1,
+          "options": [
+            "Neighbour",
+            "Relative"
+          ]
+        },
+        {
+          "q": "Which du'a do we say for parents?",
+          "a": "رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا",
+          "mins": 1
+        },
+        {
+          "q": "Amanah means ...",
+          "a": "A trust",
+          "mins": 1,
+          "options": [
+            "A trust",
+            "A prayer"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Our year",
+          "bullets": [],
+          "note": "Begin with Bismillah. Pupils add one fact to each stage.",
+          "timeline": [
+            {
+              "label": "Spring 1",
+              "text": "Islam, Iman, Ihsan; the Makkan years"
+            },
+            {
+              "label": "Spring 2",
+              "text": "Opposition, Abyssinia, Isra and Mi'raj"
+            },
+            {
+              "label": "Summer 1",
+              "text": "The pillars of salah, congregation"
+            },
+            {
+              "label": "Summer 2",
+              "text": "Trust, parents, neighbours"
+            }
+          ]
+        },
+        {
+          "heading": "The hadith of Jibril",
+          "bullets": [
+            "Islam: the five pillars",
+            "Iman: the six beliefs",
+            "Ihsan: worship as if you see Allah"
+          ],
+          "note": "Recorded by Muslim.",
+          "check": {
+            "q": "Ihsan means ...",
+            "options": [
+              "Worshipping Allah as if you see Him",
+              "Giving zakah",
+              "Believing in angels"
+            ],
+            "answer": 0,
+            "why": "From the hadith of Jibril."
+          }
+        },
+        {
+          "heading": "Check rules",
+          "bullets": [
+            "Camera on, work alone",
+            "Read twice, then answer",
+            "Full sentences for written questions"
+          ],
+          "note": "The check is a portal form; teacher invigilates."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain Islam, Iman and Ihsan with one example each.",
+          "a": "Islam: praying; Iman: believing in angels; Ihsan: praying carefully because Allah sees me",
+          "mins": 3,
+          "model": "Teacher does Islam: 'Islam is the actions, like fasting in Ramadan.'"
+        }
+      ],
+      "independent": [
+        {
+          "q": "End-of-year Islamic Studies check (portal form, our own questions): 12 short questions and 2 written answers across the year.",
+          "a": "Marked by the teacher; results shared in the report",
+          "mins": 20,
+          "model": "Teacher reads question 1 and shows how to answer a written question in two sentences."
+        },
+        {
+          "q": "Extend: write which topic helped you most this year and why.",
+          "a": "Pupils' own",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which half term did we learn about the boycott?",
+          "a": "Spring 2",
+          "mins": 1,
+          "options": [
+            "Spring 2",
+            "Summer 1"
+          ]
+        },
+        {
+          "q": "Back to our ponder: which lesson would you teach a younger child?",
+          "a": "Pupils' own",
+          "mins": 1
+        }
+      ],
+      "homework": "Tell your family about your favourite topic of the year and teach them one hadith.",
+      "send": "SEND: check read aloud; reduced number of questions. EAL: key word mat. Stretch: extended answers with a hadith or ayah.",
+      "resources": [
+        "Slides",
+        "End-of-year Islamic Studies check (portal form, our own questions)",
+        "Pupil PDF: year review page"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "calendar year planner",
+          "alt": "Our year",
+          "for": "teach:1"
+        },
+        {
+          "find": "Kaaba Masjid al-Haram",
+          "alt": "The Ka'bah in Makkah",
+          "for": "keywords"
+        },
+        {
+          "find": "prayer rug",
+          "alt": "Salah",
+          "for": "teach:2"
         }
       ]
     }

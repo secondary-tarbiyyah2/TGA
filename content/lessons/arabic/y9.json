@@ -2,7 +2,7 @@
   "subject": "Arabic",
   "year": "y9",
   "board": "TGA Arabic scheme (KS3)",
-  "source": "Drive: Curriculum/Arabic folder and Schemes of work/Arabic (GCSE-Arabic-2017 Scheme of Work, Pearson, for KS3-to-GCSE progression: school, daily life, plans, shopping); continuity from TGA Y7-Y8 Arabic files | Spring 1 2027 (lessons 1, 2, 4, 13 to 19): founding-year bridge (11 Jan describing people and participles; 18 Jan my town, directions and weather with the future) and Spring 1 weeks 1 to 3 (school subjects; opinions and connectives; my school day in three tenses, informal email and unit quiz), order from the Tarbiyyah Secondary KS3 Arabic scheme of work and Arabic Curriculum Intent; lessons v3 | Spring 2 2027 (lesson 3 upgraded, 20 to 29 new): Year 9 pack Arabic Spring 2 Transport weeks 1 to 6 (means of transport with 16:8; بِـ and journeys; adjectives and non-human plural agreement; a past journey; comparatives and preference; pros and cons with 7:56; a writing piece; sound and broken plurals; plurals with numbers; review and unit quiz); our own texts; lessons v3 | Summer 1 2027 (lessons 10 and 11 upgraded, 30 to 37 new): Year 9 pack Arabic Summer 1 weeks 1 to 5 Clothes (items; colour agreement; seasons and weather; what we wear with reasons and modest dress; prices 20 to 100, portal 10; sizes and colours; plurals of clothes; the imperative in a shop; comparing, portal 11; role play and unit quiz); week 6 (shop review) dropped; full harakat; our own dialogues; lessons v3",
+  "source": "Drive: Curriculum/Arabic folder and Schemes of work/Arabic (GCSE-Arabic-2017 Scheme of Work, Pearson, for KS3-to-GCSE progression: school, daily life, plans, shopping); continuity from TGA Y7-Y8 Arabic files | Spring 1 2027 (lessons 1, 2, 4, 13 to 19): founding-year bridge (11 Jan describing people and participles; 18 Jan my town, directions and weather with the future) and Spring 1 weeks 1 to 3 (school subjects; opinions and connectives; my school day in three tenses, informal email and unit quiz), order from the Tarbiyyah Secondary KS3 Arabic scheme of work and Arabic Curriculum Intent; lessons v3 | Spring 2 2027 (lesson 3 upgraded, 20 to 29 new): Year 9 pack Arabic Spring 2 Transport weeks 1 to 6 (means of transport with 16:8; بِـ and journeys; adjectives and non-human plural agreement; a past journey; comparatives and preference; pros and cons with 7:56; a writing piece; sound and broken plurals; plurals with numbers; review and unit quiz); our own texts; lessons v3 | Summer 1 2027 (lessons 10 and 11 upgraded, 30 to 37 new): Year 9 pack Arabic Summer 1 weeks 1 to 5 Clothes (items; colour agreement; seasons and weather; what we wear with reasons and modest dress; prices 20 to 100, portal 10; sizes and colours; plurals of clothes; the imperative in a shop; comparing, portal 11; role play and unit quiz); week 6 (shop review) dropped; full harakat; our own dialogues; lessons v3 | Summer 2 2027: Y9 pack rows 1 to 4 (meals, measures, healthy eating, four-skills assessment and feedback, GCSE introduction)",
   "lessons": [
     {
       "unit": "Spring 1: At school",
@@ -1356,116 +1356,201 @@
       "send": "SEND: paragraph frame with the first sentence of each part. EAL: model paragraph with audio. Stretch: write a second paragraph on someone else's plans using third person."
     },
     {
-      "unit": "Unit 3: Food and shopping",
+      "unit": "Summer 2: Food; introduction to the GCSE course",
       "n": 9,
-      "title": "Food and drink: ordering in a restaurant",
+      "title": "Types of food and meals: الوَجَبَاتُ",
       "duration": 50,
+      "bigQuestion": "Allah tells us to eat from the good things He provides and to be grateful. How does gratitude change the way we eat?",
       "objectives": [
-        "Name common foods and drinks",
-        "Order food politely in a restaurant",
-        "Ask whether a dish is halal"
+        "To understand and use vocabulary for types of food and meals, and describe what I eat"
       ],
+      "successCriteria": [
+        "All: name the three meals and ten foods",
+        "Most: describe my meals with times and frequency",
+        "Some: compare meals now and in Ramadan"
+      ],
+      "smsc": "Moral: gratitude for provision",
       "keywords": [
         {
-          "term": "طَعَامٌ",
-          "def": "food (ṭaʿām)"
+          "term": "وَجْبَةٌ (wajbah)",
+          "def": "a meal"
         },
         {
-          "term": "شَرَابٌ",
-          "def": "drink (sharāb)"
+          "term": "الفُطُورُ (al-futur)",
+          "def": "breakfast"
         },
         {
-          "term": "دَجَاجٌ",
-          "def": "chicken (dajāj)"
+          "term": "الغَدَاءُ (al-ghada')",
+          "def": "lunch"
         },
         {
-          "term": "أَرُزٌّ",
-          "def": "rice (aruzz)"
+          "term": "العَشَاءُ (al-'asha')",
+          "def": "dinner"
         },
         {
-          "term": "عَصِيرٌ",
-          "def": "juice (ʿaṣīr)"
+          "term": "خُضَارٌ (khudar)",
+          "def": "vegetables"
         },
         {
-          "term": "مِنْ فَضْلِكَ",
-          "def": "please (min faḍlika)"
+          "term": "لَحْمٌ (lahm)",
+          "def": "meat"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Allah tells us to eat from the good things He provides and to be grateful. How does gratitude change the way we eat?",
+        "a": "We waste less, eat what is good for us and remember the One who provides (2:172)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'O you who have believed, eat from the good things which We have provided for you and be grateful to Allah' (al-Baqarah 2:172).",
+        "at": "start"
+      },
       "starter": [
-        "Make a polite invitation: 'Do you want to visit us?'",
-        "Decline politely: 'sorry, I have a lesson'.",
-        "Give the Arabic for 'tomorrow' and 'next week'."
+        {
+          "q": "Bismillah. 'The blue shirt' is ...",
+          "a": "القَمِيصُ الأَزْرَقُ",
+          "mins": 1
+        },
+        {
+          "q": "أَرِنِي means ...",
+          "a": "Show me",
+          "mins": 1,
+          "options": [
+            "Show me",
+            "Give me"
+          ]
+        },
+        {
+          "q": "'Cheaper' is ...",
+          "a": "أَرْخَصُ",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Foods",
-          "bullets": [
-            "خُبْزٌ - khubzun - bread",
-            "أَرُزٌّ - aruzzun - rice",
-            "دَجَاجٌ - dajājun - chicken",
-            "لَحْمٌ - laḥmun - meat",
-            "سَمَكٌ - samakun - fish"
-          ],
-          "note": "Begin with bismillah. Show pictures of foods. Qur'an 2:168 tells us to eat what is lawful and good. Ask which foods are most common in pupils' homes. Teach the vowels. Notice the shadda on أَرُزٌّ."
+          "heading": "Foods by group",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "table": {
+            "head": [
+              "Group",
+              "Examples"
+            ],
+            "rows": [
+              [
+                "لُحُومٌ (meat)",
+                "دَجَاجٌ، لَحْمٌ، سَمَكٌ"
+              ],
+              [
+                "خُضَارٌ (vegetables)",
+                "طَمَاطِمُ، جَزَرٌ، بَصَلٌ"
+              ],
+              [
+                "فَوَاكِهُ (fruit)",
+                "تُفَّاحٌ، مَوْزٌ، عِنَبٌ"
+              ],
+              [
+                "حُبُوبٌ (grains)",
+                "خُبْزٌ، أَرُزٌّ، مَعْكَرُونَةٌ"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Drinks and fruit",
+          "heading": "My meals",
           "bullets": [
-            "مَاءٌ - mā'un - water",
-            "عَصِيرٌ - ʿaṣīrun - juice",
-            "شَايٌ - shāyun - tea",
-            "حَلِيبٌ - ḥalībun - milk",
-            "فَاكِهَةٌ - fākihatun - fruit"
+            "أَتَنَاوَلُ الفُطُورَ فِي السَّاعَةِ السَّابِعَةِ",
+            "عَادَةً آكُلُ ... وَأَشْرَبُ ...",
+            "أَتَنَاوَلُ (I have a meal) is more formal than آكُلُ"
           ],
-          "note": "Practise by asking: مَاذَا تَشْرَبُ؟ (what do you drink?). Reply with أَشْرَبُ ... Note that in a restaurant we usually say أُرِيدُ (I want). Pupils practise reading a menu."
+          "check": {
+            "q": "أَتَنَاوَلُ الغَدَاءَ means ...",
+            "options": [
+              "I have lunch",
+              "I cook dinner",
+              "I like breakfast"
+            ],
+            "answer": 0,
+            "why": "أَتَنَاوَلُ = I have / take."
+          }
         },
         {
-          "heading": "Ordering",
+          "heading": "In Ramadan",
           "bullets": [
-            "أُرِيدُ دَجَاجًا وَأَرُزًّا - I want chicken and rice",
-            "مِنْ فَضْلِكَ - please",
-            "هَلْ هَذَا حَلَالٌ؟ - is this halal?",
-            "الْحِسَابُ مِنْ فَضْلِكَ - the bill, please"
-          ],
-          "note": "Model the order with the object in accusative: دَجَاجًا وَأَرُزًّا (tanween fatḥ). Ask pupils to say an order. Emphasise saying Bismillah before eating and Alhamdulillah after. Check that pupils do not translate 'please' word for word."
-        },
-        {
-          "heading": "A dialogue",
-          "bullets": [
-            "- مَاذَا تُرِيدُ؟ - what would you like?",
-            "- أُرِيدُ سَمَكًا وَخُبْزًا مِنْ فَضْلِكَ",
-            "- وَمَاذَا تَشْرَبُ؟ - and what will you drink?",
-            "- عَصِيرًا مِنْ فَضْلِكَ"
-          ],
-          "note": "Read as a class, then in pairs with new foods. Practise politeness. Pupils may include شُكْرًا (thank you) and تَفَضَّلْ (here you are). Collect and perform one dialogue."
-        },
-        {
-          "heading": "Good manners at the table",
-          "bullets": [
-            "بِسْمِ اللَّهِ - bismillah - in the name of Allah",
-            "كُلْ بِيَدِكَ الْيُمْنَى - kul bi-yadika l-yumnā - eat with your right hand",
-            "الْحَمْدُ لِلَّهِ - alhamdulillah - thanks to Allah"
-          ],
-          "note": "The Prophet (peace be upon him) taught to say Bismillah, eat with the right hand and eat from what is near (Bukhari and Muslim). Ask: what manners do we use at home? Link to respect for those who prepared the food."
+            "السَّحُورُ قَبْلَ الفَجْرِ",
+            "الإِفْطَارُ عِنْدَ المَغْرِبِ",
+            "Compare: فِي رَمَضَانَ ... لٰكِنْ فِي الأَيَّامِ العَادِيَّةِ ..."
+          ]
         }
       ],
       "practice": [
-        "Order a meal: chicken, rice and juice.",
-        "Ask if the dish is halal.",
-        "Translate: 'The bill, please'.",
-        "Say what you want to drink."
+        {
+          "q": "Say: I usually have breakfast at seven; I eat bread and cheese.",
+          "a": "عَادَةً أَتَنَاوَلُ الفُطُورَ فِي السَّاعَةِ السَّابِعَةِ. آكُلُ الخُبْزَ وَالجُبْنَ.",
+          "mins": 2,
+          "model": "Teacher builds it: frequency, verb, meal, time, then the foods."
+        }
       ],
       "independent": [
-        "Write a dialogue between a customer and a waiter with eight lines.",
-        "Design a menu with eight items and write the Arabic names.",
-        "Perform your dialogue with a partner."
+        {
+          "q": "Write about your meals in the portal response box (60 to 80 words): three meals with times, foods and frequency, and one comparison with Ramadan.",
+          "a": "Accurate sentences with times, food words and a comparison",
+          "mins": 18,
+          "model": "Teacher writes the breakfast sentence and the Ramadan comparison."
+        },
+        {
+          "q": "Reading: a short text on the pupil PDF about a family's meals; answer four questions.",
+          "a": "Answers on the sheet",
+          "mins": 5
+        }
       ],
       "exit": [
-        "Write 'I want fish and bread, please'.",
-        "What do we say before and after eating?"
+        {
+          "q": "وَجْبَةٌ means ...",
+          "a": "A meal",
+          "mins": 1,
+          "options": [
+            "A meal",
+            "Vegetables"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what would change?",
+          "a": "Health and less waste",
+          "mins": 2
+        }
       ],
-      "homework": "Write a menu for a halal restaurant with at least 10 Arabic items and two prices.",
-      "send": "SEND: menu cards with images. EAL: bilingual food list. Stretch: use هَلْ يُوجَدُ ... ؟ (is there ...?)."
+      "homework": "Learn the food groups table.",
+      "send": "SEND: food picture mat. EAL: writing frame. Stretch: use the broken plurals فَوَاكِهُ and وَجَبَاتٌ.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Summer 2",
+        "Pupil PDF: meals reading text and questions"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "vegetables market stall",
+          "alt": "Vegetables: خُضَارٌ",
+          "for": "teach:1"
+        },
+        {
+          "find": "bread cheese breakfast",
+          "alt": "Breakfast",
+          "for": "teach:2"
+        },
+        {
+          "find": "dates iftar table",
+          "alt": "Iftar",
+          "for": "teach:3"
+        }
+      ]
     },
     {
       "unit": "Summer 1: Clothes",
@@ -1931,109 +2016,194 @@
       ]
     },
     {
-      "unit": "Unit 3: Food and shopping",
+      "unit": "Summer 2: Food; introduction to the GCSE course",
       "n": 12,
-      "title": "Review and assessment: speaking and writing",
+      "title": "Assessment feedback and correction",
       "duration": 50,
+      "bigQuestion": "What is the difference between a mistake and a habit?",
       "objectives": [
-        "Show what you have learnt in Year 9 Phase 1",
-        "Complete a speaking task and a writing task",
-        "Set targets for the next unit"
+        "To understand my four-skills assessment results and correct key errors before GCSE"
       ],
+      "successCriteria": [
+        "All: record my marks by skill",
+        "Most: correct errors in tense and agreement",
+        "Some: upgrade my email with more complex structures"
+      ],
+      "smsc": "Moral: perseverance",
       "keywords": [
         {
-          "term": "مُحَادَثَةٌ",
-          "def": "conversation (muḥādatha)"
+          "term": "تَصْحِيحٌ (tashih)",
+          "def": "correction"
         },
         {
-          "term": "اِخْتِبَارٌ",
-          "def": "test (ikhtibār)"
+          "term": "الأَزْمِنَةُ (al-azminah)",
+          "def": "the tenses"
         },
         {
-          "term": "كِتَابَةٌ",
-          "def": "writing (kitāba)"
+          "term": "تَرَاكِيبُ (tarakib)",
+          "def": "structures"
         },
         {
-          "term": "مُرَاجَعَةٌ",
-          "def": "review"
-        },
-        {
-          "term": "هَدَفٌ",
-          "def": "target"
-        },
-        {
-          "term": "تَحَسُّنٌ",
-          "def": "improvement"
+          "term": "هَدَفٌ (hadaf)",
+          "def": "a target"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "What is the difference between a mistake and a habit?",
+        "a": "A mistake happens once; a habit repeats until it is corrected on purpose."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, Allah will not change the condition of a people until they change what is in themselves' (ar-Ra'd 13:11).",
+        "at": "start"
+      },
       "starter": [
-        "Say one opinion about a school subject with a reason.",
-        "Say one future plan with in shā' Allāh.",
-        "Say the price of an item in Arabic."
+        {
+          "q": "Bismillah. صِحِّيٌّ means ...",
+          "a": "Healthy",
+          "mins": 1
+        },
+        {
+          "q": "'Yesterday I went' is ...",
+          "a": "أَمْسِ ذَهَبْتُ",
+          "mins": 1
+        },
+        {
+          "q": "'I will go' is ...",
+          "a": "سَأَذْهَبُ",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "What is assessed",
+          "heading": "Your results",
           "bullets": [
-            "Speaking: opinions and plans",
-            "Writing: school, plans, shopping",
-            "Grammar: plurals, future, comparison"
+            "Listening ... / 6",
+            "Reading ... / 6",
+            "Writing ... / 10; speaking recorded"
           ],
-          "note": "Begin with bismillah and calm nerves with a reminder that effort is rewarded. Outline the criteria: accuracy, range, fluency and communication. Show a mark scheme in simple language. Pupils tick which topics they feel confident about."
+          "note": "Begin with Bismillah.",
+          "chart": {
+            "kind": "bar",
+            "title": "Class average by skill (example data)",
+            "labels": [
+              "Listening",
+              "Reading",
+              "Writing"
+            ],
+            "values": [
+              4,
+              4.5,
+              6
+            ],
+            "unit": "marks"
+          }
         },
         {
-          "heading": "Speaking model",
-          "bullets": [
-            "أُحِبُّ الْعُلُومَ لِأَنَّهَا مُمْتِعَةٌ - I like science",
-            "غَدًا سَأَزُورُ جَدِّي إِنْ شَاءَ اللَّهُ - tomorrow I will visit",
-            "أُرِيدُ دَجَاجًا وَأَرُزًّا مِنْ فَضْلِكَ - I want chicken and rice"
-          ],
-          "note": "Show a model three-part answer: opinion, plan, order. Pupils evaluate it against the criteria. Practise answering follow-up questions: لِمَاذَا؟ (why?), مَتَى؟ (when?). Give tips for speaking clearly."
+          "heading": "Common errors",
+          "bullets": [],
+          "note": "Adapt to the class.",
+          "table": {
+            "head": [
+              "Error",
+              "Fix"
+            ],
+            "rows": [
+              [
+                "أَمْسِ أَذْهَبُ",
+                "أَمْسِ ذَهَبْتُ (past)"
+              ],
+              [
+                "غَدًا ذَهَبْتُ",
+                "غَدًا سَأَذْهَبُ (future)"
+              ],
+              [
+                "الحَافِلَةُ سَرِيعٌ",
+                "الحَافِلَةُ سَرِيعَةٌ"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Writing model",
+          "heading": "Upgrade structures",
           "bullets": [
-            "Use present, past and future",
-            "Include opinions and reasons",
-            "Use at least two connectives"
+            "Three tenses in one answer",
+            "لِأَنَّ + pronoun; لٰكِنَّ",
+            "Comparatives: أَسْرَعُ مِنْ"
           ],
-          "note": "Show the structure of a writing task: a short text of about 90 words on 'My school and my plans'. Highlight the use of all three tenses. Pupils plan in bullet points. Remind them to check vowels and endings."
-        },
-        {
-          "heading": "Common errors to avoid",
-          "bullets": [
-            "Adjective not matching the noun",
-            "Space between سَـ and the verb",
-            "Wrong ending after a preposition"
-          ],
-          "note": "Share errors from Phase 1 and ask pupils to correct them. Use the whiteboard to show before and after. Praise improvement. Link to ihsan: reviewing our work is part of excellence."
-        },
-        {
-          "heading": "Targets",
-          "bullets": [
-            "What I did well",
-            "What I need to practise",
-            "My next target"
-          ],
-          "note": "Pupils write targets. Examples: 'use more comparatives', 'remember the plural -ūna', 'check my vowel endings'. Collect for the record. Thank the pupils and end with الْحَمْدُ لِلَّهِ."
+          "check": {
+            "q": "Which shows three tenses?",
+            "options": [
+              "دَرَسْتُ، أَدْرُسُ، سَأَدْرُسُ",
+              "أَدْرُسُ، يَدْرُسُ، تَدْرُسُ",
+              "دَرْسٌ، دُرُوسٌ"
+            ],
+            "answer": 0,
+            "why": "Past, present, future."
+          }
         }
       ],
       "practice": [
-        "Prepare a 30-second answer on your school subject opinions.",
-        "Prepare a 30-second answer on your plans for tomorrow.",
-        "Order a drink and a meal in a restaurant."
+        {
+          "q": "Correct: غَدًا ذَهَبْتُ إِلَى السُّوقِ.",
+          "a": "غَدًا سَأَذْهَبُ إِلَى السُّوقِ",
+          "mins": 2,
+          "model": "Teacher: غَدًا is the future, so سَـ + present: سَأَذْهَبُ."
+        }
       ],
       "independent": [
-        "Complete the speaking task with a partner: opinions, plans and ordering (3 minutes).",
-        "Write a 90-word text 'My school and my plans' using three tenses.",
-        "Self-assess using the checklist and write a target."
+        {
+          "q": "DIRT on the pupil PDF: correct all errors in green, then upgrade your email with three tenses, a comparative and two reasons.",
+          "a": "Corrections and an upgraded email",
+          "mins": 20,
+          "model": "Teacher upgrades one paragraph on screen."
+        },
+        {
+          "q": "Set three targets for the GCSE course.",
+          "a": "Specific targets",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Write one opinion, one plan and one comparison.",
-        "Name your top target for next half term."
+        {
+          "q": "Back to our ponder: mistake or habit?",
+          "a": "A habit repeats until corrected on purpose",
+          "mins": 1
+        },
+        {
+          "q": "My weakest skill is ...",
+          "a": "Pupils' own",
+          "mins": 1
+        }
       ],
-      "homework": "Learn 15 words from Phase 1 and read your text aloud twice.",
-      "send": "SEND: speaking prompts with sentence starters. EAL: bilingual checklist. Stretch: add a paragraph about the future of schools in 2040."
+      "homework": "Fix your top three error habits by writing each correct sentence five times.",
+      "send": "SEND: corrections with choices. EAL: tense table. Stretch: rewrite to 120 words.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Summer 2",
+        "Marked assessment (portal) and mark scheme",
+        "Pupil PDF: DIRT sheet",
+        "Green pen"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "green pen",
+          "alt": "Corrections",
+          "for": "teach:2"
+        },
+        {
+          "find": "clock calendar",
+          "alt": "Tenses: past, present, future",
+          "for": "teach:3"
+        }
+      ]
     },
     {
       "unit": "Spring 1: At school",
@@ -7470,6 +7640,1179 @@
           "find": "pen and paper test",
           "alt": "The unit quiz",
           "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Food; introduction to the GCSE course",
+      "n": 38,
+      "title": "Measures and quantities: كِيلُو، لِتْرٌ، نِصْفٌ",
+      "duration": 50,
+      "bigQuestion": "Allah commands full and honest measure (83:1-3). Why would cheating on weights be so serious?",
+      "objectives": [
+        "To understand and use measures and quantities to buy food"
+      ],
+      "successCriteria": [
+        "All: say six measures",
+        "Most: ask for an amount politely in a shop",
+        "Some: use numbers and the construct: كِيلُو تُفَّاحٍ"
+      ],
+      "smsc": "Moral: honesty in trade",
+      "keywords": [
+        {
+          "term": "كِيلُو (kilu)",
+          "def": "a kilo"
+        },
+        {
+          "term": "لِتْرٌ (litr)",
+          "def": "a litre"
+        },
+        {
+          "term": "نِصْفٌ (nisf)",
+          "def": "a half"
+        },
+        {
+          "term": "عُلْبَةٌ ('ulbah)",
+          "def": "a tin or box"
+        },
+        {
+          "term": "زُجَاجَةٌ (zujajah)",
+          "def": "a bottle"
+        },
+        {
+          "term": "كِيسٌ (kis)",
+          "def": "a bag"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Allah commands full and honest measure (83:1-3). Why would cheating on weights be so serious?",
+        "a": "It is stealing from people who trust you; Allah warns those who give short measure."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Woe to those who give less than due, who, when they take a measure from people, take in full, but when they give by measure or weight, give less' (al-Mutaffifin 83:1-3).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. وَجْبَةٌ means ...",
+          "a": "A meal",
+          "mins": 1
+        },
+        {
+          "q": "'Vegetables' is ...",
+          "a": "خُضَارٌ",
+          "mins": 1
+        },
+        {
+          "q": "أَتَنَاوَلُ means ...",
+          "a": "I have (a meal)",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Measures",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "table": {
+            "head": [
+              "Arabic",
+              "English"
+            ],
+            "rows": [
+              [
+                "كِيلُو",
+                "a kilo"
+              ],
+              [
+                "نِصْفُ كِيلُو",
+                "half a kilo"
+              ],
+              [
+                "لِتْرٌ",
+                "a litre"
+              ],
+              [
+                "عُلْبَةٌ",
+                "a tin / box"
+              ],
+              [
+                "زُجَاجَةٌ",
+                "a bottle"
+              ],
+              [
+                "كِيسٌ",
+                "a bag"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "The construct: a kilo of ...",
+          "bullets": [
+            "كِيلُو تُفَّاحٍ (a kilo of apples)",
+            "لِتْرُ حَلِيبٍ (a litre of milk)",
+            "زُجَاجَةُ مَاءٍ (a bottle of water)"
+          ],
+          "note": "The second word takes kasrah (tanwin): no 'of' needed.",
+          "check": {
+            "q": "'A tin of beans' is ...",
+            "options": [
+              "عُلْبَةُ فُولٍ",
+              "عُلْبَةٌ الفُولُ",
+              "فُولُ عُلْبَةٍ"
+            ],
+            "answer": 0,
+            "why": "Measure first, then the food with kasrah (construct)."
+          }
+        },
+        {
+          "heading": "In the shop",
+          "bullets": [
+            "أُرِيدُ كِيلُو أَرُزٍّ مِنْ فَضْلِكَ",
+            "بِكَمْ هٰذَا؟ (How much is this?)",
+            "تَفَضَّلْ (Here you are)"
+          ]
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say: I want two litres of milk, please.",
+          "a": "أُرِيدُ لِتْرَيْنِ مِنَ الحَلِيبِ مِنْ فَضْلِكَ",
+          "mins": 2,
+          "model": "Teacher: أُرِيدُ + لِتْرَيْنِ (two litres, dual after a verb) + مِنَ الحَلِيبِ + مِنْ فَضْلِكَ."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Shopping list and role play on the pupil PDF: write a list of six items with measures; then in a breakout pair act shopkeeper and customer.",
+          "a": "Six correct items, e.g. كِيسُ خُبْزٍ، نِصْفُ كِيلُو جُبْنٍ; a polite dialogue",
+          "mins": 18,
+          "model": "Teacher and a volunteer model the first exchange."
+        },
+        {
+          "q": "Extend: write the dialogue out (six lines).",
+          "a": "Polite, accurate dialogue",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "نِصْفٌ means ...",
+          "a": "A half",
+          "mins": 1,
+          "options": [
+            "A half",
+            "A litre"
+          ]
+        },
+        {
+          "q": "Back to our ponder: why is cheating on weights serious?",
+          "a": "It steals from people who trust you (83:1-3)",
+          "mins": 2
+        }
+      ],
+      "homework": "Write your family's real shopping list in Arabic.",
+      "send": "SEND: picture shopping list. EAL: dialogue frame. Stretch: add prices with numbers to 100.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Summer 2",
+        "Pupil PDF: shopping list and role-play cards"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "kitchen scale weighing",
+          "alt": "Scales: honest measure",
+          "for": "hook"
+        },
+        {
+          "find": "bottle of water",
+          "alt": "A bottle: زُجَاجَةٌ",
+          "for": "keywords"
+        },
+        {
+          "find": "tin cans shelf",
+          "alt": "Tins: عُلَبٌ",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Food; introduction to the GCSE course",
+      "n": 39,
+      "title": "Healthy and unhealthy eating: صِحِّيٌّ وَغَيْرُ صِحِّيٍّ",
+      "duration": 50,
+      "bigQuestion": "Is any halal food 'bad'? Or does it depend on how much we eat?",
+      "objectives": [
+        "To understand and use language to judge foods as healthy or unhealthy and give advice"
+      ],
+      "successCriteria": [
+        "All: say whether foods are healthy or unhealthy",
+        "Most: give reasons with لِأَنَّ and يَحْتَوِي عَلَى",
+        "Some: give advice with يَجِبُ أَنْ and يَنْبَغِي"
+      ],
+      "smsc": "Moral: moderation and caring for the body",
+      "keywords": [
+        {
+          "term": "صِحِّيٌّ (sihhiyy)",
+          "def": "healthy"
+        },
+        {
+          "term": "غَيْرُ صِحِّيٍّ (ghayru sihhiyy)",
+          "def": "unhealthy"
+        },
+        {
+          "term": "يَحْتَوِي عَلَى (yahtawi 'ala)",
+          "def": "it contains"
+        },
+        {
+          "term": "سُكَّرٌ (sukkar)",
+          "def": "sugar"
+        },
+        {
+          "term": "يَجِبُ أَنْ (yajibu an)",
+          "def": "you must, one must"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is any halal food 'bad'? Or does it depend on how much we eat?",
+        "a": "Most depends on amount: Allah says eat and drink but do not waste (7:31)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And eat and drink, but be not excessive' (al-A'raf 7:31).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'A kilo of apples' is ...",
+          "a": "كِيلُو تُفَّاحٍ",
+          "mins": 1
+        },
+        {
+          "q": "زُجَاجَةٌ means ...",
+          "a": "A bottle",
+          "mins": 1
+        },
+        {
+          "q": "'How much is this?' is ...",
+          "a": "بِكَمْ هٰذَا؟",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Healthy or not?",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "sort": {
+            "columns": [
+              "صِحِّيٌّ",
+              "غَيْرُ صِحِّيٍّ"
+            ],
+            "cards": [
+              "الخُضَارُ",
+              "الحَلْوَى",
+              "السَّمَكُ",
+              "المَشْرُوبَاتُ الغَازِيَّةُ",
+              "الفَوَاكِهُ",
+              "البَطَاطِسُ المَقْلِيَّةُ"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "heading": "Reasons",
+          "bullets": [
+            "الفَوَاكِهُ صِحِّيَّةٌ لِأَنَّهَا تَحْتَوِي عَلَى الفِيتَامِينَاتِ",
+            "الحَلْوَى غَيْرُ صِحِّيَّةٍ لِأَنَّهَا تَحْتَوِي عَلَى سُكَّرٍ كَثِيرٍ",
+            "Agreement: صِحِّيٌّ / صِحِّيَّةٌ"
+          ],
+          "check": {
+            "q": "'Fish is healthy' is ...",
+            "options": [
+              "السَّمَكُ صِحِّيٌّ",
+              "السَّمَكُ صِحِّيَّةٌ",
+              "السَّمَكَ صِحِّيٌّ"
+            ],
+            "answer": 0,
+            "why": "Masculine subject, masculine adjective."
+          }
+        },
+        {
+          "heading": "Advice",
+          "bullets": [
+            "يَجِبُ أَنْ نَأْكُلَ الخُضَارَ",
+            "لَا يَنْبَغِي أَنْ نُسْرِفَ",
+            "After أَنْ the verb takes fathah"
+          ]
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say: sweets are unhealthy because they contain a lot of sugar.",
+          "a": "الحَلْوَى غَيْرُ صِحِّيَّةٍ لِأَنَّهَا تَحْتَوِي عَلَى سُكَّرٍ كَثِيرٍ",
+          "mins": 2,
+          "model": "Teacher: subject, judgement with agreement, لِأَنَّهَا, then تَحْتَوِي عَلَى + what."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Healthy eating leaflet text in the portal response box (80 to 100 words): three healthy foods with reasons, two unhealthy foods with reasons, and three pieces of advice.",
+          "a": "Accurate judgements, reasons and advice with أَنْ + verb",
+          "mins": 18,
+          "model": "Teacher writes the first healthy food sentence and one piece of advice."
+        },
+        {
+          "q": "Reading: an advice text on the pupil PDF; true or false, four statements.",
+          "a": "Answers on the sheet",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "صِحِّيٌّ means ...",
+          "a": "Healthy",
+          "mins": 1,
+          "options": [
+            "Healthy",
+            "Delicious"
+          ]
+        },
+        {
+          "q": "Back to our ponder: is any halal food 'bad'?",
+          "a": "It depends on amount; do not waste (7:31)",
+          "mins": 2
+        }
+      ],
+      "homework": "Revise Year 9 topics (school, transport, clothes, food) for the four-skills assessment next lesson.",
+      "send": "SEND: sort cards with pictures. EAL: leaflet frame. Stretch: use the comparative أَصَحُّ مِنْ (healthier than).",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Summer 2",
+        "Pupil PDF: leaflet frame and advice text"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "fruit and vegetables",
+          "alt": "Healthy food",
+          "for": "teach:1"
+        },
+        {
+          "find": "sugar cubes",
+          "alt": "Sugar: سُكَّرٌ",
+          "for": "keywords"
+        },
+        {
+          "find": "glass of water",
+          "alt": "Water",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Food; introduction to the GCSE course",
+      "n": 40,
+      "title": "End-of-year assessment in four skills",
+      "duration": 50,
+      "bigQuestion": "Which of the four skills do you think shows best how well someone knows a language, and why?",
+      "objectives": [
+        "To understand how well I listen, speak, read and write Arabic at the end of the year"
+      ],
+      "successCriteria": [
+        "All: complete all four parts",
+        "Most: answer reading and listening questions accurately",
+        "Some: write and speak in full sentences with a reason"
+      ],
+      "smsc": "Moral: honesty and effort under test conditions",
+      "keywords": [
+        {
+          "term": "اِخْتِبَارٌ (ikhtibar)",
+          "def": "a test"
+        },
+        {
+          "term": "اِسْتِمَاعٌ (istima')",
+          "def": "listening"
+        },
+        {
+          "term": "قِرَاءَةٌ (qira'ah)",
+          "def": "reading"
+        },
+        {
+          "term": "كِتَابَةٌ (kitabah)",
+          "def": "writing"
+        },
+        {
+          "term": "مُحَادَثَةٌ (muhadathah)",
+          "def": "speaking, a conversation"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which of the four skills do you think shows best how well someone knows a language, and why?",
+        "a": "Speaking or writing, because you must produce the language yourself, not just recognise it."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And say: My Lord, increase me in knowledge' (Ta-Ha 20:114).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. اِسْتِمَاعٌ means ...",
+          "a": "Listening",
+          "mins": 1,
+          "options": [
+            "Listening",
+            "Reading"
+          ]
+        },
+        {
+          "q": "Which skill uses a pen?",
+          "a": "كِتَابَةٌ (writing)",
+          "mins": 1,
+          "options": [
+            "كِتَابَةٌ (writing)",
+            "مُحَادَثَةٌ (speaking)"
+          ]
+        },
+        {
+          "q": "Say one sentence about yourself in Arabic.",
+          "a": "For example: اِسْمِي ... وَعُمُرِي ... سَنَةً",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The assessment",
+          "bullets": [],
+          "note": "Begin with Bismillah. Our own tasks; speaking one to one in a breakout room while the class writes.",
+          "table": {
+            "head": [
+              "Skill",
+              "Task",
+              "Minutes"
+            ],
+            "rows": [
+              [
+                "Listening",
+                "Teacher reads 6 short items twice",
+                "6"
+              ],
+              [
+                "Reading",
+                "A short text and 6 questions",
+                "10"
+              ],
+              [
+                "Writing",
+                "A short paragraph from prompts",
+                "12"
+              ],
+              [
+                "Speaking",
+                "3 questions one to one",
+                "3 each"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Topics",
+          "bullets": [
+            "At school: subjects, opinions, three tenses",
+            "Transport and journeys",
+            "Clothes and shopping",
+            "Food, measures and healthy eating"
+          ],
+          "note": "Quick reminder before starting."
+        },
+        {
+          "heading": "Exam rules online",
+          "bullets": [
+            "Camera on, notes away",
+            "One window: the portal form",
+            "Upload a photo of paper answers"
+          ],
+          "check": {
+            "q": "Before you write, you should ...",
+            "options": [
+              "Read all the prompts first",
+              "Start writing at once",
+              "Skip the hard prompt"
+            ],
+            "answer": 0,
+            "why": "Plan first."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Warm-up: answer one speaking question aloud together: كَيْفَ تَذْهَبُ إِلَى المَدْرَسَةِ؟",
+          "a": "أَذْهَبُ إِلَى المَدْرَسَةِ بِالحَافِلَةِ لِأَنَّهَا سَرِيعَةٌ",
+          "mins": 1,
+          "model": "Teacher answers in a full sentence and adds a reason with لِأَنَّ."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening (6 marks): the teacher reads six short items twice; write the English meaning.",
+          "a": "1 I go by train 2 a kilo of rice 3 the red shirt is cheaper 4 maths is difficult 5 healthy food 6 yesterday I went to the market",
+          "mins": 6,
+          "model": "Teacher plays item 1 as a worked example before the marked items."
+        },
+        {
+          "q": "Reading (6 marks): read the text on the pupil PDF and answer six questions in English.",
+          "a": "Answers on the mark scheme, e.g. he goes to school by bus; she bought a blue coat; a litre of milk costs ...",
+          "mins": 10
+        },
+        {
+          "q": "Writing (10 marks): Write an email to a friend about your school year: a subject you like and why, how you travel, what you bought recently and your healthy eating plan (80 to 100 words, three tenses).",
+          "a": "Marked for content, accuracy and range (our own mark scheme)",
+          "mins": 12
+        },
+        {
+          "q": "Speaking (one to one, while others write): three questions; recorded on the record sheet.",
+          "a": "Full-sentence answers with a reason",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which skill felt strongest today?",
+          "a": "Pupils' own",
+          "mins": 1
+        }
+      ],
+      "homework": "No homework: feedback next lesson.",
+      "send": "SEND: reading text with glossary; speaking with picture prompts; 25% extra time if on the access arrangements list. EAL: instructions in English. Stretch: write 60 words or more.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Summer 2",
+        "End-of-year four-skills assessment: listening script, reading text, writing prompts, speaking record sheet (portal and pupil PDF, our own)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "headphones on desk",
+          "alt": "Listening",
+          "for": "teach:1"
+        },
+        {
+          "find": "pen and paper exam",
+          "alt": "Writing",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Food; introduction to the GCSE course",
+      "n": 41,
+      "title": "Introduction to the GCSE course: themes and papers",
+      "duration": 50,
+      "bigQuestion": "Why do you think a GCSE tests four skills rather than just reading and writing?",
+      "objectives": [
+        "To understand how the GCSE Arabic course is organised and what each paper tests"
+      ],
+      "successCriteria": [
+        "All: name the five themes",
+        "Most: describe what each paper tests",
+        "Some: explain which group (4AA1 or 1AA0) suits my strengths"
+      ],
+      "smsc": "Moral: planning for the future",
+      "keywords": [
+        {
+          "term": "مَوْضُوعٌ (mawdu')",
+          "def": "a theme, a topic"
+        },
+        {
+          "term": "اِمْتِحَانٌ (imtihan)",
+          "def": "an exam"
+        },
+        {
+          "term": "وَرَقَةٌ (waraqah)",
+          "def": "a paper"
+        },
+        {
+          "term": "مَهَارَةٌ (maharah)",
+          "def": "a skill"
+        },
+        {
+          "term": "مُلَخَّصٌ (mulakhkhas)",
+          "def": "a summary"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why do you think a GCSE tests four skills rather than just reading and writing?",
+        "a": "Real language use needs listening and speaking too."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Whoever takes a path seeking knowledge, Allah makes easy for him a path to Paradise' (Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. مَوْضُوعٌ means ...",
+          "a": "A theme / topic",
+          "mins": 1
+        },
+        {
+          "q": "Name one Year 9 topic.",
+          "a": "School, transport, clothes or food",
+          "mins": 1
+        },
+        {
+          "q": "وَرَقَةٌ means ...",
+          "a": "A paper",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Five themes",
+          "bullets": [],
+          "note": "Begin with Bismillah. From the portal's KS4 Arabic plan.",
+          "table": {
+            "head": [
+              "Theme",
+              "Arabic"
+            ],
+            "rows": [
+              [
+                "1 Identity and culture",
+                "الهُوِيَّةُ وَالثَّقَافَةُ"
+              ],
+              [
+                "2 Local area, holiday and travel",
+                "المِنْطَقَةُ وَالعُطْلَةُ وَالسَّفَرُ"
+              ],
+              [
+                "3 School",
+                "المَدْرَسَةُ"
+              ],
+              [
+                "4 Future aspirations, study and work",
+                "المُسْتَقْبَلُ وَالدِّرَاسَةُ وَالعَمَلُ"
+              ],
+              [
+                "5 International and global dimension",
+                "البُعْدُ الدَّوْلِيُّ"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Two groups",
+          "bullets": [],
+          "note": "Entry decided per pupil by July of Year 10.",
+          "compare": {
+            "left": {
+              "title": "Group A: 4AA1",
+              "points": [
+                "Paper 1: reading, summary, grammar (2 h 15)",
+                "Paper 2: writing (1 h 30)",
+                "For confident readers and writers"
+              ]
+            },
+            "right": {
+              "title": "Group B: 1AA0",
+              "points": [
+                "Papers 1 to 4: listening, speaking, reading, writing",
+                "Foundation or Higher",
+                "Includes a speaking exam"
+              ]
+            },
+            "label": "or"
+          }
+        },
+        {
+          "heading": "Hinge",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "check": {
+            "q": "Which group has a speaking exam?",
+            "options": [
+              "Group B (1AA0)",
+              "Group A (4AA1)",
+              "Neither"
+            ],
+            "answer": 0,
+            "why": "1AA0 Paper 2 is speaking."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Match Year 9 topics to GCSE themes.",
+          "a": "School to Theme 3; transport to Theme 2; food to Theme 1 (daily life)",
+          "mins": 2,
+          "model": "Teacher matches 'at school' to Theme 3."
+        }
+      ],
+      "independent": [
+        {
+          "q": "GCSE readiness profile in the portal response box: rate yourself in the four skills, list three strengths and three targets, and say which group you think suits you and why.",
+          "a": "A thoughtful self-assessment",
+          "mins": 12,
+          "model": "Teacher shows an example profile."
+        },
+        {
+          "q": "Sample tasks on the pupil PDF (our own): one short GCSE-style reading question and one writing prompt; try both.",
+          "a": "Answers on the sheet",
+          "mins": 12
+        }
+      ],
+      "exit": [
+        {
+          "q": "How many themes are there?",
+          "a": "Five",
+          "mins": 1,
+          "options": [
+            "Five",
+            "Three"
+          ]
+        },
+        {
+          "q": "Back to our ponder: why four skills?",
+          "a": "Real use needs all four",
+          "mins": 1
+        }
+      ],
+      "homework": "Read the Theme 1 vocabulary list on the portal over the summer.",
+      "send": "SEND: themes table to keep. EAL: glossary of exam words. Stretch: try a 4AA1-style grammar question.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Summer 2",
+        "Portal KS4 Arabic plan (themes and papers)",
+        "Pupil PDF: GCSE-style sample tasks (our own)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "exam hall desks",
+          "alt": "An exam",
+          "for": "teach:2"
+        },
+        {
+          "find": "Arabic textbook",
+          "alt": "The GCSE course",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Food; introduction to the GCSE course",
+      "n": 42,
+      "title": "Describing people for the GCSE: a first exam-style task",
+      "duration": 50,
+      "bigQuestion": "Which matters more when you describe a good friend: how they look or how they act?",
+      "objectives": [
+        "To understand how to describe people in detail and use it in a GCSE-style task"
+      ],
+      "successCriteria": [
+        "All: describe appearance and character in four sentences",
+        "Most: use agreement and the dual",
+        "Some: write a 90-word GCSE-style answer with opinions and tenses"
+      ],
+      "smsc": "Moral: valuing character over appearance",
+      "keywords": [
+        {
+          "term": "طَوِيلٌ / قَصِيرٌ (tawil / qasir)",
+          "def": "tall / short"
+        },
+        {
+          "term": "شَعْرٌ (sha'r)",
+          "def": "hair"
+        },
+        {
+          "term": "عَيْنَانِ ('aynani)",
+          "def": "two eyes"
+        },
+        {
+          "term": "كَرِيمٌ (karim)",
+          "def": "generous"
+        },
+        {
+          "term": "صَبُورٌ (sabur)",
+          "def": "patient"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which matters more when you describe a good friend: how they look or how they act?",
+        "a": "How they act: Allah looks at hearts and deeds (Muslim)."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Allah does not look at your forms and your wealth, but He looks at your hearts and your deeds' (Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. How many GCSE themes?",
+          "a": "Five",
+          "mins": 1
+        },
+        {
+          "q": "Which group has speaking?",
+          "a": "1AA0",
+          "mins": 1
+        },
+        {
+          "q": "وَرَقَةٌ means ...",
+          "a": "A paper",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Appearance",
+          "bullets": [
+            "هُوَ طَوِيلٌ وَشَعْرُهُ أَسْوَدُ",
+            "هِيَ قَصِيرَةٌ وَعَيْنَاهَا بُنِّيَّتَانِ",
+            "Dual: عَيْنَانِ، with ـهَا: عَيْنَاهَا"
+          ],
+          "note": "Begin with Bismillah. Recall the Spring 1 bridge lesson. No pictures of people: words only."
+        },
+        {
+          "heading": "Character",
+          "bullets": [],
+          "note": "Agreement.",
+          "table": {
+            "head": [
+              "Masculine",
+              "Feminine",
+              "English"
+            ],
+            "rows": [
+              [
+                "كَرِيمٌ",
+                "كَرِيمَةٌ",
+                "generous"
+              ],
+              [
+                "صَبُورٌ",
+                "صَبُورٌ",
+                "patient (same form)"
+              ],
+              [
+                "صَادِقٌ",
+                "صَادِقَةٌ",
+                "truthful"
+              ],
+              [
+                "مَرِحٌ",
+                "مَرِحَةٌ",
+                "cheerful"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "GCSE task",
+          "bullets": [
+            "Describe a person you admire",
+            "Appearance, character, why you admire them",
+            "A past event and a future plan"
+          ],
+          "check": {
+            "q": "'Her eyes are brown' is ...",
+            "options": [
+              "عَيْنَاهَا بُنِّيَّتَانِ",
+              "عَيْنُهَا بُنِّيٌّ",
+              "عَيْنَاهُ بُنِّيَّةٌ"
+            ],
+            "answer": 0,
+            "why": "Dual with ـهَا and a dual adjective."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say: my brother is tall and generous.",
+          "a": "أَخِي طَوِيلٌ وَكَرِيمٌ",
+          "mins": 2,
+          "model": "Teacher: أَخِي, then two masculine adjectives joined with وَ."
+        }
+      ],
+      "independent": [
+        {
+          "q": "GCSE-style writing in the portal response box (90 words, our own task): 'Describe a person you admire': appearance, character, why, something you did together in the past and a future plan.",
+          "a": "Marked with the GCSE-style writing grid",
+          "mins": 20,
+          "model": "Teacher writes the opening two sentences about an imaginary relative."
+        },
+        {
+          "q": "Self-check: tick agreement, three tenses and a reason.",
+          "a": "Checks done",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Back to our ponder: looks or actions?",
+          "a": "Actions and character",
+          "mins": 1
+        },
+        {
+          "q": "One thing to work on over the summer:",
+          "a": "Pupils' own",
+          "mins": 1
+        }
+      ],
+      "homework": "Summer: read the Year 10 Spring 1 bridge vocabulary on the portal and keep a weekly Arabic diary.",
+      "send": "SEND: description frame. EAL: adjective bank. Stretch: 120 words with a comparative.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Summer 2",
+        "Portal arabic y9 lesson 13 (describing people) as reference",
+        "Pupil PDF: GCSE-style writing grid"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "brown leather notebook",
+          "alt": "Writing",
+          "for": "keywords"
+        },
+        {
+          "find": "heart shape stone",
+          "alt": "Character",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Food; introduction to the GCSE course",
+      "n": 43,
+      "title": "Food likes and dislikes; meals in Arabic-speaking countries",
+      "duration": 50,
+      "bigQuestion": "Food from every country is different, yet every Muslim says Bismillah before eating. What does that show about the Ummah?",
+      "objectives": [
+        "To understand how to give detailed food opinions and read about meals in Arabic-speaking countries"
+      ],
+      "successCriteria": [
+        "All: give three food opinions with reasons",
+        "Most: compare two foods with a comparative",
+        "Some: answer reading questions on an unseen text using roots and context"
+      ],
+      "smsc": "Cultural: food across the Muslim world; Social: sharing",
+      "keywords": [
+        {
+          "term": "أُفَضِّلُ (ufaddilu)",
+          "def": "I prefer"
+        },
+        {
+          "term": "أَلَذُّ مِنْ (aladhdhu min)",
+          "def": "tastier than"
+        },
+        {
+          "term": "حَارٌّ (harr)",
+          "def": "spicy, hot"
+        },
+        {
+          "term": "المَنْسَفُ (al-mansaf)",
+          "def": "a rice and lamb dish from Jordan"
+        },
+        {
+          "term": "الكُسْكُسُ (al-kuskus)",
+          "def": "couscous, from North Africa"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Food from every country is different, yet every Muslim says Bismillah before eating. What does that show about the Ummah?",
+        "a": "Many cultures, one Ummah: the same manners and gratitude everywhere."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Food for two is enough for three, and food for three is enough for four' (Bukhari and Muslim).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. أَتَنَاوَلُ الغَدَاءَ means ...",
+          "a": "I have lunch",
+          "mins": 1,
+          "options": [
+            "I have lunch",
+            "I cook lunch"
+          ]
+        },
+        {
+          "q": "'Vegetables' is ...",
+          "a": "خُضَارٌ",
+          "mins": 1
+        },
+        {
+          "q": "'Because it is delicious' (masc.) is ...",
+          "a": "لِأَنَّهُ لَذِيذٌ",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Detailed opinions",
+          "bullets": [
+            "أُحِبُّ الأَرُزَّ كَثِيرًا لِأَنَّهُ لَذِيذٌ",
+            "لَا أُحِبُّ الطَّعَامَ الحَارَّ أَبَدًا",
+            "أُفَضِّلُ السَّمَكَ عَلَى اللَّحْمِ"
+          ],
+          "note": "Begin with Bismillah. أُفَضِّلُ ... عَلَى ... = I prefer ... to ..."
+        },
+        {
+          "heading": "Comparatives",
+          "bullets": [],
+          "note": "Pattern أَفْعَلُ مِنْ.",
+          "table": {
+            "head": [
+              "Adjective",
+              "Comparative",
+              "Example"
+            ],
+            "rows": [
+              [
+                "لَذِيذٌ",
+                "أَلَذُّ",
+                "التَّمْرُ أَلَذُّ مِنَ الحَلْوَى"
+              ],
+              [
+                "صِحِّيٌّ",
+                "أَكْثَرُ صِحَّةً",
+                "السَّمَكُ أَكْثَرُ صِحَّةً مِنَ البَطَاطِسِ المَقْلِيَّةِ"
+              ],
+              [
+                "حُلْوٌ",
+                "أَحْلَى",
+                "العَسَلُ أَحْلَى مِنَ الحَلِيبِ"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Meals across the Arab world",
+          "bullets": [
+            "المَنْسَفُ فِي الأُرْدُنِّ",
+            "الكُسْكُسُ فِي المَغْرِبِ",
+            "الكَبْسَةُ فِي السُّعُودِيَّةِ"
+          ],
+          "check": {
+            "q": "التَّمْرُ أَلَذُّ مِنَ الحَلْوَى means ...",
+            "options": [
+              "Dates are tastier than sweets",
+              "Dates are sweets",
+              "Sweets are tastier than dates"
+            ],
+            "answer": 0,
+            "why": "أَلَذُّ مِنْ = tastier than."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say: I prefer fish to meat because it is healthier.",
+          "a": "أُفَضِّلُ السَّمَكَ عَلَى اللَّحْمِ لِأَنَّهُ أَكْثَرُ صِحَّةً",
+          "mins": 3,
+          "model": "Teacher: أُفَضِّلُ + السَّمَكَ + عَلَى اللَّحْمِ, then the reason with a comparative."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Reading (our own text on the pupil PDF about family meals in Jordan and Morocco): answer six questions in English, then translate two sentences into English.",
+          "a": "Answers on the mark sheet",
+          "mins": 14,
+          "model": "Teacher does question 1 by finding the key word and its root."
+        },
+        {
+          "q": "Write 60 words in the portal response box: your favourite and least favourite foods with reasons, one comparison and one dish from an Arabic-speaking country you would like to try.",
+          "a": "Accurate opinions, a comparative and a reason",
+          "mins": 12
+        }
+      ],
+      "exit": [
+        {
+          "q": "أُفَضِّلُ means ...",
+          "a": "I prefer",
+          "mins": 1,
+          "options": [
+            "I prefer",
+            "I dislike"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what does it show about the Ummah?",
+          "a": "Many cultures, one Ummah with the same manners",
+          "mins": 2
+        }
+      ],
+      "homework": "Learn the three comparatives and use one at dinner tonight.",
+      "send": "SEND: opinion frame with icons. EAL: glossary for the reading text. Stretch: use the superlative أَلَذُّ طَعَامٍ (the tastiest food).",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Summer 2",
+        "Pupil PDF: reading text on meals in Jordan and Morocco (our own) with questions"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "couscous dish",
+          "alt": "Couscous: الكُسْكُسُ",
+          "for": "teach:3"
+        },
+        {
+          "find": "dates honey bowl",
+          "alt": "Dates and honey",
+          "for": "teach:2"
+        },
+        {
+          "find": "world map Middle East North Africa",
+          "alt": "Arabic-speaking countries",
+          "for": "hook"
         }
       ]
     }
