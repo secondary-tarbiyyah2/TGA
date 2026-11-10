@@ -1,3 +1,4 @@
+import { OpenAccessibilityButton } from "@/components/OpenAccessibilityButton";
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 import { Container } from "@/components/Container";
@@ -36,7 +37,10 @@ export default async function AccessibilityPage() {
           <div>
             <Kicker>What you can change</Kicker>
             <ul className="list-disc space-y-2 pl-5 text-ink/80">
-              <li>Use the <b>Display</b> button (marked &ldquo;Aa&rdquo; in the header, and &ldquo;Display and accessibility&rdquo; in the footer), or the account menu in the portal, to turn on larger text, an easy-reading layout or high contrast. Your choice is remembered on that device.</li>
+              <li>
+                Open the <b>Accessibility centre</b> (the &ldquo;Aa&rdquo; button in the header, &ldquo;Accessibility and display&rdquo; in the footer, the menu on phones, or <kbd>Alt</kbd> + <kbd>A</kbd> anywhere). It has quick profiles (low vision, dyslexia friendly, focus, motion sensitive, keyboard) and settings for text size up to 150%, a readable font, easy-reading spacing, high contrast, softer or no colour, a reading line or mask, highlighted links and focus, outlined headings, a large cursor and reduced motion. It can read the page, or text you select, aloud using your device&apos;s own voice, and list the page&apos;s sections so you can jump straight to one. Your choices are remembered on that device.{" "}
+                <OpenAccessibilityButton />
+              </li>
               <li>Every school policy can be read as a web page with real headings and tables, as well as downloaded as a PDF, from the <Link href="/policies" className="underline">Policies page</Link>.</li>
               <li>Everything can be used with a keyboard alone. Press Tab to move and Enter to select.</li>
               <li>Arabic text is marked up so screen readers read it in Arabic and it displays right to left.</li>
