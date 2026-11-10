@@ -84,7 +84,7 @@ export function PushOptIn({ variant = "card" }: { variant?: "card" | "setting" }
       <span aria-hidden="true" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-forest-50 text-forest-700">
         <Icon name="bell" />
       </span>
-      <div className="min-w-0 flex-1">
+      <div className="min-w-0 flex-1 basis-56">
         <h2 id="push-optin" className="text-sm font-semibold text-ink">
           Get a notification when you have a new message
         </h2>
@@ -102,7 +102,7 @@ export function PushOptIn({ variant = "card" }: { variant?: "card" | "setting" }
           </p>
         )}
       </div>
-      <div className="flex gap-2">
+      <div className="flex w-full gap-2 pl-[3.25rem] sm:w-auto sm:pl-0">
         {state !== "unsupported" && (
           <button type="button" onClick={turnOn} disabled={busy || state === "denied"} className={`${ui.btnPrimary} ${ui.sm}`}>
             {busy ? "Turning on…" : "Turn on"}

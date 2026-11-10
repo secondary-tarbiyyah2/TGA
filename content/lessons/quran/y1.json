@@ -877,84 +877,213 @@
       ]
     },
     {
-      "unit": "Unit 2: Sukoon, shaddah, madd and tanween",
+      "unit": "Summer 1: Al-Kawthar, Al-Ma'un and sukoon",
       "n": 5,
       "title": "Sukoon: the quiet letter",
       "duration": 30,
+      "bigQuestion": "Some letters have a little circle on top. What do you think that circle tells us to do?",
       "objectives": [
-        "Know that sukoon means no vowel sound",
-        "Read letters with sukoon smoothly",
-        "Read short words with sukoon"
+        "To understand that a letter with sukoon has no vowel and joins to the letter before it"
       ],
+      "successCriteria": [
+        "All: point to the sukoon (ـْ) on a letter",
+        "Most: read a two-letter word with sukoon, like قُلْ",
+        "Some: read a word with sukoon in the middle, like أَعْطَيْنَٰكَ"
+      ],
+      "smsc": "Spiritual: the joy of reading Allah's words ourselves",
       "keywords": [
         {
-          "term": "sukoon",
-          "def": "a small circle that means the letter has no vowel"
+          "term": "sukoon (سكون)",
+          "def": "a small circle: the letter has no vowel"
         },
         {
-          "term": "sakin",
-          "def": "a letter with a sukoon"
+          "term": "sakin (ساكن)",
+          "def": "a letter that has a sukoon"
+        },
+        {
+          "term": "harakah (حركة)",
+          "def": "a vowel mark: fathah, kasrah or dammah"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Some letters have a little circle on top. What do you think that circle tells us to do?",
+        "a": "It tells us the letter is quiet: it has no vowel, so we stop on it and join it to the letter before."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We have certainly made the Qur'an easy for remembrance' (Al-Qamar 54:17). Reading letters and words well helps us read the Qur'an.",
+        "at": "start"
+      },
       "starter": [
-        "Read: كَتَبَ",
-        "Name the three vowel marks.",
-        "What sound does fathah make?"
+        {
+          "q": "بَ says ...",
+          "a": "ba",
+          "mins": 1,
+          "options": [
+            "ba",
+            "bi",
+            "bu"
+          ]
+        },
+        {
+          "q": "Which mark makes 'i'?",
+          "a": "kasrah",
+          "mins": 1,
+          "options": [
+            "kasrah",
+            "fathah",
+            "dammah"
+          ]
+        },
+        {
+          "q": "كُتِبَ says ...",
+          "a": "kutiba",
+          "mins": 1,
+          "options": [
+            "kutiba",
+            "kataba",
+            "katiba"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "What is sukoon?",
+          "heading": "The quiet circle",
           "bullets": [
-            "Sukoon is a small circle ْ",
-            "It means the letter is silent of vowels",
-            "We join its sound to the letter before"
+            "Sukoon is a small circle on top: ـْ",
+            "The letter has no vowel of its own",
+            "We join it to the letter before: qul, not qu-la"
           ],
-          "note": "Draw the circle. Say 'The letter has no vowel of its own; it leans on the letter before it.' Example: بَلْ - 'bal', not 'ba-la'."
+          "note": "Bismillah. Draw the circle big on the whiteboard. Children draw it in the air."
         },
         {
-          "heading": "Easy examples",
-          "bullets": [
-            "هَلْ hal",
-            "مِنْ min",
-            "قَدْ qad",
-            "لَمْ lam"
-          ],
-          "note": "Read with the class; keep the sound short. Examples from the Qur'an: 'لَمْ' appears in Al-Ikhlas ('lam yalid'). Show the circle on top of the last letter."
+          "heading": "Words to read",
+          "bullets": [],
+          "note": "Point right to left. Children echo with mics on in turn.",
+          "table": {
+            "head": [
+              "Word",
+              "Say it",
+              "Where we meet it"
+            ],
+            "rows": [
+              [
+                "قُلْ",
+                "qul",
+                "Al-Ikhlas 112:1"
+              ],
+              [
+                "لَمْ",
+                "lam",
+                "Al-Ikhlas 112:3"
+              ],
+              [
+                "إِذَا",
+                "idhaa",
+                "An-Nasr 110:1 (no sukoon: compare)"
+              ],
+              [
+                "وَٱنْحَرْ",
+                "wanhar",
+                "Al-Kawthar 108:2"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Sukoon in the middle",
-          "bullets": [
-            "أَنْعَمْتَ an'amta",
-            "نَعْبُدُ na'budu",
-            "يَسْمَعُ yasma'u"
-          ],
-          "note": "These have sukoon in the middle. Join the sukoon letter to the letter before: nā-'bu-du, not na-a-bu-du. Children often add an extra vowel; model correctly."
+          "heading": "Read with me",
+          "bullets": [],
+          "note": "Say the first letter with its vowel, then close on the quiet letter.",
+          "cycle": [
+            "Find the circle",
+            "Say the letter before with its vowel",
+            "Close on the quiet letter",
+            "Read the whole word",
+            "Three friends read in turn"
+          ]
         },
         {
-          "heading": "Qur'an words with sukoon",
-          "bullets": [
-            "قُلْ qul",
-            "لَمْ يَلِدْ lam yalid",
-            "وَلَمْ يُولَدْ wa lam yuulad"
-          ],
-          "note": "These are from Surat Al-Ikhlas. Read them slowly. Note that the final letter of 'yalid' has sukoon. We will practise this surah later."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "قُلْ says ...",
+            "options": [
+              "qul",
+              "qula",
+              "quli"
+            ],
+            "answer": 0,
+            "why": "The laam has a sukoon: it is quiet, so we close on it: qul."
+          }
         }
       ],
       "practice": [
-        "Read: هَلْ مِنْ",
-        "What does sukoon mean?"
+        {
+          "q": "Read: لَمْ",
+          "a": "lam",
+          "mins": 3,
+          "model": "I do: لَ (la), then close on مْ: lam. Not la-ma."
+        }
       ],
       "independent": [
-        "Read 10 words with sukoon",
-        "Circle the sukoon in each word",
-        "Copy and read: قُلْ لَمْ"
+        {
+          "q": "Pupil PDF: read six words with sukoon and draw a circle round each sukoon. The teacher listens to today's group.",
+          "a": "Six words read: for example قُلْ، لَمْ، مِنْ، هَلْ.",
+          "mins": 5,
+          "model": "The teacher reads and circles the first: قُلْ."
+        },
+        {
+          "q": "Extend: find the sukoon in «وَٱنْحَرْ» (108:2). How many are there?",
+          "a": "Two: on نْ and on رْ.",
+          "mins": 1
+        }
       ],
       "exit": [
-        "Read: قَدْ",
-        "Draw a sukoon on a letter"
+        {
+          "q": "A letter with sukoon has ...",
+          "a": "no vowel",
+          "mins": 1,
+          "options": [
+            "no vowel",
+            "two vowels",
+            "a long vowel"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Some letters have a little circle on top. What do you think that circle tells us to do?",
+          "a": "It tells us the letter is quiet: it has no vowel, so we stop on it and join it to the letter before.",
+          "mins": 1
+        }
       ],
-      "homework": "Find three words with sukoon on a page of your Qaidah and read them to someone.",
-      "send": "SEND/EAL: tap the table once for sukoon. Stretch: read longer words with two sukoons."
+      "homework": "Read four words with sukoon from your Qaidah to a grown-up; say Al-Ikhlas; tick the revision log.",
+      "send": "SEND: colour cards for the rule, extra listening turns. EAL: key words with meanings. Stretch: find a new example in a surah you know.",
+      "resources": [
+        "Slides",
+        "The school's Qaidah book (TO CONFIRM which edition): sukoon and qalqalah pages",
+        "Mini-whiteboard and pen",
+        "Pupil PDF worksheet: words to read and colour",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "Arabic alphabet chart",
+          "alt": "A chart of the Arabic letters",
+          "for": "hook"
+        },
+        {
+          "find": "Small circle shape",
+          "alt": "A small circle",
+          "for": "teach:1"
+        }
+      ]
     },
     {
       "unit": "Unit 2: Sukoon, shaddah, madd and tanween",
@@ -7374,6 +7503,2554 @@
           "find": "Gold star sticker",
           "alt": "A star",
           "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Al-Kawthar, Al-Ma'un and sukoon",
+      "n": 41,
+      "title": "Surat Al-Kawthar 108:1-3: hear, understand and memorise",
+      "duration": 30,
+      "bigQuestion": "Allah gave the Prophet ﷺ a river in Paradise called Al-Kawthar. What is the best gift you have ever been given, and how did you say thank you?",
+      "objectives": [
+        "To memorise Al-Kawthar 108:1-3 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: say 108:1 to 3 after the teacher",
+        "Most: say 108:1 to 3 alone",
+        "Some: say how Al-Kawthar tells us to thank Allah"
+      ],
+      "smsc": "Spiritual: thanking Allah for His gifts",
+      "keywords": [
+        {
+          "term": "Al-Kawthar (الكوثر)",
+          "def": "a river of great good that Allah gave the Prophet ﷺ"
+        },
+        {
+          "term": "salli (صل)",
+          "def": "pray"
+        },
+        {
+          "term": "rabb (رب)",
+          "def": "Lord: Allah who looks after us"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "learning the Qur'an by heart"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Allah gave the Prophet ﷺ a river in Paradise called Al-Kawthar. What is the best gift you have ever been given, and how did you say thank you?",
+        "a": "Allah tells us how to say thank you for His gifts: pray to Him and sacrifice for Him (108:2)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, We have granted you, [O Muhammad], al-Kawthar. So pray to your Lord and sacrifice [to Him alone].' (Al-Kawthar 108:1 to 2). We thank Allah for His gifts by praying to Him.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which surah begins «قُلْ يَٰٓأَيُّهَا ...»?",
+          "a": "Al-Kafirun",
+          "mins": 1,
+          "options": [
+            "Al-Masad",
+            "Al-Kafirun",
+            "An-Nasr"
+          ]
+        },
+        {
+          "q": "How many ayat in An-Nasr?",
+          "a": "3",
+          "mins": 1,
+          "options": [
+            "3",
+            "5",
+            "7"
+          ]
+        },
+        {
+          "q": "قُلْ says ...",
+          "a": "qul",
+          "mins": 1,
+          "options": [
+            "qul",
+            "qula"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-Kawthar 108:1-3",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 108:1-3 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "إِنَّآ أَعْطَيْنَٰكَ ٱلْكَوْثَرَ (١) فَصَلِّ لِرَبِّكَ وَٱنْحَرْ (٢) إِنَّ شَانِئَكَ هُوَ ٱلْأَبْتَرُ (٣)",
+            "source": "Surat Al-Kawthar, 108:1-3"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "English helps us understand; only the Arabic is the Qur'an",
+            "Big idea: Allah gave a great gift, so pray to Him"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "108:1",
+                "Indeed, We have granted you, [O Muhammad], al-Kawthar."
+              ],
+              [
+                "108:2",
+                "So pray to your Lord and sacrifice [to Him alone]."
+              ],
+              [
+                "108:3",
+                "Indeed, your enemy is the one cut off."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 108:1-3 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah",
+            "We listen, mics muted",
+            "Mics on in turn: three friends repeat",
+            "Teacher fixes one sound",
+            "Everyone repeats softly together"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Al-Kawthar tells us to thank Allah by ...",
+            "options": [
+              "praying to Him",
+              "shouting",
+              "sleeping"
+            ],
+            "answer": 0,
+            "why": "108:2: 'So pray to your Lord and sacrifice [to Him alone].'"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-Kawthar 108:1-3 with the teacher.",
+          "a": "Pupils say 108:1-3 together without looking.",
+          "mins": 3,
+          "model": "I do: chunk 108:1-3. Ayah 1: 3 times looking, 3 times without looking. Then ayah 2 the same way. Then link: recite 1 and 2 together twice. Finish by reciting the whole chunk once without the mushaf."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening turns: today's group says 108:1-3 to the teacher, one by one. Everyone else: say it softly 3 times looking, 3 times without.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 5,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "Say 'alhamdulillah' for three gifts Allah gave you today.",
+          "a": "For example: food, my family, my eyes.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-Kawthar 108:1: «إِنَّآ أَعْطَيْنَٰكَ ...» Which word comes next?",
+          "a": "ٱلْكَوْثَرَ",
+          "mins": 1,
+          "options": [
+            "إِنَّ",
+            "شَانِئَكَ",
+            "ٱلْكَوْثَرَ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Allah gave the Prophet ﷺ a river in Paradise called Al-Kawthar. What is the best gift you have ever been given, and how did you say thank you?",
+          "a": "Allah tells us how to say thank you for His gifts: pray to Him and sacrifice for Him (108:2).",
+          "mins": 1
+        }
+      ],
+      "homework": "Recite Al-Kawthar 108:1-3 to a parent three times a day and revise An-Nasr; tick the portal revision log each day.",
+      "send": "SEND: one ayah at a time, extra listening turns, finger tracking on the pupil PDF. EAL: key words shown with meanings. Stretch: lead the echo for a group.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "The school's Qaidah book (TO CONFIRM which edition), joining or tanween pages",
+        "Pupil PDF worksheet: Al-Kawthar 108:1-3 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "River clear water",
+          "alt": "A clear river",
+          "for": "hook"
+        },
+        {
+          "find": "Quran manuscript page",
+          "alt": "A page of the Qur'an",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Al-Kawthar, Al-Ma'un and sukoon",
+      "n": 42,
+      "title": "Listen and check: Al-Kawthar and An-Nasr",
+      "duration": 30,
+      "bigQuestion": "Al-Kawthar is the shortest surah in the Qur'an. Why is it still important to say every word carefully?",
+      "objectives": [
+        "To understand how to say Al-Kawthar clearly in turn and keep An-Nasr strong"
+      ],
+      "successCriteria": [
+        "All: say An-Nasr with the class",
+        "Most: say Al-Kawthar alone to the teacher",
+        "Some: say both alone with no help"
+      ],
+      "smsc": "Social: waiting for our turn and listening to friends",
+      "keywords": [
+        {
+          "term": "hifdh (حفظ)",
+          "def": "learning the Qur'an by heart"
+        },
+        {
+          "term": "ayah (آية)",
+          "def": "one sentence of the Qur'an"
+        },
+        {
+          "term": "isti'adhah (استعاذة)",
+          "def": "saying A'udhu billah before reciting"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Al-Kawthar is the shortest surah in the Qur'an. Why is it still important to say every word carefully?",
+        "a": "Every word is Allah's speech; a short surah said beautifully is still a big reward."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We have certainly made the Qur'an easy for remembrance' (Al-Qamar 54:17). Reading letters and words well helps us read the Qur'an.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Al-Kawthar 108:2: «فَصَلِّ ...» Which word comes next?",
+          "a": "لِرَبِّكَ",
+          "mins": 1,
+          "options": [
+            "لِرَبِّكَ",
+            "شَانِئَكَ",
+            "وَٱنْحَرْ"
+          ]
+        },
+        {
+          "q": "How many ayat in Al-Kawthar?",
+          "a": "3",
+          "mins": 1,
+          "options": [
+            "3",
+            "4",
+            "6"
+          ]
+        },
+        {
+          "q": "Al-Kawthar tells us to ...",
+          "a": "pray to our Lord",
+          "mins": 1,
+          "options": [
+            "pray to our Lord",
+            "run fast"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "How we recite",
+          "bullets": [],
+          "note": "Bismillah. Show each star; children copy the sitting.",
+          "table": {
+            "head": [
+              "Star",
+              "What the teacher listens for"
+            ],
+            "rows": [
+              [
+                "Memory",
+                "I say every word in the right order"
+              ],
+              [
+                "Sounds",
+                "Each letter comes from the right place"
+              ],
+              [
+                "Harakat",
+                "Fathah, kasrah and dammah are clear"
+              ],
+              [
+                "Adab",
+                "I sit nicely, start with isti'adhah and Bismillah"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Al-Kawthar together",
+          "bullets": [
+            "Say it with me",
+            "Slowly, one ayah at a time"
+          ],
+          "note": "Recite together first, mics muted except the teacher.",
+          "quote": {
+            "text": "إِنَّآ أَعْطَيْنَٰكَ ٱلْكَوْثَرَ (١) فَصَلِّ لِرَبِّكَ وَٱنْحَرْ (٢) إِنَّ شَانِئَكَ هُوَ ٱلْأَبْتَرُ (٣)",
+            "source": "Surat Al-Kawthar, 108:1-3"
+          }
+        },
+        {
+          "heading": "An-Nasr together",
+          "bullets": [
+            "Say it with me"
+          ],
+          "note": "Revision surah: recite together, then in turns.",
+          "quote": {
+            "text": "إِذَا جَآءَ نَصْرُ ٱللَّهِ وَٱلْفَتْحُ (١) وَرَأَيْتَ ٱلنَّاسَ يَدْخُلُونَ فِى دِينِ ٱللَّهِ أَفْوَاجًۭا (٢) فَسَبِّحْ بِحَمْدِ رَبِّكَ وَٱسْتَغْفِرْهُ ۚ إِنَّهُۥ كَانَ تَوَّابًۢا (٣)",
+            "source": "Surat An-Nasr, 110:1-3"
+          }
+        },
+        {
+          "heading": "Listening turns",
+          "bullets": [],
+          "note": "Names on screen (a group of up to five each lesson, so everyone is heard each week).",
+          "cycle": [
+            "Teacher says your name",
+            "Mic on, A'udhu billah, Bismillah",
+            "Say Al-Kawthar 108:1-3",
+            "Teacher gives a star and one tip",
+            "Mic off, next friend"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Before we recite, we say ...",
+            "options": [
+              "A'udhu billah and Bismillah",
+              "Goodbye",
+              "Nothing"
+            ],
+            "answer": 0,
+            "why": "We seek refuge in Allah first (An-Nahl 16:98), then say Bismillah."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say Al-Kawthar 108:1-3 together, then in two halves.",
+          "a": "The class says 108:1-3 together.",
+          "mins": 3,
+          "model": "I do: I say each ayah slowly and you say it back: إِنَّآ أَعْطَيْنَٰكَ ٱلْكَوْثَرَ ..."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening turns: today's group says Al-Kawthar 108:1-3 to the teacher, one by one. Everyone else says it softly three times.",
+          "a": "Each child in the group recites; the teacher gives stars on the rubric.",
+          "mins": 3,
+          "model": "The teacher shows one turn with a confident child."
+        },
+        {
+          "q": "Extend: say it to a grown-up after the lesson with no help.",
+          "a": "Said alone.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-Kawthar starts with ...",
+          "a": "إِنَّآ أَعْطَيْنَٰكَ",
+          "mins": 1,
+          "options": [
+            "إِنَّآ أَعْطَيْنَٰكَ",
+            "إِذَا جَآءَ",
+            "قُلْ يَٰٓأَيُّهَا"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Al-Kawthar is the shortest surah in the Qur'an. Why is it still important to say every word carefully?",
+          "a": "Every word is Allah's speech; a short surah said beautifully is still a big reward.",
+          "mins": 1
+        }
+      ],
+      "homework": "Say Al-Kawthar and An-Nasr to a grown-up each day; tick the revision log.",
+      "send": "SEND: colour cards for the rule, extra listening turns. EAL: key words with meanings. Stretch: find a new example in a surah you know.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: my recitation stars chart",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Gold star sticker",
+          "alt": "A star for good reciting",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Al-Kawthar, Al-Ma'un and sukoon",
+      "n": 43,
+      "title": "Words with sukoon from surahs we know",
+      "duration": 30,
+      "bigQuestion": "In «وَٱنْحَرْ» there are two quiet letters. Can you hear where your voice stops?",
+      "objectives": [
+        "To understand how to read Qur'an words that have a sukoon in the middle or at the end"
+      ],
+      "successCriteria": [
+        "All: find the sukoon in a word from Al-Kawthar",
+        "Most: read «أَعْطَيْنَٰكَ» smoothly",
+        "Some: read a word with two sukoons"
+      ],
+      "smsc": "Spiritual: the joy of reading Allah's words ourselves",
+      "keywords": [
+        {
+          "term": "sukoon (سكون)",
+          "def": "a small circle: the letter has no vowel"
+        },
+        {
+          "term": "kalimah (كلمة)",
+          "def": "a word"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "learning the Qur'an by heart"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "In «وَٱنْحَرْ» there are two quiet letters. Can you hear where your voice stops?",
+        "a": "On the noon (wan) and on the raa at the end (har): wanhar."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We have certainly made the Qur'an easy for remembrance' (Al-Qamar 54:17). Reading letters and words well helps us read the Qur'an.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Sukoon means ...",
+          "a": "no vowel",
+          "mins": 1,
+          "options": [
+            "no vowel",
+            "say it twice"
+          ]
+        },
+        {
+          "q": "Al-Kawthar 108:1: «إِنَّآ ...» Which word comes next?",
+          "a": "أَعْطَيْنَٰكَ",
+          "mins": 1,
+          "options": [
+            "إِنَّ",
+            "شَانِئَكَ",
+            "أَعْطَيْنَٰكَ"
+          ]
+        },
+        {
+          "q": "لَمْ says ...",
+          "a": "lam",
+          "mins": 1,
+          "options": [
+            "lam",
+            "lama",
+            "lami"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Sukoon in the middle",
+          "bullets": [
+            "The quiet letter closes the syllable",
+            "Then carry on to the next letter",
+            "a'-tay-naa-ka"
+          ],
+          "note": "Bismillah. Clap each part: a' / tay / naa / ka."
+        },
+        {
+          "heading": "Words from our surahs",
+          "bullets": [],
+          "note": "Children echo in turn. Show each sukoon in red.",
+          "table": {
+            "head": [
+              "Word",
+              "Say it",
+              "Where"
+            ],
+            "rows": [
+              [
+                "أَعْطَيْنَٰكَ",
+                "a'taynaaka",
+                "Al-Kawthar 108:1"
+              ],
+              [
+                "وَٱنْحَرْ",
+                "wanhar",
+                "Al-Kawthar 108:2"
+              ],
+              [
+                "لَمْ يَلِدْ",
+                "lam yalid",
+                "Al-Ikhlas 112:3"
+              ],
+              [
+                "أَعُوذُ",
+                "a'udhu",
+                "Al-Falaq 113:1"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Read with me",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Find each circle",
+            "Close on it",
+            "Carry on smoothly",
+            "Read the whole word"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "In «أَعْطَيْنَٰكَ», which letter has the first sukoon?",
+            "options": [
+              "ع",
+              "ك",
+              "ن"
+            ],
+            "answer": 0,
+            "why": "أَعْ: the 'ayn has a sukoon: a'-taynaaka."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Read: «لَمْ يَلِدْ» (112:3)",
+          "a": "lam yalid",
+          "mins": 3,
+          "model": "I do: لَمْ (lam), يَ (ya), لِ (li), close on دْ: yalid. Together: lam yalid."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: read eight words with sukoon from Al-Kawthar, Al-Ikhlas and Al-Falaq; colour each sukoon red. The teacher listens to today's group.",
+          "a": "Eight words read with each sukoon coloured.",
+          "mins": 5,
+          "model": "The teacher reads and colours the first: «أَعْطَيْنَٰكَ»."
+        },
+        {
+          "q": "Extend: write قُلْ on your whiteboard with its sukoon.",
+          "a": "قُلْ",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "«وَٱنْحَرْ» has how many sukoons?",
+          "a": "2",
+          "mins": 1,
+          "options": [
+            "2",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "q": "Back to our ponder: In «وَٱنْحَرْ» there are two quiet letters. Can you hear where your voice stops?",
+          "a": "On the noon (wan) and on the raa at the end (har): wanhar.",
+          "mins": 1
+        }
+      ],
+      "homework": "Read the sukoon words on your sheet to a grown-up; say Al-Kawthar; tick the revision log.",
+      "send": "SEND: colour cards for the rule, extra listening turns. EAL: key words with meanings. Stretch: find a new example in a surah you know.",
+      "resources": [
+        "Slides",
+        "The school's Qaidah book (TO CONFIRM which edition): sukoon and qalqalah pages",
+        "Mini-whiteboard and pen",
+        "Pupil PDF worksheet: words to read and colour",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "Arabic alphabet chart",
+          "alt": "A chart of the Arabic letters",
+          "for": "hook"
+        },
+        {
+          "find": "Red colouring pencil",
+          "alt": "A red pencil for colouring",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Al-Kawthar, Al-Ma'un and sukoon",
+      "n": 44,
+      "title": "Al-Kawthar: what it means and saying it smoothly",
+      "duration": 30,
+      "bigQuestion": "Allah promised the Prophet ﷺ Al-Kawthar. Do you think Allah forgets His promises?",
+      "objectives": [
+        "To understand what Al-Kawthar teaches and to say it smoothly from memory"
+      ],
+      "successCriteria": [
+        "All: say Al-Kawthar with the class",
+        "Most: say Al-Kawthar alone smoothly",
+        "Some: tell a friend two things 108:2 asks us to do"
+      ],
+      "smsc": "Spiritual: the joy of reading Allah's words ourselves",
+      "keywords": [
+        {
+          "term": "Al-Kawthar (الكوثر)",
+          "def": "a river of great good in Paradise"
+        },
+        {
+          "term": "shukr (شكر)",
+          "def": "thanking Allah"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "learning the Qur'an by heart"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Allah promised the Prophet ﷺ Al-Kawthar. Do you think Allah forgets His promises?",
+        "a": "Never. Allah always keeps His promises, so we trust Him and thank Him."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'So pray to your Lord and sacrifice [to Him alone].' (Al-Kawthar 108:2).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Kawthar 108:1 in your head. How does the next ayah begin?",
+          "a": "فَصَلِّ لِرَبِّكَ",
+          "mins": 1,
+          "options": [
+            "فَصَلِّ لِرَبِّكَ",
+            "إِنَّ شَانِئَكَ"
+          ]
+        },
+        {
+          "q": "How many ayat in Al-Kawthar?",
+          "a": "3",
+          "mins": 1,
+          "options": [
+            "3",
+            "5"
+          ]
+        },
+        {
+          "q": "«أَعْطَيْنَٰكَ» has a sukoon on ...",
+          "a": "ع",
+          "mins": 1,
+          "options": [
+            "ع",
+            "ك"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Al-Kawthar",
+          "bullets": [
+            "Say it with me",
+            "Slowly and clearly"
+          ],
+          "note": "Bismillah. Recite twice; children whisper along with mics muted.",
+          "quote": {
+            "text": "إِنَّآ أَعْطَيْنَٰكَ ٱلْكَوْثَرَ (١) فَصَلِّ لِرَبِّكَ وَٱنْحَرْ (٢) إِنَّ شَانِئَكَ هُوَ ٱلْأَبْتَرُ (٣)",
+            "source": "Surat Al-Kawthar, 108:1-3"
+          }
+        },
+        {
+          "heading": "What it means",
+          "bullets": [
+            "A translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read slowly; use the river picture.",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "108:1",
+                "Indeed, We have granted you, [O Muhammad], al-Kawthar."
+              ],
+              [
+                "108:2",
+                "So pray to your Lord and sacrifice [to Him alone]."
+              ],
+              [
+                "108:3",
+                "Indeed, your enemy is the one cut off."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Our thank-you to Allah",
+          "bullets": [
+            "Allah gave a great gift",
+            "We pray to Him",
+            "We give for His sake"
+          ],
+          "note": "Link 108:2 to our five daily prayers and to giving on Eid al-Adha."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Who gave Al-Kawthar to the Prophet ﷺ?",
+            "options": [
+              "Allah",
+              "His friends",
+              "A king"
+            ],
+            "answer": 0,
+            "why": "108:1: 'Indeed, We have granted you al-Kawthar.'"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say Al-Kawthar together, then each ayah in a different voice: soft, steady, clear.",
+          "a": "Al-Kawthar said three times smoothly.",
+          "mins": 3,
+          "model": "I do: I say 108:1 slowly and clearly; you echo."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening turns: today's group says Al-Kawthar to the teacher. Everyone else: draw a river and write 'Al-Kawthar' under it on the pupil PDF.",
+          "a": "Al-Kawthar recited; picture labelled.",
+          "mins": 5,
+          "model": "The teacher shows one turn with a confident child."
+        },
+        {
+          "q": "Extend: tell a grown-up what Al-Kawthar means.",
+          "a": "A river of great good that Allah gave the Prophet ﷺ.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "108:2 says: so pray to ...",
+          "a": "your Lord",
+          "mins": 1,
+          "options": [
+            "your Lord",
+            "your friends"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Allah promised the Prophet ﷺ Al-Kawthar. Do you think Allah forgets His promises?",
+          "a": "Never. Allah always keeps His promises, so we trust Him and thank Him.",
+          "mins": 1
+        }
+      ],
+      "homework": "Say Al-Kawthar to a grown-up three times a day and tell them what it means; tick the revision log.",
+      "send": "SEND: colour cards for the rule, extra listening turns. EAL: key words with meanings. Stretch: find a new example in a surah you know.",
+      "resources": [
+        "Slides",
+        "The school's Qaidah book (TO CONFIRM which edition): sukoon and qalqalah pages",
+        "Mini-whiteboard and pen",
+        "Pupil PDF worksheet: words to read and colour",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "River clear water",
+          "alt": "A clear river",
+          "for": "hook"
+        },
+        {
+          "find": "Prayer mat",
+          "alt": "A prayer mat",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Al-Kawthar, Al-Ma'un and sukoon",
+      "n": 45,
+      "title": "Surat Al-Ma'un 107:1-3: hear, understand and memorise",
+      "duration": 30,
+      "bigQuestion": "Imagine a child with no mother or father. How should we treat them?",
+      "objectives": [
+        "To memorise Al-Ma'un 107:1-3 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: say 107:1 to 3 after the teacher",
+        "Most: say 107:1 to 3 alone",
+        "Some: say who Allah tells us to be kind to"
+      ],
+      "smsc": "Moral: kindness to orphans and the poor",
+      "keywords": [
+        {
+          "term": "Al-Ma'un (الماعون)",
+          "def": "small kindnesses, like lending things"
+        },
+        {
+          "term": "yatim (يتيم)",
+          "def": "an orphan: a child whose father has died"
+        },
+        {
+          "term": "miskin (مسكين)",
+          "def": "a poor person"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "learning the Qur'an by heart"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Imagine a child with no mother or father. How should we treat them?",
+        "a": "Kindly and gently; Al-Ma'un warns about the person who pushes the orphan away."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'For that is the one who drives away the orphan And does not encourage the feeding of the poor.' (Al-Ma'un 107:2 to 3). Allah loves kindness to orphans and feeding the poor.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which surah begins «إِنَّآ أَعْطَيْنَٰكَ ...»?",
+          "a": "Al-Kawthar",
+          "mins": 1,
+          "options": [
+            "Al-Kafirun",
+            "An-Nasr",
+            "Al-Kawthar"
+          ]
+        },
+        {
+          "q": "Recite Al-Kawthar 108:1 in your head. How does the next ayah begin?",
+          "a": "فَصَلِّ لِرَبِّكَ",
+          "mins": 1,
+          "options": [
+            "فَصَلِّ لِرَبِّكَ",
+            "إِنَّ شَانِئَكَ"
+          ]
+        },
+        {
+          "q": "A letter with sukoon has ...",
+          "a": "no vowel",
+          "mins": 1,
+          "options": [
+            "no vowel",
+            "two vowels"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-Ma'un 107:1-3",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 107:1-3 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "أَرَءَيْتَ ٱلَّذِى يُكَذِّبُ بِٱلدِّينِ (١) فَذَٰلِكَ ٱلَّذِى يَدُعُّ ٱلْيَتِيمَ (٢) وَلَا يَحُضُّ عَلَىٰ طَعَامِ ٱلْمِسْكِينِ (٣)",
+            "source": "Surat Al-Ma'un, 107:1-3"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "English helps us understand; only the Arabic is the Qur'an",
+            "Big idea: be kind to orphans and feed the poor"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "107:1",
+                "Have you seen the one who denies the Recompense?"
+              ],
+              [
+                "107:2",
+                "For that is the one who drives away the orphan"
+              ],
+              [
+                "107:3",
+                "And does not encourage the feeding of the poor."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 107:1-3 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah",
+            "We listen, mics muted",
+            "Mics on in turn: three friends repeat",
+            "Teacher fixes one sound",
+            "Everyone repeats softly together"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "107:2 to 3 is about someone who ...",
+            "options": [
+              "pushes away the orphan and does not urge feeding the poor",
+              "helps everyone",
+              "prays at night"
+            ],
+            "answer": 0,
+            "why": "107:2 to 3."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-Ma'un 107:1-3 with the teacher.",
+          "a": "Pupils say 107:1-3 together without looking.",
+          "mins": 3,
+          "model": "I do: chunk 107:1-3. Ayah 1: 3 times looking, 3 times without looking. Then ayah 2 the same way. Then link: recite 1 and 2 together twice. Finish by reciting the whole chunk once without the mushaf."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening turns: today's group says 107:1-3 to the teacher, one by one. Everyone else: say it softly 3 times looking, 3 times without.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 5,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "Think of one way your family can help a poor person this week.",
+          "a": "For example: give food to a food bank.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-Ma'un 107:1: «أَرَءَيْتَ ...» Which word comes next?",
+          "a": "ٱلَّذِى",
+          "mins": 1,
+          "options": [
+            "عَلَىٰ",
+            "هُمْ",
+            "ٱلَّذِى"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Imagine a child with no mother or father. How should we treat them?",
+          "a": "Kindly and gently; Al-Ma'un warns about the person who pushes the orphan away.",
+          "mins": 1
+        }
+      ],
+      "homework": "Recite Al-Ma'un 107:1-3 to a parent three times a day and revise Al-Kawthar; tick the portal revision log each day.",
+      "send": "SEND: one ayah at a time, extra listening turns, finger tracking on the pupil PDF. EAL: key words shown with meanings. Stretch: lead the echo for a group.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "The school's Qaidah book (TO CONFIRM which edition), joining or tanween pages",
+        "Pupil PDF worksheet: Al-Ma'un 107:1-3 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "Bowl of food rice",
+          "alt": "A bowl of food to share",
+          "for": "hook"
+        },
+        {
+          "find": "Quran manuscript page",
+          "alt": "A page of the Qur'an",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Al-Kawthar, Al-Ma'un and sukoon",
+      "n": 46,
+      "title": "Qalqalah: the bouncing letters",
+      "duration": 30,
+      "bigQuestion": "Some letters are so strong that when they are quiet they still give a little bounce. Which letters do you think they are?",
+      "objectives": [
+        "To understand that ق ط ب ج د bounce a little when they have a sukoon"
+      ],
+      "successCriteria": [
+        "All: name the five qalqalah letters",
+        "Most: bounce a qalqalah letter with sukoon, like بْ",
+        "Some: find qalqalah in «ٱلْأَبْتَرُ» (108:3)"
+      ],
+      "smsc": "Spiritual: the joy of reading Allah's words ourselves",
+      "keywords": [
+        {
+          "term": "qalqalah (قلقلة)",
+          "def": "a little bounce on ق ط ب ج د when they have sukoon"
+        },
+        {
+          "term": "sukoon (سكون)",
+          "def": "a small circle: the letter has no vowel"
+        },
+        {
+          "term": "qutbu jad (قطب جد)",
+          "def": "a phrase to remember the five bouncing letters"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Some letters are so strong that when they are quiet they still give a little bounce. Which letters do you think they are?",
+        "a": "ق ط ب ج د: we remember them as qutbu jad (قطب جد)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We have certainly made the Qur'an easy for remembrance' (Al-Qamar 54:17). Reading letters and words well helps us read the Qur'an.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Sukoon means ...",
+          "a": "no vowel",
+          "mins": 1,
+          "options": [
+            "no vowel",
+            "a long vowel"
+          ]
+        },
+        {
+          "q": "Al-Ma'un 107:2: «فَذَٰلِكَ ...» Which word comes next?",
+          "a": "ٱلَّذِى",
+          "mins": 1,
+          "options": [
+            "ٱلْمَاعُونَ",
+            "يَحُضُّ",
+            "ٱلَّذِى"
+          ]
+        },
+        {
+          "q": "قُلْ says ...",
+          "a": "qul",
+          "mins": 1,
+          "options": [
+            "qul",
+            "qula"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Five bouncing letters",
+          "bullets": [
+            "ق ط ب ج د",
+            "Remember: qutbu jad",
+            "Bounce only when they have sukoon"
+          ],
+          "note": "Bismillah. Show each letter big; children bounce a hand like a ball."
+        },
+        {
+          "heading": "Bounce or no bounce?",
+          "bullets": [],
+          "note": "Children echo; bounce only on the sukoon letters.",
+          "table": {
+            "head": [
+              "Word",
+              "Bounce?",
+              "Where"
+            ],
+            "rows": [
+              [
+                "ٱلْأَبْتَرُ",
+                "Yes: بْ",
+                "Al-Kawthar 108:3"
+              ],
+              [
+                "يَلِدْ",
+                "Yes: دْ",
+                "Al-Ikhlas 112:3"
+              ],
+              [
+                "قُلْ",
+                "No: ق has a dammah",
+                "Al-Ikhlas 112:1"
+              ],
+              [
+                "ٱلْفَلَقِ",
+                "Yes, when we stop: ق",
+                "Al-Falaq 113:1"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Bounce with me",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Find the letter",
+            "Is there a sukoon?",
+            "Close the sound",
+            "Let it bounce a little",
+            "Do not add a vowel"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Which letter is a qalqalah letter?",
+            "options": [
+              "د",
+              "م",
+              "س"
+            ],
+            "answer": 0,
+            "why": "The five are ق ط ب ج د."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Bounce: «لَمْ يَلِدْ» (112:3)",
+          "a": "lam yalid, with a small bounce on the last د",
+          "mins": 3,
+          "model": "I do: yalid, close on دْ and let it bounce: yalid(d). Not yalidu."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: read six words; colour the bouncing letter yellow. The teacher listens to today's group.",
+          "a": "Six words read; qalqalah letters with sukoon coloured.",
+          "mins": 5,
+          "model": "The teacher reads and colours «ٱلْأَبْتَرُ»: the بْ."
+        },
+        {
+          "q": "Extend: say the five letters to a grown-up: qutbu jad.",
+          "a": "ق ط ب ج د",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Qalqalah letters bounce when they have ...",
+          "a": "sukoon",
+          "mins": 1,
+          "options": [
+            "sukoon",
+            "fathah",
+            "kasrah"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Some letters are so strong that when they are quiet they still give a little bounce. Which letters do you think they are?",
+          "a": "ق ط ب ج د: we remember them as qutbu jad (قطب جد).",
+          "mins": 1
+        }
+      ],
+      "homework": "Say qutbu jad and read three bouncing words to a grown-up; say Al-Ma'un 1 to 3; tick the revision log.",
+      "send": "SEND: colour cards for the rule, extra listening turns. EAL: key words with meanings. Stretch: find a new example in a surah you know.",
+      "resources": [
+        "Slides",
+        "The school's Qaidah book (TO CONFIRM which edition): sukoon and qalqalah pages",
+        "Mini-whiteboard and pen",
+        "Pupil PDF worksheet: words to read and colour",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "Bouncing ball",
+          "alt": "A bouncing ball",
+          "for": "hook"
+        },
+        {
+          "find": "Arabic alphabet chart",
+          "alt": "A chart of the Arabic letters",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Al-Kawthar, Al-Ma'un and sukoon",
+      "n": 47,
+      "title": "Listen and check: Al-Ma'un 1 to 3 and Al-Kawthar",
+      "duration": 30,
+      "bigQuestion": "What helps you remember a surah for a long time?",
+      "objectives": [
+        "To understand how to say Al-Ma'un 1 to 3 clearly in turn and keep Al-Kawthar strong"
+      ],
+      "successCriteria": [
+        "All: say Al-Kawthar with the class",
+        "Most: say Al-Ma'un 107:1 to 3 alone",
+        "Some: say both with no help"
+      ],
+      "smsc": "Social: waiting for our turn and listening to friends",
+      "keywords": [
+        {
+          "term": "hifdh (حفظ)",
+          "def": "learning the Qur'an by heart"
+        },
+        {
+          "term": "yatim (يتيم)",
+          "def": "an orphan"
+        },
+        {
+          "term": "ayah (آية)",
+          "def": "one sentence of the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What helps you remember a surah for a long time?",
+        "a": "Saying it every day, saying it in salah, and saying it to a grown-up."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We have certainly made the Qur'an easy for remembrance' (Al-Qamar 54:17). Reading letters and words well helps us read the Qur'an.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Al-Ma'un 107:1: «أَرَءَيْتَ ...» Which word comes next?",
+          "a": "ٱلَّذِى",
+          "mins": 1,
+          "options": [
+            "عَلَىٰ",
+            "هُمْ",
+            "ٱلَّذِى"
+          ]
+        },
+        {
+          "q": "Which is a qalqalah letter?",
+          "a": "ب",
+          "mins": 1,
+          "options": [
+            "ب",
+            "ن",
+            "ل"
+          ]
+        },
+        {
+          "q": "How many ayat in Al-Kawthar?",
+          "a": "3",
+          "mins": 1,
+          "options": [
+            "3",
+            "7"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "How we recite",
+          "bullets": [],
+          "note": "Bismillah. Show each star; children copy the sitting.",
+          "table": {
+            "head": [
+              "Star",
+              "What the teacher listens for"
+            ],
+            "rows": [
+              [
+                "Memory",
+                "I say every word in the right order"
+              ],
+              [
+                "Sounds",
+                "Each letter comes from the right place"
+              ],
+              [
+                "Harakat",
+                "Fathah, kasrah and dammah are clear"
+              ],
+              [
+                "Adab",
+                "I sit nicely, start with isti'adhah and Bismillah"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Al-Ma'un together",
+          "bullets": [
+            "Say it with me",
+            "Slowly, one ayah at a time"
+          ],
+          "note": "Recite together first, mics muted except the teacher.",
+          "quote": {
+            "text": "أَرَءَيْتَ ٱلَّذِى يُكَذِّبُ بِٱلدِّينِ (١) فَذَٰلِكَ ٱلَّذِى يَدُعُّ ٱلْيَتِيمَ (٢) وَلَا يَحُضُّ عَلَىٰ طَعَامِ ٱلْمِسْكِينِ (٣)",
+            "source": "Surat Al-Ma'un, 107:1-3"
+          }
+        },
+        {
+          "heading": "Al-Kawthar together",
+          "bullets": [
+            "Say it with me"
+          ],
+          "note": "Revision surah: recite together, then in turns.",
+          "quote": {
+            "text": "إِنَّآ أَعْطَيْنَٰكَ ٱلْكَوْثَرَ (١) فَصَلِّ لِرَبِّكَ وَٱنْحَرْ (٢) إِنَّ شَانِئَكَ هُوَ ٱلْأَبْتَرُ (٣)",
+            "source": "Surat Al-Kawthar, 108:1-3"
+          }
+        },
+        {
+          "heading": "Listening turns",
+          "bullets": [],
+          "note": "Names on screen (a group of up to five each lesson, so everyone is heard each week).",
+          "cycle": [
+            "Teacher says your name",
+            "Mic on, A'udhu billah, Bismillah",
+            "Say Al-Ma'un 107:1-3",
+            "Teacher gives a star and one tip",
+            "Mic off, next friend"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Al-Ma'un 107:2 talks about the ...",
+            "options": [
+              "orphan",
+              "moon",
+              "sea"
+            ],
+            "answer": 0,
+            "why": "107:2: 'For that is the one who drives away the orphan.'"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say Al-Ma'un 107:1-3 together, then in two halves.",
+          "a": "The class says 107:1-3 together.",
+          "mins": 3,
+          "model": "I do: I say each ayah slowly and you say it back: أَرَءَيْتَ ٱلَّذِى يُكَذِّبُ بِٱلدِّينِ ..."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening turns: today's group says Al-Ma'un 107:1-3 to the teacher, one by one. Everyone else says it softly three times.",
+          "a": "Each child in the group recites; the teacher gives stars on the rubric.",
+          "mins": 3,
+          "model": "The teacher shows one turn with a confident child."
+        },
+        {
+          "q": "Extend: say it to a grown-up after the lesson with no help.",
+          "a": "Said alone.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-Ma'un starts with ...",
+          "a": "أَرَءَيْتَ",
+          "mins": 1,
+          "options": [
+            "أَرَءَيْتَ",
+            "إِنَّآ",
+            "قُلْ هُوَ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: What helps you remember a surah for a long time?",
+          "a": "Saying it every day, saying it in salah, and saying it to a grown-up.",
+          "mins": 1
+        }
+      ],
+      "homework": "Say Al-Ma'un 1 to 3 and Al-Kawthar to a grown-up each day; tick the revision log.",
+      "send": "SEND: colour cards for the rule, extra listening turns. EAL: key words with meanings. Stretch: find a new example in a surah you know.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: my recitation stars chart",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Gold star sticker",
+          "alt": "A star for good reciting",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Al-Kawthar, Al-Ma'un and sukoon",
+      "n": 48,
+      "title": "Surat Al-Ma'un 107:4-7: hear, understand and memorise",
+      "duration": 30,
+      "bigQuestion": "Is it enough just to pray, or does Allah also want us to pray with our hearts and be kind to people?",
+      "objectives": [
+        "To memorise Al-Ma'un 107:4-7 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: say 107:4 to 7 after the teacher",
+        "Most: say 107:4 to 7 alone",
+        "Some: say all of Al-Ma'un and one lesson from it"
+      ],
+      "smsc": "Spiritual: praying with care and for Allah alone",
+      "keywords": [
+        {
+          "term": "salah (صلاة)",
+          "def": "the prayer"
+        },
+        {
+          "term": "ma'un (ماعون)",
+          "def": "small things people need, like a cup or a pencil"
+        },
+        {
+          "term": "riya' (رياء)",
+          "def": "showing off"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "learning the Qur'an by heart"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is it enough just to pray, or does Allah also want us to pray with our hearts and be kind to people?",
+        "a": "Allah wants both: careful prayer for Him alone, and kindness like lending small things (107:4 to 7)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'So woe to those who pray [But] who are heedless of their prayer -' (Al-Ma'un 107:4 to 5). We pray on time, with care, for Allah alone.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Ma'un 107:2 in your head. How does the next ayah begin?",
+          "a": "وَلَا يَحُضُّ",
+          "mins": 1,
+          "options": [
+            "وَلَا يَحُضُّ",
+            "ٱلَّذِينَ هُمْ",
+            "ٱلَّذِينَ هُمْ"
+          ]
+        },
+        {
+          "q": "Which is a qalqalah letter?",
+          "a": "د",
+          "mins": 1,
+          "options": [
+            "د",
+            "م",
+            "ن"
+          ]
+        },
+        {
+          "q": "Al-Ma'un 107:3: «وَلَا ...» Which word comes next?",
+          "a": "يَحُضُّ",
+          "mins": 1,
+          "options": [
+            "طَعَامِ",
+            "لِّلْمُصَلِّينَ",
+            "يَحُضُّ"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Al-Ma'un 107:4-7",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 107:4-7 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "فَوَيْلٌۭ لِّلْمُصَلِّينَ (٤) ٱلَّذِينَ هُمْ عَن صَلَاتِهِمْ سَاهُونَ (٥) ٱلَّذِينَ هُمْ يُرَآءُونَ (٦) وَيَمْنَعُونَ ٱلْمَاعُونَ (٧)",
+            "source": "Surat Al-Ma'un, 107:4-7"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "English helps us understand; only the Arabic is the Qur'an",
+            "Big idea: pray with care, for Allah, and share small kindnesses"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "107:4",
+                "So woe to those who pray"
+              ],
+              [
+                "107:5",
+                "[But] who are heedless of their prayer -"
+              ],
+              [
+                "107:6",
+                "Those who make show [of their deeds]"
+              ],
+              [
+                "107:7",
+                "And withhold [simple] assistance."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 107:4-7 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah",
+            "We listen, mics muted",
+            "Mics on in turn: three friends repeat",
+            "Teacher fixes one sound",
+            "Everyone repeats softly together"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Al-Ma'un warns people who ...",
+            "options": [
+              "show off and refuse to lend small things",
+              "pray on time",
+              "help their neighbours"
+            ],
+            "answer": 0,
+            "why": "107:6 to 7: 'Those who make show [of their deeds] and withhold [simple] assistance.'"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Al-Ma'un 107:4-7 with the teacher.",
+          "a": "Pupils say 107:4-7 together without looking.",
+          "mins": 3,
+          "model": "I do: chunk 107:4-7. Ayah 4: 3 times looking, 3 times without looking. Then ayah 5 the same way. Then link: recite 4 and 5 together twice. Finish by reciting the whole chunk once without the mushaf."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening turns: today's group says 107:4-7 to the teacher, one by one. Everyone else: say it softly 3 times looking, 3 times without.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 5,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "Lend or share something small at home today, like a pencil or a toy.",
+          "a": "Shared something for Allah's sake.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-Ma'un 107:4: «فَوَيْلٌۭ ...» Which word comes next?",
+          "a": "لِّلْمُصَلِّينَ",
+          "mins": 1,
+          "options": [
+            "يُكَذِّبُ",
+            "لِّلْمُصَلِّينَ",
+            "يَدُعُّ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Is it enough just to pray, or does Allah also want us to pray with our hearts and be kind to people?",
+          "a": "Allah wants both: careful prayer for Him alone, and kindness like lending small things (107:4 to 7).",
+          "mins": 1
+        }
+      ],
+      "homework": "Recite Al-Ma'un 107:4-7 to a parent three times a day and revise Al-Ma'un 1 to 3; tick the portal revision log each day.",
+      "send": "SEND: one ayah at a time, extra listening turns, finger tracking on the pupil PDF. EAL: key words shown with meanings. Stretch: lead the echo for a group.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "The school's Qaidah book (TO CONFIRM which edition), joining or tanween pages",
+        "Pupil PDF worksheet: Al-Ma'un 107:4-7 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "Prayer mat",
+          "alt": "A prayer mat",
+          "for": "hook"
+        },
+        {
+          "find": "Cup and plate kitchen",
+          "alt": "A cup: a small thing we can lend",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Al-Kawthar, Al-Ma'un and sukoon",
+      "n": 49,
+      "title": "Qalqalah in surahs we know",
+      "duration": 30,
+      "bigQuestion": "When we stop at the end of an ayah, the last letter becomes quiet. What happens if it is a qalqalah letter?",
+      "objectives": [
+        "To understand how to bounce qalqalah letters in surahs we have memorised"
+      ],
+      "successCriteria": [
+        "All: find a qalqalah letter with sukoon in Al-Ikhlas",
+        "Most: bounce «يَلِدْ» and «يُولَدْ» correctly",
+        "Some: bounce the letter when we stop on «ٱلْفَلَقِ»"
+      ],
+      "smsc": "Spiritual: the joy of reading Allah's words ourselves",
+      "keywords": [
+        {
+          "term": "qalqalah (قلقلة)",
+          "def": "a little bounce on ق ط ب ج د when they have sukoon"
+        },
+        {
+          "term": "waqf (وقف)",
+          "def": "stopping at the end of an ayah"
+        },
+        {
+          "term": "sukoon (سكون)",
+          "def": "a small circle: the letter has no vowel"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "When we stop at the end of an ayah, the last letter becomes quiet. What happens if it is a qalqalah letter?",
+        "a": "It bounces when we stop, like «ٱلْفَلَقِ» → al-falaq(q)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We have certainly made the Qur'an easy for remembrance' (Al-Qamar 54:17). Reading letters and words well helps us read the Qur'an.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "The five bouncing letters are ...",
+          "a": "ق ط ب ج د",
+          "mins": 1,
+          "options": [
+            "ق ط ب ج د",
+            "م ن ل ر و"
+          ]
+        },
+        {
+          "q": "Recite Al-Ma'un 107:4 in your head. How does the next ayah begin?",
+          "a": "ٱلَّذِينَ هُمْ",
+          "mins": 1,
+          "options": [
+            "وَيَمْنَعُونَ ٱلْمَاعُونَ",
+            "فَذَٰلِكَ ٱلَّذِى",
+            "ٱلَّذِينَ هُمْ"
+          ]
+        },
+        {
+          "q": "«ٱلْأَبْتَرُ» bounces on ...",
+          "a": "ب",
+          "mins": 1,
+          "options": [
+            "ب",
+            "ت",
+            "ر"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Al-Ikhlas bounces",
+          "bullets": [
+            "Say it with me",
+            "Bounce on دْ"
+          ],
+          "note": "Bismillah. Recite Al-Ikhlas; children tap the table on each bounce.",
+          "quote": {
+            "text": "قُلْ هُوَ ٱللَّهُ أَحَدٌ (١) ٱللَّهُ ٱلصَّمَدُ (٢) لَمْ يَلِدْ وَلَمْ يُولَدْ (٣) وَلَمْ يَكُن لَّهُۥ كُفُوًا أَحَدٌۢ (٤)",
+            "source": "Surat Al-Ikhlas, 112:1-4"
+          }
+        },
+        {
+          "heading": "Find the bounce",
+          "bullets": [],
+          "note": "Point to each word in the mushaf.",
+          "table": {
+            "head": [
+              "Word",
+              "Bounce on",
+              "Where"
+            ],
+            "rows": [
+              [
+                "يَلِدْ",
+                "دْ",
+                "Al-Ikhlas 112:3"
+              ],
+              [
+                "يُولَدْ",
+                "دْ",
+                "Al-Ikhlas 112:3"
+              ],
+              [
+                "أَحَدٌ",
+                "د when we stop",
+                "Al-Ikhlas 112:1"
+              ],
+              [
+                "ٱلْفَلَقِ",
+                "ق when we stop",
+                "Al-Falaq 113:1"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Stop and bounce",
+          "bullets": [
+            "At the end of an ayah, the last letter goes quiet",
+            "If it is ق ط ب ج د it bounces",
+            "A small bounce, not a new vowel"
+          ],
+          "note": "Contrast «أَحَدٌ» joined (ahadun) with stopping (ahad)."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "When we stop on «أَحَدٌ», the د ...",
+            "options": [
+              "bounces a little",
+              "says 'du'",
+              "disappears"
+            ],
+            "answer": 0,
+            "why": "Stopping makes it sakin, and د is a qalqalah letter."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Bounce: «وَلَمْ يُولَدْ» (112:3)",
+          "a": "walam yulad, with a small bounce on the last د",
+          "mins": 3,
+          "model": "I do: wa-lam / yuu-lad(d): close on دْ and let it bounce."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: read Al-Ikhlas and Al-Falaq lines; colour every bounce yellow. The teacher listens to today's group.",
+          "a": "Bounces found: يَلِدْ، يُولَدْ، أَحَدٌ at a stop, ٱلْفَلَقِ at a stop.",
+          "mins": 5,
+          "model": "The teacher colours the first bounce in «لَمْ يَلِدْ»."
+        },
+        {
+          "q": "Extend: say Al-Ikhlas to a grown-up with every bounce.",
+          "a": "Said with bounces.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "«يَلِدْ» bounces on ...",
+          "a": "د",
+          "mins": 1,
+          "options": [
+            "د",
+            "ل",
+            "ي"
+          ]
+        },
+        {
+          "q": "Back to our ponder: When we stop at the end of an ayah, the last letter becomes quiet. What happens if it is a qalqalah letter?",
+          "a": "It bounces when we stop, like «ٱلْفَلَقِ» → al-falaq(q).",
+          "mins": 1
+        }
+      ],
+      "homework": "Say Al-Ikhlas and Al-Falaq with their bounces to a grown-up; say Al-Ma'un; tick the revision log.",
+      "send": "SEND: colour cards for the rule, extra listening turns. EAL: key words with meanings. Stretch: find a new example in a surah you know.",
+      "resources": [
+        "Slides",
+        "The school's Qaidah book (TO CONFIRM which edition): sukoon and qalqalah pages",
+        "Mini-whiteboard and pen",
+        "Pupil PDF worksheet: words to read and colour",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "Bouncing ball",
+          "alt": "A bouncing ball",
+          "for": "hook"
+        },
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Al-Kawthar, Al-Ma'un and sukoon",
+      "n": 50,
+      "title": "Al-Ma'un: what it means and saying it smoothly",
+      "duration": 30,
+      "bigQuestion": "Al-Ma'un talks about prayer and about being kind. Why do you think Allah puts them together?",
+      "objectives": [
+        "To understand what Al-Ma'un teaches about prayer and kindness, and to say it smoothly from memory"
+      ],
+      "successCriteria": [
+        "All: say Al-Ma'un with the class",
+        "Most: say Al-Ma'un alone smoothly",
+        "Some: tell a friend two kind actions Al-Ma'un teaches"
+      ],
+      "smsc": "Moral: kindness to orphans, the poor and neighbours",
+      "keywords": [
+        {
+          "term": "Al-Ma'un (الماعون)",
+          "def": "small kindnesses, like lending things"
+        },
+        {
+          "term": "miskin (مسكين)",
+          "def": "a poor person"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "learning the Qur'an by heart"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Al-Ma'un talks about prayer and about being kind. Why do you think Allah puts them together?",
+        "a": "A person who truly prays for Allah is also kind to people: both come from the heart."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And does not encourage the feeding of the poor.' (Al-Ma'un 107:3).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Ma'un 107:5 in your head. How does the next ayah begin?",
+          "a": "ٱلَّذِينَ هُمْ",
+          "mins": 1,
+          "options": [
+            "وَيَمْنَعُونَ ٱلْمَاعُونَ",
+            "وَلَا يَحُضُّ",
+            "ٱلَّذِينَ هُمْ"
+          ]
+        },
+        {
+          "q": "How many ayat in Al-Ma'un?",
+          "a": "7",
+          "mins": 1,
+          "options": [
+            "7",
+            "3",
+            "5"
+          ]
+        },
+        {
+          "q": "«يُولَدْ» bounces on ...",
+          "a": "د",
+          "mins": 1,
+          "options": [
+            "د",
+            "و"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Al-Ma'un",
+          "bullets": [
+            "Say it with me",
+            "Slowly and clearly"
+          ],
+          "note": "Bismillah. Recite twice; children whisper along with mics muted.",
+          "quote": {
+            "text": "أَرَءَيْتَ ٱلَّذِى يُكَذِّبُ بِٱلدِّينِ (١) فَذَٰلِكَ ٱلَّذِى يَدُعُّ ٱلْيَتِيمَ (٢) وَلَا يَحُضُّ عَلَىٰ طَعَامِ ٱلْمِسْكِينِ (٣) فَوَيْلٌۭ لِّلْمُصَلِّينَ (٤) ٱلَّذِينَ هُمْ عَن صَلَاتِهِمْ سَاهُونَ (٥) ٱلَّذِينَ هُمْ يُرَآءُونَ (٦) وَيَمْنَعُونَ ٱلْمَاعُونَ (٧)",
+            "source": "Surat Al-Ma'un, 107:1-7"
+          }
+        },
+        {
+          "heading": "What it means",
+          "bullets": [
+            "A translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read slowly. Ask: what does Allah not like?",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "107:1-3",
+                "Have you seen the one who denies the Recompense? For that is the one who drives away the orphan And does not encourage the feeding of the poor."
+              ],
+              [
+                "107:4-5",
+                "So woe to those who pray [But] who are heedless of their prayer -"
+              ],
+              [
+                "107:6-7",
+                "Those who make show [of their deeds] And withhold [simple] assistance."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Kind or unkind?",
+          "bullets": [],
+          "note": "Children sort with show-me thumbs.",
+          "sort": {
+            "columns": [
+              "Kind: Allah loves it",
+              "Unkind: Al-Ma'un warns"
+            ],
+            "cards": [
+              "Sharing food with a poor family",
+              "Pushing away an orphan",
+              "Lending a pencil",
+              "Praying only to show off"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Al-Ma'un teaches us to ...",
+            "options": [
+              "feed the poor and pray with care",
+              "keep everything for ourselves",
+              "pray only when people see"
+            ],
+            "answer": 0,
+            "why": "107:3 to 7."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say Al-Ma'un together, then in two halves (1 to 3, 4 to 7).",
+          "a": "Al-Ma'un said smoothly.",
+          "mins": 3,
+          "model": "I do: I say 107:1 to 3; you echo; then 4 to 7."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening turns: today's group says Al-Ma'un to the teacher. Everyone else: draw a kind action from Al-Ma'un on the pupil PDF (food, a cup, a pencil; no people).",
+          "a": "Al-Ma'un recited; kind action drawn.",
+          "mins": 5,
+          "model": "The teacher shows one turn with a confident child."
+        },
+        {
+          "q": "Extend: do one kind action from Al-Ma'un at home.",
+          "a": "For example: help share food.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "107:2 warns about someone who pushes away the ...",
+          "a": "orphan",
+          "mins": 1,
+          "options": [
+            "orphan",
+            "teacher",
+            "neighbour's cat"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Al-Ma'un talks about prayer and about being kind. Why do you think Allah puts them together?",
+          "a": "A person who truly prays for Allah is also kind to people: both come from the heart.",
+          "mins": 1
+        }
+      ],
+      "homework": "Say all of Al-Ma'un to a grown-up and tell them one lesson from it; tick the revision log.",
+      "send": "SEND: colour cards for the rule, extra listening turns. EAL: key words with meanings. Stretch: find a new example in a surah you know.",
+      "resources": [
+        "Slides",
+        "The school's Qaidah book (TO CONFIRM which edition): sukoon and qalqalah pages",
+        "Mini-whiteboard and pen",
+        "Pupil PDF worksheet: words to read and colour",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "Bowl of food rice",
+          "alt": "Food to share",
+          "for": "hook"
+        },
+        {
+          "find": "Pencils in a pot",
+          "alt": "Pencils we can lend",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Al-Kawthar, Al-Ma'un and sukoon",
+      "n": 51,
+      "title": "Sukoon and qalqalah reading check",
+      "duration": 30,
+      "bigQuestion": "What is the hardest thing about the quiet letter: stopping on it, or remembering not to add a vowel?",
+      "objectives": [
+        "To understand how well I read words with sukoon and qalqalah, and what to practise next"
+      ],
+      "successCriteria": [
+        "All: read four sukoon words",
+        "Most: bounce three qalqalah words correctly",
+        "Some: read a whole ayah with sukoon and qalqalah"
+      ],
+      "smsc": "Social: listening kindly while friends read",
+      "keywords": [
+        {
+          "term": "sukoon (سكون)",
+          "def": "a small circle: the letter has no vowel"
+        },
+        {
+          "term": "qalqalah (قلقلة)",
+          "def": "a little bounce on ق ط ب ج د when they have sukoon"
+        },
+        {
+          "term": "target",
+          "def": "the one thing I will practise next"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What is the hardest thing about the quiet letter: stopping on it, or remembering not to add a vowel?",
+        "a": "Many children add a little vowel; we practise closing the sound and only bouncing on ق ط ب ج د."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We have certainly made the Qur'an easy for remembrance' (Al-Qamar 54:17). Reading letters and words well helps us read the Qur'an.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Sukoon means ...",
+          "a": "no vowel",
+          "mins": 1,
+          "options": [
+            "no vowel",
+            "say it twice"
+          ]
+        },
+        {
+          "q": "Qalqalah letters are ...",
+          "a": "ق ط ب ج د",
+          "mins": 1,
+          "options": [
+            "ق ط ب ج د",
+            "س ص ش"
+          ]
+        },
+        {
+          "q": "«قُلْ» says ...",
+          "a": "qul",
+          "mins": 1,
+          "options": [
+            "qul",
+            "qulu"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "My reading card",
+          "bullets": [],
+          "note": "Bismillah. Each child reads the card in their turn.",
+          "table": {
+            "head": [
+              "Word",
+              "Say it",
+              "Look for"
+            ],
+            "rows": [
+              [
+                "قُلْ",
+                "qul",
+                "sukoon"
+              ],
+              [
+                "أَعْطَيْنَٰكَ",
+                "a'taynaaka",
+                "sukoon in the middle"
+              ],
+              [
+                "ٱلْأَبْتَرُ",
+                "al-abtar",
+                "qalqalah on بْ"
+              ],
+              [
+                "لَمْ يَلِدْ",
+                "lam yalid",
+                "sukoon and qalqalah"
+              ],
+              [
+                "يَحُضُّ",
+                "yahuddu",
+                "no qalqalah: ض"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "How the teacher listens",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Star",
+              "What the teacher listens for"
+            ],
+            "rows": [
+              [
+                "Memory",
+                "I say every word in the right order"
+              ],
+              [
+                "Sounds",
+                "Each letter comes from the right place"
+              ],
+              [
+                "Harakat",
+                "Fathah, kasrah and dammah are clear"
+              ],
+              [
+                "Adab",
+                "I sit nicely, start with isti'adhah and Bismillah"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Reading turns",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Teacher says your name",
+            "Mic on",
+            "Read the card",
+            "Star and one tip",
+            "Next friend"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Which word has a qalqalah bounce?",
+            "options": [
+              "ٱلْأَبْتَرُ",
+              "يَحُضُّ",
+              "قُلْ"
+            ],
+            "answer": 0,
+            "why": "The بْ in «ٱلْأَبْتَرُ» has sukoon."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Read the card together.",
+          "a": "All five words read.",
+          "mins": 3,
+          "model": "I do: I read each word slowly and point to the sukoon or the bounce."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Reading turns: today's group reads the card to the teacher. Everyone else: read it softly three times and tick the words you know.",
+          "a": "Card read; the teacher records stars and one target.",
+          "mins": 5,
+          "model": "The teacher shows one turn with a confident child."
+        },
+        {
+          "q": "Extend: read «وَلَمْ يُولَدْ» with its bounce.",
+          "a": "walam yulad(d)",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "«ٱلْأَبْتَرُ» bounces on ...",
+          "a": "ب",
+          "mins": 1,
+          "options": [
+            "ب",
+            "ر"
+          ]
+        },
+        {
+          "q": "Back to our ponder: What is the hardest thing about the quiet letter: stopping on it, or remembering not to add a vowel?",
+          "a": "Many children add a little vowel; we practise closing the sound and only bouncing on ق ط ب ج د.",
+          "mins": 1
+        }
+      ],
+      "homework": "Practise your target words from the card with a grown-up; tick the revision log.",
+      "send": "SEND: colour cards for the rule, extra listening turns. EAL: key words with meanings. Stretch: find a new example in a surah you know.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: my recitation stars chart",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "Gold star sticker",
+          "alt": "A star for good reading",
+          "for": "hook"
+        },
+        {
+          "find": "Arabic alphabet chart",
+          "alt": "A chart of the Arabic letters",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Al-Kawthar, Al-Ma'un and sukoon",
+      "n": 52,
+      "title": "Sign-off: Al-Kawthar and Al-Ma'un",
+      "duration": 30,
+      "bigQuestion": "Sign-off day! How can you stay calm when it is your turn to recite?",
+      "objectives": [
+        "To understand how secure Al-Kawthar and Al-Ma'un are and recite them alone for sign-off"
+      ],
+      "successCriteria": [
+        "All: say Al-Kawthar alone",
+        "Most: say Al-Ma'un alone with one help or less",
+        "Some: say both and An-Nasr with no help"
+      ],
+      "smsc": "Social: waiting for our turn and listening to friends",
+      "keywords": [
+        {
+          "term": "hifdh (حفظ)",
+          "def": "learning the Qur'an by heart"
+        },
+        {
+          "term": "sign-off",
+          "def": "the teacher hears the whole surah and ticks it"
+        },
+        {
+          "term": "ayah (آية)",
+          "def": "one sentence of the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Sign-off day! How can you stay calm when it is your turn to recite?",
+        "a": "Take a breath, say A'udhu billah and Bismillah, and say it slowly: Allah made the Qur'an easy."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We have certainly made the Qur'an easy for remembrance' (Al-Qamar 54:17). Reading letters and words well helps us read the Qur'an.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Ma'un 107:6 in your head. How does the next ayah begin?",
+          "a": "وَيَمْنَعُونَ ٱلْمَاعُونَ",
+          "mins": 1,
+          "options": [
+            "وَلَا يَحُضُّ",
+            "أَرَءَيْتَ ٱلَّذِى",
+            "وَيَمْنَعُونَ ٱلْمَاعُونَ"
+          ]
+        },
+        {
+          "q": "How many ayat in Al-Ma'un?",
+          "a": "7",
+          "mins": 1,
+          "options": [
+            "7",
+            "3"
+          ]
+        },
+        {
+          "q": "How many ayat in Al-Kawthar?",
+          "a": "3",
+          "mins": 1,
+          "options": [
+            "3",
+            "7"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "How we recite",
+          "bullets": [],
+          "note": "Bismillah. Show each star; children copy the sitting.",
+          "table": {
+            "head": [
+              "Star",
+              "What the teacher listens for"
+            ],
+            "rows": [
+              [
+                "Memory",
+                "I say every word in the right order"
+              ],
+              [
+                "Sounds",
+                "Each letter comes from the right place"
+              ],
+              [
+                "Harakat",
+                "Fathah, kasrah and dammah are clear"
+              ],
+              [
+                "Adab",
+                "I sit nicely, start with isti'adhah and Bismillah"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Al-Ma'un together",
+          "bullets": [
+            "Say it with me",
+            "Slowly, one ayah at a time"
+          ],
+          "note": "Recite together first, mics muted except the teacher.",
+          "quote": {
+            "text": "أَرَءَيْتَ ٱلَّذِى يُكَذِّبُ بِٱلدِّينِ (١) فَذَٰلِكَ ٱلَّذِى يَدُعُّ ٱلْيَتِيمَ (٢) وَلَا يَحُضُّ عَلَىٰ طَعَامِ ٱلْمِسْكِينِ (٣) فَوَيْلٌۭ لِّلْمُصَلِّينَ (٤) ٱلَّذِينَ هُمْ عَن صَلَاتِهِمْ سَاهُونَ (٥) ٱلَّذِينَ هُمْ يُرَآءُونَ (٦) وَيَمْنَعُونَ ٱلْمَاعُونَ (٧)",
+            "source": "Surat Al-Ma'un, 107:1-7"
+          }
+        },
+        {
+          "heading": "Al-Kawthar together",
+          "bullets": [
+            "Say it with me"
+          ],
+          "note": "Revision surah: recite together, then in turns.",
+          "quote": {
+            "text": "إِنَّآ أَعْطَيْنَٰكَ ٱلْكَوْثَرَ (١) فَصَلِّ لِرَبِّكَ وَٱنْحَرْ (٢) إِنَّ شَانِئَكَ هُوَ ٱلْأَبْتَرُ (٣)",
+            "source": "Surat Al-Kawthar, 108:1-3"
+          }
+        },
+        {
+          "heading": "Listening turns",
+          "bullets": [],
+          "note": "Names on screen (a group of up to five each lesson, so everyone is heard each week).",
+          "cycle": [
+            "Teacher says your name",
+            "Mic on, A'udhu billah, Bismillah",
+            "Say Al-Ma'un 107:1-7",
+            "Teacher gives a star and one tip",
+            "Mic off, next friend"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Which surah tells us to pray and sacrifice for Allah?",
+            "options": [
+              "Al-Kawthar",
+              "Al-Ma'un",
+              "An-Nas"
+            ],
+            "answer": 0,
+            "why": "108:2."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say Al-Ma'un 107:1-7 together, then in two halves.",
+          "a": "The class says 107:1-7 together.",
+          "mins": 3,
+          "model": "I do: I say each ayah slowly and you say it back: أَرَءَيْتَ ٱلَّذِى يُكَذِّبُ بِٱلدِّينِ ..."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening turns: today's group says Al-Ma'un 107:1-7 to the teacher, one by one. Everyone else says it softly three times.",
+          "a": "Each child in the group recites; the teacher gives stars on the rubric.",
+          "mins": 3,
+          "model": "The teacher shows one turn with a confident child."
+        },
+        {
+          "q": "Extend: say it to a grown-up after the lesson with no help.",
+          "a": "Said alone.",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Al-Ma'un ends with ...",
+          "a": "ٱلْمَاعُونَ",
+          "mins": 1,
+          "options": [
+            "ٱلْمَاعُونَ",
+            "ٱلْأَبْتَرُ",
+            "أَحَدٌۢ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Sign-off day! How can you stay calm when it is your turn to recite?",
+          "a": "Take a breath, say A'udhu billah and Bismillah, and say it slowly: Allah made the Qur'an easy.",
+          "mins": 1
+        }
+      ],
+      "homework": "Say Al-Kawthar and Al-Ma'un in your salah or to a grown-up every day; tick the revision log.",
+      "send": "SEND: colour cards for the rule, extra listening turns. EAL: key words with meanings. Stretch: find a new example in a surah you know.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: my recitation stars chart",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "show-me"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Gold star sticker",
+          "alt": "A sign-off star",
+          "for": "teach:1"
         }
       ]
     }

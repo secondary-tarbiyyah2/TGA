@@ -2,7 +2,7 @@
   "subject": "PSHE",
   "year": "y8",
   "board": "National Curriculum / PSHE Association",
-  "source": "National Curriculum / statutory Health Education guidance, taught as PSHE only; PSHE Association programme of study themes and KS3 mental health lessons (Drive PSHE folder); TGA RSHE Policy 2026-27, Careers Education and Guidance Policy and Tarbiyyah Compass Character Framework 2026-27 (Drive); existing TGA PSHE Y5 lesson style. Qur'an and hadith references limited to well-known authenticated sources and cited plainly. No RSE: TGA teaches PSHE only (owner decision, 9 Nov 2026). Relationships are taught as law and citizenship, with the Islamic teaching alongside; puberty and its fiqh (bulugh) are taught in Year 7 only, to boys and girls separately, and parents can see all materials. | Spring 1 2027 (lessons 1, 2, 5 to 7, v3): Tarbiyyah Secondary PSHE Curriculum Intent, Year 8 (Respect, influence and risk), checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
+  "source": "National Curriculum / statutory Health Education guidance, taught as PSHE only; PSHE Association programme of study themes and KS3 mental health lessons (Drive PSHE folder); TGA RSHE Policy 2026-27, Careers Education and Guidance Policy and Tarbiyyah Compass Character Framework 2026-27 (Drive); existing TGA PSHE Y5 lesson style. Qur'an and hadith references limited to well-known authenticated sources and cited plainly. No RSE: TGA teaches PSHE only (owner decision, 9 Nov 2026). No relationships or sex education: keeping safe is taught as safeguarding and the law (citizenship), with the Islamic teaching on modesty and guarding oneself alongside; puberty and its fiqh (bulugh) are taught in Year 7 only, to boys and girls separately, and parents can see all materials. | Spring 1 2027 (lessons 1, 2, 5 to 7, v3): Tarbiyyah Secondary PSHE Curriculum Intent, Year 8 (Respect, influence and risk), checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
   "lessons": [
     {
       "unit": "Spring 1: Respect, influence and risk",
@@ -2261,6 +2261,981 @@
         {
           "find": "Notebook reflection pen",
           "alt": "A notebook",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Money and helping others",
+      "n": 12,
+      "title": "Where money comes from: needs and wants",
+      "duration": 50,
+      "bigQuestion": "If you were given £100 today, what would you spend first: a need or a want?",
+      "objectives": [
+        "To understand where money comes from and how to tell needs from wants"
+      ],
+      "successCriteria": [
+        "All: name three ways people earn money",
+        "Most: sort spending into needs and wants",
+        "Some: explain why Islam values honest earning and gratitude"
+      ],
+      "crossCurricular": "Maths: percentages and budgets",
+      "smsc": "Moral: gratitude and honest earning",
+      "keywords": [
+        {
+          "term": "income",
+          "def": "money coming in"
+        },
+        {
+          "term": "expenses",
+          "def": "money going out"
+        },
+        {
+          "term": "need",
+          "def": "something you must have to live well"
+        },
+        {
+          "term": "want",
+          "def": "something nice but not essential"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you were given £100 today, what would you spend first: a need or a want?",
+        "a": "Needs first; then save some, give some, and only then wants."
+      },
+      "islamicLink": {
+        "text": "Allah is Ar-Razzaq, the Provider. The Prophet ﷺ said no one eats better food than what he earns with his own hands (Bukhari).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "A balanced plate includes ...",
+          "a": "all the food groups",
+          "mins": 1,
+          "options": [
+            "all the food groups",
+            "only sweets"
+          ]
+        },
+        {
+          "q": "Name a reliable source of health information.",
+          "a": "For example: the NHS website.",
+          "mins": 1
+        },
+        {
+          "q": "Bulugh means ...",
+          "a": "reaching maturity",
+          "mins": 1,
+          "options": [
+            "reaching maturity",
+            "a holiday"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Where money comes from",
+          "bullets": [
+            "Wages and salaries",
+            "Running a business",
+            "Benefits and pensions",
+            "Gifts"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Need or want?",
+          "bullets": [],
+          "note": "",
+          "sort": {
+            "columns": [
+              "Need",
+              "Want"
+            ],
+            "cards": [
+              "Food",
+              "Latest trainers",
+              "Rent",
+              "Games subscription",
+              "School books",
+              "Takeaway"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "heading": "Income and expenses",
+          "bullets": [],
+          "note": "Example data.",
+          "chart": {
+            "kind": "bar",
+            "title": "A family's month (example data)",
+            "unit": "£",
+            "labels": [
+              "Income",
+              "Housing",
+              "Food",
+              "Bills",
+              "Saving and sadaqah"
+            ],
+            "values": [
+              2400,
+              900,
+              500,
+              450,
+              300
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Which is a need?",
+            "options": [
+              "Food",
+              "A new games console",
+              "Designer clothes"
+            ],
+            "answer": 0,
+            "why": "Essential to live."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "From the chart, how much is left after housing, food and bills?",
+          "a": "£2,400 - £1,850 = £550.",
+          "mins": 4,
+          "model": "I do: £900 + £500 + £450 = £1,850; £2,400 - £1,850 = £550."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: list ten things your household spends on and sort them into needs and wants.",
+          "a": "Ten items sorted with reasons.",
+          "mins": 12,
+          "model": "The teacher sorts 'electricity' (need)."
+        },
+        {
+          "q": "Extend: what percentage of the example income goes on housing?",
+          "a": "900 ÷ 2,400 × 100 = 37.5%.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Expenses are ...",
+          "a": "money going out",
+          "mins": 1,
+          "options": [
+            "money going out",
+            "money coming in"
+          ]
+        },
+        {
+          "q": "Back to our ponder: If you were given £100 today, what would you spend first: a need or a want?",
+          "a": "Needs first; then save some, give some, and only then wants.",
+          "mins": 2
+        }
+      ],
+      "homework": "Ask a parent to show you one bill and talk about how it is paid.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Year 8 (Money and helping others); checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Coins and notes pounds",
+          "alt": "British money",
+          "for": "hook"
+        },
+        {
+          "find": "Shopping basket groceries",
+          "alt": "Food: a need",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Money and helping others",
+      "n": 13,
+      "title": "Budgeting and saving",
+      "duration": 50,
+      "bigQuestion": "Is it better to spend all your pocket money every week or to save some? Why?",
+      "objectives": [
+        "To understand how to make a simple budget and why saving matters"
+      ],
+      "successCriteria": [
+        "All: make a budget that balances",
+        "Most: include saving and giving",
+        "Some: plan a saving goal and work out how long it will take"
+      ],
+      "crossCurricular": "Maths: calculating totals and time to reach a goal",
+      "smsc": "Moral: moderation and planning",
+      "keywords": [
+        {
+          "term": "budget",
+          "def": "a plan for money in and money out"
+        },
+        {
+          "term": "saving",
+          "def": "keeping money for later"
+        },
+        {
+          "term": "goal",
+          "def": "something you aim for"
+        },
+        {
+          "term": "surplus",
+          "def": "money left over"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is it better to spend all your pocket money every week or to save some? Why?",
+        "a": "Save some: it builds patience, gives choices later and protects against surprises."
+      },
+      "islamicLink": {
+        "text": "Allah praises those 'who, when they spend, do so not excessively or sparingly but are ever, between that, [justly] moderate' (Al-Furqan 25:67).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Income is ...",
+          "a": "money coming in",
+          "mins": 1,
+          "options": [
+            "money coming in",
+            "money going out"
+          ]
+        },
+        {
+          "q": "Name a want.",
+          "a": "For example: a new game.",
+          "mins": 1
+        },
+        {
+          "q": "Rent is a ...",
+          "a": "need",
+          "mins": 1,
+          "options": [
+            "need",
+            "want"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "A simple budget",
+          "bullets": [],
+          "note": "Example: £10 a week.",
+          "table": {
+            "head": [
+              "Item",
+              "£"
+            ],
+            "rows": [
+              [
+                "Sadaqah",
+                "1"
+              ],
+              [
+                "Saving",
+                "3"
+              ],
+              [
+                "Transport or snacks",
+                "4"
+              ],
+              [
+                "Fun",
+                "2"
+              ],
+              [
+                "Total",
+                "10"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Saving goal",
+          "bullets": [
+            "Goal: a £45 book set",
+            "Save £3 a week",
+            "45 ÷ 3 = 15 weeks"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Moderation (25:67)",
+          "bullets": [
+            "Not wasteful",
+            "Not miserly",
+            "Balanced"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "A budget balances when ...",
+            "options": [
+              "money out equals money in",
+              "you spend more than you have",
+              "you spend nothing"
+            ],
+            "answer": 0,
+            "why": "In = out (including saving)."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "You get £12 a week and want £60 headphones. Saving £4 a week, how long?",
+          "a": "60 ÷ 4 = 15 weeks.",
+          "mins": 4,
+          "model": "I do: goal ÷ weekly saving = weeks: £45 ÷ £3 = 15 weeks."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: write a weekly budget for £15 including sadaqah, saving and a goal; show how many weeks to reach it.",
+          "a": "A balanced budget with a goal calculation.",
+          "mins": 12,
+          "model": "The teacher fills sadaqah and saving."
+        },
+        {
+          "q": "Extend: what changes if you save £1 more a week?",
+          "a": "Recalculated weeks.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "25:67 praises spending that is ...",
+          "a": "moderate",
+          "mins": 1,
+          "options": [
+            "moderate",
+            "excessive"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Is it better to spend all your pocket money every week or to save some? Why?",
+          "a": "Save some: it builds patience, gives choices later and protects against surprises.",
+          "mins": 2
+        }
+      ],
+      "homework": "Make a real budget for your next month of pocket money or Eid money with a parent.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Year 8 (Money and helping others); checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Piggy bank coins",
+          "alt": "Saving",
+          "for": "hook"
+        },
+        {
+          "find": "Notebook budget calculator",
+          "alt": "Making a budget",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Money and helping others",
+      "n": 14,
+      "title": "Halal earning and spending; avoiding riba",
+      "duration": 50,
+      "bigQuestion": "Two people earn £100. One by selling honestly, one by cheating. Is the money the same?",
+      "objectives": [
+        "To understand what makes earning and spending halal, and why Islam forbids riba (interest) in outline"
+      ],
+      "successCriteria": [
+        "All: give examples of halal and haram earning",
+        "Most: explain in simple terms what riba is",
+        "Some: describe an Islamic alternative such as partnership"
+      ],
+      "smsc": "Moral: honest and lawful earning",
+      "keywords": [
+        {
+          "term": "halal",
+          "def": "allowed in Islam"
+        },
+        {
+          "term": "haram",
+          "def": "forbidden in Islam"
+        },
+        {
+          "term": "riba (رِبَا)",
+          "def": "interest: an increase charged on a loan"
+        },
+        {
+          "term": "partnership",
+          "def": "sharing profit and loss in a business"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two people earn £100. One by selling honestly, one by cheating. Is the money the same?",
+        "a": "The amount is the same, but only the honest money is blessed and halal."
+      },
+      "islamicLink": {
+        "text": "Islamic note: riba (رِبَا) is forbidden (Qur'an 2:275: Allah has permitted trade and forbidden riba). Islamic finance uses partnership (mushārakah, مُشَارَكَة) and cost-plus sale (murābaḥah, مُرَابَحَة) instead.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "A budget balances when ...",
+          "a": "out equals in",
+          "mins": 1,
+          "options": [
+            "out equals in",
+            "out is more than in"
+          ]
+        },
+        {
+          "q": "If you save £5 a week, how long to save £40?",
+          "a": "8 weeks.",
+          "mins": 1
+        },
+        {
+          "q": "Moderation means ...",
+          "a": "balance",
+          "mins": 1,
+          "options": [
+            "balance",
+            "waste"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Halal or haram?",
+          "bullets": [],
+          "note": "",
+          "sort": {
+            "columns": [
+              "Halal",
+              "Haram"
+            ],
+            "cards": [
+              "Selling honestly",
+              "Selling alcohol",
+              "Fair wages",
+              "Gambling winnings",
+              "Cheating customers",
+              "Running a bakery"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              1,
+              0
+            ]
+          }
+        },
+        {
+          "heading": "What is riba?",
+          "bullets": [
+            "Borrow £100, pay back £110: the extra £10 is interest",
+            "Islam forbids charging or paying it",
+            "Trade is allowed: 2:275"
+          ],
+          "note": "In outline only; the wider economy uses interest, which pupils learn about, not take."
+        },
+        {
+          "heading": "Islamic alternatives",
+          "bullets": [
+            "Partnership (musharakah): share profit and loss",
+            "Cost-plus sale (murabahah): agreed price",
+            "Saving and qard hasan (a goodly loan with no extra)"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Riba is ...",
+            "options": [
+              "an extra charged on a loan",
+              "a gift",
+              "a fair price"
+            ],
+            "answer": 0,
+            "why": "Interest."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Is this riba? 'A friend lends you £20 and asks for £25 back.'",
+          "a": "Yes: the extra £5 is charged on a loan.",
+          "mins": 4,
+          "model": "I do: 'I sell a bike for £50 that cost me £40' is trade (allowed), not riba."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: five money situations; label halal, haram or riba and explain.",
+          "a": "Five correct labels with reasons.",
+          "mins": 12,
+          "model": "The teacher labels the first."
+        },
+        {
+          "q": "Extend: explain qard hasan in one sentence.",
+          "a": "A loan repaid with no extra, given for Allah's sake.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "2:275: Allah has permitted trade and forbidden ...",
+          "a": "riba",
+          "mins": 1,
+          "options": [
+            "riba",
+            "saving"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Two people earn £100. One by selling honestly, one by cheating. Is the money the same?",
+          "a": "The amount is the same, but only the honest money is blessed and halal.",
+          "mins": 2
+        }
+      ],
+      "homework": "Ask a parent how your family avoids riba (for example, saving instead of borrowing).",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Year 8 (Money and helping others); checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Market stall fruit",
+          "alt": "Honest trade at a market",
+          "for": "hook"
+        },
+        {
+          "find": "Handshake business two hands",
+          "alt": "A fair deal (hands only)",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Money and helping others",
+      "n": 15,
+      "title": "Giving: sadaqah and zakah",
+      "duration": 50,
+      "bigQuestion": "Does giving money away make you poorer?",
+      "objectives": [
+        "To understand the difference between sadaqah and zakah and how giving purifies wealth"
+      ],
+      "successCriteria": [
+        "All: explain sadaqah and zakah",
+        "Most: calculate 2.5% zakah on an example amount",
+        "Some: name the groups who receive zakah"
+      ],
+      "crossCurricular": "Maths: percentages (2.5%)",
+      "smsc": "Spiritual: generosity and purifying wealth",
+      "keywords": [
+        {
+          "term": "sadaqah (صدقة)",
+          "def": "voluntary charity, any time, any amount"
+        },
+        {
+          "term": "zakah (زكاة)",
+          "def": "the obligatory annual 2.5% on savings above the nisab"
+        },
+        {
+          "term": "nisab",
+          "def": "the minimum wealth before zakah is due"
+        },
+        {
+          "term": "purify",
+          "def": "make clean"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Does giving money away make you poorer?",
+        "a": "Not in Islam: charity does not decrease wealth (Muslim); it brings barakah and reward."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Charity does not decrease wealth' (Muslim). Allah says: 'Take, [O Muhammad], from their wealth a charity by which you purify them' (At-Tawbah 9:103).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Riba is ...",
+          "a": "interest on a loan",
+          "mins": 1,
+          "options": [
+            "interest on a loan",
+            "fair trade"
+          ]
+        },
+        {
+          "q": "Give one halal way to earn.",
+          "a": "For example: a fair job.",
+          "mins": 1
+        },
+        {
+          "q": "Qard hasan is ...",
+          "a": "a loan with no extra",
+          "mins": 1,
+          "options": [
+            "a loan with no extra",
+            "a gamble"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Sadaqah and zakah",
+          "bullets": [],
+          "note": "",
+          "compare": {
+            "left": {
+              "title": "Sadaqah",
+              "points": [
+                "Voluntary",
+                "Any amount, any time",
+                "Even a smile"
+              ]
+            },
+            "right": {
+              "title": "Zakah",
+              "points": [
+                "Obligatory",
+                "2.5% of savings above the nisab, held a lunar year",
+                "A pillar of Islam"
+              ]
+            },
+            "label": "both reward"
+          }
+        },
+        {
+          "heading": "Working out zakah",
+          "bullets": [
+            "Savings £4,000 (above the nisab)",
+            "2.5% = 4,000 × 0.025",
+            "= £100"
+          ],
+          "note": "Example; the nisab is worked out from gold or silver prices."
+        },
+        {
+          "heading": "Who receives zakah (9:60)",
+          "bullets": [
+            "The poor and the needy",
+            "Those collecting it",
+            "Debtors and travellers",
+            "And others named in 9:60"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Zakah on £2,000 of eligible savings is ...",
+            "options": [
+              "£50",
+              "£20",
+              "£200"
+            ],
+            "answer": 0,
+            "why": "2,000 × 0.025 = 50."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Calculate zakah on £6,400.",
+          "a": "6,400 × 0.025 = £160.",
+          "mins": 4,
+          "model": "I do: £4,000 × 2.5% = £4,000 ÷ 40 = £100."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: four zakah calculations and a plan for a class sadaqah project.",
+          "a": "Correct calculations; a realistic sadaqah plan.",
+          "mins": 12,
+          "model": "The teacher does the first."
+        },
+        {
+          "q": "Extend: why is zakah called a purification?",
+          "a": "It cleans wealth and the heart from greed (9:103).",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Zakah is ... of eligible savings",
+          "a": "2.5%",
+          "mins": 1,
+          "options": [
+            "2.5%",
+            "25%",
+            "10%"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Does giving money away make you poorer?",
+          "a": "Not in Islam: charity does not decrease wealth (Muslim); it brings barakah and reward.",
+          "mins": 2
+        }
+      ],
+      "homework": "Choose one act of sadaqah this week (money, time or a kind word).",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Year 8 (Money and helping others); checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Calculator"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Charity donation box",
+          "alt": "A donation box",
+          "for": "hook"
+        },
+        {
+          "find": "Gold coins",
+          "alt": "Gold: used to set the nisab",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Money and helping others",
+      "n": 16,
+      "title": "Those less fortunate: homelessness and how to help",
+      "duration": 50,
+      "bigQuestion": "Is homelessness only about not having a house?",
+      "objectives": [
+        "To understand some causes of homelessness and safe, respectful ways young people can help"
+      ],
+      "successCriteria": [
+        "All: name three causes of homelessness",
+        "Most: challenge a stereotype about homeless people",
+        "Some: plan a safe, practical way to help with adults"
+      ],
+      "smsc": "Social: compassion and dignity for all",
+      "keywords": [
+        {
+          "term": "homelessness",
+          "def": "not having a safe, settled home"
+        },
+        {
+          "term": "poverty",
+          "def": "not having enough money for basic needs"
+        },
+        {
+          "term": "dignity",
+          "def": "being treated with respect"
+        },
+        {
+          "term": "volunteer",
+          "def": "help without being paid"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is homelessness only about not having a house?",
+        "a": "It also means insecurity, stress and losing a community; dignity matters as much as shelter."
+      },
+      "islamicLink": {
+        "text": "Allah praises those who 'give food in spite of love for it to the needy, the orphan and the captive' (Al-Insan 76:8).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Zakah is ...",
+          "a": "2.5% of eligible savings",
+          "mins": 1,
+          "options": [
+            "2.5% of eligible savings",
+            "optional"
+          ]
+        },
+        {
+          "q": "Work out 2.5% of £800.",
+          "a": "£20.",
+          "mins": 1
+        },
+        {
+          "q": "Charity ... wealth",
+          "a": "does not decrease",
+          "mins": 1,
+          "options": [
+            "does not decrease",
+            "destroys"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Causes",
+          "bullets": [
+            "Losing a job or high rent",
+            "Family breakdown",
+            "Illness",
+            "Leaving care or prison"
+          ],
+          "note": "Factual, no blame."
+        },
+        {
+          "heading": "Stereotype or fact?",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "'Homeless people chose it' or 'They are all the same'",
+            "right": "Many causes are outside a person's control; every person deserves dignity"
+          }
+        },
+        {
+          "heading": "Safe ways to help",
+          "bullets": [
+            "With a parent: donate food or clothes to a food bank or shelter",
+            "Support a masjid or charity project",
+            "Treat people with respect: a smile and salam",
+            "Never give personal details or go alone"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Which is a safe way for a young person to help?",
+            "options": [
+              "Donate to a food bank with a parent",
+              "Give your home address",
+              "Go out alone at night"
+            ],
+            "answer": 0,
+            "why": "Safe and with adults."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Plan a family food-bank donation: what to give and how.",
+          "a": "Tins, pasta, toiletries; check the food bank's list; go with a parent.",
+          "mins": 4,
+          "model": "I do: I check the local food bank's list online, choose unexpired items, and arrange the drop-off with a parent."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: design a class 'Help with dignity' project with three safe actions and how to measure success.",
+          "a": "A plan with safe actions and a measure.",
+          "mins": 12,
+          "model": "The teacher fills action one."
+        },
+        {
+          "q": "Extend: write a short du'a for people without a home.",
+          "a": "Du'a written.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Helping with dignity means ...",
+          "a": "treating people with respect",
+          "mins": 1,
+          "options": [
+            "treating people with respect",
+            "taking photos of them"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Is homelessness only about not having a house?",
+          "a": "It also means insecurity, stress and losing a community; dignity matters as much as shelter.",
+          "mins": 2
+        }
+      ],
+      "homework": "With a parent, make or plan one donation this month.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Year 8 (Money and helping others); checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; PSHE only (no RSE)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Help slide: trusted adults at home, any TGA teacher, the portal's 'Report a concern' page (goes straight to TGA's Designated Safeguarding Lead), Childline 0800 1111, 999 in an emergency"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Food bank shelves",
+          "alt": "A food bank",
+          "for": "teach:3"
+        },
+        {
+          "find": "Warm blankets folded",
+          "alt": "Donated blankets",
           "for": "hook"
         }
       ]

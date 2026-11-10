@@ -1186,6 +1186,989 @@
           "for": "hook"
         }
       ]
+    },
+    {
+      "unit": "Summer 1: Desktop publishing and online safety",
+      "n": 7,
+      "title": "What is desktop publishing?",
+      "duration": 45,
+      "bigQuestion": "A poster and a newspaper both use words and pictures. Why do they look so different?",
+      "objectives": [
+        "To understand what desktop publishing is and how layout helps a page communicate"
+      ],
+      "successCriteria": [
+        "All: name three things made with desktop publishing",
+        "Most: compare two layouts and say which is clearer",
+        "Some: explain how a document travels across a network to a printer or a friend"
+      ],
+      "crossCurricular": "English: layout features of non-fiction texts",
+      "smsc": "Social: communicating clearly for others",
+      "keywords": [
+        {
+          "term": "desktop publishing",
+          "def": "using a computer to design pages with text and pictures"
+        },
+        {
+          "term": "layout",
+          "def": "where things are placed on a page"
+        },
+        {
+          "term": "template",
+          "def": "a ready-made layout to fill in"
+        },
+        {
+          "term": "network",
+          "def": "computers joined together to share information"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A poster and a newspaper both use words and pictures. Why do they look so different?",
+        "a": "They have different purposes and audiences, so their layouts are different."
+      },
+      "starter": [
+        {
+          "q": "An algorithm is ...",
+          "a": "a set of steps",
+          "mins": 1,
+          "options": [
+            "a set of steps",
+            "a picture"
+          ]
+        },
+        {
+          "q": "A strong password is ...",
+          "a": "long and hard to guess",
+          "mins": 1,
+          "options": [
+            "long and hard to guess",
+            "your name"
+          ]
+        },
+        {
+          "q": "Name something you have read today that had pictures and words.",
+          "a": "For example: a cereal box.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Made with DTP",
+          "bullets": [
+            "Posters",
+            "Leaflets",
+            "Newsletters",
+            "Invitations"
+          ],
+          "note": "Show real examples (no people pictured)."
+        },
+        {
+          "heading": "Compare two layouts",
+          "bullets": [],
+          "note": "",
+          "compare": {
+            "left": {
+              "title": "Cluttered",
+              "points": [
+                "Tiny text",
+                "Pictures everywhere",
+                "No heading"
+              ]
+            },
+            "right": {
+              "title": "Clear",
+              "points": [
+                "Big heading",
+                "Grouped text",
+                "One strong picture"
+              ]
+            },
+            "label": "better"
+          }
+        },
+        {
+          "heading": "Sending a document",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "I save the file",
+            "It travels across the network",
+            "Through the internet",
+            "To a printer or a friend's computer",
+            "It opens on their screen"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Which layout is clearer?",
+            "options": [
+              "A big heading, grouped text and one picture",
+              "Tiny text everywhere",
+              "Ten pictures and no heading"
+            ],
+            "answer": 0,
+            "why": "Clarity helps the reader."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Look at the example poster: what is its heading, purpose and audience?",
+          "a": "Heading: 'Masjid Clean-Up Day'; purpose: invite; audience: families.",
+          "mins": 3,
+          "model": "I do: this leaflet's heading is 'Recycling Week'; purpose: inform; audience: our street."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Pupil PDF: sketch a layout for a poster about our Qur'an club (boxes for heading, text and picture).",
+          "a": "A labelled sketch with heading, text box and picture box.",
+          "mins": 13,
+          "model": "The teacher sketches the heading box."
+        },
+        {
+          "q": "Extend: choose a template in the DTP tool that fits your sketch.",
+          "a": "Template chosen.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "A template is ...",
+          "a": "a ready-made layout",
+          "mins": 1,
+          "options": [
+            "a ready-made layout",
+            "a printer"
+          ]
+        },
+        {
+          "q": "Back to our ponder: A poster and a newspaper both use words and pictures. Why do they look so different?",
+          "a": "They have different purposes and audiences, so their layouts are different.",
+          "mins": 2
+        }
+      ],
+      "homework": "Find a leaflet or poster at home and talk about its layout with a grown-up.",
+      "send": "SEND: sentence starters, key word card and a partner to talk with first. EAL: key words with pictures and simple definitions. Stretch: give a reason and an example for every answer.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Primary computing long-term plan (Year 3 Summer 1: Desktop Publishing with Things for Sale), built on the NCCE Teach Computing Curriculum (publisher's generic scheme, titles only)",
+        "Word, PowerPoint or Canva for Education through the school (TO CONFIRM which the school provides)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Newspaper layout page",
+          "alt": "A newspaper page layout",
+          "for": "teach:2"
+        },
+        {
+          "find": "Printer printing page",
+          "alt": "A printer",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Desktop publishing and online safety",
+      "n": 8,
+      "title": "Text boxes, headings and fonts",
+      "duration": 45,
+      "bigQuestion": "Would a page with ten different fonts be easier or harder to read?",
+      "objectives": [
+        "To understand how to add and format text so a page is easy to read"
+      ],
+      "successCriteria": [
+        "All: add a text box and type a heading",
+        "Most: change font, size and colour for headings and body text",
+        "Some: explain why a page uses only two or three fonts"
+      ],
+      "smsc": "Social: making information clear for others",
+      "keywords": [
+        {
+          "term": "text box",
+          "def": "a box you type text into"
+        },
+        {
+          "term": "font",
+          "def": "the style of letters"
+        },
+        {
+          "term": "heading",
+          "def": "the title at the top"
+        },
+        {
+          "term": "align",
+          "def": "line text up left, centre or right"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Would a page with ten different fonts be easier or harder to read?",
+        "a": "Harder: two or three fonts keep it tidy and clear."
+      },
+      "starter": [
+        {
+          "q": "Desktop publishing is used for ...",
+          "a": "posters and leaflets",
+          "mins": 1,
+          "options": [
+            "posters and leaflets",
+            "phone calls"
+          ]
+        },
+        {
+          "q": "Name a part of a layout.",
+          "a": "For example: a heading.",
+          "mins": 1
+        },
+        {
+          "q": "A template is ...",
+          "a": "a ready-made layout",
+          "mins": 1,
+          "options": [
+            "a ready-made layout",
+            "a font"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Text box steps",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Insert",
+            "Text box",
+            "Draw it on the page",
+            "Type",
+            "Move and resize"
+          ]
+        },
+        {
+          "heading": "Heading and body",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Part",
+              "Size",
+              "Style"
+            ],
+            "rows": [
+              [
+                "Heading",
+                "Big (36 to 48)",
+                "Bold"
+              ],
+              [
+                "Subheading",
+                "Medium (20 to 28)",
+                "Bold"
+              ],
+              [
+                "Body text",
+                "Smaller (12 to 16)",
+                "Plain, easy to read"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "Lots of fonts and colours so it looks 'fun'",
+            "right": "Two or three fonts; strong contrast between text and background"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Which text should be biggest?",
+            "options": [
+              "The heading",
+              "The body text",
+              "The page number"
+            ],
+            "answer": 0,
+            "why": "Headings stand out."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Type the heading 'Our River' in a text box and make it bold, size 40.",
+          "a": "Heading added and formatted.",
+          "mins": 4,
+          "model": "I do: Insert, Text box, type, select, Bold, size 40, centre."
+        }
+      ],
+      "independent": [
+        {
+          "q": "In the DTP tool: build the poster from your sketch with a heading, subheading and two text boxes; save it to the portal.",
+          "a": "Poster with three text levels and consistent fonts.",
+          "mins": 12,
+          "model": "The teacher builds the heading live."
+        },
+        {
+          "q": "Extend: try one colour scheme with strong contrast.",
+          "a": "Readable colours chosen.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "How many fonts should a page usually use?",
+          "a": "Two or three",
+          "mins": 1,
+          "options": [
+            "Two or three",
+            "Ten"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Would a page with ten different fonts be easier or harder to read?",
+          "a": "Harder: two or three fonts keep it tidy and clear.",
+          "mins": 2
+        }
+      ],
+      "homework": "Find two different fonts on a food packet at home: which is the heading font?",
+      "send": "SEND: sentence starters, key word card and a partner to talk with first. EAL: key words with pictures and simple definitions. Stretch: give a reason and an example for every answer.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Primary computing long-term plan (Year 3 Summer 1: Desktop Publishing with Things for Sale), built on the NCCE Teach Computing Curriculum (publisher's generic scheme, titles only)",
+        "Word, PowerPoint or Canva for Education through the school (TO CONFIRM which the school provides)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Typography letters",
+          "alt": "Different fonts",
+          "for": "hook"
+        },
+        {
+          "find": "Text alignment icons",
+          "alt": "Align left, centre and right",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Desktop publishing and online safety",
+      "n": 9,
+      "title": "Adding and wrapping images",
+      "duration": 45,
+      "bigQuestion": "Can you use any picture you find online in your work?",
+      "objectives": [
+        "To understand how to insert, crop and wrap images so text stays readable"
+      ],
+      "successCriteria": [
+        "All: insert an image",
+        "Most: wrap text around an image and crop it",
+        "Some: add a caption and explain why images should be ones we are allowed to use"
+      ],
+      "smsc": "Moral: respecting other people's work",
+      "keywords": [
+        {
+          "term": "insert",
+          "def": "put something into a page"
+        },
+        {
+          "term": "wrap",
+          "def": "make text flow around an image"
+        },
+        {
+          "term": "crop",
+          "def": "cut off parts of a picture"
+        },
+        {
+          "term": "caption",
+          "def": "words under a picture saying what it shows"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Can you use any picture you find online in your work?",
+        "a": "No: many are owned by someone. Use pictures from your teacher, ones you took yourself, or ones marked free to use."
+      },
+      "starter": [
+        {
+          "q": "A heading should be ...",
+          "a": "big and bold",
+          "mins": 1,
+          "options": [
+            "big and bold",
+            "tiny"
+          ]
+        },
+        {
+          "q": "How do you add a text box?",
+          "a": "Insert, Text box, draw it.",
+          "mins": 1
+        },
+        {
+          "q": "How many fonts?",
+          "a": "Two or three",
+          "mins": 1,
+          "options": [
+            "Two or three",
+            "Seven"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Insert and crop",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Insert",
+            "Picture",
+            "Choose a file from the teacher",
+            "Crop to the important part",
+            "Resize from a corner"
+          ]
+        },
+        {
+          "heading": "Wrap text",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Wrap option",
+              "What happens"
+            ],
+            "rows": [
+              [
+                "In line",
+                "The picture sits like a big letter"
+              ],
+              [
+                "Square",
+                "Text goes around the picture"
+              ],
+              [
+                "Behind text",
+                "Text sits on top (often hard to read)"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Pictures we may use",
+          "bullets": [
+            "From the teacher (Flow project photos)",
+            "Ones I took (no people)",
+            "Marked 'free to use'"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Which wrap usually keeps text readable?",
+            "options": [
+              "Square",
+              "Behind text",
+              "Random"
+            ],
+            "answer": 0,
+            "why": "Text flows neatly around."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Insert the teacher's river photo, crop it and wrap text 'Square'.",
+          "a": "Photo cropped and wrapped.",
+          "mins": 4,
+          "model": "I do: Insert, Picture, crop the sky away, Wrap Text, Square."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Add two images from the Flow project folder to your poster, wrap them and add captions; save to the portal.",
+          "a": "Two wrapped, captioned images.",
+          "mins": 12,
+          "model": "The teacher adds the first caption."
+        },
+        {
+          "q": "Extend: line up the images neatly with the align tool.",
+          "a": "Images aligned.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "A caption is ...",
+          "a": "words that say what a picture shows",
+          "mins": 1,
+          "options": [
+            "words that say what a picture shows",
+            "a big heading"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Can you use any picture you find online in your work?",
+          "a": "No: many are owned by someone. Use pictures from your teacher, ones you took yourself, or ones marked free to use.",
+          "mins": 2
+        }
+      ],
+      "homework": "Take one photo at home of an object (not a person) you could use in your page.",
+      "send": "SEND: sentence starters, key word card and a partner to talk with first. EAL: key words with pictures and simple definitions. Stretch: give a reason and an example for every answer.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Primary computing long-term plan (Year 3 Summer 1: Desktop Publishing with Things for Sale), built on the NCCE Teach Computing Curriculum (publisher's generic scheme, titles only)",
+        "Word, PowerPoint or Canva for Education through the school (TO CONFIRM which the school provides)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Photo folder from the Flow project (teacher)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "River meander aerial",
+          "alt": "A river: a picture for our page",
+          "for": "hook"
+        },
+        {
+          "find": "Photo crop tool",
+          "alt": "Cropping",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Desktop publishing and online safety",
+      "n": 10,
+      "title": "Design and make a page: rivers or the Romans",
+      "duration": 45,
+      "bigQuestion": "Would a page for Year 1 look the same as a page for grown-ups? Why not?",
+      "objectives": [
+        "To understand how to plan and make a page for a purpose and an audience"
+      ],
+      "successCriteria": [
+        "All: make a page with a heading, text and a picture",
+        "Most: match the design to the purpose and audience",
+        "Some: draft, check and improve before publishing"
+      ],
+      "crossCurricular": "History and geography: the Flow project (rivers) or Roman Britain facts",
+      "smsc": "Social: designing for others' needs",
+      "keywords": [
+        {
+          "term": "audience",
+          "def": "who the page is for"
+        },
+        {
+          "term": "purpose",
+          "def": "what the page is for"
+        },
+        {
+          "term": "draft",
+          "def": "a first try that we improve"
+        },
+        {
+          "term": "publish",
+          "def": "share the finished work"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Would a page for Year 1 look the same as a page for grown-ups? Why not?",
+        "a": "No: bigger text, simpler words and bright pictures for younger readers."
+      },
+      "starter": [
+        {
+          "q": "Square wrap makes text ...",
+          "a": "go around the picture",
+          "mins": 1,
+          "options": [
+            "go around the picture",
+            "disappear"
+          ]
+        },
+        {
+          "q": "Why add captions?",
+          "a": "To say what a picture shows.",
+          "mins": 1
+        },
+        {
+          "q": "We can use pictures that are ...",
+          "a": "from the teacher or free to use",
+          "mins": 1,
+          "options": [
+            "from the teacher or free to use",
+            "any we find"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Plan first",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Question",
+              "My answer"
+            ],
+            "rows": [
+              [
+                "Purpose?",
+                "Inform about rivers or the Romans"
+              ],
+              [
+                "Audience?",
+                "Year 3 families"
+              ],
+              [
+                "Heading?",
+                "Short and clear"
+              ],
+              [
+                "Three facts?",
+                "From the Flow project"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Make",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Template or blank page",
+            "Heading",
+            "Text boxes with facts",
+            "Picture and caption",
+            "Check and save"
+          ]
+        },
+        {
+          "heading": "Checklist",
+          "bullets": [
+            "Heading stands out",
+            "Two or three fonts",
+            "Text readable",
+            "Picture wrapped, captioned"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "The audience is ...",
+            "options": [
+              "who the page is for",
+              "the font",
+              "the printer"
+            ],
+            "answer": 0,
+            "why": "Design for your reader."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write three facts for the page from the project notes.",
+          "a": "For example: rivers begin at a source; the Romans built roads; Londinium was a Roman town.",
+          "mins": 4,
+          "model": "I do: Fact 1: 'A river begins at its source, often in hills.'"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Make your page in the DTP tool using your plan; save the draft to the portal.",
+          "a": "A complete draft meeting the checklist.",
+          "mins": 12,
+          "model": "The teacher shows a finished example."
+        },
+        {
+          "q": "Extend: add a 'Did you know?' box.",
+          "a": "Box added.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "A draft is ...",
+          "a": "a first try we improve",
+          "mins": 1,
+          "options": [
+            "a first try we improve",
+            "the final version"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Would a page for Year 1 look the same as a page for grown-ups? Why not?",
+          "a": "No: bigger text, simpler words and bright pictures for younger readers.",
+          "mins": 2
+        }
+      ],
+      "homework": "Show your draft to a grown-up and ask for one improvement.",
+      "send": "SEND: sentence starters, key word card and a partner to talk with first. EAL: key words with pictures and simple definitions. Stretch: give a reason and an example for every answer.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Primary computing long-term plan (Year 3 Summer 1: Desktop Publishing with Things for Sale), built on the NCCE Teach Computing Curriculum (publisher's generic scheme, titles only)",
+        "Word, PowerPoint or Canva for Education through the school (TO CONFIRM which the school provides)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Flow project facts sheet (teacher)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Roman road stones",
+          "alt": "A Roman road",
+          "for": "hook"
+        },
+        {
+          "find": "River source stream hills",
+          "alt": "A river source",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Desktop publishing and online safety",
+      "n": 11,
+      "title": "Review, improve, and things for sale: adverts and in-app purchases",
+      "duration": 45,
+      "bigQuestion": "A game says 'Buy 100 gems for £4.99!' Who is that message really for?",
+      "objectives": [
+        "To understand how to improve a page from feedback and how to spot adverts and in-app purchases online"
+      ],
+      "successCriteria": [
+        "All: give a partner one kind, useful comment",
+        "Most: improve my page using feedback",
+        "Some: explain how adverts and in-app purchases try to make us spend, and what to do"
+      ],
+      "smsc": "Moral: honesty and careful spending",
+      "keywords": [
+        {
+          "term": "feedback",
+          "def": "comments that help improve work"
+        },
+        {
+          "term": "advert",
+          "def": "something trying to sell you a product"
+        },
+        {
+          "term": "pop-up",
+          "def": "a box that suddenly appears on screen"
+        },
+        {
+          "term": "in-app purchase",
+          "def": "paying for extras inside a game or app"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A game says 'Buy 100 gems for £4.99!' Who is that message really for?",
+        "a": "It's an advert aimed at players; always ask a grown-up and never buy without permission."
+      },
+      "islamicLink": {
+        "text": "Islam teaches us not to waste: 'eat and drink, but be not excessive' (Al-A'raf 7:31). We think before spending.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "The audience is ...",
+          "a": "who the page is for",
+          "mins": 1,
+          "options": [
+            "who the page is for",
+            "the heading"
+          ]
+        },
+        {
+          "q": "Name one thing on our page checklist.",
+          "a": "For example: heading stands out.",
+          "mins": 1
+        },
+        {
+          "q": "Feedback should be ...",
+          "a": "kind and useful",
+          "mins": 1,
+          "options": [
+            "kind and useful",
+            "rude"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Kind, useful feedback",
+          "bullets": [],
+          "note": "",
+          "compare": {
+            "left": {
+              "title": "Not useful",
+              "points": [
+                "'It's bad'",
+                "'I don't like it'"
+              ]
+            },
+            "right": {
+              "title": "Useful",
+              "points": [
+                "'Your heading is clear. Could the text be bigger?'"
+              ]
+            },
+            "label": "change it"
+          }
+        },
+        {
+          "heading": "Spot the advert",
+          "bullets": [],
+          "note": "",
+          "sort": {
+            "columns": [
+              "Advert or purchase",
+              "Not an advert"
+            ],
+            "cards": [
+              "'Buy gems now!'",
+              "A spelling game question",
+              "A flashing 'You won!' pop-up",
+              "Your teacher's message"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "heading": "What to do",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Stop",
+            "Don't click",
+            "Close it safely",
+            "Ask a grown-up",
+            "Never share card details"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "A pop-up says 'You won a prize! Click here!' You ...",
+            "options": [
+              "close it and tell a grown-up",
+              "click it",
+              "type your address"
+            ],
+            "answer": 0,
+            "why": "It's an advert or a trick."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Give feedback on the teacher's example page.",
+          "a": "'The picture fits well. The text is too small; make it 14.'",
+          "mins": 4,
+          "model": "I do: 'Your heading is great. Could you add a caption to the picture?'"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Breakout pairs: swap pages, give one kind comment and one improvement, then improve your page and save the final version.",
+          "a": "Feedback given; improved final page saved.",
+          "mins": 12,
+          "model": "The teacher models with a volunteer."
+        },
+        {
+          "q": "Extend: write a safety tip about in-app purchases for your family.",
+          "a": "A one-line tip.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "An in-app purchase needs ...",
+          "a": "a grown-up's permission",
+          "mins": 1,
+          "options": [
+            "a grown-up's permission",
+            "nothing"
+          ]
+        },
+        {
+          "q": "Back to our ponder: A game says 'Buy 100 gems for £4.99!' Who is that message really for?",
+          "a": "It's an advert aimed at players; always ask a grown-up and never buy without permission.",
+          "mins": 2
+        }
+      ],
+      "homework": "Check with a grown-up that in-app purchases are switched off on a family device.",
+      "send": "SEND: sentence starters, key word card and a partner to talk with first. EAL: key words with pictures and simple definitions. Stretch: give a reason and an example for every answer.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Primary computing long-term plan (Year 3 Summer 1: Desktop Publishing with Things for Sale), built on the NCCE Teach Computing Curriculum (publisher's generic scheme, titles only)",
+        "Word, PowerPoint or Canva for Education through the school (TO CONFIRM which the school provides)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Online-safety quiz (portal)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Pop-up window icon",
+          "alt": "A pop-up",
+          "for": "teach:2"
+        },
+        {
+          "find": "Gems icon game currency",
+          "alt": "In-game gems",
+          "for": "hook"
+        }
+      ]
     }
   ]
 }

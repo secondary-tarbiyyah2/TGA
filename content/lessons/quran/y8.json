@@ -1953,85 +1953,223 @@
       "send": "SEND/EAL: sentence frames and word bank. Stretch: write a short khutbah-style talk on the surah."
     },
     {
-      "unit": "Unit 4: Surah study - Al-Ma'un and At-Takathur",
+      "unit": "Summer 1: Nuh; consolidating the rules",
       "n": 11,
-      "title": "Long-term memorisation: revision cycles",
+      "title": "Long-term memorisation: the five-surah revision cycle",
       "duration": 50,
+      "bigQuestion": "You now know five long surahs of Juz' Tabarak. If you revised only one a month, what would happen?",
       "objectives": [
-        "Design a revision cycle",
-        "Use spaced repetition",
-        "Test with a partner"
+        "To understand how to keep Al-Mulk to Nuh secure with a five-surah revision cycle (dawrah)"
       ],
+      "successCriteria": [
+        "All: name the five surahs from Al-Mulk to Nuh in order",
+        "Most: write a weekly dawrah that covers all five",
+        "Some: explain why spaced revision protects long-term hifdh"
+      ],
+      "crossCurricular": "Maths: totals and percentages of ayat revised",
+      "smsc": "Moral: discipline and consistency",
       "keywords": [
         {
-          "term": "spaced repetition",
-          "def": "revising at increasing gaps"
+          "term": "dawrah (دورة)",
+          "def": "a revision cycle"
         },
         {
-          "term": "muraja'ah",
-          "def": "revision of memorised Qur'an"
+          "term": "muraja'ah (مراجعة)",
+          "def": "revising what has been memorised"
+        },
+        {
+          "term": "manzil (منزل)",
+          "def": "older hifdh revised"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "You now know five long surahs of Juz' Tabarak. If you revised only one a month, what would happen?",
+        "a": "The others would weaken; a weekly cycle keeps all five strong."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We have certainly made the Qur'an easy for remembrance, so is there any who will remember?' (Al-Qamar 54:17).",
+        "at": "start"
+      },
       "starter": [
-        "Recite Al-Ma'un.",
-        "Recite At-Takathur.",
-        "Name the three layers of revision."
+        {
+          "q": "Which surah begins «تَبَٰرَكَ ٱلَّذِى ...»?",
+          "a": "Al-Mulk",
+          "mins": 1,
+          "options": [
+            "Al-Qalam",
+            "Al-Haqqah",
+            "Al-Mulk"
+          ]
+        },
+        {
+          "q": "Which surah begins «نٓ وَٱلْقَلَمِ ...»?",
+          "a": "Al-Qalam",
+          "mins": 1,
+          "options": [
+            "Al-Qalam",
+            "Al-Ma'arij",
+            "Nuh"
+          ]
+        },
+        {
+          "q": "Which surah begins «سَأَلَ سَآئِلٌۢ ...»?",
+          "a": "Al-Ma'arij",
+          "mins": 1,
+          "options": [
+            "Nuh",
+            "Al-Haqqah",
+            "Al-Ma'arij"
+          ]
+        }
       ],
       "teach": [
         {
-          "heading": "Why we forget",
-          "bullets": [
-            "Memory fades without revision",
-            "Short, regular revision is best",
-            "Plan for revisiting"
-          ],
-          "note": "Draw a forgetting curve. Pupils discuss why we revise. Use a simple analogy: watering a plant. Refer to the idea that the Qur'an must be revised regularly."
+          "heading": "Juz' Tabarak so far",
+          "bullets": [],
+          "note": "Bismillah.",
+          "table": {
+            "head": [
+              "Surah",
+              "Ayat"
+            ],
+            "rows": [
+              [
+                "Al-Mulk (67)",
+                "30"
+              ],
+              [
+                "Al-Qalam (68)",
+                "52"
+              ],
+              [
+                "Al-Haqqah (69)",
+                "52"
+              ],
+              [
+                "Al-Ma'arij (70)",
+                "44"
+              ],
+              [
+                "Nuh (71)",
+                "28"
+              ]
+            ]
+          }
         },
         {
-          "heading": "A weekly cycle",
-          "bullets": [
-            "Day 1-2: new lesson",
-            "Day 3-4: recent lessons",
-            "Day 5-6: older surahs",
-            "Day 7: recital to someone"
-          ],
-          "note": "Pupils create a weekly plan with their surahs. Review how long each takes. Make it short and realistic."
+          "heading": "A five-day dawrah",
+          "bullets": [],
+          "note": "One surah a day; Nuh twice while it is new.",
+          "cycle": [
+            "Mon: Al-Mulk",
+            "Tue: Al-Qalam",
+            "Wed: Al-Haqqah",
+            "Thu: Al-Ma'arij",
+            "Fri: Nuh; weekend: Nuh again"
+          ]
         },
         {
-          "heading": "Test one another",
-          "bullets": [
-            "Say the start, partner continues",
-            "Swap roles",
-            "Note weak points",
-            "Retest later"
-          ],
-          "note": "Practise the start-continue game with Al-Ma'un and At-Takathur. Pupils note where they hesitate. Praise honest feedback."
+          "heading": "Why spacing works",
+          "bullets": [],
+          "note": "Example data.",
+          "chart": {
+            "kind": "bar",
+            "title": "Ayat recalled after a month (example data)",
+            "unit": "%",
+            "labels": [
+              "No revision",
+              "Monthly",
+              "Weekly dawrah"
+            ],
+            "values": [
+              30,
+              55,
+              92
+            ]
+          }
         },
         {
-          "heading": "Dua and sincerity",
-          "bullets": [
-            "Ask Allah for help",
-            "Keep the intention for Allah",
-            "Keep trying"
-          ],
-          "note": "Close with a dua. Remind pupils that memory is a gift from Allah and that effort, consistency and sincerity matter."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "How many ayat does Al-Mulk to Nuh total?",
+            "options": [
+              "206",
+              "150",
+              "300"
+            ],
+            "answer": 0,
+            "why": "30 + 52 + 52 + 44 + 28 = 206."
+          }
         }
       ],
       "practice": [
-        "Recite Al-Ma'un ayah 1.",
-        "Name one thing that helps you revise."
+        {
+          "q": "Recite Al-Mulk 1 to 5 together, then each pupil recites one ayah of Al-Qalam 1 to 10.",
+          "a": "Recited in order.",
+          "mins": 4,
+          "model": "I do: I lead Al-Mulk 1 to 5, then start the chain with 68:1."
+        }
       ],
       "independent": [
-        "Write a four-week revision plan",
-        "Test a partner on two surahs",
-        "Record yourself reciting two surahs from memory"
+        {
+          "q": "Dawrah planner (pupil PDF): write a seven-day plan with sabaq, sabqi and one surah of the manzil a day. Today's rota group recites two of the five surahs.",
+          "a": "Plan covers all five surahs every week.",
+          "mins": 15,
+          "model": "The teacher fills Monday."
+        },
+        {
+          "q": "Extend: add the salah where you will recite each surah.",
+          "a": "For example: Al-Mulk at 'Isha.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "What is spaced repetition?",
-        "Name two layers in your plan."
+        {
+          "q": "A dawrah is ...",
+          "a": "a revision cycle",
+          "mins": 1,
+          "options": [
+            "a revision cycle",
+            "a new surah"
+          ]
+        },
+        {
+          "q": "Back to our ponder: You now know five long surahs of Juz' Tabarak. If you revised only one a month, what would happen?",
+          "a": "The others would weaken; a weekly cycle keeps all five strong.",
+          "mins": 2
+        }
       ],
-      "homework": "Follow your revision plan and tick off each day.",
-      "send": "SEND/EAL: visual planner and audio. Stretch: design a revision game."
+      "homework": "Start your dawrah this week; recite Nuh whole; log revision.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: dawrah planner",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Weekly calendar chart",
+          "alt": "A weekly cycle",
+          "for": "teach:2"
+        },
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        }
+      ]
     },
     {
       "unit": "Unit 4: Surah study - Al-Ma'un and At-Takathur",
@@ -7813,6 +7951,2910 @@
           "find": "Mushaf Quran open on wooden stand rehal",
           "alt": "An open mushaf on a wooden stand (rehal)",
           "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Nuh; consolidating the rules",
+      "n": 36,
+      "title": "Surat Nuh 71:1-4: hear, understand and memorise",
+      "duration": 50,
+      "bigQuestion": "Nuh (peace be upon him) called his people for 950 years. What does that tell you about patience in calling others to good?",
+      "objectives": [
+        "To memorise Nuh 71:1-4 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 71:1-4 after the teacher, word for word",
+        "Most: recite 71:1-4 from memory with no more than one prompt",
+        "Some: link 71:1-4 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Moral: patience and persistence in doing good",
+      "keywords": [
+        {
+          "term": "nadhir (نذير)",
+          "def": "a warner"
+        },
+        {
+          "term": "ajal musamma (أجل مسمى)",
+          "def": "a specified term"
+        },
+        {
+          "term": "ittaquhu (اتقوه)",
+          "def": "fear Him, be mindful of Him"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Nuh (peace be upon him) called his people for 950 years. What does that tell you about patience in calling others to good?",
+        "a": "Keep going kindly and steadily; results are with Allah, our duty is to convey the message well."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, We sent Noah to his people, [saying], \"Warn your people before there comes to them a painful punishment.\"' (Nuh 71:1).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which surah begins «إِنَّآ أَرْسَلْنَا ...»?",
+          "a": "Nuh",
+          "mins": 1,
+          "options": [
+            "Al-Haqqah",
+            "Nuh",
+            "Al-Ma'arij"
+          ]
+        },
+        {
+          "q": "Recite Al-Ma'arij 70:40 in your head. How does the next ayah begin?",
+          "a": "عَلَىٰٓ أَن",
+          "mins": 1,
+          "options": [
+            "كَلَّآ ۖ",
+            "عَلَىٰٓ أَن",
+            "نَزَّاعَةًۭ لِّلشَّوَىٰ"
+          ]
+        },
+        {
+          "q": "«مِن قَبْلِ» is read with ...",
+          "a": "ikhfa'",
+          "mins": 1,
+          "options": [
+            "ikhfa'",
+            "izhar",
+            "iqlab"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Nuh 71:1-4",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 71:1-4 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "إِنَّآ أَرْسَلْنَا نُوحًا إِلَىٰ قَوْمِهِۦٓ أَنْ أَنذِرْ قَوْمَكَ مِن قَبْلِ أَن يَأْتِيَهُمْ عَذَابٌ أَلِيمٌۭ (١) قَالَ يَٰقَوْمِ إِنِّى لَكُمْ نَذِيرٌۭ مُّبِينٌ (٢) أَنِ ٱعْبُدُوا۟ ٱللَّهَ وَٱتَّقُوهُ وَأَطِيعُونِ (٣) يَغْفِرْ لَكُم مِّن ذُنُوبِكُمْ وَيُؤَخِّرْكُمْ إِلَىٰٓ أَجَلٍۢ مُّسَمًّى ۚ إِنَّ أَجَلَ ٱللَّهِ إِذَا جَآءَ لَا يُؤَخَّرُ ۖ لَوْ كُنتُمْ تَعْلَمُونَ (٤)",
+            "source": "Surat Nuh, 71:1-4"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "71:1",
+                "Indeed, We sent Noah to his people, [saying], \"Warn your people before there comes to them a painful punishment.\""
+              ],
+              [
+                "71:2",
+                "He said, \"O my people, indeed I am to you a clear warner,"
+              ],
+              [
+                "71:3",
+                "[Saying], 'Worship Allah, fear Him and obey me."
+              ],
+              [
+                "71:4",
+                "Allah will forgive you of your sins and delay you for a specified term. Indeed, the time [set by] Allah, when it comes, will not be delayed, if you only knew.' \""
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "إِنَّآ أَرْسَلْنَا",
+                "Nuh 71:1",
+                "Ghunnah; madd munfasil",
+                "in-naaa: two counts, then four or five"
+              ],
+              [
+                "أَن يَأْتِيَهُمْ",
+                "Nuh 71:1",
+                "Idgham with ghunnah: noon into ي",
+                "ay-ya'tiyahum"
+              ],
+              [
+                "نَذِيرٌۭ مُّبِينٌ",
+                "Nuh 71:2",
+                "Idgham with ghunnah: tanween into م",
+                "nadheerum-mubeen"
+              ],
+              [
+                "أَجَلٍۢ مُّسَمًّى",
+                "Nuh 71:4",
+                "Idgham with ghunnah, then the sign ۚ",
+                "ajalim-musamman (stop or continue)"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 71:1-4 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "What three things did Nuh call his people to (71:3)?",
+            "options": [
+              "Worship Allah, fear Him and obey me",
+              "Build a ship, travel and trade",
+              "Fast, give and travel"
+            ],
+            "answer": 0,
+            "why": "71:3."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Nuh 71:1-4 together, ayah by ayah.",
+          "a": "The class recites 71:1-4 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 71:1-4. Ayah 1: 3 times looking, 3 times without looking. Then ayah 2 the same way. Then link: recite 1 and 2 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "«أَن يَأْتِيَهُمْ» is ...",
+          "a": "idgham with ghunnah",
+          "mins": 1,
+          "options": [
+            "idgham with ghunnah",
+            "ikhfa'",
+            "izhar"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 71:1-4 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 10,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "Find the two waqf signs in 71:4 and say what each allows.",
+          "a": "ۚ after «مُّسَمًّى»: equal; ۖ after «لَا يُؤَخَّرُ»: continuing is better.",
+          "mins": 2
+        },
+        {
+          "q": "71:4 promises a delay 'to a specified term'. What is the term that cannot be delayed?",
+          "a": "The appointed time of Allah: death and the punishment He decreed.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Nuh 71:2: «قَالَ يَٰقَوْمِ ...» Which word comes next?",
+          "a": "إِنِّى",
+          "mins": 1,
+          "options": [
+            "بَيْتِىَ",
+            "دَيَّارًا",
+            "إِنِّى"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Nuh (peace be upon him) called his people for 950 years. What does that tell you about patience in calling others to good?",
+          "a": "Keep going kindly and steadily; results are with Allah, our duty is to convey the message well.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Nuh 71:1-4 to a parent three times a day and revise Al-Ma'arij 1 to 22 (today's rota group); tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Nuh 71:1-4 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Stormy sea waves dark sky",
+          "alt": "A stormy sea",
+          "for": "hook"
+        },
+        {
+          "find": "Quran manuscript page",
+          "alt": "A page of the Qur'an",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Nuh; consolidating the rules",
+      "n": 37,
+      "title": "Surat Nuh 71:5-10: hear, understand and memorise",
+      "duration": 50,
+      "bigQuestion": "Nuh tried calling his people by night and by day, in public and in private. Why do you think he tried so many ways?",
+      "objectives": [
+        "To memorise Nuh 71:5-10 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 71:5-10 after the teacher, word for word",
+        "Most: recite 71:5-10 from memory with no more than one prompt",
+        "Some: link 71:5-10 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Spiritual: the power of istighfar",
+      "keywords": [
+        {
+          "term": "firar (فرار)",
+          "def": "running away"
+        },
+        {
+          "term": "istighfar (استغفار)",
+          "def": "asking Allah's forgiveness"
+        },
+        {
+          "term": "ghaffar (غفار)",
+          "def": "Perpetually Forgiving"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Nuh tried calling his people by night and by day, in public and in private. Why do you think he tried so many ways?",
+        "a": "Different people respond to different ways; he used every wise method, out of care for them."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And said, 'Ask forgiveness of your Lord. Indeed, He is ever a Perpetual Forgiver.' (Nuh 71:10).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Nuh 71:2 in your head. How does the next ayah begin?",
+          "a": "أَنِ ٱعْبُدُوا۟",
+          "mins": 1,
+          "options": [
+            "وَٱللَّهُ جَعَلَ",
+            "أَنِ ٱعْبُدُوا۟",
+            "إِنَّكَ إِن"
+          ]
+        },
+        {
+          "q": "«نَذِيرٌۭ مُّبِينٌ» is ...",
+          "a": "idgham with ghunnah",
+          "mins": 1,
+          "options": [
+            "idgham with ghunnah",
+            "izhar"
+          ]
+        },
+        {
+          "q": "Nuh 71:4: «يَغْفِرْ لَكُم مِّن ...» Which word comes next?",
+          "a": "ذُنُوبِكُمْ",
+          "mins": 1,
+          "options": [
+            "وَٱسْتَكْبَرُوا۟",
+            "كَثِيرًۭا",
+            "ذُنُوبِكُمْ"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Nuh 71:5-7",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 71:5-7 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "قَالَ رَبِّ إِنِّى دَعَوْتُ قَوْمِى لَيْلًۭا وَنَهَارًۭا (٥) فَلَمْ يَزِدْهُمْ دُعَآءِىٓ إِلَّا فِرَارًۭا (٦) وَإِنِّى كُلَّمَا دَعَوْتُهُمْ لِتَغْفِرَ لَهُمْ جَعَلُوٓا۟ أَصَٰبِعَهُمْ فِىٓ ءَاذَانِهِمْ وَٱسْتَغْشَوْا۟ ثِيَابَهُمْ وَأَصَرُّوا۟ وَٱسْتَكْبَرُوا۟ ٱسْتِكْبَارًۭا (٧)",
+            "source": "Surat Nuh, 71:5-7"
+          }
+        },
+        {
+          "heading": "New ayat: Nuh 71:8-10",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 71:8-10 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "ثُمَّ إِنِّى دَعَوْتُهُمْ جِهَارًۭا (٨) ثُمَّ إِنِّىٓ أَعْلَنتُ لَهُمْ وَأَسْرَرْتُ لَهُمْ إِسْرَارًۭا (٩) فَقُلْتُ ٱسْتَغْفِرُوا۟ رَبَّكُمْ إِنَّهُۥ كَانَ غَفَّارًۭا (١٠)",
+            "source": "Surat Nuh, 71:8-10"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "71:5",
+                "He said, \"My Lord, indeed I invited my people [to truth] night and day."
+              ],
+              [
+                "71:6",
+                "But my invitation increased them not except in flight."
+              ],
+              [
+                "71:7",
+                "And indeed, every time I invited them that You may forgive them, they put their fingers in their ears, covered themselves with their garments, persisted, and were arrogant with [great] arrogance."
+              ],
+              [
+                "71:8",
+                "Then I invited them publicly."
+              ],
+              [
+                "71:9",
+                "Then I announced to them and [also] confided to them secretly"
+              ],
+              [
+                "71:10",
+                "And said, 'Ask forgiveness of your Lord. Indeed, He is ever a Perpetual Forgiver."
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "لَيْلًۭا وَنَهَارًۭا",
+                "Nuh 71:5",
+                "Idgham with ghunnah: tanween into و",
+                "laylaw-wa nahaaraa"
+              ],
+              [
+                "دُعَآءِىٓ إِلَّا",
+                "Nuh 71:6",
+                "Madd muttasil, then munfasil",
+                "Four or five each"
+              ],
+              [
+                "أَصَٰبِعَهُمْ فِىٓ",
+                "Nuh 71:7",
+                "Izhar shafawi before ف (take care)",
+                "Clear meem"
+              ],
+              [
+                "أَعْلَنتُ",
+                "Nuh 71:9",
+                "Ikhfa': noon before ت",
+                "Light hum"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 71:5-10 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "What did his people do when Nuh called them (71:7)?",
+            "options": [
+              "Put their fingers in their ears and covered themselves",
+              "Listened carefully",
+              "Built a masjid"
+            ],
+            "answer": 0,
+            "why": "71:7."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Nuh 71:5-10 together, ayah by ayah.",
+          "a": "The class recites 71:5-10 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 71:5-10. Ayah 5: 3 times looking, 3 times without looking. Then ayah 6 the same way. Then link: recite 5 and 6 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "«أَصَٰبِعَهُمْ فِىٓ»: meem before ف is ...",
+          "a": "izhar shafawi",
+          "mins": 1,
+          "options": [
+            "izhar shafawi",
+            "ikhfa' shafawi"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 71:5-10 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 8,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "List the ways Nuh called his people in 71:5 to 9.",
+          "a": "By night and day; publicly; openly and in private.",
+          "mins": 2
+        },
+        {
+          "q": "Why is «كَانَ غَفَّارًۭا» (71:10) encouraging for a sinner?",
+          "a": "Allah is perpetually Forgiving: istighfar is always welcome.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Nuh 71:8: «ثُمَّ إِنِّى ...» Which word comes next?",
+          "a": "دَعَوْتُهُمْ",
+          "mins": 1,
+          "options": [
+            "لَكُمُ",
+            "فِجَاجًۭا",
+            "دَعَوْتُهُمْ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Nuh tried calling his people by night and by day, in public and in private. Why do you think he tried so many ways?",
+          "a": "Different people respond to different ways; he used every wise method, out of care for them.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Nuh 71:5-10 to a parent three times a day and revise Nuh 1 to 4; tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Nuh 71:5-10 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Night sky crescent moon",
+          "alt": "Night: Nuh called by night and by day",
+          "for": "hook"
+        },
+        {
+          "find": "Quran manuscript page",
+          "alt": "A page of the Qur'an",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Nuh; consolidating the rules",
+      "n": 38,
+      "title": "Madd review in Surat Nuh",
+      "duration": 50,
+      "bigQuestion": "If one reciter holds every munfasil for four counts and another for five, are both correct?",
+      "objectives": [
+        "To understand how to identify and hold every family of madd in Surat Nuh consistently"
+      ],
+      "successCriteria": [
+        "All: find a muttasil and a munfasil in Nuh 1 to 10",
+        "Most: keep muttasil and munfasil at the same chosen length",
+        "Some: explain the difference between madd silah and madd 'iwad with examples from Nuh"
+      ],
+      "smsc": "Spiritual: consistency and excellence (ihsan) in recitation",
+      "keywords": [
+        {
+          "term": "madd (مد)",
+          "def": "lengthening a vowel"
+        },
+        {
+          "term": "silah (صلة)",
+          "def": "the small waw or yaa on the pronoun ـهُ / ـهِ"
+        },
+        {
+          "term": "'iwad (عوض)",
+          "def": "the alif replacing fathatan at a stop"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If one reciter holds every munfasil for four counts and another for five, are both correct?",
+        "a": "Yes, in Hafs by way of ash-Shatibiyyah both are allowed; what matters is choosing one and keeping it consistent."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And recite the Qur'an with measured recitation' (Al-Muzzammil 73:4).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Nuh 71:6 in your head. How does the next ayah begin?",
+          "a": "وَإِنِّى كُلَّمَا",
+          "mins": 1,
+          "options": [
+            "وَإِنِّى كُلَّمَا",
+            "ثُمَّ يُعِيدُكُمْ",
+            "رَّبِّ ٱغْفِرْ"
+          ]
+        },
+        {
+          "q": "«لَيْلًۭا وَنَهَارًۭا» is ...",
+          "a": "idgham with ghunnah",
+          "mins": 1,
+          "options": [
+            "idgham with ghunnah",
+            "izhar"
+          ]
+        },
+        {
+          "q": "Madd lazim is ...",
+          "a": "six counts",
+          "mins": 1,
+          "options": [
+            "six counts",
+            "two counts"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The madd families",
+          "bullets": [
+            "Natural: 2",
+            "Muttasil (same word): 4 or 5",
+            "Munfasil (next word): 4 or 5 (or 2 by another way, not used here)",
+            "Lazim: 6; 'aarid: 2, 4 or 6; 'iwad: 2"
+          ],
+          "note": "Bismillah. Pupils show the counts with fingers."
+        },
+        {
+          "heading": "Madd in Nuh",
+          "bullets": [],
+          "note": "Pupils name the family before the reveal.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Family",
+              "Counts"
+            ],
+            "rows": [
+              [
+                "جَآءَ",
+                "71:4",
+                "Muttasil",
+                "4 or 5"
+              ],
+              [
+                "فِىٓ ءَاذَانِهِمْ",
+                "71:7",
+                "Munfasil, then badal",
+                "4 or 5; then 2"
+              ],
+              [
+                "إِنَّهُۥ كَانَ",
+                "71:10",
+                "Silah sughra (small waw, no hamza after)",
+                "2"
+              ],
+              [
+                "جِهَارًۭا",
+                "71:8",
+                "'Iwad at the stop",
+                "2"
+              ],
+              [
+                "قَوْمِى",
+                "71:5",
+                "Natural madd",
+                "2"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Common mistake",
+          "bullets": [],
+          "note": "",
+          "misconception": {
+            "wrong": "Five counts on «جَآءَ», then three on «دُعَآءِىٓ»",
+            "right": "Choose four or five and keep it for every muttasil and munfasil"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "«فِىٓ ءَاذَانِهِمْ» begins with madd ...",
+            "options": [
+              "munfasil",
+              "muttasil",
+              "lazim"
+            ],
+            "answer": 0,
+            "why": "The madd letter ends one word; the hamza starts the next."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Recite 71:6 to 7 with one consistent length on every muttasil and munfasil.",
+          "a": "du'aaa'eee illaa ... fee aadhaanihim: equal lengths.",
+          "mins": 4,
+          "model": "I do: I choose four counts; «دُعَآءِىٓ» (four), «إِلَّا» joined ... «فِىٓ ءَاذَانِهِمْ» (four), then badal two."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Madd audit (pupil PDF): list ten madd in Nuh 1 to 10 with family and count. Today's rota group recites Nuh 1 to 10.",
+          "a": "Ten madd correctly named and counted.",
+          "mins": 12,
+          "model": "The teacher does «جَآءَ» (71:4) first."
+        },
+        {
+          "q": "Extend: find a madd lazim anywhere in Juz' Tabarak.",
+          "a": "For example «ٱلْحَآقَّةُ» (69:1).",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: why is «إِنَّهُۥ كَانَ» only two counts but «عَذَابَهُۥٓ أَحَدٌ» (89:25) four or five?",
+          "a": "Silah sughra has no hamza after it; silah kubra is followed by a hamza.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Madd 'iwad is ...",
+          "a": "two counts",
+          "mins": 1,
+          "options": [
+            "two counts",
+            "four counts"
+          ]
+        },
+        {
+          "q": "Back to our ponder: If one reciter holds every munfasil for four counts and another for five, are both correct?",
+          "a": "Yes, in Hafs by way of ash-Shatibiyyah both are allowed; what matters is choosing one and keeping it consistent.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Nuh 1 to 10 with consistent madd; log revision.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Madd review in Surat Nuh rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Ruler measuring length",
+          "alt": "Each madd has its count",
+          "for": "teach:1"
+        },
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Nuh; consolidating the rules",
+      "n": 39,
+      "title": "Surat Nuh 71:11-20: hear, understand and memorise",
+      "duration": 50,
+      "bigQuestion": "Nuh told his people that istighfar brings rain, wealth, children and gardens (71:10 to 12). What links seeking forgiveness with blessings?",
+      "objectives": [
+        "To memorise Nuh 71:11-20 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 71:11-20 after the teacher, word for word",
+        "Most: recite 71:11-20 from memory with no more than one prompt",
+        "Some: link 71:11-20 to the ayat before and name the tajweed rules in them"
+      ],
+      "crossCurricular": "Science: the Sun as a light source and the Moon reflecting light (Year 8 physics, light)",
+      "smsc": "Spiritual: istighfar and gratitude for creation",
+      "keywords": [
+        {
+          "term": "midrar (مدرار)",
+          "def": "pouring abundantly"
+        },
+        {
+          "term": "atwar (أطوار)",
+          "def": "stages"
+        },
+        {
+          "term": "tibaq (طباق)",
+          "def": "in layers, one above another"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Nuh told his people that istighfar brings rain, wealth, children and gardens (71:10 to 12). What links seeking forgiveness with blessings?",
+        "a": "Allah rewards those who turn back to Him in this life and the next."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'He will send [rain from] the sky upon you in [continuing] showers And give you increase in wealth and children and provide for you gardens and provide for you rivers.' (Nuh 71:11 to 12).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Nuh 71:8 in your head. How does the next ayah begin?",
+          "a": "ثُمَّ إِنِّىٓ",
+          "mins": 1,
+          "options": [
+            "وَٱللَّهُ جَعَلَ",
+            "ثُمَّ إِنِّىٓ",
+            "أَنِ ٱعْبُدُوا۟"
+          ]
+        },
+        {
+          "q": "«فِىٓ ءَاذَانِهِمْ» has madd ...",
+          "a": "munfasil",
+          "mins": 1,
+          "options": [
+            "munfasil",
+            "muttasil"
+          ]
+        },
+        {
+          "q": "Nuh 71:10: «فَقُلْتُ ٱسْتَغْفِرُوا۟ ...» Which word comes next?",
+          "a": "رَبَّكُمْ",
+          "mins": 1,
+          "options": [
+            "رَبَّكُمْ",
+            "غَفَّارًۭا",
+            "يَغُوثَ"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Nuh 71:11-15",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 71:11-15 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "يُرْسِلِ ٱلسَّمَآءَ عَلَيْكُم مِّدْرَارًۭا (١١) وَيُمْدِدْكُم بِأَمْوَٰلٍۢ وَبَنِينَ وَيَجْعَل لَّكُمْ جَنَّٰتٍۢ وَيَجْعَل لَّكُمْ أَنْهَٰرًۭا (١٢) مَّا لَكُمْ لَا تَرْجُونَ لِلَّهِ وَقَارًۭا (١٣) وَقَدْ خَلَقَكُمْ أَطْوَارًا (١٤) أَلَمْ تَرَوْا۟ كَيْفَ خَلَقَ ٱللَّهُ سَبْعَ سَمَٰوَٰتٍۢ طِبَاقًۭا (١٥)",
+            "source": "Surat Nuh, 71:11-15"
+          }
+        },
+        {
+          "heading": "New ayat: Nuh 71:16-20",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 71:16-20 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "وَجَعَلَ ٱلْقَمَرَ فِيهِنَّ نُورًۭا وَجَعَلَ ٱلشَّمْسَ سِرَاجًۭا (١٦) وَٱللَّهُ أَنۢبَتَكُم مِّنَ ٱلْأَرْضِ نَبَاتًۭا (١٧) ثُمَّ يُعِيدُكُمْ فِيهَا وَيُخْرِجُكُمْ إِخْرَاجًۭا (١٨) وَٱللَّهُ جَعَلَ لَكُمُ ٱلْأَرْضَ بِسَاطًۭا (١٩) لِّتَسْلُكُوا۟ مِنْهَا سُبُلًۭا فِجَاجًۭا (٢٠)",
+            "source": "Surat Nuh, 71:16-20"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "71:11-12",
+                "He will send [rain from] the sky upon you in [continuing] showers And give you increase in wealth and children and provide for you gardens and provide for you rivers."
+              ],
+              [
+                "71:13-14",
+                "What is [the matter] with you that you do not attribute to Allah [due] grandeur While He has created you in stages?"
+              ],
+              [
+                "71:15-16",
+                "Do you not consider how Allah has created seven heavens in layers And made the moon therein a [reflected] light and made the sun a burning lamp?"
+              ],
+              [
+                "71:17-18",
+                "And Allah has caused you to grow from the earth a [progressive] growth. Then He will return you into it and extract you [another] extraction."
+              ],
+              [
+                "71:19-20",
+                "And Allah has made for you the earth an expanse That you may follow therein roads of passage.' \""
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "عَلَيْكُم مِّدْرَارًۭا",
+                "Nuh 71:11",
+                "Idgham shafawi: meem into meem",
+                "Merge with ghunnah"
+              ],
+              [
+                "وَيُمْدِدْكُم بِأَمْوَٰلٍۢ",
+                "Nuh 71:12",
+                "Ikhfa' shafawi: meem before ب",
+                "Lips nearly closed, hum"
+              ],
+              [
+                "أَنۢبَتَكُم",
+                "Nuh 71:17",
+                "Iqlab: noon before ب",
+                "Small meem, ghunnah"
+              ],
+              [
+                "سَمَٰوَٰتٍۢ طِبَاقًۭا",
+                "Nuh 71:15",
+                "Ikhfa': tanween before ط",
+                "Heavy hum before ط"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 71:11-20 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Which signs of creation are in 71:15 to 16?",
+            "options": [
+              "Seven heavens in layers, the moon as light and the sun as a lamp",
+              "Mountains and rivers",
+              "Camels and birds"
+            ],
+            "answer": 0,
+            "why": "71:15 to 16."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Nuh 71:11-20 together, ayah by ayah.",
+          "a": "The class recites 71:11-20 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 71:11-20. Ayah 11: 3 times looking, 3 times without looking. Then ayah 12 the same way. Then link: recite 11 and 12 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "«وَيُمْدِدْكُم بِأَمْوَٰلٍۢ» has ...",
+          "a": "ikhfa' shafawi",
+          "mins": 1,
+          "options": [
+            "ikhfa' shafawi",
+            "idgham shafawi",
+            "izhar shafawi"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 71:11-20 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 8,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "Explain 'He created you in stages' (71:14).",
+          "a": "Humans pass through stages before birth and through life: Allah's plan at every stage.",
+          "mins": 2
+        },
+        {
+          "q": "71:16 calls the moon 'light' (nur) and the sun 'a lamp' (siraj). What difference might that point to?",
+          "a": "The sun produces its own light and heat like a lamp; the moon gives reflected light.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Nuh 71:16: «وَجَعَلَ ٱلْقَمَرَ فِيهِنَّ ...» Which word comes next?",
+          "a": "نُورًۭا",
+          "mins": 1,
+          "options": [
+            "جَعَلَ",
+            "نُورًۭا",
+            "وَلِوَٰلِدَىَّ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Nuh told his people that istighfar brings rain, wealth, children and gardens (71:10 to 12). What links seeking forgiveness with blessings?",
+          "a": "Allah rewards those who turn back to Him in this life and the next.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Nuh 71:11-20 to a parent three times a day and revise Nuh 1 to 10; tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Nuh 71:11-20 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Heavy rain falling on field",
+          "alt": "Abundant rain (71:11)",
+          "for": "hook"
+        },
+        {
+          "find": "Full moon night",
+          "alt": "The moon: a light (71:16)",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Nuh; consolidating the rules",
+      "n": 40,
+      "title": "Waqf in the longer ayat of Nuh",
+      "duration": 50,
+      "bigQuestion": "71:7 is a long ayah with no waqf sign. If you must breathe, how will you decide where?",
+      "objectives": [
+        "To understand how to choose sound stops and restarts in the long ayat of Nuh so the meaning stays clear"
+      ],
+      "successCriteria": [
+        "All: obey the waqf signs in 71:4 and 71:24",
+        "Most: choose a sound breath point in 71:7",
+        "Some: label a stop as tamm, kafi, hasan or qabih and justify it"
+      ],
+      "smsc": "Spiritual: protecting the meaning of Allah's words",
+      "keywords": [
+        {
+          "term": "waqf (وقف)",
+          "def": "stopping on a word, with a breath"
+        },
+        {
+          "term": "ibtida' (ابتداء)",
+          "def": "starting again after a stop"
+        },
+        {
+          "term": "tamm (تام)",
+          "def": "a complete stop"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "71:7 is a long ayah with no waqf sign. If you must breathe, how will you decide where?",
+        "a": "Stop where a complete idea ends and restart at the start of the next phrase."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And recite the Qur'an with measured recitation' (Al-Muzzammil 73:4).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Nuh 71:13 in your head. How does the next ayah begin?",
+          "a": "وَقَدْ خَلَقَكُمْ",
+          "mins": 1,
+          "options": [
+            "إِنَّكَ إِن",
+            "قَالَ يَٰقَوْمِ",
+            "وَقَدْ خَلَقَكُمْ"
+          ]
+        },
+        {
+          "q": "«أَنۢبَتَكُم» shows ...",
+          "a": "iqlab",
+          "mins": 1,
+          "options": [
+            "iqlab",
+            "ikhfa'"
+          ]
+        },
+        {
+          "q": "ۖ means ...",
+          "a": "continuing is better",
+          "mins": 1,
+          "options": [
+            "continuing is better",
+            "must stop"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Four kinds of stop",
+          "bullets": [
+            "Tamm: complete, not linked to what follows",
+            "Kafi: complete in wording, linked in meaning",
+            "Hasan: sound, but the next words depend on it: restart earlier",
+            "Qabih: changes or breaks the meaning: avoid"
+          ],
+          "note": "Bismillah."
+        },
+        {
+          "heading": "71:7",
+          "bullets": [
+            "Where would you breathe?"
+          ],
+          "note": "Suggest: after «لَهُمْ», after «ثِيَابَهُمْ».",
+          "quote": {
+            "text": "وَإِنِّى كُلَّمَا دَعَوْتُهُمْ لِتَغْفِرَ لَهُمْ جَعَلُوٓا۟ أَصَٰبِعَهُمْ فِىٓ ءَاذَانِهِمْ وَٱسْتَغْشَوْا۟ ثِيَابَهُمْ وَأَصَرُّوا۟ وَٱسْتَكْبَرُوا۟ ٱسْتِكْبَارًۭا (٧)",
+            "source": "Surat Nuh, 71:7"
+          }
+        },
+        {
+          "heading": "Signs in Nuh",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "After",
+              "Where",
+              "Sign",
+              "Meaning"
+            ],
+            "rows": [
+              [
+                "مُّسَمًّى",
+                "71:4",
+                "ۚ",
+                "Equal"
+              ],
+              [
+                "وَيُؤَخِّرْكُمْ",
+                "71:4",
+                "ۖ",
+                "Continuing is better"
+              ],
+              [
+                "كَثِيرًۭا",
+                "71:24",
+                "ۖ",
+                "Continuing is better"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Restart rule",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Stop on a whole word",
+            "Breathe",
+            "Go back to the start of the phrase",
+            "Restart (hamzat al-wasl if needed)",
+            "Carry on"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Stopping at «إِنَّ أَجَلَ ٱللَّهِ» and moving on is ...",
+            "options": [
+              "a poor stop: the sentence is unfinished",
+              "tamm",
+              "required"
+            ],
+            "answer": 0,
+            "why": "The sentence continues: 'when it comes, it will not be delayed'."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Recite 71:7 with two sound breath points and correct restarts.",
+          "a": "Breath after «لَهُمْ» and after «ثِيَابَهُمْ»; restart at «جَعَلُوٓا۟» or «وَأَصَرُّوا۟».",
+          "mins": 4,
+          "model": "I do: «... لِتَغْفِرَ لَهُمْ» (breathe), restart «جَعَلُوٓا۟ أَصَٰبِعَهُمْ ...»: the next clause."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Stop map (pupil PDF): mark signs and safe breath points in 71:1 to 12. Today's rota group recites Nuh 1 to 20.",
+          "a": "Signs in 71:4 marked; breath points in 71:1, 7 and 12 at clause ends.",
+          "mins": 11,
+          "model": "The teacher marks 71:4 first."
+        },
+        {
+          "q": "Extend: label the end of 71:9 tamm or kafi.",
+          "a": "Kafi: 71:10 continues Nuh's speech.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: why should 'emergency stops' be practised, not avoided?",
+          "a": "Long ayat need breath; practising sound stops protects the meaning.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A qabih stop ...",
+          "a": "breaks or changes the meaning",
+          "mins": 1,
+          "options": [
+            "breaks or changes the meaning",
+            "is the best stop"
+          ]
+        },
+        {
+          "q": "Back to our ponder: 71:7 is a long ayah with no waqf sign. If you must breathe, how will you decide where?",
+          "a": "Stop where a complete idea ends and restart at the start of the next phrase.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Nuh 1 to 20 with sound stops; log revision.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Waqf in the longer ayat of Nuh rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Pause button symbol",
+          "alt": "A pause sign",
+          "for": "teach:4"
+        },
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Nuh; consolidating the rules",
+      "n": 41,
+      "title": "Surat Nuh 71:21-24: hear, understand and memorise",
+      "duration": 50,
+      "bigQuestion": "Nuh's people followed leaders whose wealth and children only increased them in loss (71:21). Why do people follow the rich and famous even when they are wrong?",
+      "objectives": [
+        "To memorise Nuh 71:21-24 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 71:21-24 after the teacher, word for word",
+        "Most: recite 71:21-24 from memory with no more than one prompt",
+        "Some: link 71:21-24 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Moral: following truth rather than popularity",
+      "keywords": [
+        {
+          "term": "'asawni (عصوني)",
+          "def": "they disobeyed me"
+        },
+        {
+          "term": "khasar (خسار)",
+          "def": "loss"
+        },
+        {
+          "term": "makr (مكر)",
+          "def": "plotting"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Nuh's people followed leaders whose wealth and children only increased them in loss (71:21). Why do people follow the rich and famous even when they are wrong?",
+        "a": "Status and fear of being different; the Qur'an teaches us to follow truth, not popularity."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Noah said, \"My Lord, indeed they have disobeyed me and followed him whose wealth and children will not increase him except in loss.' (Nuh 71:21).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Nuh 71:17 in your head. How does the next ayah begin?",
+          "a": "ثُمَّ يُعِيدُكُمْ",
+          "mins": 1,
+          "options": [
+            "وَقَدْ أَضَلُّوا۟",
+            "إِنَّكَ إِن",
+            "ثُمَّ يُعِيدُكُمْ"
+          ]
+        },
+        {
+          "q": "A kafi stop is ...",
+          "a": "complete in wording, linked in meaning",
+          "mins": 1,
+          "options": [
+            "complete in wording, linked in meaning",
+            "a bad stop"
+          ]
+        },
+        {
+          "q": "Nuh 71:20: «لِّتَسْلُكُوا۟ ...» Which word comes next?",
+          "a": "مِنْهَا",
+          "mins": 1,
+          "options": [
+            "تَذَرْ",
+            "مِنْهَا",
+            "جَعَلُوٓا۟"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Nuh 71:21-24",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 71:21-24 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "قَالَ نُوحٌۭ رَّبِّ إِنَّهُمْ عَصَوْنِى وَٱتَّبَعُوا۟ مَن لَّمْ يَزِدْهُ مَالُهُۥ وَوَلَدُهُۥٓ إِلَّا خَسَارًۭا (٢١) وَمَكَرُوا۟ مَكْرًۭا كُبَّارًۭا (٢٢) وَقَالُوا۟ لَا تَذَرُنَّ ءَالِهَتَكُمْ وَلَا تَذَرُنَّ وَدًّۭا وَلَا سُوَاعًۭا وَلَا يَغُوثَ وَيَعُوقَ وَنَسْرًۭا (٢٣) وَقَدْ أَضَلُّوا۟ كَثِيرًۭا ۖ وَلَا تَزِدِ ٱلظَّٰلِمِينَ إِلَّا ضَلَٰلًۭا (٢٤)",
+            "source": "Surat Nuh, 71:21-24"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "71:21",
+                "Noah said, \"My Lord, indeed they have disobeyed me and followed him whose wealth and children will not increase him except in loss."
+              ],
+              [
+                "71:22",
+                "And they conspired an immense conspiracy."
+              ],
+              [
+                "71:23",
+                "And said, 'Never leave your gods and never leave Wadd or Suwa' or Yaghuth and Ya'uq and Nasr."
+              ],
+              [
+                "71:24",
+                "And already they have misled many. And, [my Lord], do not increase the wrongdoers except in error.\""
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "نُوحٌۭ رَّبِّ",
+                "Nuh 71:21",
+                "Idgham without ghunnah: tanween into ر",
+                "noohur-rabbi"
+              ],
+              [
+                "مَن لَّمْ",
+                "Nuh 71:21",
+                "Idgham without ghunnah: noon into ل",
+                "mal-lam"
+              ],
+              [
+                "مَكْرًۭا كُبَّارًۭا",
+                "Nuh 71:22",
+                "Ikhfa': tanween before ك",
+                "Light hum"
+              ],
+              [
+                "كَثِيرًۭا",
+                "Nuh 71:24",
+                "Sign ۖ: continuing is better",
+                "Join if you have breath"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 71:21-24 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "What did the leaders tell the people (71:23)?",
+            "options": [
+              "Do not leave your gods",
+              "Listen to Nuh",
+              "Build a ship"
+            ],
+            "answer": 0,
+            "why": "71:23."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Nuh 71:21-24 together, ayah by ayah.",
+          "a": "The class recites 71:21-24 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 71:21-24. Ayah 21: 3 times looking, 3 times without looking. Then ayah 22 the same way. Then link: recite 21 and 22 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "«مَن لَّمْ» is ...",
+          "a": "idgham without ghunnah",
+          "mins": 1,
+          "options": [
+            "idgham without ghunnah",
+            "idgham with ghunnah"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 71:21-24 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 10,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "What does «مَكْرًۭا كُبَّارًۭا» describe?",
+          "a": "A tremendous plot against the truth.",
+          "mins": 2
+        },
+        {
+          "q": "Why is idgham into ل and ر without ghunnah?",
+          "a": "These two letters are very close in makhraj; the noon merges fully and its ghunnah disappears.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Nuh 71:23: «وَقَالُوا۟ لَا ...» Which word comes next?",
+          "a": "تَذَرُنَّ",
+          "mins": 1,
+          "options": [
+            "ٱغْفِرْ",
+            "تَذَرُنَّ",
+            "ٱلظَّٰلِمِينَ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Nuh's people followed leaders whose wealth and children only increased them in loss (71:21). Why do people follow the rich and famous even when they are wrong?",
+          "a": "Status and fear of being different; the Qur'an teaches us to follow truth, not popularity.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Nuh 71:21-24 to a parent three times a day and revise Nuh 1 to 20; tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Nuh 71:21-24 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Stormy sea waves dark sky",
+          "alt": "A stormy sea",
+          "for": "hook"
+        },
+        {
+          "find": "Quran manuscript page",
+          "alt": "A page of the Qur'an",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Nuh; consolidating the rules",
+      "n": 42,
+      "title": "Surat Nuh 71:25-28: hear, understand and memorise",
+      "duration": 50,
+      "bigQuestion": "Nuh's last du'a asks forgiveness for himself, his parents and all believers (71:28). Why include people beyond yourself in your du'a?",
+      "objectives": [
+        "To memorise Nuh 71:25-28 accurately and recite it with its tajweed"
+      ],
+      "successCriteria": [
+        "All: recite 71:25-28 after the teacher, word for word",
+        "Most: recite 71:25-28 from memory with no more than one prompt",
+        "Some: link 71:25-28 to the ayat before and name the tajweed rules in them"
+      ],
+      "smsc": "Spiritual: du'a for parents and all believers",
+      "keywords": [
+        {
+          "term": "ughriqu (أغرقوا)",
+          "def": "they were drowned"
+        },
+        {
+          "term": "ansar (أنصار)",
+          "def": "helpers"
+        },
+        {
+          "term": "tabar (تبار)",
+          "def": "destruction"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Nuh's last du'a asks forgiveness for himself, his parents and all believers (71:28). Why include people beyond yourself in your du'a?",
+        "a": "Believers care for each other; Allah loves du'a for others, and it brings unity."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'My Lord, forgive me and my parents and whoever enters my house a believer and the believing men and believing women. And do not increase the wrongdoers except in destruction.\"' (Nuh 71:28).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Nuh 71:22 in your head. How does the next ayah begin?",
+          "a": "وَقَالُوا۟ لَا",
+          "mins": 1,
+          "options": [
+            "فَلَمْ يَزِدْهُمْ",
+            "وَقَالُوا۟ لَا",
+            "إِنَّكَ إِن"
+          ]
+        },
+        {
+          "q": "«نُوحٌۭ رَّبِّ» is ...",
+          "a": "idgham without ghunnah",
+          "mins": 1,
+          "options": [
+            "idgham without ghunnah",
+            "ikhfa'"
+          ]
+        },
+        {
+          "q": "Nuh 71:24: «وَقَدْ أَضَلُّوا۟ كَثِيرًۭا ...» Which word comes next?",
+          "a": "وَلَا",
+          "mins": 1,
+          "options": [
+            "وَٱسْتَغْشَوْا۟",
+            "وَلَا",
+            "تَذَرُنَّ"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "New ayat: Nuh 71:25-28",
+          "bullets": [
+            "Listen first: the teacher recites twice",
+            "Follow each word with your finger",
+            "Mics muted while we listen"
+          ],
+          "note": "Begin with isti'adhah and Bismillah. Recite 71:25-28 slowly twice from the mushaf (spoken recitation only, no melody exercises), pointing to each word on the shared screen. The Arabic is the Qur'an in Uthmani script (Hafs 'an 'Asim, Madinah mushaf); check it against the school mushaf.",
+          "quote": {
+            "text": "مِّمَّا خَطِيٓـَٰٔتِهِمْ أُغْرِقُوا۟ فَأُدْخِلُوا۟ نَارًۭا فَلَمْ يَجِدُوا۟ لَهُم مِّن دُونِ ٱللَّهِ أَنصَارًۭا (٢٥) وَقَالَ نُوحٌۭ رَّبِّ لَا تَذَرْ عَلَى ٱلْأَرْضِ مِنَ ٱلْكَٰفِرِينَ دَيَّارًا (٢٦) إِنَّكَ إِن تَذَرْهُمْ يُضِلُّوا۟ عِبَادَكَ وَلَا يَلِدُوٓا۟ إِلَّا فَاجِرًۭا كَفَّارًۭا (٢٧) رَّبِّ ٱغْفِرْ لِى وَلِوَٰلِدَىَّ وَلِمَن دَخَلَ بَيْتِىَ مُؤْمِنًۭا وَلِلْمُؤْمِنِينَ وَٱلْمُؤْمِنَٰتِ وَلَا تَزِدِ ٱلظَّٰلِمِينَ إِلَّا تَبَارًۢا (٢٨)",
+            "source": "Surat Nuh, 71:25-28"
+          }
+        },
+        {
+          "heading": "What the ayat mean",
+          "bullets": [
+            "This is a translation of the meaning, not the Qur'an itself"
+          ],
+          "note": "Read the English slowly. Remind pupils: only the Arabic is the Qur'an; any English is a translation of its meaning (here Saheeh International).",
+          "table": {
+            "head": [
+              "Ayah",
+              "Translation of the meaning (Saheeh International)"
+            ],
+            "rows": [
+              [
+                "71:25",
+                "Because of their sins they were drowned and put into the Fire, and they found not for themselves besides Allah [any] helpers."
+              ],
+              [
+                "71:26",
+                "And Noah said, \"My Lord, do not leave upon the earth from among the disbelievers an inhabitant."
+              ],
+              [
+                "71:27",
+                "Indeed, if You leave them, they will mislead Your servants and not beget except [every] wicked one and [confirmed] disbeliever."
+              ],
+              [
+                "71:28",
+                "My Lord, forgive me and my parents and whoever enters my house a believer and the believing men and believing women. And do not increase the wrongdoers except in destruction.\""
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Tajweed spotlight in today's ayat",
+          "bullets": [],
+          "note": "Point to each word in the mushaf. Pupils say the rule before you do.",
+          "table": {
+            "head": [
+              "Word",
+              "Where",
+              "Rule",
+              "How to read it"
+            ],
+            "rows": [
+              [
+                "لَهُم مِّن",
+                "Nuh 71:25",
+                "Idgham shafawi; then ikhfa' (noon before د)",
+                "Merge meems; light hum"
+              ],
+              [
+                "أَنصَارًۭا",
+                "Nuh 71:25",
+                "Ikhfa': noon before ص",
+                "Heavy hum"
+              ],
+              [
+                "إِن تَذَرْهُمْ",
+                "Nuh 71:27",
+                "Ikhfa': noon before ت",
+                "Light hum"
+              ],
+              [
+                "مُؤْمِنًۭا وَلِلْمُؤْمِنِينَ",
+                "Nuh 71:28",
+                "Idgham with ghunnah: tanween into و",
+                "mu'minaw-wa lil-mu'mineen"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Listen and repeat: mics in turn",
+          "bullets": [],
+          "note": "Talaqqi (تلقي): learning recitation by hearing it from the teacher. Work through 71:25-28 one ayah at a time. Keep a visible order of names (the register) so every pupil gets a turn across the week. Unmute only the pupils whose turn it is; everyone else whispers along with mics muted.",
+          "cycle": [
+            "Teacher recites one ayah (talaqqi)",
+            "Pupils listen, mics muted, eyes on the words",
+            "Mics on in turn: three pupils repeat in register order",
+            "Teacher corrects one point for each",
+            "Whole class repeats softly, then moves to the next ayah"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Who does Nuh include in his du'a in 71:28?",
+            "options": [
+              "Himself, his parents, believers in his house and all believers",
+              "Only himself",
+              "Only his children"
+            ],
+            "answer": 0,
+            "why": "71:28."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chunk and link Nuh 71:25-28 together, ayah by ayah.",
+          "a": "The class recites 71:25-28 together without the mushaf.",
+          "mins": 4,
+          "model": "I do: chunk 71:25-28. Ayah 25: 3 times looking, 3 times without looking. Then ayah 26 the same way. Then link: recite 25 and 26 together twice. Finish by reciting the whole chunk once without the mushaf."
+        },
+        {
+          "q": "«لَهُم مِّن» is ...",
+          "a": "idgham shafawi",
+          "mins": 1,
+          "options": [
+            "idgham shafawi",
+            "ikhfa' shafawi"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Listening rota: today's group recites 71:25-28 to the teacher, one by one. Everyone else: 3-3-link the same ayat, then tick the revision log.",
+          "a": "Pupil recites with no help; the teacher marks hifdh and tajweed on the rubric and gives one target.",
+          "mins": 10,
+          "model": "The teacher shows the 3-3-link method once: read the ayah 3 times looking, say it 3 times without looking, then link it to the ayah before it. Rota: names on screen, about 90 seconds each, so every pupil is heard at least once a week; the teacher marks the rubric and gives one target."
+        },
+        {
+          "q": "Learn 71:28 as a personal du'a and say it after salah this week.",
+          "a": "Du'a said.",
+          "mins": 2
+        },
+        {
+          "q": "Why is the flood (71:25) described as resulting from 'their sins'?",
+          "a": "The punishment followed their persistent rejection; it was justice, not random.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Nuh 71:28: «رَّبِّ ٱغْفِرْ ...» Which word comes next?",
+          "a": "لِى",
+          "mins": 1,
+          "options": [
+            "لِى",
+            "وَلِمَن",
+            "دَيَّارًا"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Nuh's last du'a asks forgiveness for himself, his parents and all believers (71:28). Why include people beyond yourself in your du'a?",
+          "a": "Believers care for each other; Allah loves du'a for others, and it brings unity.",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Nuh 71:25-28 to a parent three times a day and revise Nuh 1 to 24; tick the portal revision log each day.",
+      "send": "SEND: shorter chunks (one ayah), the pupil PDF with each word spaced, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: link to the next ayat and explain one rule to the class.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Nuh 71:25-28 with words spaced, and the questions",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Flood water landscape",
+          "alt": "Flood waters",
+          "for": "hook"
+        },
+        {
+          "find": "Quran manuscript page",
+          "alt": "A page of the Qur'an",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Nuh; consolidating the rules",
+      "n": 43,
+      "title": "Recital: Surat Nuh whole",
+      "duration": 50,
+      "bigQuestion": "Nuh has a clear story order. How can the story help you remember which ayah comes next?",
+      "objectives": [
+        "To understand how well I recite all of Surat Nuh, linking its four parts"
+      ],
+      "successCriteria": [
+        "All: recite Nuh 1 to 14 alone",
+        "Most: recite all 28 ayat with two prompts or fewer",
+        "Some: recite with consistent madd and sound stops throughout"
+      ],
+      "smsc": "Social: listening respectfully to each other",
+      "keywords": [
+        {
+          "term": "muraja'ah (مراجعة)",
+          "def": "revising what has been memorised"
+        },
+        {
+          "term": "kamil (كامل)",
+          "def": "complete, whole"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Nuh has a clear story order. How can the story help you remember which ayah comes next?",
+        "a": "The call (1 to 4), Nuh's report of his efforts (5 to 20), his people's rejection (21 to 24), the flood and his du'a (25 to 28)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We have certainly made the Qur'an easy for remembrance, so is there any who will remember?' (Al-Qamar 54:17).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Nuh 71:4 in your head. How does the next ayah begin?",
+          "a": "قَالَ رَبِّ",
+          "mins": 1,
+          "options": [
+            "ثُمَّ إِنِّىٓ",
+            "قَالَ رَبِّ",
+            "يُرْسِلِ ٱلسَّمَآءَ"
+          ]
+        },
+        {
+          "q": "Recite Nuh 71:14 in your head. How does the next ayah begin?",
+          "a": "أَلَمْ تَرَوْا۟",
+          "mins": 1,
+          "options": [
+            "أَلَمْ تَرَوْا۟",
+            "وَقَالَ نُوحٌۭ",
+            "فَلَمْ يَزِدْهُمْ"
+          ]
+        },
+        {
+          "q": "Recite Nuh 71:24 in your head. How does the next ayah begin?",
+          "a": "مِّمَّا خَطِيٓـَٰٔتِهِمْ",
+          "mins": 1,
+          "options": [
+            "وَٱللَّهُ أَنۢبَتَكُم",
+            "قَالَ يَٰقَوْمِ",
+            "مِّمَّا خَطِيٓـَٰٔتِهِمْ"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The four parts",
+          "bullets": [],
+          "note": "Bismillah.",
+          "table": {
+            "head": [
+              "Ayat",
+              "Theme"
+            ],
+            "rows": [
+              [
+                "71:1 to 4",
+                "The message: worship Allah and fear Him"
+              ],
+              [
+                "71:5 to 20",
+                "Nuh's efforts; istighfar; signs in creation"
+              ],
+              [
+                "71:21 to 24",
+                "The people follow their leaders and idols"
+              ],
+              [
+                "71:25 to 28",
+                "The flood and Nuh's du'a"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Joins to practise",
+          "bullets": [
+            "71:4 → 71:5",
+            "71:20 → 71:21",
+            "71:24 → 71:25"
+          ],
+          "note": "",
+          "quote": {
+            "text": "لِّتَسْلُكُوا۟ مِنْهَا سُبُلًۭا فِجَاجًۭا (٢٠) قَالَ نُوحٌۭ رَّبِّ إِنَّهُمْ عَصَوْنِى وَٱتَّبَعُوا۟ مَن لَّمْ يَزِدْهُ مَالُهُۥ وَوَلَدُهُۥٓ إِلَّا خَسَارًۭا (٢١)",
+            "source": "Surat Nuh, 71:20-21"
+          }
+        },
+        {
+          "heading": "How you will be marked",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Criterion",
+              "4 Secure",
+              "2 Developing"
+            ],
+            "rows": [
+              [
+                "Hifdh (memory)",
+                "No mistakes, no prompts",
+                "Two or more prompts"
+              ],
+              [
+                "Makharij and harakat",
+                "Every letter and vowel clear",
+                "Some letters or vowels changed"
+              ],
+              [
+                "Tajweed rules",
+                "Rules applied every time",
+                "Rules missed in places"
+              ],
+              [
+                "Fluency and waqf",
+                "Steady pace, sensible stops",
+                "Pauses mid-word or rushes"
+              ],
+              [
+                "Adab",
+                "Isti'adhah, Bismillah, calm and respectful",
+                "Needs reminders"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Which ayah begins Nuh's final du'a?",
+            "options": [
+              "71:26",
+              "71:1",
+              "71:10"
+            ],
+            "answer": 0,
+            "why": "71:26 to 28."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chain recitation of Nuh 1 to 28, one ayah per pupil.",
+          "a": "Recited in order.",
+          "mins": 4,
+          "model": "I do: I recite 71:1; the first name continues."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Recital: today's group recites Nuh whole to the teacher. Everyone else: 3-3-link the joins and log them.",
+          "a": "Rubric marked; joins practised.",
+          "mins": 15,
+          "model": "The teacher shows one turn."
+        },
+        {
+          "q": "Extend: recite 71:26 to 28 at a steady pace with full meaning in mind.",
+          "a": "Recited.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Recite Nuh 71:27 in your head. How does the next ayah begin?",
+          "a": "رَّبِّ ٱغْفِرْ",
+          "mins": 1,
+          "options": [
+            "وَيُمْدِدْكُم بِأَمْوَٰلٍۢ",
+            "رَّبِّ ٱغْفِرْ",
+            "وَإِنِّى كُلَّمَا"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Nuh has a clear story order. How can the story help you remember which ayah comes next?",
+          "a": "The call (1 to 4), Nuh's report of his efforts (5 to 20), his people's rejection (21 to 24), the flood and his du'a (25 to 28).",
+          "mins": 2
+        }
+      ],
+      "homework": "Recite Nuh whole daily; log revision.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Recital rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Chain links metal",
+          "alt": "Links: joining the parts",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Nuh; consolidating the rules",
+      "n": 44,
+      "title": "Muraja'ah: Al-Mulk and Al-Qalam",
+      "duration": 50,
+      "bigQuestion": "Al-Mulk is known as a surah many Muslims recite every night. How could you make that a habit?",
+      "objectives": [
+        "To understand how secure Al-Mulk and Al-Qalam are and repair the weakest passages"
+      ],
+      "successCriteria": [
+        "All: recite Al-Mulk 1 to 15",
+        "Most: recite Al-Mulk whole with two prompts or fewer",
+        "Some: recite Al-Qalam 1 to 33 straight through"
+      ],
+      "smsc": "Spiritual: making Al-Mulk a nightly habit",
+      "keywords": [
+        {
+          "term": "muraja'ah (مراجعة)",
+          "def": "revising what has been memorised"
+        },
+        {
+          "term": "al-mulk (الملك)",
+          "def": "the dominion"
+        },
+        {
+          "term": "al-qalam (القلم)",
+          "def": "the pen"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Al-Mulk is known as a surah many Muslims recite every night. How could you make that a habit?",
+        "a": "Link it to 'Isha or bedtime and keep a daily tick in the log."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We have certainly made the Qur'an easy for remembrance, so is there any who will remember?' (Al-Qamar 54:17).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Mulk 67:2 in your head. How does the next ayah begin?",
+          "a": "ٱلَّذِى خَلَقَ",
+          "mins": 1,
+          "options": [
+            "فَلَمَّا رَأَوْهُ",
+            "تَكَادُ تَمَيَّزُ",
+            "ٱلَّذِى خَلَقَ"
+          ]
+        },
+        {
+          "q": "Recite Al-Mulk 67:15 in your head. How does the next ayah begin?",
+          "a": "ءَأَمِنتُم مَّن",
+          "mins": 1,
+          "options": [
+            "تَبَٰرَكَ ٱلَّذِى",
+            "فَلَمَّا رَأَوْهُ",
+            "ءَأَمِنتُم مَّن"
+          ]
+        },
+        {
+          "q": "Recite Al-Qalam 68:4 in your head. How does the next ayah begin?",
+          "a": "فَسَتُبْصِرُ وَيُبْصِرُونَ",
+          "mins": 1,
+          "options": [
+            "يَوْمَ يُكْشَفُ",
+            "فَسَتُبْصِرُ وَيُبْصِرُونَ",
+            "أَمْ لَهُمْ"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Al-Mulk 67:1 to 5",
+          "bullets": [
+            "Recite with me"
+          ],
+          "note": "Bismillah.",
+          "quote": {
+            "text": "تَبَٰرَكَ ٱلَّذِى بِيَدِهِ ٱلْمُلْكُ وَهُوَ عَلَىٰ كُلِّ شَىْءٍۢ قَدِيرٌ (١) ٱلَّذِى خَلَقَ ٱلْمَوْتَ وَٱلْحَيَوٰةَ لِيَبْلُوَكُمْ أَيُّكُمْ أَحْسَنُ عَمَلًۭا ۚ وَهُوَ ٱلْعَزِيزُ ٱلْغَفُورُ (٢) ٱلَّذِى خَلَقَ سَبْعَ سَمَٰوَٰتٍۢ طِبَاقًۭا ۖ مَّا تَرَىٰ فِى خَلْقِ ٱلرَّحْمَٰنِ مِن تَفَٰوُتٍۢ ۖ فَٱرْجِعِ ٱلْبَصَرَ هَلْ تَرَىٰ مِن فُطُورٍۢ (٣) ثُمَّ ٱرْجِعِ ٱلْبَصَرَ كَرَّتَيْنِ يَنقَلِبْ إِلَيْكَ ٱلْبَصَرُ خَاسِئًۭا وَهُوَ حَسِيرٌۭ (٤) وَلَقَدْ زَيَّنَّا ٱلسَّمَآءَ ٱلدُّنْيَا بِمَصَٰبِيحَ وَجَعَلْنَٰهَا رُجُومًۭا لِّلشَّيَٰطِينِ ۖ وَأَعْتَدْنَا لَهُمْ عَذَابَ ٱلسَّعِيرِ (٥)",
+            "source": "Surat Al-Mulk, 67:1-5"
+          }
+        },
+        {
+          "heading": "Al-Qalam 68:1 to 7",
+          "bullets": [
+            "Recite with me"
+          ],
+          "note": "",
+          "quote": {
+            "text": "نٓ ۚ وَٱلْقَلَمِ وَمَا يَسْطُرُونَ (١) مَآ أَنتَ بِنِعْمَةِ رَبِّكَ بِمَجْنُونٍۢ (٢) وَإِنَّ لَكَ لَأَجْرًا غَيْرَ مَمْنُونٍۢ (٣) وَإِنَّكَ لَعَلَىٰ خُلُقٍ عَظِيمٍۢ (٤) فَسَتُبْصِرُ وَيُبْصِرُونَ (٥) بِأَييِّكُمُ ٱلْمَفْتُونُ (٦) إِنَّ رَبَّكَ هُوَ أَعْلَمُ بِمَن ضَلَّ عَن سَبِيلِهِۦ وَهُوَ أَعْلَمُ بِٱلْمُهْتَدِينَ (٧)",
+            "source": "Surat Al-Qalam, 68:1-7"
+          }
+        },
+        {
+          "heading": "How you will be marked",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Criterion",
+              "4 Secure",
+              "2 Developing"
+            ],
+            "rows": [
+              [
+                "Hifdh (memory)",
+                "No mistakes, no prompts",
+                "Two or more prompts"
+              ],
+              [
+                "Makharij and harakat",
+                "Every letter and vowel clear",
+                "Some letters or vowels changed"
+              ],
+              [
+                "Tajweed rules",
+                "Rules applied every time",
+                "Rules missed in places"
+              ],
+              [
+                "Fluency and waqf",
+                "Steady pace, sensible stops",
+                "Pauses mid-word or rushes"
+              ],
+              [
+                "Adab",
+                "Isti'adhah, Bismillah, calm and respectful",
+                "Needs reminders"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Al-Qalam begins with the letter ...",
+            "options": [
+              "ن",
+              "ق",
+              "ص"
+            ],
+            "answer": 0,
+            "why": "68:1: «نٓ»."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chain recitation: Al-Mulk 16 to 30, one ayah per pupil.",
+          "a": "Recited in order.",
+          "mins": 4,
+          "model": "I do: I recite 67:16; the first name continues."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Rota: today's group recites Al-Mulk and Al-Qalam 1 to 16 to the teacher. Everyone else: 3-3-link weak passages and log them.",
+          "a": "Rubric marked; gaps logged.",
+          "mins": 15,
+          "model": "The teacher shows the log."
+        },
+        {
+          "q": "Extend: recite Al-Qalam 17 to 33 to a partner.",
+          "a": "Recited.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Recite Al-Mulk 67:29 in your head. How does the next ayah begin?",
+          "a": "قُلْ أَرَءَيْتُمْ",
+          "mins": 1,
+          "options": [
+            "قُلْ أَرَءَيْتُمْ",
+            "فَٱعْتَرَفُوا۟ بِذَنۢبِهِمْ",
+            "وَقَالُوا۟ لَوْ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Al-Mulk is known as a surah many Muslims recite every night. How could you make that a habit?",
+          "a": "Link it to 'Isha or bedtime and keep a daily tick in the log.",
+          "mins": 2
+        }
+      ],
+      "homework": "Follow your dawrah; recite Al-Mulk each night; log revision.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Muraja'ah rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Fountain pen writing",
+          "alt": "A pen (al-qalam)",
+          "for": "hook"
+        },
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Nuh; consolidating the rules",
+      "n": 45,
+      "title": "Muraja'ah: Al-Haqqah and Al-Ma'arij",
+      "duration": 50,
+      "bigQuestion": "Al-Haqqah and Al-Ma'arij both describe the Day of Judgement. How can you avoid mixing up similar passages?",
+      "objectives": [
+        "To understand how secure Al-Haqqah and Al-Ma'arij are and repair the weakest passages"
+      ],
+      "successCriteria": [
+        "All: recite Al-Haqqah 1 to 18",
+        "Most: recite Al-Ma'arij whole with two prompts or fewer",
+        "Some: recite Al-Haqqah whole straight through"
+      ],
+      "smsc": "Moral: patience in revision",
+      "keywords": [
+        {
+          "term": "muraja'ah (مراجعة)",
+          "def": "revising what has been memorised"
+        },
+        {
+          "term": "al-haqqah (الحاقة)",
+          "def": "the inevitable reality"
+        },
+        {
+          "term": "al-ma'arij (المعارج)",
+          "def": "the ways of ascent"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Al-Haqqah and Al-Ma'arij both describe the Day of Judgement. How can you avoid mixing up similar passages?",
+        "a": "Notice each surah's opening and key words, and revise them on different days."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We have certainly made the Qur'an easy for remembrance, so is there any who will remember?' (Al-Qamar 54:17).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Al-Haqqah 69:3 in your head. How does the next ayah begin?",
+          "a": "كَذَّبَتْ ثَمُودُ",
+          "mins": 1,
+          "options": [
+            "يَوْمَئِذٍۢ تُعْرَضُونَ",
+            "كَذَّبَتْ ثَمُودُ",
+            "إِنِّى ظَنَنتُ"
+          ]
+        },
+        {
+          "q": "Recite Al-Haqqah 69:24 in your head. How does the next ayah begin?",
+          "a": "وَأَمَّا مَنْ",
+          "mins": 1,
+          "options": [
+            "وَأَمَّا مَنْ",
+            "وَلَا طَعَامٌ",
+            "وَإِنَّهُۥ لَتَذْكِرَةٌۭ"
+          ]
+        },
+        {
+          "q": "Recite Al-Ma'arij 70:19 in your head. How does the next ayah begin?",
+          "a": "إِذَا مَسَّهُ",
+          "mins": 1,
+          "options": [
+            "خَٰشِعَةً أَبْصَٰرُهُمْ",
+            "إِلَّا عَلَىٰٓ",
+            "إِذَا مَسَّهُ"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Al-Haqqah 69:1 to 8",
+          "bullets": [
+            "Recite with me"
+          ],
+          "note": "Bismillah.",
+          "quote": {
+            "text": "ٱلْحَآقَّةُ (١) مَا ٱلْحَآقَّةُ (٢) وَمَآ أَدْرَىٰكَ مَا ٱلْحَآقَّةُ (٣) كَذَّبَتْ ثَمُودُ وَعَادٌۢ بِٱلْقَارِعَةِ (٤) فَأَمَّا ثَمُودُ فَأُهْلِكُوا۟ بِٱلطَّاغِيَةِ (٥) وَأَمَّا عَادٌۭ فَأُهْلِكُوا۟ بِرِيحٍۢ صَرْصَرٍ عَاتِيَةٍۢ (٦) سَخَّرَهَا عَلَيْهِمْ سَبْعَ لَيَالٍۢ وَثَمَٰنِيَةَ أَيَّامٍ حُسُومًۭا فَتَرَى ٱلْقَوْمَ فِيهَا صَرْعَىٰ كَأَنَّهُمْ أَعْجَازُ نَخْلٍ خَاوِيَةٍۢ (٧) فَهَلْ تَرَىٰ لَهُم مِّنۢ بَاقِيَةٍۢ (٨)",
+            "source": "Surat Al-Haqqah, 69:1-8"
+          }
+        },
+        {
+          "heading": "Al-Ma'arij 70:19 to 27",
+          "bullets": [
+            "Recite with me"
+          ],
+          "note": "",
+          "quote": {
+            "text": "۞ إِنَّ ٱلْإِنسَٰنَ خُلِقَ هَلُوعًا (١٩) إِذَا مَسَّهُ ٱلشَّرُّ جَزُوعًۭا (٢٠) وَإِذَا مَسَّهُ ٱلْخَيْرُ مَنُوعًا (٢١) إِلَّا ٱلْمُصَلِّينَ (٢٢) ٱلَّذِينَ هُمْ عَلَىٰ صَلَاتِهِمْ دَآئِمُونَ (٢٣) وَٱلَّذِينَ فِىٓ أَمْوَٰلِهِمْ حَقٌّۭ مَّعْلُومٌۭ (٢٤) لِّلسَّآئِلِ وَٱلْمَحْرُومِ (٢٥) وَٱلَّذِينَ يُصَدِّقُونَ بِيَوْمِ ٱلدِّينِ (٢٦) وَٱلَّذِينَ هُم مِّنْ عَذَابِ رَبِّهِم مُّشْفِقُونَ (٢٧)",
+            "source": "Surat Al-Ma'arij, 70:19-27"
+          }
+        },
+        {
+          "heading": "How you will be marked",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Criterion",
+              "4 Secure",
+              "2 Developing"
+            ],
+            "rows": [
+              [
+                "Hifdh (memory)",
+                "No mistakes, no prompts",
+                "Two or more prompts"
+              ],
+              [
+                "Makharij and harakat",
+                "Every letter and vowel clear",
+                "Some letters or vowels changed"
+              ],
+              [
+                "Tajweed rules",
+                "Rules applied every time",
+                "Rules missed in places"
+              ],
+              [
+                "Fluency and waqf",
+                "Steady pace, sensible stops",
+                "Pauses mid-word or rushes"
+              ],
+              [
+                "Adab",
+                "Isti'adhah, Bismillah, calm and respectful",
+                "Needs reminders"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "«ٱلْحَآقَّةُ» has madd ...",
+            "options": [
+              "lazim",
+              "munfasil",
+              "badal"
+            ],
+            "answer": 0,
+            "why": "Alif followed by a shaddah: six counts."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Chain recitation: Al-Haqqah 19 to 37, one ayah per pupil.",
+          "a": "Recited in order.",
+          "mins": 4,
+          "model": "I do: I recite 69:19; the first name continues."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Rota: today's group recites Al-Haqqah and Al-Ma'arij 1 to 22 to the teacher. Everyone else: 3-3-link weak passages and log them.",
+          "a": "Rubric marked; gaps logged.",
+          "mins": 15,
+          "model": "The teacher shows the log."
+        },
+        {
+          "q": "Extend: recite Al-Ma'arij 23 to 44 to a partner.",
+          "a": "Recited.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Recite Al-Haqqah 69:51 in your head. How does the next ayah begin?",
+          "a": "فَسَبِّحْ بِٱسْمِ",
+          "mins": 1,
+          "options": [
+            "وَٱنشَقَّتِ ٱلسَّمَآءُ",
+            "فَيَوْمَئِذٍۢ وَقَعَتِ",
+            "فَسَبِّحْ بِٱسْمِ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Al-Haqqah and Al-Ma'arij both describe the Day of Judgement. How can you avoid mixing up similar passages?",
+          "a": "Notice each surah's opening and key words, and revise them on different days.",
+          "mins": 2
+        }
+      ],
+      "homework": "Follow your dawrah; recite Nuh whole; log revision.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Muraja'ah rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Stairs ascending",
+          "alt": "Ways of ascent (al-ma'arij)",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Nuh; consolidating the rules",
+      "n": 46,
+      "title": "Tasmi' in pairs: Nuh with the rubric",
+      "duration": 50,
+      "bigQuestion": "What makes feedback on recitation useful rather than hurtful?",
+      "objectives": [
+        "To understand how to listen to a partner's recitation of Nuh against the rubric and give exact, kind feedback"
+      ],
+      "successCriteria": [
+        "All: recite Nuh 1 to 14 to a partner",
+        "Most: mark a partner's recitation on two rubric criteria",
+        "Some: give a precise tajweed correction with the rule named"
+      ],
+      "smsc": "Social: helping each other with adab",
+      "keywords": [
+        {
+          "term": "tasmi' (تسميع)",
+          "def": "reciting from memory to a listener"
+        },
+        {
+          "term": "rubric",
+          "def": "the criteria for marking recitation"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What makes feedback on recitation useful rather than hurtful?",
+        "a": "It is kind, exact (word and rule) and given at the right moment, with a strength first."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We have certainly made the Qur'an easy for remembrance, so is there any who will remember?' (Al-Qamar 54:17).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Nuh 71:11 in your head. How does the next ayah begin?",
+          "a": "وَيُمْدِدْكُم بِأَمْوَٰلٍۢ",
+          "mins": 1,
+          "options": [
+            "قَالَ رَبِّ",
+            "وَقَالُوا۟ لَا",
+            "وَيُمْدِدْكُم بِأَمْوَٰلٍۢ"
+          ]
+        },
+        {
+          "q": "Recite Nuh 71:19 in your head. How does the next ayah begin?",
+          "a": "لِّتَسْلُكُوا۟ مِنْهَا",
+          "mins": 1,
+          "options": [
+            "أَلَمْ تَرَوْا۟",
+            "لِّتَسْلُكُوا۟ مِنْهَا",
+            "إِنَّكَ إِن"
+          ]
+        },
+        {
+          "q": "«وَيُمْدِدْكُم بِأَمْوَٰلٍۢ» has ...",
+          "a": "ikhfa' shafawi",
+          "mins": 1,
+          "options": [
+            "ikhfa' shafawi",
+            "idgham shafawi"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The rubric",
+          "bullets": [],
+          "note": "Bismillah. Listeners use these criteria.",
+          "table": {
+            "head": [
+              "Criterion",
+              "4 Secure",
+              "2 Developing"
+            ],
+            "rows": [
+              [
+                "Hifdh (memory)",
+                "No mistakes, no prompts",
+                "Two or more prompts"
+              ],
+              [
+                "Makharij and harakat",
+                "Every letter and vowel clear",
+                "Some letters or vowels changed"
+              ],
+              [
+                "Tajweed rules",
+                "Rules applied every time",
+                "Rules missed in places"
+              ],
+              [
+                "Fluency and waqf",
+                "Steady pace, sensible stops",
+                "Pauses mid-word or rushes"
+              ],
+              [
+                "Adab",
+                "Isti'adhah, Bismillah, calm and respectful",
+                "Needs reminders"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Good feedback",
+          "bullets": [
+            "One strength",
+            "One exact point: the word, the rule, the fix",
+            "Let them try again"
+          ],
+          "note": "Model: 'Strong flow. In 71:12, «بِأَمْوَٰلٍۢ»: ikhfa' shafawi, keep the hum.'"
+        },
+        {
+          "heading": "Tasmi' rounds",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Reciter: Nuh 1 to 14",
+            "Listener: follows in the mushaf",
+            "Listener: rubric and one tip",
+            "Swap: 15 to 28",
+            "Log both tips"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "Which is the most useful feedback?",
+            "options": [
+              "'In 71:17 «أَنۢبَتَكُم» needs the iqlab meem'",
+              "'It was bad'",
+              "'Try harder'"
+            ],
+            "answer": 0,
+            "why": "Exact word, rule and fix."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Teacher and a volunteer model one tasmi' round on 71:1 to 4.",
+          "a": "Volunteer recites; teacher marks and gives one exact tip.",
+          "mins": 4,
+          "model": "I do: I mark two criteria, then say a strength and an exact point."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Breakout pairs: tasmi' of Nuh 1 to 28 with the rubric; write both tips in the portal log.",
+          "a": "Each pupil has rubric marks and an exact tip.",
+          "mins": 15,
+          "model": "The teacher joins the first pair."
+        },
+        {
+          "q": "Extend: recite again using your partner's tip.",
+          "a": "Improved recitation.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Feedback should name ...",
+          "a": "the word, the rule and the fix",
+          "mins": 1,
+          "options": [
+            "the word, the rule and the fix",
+            "only the mark"
+          ]
+        },
+        {
+          "q": "Back to our ponder: What makes feedback on recitation useful rather than hurtful?",
+          "a": "It is kind, exact (word and rule) and given at the right moment, with a strength first.",
+          "mins": 2
+        }
+      ],
+      "homework": "Practise your partner's tip; recite Nuh whole; log revision.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: tasmi' sheet with the rubric",
+        "Teams breakout rooms of two",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Two headphones",
+          "alt": "Listening carefully",
+          "for": "teach:3"
+        },
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: Nuh; consolidating the rules",
+      "n": 47,
+      "title": "Hifdh check: Nuh and the five-surah cycle",
+      "duration": 50,
+      "bigQuestion": "Next year brings Al-Jinn and beyond. What one habit from this year will you carry into Year 9?",
+      "objectives": [
+        "To understand how secure Nuh and the five-surah cycle are against the rubric, and set summer targets"
+      ],
+      "successCriteria": [
+        "All: recite Nuh whole",
+        "Most: recite a passage from any of the five surahs on request",
+        "Some: recite with every rule and stop correct"
+      ],
+      "smsc": "Spiritual: thankfulness for the hifdh achieved",
+      "keywords": [
+        {
+          "term": "rubric",
+          "def": "the criteria for marking recitation"
+        },
+        {
+          "term": "dawrah (دورة)",
+          "def": "a revision cycle"
+        },
+        {
+          "term": "hifdh (حفظ)",
+          "def": "memorising the Qur'an"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Next year brings Al-Jinn and beyond. What one habit from this year will you carry into Year 9?",
+        "a": "For example: the daily dawrah, reciting in salah, or tasmi' with a sibling."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And We have certainly made the Qur'an easy for remembrance, so is there any who will remember?' (Al-Qamar 54:17).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Recite Nuh 71:9 in your head. How does the next ayah begin?",
+          "a": "فَقُلْتُ ٱسْتَغْفِرُوا۟",
+          "mins": 1,
+          "options": [
+            "يَغْفِرْ لَكُم",
+            "فَقُلْتُ ٱسْتَغْفِرُوا۟",
+            "وَمَكَرُوا۟ مَكْرًۭا"
+          ]
+        },
+        {
+          "q": "Recite Nuh 71:26 in your head. How does the next ayah begin?",
+          "a": "إِنَّكَ إِن",
+          "mins": 1,
+          "options": [
+            "وَقَالُوا۟ لَا",
+            "ثُمَّ إِنِّىٓ",
+            "إِنَّكَ إِن"
+          ]
+        },
+        {
+          "q": "Which surah begins «ٱلْحَآقَّةُ ...»?",
+          "a": "Al-Haqqah",
+          "mins": 1,
+          "options": [
+            "Al-Ma'arij",
+            "Al-Haqqah",
+            "Al-Mulk"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "How you will be marked",
+          "bullets": [],
+          "note": "Bismillah.",
+          "table": {
+            "head": [
+              "Criterion",
+              "4 Secure",
+              "2 Developing"
+            ],
+            "rows": [
+              [
+                "Hifdh (memory)",
+                "No mistakes, no prompts",
+                "Two or more prompts"
+              ],
+              [
+                "Makharij and harakat",
+                "Every letter and vowel clear",
+                "Some letters or vowels changed"
+              ],
+              [
+                "Tajweed rules",
+                "Rules applied every time",
+                "Rules missed in places"
+              ],
+              [
+                "Fluency and waqf",
+                "Steady pace, sensible stops",
+                "Pauses mid-word or rushes"
+              ],
+              [
+                "Adab",
+                "Isti'adhah, Bismillah, calm and respectful",
+                "Needs reminders"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Nuh 71:25 to 28",
+          "bullets": [
+            "Recite with me"
+          ],
+          "note": "Recite together before the turns.",
+          "quote": {
+            "text": "مِّمَّا خَطِيٓـَٰٔتِهِمْ أُغْرِقُوا۟ فَأُدْخِلُوا۟ نَارًۭا فَلَمْ يَجِدُوا۟ لَهُم مِّن دُونِ ٱللَّهِ أَنصَارًۭا (٢٥) وَقَالَ نُوحٌۭ رَّبِّ لَا تَذَرْ عَلَى ٱلْأَرْضِ مِنَ ٱلْكَٰفِرِينَ دَيَّارًا (٢٦) إِنَّكَ إِن تَذَرْهُمْ يُضِلُّوا۟ عِبَادَكَ وَلَا يَلِدُوٓا۟ إِلَّا فَاجِرًۭا كَفَّارًۭا (٢٧) رَّبِّ ٱغْفِرْ لِى وَلِوَٰلِدَىَّ وَلِمَن دَخَلَ بَيْتِىَ مُؤْمِنًۭا وَلِلْمُؤْمِنِينَ وَٱلْمُؤْمِنَٰتِ وَلَا تَزِدِ ٱلظَّٰلِمِينَ إِلَّا تَبَارًۢا (٢٨)",
+            "source": "Surat Nuh, 71:25-28"
+          }
+        },
+        {
+          "heading": "My targets",
+          "bullets": [
+            "One hifdh target",
+            "One tajweed target",
+            "One habit for the summer"
+          ],
+          "note": "Pupils write targets in the portal after their turn."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll. Read the results, then explain the right answer.",
+          "check": {
+            "q": "How many ayat in Surat Nuh?",
+            "options": [
+              "28",
+              "30",
+              "44"
+            ],
+            "answer": 0,
+            "why": "Nuh has 28 ayat."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Whole class recites 71:25 to 28 together.",
+          "a": "Recited together.",
+          "mins": 4,
+          "model": "I do: I lead, with clear ikhfa' and ghunnah."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Hifdh check: today's group recites Nuh and a passage the teacher chooses from Al-Mulk to Al-Ma'arij. Everyone else: dawrah revision and targets.",
+          "a": "Rubric marks and targets recorded.",
+          "mins": 15,
+          "model": "The teacher shows one turn."
+        },
+        {
+          "q": "Extend: recite Al-Mulk 1 to 10 from memory.",
+          "a": "Recited.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "The five surahs in order are ...",
+          "a": "Al-Mulk, Al-Qalam, Al-Haqqah, Al-Ma'arij, Nuh",
+          "mins": 1,
+          "options": [
+            "Al-Mulk, Al-Qalam, Al-Haqqah, Al-Ma'arij, Nuh",
+            "Nuh, Al-Mulk, Al-Qalam, Al-Haqqah, Al-Ma'arij"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Next year brings Al-Jinn and beyond. What one habit from this year will you carry into Year 9?",
+          "a": "For example: the daily dawrah, reciting in salah, or tasmi' with a sibling.",
+          "mins": 2
+        }
+      ],
+      "homework": "Keep your dawrah every day; log revision.",
+      "send": "SEND: rule card with letters in colour, the pupil PDF with examples spaced out, extra listening turn. EAL: key words with meanings beside the Arabic. Stretch: find and explain an example in a surah not on the slides.",
+      "resources": [
+        "Slides",
+        "Madinah mushaf (Hafs 'an 'Asim), print or the school's approved mushaf app",
+        "Pupil PDF worksheet: Hifdh check rule card and examples",
+        "Teacher's own recitation, spoken only (no melody exercises or audio with music)",
+        "Portal revision log (pupil ticks daily revision; parent initials)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mushaf Quran open on wooden stand rehal",
+          "alt": "An open mushaf on a wooden stand (rehal)",
+          "for": "hook"
+        },
+        {
+          "find": "Gold star sticker",
+          "alt": "A star for the hifdh check",
+          "for": "teach:1"
         }
       ]
     }
