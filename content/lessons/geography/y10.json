@@ -1,11 +1,9 @@
 {
   "subject": "Geography",
   "year": "y10",
-  "board": "AQA GCSE (9-1) Geography (8035)",
-  "boardShort": "AQA GCSE 8035",
-  "exam": "Pearson Edexcel International GCSE (9-1) Geography (4GE1)",
-  "examShort": "Edexcel IGCSE 4GE1",
-  "source": "AQA GCSE Geography (8035) spec; adapted from school Drive lesson plans (Y10 Global Atmospheric Circulation, Desert Opportunities, 7.6 Reducing the Risks of Desertification) and the Y10 KS4 curriculum map; Geog GCSE AQA folder (3.1 Global Atmospheric Circulation, 3.2 Where are Storms Formed) | AQA GCSE Geography (8035) specification section 3.1 (units 3.1.1.1 to 3.1.3.4), authored from the spec data file and the Oxford AQA chapter mapping (contextNote), not from Drive files. Not re-taught here because the existing Y10 lessons already cover them for this board: atmospheric circulation and tropical storms (3.1.1.3, existing lessons 1 to 4) and hot deserts (3.1.2.3, existing lessons 5 to 8, Thar Desert). Options are labelled in the unit titles: cold environments (alternative to hot deserts); coasts, rivers and glaciers (any two required). | AQA GCSE Geography 8035 specification pack (content/syllabus/ks4/geography.json) refs 3.2.1, 3.3.2 and 3.4, written from the specification and own subject knowledge; not taught in the existing Y10 lessons (weather hazards and hot deserts only). Case-study figures are approximate and flagged for teacher verification. Fieldwork lessons teach the method using illustrative secondary data. | Gap-fill against AQA GCSE Geography 8035 specification",
+  "board": "Pearson Edexcel International GCSE (9-1) Geography (4GE1)",
+  "boardShort": "Edexcel IGCSE 4GE1",
+  "source": "AQA GCSE Geography (8035) spec; adapted from school Drive lesson plans (Y10 Global Atmospheric Circulation, Desert Opportunities, 7.6 Reducing the Risks of Desertification) and the Y10 KS4 curriculum map; Geog GCSE AQA folder (3.1 Global Atmospheric Circulation, 3.2 Where are Storms Formed) | AQA GCSE Geography (8035) specification section 3.1 (units 3.1.1.1 to 3.1.3.4), authored from the spec data file and the Oxford AQA chapter mapping (contextNote), not from Drive files. Not re-taught here because the existing Y10 lessons already cover them for this board: atmospheric circulation and tropical storms (3.1.1.3, existing lessons 1 to 4) and hot deserts (3.1.2.3, existing lessons 5 to 8, Thar Desert). Options are labelled in the unit titles: cold environments (alternative to hot deserts); coasts, rivers and glaciers (any two required). | AQA GCSE Geography 8035 specification pack (content/syllabus/ks4/geography.json) refs 3.2.1, 3.3.2 and 3.4, written from the specification and own subject knowledge; not taught in the existing Y10 lessons (weather hazards and hot deserts only). Case-study figures are approximate and flagged for teacher verification. Fieldwork lessons teach the method using illustrative secondary data. | Gap-fill against AQA GCSE Geography 8035 specification | Spring 1 2027 (bridge hazards and fragile environments cores, lessons 2, 7, 10, 14 upgraded; rivers 1.1 to 1.3, lessons 28, 29 upgraded and 53 to 56 new): Pearson Edexcel International GCSE Geography 4GE1 specification and Pearson Paper 1 scheme of work; school Geography Curriculum Intent; own exam-style questions. File relabelled: taught and examined as 4GE1 (earlier lessons 1 to 52 were written for AQA 8035)",
   "lessons": [
     {
       "unit": "Unit 1: Weather hazards (AQA 3.1.1 The challenge of natural hazards)",
@@ -114,106 +112,242 @@
       "boardShort": "AQA GCSE 8035"
     },
     {
-      "unit": "Unit 1: Weather hazards (AQA 3.1.1 The challenge of natural hazards)",
+      "unit": "Autumn 1: Hazardous environments (3.1 to 3.3)",
       "n": 2,
-      "title": "Tropical storms: distribution and formation",
-      "duration": 50,
+      "title": "Tropical cyclones: distribution, measurement and causes (3.1)",
+      "bigQuestion": "Why do tropical cyclones never form on the Equator?",
       "objectives": [
-        "Describe the global distribution of tropical storms",
-        "State the conditions needed for a tropical storm to form",
-        "Explain the sequence of formation and why storms weaken over land"
+        "To understand where tropical cyclones form, how they are measured and what causes them"
       ],
+      "successCriteria": [
+        "All: describe the global distribution of tropical cyclones",
+        "Most: explain the conditions needed for a cyclone to form",
+        "Some: explain why none form within about 5° of the Equator"
+      ],
+      "crossCurricular": "Science: pressure, condensation and latent heat",
+      "smsc": "Spiritual: humility before the power of nature",
       "keywords": [
         {
-          "term": "tropical storm",
-          "def": "an intense low-pressure weather system with very strong winds and heavy rain that forms over warm tropical oceans"
+          "term": "tropical cyclone",
+          "def": "a large, rotating storm with very low pressure and strong winds, forming over warm oceans"
         },
         {
-          "term": "hurricane / typhoon / cyclone",
-          "def": "regional names for a tropical storm: Atlantic, north-west Pacific and Indian Ocean"
+          "term": "Coriolis force",
+          "def": "the effect of the Earth's spin that makes moving air turn"
         },
         {
-          "term": "Coriolis effect",
-          "def": "the way the Earth's rotation bends moving air, causing tropical storms to spin"
+          "term": "wind shear",
+          "def": "a change in wind speed or direction with height"
         },
         {
-          "term": "evaporation",
-          "def": "the change of water from liquid to water vapour"
+          "term": "Saffir-Simpson scale",
+          "def": "a 1 to 5 scale of cyclone strength based on wind speed"
         },
         {
-          "term": "storm surge",
-          "def": "a rise in sea level caused by a storm's low pressure and strong winds"
+          "term": "eye",
+          "def": "the calm, clear centre of a cyclone"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "A storm is called a hurricane in Florida, a typhoon in Japan and a cyclone in Bangladesh. Is it the same thing?"
+      },
+      "islamicLink": {
+        "text": "Allah says: 'It is He who shows you lightning, causing fear and hope, and brings up the heavy clouds' (ar-Ra'd 13:12). The Prophet, peace be upon him, when he saw strong wind, would ask Allah for its good and seek refuge from its harm (Sahih Muslim). Muslims prepare wisely and turn to Allah in every storm.",
+        "at": "start"
+      },
       "starter": [
-        "Say Bismillah. Where does air rise to create low pressure: at 0, 30 or 90 degrees?",
-        "What happens to water vapour when rising air cools?",
-        "What is the difference between weather and climate?"
+        {
+          "q": "Which is a natural hazard?",
+          "a": "A tropical cyclone",
+          "mins": 1,
+          "options": [
+            "A tropical cyclone",
+            "A traffic jam"
+          ]
+        },
+        {
+          "q": "Low air pressure usually brings:",
+          "a": "Cloud, rain and wind",
+          "mins": 1,
+          "options": [
+            "Cloud, rain and wind",
+            "Clear, calm skies"
+          ]
+        },
+        {
+          "q": "Warm air:",
+          "a": "Rises",
+          "mins": 1,
+          "options": [
+            "Rises",
+            "Sinks"
+          ]
+        },
+        {
+          "q": "Name an ocean where hurricanes form.",
+          "a": "The Atlantic (or north-east Pacific)",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Where do tropical storms occur?",
+          "heading": "Where they form",
           "bullets": [
-            "Between about 5 and 30 degrees north and south of the Equator.",
-            "Over warm oceans such as the Caribbean, Bay of Bengal and western Pacific.",
-            "They do not form right on the Equator."
+            "Between about 5° and 30° north and south",
+            "Over warm tropical oceans",
+            "Most in late summer and autumn"
           ],
-          "note": "Show a world map of storm tracks. Pupils should describe the pattern with directions and latitudes. Give the three names: hurricanes in the Atlantic and north-east Pacific, typhoons in the north-west Pacific (including the Philippines), cyclones in the Indian Ocean and South Pacific. It is the same type of storm. Ask: why are there almost none on the south Atlantic coast of Brazil?"
+          "note": "Names by region: hurricanes (Atlantic, north-east Pacific), typhoons (north-west Pacific), cyclones (Indian Ocean, South Pacific)."
         },
         {
           "heading": "Conditions needed",
           "bullets": [
-            "Sea surface temperature of at least 27 degrees Celsius.",
-            "Warm water to a depth of about 50 metres.",
-            "Far enough from the Equator for the Earth's rotation to spin the storm."
+            "Sea at least about 26.5 °C",
+            "Low wind shear",
+            "Enough Coriolis force to spin",
+            "Moist, rising air"
           ],
-          "note": "Pupils need to learn these three conditions precisely. Common error: saying the sea must be 'hot' with no figure. Also, there must be little wind shear for the storm to build upwards, but you may mention this only for stretch. Explain the 5 degree limit: near the Equator the Coriolis effect is too weak to make air spin."
+          "note": "Warm water must be deep (tens of metres) to keep feeding the storm.",
+          "diagram": {
+            "centre": "cyclone formation",
+            "items": [
+              "sea at least about 26.5 °C",
+              "humid rising air",
+              "low pressure",
+              "Coriolis force",
+              "low wind shear",
+              "between 5° and 30°"
+            ]
+          }
         },
         {
-          "heading": "How a tropical storm forms",
+          "heading": "How a cyclone builds",
           "bullets": [
-            "Warm seas evaporate; moist air rises, cools and condenses into huge clouds.",
-            "Condensation releases heat, driving more air to rise rapidly.",
-            "Low pressure draws in air at the surface and the storm spins."
+            "Warm, moist air rises",
+            "Condensation releases heat",
+            "More air rushes in and spins"
           ],
-          "note": "Draw a four-step sequence: evaporation, rising and condensation, release of heat energy, inward rush of air then spinning because of the Coriolis effect. Pupils often write 'the storm gets hotter'. Correct them: the heat released by condensation is the fuel. Ask pupils to explain in their own words why a storm needs warm water."
+          "note": "It weakens over land or cooler water: its energy source is cut off.",
+          "cycle": [
+            "Warm sea heats air",
+            "Moist air rises; low pressure",
+            "Condensation releases heat",
+            "Air drawn in and spun by Coriolis",
+            "Storm grows while over warm sea"
+          ]
         },
         {
-          "heading": "Movement and decline",
+          "heading": "Measuring cyclones",
           "bullets": [
-            "Storms are steered westwards by the trade winds.",
-            "They curve away from the Equator as the Earth rotates.",
-            "Over land or cold water they lose their energy supply and weaken."
+            "Saffir-Simpson scale, categories 1 to 5",
+            "Based on sustained wind speed",
+            "Category 5: winds of at least 252 km/h"
           ],
-          "note": "Link back to the surface winds in lesson 1. The key explanation of weakening: no more warm water means no more evaporation, no heat is released, and friction with land slows the winds. Land weakens the winds, but the rain can still cause severe flooding inland. Ask pupils why coastal areas are hit hardest."
+          "note": "Also measured: central pressure, rainfall and storm surge height; satellites track them."
         },
         {
-          "heading": "Tropical storms and climate change",
+          "heading": "Check",
           "bullets": [
-            "Warmer oceans could make storms more intense, with stronger winds.",
-            "Sea level rise makes storm surges more dangerous.",
-            "Scientists are less sure the number of storms will increase."
+            "Vote in the Teams poll"
           ],
-          "note": "Be careful and balanced here. Evidence supports the idea that warmer seas give more energy and heavier rainfall, and that sea level rise worsens flooding. Total numbers are less certain. Encourage evidence-based language: 'could', 'may', 'is likely to'."
+          "note": "Share results.",
+          "check": {
+            "q": "Why do cyclones not form within about 5° of the Equator?",
+            "options": [
+              "The sea is too cold",
+              "The Coriolis force is too weak to make them spin",
+              "There is no wind"
+            ],
+            "answer": 1,
+            "why": "The sea is warm enough, but the Coriolis force is almost zero near the Equator."
+          }
         }
       ],
       "practice": [
-        "Describe the distribution of tropical storms shown on the map (use latitude and ocean names). (3 marks)",
-        "Put these formation steps in order: air spins; water evaporates; condensation releases heat; warm air rises; low pressure draws in air."
+        {
+          "q": "Describe the global distribution of tropical cyclones. (3 marks)",
+          "a": "Between about 5° and 30° N and S (1); over warm oceans such as the Caribbean, north-west Pacific, Bay of Bengal (1); none on the Equator or in the South Atlantic in most years (1)",
+          "mins": 4,
+          "model": "Describe = pattern plus examples plus anomaly.\nPattern: in the tropics, 5° to 30° N and S.\nExamples: Caribbean, north-west Pacific, Bay of Bengal.\nAnomaly: almost none on the Equator."
+        },
+        {
+          "q": "State the minimum sea temperature usually needed. (1 mark)",
+          "a": "About 26.5 °C (accept 26 to 27 °C)",
+          "mins": 1
+        },
+        {
+          "q": "Explain why a cyclone weakens over land. (2 marks)",
+          "a": "It loses its supply of warm, moist air (1), so less condensation and heat to power it (1); friction also slows it",
+          "mins": 2
+        }
       ],
       "independent": [
-        "Explain why tropical storms form over oceans between 5 and 30 degrees north and south. (4 marks)",
-        "Explain why tropical storms lose strength when they reach land. (3 marks)",
-        "Stretch: Explain how climate change might affect the danger from tropical storms. (6 marks)"
+        {
+          "q": "Core: 'Explain the causes of tropical cyclones.' (6 marks) Write in the portal response box.",
+          "a": "Warm sea above about 26.5 °C heats moist air which rises, creating low pressure; condensation releases latent heat, strengthening the updraught; Coriolis force (beyond 5°) makes the air spiral; low wind shear lets the structure grow; explained links between factors",
+          "mins": 8,
+          "model": "Teacher plans it first: 1) warm sea and rising moist air; 2) condensation releases heat, so more air is drawn in; 3) Coriolis spins it; 4) low wind shear lets it grow tall. Link each with 'which means' or 'so'."
+        },
+        {
+          "q": "Extend: Suggest why the number of strong cyclones might change as oceans warm. (3 marks)",
+          "a": "Warmer seas cover a larger area and supply more energy (1), so more intense storms are possible (1); some areas may see more, others fewer (1)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Compare the Saffir-Simpson scale with measuring rainfall as a way to show a cyclone's danger. (2 marks)",
+          "a": "Saffir-Simpson only measures wind (1); much damage comes from flooding and storm surge, so rainfall and surge matter too (1)",
+          "mins": 2
+        }
       ],
       "exit": [
-        "State the minimum sea temperature needed for a tropical storm to form.",
-        "Give one reason why tropical storms do not form on the Equator."
+        {
+          "q": "A typhoon forms in the:",
+          "a": "North-west Pacific",
+          "mins": 1,
+          "options": [
+            "North-west Pacific",
+            "North Atlantic"
+          ]
+        },
+        {
+          "q": "Big question: why do tropical cyclones never form on the Equator?",
+          "a": "The Coriolis force is too weak there to make the storm spin",
+          "mins": 2
+        }
       ],
-      "homework": "Draw an annotated diagram of how a tropical storm forms, with at least six labels.",
-      "send": "SEND: sequencing cards for formation. EAL: highlight command words; word bank for evaporate, condense, rotate. Stretch: research the latitudes of two real storms and explain their paths.",
-      "board": "AQA GCSE (9-1) Geography (8035)",
-      "boardShort": "AQA GCSE 8035"
+      "homework": "Independent study (one extra hour): read 4GE1 3.1 notes on cyclones and complete the portal map of 2025 to 2026 named storms.",
+      "send": "SEND: conditions card and a writing frame for the 6-marker. EAL: glossary with diagrams. Stretch: research why the South Atlantic rarely has cyclones.",
+      "resources": [
+        "Pearson 4GE1 Paper 1 scheme of work (Topic 3); 4GE1 specification 3.1; portal geography y10 lesson 2 (AQA) adapted",
+        "Own 4GE1-style exam questions with indicative mark points (portal printable)",
+        "World map of tropical cyclone tracks (portal printable)",
+        "Mini-whiteboard and pen"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "hurricane eye from space",
+          "alt": "A tropical cyclone with a clear eye, seen from space",
+          "for": "hook"
+        },
+        {
+          "find": "tropical cyclone tracks world map",
+          "alt": "World map of tropical cyclone tracks",
+          "for": "teach:1"
+        },
+        {
+          "find": "storm surge damage coast",
+          "alt": "Coastal damage after a storm surge",
+          "for": "teach:4"
+        }
+      ]
     },
     {
       "unit": "Unit 1: Weather hazards (AQA 3.1.1 The challenge of natural hazards)",
@@ -606,101 +740,262 @@
       "boardShort": "AQA GCSE 8035"
     },
     {
-      "unit": "Unit 2: Hot desert environments (AQA 3.1.2 The living world)",
+      "unit": "Autumn 2: Fragile environments and climate change (7.1 to 7.3, Paper 2 Section C)",
       "n": 7,
-      "title": "Causes of desertification",
-      "duration": 50,
+      "title": "Fragile environments: causes of desertification and deforestation (7.1)",
+      "bigQuestion": "Why are some environments so easily damaged?",
       "objectives": [
-        "Define desertification and locate areas at risk, such as the Sahel",
-        "Explain natural and human causes of desertification",
-        "Explain how soil erosion makes the problem worse"
+        "To understand where fragile environments are and the causes of desertification and deforestation"
       ],
+      "successCriteria": [
+        "All: name four fragile environments and locate them",
+        "Most: explain four causes of desertification",
+        "Some: explain the causes of deforestation and how they link"
+      ],
+      "crossCurricular": "Biology: ecosystems and biodiversity",
+      "smsc": "Moral: stewardship of fragile environments",
       "keywords": [
         {
-          "term": "desertification",
-          "def": "the process by which land becomes degraded and turns into desert"
+          "term": "fragile environment",
+          "def": "an environment that is easily damaged and slow to recover"
         },
         {
-          "term": "Sahel",
-          "def": "a semi-arid belt of land south of the Sahara across Africa"
+          "term": "desertification",
+          "def": "land turning into desert, usually at the edge of existing deserts"
+        },
+        {
+          "term": "deforestation",
+          "def": "the large-scale removal of forest"
         },
         {
           "term": "overgrazing",
-          "def": "when too many animals eat the vegetation, leaving soil bare"
+          "def": "too many animals eating the vegetation"
         },
         {
-          "term": "over-cultivation",
-          "def": "growing crops too often so soil nutrients are used up"
-        },
-        {
-          "term": "soil erosion",
-          "def": "the removal of topsoil by wind or water"
-        },
-        {
-          "term": "fragile environment",
-          "def": "a place that is easily damaged by human activity"
+          "term": "Sahel",
+          "def": "the semi-arid strip south of the Sahara"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "If a forest takes 100 years to grow and one day to cut down, how should we decide whether to cut it?"
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Do not cause corruption on the earth after it has been set right' (al-A'raf 7:56), and made people successors on the earth (al-An'am 6:165). Caring for fragile environments is part of this trust (amanah).",
+        "at": "start"
+      },
       "starter": [
-        "Say Bismillah. What is the rainfall range for a hot desert?",
-        "Name one challenge of living in the Thar Desert.",
-        "What is soil erosion?"
+        {
+          "q": "A tropical cyclone needs sea of at least about:",
+          "a": "26.5 °C",
+          "mins": 1,
+          "options": [
+            "26.5 °C",
+            "10 °C"
+          ]
+        },
+        {
+          "q": "Conservative boundaries cause:",
+          "a": "Earthquakes",
+          "mins": 1,
+          "options": [
+            "Earthquakes",
+            "Volcanoes"
+          ]
+        },
+        {
+          "q": "The Sahara is a:",
+          "a": "Hot desert",
+          "mins": 1,
+          "options": [
+            "Hot desert",
+            "Rainforest"
+          ]
+        },
+        {
+          "q": "Name one fragile environment.",
+          "a": "For example: hot desert, tropical rainforest, polar, mountain, coral reef",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "What is desertification?",
+          "heading": "Fragile environments",
           "bullets": [
-            "Land on desert edges loses its vegetation and topsoil.",
-            "It affects semi-arid areas such as the Sahel in Africa.",
-            "Millions of people lose farmland, food and income."
+            "Hot and cold deserts",
+            "Tropical rainforests",
+            "Mountains, polar lands, coral reefs"
           ],
-          "note": "Show a map of the Sahel and the areas of Africa most at risk, plus other regions such as Central Asia and north-west India. Explain that desertification is not the desert 'spreading' like a wave; it is land degradation happening mostly because of a combination of climate and human pressure. Ask: why is the edge of a desert especially vulnerable?"
+          "note": "Fragile: easily damaged, slow to recover, finely balanced ecosystems."
         },
         {
-          "heading": "Natural cause: climate",
+          "heading": "Causes of desertification",
           "bullets": [
-            "Droughts last longer and rainfall is unreliable in semi-arid areas.",
-            "Plants die and are not replaced, leaving soil bare.",
-            "Climate change may make drought more likely in some areas."
+            "Drought and climate change",
+            "Population growth",
+            "Fuelwood collection",
+            "Overgrazing and overcultivation"
           ],
-          "note": "Link back to circulation: the Sahel sits where the rain-bearing belt moves north and south with the seasons, so a small change in its position causes drought. Distinguish between a drought (temporary) and desertification (long-term damage). Droughts begin the damage, but people's actions often make it permanent."
+          "note": "The Sahel is the classic example: semi-arid land between the Sahara and the savanna.",
+          "cycle": [
+            "Population grows",
+            "More grazing and crops",
+            "Vegetation removed; fuelwood cut",
+            "Soil exposed and eroded",
+            "Land degrades to desert"
+          ]
         },
         {
-          "heading": "Human causes",
+          "heading": "Causes of deforestation",
           "bullets": [
-            "Population growth: more people need food, fuel and land.",
-            "Overgrazing: animals strip plants and trample the soil.",
-            "Over-cultivation and removal of trees for firewood expose soil."
+            "Cattle ranching and soy",
+            "Logging",
+            "Mining, roads, dams and settlement"
           ],
-          "note": "Walk through each cause in a chain: more people, more animals and more farms, then plants are removed, then roots no longer hold soil, so wind and rain remove topsoil. Firewood collection is a daily need for many families without other fuel; this is why solutions must offer alternatives. Poor irrigation can also make soils salty, which we will meet in lesson 8."
+          "note": "In the Amazon, cattle ranching is the largest single cause.",
+          "sort": {
+            "columns": [
+              "Desertification",
+              "Deforestation",
+              "Both"
+            ],
+            "cards": [
+              "overgrazing",
+              "logging for timber",
+              "population growth",
+              "fuelwood collection",
+              "cattle ranching",
+              "road building",
+              "drought",
+              "commercial farming"
+            ],
+            "answer": [
+              0,
+              1,
+              2,
+              2,
+              1,
+              1,
+              0,
+              2
+            ]
+          }
         },
         {
-          "heading": "Soil erosion cycle",
+          "heading": "Linking causes",
           "bullets": [
-            "Plants removed, so roots no longer bind the soil.",
-            "Wind and rain remove topsoil; less water is stored.",
-            "Fewer plants can grow, so erosion gets worse."
+            "Human and physical causes interact",
+            "Poverty drives short-term use",
+            "Climate change adds drought"
           ],
-          "note": "Draw this as a cycle on the board: it is a positive feedback loop. Ask pupils to start at any point and explain the next. Link to the Dust Bowl only if time allows. Key exam skill: use linking words such as 'which leads to', 'so', 'therefore' to show a chain of reasoning."
+          "note": "Model: explain a chain, not a list."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share results.",
+          "check": {
+            "q": "Which is a physical cause of desertification?",
+            "options": [
+              "Overgrazing",
+              "Drought",
+              "Fuelwood collection"
+            ],
+            "answer": 1,
+            "why": "Drought is physical; the other two are human causes."
+          }
         }
       ],
       "practice": [
-        "Sort these into natural and human causes: drought, overgrazing, firewood collection, climate change, over-cultivation.",
-        "Complete the chain: more livestock, so ... , so ... , so soil is eroded."
+        {
+          "q": "Explain how population growth can cause desertification. (3 marks)",
+          "a": "More people need more food and fuel (1), so more grazing, cultivation and wood cutting (1), removing vegetation so soil is eroded by wind and rain (1)",
+          "mins": 4,
+          "model": "Start with the cause: more people.\nAdd the action: more animals, crops and fuelwood.\nAdd the effect on land: vegetation removed, soil exposed and eroded.\nThat is a chain."
+        },
+        {
+          "q": "Name the region south of the Sahara affected by desertification. (1 mark)",
+          "a": "The Sahel",
+          "mins": 1
+        },
+        {
+          "q": "State two causes of deforestation in the Amazon. (2 marks)",
+          "a": "Two of: cattle ranching, soy farming, logging, mining, roads, dams",
+          "mins": 2
+        }
       ],
       "independent": [
-        "Explain two human causes of desertification. (4 marks)",
-        "Describe how the soil erosion cycle makes desertification worse. (4 marks)",
-        "Stretch: Evaluate whether natural or human causes are more important in desertification in the Sahel. (6 marks)"
+        {
+          "q": "Core: 'Explain the causes of desertification.' (6 marks) Write in the portal response box.",
+          "a": "Physical: drought, rising temperatures; human: population growth, overgrazing, overcultivation, fuelwood; explained chains with a named area (the Sahel)",
+          "mins": 8,
+          "model": "Teacher plans it first: P1 drought (physical) and why it matters; P2 population and overgrazing chain; P3 fuelwood; link: human and physical causes reinforce each other."
+        },
+        {
+          "q": "Extend: Suggest why poorer communities may have little choice but to damage fragile land. (3 marks)",
+          "a": "They depend on farming and wood for food and fuel (1); few alternatives or money (1); short-term survival comes before long-term care (1)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Compare the causes of desertification and deforestation. (2 marks)",
+          "a": "Both driven by population and farming pressure (1); desertification also by drought, deforestation more by commercial ranching and logging (1)",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Define desertification.",
-        "Name one human cause of desertification and explain it in one sentence."
+        {
+          "q": "Overgrazing is:",
+          "a": "Too many animals eating the vegetation",
+          "mins": 1,
+          "options": [
+            "Too many animals eating the vegetation",
+            "Too much rain"
+          ]
+        },
+        {
+          "q": "Big question: why are some environments so easily damaged?",
+          "a": "Their ecosystems are finely balanced and slow to recover, so human pressure and drought quickly degrade them",
+          "mins": 2
+        }
       ],
-      "homework": "Draw and annotate a flow diagram showing how overgrazing leads to desertification.",
-      "send": "SEND: cause and effect card sort. EAL: chains with sentence stems 'This leads to...'. Stretch: research how population growth in the Sahel affects land use.",
-      "board": "AQA GCSE (9-1) Geography (8035)",
-      "boardShort": "AQA GCSE 8035"
+      "homework": "Independent study: read 4GE1 7.2 and 7.3 notes (impacts and responses) using portal lessons 7, 8, 18 and 19; caught up in Autumn 2027.",
+      "send": "SEND: causes cards and a 6-mark frame. EAL: glossary with pictures. Stretch: research the Great Green Wall across the Sahel.",
+      "resources": [
+        "4GE1 specification Topic 7 (7.1); school Geography Curriculum Intent, Year 10 (climate change; the living world); portal geography y10 lesson 7 (AQA) adapted",
+        "Own 4GE1-style exam questions with indicative mark points (portal printable)",
+        "World map of fragile environments (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Sahel landscape",
+          "alt": "Dry land in the Sahel",
+          "for": "teach:2"
+        },
+        {
+          "find": "Amazon deforestation aerial",
+          "alt": "Deforestation in the Amazon",
+          "for": "teach:3"
+        },
+        {
+          "find": "overgrazing goats dry land",
+          "alt": "Goats grazing on dry, bare land",
+          "for": "keywords"
+        },
+        {
+          "find": "coral reef",
+          "alt": "A coral reef, a fragile environment",
+          "for": "hook"
+        }
+      ]
     },
     {
       "unit": "Unit 2: Hot desert environments (AQA 3.1.2 The living world)",
@@ -956,194 +1251,285 @@
       "boardShort": "AQA GCSE 8035"
     },
     {
-      "unit": "Unit 2: Tectonic hazards (AQA 3.1.1.2)",
-      "title": "Plate tectonics: Earth's structure, distribution and plate margins",
-      "duration": 50,
-      "bigQuestion": "Why do earthquakes and volcanoes happen in some places and not others?",
+      "unit": "Autumn 1: Hazardous environments (3.1 to 3.3)",
+      "n": 10,
+      "title": "Earthquakes and volcanoes: distribution, measurement and causes (3.1)",
+      "bigQuestion": "Why do most earthquakes and volcanoes happen in narrow belts?",
       "objectives": [
-        "Describe the structure of the Earth and how convection currents move plates",
-        "Describe the global distribution of earthquakes and volcanoes",
-        "Explain what happens at constructive, destructive and conservative margins"
+        "To understand the distribution, measurement and causes of earthquakes and volcanoes"
       ],
       "successCriteria": [
-        "All: label the layers of the Earth and name three plate margin types",
-        "Most: describe the distribution of earthquakes and volcanoes using named plates or places",
-        "Some: explain in sequence how a destructive margin produces both earthquakes and volcanoes"
+        "All: describe where earthquakes and volcanoes occur",
+        "Most: explain what happens at each type of plate boundary",
+        "Some: explain how hotspots cause volcanoes away from plate boundaries"
       ],
-      "crossCurricular": "Science: convection and density",
-      "smsc": "Spiritual: reflecting on the scale and order of the Earth as part of creation",
+      "crossCurricular": "Science: the structure of the Earth",
+      "smsc": "Moral: our duty to help victims of disasters",
       "keywords": [
         {
-          "term": "crust",
-          "def": "the thin, solid outer layer of the Earth"
+          "term": "plate boundary",
+          "def": "where two tectonic plates meet"
         },
         {
-          "term": "mantle",
-          "def": "the thick layer of hot rock beneath the crust that flows very slowly"
-        },
-        {
-          "term": "plate margin",
-          "def": "the boundary where two tectonic plates meet"
+          "term": "hotspot",
+          "def": "a plume of hot mantle that melts through the crust far from a boundary"
         },
         {
           "term": "subduction",
-          "def": "when a denser oceanic plate sinks beneath another plate"
+          "def": "one plate sinking beneath another"
         },
         {
-          "term": "epicentre",
-          "def": "the point on the surface directly above the focus of an earthquake"
+          "term": "moment magnitude scale",
+          "def": "a scale measuring the energy released by an earthquake"
         },
         {
-          "term": "focus",
-          "def": "the point underground where an earthquake starts"
+          "term": "Mercalli scale",
+          "def": "a 1 to 12 scale of an earthquake's effects"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Iceland has volcanoes but Britain does not. What is different about where they are?"
+      },
+      "islamicLink": {
+        "text": "Allah says: 'When the earth is shaken with its final earthquake' (az-Zalzalah 99:1), and describes mountains as pegs (an-Naba' 78:7). Earthquakes remind Muslims of the Day of Judgement and of the duty to prepare, build safely and help those affected.",
+        "at": "start"
+      },
       "starter": [
-        "Say Bismillah. Name two types of hazard from last lesson and say which are tectonic.",
-        "Define vulnerability.",
-        "Why might a poorer country be more at risk from the same earthquake as a richer country?"
+        {
+          "q": "A tropical cyclone needs sea of at least about:",
+          "a": "26.5 °C",
+          "mins": 1,
+          "options": [
+            "26.5 °C",
+            "15 °C"
+          ]
+        },
+        {
+          "q": "The Earth's outer layer is the:",
+          "a": "Crust",
+          "mins": 1,
+          "options": [
+            "Crust",
+            "Core"
+          ]
+        },
+        {
+          "q": "Which plate boundary type pulls apart?",
+          "a": "Constructive",
+          "mins": 1,
+          "options": [
+            "Constructive",
+            "Conservative"
+          ]
+        },
+        {
+          "q": "Name the belt of volcanoes around the Pacific.",
+          "a": "The Ring of Fire",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Structure of the Earth",
-          "table": {
-            "head": [
-              "Layer",
-              "Approximate size",
-              "State"
-            ],
-            "rows": [
-              [
-                "Crust",
-                "5 to 10 km (oceanic); 30 to 70 km (continental)",
-                "Solid"
-              ],
-              [
-                "Mantle",
-                "About 2,900 km thick",
-                "Very hot rock; solid but flows slowly"
-              ],
-              [
-                "Outer core",
-                "About 2,200 km thick",
-                "Liquid iron and nickel"
-              ],
-              [
-                "Inner core",
-                "About 1,200 km radius",
-                "Solid iron and nickel"
-              ]
-            ]
-          },
-          "note": "Sketch the layers on the board. Emphasise that the plates are the crust plus the rigid top of the mantle, and they float on the flowing mantle beneath. Oceanic crust is thinner and denser than continental crust; this matters for subduction. Sizes are approximate; pupils need the pattern, not the exact numbers. Misconception: the mantle is liquid. It is solid rock that flows very slowly over millions of years."
-        },
-        {
-          "heading": "Why do plates move?",
+          "heading": "Distribution",
           "bullets": [
-            "Heat from the core drives convection currents in the mantle.",
-            "Hot mantle rises, spreads, cools and sinks.",
-            "Plates are dragged or pushed: slab pull and ridge push.",
-            "Plates move only a few centimetres each year."
+            "Narrow belts along plate boundaries",
+            "The Pacific Ring of Fire",
+            "A few at hotspots, like Hawaii"
           ],
-          "note": "Compare to a pan of thick soup heating slowly. Ask: why do the plates move so slowly we cannot feel it? Plates move roughly as fast as fingernails grow, around 2 to 10 cm per year depending on the plate. Slab pull: the cold, dense sinking edge pulls the rest of the plate. Ridge push: new crust at ridges slides downhill. AQA only requires the convection explanation at GCSE, so do not overload."
+          "note": "Most of the world's active volcanoes and earthquakes are around the Pacific."
         },
         {
-          "heading": "Plate margins",
+          "heading": "Plate boundaries",
+          "bullets": [
+            "What happens at each"
+          ],
+          "note": "Use examples.",
           "table": {
             "head": [
-              "Margin",
+              "Boundary",
               "Movement",
-              "Example",
-              "Hazards and landforms"
+              "Hazards",
+              "Example"
             ],
             "rows": [
               [
-                "Constructive",
-                "Plates move apart",
-                "Mid-Atlantic Ridge, Iceland",
-                "Shield volcanoes, fissures, weak shallow earthquakes"
+                "constructive",
+                "apart",
+                "gentle volcanoes, small earthquakes",
+                "Mid-Atlantic Ridge, Iceland"
               ],
               [
-                "Destructive",
-                "Oceanic plate sinks beneath another",
-                "Nazca and South American plates",
-                "Composite volcanoes, powerful earthquakes, ocean trench"
+                "destructive",
+                "oceanic sinks under continental",
+                "explosive volcanoes, large earthquakes",
+                "Andes; Japan"
               ],
               [
-                "Conservative",
-                "Plates slide past at different speeds",
-                "San Andreas Fault, California",
-                "Strong earthquakes, no volcanoes"
+                "conservative",
+                "slide past",
+                "earthquakes, no volcanoes",
+                "San Andreas Fault"
               ],
               [
-                "Collision",
-                "Two continental plates push together",
-                "Indian and Eurasian plates (Himalayas)",
-                "Fold mountains, earthquakes, little volcanic activity"
+                "collision",
+                "two continental plates meet",
+                "earthquakes, fold mountains",
+                "Himalaya"
               ]
             ]
-          },
-          "note": "Use a physical model such as two books or hands. The collision margin is not always listed separately, but it is needed for Nepal in the case-study lesson. Common error: saying earthquakes occur only at destructive margins. They occur at all of them. Volcanoes occur only where magma can reach the surface: constructive and destructive margins. Link Iceland to the constructive margin: it sits on the Mid-Atlantic Ridge."
+          }
         },
         {
-          "heading": "Destructive margin: how it works",
-          "cycle": [
-            "Dense oceanic plate is pushed beneath continental plate",
-            "Plates stick; friction and pressure build",
-            "Sudden release: earthquake",
-            "Sinking plate melts; magma rises",
-            "Eruption forms a composite volcano"
+          "heading": "Hotspots",
+          "bullets": [
+            "A plume of hot mantle",
+            "Plate moves over it",
+            "A chain of volcanoes forms"
           ],
-          "note": "Walk through the sequence slowly. Make pupils say 'which causes' between steps. Point out two outcomes from one process: earthquakes (stuck plates snapping free) and volcanoes (melting plate). Ask: why is this cycle repeated? Because the plates keep moving, so pressure builds again. The Andes, the Pacific Ring of Fire and Japan are linked to this process."
+          "note": "The Hawaiian islands get older to the north-west as the Pacific plate moves.",
+          "cycle": [
+            "Mantle plume rises",
+            "Magma melts through crust",
+            "Volcano forms",
+            "Plate moves on",
+            "New volcano forms: a chain"
+          ]
         },
         {
-          "heading": "Skill: describe a distribution",
-          "model": {
-            "problem": "Describe the global distribution of volcanoes. (3 marks)",
-            "steps": [
-              "Name the pattern: many follow lines along plate margins.",
-              "Name an area with a cluster: the Pacific Ring of Fire around the edge of the Pacific Ocean.",
-              "Name an area with a line and a gap: along the Mid-Atlantic Ridge but few in the centre of continents.",
-              "Use compass directions or ocean names, not just 'everywhere'."
-            ],
-            "answer": "Volcanoes are mostly found along plate margins. There is a large cluster around the edge of the Pacific Ocean, called the Ring of Fire, and a line in the Atlantic along the Mid-Atlantic Ridge. Few are found in the middle of continents."
-          },
-          "note": "I do. Describe means say what you see, not why. Pupils lose marks by explaining instead of describing. Have a map on screen if possible. Real exceptions exist: hotspot volcanoes such as Hawaii are not at margins, but this goes beyond the spec so mention only for stretch."
+          "heading": "Measuring",
+          "bullets": [
+            "Moment magnitude: energy released",
+            "Each whole number is about 32 times more energy",
+            "Mercalli: effects I to XII; volcanoes: VEI 0 to 8"
+          ],
+          "note": "Seismometers record shaking. The Richter scale is older and now rarely used for large quakes.",
+          "compare": {
+            "left": {
+              "title": "Magnitude",
+              "points": [
+                "energy released",
+                "one number per quake",
+                "logarithmic"
+              ]
+            },
+            "right": {
+              "title": "Mercalli intensity",
+              "points": [
+                "effects on people and buildings",
+                "varies by place",
+                "I to XII"
+              ]
+            },
+            "label": "vs"
+          }
         },
         {
-          "heading": "Hinge question",
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share results.",
           "check": {
-            "q": "Which plate margin can produce earthquakes but not volcanoes?",
+            "q": "Which boundary has earthquakes but no volcanoes?",
             "options": [
               "Constructive",
               "Destructive",
-              "Conservative",
-              "Both destructive and constructive"
+              "Conservative"
             ],
             "answer": 2,
-            "why": "At a conservative margin plates slide past, so no magma rises. Distractor B is tempting because destructive margins produce both."
-          },
-          "note": "Answer: C. Ask pupils who chose B to name where a volcano forms at a destructive margin (above the melting sinking plate)."
+            "why": "At conservative boundaries plates slide past; no magma rises, so no volcanoes."
+          }
         }
       ],
       "practice": [
-        "Label a diagram of the Earth: crust, mantle, outer core, inner core.",
-        "Draw and label a diagram of a destructive margin with the trench, volcano and earthquake zone."
+        {
+          "q": "Explain why volcanoes form at destructive boundaries. (3 marks)",
+          "a": "Oceanic plate subducts beneath continental (1); it melts in the mantle, forming magma (1); magma rises through cracks and erupts explosively (1)",
+          "mins": 4,
+          "model": "Chain of reasoning:\nOceanic plate is denser, so it sinks (subducts).\nIt melts as it goes down into the hot mantle.\nThe magma rises and erupts: a volcano."
+        },
+        {
+          "q": "How much more energy is released by a magnitude 7 than a magnitude 6? (1 mark)",
+          "a": "About 32 times",
+          "mins": 1
+        },
+        {
+          "q": "State one difference between magnitude and intensity. (2 marks)",
+          "a": "Magnitude measures energy released at the source (1); intensity measures effects at a place, which vary with distance (1)",
+          "mins": 2
+        }
       ],
       "independent": [
-        "Core: Describe the structure of the Earth. (3 marks)",
-        "Extend: Explain how earthquakes and volcanoes are formed at a destructive plate margin. (4 marks)",
-        "Stretch: Compare the hazards found at a constructive margin with those at a conservative margin. (4 marks)"
+        {
+          "q": "Core: 'Explain the global distribution of earthquakes and volcanoes.' (6 marks) Write in the portal response box.",
+          "a": "Most lie along plate boundaries, especially the Ring of Fire; explained by subduction at destructive boundaries, rising magma at constructive, friction at conservative; hotspots explain exceptions like Hawaii",
+          "mins": 8,
+          "model": "Teacher plans it first: P1 pattern (belts, Ring of Fire) with explanation; P2 destructive boundaries; P3 constructive and conservative; P4 hotspot anomaly."
+        },
+        {
+          "q": "Extend: Suggest why Iceland has both volcanoes and earthquakes. (3 marks)",
+          "a": "It lies on the Mid-Atlantic Ridge, a constructive boundary (1), where plates pull apart and magma rises (1); there is also a hotspot beneath it (1)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Why is the Mercalli scale useful to planners? (2 marks)",
+          "a": "It shows effects on buildings and people in each place (1), so planners know where damage is worst (1)",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Which margin type would you find in Iceland?",
-        "Return to the big question: give one reason volcanoes occur near plate margins."
+        {
+          "q": "Hawaii's volcanoes are caused by a:",
+          "a": "Hotspot",
+          "mins": 1,
+          "options": [
+            "Hotspot",
+            "Conservative boundary"
+          ]
+        },
+        {
+          "q": "Big question: why do most earthquakes and volcanoes happen in narrow belts?",
+          "a": "They are along plate boundaries where plates move apart, together or past each other",
+          "mins": 2
+        }
       ],
-      "homework": "Draw an annotated map of the Pacific Ring of Fire with at least five named places (for example Japan, Chile, California).",
-      "send": "SEND: pre-labelled margin diagrams and a card sort of 'what happens next'. EAL: key terms with images, say each aloud. Stretch: explain why hotspot volcanoes like Hawaii do not fit the margin pattern.",
-      "n": 10,
-      "board": "AQA GCSE (9-1) Geography (8035)",
-      "boardShort": "AQA GCSE 8035"
+      "homework": "Independent study: read 4GE1 3.2 and 3.3 notes (why people live in hazardous areas; managing earthquakes) using portal lessons 11 and 12; these are caught up in Autumn 2027.",
+      "send": "SEND: boundary table with diagrams. EAL: glossary: plate, sink, magma. Stretch: research why the 2010 Haiti earthquake was so deadly.",
+      "resources": [
+        "Pearson 4GE1 Paper 1 scheme of work (Topic 3); 4GE1 specification 3.1; portal geography y10 lessons 10 to 12 (AQA) adapted",
+        "Own 4GE1-style exam questions with indicative mark points (portal printable)",
+        "World map of plate boundaries, earthquakes and volcanoes (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Thingvellir rift Iceland",
+          "alt": "The rift valley at Thingvellir, Iceland, where plates pull apart",
+          "for": "teach:2"
+        },
+        {
+          "find": "San Andreas Fault Carrizo Plain",
+          "alt": "The San Andreas Fault",
+          "for": "keywords"
+        },
+        {
+          "find": "Hawaii lava shield volcano",
+          "alt": "A shield volcano in Hawaii",
+          "for": "teach:3"
+        },
+        {
+          "find": "seismograph",
+          "alt": "A seismograph trace",
+          "for": "teach:4"
+        }
+      ]
     },
     {
       "unit": "Unit 2: Tectonic hazards (AQA 3.1.1.2)",
@@ -1667,190 +2053,261 @@
       "boardShort": "AQA GCSE 8035"
     },
     {
-      "unit": "Unit 4: Climate change (AQA 3.1.1.4)",
-      "title": "Climate change: the evidence and the causes",
-      "duration": 50,
-      "bigQuestion": "How do we know the climate is changing, and what is causing it?",
+      "unit": "Autumn 2: Fragile environments and climate change (7.1 to 7.3, Paper 2 Section C)",
+      "n": 14,
+      "title": "Climate change: natural causes and the enhanced greenhouse effect (7.1)",
+      "bigQuestion": "If the climate has always changed naturally, why worry now?",
       "objectives": [
-        "Describe evidence for climate change from the Quaternary to the present",
-        "Explain natural causes of climate change: orbital changes, volcanic eruptions and solar output",
-        "Explain human causes: fossil fuels, agriculture and deforestation"
+        "To understand the natural causes of climate change and how human activity enhances the greenhouse effect"
       ],
       "successCriteria": [
-        "All: give three pieces of evidence and name natural and human causes",
-        "Most: explain how the greenhouse effect is enhanced by human activity",
-        "Some: judge the relative importance of natural and human causes of recent warming"
+        "All: name three natural causes of climate change",
+        "Most: explain the greenhouse effect and how humans enhance it",
+        "Some: evaluate the evidence that recent change is mainly human-caused"
       ],
-      "crossCurricular": "Science: the greenhouse effect; Maths: reading line graphs",
-      "smsc": "Moral: stewardship (khalifah) of the Earth and responsibility to future generations; avoiding waste and excess",
+      "crossCurricular": "Chemistry: the atmosphere and greenhouse gases",
+      "smsc": "Moral: responsibility for the atmosphere and future generations",
       "keywords": [
         {
-          "term": "Quaternary",
-          "def": "the geological period of the last 2.6 million years, with repeated ice ages"
-        },
-        {
           "term": "greenhouse effect",
-          "def": "natural warming of the Earth because gases trap heat in the atmosphere"
+          "def": "gases in the atmosphere trapping heat and keeping Earth warm"
         },
         {
           "term": "enhanced greenhouse effect",
-          "def": "extra warming caused by human greenhouse gas emissions"
+          "def": "extra warming from greenhouse gases added by people"
         },
         {
-          "term": "fossil fuels",
-          "def": "coal, oil and gas formed from ancient plants and animals"
+          "term": "Milankovitch cycles",
+          "def": "regular changes in Earth's orbit and tilt that affect climate"
         },
         {
-          "term": "deforestation",
-          "def": "the removal of forests on a large scale"
+          "term": "carbon dioxide",
+          "def": "a greenhouse gas released by burning fossil fuels"
+        },
+        {
+          "term": "methane",
+          "def": "a strong greenhouse gas from cattle, rice fields and landfill"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Without any greenhouse effect, Earth would be frozen. So is the greenhouse effect good or bad?"
+      },
+      "islamicLink": {
+        "text": "Allah says: 'He raised the sky and set up the balance, so that you do not transgress the balance' (ar-Rahman 55:7 to 8). The atmosphere is part of that balance. Upsetting it through waste and excess goes against Islamic teaching, and Muslims are urged not to waste (al-A'raf 7:31).",
+        "at": "start"
+      },
       "starter": [
-        "Say Bismillah. Name one UK weather hazard and its impact.",
-        "Where do volcanoes occur? (Link: volcanic ash is one natural cause of climate change.)",
-        "What is the difference between weather and climate?"
+        {
+          "q": "Which is a cause of desertification?",
+          "a": "Overgrazing",
+          "mins": 1,
+          "options": [
+            "Overgrazing",
+            "Coral bleaching"
+          ]
+        },
+        {
+          "q": "The Sahel is south of the:",
+          "a": "Sahara",
+          "mins": 1,
+          "options": [
+            "Sahara",
+            "Amazon"
+          ]
+        },
+        {
+          "q": "Burning coal releases:",
+          "a": "Carbon dioxide",
+          "mins": 1,
+          "options": [
+            "Carbon dioxide",
+            "Oxygen only"
+          ]
+        },
+        {
+          "q": "Name a fossil fuel.",
+          "a": "Coal, oil or gas",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Climate in the Quaternary",
-          "timeline": [
-            {
-              "label": "2.6 million years ago",
-              "text": "Start of the Quaternary: cycles of cold glacials and warm interglacials"
-            },
-            {
-              "label": "About 20,000 years ago",
-              "text": "Last glacial maximum: ice sheets covered much of the UK"
-            },
-            {
-              "label": "About 11,700 years ago",
-              "text": "Warm Holocene begins; temperatures rise"
-            },
-            {
-              "label": "1850 to 1900",
-              "text": "Starting point for modern comparison (pre-industrial)"
-            },
-            {
-              "label": "2011 to 2020",
-              "text": "About 1.1 °C warmer than 1850 to 1900 (IPCC); carbon dioxide above 410 ppm"
-            }
+          "heading": "Natural causes",
+          "bullets": [
+            "Milankovitch cycles: orbit and tilt",
+            "Changes in solar output",
+            "Large volcanic eruptions cool the Earth briefly"
           ],
-          "note": "Make the point that the climate has always changed naturally, so the question is why it is changing so fast now. Pupils should notice the direction of recent change. Keep figures as approximations: the IPCC reports the 2011 to 2020 decade about 1.1 °C above 1850 to 1900, and carbon dioxide concentrations above 410 parts per million (they were about 280 before the Industrial Revolution). Teacher to check the latest reported figures before teaching."
-        },
-        {
-          "heading": "Evidence for climate change",
-          "table": {
-            "head": [
-              "Evidence",
-              "What it shows"
-            ],
-            "rows": [
-              [
-                "Ice cores",
-                "Trapped air bubbles show past carbon dioxide and temperature over hundreds of thousands of years"
-              ],
-              [
-                "Temperature records",
-                "Thermometer records since about 1850 show recent warming"
-              ],
-              [
-                "Glaciers and sea ice",
-                "Arctic sea ice and most glaciers are shrinking"
-              ],
-              [
-                "Sea level",
-                "Risen about 20 cm since 1900 (IPCC); warming water expands, ice melts"
-              ],
-              [
-                "Pollen, tree rings, sediment",
-                "Show past vegetation and climate over thousands of years"
-              ]
+          "note": "Milankovitch cycles work over tens of thousands of years and explain ice ages. The 1991 Pinatubo eruption cooled the world for a year or two.",
+          "diagram": {
+            "centre": "natural causes",
+            "items": [
+              "orbit shape (about 100,000 years)",
+              "tilt (about 41,000 years)",
+              "wobble (about 23,000 years)",
+              "solar output",
+              "volcanic eruptions"
             ]
-          },
-          "note": "Ask how scientists find out about climate 100,000 years ago (there were no thermometers). Ice cores are the best-known evidence: layers of ice trap air from the past. Point out limits: some evidence is indirect (pollen) and has uncertainty. For recent change, direct measurements are available. Pupils should name the evidence and say what it shows, not just list it."
+          }
         },
         {
-          "heading": "Natural and human causes",
-          "compare": {
-            "left": {
-              "title": "Natural causes",
-              "points": [
-                "Orbital changes: tilt and orbit shape vary over tens of thousands of years",
-                "Volcanic eruptions: ash and sulphur dioxide block sunlight and cool the Earth",
-                "Solar output: variations in the Sun's energy change warming slightly"
-              ]
-            },
-            "right": {
-              "title": "Human causes",
-              "points": [
-                "Burning fossil fuels in power, transport and industry releases carbon dioxide",
-                "Agriculture: cattle and rice produce methane; fertilisers produce nitrous oxide",
-                "Deforestation: fewer trees absorb carbon dioxide; burning releases it"
-              ]
-            },
-            "label": "vs"
-          },
-          "note": "Ask which group explains the speed of recent warming. Natural causes work slowly, over thousands of years, so cannot explain the rapid rise since 1850; scientists point to human emissions. Mention Mount Pinatubo, 1991, which cooled the Earth for a couple of years. Misconception: the ozone hole causes global warming; it is a separate problem."
+          "heading": "The greenhouse effect",
+          "bullets": [
+            "Sunlight warms the surface",
+            "The surface gives off heat",
+            "Greenhouse gases trap some of it"
+          ],
+          "note": "Natural greenhouse effect keeps Earth about 33 °C warmer than it would be.",
+          "cycle": [
+            "Sunlight reaches Earth",
+            "Surface warms",
+            "Heat radiated upwards",
+            "Greenhouse gases absorb some",
+            "Heat re-radiated: Earth stays warm"
+          ]
         },
         {
           "heading": "The enhanced greenhouse effect",
-          "cycle": [
-            "Sunlight passes through the atmosphere and warms the surface",
-            "Earth releases heat as infrared radiation",
-            "Greenhouse gases absorb some and send it back",
-            "Burning fuels adds extra gases",
-            "More heat trapped: global temperature rises"
+          "bullets": [
+            "Burning fossil fuels: carbon dioxide",
+            "Cattle, rice, landfill: methane",
+            "Deforestation: fewer trees absorb CO2"
           ],
-          "note": "Run through the cycle. Stress that the greenhouse effect is natural and needed; without it the Earth would be too cold for life. The enhanced effect is the problem. Ask pupils to circle the step humans change."
-        },
-        {
-          "heading": "Skill: explain a cause",
-          "model": {
-            "problem": "Explain how human activities may be causing global warming. (4 marks)",
-            "steps": [
-              "Name the activity: burning fossil fuels.",
-              "Explain the process: it releases carbon dioxide into the air.",
-              "Link to warming: more greenhouse gas traps more heat.",
-              "Add a second activity: deforestation reduces the carbon dioxide absorbed."
+          "note": "CO2 was about 280 parts per million before industry; it was above 420 ppm in the 2020s.",
+          "chart": {
+            "kind": "bar",
+            "title": "Atmospheric CO2 (parts per million, approx.)",
+            "labels": [
+              "Before 1750",
+              "1960",
+              "2000",
+              "2020s"
             ],
-            "answer": "Burning fossil fuels in power stations and cars releases carbon dioxide. This greenhouse gas traps more heat in the atmosphere, which raises global temperatures. Deforestation also contributes because fewer trees are left to absorb carbon dioxide."
-          },
-          "note": "I do. Each mark is a link in a chain: activity, process, result. Highlight the verbs. Common error: saying pollution makes holes in the atmosphere. Correct this."
+            "values": [
+              280,
+              317,
+              370,
+              420
+            ],
+            "unit": "ppm"
+          }
         },
         {
-          "heading": "Hinge question",
+          "heading": "Natural or human?",
+          "bullets": [
+            "Natural causes are slow or short-lived",
+            "Recent warming is rapid",
+            "Scientists conclude it is mainly human"
+          ],
+          "note": "Global average temperature was roughly 1.1 to 1.3 °C above pre-industrial levels in the early 2020s."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share results.",
           "check": {
-            "q": "Which piece of evidence shows climate over the last 800,000 years?",
+            "q": "Which is a human cause of climate change?",
             "options": [
-              "Thermometer records",
-              "Ice cores",
-              "Newspaper reports",
-              "Sea level in 2020"
+              "Milankovitch cycles",
+              "Burning fossil fuels",
+              "Changes in solar output"
             ],
             "answer": 1,
-            "why": "Ice cores contain trapped air from thousands of years ago. Thermometer records only go back to about 1850."
-          },
-          "note": "Answer: B."
+            "why": "Fossil fuel burning adds CO2; the others are natural."
+          }
         }
       ],
       "practice": [
-        "Label the stages of the greenhouse effect on a diagram.",
-        "Sort causes into natural or human: volcanic ash, cattle farming, solar output, burning coal, orbit changes, deforestation."
+        {
+          "q": "Explain how farming can enhance the greenhouse effect. (3 marks)",
+          "a": "Cattle and rice paddies release methane (1), a powerful greenhouse gas (1), which traps more heat in the atmosphere (1); clearing land also releases CO2",
+          "mins": 4,
+          "model": "Name the activity: cattle farming.\nName the gas: methane.\nExplain the effect: methane traps heat strongly, so more warming."
+        },
+        {
+          "q": "Identify one natural cause that cools the climate for a short time. (1 mark)",
+          "a": "Large volcanic eruptions (ash and sulphur in the atmosphere)",
+          "mins": 1
+        },
+        {
+          "q": "Using the chart, by how much did CO2 rise from before 1750 to the 2020s? (1 mark)",
+          "a": "About 140 ppm (280 to 420)",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Core: Give two natural causes of climate change. (2 marks)",
-        "Extend: Explain how deforestation contributes to climate change. (3 marks)",
-        "Stretch: Evaluate the claim that recent climate change is caused entirely by human activity. (6 marks)"
+        {
+          "q": "Core: 'Explain how human activity enhances the greenhouse effect.' (6 marks) Write in the portal response box.",
+          "a": "Natural greenhouse effect explained; fossil fuels add CO2; deforestation reduces absorption; farming and landfill add methane; more gases trap more heat; reference to rising CO2 data",
+          "mins": 8,
+          "model": "Teacher plans it first: P1 the natural effect; P2 fossil fuels and CO2 with data; P3 deforestation; P4 methane from farming and landfill; conclusion: more gases, more heat trapped."
+        },
+        {
+          "q": "Extend: 'Evaluate the view that recent climate change is mainly caused by natural factors.' (8 marks) Plan in bullet points.",
+          "a": "Natural factors act slowly (Milankovitch) or briefly (volcanoes) and solar output has not risen enough; rapid rise in CO2 matches warming; judgement: mainly human",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: Why do scientists use ice cores to study past climate? (2 marks)",
+          "a": "Air bubbles trapped in ice show past CO2 levels (1); layers show temperature changes over hundreds of thousands of years (1)",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Name two types of evidence for climate change.",
-        "Return to the big question: give one piece of evidence and one cause."
+        {
+          "q": "Methane comes mainly from:",
+          "a": "Cattle, rice fields and landfill",
+          "mins": 1,
+          "options": [
+            "Cattle, rice fields and landfill",
+            "Wind turbines"
+          ]
+        },
+        {
+          "q": "Big question: if the climate has always changed naturally, why worry now?",
+          "a": "Today's change is far faster than natural change and is mainly caused by human greenhouse gases, threatening fragile environments and people",
+          "mins": 2
+        }
       ],
-      "homework": "Draw a labelled infographic of the greenhouse effect. Add three facts on evidence and cite the source.",
-      "send": "SEND: pre-drawn greenhouse effect diagram to label. EAL: key words with pictures. Stretch: explain why scientists can be confident the recent warming is mainly human-caused.",
-      "n": 14,
-      "board": "AQA GCSE (9-1) Geography (8035)",
-      "boardShort": "AQA GCSE 8035"
+      "homework": "Independent study: read 4GE1 7.2 and 7.3 (effects and responses in two named countries) using portal lesson 15; caught up in Autumn 2027.",
+      "send": "SEND: greenhouse effect diagram to label. EAL: glossary: gas, heat, trap. Stretch: research the Maunder Minimum (1645 to 1715).",
+      "resources": [
+        "4GE1 specification Topic 7 (7.1); school Geography Curriculum Intent, Year 10 (climate change; the living world); portal geography y10 lessons 14 and 15 (AQA) adapted",
+        "Own 4GE1-style exam questions with indicative mark points (portal printable)",
+        "Greenhouse effect diagram sheet (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Mauna Loa Observatory",
+          "alt": "Mauna Loa Observatory, where CO2 has been measured since 1958",
+          "for": "teach:3"
+        },
+        {
+          "find": "ice core sample",
+          "alt": "An ice core used to study past climate",
+          "for": "keywords"
+        },
+        {
+          "find": "Pinatubo eruption 1991",
+          "alt": "The 1991 eruption of Mount Pinatubo",
+          "for": "teach:1"
+        },
+        {
+          "find": "coal power station chimneys",
+          "alt": "A coal-fired power station",
+          "for": "hook"
+        }
+      ]
     },
     {
       "unit": "Unit 4: Climate change (AQA 3.1.1.4)",
@@ -4128,392 +4585,508 @@
       "boardShort": "AQA GCSE 8035"
     },
     {
-      "unit": "Unit 10: River landscapes in the UK (AQA 3.1.3.3; OPTION: two of coasts, rivers, glaciers)",
-      "title": "River landforms: waterfalls to estuaries on the River Tees",
-      "duration": 50,
-      "bigQuestion": "How does one river carve and build so many different landforms?",
+      "unit": "Spring 1: River environments (1.1 to 1.3)",
+      "n": 28,
+      "title": "Upland river landforms: V-shaped valleys, interlocking spurs and waterfalls (1.2c)",
+      "bigQuestion": "How does a waterfall move upstream?",
       "objectives": [
-        "Explain landforms: interlocking spurs, waterfalls, gorges, meanders, ox-bow lakes, levees, flood plains and estuaries",
-        "Describe how these landforms appear along a UK river valley, the River Tees",
-        "Use diagrams to explain formation"
+        "To understand how erosion forms upland river landforms"
       ],
       "successCriteria": [
-        "All: name the landform for each course of the river",
-        "Most: explain how a waterfall and gorge or a meander forms",
-        "Some: explain the full sequence of ox-bow lake formation and link it to the Tees"
+        "All: name three upland landforms",
+        "Most: describe how a V-shaped valley and interlocking spurs form",
+        "Some: explain the formation of a waterfall and gorge in sequence"
       ],
-      "crossCurricular": "Art and skills: annotated diagrams; OS map skills",
-      "smsc": "Spiritual: the endless work of flowing water as a sign of creation",
+      "crossCurricular": "Science: rock types and hardness",
+      "smsc": "Spiritual: reflecting on slow change in creation",
       "keywords": [
         {
+          "term": "vertical erosion",
+          "def": "downward erosion of the river bed"
+        },
+        {
           "term": "interlocking spurs",
-          "def": "ridges of land that stick out alternately on either side of the river in the upper course"
+          "def": "ridges of land the river winds around in its upper course"
         },
         {
           "term": "waterfall",
-          "def": "a sudden drop of the river over a step in the river bed"
+          "def": "where a river drops over a steep step of hard rock"
+        },
+        {
+          "term": "plunge pool",
+          "def": "the deep pool at the base of a waterfall"
         },
         {
           "term": "gorge",
-          "def": "a narrow, steep-sided valley left as a waterfall retreats"
-        },
-        {
-          "term": "meander",
-          "def": "a bend in the river"
-        },
-        {
-          "term": "ox-bow lake",
-          "def": "a curved lake left when a meander is cut off"
-        },
-        {
-          "term": "levee",
-          "def": "a natural raised bank formed by deposits during floods"
+          "def": "a steep-sided narrow valley left as a waterfall retreats"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "High Force on the River Tees falls about 21 metres. Will it be in the same place in 10,000 years?"
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Among the stones are some from which rivers gush forth' (al-Baqarah 2:74). Rivers shaping rock over thousands of years are among the signs of Allah for those who reflect.",
+        "at": "start"
+      },
       "starter": [
-        "Say Bismillah. Describe the upper course of a river.",
-        "What are the processes of transport in a river?",
-        "State two differences between upper and lower course."
+        {
+          "q": "Lag time is peak rainfall to:",
+          "a": "Peak discharge",
+          "mins": 1,
+          "options": [
+            "Peak discharge",
+            "Base flow"
+          ]
+        },
+        {
+          "q": "Urban areas make lag time:",
+          "a": "Shorter",
+          "mins": 1,
+          "options": [
+            "Shorter",
+            "Longer"
+          ]
+        },
+        {
+          "q": "Hydraulic action is erosion by:",
+          "a": "The force of water",
+          "mins": 1,
+          "options": [
+            "The force of water",
+            "Chemicals"
+          ]
+        },
+        {
+          "q": "Name the four erosion processes in rivers.",
+          "a": "Hydraulic action, abrasion, attrition, solution",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Case study: the River Tees (north-east England)",
-          "table": {
-            "head": [
-              "Course",
-              "Landform",
-              "Where on the Tees"
-            ],
-            "rows": [
-              [
-                "Upper (Pennines, Cross Fell source, about 893 m)",
-                "V-shaped valley, interlocking spurs",
-                "Upper Teesdale"
-              ],
-              [
-                "Upper",
-                "Waterfalls and gorge",
-                "High Force (about 21 m) and Low Force, over the hard Whin Sill"
-              ],
-              [
-                "Middle to lower",
-                "Meanders and flood plain",
-                "Between Barnard Castle and Yarm: Yarm sits within a meander"
-              ],
-              [
-                "Lower",
-                "Estuary",
-                "Tees estuary at Middlesbrough and Teesmouth, North Sea"
-              ]
-            ]
-          },
-          "note": "The Tees is about 137 km long (approx.). Use an OS map extract if available: high contour density in the upper course and wide flat valley near Yarm. Check heights and distances before use. High Force's drop of about 21 m is widely quoted. Ask pupils to say how the landforms change from the Pennines to the sea and link back to the profile lesson."
-        },
-        {
-          "heading": "Waterfall and gorge formation",
-          "cycle": [
-            "Hard rock overlies soft rock",
-            "Water erodes the soft rock beneath faster, creating an overhang",
-            "Overhang collapses; plunge pool deepens by hydraulic action and abrasion",
-            "The waterfall retreats upstream",
-            "A steep-sided gorge is left"
-          ],
-          "note": "At High Force the hard dolerite (Whin Sill) caps softer sedimentary rock. Draw the cross-section and use arrows. Ask: where is the plunge pool? Pupils must use process words and the term 'retreats'. The gorge is the evidence of past retreat."
-        },
-        {
-          "heading": "Meander to ox-bow lake",
-          "cycle": [
-            "Faster flow on the outside bend erodes a river cliff",
-            "Slower flow on the inside deposits a slip-off slope",
-            "Bends become more curved; the neck narrows",
-            "In flood the river breaks through the neck",
-            "Deposition seals off the old bend: an ox-bow lake"
-          ],
-          "note": "Draw a plan view and cross-section. Pupils often say 'water goes faster on the inside'. It is faster on the outside. Meanders migrate sideways and downstream across the flood plain. Ox-bow lakes eventually dry into marshy ground (a meander scar)."
-        },
-        {
-          "heading": "Flood plains, levees and estuaries",
+          "heading": "The upper course",
           "bullets": [
-            "In floods, the river spills over and deposits silt on the flood plain.",
-            "Coarser material drops first near the banks, building levees.",
-            "Fine silt makes the flood plain flat and fertile.",
-            "At the estuary, tides and deposition form mud flats and salt marsh."
+            "Steep gradient",
+            "Vertical erosion dominant",
+            "Rapids, waterfalls, narrow valleys"
           ],
-          "note": "Explain why people farm and build on flood plains (fertile, flat, near water) even though they flood. Levees can be heightened by people; link to flood management later. Estuaries are tidal and have deposited mud; the Tees Estuary is also heavily industrial. Ask: why do rivers deposit at the mouth? (Velocity drops and the water meets the sea.)"
+          "note": "River processes (1.2a, 1.2b) are independent study; recap: hydraulic action, abrasion, attrition, solution."
         },
         {
-          "heading": "Skill: explain landform formation",
+          "heading": "V-shaped valleys and spurs",
+          "bullets": [
+            "River erodes downwards",
+            "Weathering and mass movement wear the sides",
+            "River winds around hard spurs"
+          ],
+          "note": "The sides slide in, making a V. The river cannot cut through hard spurs, so they interlock."
+        },
+        {
+          "heading": "Waterfalls and gorges",
+          "bullets": [
+            "Hard rock over soft rock",
+            "Soft rock undercut; plunge pool forms",
+            "Overhang collapses; waterfall retreats"
+          ],
+          "note": "High Force: hard dolerite (Whin Sill) over softer limestone and shale.",
+          "cycle": [
+            "Hard rock lies over soft rock",
+            "Soft rock eroded faster",
+            "Hard rock overhang forms",
+            "Overhang collapses into plunge pool",
+            "Waterfall retreats, leaving a gorge"
+          ]
+        },
+        {
+          "heading": "Writing a sequence answer",
+          "bullets": [
+            "Use time connectives",
+            "Name processes",
+            "Include a sketch"
+          ],
+          "note": "Model the waterfall answer.",
           "model": {
-            "problem": "Explain how an ox-bow lake is formed. (4 marks)",
+            "problem": "Explain the formation of a waterfall. (4 marks)",
             "steps": [
-              "Erosion on the outside bend and deposition on the inside make the meander more curved.",
-              "The neck of the meander gets narrower.",
-              "In a flood the river cuts through the neck, taking a new, shorter route.",
-              "Deposition seals the ends of the old bend, leaving a lake."
+              "River flows over hard rock above soft rock",
+              "Soft rock eroded faster by hydraulic action and abrasion: undercutting",
+              "Overhang of hard rock left unsupported and collapses",
+              "Rocks swirl in the plunge pool; the waterfall retreats upstream, forming a gorge"
             ],
-            "answer": "Erosion on the outside bends and deposition on the inside make a meander more curved and the neck narrow. In a flood the river cuts through the neck and takes the shortest route. Deposition then seals off the old meander, leaving an ox-bow lake."
-          },
-          "note": "I do. Draw each stage. Stress the link between flood and breakthrough. Pupils often forget deposition is what seals the lake."
+            "answer": "A sequenced answer naming processes at each stage."
+          }
         },
         {
-          "heading": "Hinge question",
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share results.",
           "check": {
-            "q": "On a meander, where does erosion mainly occur?",
+            "q": "A gorge forms because:",
             "options": [
-              "Inside bend",
-              "Outside bend",
-              "Both equally",
-              "Only in the middle of the channel"
+              "The river deposits sediment",
+              "The waterfall retreats upstream",
+              "The sea erodes the valley"
             ],
             "answer": 1,
-            "why": "Flow is fastest on the outside bend, so it erodes a river cliff. Deposition is on the inside bend."
-          },
-          "note": "Answer: B."
+            "why": "As the overhang repeatedly collapses, the waterfall moves back, leaving a gorge."
+          }
         }
       ],
       "practice": [
-        "Draw annotated diagrams for the formation of a waterfall and an ox-bow lake.",
-        "Annotate a map or photo of the Tees valley with at least four landforms."
+        {
+          "q": "Explain why upland valleys are V-shaped. (3 marks)",
+          "a": "The river erodes vertically (1); weathering and mass movement wear the sides (1); material slides into the river and is carried away, forming a V (1)",
+          "mins": 4,
+          "model": "Downwards: vertical erosion deepens the channel.\nSideways: weathering loosens the valley sides.\nDown the slope: mass movement, then the river removes it.\nResult: a V."
+        },
+        {
+          "q": "Name the hard rock at High Force. (1 mark)",
+          "a": "Dolerite (the Whin Sill)",
+          "mins": 1
+        },
+        {
+          "q": "What is a plunge pool? (1 mark)",
+          "a": "The deep pool eroded at the base of a waterfall",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Core: Name three landforms of the upper course. (3 marks)",
-        "Extend: Explain how a waterfall and gorge are formed. (4 marks)",
-        "Stretch: Using a named UK river valley, explain how its landforms change from source to mouth. (6 marks)"
+        {
+          "q": "Core: 'Explain the formation of a waterfall and gorge.' (4 marks) Use a labelled sequence of three sketches and write in the portal response box.",
+          "a": "Hard over soft rock; undercutting by hydraulic action and abrasion; overhang collapses; plunge pool deepens; retreat forms gorge",
+          "mins": 8,
+          "model": "Teacher draws sketch 1: two rock layers with the river flowing over; labels 'hard dolerite' and 'softer limestone and shale'."
+        },
+        {
+          "q": "Extend: Describe the features of a V-shaped valley and interlocking spurs using an OS map extract. (3 marks)",
+          "a": "Contours close together (steep sides) (1); V shape where contours point upstream (1); river winding between alternating spurs (1)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Suggest why waterfalls are often in the upper course. (2 marks)",
+          "a": "Steep gradients and changes in rock type are common in uplands (1); vertical erosion is strongest there (1)",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Name one landform of erosion and one of deposition.",
-        "Return to the big question: link one landform to erosion and one to deposition."
+        {
+          "q": "Interlocking spurs form in the:",
+          "a": "Upper course",
+          "mins": 1,
+          "options": [
+            "Upper course",
+            "Lower course"
+          ]
+        },
+        {
+          "q": "Big question: how does a waterfall move upstream?",
+          "a": "Undercutting of soft rock makes the hard overhang collapse repeatedly, so the waterfall retreats, leaving a gorge",
+          "mins": 2
+        }
       ],
-      "homework": "Create a fact sheet for the River Tees with a sketch map and four annotated landforms.",
-      "send": "SEND: step cards for formation diagrams. EAL: pictures and arrows. Stretch: explain why High Force is retreating at a slow rate.",
-      "n": 28,
-      "board": "AQA GCSE (9-1) Geography (8035)",
-      "boardShort": "AQA GCSE 8035"
+      "homework": "Independent study: annotate a photo of High Force with the formation stages (portal sheet).",
+      "send": "SEND: sequence cards with sketches. EAL: glossary: hard, soft, collapse, retreat. Stretch: research the retreat rate of Niagara Falls.",
+      "resources": [
+        "Pearson 4GE1 Paper 1 scheme of work (Topic 1); 4GE1 specification 1.2; portal geography y10 lesson 28 (AQA) adapted; portal lesson 27 for river processes (independent study)",
+        "Own 4GE1-style exam questions with indicative mark points (portal printable)",
+        "Waterfall sequence sketch sheet (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "High Force waterfall Tees",
+          "alt": "High Force on the River Tees",
+          "for": "hook"
+        },
+        {
+          "find": "interlocking spurs valley",
+          "alt": "A river winding between interlocking spurs",
+          "for": "teach:2"
+        },
+        {
+          "find": "gorge below waterfall",
+          "alt": "A gorge below a waterfall",
+          "for": "keywords"
+        }
+      ]
     },
     {
-      "unit": "Unit 10: River landscapes in the UK (AQA 3.1.3.3; OPTION: two of coasts, rivers, glaciers)",
-      "title": "Flooding: causes, hydrographs and the Jubilee River scheme",
-      "duration": 50,
-      "bigQuestion": "Is it better to control a river or to live with its floods?",
+      "unit": "Spring 1: River environments (1.1 to 1.3)",
+      "n": 29,
+      "title": "River regimes and storm hydrographs (1.1)",
+      "bigQuestion": "Why does one river flood within hours of a storm while another rises slowly?",
       "objectives": [
-        "Explain flood risk factors: precipitation, geology, relief and land use",
-        "Interpret hydrographs showing the precipitation-discharge relationship",
-        "Evaluate hard and soft engineering with a UK flood management scheme"
+        "To understand how storm hydrographs and river regimes show the response of a river to rainfall"
       ],
       "successCriteria": [
-        "All: name four factors that increase flood risk",
-        "Most: read a hydrograph for lag time and peak discharge",
-        "Some: evaluate a scheme and make a judgement using costs and benefits"
+        "All: label the parts of a storm hydrograph",
+        "Most: calculate lag time and describe the shape of a hydrograph",
+        "Some: explain how physical and human factors affect hydrographs"
       ],
-      "crossCurricular": "Maths: reading and interpreting graphs; Citizenship: public decision-making",
-      "smsc": "Moral: fairness: when protecting one town increases risk to another",
+      "crossCurricular": "Maths: reading graphs and time calculations",
+      "smsc": "Social: how land use upstream affects people downstream",
       "keywords": [
         {
           "term": "discharge",
-          "def": "the volume of water flowing past a point in a given time, in cumecs (cubic metres per second)"
+          "def": "the volume of water flowing past a point each second (cumecs)"
+        },
+        {
+          "term": "storm hydrograph",
+          "def": "a graph of rainfall and river discharge after a storm"
         },
         {
           "term": "lag time",
           "def": "the time between peak rainfall and peak discharge"
         },
         {
-          "term": "hydrograph",
-          "def": "a graph showing river discharge and rainfall over time"
+          "term": "river regime",
+          "def": "the pattern of discharge over a year"
         },
         {
           "term": "impermeable",
-          "def": "does not allow water to pass through"
-        },
-        {
-          "term": "relief channel",
-          "def": "a man-made channel that carries flood water away from a town"
+          "def": "not letting water pass through"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two rivers get the same storm. One is in a city, one in a forest. Which floods faster?"
+      },
       "starter": [
-        "Say Bismillah. Name three landforms found on a flood plain.",
-        "Define 'deposition'.",
-        "Why do people live on flood plains?"
+        {
+          "q": "The boundary of a drainage basin is the:",
+          "a": "Watershed",
+          "mins": 1,
+          "options": [
+            "Watershed",
+            "Mouth"
+          ]
+        },
+        {
+          "q": "Water moving sideways through soil is:",
+          "a": "Throughflow",
+          "mins": 1,
+          "options": [
+            "Throughflow",
+            "Evaporation"
+          ]
+        },
+        {
+          "q": "Most of the Earth's water is in:",
+          "a": "The oceans",
+          "mins": 1,
+          "options": [
+            "The oceans",
+            "Rivers"
+          ]
+        },
+        {
+          "q": "What is discharge?",
+          "a": "The volume of water flowing past a point each second",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Flood risk factors",
-          "table": {
-            "head": [
-              "Factor",
-              "Effect on flooding"
+          "heading": "Reading a storm hydrograph",
+          "bullets": [
+            "Bars: rainfall",
+            "Line: discharge",
+            "Rising limb, peak, falling limb, base flow"
+          ],
+          "note": "Discharge is in cumecs (cubic metres per second).",
+          "chart": {
+            "kind": "line",
+            "title": "Example storm hydrograph: discharge (cumecs)",
+            "labels": [
+              "0 h",
+              "6 h",
+              "12 h",
+              "18 h",
+              "24 h",
+              "30 h",
+              "36 h",
+              "42 h"
             ],
-            "rows": [
-              [
-                "Precipitation",
-                "Long, heavy rain or rapid snow melt; already wet ground raises risk"
-              ],
-              [
-                "Geology",
-                "Impermeable rock such as clay or granite causes fast runoff; porous rock soaks water in"
-              ],
-              [
-                "Relief",
-                "Steep slopes send water quickly to rivers; flat land floods slowly"
-              ],
-              [
-                "Land use",
-                "Urban surfaces and drains send water fast; trees intercept and slow it"
-              ]
-            ]
-          },
-          "note": "Ask pupils to design the 'worst case' catchment: steep, impermeable, urban, with prolonged rain. Link factors to speed of runoff (surface water reaching the river). Human effects: urbanisation and deforestation raise risk; climate change may increase rainfall intensity. Flood risk in the UK also depends on tides at the coast and on groundwater."
+            "values": [
+              5,
+              6,
+              14,
+              22,
+              18,
+              12,
+              8,
+              6
+            ],
+            "unit": "cumecs"
+          }
         },
         {
-          "heading": "Reading a hydrograph (data to plot)",
-          "table": {
-            "head": [
-              "Time",
-              "Rainfall (mm)",
-              "Discharge (cumecs)"
+          "heading": "Lag time",
+          "bullets": [
+            "Peak rainfall to peak discharge",
+            "Short lag: flashy river",
+            "Long lag: slow response"
+          ],
+          "note": "Model it with the chart, using a peak rainfall at 6 hours (example data).",
+          "model": {
+            "problem": "Peak rainfall at 6 h; peak discharge at 18 h. Find the lag time.",
+            "steps": [
+              "Find peak rainfall time: 6 h",
+              "Find peak discharge time: 18 h",
+              "Subtract: 18 - 6"
             ],
-            "rows": [
-              [
-                "06:00",
-                "0",
-                "5"
-              ],
-              [
-                "09:00",
-                "12",
-                "8"
-              ],
-              [
-                "12:00",
-                "6",
-                "30"
-              ],
-              [
-                "15:00",
-                "1",
-                "60"
-              ],
-              [
-                "18:00",
-                "0",
-                "38"
-              ],
-              [
-                "21:00",
-                "0",
-                "18"
-              ]
-            ]
-          },
-          "note": "Pupils plot discharge as a line and rainfall as bars. Key terms: peak discharge (60 cumecs at 15:00), lag time (peak rainfall at 09:00 and peak discharge at 15:00, so lag is 6 hours), rising limb, falling limb and baseflow (about 5 cumecs). A flashy hydrograph has a short lag time and high peak: steep, impermeable, urban. A gentle one has a long lag time and low peak. Ask: how would the graph change if the catchment were urbanised? (Shorter lag time, higher peak.)"
+            "answer": "12 hours"
+          }
         },
         {
-          "heading": "Managing floods",
+          "heading": "What makes a flashy river?",
+          "bullets": [
+            "Steep slopes, impermeable rock",
+            "Saturated ground",
+            "Urban surfaces and drains"
+          ],
+          "note": "Ask: which of these is true of a river near your home?",
           "compare": {
             "left": {
-              "title": "Hard engineering",
+              "title": "Flashy (short lag, high peak)",
               "points": [
-                "Dams and reservoirs store flood water",
-                "Straightening the channel speeds water away",
-                "Embankments raise banks",
-                "Relief channels divert flood water"
+                "steep slopes",
+                "impermeable rock or clay",
+                "urban areas",
+                "saturated soil"
               ]
             },
             "right": {
-              "title": "Soft engineering",
+              "title": "Subdued (long lag, low peak)",
               "points": [
-                "Flood warnings and preparation",
-                "Flood-zone planning: no building on the flood plain",
-                "Tree planting slows runoff",
-                "River restoration and wetlands"
+                "gentle slopes",
+                "permeable rock",
+                "forest",
+                "dry soil"
               ]
             },
             "label": "vs"
-          },
-          "note": "Hard engineering protects places strongly but is expensive and can increase risk downstream. Soft engineering is cheaper and more natural but offers less certain protection. Ask: which would a town with 5,000 homes choose? Link to cost-benefit decisions. Mention that straightening a channel moves flood water faster to places downstream, which is why it is often avoided today."
+          }
         },
         {
-          "heading": "Case study: the Jubilee River, Thames valley",
-          "table": {
-            "head": [
-              "Feature",
-              "Detail"
-            ],
-            "rows": [
-              [
-                "Location",
-                "A relief channel about 11.6 km long, from Maidenhead to Windsor and Eton (Berkshire)"
-              ],
-              [
-                "Problem",
-                "Large floods, such as 1947, threatened Maidenhead, Windsor and Eton"
-              ],
-              [
-                "Scheme",
-                "Built by the Environment Agency in the 1990s to 2002; diverts water around the towns in flood"
-              ],
-              [
-                "Cost",
-                "About £110 million (approx.)"
-              ],
-              [
-                "Benefits",
-                "Protects thousands of properties (approx. 5,000); creates a wildlife corridor and a footpath"
-              ],
-              [
-                "Problems",
-                "Very expensive; flood risk may rise for some communities downstream; some leaks and repairs"
-              ]
-            ]
-          },
-          "note": "Choose this case study, or substitute another UK scheme such as Banbury or Boscastle if the class prefers; the figures here are approximate and should be checked by the teacher against Environment Agency sources before the lesson. Ask: who benefits and who might lose? Link to the Thames, which was studied earlier. Use the lesson on managing floods to rehearse the 'assess' style of question."
+          "heading": "River regimes",
+          "bullets": [
+            "Yearly pattern of discharge",
+            "UK rivers: higher in winter",
+            "Affected by climate, dams and abstraction"
+          ],
+          "note": "Dams smooth the regime; abstraction (taking water) lowers flow."
         },
         {
-          "heading": "Skill: interpret a hydrograph",
-          "model": {
-            "problem": "Using the hydrograph data, describe the lag time and the peak discharge. (3 marks)",
-            "steps": [
-              "Peak discharge: the highest value was 60 cumecs at 15:00.",
-              "Lag time: rainfall peaked at 09:00, so lag time was 6 hours.",
-              "Add a comparison with baseflow: discharge rose from 5 to 60 cumecs."
-            ],
-            "answer": "The peak discharge was 60 cumecs at 15:00. Rainfall peaked at 09:00 so the lag time was 6 hours. Discharge rose from 5 cumecs to 60 cumecs, showing a big increase."
-          },
-          "note": "I do. Insist on units and times. Many pupils confuse lag time with the length of the storm; it runs from peak rainfall to peak discharge."
-        },
-        {
-          "heading": "Hinge question",
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share results.",
           "check": {
-            "q": "Which change would shorten the lag time of a river?",
+            "q": "Urbanisation usually makes lag time:",
             "options": [
-              "Planting trees in the catchment",
-              "Building houses and roads across the catchment",
-              "Digging a reservoir",
-              "Removing drains"
+              "Longer",
+              "Shorter",
+              "No different"
             ],
             "answer": 1,
-            "why": "Impermeable urban surfaces and drains speed runoff, shortening lag time and raising the peak."
-          },
-          "note": "Answer: B. Pupils choosing A have reversed the effect; trees intercept rain and lengthen lag time."
+            "why": "Impermeable surfaces and drains speed water to the river, so lag time shortens."
+          }
         }
       ],
       "practice": [
-        "Plot the hydrograph from the table and label peak discharge, lag time, rising limb and falling limb.",
-        "Sort flood strategies into hard and soft and give one advantage and one disadvantage for each."
+        {
+          "q": "Peak rainfall is at 9 am; peak discharge at 7 pm. Calculate the lag time. (1 mark)",
+          "a": "10 hours",
+          "mins": 2,
+          "model": "9 am to 7 pm.\n9 am to 12 noon is 3 hours.\n12 noon to 7 pm is 7 hours.\n3 + 7 = 10 hours."
+        },
+        {
+          "q": "From the chart, state the peak discharge. (1 mark)",
+          "a": "22 cumecs (at 18 h)",
+          "mins": 2
+        },
+        {
+          "q": "Explain why deforestation shortens lag time. (2 marks)",
+          "a": "Less interception (1), so more rain reaches the ground and runs off quickly (1)",
+          "mins": 2
+        }
       ],
       "independent": [
-        "Core: Give two physical factors that increase flood risk. (2 marks)",
-        "Extend: Explain how urbanisation changes a hydrograph. (4 marks)",
-        "Stretch: Evaluate the success of a UK flood management scheme. (6 marks)"
+        {
+          "q": "Core: 'Explain how physical and human factors affect the shape of a storm hydrograph.' (6 marks) Write in the portal response box.",
+          "a": "Physical: slope, rock type, soil saturation, basin size and shape; human: urbanisation, deforestation, drainage; each linked to lag time and peak discharge",
+          "mins": 8,
+          "model": "Teacher plans it first: P1 rock type (impermeable: more runoff, short lag); P2 antecedent rainfall; P3 urbanisation; P4 deforestation; link each to peak and lag."
+        },
+        {
+          "q": "Extend: Suggest why a river's regime might change after a dam is built. (3 marks)",
+          "a": "Water is stored and released steadily (1), so peaks are lower and low flows higher (1); abstraction may reduce total flow (1)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Why are hydrographs useful for flood prediction? (2 marks)",
+          "a": "They show how fast and high a river rises after rain (1), so warnings can be timed (1)",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Define lag time.",
-        "Return to the big question: give a reason to control floods and a reason to live with them."
+        {
+          "q": "Lag time is:",
+          "a": "Peak rainfall to peak discharge",
+          "mins": 1,
+          "options": [
+            "Peak rainfall to peak discharge",
+            "The length of a river"
+          ]
+        },
+        {
+          "q": "Big question: why does one river flood within hours of a storm while another rises slowly?",
+          "a": "Steep, impermeable, urban or saturated basins send water quickly; gentle, permeable, forested basins slow it",
+          "mins": 2
+        }
       ],
-      "homework": "Write a 150-word briefing for a council on whether to build a new flood wall or restore wetlands upstream.",
-      "send": "SEND: pre-drawn hydrograph axes and key-term word bank. EAL: key terms with images. Stretch: compare hard engineering schemes with natural flood management.",
-      "n": 29,
-      "board": "AQA GCSE (9-1) Geography (8035)",
-      "boardShort": "AQA GCSE 8035"
+      "homework": "Independent study: one extra hour on hydrograph practice questions (portal sheet).",
+      "send": "SEND: hydrograph with parts labelled; lag time card. EAL: glossary: peak, rise, fall. Stretch: compare two real hydrographs from a UK river gauge website.",
+      "resources": [
+        "Pearson 4GE1 Paper 1 scheme of work (Topic 1); 4GE1 specification 1.1; portal geography y10 lesson 29 (AQA) adapted",
+        "Own 4GE1-style exam questions with indicative mark points (portal printable)",
+        "Hydrograph practice sheet with key (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "river in flood bankfull",
+          "alt": "A river close to flooding",
+          "for": "hook"
+        },
+        {
+          "find": "river gauging station",
+          "alt": "A river gauging station that measures discharge",
+          "for": "keywords"
+        },
+        {
+          "find": "urban drainage concrete",
+          "alt": "Concrete surfaces and drains in a town",
+          "for": "teach:3"
+        }
+      ]
     },
     {
       "unit": "Unit 11: Glacial landscapes in the UK (AQA 3.1.3.4; OPTION: two of coasts, rivers, glaciers)",
@@ -8476,6 +9049,1041 @@
       ],
       "board": "AQA GCSE (9-1) Geography (8035)",
       "boardShort": "AQA GCSE 8035"
+    },
+    {
+      "unit": "Spring 1: River environments (1.1 to 1.3)",
+      "n": 53,
+      "title": "The hydrological cycle and drainage basins (1.1)",
+      "bigQuestion": "Where does the water in a river come from?",
+      "objectives": [
+        "To understand the hydrological cycle as a system of stores and transfers and the features of a drainage basin"
+      ],
+      "successCriteria": [
+        "All: name the main stores and transfers of the hydrological cycle",
+        "Most: describe the features of a drainage basin",
+        "Some: explain how water moves through a drainage basin system"
+      ],
+      "crossCurricular": "Science: evaporation and condensation",
+      "smsc": "Spiritual: water as a measured provision from Allah",
+      "keywords": [
+        {
+          "term": "hydrological cycle",
+          "def": "the continuous movement of water between land, sea and air"
+        },
+        {
+          "term": "store",
+          "def": "where water is held, such as oceans or groundwater"
+        },
+        {
+          "term": "transfer",
+          "def": "a movement of water from one store to another"
+        },
+        {
+          "term": "drainage basin",
+          "def": "the area of land drained by a river and its tributaries"
+        },
+        {
+          "term": "watershed",
+          "def": "the high land boundary between drainage basins"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Rain falls on a hill. List every place that drop of water might go next."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'We sent down water from the sky in due measure and lodged it in the earth, and We are able to take it away' (al-Mu'minun 23:18), and 'We made from water every living thing' (al-Anbiya 21:30). The hydrological cycle is this measured provision at work.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Climate change is mainly caused today by:",
+          "a": "Human greenhouse gases",
+          "mins": 1,
+          "options": [
+            "Human greenhouse gases",
+            "Milankovitch cycles"
+          ]
+        },
+        {
+          "q": "Water evaporates when it is:",
+          "a": "Heated",
+          "mins": 1,
+          "options": [
+            "Heated",
+            "Frozen"
+          ]
+        },
+        {
+          "q": "Where does a river start?",
+          "a": "At its source",
+          "mins": 1,
+          "options": [
+            "At its source",
+            "At its mouth"
+          ]
+        },
+        {
+          "q": "Name one store of water.",
+          "a": "For example: oceans, ice, groundwater, lakes",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "A closed global system",
+          "bullets": [
+            "Stores: oceans, ice, groundwater, lakes, atmosphere",
+            "Oceans hold about 97% of water",
+            "Fresh water is only about 3%"
+          ],
+          "note": "Most fresh water is locked in ice and groundwater.",
+          "chart": {
+            "kind": "pie",
+            "title": "Where the Earth's water is (approx.)",
+            "labels": [
+              "Oceans",
+              "Ice and snow",
+              "Groundwater",
+              "Lakes, rivers, air"
+            ],
+            "values": [
+              97,
+              2,
+              0.8,
+              0.2
+            ],
+            "unit": "%"
+          }
+        },
+        {
+          "heading": "Transfers",
+          "bullets": [
+            "Evaporation and transpiration",
+            "Condensation and precipitation",
+            "Infiltration, percolation, throughflow, runoff"
+          ],
+          "note": "Trace one raindrop through the cycle on screen, naming each transfer.",
+          "cycle": [
+            "Evaporation and transpiration",
+            "Condensation",
+            "Precipitation",
+            "Interception, infiltration, runoff",
+            "Throughflow and groundwater flow to the river and sea"
+          ]
+        },
+        {
+          "heading": "The drainage basin",
+          "bullets": [
+            "Source, tributaries, confluence, mouth",
+            "Watershed: the boundary",
+            "An open system: water enters and leaves"
+          ],
+          "note": "Draw one on screen and label it.",
+          "diagram": {
+            "centre": "drainage basin",
+            "items": [
+              "source",
+              "watershed",
+              "tributary",
+              "confluence",
+              "channel network",
+              "mouth"
+            ]
+          }
+        },
+        {
+          "heading": "Inputs, stores, flows, outputs",
+          "bullets": [
+            "Input: precipitation",
+            "Stores: interception, soil, groundwater",
+            "Outputs: evaporation, transpiration, river discharge"
+          ],
+          "note": "Model the system in a flow diagram."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share results.",
+          "check": {
+            "q": "What is the boundary of a drainage basin called?",
+            "options": [
+              "Confluence",
+              "Watershed",
+              "Mouth"
+            ],
+            "answer": 1,
+            "why": "The watershed is the ridge of high land; a confluence is where two rivers join."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Describe what happens to rain that falls on a forested hillside. (3 marks)",
+          "a": "Some is intercepted by leaves and evaporates (1); some infiltrates the soil and moves as throughflow (1); some percolates to groundwater and slowly reaches the river (1)",
+          "mins": 4,
+          "model": "Follow the drop: first leaves (interception).\nThen the soil (infiltration, throughflow).\nThen deeper (percolation, groundwater).\nEach step slows the water down."
+        },
+        {
+          "q": "Define 'confluence'. (1 mark)",
+          "a": "The point where two rivers meet",
+          "mins": 1
+        },
+        {
+          "q": "State two outputs from a drainage basin. (2 marks)",
+          "a": "Two of: evaporation, transpiration, river discharge to the sea",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw and annotate a drainage basin system diagram with inputs, stores, transfers and outputs.",
+          "a": "Labelled diagram with precipitation input; interception, soil, groundwater stores; infiltration, percolation, throughflow, runoff, groundwater flow; evaporation, transpiration and discharge outputs",
+          "mins": 8,
+          "model": "Teacher starts it: a box for 'precipitation' at the top, arrows to 'interception store' and 'surface', then 'infiltration' down to 'soil store'."
+        },
+        {
+          "q": "Extend: Explain why a drainage basin is called an open system but the global hydrological cycle a closed one. (3 marks)",
+          "a": "The global cycle keeps the same total water (1); a basin gains water from precipitation and loses it by evaporation and discharge (1), so water crosses its boundary (1)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Suggest how building a town would change water transfers in a basin. (2 marks)",
+          "a": "Impermeable surfaces reduce infiltration (1), so more surface runoff reaches the river faster (1)",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Percolation is:",
+          "a": "Water moving down into rock",
+          "mins": 1,
+          "options": [
+            "Water moving down into rock",
+            "Water evaporating"
+          ]
+        },
+        {
+          "q": "Big question: where does the water in a river come from?",
+          "a": "Precipitation that reaches the channel by surface runoff, throughflow and groundwater flow",
+          "mins": 2
+        }
+      ],
+      "homework": "Independent study: read 4GE1 1.2 (river processes) using portal geography y10 lesson 27; caught up in Autumn 2027.",
+      "send": "SEND: labelled drainage basin template. EAL: glossary with arrows. Stretch: find your local river's drainage basin on an online map.",
+      "resources": [
+        "Pearson 4GE1 Paper 1 scheme of work (Topic 1); 4GE1 specification 1.1",
+        "Own 4GE1-style exam questions with indicative mark points (portal printable)",
+        "Drainage basin system diagram template (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "drainage basin diagram",
+          "alt": "A diagram of a drainage basin",
+          "for": "teach:3"
+        },
+        {
+          "find": "river confluence aerial",
+          "alt": "Two rivers meeting at a confluence",
+          "for": "keywords"
+        },
+        {
+          "find": "rain on forest canopy",
+          "alt": "Rain on a forest",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: River environments (1.1 to 1.3)",
+      "n": 54,
+      "title": "Lowland river landforms: meanders, oxbow lakes, flood plains and levees (1.2c)",
+      "bigQuestion": "How can a river cut itself off and leave a lake behind?",
+      "objectives": [
+        "To understand how erosion and deposition form lowland river landforms"
+      ],
+      "successCriteria": [
+        "All: name four lowland landforms",
+        "Most: explain the formation of meanders and oxbow lakes",
+        "Some: explain how flood plains and levees form through repeated flooding"
+      ],
+      "crossCurricular": "Physics: speed and energy of flowing water",
+      "smsc": "Social: why people live on flood plains",
+      "keywords": [
+        {
+          "term": "meander",
+          "def": "a bend in a river"
+        },
+        {
+          "term": "lateral erosion",
+          "def": "sideways erosion of the river banks"
+        },
+        {
+          "term": "oxbow lake",
+          "def": "a horseshoe-shaped lake left when a meander is cut off"
+        },
+        {
+          "term": "flood plain",
+          "def": "flat land beside a river that floods"
+        },
+        {
+          "term": "levee",
+          "def": "a raised bank of deposited sediment along a river"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why do lowland rivers wiggle instead of flowing straight to the sea?"
+      },
+      "starter": [
+        {
+          "q": "A gorge forms when a waterfall:",
+          "a": "Retreats",
+          "mins": 1,
+          "options": [
+            "Retreats",
+            "Grows taller"
+          ]
+        },
+        {
+          "q": "V-shaped valleys come from mainly:",
+          "a": "Vertical erosion",
+          "mins": 1,
+          "options": [
+            "Vertical erosion",
+            "Deposition"
+          ]
+        },
+        {
+          "q": "The plunge pool is at the:",
+          "a": "Base of the waterfall",
+          "mins": 1,
+          "options": [
+            "Base of the waterfall",
+            "Top"
+          ]
+        },
+        {
+          "q": "What is deposition?",
+          "a": "Dropping material when a river loses energy",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The lower course",
+          "bullets": [
+            "Gentle gradient, wide channel",
+            "Lateral erosion and deposition",
+            "Higher discharge"
+          ],
+          "note": "Discharge increases downstream as tributaries join."
+        },
+        {
+          "heading": "Meanders",
+          "bullets": [
+            "Fastest flow on the outside bend",
+            "Erosion: river cliff",
+            "Slow inside bend: deposition, slip-off slope"
+          ],
+          "note": "Draw a cross-section across a meander: steep cliff on one side, gentle slope on the other.",
+          "compare": {
+            "left": {
+              "title": "Outside bend",
+              "points": [
+                "fast flow",
+                "deep",
+                "erosion",
+                "river cliff"
+              ]
+            },
+            "right": {
+              "title": "Inside bend",
+              "points": [
+                "slow flow",
+                "shallow",
+                "deposition",
+                "slip-off slope"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Oxbow lakes",
+          "bullets": [
+            "Necks narrow by erosion",
+            "Flood cuts through the neck",
+            "Deposition seals off the old loop"
+          ],
+          "note": "Use a sequence of three sketches as you explain.",
+          "cycle": [
+            "Meander loops tighten",
+            "Outer banks erode towards each other",
+            "Flood breaks through the neck",
+            "River takes the shorter route",
+            "Deposition seals the old loop: oxbow lake"
+          ]
+        },
+        {
+          "heading": "Flood plains and levees",
+          "bullets": [
+            "River overflows its banks",
+            "Speed drops; heavier sediment deposited near the channel",
+            "Repeated floods build levees and a flat flood plain"
+          ],
+          "note": "Meander migration also widens the flood plain."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share results.",
+          "check": {
+            "q": "Where is a river cliff found?",
+            "options": [
+              "Inside of a meander",
+              "Outside of a meander",
+              "In the middle of the channel"
+            ],
+            "answer": 1,
+            "why": "The outside bend has the fastest flow and most erosion."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why levees form next to the channel. (3 marks)",
+          "a": "When the river floods, it loses speed as it leaves the channel (1); the heaviest, coarsest sediment is dropped first, beside the channel (1); repeated floods build these banks up into levees (1)",
+          "mins": 4,
+          "model": "Event: a flood spreads water over the banks.\nChange: the water slows down.\nResult: heavy sediment drops first, right by the channel.\nOver many floods: raised banks (levees)."
+        },
+        {
+          "q": "State where deposition happens on a meander. (1 mark)",
+          "a": "On the inside bend (slip-off slope)",
+          "mins": 1
+        },
+        {
+          "q": "What is lateral erosion? (1 mark)",
+          "a": "Sideways erosion of the river banks",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 'Explain the formation of an oxbow lake.' (4 marks) Use labelled sketches and write in the portal response box.",
+          "a": "Lateral erosion on outer bends narrows the neck; during a flood the river cuts through; flow takes the straighter course; deposition seals the old meander, leaving an oxbow lake",
+          "mins": 8,
+          "model": "Teacher draws sketch 1: a tight meander with arrows on the outer bends labelled 'erosion' and the neck labelled 'narrowing'."
+        },
+        {
+          "q": "Extend: Compare landforms in the upper and lower course. (4 marks)",
+          "a": "Upper: V-shaped valleys, spurs, waterfalls from vertical erosion; lower: meanders, oxbows, flood plains, levees from lateral erosion and deposition; gradient and discharge differ",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Suggest why people build on flood plains despite the risk. (2 marks)",
+          "a": "Flat, fertile land near water and transport (1); pressure for housing (1)",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "An oxbow lake forms when:",
+          "a": "A meander neck is cut through",
+          "mins": 1,
+          "options": [
+            "A meander neck is cut through",
+            "A waterfall retreats"
+          ]
+        },
+        {
+          "q": "Big question: how can a river cut itself off and leave a lake behind?",
+          "a": "Erosion narrows a meander neck; a flood breaks through, and deposition seals off the old loop as an oxbow lake",
+          "mins": 2
+        }
+      ],
+      "homework": "Independent study: find an oxbow lake and levees on an online map of a lowland UK river and screenshot or sketch it.",
+      "send": "SEND: meander cross-section template. EAL: glossary: bend, inside, outside, bank. Stretch: explain helicoidal flow.",
+      "resources": [
+        "Pearson 4GE1 Paper 1 scheme of work (Topic 1); 4GE1 specification 1.2",
+        "Own 4GE1-style exam questions with indicative mark points (portal printable)",
+        "Meander and oxbow sketch sheet (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "meandering river aerial",
+          "alt": "A meandering river from above",
+          "for": "hook"
+        },
+        {
+          "find": "oxbow lake aerial",
+          "alt": "An oxbow lake beside a river",
+          "for": "teach:3"
+        },
+        {
+          "find": "river levee flood plain",
+          "alt": "A flood plain with a levee",
+          "for": "teach:4"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: River environments (1.1 to 1.3)",
+      "n": 55,
+      "title": "Water use, quality and supply (1.3)",
+      "bigQuestion": "Why does the wettest part of the UK not need the most water?",
+      "objectives": [
+        "To understand how water is used, why its quality varies and how supply is managed"
+      ],
+      "successCriteria": [
+        "All: name the three main uses of water",
+        "Most: explain why there are areas of water surplus and deficit",
+        "Some: evaluate ways of increasing water supply"
+      ],
+      "crossCurricular": "Chemistry: water treatment and desalination",
+      "smsc": "Moral: fair and careful use of water",
+      "keywords": [
+        {
+          "term": "water surplus",
+          "def": "more water available than is needed"
+        },
+        {
+          "term": "water deficit",
+          "def": "less water available than is needed"
+        },
+        {
+          "term": "abstraction",
+          "def": "taking water from rivers or underground"
+        },
+        {
+          "term": "reservoir",
+          "def": "an artificial lake used to store water"
+        },
+        {
+          "term": "water quality",
+          "def": "how clean and safe water is"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Who should get water first in a drought: homes, farms or factories?"
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Eat and drink, but do not waste; He does not love the wasteful' (al-A'raf 7:31). Muslims are taught to use water carefully, even when making wudu. In Islam, water is a shared gift that should not be withheld from people in need.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "An oxbow lake forms from a:",
+          "a": "Meander",
+          "mins": 1,
+          "options": [
+            "Meander",
+            "Waterfall"
+          ]
+        },
+        {
+          "q": "Levees are made by:",
+          "a": "Deposition in floods",
+          "mins": 1,
+          "options": [
+            "Deposition in floods",
+            "Vertical erosion"
+          ]
+        },
+        {
+          "q": "A river cliff is on the:",
+          "a": "Outside bend",
+          "mins": 1,
+          "options": [
+            "Outside bend",
+            "Inside bend"
+          ]
+        },
+        {
+          "q": "Name one use of water.",
+          "a": "For example: drinking, farming, industry",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "How water is used",
+          "bullets": [
+            "Agriculture: about 70% of world freshwater withdrawals",
+            "Industry",
+            "Domestic: homes"
+          ],
+          "note": "Richer countries use a larger share for industry and homes; poorer countries more for farming.",
+          "chart": {
+            "kind": "pie",
+            "title": "World freshwater withdrawals (approx.)",
+            "labels": [
+              "Agriculture",
+              "Industry",
+              "Domestic"
+            ],
+            "values": [
+              70,
+              19,
+              11
+            ],
+            "unit": "%"
+          }
+        },
+        {
+          "heading": "Surplus and deficit in the UK",
+          "bullets": [
+            "North and west: more rain, fewer people",
+            "South and east: less rain, more people",
+            "A deficit where demand is highest"
+          ],
+          "note": "Northern and western reservoirs supply some southern cities through transfers.",
+          "compare": {
+            "left": {
+              "title": "North and west",
+              "points": [
+                "high rainfall",
+                "lower population",
+                "surplus"
+              ]
+            },
+            "right": {
+              "title": "South and east",
+              "points": [
+                "lower rainfall",
+                "high population",
+                "deficit"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Water quality",
+          "bullets": [
+            "Pollution from farms: fertiliser runoff",
+            "Sewage and industry",
+            "Treatment makes water safe"
+          ],
+          "note": "Poor water quality spreads disease where treatment is lacking."
+        },
+        {
+          "heading": "Increasing supply",
+          "bullets": [
+            "Reservoirs and dams",
+            "Groundwater (aquifers)",
+            "Water transfer and desalination"
+          ],
+          "note": "Kielder Water in Northumberland is the UK's largest reservoir by capacity.",
+          "table": {
+            "head": [
+              "Method",
+              "Advantage",
+              "Disadvantage"
+            ],
+            "rows": [
+              [
+                "reservoir",
+                "large store; can also make HEP",
+                "floods land; displaces people"
+              ],
+              [
+                "aquifer",
+                "clean, stored underground",
+                "can be over-used"
+              ],
+              [
+                "transfer",
+                "moves surplus to deficit",
+                "costly; affects ecosystems"
+              ],
+              [
+                "desalination",
+                "unlimited sea water",
+                "high energy cost"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share results.",
+          "check": {
+            "q": "Which uses most fresh water worldwide?",
+            "options": [
+              "Homes",
+              "Industry",
+              "Agriculture"
+            ],
+            "answer": 2,
+            "why": "Irrigation for farming is about 70% of withdrawals worldwide."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why south-east England has a water deficit. (3 marks)",
+          "a": "Lower rainfall than the north and west (1); high population density and demand (1); so demand exceeds supply (1)",
+          "mins": 4,
+          "model": "Supply side: less rain falls in the south-east.\nDemand side: many people and businesses.\nPut together: demand is greater than supply: a deficit."
+        },
+        {
+          "q": "Define 'abstraction'. (1 mark)",
+          "a": "Taking water from rivers or groundwater",
+          "mins": 1
+        },
+        {
+          "q": "Suggest one cause of poor water quality. (1 mark)",
+          "a": "For example: fertiliser runoff, sewage or industrial pollution",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 'Evaluate the use of reservoirs to increase water supply.' (8 marks) Plan, then write in the portal response box.",
+          "a": "Advantages: large reliable store, HEP, flood control, recreation; disadvantages: cost, flooding land and homes, ecosystems, evaporation, sediment trapped; substantiated judgement",
+          "mins": 8,
+          "model": "Teacher plans: intro defines reservoirs; P1 advantages with example (Kielder); P2 disadvantages; P3 alternatives; conclusion: worthwhile where managed carefully, with a reason."
+        },
+        {
+          "q": "Extend: Compare desalination and water transfer as ways to meet a deficit. (4 marks)",
+          "a": "Desalination: unlimited, energy-hungry, costly; transfer: uses existing surplus, costly infrastructure and environmental impacts; comparison words used",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: How can individuals reduce water demand? (2 marks)",
+          "a": "Shorter showers, fixing leaks, water meters, reusing water (any two)",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A water surplus means:",
+          "a": "More water than needed",
+          "mins": 1,
+          "options": [
+            "More water than needed",
+            "Less water than needed"
+          ]
+        },
+        {
+          "q": "Big question: why does the wettest part of the UK not need the most water?",
+          "a": "The wettest areas have fewer people; demand is highest in the drier, crowded south-east",
+          "mins": 2
+        }
+      ],
+      "homework": "Independent study: read 4GE1 1.3 case-study notes (river management in a developed and a developing or emerging country) from the portal; caught up in Autumn 2027.",
+      "send": "SEND: table frame for the 8-marker. EAL: glossary: supply, demand, store. Stretch: research the UK's plans for new reservoirs.",
+      "resources": [
+        "Pearson 4GE1 Paper 1 scheme of work (Topic 1); 4GE1 specification 1.3",
+        "Own 4GE1-style exam questions with indicative mark points (portal printable)",
+        "8-mark evaluate planning frame (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Kielder Water reservoir",
+          "alt": "Kielder Water, Northumberland",
+          "for": "teach:4"
+        },
+        {
+          "find": "desalination plant",
+          "alt": "A desalination plant",
+          "for": "keywords"
+        },
+        {
+          "find": "irrigation sprinkler field",
+          "alt": "Crop irrigation",
+          "for": "teach:1"
+        },
+        {
+          "find": "dry reservoir drought",
+          "alt": "A low reservoir in a drought",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: River environments (1.1 to 1.3)",
+      "n": 56,
+      "title": "Causes of river flooding, prediction and prevention (1.3)",
+      "bigQuestion": "Is it better to stop rivers flooding or to stop people living where they flood?",
+      "objectives": [
+        "To understand the causes of river flooding and how floods are predicted and prevented"
+      ],
+      "successCriteria": [
+        "All: name three physical and three human causes of flooding",
+        "Most: describe how floods are predicted",
+        "Some: evaluate hard and soft engineering for preventing floods"
+      ],
+      "crossCurricular": "Citizenship: how government plans for floods",
+      "smsc": "Moral: protecting communities and helping flood victims",
+      "keywords": [
+        {
+          "term": "flood",
+          "def": "when a river overflows its banks onto land that is usually dry"
+        },
+        {
+          "term": "hard engineering",
+          "def": "building structures to control rivers, such as dams and walls"
+        },
+        {
+          "term": "soft engineering",
+          "def": "working with natural processes, such as tree planting and flood plain zoning"
+        },
+        {
+          "term": "flood warning",
+          "def": "an alert that a flood may happen soon"
+        },
+        {
+          "term": "saturated",
+          "def": "soil that is full of water and cannot absorb more"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Should we build a giant wall around every town near a river?"
+      },
+      "islamicLink": {
+        "text": "The Prophet, peace be upon him, taught: tie your camel and then trust in Allah (reported by at-Tirmidhi). Muslims prepare for floods with wise planning and help those affected, while knowing that all events are by Allah's will.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Most fresh water worldwide is used for:",
+          "a": "Agriculture",
+          "mins": 1,
+          "options": [
+            "Agriculture",
+            "Homes"
+          ]
+        },
+        {
+          "q": "South-east England has a water:",
+          "a": "Deficit",
+          "mins": 1,
+          "options": [
+            "Deficit",
+            "Surplus"
+          ]
+        },
+        {
+          "q": "Urban areas make lag time:",
+          "a": "Shorter",
+          "mins": 1,
+          "options": [
+            "Shorter",
+            "Longer"
+          ]
+        },
+        {
+          "q": "What does 'saturated' mean?",
+          "a": "Full of water, unable to absorb more",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Physical causes",
+          "bullets": [
+            "Heavy or prolonged rain",
+            "Snowmelt",
+            "Saturated or frozen ground; steep slopes; impermeable rock"
+          ],
+          "note": "Boscastle, Cornwall, 2004: intense rain on steep slopes caused a flash flood.",
+          "diagram": {
+            "centre": "causes of flooding",
+            "items": [
+              "heavy, long rainfall",
+              "snowmelt",
+              "saturated ground",
+              "steep slopes",
+              "urbanisation",
+              "deforestation",
+              "climate change"
+            ]
+          }
+        },
+        {
+          "heading": "Human causes",
+          "bullets": [
+            "Urbanisation: impermeable surfaces",
+            "Deforestation: less interception",
+            "Climate change: heavier rain"
+          ],
+          "note": "Link back to the storm hydrograph: human changes make rivers flashier."
+        },
+        {
+          "heading": "Prediction",
+          "bullets": [
+            "Rain gauges and weather radar",
+            "River level gauges",
+            "Computer models and warnings"
+          ],
+          "note": "In England, the Environment Agency issues flood alerts and warnings."
+        },
+        {
+          "heading": "Prevention",
+          "bullets": [
+            "Hard and soft engineering"
+          ],
+          "note": "Discuss cost and effects. Example: the Jubilee River, a flood relief channel opened in 2002 to protect Maidenhead and Windsor.",
+          "compare": {
+            "left": {
+              "title": "Hard engineering",
+              "points": [
+                "dams and reservoirs",
+                "embankments and flood walls",
+                "flood relief channels",
+                "costly; can move the problem downstream"
+              ]
+            },
+            "right": {
+              "title": "Soft engineering",
+              "points": [
+                "tree planting",
+                "flood plain zoning",
+                "washlands",
+                "warnings; cheaper; works with nature"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Share results.",
+          "check": {
+            "q": "Which is soft engineering?",
+            "options": [
+              "A flood wall",
+              "Planting trees in the drainage basin",
+              "A dam"
+            ],
+            "answer": 1,
+            "why": "Trees increase interception and slow runoff, working with nature."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain how urbanisation increases flood risk. (3 marks)",
+          "a": "Concrete and tarmac are impermeable (1), so less infiltration and more surface runoff (1); drains carry water quickly to the river, raising peak discharge (1)",
+          "mins": 4,
+          "model": "Surface change: impermeable concrete.\nProcess change: less infiltration, more runoff.\nRiver change: water arrives faster, so a higher peak."
+        },
+        {
+          "q": "State two ways floods are predicted. (2 marks)",
+          "a": "Two of: weather forecasts and radar, rain gauges, river level gauges, computer models",
+          "mins": 2
+        },
+        {
+          "q": "Give one disadvantage of hard engineering. (1 mark)",
+          "a": "For example: expensive, or can increase flooding downstream",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 'Assess the effectiveness of hard and soft engineering in reducing flood risk.' (8 marks) Plan, then write in the portal response box.",
+          "a": "Hard: immediate, strong protection but costly and can shift risk; soft: cheaper, sustainable but slower and needs land; examples (Jubilee River); judgement on which is more effective and where",
+          "mins": 8,
+          "model": "Teacher plans: intro; P1 hard engineering strengths and limits with an example; P2 soft engineering strengths and limits; P3 combined approaches; conclusion with a justified judgement."
+        },
+        {
+          "q": "Extend: Suggest why flood risk may increase in the future. (3 marks)",
+          "a": "Climate change brings heavier rainfall (1); more building on flood plains (1); more impermeable surfaces (1)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Why is flood plain zoning a sustainable strategy? (2 marks)",
+          "a": "It keeps homes off high-risk land (1), so less damage and no costly defences (1)",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A flood relief channel is:",
+          "a": "Hard engineering",
+          "mins": 1,
+          "options": [
+            "Hard engineering",
+            "Soft engineering"
+          ]
+        },
+        {
+          "q": "Big question: is it better to stop rivers flooding or to stop people living where they flood?",
+          "a": "A balanced judgement: combine defences where many people live with zoning and soft engineering elsewhere",
+          "mins": 2
+        }
+      ],
+      "homework": "Check whether your home or a place you know is in a flood risk zone on the Environment Agency (or national) flood map.",
+      "send": "SEND: causes sort cards and an 8-mark frame. EAL: glossary: flood, wall, warning. Stretch: research the Boscastle flood of 16 August 2004.",
+      "resources": [
+        "Pearson 4GE1 Paper 1 scheme of work (Topic 1); 4GE1 specification 1.3; portal geography y10 lesson 29 (AQA, Jubilee River) adapted",
+        "Own 4GE1-style exam questions with indicative mark points (portal printable)",
+        "8-mark assess planning frame (portal printable)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Jubilee River Maidenhead",
+          "alt": "The Jubilee River flood relief channel",
+          "for": "teach:4"
+        },
+        {
+          "find": "flood defence wall river",
+          "alt": "A river flood wall",
+          "for": "keywords"
+        },
+        {
+          "find": "Boscastle harbour",
+          "alt": "Boscastle, Cornwall",
+          "for": "teach:1"
+        },
+        {
+          "find": "flooded fields river",
+          "alt": "Flooded fields beside a river",
+          "for": "hook"
+        }
+      ]
     }
   ]
 }
