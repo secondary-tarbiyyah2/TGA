@@ -48,6 +48,7 @@ export function PushOptIn({ variant = "card" }: { variant?: "card" | "setting" }
     setState(next);
     setBusy(false);
     if (next === "on") setNote((await sendTestPush()) ? "Done. We sent a test notification to this device." : "Done. Notifications are on for this device.");
+    else if (next === "off") setNote("Couldn't turn notifications on just now. Please try again later.");
     else if (next === "denied") setNote("Notifications are blocked for this site. Allow them in your browser or phone settings, then try again.");
   };
   const turnOff = async () => {
