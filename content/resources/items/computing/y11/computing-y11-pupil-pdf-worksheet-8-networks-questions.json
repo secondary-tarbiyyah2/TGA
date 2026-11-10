@@ -1,0 +1,62 @@
+{
+ "id": "computing-y11-pupil-pdf-worksheet-8-networks-questions",
+ "title": "Networks, protocols and the TCP/IP model: 8 questions",
+ "type": "revision set",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y11",
+ "board": "Edexcel IGCSE 4CP0",
+ "unit": "Spring 1: Revision cycle 1",
+ "lessons": [
+  32
+ ],
+ "source": "Written for computing/y11 lesson 32 (Pupil PDF worksheet: 8 networks questions)",
+ "intro": "Lesson 32. Time = file size in bits ÷ transmission rate in bits per second.",
+ "time": "15 minutes",
+ "blocks": [
+  {
+   "questions": [
+    {
+     "q": "Give one difference between a LAN and a WAN.",
+     "a": "A LAN covers a small area (one site) and the organisation owns the cables; a WAN covers a large area and uses links owned by others",
+     "marks": 1
+    },
+    {
+     "q": "A 24,000,000-bit file is sent at 8,000,000 bits per second. Calculate the time taken.",
+     "a": "24,000,000 ÷ 8,000,000 = 3 seconds",
+     "marks": 2
+    },
+    {
+     "q": "A 2,000,000-byte file is sent over a 4,000,000 bits per second link. Calculate the time taken.",
+     "a": "2,000,000 × 8 = 16,000,000 bits (M1); ÷ 4,000,000 = 4 seconds (A1)",
+     "marks": 2
+    },
+    {
+     "q": "Name the four layers of the TCP/IP model in order from the top.",
+     "a": "Application, transport, internet, link",
+     "marks": 1
+    },
+    {
+     "q": "Which protocol is used to send email?",
+     "a": "SMTP",
+     "marks": 1
+    },
+    {
+     "q": "Describe what TCP does.",
+     "a": "Splits data into numbered packets, reassembles them in order at the other end, checks for errors and asks for missing packets to be resent",
+     "marks": 2
+    },
+    {
+     "q": "Give one advantage of a star topology.",
+     "a": "If one cable fails only that device is affected; easy to add devices",
+     "marks": 1
+    },
+    {
+     "q": "What is an IP address used for?",
+     "a": "To identify a device on a network so packets can be routed to it",
+     "marks": 1
+    }
+   ]
+  }
+ ]
+}

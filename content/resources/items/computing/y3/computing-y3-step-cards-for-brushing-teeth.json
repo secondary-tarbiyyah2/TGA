@@ -1,0 +1,91 @@
+{
+ "id": "computing-y3-step-cards-for-brushing-teeth",
+ "title": "Step cards for 'brushing teeth'",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y3",
+ "unit": "Spring 1: Programming sequences and online safety",
+ "lessons": [
+  1
+ ],
+ "source": "Seeded from computing/y3 lesson 1 (Step cards for 'brushing teeth' (pupil PDF))",
+ "intro": "Lesson 1: Algorithms: precise steps and spotting mistakes. To understand that an algorithm is a set of precise steps in the right order",
+ "blocks": [
+  {
+   "h": "Order matters"
+  },
+  {
+   "cards": [
+    "Put toothpaste on the brush",
+    "Pick up the toothbrush",
+    "Brush every tooth",
+    "Rinse the brush"
+   ],
+   "cols": 3,
+   "title": "Sort into: 1st / 2nd / 3rd / 4th",
+   "task": "sort them into the columns: 1st, 2nd, 3rd, 4th.",
+   "answer": "1st: Pick up the toothbrush. 2nd: Put toothpaste on the brush. 3rd: Brush every tooth. 4th: Rinse the brush"
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Write the steps to move from A1 to A4 on the grid.",
+     "a": "Forward 3 squares.",
+     "model": "Count the squares between A1 and A4: there are 3 moves. Step: forward 3 squares. Test it with your finger."
+    },
+    {
+     "q": "Spot the bug: to reach B2 from A1 Sam wrote 'forward 1, turn left, forward 1'. What is wrong?",
+     "a": "He should turn right, not left (facing up, B is to the right)."
+    },
+    {
+     "q": "Put in order: 'eat', 'wash hands', 'say Bismillah', 'sit down'.",
+     "a": "Wash hands, sit down, say Bismillah, eat."
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: On your paper grid, write an algorithm to move the counter from A1 to D4. Number each step.",
+     "a": "For example: forward 3, turn right, forward 3.",
+     "model": "Teacher writes the first two steps aloud: '1. Forward 3 squares. 2. Turn right.' and checks with a finger on the grid."
+    },
+    {
+     "q": "Extend: Write an algorithm for a grown-up at home to make a cup of water, in at least 5 steps.",
+     "a": "For example: take a cup, go to the tap, turn the tap on, fill the cup, turn the tap off."
+    },
+    {
+     "q": "Stretch: Write an algorithm with one bug in it. Swap with the screen: can the class find the bug?",
+     "a": "Any algorithm with one deliberate error, and the fix explained."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "An algorithm is... A) a computer B) a set of steps in order C) a game",
+     "a": "B) a set of steps in order",
+     "options": [
+      "A computer",
+      "A set of steps in order",
+      "A game"
+     ]
+    },
+    {
+     "q": "Why must an algorithm be precise?",
+     "a": "So it can only be followed one way and gives the right result."
+    }
+   ]
+  }
+ ]
+}

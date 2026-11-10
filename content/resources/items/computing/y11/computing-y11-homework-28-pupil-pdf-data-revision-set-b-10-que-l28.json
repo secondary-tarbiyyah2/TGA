@@ -1,0 +1,72 @@
+{
+ "id": "computing-y11-homework-28-pupil-pdf-data-revision-set-b-10-que-l28",
+ "title": "Homework: data representation set B (10 questions)",
+ "type": "revision set",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y11",
+ "board": "Edexcel IGCSE 4CP0",
+ "unit": "Spring 1: Revision cycle 1",
+ "lessons": [
+  28
+ ],
+ "source": "Written for computing/y11 lesson 28 (Pupil PDF data revision set B (10 questions) with self-marking.)",
+ "intro": "Lesson 28 homework. Mark it yourself with the mark scheme. Use 1 KB = 1,024 bytes and 1 byte = 8 bits.",
+ "time": "20 minutes",
+ "blocks": [
+  {
+   "questions": [
+    {
+     "q": "Convert 01011011 to denary.",
+     "a": "64 + 16 + 8 + 2 + 1 = 91",
+     "marks": 1
+    },
+    {
+     "q": "Convert 200 to 8-bit binary.",
+     "a": "11001000",
+     "marks": 1
+    },
+    {
+     "q": "Convert the hexadecimal number A7 to denary.",
+     "a": "10 × 16 + 7 = 167",
+     "marks": 1
+    },
+    {
+     "q": "Convert 255 to hexadecimal.",
+     "a": "FF",
+     "marks": 1
+    },
+    {
+     "q": "Write −100 as an 8-bit two's complement binary number.",
+     "a": "100 = 01100100; invert: 10011011; add 1: 10011100",
+     "marks": 2
+    },
+    {
+     "q": "What denary value does the two's complement number 10000001 represent?",
+     "a": "−128 + 1 = −127",
+     "marks": 1
+    },
+    {
+     "q": "What is the range of numbers an 8-bit two's complement number can represent?",
+     "a": "−128 to 127",
+     "marks": 1
+    },
+    {
+     "q": "How many different characters can 7-bit ASCII represent?",
+     "a": "2⁷ = 128",
+     "marks": 1
+    },
+    {
+     "q": "An image is 1,024 × 768 pixels with a colour depth of 8 bits. Calculate its size in KB.",
+     "a": "1,024 × 768 × 8 ÷ 8 = 786,432 bytes (M1); ÷ 1,024 = 768 KB (A1)",
+     "marks": 2
+    },
+    {
+     "q": "How many bits are there in 2 KB?",
+     "a": "2 × 1,024 × 8 = 16,384 bits",
+     "marks": 1
+    }
+   ]
+  }
+ ]
+}

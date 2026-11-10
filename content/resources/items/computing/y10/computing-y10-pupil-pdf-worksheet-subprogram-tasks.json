@@ -1,0 +1,80 @@
+{
+ "id": "computing-y10-pupil-pdf-worksheet-subprogram-tasks",
+ "title": "Subprogram tasks",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y10",
+ "board": "Edexcel IGCSE 4CP0",
+ "unit": "Spring 1: Programming 2: data structures, files and subprograms",
+ "lessons": [
+  33
+ ],
+ "source": "Seeded from computing/y10 lesson 33 (Pupil PDF worksheet: subprogram tasks)",
+ "intro": "Lesson 33: Subprograms: functions, procedures and parameters. To understand how functions and procedures with parameters make programs shorter, clearer and reusable",
+ "blocks": [
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Write a function vat(price) that returns the price plus 20% VAT. Call it with 50.",
+     "a": "def vat(price): return price * 1.2 → vat(50) returns 60.0",
+     "model": "I do: def vat(price): then return price * 1.2. Main program: total = vat(50); print(total) shows 60.0.",
+     "lines": 6
+    },
+    {
+     "q": "Parameters are ...",
+     "a": "values passed into a subprogram",
+     "options": [
+      "values passed into a subprogram",
+      "loops",
+      "outputs"
+     ]
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Pupil PDF: write a function average(numbers) that returns the mean of a list, and a procedure report(name, numbers) that prints the name and average. Test with [62, 75, 48, 90].",
+     "a": "average returns 68.75; report prints the name and 68.75.",
+     "model": "The teacher writes the header: def average(numbers): total = 0; for n in numbers: total = total + n; return total / len(numbers)",
+     "lines": 6
+    },
+    {
+     "q": "Extend: give two benefits of subprograms.",
+     "a": "Code reuse; easier testing and debugging; clearer structure."
+    },
+    {
+     "q": "Stretch: what is printed? def f(x): x = x + 1; return x then a = 5; f(a); print(a)",
+     "a": "5: the function's change is local and the return value was not stored."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "A variable created inside a function is ...",
+     "a": "local",
+     "options": [
+      "local",
+      "global",
+      "constant"
+     ]
+    },
+    {
+     "q": "Back to our ponder: If you needed the same ten lines of code in five places, what could go wrong if you copied them each time?",
+     "a": "A fix must be made five times and mistakes creep in; a subprogram is written once and called many times."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,164 @@
+{
+ "id": "computing-y8-truth-table-worksheet",
+ "title": "Truth table worksheet",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y8",
+ "unit": "Spring 1: Binary, safety and Boolean logic",
+ "lessons": [
+  7
+ ],
+ "source": "Seeded from computing/y8 lesson 7 (Truth table worksheet (pupil PDF))",
+ "intro": "Lesson 7: Logic gates and truth tables. To understand how AND, OR and NOT gates process binary inputs, shown in truth tables",
+ "blocks": [
+  {
+   "h": "AND gate"
+  },
+  {
+   "table": {
+    "head": [
+     "A",
+     "B",
+     "A AND B"
+    ],
+    "rows": [
+     [
+      "0",
+      "0",
+      "0"
+     ],
+     [
+      "0",
+      "1",
+      "0"
+     ],
+     [
+      "1",
+      "0",
+      "0"
+     ],
+     [
+      "1",
+      "1",
+      "1"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "OR gate"
+  },
+  {
+   "table": {
+    "head": [
+     "A",
+     "B",
+     "A OR B"
+    ],
+    "rows": [
+     [
+      "0",
+      "0",
+      "0"
+     ],
+     [
+      "0",
+      "1",
+      "1"
+     ],
+     [
+      "1",
+      "0",
+      "1"
+     ],
+     [
+      "1",
+      "1",
+      "1"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "NOT gate"
+  },
+  {
+   "table": {
+    "head": [
+     "A",
+     "NOT A"
+    ],
+    "rows": [
+     [
+      "0",
+      "1"
+     ],
+     [
+      "1",
+      "0"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Complete the AND truth table from memory.",
+     "a": "00:0, 01:0, 10:0, 11:1",
+     "model": "Teacher lists the four input rows in binary order 00, 01, 10, 11 and applies 'both must be 1'."
+    },
+    {
+     "q": "Which gate: 'the alarm sounds if the window OR the door is opened'?",
+     "a": "OR"
+    },
+    {
+     "q": "NOT gate input 1. Output?",
+     "a": "0"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: Complete the truth tables for AND, OR and NOT on the worksheet and draw each symbol.",
+     "a": "Tables as on the slides; correct symbols.",
+     "model": "Teacher draws the AND symbol and fills its first row."
+    },
+    {
+     "q": "Extend: Build each gate in the CircuitVerse simulator with two switches and a light. Check every row.",
+     "a": "Each gate's light matches its truth table."
+    },
+    {
+     "q": "Stretch: A vending machine gives a drink if a coin is inserted AND a button is pressed. Write its truth table and say which gate.",
+     "a": "AND: output 1 only for coin 1, button 1."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "OR gate, A = 0, B = 0. Output? A) 0 B) 1",
+     "a": "A) 0",
+     "options": [
+      "0",
+      "1"
+     ]
+    },
+    {
+     "q": "Big question: which gate does a car's interior light use, and why?",
+     "a": "OR: the light comes on if either door is open."
+    }
+   ]
+  }
+ ]
+}

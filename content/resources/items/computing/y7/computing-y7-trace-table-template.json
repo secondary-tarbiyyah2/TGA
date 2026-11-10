@@ -1,0 +1,113 @@
+{
+ "id": "computing-y7-trace-table-template",
+ "title": "Trace table template",
+ "type": "printable graph/grid",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y7",
+ "unit": "Spring 1: Think like a computer: algorithms",
+ "lessons": [
+  7
+ ],
+ "source": "Seeded from computing/y7 lesson 7 (Trace table template (pupil PDF))",
+ "intro": "Lesson 7: Sequence, selection and iteration. To understand how sequence, selection and iteration are the building blocks of every algorithm",
+ "blocks": [
+  {
+   "h": "Model: trace it"
+  },
+  {
+   "table": {
+    "head": [
+     "i",
+     "total"
+    ],
+    "rows": [
+     [
+      "start",
+      "0"
+     ],
+     [
+      "1",
+      "1"
+     ],
+     [
+      "2",
+      "3"
+     ],
+     [
+      "3",
+      "6"
+     ],
+     [
+      "4",
+      "10"
+     ],
+     [
+      "5",
+      "15"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Label each line: 'Fill kettle. IF kettle is full THEN switch on. Repeat: check if boiled.'",
+     "a": "Sequence (fill), selection (IF full), iteration (repeat check).",
+     "model": "Teacher labels line by line: one action in order = sequence; IF = selection; repeat = iteration."
+    },
+    {
+     "q": "What does this output? FOR i = 1 TO 3: OUTPUT i * 2",
+     "a": "2, 4, 6"
+    },
+    {
+     "q": "Write an IF... THEN... ELSE for a prayer reminder: if time is 13:00 or later and Dhuhr not prayed, remind.",
+     "a": "IF time >= 13:00 AND prayed = false THEN OUTPUT 'Pray Dhuhr' ELSE OUTPUT 'Well done'."
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: Write an algorithm for a 'guess the number' game that uses sequence, selection and iteration. Label each.",
+     "a": "Set secret; REPEAT input guess; IF guess = secret THEN 'Correct' ELSE IF guess < secret 'Higher' ELSE 'Lower'; UNTIL guess = secret.",
+     "model": "Teacher writes the first two lines: 'secret = 7' (sequence) and 'REPEAT' (iteration), naming each."
+    },
+    {
+     "q": "Extend: Trace: total = 0; FOR i = 2 TO 8 STEP 2: total = total + i. Output?",
+     "a": "2 + 4 + 6 + 8 = 20"
+    },
+    {
+     "q": "Stretch: Explain the difference between a FOR loop and a WHILE loop, with an example of each.",
+     "a": "FOR repeats a set number of times (count to 10); WHILE repeats until a condition changes (while not boiled)."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "IF... THEN... ELSE is... A) sequence B) selection C) iteration",
+     "a": "B) selection",
+     "options": [
+      "Sequence",
+      "Selection",
+      "Iteration"
+     ]
+    },
+    {
+     "q": "Big question: name the three building blocks of every algorithm.",
+     "a": "Sequence, selection and iteration."
+    }
+   ]
+  }
+ ]
+}

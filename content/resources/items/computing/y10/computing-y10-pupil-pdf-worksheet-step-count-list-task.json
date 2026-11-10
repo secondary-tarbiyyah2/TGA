@@ -1,0 +1,79 @@
+{
+ "id": "computing-y10-pupil-pdf-worksheet-step-count-list-task",
+ "title": "Step-count list task",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y10",
+ "board": "Edexcel IGCSE 4CP0",
+ "unit": "Spring 1: Programming 2: data structures, files and subprograms",
+ "lessons": [
+  8
+ ],
+ "source": "Seeded from computing/y10 lesson 8 (Pupil PDF worksheet: step-count list task)",
+ "intro": "Lesson 8: Lists and arrays: storing and searching many values. To understand how lists store many values under one name and how to loop through them to search and total",
+ "blocks": [
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Write code to find the average of marks = [62, 75, 48, 90].",
+     "a": "total = 0; for m in marks: total += m; print(total / len(marks)) → 68.75",
+     "model": "I do: total = sum by looping: 62 + 75 + 48 + 90 = 275. Average = 275 / len(marks) = 275 / 4 = 68.75."
+    },
+    {
+     "q": "len([3, 8, 1]) = ?",
+     "a": "3",
+     "options": [
+      "3",
+      "2",
+      "12"
+     ]
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Pupil PDF: a list of 8 daily step counts. Write a program that outputs the total, the highest and how many days were over 8,000.",
+     "a": "Loop with total, highest, and a counter for values > 8000; answers for the given data on the sheet.",
+     "model": "The teacher writes the loop header and the counter: count = 0; for s in steps: if s > 8000: count = count + 1",
+     "lines": 6
+    },
+    {
+     "q": "Extend: change the linear search to print 'Not found' when found is still -1.",
+     "a": "if found == -1: print('Not found') else: print(found)"
+    },
+    {
+     "q": "Stretch: why is linear search slow on a list of a million names?",
+     "a": "It may check every item: up to a million comparisons."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Lists in Python are ...",
+     "a": "zero-based",
+     "options": [
+      "zero-based",
+      "one-based",
+      "fixed length"
+     ]
+    },
+    {
+     "q": "Back to our ponder: A teacher records 15 test marks. Would you rather have 15 variables or one list? Why?",
+     "a": "One list: easier to store, loop through, sort and search."
+    }
+   ]
+  }
+ ]
+}

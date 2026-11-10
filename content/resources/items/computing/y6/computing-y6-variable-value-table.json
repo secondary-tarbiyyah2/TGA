@@ -1,0 +1,110 @@
+{
+ "id": "computing-y6-variable-value-table",
+ "title": "Variable value table",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y6",
+ "unit": "Spring 1: Variables in games and e-bullying",
+ "lessons": [
+  5
+ ],
+ "source": "Seeded from computing/y6 lesson 5 (Variable value table (pupil PDF))",
+ "intro": "Lesson 5: What is a variable? Score and lives. To understand that a variable stores a value that can change while a program runs",
+ "blocks": [
+  {
+   "h": "A labelled box"
+  },
+  {
+   "table": {
+    "head": [
+     "Event",
+     "score",
+     "lives"
+    ],
+    "rows": [
+     [
+      "Game starts",
+      "0",
+      "3"
+     ],
+     [
+      "Catch an apple",
+      "1",
+      "3"
+     ],
+     [
+      "Catch an apple",
+      "2",
+      "3"
+     ],
+     [
+      "Miss an apple",
+      "2",
+      "2"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Start: score 0. Catch, catch, catch. What is score?",
+     "a": "3",
+     "model": "Teacher writes the value after each event: 0, 1, 2, 3."
+    },
+    {
+     "q": "Start: lives 3. Miss, miss. What is lives?",
+     "a": "1"
+    },
+    {
+     "q": "What is the difference between 'set score to 0' and 'change score by 1'?",
+     "a": "Set replaces the value; change adds to it."
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: Make a new Scratch project with a Bowl sprite and an Apple sprite (delete the cat). Create the variables score and lives and set them on green flag.",
+     "a": "set score to 0, set lives to 3 on green flag.",
+     "model": "Teacher makes 'score', sets it to 0, then pupils make 'lives'."
+    },
+    {
+     "q": "Extend: Fill a value table for 6 events of your own (catch or miss).",
+     "a": "Any table where score goes up by 1 on a catch and lives down by 1 on a miss."
+    },
+    {
+     "q": "Stretch: What should happen when lives reaches 0? Write it as an if... then rule.",
+     "a": "IF lives = 0 THEN say 'Game over' and stop all."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "A variable... A) never changes B) stores a value that can change C) is a sprite",
+     "a": "B) stores a value that can change",
+     "options": [
+      "Never changes",
+      "Stores a value that can change",
+      "Is a sprite"
+     ]
+    },
+    {
+     "q": "Name two variables a game might use.",
+     "a": "For example: score, lives, time."
+    }
+   ]
+  }
+ ]
+}

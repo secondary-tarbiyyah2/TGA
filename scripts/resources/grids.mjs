@@ -473,9 +473,12 @@ function worldmap({ region = "world", height = 150, graticule = 0, lines = [], l
   const named = { equator: [0, "Equator"], "tropic-cancer": [23.44, "Tropic of Cancer"], "tropic-capricorn": [-23.44, "Tropic of Capricorn"], "arctic-circle": [66.56, "Arctic Circle"], "antarctic-circle": [-66.56, "Antarctic Circle"] };
   for (const l of lines) if (named[l]) latLine(named[l][0], named[l][1], l !== "equator");
   s += "</g>";
-  for (const [lon, lat, label] of points) {
+  // A point is [lon, lat, label, side?]: side "left", "above" or "below" moves the label off a close neighbour.
+  for (const [lon, lat, label, side] of points) {
     const p = project([lon, lat]);
-    if (p) s += `<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="1" fill="#B8892B"/>` + (label ? txt(p[0] + 1.6, p[1] + 1, label, { size: 2.8, anchor: "start" }) : "");
+    if (!p) continue;
+    const at = side === "left" ? [p[0] - 1.6, p[1] + 1, "end"] : side === "above" ? [p[0], p[1] - 1.8, "middle"] : side === "below" ? [p[0], p[1] + 3.6, "middle"] : [p[0] + 1.6, p[1] + 1, "start"];
+    s += `<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="1" fill="#B8892B"/>` + (label ? txt(at[0], at[1], label, { size: 2.8, anchor: at[2] }) : "");
   }
   for (const [lon, lat, label] of labels) {
     const p = project([lon, lat]);

@@ -1,0 +1,94 @@
+{
+ "id": "computing-y7-faulty-algorithm-worksheet-and-test-plan-templat",
+ "title": "Faulty algorithm worksheet and test plan template",
+ "type": "printable graph/grid",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y7",
+ "unit": "Spring 1: Think like a computer: algorithms",
+ "lessons": [
+  9
+ ],
+ "source": "Seeded from computing/y7 lesson 9 (Faulty algorithm worksheet and test plan template (pupil PDF))",
+ "intro": "Lesson 9: Testing and debugging algorithms; unit quiz. To understand how testing with normal, boundary and invalid data finds errors in an algorithm",
+ "blocks": [
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "IF score > 50 THEN OUTPUT 'Pass' ELSE OUTPUT 'Fail'. Test with 50.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Expected: Pass (50 and above passes)"
+     },
+     {
+      "label": "Step 2",
+      "text": "Trace: is 50 > 50? No"
+     },
+     {
+      "label": "Step 3",
+      "text": "Actual: Fail, so there is a logic error"
+     },
+     {
+      "label": "Step 4",
+      "text": "Fix: IF score >= 50; re-test 50 gives Pass"
+     },
+     {
+      "label": "Answer",
+      "text": "Change > to >="
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Give normal, boundary and invalid data for 'enter a month number 1 to 12'.",
+     "a": "Normal 6; boundary 1 and 12 (and 0, 13); invalid 'May' or -3.",
+     "model": "Teacher writes the range on a number line and marks the edges 1 and 12, then picks a middle value and a nonsense value."
+    },
+    {
+     "q": "Find the bug: 'FOR i = 1 TO 10: OUTPUT i' should output 1 to 9.",
+     "a": "The loop runs to 10; change to FOR i = 1 TO 9."
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: Write a test plan (4 tests) for the password-lock flowchart from last lesson.",
+     "a": "Correct first time; wrong then right; 3 wrong (locked); empty password.",
+     "model": "Teacher writes test 1: 'Input correct password first time; expected: Welcome'.",
+     "lines": 6
+    },
+    {
+     "q": "Extend: Trace the faulty algorithm on the worksheet and fix its logic error.",
+     "a": "The counter is never increased, so it never locks; add tries = tries + 1."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Unit quiz (portal secure test mode, 10 questions): algorithms, decomposition, abstraction, building blocks, flowcharts, testing.",
+     "a": "Teacher marks in the portal."
+    },
+    {
+     "q": "Big question: which score would you test first for a pass mark of 50, and why?",
+     "a": "50, because it is the boundary where > and >= give different results."
+    }
+   ]
+  }
+ ]
+}

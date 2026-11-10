@@ -1,0 +1,76 @@
+{
+ "id": "computing-y9-storage-scenarios-worksheet",
+ "title": "Storage scenarios worksheet",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y9",
+ "unit": "Spring 1: Computer systems and architecture",
+ "lessons": [
+  7
+ ],
+ "source": "Seeded from computing/y9 lesson 7 (Storage scenarios worksheet (pupil PDF))",
+ "intro": "Lesson 7: Memory and storage: RAM, ROM and secondary storage. To understand the different roles of RAM, ROM and secondary storage",
+ "blocks": [
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Why is the boot program stored in ROM, not RAM?",
+     "a": "ROM is non-volatile, so the start-up instructions are there when the power comes on.",
+     "model": "Teacher reasons: when the computer starts, RAM is empty because it is volatile; the CPU needs instructions at once, so they must be in non-volatile ROM."
+    },
+    {
+     "q": "Which storage for a phone: HDD or SSD? Why?",
+     "a": "SSD: small, fast, no moving parts so it survives drops."
+    },
+    {
+     "q": "Give one advantage of cloud storage.",
+     "a": "Access from any device; backed up off-site."
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: Choose storage for: a photographer's 4 TB archive; a pupil carrying homework; a school laptop. Justify each in the portal response box.",
+     "a": "HDD (cheap per GB, large); USB flash drive or OneDrive (portable); SSD (fast, robust).",
+     "model": "Teacher justifies the photographer: large capacity needed, cost matters more than speed, so HDD.",
+     "lines": 6
+    },
+    {
+     "q": "Extend: Explain why adding RAM can make a computer faster.",
+     "a": "More programs and data fit in RAM, so less is swapped to slower secondary storage (virtual memory)."
+    },
+    {
+     "q": "Stretch: Compare SSD and HDD on speed, durability, capacity and cost.",
+     "a": "SSD faster and more durable; HDD larger and cheaper per gigabyte."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "ROM is... A) volatile B) non-volatile",
+     "a": "B) non-volatile",
+     "options": [
+      "Volatile",
+      "Non-volatile"
+     ]
+    },
+    {
+     "q": "Big question: why is unsaved work lost in a power cut?",
+     "a": "It is held in RAM, which is volatile."
+    }
+   ]
+  }
+ ]
+}

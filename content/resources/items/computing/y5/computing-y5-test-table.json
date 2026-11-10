@@ -1,0 +1,77 @@
+{
+ "id": "computing-y5-test-table",
+ "title": "Test table",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y5",
+ "unit": "Spring 1: Selection in physical computing and Secure Your Secrets",
+ "lessons": [
+  8
+ ],
+ "source": "Seeded from computing/y5 lesson 8 (Test table (pupil PDF))",
+ "intro": "Lesson 8: Selection with sensors. To understand how a sensor reading and a condition decide what a device does",
+ "blocks": [
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Build the night light and test with the slider.",
+     "a": "forever: if light level < 50 then show icon else clear screen.",
+     "model": "Teacher builds it, then tests at 10 (icon shows), at 50 (clear, as 50 is not less than 50), and at 200 (clear)."
+    },
+    {
+     "q": "At light level 49, what happens?",
+     "a": "The icon shows (49 < 50)."
+    },
+    {
+     "q": "Why is 'forever' needed?",
+     "a": "So the micro:bit keeps checking the light, not just once."
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: Make a temperature warning: if temperature > 25 show a sun icon, else show a tick. Test with the slider.",
+     "a": "forever: if temperature > 25 then show icon (sun-like) else show icon (tick).",
+     "model": "Teacher swaps the light block for the temperature block in the night light script."
+    },
+    {
+     "q": "Extend: Write a test table: three temperatures, what you expect, what happened.",
+     "a": "For example 20: tick, tick; 26: sun, sun; 25: tick, tick.",
+     "lines": 6
+    },
+    {
+     "q": "Stretch: Explain why 25 is a sensible threshold for a 'too warm' room.",
+     "a": "Most rooms feel comfortable around 18 to 22 °C; above about 25 °C feels too warm."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "A street light uses which sensor? A) temperature B) light C) button",
+     "a": "B) light",
+     "options": [
+      "Temperature",
+      "Light",
+      "Button"
+     ]
+    },
+    {
+     "q": "What is a threshold?",
+     "a": "The value where the decision changes."
+    }
+   ]
+  }
+ ]
+}

@@ -43,7 +43,11 @@ const AR = /[؀-ۿ]/;
 /** Text with any Arabic run wrapped so it gets the Arabic font and right-to-left order. */
 const t = (s) =>
   esc(s)
-    .replace(/([؀-ۿݐ-ݿࢠ-ࣿﭐ-﷿ﹰ-﻿][؀-ۿݐ-ݿࢠ-ࣿﭐ-﷿ﹰ-﻿\sً-ْـ،؛؟]*)/g, '<span class="ar" dir="rtl" lang="ar">$1</span>')
+    .replace(/([؀-ۿݐ-ݿࢠ-ࣿﭐ-﷿ﹰ-﻿][؀-ۿݐ-ݿࢠ-ࣿﭐ-﷿ﹰ-﻿\sً-ْـ،؛؟]*)/g, (m) => {
+      // Spaces after the run stay outside it, or they jump to the wrong side of the Arabic.
+      const trail = /\s*$/.exec(m)[0];
+      return `<span class="ar" dir="rtl" lang="ar">${m.slice(0, m.length - trail.length)}</span>${trail}`;
+    })
     .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
     .replace(/\uFDFA/g, '<span class="sws">\uFDFA</span>')
     .replace(/\n/g, "<br>");

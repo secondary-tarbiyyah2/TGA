@@ -1,0 +1,109 @@
+{
+ "id": "computing-y10-pupil-pdf-worksheet-sign-up-validation-task-and",
+ "title": "Sign-up validation task and test table",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y10",
+ "board": "Edexcel IGCSE 4CP0",
+ "unit": "Spring 1: Programming 2: data structures, files and subprograms",
+ "lessons": [
+  31
+ ],
+ "source": "Seeded from computing/y10 lesson 31 (Pupil PDF worksheet: sign-up validation task and test table)",
+ "intro": "Lesson 31: Validation and authentication. To understand how validation checks and authentication make programs robust and secure",
+ "blocks": [
+  {
+   "h": "Validation checks (6.4.3)"
+  },
+  {
+   "table": {
+    "head": [
+     "Check",
+     "Example"
+    ],
+    "rows": [
+     [
+      "Presence",
+      "Name is not empty"
+     ],
+     [
+      "Length",
+      "Password at least 8 characters"
+     ],
+     [
+      "Range",
+      "Age between 11 and 18"
+     ],
+     [
+      "Pattern (format)",
+      "Postcode or email has the right shape"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Write a presence check that keeps asking until a name is entered.",
+     "a": "name = input('Name: '); while name == '': name = input('Name: ')",
+     "model": "I do: name = input('Name: '). while name == '': print('Name required'); name = input('Name: '). The loop only ends when something is typed.",
+     "lines": 6
+    },
+    {
+     "q": "Authentication checks ...",
+     "a": "who the user is",
+     "options": [
+      "who the user is",
+      "the data type",
+      "the screen size"
+     ]
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Pupil PDF: write a sign-up program that validates a username (presence, 4 to 12 characters) and a password (at least 8 characters, contains a digit). Test with valid, boundary and invalid data.",
+     "a": "Loops for each rule; any(ch.isdigit() for ch in pw) or a loop for the digit; test table completed.",
+     "model": "The teacher writes the username length check: while len(u) < 4 or len(u) > 12: u = input('Username: ')",
+     "lines": 6
+    },
+    {
+     "q": "Extend: why should a real system never store passwords as plain text?",
+     "a": "If data is stolen, passwords are exposed; systems store a hashed form."
+    },
+    {
+     "q": "Stretch: why limit login attempts to three?",
+     "a": "To slow down guessing attacks (brute force)."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Age 11 to 18: 18 is ...",
+     "a": "valid boundary data",
+     "options": [
+      "valid boundary data",
+      "invalid",
+      "erroneous"
+     ]
+    },
+    {
+     "q": "Back to our ponder: A form asks your age and someone types 250. Whose job is it to catch that: the user's or the program's?",
+     "a": "The program's: validation checks input is sensible before it is used."
+    }
+   ]
+  }
+ ]
+}

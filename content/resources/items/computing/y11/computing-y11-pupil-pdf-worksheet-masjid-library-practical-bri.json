@@ -1,0 +1,105 @@
+{
+ "id": "computing-y11-pupil-pdf-worksheet-masjid-library-practical-bri",
+ "title": "Python timed task: masjid library",
+ "type": "practical guide",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y11",
+ "board": "Edexcel IGCSE 4CP0",
+ "unit": "Spring 1: Revision cycle 1",
+ "lessons": [
+  37
+ ],
+ "source": "Written for computing/y11 lesson 37 (Pupil PDF worksheet: masjid library practical brief and mark scheme)",
+ "intro": "Lesson 37. A mock practical: read the brief, plan, then code. The library is fictional.",
+ "blocks": [
+  {
+   "h": "The task"
+  },
+  {
+   "text": "A masjid library stores its books in books.csv: title, author, borrowed (yes or no), due date (YYYY-MM-DD, blank if on the shelf). Write a menu program: 1 list all books; 2 search by title (any part, any capitals); 3 list books due back before a date the user enters; 4 quit. Validate menu choices and dates. When option 3 runs, also write the overdue books to overdue.csv."
+  },
+  {
+   "h": "Sample file: books.csv"
+  },
+  {
+   "table": {
+    "head": [
+     "title",
+     "author",
+     "borrowed",
+     "due"
+    ],
+    "rows": [
+     [
+      "Stories of the Prophets",
+      "Ibn Kathir",
+      "yes",
+      "2027-02-01"
+     ],
+     [
+      "The Sealed Nectar",
+      "Safiur Rahman Mubarakpuri",
+      "no",
+      ""
+     ],
+     [
+      "Fortress of the Muslim",
+      "Sa'id al-Qahtani",
+      "yes",
+      "2027-02-10"
+     ],
+     [
+      "Riyad as-Salihin",
+      "An-Nawawi",
+      "yes",
+      "2027-01-25"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "Mark scheme (teacher)"
+  },
+  {
+   "table": {
+    "head": [
+     "Requirement",
+     "Marks"
+    ],
+    "rows": [
+     [
+      "Menu loops until quit; invalid choices rejected with a message",
+      "2"
+     ],
+     [
+      "Reads the file into a suitable structure",
+      "2"
+     ],
+     [
+      "Search matches part of a title, ignoring capitals",
+      "2"
+     ],
+     [
+      "Date input validated (format YYYY-MM-DD)",
+      "2"
+     ],
+     [
+      "Lists books due before the date; writes overdue.csv",
+      "3"
+     ],
+     [
+      "Readable code and a test log",
+      "3"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "Test"
+  },
+  {
+   "text": "Entering 2027-02-05 for option 3 should list 'Stories of the Prophets' and 'Riyad as-Salihin' (dates in YYYY-MM-DD order can be compared as text)."
+  }
+ ]
+}

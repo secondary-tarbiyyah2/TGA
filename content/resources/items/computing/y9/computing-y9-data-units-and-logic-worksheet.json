@@ -1,0 +1,208 @@
+{
+ "id": "computing-y9-data-units-and-logic-worksheet",
+ "title": "Data units and logic worksheet",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y9",
+ "unit": "Spring 1: Computer systems and architecture",
+ "lessons": [
+  8
+ ],
+ "source": "Seeded from computing/y9 lesson 8 (Data units and logic worksheet (pupil PDF))",
+ "intro": "Lesson 8: Binary, data units and logic gates. To understand how data is measured in units and processed by logic gates",
+ "blocks": [
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "How many 5 MB photos fit on a 2 GB card?",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "2 GB = 2 x 1000 MB = 2000 MB"
+     },
+     {
+      "label": "Step 2",
+      "text": "2000 / 5 = 400"
+     },
+     {
+      "label": "Step 3",
+      "text": "Answer: 400 photos"
+     },
+     {
+      "label": "Answer",
+      "text": "400"
+     }
+    ]
+   }
+  },
+  {
+   "h": "Data units"
+  },
+  {
+   "table": {
+    "head": [
+     "Unit",
+     "Size"
+    ],
+    "rows": [
+     [
+      "Bit",
+      "0 or 1"
+     ],
+     [
+      "Nibble",
+      "4 bits"
+     ],
+     [
+      "Byte",
+      "8 bits"
+     ],
+     [
+      "Kilobyte (KB)",
+      "1000 bytes"
+     ],
+     [
+      "Megabyte (MB)",
+      "1000 KB"
+     ],
+     [
+      "Gigabyte (GB)",
+      "1000 MB"
+     ],
+     [
+      "Terabyte (TB)",
+      "1000 GB"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "Gates together"
+  },
+  {
+   "table": {
+    "head": [
+     "A",
+     "B",
+     "C",
+     "A OR B",
+     "NOT C",
+     "Q"
+    ],
+    "rows": [
+     [
+      "0",
+      "0",
+      "0",
+      "0",
+      "1",
+      "0"
+     ],
+     [
+      "1",
+      "0",
+      "0",
+      "1",
+      "1",
+      "1"
+     ],
+     [
+      "0",
+      "1",
+      "1",
+      "1",
+      "0",
+      "0"
+     ],
+     [
+      "1",
+      "1",
+      "0",
+      "1",
+      "1",
+      "1"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "My results"
+  },
+  {
+   "table": {
+    "head": [
+     "Test",
+     "What I changed",
+     "What I measured",
+     "Result",
+     "Notes"
+    ],
+    "rows": [],
+    "blankRows": 8
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "How many 4 MB audio lectures fit on a 1 GB drive?",
+     "a": "1000 / 4 = 250",
+     "model": "Teacher converts 1 GB to 1000 MB first, then divides by 4."
+    },
+    {
+     "q": "Convert 10100000 to denary.",
+     "a": "128 + 32 = 160"
+    },
+    {
+     "q": "Convert 2 500 KB to MB.",
+     "a": "2.5 MB"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: Complete the unit conversions and binary questions on the worksheet (8 questions).",
+     "a": "Answers on the teacher key.",
+     "model": "Teacher completes question 1: 3 GB to MB = 3000 MB."
+    },
+    {
+     "q": "Extend: Complete the 8-row truth table for Q = (A OR B) AND NOT C.",
+     "a": "Q = 1 for rows 010, 100, 110; 0 otherwise."
+    },
+    {
+     "q": "Stretch: A 1920 x 1080 image uses 3 bytes per pixel. Estimate its size in MB.",
+     "a": "1920 x 1080 x 3 = 6 220 800 bytes, about 6.2 MB."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Which is the largest? A) 2000 MB B) 1.5 GB C) 1 TB",
+     "a": "C) 1 TB",
+     "options": [
+      "2000 MB",
+      "1.5 GB",
+      "1 TB"
+     ]
+    },
+    {
+     "q": "Big question: roughly how many 100-byte messages fit in a 4 GB film's space?",
+     "a": "About 40 million."
+    }
+   ]
+  }
+ ]
+}

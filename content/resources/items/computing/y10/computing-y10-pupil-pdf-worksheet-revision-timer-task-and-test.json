@@ -1,0 +1,111 @@
+{
+ "id": "computing-y10-pupil-pdf-worksheet-revision-timer-task-and-test",
+ "title": "Revision timer task and test table",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y10",
+ "board": "Edexcel IGCSE 4CP0",
+ "unit": "Spring 1: Programming 2: data structures, files and subprograms",
+ "lessons": [
+  35
+ ],
+ "source": "Seeded from computing/y10 lesson 35 (Pupil PDF worksheet: revision timer task and test table)",
+ "intro": "Lesson 35: Subprograms in practice: building a small program from functions. To understand how to decompose a problem into subprograms and build a working program from them",
+ "blocks": [
+  {
+   "h": "Testing a function"
+  },
+  {
+   "table": {
+    "head": [
+     "Test",
+     "amount",
+     "nisab",
+     "Expected"
+    ],
+    "rows": [
+     [
+      "Normal",
+      "8000",
+      "5000",
+      "200.0"
+     ],
+     [
+      "Boundary",
+      "5000",
+      "5000",
+      "125.0"
+     ],
+     [
+      "Below",
+      "4999",
+      "5000",
+      "0"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Calculate by hand: zakah_due(12000, 5000) and zakah_due(5000, 5000).",
+     "a": "300.0 and 125.0",
+     "model": "I do: 12000 >= 5000, so 12000 × 0.025 = 300.0. 5000 >= 5000 is True (boundary), so 5000 × 0.025 = 125.0."
+    },
+    {
+     "q": "2.5% as a decimal is ...",
+     "a": "0.025",
+     "options": [
+      "0.025",
+      "0.25",
+      "2.5"
+     ]
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Pupil PDF: build a 'revision timer' program from three functions: get_minutes(), split(minutes) returning hours and minutes, and show(h, m). Test it with 135 and 45.",
+     "a": "split uses // and %; 135 → 2 h 15 min; 45 → 0 h 45 min.",
+     "model": "The teacher writes split: def split(minutes): return minutes // 60, minutes % 60"
+    },
+    {
+     "q": "Extend: add a test table with three tests for split().",
+     "a": "e.g. 135 → (2, 15); 60 → (1, 0); 0 → (0, 0)."
+    },
+    {
+     "q": "Stretch: design (in pseudo-code) the subprograms for a library-loan system.",
+     "a": "e.g. find_book(title), lend(book, pupil), return_book(book), overdue_list(date)."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Which test value checks the boundary of 'amount >= nisab'?",
+     "a": "amount equal to nisab",
+     "options": [
+      "amount equal to nisab",
+      "a huge amount",
+      "a negative amount"
+     ]
+    },
+    {
+     "q": "Back to our ponder: A big project is easier when each person builds one part. How is that like subprograms?",
+     "a": "Each subprogram is a part with a clear job; they fit together through parameters and return values."
+    }
+   ]
+  }
+ ]
+}

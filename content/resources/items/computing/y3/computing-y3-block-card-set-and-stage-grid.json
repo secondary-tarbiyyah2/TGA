@@ -1,0 +1,76 @@
+{
+ "id": "computing-y3-block-card-set-and-stage-grid",
+ "title": "Block card set and stage grid",
+ "type": "printable graph/grid",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y3",
+ "unit": "Spring 1: Programming sequences and online safety",
+ "lessons": [
+  2
+ ],
+ "source": "Seeded from computing/y3 lesson 2 (Block card set and stage grid (pupil PDF))",
+ "intro": "Lesson 2: Scratch: sprites and motion blocks. To understand how motion blocks in Scratch make a sprite move in sequence",
+ "blocks": [
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Build: when green flag clicked, move 100 steps. What happens?",
+     "a": "The sprite moves 100 steps in the way it faces.",
+     "model": "Teacher drags 'when green flag clicked', then snaps 'move 100 steps' under it, predicts 'right 100', then runs it."
+    },
+    {
+     "q": "Change it so the sprite moves back to where it started.",
+     "a": "Add 'move -100 steps' or turn 180 degrees and move 100 steps."
+    },
+    {
+     "q": "What does 'go to x: 0 y: 0' do?",
+     "a": "Sends the sprite to the centre of the stage."
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: Make your sprite move in an L shape: move, turn right 90, move.",
+     "a": "move 100 steps, turn right 90 degrees, move 50 steps.",
+     "model": "Teacher builds the first part and predicts aloud before clicking the flag."
+    },
+    {
+     "q": "Extend: Make the sprite trace a square and return to the start.",
+     "a": "move 100, turn 90, four times (8 blocks)."
+    },
+    {
+     "q": "Stretch: Write your script on paper first, predict the end point, then test. Was your prediction right?",
+     "a": "A written script with a prediction and the result compared."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "The objects we program in Scratch are called... A) stages B) sprites C) scripts",
+     "a": "B) sprites",
+     "options": [
+      "Stages",
+      "Sprites",
+      "Scripts"
+     ]
+    },
+    {
+     "q": "Why do we predict before we run a script?",
+     "a": "To check our thinking and spot bugs before testing."
+    }
+   ]
+  }
+ ]
+}

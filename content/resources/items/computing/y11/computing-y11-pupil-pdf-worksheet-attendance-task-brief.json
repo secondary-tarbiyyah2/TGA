@@ -1,0 +1,112 @@
+{
+ "id": "computing-y11-pupil-pdf-worksheet-attendance-task-brief",
+ "title": "Python task: madrasah attendance report",
+ "type": "practical guide",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y11",
+ "board": "Edexcel IGCSE 4CP0",
+ "unit": "Spring 1: Revision cycle 1",
+ "lessons": [
+  34
+ ],
+ "source": "Written for computing/y11 lesson 34 (Pupil PDF worksheet: attendance task brief)",
+ "intro": "Lesson 34. A Paper 2 style task: decompose it first, then write and test the program.",
+ "blocks": [
+  {
+   "h": "The task"
+  },
+  {
+   "text": "A madrasah keeps its attendance in a text file, attendance.csv. Each line holds a pupil's name, the number of sessions held and the number the pupil attended. Write a program that reads the file, works out each pupil's attendance as a percentage (to one decimal place), prints a line for each pupil and flags anyone below 90%, then writes the flagged pupils to a new file, report.txt."
+  },
+  {
+   "h": "Sample file: attendance.csv"
+  },
+  {
+   "table": {
+    "head": [
+     "name",
+     "sessions",
+     "attended"
+    ],
+    "rows": [
+     [
+      "Aisha",
+      "40",
+      "38"
+     ],
+     [
+      "Bilal",
+      "40",
+      "34"
+     ],
+     [
+      "Fatimah",
+      "40",
+      "40"
+     ],
+     [
+      "Hamza",
+      "40",
+      "35"
+     ],
+     [
+      "Maryam",
+      "40",
+      "37"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "Requirements"
+  },
+  {
+   "checklist": [
+    "Read every line of attendance.csv",
+    "Calculate attendance % = attended ÷ sessions × 100, rounded to 1 d.p.",
+    "Print each name with its percentage",
+    "Flag pupils below 90% with the word CHECK",
+    "Write the flagged names and percentages to report.txt",
+    "Use at least one subprogram with a parameter and a return value"
+   ]
+  },
+  {
+   "h": "Test table"
+  },
+  {
+   "table": {
+    "head": [
+     "Test",
+     "Input or data",
+     "Expected result",
+     "Actual result",
+     "Pass?"
+    ],
+    "rows": [
+     [
+      "1",
+      "Sample file",
+      "Aisha 95.0, Bilal 85.0 CHECK, Fatimah 100.0, Hamza 87.5 CHECK, Maryam 92.5",
+      "",
+      ""
+     ],
+     [
+      "2",
+      "report.txt after the run",
+      "Bilal 85.0 and Hamza 87.5 only",
+      "",
+      ""
+     ],
+     [
+      "3",
+      "A pupil with exactly 36 out of 40",
+      "90.0, not flagged",
+      "",
+      ""
+     ]
+    ]
+   }
+  }
+ ]
+}

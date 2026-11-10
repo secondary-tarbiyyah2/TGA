@@ -1,0 +1,180 @@
+{
+ "id": "computing-y9-computer-systems-knowledge-organiser-portal-made",
+ "title": "Computer systems knowledge organiser",
+ "type": "knowledge organiser",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y9",
+ "unit": "Spring 1: Computer systems and architecture",
+ "lessons": [
+  9
+ ],
+ "source": "Seeded from computing/y9 lesson 9 (Computer systems knowledge organiser (portal, made with this unit))",
+ "intro": "Computer systems and architecture: the big ideas, key words and examples on one sheet. Keep it in your book and use it to revise (cover, write, check).",
+ "blocks": [
+  {
+   "panels": [
+    {
+     "title": "Big questions",
+     "points": [
+      "A smartphone, a washing machine and a car all contain computers. What do they have in common?",
+      "A 3 GHz processor does 3 billion cycles every second. What is it actually doing in each one?",
+      "When the power cuts out, your unsaved essay is lost but your saved files are not. Why?",
+      "A film is 4 GB and a text message about 100 bytes. Roughly how many messages fit in the space of one film?"
+     ]
+    }
+   ],
+   "cols": 1
+  },
+  {
+   "h": "Key words"
+  },
+  {
+   "keywords": [
+    {
+     "term": "hardware",
+     "def": "the physical parts of a computer you can touch"
+    },
+    {
+     "term": "software",
+     "def": "programs and data that run on the hardware"
+    },
+    {
+     "term": "input device",
+     "def": "hardware that sends data into a computer"
+    },
+    {
+     "term": "output device",
+     "def": "hardware that presents results from a computer"
+    },
+    {
+     "term": "storage",
+     "def": "keeping data so it can be used again later"
+    },
+    {
+     "term": "CPU",
+     "def": "central processing unit: carries out instructions"
+    },
+    {
+     "term": "ALU",
+     "def": "arithmetic logic unit: does calculations and logic"
+    },
+    {
+     "term": "control unit",
+     "def": "directs the flow of data and decodes instructions"
+    },
+    {
+     "term": "register",
+     "def": "a tiny, very fast store inside the CPU"
+    },
+    {
+     "term": "clock speed",
+     "def": "how many cycles the CPU does per second, in GHz"
+    },
+    {
+     "term": "RAM",
+     "def": "random access memory: holds programs and data in use; volatile"
+    },
+    {
+     "term": "ROM",
+     "def": "read-only memory: holds the start-up instructions; non-volatile"
+    },
+    {
+     "term": "volatile",
+     "def": "loses its contents when the power is off"
+    },
+    {
+     "term": "secondary storage",
+     "def": "keeps data permanently, such as an SSD or hard disk"
+    },
+    {
+     "term": "capacity",
+     "def": "how much data a device can store"
+    },
+    {
+     "term": "bit",
+     "def": "a single 0 or 1"
+    },
+    {
+     "term": "byte",
+     "def": "8 bits"
+    },
+    {
+     "term": "kilobyte",
+     "def": "1000 bytes (KB); 1024 bytes in the binary convention (KiB)"
+    }
+   ]
+  },
+  {
+   "h": "What we learn"
+  },
+  {
+   "panels": [
+    {
+     "title": "Hardware and software; input, output and storage",
+     "points": [
+      "Hardware: physical parts",
+      "Software: programs and data",
+      "Neither is useful alone",
+      "Input: keyboard, microphone, sensor"
+     ]
+    },
+    {
+     "title": "The CPU and the fetch-decode-execute cycle",
+     "points": [
+      "Control unit: directs and decodes",
+      "ALU: calculations and comparisons",
+      "Registers: tiny fast stores",
+      "PC holds the next address"
+     ]
+    },
+    {
+     "title": "Memory and storage: RAM, ROM and secondary storage",
+     "points": [
+      "RAM: programs and data in use",
+      "ROM: start-up (boot) instructions",
+      "The CPU reads from both",
+      "RAM is volatile"
+     ]
+    },
+    {
+     "title": "Binary, data units and logic gates",
+     "points": [
+      "8 bits = 1 byte",
+      "1000 bytes = 1 KB",
+      "1000 KB = 1 MB; 1000 MB = 1 GB; 1000 GB = 1 TB",
+      "Bigger unit to smaller: multiply"
+     ]
+    },
+    {
+     "title": "Operating systems and utility software",
+     "points": [
+      "Manages memory and the CPU",
+      "Manages files and folders",
+      "Controls devices (drivers)",
+      "Provides the user interface"
+     ]
+    }
+   ],
+   "cols": 2
+  },
+  {
+   "h": "Worked examples"
+  },
+  {
+   "panels": [
+    {
+     "title": "How many 5 MB photos fit on a 2 GB card?",
+     "points": [
+      "2 GB = 2 x 1000 MB = 2000 MB",
+      "2000 / 5 = 400",
+      "Answer: 400 photos",
+      "Answer: 400"
+     ]
+    }
+   ],
+   "cols": 2
+  }
+ ],
+ "name": false
+}

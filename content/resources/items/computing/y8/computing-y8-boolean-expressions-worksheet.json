@@ -1,0 +1,107 @@
+{
+ "id": "computing-y8-boolean-expressions-worksheet",
+ "title": "Boolean expressions worksheet",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y8",
+ "unit": "Spring 1: Binary, safety and Boolean logic",
+ "lessons": [
+  6
+ ],
+ "source": "Seeded from computing/y8 lesson 6 (Boolean expressions worksheet (pupil PDF))",
+ "intro": "Lesson 6: Boolean logic: true, false, AND, OR, NOT. To understand how Boolean operators combine true and false conditions",
+ "blocks": [
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "age = 14, hasPermission = false. Evaluate (age >= 13) AND hasPermission.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "age >= 13: 14 >= 13 is true"
+     },
+     {
+      "label": "Step 2",
+      "text": "hasPermission is false"
+     },
+     {
+      "label": "Step 3",
+      "text": "true AND false"
+     },
+     {
+      "label": "Step 4",
+      "text": "= false"
+     },
+     {
+      "label": "Answer",
+      "text": "false"
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Evaluate: NOT (5 > 3).",
+     "a": "5 > 3 is true, so NOT true = false.",
+     "model": "Teacher: inside the brackets first, 5 > 3 is true; NOT flips it to false."
+    },
+    {
+     "q": "Evaluate: (2 = 2) AND (3 > 7).",
+     "a": "true AND false = false"
+    },
+    {
+     "q": "Evaluate: (10 < 4) OR (6 = 6).",
+     "a": "false OR true = true"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: Evaluate the 8 expressions on the worksheet.",
+     "a": "Answers on the teacher key; each shows the two parts and the result.",
+     "model": "Teacher does expression 1 in steps."
+    },
+    {
+     "q": "Extend: Write a Boolean condition for: 'A pupil may join the class Team if they have a school account and their parent has signed the agreement.'",
+     "a": "hasSchoolAccount AND agreementSigned",
+     "lines": 6
+    },
+    {
+     "q": "Stretch: Write a condition for 'entry is free for under 5s or over 65s, but not on event days'.",
+     "a": "(age < 5 OR age > 65) AND NOT eventDay",
+     "lines": 6
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "true AND false = ? A) true B) false",
+     "a": "B) false",
+     "options": [
+      "true",
+      "false"
+     ]
+    },
+    {
+     "q": "Big question: camera works, microphone does not. Can you join with an AND rule? Why?",
+     "a": "No: AND needs both conditions true."
+    }
+   ]
+  }
+ ]
+}

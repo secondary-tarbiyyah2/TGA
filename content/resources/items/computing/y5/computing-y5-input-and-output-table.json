@@ -1,0 +1,105 @@
+{
+ "id": "computing-y5-input-and-output-table",
+ "title": "Input and output table",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y5",
+ "unit": "Spring 1: Selection in physical computing and Secure Your Secrets",
+ "lessons": [
+  7
+ ],
+ "source": "Seeded from computing/y5 lesson 7 (Input and output table (pupil PDF))",
+ "intro": "Lesson 7: A simulated micro-controller: button input, LED output. To understand how a micro-controller program links an input to an output",
+ "blocks": [
+  {
+   "h": "Inputs and outputs"
+  },
+  {
+   "table": {
+    "head": [
+     "Device",
+     "Input",
+     "Output"
+    ],
+    "rows": [
+     [
+      "Doorbell",
+      "Button",
+      "Chime"
+     ],
+     [
+      "Night light",
+      "Light sensor",
+      "Lamp"
+     ],
+     [
+      "micro:bit today",
+      "Button A",
+      "LED icon"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Program button A to show a tick.",
+     "a": "on button A pressed: show icon (tick).",
+     "model": "Teacher drags 'on button A pressed' from Input and 'show icon' from Basic, chooses the tick, clicks A on the simulator."
+    },
+    {
+     "q": "Program button B to clear the screen.",
+     "a": "on button B pressed: clear screen."
+    },
+    {
+     "q": "What is the output in your program?",
+     "a": "The LEDs showing the icon."
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: Make a 'yes / no' answer box: A shows a tick, B shows a cross, A+B clears.",
+     "a": "on A: tick; on B: cross; on A+B: clear screen.",
+     "model": "Teacher builds A and B, pupils add A+B."
+    },
+    {
+     "q": "Extend: Use 'show LEDs' to design your own 5 by 5 picture of a crescent moon or a star for button A.",
+     "a": "Any correct show LEDs pattern on button A."
+    },
+    {
+     "q": "Stretch: Use 'show number' and a button to count presses. Which block stores the count?",
+     "a": "A variable: set count to 0; on A: change count by 1, show number count."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "An LED lighting up is... A) an input B) an output C) a condition",
+     "a": "B) an output",
+     "options": [
+      "An input",
+      "An output",
+      "A condition"
+     ]
+    },
+    {
+     "q": "Name one input on a micro:bit.",
+     "a": "Button A, button B, light sensor or temperature sensor."
+    }
+   ]
+  }
+ ]
+}

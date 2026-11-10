@@ -1,0 +1,65 @@
+{
+ "id": "geography-y6-printed-polar-maps-the-arctic-and-antarctica",
+ "title": "Polar maps: the Arctic and Antarctica",
+ "type": "printable graph/grid",
+ "subject": "Geography",
+ "subjectSlug": "geography",
+ "year": "y6",
+ "unit": "Spring 1: The polar regions (Frozen Kingdom)",
+ "lessons": [
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11
+ ],
+ "source": "Written for geography/y6 lessons 5, 6, 7, 8, 9, 10, 11 (Printed polar maps: the Arctic and Antarctica (portal printable))",
+ "intro": "Lessons 5 to 8. The Arctic is an ocean surrounded by land; Antarctica is a continent surrounded by ocean.",
+ "blocks": [
+  {
+   "h": "The Arctic"
+  },
+  {
+   "grid": {
+    "kind": "worldmap",
+    "region": "arctic",
+    "height": 120,
+    "lines": [
+     "arctic-circle"
+    ],
+    "points": [
+     [
+      0,
+      90,
+      "North Pole"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "Antarctica"
+  },
+  {
+   "grid": {
+    "kind": "worldmap",
+    "region": "antarctica",
+    "height": 120,
+    "lines": [
+     "antarctic-circle"
+    ],
+    "points": [
+     [
+      0,
+      -90,
+      "South Pole"
+     ]
+    ]
+   }
+  },
+  {
+   "caption": "Outline from Natural Earth (public domain); modern coastlines and borders."
+  }
+ ]
+}

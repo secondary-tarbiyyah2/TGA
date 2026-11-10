@@ -1,0 +1,77 @@
+{
+ "id": "computing-y9-os-and-utilities-worksheet",
+ "title": "OS and utilities worksheet",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y9",
+ "unit": "Spring 1: Computer systems and architecture",
+ "lessons": [
+  9
+ ],
+ "source": "Seeded from computing/y9 lesson 9 (OS and utilities worksheet (pupil PDF))",
+ "intro": "Lesson 9: Operating systems and utility software. To understand the functions of an operating system and why utility software is needed",
+ "blocks": [
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Name three functions of an operating system.",
+     "a": "For example: memory management, file management, user interface.",
+     "model": "Teacher links each function to something pupils did today: logging in (security), opening Teams (memory and CPU), saving (file management)."
+    },
+    {
+     "q": "Why might a school run backups every night?",
+     "a": "So work can be recovered if a device fails or files are deleted."
+    },
+    {
+     "q": "Why is defragmentation not used on SSDs?",
+     "a": "SSDs have no moving parts, so access is fast anyway, and it wears the drive."
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: Explain how an operating system lets you use Teams, a browser and a document at once, in the portal response box. Start: 'The operating system...'",
+     "a": "The operating system shares CPU time between the programs in quick turns and gives each its own memory space; if RAM fills, it uses virtual memory.",
+     "model": "Teacher writes the first sentence: 'The operating system gives each program a turn on the CPU...'",
+     "lines": 6
+    },
+    {
+     "q": "Extend: Compare a GUI and a command-line interface: one advantage of each.",
+     "a": "GUI: easy for beginners; command line: fast and powerful for experts, uses fewer resources."
+    },
+    {
+     "q": "Stretch: Explain why antivirus software must be updated regularly.",
+     "a": "New malware appears all the time; updates add new signatures so it can be recognised."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Which is NOT a job of an operating system? A) memory management B) writing essays C) file management",
+     "a": "B) writing essays",
+     "options": [
+      "Memory management",
+      "Writing essays",
+      "File management"
+     ]
+    },
+    {
+     "q": "Big question: how does one processor run three programs at once?",
+     "a": "The OS shares CPU time between them in very quick turns (multitasking)."
+    }
+   ]
+  }
+ ]
+}

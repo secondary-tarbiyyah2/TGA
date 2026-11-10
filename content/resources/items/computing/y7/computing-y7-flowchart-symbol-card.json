@@ -1,0 +1,110 @@
+{
+ "id": "computing-y7-flowchart-symbol-card",
+ "title": "Flowchart symbol card",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y7",
+ "unit": "Spring 1: Think like a computer: algorithms",
+ "lessons": [
+  8
+ ],
+ "source": "Seeded from computing/y7 lesson 8 (Flowchart symbol card (pupil PDF))",
+ "intro": "Lesson 8: Flowcharts and pseudocode. To understand how flowcharts and pseudocode represent the same algorithm",
+ "blocks": [
+  {
+   "h": "Flowchart symbols"
+  },
+  {
+   "table": {
+    "head": [
+     "Symbol",
+     "Shape",
+     "Example"
+    ],
+    "rows": [
+     [
+      "Terminal",
+      "Rounded rectangle",
+      "Start / Stop"
+     ],
+     [
+      "Process",
+      "Rectangle",
+      "total = total + 1"
+     ],
+     [
+      "Decision",
+      "Diamond",
+      "Is age >= 13?"
+     ],
+     [
+      "Input / output",
+      "Parallelogram",
+      "INPUT age"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Draw a flowchart: input a number, output 'even' or 'odd'.",
+     "a": "Start; input n; decision: n MOD 2 = 0?; yes: output 'even'; no: output 'odd'; stop.",
+     "model": "Teacher draws it in diagrams.net, saying the symbol name before each shape."
+    },
+    {
+     "q": "Write the even/odd flowchart as pseudocode.",
+     "a": "INPUT n; IF n MOD 2 = 0 THEN OUTPUT 'even' ELSE OUTPUT 'odd' ENDIF"
+    },
+    {
+     "q": "Which symbol is 'total = total + 5'?",
+     "a": "Process (rectangle)."
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: Draw a flowchart in diagrams.net (or on paper) for a password check: allow 3 tries, then lock. Paste a picture into the portal.",
+     "a": "Start; tries = 0; loop: input password; decision correct? yes: 'Welcome', stop; no: tries + 1; decision tries = 3? yes: 'Locked', stop; no: back to input.",
+     "model": "Teacher draws the first three symbols: Start, 'tries = 0', 'INPUT password'."
+    },
+    {
+     "q": "Extend: Write your flowchart as pseudocode.",
+     "a": "tries = 0; REPEAT INPUT p; tries = tries + 1 UNTIL p = correct OR tries = 3; IF p = correct THEN 'Welcome' ELSE 'Locked'."
+    },
+    {
+     "q": "Stretch: Explain one advantage of a flowchart and one of pseudocode.",
+     "a": "Flowchart: shows the flow visually for anyone; pseudocode: closer to code, quicker to turn into a program."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Start and stop use the... A) diamond B) rounded rectangle C) parallelogram",
+     "a": "B) rounded rectangle",
+     "options": [
+      "Diamond",
+      "Rounded rectangle",
+      "Parallelogram"
+     ]
+    },
+    {
+     "q": "Big question: give one reason to draw a flowchart before coding.",
+     "a": "To plan and check the logic and spot mistakes before writing code."
+    }
+   ]
+  }
+ ]
+}
