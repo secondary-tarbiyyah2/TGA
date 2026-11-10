@@ -2,113 +2,230 @@
   "subject": "PSHE",
   "year": "y11",
   "board": "National Curriculum / PSHE Association",
-  "source": "National Curriculum / statutory RSHE guidance (Relationships Education, Relationships and Sex Education, Health Education); PSHE Association programme of study themes and KS3 mental health lessons (Drive PSHE folder); TGA RSHE Policy 2026-27, Careers Education and Guidance Policy and Tarbiyyah Compass Character Framework 2026-27 (Drive); existing TGA PSHE Y5 lesson style. Qur'an and hadith references limited to well-known authenticated sources and cited plainly. RSE is taught from an Islamic perspective, to boys and girls separately; parents can see all RSE materials.",
+  "source": "National Curriculum / statutory RSHE guidance (Relationships Education, Relationships and Sex Education, Health Education); PSHE Association programme of study themes and KS3 mental health lessons (Drive PSHE folder); TGA RSHE Policy 2026-27, Careers Education and Guidance Policy and Tarbiyyah Compass Character Framework 2026-27 (Drive); existing TGA PSHE Y5 lesson style. Qur'an and hadith references limited to well-known authenticated sources and cited plainly. RSE is taught from an Islamic perspective, to boys and girls separately; parents can see all RSE materials. | Spring 1 2027 (lessons 1, 3, 5 to 7, v3): Tarbiyyah Secondary PSHE Curriculum Intent, Key Stage 4, checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules; First aid content follows current UK Resuscitation Council and NHS guidance; a recognised first aid syllabus and who checks the live demonstration: TO CONFIRM; PSHE only (no RSE)",
   "lessons": [
     {
-      "unit": "Unit 1: Next steps and financial capability",
+      "unit": "Spring 1: First aid",
       "n": 1,
-      "title": "Post-16 pathways: choosing and applying",
+      "title": "Pathways: final choices and applications",
       "duration": 50,
+      "bigQuestion": "Is there one 'right' route after GCSEs, or many good ones?",
       "objectives": [
-        "Compare post-16 routes: A levels, T levels, college courses and apprenticeships",
-        "Identify entry requirements and application deadlines and make a plan with a back-up",
-        "Use reflection, consultation and istikhara alongside research to decide"
+        "To understand the post-16 routes open to Year 11 and how to complete applications on time"
       ],
+      "successCriteria": [
+        "All: name the main post-16 routes (A levels, T levels, BTEC, apprenticeships)",
+        "Most: match routes to career goals and entry requirements",
+        "Some: draft a strong application statement and plan deadlines"
+      ],
+      "crossCurricular": "Careers: link to subject choices and International GCSE grades",
+      "smsc": "Spiritual: istikharah and consultation",
       "keywords": [
         {
           "term": "A level",
-          "def": "a two-year academic qualification taken after GCSEs"
+          "def": "a two-year academic qualification"
         },
         {
           "term": "T level",
-          "def": "a technical qualification with a substantial industry placement"
+          "def": "a two-year technical qualification with an industry placement"
         },
         {
           "term": "apprenticeship",
-          "def": "paid work combined with training"
+          "def": "paid work with training towards a qualification"
         },
         {
           "term": "entry requirements",
-          "def": "grades and subjects needed for a course"
-        },
-        {
-          "term": "istikhara",
-          "def": "the prayer for seeking guidance in a decision"
+          "def": "the grades needed to start a course"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is there one 'right' route after GCSEs, or many good ones?",
+        "a": "Many: the right one fits your strengths, goals and grades."
+      },
+      "islamicLink": {
+        "text": "Seeking knowledge is an obligation on every Muslim (Ibn Majah). Make istikharah and consult (shura) with parents and teachers: Allah says 'consult them in the matter, and when you have decided, rely on Allah' (Al 'Imran 3:159).",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. Name one post-16 route.",
-        "What is a SMART goal?",
-        "Name two of your strengths."
+        {
+          "q": "Which is paid work with training?",
+          "a": "Apprenticeship",
+          "mins": 1,
+          "options": [
+            "A level",
+            "Apprenticeship",
+            "GCSE"
+          ]
+        },
+        {
+          "q": "In England, until what age must you be in education or training?",
+          "a": "18",
+          "mins": 1
+        },
+        {
+          "q": "Name one A level subject.",
+          "a": "For example: chemistry.",
+          "mins": 1
+        },
+        {
+          "q": "When do your International GCSE exams start?",
+          "a": "Mon 10 May 2027",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "The big picture at 16",
-          "bullets": [
-            "In England you stay in education or training until 18",
-            "Routes: sixth form, college, apprenticeship, work with training",
-            "Choices are not final; routes can change",
-            "TGA Careers Lead can advise"
-          ],
-          "note": "Say bismillah. Refer to the TGA Careers Education and Guidance Policy. TGA pupils live in different countries; use England as the baseline and encourage pupils abroad to research their local equivalents and discuss the options with the Careers Lead. Cite plainly: Qur'an 65:2-3, that whoever is mindful of Allah, He will make a way out and provide from where they do not expect. Link to the Tarbiyyah Compass value of Progress. Ground rules: right to pass, no personal stories, kindness. Anonymous questions can go to the teacher's question box. If a pupil says anything that worries you, stay calm, do not promise secrecy and follow the Child Protection and Safeguarding Policy: tell the DSL the same day."
-        },
-        {
-          "heading": "The main routes",
+          "heading": "Post-16 routes",
           "bullets": [
             "A levels: academic, usually three subjects",
-            "T levels: technical, with a 45-day industry placement",
-            "Apprenticeships: earn and learn, to degree level",
-            "Applied courses (e.g. BTEC): practical, career-focused"
+            "T levels: technical, with a 45-day placement",
+            "BTEC and other vocational courses",
+            "Apprenticeships: earn and learn"
           ],
-          "note": "Explain each route with an invented pupil: Hamza wants to study medicine, so chooses A levels in Chemistry, Biology and Maths; Maryam enjoys design and chooses a T level in Digital Production; Ibrahim prefers hands-on learning and chooses an engineering apprenticeship. Discuss pros and cons. Mention that T levels and apprenticeships can lead to higher education too. Misconception: apprenticeships are a lower-status route. They lead to recognised qualifications and careers."
+          "note": "In England, young people stay in education or training until 18.",
+          "table": {
+            "head": [
+              "Route",
+              "Best for",
+              "Typical entry"
+            ],
+            "rows": [
+              [
+                "A levels",
+                "University, academic careers",
+                "5 grade 4s or more; 6s in chosen subjects"
+              ],
+              [
+                "T levels",
+                "Technical careers",
+                "Usually 4s or 5s including English and maths"
+              ],
+              [
+                "Apprenticeship",
+                "Learning on the job",
+                "Varies by level"
+              ],
+              [
+                "BTEC",
+                "Vocational and some university courses",
+                "Varies"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Entry requirements and research",
+          "heading": "Applications",
           "bullets": [
-            "Check grades, subjects and deadlines",
-            "Compare providers: results, location, support",
-            "Attend open days and online events",
-            "Use National Careers Service and gov.uk"
+            "Sixth form and college forms",
+            "Personal statement",
+            "Reference from school",
+            "Deadlines and interviews"
           ],
-          "note": "Show how to read a prospectus: entry requirements such as 5 GCSEs at grade 4 or above including English and maths, and higher grades for specific subjects. Emphasise that deadlines vary and many open in autumn. Ask pupils to create a table of three providers and compare. Remind pupils that online reviews and social media are not enough. Link to the Tarbiyyah Compass value of Excellence."
+          "note": "Entry requirements vary: check each provider."
         },
         {
-          "heading": "Applications and back-up plans",
+          "heading": "Model statement",
           "bullets": [
-            "Personal statement: skills, achievements, motivation",
-            "Reference from teachers",
-            "Apply to more than one option",
-            "Plan B: other courses, resits, alternative routes"
+            "Point: what interests you",
+            "Evidence: what you did",
+            "Link: why this course"
           ],
-          "note": "Give a personal statement structure: why this course, evidence of skills, wider activities, future goals. Worked example sentence: ‘Volunteering at a food bank taught me teamwork and reliability.’ Encourage pupils to apply for a main choice and one or two back-ups. Remind pupils that GCSE results are used by providers; resilience matters. Link to the Tarbiyyah Compass value of Resilience."
+          "note": "Model.",
+          "model": {
+            "problem": "Write the opening of a college application statement for A level biology.",
+            "steps": [
+              "Point: I want to study biology because I am fascinated by how the body heals",
+              "Evidence: I completed a first aid course and read about vaccines",
+              "Link: A level biology is the first step to pharmacy"
+            ],
+            "answer": "A focused, evidenced opening"
+          }
         },
         {
-          "heading": "Making the decision with guidance",
+          "heading": "Check",
           "bullets": [
-            "Consult family, teachers and the Careers Lead",
-            "Consider your values, strengths and interests",
-            "Make istikhara and then act with trust",
-            "Do your best, then trust Allah"
+            "Vote in the Teams poll"
           ],
-          "note": "Cite plainly: the Prophet (peace be upon him) taught the companions to seek guidance (istikhara) in all matters, as narrated in Bukhari. Explain that istikhara does not replace research and consultation (shura). Cite Qur'an 3:159: when you have decided, put your trust in Allah. Close with a reminder that the Careers Lead can arrange one-to-one meetings."
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Which route includes a substantial industry placement?",
+            "options": [
+              "A levels",
+              "T levels",
+              "GCSE resits",
+              "None"
+            ],
+            "answer": 1,
+            "why": "T levels include an industry placement of about 45 days."
+          }
         }
       ],
       "practice": [
-        "Match the route to the description: (a) earn while learning (b) academic, three subjects (c) technical with 45-day placement.",
-        "A course needs five GCSEs at grade 4 including English and maths. Pupil A has 4s in English and maths and 5s in three other subjects. Does she meet the requirement?",
-        "List three questions you would ask at an open day."
+        {
+          "q": "Match: 'I want to be an electrician and earn while learning.'",
+          "a": "Apprenticeship.",
+          "mins": 1,
+          "model": "Teacher matches the goal to the route and explains why."
+        }
       ],
       "independent": [
-        "Complete a comparison table of three post-16 options with entry requirements, course content and deadlines.",
-        "Draft the opening paragraph of a personal statement for your preferred course.",
-        "Write a plan B for your first-choice route."
+        {
+          "q": "Core: Pathway plan (pupil PDF): two routes, providers, entry requirements and deadlines.",
+          "a": "A realistic plan with deadlines.",
+          "mins": 9,
+          "model": "Teacher fills one provider row."
+        },
+        {
+          "q": "Extend: Draft your statement opening in the portal response box using Point, Evidence, Link. Start: 'I want to study...'",
+          "a": "A three-part opening specific to the pupil.",
+          "mins": 6
+        }
       ],
       "exit": [
-        "Name two post-16 pathways.",
-        "Why is it important to have a back-up plan?"
+        {
+          "q": "A T level is... A) academic only B) technical, with an industry placement C) a university degree",
+          "a": "B) technical, with an industry placement",
+          "mins": 1,
+          "options": [
+            "Academic only",
+            "Technical, with a placement",
+            "A university degree"
+          ]
+        },
+        {
+          "q": "Big question: one right route, or many good ones?",
+          "a": "Many: the right one fits strengths, goals and grades.",
+          "mins": 2
+        }
       ],
-      "homework": "Book or attend one open day or online event and write five sentences about what you learned.",
-      "send": "SEND: provide a comparison table template and sentence starters. EAL: pre-teach pathways vocabulary with images. Stretch: research degree apprenticeships and compare them with a traditional degree."
+      "homework": "Check the deadline for one post-16 application and put it in your calendar with a parent.",
+      "send": "SEND: route cards with pictures. EAL: entry requirements glossary. Stretch: compare two providers' outcomes.",
+      "resources": [
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Key Stage 4, checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules",
+        "Portal pshe y11 lesson 1 (upgraded to v3)",
+        "Pathway plan (pupil PDF)",
+        "National Careers Service website (free)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "college building campus",
+          "alt": "A college building",
+          "for": "teach:1"
+        },
+        {
+          "find": "graduation cap mortarboard",
+          "alt": "A graduation cap",
+          "for": "hook"
+        }
+      ]
     },
     {
       "unit": "Unit 1: Next steps and financial capability",
@@ -217,110 +334,232 @@
       "send": "SEND: provide a step-by-step calculation template and allow a calculator. EAL: pre-teach finance vocabulary. Stretch: compare the total repaid on a £5,000 loan at 8% and 15% APR over three years."
     },
     {
-      "unit": "Unit 2: Health, safety and responsibility",
+      "unit": "Spring 1: First aid",
       "n": 3,
-      "title": "First aid: CPR, choking and severe bleeding",
+      "title": "First aid: CPR on a cushion and the recovery position",
       "duration": 50,
+      "bigQuestion": "Most cardiac arrests happen at home. If it happened in your home, would you know what to do?",
       "objectives": [
-        "State the steps for responding to an unresponsive adult who is not breathing normally",
-        "Describe how to help a person who is choking and how to treat severe bleeding",
-        "Explain the recovery position and when to call 999"
+        "To understand how to help an unresponsive casualty: check, call 999, CPR and the recovery position"
       ],
+      "successCriteria": [
+        "All: describe the primary survey (danger, response, airway, breathing)",
+        "Most: demonstrate CPR rhythm and depth on a cushion",
+        "Some: explain when to use the recovery position and when to start CPR"
+      ],
+      "crossCurricular": "Science: the heart and circulatory system",
+      "smsc": "Moral: duty to help others",
       "keywords": [
         {
           "term": "CPR",
-          "def": "cardiopulmonary resuscitation: chest compressions to keep blood moving"
+          "def": "cardiopulmonary resuscitation: chest compressions (and rescue breaths) to keep blood moving"
         },
         {
-          "term": "defibrillator (AED)",
-          "def": "a device that gives an electric shock to restart a normal heart rhythm"
+          "term": "AED",
+          "def": "automated external defibrillator: a device that can restart the heart"
         },
         {
           "term": "recovery position",
-          "def": "a side-lying position that keeps the airway clear"
+          "def": "a safe position for an unresponsive person who is breathing"
         },
         {
-          "term": "airway",
-          "def": "the passage that carries air to the lungs"
-        },
-        {
-          "term": "999",
-          "def": "the UK emergency number"
+          "term": "primary survey",
+          "def": "DRABC: danger, response, airway, breathing, call for help"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Most cardiac arrests happen at home. If it happened in your home, would you know what to do?",
+        "a": "Call 999, start CPR, get an AED. Bystander CPR can double the chance of survival."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Whoever saves one life, it is as if he had saved mankind entirely' (al-Ma'idah 5:32). Learning first aid is a way to fulfil this.",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. What number do you call in an emergency?",
-        "Name two parts of the body that need oxygen.",
-        "Why is it important to stay calm?"
+        {
+          "q": "Emergency number in the UK?",
+          "a": "999 (or 112)",
+          "mins": 1,
+          "options": [
+            "101",
+            "999",
+            "111"
+          ]
+        },
+        {
+          "q": "What does the heart do?",
+          "a": "Pumps blood around the body.",
+          "mins": 1
+        },
+        {
+          "q": "What is NHS 111 for?",
+          "a": "Urgent but non-emergency medical advice.",
+          "mins": 1
+        },
+        {
+          "q": "What does al-Ma'idah 5:32 say about saving a life?",
+          "a": "It is as if saving all mankind.",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Why first aid matters",
-          "bullets": [
-            "Quick action can save lives",
-            "Anyone can learn the basics",
-            "Check for danger first",
-            "Qur'an 5:32: saving one life is like saving all mankind"
-          ],
-          "note": "Say bismillah. Cite plainly: Qur'an 5:32, that whoever saves a life it is as if they saved all of humanity. Emphasise that this lesson does not replace an accredited course such as St John Ambulance or Red Cross; encourage pupils to take one. Pupils practise on a cushion or pillow only; no pupil touches another. TGA pupils may live in different countries: use 999 for the UK and tell pupils to learn their local emergency number. Link to the Tarbiyyah Compass value of Excellence. Ground rules: right to pass, no personal stories, kindness. Anonymous questions can go to the teacher's question box. If a pupil says anything that worries you, stay calm, do not promise secrecy and follow the Child Protection and Safeguarding Policy: tell the DSL the same day."
-        },
-        {
-          "heading": "CPR: DR ABC",
+          "heading": "Primary survey",
           "bullets": [
             "Danger: is it safe?",
-            "Response: shake shoulders, shout",
-            "Airway and Breathing: tilt head, look for normal breathing",
-            "Call 999, start CPR"
+            "Response: shout and tap shoulders",
+            "Airway: tilt head, lift chin",
+            "Breathing: look, listen, feel for up to 10 seconds"
           ],
-          "note": "Teach the sequence. If the person does not respond and is not breathing normally, call 999 (put on speaker), ask for an ambulance and a defibrillator. Compressions: heel of hand on the centre of the chest, press down 5 to 6 cm, 100 to 120 per minute, about two compressions every second. If trained and willing, give 2 rescue breaths after every 30 compressions; otherwise do hands-only CPR. Practise for one minute on a cushion counting aloud or with a metronome app."
+          "note": "If not breathing normally: call 999 on speaker and start CPR.",
+          "cycle": [
+            "Danger",
+            "Response",
+            "Airway",
+            "Breathing",
+            "Call 999"
+          ]
         },
         {
-          "heading": "Defibrillators (AED)",
+          "heading": "CPR (adult)",
           "bullets": [
-            "Public AEDs give clear voice instructions",
-            "Switch on and follow the prompts",
-            "Attach pads as shown",
-            "Anyone can use one safely"
+            "Centre of the chest, heel of hand",
+            "Push 5 to 6 cm deep",
+            "100 to 120 a minute",
+            "30 compressions : 2 rescue breaths, or hands-only CPR"
           ],
-          "note": "Explain that an AED analyses the heart rhythm and only gives a shock if needed. Pads are placed on bare chest as shown on the pads. Do not touch the person during analysis. Continue CPR until help arrives or the person breathes normally. Mention that many public places have AEDs and the 999 call handler can help locate one."
+          "note": "Practise on a firm cushion on the floor. Never practise compressions on a person.",
+          "table": {
+            "head": [
+              "Step",
+              "Detail"
+            ],
+            "rows": [
+              [
+                "Call 999",
+                "Speaker on; send someone for an AED"
+              ],
+              [
+                "Compress",
+                "5 to 6 cm, 100 to 120 per minute"
+              ],
+              [
+                "Breaths (if trained)",
+                "30:2; otherwise hands-only"
+              ],
+              [
+                "AED",
+                "Switch on and follow the voice"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Choking and severe bleeding",
+          "heading": "Recovery position",
           "bullets": [
-            "Choking: encourage coughing first",
-            "5 back blows between shoulder blades",
-            "5 abdominal thrusts if still blocked; call 999",
-            "Bleeding: press firmly with a clean pad and call 999"
+            "Unresponsive but breathing normally",
+            "On their side, head tilted back",
+            "Keeps the airway open",
+            "Keep checking breathing"
           ],
-          "note": "Teach choking for adults and children over one: if they cannot cough, speak or breathe, give up to 5 back blows, then up to 5 abdominal thrusts, alternating; call 999 if not cleared. For severe bleeding: apply firm direct pressure with a clean cloth, do not remove objects stuck in the wound, keep pressing, add more padding if soaked, call 999. Wash hands afterwards. Note that these are summary steps; direct pupils to the St John Ambulance website."
+          "note": "Explain with a diagram; do not demonstrate on another person on camera."
         },
         {
-          "heading": "Recovery position and staying safe",
+          "heading": "Check",
           "bullets": [
-            "Breathing normally but unresponsive: place on their side",
-            "Keep checking breathing",
-            "Stay with them until help arrives",
-            "Look after your own safety and wellbeing"
+            "Vote in the Teams poll"
           ],
-          "note": "Describe the recovery position: kneel beside the person, place the nearest arm at a right angle, place the other hand against their cheek, bend the far knee and roll them towards you, tilt the head back to keep the airway open. Practise with a cushion or described steps. Discuss emotions after an emergency; it is normal to feel shaken; talk to someone. Close with a du'a for those in need."
+          "note": "Launch the poll.",
+          "check": {
+            "q": "An adult is unresponsive and not breathing normally. After calling 999 you should...",
+            "options": [
+              "Put them in the recovery position",
+              "Start CPR",
+              "Give them water",
+              "Wait for the ambulance"
+            ],
+            "answer": 1,
+            "why": "No normal breathing means CPR; the recovery position is for someone who is breathing."
+          }
         }
       ],
       "practice": [
-        "Put in order: (a) call 999 (b) check for danger (c) check response (d) start chest compressions (e) check breathing.",
-        "How deep and how fast should adult chest compressions be?",
-        "What are two actions you would take if someone has a severe bleed?"
+        {
+          "q": "Practise 30 compressions on a cushion with the teacher's count (100 to 120 a minute).",
+          "a": "Rhythm kept at about two per second.",
+          "mins": 3,
+          "model": "Teacher demonstrates on a cushion, counting aloud."
+        }
       ],
       "independent": [
-        "Make a step-by-step poster: ‘What to do if someone collapses’.",
-        "Practise CPR on a cushion for two minutes and record how you kept the pace.",
-        "Write a paragraph on why learning first aid is part of caring for others in Islam."
+        {
+          "q": "Core: Sequence cards (pupil PDF): put the steps for an unresponsive casualty in order and say what changes if they are breathing.",
+          "a": "Danger, response, airway, breathing, 999, CPR and AED; breathing: recovery position.",
+          "mins": 7,
+          "model": "Teacher places the first two cards."
+        },
+        {
+          "q": "Extend: Find where the nearest public AED is to your home (with a parent, using The Circuit or a local map).",
+          "a": "A named AED location.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: In the portal response box, explain why hands-only CPR is still worth doing. Start: 'Hands-only CPR...'",
+          "a": "Hands-only CPR keeps blood with oxygen moving to the brain until help arrives.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "What number would you call in the UK for an emergency?",
-        "Give one step of CPR."
+        {
+          "q": "CPR compression rate? A) 30 a minute B) 100 to 120 a minute C) 200 a minute",
+          "a": "B) 100 to 120 a minute",
+          "mins": 1,
+          "options": [
+            "30 a minute",
+            "100 to 120 a minute",
+            "200 a minute"
+          ]
+        },
+        {
+          "q": "Big question: if it happened at home, what would you do first?",
+          "a": "Check danger and response, call 999, start CPR, get an AED.",
+          "mins": 2
+        }
       ],
-      "homework": "Watch a St John Ambulance or Red Cross first aid video with a parent, then teach one skill to a family member.",
-      "send": "SEND: provide a visual CPR flowchart and allow practice without time pressure. EAL: pre-teach first aid vocabulary with images. Stretch: research how to treat burns or fractures and create a quick-reference card."
+      "homework": "Teach a family member the DRABC steps and the CPR rhythm on a cushion.",
+      "send": "SEND: step cards with symbols. EAL: compress, breathe, airway. Stretch: research how an AED decides to shock.",
+      "resources": [
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Key Stage 4, checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules",
+        "First aid content follows current UK Resuscitation Council and NHS guidance; a recognised first aid syllabus and who checks the live demonstration: TO CONFIRM",
+        "Portal pshe y11 lesson 3 (CPR part, upgraded to v3)",
+        "A firm cushion at home",
+        "First aid step cards (pupil PDF)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "automated external defibrillator AED cabinet",
+          "alt": "A public defibrillator",
+          "for": "keywords"
+        },
+        {
+          "find": "first aid kit",
+          "alt": "A first aid kit",
+          "for": "hook"
+        },
+        {
+          "find": "human heart diagram",
+          "alt": "A diagram of the heart",
+          "for": "teach:2"
+        }
+      ]
     },
     {
       "unit": "Unit 2: Health, safety and responsibility",
@@ -427,6 +666,636 @@
       ],
       "homework": "Write a paragraph explaining how the law on consent and the Islamic teaching on modesty and marriage each protect people from harm.",
       "send": "SEND: provide fact cards and a simple glossary; offer a private check-in. EAL: pre-teach vocabulary with simple definitions. Stretch: research the Online Safety Act 2023 and how it protects young people from harmful content."
+    },
+    {
+      "unit": "Spring 1: First aid",
+      "n": 5,
+      "title": "Choking and severe bleeding",
+      "duration": 50,
+      "bigQuestion": "Someone at the dinner table suddenly cannot speak or cough. What is happening and what will you do?",
+      "objectives": [
+        "To understand how to help someone who is choking or bleeding severely until help arrives"
+      ],
+      "successCriteria": [
+        "All: tell mild from severe choking",
+        "Most: describe back blows and abdominal thrusts in the right order",
+        "Some: describe how to control severe bleeding with direct pressure and when to call 999"
+      ],
+      "crossCurricular": "Science: the respiratory system and blood clotting",
+      "smsc": "Moral: readiness to help",
+      "keywords": [
+        {
+          "term": "choking",
+          "def": "a blocked airway"
+        },
+        {
+          "term": "back blows",
+          "def": "firm blows between the shoulder blades to clear a blockage"
+        },
+        {
+          "term": "abdominal thrusts",
+          "def": "sharp inward and upward pulls above the navel"
+        },
+        {
+          "term": "direct pressure",
+          "def": "pressing firmly on a wound to slow bleeding"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Someone at the dinner table suddenly cannot speak or cough. What is happening and what will you do?",
+        "a": "Severe choking: up to 5 back blows, then up to 5 abdominal thrusts, call 999 if not cleared."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Allah helps His servant as long as the servant helps his brother' (Muslim). Quick, calm action in an emergency is a way of serving others.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "CPR rate?",
+          "a": "100 to 120 a minute",
+          "mins": 1,
+          "options": [
+            "30",
+            "100 to 120",
+            "200"
+          ]
+        },
+        {
+          "q": "What does DRABC stand for?",
+          "a": "Danger, response, airway, breathing, call.",
+          "mins": 1
+        },
+        {
+          "q": "When do you use the recovery position?",
+          "a": "Unresponsive but breathing normally.",
+          "mins": 1
+        },
+        {
+          "q": "What is an AED?",
+          "a": "A defibrillator that can restart the heart.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Mild or severe choking?",
+          "bullets": [
+            "Mild: can cough, speak, breathe",
+            "Severe: cannot cough, speak or breathe",
+            "Encourage coughing if mild"
+          ],
+          "note": "Do not slap the back of someone coughing well."
+        },
+        {
+          "heading": "Severe choking (adult)",
+          "bullets": [
+            "Up to 5 back blows between shoulder blades",
+            "Up to 5 abdominal thrusts",
+            "Repeat; call 999 if not cleared",
+            "If unresponsive: CPR"
+          ],
+          "note": "Explain with a diagram; do not practise thrusts on anyone.",
+          "cycle": [
+            "Encourage cough",
+            "5 back blows",
+            "5 abdominal thrusts",
+            "Call 999",
+            "Repeat or CPR"
+          ]
+        },
+        {
+          "heading": "Severe bleeding",
+          "bullets": [
+            "Call 999",
+            "Press firmly on the wound with a clean pad",
+            "Keep pressure; add more pads on top",
+            "Do not remove objects stuck in a wound"
+          ],
+          "note": "Wear gloves if available.",
+          "model": {
+            "problem": "A deep cut to the forearm is bleeding heavily.",
+            "steps": [
+              "Check danger; call 999 (or ask someone to)",
+              "Press firmly with a clean cloth",
+              "Keep pressing; add pads, do not lift to look",
+              "Watch for shock: pale, cold, fast breathing"
+            ],
+            "answer": "Direct pressure until help arrives"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "A choking adult can still cough strongly. What should you do?",
+            "options": [
+              "Back blows immediately",
+              "Encourage them to keep coughing",
+              "Give water",
+              "Abdominal thrusts"
+            ],
+            "answer": 1,
+            "why": "A strong cough is the best way to clear a mild blockage."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Order: abdominal thrusts, encourage cough, back blows, call 999.",
+          "a": "Encourage cough, back blows, abdominal thrusts, call 999.",
+          "mins": 2,
+          "model": "Teacher orders the steps, explaining the reason for each."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Emergency scenarios (pupil PDF): choose the right first aid for four situations.",
+          "a": "Correct actions for choking and bleeding scenarios.",
+          "mins": 8,
+          "model": "Teacher does scenario 1."
+        },
+        {
+          "q": "Extend: Check your home first aid kit with a parent and list what is missing.",
+          "a": "A checked list.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: In the portal response box, explain why you should not remove an object stuck in a wound.",
+          "a": "It may be plugging the wound; removing it can cause heavy bleeding.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Severe choking: first action? A) give water B) up to 5 back blows C) wait",
+          "a": "B) up to 5 back blows",
+          "mins": 1,
+          "options": [
+            "Give water",
+            "Up to 5 back blows",
+            "Wait"
+          ]
+        },
+        {
+          "q": "Big question: someone at the table cannot speak or cough. What do you do?",
+          "a": "Back blows, then abdominal thrusts, call 999 if not cleared.",
+          "mins": 2
+        }
+      ],
+      "homework": "Show a family member the choking steps on the step card (no practice thrusts).",
+      "send": "SEND: step cards with symbols. EAL: choke, bleed, pressure. Stretch: research choking first aid for babies (different steps).",
+      "resources": [
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Key Stage 4, checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules",
+        "First aid content follows current UK Resuscitation Council and NHS guidance; a recognised first aid syllabus and who checks the live demonstration: TO CONFIRM",
+        "Portal pshe y11 lesson 3 (choking and bleeding part)",
+        "Emergency scenarios (pupil PDF)",
+        "Home first aid kit"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "first aid kit open contents",
+          "alt": "An open first aid kit",
+          "for": "teach:3"
+        },
+        {
+          "find": "sterile dressing bandage",
+          "alt": "A sterile dressing",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: First aid",
+      "n": 6,
+      "title": "Exam stress: planning the final weeks",
+      "duration": 50,
+      "bigQuestion": "If you had one hour a day for the next 12 weeks, how would you use it to raise your grades the most?",
+      "objectives": [
+        "To understand how to plan the weeks before the exams so revision is effective and stress is managed"
+      ],
+      "successCriteria": [
+        "All: list your exam dates and subjects",
+        "Most: build a revision timetable with spaced retrieval and rest",
+        "Some: plan for exam-day logistics and how to recover from a bad paper"
+      ],
+      "crossCurricular": "All International GCSE subjects: exam technique",
+      "smsc": "Spiritual: tawakkul and du'a before exams",
+      "keywords": [
+        {
+          "term": "revision timetable",
+          "def": "a plan of what to revise and when"
+        },
+        {
+          "term": "past paper",
+          "def": "a real exam paper from an earlier year"
+        },
+        {
+          "term": "mark scheme",
+          "def": "the examiner's guide to how marks are given"
+        },
+        {
+          "term": "exam-day plan",
+          "def": "what to bring, when to arrive and how to stay calm"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you had one hour a day for the next 12 weeks, how would you use it to raise your grades the most?",
+        "a": "Target weakest topics with retrieval and past paper questions, marked with mark schemes."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And when you have decided, then rely upon Allah' (Al 'Imran 3:159). Plan well, work steadily, make du'a and then trust Allah with the result (tawakkul).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which revision is most effective?",
+          "a": "Self-testing with spaced practice",
+          "mins": 1,
+          "options": [
+            "Highlighting",
+            "Self-testing with spacing"
+          ]
+        },
+        {
+          "q": "What is a mark scheme?",
+          "a": "The examiner's guide to awarding marks.",
+          "mins": 1
+        },
+        {
+          "q": "Severe choking first action?",
+          "a": "Up to 5 back blows.",
+          "mins": 1
+        },
+        {
+          "q": "When is the mock week?",
+          "a": "The week of 8 Feb.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Know your dates",
+          "bullets": [
+            "Exams run 10 May to 18 Jun 2027 (Pearson timetable)",
+            "Private candidates at a booked centre",
+            "Check every paper's date and session"
+          ],
+          "note": "Use the school's exam table."
+        },
+        {
+          "heading": "Building the timetable",
+          "bullets": [
+            "List topics, rate them red, amber, green",
+            "More time on red",
+            "Mix subjects each day",
+            "Past papers under timed conditions"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "Plan one revision day in a holiday week before the exams.",
+            "steps": [
+              "After Fajr: 45 minutes maths red topics",
+              "Mid-morning: biology flashcards and a past question",
+              "Afternoon: English Language timed Section A, then mark",
+              "Evening: light review, screens off, sleep"
+            ],
+            "answer": "A mixed, targeted day with rest"
+          }
+        },
+        {
+          "heading": "Exam-day plan",
+          "bullets": [
+            "Check centre, time and ID",
+            "Pens, calculator, clear bottle",
+            "Arrive early; breathe; read the paper"
+          ],
+          "note": "Eid al-Adha half term overlaps exams: check centre dates (TO CONFIRM).",
+          "table": {
+            "head": [
+              "Before",
+              "During",
+              "After"
+            ],
+            "rows": [
+              [
+                "Sleep, breakfast, du'a",
+                "Read questions twice",
+                "Do not dwell on a bad paper"
+              ],
+              [
+                "Check equipment",
+                "Watch the time",
+                "Prepare for the next"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Which topics deserve the most revision time?",
+            "options": [
+              "Ones you already know well",
+              "Red (weakest) topics",
+              "Random topics",
+              "None"
+            ],
+            "answer": 1,
+            "why": "Targeting weak topics gives the biggest gains."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Rate three maths topics red, amber or green and say which to revise first.",
+          "a": "The red topic first.",
+          "mins": 2,
+          "model": "Teacher rates three topics and explains."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Build your revision timetable for the next four weeks (pupil PDF) with RAG-rated topics.",
+          "a": "A realistic timetable with spaced practice and rest.",
+          "mins": 10,
+          "model": "Teacher fills week 1 Monday."
+        },
+        {
+          "q": "Extend: In the portal response box, write your exam-day plan. Start: 'The night before...'",
+          "a": "Sleep, equipment, travel, arrive early, du'a.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "A past paper is... A) a newspaper B) a real exam from an earlier year C) notes",
+          "a": "B) a real exam from an earlier year",
+          "mins": 1,
+          "options": [
+            "A newspaper",
+            "A real exam from an earlier year",
+            "Notes"
+          ]
+        },
+        {
+          "q": "Big question: one hour a day for 12 weeks: how will you use it?",
+          "a": "Target weak topics with retrieval and timed past questions.",
+          "mins": 2
+        }
+      ],
+      "homework": "Show your revision timetable to a parent and agree where and when you will work.",
+      "send": "SEND: timetable template with subjects filled. EAL: revise, timetable, past paper. Stretch: add a review day each week.",
+      "resources": [
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Key Stage 4, checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules",
+        "Revision timetable template (pupil PDF)",
+        "School exam table: Pearson summer 2027 final timetable dates",
+        "Help list on the final slide: parents, form tutor, the school's designated safeguarding lead (contact in the portal), Childline 0800 1111, NHS 111"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "exam hall desks",
+          "alt": "An empty exam hall",
+          "for": "teach:1"
+        },
+        {
+          "find": "wall calendar planner",
+          "alt": "A wall calendar",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: First aid",
+      "n": 7,
+      "title": "Mock-week wellbeing check",
+      "duration": 50,
+      "bigQuestion": "Is a mock exam a judgement, or a map?",
+      "objectives": [
+        "To understand how to look after wellbeing during the mock week and use the results to improve"
+      ],
+      "successCriteria": [
+        "All: rate your wellbeing honestly and name one support",
+        "Most: use a wellbeing plan through the mock week",
+        "Some: plan how to turn mock feedback into targets after the break"
+      ],
+      "crossCurricular": "All examined subjects: using mock feedback",
+      "smsc": "Spiritual: shukr and sabr",
+      "keywords": [
+        {
+          "term": "wellbeing",
+          "def": "feeling healthy and able to cope"
+        },
+        {
+          "term": "mock exam",
+          "def": "a practice exam in real conditions"
+        },
+        {
+          "term": "feedback",
+          "def": "information on how to improve"
+        },
+        {
+          "term": "target",
+          "def": "a specific next step"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is a mock exam a judgement, or a map?",
+        "a": "A map: it shows where you are and what to do next."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'How wonderful is the affair of the believer: all of it is good. If good befalls him he is grateful, and if harm befalls him he is patient' (Muslim). Whatever the mock results, gratitude and sabr help us respond well.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Which topics get most revision time?",
+          "a": "Red (weakest) topics",
+          "mins": 1,
+          "options": [
+            "Green topics",
+            "Red topics"
+          ]
+        },
+        {
+          "q": "Name one item for exam day.",
+          "a": "Black pens, calculator, clear water bottle, ID.",
+          "mins": 1
+        },
+        {
+          "q": "What is a mark scheme?",
+          "a": "The examiner's guide to marks.",
+          "mins": 1
+        },
+        {
+          "q": "Name a stress strategy.",
+          "a": "Breathing, exercise, talking, du'a.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Wellbeing check",
+          "bullets": [
+            "Sleep",
+            "Food and water",
+            "Movement",
+            "Mood and worries"
+          ],
+          "note": "Pupils rate each 1 to 5 privately.",
+          "chart": {
+            "kind": "bar",
+            "title": "Example wellbeing check (1 to 5)",
+            "labels": [
+              "Sleep",
+              "Food",
+              "Movement",
+              "Mood"
+            ],
+            "values": [
+              3,
+              4,
+              2,
+              3
+            ],
+            "unit": "rating"
+          }
+        },
+        {
+          "heading": "During mock week",
+          "bullets": [
+            "Keep normal sleep",
+            "Short reviews, not all-nighters",
+            "Breaks outside",
+            "Talk if overwhelmed"
+          ],
+          "note": "Mock week replaces the timetable; PSHE is a short check-in."
+        },
+        {
+          "heading": "After the mocks",
+          "bullets": [
+            "Read feedback carefully",
+            "Turn it into three targets",
+            "Plan them into the Ramadan break revision"
+          ],
+          "note": "Model.",
+          "model": {
+            "problem": "Feedback: 'Lost marks on 6-mark questions; ran out of time.'",
+            "steps": [
+              "Target 1: practise one 6-mark question a day",
+              "Target 2: timed sections with a clock",
+              "Target 3: use the mark scheme to self-mark",
+              "Review each target in two weeks"
+            ],
+            "answer": "Three specific, checkable targets"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Best use of a disappointing mock?",
+            "options": [
+              "Give up the subject",
+              "Turn feedback into specific targets",
+              "Ignore it",
+              "Blame the exam"
+            ],
+            "answer": 1,
+            "why": "Mocks are practice; targets turn them into progress."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Turn 'weak on algebra' into a specific target.",
+          "a": "For example: 20 minutes of factorising and solving questions three times a week, checked with answers.",
+          "mins": 2,
+          "model": "Teacher rewrites a vague target into a specific one."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Complete your private wellbeing check and a one-week plan for the mock week (pupil PDF).",
+          "a": "An honest check and a plan.",
+          "mins": 8,
+          "model": "Teacher shows an example plan."
+        },
+        {
+          "q": "Extend: In the portal response box, write how you will use mock feedback. Start: 'When I get my results...'",
+          "a": "Read feedback, set three targets, plan them into the break.",
+          "mins": 5
+        }
+      ],
+      "exit": [
+        {
+          "q": "A mock exam is best seen as... A) a final judgement B) a map for improvement C) unimportant",
+          "a": "B) a map for improvement",
+          "mins": 1,
+          "options": [
+            "A final judgement",
+            "A map for improvement",
+            "Unimportant"
+          ]
+        },
+        {
+          "q": "Big question: judgement or map? Why?",
+          "a": "A map: it shows strengths and what to improve.",
+          "mins": 2
+        }
+      ],
+      "homework": "During the Ramadan break, follow your targets and keep a steady routine around fasting, prayer and revision.",
+      "send": "SEND: wellbeing check with symbols. EAL: wellbeing, feedback, target. Stretch: plan a revision timetable around Ramadan.",
+      "resources": [
+        "Tarbiyyah Secondary PSHE Curriculum Intent, Key Stage 4, checked against the PSHE Association KS3-4 Planning Toolkit (2017, generic) where it fits TGA's rules",
+        "Wellbeing check and mock-week plan (pupil PDF)",
+        "Help list on the final slide: parents, form tutor, the school's designated safeguarding lead (contact in the portal), Childline 0800 1111, NHS 111"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "compass map navigation",
+          "alt": "A compass on a map",
+          "for": "hook"
+        },
+        {
+          "find": "water bottle clear",
+          "alt": "A clear water bottle",
+          "for": "teach:2"
+        }
+      ]
     }
   ]
 }

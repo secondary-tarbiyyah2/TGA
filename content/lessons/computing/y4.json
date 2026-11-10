@@ -2,7 +2,7 @@
   "subject": "Computing",
   "year": "y4",
   "board": "National Curriculum",
-  "source": "National Curriculum KS2 Computing (computer networks and the internet, search technologies, selection in programs); unplugged packets activity and Scratch work adapted from the school's Drive Computing scheme (Compute-IT 'How the web works' / ComputerScienceUK)",
+  "source": "National Curriculum KS2 Computing (computer networks and the internet, search technologies, selection in programs); unplugged packets activity and Scratch work adapted from the school's Drive Computing scheme (Compute-IT 'How the web works' / ComputerScienceUK) | Spring 1 2027 (lessons 5 to 9, v3): Tarbiyyah Primary computing long-term plan 2023-24 Year 4 Spring 1 (Repetition in Shapes; Data Logging), NCCE Teach Computing based",
   "lessons": [
     {
       "unit": "Unit 1: Networks, the internet and searching",
@@ -15,10 +15,22 @@
         "Tell the difference between the internet and the World Wide Web"
       ],
       "keywords": [
-        { "term": "network", "def": "computers and devices joined together to share information" },
-        { "term": "internet", "def": "a huge network of networks across the world" },
-        { "term": "packet", "def": "a small piece of a message sent across a network" },
-        { "term": "router", "def": "a device that sends data to the right place" }
+        {
+          "term": "network",
+          "def": "computers and devices joined together to share information"
+        },
+        {
+          "term": "internet",
+          "def": "a huge network of networks across the world"
+        },
+        {
+          "term": "packet",
+          "def": "a small piece of a message sent across a network"
+        },
+        {
+          "term": "router",
+          "def": "a device that sends data to the right place"
+        }
       ],
       "starter": [
         "Bismillah. Name three devices that can connect to Wi-Fi.",
@@ -28,22 +40,39 @@
       "teach": [
         {
           "heading": "What is a network?",
-          "bullets": ["Devices joined so they can share information.", "A home network: phones, tablets, router.", "School networks share printers and files."],
+          "bullets": [
+            "Devices joined so they can share information.",
+            "A home network: phones, tablets, router.",
+            "School networks share printers and files."
+          ],
           "note": "Draw your own home network on screen: router in the middle with lines to devices. Ask pupils how many devices are connected in their homes. Explain that the router is the device that connects them to the internet."
         },
         {
           "heading": "The internet",
-          "bullets": ["The internet is a network of networks.", "Cables under the sea and wires join countries.", "Servers are computers that store websites."],
+          "bullets": [
+            "The internet is a network of networks.",
+            "Cables under the sea and wires join countries.",
+            "Servers are computers that store websites."
+          ],
           "note": "Show a world map with cable routes (many internet connections between continents travel through undersea cables). Say clearly that the internet is not 'the cloud in the sky'; it is real cables, routers and servers. Misconception: pupils say 'the internet is Wi-Fi'; Wi-Fi is only the last wireless step to the router."
         },
         {
           "heading": "Packets",
-          "bullets": ["Big messages are split into small packets.", "Each packet has an address.", "Packets can take different routes.", "They are put back in order at the end."],
+          "bullets": [
+            "Big messages are split into small packets.",
+            "Each packet has an address.",
+            "Packets can take different routes.",
+            "They are put back in order at the end."
+          ],
           "note": "Do the unplugged activity: write the sentence 'Bismillah, I am learning about packets' with one word on each card. Number the cards. Shuffle and send 'by different routes' (pupils pass them around), then rebuild in order. Link this to why numbering is important."
         },
         {
           "heading": "Internet or web?",
-          "bullets": ["The internet is the network.", "The World Wide Web is websites on it.", "Email and games use the internet but are not websites."],
+          "bullets": [
+            "The internet is the network.",
+            "The World Wide Web is websites on it.",
+            "Email and games use the internet but are not websites."
+          ],
           "note": "Use the analogy of roads and shops: the internet is the road system, the web is the shops on the roads. Ask: is a video call the web? (It uses the internet; it is not necessarily a web page.) Accept discussion; the key idea is that the web runs on the internet."
         }
       ],
@@ -75,9 +104,18 @@
         "Check whether a website can be trusted"
       ],
       "keywords": [
-        { "term": "search engine", "def": "a website which finds web pages for the words you type" },
-        { "term": "keyword", "def": "an important word used in a search" },
-        { "term": "reliable", "def": "something you can trust to be true" }
+        {
+          "term": "search engine",
+          "def": "a website which finds web pages for the words you type"
+        },
+        {
+          "term": "keyword",
+          "def": "an important word used in a search"
+        },
+        {
+          "term": "reliable",
+          "def": "something you can trust to be true"
+        }
       ],
       "starter": [
         "Bismillah. What is the difference between the internet and the web?",
@@ -87,22 +125,39 @@
       "teach": [
         {
           "heading": "Choosing keywords",
-          "bullets": ["Use short, important words.", "'Tallest mountain world' beats a long sentence.", "Add words to narrow the search."],
+          "bullets": [
+            "Use short, important words.",
+            "'Tallest mountain world' beats a long sentence.",
+            "Add words to narrow the search."
+          ],
           "note": "Search live for 'mountain' and then 'tallest mountain in the world height metres'. Compare the results. Ask pupils to say which keywords gave a better answer. Use a child-safe search engine or safe search if available."
         },
         {
           "heading": "Adverts and results",
-          "bullets": ["Some results are adverts.", "Adverts want you to buy or click.", "Look for the word 'Ad' or 'Sponsored'."],
+          "bullets": [
+            "Some results are adverts.",
+            "Adverts want you to buy or click.",
+            "Look for the word 'Ad' or 'Sponsored'."
+          ],
           "note": "Point to the labels on a real results page. Ask: who pays for an advert, and what do they want you to do? Remind pupils never to click on pop-ups or download things without asking a trusted adult."
         },
         {
           "heading": "Can I trust this page?",
-          "bullets": ["Who wrote it?", "When was it written?", "Do other sites say the same thing?", "Is it trying to sell something?"],
+          "bullets": [
+            "Who wrote it?",
+            "When was it written?",
+            "Do other sites say the same thing?",
+            "Is it trying to sell something?"
+          ],
           "note": "Compare two pages on the same topic: one from a museum or a school, one a personal blog with adverts. Ask pupils to apply the four checks. Teach that if something is shared online but not checked, we should be careful, and that checking before repeating information is part of honesty (sidq)."
         },
         {
           "heading": "Fact or opinion",
-          "bullets": ["Fact: Mount Everest is the highest mountain above sea level.", "Opinion: Everest is the best mountain.", "Facts can be checked."],
+          "bullets": [
+            "Fact: Mount Everest is the highest mountain above sea level.",
+            "Opinion: Everest is the best mountain.",
+            "Facts can be checked."
+          ],
           "note": "Give pupils five statements to sort into fact or opinion. Misconception: pupils think if it is on the internet it is true. Show a made-up news story (clearly labelled as fake for the lesson) and ask how they could check it."
         }
       ],
@@ -134,9 +189,18 @@
         "Predict the output of a selection algorithm"
       ],
       "keywords": [
-        { "term": "selection", "def": "choosing which instructions to follow" },
-        { "term": "condition", "def": "a question with a yes or no answer" },
-        { "term": "if", "def": "the word we use to check a condition" }
+        {
+          "term": "selection",
+          "def": "choosing which instructions to follow"
+        },
+        {
+          "term": "condition",
+          "def": "a question with a yes or no answer"
+        },
+        {
+          "term": "if",
+          "def": "the word we use to check a condition"
+        }
       ],
       "starter": [
         "Bismillah. How many sides does a square have?",
@@ -146,22 +210,38 @@
       "teach": [
         {
           "heading": "Everyday choices",
-          "bullets": ["If it is raining, take an umbrella.", "Otherwise, wear sunglasses.", "A condition is a yes or no question."],
+          "bullets": [
+            "If it is raining, take an umbrella.",
+            "Otherwise, wear sunglasses.",
+            "A condition is a yes or no question."
+          ],
           "note": "Ask pupils to stand if the condition is true. Use: 'If you are wearing a blue top, stand up'. The condition is 'wearing a blue top?' and the answer is yes or no. Link to making choices carefully."
         },
         {
           "heading": "If, then, else",
-          "bullets": ["IF it is Friday THEN go to Jumu'ah.", "ELSE go to school as normal.", "Only one path is followed."],
+          "bullets": [
+            "IF it is Friday THEN go to Jumu'ah.",
+            "ELSE go to school as normal.",
+            "Only one path is followed."
+          ],
           "note": "Display the flow as a diamond decision shape with two arrows. Ask pupils which path they follow on Mondays. Only one path is followed; misconception: pupils think the program does both."
         },
         {
           "heading": "Number conditions",
-          "bullets": ["IF score > 10 THEN say 'Well done!'", "ELSE say 'Try again'.", "Score is 12. What is said?"],
+          "bullets": [
+            "IF score > 10 THEN say 'Well done!'",
+            "ELSE say 'Try again'.",
+            "Score is 12. What is said?"
+          ],
           "note": "Explain the symbols: greater than (>), less than (<), equal to (=). Test with different scores: 5, 10, 11. Many pupils get 10 wrong: 10 is not greater than 10, so the else branch runs."
         },
         {
           "heading": "Unplugged robot rule",
-          "bullets": ["IF the robot is next to a wall THEN turn right.", "ELSE move forward.", "Follow the rule on a grid."],
+          "bullets": [
+            "IF the robot is next to a wall THEN turn right.",
+            "ELSE move forward.",
+            "Follow the rule on a grid."
+          ],
           "note": "Use a drawn grid with walls around the edges and a counter. Pupils follow the rule step by step. Ask for predictions then check. This builds the idea of a program which responds to its situation."
         }
       ],
@@ -193,9 +273,18 @@
         "Build and debug a short quiz"
       ],
       "keywords": [
-        { "term": "ask and wait", "def": "a block that asks a question and waits for typed input" },
-        { "term": "answer", "def": "the block which stores what the user typed" },
-        { "term": "if-else", "def": "a block that chooses between two sets of instructions" }
+        {
+          "term": "ask and wait",
+          "def": "a block that asks a question and waits for typed input"
+        },
+        {
+          "term": "answer",
+          "def": "the block which stores what the user typed"
+        },
+        {
+          "term": "if-else",
+          "def": "a block that chooses between two sets of instructions"
+        }
       ],
       "starter": [
         "Bismillah. What does a condition give: yes/no or a number?",
@@ -205,22 +294,39 @@
       "teach": [
         {
           "heading": "Ask and answer",
-          "bullets": ["'ask ... and wait' shows a question.", "The user types a reply.", "'answer' holds the reply."],
+          "bullets": [
+            "'ask ... and wait' shows a question.",
+            "The user types a reply.",
+            "'answer' holds the reply."
+          ],
           "note": "Build live: when green flag clicked, ask 'What is the capital of France?' and wait. Show the answer block holding the reply by making the sprite say it. Explain that this is input from the user."
         },
         {
           "heading": "If-else block",
-          "bullets": ["Put the condition in the diamond.", "'answer' = 'Paris' is the condition.", "Right: say 'Correct!'.", "Wrong: say 'Try again'."],
+          "bullets": [
+            "Put the condition in the diamond.",
+            "'answer' = 'Paris' is the condition.",
+            "Right: say 'Correct!'.",
+            "Wrong: say 'Try again'."
+          ],
           "note": "Build the if-else around the answer check. Stress that the equals block compares the answer with the text. Mention that Scratch ignores upper or lower case for text, so 'paris' also matches. Misconception: forgetting to put the if-else block after the ask block."
         },
         {
           "heading": "Test every path",
-          "bullets": ["Test a right answer.", "Test a wrong answer.", "Both paths must work."],
+          "bullets": [
+            "Test a right answer.",
+            "Test a wrong answer.",
+            "Both paths must work."
+          ],
           "note": "Run the quiz twice, once right and once wrong. Discuss why testing both paths matters: a bug can hide in the path we did not try. Praise pupils who test carefully."
         },
         {
           "heading": "More questions",
-          "bullets": ["Add question 2 after question 1.", "Use a different condition.", "Keep a score later."],
+          "bullets": [
+            "Add question 2 after question 1.",
+            "Use a different condition.",
+            "Keep a score later."
+          ],
           "note": "Show how to copy and edit the blocks for another question. If time, show how a variable can count correct answers, but do not require it yet. Questions can be about Islamic knowledge such as the number of daily prayers (5)."
         }
       ],
@@ -240,6 +346,1125 @@
       ],
       "homework": "Add two more questions to your quiz, about a subject you love, and test it with someone at home.",
       "send": "SEND/EAL: provide a partially built quiz with the blocks in order to complete. Stretch: add a variable called score and add 1 for each correct answer."
+    },
+    {
+      "unit": "Spring 1: Repetition in shapes and data logging",
+      "n": 5,
+      "title": "What is a loop? Repeating instructions unplugged",
+      "duration": 45,
+      "bigQuestion": "How could you tell a friend to walk around the edge of a square table using only one sentence?",
+      "objectives": [
+        "To understand that a loop repeats a set of instructions a chosen number of times"
+      ],
+      "successCriteria": [
+        "All: find the repeating part of a set of instructions",
+        "Most: rewrite instructions using 'repeat ... times'",
+        "Some: work out how many times to repeat to draw a shape"
+      ],
+      "crossCurricular": "Maths: properties of shapes and right angles",
+      "keywords": [
+        {
+          "term": "repeat",
+          "def": "do the same instructions again"
+        },
+        {
+          "term": "loop",
+          "def": "instructions that run again and again"
+        },
+        {
+          "term": "instruction",
+          "def": "one step that tells someone what to do"
+        },
+        {
+          "term": "sequence",
+          "def": "instructions in order"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "How could you tell a friend to walk around the edge of a square table using only one sentence?",
+        "a": "'Repeat 4 times: walk one side, turn right.' That one sentence is a loop."
+      },
+      "starter": [
+        {
+          "q": "An algorithm is... A) a set of steps in order B) a type of computer C) a website",
+          "a": "A) a set of steps in order",
+          "mins": 1,
+          "options": [
+            "A set of steps in order",
+            "A type of computer",
+            "A website"
+          ]
+        },
+        {
+          "q": "What is a bug?",
+          "a": "A mistake in a program or algorithm.",
+          "mins": 1
+        },
+        {
+          "q": "How many sides does a square have?",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "How many degrees is a right-angle turn?",
+          "a": "90 degrees",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Patterns in instructions",
+          "bullets": [
+            "Some steps come again and again",
+            "Writing them out is slow",
+            "Spot the repeating part"
+          ],
+          "note": "Read out: 'forward 3, turn right, forward 3, turn right, forward 3, turn right, forward 3, turn right'. Ask: what do you notice?"
+        },
+        {
+          "heading": "A loop",
+          "bullets": [
+            "Say the steps once",
+            "Say how many times",
+            "'Repeat 4: forward 3, turn right'"
+          ],
+          "note": "The repeating part goes inside the loop.",
+          "compare": {
+            "left": {
+              "title": "Without a loop",
+              "points": [
+                "8 instructions",
+                "Easy to miss one",
+                "Slow to write"
+              ]
+            },
+            "right": {
+              "title": "With a loop",
+              "points": [
+                "1 loop, 2 instructions inside",
+                "Easy to check",
+                "Easy to change"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Draw a square on paper",
+          "bullets": [
+            "Pencil on a dot grid",
+            "Follow the loop",
+            "Count each repeat"
+          ],
+          "note": "Pupils follow the loop with a pencil on a dot grid (pupil PDF).",
+          "model": {
+            "problem": "Draw a square with sides of 3 dots.",
+            "steps": [
+              "Start at a dot, pencil facing up",
+              "Repeat 4 times:",
+              "Draw 3 dots forward",
+              "Turn right 90 degrees"
+            ],
+            "answer": "repeat 4 (forward 3, turn right 90)"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Which part of 'jump, clap, jump, clap, jump, clap' goes inside the loop?",
+            "options": [
+              "jump",
+              "clap",
+              "jump, clap",
+              "jump, clap, jump"
+            ],
+            "answer": 2,
+            "why": "The pair 'jump, clap' repeats 3 times: repeat 3 (jump, clap)."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write as a loop: 'step, step, step, step, step'.",
+          "a": "repeat 5 (step)",
+          "mins": 1,
+          "model": "Teacher counts the repeats aloud: '1, 2, 3, 4, 5 steps', so repeat 5 with 'step' inside."
+        },
+        {
+          "q": "Write as a loop: 'forward 2, turn right' four times.",
+          "a": "repeat 4 (forward 2, turn right)",
+          "mins": 2
+        },
+        {
+          "q": "What shape does 'repeat 4 (forward 5, turn right 90)' draw?",
+          "a": "A square with sides of 5.",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: On the dot grid, follow 'repeat 4 (forward 4, turn right 90)' and draw the shape.",
+          "a": "A square with sides of 4 dots.",
+          "mins": 4,
+          "model": "Teacher draws the first side and turn on the shared grid."
+        },
+        {
+          "q": "Extend: Write a loop that draws a rectangle 4 long and 2 wide. Hint: put two sides inside the loop.",
+          "a": "repeat 2 (forward 4, turn right 90, forward 2, turn right 90)",
+          "mins": 5
+        },
+        {
+          "q": "Stretch: Write a loop for a 'staircase' of 3 steps (up 1, right 1).",
+          "a": "repeat 3 (forward 1, turn right 90, forward 1, turn left 90)",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "A loop... A) repeats instructions B) deletes instructions C) stops a program",
+          "a": "A) repeats instructions",
+          "mins": 1,
+          "options": [
+            "Repeats instructions",
+            "Deletes instructions",
+            "Stops a program"
+          ]
+        },
+        {
+          "q": "Write a loop for walking around a square table.",
+          "a": "repeat 4 (walk one side, turn right).",
+          "mins": 2
+        }
+      ],
+      "homework": "Find a loop in daily life (for example the steps of wudu repeated three times) and write it as 'repeat __ times: ...'.",
+      "send": "SEND: arrows to cut out and stick. EAL: repeat, forward, turn with gestures. Stretch: write a loop inside a loop.",
+      "resources": [
+        "Tarbiyyah Primary computing long-term plan 2023-24, Year 4 Spring 1 (Repetition in Shapes; Data Logging), built on the NCCE Teach Computing Curriculum",
+        "Dot grid sheet (pupil PDF, printable or on a drawing tablet)",
+        "Pencil and ruler"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "square wooden table top view",
+          "alt": "A square table seen from above",
+          "for": "hook"
+        },
+        {
+          "find": "dot grid paper",
+          "alt": "Dot grid paper",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Repetition in shapes and data logging",
+      "n": 6,
+      "title": "Drawing shapes with the repeat block",
+      "duration": 45,
+      "bigQuestion": "To walk all the way around any shape and face the way you started, how far must you turn in total?",
+      "objectives": [
+        "To understand how a repeat block and the pen draw regular shapes on screen"
+      ],
+      "successCriteria": [
+        "All: draw a square with a repeat block",
+        "Most: draw a triangle and a hexagon by changing the count and angle",
+        "Some: explain the rule: turn = 360 divided by the number of sides"
+      ],
+      "crossCurricular": "Maths: angles in regular shapes (turns adding to 360 degrees)",
+      "smsc": "Spiritual: the hexagons of the honeycomb, made by bees as Allah inspired them (an-Nahl 16:68)",
+      "keywords": [
+        {
+          "term": "repeat block",
+          "def": "a block that runs the blocks inside it again"
+        },
+        {
+          "term": "angle",
+          "def": "how far the sprite turns, in degrees"
+        },
+        {
+          "term": "pen",
+          "def": "the extension that lets a sprite draw"
+        },
+        {
+          "term": "shape",
+          "def": "a closed figure like a square or triangle"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "To walk all the way around any shape and face the way you started, how far must you turn in total?",
+        "a": "One full turn: 360 degrees."
+      },
+      "starter": [
+        {
+          "q": "Write a loop for a square.",
+          "a": "repeat 4 (forward, turn right 90)",
+          "mins": 1
+        },
+        {
+          "q": "How many degrees in a full turn? A) 90 B) 180 C) 360",
+          "a": "C) 360",
+          "mins": 1,
+          "options": [
+            "90",
+            "180",
+            "360"
+          ]
+        },
+        {
+          "q": "What does a loop save?",
+          "a": "Writing the same instructions again (time and mistakes).",
+          "mins": 1
+        },
+        {
+          "q": "How many sides does a hexagon have?",
+          "a": "6",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Pen and repeat",
+          "bullets": [
+            "Add the Pen extension",
+            "pen down to draw, pen up to stop",
+            "repeat block is in Control"
+          ],
+          "note": "Share screen: use an object sprite (Pencil) and delete the cat. 'erase all' clears the stage."
+        },
+        {
+          "heading": "The square",
+          "bullets": [
+            "repeat 4",
+            "move 100 steps",
+            "turn 90 degrees"
+          ],
+          "note": "Model live and run.",
+          "code": {
+            "lang": "scratch",
+            "text": "when green flag clicked\nerase all\npen down\nrepeat 4\n  move 100 steps\n  turn right 90 degrees\nend",
+            "output": "A square with sides of 100 steps."
+          }
+        },
+        {
+          "heading": "The turn rule",
+          "bullets": [
+            "Total turn is 360 degrees",
+            "Turn = 360 / number of sides",
+            "Triangle 120, hexagon 60"
+          ],
+          "note": "Fill the table with the class.",
+          "table": {
+            "head": [
+              "Shape",
+              "Sides (repeat)",
+              "Turn"
+            ],
+            "rows": [
+              [
+                "Triangle",
+                "3",
+                "120"
+              ],
+              [
+                "Square",
+                "4",
+                "90"
+              ],
+              [
+                "Pentagon",
+                "5",
+                "72"
+              ],
+              [
+                "Hexagon",
+                "6",
+                "60"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Which loop draws a triangle?",
+            "options": [
+              "repeat 3 (move 100, turn 60)",
+              "repeat 3 (move 100, turn 120)",
+              "repeat 4 (move 100, turn 120)",
+              "repeat 3 (move 100, turn 90)"
+            ],
+            "answer": 1,
+            "why": "3 sides and 360 / 3 = 120 degrees. Turning 60 is the inside angle, a common trap."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Build the square script and run it.",
+          "a": "pen down, repeat 4 (move 100, turn 90).",
+          "mins": 2,
+          "model": "Teacher builds it block by block, predicting 'a square' before the green flag."
+        },
+        {
+          "q": "Change it to draw a triangle.",
+          "a": "repeat 3, turn 120.",
+          "mins": 2
+        },
+        {
+          "q": "What turn do you need for a pentagon (5 sides)?",
+          "a": "360 / 5 = 72 degrees",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Draw a hexagon with a repeat block.",
+          "a": "repeat 6 (move 60, turn 60).",
+          "mins": 4,
+          "model": "Teacher works out 360 / 6 = 60 aloud, then builds and runs it."
+        },
+        {
+          "q": "Extend: Draw an octagon (8 sides). Write the turn sum first.",
+          "a": "360 / 8 = 45; repeat 8 (move 50, turn 45).",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Try 'repeat 36 (move 10, turn 10)'. What shape appears and why?",
+          "a": "Almost a circle: 36 x 10 = 360, with many tiny sides.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "For a square the sprite turns... A) 45 B) 90 C) 120",
+          "a": "B) 90",
+          "mins": 1,
+          "options": [
+            "45",
+            "90",
+            "120"
+          ]
+        },
+        {
+          "q": "Explain how to find the turn for any regular shape.",
+          "a": "Divide 360 by the number of sides.",
+          "mins": 2
+        }
+      ],
+      "homework": "Write the loop (repeat count and turn) for a shape with 10 sides. Check: does repeats x turn = 360?",
+      "send": "SEND: the table of shapes and turns printed beside the screen. EAL: angle, turn, degrees. Stretch: draw a star with 'repeat 5 (move 100, turn 144)'.",
+      "resources": [
+        "Tarbiyyah Primary computing long-term plan 2023-24, Year 4 Spring 1 (Repetition in Shapes; Data Logging), built on the NCCE Teach Computing Curriculum",
+        "Scratch in the browser with the Pen extension (scratch.mit.edu, free; pupil logins from the teacher's Scratch Teacher Account: TO CONFIRM)",
+        "Shapes and turns table (pupil PDF)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "hexagonal honeycomb cells",
+          "alt": "Honeycomb: hexagons made by bees",
+          "for": "hook"
+        },
+        {
+          "find": "protractor",
+          "alt": "A protractor for measuring angles",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Repetition in shapes and data logging",
+      "n": 7,
+      "title": "Patterns: repeating shapes and changing the angle",
+      "duration": 45,
+      "bigQuestion": "Islamic geometric art turns one simple shape again and again. How many times would you turn a square to make a star pattern?",
+      "objectives": [
+        "To understand how putting a shape loop inside another loop makes a pattern"
+      ],
+      "successCriteria": [
+        "All: repeat a square to make a pattern",
+        "Most: choose the turn between shapes so the pattern goes all the way round",
+        "Some: predict a pattern from its script before running it"
+      ],
+      "crossCurricular": "Art: Islamic geometric pattern",
+      "smsc": "Cultural: geometric pattern in Muslim architecture such as the Alhambra",
+      "keywords": [
+        {
+          "term": "pattern",
+          "def": "a design that repeats in a regular way"
+        },
+        {
+          "term": "rotate",
+          "def": "turn around a point"
+        },
+        {
+          "term": "nested loop",
+          "def": "a loop inside another loop"
+        },
+        {
+          "term": "count",
+          "def": "the number of times a loop repeats"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Islamic geometric art turns one simple shape again and again. How many times would you turn a square to make a star pattern?"
+      },
+      "starter": [
+        {
+          "q": "What turn draws a triangle?",
+          "a": "120 degrees",
+          "mins": 1,
+          "options": [
+            "60",
+            "90",
+            "120"
+          ]
+        },
+        {
+          "q": "What is the turn rule?",
+          "a": "360 divided by the number of sides.",
+          "mins": 1
+        },
+        {
+          "q": "Write the loop for a hexagon.",
+          "a": "repeat 6 (move, turn 60)",
+          "mins": 1
+        },
+        {
+          "q": "What block stops the pen drawing?",
+          "a": "pen up",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Shapes become patterns",
+          "bullets": [
+            "Draw a shape",
+            "Turn a little",
+            "Draw it again"
+          ],
+          "note": "Show a geometric tile picture. The same square turned 8 times makes a star."
+        },
+        {
+          "heading": "A loop inside a loop",
+          "bullets": [
+            "Inner loop: draws the square",
+            "Outer loop: repeats the square",
+            "Turn between squares"
+          ],
+          "note": "Trace it with your cursor.",
+          "code": {
+            "lang": "scratch",
+            "text": "when green flag clicked\nerase all\npen down\nrepeat 8\n  repeat 4\n    move 80 steps\n    turn right 90 degrees\n  end\n  turn right 45 degrees\nend",
+            "output": "Eight squares turned around one point: an eight-pointed star pattern."
+          }
+        },
+        {
+          "heading": "Going all the way round",
+          "bullets": [
+            "Number of shapes x turn = 360",
+            "8 shapes: turn 45",
+            "12 shapes: turn 30"
+          ],
+          "note": "Same rule as last lesson, used for the whole pattern.",
+          "model": {
+            "problem": "Make a pattern of 6 triangles all the way round.",
+            "steps": [
+              "Inner loop: repeat 3 (move 80, turn 120)",
+              "Outer loop: repeat 6",
+              "Turn between: 360 / 6 = 60",
+              "Run and check it closes"
+            ],
+            "answer": "repeat 6 (repeat 3 (move 80, turn 120), turn 60)"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "A pattern repeats a square 10 times. What turn goes between the squares?",
+            "options": [
+              "10",
+              "36",
+              "90",
+              "45"
+            ],
+            "answer": 1,
+            "why": "360 / 10 = 36. 90 is the turn inside the square, not between squares."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Build the 8-square pattern from the slide.",
+          "a": "repeat 8 (repeat 4 (move 80, turn 90), turn 45)",
+          "mins": 2,
+          "model": "Teacher builds the inner square loop first, runs it, then wraps it in 'repeat 8' and adds 'turn 45'."
+        },
+        {
+          "q": "Change it to 12 squares. What turn now?",
+          "a": "360 / 12 = 30",
+          "mins": 2
+        },
+        {
+          "q": "What happens with 8 squares and turn 30?",
+          "a": "The pattern does not go all the way round (8 x 30 = 240).",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Make a pattern of 6 hexagons all the way round.",
+          "a": "repeat 6 (repeat 6 (move 50, turn 60), turn 60)",
+          "mins": 4,
+          "model": "Teacher writes the two numbers first: inner turn 60 (hexagon), outer turn 360 / 6 = 60."
+        },
+        {
+          "q": "Extend: Add 'change pen colour by 10' in the outer loop. Describe the result.",
+          "a": "Each shape is a different colour, like a colour wheel.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Predict, then test, what 'repeat 36 (repeat 4 (move 60, turn 90), turn 10)' draws.",
+          "a": "36 squares turned 10 degrees each: a round, flower-like pattern.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "A loop inside another loop is called... A) a nested loop B) a bug C) a sprite",
+          "a": "A) a nested loop",
+          "mins": 1,
+          "options": [
+            "A nested loop",
+            "A bug",
+            "A sprite"
+          ]
+        },
+        {
+          "q": "How do you choose the turn between shapes in a pattern?",
+          "a": "Divide 360 by the number of shapes.",
+          "mins": 2
+        }
+      ],
+      "homework": "Draw on paper one pattern you could make with a nested loop and write its script.",
+      "send": "SEND: start from the square loop already built. EAL: rotate, pattern, inside. Stretch: pattern of pentagons (inner turn 72).",
+      "resources": [
+        "Tarbiyyah Primary computing long-term plan 2023-24, Year 4 Spring 1 (Repetition in Shapes; Data Logging), built on the NCCE Teach Computing Curriculum",
+        "Scratch in the browser with the Pen extension (scratch.mit.edu, free; pupil logins from the teacher's Scratch Teacher Account: TO CONFIRM)",
+        "Pattern planning sheet (pupil PDF)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "eight-pointed star Islamic geometric pattern tile",
+          "alt": "An eight-pointed star tile pattern",
+          "for": "hook"
+        },
+        {
+          "find": "Alhambra tiles geometric",
+          "alt": "Geometric tiles in the Alhambra, Granada",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Repetition in shapes and data logging",
+      "n": 8,
+      "title": "Debug and improve a shape program",
+      "duration": 45,
+      "bigQuestion": "Your program drew half a hexagon. Is the mistake more likely in the repeat count or in the turn?",
+      "objectives": [
+        "To understand how to test a shape program, find its bugs and improve it"
+      ],
+      "successCriteria": [
+        "All: say what a program should draw and what it does draw",
+        "Most: find and fix the bug in a shape program",
+        "Some: improve a working program so it is shorter or easier to change"
+      ],
+      "smsc": "Moral: patience (sabr) and honesty about our own mistakes",
+      "keywords": [
+        {
+          "term": "debug",
+          "def": "find and fix mistakes"
+        },
+        {
+          "term": "bug",
+          "def": "a mistake that makes a program go wrong"
+        },
+        {
+          "term": "test",
+          "def": "run it to check it works"
+        },
+        {
+          "term": "improve",
+          "def": "make it better, shorter or clearer"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your program drew half a hexagon. Is the mistake more likely in the repeat count or in the turn?"
+      },
+      "starter": [
+        {
+          "q": "Turn between 8 shapes in a full pattern?",
+          "a": "45 degrees",
+          "mins": 1,
+          "options": [
+            "8",
+            "45",
+            "90"
+          ]
+        },
+        {
+          "q": "What is a nested loop?",
+          "a": "A loop inside another loop.",
+          "mins": 1
+        },
+        {
+          "q": "Turn for a pentagon?",
+          "a": "72 degrees",
+          "mins": 1
+        },
+        {
+          "q": "What does 'erase all' do?",
+          "a": "Clears the drawing from the stage.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Testing",
+          "bullets": [
+            "Say what it should do",
+            "Run it",
+            "Compare: same or different?"
+          ],
+          "note": "A test is only useful if you know what should happen."
+        },
+        {
+          "heading": "Common shape bugs",
+          "bullets": [
+            "Wrong repeat count",
+            "Wrong turn",
+            "Block outside the loop",
+            "No pen down"
+          ],
+          "note": "Show four tiny broken scripts, one per bug.",
+          "diagram": {
+            "centre": "Shape bugs",
+            "items": [
+              "wrong count",
+              "wrong angle",
+              "turn outside loop",
+              "pen up / no pen down",
+              "missing erase all"
+            ]
+          }
+        },
+        {
+          "heading": "Fix one bug at a time",
+          "bullets": [
+            "Change one thing",
+            "Test again",
+            "Then the next"
+          ],
+          "note": "Changing many things at once hides what fixed it.",
+          "model": {
+            "problem": "Should draw a hexagon; draws half of one: repeat 3 (move 60, turn 60).",
+            "steps": [
+              "Expected: 6 sides",
+              "Got: 3 sides",
+              "The count is wrong",
+              "Change repeat 3 to repeat 6, test"
+            ],
+            "answer": "repeat 6 (move 60, turn 60)"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "A square program draws a line. Most likely bug?",
+            "options": [
+              "Repeat is 4",
+              "The turn is outside the loop",
+              "move is 100",
+              "pen is down"
+            ],
+            "answer": 1,
+            "why": "If the turn is not inside the loop the sprite never turns between sides."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Fix: 'repeat 4 (move 100, turn 60)' should draw a square.",
+          "a": "Change turn 60 to turn 90.",
+          "mins": 2,
+          "model": "Teacher says: expected square, got an open zig-zag; the angle is wrong; 360 / 4 = 90; change and test."
+        },
+        {
+          "q": "Fix: a triangle program draws nothing but the sprite moves.",
+          "a": "Add 'pen down' before the loop.",
+          "mins": 1
+        },
+        {
+          "q": "Fix: the pattern draws on top of the last one every time.",
+          "a": "Add 'erase all' at the start.",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Open 'Shape bugs' in the class studio and fix all four programs. Test each one.",
+          "a": "Square: turn 90; triangle: pen down; hexagon: repeat 6; pattern: turn inside outer loop.",
+          "mins": 6,
+          "model": "Teacher fixes the square live using the three questions."
+        },
+        {
+          "q": "Extend: Improve your hexagon so the size is set in one place (use a 'size' variable or one move block).",
+          "a": "Use one variable 'size' in move; change it once.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Write in the portal response box how you found one bug. Start: 'It should have drawn... but it drew... so I...'",
+          "a": "For example: It should have drawn a hexagon but it drew half, so I changed repeat 3 to repeat 6.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "After fixing a bug you should... A) delete the program B) test it again C) add more blocks",
+          "a": "B) test it again",
+          "mins": 1,
+          "options": [
+            "Delete the program",
+            "Test it again",
+            "Add more blocks"
+          ]
+        },
+        {
+          "q": "Why fix one bug at a time?",
+          "a": "So you know which change fixed it.",
+          "mins": 2
+        }
+      ],
+      "homework": "Write a shape program with one bug for a family member to find. Note the fix.",
+      "send": "SEND: one bug highlighted at a time. EAL: expected, actual, fix. Stretch: fix a nested-loop pattern with two bugs.",
+      "resources": [
+        "Tarbiyyah Primary computing long-term plan 2023-24, Year 4 Spring 1 (Repetition in Shapes; Data Logging), built on the NCCE Teach Computing Curriculum",
+        "Scratch in the browser with the Pen extension (scratch.mit.edu, free; pupil logins from the teacher's Scratch Teacher Account: TO CONFIRM)",
+        "'Shape bugs' project in the class studio (teacher makes it: TO CONFIRM)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "magnifying glass",
+          "alt": "A magnifying glass",
+          "for": "keywords"
+        },
+        {
+          "find": "spanner tool",
+          "alt": "A spanner for fixing things",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Repetition in shapes and data logging",
+      "n": 9,
+      "title": "Data logging: planning a temperature log",
+      "duration": 45,
+      "bigQuestion": "Is your home the same temperature at breakfast, lunch and bedtime? How could you find out?",
+      "objectives": [
+        "To understand how a data log records measurements at regular intervals"
+      ],
+      "successCriteria": [
+        "All: say what a data log is",
+        "Most: plan when and where to take temperature readings",
+        "Some: explain why readings must be taken at equal intervals"
+      ],
+      "crossCurricular": "Science: states of matter and temperature (heating and cooling)",
+      "keywords": [
+        {
+          "term": "data",
+          "def": "facts or measurements we collect"
+        },
+        {
+          "term": "log",
+          "def": "a record of data taken over time"
+        },
+        {
+          "term": "sensor",
+          "def": "a device that measures something, like temperature"
+        },
+        {
+          "term": "interval",
+          "def": "the time between two readings"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is your home the same temperature at breakfast, lunch and bedtime? How could you find out?",
+        "a": "Measure it at regular times and write it down: a data log."
+      },
+      "starter": [
+        {
+          "q": "What does 'test' mean in programming?",
+          "a": "Run the program to check it works.",
+          "mins": 1,
+          "options": [
+            "Delete it",
+            "Run it to check it works",
+            "Share it"
+          ]
+        },
+        {
+          "q": "Turn for an octagon?",
+          "a": "45 degrees",
+          "mins": 1
+        },
+        {
+          "q": "What is temperature measured in, in science?",
+          "a": "Degrees Celsius (°C)",
+          "mins": 1
+        },
+        {
+          "q": "Name an instrument that measures temperature.",
+          "a": "A thermometer",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "What is a data log?",
+          "bullets": [
+            "Readings taken over time",
+            "Same place, regular times",
+            "Written in a table"
+          ],
+          "note": "Weather stations log temperature every hour. Our school day is planned around prayer times that change too."
+        },
+        {
+          "heading": "Sensors",
+          "bullets": [
+            "A sensor measures something",
+            "Temperature, light, sound",
+            "Data loggers take readings by themselves"
+          ],
+          "note": "Show the thermometer and a digital thermometer picture. At home we act as the data logger."
+        },
+        {
+          "heading": "Equal intervals",
+          "bullets": [
+            "Same gap between readings",
+            "Every hour, every 10 minutes",
+            "Then we can compare fairly"
+          ],
+          "note": "Model the plan table.",
+          "table": {
+            "head": [
+              "Time",
+              "Place",
+              "Temperature (°C)"
+            ],
+            "rows": [
+              [
+                "8:00",
+                "Kitchen",
+                "17"
+              ],
+              [
+                "10:00",
+                "Kitchen",
+                "19"
+              ],
+              [
+                "12:00",
+                "Kitchen",
+                "21"
+              ],
+              [
+                "14:00",
+                "Kitchen",
+                "20"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Reading the log",
+          "bullets": [
+            "Look for the highest and lowest",
+            "Look for change over time",
+            "A chart shows it at a glance"
+          ],
+          "note": "Example values are for practice only.",
+          "chart": {
+            "kind": "line",
+            "title": "Kitchen temperature",
+            "labels": [
+              "8:00",
+              "10:00",
+              "12:00",
+              "14:00"
+            ],
+            "values": [
+              17,
+              19,
+              21,
+              20
+            ],
+            "unit": "°C"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Which plan has equal intervals?",
+            "options": [
+              "8:00, 9:00, 12:00",
+              "8:00, 10:00, 12:00",
+              "8:00, 8:30, 11:00",
+              "When I remember"
+            ],
+            "answer": 1,
+            "why": "Every reading is 2 hours apart; the others have different gaps."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "From the table, when was the kitchen warmest?",
+          "a": "12:00 (21 °C)",
+          "mins": 1,
+          "model": "Teacher runs a finger down the temperature column, finds the biggest number, 21, and reads across: 12:00."
+        },
+        {
+          "q": "How much did it warm up between 8:00 and 12:00?",
+          "a": "4 °C (21 - 17)",
+          "mins": 2
+        },
+        {
+          "q": "What is the interval in the table?",
+          "a": "2 hours",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Plan your own temperature log at home: one room, 5 times, equal intervals. Fill the time and place columns.",
+          "a": "For example: bedroom at 7:00, 9:00, 11:00, 13:00, 15:00.",
+          "mins": 4,
+          "model": "Teacher fills the first two rows of the plan for the kitchen at 2-hour intervals."
+        },
+        {
+          "q": "Extend: Predict when your room will be warmest and why. Write in the portal response box. Start: 'I predict...'",
+          "a": "For example: I predict 13:00, because the sun shines in and the heating has been on.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Explain why taking readings 'whenever I remember' would not be fair.",
+          "a": "The gaps would be different, so we could not compare change over time.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A data log records... A) one reading B) readings over time C) a password",
+          "a": "B) readings over time",
+          "mins": 1,
+          "options": [
+            "One reading",
+            "Readings over time",
+            "A password"
+          ]
+        },
+        {
+          "q": "What is an interval?",
+          "a": "The time between two readings.",
+          "mins": 1
+        }
+      ],
+      "homework": "With a grown-up, use a thermometer (or a weather app) to take your 5 readings and keep the log in your exercise book: it is entered into a spreadsheet in a later lesson.",
+      "send": "SEND: the table already drawn with times filled in. EAL: data, reading, interval, sensor. Stretch: log two rooms and compare.",
+      "resources": [
+        "Tarbiyyah Primary computing long-term plan 2023-24, Year 4 Spring 1 (Repetition in Shapes; Data Logging), built on the NCCE Teach Computing Curriculum",
+        "Temperature log planning sheet (pupil PDF)",
+        "A household thermometer or a weather app with a grown-up (written guide in the pupil PDF)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "digital thermometer",
+          "alt": "A digital thermometer",
+          "for": "teach:2"
+        },
+        {
+          "find": "weather station Stevenson screen",
+          "alt": "A weather station that logs temperature",
+          "for": "teach:1"
+        },
+        {
+          "find": "liquid in glass thermometer",
+          "alt": "A glass thermometer showing degrees Celsius",
+          "for": "keywords"
+        }
+      ]
     }
   ]
 }
