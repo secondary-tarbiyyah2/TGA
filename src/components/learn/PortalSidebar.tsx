@@ -189,7 +189,7 @@ function SidebarBody({
   useEffect(() => {
     const t = window.setTimeout(() => {
       const el = navRef.current?.querySelector<HTMLElement>('.portal-nav-panel[data-open] [aria-current="page"], :scope > ul [aria-current="page"]');
-      el?.scrollIntoView({ block: "nearest" });
+      el?.scrollIntoView({ block: "center" });
     }, 250);
     return () => window.clearTimeout(t);
   }, [pathname]);
