@@ -127,6 +127,8 @@ export function assessmentLabels(items, mode) {
   const unmark = (t) => t.replace(/^\(\d{1,3}(?:\s*marks?)?\)\s*[:.\-–]?\s*/i, "").replace(/^([^:()]{1,40}?)\s*\(\d{1,3}(?:\s*marks?)?\)\s*:/i, "$1:");
   const own = (q) => /^(?:Section\s+[A-H]\b|(?:Q|Question)\s*\d{1,2}\b)/i.test(q.trim());
   const someOwn = (items || []).some((x) => own(itemQ(x)));
+  const anyMarks = (items || []).some((x) => itemMarks(x) != null);
+  let section = 0;
   return (items || []).map((x, i) => {
     const q = itemQ(x).trim();
     const sec = q.match(/^Section\s+([A-H])\b\s*[:.\-–]?\s*/i);
@@ -136,8 +138,13 @@ export function assessmentLabels(items, mode) {
     // Tasks written for the usual lesson often start with their level ("Core: …"); an assessment does not use levels.
     const rest = q.replace(/^(core|extend|extension|stretch|challenge|bronze|silver|gold)\s*(?:\([^)]*\))?\s*[:\-–]\s*/i, "").replace(/^check\s*:\s*/i, "");
     // Beside numbered questions ("Q1 (2 marks): …"), an unnumbered item is a warm-up or a follow-up task.
-    if (someOwn) return /^warm-?up/i.test(q) ? { label: "Warm-up", short: "W", rest: q.replace(/^warm-?up\s*(?:\([^)]*\))?\s*[:\-–]?\s*/i, "") } : { label: "Afterwards", short: "+", rest };
-    if (mode === "mock" && (items || []).length > 1) return { label: `Section ${"ABCDEFGH"[i]}`, short: "ABCDEFGH"[i], rest };
+    if (someOwn) return /^warm-?up/i.test(q) ? { label: "Warm-up", short: "W", rest: q.replace(/^warm-?up\s*(?:\([^)]*\))?\s*[:\-–]?\s*/i, "") } : { label: "Extra", short: "+", rest };
+    if (mode === "mock" && (items || []).length > 1) {
+      // A follow-on task after the paper ("Extend: self-mark", or an unmarked task beside marked ones) is not a new section.
+      if (i > 0 && (/^(extend|extension|stretch|challenge)\b/i.test(q) || (anyMarks && itemMarks(x) == null))) return { label: "Extra", short: "+", rest };
+      const letter = "ABCDEFGH"[section++];
+      return { label: `Section ${letter}`, short: letter, rest };
+    }
     return { label: `Question ${i + 1}`, short: String(i + 1), rest };
   });
 }

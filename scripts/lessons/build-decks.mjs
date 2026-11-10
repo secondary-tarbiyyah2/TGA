@@ -897,7 +897,7 @@ function buildDeck(file, lesson, nextLesson, nav = null, opts = {}) {
     const labels = assessmentLabels(items, mode);
     const rows = items.map((x, i) => ({ ...labels[i], marks: itemMarks(x), mins: itemMins(x), a: itemA(x), poll: !!itemOptions(x) }));
     // "Q3 … (an alternative to Q1 or Q2)": a choice, so its marks are not added to the total.
-    const known = rows.filter((r) => !/\balternative\b/i.test(r.rest)).map((r) => r.marks).filter((m) => m != null);
+    const known = rows.filter((r) => r.label !== "Extra" && !/\balternative\b/i.test(r.rest)).map((r) => r.marks).filter((m) => m != null);
     const oral = /\b(speaking|oral|recit\w*|hifdh|phonics|1:1|role play)\b/i.test(`${lesson.title} ${lesson.unit}`);
     const mathy = /^(mathematics|science|gcse-science|business)$/.test(subjectSlug);
     const how = oral
@@ -907,9 +907,12 @@ function buildDeck(file, lesson, nextLesson, nav = null, opts = {}) {
         : band === "early"
           ? "Write your answers on your lesson sheet, or in the portal response box."
           : `Write in the portal response box, or on paper: put the question number first${mathy ? " and show your working" : ""}.`;
-    const counted = rows.filter((r) => r.label !== "Warm-up" && r.label !== "Afterwards" && !/\balternative\b/i.test(r.rest));
-    return { mode, label: ASSESSMENT_LABEL[mode], rows, count: counted.length, sections: counted.length > 0 && counted.every((r) => /^Section/.test(r.label)), marks: known.length ? known.reduce((a, b) => a + b, 0) : null, minutes: phaseMinutes("independent", items, duration), how, before: itemModel(items[0]), polls: [] };
+    const counted = rows.filter((r) => r.label !== "Warm-up" && r.label !== "Extra" && !/\balternative\b/i.test(r.rest));
+    return { mode, label: ASSESSMENT_LABEL[mode], rows, count: counted.length, sections: counted.length > 0 && counted.every((r) => /^Section/.test(r.label)), marks: known.length ? known.reduce((a, b) => a + b, 0) : null, minutes: phaseMinutes("independent", items, duration), how, before: itemModel(items[0]), polls: [], hideAll: mode !== "quiz" };
   })();
+  // A test or mock keeps every answer for the teacher-only section. A quiz is often a review lesson with a
+  // quiz in it, so only the quiz questions' answers are held back; starter, guided practice and poll answers show as usual.
+  const holdBack = !!(A && A.hideAll);
   ctx.assess = A;
   let breakNo = lesson.n * 3; // rotates the activities so neighbouring lessons differ
   const breaks = quran ? QURAN_BREAKS : band === "early" ? MOVE_EARLY : MOVE_JUNIOR;
@@ -1070,8 +1073,8 @@ function buildDeck(file, lesson, nextLesson, nav = null, opts = {}) {
       if (section === "starter" && S.starter == null) S.starter = at;
       if (section === "exit" && S.exit == null) S.exit = at;
       // An assessment shows no answers in the lesson: poll answers go to the teacher-only section at the end.
-      if (A && !pupil && itemA(x)) A.polls.push({ poll, kicker: `${title} · poll answer`, answer: itemA(x) });
-      const answerAt = !pupil && !A && itemA(x) ? (v3.pollAnswerSlide(pptx, ctx, poll, { kicker: `${title} · poll answer`, stage, answer: itemA(x) }), slideCount) : null;
+      if (holdBack && !pupil && itemA(x)) A.polls.push({ poll, kicker: `${title} · poll answer`, answer: itemA(x) });
+      const answerAt = !pupil && !holdBack && itemA(x) ? (v3.pollAnswerSlide(pptx, ctx, poll, { kicker: `${title} · poll answer`, stage, answer: itemA(x) }), slideCount) : null;
       S.polls.push({ section, q: poll.q, options: poll.options, answer: itemA(x), slide: at, answerSlide: answerAt });
     });
   }
@@ -1098,7 +1101,7 @@ function buildDeck(file, lesson, nextLesson, nav = null, opts = {}) {
       s.addText(band === "senior" ? `From memory, in silence, no notes. ${how}` : how, { x: 0.8, y: 6.45, w: 11.8, h: 0.4, fontFace: FONT, fontSize: 15, italic: true, color: MUTED });
     }
     s.addNotes(`${band === "early" ? "Keep it warm and lively: greet each child by name. Praise every try." : `Pupils answer from memory, without notes. About ${mins} minutes. Then reveal and correct misconceptions.`}${ROUTINES[routine] ? ` Routine: ${ROUTINES[routine].label}. ${ROUTINES[routine].how}` : ""}`);
-    if (hasAnswers(items) && !pupil && !A) S.starterAnswers = (answersSlide(pptx, ctx, items, { kicker: `${B.starterTitle} · answers`, stage: 0 }), slideCount);
+    if (hasAnswers(items) && !pupil && !holdBack) S.starterAnswers = (answersSlide(pptx, ctx, items, { kicker: `${B.starterTitle} · answers`, stage: 0 }), slideCount);
   }
   pollSlides(starterPolls, "starter", B.starterTitle, 0);
 
@@ -1121,7 +1124,7 @@ function buildDeck(file, lesson, nextLesson, nav = null, opts = {}) {
     if (parts.renderBlock(s, ctx, t, blockBullets, { x: 0.8, y: 2.15, w: 11.8, h: 4.7 })) {
       s.addNotes(clean(t.note) + parts.blockNotes(t) + (ROUTINES[routine] ? `\n\nRoutine: ${ROUTINES[routine].label}. ${ROUTINES[routine].how}` : "") + kwNote);
       // A hinge question run as a Teams poll: the answer slide follows (not in the pupil PDF).
-      if (t.check && routine === "teams-poll" && !pupil && A) A.polls.push({ poll: { q: t.check.q, options: (t.check.options || []).map(String) }, kicker: "Hinge question · poll answer", index: Number(t.check.answer), why: t.check.why });
+      if (t.check && routine === "teams-poll" && !pupil && holdBack) A.polls.push({ poll: { q: t.check.q, options: (t.check.options || []).map(String) }, kicker: "Hinge question · poll answer", index: Number(t.check.answer), why: t.check.why });
       else if (t.check && routine === "teams-poll" && !pupil) {
         const poll = { q: t.check.q, options: (t.check.options || []).map(String) };
         S.polls.push({ section: "hinge", q: poll.q, options: poll.options, answer: `${"ABCD"[Number(t.check.answer)]}) ${clean(poll.options[Number(t.check.answer)])}`, slide: slideCount, answerSlide: (v3.pollAnswerSlide(pptx, ctx, poll, { kicker: "Hinge question · poll answer", stage: 2, index: Number(t.check.answer), why: t.check.why }), slideCount) });
@@ -1194,7 +1197,7 @@ function buildDeck(file, lesson, nextLesson, nav = null, opts = {}) {
       }
     }
     s.addNotes(`Work through these with the class, modelling your thinking aloud. Check every pupil before moving on.${ROUTINES[routine] ? ` Routine: ${ROUTINES[routine].label}. ${ROUTINES[routine].how}` : ""}`);
-    if (hasAnswers(items) && !pupil && !A) S.guidedAnswers = (answersSlide(pptx, ctx, items, { kicker: `${B.practiceKicker} · answers`, stage: 2 }), slideCount);
+    if (hasAnswers(items) && !pupil && !holdBack) S.guidedAnswers = (answersSlide(pptx, ctx, items, { kicker: `${B.practiceKicker} · answers`, stage: 2 }), slideCount);
   }
 
   if (quran && !pupil) (breakSlide(pptx, ctx, nextBreak()), breaksAdded++);
@@ -1370,8 +1373,12 @@ function buildDeck(file, lesson, nextLesson, nav = null, opts = {}) {
     S.teacherOnly = (v3.teacherOnlyDivider(pptx, ctx, A), slideCount);
     S.markScheme = v3.markSchemeSlides(pptx, ctx, A, () => slideCount);
     const keyed = [
-      [starterRest, `${B.starterTitle} answers`],
-      [(lesson.practice || []).slice(0, 5), `${band === "senior" ? "Guided practice" : B.practiceKicker} answers`],
+      ...(holdBack
+        ? [
+            [starterRest, `${B.starterTitle} answers`],
+            [(lesson.practice || []).slice(0, 5), `${band === "senior" ? "Guided practice" : B.practiceKicker} answers`],
+          ]
+        : []),
       [exitRest, "Exit ticket answers"],
     ];
     for (const [items, title] of keyed) if (hasAnswers(items)) answersSlide(pptx, ctx, items, { kicker: `Teacher only · ${A.label}`, title, teacherOnly: true });
