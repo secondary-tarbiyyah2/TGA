@@ -19,7 +19,7 @@ type LessonRowRaw = {
     start_time: string;
     end_time: string;
     virtual_sessions?: { meeting_url: string | null } | null;
-    classes?: { name: string } | null;
+    classes?: { name: string; meeting_url?: string | null } | null;
     subjects?: { name: string } | null;
   } | null;
 };
@@ -177,7 +177,7 @@ export function JoinLessonCard({ who, classId, className = "" }: { who: JoinWho;
 
       let query = supabase
         .from("lesson_instances")
-        .select("id, date, timetable_slots!inner(class_id, start_time, end_time, virtual_sessions(meeting_url), classes(name), subjects(name))")
+        .select("id, date, timetable_slots!inner(class_id, start_time, end_time, virtual_sessions(meeting_url), classes(name, meeting_url), subjects(name))")
         .eq("date", localDateKey(new Date()));
       if (whoKind === "teacher") query = query.eq("teacher_user_id", user.id);
       else query = query.in("timetable_slots.class_id", Array.from(kidsByClass.keys()));
@@ -197,7 +197,9 @@ export function JoinLessonCard({ who, classId, className = "" }: { who: JoinWho;
               className: s.classes?.name || "",
               start: hhmm(s.start_time),
               end: hhmm(s.end_time),
-              meetingUrl: s.virtual_sessions?.meeting_url || null,
+              // The class's own Teams link (Class settings) is the usual source; a
+              // timetable session link, where one is set, overrides it.
+              meetingUrl: s.virtual_sessions?.meeting_url || s.classes?.meeting_url || null,
               kids: kidsByClass.get(s.class_id) || [],
             };
           })

@@ -86,6 +86,7 @@ type SlotRow = {
   end_time: string | null;
   subjects?: { name: string } | null;
   virtual_sessions?: { name: string | null; meeting_url: string | null } | null;
+  classes?: { meeting_url: string | null } | null;
 };
 
 export function useCalendarData(scope: CalendarScope | null, from: string, to: string): { data: CalendarData | null; loading: boolean } {
@@ -145,7 +146,7 @@ export function useCalendarData(scope: CalendarScope | null, from: string, to: s
       const slotIds = [...new Set(lessons.map((l) => l.timetable_slot_id))];
       const slotById = new Map<string, SlotRow>();
       for (const ids of chunks(slotIds, CHUNK)) {
-        let r = await supabase.from("timetable_slots").select("id, class_id, teacher_user_id, start_time, end_time, subjects(name), virtual_sessions(name, meeting_url)").in("id", ids);
+        let r = await supabase.from("timetable_slots").select("id, class_id, teacher_user_id, start_time, end_time, subjects(name), virtual_sessions(name, meeting_url), classes(meeting_url)").in("id", ids);
         if (r.error) r = (await supabase.from("timetable_slots").select("id, class_id, teacher_user_id, start_time, end_time").in("id", ids)) as typeof r;
         ((r.data as unknown as SlotRow[]) || []).forEach((s) => slotById.set(s.id, s));
       }
@@ -199,7 +200,7 @@ export function useCalendarData(scope: CalendarScope | null, from: string, to: s
             childId: o.childId || null,
             childName: o.childName || null,
             room: slot.virtual_sessions?.name || null,
-            joinUrl: slot.virtual_sessions?.meeting_url || null,
+            joinUrl: slot.virtual_sessions?.meeting_url || slot.classes?.meeting_url || null,
             href: `${area}/lessons/view?id=${l.id}${scope.kind === "parent" && o.childId ? `&child=${o.childId}` : ""}`,
             note: l.objectives,
           });

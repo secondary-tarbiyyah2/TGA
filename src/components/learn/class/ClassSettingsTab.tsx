@@ -179,7 +179,7 @@ export function ClassSettingsTab({ classId, className, subject, canRename }: { c
           <textarea value={s.description} onChange={(e) => set({ description: e.target.value })} maxLength={1000} rows={3} className={`${input} mt-1`} />
         </label>
         <label className="block text-sm font-medium text-ink">
-          Virtual lesson link
+          Teams link for live lessons
           <input type="url" value={s.meetingLink} onChange={(e) => set({ meetingLink: e.target.value })} placeholder="https://… (Teams, Meet or Zoom)" className={`${input} mt-1`} />
           <span className="mt-1 block text-xs font-normal text-ink/65">This is where &ldquo;Join lesson&rdquo; takes pupils and families.</span>
         </label>
