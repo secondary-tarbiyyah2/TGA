@@ -45,12 +45,13 @@ export function SiteSearchButton({ compact = false }: { compact?: boolean }) {
     <button
       type="button"
       onClick={openSiteSearch}
-      aria-label="Search the site"
+      aria-label={compact ? "Search the site" : undefined}
       className={`group flex items-center gap-2 rounded-full border border-gold-light/70 bg-white/70 text-sm text-ink/70 transition-colors hover:border-gold-500 hover:text-ink ${compact ? "h-10 w-10 justify-center" : "h-9 px-3"}`}
     >
       <Icon name="search" size="sm" className="h-4 w-4 text-gold-700" />
+      {!compact && <span>Search</span>}
       {!compact && (
-        <kbd className="hidden rounded border border-gold-light/70 bg-cream px-1.5 font-mono text-[0.65rem] text-ink/70 xl:inline">{mac ? "⌘K" : "Ctrl K"}</kbd>
+        <kbd aria-hidden="true" className="hidden rounded border border-gold-light/70 bg-cream px-1.5 font-mono text-[0.65rem] text-ink/70 xl:inline">{mac ? "⌘K" : "Ctrl K"}</kbd>
       )}
     </button>
   );
@@ -142,7 +143,8 @@ export function SiteSearch() {
 
   if (!mounted || !open) return null;
 
-  let lastGroup = "";
+  // A group heading above the first page of each group (only while the box is empty).
+  const headings = results.map((p, i) => (!q.trim() && (i === 0 || results[i - 1].group !== p.group) ? p.group : null));
   return createPortal(
     <div className="fixed inset-0 z-[90] flex items-start justify-center bg-ink-900/40 p-3 pt-[10vh] backdrop-blur-sm" onMouseDown={(e) => e.target === e.currentTarget && close()}>
       <div role="dialog" aria-modal="true" aria-label="Search the site" className="search-panel w-full max-w-xl overflow-hidden rounded-2xl border border-gold-light/60 bg-white shadow-2xl">
@@ -172,8 +174,7 @@ export function SiteSearch() {
         <ul id={listId} role="listbox" aria-label="Pages" className="max-h-[60vh] overflow-y-auto overscroll-contain p-2">
           {results.length === 0 && <li className="px-3 py-6 text-center text-sm text-ink/70">Nothing matches that. Try &ldquo;fees&rdquo; or &ldquo;apply&rdquo;.</li>}
           {results.map((p, i) => {
-            const heading = !q.trim() && p.group !== lastGroup ? p.group : null;
-            lastGroup = p.group;
+            const heading = headings[i];
             return (
               <li key={p.href} role="presentation">
                 {heading && <p role="presentation" className="px-3 pb-1 pt-3 font-mono text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-gold-700">{heading}</p>}
