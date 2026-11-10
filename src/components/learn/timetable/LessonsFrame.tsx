@@ -24,7 +24,7 @@ export function LessonsHeader({ title, subtitle, actions }: { title: string; sub
   return (
     <>
       <PageHeader
-        crumbs={isHub ? [{ label: "Home", href: "/admin/dashboard" }, { label: LESSONS_HUB_TITLE }] : [{ label: "Home", href: "/admin/dashboard" }, { label: LESSONS_HUB_TITLE, href: "/admin/lessons" }, { label: title }]}
+        crumbs={isHub ? [{ label: "Today", href: "/admin/dashboard" }, { label: LESSONS_HUB_TITLE }] : [{ label: "Today", href: "/admin/dashboard" }, { label: LESSONS_HUB_TITLE, href: "/admin/lessons" }, { label: title }]}
         title={title}
         subtitle={subtitle}
         actions={actions}

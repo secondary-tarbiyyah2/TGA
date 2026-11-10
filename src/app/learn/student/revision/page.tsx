@@ -11,7 +11,7 @@ export default function StudentRevisionPage() {
       <LearnGate allowedRoles={["student"]}>
         <LearnShell role="student">
           <PageHeader
-            crumbs={[{ label: "Home", href: "/student/dashboard" }, { label: "Unit revision" }]}
+            crumbs={[{ label: "Today", href: "/student/dashboard" }, { label: "Unit revision" }]}
             title="Unit revision"
             subtitle="Pick a unit, read the summary, try the quiz, then practise the bits you found tricky. Your teachers see how you get on so they can help."
           />

@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { LearnGate } from "@/components/learn/LearnGate";
@@ -27,8 +28,8 @@ function StudentHomeworkContent() {
 
   return (
     <div>
-      <PageHeader crumbs={[{ label: "Home", href: "/student/dashboard" }, { label: "To do", href: "/student/todo" }, { label: "My homework" }]} title="My homework" subtitle="Tap a piece of homework to open it, hand in your work and read your teacher's feedback." />
-      {childId ? <HomeworkForChild childId={childId} canSubmit groupByStatus openId={openId} /> : <p className="text-sm text-ink/65">Loading…</p>}
+      <PageHeader crumbs={[{ label: "Today", href: "/student/dashboard" }, { label: "Homework", href: "/student/todo" }, { label: "My homework" }]} title="My homework" subtitle="Tap a piece of homework to open it, hand in your work and read your teacher's feedback." />
+      {childId ? <HomeworkForChild childId={childId} canSubmit groupByStatus openId={openId} /> : <Loading label="Loading…" bare />}
     </div>
   );
 }
@@ -38,7 +39,7 @@ export default function StudentHomeworkPage() {
     <section className="app-pad">
       <LearnGate allowedRoles={["student"]}>
         <LearnShell role="student">
-          <Suspense fallback={<p className="text-ink/65">Loading…</p>}>
+          <Suspense fallback={<Loading label="Loading…" bare />}>
             <StudentHomeworkContent />
           </Suspense>
         </LearnShell>

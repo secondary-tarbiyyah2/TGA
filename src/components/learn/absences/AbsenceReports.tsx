@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useMemo } from "react";
 import { useLearnPermission } from "@/lib/learn/session";
 import { saveCsv, toCsv } from "@/lib/learn/csv";
@@ -52,7 +53,7 @@ export function AbsenceReports({ absences, periodLabel }: { absences: Absence[] 
         )}
       </div>
       {absences === null ? (
-        <p className="px-4 py-4 text-sm text-ink/65">Loading…</p>
+        <Loading label="Loading…" bare />
       ) : (
         <table className="w-full text-left text-sm">
           <thead>

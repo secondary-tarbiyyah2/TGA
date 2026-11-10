@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { ukToday } from "@/lib/learn/ukTime";
 import Link from "next/link";
 import { useEffect, useId, useMemo, useRef, useState, type KeyboardEvent as ReactKeyEvent } from "react";
@@ -456,7 +457,7 @@ export function CalendarView({ scope, canManageTerms = false }: { scope: Calenda
         <section className="rounded-2xl border border-gold-light bg-white">
           <h3 className="border-b border-gold-light px-4 py-3 text-sm font-semibold text-ink">Upcoming term dates and deadlines</h3>
           {terms === null || !data ? (
-            <p className="px-4 py-3 text-sm text-ink/65">Loading…</p>
+            <Loading label="Loading…" bare />
           ) : upcoming.length === 0 ? (
             <p className="px-4 py-3 text-sm text-ink/65">No upcoming term boundaries or deadlines.</p>
           ) : (

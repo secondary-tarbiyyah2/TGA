@@ -28,7 +28,7 @@ export function StaffHandbook() {
           <li>If a shift is wrong, ask the head teacher or an admin to correct it. Changes are recorded.</li>
         </ul>
       </Section>
-      <Section title="Your Action centre">
+      <Section title="Waiting for you (on Today)">
         <p>Open it each morning. It lists missing homework, absence follow-ups and Qur&apos;an revision, most urgent first. Items clear by themselves when the work is done.</p>
       </Section>
       <Section title="Lesson PDFs and worksheets">
@@ -37,7 +37,7 @@ export function StaffHandbook() {
       <Section title="Homework that is not handed in">
         <ol>
           <li><b>Due date:</b> missing is marked for you.</li>
-          <li><b>1 day:</b> the pupil and parent see it in their Action centre.</li>
+          <li><b>1 day:</b> the pupil and parent see it under Waiting for you on their Today page.</li>
           <li><b>2 days:</b> tell the parent.</li>
           <li><b>3 days:</b> chase the pupil and agree a day.</li>
           <li><b>5 days:</b> escalate to the head teacher.</li>

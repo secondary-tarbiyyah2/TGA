@@ -98,7 +98,7 @@ function PupilProfile({ id, onEdited }: { id: string; onEdited: () => void }) {
     router.replace(`/admin/pupils?${q.toString()}`, { scroll: false });
   };
 
-  const crumbs = [{ label: "Home", href: "/admin/dashboard" }, { label: "Pupils", href: "/admin/pupils" }, { label: child?.name || "Pupil" }];
+  const crumbs = [{ label: "Today", href: "/admin/dashboard" }, { label: "Pupils", href: "/admin/pupils" }, { label: child?.name || "Pupil" }];
 
   if (state === "missing") {
     return (
@@ -176,6 +176,17 @@ function PupilProfile({ id, onEdited }: { id: string; onEdited: () => void }) {
                 <p className="text-sm text-ink/70">{[child.yearGroup, child.classes.join(", ")].filter(Boolean).join(" · ") || "Not in a class yet"}</p>
                 <p className="text-sm text-ink/70">{child.dob ? `Born ${formatDob(child.dob)}${age !== null ? ` (age ${age})` : ""}` : "Date of birth not recorded"}</p>
                 {parent && <p className="text-sm text-ink/70">Parent: {parent.full_name || parent.email}</p>}
+                {/* One pupil record: sign-ins live under Office › Accounts, one click away. */}
+                <p className="mt-1 flex flex-wrap gap-x-3 gap-y-1 text-sm print:hidden">
+                  <Link href={`/admin/people?q=${encodeURIComponent(child.name)}`} className="font-medium text-teal-700 hover:underline">
+                    Pupil&apos;s sign-in
+                  </Link>
+                  {parent?.email && (
+                    <Link href={`/admin/people?q=${encodeURIComponent(parent.email)}`} className="font-medium text-teal-700 hover:underline">
+                      Parent&apos;s sign-in
+                    </Link>
+                  )}
+                </p>
               </div>
               <div className="flex flex-wrap gap-1.5">
                 {above && <StatusChip tone="info">Working above year group</StatusChip>}

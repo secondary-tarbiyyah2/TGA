@@ -167,7 +167,7 @@ export const LESSON_SHAPE: { step: string; what: string; mins: string }[] = [
   { step: "Short explanation", what: "The teacher teaches one idea clearly, with worked examples on the shared screen.", mins: "7–17 min" },
   { step: "Guided practice", what: "Pupils try it together: cold-calling, polls and hands up, with the teacher correcting misunderstandings straight away.", mins: "17–32 min" },
   { step: "Independent practice", what: "Pupils work on their own in the Class Notebook while the teacher drops in to check progress.", mins: "32–45 min" },
-  { step: "Closing check and homework", what: "An exit question to show what has been learned, and the homework set in Teams Assignments.", mins: "45–50 min" },
+  { step: "Closing check and homework", what: "An exit question to show what has been learned, and the homework set in the Student Portal.", mins: "45–50 min" },
 ];
 
 /** "20 live lessons a week, 45 minutes each": the one wording used wherever a

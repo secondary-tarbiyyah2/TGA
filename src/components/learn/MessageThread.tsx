@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useEffect, useRef, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { ReadTicks } from "@/components/learn/messages/ReadTicks";
@@ -192,7 +193,7 @@ export function MessageThread({ threadId, onSent, onRead, aiTriage = false, onTr
     <div className="flex h-[58vh] min-h-[340px] flex-col">
       <div className="flex-1 space-y-2 overflow-y-auto p-3">
         {messages === null ? (
-          <p className="text-sm text-ink/65">Loading…</p>
+          <Loading label="Loading…" bare />
         ) : messages.length === 0 ? (
           <p className="text-sm text-ink/65">No messages yet. Write the first one below.</p>
         ) : (

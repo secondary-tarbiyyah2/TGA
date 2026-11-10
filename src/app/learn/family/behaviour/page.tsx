@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { LearnGate } from "@/components/learn/LearnGate";
@@ -81,7 +82,7 @@ function FamilyBehaviourContent() {
 
   return (
     <>
-      <PageHeader crumbs={[{ label: "Home", href: "/family/dashboard" }, { label: "Behaviour" }]} title="Behaviour" subtitle={`Celebrating ${childName}'s good choices and progress.`} />
+      <PageHeader crumbs={[{ label: "Today", href: "/family/dashboard" }, { label: "Behaviour" }]} title="Behaviour" subtitle={`Celebrating ${childName}'s good choices and progress.`} />
       {error && <p className="mb-4 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{error}</p>}
       {children && children.length > 1 && (
         <div role="group" aria-label="Child" className="mb-4 flex flex-wrap gap-2">
@@ -150,7 +151,7 @@ export default function FamilyBehaviourPage() {
     <section className="app-pad">
       <LearnGate allowedRoles={["parent"]}>
         <LearnShell role="family">
-          <Suspense fallback={<p className="text-ink/65">Loading…</p>}>
+          <Suspense fallback={<Loading label="Loading…" bare />}>
             <FamilyBehaviourContent />
           </Suspense>
         </LearnShell>

@@ -10,7 +10,7 @@ export default function FamilyActionsPage() {
     <section className="app-pad">
       <LearnGate allowedRoles={["parent"]}>
         <LearnShell role="family">
-          <PageHeader crumbs={[{ label: "Home", href: "/family/dashboard" }, { label: "Action centre" }]} title="Action centre" subtitle="What your children need to do, and what is coming up: homework, Qur'an revision and one-to-one sessions." />
+          <PageHeader crumbs={[{ label: "Today", href: "/family/dashboard" }, { label: "Waiting for you" }]} title="Waiting for you" subtitle="What your children need to do, and what is coming up: homework, Qur'an revision and one-to-one sessions." />
           <ActionCentre role="family" />
         </LearnShell>
       </LearnGate>

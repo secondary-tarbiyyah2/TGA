@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { LearnGate } from "@/components/learn/LearnGate";
@@ -60,7 +61,7 @@ function ReceiptContent() {
     if (sigUrl) URL.revokeObjectURL(sigUrl);
   }, [sigUrl]);
 
-  if (state === "loading") return <p className="text-sm text-ink/65">Loading…</p>;
+  if (state === "loading") return <Loading label="Loading…" bare />;
   if (state === "missing" || !receipt)
     return (
       <div className="rounded-2xl border border-gold-light bg-white p-8 text-center">
@@ -120,7 +121,7 @@ function ReceiptContent() {
               // eslint-disable-next-line @next/next/no-img-element -- private blob URL
               <img src={sigUrl} alt={`Handwritten signature of ${receipt.typed_full_name}`} className="mx-auto mt-2 max-h-32 w-auto" />
             ) : (
-              <p className="mt-2 text-sm text-ink/65">Loading signature…</p>
+              <Loading label="Loading signature…" bare className="mt-2" />
             )}
             <p className="mt-2 border-t border-ink/20 pt-1 text-center text-xs text-ink/65">{receipt.typed_full_name}</p>
           </figure>

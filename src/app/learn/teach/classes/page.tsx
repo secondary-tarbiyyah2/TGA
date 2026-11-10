@@ -13,7 +13,7 @@ function TeachClassesContent() {
     <>
       <div className="mb-6">
         <WorkspaceHeader
-          eyebrow={[{ label: "Home", href: "/teach/dashboard" }, { label: "Teaching" }]}
+          eyebrow={[{ label: "Today", href: "/teach/dashboard" }, { label: "Teaching" }]}
           title="My classes"
           description="Every class you teach or cover."
           stats={classes ? [{ value: classes.length, label: classes.length === 1 ? "class" : "classes" }] : undefined}

@@ -221,3 +221,20 @@ None found.
   8 November).
 - **Supabase advisors:** not run here: the Supabase project reachable from this session
   is not TGA's. Run "Advisors, Security" in the TGA dashboard after this merges.
+
+## Follow-up, 10 November 2026 (owner: "address all vulnerabilities")
+
+| Finding | Status | Where |
+| --- | --- | --- |
+| M10 public inserts | Fixed. Unused anon write policies on quiz_sessions, quiz_events, eligibility_responses removed (including the `using (true)` update); quiz_leads, admissions_families and admissions_applications rate limited per network (10, 5, 5 requests an hour, hashed address) | migration 0198, test `security_public_inserts.test.sql` |
+| M11 dependencies | Fixed in its own PR: Next.js latest 16.x, `npm update`, `npm audit fix` run on GitHub by `.github/workflows/update-dependencies.yml` | branch `claude/deps-security-upgrade` |
+| L2 CORS `*` | Fixed. `_shared/cors.ts` wraps `Deno.serve` so browsers may call functions only from globalacademy, preview and learn (plus localhost and any `EXTRA_CORS_ORIGINS`) | `supabase/functions/_shared/cors.ts` |
+| L3 anon-callable helpers | Fixed for is_staff_member, thread_participant, child_taught_by, class_teacher_names; run_status stays public (the public sample timetable uses it) | migration 0198 |
+| L4 site_settings readable | Accepted: the two fields are written for families (bank details shown at offer, the assessment link); hiding them needs a separate staff table and touches 6 files, so it is listed for the next portal pass | none |
+| L5 preview key in the repo | Owner: add the `PREVIEW_KEY` secret in GitHub, then delete `deploy/preview-key.txt` | none |
+| L6 website CSP | Fixed: full policy for the website (not Studio) | `public/.htaccess` |
+| L7 HSTS | Fixed for the website address (one year, not subdomains) | `public/.htaccess` |
+| L8 action pinning | Fixed: every GitHub action pinned to a commit; Supabase CLI pinned to 2.122.1 (also stops the "latest release" lookups that hit rate limits) | `.github/workflows/*.yml` |
+| L9 old admin check | Fixed: both functions accept Headteacher/Admin from user_roles, old flag still accepted | `admin-manage-staff`, `publish-website-content` |
+| L1, L10 | Accepted as written above | none |
+| H1 leaked passwords | Owner: change the demo and support passwords and delete the two run logs (see H1) | none |

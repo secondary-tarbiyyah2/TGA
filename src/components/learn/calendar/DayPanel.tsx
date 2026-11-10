@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { CLOSURE_LABEL, type ClosureRow, type TermRow, dayInfo } from "./useCalendarTerms";
@@ -151,7 +152,7 @@ export function DayPanel({
 
       <ScrollArea label={`Items on ${gregLong(d)}`} className="space-y-4 p-4">
         {loading ? (
-          <p className="text-sm text-ink/65">Loading…</p>
+          <Loading label="Loading…" bare />
         ) : items.length === 0 ? (
           <p className="text-sm text-ink/65">{info.closure.length ? "School is closed, nothing scheduled." : weekend ? "Weekend, nothing scheduled." : "Nothing scheduled for this day."}</p>
         ) : (

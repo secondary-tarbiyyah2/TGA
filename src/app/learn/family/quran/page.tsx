@@ -15,7 +15,7 @@ function Content() {
   const name = children?.find((c) => c.id === current)?.name?.split(" ")[0];
   return (
     <>
-      <PageHeader crumbs={[{ label: "Home", href: "/family/dashboard" }, { label: "Qur'an" }]} title="Qur'an and Qaidah" subtitle={`How ${name || "your child"} is getting on: marks out of 10, surahs covered, revision, homework and one-to-one sessions.`} />
+      <PageHeader crumbs={[{ label: "Today", href: "/family/dashboard" }, { label: "Qur'an" }]} title="Qur'an and Qaidah" subtitle={`How ${name || "your child"} is getting on: marks out of 10, surahs covered, revision, homework and one-to-one sessions.`} />
       {children && children.length > 1 && (
         <div className="mb-4 flex flex-wrap gap-2" role="group" aria-label="Child">
           {children.map((c) => (

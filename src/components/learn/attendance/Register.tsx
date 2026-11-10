@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { REASONS, saveReason } from "@/components/learn/absences/data";
@@ -188,7 +189,7 @@ export function Register({ lessonId, classId, onProgress }: { lessonId: string; 
     }
   };
 
-  if (children === null) return <p className="px-5 py-4 text-sm text-ink/65">Loading register…</p>;
+  if (children === null) return <Loading label="Loading register…" bare />;
   if (children.length === 0) return <p className="px-5 py-4 text-sm text-ink/65">No students enrolled in this class yet.</p>;
   const unmarked = children.filter((c) => !marks[c.id]);
   const taken = children.length - unmarked.length;

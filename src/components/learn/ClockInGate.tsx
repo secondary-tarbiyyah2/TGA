@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useCallback, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { getSupabaseClient } from "@/lib/supabase/client";
@@ -247,7 +248,7 @@ export function ClockInGate({ userId, roles, children }: { userId: string; roles
   const exempt = EXEMPT_PATHS.some((x) => p === x || p.startsWith(x + "/"));
 
   if (!isStaff || exempt) return <>{children}</>;
-  if (!loaded) return <p className="py-10 text-ink/65">Loading…</p>;
+  if (!loaded) return <Loading label="Loading…" bare />;
   if (!failed && required && !shift) return <GateScreen userId={userId} signedInName={name} />;
 
   return (

@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useEffect, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { learnRoleLabel, type LearnRole } from "@/lib/learn/session";
@@ -119,7 +120,7 @@ export function SingleCentralRecord() {
       <h2 className="font-serif text-h3 font-semibold text-ink">Single Central Record</h2>
       <p className="mt-1 text-xs text-ink/65">Recruitment/vetting checks for every staff member. DBS renewals due within 60 days are highlighted.</p>
       <div className="mt-3 space-y-2">
-        {staff === null && <p className="text-sm text-ink/65">Loading…</p>}
+        {staff === null && <Loading label="Loading…" bare />}
         {(staff || []).map((s) => {
           const v = records[s.user_id];
           return (

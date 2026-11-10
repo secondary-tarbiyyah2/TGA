@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import {
@@ -172,7 +173,7 @@ export function GcseOverview() {
   };
   const filtered = !!(year || classId || subjectId || search || status !== "all");
 
-  if (rows === null) return <p className="text-sm text-ink/65">Loading…</p>;
+  if (rows === null) return <Loading label="Loading…" bare />;
   if (loadError)
     return (
       <p role="alert" className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-800">

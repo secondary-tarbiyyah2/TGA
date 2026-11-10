@@ -27,7 +27,7 @@ import { saveCsv } from "@/lib/learn/csv";
 import { btn, ui } from "@/components/learn/ui";
 import { Select } from "@/components/learn/Select";
 
-import { askConfirm } from "@/components/learn/kit";
+import { askConfirm, askNotice } from "@/components/learn/kit";
 const FORM_URL = `${MAIN_SITE_ORIGIN}/admissions/apply`;
 
 type Load = "loading" | "error" | "ready";
@@ -282,7 +282,7 @@ export function ApplicationsTab() {
         if (blockers.length > 0) {
           const list = blockers.join(" and ");
           if (!isHeadteacher) {
-            window.alert(`Can't accept yet: the ${list} ${blockers.length > 1 ? "have" : "has"} not been marked as received. Mark ${blockers.length > 1 ? "them" : "it"} received in the Process tab, or ask the Headteacher to override.`);
+            await askNotice("Can't accept yet", `The ${list} ${blockers.length > 1 ? "have" : "has"} not been marked as received. Mark ${blockers.length > 1 ? "them" : "it"} received in the Process tab, or ask the Headteacher to override.`);
             return false;
           }
           if (!(await askConfirm(`The ${list} ${blockers.length > 1 ? "are" : "is"} not marked as received. As Headteacher you can override. Move to Accepted anyway?`))) return false;
@@ -295,7 +295,7 @@ export function ApplicationsTab() {
           .eq("status", "pending");
         if ((pendingProofs ?? 0) > 0) {
           if (!isHeadteacher) {
-            window.alert(`Can't accept yet: ${pendingProofs} proof${pendingProofs === 1 ? "" : "s"} of payment ${pendingProofs === 1 ? "is" : "are"} waiting to be verified. Review them in the Payments tab, or ask the Headteacher to override.`);
+            await askNotice("Can't accept yet", `${pendingProofs} proof${pendingProofs === 1 ? "" : "s"} of payment ${pendingProofs === 1 ? "is" : "are"} waiting to be verified. Review them in the Payments tab, or ask the Headteacher to override.`);
             return false;
           }
           if (!(await askConfirm(`${pendingProofs} proof${pendingProofs === 1 ? "" : "s"} of payment ${pendingProofs === 1 ? "is" : "are"} still unverified. As Headteacher you can override. Move to Accepted anyway?`))) return false;

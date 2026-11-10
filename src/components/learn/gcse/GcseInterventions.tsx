@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { downloadCsv, toCsv } from "@/lib/learn/gcse";
@@ -251,7 +252,7 @@ export function GcseInterventions() {
       )
     );
 
-  if (items === null) return <p className="text-sm text-ink/65">Loading…</p>;
+  if (items === null) return <Loading label="Loading…" bare />;
 
   return (
     <section className="rounded-2xl border border-gold-light/50 bg-white p-4 sm:p-6" aria-labelledby="gcse-int-h">

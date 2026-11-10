@@ -1,5 +1,6 @@
 "use client";
 
+import { Loading } from "@/components/learn/kit";
 import { useEffect, useMemo, useState } from "react";
 import { LearnGate } from "@/components/learn/LearnGate";
 import { LearnShell } from "@/components/learn/LearnShell";
@@ -49,10 +50,10 @@ function StudentBehaviourContent() {
 
   return (
     <>
-      <PageHeader crumbs={[{ label: "Home", href: "/student/dashboard" }, { label: "Merits" }]} title="My merits and badges" subtitle="Well done for the good things you do. Every merit counts, and earns points for your house." />
+      <PageHeader crumbs={[{ label: "Today", href: "/student/dashboard" }, { label: "Merits" }]} title="My merits and badges" subtitle="Well done for the good things you do. Every merit counts, and earns points for your house." />
       {error && <p className="mb-4 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{error}</p>}
       {records === null ? (
-        <p className="text-ink/65">Loading…</p>
+        <Loading label="Loading…" bare />
       ) : (
         <div className="space-y-4">
           <div className="grid grid-cols-2 gap-3">
