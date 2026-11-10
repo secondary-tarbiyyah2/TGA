@@ -1,0 +1,51 @@
+name: Update dependencies
+
+# Security audit M11 (docs/security-audit-2026-11.md): upgrades Next.js to the
+# latest 16.x (16.4.5 or later fixes the critical advisories), brings Sanity
+# and the other packages up within their version ranges, runs `npm audit fix`
+# (never --force), and commits package.json and package-lock.json back to the
+# branch. Runs when a `claude/deps-*` branch changes this file, or by hand.
+# A commit made by this workflow does not start CI on its own: push an empty
+# commit (or open the PR) afterwards so lint, a11y and db-tests run.
+
+on:
+  push:
+    branches: ["claude/deps-**"]
+    paths: [".github/workflows/update-dependencies.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-dependencies-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+      - name: Audit before
+        run: npm audit --omit=dev || true
+      - name: Upgrade Next.js and update everything within range
+        run: |
+          npm install --save-exact next@16 eslint-config-next@16
+          npm update
+          npm audit fix || true
+      - name: Audit after
+        run: npm audit --omit=dev || true
+      - name: Commit the new lock file
+        run: |
+          if git diff --quiet -- package.json package-lock.json; then
+            echo "Nothing to update."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add package.json package-lock.json
+          git commit -m "Dependencies: Next.js 16 latest, npm update, npm audit fix"
+          git push
