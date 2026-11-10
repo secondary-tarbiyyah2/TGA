@@ -1,0 +1,157 @@
+{
+ "id": "computing-y10-pupil-pdf-worksheet-trace-table-set-three-progra",
+ "title": "Trace table set (three programs)",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y10",
+ "board": "Edexcel IGCSE 4CP0",
+ "unit": "Spring 1: Programming 2: data structures, files and subprograms",
+ "lessons": [
+  12
+ ],
+ "source": "Seeded from computing/y10 lesson 12 (Pupil PDF worksheet: trace table set (three programs))",
+ "intro": "Lesson 12: Operators and trace tables core. To understand how arithmetic, relational and logical operators work and how a trace table shows a program's values",
+ "blocks": [
+  {
+   "h": "Operators (6.5)"
+  },
+  {
+   "table": {
+    "head": [
+     "Kind",
+     "Operators",
+     "Example",
+     "Result"
+    ],
+    "rows": [
+     [
+      "Arithmetic",
+      "+ − * /",
+      "7 / 2",
+      "3.5"
+     ],
+     [
+      "Integer division and modulus",
+      "// %",
+      "7 // 2, 7 % 2",
+      "3, 1"
+     ],
+     [
+      "Exponent",
+      "**",
+      "3 ** 2",
+      "9"
+     ],
+     [
+      "Relational",
+      "== != < > <= >=",
+      "5 != 3",
+      "True"
+     ],
+     [
+      "Logical",
+      "and or not",
+      "(5 > 3) and (2 > 4)",
+      "False"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "Trace table"
+  },
+  {
+   "table": {
+    "head": [
+     "n",
+     "n % 2 == 0",
+     "total"
+    ],
+    "rows": [
+     [
+      "1",
+      "False",
+      "0"
+     ],
+     [
+      "2",
+      "True",
+      "2"
+     ],
+     [
+      "3",
+      "False",
+      "2"
+     ],
+     [
+      "4",
+      "True",
+      "6"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Evaluate: 20 // 6, 20 % 6, 20 / 6 (to 2 dp), 2 ** 5.",
+     "a": "3, 2, 3.33, 32",
+     "model": "I do: 20 // 6: how many whole 6s in 20: 3. 20 % 6: remainder 2. 20 / 6 = 3.33. 2 ** 5 = 32."
+    },
+    {
+     "q": "(4 >= 4) or (1 > 2) = ?",
+     "a": "True",
+     "options": [
+      "True",
+      "False"
+     ]
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Pupil PDF: complete trace tables for three short programs, including one with a while loop and a logical operator.",
+     "a": "Answers on the pupil PDF answer key in the plan (e.g. program 1 output 6; program 2 output 15; program 3 output 'Valid').",
+     "model": "The teacher fills the first row of program 1's trace table."
+    },
+    {
+     "q": "Extend: write a condition true only for ages 13 to 19 inclusive.",
+     "a": "age >= 13 and age <= 19",
+     "lines": 6
+    },
+    {
+     "q": "Stretch: what is the output of print(7 // 2 * 2 + 7 % 2)?",
+     "a": "7 (3 * 2 + 1)"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Which operator gives the remainder?",
+     "a": "%",
+     "options": [
+      "%",
+      "//",
+      "/"
+     ]
+    },
+    {
+     "q": "Back to our ponder: How can you be sure what a program will do without running it?",
+     "a": "Trace it: follow each line and record each variable's value in a trace table."
+    }
+   ]
+  }
+ ]
+}

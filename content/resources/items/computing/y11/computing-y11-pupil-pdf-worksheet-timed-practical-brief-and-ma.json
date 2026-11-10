@@ -1,0 +1,103 @@
+{
+ "id": "computing-y11-pupil-pdf-worksheet-timed-practical-brief-and-ma",
+ "title": "Python timed task: sponsored walk totals",
+ "type": "practical guide",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y11",
+ "board": "Edexcel IGCSE 4CP0",
+ "unit": "Spring 1: Revision cycle 1",
+ "lessons": [
+  35
+ ],
+ "source": "Written for computing/y11 lesson 35 (Pupil PDF worksheet: timed practical brief and mark scheme)",
+ "intro": "Lesson 35. 40 minutes, silent, on your own. Save often; test as you go; keep a short test log.",
+ "blocks": [
+  {
+   "h": "The task"
+  },
+  {
+   "text": "A masjid youth group held a sponsored walk. Each line of sponsors.csv holds a walker's name and the amount one sponsor pledged, in pounds. A walker can appear on several lines. Write a program that reads the file, ignores any line whose amount is not a positive number (and counts how many it ignored), totals the money for each walker, and writes a report file, totals.txt, listing each walker and their total, then the grand total."
+  },
+  {
+   "h": "Sample file: sponsors.csv"
+  },
+  {
+   "table": {
+    "head": [
+     "name",
+     "amount"
+    ],
+    "rows": [
+     [
+      "Yusuf",
+      "5.00"
+     ],
+     [
+      "Zainab",
+      "10.00"
+     ],
+     [
+      "Yusuf",
+      "2.50"
+     ],
+     [
+      "Ibrahim",
+      "abc"
+     ],
+     [
+      "Zainab",
+      "-3"
+     ],
+     [
+      "Ibrahim",
+      "7.50"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "Mark scheme (teacher)"
+  },
+  {
+   "table": {
+    "head": [
+     "Requirement",
+     "Marks"
+    ],
+    "rows": [
+     [
+      "Opens and reads the file line by line, splitting each line",
+      "2"
+     ],
+     [
+      "Validates the amount: numeric and positive; counts invalid lines",
+      "3"
+     ],
+     [
+      "Totals per walker (dictionary or parallel lists)",
+      "3"
+     ],
+     [
+      "Writes totals.txt with each walker's total and the grand total",
+      "2"
+     ],
+     [
+      "Readable code: comments, meaningful names, a subprogram",
+      "2"
+     ],
+     [
+      "Test log with at least three tests",
+      "2"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "Expected output for the sample file"
+  },
+  {
+   "text": "Yusuf £7.50; Zainab £10.00; Ibrahim £7.50; grand total £25.00; 2 lines ignored."
+  }
+ ]
+}

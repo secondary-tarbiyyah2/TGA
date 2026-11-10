@@ -1,0 +1,110 @@
+{
+ "id": "computing-y4-shapes-and-turns-table",
+ "title": "Shapes and turns table",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y4",
+ "unit": "Spring 1: Repetition in shapes and data logging",
+ "lessons": [
+  6
+ ],
+ "source": "Seeded from computing/y4 lesson 6 (Shapes and turns table (pupil PDF))",
+ "intro": "Lesson 6: Drawing shapes with the repeat block. To understand how a repeat block and the pen draw regular shapes on screen",
+ "blocks": [
+  {
+   "h": "The turn rule"
+  },
+  {
+   "table": {
+    "head": [
+     "Shape",
+     "Sides (repeat)",
+     "Turn"
+    ],
+    "rows": [
+     [
+      "Triangle",
+      "3",
+      "120"
+     ],
+     [
+      "Square",
+      "4",
+      "90"
+     ],
+     [
+      "Pentagon",
+      "5",
+      "72"
+     ],
+     [
+      "Hexagon",
+      "6",
+      "60"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Build the square script and run it.",
+     "a": "pen down, repeat 4 (move 100, turn 90).",
+     "model": "Teacher builds it block by block, predicting 'a square' before the green flag."
+    },
+    {
+     "q": "Change it to draw a triangle.",
+     "a": "repeat 3, turn 120."
+    },
+    {
+     "q": "What turn do you need for a pentagon (5 sides)?",
+     "a": "360 / 5 = 72 degrees"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: Draw a hexagon with a repeat block.",
+     "a": "repeat 6 (move 60, turn 60).",
+     "model": "Teacher works out 360 / 6 = 60 aloud, then builds and runs it."
+    },
+    {
+     "q": "Extend: Draw an octagon (8 sides). Write the turn sum first.",
+     "a": "360 / 8 = 45; repeat 8 (move 50, turn 45)."
+    },
+    {
+     "q": "Stretch: Try 'repeat 36 (move 10, turn 10)'. What shape appears and why?",
+     "a": "Almost a circle: 36 x 10 = 360, with many tiny sides."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "For a square the sprite turns... A) 45 B) 90 C) 120",
+     "a": "B) 90",
+     "options": [
+      "45",
+      "90",
+      "120"
+     ]
+    },
+    {
+     "q": "Explain how to find the turn for any regular shape.",
+     "a": "Divide 360 by the number of sides."
+    }
+   ]
+  }
+ ]
+}

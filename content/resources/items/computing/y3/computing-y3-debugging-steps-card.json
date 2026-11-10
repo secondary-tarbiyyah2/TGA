@@ -1,0 +1,77 @@
+{
+ "id": "computing-y3-debugging-steps-card",
+ "title": "Debugging steps card",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y3",
+ "unit": "Spring 1: Programming sequences and online safety",
+ "lessons": [
+  5
+ ],
+ "source": "Seeded from computing/y3 lesson 5 (Debugging steps card (pupil PDF))",
+ "intro": "Lesson 5: Debugging: find and fix errors. To understand how to find and fix a bug by testing a script one step at a time",
+ "blocks": [
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Fix the script on the slide so it draws a square.",
+     "a": "Move 'turn right 90 degrees' inside the repeat, under 'move 100 steps'.",
+     "model": "Teacher drags the turn block inside the loop, predicts 'a square', then runs it to prove it."
+    },
+    {
+     "q": "Bug: 'repeat 4 (move 100, turn 45)'. What does it draw and how do you fix it?",
+     "a": "Half of an octagon; change turn 45 to turn 90."
+    },
+    {
+     "q": "Bug: nothing is drawn but the sprite moves. Why?",
+     "a": "There is no 'pen down' block."
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: Open the class project 'Buggy shapes' and fix the three scripts (square, triangle, dashes).",
+     "a": "Square: turn inside the loop; triangle: turn 120 not 90; dashes: add pen up.",
+     "model": "Teacher fixes the square first, saying each debugging step aloud."
+    },
+    {
+     "q": "Extend: Write in the portal response box what each bug was and how you found it. Start: 'The script should... but it...'",
+     "a": "For example: The script should draw a triangle but it drew part of a square, so I changed turn 90 to turn 120.",
+     "lines": 6
+    },
+    {
+     "q": "Stretch: Make a script with one bug for a partner to find in the next lesson.",
+     "a": "A script with one clear bug and the fix written down."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Debugging means... A) deleting the program B) finding and fixing mistakes C) adding more blocks",
+     "a": "B) finding and fixing mistakes",
+     "options": [
+      "Deleting the program",
+      "Finding and fixing mistakes",
+      "Adding more blocks"
+     ]
+    },
+    {
+     "q": "What should you always do after fixing a bug?",
+     "a": "Test (run) the script again."
+    }
+   ]
+  }
+ ]
+}

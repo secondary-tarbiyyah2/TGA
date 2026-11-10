@@ -1,0 +1,82 @@
+{
+ "id": "computing-y11-pupil-pdf-worksheet-12-data-representation-quest",
+ "title": "Data representation: 12 questions",
+ "type": "revision set",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y11",
+ "board": "Edexcel IGCSE 4CP0",
+ "unit": "Spring 1: Revision cycle 1",
+ "lessons": [
+  28
+ ],
+ "source": "Written for computing/y11 lesson 28 (Pupil PDF worksheet: 12 data-representation questions)",
+ "intro": "Lesson 28. Show your working. Use 1 KB = 1,024 bytes and 1 byte = 8 bits.",
+ "time": "25 minutes",
+ "blocks": [
+  {
+   "questions": [
+    {
+     "q": "Convert the binary number 10110110 to denary.",
+     "a": "128 + 32 + 16 + 4 + 2 = 182",
+     "marks": 1
+    },
+    {
+     "q": "Convert the denary number 157 to 8-bit binary.",
+     "a": "10011101 (128 + 16 + 8 + 4 + 1)",
+     "marks": 1
+    },
+    {
+     "q": "Convert the hexadecimal number 3C to denary.",
+     "a": "3 × 16 + 12 = 60",
+     "marks": 1
+    },
+    {
+     "q": "Convert the binary number 11101001 to hexadecimal.",
+     "a": "1110 = E, 1001 = 9, so E9",
+     "marks": 1
+    },
+    {
+     "q": "Write −45 as an 8-bit two's complement binary number.",
+     "a": "45 = 00101101; invert: 11010010; add 1: 11010011",
+     "marks": 2
+    },
+    {
+     "q": "What denary value does the two's complement number 11110110 represent?",
+     "a": "−128 + 64 + 32 + 16 + 4 + 2 = −10",
+     "marks": 1
+    },
+    {
+     "q": "Add the unsigned binary numbers 01101100 and 00111010.",
+     "a": "10100110 (108 + 58 = 166)",
+     "marks": 2
+    },
+    {
+     "q": "Add the unsigned binary numbers 11001000 and 01010000. What happens?",
+     "a": "The result needs 9 bits (200 + 80 = 280): the 8 bits store 00011000 and the carry is lost: an overflow error",
+     "marks": 2
+    },
+    {
+     "q": "Apply a logical shift left by 2 places to 00010110. What is the effect on its value?",
+     "a": "01011000; 22 becomes 88: multiplied by 4",
+     "marks": 2
+    },
+    {
+     "q": "Apply an arithmetic shift right by 1 place to the two's complement number 11100100. What is the effect?",
+     "a": "11110010; −28 becomes −14: divided by 2, the sign bit is kept",
+     "marks": 2
+    },
+    {
+     "q": "An image is 800 × 600 pixels with a colour depth of 24 bits. Calculate its file size in KB.",
+     "a": "800 × 600 × 24 = 11,520,000 bits = 1,440,000 bytes (M1); ÷ 1,024 = 1,406.25 KB (A1)",
+     "marks": 2
+    },
+    {
+     "q": "A mono sound is sampled at 44,100 Hz with a bit depth of 16 bits for 30 seconds. Calculate its size in bytes.",
+     "a": "44,100 × 16 × 30 = 21,168,000 bits (M1); ÷ 8 = 2,646,000 bytes (A1)",
+     "marks": 2
+    }
+   ]
+  }
+ ]
+}

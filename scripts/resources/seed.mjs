@@ -407,7 +407,11 @@ function writingFrame(entry, lessons) {
   const it = base(entry, lessons);
   const L = lessons;
   const title = entry.wording;
-  const model = L.map((l) => (l.practice || []).map(itemModel).find(Boolean)).find(Boolean);
+  // The lesson's model, without an "I do:" stage label or the quotes round the whole answer.
+  const model = L.map((l) => (l.practice || []).map(itemModel).find(Boolean))
+    .find(Boolean)
+    ?.replace(/^\s*(?:i do|we do|you do|model)\s*:\s*/i, "")
+    .replace(/^['‘"“]\s*([\s\S]*?)\s*['’"”]$/, "$1");
   let labels = null;
   const colon = /frame[^:]*:\s*(.+)$/i.exec(title) || /scaffold[^:]*:\s*(.+)$/i.exec(title);
   if (colon) labels = colon[1].split(/,\s*|\s+and\s+(?=[a-z])/i).map((s) => clean(s).replace(/^[a-z]/, (c) => c.toUpperCase())).filter((s) => s.length > 1 && s.length < 60);
@@ -423,7 +427,10 @@ function writingFrame(entry, lessons) {
   if (!labels) labels = ["Plan", "First part", "Second part", "Third part", "Check"];
   const early = yearNum(entry.year) <= 2;
   const lines = Math.max(3, Math.min(7, Math.round(24 / labels.length)));
-  const starters = (s) => STARTERS[s.toLowerCase().split(/[ :(]/)[0]] || [];
+  // English starters talk about "the writer" and "the text"; other subjects get neutral ones.
+  const english = /^english/.test(entry.subjectSlug);
+  const swap = { "The writer suggests that": "The main point is", "The text says": /history/.test(entry.subjectSlug) ? "The source shows" : "One example is" };
+  const starters = (s) => (STARTERS[s.toLowerCase().split(/[ :(]/)[0]] || []).map((x) => (english ? x : swap[x] || x));
   it.intro = `${L.length === 1 ? forLesson(L[0]) : ""} Plan or write in each box.${/arabic/.test(entry.subjectSlug) ? " Write in Arabic; use the word bank." : ""}`.trim();
   const blocks = [{ frame: labels.map((label) => ({ label, starters: starters(label), lines: early ? 3 : lines })) }];
   if (model) blocks.unshift({ h: "Model" }, { model: { parts: model.split(/(?=\b(?:Point|Evidence|Explain|Link|Analysis|Evaluation|Judgement|Counter-point|Because|Therefore):\s)/).map((p) => { const m = /^([A-Z][A-Za-z -]{2,20}):\s*(.*)$/s.exec(p.trim()); return m ? { label: m[1], text: clean(m[2]) } : { text: clean(p) }; }) } }, { h: "Your turn" });

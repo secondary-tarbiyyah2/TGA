@@ -1,0 +1,107 @@
+{
+ "id": "computing-y10-pupil-pdf-worksheet-flowchart-template-and-age-g",
+ "title": "Flowchart template and age-group task",
+ "type": "printable graph/grid",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y10",
+ "board": "Edexcel IGCSE 4CP0",
+ "unit": "Spring 1: Programming 2: data structures, files and subprograms",
+ "lessons": [
+  9
+ ],
+ "source": "Seeded from computing/y10 lesson 9 (Pupil PDF worksheet: flowchart template and age-group task)",
+ "intro": "Lesson 9: Problem solving core: decomposition, abstraction and algorithms. To understand how decomposition and abstraction turn a real problem into an algorithm shown as a flowchart or pseudo-code",
+ "blocks": [
+  {
+   "h": "Flowchart symbols"
+  },
+  {
+   "table": {
+    "head": [
+     "Shape",
+     "Use"
+    ],
+    "rows": [
+     [
+      "Oval",
+      "Start or stop"
+     ],
+     [
+      "Parallelogram",
+      "Input or output"
+     ],
+     [
+      "Rectangle",
+      "Process"
+     ],
+     [
+      "Diamond",
+      "Decision (yes or no)"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Decompose a 'prayer-times reminder' app into four sub-problems.",
+     "a": "e.g. get location; get today's prayer times; compare with the current time; send a reminder.",
+     "model": "I do: 1) get the user's town; 2) look up today's five prayer times; 3) check the clock every minute; 4) when a time arrives, show a reminder."
+    },
+    {
+     "q": "Which is a process box?",
+     "a": "Rectangle",
+     "options": [
+      "Rectangle",
+      "Diamond",
+      "Oval"
+     ]
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Pupil PDF: draw a flowchart and write pseudo-code that inputs an age and outputs 'Child', 'Teen' (13 to 19) or 'Adult'.",
+     "a": "Two decisions: IF age < 13 → Child; ELSE IF age <= 19 → Teen; ELSE Adult.",
+     "model": "The teacher draws the first decision: diamond 'age < 13?', yes → output 'Child'."
+    },
+    {
+     "q": "Extend: identify one abstraction you made.",
+     "a": "e.g. ignored date of birth; used whole years only."
+    },
+    {
+     "q": "Stretch: how many test values would you use, and which?",
+     "a": "12, 13, 19, 20 (boundaries) and an invalid value like -1."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Breaking a problem into smaller parts is ...",
+     "a": "decomposition",
+     "options": [
+      "decomposition",
+      "abstraction",
+      "selection"
+     ]
+    },
+    {
+     "q": "Back to our ponder: How would you explain to a robot how to make a cup of tea? What details could it ignore?",
+     "a": "Break it into steps (decomposition) and leave out details that do not matter, like the colour of the cup (abstraction)."
+    }
+   ]
+  }
+ ]
+}

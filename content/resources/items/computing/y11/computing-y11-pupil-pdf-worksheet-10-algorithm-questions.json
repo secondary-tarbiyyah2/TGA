@@ -1,0 +1,72 @@
+{
+ "id": "computing-y11-pupil-pdf-worksheet-10-algorithm-questions",
+ "title": "Algorithms, searching, sorting and logic: 10 questions",
+ "type": "revision set",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y11",
+ "board": "Edexcel IGCSE 4CP0",
+ "unit": "Spring 1: Revision cycle 1",
+ "lessons": [
+  29
+ ],
+ "source": "Written for computing/y11 lesson 29 (Pupil PDF worksheet: 10 algorithm questions)",
+ "intro": "Lesson 29. Show your working.",
+ "time": "20 minutes",
+ "blocks": [
+  {
+   "questions": [
+    {
+     "q": "State one condition a list must meet before a binary search can be used.",
+     "a": "It must be sorted (in order)",
+     "marks": 1
+    },
+    {
+     "q": "A linear search looks for 7 in the list [3, 9, 7, 1]. How many items does it compare before it finds 7?",
+     "a": "3",
+     "marks": 1
+    },
+    {
+     "q": "A binary search looks for 23 in [2, 5, 8, 12, 16, 23, 38, 56, 72, 91], taking the middle item as (low + high) DIV 2 with positions 0 to 9. List the items it compares.",
+     "a": "16 (position 4), then 56 (position 7), then 23 (position 5): found",
+     "marks": 3
+    },
+    {
+     "q": "Show the list [5, 1, 4, 2, 8] after the first pass of a bubble sort into ascending order.",
+     "a": "[1, 4, 2, 5, 8]",
+     "marks": 2
+    },
+    {
+     "q": "What is the greatest number of passes a bubble sort needs for a list of 5 items?",
+     "a": "4 (n − 1)",
+     "marks": 1
+    },
+    {
+     "q": "Describe the first stage of a merge sort.",
+     "a": "Split the list repeatedly in half until every sublist has one item",
+     "marks": 1
+    },
+    {
+     "q": "Merge the sorted lists [1, 4, 7] and [2, 3, 9].",
+     "a": "[1, 2, 3, 4, 7, 9]",
+     "marks": 1
+    },
+    {
+     "q": "P = (A AND B) OR NOT C. Give P for: (a) A = 1, B = 0, C = 0 (b) A = 1, B = 1, C = 1 (c) A = 0, B = 1, C = 1.",
+     "a": "(a) 1 (b) 1 (c) 0",
+     "marks": 3
+    },
+    {
+     "q": "total = 0\nfor i in range(1, 5):\n    total = total + i * 2\nprint(total)\nWhat is printed?",
+     "a": "20 (2 + 4 + 6 + 8)",
+     "marks": 2
+    },
+    {
+     "q": "Explain why a merge sort is usually better than a bubble sort for a large list.",
+     "a": "It needs far fewer comparisons as the list grows, so it is faster (bubble sort compares neighbours over many passes)",
+     "marks": 2
+    }
+   ]
+  }
+ ]
+}

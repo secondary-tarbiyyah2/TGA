@@ -1,0 +1,36 @@
+{
+ "id": "computing-y8-8-bit-place-value-grid",
+ "title": "8-bit place-value grid",
+ "type": "printable graph/grid",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y8",
+ "unit": "Spring 1: Binary, safety and Boolean logic",
+ "lessons": [
+  5
+ ],
+ "source": "Seeded from computing/y8 lesson 5 (8-bit place-value grid (pupil PDF))",
+ "intro": "Lesson 5: Binary: bits, bytes and converting numbers.",
+ "blocks": [
+  {
+   "h": "8-bit place-value grid"
+  },
+  {
+   "grid": {
+    "kind": "placevalue",
+    "cols": [
+     "128",
+     "64",
+     "32",
+     "16",
+     "8",
+     "4",
+     "2",
+     "1"
+    ],
+    "rows": 8
+   }
+  }
+ ],
+ "name": false
+}

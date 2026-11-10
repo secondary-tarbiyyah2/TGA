@@ -1,0 +1,79 @@
+{
+ "id": "computing-y10-pupil-pdf-worksheet-string-tasks",
+ "title": "String tasks",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y10",
+ "board": "Edexcel IGCSE 4CP0",
+ "unit": "Spring 1: Programming 2: data structures, files and subprograms",
+ "lessons": [
+  29
+ ],
+ "source": "Seeded from computing/y10 lesson 29 (Pupil PDF worksheet: string tasks)",
+ "intro": "Lesson 29: Manipulating strings: length, position, slices and case. To understand how to manipulate strings using length, indexing, slicing, concatenation and case conversion",
+ "blocks": [
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "For s = 'Al-Kahf', write expressions for: its length, its last character, 'Kahf', and it in capitals.",
+     "a": "len(s) = 7; s[-1] = 'f'; s[3:7] = 'Kahf'; s.upper() = 'AL-KAHF'",
+     "model": "I do: len(s): A, l, -, K, a, h, f = 7. s[-1] = 'f'. 'Kahf' starts at index 3 and ends at 6, so s[3:7]. s.upper() = 'AL-KAHF'."
+    },
+    {
+     "q": "'Salaam'.lower() = ?",
+     "a": "'salaam'",
+     "options": [
+      "'salaam'",
+      "'SALAAM'",
+      "'Salaam'"
+     ]
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Pupil PDF: write a program that inputs a sentence and outputs its length, the number of vowels and the sentence with the first letter capitalised.",
+     "a": "len(s); loop counting characters in 'aeiouAEIOU'; s[0].upper() + s[1:].",
+     "model": "The teacher writes the vowel loop: count = 0; for ch in s: if ch in 'aeiouAEIOU': count = count + 1",
+     "lines": 6
+    },
+    {
+     "q": "Extend: output the sentence backwards.",
+     "a": "s[::-1] or a loop from the end."
+    },
+    {
+     "q": "Stretch: check whether a word is a palindrome.",
+     "a": "word.lower() == word.lower()[::-1]"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Joining strings with + is ...",
+     "a": "concatenation",
+     "options": [
+      "concatenation",
+      "slicing",
+      "casting"
+     ]
+    },
+    {
+     "q": "Back to our ponder: A school email is made from a pupil's name, like 'yahmed24'. How could a program build it automatically?",
+     "a": "Take the first letter of the first name, the surname, a number, then make it lower case: string manipulation."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,79 @@
+{
+ "id": "computing-y10-pupil-pdf-worksheet-selection-and-loops-tasks",
+ "title": "Selection and loops tasks",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y10",
+ "board": "Edexcel IGCSE 4CP0",
+ "unit": "Spring 1: Programming 2: data structures, files and subprograms",
+ "lessons": [
+  27
+ ],
+ "source": "Seeded from computing/y10 lesson 27 (Pupil PDF worksheet: selection and loops tasks)",
+ "intro": "Lesson 27: Selection and loops core: if, while and for. To understand how selection and repetition control the flow of a Python program",
+ "blocks": [
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Trace the while loop on the slide: write total after each pass.",
+     "a": "30, 60, 90, 120; then 120 < 100 is False, so it stops and prints 120.",
+     "model": "I do: start 0. 0 < 100: total 30. 30 < 100: 60. 60 < 100: 90. 90 < 100: 120. 120 < 100 is False: stop, print 120."
+    },
+    {
+     "q": "Which loop suits 'keep asking until the password is correct'?",
+     "a": "while",
+     "options": [
+      "while",
+      "for",
+      "if"
+     ]
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Pupil PDF: write a program that prints the 7 times table (7 × 1 to 7 × 12) with a for loop, then a version that keeps asking for a number until it is between 1 and 12.",
+     "a": "for i in range(1, 13): print(7, 'x', i, '=', 7 * i); while loop: n = int(input()) repeated while n < 1 or n > 12.",
+     "model": "The teacher writes the first line: for i in range(1, 13):",
+     "lines": 6
+    },
+    {
+     "q": "Extend: use elif to output 'Fizz' for multiples of 3 in 1 to 15.",
+     "a": "for i in range(1, 16): if i % 3 == 0: print('Fizz') else: print(i)"
+    },
+    {
+     "q": "Stretch: when is a while loop dangerous?",
+     "a": "If the condition never becomes False: an infinite loop."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Which keyword gives a second condition after if?",
+     "a": "elif",
+     "options": [
+      "elif",
+      "else if",
+      "then"
+     ]
+    },
+    {
+     "q": "Back to our ponder: A teacher calls the register: 15 names, every day. A game keeps going until you lose. Which needs a fixed count and which needs a condition?",
+     "a": "The register is count-controlled (for); the game is condition-controlled (while)."
+    }
+   ]
+  }
+ ]
+}

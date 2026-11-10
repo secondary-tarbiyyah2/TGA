@@ -1,0 +1,99 @@
+{
+ "id": "computing-y3-weak-or-strong-card-sort",
+ "title": "Weak or strong card sort",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y3",
+ "unit": "Spring 1: Programming sequences and online safety",
+ "lessons": [
+  6
+ ],
+ "source": "Seeded from computing/y3 lesson 6 (Weak or strong card sort (pupil PDF))",
+ "intro": "Lesson 6: Powerful passwords. To understand what makes a password strong and why we keep it private",
+ "blocks": [
+  {
+   "h": "Weak or strong?"
+  },
+  {
+   "cards": [
+    "password",
+    "ali2017",
+    "123456",
+    "CloudTeapotRiver",
+    "BlueLampOrange9",
+    "football"
+   ],
+   "cols": 3,
+   "title": "Sort into: Weak / Strong",
+   "task": "sort them into the columns: Weak, Strong.",
+   "answer": "Weak: password; ali2017; 123456; football. Strong: CloudTeapotRiver; BlueLampOrange9"
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Is 'Zayd2018' a strong password? Why?",
+     "a": "No: it uses a name and a year, which are easy to guess.",
+     "model": "Teacher thinks aloud: 'Is it long? Quite. Could someone guess it? Yes, it is a name and a birth year. So it is weak.'"
+    },
+    {
+     "q": "Make 'catdog' stronger using the three random words rule.",
+     "a": "For example: CatPencilMountain."
+    },
+    {
+     "q": "Where must a password never be typed in a Teams lesson?",
+     "a": "In the chat (or anywhere others can see)."
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: Write three random words that would make a strong password (do NOT use your real one).",
+     "a": "For example: TrainLemonCarpet.",
+     "model": "Teacher picks three things in the room that do not go together: 'Kettle, Moon, Sock: KettleMoonSock.'",
+     "lines": 6
+    },
+    {
+     "q": "Extend: Write two rules for keeping a password private in the portal response box. Start: 'I will...'",
+     "a": "I will only share my password with my parents. I will never type it in the chat.",
+     "lines": 6
+    },
+    {
+     "q": "Stretch: Explain why 'BlueLampOrange9' is harder to guess than 'blue'.",
+     "a": "It is longer, uses three unrelated words, capitals and a number, so there are many more possibilities to try."
+    },
+    {
+     "q": "Quiz (portal): 5 questions on password safety.",
+     "a": "Teacher marks in the portal."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Which is the strongest password? A) 123456 B) amina C) TigerSpoonCloud",
+     "a": "C) TigerSpoonCloud",
+     "options": [
+      "123456",
+      "amina",
+      "TigerSpoonCloud"
+     ]
+    },
+    {
+     "q": "Big question: who should have a copy of your password key?",
+     "a": "Only me and my parents (trusted adults at home)."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,96 @@
+{
+ "id": "computing-y9-device-sort-cards",
+ "title": "Device sort cards",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y9",
+ "unit": "Spring 1: Computer systems and architecture",
+ "lessons": [
+  5
+ ],
+ "source": "Seeded from computing/y9 lesson 5 (Device sort cards (pupil PDF))",
+ "intro": "Lesson 5: Hardware and software; input, output and storage. To understand how hardware and software work together in a computer system",
+ "blocks": [
+  {
+   "h": "Sort the devices"
+  },
+  {
+   "cards": [
+    "Keyboard",
+    "Webcam",
+    "Monitor",
+    "Speaker",
+    "SSD",
+    "Microphone",
+    "Printer",
+    "USB flash drive"
+   ],
+   "cols": 3,
+   "title": "Sort into: Input / Output / Storage",
+   "task": "sort them into the columns: Input, Output, Storage.",
+   "answer": "Input: Keyboard; Webcam; Microphone. Output: Monitor; Speaker; Printer. Storage: SSD; USB flash drive"
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Is a touchscreen input, output or both? Explain.",
+     "a": "Both: it detects touches (input) and displays images (output).",
+     "model": "Teacher asks two questions of the device: does data go in? yes, touches. Does data come out? yes, the display. So both."
+    },
+    {
+     "q": "Classify: spreadsheet program, antivirus, operating system.",
+     "a": "Application; system (utility); system."
+    },
+    {
+     "q": "Name the part of the system that processes data.",
+     "a": "The CPU (processor)."
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: For a smart doorbell, list its inputs, process, outputs and storage in the portal response box.",
+     "a": "Inputs: button, camera, microphone; process: chip decides to notify; outputs: chime, phone alert; storage: saved clips.",
+     "model": "Teacher completes the inputs row aloud.",
+     "lines": 6
+    },
+    {
+     "q": "Extend: Explain why a computer needs both hardware and software, using an example.",
+     "a": "Hardware provides the physical means to compute; software gives the instructions. A laptop with no OS cannot run Teams."
+    },
+    {
+     "q": "Stretch: A device driver is system software. Explain what it does.",
+     "a": "It lets the operating system communicate with a specific piece of hardware, such as a printer."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "A webcam is... A) an output device B) an input device C) storage",
+     "a": "B) an input device",
+     "options": [
+      "An output device",
+      "An input device",
+      "Storage"
+     ]
+    },
+    {
+     "q": "Big question: what do a smartphone, washing machine and car computer have in common?",
+     "a": "Hardware running software, with input, processing, output and storage."
+    }
+   ]
+  }
+ ]
+}

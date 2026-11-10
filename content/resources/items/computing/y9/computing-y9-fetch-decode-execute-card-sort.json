@@ -1,0 +1,76 @@
+{
+ "id": "computing-y9-fetch-decode-execute-card-sort",
+ "title": "Fetch-decode-execute card sort",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y9",
+ "unit": "Spring 1: Computer systems and architecture",
+ "lessons": [
+  6
+ ],
+ "source": "Seeded from computing/y9 lesson 6 (Fetch-decode-execute card sort (pupil PDF))",
+ "intro": "Lesson 6: The CPU and the fetch-decode-execute cycle. To understand how the CPU carries out instructions using the fetch-decode-execute cycle",
+ "blocks": [
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Describe the fetch stage in two sentences.",
+     "a": "The address in the PC is copied to the MAR and the instruction at that address is fetched from RAM into the MDR. The PC is increased by 1.",
+     "model": "Teacher writes it in two sentences, naming each register as it is used."
+    },
+    {
+     "q": "Which part of the CPU adds two numbers?",
+     "a": "The ALU."
+    },
+    {
+     "q": "What does 3.2 GHz mean?",
+     "a": "3.2 billion cycles per second."
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: Put the 6 cards of the cycle in order and write one sentence for each stage (worksheet).",
+     "a": "PC to MAR; fetch to MDR; PC + 1; decode in CU; execute; repeat.",
+     "model": "Teacher places card 1 (PC address copied to MAR) and explains it."
+    },
+    {
+     "q": "Extend: Explain why doubling the cores does not always double the speed.",
+     "a": "Some tasks cannot be split into parts that run at the same time, and cores share memory."
+    },
+    {
+     "q": "Stretch: Explain why cache makes a CPU faster.",
+     "a": "Cache stores frequently used data close to the CPU, so it waits less for slower RAM."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "The stages in order are... A) decode, fetch, execute B) fetch, decode, execute C) execute, fetch, decode",
+     "a": "B) fetch, decode, execute",
+     "options": [
+      "Decode, fetch, execute",
+      "Fetch, decode, execute",
+      "Execute, fetch, decode"
+     ]
+    },
+    {
+     "q": "Big question: what is the CPU doing in each cycle?",
+     "a": "Fetching an instruction from memory, decoding it and executing it."
+    }
+   ]
+  }
+ ]
+}

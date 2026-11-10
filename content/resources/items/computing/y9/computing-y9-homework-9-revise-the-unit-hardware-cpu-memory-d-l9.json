@@ -1,0 +1,201 @@
+{
+ "id": "computing-y9-homework-9-revise-the-unit-hardware-cpu-memory-d-l9",
+ "title": "Homework, lesson 9: Revise the unit (hardware, CPU, memory, data units, OS) for the portal quiz after half term, using the knowledge organiser in the portal.",
+ "type": "quiz",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y9",
+ "unit": "Spring 1: Computer systems and architecture",
+ "lessons": [
+  9
+ ],
+ "source": "Seeded from computing/y9 lesson 9 (Revise the unit (hardware, CPU, memory, data units, OS) for the portal quiz after half term, using the knowledge organiser in the portal.)",
+ "intro": "Covers lessons 5 to 9 of Computer systems and architecture. Answer every question. For multiple choice, fill in one circle.",
+ "time": "30 minutes",
+ "blocks": [
+  {
+   "questions": [
+    {
+     "q": "Which is application software?",
+     "options": [
+      "Windows 11",
+      "A web browser",
+      "A device driver",
+      "Disk defragmenter"
+     ],
+     "a": "B) A web browser. A browser does a task for the user; the others manage the computer (system software).",
+     "marks": 1
+    },
+    {
+     "q": "Which register holds the address of the next instruction?",
+     "options": [
+      "MDR",
+      "Program counter",
+      "Accumulator",
+      "ALU"
+     ],
+     "a": "B) Program counter. The PC points to the next instruction; the MDR holds the data fetched; the ALU is not a register.",
+     "marks": 1
+    },
+    {
+     "q": "Which memory loses its contents when the power is off?",
+     "options": [
+      "ROM",
+      "SSD",
+      "RAM",
+      "DVD"
+     ],
+     "a": "C) RAM. RAM is volatile; ROM, SSD and DVD keep their data.",
+     "marks": 1
+    },
+    {
+     "q": "How many bits are in 3 bytes?",
+     "options": [
+      "3",
+      "11",
+      "24",
+      "38"
+     ],
+     "a": "C) 24. 3 x 8 = 24.",
+     "marks": 1
+    },
+    {
+     "q": "Which utility makes a file smaller to email it?",
+     "options": [
+      "Antivirus",
+      "Compression",
+      "Backup",
+      "Defragmenter"
+     ],
+     "a": "B) Compression. Compression reduces file size; the others protect or organise files.",
+     "marks": 1
+    },
+    {
+     "q": "Python: what does print(7 // 2) output?",
+     "a": "3",
+     "options": [
+      "3",
+      "3.5",
+      "1"
+     ],
+     "marks": 1
+    },
+    {
+     "q": "A webcam is... A) an output device B) an input device C) storage",
+     "a": "B) an input device",
+     "options": [
+      "An output device",
+      "An input device",
+      "Storage"
+     ],
+     "marks": 1
+    },
+    {
+     "q": "Python: what is the data type of 3.5?",
+     "a": "float",
+     "options": [
+      "int",
+      "float",
+      "str"
+     ],
+     "marks": 1
+    },
+    {
+     "q": "The stages in order are... A) decode, fetch, execute B) fetch, decode, execute C) execute, fetch, decode",
+     "a": "B) fetch, decode, execute",
+     "options": [
+      "Decode, fetch, execute",
+      "Fetch, decode, execute",
+      "Execute, fetch, decode"
+     ],
+     "marks": 1
+    },
+    {
+     "q": "Python: what does len('Salaam') return?",
+     "a": "6",
+     "options": [
+      "5",
+      "6",
+      "7"
+     ],
+     "marks": 1
+    },
+    {
+     "q": "ROM is... A) volatile B) non-volatile",
+     "a": "B) non-volatile",
+     "options": [
+      "Volatile",
+      "Non-volatile"
+     ],
+     "marks": 1
+    },
+    {
+     "q": "Python: what does print(2 ** 3) output?",
+     "a": "8",
+     "options": [
+      "6",
+      "8",
+      "9"
+     ],
+     "marks": 1
+    },
+    {
+     "q": "Which is the largest? A) 2000 MB B) 1.5 GB C) 1 TB",
+     "a": "C) 1 TB",
+     "options": [
+      "2000 MB",
+      "1.5 GB",
+      "1 TB"
+     ],
+     "marks": 1
+    },
+    {
+     "q": "Python: what does 'TGA'.lower() return?",
+     "a": "'tga'",
+     "options": [
+      "'TGA'",
+      "'tga'",
+      "'Tga'"
+     ],
+     "marks": 1
+    },
+    {
+     "q": "Which is NOT a job of an operating system? A) memory management B) writing essays C) file management",
+     "a": "B) writing essays",
+     "options": [
+      "Memory management",
+      "Writing essays",
+      "File management"
+     ],
+     "marks": 1
+    },
+    {
+     "q": "Python: what does print(7 % 2) output?",
+     "a": "1",
+     "marks": 1
+    },
+    {
+     "q": "What is an algorithm?",
+     "a": "A precise sequence of steps to solve a problem.",
+     "marks": 2
+    },
+    {
+     "q": "Convert 00001010 to denary.",
+     "a": "10",
+     "marks": 1
+    },
+    {
+     "q": "Big question: what do a smartphone, washing machine and car computer have in common?",
+     "a": "Hardware running software, with input, processing, output and storage.",
+     "marks": 2
+    },
+    {
+     "q": "Is a touchscreen input, output or both? Explain.",
+     "a": "Both: it detects touches (input) and displays images (output).",
+     "model": "Teacher asks two questions of the device: does data go in? yes, touches. Does data come out? yes, the display. So both.",
+     "marks": 2
+    }
+   ]
+  }
+ ]
+}

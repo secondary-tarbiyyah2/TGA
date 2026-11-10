@@ -1,0 +1,114 @@
+{
+ "id": "computing-y10-pupil-pdf-worksheet-first-programs-tasks-and-tes",
+ "title": "First programs tasks and test table",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y10",
+ "board": "Edexcel IGCSE 4CP0",
+ "unit": "Spring 1: Programming 2: data structures, files and subprograms",
+ "lessons": [
+  7
+ ],
+ "source": "Seeded from computing/y10 lesson 7 (Pupil PDF worksheet: first programs tasks and test table)",
+ "intro": "Lesson 7: First Python programs: variables, data types, input and output. To understand how variables, data types, input and output work in a simple Python program",
+ "blocks": [
+  {
+   "h": "Data types (6.3.1)"
+  },
+  {
+   "table": {
+    "head": [
+     "Type",
+     "Python",
+     "Example"
+    ],
+    "rows": [
+     [
+      "Integer",
+      "int",
+      "14"
+     ],
+     [
+      "Real",
+      "float",
+      "3.5"
+     ],
+     [
+      "String",
+      "str",
+      "'Amina'"
+     ],
+     [
+      "Boolean",
+      "bool",
+      "True"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Write a program that inputs the price of an item and a quantity, then outputs the total.",
+     "a": "price = float(input('Price: ')); qty = int(input('Quantity: ')); print('Total', price * qty)",
+     "model": "I do: price = float(input('Price: ')) because prices have pence; qty = int(input('Quantity: ')); total = price * qty; print('Total:', total).",
+     "lines": 6
+    },
+    {
+     "q": "Which converts '3.5' to a number?",
+     "a": "float('3.5')",
+     "options": [
+      "float('3.5')",
+      "int('3.5')",
+      "str(3.5)"
+     ]
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Pupil PDF task: write a program that inputs minutes and outputs hours and minutes (e.g. 135 → 2 hours 15 minutes). Test with 135, 60 and 59.",
+     "a": "mins = int(input()); print(mins // 60, 'hours', mins % 60, 'minutes'). 135 → 2 15; 60 → 1 0; 59 → 0 59.",
+     "model": "The teacher shows // (integer division) and % (modulus): 135 // 60 = 2, 135 % 60 = 15.",
+     "lines": 6
+    },
+    {
+     "q": "Extend: add a meaningful comment to each line.",
+     "a": "Comments with # explaining each step."
+    },
+    {
+     "q": "Stretch: what happens if the user types 'ten'? Why?",
+     "a": "A runtime error (ValueError): int() cannot convert 'ten'."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Which is a Boolean value?",
+     "a": "True",
+     "options": [
+      "True",
+      "'True'",
+      "1.0"
+     ]
+    },
+    {
+     "q": "Back to our ponder: If a program asks your age and you type 14, does the computer know 14 is a number?",
+     "a": "No: input() gives text (a string); we must convert it with int() to calculate with it."
+    }
+   ]
+  }
+ ]
+}

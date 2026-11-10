@@ -1,0 +1,93 @@
+{
+ "id": "computing-y8-combined-gates-worksheet",
+ "title": "Combined gates worksheet",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y8",
+ "unit": "Spring 1: Binary, safety and Boolean logic",
+ "lessons": [
+  8
+ ],
+ "source": "Seeded from computing/y8 lesson 8 (Combined gates worksheet (pupil PDF))",
+ "intro": "Lesson 8: Combining gates; logic quiz. To understand how logic gates combine into circuits and how to work out their output",
+ "blocks": [
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "Q = (A AND B) OR C. Find Q when A = 1, B = 0, C = 1.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "A AND B: 1 AND 0 = 0"
+     },
+     {
+      "label": "Step 2",
+      "text": "Then 0 OR C: 0 OR 1"
+     },
+     {
+      "label": "Step 3",
+      "text": "= 1"
+     },
+     {
+      "label": "Step 4",
+      "text": "Q = 1"
+     },
+     {
+      "label": "Answer",
+      "text": "Q = 1"
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Q = NOT A AND B. Find Q for A = 0, B = 1.",
+     "a": "NOT 0 = 1; 1 AND 1 = 1. Q = 1.",
+     "model": "Teacher: NOT applies to A only: NOT 0 = 1; then AND with B (1) gives 1."
+    },
+    {
+     "q": "Write the expression for: 'the light is on if switch A is on and switch B is off'.",
+     "a": "A AND NOT B"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: Complete the truth table for Q = NOT (A AND B) (4 rows) on the worksheet.",
+     "a": "00:1, 01:1, 10:1, 11:0",
+     "model": "Teacher completes row 00: A AND B = 0, NOT 0 = 1."
+    },
+    {
+     "q": "Extend: Build Q = (A AND B) OR C in CircuitVerse and check two rows of the slide table.",
+     "a": "Lights match the table rows tested."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Logic quiz (portal, 10 questions): binary conversions, Boolean expressions, gate truth tables and a combined circuit.",
+     "a": "Teacher marks in the portal."
+    },
+    {
+     "q": "Big question: how many gates for 'code correct AND NOT night', and which?",
+     "a": "Two: NOT and AND."
+    }
+   ]
+  }
+ ]
+}

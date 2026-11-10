@@ -1,0 +1,108 @@
+{
+ "id": "computing-y5-condition-cards-worksheet-pupil-pdf-6-cards",
+ "title": "Condition cards worksheet",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y5",
+ "unit": "Spring 1: Selection in physical computing and Secure Your Secrets",
+ "lessons": [
+  6
+ ],
+ "source": "Seeded from computing/y5 lesson 6 (Condition cards worksheet (pupil PDF, 6 cards))",
+ "intro": "Lesson 6: Selection: if... then rules. To understand how selection lets a program choose what to do using a condition",
+ "blocks": [
+  {
+   "h": "Worked example"
+  },
+  {
+   "model": {
+    "title": "IF the number is more than 10 THEN clap ELSE stamp. The number is 7.",
+    "parts": [
+     {
+      "label": "Step 1",
+      "text": "Condition: is 7 more than 10?"
+     },
+     {
+      "label": "Step 2",
+      "text": "No: false"
+     },
+     {
+      "label": "Step 3",
+      "text": "Skip 'clap'"
+     },
+     {
+      "label": "Step 4",
+      "text": "Do the ELSE: stamp"
+     },
+     {
+      "label": "Answer",
+      "text": "Stamp"
+     }
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "IF score is 10 or more THEN say 'Well done' ELSE say 'Try again'. Score is 12.",
+     "a": "Say 'Well done'.",
+     "model": "Teacher: condition 'is 12 at least 10?' Yes, true, so the THEN part: 'Well done'."
+    },
+    {
+     "q": "Same rule, score is 9.",
+     "a": "Say 'Try again' (false, so ELSE)."
+    },
+    {
+     "q": "Write an if... then... else rule for a plant: water it or not.",
+     "a": "IF the soil is dry THEN water it ELSE leave it."
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: Complete the condition cards worksheet: 6 rules, decide true or false and the action for each.",
+     "a": "Answers on the teacher key (one per card).",
+     "model": "Teacher completes card 1 aloud with the four model steps."
+    },
+    {
+     "q": "Extend: Write three if... then... else rules for a robot helper at home.",
+     "a": "For example: IF the bin is full THEN empty it ELSE check tomorrow.",
+     "lines": 6
+    },
+    {
+     "q": "Stretch: Write a rule with 'and': IF it is a school day AND it is 8:30 THEN log on to Teams. When is it false?",
+     "a": "False on a weekend, or on a school day at any other time.",
+     "lines": 6
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "A condition is... A) always true B) a question that is true or false C) a loop",
+     "a": "B) a question that is true or false",
+     "options": [
+      "Always true",
+      "A question that is true or false",
+      "A loop"
+     ]
+    },
+    {
+     "q": "When does the ELSE part run?",
+     "a": "When the condition is false."
+    }
+   ]
+  }
+ ]
+}

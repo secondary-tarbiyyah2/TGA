@@ -1,0 +1,78 @@
+{
+ "id": "computing-y11-pupil-pdf-worksheet-25-mark-paper-1-style-sectio",
+ "title": "Paper 1 style section (25 marks)",
+ "type": "test paper",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y11",
+ "board": "Edexcel IGCSE 4CP0",
+ "unit": "Spring 1: Revision cycle 1",
+ "lessons": [
+  36
+ ],
+ "source": "Written for computing/y11 lesson 36 (Pupil PDF worksheet: 25-mark Paper 1 style section (mark scheme in the plan))",
+ "intro": "Lesson 36. Data, hardware, networks and security. About 1.5 minutes a mark; answer what you know first; leave time to check.",
+ "time": "30 minutes",
+ "blocks": [
+  {
+   "questions": [
+    {
+     "q": "Convert 01001101 to denary.",
+     "a": "77",
+     "marks": 1
+    },
+    {
+     "q": "Convert 93 to 8-bit binary.",
+     "a": "01011101",
+     "marks": 1
+    },
+    {
+     "q": "State one reason programmers use hexadecimal.",
+     "a": "It is shorter and easier to read than binary, so fewer mistakes",
+     "marks": 1
+    },
+    {
+     "q": "A mono sound is recorded for 30 seconds at 22,050 Hz with a bit depth of 8 bits. Calculate its size in bytes.",
+     "a": "22,050 × 8 × 30 = 5,292,000 bits (M1); ÷ 8 = 661,500 bytes (A1)",
+     "marks": 2
+    },
+    {
+     "q": "Explain the role of the program counter in the fetch-decode-execute cycle.",
+     "a": "It holds the address of the next instruction (1); it is incremented after each fetch so instructions run in sequence (1)",
+     "marks": 2
+    },
+    {
+     "q": "Give two differences between RAM and secondary storage.",
+     "a": "RAM is volatile, secondary storage is not (1); RAM is faster but smaller in capacity (1)",
+     "marks": 2
+    },
+    {
+     "q": "A 12,000,000-bit file is sent over a 3,000,000 bits per second link. Calculate the time taken.",
+     "a": "12,000,000 ÷ 3,000,000 (M1) = 4 seconds (A1)",
+     "marks": 2
+    },
+    {
+     "q": "Describe how TCP and IP work together to send data across the internet.",
+     "a": "TCP splits the data into numbered packets (1); IP addresses each packet and routes it across the network, possibly by different routes (1); TCP reassembles the packets in order and asks for any missing ones (1)",
+     "marks": 3
+    },
+    {
+     "q": "Explain how a firewall protects a network.",
+     "a": "It checks incoming and outgoing traffic against rules (1) and blocks traffic that is not allowed, such as unauthorised access (1)",
+     "marks": 2
+    },
+    {
+     "q": "Describe one way phishing tricks users and one way to protect against it.",
+     "a": "A message pretends to be from a trusted organisation (1) asking the user to click a link and enter details (1); protection: check the sender and link, never enter passwords from an email link, staff training, email filters (1)",
+     "marks": 3
+    },
+    {
+     "q": "A school plans to store pupils' records in the cloud. Discuss the impact of this decision.",
+     "a": "Level 3 (5-6): a balanced discussion with a conclusion. Points: access from anywhere and automatic backups; no servers to maintain; but depends on the internet; privacy and security of personal data; data protection law (the school stays responsible); cost of subscriptions; where the data is stored.",
+     "marks": 6,
+     "lines": 14
+    }
+   ]
+  }
+ ]
+}

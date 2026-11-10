@@ -1,0 +1,264 @@
+{
+ "id": "computing-y11-knowledge-organiser-u38f908",
+ "title": "Knowledge organiser: Revision cycle 1",
+ "type": "knowledge organiser",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y11",
+ "board": "Edexcel IGCSE 4CP0",
+ "unit": "Spring 1: Revision cycle 1",
+ "lessons": [
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35
+ ],
+ "source": "Seeded from computing/y11 lessons 28, 29, 30, 31, 32, 33, 34, 35 (Knowledge organiser (pupil PDF))",
+ "intro": "Revision cycle 1: the big ideas, key words and examples on one sheet. Keep it in your book and use it to revise (cover, write, check).",
+ "blocks": [
+  {
+   "panels": [
+    {
+     "title": "Big questions",
+     "points": [
+      "Everything on your phone, text, photos, a recitation recording, is stored as 0s and 1s. How can two digits hold so much?",
+      "Finding a word in a dictionary: do you start at 'a' and read every word? What do you do instead, and why is it faster?",
+      "Why does your device have both RAM and storage? Why not one big memory?",
+      "When you double-click an app, who decides which memory it gets and how it reaches the screen?"
+     ]
+    },
+    {
+     "title": "Islamic foundation",
+     "text": "Allah says: 'And do not cause corruption upon the earth after its reformation' (Al-A'raf 7:56). Our use of technology should protect people and the environment."
+    }
+   ],
+   "cols": 2
+  },
+  {
+   "h": "Key words"
+  },
+  {
+   "keywords": [
+    {
+     "term": "two's complement",
+     "def": "a way of representing negative integers in binary"
+    },
+    {
+     "term": "overflow",
+     "def": "a result too large for the bits available"
+    },
+    {
+     "term": "colour depth",
+     "def": "the number of bits per pixel"
+    },
+    {
+     "term": "sample rate",
+     "def": "samples of sound taken each second"
+    },
+    {
+     "term": "binary search",
+     "def": "repeatedly halving a sorted list to find an item"
+    },
+    {
+     "term": "bubble sort",
+     "def": "repeatedly swapping out-of-order neighbours"
+    },
+    {
+     "term": "merge sort",
+     "def": "splitting then merging lists in order"
+    },
+    {
+     "term": "truth table",
+     "def": "all input combinations and outputs of a logic expression"
+    },
+    {
+     "term": "von Neumann architecture",
+     "def": "a design where data and instructions share memory"
+    },
+    {
+     "term": "fetch-decode-execute",
+     "def": "the cycle the CPU repeats for each instruction"
+    },
+    {
+     "term": "volatile",
+     "def": "loses data when power is off"
+    },
+    {
+     "term": "embedded system",
+     "def": "a computer built into a larger device"
+    },
+    {
+     "term": "operating system",
+     "def": "software that manages hardware and runs programs"
+    },
+    {
+     "term": "utility",
+     "def": "a small program that maintains the system"
+    },
+    {
+     "term": "compiler",
+     "def": "translates a whole program into machine code"
+    },
+    {
+     "term": "interpreter",
+     "def": "translates and runs code line by line"
+    },
+    {
+     "term": "protocol",
+     "def": "a set of rules for communication"
+    },
+    {
+     "term": "packet",
+     "def": "a small unit of data sent across a network"
+    }
+   ]
+  },
+  {
+   "h": "What we learn"
+  },
+  {
+   "panels": [
+    {
+     "title": "Revision: data representation",
+     "points": [
+      "Sound size = sample rate × bit depth × seconds",
+      "44,100 Hz × 16 bits × 60 s = 42,336,000 bits",
+      "7-bit ASCII: 128 characters",
+      "Limits: fixed bits restrict range and precision"
+     ]
+    },
+    {
+     "title": "Revision: algorithms, searching, sorting and logic",
+     "points": [
+      "Bubble: compare neighbours, swap, repeat passes",
+      "Merge: split to single items, merge in order",
+      "Merge is faster on large lists; bubble is simpler"
+     ]
+    },
+    {
+     "title": "Revision: the CPU, memory and storage",
+     "points": [
+      "Stored program: data and instructions in the same memory",
+      "CPU: control unit, ALU, registers, clock",
+      "Buses: address, data, control"
+     ]
+    },
+    {
+     "title": "Revision: software, programming languages and translators",
+     "points": [
+      "OS: file, process, peripheral and user management",
+      "Utilities: repair, backup, compression, defragmentation, anti-malware",
+      "Robust software: audit trails, code reviews",
+      "Low-level: close to machine code; fast, hard to read"
+     ]
+    },
+    {
+     "title": "Revision: networks, protocols and the TCP/IP model",
+     "points": [
+      "Application: HTTP, SMTP, FTP",
+      "Transport: TCP splits and reassembles; checks",
+      "Internet: IP addresses and routing",
+      "Link: physical transfer (Ethernet, Wi-Fi)"
+     ]
+    },
+    {
+     "title": "Revision: network security, cybersecurity and the impact of technology",
+     "points": [
+      "Environment: energy use, e-waste, rare materials",
+      "Ethics: privacy, AI bias, accountability",
+      "Law: data protection, copyright, patents, licences"
+     ]
+    },
+    {
+     "title": "Python practical: decomposing a Paper 2 style task",
+     "points": [
+      "A file of madrasah attendance: name, sessions, attended",
+      "Output each pupil's attendance %",
+      "Flag anyone below 90%; write a report file"
+     ]
+    },
+    {
+     "title": "Python practical: timed task with files, validation and a report",
+     "points": [
+      "Comments explain why",
+      "Meaningful identifiers",
+      "Consistent indentation and white space",
+      "One job per subprogram"
+     ]
+    }
+   ],
+   "cols": 2
+  },
+  {
+   "h": "Worked examples"
+  },
+  {
+   "panels": [
+    {
+     "title": "An 800 × 600 image with 24-bit colour depth. Calculate its size in KiB.",
+     "points": [
+      "Pixels = 800 × 600 = 480,000",
+      "Bits = 480,000 × 24 = 11,520,000",
+      "Bytes = ÷ 8 = 1,440,000",
+      "KiB = ÷ 1,024 = 1,406.25",
+      "Answer: 1,406.25 KiB"
+     ]
+    },
+    {
+     "title": "A 50 MB file (use 1 MB = 8 megabits) is sent at 40 Mbps. How long does it take?",
+     "points": [
+      "Size in bits: 50 × 8 = 400 megabits",
+      "Time = size ÷ rate",
+      "400 ÷ 40 = 10",
+      "Answer: 10 seconds"
+     ]
+    },
+    {
+     "title": "Discuss the use of facial-recognition cameras in a shopping centre. (6)",
+     "points": [
+      "Benefit: identifies known shoplifters, deters crime",
+      "Concern: privacy; data collected without clear consent",
+      "Concern: bias and false matches; who is accountable?",
+      "Law: data protection rules on storing personal data",
+      "Answer: Balanced points plus a reasoned conclusion"
+     ]
+    }
+   ],
+   "cols": 2
+  },
+  {
+   "h": "Common mistakes"
+  },
+  {
+   "table": {
+    "head": [
+     "Not this",
+     "This"
+    ],
+    "rows": [
+     [
+      "Dividing bits by 1,024 to get bytes",
+      "Bits ÷ 8 = bytes; then ÷ 1,024 for KiB"
+     ],
+     [
+      "Binary search works on any list",
+      "The list must be sorted first"
+     ],
+     [
+      "RAM is storage that keeps your files",
+      "RAM holds running programs and data; it loses them when power is off"
+     ],
+     [
+      "Python programs are always compiled into an .exe",
+      "Python is normally interpreted (via bytecode); compiled languages produce executables"
+     ]
+    ]
+   }
+  }
+ ],
+ "name": false
+}

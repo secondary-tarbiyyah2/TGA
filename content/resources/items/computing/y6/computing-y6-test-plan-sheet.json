@@ -1,0 +1,72 @@
+{
+ "id": "computing-y6-test-plan-sheet",
+ "title": "Test plan sheet",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y6",
+ "unit": "Spring 1: Variables in games and e-bullying",
+ "lessons": [
+  8
+ ],
+ "source": "Seeded from computing/y6 lesson 8 (Test plan sheet (pupil PDF))",
+ "intro": "Lesson 8: A timer and game over; debugging the game. To understand how a timer variable and selection end a game",
+ "blocks": [
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Add the countdown timer to the Stage.",
+     "a": "set time to 30; repeat until time = 0 (wait 1, change time by -1); broadcast game over.",
+     "model": "Teacher builds it and watches the monitor count down."
+    },
+    {
+     "q": "Add 'when I receive game over: show, stop all' to a text sprite.",
+     "a": "The game shows 'Game over' and stops."
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: Add game over for lives = 0 too, then run the 3-row test plan and fill it in.",
+     "a": "if lives = 0 then broadcast game over; test plan completed.",
+     "model": "Teacher completes row 1 of the test plan live."
+    },
+    {
+     "q": "Extend: Swap projects with the class studio and test a partner's game. Write one kind, specific comment.",
+     "a": "For example: 'The timer works well; the apple could start in more places.'"
+    },
+    {
+     "q": "Stretch: Show the final score on the game over screen.",
+     "a": "say (join 'Score: ' score)."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Which block stops the timer at 0? A) forever B) repeat until time = 0 C) wait 1",
+     "a": "B) repeat until time = 0",
+     "options": [
+      "forever",
+      "repeat until time = 0",
+      "wait 1"
+     ]
+    },
+    {
+     "q": "Big question: what decides when your game is over?",
+     "a": "Selection on variables: when time or lives reaches 0, the game broadcasts game over."
+    }
+   ]
+  }
+ ]
+}

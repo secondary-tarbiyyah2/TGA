@@ -1,0 +1,76 @@
+{
+ "id": "computing-y6-catching-game-build-card",
+ "title": "Catching game build card",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y6",
+ "unit": "Spring 1: Variables in games and e-bullying",
+ "lessons": [
+  7
+ ],
+ "source": "Seeded from computing/y6 lesson 7 (Catching game build card (pupil PDF))",
+ "intro": "Lesson 7: A catching game: selection and score. To understand how selection checks a condition to change a variable in a game",
+ "blocks": [
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Build the falling script on the Apple.",
+     "a": "go to top, forever change y by -5.",
+     "model": "Teacher builds the start position and the forever loop, then runs it."
+    },
+    {
+     "q": "Add the if touching Bowl block inside the loop.",
+     "a": "if touching Bowl? then change score by 1, go to top."
+    },
+    {
+     "q": "Add arrow-key scripts to the Bowl.",
+     "a": "right: change x by 20; left: change x by -20."
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: Finish the catching game and test it 5 times. Write the scores.",
+     "a": "A working game; five test scores recorded.",
+     "model": "Teacher plays once and talks through what to watch for."
+    },
+    {
+     "q": "Extend: Add a second 'if': if y position < -170 then change lives by -1 and go to the top.",
+     "a": "A miss below the bowl loses a life."
+    },
+    {
+     "q": "Stretch: Make the apple fall faster as score goes up. Which block do you change?",
+     "a": "Use change y by (-5 - score / 2), or a 'speed' variable."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "'if touching Bowl? then' is... A) a loop B) selection C) an event",
+     "a": "B) selection",
+     "options": [
+      "A loop",
+      "Selection",
+      "An event"
+     ]
+    },
+    {
+     "q": "Why must the if block be inside the forever loop?",
+     "a": "So the condition is checked again and again as the apple falls."
+    }
+   ]
+  }
+ ]
+}

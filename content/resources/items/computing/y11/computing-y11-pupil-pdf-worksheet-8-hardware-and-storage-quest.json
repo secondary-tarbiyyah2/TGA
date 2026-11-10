@@ -1,0 +1,62 @@
+{
+ "id": "computing-y11-pupil-pdf-worksheet-8-hardware-and-storage-quest",
+ "title": "The CPU, memory and storage: 8 questions",
+ "type": "revision set",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y11",
+ "board": "Edexcel IGCSE 4CP0",
+ "unit": "Spring 1: Revision cycle 1",
+ "lessons": [
+  30
+ ],
+ "source": "Written for computing/y11 lesson 30 (Pupil PDF worksheet: 8 hardware and storage questions)",
+ "intro": "Lesson 30.",
+ "time": "15 minutes",
+ "blocks": [
+  {
+   "questions": [
+    {
+     "q": "Name the three buses in a computer.",
+     "a": "Address bus, data bus, control bus",
+     "marks": 1
+    },
+    {
+     "q": "What does the arithmetic logic unit (ALU) do?",
+     "a": "Carries out arithmetic (e.g. addition) and logic operations (e.g. comparisons)",
+     "marks": 1
+    },
+    {
+     "q": "What is the purpose of the program counter?",
+     "a": "It holds the address of the next instruction to be fetched",
+     "marks": 1
+    },
+    {
+     "q": "Describe the fetch stage of the fetch-decode-execute cycle.",
+     "a": "The address in the PC is copied to the MAR and sent on the address bus; the instruction at that address is sent on the data bus to the MDR; the PC is incremented",
+     "marks": 3
+    },
+    {
+     "q": "Explain why a higher clock speed can improve performance.",
+     "a": "More cycles per second, so more instructions are carried out each second",
+     "marks": 2
+    },
+    {
+     "q": "Give two differences between RAM and ROM.",
+     "a": "RAM is volatile, ROM is not; RAM can be written to, ROM is read-only; ROM holds the start-up (boot) instructions",
+     "marks": 2
+    },
+    {
+     "q": "Compare solid state and magnetic storage.",
+     "a": "Solid state: faster access, no moving parts, more robust, lower capacity for the price. Magnetic: cheaper per gigabyte, larger capacity, slower, moving parts",
+     "marks": 2
+    },
+    {
+     "q": "Which type of storage is best for a camera's memory card? Give a reason.",
+     "a": "Solid state (flash): small, light, robust because it has no moving parts",
+     "marks": 2
+    }
+   ]
+  }
+ ]
+}

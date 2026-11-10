@@ -1,0 +1,93 @@
+{
+ "id": "geography-y5-world-map-with-latitude-and-longitude-lines",
+ "title": "World map with lines of latitude and longitude",
+ "type": "printable graph/grid",
+ "subject": "Geography",
+ "subjectSlug": "geography",
+ "year": "y5",
+ "unit": "Spring 1: Islands and maps (Alchemy Island)",
+ "lessons": [
+  7
+ ],
+ "source": "Written for geography/y5 lesson 7 (World map with latitude and longitude lines (portal printable))",
+ "intro": "Lesson 7. Lines of latitude run east to west; lines of longitude run north to south. Use them to describe locations.",
+ "blocks": [
+  {
+   "grid": {
+    "kind": "worldmap",
+    "region": "world",
+    "height": 115,
+    "graticule": 30,
+    "lines": [
+     "equator",
+     "tropic-cancer",
+     "tropic-capricorn",
+     "arctic-circle",
+     "antarctic-circle"
+    ]
+   }
+  },
+  {
+   "caption": "Outline from Natural Earth (public domain); modern coastlines and borders."
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Is Iceland north or south of the Equator?",
+     "a": "North (about 65°N)",
+     "model": "Look at the letter: N. N means north. Iceland is north of the Equator."
+    },
+    {
+     "q": "Is Sri Lanka east or west of Greenwich?",
+     "a": "East (about 81°E)"
+    },
+    {
+     "q": "What is the latitude of the Equator?",
+     "a": "0°"
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Core: Find and label these on a world map: 54°N 2°W, 65°N 18°W, 19°S 47°E, 8°N 81°E.",
+     "a": "Great Britain, Iceland, Madagascar, Sri Lanka",
+     "model": "Teacher shows it first: 54°N is well north; 2°W is just west of Greenwich: that is Great Britain."
+    },
+    {
+     "q": "Extend: Which island is closest to the Equator: Sri Lanka, Sicily or Iceland?",
+     "a": "Sri Lanka (about 8°N)"
+    },
+    {
+     "q": "Stretch: Bahrain is at about 26°N, 50°E. Describe where it is.",
+     "a": "North of the Equator and east of Greenwich, in the Persian Gulf, near Saudi Arabia"
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "Lines of longitude go:",
+     "a": "From pole to pole",
+     "options": [
+      "From pole to pole",
+      "Around like a ladder"
+     ]
+    },
+    {
+     "q": "Big question: how can you find any island on Earth with just two numbers?",
+     "a": "Latitude says how far north or south, longitude how far east or west; together they pinpoint it"
+    }
+   ]
+  }
+ ]
+}

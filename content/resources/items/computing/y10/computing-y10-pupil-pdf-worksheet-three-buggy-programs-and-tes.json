@@ -1,0 +1,137 @@
+{
+ "id": "computing-y10-pupil-pdf-worksheet-three-buggy-programs-and-tes",
+ "title": "Three buggy programs and test tables",
+ "type": "worksheet",
+ "subject": "Computing",
+ "subjectSlug": "computing",
+ "year": "y10",
+ "board": "Edexcel IGCSE 4CP0",
+ "unit": "Spring 1: Programming 2: data structures, files and subprograms",
+ "lessons": [
+  13
+ ],
+ "source": "Seeded from computing/y10 lesson 13 (Pupil PDF worksheet: three buggy programs and test tables)",
+ "intro": "Lesson 13: Errors and test data: defensive programming. To understand the three kinds of error and how normal, boundary and erroneous test data find them",
+ "blocks": [
+  {
+   "h": "Three kinds of error"
+  },
+  {
+   "table": {
+    "head": [
+     "Error",
+     "What happens",
+     "Example"
+    ],
+    "rows": [
+     [
+      "Syntax",
+      "The program will not run",
+      "print('hi' (missing bracket)"
+     ],
+     [
+      "Runtime",
+      "It crashes while running",
+      "int('ten'), dividing by 0"
+     ],
+     [
+      "Logic",
+      "It runs but gives the wrong result",
+      "Using > instead of >="
+     ]
+    ]
+   }
+  },
+  {
+   "h": "Test data"
+  },
+  {
+   "table": {
+    "head": [
+     "Type",
+     "Values",
+     "Expected"
+    ],
+    "rows": [
+     [
+      "Normal",
+      "56, 72",
+      "Accepted"
+     ],
+     [
+      "Boundary",
+      "0, 100 (and -1, 101 just outside)",
+      "0, 100 accepted; -1, 101 rejected"
+     ],
+     [
+      "Erroneous",
+      "'fifty', 3.5",
+      "Rejected"
+     ]
+    ]
+   }
+  },
+  {
+   "h": "We do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Fix the logic error in the pass/fail program and write the boundary tests.",
+     "a": "Change > to >=; tests: 50 → Pass, 49 → Fail.",
+     "model": "I do: 'Pass' should include 50, so the condition must be mark >= 50. Boundary tests: 49 (Fail) and 50 (Pass)."
+    },
+    {
+     "q": "'fifty' for a mark is ...",
+     "a": "erroneous data",
+     "options": [
+      "erroneous data",
+      "boundary data",
+      "normal data"
+     ]
+    }
+   ]
+  },
+  {
+   "h": "You do"
+  },
+  {
+   "questions": [
+    {
+     "q": "Pupil PDF: three buggy programs. For each, name the error type, fix it and write a test table (normal, boundary, erroneous).",
+     "a": "Program 1 syntax (missing colon); program 2 runtime (int of text, add validation); program 3 logic (wrong range); answers in the plan's key.",
+     "model": "The teacher fixes program 1: add the missing colon after the if condition; error type syntax.",
+     "lines": 6
+    },
+    {
+     "q": "Extend: how can a try/except stop a runtime error from crashing a program?",
+     "a": "It catches the error (e.g. ValueError) and lets the program ask again."
+    },
+    {
+     "q": "Stretch: why do programmers test boundaries on both sides?",
+     "a": "Off-by-one errors happen exactly at the edges."
+    }
+   ]
+  },
+  {
+   "h": "Exit ticket"
+  },
+  {
+   "questions": [
+    {
+     "q": "A program runs but gives a wrong answer: this is a ...",
+     "a": "logic error",
+     "options": [
+      "logic error",
+      "syntax error",
+      "runtime error"
+     ]
+    },
+    {
+     "q": "Back to our ponder: A program runs with no error messages but gives the wrong answer. Is it working?",
+     "a": "No: it has a logic error. Testing with planned data finds errors the computer cannot spot."
+    }
+   ]
+  }
+ ]
+}
