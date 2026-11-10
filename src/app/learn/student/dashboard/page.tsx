@@ -1,6 +1,7 @@
 "use client";
 
 import { DashboardHero } from "@/components/learn/DashboardHero";
+import { useNavBadges } from "@/lib/learn/navBadges";
 import { ActionCentreWidget } from "@/components/learn/ActionCentreWidget";
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
@@ -83,6 +84,7 @@ function StudentContent() {
   }, [supabase]);
 
   const simplified = isYoungerYearGroup(yearGroupName);
+  const badges = useNavBadges("student");
   const viewer = useMemo<ClassViewer | null>(() => (childId ? { kind: "student", childId } : null), [childId]);
   const myClasses = useViewerClasses(viewer);
 
@@ -92,7 +94,15 @@ function StudentContent() {
   // the page stays short on a phone. The timetable is folded away.
   const content = (
     <div className="space-y-6">
-      <DashboardHero area="student" subtitle="Ready to learn today?" chips={[{ label: "Lessons a week", value: slots === null ? "…" : slots.length, tone: "yellow" }]} />
+      <DashboardHero
+        area="student"
+        subtitle="Ready to learn today?"
+        chips={[
+          { label: "Lessons today", value: slots === null ? "…" : slots.filter((s) => Number(s.weekday) === ((new Date().getDay() + 6) % 7) + 1).length, href: "/student/classes" },
+          { label: "Homework to do", value: badges.todo ?? "…", tone: badges.todo ? "pink" : undefined, href: "/student/todo" },
+          { label: "Lessons a week", value: slots === null ? "…" : slots.length },
+        ]}
+      />
 
       {childId && <JoinLessonCard who={{ kind: "student", childId }} />}
       {childId && <UpNextCard classIds={slots === null ? null : classIds} childId={childId} lessonHref={(id) => `/student/lessons/view?id=${id}`} homeworkHref="/student/todo" />}
