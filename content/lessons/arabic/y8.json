@@ -2,784 +2,1587 @@
   "subject": "Arabic",
   "year": "y8",
   "board": "TGA Arabic scheme (KS3)",
-  "source": "Drive: Curriculum/Arabic folder and Schemes of work/Arabic (GCSE-Arabic-2017 Scheme of Work, Pearson, for progression); TGA Year 7 Arabic file for continuity (greetings, family, possession, hobbies); Madinah-style progression of present and past tense verbs | Spring 1 2027 (lessons 13 to 22): founding-year bridge (11 Jan the basics: letters, numbers, greetings; 18 Jan about me: questions and nationality) and Spring 1 weeks 1 to 3 (my family and possessive endings; demonstratives; the comparative, family description and unit quiz), order from the Tarbiyyah Secondary KS3 Arabic scheme of work and Arabic Curriculum Intent; lessons v3 | Spring 2 2027 (lessons 23 to 33 new): Year 8 pack Arabic Spring 2 My job weeks 1 to 6 (jobs masculine and feminine; asking about jobs; workplaces; present tense; future jobs with reasons and intentions; job descriptions and adverts as our own texts; speaking and writing task; unit quiz), before assessment point 2 (26 Apr); lessons v3",
+  "source": "Drive: Curriculum/Arabic folder and Schemes of work/Arabic (GCSE-Arabic-2017 Scheme of Work, Pearson, for progression); TGA Year 7 Arabic file for continuity (greetings, family, possession, hobbies); Madinah-style progression of present and past tense verbs | Spring 1 2027 (lessons 13 to 22): founding-year bridge (11 Jan the basics: letters, numbers, greetings; 18 Jan about me: questions and nationality) and Spring 1 weeks 1 to 3 (my family and possessive endings; demonstratives; the comparative, family description and unit quiz), order from the Tarbiyyah Secondary KS3 Arabic scheme of work and Arabic Curriculum Intent; lessons v3 | Spring 2 2027 (lessons 23 to 33 new): Year 8 pack Arabic Spring 2 My job weeks 1 to 6 (jobs masculine and feminine; asking about jobs; workplaces; present tense; future jobs with reasons and intentions; job descriptions and adverts as our own texts; speaking and writing task; unit quiz), before assessment point 2 (26 Apr); lessons v3 | Summer 1 2027 (lessons 1 to 7 upgraded, 34 to 36 new): Year 8 pack Arabic Summer 1 weeks 1 to 5 At home (rooms, portal 1; types of home; items and prepositions, portal 2; dual and plural nouns and adjectives, portal 3; telling the time, portal 5; asking the time and my day; present tense with you, portal 6; routine and verb-pronoun agreement, portal 7; attached pronouns; describing my home in writing with the unit quiz, portal 4); week 6 (weekly timetable, portal 8) dropped; full harakat; our own model texts; lessons v3",
   "lessons": [
     {
-      "unit": "Unit 1: My home and where things are",
+      "unit": "Summer 1: At home",
       "n": 1,
       "title": "My house and its rooms",
       "duration": 50,
+      "bigQuestion": "Allah calls our homes a place of rest (sakan). What makes a home restful?",
       "objectives": [
-        "Name the main rooms and parts of a house in Arabic",
-        "Use هَذَا and هَذِهِ correctly with masculine and feminine nouns",
-        "Say what you do in each room using present tense verbs"
+        "To understand how to name the rooms of a home and say what is in each one"
       ],
+      "successCriteria": [
+        "All: name five rooms in Arabic",
+        "Most: say هٰذَا / هٰذِهِ with the right room word",
+        "Some: say what I do in each room with a present-tense verb"
+      ],
+      "smsc": "Spiritual: the home as a place of rest and dhikr",
       "keywords": [
         {
-          "term": "بَيْتٌ",
-          "def": "house (baytun)"
+          "term": "بَيْت (bayt)",
+          "def": "house; home"
         },
         {
-          "term": "غُرْفَةُ النَّوْمِ",
-          "def": "bedroom (ghurfatu n-nawm)"
+          "term": "غُرْفَةُ النَّوْمِ (ghurfat an-nawm)",
+          "def": "bedroom"
         },
         {
-          "term": "غُرْفَةُ الْجُلُوسِ",
-          "def": "living room (ghurfatu l-julūs)"
+          "term": "غُرْفَةُ الجُلُوسِ (ghurfat al-julus)",
+          "def": "living room"
         },
         {
-          "term": "مَطْبَخٌ",
-          "def": "kitchen (maṭbakhun)"
+          "term": "مَطْبَخ (matbakh)",
+          "def": "kitchen"
         },
         {
-          "term": "حَمَّامٌ",
-          "def": "bathroom (ḥammāmun)"
-        },
-        {
-          "term": "هَذَا / هَذِهِ",
-          "def": "this (masculine) / this (feminine)"
+          "term": "حَمَّام (hammam)",
+          "def": "bathroom"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Allah calls our homes a place of rest (sakan). What makes a home restful?",
+        "a": "Peace, cleanliness, dhikr and good manners: the Qur'an calls our homes a place of rest (16:80)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And Allah has made for you your homes a place of rest' (an-Nahl 16:80).",
+        "at": "start"
+      },
       "starter": [
-        "Say in Arabic: 'This is my father's book' using the possessive construct.",
-        "Say in Arabic: 'I have a brother and a sister'.",
-        "Greet a classmate and ask how they are, with the correct -ka or -ki ending."
+        {
+          "q": "Bismillah. 'He works' is ...",
+          "a": "يَعْمَلُ",
+          "mins": 1,
+          "options": [
+            "يَعْمَلُ",
+            "تَعْمَلُ"
+          ]
+        },
+        {
+          "q": "مُسْتَشْفَى is ...",
+          "a": "A hospital",
+          "mins": 1,
+          "options": [
+            "A hospital",
+            "A school"
+          ]
+        },
+        {
+          "q": "Say 'I want to be a teacher': أُرِيدُ أَنْ أَكُونَ ...",
+          "a": "أُرِيدُ أَنْ أَكُونَ مُعَلِّمًا",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Bismillah: the rooms of a house",
-          "bullets": [
-            "بَيْتٌ - baytun - a house",
-            "غُرْفَةُ النَّوْمِ - ghurfatu n-nawm - bedroom",
-            "غُرْفَةُ الْجُلُوسِ - ghurfatu l-julūs - living room",
-            "مَطْبَخٌ - maṭbakhun - kitchen",
-            "حَمَّامٌ - ḥammāmun - bathroom"
-          ],
-          "note": "Begin with bismillah. Qur'an 16:80 says that Allah made your homes a place of rest (sakan), so start by thanking Allah for our homes. Show each word with a picture and have pupils repeat chorally, then individually. Point out the possessive construct: ghurfatu has no 'al' and no tanween because it is the first word of the construct; only the second word has 'al'. Ask pupils to find the words they already know from Year 7 (bayt)."
+          "heading": "The rooms",
+          "bullets": [],
+          "note": "Begin with Bismillah. Show a simple floor plan. Spoken practice only; no songs or music.",
+          "table": {
+            "head": [
+              "Arabic",
+              "English"
+            ],
+            "rows": [
+              [
+                "غُرْفَةُ النَّوْمِ",
+                "bedroom"
+              ],
+              [
+                "غُرْفَةُ الجُلُوسِ",
+                "living room"
+              ],
+              [
+                "المَطْبَخ",
+                "kitchen"
+              ],
+              [
+                "الحَمَّام",
+                "bathroom"
+              ],
+              [
+                "غُرْفَةُ الطَّعَامِ",
+                "dining room"
+              ],
+              [
+                "الحَدِيقَة",
+                "garden"
+              ]
+            ]
+          }
         },
         {
-          "heading": "More parts of the home",
+          "heading": "This is ...",
           "bullets": [
-            "حَدِيقَةٌ - ḥadīqatun - garden",
-            "بَابٌ - bābun - door",
-            "نَافِذَةٌ - nāfidhatun - window",
-            "سَطْحٌ - saṭḥun - roof",
-            "سُلَّمٌ - sullamun - stairs, ladder"
+            "هٰذَا مَطْبَخٌ: this is a kitchen (masculine)",
+            "هٰذِهِ غُرْفَةٌ: this is a room (feminine)",
+            "ة at the end usually means هٰذِهِ"
           ],
-          "note": "Quick-fire game: say the English, pupils type or hold up the Arabic on a mini whiteboard. Note that most words ending in the tied taa marbuta (ة) are feminine: ḥadīqa, nāfidha. Check pronunciation of ح in ḥadīqa and ḥammām: it is breathy from the throat, not like English h."
-        },
-        {
-          "heading": "This is...: هَذَا and هَذِهِ",
-          "bullets": [
-            "هَذَا مَطْبَخٌ - hādhā maṭbakhun - this is a kitchen",
-            "هَذِهِ غُرْفَةٌ - hādhihi ghurfatun - this is a room",
-            "هَذِهِ حَدِيقَةٌ جَمِيلَةٌ - hādhihi ḥadīqatun jamīlatun - a beautiful garden",
-            "Masculine noun: هَذَا. Feminine noun: هَذِهِ"
-          ],
-          "note": "Explain that Arabic has no word for 'is' here: the two nouns just sit side by side. Ask: how do we know whether to say hādhā or hādhihi? Rule of thumb: ة at the end means feminine. Misconception: pupils may think حَمَّامٌ is feminine because it sounds like a long word; it is masculine. Stretch: some feminine words have no ة, for example دَارٌ (house) and شَمْسٌ (sun)."
+          "note": "Recall from Spring 1: demonstratives with gender."
         },
         {
           "heading": "What I do in each room",
-          "bullets": [
-            "أَنَامُ فِي غُرْفَةِ النَّوْمِ - anāmu fī ghurfati n-nawm - I sleep",
-            "آكُلُ فِي الْمَطْبَخِ - ākulu fī l-maṭbakh - I eat",
-            "أَتَوَضَّأُ فِي الْحَمَّامِ - atawaḍḍa'u fī l-ḥammām - I make wudu",
-            "أَلْعَبُ فِي الْحَدِيقَةِ - alʿabu fī l-ḥadīqa - I play"
-          ],
-          "note": "Recap the first-person present tense verbs from Year 6 (the أَ prefix). Point out that after فِي the noun ends with a kasra (-i): غُرْفَةِ, الْمَطْبَخِ, الْحَدِيقَةِ. Do not give a full grammar lecture: pupils just notice the pattern 'fī + the noun with -i'. Ask: where else could you make wudu? (at the sink in the bathroom)."
+          "bullets": [],
+          "note": "Pupils match.",
+          "table": {
+            "head": [
+              "Room",
+              "I ..."
+            ],
+            "rows": [
+              [
+                "فِي المَطْبَخِ",
+                "أَطْبُخُ (I cook)"
+              ],
+              [
+                "فِي غُرْفَةِ النَّوْمِ",
+                "أَنَامُ (I sleep)"
+              ],
+              [
+                "فِي غُرْفَةِ الجُلُوسِ",
+                "أَجْلِسُ مَعَ أُسْرَتِي"
+              ],
+              [
+                "فِي الحَدِيقَةِ",
+                "أَلْعَبُ"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Adab on entering the home",
+          "heading": "Quick check",
           "bullets": [
-            "السَّلَامُ عَلَيْكُمْ - as-salāmu ʿalaykum - peace be upon you",
-            "Say salaam when you enter your home",
-            "Greet your family with a smile"
+            "Vote in the Teams poll"
           ],
-          "note": "Qur'an 24:61 tells us that when we enter houses we should greet one another with a greeting from Allah, blessed and good. Link to home adab: salaam to parents and siblings, remove shoes, keep the home tidy. Pupils write one sentence in Arabic about their favourite room, using هَذِهِ or هَذَا, and read it to a partner."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which is correct?",
+            "options": [
+              "هٰذِهِ غُرْفَةٌ",
+              "هٰذَا غُرْفَةٌ",
+              "هٰذِهِ مَطْبَخٌ"
+            ],
+            "answer": 0,
+            "why": "غُرْفَة is feminine: هٰذِهِ."
+          }
         }
       ],
       "practice": [
-        "Point to a picture and ask: هَذَا أَمْ هَذِهِ؟ (hādhā am hādhihi?) for مَطْبَخ, غُرْفَة, حَدِيقَة, حَمَّام, بَاب.",
-        "Complete: ___ حَمَّامٌ and ___ نَافِذَةٌ.",
-        "Translate: 'I eat in the kitchen' and 'I sleep in the bedroom'.",
-        "Say what you do in the garden using a verb from the lesson."
+        {
+          "q": "Say: in the kitchen I cook.",
+          "a": "فِي المَطْبَخِ أَطْبُخُ",
+          "mins": 2,
+          "model": "Teacher: فِي (in) + المَطْبَخِ (the kitchen, kasrah after فِي) + أَطْبُخُ (I cook)."
+        },
+        {
+          "q": "غُرْفَةُ النَّوْمِ is ...",
+          "a": "The bedroom",
+          "mins": 1,
+          "options": [
+            "The bedroom",
+            "The living room"
+          ]
+        },
+        {
+          "q": "حَمَّام is ...",
+          "a": "Bathroom",
+          "mins": 1,
+          "options": [
+            "Bathroom",
+            "Garden"
+          ]
+        }
       ],
       "independent": [
-        "Label a drawing of a house with at least eight Arabic words, each with a تَشْكِيل (vowel marks).",
-        "Write five sentences beginning هَذَا or هَذِهِ about your home.",
-        "Write four sentences saying what you do in different rooms, for example أَقْرَأُ فِي غُرْفَةِ الْجُلُوسِ."
+        {
+          "q": "Floor plan task on the pupil PDF: label six rooms of a plan (boxes only) in Arabic and write four sentences about what you do in each room. Group A uses the word bank; Group B adds a time word (صَبَاحًا / مَسَاءً).",
+          "a": "Six correct labels and four correct sentences",
+          "mins": 17,
+          "model": "Teacher labels the kitchen and writes: فِي المَطْبَخِ أُسَاعِدُ أُمِّي."
+        },
+        {
+          "q": "Extend: say how many rooms your home has: فِي بَيْتِي ... غُرَفٍ.",
+          "a": "For example: فِي بَيْتِي خَمْسُ غُرَفٍ",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Write the Arabic for 'bedroom' and 'kitchen'.",
-        "Choose the correct word and say why: ___ بَابٌ (هَذَا / هَذِهِ)."
+        {
+          "q": "مَطْبَخ is ...",
+          "a": "Kitchen",
+          "mins": 1,
+          "options": [
+            "Kitchen",
+            "Bathroom"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what makes a home restful?",
+          "a": "Peace, cleanliness, dhikr, good manners (16:80)",
+          "mins": 2
+        }
       ],
-      "homework": "Draw your home and write ten Arabic labels and two sentences about what you do in two rooms.",
-      "send": "SEND: picture word-bank with transliteration and a sentence frame (هَذِهِ ___). EAL: bilingual list with audio recording by the teacher. Stretch: add the feminine nouns without ة (دَارٌ, شَمْسٌ) and explain why they take هَذِهِ."
+      "homework": "Walk around your home and say each room's Arabic name; label one door with a sticky note.",
+      "send": "SEND: floor plan with words to cut and stick. EAL: room word mat. Stretch: add one adjective for each room.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Summer 1 (At home)",
+        "Portal arabic y8 lesson 1 (upgraded)",
+        "Pupil PDF worksheet: floor plan labels and sentences"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "house floor plan drawing",
+          "alt": "A floor plan of a home",
+          "for": "teach:1"
+        },
+        {
+          "find": "kitchen interior",
+          "alt": "A kitchen: مَطْبَخ",
+          "for": "keywords"
+        }
+      ]
     },
     {
-      "unit": "Unit 1: My home and where things are",
+      "unit": "Summer 1: At home",
       "n": 2,
-      "title": "Where is it? Prepositions of place",
+      "title": "Items in the home and where they are",
       "duration": 50,
+      "bigQuestion": "Islam encourages a tidy, clean home. Why might where things are kept matter to a Muslim?",
       "objectives": [
-        "Use prepositions of place to say where things are",
-        "Ask and answer questions with أَيْنَ",
-        "Use the correct genitive ending after a preposition"
+        "To understand how to name items in the home and say where they are with prepositions"
       ],
+      "successCriteria": [
+        "All: name six items in the home",
+        "Most: say where items are with a preposition and kasrah",
+        "Some: describe a room in four linked sentences"
+      ],
+      "smsc": "Moral: tidiness and responsibility at home",
       "keywords": [
         {
-          "term": "أَيْنَ؟",
-          "def": "where? (ayna)"
+          "term": "سَرِير (sarir)",
+          "def": "bed"
         },
         {
-          "term": "فِي",
-          "def": "in (fī)"
+          "term": "كُرْسِيّ (kursiyy)",
+          "def": "chair"
         },
         {
-          "term": "عَلَى",
-          "def": "on (ʿalā)"
+          "term": "خِزَانَة (khizanah)",
+          "def": "cupboard"
         },
         {
-          "term": "تَحْتَ",
-          "def": "under (taḥta)"
+          "term": "رَفّ (raff)",
+          "def": "shelf"
         },
         {
-          "term": "أَمَامَ",
-          "def": "in front of (amāma)"
-        },
-        {
-          "term": "خَلْفَ",
-          "def": "behind (khalfa)"
-        },
-        {
-          "term": "بَيْنَ",
-          "def": "between (bayna)"
-        },
-        {
-          "term": "بِجَانِبِ",
-          "def": "next to (bi-jānibi)"
+          "term": "بِجَانِبِ (bi-janibi)",
+          "def": "next to"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Islam encourages a tidy, clean home. Why might where things are kept matter to a Muslim?",
+        "a": "Order and cleanliness help us pray and live calmly; Allah is beautiful and loves beauty (Muslim)."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Allah is beautiful and loves beauty' (Muslim).",
+        "at": "start"
+      },
       "starter": [
-        "Name five rooms of the house in Arabic.",
-        "Say 'This is a kitchen' and 'This is a garden' in Arabic.",
-        "Say what you do in the bedroom and in the garden."
+        {
+          "q": "Bismillah. شَقَّة is ...",
+          "a": "A flat",
+          "mins": 1,
+          "options": [
+            "A flat",
+            "A house"
+          ]
+        },
+        {
+          "q": "أَسْكُنُ فِي ... means ...",
+          "a": "I live in ...",
+          "mins": 1,
+          "options": [
+            "I live in ...",
+            "I go to ..."
+          ]
+        },
+        {
+          "q": "Say 'in the kitchen'.",
+          "a": "فِي المَطْبَخِ",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Where is it? أَيْنَ؟",
-          "bullets": [
-            "أَيْنَ الْمِفْتَاحُ؟ - ayna l-miftāḥ? - where is the key?",
-            "الْمِفْتَاحُ فِي الْحَقِيبَةِ - in the bag",
-            "أَيْنَ أَبِي؟ - ayna abī? - where is my father?",
-            "أَبِي فِي الْمَسْجِدِ - abī fī l-masjid - at the mosque"
-          ],
-          "note": "Begin with bismillah. Ask a question with أَيْنَ and have pupils answer with a sentence. Point out the pattern: question word + noun, answer: noun + فِي + noun with kasra. Pupils can look around their own room via camera and ask each other where an object is."
+          "heading": "Items in the home",
+          "bullets": [],
+          "note": "Begin with Bismillah. Point to real items on camera. Spoken practice only; no songs or music.",
+          "table": {
+            "head": [
+              "Arabic",
+              "English"
+            ],
+            "rows": [
+              [
+                "سَرِير",
+                "bed"
+              ],
+              [
+                "كُرْسِيّ",
+                "chair"
+              ],
+              [
+                "طَاوِلَة",
+                "table"
+              ],
+              [
+                "خِزَانَة",
+                "cupboard"
+              ],
+              [
+                "رَفّ",
+                "shelf"
+              ],
+              [
+                "مِرْآة",
+                "mirror"
+              ],
+              [
+                "سَجَّادَة",
+                "prayer mat; rug"
+              ]
+            ]
+          }
         },
         {
-          "heading": "On, under, above",
+          "heading": "Where is it?",
           "bullets": [
-            "الْكِتَابُ عَلَى الْمَكْتَبِ - al-kitābu ʿalā l-maktab - on the desk",
-            "الْقِطَّةُ تَحْتَ الطَّاوِلَةِ - al-qiṭṭatu taḥta ṭ-ṭāwila - under the table",
-            "الْمِصْبَاحُ فَوْقَ السَّرِيرِ - al-miṣbāḥu fawqa s-sarīr - above the bed"
+            "السَّرِيرُ بِجَانِبِ النَّافِذَةِ",
+            "الخِزَانَةُ خَلْفَ البَابِ",
+            "المُصْحَفُ عَلَى الرَّفِّ"
           ],
-          "note": "Use real objects on screen and move them to demonstrate. Notice the noun after each preposition ends in a kasra: الْمَكْتَبِ, الطَّاوِلَةِ, السَّرِيرِ. Misconception: pupils keep the damma (nominative) ending on the second noun. Drill: say a preposition and a noun, pupils add the right ending."
+          "note": "Kasrah after each preposition."
         },
         {
-          "heading": "In front of, behind, between",
+          "heading": "Quick check",
           "bullets": [
-            "الْحَدِيقَةُ خَلْفَ الْبَيْتِ - al-ḥadīqatu khalfa l-bayt - behind the house",
-            "السَّيَّارَةُ أَمَامَ الْبَابِ - as-sayyāratu amāma l-bāb - in front of the door",
-            "الْمَسْجِدُ بِجَانِبِ الْمَدْرَسَةِ - next to the school"
+            "Vote in the Teams poll"
           ],
-          "note": "Note that أَمَامَ and خَلْفَ and فَوْقَ and تَحْتَ and بَيْنَ end with a fatha because they are words for position, but the noun after them still takes kasra. Practise: بَيْنَ الْمَطْبَخِ وَغُرْفَةِ الْجُلُوسِ (between the kitchen and the living room). Pupils draw a simple floor plan from the teacher's spoken description."
-        },
-        {
-          "heading": "Describe a room",
-          "bullets": [
-            "فِي غُرْفَتِي سَرِيرٌ - fī ghurfatī sarīrun - in my room is a bed",
-            "السَّرِيرُ بِجَانِبِ النَّافِذَةِ - next to the window",
-            "الْمَكْتَبُ أَمَامَ الْبَابِ - the desk is in front of the door",
-            "الْمِصْبَاحُ عَلَى الْمَكْتَبِ - the lamp is on the desk"
-          ],
-          "note": "Show how to build a short description: where + what + where it is. Note the word order: the place comes first, then the thing in it (فِي غُرْفَتِي سَرِيرٌ). Pupils describe their room orally in pairs using at least four prepositions. Praise accurate vowel endings."
-        },
-        {
-          "heading": "Cleanliness and tidy homes",
-          "bullets": [
-            "الطُّهُورُ شَطْرُ الْإِيمَانِ - aṭ-ṭuhūru shaṭru l-īmān - purity is half of faith",
-            "غُرْفَتِي مُرَتَّبَةٌ - ghurfatī murattabatun - my room is tidy",
-            "غُرْفَتِي نَظِيفَةٌ - ghurfatī naẓīfatun - my room is clean"
-          ],
-          "note": "The Prophet (peace be upon him) said that purity is half of faith (Sahih Muslim). Link tidy, clean rooms to ihsan, doing things well. Practise the sentences غُرْفَتِي مُرَتَّبَةٌ and غُرْفَتِي نَظِيفَةٌ with different adjectives. Note that غُرْفَتِي is feminine, so the adjective ends in ة. Ask pupils to give one thing they do to keep their room clean."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'The chair is in front of the table' is ...",
+            "options": [
+              "الكُرْسِيُّ أَمَامَ الطَّاوِلَةِ",
+              "الكُرْسِيُّ خَلْفَ الطَّاوِلَةِ",
+              "الكُرْسِيُّ أَمَامَ الطَّاوِلَةُ"
+            ],
+            "answer": 0,
+            "why": "أَمَامَ = in front of; kasrah on الطَّاوِلَةِ."
+          }
         }
       ],
       "practice": [
-        "Say where the book is: on the desk, under the bed, behind the door.",
-        "Add the correct ending: الْقِطَّةُ فِي الْحَدِيقَ___ (a/ah/ati).",
-        "Ask 'Where is my pen?' and answer 'It is on the table'.",
-        "Describe the picture the teacher shares using three prepositions."
+        {
+          "q": "Say: the prayer mat is in the cupboard.",
+          "a": "السَّجَّادَةُ فِي الخِزَانَةِ",
+          "mins": 2,
+          "model": "Teacher: thing first, السَّجَّادَةُ; then فِي; then الخِزَانَةِ with kasrah."
+        },
+        {
+          "q": "رَفّ is ...",
+          "a": "A shelf",
+          "mins": 1,
+          "options": [
+            "A shelf",
+            "A bed"
+          ]
+        },
+        {
+          "q": "خِزَانَة is ...",
+          "a": "A cupboard",
+          "mins": 1,
+          "options": [
+            "A cupboard",
+            "A mirror"
+          ]
+        }
       ],
       "independent": [
-        "Draw a room and write six sentences saying where six objects are.",
-        "Read the sentences to a partner who draws what they hear, then check.",
-        "Write two questions with أَيْنَ and their answers."
+        {
+          "q": "My room in four sentences in the portal response box: what is in it and where each item is; join with وَ. Group B adds an adjective to each item. Start: فِي غُرْفَتِي ...",
+          "a": "Four correct sentences with items, prepositions and kasrah",
+          "mins": 18,
+          "model": "Teacher writes: فِي غُرْفَتِي سَرِيرٌ وَمَكْتَبٌ. السَّرِيرُ بِجَانِبِ النَّافِذَةِ."
+        },
+        {
+          "q": "Extend: say where you keep your mushaf and why.",
+          "a": "For example: المُصْحَفُ عَلَى الرَّفِّ العَالِي لِأَنَّهُ كَلَامُ اللّٰهِ",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Write: 'The book is under the table' in Arabic.",
-        "What vowel ending does the noun take after فِي?"
+        {
+          "q": "سَرِير is ...",
+          "a": "A bed",
+          "mins": 1,
+          "options": [
+            "A bed",
+            "A chair"
+          ]
+        },
+        {
+          "q": "Back to our ponder: why does where things are kept matter?",
+          "a": "Order and cleanliness; Allah loves beauty",
+          "mins": 2
+        }
       ],
-      "homework": "Write a description of your bedroom with at least six prepositions of place.",
-      "send": "SEND: preposition cards with pictures and colour-coded kasra endings. EAL: matching task for English and Arabic prepositions. Stretch: add مُقَابِلَ (opposite) and حَوْلَ (around) in sentences."
+      "homework": "Tidy one shelf at home and describe it in two Arabic sentences.",
+      "send": "SEND: picture cards of items. EAL: preposition arrows card. Stretch: write the plural of three items.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Summer 1 (At home)",
+        "Portal arabic y8 lesson 2 (upgraded)",
+        "Pupil PDF worksheet: my room sentences"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "bedroom bed window",
+          "alt": "A bedroom",
+          "for": "teach:1"
+        },
+        {
+          "find": "bookshelf with books",
+          "alt": "A shelf: رَفّ",
+          "for": "keywords"
+        }
+      ]
     },
     {
-      "unit": "Unit 1: My home and where things are",
+      "unit": "Summer 1: At home",
       "n": 3,
-      "title": "Adjectives: agreement with the noun",
+      "title": "Dual and plural: rooms, nouns and adjectives",
       "duration": 50,
+      "bigQuestion": "English has 'room' and 'rooms'. Arabic has a special form for exactly two. Why might that be useful?",
       "objectives": [
-        "Place adjectives after the noun",
-        "Match the adjective to the noun in gender and definiteness",
-        "Tell the difference between a phrase and a sentence"
+        "To understand how nouns and adjectives change in the dual and the plural"
       ],
+      "successCriteria": [
+        "All: make the dual of a noun with ـَانِ",
+        "Most: make adjectives agree in the dual",
+        "Some: use a non-human plural with a feminine singular adjective"
+      ],
+      "crossCurricular": "English: singular and plural; Maths: counting",
+      "smsc": "Spiritual: pairs in creation",
       "keywords": [
         {
-          "term": "كَبِيرٌ / كَبِيرَةٌ",
-          "def": "big (masculine / feminine)"
+          "term": "مُثَنًّى (muthanna)",
+          "def": "dual: exactly two"
         },
         {
-          "term": "صَغِيرٌ / صَغِيرَةٌ",
-          "def": "small"
+          "term": "جَمْع (jam')",
+          "def": "plural: three or more"
         },
         {
-          "term": "جَمِيلٌ / جَمِيلَةٌ",
-          "def": "beautiful"
+          "term": "غُرْفَتَانِ (ghurfatani)",
+          "def": "two rooms"
         },
         {
-          "term": "قَدِيمٌ / قَدِيمَةٌ",
-          "def": "old (things)"
+          "term": "غُرَف (ghuraf)",
+          "def": "rooms"
         },
         {
-          "term": "جَدِيدٌ / جَدِيدَةٌ",
-          "def": "new"
-        },
-        {
-          "term": "وَاسِعٌ / وَاسِعَةٌ",
-          "def": "spacious"
+          "term": "صِفَة (sifah)",
+          "def": "adjective"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "English has 'room' and 'rooms'. Arabic has a special form for exactly two. Why might that be useful?",
+        "a": "It is precise: غُرْفَتَانِ tells you exactly two without a number word."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And of all things We created two mates, that perhaps you will remember' (adh-Dhariyat 51:49).",
+        "at": "start"
+      },
       "starter": [
-        "Say where the book is: on the desk, under the chair.",
-        "Which word do you use for 'this' with a feminine noun?",
-        "Translate: 'The garden is behind the house'."
+        {
+          "q": "Bismillah. خِزَانَة is ...",
+          "a": "A cupboard",
+          "mins": 1,
+          "options": [
+            "A cupboard",
+            "A shelf"
+          ]
+        },
+        {
+          "q": "'The bed is next to the window' is ...",
+          "a": "السَّرِيرُ بِجَانِبِ النَّافِذَةِ",
+          "mins": 1,
+          "options": [
+            "السَّرِيرُ بِجَانِبِ النَّافِذَةِ",
+            "السَّرِيرُ بِجَانِبِ النَّافِذَةُ"
+          ]
+        },
+        {
+          "q": "Name four items in the home.",
+          "a": "سَرِير، كُرْسِيّ، طَاوِلَة، خِزَانَة، رَفّ",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Adjectives follow the noun",
-          "bullets": [
-            "بَيْتٌ كَبِيرٌ - baytun kabīrun - a big house",
-            "غُرْفَةٌ صَغِيرَةٌ - ghurfatun ṣaghīratun - a small room",
-            "حَدِيقَةٌ جَمِيلَةٌ - ḥadīqatun jamīlatun - a beautiful garden",
-            "In Arabic the adjective comes after the noun"
-          ],
-          "note": "Begin with bismillah. Compare English 'a big house' with Arabic 'a house big'. Have pupils say the phrase in English word order and then flip it. Highlight that masculine adjectives have no ة and feminine ones add ة. Check that pupils repeat the vowel endings -un/-atun."
+          "heading": "One, two, many",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "table": {
+            "head": [
+              "One",
+              "Two (dual)",
+              "Many (plural)"
+            ],
+            "rows": [
+              [
+                "غُرْفَة",
+                "غُرْفَتَانِ",
+                "غُرَف"
+              ],
+              [
+                "بَيْت",
+                "بَيْتَانِ",
+                "بُيُوت"
+              ],
+              [
+                "سَرِير",
+                "سَرِيرَانِ",
+                "أَسِرَّة"
+              ],
+              [
+                "نَافِذَة",
+                "نَافِذَتَانِ",
+                "نَوَافِذ"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Match gender",
+          "heading": "Adjectives in the dual",
           "bullets": [
-            "مَطْبَخٌ جَدِيدٌ - maṭbakhun jadīdun - a new kitchen",
-            "نَافِذَةٌ جَدِيدَةٌ - nāfidhatun jadīdatun - a new window",
-            "غُرْفَةٌ وَاسِعَةٌ - ghurfatun wāsiʿatun - a spacious room",
-            "بَابٌ قَدِيمٌ - bābun qadīmun - an old door"
+            "The adjective also takes ـَانِ",
+            "غُرْفَتَانِ كَبِيرَتَانِ: two big rooms",
+            "بَيْتَانِ جَمِيلَانِ: two beautiful houses"
           ],
-          "note": "Sort a list of nouns into masculine and feminine, then add the right adjective. Misconception: pupils add ة to the noun and forget to add it to the adjective. Quick test: show a noun in Arabic and pupils say the matching adjective form."
+          "note": "Gender agreement still applies: ة words take ـَتَانِ."
         },
         {
-          "heading": "Match definiteness: phrase or sentence?",
-          "bullets": [
-            "الْبَيْتُ الْكَبِيرُ - al-baytu l-kabīru - the big house",
-            "الْبَيْتُ كَبِيرٌ - al-baytu kabīrun - the house is big",
-            "الْغُرْفَةُ الْجَمِيلَةُ - al-ghurfatu l-jamīlatu - the beautiful room",
-            "الْغُرْفَةُ جَمِيلَةٌ - the room is beautiful"
-          ],
-          "note": "The key point: if both words have 'al' the phrase is 'the big house' (a noun phrase); if only the noun has 'al', the adjective is the predicate and we get a full sentence 'the house is big'. Write both on the board and ask pupils which is a phrase and which is a sentence. Common error: الْبَيْتُ الْكَبِيرٌ (mixing al with tanween)."
+          "heading": "Things in the plural",
+          "bullets": [],
+          "note": "Key rule.",
+          "misconception": {
+            "wrong": "غُرَفٌ كَبِيرُونَ",
+            "right": "غُرَفٌ كَبِيرَةٌ: plural things take a feminine singular adjective"
+          }
         },
         {
-          "heading": "Plural things",
+          "heading": "Numbers 3 to 10",
           "bullets": [
-            "بُيُوتٌ كَبِيرَةٌ - buyūtun kabīratun - big houses",
-            "غُرَفٌ جَمِيلَةٌ - ghurafun jamīlatun - beautiful rooms",
-            "Things (not people) in the plural take a feminine singular adjective"
+            "ثَلَاثُ غُرَفٍ: three rooms",
+            "The noun after 3 to 10 is plural with kasrah",
+            "خَمْسَةُ بُيُوتٍ: five houses"
           ],
-          "note": "This is an enrichment slide for stronger pupils. For plural nouns that are not people (houses, rooms, books) Arabic uses the feminine singular adjective. Do not expect everyone to apply this independently yet; praise those who notice it."
+          "note": "Note the number takes the opposite gender to the singular noun."
         },
         {
-          "heading": "Using adjectives well",
+          "heading": "Quick check",
           "bullets": [
-            "Use adjectives to add detail",
-            "غُرْفَتِي صَغِيرَةٌ وَجَمِيلَةٌ - small and beautiful",
-            "Join two adjectives with وَ"
+            "Vote in the Teams poll"
           ],
-          "note": "Show how a sentence improves: غُرْفَةٌ becomes غُرْفَةٌ صَغِيرَةٌ وَنَظِيفَةٌ. Remind pupils that saying alhamdulillah for what we have is part of gratitude (shukr). Pupils write two sentences about their room in pairs and swap for peer checking of gender agreement."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'Two big windows' is ...",
+            "options": [
+              "نَافِذَتَانِ كَبِيرَتَانِ",
+              "نَافِذَتَانِ كَبِيرٌ",
+              "نَوَافِذُ كَبِيرَتَانِ"
+            ],
+            "answer": 0,
+            "why": "Dual noun, dual adjective, feminine."
+          }
         }
       ],
       "practice": [
-        "Add the correct adjective: بَيْتٌ (big), غُرْفَةٌ (small), مَطْبَخٌ (new).",
-        "Is it a phrase or a sentence? الْبَابُ الْقَدِيمُ / الْبَابُ قَدِيمٌ.",
-        "Translate: 'a spacious garden' and 'the new window'.",
-        "Correct the mistake: غُرْفَةٌ كَبِيرٌ."
+        {
+          "q": "Make the dual with an adjective: بَيْتٌ صَغِيرٌ",
+          "a": "بَيْتَانِ صَغِيرَانِ",
+          "mins": 2,
+          "model": "Teacher: بَيْت + ـَانِ = بَيْتَانِ; the adjective agrees: صَغِير + ـَانِ = صَغِيرَانِ."
+        },
+        {
+          "q": "The plural of غُرْفَة is ...",
+          "a": "غُرَف",
+          "mins": 1,
+          "options": [
+            "غُرَف",
+            "غُرْفَتَانِ"
+          ]
+        },
+        {
+          "q": "غُرَفٌ ... (big)",
+          "a": "كَبِيرَةٌ",
+          "mins": 1,
+          "options": [
+            "كَبِيرَةٌ",
+            "كَبِيرُونَ"
+          ]
+        }
       ],
       "independent": [
-        "Write six noun phrases with a noun and a matching adjective.",
-        "Write four full sentences describing your house.",
-        "Turn two of your phrases into definite phrases with 'al' on both words."
+        {
+          "q": "Grammar set on the pupil PDF: ten items (make the dual with an adjective; choose the right plural adjective; write the noun after a number 3 to 10); then two sentences about your home using a dual and a plural.",
+          "a": "Answers per the key, for example: غُرْفَتَانِ وَاسِعَتَانِ؛ أَسِرَّةٌ جَدِيدَةٌ؛ أَرْبَعُ نَوَافِذَ",
+          "mins": 17,
+          "model": "Teacher does item 1: كُرْسِيٌّ جَدِيدٌ → كُرْسِيَّانِ جَدِيدَانِ."
+        },
+        {
+          "q": "Extend: write 'in my house there are two bathrooms'.",
+          "a": "فِي بَيْتِي حَمَّامَانِ",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Write 'a big kitchen' and 'a big room' in Arabic.",
-        "What is the difference between الْبَيْتُ الْجَدِيدُ and الْبَيْتُ جَدِيدٌ?"
+        {
+          "q": "The dual ending is ...",
+          "a": "ـَانِ",
+          "mins": 1,
+          "options": [
+            "ـَانِ",
+            "ـُونَ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: why is the dual useful?",
+          "a": "It shows exactly two without a number",
+          "mins": 2
+        }
       ],
-      "homework": "Write five sentences describing five things in your home using adjectives that agree with the noun.",
-      "send": "SEND: colour code masculine (blue) and feminine (pink) cards. EAL: sentence builders with English glosses. Stretch: include non-human plural agreement (بُيُوتٌ كَبِيرَةٌ)."
+      "homework": "Count the rooms, windows and chairs in your home and write each with the correct form.",
+      "send": "SEND: one, two, many table to complete. EAL: rule card. Stretch: learn three more broken plurals: كُتُب، أَقْلَام، مَفَاتِيح.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Summer 1 (At home)",
+        "Portal arabic y8 lesson 3 (upgraded)",
+        "Pupil PDF worksheet: dual and plural set"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "two windows house facade",
+          "alt": "Two windows: نَافِذَتَانِ",
+          "for": "teach:2"
+        },
+        {
+          "find": "row of houses street",
+          "alt": "Houses: بُيُوت",
+          "for": "keywords"
+        }
+      ]
     },
     {
-      "unit": "Unit 1: My home and where things are",
+      "unit": "Summer 1: At home",
       "n": 4,
-      "title": "Describing my home in writing",
+      "title": "Describing my home in writing; unit quiz",
       "duration": 50,
+      "bigQuestion": "If a new pen friend in an Arabic-speaking country asked about your home, what would you most want them to know?",
       "objectives": [
-        "Use هُنَاكَ and فِي بَيْتِي to say what there is",
-        "Write a paragraph of six to eight sentences about your home",
-        "Use possessive endings -ī and -nā"
+        "To understand how to combine the unit's language into a written description of my home and check what I know"
       ],
+      "successCriteria": [
+        "All: complete the unit quiz",
+        "Most: write a six-sentence description with هُنَاكَ, a dual and a time",
+        "Some: add opinions with لِأَنَّ and contrasts with لٰكِنْ"
+      ],
+      "smsc": "Moral: honest self-assessment; Spiritual: the Muslim home",
       "keywords": [
         {
-          "term": "هُنَاكَ",
-          "def": "there is / there are (hunāka)"
+          "term": "وَصْف (wasf)",
+          "def": "a description"
         },
         {
-          "term": "بَيْتِي",
-          "def": "my house (baytī)"
+          "term": "هُنَاكَ (hunaka)",
+          "def": "there is / there are"
         },
         {
-          "term": "بَيْتُنَا",
-          "def": "our house (baytunā)"
+          "term": "أَيْضًا (aydan)",
+          "def": "also"
         },
         {
-          "term": "ثَلَاثُ غُرَفٍ",
-          "def": "three rooms (thalāthu ghurafin)"
+          "term": "لٰكِنَّ (lakinna)",
+          "def": "but"
         },
         {
-          "term": "أَيْضًا",
-          "def": "also (aydan)"
-        },
-        {
-          "term": "لَكِنَّ",
-          "def": "but (lākinna)"
+          "term": "اِخْتِبَار (ikhtibar)",
+          "def": "quiz"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "If a new pen friend in an Arabic-speaking country asked about your home, what would you most want them to know?",
+        "a": "Pupils' own: the rooms, what we do there, and what makes it a Muslim home (salah, Qur'an, hospitality)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And Allah has made for you your homes a place of rest' (an-Nahl 16:80).",
+        "at": "start"
+      },
       "starter": [
-        "Make a phrase: 'a small kitchen' and 'a new door'.",
-        "Where is the key? It is on the table. Say it in Arabic.",
-        "Name three rooms and say what you do in each."
+        {
+          "q": "Bismillah. 'Her room' is ...",
+          "a": "غُرْفَتُهَا",
+          "mins": 1,
+          "options": [
+            "غُرْفَتُهَا",
+            "غُرْفَتُهُ"
+          ]
+        },
+        {
+          "q": "'Two rooms' is ...",
+          "a": "غُرْفَتَانِ",
+          "mins": 1,
+          "options": [
+            "غُرْفَتَانِ",
+            "غُرَف"
+          ]
+        },
+        {
+          "q": "Say 'at seven o'clock'.",
+          "a": "فِي السَّاعَةِ السَّابِعَةِ",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "My and our",
-          "bullets": [
-            "بَيْتِي - baytī - my house",
-            "غُرْفَتِي - ghurfatī - my room",
-            "بَيْتُنَا - baytunā - our house",
-            "حَدِيقَتُنَا - ḥadīqatunā - our garden"
-          ],
-          "note": "Begin with bismillah. Revise the possessive endings: -ī (my), -nā (our). Note that the tied ة becomes an open ت before the ending: غُرْفَة → غُرْفَتِي. Misconception: writing غُرْفَةِي. Pupils transform five words from the board."
+          "heading": "Model description",
+          "bullets": [],
+          "note": "Begin with Bismillah. Labelled: type, rooms, items, routine, opinion.",
+          "quote": {
+            "text": "أَسْكُنُ فِي بَيْتٍ فِي المَدِينَةِ.\nفِي بَيْتِنَا ثَلَاثُ غُرَفٍ وَحَمَّامَانِ.\nغُرْفَتِي صَغِيرَةٌ لٰكِنَّهَا جَمِيلَةٌ.\nهُنَاكَ رَفٌّ فَوْقَ سَرِيرِي، وَعَلَيْهِ المُصْحَفُ.\nكُلَّ يَوْمٍ أُرَتِّبُ غُرْفَتِي فِي السَّاعَةِ السَّابِعَةِ.\nأُحِبُّ بَيْتَنَا لِأَنَّهُ هَادِئٌ.",
+            "source": "Teacher's model (our own text)"
+          }
         },
         {
-          "heading": "There is... هُنَاكَ",
+          "heading": "The quiz",
           "bullets": [
-            "هُنَاكَ حَدِيقَةٌ - hunāka ḥadīqatun - there is a garden",
-            "هُنَاكَ مَطْبَخٌ كَبِيرٌ - there is a big kitchen",
-            "فِي بَيْتِي ثَلَاثُ غُرَفٍ - fī baytī thalāthu ghurafin - three rooms",
-            "فِي بَيْتِي غُرْفَتَانِ - fī baytī ghurfatāni - two rooms"
+            "Part A: 15 questions on rooms, items, duals, time, verbs, endings",
+            "Part B: your description",
+            "No notes; honest work"
           ],
-          "note": "Explain that هُنَاكَ is invariable and the thing that exists follows it. Teach the two chunks 'ثَلَاثُ غُرَفٍ' and 'غُرْفَتَانِ' as ready-made phrases; do not teach the full number rules yet (stretch: the number ثَلَاثَة loses ة with a feminine noun). Pupils say how many rooms their home has."
+          "note": "Quiz in the portal; 25 minutes."
         },
         {
-          "heading": "Link ideas",
+          "heading": "Quick check",
           "bullets": [
-            "وَ - wa - and",
-            "لَكِنَّ - lākinna - but",
-            "أَيْضًا - aydan - also",
-            "لِأَنَّ - li-anna - because"
+            "Vote in the Teams poll"
           ],
-          "note": "Show a bare sentence and then improve it with connectives. Example: بَيْتِي صَغِيرٌ لَكِنَّهُ جَمِيلٌ (my house is small but it is beautiful). Note that لَكِنَّ takes a pronoun ending (-hu). Provide an English-Arabic connectives card."
-        },
-        {
-          "heading": "A model paragraph",
-          "bullets": [
-            "بَيْتِي كَبِيرٌ وَجَمِيلٌ - baytī kabīrun wa-jamīlun",
-            "فِي بَيْتِي أَرْبَعُ غُرَفٍ - four rooms",
-            "هُنَاكَ حَدِيقَةٌ خَلْفَ الْبَيْتِ - a garden behind the house",
-            "أُحِبُّ بَيْتِي - uḥibbu baytī - I love my house"
-          ],
-          "note": "Read the model together, then ask: what makes it good? Which adjectives, prepositions and connectives are used? Pupils annotate with colours. Remind them to check ة becoming ت before the possessive ending and to add vowel marks."
-        },
-        {
-          "heading": "Writing check",
-          "bullets": [
-            "Check gender agreement",
-            "Check the kasra after prepositions",
-            "Add vowels and a final الْحَمْدُ لِلَّهِ"
-          ],
-          "note": "Introduce a self-check list on screen. Praise accurate vowelling. End the written task with الْحَمْدُ لِلَّهِ as a sign of gratitude. Pupils will write the full paragraph independently in the next section."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Which is correct?",
+            "options": [
+              "غُرْفَتِي صَغِيرَةٌ",
+              "غُرْفَتِي صَغِيرٌ",
+              "الغُرْفَتِي صَغِيرَةٌ"
+            ],
+            "answer": 0,
+            "why": "Feminine noun, feminine adjective; no ال with an ending."
+          }
         }
       ],
       "practice": [
-        "Add 'my' to the words: غُرْفَة, حَدِيقَة, مَطْبَخ.",
-        "Say: 'There is a big garden in our house'.",
-        "Join two sentences with لَكِنَّ: بَيْتِي صَغِيرٌ / حَدِيقَتُنَا كَبِيرَةٌ."
+        {
+          "q": "Write your first two sentences of Part B.",
+          "a": "For example: أَسْكُنُ فِي شَقَّةٍ. فِي شَقَّتِنَا غُرْفَتَانِ.",
+          "mins": 2,
+          "model": "Teacher points to the model's first two lines and changes them for a flat: أَسْكُنُ فِي شَقَّةٍ. فِي شَقَّتِنَا غُرْفَتَانِ."
+        },
+        {
+          "q": "لٰكِنَّ means ...",
+          "a": "But",
+          "mins": 1,
+          "options": [
+            "But",
+            "Also"
+          ]
+        }
       ],
       "independent": [
-        "Write a paragraph of six to eight sentences about your home.",
-        "Use at least one هُنَاكَ, two prepositions of place, two adjectives and one connective.",
-        "Swap with a partner and use the checklist to correct two mistakes each."
+        {
+          "q": "Unit quiz in the portal: Part A (15 marks) and Part B in the response box (10 marks): describe your home in six sentences with هُنَاكَ, a dual or plural, a time, a verb with the right pronoun, an attached pronoun and an opinion with لِأَنَّ. Start: أَسْكُنُ فِي ...",
+          "a": "Part A per the key; Part B meeting the checklist",
+          "mins": 27,
+          "model": "Teacher reads the checklist and ticks it against the model."
+        },
+        {
+          "q": "Extend: check every noun after a preposition has kasrah.",
+          "a": "Pupils' own check",
+          "mins": 1
+        }
       ],
       "exit": [
-        "Write the Arabic for 'my room' and 'our garden'.",
-        "Complete: ___ حَدِيقَةٌ جَمِيلَةٌ (there is)."
+        {
+          "q": "What is your target for Summer 2?",
+          "a": "Pupils' own",
+          "mins": 1
+        }
       ],
-      "homework": "Rewrite your paragraph neatly with full vowels and learn to read it aloud.",
-      "send": "SEND: sentence starters and a word bank with images. EAL: model paragraph with audio. Stretch: add a comparison to a relative's home using مِثْلَ (like)."
+      "homework": "Correct the quiz in green and write one target for Summer 2.",
+      "send": "SEND: quiz read aloud, extra time; Part B frame with sentence starters. EAL: word bank allowed for Part B. Stretch: write eight sentences with two opinions.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Summer 1 (At home)",
+        "Portal arabic y8 lesson 4 (upgraded)",
+        "Portal unit quiz: at home (Part A 15, Part B 10)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "house front garden",
+          "alt": "A home",
+          "for": "hook"
+        },
+        {
+          "find": "pen and paper test",
+          "alt": "The unit quiz",
+          "for": "keywords"
+        }
+      ]
     },
     {
-      "unit": "Unit 2: Time and my daily routine",
+      "unit": "Summer 1: At home",
       "n": 5,
       "title": "Telling the time",
       "duration": 50,
+      "bigQuestion": "Muslims organise their day around five set times. What would change if you planned your day around salah first?",
       "objectives": [
-        "Ask and answer the time in Arabic",
-        "Say whole hours, half hours and quarter hours",
-        "Link times to the five daily prayers"
+        "To understand how to tell the time in Arabic with hours, quarters and halves"
       ],
+      "successCriteria": [
+        "All: say the hours from one to twelve",
+        "Most: add وَالرُّبْعُ، وَالنِّصْفُ، إِلَّا رُبْعًا",
+        "Some: say the times of the five prayers today"
+      ],
+      "crossCurricular": "Maths: telling the time",
+      "smsc": "Spiritual: salah as the anchor of the day",
       "keywords": [
         {
-          "term": "كَمِ السَّاعَةُ؟",
-          "def": "what time is it? (kami s-sāʿa)"
+          "term": "كَمِ السَّاعَةُ؟ (kam is-sa'ah)",
+          "def": "what time is it?"
         },
         {
-          "term": "السَّاعَةُ الْوَاحِدَةُ",
-          "def": "one o'clock"
+          "term": "السَّاعَةُ الثَّالِثَةُ (as-sa'atu th-thalithah)",
+          "def": "three o'clock"
         },
         {
-          "term": "وَالنِّصْفُ",
-          "def": "and a half (wa-n-niṣf)"
+          "term": "وَالنِّصْفُ (wa n-nisf)",
+          "def": "half past"
         },
         {
-          "term": "وَالرُّبْعُ",
-          "def": "and a quarter (wa-r-rubʿ)"
+          "term": "وَالرُّبْعُ (wa r-rub')",
+          "def": "quarter past"
         },
         {
-          "term": "إِلَّا رُبْعًا",
-          "def": "quarter to (illā rubʿan)"
-        },
-        {
-          "term": "دَقِيقَةٌ",
-          "def": "minute (daqīqa)"
+          "term": "إِلَّا رُبْعًا (illa rub'an)",
+          "def": "quarter to"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Muslims organise their day around five set times. What would change if you planned your day around salah first?",
+        "a": "Everything else fits around the prayers: salah becomes the anchor of the day."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Indeed, prayer has been decreed upon the believers at specified times' (an-Nisa' 4:103).",
+        "at": "start"
+      },
       "starter": [
-        "Say your address and name in Arabic.",
-        "Count from 11 to 20 in Arabic.",
-        "Name three days of the week you know."
+        {
+          "q": "Bismillah. 'Two rooms' is ...",
+          "a": "غُرْفَتَانِ",
+          "mins": 1,
+          "options": [
+            "غُرْفَتَانِ",
+            "غُرَف"
+          ]
+        },
+        {
+          "q": "غُرَفٌ ... (big)",
+          "a": "كَبِيرَةٌ",
+          "mins": 1,
+          "options": [
+            "كَبِيرَةٌ",
+            "كَبِيرَانِ"
+          ]
+        },
+        {
+          "q": "Say 'three rooms'.",
+          "a": "ثَلَاثُ غُرَفٍ",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Hours",
-          "bullets": [
-            "كَمِ السَّاعَةُ؟ - kami s-sāʿa? - what time is it?",
-            "السَّاعَةُ الْوَاحِدَةُ - one o'clock",
-            "السَّاعَةُ الثَّانِيَةُ - two o'clock",
-            "السَّاعَةُ الثَّالِثَةُ - three o'clock",
-            "السَّاعَةُ الرَّابِعَةُ - four o'clock"
-          ],
-          "note": "Begin with bismillah. Qur'an 4:103 says prayer is prescribed for the believers at fixed times, so time matters in Islam. The hours use ordinal numbers that agree with السَّاعَةُ (feminine): الْخَامِسَةُ, السَّادِسَةُ, السَّابِعَةُ, الثَّامِنَةُ, التَّاسِعَةُ, الْعَاشِرَةُ. Drill by showing analogue clocks. Misconception: using the cardinal numbers (wāḥid, ithnān) rather than the ordinals."
+          "heading": "The hours",
+          "bullets": [],
+          "note": "Begin with Bismillah. The hour uses the ordinal (third, fourth ...). Spoken practice only; no songs or music.",
+          "table": {
+            "head": [
+              "Time",
+              "Arabic"
+            ],
+            "rows": [
+              [
+                "1:00",
+                "السَّاعَةُ الوَاحِدَةُ"
+              ],
+              [
+                "2:00",
+                "السَّاعَةُ الثَّانِيَةُ"
+              ],
+              [
+                "3:00",
+                "السَّاعَةُ الثَّالِثَةُ"
+              ],
+              [
+                "5:00",
+                "السَّاعَةُ الخَامِسَةُ"
+              ],
+              [
+                "8:00",
+                "السَّاعَةُ الثَّامِنَةُ"
+              ],
+              [
+                "11:00",
+                "السَّاعَةُ الحَادِيَةَ عَشْرَةَ"
+              ],
+              [
+                "12:00",
+                "السَّاعَةُ الثَّانِيَةَ عَشْرَةَ"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Half and quarter",
+          "heading": "Quarters and halves",
           "bullets": [
-            "السَّاعَةُ الْخَامِسَةُ وَالنِّصْفُ - five thirty",
-            "السَّاعَةُ السَّابِعَةُ وَالرُّبْعُ - quarter past seven",
-            "السَّاعَةُ التَّاسِعَةُ إِلَّا رُبْعًا - quarter to nine",
-            "السَّاعَةُ الثَّانِيَةَ عَشْرَةَ - twelve o'clock"
+            "الرَّابِعَةُ وَالرُّبْعُ: 4:15",
+            "الرَّابِعَةُ وَالنِّصْفُ: 4:30",
+            "الخَامِسَةُ إِلَّا رُبْعًا: 4:45"
           ],
-          "note": "Show the structure: السَّاعَةُ + hour + وَ + fraction, or hour + إِلَّا for 'to'. Note that 11 and 12 are الْحَادِيَةَ عَشْرَةَ and الثَّانِيَةَ عَشْرَةَ. Practise with a moving clock on screen. Pupils say the time and the next pupil says the time 15 minutes later."
+          "note": "Note 4:45 is 'five minus a quarter'."
         },
         {
-          "heading": "Minutes",
-          "bullets": [
-            "وَخَمْسُ دَقَائِقَ - wa-khamsu daqā'iq - and five minutes",
-            "وَعَشْرُ دَقَائِقَ - wa-ʿashru daqā'iq - and ten minutes",
-            "السَّاعَةُ الثَّامِنَةُ وَخَمْسُ دَقَائِقَ - 8:05"
-          ],
-          "note": "Teach 5 and 10 minutes as chunks; the full number system for 'to' and 'past' is not needed yet. Check that pupils pronounce the ق of دَقَائِقَ deep in the throat. Do a quick time-telling quiz with five clock faces."
+          "heading": "Prayer times today",
+          "bullets": [],
+          "note": "Use today's real timetable from a local masjid.",
+          "table": {
+            "head": [
+              "Prayer",
+              "Time (example)"
+            ],
+            "rows": [
+              [
+                "الفَجْر",
+                "الثَّالِثَةُ وَالنِّصْفُ"
+              ],
+              [
+                "الظُّهْر",
+                "الوَاحِدَةُ"
+              ],
+              [
+                "العَصْر",
+                "الخَامِسَةُ"
+              ],
+              [
+                "المَغْرِب",
+                "التَّاسِعَةُ"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Prayer times",
+          "heading": "Quick check",
           "bullets": [
-            "صَلَاةُ الْفَجْرِ - ṣalātu l-fajr - dawn prayer",
-            "صَلَاةُ الظُّهْرِ - ṣalātu ẓ-ẓuhr - noon prayer",
-            "صَلَاةُ الْعَصْرِ - ṣalātu l-ʿaṣr - afternoon prayer",
-            "صَلَاةُ الْمَغْرِبِ - ṣalātu l-maghrib - sunset prayer",
-            "صَلَاةُ الْعِشَاءِ - ṣalātu l-ʿishā' - night prayer"
+            "Vote in the Teams poll"
           ],
-          "note": "Name the five prayers and ask pupils to put them in order. Example sentence: نُصَلِّي الظُّهْرَ فِي السَّاعَةِ الْوَاحِدَةِ (we pray Dhuhr at one o'clock). Times change through the year, so give an example from today's timetable. Ask: when does the school day pause for prayer?"
-        },
-        {
-          "heading": "Asking and answering",
-          "bullets": [
-            "مَتَى صَلَاةُ الْعَصْرِ؟ - matā ṣalātu l-ʿaṣr? - when is Asr?",
-            "فِي السَّاعَةِ الثَّالِثَةِ - at three o'clock",
-            "مَتَى الدَّرْسُ؟ - matā d-dars? - when is the lesson?"
-          ],
-          "note": "Use فِي السَّاعَةِ + ordinal with a kasra for 'at'. Pupils ask a partner when three events happen and record the answers. Check the new vowel ending on the ordinal after فِي: الثَّالِثَةِ."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "6:30 is ...",
+            "options": [
+              "السَّادِسَةُ وَالنِّصْفُ",
+              "السَّابِعَةُ إِلَّا رُبْعًا",
+              "السَّادِسَةُ وَالرُّبْعُ"
+            ],
+            "answer": 0,
+            "why": "Half past = وَالنِّصْفُ."
+          }
         }
       ],
       "practice": [
-        "Say the time: 3:00, 4:30, 6:15, 7:45.",
-        "Write the time in numbers: السَّاعَةُ الثَّامِنَةُ وَالنِّصْفُ.",
-        "Ask a partner: 'When is the Maghrib prayer?'",
-        "Answer: 'The lesson is at nine o'clock'."
+        {
+          "q": "Say 7:45.",
+          "a": "السَّاعَةُ الثَّامِنَةُ إِلَّا رُبْعًا",
+          "mins": 2,
+          "model": "Teacher: 7:45 is a quarter to eight. Eight = الثَّامِنَةُ; minus a quarter = إِلَّا رُبْعًا."
+        },
+        {
+          "q": "وَالرُّبْعُ means ...",
+          "a": "Quarter past",
+          "mins": 1,
+          "options": [
+            "Quarter past",
+            "Half past"
+          ]
+        },
+        {
+          "q": "كَمِ السَّاعَةُ؟ means ...",
+          "a": "What time is it?",
+          "mins": 1,
+          "options": [
+            "What time is it?",
+            "How many hours?"
+          ]
+        }
       ],
       "independent": [
-        "Draw six clock faces and write the Arabic time under each.",
-        "Write a timetable of the five daily prayers with example times.",
-        "Role-play a conversation: asking the time and the time of a lesson."
+        {
+          "q": "Clock task on the pupil PDF: write ten clock times in Arabic (hours, quarters, halves); then write today's five prayer times from your masjid timetable in Arabic.",
+          "a": "Ten correct times; five prayer times in correct Arabic form",
+          "mins": 17,
+          "model": "Teacher does 2:15: السَّاعَةُ الثَّانِيَةُ وَالرُّبْعُ."
+        },
+        {
+          "q": "Extend: add صَبَاحًا or مَسَاءً to two times.",
+          "a": "For example: السَّاعَةُ السَّابِعَةُ صَبَاحًا",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Write the Arabic for 'half past two'.",
-        "How do you say 'quarter to eight' in Arabic?"
+        {
+          "q": "السَّاعَةُ العَاشِرَةُ is ...",
+          "a": "10 o'clock",
+          "mins": 1,
+          "options": [
+            "10 o'clock",
+            "2 o'clock"
+          ]
+        },
+        {
+          "q": "Back to our ponder: planning around salah?",
+          "a": "Salah anchors the day; everything fits around it",
+          "mins": 2
+        }
       ],
-      "homework": "Write five times of your day in Arabic, for example prayer times and lesson times.",
-      "send": "SEND: clocks with Arabic numerals printed. EAL: ordinal numbers table with transliteration. Stretch: add 'twenty past' and 'twenty-five to' using وَثُلُثٌ / إِلَّا ثُلُثًا."
+      "homework": "Every time you look at a clock today, say the time in Arabic.",
+      "send": "SEND: clock faces with the Arabic hour written. EAL: time phrase card. Stretch: learn وَالثُّلْثُ (twenty past) and إِلَّا ثُلْثًا (twenty to).",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Summer 1 (At home)",
+        "Portal arabic y8 lesson 5 (upgraded)",
+        "Pupil PDF worksheet: clock task",
+        "Local masjid prayer timetable (household)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "analog clock",
+          "alt": "A clock",
+          "for": "hook"
+        },
+        {
+          "find": "mosque prayer timetable board",
+          "alt": "A masjid prayer timetable",
+          "for": "teach:3"
+        }
+      ]
     },
     {
-      "unit": "Unit 2: Time and my daily routine",
+      "unit": "Summer 1: At home",
       "n": 6,
-      "title": "Present tense: you, we and they",
+      "title": "Present tense with 'you': تَأْكُلُ، تَأْكُلِينَ",
       "duration": 50,
+      "bigQuestion": "In English 'you eat' is the same for everyone. Arabic changes it for a boy or a girl. How could that help in conversation?",
       "objectives": [
-        "Conjugate a regular verb for I, you (m/f), he, she, we and they",
-        "Choose the correct prefix and ending",
-        "Use the verbs in short sentences"
+        "To understand how present-tense verbs change for 'you' when talking to a boy or a girl"
       ],
+      "successCriteria": [
+        "All: make the 'you' (boy) form with تَـ",
+        "Most: make the 'you' (girl) form with تَـ ... ـِينَ",
+        "Some: ask and answer routine questions using both forms"
+      ],
+      "smsc": "Social: polite questions at home",
       "keywords": [
         {
-          "term": "أَكْتُبُ",
-          "def": "I write (aktubu)"
+          "term": "أَنْتَ (anta)",
+          "def": "you (to a boy)"
         },
         {
-          "term": "تَكْتُبُ",
-          "def": "you (m) write / she writes"
+          "term": "أَنْتِ (anti)",
+          "def": "you (to a girl)"
         },
         {
-          "term": "تَكْتُبِينَ",
-          "def": "you (f) write"
+          "term": "تَأْكُلُ (ta'kulu)",
+          "def": "you eat (boy)"
         },
         {
-          "term": "نَكْتُبُ",
-          "def": "we write (naktubu)"
+          "term": "تَأْكُلِينَ (ta'kulina)",
+          "def": "you eat (girl)"
         },
         {
-          "term": "يَكْتُبُونَ",
-          "def": "they (m) write"
-        },
-        {
-          "term": "يَكْتُبُ",
-          "def": "he writes"
+          "term": "فِعْلٌ مُضَارِعٌ (fi'l mudari')",
+          "def": "present-tense verb"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "In English 'you eat' is the same for everyone. Arabic changes it for a boy or a girl. How could that help in conversation?",
+        "a": "It shows clearly who is being spoken to, even in a group."
+      },
+      "islamicLink": {
+        "text": "The Prophet ﷺ said: 'Say bismillah, eat with your right hand, and eat from what is in front of you' (Bukhari and Muslim).",
+        "at": "start"
+      },
       "starter": [
-        "Say 'I live in London' and 'she reads the book'.",
-        "What time is the Dhuhr prayer today? Answer in Arabic.",
-        "Give the Arabic for 'she goes to school'."
+        {
+          "q": "Bismillah. فِي السَّاعَةِ السَّابِعَةِ means ...",
+          "a": "At seven o'clock",
+          "mins": 1,
+          "options": [
+            "At seven o'clock",
+            "It is seven o'clock"
+          ]
+        },
+        {
+          "q": "'In the evening' is ...",
+          "a": "مَسَاءً",
+          "mins": 1,
+          "options": [
+            "مَسَاءً",
+            "صَبَاحًا"
+          ]
+        },
+        {
+          "q": "Ask 'at what time do you sleep?'",
+          "a": "فِي أَيِّ سَاعَةٍ تَنَامُ؟",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "The verb كَتَبَ",
-          "bullets": [
-            "أَنَا أَكْتُبُ - anā aktubu - I write",
-            "هُوَ يَكْتُبُ - huwa yaktubu - he writes",
-            "هِيَ تَكْتُبُ - hiya taktubu - she writes",
-            "أَنْتَ تَكْتُبُ - anta taktubu - you (m) write"
-          ],
-          "note": "Begin with bismillah. Revise the three forms from Year 6, then add 'you'. Colour code prefixes: أَ (I), يَ (he), تَ (she/you). Misconception: hiya and anta both use تَ; the context tells us who. Practise by pointing to different pupils on the screen."
+          "heading": "I and you",
+          "bullets": [],
+          "note": "Begin with Bismillah. Spoken practice only; no songs or music.",
+          "table": {
+            "head": [
+              "أَنَا",
+              "أَنْتَ",
+              "أَنْتِ",
+              "English"
+            ],
+            "rows": [
+              [
+                "آكُلُ",
+                "تَأْكُلُ",
+                "تَأْكُلِينَ",
+                "eat"
+              ],
+              [
+                "أَشْرَبُ",
+                "تَشْرَبُ",
+                "تَشْرَبِينَ",
+                "drink"
+              ],
+              [
+                "أَدْرُسُ",
+                "تَدْرُسُ",
+                "تَدْرُسِينَ",
+                "study"
+              ],
+              [
+                "أَنَامُ",
+                "تَنَامُ",
+                "تَنَامِينَ",
+                "sleep"
+              ]
+            ]
+          }
         },
         {
-          "heading": "You (f), we, they",
+          "heading": "The pattern",
           "bullets": [
-            "أَنْتِ تَكْتُبِينَ - anti taktubīna - you (f) write",
-            "نَحْنُ نَكْتُبُ - naḥnu naktubu - we write",
-            "هُمْ يَكْتُبُونَ - hum yaktubūna - they (m) write",
-            "هُنَّ يَكْتُبْنَ - hunna yaktubna - they (f) write"
+            "أَنْتَ: تَـ at the start",
+            "أَنْتِ: تَـ at the start and ـِينَ at the end",
+            "Same as 'she' for أَنْتَ: listen for the context"
           ],
-          "note": "Introduce the extra endings: -īna (you f), نَ prefix (we), -ūna (they m), -na (they f). Note that the present tense يَكْتُبُونَ has no silent alif after the waw (that appears in the past, كَتَبُوا, in Lesson 10). Chorally drill all eight forms in a chain around the class."
+          "note": "Recall Spring 2: يَعْمَلُ / تَعْمَلُ."
         },
         {
-          "heading": "Other regular verbs",
+          "heading": "Quick check",
           "bullets": [
-            "يَذْهَبُ - yadhhabu - he goes",
-            "يَشْرَبُ - yashrabu - he drinks",
-            "يَقْرَأُ - yaqra'u - he reads",
-            "يَلْعَبُ - yalʿabu - he plays"
+            "Vote in the Teams poll"
           ],
-          "note": "Give pupils the root pattern: the same prefixes and endings work on all these verbs. Ask them to build 'we go', 'you (f) drink', 'they read' (m). Misconception: forgetting the final -u (damma) on the verb. Remind pupils that the damma is a sign of the present tense."
-        },
-        {
-          "heading": "Short sentences",
-          "bullets": [
-            "نَذْهَبُ إِلَى الْمَسْجِدِ - nadhhabu ilā l-masjid - we go to the mosque",
-            "هُمْ يَلْعَبُونَ فِي الْحَدِيقَةِ - they play in the garden",
-            "أَنْتِ تَقْرَئِينَ الْقُرْآنَ - you (f) read the Qur'an",
-            "هُنَّ يَشْرَبْنَ الْمَاءَ - they (f) drink water"
-          ],
-          "note": "Say these sentences with the class and then change the subject. Note the vowel on إِلَى + noun (kasra). The Qur'an should be mentioned with respect; link to reciting the Qur'an each day. Check the correct form of تَقْرَئِينَ for 'you (f) read'."
-        },
-        {
-          "heading": "Mini-conversation",
-          "bullets": [
-            "مَاذَا تَفْعَلُ؟ - mādhā tafʿalu? - what do you do?",
-            "أَقْرَأُ وَأَكْتُبُ - aqra'u wa-aktubu - I read and write",
-            "مَاذَا تَفْعَلِينَ؟ - to a girl",
-            "نَلْعَبُ مَعًا - we play together"
-          ],
-          "note": "Pupils interview each other: question to a boy uses -u, to a girl -ina. Encourage them to swap roles so that both forms are practised. Collect two good pairs to perform."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Asking a girl 'do you study?': هَلْ ...؟",
+            "options": [
+              "تَدْرُسِينَ",
+              "تَدْرُسُ",
+              "أَدْرُسُ"
+            ],
+            "answer": 0,
+            "why": "أَنْتِ takes تَـ ... ـِينَ."
+          }
         }
       ],
       "practice": [
-        "Write 'we go', 'they (m) play', 'you (f) read'.",
-        "Choose the right form: هِيَ (يَكْتُبُ / تَكْتُبُ).",
-        "Translate: 'You (m) drink water'.",
-        "Ask a girl 'What do you do?'."
+        {
+          "q": "Make both 'you' forms of يَكْتُبُ.",
+          "a": "تَكْتُبُ (boy), تَكْتُبِينَ (girl)",
+          "mins": 2,
+          "model": "Teacher: remove يَـ, add تَـ: تَكْتُبُ for a boy; for a girl add ـِينَ: تَكْتُبِينَ."
+        },
+        {
+          "q": "تَشْرَبِينَ is said to ...",
+          "a": "A girl",
+          "mins": 1,
+          "options": [
+            "A girl",
+            "A boy"
+          ]
+        },
+        {
+          "q": "'You (boy) sleep' is ...",
+          "a": "تَنَامُ",
+          "mins": 1,
+          "options": [
+            "تَنَامُ",
+            "أَنَامُ"
+          ]
+        }
       ],
       "independent": [
-        "Complete a table for ذَهَبَ with eight pronouns.",
-        "Write six sentences using six different pronouns.",
-        "Pair task: ask and answer what you do in the evening."
+        {
+          "q": "Questionnaire on the pupil PDF: write six questions to a boy and six to a girl about routines (eat, drink, study, sleep, read, pray); then answer three of them about yourself with أَنَا forms.",
+          "a": "Correct تَـ and تَـ ... ـِينَ forms; correct أَ forms in answers",
+          "mins": 18,
+          "model": "Teacher writes: مَاذَا تَأْكُلُ فِي الفَطُورِ؟ / مَاذَا تَأْكُلِينَ فِي الفَطُورِ؟ آكُلُ خُبْزًا وَجُبْنًا."
+        },
+        {
+          "q": "Extend: make the 'you' forms of يُصَلِّي.",
+          "a": "تُصَلِّي (boy), تُصَلِّينَ (girl)",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Write 'they (m) write' and 'we write'.",
-        "What is the ending for 'you (f)' in the present tense?"
+        {
+          "q": "The 'you' (girl) ending is ...",
+          "a": "ـِينَ",
+          "mins": 1,
+          "options": [
+            "ـِينَ",
+            "ـُونَ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: how does the change help?",
+          "a": "It shows clearly who is spoken to",
+          "mins": 2
+        }
       ],
-      "homework": "Write the full present tense of يَشْرَبُ (to drink) for eight pronouns and two sentences.",
-      "send": "SEND: verb table with colour-coded prefixes. EAL: pronoun cards with English glosses. Stretch: add the dual forms يَكْتُبَانِ (they two write)."
+      "homework": "Ask two family members (one male, one female if possible) a routine question in Arabic with the right form.",
+      "send": "SEND: verb table with endings highlighted. EAL: pattern card. Stretch: add نَحْنُ (we) forms with نَـ.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Summer 1 (At home)",
+        "Portal arabic y8 lesson 6 (upgraded)",
+        "Pupil PDF worksheet: you forms questionnaire"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "breakfast table bread tea",
+          "alt": "Breakfast: what do you eat?",
+          "for": "teach:1"
+        },
+        {
+          "find": "open book reading",
+          "alt": "Studying: تَدْرُسُ",
+          "for": "keywords"
+        }
+      ]
     },
     {
-      "unit": "Unit 2: Time and my daily routine",
+      "unit": "Summer 1: At home",
       "n": 7,
-      "title": "My daily routine",
+      "title": "My routine at home: verb and pronoun agreement",
       "duration": 50,
+      "bigQuestion": "The Prophet ﷺ helped at home. What jobs at home could you do every day without being asked?",
       "objectives": [
-        "Describe a daily routine in the right order",
-        "Use sequencing words",
-        "Include prayer and school in the routine"
+        "To understand how every verb agrees with its pronoun, and describe a routine at home"
       ],
+      "successCriteria": [
+        "All: match five pronouns to the right verb prefix",
+        "Most: describe three home jobs with the right verb form",
+        "Some: describe a family member's routine with هُوَ / هِيَ"
+      ],
+      "smsc": "Moral: helping at home; Social: family responsibility",
       "keywords": [
         {
-          "term": "أَوَّلًا",
-          "def": "firstly (awwalan)"
+          "term": "أُرَتِّبُ (urattibu)",
+          "def": "I tidy"
         },
         {
-          "term": "ثُمَّ",
-          "def": "then (thumma)"
+          "term": "أَغْسِلُ الصُّحُونَ (aghsilu s-suhun)",
+          "def": "I wash the dishes"
         },
         {
-          "term": "بَعْدَ ذَلِكَ",
-          "def": "after that (baʿda dhālika)"
+          "term": "أُسَاعِدُ (usa'idu)",
+          "def": "I help"
         },
         {
-          "term": "أَخِيرًا",
-          "def": "finally (akhīran)"
+          "term": "ضَمِير (damir)",
+          "def": "pronoun"
         },
         {
-          "term": "أَسْتَيْقِظُ",
-          "def": "I wake up (astayqiẓu)"
-        },
-        {
-          "term": "أَتَنَاوَلُ الْفُطُورَ",
-          "def": "I have breakfast (atanāwalu l-futūr)"
+          "term": "كُلَّ يَوْمٍ (kulla yawm)",
+          "def": "every day"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "The Prophet ﷺ helped at home. What jobs at home could you do every day without being asked?",
+        "a": "Tidying, washing up, helping cook: Aishah said he served his family until the prayer came (Bukhari)."
+      },
+      "islamicLink": {
+        "text": "Aishah said the Prophet ﷺ used to serve his family, and when the time for prayer came he went out to pray (Bukhari).",
+        "at": "start"
+      },
       "starter": [
-        "Conjugate يَكْتُبُ for 'we' and 'they'.",
-        "Say 'It is quarter past seven' in Arabic.",
-        "What is the Arabic for 'then'?"
+        {
+          "q": "Bismillah. 'You (girl) eat' is ...",
+          "a": "تَأْكُلِينَ",
+          "mins": 1,
+          "options": [
+            "تَأْكُلِينَ",
+            "تَأْكُلُ"
+          ]
+        },
+        {
+          "q": "'You (boy) study' is ...",
+          "a": "تَدْرُسُ",
+          "mins": 1,
+          "options": [
+            "تَدْرُسُ",
+            "أَدْرُسُ"
+          ]
+        },
+        {
+          "q": "Say 'I sleep at ten o'clock'.",
+          "a": "أَنَامُ فِي السَّاعَةِ العَاشِرَةِ",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Morning routine",
-          "bullets": [
-            "أَسْتَيْقِظُ فِي الصَّبَاحِ - astayqiẓu fī ṣ-ṣabāḥ - I wake in the morning",
-            "أُصَلِّي الْفَجْرَ - uṣallī l-fajr - I pray Fajr",
-            "أَغْسِلُ وَجْهِي - aghsilu wajhī - I wash my face",
-            "أَتَنَاوَلُ الْفُطُورَ - I have breakfast"
-          ],
-          "note": "Begin with bismillah. The Prophet (peace be upon him) taught us to say Bismillah before eating (Bukhari and Muslim). Teach each verb with a mime. Note that أَتَنَاوَلُ and أَسْتَيْقِظُ are longer verbs but they use the same أَ prefix and -u ending. Ask pupils to put the actions in order."
+          "heading": "Pronoun and verb",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "table": {
+            "head": [
+              "Pronoun",
+              "Prefix",
+              "يُسَاعِدُ (help)"
+            ],
+            "rows": [
+              [
+                "أَنَا",
+                "أُ / أَ",
+                "أُسَاعِدُ"
+              ],
+              [
+                "أَنْتَ",
+                "تُ / تَ",
+                "تُسَاعِدُ"
+              ],
+              [
+                "أَنْتِ",
+                "تُ ... ـِينَ",
+                "تُسَاعِدِينَ"
+              ],
+              [
+                "هُوَ",
+                "يُ / يَ",
+                "يُسَاعِدُ"
+              ],
+              [
+                "هِيَ",
+                "تُ / تَ",
+                "تُسَاعِدُ"
+              ],
+              [
+                "نَحْنُ",
+                "نُ / نَ",
+                "نُسَاعِدُ"
+              ]
+            ]
+          }
         },
         {
-          "heading": "School and afternoon",
+          "heading": "Jobs at home",
           "bullets": [
-            "أَذْهَبُ إِلَى الْمَدْرَسَةِ - adhhabu ilā l-madrasa - I go to school",
-            "أَدْرُسُ فِي الْفَصْلِ - adrusu fī l-faṣl - I study in the class",
-            "أَعُودُ إِلَى الْبَيْتِ - aʿūdu ilā l-bayt - I return home",
-            "أَعْمَلُ الْوَاجِبَ - aʿmalu l-wājib - I do homework"
+            "أُرَتِّبُ سَرِيرِي: I make my bed",
+            "أَغْسِلُ الصُّحُونَ: I wash the dishes",
+            "أُسَاعِدُ فِي المَطْبَخِ: I help in the kitchen"
           ],
-          "note": "TGA is an online school, so ask: how do you 'go' to your lesson? Offer أَدْخُلُ الدَّرْسَ (I enter the lesson). Misconception: using أَذْهَبُ for every movement; أَعُودُ means return. Pupils say their afternoon in two sentences."
+          "note": "Bukhari: Aishah said the Prophet ﷺ used to serve his family, and when the prayer came he went out to pray. Spoken practice only; no songs or music."
         },
         {
-          "heading": "Evening",
+          "heading": "Quick check",
           "bullets": [
-            "أَنَامُ مُبَكِّرًا - anāmu mubakkiran - I sleep early",
-            "أَقْرَأُ الْقُرْآنَ - aqra'u l-qur'ān - I read the Qur'an",
-            "أَتَعَشَّى مَعَ عَائِلَتِي - ata'ashshā maʿa ʿā'ilatī - I have dinner with my family",
-            "أُصَلِّي الْعِشَاءَ - I pray Isha"
+            "Vote in the Teams poll"
           ],
-          "note": "Link the evening routine with gratitude and family time. Model a sentence with مَعَ (with), which takes kasra on the next noun: مَعَ عَائِلَتِي. Ask a pupil to describe their evening without naming personal details they do not wish to share."
-        },
-        {
-          "heading": "Sequencing words",
-          "bullets": [
-            "أَوَّلًا أَسْتَيْقِظُ - first I wake up",
-            "ثُمَّ أُصَلِّي - then I pray",
-            "بَعْدَ ذَلِكَ أَذْهَبُ - after that I go",
-            "أَخِيرًا أَنَامُ - finally I sleep"
-          ],
-          "note": "Write the four connectives on the board and ask pupils to build a four-sentence routine. Show a model: أَوَّلًا أَسْتَيْقِظُ، ثُمَّ أُصَلِّي الْفَجْرَ، بَعْدَ ذَلِكَ أَتَنَاوَلُ الْفُطُورَ، أَخِيرًا أَذْهَبُ إِلَى الْمَدْرَسَةِ. Remind about commas ( ، ) and the Arabic punctuation."
-        },
-        {
-          "heading": "Add times",
-          "bullets": [
-            "فِي السَّاعَةِ السَّابِعَةِ - at seven o'clock",
-            "أَسْتَيْقِظُ فِي السَّاعَةِ الْخَامِسَةِ - I wake at five",
-            "أَنَامُ فِي السَّاعَةِ التَّاسِعَةِ - I sleep at nine"
-          ],
-          "note": "Combine the time work from the last lesson with routine verbs. Pupils write three sentences with a time. Focus on the kasra after فِي: السَّاعَةِ, السَّابِعَةِ."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "نَحْنُ ... (we tidy)",
+            "options": [
+              "نُرَتِّبُ",
+              "يُرَتِّبُ",
+              "تُرَتِّبُ"
+            ],
+            "answer": 0,
+            "why": "نَحْنُ takes نُ / نَ."
+          }
         }
       ],
       "practice": [
-        "Put the sentences in order: أَنَامُ / أَسْتَيْقِظُ / أُصَلِّي الْفَجْرَ / أَذْهَبُ إِلَى الْمَدْرَسَةِ.",
-        "Say what you do at 7:00 and 9:00.",
-        "Translate: 'First I wake up, then I have breakfast'."
+        {
+          "q": "Change to هِيَ: أَغْسِلُ الصُّحُونَ",
+          "a": "هِيَ تَغْسِلُ الصُّحُونَ",
+          "mins": 2,
+          "model": "Teacher: أَ for 'I' becomes تَ for 'she': تَغْسِلُ. The object stays the same: الصُّحُونَ."
+        },
+        {
+          "q": "The prefix for هُوَ is ...",
+          "a": "يَـ / يُـ",
+          "mins": 1,
+          "options": [
+            "يَـ / يُـ",
+            "نَـ / نُـ"
+          ]
+        },
+        {
+          "q": "أُرَتِّبُ means ...",
+          "a": "I tidy",
+          "mins": 1,
+          "options": [
+            "I tidy",
+            "I wash"
+          ]
+        }
       ],
       "independent": [
-        "Write a routine of eight sentences using four sequencing words.",
-        "Add at least three times to your routine.",
-        "Present your routine in pairs; your partner draws the clock times."
+        {
+          "q": "Write a routine in the portal response box: four sentences about what you do at home every day (with times), and two about a family member with هُوَ / هِيَ. Start: كُلَّ يَوْمٍ ...",
+          "a": "Six sentences with correct prefixes and agreement, times with فِي السَّاعَةِ",
+          "mins": 18,
+          "model": "Teacher writes: كُلَّ يَوْمٍ أُرَتِّبُ سَرِيرِي فِي السَّاعَةِ السَّابِعَةِ. أَخِي يَغْسِلُ الصُّحُونَ بَعْدَ العَشَاءِ."
+        },
+        {
+          "q": "Extend: add one نَحْنُ sentence about the family.",
+          "a": "For example: نَحْنُ نَأْكُلُ العَشَاءَ مَعًا",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Write 'after that I go to school' in Arabic.",
-        "Write one sentence about your evening."
+        {
+          "q": "أَنْتِ verbs end in ...",
+          "a": "ـِينَ",
+          "mins": 1,
+          "options": [
+            "ـِينَ",
+            "ـُونَ"
+          ]
+        },
+        {
+          "q": "Back to our ponder: which job will you do every day?",
+          "a": "Pupils' own in Arabic",
+          "mins": 2
+        }
       ],
-      "homework": "Write your weekend routine in Arabic with at least six verbs.",
-      "send": "SEND: picture sequence cards with verbs. EAL: bilingual verb list with audio. Stretch: write the routine of a family member using هُوَ / هِيَ."
+      "homework": "Do one home job every day this week and say what you are doing in Arabic.",
+      "send": "SEND: prefix card. EAL: jobs picture mat. Stretch: add the plural هُمْ form: يُسَاعِدُونَ.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Summer 1 (At home)",
+        "Portal arabic y8 lesson 7 (upgraded)",
+        "Pupil PDF worksheet: routine frame and prefix table"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "washing dishes sink",
+          "alt": "Washing the dishes",
+          "for": "teach:2"
+        },
+        {
+          "find": "made bed pillows",
+          "alt": "A tidy bed",
+          "for": "keywords"
+        }
+      ]
     },
     {
       "unit": "Unit 2: Time and my daily routine",
@@ -5841,6 +6644,714 @@
           "find": "target archery",
           "alt": "A target",
           "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: At home",
+      "n": 34,
+      "title": "Types of home: where I live",
+      "duration": 50,
+      "bigQuestion": "Would you rather live in a flat in a busy city or a house in a quiet village? What would you gain and lose?",
+      "objectives": [
+        "To understand how to describe types of home and where they are"
+      ],
+      "successCriteria": [
+        "All: name four types of home",
+        "Most: say where I live with أَسْكُنُ فِي",
+        "Some: compare two homes with an adjective and لٰكِنْ"
+      ],
+      "crossCurricular": "Geography: urban and rural settlements",
+      "smsc": "Social: different kinds of home and community",
+      "keywords": [
+        {
+          "term": "أَسْكُنُ (askunu)",
+          "def": "I live"
+        },
+        {
+          "term": "شَقَّة (shaqqah)",
+          "def": "flat"
+        },
+        {
+          "term": "عِمَارَة ('imarah)",
+          "def": "block of flats"
+        },
+        {
+          "term": "طَابِق (tabiq)",
+          "def": "floor; storey"
+        },
+        {
+          "term": "الرِّيف (ar-rif)",
+          "def": "the countryside"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Would you rather live in a flat in a busy city or a house in a quiet village? What would you gain and lose?",
+        "a": "Pupils' own: the city is near the masjid and school; the countryside is quiet with space."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And Allah has made for you your homes a place of rest' (an-Nahl 16:80).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. هٰذِهِ ... (room)",
+          "a": "غُرْفَةٌ",
+          "mins": 1,
+          "options": [
+            "غُرْفَةٌ",
+            "مَطْبَخٌ"
+          ]
+        },
+        {
+          "q": "فِي المَطْبَخِ أَطْبُخُ means ...",
+          "a": "In the kitchen I cook",
+          "mins": 1,
+          "options": [
+            "In the kitchen I cook",
+            "In the bedroom I sleep"
+          ]
+        },
+        {
+          "q": "Name three rooms.",
+          "a": "مَطْبَخ، حَمَّام، غُرْفَةُ النَّوْمِ، غُرْفَةُ الجُلُوسِ",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Types of home",
+          "bullets": [],
+          "note": "Begin with Bismillah. Spoken practice only; no songs or music.",
+          "table": {
+            "head": [
+              "Arabic",
+              "English"
+            ],
+            "rows": [
+              [
+                "بَيْت",
+                "house"
+              ],
+              [
+                "شَقَّة",
+                "flat"
+              ],
+              [
+                "عِمَارَة",
+                "block of flats"
+              ],
+              [
+                "فِيلَّا",
+                "villa"
+              ],
+              [
+                "بَيْتٌ صَغِيرٌ فِي الرِّيفِ",
+                "a small house in the countryside"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Where I live",
+          "bullets": [
+            "أَسْكُنُ فِي شَقَّةٍ: I live in a flat",
+            "فِي الطَّابِقِ الثَّالِثِ: on the third floor",
+            "فِي المَدِينَةِ / فِي الرِّيفِ: in the city / countryside"
+          ],
+          "note": "Pupils say where they live in general terms only (no addresses)."
+        },
+        {
+          "heading": "City or countryside?",
+          "bullets": [],
+          "note": "Discuss, then judge.",
+          "compare": {
+            "left": {
+              "title": "فِي المَدِينَةِ",
+              "points": [
+                "قَرِيبٌ مِنَ المَسْجِدِ",
+                "مُزْدَحِمٌ"
+              ]
+            },
+            "right": {
+              "title": "فِي الرِّيفِ",
+              "points": [
+                "هَادِئٌ",
+                "بَعِيدٌ عَنِ المَدْرَسَةِ"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "شَقَّة is ...",
+            "options": [
+              "A flat",
+              "A garden",
+              "A villa"
+            ],
+            "answer": 0,
+            "why": "شَقَّة = flat."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say: I live in a flat in the city.",
+          "a": "أَسْكُنُ فِي شَقَّةٍ فِي المَدِينَةِ",
+          "mins": 2,
+          "model": "Teacher: أَسْكُنُ (I live) + فِي شَقَّةٍ (in a flat, kasrah with tanwin) + فِي المَدِينَةِ (in the city)."
+        },
+        {
+          "q": "طَابِق is ...",
+          "a": "A floor (storey)",
+          "mins": 1,
+          "options": [
+            "A floor (storey)",
+            "A room"
+          ]
+        },
+        {
+          "q": "هَادِئ means ...",
+          "a": "Quiet",
+          "mins": 1,
+          "options": [
+            "Quiet",
+            "Busy"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Write a short description in the portal response box (no address): the type of home, city or countryside, which floor if a flat, and one good point and one problem joined with لٰكِنْ. Start: أَسْكُنُ فِي ...",
+          "a": "Four or five correct sentences with أَسْكُنُ، فِي and لٰكِنْ",
+          "mins": 17,
+          "model": "Teacher writes: أَسْكُنُ فِي بَيْتٍ فِي المَدِينَةِ. البَيْتُ قَرِيبٌ مِنَ المَسْجِدِ، لٰكِنَّ الشَّارِعَ مُزْدَحِمٌ."
+        },
+        {
+          "q": "Extend: say which you prefer with أُفَضِّلُ and a reason.",
+          "a": "For example: أُفَضِّلُ الرِّيفَ لِأَنَّهُ هَادِئٌ",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "أَسْكُنُ means ...",
+          "a": "I live",
+          "mins": 1,
+          "options": [
+            "I live",
+            "I sit"
+          ]
+        },
+        {
+          "q": "Back to our ponder: city flat or village house?",
+          "a": "Pupils' own with a reason",
+          "mins": 2
+        }
+      ],
+      "homework": "Describe your home to a family member in three Arabic sentences without saying the address.",
+      "send": "SEND: sentence frame with options. EAL: picture word mat. Stretch: use ordinal numbers for floors up to the fifth.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Summer 1 (At home)",
+        "Pupil PDF worksheet: where I live frame"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "apartment block building",
+          "alt": "A block of flats: عِمَارَة",
+          "for": "teach:1"
+        },
+        {
+          "find": "countryside cottage",
+          "alt": "A house in the countryside",
+          "for": "teach:3"
+        },
+        {
+          "find": "city street houses",
+          "alt": "Houses in a city",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: At home",
+      "n": 35,
+      "title": "Asking the time and the times of my day",
+      "duration": 50,
+      "bigQuestion": "'What time is it?' and 'At what time ...?' are different questions. When do you need each?",
+      "objectives": [
+        "To understand how to ask at what time things happen and answer with فِي السَّاعَةِ"
+      ],
+      "successCriteria": [
+        "All: ask فِي أَيِّ سَاعَةٍ ...؟",
+        "Most: answer with فِي السَّاعَةِ + the hour with kasrah",
+        "Some: describe my weekday timetable with five times"
+      ],
+      "smsc": "Moral: using time well",
+      "keywords": [
+        {
+          "term": "فِي أَيِّ سَاعَةٍ؟ (fi ayyi sa'ah)",
+          "def": "at what time?"
+        },
+        {
+          "term": "فِي السَّاعَةِ السَّابِعَةِ (fi s-sa'ati s-sabi'ah)",
+          "def": "at seven o'clock"
+        },
+        {
+          "term": "صَبَاحًا (sabahan)",
+          "def": "in the morning"
+        },
+        {
+          "term": "مَسَاءً (masa'an)",
+          "def": "in the evening"
+        },
+        {
+          "term": "جَدْوَل (jadwal)",
+          "def": "timetable"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "'What time is it?' and 'At what time ...?' are different questions. When do you need each?",
+        "a": "Now (كَمِ السَّاعَةُ؟) versus when something happens (فِي أَيِّ سَاعَةٍ ...؟)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'By time, indeed mankind is in loss' (al-'Asr 103:1-2).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 4:30 is ...",
+          "a": "الرَّابِعَةُ وَالنِّصْفُ",
+          "mins": 1,
+          "options": [
+            "الرَّابِعَةُ وَالنِّصْفُ",
+            "الخَامِسَةُ وَالنِّصْفُ"
+          ]
+        },
+        {
+          "q": "إِلَّا رُبْعًا means ...",
+          "a": "Quarter to",
+          "mins": 1,
+          "options": [
+            "Quarter to",
+            "Quarter past"
+          ]
+        },
+        {
+          "q": "Ask 'what time is it?'",
+          "a": "كَمِ السَّاعَةُ؟",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "At what time?",
+          "bullets": [
+            "فِي أَيِّ سَاعَةٍ تَسْتَيْقِظُ؟",
+            "أَسْتَيْقِظُ فِي السَّاعَةِ السَّادِسَةِ",
+            "After فِي: kasrah on السَّاعَةِ and the number"
+          ],
+          "note": "Begin with Bismillah. Spoken practice only; no songs or music."
+        },
+        {
+          "heading": "Now or when?",
+          "bullets": [],
+          "note": "Pupils show 1 or 2.",
+          "compare": {
+            "left": {
+              "title": "كَمِ السَّاعَةُ؟",
+              "points": [
+                "The time now",
+                "السَّاعَةُ الرَّابِعَةُ"
+              ]
+            },
+            "right": {
+              "title": "فِي أَيِّ سَاعَةٍ؟",
+              "points": [
+                "When something happens",
+                "فِي السَّاعَةِ الرَّابِعَةِ"
+              ]
+            },
+            "label": "vs"
+          }
+        },
+        {
+          "heading": "My weekday",
+          "bullets": [],
+          "note": "Read the model timetable.",
+          "table": {
+            "head": [
+              "Time",
+              "Activity"
+            ],
+            "rows": [
+              [
+                "فِي السَّاعَةِ الخَامِسَةِ صَبَاحًا",
+                "أُصَلِّي الفَجْرَ"
+              ],
+              [
+                "فِي السَّاعَةِ الثَّامِنَةِ",
+                "تَبْدَأُ الدُّرُوسُ"
+              ],
+              [
+                "فِي السَّاعَةِ الوَاحِدَةِ",
+                "أُصَلِّي الظُّهْرَ"
+              ],
+              [
+                "فِي السَّاعَةِ التَّاسِعَةِ مَسَاءً",
+                "أَنَامُ"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'At ten o'clock' is ...",
+            "options": [
+              "فِي السَّاعَةِ العَاشِرَةِ",
+              "السَّاعَةُ العَاشِرَةُ",
+              "فِي السَّاعَةُ العَاشِرَةُ"
+            ],
+            "answer": 0,
+            "why": "After فِي both words take kasrah."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Answer: فِي أَيِّ سَاعَةٍ تَنَامُ؟ (at 9:30)",
+          "a": "أَنَامُ فِي السَّاعَةِ التَّاسِعَةِ وَالنِّصْفِ",
+          "mins": 2,
+          "model": "Teacher: change تَنَامُ (you sleep) to أَنَامُ (I sleep); then فِي السَّاعَةِ التَّاسِعَةِ وَالنِّصْفِ, kasrah throughout."
+        },
+        {
+          "q": "مَسَاءً means ...",
+          "a": "In the evening",
+          "mins": 1,
+          "options": [
+            "In the evening",
+            "In the morning"
+          ]
+        },
+        {
+          "q": "جَدْوَل means ...",
+          "a": "Timetable",
+          "mins": 1,
+          "options": [
+            "Timetable",
+            "Table (furniture)"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Timetable interview in breakout pairs: ask five فِي أَيِّ سَاعَةٍ ...؟ questions about each other's weekday (wake, Fajr, lessons start, Qur'an, sleep) and write the answers in a timetable on the pupil PDF.",
+          "a": "Five correct questions and answers with kasrah after فِي",
+          "mins": 17,
+          "model": "Teacher and a pupil model: فِي أَيِّ سَاعَةٍ تَقْرَأُ القُرْآنَ؟ أَقْرَأُ القُرْآنَ فِي السَّاعَةِ السَّابِعَةِ مَسَاءً."
+        },
+        {
+          "q": "Extend: report one answer about your partner with هُوَ / هِيَ.",
+          "a": "For example: هُوَ يَنَامُ فِي السَّاعَةِ العَاشِرَةِ",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "فِي أَيِّ سَاعَةٍ؟ asks ...",
+          "a": "At what time?",
+          "mins": 1,
+          "options": [
+            "At what time?",
+            "What time is it now?"
+          ]
+        },
+        {
+          "q": "Back to our ponder: when do you need each question?",
+          "a": "Now: كَمِ السَّاعَةُ؟; when: فِي أَيِّ سَاعَةٍ؟",
+          "mins": 2
+        }
+      ],
+      "homework": "Write your weekend timetable in Arabic with five times.",
+      "send": "SEND: timetable frame with times given. EAL: question card. Stretch: include minutes: وَعَشْرُ دَقَائِقَ.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Summer 1 (At home)",
+        "Pupil PDF worksheet: timetable interview"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "school timetable",
+          "alt": "A timetable: جَدْوَل",
+          "for": "keywords"
+        },
+        {
+          "find": "alarm clock morning",
+          "alt": "An alarm clock",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: At home",
+      "n": 36,
+      "title": "Attached pronouns: بَيْتِي، بَيْتُكَ، بَيْتُهُ، بَيْتُهَا",
+      "duration": 50,
+      "bigQuestion": "In Arabic 'my' sticks to the end of the word. What other things in Arabic join together like that?",
+      "objectives": [
+        "To understand how attached pronouns show possession on nouns, including words ending in ة"
+      ],
+      "successCriteria": [
+        "All: say my, your, his, her on a noun",
+        "Most: change ة to ت before an ending",
+        "Some: write about whose room is whose in four sentences"
+      ],
+      "smsc": "Moral: respecting others' homes and property",
+      "keywords": [
+        {
+          "term": "بَيْتِي (bayti)",
+          "def": "my house"
+        },
+        {
+          "term": "بَيْتُكَ / بَيْتُكِ (baytuka / baytuki)",
+          "def": "your house (boy / girl)"
+        },
+        {
+          "term": "بَيْتُهُ (baytuhu)",
+          "def": "his house"
+        },
+        {
+          "term": "بَيْتُهَا (baytuha)",
+          "def": "her house"
+        },
+        {
+          "term": "بَيْتُنَا (baytuna)",
+          "def": "our house"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "In Arabic 'my' sticks to the end of the word. What other things in Arabic join together like that?",
+        "a": "Letters join in writing, and pronouns join to nouns (بَيْتِي) and verbs (أُسَاعِدُهَا)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'O you who believe, do not enter houses other than your own houses until you ask permission and greet their inhabitants' (an-Nur 24:27).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. 'We tidy' is ...",
+          "a": "نُرَتِّبُ",
+          "mins": 1,
+          "options": [
+            "نُرَتِّبُ",
+            "يُرَتِّبُ"
+          ]
+        },
+        {
+          "q": "هِيَ ... (she washes)",
+          "a": "تَغْسِلُ",
+          "mins": 1,
+          "options": [
+            "تَغْسِلُ",
+            "يَغْسِلُ"
+          ]
+        },
+        {
+          "q": "Say 'I help in the kitchen'.",
+          "a": "أُسَاعِدُ فِي المَطْبَخِ",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Endings for nouns",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "table": {
+            "head": [
+              "Ending",
+              "Meaning",
+              "Example"
+            ],
+            "rows": [
+              [
+                "ـِي",
+                "my",
+                "بَيْتِي"
+              ],
+              [
+                "ـُكَ",
+                "your (boy)",
+                "بَيْتُكَ"
+              ],
+              [
+                "ـُكِ",
+                "your (girl)",
+                "بَيْتُكِ"
+              ],
+              [
+                "ـُهُ",
+                "his",
+                "بَيْتُهُ"
+              ],
+              [
+                "ـُهَا",
+                "her",
+                "بَيْتُهَا"
+              ],
+              [
+                "ـُنَا",
+                "our",
+                "بَيْتُنَا"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Words ending in ة",
+          "bullets": [
+            "ة becomes ت before an ending",
+            "غُرْفَة → غُرْفَتِي، غُرْفَتُهُ",
+            "سَيَّارَة → سَيَّارَتُنَا"
+          ],
+          "note": "Pupils spot the change."
+        },
+        {
+          "heading": "No ال with an ending",
+          "bullets": [],
+          "note": "Common error.",
+          "misconception": {
+            "wrong": "البَيْتِي",
+            "right": "بَيْتِي: an attached pronoun already makes it definite, so no ال"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "'Her room' is ...",
+            "options": [
+              "غُرْفَتُهَا",
+              "غُرْفَةُهَا",
+              "الغُرْفَتُهَا"
+            ],
+            "answer": 0,
+            "why": "ة becomes ت, then ـُهَا."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Say 'his kitchen' and 'our garden'.",
+          "a": "مَطْبَخُهُ؛ حَدِيقَتُنَا",
+          "mins": 2,
+          "model": "Teacher: مَطْبَخ + ـُهُ = مَطْبَخُهُ. حَدِيقَة: ة becomes ت, + ـُنَا = حَدِيقَتُنَا."
+        },
+        {
+          "q": "بَيْتُكِ is said to ...",
+          "a": "A girl",
+          "mins": 1,
+          "options": [
+            "A girl",
+            "A boy"
+          ]
+        },
+        {
+          "q": "ـُنَا means ...",
+          "a": "Our",
+          "mins": 1,
+          "options": [
+            "Our",
+            "Their"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Whose is it? On the pupil PDF, rewrite ten phrases with endings (for example غُرْفَة + my = غُرْفَتِي), then write four sentences about rooms in your home and whose they are. Start: هٰذِهِ غُرْفَتِي ...",
+          "a": "Ten correct forms with ة → ت where needed; four correct sentences",
+          "mins": 18,
+          "model": "Teacher does: سَرِير + his = سَرِيرُهُ; سَيَّارَة + our = سَيَّارَتُنَا."
+        },
+        {
+          "q": "Extend: use their: بَيْتُهُمْ.",
+          "a": "For example: بَيْتُهُمْ كَبِيرٌ",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Before an ending, ة becomes ...",
+          "a": "ت",
+          "mins": 1,
+          "options": [
+            "ت",
+            "ه"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what else joins together in Arabic?",
+          "a": "Letters in writing; pronouns on nouns and verbs",
+          "mins": 2
+        }
+      ],
+      "homework": "Label five things at home with 'my' or 'our' in Arabic (sticky notes) and read them aloud.",
+      "send": "SEND: ending cards to attach. EAL: table of endings. Stretch: combine a noun ending and a verb ending in one sentence: أُحِبُّ غُرْفَتِي وَأُرَتِّبُهَا.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary KS3 Arabic scheme of work, Summer 1 (At home)",
+        "Pupil PDF worksheet: whose is it?"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "front door house keys",
+          "alt": "Our house: بَيْتُنَا",
+          "for": "keywords"
+        },
+        {
+          "find": "puzzle pieces joined",
+          "alt": "Joining pieces: endings join nouns",
+          "for": "hook"
         }
       ]
     }
