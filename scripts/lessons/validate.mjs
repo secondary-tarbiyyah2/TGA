@@ -32,6 +32,50 @@ function checkBlock(id, t) {
   return true;
 }
 
+// Placeholder text left in a lesson is a PROBLEM, not a warning: dummy key words ({ term: "term", def: "def" }),
+// "TODO" / "TBC" / "TBD", "lorem ipsum", "xxx", placeholder text, and empty strings where text is required.
+// "term" and "placeholder" are also real maths words (a term of a sequence; a placeholder zero), so a key word
+// is only flagged when its definition is missing or a stand-in, and "placeholder" only when it IS the text.
+// "..." is not flagged: it is a real answer (an ellipsis) and marks fill-in cells in pupil tables.
+const STAND_IN_DEF = /^\s*(def|definition|meaning|tbc|tbd|todo|xxx+|\.\.\.|…|-)?\s*$/i;
+const INLINE_PLACEHOLDER = [/\bTODO\b/, /\bTB[CD]\b/, /lorem ipsum/i, /\bx{3,}\b/i, /[[<{]\s*placeholder/i, /\(\s*placeholder\s*\)/i, /\bplaceholder (text|content|lesson|question|answer|image|picture)\b/i];
+const WHOLE_PLACEHOLDER = /^\s*(placeholder|todo|tbc|tbd|xxx+|lorem ipsum.*|insert .*here)\s*[.:]?\s*$/i;
+function placeholderProblems(l) {
+  const p = [];
+  (Array.isArray(l.keywords) ? l.keywords : []).forEach((k, i) => {
+    const term = k && typeof k === "object" ? k.term : k;
+    const def = k && typeof k === "object" ? k.def : undefined;
+    if (typeof term !== "string" || !term.trim()) p.push(`keywords[${i}]: empty key word`);
+    else if (k && typeof k === "object" && (typeof def !== "string" || STAND_IN_DEF.test(def) || def.trim().toLowerCase() === term.trim().toLowerCase()))
+      p.push(`keywords[${i}] "${term}": placeholder definition ("${def ?? ""}"): write a real, child-friendly definition`);
+  });
+  const required = (v, where) => { if (typeof v === "string" && !v.trim()) p.push(`${where}: empty text`); };
+  ["unit", "title", "bigQuestion", "homework", "send"].forEach((k) => required(l[k], k));
+  ["objectives", "successCriteria", "resources"].forEach((k) => (Array.isArray(l[k]) ? l[k] : []).forEach((v, i) => required(v, `${k}[${i}]`)));
+  if (l.hook && typeof l.hook === "object") required(l.hook.text, "hook.text");
+  (Array.isArray(l.teach) ? l.teach : []).forEach((t, i) => {
+    if (!t || typeof t !== "object") return;
+    required(t.heading, `teach ${i + 1} heading`);
+    (Array.isArray(t.bullets) ? t.bullets : []).forEach((b, j) => required(b, `teach ${i + 1} bullet ${j + 1}`));
+  });
+  ITEM_SECTIONS.forEach((k) => (Array.isArray(l[k]) ? l[k] : []).forEach((x, i) => {
+    if (typeof x === "string") required(x, `${k} ${i + 1}`);
+    else if (x && typeof x === "object") ["q", "a", "model"].forEach((f) => required(x[f], `${k} ${i + 1}.${f}`));
+  }));
+  // Placeholder words anywhere in the lesson's text (key word terms and teach headings may name the real idea).
+  const seen = (s, where, key) => {
+    if (INLINE_PLACEHOLDER.some((re) => re.test(s))) p.push(`${where}: placeholder text "${s.slice(0, 60)}"`);
+    else if (key !== "term" && key !== "heading" && WHOLE_PLACEHOLDER.test(s) && s.trim()) p.push(`${where}: placeholder text "${s.slice(0, 60)}"`);
+  };
+  const walkText = (v, where, key) => {
+    if (typeof v === "string") seen(v, where, key);
+    else if (Array.isArray(v)) v.forEach((x, i) => walkText(x, `${where}[${i}]`, key));
+    else if (v && typeof v === "object") Object.entries(v).forEach(([kk, x]) => walkText(x, where ? `${where}.${kk}` : kk, kk));
+  };
+  walkText(l, "", null);
+  return p;
+}
+
 const isRetired = retiredChecker();
 for (const f of walk(root)) {
   files++;
@@ -61,6 +105,7 @@ for (const f of walk(root)) {
     for (const k of ["practice", "independent", "exit"]) if (!Array.isArray(l[k]) || !l[k].length) err(id, k);
     // Items may be strings or { q, a?, mins? }; plus the optional hook, routines and resources.
     extrasProblems(l).forEach((m) => err(id, m));
+    placeholderProblems(l).forEach((m) => err(id, m));
     if (ITEM_SECTIONS.some((k) => hasAnswers(l[k]))) extraCount.answers++;
     for (const k of ["hook", "routines", "resources", "pictures", "islamicLink"]) if (l[k] != null) extraCount[k]++;
     if (l.hook && l.hook.type === "ponder") extraCount.ponder++;
