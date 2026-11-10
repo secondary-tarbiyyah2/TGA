@@ -559,38 +559,29 @@ export function ApplyForm({
   /** Which child's card is open on the children and documents steps. */
   const [activeKid, setActiveKid] = useState(0);
   /** Local councils looked up from postcodes, shown to the family and saved with the application. */
-  const [homeCouncil, setHomeCouncil] = useState<string | null>(null);
-  const [lastUkCouncil, setLastUkCouncil] = useState<string | null>(null);
+  const [councils, setCouncils] = useState<Record<string, string | null>>({});
   const [failedUploads, setFailedUploads] = useState<string[]>([]);
   const [submitted, setSubmitted] = useState<{ names: string[]; email: string } | null>(null);
   /** The family chose to type the address rather than look it up. */
   const [manualAddress, setManualAddress] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 
-  const homePostcode = livesInUk(values.addressCountry) ? values.addressPostcode.trim() : "";
+  const homePostcode = livesInUk(values.addressCountry) ? values.addressPostcode.trim().toUpperCase() : "";
+  const lastUkPostcode = values.livedInUk === "yes" ? values.lastUkPostcode.trim().toUpperCase() : "";
   useEffect(() => {
     let live = true;
-    if (!UK_POSTCODE_RE.test(homePostcode)) {
-      setHomeCouncil(null);
-      return;
+    for (const pc of [homePostcode, lastUkPostcode]) {
+      if (!UK_POSTCODE_RE.test(pc)) continue;
+      councilFor(pc).then((c) => {
+        if (live) setCouncils((m) => (pc in m ? m : { ...m, [pc]: c }));
+      });
     }
-    councilFor(homePostcode).then((c) => live && setHomeCouncil(c));
     return () => {
       live = false;
     };
-  }, [homePostcode]);
-  const lastUkPostcode = values.livedInUk === "yes" ? values.lastUkPostcode.trim() : "";
-  useEffect(() => {
-    let live = true;
-    if (!UK_POSTCODE_RE.test(lastUkPostcode)) {
-      setLastUkCouncil(null);
-      return;
-    }
-    councilFor(lastUkPostcode).then((c) => live && setLastUkCouncil(c));
-    return () => {
-      live = false;
-    };
-  }, [lastUkPostcode]);
+  }, [homePostcode, lastUkPostcode]);
+  const homeCouncil = councils[homePostcode] ?? null;
+  const lastUkCouncil = councils[lastUkPostcode] ?? null;
 
   useEffect(() => {
     const supabase = getSupabaseClient();
