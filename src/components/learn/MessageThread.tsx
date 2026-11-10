@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { getSupabaseClient } from "@/lib/supabase/client";
 import { ReadTicks } from "@/components/learn/messages/ReadTicks";
 import { MessageTriagePanel } from "@/components/learn/messages/MessageTriagePanel";
+import { notifyMessage } from "@/lib/learn/push";
 
 type Message = {
   id: string;
@@ -127,8 +128,9 @@ export function MessageThread({ threadId, onSent, onRead, aiTriage = false, onTr
     if (!supabase || !body.trim() || !userId) return;
     setBusy(true);
     try {
-      const { error } = await supabase.from("message_thread_messages").insert({ thread_id: threadId, sender_id: userId, body: body.trim() });
+      const { data, error } = await supabase.from("message_thread_messages").insert({ thread_id: threadId, sender_id: userId, body: body.trim() }).select("id").single();
       if (!error) {
+        if (data?.id) void notifyMessage(data.id);
         setBody("");
         await load();
         onSent?.();

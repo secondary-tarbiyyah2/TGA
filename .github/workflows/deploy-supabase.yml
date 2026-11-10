@@ -246,6 +246,21 @@ jobs:
             echo "BBB_SERVER_URL / BBB_SECRET not set in repo secrets; calls will use the Teams fallback."
           fi
 
+      # Web push (push-notify, 0199). The public key is a repo VARIABLE
+      # (also baked into the site build); the private key is a secret.
+      # Generate the pair once with `npx web-push generate-vapid-keys`.
+      - name: Set web push secrets (if provided)
+        env:
+          VAPID_PUBLIC_KEY: ${{ vars.VAPID_PUBLIC_KEY }}
+          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+          VAPID_SUBJECT: ${{ vars.VAPID_SUBJECT || 'mailto:globalacademy@tarbiyyah.co.uk' }}
+        run: |
+          if [ -n "$VAPID_PUBLIC_KEY" ] && [ -n "$VAPID_PRIVATE_KEY" ]; then
+            supabase secrets set --yes --project-ref "${{ steps.project.outputs.ref }}" VAPID_PUBLIC_KEY="$VAPID_PUBLIC_KEY" VAPID_PRIVATE_KEY="$VAPID_PRIVATE_KEY" VAPID_SUBJECT="$VAPID_SUBJECT"
+          else
+            echo "VAPID keys not set; push notifications stay off."
+          fi
+
       # Lets publish-website-content trigger a site rebuild after an admin
       # saves a change in /learn/admin/content (0025_website_content.sql) --
       # same GH_DISPATCH_TOKEN used for the old Sanity webhook setup (a
