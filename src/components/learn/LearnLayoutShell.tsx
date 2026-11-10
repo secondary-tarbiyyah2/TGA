@@ -123,7 +123,7 @@ export function LearnLayoutShell({ children }: { children: React.ReactNode }) {
       <InstallAppSetup />
       <PortalSidebar area={area} session={activeSession} roles={roles} collapsed={collapsed} onToggle={toggleSidebar} />
 
-      <div className={`flex min-h-screen flex-col transition-[padding] duration-200 ease-out ${collapsed ? "lg:pl-[76px]" : "lg:pl-[264px]"}`}>
+      <div className={`flex min-h-screen flex-col transition-[padding] duration-200 ease-out ${collapsed ? "lg:pl-[76px]" : "lg:pl-[280px]"}`}>
         <header className="portal-topbar sticky top-0 z-20">
           <div className="flex h-[60px] items-center gap-2 px-4 sm:px-6 lg:px-8">
             <PortalSidebarDrawer area={area} session={activeSession} roles={roles} />
