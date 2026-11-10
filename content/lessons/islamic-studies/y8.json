@@ -2,7 +2,7 @@
   "subject": "Islamic Studies",
   "year": "y8",
   "board": "TGA Islamic Studies scheme (aqeedah, fiqh, seerah, hadith, akhlaq)",
-  "source": "Drive: RE folder and Islamic Studies schemes folder checked (Edexcel Int. GCSE Islamic Studies spec and KS4 SOW only; no KS3 Islamic material) - adapted to the TGA Islamic Studies scheme and the Edexcel spec content areas (1.4, 1.8, 2.2, 2.3, 2.6, 2.7), own knowledge, authentic sources only | Spring 1 2027 (lessons 1 to 7 and 10 upgraded, 13 and 14 new): Year 8 pack Islamic Studies Spring 1 weeks 1 to 4 and 6 (angels and books; messengers and the Isra and Mi'raj; the Hijrah and Madinah; Badr and lessons from the Seerah; zakah and the unit quiz); unit name from the syllabus yearMap; week 5 (sources of Shari'ah) not timetabled; hadith cited from Bukhari and Muslim or described (seerah reports from Ibn Ishaq named as such); approved seerah text TO CONFIRM | Spring 2 2027 (lessons 11 and 12 upgraded, 15 to 23 new): Year 8 pack Islamic Studies Spring 2 weeks 1 to 6 (the one body hadith and reading a hadith; truthfulness and avoiding lies; Important Lessons units 2 and 3 taken as the pillars of Islam and of iman (titles TO CONFIRM against the school's numbering); amanah and kindness; revision and unit quiz); two lessons a week scaled to the short weeks; hadith from Bukhari and Muslim; lessons v3",
+  "source": "Drive: RE folder and Islamic Studies schemes folder checked (Edexcel Int. GCSE Islamic Studies spec and KS4 SOW only; no KS3 Islamic material) - adapted to the TGA Islamic Studies scheme and the Edexcel spec content areas (1.4, 1.8, 2.2, 2.3, 2.6, 2.7), own knowledge, authentic sources only | Spring 1 2027 (lessons 1 to 7 and 10 upgraded, 13 and 14 new): Year 8 pack Islamic Studies Spring 1 weeks 1 to 4 and 6 (angels and books; messengers and the Isra and Mi'raj; the Hijrah and Madinah; Badr and lessons from the Seerah; zakah and the unit quiz); unit name from the syllabus yearMap; week 5 (sources of Shari'ah) not timetabled; hadith cited from Bukhari and Muslim or described (seerah reports from Ibn Ishaq named as such); approved seerah text TO CONFIRM | Spring 2 2027 (lessons 11 and 12 upgraded, 15 to 23 new): Year 8 pack Islamic Studies Spring 2 weeks 1 to 6 (the one body hadith and reading a hadith; truthfulness and avoiding lies; Important Lessons units 2 and 3 taken as the pillars of Islam and of iman (titles TO CONFIRM against the school's numbering); amanah and kindness; revision and unit quiz); two lessons a week scaled to the short weeks; hadith from Bukhari and Muslim; lessons v3 | Summer 1 2027 (lessons 8 and 9 upgraded, 24 to 31 new): Year 8 pack Islamic Studies Summer 1 weeks 1 to 5 (sources and how scholars use them; the five rulings; worship and its conditions; the first ten days of Dhul-Hijjah and the udhiyah before the Eid al-Adha half term; fasting and its purpose; fasting rules and preparing for Ramadan; ikhlas; riya'; patience at Ta'if; tawakkul and unit quiz); 4:59, 59:7, 2:29, 18:110, 22:37, 2:183-185, 98:5, 107:4-6, 39:10, 2:153, 9:40, 3:173, 65:3; hadith from Bukhari, Muslim, or both, each named on the slide; udhiyah ages and defects given as the common position (schools differ); lessons v3",
   "lessons": [
     {
       "unit": "Spring 1: Iman and the sources of Shari'ah",
@@ -1733,201 +1733,468 @@
       ]
     },
     {
-      "unit": "Unit 3: Fiqh and the sources of Islamic law",
+      "unit": "Summer 1: The law in action",
       "n": 8,
-      "title": "The sources of Shari’ah",
+      "title": "The Qur'an and the Sunnah as sources: how scholars use them",
       "duration": 50,
+      "bigQuestion": "The Qur'an commands salah but does not list how many rak'ahs Dhuhr has. Where do we learn that from?",
       "objectives": [
-        "Name the main sources of Islamic law",
-        "Explain ijma and qiyas simply",
-        "Explain the importance of following the Qur’an and Sunnah"
+        "To understand how scholars take rulings from the Qur'an and the Sunnah, and why the Sunnah explains the Qur'an"
       ],
+      "successCriteria": [
+        "All: name the two main sources of Islamic law",
+        "Most: show how the Sunnah explains a command in the Qur'an",
+        "Some: explain why scholars also use ijma' and qiyas"
+      ],
+      "smsc": "Spiritual: following revelation; Cultural: how Islamic scholarship works",
       "keywords": [
         {
-          "term": "Shari’ah",
-          "def": "the path of Islamic guidance and law from Allah"
+          "term": "masadir (مَصَادِر)",
+          "def": "sources: where rulings come from"
         },
         {
-          "term": "ijma",
-          "def": "agreement of the scholars on a ruling"
+          "term": "Sunnah (سُنَّة)",
+          "def": "the sayings, actions and approvals of the Prophet ﷺ"
         },
         {
-          "term": "qiyas",
+          "term": "ijma' (إِجْمَاع)",
+          "def": "agreement of the scholars"
+        },
+        {
+          "term": "qiyas (قِيَاس)",
           "def": "analogy: applying a ruling to a similar new case"
         },
         {
-          "term": "ijtihad",
-          "def": "scholarly effort to reach a ruling"
+          "term": "hukm (حُكْم)",
+          "def": "a ruling"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "The Qur'an commands salah but does not list how many rak'ahs Dhuhr has. Where do we learn that from?",
+        "a": "From the Sunnah: the Prophet ﷺ showed how to pray. The Sunnah explains the Qur'an."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And whatever the Messenger has given you, take it; and what he has forbidden you, refrain from it' (al-Hashr 59:7).",
+        "at": "start"
+      },
       "starter": [
-        "Name the first two caliphs.",
-        "What is a hadith?",
-        "Why was the Qur’an compiled?"
+        {
+          "q": "Bismillah. Ihsan is to worship Allah as though ...",
+          "a": "You see Him",
+          "mins": 1,
+          "options": [
+            "You see Him",
+            "No one sees you"
+          ]
+        },
+        {
+          "q": "Which hadith collection is described as the most authentic book after the Qur'an?",
+          "a": "Sahih al-Bukhari",
+          "mins": 1,
+          "options": [
+            "Sahih al-Bukhari",
+            "A history book"
+          ]
+        },
+        {
+          "q": "Name one of the pillars of Islam.",
+          "a": "Shahadah, salah, zakah, sawm, Hajj",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "What is Shari’ah?",
-          "bullets": [
-            "“We made for each a way” (5:48)",
-            "The path to Allah’s pleasure",
-            "Covers worship, character and dealings",
-            "Aims to protect life, faith, mind, family and wealth"
-          ],
-          "note": "Begin with bismillah. Edexcel 2.7 passage: 5:48. Note that Shari’ah is far wider than punishments. Ask: what rules guide a school? Compare with the purpose of Shari’ah: a guide for good."
+          "heading": "Return it to Allah and the Messenger",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "quote": {
+            "text": "If you disagree over anything, refer it to Allah and the Messenger.",
+            "source": "an-Nisa' 4:59"
+          }
         },
         {
-          "heading": "The Qur’an and Sunnah",
-          "bullets": [
-            "The Qur’an is the first source",
-            "The Sunnah explains and applies it",
-            "“Obey Allah and obey the Messenger” (4:59)",
-            "Example: the Qur’an orders salah; the Sunnah shows how"
-          ],
-          "note": "Also mention 59:7: ‘Whatever the Messenger gives you, take it, and whatever he forbids, abstain.’ Ask: what would we lose without the Sunnah? Give the example of how to pray or how to perform Hajj."
+          "heading": "The Sunnah explains the Qur'an",
+          "bullets": [],
+          "note": "Pupils complete the last column with you.",
+          "table": {
+            "head": [
+              "The Qur'an says",
+              "The Sunnah shows"
+            ],
+            "rows": [
+              [
+                "Establish salah (2:43)",
+                "Times, rak'ahs, how to pray"
+              ],
+              [
+                "Give zakah (2:43)",
+                "Nisab and amounts"
+              ],
+              [
+                "Hajj to the House (3:97)",
+                "The rites in order"
+              ],
+              [
+                "Fast the month (2:183-185)",
+                "Suhur, iftar and what breaks the fast"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Ijma: consensus",
-          "bullets": [
-            "Agreement of the scholars of a time on a ruling",
-            "Example: the compilation of the Qur’an in one book",
-            "It cannot contradict the Qur’an and Sunnah"
-          ],
-          "note": "Keep it simple. The Prophet ﷺ said his Ummah would not agree upon misguidance (reported in Ibn Majah and elsewhere with varying grading; do not quote it as a precise text). Better: explain that scholars across time have agreed on core matters like the five prayers."
+          "heading": "How a scholar works",
+          "bullets": [],
+          "note": "Follow the order.",
+          "cycle": [
+            "Look in the Qur'an",
+            "Look in the authentic Sunnah",
+            "Check ijma' (agreement)",
+            "Use qiyas for new cases",
+            "Give the ruling with evidence"
+          ]
         },
         {
-          "heading": "Qiyas: analogy",
+          "heading": "Qiyas in action",
           "bullets": [
-            "Applying a known ruling to a new, similar case",
-            "Needs the same reason (illah)",
-            "Example: drugs and alcohol, as both intoxicate"
+            "Wine is forbidden because it intoxicates",
+            "New drugs also intoxicate",
+            "So scholars rule them haram too"
           ],
-          "note": "Use the standard example: alcohol is forbidden because it intoxicates; scholars apply the same reason to other intoxicants. Ask pupils to think of a modern situation where scholars need to reason (new technology). Note that ordinary pupils do not make rulings; we ask qualified scholars."
+          "note": "Muslim: 'Every intoxicant is khamr, and every khamr is haram.' Qiyas extends the reason ('illah) to new cases."
         },
         {
-          "heading": "Following with humility",
+          "heading": "Quick check",
           "bullets": [
-            "We ask qualified scholars",
-            "“Ask the people of knowledge if you do not know” (16:43)",
-            "Scholars may differ in minor matters",
-            "We keep respect and unity"
+            "Vote in the Teams poll"
           ],
-          "note": "Mention the four schools in brief (Hanafi, Maliki, Shafi’i, Hanbali) as ways scholars systematised law; we will revisit in Year 9. Teach adab: no insulting people who follow another valid opinion."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Where do we learn the number of rak'ahs in Dhuhr?",
+            "options": [
+              "The Sunnah",
+              "Qiyas",
+              "Local custom"
+            ],
+            "answer": 0,
+            "why": "The Prophet ﷺ showed the prayer: 'Pray as you have seen me praying' (Bukhari)."
+          }
         }
       ],
       "practice": [
-        "List the four sources of Shari’ah.",
-        "Explain qiyas using the alcohol example.",
-        "Why do we need the Sunnah as well as the Qur’an?"
+        {
+          "q": "Explain why Muslims need the Sunnah to understand the Qur'an. (4 marks, our own question)",
+          "a": "The Qur'an gives commands in general; the Sunnah shows the details (e.g. how to pray); Allah commands obedience to the Messenger (4:59, 59:7).",
+          "mins": 4,
+          "model": "Point 1: the Qur'an gives the command. Develop: 'establish salah' (2:43). Point 2: the Sunnah shows how. Develop: 'Pray as you have seen me praying' (Bukhari), so we know Dhuhr has four rak'ahs."
+        },
+        {
+          "q": "Agreement of the scholars is called ...",
+          "a": "Ijma'",
+          "mins": 1,
+          "options": [
+            "Ijma'",
+            "Qiyas"
+          ]
+        }
       ],
       "independent": [
-        "Create a diagram with the four sources and an example for each.",
-        "Write a paragraph on why qualified scholars are needed to answer fiqh questions.",
-        "Write a short Q and A: ‘Why does Islam have a law?’"
+        {
+          "q": "Source detective on the pupil PDF: for six rulings (praying Fajr two rak'ahs, fasting Ramadan, vaping, the Eid prayer, zakah on gold, energy drinks with alcohol), name the source(s) and explain in one sentence. Long answer in the portal response box for the last two.",
+          "a": "Sunnah; Qur'an and Sunnah; qiyas (harm); Sunnah; Qur'an and Sunnah; qiyas from 'every intoxicant is haram'",
+          "mins": 15,
+          "model": "Teacher does Fajr: 'Source: the Sunnah. The Prophet ﷺ prayed two rak'ahs, and we pray as he prayed (Bukhari).'"
+        },
+        {
+          "q": "Extend: what does 59:7 say about the Messenger's instructions?",
+          "a": "Take what he gives you and refrain from what he forbids",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Name the first two sources of Shari’ah.",
-        "What is qiyas?"
+        {
+          "q": "Qiyas means ...",
+          "a": "Analogy to a similar case",
+          "mins": 1,
+          "options": [
+            "Analogy to a similar case",
+            "Agreement"
+          ]
+        },
+        {
+          "q": "Back to our ponder: where do we learn the rak'ahs of Dhuhr?",
+          "a": "From the Sunnah",
+          "mins": 1
+        }
       ],
-      "homework": "Ask a trusted adult for one example of a ruling taken from the Qur’an and one from the Sunnah.",
-      "send": "SEND/EAL: source cards to sort; stretch: discuss why a source hierarchy is needed."
+      "homework": "Ask an adult at home about one ruling they follow and find whether it comes from the Qur'an, the Sunnah or both.",
+      "send": "SEND: source cards (Q, S, I, Qi) to hold up. EAL: key term list. Stretch: explain the 'illah of the wine ruling and one more qiyas example.",
+      "resources": [
+        "Slides",
+        "School-approved fiqh text for KS3 (TO CONFIRM title with the Islamic Studies lead)",
+        "Pupil PDF worksheet: source detective"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Sahih Bukhari books shelf",
+          "alt": "Books of hadith",
+          "for": "teach:2"
+        },
+        {
+          "find": "Quran on wooden stand",
+          "alt": "The Qur'an",
+          "for": "keywords"
+        }
+      ]
     },
     {
-      "unit": "Unit 3: Fiqh and the sources of Islamic law",
+      "unit": "Summer 1: The law in action",
       "n": 9,
       "title": "Halal, haram and the five rulings",
       "duration": 50,
+      "bigQuestion": "Is everything not mentioned in the Qur'an forbidden, or allowed? Which would make life easier, and why?",
       "objectives": [
-        "Define halal and haram",
-        "Explain the five categories of rulings with examples",
-        "Apply the categories to everyday situations"
+        "To understand the five rulings scholars use to classify every action, and why the default in everyday things is permissible"
       ],
+      "successCriteria": [
+        "All: name the five rulings",
+        "Most: place examples on the scale correctly",
+        "Some: explain the principle that the default of things is permissibility"
+      ],
+      "smsc": "Moral: understanding right and wrong with evidence",
       "keywords": [
         {
-          "term": "fard",
-          "def": "obligatory: rewarded for doing, sinful for leaving"
+          "term": "fard / wajib (فَرْض / وَاجِب)",
+          "def": "obligatory: rewarded if done, sin if left"
         },
         {
-          "term": "mustahabb",
-          "def": "recommended: rewarded for doing, not sinful for leaving"
+          "term": "mustahabb (مُسْتَحَبّ)",
+          "def": "recommended: rewarded if done, no sin if left"
         },
         {
-          "term": "mubah",
-          "def": "permitted: neither rewarded nor sinful"
+          "term": "mubah (مُبَاح)",
+          "def": "permissible: neither reward nor sin in itself"
         },
         {
-          "term": "makruh",
-          "def": "disliked: better to avoid"
+          "term": "makruh (مَكْرُوه)",
+          "def": "disliked: rewarded if left, no sin if done"
         },
         {
-          "term": "haram",
-          "def": "forbidden: sinful to do"
+          "term": "haram (حَرَام)",
+          "def": "forbidden: sin if done, rewarded if left for Allah"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is everything not mentioned in the Qur'an forbidden, or allowed? Which would make life easier, and why?",
+        "a": "In everyday things, the default is allowed unless evidence forbids it; in worship, the default is to follow the evidence."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'It is He who created for you all of that which is on the earth' (al-Baqarah 2:29).",
+        "at": "start"
+      },
       "starter": [
-        "Name the four sources of Shari’ah.",
-        "What is qiyas?",
-        "Where in the Qur’an is Shari’ah mentioned?"
+        {
+          "q": "Bismillah. Qiyas means ...",
+          "a": "Analogy",
+          "mins": 1,
+          "options": [
+            "Analogy",
+            "Agreement"
+          ]
+        },
+        {
+          "q": "The Sunnah explains the ...",
+          "a": "Qur'an",
+          "mins": 1,
+          "options": [
+            "Qur'an",
+            "Calendar"
+          ]
+        },
+        {
+          "q": "Name the four sources scholars use.",
+          "a": "Qur'an, Sunnah, ijma', qiyas",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Halal and haram",
-          "bullets": [
-            "“Eat of what is lawful and good on the earth” (2:168)",
-            "Halal: permitted; haram: forbidden",
-            "Allah permits what is good and forbids what is harmful",
-            "Most things are halal unless prohibited"
-          ],
-          "note": "Begin with bismillah. The principle that the default is permissibility is accepted in matters of dealings and food. Edexcel passage 5:3 lists forbidden meats. Ask: why does Allah forbid? (Protect us from harm.)"
+          "heading": "The scale of rulings",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "numberline": {
+            "min": 1,
+            "max": 5,
+            "step": 1,
+            "marks": [
+              {
+                "at": 1,
+                "label": "Fard"
+              },
+              {
+                "at": 2,
+                "label": "Mustahabb"
+              },
+              {
+                "at": 3,
+                "label": "Mubah"
+              },
+              {
+                "at": 4,
+                "label": "Makruh"
+              },
+              {
+                "at": 5,
+                "label": "Haram"
+              }
+            ]
+          }
         },
         {
-          "heading": "The five rulings",
-          "bullets": [
-            "Fard: five daily prayers",
-            "Mustahabb: extra voluntary prayers",
-            "Mubah: choosing which halal meal to eat",
-            "Makruh: wasting water",
-            "Haram: lying, stealing, riba, alcohol"
-          ],
-          "note": "This is the Ahkam pentad in the Edexcel spec. Note that Hanafis also distinguish wajib from fard; keep to the five categories. Use a number line from ‘must do’ to ‘must not do’. Ask pupils to place examples."
+          "heading": "Place each action",
+          "bullets": [],
+          "note": "Pupils show the ruling number.",
+          "sort": {
+            "columns": [
+              "Fard",
+              "Mustahabb",
+              "Mubah",
+              "Makruh"
+            ],
+            "cards": [
+              "The five daily prayers",
+              "Siwak",
+              "Eating an apple",
+              "Wasting water in wudu",
+              "Fasting Ramadan",
+              "Smiling at a Muslim"
+            ],
+            "answer": [
+              0,
+              1,
+              2,
+              3,
+              0,
+              1
+            ]
+          }
         },
         {
-          "heading": "The doubtful matters",
+          "heading": "The default rule",
           "bullets": [
-            "“The halal is clear and the haram is clear”",
-            "Between them are doubtful matters",
-            "Whoever avoids them protects his religion",
-            "Narrated by an-Nu’man ibn Bashir (Bukhari, Muslim)"
+            "Everyday things: allowed unless evidence forbids",
+            "Worship: only what Allah and His Messenger taught",
+            "The halal is wide; the haram is limited"
           ],
-          "note": "Explain with a practical example: a food product with an unfamiliar ingredient; check the label or ask someone knowledgeable. Ask: how can we avoid over-worry as well as carelessness?"
+          "note": "Allah says He created all that is on earth for you (al-Baqarah 2:29). Bukhari and Muslim: 'Whoever introduces into this matter of ours what is not from it, it is rejected.'"
         },
         {
-          "heading": "Applying the categories",
+          "heading": "Between them: doubtful matters",
+          "bullets": [],
+          "note": "Read together.",
+          "quote": {
+            "text": "The halal is clear and the haram is clear, and between them are doubtful matters which many people do not know.",
+            "source": "Prophet Muhammad ﷺ, reported by an-Nu'man ibn Bashir (Bukhari and Muslim)"
+          }
+        },
+        {
+          "heading": "Quick check",
           "bullets": [
-            "Pray Fajr: fard",
-            "Read extra Qur’an: mustahabb",
-            "Choose a blue or red bag: mubah",
-            "Gossip: haram"
+            "Vote in the Teams poll"
           ],
-          "note": "Run a sorting game with real-life scenarios. Discuss edge cases (e.g. a game that wastes time: makruh? haram?). Stress that we refer complex issues to scholars."
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Using siwak before salah is ...",
+            "options": [
+              "Mustahabb",
+              "Fard",
+              "Haram"
+            ],
+            "answer": 0,
+            "why": "It is a sunnah the Prophet ﷺ encouraged: recommended."
+          }
         }
       ],
       "practice": [
-        "Place these in the five categories: eating halal chicken; praying Dhuhr; backbiting; fasting an extra Monday; wasting food.",
-        "Define halal and haram.",
-        "What should we do with doubtful matters?"
+        {
+          "q": "Explain the difference between makruh and haram.",
+          "a": "Haram brings sin if done; makruh does not bring sin, but leaving it is rewarded.",
+          "mins": 3,
+          "model": "Point: both are things to avoid, but differ in weight. Explain: haram is sinful if done; makruh is disliked, so a Muslim gains reward by leaving it but is not sinful if he does it. Example: wasting water in wudu is disliked."
+        },
+        {
+          "q": "Eating an apple is ...",
+          "a": "Mubah",
+          "mins": 1,
+          "options": [
+            "Mubah",
+            "Fard"
+          ]
+        }
       ],
       "independent": [
-        "Create a ‘Five Rulings’ table with two examples each.",
-        "Write a paragraph on why Islam has categories of rulings.",
-        "Design a poster for food-label checking."
+        {
+          "q": "Ruling cards on the pupil PDF: place twelve everyday actions on the five-point scale and justify four of them in the portal response box with evidence where known. Start: '... is ... because ...'",
+          "a": "Correct placements, for example backbiting haram (49:12), sadaqah mustahabb, sleeping mubah, Ramadan fard",
+          "mins": 15,
+          "model": "Teacher places 'backbiting': 'Haram, because Allah forbids it in al-Hujurat 49:12.'"
+        },
+        {
+          "q": "Extend: how can a mubah action become rewarded?",
+          "a": "With a good intention, such as eating to be strong for worship",
+          "mins": 2
+        }
       ],
       "exit": [
-        "Name the five categories of rulings.",
-        "Is a mubah action rewarded?"
+        {
+          "q": "Which ruling: rewarded if done, sin if left?",
+          "a": "Fard",
+          "mins": 1,
+          "options": [
+            "Fard",
+            "Mustahabb"
+          ]
+        },
+        {
+          "q": "Back to our ponder: is everything not mentioned forbidden?",
+          "a": "No: everyday things are allowed unless evidence forbids",
+          "mins": 2
+        }
       ],
-      "homework": "List five things you do daily and categorise them with explanations.",
-      "send": "SEND/EAL: scenario cards with colours; stretch: explain the wisdom of having a middle category (mubah)."
+      "homework": "Classify ten things you do tomorrow using the five rulings.",
+      "send": "SEND: five coloured ruling cards. EAL: key term list with examples. Stretch: explain why worship has the opposite default to everyday things.",
+      "resources": [
+        "Slides",
+        "School-approved fiqh text for KS3 (TO CONFIRM title with the Islamic Studies lead)",
+        "Pupil PDF worksheet: ruling cards and five-point scale"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "traffic light",
+          "alt": "A traffic light: a scale from go to stop",
+          "for": "hook"
+        },
+        {
+          "find": "miswak stick",
+          "alt": "Siwak: a recommended act",
+          "for": "teach:2"
+        }
+      ]
     },
     {
       "unit": "Spring 1: Iman and the sources of Shari'ah",
@@ -4976,6 +5243,1668 @@
         {
           "find": "target archery",
           "alt": "A target",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: The law in action",
+      "n": 24,
+      "title": "Worship and its conditions: purity and salah revisited",
+      "duration": 50,
+      "bigQuestion": "A cake with perfect ingredients baked at the wrong temperature still fails. What could that teach us about worship?",
+      "objectives": [
+        "To understand the two conditions for any act of worship to be accepted and how purity and salah meet them"
+      ],
+      "successCriteria": [
+        "All: name the two conditions for acceptance",
+        "Most: list the conditions of salah",
+        "Some: explain a case where a deed fails one condition"
+      ],
+      "smsc": "Spiritual: worship done rightly",
+      "keywords": [
+        {
+          "term": "ikhlas (إِخْلَاص)",
+          "def": "doing the deed for Allah alone"
+        },
+        {
+          "term": "mutaba'ah (مُتَابَعَة)",
+          "def": "following the Sunnah in how it is done"
+        },
+        {
+          "term": "shart (شَرْط)",
+          "def": "a condition that must be in place"
+        },
+        {
+          "term": "taharah (طَهَارَة)",
+          "def": "purity of body, clothes and place"
+        },
+        {
+          "term": "bid'ah (بِدْعَة)",
+          "def": "a new invented practice in worship"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A cake with perfect ingredients baked at the wrong temperature still fails. What could that teach us about worship?",
+        "a": "Worship needs the right intention (ikhlas) and the right way (the Sunnah); missing either spoils it."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'So whoever hopes to meet his Lord, let him do righteous work and not associate in the worship of his Lord anyone' (al-Kahf 18:110).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Siwak is ...",
+          "a": "Mustahabb",
+          "mins": 1,
+          "options": [
+            "Mustahabb",
+            "Haram"
+          ]
+        },
+        {
+          "q": "Eating an apple is ...",
+          "a": "Mubah",
+          "mins": 1,
+          "options": [
+            "Mubah",
+            "Makruh"
+          ]
+        },
+        {
+          "q": "Name the five rulings.",
+          "a": "Fard, mustahabb, mubah, makruh, haram",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Two conditions",
+          "bullets": [],
+          "note": "Begin with Bismillah. Read 18:110.",
+          "compare": {
+            "left": {
+              "title": "Ikhlas",
+              "points": [
+                "For Allah alone",
+                "'Not associate anyone in worship' (18:110)"
+              ]
+            },
+            "right": {
+              "title": "Following the Sunnah",
+              "points": [
+                "The way the Prophet ﷺ did it",
+                "'Do righteous work' (18:110)"
+              ]
+            },
+            "label": "and"
+          }
+        },
+        {
+          "heading": "Rejected deeds",
+          "bullets": [],
+          "note": "Read together.",
+          "quote": {
+            "text": "Whoever does a deed that is not in accordance with our matter, it will be rejected.",
+            "source": "Prophet Muhammad ﷺ, reported by Aishah (Muslim)"
+          }
+        },
+        {
+          "heading": "The conditions of salah",
+          "bullets": [],
+          "note": "Pupils tick what they remember from Year 7.",
+          "diagram": {
+            "centre": "Conditions of salah",
+            "items": [
+              "Islam, sanity, discernment",
+              "Wudu or ghusl",
+              "Clean body, clothes, place",
+              "Covering the 'awrah",
+              "The time has entered",
+              "Facing the qiblah",
+              "Intention"
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Someone prays Fajr sincerely but before its time. What is missing?",
+            "options": [
+              "A condition: the time",
+              "Ikhlas",
+              "Nothing"
+            ],
+            "answer": 0,
+            "why": "Salah before its time is not valid; the time is a condition."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain the two conditions for a deed to be accepted. (4 marks, our own question)",
+          "a": "Ikhlas: for Allah alone; following the Sunnah: in the way the Prophet ﷺ taught. Evidence 18:110 and 'it will be rejected' (Muslim).",
+          "mins": 4,
+          "model": "Point 1: ikhlas. Develop: 'not associate in the worship of his Lord anyone' (18:110). Point 2: following the Sunnah. Develop: 'Whoever does a deed not in accordance with our matter, it is rejected' (Muslim)."
+        },
+        {
+          "q": "Covering the 'awrah is a ...",
+          "a": "Condition of salah",
+          "mins": 1,
+          "options": [
+            "Condition of salah",
+            "Pillar of salah"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Fix the worship on the pupil PDF: five case studies (praying to be praised; praying without wudu by mistake; adding a sixth daily prayer; praying on a dirty mat; praying facing the wrong way knowingly). For each, which condition fails and how to fix it. Answer in the portal response box.",
+          "a": "Ikhlas; taharah, repeat after wudu; following the Sunnah (bid'ah); clean place; qiblah",
+          "mins": 15,
+          "model": "Teacher does case 1: 'Fails ikhlas. Fix: renew the intention for Allah; the deed is for Him alone.'"
+        },
+        {
+          "q": "Extend: why does Islam have conditions at all?",
+          "a": "Worship belongs to Allah, so He decides how; it protects the religion from change",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "A deed needs ikhlas and ...",
+          "a": "Following the Sunnah",
+          "mins": 1,
+          "options": [
+            "Following the Sunnah",
+            "A crowd"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what does the cake teach?",
+          "a": "Right intention and right way are both needed",
+          "mins": 2
+        }
+      ],
+      "homework": "Before each salah today, check the conditions in your head: time, purity, covering, qiblah, intention.",
+      "send": "SEND: case study cards with condition icons. EAL: key term list. Stretch: research the difference between a condition (shart) and a pillar (rukn).",
+      "resources": [
+        "Slides",
+        "School-approved fiqh text for KS3 (TO CONFIRM title with the Islamic Studies lead)",
+        "Pupil PDF worksheet: fix the worship case studies"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "baked cake oven",
+          "alt": "A cake: right ingredients and right method",
+          "for": "hook"
+        },
+        {
+          "find": "prayer mat masjid carpet",
+          "alt": "A clean place for salah",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: The law in action",
+      "n": 25,
+      "title": "Dhul-Hijjah and the udhiyah: worship with conditions",
+      "duration": 50,
+      "bigQuestion": "Two families buy an animal for Eid. One sacrifices before the Eid prayer, one after. Does the timing really matter? Why?",
+      "objectives": [
+        "To understand the virtue of the first ten days of Dhul-Hijjah and the conditions that make the udhiyah valid"
+      ],
+      "successCriteria": [
+        "All: name two deeds for the ten days",
+        "Most: give the conditions of the udhiyah: animal, age, time",
+        "Some: apply the two conditions of acceptance to the udhiyah"
+      ],
+      "smsc": "Spiritual: seasons of worship; Moral: ihsan with animals",
+      "keywords": [
+        {
+          "term": "Dhul-Hijjah (ذُو الحِجَّة)",
+          "def": "the month of Hajj"
+        },
+        {
+          "term": "udhiyah (أُضْحِيَة)",
+          "def": "the sacrifice offered for Allah at Eid al-Adha"
+        },
+        {
+          "term": "Yawm 'Arafah (يَوْمُ عَرَفَة)",
+          "def": "the ninth of Dhul-Hijjah"
+        },
+        {
+          "term": "ayyam at-tashriq (أَيَّامُ التَّشْرِيق)",
+          "def": "the three days after Eid"
+        },
+        {
+          "term": "niyyah (نِيَّة)",
+          "def": "intention"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two families buy an animal for Eid. One sacrifices before the Eid prayer, one after. Does the timing really matter? Why?",
+        "a": "Yes: the udhiyah is worship, and worship has conditions. Before the prayer it is just meat (Bukhari and Muslim)."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Their meat will not reach Allah, nor will their blood, but what reaches Him is taqwa from you' (al-Hajj 22:37).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. A deed needs ikhlas and ...",
+          "a": "Following the Sunnah",
+          "mins": 1,
+          "options": [
+            "Following the Sunnah",
+            "Money"
+          ]
+        },
+        {
+          "q": "Praying before the time fails which condition?",
+          "a": "The time",
+          "mins": 1,
+          "options": [
+            "The time",
+            "Ikhlas"
+          ]
+        },
+        {
+          "q": "Give one condition of salah.",
+          "a": "Purity, time, covering, qiblah, intention",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The best days of the year",
+          "bullets": [],
+          "note": "Begin with Bismillah. Expected to begin around 7 May 2027, by moon sighting.",
+          "quote": {
+            "text": "There are no days in which good deeds are more beloved to Allah than these ten days.",
+            "source": "Prophet Muhammad ﷺ, reported by Ibn Abbas (Bukhari)"
+          }
+        },
+        {
+          "heading": "The ten days at home",
+          "bullets": [
+            "Takbir, tahmid and tahlil often",
+            "Fast, especially the Day of Arafah (Muslim)",
+            "Salah, Qur'an, sadaqah, family ties"
+          ],
+          "note": "Muslim: fasting Arafah expiates the year before and the year after. Bukhari reports Ibn Umar and Abu Hurayrah saying takbir in the markets."
+        },
+        {
+          "heading": "Conditions of the udhiyah",
+          "bullets": [],
+          "note": "Schools of fiqh differ on some details; give the common position.",
+          "table": {
+            "head": [
+              "Condition",
+              "Detail"
+            ],
+            "rows": [
+              [
+                "Animal",
+                "Sheep, goat, cow or camel"
+              ],
+              [
+                "Age (common view)",
+                "Sheep 6 months+, goat 1 year, cow 2, camel 5"
+              ],
+              [
+                "Sound",
+                "Free of clear defects: blind in one eye, sick, lame, very thin"
+              ],
+              [
+                "Time",
+                "After the Eid prayer to the end of tashriq"
+              ],
+              [
+                "Sharing",
+                "A cow or camel can be shared by seven"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Ihsan with the animal",
+          "bullets": [
+            "Sharpen the blade, out of the animal's sight",
+            "Say bismillah and Allahu akbar",
+            "No cruelty"
+          ],
+          "note": "Muslim, from Shaddad ibn Aws: 'Allah has prescribed ihsan in all things ... let one of you sharpen his blade.' Bukhari and Muslim: the Prophet ﷺ sacrificed two rams saying bismillah and takbir."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "An udhiyah slaughtered before the Eid prayer ...",
+            "options": [
+              "Does not count; offer another",
+              "Counts double",
+              "Is the best time"
+            ],
+            "answer": 0,
+            "why": "Bukhari and Muslim, from al-Bara'."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Apply the two conditions of acceptance to the udhiyah.",
+          "a": "Ikhlas: offered for Allah, not to show off; following the Sunnah: the right animal, age, soundness and time, with bismillah and takbir.",
+          "mins": 4,
+          "model": "Point 1: ikhlas. Develop: 'what reaches Him is taqwa from you' (22:37). Point 2: following the Sunnah. Develop: after the Eid prayer (Bukhari and Muslim), a sound animal of the right age."
+        },
+        {
+          "q": "How many people can share a cow?",
+          "a": "Seven",
+          "mins": 1,
+          "options": [
+            "Seven",
+            "Two"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Udhiyah checker on the pupil PDF: judge five cases (a lame sheep; a goat of eight months; slaughter on the 12th after Eid; a cow shared by seven; slaughter at Fajr on Eid day) as valid or not, with the reason. Then write a ten days plan in the portal response box.",
+          "a": "Not valid (lame); not valid on the common view (goat under 1 year); valid (tashriq); valid; not valid (before the prayer)",
+          "mins": 14,
+          "model": "Teacher does case 1: 'Lame sheep: not valid, because a clearly lame animal is one of the defects scholars list.'"
+        },
+        {
+          "q": "Extend: what is the ruling on cutting hair and nails for one who will sacrifice?",
+          "a": "He avoids it from the 1st of Dhul-Hijjah until he sacrifices (Muslim)",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Fasting the Day of Arafah expiates ...",
+          "a": "The year before and the year after",
+          "mins": 1,
+          "options": [
+            "The year before and the year after",
+            "One month"
+          ]
+        },
+        {
+          "q": "Back to our ponder: does the timing of the udhiyah matter?",
+          "a": "Yes: it must be after the Eid prayer",
+          "mins": 2
+        }
+      ],
+      "homework": "Keep your ten days plan over the half term; if your family offers an udhiyah, find out how it was shared.",
+      "send": "SEND: case cards with yes/no. EAL: key term list. Stretch: explain why the scholars differ on whether udhiyah is wajib or sunnah.",
+      "resources": [
+        "Slides",
+        "School-approved fiqh text for KS3 (TO CONFIRM title with the Islamic Studies lead)",
+        "Pupil PDF worksheet: udhiyah checker and ten days plan"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "sheep grazing field",
+          "alt": "Sheep for udhiyah",
+          "for": "teach:3"
+        },
+        {
+          "find": "Mount Arafat",
+          "alt": "The plain of Arafah",
+          "for": "teach:2"
+        },
+        {
+          "find": "crescent moon night sky",
+          "alt": "The new moon of Dhul-Hijjah",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: The law in action",
+      "n": 26,
+      "title": "Fasting and its purpose",
+      "duration": 50,
+      "bigQuestion": "If fasting is about hunger, why do you think the Prophet ﷺ warned people who fast but still lie?",
+      "objectives": [
+        "To understand the purpose of fasting and the different kinds of fast in Islam"
+      ],
+      "successCriteria": [
+        "All: say the purpose of fasting from 2:183",
+        "Most: sort fasts into fard and sunnah",
+        "Some: explain how fasting builds taqwa in daily life"
+      ],
+      "crossCurricular": "Science: the body's need for water and energy when fasting",
+      "smsc": "Spiritual: self-discipline; Moral: guarding speech",
+      "keywords": [
+        {
+          "term": "siyam (صِيَام)",
+          "def": "fasting"
+        },
+        {
+          "term": "taqwa (تَقْوَى)",
+          "def": "mindfulness of Allah that protects from sin"
+        },
+        {
+          "term": "qada' (قَضَاء)",
+          "def": "making up a missed obligatory fast"
+        },
+        {
+          "term": "nafl (نَفْل)",
+          "def": "voluntary worship"
+        },
+        {
+          "term": "niyyah (نِيَّة)",
+          "def": "intention"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If fasting is about hunger, why do you think the Prophet ﷺ warned people who fast but still lie?",
+        "a": "Because fasting is about taqwa: guarding the tongue and actions, not only the stomach."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'O you who believe, fasting has been prescribed for you as it was prescribed for those before you, so that you may attain taqwa' (al-Baqarah 2:183).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. An udhiyah before the Eid prayer ...",
+          "a": "Does not count",
+          "mins": 1,
+          "options": [
+            "Does not count",
+            "Is best"
+          ]
+        },
+        {
+          "q": "A cow can be shared by ...",
+          "a": "Seven",
+          "mins": 1,
+          "options": [
+            "Seven",
+            "Three"
+          ]
+        },
+        {
+          "q": "Which day of Dhul-Hijjah is Arafah?",
+          "a": "The ninth",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "So that you may gain taqwa",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "quote": {
+            "text": "O you who believe, fasting has been prescribed for you as it was prescribed for those before you, so that you may attain taqwa.",
+            "source": "al-Baqarah 2:183"
+          }
+        },
+        {
+          "heading": "Fasting with the tongue too",
+          "bullets": [
+            "Whoever does not leave false speech",
+            "Allah has no need of his leaving food and drink",
+            "Fasting is a shield"
+          ],
+          "note": "Bukhari: 'Whoever does not give up false speech and acting on it, Allah has no need for him to give up his food and drink.' Bukhari and Muslim: 'Fasting is a shield.'"
+        },
+        {
+          "heading": "Kinds of fast",
+          "bullets": [],
+          "note": "Pupils show the column number.",
+          "sort": {
+            "columns": [
+              "Fard",
+              "Sunnah (recommended)"
+            ],
+            "cards": [
+              "Ramadan",
+              "Mondays and Thursdays",
+              "Day of Arafah",
+              "Making up missed Ramadan days",
+              "Six days of Shawwal",
+              "Ashura (10 Muharram)"
+            ],
+            "answer": [
+              0,
+              1,
+              1,
+              0,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "The purpose of fasting in 2:183 is ...",
+            "options": [
+              "Taqwa",
+              "Losing weight",
+              "Saving money"
+            ],
+            "answer": 0,
+            "why": "'So that you may attain taqwa.'"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain how fasting builds taqwa. (4 marks, our own question)",
+          "a": "It trains self-control for Allah when no one is watching; it guards the tongue; it reminds us of the poor; evidence 2:183 and the hadith on false speech (Bukhari).",
+          "mins": 4,
+          "model": "Point 1: fasting is private worship. Develop: no one sees if you secretly drink, so you learn Allah watches: taqwa (2:183). Point 2: it trains the tongue. Develop: the hadith on false speech (Bukhari)."
+        },
+        {
+          "q": "Making up missed Ramadan days is ...",
+          "a": "Fard (qada')",
+          "mins": 1,
+          "options": [
+            "Fard (qada')",
+            "Sunnah"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Write a 'fasting fact file' in the portal response box: purpose (with 2:183), three sunnah fasts with evidence where known, and two ways a fast can be spoiled in spirit. Start: 'Muslims fast so that ...'",
+          "a": "Taqwa; Mondays and Thursdays, Arafah (Muslim), Shawwal (Muslim), Ashura (Muslim); lying, arguing",
+          "mins": 15,
+          "model": "Teacher writes the purpose paragraph: 'Muslims fast so that they gain taqwa (2:183): they learn to obey Allah even when no one is watching.'"
+        },
+        {
+          "q": "Extend: which voluntary fast could you try this summer with your parents' agreement?",
+          "a": "For example one Monday or Thursday",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Fasting is called a ...",
+          "a": "Shield",
+          "mins": 1,
+          "options": [
+            "Shield",
+            "Ladder"
+          ]
+        },
+        {
+          "q": "Back to our ponder: why warn those who fast and lie?",
+          "a": "Fasting is for taqwa; lying shows it has not reached the heart",
+          "mins": 2
+        }
+      ],
+      "homework": "With a parent's agreement, plan one voluntary fast (if you are able and well) or one 'tongue fast' day with no complaining.",
+      "send": "SEND: fact file frame. EAL: key term list. Stretch: compare fasting in Ramadan with fasting as an expiation (kaffarah).",
+      "resources": [
+        "Slides",
+        "School-approved fiqh text for KS3 (TO CONFIRM title with the Islamic Studies lead)",
+        "Pupil PDF worksheet: fasting fact file frame"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "dates and water glass",
+          "alt": "Dates and water for breaking a fast",
+          "for": "keywords"
+        },
+        {
+          "find": "shield medieval",
+          "alt": "A shield: fasting protects",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: The law in action",
+      "n": 27,
+      "title": "Fasting: rules review and preparing for the next Ramadan",
+      "duration": 50,
+      "bigQuestion": "Ramadan 2028 is about nine months away. What could you start now that would make it your best Ramadan?",
+      "objectives": [
+        "To understand the main rules of fasting and how to prepare for the next Ramadan from now"
+      ],
+      "successCriteria": [
+        "All: name three things that break the fast",
+        "Most: explain who is excused and what they do",
+        "Some: write a realistic plan to prepare for Ramadan 2028"
+      ],
+      "smsc": "Spiritual: preparing for worship; Moral: self-discipline",
+      "keywords": [
+        {
+          "term": "muftirat (مُفْطِرَات)",
+          "def": "things that break the fast"
+        },
+        {
+          "term": "rukhsah (رُخْصَة)",
+          "def": "a concession: an easing Allah allows"
+        },
+        {
+          "term": "fidyah (فِدْيَة)",
+          "def": "feeding a poor person for each day, for those who cannot fast or make up"
+        },
+        {
+          "term": "suhur (سُحُور)",
+          "def": "the meal before dawn"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Ramadan 2028 is about nine months away. What could you start now that would make it your best Ramadan?",
+        "a": "Small regular habits now: Qur'an, voluntary fasts, salah on time; the best deeds are regular ones."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'Allah intends for you ease and does not intend for you hardship' (al-Baqarah 2:185).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. The purpose of fasting in 2:183 is ...",
+          "a": "Taqwa",
+          "mins": 1,
+          "options": [
+            "Taqwa",
+            "Health"
+          ]
+        },
+        {
+          "q": "Which fast expiates two years of sins?",
+          "a": "The Day of Arafah",
+          "mins": 1,
+          "options": [
+            "The Day of Arafah",
+            "Any Monday"
+          ]
+        },
+        {
+          "q": "Name one sunnah fast.",
+          "a": "Mondays and Thursdays, Arafah, Ashura, six of Shawwal",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "What breaks the fast?",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "table": {
+            "head": [
+              "Breaks the fast",
+              "Does not break it"
+            ],
+            "rows": [
+              [
+                "Eating or drinking on purpose",
+                "Eating or drinking forgetfully"
+              ],
+              [
+                "Deliberate vomiting",
+                "Vomiting without choice"
+              ],
+              [
+                "Smoking or vaping",
+                "Swallowing your own saliva"
+              ],
+              [
+                "Menstrual bleeding",
+                "A blood test (common view)"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Forgot and ate?",
+          "bullets": [],
+          "note": "Read together.",
+          "quote": {
+            "text": "Whoever forgets while fasting and eats or drinks, let him complete his fast, for it is Allah who fed him and gave him drink.",
+            "source": "Prophet Muhammad ﷺ (Bukhari and Muslim)"
+          }
+        },
+        {
+          "heading": "Who is excused?",
+          "bullets": [
+            "The ill and travellers: make up later (2:184)",
+            "Those who cannot ever fast: fidyah",
+            "Children: train gently, not required"
+          ],
+          "note": "Al-Baqarah 2:184-185: Allah intends ease. Speak generally; pupils do not share personal health details."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Someone eats forgetfully while fasting. They ...",
+            "options": [
+              "Complete the fast",
+              "Must break it",
+              "Pay fidyah"
+            ],
+            "answer": 0,
+            "why": "Bukhari and Muslim: it is Allah who fed him."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain how the rules of fasting show Allah's mercy.",
+          "a": "Concessions for the ill and travellers (2:184-185: 'Allah intends ease'), forgetfulness forgiven, fidyah for those who cannot fast.",
+          "mins": 4,
+          "model": "Point: the rules show ease. Evidence: 'Allah intends for you ease and does not intend hardship' (2:185). Explain: the ill and travellers make up later; forgetful eating is forgiven (Bukhari and Muslim)."
+        },
+        {
+          "q": "Fidyah is for someone who ...",
+          "a": "Can never fast or make up",
+          "mins": 1,
+          "options": [
+            "Can never fast or make up",
+            "Was travelling"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Ramadan ready plan in the portal response box: three habits to start now (one Qur'an, one salah, one character), a monthly check, and one voluntary fast to try if able. Start: 'To be ready for Ramadan I will ...'",
+          "a": "A specific, realistic plan with three habits and checks",
+          "mins": 14,
+          "model": "Teacher writes the Qur'an habit: 'I will read two pages after Fajr every day, starting this week.'"
+        },
+        {
+          "q": "Extend: which hadith supports small regular deeds?",
+          "a": "The most beloved deeds to Allah are the most regular, even if small (Bukhari and Muslim)",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Eating forgetfully ... break the fast.",
+          "a": "Does not",
+          "mins": 1,
+          "options": [
+            "Does not",
+            "Does"
+          ]
+        },
+        {
+          "q": "Back to our ponder: what will you start now for Ramadan 2028?",
+          "a": "Pupils' own regular habit",
+          "mins": 2
+        }
+      ],
+      "homework": "Start one habit from your Ramadan ready plan this week and record it.",
+      "send": "SEND: plan frame with habit options. EAL: key term list. Stretch: explain the difference between qada' and fidyah with examples.",
+      "resources": [
+        "Slides",
+        "School-approved fiqh text for KS3 (TO CONFIRM title with the Islamic Studies lead)",
+        "Pupil PDF worksheet: Ramadan ready plan"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "crescent moon night sky",
+          "alt": "The crescent moon that begins Ramadan",
+          "for": "hook"
+        },
+        {
+          "find": "dates and water glass",
+          "alt": "Suhur and iftar food",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: The law in action",
+      "n": 28,
+      "title": "Sincerity (ikhlas)",
+      "duration": 50,
+      "bigQuestion": "Two people do exactly the same good deed. Could one be rewarded and the other not? How?",
+      "objectives": [
+        "To understand what ikhlas is, why Allah accepts only sincere deeds, and how to build it"
+      ],
+      "successCriteria": [
+        "All: define ikhlas",
+        "Most: explain the hadith on intentions and the hijrah example",
+        "Some: give practical ways to strengthen sincerity"
+      ],
+      "smsc": "Spiritual: sincerity",
+      "keywords": [
+        {
+          "term": "ikhlas (إِخْلَاص)",
+          "def": "sincerity: doing deeds for Allah alone"
+        },
+        {
+          "term": "niyyah (نِيَّة)",
+          "def": "intention"
+        },
+        {
+          "term": "tazkiyah (تَزْكِيَة)",
+          "def": "purifying the soul"
+        },
+        {
+          "term": "du'a (دُعَاء)",
+          "def": "asking Allah"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two people do exactly the same good deed. Could one be rewarded and the other not? How?",
+        "a": "Yes: Allah looks at the heart. The hadith on intentions says each person gets what they intended."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And they were not commanded except to worship Allah, being sincere to Him in religion' (al-Bayyinah 98:5).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Eating forgetfully while fasting ...",
+          "a": "Does not break the fast",
+          "mins": 1,
+          "options": [
+            "Does not break the fast",
+            "Breaks the fast"
+          ]
+        },
+        {
+          "q": "Who pays fidyah?",
+          "a": "Someone who can never fast or make up",
+          "mins": 1,
+          "options": [
+            "Someone who can never fast or make up",
+            "A traveller"
+          ]
+        },
+        {
+          "q": "What are the two conditions of acceptance?",
+          "a": "Ikhlas and following the Sunnah",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The hadith on intentions",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "quote": {
+            "text": "Actions are only by intentions, and each person has only what he intended. So whoever's hijrah was for Allah and His Messenger, his hijrah is for Allah and His Messenger; and whoever's hijrah was for some worldly gain or to marry, his hijrah is for what he migrated for.",
+            "source": "Prophet Muhammad ﷺ, reported by Umar (Bukhari and Muslim)"
+          }
+        },
+        {
+          "heading": "Allah looks at the heart",
+          "bullets": [
+            "Not at bodies or appearance",
+            "At hearts and deeds",
+            "Ikhlas is between you and Allah"
+          ],
+          "note": "Muslim: 'Allah does not look at your bodies or your forms, but He looks at your hearts and your deeds.'"
+        },
+        {
+          "heading": "Building ikhlas",
+          "bullets": [],
+          "note": "Pupils rank their top three.",
+          "diagram": {
+            "centre": "Ikhlas",
+            "items": [
+              "Renew the intention before deeds",
+              "Hide some good deeds",
+              "Remember Allah sees",
+              "Du'a for sincerity",
+              "Do not seek praise"
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "In the hadith, the man who migrated to marry gets ...",
+            "options": [
+              "What he migrated for",
+              "The reward of hijrah",
+              "Nothing at all"
+            ],
+            "answer": 0,
+            "why": "Each person has what he intended."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain the hijrah example in the hadith on intentions. (4 marks, our own question)",
+          "a": "The same journey is worship for one (for Allah and His Messenger) and worldly for another (for gain or marriage): the reward follows the intention.",
+          "mins": 4,
+          "model": "Point: the same action can differ in reward. Evidence: the hijrah example (Bukhari and Muslim). Explain: both travelled to Madinah, but only the one who went for Allah got the reward of hijrah."
+        },
+        {
+          "q": "Allah looks at your hearts and ...",
+          "a": "Deeds",
+          "mins": 1,
+          "options": [
+            "Deeds",
+            "Clothes"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Write a reflection in the portal response box: choose three deeds you do every week; for each, write the best intention to have and how you will check your heart. Start: 'When I ..., my intention is ...'",
+          "a": "Three deeds with sincere intentions and a self-check, linked to the hadith",
+          "mins": 15,
+          "model": "Teacher writes: 'When I help with the washing up, my intention is to please Allah and serve my parents. I check by doing it even when no one thanks me.'"
+        },
+        {
+          "q": "Extend: why is ikhlas called the hardest thing for the soul?",
+          "a": "The nafs loves praise; it takes constant effort",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Ikhlas means ...",
+          "a": "Sincerity for Allah alone",
+          "mins": 1,
+          "options": [
+            "Sincerity for Allah alone",
+            "Speed in worship"
+          ]
+        },
+        {
+          "q": "Back to our ponder: can two people get different reward for the same deed?",
+          "a": "Yes, by their intentions",
+          "mins": 2
+        }
+      ],
+      "homework": "Do one good deed in secret every day this week and renew your intention before it.",
+      "send": "SEND: reflection frame with deed examples. EAL: key term list. Stretch: research one scholar's advice on ikhlas from an approved book (cite it).",
+      "resources": [
+        "Slides",
+        "School-approved fiqh text for KS3 (TO CONFIRM title with the Islamic Studies lead)",
+        "Pupil PDF worksheet: intentions reflection"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "heart shape red",
+          "alt": "The heart, which Allah looks at",
+          "for": "keywords"
+        },
+        {
+          "find": "road journey desert",
+          "alt": "A journey: the hijrah example",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: The law in action",
+      "n": 29,
+      "title": "The opposite of ikhlas: riya' and seeking praise",
+      "duration": 50,
+      "bigQuestion": "Posting your good deeds online: inspiring others, or showing off? How would you decide?",
+      "objectives": [
+        "To understand riya' (showing off), why it is dangerous and how a Muslim guards against it"
+      ],
+      "successCriteria": [
+        "All: define riya'",
+        "Most: explain the hadith of the three judged first",
+        "Some: distinguish riya' from good things such as being an example"
+      ],
+      "crossCurricular": "Computing: digital footprint and why we post",
+      "smsc": "Spiritual: sincerity; Moral: honesty online",
+      "keywords": [
+        {
+          "term": "riya' (رِيَاء)",
+          "def": "showing off: worship done to be seen"
+        },
+        {
+          "term": "sum'ah (سُمْعَة)",
+          "def": "doing deeds so people hear of them"
+        },
+        {
+          "term": "'ujb (عُجْب)",
+          "def": "self-admiration: being amazed at yourself"
+        },
+        {
+          "term": "qudwah (قُدْوَة)",
+          "def": "a good example for others"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Posting your good deeds online: inspiring others, or showing off? How would you decide?",
+        "a": "It depends on the intention and effect: guard the heart; sometimes keep it secret, sometimes inspire carefully."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'So woe to those who pray, who are heedless of their prayer, those who make show' (al-Ma'un 107:4-6).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Ikhlas means ...",
+          "a": "Sincerity for Allah alone",
+          "mins": 1,
+          "options": [
+            "Sincerity for Allah alone",
+            "Fear"
+          ]
+        },
+        {
+          "q": "Allah looks at your hearts and ...",
+          "a": "Deeds",
+          "mins": 1,
+          "options": [
+            "Deeds",
+            "Wealth"
+          ]
+        },
+        {
+          "q": "What does the hijrah example show?",
+          "a": "Reward follows intention",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The three judged first",
+          "bullets": [],
+          "note": "Begin with Bismillah. Tell the hadith calmly.",
+          "table": {
+            "head": [
+              "Person",
+              "Did",
+              "Really for"
+            ],
+            "rows": [
+              [
+                "A fighter",
+                "Fought until killed",
+                "To be called brave"
+              ],
+              [
+                "A scholar and reciter",
+                "Learnt and taught",
+                "To be called learned"
+              ],
+              [
+                "A rich man",
+                "Gave in every good cause",
+                "To be called generous"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "The lesson",
+          "bullets": [
+            "Great deeds, empty of ikhlas",
+            "They got what they wanted: people's praise",
+            "Nothing remained for the akhirah"
+          ],
+          "note": "Muslim, from Abu Hurayrah: they were told 'it has been said', meaning they got the praise they sought."
+        },
+        {
+          "heading": "Riya' or not?",
+          "bullets": [],
+          "note": "Pupils show the column number.",
+          "sort": {
+            "columns": [
+              "Danger of riya'",
+              "Not riya'"
+            ],
+            "cards": [
+              "Lengthening salah because guests watch",
+              "Praying the same alone or seen",
+              "Giving more because the list is public",
+              "Teaching a sibling to pray",
+              "Feeling glad when praised afterwards",
+              "Posting charity for likes"
+            ],
+            "answer": [
+              0,
+              1,
+              0,
+              1,
+              1,
+              0
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Feeling glad when someone praises a sincere deed is ...",
+            "options": [
+              "Not riya'; it is good news for the believer",
+              "Major shirk",
+              "Always riya'"
+            ],
+            "answer": 0,
+            "why": "Muslim reports the Prophet ﷺ called this 'the early good news of the believer'."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain why riya' is so dangerous. (4 marks, our own question)",
+          "a": "It empties great deeds of reward, as in the hadith of the three judged first (Muslim); it is minor shirk; it is hidden and hard to notice.",
+          "mins": 4,
+          "model": "Point 1: it removes reward. Develop: the fighter, scholar and donor got only people's praise (Muslim). Point 2: it is a form of minor shirk. Develop: the deed is shared between Allah and people."
+        },
+        {
+          "q": "Doing deeds so people hear of them is ...",
+          "a": "Sum'ah",
+          "mins": 1,
+          "options": [
+            "Sum'ah",
+            "Sabr"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Write a short guide in the portal response box: 'Five ways to post or share good deeds without losing ikhlas', with a reason for each and one evidence. Start: 'Before you post, ask yourself ...'",
+          "a": "Check intention, share to teach not to boast, keep most deeds secret, du'a, stop if the heart changes; hadith of the three or 98:5",
+          "mins": 15,
+          "model": "Teacher writes tip 1: 'Before you post, ask yourself: would I still do this if no one saw it?'"
+        },
+        {
+          "q": "Extend: what is 'ujb and how is it different from riya'?",
+          "a": "'Ujb is admiring yourself; riya' is seeking others' praise",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Riya' is a form of ...",
+          "a": "Minor shirk",
+          "mins": 1,
+          "options": [
+            "Minor shirk",
+            "Sunnah"
+          ]
+        },
+        {
+          "q": "Back to our ponder: inspiring or showing off?",
+          "a": "It depends on the intention; guard the heart",
+          "mins": 2
+        }
+      ],
+      "homework": "Write one sincere du'a for ikhlas and say it after one salah each day.",
+      "send": "SEND: sort cards with symbols. EAL: key term list. Stretch: explain how being a qudwah (good example) can be sincere.",
+      "resources": [
+        "Slides",
+        "School-approved fiqh text for KS3 (TO CONFIRM title with the Islamic Studies lead)",
+        "Pupil PDF worksheet: riya' sort and sharing guide"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "smartphone screen social media likes",
+          "alt": "A phone: the pull of likes",
+          "for": "hook"
+        },
+        {
+          "find": "mirror reflection",
+          "alt": "A mirror: who is it for?",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: The law in action",
+      "n": 30,
+      "title": "Character in the Seerah: patience",
+      "duration": 50,
+      "bigQuestion": "Is patience just waiting, or is it something active? What does a patient person actually do?",
+      "objectives": [
+        "To understand sabr as shown by the Prophet ﷺ in the hardest moments of the Seerah and how we apply it"
+      ],
+      "successCriteria": [
+        "All: name the three kinds of sabr",
+        "Most: explain the Prophet's ﷺ patience at Ta'if",
+        "Some: apply sabr to a real teenage challenge"
+      ],
+      "smsc": "Spiritual: patience; Moral: mercy to those who hurt us",
+      "keywords": [
+        {
+          "term": "sabr (صَبْر)",
+          "def": "patience: holding firm for Allah"
+        },
+        {
+          "term": "Ta'if (الطَّائِف)",
+          "def": "the town that rejected the Prophet ﷺ"
+        },
+        {
+          "term": "'Am al-Huzn (عَامُ الحُزْن)",
+          "def": "the Year of Sorrow"
+        },
+        {
+          "term": "ajr (أَجْر)",
+          "def": "reward"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is patience just waiting, or is it something active? What does a patient person actually do?",
+        "a": "Active: patience is keeping obedience, staying away from sin and accepting what Allah decrees, with action and du'a."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'O you who believe, seek help through patience and prayer. Indeed, Allah is with the patient' (al-Baqarah 2:153).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. Riya' is ...",
+          "a": "Showing off",
+          "mins": 1,
+          "options": [
+            "Showing off",
+            "Backbiting"
+          ]
+        },
+        {
+          "q": "The three judged first got ...",
+          "a": "Only people's praise",
+          "mins": 1,
+          "options": [
+            "Only people's praise",
+            "Jannah"
+          ]
+        },
+        {
+          "q": "Name one way to protect ikhlas.",
+          "a": "Renew intention, hide deeds, du'a",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Three kinds of sabr",
+          "bullets": [],
+          "note": "Begin with Bismillah.",
+          "diagram": {
+            "centre": "Sabr",
+            "items": [
+              "In obeying Allah (Fajr on a cold morning)",
+              "From sin (not answering back)",
+              "With what Allah decrees (illness, loss)"
+            ]
+          }
+        },
+        {
+          "heading": "The Year of Sorrow",
+          "bullets": [],
+          "note": "Order the events.",
+          "timeline": [
+            {
+              "label": "1",
+              "text": "Abu Talib dies"
+            },
+            {
+              "label": "2",
+              "text": "Khadijah dies"
+            },
+            {
+              "label": "3",
+              "text": "Journey to Ta'if"
+            },
+            {
+              "label": "4",
+              "text": "Rejected and stoned"
+            },
+            {
+              "label": "5",
+              "text": "Du'a, not curses"
+            }
+          ]
+        },
+        {
+          "heading": "At Ta'if",
+          "bullets": [
+            "The angel of the mountains offered to crush them",
+            "He said: perhaps their children will worship Allah",
+            "Patience and mercy together"
+          ],
+          "note": "Bukhari and Muslim, from Aishah: the Prophet ﷺ hoped Allah would bring from them people who worship Him alone."
+        },
+        {
+          "heading": "Patience is light",
+          "bullets": [],
+          "note": "Read together.",
+          "quote": {
+            "text": "Indeed, the patient will be given their reward without account.",
+            "source": "az-Zumar 39:10"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "30 seconds, then share.",
+          "check": {
+            "q": "Getting up for Fajr on a cold morning is sabr ...",
+            "options": [
+              "In obeying Allah",
+              "From sin",
+              "With decree"
+            ],
+            "answer": 0,
+            "why": "It is patience in doing an act of worship."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain how the Prophet ﷺ showed sabr at Ta'if. (4 marks, our own question)",
+          "a": "Rejected and harmed, he refused the offer to destroy them and hoped their descendants would worship Allah (Bukhari and Muslim): patience joined with mercy.",
+          "mins": 4,
+          "model": "Point 1: he bore harm without revenge. Develop: he was stoned at Ta'if. Point 2: he chose mercy. Develop: he refused the angel's offer and hoped their children would worship Allah (Bukhari and Muslim)."
+        },
+        {
+          "q": "The patient will be given their reward ...",
+          "a": "Without account",
+          "mins": 1,
+          "options": [
+            "Without account",
+            "Next week"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Sabr in my life, in the portal response box: choose one real challenge (exams, a sibling, a disappointment), name the kind of sabr, and plan three actions and a du'a. Start: 'My challenge is ... This needs sabr ... because ...'",
+          "a": "A real challenge, the right kind of sabr, three practical actions, a du'a",
+          "mins": 15,
+          "model": "Teacher writes: 'My challenge is revising when I would rather play. This needs sabr in obeying Allah, because seeking knowledge is worship.'"
+        },
+        {
+          "q": "Extend: what did Allah give the Prophet ﷺ soon after Ta'if?",
+          "a": "The Isra' and Mi'raj",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "How many kinds of sabr?",
+          "a": "Three",
+          "mins": 1,
+          "options": [
+            "Three",
+            "Two"
+          ]
+        },
+        {
+          "q": "Back to our ponder: is patience just waiting?",
+          "a": "No: it is active, holding firm with action and du'a",
+          "mins": 2
+        }
+      ],
+      "homework": "Practise your sabr plan for one week and note one moment you held firm.",
+      "send": "SEND: three kinds of sabr picture-free cards. EAL: key term list. Stretch: compare the patience of Ayyub (عَلَيْهِ السَّلَام) with Ta'if.",
+      "resources": [
+        "Slides",
+        "School-approved seerah text (TO CONFIRM title with the Islamic Studies lead)",
+        "Pupil PDF worksheet: sabr in my life"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Taif mountains Saudi Arabia",
+          "alt": "The mountains around Ta'if",
+          "for": "teach:3"
+        },
+        {
+          "find": "tree roots strong",
+          "alt": "Deep roots: holding firm",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 1: The law in action",
+      "n": 31,
+      "title": "Character in the Seerah: trust in Allah; unit quiz",
+      "duration": 50,
+      "bigQuestion": "The Prophet ﷺ planned the Hijrah carefully and still said 'Allah is with us'. Why both plan and trust?",
+      "objectives": [
+        "To understand tawakkul as shown in the Seerah and check what I have learnt in this unit"
+      ],
+      "successCriteria": [
+        "All: define tawakkul",
+        "Most: explain tawakkul in the Hijrah and the words 'hasbunallah'",
+        "Some: complete the unit quiz with developed answers"
+      ],
+      "smsc": "Spiritual: trust in Allah",
+      "keywords": [
+        {
+          "term": "tawakkul (تَوَكُّل)",
+          "def": "relying on Allah while taking the means"
+        },
+        {
+          "term": "hasbunallah (حَسْبُنَا اللّٰه)",
+          "def": "Allah is sufficient for us"
+        },
+        {
+          "term": "asbab (أَسْبَاب)",
+          "def": "means: the practical steps we take"
+        },
+        {
+          "term": "yaqin (يَقِين)",
+          "def": "certainty"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "The Prophet ﷺ planned the Hijrah carefully and still said 'Allah is with us'. Why both plan and trust?",
+        "a": "Tawakkul is not instead of planning: take the means, then rely on Allah for the result."
+      },
+      "islamicLink": {
+        "text": "Allah says: 'And whoever relies upon Allah, then He is sufficient for him' (at-Talaq 65:3).",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Bismillah. How many kinds of sabr?",
+          "a": "Three",
+          "mins": 1,
+          "options": [
+            "Three",
+            "Four"
+          ]
+        },
+        {
+          "q": "At Ta'if the Prophet ﷺ hoped their children would ...",
+          "a": "Worship Allah",
+          "mins": 1,
+          "options": [
+            "Worship Allah",
+            "Leave Arabia"
+          ]
+        },
+        {
+          "q": "What does 39:10 promise the patient?",
+          "a": "Reward without account",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Planned, then trusted",
+          "bullets": [],
+          "note": "Begin with Bismillah. Pupils sort the Hijrah into means and trust.",
+          "compare": {
+            "left": {
+              "title": "Means taken",
+              "points": [
+                "Left at night by a back route",
+                "Hid in the Cave of Thawr",
+                "Hired a guide"
+              ]
+            },
+            "right": {
+              "title": "Trust in Allah",
+              "points": [
+                "'Do not grieve; Allah is with us' (9:40)",
+                "Calm when the enemy was at the cave"
+              ]
+            },
+            "label": "and"
+          }
+        },
+        {
+          "heading": "Hasbunallah wa ni'mal-wakil",
+          "bullets": [
+            "Said by Ibrahim when thrown into the fire",
+            "Said by Muhammad ﷺ when warned of an army",
+            "Allah is sufficient, the best Disposer"
+          ],
+          "note": "Bukhari, from Ibn Abbas; Al 'Imran 3:173."
+        },
+        {
+          "heading": "The quiz",
+          "bullets": [
+            "Part A: 15 short questions",
+            "Part B: one 6-mark answer",
+            "Honest work; no notes"
+          ],
+          "note": "Quiz in the portal covering lessons 8, 9 and 24 to 31."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Explain tawakkul using the Hijrah.",
+          "a": "The Prophet ﷺ took every means (night, cave, guide) and relied on Allah, saying 'Allah is with us' (9:40).",
+          "mins": 3,
+          "model": "Point: tawakkul joins means and trust. Evidence: the planning of the Hijrah and 9:40. Explain: he did everything possible and left the result to Allah."
+        },
+        {
+          "q": "'Allah is sufficient for us' is ...",
+          "a": "Hasbunallah",
+          "mins": 1,
+          "options": [
+            "Hasbunallah",
+            "Alhamdulillah"
+          ]
+        }
+      ],
+      "independent": [
+        {
+          "q": "Unit quiz in the portal: Part A (15 marks) on sources, rulings, conditions, the udhiyah, fasting, ikhlas, riya', sabr and tawakkul; Part B in the response box (6 marks): 'Explain two conditions for a deed to be accepted by Allah.' Start: 'The first condition is ...'",
+          "a": "Part A from the unit; Part B: ikhlas (18:110 or 98:5) and following the Sunnah (Muslim: 'it is rejected'), each developed",
+          "mins": 27,
+          "model": "Teacher reads the start sentence and reminds: point, evidence, explain, twice."
+        },
+        {
+          "q": "Extend: check each Part B point has evidence.",
+          "a": "Pupils' own check",
+          "mins": 1
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which lesson in this unit will you revise first?",
+          "a": "Pupils' own",
+          "mins": 1
+        }
+      ],
+      "homework": "Correct the quiz in green and write one target for Summer 2.",
+      "send": "SEND: quiz read aloud, extra time, frame for Part B. EAL: key term list allowed. Stretch: add a third piece of evidence to Part B.",
+      "resources": [
+        "Slides",
+        "School-approved seerah text (TO CONFIRM title with the Islamic Studies lead)",
+        "Portal unit quiz: the law in action (Part A 15, Part B 6)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Jabal Thawr mountain Mecca",
+          "alt": "Mount Thawr, where the cave is",
+          "for": "teach:1"
+        },
+        {
+          "find": "pen and paper test",
+          "alt": "The unit quiz",
           "for": "keywords"
         }
       ]
