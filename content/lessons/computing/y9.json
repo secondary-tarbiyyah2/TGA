@@ -3972,6 +3972,772 @@
           "for": "hook"
         }
       ]
+    },
+    {
+      "unit": "Summer 2: Web design and deeper programming",
+      "n": 21,
+      "title": "HTML structure revisited: headings, lists and links",
+      "duration": 50,
+      "bigQuestion": "A screen reader reads a web page aloud to a blind user. How does it know what is a heading?",
+      "objectives": [
+        "To understand how HTML tags structure a web page with headings, paragraphs, lists and links"
+      ],
+      "successCriteria": [
+        "All: write a page with a heading and paragraph",
+        "Most: add ordered and unordered lists and a link",
+        "Some: explain how semantic tags help accessibility"
+      ],
+      "crossCurricular": "English: structuring texts",
+      "smsc": "Social: accessibility for all",
+      "keywords": [
+        {
+          "term": "HTML",
+          "def": "HyperText Markup Language: structures web pages"
+        },
+        {
+          "term": "tag",
+          "def": "a label in angle brackets, like <p>"
+        },
+        {
+          "term": "element",
+          "def": "an opening tag, content and closing tag"
+        },
+        {
+          "term": "hyperlink",
+          "def": "a link to another page, made with <a href>"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A screen reader reads a web page aloud to a blind user. How does it know what is a heading?",
+        "a": "From the HTML tags: <h1> marks a main heading, so structure helps everyone."
+      },
+      "islamicLink": {
+        "text": "Making information clear and accessible to everyone, including people with disabilities, is a form of kindness and fairness.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "AI is ...",
+          "a": "computers doing tasks that seem intelligent",
+          "mins": 1,
+          "options": [
+            "computers doing tasks that seem intelligent",
+            "a type of cable"
+          ]
+        },
+        {
+          "q": "Name one UK data law.",
+          "a": "UK GDPR / Data Protection Act 2018.",
+          "mins": 1
+        },
+        {
+          "q": "A database record is ...",
+          "a": "one row",
+          "mins": 1,
+          "options": [
+            "one row",
+            "one column"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Page skeleton",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "html",
+            "text": "<!DOCTYPE html>\n<html>\n<head><title>My Masjid Guide</title></head>\n<body>\n  <h1>Visiting a masjid</h1>\n  <p>Here is what to expect.</p>\n</body>\n</html>",
+            "output": "A page with a main heading and a paragraph"
+          }
+        },
+        {
+          "heading": "Lists and links",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "html",
+            "text": "<h2>Etiquette</h2>\n<ul>\n  <li>Take off shoes</li>\n  <li>Keep voices low</li>\n</ul>\n<ol>\n  <li>Enter with the right foot</li>\n  <li>Pray two rak'ahs</li>\n</ol>\n<a href=\"about.html\">About us</a>",
+            "output": "A bulleted list, a numbered list and a link"
+          }
+        },
+        {
+          "heading": "Semantic HTML",
+          "bullets": [
+            "Use h1 to h6 in order",
+            "Use lists for lists",
+            "Alt text on images"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Which tag makes a numbered list?",
+            "options": [
+              "<ol>",
+              "<ul>",
+              "<li>"
+            ],
+            "answer": 0,
+            "why": "Ordered list."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write HTML for a heading 'Recipes' and a bulleted list of two dishes.",
+          "a": "<h2>Recipes</h2><ul><li>Lentil soup</li><li>Rice</li></ul>",
+          "mins": 4,
+          "model": "I do: <h2>Sports</h2><ul><li>Football</li><li>Swimming</li></ul>"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Start a three-page website on a topic of your choice (e.g. a local park guide or a hobby): build the home page with headings, a paragraph, both list types and a link; save and share in the portal.",
+          "a": "A valid home page using all the required tags.",
+          "mins": 12,
+          "model": "The teacher builds the skeleton live."
+        },
+        {
+          "q": "Extend: add an image with alt text.",
+          "a": "<img src=\"park.jpg\" alt=\"A pond in the park\">",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "<a href> makes ...",
+          "a": "a link",
+          "mins": 1,
+          "options": [
+            "a link",
+            "a list"
+          ]
+        },
+        {
+          "q": "Back to our ponder: A screen reader reads a web page aloud to a blind user. How does it know what is a heading?",
+          "a": "From the HTML tags: <h1> marks a main heading, so structure helps everyone.",
+          "mins": 2
+        }
+      ],
+      "homework": "Plan the content for your other two pages.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 9 (web design and deeper programming; no secondary scheme of work supplied)",
+        "A free browser HTML editor (for example CodePen or the school's chosen tool; TO CONFIRM)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "HTML code on screen",
+          "alt": "HTML code",
+          "for": "hook"
+        },
+        {
+          "find": "Website wireframe sketch",
+          "alt": "A page plan",
+          "for": "teach:1"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Web design and deeper programming",
+      "n": 22,
+      "title": "CSS: styling and layout",
+      "duration": 50,
+      "bigQuestion": "Two websites have identical HTML but look totally different. How?",
+      "objectives": [
+        "To understand how CSS styles and lays out HTML using selectors, properties and the box model"
+      ],
+      "successCriteria": [
+        "All: change colour, font and size with CSS",
+        "Most: use the box model (margin, border, padding)",
+        "Some: check colour contrast for accessibility"
+      ],
+      "crossCurricular": "Art: colour and layout",
+      "smsc": "Social: accessible design",
+      "keywords": [
+        {
+          "term": "CSS",
+          "def": "Cascading Style Sheets: controls how a page looks"
+        },
+        {
+          "term": "selector",
+          "def": "picks which elements to style, e.g. h1 or .card"
+        },
+        {
+          "term": "property",
+          "def": "what to change, e.g. color"
+        },
+        {
+          "term": "box model",
+          "def": "content, padding, border and margin around every element"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Two websites have identical HTML but look totally different. How?",
+        "a": "Different CSS: style is separate from structure."
+      },
+      "starter": [
+        {
+          "q": "<ul> makes ...",
+          "a": "a bulleted list",
+          "mins": 1,
+          "options": [
+            "a bulleted list",
+            "a numbered list"
+          ]
+        },
+        {
+          "q": "What does alt text do?",
+          "a": "Describes an image for screen readers.",
+          "mins": 1
+        },
+        {
+          "q": "<h1> is ...",
+          "a": "the main heading",
+          "mins": 1,
+          "options": [
+            "the main heading",
+            "a paragraph"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "CSS rules",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "css",
+            "text": "body {\n  font-family: Arial, sans-serif;\n  background: #fdf8ee;\n  color: #222222;\n}\nh1 {\n  color: #7a5b00;\n  font-size: 2rem;\n}",
+            "output": "Cream background, dark text, a gold heading"
+          }
+        },
+        {
+          "heading": "The box model",
+          "bullets": [],
+          "note": "",
+          "diagram": {
+            "centre": "Element",
+            "items": [
+              "Content",
+              "Padding (inside space)",
+              "Border",
+              "Margin (outside space)"
+            ]
+          }
+        },
+        {
+          "heading": "Accessible colour",
+          "bullets": [
+            "Text contrast at least 4.5 to 1 (WCAG AA)",
+            "Don't rely on colour alone",
+            "Readable font sizes"
+          ],
+          "note": "Check with a free contrast checker."
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Padding is ...",
+            "options": [
+              "space inside the border",
+              "space outside the border",
+              "the text colour"
+            ],
+            "answer": 0,
+            "why": "Inside the border."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write CSS to make all paragraphs dark grey and 18px.",
+          "a": "p { color: #333333; font-size: 18px; }",
+          "mins": 4,
+          "model": "I do: h2 { color: navy; }"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Add a stylesheet to your site: fonts, colours, a card style with padding, border and margin; check contrast; share the updated link.",
+          "a": "Consistent, accessible styling.",
+          "mins": 12,
+          "model": "The teacher links a stylesheet live."
+        },
+        {
+          "q": "Extend: centre the main content with max-width and margin: auto.",
+          "a": "main { max-width: 800px; margin: 0 auto; }",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Text should have contrast of at least ...",
+          "a": "4.5 to 1",
+          "mins": 1,
+          "options": [
+            "4.5 to 1",
+            "1 to 1"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Two websites have identical HTML but look totally different. How?",
+          "a": "Different CSS: style is separate from structure.",
+          "mins": 2
+        }
+      ],
+      "homework": "Write the content for page two.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 9 (web design and deeper programming; no secondary scheme of work supplied)",
+        "A free browser HTML editor (for example CodePen or the school's chosen tool; TO CONFIRM)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "A free colour contrast checker (for example WebAIM's)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "CSS code on screen",
+          "alt": "CSS code",
+          "for": "hook"
+        },
+        {
+          "find": "Box model diagram CSS",
+          "alt": "The box model",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Web design and deeper programming",
+      "n": 23,
+      "title": "Multi-page sites: navigation and images",
+      "duration": 50,
+      "bigQuestion": "Can you use any image you find online on your website?",
+      "objectives": [
+        "To understand how to link pages with consistent navigation and use images responsibly"
+      ],
+      "successCriteria": [
+        "All: link three pages with a navigation bar",
+        "Most: add images with alt text and correct file paths",
+        "Some: explain copyright and choose licensed images"
+      ],
+      "crossCurricular": "Citizenship: copyright law",
+      "smsc": "Moral: respecting creators' rights",
+      "keywords": [
+        {
+          "term": "navigation",
+          "def": "links that let users move between pages"
+        },
+        {
+          "term": "relative path",
+          "def": "a file address based on the current folder"
+        },
+        {
+          "term": "copyright",
+          "def": "legal right of the creator to control copying"
+        },
+        {
+          "term": "Creative Commons",
+          "def": "licences that let others reuse work with conditions"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Can you use any image you find online on your website?",
+        "a": "No: images are usually copyrighted; use your own, or ones with a licence that allows reuse, and credit them."
+      },
+      "islamicLink": {
+        "text": "Islam forbids taking what belongs to others without permission; respecting creators' rights is part of honesty.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "Margin is ...",
+          "a": "space outside the border",
+          "mins": 1,
+          "options": [
+            "space outside the border",
+            "inside"
+          ]
+        },
+        {
+          "q": "Give one CSS property.",
+          "a": "color",
+          "mins": 1
+        },
+        {
+          "q": "CSS controls ...",
+          "a": "how a page looks",
+          "mins": 1,
+          "options": [
+            "how a page looks",
+            "the server"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "A navigation bar",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "html",
+            "text": "<nav>\n  <a href=\"index.html\">Home</a>\n  <a href=\"places.html\">Places</a>\n  <a href=\"tips.html\">Tips</a>\n</nav>",
+            "output": "Three links on every page"
+          }
+        },
+        {
+          "heading": "Images",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "html",
+            "text": "<img src=\"images/pond.jpg\"\n     alt=\"A pond with ducks in the park\"\n     width=\"400\">",
+            "output": "An image with a description"
+          }
+        },
+        {
+          "heading": "Copyright",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Source",
+              "Can I use it?"
+            ],
+            "rows": [
+              [
+                "My own photo of an object or place",
+                "Yes"
+              ],
+              [
+                "Creative Commons with credit",
+                "Yes, follow the licence"
+              ],
+              [
+                "Random image from a search",
+                "No, usually copyrighted"
+              ],
+              [
+                "Photos of people",
+                "No: TGA rule, and permission needed"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "A Creative Commons image ...",
+            "options": [
+              "can be reused following its licence",
+              "can never be used",
+              "has no rules"
+            ],
+            "answer": 0,
+            "why": "Follow the licence."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write the link from index.html to tips.html.",
+          "a": "<a href=\"tips.html\">Tips</a>",
+          "mins": 4,
+          "model": "I do: <a href=\"places.html\">Places</a>"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Build pages two and three, add the same nav bar to all pages, add two licensed images (or your own photos of objects or places) with alt text and credits; share the link.",
+          "a": "Three linked pages with credited images.",
+          "mins": 12,
+          "model": "The teacher adds the nav bar live."
+        },
+        {
+          "q": "Extend: style the nav bar with CSS so it highlights on hover.",
+          "a": "nav a:hover { background: ... }",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Alt text is for ...",
+          "a": "describing images",
+          "mins": 1,
+          "options": [
+            "describing images",
+            "decoration"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Can you use any image you find online on your website?",
+          "a": "No: images are usually copyrighted; use your own, or ones with a licence that allows reuse, and credit them.",
+          "mins": 2
+        }
+      ],
+      "homework": "Check every link on your site works.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 9 (web design and deeper programming; no secondary scheme of work supplied)",
+        "A free browser HTML editor (for example CodePen or the school's chosen tool; TO CONFIRM)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Openverse or Wikimedia Commons for Creative Commons images"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Website navigation bar",
+          "alt": "Navigation",
+          "for": "hook"
+        },
+        {
+          "find": "Creative Commons logo",
+          "alt": "Creative Commons",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Web design and deeper programming",
+      "n": 24,
+      "title": "Testing, evaluating and publishing safely",
+      "duration": 50,
+      "bigQuestion": "Your website is finished. What must you check before anyone else sees it?",
+      "objectives": [
+        "To understand how to test a website, evaluate it against its purpose and publish it safely"
+      ],
+      "successCriteria": [
+        "All: test every link and image",
+        "Most: evaluate usability and accessibility",
+        "Some: explain what personal information must never be published"
+      ],
+      "crossCurricular": "Citizenship: data protection",
+      "smsc": "Moral: privacy and online responsibility",
+      "keywords": [
+        {
+          "term": "usability",
+          "def": "how easy a site is to use"
+        },
+        {
+          "term": "validation",
+          "def": "checking code follows the rules"
+        },
+        {
+          "term": "personal data",
+          "def": "information that identifies a person"
+        },
+        {
+          "term": "digital footprint",
+          "def": "the trail of data you leave online"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your website is finished. What must you check before anyone else sees it?",
+        "a": "Links, images, spelling, accessibility, and that no personal information is on it."
+      },
+      "islamicLink": {
+        "text": "Islam teaches us to guard our own and others' privacy; the Qur'an forbids spying (Al-Hujurat 49:12). We publish carefully.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "A relative path is ...",
+          "a": "based on the current folder",
+          "mins": 1,
+          "options": [
+            "based on the current folder",
+            "a web address"
+          ]
+        },
+        {
+          "q": "What makes an image safe to use?",
+          "a": "A licence that allows reuse, credited.",
+          "mins": 1
+        },
+        {
+          "q": "<nav> holds ...",
+          "a": "navigation links",
+          "mins": 1,
+          "options": [
+            "navigation links",
+            "images only"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Test plan",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Test",
+              "Expected",
+              "Pass?"
+            ],
+            "rows": [
+              [
+                "Each nav link",
+                "Opens the right page",
+                ""
+              ],
+              [
+                "Images",
+                "Load with alt text",
+                ""
+              ],
+              [
+                "HTML validator",
+                "No errors",
+                ""
+              ],
+              [
+                "Contrast",
+                "4.5 to 1 or more",
+                ""
+              ],
+              [
+                "Phone width",
+                "Readable, no sideways scroll",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Never publish",
+          "bullets": [
+            "Full name, address, school",
+            "Photos of yourself or others",
+            "Phone numbers, emails, passwords"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Evaluate",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Purpose met?",
+            "Easy to use?",
+            "Accessible?",
+            "Safe?",
+            "One improvement"
+          ]
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Which is safe to publish on a school project site?",
+            "options": [
+              "A photo of a park pond",
+              "Your home address",
+              "Your phone number"
+            ],
+            "answer": 0,
+            "why": "No personal data."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write one test with its expected result.",
+          "a": "'Click Places on the home page: expected, places.html opens.'",
+          "mins": 4,
+          "model": "I do: 'Resize to phone width: expected, text wraps with no sideways scroll.'"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Run your test plan, fix any failures, check for personal data, then write an evaluation in the portal response box; share the site link with the class only (portal).",
+          "a": "A tested, safe site and an honest evaluation.",
+          "mins": 15,
+          "model": "The teacher tests a model site live."
+        }
+      ],
+      "exit": [
+        {
+          "q": "A digital footprint is ...",
+          "a": "the data trail you leave online",
+          "mins": 1,
+          "options": [
+            "the data trail you leave online",
+            "a shoe print"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Your website is finished. What must you check before anyone else sees it?",
+          "a": "Links, images, spelling, accessibility, and that no personal information is on it.",
+          "mins": 2
+        }
+      ],
+      "homework": "Show your website to your family and ask for one improvement.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 9 (web design and deeper programming; no secondary scheme of work supplied)",
+        "A free browser HTML editor (for example CodePen or the school's chosen tool; TO CONFIRM)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "W3C HTML validator (validator.w3.org)",
+        "Help slide: TGA's DSL through 'Report a concern'"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Checklist with ticks",
+          "alt": "A test plan",
+          "for": "teach:1"
+        },
+        {
+          "find": "Padlock privacy icon",
+          "alt": "Privacy",
+          "for": "teach:2"
+        }
+      ]
     }
   ]
 }

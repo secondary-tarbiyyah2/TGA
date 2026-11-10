@@ -616,94 +616,223 @@
       ]
     },
     {
-      "unit": "Unit 1: Introduction to Scratch",
+      "unit": "Summer 2: Spreadsheets and the Scratch calculator",
       "n": 4,
-      "title": "The Scratch calculator and flowcharts",
+      "title": "The Scratch calculator: arithmetic logic and flowcharts",
       "duration": 50,
+      "bigQuestion": "Your calculator is asked to divide 8 by 0. What should it do?",
       "objectives": [
-        "Draw a flowchart using standard symbols",
-        "Build a calculator that chooses an operation",
-        "Test and evaluate a program against its design"
+        "To understand how to design a calculator with a flowchart and build it in Scratch using variables, operators and selection"
       ],
+      "successCriteria": [
+        "All: draw a flowchart for a two-operation calculator",
+        "Most: build it in Scratch with IF blocks",
+        "Some: test it, including dividing by zero, and fix errors"
+      ],
+      "crossCurricular": "Maths: the four operations",
+      "smsc": "Moral: thoroughness and honesty in testing",
       "keywords": [
         {
           "term": "flowchart",
-          "def": "a diagram that shows the steps of an algorithm using symbols"
+          "def": "a diagram of an algorithm using standard symbols"
         },
         {
-          "term": "terminator",
-          "def": "the start or end symbol (rounded box) in a flowchart"
+          "term": "variable",
+          "def": "a named store for a value"
         },
         {
-          "term": "decision",
-          "def": "a diamond symbol with a yes/no question"
+          "term": "operator",
+          "def": "a symbol for a calculation, such as + or /"
         },
         {
-          "term": "process",
-          "def": "a rectangle showing an action or calculation"
+          "term": "selection",
+          "def": "choosing a path with IF"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your calculator is asked to divide 8 by 0. What should it do?",
+        "a": "Not crash: it should check for zero and show a helpful message."
+      },
+      "islamicLink": {
+        "text": "Checking our work carefully is part of honesty and excellence: Allah loves that when we do a task, we do it well (al-Bayhaqi, graded hasan by later scholars).",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. Work out 15 mod 4.",
-        "Is (7 > 3) AND (3 > 7) true or false?",
-        "Name the three types of programming structure (sequence, selection, ___)."
+        {
+          "q": "=SUM(A1:A5) ...",
+          "a": "adds A1 to A5",
+          "mins": 1,
+          "options": [
+            "adds A1 to A5",
+            "multiplies them"
+          ]
+        },
+        {
+          "q": "What is 15 MOD 4?",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "A decision in a flowchart is a ...",
+          "a": "diamond",
+          "mins": 1,
+          "options": [
+            "diamond",
+            "rectangle"
+          ]
+        }
       ],
       "teach": [
         {
           "heading": "Flowchart symbols",
-          "bullets": [
-            "Rounded box: start or end.",
-            "Parallelogram: input or output.",
-            "Rectangle: process.",
-            "Diamond: decision."
-          ],
-          "note": "Draw each symbol on screen and give an example. These symbols are used in GCSE Computer Science exams. Ask pupils to say which symbol would show 'ask for number 1'. Parallelogram."
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Symbol",
+              "Use"
+            ],
+            "rows": [
+              [
+                "Rounded box",
+                "Start or end"
+              ],
+              [
+                "Parallelogram",
+                "Input or output"
+              ],
+              [
+                "Rectangle",
+                "Process"
+              ],
+              [
+                "Diamond",
+                "Decision"
+              ]
+            ]
+          }
         },
         {
-          "heading": "Flowchart for a calculator",
-          "bullets": [
-            "Start.",
-            "Input number 1, number 2 and operator.",
-            "Decision: is operator '+'?",
-            "Output result. End."
-          ],
-          "note": "Build the flowchart step by step. Show how decisions chain: if not +, check -, then *, then /. Ask pupils to trace through with 8, 2 and '*' (16)."
+          "heading": "The calculator in Scratch",
+          "bullets": [],
+          "note": "",
+          "code": {
+            "lang": "scratch",
+            "text": "when green flag clicked\nask [First number?] and wait\nset num1 to (answer)\nask [Second number?] and wait\nset num2 to (answer)\nask [Operator + - * /?] and wait\nif <(answer) = [+]> then\n  say (num1 + num2)\nelse\n  if <(answer) = [/]> then\n    if <(num2) = [0]> then say [Cannot divide by zero]\n    else say (num1 / num2)",
+            "output": "Asks for two numbers and an operator, then shows the result"
+          }
         },
         {
-          "heading": "Build the calculator",
-          "bullets": [
-            "Ask for two numbers and an operator.",
-            "IF operator = '+' THEN add.",
-            "ELSE IF operator = '-' THEN subtract."
-          ],
-          "note": "Convert the flowchart to Scratch blocks. Point out how each diamond becomes an IF block. Take care with division by zero: ask what should happen if number 2 is 0 and let pupils suggest adding a check."
+          "heading": "Test table",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Inputs",
+              "Expected",
+              "Actual"
+            ],
+            "rows": [
+              [
+                "8, 2, +",
+                "10",
+                ""
+              ],
+              [
+                "8, 2, /",
+                "4",
+                ""
+              ],
+              [
+                "8, 0, /",
+                "Cannot divide by zero",
+                ""
+              ]
+            ]
+          }
         },
         {
-          "heading": "Test and improve",
-          "bullets": [
-            "Test each operator.",
-            "Test unusual input like 0.",
-            "Compare the result with the flowchart."
-          ],
-          "note": "Use the test table again: input, expected, actual. Ask: does the program do what the design says? Invite pupils to describe one improvement. Linking to honesty in work: we check our work thoroughly rather than just hoping it is right."
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Which flowchart symbol is 'Is operator +?'",
+            "options": [
+              "Diamond",
+              "Rectangle",
+              "Parallelogram"
+            ],
+            "answer": 0,
+            "why": "A decision."
+          }
         }
       ],
       "practice": [
-        "Which flowchart symbol is used for 'Is the number even?'",
-        "Trace the calculator with 12, 4 and '/'. What is the output? (3)",
-        "Why must we check for division by zero?"
+        {
+          "q": "Trace the program with 12, 4 and '/'. Output?",
+          "a": "3",
+          "mins": 4,
+          "model": "I do: 8, 2, '+' → 10."
+        }
       ],
       "independent": [
-        "Draw a flowchart for a calculator that adds or subtracts two numbers.",
-        "Build the calculator in Scratch with four operators and test it with at least 6 test cases.",
-        "Stretch: add a check for division by zero that displays a friendly error message."
+        {
+          "q": "Draw the flowchart on the pupil PDF, build the calculator in Scratch for + - * /, complete the test table and share the project link in the portal.",
+          "a": "A working calculator with all four operations and the zero check.",
+          "mins": 12,
+          "model": "The teacher builds the + branch live."
+        },
+        {
+          "q": "Extend: add a loop so the user can do another calculation.",
+          "a": "A repeat until loop with a 'Again?' question.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Which symbol shows a decision?",
-        "Give one test case for the calculator and its expected output."
+        {
+          "q": "Dividing by zero should ...",
+          "a": "show a helpful message",
+          "mins": 1,
+          "options": [
+            "show a helpful message",
+            "crash"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Your calculator is asked to divide 8 by 0. What should it do?",
+          "a": "Not crash: it should check for zero and show a helpful message.",
+          "mins": 2
+        }
       ],
-      "homework": "Draw a flowchart for a program that decides whether a number typed by the user is positive, negative or zero.",
-      "send": "SEND/EAL: provide a flowchart with missing text to complete and a symbol key. Stretch: draw the flowchart for a program that works out the area of either a rectangle or a triangle."
+      "homework": "Ask a family member to test your calculator and note any bug.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 7 (spreadsheets and the Scratch calculator; no secondary scheme of work supplied)",
+        "Scratch 3 in the browser (scratch.mit.edu, no account needed to build; TO CONFIRM school accounts)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)",
+        "Portal computing y7 lesson 4 (upgraded)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Calculator keypad",
+          "alt": "A calculator",
+          "for": "hook"
+        },
+        {
+          "find": "Flowchart diagram symbols",
+          "alt": "Flowchart symbols",
+          "for": "teach:1"
+        }
+      ]
     },
     {
       "unit": "Spring 1: Think like a computer: algorithms",
@@ -3509,6 +3638,607 @@
           "find": "Publish button",
           "alt": "Publishing",
           "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Spreadsheets and the Scratch calculator",
+      "n": 18,
+      "title": "Spreadsheets: cells, data and simple formulae",
+      "duration": 50,
+      "bigQuestion": "A shop changes one price. Why does the total update by itself in a spreadsheet but not on paper?",
+      "objectives": [
+        "To understand how spreadsheets store data in cells and calculate with formulae and cell references"
+      ],
+      "successCriteria": [
+        "All: identify a cell reference, row and column",
+        "Most: write formulae with + - * / and SUM",
+        "Some: explain why cell references are better than typed numbers"
+      ],
+      "crossCurricular": "Maths: formulae and averages",
+      "smsc": "Moral: accuracy and honesty in records",
+      "keywords": [
+        {
+          "term": "cell",
+          "def": "one box in a spreadsheet, named by column and row, e.g. B3"
+        },
+        {
+          "term": "formula",
+          "def": "a calculation starting with ="
+        },
+        {
+          "term": "cell reference",
+          "def": "the address of a cell used in a formula"
+        },
+        {
+          "term": "function",
+          "def": "a built-in formula such as SUM or AVERAGE"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A shop changes one price. Why does the total update by itself in a spreadsheet but not on paper?",
+        "a": "Formulae use cell references, so when a value changes, the result recalculates automatically."
+      },
+      "islamicLink": {
+        "text": "Islam values honest, accurate record keeping: Allah commands writing down debts accurately (Al-Baqarah 2:282). Spreadsheets help keep fair records.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "A firewall ...",
+          "a": "filters network traffic",
+          "mins": 1,
+          "options": [
+            "filters network traffic",
+            "cools the computer"
+          ]
+        },
+        {
+          "q": "Name an HTML tag.",
+          "a": "<h1>",
+          "mins": 1
+        },
+        {
+          "q": "Phishing is ...",
+          "a": "a trick to steal details",
+          "mins": 1,
+          "options": [
+            "a trick to steal details",
+            "a game"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Cells, rows and columns",
+          "bullets": [
+            "Columns: letters (A, B, C)",
+            "Rows: numbers (1, 2, 3)",
+            "Cell B3: column B, row 3"
+          ],
+          "note": "Share the spreadsheet on screen."
+        },
+        {
+          "heading": "Formulae",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Formula",
+              "Does"
+            ],
+            "rows": [
+              [
+                "=B2+C2",
+                "Adds two cells"
+              ],
+              [
+                "=B2*C2",
+                "Multiplies"
+              ],
+              [
+                "=SUM(B2:B6)",
+                "Adds a range"
+              ],
+              [
+                "=AVERAGE(B2:B6)",
+                "Mean of a range"
+              ],
+              [
+                "=MAX(B2:B6)",
+                "Largest value"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "A sadaqah tracker",
+          "bullets": [],
+          "note": "Example data.",
+          "table": {
+            "head": [
+              "Row",
+              "A",
+              "B",
+              "C"
+            ],
+            "rows": [
+              [
+                "1",
+                "Week",
+                "Saved (£)",
+                "Given (£)"
+              ],
+              [
+                "2",
+                "1",
+                "5",
+                "1"
+              ],
+              [
+                "3",
+                "2",
+                "4",
+                "2"
+              ],
+              [
+                "4",
+                "Total",
+                "=SUM(B2:B3) → 9",
+                "=SUM(C2:C3) → 3"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Which formula adds cells B2 to B6?",
+            "options": [
+              "=SUM(B2:B6)",
+              "SUM B2-B6",
+              "=B2:B6"
+            ],
+            "answer": 0,
+            "why": "Formulae start with = and use a range."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write a formula for the average of C2 to C10.",
+          "a": "=AVERAGE(C2:C10)",
+          "mins": 4,
+          "model": "I do: total of D2 to D5: =SUM(D2:D5)."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Build a pocket money and sadaqah tracker for 6 weeks (example data) with totals, averages and the maximum; save it and upload the file to the portal.",
+          "a": "Correct formulae using cell references.",
+          "mins": 12,
+          "model": "The teacher builds the headings and first formula."
+        },
+        {
+          "q": "Extend: add a column that works out 'Saved minus Given' for each week.",
+          "a": "=B2-C2 filled down.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Every formula starts with ...",
+          "a": "=",
+          "mins": 1,
+          "options": [
+            "=",
+            "+",
+            "#"
+          ]
+        },
+        {
+          "q": "Back to our ponder: A shop changes one price. Why does the total update by itself in a spreadsheet but not on paper?",
+          "a": "Formulae use cell references, so when a value changes, the result recalculates automatically.",
+          "mins": 2
+        }
+      ],
+      "homework": "Use a spreadsheet to record the time you spend on homework for one week.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 7 (spreadsheets and the Scratch calculator; no secondary scheme of work supplied)",
+        "A free spreadsheet program (for example Google Sheets or LibreOffice Calc through the school; TO CONFIRM)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Spreadsheet grid screen",
+          "alt": "A spreadsheet",
+          "for": "hook"
+        },
+        {
+          "find": "Calculator",
+          "alt": "Calculation",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Spreadsheets and the Scratch calculator",
+      "n": 19,
+      "title": "End-of-year computing test",
+      "duration": 50,
+      "bigQuestion": "Which Year 7 computing topic would you most like to teach a younger pupil?",
+      "objectives": [
+        "To understand how well I know Year 7 computing, so I can set targets for Year 8"
+      ],
+      "successCriteria": [
+        "All: answer the knowledge questions on algorithms, networks and safety",
+        "Most: trace and correct a short Scratch program",
+        "Some: write a formula and an algorithm for a new problem"
+      ],
+      "smsc": "Moral: honest effort under test conditions",
+      "keywords": [
+        {
+          "term": "algorithm",
+          "def": "a set of steps to solve a problem"
+        },
+        {
+          "term": "network",
+          "def": "computers connected to share data"
+        },
+        {
+          "term": "trace",
+          "def": "follow a program step by step to find its output"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which Year 7 computing topic would you most like to teach a younger pupil?",
+        "a": "Any honest answer: algorithms, Scratch, HTML, networks, staying safe."
+      },
+      "starter": [
+        {
+          "q": "Selection uses ...",
+          "a": "IF",
+          "mins": 1,
+          "options": [
+            "IF",
+            "REPEAT"
+          ]
+        },
+        {
+          "q": "Name a flowchart symbol.",
+          "a": "Diamond.",
+          "mins": 1
+        },
+        {
+          "q": "A spreadsheet formula starts with ...",
+          "a": "=",
+          "mins": 1,
+          "options": [
+            "=",
+            "?"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The test",
+          "bullets": [],
+          "note": "",
+          "table": {
+            "head": [
+              "Section",
+              "Marks",
+              "Time"
+            ],
+            "rows": [
+              [
+                "A: knowledge (multiple choice and short answer)",
+                "20",
+                "15 min"
+              ],
+              [
+                "B: trace and debug Scratch",
+                "10",
+                "10 min"
+              ],
+              [
+                "C: spreadsheet formula and an algorithm",
+                "10",
+                "10 min"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Year 7 recap",
+          "bullets": [],
+          "note": "",
+          "diagram": {
+            "centre": "Year 7 computing",
+            "items": [
+              "Algorithms and flowcharts",
+              "Scratch programming",
+              "Networks",
+              "HTML",
+              "Cyber security",
+              "Spreadsheets"
+            ]
+          }
+        },
+        {
+          "heading": "Tips",
+          "bullets": [
+            "Read every question twice",
+            "Trace with a table",
+            "Show working for formulae"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "Tracing a program means ...",
+            "options": [
+              "following it step by step",
+              "rewriting it",
+              "deleting it"
+            ],
+            "answer": 0,
+            "why": "Follow each step."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Warm-up: what does REPEAT 4 [move 10] do?",
+          "a": "Moves 40 steps in total.",
+          "mins": 3,
+          "model": "I do: REPEAT 3 [say hi] says hi three times."
+        }
+      ],
+      "independent": [
+        {
+          "q": "End-of-year computing test (portal quiz or pupil PDF), timed.",
+          "a": "Completed test marked against the mark scheme.",
+          "mins": 22,
+          "model": "The teacher reads the instructions."
+        }
+      ],
+      "exit": [
+        {
+          "q": "After the test, the next step is ...",
+          "a": "set targets from the feedback",
+          "mins": 1,
+          "options": [
+            "set targets from the feedback",
+            "forget it"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Which Year 7 computing topic would you most like to teach a younger pupil?",
+          "a": "Any honest answer: algorithms, Scratch, HTML, networks, staying safe.",
+          "mins": 2
+        }
+      ],
+      "homework": "Revise any topic you found hard using your notes.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 7 (spreadsheets and the Scratch calculator; no secondary scheme of work supplied)",
+        "End-of-year computing test and mark scheme (teacher-written, portal; to be made in the term resource pass)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Exam paper desk pencil",
+          "alt": "A test",
+          "for": "hook"
+        },
+        {
+          "find": "Laptop on desk",
+          "alt": "Computing",
+          "for": "teach:2"
+        }
+      ]
+    },
+    {
+      "unit": "Summer 2: Spreadsheets and the Scratch calculator",
+      "n": 20,
+      "title": "Presenting and evaluating the calculator; Year 7 review",
+      "duration": 50,
+      "bigQuestion": "Is a program finished when it works, or when it is easy and safe to use?",
+      "objectives": [
+        "To understand how to present and evaluate a program against its design and reflect on my Year 7 computing"
+      ],
+      "successCriteria": [
+        "All: demonstrate my calculator",
+        "Most: evaluate it using my test results",
+        "Some: suggest and justify an improvement"
+      ],
+      "smsc": "Social: presenting and giving kind feedback",
+      "keywords": [
+        {
+          "term": "evaluate",
+          "def": "judge how well a program meets its design"
+        },
+        {
+          "term": "user",
+          "def": "the person who uses a program"
+        },
+        {
+          "term": "interface",
+          "def": "how the user interacts with a program"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is a program finished when it works, or when it is easy and safe to use?",
+        "a": "When it works, handles errors and is easy for the user: evaluation checks all three."
+      },
+      "starter": [
+        {
+          "q": "A test table shows ...",
+          "a": "expected and actual results",
+          "mins": 1,
+          "options": [
+            "expected and actual results",
+            "the colours"
+          ]
+        },
+        {
+          "q": "What should happen when dividing by zero?",
+          "a": "A helpful message.",
+          "mins": 1
+        },
+        {
+          "q": "An interface is ...",
+          "a": "how users interact",
+          "mins": 1,
+          "options": [
+            "how users interact",
+            "a cable"
+          ]
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Presenting",
+          "bullets": [],
+          "note": "",
+          "cycle": [
+            "Show the flowchart",
+            "Demonstrate each operation",
+            "Show the error check",
+            "Share test results",
+            "Suggest an improvement"
+          ]
+        },
+        {
+          "heading": "Evaluation questions",
+          "bullets": [
+            "Does it meet the design?",
+            "Did every test pass?",
+            "Is it easy to use?",
+            "What would make it better?"
+          ],
+          "note": ""
+        },
+        {
+          "heading": "Year 7 review",
+          "bullets": [],
+          "note": "",
+          "compare": {
+            "left": {
+              "title": "September",
+              "points": [
+                "New to coding",
+                "Unsure of networks"
+              ]
+            },
+            "right": {
+              "title": "July",
+              "points": [
+                "Scratch programs",
+                "HTML, spreadsheets, cyber security"
+              ]
+            },
+            "label": "growth"
+          }
+        },
+        {
+          "heading": "Quick check",
+          "bullets": [],
+          "note": "Launch the Teams poll; share the results and explain the right answer and why the others are wrong.",
+          "check": {
+            "q": "A good improvement is ...",
+            "options": [
+              "'Add a loop so users can calculate again'",
+              "'Make it better'",
+              "'Change the colour'"
+            ],
+            "answer": 0,
+            "why": "Specific and useful."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write one evaluation sentence using your test results.",
+          "a": "'All four operations passed; dividing by zero shows a message, so it meets the design.'",
+          "mins": 4,
+          "model": "I do: 'Two of three tests passed; subtraction gave the wrong order, so I swapped num1 and num2.'"
+        }
+      ],
+      "independent": [
+        {
+          "q": "Present your calculator (screen share, 2 minutes); write an evaluation and your Year 7 reflection in the portal response box; comment kindly on two others.",
+          "a": "A demonstration, evaluation and reflection.",
+          "mins": 15,
+          "model": "The teacher presents a model calculator."
+        }
+      ],
+      "exit": [
+        {
+          "q": "Evaluation checks ...",
+          "a": "design, tests and usability",
+          "mins": 1,
+          "options": [
+            "design, tests and usability",
+            "only colour"
+          ]
+        },
+        {
+          "q": "Back to our ponder: Is a program finished when it works, or when it is easy and safe to use?",
+          "a": "When it works, handles errors and is easy for the user: evaluation checks all three.",
+          "mins": 2
+        }
+      ],
+      "homework": "Share your calculator with your family over the summer.",
+      "send": "SEND: chunked tasks, a key word glossary and sentence starters in the pupil PDF. EAL: key terms with definitions and examples. Stretch: evaluate, weigh up both sides and reach a justified judgement.",
+      "resources": [
+        "Slides",
+        "Tarbiyyah Secondary Computing and ICT Curriculum Intent, Year 7 (spreadsheets and the Scratch calculator; no secondary scheme of work supplied)",
+        "Scratch 3 in the browser (scratch.mit.edu, no account needed to build; TO CONFIRM school accounts)",
+        "Pupil PDF worksheet (printable or for a drawing tablet)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Presentation screen",
+          "alt": "Presenting",
+          "for": "hook"
+        },
+        {
+          "find": "Checklist with ticks",
+          "alt": "Evaluation",
+          "for": "teach:2"
         }
       ]
     }
