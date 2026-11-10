@@ -444,9 +444,11 @@ export function makeV3(h) {
 
   /** Worksheet pages: every practice, independent and exit item with space to write. */
   function worksheetPages(pptx, ctx, lesson) {
+    // An assessment: its questions keep their labels (Question 1, Section A…) and marks.
+    const A = ctx.assess;
     const sections = [
       [ctx.band === "early" ? "Together" : "We do", lesson.practice],
-      [ctx.band === "early" ? "My turn" : "You do", lesson.independent],
+      [A ? `${A.label}${A.marks ? ` · ${A.marks} marks` : ""}${A.minutes ? ` · ${A.minutes} minutes` : ""}` : ctx.band === "early" ? "My turn" : "You do", lesson.independent, A],
       ["Exit ticket", lesson.exit],
     ];
     const early = ctx.band === "early";
@@ -468,22 +470,24 @@ export function makeV3(h) {
       y = top;
     };
     let n = 0;
-    for (const [name, items] of sections) {
+    for (const [name, items, assess] of sections) {
       const list = (items || []).filter((x) => clean(itemQ(x)));
       if (!list.length) continue;
       if (!s || y + 0.4 + 0.5 + LINE_GAP * 2 > bottom) newPage();
       s.addText(name.toUpperCase(), { x: 0.8, y, w: 11.8, h: 0.34, fontFace: FONT, fontSize: 13, bold: true, color: ctx.accent, charSpacing: 3, margin: 0 });
       s.addShape("line", { x: 0.8, y: y + 0.36, w: 11.8, h: 0, line: { color: ctx.accent, width: 1.5 } });
       y += 0.48;
-      for (const item of list) {
+      for (const [k, item] of list.entries()) {
         n++;
         const poll = itemOptions(item);
-        const q = clean(poll ? poll.q : itemQ(item));
-        const qH = Math.max(0.42, textHeight(`${n}. ${q}`, 11.6, qPt) + 0.02);
-        const lines = linesFor(item);
+        const row = assess ? assess.rows[k] : null;
+        const q = row ? clean(poll ? poll.q : row.rest) : clean(poll ? poll.q : itemQ(item));
+        const num = row ? `${row.label}${row.marks != null ? ` [${marksText(row.marks)}]` : ""}:  ` : `${n}.  `;
+        const qH = Math.max(0.42, textHeight(`${num}${q}`, 11.6, qPt) + 0.02);
+        const lines = assess ? Math.max(linesFor(item), Math.min(12, (row && row.marks) || 0)) : linesFor(item);
         const need = qH + (poll ? 0.5 : lines * LINE_GAP) + 0.18;
         if (y + Math.min(need, qH + 2 * LINE_GAP) > bottom) newPage();
-        s.addText([{ text: `${n}.  `, options: { bold: true, color: ctx.accent } }, { text: q, options: { color: INK } }], { x: 0.8, y, w: 11.8, h: qH, fontFace: FONT, fontSize: qPt, valign: "top", margin: 0 });
+        s.addText([{ text: num, options: { bold: true, color: ctx.accent } }, { text: q, options: { color: INK } }], { x: 0.8, y, w: 11.8, h: qH, fontFace: FONT, fontSize: qPt, valign: "top", margin: 0 });
         y += qH + 0.04;
         if (poll) {
           const ow = 11.6 / poll.options.length;
@@ -505,5 +509,189 @@ export function makeV3(h) {
     return page;
   }
 
-  return { icon, picture, pictureSlide, pdfLink, ponderSlide, promiseStrip, islamicSlide, destinationSlide, modelSlide, pollSlide, pollAnswerSlide, correctIndex, termsIn, kwBoxWidth, keywordCorner, topicKeywordsSlide, keywordCardPicture, worksheetPages, creditLine };
+  // ── Assessment lessons (assessmentMode: test, mock, quiz) ────────────────────
+  const RED = "B03A2E";
+  const marksText = (m) => (m == null ? "" : `${m} mark${m === 1 ? "" : "s"}`);
+  /** An oral assessment (speaking, recitation, phonics 1:1): pupils unmute when called, not "mics off". */
+  const oral = (lesson) => /\b(speaking|oral|recit\w*|hifdh|phonics|1:1|role play)\b/i.test(`${lesson.title} ${lesson.unit}`);
+
+  /** Before the questions: the timer, the marks and the exam conditions. */
+  function examConditionsSlide(pptx, ctx, lesson, a) {
+    const s = pptx.addSlide({ masterName: "TGA_CONTENT" });
+    const early = ctx.band === "early";
+    const th = ctx.theme;
+    header(s, ctx, `${a.label} conditions`, `${a.label} · before you start`, 3, a.minutes, null);
+    // Timer and marks panel.
+    s.addShape("roundRect", { x: 0.8, y: 2.1, w: 11.8, h: 1.6, rectRadius: 0.14, fill: { color: th.dark }, line: { color: th.dark, width: 0 } });
+    const facts = [
+      [a.minutes ? `${a.minutes}` : "–", a.minutes === 1 ? "MINUTE" : "MINUTES"],
+      [a.marks ? `${a.marks}` : "–", "MARKS"],
+      [`${a.count}`, a.count === 1 ? "QUESTION" : a.mode === "mock" && a.sections ? "SECTIONS" : "QUESTIONS"],
+    ];
+    const fw3 = 11.8 / 4;
+    facts.forEach(([big, small], i) => {
+      const x = 0.8 + i * fw3;
+      if (i) s.addShape("line", { x, y: 2.35, w: 0, h: 1.1, line: { color: "FFFFFF", width: 1, transparency: 70 } });
+      s.addText(big, { x, y: 2.15, w: fw3, h: 1.0, fontFace: early ? FONT : th.head, fontSize: 48, bold: true, color: "FFFFFF", align: "center", valign: "middle", margin: 0 });
+      s.addText(small, { x, y: 3.12, w: fw3, h: 0.4, fontFace: FONT, fontSize: 13, bold: true, color: LIGHT_GOLD, align: "center", charSpacing: 3, margin: 0 });
+    });
+    s.addText([{ text: "START  ", options: { bold: true, color: LIGHT_GOLD, charSpacing: 2 } }, { text: "______", options: { color: "FFFFFF" } }, { text: "     FINISH  ", options: { bold: true, color: LIGHT_GOLD, charSpacing: 2 } }, { text: "______", options: { color: "FFFFFF" } }], { x: 0.8 + 3 * fw3, y: 2.1, w: fw3 - 0.2, h: 1.6, fontFace: FONT, fontSize: 16, align: "center", valign: "middle" });
+    // The conditions.
+    const conditions = [
+      { icon: "camera", text: "Cameras on" },
+      { icon: "mic", text: oral(lesson) ? "Mics off until your name is called" : "Mics off" },
+      { icon: "doc", text: "Work alone" },
+      { icon: "window", text: "No other tabs" },
+    ];
+    s.addText(early ? "OUR TEST RULES" : "EXAM CONDITIONS", { x: 0.8, y: 3.95, w: 11.8, h: 0.32, fontFace: FONT, fontSize: 13, bold: true, color: ctx.accent, charSpacing: 3, margin: 0 });
+    const gap = 0.22;
+    const cw = (11.8 - gap * 3) / 4;
+    conditions.forEach((c, i) => {
+      const x = 0.8 + i * (cw + gap);
+      s.addShape("roundRect", { x, y: 4.35, w: cw, h: 1.3, rectRadius: 0.12, fill: { color: th.soft }, line: { color: ctx.accent, width: 1.5 } });
+      icon(s, c.icon, x + 0.25, 4.7, 0.6, ctx.accent);
+      s.addText(c.text, { x: x + 1.0, y: 4.35, w: cw - 1.1, h: 1.3, fontFace: FONT, fontSize: fitSize(c.text, cw - 1.1, 1.2, early ? 24 : 22, 13), bold: true, color: INK, valign: "middle", margin: 0 });
+    });
+    // How to answer.
+    s.addShape("roundRect", { x: 0.8, y: 5.85, w: 11.8, h: 1.0, rectRadius: 0.1, fill: { color: GOLD_SOFT }, line: { color: GOLD, width: 1.5 } });
+    s.addText([{ text: "HOW TO ANSWER   ", options: { bold: true, color: GOLD_DARK, fontSize: 12, charSpacing: 2 } }, { text: a.how, options: { color: INK } }], { x: 1.05, y: 5.85, w: 11.3, h: 1.0, fontFace: FONT, fontSize: fitSize(a.how, 9.8, 0.95, 18, 11), valign: "middle" });
+    s.addNotes(
+      `${a.label.toUpperCase()} CONDITIONS. Read the rules aloud: cameras on, ${oral(lesson) ? "mics off until you call a pupil's name" : "mics off"}, work alone, no other tabs. ${a.minutes ? `Start a ${a.minutes}-minute timer and write the start and finish times in the chat. ` : ""}${a.marks ? `${a.marks} marks in total. ` : ""}Watch the cameras throughout; answer questions about the instructions only, not the content.${a.before ? ` Before you start: ${clean(a.before)}` : ""} The mark scheme is in the teacher-only section after the last slide and in the lesson plan.`,
+    );
+    return s;
+  }
+
+  // Question cards: at least tall enough for the label and marks pills; the text sized to fit.
+  const CARD_MIN = 0.86;
+  const cardNeed = (r, pt) => Math.max(CARD_MIN, textHeight(clean(r.rest), 9.3, pt) + 0.16);
+  /** Lay the questions out on as many slides as they need, at a readable size (long questions get a slide each). */
+  function assessmentGroups(rows, avail, pt) {
+    const groups = [];
+    let cur = [];
+    let used = 0;
+    for (const r of rows) {
+      const h = cardNeed(r, pt) + 0.14;
+      if (cur.length && (cur.length >= 5 || used + h > avail + 0.14)) {
+        groups.push(cur);
+        cur = [];
+        used = 0;
+      }
+      cur.push(r);
+      used += h;
+    }
+    if (cur.length) groups.push(cur);
+    return groups;
+  }
+
+  /** The questions, labelled Question 1, 2… or Section A, B… with their marks. Returns the slide numbers. */
+  function assessmentQuestionSlides(pptx, ctx, a, slideNo) {
+    const out = [];
+    const howH = a.how ? 0.62 : 0;
+    const avail = 6.85 - 2.12 - (howH ? howH + 0.15 : 0);
+    const groups = assessmentGroups(a.rows, avail, ctx.band === "early" ? 22 : 18);
+    groups.forEach((g, gi) => {
+      const s = pptx.addSlide({ masterName: "TGA_CONTENT" });
+      out.push(slideNo());
+      const first = g[0].label;
+      const last = g[g.length - 1].label;
+      const title = g.length === 1 ? first : /^Section/.test(first) && /^Section/.test(last) ? `Sections ${g[0].short} ${g.length === 2 ? "and" : "to"} ${g[g.length - 1].short}` : /^Question/.test(first) && /^Question/.test(last) ? `Questions ${g[0].short} ${g.length === 2 ? "and" : "to"} ${g[g.length - 1].short}` : `${first} to ${last}`;
+      const mins = g.map((r) => r.mins).filter((m) => m != null);
+      header(s, ctx, title, `${a.label}${groups.length > 1 ? ` · part ${gi + 1} of ${groups.length}` : ""}`, 3, mins.length === g.length ? mins.reduce((x, y) => x + y, 0) : null, null);
+      const top = 2.12;
+      const gap = 0.14;
+      const texts = g.map((r) => clean(r.rest));
+      // Each card as tall as its text needs; spare room shared out, so the text can grow.
+      const need = g.map((r) => cardNeed(r, ctx.band === "early" ? 22 : 18));
+      const room = avail - gap * (g.length - 1);
+      const sumNeed = need.reduce((x, y) => x + y, 0);
+      const hs = need.map((n) => Math.max(Math.min(CARD_MIN, room / g.length), (room * n) / sumNeed));
+      const size = Math.min(...texts.map((t, i) => fitSize(t, 9.3, hs[i] - 0.12, ctx.band === "early" ? 30 : 24, 10)));
+      let y = top;
+      g.forEach((r, i) => {
+        const h = hs[i];
+        s.addShape("roundRect", { x: 0.8, y, w: 11.8, h, rectRadius: 0.08, fill: { color: "FFFFFF" }, line: { color: LINE, width: 1 } });
+        s.addShape("rect", { x: 0.8, y: y + 0.1, w: 0.1, h: h - 0.2, fill: { color: ctx.accent }, line: { color: ctx.accent, width: 0 } });
+        const pillH = Math.min(0.42, h - 0.16);
+        s.addShape("roundRect", { x: 1.05, y: y + 0.1, w: 1.75, h: pillH, rectRadius: pillH / 2, fill: { color: ctx.theme.dark }, line: { color: ctx.theme.dark, width: 0 } });
+        s.addText(r.label, { x: 1.05, y: y + 0.1, w: 1.75, h: pillH, fontFace: FONT, fontSize: fitSize(r.label, 1.65, pillH, 15, 9), bold: true, color: "FFFFFF", align: "center", valign: "middle", margin: 0 });
+        if (r.marks != null) {
+          const mh = Math.min(0.3, Math.max(0.22, h - pillH - 0.22));
+          s.addShape("roundRect", { x: 1.05, y: y + 0.14 + pillH, w: 1.75, h: mh, rectRadius: mh / 2, fill: { color: GOLD_SOFT }, line: { color: GOLD, width: 1 } });
+          s.addText(`[${marksText(r.marks)}]`, { x: 1.05, y: y + 0.14 + pillH, w: 1.75, h: mh, fontFace: FONT, fontSize: 12, bold: true, color: GOLD_DARK, align: "center", valign: "middle", margin: 0 });
+        }
+        s.addText(texts[i], { x: 3.0, y: y + 0.04, w: 9.45, h: h - 0.08, fontFace: ctx.mathy ? "Cambria" : FONT, fontSize: size, color: INK, valign: "middle", margin: 0 });
+        y += h + gap;
+      });
+      if (howH) {
+        const hy = 6.85 - howH;
+        s.addShape("roundRect", { x: 0.8, y: hy, w: 11.8, h: howH, rectRadius: 0.1, fill: { color: ctx.theme.soft }, line: { color: ctx.theme.soft, width: 0 } });
+        icon(s, "doc", 1.0, hy + 0.13, 0.36, ctx.accent);
+        s.addText([{ text: "YOUR ANSWER   ", options: { bold: true, color: ctx.accent, fontSize: 12, charSpacing: 2 } }, { text: a.how, options: { color: INK } }], { x: 1.55, y: hy, w: 10.9, h: howH, fontFace: FONT, fontSize: fitSize(a.how, 9.6, howH, 16, 10), valign: "middle" });
+      }
+      s.addNotes(`${a.label.toUpperCase()}: exam conditions. Do not explain the questions or give hints; read a question aloud only if a pupil needs it read (access arrangement).${g.some((r) => r.marks != null) ? ` Marks: ${g.map((r) => `${r.label} ${r.marks ?? "?"}`).join(", ")}.` : ""} The mark scheme is in the teacher-only section after the last slide.`);
+    });
+    return out;
+  }
+
+  /** The divider before the teacher-only answers and mark scheme (after the lesson's last slide). */
+  function teacherOnlyDivider(pptx, ctx, a) {
+    const s = pptx.addSlide();
+    s.background = { color: "3A1512" };
+    s.addShape("rect", { x: 0, y: 0, w: 0.28, h: 7.5, fill: { color: RED }, line: { color: RED, width: 0 } });
+    s.addShape("roundRect", { x: 0.9, y: 1.2, w: 3.4, h: 0.7, rectRadius: 0.35, fill: { color: RED }, line: { color: RED, width: 0 } });
+    s.addText("TEACHER ONLY", { x: 0.9, y: 1.2, w: 3.4, h: 0.7, fontFace: FONT, fontSize: 20, bold: true, color: "FFFFFF", align: "center", valign: "middle", charSpacing: 4, margin: 0 });
+    s.addText("Teacher only: mark scheme (do not show)", { x: 0.9, y: 2.3, w: 11.4, h: 2.0, fontFace: ctx.band === "early" ? FONT : ctx.theme.head, fontSize: 44, bold: true, color: "FFFFFF", valign: "middle" });
+    s.addText(`${a.label}: answers and marks for every question in this lesson. Stop sharing your screen before you go past this slide.`, { x: 0.9, y: 4.5, w: 11.0, h: 1.0, fontFace: FONT, fontSize: 20, color: "F2D7D3", valign: "top" });
+    s.addNotes("TEACHER ONLY. Everything after this slide is the mark scheme and the answers. It sits after the end of the lesson so it is never shown by accident, and it is not in the pupils' PDF.");
+    return s;
+  }
+
+  /** Mark scheme: each question with its label, marks and answer (several slides when long). */
+  function markSchemeSlides(pptx, ctx, a, slideNo) {
+    const out = [];
+    const rows = a.rows.map((r) => ({ ...r, answer: r.a ? clean(r.a) : "No answer recorded: mark against the success criteria and the lesson plan." }));
+    const groups = [];
+    let cur = [];
+    let len = 0;
+    for (const r of rows) {
+      const L = r.answer.length + Math.min(120, clean(r.rest).length) + 30;
+      if (cur.length && (cur.length >= 4 || len + L > 700)) {
+        groups.push(cur);
+        cur = [];
+        len = 0;
+      }
+      cur.push(r);
+      len += L;
+    }
+    if (cur.length) groups.push(cur);
+    groups.forEach((g, gi) => {
+      const s = pptx.addSlide({ masterName: "TGA_CONTENT" });
+      out.push(slideNo());
+      header(s, ctx, "Mark scheme", `Teacher only · ${a.label}${groups.length > 1 ? ` · ${gi + 1} of ${groups.length}` : ""}`, null);
+      s.addShape("roundRect", { x: 9.6, y: 0.95, w: 3.0, h: 0.66, rectRadius: 0.33, fill: { color: RED }, line: { color: RED, width: 0 } });
+      s.addText("TEACHER ONLY", { x: 9.6, y: 0.95, w: 3.0, h: 0.66, fontFace: FONT, fontSize: 16, bold: true, color: "FFFFFF", align: "center", valign: "middle", charSpacing: 3, margin: 0 });
+      const top = 2.12;
+      const gap = 0.14;
+      const need = g.map((r) => Math.max(0.75, textHeight(r.answer, 9.3, 15) + 0.4));
+      const sumNeed = need.reduce((x, y) => x + y, 0);
+      const hs = need.map((n) => ((6.85 - top - gap * (g.length - 1)) * n) / sumNeed);
+      const qPt = 11;
+      const aSize = Math.min(...g.map((r, i) => fitSize(r.answer, 9.3, hs[i] - 0.42, 20, 9)));
+      let y = top;
+      g.forEach((r, i) => {
+        const h = hs[i];
+        s.addShape("roundRect", { x: 0.8, y, w: 11.8, h, rectRadius: 0.08, fill: { color: "FFFFFF" }, line: { color: r.a ? TICK : LINE, width: 1.25 } });
+        s.addText(r.label, { x: 1.0, y: y + 0.08, w: 1.8, h: 0.34, fontFace: FONT, fontSize: 13, bold: true, color: ctx.accent, margin: 0 });
+        if (r.marks != null) s.addText(`[${marksText(r.marks)}]`, { x: 1.0, y: y + 0.42, w: 1.8, h: 0.3, fontFace: FONT, fontSize: 12, bold: true, color: GOLD_DARK, margin: 0 });
+        const qShort = clean(r.rest).length > 150 ? `${clean(r.rest).slice(0, 147)}…` : clean(r.rest);
+        s.addText(qShort, { x: 3.0, y: y + 0.06, w: 9.45, h: 0.34, fontFace: FONT, fontSize: qPt, color: MUTED, valign: "top", margin: 0, fit: "shrink" });
+        s.addText(r.answer, { x: 3.0, y: y + 0.4, w: 9.45, h: h - 0.46, fontFace: ctx.mathy ? "Cambria" : FONT, fontSize: aSize, bold: !!r.a, italic: !r.a, color: r.a ? INK : MUTED, valign: "top", margin: 0 });
+        y += h + gap;
+      });
+      s.addNotes(`TEACHER ONLY: mark scheme${a.marks ? ` (${a.marks} marks in total)` : ""}. Also in the lesson plan's answer key.`);
+    });
+    return out;
+  }
+
+  return { icon, picture, pictureSlide, pdfLink, ponderSlide, promiseStrip, islamicSlide, destinationSlide, modelSlide, pollSlide, pollAnswerSlide, correctIndex, termsIn, kwBoxWidth, keywordCorner, topicKeywordsSlide, keywordCardPicture, worksheetPages, creditLine, examConditionsSlide, assessmentQuestionSlides, teacherOnlyDivider, markSchemeSlides };
 }

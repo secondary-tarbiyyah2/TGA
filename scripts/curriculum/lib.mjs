@@ -206,7 +206,7 @@ export function checkLesson(l, label) {
 // The database does not keep key order, so a changed lesson is written back in the order
 // its repo copy used (or the README order for anything new).
 const CANON = [
-  "unit", "n", "title", "duration", "board", "bigQuestion", "hook", "type", "islamicLink", "at", "pictures", "find", "alt", "for", "file", "credit", "licence", "objectives", "successCriteria", "crossCurricular", "smsc", "resources", "keywords", "term", "def",
+  "unit", "n", "title", "duration", "board", "assessmentMode", "bigQuestion", "hook", "type", "islamicLink", "at", "pictures", "find", "alt", "for", "file", "credit", "licence", "objectives", "successCriteria", "crossCurricular", "smsc", "resources", "keywords", "term", "def",
   "routines", "starter", "teach", "hinge", "heading", "bullets", "note", "routine", ...BLOCKS, "problem", "steps", "answer", "q", "a", "mins", "model",
   "options", "why", "wrong", "right", "text", "source", "left", "label", "title", "points", "head", "rows", "lang", "output", "kind", "labels", "values", "unit",
   "min", "max", "step", "marks", "at", "parts", "shaded", "centre", "items", "columns", "cards", "practice", "independent", "exit", "homework", "send",
