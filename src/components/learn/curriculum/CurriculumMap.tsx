@@ -311,7 +311,7 @@ function SubjectView({
                         return (
                           <li key={u.id} className="flex flex-wrap items-center gap-3">
                             <div className="min-w-0 flex-1 basis-60">
-                              <p className="text-base font-semibold text-ink">{u.title}</p>
+                              <p className="text-base font-semibold text-ink">{u.title.replace(/^(autumn|spring|summer)\s*\d\s*:\s*/i, "")}</p>
                               {st.total > 0 && (
                                 <p className="mt-1 flex items-center gap-2 text-xs text-ink/70">
                                   <span aria-hidden="true" className="block h-1.5 w-32 overflow-hidden rounded-full bg-gold-light/70">
