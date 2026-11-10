@@ -25,10 +25,9 @@ export function isNavGroup(entry: NavEntry): entry is NavGroup {
 export const primaryNav: NavEntry[] = [
   {
     label: "Our School",
-    blurb: "About us, testimonials, FAQs, careers",
+    blurb: "About us, FAQs, jobs",
     items: [
       { href: "/about", label: "About us", icon: "school", desc: "Who we are and the trust behind us" },
-      { href: "/testimonials", label: "Testimonials", icon: "messageSquare", desc: "Family stories, once our first cohort joins" },
       { href: "/faqs", label: "FAQs", icon: "circleHelp", desc: "Fees, lessons, technology and more" },
       { href: "/careers#vacancies", label: "Jobs and roles", icon: "briefcase", desc: "Current vacancies, teaching and support" },
       { href: "/careers/apply", label: "Apply for a job", icon: "notebookPen", desc: "Online application, six short steps" },
@@ -92,7 +91,6 @@ export const parentsHub: HubCard[] = [
 ];
 
 export const aboutHub: HubCard[] = [
-  { href: "/testimonials", title: "Testimonials", body: "Words from our families, published once our founding cohort has joined." },
   { href: "/safeguarding", title: "Safeguarding", body: "Our commitment to every child's safety." },
   { href: "/pastoral-care", title: "Pastoral care", body: "How we nurture wellbeing and character." },
 ];
@@ -103,7 +101,6 @@ export const footerColumns: { heading: string; links: NavLink[] }[] = [
     heading: "School",
     links: [
       { href: "/about", label: "About us" },
-      { href: "/testimonials", label: "Testimonials" },
       { href: "/learning", label: "How learning works" },
       { href: "/curriculum", label: "Curriculum" },
       { href: "/careers", label: "Careers" },
