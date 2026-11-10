@@ -2,7 +2,7 @@
   "subject": "Computing",
   "year": "y6",
   "board": "National Curriculum",
-  "source": "National Curriculum KS2 Computing (safe, respectful and responsible use of technology; collecting, analysing and presenting data); links forward to the Year 7 Computing Overview in the school's Drive",
+  "source": "National Curriculum KS2 Computing (safe, respectful and responsible use of technology; collecting, analysing and presenting data); links forward to the Year 7 Computing Overview in the school's Drive | Spring 1 2027 (lessons 2, 5 to 8, v3): Tarbiyyah Primary computing long-term plan 2023-24 Year 6 Spring 1 (Variables in Games with its online-safety lesson), NCCE Teach Computing based",
   "lessons": [
     {
       "unit": "Unit 1: Being responsible online",
@@ -15,9 +15,18 @@
         "Make decisions about what is safe to share online"
       ],
       "keywords": [
-        { "term": "digital footprint", "def": "the trail of information about you left online" },
-        { "term": "password", "def": "a secret code that proves it is really you" },
-        { "term": "privacy settings", "def": "choices that control who can see your information" }
+        {
+          "term": "digital footprint",
+          "def": "the trail of information about you left online"
+        },
+        {
+          "term": "password",
+          "def": "a secret code that proves it is really you"
+        },
+        {
+          "term": "privacy settings",
+          "def": "choices that control who can see your information"
+        }
       ],
       "starter": [
         "Bismillah. Name three pieces of personal information you should keep private.",
@@ -27,22 +36,39 @@
       "teach": [
         {
           "heading": "Your digital footprint",
-          "bullets": ["Photos, comments and likes leave a trail.", "Some of it stays online for a long time.", "Others can copy and share it."],
+          "bullets": [
+            "Photos, comments and likes leave a trail.",
+            "Some of it stays online for a long time.",
+            "Others can copy and share it."
+          ],
           "note": "Use the footprints in sand analogy: you leave marks as you walk. Ask what footprints they might have left already (a game username, a school website photo). Misconception: 'delete means gone'; screenshots and copies may remain."
         },
         {
           "heading": "Think before you post",
-          "bullets": ["Is it kind?", "Is it true?", "Would I be happy if my family saw it?"],
+          "bullets": [
+            "Is it kind?",
+            "Is it true?",
+            "Would I be happy if my family saw it?"
+          ],
           "note": "Connect to adab: the Prophet (peace be upon him) said that whoever believes in Allah and the Last Day should speak good or remain silent (Bukhari and Muslim). Apply this to typing as well as speaking. Run quick scenarios and ask pupils to decide: post or not?"
         },
         {
           "heading": "Strong passwords",
-          "bullets": ["Long: at least 12 characters.", "Three random words work well.", "Different password for each account.", "Never share it except with a parent."],
+          "bullets": [
+            "Long: at least 12 characters.",
+            "Three random words work well.",
+            "Different password for each account.",
+            "Never share it except with a parent."
+          ],
           "note": "Compare 'ahmed2014' with 'purple-tractor-sandwich'. Explain why the second is stronger: it is longer and not guessable from personal information. Do not ask pupils to share their real passwords at any point."
         },
         {
           "heading": "Privacy settings",
-          "bullets": ["Set accounts to private.", "Only accept people you know in real life.", "Ask a trusted adult for help."],
+          "bullets": [
+            "Set accounts to private.",
+            "Only accept people you know in real life.",
+            "Ask a trusted adult for help."
+          ],
           "note": "Remind pupils that most social media platforms have a minimum age (often 13). Note that the settings differ by app; the principle is to limit who sees information. Encourage a family conversation."
         }
       ],
@@ -64,63 +90,210 @@
       "send": "SEND/EAL: provide a sorting activity with pictures of safe/unsafe posts and a password checklist. Stretch: explain how a company might use data from a person's footprint."
     },
     {
-      "unit": "Unit 1: Being responsible online",
+      "unit": "Spring 1: Variables in games and e-bullying",
       "n": 2,
-      "title": "Respect online: unkind behaviour and how to report it",
+      "title": "E-bullying: respond, block and report",
       "duration": 45,
+      "bigQuestion": "Is a mean comment online less hurtful than one said face to face? Why?",
       "objectives": [
-        "Recognise unkind or unacceptable behaviour online",
-        "Describe ways to respond and report concerns",
-        "Explain how to be a good digital citizen"
+        "To understand how to respond to e-bullying safely by blocking, reporting and telling"
       ],
+      "successCriteria": [
+        "All: say what e-bullying is",
+        "Most: put the steps 'stop, block, screenshot, tell' in order",
+        "Some: explain how a bystander can help someone being bullied online"
+      ],
+      "crossCurricular": "PSHE: bullying and asking for help",
+      "smsc": "Moral: speaking good or staying silent",
       "keywords": [
-        { "term": "cyberbullying", "def": "bullying using phones, games or the internet" },
-        { "term": "report", "def": "tell a trusted adult or use a report button" },
-        { "term": "bystander", "def": "someone who sees bullying happen" }
+        {
+          "term": "bullying",
+          "def": "hurting someone on purpose, again and again"
+        },
+        {
+          "term": "block",
+          "def": "stop someone contacting you"
+        },
+        {
+          "term": "report",
+          "def": "tell the website or school about something wrong"
+        },
+        {
+          "term": "screenshot",
+          "def": "a picture of the screen kept as evidence"
+        }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is a mean comment online less hurtful than one said face to face? Why?",
+        "a": "No: it can be seen by many, saved and shared, and it can follow you home."
+      },
+      "islamicLink": {
+        "text": "Allah tells the believers not to mock one another or call each other by offensive names (al-Hujurat 49:11). The Prophet ﷺ said: 'Whoever believes in Allah and the Last Day, let him speak good or remain silent' (al-Bukhari and Muslim). This applies to every message we type.",
+        "at": "start"
+      },
       "starter": [
-        "Bismillah. What is a digital footprint?",
-        "Give an example of a kind online message.",
-        "Why is it harder to see how someone feels when we type than when we speak?"
+        {
+          "q": "What is a variable?",
+          "a": "A named store for a value that can change.",
+          "mins": 1,
+          "options": [
+            "A sprite",
+            "A named store for a value",
+            "A loop"
+          ]
+        },
+        {
+          "q": "Who should know your password?",
+          "a": "Only you and your parents.",
+          "mins": 1
+        },
+        {
+          "q": "Name one thing never to post in the class chat.",
+          "a": "A password, an address or anything unkind.",
+          "mins": 1
+        },
+        {
+          "q": "What is phishing?",
+          "a": "A fake message that tries to trick you.",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "What is cyberbullying?",
-          "bullets": ["Unkind messages, pictures or comments.", "Leaving someone out of a group chat.", "Sharing secrets or photos without permission."],
-          "note": "Handle sensitively; do not ask pupils to share personal experiences in front of the class. Use fictional characters (Ali and Sara). Explain that bullying online can follow someone home and be seen by many people."
+          "heading": "What is e-bullying?",
+          "bullets": [
+            "Hurtful messages, again and again",
+            "Leaving someone out on purpose",
+            "Sharing pictures or words to upset"
+          ],
+          "note": "It is bullying using devices. It is never the victim's fault."
         },
         {
-          "heading": "Our adab",
-          "bullets": ["Allah tells us not to mock others.", "Not to call people hurtful nicknames.", "Qur'an: Surah al-Hujurat 49:11."],
-          "note": "Surah al-Hujurat (49:11) tells believers not to ridicule each other and not to insult or call each other offensive nicknames. State it plainly, in your own words, then relate it to the internet: the same adab applies in chat, games and comments."
-        },
-        {
-          "heading": "What can I do?",
-          "bullets": ["Do not reply or fight back.", "Save the evidence: take a screenshot.", "Block the person and use report buttons.", "Tell a trusted adult."],
-          "note": "Teach these four steps and practise them as a chant: do not reply, save, block, tell. Mention that in the UK, Childline (0800 1111) is a free, confidential helpline for children. Make sure pupils know a named trusted adult at school and at home."
+          "heading": "Stop, block, screenshot, tell",
+          "bullets": [
+            "Stop: do not reply",
+            "Block the sender",
+            "Screenshot as evidence",
+            "Tell a trusted adult"
+          ],
+          "note": "In Teams: tell your teacher at once; the school can see and deal with chat messages. Do not delete evidence.",
+          "cycle": [
+            "Stop",
+            "Block",
+            "Screenshot",
+            "Tell",
+            "Report"
+          ]
         },
         {
           "heading": "Be an upstander",
-          "bullets": ["Do not join in or share unkind posts.", "Support the person who is hurt.", "Tell an adult if you see it."],
-          "note": "Define bystander and upstander. Role-play a group chat where one pupil is being teased; ask what a good friend would do. Link to the idea of helping someone who is wronged, as a part of good character."
+          "bullets": [
+            "Do not like or share it",
+            "Send a kind message to the person",
+            "Tell a trusted adult"
+          ],
+          "note": "A bystander watches; an upstander helps safely."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Someone keeps posting mean comments on your shared Scratch project. First step?",
+            "options": [
+              "Post a mean comment back",
+              "Do not reply; screenshot and tell a trusted adult",
+              "Delete your account",
+              "Ignore it forever"
+            ],
+            "answer": 1,
+            "why": "Replying can make it worse; evidence and an adult can stop it. Ignoring forever lets it carry on."
+          }
         }
       ],
       "practice": [
-        "Ali's friends took a funny photo of him and shared it without asking. Is that okay? What could Ali do?",
-        "Put the steps in order: tell a trusted adult, take a screenshot, do not reply, block the person.",
-        "Give a kind message you could send to a classmate who is being left out."
+        {
+          "q": "Put in order: tell, block, stop, screenshot.",
+          "a": "Stop, block, screenshot, tell.",
+          "mins": 2,
+          "model": "Teacher explains each step's reason: stop (do not feed it), block (it cannot reach you), screenshot (proof), tell (an adult can act)."
+        },
+        {
+          "q": "Is one unkind joke bullying?",
+          "a": "Not on its own, but it is still wrong; repeated, on purpose, it is bullying.",
+          "mins": 1
+        },
+        {
+          "q": "Name two trusted adults you could tell.",
+          "a": "For example: a parent and my class teacher.",
+          "mins": 1
+        }
       ],
       "independent": [
-        "Write a short script showing a pupil who receives an unkind message and uses the four steps.",
-        "Write three rules for a kind class group chat.",
-        "List three trusted adults you could go to, and explain why you chose them."
+        {
+          "q": "Core: Read the three scenarios. For each, write what to do using the four steps.",
+          "a": "Each answer uses stop, block, screenshot, tell; scenario 3 also includes being an upstander.",
+          "mins": 5,
+          "model": "Teacher does scenario 1 aloud."
+        },
+        {
+          "q": "Extend: Write a kind message an upstander could send to someone who was bullied, in the portal response box.",
+          "a": "For example: 'I saw what happened. It was not okay. I am here, and I have told a teacher.'",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Discuss in your breakout pair: why might someone not tell? What would help them tell?",
+          "a": "Fear or embarrassment; knowing adults will help and it is not their fault.",
+          "mins": 3
+        }
       ],
       "exit": [
-        "Name one thing you should do if someone sends you an unkind message.",
-        "What is the difference between a bystander and an upstander?"
+        {
+          "q": "A screenshot is useful because... A) it is fun B) it keeps evidence C) it hides the message",
+          "a": "B) it keeps evidence",
+          "mins": 1,
+          "options": [
+            "It is fun",
+            "It keeps evidence",
+            "It hides the message"
+          ]
+        },
+        {
+          "q": "Big question: is a mean comment online less hurtful? Give one reason.",
+          "a": "No: it can be seen by many people and saved.",
+          "mins": 2
+        }
       ],
-      "homework": "Talk with a parent or carer about what you would do if you saw something unkind online, and write down your plan in three steps.",
-      "send": "SEND/EAL: provide the four-step chant as a visual card and role-play instead of writing. Stretch: discuss why people sometimes behave unkindly online when they would not in person."
+      "homework": "Make a 'Stop, block, screenshot, tell' poster (words and symbols, no people) for your home learning space.",
+      "send": "SEND: four step cards with symbols. EAL: block, report, evidence. Stretch: research how to report on one app with a parent.",
+      "resources": [
+        "Tarbiyyah Primary computing long-term plan 2023-24, Year 6 Spring 1 (Variables in Games, with its online-safety lesson), built on the NCCE Teach Computing Curriculum (online-safety lesson)",
+        "Scenario cards (pupil PDF)",
+        "TGA online safety rules for Teams and the portal",
+        "Breakout rooms in Teams"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "mobile phone screen locked",
+          "alt": "A mobile phone",
+          "for": "hook"
+        },
+        {
+          "find": "stop sign",
+          "alt": "A stop sign",
+          "for": "teach:2"
+        }
+      ]
     },
     {
       "unit": "Unit 2: Collecting and presenting data",
@@ -133,10 +306,22 @@
         "Use a formula to calculate a total"
       ],
       "keywords": [
-        { "term": "data", "def": "facts and figures that can be collected and studied" },
-        { "term": "spreadsheet", "def": "a grid of cells for storing and working out data" },
-        { "term": "cell", "def": "one box in a spreadsheet, such as B2" },
-        { "term": "formula", "def": "an instruction in a cell to calculate something" }
+        {
+          "term": "data",
+          "def": "facts and figures that can be collected and studied"
+        },
+        {
+          "term": "spreadsheet",
+          "def": "a grid of cells for storing and working out data"
+        },
+        {
+          "term": "cell",
+          "def": "one box in a spreadsheet, such as B2"
+        },
+        {
+          "term": "formula",
+          "def": "an instruction in a cell to calculate something"
+        }
       ],
       "starter": [
         "Bismillah. What does 'report' mean when we talk about online safety?",
@@ -146,22 +331,38 @@
       "teach": [
         {
           "heading": "Collecting data",
-          "bullets": ["Ask a clear question.", "Give choices to pick from.", "Record each answer with a tally."],
+          "bullets": [
+            "Ask a clear question.",
+            "Give choices to pick from.",
+            "Record each answer with a tally."
+          ],
           "note": "Choose a question: What is your favourite fruit: dates, mango, banana or grapes? Run a quick poll in the chat using hands up or emojis. Record a tally on screen. Ask why choices help (they make data easier to count)."
         },
         {
           "heading": "Spreadsheet layout",
-          "bullets": ["Columns have letters.", "Rows have numbers.", "A cell is named by both: B3."],
+          "bullets": [
+            "Columns have letters.",
+            "Rows have numbers.",
+            "A cell is named by both: B3."
+          ],
           "note": "Open a spreadsheet and enter Fruit in A1 and Votes in B1. Enter the poll data. Ask pupils which cell contains the votes for mango. Misconception: pupils write the number before the letter; the letter comes first."
         },
         {
           "heading": "Formulas",
-          "bullets": ["A formula starts with =.", "=SUM(B2:B5) adds the cells.", "The total changes if data changes."],
+          "bullets": [
+            "A formula starts with =.",
+            "=SUM(B2:B5) adds the cells.",
+            "The total changes if data changes."
+          ],
           "note": "Type =SUM(B2:B5) in B6. Change one vote and show the total updating. Explain that spreadsheets calculate for us. Link back to variables: the cell holds a value that can change."
         },
         {
           "heading": "Keep data accurate",
-          "bullets": ["Check each number you type.", "Use clear headings.", "Save the file with a good name."],
+          "bullets": [
+            "Check each number you type.",
+            "Use clear headings.",
+            "Save the file with a good name."
+          ],
           "note": "Talk about the amanah (trust) of recording data accurately: if we record results, they should be honest and careful. Show an example with a typing mistake (a 50 instead of a 5) and how it changes the total."
         }
       ],
@@ -193,9 +394,18 @@
         "Write a conclusion that matches the data"
       ],
       "keywords": [
-        { "term": "bar chart", "def": "a chart with bars whose height shows how many" },
-        { "term": "axis", "def": "the horizontal or vertical line of a chart" },
-        { "term": "conclusion", "def": "what the data tells us" }
+        {
+          "term": "bar chart",
+          "def": "a chart with bars whose height shows how many"
+        },
+        {
+          "term": "axis",
+          "def": "the horizontal or vertical line of a chart"
+        },
+        {
+          "term": "conclusion",
+          "def": "what the data tells us"
+        }
       ],
       "starter": [
         "Bismillah. What is a cell reference? Give an example.",
@@ -205,22 +415,38 @@
       "teach": [
         {
           "heading": "Why use charts?",
-          "bullets": ["Charts show patterns quickly.", "They help us compare.", "A good chart is clear and labelled."],
+          "bullets": [
+            "Charts show patterns quickly.",
+            "They help us compare.",
+            "A good chart is clear and labelled."
+          ],
           "note": "Show the same data as a table and as a bar chart. Ask which one shows the favourite fruit fastest. Explain that charts present data in a form people understand quickly."
         },
         {
           "heading": "Making a bar chart",
-          "bullets": ["Select the data.", "Insert a chart.", "Choose column or bar chart."],
+          "bullets": [
+            "Select the data.",
+            "Insert a chart.",
+            "Choose column or bar chart."
+          ],
           "note": "Demonstrate in the spreadsheet. Highlight A1:B5, then insert a chart. Point out that the categories go on the horizontal axis and the counts on the vertical axis."
         },
         {
           "heading": "Label your chart",
-          "bullets": ["Add a title.", "Label the axes.", "Make bars easy to read."],
+          "bullets": [
+            "Add a title.",
+            "Label the axes.",
+            "Make bars easy to read."
+          ],
           "note": "Compare an unlabelled chart with a labelled one. Ask what is missing from the first one. Misconception: pupils skip labels because they know their own data; others do not."
         },
         {
           "heading": "Write a conclusion",
-          "bullets": ["Mango was the most popular fruit.", "Grapes were the least popular.", "Use numbers to back it up."],
+          "bullets": [
+            "Mango was the most popular fruit.",
+            "Grapes were the least popular.",
+            "Use numbers to back it up."
+          ],
           "note": "Model a conclusion sentence: 'Mango was the most popular with 9 votes, and bananas were the least popular with 4 votes.' Encourage pupils to use numbers from the chart and to be honest about what the data shows, not what they hoped it would show."
         }
       ],
@@ -240,6 +466,886 @@
       ],
       "homework": "Find a chart in a newspaper, app or website and say what it shows in two sentences.",
       "send": "SEND/EAL: provide a chart template with title and axes already labelled to complete. Stretch: compare a bar chart with a pictogram and explain which is better for the data."
+    },
+    {
+      "unit": "Spring 1: Variables in games and e-bullying",
+      "n": 5,
+      "title": "What is a variable? Score and lives",
+      "duration": 45,
+      "bigQuestion": "In a game your score goes 0, 1, 2, 3... Where does the computer keep that number?",
+      "objectives": [
+        "To understand that a variable stores a value that can change while a program runs"
+      ],
+      "successCriteria": [
+        "All: name a variable in a game (score, lives, time)",
+        "Most: say how a variable's value changes during a game",
+        "Some: create a variable in Scratch and set its starting value"
+      ],
+      "crossCurricular": "Maths: algebra, a letter standing for a number",
+      "keywords": [
+        {
+          "term": "variable",
+          "def": "a named store for a value that can change"
+        },
+        {
+          "term": "value",
+          "def": "what is stored in the variable right now"
+        },
+        {
+          "term": "score",
+          "def": "a variable that counts points"
+        },
+        {
+          "term": "sprite",
+          "def": "an object we program in Scratch"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "In a game your score goes 0, 1, 2, 3... Where does the computer keep that number?",
+        "a": "In a variable: a labelled box in memory whose value changes."
+      },
+      "starter": [
+        {
+          "q": "Which is selection? A) repeat 10 B) if... then C) move 10 steps",
+          "a": "B) if... then",
+          "mins": 1,
+          "options": [
+            "repeat 10",
+            "if... then",
+            "move 10 steps"
+          ]
+        },
+        {
+          "q": "What does a loop do?",
+          "a": "Repeats instructions.",
+          "mins": 1
+        },
+        {
+          "q": "What should you never share online?",
+          "a": "Passwords and personal information.",
+          "mins": 1
+        },
+        {
+          "q": "Who do you tell if something online worries you?",
+          "a": "A trusted adult (parent or teacher).",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "E-safety recap",
+          "bullets": [
+            "Scratch projects can be shared",
+            "Use your first name only",
+            "Comments must be kind",
+            "Report anything unkind"
+          ],
+          "note": "Class studio is set so only the class sees projects (TO CONFIRM settings)."
+        },
+        {
+          "heading": "A labelled box",
+          "bullets": [
+            "A variable has a name",
+            "It holds one value",
+            "The value can change"
+          ],
+          "note": "Picture a box labelled 'score' with a 3 inside. Add 1: now 4.",
+          "table": {
+            "head": [
+              "Event",
+              "score",
+              "lives"
+            ],
+            "rows": [
+              [
+                "Game starts",
+                "0",
+                "3"
+              ],
+              [
+                "Catch an apple",
+                "1",
+                "3"
+              ],
+              [
+                "Catch an apple",
+                "2",
+                "3"
+              ],
+              [
+                "Miss an apple",
+                "2",
+                "2"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Variables in Scratch",
+          "bullets": [
+            "Variables (orange) category",
+            "Make a Variable: name it 'score'",
+            "set score to 0 at the start"
+          ],
+          "note": "Model: green flag, set score to 0. The variable monitor shows on the stage.",
+          "code": {
+            "lang": "scratch",
+            "text": "when green flag clicked\nset score to 0\nset lives to 3",
+            "output": "The stage shows score 0 and lives 3."
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "score is 5. The program runs 'change score by 1' twice. What is score now?",
+            "options": [
+              "5",
+              "6",
+              "7",
+              "2"
+            ],
+            "answer": 2,
+            "why": "Each change adds 1: 5 + 1 + 1 = 7. 'change' adds; 'set' replaces."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Start: score 0. Catch, catch, catch. What is score?",
+          "a": "3",
+          "mins": 1,
+          "model": "Teacher writes the value after each event: 0, 1, 2, 3."
+        },
+        {
+          "q": "Start: lives 3. Miss, miss. What is lives?",
+          "a": "1",
+          "mins": 1
+        },
+        {
+          "q": "What is the difference between 'set score to 0' and 'change score by 1'?",
+          "a": "Set replaces the value; change adds to it.",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Make a new Scratch project with a Bowl sprite and an Apple sprite (delete the cat). Create the variables score and lives and set them on green flag.",
+          "a": "set score to 0, set lives to 3 on green flag.",
+          "mins": 5,
+          "model": "Teacher makes 'score', sets it to 0, then pupils make 'lives'."
+        },
+        {
+          "q": "Extend: Fill a value table for 6 events of your own (catch or miss).",
+          "a": "Any table where score goes up by 1 on a catch and lives down by 1 on a miss.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: What should happen when lives reaches 0? Write it as an if... then rule.",
+          "a": "IF lives = 0 THEN say 'Game over' and stop all.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A variable... A) never changes B) stores a value that can change C) is a sprite",
+          "a": "B) stores a value that can change",
+          "mins": 1,
+          "options": [
+            "Never changes",
+            "Stores a value that can change",
+            "Is a sprite"
+          ]
+        },
+        {
+          "q": "Name two variables a game might use.",
+          "a": "For example: score, lives, time.",
+          "mins": 1
+        }
+      ],
+      "homework": "Think of a game you know (board or screen). List its variables and how each one changes.",
+      "send": "SEND: a value table with the first rows done. EAL: variable, value, set, change. Stretch: a 'level' variable that goes up every 5 points.",
+      "resources": [
+        "Tarbiyyah Primary computing long-term plan 2023-24, Year 6 Spring 1 (Variables in Games, with its online-safety lesson), built on the NCCE Teach Computing Curriculum",
+        "Scratch in the browser (scratch.mit.edu, free; pupil logins from the teacher's Scratch Teacher Account and a class studio: TO CONFIRM)",
+        "Variable value table (pupil PDF)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "labelled storage boxes",
+          "alt": "Labelled storage boxes",
+          "for": "teach:2"
+        },
+        {
+          "find": "scoreboard",
+          "alt": "A scoreboard showing numbers",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Variables in games and e-bullying",
+      "n": 6,
+      "title": "Changing a variable when a sprite is clicked",
+      "duration": 45,
+      "bigQuestion": "A clicker counter at the masjid door counts people coming in. How would you program one?",
+      "objectives": [
+        "To understand how an event changes the value of a variable"
+      ],
+      "successCriteria": [
+        "All: use 'when this sprite clicked' to start a script",
+        "Most: change score by 1 each click and show it",
+        "Some: reset the variable at the start and explain why"
+      ],
+      "smsc": "Spiritual: counting dhikr after salah, like the tally counter",
+      "keywords": [
+        {
+          "term": "event",
+          "def": "something that happens and starts a script, like a click"
+        },
+        {
+          "term": "change",
+          "def": "add to a variable's value"
+        },
+        {
+          "term": "click",
+          "def": "pressing the mouse button on something"
+        },
+        {
+          "term": "value",
+          "def": "what the variable holds now"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A clicker counter at the masjid door counts people coming in. How would you program one?",
+        "a": "Each click (event) changes a count variable by 1; the start sets it to 0."
+      },
+      "starter": [
+        {
+          "q": "'set' a variable means... A) add to it B) replace its value C) delete it",
+          "a": "B) replace its value",
+          "mins": 1,
+          "options": [
+            "Add to it",
+            "Replace its value",
+            "Delete it"
+          ]
+        },
+        {
+          "q": "score is 4, change score by 1. Now?",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "Name the category for variables in Scratch.",
+          "a": "Variables (orange).",
+          "mins": 1
+        },
+        {
+          "q": "What is an event?",
+          "a": "Something that starts a script, like the green flag.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Events start scripts",
+          "bullets": [
+            "when green flag clicked",
+            "when this sprite clicked",
+            "when space key pressed"
+          ],
+          "note": "Yellow Events category. Each event is a 'hat' block."
+        },
+        {
+          "heading": "Click to score",
+          "bullets": [
+            "when this sprite clicked",
+            "change score by 1",
+            "The monitor updates"
+          ],
+          "note": "On the Apple sprite.",
+          "code": {
+            "lang": "scratch",
+            "text": "when green flag clicked\nset score to 0\n\nwhen this sprite clicked\nchange score by 1\ngo to random position",
+            "output": "Each click adds 1 and the apple jumps somewhere new."
+          }
+        },
+        {
+          "heading": "Why reset?",
+          "bullets": [
+            "Without 'set score to 0'",
+            "Score carries on from last game",
+            "Reset at the green flag"
+          ],
+          "note": "Show the bug: run twice without reset.",
+          "misconception": {
+            "wrong": "The score starts at 0 by itself every time",
+            "right": "A variable keeps its last value until you set it again, so set it to 0 at the start"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "You click the apple 4 times, press the green flag, then click 2 times. What is score?",
+            "options": [
+              "6",
+              "2",
+              "4",
+              "0"
+            ],
+            "answer": 1,
+            "why": "The green flag sets score to 0, then two clicks make it 2."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Add 'when this sprite clicked, change score by 1' to the Apple.",
+          "a": "The score goes up by 1 per click.",
+          "mins": 2,
+          "model": "Teacher drags the hat block, snaps 'change score by 1', clicks the apple three times and reads the monitor."
+        },
+        {
+          "q": "Add 'go to random position' after the change. What does it do?",
+          "a": "The apple jumps to a new place after each click.",
+          "mins": 1
+        },
+        {
+          "q": "Why do we put 'set score to 0' under the green flag?",
+          "a": "So each new game starts from 0.",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Make a 'click the apple' game: score up by 1 per click, apple jumps, score reset on the flag.",
+          "a": "Two scripts on the Apple: flag (set 0) and click (change by 1, random position).",
+          "mins": 5,
+          "model": "Teacher shows the flag script first."
+        },
+        {
+          "q": "Extend: Add a Bowl sprite that takes away a point when clicked by mistake.",
+          "a": "Bowl: when this sprite clicked, change score by -1.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Make the apple say 'Well done!' when score reaches 10.",
+          "a": "if score = 10 then say 'Well done!' (inside the click script).",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which block is an event? A) change score by 1 B) when this sprite clicked C) go to random position",
+          "a": "B) when this sprite clicked",
+          "mins": 1,
+          "options": [
+            "change score by 1",
+            "when this sprite clicked",
+            "go to random position"
+          ]
+        },
+        {
+          "q": "Why must a game reset its score at the start?",
+          "a": "A variable keeps its last value, so without a reset it carries on from the last game.",
+          "mins": 2
+        }
+      ],
+      "homework": "Write the two scripts for a counter that counts how many times you say 'SubhanAllah' after salah (click to add, flag to reset).",
+      "send": "SEND: scripts given as screenshots to copy. EAL: event, click, change. Stretch: a 'best score' variable.",
+      "resources": [
+        "Tarbiyyah Primary computing long-term plan 2023-24, Year 6 Spring 1 (Variables in Games, with its online-safety lesson), built on the NCCE Teach Computing Curriculum",
+        "Scratch in the browser (scratch.mit.edu, free; pupil logins from the teacher's Scratch Teacher Account and a class studio: TO CONFIRM)",
+        "Script screenshots (pupil PDF)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "hand tally counter clicker",
+          "alt": "A hand tally counter",
+          "for": "hook"
+        },
+        {
+          "find": "red apple",
+          "alt": "A red apple",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Variables in games and e-bullying",
+      "n": 7,
+      "title": "A catching game: selection and score",
+      "duration": 45,
+      "bigQuestion": "In a catching game, how does the computer know you caught the apple?",
+      "objectives": [
+        "To understand how selection checks a condition to change a variable in a game"
+      ],
+      "successCriteria": [
+        "All: make an apple fall down the stage",
+        "Most: use 'if touching Bowl then change score by 1'",
+        "Some: reset the apple to the top after a catch or a miss"
+      ],
+      "crossCurricular": "Maths: coordinates (x and y) in all four quadrants",
+      "keywords": [
+        {
+          "term": "selection",
+          "def": "choosing what to do with if... then"
+        },
+        {
+          "term": "condition",
+          "def": "a true or false check, like 'touching Bowl?'"
+        },
+        {
+          "term": "if",
+          "def": "the block that runs code only when the condition is true"
+        },
+        {
+          "term": "test",
+          "def": "play the game to check it works"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "In a catching game, how does the computer know you caught the apple?",
+        "a": "It keeps checking a condition: is the apple touching the bowl? If so, add a point."
+      },
+      "starter": [
+        {
+          "q": "What starts a script when a sprite is clicked?",
+          "a": "when this sprite clicked",
+          "mins": 1,
+          "options": [
+            "when green flag clicked",
+            "when this sprite clicked",
+            "forever"
+          ]
+        },
+        {
+          "q": "score is 7, change score by -1. Now?",
+          "a": "6",
+          "mins": 1
+        },
+        {
+          "q": "What is a condition?",
+          "a": "A question that is true or false.",
+          "mins": 1
+        },
+        {
+          "q": "Why reset score at the start?",
+          "a": "So the game begins at 0.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Make it fall",
+          "bullets": [
+            "Start at the top: go to x: random, y: 170",
+            "forever: change y by -5",
+            "y gets smaller: it falls"
+          ],
+          "note": "y is up and down; negative change moves down."
+        },
+        {
+          "heading": "Did we catch it?",
+          "bullets": [
+            "if touching Bowl then",
+            "change score by 1",
+            "go back to the top"
+          ],
+          "note": "Selection inside the forever loop.",
+          "code": {
+            "lang": "scratch",
+            "text": "when green flag clicked\nset score to 0\ngo to x: (pick random -200 to 200) y: 170\nforever\n  change y by -5\n  if touching Bowl? then\n    change score by 1\n    go to x: (pick random -200 to 200) y: 170\n  end",
+            "output": "Apples fall; each catch adds 1 and the apple restarts at the top."
+          }
+        },
+        {
+          "heading": "Move the bowl",
+          "bullets": [
+            "when right arrow key pressed",
+            "change x by 20",
+            "left arrow: change x by -20"
+          ],
+          "note": "Two short scripts on the Bowl.",
+          "model": {
+            "problem": "Make the bowl move left and right.",
+            "steps": [
+              "when right arrow key pressed: change x by 20",
+              "when left arrow key pressed: change x by -20",
+              "Test both keys"
+            ],
+            "answer": "Two key-press scripts changing x by 20 and -20"
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "The apple falls but the score never changes. Most likely bug?",
+            "options": [
+              "The if is outside the forever loop",
+              "The apple is red",
+              "The bowl is too big",
+              "score is set to 0"
+            ],
+            "answer": 0,
+            "why": "Outside the loop, the condition is checked only once at the start, before any catch."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Build the falling script on the Apple.",
+          "a": "go to top, forever change y by -5.",
+          "mins": 2,
+          "model": "Teacher builds the start position and the forever loop, then runs it."
+        },
+        {
+          "q": "Add the if touching Bowl block inside the loop.",
+          "a": "if touching Bowl? then change score by 1, go to top.",
+          "mins": 2
+        },
+        {
+          "q": "Add arrow-key scripts to the Bowl.",
+          "a": "right: change x by 20; left: change x by -20.",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Finish the catching game and test it 5 times. Write the scores.",
+          "a": "A working game; five test scores recorded.",
+          "mins": 5,
+          "model": "Teacher plays once and talks through what to watch for."
+        },
+        {
+          "q": "Extend: Add a second 'if': if y position < -170 then change lives by -1 and go to the top.",
+          "a": "A miss below the bowl loses a life.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Make the apple fall faster as score goes up. Which block do you change?",
+          "a": "Use change y by (-5 - score / 2), or a 'speed' variable.",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "'if touching Bowl? then' is... A) a loop B) selection C) an event",
+          "a": "B) selection",
+          "mins": 1,
+          "options": [
+            "A loop",
+            "Selection",
+            "An event"
+          ]
+        },
+        {
+          "q": "Why must the if block be inside the forever loop?",
+          "a": "So the condition is checked again and again as the apple falls.",
+          "mins": 2
+        }
+      ],
+      "homework": "Write the scripts for your game on paper and label one loop, one selection and one variable.",
+      "send": "SEND: a half-built project to complete. EAL: fall, touching, if, condition. Stretch: speed variable.",
+      "resources": [
+        "Tarbiyyah Primary computing long-term plan 2023-24, Year 6 Spring 1 (Variables in Games, with its online-safety lesson), built on the NCCE Teach Computing Curriculum",
+        "Scratch in the browser (scratch.mit.edu, free; pupil logins from the teacher's Scratch Teacher Account and a class studio: TO CONFIRM)",
+        "Catching game build card (pupil PDF)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "apples falling from tree orchard",
+          "alt": "Apples on a tree in an orchard",
+          "for": "hook"
+        },
+        {
+          "find": "wooden bowl",
+          "alt": "A wooden bowl",
+          "for": "teach:3"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Variables in games and e-bullying",
+      "n": 8,
+      "title": "A timer and game over; debugging the game",
+      "duration": 45,
+      "bigQuestion": "Why do most games have an end? What decides when your game is over?",
+      "objectives": [
+        "To understand how a timer variable and selection end a game"
+      ],
+      "successCriteria": [
+        "All: make a timer that counts down from 30",
+        "Most: show 'Game over' and stop when the timer or lives reach 0",
+        "Some: debug the game using a test plan"
+      ],
+      "smsc": "Social: giving kind, specific feedback on a partner's game",
+      "keywords": [
+        {
+          "term": "timer",
+          "def": "a variable that counts time"
+        },
+        {
+          "term": "debug",
+          "def": "find and fix mistakes"
+        },
+        {
+          "term": "bug",
+          "def": "a mistake in a program"
+        },
+        {
+          "term": "message",
+          "def": "words shown to the player"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Why do most games have an end? What decides when your game is over?"
+      },
+      "starter": [
+        {
+          "q": "Where must the 'if touching' block go?",
+          "a": "Inside the forever loop.",
+          "mins": 1,
+          "options": [
+            "Inside the forever loop",
+            "Before the green flag",
+            "On the stage"
+          ]
+        },
+        {
+          "q": "What does 'change y by -5' do?",
+          "a": "Moves the sprite down 5.",
+          "mins": 1
+        },
+        {
+          "q": "lives is 1. The apple is missed. lives now?",
+          "a": "0",
+          "mins": 1
+        },
+        {
+          "q": "What is selection?",
+          "a": "Choosing what to do with if... then.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "A countdown timer",
+          "bullets": [
+            "Make a variable 'time'",
+            "set time to 30",
+            "repeat until time = 0: wait 1, change time by -1"
+          ],
+          "note": "Put the timer on the Stage, not a sprite.",
+          "code": {
+            "lang": "scratch",
+            "text": "when green flag clicked\nset time to 30\nrepeat until time = 0\n  wait 1 seconds\n  change time by -1\nend\nbroadcast game over",
+            "output": "time counts 30, 29... 0, then sends 'game over'."
+          }
+        },
+        {
+          "heading": "Game over",
+          "bullets": [
+            "when I receive game over",
+            "show the 'Game over' text sprite",
+            "stop all"
+          ],
+          "note": "Make a text sprite with the Paint tool (letters only)."
+        },
+        {
+          "heading": "Two ways to end",
+          "bullets": [
+            "time reaches 0",
+            "OR lives reaches 0",
+            "Both broadcast game over"
+          ],
+          "note": "Selection: if lives = 0 then broadcast game over.",
+          "compare": {
+            "left": {
+              "title": "Timer ends",
+              "points": [
+                "repeat until time = 0",
+                "then broadcast"
+              ]
+            },
+            "right": {
+              "title": "Lives end",
+              "points": [
+                "if lives = 0 then",
+                "broadcast"
+              ]
+            },
+            "label": "or"
+          }
+        },
+        {
+          "heading": "Test plan",
+          "bullets": [
+            "What should happen?",
+            "What did happen?",
+            "Fixed?"
+          ],
+          "note": "Model one row.",
+          "table": {
+            "head": [
+              "Test",
+              "Expected",
+              "Actual",
+              "Fixed?"
+            ],
+            "rows": [
+              [
+                "Wait 30 s",
+                "Game over",
+                "Timer went to -5",
+                "Use 'repeat until time = 0'"
+              ],
+              [
+                "Miss 3 apples",
+                "Game over",
+                "Game over",
+                "Yes"
+              ],
+              [
+                "Catch 1 apple",
+                "score 1",
+                "score 1",
+                "Yes"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "The timer keeps going below 0. Best fix?",
+            "options": [
+              "Use repeat until time = 0",
+              "Set time to 60",
+              "Delete the timer",
+              "Change time by 1"
+            ],
+            "answer": 0,
+            "why": "A forever loop never stops; 'repeat until time = 0' stops at 0."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Add the countdown timer to the Stage.",
+          "a": "set time to 30; repeat until time = 0 (wait 1, change time by -1); broadcast game over.",
+          "mins": 2,
+          "model": "Teacher builds it and watches the monitor count down."
+        },
+        {
+          "q": "Add 'when I receive game over: show, stop all' to a text sprite.",
+          "a": "The game shows 'Game over' and stops.",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Add game over for lives = 0 too, then run the 3-row test plan and fill it in.",
+          "a": "if lives = 0 then broadcast game over; test plan completed.",
+          "mins": 6,
+          "model": "Teacher completes row 1 of the test plan live."
+        },
+        {
+          "q": "Extend: Swap projects with the class studio and test a partner's game. Write one kind, specific comment.",
+          "a": "For example: 'The timer works well; the apple could start in more places.'",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Show the final score on the game over screen.",
+          "a": "say (join 'Score: ' score).",
+          "mins": 2
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which block stops the timer at 0? A) forever B) repeat until time = 0 C) wait 1",
+          "a": "B) repeat until time = 0",
+          "mins": 1,
+          "options": [
+            "forever",
+            "repeat until time = 0",
+            "wait 1"
+          ]
+        },
+        {
+          "q": "Big question: what decides when your game is over?",
+          "a": "Selection on variables: when time or lives reaches 0, the game broadcasts game over.",
+          "mins": 2
+        }
+      ],
+      "homework": "Write one improvement for your game and the blocks it would need. The game is assessed this week: make sure it is saved to the class studio.",
+      "send": "SEND: timer script given to copy. EAL: timer, until, broadcast. Stretch: a level 2 with faster apples.",
+      "resources": [
+        "Tarbiyyah Primary computing long-term plan 2023-24, Year 6 Spring 1 (Variables in Games, with its online-safety lesson), built on the NCCE Teach Computing Curriculum",
+        "Scratch in the browser (scratch.mit.edu, free; pupil logins from the teacher's Scratch Teacher Account and a class studio: TO CONFIRM)",
+        "Test plan sheet (pupil PDF)",
+        "Game assessment checklist: variable, selection, timer, game over (portal)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "sand hourglass",
+          "alt": "An hourglass timer",
+          "for": "hook"
+        },
+        {
+          "find": "stopwatch",
+          "alt": "A stopwatch",
+          "for": "keywords"
+        }
+      ]
     }
   ]
 }
