@@ -12,9 +12,9 @@ import { Icon } from "@/components/learn/Icon";
 // these four out. Labels are kept to one short word so they never wrap.
 const SHORT: Record<string, string> = {
   "My classes": "Classes",
-  "To review": "Review",
-  "Action centre": "Actions",
-  "Fees and policies": "Fees",
+  "My children": "Children",
+  "My progress": "Progress",
+  "Safeguarding": "Safety",
 };
 
 export const OPEN_MENU_EVENT = "tga-open-menu";

@@ -342,7 +342,7 @@ export function AdminPupils() {
     <>
       <div className="mb-6">
         <WorkspaceHeader
-          eyebrow={[{ label: "Home", href: "/admin/dashboard" }, { label: "Pupils" }]}
+          eyebrow={[{ label: "Today", href: "/admin/dashboard" }, { label: "Pupils" }]}
           title="Pupils"
           description="Click a pupil for their full record: details, medical, support, attendance, behaviour, reports and entry assessment."
           stats={

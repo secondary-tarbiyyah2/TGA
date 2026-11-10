@@ -10,7 +10,7 @@ export default function AdminRewardsPage() {
     <section className="app-pad">
       <LearnGate allowedRoles={["head_teacher", "admin"]}>
         <PageHeader
-          crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "House points" }]}
+          crumbs={[{ label: "Today", href: "/admin/dashboard" }, { label: "House points" }]}
           title="House points and stars"
           subtitle="Choose and approve each class's Star of the Week, see who hasn't been star yet, and run the house points."
         />

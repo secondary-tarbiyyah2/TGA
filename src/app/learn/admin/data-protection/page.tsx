@@ -10,7 +10,7 @@ export default function DataProtectionPage() {
     <section className="app-pad">
       <LearnGate allowedRoles={["head_teacher", "admin"]}>
         <PageHeader
-          crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "Data protection" }]}
+          crumbs={[{ label: "Today", href: "/admin/dashboard" }, { label: "Data protection" }]}
           title="Data protection"
           subtitle="Retention rules with a review-first clean-up, and one-click subject access exports."
         />

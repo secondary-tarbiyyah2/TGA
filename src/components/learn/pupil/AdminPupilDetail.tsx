@@ -98,7 +98,7 @@ function PupilProfile({ id, onEdited }: { id: string; onEdited: () => void }) {
     router.replace(`/admin/pupils?${q.toString()}`, { scroll: false });
   };
 
-  const crumbs = [{ label: "Home", href: "/admin/dashboard" }, { label: "Pupils", href: "/admin/pupils" }, { label: child?.name || "Pupil" }];
+  const crumbs = [{ label: "Today", href: "/admin/dashboard" }, { label: "Pupils", href: "/admin/pupils" }, { label: child?.name || "Pupil" }];
 
   if (state === "missing") {
     return (

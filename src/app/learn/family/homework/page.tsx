@@ -36,7 +36,7 @@ function FamilyHomeworkContent() {
   return (
     <div>
       <PageHeader
-        crumbs={[{ label: "Home", href: "/family/dashboard" }, { label: "To do", href: selected ? `/family/todo?child=${selected}` : "/family/todo" }, { label: "Homework" }]}
+        crumbs={[{ label: "Today", href: "/family/dashboard" }, { label: "Homework", href: selected ? `/family/todo?child=${selected}` : "/family/todo" }, { label: "Homework" }]}
         title="Homework"
         subtitle={`See what's been set${name ? ` for ${name}` : ""}, hand in work and read feedback. Tap a piece of homework to open it.`}
       />

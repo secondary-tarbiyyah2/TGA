@@ -710,7 +710,7 @@ function AttendanceContent() {
   ];
   return (
     <>
-      <PageHeader crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "Attendance" }]} title="Attendance" subtitle="Take or correct any lesson's register, or report across a date range." />
+      <PageHeader crumbs={[{ label: "Today", href: "/admin/dashboard" }, { label: "Attendance" }]} title="Attendance" subtitle="Take or correct any lesson's register, or report across a date range." />
       <Tabs items={tabs} value={tab} onChange={setTab} label="Attendance sections" idBase="attendance" className="mb-5" />
       <div {...tabPanelProps("attendance", tab)}>{tab === "register" ? <TakeRegister /> : <ReportsContent />}</div>
     </>

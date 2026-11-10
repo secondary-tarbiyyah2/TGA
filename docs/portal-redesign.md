@@ -128,6 +128,7 @@ In the portal the old `teal-*` utilities now mean forest green, so existing page
 6. Later: curriculum analytics, connections visualiser.
 
 ## Log
+- 2026-11-10: Portal restructure (owner: "too crowded, hard to navigate, not centralised"; Option B: the portal is where everything happens, Teams only for live lessons). Every role has one home, **Today**, whose tabs gather what were separate Overview, Action centre (now "Waiting for you"), To do ("Homework"), To review ("To mark"), Calendar and Parent evenings. Places: admin 10 (Today, Messages, Pupils, Progress, Classes, Curriculum, Admissions, Staff, Office, Safeguarding; was 13), teacher 6 (Today, Messages, My classes, Pupils, Curriculum, My staff area; was 10), family 6 (Today, Messages, My children, Progress, Calendar, Fees), pupil 5 (Today, My classes, Revise, My progress, Calendar). Curriculum opens on the map. One word per thing: House points, Behaviour, Merits (pupil view), Timetable. Phone tabs: 4 per role. Breadcrumb root is "Today".
 - 2026-11-10: Next 3 and 5 done (workspace headers on Classes, a class, Pupils, Reports; 360px pass).
 - 2026-11-10: Next 2 done (menus on `ActionsMenu`); long forms split into titled sections with `FormSection` (PR #72).
 - 2026-11-09 (late): confirmations and pinned lessons (PR "Portal redesign 2").

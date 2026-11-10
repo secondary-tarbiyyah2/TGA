@@ -57,7 +57,7 @@ function AdminGcseContent() {
   return (
     <>
       <PageHeader
-        crumbs={[{ label: "Home", href: "/admin/dashboard" }, { label: "GCSE progress" }]}
+        crumbs={[{ label: "Today", href: "/admin/dashboard" }, { label: "GCSE progress" }]}
         title="GCSE progress"
         subtitle="Target, predicted and actual grades (9 to 1) for Years 10 and 11 (Pearson Edexcel International GCSE). Select a pupil for their history and mock exams. Pupils and parents see their own."
       />

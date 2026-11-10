@@ -10,7 +10,7 @@ export default function StudentActionsPage() {
     <section className="app-pad">
       <LearnGate allowedRoles={["student"]}>
         <LearnShell role="student">
-          <PageHeader crumbs={[{ label: "Home", href: "/student/dashboard" }, { label: "Action centre" }]} title="Action centre" subtitle="What to do next: homework to hand in, Qur'an to revise and your next one-to-one." />
+          <PageHeader crumbs={[{ label: "Today", href: "/student/dashboard" }, { label: "Waiting for you" }]} title="Waiting for you" subtitle="What to do next: homework to hand in, Qur'an to revise and your next one-to-one." />
           <ActionCentre role="student" />
         </LearnShell>
       </LearnGate>
