@@ -2,261 +2,676 @@
   "subject": "Computing",
   "year": "y3",
   "board": "National Curriculum",
-  "source": "National Curriculum KS2 Computing (sequence, repetition, decomposition, debugging); block-based programming in Scratch following the school's Drive KS2/KS3 Scratch resources",
+  "source": "National Curriculum KS2 Computing (sequence, repetition, decomposition, debugging); block-based programming in Scratch following the school's Drive KS2/KS3 Scratch resources | Spring 1 2027 (lessons 1, 2, 3, 5, 6, v3): Tarbiyyah Primary computing long-term plan 2023-24 Year 3 Spring 1 (Sequencing Sounds adapted to motion and looks blocks, no sound; Powerful Passwords); NCCE Teach Computing based",
   "lessons": [
     {
-      "unit": "Unit 1: Programming with sequence and repetition",
+      "unit": "Spring 1: Programming sequences and online safety",
       "n": 1,
-      "title": "Algorithms and breaking problems into parts",
+      "title": "Algorithms: precise steps and spotting mistakes",
       "duration": 45,
+      "bigQuestion": "Could a robot make your packed lunch if you only said 'make my lunch'? What would it need to know?",
       "objectives": [
-        "Explain what an algorithm is and why it must be precise",
-        "Break a big problem into smaller parts (decomposition)",
-        "Write a clear algorithm for a familiar task"
+        "To understand that an algorithm is a set of precise steps in the right order"
       ],
+      "successCriteria": [
+        "All: put the steps of an everyday task in order",
+        "Most: write precise steps to move a counter around a grid",
+        "Some: find and fix a mistake (bug) in someone else's steps"
+      ],
+      "crossCurricular": "Maths: position and direction on a grid",
+      "smsc": "Moral: doing a job carefully and in order, like the steps of wudu",
       "keywords": [
         {
           "term": "algorithm",
-          "def": "a precise set of steps to solve a problem"
+          "def": "a set of steps to do a job, in order"
         },
         {
-          "term": "decomposition",
-          "def": "breaking a big problem into smaller parts"
+          "term": "sequence",
+          "def": "the order the steps go in"
         },
         {
           "term": "precise",
-          "def": "exact and clear, with nothing left to guess"
+          "def": "exact, so there is only one way to follow it"
+        },
+        {
+          "term": "bug",
+          "def": "a mistake in the steps"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "Could a robot make your packed lunch if you only said 'make my lunch'? What would it need to know?",
+        "a": "It needs every small step, in order, said exactly: that is an algorithm."
+      },
       "starter": [
-        "Bismillah. What is an algorithm?",
-        "Why can't a computer 'guess' what we mean?",
-        "Name one job you do that has many steps."
+        {
+          "q": "Which of these is an input device? A) speaker B) keyboard C) screen",
+          "a": "B) keyboard",
+          "mins": 1,
+          "options": [
+            "Speaker",
+            "Keyboard",
+            "Screen"
+          ]
+        },
+        {
+          "q": "Which is an output device? A) mouse B) microphone C) printer",
+          "a": "C) printer",
+          "mins": 1,
+          "options": [
+            "Mouse",
+            "Microphone",
+            "Printer"
+          ]
+        },
+        {
+          "q": "Name one thing you should never share online.",
+          "a": "For example: your password, home address or school name.",
+          "mins": 1
+        },
+        {
+          "q": "What do we call computers joined together so they can share?",
+          "a": "A network",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Precise algorithms",
+          "heading": "What is an algorithm?",
           "bullets": [
-            "Computers follow instructions exactly.",
-            "Vague steps cause bugs.",
-            "'Put jam on bread' is vague; 'spread 1 spoon of jam' is precise."
+            "A list of steps to do a job",
+            "The steps must be in order",
+            "Each step must be clear"
           ],
-          "note": "Run the classic unplugged challenge: read out vague instructions for drawing a house and have pupils draw on paper, then compare drawings. Then repeat with precise instructions such as 'draw a square 4 cm wide'. Discuss why the results differ."
+          "note": "Ask: what steps do you follow to make wudu? Order matters. Algorithms are everywhere, not only in computers."
         },
         {
-          "heading": "Decomposition",
+          "heading": "Order matters",
           "bullets": [
-            "A big job is easier in small parts.",
-            "Planning a class picnic: invite, food, games, clean up.",
-            "Each part is a smaller problem."
+            "Wrong order, wrong result",
+            "Put on socks, then shoes",
+            "A computer follows the order you give"
           ],
-          "note": "Ask: how would you plan a class picnic? Draw a tree on screen with four branches. Explain decomposition means breaking the problem down, and that programmers do this for every program."
+          "note": "Pupils sort the cards on screen: number each card on their whiteboard.",
+          "sort": {
+            "columns": [
+              "1st",
+              "2nd",
+              "3rd",
+              "4th"
+            ],
+            "cards": [
+              "Put toothpaste on the brush",
+              "Pick up the toothbrush",
+              "Brush every tooth",
+              "Rinse the brush"
+            ],
+            "answer": [
+              1,
+              0,
+              2,
+              3
+            ]
+          }
         },
         {
-          "heading": "Decompose a game",
+          "heading": "Be precise",
           "bullets": [
-            "Game: a cat chases a ball.",
-            "Part 1: the cat moves.",
-            "Part 2: the ball moves.",
-            "Part 3: the score changes."
+            "'Move a bit' is not precise",
+            "'Move 2 squares forward' is precise",
+            "Use numbers and directions"
           ],
-          "note": "Show this as a diagram on screen. Ask which part they would build first. Stress that we test each small part before putting them together. This prepares them for building in Scratch."
+          "note": "Model on a 5 by 5 grid drawn on paper: a counter at the bottom left, a star at the top right.",
+          "model": {
+            "problem": "Move the counter from A1 to C3 on the grid.",
+            "steps": [
+              "Face up the grid",
+              "Forward 2 squares",
+              "Turn right",
+              "Forward 2 squares"
+            ],
+            "answer": "Forward 2, turn right, forward 2"
+          }
         },
         {
-          "heading": "Writing it down",
+          "heading": "Check",
           "bullets": [
-            "Use numbered steps.",
-            "One action in each step.",
-            "Check each step with a friend."
+            "Vote in the Teams poll"
           ],
-          "note": "Model writing the algorithm for 'make a paper aeroplane' as 6 numbered steps. Ask pupils to find any step that is unclear. Misconception: more words always means clearer; clear steps can be short."
+          "note": "30 seconds, then share results.",
+          "check": {
+            "q": "Which step is the most precise?",
+            "options": [
+              "Go over there",
+              "Move forward 3 squares",
+              "Move a bit",
+              "Turn somewhere"
+            ],
+            "answer": 1,
+            "why": "Only 'forward 3 squares' says exactly how far; the others could be followed many ways."
+          }
         }
       ],
       "practice": [
-        "Decompose 'cleaning your bedroom' into 4 smaller jobs.",
-        "Is this precise? 'Walk to the door.' Make it more precise using steps and a number. (e.g. take 5 steps forward)",
-        "Write the first three steps of an algorithm for making a cup of tea or milk."
+        {
+          "q": "Write the steps to move from A1 to A4 on the grid.",
+          "a": "Forward 3 squares.",
+          "mins": 2,
+          "model": "Count the squares between A1 and A4: there are 3 moves. Step: forward 3 squares. Test it with your finger."
+        },
+        {
+          "q": "Spot the bug: to reach B2 from A1 Sam wrote 'forward 1, turn left, forward 1'. What is wrong?",
+          "a": "He should turn right, not left (facing up, B is to the right).",
+          "mins": 2
+        },
+        {
+          "q": "Put in order: 'eat', 'wash hands', 'say Bismillah', 'sit down'.",
+          "a": "Wash hands, sit down, say Bismillah, eat.",
+          "mins": 2
+        }
       ],
       "independent": [
-        "Write a precise algorithm (6-8 steps) for putting on a coat and fastening it.",
-        "Decompose the problem 'make a school newsletter' into at least 4 parts and draw a tree diagram.",
-        "Swap algorithms with a partner and follow them exactly. Mark any step which is not precise."
+        {
+          "q": "Core: On your paper grid, write an algorithm to move the counter from A1 to D4. Number each step.",
+          "a": "For example: forward 3, turn right, forward 3.",
+          "mins": 4,
+          "model": "Teacher writes the first two steps aloud: '1. Forward 3 squares. 2. Turn right.' and checks with a finger on the grid."
+        },
+        {
+          "q": "Extend: Write an algorithm for a grown-up at home to make a cup of water, in at least 5 steps.",
+          "a": "For example: take a cup, go to the tap, turn the tap on, fill the cup, turn the tap off.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Write an algorithm with one bug in it. Swap with the screen: can the class find the bug?",
+          "a": "Any algorithm with one deliberate error, and the fix explained.",
+          "mins": 4
+        }
       ],
       "exit": [
-        "What does decomposition mean?",
-        "Rewrite this to be precise: 'Make the sandwich.'"
+        {
+          "q": "An algorithm is... A) a computer B) a set of steps in order C) a game",
+          "a": "B) a set of steps in order",
+          "mins": 1,
+          "options": [
+            "A computer",
+            "A set of steps in order",
+            "A game"
+          ]
+        },
+        {
+          "q": "Why must an algorithm be precise?",
+          "a": "So it can only be followed one way and gives the right result.",
+          "mins": 2
+        }
       ],
-      "homework": "Decompose a task you do at home (for example laying the table for iftar or dinner) into 4 parts and write an algorithm for one of them.",
-      "send": "SEND/EAL: provide a template with numbered boxes and picture prompts; allow pupils to record oral algorithms. Stretch: ask pupils to decompose a part into even smaller parts."
+      "homework": "Write the algorithm for one job you do at home (for example tidying your shoes) in 5 numbered steps.",
+      "send": "SEND: picture cards for the steps and a grid with arrows. EAL: forward, turn, left, right with gestures. Stretch: use the fewest steps possible.",
+      "resources": [
+        "Tarbiyyah Primary computing long-term plan 2023-24, Year 3 Spring 1 (Sequencing Sounds with Powerful Passwords, taught with motion and looks blocks, no sound)",
+        "5 by 5 grid on paper with a counter (a coin or button)",
+        "Step cards for 'brushing teeth' (pupil PDF)",
+        "Mini-whiteboard and pen"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "toothbrush and toothpaste",
+          "alt": "A toothbrush and toothpaste",
+          "for": "teach:2"
+        },
+        {
+          "find": "chess board",
+          "alt": "A grid of squares like a chess board",
+          "for": "teach:3"
+        },
+        {
+          "find": "lunch box sandwich apple",
+          "alt": "A packed lunch box",
+          "for": "hook"
+        }
+      ]
     },
     {
-      "unit": "Unit 1: Programming with sequence and repetition",
+      "unit": "Spring 1: Programming sequences and online safety",
       "n": 2,
-      "title": "Scratch: sprites, events and sequences",
+      "title": "Scratch: sprites and motion blocks",
       "duration": 45,
+      "bigQuestion": "If you tell a ball to 'move 10 steps' twenty times, how far has it gone?",
       "objectives": [
-        "Use event blocks to start a program",
-        "Build a sequence of motion, looks and sound blocks",
-        "Predict, run and debug a short Scratch program"
+        "To understand how motion blocks in Scratch make a sprite move in sequence"
       ],
+      "successCriteria": [
+        "All: name the stage, a sprite and a block",
+        "Most: join move and turn blocks to make a sprite move",
+        "Some: predict where a sprite will end before running the script"
+      ],
+      "crossCurricular": "Maths: turns and right angles (90 degrees)",
       "keywords": [
         {
           "term": "sprite",
-          "def": "a character or object in a Scratch program"
+          "def": "an object on the Scratch stage that we program"
         },
         {
-          "term": "event",
-          "def": "something that starts a script, such as clicking the green flag"
+          "term": "stage",
+          "def": "the area where sprites move"
+        },
+        {
+          "term": "block",
+          "def": "one instruction you drag into a script"
         },
         {
           "term": "script",
-          "def": "a stack of blocks that make up a program"
+          "def": "blocks joined together"
+        },
+        {
+          "term": "run",
+          "def": "start the script so it happens"
         }
       ],
+      "hook": {
+        "type": "ponder",
+        "text": "If you tell a ball to 'move 10 steps' twenty times, how far has it gone?",
+        "a": "200 steps: a computer follows each instruction exactly."
+      },
       "starter": [
-        "Bismillah. Decomposition means breaking a ___ problem into ___ parts.",
-        "Put in order: open the lid, switch on the computer, press the button.",
-        "Why must an algorithm be precise?"
+        {
+          "q": "What is an algorithm?",
+          "a": "A set of precise steps in order.",
+          "mins": 1
+        },
+        {
+          "q": "A mistake in an algorithm is called a... A) bug B) block C) byte",
+          "a": "A) bug",
+          "mins": 1,
+          "options": [
+            "Bug",
+            "Block",
+            "Byte"
+          ]
+        },
+        {
+          "q": "Is 'go over there' precise?",
+          "a": "No: it does not say how far or which way.",
+          "mins": 1
+        },
+        {
+          "q": "Fix it: 'shoes on, socks on'.",
+          "a": "Socks on, then shoes on.",
+          "mins": 1
+        }
       ],
       "teach": [
         {
           "heading": "Meet Scratch",
           "bullets": [
-            "The stage is where things happen.",
-            "Sprites are the characters.",
-            "Blocks snap together into scripts."
+            "The stage is where things happen",
+            "Sprites are the objects we program",
+            "Blocks are the instructions"
           ],
-          "note": "Share your screen with Scratch open. Point out the stage, sprite list, block palette and script area. Pupils need a free Scratch account or the offline editor; if using the browser editor with no account, remind them to save the file using File, Save to your computer."
+          "note": "Share screen. Delete the cat sprite and choose an object sprite (Ball or Rocketship): we program objects, not animals or people."
         },
         {
-          "heading": "Events start scripts",
+          "heading": "Motion blocks",
           "bullets": [
-            "'When green flag clicked' starts a script.",
-            "'When space key pressed' starts a script.",
-            "Scripts run top to bottom."
+            "move 10 steps",
+            "turn 15 degrees",
+            "go to x: 0 y: 0"
           ],
-          "note": "Demonstrate a one-block script: when green flag clicked, move 10 steps. Click the flag several times; the sprite keeps moving. Emphasise that blocks run in order from top to bottom."
+          "note": "Show the blue Motion category. Drag 'move 10 steps' and click it. Change 10 to 50.",
+          "code": {
+            "lang": "scratch",
+            "text": "when green flag clicked\ngo to x: 0 y: 0\nmove 50 steps\nturn right 90 degrees\nmove 50 steps",
+            "output": "The ball moves right 50 steps, turns, then moves 50 steps down."
+          }
         },
         {
-          "heading": "A greeting sequence",
+          "heading": "Predict, then run",
           "bullets": [
-            "When green flag clicked.",
-            "Say 'Assalamu alaykum!' for 2 seconds.",
-            "Move 50 steps.",
-            "Say 'Welcome!' for 2 seconds."
+            "Read the script first",
+            "Say where the sprite will end",
+            "Then click the green flag"
           ],
-          "note": "Build this live and ask pupils to predict what will happen before you click the flag. Show how swapping two blocks changes the story. Link to the sunnah of greeting with salam first."
+          "note": "Predicting first is how programmers check their thinking.",
+          "model": {
+            "problem": "Where does the ball end? Start at the centre, facing right.",
+            "steps": [
+              "move 100 steps: 100 to the right",
+              "turn right 90 degrees: now facing down",
+              "move 50 steps: 50 down"
+            ],
+            "answer": "100 right and 50 down from the centre"
+          }
         },
         {
-          "heading": "Debugging a script",
+          "heading": "Check",
           "bullets": [
-            "Run it and watch carefully.",
-            "Which block is wrong?",
-            "Change one thing, run again."
+            "Vote in the Teams poll"
           ],
-          "note": "Show a buggy script where the sprite moves before it says hello when it should say first. Ask pupils how to fix it by swapping blocks. Model changing one thing at a time, so we know what fixed it."
+          "note": "Launch the poll.",
+          "check": {
+            "q": "A sprite faces right. It runs 'move 30 steps' three times. How far has it moved?",
+            "options": [
+              "30 steps",
+              "60 steps",
+              "90 steps",
+              "33 steps"
+            ],
+            "answer": 2,
+            "why": "Each block runs once, in order: 30 + 30 + 30 = 90."
+          }
         }
       ],
       "practice": [
-        "Predict: when green flag clicked, move 100 steps, say 'Hi!' for 1 second. Where does the sprite say 'Hi!'? (after moving)",
-        "Together, add a 'play sound' block and predict when the sound plays.",
-        "Which event block starts a script when you press the space bar?"
-      ],
-      "independent": [
-        "Open Scratch and make a sprite say 'Assalamu alaykum' then move across the stage and say its name.",
-        "Add a second sprite which replies 'Wa alaykumussalam' after a wait block of 2 seconds.",
-        "Stretch: change the backdrop when the sprites finish talking."
-      ],
-      "exit": [
-        "What is a sprite?",
-        "Which block starts the script when the green flag is clicked?"
-      ],
-      "homework": "Practise at home: build a script of 5 blocks in Scratch that makes a sprite move, speak and change costume. Take a screenshot to share.",
-      "send": "SEND/EAL: provide a screenshot of the finished script to copy and a word bank for block names. Stretch: add a key-press event so the sprite does a different action."
-    },
-    {
-      "unit": "Unit 1: Programming with sequence and repetition",
-      "n": 3,
-      "title": "Repetition: loops in Scratch",
-      "duration": 45,
-      "objectives": [
-        "Use the 'repeat' block to repeat actions",
-        "Explain why loops make programs shorter",
-        "Draw a square and a pattern using a loop"
-      ],
-      "keywords": [
         {
-          "term": "loop",
-          "def": "a block that repeats the instructions inside it"
+          "q": "Build: when green flag clicked, move 100 steps. What happens?",
+          "a": "The sprite moves 100 steps in the way it faces.",
+          "mins": 2,
+          "model": "Teacher drags 'when green flag clicked', then snaps 'move 100 steps' under it, predicts 'right 100', then runs it."
         },
         {
-          "term": "repeat",
-          "def": "do the same steps a set number of times"
+          "q": "Change it so the sprite moves back to where it started.",
+          "a": "Add 'move -100 steps' or turn 180 degrees and move 100 steps.",
+          "mins": 2
         },
         {
-          "term": "pen",
-          "def": "an extension that draws lines as a sprite moves"
+          "q": "What does 'go to x: 0 y: 0' do?",
+          "a": "Sends the sprite to the centre of the stage.",
+          "mins": 1
         }
       ],
+      "independent": [
+        {
+          "q": "Core: Make your sprite move in an L shape: move, turn right 90, move.",
+          "a": "move 100 steps, turn right 90 degrees, move 50 steps.",
+          "mins": 5,
+          "model": "Teacher builds the first part and predicts aloud before clicking the flag."
+        },
+        {
+          "q": "Extend: Make the sprite trace a square and return to the start.",
+          "a": "move 100, turn 90, four times (8 blocks).",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Write your script on paper first, predict the end point, then test. Was your prediction right?",
+          "a": "A written script with a prediction and the result compared.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "The objects we program in Scratch are called... A) stages B) sprites C) scripts",
+          "a": "B) sprites",
+          "mins": 1,
+          "options": [
+            "Stages",
+            "Sprites",
+            "Scripts"
+          ]
+        },
+        {
+          "q": "Why do we predict before we run a script?",
+          "a": "To check our thinking and spot bugs before testing.",
+          "mins": 2
+        }
+      ],
+      "homework": "Draw (on paper) a 4-block Scratch script that moves a ball in a zig-zag, and write where it will end.",
+      "send": "SEND: a printed block card set to arrange before building. EAL: move, turn, run with actions. Stretch: use 'glide 1 secs to x: y:' to make smooth moves.",
+      "resources": [
+        "Tarbiyyah Primary computing long-term plan 2023-24, Year 3 Spring 1 (Sequencing Sounds with Powerful Passwords, taught with motion and looks blocks, no sound)",
+        "Scratch in the browser (scratch.mit.edu, free; pupil logins from the teacher's Scratch Teacher Account: TO CONFIRM)",
+        "Block card set and stage grid (pupil PDF)",
+        "Teams screen share"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "computer mouse",
+          "alt": "A computer mouse for dragging blocks",
+          "for": "teach:1"
+        },
+        {
+          "find": "compass rose",
+          "alt": "A compass rose showing directions",
+          "for": "keywords"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Programming sequences and online safety",
+      "n": 3,
+      "title": "Repeat loops: patterns with fewer blocks",
+      "duration": 45,
+      "bigQuestion": "Would you rather write 'move, turn' 100 times, or write it once and say 'do this 100 times'?",
+      "objectives": [
+        "To understand how a repeat loop makes a program shorter and easier to read"
+      ],
+      "successCriteria": [
+        "All: spot the part of a script that repeats",
+        "Most: use a repeat block to draw a square",
+        "Some: compare a long and a short script and explain which is better"
+      ],
+      "crossCurricular": "Art: repeating geometric patterns",
+      "smsc": "Spiritual: the order and pattern in Islamic geometric art",
+      "keywords": [
+        {
+          "term": "repeat",
+          "def": "do the same thing again"
+        },
+        {
+          "term": "loop",
+          "def": "blocks that run again and again"
+        },
+        {
+          "term": "pattern",
+          "def": "something that happens in the same way again"
+        },
+        {
+          "term": "efficient",
+          "def": "does the job with less work"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Would you rather write 'move, turn' 100 times, or write it once and say 'do this 100 times'?"
+      },
       "starter": [
-        "Bismillah. What does 'when green flag clicked' do?",
-        "Write the steps to clap 5 times using the word 'repeat'.",
-        "What is a script?"
+        {
+          "q": "What is a sprite?",
+          "a": "An object on the stage that we program.",
+          "mins": 1
+        },
+        {
+          "q": "Which block makes a sprite turn? A) move 10 steps B) turn 90 degrees C) when flag clicked",
+          "a": "B) turn 90 degrees",
+          "mins": 1,
+          "options": [
+            "move 10 steps",
+            "turn 90 degrees",
+            "when flag clicked"
+          ]
+        },
+        {
+          "q": "A sprite moves 20 steps 4 times. How far?",
+          "a": "80 steps",
+          "mins": 1
+        },
+        {
+          "q": "Why do we predict before we run?",
+          "a": "To check our thinking.",
+          "mins": 1
+        }
       ],
       "teach": [
         {
-          "heading": "Why loops?",
+          "heading": "Spot the repeat",
           "bullets": [
-            "Move 10, turn 9 written forty times is long!",
-            "Repeat 40: move 10, turn 9.",
-            "Loops save time and avoid mistakes."
+            "Look for blocks that come again",
+            "move 100, turn 90 comes 4 times",
+            "That is a pattern"
           ],
-          "note": "Show a script with the same two blocks copied twelve times. Ask what would happen if they made a mistake in one copy. Then show the same script using one repeat block. Pupils should see loops are shorter and easier to fix."
+          "note": "Show the 8-block square script. Ask pupils to circle the repeating pair on their whiteboard."
         },
         {
           "heading": "The repeat block",
           "bullets": [
-            "'repeat 10' goes around other blocks.",
-            "Blocks inside run 10 times.",
-            "Blocks outside run once."
+            "Found in Control (orange)",
+            "Blocks inside run again",
+            "Choose how many times"
           ],
-          "note": "Demonstrate dragging a move block inside and outside a repeat. Ask pupils where the sprite finishes in each case. Misconception: pupils think the number is the number of extra repeats; it is the total number of times."
+          "note": "Pen extension: click Add Extension, choose Pen, then 'pen down' so the sprite draws.",
+          "compare": {
+            "left": {
+              "title": "Long script",
+              "points": [
+                "move 100",
+                "turn 90",
+                "move 100",
+                "turn 90",
+                "... 8 blocks"
+              ]
+            },
+            "right": {
+              "title": "With a loop",
+              "points": [
+                "repeat 4",
+                "move 100",
+                "turn 90",
+                "3 blocks"
+              ]
+            },
+            "label": "vs"
+          }
         },
         {
-          "heading": "Draw a square",
+          "heading": "Build a square",
           "bullets": [
-            "Pen down.",
-            "Repeat 4: move 100 steps, turn 90 degrees.",
-            "Pen up."
+            "pen down",
+            "repeat 4: move 100, turn 90",
+            "Run and check"
           ],
-          "note": "Add the Pen extension and build the script live. A square has 4 equal sides and 4 right angles. Ask: what would repeat 5 draw? Test the answer; pupils will see a missing line or an open shape, which leads to discussion."
+          "note": "Model live, then clear the stage with 'erase all'.",
+          "model": {
+            "problem": "Draw a square with a loop.",
+            "steps": [
+              "Add 'pen down'",
+              "Drag 'repeat 10' and change to 4",
+              "Put 'move 100 steps' inside",
+              "Put 'turn right 90 degrees' inside"
+            ],
+            "answer": "pen down, repeat 4 (move 100, turn 90)"
+          }
         },
         {
-          "heading": "Patterns with loops",
+          "heading": "Check",
           "bullets": [
-            "Triangle: repeat 3, turn 120 degrees.",
-            "Hexagon: repeat 6, turn 60 degrees.",
-            "Change the numbers to change the shape."
+            "Vote in the Teams poll"
           ],
-          "note": "Test the triangle and hexagon scripts live. Link to Islamic geometric patterns: many are built from repeated shapes, such as hexagons and stars. Encourage pupils to experiment with the angle and repeat numbers and explain what changes."
+          "note": "Launch the poll.",
+          "check": {
+            "q": "How many times must we repeat 'move 100, turn 90' to draw a square?",
+            "options": [
+              "2",
+              "3",
+              "4",
+              "90"
+            ],
+            "answer": 2,
+            "why": "A square has 4 sides and 4 corners; 90 is the angle, not the count."
+          }
         }
       ],
       "practice": [
-        "How many sides does the shape have if the script is 'repeat 4: move 100, turn 90'? Predict, then test.",
-        "Debug: the sprite is meant to draw a square but turns 60 degrees each time. What should it be?",
-        "Write a loop that makes a sprite move 10 steps and say 'Allahu akbar' 3 times."
+        {
+          "q": "Draw a square with a repeat block.",
+          "a": "pen down, repeat 4 (move 100, turn 90).",
+          "mins": 2,
+          "model": "Teacher repeats the model, asking pupils to say each block before it is dragged."
+        },
+        {
+          "q": "Change the loop to draw a bigger square.",
+          "a": "Change move 100 to move 150.",
+          "mins": 1
+        },
+        {
+          "q": "How many blocks did the loop save?",
+          "a": "The long script had 8 blocks; the loop uses 3, so it saves 5.",
+          "mins": 2
+        }
       ],
       "independent": [
-        "Build the square script in Scratch and make it draw a square with sides of 80 steps.",
-        "Change the script to draw a triangle (3 sides, 120 degrees) and then a hexagon (6 sides, 60 degrees).",
-        "Stretch: put your square script inside a repeat 12 loop with a turn of 30 degrees after each square to make a pattern."
+        {
+          "q": "Core: Draw a row of dashes: repeat 5 (pen down, move 20, pen up, move 20).",
+          "a": "repeat 5 with pen down, move 20, pen up, move 20 inside.",
+          "mins": 4,
+          "model": "Teacher builds the first dash and shows why 'pen up' leaves a gap."
+        },
+        {
+          "q": "Extend: Draw a triangle. Hint: repeat 3, turn 120.",
+          "a": "pen down, repeat 3 (move 100, turn 120).",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Put your square loop inside another 'repeat 6' with 'turn 60' to make a pattern. Describe it.",
+          "a": "Six squares turned around a point make a flower-like pattern.",
+          "mins": 4
+        }
       ],
       "exit": [
-        "Why do programmers use loops?",
-        "What shape does 'repeat 3: move 100, turn 120' draw?"
+        {
+          "q": "A loop makes a script... A) longer B) shorter and easier to read C) slower",
+          "a": "B) shorter and easier to read",
+          "mins": 1,
+          "options": [
+            "Longer",
+            "Shorter and easier to read",
+            "Slower"
+          ]
+        },
+        {
+          "q": "Which part of 'move 50, turn 90, move 50, turn 90, move 50, turn 90, move 50, turn 90' could go in a loop?",
+          "a": "move 50, turn 90, repeated 4 times.",
+          "mins": 2
+        }
       ],
-      "homework": "Design a pattern on paper that uses a repeated shape. Write the loop you would need to draw it.",
-      "send": "SEND/EAL: provide a ready-made block set to assemble and label each block with a picture. Stretch: ask pupils to work out the turning angle for a pentagon (72 degrees) and test it."
+      "homework": "Find a repeating pattern at home (tiles, a rug, a fence). Write it as 'repeat __ times: ...'.",
+      "send": "SEND: a ready-made script to edit rather than build. EAL: repeat, loop, again. Stretch: draw a hexagon (repeat 6, turn 60).",
+      "resources": [
+        "Tarbiyyah Primary computing long-term plan 2023-24, Year 3 Spring 1 (Sequencing Sounds with Powerful Passwords, taught with motion and looks blocks, no sound)",
+        "Scratch in the browser (scratch.mit.edu, free; pupil logins from the teacher's Scratch Teacher Account: TO CONFIRM); Pen extension",
+        "Mini-whiteboard and pen"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "Islamic geometric tile pattern",
+          "alt": "A repeating geometric tile pattern",
+          "for": "hook"
+        },
+        {
+          "find": "ceramic floor tiles pattern",
+          "alt": "Square floor tiles in a repeating pattern",
+          "for": "keywords"
+        }
+      ]
     },
     {
       "unit": "Unit 1: Programming with sequence and repetition",
@@ -341,6 +756,436 @@
       ],
       "homework": "Add one more improvement to your card (a new backdrop or a new costume) and describe in one sentence what you changed.",
       "send": "SEND/EAL: provide a template project with scenes set up and sentence starters for feedback. Stretch: ask pupils to add a click event so the viewer chooses the next scene."
+    },
+    {
+      "unit": "Spring 1: Programming sequences and online safety",
+      "n": 5,
+      "title": "Debugging: find and fix errors",
+      "duration": 45,
+      "bigQuestion": "A ball should draw a square but it draws a line. Where would you start looking for the mistake?",
+      "objectives": [
+        "To understand how to find and fix a bug by testing a script one step at a time"
+      ],
+      "successCriteria": [
+        "All: say what a script should do and what it actually does",
+        "Most: find the block that causes the bug",
+        "Some: fix the bug and test again to prove it works"
+      ],
+      "smsc": "Moral: patience (sabr) and not giving up when something goes wrong",
+      "keywords": [
+        {
+          "term": "debug",
+          "def": "find and fix mistakes in a program"
+        },
+        {
+          "term": "test",
+          "def": "run the program to see if it works"
+        },
+        {
+          "term": "error",
+          "def": "something that goes wrong"
+        },
+        {
+          "term": "fix",
+          "def": "change it so it works"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A ball should draw a square but it draws a line. Where would you start looking for the mistake?"
+      },
+      "starter": [
+        {
+          "q": "How many times do we repeat to draw a square?",
+          "a": "4",
+          "mins": 1,
+          "options": [
+            "3",
+            "4",
+            "6"
+          ]
+        },
+        {
+          "q": "What does a loop do?",
+          "a": "Runs the blocks inside it again and again.",
+          "mins": 1
+        },
+        {
+          "q": "Write a loop for a triangle.",
+          "a": "repeat 3 (move 100, turn 120)",
+          "mins": 1
+        },
+        {
+          "q": "Which extension lets a sprite draw?",
+          "a": "The Pen extension.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "What is debugging?",
+          "bullets": [
+            "A bug is a mistake",
+            "Debugging is finding and fixing it",
+            "Every programmer debugs"
+          ],
+          "note": "Mistakes are normal. We test, find and fix: this is patience (sabr) in action."
+        },
+        {
+          "heading": "The debugging steps",
+          "bullets": [
+            "Say what it should do",
+            "Run it and watch",
+            "Find where it goes wrong",
+            "Fix, then test again"
+          ],
+          "note": "Point to each step as you use it later.",
+          "cycle": [
+            "Predict",
+            "Run",
+            "Spot the difference",
+            "Fix",
+            "Test again"
+          ]
+        },
+        {
+          "heading": "Find the bug",
+          "bullets": [
+            "The script should draw a square",
+            "It draws a line",
+            "Which block is wrong?"
+          ],
+          "note": "Show the buggy script.",
+          "code": {
+            "lang": "scratch",
+            "text": "when green flag clicked\npen down\nrepeat 4\n  move 100 steps\nend\nturn right 90 degrees",
+            "output": "A straight line: the turn is outside the loop."
+          }
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "Why does the script draw a line?",
+            "options": [
+              "The move is too short",
+              "The turn is outside the loop",
+              "There is no pen down",
+              "Repeat should be 3"
+            ],
+            "answer": 1,
+            "why": "The sprite moves 4 times in the same direction, then turns once at the end."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Fix the script on the slide so it draws a square.",
+          "a": "Move 'turn right 90 degrees' inside the repeat, under 'move 100 steps'.",
+          "mins": 2,
+          "model": "Teacher drags the turn block inside the loop, predicts 'a square', then runs it to prove it."
+        },
+        {
+          "q": "Bug: 'repeat 4 (move 100, turn 45)'. What does it draw and how do you fix it?",
+          "a": "Half of an octagon; change turn 45 to turn 90.",
+          "mins": 2
+        },
+        {
+          "q": "Bug: nothing is drawn but the sprite moves. Why?",
+          "a": "There is no 'pen down' block.",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Open the class project 'Buggy shapes' and fix the three scripts (square, triangle, dashes).",
+          "a": "Square: turn inside the loop; triangle: turn 120 not 90; dashes: add pen up.",
+          "mins": 6,
+          "model": "Teacher fixes the square first, saying each debugging step aloud."
+        },
+        {
+          "q": "Extend: Write in the portal response box what each bug was and how you found it. Start: 'The script should... but it...'",
+          "a": "For example: The script should draw a triangle but it drew part of a square, so I changed turn 90 to turn 120.",
+          "mins": 3
+        },
+        {
+          "q": "Stretch: Make a script with one bug for a partner to find in the next lesson.",
+          "a": "A script with one clear bug and the fix written down.",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Debugging means... A) deleting the program B) finding and fixing mistakes C) adding more blocks",
+          "a": "B) finding and fixing mistakes",
+          "mins": 1,
+          "options": [
+            "Deleting the program",
+            "Finding and fixing mistakes",
+            "Adding more blocks"
+          ]
+        },
+        {
+          "q": "What should you always do after fixing a bug?",
+          "a": "Test (run) the script again.",
+          "mins": 1
+        }
+      ],
+      "homework": "Ask someone at home to follow your square algorithm on paper with one bug in it. Can they find it?",
+      "send": "SEND: one bug at a time, with the buggy block highlighted. EAL: bug, fix, test. Stretch: fix a script with two bugs.",
+      "resources": [
+        "Tarbiyyah Primary computing long-term plan 2023-24, Year 3 Spring 1 (Sequencing Sounds with Powerful Passwords, taught with motion and looks blocks, no sound)",
+        "Scratch in the browser (scratch.mit.edu, free; pupil logins from the teacher's Scratch Teacher Account: TO CONFIRM)",
+        "'Buggy shapes' Scratch project shared in the class studio (teacher makes it: TO CONFIRM)",
+        "Debugging steps card (pupil PDF)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "magnifying glass",
+          "alt": "A magnifying glass for looking closely",
+          "for": "teach:2"
+        },
+        {
+          "find": "first computer bug moth taped in logbook",
+          "alt": "The 1947 logbook page where a real moth was taped in as the first computer 'bug'",
+          "for": "hook"
+        }
+      ]
+    },
+    {
+      "unit": "Spring 1: Programming sequences and online safety",
+      "n": 6,
+      "title": "Powerful passwords",
+      "duration": 45,
+      "bigQuestion": "Your password is like a key to your house. Who should have a copy?",
+      "objectives": [
+        "To understand what makes a password strong and why we keep it private"
+      ],
+      "successCriteria": [
+        "All: say who we can share a password with (a trusted adult at home)",
+        "Most: tell a strong password from a weak one",
+        "Some: make a strong password using three random words"
+      ],
+      "crossCurricular": "PSHE: keeping safe online and telling a trusted adult",
+      "smsc": "Moral: amanah, keeping trusts safe",
+      "keywords": [
+        {
+          "term": "password",
+          "def": "secret words that unlock your account"
+        },
+        {
+          "term": "strong",
+          "def": "hard for anyone else to guess"
+        },
+        {
+          "term": "private",
+          "def": "kept to yourself"
+        },
+        {
+          "term": "trusted adult",
+          "def": "a grown-up who keeps you safe, like a parent"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Your password is like a key to your house. Who should have a copy?",
+        "a": "Only you and your parents: never friends, never strangers online."
+      },
+      "islamicLink": {
+        "text": "Keeping a password safe is looking after a trust (amanah). Allah commands us to look after trusts and return them to their owners (an-Nisa 4:58). Our accounts, our devices and our school login are trusts we keep carefully.",
+        "at": "start"
+      },
+      "starter": [
+        {
+          "q": "What is debugging?",
+          "a": "Finding and fixing mistakes in a program.",
+          "mins": 1,
+          "options": [
+            "Deleting a program",
+            "Finding and fixing mistakes",
+            "Drawing a square"
+          ]
+        },
+        {
+          "q": "What should you do after fixing a bug?",
+          "a": "Test it again.",
+          "mins": 1
+        },
+        {
+          "q": "What does a loop do?",
+          "a": "Repeats the blocks inside it.",
+          "mins": 1
+        },
+        {
+          "q": "Name a trusted adult at home.",
+          "a": "For example: mum, dad, a grandparent who looks after you.",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "What is a password?",
+          "bullets": [
+            "A secret that unlocks an account",
+            "Your school login has one",
+            "It keeps your work and messages safe"
+          ],
+          "note": "Link to their Teams and portal login: they use it every day."
+        },
+        {
+          "heading": "Weak or strong?",
+          "bullets": [
+            "Weak: easy to guess",
+            "Strong: long and hard to guess",
+            "Three random words are strong"
+          ],
+          "note": "Use the sort. Never use your name, birthday or 'password'.",
+          "sort": {
+            "columns": [
+              "Weak",
+              "Strong"
+            ],
+            "cards": [
+              "password",
+              "ali2017",
+              "123456",
+              "CloudTeapotRiver",
+              "BlueLampOrange9",
+              "football"
+            ],
+            "answer": [
+              0,
+              0,
+              0,
+              1,
+              1,
+              0
+            ]
+          }
+        },
+        {
+          "heading": "Keep it private",
+          "bullets": [
+            "Share only with a parent",
+            "Never type it for a friend",
+            "Never put it in a chat",
+            "Log out on shared devices"
+          ],
+          "note": "Teams and portal behaviour: never post a password in the class chat; if you think someone knows it, tell your parent and teacher."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Vote in the Teams poll"
+          ],
+          "note": "Launch the poll.",
+          "check": {
+            "q": "A friend in the Teams chat asks for your password to 'help'. What do you do?",
+            "options": [
+              "Send it",
+              "Say no and tell a trusted adult",
+              "Send half of it",
+              "Change your name"
+            ],
+            "answer": 1,
+            "why": "Passwords are never shared, even with friends; a trusted adult can help."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "q": "Is 'Zayd2018' a strong password? Why?",
+          "a": "No: it uses a name and a year, which are easy to guess.",
+          "mins": 2,
+          "model": "Teacher thinks aloud: 'Is it long? Quite. Could someone guess it? Yes, it is a name and a birth year. So it is weak.'"
+        },
+        {
+          "q": "Make 'catdog' stronger using the three random words rule.",
+          "a": "For example: CatPencilMountain.",
+          "mins": 2
+        },
+        {
+          "q": "Where must a password never be typed in a Teams lesson?",
+          "a": "In the chat (or anywhere others can see).",
+          "mins": 1
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Write three random words that would make a strong password (do NOT use your real one).",
+          "a": "For example: TrainLemonCarpet.",
+          "mins": 3,
+          "model": "Teacher picks three things in the room that do not go together: 'Kettle, Moon, Sock: KettleMoonSock.'"
+        },
+        {
+          "q": "Extend: Write two rules for keeping a password private in the portal response box. Start: 'I will...'",
+          "a": "I will only share my password with my parents. I will never type it in the chat.",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Explain why 'BlueLampOrange9' is harder to guess than 'blue'.",
+          "a": "It is longer, uses three unrelated words, capitals and a number, so there are many more possibilities to try.",
+          "mins": 4
+        },
+        {
+          "q": "Quiz (portal): 5 questions on password safety.",
+          "a": "Teacher marks in the portal.",
+          "mins": 4
+        }
+      ],
+      "exit": [
+        {
+          "q": "Which is the strongest password? A) 123456 B) amina C) TigerSpoonCloud",
+          "a": "C) TigerSpoonCloud",
+          "mins": 1,
+          "options": [
+            "123456",
+            "amina",
+            "TigerSpoonCloud"
+          ]
+        },
+        {
+          "q": "Big question: who should have a copy of your password key?",
+          "a": "Only me and my parents (trusted adults at home).",
+          "mins": 1
+        }
+      ],
+      "homework": "With a parent, check that your school login password is strong and is written only where your parent keeps it safe.",
+      "send": "SEND: weak and strong cards with pictures of locks. EAL: strong, weak, private, share. Stretch: explain why websites ask for a number or symbol.",
+      "resources": [
+        "Tarbiyyah Primary computing long-term plan 2023-24, Year 3 Spring 1 (Sequencing Sounds with Powerful Passwords, taught with motion and looks blocks, no sound) (Powerful Passwords)",
+        "Password safety quiz in the portal (5 questions)",
+        "Weak or strong card sort (pupil PDF)"
+      ],
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "teams-poll",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "padlock",
+          "alt": "A closed padlock",
+          "for": "keywords"
+        },
+        {
+          "find": "house key",
+          "alt": "A house key",
+          "for": "hook"
+        }
+      ]
     }
   ]
 }
