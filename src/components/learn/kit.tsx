@@ -413,10 +413,10 @@ export function Loading({ label = "Loading", lines = 3, bare = false, className 
 
 /** A figure and its label. `href` makes it a link; `tone` colours only the figure. */
 export function StatTile({ value, label, hint, href, tone = "neutral" }: { value: ReactNode; label: string; hint?: string; href?: string; tone?: "neutral" | "accent" | "warn" | "bad" }) {
-  const colour = tone === "accent" ? "text-gold-700" : tone === "warn" ? "text-amber-800" : tone === "bad" ? "text-red-700" : "text-ink";
+  const colour = tone === "accent" ? "text-gold-700" : tone === "warn" ? "text-amber-800" : tone === "bad" ? "text-red-700" : "text-forest-900";
   const body = (
     <>
-      <span className={`block text-[1.75rem] font-semibold leading-none tabular-nums tracking-tight ${colour}`}>{value}</span>
+      <span className={`portal-display block text-[1.875rem] font-semibold leading-none tabular-nums ${colour}`}>{value}</span>
       <span className="mt-2 block text-sm font-medium text-ink/80">{label}</span>
       {hint && <span className="mt-0.5 block text-xs text-ink/60">{hint}</span>}
     </>

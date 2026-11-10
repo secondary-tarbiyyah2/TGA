@@ -120,7 +120,7 @@ export function PageHeader({
             </span>
           )}
           <div className="min-w-0">
-            <h1 className="text-2xl font-semibold leading-tight tracking-tight text-ink sm:text-[1.75rem]">{title}</h1>
+            <h1 className="portal-display text-2xl font-semibold leading-tight text-forest-900 sm:text-[1.875rem]">{title}</h1>
             {subtitle && <p className="mt-1 max-w-prose text-sm text-ink/65">{subtitle}</p>}
           </div>
         </div>
@@ -146,18 +146,13 @@ export function HubTabs({ roles }: { roles: string[] }) {
   if (!hub) return null;
   return (
     <nav aria-label={`${hub.item.label} pages`} className="hub-tabs portal-tabs -mx-4 mb-6 mt-4 overflow-x-auto px-4 sm:mx-0 sm:mt-6 sm:px-0 print:hidden">
-      <ul className="flex min-w-max gap-1 border-b border-gold-light">
+      <ul className="hub-seg">
         {hub.tabs.map((t) => {
           const active = hub.active?.href === t.href;
           return (
             <li key={t.href}>
-              <Link
-                href={t.href}
-                aria-current={active ? "page" : undefined}
-                title={t.hint}
-                className={`-mb-px flex min-h-11 items-center gap-2 border-b-2 px-3 text-sm font-medium transition-colors ${active ? "border-teal-700 text-ink" : "border-transparent text-ink/65 hover:border-ink/20 hover:text-ink"}`}
-              >
-                <Icon name={t.icon || hub.item.icon} size="sm" className={`h-4 w-4 ${active ? "text-teal-700" : "text-ink/45"}`} />
+              <Link href={t.href} aria-current={active ? "page" : undefined} title={t.hint}>
+                <Icon name={t.icon || hub.item.icon} size="sm" className={`h-4 w-4 ${active ? "text-forest-700" : "text-ink/45"}`} />
                 {t.label}
               </Link>
             </li>
