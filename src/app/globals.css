@@ -526,10 +526,13 @@ a.portal-card:hover, .portal a.rounded-2xl.border.bg-white:hover {
 /* Subtle Islamic geometric texture, used sparingly on header/footer bands */
 .geo-texture {
   background-image:
+    radial-gradient(rgba(125, 100, 40, 0.16) 1px, transparent 1.2px),
     radial-gradient(circle at 20% 20%, rgba(176, 142, 69, 0.08) 0, transparent 45%),
     radial-gradient(circle at 80% 0%, rgba(94, 75, 30, 0.06) 0, transparent 40%),
     repeating-linear-gradient(45deg, rgba(176, 142, 69, 0.05) 0 2px, transparent 2px 28px),
     repeating-linear-gradient(-45deg, rgba(176, 142, 69, 0.05) 0 2px, transparent 2px 28px);
+  /* The first layer is a fine dot grid (the "techy" layer); the rest keep their natural size. */
+  background-size: 22px 22px, auto, auto, auto, auto;
 }
 
 /* Thin gold "foil" divider: a hairline rule with a small 8-point star at its
@@ -1072,4 +1075,69 @@ body:not(:has(.portal)) input[type="file"]::file-selector-button:hover {
 @keyframes revealUp {
   from { opacity: 0; transform: translateY(18px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Techier details (Nov 2026: "more techy and cooler") ── */
+/* Reading progress: a gold line along the bottom of the header that fills as the page scrolls. */
+.scroll-progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  background: linear-gradient(90deg, var(--color-gold-300), var(--color-gold-500), var(--color-gold-700));
+}
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .scroll-progress {
+      animation: scrollGrow linear both;
+      animation-timeline: scroll(root block);
+    }
+  }
+}
+@keyframes scrollGrow {
+  to { transform: scaleX(1); }
+}
+
+/* A slowly circling gold light around a card's edge. */
+@property --glow-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.glow-border {
+  isolation: isolate;
+}
+.glow-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(from var(--glow-angle), transparent 0deg, var(--color-gold-300) 60deg, transparent 120deg, transparent 360deg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .glow-border::before {
+    animation: glowSpin 6s linear infinite;
+  }
+  .search-panel {
+    animation: menuIn 140ms ease-out;
+  }
+}
+@keyframes glowSpin {
+  to { --glow-angle: 360deg; }
+}
+
+/* A dot grid that fades out towards the edges, for hero bands. */
+.tech-grid {
+  background-image: radial-gradient(rgba(125, 100, 40, 0.22) 1px, transparent 1.2px);
+  background-size: 22px 22px;
+  -webkit-mask-image: radial-gradient(ellipse at 70% 40%, #000 0%, transparent 70%);
+  mask-image: radial-gradient(ellipse at 70% 40%, #000 0%, transparent 70%);
 }
