@@ -10,7 +10,7 @@ agreedWith: The Chair of Trustees, Tarbiyyah Education Trust
 dateOfIssue: 1 September 2026 (version 1.1, published 9 November 2026 for the January 2027 launch)
 nextReview: 31 August 2027
 basis: Adapted from the Tarbiyyah Secondary Risk Assessment Policy 2025–26 for online provision
-readAlongside: Health, Safety and Wellbeing Policy; Child Protection and Safeguarding Policy; No Platform for Extremism (Prevent) Policy; Data Protection Policy; Online Safety and Acceptable Use Policy
+readAlongside: Health, Safety and Wellbeing Policy; Child Protection and Safeguarding Policy; Safeguarding: Extremism and Radicalisation Policy; Data Protection Policy; Online Safety and Acceptable Use Policy
 availability: Published on the Academy website and Parent Portal. Available in large print or another accessible format on request.
 ---
 
@@ -45,7 +45,7 @@ The Headteacher maintains an Academy Risk Register, reviewed each term by senior
 | Safeguarding | Unknown persons joining lessons; unrecorded one-to-one contact; pupils abroad at risk; children missing education |
 | Online platforms | Platform outage; account compromise; misconfigured meeting settings |
 | Data protection | Data breach; loss of staff devices; international data transfers |
-| Prevent | Online radicalisation; guest speakers; external content |
+| Safeguarding: extremism | Online radicalisation; guest speakers; external content |
 | Teaching continuity | Staff absence; time zone clashes; failure of internet or power for staff |
 | Pupil wellbeing | Excessive screen time; isolation; mental health |
 | Assessment integrity | Cheating in online tests; AI misuse |
@@ -57,7 +57,7 @@ The Headteacher maintains an Academy Risk Register, reviewed each term by senior
 
 Specific written risk assessments are completed for:
 
-- every virtual guest speaker or external provider (see the No Platform for Extremism (Prevent) Policy);
+- every virtual guest speaker or external provider (see the Safeguarding: Extremism and Radicalisation Policy);
 - any in-person event, trip or examination sitting;
 - any new platform or major change to platform settings (combined with a data protection impact assessment);
 - individual pupils where needed, for example a pupil with a medical condition, significant SEND or a safeguarding plan;
