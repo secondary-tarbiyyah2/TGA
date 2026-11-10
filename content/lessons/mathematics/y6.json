@@ -2,7 +2,7 @@
   "subject": "Mathematics",
   "year": "y6",
   "board": "National Curriculum (KS2)",
-  "source": "National Curriculum (KS2 Year 6: number and place value to 10,000,000, negative numbers, written methods for the four operations, order of operations, common factors, multiples and primes); Drive Maths folder checked (national curriculum documents only for KS2), lessons written from the National Curriculum; Spring 1 founding year: White Rose Maths Year 6 small-step titles (bridge from Autumn blocks 1-2, then Fractions A and B and Converting units), Tarbiyyah Primary Maths Policy and Maths Long Term Plan 2023-24; Spring 2 founding year: White Rose Maths Year 6 Spring blocks 1 Ratio, 2 Algebra, 3 Decimals and 4 Fractions, decimals and percentages (small-step titles only); Summer 1 founding year: White Rose Maths Year 6 blocks Fractions, decimals and percentages (percentages), Area, perimeter and volume, Statistics and Shape (small-step titles only)",
+  "source": "National Curriculum (KS2 Year 6: number and place value to 10,000,000, negative numbers, written methods for the four operations, order of operations, common factors, multiples and primes); Drive Maths folder checked (national curriculum documents only for KS2), lessons written from the National Curriculum; Spring 1 founding year: White Rose Maths Year 6 small-step titles (bridge from Autumn blocks 1-2, then Fractions A and B and Converting units), Tarbiyyah Primary Maths Policy and Maths Long Term Plan 2023-24; Spring 2 founding year: White Rose Maths Year 6 Spring blocks 1 Ratio, 2 Algebra, 3 Decimals and 4 Fractions, decimals and percentages (small-step titles only); Summer 1 founding year: White Rose Maths Year 6 blocks Fractions, decimals and percentages (percentages), Area, perimeter and volume, Statistics and Shape (small-step titles only) | Summer 2 founding year (14 Jun to 9 Jul 2027): White Rose Maths Year 6 Summer blocks Shape and Position and direction (small-step titles only), then revision, the end-of-year arithmetic paper and two reasoning papers in the week of 28 Jun, and consolidation (gap closing, Year 7 bridge in algebra and ratio, a reasoning investigation) in the week of 5 Jul, as the Year 6 plan says",
   "lessons": [
     {
       "unit": "Spring 1: Place value and the operations bridge; fractions; converting units",
@@ -15675,6 +15675,4044 @@
         "Printed Summer 1 check (school White Rose account)",
         "Mini-whiteboard and pen",
         "Printable worksheet (or drawing tablet): Year 6 maths lesson 78 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Shape; position and direction; consolidation",
+      "n": 79,
+      "title": "Angles in a triangle",
+      "duration": 45,
+      "bigQuestion": "Do the angles in every triangle add up to the same total?",
+      "objectives": [
+        "To understand that the angles in any triangle add up to 180°"
+      ],
+      "successCriteria": [
+        "All: show that the three angles make a straight line",
+        "Most: find a missing angle using 180°",
+        "Some: check an answer by adding the three angles"
+      ],
+      "keywords": [
+        {
+          "term": "interior angle",
+          "def": "an angle inside a shape"
+        },
+        {
+          "term": "angle sum",
+          "def": "the total of the angles"
+        },
+        {
+          "term": "straight line",
+          "def": "180°"
+        },
+        {
+          "term": "vertex",
+          "def": "a corner where two sides meet"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Tear the three corners off a paper triangle and put them point to point. What do you notice?",
+        "a": "They make a straight line: 180°."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "triangular roof gable",
+          "alt": "A triangular roof",
+          "for": "hook"
+        },
+        {
+          "find": "protractor",
+          "alt": "A protractor",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Angles on a straight line add to?",
+          "a": "180°",
+          "mins": 1
+        },
+        {
+          "q": "180 - 115 = ?",
+          "a": "65",
+          "mins": 1
+        },
+        {
+          "q": "Is 100° acute or obtuse?",
+          "a": "obtuse",
+          "mins": 1
+        },
+        {
+          "q": "48 + 67 = ?",
+          "a": "115",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The tearing test",
+          "bullets": [
+            "Cut out any triangle.",
+            "Tear off the corners.",
+            "They fit on a straight line."
+          ],
+          "note": "Pupils try it at home with paper (scissors with a grown-up)."
+        },
+        {
+          "heading": "Find the missing angle",
+          "bullets": [
+            "Add the two you know.",
+            "Subtract from 180°."
+          ],
+          "model": {
+            "problem": "A triangle has angles 48° and 67°. Find the third.",
+            "steps": [
+              "48 + 67 = 115.",
+              "180 - 115 = 65."
+            ],
+            "answer": "65°"
+          },
+          "note": "Always say the reason."
+        },
+        {
+          "heading": "Check",
+          "bullets": [
+            "Add all three: 48 + 67 + 65 = 180."
+          ],
+          "misconception": {
+            "wrong": "The angles add up to 360°.",
+            "right": "That is a quadrilateral; a triangle's angles add to 180°."
+          },
+          "note": "A check catches slips."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Angles 90° and 25°. The third is...",
+            "options": [
+              "65°",
+              "75°",
+              "245°"
+            ],
+            "answer": 0,
+            "why": "180 - 90 - 25 = 65."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Angles 105° and 38°?",
+          "a": "37°",
+          "mins": 2,
+          "model": "Teacher: 105 + 38 = 143; 180 - 143 = 37°."
+        },
+        {
+          "q": "Angles 60° and 60°?",
+          "a": "60°",
+          "mins": 2
+        },
+        {
+          "q": "Angles 72° and 59°?",
+          "a": "49°",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Find the third angle: (a) 35°, 85° (b) 120°, 22° (c) 90°, 47° (d) 64°, 64°",
+          "a": "(a) 60° (b) 38° (c) 43° (d) 52°",
+          "mins": 4,
+          "model": "Teacher does (a): 35 + 85 = 120; 180 - 120 = 60°."
+        },
+        {
+          "q": "Extend: Can a triangle have angles 100°, 50° and 40°? Explain.",
+          "a": "No: they add to 190°, not 180°",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A triangle's angles are x, 2x and 3x. Find each angle.",
+          "a": "6x = 180, x = 30: 30°, 60°, 90°",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Angles in a triangle add up to...",
+          "a": "A) 180°",
+          "mins": 2,
+          "options": [
+            "180°",
+            "360°",
+            "90°"
+          ]
+        },
+        {
+          "q": "Big question: do all triangles have the same angle total?",
+          "a": "Yes: always 180°.",
+          "mins": 3
+        }
+      ],
+      "homework": "Draw 3 different triangles, measure the angles and check each total is about 180°.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: can a triangle have two obtuse angles? (no: two angles over 90° already add to more than 180°)",
+      "resources": [
+        "White Rose Maths Year 6, Geometry: properties of shapes block: small step 'Angles in a triangle' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Paper and scissors (with a grown-up)",
+        "Printable 360° protractor (paper) or a school protractor",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 79 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Shape; position and direction; consolidation",
+      "n": 80,
+      "title": "Angles in special triangles",
+      "duration": 45,
+      "bigQuestion": "What do we know about the angles of an isosceles triangle?",
+      "objectives": [
+        "To understand how to use the properties of isosceles, equilateral and right-angled triangles to find angles"
+      ],
+      "successCriteria": [
+        "All: know each angle of an equilateral triangle is 60°",
+        "Most: find base angles of an isosceles triangle",
+        "Some: find missing angles in right-angled triangles"
+      ],
+      "keywords": [
+        {
+          "term": "isosceles",
+          "def": "2 equal sides and 2 equal angles"
+        },
+        {
+          "term": "equilateral",
+          "def": "3 equal sides; every angle 60°"
+        },
+        {
+          "term": "right-angled",
+          "def": "has a 90° angle"
+        },
+        {
+          "term": "base angles",
+          "def": "the two equal angles of an isosceles triangle"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "An isosceles triangle has one angle of 40°. Is there only one possible triangle?",
+        "a": "No: 40° could be the top angle (70°, 70°) or a base angle (40°, 100°)."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "triangle road sign",
+          "alt": "A triangular road sign",
+          "for": "hook"
+        },
+        {
+          "find": "set square",
+          "alt": "A set square",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "180 - 40 = ?",
+          "a": "140",
+          "mins": 1
+        },
+        {
+          "q": "140 ÷ 2 = ?",
+          "a": "70",
+          "mins": 1
+        },
+        {
+          "q": "Angles 90° and 35°: third?",
+          "a": "55°",
+          "mins": 1
+        },
+        {
+          "q": "180 ÷ 3 = ?",
+          "a": "60",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Equilateral",
+          "bullets": [
+            "3 equal angles.",
+            "180 ÷ 3 = 60°."
+          ],
+          "note": "Draw one with equal marks."
+        },
+        {
+          "heading": "Isosceles: top angle given",
+          "bullets": [
+            "Subtract from 180, then halve."
+          ],
+          "model": {
+            "problem": "Isosceles, top angle 40°. Base angles?",
+            "steps": [
+              "180 - 40 = 140.",
+              "140 ÷ 2 = 70."
+            ],
+            "answer": "70° and 70°"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Isosceles: base angle given",
+          "bullets": [
+            "Two base angles are equal.",
+            "Then subtract from 180."
+          ],
+          "model": {
+            "problem": "Isosceles, base angle 52°. Top angle?",
+            "steps": [
+              "52 + 52 = 104.",
+              "180 - 104 = 76."
+            ],
+            "answer": "76°"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Right-angled isosceles triangle. The other two angles are...",
+            "options": [
+              "45° each",
+              "90° each",
+              "60° each"
+            ],
+            "answer": 0,
+            "why": "(180 - 90) ÷ 2 = 45."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Isosceles, top angle 100°. Base angles?",
+          "a": "40° each",
+          "mins": 2,
+          "model": "Teacher: 180 - 100 = 80; 80 ÷ 2 = 40°."
+        },
+        {
+          "q": "Isosceles, base angle 65°. Top?",
+          "a": "50°",
+          "mins": 2
+        },
+        {
+          "q": "Right-angled, one angle 28°. Third?",
+          "a": "62°",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: (a) isosceles, top 30° (b) isosceles, base 75° (c) right-angled, 41° (d) equilateral",
+          "a": "(a) 75°, 75° (b) 75°, 30° (c) 49° (d) 60°, 60°, 60°",
+          "mins": 4,
+          "model": "Teacher does (a): (180 - 30) ÷ 2 = 75°."
+        },
+        {
+          "q": "Extend: An isosceles triangle has an angle of 50°. Give both possible sets of angles.",
+          "a": "50°, 65°, 65° or 50°, 50°, 80°",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Why can the top angle of an isosceles triangle not be 180°?",
+          "a": "The base angles would be 0°: there would be no triangle",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Each angle of an equilateral triangle:",
+          "a": "A) 60°",
+          "mins": 2,
+          "options": [
+            "60°",
+            "90°",
+            "45°"
+          ]
+        },
+        {
+          "q": "Big question: what do we know about isosceles angles?",
+          "a": "The two base angles are equal; use 180° to find the rest.",
+          "mins": 3
+        }
+      ],
+      "homework": "Find 5 missing angles in isosceles triangles on the homework sheet.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: an isosceles triangle has base angles twice the top angle. Find all three. (36°, 72°, 72°)",
+      "resources": [
+        "White Rose Maths Year 6, Geometry: properties of shapes block: angles in a triangle: special cases (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable triangles sheet",
+        "Ruler and protractor",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 80 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Shape; position and direction; consolidation",
+      "n": 81,
+      "title": "Angles in a triangle: missing angles",
+      "duration": 45,
+      "bigQuestion": "How can two angle facts work together?",
+      "objectives": [
+        "To understand how to combine angle facts to find missing angles in steps"
+      ],
+      "successCriteria": [
+        "All: use angles on a straight line with angles in a triangle",
+        "Most: use vertically opposite angles",
+        "Some: explain each step with a reason"
+      ],
+      "keywords": [
+        {
+          "term": "vertically opposite",
+          "def": "angles opposite each other where two lines cross: equal"
+        },
+        {
+          "term": "straight line",
+          "def": "angles on it add to 180°"
+        },
+        {
+          "term": "around a point",
+          "def": "angles add to 360°"
+        },
+        {
+          "term": "reason",
+          "def": "the fact that proves a step"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "You know one angle on a straight line next to a triangle. Can you find all three angles of the triangle?",
+        "a": "Only if you know one more: the straight line gives one interior angle, then use 180°."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "road junction from above",
+          "alt": "A road junction",
+          "for": "hook"
+        },
+        {
+          "find": "scissors open",
+          "alt": "Open scissors: crossing lines",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Angles on a straight line add to?",
+          "a": "180°",
+          "mins": 1
+        },
+        {
+          "q": "Around a point?",
+          "a": "360°",
+          "mins": 1
+        },
+        {
+          "q": "Isosceles, top 40°: base?",
+          "a": "70°",
+          "mins": 1
+        },
+        {
+          "q": "180 - 125 = ?",
+          "a": "55",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "The facts",
+          "bullets": [
+            "Straight line: 180°.",
+            "Around a point: 360°.",
+            "Vertically opposite: equal.",
+            "Triangle: 180°."
+          ],
+          "diagram": {
+            "centre": "Angle facts",
+            "items": [
+              "straight line 180°",
+              "around a point 360°",
+              "vertically opposite: equal",
+              "triangle 180°",
+              "quadrilateral 360°"
+            ]
+          },
+          "note": "Recap."
+        },
+        {
+          "heading": "Two steps",
+          "bullets": [
+            "Find the angle you can.",
+            "Then use it."
+          ],
+          "model": {
+            "problem": "Outside angle on a straight line is 125°. Another triangle angle is 70°. Find x.",
+            "steps": [
+              "Inside angle: 180 - 125 = 55° (straight line).",
+              "x = 180 - 55 - 70 = 55° (triangle)."
+            ],
+            "answer": "x = 55°"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Crossing lines",
+          "bullets": [
+            "Vertically opposite angles are equal."
+          ],
+          "note": "Model: lines cross at 40°; opposite is 40°; the others 140°."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Two lines cross. One angle is 110°. The opposite angle is...",
+            "options": [
+              "110°",
+              "70°",
+              "250°"
+            ],
+            "answer": 0,
+            "why": "Vertically opposite angles are equal."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Exterior 130° on a straight line. Interior?",
+          "a": "50°",
+          "mins": 2,
+          "model": "Teacher: 180 - 130 = 50° (angles on a straight line)."
+        },
+        {
+          "q": "Lines cross at 35°. The neighbouring angle?",
+          "a": "145°",
+          "mins": 2
+        },
+        {
+          "q": "Triangle 50° and the interior from an exterior 120°: third?",
+          "a": "70°",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Solve the 4 two-step diagrams on the sheet, with a reason for each step.",
+          "a": "Answers on the sheet key",
+          "mins": 4,
+          "model": "Teacher solves diagram 1 with reasons."
+        },
+        {
+          "q": "Extend: Angles around a point: 90°, 120°, x and x. Find x.",
+          "a": "75°",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Show that an exterior angle of a triangle equals the sum of the two opposite interior angles, using 50° and 60°.",
+          "a": "Third angle 70°; exterior 180 - 70 = 110 = 50 + 60",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Exterior 140°, so the interior is...",
+          "a": "A) 40°",
+          "mins": 2,
+          "options": [
+            "40°",
+            "140°",
+            "220°"
+          ]
+        },
+        {
+          "q": "Big question: how can two facts work together?",
+          "a": "One fact finds an angle that the next fact needs.",
+          "mins": 3
+        }
+      ],
+      "homework": "Write a two-step angle puzzle for a grown-up and give the answer with reasons.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: three angles round a point are x, 2x and 3x. Find x. (60°)",
+      "resources": [
+        "White Rose Maths Year 6, Geometry: properties of shapes block: angles in a triangle: missing angles (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable diagrams sheet",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 81 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Shape; position and direction; consolidation",
+      "n": 82,
+      "title": "Angles in quadrilaterals",
+      "duration": 45,
+      "bigQuestion": "Why do the angles in a quadrilateral add up to 360°?",
+      "objectives": [
+        "To understand that the angles in any quadrilateral add up to 360° and use this to find missing angles"
+      ],
+      "successCriteria": [
+        "All: split a quadrilateral into two triangles",
+        "Most: find a missing angle using 360°",
+        "Some: use properties of parallelograms and kites"
+      ],
+      "keywords": [
+        {
+          "term": "quadrilateral",
+          "def": "a shape with 4 straight sides"
+        },
+        {
+          "term": "diagonal",
+          "def": "a line joining opposite corners"
+        },
+        {
+          "term": "parallelogram",
+          "def": "opposite sides parallel; opposite angles equal"
+        },
+        {
+          "term": "kite",
+          "def": "two pairs of equal neighbouring sides"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "If a triangle's angles add to 180°, how could you work out the total for a quadrilateral?",
+        "a": "Cut it along a diagonal into two triangles: 2 × 180° = 360°."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "kite flying",
+          "alt": "A kite",
+          "for": "keywords"
+        },
+        {
+          "find": "window tiles",
+          "alt": "Quadrilateral tiles",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "2 × 180 = ?",
+          "a": "360",
+          "mins": 1
+        },
+        {
+          "q": "85 + 95 + 110 = ?",
+          "a": "290",
+          "mins": 1
+        },
+        {
+          "q": "Triangle 48° and 67°: third?",
+          "a": "65°",
+          "mins": 1
+        },
+        {
+          "q": "360 - 290 = ?",
+          "a": "70",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Two triangles",
+          "bullets": [
+            "Draw one diagonal.",
+            "2 triangles: 2 × 180° = 360°."
+          ],
+          "note": "Draw it live."
+        },
+        {
+          "heading": "Find the missing angle",
+          "bullets": [
+            "Add the three you know.",
+            "Subtract from 360°."
+          ],
+          "model": {
+            "problem": "Angles 85°, 95°, 110° and x.",
+            "steps": [
+              "85 + 95 + 110 = 290.",
+              "360 - 290 = 70."
+            ],
+            "answer": "x = 70°"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Special quadrilaterals",
+          "bullets": [
+            "Parallelogram: opposite angles equal.",
+            "Kite: one pair of equal angles."
+          ],
+          "model": {
+            "problem": "Parallelogram with one angle 65°. The others?",
+            "steps": [
+              "Opposite angle is also 65°.",
+              "360 - 130 = 230; 230 ÷ 2 = 115."
+            ],
+            "answer": "65°, 115°, 115°"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "A quadrilateral has angles 90°, 90°, 120°. The fourth is...",
+            "options": [
+              "60°",
+              "70°",
+              "120°"
+            ],
+            "answer": 0,
+            "why": "360 - 300 = 60."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Angles 100°, 80°, 75°: fourth?",
+          "a": "105°",
+          "mins": 2,
+          "model": "Teacher: 100 + 80 + 75 = 255; 360 - 255 = 105°."
+        },
+        {
+          "q": "Rhombus with an angle of 50°: the others?",
+          "a": "130°, 50°, 130°",
+          "mins": 2
+        },
+        {
+          "q": "Kite with angles 120°, 70° and the equal pair?",
+          "a": "85° each",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Find the missing angles in the 5 quadrilaterals on the sheet.",
+          "a": "Answers on the sheet key",
+          "mins": 4,
+          "model": "Teacher does the first."
+        },
+        {
+          "q": "Extend: A trapezium has angles 115°, 65°, 100°. Find the fourth.",
+          "a": "80°",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A quadrilateral has angles x, x + 10, x + 20 and x + 30. Find x.",
+          "a": "4x + 60 = 360, x = 75: 75°, 85°, 95°, 105°",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "The angles in a quadrilateral add up to...",
+          "a": "A) 360°",
+          "mins": 2,
+          "options": [
+            "360°",
+            "180°",
+            "270°"
+          ]
+        },
+        {
+          "q": "Big question: why 360°?",
+          "a": "A diagonal splits it into two triangles: 2 × 180°.",
+          "mins": 3
+        }
+      ],
+      "homework": "Draw 2 quadrilaterals, measure the angles and check the totals.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: what do the angles in a pentagon add up to? (540°: 3 triangles)",
+      "resources": [
+        "White Rose Maths Year 6, Geometry: properties of shapes block: small step 'Angles in quadrilaterals' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable quadrilaterals sheet",
+        "Protractor",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 82 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Shape; position and direction; consolidation",
+      "n": 83,
+      "title": "Angles in polygons",
+      "duration": 45,
+      "bigQuestion": "How do Islamic star patterns use the angles of regular polygons?",
+      "objectives": [
+        "To understand how to find the angle sum and the interior angles of regular polygons"
+      ],
+      "successCriteria": [
+        "All: split a polygon into triangles from one vertex",
+        "Most: find the angle sum of any polygon",
+        "Some: find each interior angle of a regular polygon"
+      ],
+      "smsc": "Cultural: geometric patterns in Islamic art and architecture",
+      "keywords": [
+        {
+          "term": "polygon",
+          "def": "a closed flat shape with straight sides"
+        },
+        {
+          "term": "regular",
+          "def": "all sides and angles equal"
+        },
+        {
+          "term": "interior angle",
+          "def": "an angle inside the polygon"
+        },
+        {
+          "term": "octagon",
+          "def": "an 8-sided polygon"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Many Islamic patterns use regular octagons with squares between them. How do the angles at each point fit together?",
+        "a": "Two octagon angles (135° each) and a square's 90°: 135 + 135 + 90 = 360°."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "islamic geometric pattern octagon square tiles",
+          "alt": "Octagon and square tiling",
+          "for": "hook"
+        },
+        {
+          "find": "stop sign octagon",
+          "alt": "A regular octagon",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Quadrilateral angle sum?",
+          "a": "360°",
+          "mins": 1
+        },
+        {
+          "q": "3 × 180 = ?",
+          "a": "540",
+          "mins": 1
+        },
+        {
+          "q": "540 ÷ 5 = ?",
+          "a": "108",
+          "mins": 1
+        },
+        {
+          "q": "720 ÷ 6 = ?",
+          "a": "120",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Triangles from one vertex",
+          "bullets": [
+            "A polygon with n sides makes n - 2 triangles."
+          ],
+          "table": {
+            "head": [
+              "Polygon",
+              "Sides",
+              "Triangles",
+              "Angle sum"
+            ],
+            "rows": [
+              [
+                "triangle",
+                "3",
+                "1",
+                "180°"
+              ],
+              [
+                "quadrilateral",
+                "4",
+                "2",
+                "360°"
+              ],
+              [
+                "pentagon",
+                "5",
+                "3",
+                "540°"
+              ],
+              [
+                "hexagon",
+                "6",
+                "4",
+                "720°"
+              ],
+              [
+                "octagon",
+                "8",
+                "6",
+                "1,080°"
+              ]
+            ]
+          },
+          "note": "Draw diagonals from one corner."
+        },
+        {
+          "heading": "Regular polygons",
+          "bullets": [
+            "Divide the angle sum by the number of angles."
+          ],
+          "model": {
+            "problem": "Each interior angle of a regular octagon?",
+            "steps": [
+              "Angle sum: 6 × 180 = 1,080.",
+              "1,080 ÷ 8 = 135."
+            ],
+            "answer": "135°"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Tilings",
+          "bullets": [
+            "Angles meeting at a point make 360°.",
+            "Hexagons: 120 + 120 + 120 = 360."
+          ],
+          "note": "Why regular hexagons tile and pentagons do not: 108 does not divide 360."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Each angle of a regular hexagon is...",
+            "options": [
+              "120°",
+              "108°",
+              "135°"
+            ],
+            "answer": 0,
+            "why": "720 ÷ 6 = 120."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Angle sum of a heptagon (7 sides)?",
+          "a": "900°",
+          "mins": 2,
+          "model": "Teacher: 7 - 2 = 5 triangles; 5 × 180 = 900°."
+        },
+        {
+          "q": "Each angle of a regular pentagon?",
+          "a": "108°",
+          "mins": 2
+        },
+        {
+          "q": "Angle sum of a decagon?",
+          "a": "1,440°",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Find the angle sum of a 9-sided polygon and each angle if it is regular.",
+          "a": "1,260°; 140°",
+          "mins": 4,
+          "model": "Teacher: 9 - 2 = 7 triangles; 7 × 180 = 1,260; 1,260 ÷ 9 = 140°."
+        },
+        {
+          "q": "Extend: Show why regular octagons and squares tile together.",
+          "a": "135 + 135 + 90 = 360°",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A pentagon has angles 100°, 120°, 110°, 90° and x. Find x.",
+          "a": "540 - 420 = 120°",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Angle sum of a hexagon:",
+          "a": "A) 720°",
+          "mins": 2,
+          "options": [
+            "720°",
+            "540°",
+            "360°"
+          ]
+        },
+        {
+          "q": "Big question: how do star patterns use the angles?",
+          "a": "Angles meeting at each point must add to 360°, so the polygons fit without gaps.",
+          "mins": 3
+        }
+      ],
+      "homework": "Draw a regular hexagon tiling (or trace one) and mark the 360° at a point.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: how many sides has a regular polygon with interior angles of 150°? (12)",
+      "resources": [
+        "White Rose Maths Year 6, Geometry: properties of shapes block: angles in polygons (extension week 2 step, taught as the fifth lesson) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable polygons sheet",
+        "Protractor",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 83 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Shape; position and direction; consolidation",
+      "n": 84,
+      "title": "Read and plot points in four quadrants",
+      "duration": 45,
+      "bigQuestion": "What happens when the coordinates become negative?",
+      "objectives": [
+        "To understand how to read and plot coordinates in all four quadrants"
+      ],
+      "successCriteria": [
+        "All: read and plot points in the first quadrant",
+        "Most: read and plot points with negative coordinates",
+        "Some: name the quadrant a point is in"
+      ],
+      "crossCurricular": "Geography: grid references and compass directions on maps",
+      "keywords": [
+        {
+          "term": "quadrant",
+          "def": "one of the four parts of a coordinate grid"
+        },
+        {
+          "term": "origin",
+          "def": "(0, 0), where the axes cross"
+        },
+        {
+          "term": "x-coordinate",
+          "def": "the first number: across"
+        },
+        {
+          "term": "y-coordinate",
+          "def": "the second number: up or down"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A map of a city has the masjid at the centre (0, 0). How could you describe a shop to the west and south?",
+        "a": "With negative coordinates, such as (-3, -2)."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "city street map grid",
+          "alt": "A city map with a grid",
+          "for": "hook"
+        },
+        {
+          "find": "graph paper axes",
+          "alt": "Coordinate axes",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Across or up first?",
+          "a": "across",
+          "mins": 1
+        },
+        {
+          "q": "Is -3 left or right of 0?",
+          "a": "left",
+          "mins": 1
+        },
+        {
+          "q": "Point 4 across, 2 up?",
+          "a": "(4, 2)",
+          "mins": 1
+        },
+        {
+          "q": "Each angle of a regular hexagon?",
+          "a": "120°",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Four quadrants",
+          "bullets": [
+            "The axes go below zero.",
+            "x: left negative, right positive.",
+            "y: down negative, up positive."
+          ],
+          "numberline": {
+            "min": -6,
+            "max": 6,
+            "step": 1,
+            "marks": [
+              {
+                "at": -6,
+                "label": "-6"
+              },
+              {
+                "at": 0,
+                "label": "0"
+              },
+              {
+                "at": 6,
+                "label": "6"
+              }
+            ]
+          },
+          "note": "Draw the axes from -6 to 6."
+        },
+        {
+          "heading": "Plot a point",
+          "bullets": [
+            "Across first (left or right).",
+            "Then up or down."
+          ],
+          "model": {
+            "problem": "Plot (-3, 4).",
+            "steps": [
+              "From the origin go 3 left.",
+              "Then 4 up."
+            ],
+            "answer": "Point in the top-left quadrant"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Read a point",
+          "bullets": [
+            "Read x, then y.",
+            "Remember the signs."
+          ],
+          "misconception": {
+            "wrong": "(-3, 4) is 3 right and 4 down.",
+            "right": "Negative x is left; positive y is up."
+          },
+          "note": "Model (2, -5)."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which point is 5 left and 2 down?",
+            "options": [
+              "(-5, -2)",
+              "(5, -2)",
+              "(-2, -5)"
+            ],
+            "answer": 0,
+            "why": "Left is negative x; down is negative y."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Read the point 4 right, 3 down.",
+          "a": "(4, -3)",
+          "mins": 2,
+          "model": "Teacher: across first, 4 right: x = 4; down 3: y = -3."
+        },
+        {
+          "q": "Where is (-1, -6)?",
+          "a": "1 left, 6 down",
+          "mins": 2
+        },
+        {
+          "q": "Which quadrant has both coordinates negative?",
+          "a": "bottom left (third)",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Plot A(3, 2), B(-4, 5), C(-2, -3), D(5, -1) on the grid sheet.",
+          "a": "Points plotted in the right quadrants",
+          "mins": 4,
+          "model": "Teacher plots A and B."
+        },
+        {
+          "q": "Extend: Write the coordinates of the 6 points on the sheet.",
+          "a": "Answers on the sheet key",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Name a point on the x-axis between (-4, 0) and (2, 0).",
+          "a": "For example (-1, 0)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "(-2, 3) is in the...",
+          "a": "A) top-left quadrant",
+          "mins": 2,
+          "options": [
+            "top-left quadrant",
+            "bottom-left quadrant",
+            "top-right quadrant"
+          ]
+        },
+        {
+          "q": "Big question: what happens when coordinates are negative?",
+          "a": "Negative x goes left and negative y goes down.",
+          "mins": 3
+        }
+      ],
+      "homework": "Draw a treasure map on a 4-quadrant grid with 5 points to find.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: what is the midpoint of (-4, 3) and (2, 3)? (-1, 3)",
+      "resources": [
+        "White Rose Maths Year 6, Position and direction block: small steps 'The first quadrant' and 'Read and plot points in four quadrants' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable 4-quadrant grid (-6 to 6)",
+        "Ruler",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 84 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Shape; position and direction; consolidation",
+      "n": 85,
+      "title": "Solve problems with coordinates",
+      "duration": 45,
+      "bigQuestion": "Can you find a missing corner without drawing it?",
+      "objectives": [
+        "To understand how to use coordinates and shape properties to find missing points"
+      ],
+      "successCriteria": [
+        "All: find a missing vertex of a rectangle",
+        "Most: use equal sides to find points of a square",
+        "Some: find points on a line"
+      ],
+      "keywords": [
+        {
+          "term": "vertex",
+          "def": "a corner of a shape"
+        },
+        {
+          "term": "horizontal",
+          "def": "flat: the y-coordinate stays the same"
+        },
+        {
+          "term": "vertical",
+          "def": "up and down: the x-coordinate stays the same"
+        },
+        {
+          "term": "property",
+          "def": "a fact about a shape"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A rectangle has corners at (-3, 1), (4, 1) and (4, -2). Where is the fourth? Do you need to draw it?",
+        "a": "(-3, -2): you can reason from the coordinates."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "rectangular field from above",
+          "alt": "A field from above",
+          "for": "hook"
+        },
+        {
+          "find": "graph paper",
+          "alt": "Graph paper",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Point 2 left, 3 down?",
+          "a": "(-2, -3)",
+          "mins": 1
+        },
+        {
+          "q": "Distance from -3 to 4?",
+          "a": "7",
+          "mins": 1
+        },
+        {
+          "q": "Distance from 1 to -2?",
+          "a": "3",
+          "mins": 1
+        },
+        {
+          "q": "Which quadrant: (5, -2)?",
+          "a": "bottom right",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Horizontal and vertical sides",
+          "bullets": [
+            "Same y: a horizontal side.",
+            "Same x: a vertical side."
+          ],
+          "note": "Model the ponder rectangle."
+        },
+        {
+          "heading": "Missing vertex",
+          "bullets": [
+            "Take x from one corner, y from another."
+          ],
+          "model": {
+            "problem": "Rectangle (-3, 1), (4, 1), (4, -2). Fourth vertex?",
+            "steps": [
+              "It lines up under (-3, 1): x = -3.",
+              "It lines up with (4, -2): y = -2."
+            ],
+            "answer": "(-3, -2)"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Lengths",
+          "bullets": [
+            "Count across zero.",
+            "-3 to 4 is 7 units."
+          ],
+          "note": "Model: the rectangle is 7 by 3; perimeter 20 units."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "A square has corners (1, 1) and (1, 5). Side length?",
+            "options": [
+              "4",
+              "5",
+              "6"
+            ],
+            "answer": 0,
+            "why": "5 - 1 = 4."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Square (-2, -2), (2, -2), (2, 2). Fourth?",
+          "a": "(-2, 2)",
+          "mins": 2,
+          "model": "Teacher: under (-2, -2) on the same x and level with (2, 2): (-2, 2)."
+        },
+        {
+          "q": "Length from (-5, 3) to (1, 3)?",
+          "a": "6",
+          "mins": 2
+        },
+        {
+          "q": "Perimeter of that square?",
+          "a": "16 units",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Find the missing vertex of each of the 4 rectangles on the sheet.",
+          "a": "Answers on the sheet key",
+          "mins": 4,
+          "model": "Teacher does the first."
+        },
+        {
+          "q": "Extend: A square has two corners at (-1, 2) and (3, 2). Give two possible positions of the other corners.",
+          "a": "(-1, 6) and (3, 6), or (-1, -2) and (3, -2)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Points (-4, 1), (0, 1) and (-2, y) make an isosceles triangle with height 5. Find y.",
+          "a": "6 or -4",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Rectangle (0, 0), (5, 0), (5, -3). Fourth?",
+          "a": "A) (0, -3)",
+          "mins": 2,
+          "options": [
+            "(0, -3)",
+            "(-3, 0)",
+            "(5, 3)"
+          ]
+        },
+        {
+          "q": "Big question: can you find a corner without drawing?",
+          "a": "Yes: use the matching x and y coordinates.",
+          "mins": 3
+        }
+      ],
+      "homework": "Design a rectangle in four quadrants and give a grown-up 3 corners to find the fourth.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: the corners of a rectangle are (-6, -1) and (2, 4) at opposite corners. Find its area. (8 × 5 = 40 square units)",
+      "resources": [
+        "White Rose Maths Year 6, Position and direction block: small step 'Solve problems with coordinates' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable 4-quadrant grid (-6 to 6)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 85 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Shape; position and direction; consolidation",
+      "n": 86,
+      "title": "Translations",
+      "duration": 45,
+      "bigQuestion": "How can we describe any slide using numbers?",
+      "objectives": [
+        "To understand how to translate shapes in four quadrants and describe translations"
+      ],
+      "successCriteria": [
+        "All: translate a point by adding to or subtracting from its coordinates",
+        "Most: translate a shape on a 4-quadrant grid",
+        "Some: describe a translation from object to image"
+      ],
+      "keywords": [
+        {
+          "term": "translation",
+          "def": "a slide: no turning or flipping"
+        },
+        {
+          "term": "object",
+          "def": "the shape before it moves"
+        },
+        {
+          "term": "image",
+          "def": "the shape after it moves"
+        },
+        {
+          "term": "units",
+          "def": "squares on the grid"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A shape slides 4 left and 3 down. What happens to each x and y coordinate?",
+        "a": "Subtract 4 from each x, subtract 3 from each y."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "sliding door",
+          "alt": "A sliding door",
+          "for": "keywords"
+        },
+        {
+          "find": "chess board",
+          "alt": "A chess board",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "(2, 5) moved 3 right?",
+          "a": "(5, 5)",
+          "mins": 1
+        },
+        {
+          "q": "-2 + 4 = ?",
+          "a": "2",
+          "mins": 1
+        },
+        {
+          "q": "5 - 3 = ?",
+          "a": "2",
+          "mins": 1
+        },
+        {
+          "q": "1 - 4 = ?",
+          "a": "-3",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Rules",
+          "bullets": [
+            "Right: add to x. Left: subtract.",
+            "Up: add to y. Down: subtract."
+          ],
+          "table": {
+            "head": [
+              "Move",
+              "x",
+              "y"
+            ],
+            "rows": [
+              [
+                "right 4",
+                "+ 4",
+                "same"
+              ],
+              [
+                "left 4",
+                "- 4",
+                "same"
+              ],
+              [
+                "up 3",
+                "same",
+                "+ 3"
+              ],
+              [
+                "down 3",
+                "same",
+                "- 3"
+              ]
+            ]
+          },
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Translate a point",
+          "bullets": [
+            "Change x, then y."
+          ],
+          "model": {
+            "problem": "Translate (-2, 5) 4 right and 3 down.",
+            "steps": [
+              "x: -2 + 4 = 2.",
+              "y: 5 - 3 = 2."
+            ],
+            "answer": "(2, 2)"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Translate a shape",
+          "bullets": [
+            "Move every vertex the same way."
+          ],
+          "model": {
+            "problem": "Triangle (1, 1), (3, 1), (1, 4): 5 left, 2 down.",
+            "steps": [
+              "(1, 1) to (-4, -1).",
+              "(3, 1) to (-2, -1).",
+              "(1, 4) to (-4, 2)."
+            ],
+            "answer": "(-4, -1), (-2, -1), (-4, 2)"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "(3, -1) translated 6 left, 2 up:",
+            "options": [
+              "(-3, 1)",
+              "(9, 1)",
+              "(-3, -3)"
+            ],
+            "answer": 0,
+            "why": "3 - 6 = -3; -1 + 2 = 1."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "(4, 2) translated 5 left?",
+          "a": "(-1, 2)",
+          "mins": 2,
+          "model": "Teacher: 4 - 5 = -1; y stays 2: (-1, 2)."
+        },
+        {
+          "q": "(-3, -3) translated 3 up?",
+          "a": "(-3, 0)",
+          "mins": 2
+        },
+        {
+          "q": "Describe (1, 4) to (-2, 1).",
+          "a": "3 left, 3 down",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Translate the 3 shapes on the sheet; write the image vertices.",
+          "a": "Answers on the sheet key",
+          "mins": 4,
+          "model": "Teacher translates shape 1."
+        },
+        {
+          "q": "Extend: Describe the translation from (-5, 2) to (1, -4).",
+          "a": "6 right, 6 down",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: A shape is translated 3 right, 4 down, then 7 left, 1 up. Describe one translation that does the same.",
+          "a": "4 left, 3 down",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A translation...",
+          "a": "A) slides a shape without turning",
+          "mins": 2,
+          "options": [
+            "slides a shape without turning",
+            "flips a shape",
+            "turns a shape"
+          ]
+        },
+        {
+          "q": "Big question: how can we describe a slide?",
+          "a": "Units left or right, then units up or down.",
+          "mins": 3
+        }
+      ],
+      "homework": "Draw a shape on a 4-quadrant grid and translate it twice; write the coordinates.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: a point is translated 5 right and 2 down to (1, -4). Where did it start? (-4, -2)",
+      "resources": [
+        "White Rose Maths Year 6, Position and direction block: small step 'Translations' (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable 4-quadrant grid (-6 to 6)",
+        "Tracing paper (optional)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 86 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Shape; position and direction; consolidation",
+      "n": 87,
+      "title": "Reflections",
+      "duration": 45,
+      "bigQuestion": "How does a mirror line change coordinates?",
+      "objectives": [
+        "To understand how to reflect shapes in the x-axis and y-axis and predict the coordinates"
+      ],
+      "successCriteria": [
+        "All: reflect a shape in the y-axis",
+        "Most: reflect a shape in the x-axis",
+        "Some: predict reflected coordinates without drawing"
+      ],
+      "keywords": [
+        {
+          "term": "reflection",
+          "def": "a mirror image"
+        },
+        {
+          "term": "mirror line",
+          "def": "the line a shape is reflected in"
+        },
+        {
+          "term": "x-axis",
+          "def": "the horizontal axis"
+        },
+        {
+          "term": "y-axis",
+          "def": "the vertical axis"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Reflect (3, 2) in the y-axis. Which coordinate changes, and how?",
+        "a": "The x-coordinate changes sign: (-3, 2)."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "mountain reflection in lake",
+          "alt": "A mountain reflected in a lake",
+          "for": "hook"
+        },
+        {
+          "find": "mirror",
+          "alt": "A mirror",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "(4, 2) translated 5 left?",
+          "a": "(-1, 2)",
+          "mins": 1
+        },
+        {
+          "q": "Is the y-axis vertical?",
+          "a": "yes",
+          "mins": 1
+        },
+        {
+          "q": "What is the opposite of 3?",
+          "a": "-3",
+          "mins": 1
+        },
+        {
+          "q": "Midpoint of -3 and 3?",
+          "a": "0",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Same distance",
+          "bullets": [
+            "Each point is the same distance from the mirror line.",
+            "On the other side."
+          ],
+          "note": "Use a mirror or fold the paper."
+        },
+        {
+          "heading": "In the y-axis",
+          "bullets": [
+            "x changes sign; y stays."
+          ],
+          "model": {
+            "problem": "Reflect (3, 2) and (5, 4) in the y-axis.",
+            "steps": [
+              "(3, 2) to (-3, 2).",
+              "(5, 4) to (-5, 4)."
+            ],
+            "answer": "(-3, 2), (-5, 4)"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "In the x-axis",
+          "bullets": [
+            "y changes sign; x stays."
+          ],
+          "model": {
+            "problem": "Reflect (-2, 3) in the x-axis.",
+            "steps": [
+              "3 above becomes 3 below.",
+              "x stays -2."
+            ],
+            "answer": "(-2, -3)"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "(4, -1) reflected in the x-axis is...",
+            "options": [
+              "(4, 1)",
+              "(-4, -1)",
+              "(-4, 1)"
+            ],
+            "answer": 0,
+            "why": "In the x-axis the y-coordinate changes sign."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Reflect (-6, 2) in the y-axis.",
+          "a": "(6, 2)",
+          "mins": 2,
+          "model": "Teacher: y-axis: x changes sign: (6, 2)."
+        },
+        {
+          "q": "Reflect (5, 5) in the x-axis.",
+          "a": "(5, -5)",
+          "mins": 2
+        },
+        {
+          "q": "A point on the mirror line?",
+          "a": "stays where it is",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Reflect the 3 shapes on the sheet in the given axis; write the image vertices.",
+          "a": "Answers on the sheet key",
+          "mins": 4,
+          "model": "Teacher reflects shape 1."
+        },
+        {
+          "q": "Extend: Reflect (2, 3) in the y-axis, then the image in the x-axis.",
+          "a": "(-2, 3) then (-2, -3)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Which single move takes (2, 3) to (-2, -3)?",
+          "a": "A half turn about the origin (rotation 180°)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Reflect (3, 2) in the y-axis:",
+          "a": "A) (-3, 2)",
+          "mins": 2,
+          "options": [
+            "(-3, 2)",
+            "(3, -2)",
+            "(2, 3)"
+          ]
+        },
+        {
+          "q": "Big question: how does a mirror line change coordinates?",
+          "a": "Reflecting in an axis changes the sign of the other coordinate.",
+          "mins": 3
+        }
+      ],
+      "homework": "Draw a symmetrical design in all four quadrants using reflections in both axes.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: a shape is reflected in the y-axis and lands with a vertex at (-4, -1). Where was it? (4, -1)",
+      "resources": [
+        "White Rose Maths Year 6, Position and direction block: small step 'Reflections' (with the reflections-in-lines step from extension week 4 folded in) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable 4-quadrant grid (-6 to 6)",
+        "Small mirror (household)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 87 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Shape; position and direction; consolidation",
+      "n": 88,
+      "title": "Position and direction: problem solving",
+      "duration": 45,
+      "bigQuestion": "Which move takes one shape to another?",
+      "objectives": [
+        "To understand how to choose and describe translations and reflections to solve problems"
+      ],
+      "successCriteria": [
+        "All: identify whether a move is a translation or a reflection",
+        "Most: describe the move fully",
+        "Some: solve multi-step coordinate puzzles"
+      ],
+      "keywords": [
+        {
+          "term": "transformation",
+          "def": "a move such as a translation or reflection"
+        },
+        {
+          "term": "describe fully",
+          "def": "give every detail of the move"
+        },
+        {
+          "term": "congruent",
+          "def": "same shape and size"
+        },
+        {
+          "term": "orientation",
+          "def": "which way the shape faces"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A shape's image faces the other way. Could it have been translated?",
+        "a": "No: a translation keeps the orientation; a reflection flips it."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "leaf reflection in water",
+          "alt": "A leaf reflected in water",
+          "for": "hook"
+        },
+        {
+          "find": "tiles pattern",
+          "alt": "A tile pattern",
+          "for": "teach:3"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Reflect (2, -5) in the y-axis?",
+          "a": "(-2, -5)",
+          "mins": 1
+        },
+        {
+          "q": "(1, 1) translated 3 left, 2 down?",
+          "a": "(-2, -1)",
+          "mins": 1
+        },
+        {
+          "q": "Angle sum of a pentagon?",
+          "a": "540°",
+          "mins": 1
+        },
+        {
+          "q": "Isosceles, top 80°: base?",
+          "a": "50° each",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Translation or reflection?",
+          "bullets": [
+            "Translation: same way round.",
+            "Reflection: flipped."
+          ],
+          "compare": {
+            "left": {
+              "title": "Translation",
+              "points": [
+                "slides",
+                "same orientation",
+                "describe: units right/left and up/down"
+              ]
+            },
+            "right": {
+              "title": "Reflection",
+              "points": [
+                "flips",
+                "orientation reversed",
+                "describe: the mirror line"
+              ]
+            },
+            "label": "vs"
+          },
+          "note": "Show pairs of shapes."
+        },
+        {
+          "heading": "Describe fully",
+          "bullets": [
+            "Name the move.",
+            "Give the details."
+          ],
+          "model": {
+            "problem": "Triangle (1, 2), (3, 2), (1, 5) maps to (-1, 2), (-3, 2), (-1, 5).",
+            "steps": [
+              "x changes sign, y stays.",
+              "Orientation reversed."
+            ],
+            "answer": "Reflection in the y-axis"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Puzzles",
+          "bullets": [
+            "Work backwards from the image."
+          ],
+          "note": "Model: (2, 3) is translated, then reflected in the x-axis, landing at (5, -1); undo the reflection first: (5, 1); so the translation was 3 right, 2 down."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "(4, 1), (6, 1), (4, 3) maps to (1, -2), (3, -2), (1, 0). The move is...",
+            "options": [
+              "translation 3 left, 3 down",
+              "reflection in the x-axis",
+              "translation 3 right, 3 up"
+            ],
+            "answer": 0,
+            "why": "Each x goes down 3, each y goes down 3; same orientation."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "(2, 2) to (2, -2): which move?",
+          "a": "Reflection in the x-axis",
+          "mins": 2,
+          "model": "Teacher: y changes sign, x stays: reflection in the x-axis."
+        },
+        {
+          "q": "(2, 2) to (-3, 2)?",
+          "a": "Translation 5 left",
+          "mins": 2
+        },
+        {
+          "q": "(-1, 4) to (1, 4)?",
+          "a": "Reflection in the y-axis (or a translation 2 right)",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Describe fully the 4 moves on the sheet.",
+          "a": "Answers on the sheet key",
+          "mins": 4,
+          "model": "Teacher describes move 1."
+        },
+        {
+          "q": "Extend: Reflect (3, 4) in the x-axis then translate 2 left. Final point?",
+          "a": "(1, -4)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Find a single move from (1, 2) to (-1, -2). Is it a translation or a reflection?",
+          "a": "Neither: a half turn about the origin",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A reflection...",
+          "a": "A) reverses orientation",
+          "mins": 2,
+          "options": [
+            "reverses orientation",
+            "keeps orientation",
+            "changes size"
+          ]
+        },
+        {
+          "q": "Big question: which move takes one shape to another?",
+          "a": "Check orientation and coordinates: slide or flip, then give the details.",
+          "mins": 3
+        }
+      ],
+      "homework": "Make a 3-step coordinate puzzle for a grown-up with the answer.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: after a reflection in the y-axis and then in the x-axis, (5, 2) lands where? ((-5, -2))",
+      "resources": [
+        "White Rose Maths Year 6, Position and direction block: problem solving (extension week 4 steps folded in, as the Year 6 plan says) (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable 4-quadrant grid (-6 to 6)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 88 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Shape; position and direction; consolidation",
+      "n": 89,
+      "title": "Revision: arithmetic methods",
+      "duration": 45,
+      "bigQuestion": "Which written method is fastest and safest for each question type?",
+      "objectives": [
+        "To understand how to choose efficient methods for the arithmetic paper"
+      ],
+      "successCriteria": [
+        "All: use column methods and short multiplication accurately",
+        "Most: use long multiplication and long division",
+        "Some: add, subtract, multiply and divide fractions"
+      ],
+      "keywords": [
+        {
+          "term": "long division",
+          "def": "a written method to divide by a 2-digit number"
+        },
+        {
+          "term": "long multiplication",
+          "def": "a written method to multiply by a 2-digit number"
+        },
+        {
+          "term": "common denominator",
+          "def": "a shared bottom number for fractions"
+        },
+        {
+          "term": "order of operations",
+          "def": "brackets, powers, × and ÷, + and -"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which arithmetic question type do you most want to practise before the paper?",
+        "a": "Answers will vary: for example long division or fractions."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "pencil and paper",
+          "alt": "A pencil and paper",
+          "for": "hook"
+        },
+        {
+          "find": "fraction bars",
+          "alt": "Fraction bars",
+          "for": "teach:3"
+        }
+      ],
+      "starter": [
+        {
+          "q": "25 × 4 = ?",
+          "a": "100",
+          "mins": 1
+        },
+        {
+          "q": "3/4 of 60?",
+          "a": "45",
+          "mins": 1
+        },
+        {
+          "q": "15% of 200?",
+          "a": "30",
+          "mins": 1
+        },
+        {
+          "q": "10 - 2 × 3 = ?",
+          "a": "4",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Long multiplication",
+          "bullets": [
+            "Multiply by the ones, then the tens.",
+            "Add the rows."
+          ],
+          "model": {
+            "problem": "263 × 34",
+            "steps": [
+              "263 × 4 = 1,052.",
+              "263 × 30 = 7,890.",
+              "1,052 + 7,890 = 8,942."
+            ],
+            "answer": "8,942"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Long division",
+          "bullets": [
+            "Use multiples of the divisor."
+          ],
+          "model": {
+            "problem": "3,648 ÷ 16",
+            "steps": [
+              "16 × 200 = 3,200: 448 left.",
+              "16 × 28 = 448.",
+              "200 + 28 = 228."
+            ],
+            "answer": "228"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Fractions",
+          "bullets": [
+            "Add: common denominator.",
+            "Multiply: tops × tops, bottoms × bottoms."
+          ],
+          "fraction": [
+            {
+              "parts": 12,
+              "shaded": 8,
+              "label": "8/12"
+            },
+            {
+              "parts": 12,
+              "shaded": 9,
+              "label": "9/12"
+            }
+          ],
+          "note": "Model 2/3 + 3/4 = 8/12 + 9/12 = 17/12 = 1 5/12."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "45 + 15 × 4 =",
+            "options": [
+              "105",
+              "240",
+              "64"
+            ],
+            "answer": 0,
+            "why": "Multiply first: 60; then 45 + 60."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "4,328 × 6",
+          "a": "25,968",
+          "mins": 2,
+          "model": "Teacher: 8 × 6 = 48, 2 × 6 + 4 = 16, 3 × 6 + 1 = 19, 4 × 6 + 1 = 25: 25,968."
+        },
+        {
+          "q": "3/5 × 1/4",
+          "a": "3/20",
+          "mins": 2
+        },
+        {
+          "q": "4/5 ÷ 2",
+          "a": "2/5",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: 527 × 23; 2,976 ÷ 24; 5/6 - 1/4",
+          "a": "12,121; 124; 7/12",
+          "mins": 4,
+          "model": "Teacher does 527 × 23: 527 × 3 = 1,581; 527 × 20 = 10,540; total 12,121."
+        },
+        {
+          "q": "Extend: 0.7 × 8; 9.6 ÷ 4; 2 1/2 + 1 2/3",
+          "a": "5.6; 2.4; 4 1/6",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: (6 + 9) × 4 - 3²",
+          "a": "60 - 9 = 51",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "2/3 + 3/4 =",
+          "a": "A) 1 5/12",
+          "mins": 2,
+          "options": [
+            "1 5/12",
+            "5/7",
+            "6/12"
+          ]
+        },
+        {
+          "q": "Big question: which method for each type?",
+          "a": "Columns for + and -, long methods for 2-digit × and ÷, common denominators for fractions.",
+          "mins": 3
+        }
+      ],
+      "homework": "Do the 10-question arithmetic revision set (portal) in 15 minutes.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: what is 999 × 25? (24,975: 1,000 × 25 - 25)",
+      "resources": [
+        "White Rose Maths Year 6 end-of-year assessment preparation: arithmetic (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Arithmetic revision set (portal)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 89 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Shape; position and direction; consolidation",
+      "n": 90,
+      "title": "Revision: reasoning with ratio, algebra and measures",
+      "duration": 45,
+      "bigQuestion": "How can a bar model unlock a word problem?",
+      "objectives": [
+        "To understand how to plan and check reasoning answers before the papers"
+      ],
+      "successCriteria": [
+        "All: draw a bar model for a ratio problem",
+        "Most: form and solve a simple equation",
+        "Some: convert units and check the answer makes sense"
+      ],
+      "smsc": "Moral: fairness ('adl) when sharing",
+      "keywords": [
+        {
+          "term": "ratio",
+          "def": "compares parts, such as 2 : 3"
+        },
+        {
+          "term": "equation",
+          "def": "a statement that two things are equal"
+        },
+        {
+          "term": "bar model",
+          "def": "a diagram of bars to show parts"
+        },
+        {
+          "term": "convert",
+          "def": "change to another unit"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "40 dates are shared between two families in the ratio 2 : 3. Who gets more and how many?",
+        "a": "The second family: 24 dates (8 in each part; 2 parts = 16, 3 parts = 24)."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "bowl of dates",
+          "alt": "A bowl of dates",
+          "for": "hook"
+        },
+        {
+          "find": "measuring jug",
+          "alt": "A measuring jug",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "2 : 3: how many parts?",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "40 ÷ 5 = ?",
+          "a": "8",
+          "mins": 1
+        },
+        {
+          "q": "3n = 21: n?",
+          "a": "7",
+          "mins": 1
+        },
+        {
+          "q": "1.5 km in m?",
+          "a": "1,500",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Ratio with a bar model",
+          "bullets": [
+            "Draw the parts.",
+            "Find one part, then the rest."
+          ],
+          "model": {
+            "problem": "Share 40 in the ratio 2 : 3.",
+            "steps": [
+              "5 parts: 40 ÷ 5 = 8.",
+              "2 parts = 16; 3 parts = 24."
+            ],
+            "answer": "16 and 24"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Algebra",
+          "bullets": [
+            "Undo each step in reverse."
+          ],
+          "model": {
+            "problem": "3n + 4 = 25",
+            "steps": [
+              "Subtract 4: 3n = 21.",
+              "Divide by 3: n = 7."
+            ],
+            "answer": "n = 7"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Measures",
+          "bullets": [
+            "Convert first.",
+            "Is the answer sensible?"
+          ],
+          "note": "Model: 2.4 kg - 650 g = 2,400 - 650 = 1,750 g = 1.75 kg."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Flour and sugar in the ratio 5 : 2. Flour 350 g. Sugar?",
+            "options": [
+              "140 g",
+              "70 g",
+              "875 g"
+            ],
+            "answer": 0,
+            "why": "One part = 70 g; 2 parts = 140 g."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Share 36 in the ratio 1 : 3.",
+          "a": "9 and 27",
+          "mins": 2,
+          "model": "Teacher: 4 parts; 36 ÷ 4 = 9; 9 and 27."
+        },
+        {
+          "q": "2x - 5 = 11",
+          "a": "x = 8",
+          "mins": 2
+        },
+        {
+          "q": "3.2 l - 750 ml in ml?",
+          "a": "2,450 ml",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: (a) share 56 in the ratio 3 : 4 (b) solve 5y + 3 = 38 (c) 1.2 km + 850 m in m",
+          "a": "(a) 24 and 32 (b) y = 7 (c) 2,050 m",
+          "mins": 4,
+          "model": "Teacher solves (a): 7 parts; 56 ÷ 7 = 8; 24 and 32."
+        },
+        {
+          "q": "Extend: A recipe for 4 people uses 200 g of lentils. How much for 6 people?",
+          "a": "300 g",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: a + b = 20 and a - b = 4. Find a and b.",
+          "a": "a = 12, b = 8",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Share 30 in the ratio 1 : 2:",
+          "a": "A) 10 and 20",
+          "mins": 2,
+          "options": [
+            "10 and 20",
+            "15 and 15",
+            "1 and 2"
+          ]
+        },
+        {
+          "q": "Big question: how does a bar model help?",
+          "a": "It shows the parts, so we can find one part and scale up.",
+          "mins": 3
+        }
+      ],
+      "homework": "Do the reasoning revision set (portal): ratio, algebra, measures.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: the ratio of boys to girls is 3 : 5 and there are 12 more girls than boys. How many pupils? (48: 2 parts = 12, so 8 parts = 48)",
+      "resources": [
+        "White Rose Maths Year 6 end-of-year assessment preparation: reasoning (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Reasoning revision set (portal)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 90 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Shape; position and direction; consolidation",
+      "n": 91,
+      "title": "End-of-year assessment: arithmetic",
+      "duration": 45,
+      "bigQuestion": "How accurately can I calculate on my own?",
+      "objectives": [
+        "To understand how accurately I can use Year 6 calculation methods on my own"
+      ],
+      "successCriteria": [
+        "All: answer the four operations with large numbers and decimals",
+        "Most: answer long multiplication and long division",
+        "Some: answer fraction and percentage questions"
+      ],
+      "smsc": "Moral: honesty (amanah, أَمَانَة): our own work only",
+      "keywords": [
+        {
+          "term": "arithmetic",
+          "def": "calculating with numbers"
+        },
+        {
+          "term": "accuracy",
+          "def": "getting it right"
+        },
+        {
+          "term": "estimate",
+          "def": "a rounded answer to check against"
+        },
+        {
+          "term": "inverse",
+          "def": "the opposite operation, used to check"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "What is your plan if a long division question goes wrong halfway through?",
+        "a": "Check with a quick estimate, look for the slip, or move on and come back."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "pencil and eraser",
+          "alt": "A pencil and eraser",
+          "for": "hook"
+        },
+        {
+          "find": "timer clock",
+          "alt": "A timer",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "8 × 7 = ?",
+          "a": "56",
+          "mins": 1
+        },
+        {
+          "q": "1/2 + 1/4 = ?",
+          "a": "3/4",
+          "mins": 1
+        },
+        {
+          "q": "10% of 450?",
+          "a": "45",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Before we start",
+          "bullets": [
+            "Read each question.",
+            "Estimate, calculate, check."
+          ],
+          "note": "Printed paper or portal quiz (secure mode)."
+        },
+        {
+          "heading": "Timing",
+          "bullets": [
+            "30 minutes, 30 questions.",
+            "Skip and come back if stuck."
+          ],
+          "note": "Teacher keeps time on screen."
+        },
+        {
+          "heading": "Model: check with an estimate",
+          "bullets": [
+            "Round, then compare."
+          ],
+          "model": {
+            "problem": "4,328 × 6 = 25,968?",
+            "steps": [
+              "Estimate: 4,000 × 6 = 24,000.",
+              "25,968 is close: sensible."
+            ],
+            "answer": "Answer is sensible"
+          },
+          "note": "Model."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Warm-up: 50,000 - 17,386",
+          "a": "32,614",
+          "mins": 2,
+          "model": "Teacher works in columns with exchanges across the zeros: 32,614."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: End-of-year arithmetic paper (30 minutes). Sample: (a) 23,481 + 8,765 (b) 50,000 - 17,386 (c) 4,328 × 6 (d) 263 × 34 (e) 3,648 ÷ 16 (f) 2/3 + 3/4 (g) 3/5 × 1/4 (h) 4/5 ÷ 2 (i) 15% of 360 (j) 45 + 15 × 4 (k) 5² + 3³ (l) 7.2 × 3",
+          "a": "Sample answers: (a) 32,246 (b) 32,614 (c) 25,968 (d) 8,942 (e) 228 (f) 1 5/12 (g) 3/20 (h) 2/5 (i) 54 (j) 105 (k) 52 (l) 21.6",
+          "mins": 28,
+          "model": "Teacher models (a) in columns: 1 + 5 = 6, 8 + 6 = 14, 4 + 7 + 1 = 12, 3 + 8 + 1 = 12, 2 + 1 = 3: 32,246. Pupils then work alone."
+        }
+      ],
+      "exit": [
+        {
+          "q": "5² + 3³ =",
+          "a": "A) 52",
+          "mins": 1,
+          "options": [
+            "52",
+            "34",
+            "16"
+          ]
+        },
+        {
+          "q": "Big question: how accurate was I?",
+          "a": "Answers will vary: I estimated and checked",
+          "mins": 2
+        }
+      ],
+      "homework": "No homework: rest before the reasoning papers.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: find two numbers with a sum of 1 and a product of 0.24. (0.4 and 0.6)",
+      "resources": [
+        "White Rose Maths Year 6 end-of-year assessment: arithmetic paper (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed arithmetic paper or portal quiz (secure mode)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 91 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Shape; position and direction; consolidation",
+      "n": 92,
+      "title": "End-of-year assessment: reasoning paper 1",
+      "duration": 45,
+      "bigQuestion": "Can I reason through problems on my own?",
+      "objectives": [
+        "To understand how well I can solve number, ratio and algebra problems on my own"
+      ],
+      "successCriteria": [
+        "All: answer one-step number and ratio problems",
+        "Most: solve multi-step problems with full working",
+        "Some: explain an answer with a reason"
+      ],
+      "smsc": "Moral: honesty (amanah, أَمَانَة): our own work only",
+      "keywords": [
+        {
+          "term": "reasoning",
+          "def": "explaining how you know"
+        },
+        {
+          "term": "justify",
+          "def": "give a reason"
+        },
+        {
+          "term": "multi-step",
+          "def": "needs more than one calculation"
+        },
+        {
+          "term": "check",
+          "def": "make sure the answer fits the question"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "When a problem has lots of words, what do you do first?",
+        "a": "Read it twice, underline the numbers and the question, then draw a bar model or diagram."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "magnifying glass",
+          "alt": "A magnifying glass",
+          "for": "hook"
+        },
+        {
+          "find": "bar model",
+          "alt": "A bar model diagram",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Share 20 in the ratio 1 : 3",
+          "a": "5 and 15",
+          "mins": 1
+        },
+        {
+          "q": "2x + 1 = 9: x?",
+          "a": "4",
+          "mins": 1
+        },
+        {
+          "q": "Mean of 4, 6, 8?",
+          "a": "6",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Plan",
+          "bullets": [
+            "Read twice.",
+            "Draw it.",
+            "Check it answers the question."
+          ],
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Model",
+          "bullets": [
+            "Write each step."
+          ],
+          "model": {
+            "problem": "A coat costs £60. It is reduced by 15%. New price?",
+            "steps": [
+              "10% = 6; 5% = 3; 15% = 9.",
+              "60 - 9 = 51."
+            ],
+            "answer": "£51"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Paper rules",
+          "bullets": [
+            "30 minutes.",
+            "Show working in the boxes.",
+            "Units on every answer."
+          ],
+          "note": "Printed paper or portal quiz."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Warm-up: angles in a triangle 52° and 73°: third?",
+          "a": "55°",
+          "mins": 2,
+          "model": "Teacher: 52 + 73 = 125; 180 - 125 = 55°."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Reasoning paper 1 (30 minutes). Sample: (a) share 45 sweets in the ratio 2 : 7 (b) solve 4n - 6 = 30 (c) the mean of 12, 15, 9 and 14 (d) a triangle has angles 47° and 68°: the third (e) round 3,456,782 to the nearest 100,000 (f) explain whether 2/5 or 0.38 is bigger",
+          "a": "Sample answers: (a) 10 and 35 (b) n = 9 (c) 12.5 (d) 65° (e) 3,500,000 (f) 2/5 = 0.4 > 0.38",
+          "mins": 28,
+          "model": "Teacher reads (a): 9 parts; 45 ÷ 9 = 5; 2 × 5 = 10 and 7 × 5 = 35. Pupils then work alone."
+        }
+      ],
+      "exit": [
+        {
+          "q": "4n - 6 = 30, so n =",
+          "a": "A) 9",
+          "mins": 1,
+          "options": [
+            "9",
+            "6",
+            "24"
+          ]
+        },
+        {
+          "q": "Big question: can I reason on my own?",
+          "a": "Answers will vary",
+          "mins": 2
+        }
+      ],
+      "homework": "No homework: rest before reasoning paper 2.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: the mean of 5 numbers is 12. Four are 10, 14, 11 and 13. Find the fifth. (12)",
+      "resources": [
+        "White Rose Maths Year 6 end-of-year assessment: reasoning paper 1 (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed reasoning paper or portal quiz (secure mode)",
+        "Ruler and protractor",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 92 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Shape; position and direction; consolidation",
+      "n": 93,
+      "title": "End-of-year assessment: reasoning paper 2",
+      "duration": 45,
+      "bigQuestion": "Can I keep my accuracy in geometry, measures and statistics?",
+      "objectives": [
+        "To understand how well I can solve geometry, measures and statistics problems on my own"
+      ],
+      "successCriteria": [
+        "All: answer shape, coordinate and measure questions",
+        "Most: read and interpret charts and graphs",
+        "Some: solve multi-step problems with units"
+      ],
+      "smsc": "Moral: honesty (amanah, أَمَانَة): our own work only",
+      "keywords": [
+        {
+          "term": "perimeter",
+          "def": "the distance around a shape"
+        },
+        {
+          "term": "area",
+          "def": "the space inside a flat shape"
+        },
+        {
+          "term": "volume",
+          "def": "the space a 3-D shape takes up"
+        },
+        {
+          "term": "pie chart",
+          "def": "a circle split to show parts of a whole"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Area or perimeter: which would you need to buy carpet? Which for a fence?",
+        "a": "Area for carpet; perimeter for a fence."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "pie chart",
+          "alt": "A pie chart",
+          "for": "teach:1"
+        },
+        {
+          "find": "cardboard box",
+          "alt": "A box",
+          "for": "keywords"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Area of a triangle, base 10, height 6?",
+          "a": "30 cm²",
+          "mins": 1
+        },
+        {
+          "q": "Reflect (3, -2) in the y-axis?",
+          "a": "(-3, -2)",
+          "mins": 1
+        },
+        {
+          "q": "Volume 5 × 4 × 3?",
+          "a": "60 cm³",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Check the units",
+          "bullets": [
+            "cm for length, cm² for area, cm³ for volume."
+          ],
+          "chart": {
+            "kind": "pie",
+            "labels": [
+              "Walk",
+              "Car",
+              "Bus",
+              "Cycle"
+            ],
+            "values": [
+              12,
+              6,
+              4,
+              2
+            ],
+            "title": "How pupils travel to a centre (example data)"
+          },
+          "note": "Quick recap."
+        },
+        {
+          "heading": "Model",
+          "bullets": [
+            "Two steps, with units."
+          ],
+          "model": {
+            "problem": "A cuboid is 8 cm × 5 cm × 3 cm. Find its volume, then how many 1 cm cubes make two of them.",
+            "steps": [
+              "8 × 5 × 3 = 120 cm³.",
+              "2 × 120 = 240."
+            ],
+            "answer": "120 cm³; 240 cubes"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Paper rules",
+          "bullets": [
+            "30 minutes.",
+            "Show working.",
+            "Units on every answer."
+          ],
+          "note": "Printed paper or portal quiz."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Warm-up: in the pie chart (24 pupils), what fraction walk?",
+          "a": "12/24 = 1/2",
+          "mins": 2,
+          "model": "Teacher: 12 of 24 is a half."
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Reasoning paper 2 (30 minutes). Sample: (a) area of a parallelogram, base 9 cm, height 7 cm (b) each interior angle of a regular hexagon (c) translate (-2, 3) 5 right and 4 down (d) 3.5 kg - 1,250 g in kg (e) a pie chart of 24 pupils: 6 come by car: the angle (f) a line graph shows 14 °C at 9am and 23 °C at 3pm: the rise",
+          "a": "Sample answers: (a) 63 cm² (b) 120° (c) (3, -1) (d) 2.25 kg (e) 90° (f) 9 °C",
+          "mins": 28,
+          "model": "Teacher reads (a): area = base × height = 9 × 7 = 63 cm². Pupils then work alone."
+        }
+      ],
+      "exit": [
+        {
+          "q": "6 out of 24 on a pie chart is...",
+          "a": "A) 90°",
+          "mins": 1,
+          "options": [
+            "90°",
+            "60°",
+            "6°"
+          ]
+        },
+        {
+          "q": "Big question: did I keep my accuracy?",
+          "a": "Answers will vary",
+          "mins": 2
+        }
+      ],
+      "homework": "No homework: well done for finishing the papers. Feedback is next week.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: a square has the same area as a 4 cm by 9 cm rectangle. Find its perimeter. (side 6 cm: 24 cm)",
+      "resources": [
+        "White Rose Maths Year 6 end-of-year assessment: reasoning paper 2 (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printed reasoning paper or portal quiz (secure mode)",
+        "Ruler and protractor",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 93 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Shape; position and direction; consolidation",
+      "n": 94,
+      "title": "Feedback and gap closing",
+      "duration": 45,
+      "bigQuestion": "What did the papers show about my strengths and gaps?",
+      "objectives": [
+        "To understand my strengths and gaps from the end-of-year papers and start to close them"
+      ],
+      "successCriteria": [
+        "All: read my scores and the question-level feedback",
+        "Most: correct two errors with the right method",
+        "Some: practise the topic I found hardest"
+      ],
+      "smsc": "Spiritual: muhasabah (مُحَاسَبَة), honest self-review, and trying again",
+      "keywords": [
+        {
+          "term": "gap",
+          "def": "something not yet secure"
+        },
+        {
+          "term": "feedback",
+          "def": "information that helps us improve"
+        },
+        {
+          "term": "error analysis",
+          "def": "finding why a mistake happened"
+        },
+        {
+          "term": "target",
+          "def": "what to practise next"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Is a wrong answer always a sign you do not understand? What else could it be?",
+        "a": "No: it could be a slip, a misread question or running out of time."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "green pen",
+          "alt": "A green pen",
+          "for": "hook"
+        },
+        {
+          "find": "checklist",
+          "alt": "A checklist",
+          "for": "teach:1"
+        }
+      ],
+      "starter": [
+        {
+          "q": "263 × 34 = ?",
+          "a": "8,942",
+          "mins": 1
+        },
+        {
+          "q": "Share 45 in the ratio 2 : 7",
+          "a": "10 and 35",
+          "mins": 1
+        },
+        {
+          "q": "Angle sum of a hexagon?",
+          "a": "720°",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Three kinds of error",
+          "bullets": [
+            "Slip: a careless mistake.",
+            "Misread: answered a different question.",
+            "Method: did not know how."
+          ],
+          "sort": {
+            "columns": [
+              "Slip",
+              "Misread",
+              "Method"
+            ],
+            "cards": [
+              "7 × 8 = 54",
+              "gave the perimeter, not the area",
+              "added the denominators",
+              "wrote 25,698 for 25,968",
+              "found 15% instead of 85%",
+              "long division steps wrong"
+            ],
+            "answer": [
+              0,
+              1,
+              2,
+              0,
+              1,
+              2
+            ]
+          },
+          "note": "Pupils sort their own errors."
+        },
+        {
+          "heading": "Common error: fractions",
+          "bullets": [
+            "Never add the denominators."
+          ],
+          "model": {
+            "problem": "2/3 + 3/4",
+            "steps": [
+              "Common denominator 12.",
+              "8/12 + 9/12 = 17/12.",
+              "17/12 = 1 5/12."
+            ],
+            "answer": "1 5/12"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Common error: percentages",
+          "bullets": [
+            "Find the percentage, then subtract if reduced."
+          ],
+          "misconception": {
+            "wrong": "15% off £60 is £9.",
+            "right": "£9 is the reduction; the new price is £51."
+          },
+          "note": "Model £60 - 15% = £51."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "3/4 + 1/6 =",
+            "options": [
+              "11/12",
+              "4/10",
+              "4/24"
+            ],
+            "answer": 0,
+            "why": "9/12 + 2/12 = 11/12."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Correct: 1/2 + 2/5",
+          "a": "9/10",
+          "mins": 2,
+          "model": "Teacher: common denominator 10: 5/10 + 4/10 = 9/10."
+        },
+        {
+          "q": "Correct: 20% off £45",
+          "a": "£36",
+          "mins": 2
+        },
+        {
+          "q": "Correct: 1,512 ÷ 12",
+          "a": "126",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Correct two questions from your papers in green pen, labelling each error (slip, misread, method).",
+          "a": "Corrections checked by the teacher",
+          "mins": 4,
+          "model": "Teacher corrects one paper question with the class."
+        },
+        {
+          "q": "Extend: Do 5 practice questions on your weakest topic (portal set).",
+          "a": "Answers on the set key",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Write a 'watch out' tip for a Year 5 pupil about one common error.",
+          "a": "For example: 'Never add the denominators: make them the same first.'",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A slip is...",
+          "a": "A) a careless mistake",
+          "mins": 2,
+          "options": [
+            "a careless mistake",
+            "not knowing the method",
+            "a hard question"
+          ]
+        },
+        {
+          "q": "Big question: what did the papers show?",
+          "a": "Answers will vary: one strength and one gap",
+          "mins": 3
+        }
+      ],
+      "homework": "Practise your weakest topic for 10 minutes using the portal set.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: which is bigger: 3/8 or 0.4? Show how you know. (0.4: 3/8 = 0.375)",
+      "resources": [
+        "White Rose Maths Year 6 end-of-year assessment: marked papers and question-level gap analysis (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Marked papers (returned in the portal)",
+        "Green pen",
+        "Gap practice sets (portal)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 94 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Shape; position and direction; consolidation",
+      "n": 95,
+      "title": "Gap closing: fractions, decimals and percentages",
+      "duration": 45,
+      "bigQuestion": "How can one number be written three ways?",
+      "objectives": [
+        "To understand how to move confidently between fractions, decimals and percentages"
+      ],
+      "successCriteria": [
+        "All: convert common fractions to decimals and percentages",
+        "Most: compare and order a mixed set",
+        "Some: solve percentage problems using fractions"
+      ],
+      "keywords": [
+        {
+          "term": "equivalent",
+          "def": "equal in value"
+        },
+        {
+          "term": "percentage",
+          "def": "parts per hundred"
+        },
+        {
+          "term": "decimal",
+          "def": "a number with tenths, hundredths and so on"
+        },
+        {
+          "term": "convert",
+          "def": "write in another form"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Which is the best mark: 17/20, 0.8 or 82%?",
+        "a": "17/20 = 85%, the best."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "hundred square grid",
+          "alt": "A hundred square",
+          "for": "teach:1"
+        },
+        {
+          "find": "price tag discount",
+          "alt": "A discount tag",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "1/4 as a decimal?",
+          "a": "0.25",
+          "mins": 1
+        },
+        {
+          "q": "0.6 as a percentage?",
+          "a": "60%",
+          "mins": 1
+        },
+        {
+          "q": "3/5 as a percentage?",
+          "a": "60%",
+          "mins": 1
+        },
+        {
+          "q": "25% of 48?",
+          "a": "12",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Key facts",
+          "bullets": [
+            "Learn the common ones."
+          ],
+          "table": {
+            "head": [
+              "Fraction",
+              "Decimal",
+              "Percentage"
+            ],
+            "rows": [
+              [
+                "1/2",
+                "0.5",
+                "50%"
+              ],
+              [
+                "1/4",
+                "0.25",
+                "25%"
+              ],
+              [
+                "3/4",
+                "0.75",
+                "75%"
+              ],
+              [
+                "1/5",
+                "0.2",
+                "20%"
+              ],
+              [
+                "1/10",
+                "0.1",
+                "10%"
+              ],
+              [
+                "1/8",
+                "0.125",
+                "12.5%"
+              ]
+            ]
+          },
+          "note": "Recap."
+        },
+        {
+          "heading": "Convert to compare",
+          "bullets": [
+            "Change all to percentages."
+          ],
+          "model": {
+            "problem": "Order 17/20, 0.8, 82%.",
+            "steps": [
+              "17/20 = 85/100 = 85%.",
+              "0.8 = 80%.",
+              "80%, 82%, 85%."
+            ],
+            "answer": "0.8, 82%, 17/20"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Percentages as fractions",
+          "bullets": [
+            "75% of 48 = 3/4 of 48."
+          ],
+          "note": "Model: 48 ÷ 4 = 12; × 3 = 36."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Which is largest?",
+            "options": [
+              "0.7",
+              "2/3",
+              "65%"
+            ],
+            "answer": 0,
+            "why": "0.7 = 70%; 2/3 ≈ 66.7%; 65%."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "3/8 as a decimal?",
+          "a": "0.375",
+          "mins": 2,
+          "model": "Teacher: 1/8 = 0.125, so 3/8 = 0.375."
+        },
+        {
+          "q": "Order: 0.45, 2/5, 42%",
+          "a": "2/5, 42%, 0.45",
+          "mins": 2
+        },
+        {
+          "q": "20% of 85?",
+          "a": "17",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Convert: 7/10, 3/4, 0.35, 0.08, 45%, 4% (to the other two forms).",
+          "a": "0.7, 70%; 0.75, 75%; 7/20, 35%; 2/25, 8%; 0.45, 9/20; 0.04, 1/25",
+          "mins": 4,
+          "model": "Teacher converts 7/10 = 0.7 = 70%."
+        },
+        {
+          "q": "Extend: A £40 item is reduced by 35%. New price?",
+          "a": "£26",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Order: 5/8, 0.6, 61%, 3/5",
+          "a": "0.6 = 3/5 (equal), 61%, 5/8",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "0.25 =",
+          "a": "A) 25%",
+          "mins": 2,
+          "options": [
+            "25%",
+            "2.5%",
+            "1/25"
+          ]
+        },
+        {
+          "q": "Big question: how can one number be written three ways?",
+          "a": "As a fraction, a decimal and a percentage of the same value.",
+          "mins": 3
+        }
+      ],
+      "homework": "Find 3 percentages in adverts or leaflets and write each as a fraction and decimal.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: what is 12.5% of 640? (80: 1/8 of 640)",
+      "resources": [
+        "White Rose Maths Year 6 consolidation: fractions, decimals and percentages (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable FDP card sort",
+        "Gap practice set (portal)",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 95 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Shape; position and direction; consolidation",
+      "n": 96,
+      "title": "Year 7 bridge: algebra",
+      "duration": 45,
+      "bigQuestion": "Why do mathematicians use letters?",
+      "objectives": [
+        "To understand how to use letters for unknown numbers in expressions and equations"
+      ],
+      "successCriteria": [
+        "All: write an expression from words",
+        "Most: substitute a value into an expression",
+        "Some: solve a one-step and a two-step equation"
+      ],
+      "crossCurricular": "Computing: variables in programs stand for values, like letters in algebra",
+      "keywords": [
+        {
+          "term": "expression",
+          "def": "letters and numbers with no equals sign, like 3n + 2"
+        },
+        {
+          "term": "equation",
+          "def": "has an equals sign, like 3n + 2 = 17"
+        },
+        {
+          "term": "substitute",
+          "def": "put a number in place of a letter"
+        },
+        {
+          "term": "solve",
+          "def": "find the value of the letter"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "I think of a number, multiply by 3 and add 2. I get 17. What was my number? How could letters help?",
+        "a": "5: write 3n + 2 = 17 and undo the steps."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "balance scale",
+          "alt": "A balance scale",
+          "for": "teach:3"
+        },
+        {
+          "find": "function machine diagram",
+          "alt": "A function machine",
+          "for": "hook"
+        }
+      ],
+      "starter": [
+        {
+          "q": "3 × 5 + 2 = ?",
+          "a": "17",
+          "mins": 1
+        },
+        {
+          "q": "17 - 2 = ?",
+          "a": "15",
+          "mins": 1
+        },
+        {
+          "q": "15 ÷ 3 = ?",
+          "a": "5",
+          "mins": 1
+        },
+        {
+          "q": "Double 7 then add 1?",
+          "a": "15",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Writing expressions",
+          "bullets": [
+            "n + 5: 5 more than n.",
+            "3n: 3 times n.",
+            "2n - 1: double n, subtract 1."
+          ],
+          "table": {
+            "head": [
+              "Words",
+              "Expression"
+            ],
+            "rows": [
+              [
+                "4 more than a",
+                "a + 4"
+              ],
+              [
+                "5 times b",
+                "5b"
+              ],
+              [
+                "half of c",
+                "c ÷ 2"
+              ],
+              [
+                "double d, add 3",
+                "2d + 3"
+              ]
+            ]
+          },
+          "note": "Say each in words."
+        },
+        {
+          "heading": "Substitute",
+          "bullets": [
+            "Replace the letter with its value."
+          ],
+          "model": {
+            "problem": "Find 3n + 2 when n = 5.",
+            "steps": [
+              "3 × 5 = 15.",
+              "15 + 2 = 17."
+            ],
+            "answer": "17"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Solve",
+          "bullets": [
+            "Undo the steps in reverse.",
+            "Keep the equation balanced."
+          ],
+          "model": {
+            "problem": "2x + 7 = 19",
+            "steps": [
+              "Subtract 7 from both sides: 2x = 12.",
+              "Divide both sides by 2: x = 6."
+            ],
+            "answer": "x = 6"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "If a = 4, 5a - 3 =",
+            "options": [
+              "17",
+              "51",
+              "2"
+            ],
+            "answer": 0,
+            "why": "5 × 4 = 20; 20 - 3 = 17."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "n = 6: find 4n + 1.",
+          "a": "25",
+          "mins": 2,
+          "model": "Teacher: 4 × 6 = 24; 24 + 1 = 25."
+        },
+        {
+          "q": "Solve x + 9 = 15.",
+          "a": "x = 6",
+          "mins": 2
+        },
+        {
+          "q": "Solve 3y - 4 = 11.",
+          "a": "y = 5",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: (a) n = 3: find 2n + 5 and 10 - n (b) solve 4x = 28 (c) solve 2y + 3 = 21",
+          "a": "(a) 11; 7 (b) x = 7 (c) y = 9",
+          "mins": 4,
+          "model": "Teacher does (a): 2 × 3 + 5 = 11; 10 - 3 = 7."
+        },
+        {
+          "q": "Extend: A pen costs p pence. Write an expression for 5 pens and £1 change from £5 (in pence).",
+          "a": "5p + 100 = 500, so p = 80",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Solve 3(x + 2) = 24.",
+          "a": "x + 2 = 8, x = 6",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Solve 2x + 7 = 19:",
+          "a": "A) x = 6",
+          "mins": 2,
+          "options": [
+            "x = 6",
+            "x = 13",
+            "x = 12"
+          ]
+        },
+        {
+          "q": "Big question: why use letters?",
+          "a": "A letter stands for an unknown number, so we can write and solve problems.",
+          "mins": 3
+        }
+      ],
+      "homework": "Make 3 'think of a number' puzzles for a grown-up and write each as an equation.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: solve 5n - 8 = 3n + 6. (n = 7)",
+      "resources": [
+        "White Rose Maths Year 6 consolidation and Year 7 bridge: algebra (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable bridge worksheet",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 96 guided, independent and homework tasks"
+      ]
+    },
+    {
+      "unit": "Summer 2: Shape; position and direction; consolidation",
+      "n": 97,
+      "title": "Year 7 bridge: ratio and proportion",
+      "duration": 45,
+      "bigQuestion": "How do recipes and maps both use ratio?",
+      "objectives": [
+        "To understand how to use ratio and proportion to scale quantities and share amounts"
+      ],
+      "successCriteria": [
+        "All: scale a recipe up or down",
+        "Most: share an amount in a ratio",
+        "Some: use a map scale"
+      ],
+      "keywords": [
+        {
+          "term": "ratio",
+          "def": "compares parts, written like 2 : 3"
+        },
+        {
+          "term": "proportion",
+          "def": "a part compared with the whole"
+        },
+        {
+          "term": "scale",
+          "def": "multiply all amounts by the same number"
+        },
+        {
+          "term": "map scale",
+          "def": "how map distance matches real distance"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "A recipe for 4 uses 200 g of rice. Your family has 6 people. How much rice?",
+        "a": "300 g: 50 g per person × 6."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "bowl of rice",
+          "alt": "A bowl of rice",
+          "for": "hook"
+        },
+        {
+          "find": "map with scale bar",
+          "alt": "A map with a scale bar",
+          "for": "teach:3"
+        }
+      ],
+      "starter": [
+        {
+          "q": "Share 30 in the ratio 1 : 2",
+          "a": "10 and 20",
+          "mins": 1
+        },
+        {
+          "q": "200 ÷ 4 = ?",
+          "a": "50",
+          "mins": 1
+        },
+        {
+          "q": "50 × 6 = ?",
+          "a": "300",
+          "mins": 1
+        },
+        {
+          "q": "3/8 of 48?",
+          "a": "18",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Scaling a recipe",
+          "bullets": [
+            "Find one, then multiply.",
+            "Or multiply by a scale factor."
+          ],
+          "model": {
+            "problem": "Dates and nuts mix for 4: 120 g dates, 80 g nuts. For 10 people?",
+            "steps": [
+              "For 1: 30 g dates, 20 g nuts.",
+              "For 10: 300 g dates, 200 g nuts."
+            ],
+            "answer": "300 g dates, 200 g nuts"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Sharing in a ratio",
+          "bullets": [
+            "Add the parts.",
+            "Find one part.",
+            "Multiply."
+          ],
+          "model": {
+            "problem": "Share 48 in the ratio 3 : 5.",
+            "steps": [
+              "8 parts: 48 ÷ 8 = 6.",
+              "3 × 6 = 18; 5 × 6 = 30."
+            ],
+            "answer": "18 and 30"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Map scales",
+          "bullets": [
+            "1 cm on the map = 2 km real.",
+            "Multiply map distance by 2."
+          ],
+          "note": "Model: 4.5 cm = 9 km."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "Map scale 1 cm : 5 km. 3 cm on the map is...",
+            "options": [
+              "15 km",
+              "8 km",
+              "35 km"
+            ],
+            "answer": 0,
+            "why": "3 × 5 = 15."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Share 35 in the ratio 2 : 5.",
+          "a": "10 and 25",
+          "mins": 2,
+          "model": "Teacher: 7 parts; 35 ÷ 7 = 5; 10 and 25."
+        },
+        {
+          "q": "Recipe for 2 uses 150 ml milk. For 5?",
+          "a": "375 ml",
+          "mins": 2
+        },
+        {
+          "q": "Scale 1 cm : 2 km. 7 cm?",
+          "a": "14 km",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: (a) share 60 in the ratio 1 : 4 (b) a recipe for 6 uses 450 g flour; for 4? (c) 1 cm : 3 km; 5.5 cm?",
+          "a": "(a) 12 and 48 (b) 300 g (c) 16.5 km",
+          "mins": 4,
+          "model": "Teacher solves (a): 5 parts; 60 ÷ 5 = 12; 12 and 48."
+        },
+        {
+          "q": "Extend: Two partners invest £2,000 and £3,000 in a halal business and share a profit of £1,500 in the same ratio. Shares?",
+          "a": "2 : 3: £600 and £900",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Red and blue paint in the ratio 2 : 3 make 1.5 litres. How much blue?",
+          "a": "0.9 l (900 ml)",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "Share 20 in the ratio 3 : 1:",
+          "a": "A) 15 and 5",
+          "mins": 2,
+          "options": [
+            "15 and 5",
+            "12 and 8",
+            "3 and 1"
+          ]
+        },
+        {
+          "q": "Big question: how do recipes and maps use ratio?",
+          "a": "Both multiply every amount by the same number.",
+          "mins": 3
+        }
+      ],
+      "homework": "Scale a family recipe for a different number of people.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: the ratio of red to blue counters is 3 : 7 and there are 28 blue. How many altogether? (40)",
+      "resources": [
+        "White Rose Maths Year 6 consolidation and Year 7 bridge: ratio (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable bridge worksheet",
+        "A family recipe card",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 97 guided, independent and homework tasks"
+      ],
+      "islamicLink": {
+        "text": "Islamic trade uses partnership (mushārakah, مُشَارَكَة): partners share profit in an agreed ratio, fairly ('adl). Ratio helps us share justly.",
+        "at": "start"
+      }
+    },
+    {
+      "unit": "Summer 2: Shape; position and direction; consolidation",
+      "n": 98,
+      "title": "Investigation: reasoning and proof; ready for Year 7",
+      "duration": 45,
+      "bigQuestion": "Is it always, sometimes or never true?",
+      "objectives": [
+        "To understand how to test a statement with examples and explain why it is always true"
+      ],
+      "successCriteria": [
+        "All: test a statement with several examples",
+        "Most: find a counterexample to a false statement",
+        "Some: explain with a diagram or algebra why a statement is always true"
+      ],
+      "smsc": "Spiritual: shukr for primary school, and niyyah (intention) for Year 7",
+      "keywords": [
+        {
+          "term": "conjecture",
+          "def": "an idea that might be true"
+        },
+        {
+          "term": "counterexample",
+          "def": "one example that shows a statement is false"
+        },
+        {
+          "term": "prove",
+          "def": "show it is true every time"
+        },
+        {
+          "term": "consecutive",
+          "def": "next to each other, like 4, 5, 6"
+        }
+      ],
+      "hook": {
+        "type": "ponder",
+        "text": "Add any three consecutive numbers, like 4 + 5 + 6. Is the answer always a multiple of 3?",
+        "a": "Yes: the middle number times 3 (n + (n + 1) + (n + 2) = 3n + 3)."
+      },
+      "routines": {
+        "hook": "chat-waterfall",
+        "starter": "show-me",
+        "hinge": "teams-poll",
+        "practice": "show-me",
+        "exit": "teams-poll"
+      },
+      "pictures": [
+        {
+          "find": "puzzle pieces",
+          "alt": "Puzzle pieces",
+          "for": "hook"
+        },
+        {
+          "find": "dominoes",
+          "alt": "Dominoes",
+          "for": "teach:2"
+        }
+      ],
+      "starter": [
+        {
+          "q": "4 + 5 + 6 = ?",
+          "a": "15",
+          "mins": 1
+        },
+        {
+          "q": "Is 15 a multiple of 3?",
+          "a": "yes",
+          "mins": 1
+        },
+        {
+          "q": "Solve 2x + 7 = 19",
+          "a": "x = 6",
+          "mins": 1
+        },
+        {
+          "q": "Odd + odd = ?",
+          "a": "even",
+          "mins": 1
+        }
+      ],
+      "teach": [
+        {
+          "heading": "Always, sometimes, never",
+          "bullets": [
+            "Test with examples.",
+            "One counterexample shows 'not always'."
+          ],
+          "sort": {
+            "columns": [
+              "Always",
+              "Sometimes",
+              "Never"
+            ],
+            "cards": [
+              "odd + odd is even",
+              "a square number is even",
+              "a multiple of 4 is odd",
+              "a prime number is odd",
+              "the angles in a triangle add to 180°",
+              "a quadrilateral has 5 right angles"
+            ],
+            "answer": [
+              0,
+              1,
+              2,
+              1,
+              0,
+              2
+            ]
+          },
+          "note": "Sort the statements."
+        },
+        {
+          "heading": "Explain why",
+          "bullets": [
+            "Use a diagram or a letter."
+          ],
+          "model": {
+            "problem": "Three consecutive numbers: is the sum always a multiple of 3?",
+            "steps": [
+              "Call them n, n + 1, n + 2.",
+              "Sum: 3n + 3 = 3(n + 1).",
+              "3 × a whole number is a multiple of 3."
+            ],
+            "answer": "Always true"
+          },
+          "note": "Model."
+        },
+        {
+          "heading": "Counterexamples",
+          "bullets": [
+            "'All prime numbers are odd.'",
+            "2 is prime and even."
+          ],
+          "misconception": {
+            "wrong": "It worked for 5 examples, so it is always true.",
+            "right": "Examples support it; an explanation proves it."
+          },
+          "note": "One example is enough to disprove."
+        },
+        {
+          "heading": "Ready for Year 7",
+          "bullets": [
+            "Algebra, ratio and proof start in Year 7.",
+            "Keep practising tables and fractions."
+          ],
+          "note": "Pupils write one goal for Year 7 in the response box."
+        },
+        {
+          "heading": "Hinge",
+          "check": {
+            "q": "'Every multiple of 6 is even.' This is...",
+            "options": [
+              "always true",
+              "sometimes true",
+              "never true"
+            ],
+            "answer": 0,
+            "why": "6 = 2 × 3, so every multiple of 6 is a multiple of 2."
+          },
+          "note": "Teams poll: launch it, give 30 seconds, then share the results."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Always, sometimes or never: a number ending in 5 is a multiple of 5.",
+          "a": "Always",
+          "mins": 2,
+          "model": "Teacher: 5 × any whole number ends in 0 or 5; every number ending in 5 is in the 5 times table."
+        },
+        {
+          "q": "Find a counterexample: 'all multiples of 3 are odd'.",
+          "a": "6 (or any even multiple)",
+          "mins": 2
+        },
+        {
+          "q": "Always, sometimes or never: even + odd is odd.",
+          "a": "Always",
+          "mins": 2
+        }
+      ],
+      "independent": [
+        {
+          "q": "Core: Test 'the sum of two consecutive numbers is always odd' with 4 examples. Is it always true?",
+          "a": "For example 3 + 4 = 7, 10 + 11 = 21: always odd",
+          "mins": 4,
+          "model": "Teacher tests 1 + 2 = 3 and 7 + 8 = 15."
+        },
+        {
+          "q": "Extend: Explain why in the portal response box: 'Two consecutive numbers are one odd and one even, so ...'",
+          "a": "One is even and one odd, and even + odd is always odd (n + n + 1 = 2n + 1)",
+          "mins": 4
+        },
+        {
+          "q": "Stretch: Is the product of three consecutive numbers always a multiple of 6? Explain.",
+          "a": "Yes: one is always even and one is always a multiple of 3",
+          "mins": 3
+        }
+      ],
+      "exit": [
+        {
+          "q": "A counterexample shows a statement is...",
+          "a": "A) not always true",
+          "mins": 2,
+          "options": [
+            "not always true",
+            "always true",
+            "never true"
+          ]
+        },
+        {
+          "q": "Big question: always, sometimes or never?",
+          "a": "Test examples, look for a counterexample, then explain why.",
+          "mins": 3
+        }
+      ],
+      "homework": "Summer: test the statement 'a square number is never 2 more than a multiple of 4' and write what you find.",
+      "send": "SEND: concrete first (counters, paper strips, real coins or a paper clock), worked example kept on screen, fewer items. EAL: key word cards with pictures; sentence stem 'I know ... because ...'. Stretch: is the sum of four consecutive numbers always a multiple of 4? (no: 1 + 2 + 3 + 4 = 10; it is always 2 more than a multiple of 4)",
+      "resources": [
+        "White Rose Maths Year 6 consolidation: problem-solving investigations and Year 7 readiness (titles only; school White Rose account)",
+        "Tarbiyyah Primary Maths Policy: concrete, pictorial, abstract; Maths Long Term Plan 2023-24 (Summer 2 order)",
+        "Slides and Teams whiteboard (virtual manipulatives: Mathsbot, Toy Theater)",
+        "Printable investigation sheet",
+        "Mini-whiteboard and pen",
+        "Printable worksheet (or drawing tablet): Year 6 maths lesson 98 guided, independent and homework tasks"
       ]
     }
   ]
