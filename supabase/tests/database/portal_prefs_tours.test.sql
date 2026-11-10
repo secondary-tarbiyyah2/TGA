@@ -1,4 +1,4 @@
--- Run via `supabase test db`. Covers 0201: "tour seen" is stored on each
+-- Run via `supabase test db`. Covers 0202: "tour seen" is stored on each
 -- person's own portal_prefs row, and nobody else can read or set it.
 begin;
 select plan(5);

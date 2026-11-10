@@ -220,7 +220,7 @@ descriptions and plain-word keywords.
   concern, again. Parent: Today, Homework, Messages, My children, search, Report a concern, again. Pupil: Today,
   Homework, My classes, Revise, search, again. Phones get phone wording and point at the bottom bar and Menu.
 - Shown once, the first time someone signs in to an area; "Skip tour", Esc, or Done all count as seen. Saved in
-  `portal_prefs.tours_seen` (migration 0201, own row only), so it does not come back on another device.
+  `portal_prefs.tours_seen` (migration 0202, own row only), so it does not come back on another device.
 - Again at any time: "Take the tour" at the bottom of the menu (phones: in Menu), or search "tour" / "help".
 - Keyboard: focus moves to Next and stays in the card (Tab cycles), Esc closes, arrow keys move; focus goes back where
   it was afterwards. Reduced motion: no movement. Built in-house: no third-party script, nothing tracked.
@@ -231,7 +231,7 @@ descriptions and plain-word keywords.
 
 ## Log
 - 2026-11-10: Guided tour (T38, PR "Portal: a short guided tour for every role"): role tours, page tips on the lesson
-  editor and planner, "Take the tour" in the menu and search, migration 0201 `tours_seen`.
+  editor and planner, "Take the tour" in the menu and search, migration 0202 `tours_seen`.
 - 2026-11-10: Navigation rebuilt round categories (T38, PR "Portal navigation: categories, pins and search"): staff
   sidebar is Pinned, Home, then category dropdowns remembered per person (`portal_prefs`, migration 0200); families
   and pupils keep a short flat menu with Homework at the top level; search finds every page, sub-page and common job by

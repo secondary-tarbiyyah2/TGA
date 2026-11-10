@@ -2,7 +2,7 @@
 
 // Each person's own portal preferences: pages pinned to the top of the menu,
 // which menu categories are open, and which guided tours they have seen. Saved
-// to `portal_prefs` (migrations 0200 and 0201, own row only) so they follow
+// to `portal_prefs` (migrations 0200 and 0202, own row only) so they follow
 // the person to any device, with a copy in this browser so the menu draws
 // straight away. If the table can't be reached the browser copy still works.
 
@@ -19,7 +19,7 @@ let userId: string | null = null;
 let prefs: PortalPrefs = EMPTY;
 let loadedFor: string | null = null;
 let saveTimer: ReturnType<typeof setTimeout> | null = null;
-/** False once the server says it has no tours_seen column yet (migration 0201 not applied). */
+/** False once the server says it has no tours_seen column yet (migration 0202 not applied). */
 let toursColumn = true;
 const listeners = new Set<() => void>();
 
