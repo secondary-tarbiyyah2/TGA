@@ -30,6 +30,7 @@ export function PupilPlacement({
   classIds,
   setClassIds,
   idPrefix = "pp",
+  part = "all",
 }: {
   dob: string;
   setDob: (v: string) => void;
@@ -43,6 +44,12 @@ export function PupilPlacement({
   classIds?: string[];
   setClassIds?: (ids: string[]) => void;
   idPrefix?: string;
+  /**
+   * Which half to draw, so a long form can put them in separate titled
+   * sections: "placement" (date of birth, year group, working above),
+   * "classes" (the class picker) or "all" (both, the default).
+   */
+  part?: "all" | "placement" | "classes";
 }) {
   const start = academicYearStart();
   const suggestedNumber = dob ? yearNumberForDob(dob, start) : null;
@@ -82,8 +89,13 @@ export function PupilPlacement({
   }, [classes, showAll, yearGroupId, classIds]);
   const hiddenCount = (classes?.length || 0) - shownClasses.length;
 
+  const showPlacement = part !== "classes";
+  const showClasses = part !== "placement";
+
   return (
     <div className="space-y-4">
+      {showPlacement && (
+      <>
       <div className="grid gap-4">
         <DatePicker
           id={`${idPrefix}-dob`}
@@ -128,10 +140,12 @@ export function PupilPlacement({
           <span className="block text-xs text-ink/70">For a pupil placed in, or working at, a higher year than their age, for example sitting GCSEs at 12. Shown on their record and in the Pupils list.</span>
         </span>
       </label>
+      </>
+      )}
 
-      {classes && setClassIds && (
+      {showClasses && classes && setClassIds && (
         <fieldset>
-          <legend className={`${ui.label} mb-1`}>Classes (optional)</legend>
+          <legend className={part === "classes" ? "sr-only" : `${ui.label} mb-1`}>Classes (optional)</legend>
           <div className="mb-1.5 flex flex-wrap items-center justify-between gap-2">
             <p className={ui.hint}>{yearGroupId && !showAll ? "Classes for this year group. A pupil can be in one class per subject." : "Every class. A pupil can be in one class per subject."}</p>
             {yearGroupId && (hiddenCount > 0 || showAll) && (
